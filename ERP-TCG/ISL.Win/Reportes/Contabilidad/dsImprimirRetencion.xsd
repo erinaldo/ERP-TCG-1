@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsImprimirRetencion" targetNamespace="http://tempuri.org/dsImprimirRetencion.xsd" xmlns:mstns="http://tempuri.org/dsImprimirRetencion.xsd" xmlns="http://tempuri.org/dsImprimirRetencion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsImprimirRetencion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="dsImprimirRetencion" msprop:Generator_UserDSName="dsImprimirRetencion" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtImprimirRetencion" msprop:Generator_UserTableName="dtImprimirRetencion" msprop:Generator_RowDeletedName="dtImprimirRetencionRowDeleted" msprop:Generator_TableClassName="dtImprimirRetencionDataTable" msprop:Generator_RowChangedName="dtImprimirRetencionRowChanged" msprop:Generator_RowClassName="dtImprimirRetencionRow" msprop:Generator_RowChangingName="dtImprimirRetencionRowChanging" msprop:Generator_RowEvArgName="dtImprimirRetencionRowChangeEvent" msprop:Generator_RowEvHandlerName="dtImprimirRetencionRowChangeEventHandler" msprop:Generator_TablePropName="dtImprimirRetencion" msprop:Generator_TableVarName="tabledtImprimirRetencion" msprop:Generator_RowDeletingName="dtImprimirRetencionRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Proveedor" msprop:Generator_UserColumnName="Proveedor" msprop:Generator_ColumnPropNameInRow="Proveedor" msprop:Generator_ColumnVarNameInTable="columnProveedor" msprop:Generator_ColumnPropNameInTable="ProveedorColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Direccion" msprop:Generator_UserColumnName="Direccion" msprop:Generator_ColumnPropNameInRow="Direccion" msprop:Generator_ColumnVarNameInTable="columnDireccion" msprop:Generator_ColumnPropNameInTable="DireccionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Dni" msprop:Generator_UserColumnName="Dni" msprop:Generator_ColumnPropNameInRow="Dni" msprop:Generator_ColumnVarNameInTable="columnDni" msprop:Generator_ColumnPropNameInTable="DniColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaRetencion" msprop:Generator_UserColumnName="FechaRetencion" msprop:Generator_ColumnPropNameInRow="FechaRetencion" msprop:Generator_ColumnVarNameInTable="columnFechaRetencion" msprop:Generator_ColumnPropNameInTable="FechaRetencionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SerieRetencion" msprop:Generator_UserColumnName="SerieRetencion" msprop:Generator_ColumnPropNameInRow="SerieRetencion" msprop:Generator_ColumnVarNameInTable="columnSerieRetencion" msprop:Generator_ColumnPropNameInTable="SerieRetencionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroRetencion" msprop:Generator_UserColumnName="NumeroRetencion" msprop:Generator_ColumnPropNameInRow="NumeroRetencion" msprop:Generator_ColumnVarNameInTable="columnNumeroRetencion" msprop:Generator_ColumnPropNameInTable="NumeroRetencionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoDocumento" msprop:Generator_UserColumnName="TipoDocumento" msprop:Generator_ColumnPropNameInRow="TipoDocumento" msprop:Generator_ColumnVarNameInTable="columnTipoDocumento" msprop:Generator_ColumnPropNameInTable="TipoDocumentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SerieDocumento" msprop:Generator_UserColumnName="SerieDocumento" msprop:Generator_ColumnPropNameInRow="SerieDocumento" msprop:Generator_ColumnVarNameInTable="columnSerieDocumento" msprop:Generator_ColumnPropNameInTable="SerieDocumentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NumeroDocumento" msprop:Generator_UserColumnName="NumeroDocumento" msprop:Generator_ColumnPropNameInRow="NumeroDocumento" msprop:Generator_ColumnVarNameInTable="columnNumeroDocumento" msprop:Generator_ColumnPropNameInTable="NumeroDocumentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaDocumento" msprop:Generator_UserColumnName="FechaDocumento" msprop:Generator_ColumnPropNameInRow="FechaDocumento" msprop:Generator_ColumnVarNameInTable="columnFechaDocumento" msprop:Generator_ColumnPropNameInTable="FechaDocumentoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MontoPago" msprop:Generator_UserColumnName="MontoPago" msprop:Generator_ColumnPropNameInRow="MontoPago" msprop:Generator_ColumnVarNameInTable="columnMontoPago" msprop:Generator_ColumnPropNameInTable="MontoPagoColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Retencion" msprop:Generator_UserColumnName="Retencion" msprop:Generator_ColumnPropNameInRow="Retencion" msprop:Generator_ColumnVarNameInTable="columnRetencion" msprop:Generator_ColumnPropNameInTable="RetencionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoCambio" msprop:Generator_UserColumnName="TipoCambio" msprop:Generator_ColumnPropNameInRow="TipoCambio" msprop:Generator_ColumnVarNameInTable="columnTipoCambio" msprop:Generator_ColumnPropNameInTable="TipoCambioColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="IdMoneda" msprop:Generator_UserColumnName="IdMoneda" msprop:Generator_ColumnPropNameInRow="IdMoneda" msprop:Generator_ColumnVarNameInTable="columnIdMoneda" msprop:Generator_ColumnPropNameInTable="IdMonedaColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

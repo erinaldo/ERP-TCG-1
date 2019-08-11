@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ISL.AccesoDatos.d_ActividadNegocio" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ActividadNegocio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_BonificacionVehiculo" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_BonificacionVehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Cargo" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Cargo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_CategoriaServicio" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_CategoriaServicio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_CCPP" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABIAAAAA=</HashCode>
+      <FileName>General\d_CCPP.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Centro" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAEwAAEAEAAAAAAAAAAAEQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Centro.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Cliente" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAEwAAFAEAAAAAAAAAAAAUAAAAAAABACAAAA=</HashCode>
+      <FileName>General\d_Cliente.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ClienteProveedor" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ClienteProveedor.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Combo" Collapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAEAEAAAAAAAAAAAAQAAAAAAAAAAEAAA=</HashCode>
+      <FileName>General\d_Combo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ConceptoGasto" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ConceptoGasto.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ConceptosGenerales" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAEBAAAAAA=</HashCode>
+      <FileName>General\d_ConceptosGenerales.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Conexion" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>General\d_Conexion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ConfiguracionMTC" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ConfiguracionMTC.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ConfiguracionSis" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ConfiguracionSis.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ConfiguracionSisDet" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ConfiguracionSisDet.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ControlCargaPersonaES" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ControlCargaPersonaES.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ControlCargaVehiculoES" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ControlCargaVehiculoES.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ControlPersonaES" Collapsed="true">
+    <Position X="14.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ControlPersonaES.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ControlPersonaVehiculoES" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAABAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ControlPersonaVehiculoES.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ControlVehiculoES" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAACAABAAAAAA=</HashCode>
+      <FileName>General\d_ControlVehiculoES.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Correlativo" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAEAEAAAAAAAAAAAAQAAAAAAERAAAAAA=</HashCode>
+      <FileName>General\d_Correlativo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_CuotaDocumentoVehiculo" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_CuotaDocumentoVehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_CuotaDocVeh_Movimiento" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_CuotaDocVeh_Movimiento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Datos" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAgAEAAAAhAAACAAAAAQAAAAAAAQAAAAAA=</HashCode>
+      <FileName>General\d_Datos.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Departamento" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Departamento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_DetalleDocumentoVehiculo" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_DetalleDocumentoVehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_DetalleMaterialAsignacion" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_DetalleMaterialAsignacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Direccion" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Direccion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Direccion_EmpresaPersona" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAQA=</HashCode>
+      <FileName>General\d_Direccion_EmpresaPersona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Dispositivo" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Dispositivo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Distrito" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAEAAAA=</HashCode>
+      <FileName>General\d_Distrito.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_DocumentoImpuesto" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_DocumentoImpuesto.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_DocumentoVehicular" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQgAEQAAEAEAAAAAAAAACAAUAAAAEAgBAAAAAA=</HashCode>
+      <FileName>General\d_DocumentoVehicular.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_DocumentoVehicular_Documento" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAAAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_DocumentoVehicular_Documento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Email" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Email.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Empresa" Collapsed="true">
+    <Position X="14.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQUwAAGEEAAgAAABEAAAAAABAAIAABAAAACA=</HashCode>
+      <FileName>General\d_Empresa.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Estado" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAAAEAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>General\d_Estado.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Flota" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Flota.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_FondoFijo" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_FondoFijo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_HistorialRechazoOC" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_HistorialRechazoOC.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Impuesto" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAEQAAEAEAAAAAABAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Impuesto.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Lugar" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAEwAAMAEAAgAAQAJAAAAQAAAAABABAAIAAg=</HashCode>
+      <FileName>General\d_Lugar.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Marca" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABBAAAAA=</HashCode>
+      <FileName>General\d_Marca.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Material" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAABAAAAMwAAMAEAAAAAAAAAAAAQAAAAAEABAKAAAE=</HashCode>
+      <FileName>General\d_Material.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Material_DisenoNeu" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Material_DisenoNeu.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_MedioPago" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_MedioPago.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Modelo" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Modelo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ModeloFuncionalVehiculo" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ModeloFuncionalVehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Moneda" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Moneda.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_MotivoDocumento" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_MotivoDocumento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Ocupacion" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Ocupacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_OrdenAsignacion" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEACAIAAAAAAAAQAAAAAAABgAAAAA=</HashCode>
+      <FileName>General\d_OrdenAsignacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_OrdenAsignacion_Material" Collapsed="true">
+    <Position X="14.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAQAAAA=</HashCode>
+      <FileName>General\d_OrdenAsignacion_Material.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_OrdenAsignacion_UnidadAsignacion" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQBAAAAAABAAAAQA=</HashCode>
+      <FileName>General\d_OrdenAsignacion_UnidadAsignacion.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ParametroGeneral" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ParametroGeneral.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Persona" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAEAQUwAAHEEAAgAAAAEAAAAQABAAIAARAAAACA=</HashCode>
+      <FileName>General\d_Persona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_PersonaEmpresa_TipoPago" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_PersonaEmpresa_TipoPago.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Placa" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Placa.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ProcesoFlujoCaja" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ProcesoFlujoCaja.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ProcesoGlosa" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ProcesoGlosa.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ProcesoNegocio" Collapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAABAAIAAAASAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_ProcesoNegocio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ProcesoServicio" Collapsed="true">
+    <Position X="14.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAgA=</HashCode>
+      <FileName>General\d_ProcesoServicio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_ProcesoTipoDocumento" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAIAAQAAAAAAABAAAAgA=</HashCode>
+      <FileName>General\d_ProcesoTipoDocumento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Proveedor" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAEwAAHEEAAAAAAAEAAAAUAAAAAAAFACAAAA=</HashCode>
+      <FileName>General\d_Proveedor.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Provincia" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEUAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Provincia.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_RevisionTecnica" Collapsed="true">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_RevisionTecnica.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Ruta" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIACAAEQAAEAEAAAAAAAAAAQAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Ruta.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Servicio" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAECEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Servicio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Telefono" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Telefono.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoCambio" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoCambio.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoCarga" Collapsed="true">
+    <Position X="14.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoCarga.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoDocumento" Collapsed="true">
+    <Position X="0.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACEwAAEAEAAAABAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoDocumento.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoEmpresa" Collapsed="true">
+    <Position X="2.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoEmpresa.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoOrden" Collapsed="true">
+    <Position X="4" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoOrden.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoVehiculo" Collapsed="true">
+    <Position X="5.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEwAAEgEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoVehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoVia" Collapsed="true">
+    <Position X="7.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoVia.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_TipoZona" Collapsed="true">
+    <Position X="9.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_TipoZona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_Vehiculo" Collapsed="true">
+    <Position X="11" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBAAAAAAAE4AAEAEAAAAkAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\d_Vehiculo.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ISL.AccesoDatos.d_IncidenciasAutentificadas" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEQAAEAEAAAAAAAAAAAAQAAAAAAABAAAAAA=</HashCode>
+      <FileName>General\IncidenciasAutentificadas.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

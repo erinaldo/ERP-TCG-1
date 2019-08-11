@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEstadosGananciaPerdidaxFunc" targetNamespace="http://tempuri.org/dsEstadosGananciaPerdidaxFunc.xsd" xmlns:mstns="http://tempuri.org/dsEstadosGananciaPerdidaxFunc.xsd" xmlns="http://tempuri.org/dsEstadosGananciaPerdidaxFunc.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEstadosGananciaPerdidaxFunc" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEstadosGananciaPerdidaxFunc" msprop:Generator_UserDSName="dsEstadosGananciaPerdidaxFunc">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dt_Concepto" msprop:Generator_TableClassName="dt_ConceptoDataTable" msprop:Generator_TableVarName="tabledt_Concepto" msprop:Generator_RowChangedName="dt_ConceptoRowChanged" msprop:Generator_TablePropName="dt_Concepto" msprop:Generator_RowDeletingName="dt_ConceptoRowDeleting" msprop:Generator_RowChangingName="dt_ConceptoRowChanging" msprop:Generator_RowEvHandlerName="dt_ConceptoRowChangeEventHandler" msprop:Generator_RowDeletedName="dt_ConceptoRowDeleted" msprop:Generator_RowClassName="dt_ConceptoRow" msprop:Generator_UserTableName="dt_Concepto" msprop:Generator_RowEvArgName="dt_ConceptoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="Monto" msprop:Generator_ColumnVarNameInTable="columnMonto" msprop:Generator_ColumnPropNameInRow="Monto" msprop:Generator_ColumnPropNameInTable="MontoColumn" msprop:Generator_UserColumnName="Monto" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

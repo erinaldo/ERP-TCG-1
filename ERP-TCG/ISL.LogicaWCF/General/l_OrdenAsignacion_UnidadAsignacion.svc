@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_OrdenAsignacion_UnidadAsignacion" CodeBehind="l_OrdenAsignacion_UnidadAsignacion.svc.vb" %>

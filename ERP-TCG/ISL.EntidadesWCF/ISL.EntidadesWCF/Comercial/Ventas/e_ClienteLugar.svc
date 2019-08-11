@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_ClienteLugar" CodeBehind="e_ClienteLugar.svc.vb" %>

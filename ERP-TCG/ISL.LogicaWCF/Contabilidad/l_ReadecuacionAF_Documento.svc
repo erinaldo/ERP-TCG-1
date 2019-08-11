@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_ReadecuacionAF_Documento" CodeBehind="l_ReadecuacionAF_Documento.svc.vb" %>

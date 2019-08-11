@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://webservices.covisolweb/" targetNamespace="http://webservices.covisolweb/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="getConsumosTelepeaje" type="tns:getConsumosTelepeaje" />
+  <xs:element name="getConsumosTelepeajeResponse" type="tns:getConsumosTelepeajeResponse" />
+  <xs:element name="getFacturasTelepeaje" type="tns:getFacturasTelepeaje" />
+  <xs:element name="getFacturasTelepeajeResponse" type="tns:getFacturasTelepeajeResponse" />
+  <xs:element name="getListRecargas" type="tns:getListRecargas" />
+  <xs:element name="getListRecargasResponse" type="tns:getListRecargasResponse" />
+  <xs:element name="getListSaldoTarjetas" type="tns:getListSaldoTarjetas" />
+  <xs:element name="getListSaldoTarjetasResponse" type="tns:getListSaldoTarjetasResponse" />
+  <xs:element name="getListTarjetasRecPend" type="tns:getListTarjetasRecPend" />
+  <xs:element name="getListTarjetasRecPendResponse" type="tns:getListTarjetasRecPendResponse" />
+  <xs:complexType name="getConsumosTelepeaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getConsumosTelepeajeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:saldoTP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saldoTP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fechaHora" type="xs:string" />
+      <xs:element minOccurs="0" name="lugar" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="numerodoc" type="xs:decimal" />
+      <xs:element minOccurs="0" name="placa" type="xs:string" />
+      <xs:element minOccurs="0" name="seriedoc" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipodoc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListSaldoTarjetas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListSaldoTarjetasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjeta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tarjeta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entrada" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ncard" type="xs:string" />
+      <xs:element minOccurs="0" name="salida" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListRecargas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+      <xs:element minOccurs="0" name="arg4" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListRecargasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:saldo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="saldo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fechaHora" type="xs:string" />
+      <xs:element minOccurs="0" name="lugar" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+      <xs:element minOccurs="0" name="placa" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+      <xs:element minOccurs="0" name="nCard" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFacturasTelepeaje">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+      <xs:element minOccurs="0" name="arg2" type="xs:string" />
+      <xs:element minOccurs="0" name="arg3" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFacturasTelepeajeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:xDocumentoETP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="xDocumentoETP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codProducto" type="xs:string" />
+      <xs:element minOccurs="0" name="departamento" type="xs:string" />
+      <xs:element minOccurs="0" name="descProducto" type="xs:string" />
+      <xs:element minOccurs="0" name="descProducto1" type="xs:string" />
+      <xs:element minOccurs="0" name="direccionCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element minOccurs="0" name="empresa" type="tns:empresa" />
+      <xs:element minOccurs="0" name="estado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEmision" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaSubida" type="xs:string" />
+      <xs:element minOccurs="0" name="igv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="key" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="numeroDocCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="numeroRef" type="xs:decimal" />
+      <xs:element minOccurs="0" name="porcentajeigv" type="xs:decimal" />
+      <xs:element minOccurs="0" name="provincia" type="xs:string" />
+      <xs:element minOccurs="0" name="serie" type="xs:string" />
+      <xs:element minOccurs="0" name="serieRef" type="xs:string" />
+      <xs:element minOccurs="0" name="subTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoDocCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoMoneda" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoRef" type="xs:string" />
+      <xs:element minOccurs="0" name="tipoVenta" type="xs:string" />
+      <xs:element minOccurs="0" name="total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="url" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="valorResumen" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empresa">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contacto" type="xs:string" />
+      <xs:element minOccurs="0" name="departamento" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="provincia" type="xs:string" />
+      <xs:element minOccurs="0" name="ruc" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListTarjetasRecPend">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element minOccurs="0" name="arg1" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getListTarjetasRecPendResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarjetaRecPend" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tarjetaRecPend">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cantidad" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="ncard" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:decimal" />
+      <xs:element minOccurs="0" name="razonsocial" type="xs:string" />
+      <xs:element minOccurs="0" name="ruc" type="xs:string" />
+      <xs:element minOccurs="0" name="serie" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

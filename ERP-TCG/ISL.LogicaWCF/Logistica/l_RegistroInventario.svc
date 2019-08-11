@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_RegistroInventario" CodeBehind="l_RegistroInventario.svc.vb" %>

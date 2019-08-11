@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WCF_Cpe" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IWCF_Cpe_Mensaje_Inicio_InputMessage">
+    <wsdl:part name="parameters" element="tns:Mensaje_Inicio" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_Mensaje_Inicio_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Mensaje_InicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_Inicializar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Inicializar" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_Inicializar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InicializarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GenerarXML_CPE_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXML_CPE" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GenerarXML_CPE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerarXML_CPEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_EnviarXML_CPE_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarXML_CPE" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_EnviarXML_CPE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarXML_CPEResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_EnviarCPE_PortalConsultas_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCPE_PortalConsultas" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_EnviarCPE_PortalConsultas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarCPE_PortalConsultasResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GetStatus_Ticket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus_Ticket" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GetStatus_Ticket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus_TicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GetStatus_Documento_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus_Documento" />
+  </wsdl:message>
+  <wsdl:message name="IWCF_Cpe_GetStatus_Documento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatus_DocumentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IWCF_Cpe">
+    <wsdl:operation name="Mensaje_Inicio">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/Mensaje_Inicio" message="tns:IWCF_Cpe_Mensaje_Inicio_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/Mensaje_InicioResponse" message="tns:IWCF_Cpe_Mensaje_Inicio_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Inicializar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/Inicializar" message="tns:IWCF_Cpe_Inicializar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/InicializarResponse" message="tns:IWCF_Cpe_Inicializar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML_CPE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/GenerarXML_CPE" message="tns:IWCF_Cpe_GenerarXML_CPE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/GenerarXML_CPEResponse" message="tns:IWCF_Cpe_GenerarXML_CPE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML_CPE">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/EnviarXML_CPE" message="tns:IWCF_Cpe_EnviarXML_CPE_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/EnviarXML_CPEResponse" message="tns:IWCF_Cpe_EnviarXML_CPE_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCPE_PortalConsultas">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/EnviarCPE_PortalConsultas" message="tns:IWCF_Cpe_EnviarCPE_PortalConsultas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/EnviarCPE_PortalConsultasResponse" message="tns:IWCF_Cpe_EnviarCPE_PortalConsultas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_Ticket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/GetStatus_Ticket" message="tns:IWCF_Cpe_GetStatus_Ticket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/GetStatus_TicketResponse" message="tns:IWCF_Cpe_GetStatus_Ticket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_Documento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWCF_Cpe/GetStatus_Documento" message="tns:IWCF_Cpe_GetStatus_Documento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWCF_Cpe/GetStatus_DocumentoResponse" message="tns:IWCF_Cpe_GetStatus_Documento_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IWCF_Cpe" type="tns:IWCF_Cpe">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Mensaje_Inicio">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/Mensaje_Inicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Inicializar">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/Inicializar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerarXML_CPE">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/GenerarXML_CPE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarXML_CPE">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/EnviarXML_CPE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarCPE_PortalConsultas">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/EnviarCPE_PortalConsultas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_Ticket">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/GetStatus_Ticket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatus_Documento">
+      <soap:operation soapAction="http://tempuri.org/IWCF_Cpe/GetStatus_Documento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WCF_Cpe">
+    <wsdl:port name="BasicHttpBinding_IWCF_Cpe" binding="tns:BasicHttpBinding_IWCF_Cpe">
+      <soap:address location="http://10.1.0.12:82/WCF_Cpe.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

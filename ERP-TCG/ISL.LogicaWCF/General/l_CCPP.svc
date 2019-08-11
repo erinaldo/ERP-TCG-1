@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_CCPP" CodeBehind="l_CCPP.svc.vb" %>

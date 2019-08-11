@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fc8deebb-1690-4b2d-8e8a-132317487aee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.1.0.12:82/WCF_Cpe.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WCF_Cpe.xsd" MetadataType="Schema" ID="49399bbd-47f6-4156-8bb8-ab71edfb247a" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd1" />
+    <MetadataFile FileName="WCF_Cpe.wsdl" MetadataType="Wsdl" ID="5f9975b3-0838-4c6a-82dc-ad431c076d79" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?wsdl" />
+    <MetadataFile FileName="WCF_Cpe1.xsd" MetadataType="Schema" ID="52a4061a-6ef1-486c-8aa5-a071f15d8311" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd2" />
+    <MetadataFile FileName="WCF_Cpe.disco" MetadataType="Disco" ID="55c6e070-678e-4ccf-ae0b-62fd1472e2c0" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?disco" />
+    <MetadataFile FileName="WCF_Cpe2.xsd" MetadataType="Schema" ID="80217203-c1c6-4d12-b81c-e5fca795b709" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd0" />
+    <MetadataFile FileName="WCF_Cpe3.xsd" MetadataType="Schema" ID="8f7e8e3f-2650-41e2-805c-8f0bc5aded38" SourceId="1" SourceUrl="http://10.1.0.12:82/WCF_Cpe.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

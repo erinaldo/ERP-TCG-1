@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://webservices.covisolweb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="GetDatosService" targetNamespace="http://webservices.covisolweb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://recargas.covisol.com.pe:80/CovisolWeb/GetDatos?xsd=1" namespace="http://webservices.covisolweb/" />
+    </xsd:schema>
+  </types>
+  <message name="getListRecargas">
+    <part name="parameters" element="tns:getListRecargas" />
+  </message>
+  <message name="getListRecargasResponse">
+    <part name="parameters" element="tns:getListRecargasResponse" />
+  </message>
+  <message name="getConsumosTelepeaje">
+    <part name="parameters" element="tns:getConsumosTelepeaje" />
+  </message>
+  <message name="getConsumosTelepeajeResponse">
+    <part name="parameters" element="tns:getConsumosTelepeajeResponse" />
+  </message>
+  <message name="getFacturasTelepeaje">
+    <part name="parameters" element="tns:getFacturasTelepeaje" />
+  </message>
+  <message name="getFacturasTelepeajeResponse">
+    <part name="parameters" element="tns:getFacturasTelepeajeResponse" />
+  </message>
+  <message name="getListSaldoTarjetas">
+    <part name="parameters" element="tns:getListSaldoTarjetas" />
+  </message>
+  <message name="getListSaldoTarjetasResponse">
+    <part name="parameters" element="tns:getListSaldoTarjetasResponse" />
+  </message>
+  <message name="getListTarjetasRecPend">
+    <part name="parameters" element="tns:getListTarjetasRecPend" />
+  </message>
+  <message name="getListTarjetasRecPendResponse">
+    <part name="parameters" element="tns:getListTarjetasRecPendResponse" />
+  </message>
+  <portType name="GetDatos">
+    <operation name="getListRecargas">
+      <input wsam:Action="http://webservices.covisolweb/GetDatos/getListRecargasRequest" message="tns:getListRecargas" />
+      <output wsam:Action="http://webservices.covisolweb/GetDatos/getListRecargasResponse" message="tns:getListRecargasResponse" />
+    </operation>
+    <operation name="getConsumosTelepeaje">
+      <input wsam:Action="http://webservices.covisolweb/GetDatos/getConsumosTelepeajeRequest" message="tns:getConsumosTelepeaje" />
+      <output wsam:Action="http://webservices.covisolweb/GetDatos/getConsumosTelepeajeResponse" message="tns:getConsumosTelepeajeResponse" />
+    </operation>
+    <operation name="getFacturasTelepeaje">
+      <input wsam:Action="http://webservices.covisolweb/GetDatos/getFacturasTelepeajeRequest" message="tns:getFacturasTelepeaje" />
+      <output wsam:Action="http://webservices.covisolweb/GetDatos/getFacturasTelepeajeResponse" message="tns:getFacturasTelepeajeResponse" />
+    </operation>
+    <operation name="getListSaldoTarjetas">
+      <input wsam:Action="http://webservices.covisolweb/GetDatos/getListSaldoTarjetasRequest" message="tns:getListSaldoTarjetas" />
+      <output wsam:Action="http://webservices.covisolweb/GetDatos/getListSaldoTarjetasResponse" message="tns:getListSaldoTarjetasResponse" />
+    </operation>
+    <operation name="getListTarjetasRecPend">
+      <input wsam:Action="http://webservices.covisolweb/GetDatos/getListTarjetasRecPendRequest" message="tns:getListTarjetasRecPend" />
+      <output wsam:Action="http://webservices.covisolweb/GetDatos/getListTarjetasRecPendResponse" message="tns:getListTarjetasRecPendResponse" />
+    </operation>
+  </portType>
+  <binding name="GetDatosPortBinding" type="tns:GetDatos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getListRecargas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getConsumosTelepeaje">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFacturasTelepeaje">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getListSaldoTarjetas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getListTarjetasRecPend">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GetDatosService">
+    <port name="GetDatosPort" binding="tns:GetDatosPortBinding">
+      <soap:address location="http://recargas.covisol.com.pe:80/CovisolWeb/GetDatos" />
+    </port>
+  </service>
+</definitions>

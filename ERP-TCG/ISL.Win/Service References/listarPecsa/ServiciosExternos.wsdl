@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ListarConsumos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbrdocument" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="placa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaInicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarConsumosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarConsumosResult" type="tns:ArrayOfTransaccionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransaccionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransaccionInfo" nillable="true" type="tns:TransaccionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransaccionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Estacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Placa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FechaDocumento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Documento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Km" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tarjeta" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ListarEstaciones">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarEstacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarEstacionesResult" type="tns:ArrayOfSiteInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSiteInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SiteInfo" nillable="true" type="tns:SiteInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SiteInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Siteid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cityid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Countryid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addr1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdPais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdDepartamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdProvincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdDistrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IdRegion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pais" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addr2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fono1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fono2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Startdateinven" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enddateinven" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Adjust" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Userid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stknew" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stkmodify" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stkdelete" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stksend" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Stkreceive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="User1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="User3" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="User4" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="User5" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="User6" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="User7" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="User8" nillable="true" type="s:short" />
+          <s:element minOccurs="1" maxOccurs="1" name="User9" nillable="true" type="s:short" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ListarConsumosSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarConsumos" />
+  </wsdl:message>
+  <wsdl:message name="ListarConsumosSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarConsumosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarEstaciones" />
+  </wsdl:message>
+  <wsdl:message name="ListarEstacionesSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarEstacionesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosExternosSoap">
+    <wsdl:operation name="ListarConsumos">
+      <wsdl:input message="tns:ListarConsumosSoapIn" />
+      <wsdl:output message="tns:ListarConsumosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstaciones">
+      <wsdl:input message="tns:ListarEstacionesSoapIn" />
+      <wsdl:output message="tns:ListarEstacionesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosExternosSoap" type="tns:ServiciosExternosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarConsumos">
+      <soap:operation soapAction="http://tempuri.org/ListarConsumos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstaciones">
+      <soap:operation soapAction="http://tempuri.org/ListarEstaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosExternosSoap12" type="tns:ServiciosExternosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ListarConsumos">
+      <soap12:operation soapAction="http://tempuri.org/ListarConsumos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarEstaciones">
+      <soap12:operation soapAction="http://tempuri.org/ListarEstaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosExternos">
+    <wsdl:port name="ServiciosExternosSoap" binding="tns:ServiciosExternosSoap">
+      <soap:address location="http://app.pecsa.com.pe/pecsaempresaservicios/ServiciosExternos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosExternosSoap12" binding="tns:ServiciosExternosSoap12">
+      <soap12:address location="http://app.pecsa.com.pe/pecsaempresaservicios/ServiciosExternos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

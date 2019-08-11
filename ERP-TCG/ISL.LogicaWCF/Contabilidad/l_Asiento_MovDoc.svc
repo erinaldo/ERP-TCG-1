@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_Asiento_MovDoc" CodeBehind="l_Asiento_MovDoc.svc.vb" %>

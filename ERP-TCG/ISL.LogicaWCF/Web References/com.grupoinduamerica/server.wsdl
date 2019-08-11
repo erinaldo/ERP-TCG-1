@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:ReferenciaServicioFactura" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:ReferenciaServicioFactura" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:ReferenciaServicioFactura">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="enviardataRequest">
+    <wsdl:part name="accion" type="xsd:string" />
+    <wsdl:part name="envio" type="xsd:string" />
+    <wsdl:part name="id" type="xsd:string" />
+    <wsdl:part name="valor" type="xsd:string" />
+    <wsdl:part name="key" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="enviardataResponse">
+    <wsdl:part name="retorno" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="ReferenciaServicioFacturaPortType">
+    <wsdl:operation name="enviardata">
+      <documentation>Retorna datos</documentation>
+      <wsdl:input message="tns:enviardataRequest" />
+      <wsdl:output message="tns:enviardataResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReferenciaServicioFacturaBinding" type="tns:ReferenciaServicioFacturaPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="enviardata">
+      <soap:operation soapAction="urn:ReferenciaServicioFactura#enviardata" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:ReferenciaServicioFactura" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:ReferenciaServicioFactura" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReferenciaServicioFactura">
+    <wsdl:port name="ReferenciaServicioFacturaPort" binding="tns:ReferenciaServicioFacturaBinding">
+      <soap:address location="http://grupoinduamerica.com/isl/facturacion_electronica/server.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

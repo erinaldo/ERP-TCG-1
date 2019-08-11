@@ -1,0 +1,2477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8483DC1C-9CC3-431B-8997-B1C7D353EBFB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ISL.LogicaWCF</RootNamespace>
+    <AssemblyName>ISL.LogicaWCF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ISL.LogicaWCF.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>ISL.LogicaWCF.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Services">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Services.Client">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.ServiceModel" />
+    <Import Include="System.Runtime.Serialization" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Comercial\Compras\l_Compra.svc" />
+    <Content Include="Comercial\Compras\l_ControlEntregaMaterial.svc" />
+    <Content Include="Comercial\Compras\l_Cotizacion.svc" />
+    <Content Include="Comercial\Compras\l_CotizacionDetalleMat.svc" />
+    <Content Include="Comercial\Compras\l_CotizacionDetalleSer.svc" />
+    <Content Include="Comercial\Compras\l_Cotizacion_Proveedor.svc" />
+    <Content Include="Comercial\Compras\l_DocumentoSinAsociacion.svc" />
+    <Content Include="Comercial\Compras\l_EstadoRequerimiento.svc" />
+    <Content Include="Comercial\Compras\l_LetraCambio.svc" />
+    <Content Include="Comercial\Compras\l_MaterialesNegociados.svc" />
+    <Content Include="Comercial\Compras\l_MaterialesNegociadosDet.svc" />
+    <Content Include="Comercial\Compras\l_MotivoTraslado.svc" />
+    <Content Include="Comercial\Compras\l_OCMaterial_OSMaterial.svc" />
+    <Content Include="Comercial\Compras\l_OrdenAprobacion.svc" />
+    <Content Include="Comercial\Compras\l_OrdenCmpCotizacion.svc" />
+    <Content Include="Comercial\Compras\l_OrdenCmp_OrdenTrb.svc" />
+    <Content Include="Comercial\Compras\l_OrdenCompra.svc" />
+    <Content Include="Comercial\Compras\l_OrdenCompraMaterial.svc" />
+    <Content Include="Comercial\Compras\l_OrdenCompraServicio.svc" />
+    <Content Include="Comercial\Compras\l_Orden_Documento.svc" />
+    <Content Include="Comercial\Compras\l_Requerimiento.svc" />
+    <Content Include="Comercial\Compras\l_RequerimientoMaterial.svc" />
+    <Content Include="Comercial\Compras\l_RequerimientoServicio.svc" />
+    <Content Include="Comercial\Compras\l_TipoCompra.svc" />
+    <Content Include="Comercial\Compras\l_TipoOrdenCompra.svc" />
+    <Content Include="Comercial\Compras\l_TipoPago.svc" />
+    <Content Include="Comercial\Ventas\l_AlmacenMermas.svc" />
+    <Content Include="Comercial\Ventas\l_Bonificacion.svc" />
+    <Content Include="Comercial\Ventas\l_ClientePrima.svc" />
+    <Content Include="Comercial\Ventas\l_ClienteRutaCarga.svc" />
+    <Content Include="Comercial\Ventas\l_ClienteViajePrima.svc" />
+    <Content Include="Comercial\Ventas\l_ClienteViajePrimaCon.svc" />
+    <Content Include="Comercial\Ventas\l_ClienteViajePrimaDet.svc" />
+    <Content Include="Comercial\Ventas\l_ComunAyuda.svc" />
+    <Content Include="Comercial\Ventas\l_AplicaDetraccion.svc" />
+    <Content Include="Comercial\Ventas\l_BolsaViaje.svc" />
+    <Content Include="Comercial\Ventas\l_ControlMerma.svc" />
+    <Content Include="Comercial\Ventas\l_Demanda.svc" />
+    <Content Include="Comercial\Ventas\l_DemandaRapida.svc" />
+    <Content Include="Comercial\Ventas\l_Despacho.svc" />
+    <Content Include="Comercial\Ventas\l_Detraccion_Det.svc" />
+    <Content Include="Comercial\Ventas\l_DistanciaZona.svc" />
+    <Content Include="Comercial\Ventas\l_Flete.svc" />
+    <Content Include="Comercial\Ventas\l_GuiaRemitente.svc" />
+    <Content Include="Comercial\Ventas\l_GuiasControl.svc" />
+    <Content Include="Comercial\Ventas\l_GuiaTransportista.svc" />
+    <Content Include="Comercial\Ventas\l_GuiaTransportistaInterrumpida.svc" />
+    <Content Include="Comercial\Ventas\l_InformeDetrac.svc" />
+    <Content Include="Comercial\Ventas\l_InformeDetrac_Det.svc" />
+    <Content Include="Comercial\Ventas\l_Liquidacion.svc" />
+    <Content Include="Comercial\Ventas\l_MovimientoMermas.svc" />
+    <Content Include="Comercial\Ventas\l_Operacion.svc" />
+    <Content Include="Comercial\Ventas\l_OperacionesProceso.svc" />
+    <Content Include="Comercial\Ventas\l_ProcesarTarifasProceso.svc" />
+    <Content Include="Comercial\Ventas\l_ReporteDocumento.svc" />
+    <Content Include="Comercial\Ventas\l_ReporteRecorrido.svc" />
+    <Content Include="Comercial\Ventas\l_TarifasCliente.svc" />
+    <Content Include="Comercial\Ventas\l_TarifasProveedor.svc" />
+    <Content Include="Comercial\Ventas\l_VehiculoPilotoOperacion.svc" />
+    <Content Include="Comercial\Ventas\l_ViajesTerceros.svc" />
+    <Content Include="Comercial\Ventas\l_ZonaCombustible.svc" />
+    <Content Include="Comercial\Ventas\l_ZonaProceso.svc" />
+    <Content Include="Configuracion\l_Disponibilidad.svc" />
+    <Content Include="Contabilidad\l_ActivoFijo.svc" />
+    <Content Include="Contabilidad\l_AsientoModelo.svc" />
+    <Content Include="Contabilidad\l_AsientoModelo_ActividadNegocio.svc" />
+    <Content Include="Contabilidad\l_AsientoModelo_Referencia.svc" />
+    <Content Include="Contabilidad\l_CtaCtbleCatServicio.svc" />
+    <Content Include="Contabilidad\l_CtaCtbleSubFamiliaMat.svc" />
+    <Content Include="Contabilidad\l_CtaCtble_Concepto.svc" />
+    <Content Include="Contabilidad\l_DetalleAsientoModelo.svc" />
+    <Content Include="Contabilidad\l_ObligacionDocumento.svc" />
+    <Content Include="Contabilidad\l_DetalleLibroElectronico.svc" />
+    <Content Include="Contabilidad\l_Kardex.svc" />
+    <Content Include="Contabilidad\l_LibroElectronico.svc" />
+    <Content Include="Finanzas\l_ContratoFinanciero.svc" />
+    <Content Include="Finanzas\l_LimiteCredito.svc" />
+    <Content Include="Finanzas\l_FecLetras.svc" />
+    <Content Include="General\l_Bitacora.svc" />
+    <Content Include="General\l_AsignacionFlota.svc" />
+    <Content Include="General\l_CalculaTiempoServicio.svc" />
+    <Content Include="General\l_ConceptoPonderado.svc" />
+    <Content Include="General\l_ConfiguracionColumna.svc" />
+    <Content Include="General\l_ConfiguracionDato.svc" />
+    <Content Include="General\l_ConfiguracionTabla.svc" />
+    <Content Include="General\l_DetalleConceptoPonderado.svc" />
+    <Content Include="General\l_DocumentoVehicular_Documento.svc" />
+    <Content Include="General\l_EmpresaAportacion.svc" />
+    <Content Include="General\l_Feriados.svc" />
+    <Content Include="General\l_Formula.svc" />
+    <Content Include="General\l_Material_DisenoNeu.svc" />
+    <Content Include="General\l_MotivoCese.svc" />
+    <Content Include="General\l_Peaje.svc" />
+    <Content Include="General\l_PeajeTarifa.svc" />
+    <Content Include="General\l_RecargaPeaje.svc" />
+    <Content Include="General\l_RevisionTecnica.svc" />
+    <Content Include="General\l_BonificacionVehiculo.svc" />
+    <Content Include="General\l_CuotaDocumentoVehiculo.svc" />
+    <Content Include="General\l_ActividadNegocio.svc" />
+    <Content Include="General\l_Cargo.svc" />
+    <Content Include="General\l_CategoriaServicio.svc" />
+    <Content Include="General\l_CCPP.svc" />
+    <Content Include="General\l_Centro.svc" />
+    <Content Include="General\l_Cliente.svc" />
+    <Content Include="General\l_ClienteProveedor.svc" />
+    <Content Include="General\l_Combo.svc" />
+    <Content Include="General\l_ConceptoGasto.svc" />
+    <Content Include="General\l_ConceptosGenerales.svc" />
+    <Content Include="General\l_ConfiguracionMTC.svc" />
+    <Content Include="General\l_ConfiguracionSis.svc" />
+    <Content Include="General\l_ConfiguracionSisDet.svc" />
+    <Content Include="General\l_Correlativo.svc" />
+    <Content Include="General\l_Departamento.svc" />
+    <Content Include="General\l_DetalleDocumentoVehiculo.svc" />
+    <Content Include="General\l_DetalleMaterialAsignacion.svc" />
+    <Content Include="General\l_Direccion.svc" />
+    <Content Include="General\l_Direccion_EmpresaPersona.svc" />
+    <Content Include="General\l_Dispositivo.svc" />
+    <Content Include="General\l_Distrito.svc" />
+    <Content Include="General\l_DocumentoImpuesto.svc" />
+    <Content Include="General\l_DocumentoVehicular.svc" />
+    <Content Include="General\l_Email.svc" />
+    <Content Include="General\l_Empresa.svc" />
+    <Content Include="General\l_Estado.svc" />
+    <Content Include="General\l_Flota.svc" />
+    <Content Include="General\l_FondoFijo.svc" />
+    <Content Include="General\l_FuncionesGenerales.svc" />
+    <Content Include="General\l_HistorialRechazoOC.svc" />
+    <Content Include="General\l_Impuesto.svc" />
+    <Content Include="General\l_IncidenciasAutentificadas.svc" />
+    <Content Include="General\l_Lugar.svc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="General\l_Marca.svc" />
+    <Content Include="General\l_Material.svc" />
+    <Content Include="General\l_MedioPago.svc" />
+    <Content Include="General\l_Modelo.svc" />
+    <Content Include="General\l_ModeloFuncionalVehiculo.svc" />
+    <Content Include="General\l_Moneda.svc" />
+    <Content Include="General\l_MotivoDocumento.svc" />
+    <Content Include="General\l_Ocupacion.svc" />
+    <Content Include="General\l_OrdenAsignacion.svc" />
+    <Content Include="General\l_OrdenAsignacion_Material.svc" />
+    <Content Include="General\l_OrdenAsignacion_UnidadAsignacion.svc" />
+    <Content Include="General\l_ParametroGeneral.svc" />
+    <Content Include="General\l_Persona.svc" />
+    <Content Include="General\l_PersonaEmpresa_TipoPago.svc" />
+    <Content Include="General\l_Placa.svc" />
+    <Content Include="General\l_ProcesoFlujoCaja.svc" />
+    <Content Include="General\l_ProcesoGlosa.svc" />
+    <Content Include="General\l_ProcesoNegocio.svc" />
+    <Content Include="General\l_ProcesoServicio.svc" />
+    <Content Include="General\l_ProcesoTipoDocumento.svc" />
+    <Content Include="General\l_Proveedor.svc" />
+    <Content Include="General\l_Provincia.svc" />
+    <Content Include="General\l_Ruta.svc" />
+    <Content Include="General\l_RutaPeaje.svc" />
+    <Content Include="General\l_Servicio.svc" />
+    <Content Include="General\l_TarjetaMovimiento.svc" />
+    <Content Include="General\l_Telefono.svc" />
+    <Content Include="General\l_TipoCambio.svc" />
+    <Content Include="General\l_TipoCarga.svc" />
+    <Content Include="General\l_TipoDocumento.svc" />
+    <Content Include="General\l_TipoEmpresa.svc" />
+    <Content Include="General\l_TipoFeriado.svc" />
+    <Content Include="General\l_TipoOrden.svc" />
+    <Content Include="General\l_TipoVehiculo.svc" />
+    <Content Include="General\l_TipoZona.svc" />
+    <Content Include="General\l_CuotaDocVeh_Movimiento.svc" />
+    <Content Include="General\l_CuotaDocVehPago.svc" />
+    <Content Include="General\l_VehiculoTarjeta.svc" />
+    <Content Include="Logistica\l_CaracteristicaEspecial.svc" />
+    <Content Include="Logistica\l_CaracteristicaMaterial.svc" />
+    <Content Include="Logistica\l_CodigoBarraMaterial.svc" />
+    <Content Include="Contabilidad\l_DetalleModelo_Referencia.svc" />
+    <Content Include="Logistica\l_RendimientoCombustible.svc" />
+    <Content Include="Logistica\l_Surtidor.svc" />
+    <Content Include="Personal\l_AsistenciaPersonal.svc" />
+    <Content Include="Personal\l_BonificacionProduccion.svc" />
+    <Content Include="Personal\l_ConfiguracionPlanilla.svc" />
+    <Content Include="Personal\l_Contratos.svc" />
+    <Content Include="Personal\l_DerechoHabiente.svc" />
+    <Content Include="Personal\l_Descuentos.svc" />
+    <Content Include="Personal\l_DetalleConcepto.svc" />
+    <Content Include="Personal\l_DetalleConfiguracionPlanilla.svc" />
+    <Content Include="Personal\l_DetalleGratificacion.svc" />
+    <Content Include="Personal\l_DetallePagoAdicional.svc" />
+    <Content Include="Personal\l_DetallePlanilla.svc" />
+    <Content Include="Personal\l_DetallePlanillaPiloto.svc" />
+    <Content Include="Personal\l_DetallePLanillaVacaciones.svc" />
+    <Content Include="Personal\l_DetalleProduccionPiloto.svc" />
+    <Content Include="Personal\l_DetalleRentaQuinta.svc" />
+    <Content Include="Personal\l_ConsolidadoUtilidad.svc" />
+    <Content Include="Personal\l_DetalleUtilidad.svc" />
+    <Content Include="Personal\l_EquivalenciaRuta.svc" />
+    <Content Include="Personal\l_Gratificacion.svc" />
+    <Content Include="Personal\l_LiquidacionTrabajador.svc" />
+    <Content Include="Personal\l_ModalidadContrato.svc" />
+    <Content Include="Personal\l_MontoRuta.svc" />
+    <Content Include="Personal\l_OtrosDescuentos.svc" />
+    <Content Include="Personal\l_PagoAdicional.svc" />
+    <Content Include="Personal\l_Planilla.svc" />
+    <Content Include="Neumaticos\l_DetalleOrdenNeumatico.svc" />
+    <Content Include="Neumaticos\l_DetallePreliminar.svc" />
+    <Content Include="Neumaticos\l_DetalleRegistroDevolucion.svc" />
+    <Content Include="Neumaticos\l_PreliminarInspeccion.svc" />
+    <Content Include="Neumaticos\l_RegistroDevolucion.svc" />
+    <Content Include="Personal\l_AporteDescuento.svc" />
+    <Content Include="Personal\l_CuentaCtePersonal.svc" />
+    <Content Include="Personal\l_DetalleAporteDescuento.svc" />
+    <Content Include="Personal\l_FondoPensionTrabajador.svc" />
+    <Content Include="Personal\l_Horarios.svc" />
+    <Content Include="Personal\l_HorarioTrabajador.svc" />
+    <Content Include="Personal\l_PersonaDocumento.svc" />
+    <Content Include="Personal\l_PlanesEPS.svc" />
+    <Content Include="Personal\l_PlanillaEps.svc" />
+    <Content Include="Personal\l_PlanillaPiloto.svc" />
+    <Content Include="Personal\l_PlanillaPilotoDet.svc" />
+    <Content Include="Personal\l_PlanillaVacaciones.svc" />
+    <Content Include="Personal\l_PlanillaViaje.svc" />
+    <Content Include="Personal\l_ProduccionPiloto.svc" />
+    <Content Include="Personal\l_RegimenPensionario.svc" />
+    <Content Include="Personal\l_RegimenSalud.svc" />
+    <Content Include="Personal\l_ResumenAsistencia.svc" />
+    <Content Include="Personal\l_RetencionQuinta.svc" />
+    <Content Include="Personal\l_SeguroComplementario.svc" />
+    <Content Include="Personal\l_SeguroContraRiesgo.svc" />
+    <Content Include="Personal\l_SueldoTrabajador.svc" />
+    <Content Include="Personal\l_TipoHorario.svc" />
+    <Content Include="Personal\l_Utilidad.svc" />
+    <Content Include="SegPlanControl\l_AccidenteFoto.svc" />
+    <Content Include="SegPlanControl\l_AccidenteIncidencia.svc" />
+    <Content Include="SegPlanControl\l_Alarma.svc" />
+    <Content Include="SegPlanControl\l_Capacitacion.svc" />
+    <Content Include="SegPlanControl\l_DetalleCapacitacion.svc" />
+    <Content Include="SegPlanControl\l_EncargadoSeguimiento.svc" />
+    <Content Include="SegPlanControl\l_GradoIncidencia.svc" />
+    <Content Include="SegPlanControl\l_ImagenesDocumentos.svc" />
+    <Content Include="SegPlanControl\l_Incidencia.svc" />
+    <Content Include="SegPlanControl\l_IncidenciaMaestro.svc" />
+    <Content Include="SegPlanControl\l_Incidente.svc" />
+    <Content Include="SegPlanControl\l_PrioridadIncidencia.svc" />
+    <Content Include="SegPlanControl\l_Robo.svc" />
+    <Content Include="SegPlanControl\l_TipoIncidencia.svc" />
+    <Content Include="Seguridad\l_AccionSistema.svc" />
+    <Content Include="Seguridad\l_ActividadRestringida.svc" />
+    <Content Include="Seguridad\l_ActividadRestringido_Usuario.svc" />
+    <Content Include="Seguridad\l_TrabajadorSeguridad.svc" />
+    <Content Include="General\l_Vehiculo.svc" />
+    <Content Include="Logistica\l_Almacen.svc" />
+    <Content Include="Logistica\l_DetalleAsignacion.svc" />
+    <Content Include="Logistica\l_DetalleInventario.svc" />
+    <Content Include="Logistica\l_EstadoOrden.svc" />
+    <Content Include="Logistica\l_FamiliaMaterial.svc" />
+    <Content Include="Logistica\l_GuiaRemisionRemitente.svc" />
+    <Content Include="Logistica\l_GuiaRRemitenteMaterial.svc" />
+    <Content Include="Logistica\l_Historial.svc" />
+    <Content Include="Logistica\l_HistorialInventario.svc" />
+    <Content Include="Logistica\l_Inventario.svc" />
+    <Content Include="Logistica\l_MaterialAlmacen.svc" />
+    <Content Include="Logistica\l_MetasCombustible.svc" />
+    <Content Include="Logistica\l_MovimientoInventario.svc" />
+    <Content Include="Logistica\l_MovimientoInventarioAlmacen.svc" />
+    <Content Include="Logistica\l_Orden.svc" />
+    <Content Include="Logistica\l_OrdenMaterial.svc" />
+    <Content Include="Logistica\l_RegistroConsumoCombustible.svc" />
+    <Content Include="Logistica\l_RegistroInventario.svc" />
+    <Content Include="Logistica\l_RegistroInventarioDocumento.svc" />
+    <Content Include="Logistica\l_SubAlmacen.svc" />
+    <Content Include="Logistica\l_SubFamiliaMaterial.svc" />
+    <Content Include="Logistica\l_TipoMaterial.svc" />
+    <Content Include="Logistica\l_TipoMovimientoInventario.svc" />
+    <Content Include="Logistica\l_TipoUnidadMedida.svc" />
+    <Content Include="Logistica\l_UnidadMedida.svc" />
+    <Content Include="Logistica\l_Zona.svc" />
+    <Content Include="Personal\l_ControlPermisos.svc" />
+    <Content Include="SegPlanControl\l_AccidenteCarga.svc" />
+    <Content Include="SegPlanControl\l_AccidenteMaterial.svc" />
+    <Content Include="SegPlanControl\l_AccidentePersona.svc" />
+    <Content Include="SegPlanControl\l_AccidenteVehiculo.svc" />
+    <Content Include="Seguridad\l_Alerta.svc" />
+    <Content Include="Seguridad\l_AlertaDestino.svc" />
+    <Content Include="Seguridad\l_AlertaDetalle.svc" />
+    <Content Include="Seguridad\l_Auditoria.svc" />
+    <Content Include="Seguridad\l_ControlActividad.svc" />
+    <Content Include="Seguridad\l_ControlTurnoUsuario.svc" />
+    <Content Include="Seguridad\l_ControlUsuario.svc" />
+    <Content Include="Seguridad\l_DetalleEntornoTrabajo.svc" />
+    <Content Include="Seguridad\l_EntornoTrabajo.svc" />
+    <Content Include="Seguridad\l_Formulario.svc" />
+    <Content Include="Seguridad\l_MenuActividad.svc" />
+    <Content Include="Seguridad\l_MenuGrupo.svc" />
+    <Content Include="Seguridad\l_MenuItem.svc" />
+    <Content Include="Seguridad\l_MenuProceso.svc" />
+    <Content Include="Seguridad\l_MenuWeb.svc" />
+    <Content Include="Seguridad\l_Perfil.svc" />
+    <Content Include="Seguridad\l_PerfilActividadNegocio.svc" />
+    <Content Include="Seguridad\l_RegistrosEditados.svc" />
+    <Content Include="Seguridad\l_TipoVia.svc" />
+    <Content Include="Seguridad\l_TrabajoSQL.svc" />
+    <Content Include="Seguridad\l_Turno.svc" />
+    <Content Include="Seguridad\l_TurnoUsuario.svc" />
+    <Content Include="Seguridad\l_Usuario.svc" />
+    <Content Include="Seguridad\l_UsuarioPerfil.svc" />
+    <Content Include="Tesoreria\l_ChequeDocumento.svc" />
+    <Content Include="Tesoreria\l_ChequeEmitido.svc" />
+    <Content Include="Tesoreria\l_ChequesControl.svc" />
+    <Content Include="Tesoreria\l_ChequesTalonarios.svc" />
+    <Content Include="Tesoreria\l_CierreCaja.svc" />
+    <Content Include="Tesoreria\l_CierreCajaDet.svc" />
+    <Content Include="Tesoreria\l_CuadreCaja.svc" />
+    <Content Include="Tesoreria\l_CuadreCajaBolsa.svc" />
+    <Content Include="Tesoreria\l_CuadreCajaGasto.svc" />
+    <Content Include="Tesoreria\l_DepositoDetalle.svc" />
+    <Content Include="Mantenimiento\l_Actividad.svc" />
+    <Content Include="Mantenimiento\l_DetalleRegConformidadOT.svc" />
+    <Content Include="Mantenimiento\l_Equipo.svc" />
+    <Content Include="Mantenimiento\l_EstadoOT.svc" />
+    <Content Include="Mantenimiento\l_Mantenimiento.svc" />
+    <Content Include="Mantenimiento\l_MantenimientoActividad.svc" />
+    <Content Include="Mantenimiento\l_MantenimientoEquipo.svc" />
+    <Content Include="Mantenimiento\l_MantenimientoMaterial.svc" />
+    <Content Include="Mantenimiento\l_MantenimientoOcupacion.svc" />
+    <Content Include="Mantenimiento\l_MantenimientoServicio.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajoMaterial.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo_Actividad.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo_MantenimientoEquipo.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo_Material.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo_Recurso.svc" />
+    <Content Include="Mantenimiento\l_OrdenTrabajo_Servicio.svc" />
+    <Content Include="Mantenimiento\l_RegistroConformidadOT.svc" />
+    <Content Include="Mantenimiento\l_TipoEquipo.svc" />
+    <Content Include="Mantenimiento\l_TipoMantenimiento.svc" />
+    <Content Include="Neumaticos\l_ConfiguracionNeumatico.svc" />
+    <Content Include="Neumaticos\l_DetalleConfiguracionNeumatico.svc" />
+    <Content Include="Neumaticos\l_DetalleValorizacionNeumatico.svc" />
+    <Content Include="Neumaticos\l_DiseñoNeumatico.svc" />
+    <Content Include="Neumaticos\l_MedidaNeumatico.svc" />
+    <Content Include="Neumaticos\l_Motivo.svc" />
+    <Content Include="Neumaticos\l_MovimientoNeumatico.svc" />
+    <Content Include="Neumaticos\l_Neumatico.svc" />
+    <Content Include="Neumaticos\l_OperacionNeumatico.svc" />
+    <Content Include="Neumaticos\l_TipoNeumatico.svc" />
+    <Content Include="Neumaticos\l_ValorizacionNeumatico.svc" />
+    <Content Include="Neumaticos\l_VidaNeumatico.svc" />
+    <Content Include="SegPlanControl\l_ControlCargaPersonaES.svc" />
+    <Content Include="SegPlanControl\l_ControlCargaVehiculoES.svc" />
+    <Content Include="SegPlanControl\l_ControlPersonaES.svc" />
+    <Content Include="SegPlanControl\l_ControlPersonaVehiculoES.svc" />
+    <Content Include="SegPlanControl\l_ControlVehiculoES.svc" />
+    <Content Include="Tesoreria\l_Banco.svc" />
+    <Content Include="Tesoreria\l_BolsaRuta.svc" />
+    <Content Include="Tesoreria\l_Caja.svc" />
+    <Content Include="Tesoreria\l_CajaMonto.svc" />
+    <Content Include="Tesoreria\l_CajaTurno.svc" />
+    <Content Include="Tesoreria\l_CajaUsuario.svc" />
+    <Content Include="Tesoreria\l_ChequeContable.svc" />
+    <Content Include="Tesoreria\l_ChequexCobrar.svc" />
+    <Content Include="Tesoreria\l_ConceptoIngresos.svc" />
+    <Content Include="Personal\l_Concepto_Prestamo.svc" />
+    <Content Include="Tesoreria\l_CuentaBancaria.svc" />
+    <Content Include="Tesoreria\l_CuentaCorriente.svc" />
+    <Content Include="Tesoreria\l_CuentaFlujoCaja.svc" />
+    <Content Include="Tesoreria\l_CuentaPorCobrar.svc" />
+    <Content Include="Tesoreria\l_CuentaPorCobrarDetalle.svc" />
+    <Content Include="Tesoreria\l_CuentaxCyP.svc" />
+    <Content Include="Tesoreria\l_Denominacion.svc" />
+    <Content Include="Tesoreria\l_Deposito.svc" />
+    <Content Include="Tesoreria\l_DocumentoVenta.svc" />
+    <Content Include="Tesoreria\l_DocumentoVentaDetalle.svc" />
+    <Content Include="Tesoreria\l_FlujoCaja.svc" />
+    <Content Include="Tesoreria\l_GastoOperacion.svc" />
+    <Content Include="Tesoreria\l_GastoVehiculo.svc" />
+    <Content Include="Tesoreria\l_GastoViatico.svc" />
+    <Content Include="Tesoreria\l_Gasto_Caja.svc" />
+    <Content Include="Tesoreria\l_Gasto_RegistroConsumoCombustible.svc" />
+    <Content Include="Tesoreria\l_Grupo.svc" />
+    <Content Include="Tesoreria\l_GrupoAprobacion.svc" />
+    <Content Include="Tesoreria\l_GrupoAprobacionDet.svc" />
+    <Content Include="Tesoreria\l_GrupoDetalle.svc" />
+    <Content Include="Tesoreria\l_GrupoDetalleLiq.svc" />
+    <Content Include="Personal\l_GrupoSancion.svc" />
+    <Content Include="Tesoreria\l_Grupo_Asiento.svc" />
+    <Content Include="Tesoreria\l_MontoCaja.svc" />
+    <Content Include="Tesoreria\l_MontoFlujoDiario.svc" />
+    <Content Include="Tesoreria\l_MontoFlujoDiario_Det.svc" />
+    <Content Include="Tesoreria\l_MovCuentaCte.svc" />
+    <Content Include="Tesoreria\l_MovCuentaCte_Asiento.svc" />
+    <Content Include="Tesoreria\l_Movimiento.svc" />
+    <Content Include="Tesoreria\l_Movimiento_Administrativo.svc" />
+    <Content Include="Tesoreria\l_Movimiento_Flete.svc" />
+    <Content Include="Tesoreria\l_Movimiento_Viaje.svc" />
+    <Content Include="Tesoreria\l_OtrosIngresos.svc" />
+    <Content Include="Personal\l_PagoDescuento.svc" />
+    <Content Include="Personal\l_Prestamo.svc" />
+    <Content Include="Personal\l_PrestamoDetalle.svc" />
+    <Content Include="Comercial\Ventas\l_Seguimiento.svc" />
+    <Content Include="Comercial\Ventas\l_TiempoCiclo.svc" />
+    <Content Include="Comercial\Ventas\l_TipoVenta.svc" />
+    <Content Include="Comercial\Ventas\l_Venta.svc" />
+    <Content Include="Configuracion\l_Configuracion.svc" />
+    <Content Include="Configuracion\l_ReporteConfiguracion.svc" />
+    <Content Include="Contabilidad\l_Asiento.svc" />
+    <Content Include="Contabilidad\l_AsientoMovimiento.svc" />
+    <Content Include="Contabilidad\l_AsientoMov_MovDoc.svc" />
+    <Content Include="Contabilidad\l_Asiento_MovDoc.svc" />
+    <Content Include="Contabilidad\l_CentroCosto.svc" />
+    <Content Include="Contabilidad\l_CuentaAsociada.svc" />
+    <Content Include="Contabilidad\l_CuentaContable.svc" />
+    <Content Include="Contabilidad\l_CuentaItemGasto.svc" />
+    <Content Include="Contabilidad\l_CuentasGenerales.svc" />
+    <Content Include="Contabilidad\l_CuentaxPDocumentoRetencion.svc" />
+    <Content Include="Contabilidad\l_DetalleDocumento.svc" />
+    <Content Include="Contabilidad\l_DetalleDocumentoCombustible.svc" />
+    <Content Include="Contabilidad\l_DetalleDoc_GuiaTrans.svc" />
+    <Content Include="Contabilidad\l_DocumentoAsociado.svc" />
+    <Content Include="Contabilidad\l_DocumentoRetencion.svc" />
+    <Content Include="Contabilidad\l_EmpresaCuenta.svc" />
+    <Content Include="Contabilidad\l_GastoAsiento.svc" />
+    <Content Include="Contabilidad\l_ItemGasto.svc" />
+    <Content Include="Contabilidad\l_MaterialCuentaContable.svc" />
+    <Content Include="Contabilidad\l_MovimientoAnalisis.svc" />
+    <Content Include="Contabilidad\l_MovimientoCajaBanco.svc" />
+    <Content Include="Contabilidad\l_MovimientoDocumento.svc" />
+    <Content Include="Contabilidad\l_Periodo.svc" />
+    <Content Include="Contabilidad\l_ServicioCuentaContable.svc" />
+    <Content Include="Contabilidad\l_TablaContable.svc" />
+    <Content Include="Contabilidad\l_TablaContableDet.svc" />
+    <Content Include="Finanzas\l_AsientoMov_ObligacionFin.svc" />
+    <Content Include="Finanzas\l_leasing.svc" />
+    <Content Include="Finanzas\l_ObligacionFinanciera.svc" />
+    <Content Include="Finanzas\l_ObligacionPago.svc" />
+    <Content Include="Personal\l_Area.svc" />
+    <Content Include="Personal\l_Cuota.svc" />
+    <Content Include="Personal\l_HistorialLaboral.svc" />
+    <Content Include="Personal\l_MovimientoPersonal.svc" />
+    <Content Include="Personal\l_OcupacionTrabajador.svc" />
+    <Content Include="Personal\l_SituacionAdministrativa.svc" />
+    <Content Include="Personal\l_Trabajador.svc" />
+    <Content Include="SegPlanControl\l_Accidente.svc" />
+    <Content Include="Tesoreria\l_PrestamosCuenta.svc" />
+    <Content Include="Personal\l_Prestamo_Sancion.svc" />
+    <Content Include="Tesoreria\l_Saldo.svc" />
+    <Content Include="Tesoreria\l_SaldoCtaCorriente.svc" />
+    <Content Include="Personal\l_Sancion.svc" />
+    <Content Include="Tesoreria\l_TipoGasto.svc" />
+    <Content Include="Tesoreria\l_TipoGastoDetalle.svc" />
+    <Content Include="Tesoreria\l_Transferencia.svc" />
+    <Content Include="Tesoreria\l_ValesRendir.svc" />
+    <Content Include="Tesoreria\Reporte\l_MovimientoCaja.svc" />
+    <Content Include="Tesoreria\Reporte\l_ReporteCajaDiario.svc" />
+    <Content Include="Tesoreria\Reporte\l_ReporteFlete.svc" />
+    <Content Include="Tesoreria\Reporte\l_ReporteFlujoBanco.svc" />
+    <Content Include="Tesoreria\Reporte\l_ReporteFondoFijo.svc" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comercial\Compras\Il_Compra.vb" />
+    <Compile Include="Comercial\Compras\Il_ControlEntregaMaterial.vb" />
+    <Compile Include="Comercial\Compras\Il_Cotizacion.vb" />
+    <Compile Include="Comercial\Compras\Il_CotizacionDetalleMat.vb" />
+    <Compile Include="Comercial\Compras\Il_CotizacionDetalleSer.vb" />
+    <Compile Include="Comercial\Compras\Il_Cotizacion_Proveedor.vb" />
+    <Compile Include="Comercial\Compras\Il_DocumentoSinAsociacion.vb" />
+    <Compile Include="Comercial\Compras\Il_EstadoRequerimiento.vb" />
+    <Compile Include="Comercial\Compras\Il_LetraCambio.vb" />
+    <Compile Include="Comercial\Compras\Il_MaterialesNegociados.vb" />
+    <Compile Include="Comercial\Compras\Il_MaterialesNegociadosDet.vb" />
+    <Compile Include="Comercial\Compras\Il_MotivoTraslado.vb" />
+    <Compile Include="Comercial\Compras\Il_OCMaterial_OSMaterial.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenAprobacion.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenCmpCotizacion.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenCmp_OrdenTrb.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenCompra.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenCompraMaterial.vb" />
+    <Compile Include="Comercial\Compras\Il_OrdenCompraServicio.vb" />
+    <Compile Include="Comercial\Compras\Il_Orden_Documento.vb" />
+    <Compile Include="Comercial\Compras\Il_Requerimiento.vb" />
+    <Compile Include="Comercial\Compras\Il_RequerimientoMaterial.vb" />
+    <Compile Include="Comercial\Compras\Il_RequerimientoServicio.vb" />
+    <Compile Include="Comercial\Compras\Il_TipoCompra.vb" />
+    <Compile Include="Comercial\Compras\Il_TipoOrdenCompra.vb" />
+    <Compile Include="Comercial\Compras\Il_TipoPago.vb" />
+    <Compile Include="Comercial\Compras\l_Compra.svc.vb">
+      <DependentUpon>l_Compra.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_ControlEntregaMaterial.svc.vb">
+      <DependentUpon>l_ControlEntregaMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_Cotizacion.svc.vb">
+      <DependentUpon>l_Cotizacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_CotizacionDetalleMat.svc.vb">
+      <DependentUpon>l_CotizacionDetalleMat.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_CotizacionDetalleSer.svc.vb">
+      <DependentUpon>l_CotizacionDetalleSer.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_Cotizacion_Proveedor.svc.vb">
+      <DependentUpon>l_Cotizacion_Proveedor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_DocumentoSinAsociacion.svc.vb">
+      <DependentUpon>l_DocumentoSinAsociacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_EstadoRequerimiento.svc.vb">
+      <DependentUpon>l_EstadoRequerimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_LetraCambio.svc.vb">
+      <DependentUpon>l_LetraCambio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_MaterialesNegociados.svc.vb">
+      <DependentUpon>l_MaterialesNegociados.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_MaterialesNegociadosDet.svc.vb">
+      <DependentUpon>l_MaterialesNegociadosDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_MotivoTraslado.svc.vb">
+      <DependentUpon>l_MotivoTraslado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OCMaterial_OSMaterial.svc.vb">
+      <DependentUpon>l_OCMaterial_OSMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenAprobacion.svc.vb">
+      <DependentUpon>l_OrdenAprobacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenCmpCotizacion.svc.vb">
+      <DependentUpon>l_OrdenCmpCotizacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenCmp_OrdenTrb.svc.vb">
+      <DependentUpon>l_OrdenCmp_OrdenTrb.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenCompra.svc.vb">
+      <DependentUpon>l_OrdenCompra.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenCompraMaterial.svc.vb">
+      <DependentUpon>l_OrdenCompraMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_OrdenCompraServicio.svc.vb">
+      <DependentUpon>l_OrdenCompraServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_Orden_Documento.svc.vb">
+      <DependentUpon>l_Orden_Documento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_Requerimiento.svc.vb">
+      <DependentUpon>l_Requerimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_RequerimientoMaterial.svc.vb">
+      <DependentUpon>l_RequerimientoMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_RequerimientoServicio.svc.vb">
+      <DependentUpon>l_RequerimientoServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_TipoCompra.svc.vb">
+      <DependentUpon>l_TipoCompra.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_TipoOrdenCompra.svc.vb">
+      <DependentUpon>l_TipoOrdenCompra.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Compras\l_TipoPago.svc.vb">
+      <DependentUpon>l_TipoPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\Il_AlmacenMermas.vb" />
+    <Compile Include="Comercial\Ventas\Il_Bonificacion.vb" />
+    <Compile Include="Comercial\Ventas\Il_ClientePrima.vb" />
+    <Compile Include="Comercial\Ventas\Il_ClienteRutaCarga.vb" />
+    <Compile Include="Comercial\Ventas\Il_ClienteViajePrima.vb" />
+    <Compile Include="Comercial\Ventas\Il_ClienteViajePrimaCon.vb" />
+    <Compile Include="Comercial\Ventas\Il_ClienteViajePrimaDet.vb" />
+    <Compile Include="Comercial\Ventas\Il_ComunAyuda.vb" />
+    <Compile Include="Comercial\Ventas\Il_AplicaDetraccion.vb" />
+    <Compile Include="Comercial\Ventas\Il_BolsaViaje.vb" />
+    <Compile Include="Comercial\Ventas\Il_ControlMerma.vb" />
+    <Compile Include="Comercial\Ventas\Il_Despacho.vb" />
+    <Compile Include="Comercial\Ventas\Il_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\Il_Liquidacion.vb" />
+    <Compile Include="Comercial\Ventas\Il_MovimientoMermas.vb" />
+    <Compile Include="Comercial\Ventas\Il_OperacionesProceso.vb" />
+    <Compile Include="Comercial\Ventas\Il_ProcesarTarifasProceso.vb" />
+    <Compile Include="Comercial\Ventas\Il_ReporteDocumento.vb" />
+    <Compile Include="Comercial\Ventas\Il_ReporteRecorrido.vb" />
+    <Compile Include="Comercial\Ventas\Il_TarifasCliente.vb" />
+    <Compile Include="Comercial\Ventas\Il_TarifasProveedor.vb" />
+    <Compile Include="Comercial\Ventas\Il_VehiculoPilotoOperacion.vb" />
+    <Compile Include="Comercial\Ventas\Il_ViajesTerceros.vb" />
+    <Compile Include="Comercial\Ventas\Il_ZonaCombustible.vb" />
+    <Compile Include="Comercial\Ventas\Il_ZonaProceso.vb" />
+    <Compile Include="Comercial\Ventas\l_AlmacenMermas.svc.vb">
+      <DependentUpon>l_AlmacenMermas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Bonificacion.svc.vb">
+      <DependentUpon>l_Bonificacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ClientePrima.svc.vb">
+      <DependentUpon>l_ClientePrima.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ClienteRutaCarga.svc.vb">
+      <DependentUpon>l_ClienteRutaCarga.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ClienteViajePrima.svc.vb">
+      <DependentUpon>l_ClienteViajePrima.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ClienteViajePrimaCon.svc.vb">
+      <DependentUpon>l_ClienteViajePrimaCon.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ClienteViajePrimaDet.svc.vb">
+      <DependentUpon>l_ClienteViajePrimaDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ComunAyuda.svc.vb">
+      <DependentUpon>l_ComunAyuda.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\Il_Demanda.vb" />
+    <Compile Include="Comercial\Ventas\Il_DemandaRapida.vb" />
+    <Compile Include="Comercial\Ventas\Il_Detraccion_Det.vb" />
+    <Compile Include="Comercial\Ventas\Il_Flete.vb" />
+    <Compile Include="Comercial\Ventas\Il_GuiaRemitente.vb" />
+    <Compile Include="Comercial\Ventas\Il_GuiasControl.vb" />
+    <Compile Include="Comercial\Ventas\Il_GuiaTransportista.vb" />
+    <Compile Include="Comercial\Ventas\Il_GuiaTransportistaInterrumpida.vb" />
+    <Compile Include="Comercial\Ventas\Il_InformeDetrac.vb" />
+    <Compile Include="Comercial\Ventas\Il_InformeDetrac_Det.vb" />
+    <Compile Include="Comercial\Ventas\Il_Operacion.vb" />
+    <Compile Include="Comercial\Ventas\l_ControlMerma.svc.vb">
+      <DependentUpon>l_ControlMerma.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Despacho.svc.vb">
+      <DependentUpon>l_Despacho.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_DistanciaZona.svc.vb">
+      <DependentUpon>l_DistanciaZona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Liquidacion.svc.vb">
+      <DependentUpon>l_Liquidacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_MovimientoMermas.svc.vb">
+      <DependentUpon>l_MovimientoMermas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_OperacionesProceso.svc.vb">
+      <DependentUpon>l_OperacionesProceso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ProcesarTarifasProceso.svc.vb">
+      <DependentUpon>l_ProcesarTarifasProceso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ReporteDocumento.svc.vb">
+      <DependentUpon>l_ReporteDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ReporteRecorrido.svc.vb">
+      <DependentUpon>l_ReporteRecorrido.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_TarifasCliente.svc.vb">
+      <DependentUpon>l_TarifasCliente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_TarifasProveedor.svc.vb">
+      <DependentUpon>l_TarifasProveedor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_VehiculoPilotoOperacion.svc.vb">
+      <DependentUpon>l_VehiculoPilotoOperacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ViajesTerceros.svc.vb">
+      <DependentUpon>l_ViajesTerceros.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ZonaCombustible.svc.vb">
+      <DependentUpon>l_ZonaCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_ZonaProceso.svc.vb">
+      <DependentUpon>l_ZonaProceso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Il_Disponibilidad.vb" />
+    <Compile Include="Configuracion\l_Disponibilidad.svc.vb">
+      <DependentUpon>l_Disponibilidad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\Il_ActivoFijo.vb" />
+    <Compile Include="Contabilidad\Il_AsientoModelo.vb" />
+    <Compile Include="Contabilidad\Il_AsientoModelo_ActividadNegocio.vb" />
+    <Compile Include="Contabilidad\Il_AsientoModelo_Referencia.vb" />
+    <Compile Include="Contabilidad\Il_CtaCtbleCatServicio.vb" />
+    <Compile Include="Contabilidad\Il_CtaCtbleSubFamiliaMat.vb" />
+    <Compile Include="Contabilidad\Il_CtaCtble_Concepto.vb" />
+    <Compile Include="Contabilidad\Il_DetalleAsientoModelo.vb" />
+    <Compile Include="Contabilidad\Il_ObligacionDocumento.vb" />
+    <Compile Include="Contabilidad\Il_DetalleLibroElectronico.vb" />
+    <Compile Include="Contabilidad\Il_Kardex.vb" />
+    <Compile Include="Contabilidad\Il_LibroElectronico.vb" />
+    <Compile Include="Contabilidad\l_ActivoFijo.svc.vb">
+      <DependentUpon>l_ActivoFijo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_AsientoModelo.svc.vb">
+      <DependentUpon>l_AsientoModelo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_AsientoModelo_ActividadNegocio.svc.vb">
+      <DependentUpon>l_AsientoModelo_ActividadNegocio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_AsientoModelo_Referencia.svc.vb">
+      <DependentUpon>l_AsientoModelo_Referencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CtaCtbleCatServicio.svc.vb">
+      <DependentUpon>l_CtaCtbleCatServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CtaCtbleSubFamiliaMat.svc.vb">
+      <DependentUpon>l_CtaCtbleSubFamiliaMat.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CtaCtble_Concepto.svc.vb">
+      <DependentUpon>l_CtaCtble_Concepto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DetalleAsientoModelo.svc.vb">
+      <DependentUpon>l_DetalleAsientoModelo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_ObligacionDocumento.svc.vb">
+      <DependentUpon>l_ObligacionDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DetalleLibroElectronico.svc.vb">
+      <DependentUpon>l_DetalleLibroElectronico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_LibroElectronico.svc.vb">
+      <DependentUpon>l_LibroElectronico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Il_ContratoFinanciero.vb" />
+    <Compile Include="Finanzas\Il_LimiteCredito.vb" />
+    <Compile Include="Contabilidad\l_Kardex.svc.vb">
+      <DependentUpon>l_Kardex.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Il_FecLetras.vb" />
+    <Compile Include="Finanzas\l_ContratoFinanciero.svc.vb">
+      <DependentUpon>l_ContratoFinanciero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\l_LimiteCredito.svc.vb">
+      <DependentUpon>l_LimiteCredito.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\l_FecLetras.svc.vb">
+      <DependentUpon>l_FecLetras.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\Il_Bitacora.vb" />
+    <Compile Include="General\Il_Peaje.vb" />
+    <Compile Include="General\Il_PeajeTarifa.vb" />
+    <Compile Include="General\Il_RecargaPeaje.vb" />
+    <Compile Include="General\Il_RutaPeaje.vb" />
+    <Compile Include="General\Il_TarjetaMovimiento.vb" />
+    <Compile Include="General\Il_VehiculoTarjeta.vb" />
+    <Compile Include="General\l_Bitacora.svc.vb">
+      <DependentUpon>l_Bitacora.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\Il_AsignacionFlota.vb" />
+    <Compile Include="General\Il_CalculaTiempoServicio.vb" />
+    <Compile Include="General\Il_ConceptoPonderado.vb" />
+    <Compile Include="General\Il_ConfiguracionColumna.vb" />
+    <Compile Include="General\Il_ConfiguracionDato.vb" />
+    <Compile Include="General\Il_ConfiguracionTabla.vb" />
+    <Compile Include="General\Il_DetalleConceptoPonderado.vb" />
+    <Compile Include="General\Il_DocumentoVehicular_Documento.vb" />
+    <Compile Include="General\Il_EmpresaAportacion.vb" />
+    <Compile Include="General\Il_Feriados.vb" />
+    <Compile Include="General\Il_Formula.vb" />
+    <Compile Include="General\Il_Material_DisenoNeu.vb" />
+    <Compile Include="General\Il_MotivoCese.vb" />
+    <Compile Include="General\Il_TipoFeriado.vb" />
+    <Compile Include="General\Il_CuotaDocVeh_Movimiento.vb" />
+    <Compile Include="General\Il_CuotaDocVehPago.vb" />
+    <Compile Include="General\l_AsignacionFlota.svc.vb">
+      <DependentUpon>l_AsignacionFlota.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_CalculaTiempoServicio.svc.vb">
+      <DependentUpon>l_CalculaTiempoServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConceptoPonderado.svc.vb">
+      <DependentUpon>l_ConceptoPonderado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionColumna.svc.vb">
+      <DependentUpon>l_ConfiguracionColumna.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionDato.svc.vb">
+      <DependentUpon>l_ConfiguracionDato.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionTabla.svc.vb">
+      <DependentUpon>l_ConfiguracionTabla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DetalleConceptoPonderado.svc.vb">
+      <DependentUpon>l_DetalleConceptoPonderado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DocumentoVehicular_Documento.svc.vb">
+      <DependentUpon>l_DocumentoVehicular_Documento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_EmpresaAportacion.svc.vb">
+      <DependentUpon>l_EmpresaAportacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Feriados.svc.vb">
+      <DependentUpon>l_Feriados.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Formula.svc.vb">
+      <DependentUpon>l_Formula.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Material_DisenoNeu.svc.vb">
+      <DependentUpon>l_Material_DisenoNeu.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_MotivoCese.svc.vb">
+      <DependentUpon>l_MotivoCese.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Peaje.svc.vb">
+      <DependentUpon>l_Peaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_PeajeTarifa.svc.vb">
+      <DependentUpon>l_PeajeTarifa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_RecargaPeaje.svc.vb">
+      <DependentUpon>l_RecargaPeaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_RevisionTecnica.svc.vb">
+      <DependentUpon>l_RevisionTecnica.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\Il_RevisionTecnica.vb" />
+    <Compile Include="General\l_BonificacionVehiculo.svc.vb">
+      <DependentUpon>l_BonificacionVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\Il_BonificacionVehiculo.vb" />
+    <Compile Include="General\Il_HistorialRechazoOC.vb" />
+    <Compile Include="General\Il_IncidenciasAutentificadas.vb" />
+    <Compile Include="General\l_CuotaDocumentoVehiculo.svc.vb">
+      <DependentUpon>l_CuotaDocumentoVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\Il_CuotaDocumentoVehiculo.vb" />
+    <Compile Include="General\Il_ActividadNegocio.vb" />
+    <Compile Include="General\Il_Cargo.vb" />
+    <Compile Include="General\Il_CategoriaServicio.vb" />
+    <Compile Include="General\Il_CCPP.vb" />
+    <Compile Include="General\Il_Centro.vb" />
+    <Compile Include="General\Il_Cliente.vb" />
+    <Compile Include="General\Il_ClienteProveedor.vb" />
+    <Compile Include="General\Il_Combo.vb" />
+    <Compile Include="General\Il_ConceptoGasto.vb" />
+    <Compile Include="General\Il_ConceptosGenerales.vb" />
+    <Compile Include="General\Il_ConfiguracionMTC.vb" />
+    <Compile Include="General\Il_ConfiguracionSis.vb" />
+    <Compile Include="General\Il_ConfiguracionSisDet.vb" />
+    <Compile Include="General\Il_Correlativo.vb" />
+    <Compile Include="General\Il_Departamento.vb" />
+    <Compile Include="General\Il_DetalleDocumentoVehiculo.vb" />
+    <Compile Include="General\Il_DetalleMaterialAsignacion.vb" />
+    <Compile Include="General\Il_Direccion.vb" />
+    <Compile Include="General\Il_Direccion_EmpresaPersona.vb" />
+    <Compile Include="General\Il_Dispositivo.vb" />
+    <Compile Include="General\Il_Distrito.vb" />
+    <Compile Include="General\Il_DocumentoImpuesto.vb" />
+    <Compile Include="General\Il_DocumentoVehicular.vb" />
+    <Compile Include="General\Il_Email.vb" />
+    <Compile Include="General\Il_Empresa.vb" />
+    <Compile Include="General\Il_Estado.vb" />
+    <Compile Include="General\Il_Flota.vb" />
+    <Compile Include="General\Il_FondoFijo.vb" />
+    <Compile Include="General\Il_FuncionesGenerales.vb" />
+    <Compile Include="General\Il_Impuesto.vb" />
+    <Compile Include="General\Il_Lugar.vb" />
+    <Compile Include="General\Il_Marca.vb" />
+    <Compile Include="General\Il_Material.vb" />
+    <Compile Include="General\Il_MedioPago.vb" />
+    <Compile Include="General\Il_Modelo.vb" />
+    <Compile Include="General\Il_ModeloFuncionalVehiculo.vb" />
+    <Compile Include="General\Il_Moneda.vb" />
+    <Compile Include="General\Il_MotivoDocumento.vb" />
+    <Compile Include="General\Il_Ocupacion.vb" />
+    <Compile Include="General\Il_OrdenAsignacion.vb" />
+    <Compile Include="General\Il_OrdenAsignacion_Material.vb" />
+    <Compile Include="General\Il_OrdenAsignacion_UnidadAsignacion.vb" />
+    <Compile Include="General\Il_ParametroGeneral.vb" />
+    <Compile Include="General\Il_Persona.vb" />
+    <Compile Include="General\Il_PersonaEmpresa_TipoPago.vb" />
+    <Compile Include="General\Il_Placa.vb" />
+    <Compile Include="General\Il_ProcesoFlujoCaja.vb" />
+    <Compile Include="General\Il_ProcesoGlosa.vb" />
+    <Compile Include="General\Il_ProcesoNegocio.vb" />
+    <Compile Include="General\Il_ProcesoServicio.vb" />
+    <Compile Include="General\Il_ProcesoTipoDocumento.vb" />
+    <Compile Include="General\Il_Proveedor.vb" />
+    <Compile Include="General\Il_Provincia.vb" />
+    <Compile Include="General\Il_Ruta.vb" />
+    <Compile Include="General\Il_Servicio.vb" />
+    <Compile Include="General\Il_Telefono.vb" />
+    <Compile Include="General\Il_TipoCambio.vb" />
+    <Compile Include="General\Il_TipoCarga.vb" />
+    <Compile Include="General\Il_TipoDocumento.vb" />
+    <Compile Include="General\Il_TipoEmpresa.vb" />
+    <Compile Include="General\Il_TipoOrden.vb" />
+    <Compile Include="General\Il_TipoVehiculo.vb" />
+    <Compile Include="General\Il_TipoZona.vb" />
+    <Compile Include="General\l_RutaPeaje.svc.vb">
+      <DependentUpon>l_RutaPeaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TarjetaMovimiento.svc.vb">
+      <DependentUpon>l_TarjetaMovimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoFeriado.svc.vb">
+      <DependentUpon>l_TipoFeriado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_CuotaDocVeh_Movimiento.svc.vb">
+      <DependentUpon>l_CuotaDocVeh_Movimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_CuotaDocVehPago.svc.vb">
+      <DependentUpon>l_CuotaDocVehPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\Il_DetalleModelo_Referencia.vb" />
+    <Compile Include="General\l_VehiculoTarjeta.svc.vb">
+      <DependentUpon>l_VehiculoTarjeta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Il_RendimientoCombustible.vb" />
+    <Compile Include="Logistica\Il_Surtidor.vb" />
+    <Compile Include="Contabilidad\l_DetalleModelo_Referencia.svc.vb">
+      <DependentUpon>l_DetalleModelo_Referencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_RendimientoCombustible.svc.vb">
+      <DependentUpon>l_RendimientoCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_Surtidor.svc.vb">
+      <DependentUpon>l_Surtidor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Il_AsistenciaPersonal.vb" />
+    <Compile Include="Personal\Il_BonificacionProduccion.vb" />
+    <Compile Include="Personal\Il_Contratos.vb" />
+    <Compile Include="Personal\Il_ConfiguracionPlanilla.vb" />
+    <Compile Include="Personal\Il_DerechoHabiente.vb" />
+    <Compile Include="Personal\Il_Descuentos.vb" />
+    <Compile Include="Personal\Il_DetalleConcepto.vb" />
+    <Compile Include="Personal\Il_DetalleConfiguracionPlanilla.vb" />
+    <Compile Include="Personal\Il_DetalleGratificacion.vb" />
+    <Compile Include="Personal\Il_DetallePagoAdicional.vb" />
+    <Compile Include="Personal\Il_DetallePlanilla.vb" />
+    <Compile Include="Personal\Il_DetallePlanillaPiloto.vb" />
+    <Compile Include="Personal\Il_DetallePLanillaVacaciones.vb" />
+    <Compile Include="Personal\Il_DetalleProduccionPiloto.vb" />
+    <Compile Include="Personal\Il_DetalleRentaQuinta.vb" />
+    <Compile Include="Personal\Il_ConsolidadoUtilidad.vb" />
+    <Compile Include="Personal\Il_DetalleUtilidad.vb" />
+    <Compile Include="Personal\Il_EquivalenciaRuta.vb" />
+    <Compile Include="Personal\Il_Gratificacion.vb" />
+    <Compile Include="Personal\Il_LiquidacionTrabajador.vb" />
+    <Compile Include="Personal\Il_ModalidadContrato.vb" />
+    <Compile Include="Personal\Il_MontoRuta.vb" />
+    <Compile Include="Personal\Il_OtrosDescuentos.vb" />
+    <Compile Include="Personal\Il_PagoAdicional.vb" />
+    <Compile Include="Personal\Il_Planilla.vb" />
+    <Compile Include="Logistica\Il_CaracteristicaEspecial.vb" />
+    <Compile Include="Logistica\Il_CaracteristicaMaterial.vb" />
+    <Compile Include="Logistica\Il_CodigoBarraMaterial.vb" />
+    <Compile Include="Logistica\l_CaracteristicaEspecial.svc.vb">
+      <DependentUpon>l_CaracteristicaEspecial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_CaracteristicaMaterial.svc.vb">
+      <DependentUpon>l_CaracteristicaMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_CodigoBarraMaterial.svc.vb">
+      <DependentUpon>l_CodigoBarraMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Il_PlanillaEps.vb" />
+    <Compile Include="Personal\Il_PlanillaPiloto.vb" />
+    <Compile Include="Personal\Il_PlanillaPilotoDet.vb" />
+    <Compile Include="Personal\Il_PlanillaVacaciones.vb" />
+    <Compile Include="Personal\Il_PlanillaViaje.vb" />
+    <Compile Include="Personal\Il_ProduccionPiloto.vb" />
+    <Compile Include="Personal\Il_RegimenSalud.vb" />
+    <Compile Include="Personal\Il_ResumenAsistencia.vb" />
+    <Compile Include="Personal\Il_RetencionQuinta.vb" />
+    <Compile Include="Personal\Il_SeguroComplementario.vb" />
+    <Compile Include="Personal\Il_SeguroContraRiesgo.vb" />
+    <Compile Include="Personal\Il_Utilidad.vb" />
+    <Compile Include="Personal\l_AsistenciaPersonal.svc.vb">
+      <DependentUpon>l_AsistenciaPersonal.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_BonificacionProduccion.svc.vb">
+      <DependentUpon>l_BonificacionProduccion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_ConfiguracionPlanilla.svc.vb">
+      <DependentUpon>l_ConfiguracionPlanilla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Contratos.svc.vb">
+      <DependentUpon>l_Contratos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DerechoHabiente.svc.vb">
+      <DependentUpon>l_DerechoHabiente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Descuentos.svc.vb">
+      <DependentUpon>l_Descuentos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleConcepto.svc.vb">
+      <DependentUpon>l_DetalleConcepto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleConfiguracionPlanilla.svc.vb">
+      <DependentUpon>l_DetalleConfiguracionPlanilla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleGratificacion.svc.vb">
+      <DependentUpon>l_DetalleGratificacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetallePagoAdicional.svc.vb">
+      <DependentUpon>l_DetallePagoAdicional.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetallePlanilla.svc.vb">
+      <DependentUpon>l_DetallePlanilla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetallePlanillaPiloto.svc.vb">
+      <DependentUpon>l_DetallePlanillaPiloto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetallePLanillaVacaciones.svc.vb">
+      <DependentUpon>l_DetallePLanillaVacaciones.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleProduccionPiloto.svc.vb">
+      <DependentUpon>l_DetalleProduccionPiloto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleRentaQuinta.svc.vb">
+      <DependentUpon>l_DetalleRentaQuinta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_ConsolidadoUtilidad.svc.vb">
+      <DependentUpon>l_ConsolidadoUtilidad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleUtilidad.svc.vb">
+      <DependentUpon>l_DetalleUtilidad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_EquivalenciaRuta.svc.vb">
+      <DependentUpon>l_EquivalenciaRuta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Gratificacion.svc.vb">
+      <DependentUpon>l_Gratificacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_LiquidacionTrabajador.svc.vb">
+      <DependentUpon>l_LiquidacionTrabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_ModalidadContrato.svc.vb">
+      <DependentUpon>l_ModalidadContrato.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_MontoRuta.svc.vb">
+      <DependentUpon>l_MontoRuta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_OtrosDescuentos.svc.vb">
+      <DependentUpon>l_OtrosDescuentos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PagoAdicional.svc.vb">
+      <DependentUpon>l_PagoAdicional.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Planilla.svc.vb">
+      <DependentUpon>l_Planilla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\Il_DetalleOrdenNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_DetallePreliminar.vb" />
+    <Compile Include="Neumaticos\Il_DetalleRegistroDevolucion.vb" />
+    <Compile Include="Neumaticos\Il_PreliminarInspeccion.vb" />
+    <Compile Include="Neumaticos\Il_RegistroDevolucion.vb" />
+    <Compile Include="Neumaticos\l_DetalleOrdenNeumatico.svc.vb">
+      <DependentUpon>l_DetalleOrdenNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_DetallePreliminar.svc.vb">
+      <DependentUpon>l_DetallePreliminar.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_DetalleRegistroDevolucion.svc.vb">
+      <DependentUpon>l_DetalleRegistroDevolucion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_PreliminarInspeccion.svc.vb">
+      <DependentUpon>l_PreliminarInspeccion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_RegistroDevolucion.svc.vb">
+      <DependentUpon>l_RegistroDevolucion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Il_AporteDescuento.vb" />
+    <Compile Include="Personal\Il_CuentaCtePersonal.vb" />
+    <Compile Include="Personal\Il_DetalleAporteDescuento.vb" />
+    <Compile Include="Personal\Il_FondoPensionTrabajador.vb" />
+    <Compile Include="Personal\Il_Horarios.vb" />
+    <Compile Include="Personal\Il_HorarioTrabajador.vb" />
+    <Compile Include="Personal\Il_PersonaDocumento.vb" />
+    <Compile Include="Personal\Il_PlanesEPS.vb" />
+    <Compile Include="Personal\Il_RegimenPensionario.vb" />
+    <Compile Include="Personal\Il_SueldoTrabajador.vb" />
+    <Compile Include="Personal\Il_TipoHorario.vb" />
+    <Compile Include="Personal\l_AporteDescuento.svc.vb">
+      <DependentUpon>l_AporteDescuento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_CuentaCtePersonal.svc.vb">
+      <DependentUpon>l_CuentaCtePersonal.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_DetalleAporteDescuento.svc.vb">
+      <DependentUpon>l_DetalleAporteDescuento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_FondoPensionTrabajador.svc.vb">
+      <DependentUpon>l_FondoPensionTrabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Horarios.svc.vb">
+      <DependentUpon>l_Horarios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_HorarioTrabajador.svc.vb">
+      <DependentUpon>l_HorarioTrabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PersonaDocumento.svc.vb">
+      <DependentUpon>l_PersonaDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanesEPS.svc.vb">
+      <DependentUpon>l_PlanesEPS.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanillaEps.svc.vb">
+      <DependentUpon>l_PlanillaEps.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanillaPiloto.svc.vb">
+      <DependentUpon>l_PlanillaPiloto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanillaPilotoDet.svc.vb">
+      <DependentUpon>l_PlanillaPilotoDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanillaVacaciones.svc.vb">
+      <DependentUpon>l_PlanillaVacaciones.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PlanillaViaje.svc.vb">
+      <DependentUpon>l_PlanillaViaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_ProduccionPiloto.svc.vb">
+      <DependentUpon>l_ProduccionPiloto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_RegimenPensionario.svc.vb">
+      <DependentUpon>l_RegimenPensionario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_RegimenSalud.svc.vb">
+      <DependentUpon>l_RegimenSalud.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_ResumenAsistencia.svc.vb">
+      <DependentUpon>l_ResumenAsistencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_RetencionQuinta.svc.vb">
+      <DependentUpon>l_RetencionQuinta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_SeguroComplementario.svc.vb">
+      <DependentUpon>l_SeguroComplementario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_SeguroContraRiesgo.svc.vb">
+      <DependentUpon>l_SeguroContraRiesgo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_SueldoTrabajador.svc.vb">
+      <DependentUpon>l_SueldoTrabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_TipoHorario.svc.vb">
+      <DependentUpon>l_TipoHorario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Utilidad.svc.vb">
+      <DependentUpon>l_Utilidad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\Il_AccidenteFoto.vb" />
+    <Compile Include="SegPlanControl\Il_AccidenteIncidencia.vb" />
+    <Compile Include="SegPlanControl\Il_Alarma.vb" />
+    <Compile Include="SegPlanControl\Il_Capacitacion.vb" />
+    <Compile Include="SegPlanControl\Il_DetalleCapacitacion.vb" />
+    <Compile Include="SegPlanControl\Il_EncargadoSeguimiento.vb" />
+    <Compile Include="SegPlanControl\Il_GradoIncidencia.vb" />
+    <Compile Include="SegPlanControl\Il_ImagenesDocumentos.vb" />
+    <Compile Include="SegPlanControl\Il_Incidencia.vb" />
+    <Compile Include="SegPlanControl\Il_IncidenciaMaestro.vb" />
+    <Compile Include="SegPlanControl\Il_Incidente.vb" />
+    <Compile Include="SegPlanControl\Il_PrioridadIncidencia.vb" />
+    <Compile Include="SegPlanControl\Il_Robo.vb" />
+    <Compile Include="SegPlanControl\Il_TipoIncidencia.vb" />
+    <Compile Include="SegPlanControl\l_AccidenteFoto.svc.vb">
+      <DependentUpon>l_AccidenteFoto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_AccidenteIncidencia.svc.vb">
+      <DependentUpon>l_AccidenteIncidencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_Alarma.svc.vb">
+      <DependentUpon>l_Alarma.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_Capacitacion.svc.vb">
+      <DependentUpon>l_Capacitacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_DetalleCapacitacion.svc.vb">
+      <DependentUpon>l_DetalleCapacitacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_EncargadoSeguimiento.svc.vb">
+      <DependentUpon>l_EncargadoSeguimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_GradoIncidencia.svc.vb">
+      <DependentUpon>l_GradoIncidencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_ImagenesDocumentos.svc.vb">
+      <DependentUpon>l_ImagenesDocumentos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_Incidencia.svc.vb">
+      <DependentUpon>l_Incidencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_IncidenciaMaestro.svc.vb">
+      <DependentUpon>l_IncidenciaMaestro.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_Incidente.svc.vb">
+      <DependentUpon>l_Incidente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_PrioridadIncidencia.svc.vb">
+      <DependentUpon>l_PrioridadIncidencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_Robo.svc.vb">
+      <DependentUpon>l_Robo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_TipoIncidencia.svc.vb">
+      <DependentUpon>l_TipoIncidencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Il_AccionSistema.vb" />
+    <Compile Include="Seguridad\Il_ActividadRestringida.vb" />
+    <Compile Include="Seguridad\Il_ActividadRestringido_Usuario.vb" />
+    <Compile Include="Seguridad\Il_TrabajadorSeguridad.vb" />
+    <Compile Include="General\Il_Vehiculo.vb" />
+    <Compile Include="General\l_ActividadNegocio.svc.vb">
+      <DependentUpon>l_ActividadNegocio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Cargo.svc.vb">
+      <DependentUpon>l_Cargo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_CategoriaServicio.svc.vb">
+      <DependentUpon>l_CategoriaServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_CCPP.svc.vb">
+      <DependentUpon>l_CCPP.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Centro.svc.vb">
+      <DependentUpon>l_Centro.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Cliente.svc.vb">
+      <DependentUpon>l_Cliente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ClienteProveedor.svc.vb">
+      <DependentUpon>l_ClienteProveedor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Combo.svc.vb">
+      <DependentUpon>l_Combo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConceptoGasto.svc.vb">
+      <DependentUpon>l_ConceptoGasto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConceptosGenerales.svc.vb">
+      <DependentUpon>l_ConceptosGenerales.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionMTC.svc.vb">
+      <DependentUpon>l_ConfiguracionMTC.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionSis.svc.vb">
+      <DependentUpon>l_ConfiguracionSis.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ConfiguracionSisDet.svc.vb">
+      <DependentUpon>l_ConfiguracionSisDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Correlativo.svc.vb">
+      <DependentUpon>l_Correlativo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Departamento.svc.vb">
+      <DependentUpon>l_Departamento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DetalleDocumentoVehiculo.svc.vb">
+      <DependentUpon>l_DetalleDocumentoVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DetalleMaterialAsignacion.svc.vb">
+      <DependentUpon>l_DetalleMaterialAsignacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Direccion.svc.vb">
+      <DependentUpon>l_Direccion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Direccion_EmpresaPersona.svc.vb">
+      <DependentUpon>l_Direccion_EmpresaPersona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Dispositivo.svc.vb">
+      <DependentUpon>l_Dispositivo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Distrito.svc.vb">
+      <DependentUpon>l_Distrito.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DocumentoImpuesto.svc.vb">
+      <DependentUpon>l_DocumentoImpuesto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_DocumentoVehicular.svc.vb">
+      <DependentUpon>l_DocumentoVehicular.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Email.svc.vb">
+      <DependentUpon>l_Email.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Empresa.svc.vb">
+      <DependentUpon>l_Empresa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Estado.svc.vb">
+      <DependentUpon>l_Estado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Flota.svc.vb">
+      <DependentUpon>l_Flota.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_FondoFijo.svc.vb">
+      <DependentUpon>l_FondoFijo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_FuncionesGenerales.svc.vb">
+      <DependentUpon>l_FuncionesGenerales.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_HistorialRechazoOC.svc.vb">
+      <DependentUpon>l_HistorialRechazoOC.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Impuesto.svc.vb">
+      <DependentUpon>l_Impuesto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_IncidenciasAutentificadas.svc.vb">
+      <DependentUpon>l_IncidenciasAutentificadas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Lugar.svc.vb">
+      <DependentUpon>l_Lugar.svc</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="General\l_Marca.svc.vb">
+      <DependentUpon>l_Marca.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Material.svc.vb">
+      <DependentUpon>l_Material.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_MedioPago.svc.vb">
+      <DependentUpon>l_MedioPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Modelo.svc.vb">
+      <DependentUpon>l_Modelo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ModeloFuncionalVehiculo.svc.vb">
+      <DependentUpon>l_ModeloFuncionalVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Moneda.svc.vb">
+      <DependentUpon>l_Moneda.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_MotivoDocumento.svc.vb">
+      <DependentUpon>l_MotivoDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Ocupacion.svc.vb">
+      <DependentUpon>l_Ocupacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_OrdenAsignacion.svc.vb">
+      <DependentUpon>l_OrdenAsignacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_OrdenAsignacion_Material.svc.vb">
+      <DependentUpon>l_OrdenAsignacion_Material.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_OrdenAsignacion_UnidadAsignacion.svc.vb">
+      <DependentUpon>l_OrdenAsignacion_UnidadAsignacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ParametroGeneral.svc.vb">
+      <DependentUpon>l_ParametroGeneral.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Persona.svc.vb">
+      <DependentUpon>l_Persona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_PersonaEmpresa_TipoPago.svc.vb">
+      <DependentUpon>l_PersonaEmpresa_TipoPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Placa.svc.vb">
+      <DependentUpon>l_Placa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ProcesoFlujoCaja.svc.vb">
+      <DependentUpon>l_ProcesoFlujoCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ProcesoGlosa.svc.vb">
+      <DependentUpon>l_ProcesoGlosa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ProcesoNegocio.svc.vb">
+      <DependentUpon>l_ProcesoNegocio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ProcesoServicio.svc.vb">
+      <DependentUpon>l_ProcesoServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ProcesoTipoDocumento.svc.vb">
+      <DependentUpon>l_ProcesoTipoDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Proveedor.svc.vb">
+      <DependentUpon>l_Proveedor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Provincia.svc.vb">
+      <DependentUpon>l_Provincia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Ruta.svc.vb">
+      <DependentUpon>l_Ruta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Servicio.svc.vb">
+      <DependentUpon>l_Servicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Telefono.svc.vb">
+      <DependentUpon>l_Telefono.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoCambio.svc.vb">
+      <DependentUpon>l_TipoCambio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoCarga.svc.vb">
+      <DependentUpon>l_TipoCarga.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoDocumento.svc.vb">
+      <DependentUpon>l_TipoDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoEmpresa.svc.vb">
+      <DependentUpon>l_TipoEmpresa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoOrden.svc.vb">
+      <DependentUpon>l_TipoOrden.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoVehiculo.svc.vb">
+      <DependentUpon>l_TipoVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TipoZona.svc.vb">
+      <DependentUpon>l_TipoZona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_AccionSistema.svc.vb">
+      <DependentUpon>l_AccionSistema.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_ActividadRestringida.svc.vb">
+      <DependentUpon>l_ActividadRestringida.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_ActividadRestringido_Usuario.svc.vb">
+      <DependentUpon>l_ActividadRestringido_Usuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_TrabajadorSeguridad.svc.vb">
+      <DependentUpon>l_TrabajadorSeguridad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_Vehiculo.svc.vb">
+      <DependentUpon>l_Vehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\Il_FamiliaMaterial.vb" />
+    <Compile Include="Logistica\Il_GuiaRemisionRemitente.vb" />
+    <Compile Include="Logistica\Il_GuiaRRemitenteMaterial.vb" />
+    <Compile Include="Logistica\Il_Historial.vb" />
+    <Compile Include="Logistica\Il_HistorialInventario.vb" />
+    <Compile Include="Logistica\Il_Inventario.vb" />
+    <Compile Include="Logistica\Il_MaterialAlmacen.vb" />
+    <Compile Include="Logistica\Il_MovimientoInventario.vb" />
+    <Compile Include="Logistica\Il_MovimientoInventarioAlmacen.vb" />
+    <Compile Include="Logistica\Il_Orden.vb" />
+    <Compile Include="Logistica\Il_OrdenMaterial.vb" />
+    <Compile Include="Logistica\Il_RegistroConsumoCombustible.vb" />
+    <Compile Include="Logistica\Il_RegistroInventario.vb" />
+    <Compile Include="Logistica\Il_RegistroInventarioDocumento.vb" />
+    <Compile Include="Logistica\Il_SubAlmacen.vb" />
+    <Compile Include="Logistica\Il_SubFamiliaMaterial.vb" />
+    <Compile Include="Logistica\Il_TipoMaterial.vb" />
+    <Compile Include="Logistica\Il_TipoMovimientoInventario.vb" />
+    <Compile Include="Logistica\Il_TipoUnidadMedida.vb" />
+    <Compile Include="Logistica\Il_UnidadMedida.vb" />
+    <Compile Include="Logistica\Il_Zona.vb" />
+    <Compile Include="Logistica\l_FamiliaMaterial.svc.vb">
+      <DependentUpon>l_FamiliaMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_GuiaRemisionRemitente.svc.vb">
+      <DependentUpon>l_GuiaRemisionRemitente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_GuiaRRemitenteMaterial.svc.vb">
+      <DependentUpon>l_GuiaRRemitenteMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_Historial.svc.vb">
+      <DependentUpon>l_Historial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_HistorialInventario.svc.vb">
+      <DependentUpon>l_HistorialInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_Inventario.svc.vb">
+      <DependentUpon>l_Inventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_MaterialAlmacen.svc.vb">
+      <DependentUpon>l_MaterialAlmacen.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_MovimientoInventario.svc.vb">
+      <DependentUpon>l_MovimientoInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_MovimientoInventarioAlmacen.svc.vb">
+      <DependentUpon>l_MovimientoInventarioAlmacen.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_Orden.svc.vb">
+      <DependentUpon>l_Orden.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_OrdenMaterial.svc.vb">
+      <DependentUpon>l_OrdenMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_RegistroConsumoCombustible.svc.vb">
+      <DependentUpon>l_RegistroConsumoCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_RegistroInventario.svc.vb">
+      <DependentUpon>l_RegistroInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_RegistroInventarioDocumento.svc.vb">
+      <DependentUpon>l_RegistroInventarioDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_SubAlmacen.svc.vb">
+      <DependentUpon>l_SubAlmacen.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_SubFamiliaMaterial.svc.vb">
+      <DependentUpon>l_SubFamiliaMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_TipoMaterial.svc.vb">
+      <DependentUpon>l_TipoMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_TipoMovimientoInventario.svc.vb">
+      <DependentUpon>l_TipoMovimientoInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_TipoUnidadMedida.svc.vb">
+      <DependentUpon>l_TipoUnidadMedida.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_UnidadMedida.svc.vb">
+      <DependentUpon>l_UnidadMedida.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_Zona.svc.vb">
+      <DependentUpon>l_Zona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Il_ControlPermisos.vb" />
+    <Compile Include="Personal\l_ControlPermisos.svc.vb">
+      <DependentUpon>l_ControlPermisos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\Il_AccidenteCarga.vb" />
+    <Compile Include="SegPlanControl\Il_AccidenteMaterial.vb" />
+    <Compile Include="SegPlanControl\Il_AccidentePersona.vb" />
+    <Compile Include="SegPlanControl\Il_AccidenteVehiculo.vb" />
+    <Compile Include="SegPlanControl\l_AccidenteCarga.svc.vb">
+      <DependentUpon>l_AccidenteCarga.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_AccidenteMaterial.svc.vb">
+      <DependentUpon>l_AccidenteMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_AccidentePersona.svc.vb">
+      <DependentUpon>l_AccidentePersona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_AccidenteVehiculo.svc.vb">
+      <DependentUpon>l_AccidenteVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Il_Alerta.vb" />
+    <Compile Include="Seguridad\Il_AlertaDestino.vb" />
+    <Compile Include="Seguridad\Il_AlertaDetalle.vb" />
+    <Compile Include="Seguridad\Il_Auditoria.vb" />
+    <Compile Include="Seguridad\Il_ControlActividad.vb" />
+    <Compile Include="Seguridad\Il_ControlTurnoUsuario.vb" />
+    <Compile Include="Seguridad\Il_ControlUsuario.vb" />
+    <Compile Include="Seguridad\Il_DetalleEntornoTrabajo.vb" />
+    <Compile Include="Seguridad\Il_EntornoTrabajo.vb" />
+    <Compile Include="Seguridad\Il_Formulario.vb" />
+    <Compile Include="Seguridad\Il_MenuActividad.vb" />
+    <Compile Include="Seguridad\Il_MenuGrupo.vb" />
+    <Compile Include="Seguridad\Il_MenuItem.vb" />
+    <Compile Include="Seguridad\Il_MenuProceso.vb" />
+    <Compile Include="Seguridad\Il_MenuWeb.vb" />
+    <Compile Include="Seguridad\Il_Perfil.vb" />
+    <Compile Include="Seguridad\Il_PerfilActividadNegocio.vb" />
+    <Compile Include="Seguridad\Il_RegistrosEditados.vb" />
+    <Compile Include="Seguridad\Il_TipoVia.vb" />
+    <Compile Include="Seguridad\Il_TrabajoSQL.vb" />
+    <Compile Include="Seguridad\Il_Turno.vb" />
+    <Compile Include="Seguridad\Il_TurnoUsuario.vb" />
+    <Compile Include="Seguridad\Il_Usuario.vb" />
+    <Compile Include="Seguridad\Il_UsuarioPerfil.vb" />
+    <Compile Include="Seguridad\l_Alerta.svc.vb">
+      <DependentUpon>l_Alerta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_AlertaDestino.svc.vb">
+      <DependentUpon>l_AlertaDestino.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_AlertaDetalle.svc.vb">
+      <DependentUpon>l_AlertaDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_Auditoria.svc.vb">
+      <DependentUpon>l_Auditoria.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_ControlActividad.svc.vb">
+      <DependentUpon>l_ControlActividad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_ControlTurnoUsuario.svc.vb">
+      <DependentUpon>l_ControlTurnoUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_ControlUsuario.svc.vb">
+      <DependentUpon>l_ControlUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_DetalleEntornoTrabajo.svc.vb">
+      <DependentUpon>l_DetalleEntornoTrabajo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_EntornoTrabajo.svc.vb">
+      <DependentUpon>l_EntornoTrabajo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_Formulario.svc.vb">
+      <DependentUpon>l_Formulario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_MenuActividad.svc.vb">
+      <DependentUpon>l_MenuActividad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_MenuGrupo.svc.vb">
+      <DependentUpon>l_MenuGrupo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_MenuItem.svc.vb">
+      <DependentUpon>l_MenuItem.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_MenuProceso.svc.vb">
+      <DependentUpon>l_MenuProceso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_MenuWeb.svc.vb">
+      <DependentUpon>l_MenuWeb.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_Perfil.svc.vb">
+      <DependentUpon>l_Perfil.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_PerfilActividadNegocio.svc.vb">
+      <DependentUpon>l_PerfilActividadNegocio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_RegistrosEditados.svc.vb">
+      <DependentUpon>l_RegistrosEditados.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_TipoVia.svc.vb">
+      <DependentUpon>l_TipoVia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_TrabajoSQL.svc.vb">
+      <DependentUpon>l_TrabajoSQL.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_Turno.svc.vb">
+      <DependentUpon>l_Turno.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_TurnoUsuario.svc.vb">
+      <DependentUpon>l_TurnoUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_Usuario.svc.vb">
+      <DependentUpon>l_Usuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_UsuarioPerfil.svc.vb">
+      <DependentUpon>l_UsuarioPerfil.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Il_ChequeDocumento.vb" />
+    <Compile Include="Tesoreria\Il_ChequeEmitido.vb" />
+    <Compile Include="Tesoreria\Il_ChequesControl.vb" />
+    <Compile Include="Tesoreria\Il_ChequesTalonarios.vb" />
+    <Compile Include="Tesoreria\Il_CierreCaja.vb" />
+    <Compile Include="Tesoreria\Il_CierreCajaDet.vb" />
+    <Compile Include="Tesoreria\Il_CuadreCaja.vb" />
+    <Compile Include="Tesoreria\Il_CuadreCajaBolsa.vb" />
+    <Compile Include="Tesoreria\Il_CuadreCajaGasto.vb" />
+    <Compile Include="Tesoreria\Il_DepositoDetalle.vb" />
+    <Compile Include="Logistica\Il_Almacen.vb" />
+    <Compile Include="Logistica\Il_DetalleAsignacion.vb" />
+    <Compile Include="Logistica\Il_DetalleInventario.vb" />
+    <Compile Include="Logistica\Il_EstadoOrden.vb" />
+    <Compile Include="Logistica\Il_MetasCombustible.vb" />
+    <Compile Include="Logistica\l_Almacen.svc.vb">
+      <DependentUpon>l_Almacen.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_DetalleAsignacion.svc.vb">
+      <DependentUpon>l_DetalleAsignacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_DetalleInventario.svc.vb">
+      <DependentUpon>l_DetalleInventario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_EstadoOrden.svc.vb">
+      <DependentUpon>l_EstadoOrden.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Logistica\l_MetasCombustible.svc.vb">
+      <DependentUpon>l_MetasCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Il_DocumentoVenta.vb" />
+    <Compile Include="Tesoreria\Il_DocumentoVentaDetalle.vb" />
+    <Compile Include="Tesoreria\Il_FlujoGasto.vb" />
+    <Compile Include="Tesoreria\Il_GastoOperacion.vb" />
+    <Compile Include="Tesoreria\Il_GastoVehiculo.vb" />
+    <Compile Include="Tesoreria\Il_GastoViatico.vb" />
+    <Compile Include="Tesoreria\Il_Gasto_Caja.vb" />
+    <Compile Include="Tesoreria\Il_Gasto_RegistroConsumoCombustible.vb" />
+    <Compile Include="Tesoreria\Il_Grupo.vb" />
+    <Compile Include="Tesoreria\Il_GrupoAprobacion.vb" />
+    <Compile Include="Tesoreria\Il_GrupoAprobacionDet.vb" />
+    <Compile Include="Tesoreria\Il_GrupoDetalle.vb" />
+    <Compile Include="Tesoreria\Il_GrupoDetalleLiq.vb" />
+    <Compile Include="Tesoreria\Il_Grupo_Asiento.vb" />
+    <Compile Include="Tesoreria\Il_MontoCaja.vb" />
+    <Compile Include="Tesoreria\Il_MontoFlujoDiario.vb" />
+    <Compile Include="Tesoreria\Il_MontoFlujoDiario_Det.vb" />
+    <Compile Include="Tesoreria\Il_MovCuentaCte.vb" />
+    <Compile Include="Tesoreria\Il_MovCuentaCte_Asiento.vb" />
+    <Compile Include="Tesoreria\Il_Movimiento.vb" />
+    <Compile Include="Tesoreria\Il_Movimiento_Administrativo.vb" />
+    <Compile Include="Tesoreria\Il_Movimiento_Flete.vb" />
+    <Compile Include="Tesoreria\Il_Movimiento_Viaje.vb" />
+    <Compile Include="Tesoreria\Il_OtrosIngresos.vb" />
+    <Compile Include="Personal\Il_PagoDescuento.vb" />
+    <Compile Include="Tesoreria\Il_PrestamosCuenta.vb" />
+    <Compile Include="Tesoreria\Il_Saldo.vb" />
+    <Compile Include="Tesoreria\Il_SaldoCtaCorriente.vb" />
+    <Compile Include="Tesoreria\Il_TipoGasto.vb" />
+    <Compile Include="Tesoreria\Il_TipoGastoDetalle.vb" />
+    <Compile Include="Tesoreria\Il_Transferencia.vb" />
+    <Compile Include="Tesoreria\Il_ValesRendir.vb" />
+    <Compile Include="Tesoreria\l_ChequeDocumento.svc.vb">
+      <DependentUpon>l_ChequeDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ChequeEmitido.svc.vb">
+      <DependentUpon>l_ChequeEmitido.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ChequesControl.svc.vb">
+      <DependentUpon>l_ChequesControl.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ChequesTalonarios.svc.vb">
+      <DependentUpon>l_ChequesTalonarios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CierreCaja.svc.vb">
+      <DependentUpon>l_CierreCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CierreCajaDet.svc.vb">
+      <DependentUpon>l_CierreCajaDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuadreCaja.svc.vb">
+      <DependentUpon>l_CuadreCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuadreCajaBolsa.svc.vb">
+      <DependentUpon>l_CuadreCajaBolsa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuadreCajaGasto.svc.vb">
+      <DependentUpon>l_CuadreCajaGasto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_DepositoDetalle.svc.vb">
+      <DependentUpon>l_DepositoDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Il_Actividad.vb" />
+    <Compile Include="Mantenimiento\Il_DetalleRegConformidadOT.vb" />
+    <Compile Include="Mantenimiento\Il_Equipo.vb" />
+    <Compile Include="Mantenimiento\Il_EstadoOT.vb" />
+    <Compile Include="Mantenimiento\Il_Mantenimiento.vb" />
+    <Compile Include="Mantenimiento\Il_MantenimientoActividad.vb" />
+    <Compile Include="Mantenimiento\Il_MantenimientoEquipo.vb" />
+    <Compile Include="Mantenimiento\Il_MantenimientoMaterial.vb" />
+    <Compile Include="Mantenimiento\Il_MantenimientoOcupacion.vb" />
+    <Compile Include="Mantenimiento\Il_MantenimientoServicio.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajoMaterial.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo_Actividad.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo_MantenimientoEquipo.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo_Material.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo_Recurso.vb" />
+    <Compile Include="Mantenimiento\Il_OrdenTrabajo_Servicio.vb" />
+    <Compile Include="Mantenimiento\Il_RegistroConformidadOT.vb" />
+    <Compile Include="Mantenimiento\Il_TipoEquipo.vb" />
+    <Compile Include="Mantenimiento\Il_TipoMantenimiento.vb" />
+    <Compile Include="Mantenimiento\l_Actividad.svc.vb">
+      <DependentUpon>l_Actividad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_DetalleRegConformidadOT.svc.vb">
+      <DependentUpon>l_DetalleRegConformidadOT.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_Equipo.svc.vb">
+      <DependentUpon>l_Equipo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_EstadoOT.svc.vb">
+      <DependentUpon>l_EstadoOT.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_Mantenimiento.svc.vb">
+      <DependentUpon>l_Mantenimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_MantenimientoActividad.svc.vb">
+      <DependentUpon>l_MantenimientoActividad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_MantenimientoEquipo.svc.vb">
+      <DependentUpon>l_MantenimientoEquipo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_MantenimientoMaterial.svc.vb">
+      <DependentUpon>l_MantenimientoMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_MantenimientoOcupacion.svc.vb">
+      <DependentUpon>l_MantenimientoOcupacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_MantenimientoServicio.svc.vb">
+      <DependentUpon>l_MantenimientoServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo.svc.vb">
+      <DependentUpon>l_OrdenTrabajo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajoMaterial.svc.vb">
+      <DependentUpon>l_OrdenTrabajoMaterial.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo_Actividad.svc.vb">
+      <DependentUpon>l_OrdenTrabajo_Actividad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo_MantenimientoEquipo.svc.vb">
+      <DependentUpon>l_OrdenTrabajo_MantenimientoEquipo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo_Material.svc.vb">
+      <DependentUpon>l_OrdenTrabajo_Material.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo_Recurso.svc.vb">
+      <DependentUpon>l_OrdenTrabajo_Recurso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_OrdenTrabajo_Servicio.svc.vb">
+      <DependentUpon>l_OrdenTrabajo_Servicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_RegistroConformidadOT.svc.vb">
+      <DependentUpon>l_RegistroConformidadOT.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_TipoEquipo.svc.vb">
+      <DependentUpon>l_TipoEquipo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\l_TipoMantenimiento.svc.vb">
+      <DependentUpon>l_TipoMantenimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\Il_ConfiguracionNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_DetalleConfiguracionNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_DetalleValorizacionNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_DiseñoNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_MedidaNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_Motivo.vb" />
+    <Compile Include="Neumaticos\Il_MovimientoNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_Neumatico.vb" />
+    <Compile Include="Neumaticos\Il_OperacionNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_TipoNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_ValorizacionNeumatico.vb" />
+    <Compile Include="Neumaticos\Il_VidaNeumatico.vb" />
+    <Compile Include="Neumaticos\l_ConfiguracionNeumatico.svc.vb">
+      <DependentUpon>l_ConfiguracionNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_DetalleConfiguracionNeumatico.svc.vb">
+      <DependentUpon>l_DetalleConfiguracionNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_DetalleValorizacionNeumatico.svc.vb">
+      <DependentUpon>l_DetalleValorizacionNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_DiseñoNeumatico.svc.vb">
+      <DependentUpon>l_DiseñoNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_MedidaNeumatico.svc.vb">
+      <DependentUpon>l_MedidaNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_Motivo.svc.vb">
+      <DependentUpon>l_Motivo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_MovimientoNeumatico.svc.vb">
+      <DependentUpon>l_MovimientoNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_Neumatico.svc.vb">
+      <DependentUpon>l_Neumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_OperacionNeumatico.svc.vb">
+      <DependentUpon>l_OperacionNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_TipoNeumatico.svc.vb">
+      <DependentUpon>l_TipoNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_ValorizacionNeumatico.svc.vb">
+      <DependentUpon>l_ValorizacionNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Neumaticos\l_VidaNeumatico.svc.vb">
+      <DependentUpon>l_VidaNeumatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\Il_ControlCargaPersonaES.vb" />
+    <Compile Include="SegPlanControl\Il_ControlCargaVehiculoES.vb" />
+    <Compile Include="SegPlanControl\Il_ControlPersonaES.vb" />
+    <Compile Include="SegPlanControl\Il_ControlPersonaVehiculoES.vb" />
+    <Compile Include="SegPlanControl\Il_ControlVehiculoES.vb" />
+    <Compile Include="SegPlanControl\l_ControlCargaPersonaES.svc.vb">
+      <DependentUpon>l_ControlCargaPersonaES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_ControlCargaVehiculoES.svc.vb">
+      <DependentUpon>l_ControlCargaVehiculoES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_ControlPersonaES.svc.vb">
+      <DependentUpon>l_ControlPersonaES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_ControlPersonaVehiculoES.svc.vb">
+      <DependentUpon>l_ControlPersonaVehiculoES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\l_ControlVehiculoES.svc.vb">
+      <DependentUpon>l_ControlVehiculoES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Il_Banco.vb" />
+    <Compile Include="Tesoreria\Il_BolsaRuta.vb" />
+    <Compile Include="Tesoreria\Il_Caja.vb" />
+    <Compile Include="Tesoreria\Il_CajaMonto.vb" />
+    <Compile Include="Tesoreria\Il_CajaTurno.vb" />
+    <Compile Include="Tesoreria\Il_CajaUsuario.vb" />
+    <Compile Include="Tesoreria\Il_ChequeContable.vb" />
+    <Compile Include="Tesoreria\Il_ChequexCobrar.vb" />
+    <Compile Include="Tesoreria\Il_ConceptoIngresos.vb" />
+    <Compile Include="Personal\Il_Concepto_Prestamo.vb" />
+    <Compile Include="Tesoreria\Il_CuentaBancaria.vb" />
+    <Compile Include="Tesoreria\Il_CuentaCorriente.vb" />
+    <Compile Include="Tesoreria\Il_CuentaFlujoCaja.vb" />
+    <Compile Include="Tesoreria\Il_CuentaPorCobrar.vb" />
+    <Compile Include="Tesoreria\Il_CuentaPorCobrarDetalle.vb" />
+    <Compile Include="Tesoreria\Il_CuentaxCyP.vb" />
+    <Compile Include="Tesoreria\Il_Denominacion.vb" />
+    <Compile Include="Tesoreria\Il_Deposito.vb" />
+    <Compile Include="Personal\Il_GrupoSancion.vb" />
+    <Compile Include="Personal\Il_Prestamo.vb" />
+    <Compile Include="Personal\Il_PrestamoDetalle.vb" />
+    <Compile Include="Comercial\Ventas\Il_Seguimiento.vb" />
+    <Compile Include="Comercial\Ventas\Il_TiempoCiclo.vb" />
+    <Compile Include="Comercial\Ventas\Il_TipoVenta.vb" />
+    <Compile Include="Comercial\Ventas\Il_Venta.vb" />
+    <Compile Include="Comercial\Ventas\l_AplicaDetraccion.svc.vb">
+      <DependentUpon>l_AplicaDetraccion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_BolsaViaje.svc.vb">
+      <DependentUpon>l_BolsaViaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Demanda.svc.vb">
+      <DependentUpon>l_Demanda.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_DemandaRapida.svc.vb">
+      <DependentUpon>l_DemandaRapida.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Detraccion_Det.svc.vb">
+      <DependentUpon>l_Detraccion_Det.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Flete.svc.vb">
+      <DependentUpon>l_Flete.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GuiaRemitente.svc.vb">
+      <DependentUpon>l_GuiaRemitente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GuiasControl.svc.vb">
+      <DependentUpon>l_GuiasControl.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GuiaTransportista.svc.vb">
+      <DependentUpon>l_GuiaTransportista.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GuiaTransportistaInterrumpida.svc.vb">
+      <DependentUpon>l_GuiaTransportistaInterrumpida.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_InformeDetrac.svc.vb">
+      <DependentUpon>l_InformeDetrac.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_InformeDetrac_Det.svc.vb">
+      <DependentUpon>l_InformeDetrac_Det.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Operacion.svc.vb">
+      <DependentUpon>l_Operacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Il_Prestamo_Sancion.vb" />
+    <Compile Include="Personal\Il_Sancion.vb" />
+    <Compile Include="Tesoreria\l_Banco.svc.vb">
+      <DependentUpon>l_Banco.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_BolsaRuta.svc.vb">
+      <DependentUpon>l_BolsaRuta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Caja.svc.vb">
+      <DependentUpon>l_Caja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CajaMonto.svc.vb">
+      <DependentUpon>l_CajaMonto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CajaTurno.svc.vb">
+      <DependentUpon>l_CajaTurno.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CajaUsuario.svc.vb">
+      <DependentUpon>l_CajaUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ChequeContable.svc.vb">
+      <DependentUpon>l_ChequeContable.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ChequexCobrar.svc.vb">
+      <DependentUpon>l_ChequexCobrar.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ConceptoIngresos.svc.vb">
+      <DependentUpon>l_ConceptoIngresos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Concepto_Prestamo.svc.vb">
+      <DependentUpon>l_Concepto_Prestamo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaBancaria.svc.vb">
+      <DependentUpon>l_CuentaBancaria.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaCorriente.svc.vb">
+      <DependentUpon>l_CuentaCorriente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaFlujoCaja.svc.vb">
+      <DependentUpon>l_CuentaFlujoCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaPorCobrar.svc.vb">
+      <DependentUpon>l_CuentaPorCobrar.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaPorCobrarDetalle.svc.vb">
+      <DependentUpon>l_CuentaPorCobrarDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_CuentaxCyP.svc.vb">
+      <DependentUpon>l_CuentaxCyP.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Denominacion.svc.vb">
+      <DependentUpon>l_Denominacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Deposito.svc.vb">
+      <DependentUpon>l_Deposito.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_DocumentoVenta.svc.vb">
+      <DependentUpon>l_DocumentoVenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_DocumentoVentaDetalle.svc.vb">
+      <DependentUpon>l_DocumentoVentaDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_FlujoCaja.svc.vb">
+      <DependentUpon>l_FlujoCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GastoOperacion.svc.vb">
+      <DependentUpon>l_GastoOperacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GastoVehiculo.svc.vb">
+      <DependentUpon>l_GastoVehiculo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GastoViatico.svc.vb">
+      <DependentUpon>l_GastoViatico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Gasto_Caja.svc.vb">
+      <DependentUpon>l_Gasto_Caja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Gasto_RegistroConsumoCombustible.svc.vb">
+      <DependentUpon>l_Gasto_RegistroConsumoCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Grupo.svc.vb">
+      <DependentUpon>l_Grupo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GrupoAprobacion.svc.vb">
+      <DependentUpon>l_GrupoAprobacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GrupoAprobacionDet.svc.vb">
+      <DependentUpon>l_GrupoAprobacionDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GrupoDetalle.svc.vb">
+      <DependentUpon>l_GrupoDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_GrupoDetalleLiq.svc.vb">
+      <DependentUpon>l_GrupoDetalleLiq.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_GrupoSancion.svc.vb">
+      <DependentUpon>l_GrupoSancion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Grupo_Asiento.svc.vb">
+      <DependentUpon>l_Grupo_Asiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_MontoCaja.svc.vb">
+      <DependentUpon>l_MontoCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_MontoFlujoDiario.svc.vb">
+      <DependentUpon>l_MontoFlujoDiario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_MontoFlujoDiario_Det.svc.vb">
+      <DependentUpon>l_MontoFlujoDiario_Det.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_MovCuentaCte.svc.vb">
+      <DependentUpon>l_MovCuentaCte.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_MovCuentaCte_Asiento.svc.vb">
+      <DependentUpon>l_MovCuentaCte_Asiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Movimiento.svc.vb">
+      <DependentUpon>l_Movimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Movimiento_Administrativo.svc.vb">
+      <DependentUpon>l_Movimiento_Administrativo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Movimiento_Flete.svc.vb">
+      <DependentUpon>l_Movimiento_Flete.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Movimiento_Viaje.svc.vb">
+      <DependentUpon>l_Movimiento_Viaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_OtrosIngresos.svc.vb">
+      <DependentUpon>l_OtrosIngresos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PagoDescuento.svc.vb">
+      <DependentUpon>l_PagoDescuento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Prestamo.svc.vb">
+      <DependentUpon>l_Prestamo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_PrestamoDetalle.svc.vb">
+      <DependentUpon>l_PrestamoDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Seguimiento.svc.vb">
+      <DependentUpon>l_Seguimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_TiempoCiclo.svc.vb">
+      <DependentUpon>l_TiempoCiclo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_TipoVenta.svc.vb">
+      <DependentUpon>l_TipoVenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_Venta.svc.vb">
+      <DependentUpon>l_Venta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Il_Configuracion.vb" />
+    <Compile Include="Configuracion\Il_ReporteConfiguracion.vb" />
+    <Compile Include="Configuracion\l_Configuracion.svc.vb">
+      <DependentUpon>l_Configuracion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\l_ReporteConfiguracion.svc.vb">
+      <DependentUpon>l_ReporteConfiguracion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\Il_Asiento.vb" />
+    <Compile Include="Contabilidad\Il_AsientoMovimiento.vb" />
+    <Compile Include="Contabilidad\Il_AsientoMov_MovDoc.vb" />
+    <Compile Include="Contabilidad\Il_Asiento_MovDoc.vb" />
+    <Compile Include="Contabilidad\Il_CentroCosto.vb" />
+    <Compile Include="Contabilidad\Il_CuentaAsociada.vb" />
+    <Compile Include="Contabilidad\Il_CuentaContable.vb" />
+    <Compile Include="Contabilidad\Il_CuentaItemGasto.vb" />
+    <Compile Include="Contabilidad\Il_CuentasGenerales.vb" />
+    <Compile Include="Contabilidad\Il_CuentaxPDocumentoRetencion.vb" />
+    <Compile Include="Contabilidad\Il_DetalleDocumento.vb" />
+    <Compile Include="Contabilidad\Il_DetalleDocumentoCombustible.vb" />
+    <Compile Include="Contabilidad\Il_DetalleDoc_GuiaTrans.vb" />
+    <Compile Include="Contabilidad\Il_DocumentoAsociado.vb" />
+    <Compile Include="Contabilidad\Il_DocumentoRetencion.vb" />
+    <Compile Include="Contabilidad\Il_EmpresaCuenta.vb" />
+    <Compile Include="Contabilidad\Il_GastoAsiento.vb" />
+    <Compile Include="Contabilidad\Il_ItemGasto.vb" />
+    <Compile Include="Contabilidad\Il_MaterialCuentaContable.vb" />
+    <Compile Include="Contabilidad\Il_MovimientoAnalisis.vb" />
+    <Compile Include="Contabilidad\Il_MovimientoCajaBanco.vb" />
+    <Compile Include="Contabilidad\Il_MovimientoDocumento.vb" />
+    <Compile Include="Contabilidad\Il_Periodo.vb" />
+    <Compile Include="Contabilidad\Il_ServicioCuentaContable.vb" />
+    <Compile Include="Contabilidad\Il_TablaContable.vb" />
+    <Compile Include="Contabilidad\Il_TablaContableDet.vb" />
+    <Compile Include="Contabilidad\l_Asiento.svc.vb">
+      <DependentUpon>l_Asiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_AsientoMovimiento.svc.vb">
+      <DependentUpon>l_AsientoMovimiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_AsientoMov_MovDoc.svc.vb">
+      <DependentUpon>l_AsientoMov_MovDoc.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_Asiento_MovDoc.svc.vb">
+      <DependentUpon>l_Asiento_MovDoc.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CentroCosto.svc.vb">
+      <DependentUpon>l_CentroCosto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CuentaAsociada.svc.vb">
+      <DependentUpon>l_CuentaAsociada.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CuentaContable.svc.vb">
+      <DependentUpon>l_CuentaContable.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CuentaItemGasto.svc.vb">
+      <DependentUpon>l_CuentaItemGasto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CuentasGenerales.svc.vb">
+      <DependentUpon>l_CuentasGenerales.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_CuentaxPDocumentoRetencion.svc.vb">
+      <DependentUpon>l_CuentaxPDocumentoRetencion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DetalleDocumento.svc.vb">
+      <DependentUpon>l_DetalleDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DetalleDocumentoCombustible.svc.vb">
+      <DependentUpon>l_DetalleDocumentoCombustible.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DetalleDoc_GuiaTrans.svc.vb">
+      <DependentUpon>l_DetalleDoc_GuiaTrans.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DocumentoAsociado.svc.vb">
+      <DependentUpon>l_DocumentoAsociado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_DocumentoRetencion.svc.vb">
+      <DependentUpon>l_DocumentoRetencion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_EmpresaCuenta.svc.vb">
+      <DependentUpon>l_EmpresaCuenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_GastoAsiento.svc.vb">
+      <DependentUpon>l_GastoAsiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_ItemGasto.svc.vb">
+      <DependentUpon>l_ItemGasto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_MaterialCuentaContable.svc.vb">
+      <DependentUpon>l_MaterialCuentaContable.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_MovimientoAnalisis.svc.vb">
+      <DependentUpon>l_MovimientoAnalisis.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_MovimientoCajaBanco.svc.vb">
+      <DependentUpon>l_MovimientoCajaBanco.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_MovimientoDocumento.svc.vb">
+      <DependentUpon>l_MovimientoDocumento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_Periodo.svc.vb">
+      <DependentUpon>l_Periodo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_ServicioCuentaContable.svc.vb">
+      <DependentUpon>l_ServicioCuentaContable.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_TablaContable.svc.vb">
+      <DependentUpon>l_TablaContable.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_TablaContableDet.svc.vb">
+      <DependentUpon>l_TablaContableDet.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\Il_AsientoMov_ObligacionFin.vb" />
+    <Compile Include="Finanzas\Il_leasing.vb" />
+    <Compile Include="Finanzas\Il_ObligacionFinanciera.vb" />
+    <Compile Include="Finanzas\Il_ObligacionPago.vb" />
+    <Compile Include="Finanzas\l_AsientoMov_ObligacionFin.svc.vb">
+      <DependentUpon>l_AsientoMov_ObligacionFin.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\l_leasing.svc.vb">
+      <DependentUpon>l_leasing.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\l_ObligacionFinanciera.svc.vb">
+      <DependentUpon>l_ObligacionFinanciera.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas\l_ObligacionPago.svc.vb">
+      <DependentUpon>l_ObligacionPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Personal\Il_Area.vb" />
+    <Compile Include="Personal\Il_Cuota.vb" />
+    <Compile Include="Personal\Il_HistorialLaboral.vb" />
+    <Compile Include="Personal\Il_MovimientoPersonal.vb" />
+    <Compile Include="Personal\Il_OcupacionTrabajador.vb" />
+    <Compile Include="Personal\Il_SituacionAdministrativa.vb" />
+    <Compile Include="Personal\Il_Trabajador.vb" />
+    <Compile Include="Personal\l_Area.svc.vb">
+      <DependentUpon>l_Area.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Cuota.svc.vb">
+      <DependentUpon>l_Cuota.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_HistorialLaboral.svc.vb">
+      <DependentUpon>l_HistorialLaboral.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_MovimientoPersonal.svc.vb">
+      <DependentUpon>l_MovimientoPersonal.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_OcupacionTrabajador.svc.vb">
+      <DependentUpon>l_OcupacionTrabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_SituacionAdministrativa.svc.vb">
+      <DependentUpon>l_SituacionAdministrativa.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Trabajador.svc.vb">
+      <DependentUpon>l_Trabajador.svc</DependentUpon>
+    </Compile>
+    <Compile Include="SegPlanControl\Il_Accidente.vb" />
+    <Compile Include="SegPlanControl\l_Accidente.svc.vb">
+      <DependentUpon>l_Accidente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_PrestamosCuenta.svc.vb">
+      <DependentUpon>l_PrestamosCuenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Prestamo_Sancion.svc.vb">
+      <DependentUpon>l_Prestamo_Sancion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Saldo.svc.vb">
+      <DependentUpon>l_Saldo.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_SaldoCtaCorriente.svc.vb">
+      <DependentUpon>l_SaldoCtaCorriente.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\l_Sancion.svc.vb">
+      <DependentUpon>l_Sancion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_TipoGasto.svc.vb">
+      <DependentUpon>l_TipoGasto.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_TipoGastoDetalle.svc.vb">
+      <DependentUpon>l_TipoGastoDetalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_Transferencia.svc.vb">
+      <DependentUpon>l_Transferencia.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\l_ValesRendir.svc.vb">
+      <DependentUpon>l_ValesRendir.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Reporte\Il_MovimientoCaja.vb" />
+    <Compile Include="Tesoreria\Reporte\Il_ReporteCajaDiario.vb" />
+    <Compile Include="Tesoreria\Reporte\Il_ReporteFlete.vb" />
+    <Compile Include="Tesoreria\Reporte\Il_ReporteFlujoBanco.vb" />
+    <Compile Include="Tesoreria\Reporte\Il_ReporteFondoFijo.vb" />
+    <Compile Include="Tesoreria\Reporte\l_MovimientoCaja.svc.vb">
+      <DependentUpon>l_MovimientoCaja.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Reporte\l_ReporteCajaDiario.svc.vb">
+      <DependentUpon>l_ReporteCajaDiario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Reporte\l_ReporteFlete.svc.vb">
+      <DependentUpon>l_ReporteFlete.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Reporte\l_ReporteFlujoBanco.svc.vb">
+      <DependentUpon>l_ReporteFlujoBanco.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Tesoreria\Reporte\l_ReporteFondoFijo.svc.vb">
+      <DependentUpon>l_ReporteFondoFijo.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\ISL.EntidadesWCF.e_Departamento.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ISL.AccesoDatos\ISL.AccesoDatos.vbproj">
+      <Project>{0E03020E-7BB0-439B-9390-B1C14818C019}</Project>
+      <Name>ISL.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ISL.EntidadesWCF.vbproj">
+      <Project>{D6821E32-CAAA-4DA7-88A5-22A551256E17}</Project>
+      <Name>ISL.EntidadesWCF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11193</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

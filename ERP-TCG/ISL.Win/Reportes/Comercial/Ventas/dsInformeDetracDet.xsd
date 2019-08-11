@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsInformeDetracDet" targetNamespace="http://tempuri.org/dsInformeDetracDet.xsd" xmlns:mstns="http://tempuri.org/dsInformeDetracDet.xsd" xmlns="http://tempuri.org/dsInformeDetracDet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsInformeDetracDet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsInformeDetracDet" msprop:Generator_DataSetName="dsInformeDetracDet" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DetalleInforme" msprop:Generator_UserTableName="DetalleInforme" msprop:Generator_RowDeletedName="DetalleInformeRowDeleted" msprop:Generator_RowChangedName="DetalleInformeRowChanged" msprop:Generator_RowClassName="DetalleInformeRow" msprop:Generator_RowChangingName="DetalleInformeRowChanging" msprop:Generator_RowEvArgName="DetalleInformeRowChangeEvent" msprop:Generator_RowEvHandlerName="DetalleInformeRowChangeEventHandler" msprop:Generator_TableClassName="DetalleInformeDataTable" msprop:Generator_TableVarName="tableDetalleInforme" msprop:Generator_RowDeletingName="DetalleInformeRowDeleting" msprop:Generator_TablePropName="DetalleInforme">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NroFactura" msprop:Generator_UserColumnName="NroFactura" msprop:Generator_ColumnVarNameInTable="columnNroFactura" msprop:Generator_ColumnPropNameInRow="NroFactura" msprop:Generator_ColumnPropNameInTable="NroFacturaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RazonSocial" msprop:Generator_UserColumnName="RazonSocial" msprop:Generator_ColumnVarNameInTable="columnRazonSocial" msprop:Generator_ColumnPropNameInRow="RazonSocial" msprop:Generator_ColumnPropNameInTable="RazonSocialColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Ruc" msprop:Generator_UserColumnName="Ruc" msprop:Generator_ColumnVarNameInTable="columnRuc" msprop:Generator_ColumnPropNameInRow="Ruc" msprop:Generator_ColumnPropNameInTable="RucColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalFac" msprop:Generator_UserColumnName="TotalFac" msprop:Generator_ColumnVarNameInTable="columnTotalFac" msprop:Generator_ColumnPropNameInRow="TotalFac" msprop:Generator_ColumnPropNameInTable="TotalFacColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Detraccion" msprop:Generator_UserColumnName="Detraccion" msprop:Generator_ColumnVarNameInTable="columnDetraccion" msprop:Generator_ColumnPropNameInRow="Detraccion" msprop:Generator_ColumnPropNameInTable="DetraccionColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DetraccionRound" msprop:Generator_UserColumnName="DetraccionRound" msprop:Generator_ColumnVarNameInTable="columnDetraccionRound" msprop:Generator_ColumnPropNameInRow="DetraccionRound" msprop:Generator_ColumnPropNameInTable="DetraccionRoundColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FechaFac" msprop:Generator_UserColumnName="FechaFac" msprop:Generator_ColumnVarNameInTable="columnFechaFac" msprop:Generator_ColumnPropNameInRow="FechaFac" msprop:Generator_ColumnPropNameInTable="FechaFacColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

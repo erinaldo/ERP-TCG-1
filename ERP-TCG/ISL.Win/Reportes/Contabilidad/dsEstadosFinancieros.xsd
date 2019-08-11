@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsEstadosFinancieros" targetNamespace="http://tempuri.org/dsEstadosFinancieros.xsd" xmlns:mstns="http://tempuri.org/dsEstadosFinancieros.xsd" xmlns="http://tempuri.org/dsEstadosFinancieros.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsEstadosFinancieros" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsEstadosFinancieros" msprop:Generator_DataSetName="dsEstadosFinancieros" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtActivoCorriente" msprop:Generator_UserTableName="dtActivoCorriente" msprop:Generator_RowDeletedName="dtActivoCorrienteRowDeleted" msprop:Generator_TableClassName="dtActivoCorrienteDataTable" msprop:Generator_RowChangedName="dtActivoCorrienteRowChanged" msprop:Generator_RowClassName="dtActivoCorrienteRow" msprop:Generator_RowChangingName="dtActivoCorrienteRowChanging" msprop:Generator_RowEvArgName="dtActivoCorrienteRowChangeEvent" msprop:Generator_RowEvHandlerName="dtActivoCorrienteRowChangeEventHandler" msprop:Generator_TablePropName="dtActivoCorriente" msprop:Generator_TableVarName="tabledtActivoCorriente" msprop:Generator_RowDeletingName="dtActivoCorrienteRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtActivoNoCorriente" msprop:Generator_UserTableName="dtActivoNoCorriente" msprop:Generator_RowDeletedName="dtActivoNoCorrienteRowDeleted" msprop:Generator_TableClassName="dtActivoNoCorrienteDataTable" msprop:Generator_RowChangedName="dtActivoNoCorrienteRowChanged" msprop:Generator_RowClassName="dtActivoNoCorrienteRow" msprop:Generator_RowChangingName="dtActivoNoCorrienteRowChanging" msprop:Generator_RowEvArgName="dtActivoNoCorrienteRowChangeEvent" msprop:Generator_RowEvHandlerName="dtActivoNoCorrienteRowChangeEventHandler" msprop:Generator_TablePropName="dtActivoNoCorriente" msprop:Generator_TableVarName="tabledtActivoNoCorriente" msprop:Generator_RowDeletingName="dtActivoNoCorrienteRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPasivoCorriente" msprop:Generator_UserTableName="dtPasivoCorriente" msprop:Generator_RowDeletedName="dtPasivoCorrienteRowDeleted" msprop:Generator_TableClassName="dtPasivoCorrienteDataTable" msprop:Generator_RowChangedName="dtPasivoCorrienteRowChanged" msprop:Generator_RowClassName="dtPasivoCorrienteRow" msprop:Generator_RowChangingName="dtPasivoCorrienteRowChanging" msprop:Generator_RowEvArgName="dtPasivoCorrienteRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPasivoCorrienteRowChangeEventHandler" msprop:Generator_TablePropName="dtPasivoCorriente" msprop:Generator_TableVarName="tabledtPasivoCorriente" msprop:Generator_RowDeletingName="dtPasivoCorrienteRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPasivoNoCorriente" msprop:Generator_UserTableName="dtPasivoNoCorriente" msprop:Generator_RowDeletedName="dtPasivoNoCorrienteRowDeleted" msprop:Generator_TableClassName="dtPasivoNoCorrienteDataTable" msprop:Generator_RowChangedName="dtPasivoNoCorrienteRowChanged" msprop:Generator_RowClassName="dtPasivoNoCorrienteRow" msprop:Generator_RowChangingName="dtPasivoNoCorrienteRowChanging" msprop:Generator_RowEvArgName="dtPasivoNoCorrienteRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPasivoNoCorrienteRowChangeEventHandler" msprop:Generator_TablePropName="dtPasivoNoCorriente" msprop:Generator_TableVarName="tabledtPasivoNoCorriente" msprop:Generator_RowDeletingName="dtPasivoNoCorrienteRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtPatrimonio" msprop:Generator_UserTableName="dtPatrimonio" msprop:Generator_RowDeletedName="dtPatrimonioRowDeleted" msprop:Generator_TableClassName="dtPatrimonioDataTable" msprop:Generator_RowChangedName="dtPatrimonioRowChanged" msprop:Generator_RowClassName="dtPatrimonioRow" msprop:Generator_RowChangingName="dtPatrimonioRowChanging" msprop:Generator_RowEvArgName="dtPatrimonioRowChangeEvent" msprop:Generator_RowEvHandlerName="dtPatrimonioRowChangeEventHandler" msprop:Generator_TablePropName="dtPatrimonio" msprop:Generator_TableVarName="tabledtPatrimonio" msprop:Generator_RowDeletingName="dtPatrimonioRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtEstadosFinancieros" msprop:Generator_UserTableName="dtEstadosFinancieros" msprop:Generator_RowDeletedName="dtEstadosFinancierosRowDeleted" msprop:Generator_RowChangedName="dtEstadosFinancierosRowChanged" msprop:Generator_RowClassName="dtEstadosFinancierosRow" msprop:Generator_RowChangingName="dtEstadosFinancierosRowChanging" msprop:Generator_RowEvArgName="dtEstadosFinancierosRowChangeEvent" msprop:Generator_RowEvHandlerName="dtEstadosFinancierosRowChangeEventHandler" msprop:Generator_TableClassName="dtEstadosFinancierosDataTable" msprop:Generator_TableVarName="tabledtEstadosFinancieros" msprop:Generator_RowDeletingName="dtEstadosFinancierosRowDeleting" msprop:Generator_TablePropName="dtEstadosFinancieros">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtActivo" msprop:Generator_UserTableName="dtActivo" msprop:Generator_RowDeletedName="dtActivoRowDeleted" msprop:Generator_TableClassName="dtActivoDataTable" msprop:Generator_RowChangedName="dtActivoRowChanged" msprop:Generator_RowClassName="dtActivoRow" msprop:Generator_RowChangingName="dtActivoRowChanging" msprop:Generator_RowEvArgName="dtActivoRowChangeEvent" msprop:Generator_RowEvHandlerName="dtActivoRowChangeEventHandler" msprop:Generator_TablePropName="dtActivo" msprop:Generator_TableVarName="tabledtActivo" msprop:Generator_RowDeletingName="dtActivoRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtTotalPasivoPatrimonio" msprop:Generator_UserTableName="dtTotalPasivoPatrimonio" msprop:Generator_RowDeletedName="dtTotalPasivoPatrimonioRowDeleted" msprop:Generator_TableClassName="dtTotalPasivoPatrimonioDataTable" msprop:Generator_RowChangedName="dtTotalPasivoPatrimonioRowChanged" msprop:Generator_RowClassName="dtTotalPasivoPatrimonioRow" msprop:Generator_RowChangingName="dtTotalPasivoPatrimonioRowChanging" msprop:Generator_RowEvArgName="dtTotalPasivoPatrimonioRowChangeEvent" msprop:Generator_RowEvHandlerName="dtTotalPasivoPatrimonioRowChangeEventHandler" msprop:Generator_TablePropName="dtTotalPasivoPatrimonio" msprop:Generator_TableVarName="tabledtTotalPasivoPatrimonio" msprop:Generator_RowDeletingName="dtTotalPasivoPatrimonioRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtBG" msprop:Generator_UserTableName="dtBG" msprop:Generator_RowDeletedName="dtBGRowDeleted" msprop:Generator_TableClassName="dtBGDataTable" msprop:Generator_RowChangedName="dtBGRowChanged" msprop:Generator_RowClassName="dtBGRow" msprop:Generator_RowChangingName="dtBGRowChanging" msprop:Generator_RowEvArgName="dtBGRowChangeEvent" msprop:Generator_RowEvHandlerName="dtBGRowChangeEventHandler" msprop:Generator_TablePropName="dtBG" msprop:Generator_TableVarName="tabledtBG" msprop:Generator_RowDeletingName="dtBGRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cuenta" msprop:Generator_UserColumnName="Cuenta" msprop:Generator_ColumnPropNameInRow="Cuenta" msprop:Generator_ColumnVarNameInTable="columnCuenta" msprop:Generator_ColumnPropNameInTable="CuentaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TMN" msprop:Generator_UserColumnName="TMN" msprop:Generator_ColumnPropNameInRow="TMN" msprop:Generator_ColumnVarNameInTable="columnTMN" msprop:Generator_ColumnPropNameInTable="TMNColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="TME" msprop:Generator_UserColumnName="TME" msprop:Generator_ColumnPropNameInRow="TME" msprop:Generator_ColumnVarNameInTable="columnTME" msprop:Generator_ColumnPropNameInTable="TMEColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nombre" msprop:Generator_UserColumnName="Nombre" msprop:Generator_ColumnPropNameInRow="Nombre" msprop:Generator_ColumnVarNameInTable="columnNombre" msprop:Generator_ColumnPropNameInTable="NombreColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrimerClasificacion" msprop:Generator_UserColumnName="PrimerClasificacion" msprop:Generator_ColumnPropNameInRow="PrimerClasificacion" msprop:Generator_ColumnVarNameInTable="columnPrimerClasificacion" msprop:Generator_ColumnPropNameInTable="PrimerClasificacionColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SegundaClasificacion" msprop:Generator_UserColumnName="SegundaClasificacion" msprop:Generator_ColumnPropNameInRow="SegundaClasificacion" msprop:Generator_ColumnVarNameInTable="columnSegundaClasificacion" msprop:Generator_ColumnPropNameInTable="SegundaClasificacionColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
