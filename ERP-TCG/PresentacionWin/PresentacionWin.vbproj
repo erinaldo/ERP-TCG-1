@@ -86,6 +86,7 @@
     <Compile Include="Comercial\Hola M.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Hola W.vb" />
     <Compile Include="Comercial\Venta.Designer.vb">
       <DependentUpon>Venta.vb</DependentUpon>
     </Compile>
@@ -105,11 +106,23 @@
     <Compile Include="Grifo\Form3.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\Hola WW.Designer.vb">
+      <DependentUpon>Hola WW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Hola WW.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\Hola.vb" />
     <Compile Include="Grifo\Turnos.Designer.vb">
       <DependentUpon>Turnos.vb</DependentUpon>
     </Compile>
     <Compile Include="Grifo\Turnos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenerdore\Hola www.Designer.vb">
+      <DependentUpon>Hola www.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenerdore\Hola www.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu.Designer.vb">
