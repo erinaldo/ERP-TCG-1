@@ -80,6 +80,12 @@
     <Compile Include="Comercial\Form2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Hola M.Designer.vb">
+      <DependentUpon>Hola M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Hola M.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Venta.Designer.vb">
       <DependentUpon>Venta.vb</DependentUpon>
     </Compile>
