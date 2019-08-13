@@ -86,7 +86,12 @@
     <Compile Include="Comercial\Hola M.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comercial\Hola W.vb" />
+    <Compile Include="Comercial\Hola MM.Designer.vb">
+      <DependentUpon>Hola MM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Hola MM.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Venta.Designer.vb">
       <DependentUpon>Venta.vb</DependentUpon>
     </Compile>
@@ -104,12 +109,6 @@
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
     <Compile Include="Grifo\Form3.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grifo\Hola WW.Designer.vb">
-      <DependentUpon>Hola WW.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Grifo\Hola WW.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Grifo\Hola.vb" />
@@ -145,6 +144,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Transporte\HOLA\Hola que tal.Designer.vb">
+      <DependentUpon>Hola que tal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte\HOLA\Hola que tal.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Transporte\Operaciones.Designer.vb">
       <DependentUpon>Operaciones.vb</DependentUpon>
