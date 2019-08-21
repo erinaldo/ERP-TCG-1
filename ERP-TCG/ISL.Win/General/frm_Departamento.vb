@@ -1,6 +1,7 @@
 ﻿Imports ISL.EntidadesWCF
 Imports System.ServiceModel
 
+
 Public Class frm_Departamento
     Inherits ISL.Win.frm_MenuPadre
 
@@ -26,7 +27,7 @@ Public Class frm_Departamento
 #Region "Declaración de Variables"
 
     Private WithEvents oeDepartamento As New e_Departamento
-    Dim osDepartamento As New SGI_WCF.SGIClient
+    Dim osDepartamento As New SGI_WCF.MensajeError
     Dim _ingresando_datos As Boolean = False
 
 #End Region

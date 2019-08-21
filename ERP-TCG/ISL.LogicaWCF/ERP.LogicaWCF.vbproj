@@ -11,7 +11,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ISL.LogicaWCF</RootNamespace>
     <AssemblyName>ISL.LogicaWCF</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
@@ -2613,6 +2613,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\DataSources\ISL.EntidadesWCF.e_Departamento.datasource" />
+    <None Include="My Project\PublishProfiles\CustomProfile.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>

@@ -10,7 +10,7 @@
     <AssemblyName>ISL.ServicioExterno</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
@@ -25,6 +25,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -34,6 +35,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -161,16 +163,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISL.AccesoDatos\ERP.AccesoDatos.vbproj">
-      <Project>{0e03020e-7bb0-439b-9390-b1c14818c019}</Project>
-      <Name>ERP.AccesoDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
-      <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
-      <Name>ERP.EntidadesWCF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +205,16 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ISL.AccesoDatos\ERP.AccesoDatos.vbproj">
+      <Project>{0e03020e-7bb0-439b-9390-b1c14818c019}</Project>
+      <Name>ERP.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
+      <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
+      <Name>ERP.EntidadesWCF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
