@@ -110,13 +110,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AxInterop.MSScriptControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\AxInterop.MSScriptControl.dll</HintPath>
+    <Reference Include="AxInterop.MSScriptControl">
+      <HintPath>..\Librerias\AxInterop.MSScriptControl.dll</HintPath>
     </Reference>
-    <Reference Include="Conversiones, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1705edfc08ab358f, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Conversiones.dll</HintPath>
+    <Reference Include="Conversiones">
+      <HintPath>..\Librerias\Conversiones.dll</HintPath>
     </Reference>
     <Reference Include="Infragistics4.Documents.Excel.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
     <Reference Include="Infragistics4.Shared.v13.1, Version=13.1.20131.1001, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb" />
@@ -219,14 +217,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SGI Librerias\ISL.Controles\ISL.Controles\obj\Debug\Infragistics4.Win.v13.1.Design.dll</HintPath>
     </Reference>
-    <Reference Include="Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Interop.MSScriptControl">
+      <HintPath>..\Librerias\Interop.MSScriptControl.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Debug\Interop.MSScriptControl.dll</HintPath>
     </Reference>
-    <Reference Include="ISL.Cache, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ISL.Cache.dll</HintPath>
+    <Reference Include="ISL.Cache">
+      <HintPath>..\Librerias\ISL.Cache.dll</HintPath>
     </Reference>
     <Reference Include="ISL.Controles">
       <HintPath>..\Librerias\ISL.Controles.dll</HintPath>
