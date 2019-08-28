@@ -6552,6 +6552,7 @@
     <Folder Include="bin\Debug\PLANTILLAS_SGI\" />
     <Folder Include="bin\Debug\Reportes\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="Libreria\" />
   </ItemGroup>
   <ItemGroup>
     <PublishFile Include="ADODB">
