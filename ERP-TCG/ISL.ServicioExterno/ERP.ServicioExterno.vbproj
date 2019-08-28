@@ -55,10 +55,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Ionic.Zip">
-      <HintPath>..\..\SGI_ISL_TFS\ISL.Win\bin\Debug\Ionic.Zip.dll</HintPath>
+      <HintPath>..\Librerias\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\ISL.Win\bin\Debug\itextsharp.dll</HintPath>
+      <HintPath>..\Librerias\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
