@@ -66,7 +66,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ISL.Encripta">
-      <HintPath>..\ISL.Win\bin\Debug\ISL.Encripta.dll</HintPath>
+      <HintPath>..\Librerias\ISL.Encripta.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
