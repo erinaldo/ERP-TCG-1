@@ -228,16 +228,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\ISL.Cache.dll</HintPath>
     </Reference>
-    <Reference Include="ISL.Controles, Version=1.0.4937.33943, Culture=neutral, PublicKeyToken=a513165cf192aa4b, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ISL.Controles.dll</HintPath>
+    <Reference Include="ISL.Controles">
+      <HintPath>..\Librerias\ISL.Controles.dll</HintPath>
     </Reference>
-    <Reference Include="ISL.Encripta, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4226ecc613ba7002, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ISL.Encripta.dll</HintPath>
+    <Reference Include="ISL.Encripta">
+      <HintPath>..\Librerias\ISL.Encripta.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\Users\desarrollo\Desktop\itextsharp.dll</HintPath>
+      <HintPath>..\Librerias\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
