@@ -1,4 +1,13 @@
-﻿Imports System.IO
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-08-30  |   NSOFT   |   Se comento los mensaje emergentes
+'=================================================================================================================
+
+
+Imports System.IO
 Imports Infragistics.Win
 Imports Infragistics.Win.Misc
 Imports ISL.LogicaWCF
@@ -8,7 +17,7 @@ Imports System.Configuration
 Imports System.Collections.Specialized
 Imports System.Deployment.Application
 Imports Infragistics.Win.UltraWinGrid
-Imports System.Text
+'Imports System.Text
 Public Class frm_Menu
 
     Public Sub New()
@@ -319,115 +328,131 @@ Public Class frm_Menu
 
                 Me.Text = "ERP T&L - PLANIFICACION DE RECURSOS EMPRESARIALES - " & Lugar() & " - " & VersionDelSistema()
 
-                ' MostrarOnomasticos()
-                ListaOnomasticos()
+                ' @0001 --- Inicio --------------------------------------------------------------------------------------------------
+
+                '' MostrarOnomasticos()
+                'ListaOnomasticos()
 
 
-                'Rutina para Mostrar Alerta para Orden de Compra Generadas
+                ''Rutina para Mostrar Alerta para Orden de Compra Generadas
                 ' Nombre Proceso: APROBAR ORDENES DE COMPRA
-                If gleTrabSeguridad.Count > 0 Then
-                    Dim leTrabSeg As New List(Of e_TrabajadorSeguridad)
-                    leTrabSeg = gleTrabSeguridad.Where(Function(item) item.NombreProceso = "APROBAR ORDENES DE COMPRA").ToList
-                    If leTrabSeg.Count > 0 Then MostrarOrdenCompra(leTrabSeg(0))
-                End If
-                'Rutina para mostrar alerta de los trabajadores con permiso con dias excedidos
-                If gleTrabSeguridad.Count > 0 Then
-                    Dim leTrabSeg As New List(Of e_TrabajadorSeguridad)
-                    leTrabSeg = gleTrabSeguridad.Where(Function(item) item.NombreProceso = "CONTROL PERMISOS").ToList
-                    If leTrabSeg.Count > 0 Then DiasExcedidos()
-                End If
+                'If gleTrabSeguridad.Count > 0 Then
+                '    Dim leTrabSeg As New List(Of e_TrabajadorSeguridad)
+                '    leTrabSeg = gleTrabSeguridad.Where(Function(item) item.NombreProceso = "APROBAR ORDENES DE COMPRA").ToList
+                '    If leTrabSeg.Count > 0 Then MostrarOrdenCompra(leTrabSeg(0))
+                'End If
 
-                'Rutina para mostrar alerta de las placas que estan debiendo 4 o mas guias
-                If PerfilAsignado(gNombrePerfilFacturacionGuias) Then
-                    Dim placa As String = ""
-                    If TractoSinDocPublic.Count > 0 Then
-                        For Each tracto As e_Combo In TractoSinDocPublic
-                            placa = placa & "La Unidad: " & tracto.Nombre & " Debe " & tracto.Id & " Guias. - "
-                        Next
-                        AlertaDocumentos.Show(CargarDatosAlerta("Mensaje Guias", placa, , "MensajeGuias", ScreenPosition.BottomLeft))
-                        'AlertaOperaciones.Show(CargarDatosAlerta("Mensaje Guias", "La Unidad: " & tracto.Nombre & " Debe " & tracto.Id & " Guias", , "MensajeGuias", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Contratos a vencer presente mes
-                If PerfilAsignado(gNombrePerfilJefePersonal) Or PerfilAsignado(gNombrePerfilAsistenteRRHH) Then
-                    ContratosXVencer()
-                End If
-                If PerfilAsignado(gNombrePerfilDocumentosVehiculares) Or PerfilAsignado(gNombrePerfilJefeTesoreria) Or PerfilAsignado(gNombrePerfilAsistenteTesoreria) Then
-                    DocumentosXVencer()
-                End If
-                'Rutas Sin Tarifa (Campo Descripcion trae el numero de tarifas asignadas a esa ruta)
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
-                    Dim CantidadRutasSinTarifa As Integer = RutasPublic.Where(Function(x) x.Descripcion = 0).Count
-                    If CantidadRutasSinTarifa > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Mensaje Rutas", "Existen " & CantidadRutasSinTarifa & " rutas sin asignar tarifa", My.Resources.Price, "MensajeRutas", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Verificacion Tracto y Carreta
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) OrElse PerfilAsignado(gNombrePerfilSupervisorOperaciones) OrElse PerfilAsignado(gNombrePerfilCoordinadorOperaciones) Then
-                    Dim Hasta As Date = ObtenerFechaServidor().AddDays(-1).Date
-                    Dim Desde As Date = Hasta.AddDays(-2).Date
-                    Dim intCantErroresTracto As Integer = fc_ErroresTrazabilidad(True, Desde, Hasta)
-                    Dim intCantErroresCarreta As Integer = fc_ErroresTrazabilidad(False, Desde, Hasta)
-                    'Tracto
-                    If intCantErroresTracto > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Trazabilidad Tractos", Desde.ToShortDateString() & " - " & Hasta.ToShortDateString() & Environment.NewLine _
-                                                           & "Existen " & intCantErroresTracto & " errores de trazabilidad en Tractos", My.Resources.Information, "TrazabilidadTracto", ScreenPosition.BottomLeft))
-                    End If
-                    'Carreta
-                    If intCantErroresCarreta > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Trazabilidad Carreta", Desde.ToShortDateString() & " - " & Hasta.ToShortDateString() & Environment.NewLine _
-                                                           & "Existen " & intCantErroresCarreta & " errores de trazabilidad en Carretas", My.Resources.Information, "TrazabilidadCarreta", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Verificacion Personal que Falta confirmar su Ingreso o Salida
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
-                    Dim intIngresoConfirmar As Integer = fc_CantidadPersonalConfirmar(True)
-                    Dim intSalidaConfirmar As Integer = fc_CantidadPersonalConfirmar(False)
-                    'Ingreso
-                    If intIngresoConfirmar > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Confirmar Ingreso", "Falta Confirmar el ingreso de " & intIngresoConfirmar & " Trabajadores ", My.Resources.Information, "FaltaConfirmarIngreso", ScreenPosition.BottomLeft))
-                    End If
-                    'Salida
-                    If intSalidaConfirmar > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Confirmar Salida", "Falta Confirmar la salida de " & intSalidaConfirmar & " Trabajadores ", My.Resources.Information, "FaltaConfirmarSalida", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Unidades Con Cuota de Produccion en Rojo
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) OrElse PerfilAsignado(gNombrePerfilSupervisorOperaciones) Then
-                    Dim intUnidadCuotaRojo As Integer = fc_UnidadesCuotaRojo()
-                    If intUnidadCuotaRojo > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Cuota de Produccion", "Existen " & intUnidadCuotaRojo & " Unidades con cuota de produccion en rojo ", My.Resources.Information, "UnidadesCuotaRojo", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Documentos (Revision Tecnica CPSAA y Vehicular General) por Vencer
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
-                    Dim DocsxVencer As String = fc_DocumentosxVencer()
-                    If Not String.IsNullOrEmpty(DocsxVencer.Trim()) Then
-                        AlertaComun.Show(CargarDatosAlerta("Tipo Doc : Cantidad x Vencer", DocsxVencer, My.Resources.Information, "DocumentosxVencer", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Documentos por Vencer General
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Or PerfilAsignado(gNombrePerfilJefeControlFlota) Then
-                    Dim DocsxVencer As Integer = fc_DocumentosVehiculoxVencer()
-                    If DocsxVencer > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Documentos Vehículos Por Vencer", "Existen " & DocsxVencer & " Documentos Vehículos Por Vencer", My.Resources.Information, "DocumentosVehiculoxVencer", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Viajes con Carga por las de 24 horas
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
-                    Dim intViajes As Integer = fc_UnidadesCarga24Horas()
-                    If intViajes > 0 Then
-                        AlertaComun.Show(CargarDatosAlerta("Viajes con Carga por mas de 24 Horas", "Existen " & intViajes & " Viajes con carga por mas de 24 Horas", My.Resources.Information, "Viajes24Horas", ScreenPosition.BottomLeft))
-                    End If
-                End If
-                'Viajes con Carga por las de 24 horas
-                If PerfilAsignado(gNombrePerfilJefeLiquidacion) Then
-                    'Asincrono
-                    mt_IniciarWebServiceCovisol()
-                End If
+                ''Rutina para mostrar alerta de los trabajadores con permiso con dias excedidos
+                'If gleTrabSeguridad.Count > 0 Then
+                '    Dim leTrabSeg As New List(Of e_TrabajadorSeguridad)
+                '    leTrabSeg = gleTrabSeguridad.Where(Function(item) item.NombreProceso = "CONTROL PERMISOS").ToList
+                '    If leTrabSeg.Count > 0 Then DiasExcedidos()
+                'End If
+
+                ''Rutina para mostrar alerta de las placas que estan debiendo 4 o mas guias
+                'If PerfilAsignado(gNombrePerfilFacturacionGuias) Then
+                '    Dim placa As String = ""
+                '    If TractoSinDocPublic.Count > 0 Then
+                '        For Each tracto As e_Combo In TractoSinDocPublic
+                '            placa = placa & "La Unidad: " & tracto.Nombre & " Debe " & tracto.Id & " Guias. - "
+                '        Next
+                '        AlertaDocumentos.Show(CargarDatosAlerta("Mensaje Guias", placa, , "MensajeGuias", ScreenPosition.BottomLeft))
+                '        'AlertaOperaciones.Show(CargarDatosAlerta("Mensaje Guias", "La Unidad: " & tracto.Nombre & " Debe " & tracto.Id & " Guias", , "MensajeGuias", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Contratos a vencer presente mes
+                'If PerfilAsignado(gNombrePerfilJefePersonal) Or PerfilAsignado(gNombrePerfilAsistenteRRHH) Then
+                '    ContratosXVencer()
+                'End If
+                'If PerfilAsignado(gNombrePerfilDocumentosVehiculares) Or PerfilAsignado(gNombrePerfilJefeTesoreria) Or PerfilAsignado(gNombrePerfilAsistenteTesoreria) Then
+                '    DocumentosXVencer()
+                'End If
+
+                ''Rutas Sin Tarifa (Campo Descripcion trae el numero de tarifas asignadas a esa ruta)
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
+                '    Dim CantidadRutasSinTarifa As Integer = RutasPublic.Where(Function(x) x.Descripcion = 0).Count
+                '    If CantidadRutasSinTarifa > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Mensaje Rutas", "Existen " & CantidadRutasSinTarifa & " rutas sin asignar tarifa", My.Resources.Price, "MensajeRutas", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Verificacion Tracto y Carreta
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) OrElse PerfilAsignado(gNombrePerfilSupervisorOperaciones) OrElse PerfilAsignado(gNombrePerfilCoordinadorOperaciones) Then
+                '    Dim Hasta As Date = ObtenerFechaServidor().AddDays(-1).Date
+                '    Dim Desde As Date = Hasta.AddDays(-2).Date
+                '    Dim intCantErroresTracto As Integer = fc_ErroresTrazabilidad(True, Desde, Hasta)
+                '    Dim intCantErroresCarreta As Integer = fc_ErroresTrazabilidad(False, Desde, Hasta)
+                '    'Tracto
+                '    If intCantErroresTracto > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Trazabilidad Tractos", Desde.ToShortDateString() & " - " & Hasta.ToShortDateString() & Environment.NewLine _
+                '                                           & "Existen " & intCantErroresTracto & " errores de trazabilidad en Tractos", My.Resources.Information, "TrazabilidadTracto", ScreenPosition.BottomLeft))
+                '    End If
+                '    'Carreta
+                '    If intCantErroresCarreta > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Trazabilidad Carreta", Desde.ToShortDateString() & " - " & Hasta.ToShortDateString() & Environment.NewLine _
+                '                                           & "Existen " & intCantErroresCarreta & " errores de trazabilidad en Carretas", My.Resources.Information, "TrazabilidadCarreta", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Verificacion Personal que Falta confirmar su Ingreso o Salida
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
+                '    Dim intIngresoConfirmar As Integer = fc_CantidadPersonalConfirmar(True)
+                '    Dim intSalidaConfirmar As Integer = fc_CantidadPersonalConfirmar(False)
+                '    'Ingreso
+                '    If intIngresoConfirmar > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Confirmar Ingreso", "Falta Confirmar el ingreso de " & intIngresoConfirmar & " Trabajadores ", My.Resources.Information, "FaltaConfirmarIngreso", ScreenPosition.BottomLeft))
+                '    End If
+                '    'Salida
+                '    If intSalidaConfirmar > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Confirmar Salida", "Falta Confirmar la salida de " & intSalidaConfirmar & " Trabajadores ", My.Resources.Information, "FaltaConfirmarSalida", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Unidades Con Cuota de Produccion en Rojo
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) OrElse PerfilAsignado(gNombrePerfilSupervisorOperaciones) Then
+                '    Dim intUnidadCuotaRojo As Integer = fc_UnidadesCuotaRojo()
+                '    If intUnidadCuotaRojo > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Cuota de Produccion", "Existen " & intUnidadCuotaRojo & " Unidades con cuota de produccion en rojo ", My.Resources.Information, "UnidadesCuotaRojo", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Documentos (Revision Tecnica CPSAA y Vehicular General) por Vencer
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
+                '    Dim DocsxVencer As String = fc_DocumentosxVencer()
+                '    If Not String.IsNullOrEmpty(DocsxVencer.Trim()) Then
+                '        AlertaComun.Show(CargarDatosAlerta("Tipo Doc : Cantidad x Vencer", DocsxVencer, My.Resources.Information, "DocumentosxVencer", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Documentos por Vencer General
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Or PerfilAsignado(gNombrePerfilJefeControlFlota) Then
+                '    Dim DocsxVencer As Integer = fc_DocumentosVehiculoxVencer()
+                '    If DocsxVencer > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Documentos Vehículos Por Vencer", "Existen " & DocsxVencer & " Documentos Vehículos Por Vencer", My.Resources.Information, "DocumentosVehiculoxVencer", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Viajes con Carga por las de 24 horas
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Then
+                '    Dim intViajes As Integer = fc_UnidadesCarga24Horas()
+                '    If intViajes > 0 Then
+                '        AlertaComun.Show(CargarDatosAlerta("Viajes con Carga por mas de 24 Horas", "Existen " & intViajes & " Viajes con carga por mas de 24 Horas", My.Resources.Information, "Viajes24Horas", ScreenPosition.BottomLeft))
+                '    End If
+                'End If
+
+                ''Viajes con Carga por las de 24 horas
+                'If PerfilAsignado(gNombrePerfilJefeLiquidacion) Then
+                '    'Asincrono
+                '    mt_IniciarWebServiceCovisol()
+                'End If
+
+                ' @0001 --- Final --------------------------------------------------------------------------------------------------
+
             Else
                 Application.Exit()
             End If
+
             If gUsuarioSGI.Controlado = 1 AndAlso gUsuarioSGI.oePersona.leEmail.Count = 0 Then
                 Dim _frm As New frm_DatoUsuario
                 _frm.Width = 600
