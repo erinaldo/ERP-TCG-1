@@ -10,16 +10,16 @@ Imports System.Text.RegularExpressions
 Imports System.Net.Mail
 Imports System.IO
 Imports System.Net
-Imports System.Windows.Forms
+'Imports System.Windows.Forms
 Imports System.ServiceModel
 Imports Infragistics.Win.Misc
-Imports System.Xml
-Imports System.Configuration
-Imports System.Collections.Specialized
+'Imports System.Xml
+'Imports System.Configuration
+'Imports System.Collections.Specialized
 Imports MSScriptControl
 Imports System.Reflection
 Imports Microsoft.Office.Interop
-Imports System.Web
+'Imports System.Web
 
 
 Module m_Funciones
@@ -1695,13 +1695,13 @@ Module m_Funciones
                     FichaISL.Caption = menuProceso.Abreviatura
                     FichaISL.Visible = menuProceso.Activo
                     frm_Menu.utm_ISLSGI.Ribbon.Tabs.Add(FichaISL)
-                    If menuProceso.Explorador Then
-                        Dim GrupoExplorerISL As UltraWinExplorerBar.UltraExplorerBarGroup = New UltraWinExplorerBar.UltraExplorerBarGroup
-                        GrupoExplorerISL.Key = "eb" & menuProceso.Codigo
-                        GrupoExplorerISL.Text = menuProceso.Abreviatura
-                        GrupoExplorerISL.Visible = menuProceso.Activo
-                        frm_Menu.MenuISL.Groups.Add(GrupoExplorerISL)
-                    End If
+                    'If menuProceso.Explorador Then
+                    '    Dim GrupoExplorerISL As UltraWinExplorerBar.UltraExplorerBarGroup = New UltraWinExplorerBar.UltraExplorerBarGroup
+                    '    GrupoExplorerISL.Key = "eb" & menuProceso.Codigo
+                    '    GrupoExplorerISL.Text = menuProceso.Abreviatura
+                    '    GrupoExplorerISL.Visible = menuProceso.Activo
+                    '    frm_Menu.MenuISL.Groups.Add(GrupoExplorerISL)
+                    'End If
                     frm_Bienvenida.Label1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
                     frm_Bienvenida.Label1.Text = VersionDelSistema() & " - Cargando: Módulo de " & menuProceso.Abreviatura
                     _acumulado = _acumulado + _porcen
@@ -1752,21 +1752,21 @@ Module m_Funciones
                                                 frm_Menu.utm_ISLSGI.Tools.Add(iBoton)
                                                 Dim var As String = iBoton.Key
                                                 SubMenuISL.Tools.AddTool(var)
-                                                If oeSubMenu.Explorer Then
-                                                    Dim ItemExplorerISL As UltraWinExplorerBar.UltraExplorerBarItem = New UltraWinExplorerBar.UltraExplorerBarItem
-                                                    ItemExplorerISL.Key = "ebi" & oeSubMenu.Codigo
-                                                    ItemExplorerISL.Text = oeSubMenu.Abreviatura
-                                                    ItemExplorerISL.Tag = "ISL.Win." & oeSubMenu.Form
-                                                    ItemExplorerISL.ToolTipText = oeSubMenu.Nombre
-                                                    ' If System.Environment.OSVersion.Version.Major >= 6 Then
-                                                    If gImagen Then ItemExplorerISL.Settings.AppearancesSmall.Appearance = AparienciaISL
-                                                    'End If
-                                                    'nuevo ------------------
-                                                    ItemExplorerISL.Settings.AppearancesLarge.Tag = oeSubMenu.IdActividadNegocio
-                                                    ItemExplorerISL.Settings.AppearancesSmall.Tag = oeSubMenu.MultiInstancia
-                                                    '-----------------------
-                                                    frm_Menu.MenuISL.Groups("eb" & menuProceso.Codigo).Items.Add(ItemExplorerISL)
-                                                End If
+                                                'If oeSubMenu.Explorer Then
+                                                '    Dim ItemExplorerISL As UltraWinExplorerBar.UltraExplorerBarItem = New UltraWinExplorerBar.UltraExplorerBarItem
+                                                '    ItemExplorerISL.Key = "ebi" & oeSubMenu.Codigo
+                                                '    ItemExplorerISL.Text = oeSubMenu.Abreviatura
+                                                '    ItemExplorerISL.Tag = "ISL.Win." & oeSubMenu.Form
+                                                '    ItemExplorerISL.ToolTipText = oeSubMenu.Nombre
+                                                '    ' If System.Environment.OSVersion.Version.Major >= 6 Then
+                                                '    If gImagen Then ItemExplorerISL.Settings.AppearancesSmall.Appearance = AparienciaISL
+                                                '    'End If
+                                                '    'nuevo ------------------
+                                                '    ItemExplorerISL.Settings.AppearancesLarge.Tag = oeSubMenu.IdActividadNegocio
+                                                '    ItemExplorerISL.Settings.AppearancesSmall.Tag = oeSubMenu.MultiInstancia
+                                                '    '-----------------------
+                                                '    frm_Menu.MenuISL.Groups("eb" & menuProceso.Codigo).Items.Add(ItemExplorerISL)
+                                                'End If
                                                 ' SubMenuISL.Tools.AddRange(New ToolBase() {iBoton})
                                             Next
                                         End If
@@ -1793,21 +1793,21 @@ Module m_Funciones
                                         End If
                                         'End If
                                         GrupoISL.Tools.AddRange(New ToolBase() {BotonISL})
-                                        If menuActividad.Explorer Then
-                                            Dim ItemExplorerISL As UltraWinExplorerBar.UltraExplorerBarItem = New UltraWinExplorerBar.UltraExplorerBarItem
-                                            ItemExplorerISL.Key = "ebi" & menuActividad.Codigo
-                                            ItemExplorerISL.Text = menuActividad.Abreviatura
-                                            ItemExplorerISL.Tag = "ISL.Win." & menuActividad.Form
-                                            ItemExplorerISL.ToolTipText = menuActividad.Nombre
-                                            ' If System.Environment.OSVersion.Version.Major >= 6 Then
-                                            If gImagen Then ItemExplorerISL.Settings.AppearancesSmall.Appearance = AparienciaISL
-                                            'End If
-                                            'nuevo -------------------
-                                            ItemExplorerISL.Settings.AppearancesLarge.Tag = menuActividad.IdActividadNegocio
-                                            ItemExplorerISL.Settings.AppearancesSmall.Tag = menuActividad.MultiInstancia
-                                            '----------------------------
-                                            frm_Menu.MenuISL.Groups("eb" & menuProceso.Codigo).Items.Add(ItemExplorerISL)
-                                        End If
+                                        'If menuActividad.Explorer Then
+                                        '    Dim ItemExplorerISL As UltraWinExplorerBar.UltraExplorerBarItem = New UltraWinExplorerBar.UltraExplorerBarItem
+                                        '    ItemExplorerISL.Key = "ebi" & menuActividad.Codigo
+                                        '    ItemExplorerISL.Text = menuActividad.Abreviatura
+                                        '    ItemExplorerISL.Tag = "ISL.Win." & menuActividad.Form
+                                        '    ItemExplorerISL.ToolTipText = menuActividad.Nombre
+                                        '    ' If System.Environment.OSVersion.Version.Major >= 6 Then
+                                        '    If gImagen Then ItemExplorerISL.Settings.AppearancesSmall.Appearance = AparienciaISL
+                                        '    'End If
+                                        '    'nuevo -------------------
+                                        '    ItemExplorerISL.Settings.AppearancesLarge.Tag = menuActividad.IdActividadNegocio
+                                        '    ItemExplorerISL.Settings.AppearancesSmall.Tag = menuActividad.MultiInstancia
+                                        '    '----------------------------
+                                        '    frm_Menu.MenuISL.Groups("eb" & menuProceso.Codigo).Items.Add(ItemExplorerISL)
+                                        'End If
                                     End If
                                 Next
                             End If

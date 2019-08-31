@@ -163,7 +163,7 @@ Public Class frm_Menu
                     TipoAnticipo = "Proveedor"
                     InstanciaFormMdiChild(e.Tool.SharedProps.Tag, e.Tool.SharedProps.AppearancesSmall.Appearance.Image)
 
-                Case "iconusuario", "iconconectado", "sbNombreUsuario", "sbFechaUltimoIngreso", "sbPCIP", "sbUsuario", "sbFecha1", "Desde", "Tecla"
+                Case "iconusuario", "iconconectado", "sbNombreUsuario", "sbFechaUltimoIngreso", "sbPCIP", "sbUsuario", "sbFecha1", "Desde", "Tecla", "sbTipoCambio"
                     'Case "mnuAyuda"
                     '    SendKeys.Send("{F1}")
                 Case Else
@@ -278,7 +278,7 @@ Public Class frm_Menu
 
                 utm_ISLSGI.Tools("sbNombreUsuario").SharedProps.Caption = gUsuarioSGI.oePersona.NombreCompleto
                 ' utm_ISLSGI.Tools("sbFechaUltimoIngreso").SharedProps.Caption = Date.Now
-                utm_ISLSGI.Tools("sbPCIP").SharedProps.Caption = gUsuarioSGI.ObtenerIP
+                'utm_ISLSGI.Tools("sbPCIP").SharedProps.Caption = gUsuarioSGI.ObtenerIP
                 utm_ISLSGI.Tools("sbPCIP").SharedProps.Caption = gUsuarioSGI.ObtenerLoginWindows & "(" & gUsuarioSGI.ObtenerIP & ")"
                 utm_ISLSGI.Tools("sbTipoCambio").SharedProps.Caption = m_Funciones.TipoCambioCompraVenta(Date.Now)
 
