@@ -114,10 +114,10 @@ Public Class d_Operacion
                     For I As Integer = 1 To oeOperacion.NroOperacionVueltas
                         With oeOperacion
                             fechaReferencia = .Fecha
-                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]", _
-                                    .Tipooperacion, _
-                                    d_DatosConfiguracion.PrefijoID, _
-                                    "A", _
+                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]",
+                                    .Tipooperacion,
+                                    .PrefijoID,
+                                    "A",
                                     .Id _
                                     , .Codigo _
                                     , .IdRuta _
@@ -265,10 +265,10 @@ Public Class d_Operacion
                             Escala = Viaje.IndEscala
                             If Escala = 0 Then
                                 With oeOperacion
-                                    stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]", _
-                                            .Tipooperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
-                                            "A", _
+                                    stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]",
+                                            .Tipooperacion,
+                                            .PrefijoID,
+                                            "A",
                                             .Id _
                                             , .Codigo _
                                             , .IdRuta _
@@ -1136,10 +1136,10 @@ Public Class d_Operacion
             Dim stResultado() As String
             d_DatosConfiguracion = New d_DatosConfiguracion
             With oeViaje
-                stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Viaje_IAE]", _
-                          .TipoOperacion, _
-                          d_DatosConfiguracion.PrefijoID, _
-                        "A", _
+                stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Viaje_IAE]",
+                          .TipoOperacion,
+                          .PrefijoID,
+                        "A",
                           .Id _
                           , .Codigo _
                           , .IdOperacion _
@@ -1156,23 +1156,23 @@ Public Class d_Operacion
                           , .IdEstado _
                           , .Fecha _
                           , .UsuarioCreacion _
-                          , .Activo, _
-                           .GlosaEscala, _
-                           .Carga, _
-                           .IncidenciaOperaciones, _
-                           .Turno, _
-                           .DiaNoche, _
-                           .IndFecha, _
-                           .PorcentajeFlete, _
-                           .IndGrtConfirmada, _
-                           .IndDocumentos, _
-                           .IndGrtPerdido, _
-                           .IndFacturado, _
-                           .FleteUnitario, _
-                           .TotalFlete, _
-                           .Capacidad, _
-                           .IndCarga, _
-                           .IndFormato, _
+                          , .Activo,
+                           .GlosaEscala,
+                           .Carga,
+                           .IncidenciaOperaciones,
+                           .Turno,
+                           .DiaNoche,
+                           .IndFecha,
+                           .PorcentajeFlete,
+                           .IndGrtConfirmada,
+                           .IndDocumentos,
+                           .IndGrtPerdido,
+                           .IndFacturado,
+                           .FleteUnitario,
+                           .TotalFlete,
+                           .Capacidad,
+                           .IndCarga,
+                           .IndFormato,
                            .ViajeRetorno).ToString.Split("_")
             End With
             Return stResultado(0)
@@ -1510,9 +1510,9 @@ Public Class d_Operacion
             d_DatosConfiguracion = New d_DatosConfiguracion
             Dim resultado As Boolean = False
             With oeOperacionDetalle
-                Dim codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_OperacionDetalle_IAE]", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                Dim codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_OperacionDetalle_IAE]",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdOperacion _
                                             , IIf(.IdDemanda.Trim = "", Nothing, .IdDemanda) _
@@ -1529,27 +1529,27 @@ Public Class d_Operacion
                                             , .Comision _
                                             , .Facturado _
                                             , .PagoContraEntrega _
-                                            , .Activo, _
-                                            .Origen, _
-                                            .Destino, _
-                                            .PesoToneladas, _
-                                            .Glosa, _
-                                            .PesoToneladasCarga, _
-                                            .PesoToneladasDescarga, _
-                                            .Cargar, _
-                                            .Descarga, _
-                                            .IndPesoTnDescarga, _
-                                            .Saldo, _
-                                            .SaldoCarga, _
-                                            .UsuarioCreacion, _
-                                            .Consolidado, _
-                                            .ClienteFinal, _
-                                            .CostoEstiba, _
-                                            .CostoEstibaDescarga, _
-                                            .AdelantoFlete, _
-                                            .IncluyeIgvConsolidado, _
-                                            .PagoEfectivoDeposito, _
-                                            .MotivoConsolidado, _
+                                            , .Activo,
+                                            .Origen,
+                                            .Destino,
+                                            .PesoToneladas,
+                                            .Glosa,
+                                            .PesoToneladasCarga,
+                                            .PesoToneladasDescarga,
+                                            .Cargar,
+                                            .Descarga,
+                                            .IndPesoTnDescarga,
+                                            .Saldo,
+                                            .SaldoCarga,
+                                            .UsuarioCreacion,
+                                            .Consolidado,
+                                            .ClienteFinal,
+                                            .CostoEstiba,
+                                            .CostoEstibaDescarga,
+                                            .AdelantoFlete,
+                                            .IncluyeIgvConsolidado,
+                                            .PagoEfectivoDeposito,
+                                            .MotivoConsolidado,
                                             .Subtotal)
                 resultado = True
 
@@ -1588,10 +1588,10 @@ Public Class d_Operacion
             Dim result As Boolean = False
             With OperacionDetalle
 
-                If sqlhelper.ExecuteNonQuery("[OPE].[Isp_OperacionDetalle_IAE]", _
-                                      .TipoOperacion, _
-                                      d_DatosConfiguracion.PrefijoID, _
-                                        .Id _
+                If sqlhelper.ExecuteNonQuery("[OPE].[Isp_OperacionDetalle_IAE]",
+                                      .TipoOperacion,
+                                      .PrefijoID,
+                                        .Id
                                       ) > 0 Then
                     result = True
                 End If

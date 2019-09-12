@@ -106,9 +106,9 @@ Public Class d_OperacionesProceso
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeOperacionesProceso
-                    stResultado = sqlhelper.ExecuteScalar("OPE.Isp_OperacionesProceso_IAE", _
-                                                          .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("OPE.Isp_OperacionesProceso_IAE",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                                                         .Id _
                                                         , .Codigo _
                                                         , .FechaInicio _

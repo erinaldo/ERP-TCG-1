@@ -71,7 +71,7 @@ Public Class d_ClienteViajePrimaDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeClienteViajePrimaDet
-                sqlhelper.ExecuteNonQuery("OPE.Isp_ClienteViajePrimaDet_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_ClienteViajePrimaDet_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdClienteViajePrima _
                         , .IdViaje _
@@ -83,7 +83,7 @@ Public Class d_ClienteViajePrimaDet
                         , .IndAsegurado _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

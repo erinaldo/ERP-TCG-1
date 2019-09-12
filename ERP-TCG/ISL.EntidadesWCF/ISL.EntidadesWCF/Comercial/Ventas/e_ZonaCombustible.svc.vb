@@ -22,6 +22,8 @@ Public Class e_ZonaCombustible
     Private _UsuarioCreacion As String
     Private _UsuarioModifica As String
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

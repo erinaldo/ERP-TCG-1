@@ -121,9 +121,9 @@ Public Class d_GuiaRemitente
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiaRemitente
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaRemitente_IAE]", _
-                                          "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaRemitente_IAE]",
+                                          "I",
+                                          .PrefijoID,
                                             .Id _
                                             , FormatoDocumento(.Serie, 4) _
                                             , FormatoDocumento(.Numero, 10) _

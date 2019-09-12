@@ -35,9 +35,11 @@ Public Class e_OperacionesProcesoDetalle
     Private _viajevacio As Boolean
     <DataMember()> _
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
-Public Property Id() As String
+    <DataMember()>
+    Public Property Id() As String
         Get
             Return _id
         End Get

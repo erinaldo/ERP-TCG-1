@@ -667,13 +667,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\ISL.Encripta.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
       <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
       <Name>ERP.EntidadesWCF</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\ISL.Encripta.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -20,7 +20,8 @@ Public Class e_Liquidaciones
     Public IdMoneda As String
     <DataMember()> _
     Public TipoCambio As Decimal
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public ListaLiquidacionDetalle As New List(Of e_LiquidacionDetalle)
 

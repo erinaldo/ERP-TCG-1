@@ -122,9 +122,9 @@ Public Class d_MovimientoMermas
                             End If
                         End If
                     End If
-                    stResultado = sqlhelper.ExecuteScalar("OPE.Isp_MovimientoMermas_IAE", _
-                                              .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("OPE.Isp_MovimientoMermas_IAE",
+                                              .TipoOperacion,
+                                              .PrefijoID,
                                                 .Id _
                                                 , .IndIngresoSalida _
                                                 , .IdPersona _

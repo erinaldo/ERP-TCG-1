@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo d_DatosConfiguracion.PrefijoID por PrefijoID
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -71,13 +79,13 @@ Public Class d_ControlUsuario
             Dim id As String = ""
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlUsuario
-                id = sqlhelper.ExecuteScalar("SGD.Isp_ControlUsuario_IAE", .TipoOperacion, _
+                id = sqlhelper.ExecuteScalar("SGD.Isp_ControlUsuario_IAE", .TipoOperacion,
                         .Id _
                         , .IdUsuario _
                         , .Ampliacion _
                         , .Salida _
-                        , d_DatosConfiguracion.PrefijoID _
-                        , .Ipv4 _
+                        , .PrefijoID _
+                        , .Ipv4
                     )
             End With
             Return id

@@ -31,7 +31,10 @@ Public Class d_ClientePrima
 
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("OPE.Isp_ClientePrimaSeguro_Listar", "", oeClientePrima.Id, oeClientePrima.IdCliente, oeClientePrima.IdMoneda, oeClientePrima.Vigente)
+            ds = sqlhelper.ExecuteDataset("OPE.Isp_ClientePrimaSeguro_Listar", "", oeClientePrima.Id,
+                                          oeClientePrima.IdCliente,
+                                          oeClientePrima.IdMoneda,
+                                          oeClientePrima.Vigente)
             oeClientePrima = New e_ClientePrima
             If ds.Tables(0).Rows.Count > 0 Then
                 oeClientePrima = Cargar(ds.Tables(0).Rows(0))
@@ -65,7 +68,7 @@ Public Class d_ClientePrima
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeClientePrima
-                sqlhelper.ExecuteNonQuery("OPE.Isp_ClientePrimaSeguro_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_ClientePrimaSeguro_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCliente _
                         , .IdMoneda _

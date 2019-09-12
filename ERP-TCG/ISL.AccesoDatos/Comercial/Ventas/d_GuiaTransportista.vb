@@ -183,7 +183,9 @@ Public Class d_GuiaTransportista
                 Return tabla
             Else
                 If oeGuiaTransportista.Inicial <> "" And oeGuiaTransportista.Final <> "" Then
-                    Return InformeGrt(tabla, oeGuiaTransportista.Serie, oeGuiaTransportista.Inicial, oeGuiaTransportista.Final)
+                    Return InformeGrt(tabla, oeGuiaTransportista.Serie,
+                                      oeGuiaTransportista.Inicial,
+                                      oeGuiaTransportista.Final)
                 Else
                     Return tabla
                 End If
@@ -323,9 +325,9 @@ Public Class d_GuiaTransportista
                 For Each GuiaTransportista As e_GuiaTransportista In oeGuiaTransportista.GuiaTransportista
                     GuiaTransportista.UsuarioCreacion = oeGuiaTransportista.UsuarioCreacion
                     With GuiaTransportista
-                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
-                                                              "I", _
-                                                              d_DatosConfiguracion.PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]",
+                                                              "I",
+                                                              .PrefijoID,
                                                                 .Id _
                                                                 , FormatoDocumento(.Serie, 4) _
                                                                 , FormatoDocumento(.Numero, 10) _
@@ -382,9 +384,9 @@ Public Class d_GuiaTransportista
             Using transScope As New TransactionScope()
                 With oeGuiaTransportista
                     If .TipoOperacion = "I" Then
-                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
-                                                              .TipoOperacion, _
-                                                              d_DatosConfiguracion.PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]",
+                                                              .TipoOperacion,
+                                                              .PrefijoID,
                                                                 .Id _
                                                                 , FormatoDocumento(.Serie, 4) _
                                                                 , FormatoDocumento(.Numero, 10) _

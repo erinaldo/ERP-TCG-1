@@ -108,8 +108,8 @@ Public Class d_Liquidaciones
                         LiquidacionTottus.IndFormato = 4
                         LiquidacionTottus.UsuarioCreacion = oeLiquidaciones.UsuarioCreacion
                         With LiquidacionTottus
-                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]", _
-                                        .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]",
+                                        .TipoOperacion, .PrefijoID,
                                         .Id _
                                         , .Codigo _
                                         , .IdCliente _
@@ -132,8 +132,8 @@ Public Class d_Liquidaciones
                         Next
                     Next
                     With oeLiquidaciones
-                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]", _
-                                    .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]",
+                                    .TipoOperacion, .PrefijoID,
                                     .Id _
                                     , .Codigo _
                                     , .IdCliente _
@@ -150,8 +150,8 @@ Public Class d_Liquidaciones
                     End With
                 Else
                     With oeLiquidaciones
-                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]", _
-                                    .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Liquidacion_IAE]",
+                                    .TipoOperacion, .PrefijoID,
                                     .Id _
                                     , .Codigo _
                                     , .IdCliente _
@@ -293,9 +293,9 @@ Public Class d_Liquidaciones
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLiquidacioneDetalle
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_LiquidacionDetalle_IAE]", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_LiquidacionDetalle_IAE]",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdLiquidacion _
                                             , .IdViaje _

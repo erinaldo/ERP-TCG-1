@@ -24,6 +24,8 @@ Public Class e_ClienteViajePrimaCon
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Event DatoCambiado()
 

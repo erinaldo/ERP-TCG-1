@@ -80,18 +80,18 @@ Public Class d_DistanciaZona
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDistanciaZona
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_DistanciaZona_IAE]", _
-                                          .TipoOperacion, _
-                                         d_DatosConfiguracion.PrefijoID, _
-                                         .Id, _
-                                         .IdRuta, _
-                                         .IdActividadNegocio, _
-                                         .IdCliente, _
-                                         .IdZona, _
-                                         .Distancia, _
-                                         .Observacion, _
-                                         .FechaInicio, _
-                                         .FechaFin, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_DistanciaZona_IAE]",
+                                          .TipoOperacion,
+                                         .PrefijoID,
+                                         .Id,
+                                         .IdRuta,
+                                         .IdActividadNegocio,
+                                         .IdCliente,
+                                         .IdZona,
+                                         .Distancia,
+                                         .Observacion,
+                                         .FechaInicio,
+                                         .FechaFin,
                                          .Actual)
             End With
             Return True

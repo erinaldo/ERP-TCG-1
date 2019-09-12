@@ -73,9 +73,9 @@ Public Class d_GuiaTransportistaInterrumpida
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiaTransportistaInterrumpida
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaTransportistaInterrumpido_IAE]", _
-                                             "I", _
-                                            d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaTransportistaInterrumpido_IAE]",
+                                             "I",
+                                            .PrefijoID,
                                             .Id _
                                             , .IdSeguimiento _
                                             , .IdGuiaTransportista _

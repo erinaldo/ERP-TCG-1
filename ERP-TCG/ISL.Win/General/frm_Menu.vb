@@ -4,6 +4,7 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-08-30  |   NSOFT   |   Se comento los mensaje emergentes
+' @0002 |   2019-01-01  |   CT2010  |   LLenar Combo
 '=================================================================================================================
 
 
@@ -255,7 +256,7 @@ Public Class frm_Menu
                 'Await MensajePC("La configuración regional debe ser de Perú")
                 Application.Exit()
             End If
-
+            LlenaCombos() '@0002
             'Autentica el usuario que va a ingresar al ERP T&L
             If AutenticarUsuario() Then
 
@@ -302,7 +303,7 @@ Public Class frm_Menu
                 frm_Bienvenida.UltraProgressBar1.Value = 85
                 frm_Bienvenida.Refresh()
 
-                LlenaCombos()
+                'LlenaCombos() '@0002
                 CargaIGV()
                 gmt_Iconos()
 
