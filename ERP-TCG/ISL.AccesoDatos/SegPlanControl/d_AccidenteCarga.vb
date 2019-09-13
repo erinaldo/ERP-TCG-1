@@ -68,7 +68,7 @@ Public Class d_AccidenteCarga
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oee_AccidenteCarga
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Carga_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Carga_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAccidente _
                         , .IdMaterial _

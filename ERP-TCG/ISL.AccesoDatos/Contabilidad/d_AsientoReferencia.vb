@@ -72,7 +72,7 @@ Public Class d_AsientoReferencia
             d_DatosConfiguracion = New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoReferencia
-                stResultado = bd.ExecuteScalar("[CON].[Isp_AsientoReferencia_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                stResultado = bd.ExecuteScalar("[CON].[Isp_AsientoReferencia_IAE]", .TipoOperacion, .PrefijoID _
                         , .Id, .IdAsiento, .IdReferencia, .TipoReferencia).ToString.Split("_")
                 .Id = stResultado(0)
             End With
@@ -93,12 +93,12 @@ Public Class d_AsientoReferencia
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = bd.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoReferencia", d_DatosConfiguracion.PrefijoID)
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000000000001", stResultado)
+            stResultado = bd.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoReferencia", PrefijoID)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

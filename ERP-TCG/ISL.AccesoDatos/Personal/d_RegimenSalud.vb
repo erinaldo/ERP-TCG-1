@@ -82,7 +82,7 @@ Public Class d_RegimenSalud
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRegimenSalud
-                sqlhelper.ExecuteNonQuery("PER.Isp_RegimenSalud_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_RegimenSalud_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .Regimen _

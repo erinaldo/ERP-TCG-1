@@ -131,7 +131,7 @@ Public Class d_GastoOperacion
                         , .IdGrupo _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , 0 _
                         , .FechaCierre, _
                         "", _
@@ -189,7 +189,7 @@ Public Class d_GastoOperacion
                 .Id = sqlhelper.ExecuteScalar("TES.Isp_GastoOperacion_IAE", .TipoOperacion, _
                         .Id, .IdCuentaCorriente, .TipoMovimiento, .IdFlujoCaja, .IdDocumento _
                         , .IdViaje, .FechaEmision, .Glosa, .Total, .IdEstado, .IdGrupo, .UsuarioCreacion _
-                        , .Activo, d_DatosConfiguracion.PrefijoID, .IndAlmacen, .FechaEmision, .IdProveedor _
+                        , .Activo, .PrefijoID, .IndAlmacen, .FechaEmision, .IdProveedor _
                         , .IdTipoDocumento, .SubTotal, .IdCaja, .IdTrabajadorAutoriza, .IdLugar, .IndGasto)
                 idGastoOpe = .Id
                 If .oeRegistroCombustible IsNot Nothing Then
@@ -198,7 +198,7 @@ Public Class d_GastoOperacion
                     With oeGastoOperacion.oeRegistroCombustible
                         IdRegComb = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
                                             .TipoOperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
+                                            .PrefijoID, _
                                             .Id _
                                             , .IdViaje _
                                             , .IdVehiculo _

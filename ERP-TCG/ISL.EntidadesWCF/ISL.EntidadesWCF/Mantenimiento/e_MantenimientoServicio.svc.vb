@@ -21,6 +21,8 @@ Public Class e_MantenimientoServicio
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Seleccion() As Boolean

@@ -55,10 +55,10 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leRegimenPensionario As System.Collections.Generic.List(Of EntidadesWCF.e_RegimenPensionario)) As Boolean Implements Il_RegimenPensionario.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leRegimenPensionario As System.Collections.Generic.List(Of EntidadesWCF.e_RegimenPensionario), ByVal PrefijoID As String) As Boolean Implements Il_RegimenPensionario.GuardarMasivo
         Try
             Dim dtRP As Data.DataTable = CrearDT()
-            Dim id As String = odRegimenPensionario.UltimoIdInserta
+            Dim id As String = odRegimenPensionario.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

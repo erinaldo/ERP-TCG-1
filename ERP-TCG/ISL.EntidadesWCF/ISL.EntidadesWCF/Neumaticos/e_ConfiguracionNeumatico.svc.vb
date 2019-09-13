@@ -15,7 +15,8 @@ Public Class e_ConfiguracionNeumatico
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public lstDetalleConfiguracionNeumatico As New List(Of e_DetalleConfiguracionNeumatico)
 

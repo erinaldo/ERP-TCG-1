@@ -75,7 +75,7 @@ Public Class d_MaterialesNegociados
             Dim id As String = ""
             Using transcope As New TransactionScope
                 With oeMaterialesNegociados
-                    id = sqlhelper.ExecuteScalar("CMP.Isp_MaterialesNegociados_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("CMP.Isp_MaterialesNegociados_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdProveedor _
                             , .Fecha _

@@ -59,7 +59,7 @@ Public Class d_AccidenteFoto
             Dim ms As New IO.MemoryStream
             With oeAccidenteFoto
                 .Foto.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Foto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Foto_IAE", .TipoOperacion, .PrefijoID, _
                     .Id _
                     , .IdAccidente _
                     , ms.ToArray() _

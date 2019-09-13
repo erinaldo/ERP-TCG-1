@@ -117,7 +117,7 @@ Public Class d_RegistroConsumoCombustible
                     With obj
                         stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
                                                               .TipoOperacion, _
-                                                              d_DatosConfiguracion.PrefijoID, _
+                                                              .PrefijoID, _
                                 .Id _
                                 , .IdViaje _
                                 , .IdVehiculo _
@@ -166,7 +166,7 @@ Public Class d_RegistroConsumoCombustible
                 With oeRegistrarConsumoCombustible
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                             .Id _
                             , .IdViaje _
                             , .IdVehiculo _

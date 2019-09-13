@@ -44,7 +44,8 @@ Public Class e_Movimiento_Administrativo
     Public FechaHasta As String
     <DataMember()> _
     Public IdCaja As String = ""
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

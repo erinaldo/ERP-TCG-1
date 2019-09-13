@@ -45,7 +45,8 @@ Public Class e_RequerimientoServicio
     Public FechaDesde As Date
     <DataMember()> _
     Public FechaHasta As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Seleccion() As Boolean
         Get

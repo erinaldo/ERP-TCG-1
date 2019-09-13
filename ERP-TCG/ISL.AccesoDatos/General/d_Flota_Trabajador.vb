@@ -87,7 +87,7 @@ Public Class d_Flota_Trabajador
             With oeFlota_Trabajador
                 IdResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Flota_Trabajador_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdTrabajador _
                         , .IdFlota _

@@ -98,7 +98,7 @@ Public Class d_Cotizacion
                 With oeCotizacion
                     stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Cotizacion_IAE" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .Codigo _
                             , .Glosa _

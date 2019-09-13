@@ -105,7 +105,7 @@ Public Class d_Marca
         Try
             With oeMarca
                 sqlhelper.ExecuteNonQuery("STD.ISP_Marca_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, .Activo, _
+                .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, .Activo, _
                 .UsuarioCreacion, .TipoMarca)
             End With
             Return True

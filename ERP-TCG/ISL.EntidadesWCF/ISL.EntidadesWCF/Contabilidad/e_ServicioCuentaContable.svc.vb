@@ -20,7 +20,8 @@ Public Class e_ServicioCuentaContable
     Public Modificado As Boolean
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

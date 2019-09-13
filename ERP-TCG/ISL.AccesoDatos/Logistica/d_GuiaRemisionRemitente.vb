@@ -125,7 +125,7 @@ Public Class d_GuiaRemisionRemitente
             Using transScope As New TransactionScope()
                 With oeGuiaRemisionRemitente
                     stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_GuiaRemision_IAE]" _
-                            , .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                            , .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdEmpresaProveedor _
                             , .IdTipoGuia _

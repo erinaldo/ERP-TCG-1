@@ -118,7 +118,7 @@ Public Class d_Perfil
                             , .Abreviatura _
                             , .Activo _
                             , .UsuarioCreacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                         )
 
                     If Not .lePerfilActividadNegocio Is Nothing Then

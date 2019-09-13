@@ -116,7 +116,7 @@ Public Class d_Ruta
                 With oeRuta
                     stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Ruta_IAE]", _
                                         .TipoOperacion, _
-                                        d_DatosConfiguracion.PrefijoID, _
+                                        .PrefijoID, _
                                         "A", _
                                          .Id.Trim _
                                         , .Codigo _

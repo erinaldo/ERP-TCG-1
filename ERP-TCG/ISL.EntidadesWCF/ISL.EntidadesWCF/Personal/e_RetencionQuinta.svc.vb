@@ -26,6 +26,8 @@ Public Class e_RetencionQuinta
     Public leDetalle As New List(Of e_DetalleRentaQuinta)
     <DataMember()> _
     Public dtDetalleR5 As DataTable
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

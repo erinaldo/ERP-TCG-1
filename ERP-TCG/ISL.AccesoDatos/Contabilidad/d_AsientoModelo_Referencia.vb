@@ -104,7 +104,7 @@ Public Class d_AsientoModelo_Referencia
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsientoModelo_Referencia
-                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoModelo_Referencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoModelo_Referencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAsiMod_ActNeg _
                         , .TipoReferencia _

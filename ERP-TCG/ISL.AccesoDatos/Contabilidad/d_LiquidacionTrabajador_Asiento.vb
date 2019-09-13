@@ -13,7 +13,7 @@ Public Class d_LiquidacionTrabajador_Asiento
                 With oeLiquidacionTrabajador_Asiento
                     id = sqlhelper.ExecuteScalar("CON.Isp_LiquidacionTrabajador_Asiento_IAE", _
                              .TipoOperacion, _
-                             d_DatosConfiguracion.PrefijoID, _
+                             .PrefijoID, _
                             .Id _
                             , .idliquidaciontrabajador _
                             , .idasiento _

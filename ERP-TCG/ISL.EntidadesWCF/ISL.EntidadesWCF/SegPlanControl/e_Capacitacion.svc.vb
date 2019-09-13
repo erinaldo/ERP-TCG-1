@@ -30,7 +30,8 @@ Public Class e_Capacitacion
     Public TipoOperacion As String
     <DataMember()> _
     Public leDetalle As New List(Of e_DetalleCapacitacion)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -86,7 +86,7 @@ Public Class d_Movimiento_Administrativo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento_Administrativo
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Administrativo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Administrativo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                     )
             End With

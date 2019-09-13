@@ -50,7 +50,8 @@ Public Class e_AsientoModelo
     Public IndVinculado As Boolean = False
     <DataMember()> _
     Public Ejercicio As Integer = 0
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

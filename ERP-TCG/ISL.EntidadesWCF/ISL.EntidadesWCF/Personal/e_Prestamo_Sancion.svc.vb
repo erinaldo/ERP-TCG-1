@@ -20,7 +20,8 @@ Public Class e_Prestamo_Sancion
     Public Modificado As Boolean
     <DataMember()> _
     Public Tipo As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

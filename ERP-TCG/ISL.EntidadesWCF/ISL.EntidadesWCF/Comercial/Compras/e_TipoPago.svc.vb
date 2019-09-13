@@ -21,7 +21,8 @@ Public Class e_TipoPago
     Public IdClienteProveedor As String
     <DataMember()> _
     Public TipoClienteProveedor As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

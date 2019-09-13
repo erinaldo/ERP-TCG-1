@@ -24,7 +24,8 @@ Public Class e_AsientoModelo_ActividadNegocio
     Public Equivale As Integer
     <DataMember()> _
     Public leReferencia As New List(Of e_AsientoModelo_Referencia)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

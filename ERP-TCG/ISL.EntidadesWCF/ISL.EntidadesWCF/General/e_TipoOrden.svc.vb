@@ -17,7 +17,8 @@ Public Class e_TipoOrden
     Public TipOoperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

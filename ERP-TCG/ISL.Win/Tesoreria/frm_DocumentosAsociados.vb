@@ -900,7 +900,7 @@ Public Class frm_DocumentosAsociados
                             oeAsiModAux.UsuarioCreacion = gUsuarioSGI.Id
                             oeAsiModAux.IndVinculado = True
                             leAsiMod.Add(oeAsiModAux)
-                            If olMovCuentaCte.GuardarLista2(leMovCuentaCte, leAsiMod) Then
+                            If olMovCuentaCte.GuardarLista2(leMovCuentaCte, leAsiMod, PrefijoIdSucursal) Then
                                 mensajeEmergente.Confirmacion("Los Documentos se guardaron correctamente", True)
                                 MostrarTabs(0, ficDocAosciados)
                                 Consultar(True)

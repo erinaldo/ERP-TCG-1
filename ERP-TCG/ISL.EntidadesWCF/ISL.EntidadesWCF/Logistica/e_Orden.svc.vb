@@ -43,7 +43,8 @@ Public Class e_Orden
     Private _Serie_Numero As String
     <DataMember()> _
     Public TipoOperDocAsoc As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public lstOrdenMaterial As New List(Of e_OrdenMaterial)
     <DataMember()> _

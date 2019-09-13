@@ -16,8 +16,10 @@ Public Class e_GrupoDetalleLiq
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public Monto As Decimal
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

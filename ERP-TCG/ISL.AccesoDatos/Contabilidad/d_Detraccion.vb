@@ -83,7 +83,7 @@ Public Class d_Detraccion
                 With oeDetraccion
                     stResultado = bd.ExecuteScalar("[CON].[Isp_Detraccion_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .IdAdquirienteProveedor _
                             , .IdEstado _

@@ -111,7 +111,7 @@ Public Class d_TipoMovimientoInventario
             With oeTipoMovimientoInventario
                 sqlhelper.ExecuteNonQuery("ALM.Isp_TipoMovimientoInventario_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID _
+                                          .PrefijoID _
                                           , .Id, _
                                           .Codigo, _
                                           .Nombre, _

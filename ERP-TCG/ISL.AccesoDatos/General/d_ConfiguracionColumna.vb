@@ -81,7 +81,7 @@ Public Class d_ConfiguracionColumna
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConfiguracionColumna
-                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionColumna_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionColumna_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTabla _
                         , .NroOrden _

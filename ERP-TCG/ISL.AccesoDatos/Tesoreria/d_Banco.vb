@@ -167,7 +167,7 @@ Public Class d_Banco
 
             With oeBanco
                 sqlhelper.ExecuteNonQuery("TES.Isp_Banco_IAE", .TipoOperacion, _
-                .Id, .Codigo, .Nombre, .Abreviatura, .Activo, d_DatosConfiguracion.PrefijoID)
+                .Id, .Codigo, .Nombre, .Abreviatura, .Activo, .PrefijoID)
             End With
             Return True
         Catch ex As Exception

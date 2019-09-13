@@ -75,7 +75,7 @@ Public Class d_DetalleEntornoTrabajo
                         , .IdUsuario _
                         , .IdEntornoTrabajo _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

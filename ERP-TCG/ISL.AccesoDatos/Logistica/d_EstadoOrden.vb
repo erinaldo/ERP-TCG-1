@@ -102,7 +102,7 @@ Public Class d_EstadoOrden
             With oeEstadoOrden
                 sqlhelper.ExecuteNonQuery("ALM.Isp_EstadoOrden_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .Nombre, _
                                           .Activo)

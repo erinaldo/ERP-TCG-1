@@ -22,8 +22,10 @@ Public Class e_DocumentoVehicular_Documento
     Public TipoOperacion As String
     <DataMember()> _
     Public UsuarioCreacion As String
-    <DataMember()> _
+    <DataMember()>
     Public leDocVehDocPago As New List(Of e_DocVehDocPago)
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
    Public Property Id() As String

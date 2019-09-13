@@ -132,7 +132,7 @@ Public Class d_OrdenCompra
                 With oeOrden
                     stResultado = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompra_IAE" _
                                                         , .TipoOperacion _
-                                                        , d_DatosConfiguracion.PrefijoID _
+                                                        , .PrefijoID _
                                                         , .Id _
                                                         , .NroOrden _
                                                         , .IdMoneda _
@@ -207,7 +207,7 @@ Public Class d_OrdenCompra
             Using transScope As New TransactionScope()
                 With oeOrden
                     stResultado = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompra_IAE" _
-                                                        , "M", d_DatosConfiguracion.PrefijoID, .Id, .NroOrden, .IdMoneda, .IdTrabajador, _
+                                                        , "M", .PrefijoID, .Id, .NroOrden, .IdMoneda, .IdTrabajador, _
                                                         .IdProveedor, .SubTotal, .Impuesto, .Total, Date.Parse("01/01/1901"), _
                                                         Date.Parse("01/01/1901"), Date.Parse("01/01/1901"), _
                                                         1, "", "", "", 1, "", "", "", 1, .UsuarioCreacion).ToString.Split("_")

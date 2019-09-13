@@ -53,7 +53,7 @@ Public Class l_ClienteViajePrima
             If Validar(oeClienteViajePrima) Then
                 Using TransScope As New TransactionScope()
                     If odClienteViajePrima.Guardar(oeClienteViajePrima) Then
-                        Dim idCliviaPriDet As String = odCliViaPriDet.UltimoIdInserta()
+                        Dim idCliviaPriDet As String = odCliViaPriDet.UltimoIdInserta(oeClienteViajePrima.PrefijoID)
                         Dim lsPrefijoCliviaPriDet As String = Left(idCliviaPriDet, 3)
                         Dim lsNumeroIdCliviaPriDet As Integer = CInt(Right(idCliviaPriDet, Len(idCliviaPriDet) - 3))
                         Dim row As Data.DataRow

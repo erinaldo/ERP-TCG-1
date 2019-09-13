@@ -108,7 +108,7 @@ Public Class d_TrabajadorSeguridad
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTrabajadorSeguridad
-                sqlhelper.ExecuteNonQuery("[SGD].[Isp_TrabajadorSeguridad_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[SGD].[Isp_TrabajadorSeguridad_IAE]", .TipoOperacion, .PrefijoID, _
                                                                         .Id _
                                                                         , .IdProcesoNegocio _
                                                                         , .IdTrabajador _

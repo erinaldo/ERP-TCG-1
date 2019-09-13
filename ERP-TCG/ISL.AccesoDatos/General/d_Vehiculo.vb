@@ -160,7 +160,7 @@ Public Class d_Vehiculo
                     stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Vehiculo_IAE]", _
                                                           .TipoOperacion, _
                                                         .TipoActualizacion, _
-                                                        d_DatosConfiguracion.PrefijoID, _
+                                                        .PrefijoID, _
                                                          .Id _
                                                         , .Codigo _
                                                         , .Placa _

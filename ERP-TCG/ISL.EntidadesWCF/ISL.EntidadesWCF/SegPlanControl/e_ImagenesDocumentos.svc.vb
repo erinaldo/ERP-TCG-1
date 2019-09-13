@@ -28,8 +28,10 @@ Public Class e_ImagenesDocumentos
     Private _imagen As New List(Of Drawing.Image)
     <DataMember()> _
     Public Indicador As String
-    <DataMember()> _
+    <DataMember()>
     Public Identificador As String
+    <DataMember()>
+    Public PrefijoID As String = ""
     '<DataMember()> _
     'Public ListaDetalle As New List(Of e_DocumentoVehiculoDetalle)
     <DataMember()> _

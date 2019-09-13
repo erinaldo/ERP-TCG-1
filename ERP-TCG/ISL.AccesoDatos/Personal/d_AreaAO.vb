@@ -80,7 +80,7 @@ Public Class d_AreaAO
 
             With oeAreaAO
                 SqlHelper.ExecuteNonQuery("PER.Isp_AreaOG_IAE", .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .Codigo _
                         , .Nombre _

@@ -62,7 +62,7 @@ Public Class d_EquivalenciaRuta
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEquivalenciaRuta
-                sqlhelper.ExecuteNonQuery("PER.Isp_EquivalenciaRuta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_EquivalenciaRuta_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRuta _
                         , .Cuenta _
@@ -99,11 +99,11 @@ Public Class d_EquivalenciaRuta
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.EquivalenciaRuta", d_DatosConfiguracion.PrefijoID)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.EquivalenciaRuta", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

@@ -110,7 +110,7 @@ Public Class d_PerfilActividadNegocio
                         , .Activo _
                         , .UsuarioCreacion _
                         , .UsuarioModifica _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

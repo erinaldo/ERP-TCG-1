@@ -68,7 +68,7 @@ Public Class d_CajaMonto
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCajaMonto
-                sqlhelper.ExecuteNonQuery("TES.Isp_CajaMonto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CajaMonto_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCaja _
                         , .Fecha _

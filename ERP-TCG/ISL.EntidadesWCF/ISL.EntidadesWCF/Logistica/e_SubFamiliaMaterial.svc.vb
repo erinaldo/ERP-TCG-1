@@ -16,7 +16,8 @@ Public Class e_SubFamiliaMaterial
     Public UsuarioCreacion As String
     <DataMember()> _
     Public loCtaCtbleSubFam As New List(Of e_CtaCtbleSubFamiliaMat)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

@@ -4,7 +4,8 @@ Public Class e_RecargaPeaje
     Implements Ie_RecargaPeaje
 
 #Region "Propiedades"
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()>
     Public TipoOperacion As String
     <DataMember()>

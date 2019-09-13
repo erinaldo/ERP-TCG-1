@@ -424,7 +424,7 @@ Public Class l_Asiento
                     If Not o_o.MovimientoAnalisis Is Nothing Then
                         If o_o.MovimientoAnalisis.Count > 3 Then
                             If bandera Then
-                                Id = odMovimientoAnalisis.UltimoIdInserta()
+                                Id = odMovimientoAnalisis.UltimoIdInserta(oeAsiento.PrefijoID)
                                 lsPrefijo = Left(Id, 3)
                                 lsNumero = CInt(Right(Id, Len(Id) - 3))
                                 bandera = False 'me indica si ya hizo un masivo
@@ -484,7 +484,7 @@ Public Class l_Asiento
                 If Not o_o.MovimientoAnalisis Is Nothing Then
                     If o_o.MovimientoAnalisis.Count > 3 Then
                         If bandera Then
-                            Id = odMovimientoAnalisis.UltimoIdInserta()
+                            Id = odMovimientoAnalisis.UltimoIdInserta(oeAsiento.PrefijoID)
                             lsPrefijo = Left(Id, 3)
                             lsNumero = CInt(Right(Id, Len(Id) - 3))
                             bandera = False 'me indica si ya hizo un masivo
@@ -1414,9 +1414,9 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable, _
-    ByVal oePeriodo As e_Periodo, ByVal IdUsuarioCreacion As String, _
-    ByVal oemoneda As e_Moneda, ByVal lnTipoCambio As Double, ByVal lsTipo As String) As Boolean Implements Il_Asiento.GuardarSegurosDevengados
+    Public Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable,
+    ByVal oePeriodo As e_Periodo, ByVal IdUsuarioCreacion As String,
+    ByVal oemoneda As e_Moneda, ByVal lnTipoCambio As Double, ByVal lsTipo As String, ByVal PrefijoID As String) As Boolean Implements Il_Asiento.GuardarSegurosDevengados
         Try
             Dim MonedaGlosa As String = "SOLES"
             Dim oeAsiento2 As New e_Asiento
@@ -1488,7 +1488,7 @@ Public Class l_Asiento
             Dim olMovimientoAnalisis As New l_MovimientoAnalisis
             Dim odAMovimientoAnalisis As New d_MovimientoAnalisis
 
-            Dim Id As String = odAMovimientoAnalisis.UltimoIdInserta
+            Dim Id As String = odAMovimientoAnalisis.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(Id, 1) & "SI"
             Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
             ''---------------------------asientos de apertura----------------
@@ -1659,23 +1659,23 @@ Public Class l_Asiento
                     IdMoneda = "1CH02"
                 End If
 
-                Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                 Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-                Dim NroAsientoT As String = odAsiento.UltimoNroAsiento(IdTipoAsiento, IdPeriodo, "1")
+                Dim NroAsientoT As String = odAsiento.UltimoNroAsiento(IdTipoAsiento, IdPeriodo, "1", oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoNroAsientoT As String = Left(NroAsientoT, 2)
                 Dim lsNumeroNroAsientoT As Integer = CInt(Right(NroAsientoT, Len(NroAsientoT) - 2))
 
-                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", IdPeriodo, "1")
+                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", IdPeriodo, "1", oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoNroAsientoD As String = Left(NroAsientoD, 2)
                 Dim lsNumeroNroAsientoD As Integer = CInt(Right(NroAsientoD, Len(NroAsientoD) - 2))
 
-                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                 Dim lsNumeroAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
 
-                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta()
+                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovCajaBanco As String = Left(IdMovimientoCajaBanco, 3)
                 Dim lsNumeroMovCajaBanco As Integer = CInt(Right(IdMovimientoCajaBanco, Len(IdMovimientoCajaBanco) - 3))
 
@@ -1683,20 +1683,20 @@ Public Class l_Asiento
                 Dim lsPrefijoNroImpresion As String = ""
                 Dim lsNroImpresion As Integer = 0
                 If Len(Trim(oeMovCajaBanco.IdCuentaBancaria)) = 12 Then
-                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, IdPeriodo, "2")
+                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, IdPeriodo, "2", oeMovCajaBanco.PrefijoID)
                     lsPrefijoNroImpresion = Left(NroImpresion, 2)
                     lsNroImpresion = CInt(Right(NroImpresion, Len(NroImpresion) - 2))
                 End If
 
-                Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta()
+                Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoCuentaxCyP As String = Left(IdCuentaxCyP, 3)
                 Dim lsNumeroCuentaxCyP As Integer = CInt(Right(IdCuentaxCyP, Len(IdCuentaxCyP) - 3))
 
-                Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar()
+                Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMov_MovDoc As String = Left(IdAsientoMov_MovDoc, 3)
                 Dim lsNumeroAsientoMov_MovDoc As Integer = CInt(Right(IdAsientoMov_MovDoc, Len(IdAsientoMov_MovDoc) - 3))
 
-                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta()
+                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovAna As String = Left(IdMovAna, 3)
                 Dim lsNumeroMovAna As Integer = CInt(Right(IdMovAna, Len(IdMovAna) - 3))
 
@@ -2099,23 +2099,23 @@ Public Class l_Asiento
                     IdMoneda = "1CH02"
                 End If
 
-                Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                 Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-                Dim NroAsientoT As String = odAsiento.UltimoNroAsiento(IdTipoAsiento, IdPeriodo, "1")
+                Dim NroAsientoT As String = odAsiento.UltimoNroAsiento(IdTipoAsiento, IdPeriodo, "1", oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoNroAsientoT As String = Left(NroAsientoT, 2)
                 Dim lsNumeroNroAsientoT As Integer = CInt(Right(NroAsientoT, Len(NroAsientoT) - 2))
 
-                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", IdPeriodo, "1")
+                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", IdPeriodo, "1", oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoNroAsientoD As String = Left(NroAsientoD, 2)
                 Dim lsNumeroNroAsientoD As Integer = CInt(Right(NroAsientoD, Len(NroAsientoD) - 2))
 
-                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                 Dim lsNumeroAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
 
-                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta()
+                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovCajaBanco As String = Left(IdMovimientoCajaBanco, 3)
                 Dim lsNumeroMovCajaBanco As Integer = CInt(Right(IdMovimientoCajaBanco, Len(IdMovimientoCajaBanco) - 3))
 
@@ -2123,20 +2123,20 @@ Public Class l_Asiento
                 Dim lsPrefijoNroImpresion As String = ""
                 Dim lsNroImpresion As Integer = 0
                 If Len(Trim(oeMovCajaBanco.IdCuentaBancaria)) = 12 Then
-                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, IdPeriodo, "2")
+                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, IdPeriodo, "2", oeMovCajaBanco.PrefijoID)
                     lsPrefijoNroImpresion = Left(NroImpresion, 2)
                     lsNroImpresion = CInt(Right(NroImpresion, Len(NroImpresion) - 2))
                 End If
 
-                Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta()
+                Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoCuentaxCyP As String = Left(IdCuentaxCyP, 3)
                 Dim lsNumeroCuentaxCyP As Integer = CInt(Right(IdCuentaxCyP, Len(IdCuentaxCyP) - 3))
 
-                Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar()
+                Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMov_MovDoc As String = Left(IdAsientoMov_MovDoc, 3)
                 Dim lsNumeroAsientoMov_MovDoc As Integer = CInt(Right(IdAsientoMov_MovDoc, Len(IdAsientoMov_MovDoc) - 3))
 
-                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta()
+                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovAna As String = Left(IdMovAna, 3)
                 Dim lsNumeroMovAna As Integer = CInt(Right(IdMovAna, Len(IdMovAna) - 3))
 
@@ -2510,7 +2510,7 @@ Public Class l_Asiento
                         End If
                     Next
                     _leAsiento.Add(_oeAsiento)
-                    If GuardarListaMasiva3(_leAsiento) Then
+                    If GuardarListaMasiva3(_leAsiento, oeSaldoCta.PrefijoID) Then
                         oeSaldoCta.IdReferencia = _IdAsientoRef
                         If odSaldoCtaCte.PagoBono(oeSaldoCta) Then
                             TransScope.Complete()
@@ -2687,7 +2687,7 @@ Public Class l_Asiento
         Try
             Dim olMovAnalisis As New l_MovimientoAnalisis, odMovAnalisis As New d_MovimientoAnalisis
             Dim Id As String = "", lsPrefijo As String = "", lsNumero As Integer = 0
-            Id = odMovimientoAnalisis.UltimoIdInserta() : lsPrefijo = Left(Id, 3) : lsNumero = CInt(Right(Id, Len(Id) - 3))
+            Id = odMovimientoAnalisis.UltimoIdInserta(oeAsiento.PrefijoID) : lsPrefijo = Left(Id, 3) : lsNumero = CInt(Right(Id, Len(Id) - 3))
             For Each oeAsiMov In oeAsiento.AsientoMovimiento
                 If oeAsiMov.MovimientoAnalisis.Count > 0 Then
                     Dim dtMovAna As Data.DataTable = olMovimientoAnalisis.CrearDT
@@ -2734,27 +2734,27 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarListaMasiva(loAsiento As List(Of e_Asiento)) As Boolean Implements Il_Asiento.GuardarListaMasiva
+    Public Function GuardarListaMasiva(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean Implements Il_Asiento.GuardarListaMasiva
         Try
-            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+            Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
             Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1")
+            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1", PrefijoID)
             Dim lsPrefijoNroAsiento As String = Left(NroAsiento, 2)
             Dim lsNumeroNroAsiento As Integer = CInt(Right(NroAsiento, Len(NroAsiento) - 2))
 
-            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta
+            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMov As String = Left(idAsiMov, 3)
             Dim lsNumeroAsiMov As Integer = CInt(Right(idAsiMov, Len(idAsiMov) - 3))
 
             Dim fil As Integer = 0
 
-            Dim idAsiMovDoc As String = odAsMovMovDoc.UltimoIdInserta
+            Dim idAsiMovDoc As String = odAsMovMovDoc.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMovDoc As String = Left(idAsiMovDoc, 3)
             Dim lsNumeroAsiMovDoc As Integer = CInt(Right(idAsiMovDoc, Len(idAsiMovDoc) - 3))
 
-            Dim idAsiMovObli As String = odAsiMovOblFin.UltimoIdInserta
+            Dim idAsiMovObli As String = odAsiMovOblFin.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMovObli As String = Left(idAsiMovObli, 3)
             Dim lsNumeroAsiMovObli As Integer = CInt(Right(idAsiMovObli, Len(idAsiMovObli) - 3))
 
@@ -2850,23 +2850,23 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarListaMasiva2(loAsiento As List(Of e_Asiento)) As Boolean Implements Il_Asiento.GuardarListaMasiva2
+    Public Function GuardarListaMasiva2(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean Implements Il_Asiento.GuardarListaMasiva2
         Try
-            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+            Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
             Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1")
+            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1", PrefijoID)
             Dim lsPrefijoNroAsiento As String = Left(NroAsiento, 2)
             Dim lsNumeroNroAsiento As Integer = CInt(Right(NroAsiento, Len(NroAsiento) - 2))
 
-            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta
+            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMov As String = Left(idAsiMov, 3)
             Dim lsNumeroAsiMov As Integer = CInt(Right(idAsiMov, Len(idAsiMov) - 3))
 
             Dim fil As Integer = 0
 
-            Dim idAsiMovOF As String = odAsiMovOblFin.UltimoIdInserta
+            Dim idAsiMovOF As String = odAsiMovOblFin.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMovOF As String = Left(idAsiMovOF, 3)
             Dim lsNumeroAsiMovOF As Integer = CInt(Right(idAsiMovOF, Len(idAsiMovOF) - 3))
 
@@ -2948,31 +2948,31 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarListaMasiva3(loAsiento As List(Of e_Asiento)) As Boolean Implements Il_Asiento.GuardarListaMasiva3
+    Public Function GuardarListaMasiva3(loAsiento As List(Of e_Asiento), ByVal PrefijoId As String) As Boolean Implements Il_Asiento.GuardarListaMasiva3
         Try
-            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+            Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoId)
             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
             Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1")
+            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1", PrefijoId)
             Dim lsPrefijoNroAsiento As String = Left(NroAsiento, 2)
             Dim lsNumeroNroAsiento As Integer = CInt(Right(NroAsiento, Len(NroAsiento) - 2))
 
-            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta
+            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta(PrefijoId)
             Dim lsPrefijoAsiMov As String = Left(idAsiMov, 3)
             Dim lsNumeroAsiMov As Integer = CInt(Right(idAsiMov, Len(idAsiMov) - 3))
 
-            Dim idCPC As String = odCuentaxCyP.UltimoIdInserta
+            Dim idCPC As String = odCuentaxCyP.UltimoIdInserta(PrefijoId)
             Dim lsPrefijoCPC As String = Left(idCPC, 3)
             Dim lsNumeroCPC As Integer = CInt(Right(idCPC, Len(idCPC) - 3))
 
-            Dim idMCB As String = odMovCajaBanco.UltimoIdInserta
+            Dim idMCB As String = odMovCajaBanco.UltimoIdInserta(PrefijoId)
             Dim lsPrefijoMCB As String = Left(idMCB, 3)
             Dim lsNumeroMCB As Integer = CInt(Right(idMCB, Len(idMCB) - 3))
 
             Dim fil As Integer = 0
 
-            Dim idAsiMovDoc As String = odAsMovMovDoc.UltimoIdInserta
+            Dim idAsiMovDoc As String = odAsMovMovDoc.UltimoIdInserta(PrefijoId)
             Dim lsPrefijoAsiMovDoc As String = Left(idAsiMovDoc, 3)
             Dim lsNumeroAsiMovDoc As Integer = CInt(Right(idAsiMovDoc, Len(idAsiMovDoc) - 3))
 
@@ -3095,28 +3095,28 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarListaMasiva4(loAsiento As List(Of e_Asiento)) As Boolean Implements Il_Asiento.GuardarListaMasiva4
+    Public Function GuardarListaMasiva4(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean Implements Il_Asiento.GuardarListaMasiva4
         Try
             olAsientoReferencia = New l_AsientoReferencia
             odAsientoReferencia = New d_AsientoReferencia
 
-            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+            Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
             Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1")
+            Dim NroAsiento As String = odAsiento.UltimoNroAsiento(loAsiento(0).IdTipoAsiento, loAsiento(0).IdPeriodo, "1", PrefijoID)
             Dim lsPrefijoNroAsiento As String = Left(NroAsiento, 2)
             Dim lsNumeroNroAsiento As Integer = CInt(Right(NroAsiento, Len(NroAsiento) - 2))
 
-            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta
+            Dim idAsiMov As String = odAsientoMovimiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiMov As String = Left(idAsiMov, 3)
             Dim lsNumeroAsiMov As Integer = CInt(Right(idAsiMov, Len(idAsiMov) - 3))
 
-            Dim idMovAna As String = odMovimientoAnalisis.UltimoIdInserta
+            Dim idMovAna As String = odMovimientoAnalisis.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoMovAna As String = Left(idMovAna, 3)
             Dim lsNumeroMovAna As Integer = CInt(Right(idMovAna, Len(idMovAna) - 3))
 
-            Dim idAsiRef As String = odAsientoReferencia.UltimoIdInserta
+            Dim idAsiRef As String = odAsientoReferencia.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiRef As String = Left(idAsiRef, 3)
             Dim lsNumeroAsiRef As Integer = CInt(Right(idAsiRef, Len(idAsiRef) - 3))
 
@@ -3369,13 +3369,13 @@ Public Class l_Asiento
                 End If
             Next
             'Return GuardarLista(leAsiento)
-            Return GuardarListaMasiva(leAsiento)
+            Return GuardarListaMasiva(leAsiento, oeAjusteTC.PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function GuardarApertura(leAsientoModel As List(Of e_AsientoModelo), leApertura As List(Of e_AjusteTC), lb_Obligacion As Boolean) As Boolean Implements Il_Asiento.GuardarApertura
+    Public Function GuardarApertura(leAsientoModel As List(Of e_AsientoModelo), leApertura As List(Of e_AjusteTC), lb_Obligacion As Boolean, ByVal PrefijoID As String) As Boolean Implements Il_Asiento.GuardarApertura
         Try
             Dim leAsiento As New List(Of e_Asiento), oeAsientoAux As New e_Asiento, oeAsientoMov As New e_AsientoMovimiento
             Dim _MontoDebe As Double = 0, _MontoHaber As Double = 0, _totalaux As Double = 0
@@ -3460,9 +3460,9 @@ Public Class l_Asiento
             Next
             'Return GuardarLista(leAsiento)
             If lb_Obligacion Then
-                lb_Retorna = GuardarListaMasiva2(leAsiento)
+                lb_Retorna = GuardarListaMasiva2(leAsiento, PrefijoID)
             Else
-                lb_Retorna = GuardarListaMasiva(leAsiento)
+                lb_Retorna = GuardarListaMasiva(leAsiento, PrefijoID)
             End If
             Return lb_Retorna
         Catch ex As Exception

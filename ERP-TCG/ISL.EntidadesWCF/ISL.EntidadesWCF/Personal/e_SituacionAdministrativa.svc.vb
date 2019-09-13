@@ -21,7 +21,8 @@ Public Class e_SituacionAdministrativa
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructores"

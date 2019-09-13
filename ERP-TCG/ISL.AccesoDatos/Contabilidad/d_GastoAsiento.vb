@@ -24,8 +24,8 @@ Public Class d_GastoAsiento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("TES.Isp_GastoAsiento_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeGastoAsiento.Id)
+            ds = sqlhelper.ExecuteDataset("TES.Isp_GastoAsiento_Listar", "",
+            Left(oeGastoAsiento.PrefijoID, 1), "", oeGastoAsiento.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeGastoAsiento = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -42,7 +42,7 @@ Public Class d_GastoAsiento
             Dim ds As DataSet
             With oeGastoAsiento
                 ds = sqlhelper.ExecuteDataset("TES.Isp_GastoAsiento_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdGastoOperacion _
                         , .IdAsiento _
@@ -70,7 +70,7 @@ Public Class d_GastoAsiento
                 odAsiento.Guardar(OeAsiento, Nothing, False)
                 With oeGastoAsiento
                     .IdAsiento = OeAsiento.Id
-                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdGastoOperacion _
                             , .IdAsiento _
@@ -79,7 +79,7 @@ Public Class d_GastoAsiento
                 End With
             Else
                 With oeGastoAsiento
-                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdGastoOperacion _
                             , .IdAsiento _

@@ -73,7 +73,7 @@ Public Class d_Gerencia
 
             With oeGerencia
                 SqlHelper.ExecuteNonQuery("PER.Isp_Gerencia_IAE", .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .Codigo _
                         , .Nombre _

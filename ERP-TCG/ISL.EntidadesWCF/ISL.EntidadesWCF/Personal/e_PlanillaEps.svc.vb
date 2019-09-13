@@ -62,7 +62,8 @@ Public Class e_PlanillaEps
     Public PorcEps As Double = 0
     <DataMember()> _
     Public Calcula As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -101,8 +101,8 @@ Public Class d_ObligacionFinanciera
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.ISP_ObligacionFinanciera_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeObligacionFinanciera.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.ISP_ObligacionFinanciera_Listar", "",
+            Left(oeObligacionFinanciera.PrefijoID, 1), "", oeObligacionFinanciera.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeObligacionFinanciera = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -119,7 +119,7 @@ Public Class d_ObligacionFinanciera
             With oeObligacionFin
                 ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionFin_Listar", _
                                               .TipoOperacion, _
-                                             Left(d_DatosConfiguracion.PrefijoID, 1), _
+                                             Left(.PrefijoID, 1), _
                                             "", _
                                             .Id, _
                                             .IdContrato, _
@@ -153,7 +153,7 @@ Public Class d_ObligacionFinanciera
             With oeObligacionFinanciera
                 ds = sqlhelper.ExecuteDataset("FIN.ISP_ObligacionFinanciera_Listar", _
                                               .TipoOperacion _
-                                            , Left(d_DatosConfiguracion.PrefijoID, 1), _
+                                            , Left(.PrefijoID, 1), _
                                             "" _
                                             , .Id _
                                             , .Codigo _
@@ -199,7 +199,7 @@ Public Class d_ObligacionFinanciera
             With oeObligacionFin
                 ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionFin_Listar", _
                                               .TipoOperacion, _
-                                             Left(d_DatosConfiguracion.PrefijoID, 1), _
+                                             Left(.PrefijoID, 1), _
                                             "", _
                                             .Id, _
                                             .IdContrato, _
@@ -234,7 +234,7 @@ Public Class d_ObligacionFinanciera
             Dim ds As DataSet
             With oeObligacionFinanciera
                 ds = sqlhelper.ExecuteDataset("FIN.ISP_ObligacionFinanciera_Listar", .TipoOperacion _
-                        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+                        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .Codigo _
                         , .IdEmpresaBanco _
@@ -258,7 +258,7 @@ Public Class d_ObligacionFinanciera
             Dim ds As DataSet
             With oeObligacionFinanciera
                 ds = sqlhelper.ExecuteDataset("FIN.ISP_ObligacionFinanciera_Listar", "V" _
-                        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+                        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .Codigo _
                         , .IdEmpresaBanco _
@@ -419,7 +419,7 @@ Public Class d_ObligacionFinanciera
                 With oeObligacionFin
                     stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionFin_IAE2" _
                                                           , .TipoOperacion _
-                                                          , d_DatosConfiguracion.PrefijoID _
+                                                          , .PrefijoID _
                                                           , .Id _
                                                           , .IdContrato _
                                                           , .NroVencimiento _
@@ -486,7 +486,7 @@ Public Class d_ObligacionFinanciera
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeObligacionFinanciera
-                stResultado = sqlhelper.ExecuteScalar("FIN.ISP_ObligacionFinanciera_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("FIN.ISP_ObligacionFinanciera_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .IdEmpresaBanco _
@@ -586,7 +586,7 @@ Public Class d_ObligacionFinanciera
             With oeObligacionFin
                 stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionFin_IAE2" _
                                                           , .TipoOperacion _
-                                                          , d_DatosConfiguracion.PrefijoID _
+                                                          , .PrefijoID _
                                                           , .Id _
                                                           , .IdContrato _
                                                           , .NroVencimiento _
@@ -657,7 +657,7 @@ Public Class d_ObligacionFinanciera
             'Using transScope As New TransactionScope
             '    For Each oeObli As e_ObligacionFinanciera In leObligacionFinanciera
             '        With oeObli
-            '            stResultado = sqlhelper.ExecuteScalar("FIN.ISP_ObligacionFinanciera_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+            '            stResultado = sqlhelper.ExecuteScalar("FIN.ISP_ObligacionFinanciera_IAE", .TipoOperacion, .PrefijoID, _
             '            .Id, .Codigo, .IdEmpresaBanco, .Glosa, .FechaEmision, .FechaVencimiento, .IdTipoObligacion _
             '            , .IdMoneda, .TipoCambio, .MontoMN, .MontoME, .Saldo, .TasaInteres, .MontoInteresTes _
             '            , .MontoInteresCon, .MontoInteresMoratorio, .Comision, .Activo, .IdCuentaContable _
@@ -826,13 +826,13 @@ Public Class d_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.ObligacionFinanciera ", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.ObligacionFinanciera ", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

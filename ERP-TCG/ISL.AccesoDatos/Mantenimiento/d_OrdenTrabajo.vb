@@ -181,7 +181,7 @@ Public Class d_OrdenTrabajo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenTrabajo
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID, _
                  .Id, .NroOT, .IdEstadoOT, .IndicadorTipo, .FechaProgramacionIni, .FechaIngresoTaller, .FechaInicioTrabajo _
                  , .FechaFinTrabajo, .FechaTentativaSalida, .IdJefeTaller, .IdSupervisorMant, .Glosa, .Auxilio, .IdEmpresaExterna _
                  , .Activo, .Calibracion, .UsuarioCreacion)
@@ -200,7 +200,7 @@ Public Class d_OrdenTrabajo
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeOrdenTrabajo
-                    stResultado = sqlhelper.ExecuteScalar("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .NroOT _
                             , .IdEstadoOT _

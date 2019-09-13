@@ -25,7 +25,8 @@ Public Class e_Almacen
     Public lstZona As List(Of e_Zona)
     <DataMember()> _
     Public leSubAlmacen As List(Of e_SubAlmacen)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

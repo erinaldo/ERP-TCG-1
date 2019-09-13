@@ -97,7 +97,7 @@ Public Class d_PlanillaVacaciones
             Dim _idplavac As String = ""
             Using TransScope As New TransactionScope()
                 With oePlanillaVacaciones
-                    _idplavac = sqlhelper.ExecuteScalar("PER.Isp_PlanillaVacaciones_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idplavac = sqlhelper.ExecuteScalar("PER.Isp_PlanillaVacaciones_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdPlanilla _
                             , .Codigo _

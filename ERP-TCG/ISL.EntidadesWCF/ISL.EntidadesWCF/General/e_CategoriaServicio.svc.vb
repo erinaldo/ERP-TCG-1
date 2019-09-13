@@ -18,7 +18,8 @@ Public Class e_CategoriaServicio
     Public Modificado As Boolean
     <DataMember()> _
     Public loCtaCtbleCatServ As New List(Of e_CtaCtbleCatServicio)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id
         Get

@@ -28,7 +28,8 @@ Public Class e_SaldoCtaCorriente
     Public Modificado As Boolean
     <DataMember()> _
     Public leMovCtaCte As List(Of e_MovCuentaCte)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
 #End Region

@@ -71,12 +71,12 @@ Public Class d_ProcesoGlosa
 
                 For Each Lista As e_ProcesoGlosa In loProcesoGlosa
 
-                    sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoGlosa_IAE", Lista.TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoGlosa_IAE", Lista.TipoOperacion, Lista.PrefijoID,
                              Lista.Id _
                             , Lista.IdProcesoNegocio _
                             , Lista.Nombre _
                             , Lista.Activo _
-                            , Lista.UsuarioCreacion _
+                            , Lista.UsuarioCreacion
                         )
                 Next
                 transScope.Complete()

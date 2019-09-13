@@ -93,7 +93,7 @@ Public Class d_RetencionQuinta
             Dim _idrenta As String = ""
             Using TransScope As New TransactionScope()
                 With oeRetencionQuinta
-                    _idrenta = sqlhelper.ExecuteScalar("PER.Isp_RetencionQuinta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idrenta = sqlhelper.ExecuteScalar("PER.Isp_RetencionQuinta_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .IdPlanilla _
@@ -145,7 +145,7 @@ Public Class d_RetencionQuinta
             Dim _idrenta As String = ""
             Using TransScope As New TransactionScope()
                 With oeRetencionQuinta
-                    _idrenta = sqlhelper.ExecuteScalar("PER.Isp_RetencionQuinta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idrenta = sqlhelper.ExecuteScalar("PER.Isp_RetencionQuinta_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .IdPlanilla _

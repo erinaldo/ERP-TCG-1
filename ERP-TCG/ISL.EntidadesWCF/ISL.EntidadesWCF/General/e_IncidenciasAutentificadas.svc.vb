@@ -22,8 +22,11 @@ Public Class e_IncidenciasAutentificadas
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public TipoPerfil As String
+    <DataMember()>
+    Public PrefijoID As String = ""
+
 #End Region
 
 #Region "Propiedades"

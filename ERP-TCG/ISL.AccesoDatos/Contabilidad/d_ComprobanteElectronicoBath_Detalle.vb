@@ -68,7 +68,7 @@ Public Class d_ComprobanteElectronicoBath_Detalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeComprobanteElectronicoBath_Detalle
-                sqlhelper.ExecuteNonQuery("CON.Isp_ComprobanteElectronicoBath_Detalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_ComprobanteElectronicoBath_Detalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdBath _
                         , .Item _

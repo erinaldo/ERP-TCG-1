@@ -37,7 +37,7 @@ Public Class d_DetalleDocumentoCombustible
     '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
     '        Dim ds As DataSet
     '        ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-    '        Left(d_DatosConfiguracion.PrefijoID, 1), "", oeDetalleDocumentoCombustible.Id)
+    '        Left(.PrefijoID, 1), "", oeDetalleDocumentoCombustible.Id)
     '        If ds.Tables(0).rows.Count > 0 Then
     '            oeDetalleDocumentoCombustible = Cargar(ds.Tables(0).Rows(0))
     '        End If
@@ -54,7 +54,7 @@ Public Class d_DetalleDocumentoCombustible
     '        Dim ds As DataSet
     '        With oeDetalleDocumentoCombustible
     '            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "" _
-    '    , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+    '    , Left(.PrefijoID, 1), "" _
     '                    , .Id _
     '                    , .IdViaje _
     '                    , .IdVehiculo _
@@ -88,7 +88,7 @@ Public Class d_DetalleDocumentoCombustible
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleDocumentoCombustible
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDocumentoCombustible_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDocumentoCombustible_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRegConsumoCombustible _
                         , .Cantidad _

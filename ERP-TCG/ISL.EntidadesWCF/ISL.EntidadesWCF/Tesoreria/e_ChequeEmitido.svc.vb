@@ -45,7 +45,8 @@ Public Class e_ChequeEmitido
     Public TipoCambio As Double
     <DataMember()> _
     Public loAsientoModelo As New List(Of e_AsientoModelo)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

@@ -114,7 +114,7 @@ Public Class d_MovCuentaCte
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeMovCuentaCte
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID, _
                       .Id _
                       , .IdCuentaCorriente _
                       , .Fecha _
@@ -158,7 +158,7 @@ Public Class d_MovCuentaCte
                     End If
                 End If
 
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuentaCorriente _
                         , .Fecha _
@@ -290,12 +290,12 @@ Public Class d_MovCuentaCte
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.MovCuentaCte", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.MovCuentaCte", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

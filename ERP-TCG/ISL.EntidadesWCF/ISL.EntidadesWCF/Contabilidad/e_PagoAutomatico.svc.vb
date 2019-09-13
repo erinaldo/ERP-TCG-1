@@ -30,8 +30,10 @@ Public Class e_PagoAutomatico
     Public IdFLujo As String
     <DataMember()> _
     Public MacPCLocalCreacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Fecha As Date
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Sub New()
 

@@ -116,7 +116,7 @@ Public Class d_VidaNeumatico
             Dim stResultado() As String
             With oeVidaNeumatico
                 stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_VidaNeumatico_IAE]", .TipoOperacion, _
-                                                      d_DatosConfiguracion.PrefijoID, _
+                                                      .PrefijoID, _
                         .Id _
                         , .IdNeumatico _
                         , .NroVida _
@@ -168,7 +168,7 @@ Public Class d_VidaNeumatico
             Using TransScope As New TransactionScope()
                 With oeVidaNeumatico
                     id = sqlhelper.ExecuteScalar("[NEU].[Isp_VidaNeumatico_IAE]", .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                             .Id _
                             , .IdNeumatico _
                             , .NroVida _

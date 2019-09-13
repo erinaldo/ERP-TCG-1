@@ -97,7 +97,7 @@ Public Class d_DetallePlanillaVacaciones
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetallePlanillaVacaciones
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePlanillaVacaciones_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePlanillaVacaciones_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .IdPlanillaVacaciones _

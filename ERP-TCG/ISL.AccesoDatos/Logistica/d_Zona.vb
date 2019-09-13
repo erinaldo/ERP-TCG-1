@@ -92,7 +92,7 @@ Public Class d_Zona
             With oeZona
                 sqlhelper.ExecuteScalar("ALM.Isp_Zona_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .IdDependencia, _
                                           .IdAlmacen, _

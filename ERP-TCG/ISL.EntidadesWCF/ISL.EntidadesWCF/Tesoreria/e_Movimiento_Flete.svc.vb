@@ -40,10 +40,12 @@ Public Class e_Movimiento_Flete
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
+    <DataMember()>
     Public oeChequeCobrar As New e_ChequexCobrar
 
     Public Event DatoCambiado()

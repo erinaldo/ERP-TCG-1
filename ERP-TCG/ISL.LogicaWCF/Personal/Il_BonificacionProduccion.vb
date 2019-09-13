@@ -17,8 +17,8 @@ Public Interface Il_BonificacionProduccion
     <OperationContract()> _
     Function Guardar(ByVal oeBonificacionProduccion As e_BonificacionProduccion) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leBonificacionProduccion As List(Of e_BonificacionProduccion)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leBonificacionProduccion As List(Of e_BonificacionProduccion), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeBonificacionProduccion As e_BonificacionProduccion) As Boolean

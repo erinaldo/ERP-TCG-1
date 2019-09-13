@@ -783,7 +783,7 @@ Public Class frm_MovimientoPersonal
 
                 Validar(cboPlanilla.Value)
 
-                olResumenAsis.GuardarMasivo(_leGrabar)
+                olResumenAsis.GuardarMasivo(_leGrabar, PrefijoIdSucursal)
                 mensajeEmergente.Confirmacion("Los Datos se han importado correctamente!!", True)
                 ficDetalle.Tabs(0).Enabled = True
                 ficDetalle.Tabs(1).Enabled = False

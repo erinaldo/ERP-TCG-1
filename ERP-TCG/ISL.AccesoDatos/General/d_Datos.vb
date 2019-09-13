@@ -96,9 +96,9 @@ Public Class d_Datos
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             Dim d_conexion As New d_Conexion
-            Dim stResultado() As String = sqlhelper.ExecuteScalar(d_conexion.CadenaConexionSGI, "ISP_Genera_IdTabla", _
-               C_Base.Nombre, _
-               d_DatosConfiguracion.PrefijoID).ToString.Split("_")
+            Dim stResultado() As String = sqlhelper.ExecuteScalar(d_Conexion.CadenaConexionSGI, "ISP_Genera_IdTabla",
+               C_Base.Nombre,
+               C_Base.PrefijoID).ToString.Split("_")
             Dim IdDemanda As String = stResultado(0)
             Return IdDemanda
         Catch ex As Exception

@@ -14,7 +14,8 @@ Public Class e_MovCuentaCte_Asiento
 
     Public TipoOperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
 #End Region

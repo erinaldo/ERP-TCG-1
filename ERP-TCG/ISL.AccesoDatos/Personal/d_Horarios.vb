@@ -76,7 +76,7 @@ Public Class d_Horarios
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeHorarios
-                sqlhelper.ExecuteNonQuery("PER.Isp_Horarios_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Horarios_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoHorario _
                         , .HoraInicio _

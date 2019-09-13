@@ -71,7 +71,7 @@ Public Class d_TipoOpeCon
             With oeTipoOpeCon
                 stResultado = bd.ExecuteScalar("[CON].[Sp_TipoOperacion_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .Codigo _
                         , .Nombre _

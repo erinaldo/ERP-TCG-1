@@ -154,7 +154,7 @@ Public Class frm_ReporteDescTrabajador
                                     oeDescuento.Activo = True
                                     leDescuento.Add(oeDescuento)
                                 Next
-                                If olDescuento.GuardarMasivo(leDescuento) Then
+                                If olDescuento.GuardarMasivo(leDescuento, PrefijoIdSucursal) Then
                                     cboPlanilla.SelectedIndex = -1
                                     btnEnviar.Enabled = False
                                     mensajeEmergente.Confirmacion("El Envio de Datos se Realizo Exitosamente", True)

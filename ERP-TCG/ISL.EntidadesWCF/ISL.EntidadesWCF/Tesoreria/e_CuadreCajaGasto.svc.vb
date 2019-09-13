@@ -15,8 +15,10 @@ Public Class e_CuadreCajaGasto
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Event DatoCambiado()
 

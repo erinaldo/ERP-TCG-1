@@ -113,7 +113,7 @@ Public Class frm_MontoRuta
                     Dim listaImpo As New List(Of e_MontoRuta)
                     listaImpo.AddRange(loMontoRutaImportar.Where(Function(item) item.IdRuta <> ""))
                     If listaImpo.Count > 0 Then
-                        If olMontoRuta.GuardarMasivo(listaImpo) Then
+                        If olMontoRuta.GuardarMasivo(listaImpo, PrefijoIdSucursal) Then
                             mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente", True)
                             MostrarTabs(0, ficMontoRuta)
                             Listar()

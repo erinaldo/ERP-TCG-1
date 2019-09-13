@@ -34,7 +34,8 @@ Public Class e_AccidenteIncidencia
 
     Public TipoOperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Identificador As String
     Event DatoCambiado()

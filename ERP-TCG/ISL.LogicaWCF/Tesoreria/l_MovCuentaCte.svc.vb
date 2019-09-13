@@ -581,7 +581,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function GuardarLista2(leMovCuentaCte As List(Of e_MovCuentaCte), leAsientoModel As List(Of e_AsientoModelo)) As Boolean Implements Il_MovCuentaCte.GuardarLista2
+    Public Function GuardarLista2(leMovCuentaCte As List(Of e_MovCuentaCte), leAsientoModel As List(Of e_AsientoModelo), ByVal PrefijoID As String) As Boolean Implements Il_MovCuentaCte.GuardarLista2
         Try
             Using TransScope As New TransactionScope()
                 Dim oeAsiento As New e_Asiento, olAsiento As New l_Asiento, oeAsientoMov As New e_AsientoMovimiento, oeMovAnalisis As New e_MovimientoAnalisis
@@ -596,7 +596,7 @@ Public Class l_MovCuentaCte
                                 With oeAsiento
                                     .TipoOperacion = "I" : .IdPeriodo = _leAMAux(0).IdPeriodo : .IdTipoAsiento = _leAMAux(0).IdTipoAsiento
                                     .NroAsiento = String.Empty : .Fecha = _leAMAux(0).FechaMov
-                                    .Glosa = "COMPRA " & oeMovCtaCte.oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" & oeMovCtaCte.oeMovimientoDoc.Serie & _
+                                    .Glosa = "COMPRA " & oeMovCtaCte.oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" & oeMovCtaCte.oeMovimientoDoc.Serie &
                                         oeMovCtaCte.oeMovimientoDoc.Numero & " " & oeMovCtaCte.oeMovimientoDoc.Compra.Proveedor.Nombre
                                     .IdMoneda = oeMovCtaCte.oeMovimientoDoc.IdMoneda : .TipoCambio = _leAMAux(0).TipoCambio
                                     .TotalDebe = oeMovCtaCte.oeMovimientoDoc.Total : .TotalHaber = oeMovCtaCte.oeMovimientoDoc.Total
@@ -678,7 +678,7 @@ Public Class l_MovCuentaCte
                         Next
                         ' Guardar Masivo
                         If _BandMasivo Then
-                            GuardarMasivo(leMovCuentaCte.Where(Function(it) it.TipoReferencia = 1 And it.TipoOperacion = "I").ToList)
+                            GuardarMasivo(leMovCuentaCte.Where(Function(it) it.TipoReferencia = 1 And it.TipoOperacion = "I").ToList, PrefijoID)
                         End If
                         ' Eliminar
                         Dim _leAuxElim = leMovCuentaCte.Where(Function(it) it.TipoOperacion = "E").ToList
@@ -703,18 +703,18 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function GuardarMasivo(leMovCuentaCte As List(Of e_MovCuentaCte)) As Boolean Implements Il_MovCuentaCte.GuardarMasivo
+    Public Function GuardarMasivo(leMovCuentaCte As List(Of e_MovCuentaCte), ByVal PrefijoID As String) As Boolean Implements Il_MovCuentaCte.GuardarMasivo
         Try
-            Dim _Id As String = odMovCuentaCte.UltimoIdInserta(), _Prefijo As String = Left(_Id, 3), _Nro As Integer = CInt(Right(_Id, Len(_Id) - 3))
-            Dim _IdMCCA As String = odMovCtaAsiento.UltimoIdInserta, _PrefijoMCCA As String = Left(_IdMCCA, 3), _NroMCCA As Integer = CInt(Right(_IdMCCA, Len(_IdMCCA) - 3))
-            Dim _IdMD As String = odMovimientoDoc.UltimoIdInserta, _PrefijoMD As String = Left(_IdMD, 3), _NroMD As Integer = CInt(Right(_IdMD, Len(_IdMD) - 3))
-            Dim _IdCOM As String = odCompra.UltimoIdInserta, _PrefijoCOM As String = Left(_IdCOM, 3), _NroCOM As Integer = CInt(Right(_IdCOM, Len(_IdCOM) - 3))
-            Dim _IdAC As String = odAsiento.UltimoIdInserta, _PrefijoAC As String = Left(_IdAC, 3), _NroAC As Integer = CInt(Right(_IdAC, Len(_IdAC) - 3))
-            Dim _IdAM As String = odAsientoMov.UltimoIdInserta, _PrefijoAM As String = Left(_IdAM, 3), _NroAM As Integer = CInt(Right(_IdAM, Len(_IdAM) - 3))
-            Dim _IdAMD As String = odAsientoMovDoc.UltimoIdInserta, _PrefijoAMD As String = Left(_IdAMD, 3), _NroAMD As Integer = CInt(Right(_IdAMD, Len(_IdAMD) - 3))
-            Dim _IdAMMD As String = odAsiMovMovDoc.UltimoIdInserta, _PrefijoAMMD As String = Left(_IdAMMD, 3), _NroAMMD As Integer = CInt(Right(_IdAMMD, Len(_IdAMMD) - 3))
-            Dim _IdMA As String = odMovAnalisis.UltimoIdInserta, _PrefijoMA As String = Left(_IdMA, 3), _NroMA As Integer = CInt(Right(_IdMA, Len(_IdMA) - 3))
-            Dim _NroAsi As String = odAsiento.UltimoNroAsiento(leMovCuentaCte(0).oeAsiento.IdTipoAsiento, leMovCuentaCte(0).oeAsiento.IdPeriodo, "1")
+            Dim _Id As String = odMovCuentaCte.UltimoIdInserta(PrefijoID), _Prefijo As String = Left(_Id, 3), _Nro As Integer = CInt(Right(_Id, Len(_Id) - 3))
+            Dim _IdMCCA As String = odMovCtaAsiento.UltimoIdInserta(PrefijoID), _PrefijoMCCA As String = Left(_IdMCCA, 3), _NroMCCA As Integer = CInt(Right(_IdMCCA, Len(_IdMCCA) - 3))
+            Dim _IdMD As String = odMovimientoDoc.UltimoIdInserta(PrefijoID), _PrefijoMD As String = Left(_IdMD, 3), _NroMD As Integer = CInt(Right(_IdMD, Len(_IdMD) - 3))
+            Dim _IdCOM As String = odCompra.UltimoIdInserta(PrefijoID), _PrefijoCOM As String = Left(_IdCOM, 3), _NroCOM As Integer = CInt(Right(_IdCOM, Len(_IdCOM) - 3))
+            Dim _IdAC As String = odAsiento.UltimoIdInserta(PrefijoID), _PrefijoAC As String = Left(_IdAC, 3), _NroAC As Integer = CInt(Right(_IdAC, Len(_IdAC) - 3))
+            Dim _IdAM As String = odAsientoMov.UltimoIdInserta(PrefijoID), _PrefijoAM As String = Left(_IdAM, 3), _NroAM As Integer = CInt(Right(_IdAM, Len(_IdAM) - 3))
+            Dim _IdAMD As String = odAsientoMovDoc.UltimoIdInserta(PrefijoID), _PrefijoAMD As String = Left(_IdAMD, 3), _NroAMD As Integer = CInt(Right(_IdAMD, Len(_IdAMD) - 3))
+            Dim _IdAMMD As String = odAsiMovMovDoc.UltimoIdInserta(PrefijoID), _PrefijoAMMD As String = Left(_IdAMMD, 3), _NroAMMD As Integer = CInt(Right(_IdAMMD, Len(_IdAMMD) - 3))
+            Dim _IdMA As String = odMovAnalisis.UltimoIdInserta(PrefijoID), _PrefijoMA As String = Left(_IdMA, 3), _NroMA As Integer = CInt(Right(_IdMA, Len(_IdMA) - 3))
+            Dim _NroAsi As String = odAsiento.UltimoNroAsiento(leMovCuentaCte(0).oeAsiento.IdTipoAsiento, leMovCuentaCte(0).oeAsiento.IdPeriodo, "1", PrefijoID)
             Dim _PrefijoAsi As String = Left(_NroAsi, 2), _NroNroAsi As Integer = CInt(Right(_NroAsi, Len(_NroAsi) - 2))
 
             Dim _Dt As Data.DataTable = CrearDT(), _DtMCCA As Data.DataTable = olMovCtaAsiento.CrearDT(), _DtMD As Data.DataTable = olMovimientoDoc.CrearDT()

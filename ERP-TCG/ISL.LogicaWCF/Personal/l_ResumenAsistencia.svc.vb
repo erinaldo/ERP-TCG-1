@@ -88,10 +88,10 @@ Public Class l_ResumenAsistencia
         Return ResAsis
     End Function
 
-    Public Function GuardarMasivo(leResumenAsistencia As List(Of e_ResumenAsistencia)) As Boolean Implements Il_ResumenAsistencia.GuardarMasivo
+    Public Function GuardarMasivo(leResumenAsistencia As List(Of e_ResumenAsistencia), ByVal PrefijoID As String) As Boolean Implements Il_ResumenAsistencia.GuardarMasivo
         Try
             Dim dtRA As Data.DataTable = CrearDT()
-            Dim id As String = odResumenAsistencia.UltimoIdInserta
+            Dim id As String = odResumenAsistencia.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

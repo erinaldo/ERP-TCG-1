@@ -84,7 +84,7 @@ Public Class d_Utilidad
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeUtilidad
-                sqlhelper.ExecuteNonQuery("PER.Isp_Utilidad_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .CantidadTrabajadores _
@@ -126,7 +126,7 @@ Public Class d_Utilidad
             Dim _iduti As String = ""
             Using TransScope As New TransactionScope()
                 With oeUtilidad
-                    _iduti = sqlhelper.ExecuteScalar("PER.Isp_Utilidad_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _iduti = sqlhelper.ExecuteScalar("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .CantidadTrabajadores _

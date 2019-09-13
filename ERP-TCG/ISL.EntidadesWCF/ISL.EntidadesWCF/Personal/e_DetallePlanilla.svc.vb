@@ -51,8 +51,10 @@ Public Class e_DetallePlanilla
     Public Modificado As Boolean
     <DataMember()> _
     Public NroMes As Integer
-    <DataMember()> _
+    <DataMember()>
     Public Equivale As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

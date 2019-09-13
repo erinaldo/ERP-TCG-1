@@ -29,7 +29,8 @@ Public Class e_MovimientoAnalisis
     ''' <remarks></remarks>
     <DataMember()> _
     Public _IdMovimientoAnalisis As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     ''' <summary>
     ''' Cuando Codigo de analisis trae codigo el saldo se cambia a Cero
     ''' </summary>

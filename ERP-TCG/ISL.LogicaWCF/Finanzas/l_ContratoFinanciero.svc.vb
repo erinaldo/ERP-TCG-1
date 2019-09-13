@@ -707,7 +707,7 @@ Public Class l_ContratoFinanciero
                         Dim leAsiento As New List(Of e_Asiento)
                         leAsiento.Add(oeAsiento)
                         'If olAsiento.GuardarAsientoDscto(oeAsiento) Then
-                        If olAsiento.GuardarListaMasiva2(leAsiento) Then
+                        If olAsiento.GuardarListaMasiva2(leAsiento, oeContratoFinanciero.PrefijoID) Then
                             TransScope.Complete()
                             Return True
                         End If

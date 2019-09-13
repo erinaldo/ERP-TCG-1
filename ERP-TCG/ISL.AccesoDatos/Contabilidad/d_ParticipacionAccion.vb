@@ -13,7 +13,7 @@ Public Class d_ParticipacionAccion
                 With oeParticipacionAccion
                     id = sqlhelper.ExecuteScalar("CON.ISP_Participacion_Accion_IAE" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .TipoDoc _
                             , .NroDoc _

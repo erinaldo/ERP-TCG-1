@@ -139,7 +139,7 @@ Public Class d_OrdenAsignacion
                 With oeOrdenAsignacion
                     stResultado = sqlhelper.ExecuteScalar("STD.Isp_OrdenAsignacion_IAE", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                                                           .Id _
                                                           , .Fecha _
                                                           , .NroOA _

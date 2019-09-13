@@ -104,7 +104,7 @@ Public Class d_ProduccionPiloto
             Dim _idpp As String = ""
             Using TransScope As New TransactionScope()
                 With oeProduccionPiloto
-                    _idpp = sqlhelper.ExecuteScalar("PER.Isp_ProduccionPiloto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idpp = sqlhelper.ExecuteScalar("PER.Isp_ProduccionPiloto_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdPlanilla _
                             , .IdEstado _

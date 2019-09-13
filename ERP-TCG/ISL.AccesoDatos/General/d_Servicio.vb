@@ -77,7 +77,7 @@ Public Class d_Servicio
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeServicio
-                    stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Servicio_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Servicio_IAE]", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdCategoriaServicio _
                             , .Codigo _

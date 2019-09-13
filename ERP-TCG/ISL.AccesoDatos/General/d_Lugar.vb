@@ -117,7 +117,7 @@ Public Class d_Lugar
                 With oeLugar
                     stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Lugar_IAE]", _
                                               .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                                 .Id, _
                                                 .IdUbigeo, _
                                                 .Nombre, _
@@ -250,7 +250,7 @@ Public Class d_Lugar
             With oeClienteLugar
                 sqlhelper.ExecuteNonQuery("OPE.Isp_ClienteLugar_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdLugar _
                                             , .IdCliente _
@@ -347,7 +347,7 @@ Public Class d_Lugar
             With oeVentanaHoraria
                 sqlhelper.ExecuteNonQuery("OPE.Isp_VentanaHoraria_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdLugar _
                                             , .IdCliente _

@@ -48,8 +48,8 @@ Public Class d_CuentaContable
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", "N", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeCuentaContable.Id)
+            ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", "N",
+            Left(oeCuentaContable.PrefijoID, 1), "", oeCuentaContable.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeCuentaContable = Cargar(ds.Tables(0).Rows(0))
                 'Dim oeCuentaAsociada As New e_CuentaAsociada
@@ -72,7 +72,7 @@ Public Class d_CuentaContable
             With oeCuentaContable
                 ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", _
                                               IIf(.TipoOperacion Is Nothing, "N", .TipoOperacion) _
-                                             , Left(d_DatosConfiguracion.PrefijoID, 1) _
+                                             , Left(.PrefijoID, 1) _
                                              , "" _
                                             , .Id _
                                             , .Cuenta _
@@ -118,7 +118,7 @@ Public Class d_CuentaContable
             Using transScope As New TransactionScope()
                 With oeCuentaContable
                     stResultado = sqlhelper.ExecuteScalar("CON.ISP_CuentaContable_IAE", _
-                                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                                                          .TipoOperacion, .PrefijoID, _
                                                             .Id _
                                                             , .Cuenta _
                                                             , .Nombre _

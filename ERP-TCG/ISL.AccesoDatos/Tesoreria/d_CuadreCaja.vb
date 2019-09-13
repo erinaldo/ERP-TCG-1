@@ -79,7 +79,7 @@ Public Class d_CuadreCaja
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeCuadreCaja
-                    stResultado = sqlhelper.ExecuteScalar("[TES].[Isp_CuadreCaja_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[TES].[Isp_CuadreCaja_IAE]", .TipoOperacion, .PrefijoID, _
                             .Id, .IdCaja, .Fecha, .SaldoSistema, .Otros, .Diferencia, .Observacion, .num200, .num100, .num50 _
                             , .num20, .num10, .num5, .num2, .num1, .num05, .num02, .num01, .num005, .UsuarioCreacion).ToString.Split("_")
                     .Id = stResultado(0)

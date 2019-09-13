@@ -52,7 +52,7 @@ Public Class d_RevisionTecnica
             With oeRevisionTecnica
                 sqlhelper.ExecuteNonQuery("STD.Isp_RevisionTecnica_IAE" _
                                               , .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID _
+                                              .PrefijoID _
                                             , .Id _
                                             , .IdDocumentoVehicular _
                                             , .Codigo _

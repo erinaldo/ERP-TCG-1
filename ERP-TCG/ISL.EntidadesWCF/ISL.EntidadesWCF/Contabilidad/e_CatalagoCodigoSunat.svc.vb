@@ -17,7 +17,8 @@ Public Class e_CatalagoCodigoSunat
 
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -65,7 +65,7 @@ Public Class d_ServicioCuentaContable
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeServicioCuentaContable
-                sqlhelper.ExecuteNonQuery("CON.Isp_ServicioCuentaContable_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_ServicioCuentaContable_IAE", "I", .PrefijoID, _
                         .Id _
                         , .IdServicio _
                         , .IdCuentaContableHaber _

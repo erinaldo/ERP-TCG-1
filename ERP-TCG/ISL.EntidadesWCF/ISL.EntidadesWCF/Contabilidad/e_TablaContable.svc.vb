@@ -20,7 +20,8 @@ Public Class e_TablaContable
 
     Public Tipooperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

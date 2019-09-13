@@ -86,7 +86,7 @@ Public Class d_MenuWeb
             '            , .Activo _
             '            , .Orden _
             '            , .Protegido _
-            '            , d_DatosConfiguracion.PrefijoID _
+            '            , .PrefijoID _
             '        )
             'End With
             Return True

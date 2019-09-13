@@ -24,10 +24,12 @@ Public Class e_Servicio
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
+    <DataMember()>
     Public ListaServicioCuentaContable As New List(Of e_ServicioCuentaContable)
     '-------------------------------------------
     Private _idunidadmedida As String

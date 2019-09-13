@@ -189,7 +189,7 @@ Public Class frm_PersonaDocumento
                             ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
                             Throw New Exception("Ingrese un Clave Correcta")
                         Else
-                            If olPersonaDocumento.GuardarMasivo(_leAux) Then
+                            If olPersonaDocumento.GuardarMasivo(_leAux, PrefijoIdSucursal) Then
                                 mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
                                 MostrarTabs(0, ficPersonaDocumento)
                                 ficPersonaDocumento.Tabs(0).Enabled = True

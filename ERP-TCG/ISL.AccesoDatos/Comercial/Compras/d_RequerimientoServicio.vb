@@ -92,7 +92,7 @@ Public Class d_RequerimientoServicio
             With oeRequerimientoServicio
                 sqlhelper.ExecuteNonQuery("[CMP].[Isp_Requerimiento_Servicio_IAE]", _
                                                             .Tipooperacion, _
-                                                             d_DatosConfiguracion.PrefijoID, _
+                                                             .PrefijoID, _
                                                             .Id, _
                                                             .Activo, _
                                                             .IdRequerimiento, _

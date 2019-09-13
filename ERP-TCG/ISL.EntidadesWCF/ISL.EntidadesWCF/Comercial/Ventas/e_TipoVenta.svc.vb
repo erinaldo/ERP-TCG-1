@@ -16,8 +16,10 @@ Public Class e_TipoVenta
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean = False
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

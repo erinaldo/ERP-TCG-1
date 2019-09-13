@@ -43,7 +43,7 @@ Public Class d_DetalleProgramacionPago
             Dim stResultado() As String
             With oeDetalleProgramacionPago
                 stResultado = sqlhelper.ExecuteScalar("[TES].[sp_DetalleProgramacionPago_IAE]", .TipoOperacion, _
-                        d_DatosConfiguracion.PrefijoID, _
+                        .PrefijoID, _
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdEstado _

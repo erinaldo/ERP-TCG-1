@@ -70,7 +70,7 @@ Public Class d_TipoVia
                         , .Abreviatura _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

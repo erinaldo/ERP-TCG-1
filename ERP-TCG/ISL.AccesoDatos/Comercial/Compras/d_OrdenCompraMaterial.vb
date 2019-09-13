@@ -117,7 +117,7 @@ Public Class d_OrdenCompraMaterial
             With oeOrdenMaterial
                 id = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompraMaterial_IAE", _
                                          .TipoOperacion, _
-                                         d_DatosConfiguracion.PrefijoID, _
+                                         .PrefijoID, _
                                          .Id, _
                                          .IdOrden, _
                                          .IdMaterial, _

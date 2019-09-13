@@ -103,7 +103,7 @@ Public Class d_ChequexCobrar
                         , .UsuarioCreacion _
                         , .TipoTransa _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IdCuentaBancaria)
                 .Id = strIdCheque
             End With

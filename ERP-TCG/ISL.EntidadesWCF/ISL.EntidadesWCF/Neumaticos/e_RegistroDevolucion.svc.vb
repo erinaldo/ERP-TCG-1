@@ -25,7 +25,8 @@ Public Class e_RegistroDevolucion
     Public Modificado As Boolean
     <DataMember()> _
     Public leDetalleRD As New List(Of e_DetalleRegistroDevolucion)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -30,8 +30,8 @@ Public Class d_ObligacionDocumento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionDocumento_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeObligacionDocumento.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionDocumento_Listar", "",
+            Left(oeObligacionDocumento.PrefijoID, 1), "", oeObligacionDocumento.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeObligacionDocumento = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -48,7 +48,7 @@ Public Class d_ObligacionDocumento
             Dim ds As DataSet
             With oeObligacionDocumento
                 ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionDocumento_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdMovimientoDocumento _
                         , .IdObligacionFinanciera _
@@ -74,7 +74,7 @@ Public Class d_ObligacionDocumento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeObligacionDocumento
-                sqlhelper.ExecuteNonQuery("FIN.Isp_ObligacionDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_ObligacionDocumento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdObligacionFinanciera _
@@ -106,13 +106,13 @@ Public Class d_ObligacionDocumento
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.ObligacionDocumento", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.ObligacionDocumento", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

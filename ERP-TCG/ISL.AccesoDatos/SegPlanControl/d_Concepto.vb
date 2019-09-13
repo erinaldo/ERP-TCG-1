@@ -69,7 +69,7 @@ Public Class d_Concepto
             'With oeConcepto
             '    stResultado = sqlhelper.ExecuteNonQuery("SPC.Isp_Concepto_IAE", _
             '                                            .TipoOperacion, _
-            '                                            d_DatosConfiguracion.PrefijoID, _
+            '                                            .PrefijoID, _
             '                                            .Id, _
             '                                            .Codigo, _
             '                                            .IdEvento, _
@@ -91,7 +91,7 @@ Public Class d_Concepto
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeConcepto
-                    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Concepto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Concepto_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Prefijo _

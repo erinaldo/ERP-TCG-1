@@ -76,7 +76,7 @@ Public Class d_VehiculoEstado
             With oeVehiculoEstado
                 sqlhelper.ExecuteNonQuery("STD.Isp_VehiculoEstado_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdVehiculo _
                                             , .Indicador _

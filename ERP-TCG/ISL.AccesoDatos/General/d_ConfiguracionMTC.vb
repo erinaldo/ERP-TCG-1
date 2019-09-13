@@ -79,7 +79,7 @@ Public Class d_ConfiguracionMTC
             With oeConfiguracionMTC
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_ConfiguracionMTC_IAE]", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .Codigo _
                                             , .Nombre _

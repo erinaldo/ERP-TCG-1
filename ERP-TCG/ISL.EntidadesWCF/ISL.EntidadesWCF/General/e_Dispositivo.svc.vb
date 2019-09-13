@@ -9,6 +9,8 @@ Public Class e_Dispositivo
     <DataMember()> _
     Public Modificado As Boolean
     Public Event DatoCambiado()
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Private _id As String
     Private _idtipodispositivo As String

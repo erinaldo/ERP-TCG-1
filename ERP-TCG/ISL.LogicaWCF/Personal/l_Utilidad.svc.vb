@@ -72,7 +72,7 @@ Public Class l_Utilidad
         Try
             If Validar(oeUtilidad) Then
                 Dim dtUtiCon As Data.DataTable = olConsolidado.CrearDT()
-                Dim id As String = odConsolidado.UltimoIdInserta
+                Dim id As String = odConsolidado.UltimoIdInserta(oeUtilidad.PrefijoID)
                 Dim lsPrefijo As String = Left(id, 3)
                 Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
                 For Each oeDet In oeUtilidad.leConsolidado
@@ -102,7 +102,7 @@ Public Class l_Utilidad
                 oeUtilidad.dtConsolidado = dtUtiCon
                 If oeUtilidad.leDetalle IsNot Nothing Then
                     Dim dtUtiDet As Data.DataTable = olDetalle.CrearDT()
-                    Dim idDet As String = odDetalle.UltimoIdInserta
+                    Dim idDet As String = odDetalle.UltimoIdInserta(oeUtilidad.PrefijoID)
                     Dim lsPrefijoDet As String = Left(idDet, 3)
                     Dim lsNumeroDet As Integer = CInt(Right(idDet, Len(idDet) - 3))
                     For Each oeDet In oeUtilidad.leDetalle

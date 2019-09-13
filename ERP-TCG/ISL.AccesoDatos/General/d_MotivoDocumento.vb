@@ -66,7 +66,7 @@ Public Class d_MotivoDocumento
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeMotivoDocumento
-                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Codigo _

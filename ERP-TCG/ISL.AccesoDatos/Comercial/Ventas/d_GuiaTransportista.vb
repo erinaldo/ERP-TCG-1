@@ -447,7 +447,7 @@ Public Class d_GuiaTransportista
                                     With GuiaTransportistaAnuladas
                                         stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
                                                                  .TipoOperacion, _
-                                                                 d_DatosConfiguracion.PrefijoID, _
+                                                                 .PrefijoID, _
                                                                    .Id _
                                                                    , FormatoDocumento(.Serie, 4) _
                                                                    , FormatoDocumento(.Numero, 10) _
@@ -481,7 +481,7 @@ Public Class d_GuiaTransportista
                         Else
                             stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
                                                          .TipoOperacion, _
-                                                         d_DatosConfiguracion.PrefijoID, _
+                                                         .PrefijoID, _
                                                            .Id _
                                                            , FormatoDocumento(.Serie, 4) _
                                                            , FormatoDocumento(.Numero, 10) _

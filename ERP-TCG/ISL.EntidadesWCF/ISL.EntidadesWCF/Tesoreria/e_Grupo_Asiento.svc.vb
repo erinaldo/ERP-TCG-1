@@ -36,8 +36,10 @@ Public Class e_Grupo_Asiento
     Public _IdEstado As String = ""
     <DataMember()> _
     Public TipoOperacion As String = ""
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public NroCheque As String = ""
     <DataMember()> _

@@ -12,8 +12,10 @@ Public Class e_FamiliaMaterial
     Private _TipoMaterial As New e_TipoMaterial
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public UsuarioCreacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

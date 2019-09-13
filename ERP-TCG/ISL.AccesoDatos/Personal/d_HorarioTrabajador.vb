@@ -78,7 +78,7 @@ Public Class d_HorarioTrabajador
             Using transScope As New TransactionScope()
                 For Each hortra As e_HorarioTrabajador In loHorarioTrabajador
                     With hortra
-                        sqlhelper.ExecuteNonQuery("PER.Isp_HorarioTrabajador_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                        sqlhelper.ExecuteNonQuery("PER.Isp_HorarioTrabajador_IAE", .TipoOperacion, .PrefijoID, _
                                                   .Id _
                                                   , .IdTrabajador _
                                                   , .IdHorario _

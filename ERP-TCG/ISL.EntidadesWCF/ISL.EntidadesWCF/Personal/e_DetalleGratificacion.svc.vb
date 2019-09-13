@@ -84,8 +84,10 @@ Public Class e_DetalleGratificacion
     Public PorExt As Double
     <DataMember()> _
     Public Calcula As Integer = 0
-    <DataMember()> _
+    <DataMember()>
     Public Equivale As Integer = 0
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

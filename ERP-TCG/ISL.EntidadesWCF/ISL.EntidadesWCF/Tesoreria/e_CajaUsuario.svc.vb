@@ -21,7 +21,8 @@ Public Class e_CajaUsuario
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

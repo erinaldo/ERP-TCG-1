@@ -17,6 +17,8 @@
     Private _valoresactuales As List(Of String)
     Private _indicador As String
     Private _activo As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public _Tipo As String
 

@@ -154,12 +154,12 @@ Public Class d_Movimiento
             Dim strCorrelativo As String = ""
             With oeMovimiento
                 If .TipoMovimiento = 2 Then
-                    strCorrelativo = CargarCorrelativoLocal("VALE")
-                    GrabarCorrelativo(strCorrelativo, "VALE")
+                    strCorrelativo = CargarCorrelativoLocal("VALE", .PrefijoID)
+                    GrabarCorrelativo(strCorrelativo, "VALE", .PrefijoID)
                 End If
                 Using transScope As New TransactionScope()
                     strIdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, _
-                                                              d_DatosConfiguracion.PrefijoID, _
+                                                              .PrefijoID, _
                                                   .Id _
                                                 , .Fecha _
                                                 , .IdCuentaCorrienteOrigen _
@@ -203,7 +203,7 @@ Public Class d_Movimiento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento
                 sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                                               .Id, .Fecha, .IdCuentaCorrienteOrigen, .IdCuentaCorrienteDestino _
                                             , .Ingreso, .Egreso, .Saldo, .Glosa, .Voucher, .UsuarioCreacion _
                                             , .Descuento, .TipoMovimiento, .IdEstado, .Activo, .TipoTransa _
@@ -234,7 +234,7 @@ Public Class d_Movimiento
     Public Function ActualizarMovimiento(oeMovimiento As e_Movimiento) As Boolean
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteDataset("TES.Isp_Movimiento_IAE", oeMovimiento.TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+            sqlhelper.ExecuteDataset("TES.Isp_Movimiento_IAE", oeMovimiento.TipoOperacion, oeMovimiento.PrefijoID,
                              oeMovimiento.Id, Date.Parse("01/01/1901"), String.Empty, String.Empty, 0, 0, 0 _
                            , String.Empty, String.Empty, String.Empty, 0, 0, oeMovimiento.IdEstado)
             Return True
@@ -247,7 +247,7 @@ Public Class d_Movimiento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, .Id)
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion, .PrefijoID, .Id)
             End With
             Return True
         Catch ex As Exception
@@ -279,14 +279,14 @@ Public Class d_Movimiento
                 With oeMovimiento
                     If .IndicadorCorrelativo Then
                         If .TipoTransa = 4 Then
-                            strCorrelativo = CargarCorrelativo("VALE", 1)
-                            GrabarCorrelativo(strCorrelativo, "VALE", 1)
+                            strCorrelativo = CargarCorrelativo("VALE", .PrefijoID, 1)
+                            GrabarCorrelativo(strCorrelativo, "VALE", .PrefijoID, 1)
                         Else
-                            strCorrelativo = CargarCorrelativo("VALE")
-                            GrabarCorrelativo(strCorrelativo, "VALE")
+                            strCorrelativo = CargarCorrelativo("VALE", .PrefijoID)
+                            GrabarCorrelativo(strCorrelativo, "VALE", .PrefijoID)
                         End If
                     End If
-                    IdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    IdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, .PrefijoID, _
                                                   .Id, .Fecha, .IdCuentaCorrienteOrigen, .IdCuentaCorrienteDestino, .Ingreso, .Egreso _
                                                 , .Saldo, .Glosa, strCorrelativo, .UsuarioCreacion, .Descuento, .TipoMovimiento, .IdEstado _
                                                 , .Activo, .TipoTransa, .AsignadoGrupo, .IndPrestamoHab, .Depositado, .SaldoPorDepositar _
@@ -321,14 +321,14 @@ Public Class d_Movimiento
         End Try
     End Function
 
-    Private Function CargarCorrelativo(ByVal TipoDocumento As String, Optional ByVal Tipo As Integer = 0) As String
+    Private Function CargarCorrelativo(ByVal TipoDocumento As String, ByVal PrefijoID As String, Optional ByVal Tipo As Integer = 0) As String
         Dim Numero As String = ""
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         oeTipodocumento.TipoOperacion = "B"
         oeTipodocumento.Nombre = TipoDocumento
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
         oeCorrelativo.TipoOperacion = "1"
-        oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+        oeCorrelativo.Prefijo = PrefijoID
         oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
         oeCorrelativo.Tipo = Tipo
         oeCorrelativo = odCorrelativo.ObtenerLocal(oeCorrelativo)
@@ -339,14 +339,14 @@ Public Class d_Movimiento
         Return Numero
     End Function
 
-    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String) As String
+    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String, ByVal PrefijoID As String) As String
         Dim Numero As String = ""
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         oeTipodocumento.TipoOperacion = "B"
         oeTipodocumento.Nombre = TipoDocumento
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
         oeCorrelativo.TipoOperacion = "1"
-        oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+        oeCorrelativo.Prefijo = PrefijoID
         oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
         oeCorrelativo = odCorrelativo.ObtenerLocal(oeCorrelativo)
         Numero = oeCorrelativo.Numero + 1
@@ -356,13 +356,13 @@ Public Class d_Movimiento
         Return Numero
     End Function
 
-    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, Optional ByVal Tipo As Integer = 0) As Boolean
+    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String, Optional ByVal Tipo As Integer = 0) As Boolean
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             oeTipodocumento.TipoOperacion = "B"
             oeTipodocumento.Nombre = TipoDocumento
             oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
-            Select Case d_DatosConfiguracion.PrefijoID
+            Select Case PrefijoID
                 Case "1CH"
                     oeCorrelativo.Serie = 1
                 Case "1PY"
@@ -381,7 +381,7 @@ Public Class d_Movimiento
             Else
                 oeCorrelativo.TipoOperacion = "I"
                 oeCorrelativo.Numero = CInt(Numero)
-                oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+                oeCorrelativo.Prefijo = PrefijoID
                 oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
                 oeCorrelativo.Tipo = Tipo
                 If odCorrelativo.GuardarLocal(oeCorrelativo) Then Return True
@@ -391,13 +391,13 @@ Public Class d_Movimiento
         End Try
     End Function
 
-    Private Function GrabarCorrelativo1(ByVal Numero As String, ByVal TipoDocumento As String) As Boolean
+    Private Function GrabarCorrelativo1(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String) As Boolean
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             oeTipodocumento.TipoOperacion = "B"
             oeTipodocumento.Nombre = TipoDocumento
             oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
-            Select Case d_DatosConfiguracion.PrefijoID
+            Select Case PrefijoID
                 Case "1CH"
                     oeCorrelativo.Serie = 1
                 Case "1PY"
@@ -416,7 +416,7 @@ Public Class d_Movimiento
             Else
                 oeCorrelativo.TipoOperacion = "I"
                 oeCorrelativo.Numero = CInt(Numero)
-                oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+                oeCorrelativo.Prefijo = PrefijoID
                 oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
                 If odCorrelativo.GuardarLocal(oeCorrelativo) Then Return True
             End If

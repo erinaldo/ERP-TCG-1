@@ -89,7 +89,7 @@ Public Class d_RegistroDevolucion
             Dim _id As String
             Using TransScope As New TransactionScope()
                 With oeRegistroDevolucion
-                    _id = sqlhelper.ExecuteScalar("NEU.Isp_RegistroDevolucion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("NEU.Isp_RegistroDevolucion_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Fecha _

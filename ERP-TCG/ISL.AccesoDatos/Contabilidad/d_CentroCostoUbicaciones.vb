@@ -60,7 +60,7 @@ Public Class d_CentroCostoUbicaciones
             With oeCentroCostoUbicaciones
                 sqlhelper.ExecuteNonQuery("CON.Isp_CentroCostoUbicaciones_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdCentroCosto _
                                             , .Nombre _

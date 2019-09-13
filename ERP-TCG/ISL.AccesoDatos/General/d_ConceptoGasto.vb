@@ -71,7 +71,7 @@ Public Class d_ConceptoGasto
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConceptoGasto
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

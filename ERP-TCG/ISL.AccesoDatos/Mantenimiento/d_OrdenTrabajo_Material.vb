@@ -115,7 +115,7 @@ Public Class d_OrdenTrabajo_Material
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenTrabajoMaterial
                 sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_Material_IAE]", _
-                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                                          .TipoOperacion, .PrefijoID _
                                           , .Id, .IdOrdenTrabajo, .IdMaterial, .IdMantenimientoEquipo _
                                           , .IdUnidadMedida, .CantidadMaterial, .CantidadMaterialEntregada _
                                           , .CantidadMaterialDevuelto, .Costo, .IdSubAlmacen, .UsuarioCreacion _

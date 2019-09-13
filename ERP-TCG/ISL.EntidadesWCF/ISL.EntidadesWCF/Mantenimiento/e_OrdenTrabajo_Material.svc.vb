@@ -33,6 +33,8 @@ Public Class e_OrdenTrabajo_Material
     Public CantAux As String
     <DataMember()> _
     Public oeReqMaterial As New e_RequerimientoMaterial
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

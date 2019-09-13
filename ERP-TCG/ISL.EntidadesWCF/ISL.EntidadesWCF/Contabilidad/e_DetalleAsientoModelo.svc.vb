@@ -47,8 +47,10 @@ Public Class e_DetalleAsientoModelo
     Public IndOpcional As Boolean = False
     <DataMember()> _
     Public MontoAux As Double = 0
-    <DataMember()> _
+    <DataMember()>
     Public Ejercicio As Integer = 0
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

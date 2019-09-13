@@ -93,7 +93,7 @@ Public Class d_DetallePreliminar
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetallePreliminar
-                sqlhelper.ExecuteNonQuery("NEU.Isp_DetallePreliminar_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("NEU.Isp_DetallePreliminar_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPreliminarInspeccion _
                         , .IdOperacionNeu _

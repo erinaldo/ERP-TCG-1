@@ -114,7 +114,7 @@ Public Class d_UsuarioPerfil
                         , .Principal _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

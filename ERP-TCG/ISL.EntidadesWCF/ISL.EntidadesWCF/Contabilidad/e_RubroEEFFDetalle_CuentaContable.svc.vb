@@ -17,7 +17,8 @@ Public Class e_RubroEEFFDetalle_CuentaContable
     Public TipoOperacion As String = ""
     Public TipoBusca As Integer
     Public Identificador As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

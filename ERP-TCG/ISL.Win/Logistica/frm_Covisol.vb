@@ -346,7 +346,7 @@ Public Class frm_Covisol
                 For Each _MovTarjeta As e_TarjetaMovimiento In loMovimientoTarjeta.Where(Function(x) x.IndGuardado = False).ToList
                     _MovTarjeta.UsuarioCreacion = gUsuarioSGI.Id
                 Next
-                If olMovimientoTarjeta.GuardarMasivo(loMovimientoTarjeta.Where(Function(x) x.IndGuardado = False).ToList) Then
+                If olMovimientoTarjeta.GuardarMasivo(loMovimientoTarjeta.Where(Function(x) x.IndGuardado = False).ToList, PrefijoIdSucursal) Then
                     MessageBox.Show("Registro realizado con exito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     mt_ListarMovimientos()
                 End If

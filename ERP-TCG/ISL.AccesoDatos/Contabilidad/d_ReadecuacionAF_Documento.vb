@@ -86,7 +86,7 @@ Public Class d_ReadecuacionAF_Documento
             With oeReadecuacionAF_Documento
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ReadecuacionAF_Documento_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdReadecuacionActivoFijo _
                         , .IdDocumento _

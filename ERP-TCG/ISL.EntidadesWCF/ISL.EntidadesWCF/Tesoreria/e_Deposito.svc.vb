@@ -23,9 +23,6 @@ Public Class e_Deposito
     Private _usuariocreacion As String
     Private _viaje As String
 
-
-
-
     <DataMember()> _
     Public loDepositoDetalle As New List(Of e_DepositoDetalle)
 
@@ -35,8 +32,10 @@ Public Class e_Deposito
     Public Modificado As Boolean
     <DataMember()> _
     Public FechaDesde As String
-    <DataMember()> _
+    <DataMember()>
     Public FechaHasta As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

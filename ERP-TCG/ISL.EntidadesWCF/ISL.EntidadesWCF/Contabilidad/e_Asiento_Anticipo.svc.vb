@@ -15,7 +15,8 @@ Public Class e_Asiento_Anticipo
 
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String
         Get

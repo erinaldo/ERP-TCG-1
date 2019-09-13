@@ -68,7 +68,7 @@ Public Class d_OCMaterial_OSMaterial
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOCMaterial_OSMaterial
-                sqlhelper.ExecuteNonQuery("CMP.OCMaterial_OSMaterial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.OCMaterial_OSMaterial_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdOrden _
                         , .IdOrdenAsociada _

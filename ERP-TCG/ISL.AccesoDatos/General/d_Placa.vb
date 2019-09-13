@@ -104,7 +104,7 @@ Public Class d_Placa
             With oePlaca
                 sqlhelper.ExecuteNonQuery("STD.Isp_Placa_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .Nombre _
                                         , .Activo _

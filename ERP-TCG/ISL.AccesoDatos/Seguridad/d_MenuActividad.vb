@@ -151,7 +151,7 @@ Public Class d_MenuActividad
                         , .Texto _
                         , .Formulario _
                         , .menu _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

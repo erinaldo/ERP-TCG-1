@@ -80,7 +80,7 @@ Public Class d_Gasto_Caja
                         , .IdTrabajador _
                         , .IdPlaca _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IndCompraAlmacen _
                         , .IdArea)
                 For Each gasveh As e_GastoVehiculo In .loGastoVehiculo

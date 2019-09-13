@@ -82,7 +82,7 @@ Public Class d_OrdenTrabajo_Actividad
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenTrabajo_Actividad
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_Actividad_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_Actividad_IAE]", .TipoOperacion, .PrefijoID _
                         , .Id _
                         , .IdOrdenTrabajo _
                         , .IdActividad _

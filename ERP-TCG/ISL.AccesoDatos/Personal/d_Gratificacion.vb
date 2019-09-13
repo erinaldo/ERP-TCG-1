@@ -92,7 +92,7 @@ Public Class d_Gratificacion
             Using TransScope As New TransactionScope()
                 With oeGratificacion
 
-                    _idgrati = sqlhelper.ExecuteScalar("PER.Isp_BonificacionCompensatorio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idgrati = sqlhelper.ExecuteScalar("PER.Isp_BonificacionCompensatorio_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdPeriodo _
                             , .IndTipo _
@@ -148,7 +148,7 @@ Public Class d_Gratificacion
             Dim _idgrati As String = ""
             Using TransScope As New TransactionScope()
                 With oeGratificacion
-                    _idgrati = sqlhelper.ExecuteScalar("PER.Isp_BonificacionCompensatorio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idgrati = sqlhelper.ExecuteScalar("PER.Isp_BonificacionCompensatorio_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPeriodo _
                         , .IndTipo _

@@ -22,7 +22,8 @@ Public Class e_Kardex
     Public Año As Integer
     <DataMember()> _
     Public Mes As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

@@ -82,7 +82,7 @@ Public Class d_Concepto_Prestamo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConcepto_Prestamo
-                sqlhelper.ExecuteNonQuery("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -109,7 +109,7 @@ Public Class d_Concepto_Prestamo
             Dim stResultado() As String
             Using transScope As New TransactionScope
                 With oeConcepto_Prestamo
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Nombre _

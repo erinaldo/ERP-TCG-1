@@ -71,7 +71,7 @@ Public Class d_ActividadRestringido_Usuario
             With oeActividadRestringida_Usuario
                 sqlhelper.ExecuteNonQuery("SGD.Isp_ActividadRestringida_Usuario_IAE", _
                                             .TipoOperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
+                                            .PrefijoID, _
                                             .Id _
                                             , .IdActividadRestringida _
                                             , .IdUsuario _

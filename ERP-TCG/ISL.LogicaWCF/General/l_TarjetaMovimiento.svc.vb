@@ -45,12 +45,12 @@ Public Class l_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function GuardarMasivo(ListaMovTarjeta As List(Of e_TarjetaMovimiento)) As Boolean Implements Il_TarjetaMovimiento.GuardarMasivo
+    Public Function GuardarMasivo(ListaMovTarjeta As List(Of e_TarjetaMovimiento), ByVal PrefijoID As String) As Boolean Implements Il_TarjetaMovimiento.GuardarMasivo
         Try
             odTarjetaMovimiento = New d_TarjetaMovimiento
             Dim XML As New StringBuilder
             XML.AppendLine("<DETALLES>")
-            Dim Id As String = odTarjetaMovimiento.IdInsertar()
+            Dim Id As String = odTarjetaMovimiento.IdInsertar(PrefijoID)
             Dim lsPrefijo As String = Left(Id, 3)
             Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
             For Each _Movimiento As e_TarjetaMovimiento In ListaMovTarjeta
@@ -69,7 +69,7 @@ Public Class l_TarjetaMovimiento
                 lsNumero += 1
             Next
             XML.AppendLine("</DETALLES>")
-            Return odTarjetaMovimiento.GuardarMasivo(XML.ToString)
+            Return odTarjetaMovimiento.GuardarMasivo(XML.ToString, PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try
@@ -87,10 +87,10 @@ Public Class l_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function ActualizarMasivo(XML As String) As Boolean Implements Il_TarjetaMovimiento.ActualizarMasivo
+    Public Function ActualizarMasivo(XML As String, ByVal PrefijoID As String) As Boolean Implements Il_TarjetaMovimiento.ActualizarMasivo
         Try
             odTarjetaMovimiento = New d_TarjetaMovimiento
-            Return odTarjetaMovimiento.ActualizarMasivo(XML)
+            Return odTarjetaMovimiento.ActualizarMasivo(XML, PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try
