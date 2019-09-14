@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -229,6 +237,7 @@ Public Class frm_BoletaCompra
             Inicializar()
             If CargarDocumentoCompra() Then
                 oeMovimientoDocumento.TipoOperacion = "A"
+                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                 If txtEstado.Text = "GENERADA" Then
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                 Else
@@ -252,6 +261,7 @@ Public Class frm_BoletaCompra
                     oeOrdDoc.IdDocumento = .ActiveRow.Cells("Id").Value
                     oeOrdDoc.TipoOperacion = "S"
                     oeOrdDoc = olOrdDoc.Obtener(oeOrdDoc)
+                    oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
                     If oeOrdDoc.IdOrden <> "" Then Throw New Exception("Documento Asociado a una Orden Ejecutada. No se puede Eliminar")
                     oeMovimientoDocumento.Id = .ActiveRow.Cells("Id").Value
                     oeMovimientoDocumento.TipoOperacion = "COM"
@@ -261,6 +271,7 @@ Public Class frm_BoletaCompra
                                        .ActiveRow.Cells("NombreDocumento").Value.ToString & " ?", _
                                                           "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeMovimientoDocumento.TipoOperacion = "E"
+                            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                             olMovimientoDocumento.Eliminar(oeMovimientoDocumento)
                             Consultar(True)
                         End If
@@ -410,6 +421,7 @@ Public Class frm_BoletaCompra
                     If Not String.IsNullOrEmpty(txtNumero.Value) Then .Numero = FormatoDocumento(txtNumero.Value.ToString.Trim, 10)
                 End If
                 .TipoOperacion = "COM"
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             With griListaBoletaCompra
                 .DataSource = olMovimientoDocumento.ListarDocumentosPorCompras(oeMovimientoDocumento)
@@ -492,6 +504,7 @@ Public Class frm_BoletaCompra
                     oeMovimientoDocumento.Id = id
                     oeMovimientoDocumento.TipoOperacion = "COM"
                     oeMovimientoDocumento = olMovimientoDocumento.ObtenerDocumentosPorCompras(oeMovimientoDocumento)
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     If oeMovimientoDocumento.Activo Then
                         fecFechaActual.Value = oeMovimientoDocumento.FechaEmision
                         ListarProveedores(cboProveedor, oeMovimientoDocumento.IdClienteProveedor, 0)
@@ -536,6 +549,7 @@ Public Class frm_BoletaCompra
             oeDetalleDocumento.TipoOperacion = "COM"
             oeDetalleDocumento.Activo = 1
             oeDetalleDocumento.IdMovimientoDocumento = oeMovimientoDocumento.Id
+            oeDetalleDocumento.PrefijoID = PrefijoIdSucursal '@0001
             If IndMaterialServicio.Equals("M") Then
                 oeDetalleDocumento.IndServicioMaterial = "M"
                 lstDetalleDocumento = olDetalleDocumento.Listar(oeDetalleDocumento)
@@ -577,6 +591,7 @@ Public Class frm_BoletaCompra
             oeMovDocAUx.IdClienteProveedor = oeMovimientoDocumento.IdClienteProveedor
             oeMovDocAUx.TipoOperacion = "VDC"
             oeMovDocAUx.IndCompraVenta = 1
+            oeMovDocAUx.PrefijoID = PrefijoIdSucursal '@0001
             lst_MovDocAUx = olMovimientoDocumento.Listar(oeMovDocAUx)
             If lst_MovDocAUx.Count > 0 Then Throw New Exception("El comprobante " & txtSerieM.Value & "-" & txtNumeroM.Value & " de " & cboProveedor.Text & " ya ha sido registrado.")
         Catch ex As Exception
@@ -590,6 +605,7 @@ Public Class frm_BoletaCompra
             If oeMovimientoDocumento.TipoOperacion = "I" Then Validar_ExistenciaComprobante()
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
             If ValidaTDoc(oeMovimientoDocumento) Then
+                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                 If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                     Return True
@@ -644,6 +660,7 @@ Public Class frm_BoletaCompra
                                     txtSubTotal.Value), IIf(txtIGV.Value <> 0, 0, txtSubTotal.Value) * txtTc.Value)
                 .Compra.CobraCajaChica = IIf(chk_CajaChica.Checked, 1, 0)
                 .IndServicioMaterial = IndMaterialServicio
+                .PrefijoID = PrefijoIdSucursal '@0001
                 '-- Algunas Restricciones
                 If .lstDetalleDocumento.Where(Function(item) item.TipoOperacion <> "E").Count = 0 Then Throw New Exception("Ingrese Detalles !!")
                 If .lstDetalleDocumento.Where(Function(item) (item.TipoOperacion <> "E" And item.Subtotal = 0)).Count > 0 Then Throw New Exception("Verificar Cantidad y Precios en Detalles !!")
@@ -678,6 +695,7 @@ Public Class frm_BoletaCompra
                         .PrecioUnitarioSinImp = oeMat.Precio
                         .Precio = Math.Round(oeMat.Precio * (1 + oeIGVGlobal.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
+                        .PrefijoID = PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -703,6 +721,7 @@ Public Class frm_BoletaCompra
                         .PrecioUnitarioSinImp = oeServicio.Precio
                         .Precio = Math.Round(oeServicio.Precio * (1 + oeIGVGlobal.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
+                        .PrefijoID = PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -730,6 +749,7 @@ Public Class frm_BoletaCompra
                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         For Each oeDD As e_DetalleDocumento In lstDetalleDocumento.Where(Function(item) item.Seleccion)
                             oeDD.TipoOperacion = "E"
+                            oeDD.PrefijoID = PrefijoIdSucursal '@0001
                         Next
                         LLenarDetalleDocumento(lstDetalleDocumento)
                     End If
@@ -827,6 +847,7 @@ Public Class frm_BoletaCompra
                 Throw New Exception("Escoja Orden del mismo Proveedor")
             Next
             oeOrden = olOrden.Obtener(oeOrden)
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             _ref_orden = _ref_orden + 1
             CargarOrdenAsociada(oeOrden, _ref_orden)
             MostrarListaOrdenes(oeOrden.TipoOrden)
@@ -858,6 +879,7 @@ Public Class frm_BoletaCompra
             oeOrden.TipoOperacion = "4"
             oeOrden.IdTipoOrden = cbTipoOrden.Value
             oeOrden.IndMaterialServicio = cboMaterialServicio.Text
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             listaO = olOrden.Listar(oeOrden)
             griOrdenes.DataSource = listaO
             griOrdenes.DataBind()
@@ -870,10 +892,12 @@ Public Class frm_BoletaCompra
         Try
             ListarProveedores(cboProveedor, oeOrden.IdProveedor)
             Me.cboProveedor.Value = oeOrden.IdProveedor
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             If oeOrden.TipoOrden = "ORDEN DE INGRESO" Then
                 Dim oeOrdIng As New e_Orden
                 oeOrdIng.Id = oeOrden.Id
                 oeOrdIng = olOrden.Obtener(oeOrden)
+                oeOrdIng.PrefijoID = PrefijoIdSucursal '@0001
                 fecFechaActual.Value = oeOrdIng.FechaOrden
                 cboMoneda.Value = oeOrdIng.IdMoneda
                 cboTipoPago.SelectedIndex = 0
@@ -889,6 +913,7 @@ Public Class frm_BoletaCompra
                 oeOrdCom.IdEstadoOrden = "CERO"
                 oeOrdCom.IdTipoPago = "CERO"
                 oeOrdCom = olOrdCom.Obtener(oeOrdCom)
+                oeOrdCom.PrefijoID = PrefijoIdSucursal '@0001
                 cboTipoPago.Value = oeOrdCom.IdTipoPago
                 fecFechaActual.Value = oeOrdCom.FechaOrden
                 cboMoneda.Value = oeOrdCom.IdMoneda
@@ -910,6 +935,7 @@ Public Class frm_BoletaCompra
             End If
             oeDetalleOrdenIngreso.Activo = 1
             oeDetalleOrdenIngreso.IdOrden = oeOrden.Id
+            oeDetalleOrdenIngreso.PrefijoID = PrefijoIdSucursal '@0001
             llDetalleOrdenIngreso = olDetalleOrdenIngreso.Listar(oeDetalleOrdenIngreso)
             'Transpone el Detalle de la Orden al Detalle del Documento
             TrasponerDetalleOrden(llDetalleOrdenIngreso, _ref.ToString)
@@ -944,6 +970,7 @@ Public Class frm_BoletaCompra
                         .Precio = oeDetOrden.PrecioUnitario
                     End If
                     .Pos = _ref
+                    .PrefijoID = PrefijoIdSucursal '@0001
                 End With
                 lstDetalleDocumento.Add(oeDetalleDocumento)
             Next
@@ -959,6 +986,7 @@ Public Class frm_BoletaCompra
             oeOrden.TipoOperacion = "3"
             oeOrden.Referencia = IdDocumento
             oeOrden.IdTipoOrden = oeTipoDocumento.Id
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             lstOrden = olOrden.Listar(oeOrden)
             MostrarListaOrdenes("")
             If lstOrden.Count > 0 Then
@@ -980,6 +1008,7 @@ Public Class frm_BoletaCompra
                     oeMovimientoDocumento = New e_MovimientoDocumento
                     oeMovimientoDocumento.Id = griListaBoletaCompra.ActiveRow.Cells("Id").Value
                     oeMovimientoDocumento = olMovimientoDocumento.Obtener(oeMovimientoDocumento)
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     Dim oeTipDoc As New e_TipoDocumento
                     oeTipDoc.Id = oeMovimientoDocumento.IdTipoDocumento
                     oeTipDoc = olTipoDocumento.Obtener(oeTipDoc)
@@ -999,6 +1028,7 @@ Public Class frm_BoletaCompra
                             Dim lstOrdenDoc As New List(Of e_Orden_Documento)
                             oeOrdenDoc.IdDocumento = griListaBoletaCompra.ActiveRow.Cells("Id").Value
                             oeOrdenDoc.TipoOperacion = "E"
+                            oeOrdenDoc.PrefijoID = PrefijoIdSucursal '@0001
                             lstOrdenDoc = olOrdenDoc.Listar(oeOrdenDoc)
                             If lstOrdenDoc.Count > 0 Then
                                 If Month(lstOrdenDoc.Item(0).FechaCreacion) = periodo_act Then
@@ -1008,6 +1038,7 @@ Public Class frm_BoletaCompra
                                 End If
                                 oeOrdenDoc.TipoOperacion = "T"
                                 oeOrdenDoc.IdOrden = lstOrdenDoc.Item(0).IdOrden
+                                oeOrdenDoc.PrefijoID = PrefijoIdSucursal '@0001
                                 olOrdenDoc = New l_Orden_Documento
                                 lstOrdenDoc = New List(Of e_Orden_Documento)
                                 lstOrdenDoc = olOrdenDoc.Listar(oeOrdenDoc)
@@ -1573,6 +1604,7 @@ Public Class frm_BoletaCompra
             oeOrdDoc = New e_Orden_Documento
             oeOrdDoc.IdDocumento = griListaBoletaCompra.ActiveRow.Cells("Id").Value
             oeOrdDoc.TipoOperacion = "I"
+            oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
             If olOrdDoc.ValidaOIEjecutada(oeOrdDoc) Then
                 oePer = New e_Periodo
                 oePer.Ejercicio = ObtenerFechaServidor.Year
@@ -1738,8 +1770,10 @@ Public Class frm_BoletaCompra
             oeOrdDoc.IdDocumento = oeMovimientoDocumento.Id
             oeOrdDoc.TipoOperacion = "V"
             oeOrdDoc = olOrdDoc.Obtener(oeOrdDoc)
+            oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
             oeMovimientoDocumento.IndAsientoGuia = True
             oeMovimientoDocumento.loCtaCtbleSFam = New List(Of e_CtaCtbleSubFamiliaMat)
+            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
             Select Case oeOrdDoc.IndConsignacion
                 Case 1
                     ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeOrdDoc.IdTipoDocumento, Periodo, oeOrdDoc.IndConsignacion)
@@ -1767,11 +1801,13 @@ Public Class frm_BoletaCompra
                     oeDetDoc.Activo = 1
                     oeDetDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
                     oeDetDoc.IndServicioMaterial = "M"
+                    oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
                     oeMovimientoDocumento.lstDetalleDocumento = New List(Of e_DetalleDocumento)
                     oeMovimientoDocumento.lstDetalleDocumento.AddRange(olDetalleDocumento.Listar(oeDetDoc))
                     ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "2")
             End Select
             If IndNuevo Then
+                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                 olMovimientoDocumento.GuardarCompraMaterial(oeMovimientoDocumento)
                 If lb_EmisionPerAnt = True Then
                     Guardar_AsientoxExistencia()
@@ -1781,6 +1817,7 @@ Public Class frm_BoletaCompra
             oeMovimientoDocumento.loCtaCtbleCSer = New List(Of e_CtaCtbleCatServicio)
             oeMovimientoDocumento.loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, Periodo)
             ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "3")
+            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
             olMovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
             'olMovimientoDocumento.InterfazCompra(oeMovimientoDocumento)
         End If
@@ -1804,6 +1841,7 @@ Public Class frm_BoletaCompra
                 .Texto2 = l_ctactble28.NroCtaCtbleCompra
                 .Texto3 = l_ctactble28.NroCtaCtbleConsumo
                 .Nombre = l_ctactble28.CtaCtbleExistencias
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             lst_TablaCTble = ol_TablaCTble.Listar(oe_TablaCTble)
             If lst_TablaCTble.Count > 0 Then oe_TablaCTble = lst_TablaCTble.Where(Function(g) g.Texto1.StartsWith("28")).ToList.Item(0)
@@ -1838,7 +1876,9 @@ Public Class frm_BoletaCompra
                 If AsientoDet.Debe = "25" Then AsientoDet.Debe = "28"
                 If AsientoDet.Haber = "25" Then AsientoDet.Haber = "28"
                 AsientoDet.IdCuentaContable = oe_CtaAsoc.IdCuentaAsociada
+                AsientoDet.PrefijoID = PrefijoIdSucursal '@0001
             Next
+            Asiento.PrefijoID = PrefijoIdSucursal '@0001
         Next
     End Sub
 
@@ -1862,6 +1902,7 @@ Public Class frm_BoletaCompra
             .IndOrigen = oeMovimientoDocumento.IndOrigenContable
             .IdPeriodo = ObtenerPeriodo(Date.Now).Id
             .IdUsuarioCrea = gUsuarioSGI.Id
+            .PrefijoID = PrefijoIdSucursal '@0001
         End With
         Dim linea_c As Integer = 0
         For Each l_ctactble28 In lo_SubFamCtaCtble_28.Where(Function(g) g.NroCtaCtbleExistencias.StartsWith("28")).ToList
@@ -1891,6 +1932,7 @@ Public Class frm_BoletaCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1922,6 +1964,7 @@ Public Class frm_BoletaCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1930,6 +1973,8 @@ Public Class frm_BoletaCompra
         oeAsiento_MovDoc.Activo = 1
         oeAsiento_MovDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
         oeAsiento_MovDoc = olAsiento_MovDoc.Listar(oeAsiento_MovDoc).Item(0)
+        oeAsiento_MovDoc.PrefijoID = PrefijoIdSucursal '@0001
+        oeAsiento.PrefijoID = PrefijoIdSucursal '@0001
         oeAsiento.AsientoMovimiento = lst_AsientoMovimiento
         If olAsiento.Guardar(oeAsiento, oeAsiento_MovDoc.IdAsiento) Then
             total_debe = 0.0
