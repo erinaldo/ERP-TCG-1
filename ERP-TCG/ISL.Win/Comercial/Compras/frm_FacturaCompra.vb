@@ -1198,7 +1198,7 @@ Public Class frm_FacturaCompra
             oeOrden.TipoOperacion = "3"
             oeOrden.Referencia = IdDocumento
             oeOrden.IdTipoOrden = oeTipoDocumento.Id
-            oeorde.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             lstOrden = olOrden.Listar(oeOrden)
             MostrarListaOrdenes("")
             If lstOrden.Count > 0 Then

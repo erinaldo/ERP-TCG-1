@@ -383,6 +383,8 @@ Module m_Funciones
 
     Public _Operacion As String
     Public PrefijoIdSucursal As String '@0001
+    Public IdEmpresaSistema As String '@0001
+    Public TxtEmpresaSistema As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 

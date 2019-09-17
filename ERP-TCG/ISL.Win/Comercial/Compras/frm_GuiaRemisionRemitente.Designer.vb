@@ -2352,7 +2352,6 @@ Partial Class frm_GuiaRemisionRemitente
         Me.txtProveedor.TabIndex = 3
         Me.txtProveedor.TabStop = False
         Me.txtProveedor.Tag = ""
-        Me.txtProveedor.Text = "INDUAMERICA SERVICIOS LOGISTICOS S.A.C."
         '
         'Etiqueta5
         '
