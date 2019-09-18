@@ -26,7 +26,8 @@ Public Class e_LibroElectronico
     Public leDetallePLE As New List(Of e_DetalleLibroElectronico)
     <DataMember()> _
      Public dtDetalleLE As DataTable
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
 #End Region

@@ -127,7 +127,7 @@ Public Class d_Sancion
             With oeSancion
                 stResultado = sqlhelper.ExecuteScalar("TES.Isp_Sancion_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdTrabajador _
                                             , .IdArea _

@@ -19,7 +19,8 @@ Public Class e_ActividadRestringida
     Public Modificado As Boolean
     <DataMember()> _
     Public IdProcesoNegocio As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
 #End Region

@@ -696,31 +696,31 @@ Public Class l_MovimientoDocumento
                 oeMovDoc.TipoOperacion = "T"
                 If Not odMovimientoDocumento.Guardar(oeMovDoc) Then Return False
 
-                Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeMovDoc.PrefijoID)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                 Dim lsNumeroIdAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
                 'nroasiento
-                Dim NroAsientoCompra As String = odAsiento.UltimoNroAsiento("1CH000016", oeAsientoExtorno.IdPeriodo, "1")
+                Dim NroAsientoCompra As String = odAsiento.UltimoNroAsiento("1CH000016", oeAsientoExtorno.IdPeriodo, "1", oeMovDoc.PrefijoID)
                 Dim lsPrefijoNroAsientoCompra As String = Left(NroAsientoCompra, 2)
                 Dim lsNumeroNroAsientoCompra As Integer = CInt(Right(NroAsientoCompra, Len(NroAsientoCompra) - 2))
                 'asientomovdoc
-                Dim IdAsientoMovDoc As String = odAsientoMovDoc.UltimoIdInserta()
+                Dim IdAsientoMovDoc As String = odAsientoMovDoc.UltimoIdInserta(oeMovDoc.PrefijoID)
                 Dim lsPrefijoAsientoMovDoc As String = Left(IdAsientoMovDoc, 3)
                 Dim lsNumeroIdAsientoMovDoc As Integer = CInt(Right(IdAsientoMovDoc, Len(IdAsientoMovDoc) - 3))
                 'asientmov
-                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(oeMovDoc.PrefijoID)
                 Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                 Dim lsNumeroIdAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
                 'cta x c y p
-                Dim IdCtaxCyP As String = odCtaCxP.UltimoIdInserta()
+                Dim IdCtaxCyP As String = odCtaCxP.UltimoIdInserta(oeMovDoc.PrefijoID)
                 Dim lsPrefijoIdCtaxCyP As String = Left(IdCtaxCyP, 3)
                 Dim lsNumeroIdCtaxCyP As Integer = CInt(Right(IdCtaxCyP, Len(IdCtaxCyP) - 3))
                 'asientomovimiento movdoc
-                Dim IdAsientoMovimientoMovDoc As String = odAsientoMovimientoMovDoc.UltimoIdInsertar()
+                Dim IdAsientoMovimientoMovDoc As String = odAsientoMovimientoMovDoc.UltimoIdInsertar(oeMovDoc.PrefijoID)
                 Dim lsPrefijoAsientoMovimientoMovDoc As String = Left(IdAsientoMovimientoMovDoc, 3)
                 Dim lsNumeroIdAsientoMovimientoMovDoc As Integer = CInt(Right(IdAsientoMovimientoMovDoc, Len(IdAsientoMovimientoMovDoc) - 3))
                 'movcajabanco
-                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta()
+                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta(oeMovDoc.PrefijoID)
                 Dim lsPrefijoMovCajaBanco As String = Left(IdMovimientoCajaBanco, 3)
                 Dim lsNumeroIdMovCajaBanco As Integer = CInt(Right(IdMovimientoCajaBanco, Len(IdMovimientoCajaBanco) - 3))
 
@@ -1900,10 +1900,10 @@ Public Class l_MovimientoDocumento
                 oeMovimientoDoc.Venta.OtrosTributos = 0
                 oeMovimientoDoc.Venta.Descuentos = 0
                 oeMovimientoDoc.Venta.IdTipoVenta = ""
-                Dim Id As String = odDetalleDoc.UltimoIdInserta()
+                Dim Id As String = odDetalleDoc.UltimoIdInserta(oeMovimientoDoc.PrefijoID)
                 Dim lsPrefijo As String = Left(Id, 3)
                 Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
-                Dim Idx As String = odDetalleDocGuiaTrans.UltimoIdInserta()
+                Dim Idx As String = odDetalleDocGuiaTrans.UltimoIdInserta(oeMovimientoDoc.PrefijoID)
                 Dim lsPrefijox As String = Left(Idx, 3)
                 Dim lsNumerox As Integer = CInt(Right(Idx, Len(Idx) - 3))
                 For Each oeDetalleDoc As e_DetalleDocumento In oeMovimientoDoc.lstDetalleDocumento
@@ -3398,7 +3398,7 @@ Public Class l_MovimientoDocumento
                 If Not o_o.MovimientoAnalisis Is Nothing Then
                     If o_o.MovimientoAnalisis.Count > 3 Then
                         If bandera Then
-                            Id = odMovimientoAnalisis.UltimoIdInserta()
+                            Id = odMovimientoAnalisis.UltimoIdInserta(oeMovDoc.PrefijoID)
                             lsPrefijo = Left(Id, 3)
                             lsNumero = CInt(Right(Id, Len(Id) - 3))
                             lsNumero = lsNumeroSuma + lsNumero
@@ -4407,8 +4407,9 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function AsientoAperturaDocumentos(ByVal lsDocumentos() As Object, ByVal lsTipo As String, _
-    ByVal lsMoneda As String, ByVal Ejercicio As Integer, ByVal lnTipoCambio As Double, ByVal IdUsuarioCreacion As String) As Boolean _
+    Public Function AsientoAperturaDocumentos(ByVal lsDocumentos() As Object, ByVal lsTipo As String,
+    ByVal lsMoneda As String, ByVal Ejercicio As Integer, ByVal lnTipoCambio As Double, ByVal IdUsuarioCreacion As String,
+                                              ByVal PrefijoID As String) As Boolean _
     Implements Il_MovimientoDocumento.AsientoAperturaDocumentos
         'objeto(0) = obj.Item("Id").ToString
         'objeto(1) = obj.Item("IdCuentaContable").ToString
@@ -4511,17 +4512,17 @@ Public Class l_MovimientoDocumento
             Dim dt_AM_Ofin2 As Data.DataTable = olAsientoMov_Obligacion.CrearDT
 
             'Obtengo el último Id de AsientoMovimiento
-            Dim Id As String = odAsientoMovimiento.UltimoIdInserta
+            Dim Id As String = odAsientoMovimiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(Id, 1) & "SI"
             Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
 
             'Otengo el último Id de AsientoMov_MovDoc
-            Dim Id2 As String = odAsientoMov_MovDoc.UltimoIdInserta
+            Dim Id2 As String = odAsientoMov_MovDoc.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo2 As String = Left(Id2, 1) & "SI"
             Dim lsNumero2 As Integer = CInt(Right(Id2, Len(Id2) - 3))
 
             'Obtengo el último Id de asientomov_obligacion
-            Dim Id3 As String = odAsientoMov_Obligacion.UltimoIdInserta
+            Dim Id3 As String = odAsientoMov_Obligacion.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo3 As String = Left(Id3, 1) & "SI"
             Dim lsNumero3 As Integer = CInt(Right(Id3, Len(Id3) - 3))
 
@@ -4542,7 +4543,7 @@ Public Class l_MovimientoDocumento
                     Throw New Exception("No existe esta id de cuenta : " & lsDocumentos(i)(1))
                 End If
                 rowDetalle("IdCuentaContable") = leListaFiltrada(0).Id
-                rowDetalle("Glosa") = "APERTURA " & lsDocumentos(i)(6).ToString & "/" & lsDocumentos(i)(7).ToString & _
+                rowDetalle("Glosa") = "APERTURA " & lsDocumentos(i)(6).ToString & "/" & lsDocumentos(i)(7).ToString &
                 lsDocumentos(i)(8).ToString & " " & lsDocumentos(i)(9).ToString
                 Dim lnMontoMN As Double = lsDocumentos(i)(4)
                 Dim lnMontoME As Double = lsDocumentos(i)(5)
@@ -4637,7 +4638,7 @@ Public Class l_MovimientoDocumento
                     ListaAjusteAp = ListaAp.Where(Function(iTEM) iTEM.Cuenta = lsDocumentos(i)(1).ToString).ToList
                     '-------------------------------------------------------
                     rowDetalle4("IdCuentaContable") = ListaAjusteAp(0).Id
-                    rowDetalle4("Glosa") = "ASIENTO POR DIF. T.C. DE " & lsDocumentos(i)(6).ToString & "/" & lsDocumentos(i)(7).ToString & _
+                    rowDetalle4("Glosa") = "ASIENTO POR DIF. T.C. DE " & lsDocumentos(i)(6).ToString & "/" & lsDocumentos(i)(7).ToString &
                     lsDocumentos(i)(8).ToString & " " & lsDocumentos(i)(9).ToString
 
                     Dim ln1 As Double = lsDocumentos(i)(5) * lsDocumentos(i)(3) 'TC Origen
@@ -4758,7 +4759,7 @@ Public Class l_MovimientoDocumento
             End If
             '------------------------------------------------------------------
             Dim odAsiento As New d_Asiento
-            Return odAsiento.GuardarMasivo2(oeAsiento, dt_AM, dt_AM_MD, dt_AM_Ofin, _
+            Return odAsiento.GuardarMasivo2(oeAsiento, dt_AM, dt_AM_MD, dt_AM_Ofin,
             oeAsiento3, dt_AM2, dt_AM_MD2, dt_AM_Ofin2, oeMovAnalisis)
 
 

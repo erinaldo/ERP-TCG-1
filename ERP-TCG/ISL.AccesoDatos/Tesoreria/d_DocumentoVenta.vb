@@ -105,7 +105,7 @@ Public Class d_DocumentoVenta
         Try
             Using transScope As New TransactionScope()
                 With oeDocumentoVenta
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_DocumentoVenta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_DocumentoVenta_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .IdCliente _
@@ -140,7 +140,7 @@ Public Class d_DocumentoVenta
                 Next
                 'Guardando numero y serie correlativo
                 oeCorrelativo.TipoOperacion = "I"
-                oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+                oeCorrelativo.Prefijo = oeDocumentoVenta.PrefijoID
                 oeCorrelativo.Numero = CInt(oeDocumentoVenta.Numero)
                 oeCorrelativo.Serie = CInt(oeDocumentoVenta.Serie)
                 oeCorrelativo.IdTipoDocumento = oeDocumentoVenta.IdTipoDocumento
@@ -184,7 +184,7 @@ Public Class d_DocumentoVenta
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeDocumentoVentaDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", "I", .PrefijoID, _
                                           .Id, _
                                           .IdDocumentoVenta, _
                                           .TipoReferencia, _

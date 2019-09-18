@@ -28,6 +28,8 @@ Public Class e_DetalleOrdenNeumatico
     Public CantMat As Double
     <DataMember()> _
    Public IdReqMat As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

@@ -44,7 +44,8 @@ Public Class e_Sancion
     Public _Tipo As Integer
     <DataMember()> _
     Public oeReqOASan As New e_ReqOAMSancion
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

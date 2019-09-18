@@ -70,7 +70,7 @@ Public Class d_DetalleCapacitacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleCapacitacion
-                sqlhelper.ExecuteNonQuery("SPC.Isp_DetalleCapacitacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_DetalleCapacitacion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCapacitacion _
                         , .IdAsistente _

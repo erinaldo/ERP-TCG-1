@@ -103,7 +103,7 @@ Public Class d_CuentaBancaria
                 sqlhelper.ExecuteNonQuery("TES.Isp_CuentaBancaria_IAE", .TipoOperacion, _
                 .Id, .IdBanco, .NumeroCuenta, .IdMoneda, .IdCuentaContable, .SaldoInicial, _
                 .Contacto, .ContactoTelefono, .TasaActiva, .TasaPasiva, _
-                .LineaCredito, .NumeroCorrelativo, .Activo, d_DatosConfiguracion.PrefijoID)
+                .LineaCredito, .NumeroCorrelativo, .Activo, .PrefijoID)
             End With
             Return True
         Catch ex As Exception

@@ -83,7 +83,7 @@ Public Class d_DocumentoRetencionDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoRetencionDetalle
-                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoRetencionDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoRetencionDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDocumentoRetencion _
                         , .FechaPago _

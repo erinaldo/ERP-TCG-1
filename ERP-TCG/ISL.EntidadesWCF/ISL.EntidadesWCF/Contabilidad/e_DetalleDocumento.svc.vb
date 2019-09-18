@@ -38,7 +38,8 @@ Public Class e_DetalleDocumento
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _Seleccion As Boolean
     Private _Pos As Integer
 

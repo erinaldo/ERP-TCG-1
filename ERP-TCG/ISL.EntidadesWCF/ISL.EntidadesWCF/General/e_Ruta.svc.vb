@@ -47,7 +47,8 @@ Public Class e_Ruta
     Public loZonaD2 As New List(Of e_ZonaCombustible)
     <DataMember()> _
     Public ListaRutaPeaje As List(Of e_RutaPeaje)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id
         Get

@@ -58,7 +58,8 @@ Public Class e_Movimiento_Viaje
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public FechaDesde As String
     <DataMember()> _

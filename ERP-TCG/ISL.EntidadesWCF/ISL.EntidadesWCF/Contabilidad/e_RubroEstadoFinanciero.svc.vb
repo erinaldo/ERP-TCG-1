@@ -19,7 +19,8 @@ Public Class e_RubroEstadoFinanciero
     Public CargaCompleta As Boolean = False
     Public leDetalle As List(Of e_RubroEstadoFinanciero_Detalle)
     Public leCuenta As List(Of e_RubroEEFFDetalle_CuentaContable)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

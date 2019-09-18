@@ -76,10 +76,10 @@ Public Class l_EquivalenciaRuta
         Return MontoRuta
     End Function
 
-    Public Function GuardarMasivo(ByVal loEquivalenciaRuta As System.Collections.Generic.List(Of EntidadesWCF.e_EquivalenciaRuta)) As Boolean Implements Il_EquivalenciaRuta.GuardarMasivo
+    Public Function GuardarMasivo(ByVal loEquivalenciaRuta As System.Collections.Generic.List(Of EntidadesWCF.e_EquivalenciaRuta), ByVal PrefijoID As String) As Boolean Implements Il_EquivalenciaRuta.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
-            Dim id As String = odEquivalenciaRuta.UltimoIdInserta
+            Dim id As String = odEquivalenciaRuta.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
             For Each montoruta In loEquivalenciaRuta

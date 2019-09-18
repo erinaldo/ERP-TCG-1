@@ -21,6 +21,8 @@ Public Class e_LiquidacionDetalle
     Public IndFormato As Integer
     <DataMember()> _
     Public IdCliente As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Private _Seleccion As Boolean
     Private _Id As String

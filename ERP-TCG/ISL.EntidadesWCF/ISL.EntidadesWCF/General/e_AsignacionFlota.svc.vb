@@ -19,7 +19,8 @@ Public Class e_AsignacionFlota
     Private _fechafin As Date
     Private _actual As Boolean
     Private _activo As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedad"

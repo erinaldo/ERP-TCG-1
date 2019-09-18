@@ -35,7 +35,8 @@ Public Class e_FlujoCaja
     Public Ejercicio As Integer
     '<DataMember()> _
     'Public CtaGastoAsociado As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

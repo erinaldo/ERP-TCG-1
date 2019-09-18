@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -236,6 +244,7 @@ Public Class frm_AprobarOrdenesCompra
                     oeOrdenCompra.IdProveedor = "CERO"
                     oeOrdenCompra.IdEstadoOrden = "CERO"
                     oeOrdenCompra.IdTipoPago = "CERO"
+                    oeOrdenCompra.PrefijoID = PrefijoIdSucursal '@0001
                     oeOrdenCompra = olOrdenCompra.Obtener(oeOrdenCompra)
                     IdTipoOrdenCompra = oeOrdenCompra.IdTipoOrdenCompra
                     If oeOrdenCompra.Activo Then
@@ -246,8 +255,8 @@ Public Class frm_AprobarOrdenesCompra
                         txtFechaOrden.ReadOnly = True
                         txtProveedor.Value = oeOrdenCompra.NombreProveedor
                         txtProveedor.ReadOnly = True
-
                         oeOrdenCompra.TipoOperacion = "A"
+                        oeOrdenCompra.PrefijoID = PrefijoIdSucursal '@0001
                         ConsultarDetalleOrdenCompra(True)
 
                         Return True
@@ -312,6 +321,7 @@ Public Class frm_AprobarOrdenesCompra
                 oeOrdenCompraMaterial.TipoOperacion = "1"
                 oeOrdenCompraMaterial.Activo = Activo
                 oeOrdenCompraMaterial.IdOrden = oeOrdenCompra.Id
+                oeOrdenCompraMaterial.PrefijoID = PrefijoIdSucursal '@0001
                 llOrdenCompraMaterial = olOrdenCompraMaterial.Listar(oeOrdenCompraMaterial)
                 .DataSource = llOrdenCompraMaterial
             End With
@@ -331,6 +341,7 @@ Public Class frm_AprobarOrdenesCompra
             With griListaDetalleOrdenCompraServicio
                 oeOrdenCompraServicio.Activo = Activo
                 oeOrdenCompraServicio.IdOrden = oeOrdenCompra.Id
+                oeOrdenCompraServicio.PrefijoID = PrefijoIdSucursal '@0001
                 llOrdenCompraServicio = olOrdenCompraServicio.Listar(oeOrdenCompraServicio)
                 .DataSource = llOrdenCompraServicio
             End With
@@ -390,10 +401,13 @@ Public Class frm_AprobarOrdenesCompra
                 oeMatNeg.IdProveedor = ordencompra.IdProveedor
                 oeOrdComMat.IdOrden = ordencompra.Id
                 oeOrdComMat.TipoOperacion = "1"
+                oeOrdComMat.PrefijoID = PrefijoIdSucursal '@0001
                 oeMatNeg = olMatNeg.Obtener(oeMatNeg)
+                oeMatNeg.PrefijoID = PrefijoIdSucursal '@0001
                 oeMatNegDet.IdMaterialesNegociados = oeMatNeg.Id
                 oeMatNegDet.TipoOperacion = "1"
                 oeMatNegDet.FechaCreacion = Date.Parse("01/01/1901")
+                oeMatNegDet.PrefijoID = PrefijoIdSucursal '@0001
                 loMatNegDet = olMatNegDet.Listar(oeMatNegDet)
                 If loMatNegDet.Count = 0 Then
                     oeMatNeg.IdProveedor = "1CH000004444"
@@ -403,6 +417,7 @@ Public Class frm_AprobarOrdenesCompra
                 End If
                 Dim CBO As String = ordencompra.IdMoneda
                 ordencompra.lstOrdenMaterial = olOrdComMat.Listar(oeOrdComMat)
+                ordencompra.PrefijoID = PrefijoIdSucursal '@0001
                 For Each material As e_OrdenCompraMaterial In ordencompra.lstOrdenMaterial
                     For Each matnegdet As e_MaterialesNegociadosDet In loMatNegDet
                         If material.IdMaterial = matnegdet.IdMaterial Then
@@ -599,6 +614,7 @@ Public Class frm_AprobarOrdenesCompra
             'oeOrdenCompra.IndicadorMaterial = IIf(cboMaterialServicio.Value = "M", 1, 0)
             'oeOrdenCompra.IndicadorServicio = IIf(cboMaterialServicio.Value = "S", 1, 0)
             oeOrdenCompra.TipoOperacion = "2"
+            oeOrdenCompra.PrefijoID = PrefijoIdSucursal '@0001
             With griListaOrdenCompra
                 llOrdenCompra = olOrdenCompra.Listar(oeOrdenCompra, oeFecha)
                 'agrOrdenCompra.Text = "OrdenCompra : " & .Rows.Count

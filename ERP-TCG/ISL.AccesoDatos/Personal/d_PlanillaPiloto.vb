@@ -80,7 +80,7 @@ Public Class d_PlanillaPiloto
             Dim stResultado As String
             Using transScope As New TransactionScope()
                 With oePlanillaPiloto
-                    stResultado = sqlhelper.ExecuteScalar("PER.Isp_PlanillaPiloto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("PER.Isp_PlanillaPiloto_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdPlanilla _
                             , .IdEstado _

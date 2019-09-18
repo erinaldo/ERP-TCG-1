@@ -74,7 +74,7 @@ Public Class d_TipoDocumentoVehiculoDetalle
             Dim stResultado() As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTipoDocumentoVehiculoDetalle
-                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_TipoDocumentoVehiculoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_TipoDocumentoVehiculoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                                                        .UsuarioCreacion _
                                                        , .Id _
                                                         , .Codigo _

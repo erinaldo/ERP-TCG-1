@@ -22,7 +22,8 @@ Public Class e_GuiaTransportistaInterrumpida
     Public Modificado As Boolean
     <DataMember()> _
     Public IdOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

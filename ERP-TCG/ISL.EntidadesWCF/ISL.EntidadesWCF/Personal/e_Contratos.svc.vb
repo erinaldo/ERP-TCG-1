@@ -43,7 +43,8 @@ Public Class e_Contratos
     Public FechaHasta As Date
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

@@ -87,7 +87,7 @@ Public Class d_OrdenCompraServicio
             With oeOrdenServicio
                 sqlhelper.ExecuteNonQuery("CMP.ISP_OrdenCompraServicio_IAE", _
                                          .TipoOperacion, _
-                                         d_DatosConfiguracion.PrefijoID, _
+                                         .PrefijoID, _
                                          .Id, _
                                          .IdOrden, _
                                          .IdServicio, _

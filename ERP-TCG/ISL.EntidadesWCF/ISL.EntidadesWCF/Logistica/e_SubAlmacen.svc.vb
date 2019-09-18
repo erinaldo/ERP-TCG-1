@@ -36,7 +36,8 @@ Public Class e_SubAlmacen
 
     Private _descripcion As String
     Private _referencia As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

@@ -94,7 +94,7 @@ Public Class d_Flota_Cuota
             With oeFlota_Cuota
                 stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Flota_Cuota_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdFlota _
                         , .Importe _

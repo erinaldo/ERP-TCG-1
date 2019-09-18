@@ -122,7 +122,7 @@ Public Class d_MenuGrupo
                         , .Orden _
                         , .Protegido _
                 , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

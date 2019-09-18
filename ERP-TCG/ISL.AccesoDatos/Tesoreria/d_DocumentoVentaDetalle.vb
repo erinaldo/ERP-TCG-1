@@ -72,7 +72,7 @@ Public Class d_DocumentoVentaDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoVentaDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDocumentoVenta _
                         , .TipoReferencia _

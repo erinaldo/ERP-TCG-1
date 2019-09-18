@@ -68,7 +68,7 @@ Public Class d_GrupoAprobacionDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoAprobacionDet
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoAprobacionDet_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoAprobacionDet_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGrupoAprobacion _
                         , .IdGrupo _

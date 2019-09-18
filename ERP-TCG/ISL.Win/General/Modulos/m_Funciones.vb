@@ -1,4 +1,13 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales
+'=================================================================================================================
+
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports System.Data.OleDb
 Imports Infragistics.Win
@@ -592,7 +601,9 @@ Module m_Funciones
     Public o_Botonera As New e_Boton
 
     Public _Operacion As String
-
+    Public PrefijoIdSucursal As String '@0001
+    Public IdEmpresaSistema As String '@0001
+    Public TxtEmpresaSistema As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -3710,7 +3721,8 @@ Module m_Funciones
     ''' <remarks></remarks>
     Public Function Lugar() As String
         Dim Prefijo As New l_Configuracion
-        Select Case Prefijo.PrefijoID
+        'Select Case Prefijo.PrefijoID '@0001
+        Select Case PrefijoIdSucursal '@0001
             Case "1CH"
                 Lugar = "sede Chiclayo"
             Case "1PY"

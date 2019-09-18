@@ -60,8 +60,10 @@ Public Class e_GuiasControl
     Private _StockTalonarios As Integer
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public GuiasTalanonarios As New List(Of e_GuiasTalonarios)
 

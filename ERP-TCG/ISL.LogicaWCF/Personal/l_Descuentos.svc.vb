@@ -51,10 +51,10 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function GuardarMasivo(leDescuentos As List(Of EntidadesWCF.e_Descuentos)) As Boolean Implements Il_Descuentos.GuardarMasivo
+    Public Function GuardarMasivo(leDescuentos As List(Of EntidadesWCF.e_Descuentos), ByVal PrefijoID As String) As Boolean Implements Il_Descuentos.GuardarMasivo
         Try
             Dim dtDscto As Data.DataTable = CrearDT()
-            Dim id As String = odDescuentos.UltimoIdInserta
+            Dim id As String = odDescuentos.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

@@ -33,7 +33,8 @@ Public Class e_Utilidad
     Public IndImportar As Boolean = False
     <DataMember()> _
     Public dtConsolidado, dtDetalle As DataTable
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

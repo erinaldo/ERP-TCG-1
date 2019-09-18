@@ -62,7 +62,8 @@ Public Class e_Movimiento
     Private _IdMovimientoViaje As String
     Private _ViajeId As String
     Private _IndAdministrativo As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public IndicadorCorrelativo As Boolean = False
 

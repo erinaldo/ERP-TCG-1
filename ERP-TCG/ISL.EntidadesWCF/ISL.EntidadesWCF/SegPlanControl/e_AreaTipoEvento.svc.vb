@@ -22,7 +22,8 @@ Public Class e_AreaTipoEvento
 
     Public TipoOperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

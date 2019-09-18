@@ -74,7 +74,8 @@ Public Class d_ControlEntregaMaterial
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeControlEntregaMaterial
-                id = sqlhelper.ExecuteScalar("CMP.Isp_ControlEntregaMaterial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("CMP.Isp_ControlEntregaMaterial_IAE", .TipoOperacion,
+                                             .PrefijoID,
                         .Id _
                         , .IdRequerimientoMaterial _
                         , .IdTrabajador _

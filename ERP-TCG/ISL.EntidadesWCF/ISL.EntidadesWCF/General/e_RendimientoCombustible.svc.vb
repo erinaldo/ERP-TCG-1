@@ -15,7 +15,8 @@ Public Class e_RendimientoCombustible
     Private _UsuarioCreacion As String
     Private _UsuarioModificacion As String
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

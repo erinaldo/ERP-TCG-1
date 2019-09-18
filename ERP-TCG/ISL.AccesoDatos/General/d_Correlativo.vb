@@ -81,7 +81,7 @@ Public Class d_Correlativo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCorrelativo
-                sqlhelper.ExecuteNonQuery("STD.Isp_Correlativo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Correlativo_IAE", .TipoOperacion, .PrefijoID, _
                         .IdTipoDocumento _
                         , .Numero _
                         , .Serie )
@@ -97,7 +97,7 @@ Public Class d_Correlativo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCorrelativo
-                sqlhelper.ExecuteNonQuery("STD.Isp_CorrelativoLocal_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_CorrelativoLocal_IAE", .TipoOperacion, .PrefijoID, _
                         .IdTipoDocumento _
                         , .Numero _
                         , .Serie _

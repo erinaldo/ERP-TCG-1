@@ -27,15 +27,14 @@ Public Class e_CuentaBancaria
     Private _Modificado As Boolean = False
     Private _Usuario As String
 
-
-
     <DataMember()> _
     Public TipoOperacion As String = ""
     <DataMember()> _
     Public Ejercicio As Integer
     <DataMember()> _
     Public TipoBusca As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

@@ -54,10 +54,10 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leCuentaCtePersonal As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaCtePersonal)) As Boolean Implements Il_CuentaCtePersonal.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leCuentaCtePersonal As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaCtePersonal), ByVal PrefijoID As String) As Boolean Implements Il_CuentaCtePersonal.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
-            Dim id As String = odCuentaCtePersonal.UltimoIdInserta
+            Dim id As String = odCuentaCtePersonal.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

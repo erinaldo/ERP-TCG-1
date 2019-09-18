@@ -67,7 +67,7 @@ Public Class d_DetalleDoc_GuiaTrans
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleDoc_GuiaTrans
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDoc_GuiaTrans_IAE ", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDoc_GuiaTrans_IAE ", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDetalleDoc _
                         , .IdGuiaTrans _
@@ -99,11 +99,11 @@ Public Class d_DetalleDoc_GuiaTrans
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDoc_GuiaTrans", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDoc_GuiaTrans", PrefijoID
                                   )
             Return stResultado
         Catch ex As Exception

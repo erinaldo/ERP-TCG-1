@@ -21,7 +21,8 @@ Public Class e_Material_DisenoNeu
     Public Material As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

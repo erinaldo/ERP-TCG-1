@@ -26,8 +26,8 @@ Public Class d_Leasing
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.ISP_Leaging_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeLeasing.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.ISP_Leaging_Listar", "",
+            Left(oeLeasing.PrefijoID, 1), "", oeLeasing.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeLeasing = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -43,7 +43,7 @@ Public Class d_Leasing
             Dim ds As DataSet
             With oeLeasing
                 ds = sqlhelper.ExecuteDataset("FIN.ISP_Leasing_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdProveedor _
                         , .FechaInicio _
@@ -72,7 +72,7 @@ Public Class d_Leasing
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLeasing
-                sqlhelper.ExecuteNonQuery("FIN.ISP_Leasing_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.ISP_Leasing_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdProveedor _
                         , .FechaInicio _

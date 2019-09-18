@@ -111,7 +111,7 @@ Public Class d_AsientoModelo
             Dim _idAM() As String
             Using TransScope As New TransactionScope()
                 With oeAsientoModelo
-                    _idAM = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idAM = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Nombre _

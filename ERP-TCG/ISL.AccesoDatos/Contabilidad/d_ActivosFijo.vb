@@ -181,7 +181,7 @@ Public Class d_ActivosFijo
                     Dim IdResultado As String
                     IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ActivoFijo_IAE]" _
                                 , .TipoOperacion _
-                                , d_DatosConfiguracion.PrefijoID _
+                                , .PrefijoID _
                                 , .Id _
                                 , .IdSedeEmpresa _
                                 , .IdResponsable _

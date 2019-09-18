@@ -36,7 +36,8 @@ Public Class e_MontoRuta
     Public FechaHasta As Date
     <DataMember()> _
     Public Tipo As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

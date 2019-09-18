@@ -90,10 +90,10 @@ Public Class l_OtrosDescuentos
         Return OtroDscto
     End Function
 
-    Public Function GuardarMasivo(leOtrosDescuentos As List(Of e_OtrosDescuentos)) As Boolean Implements Il_OtrosDescuentos.GuardarMasivo
+    Public Function GuardarMasivo(leOtrosDescuentos As List(Of e_OtrosDescuentos), ByVal PrefijoID As String) As Boolean Implements Il_OtrosDescuentos.GuardarMasivo
         Try
             Dim dtOD As Data.DataTable = CrearDT()
-            Dim id As String = odOtrosDescuentos.UltimoIdInserta
+            Dim id As String = odOtrosDescuentos.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

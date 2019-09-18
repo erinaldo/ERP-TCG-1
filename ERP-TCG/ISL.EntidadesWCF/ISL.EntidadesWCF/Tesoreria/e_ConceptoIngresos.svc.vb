@@ -19,7 +19,8 @@ Public Class e_ConceptoIngresos
     Public Modificado As Boolean
     <DataMember()> _
     Public IdProcesoNegocio As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

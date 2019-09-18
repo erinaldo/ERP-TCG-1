@@ -72,9 +72,9 @@ Public Class d_Bonificacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBonificacion
-                sqlhelper.ExecuteNonQuery("OPE.Isp_Bonificacion_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_Bonificacion_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                           .Id _
                                         , .IdVehiculo _
                                         , .Numero _

@@ -128,7 +128,7 @@ Public Class d_AccidentePersona
 
             With oeAccidentePersona
                 sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Persona_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .IdAccidente, .IdTrabajador, .Detalle, .Observacion)
+                .PrefijoID, .Id, .IdAccidente, .IdTrabajador, .Detalle, .Observacion)
             End With
             Return True
         Catch ex As Exception

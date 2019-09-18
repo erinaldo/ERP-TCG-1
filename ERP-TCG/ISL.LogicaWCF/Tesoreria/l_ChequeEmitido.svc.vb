@@ -76,27 +76,27 @@ Public Class l_ChequeEmitido
                     If odChequeEmitido.Guardar(oeChequeEmitido) Then
                         If loCtaCtbleConcepto.Count > 0 Then
                             'asiento
-                            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                            Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                             Dim lsNumeroIdAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
                             'nroasiento
-                            Dim NroAsientoCompra As String = odAsiento.UltimoNroAsiento("1CH000016", oeChequeEmitido.oePeriodo.Id, "1")
+                            Dim NroAsientoCompra As String = odAsiento.UltimoNroAsiento("1CH000016", oeChequeEmitido.oePeriodo.Id, "1", oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoNroAsientoCompra As String = Left(NroAsientoCompra, 2)
                             Dim lsNumeroNroAsientoCompra As Integer = CInt(Right(NroAsientoCompra, Len(NroAsientoCompra) - 2))
                             'asientmov
-                            Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                            Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                             Dim lsNumeroIdAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
                             'cta x c y p
-                            Dim IdCtaxCyP As String = odCtaCxP.UltimoIdInserta()
+                            Dim IdCtaxCyP As String = odCtaCxP.UltimoIdInserta(oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoIdCtaxCyP As String = Left(IdCtaxCyP, 3)
                             Dim lsNumeroIdCtaxCyP As Integer = CInt(Right(IdCtaxCyP, Len(IdCtaxCyP) - 3))
                             'asientomovimiento movdoc
-                            Dim IdAsientoMovimientoMovDoc As String = odAsientoMovimientoMovDoc.UltimoIdInsertar()
+                            Dim IdAsientoMovimientoMovDoc As String = odAsientoMovimientoMovDoc.UltimoIdInsertar(oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoAsientoMovimientoMovDoc As String = Left(IdAsientoMovimientoMovDoc, 3)
                             Dim lsNumeroIdAsientoMovimientoMovDoc As Integer = CInt(Right(IdAsientoMovimientoMovDoc, Len(IdAsientoMovimientoMovDoc) - 3))
                             'movcajabanco
-                            Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta()
+                            Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta(oeChequeEmitido.PrefijoID)
                             Dim lsPrefijoMovCajaBanco As String = Left(IdMovimientoCajaBanco, 3)
                             Dim lsNumeroIdMovCajaBanco As Integer = CInt(Right(IdMovimientoCajaBanco, Len(IdMovimientoCajaBanco) - 3))
 

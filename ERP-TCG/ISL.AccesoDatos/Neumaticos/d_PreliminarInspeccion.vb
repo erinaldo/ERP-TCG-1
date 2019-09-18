@@ -77,7 +77,7 @@ Public Class d_PreliminarInspeccion
             Dim id As String
             Using TransScope As New TransactionScope()
                 With oePreliminarInspeccion
-                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Periodo _
@@ -114,7 +114,7 @@ Public Class d_PreliminarInspeccion
             Dim id As String
             Using TransScope As New TransactionScope()
                 With oePreliminarInspeccion
-                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Periodo _

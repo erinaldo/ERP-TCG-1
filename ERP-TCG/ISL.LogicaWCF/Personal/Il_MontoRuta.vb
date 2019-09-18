@@ -17,8 +17,8 @@ Public Interface Il_MontoRuta
     <OperationContract()> _
     Function Listar(ByVal oeMontoRuta As e_MontoRuta) As List(Of e_MontoRuta)
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal lista As List(Of e_MontoRuta)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal lista As List(Of e_MontoRuta), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Guardar(ByVal oeMontoRuta As e_MontoRuta) As Boolean

@@ -24,7 +24,8 @@ Public Class e_AporteDescuento
     Public leHistorial As New List(Of e_DetalleAporteDescuento)
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

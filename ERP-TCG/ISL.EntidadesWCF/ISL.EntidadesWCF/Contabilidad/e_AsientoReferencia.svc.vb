@@ -13,7 +13,8 @@ Public Class e_AsientoReferencia
     Private _FechaCreacion As Date
     Private _Activo As Boolean
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

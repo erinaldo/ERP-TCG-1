@@ -32,7 +32,8 @@ Public Class e_SeguimientoMonitoreo
     Public FechaDesde As String
     <DataMember()> _
     Public FechaHasta As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     '<DataMember()> _
     'Public oeViaje As New e_Viaje
     <DataMember()> _

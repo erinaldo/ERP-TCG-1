@@ -47,7 +47,8 @@ Public Class e_OperacionNeumatico
     Public Equivale As Integer
     <DataMember()> _
     Public IndAct As Integer = 0
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

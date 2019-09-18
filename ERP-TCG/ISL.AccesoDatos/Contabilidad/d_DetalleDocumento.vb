@@ -103,7 +103,7 @@ Public Class d_DetalleDocumento
             Dim idDetalle As String = ""
             With oeDetalleDocumento
                 idDetalle = sqlhelper.ExecuteScalar("CON.Isp_DetalleDocumento_IAE", .TipoOperacion _
-                    , d_DatosConfiguracion.PrefijoID _
+                    , .PrefijoID _
                     , .Id, .IdMovimientoDocumento, .IndServicioMaterial, .IdMaterialServicio, .IdUnidadMedida _
                     , .Cantidad, .Precio, .IndGravado, .Igv, .Subtotal, .IdOperacionDetalle, .IdVehiculo _
                     , .Activo, .UsuarioCreacion, .FechaCreacion, .FactorRefUni, .IdViaje, .IdRegistroConsCombustible _
@@ -155,11 +155,11 @@ Public Class d_DetalleDocumento
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDocumento", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDocumento", PrefijoID
                                   )
             Return stResultado
         Catch ex As Exception

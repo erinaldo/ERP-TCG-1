@@ -62,7 +62,7 @@ Public Class d_Asiento_MovDoc
             With oeAsiento_MovDoc
                 sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_MovDoc_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdAsiento _
                                             , .IdMovimientoDocumento _
@@ -86,11 +86,11 @@ Public Class d_Asiento_MovDoc
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Asiento_MovDoc", d_DatosConfiguracion.PrefijoID)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Asiento_MovDoc", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

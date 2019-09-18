@@ -110,7 +110,7 @@ Public Class d_TipoActivoFijo_CtaCtble
             With oeTipoActivoFijo_CtaCtble
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_TipoActivoFijo_CtaCtble_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdTipoActivoFijo _
                         , .IdCtaCtbleCompraD _

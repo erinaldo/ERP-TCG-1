@@ -30,7 +30,8 @@ Public Class e_Proveedor
     Public Tipo As Integer = 0
     <DataMember()> _
     Public IndRelacionada As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oePersona As New e_Persona
     <DataMember()> _

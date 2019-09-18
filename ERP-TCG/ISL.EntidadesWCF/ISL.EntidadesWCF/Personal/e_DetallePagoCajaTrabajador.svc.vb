@@ -33,8 +33,10 @@ Public Class e_DetallePagoCajaTrabajador
     Public IdPlanilla As String
     <DataMember()> _
     Public NroMes As Integer
-    <DataMember()> _
+    <DataMember()>
     Public TipoBusca As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

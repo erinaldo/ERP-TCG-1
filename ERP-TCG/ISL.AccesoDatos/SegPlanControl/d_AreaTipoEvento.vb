@@ -73,7 +73,7 @@ Public Class d_AreaTipoEvento
             Dim stResultado() As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAreaTipoEvento
-                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_AreaTipoEvento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_AreaTipoEvento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .IdTipoEvento _

@@ -63,7 +63,7 @@ Public Class d_GastoVehiculo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGastoVehiculo
-                sqlhelper.ExecuteNonQuery("TES.Isp_GastoVehiculo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GastoVehiculo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGastoCaja _
                         , .IdVehiculo _

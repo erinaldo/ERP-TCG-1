@@ -87,7 +87,7 @@ Public Class d_Alerta
                             , .IdActividadNegocio _
                             , .Estado _
                             , .Activo _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                         )
                 End With
                 If oeAlerta.oeAlertaDetalle IsNot Nothing Then

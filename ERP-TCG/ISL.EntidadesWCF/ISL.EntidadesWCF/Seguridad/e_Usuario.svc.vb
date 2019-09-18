@@ -58,7 +58,8 @@ Public Class e_Usuario
     Public FechaFinal As Date = #1/1/1901#
     <DataMember()> _
     Public IndCompleto As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

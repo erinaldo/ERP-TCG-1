@@ -108,7 +108,7 @@ Public Class d_Orden
                 With oeOrden
                     stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Orden_IAE" _
                                                         , .TipoOperacion _
-                                                        , d_DatosConfiguracion.PrefijoID _
+                                                        , .PrefijoID _
                                                         , .Id _
                                                         , .NroOrden _
                                                         , .IdMoneda _
@@ -221,7 +221,7 @@ Public Class d_Orden
                 With oeOrden
                     stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Orden_IAE" _
                                                         , .TipoOperacion _
-                                                        , d_DatosConfiguracion.PrefijoID _
+                                                        , .PrefijoID _
                                                         , .Id _
                                                         , .NroOrden _
                                                         , .IdMoneda _

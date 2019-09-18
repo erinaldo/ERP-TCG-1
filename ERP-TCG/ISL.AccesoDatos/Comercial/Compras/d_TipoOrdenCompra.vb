@@ -99,7 +99,7 @@ Public Class d_TipoOrdenCompra
         Try
             With oeTipoPago
                 SqlHelper.ExecuteNonQuery("CMP.Isp_TipoOrdenCompra_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
+                .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
                  .Activo)
             End With
             Return True

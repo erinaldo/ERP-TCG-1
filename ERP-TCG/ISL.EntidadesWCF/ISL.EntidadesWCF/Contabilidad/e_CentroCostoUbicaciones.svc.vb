@@ -19,6 +19,8 @@ Public Class e_CentroCostoUbicaciones
     Public TipoOperacion As String
     <DataMember()> _
     Public UsuarioCreacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

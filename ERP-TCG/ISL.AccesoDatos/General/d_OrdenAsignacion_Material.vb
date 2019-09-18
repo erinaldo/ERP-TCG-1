@@ -82,7 +82,7 @@ Public Class d_OrdenAsignacion_Material
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeOrdenAsignacion_Material
-                    sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_Material_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_Material_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdMaterial _
                             , .IdOrdenAsignacion _

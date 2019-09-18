@@ -52,7 +52,8 @@ Public Class e_ObligacionFin
     Public Ejercicio As Integer
     <DataMember()> _
     Public Mes As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeFecLetra As New e_FecLetras
     <DataMember()> _

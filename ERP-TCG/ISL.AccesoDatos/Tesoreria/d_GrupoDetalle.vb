@@ -146,8 +146,8 @@ Public Class d_GrupoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeGrupoDetalle.Id)
+            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
+            Left(oeGrupoDetalle.PrefijoID, 1), "", oeGrupoDetalle.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeGrupoDetalle = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -254,7 +254,7 @@ Public Class d_GrupoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
@@ -272,7 +272,7 @@ Public Class d_GrupoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleDesc_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleDesc_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
@@ -290,7 +290,7 @@ Public Class d_GrupoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleFlete_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleFlete_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
@@ -313,7 +313,7 @@ Public Class d_GrupoDetalle
                         , .IdGrupo _
                         , .IdGastoOperacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

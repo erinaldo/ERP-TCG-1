@@ -23,6 +23,8 @@ Public Class e_MovimientoActivoFijo
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

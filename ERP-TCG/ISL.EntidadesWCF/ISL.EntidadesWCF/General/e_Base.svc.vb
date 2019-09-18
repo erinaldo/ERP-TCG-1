@@ -11,6 +11,8 @@ Public Class e_Base
     Private _Nombre As String
     Private _Abreviatura As String
     Private _Activo As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

@@ -48,7 +48,7 @@ Public Class d_Bitacora
                 With oeBitacora
                     sqlhelper.ExecuteNonQuery("[STD].[Isp_Bitacora_IAE]",
                                               .Tipo, _
-                                              d_DatosConfiguracion.PrefijoID _
+                                              .PrefijoID _
                                             , .IdTablaCabecera _
                                             , .IdTablaDetalle _
                                             , .NombreTablaCabecera _
@@ -80,7 +80,7 @@ Public Class d_Bitacora
             With oeBitacora              
                 cont = sqlhelper.ExecuteScalar("[STD].[Isp_Bitacora_IAE]",
                                           "V", _
-                                          d_DatosConfiguracion.PrefijoID _
+                                          .PrefijoID _
                                         , .IdTablaCabecera _
                                         , .IdTablaDetalle _
                                         , .NombreTablaCabecera _

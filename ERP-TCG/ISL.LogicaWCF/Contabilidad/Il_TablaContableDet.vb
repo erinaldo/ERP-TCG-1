@@ -24,8 +24,8 @@ Public Interface Il_TablaContableDet
     <OperationContract()> _
     Function Guardar(ByVal oeTablaContableDet As e_TablaContableDet) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leTablaContableDet As List(Of e_TablaContableDet)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leTablaContableDet As List(Of e_TablaContableDet), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeTablaContableDet As e_TablaContableDet) As Boolean

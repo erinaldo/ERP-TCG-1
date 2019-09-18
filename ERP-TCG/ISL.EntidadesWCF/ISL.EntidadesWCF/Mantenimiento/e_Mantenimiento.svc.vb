@@ -22,6 +22,8 @@ Public Class e_Mantenimiento
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public lstDetalleEquipo As List(Of e_MantenimientoEquipo)

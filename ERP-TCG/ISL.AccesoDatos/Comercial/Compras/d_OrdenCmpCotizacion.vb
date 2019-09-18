@@ -22,7 +22,7 @@ Public Class d_OrdenCmpCotizacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenCmpCotizacion
-                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenCompra_Cotizacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenCompra_Cotizacion_IAE", .TipoOperacion, .PrefijoID, _
                                           .Id _
                                                                , .IdOrdenCompra _
                                                                , .IdCotizacion)

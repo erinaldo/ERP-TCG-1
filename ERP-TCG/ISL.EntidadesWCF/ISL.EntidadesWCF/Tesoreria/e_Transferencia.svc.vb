@@ -25,7 +25,8 @@ Public Class e_Transferencia
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeCtaBancaria As e_CuentaBancaria
 

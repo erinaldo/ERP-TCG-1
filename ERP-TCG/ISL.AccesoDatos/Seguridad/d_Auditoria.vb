@@ -71,7 +71,7 @@ Public Class d_Auditoria
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAuditoria
-                sqlhelper.ExecuteNonQuery("SGD.Isp_Historial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_Historial_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdActividadNegocio _
                         , .UsuarioCreacion _

@@ -89,7 +89,7 @@ Public Class d_RegimenPensionario
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _id As String = ""
             With oeRegimenPensionario
-                _id = sqlhelper.ExecuteScalar("PER.Isp_RegimenPensionario_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_RegimenPensionario_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdEmpresa _
                         , .PorcentajeObligatorio _
@@ -156,12 +156,11 @@ Public Class d_RegimenPensionario
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.RegimenPensionario", d_DatosConfiguracion.PrefijoID _
-                                  )
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.RegimenPensionario", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

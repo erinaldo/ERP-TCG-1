@@ -79,7 +79,7 @@ Public Class d_IncidenciasAutentificadas
             With oeIncidenciasAutentificadas
                 sqlhelper.ExecuteNonQuery("[SGD].[Isp_IncidenciasAutentificadas_IAE]", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdArea _
                                             , .IdActividadNegocio _

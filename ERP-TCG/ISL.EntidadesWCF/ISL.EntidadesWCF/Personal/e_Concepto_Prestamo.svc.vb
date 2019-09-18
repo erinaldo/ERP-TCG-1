@@ -22,7 +22,8 @@ Public Class e_Concepto_Prestamo
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public leConceptoSancion As List(Of e_Concepto_Prestamo)
 

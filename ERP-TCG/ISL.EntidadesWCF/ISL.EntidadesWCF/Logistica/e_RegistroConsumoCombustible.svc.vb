@@ -111,7 +111,8 @@ Public Class e_RegistroConsumoCombustible
     Private oeRegistroInventario As String
 
     Public Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

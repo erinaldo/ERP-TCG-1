@@ -150,8 +150,8 @@ Public Class d_DemandaRapida
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeDemandaRapida
-                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "I",
+                                          .PrefijoID,
                                                 .Id _
                                                 , "A" _
                                                 , .Codigo _
@@ -182,8 +182,11 @@ Public Class d_DemandaRapida
     Public Function Eliminar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean
         Try
             Using transScope As New TransactionScope()
-                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "E", _
-             "", oeDemandaRapida.Id, "", "", Nothing, Nothing, "", "", oeDemandaRapida.IdUsuario, "", oeDemandaRapida.Justificacion, "", 0, oeDemandaRapida.IdConceptoCancelacionEliminacion)
+                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "E",
+             "", oeDemandaRapida.Id, "", "", Nothing, Nothing, "", "",
+             oeDemandaRapida.IdUsuario, "",
+             oeDemandaRapida.Justificacion, "", 0,
+             oeDemandaRapida.IdConceptoCancelacionEliminacion)
                 odBitacora.VerificarExistenciaDeDetalles(oeDemandaRapida.oeListaBitacora)
 
                 transScope.Complete()
@@ -202,8 +205,11 @@ Public Class d_DemandaRapida
             
             Using transScope As New TransactionScope()
 
-                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_Cancelar", "CA", oeDemandaRapida.Id, oeDemandaRapida.IdUsuario,
-                                          oeDemandaRapida.Justificacion, oeDemandaRapida.Indicador, oeDemandaRapida.IdConceptoCancelacionEliminacion)
+                sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_Cancelar", "CA", oeDemandaRapida.Id,
+                                          oeDemandaRapida.IdUsuario,
+                                          oeDemandaRapida.Justificacion,
+                                          oeDemandaRapida.Indicador,
+                                          oeDemandaRapida.IdConceptoCancelacionEliminacion)
                 odBitacora.VerificarExistenciaDeDetalles(oeDemandaRapida.oeListaBitacora)
                 transScope.Complete()
             End Using
@@ -216,8 +222,10 @@ Public Class d_DemandaRapida
 
     Public Function CambioDeEstado(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean
         Try
-            sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "S", "", oeDemandaRapida.Id, "", "", Nothing, "", "", "",
-                                      oeDemandaRapida.IdUsuario, "", oeDemandaRapida.Justificacion, "")
+            sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "S", "", oeDemandaRapida.Id, "", "",
+                                      Nothing, "", "", "",
+                                      oeDemandaRapida.IdUsuario, "",
+                                      oeDemandaRapida.Justificacion, "")
             Return True
         Catch ex As Exception
             Throw

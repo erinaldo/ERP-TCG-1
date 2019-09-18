@@ -1,4 +1,4 @@
-﻿<DataContract()> _
+﻿<DataContract()>
 Public Class e_AsientoModelo
     Implements Ie_AsientoModelo
     Implements IEquatable(Of e_AsientoModelo)
@@ -22,34 +22,36 @@ Public Class e_AsientoModelo
     Private _fechamodificacion As Date
     Private _activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public leDetalle As New List(Of e_DetalleAsientoModelo)
-    <DataMember()> _
+    <DataMember()>
     Public leAMActiviad As New List(Of e_AsientoModelo_ActividadNegocio)
-    <DataMember()> _
+    <DataMember()>
     Public leAMReferencia As New List(Of e_AsientoModelo_Referencia)
-    <DataMember()> _
+    <DataMember()>
     Public leDMReferencia As New List(Of e_DetalleModelo_Referencia)
-    <DataMember()> _
+    <DataMember()>
     Public TipoCambio As Double
-    <DataMember()> _
+    <DataMember()>
     Public IdMedioPago As String
-    <DataMember()> _
+    <DataMember()>
     Public Equivale As Integer
-    <DataMember()> _
+    <DataMember()>
     Public Tipo As Integer
-    <DataMember()> _
+    <DataMember()>
     Public IdPeriodo As String
-    <DataMember()> _
+    <DataMember()>
     Public FechaMov As Date
-    <DataMember()> _
+    <DataMember()>
     Public IndVinculado As Boolean = False
     <DataMember()>
     Public Ejercicio As Integer = 0
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public TipoBusca As Integer
     Public CargaCompleta As Boolean
@@ -58,7 +60,7 @@ Public Class e_AsientoModelo
 
 #Region "Propiedades"
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Id() As String
         Get
             Return _id
@@ -68,7 +70,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Codigo() As String
         Get
             Return _codigo
@@ -78,7 +80,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Nombre() As String
         Get
             Return _nombre
@@ -88,7 +90,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Abreviatura() As String
         Get
             Return _abreviatura
@@ -98,7 +100,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdMoneda() As String
         Get
             Return _idmoneda
@@ -108,7 +110,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Moneda() As String
         Get
             Return _moneda
@@ -118,7 +120,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Cuentas() As Integer
         Get
             Return _cuentas
@@ -128,7 +130,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdTipoAsiento() As String
         Get
             Return _idtipoasiento
@@ -138,7 +140,7 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property TipoAsiento() As String
         Get
             Return _tipoasiento
@@ -148,8 +150,8 @@ Public Class e_AsientoModelo
         End Set
     End Property
 
-    <DataMember()> _
-Public Property IdVinculado() As String
+    <DataMember()>
+    Public Property IdVinculado() As String
         Get
             Return _idvinculado
         End Get
@@ -158,7 +160,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Fila() As String
         Get
             Return _fila
@@ -168,7 +170,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property UsuarioCreacion() As String
         Get
             Return _usuariocreacion
@@ -178,7 +180,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property FechaCreacion() As Date
         Get
             Return _fechacreacion
@@ -188,7 +190,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property UsuarioModificacion() As String
         Get
             Return _usuariomodificacion
@@ -198,7 +200,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property FechaModificacion() As Date
         Get
             Return _fechamodificacion
@@ -208,7 +210,7 @@ Public Property IdVinculado() As String
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Activo() As Boolean
         Get
             Return _activo
@@ -239,7 +241,7 @@ Public Property IdVinculado() As String
         Activo = True
     End Sub
 
-    Public Sub New( _
+    Public Sub New(
               ByVal ls_Id As String _
               , ByVal ls_Codigo As String _
               , ByVal ls_Nombre As String _
@@ -255,7 +257,7 @@ Public Property IdVinculado() As String
               , ByVal ld_FechaCreacion As Date _
               , ByVal ls_UsuarioModificacion As String _
               , ByVal ld_FechaModificacion As Date _
-              , ByVal lb_Activo As Boolean _
+              , ByVal lb_Activo As Boolean
            )
         _id = ls_Id
         _codigo = ls_Codigo

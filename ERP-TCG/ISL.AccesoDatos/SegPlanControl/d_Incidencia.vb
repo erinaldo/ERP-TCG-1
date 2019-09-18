@@ -91,7 +91,7 @@ Public Class d_Incidencia
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oed_Incidencia
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Incidencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Incidencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Codigo2 _

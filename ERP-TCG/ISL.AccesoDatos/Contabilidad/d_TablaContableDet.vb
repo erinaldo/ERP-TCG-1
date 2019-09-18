@@ -128,7 +128,7 @@ Public Class d_TablaContableDet
             With oeTablaContableDet
                 stResultado = sqlhelper.ExecuteScalar("CON.ISP_TablaContableDet_IAE", _
                                                       .TipoOperacion, _
-                                                      d_DatosConfiguracion.PrefijoID, _
+                                                      .PrefijoID, _
                                                         .Id _
                                                     , .IdTabla _
                                                     , .Nombre _
@@ -197,14 +197,14 @@ Public Class d_TablaContableDet
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.TablaContableDet", d_DatosConfiguracion.PrefijoID)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.TablaContableDet", PrefijoID)
             Return stResultado
         Catch ex As Exception
-            Throw ex 
+            Throw ex
         End Try
     End Function
 

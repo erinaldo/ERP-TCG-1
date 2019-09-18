@@ -181,7 +181,7 @@ Public Class frm_AperturaDocumentosObligaciones
             If opcCtaCte.CheckedIndex = 2 Then lb_Obli = True
             'Guardar Informacion
             olApertura = New l_Asiento
-            If olApertura.GuardarApertura(leAsientoModel, leApertura, lb_Obli) Then
+            If olApertura.GuardarApertura(leAsientoModel, leApertura, lb_Obli, PrefijoIdSucursal) Then
                 mensajeEmergente.Confirmacion("¡Se Guardaron los Datos Correctamente!", True)
                 Consultar(True)
             End If

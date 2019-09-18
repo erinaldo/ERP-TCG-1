@@ -76,7 +76,7 @@ Public Class d_ChequesTalonarios
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeChequesTalonarios
-                sqlhelper.ExecuteNonQuery("TES.Isp_ChequesTalonarios_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_ChequesTalonarios_IAE", .TipoOperacion, .PrefijoID, _
                         .Id, .IdChequesControl, .IdCaja, .FechaIngreso, .Inicial, .Final, .Talonario, .Activo, _
                         .IdResponsable, .IndAnulado, .IndTerminado, .FechaCreacion, .UsuarioCreacion, .Observacion, .Correlativo)
             End With

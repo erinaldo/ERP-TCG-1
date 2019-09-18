@@ -84,9 +84,9 @@ Public Class d_ZonaCombustible
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeZonaCombustible
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]", _
-                                         .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]",
+                                         .TipoOperacion,
+                                          .PrefijoID,
                                         .Id _
                                         , .IdRuta _
                                         , .IdFlota _
@@ -95,7 +95,7 @@ Public Class d_ZonaCombustible
                                         , .IdDestino _
                                         , .Activo _
                                         , .UsuarioCreacion _
-                                        , .UsuarioModifica _
+                                        , .UsuarioModifica
                                         )
             End With
             Return True
@@ -108,9 +108,9 @@ Public Class d_ZonaCombustible
     Public Function Eliminar(ByVal oeZonaCombustible As e_ZonaCombustible) As Boolean
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]", _
+            sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]",
                                         "E" _
-                                        , d_DatosConfiguracion.PrefijoID _
+                                        , oeZonaCombustible.PrefijoID _
                                         , oeZonaCombustible.Id _
                                         , "" _
                                         , "" _
@@ -119,7 +119,7 @@ Public Class d_ZonaCombustible
                                         , "" _
                                         , 0 _
                                         , oeZonaCombustible.UsuarioCreacion _
-                                        , oeZonaCombustible.UsuarioModifica _
+                                        , oeZonaCombustible.UsuarioModifica
                                         )
             Return True
         Catch ex As Exception

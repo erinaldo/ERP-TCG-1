@@ -61,7 +61,7 @@ Public Class l_PagoCajaTrabajador
     Public Function ImportarDatos(oePagoCajaTrabajador As e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.ImportarDatos
         Try
             Dim dtPA As Data.DataTable = olDetalle.CrearDT()
-            Dim id As String = odDetalle.UltimoIdInserta
+            Dim id As String = odDetalle.UltimoIdInserta(oePagoCajaTrabajador.PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

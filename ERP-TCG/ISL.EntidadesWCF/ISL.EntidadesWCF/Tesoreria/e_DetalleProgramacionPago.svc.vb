@@ -27,7 +27,8 @@ Public Class e_DetalleProgramacionPago
     <DataMember()> _
     Public Modificado As Boolean = False
     Public Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructores"

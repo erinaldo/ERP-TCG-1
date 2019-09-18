@@ -88,9 +88,9 @@ Public Class l_Kardex
             Dim lnNumeroKardex As Integer
             Dim lnNumeroKardexDetalle As Integer
             Dim lnNumeroKardexSaldo As Integer
-            IdKardex = odKardex.UltimoIdInserta_Kardex()
-            IdKardexDetalle = odKardex.UltimoIdInserta_KardexDetalle()
-            IdKardexSaldo = odKardex.UltimoIdInserta_KardexSaldo()
+            IdKardex = odKardex.UltimoIdInserta_Kardex(oeKardex.PrefijoID)
+            IdKardexDetalle = odKardex.UltimoIdInserta_KardexDetalle(oeKardex.PrefijoID)
+            IdKardexSaldo = odKardex.UltimoIdInserta_KardexSaldo(oeKardex.PrefijoID)
             lsPrefijo = Left(IdKardex, 3)
             lnNumeroKardex = CInt(Right(IdKardex, Len(IdKardex) - 3))
             lnNumeroKardexDetalle = CInt(Right(IdKardexDetalle, Len(IdKardexDetalle) - 3))
@@ -362,25 +362,25 @@ Public Class l_Kardex
         End Try
     End Function
 
-    Public Function UltimoIdInserta_Kardex() As String
+    Public Function UltimoIdInserta_Kardex(ByVal PrefijoID As String) As String
         Try
-            Return odKardex.UltimoIdInserta_Kardex()
+            Return odKardex.UltimoIdInserta_Kardex(PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function UltimoIdInserta_KardexDetalle() As String
+    Public Function UltimoIdInserta_KardexDetalle(ByVal PrefijoID As String) As String
         Try
-            Return odKardex.UltimoIdInserta_KardexDetalle()
+            Return odKardex.UltimoIdInserta_KardexDetalle(PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function UltimoIdInserta_KardexSaldo() As String
+    Public Function UltimoIdInserta_KardexSaldo(ByVal PrefijoID As String) As String
         Try
-            Return odKardex.UltimoIdInserta_KardexSaldo()
+            Return odKardex.UltimoIdInserta_KardexSaldo(PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try

@@ -93,7 +93,7 @@ Public Class d_OperacionesProcesoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOperacionesProcesoDetalle
-                sqlhelper.ExecuteNonQuery("OPE.Isp_OperacionesProcesoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_OperacionesProcesoDetalle_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOperacionProceso _
                         , .IdViaje _
@@ -116,7 +116,7 @@ Public Class d_OperacionesProcesoDetalle
                         , .FleteUnitario _
                         , .Flete _
                         , .Observacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

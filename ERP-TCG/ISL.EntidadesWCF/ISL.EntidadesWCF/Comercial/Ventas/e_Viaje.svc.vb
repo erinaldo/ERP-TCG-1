@@ -94,7 +94,8 @@ Public Class e_Viaje
     Public Event DatoCambiado()
     'Public Delegate Sub DatoCambiadoEventHandler()
     'Public Event DatoCambiado As DatoCambiadoEventHandler
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

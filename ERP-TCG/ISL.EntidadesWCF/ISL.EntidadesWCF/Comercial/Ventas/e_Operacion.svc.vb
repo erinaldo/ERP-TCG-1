@@ -21,14 +21,14 @@ Public Class e_Operacion
     Private _idTipoVehiculo As String
     Private _indGuiaTercero As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public Tipooperacion As String
-
-    <DataMember()> _
+    <DataMember()>
     Public ActidadNegocio As String
-
     <DataMember()> _
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public FechaDesde As String

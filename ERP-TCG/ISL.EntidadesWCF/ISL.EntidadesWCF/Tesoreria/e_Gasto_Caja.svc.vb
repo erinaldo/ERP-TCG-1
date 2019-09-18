@@ -30,7 +30,8 @@ Public Class e_Gasto_Caja
     Public IndCompraAlmacen As Boolean
     <DataMember()> _
     Public IdGastoFuncion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

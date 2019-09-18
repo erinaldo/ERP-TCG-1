@@ -21,8 +21,10 @@ Public Class e_ConfiguracionDato
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public TipoBusca As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

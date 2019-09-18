@@ -69,7 +69,7 @@ Public Class d_AsignacionFlota
             With oeAsignacionFlota
                 sqlhelper.ExecuteNonQuery("STD.Isp_AsignacionFlota_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdVehiculo _
                                             , .IdFlota _

@@ -96,7 +96,7 @@ Public Class d_DepreciacionActivoFijo
             With oeDepreciacionActivoFijo
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_DepreciacionActivoFijo_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdActivoFijo _
                         , .IdPeriodo _
@@ -175,7 +175,7 @@ Public Class d_DepreciacionActivoFijo
             With oeDepreciacionActivoFijo
                 sqlhelper.ExecuteNonQuery("[CON].[Isp_DepreciacionActivoFijo_IAE]" _
                         , "A" _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdActivoFijo _
                         , .IdPeriodo _
@@ -197,16 +197,16 @@ Public Class d_DepreciacionActivoFijo
         End Try
     End Sub
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DepreciacionActivoFijo", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DepreciacionActivoFijo", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
-   
+
 End Class

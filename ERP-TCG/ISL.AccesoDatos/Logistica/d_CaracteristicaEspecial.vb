@@ -62,7 +62,7 @@ Public Class d_CaracteristicaEspecial
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCaracteristicaEspecial
-                sqlhelper.ExecuteNonQuery("ALM.Isp_CaracteristicaEspecial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_CaracteristicaEspecial_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Abreviatura _

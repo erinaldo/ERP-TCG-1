@@ -218,7 +218,7 @@ Public Class d_RegistroInventario
             Dim odRegInvOrden As New d_RegistroInventarioOrden
             Dim stResultado() As String
             With oeRegistroInventario
-                stResultado = sqlhelper.ExecuteScalar("ALM.ISP_RegistroInventario_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("ALM.ISP_RegistroInventario_IAE", .TipoOperacion, .PrefijoID, _
                         .Id, .IdMovimientoInventario, .IdSubAlmacen, .IdMaterial, .IdUnidadMedida _
                         , .Cantidad, .ValorUnitario, .CantidadReal, .ValorUnitarioReal _
                         , .ValorTotal, True, .UsuarioCreacion, .IdRegistroCombustible, .Fecha).ToString.Split("_")

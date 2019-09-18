@@ -63,12 +63,12 @@ Public Class d_EstadoRequerimiento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEstadoRequerimiento
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
                         , .UsuarioCreacion _
-                         , .Activo _
+                         , .Activo
                      )
             End With
             Return True

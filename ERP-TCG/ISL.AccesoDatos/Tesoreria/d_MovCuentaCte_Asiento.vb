@@ -66,7 +66,7 @@ Public Class d_MovCuentaCte_Asiento
                 odAsiento.Guardar(oeAsiento, Nothing, False)
                 With oeMovCuentaCte_Asiento
                     .IdAsiento = oeAsiento.Id
-                    sqlhelper.ExecuteNonQuery("TES.Isp_MovCuentaCte_Asiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_MovCuentaCte_Asiento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdMovCuentaCte _
                             , .IdAsiento _
@@ -91,12 +91,12 @@ Public Class d_MovCuentaCte_Asiento
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.MovCuentaCte_Asiento", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.MovCuentaCte_Asiento", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

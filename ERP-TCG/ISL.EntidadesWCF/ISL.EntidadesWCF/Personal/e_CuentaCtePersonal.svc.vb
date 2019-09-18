@@ -27,8 +27,10 @@ Public Class e_CuentaCtePersonal
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public Equivale As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

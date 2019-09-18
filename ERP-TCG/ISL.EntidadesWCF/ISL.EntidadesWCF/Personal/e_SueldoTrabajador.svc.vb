@@ -27,7 +27,8 @@ Public Class e_SueldoTrabajador
     Public leHistorial As New List(Of e_SueldoTrabajador)
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

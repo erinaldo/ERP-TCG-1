@@ -21,6 +21,8 @@ Public Class e_ComprobanteElectronico
     <DataMember()> _
     Public TipoOperacion As String
     Private _firma As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

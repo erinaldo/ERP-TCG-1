@@ -35,6 +35,8 @@ Public Class e_Inventario
     Public IdOrden As String = ""
     <DataMember()>
     Public oeRegistroInventario As e_RegistroInventario
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String

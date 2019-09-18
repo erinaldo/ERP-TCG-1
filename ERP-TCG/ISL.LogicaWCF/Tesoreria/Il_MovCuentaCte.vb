@@ -20,11 +20,11 @@ Public Interface Il_MovCuentaCte
     <OperationContract()> _
     Function GuardarLista(ByVal leMovCuentaCte As List(Of e_MovCuentaCte)) As Boolean
 
-    <OperationContract()> _
-    Function GuardarLista2(ByVal leMovCuentaCte As List(Of e_MovCuentaCte), ByVal leAsientoModel As List(Of e_AsientoModelo)) As Boolean
+    <OperationContract()>
+    Function GuardarLista2(ByVal leMovCuentaCte As List(Of e_MovCuentaCte), ByVal leAsientoModel As List(Of e_AsientoModelo), ByVal PrefijoID As String) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leMovCuentaCte As List(Of e_MovCuentaCte)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leMovCuentaCte As List(Of e_MovCuentaCte), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean

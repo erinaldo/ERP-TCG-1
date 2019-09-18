@@ -13,6 +13,8 @@
     Public IdAFReclasificado As String = String.Empty
 
     Public TipoCambio As Double = 0.0
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

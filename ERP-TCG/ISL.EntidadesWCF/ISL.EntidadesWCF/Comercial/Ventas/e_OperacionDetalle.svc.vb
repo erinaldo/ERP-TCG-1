@@ -57,6 +57,8 @@ Public Class e_OperacionDetalle
     Public UsuarioCreacion As String
     <DataMember()> _
     Public Ind As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public FechaDesde As String

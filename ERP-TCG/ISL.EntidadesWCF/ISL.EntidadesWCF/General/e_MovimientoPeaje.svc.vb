@@ -29,10 +29,8 @@ Public Class e_MovimientoPeaje
     Public fechaFin As Date
     <DataMember()> _
     Public fechaInicio As Date
-
-    
-
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

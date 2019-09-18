@@ -118,7 +118,7 @@ Public Class d_TipoDocumento
                 Dim id As String = ""
                 With oeTipoDocumento
                     id = sqlhelper.ExecuteScalar("STD.Isp_TipoDocumento_IAE", .TipoOperacion, _
-                    d_DatosConfiguracion.PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
+                    .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
                      .Activo)
                 End With
                 If oeTipoDocumento.leDocumentoImpuesto IsNot Nothing Then

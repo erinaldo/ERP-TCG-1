@@ -25,8 +25,8 @@ Public Class d_HistorialRechazoOC
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeHistorialRechazoOC.Id)
+            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
+            Left(oeHistorialRechazoOC.PrefijoID, 1), "", oeHistorialRechazoOC.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeHistorialRechazoOC = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -66,7 +66,7 @@ Public Class d_HistorialRechazoOC
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeHistorialRechazoOC
-                sqlhelper.ExecuteNonQuery("STD.Isp_HistorialRechazoOC_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_HistorialRechazoOC_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdOrdenCompra _
                         , .Glosa _

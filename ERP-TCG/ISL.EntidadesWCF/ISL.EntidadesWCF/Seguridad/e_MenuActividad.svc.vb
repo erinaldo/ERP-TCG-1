@@ -41,7 +41,8 @@ Public Class e_MenuActividad
     Public Modificado As Boolean
     <DataMember()> _
     Public leSubMenu As New List(Of e_MenuActividad)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _menuproceso As String
 
 #End Region

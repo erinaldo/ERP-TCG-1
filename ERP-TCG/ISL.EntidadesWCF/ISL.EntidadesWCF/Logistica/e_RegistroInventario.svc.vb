@@ -34,7 +34,8 @@ Public Class e_RegistroInventario
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     'Para Listar Ingresos Salidas
     <DataMember()> _
     Public Anio As String

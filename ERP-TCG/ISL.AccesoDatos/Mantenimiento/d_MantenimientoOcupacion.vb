@@ -70,7 +70,7 @@ Public Class d_MantenimientoOcupacion
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeMantenimientoOcupacion
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Ocupacion_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Ocupacion_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMantenimiento _
                         , .IdOcupacion _

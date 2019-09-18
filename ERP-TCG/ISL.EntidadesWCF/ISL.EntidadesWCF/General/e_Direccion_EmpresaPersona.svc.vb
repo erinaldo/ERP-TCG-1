@@ -20,7 +20,8 @@ Public Class e_Direccion_EmpresaPersona
     Public _nombrepp As String
     <DataMember()> _
     Public _nombredi As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

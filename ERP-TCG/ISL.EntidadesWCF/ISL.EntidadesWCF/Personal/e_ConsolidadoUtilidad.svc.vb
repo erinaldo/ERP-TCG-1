@@ -30,8 +30,10 @@ Public Class e_ConsolidadoUtilidad
     Public Modificado As Boolean
     <DataMember()> _
     Public Equivale As Integer
-    <DataMember()> _
+    <DataMember()>
     Public IndAdministrativo As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

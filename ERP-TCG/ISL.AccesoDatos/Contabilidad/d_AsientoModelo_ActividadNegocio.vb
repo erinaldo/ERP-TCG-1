@@ -72,7 +72,7 @@ Public Class d_AsientoModelo_ActividadNegocio
             Dim _idAMAN() As String
             Using TransScope As New TransactionScope()
                 With oeAsientoModelo_ActividadNegocio
-                    _idAMAN = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_ActividadNegocio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idAMAN = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_ActividadNegocio_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdAsientoModelo _
                             , .IdActividadNegocio _

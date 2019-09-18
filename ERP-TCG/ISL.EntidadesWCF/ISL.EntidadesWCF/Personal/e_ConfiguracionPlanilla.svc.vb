@@ -18,8 +18,10 @@ Public Class e_ConfiguracionPlanilla
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public leDetalle As New List(Of e_DetalleConfiguracionPlanilla)
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

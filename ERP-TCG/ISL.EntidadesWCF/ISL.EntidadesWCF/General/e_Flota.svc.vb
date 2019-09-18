@@ -24,8 +24,11 @@ Public Class e_Flota
     Public Modificado As Boolean
     <DataMember()> _
     Public ListJefes As List(Of e_Flota_Trabajador)
-    <DataMember()> _
+    <DataMember()>
     Public ListCuotas As List(Of e_Flota_Cuota)
+    <DataMember()>
+    Public PrefijoID As String = ""
+
 #End Region
 
 #Region "Propiedades"

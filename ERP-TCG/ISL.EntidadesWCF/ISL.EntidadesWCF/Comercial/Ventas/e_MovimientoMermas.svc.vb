@@ -39,6 +39,8 @@ Public Class e_MovimientoMermas
     Public FechaDesde As String
     <DataMember()> _
     Public FechaHasta As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 
     <DataMember()> _

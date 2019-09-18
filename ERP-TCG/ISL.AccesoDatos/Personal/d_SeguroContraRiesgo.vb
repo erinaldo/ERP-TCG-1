@@ -64,7 +64,7 @@ Public Class d_SeguroContraRiesgo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguroContraRiesgo
-                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroContraRiesgo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroContraRiesgo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdEmpresa _
                         , .Descripcion _

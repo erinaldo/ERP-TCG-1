@@ -31,8 +31,10 @@ Public Class e_CotizacionDetalleMat
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _posMat As Integer  'Indica la posicion del material para poder quitarlo del detalle
 
     Private _Seleccion As Boolean

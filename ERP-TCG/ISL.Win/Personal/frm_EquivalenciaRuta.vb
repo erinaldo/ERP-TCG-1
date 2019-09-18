@@ -101,7 +101,7 @@ Public Class frm_EquivalenciaRuta
                     Dim listaImpo As New List(Of e_EquivalenciaRuta)
                     listaImpo.AddRange(loEquivalenciaRutaImportar.Where(Function(item) item.IdRuta <> ""))
                     If listaImpo.Count > 0 Then
-                        If olEquivalenciaRuta.GuardarMasivo(listaImpo) Then
+                        If olEquivalenciaRuta.GuardarMasivo(listaImpo, PrefijoIdSucursal) Then
                             mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente")
                             MostrarTabs(0, ficEquivalenciaRuta)
                             Listar()

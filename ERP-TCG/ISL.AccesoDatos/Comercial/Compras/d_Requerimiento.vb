@@ -122,7 +122,7 @@ Public Class d_Requerimiento
                 With oeRequerimiento
                     stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Requerimiento_IAE" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .FechaAtencion _
                             , .MaterialServicio _
@@ -239,7 +239,7 @@ Public Class d_Requerimiento
             With oeRequerimiento
                 stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Requerimiento_IAE" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id).ToString.Split()
                 .Id = stResultado(0)
             End With

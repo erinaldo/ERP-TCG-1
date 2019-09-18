@@ -76,7 +76,7 @@ Public Class d_DetalleConceptoPonderado
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleConceptoPonderado
-                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleConceptoPonderado_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleConceptoPonderado_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdConceptoPonderado _
                         , .NroOrden _

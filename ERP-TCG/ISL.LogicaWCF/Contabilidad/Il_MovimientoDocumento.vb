@@ -243,9 +243,10 @@ Public Interface Il_MovimientoDocumento
     Function CuentasxCobrarxPeriodo(ByVal Ejercicio As Integer, ByVal Mes As Integer, _
     ByVal IndRegVentas As String, ByVal Idmoneda As String) As DataTable
 
-    <OperationContract()> _
-    Function AsientoAperturaDocumentos(ByVal oeMovimientoDocumento() As Object, ByVal lsTipo As String, _
-    ByVal lsMoneda As String, ByVal Ejercicio As Integer, ByVal lnTipoCambio As Double, ByVal IdUsuarioCreacion As String) As Boolean
+    <OperationContract()>
+    Function AsientoAperturaDocumentos(ByVal oeMovimientoDocumento() As Object, ByVal lsTipo As String,
+    ByVal lsMoneda As String, ByVal Ejercicio As Integer, ByVal lnTipoCambio As Double, ByVal IdUsuarioCreacion As String,
+                                       ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function CrearDT() As Data.DataTable

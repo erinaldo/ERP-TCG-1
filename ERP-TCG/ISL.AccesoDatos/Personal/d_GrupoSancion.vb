@@ -144,7 +144,7 @@ Public Class d_GrupoSancion
             Dim idest As String = oeGrupoSancion.IdEstado
             Using transScope As New TransactionScope
                 With oeGrupoSancion
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_GrupoSancion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_GrupoSancion_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .IdArea _

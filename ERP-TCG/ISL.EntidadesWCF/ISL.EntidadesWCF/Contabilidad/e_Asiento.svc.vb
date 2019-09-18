@@ -49,7 +49,8 @@ Public Class e_Asiento
     Public dtAsiMov As Data.DataTable
     <DataMember()> _
     Public dtAsiMovDoc As Data.DataTable
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

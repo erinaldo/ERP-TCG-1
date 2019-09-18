@@ -82,7 +82,7 @@ Public Class d_PlanesEPS
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oePlanesEPS
-                sqlhelper.ExecuteNonQuery("PER.ISP_PlanesEPS_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.ISP_PlanesEPS_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdEmpresa _
                         , .Codigo _

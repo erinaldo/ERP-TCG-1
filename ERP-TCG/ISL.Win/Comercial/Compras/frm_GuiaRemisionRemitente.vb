@@ -1,4 +1,13 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -98,9 +107,11 @@ Public Class frm_GuiaRemisionRemitente
         Try
             Operacion = "Nuevo"
             Inicializar()
+            txtProveedor.Text = TxtEmpresaSistema.Trim '@0001
             oeGRRemitente.TipoOperacion = "I"
             oeGRRemitente.UsuarioCreacion = gUsuarioSGI.Id
             oeGRRemitente.Activo = True
+            oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
             MostrarTabs(1, ficGuiaR, 1)
             MostrarTabs(0, ficDetalle, 1)
             ControlaBarraOperacionesDetalle(True, True)
@@ -114,8 +125,10 @@ Public Class frm_GuiaRemisionRemitente
     Public Overrides Sub Editar()
         Try
             Operacion = "Editar"
+            txtProveedor.Text = TxtEmpresaSistema.Trim '@0001
             EditarGuiaRemision()
             oeGRRemitente.TipoOperacion = "A"
+            oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
             cboProveedores.Focus()
             MostrarTabs(1, ficGuiaR, 1)
             MostrarTabs(0, ficDetalle, 1)
@@ -178,6 +191,7 @@ Public Class frm_GuiaRemisionRemitente
                         If MessageBox.Show("Esta seguro de eliminar la Guia de Remision Remitente: ?", _
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeGRRemitente.TipoOperacion = "E"
+                            oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
                             olGRRemitente.Eliminar(oeGRRemitente)
                             Consultar(True)
                         End If
@@ -488,6 +502,7 @@ Public Class frm_GuiaRemisionRemitente
                 oeGRRemitente.Id = griListadoGuiaRemision.ActiveRow.Cells("Id").Value.ToString
                 oeGRRemitente.TipoOperacion = "1"
                 oeGRRemitente = olGRRemitente.Obtener(oeGRRemitente)
+                oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
                 cboProveedores.Value = oeGRRemitente.IdEmpresaProveedor
                 txtSerie.Value = oeGRRemitente.Serie
                 txtNumero.Value = oeGRRemitente.Numero
@@ -528,6 +543,7 @@ Public Class frm_GuiaRemisionRemitente
             listaGRemisionMaterial = New List(Of e_GuiaRRemitenteMaterial)
             oeGRemisionMaterial.TipoOperacion = ""
             oeGRemisionMaterial.IdGuiaRemision = oeGRRemitente.Id
+            oeGRemisionMaterial.PrefijoID = PrefijoIdSucursal '@0001
             listaGRemisionMaterial = olGRemisionMaterial.Listar(oeGRemisionMaterial)
             griGuiaMaterial.DataSource = listaGRemisionMaterial
             llenaCombosGrillaOrdenMaterial()
@@ -641,6 +657,7 @@ Public Class frm_GuiaRemisionRemitente
                 oeGRemisionMaterial.IdSubAlmacen = obj.IdSubAlmacen
                 oeGRemisionMaterial.IdAlmacen = obj.IdAlmacen
                 oeGRemisionMaterial.Almacen = obj.Almacen
+                oeGRemisionMaterial.PrefijoID = PrefijoIdSucursal '@0001
                 listaGRemisionMaterial.Add(oeGRemisionMaterial)
             Next
             griGuiaMaterial.DataBind()
@@ -683,6 +700,7 @@ Public Class frm_GuiaRemisionRemitente
             oeGRRemitente.fechaInicio = rfGuiaRRemitenteDesde.Value
             oeGRRemitente.fechaFin = rfGuiaRRemitenteHasta.Value
             oeGRRemitente.Id = ""
+            oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
             listaGRemision = olGRRemitente.Listar(oeGRRemitente)
             griListadoGuiaRemision.DataSource = listaGRemision
             ''Ubica el cursor el el primer registro de la grilla
@@ -860,7 +878,7 @@ Public Class frm_GuiaRemisionRemitente
             If CInt(txtNumero.Text) = 0 Then Throw New Exception("Error en Numero de GRR")
             If Not String.IsNullOrEmpty(txtSerie.Value) Then oeGRRemitente.Serie = FormatoDocumento(txtSerie.Value.ToString.Trim, 4)
             If Not String.IsNullOrEmpty(txtNumero.Value) Then oeGRRemitente.Numero = FormatoDocumento(txtNumero.Value.ToString.Trim, 10)
-
+            oeGRRemitente.PrefijoID = PrefijoIdSucursal '@0001
             If Not olGRRemitente.Guardar(oeGRRemitente) Then Return False
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
             Consultar(True)
@@ -883,6 +901,7 @@ Public Class frm_GuiaRemisionRemitente
         oeOrden.TipoOperacion = "3"
         oeOrden.Referencia = IdDocumento
         oeOrden.IdTipoOrden = IdTipoDocumento
+        oeOrden.PrefijoID = PrefijoIdSucursal '@0001
         lstOrden = olOrden.Listar(oeOrden)
         MostrarListaOrdenes("")
         If lstOrden.Count > 0 Then griListaOrdenIngreso.DataSource = lstOrden : griListaOrdenIngreso.DataBind() : MostrarListaOrdenes(lstOrden.Item(0).TipoOrden)
@@ -922,6 +941,7 @@ Public Class frm_GuiaRemisionRemitente
             oeDetalleOrdenIngreso.TipoOperacion = "L"
             oeDetalleOrdenIngreso.Activo = 1
             oeDetalleOrdenIngreso.IdOrden = oeOrden.Id
+            oeDetalleOrdenIngreso.PrefijoID = PrefijoIdSucursal '@0001
             llDetalleOrdenIngreso = olDetalleOrdenIngreso.Listar(oeDetalleOrdenIngreso)
             'Transpone el Detalle de la Orden al Detalle del Documento
             TrasponerDetalleOrden(llDetalleOrdenIngreso, _ref.ToString)
@@ -945,6 +965,7 @@ Public Class frm_GuiaRemisionRemitente
                 .CantidadMaterial = oeDetOrden.CantidadMaterial
                 .IdSubAlmacen = oeDetOrden.IdSubAlmacen
                 .Pos = _ref
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             listaGRemisionMaterial.Add(oeDetalleGuia)
         Next
@@ -964,6 +985,7 @@ Public Class frm_GuiaRemisionRemitente
                 Throw New Exception("Escoja Orden del mismo Proveedor")
             Next
             oeOrden = olOrden.Obtener(oeOrden)
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             _ref_orden = _ref_orden + 1
             CargarOrdenAsociada(oeOrden, _ref_orden)
             MostrarListaOrdenes(oeOrden.TipoOrden)
@@ -998,6 +1020,7 @@ Public Class frm_GuiaRemisionRemitente
             oeOrden.fechaFin = rfechasHasta.Value
             oeOrden.TipoOperacion = "4"
             oeOrden.IdTipoOrden = cbTipoOrden.Value
+            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
             listaO = olOrden.Listar(oeOrden)
             griOrdenes.DataSource = listaO
             griOrdenes.DataBind()

@@ -17,8 +17,8 @@ Public Interface Il_PersonaDocumento
     <OperationContract()> _
     Function Guardar(ByVal oePersonaDocumento As e_PersonaDocumento) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal lePersonaDocumento As List(Of e_PersonaDocumento)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal lePersonaDocumento As List(Of e_PersonaDocumento), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oePersonaDocumento As e_PersonaDocumento) As Boolean

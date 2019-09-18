@@ -6,7 +6,8 @@ Public Class e_ReadecuacionAF_Documento
 #Region "Variables"
 
     Public TipoOperacion As String = String.Empty
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -67,7 +67,7 @@ Public Class d_PrioridadIncidencia
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oePrioridadIncidencia
-                sqlhelper.ExecuteNonQuery("SPC.Isp_PrioridadIncidencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_PrioridadIncidencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Nivel _

@@ -80,7 +80,7 @@ Public Class d_ConfiguracionPlanilla
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String
             With oeConfiguracionPlanilla
-                id = sqlhelper.ExecuteScalar("PER.Isp_ConfiguracionPlanilla_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("PER.Isp_ConfiguracionPlanilla_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

@@ -80,7 +80,7 @@ Public Class d_Saldo
                         , .Saldo _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

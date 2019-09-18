@@ -70,7 +70,7 @@ Public Class d_OrdenAprobacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenAprobacion
-                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenAprobacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenAprobacion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdOrden _
                         , .IdTrabajador _

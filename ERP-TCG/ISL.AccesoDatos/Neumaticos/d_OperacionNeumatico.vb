@@ -115,7 +115,7 @@ Public Class d_OperacionNeumatico
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOperacionNeumatico
-                sqlhelper.ExecuteNonQuery("[NEU].[Isp_OperacionNeumatico_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                sqlhelper.ExecuteNonQuery("[NEU].[Isp_OperacionNeumatico_IAE]", .TipoOperacion, .PrefijoID _
                 , .Operacion _
                 , .Id _
                 , .IdVehiculo _

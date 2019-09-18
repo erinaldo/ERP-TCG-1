@@ -78,8 +78,10 @@ Public Class e_DemandaRapida
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeListaBitacora As New List(Of e_Bitacora)
 

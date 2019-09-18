@@ -88,7 +88,7 @@ Public Class d_ClienteProveedor
             With oeClienteProveedor
                 IdClieProv = sqlhelper.ExecuteScalar("STD.Isp_ClienteProveedor_IAE", _
                                                      .TipoOperacion, _
-                                                     d_DatosConfiguracion.PrefijoID, _
+                                                     .PrefijoID, _
                                                     .Id _
                                                     , .Codigo _
                                                     , .Cliente _

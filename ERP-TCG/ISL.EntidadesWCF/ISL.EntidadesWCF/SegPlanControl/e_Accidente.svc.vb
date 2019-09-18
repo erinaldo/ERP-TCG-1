@@ -29,7 +29,8 @@ Public Class e_Accidente
     Public Modificado As Boolean = False
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

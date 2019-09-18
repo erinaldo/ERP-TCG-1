@@ -23,6 +23,8 @@ Public Class e_ZonaProceso
     Private _activo As Boolean
     <DataMember()> _
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

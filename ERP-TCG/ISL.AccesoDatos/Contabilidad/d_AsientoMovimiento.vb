@@ -165,7 +165,7 @@ Public Class d_AsientoMovimiento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -304,7 +304,7 @@ Public Class d_AsientoMovimiento
             Dim stResultado() As String
             Dim odMvimientoAnalisis As New d_MovimientoAnalisis
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -382,7 +382,7 @@ Public Class d_AsientoMovimiento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -479,26 +479,26 @@ Public Class d_AsientoMovimiento
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", Left(PrefijoID, 1) & "SI"
                                   )
-            Return IIf(stResultado Is Nothing, Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" & "0000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, Left(PrefijoID, 1) & "SI" & "0000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False
         End Try
     End Function
 
-    Public Function UltimoIdInsertar() As String
+    Public Function UltimoIdInsertar(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try
@@ -556,7 +556,7 @@ Public Class d_AsientoMovimiento
             Dim stResultado() As String
             Dim IdObliPago As String = ""
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
                        .Id _
                        , .IdAsiento _
                        , .IdCuentaContable _

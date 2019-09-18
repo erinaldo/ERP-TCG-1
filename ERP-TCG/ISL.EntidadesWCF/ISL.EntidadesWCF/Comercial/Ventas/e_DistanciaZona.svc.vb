@@ -9,7 +9,9 @@ Public Class e_DistanciaZona
     'End Sub
 
 #Region "Propiedades"
-    
+    <DataMember()>
+    Public PrefijoID As String = ""
+
     <DataMember()>
     Public TipoOperacion As String
     Private _Id As String

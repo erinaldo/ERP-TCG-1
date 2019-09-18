@@ -28,7 +28,7 @@ Public Class d_Kardex
     '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
     '        Dim ds As DataSet
     '        ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-    '        Left(d_DatosConfiguracion.PrefijoID, 1), "", oeKardex.Id)
+    '        Left(.PrefijoID, 1), "", oeKardex.Id)
     '        If ds.Tables(0).Rows.Count > 0 Then
     '            oeKardex = Cargar(ds.Tables(0).Rows(0))
     '        End If
@@ -44,7 +44,7 @@ Public Class d_Kardex
     '    Try
     '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
     '        With oeKardex
-    '            sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+    '            sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
     '                    .Id _
     '                    , .IdPeriodo _
     '                    , .IdCuentaContable _
@@ -80,7 +80,7 @@ Public Class d_Kardex
             Dim ds As DataSet
             With oeKardex
                 ds = sqlhelper.ExecuteDataset("CON.Kardex_Listar", .TipoOperacion _
-                                              , d_DatosConfiguracion.PrefijoID _
+                                              , .PrefijoID _
                         , .Id _
                         , .IdPeriodo _
                         , .IdCuentaContable _
@@ -100,39 +100,39 @@ Public Class d_Kardex
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta_Kardex() As String
+    Public Function UltimoIdInserta_Kardex(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Kardex", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Kardex", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False
         End Try
     End Function
 
-    Public Function UltimoIdInserta_KardexDetalle() As String
+    Public Function UltimoIdInserta_KardexDetalle(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexDetalle", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexDetalle", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False
         End Try
     End Function
 
-    Public Function UltimoIdInserta_KardexSaldo() As String
+    Public Function UltimoIdInserta_KardexSaldo(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexSaldo", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexSaldo", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

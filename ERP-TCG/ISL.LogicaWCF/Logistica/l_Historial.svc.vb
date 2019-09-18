@@ -59,12 +59,12 @@ Public Class l_Historial
             Dim dt_HI As Data.DataTable = olHistorialInventario.CrearDT()
 
             'historial
-            Dim IdHistorial As String = odHistorial.UltimoIdInserta()
+            Dim IdHistorial As String = odHistorial.UltimoIdInserta(oeHistorial.PrefijoID)
             Dim lsPrefijoHistorial As String = Left(IdHistorial, 3)
             Dim lsNumeroIdHistorial As Integer = CInt(Right(IdHistorial, Len(IdHistorial) - 3))
 
             'historial detalle
-            Dim IdHistorialInventario As String = odHistorialInventario.UltimoIdInserta()
+            Dim IdHistorialInventario As String = odHistorialInventario.UltimoIdInserta(oeHistorial.PrefijoID)
             Dim lsPrefijoHistorialInventario As String = Left(IdHistorialInventario, 3)
             Dim lsNumeroIdHistorialInventario As Integer = CInt(Right(IdHistorialInventario, Len(IdHistorialInventario) - 3))
 

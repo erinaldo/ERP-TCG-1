@@ -93,7 +93,7 @@ Public Class d_MaterialAlmacen
         Try
             With oeMaterialAlmacen
                 sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .IdMaterial, _
                                           .IdAlmacen, _
@@ -187,7 +187,7 @@ Public Class d_MaterialAlmacen
 
                 With oeMaterialAlmacen
                     sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", "E", _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                               .Id, _
                                               .IdMaterial, _
                                               .IdAlmacen, _

@@ -24,8 +24,10 @@ Public Class e_DerechoHabiente
     Public TipoBuscar As Integer
     <DataMember()> _
     Public NroLinea As Integer = 0
-    <DataMember()> _
+    <DataMember()>
     Public oePersona As New e_Persona
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

@@ -76,7 +76,7 @@ Public Class d_DepositoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDepositoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_DepositoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_DepositoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDeposito _
                         , .IdMovimientoFlete _

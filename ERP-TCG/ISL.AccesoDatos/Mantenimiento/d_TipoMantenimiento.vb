@@ -80,7 +80,7 @@ Public Class d_TipoMantenimiento
 
             With oeTipoMantenimiento
                 sqlhelper.ExecuteNonQuery("MAN.Isp_TipoMantenimiento_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
+                .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
                 .Descripcion, .Activo)
             End With
             Return True

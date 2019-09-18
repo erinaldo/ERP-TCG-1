@@ -178,21 +178,21 @@ Public Class d_Demanda
             Using transScope As New TransactionScope()
                 For I As Integer = 1 To oeDemanda.NroDemanda
                     With oeDemanda
-                        stResultado = sqlhelper.ExecuteScalar("OPE.Isp_Demanda_IAE", "I", _
-                       d_DatosConfiguracion.PrefijoID, _
-                        "A", _
-                       .Id, _
-                       .Codigo, _
-                       .IdPreDemanda, _
-                       .IdRuta, _
-                       .IdTipoVehiculo, _
-                       .IdEstado, _
-                       .Proceso, _
-                       .FechaAtendida, _
-                       .TotalFlete, _
-                       .TotalComision, _
-                       .Observacion, _
-                       .UsuarioCreacion, _
+                        stResultado = sqlhelper.ExecuteScalar("OPE.Isp_Demanda_IAE", "I",
+                       .PrefijoID,
+                        "A",
+                       .Id,
+                       .Codigo,
+                       .IdPreDemanda,
+                       .IdRuta,
+                       .IdTipoVehiculo,
+                       .IdEstado,
+                       .Proceso,
+                       .FechaAtendida,
+                       .TotalFlete,
+                       .TotalComision,
+                       .Observacion,
+                       .UsuarioCreacion,
                         .Activo
                         ).ToString.Split("_")
 
@@ -230,27 +230,27 @@ Public Class d_Demanda
             sqlhelper = New SqlHelper
             d_DatosConfiguracion = New d_DatosConfiguracion
             With oeDemandaDetalle
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_DemandaDetalle_IAE]", "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
-                                          .Id, _
-                                          .IdDemanda, _
-                                          .Cliente, _
-                                          .Comisionista, _
-                                          .IdTipoCarga, _
-                                          .Material, _
-                                          .Moneda, _
-                                          .Cantidad, _
-                                          .IncluyeIgv, _
-                                          .FleteUnitario, _
-                                          .Flete, _
-                                          .Comision, _
-                                          .Facturado, _
-                                          .PagoContraEntrega, _
-                                          .Activo, _
-                                          .IdOrigen, _
-                                          .IdDestino, _
-                                          .Cargar, _
-                                          .Descarga, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_DemandaDetalle_IAE]", "I",
+                                          .PrefijoID,
+                                          .Id,
+                                          .IdDemanda,
+                                          .Cliente,
+                                          .Comisionista,
+                                          .IdTipoCarga,
+                                          .Material,
+                                          .Moneda,
+                                          .Cantidad,
+                                          .IncluyeIgv,
+                                          .FleteUnitario,
+                                          .Flete,
+                                          .Comision,
+                                          .Facturado,
+                                          .PagoContraEntrega,
+                                          .Activo,
+                                          .IdOrigen,
+                                          .IdDestino,
+                                          .Cargar,
+                                          .Descarga,
                                           .ClienteFinal)
             End With
             Return True
@@ -274,33 +274,33 @@ Public Class d_Demanda
                 For I As Integer = 1 To oeDemanda.NroDemanda
                     With oeDemanda
                         fechaReferencia = oeDemanda.FechaAtendida
-                        stResultado = sqlhelper.ExecuteScalar("OPE.Isp_Demanda_Predemanda_IAE", "I", _
-                       d_DatosConfiguracion.PrefijoID, _
-                        "A", _
-                       .Id, _
-                       .Codigo, _
-                       .IdRuta, _
-                       .IdTipoVehiculo, _
-                       .Estado, _
-                       .Proceso, _
-                       .FechaAtendida, _
-                       .TotalFlete, _
-                       .TotalComision, _
-                       .Observacion, _
-                       .UsuarioCreacion, _
-                        .Activo, _
-                        .Indicador, _
-                        .FechaSolicita, _
-                        .IdOrigen, _
-                        .IdDestino, _
-                        .ObservacionPredemanda, _
-                        .EstadoPredemanda, _
-                        .Justificacion, _
-                        .NroUnidades, _
-                        .IdEscala, _
-                        .IdUsuarioCancelacion, _
-                        .MotivoEscala, _
-                        .FechaRecepcion, _
+                        stResultado = sqlhelper.ExecuteScalar("OPE.Isp_Demanda_Predemanda_IAE", "I",
+                       .PrefijoID,
+                        "A",
+                       .Id,
+                       .Codigo,
+                       .IdRuta,
+                       .IdTipoVehiculo,
+                       .Estado,
+                       .Proceso,
+                       .FechaAtendida,
+                       .TotalFlete,
+                       .TotalComision,
+                       .Observacion,
+                       .UsuarioCreacion,
+                        .Activo,
+                        .Indicador,
+                        .FechaSolicita,
+                        .IdOrigen,
+                        .IdDestino,
+                        .ObservacionPredemanda,
+                        .EstadoPredemanda,
+                        .Justificacion,
+                        .NroUnidades,
+                        .IdEscala,
+                        .IdUsuarioCancelacion,
+                        .MotivoEscala,
+                        .FechaRecepcion,
                         .IndicadorTercero
                         ).ToString.Split("_")
                     End With
@@ -344,46 +344,46 @@ Public Class d_Demanda
             d_DatosConfiguracion = New d_DatosConfiguracion
             Dim codigo As String
             With oeDemandaDetalle
-                codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_DemandaDetalle_DemandaPredemanda_IAE]", "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
-                                          .Id, _
-                                          .IdDemanda, _
-                                          .IdCliente, _
-                                          .Comisionista, _
-                                          .IdTipoCarga, _
-                                          .IdMaterial, _
-                                          .Moneda, _
-                                          .Cantidad, _
-                                          .IncluyeIgv, _
-                                          .FleteUnitario, _
-                                          .Flete, _
-                                          .Comision, _
-                                          .Facturado, _
-                                          .PagoContraEntrega, _
-                                          .Activo, _
-                                          .IdOrigen, _
-                                          .IdDestino, _
-                                          .Cargar, _
-                                          .Descarga, _
-                                          .IdClienteFinal, _
-                                          .Indicador, _
-                                          .IdDireccionLugarPartida, _
-                                          .IdDireccionLugarLlegada, _
-                                            .Consolidado, _
-                                            .MotivoConsolidado, _
-                                            .DireccionDestino, _
-                                            .DireccionOrigen, _
-                                            .CostoEstiba, _
-                                            .IncluyeIGVConsolidado, _
-                                            .Subtotal, _
-                                            .IGV, _
-                                            .AdelantoFlete, _
-                                            .CostoEstibaDescarga, _
-                                            .PagoEfectivoDeposito, _
-                                            .GlosaCostoEstiba, _
-                                            .Usuario, _
-                                            .FalsoFlete, _
-                                            .IdContactoCarga, _
+                codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_DemandaDetalle_DemandaPredemanda_IAE]", "I",
+                                          .PrefijoID,
+                                          .Id,
+                                          .IdDemanda,
+                                          .IdCliente,
+                                          .Comisionista,
+                                          .IdTipoCarga,
+                                          .IdMaterial,
+                                          .Moneda,
+                                          .Cantidad,
+                                          .IncluyeIgv,
+                                          .FleteUnitario,
+                                          .Flete,
+                                          .Comision,
+                                          .Facturado,
+                                          .PagoContraEntrega,
+                                          .Activo,
+                                          .IdOrigen,
+                                          .IdDestino,
+                                          .Cargar,
+                                          .Descarga,
+                                          .IdClienteFinal,
+                                          .Indicador,
+                                          .IdDireccionLugarPartida,
+                                          .IdDireccionLugarLlegada,
+                                            .Consolidado,
+                                            .MotivoConsolidado,
+                                            .DireccionDestino,
+                                            .DireccionOrigen,
+                                            .CostoEstiba,
+                                            .IncluyeIGVConsolidado,
+                                            .Subtotal,
+                                            .IGV,
+                                            .AdelantoFlete,
+                                            .CostoEstibaDescarga,
+                                            .PagoEfectivoDeposito,
+                                            .GlosaCostoEstiba,
+                                            .Usuario,
+                                            .FalsoFlete,
+                                            .IdContactoCarga,
                                             .IdContactoDescarga
                                           )
             End With

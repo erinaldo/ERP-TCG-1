@@ -28,7 +28,8 @@ Public Class e_FondoPensionTrabajador
     Public leHistorial As New List(Of e_FondoPensionTrabajador)
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

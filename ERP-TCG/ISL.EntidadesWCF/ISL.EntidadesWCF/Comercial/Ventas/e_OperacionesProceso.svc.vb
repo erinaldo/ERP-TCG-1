@@ -26,7 +26,8 @@ Public Class e_OperacionesProceso
     Private _usuariocrea As String
     Private _usuariomodifica As String
     Private _activo As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

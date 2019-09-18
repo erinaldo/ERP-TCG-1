@@ -74,7 +74,7 @@ Public Class d_Material_DisenoNeu
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMaterial_DisenoNeu
-                sqlhelper.ExecuteNonQuery("STD.Isp_Material_DisenoNeu_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Material_DisenoNeu_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMaterial _
                         , .IdDisenoNeumatico _

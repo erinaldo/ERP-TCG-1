@@ -9,8 +9,8 @@ Public Interface Il_ReporteFlujoBanco
     <OperationContract()> _
     Function Listar(ByVal oe As e_ReporteFlujoBanco) As List(Of e_ReporteFlujoBanco)
 
-    <OperationContract()> _
-    Function Guardar(ByVal oe As List(Of e_ReporteFlujoBanco), id As String) As Boolean
+    <OperationContract()>
+    Function Guardar(ByVal oe As List(Of e_ReporteFlujoBanco), id As String, ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Validar(ByVal oe As String) As Boolean

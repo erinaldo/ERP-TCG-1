@@ -23,7 +23,7 @@ Public Class l_LibroElectronico
             If oeLibroElectronico.TipoOperacion = "CAMBIO" Then
 
 
-                Dim Id As String = odDetalleLibroElectronico.UltimoIdInserta()
+                Dim Id As String = odDetalleLibroElectronico.UltimoIdInserta(oeLibroElectronico.PrefijoID)
                 Dim lsPrefijo As String = Left(Id, 3)
                 Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
 

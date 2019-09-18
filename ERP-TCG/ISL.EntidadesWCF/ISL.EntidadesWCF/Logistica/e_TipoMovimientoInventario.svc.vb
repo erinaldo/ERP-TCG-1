@@ -9,6 +9,8 @@ Public Class e_TipoMovimientoInventario
     Private _Abreviatura As String = String.Empty
     Private _Activo As Boolean
     Private _Modificado As Boolean = False
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

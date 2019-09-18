@@ -43,6 +43,8 @@ Public Class e_DetallePagoAdicional
     Public NroMes As Integer
     <DataMember()> _
     Public TipoBusca As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

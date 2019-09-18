@@ -18,7 +18,8 @@ Public Class e_AccionSistema
     Public Modificado As Boolean
     <DataMember()> _
     Public leActividadRestringida As New List(Of e_ActividadRestringida)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
 #End Region

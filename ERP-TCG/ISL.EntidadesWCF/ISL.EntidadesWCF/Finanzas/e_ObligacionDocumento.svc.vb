@@ -25,7 +25,8 @@ Public Class e_ObligacionDocumento
     ''' <remarks></remarks>
     <DataMember()> _
     Public OeObligacFin As e_ObligacionFinanciera
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

@@ -89,7 +89,7 @@ Public Class d_Area
                         , .IdSector _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IsGerencia _
                         , .IdGerencia _
                     )

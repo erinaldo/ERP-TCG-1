@@ -27,7 +27,8 @@ Public Class e_Historial
 
     <DataMember()> _
     Public lstHistorialInventario As New List(Of e_HistorialInventario)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

@@ -26,7 +26,8 @@ Public Class e_DocumentoSinAsociacion
     Public FechaInicio As Date
     <DataMember()> _
     Public FechaFin As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

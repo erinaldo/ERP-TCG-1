@@ -23,8 +23,8 @@ Public Class e_BonificacionVehiculo
 
     <DataMember()> _
     Public TipoOperacion As String
-
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

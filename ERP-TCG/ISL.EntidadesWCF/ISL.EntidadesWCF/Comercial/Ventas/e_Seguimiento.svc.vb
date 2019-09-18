@@ -70,6 +70,8 @@ Public Class e_Seguimiento
     Public IdTracto As String
     <DataMember()> _
     Public IdCarreta As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

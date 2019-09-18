@@ -32,8 +32,8 @@ Public Class d_DetalleAsignacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("ALM.Isp_DetalleAsignacion_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeDetalleAsignacion.Id)
+            ds = sqlhelper.ExecuteDataset("ALM.Isp_DetalleAsignacion_Listar", "",
+            Left(oeDetalleAsignacion.PrefijoID, 1), "", oeDetalleAsignacion.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeDetalleAsignacion = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -74,7 +74,7 @@ Public Class d_DetalleAsignacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleAsignacion
-                sqlhelper.ExecuteNonQuery("ALM.Isp_DetalleAsignacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_DetalleAsignacion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdModelo _
                         , .IdEstado _

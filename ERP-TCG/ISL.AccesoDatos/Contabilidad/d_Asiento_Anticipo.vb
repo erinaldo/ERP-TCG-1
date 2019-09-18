@@ -12,7 +12,7 @@ Public Class d_Asiento_Anticipo
                 With oeAsiento_Anticipo
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_Anticipo_IAE", _
                                             .TipoOperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
+                                            .PrefijoID, _
                                             .Id, _
                                             .IdAsientoDoc, _
                                             .IdAsientoAntic, _

@@ -109,7 +109,7 @@ Public Class d_Grupo
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeGrupo
-                    id = sqlhelper.ExecuteScalar("TES.Isp_Grupo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_Grupo_IAE", .TipoOperacion, .PrefijoID, _
                             .Id, .Codigo, .Tipo, .Fecha, .FechaEnvio, .GlosaEnvio, .ImporteTotal, .Saldo _
                             , .FechaReembolso, .IdCentro, .IdEstado, .Activo, .UsuarioCreacion, .IdCuentaCorriente _
                             , .NroCheque, .IdChequexCobrar, .IdPeriodo, .IdCaja)

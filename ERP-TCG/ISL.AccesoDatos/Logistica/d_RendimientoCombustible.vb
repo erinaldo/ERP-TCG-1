@@ -79,7 +79,7 @@ Public Class d_RendimientoCombustible
             With oeRendimientoCombustible
                 sqlhelper.ExecuteNonQuery("OPE.Isp_RendimientoCombustible_IAE", _
                                           .TipoOperacion, _
-                                           d_DatosConfiguracion.PrefijoID, _
+                                           .PrefijoID, _
                                             .Id _
                                             , .IdTipoVehiculo _
                                             , .IdFlota _

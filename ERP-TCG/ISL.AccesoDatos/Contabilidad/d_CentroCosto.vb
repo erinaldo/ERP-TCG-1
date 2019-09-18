@@ -91,7 +91,7 @@ Public Class d_CentroCosto
                 With oeCentroCosto
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_CentroCosto_IAE", _
                                             .TipoOperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
+                                            .PrefijoID, _
                                             .Id, _
                                             .Codigo, _
                                             .Nombre, _

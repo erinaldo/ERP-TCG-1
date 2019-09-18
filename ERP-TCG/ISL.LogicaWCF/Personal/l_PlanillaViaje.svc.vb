@@ -48,10 +48,10 @@ Public Class l_PlanillaViaje
         Return PlanillaViaje
     End Function
 
-    Public Function GuardarMasivo(ByVal loPlanillaViaje As System.Collections.Generic.List(Of EntidadesWCF.e_PlanillaViaje)) As Boolean Implements Il_PlanillaViaje.GuardarMasivo
+    Public Function GuardarMasivo(ByVal loPlanillaViaje As System.Collections.Generic.List(Of EntidadesWCF.e_PlanillaViaje), ByVal PrefijoID As String) As Boolean Implements Il_PlanillaViaje.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
-            Dim id As String = odPlanillaViaje.UltimoIdInserta
+            Dim id As String = odPlanillaViaje.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
             For Each planillaviaje In loPlanillaViaje

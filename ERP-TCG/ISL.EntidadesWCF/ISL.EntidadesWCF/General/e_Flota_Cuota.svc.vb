@@ -17,8 +17,10 @@ Public Class e_Flota_Cuota
     Private _FechaModifica As Date
     Private _Activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

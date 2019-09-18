@@ -32,7 +32,8 @@ Public Class e_MaterialAlmacen
     Public IdUnidad As String
     <DataMember()> _
     Public IdCentro As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public IdsAlmacenes As String
     <DataMember()> _

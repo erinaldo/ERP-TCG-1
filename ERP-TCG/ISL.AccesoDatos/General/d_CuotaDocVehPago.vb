@@ -63,7 +63,7 @@ Public Class d_CuotaDocVehPago
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oe
-                sqlhelper.ExecuteNonQuery("STD.Isp_CuotaDocumentoVehiculoPago_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_CuotaDocumentoVehiculoPago_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuota _
                         , .IdCuotaDocVeh_Mov _

@@ -6,6 +6,8 @@ Public Class e_Flota_Trabajador
 #Region "Variables"
 
     Public TipoOperacion As String = String.Empty
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

@@ -28,7 +28,8 @@ Public Class d_ClienteViajePrima
 
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_ClienteViajePrima_Listar]", "", oeClienteViajePrima.Id, oeClienteViajePrima.IdPeriodo)
+            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_ClienteViajePrima_Listar]", "", oeClienteViajePrima.Id,
+                                          oeClienteViajePrima.IdPeriodo)
             oeClienteViajePrima = New e_ClienteViajePrima
             If ds.Tables(0).Rows.Count > 0 Then
                 oeClienteViajePrima = Cargar(ds.Tables(0).Rows(0))
@@ -65,7 +66,7 @@ Public Class d_ClienteViajePrima
             Dim odClienteViajePrimaCon As New d_ClienteViajePrimaCon
             Dim id() As String
             With oeClienteViajePrima
-                id = sqlhelper.ExecuteScalar("[OPE].[Isp_ClienteViajePrima_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("[OPE].[Isp_ClienteViajePrima_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPeriodo _
                         , .TipoCambio _
@@ -74,7 +75,7 @@ Public Class d_ClienteViajePrima
                         , .Observacion _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
                 .Id = id(0)
                 For Each oe As e_ClienteViajePrimaCon In .loViaPriCon

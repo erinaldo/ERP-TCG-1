@@ -17,8 +17,10 @@ Public Class e_HistorialInventario
     Private _fecha As Date
     <DataMember()> _
     Public Activo As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

@@ -24,7 +24,8 @@ Public Class e_PlanillaVacaciones
     Public Modificado As Boolean
     <DataMember()> _
     Public leDetalle As New List(Of e_DetallePlanillaVacaciones)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

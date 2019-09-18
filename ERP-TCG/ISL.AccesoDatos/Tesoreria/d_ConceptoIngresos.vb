@@ -62,7 +62,7 @@ Public Class d_ConceptoIngresos
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConceptoIngresos
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Activo _

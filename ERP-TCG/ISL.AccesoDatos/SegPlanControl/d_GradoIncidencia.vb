@@ -65,7 +65,7 @@ Public Class d_GradoIncidencia
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGradoIncidencia
-                sqlhelper.ExecuteNonQuery("SPC.Isp_GradoIncidencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_GradoIncidencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Activo _

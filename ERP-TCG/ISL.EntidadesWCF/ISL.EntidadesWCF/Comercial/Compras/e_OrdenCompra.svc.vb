@@ -50,7 +50,8 @@ Public Class e_OrdenCompra
     Public fechaFin As Date
     <DataMember()> _
     Public fechaInicio As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public lstOrdenMaterial As New List(Of e_OrdenCompraMaterial)
     <DataMember()> _

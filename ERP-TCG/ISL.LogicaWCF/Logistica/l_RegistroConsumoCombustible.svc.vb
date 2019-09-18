@@ -182,7 +182,7 @@ Public Class l_RegistroConsumoCombustible
                         If oeAsiento.AsientoMovimiento.Count > 0 Then loAsiento.Add(oeAsiento)
                     Next
                 Next
-                olAsiento.GuardarListaMasiva4(loAsiento)
+                olAsiento.GuardarListaMasiva4(loAsiento, oeOrden.PrefijoID)
                 Transcope.Complete()
             End Using
             Return True

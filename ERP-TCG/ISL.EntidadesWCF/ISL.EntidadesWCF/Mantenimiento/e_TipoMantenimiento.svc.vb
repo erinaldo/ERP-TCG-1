@@ -11,7 +11,8 @@ Public Class e_TipoMantenimiento
     Private _Codigo As String
     Private _Modificado As Boolean = False
     Public Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor y Propiedad"

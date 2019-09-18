@@ -82,7 +82,7 @@ Public Class d_DetalleDocumentoVehiculo
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleDocumentoVehiculo
                 sqlhelper.ExecuteNonQuery("STD.Isp_DetalleDocumentoVehiculo_IAE" _
-                                         , .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                                         , .TipoOperacion, .PrefijoID _
                                           , .Id _
                         , .IdVehiculo _
                         , .IdDocumento _

@@ -32,8 +32,9 @@ Public Class d_TarifasProveedor
     Public Function Obtener(ByVal oeTarifasProveedor As e_TarifasProveedor) As e_TarifasProveedor
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("OPE.Isp_TarifasProveedor_Listar", oeTarifasProveedor.TipoOperacion, oeTarifasProveedor.Id _
-                                          , oeTarifasProveedor.IdProveedor, oeTarifasProveedor.IdFlujoCaja, oeTarifasProveedor.IdLugar _
+            ds = sqlhelper.ExecuteDataset("OPE.Isp_TarifasProveedor_Listar", oeTarifasProveedor.TipoOperacion,
+                                          oeTarifasProveedor.Id, oeTarifasProveedor.IdProveedor,
+                                          oeTarifasProveedor.IdFlujoCaja, oeTarifasProveedor.IdLugar _
                                           , oeTarifasProveedor.IdMaterial, oeTarifasProveedor.IdCliente)
             oeTarifasProveedor = New e_TarifasProveedor
             If ds.Tables.Count > 0 Then
@@ -99,7 +100,7 @@ Public Class d_TarifasProveedor
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTarifasProveedor
-                sqlhelper.ExecuteNonQuery("OPE.Isp_TarifasProveedor_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_TarifasProveedor_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdProveedor _
                         , .IdLugar _

@@ -83,7 +83,7 @@ Public Class d_SaldoCtaCorriente
             With oeSaldoCtaCorriente
                 sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdCuentaCorriente _
                                             , .TipoCuenta _
@@ -112,7 +112,7 @@ Public Class d_SaldoCtaCorriente
                 With oeSaldoCtaCorriente
                     sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
                                               "U", _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                                 .Id _
                                                 , .IdCuentaCorriente _
                                                 , .TipoCuenta _
@@ -134,7 +134,7 @@ Public Class d_SaldoCtaCorriente
                     Next
                     sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
                                               "I", _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                                 "" _
                                                 , .IdCuentaCorriente _
                                                 , .TipoCuenta _

@@ -16,7 +16,8 @@ Public Class e_RegistroInventarioDocumento
     Private _oeRegistroInventario As String
 
     Private _activo As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

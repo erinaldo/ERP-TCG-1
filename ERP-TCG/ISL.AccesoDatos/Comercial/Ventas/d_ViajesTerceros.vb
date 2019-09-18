@@ -92,9 +92,9 @@ Public Class d_ViajesTerceros
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeViajesTerceros
-                sqlhelper.ExecuteNonQuery("OPE.Isp_Viaje_Terceros_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_Viaje_Terceros_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                         .Id _
                                         , .IdDemanda _
                                         , .IdOperacion _

@@ -76,7 +76,7 @@ Public Class d_CtaCte_ProAdq
             'Using transScope As New TransactionScope()
             Dim stResultado() As String
             With oeCtaCte_ProAdq
-                stResultado = bd.ExecuteScalar("[CON].[Isp_CtaCte_ProAdq_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                stResultado = bd.ExecuteScalar("[CON].[Isp_CtaCte_ProAdq_IAE]", .TipoOperacion, .PrefijoID _
                         , .Id, .IdClienteProveedor, .Cuenta, .IndCliPro, .UsuarioCreacion).ToString.Split("_")
                 .Id = stResultado(0)
             End With

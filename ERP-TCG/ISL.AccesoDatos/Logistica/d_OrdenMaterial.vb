@@ -271,7 +271,7 @@ Public Class d_OrdenMaterial
             With oeOrdenMaterial
                 stResultado = sqlhelper.ExecuteScalar("ALM.Isp_OrdenMaterial_IAE", _
                                          .TipoOperacion, _
-                                         d_DatosConfiguracion.PrefijoID, _
+                                         .PrefijoID, _
                                          .Id, _
                                          .IdOrden, _
                                          .IdMaterial, _

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -132,6 +140,7 @@ Public Class frm_NotaCredito
         Try
             Inicializar()
             oeMovimientoDocumento.TipoOperacion = "I"
+            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
             IndMaterialServicio = cboMaterialServicio.Value
             MostrarTabs(1, ficNotaCredito, 1)
             MostrarTabs(1, ficDetalleOCMateriales, 0)
@@ -204,6 +213,7 @@ Public Class frm_NotaCredito
             Inicializar()
             If CargarDocumentoCompra() Then
                 oeMovimientoDocumento.TipoOperacion = "A"
+                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                 If cboEstadoFacturaM.Text = "GENERADA" Then
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                 Else
@@ -225,12 +235,14 @@ Public Class frm_NotaCredito
                     If ValidarGrilla(griListaNotaCredito, "NotaCredito") Then
                         oeMovimientoDocumento.Id = .ActiveRow.Cells("Id").Value
                         oeMovimientoDocumento.TipoOperacion = "COM"
+                        oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                         oeMovimientoDocumento = olMovimientoDocumento.ObtenerDocumentosPorCompras(oeMovimientoDocumento)
                         If oeMovimientoDocumento.Activo Then
                             If MessageBox.Show("Esta seguro de eliminar la factura : " & _
                                            .ActiveRow.Cells("NombreDocumento").Value.ToString & " ?", _
                                                               "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                                 oeMovimientoDocumento.TipoOperacion = "E"
+                                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                                 olMovimientoDocumento.Eliminar(oeMovimientoDocumento)
                                 Consultar(True)
                             End If
@@ -382,6 +394,7 @@ Public Class frm_NotaCredito
                     If Not String.IsNullOrEmpty(txtNumero.Value) Then .Numero = FormatoDocumento(txtNumero.Value.ToString.Trim, 10)
                 End If
                 .TipoOperacion = "COM"
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             With griListaNotaCredito
                 .DataSource = olMovimientoDocumento.ListarDocumentosPorCompras(oeMovimientoDocumento)
@@ -450,6 +463,7 @@ Public Class frm_NotaCredito
                 If id.Length > 0 Then
                     oeMovimientoDocumento.Id = id
                     oeMovimientoDocumento.TipoOperacion = "COM"
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     oeMovimientoDocumento = olMovimientoDocumento.ObtenerDocumentosPorCompras(oeMovimientoDocumento)
                     If oeMovimientoDocumento.Activo Then
                         fecFechaActual.Value = oeMovimientoDocumento.FechaEmision
@@ -495,6 +509,7 @@ Public Class frm_NotaCredito
             oeDetalleDocumento.TipoOperacion = "COM"
             oeDetalleDocumento.Activo = 1
             oeDetalleDocumento.IdMovimientoDocumento = oeMovimientoDocumento.Id
+            oeDetalleDocumento.PrefijoID = PrefijoIdSucursal '@0001
             If IndMaterialServicio.Equals("M") Then
                 oeDetalleDocumento.IndServicioMaterial = "M"
                 lstDetalleDocumento = olDetalleDocumento.Listar(oeDetalleDocumento)
@@ -518,11 +533,13 @@ Public Class frm_NotaCredito
             oeDocAso2.IdMovimientoDocumento = IdDocumento
             oeDocAso2.Activo = True
             oeDocAso2 = olDocAsoc.Obtener(oeDocAso2)
+            oeDocAso2.PrefijoID = PrefijoIdSucursal '@0001
             If Not oeDocAso2.Id Is Nothing Then
                 oeDocAso2.TipoOperacion = "A"
                 oeDocAsoc.Id = oeDocAso2.IdMovimientoDocumentoAsoc
                 oeDocAsoc.TipoOperacion = "COM"
                 oeDocAsoc = olMovimientoDocumento.ObtenerDocumentosPorCompras(oeDocAsoc)
+                oeDocAsoc.PrefijoID = PrefijoIdSucursal '@0001
                 lDocumentosAsoc.Add(oeDocAsoc)
                 oeMovimientoDocumento.DocAsoc.Add(oeDocAso2)
                 GriAsocDoc.DataBind()
@@ -539,8 +556,10 @@ Public Class frm_NotaCredito
             leActivo = New List(Of e_DetalleDocumento)
             For Each obj As e_DetalleDocumento In leDetalleDoc.Where(Function(item) item.TipoOperacion Is Nothing).ToList
                 obj.TipoOperacion = "A"
+                obj.PrefijoID = PrefijoIdSucursal '@0001
             Next
             For Each obj As e_DetalleDocumento In leDetalleDoc.Where(Function(item) item.TipoOperacion = "E").ToList
+                obj.PrefijoID = PrefijoIdSucursal '@0001
                 If obj.Id = "" Then leDetalleDoc.Remove(obj)
             Next
             leActivo = leDetalleDoc.Where(Function(item) item.TipoOperacion <> "E").ToList
@@ -554,6 +573,7 @@ Public Class frm_NotaCredito
         Try
             CargarObjects()
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
+            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
             If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 Return True
@@ -612,6 +632,7 @@ Public Class frm_NotaCredito
                     If txtTotal.Value = 0 Then Throw New Exception("Ingrese Total.")
                 End If
                 '----
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
         Catch ex As Exception
             Throw ex
@@ -626,6 +647,7 @@ Public Class frm_NotaCredito
             oeDetalleDocumento.TipoOperacion = "COM"
             oeDetalleDocumento.Activo = 1
             oeDetalleDocumento.IdMovimientoDocumento = IdDocumentoAsoc
+            oeDetalleDocumento.PrefijoID = PrefijoIdSucursal '@0001
             If IndMaterialServicio.Equals("M") Then
                 oeDetalleDocumento.IndServicioMaterial = "M"
                 lDetalleAsoc = olDetalleDocumento.Listar(oeDetalleDocumento)
@@ -652,6 +674,7 @@ Public Class frm_NotaCredito
                 oeDet.Seleccion = False
                 oeDet.Activo = True
                 oeDet.Pos = lstDetalleDocumento.Count
+                oeDet.PrefijoID = PrefijoIdSucursal '@0001
                 lstDetalleDocumento.Add(oeDet)
             Next
             LLenarDetalleDocumento(lstDetalleDocumento)
@@ -674,6 +697,7 @@ Public Class frm_NotaCredito
                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         For Each oeDD As e_DetalleDocumento In lstDetalleDocumento.Where(Function(item) item.Seleccion)
                             oeDD.TipoOperacion = "E"
+                            oeDD.PrefijoID = PrefijoIdSucursal '@0001
                         Next
                         LLenarDetalleDocumento(lstDetalleDocumento)
                     End If
@@ -686,6 +710,7 @@ Public Class frm_NotaCredito
                             lDetalleAsoc.Clear()
                             For Each oeDD As e_DetalleDocumento In lstDetalleDocumento
                                 oeDD.TipoOperacion = "E"
+                                oeDD.PrefijoID = PrefijoIdSucursal '@0001
                             Next
                             LLenarDetalleDocumento(lstDetalleDocumento)
                             griDetalleAsociado.DataBind()
@@ -768,6 +793,7 @@ Public Class frm_NotaCredito
                     oeMovimientoDocumento = New e_MovimientoDocumento
                     oeMovimientoDocumento.Id = griListaNotaCredito.ActiveRow.Cells("Id").Value
                     oeMovimientoDocumento = olMovimientoDocumento.Obtener(oeMovimientoDocumento)
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     Dim oeTipDoc As New e_TipoDocumento
                     olTipoDocumento = New l_TipoDocumento
                     oeTipDoc.Id = oeMovimientoDocumento.IdTipoDocumento
@@ -807,6 +833,7 @@ Public Class frm_NotaCredito
             oeDocAso2.TipoOperacion = "I"
             oeDocAso2.IdMovimientoDocumentoAsoc = oeDocAsoc.Id
             oeDocAso2.Activo = True
+            oeDocAso2.PrefijoID = PrefijoIdSucursal '@0001
             oeMovimientoDocumento.DocAsoc.Add(oeDocAso2)
             GriAsocDoc.DataBind()
             ListarProveedores(cboProveedor, oeDocAsoc.IdClienteProveedor)
@@ -1013,6 +1040,7 @@ Public Class frm_NotaCredito
                 .IndServicioMaterial = cboMaterialServicio.Value
                 .IdEstadoDocumento = "1CH00009"
                 .TipoOperacion = "COM"
+                .PrefijoID = PrefijoIdSucursal '@0001
             End With
             lstMovimientoDocumento = olMovimientoDocumento.ListarDocumentosPorCompras(oeMovDoc)
             griListaDoc.DataSource = lstMovimientoDocumento
@@ -1141,6 +1169,7 @@ Public Class frm_NotaCredito
         End If
         For Each oeDD As e_DetalleDocumento In lstDetalleDocumento
             oeDD.TipoOperacion = "E"
+            oeDD.PrefijoID = PrefijoIdSucursal '@0001
         Next
         LLenarDetalleDocumento(lstDetalleDocumento)
     End Sub
@@ -1344,10 +1373,12 @@ Public Class frm_NotaCredito
                 .Ejercicio = Periodo
                 .Compra.TipoDoc = oeTipoDocumento
                 .IndOrigenContable = 2 ' Doc. Logístico.
+                .PrefijoID = PrefijoIdSucursal '@0001
                 If .IndServicioMaterial = "M" Then
                     Dim oeDocAsic As New e_DocumentoAsociado
                     oeDocAsic.IdMovimientoDocumento = .Id
                     oeDocAsic = olDocAsoc.Obtener(oeDocAsic)
+                    oeDocAsic.PrefijoID = PrefijoIdSucursal '@0001
                     .IndAsientoGuia = True
                     .loCtaCtbleSFam = New List(Of e_CtaCtbleSubFamiliaMat)
                     If oeDocAsic.IndAfectaDocumento Then
@@ -1358,16 +1389,19 @@ Public Class frm_NotaCredito
                         ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMotivoDocumento.IdTipoDocumento, Periodo, .IndServicioMaterial)
                     End If
                     oeMovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCompraMaterial(oeMovimientoDocumento)
                 Else
                     Dim oeDocAsic As New e_DocumentoAsociado
                     oeDocAsic.IdMovimientoDocumento = .Id
                     oeDocAsic = olDocAsoc.Obtener(oeDocAsic)
+                    oeDocAsic.PrefijoID = PrefijoIdSucursal '@0001
                     .IndAsientoGuia = True
                     .loCtaCtbleCSer = New List(Of e_CtaCtbleCatServicio)
                     .loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, Periodo)
                     ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMotivoDocumento.IdTipoDocumento, Periodo, .IndServicioMaterial)
                     oeMovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
+                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
                 End If
             End With

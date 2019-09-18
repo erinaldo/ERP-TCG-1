@@ -119,7 +119,8 @@ Public Class e_MovimientoDocumento
     Public Modificado As Boolean
     <DataMember()> _
     Public Tipo As String = "" 'para compras FACTURACOMPRA
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     '----------------------COMBUSTIBLE/WALTER----------------------------------------

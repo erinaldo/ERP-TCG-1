@@ -54,10 +54,10 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leSueldoTrabajador As System.Collections.Generic.List(Of EntidadesWCF.e_SueldoTrabajador)) As Boolean Implements Il_SueldoTrabajador.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leSueldoTrabajador As System.Collections.Generic.List(Of EntidadesWCF.e_SueldoTrabajador), ByVal PrefijoID As String) As Boolean Implements Il_SueldoTrabajador.GuardarMasivo
         Try
             Dim dtST As Data.DataTable = CrearDT()
-            Dim id As String = odSueldoTrabajador.UltimoIdInserta
+            Dim id As String = odSueldoTrabajador.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 
