@@ -132,7 +132,7 @@ Public Class frm_OtrosDescuentos
                 Case 2
                     Dim _leIAux = leODImportar.Where(Function(it) it.Activo = True).ToList
                     If _leIAux.Count > 0 Then
-                        olOtrosDescuentos.GuardarMasivo(leODImportar, PrefijoIdSucursal)
+                        olOtrosDescuentos.GuardarMasivo(leODImportar, gs_PrefijoIdSucursal)
                         mensajeEmergente.Confirmacion("Los Datos han sido Importados correctamente!!", True)
                         SeleccionarTab(0)
                         Consultar(True)

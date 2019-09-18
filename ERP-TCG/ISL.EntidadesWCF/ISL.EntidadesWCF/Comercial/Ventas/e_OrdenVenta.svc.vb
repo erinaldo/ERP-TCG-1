@@ -38,8 +38,13 @@ Public Class e_OrdenVenta
     Public TipoOperacion As String
     Public lstOrdenComercialMaterial As New List(Of e_OrdenVentaMaterial)
     'Public lstOrdenComercialServicio As New List(Of e_OrdenComercialServicio)
+
+    <DataMember()>
     Public oeOrdenIngreso, oeOrdenSalida As New e_Orden
+    <DataMember()>
     Public oeDocumento As New e_MovimientoDocumento
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

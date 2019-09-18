@@ -58,7 +58,7 @@ Public Class frm_DocumentoSinAsociacion
             Else
                 oeDocumentoSinAsociacion.Evaluado = 0
             End If
-            oeDocumentoSinAsociacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeDocumentoSinAsociacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             olDocumentoSinAsociacion.Guardar(oeDocumentoSinAsociacion)
         Catch ex As Exception
             Throw ex
@@ -73,7 +73,7 @@ Public Class frm_DocumentoSinAsociacion
             oeDocumentoSinAsociacion.IdUsuarioSolicito = gUsuarioSGI.Id
             oeDocumentoSinAsociacion.UsuarioCreacion = gUsuarioSGI.Id
             oeDocumentoSinAsociacion.Evaluado = 0
-            oeDocumentoSinAsociacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeDocumentoSinAsociacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             olDocumentoSinAsociacion.Guardar(oeDocumentoSinAsociacion)
         Catch ex As Exception
             Throw ex

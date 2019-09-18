@@ -401,9 +401,9 @@ Public Class frm_InventarioPermanenteValorizado
                 Dim IdKardex As String = "", IdKardexDetalle As String = "", IdKardexSaldo As String = ""
                 Dim lsPrefijo As String = ""
 
-                IdKardex = olKardex.UltimoIdInserta_Kardex(PrefijoIdSucursal)
-                IdKardexDetalle = olKardex.UltimoIdInserta_KardexDetalle(PrefijoIdSucursal)
-                IdKardexSaldo = olKardex.UltimoIdInserta_KardexSaldo(PrefijoIdSucursal)
+                IdKardex = olKardex.UltimoIdInserta_Kardex(gs_PrefijoIdSucursal)
+                IdKardexDetalle = olKardex.UltimoIdInserta_KardexDetalle(gs_PrefijoIdSucursal)
+                IdKardexSaldo = olKardex.UltimoIdInserta_KardexSaldo(gs_PrefijoIdSucursal)
                 lsPrefijo = Strings.Left(IdKardex, 3)
 
                 Dim lnNumeroKardex As Integer = CInt(Strings.Right(IdKardex, Len(IdKardex) - 3))

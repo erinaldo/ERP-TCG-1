@@ -814,7 +814,7 @@ Public Class frm_Operacion
             gf_AsignarEventoSeleccionarTexto(Me)
             'olPrefijo = New l_Configuracion '@0001
             'PrefijoId = olPrefijo.PrefijoID '@0001
-            PrefijoId = PrefijoIdSucursal '@0001
+            PrefijoId = gs_PrefijoIdSucursal '@0001
             FechaServidor = ObtenerFechaServidor()
             ColorControles()
             fecViaje.Value = FechaServidor.Date

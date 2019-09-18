@@ -2679,7 +2679,7 @@ Public Class frm_FacturarCarga
                                "SalidaDestino", "Capacidad", "IndCarga", "Produccion", "Cantidad", "FleteUnitario", "IncluyeIgv", "IncidenciaOperaciones", "TipoCambio")
 
                 'If Prefijo.PrefijoID = "1CH" Then '@0001
-                If PrefijoIdSucursal = "1CH" Then '@0001
+                If gs_PrefijoIdSucursal = "1CH" Then '@0001
                     .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
                     .DisplayLayout.Bands(0).Columns("Piloto").Hidden = True
                 End If

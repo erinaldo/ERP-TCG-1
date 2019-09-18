@@ -147,7 +147,7 @@ Public Class frm_CotizacionProveedor
     Public Overrides Sub Nuevo()
         'ControlaTabMantenimiento(True, True, minAltura)
         oeCotizacion.TipoOperacion = "I"
-        oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+        oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
         Operacion = "Nuevo"
         MostrarTabs(1, ficCotizacionProveedor, 1)
         ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
@@ -214,14 +214,14 @@ Public Class frm_CotizacionProveedor
                 If .ActiveRow.Index > -1 AndAlso ValidarGrilla(griCotizacion, "Cotización") Then
                     oeCotizacion.Id = .ActiveRow.Cells("ID").Value
                     'oeCotizacion.FechaInicio = "01/01/1901"
-                    oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeCotizacion = olCotizacion.Obtener(oeCotizacion)
                     If oeCotizacion.Activo Then
                         If MessageBox.Show("Esta seguro de eliminar la cotización : " & _
                                  .ActiveRow.Cells("Codigo").Value.ToString & " ?", _
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeCotizacion.TipoOperacion = "E"
-                            oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+                            oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olCotizacion.Eliminar(oeCotizacion)
                             Consultar(True)
                         End If
@@ -261,7 +261,7 @@ Public Class frm_CotizacionProveedor
     Private Function GuardarCotizacion() As Boolean
         Try
             LlenarObjeto()
-            oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeCotizacion.IndMaterialServicio = IIf(cboRequerimiento.SelectedIndex = 0, "M", "S")
             If olCotizacion.Guardar(oeCotizacion) Then
                 If Operacion <> "Evaluar" Then
@@ -287,7 +287,7 @@ Public Class frm_CotizacionProveedor
             oeCotizacion.UsuarioCreacion = gUsuarioSGI.Id
             oeCotizacion.lstCotizacionProveedor = llCotizacionProveedor
             oeCotizacion.IdEquipo = txtEquipo.Tag
-            oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Operacion = "Nuevo" Then
                 oeCotizacion.IdEstado = "1CH00014"
                 For Each cotpro As e_Cotizacion_Proveedor In oeCotizacion.lstCotizacionProveedor
@@ -334,7 +334,7 @@ Public Class frm_CotizacionProveedor
                     oeCotizacion.Id = id
                     oeCotizacion.Activo = True
                     oeCotizacion = olCotizacion.Obtener(oeCotizacion)
-                    oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeCotizacion.TipoOperacion = "A"
                     cboMoneda.Value = oeCotizacion.IdMoneda
                     txtGlosa.Value = oeCotizacion.Glosa
@@ -361,7 +361,7 @@ Public Class frm_CotizacionProveedor
                     oeCotizacionDetalleMat = New e_CotizacionDetalleMat
                     oeCotizacionDetalleMat.IdCotizacionProveedor = oeCotizacion.Id
                     oeCotizacionDetalleMat.TipoOperacion = "1"
-                    oeCotizacionDetalleMat.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacionDetalleMat.PrefijoID = gs_PrefijoIdSucursal '@0001
                     With griListadoCotizacionDetalle
                         llCotizacionDetalleMat = olCotizacionDetalleMat.Listar(oeCotizacionDetalleMat)
                         '.DataSource = llCotizacionDetalleMat
@@ -370,7 +370,7 @@ Public Class frm_CotizacionProveedor
                 Case 1
                     oeCotizacionDetalleSer = New e_CotizacionDetalleSer
                     oeCotizacionDetalleSer.IdCotizacionProveedor = oeCotizacion.Id
-                    oeCotizacionDetalleSer.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacionDetalleSer.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If IndAprobado Then
                         oeCotizacionDetalleSer.TipoOperacion = "2"
                         llCotizacionDetalleSer = olCotizacionDetalleSer.Listar(oeCotizacionDetalleSer)
@@ -393,7 +393,7 @@ Public Class frm_CotizacionProveedor
             oeCotizacionProveedor.IdCotizacion = oeCotizacion.Id
             oeCotizacionProveedor.Activo = Activo
             oeCotizacionProveedor.Tipooperacion = ""
-            oeCotizacionProveedor.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacionProveedor.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeCotizacion.Estado = gNombreEstadoAprobada Then
                 oeCotizacionProveedor.IndAprobado = True
                 griCotizacionDetalleSer.Enabled = False
@@ -424,7 +424,7 @@ Public Class frm_CotizacionProveedor
             oeCotizacion.FechaFinal = dtpFechaCotHasta.Value
             oeCotizacion.Activo = True
             oeCotizacion.IndMaterialServicio = IIf(cboRequerimiento.SelectedIndex = 0, "M", "S")
-            oeCotizacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             loCotizacion.AddRange(olCotizacion.Listar(oeCotizacion).OrderByDescending(Function(item) item.FechaCreacion))
             With griCotizacion
                 .DataSource = loCotizacion
@@ -461,7 +461,7 @@ Public Class frm_CotizacionProveedor
                     oeRequerimientoMaterial.Activo = Activo
                     oeRequerimientoMaterial.FechaInicio = dtpReqDesde.Value
                     oeRequerimientoMaterial.FechaFinal = dtpReqHasta.Value
-                    oeRequerimientoMaterial.PrefijoID = PrefijoIdSucursal '@0001
+                    oeRequerimientoMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                     llRequerimientoMaterial = olRequerimientoMaterial.Listar(oeRequerimientoMaterial)
                     '--------------------------------------------------------------------------------------------------------------            
                     With griListaRequerimiento
@@ -475,7 +475,7 @@ Public Class frm_CotizacionProveedor
                     oeRequerimiento.MaterialServicio = "S"
                     oeRequerimiento.FechaInicio = dtpReqDesde.Value
                     oeRequerimiento.FechaFinal = dtpReqHasta.Value
-                    oeRequerimiento.PrefijoID = PrefijoIdSucursal '@0001
+                    oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loRequerimiento = olRequerimiento.Listar(oeRequerimiento)
                     griListaRequerimiento.DataSource = loRequerimiento
                     'ConfigurarGrilla(griListaRequerimiento, 1)
@@ -718,7 +718,7 @@ Public Class frm_CotizacionProveedor
             oeCotizacionProveedor.Proveedor = oeProveedor.Nombre
             oeCotizacionProveedor.Contacto = oeProveedor.Contacto
             oeCotizacionProveedor.Email = oeProveedor.Email ' "edaloliva@hotmail.com" '   
-            oeCotizacionProveedor.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacionProveedor.PrefijoID = gs_PrefijoIdSucursal '@0001
             llCotizacionProveedor.Add(oeCotizacionProveedor)
 
             llProveedor.RemoveAll(AddressOf eliminaproveedor)
@@ -751,7 +751,7 @@ Public Class frm_CotizacionProveedor
             oeCotizacionDetalleMat.TipoCotizacion = "M"
             posMat = posMat + 1
             oeCotizacionDetalleMat.PosMat = posMat
-            oeCotizacionDetalleMat.PrefijoID = PrefijoIdSucursal '@0001
+            oeCotizacionDetalleMat.PrefijoID = gs_PrefijoIdSucursal '@0001
             llCotizacionDetalleMat.Add(oeCotizacionDetalleMat)
 
             griListaMateriales.DataBind()
@@ -772,7 +772,7 @@ Public Class frm_CotizacionProveedor
                     oeRequerimientoMaterial.Activo = True
                     oeRequerimientoMaterial.Tipooperacion = "3"
                     oeRequerimientoMaterial = olRequerimientoMaterial.Obtener(oeRequerimientoMaterial)
-                    oeRequerimientoMaterial.PrefijoID = PrefijoIdSucursal '@0001
+                    oeRequerimientoMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeCotizacionDetalleMat.UsuarioCreacion = gUsuarioSGI.Id
                     oeCotizacionDetalleMat.IdMaterial = oeRequerimientoMaterial.IdMaterial
                     oeCotizacionDetalleMat.Cantidad = oeRequerimientoMaterial.Cantidad
@@ -786,7 +786,7 @@ Public Class frm_CotizacionProveedor
                     oeCotizacionDetalleMat.TipoCotizacion = "RM"
                     oeCotizacionDetalleMat.IdRequerimientoMaterial = oeRequerimientoMaterial.Id
                     oeCotizacionDetalleMat.CodigoMaterial = oeRequerimientoMaterial.CodigoMaterial
-                    oeCotizacionDetalleMat.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacionDetalleMat.PrefijoID = gs_PrefijoIdSucursal '@0001
                     llCotizacionDetalleMat.Add(oeCotizacionDetalleMat)
 
                     llRequerimientoMaterial.RemoveAll(AddressOf eliminaRequerimientoMaterial)
@@ -799,12 +799,12 @@ Public Class frm_CotizacionProveedor
                     oeRequerimientoServicios = New e_RequerimientoServicio
                     oeRequerimientoServicios.Tipooperacion = "1"
                     oeRequerimientoServicios.IdRequerimiento = IdRequerimiento
-                    oeRequerimientoServicios.PrefijoID = PrefijoIdSucursal '@0001
+                    oeRequerimientoServicios.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Me.txtEquipo.Tag = griListaRequerimiento.ActiveRow.Cells("IdEquipo").Value
                     Me.txtEquipo.Text = griListaRequerimiento.ActiveRow.Cells("Referencia").Value
                     llRequerimientoServicios = olRequerimientoServicios.Listar(oeRequerimientoServicios)
                     For Each reqser As e_RequerimientoServicio In llRequerimientoServicios
-                        reqser.PrefijoID = PrefijoIdSucursal '@0001
+                        reqser.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeCotizacionDetalleSer = New e_CotizacionDetalleSer
                         With oeCotizacionDetalleSer
                             .UsuarioCreacion = gUsuarioSGI.Id
@@ -814,7 +814,7 @@ Public Class frm_CotizacionProveedor
                             .Precio = 0
                             .Cantidad = reqser.Cantidad
                             .IdRequerimientoServicio = reqser.Id
-                            .PrefijoID = PrefijoIdSucursal '@0001
+                            .PrefijoID = gs_PrefijoIdSucursal '@0001
                         End With
                         llCotizacionDetalleSer.Add(oeCotizacionDetalleSer)
                     Next
@@ -1036,7 +1036,7 @@ Public Class frm_CotizacionProveedor
                     oeCotizacionProveedor.Proveedor = prove.Nombre
                     oeCotizacionProveedor.Contacto = prove.Contacto
                     oeCotizacionProveedor.Email = prove.Email
-                    oeCotizacionProveedor.PrefijoID = PrefijoIdSucursal '@0001
+                    oeCotizacionProveedor.PrefijoID = gs_PrefijoIdSucursal '@0001
                     llCotizacionProveedor.Add(oeCotizacionProveedor)
                 End If
             Next
@@ -1467,7 +1467,7 @@ Public Class frm_CotizacionProveedor
                             .Precio = 0
                             .Cantidad = 1
                             .IdRequerimientoServicio = ""
-                            .PrefijoID = PrefijoIdSucursal '@0001
+                            .PrefijoID = gs_PrefijoIdSucursal '@0001
                         End With
                         llCotizacionDetalleSer.Add(oeCotizacionDetalleSer)
                         griCotizacionDetalleSer.DataBind()
@@ -1494,7 +1494,7 @@ Public Class frm_CotizacionProveedor
                             .Cantidad = 1
                             .IdRequerimientoServicio = ""
                             .IdCotizacionProveedor = IdCotizacionProveedor
-                            .PrefijoID = PrefijoIdSucursal '@0001
+                            .PrefijoID = gs_PrefijoIdSucursal '@0001
                         End With
                         loCotProDetServ.Add(oeCotizacionDetalleSer)
                         griCotizacionDetalleSer.DataSource = loCotProDetServ.Where(Function(item) item.IdCotizacionProveedor = IdCotizacionProveedor).ToList

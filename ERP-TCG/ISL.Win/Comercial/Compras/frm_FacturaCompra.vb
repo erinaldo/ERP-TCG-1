@@ -161,7 +161,7 @@ Public Class frm_FacturaCompra
         Try
             Inicializar()
             oeMovimientoDocumento.TipoOperacion = "I"
-            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             IndMaterialServicio = cboMaterialServicio.Value
             MostrarTabs(1, ficFacturaCompra, 1)
             Operacion = "Nuevo"
@@ -271,7 +271,7 @@ Public Class frm_FacturaCompra
                         If MessageBox.Show("Esta seguro de eliminar la Factura : " & .ActiveRow.Cells("NombreDocumento").Value.ToString & " ?", _
                                            "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeMovimientoDocumento.TipoOperacion = "E"
-                            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+                            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olMovimientoDocumento.Eliminar(oeMovimientoDocumento)
                             Consultar(True)
                         End If
@@ -538,7 +538,7 @@ Public Class frm_FacturaCompra
                     oeMovimientoDocumento.Id = id
                     oeMovimientoDocumento.TipoOperacion = "COM"
                     oeMovimientoDocumento = olMovimientoDocumento.ObtenerDocumentosPorCompras(oeMovimientoDocumento)
-                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If oeMovimientoDocumento.Activo Then
                         fecFechaActual.Value = oeMovimientoDocumento.FechaEmision
                         ListarProveedores(cboProveedor, oeMovimientoDocumento.IdClienteProveedor, 0)
@@ -586,7 +586,7 @@ Public Class frm_FacturaCompra
             oeDetalleDocumento.TipoOperacion = "COM"
             oeDetalleDocumento.Activo = 1
             oeDetalleDocumento.IdMovimientoDocumento = oeMovimientoDocumento.Id
-            oeDetalleDocumento.PrefijoID = PrefijoIdSucursal '@0001
+            oeDetalleDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If IndMaterialServicio.Equals("M") Then
                 oeDetalleDocumento.IndServicioMaterial = "M"
                 lstDetalleDocumento = olDetalleDocumento.Listar(oeDetalleDocumento)
@@ -607,7 +607,7 @@ Public Class frm_FacturaCompra
             leActivo = New List(Of e_DetalleDocumento)
             For Each obj As e_DetalleDocumento In leDetalleDoc.Where(Function(item) item.TipoOperacion Is Nothing).ToList
                 obj.TipoOperacion = "A"
-                obj.PrefijoID = PrefijoIdSucursal '@0001
+                obj.PrefijoID = gs_PrefijoIdSucursal '@0001
             Next
             For Each obj As e_DetalleDocumento In leDetalleDoc.Where(Function(item) item.TipoOperacion = "E").ToList
                 If obj.Id = "" Then leDetalleDoc.Remove(obj)
@@ -627,7 +627,7 @@ Public Class frm_FacturaCompra
             If CInt(Me.txtNumeroM.Text) = 0 Then Throw New Exception("Numero de Documento Incorrecto. Verificar")
             ValidarTotalDetalle()
             CargarObjects()
-            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeMovimientoDocumento.TipoOperacion = "I" Then Validar_ExistenciaComprobante()
             If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                 'If Me.chk_CajaChica.Checked Then
@@ -692,7 +692,7 @@ Public Class frm_FacturaCompra
                 .IdClienteProveedor = cboProveedor.Value
                 .IdTipoPago = cboTipoPago.Value
                 .FechaEmision = fecFechaActual.Value
-                .PrefijoID = PrefijoIdSucursal '@0001
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
                 Dim oe As New e_TipoPago
                 oe = cboTipoPago.Items(cboTipoPago.SelectedIndex).ListObject
                 .FechaVencimiento = .FechaEmision.AddDays(oe.Dias)
@@ -720,7 +720,7 @@ Public Class frm_FacturaCompra
                 .Compra.OtrosTributos = IIf(cboMoneda.Value = "1CH01", DecPercepcion.Value + DecMontoDetraccion.Value, (DecPercepcion.Value + DecMontoDetraccion.Value) * decTc.Value)
                 .Compra.NoGravadas = IIf(cboMoneda.Value = "1CH01", IIf(txtIGV.Value <> 0, 0, txtSubTotal.Value), IIf(txtIGV.Value <> 0, 0, txtSubTotal.Value) * decTc.Value)
                 .Compra.CobraCajaChica = IIf(chk_CajaChica.Checked, 1, 0)
-                .Compra.PrefijoID = PrefijoIdSucursal '@0001
+                .Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
                 .IndServicioMaterial = IndMaterialServicio
                 '-- Algunas Restricciones
                 If .lstDetalleDocumento.Where(Function(item) item.TipoOperacion <> "E").Count = 0 Then Throw New Exception("Ingrese Detalles !!")
@@ -776,7 +776,7 @@ Public Class frm_FacturaCompra
             oeServicio.TipoOperacion = "S"
             oeServicio.Activo = Activo
             oeServicio.IdCategoriaServicio = IIf(cboCategoriaServicios.Value = "CERO", "", cboCategoriaServicios.Value)
-            oeServicio.PrefijoID = PrefijoIdSucursal '@0001
+            oeServicio.PrefijoID = gs_PrefijoIdSucursal '@0001
             llServicio = olServicio.Listar(oeServicio)
             '------Quitamos los registros de lista de materiales si es que estos ya estan en la lista requerimientos.------
             'If llRequerimientoMaterial.Count > 0 Then
@@ -824,7 +824,7 @@ Public Class frm_FacturaCompra
                         .PrecioUnitarioSinImp = oeMat.Precio
                         .Precio = Math.Round(oeMat.Precio * (1 + oeIGV.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
-                        .PrefijoID = PrefijoIdSucursal '@0001
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -850,7 +850,7 @@ Public Class frm_FacturaCompra
                         .PrecioUnitarioSinImp = oeServicio.Precio
                         .Precio = Math.Round(oeServicio.Precio * (1 + oeIGV.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
-                        .PrefijoID = PrefijoIdSucursal '@0001
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -878,7 +878,7 @@ Public Class frm_FacturaCompra
                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         For Each oeDD As e_DetalleDocumento In lstDetalleDocumento.Where(Function(item) item.Seleccion)
                             oeDD.TipoOperacion = "E"
-                            oeDD.PrefijoID = PrefijoIdSucursal '@0001
+                            oeDD.PrefijoID = gs_PrefijoIdSucursal '@0001
                         Next
                         LLenarDetalleDocumento(lstDetalleDocumento)
                     End If
@@ -962,7 +962,7 @@ Public Class frm_FacturaCompra
             lbl_etiqueta.Text = "Anulando Factura"
             lbl_etiqueta.Visible = 1
             oeMovimientoDocumento.TipoOperacion = "1"
-            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -976,8 +976,8 @@ Public Class frm_FacturaCompra
             Me.gbeListadoMatSer.Enabled = 0
             Me.gbeListadoMatSer.Expanded = 0
             Me.MenuDetalle.Enabled = 0
-            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
-            oeOrdenCompra.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
             CargarOrdenAsociada(oeOrden, 0, oeOrdenCompra.Id)
             cboMoneda.Value = oeOrden.IdMoneda
 
@@ -1049,7 +1049,7 @@ Public Class frm_FacturaCompra
                     .Total = Math.Round(.Precio * .Cantidad, 4)
                     .Pos = _ref
                     .IdCuentaContableCompra = ""
-                    .PrefijoID = PrefijoIdSucursal '@0001
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 lstDetalleDocumento.Add(oeDetalleDocumento)
             Next
@@ -1082,7 +1082,7 @@ Public Class frm_FacturaCompra
             For Each oeOrdCsg As e_Orden In lstOrden.Where(Function(item) item.TipoReferencia = "1")
                 Throw New Exception("Solo Puede Crear una Factura x Cada Orden de Compra Consignacion")
             Next
-            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeOrden = olOrden.Obtener(oeOrden)
             _ref_orden = _ref_orden + 1
             CargarOrdenAsociada(oeOrden, _ref_orden)
@@ -1115,7 +1115,7 @@ Public Class frm_FacturaCompra
             oeOrden.TipoOperacion = "4"
             oeOrden.IdTipoOrden = cbTipoOrden.Value
             oeOrden.IndMaterialServicio = cboMaterialServicio.Text
-            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             listaO = olOrden.Listar(oeOrden)
             griOrdenes.DataSource = listaO
             griOrdenes.DataBind()
@@ -1138,19 +1138,19 @@ Public Class frm_FacturaCompra
             oeOrdCom.IdProveedor = "CERO"
             oeOrdCom.IdEstadoOrden = "CERO"
             oeOrdCom.IdTipoPago = "CERO"
-            oeOrdCom.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrdCom.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeOrden.TipoOrden = "ORDEN DE INGRESO" Then
                 Dim oeOrdIng As New e_Orden
                 oeOrdIng.Id = oeOrden.Id
                 oeOrdIng = olOrden.Obtener(oeOrden)
-                oeOrdIng.PrefijoID = PrefijoIdSucursal '@0001
+                oeOrdIng.PrefijoID = gs_PrefijoIdSucursal '@0001
                 fecFechaActual.Value = oeOrdIng.FechaOrden
                 cboMoneda.Value = oeOrdIng.IdMoneda
                 cboTipoPago.SelectedIndex = 0
                 If IdOrdenCompra <> "" Then
                     oeOrdCom.Id = IdOrdenCompra
                     oeOrdCom = olOrdCom.Obtener(oeOrdCom)
-                    oeOrdCom.PrefijoID = PrefijoIdSucursal '@0001
+                    oeOrdCom.PrefijoID = gs_PrefijoIdSucursal '@0001
                     cboTipoPago.Value = oeOrdCom.IdTipoPago
                     fecFechaActual.Value = oeOrdCom.FechaOrden
                     cboMoneda.Value = oeOrdCom.IdMoneda
@@ -1158,7 +1158,7 @@ Public Class frm_FacturaCompra
             Else
                 oeOrdCom.Id = oeOrden.Id
                 oeOrdCom = olOrdCom.Obtener(oeOrdCom)
-                oeOrdCom.PrefijoID = PrefijoIdSucursal '@0001
+                oeOrdCom.PrefijoID = gs_PrefijoIdSucursal '@0001
                 cboTipoPago.Value = oeOrdCom.IdTipoPago
                 fecFechaActual.Value = oeOrdCom.FechaOrden
                 cboMoneda.Value = oeOrdCom.IdMoneda
@@ -1166,7 +1166,7 @@ Public Class frm_FacturaCompra
 
             oeOrden.Referencia = _ref.ToString
             'Llena la Asociacion
-            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             lstOrden.Add(oeOrden)
             griListaOrdenIngreso.DataSource = lstOrden
             griListaOrdenIngreso.DataBind()
@@ -1179,7 +1179,7 @@ Public Class frm_FacturaCompra
             Else
                 oeDetalleOrdenIngreso.TipoOperacion = "L"
             End If
-            oeDetalleOrdenIngreso.PrefijoID = PrefijoIdSucursal '@0001
+            oeDetalleOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeDetalleOrdenIngreso.Activo = 1
             oeDetalleOrdenIngreso.IdOrden = oeOrden.Id
             llDetalleOrdenIngreso = olDetalleOrdenIngreso.Listar(oeDetalleOrdenIngreso)
@@ -1198,7 +1198,7 @@ Public Class frm_FacturaCompra
             oeOrden.TipoOperacion = "3"
             oeOrden.Referencia = IdDocumento
             oeOrden.IdTipoOrden = oeTipoDocumento.Id
-            oeOrden.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             lstOrden = olOrden.Listar(oeOrden)
             MostrarListaOrdenes("")
             If lstOrden.Count > 0 Then
@@ -1226,7 +1226,7 @@ Public Class frm_FacturaCompra
                     oeMovimientoDocumento = New e_MovimientoDocumento
                     oeMovimientoDocumento.Id = griListaFacturaCompra.ActiveRow.Cells("Id").Value
                     oeMovimientoDocumento = olMovimientoDocumento.Obtener(oeMovimientoDocumento)
-                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If oeMovimientoDocumento.IndServicioMaterial = "M" Then
                         If oePeriodo.Mes = periodo_act Then ValidaFechaIngreso(FechaPeriodo, oeMovimientoDocumento.Id)
                     End If
@@ -1250,7 +1250,7 @@ Public Class frm_FacturaCompra
                             Dim lstOrdenDoc As New List(Of e_Orden_Documento)
                             oeOrdenDoc.IdDocumento = griListaFacturaCompra.ActiveRow.Cells("Id").Value
                             oeOrdenDoc.TipoOperacion = "E"
-                            oeOrdenDoc.PrefijoID = PrefijoIdSucursal '@0001
+                            oeOrdenDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                             lstOrdenDoc = olOrdenDoc.Listar(oeOrdenDoc)
                             If lstOrdenDoc.Count > 0 Then
                                 If Month(lstOrdenDoc.Item(0).FechaCreacion) = periodo_act Then
@@ -1262,7 +1262,7 @@ Public Class frm_FacturaCompra
                                 oeOrdenDoc.IdOrden = lstOrdenDoc.Item(0).IdOrden
                                 olOrdenDoc = New l_Orden_Documento
                                 lstOrdenDoc = New List(Of e_Orden_Documento)
-                                oeOrdenDoc.PrefijoID = PrefijoIdSucursal '@0001
+                                oeOrdenDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 lstOrdenDoc = olOrdenDoc.Listar(oeOrdenDoc)
                                 If lstOrdenDoc.Count > 0 Then
                                     lb_EmisionPerAnt = False
@@ -1298,7 +1298,7 @@ Public Class frm_FacturaCompra
             oeDocumentoSinAsociacion.FechaInicio = rfFechaDocDesde.Value
             oeDocumentoSinAsociacion.FechaFin = rfFechaDocHasta.Value
             oeDocumentoSinAsociacion.IdTipoDocumento = oeTipoDocumento.Id
-            oeDocumentoSinAsociacion.PrefijoID = PrefijoIdSucursal '@0001
+            oeDocumentoSinAsociacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             gridSinAsociacion.DataSource = olDocumentoSinAsociacion.Listar(oeDocumentoSinAsociacion)
             With gridSinAsociacion
                 For Each fila As UltraGridRow In .Rows
@@ -1371,7 +1371,7 @@ Public Class frm_FacturaCompra
         oeDocumentoSinAsoc.TipoOperacion = "T"
         oeDocumentoSinAsoc.Id = Id
         oeDocumentoSinAsoc.Fecha = Date.Now
-        oeDocumentoSinAsoc.PrefijoID = PrefijoIdSucursal '@0001
+        oeDocumentoSinAsoc.PrefijoID = gs_PrefijoIdSucursal '@0001
     End Sub
 
 
@@ -1428,14 +1428,14 @@ Public Class frm_FacturaCompra
             oeMovimientoDocumento.Compra.TipoDoc = oeTipoDocumento
             oeMovimientoDocumento.IndOrigenContable = 2 ' Doc. Logístico.
             oeMovimientoDocumento.IndAsientoGuia = True
-            oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeMovimientoDocumento.IndServicioMaterial = "M" Then
                 Dim oeOrdDoc As New e_Orden_Documento
                 Dim olOrdDoc As New l_Orden_Documento
                 oeOrdDoc.IdDocumento = oeMovimientoDocumento.Id
                 oeOrdDoc.TipoOperacion = "V"
                 oeOrdDoc = olOrdDoc.Obtener(oeOrdDoc)
-                oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
+                oeOrdDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeMovimientoDocumento.loCtaCtbleSFam = New List(Of e_CtaCtbleSubFamiliaMat)
                 Select Case oeOrdDoc.IndConsignacion
                     Case 1
@@ -1466,13 +1466,13 @@ Public Class frm_FacturaCompra
                         oeDetDoc.Activo = 1
                         oeDetDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
                         oeDetDoc.IndServicioMaterial = "M"
-                        oeDetDoc.PrefijoID = PrefijoIdSucursal '@0001
+                        oeDetDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeMovimientoDocumento.lstDetalleDocumento = New List(Of e_DetalleDocumento)
                         oeMovimientoDocumento.lstDetalleDocumento.AddRange(olDetalleDocumento.Listar(oeDetDoc))
                         ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "2")
                 End Select
                 If IndNuevo Then
-                    oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCompraMaterial(oeMovimientoDocumento)
                     If lb_EmisionPerAnt = True Then
                         Guardar_AsientoxExistencia()
@@ -1480,7 +1480,7 @@ Public Class frm_FacturaCompra
                 End If
             Else
                 oeMovimientoDocumento.loCtaCtbleCSer = New List(Of e_CtaCtbleCatServicio)
-                oeMovimientoDocumento.PrefijoID = PrefijoIdSucursal '@0001
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeMovimientoDocumento.loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, Periodo)
                 ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "3")
                 olMovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
@@ -1566,7 +1566,7 @@ Public Class frm_FacturaCompra
             .IndOrigen = oeMovimientoDocumento.IndOrigenContable
             .IdPeriodo = ObtenerPeriodo(Date.Now).Id
             .IdUsuarioCrea = gUsuarioSGI.Id
-            .PrefijoID = PrefijoIdSucursal '@0001
+            .PrefijoID = gs_PrefijoIdSucursal '@0001
         End With
         Dim linea_c As Integer = 0
         For Each l_ctactble28 In lo_SubFamCtaCtble_28.Where(Function(g) g.NroCtaCtbleExistencias.StartsWith("28")).ToList
@@ -1596,7 +1596,7 @@ Public Class frm_FacturaCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
-                .PrefijoID = PrefijoIdSucursal '@0001
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1627,7 +1627,7 @@ Public Class frm_FacturaCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
-                .PrefijoID = PrefijoIdSucursal '@0001
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1635,10 +1635,10 @@ Public Class frm_FacturaCompra
         Dim olAsiento_MovDoc As New l_Asiento_MovDoc
         oeAsiento_MovDoc.Activo = 1
         oeAsiento_MovDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
-        oeAsiento_MovDoc.PrefijoID = PrefijoIdSucursal '@0001
+        oeAsiento_MovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
         oeAsiento_MovDoc = olAsiento_MovDoc.Listar(oeAsiento_MovDoc).Item(0)
         oeAsiento.AsientoMovimiento = lst_AsientoMovimiento
-        oeAsiento.PrefijoID = PrefijoIdSucursal '@0001
+        oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
         If olAsiento.Guardar(oeAsiento, oeAsiento_MovDoc.IdAsiento) Then
             total_debe = 0.0
             total_haber = 0.0
@@ -1990,7 +1990,7 @@ Public Class frm_FacturaCompra
                 oeOrdDoc = New e_Orden_Documento
                 oeOrdDoc.IdDocumento = griListaFacturaCompra.ActiveRow.Cells("Id").Value
                 oeOrdDoc.TipoOperacion = "I"
-                oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
+                oeOrdDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olOrdDoc.ValidaOIEjecutada(oeOrdDoc) Then
                     EnvioTesoreria()
                 Else
@@ -2211,7 +2211,7 @@ Public Class frm_FacturaCompra
             oeOrdDoc = New e_Orden_Documento
             oeOrdDoc.IdDocumento = griListaFacturaCompra.ActiveRow.Cells("Id").Value
             oeOrdDoc.TipoOperacion = "I"
-            oeOrdDoc.PrefijoID = PrefijoIdSucursal '@0001
+            oeOrdDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olOrdDoc.ValidaOIEjecutada(oeOrdDoc) Then
                 oePeriodo = New e_Periodo
                 oePeriodo.Ejercicio = ObtenerFechaServidor.Year

@@ -1452,7 +1452,7 @@ Public Class frm_Requerimiento
                         oeMaterialAlmacen.IdCentro = oeRequerimiento.IdReferencia.Substring(0, 3)
                     Else
                         'oeMaterialAlmacen.IdCentro = Prefijo.PrefijoID '@0001
-                        oeMaterialAlmacen.IdCentro = PrefijoIdSucursal '@0001
+                        oeMaterialAlmacen.IdCentro = gs_PrefijoIdSucursal '@0001
                     End If
                 Else
                     oeMaterialAlmacen.IdCentro = cboCentro.Value
@@ -2591,7 +2591,7 @@ Public Class frm_Requerimiento
             LlenaComboCategoriaServicios()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
             'cboCentro.Value = Prefijo.PrefijoID '@0001
-            cboCentro.Value = PrefijoIdSucursal '@0001
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES LOGISTICA") Then
                 cboCentro.Enabled = True
             Else

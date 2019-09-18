@@ -1196,7 +1196,7 @@ Public Class frm_DemandaRapida
                                "Capacidad", "IndCarga", "Produccion", "Cantidad", "FleteUnitario", "IncluyeIgv", "IncidenciaOperaciones")
 
                 'If Prefijo.PrefijoID = "1CH" Then '@0001
-                If PrefijoIdSucursal = "1CH" Then '@0001
+                If gs_PrefijoIdSucursal = "1CH" Then '@0001
                     .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
                     .DisplayLayout.Bands(0).Columns("Piloto").Hidden = True
                 End If

@@ -36,15 +36,15 @@ Module m_Funciones
 
 #Region "EOS"
 
-    Public gstrIdEmpresa As String = "1CIX00000001"
-    Public gstrNombreEmpresa As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
-    Public gstrRucEmpresa As String = "20603652810"
-    Public gstrDireccionEmpresa As String = "CAL.NICOLAS AYLLON NRO. 900 URB. URRUNAGA SC. 1 LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
-    '------
-    Public gstrIdEmpresaSis As String = "1CIX001"
-    Public gstrIdSucursal As String = "1CIX001"
-    Public gstrNombreEmpresaSis As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
-    Public gstrRucEmpresaSis As String = "20603652810"
+    'Public gstrIdEmpresa As String = "1CIX00000001"
+    'Public gstrNombreEmpresa As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
+    'Public gstrRucEmpresa As String = "20603652810"
+    'Public gstrDireccionEmpresa As String = "CAL.NICOLAS AYLLON NRO. 900 URB. URRUNAGA SC. 1 LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
+    ''------
+    'Public gstrIdEmpresaSis As String = "1CIX001"
+    'Public gstrIdSucursal As String = "1CIX001"
+    'Public gstrNombreEmpresaSis As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
+    'Public gstrRucEmpresaSis As String = "20603652810"
 
     Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
         Dim ln_Retorna As Double = 0
@@ -54,6 +54,7 @@ Module m_Funciones
         '    oeParametro = gleParametro.Item(gleParametro.IndexOf(oeParametro))
         '    ln_Retorna = oeParametro.Valor
         'End If
+
         Return ln_Retorna
     End Function
 
@@ -148,7 +149,7 @@ Module m_Funciones
             oeDocumento.IdTipoDocumento = IdTipoDocumento
             oeDocumento.Serie = Serie
             oeDocumento.Tipo = Tipo
-            oeDocumento.IdEmpresaSis = gstrIdEmpresaSis
+            oeDocumento.IdEmpresaSis = gs_IdEmpresaSistema
             oeDocumento = olDocumento.Obtener(oeDocumento)
             If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
             Return 1
@@ -601,9 +602,9 @@ Module m_Funciones
     Public o_Botonera As New e_Boton
 
     Public _Operacion As String
-    Public PrefijoIdSucursal As String '@0001
-    Public IdEmpresaSistema As String '@0001
-    Public TxtEmpresaSistema As String '@0001
+    Public gs_PrefijoIdSucursal As String '@0001
+    Public gs_IdEmpresaSistema As String '@0001
+    Public gs_TxtEmpresaSistema As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -3722,7 +3723,7 @@ Module m_Funciones
     Public Function Lugar() As String
         Dim Prefijo As New l_Configuracion
         'Select Case Prefijo.PrefijoID '@0001
-        Select Case PrefijoIdSucursal '@0001
+        Select Case gs_PrefijoIdSucursal '@0001
             Case "1CH"
                 Lugar = "sede Chiclayo"
             Case "1PY"
