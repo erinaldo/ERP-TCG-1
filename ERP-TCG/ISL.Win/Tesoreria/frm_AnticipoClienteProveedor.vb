@@ -768,9 +768,9 @@ Public Class frm_AnticipoClienteProveedor
         '------------------------------------------
     End Sub
 
-    Private Sub CuentaBancariaSegunCta(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, _
-   ByVal IndMonedaExtrangera As Integer, ByVal lsCta As String)
-        If IndMonedaExtrangera = 0 Then
+    Private Sub CuentaBancariaSegunCta(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
+   ByVal IndMonedaExtranjera As Integer, ByVal lsCta As String)
+        If IndMonedaExtranjera = 0 Then
             cboMoneda.Value = "1CH01"
         End If
     End Sub
@@ -964,7 +964,7 @@ Public Class frm_AnticipoClienteProveedor
             obj = cboCuentaCtble.Items(i).ListObject
             CuentaBancaria()
             txtCtaOrigen.Text = obj.Cuenta
-            CuentaBancariaSegunCta(cboCuentaBancaria, obj.MonedaExtrangera, obj.Id)
+            CuentaBancariaSegunCta(cboCuentaBancaria, obj.MonedaExtranjera, obj.Id)
         End If
     End Sub
 

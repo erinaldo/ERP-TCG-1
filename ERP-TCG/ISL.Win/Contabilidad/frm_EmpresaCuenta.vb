@@ -480,7 +480,7 @@ Public Class frm_EmpresaCuenta
                 cboProveedor.Visible = False
                 OpcTipo.Enabled = True
             End If
-            If oeCuenta.MonedaExtrangera = 1 Then
+            If oeCuenta.MonedaExtranjera = 1 Then
                 cboMoneda.Text = "DOLARES"
             Else
                 cboMoneda.Text = "SOLES"

@@ -632,7 +632,7 @@ Public Class frm_Pagos
 
     Private Sub mt_CalcularRetencion()
         If chkRetencion.Checked Then
-            If oeCtaCble.MonedaExtrangera = 1 Then
+            If oeCtaCble.MonedaExtranjera = 1 Then
                 decRetencion.Value = CDbl(EtiImporteDolares.Text) * ln_TasaRetencion
                 decPagoNeto.Value = CDbl(EtiImporteDolares.Text) * (1 - ln_TasaRetencion)
             Else
@@ -654,7 +654,7 @@ Public Class frm_Pagos
                 oeDoc.CodMotivo = "RET"
                 oeDoc.IdLiquidacion = Math.Round(oeDoc.MontoOperar * ln_TasaRetencion, 4)
                 oeDoc.MontoOperar = Math.Round(oeDoc.MontoOperar * (1 - ln_TasaRetencion), 4)
-                oeDoc.OrdenCompra = IIf(oeCtaCble.MonedaExtrangera = 1, "1CH02", "1CH01")
+                oeDoc.OrdenCompra = IIf(oeCtaCble.MonedaExtranjera = 1, "1CH02", "1CH01")
                 oeDoc.IdTipoBien = DecTC.Value
                 oeDoc.Glosa = txtVoucher.Text.Trim
             Next

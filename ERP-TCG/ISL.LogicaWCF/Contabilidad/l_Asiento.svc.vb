@@ -1141,10 +1141,10 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function IntegracionPrestamosProvision(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo), _
-                                                  ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double, _
-                                                  ByVal IdCuentaCaja As String, ByRef oeMovCajaBanco As e_MovimientoCajaBanco, _
-                                                  ByVal indMonedaExtrangera As Integer, ByVal lsGlosa As String) As String
+    Public Function IntegracionPrestamosProvision(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo),
+                                                  ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double,
+                                                  ByVal IdCuentaCaja As String, ByRef oeMovCajaBanco As e_MovimientoCajaBanco,
+                                                  ByVal indMonedaExtranjera As Integer, ByVal lsGlosa As String) As String
         Try
             Dim oeAsMov As New e_AsientoMovimiento
             If lePrestamos.Count > 0 Then
@@ -1163,7 +1163,7 @@ Public Class l_Asiento
                     End If
                     .GlosaImprime = .Glosa
                     'Se obtiene el IdMoneda dependiendo de la Cuenta COntable
-                    If indMonedaExtrangera = 1 Then
+                    If indMonedaExtranjera = 1 Then
                         .IdMoneda = "1CH02"
                     Else
                         .IdMoneda = "1CH01"
@@ -1227,7 +1227,7 @@ Public Class l_Asiento
                             oeAsMov.TipoOperacion = "I"
                             oeMovimientoAnalisis = New e_MovimientoAnalisis
                             oeMovimientoAnalisis.TipoOperacion = "I"
-                            If indMonedaExtrangera = 1 Then
+                            If indMonedaExtranjera = 1 Then
                                 oeMovimientoAnalisis.Monto = .Monto / lnTipoCambio
                             Else
                                 oeMovimientoAnalisis.Monto = .Monto
@@ -1280,8 +1280,8 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function IntegracionPrestamosDescuentoPlanilla(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo), _
-                                                  ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double, _
+    Public Function IntegracionPrestamosDescuentoPlanilla(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo),
+                                                  ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double,
                                                   ByVal fechaEjecucion As Date) As String
         Try
             Dim oeAsMov As New e_AsientoMovimiento
@@ -1405,7 +1405,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ListarDevengadoSeguros(ByVal FechaVencimiento As Date, _
+    Public Function ListarDevengadoSeguros(ByVal FechaVencimiento As Date,
     ByVal lsTipoOper As String, ByVal lsIddoc As String) As System.Data.DataTable Implements Il_Asiento.ListarDevengadoSeguros
         Try
             Return odAsiento.ListarDevengadoSeguros(FechaVencimiento, lsTipoOper, lsIddoc)
@@ -1414,8 +1414,8 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable, _
-    ByVal oePeriodo As e_Periodo, ByVal IdUsuarioCreacion As String, _
+    Public Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable,
+    ByVal oePeriodo As e_Periodo, ByVal IdUsuarioCreacion As String,
     ByVal oemoneda As e_Moneda, ByVal lnTipoCambio As Double, ByVal lsTipo As String) As Boolean Implements Il_Asiento.GuardarSegurosDevengados
         Try
             Dim MonedaGlosa As String = "SOLES"
@@ -1595,12 +1595,12 @@ Public Class l_Asiento
 
 #Region "Cobranzas y Pagos"
 
-    Public Function GuardarCobranza(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), _
-                                    ByVal oeMovCajaBanco As EntidadesWCF.e_MovimientoCajaBanco, _
-                                    ByVal oeMedioCobro As EntidadesWCF.e_MedioPago, _
-                                    ByVal idUsuario As String, _
-                                    ByVal MacLocal As String, _
-                                    ByVal oeCtaCble As EntidadesWCF.e_CuentaContable, _
+    Public Function GuardarCobranza(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento),
+                                    ByVal oeMovCajaBanco As EntidadesWCF.e_MovimientoCajaBanco,
+                                    ByVal oeMedioCobro As EntidadesWCF.e_MedioPago,
+                                    ByVal idUsuario As String,
+                                    ByVal MacLocal As String,
+                                    ByVal oeCtaCble As EntidadesWCF.e_CuentaContable,
                                     ByVal Opcion As String) As Boolean Implements Il_Asiento.GuardarCobranza
         Try
             Dim cadena As String = ""
@@ -1648,12 +1648,12 @@ Public Class l_Asiento
                         Glosa = "COBRO DCMTOS. VARIOS " & oeMedioCobro.Abreviatura & "/" & leMovDocAgregado.Item(0)._NombreClienteProveedor & " " & oeMovCajaBanco.Glosa
                     End If
                 ElseIf leMovDocAgregado.Count = 1 Then
-                    Glosa = "COBRO " & leMovDocAgregado.Item(0)._AbrevTipoDoc & "/" & leMovDocAgregado.Item(0).Serie & leMovDocAgregado.Item(0).Numero & " " & _
+                    Glosa = "COBRO " & leMovDocAgregado.Item(0)._AbrevTipoDoc & "/" & leMovDocAgregado.Item(0).Serie & leMovDocAgregado.Item(0).Numero & " " &
                         leMovDocAgregado.Item(0)._NombreClienteProveedor & " " & oeMovCajaBanco.Glosa
                 End If
 
                 Dim IdMoneda = ""
-                If oeCtaCble.MonedaExtrangera = 0 Then
+                If oeCtaCble.MonedaExtranjera = 0 Then
                     IdMoneda = "1CH01"
                 Else
                     IdMoneda = "1CH02"
@@ -2093,7 +2093,7 @@ Public Class l_Asiento
                 End If
 
                 Dim IdMoneda = ""
-                If oeCtaCble.MonedaExtrangera = 0 Then
+                If oeCtaCble.MonedaExtranjera = 0 Then
                     IdMoneda = "1CH01"
                 Else
                     IdMoneda = "1CH02"

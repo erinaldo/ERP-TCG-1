@@ -48,8 +48,11 @@ Public Class e_AsientoModelo
     Public FechaMov As Date
     <DataMember()> _
     Public IndVinculado As Boolean = False
-    <DataMember()> _
+    <DataMember()>
     Public Ejercicio As Integer = 0
+
+    Public TipoBusca As Integer
+    Public CargaCompleta As Boolean
 
 #End Region
 

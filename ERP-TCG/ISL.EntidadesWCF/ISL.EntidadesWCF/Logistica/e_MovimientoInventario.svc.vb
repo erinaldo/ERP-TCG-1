@@ -16,6 +16,9 @@ Public Class e_MovimientoInventario
     Private _Modificado As Boolean = False
     Private _TipoOperacion As String
 
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
+
 #End Region
 
 #Region "Constructor"

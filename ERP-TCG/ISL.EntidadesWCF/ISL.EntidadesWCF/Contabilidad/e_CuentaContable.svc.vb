@@ -50,6 +50,8 @@ Public Class e_CuentaContable
     <DataMember()> _
     Public Equivale As Integer
 
+    Public TipoBusca As Integer
+
     Public Event DatoCambiado()
 
 #End Region
@@ -186,8 +188,8 @@ Public Class e_CuentaContable
         End Set
     End Property
 
-    <DataMember()> _
-    Public Property MonedaExtrangera() As Integer
+    <DataMember()>
+    Public Property MonedaExtranjera() As Integer
         Get
             Return _monedaextrangera
         End Get

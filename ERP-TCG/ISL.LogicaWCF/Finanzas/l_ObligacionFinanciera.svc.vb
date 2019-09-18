@@ -4028,7 +4028,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                     End If
 
                     'Se obtiene el IdMoneda dependiendo de la Cuenta COntable
-                    If oeCtaCble.MonedaExtrangera = 0 Then
+                    If oeCtaCble.MonedaExtranjera = 0 Then
                         .IdMoneda = "1CH01"
                     Else
                         .IdMoneda = "1CH02"
@@ -5372,15 +5372,15 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
             If oeMovCajaBanco.NroBoucher = "" Then Throw New Exception("Ingrese el número de Operación.")
             For Each obj In leObligacion
                 If obj.IdMoneda = "1CH01" Then
-                    If oeCtaCtble.MonedaExtrangera = 1 Then Throw New Exception("La cuenta pertenece a moneda extranjera , la obligaión está en soles. Cuota: " + obj.Codigo)
+                    If oeCtaCtble.MonedaExtranjera = 1 Then Throw New Exception("La cuenta pertenece a moneda extranjera , la obligaión está en soles. Cuota: " + obj.Codigo)
                 Else
-                    If oeCtaCtble.MonedaExtrangera = 0 Then Throw New Exception("La cuenta pertenece a moneda nacional , la obligaión está en dólares. Cuota: " + obj.Codigo)
+                    If oeCtaCtble.MonedaExtranjera = 0 Then Throw New Exception("La cuenta pertenece a moneda nacional , la obligaión está en dólares. Cuota: " + obj.Codigo)
                 End If
                 If obj.TipoCambio <> oeMovCajaBanco.TipoCambio Then Throw New Exception("Tipo de cambio no coincide. Cuota: " + obj.Codigo)
             Next
-            If oeCtaCtble.MonedaExtrangera = 0 Then
+            If oeCtaCtble.MonedaExtranjera = 0 Then
                 If Math.Round(oeMovCajaBanco.TotalMN, 2) <> Math.Round((leObligacion.Sum(Function(i) i.MontoMN)), 2) Then Throw New Exception("Monto total y suma de cuotas en MN, no coincide")
-            ElseIf oeCtaCtble.MonedaExtrangera = 1 Then
+            ElseIf oeCtaCtble.MonedaExtranjera = 1 Then
                 If Math.Round(oeMovCajaBanco.TotalME, 2) <> Math.Round((leObligacion.Sum(Function(i) i.MontoME)), 2) Then Throw New Exception("Monto total y suma de cuotas en ME, no coincide")
             End If
             Return True

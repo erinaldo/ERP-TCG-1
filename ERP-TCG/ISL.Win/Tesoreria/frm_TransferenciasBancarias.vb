@@ -842,7 +842,7 @@ Public Class frm_TransferenciasBancarias
         If i >= 0 Then
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleOrigen.Items(i).ListObject
-            CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtrangera, obj.Id)
+            CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Id)
         End If
     End Sub
 
@@ -862,7 +862,7 @@ Public Class frm_TransferenciasBancarias
         If i >= 0 Then
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleDestino.Items(i).ListObject
-            CuentaBancariaSegunCta(cboCuentaBancariaDestino, obj.MonedaExtrangera, obj.Id)
+            CuentaBancariaSegunCta(cboCuentaBancariaDestino, obj.MonedaExtranjera, obj.Id)
         End If
     End Sub
 

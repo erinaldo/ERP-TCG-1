@@ -225,7 +225,7 @@ Public Class frm_CuentaContable
                     chkFecEmision.Checked = .FechaEmision
                     chkFecVenc.Checked = .FechaVencimiento
                     chkFlujoCaja.Checked = .FlujoCaja
-                    chkMonedaExt.Checked = .MonedaExtrangera
+                    chkMonedaExt.Checked = .MonedaExtranjera
                     chkNroDoc.Checked = .NroDocumento
                     chkRuta.Checked = .Ruta
                     chkSerieDoc.Checked = .Serie
@@ -703,7 +703,7 @@ Public Class frm_CuentaContable
     End Sub
 
     Private Sub chkMonedaExt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkMonedaExt.CheckedChanged
-        oeCuentaContable.MonedaExtrangera = IIf(chkMonedaExt.Checked = True, 1, 0)
+        oeCuentaContable.MonedaExtranjera = IIf(chkMonedaExt.Checked = True, 1, 0)
     End Sub
 
     Private Sub chkConciliacion_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkConciliacion.CheckedChanged

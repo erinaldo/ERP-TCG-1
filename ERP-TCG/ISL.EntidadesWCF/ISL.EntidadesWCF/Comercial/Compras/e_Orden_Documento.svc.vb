@@ -17,9 +17,13 @@ Public Class e_Orden_Documento
     Private _idTipoOrden As String
     Private _idOrden As String
     Private _indconsignacion As String
-    
-    <DataMember()> _
+
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public TipoOrden As Integer
+    <DataMember()>
+    Public TipoExistencia As Integer
     <DataMember()> _
     Public Modificado As Boolean
 
@@ -34,6 +38,8 @@ Public Class e_Orden_Documento
             _id = value
         End Set
     End Property
+
+
 
     <DataMember()> _
     Public Property IdTipoDocumento() As String

@@ -48,6 +48,8 @@ Public Class e_Venta
     <DataMember()> _
     Public TotalVenta As Double
     '-----------------------------------------------------
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
     Public Event DatoCambiado()
 

@@ -70,7 +70,7 @@ Public Class d_CuentaContable
             Dim ldCuentaContable As New List(Of e_CuentaContable)
             Dim ds As DataSet
             With oeCuentaContable
-                ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", _
+                ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar",
                                               IIf(.TipoOperacion Is Nothing, "N", .TipoOperacion) _
                                              , Left(d_DatosConfiguracion.PrefijoID, 1) _
                                              , "" _
@@ -85,7 +85,7 @@ Public Class d_CuentaContable
                                             , .TipoDocGeneral _
                                             , .Trabajador _
                                             , .Conciliacion _
-                                            , .MonedaExtrangera _
+                                            , .MonedaExtranjera _
                                             , .NroDocumento _
                                             , .FechaEmision _
                                             , .FechaVencimiento _
@@ -117,8 +117,8 @@ Public Class d_CuentaContable
         Try
             Using transScope As New TransactionScope()
                 With oeCuentaContable
-                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_CuentaContable_IAE", _
-                                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_CuentaContable_IAE",
+                                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID,
                                                             .Id _
                                                             , .Cuenta _
                                                             , .Nombre _
@@ -130,7 +130,7 @@ Public Class d_CuentaContable
                                                             , .TipoDocGeneral _
                                                             , .Trabajador _
                                                             , .Conciliacion _
-                                                            , .MonedaExtrangera _
+                                                            , .MonedaExtranjera _
                                                             , .Serie _
                                                             , .NroDocumento _
                                                             , .FechaEmision _

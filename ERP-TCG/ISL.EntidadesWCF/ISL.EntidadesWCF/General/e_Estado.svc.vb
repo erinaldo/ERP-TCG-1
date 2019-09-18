@@ -8,10 +8,14 @@ Public Class e_Estado
     Implements IPropiedadesBasicas
 
 #Region "Declaracion de Variables"
+
     Private _Id As String
     Private _Codigo As String
     Private _Nombre As String
     Private _Activo As Boolean
+
+    Public TipoOperacion As String
+
 #End Region
 
 #Region "Constructor"

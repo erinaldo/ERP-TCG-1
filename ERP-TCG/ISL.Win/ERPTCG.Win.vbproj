@@ -375,6 +375,12 @@
     <Compile Include="Comercial\Compras\frm_Requerimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.Designer.vb">
+      <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Ventas\frm_Visor.Designer.vb">
       <DependentUpon>frm_Visor.vb</DependentUpon>
     </Compile>
@@ -4231,6 +4237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Compras\frm_Requerimiento.resx">
       <DependentUpon>frm_Requerimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_OrdenVenMaterial.resx">
+      <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_Visor.resx">
       <DependentUpon>frm_Visor.vb</DependentUpon>

@@ -33,8 +33,11 @@ Public Class e_Inventario
     Public Usuario As String
     <DataMember()> _
     Public IdOrden As String = ""
-    <DataMember()> _
+    <DataMember()>
     Public oeRegistroInventario As e_RegistroInventario
+
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
     Private _idmataterial As String
     Private _codmaterial As String

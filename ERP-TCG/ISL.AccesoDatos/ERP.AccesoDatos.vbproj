@@ -140,6 +140,8 @@
     <Compile Include="Comercial\Ventas\d_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProcesoDetalle.vb" />
+    <Compile Include="Comercial\Ventas\d_OrdenVenta.vb" />
+    <Compile Include="Comercial\Ventas\d_OrdenVentaMaterial.vb" />
     <Compile Include="Comercial\Ventas\d_ProcesarTarifasProceso.vb" />
     <Compile Include="Comercial\Ventas\d_ReporteRecorrido.vb" />
     <Compile Include="Comercial\Ventas\d_GuiasControl.vb" />
@@ -266,6 +268,7 @@
     <Compile Include="General\d_ProcesoGlosa.vb" />
     <Compile Include="General\d_ProcesoServicio.vb" />
     <Compile Include="General\d_RutaPeaje.vb" />
+    <Compile Include="General\d_TablaDinamica_Dato.vb" />
     <Compile Include="General\d_TarjetaMovimiento.vb" />
     <Compile Include="General\d_TipoDocumento.vb" />
     <Compile Include="Comercial\Compras\d_TipoOrdenCompra.vb" />

@@ -73,6 +73,9 @@ Public Class e_DetalleDocumento
     <DataMember()> _
     Public IdAlmacen As String  '--para compras de material como consignacion
 
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
+
     Public Event DatoCambiado()
 
 #End Region

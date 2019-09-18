@@ -50,8 +50,10 @@ Public Class e_Orden
     Public lstInventario As New List(Of e_Inventario)
     '<DataMember()> _
     'Public lstRegistroInventario As New List(Of e_RegistroInventario)
-    <DataMember()> _
+    <DataMember()>
     Public lstDetOrdenNeu As New List(Of e_DetalleOrdenNeumatico)
+    Public Property IdEmpresaSis As String
+    Public Property IdSucursal As String
     <DataMember()> _
     Public Modificado As Boolean
     <DataMember()> _
@@ -70,8 +72,14 @@ Public Class e_Orden
     Public loAsientoModelo As New List(Of e_AsientoModelo)
     <DataMember()> _
     Public loCtaCtbleSFam As New List(Of e_CtaCtbleSubFamiliaMat)
-    <DataMember()> _
+    <DataMember()>
     Public IndAsiento As Boolean = False
+
+    Public oeOrdenIngreso As e_Orden
+    Public oeOrdenSalida As e_Orden
+
+    Public IdEmpresa As String
+    Public IdOrden As String = ""
 
 #End Region
 
