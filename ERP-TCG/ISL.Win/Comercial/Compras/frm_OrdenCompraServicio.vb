@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -121,7 +129,7 @@ Public Class frm_OrdenCompraServicio
 
     Dim idMovimientoInventario As String = "1CH000000002" 'ORDEN DE INGRESO POR COMPRA
     Dim idTipoOrden As String = "1CH000000001" 'Tipo de orden: De ingreso.
-    'Dim idProveedor As String = "1CH000006026" 'INDUAMERICA SERVICIOS LOGISTICOS S.A.C.
+
     'Dim idMoneda As String = "1CH01" 'Moneda en soles
     Dim oeOrdenIngreso As New e_Orden
     Dim olOrdenIngreso As New l_Orden
@@ -329,6 +337,7 @@ Public Class frm_OrdenCompraServicio
                              Trim(.ActiveRow.Cells("NroOrden").Value.ToString) & " ?", _
                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         oeOrdenCompra.TipoOperacion = "E"
+                        oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olOrdenCompra.Eliminar(oeOrdenCompra)
                         Consultar(True)
                     End If
@@ -461,6 +470,7 @@ Public Class frm_OrdenCompraServicio
         txtNumeroOrden.Value = ""
         txtObservaciones.Value = String.Empty
         oeOrdenCompra.TipoOperacion = "I"
+        oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
         txtNotas.Value = String.Empty
         'cboProveedor.Text = String.Empty
         cboProveedor.Value = Nothing
@@ -923,6 +933,7 @@ Public Class frm_OrdenCompraServicio
                 'End If
                 gfc_ValidarSerieDoc(txtSerie.Text, oeProDoc.CodigoTD)
                 gfc_ValidarNumeroDoc(txtNroComprabante.Text, oeProDoc.CodigoTD)
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olmovimientoDocumento.Guardar(oeMovimientoDocumento)
 
                 If oeMovimientoDocumento.IdTipoDocumento = "1CH000000043" Then
@@ -946,6 +957,7 @@ Public Class frm_OrdenCompraServicio
                 End If
             End If
             oeOrdenCompra.TipoBien = "SERVICIO"
+            oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olOrdenCompra.Guardar(oeOrdenCompra) Then
                 Return False
             End If
@@ -1071,6 +1083,7 @@ Public Class frm_OrdenCompraServicio
                     oeDetalleManEqui.IdTrabajadorResponsable = ""
                     oeDetalleManEqui.UsuarioCreacion = gUsuarioSGI.Id
                     oeDetalleManEqui.Activo = True
+                    oeDetalleManEqui.PrefijoID = gs_PrefijoIdSucursal '@0001
                     .lstDetalleEquipoMantenimiento.Add(oeDetalleManEqui)
                 Else
                     Throw New Exception("No existe el Mantenimiento del Equipo. Comunicarse con Mantenimiento.")
@@ -1091,10 +1104,12 @@ Public Class frm_OrdenCompraServicio
                         End If
                         .Descripcion = ordser.Glosa
                         .UsuarioCreacion = gUsuarioSGI.Id
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     .lstDetalleServicio.Add(oeOrdenTrabajoServicio)
                 Next
             End With
+            oeOrdenTrabajo.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeOrdenCompra.oeOrdenTrabajo = oeOrdenTrabajo
         Catch ex As Exception
             Throw ex
@@ -1139,6 +1154,7 @@ Public Class frm_OrdenCompraServicio
                     Else
                         .IdVehiculo = LstEquipo.Where(Function(i) i.Id = IdEquipo)(0).IdVehiculo
                     End If
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 lstaDetalleDoc.Add(oeDetalleDoc)
             Next
@@ -1198,6 +1214,8 @@ Public Class frm_OrdenCompraServicio
                 .Compra.NoGravadas = IIf(cboMoneda.Value = "1CH01", IIf(txtIGV.Value <> 0, 0, txtSubTotal.Value), _
                                          IIf(txtIGV.Value <> 0, 0, txtSubTotal.Value) * txtTC.Value)
                 .Compra.CobraCajaChica = IIf(chkCajaChica.Checked, 1, 0)
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
+                .Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
         Catch ex As Exception
             Throw ex
@@ -1408,6 +1426,7 @@ Public Class frm_OrdenCompraServicio
                 oeOrdTra.NroOT = oeReqSer.NroOT
                 oeOrdTra = olOrdTra.Obtener(oeOrdTra)
                 cboProveedor.Value = oeOrdTra.IdEmpresaExterna
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraServicio.Add(oeOrdenCompraServicio)
         Next
@@ -1467,6 +1486,7 @@ Public Class frm_OrdenCompraServicio
                 '.PrecioUnitarioDolaresSinImp = Math.Round(.PrecioUnitarioSolesSinImp / cambioMon, 4)
                 .TipoOrdenCompra = "S"
                 cont = MaximaPosicionServicio() : cont += 1 : .Pos = cont
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraServicio.Add(oeOrdenCompraServicio)
             oeSer.Seleccion = False
@@ -1706,6 +1726,7 @@ Public Class frm_OrdenCompraServicio
                     oeMovimientoDocumento.loCtaCtbleCSer = New List(Of e_CtaCtbleCatServicio)
                     oeMovimientoDocumento.loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, oeMovimientoDocumento.Ejercicio)
                     ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.Ejercicio)
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olmovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
                     'olmovimientoDocumento.EnviarCompra(oeMovimientoDocumento)
                     If lb_Mostrar Then
@@ -1787,6 +1808,7 @@ Public Class frm_OrdenCompraServicio
             oeRegistroInventario.IdSubAlmacen = item.IdSubAlmacen  'envia almacen
             oeRegistroInventario.TipoOperacion = oeOrdenIngreso.TipoOperacion
             oeRegistroInventario.IdOrden = oeOrdenIngreso.Id
+            oeRegistroInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
             listaRegistroInventario.Add(oeRegistroInventario)
         Next
 
@@ -1842,6 +1864,7 @@ Public Class frm_OrdenCompraServicio
                         ' .PrecioUnitarioDolaresSinImp = Math.Round(.PrecioUnitarioSolesSinImp / cambioMon, 4)
                         .TipoOrdenCompra = "S"
                         cont = MaximaPosicionServicio() : cont += 1 : .Pos = cont
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     llOrdenCompraServicio.Add(oeOrdenCompraServicio)
                 Next
@@ -1906,6 +1929,7 @@ Public Class frm_OrdenCompraServicio
                     oeOrdenCompra = New e_OrdenCompra
                     oeOrdenCompra.Id = griListaOrdenCompra.ActiveRow.Cells("Id").Value
                     oeOrdenCompra.TipoOperacion = "G"
+                    oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOrdenCompra.Guardar(oeOrdenCompra) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         Consultar(True)

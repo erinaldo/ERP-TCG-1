@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -197,6 +205,7 @@ Public Class frm_OrdenCompraConsignacion
             oeCentro.Activo = True
             LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
             oeCentro.TipoOperacion = "2"
+            oeCentro.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeCentro = olCentro.Obtener(oeCentro)
             cboCentro.Value = oeCentro.Id
             rfOrdenCompraConsignacionDesde.Value = Date.Now.AddDays(-7)
@@ -238,6 +247,7 @@ Public Class frm_OrdenCompraConsignacion
                         .IdAlmacen = Row("IdAlmacen")
                         .Almacen = Row("Almacen")
                         .IdSubAlmacen = Row("IdSubAlmacen")
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     llDetalleOrdenSalida.Add(oeDetalleOrdenSalida)
                 End If
