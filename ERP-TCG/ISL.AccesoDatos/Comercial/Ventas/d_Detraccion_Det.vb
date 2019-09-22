@@ -63,7 +63,7 @@ Public Class d_Detraccion_Det
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetraccion_Det
-                sqlhelper.ExecuteNonQuery("CON.Isp_Detraccion_Det_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Detraccion_Det_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdVenta _
                         , .Monto _

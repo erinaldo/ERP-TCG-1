@@ -84,7 +84,7 @@ Public Class d_Periodo
 
             With oePeriodo
                 sqlhelper.ExecuteNonQuery("CON.ISP_Periodo_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .Codigo, .Ejercicio, .Mes, _
+                .PrefijoID, .Id, .Codigo, .Ejercicio, .Mes, _
                 .FechaInicio, .FechaFin, .CierreCompras, .CierraVentas, .CierreAlmacen, .CierreTesoreria, .CierreContabilidad, _
                 .CambioCompra, .CambioVenta, .Activo, .CierreCombustible, .CierrePlanilla, .CierreCajaLiquidacion)
             End With

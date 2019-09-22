@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -2670,7 +2678,8 @@ Public Class frm_FacturarCarga
                                "IngresoDestino", "DescargaDestino", "TerminoDescargaDestino", "Operacion", "Estado", "KmTractoDestino", "Copiloto", "Ayudante", _
                                "SalidaDestino", "Capacidad", "IndCarga", "Produccion", "Cantidad", "FleteUnitario", "IncluyeIgv", "IncidenciaOperaciones", "TipoCambio")
 
-                If Prefijo.PrefijoID = "1CH" Then
+                'If Prefijo.PrefijoID = "1CH" Then '@0001
+                If gs_PrefijoIdSucursal = "1CH" Then '@0001
                     .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
                     .DisplayLayout.Bands(0).Columns("Piloto").Hidden = True
                 End If

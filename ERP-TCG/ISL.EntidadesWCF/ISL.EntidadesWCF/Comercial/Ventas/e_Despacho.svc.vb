@@ -11,6 +11,8 @@ Public Class e_Despacho
     Public FechaHasta As Date
     Public FechaValida As Date
     Public IdZonaEditar As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

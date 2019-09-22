@@ -153,7 +153,7 @@ Public Class d_Mantenimiento
 
             Using transScope As New TransactionScope()
                 With oeMantenimiento
-                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_Mantenimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_Mantenimiento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoMantenimiento _
                             , .Nombre _

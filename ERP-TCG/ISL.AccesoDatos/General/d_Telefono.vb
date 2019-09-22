@@ -134,7 +134,7 @@ Public Class d_Telefono
                         , .Principal _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IdOperadorTelefonico
                     )
             End With

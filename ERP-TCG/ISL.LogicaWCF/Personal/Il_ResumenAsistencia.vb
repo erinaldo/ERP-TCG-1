@@ -22,8 +22,8 @@ Public Interface Il_ResumenAsistencia
     <OperationContract()> _
     Function GuardarLista(ByVal leResumenAsistencia As List(Of e_ResumenAsistencia)) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leResumenAsistencia As List(Of e_ResumenAsistencia)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leResumenAsistencia As List(Of e_ResumenAsistencia), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeResumenAsistencia As e_ResumenAsistencia) As Boolean

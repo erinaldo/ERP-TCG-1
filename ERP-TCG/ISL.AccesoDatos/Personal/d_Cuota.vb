@@ -89,7 +89,7 @@ Public Class d_Cuota
             With oeCuota
                 sqlhelper.ExecuteScalar("OPE.Isp_Cuota_IAE", .TipoOperacion, _
                  .Id, .IdTrabajador, .Codigo, .FechaInicio, .FechaFin, .Cuota, _
-                 .Activo, .FechaCreacion, .UsuarioCreacion, d_DatosConfiguracion.PrefijoID)
+                 .Activo, .FechaCreacion, .UsuarioCreacion, .PrefijoID)
             End With
             Return True
 

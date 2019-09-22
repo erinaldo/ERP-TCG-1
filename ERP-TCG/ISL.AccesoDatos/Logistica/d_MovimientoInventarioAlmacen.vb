@@ -69,7 +69,7 @@ Public Class d_MovimientoInventarioAlmacen
             With oeMovimientoInventarioAlmacen
                 sqlhelper.ExecuteNonQuery("[ALM].[Isp_MovimientoInventarioAlmacen_IAE]", _
                                           "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .IdAlmacen, _
                                           .IdMovimientoInventario, _
@@ -170,7 +170,7 @@ Public Class d_MovimientoInventarioAlmacen
             With oeMovimientoInventarioAlmacen
                 sqlhelper.ExecuteNonQuery("ALM.Isp_MovimientoInventarioAlmacen_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .IdAlmacen, _
                                           .IdMovimientoInventario, _

@@ -84,7 +84,7 @@ Public Class d_ChequeEmitido
             Dim odChequeDocumento As New d_ChequeDocumento
             Using TransScope As New TransactionScope()
                 With oeChequeEmitido
-                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequeEmitido_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID,
+                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequeEmitido_IAE", .TipoOperacion, .PrefijoID,
                             .Id, .IdTrabajador, .IdProveedor, .IdCuentaBancaria, .IdCuentaCorriente,
                             .NroCheque, .Detalle, .FechaCobro, .Importe, .Saldo, .IdConcepto, .IdEstado, .FechaCreacion, .UsuarioCreacion,
                             .Activo, .IdCentro, .Fecha)

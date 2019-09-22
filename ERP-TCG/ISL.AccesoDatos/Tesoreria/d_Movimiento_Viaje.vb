@@ -123,7 +123,7 @@ Public Class d_Movimiento_Viaje
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento_Viaje
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Viaje_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Viaje_IAE", .TipoOperacion, .PrefijoID, _
                         "" _
                         , .IdMovimiento _
                         , .IdViaje _

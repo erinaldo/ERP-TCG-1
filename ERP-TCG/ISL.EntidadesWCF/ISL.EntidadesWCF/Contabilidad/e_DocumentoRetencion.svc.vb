@@ -30,7 +30,8 @@ Public Class e_DocumentoRetencion
     Private _FechaCrea As Date
     Private _UsuarioModifica As String
     Private _FechaModifica As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public TipoOperacion As String

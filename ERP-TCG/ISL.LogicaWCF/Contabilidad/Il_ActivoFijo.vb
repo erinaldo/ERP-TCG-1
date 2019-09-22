@@ -83,8 +83,8 @@ Public Interface Il_ActivoFijo
     <OperationContract()> _
     Function GuardarDepreciacionAF(oeDepreciacionActivoFijo As e_DepreciacionActivoFijo) As Boolean
 
-    <OperationContract()> _
-    Function GuardarDepreciacionPeriodo(lstDepreciacion As List(Of e_DepreciacionActivoFijo)) As Boolean
+    <OperationContract()>
+    Function GuardarDepreciacionPeriodo(lstDepreciacion As List(Of e_DepreciacionActivoFijo), ByVal PrefijoId As String) As Boolean
 
     <OperationContract()> _
     Function EliminarDepreciacionAF(oeDepreciacionActivoFijo As e_DepreciacionActivoFijo) As Boolean

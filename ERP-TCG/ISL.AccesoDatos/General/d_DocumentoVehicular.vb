@@ -140,7 +140,7 @@ Public Class d_DocumentoVehicular
                 With oeDocumentoVehicular
                     stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicular_IAE", _
                                                           .TipoOperacion _
-                                                         , d_DatosConfiguracion.PrefijoID _
+                                                         , .PrefijoID _
                                                         , .Id _
                                                         , .IdEmpresaEmisora _
                                                         , .Numero _
@@ -251,19 +251,19 @@ Public Class d_DocumentoVehicular
     ''' <returns>Devuelve una valor de tipo Boolean</returns>
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro del 
     ''' documento vehicular es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
-    Public Function GuardarDetalle(ByVal ls_IdVehiculo As String, _
-                                   ByVal ls_IdDocumento As String, _
-                                   ByVal ls_UsuarioCreacion As String) As Boolean
+    Public Function GuardarDetalle(ByVal ls_IdVehiculo As String,
+                                   ByVal ls_IdDocumento As String,
+                                   ByVal ls_UsuarioCreacion As String, ByVal PrefijoID As String) As Boolean
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
-            sqlhelper.ExecuteNonQuery("STD.Isp_DetalleDocumentoVehiculo_IAE", _
-                                      "I", _
-                                      d_DatosConfiguracion.PrefijoID, _
-                                      "", _
-                                      ls_IdVehiculo, _
-                                      ls_IdDocumento, _
-                                      True, _
+            sqlhelper.ExecuteNonQuery("STD.Isp_DetalleDocumentoVehiculo_IAE",
+                                      "I",
+                                      PrefijoID,
+                                      "",
+                                      ls_IdVehiculo,
+                                      ls_IdDocumento,
+                                      True,
                                       ls_UsuarioCreacion)
 
             Return True
@@ -357,7 +357,7 @@ Public Class d_DocumentoVehicular
                 With oeDocumentoVehicular
                     stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicularDocumento_IAE", _
                                                           .TipoOperacion _
-                                                         , d_DatosConfiguracion.PrefijoID _
+                                                         , .PrefijoID _
                                                         , .Id _
                                                         , .IdEmpresaEmisora _
                                                         , .IdEmpresaPropietaria).ToString.Split("_")
@@ -392,11 +392,11 @@ Public Class d_DocumentoVehicular
         
     End Function
 
-    Public Function UltimoIdDevengoInserta() As String
+    Public Function UltimoIdDevengoInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "STD.DocumentoVehicularDevengo", d_DatosConfiguracion.PrefijoID)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "STD.DocumentoVehicularDevengo", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

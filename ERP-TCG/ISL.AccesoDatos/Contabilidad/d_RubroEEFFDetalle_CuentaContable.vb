@@ -80,7 +80,7 @@ Public Class d_RubroEEFFDetalle_CuentaContable
             With oeRubroEEFFDetalle_CuentaContable
                 stResultado = sqlhelper.ExecuteScalar("[CON].[Isp_RubroEEFFDetalle_CuentaContable_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdRubroEEFFDetalle _
                         , .NroCuenta _

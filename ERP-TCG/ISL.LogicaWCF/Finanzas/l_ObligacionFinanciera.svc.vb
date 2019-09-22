@@ -4028,7 +4028,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                     End If
 
                     'Se obtiene el IdMoneda dependiendo de la Cuenta COntable
-                    If oeCtaCble.MonedaExtrangera = 0 Then
+                    If oeCtaCble.MonedaExtranjera = 0 Then
                         .IdMoneda = "1CH01"
                     Else
                         .IdMoneda = "1CH02"
@@ -4714,7 +4714,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
 
 #Region "Obligaciones Financieras"
 
-    Public Function GuardarLetras(ByVal leOblig As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), IdUsuario As String) As Boolean Implements Il_ObligacionFinanciera.GuardarLetras
+    Public Function GuardarLetras(ByVal leOblig As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), IdUsuario As String, ByVal PrefijoID As String) As Boolean Implements Il_ObligacionFinanciera.GuardarLetras
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             Dim oeOblig As New e_ObligacionFinanciera
@@ -4741,43 +4741,43 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
             Dim CodigoUnico As String = Date.Now.Year.ToString + Strings.Right("0" + Date.Now.Month.ToString, 2) + Strings.Right("0" + Date.Now.Day.ToString, 2) + Strings.Right("0" + Date.Now.Hour.ToString, 2) _
            + Strings.Right("0" + Date.Now.Minute.ToString, 2) + Strings.Right("0" + Date.Now.Second.ToString, 2) + Strings.Right("0" + Date.Now.Millisecond.ToString, 2)
 
-            Dim IdObligacion As String = odObligacionFinanciera.UltimoIdInserta()
+            Dim IdObligacion As String = odObligacionFinanciera.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoObligacion As String = Left(IdObligacion, 3)
             Dim lsNumeroObligacion As Integer = CInt(Right(IdObligacion, Len(IdObligacion) - 3))
 
-            Dim IdFecLetras As String = odFecLetras.UltimoIdInserta()
+            Dim IdFecLetras As String = odFecLetras.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoFecLetras As String = Left(IdFecLetras, 3)
             Dim lsNumeroFecLetras As Integer = CInt(Right(IdFecLetras, Len(IdFecLetras) - 3))
 
-            Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+            Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
             Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-            Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", oePeriodo.Id, "1")
+            Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", oePeriodo.Id, "1", PrefijoID)
             Dim lsPrefijoNroAsientoD As String = Left(NroAsientoD, 2)
             Dim lsNumeroNroAsientoD As Integer = CInt(Right(NroAsientoD, Len(NroAsientoD) - 2))
 
-            Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+            Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(PrefijoID)
             Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
             Dim lsNumeroAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
 
-            Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta()
+            Dim IdCuentaxCyP As String = odCuentaxCyP.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoCuentaxCyP As String = Left(IdCuentaxCyP, 3)
             Dim lsNumeroCuentaxCyP As Integer = CInt(Right(IdCuentaxCyP, Len(IdCuentaxCyP) - 3))
 
-            Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar()
+            Dim IdAsientoMov_MovDoc As String = odAsMovMovDoc.UltimoIdInsertar(PrefijoID)
             Dim lsPrefijoAsientoMov_MovDoc As String = Left(IdAsientoMov_MovDoc, 3)
             Dim lsNumeroAsientoMov_MovDoc As Integer = CInt(Right(IdAsientoMov_MovDoc, Len(IdAsientoMov_MovDoc) - 3))
 
-            Dim IdAsientoMov_ObliFin As String = odAsMovObliFin.UltimoIdInserta()
+            Dim IdAsientoMov_ObliFin As String = odAsMovObliFin.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoAsientoMov_ObliFin As String = Left(IdAsientoMov_ObliFin, 3)
             Dim lsNumeroAsientoMov_ObliFin As Integer = CInt(Right(IdAsientoMov_ObliFin, Len(IdAsientoMov_ObliFin) - 3))
 
-            Dim IdIdObligacionDocumento As String = odObligacionDocumento.UltimoIdInserta()
+            Dim IdIdObligacionDocumento As String = odObligacionDocumento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoObligacionDocumento As String = Left(IdIdObligacionDocumento, 3)
             Dim lsNumeroObligacionDocumento As Integer = CInt(Right(IdIdObligacionDocumento, Len(IdIdObligacionDocumento) - 3))
 
-            Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta()
+            Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta(PrefijoID)
             Dim lsPrefijoMovAna As String = Left(IdMovAna, 3)
             Dim lsNumeroMovAna As Integer = CInt(Right(IdMovAna, Len(IdMovAna) - 3))
 
@@ -5134,23 +5134,23 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                 Dim CodigoUnico As String = Date.Now.Year.ToString + Strings.Right("0" + Date.Now.Month.ToString, 2) + Strings.Right("0" + Date.Now.Day.ToString, 2) + Strings.Right("0" + Date.Now.Hour.ToString, 2) _
                + Strings.Right("0" + Date.Now.Minute.ToString, 2) + Strings.Right("0" + Date.Now.Second.ToString, 2) + Strings.Right("0" + Date.Now.Millisecond.ToString, 2)
 
-                Dim IdObligacion As String = odObligacionFinanciera.UltimoIdInserta()
+                Dim IdObligacion As String = odObligacionFinanciera.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoObligacion As String = Left(IdObligacion, 3)
                 Dim lsNumeroObligacion As Integer = CInt(Right(IdObligacion, Len(IdObligacion) - 3))
 
-                Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                 Dim lsNumeroAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
 
-                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", oePeriodo.Id, "1")
+                Dim NroAsientoD As String = odAsiento.UltimoNroAsiento("1CH000020", oePeriodo.Id, "1", oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoNroAsientoD As String = Left(NroAsientoD, 2)
                 Dim lsNumeroNroAsientoD As Integer = CInt(Right(NroAsientoD, Len(NroAsientoD) - 2))
 
-                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                 Dim lsNumeroAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
 
-                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta()
+                Dim IdMovimientoCajaBanco As String = odMovCajaBanco.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovCajaBanco As String = Left(IdMovimientoCajaBanco, 3)
                 Dim lsNumeroMovCajaBanco As Integer = CInt(Right(IdMovimientoCajaBanco, Len(IdMovimientoCajaBanco) - 3))
 
@@ -5158,16 +5158,16 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                 Dim lsPrefijoNroImpresion As String = ""
                 Dim lsNroImpresion As Integer = 0
                 If Len(Trim(oeMovCajaBanco.IdCuentaBancaria)) = 12 Then
-                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, oePeriodo.Id, "2")
+                    NroImpresion = odAsiento.UltimoNroAsiento(oeMovCajaBanco.IdCuentaBancaria, oePeriodo.Id, "2", oeMovCajaBanco.PrefijoID)
                     lsPrefijoNroImpresion = Left(NroImpresion, 2)
                     lsNroImpresion = CInt(Right(NroImpresion, Len(NroImpresion) - 2))
                 End If
 
-                Dim IdAsientoMov_ObliFin As String = odAsMovObliFin.UltimoIdInserta()
+                Dim IdAsientoMov_ObliFin As String = odAsMovObliFin.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoAsientoMov_ObliFin As String = Left(IdAsientoMov_ObliFin, 3)
                 Dim lsNumeroAsientoMov_ObliFin As Integer = CInt(Right(IdAsientoMov_ObliFin, Len(IdAsientoMov_ObliFin) - 3))
 
-                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta()
+                Dim IdMovAna As String = odMovimientoAnalisis.UltimoIdInserta(oeMovCajaBanco.PrefijoID)
                 Dim lsPrefijoMovAna As String = Left(IdMovAna, 3)
                 Dim lsNumeroMovAna As Integer = CInt(Right(IdMovAna, Len(IdMovAna) - 3))
 
@@ -5372,15 +5372,15 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
             If oeMovCajaBanco.NroBoucher = "" Then Throw New Exception("Ingrese el número de Operación.")
             For Each obj In leObligacion
                 If obj.IdMoneda = "1CH01" Then
-                    If oeCtaCtble.MonedaExtrangera = 1 Then Throw New Exception("La cuenta pertenece a moneda extranjera , la obligaión está en soles. Cuota: " + obj.Codigo)
+                    If oeCtaCtble.MonedaExtranjera = 1 Then Throw New Exception("La cuenta pertenece a moneda extranjera , la obligaión está en soles. Cuota: " + obj.Codigo)
                 Else
-                    If oeCtaCtble.MonedaExtrangera = 0 Then Throw New Exception("La cuenta pertenece a moneda nacional , la obligaión está en dólares. Cuota: " + obj.Codigo)
+                    If oeCtaCtble.MonedaExtranjera = 0 Then Throw New Exception("La cuenta pertenece a moneda nacional , la obligaión está en dólares. Cuota: " + obj.Codigo)
                 End If
                 If obj.TipoCambio <> oeMovCajaBanco.TipoCambio Then Throw New Exception("Tipo de cambio no coincide. Cuota: " + obj.Codigo)
             Next
-            If oeCtaCtble.MonedaExtrangera = 0 Then
+            If oeCtaCtble.MonedaExtranjera = 0 Then
                 If Math.Round(oeMovCajaBanco.TotalMN, 2) <> Math.Round((leObligacion.Sum(Function(i) i.MontoMN)), 2) Then Throw New Exception("Monto total y suma de cuotas en MN, no coincide")
-            ElseIf oeCtaCtble.MonedaExtrangera = 1 Then
+            ElseIf oeCtaCtble.MonedaExtranjera = 1 Then
                 If Math.Round(oeMovCajaBanco.TotalME, 2) <> Math.Round((leObligacion.Sum(Function(i) i.MontoME)), 2) Then Throw New Exception("Monto total y suma de cuotas en ME, no coincide")
             End If
             Return True

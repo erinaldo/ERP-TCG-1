@@ -86,7 +86,7 @@ Public Class d_PagoAdicional
             Dim _idpa As String = ""
             Using TransScope As New TransactionScope()
                 With oePagoAdicional
-                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdPlanilla _
                             , .Codigo _
@@ -132,7 +132,7 @@ Public Class d_PagoAdicional
             Dim _idpa As String = ""
             Using TransScope As New TransactionScope()
                 With oePagoAdicional
-                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPlanilla _
                         , .Codigo _

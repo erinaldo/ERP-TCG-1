@@ -135,7 +135,7 @@ Public Class d_ItemGasto
                 With oeItemGasto
                     stResultado = sqlhelper.ExecuteScalar("CON.ISP_ItemGasto_IAE", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                                                           .Id _
                                                           , .Nombre _
                                                           , .IdTablaContableDet _

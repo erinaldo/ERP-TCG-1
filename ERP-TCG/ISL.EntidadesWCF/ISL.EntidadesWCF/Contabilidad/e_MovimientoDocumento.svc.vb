@@ -47,6 +47,9 @@ Public Class e_MovimientoDocumento
     Private _Abrev_Empresa As String
     Private _Item As Integer
 
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
+
     'ANTICIPOS
     Private _IndAnticipo As Boolean
     Private _IndAfectaAnticipo As Boolean
@@ -116,7 +119,8 @@ Public Class e_MovimientoDocumento
     Public Modificado As Boolean
     <DataMember()> _
     Public Tipo As String = "" 'para compras FACTURACOMPRA
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     '----------------------COMBUSTIBLE/WALTER----------------------------------------
@@ -214,11 +218,13 @@ Public Class e_MovimientoDocumento
     Public IndConta As Boolean = False
     <DataMember()> _
     Public loCtas As New List(Of e_Combo)
-    <DataMember()> _
+    <DataMember()>
     Public IdCtaPagarCobrar As String = String.Empty
 
-    <DataMember()> _
+    <DataMember()>
     Public Equivale As Integer = 0
+
+    Public CargaCompleta As Boolean
 
 #End Region
 

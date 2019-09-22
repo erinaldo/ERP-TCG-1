@@ -109,7 +109,7 @@ Public Class d_Incidente
             Dim stResultado() As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeIncidente
-                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Incidente_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Incidente_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .UsuarioCreacion _
                         , .Codigo _

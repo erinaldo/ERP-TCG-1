@@ -16,8 +16,8 @@ Public Interface Il_GastoOperacion
     <OperationContract()> _
     Function Guardar(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean
 
-    <OperationContract()> _
-    Function GuardarListaMasiva(ByVal leGastoOperacion As List(Of e_GastoOperacion), lo As List(Of e_Combo)) As Boolean
+    <OperationContract()>
+    Function GuardarListaMasiva(ByVal leGastoOperacion As List(Of e_GastoOperacion), lo As List(Of e_Combo), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean

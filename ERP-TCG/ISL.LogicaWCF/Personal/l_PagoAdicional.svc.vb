@@ -58,7 +58,7 @@ Public Class l_PagoAdicional
     Public Function ImportarDatos(oePagoAdicional As e_PagoAdicional) As Boolean Implements Il_PagoAdicional.ImportarDatos
         Try
             Dim dtPA As Data.DataTable = olDetalle.CrearDT()
-            Dim id As String = odDetalle.UltimoIdInserta
+            Dim id As String = odDetalle.UltimoIdInserta(oePagoAdicional.PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

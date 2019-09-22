@@ -17,8 +17,10 @@ Public Class e_Moneda
     Private _idpais As String
     Private _activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id

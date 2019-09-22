@@ -73,13 +73,13 @@ Public Class d_Cotizacion_Proveedor
             Dim odCotizacionDetalleSer As New d_CotizacionDetalleSer
             Dim stResultado() As String
             With oe
-                stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Cotizacion_Proveedor_IAE", .Tipooperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Cotizacion_Proveedor_IAE", .Tipooperacion, .PrefijoID,
                         .Id _
                         , .IdCotizacion _
                         , .IdProveedor _
                         , .IndAprobado _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     ).ToString.Split()
 
                 For Each Detalle As e_CotizacionDetalleMat In .lstCotizacionDetalleMat

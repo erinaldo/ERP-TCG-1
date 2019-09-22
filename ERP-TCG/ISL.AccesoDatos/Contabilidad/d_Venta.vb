@@ -113,7 +113,7 @@ Public Class d_Venta
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeVenta
-                sqlhelper.ExecuteNonQuery("CON.Isp_Venta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Venta_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Exportacion _
                         , .Gravado _

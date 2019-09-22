@@ -32,7 +32,8 @@ Public Class e_Venta
     <DataMember()> _
     Public Modificado As Boolean
     '----------------------variables de ayuda-----------------
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoDoc As e_TipoDocumento
     <DataMember()> _
@@ -48,6 +49,8 @@ Public Class e_Venta
     <DataMember()> _
     Public TotalVenta As Double
     '-----------------------------------------------------
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
     Public Event DatoCambiado()
 

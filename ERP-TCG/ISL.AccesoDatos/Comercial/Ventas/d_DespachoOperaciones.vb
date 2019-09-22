@@ -140,7 +140,7 @@ Public Class d_DespachoOperaciones
             With oeDespachoOperaciones
                 IdResultado = bd.ExecuteScalar("[OPE].[Isp_DespachoOperaciones_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdDespacho _
                         , .IdViaje _

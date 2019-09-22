@@ -156,7 +156,7 @@ Public Class frm_ActivoFijo
                                             End With
                                             lstDepreciacionAF.Add(oeDepreciacionAF)
                                         Next
-                                        If olActivoFijo.GuardarDepreciacionPeriodo(lstDepreciacionAF) Then
+                                        If olActivoFijo.GuardarDepreciacionPeriodo(lstDepreciacionAF, gs_PrefijoIdSucursal) Then
                                             MessageBox.Show("Operación realizada con éxito", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         End If
                                     End If

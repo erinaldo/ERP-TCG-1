@@ -33,7 +33,8 @@ Public Class e_AsientoMov_ObligacionFin
     'Public ObligacionFin As New e_ObligacionFinanciera
     '<DataMember()> _
     'Public ObligacionPago As New e_ObligacionPago
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

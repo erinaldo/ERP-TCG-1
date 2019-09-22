@@ -16,7 +16,8 @@ Public Class e_CuentaAsociada
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property IdCuentaAsociada() As String
         Get

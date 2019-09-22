@@ -27,7 +27,8 @@ Public Class e_RegimenSalud
     Public IdEmpresaPS As String
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

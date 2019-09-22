@@ -40,7 +40,8 @@ Public Class e_OcupacionTrabajador
     Public Modificado As Boolean
     <DataMember()> _
     Public Equivale As Integer = 0
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

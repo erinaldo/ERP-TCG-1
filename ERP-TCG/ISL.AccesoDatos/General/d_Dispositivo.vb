@@ -72,7 +72,7 @@ Public Class d_Dispositivo
             With oeDispositivo
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_Dispositivo_IAE]", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                             .Id _
                                             , .IdTipoDispositivo _
                                             , .IdVehiculo _

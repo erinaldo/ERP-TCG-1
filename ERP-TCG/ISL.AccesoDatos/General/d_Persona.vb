@@ -180,7 +180,7 @@ Public Class d_Persona
 
                     id = sqlhelper.ExecuteScalar("PER.Isp_Persona_IAE", .TipoOperacion, _
                      .Id, .Codigo, .ApellidoPaterno, .ApellidoMaterno, .Nombre, _
-                    .oeSexo.Id, .FechaNacimiento, .Dni, .Activo, .UsuarioCreacion, d_DatosConfiguracion.PrefijoID)
+                    .oeSexo.Id, .FechaNacimiento, .Dni, .Activo, .UsuarioCreacion, .PrefijoID)
                     .Id = id
                     If .leDireccionEP IsNot Nothing Then
                         For Each oeDEP As e_Direccion_EmpresaPersona In .leDireccionEP

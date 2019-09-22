@@ -125,7 +125,7 @@ Public Class d_AreaResponsableEvento
             With oeAreaResponsableEvento
                 stResultado = sqlhelper.ExecuteNonQuery("SPC.Isp_AreaResponsableEvento_IAE", _
                                                         .TipoOperacion, _
-                                                        d_DatosConfiguracion.PrefijoID, _
+                                                        .PrefijoID, _
                                                         .Id, _
                                                         .Codigo, _
                                                         .IdEvento, _

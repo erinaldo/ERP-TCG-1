@@ -103,10 +103,10 @@ Public Class l_MontoRuta
         Return MontoRuta
     End Function
 
-    Public Function GuardarMasivo(ByVal leMontoRuta As System.Collections.Generic.List(Of EntidadesWCF.e_MontoRuta)) As Boolean Implements Il_MontoRuta.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leMontoRuta As System.Collections.Generic.List(Of EntidadesWCF.e_MontoRuta), ByVal PrefijoID As String) As Boolean Implements Il_MontoRuta.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
-            Dim id As String = odMontoRuta.UltimoIdInserta
+            Dim id As String = odMontoRuta.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
             For Each montoruta In leMontoRuta

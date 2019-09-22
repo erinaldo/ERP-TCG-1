@@ -33,7 +33,8 @@ Public Class e_PrestamosCuenta
     Public IndCerrado As Integer
     <DataMember()> _
     Public FechaCierre As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> Public oeSaldo As New e_Saldo
     '<DataMember()> Public oeAsiento As New e_Asiento

@@ -297,7 +297,7 @@ Public Class d_Material
                 With oeMaterial
                     stResultado = sqlhelper.ExecuteScalar("STD.Isp_Material_IAE", _
                                               .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                               .Id, _
                                               .Codigo, _
                                               .Nombre, _

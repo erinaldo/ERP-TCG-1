@@ -31,8 +31,10 @@ Public Class e_Detraccion
     Public IdCtaBancoSoles As String
     <DataMember()> _
     Public loDetraccionDet As List(Of e_DetraccionDetalle)
-    <DataMember()> _
+    <DataMember()>
     Public loDocumento As List(Of e_MovimientoDocumento)
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

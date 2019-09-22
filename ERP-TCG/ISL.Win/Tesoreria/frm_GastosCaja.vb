@@ -1596,7 +1596,7 @@ Public Class frm_GastosCaja
             Application.DoEvents()
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
-            If Not olGastoOpe.GuardaListaMasiva(loGastoOperacionMasivo, CtaCtblePublic) Then
+            If Not olGastoOpe.GuardaListaMasiva(loGastoOperacionMasivo, CtaCtblePublic, gs_PrefijoIdSucursal) Then
                 Return False
             End If
             Return True

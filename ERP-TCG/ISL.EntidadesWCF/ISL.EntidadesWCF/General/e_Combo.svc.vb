@@ -10,10 +10,13 @@ Public Class e_Combo
     Private _Descripcion As String
     Private _extras As ArrayList
 
+    Public TipoOperacion As String = ""
+    Public IdEmpresaSis As String = ""
     Public Tipo As Integer = 0
     <DataMember()> _
     Public Fecha As Date = Date.Parse("01/01/1901")
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String
         Get
@@ -57,6 +60,7 @@ Public Class e_Combo
 #End Region
 
 #Region "Constructor"
+
     Sub New()
         Id = ""
         Nombre = ""

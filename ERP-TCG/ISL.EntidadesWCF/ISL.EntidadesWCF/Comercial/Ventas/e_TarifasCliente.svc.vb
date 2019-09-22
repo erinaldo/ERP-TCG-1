@@ -40,8 +40,10 @@ Public Class e_TarifasCliente
     Private _IndMaterial As Boolean
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public e_ListaTarifasCliente As New List(Of e_TarifasCliente)
 

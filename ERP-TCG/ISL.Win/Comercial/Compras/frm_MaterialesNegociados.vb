@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -194,6 +202,7 @@ Public Class frm_MaterialesNegociados
             oeMaterialesNegociados = New e_MaterialesNegociados
             oeMaterialesNegociados.Id = griLista.ActiveRow.Cells("Id").Value
             oeMaterialesNegociados.TipoOperacion = "V"
+            oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
             Select Case MessageBox.Show("Seguro que Desea Caducar el Registro?", "Mensaje del Sistema", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Case Windows.Forms.DialogResult.Yes
                     olMaterialesNegociados.Eliminar(oeMaterialesNegociados)
@@ -220,6 +229,7 @@ Public Class frm_MaterialesNegociados
         oeIGV = olIGV.IGV(fecFecha.Value)
         LimpiarListas()
         oeMaterialesNegociados.TipoOperacion = "I"
+        oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
         cboProveedorL.Enabled = True
         cboMateriales.Value = Nothing
         cboMateriales.Text = String.Empty
@@ -253,6 +263,7 @@ Public Class frm_MaterialesNegociados
             oeMaterialesNegociados = New e_MaterialesNegociados
             oeMaterialesNegociados.TipoOperacion = ""
             oeMaterialesNegociados.Fecha = Me.rangoFechaDesde.Value
+            oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
             Dim ds As DataSet = olMaterialesNegociados.Listar(oeMaterialesNegociados)
             Dim parentCol As DataColumn = ds.Tables(0).Columns("Id")
             Dim childCol As DataColumn = ds.Tables(1).Columns("IdMaterialesNegociados")
@@ -305,6 +316,7 @@ Public Class frm_MaterialesNegociados
             oeMatNegociadosDet = New e_MaterialesNegociadosDet
             oeMaterialesNegociados.TipoOperacion = "2"
             oeMaterialesNegociados.Id = griLista.ActiveRow.Cells("Id").Value
+            oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeMaterialesNegociados = olMaterialesNegociados.Obtener(oeMaterialesNegociados)
             ListarProveedores(cboProveedorL, oeMaterialesNegociados.IdProveedor, 0)
             cboProveedorL.Value = oeMaterialesNegociados.IdProveedor
@@ -332,6 +344,7 @@ Public Class frm_MaterialesNegociados
                 .TipoOperacion = "2"
                 .IdMaterialesNegociados = oeMaterialesNegociados.Id
                 .FechaCreacion = Date.Parse("01/01/1901")
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             loMatNegociadosDet = New List(Of e_MaterialesNegociadosDet)
             loMatNegVig = New List(Of e_MaterialesNegociadosDet)
@@ -367,6 +380,7 @@ Public Class frm_MaterialesNegociados
             oeMaterialesNegociados.UsuarioCreacion = gUsuarioSGI.Id
             oeMaterialesNegociados.Vigente = 1
             oeMaterialesNegociados.FechaCreacion = Date.Now
+            oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMaterialesNegociados.Guardar(oeMaterialesNegociados) Then
                 mensajeEmergente.Confirmacion("La Información ha sido Guardada con Exito")
                 Return True
@@ -418,6 +432,7 @@ Public Class frm_MaterialesNegociados
                         .TipoOperacion = "I"
                         .Vigente = True
                         .FechaInicio = FechaActual
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     loMatNegVig.Add(oeMatNegociadosDet)
                     griMatNegDet.DataSource = loMatNegVig
@@ -429,6 +444,7 @@ Public Class frm_MaterialesNegociados
                     gbeMateriales.Expanded = False
                     Dim flag As Boolean = False
                     For Each oeCot As e_CotizacionDetalleMat In loCotizacionDetalle
+                        oeCot.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If oeCot.Seleccion Then
                             If loMatNegVig.Count > 0 Then
                                 For Each matnegdet As e_MaterialesNegociadosDet In loMatNegVig
@@ -451,6 +467,7 @@ Public Class frm_MaterialesNegociados
                                     .Codigo = oeCot.CodigoMaterial
                                     .TipoOperacion = "I"
                                     .Vigente = True
+                                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                                 End With
                                 loMatNegVig.Add(oeMatNegociadosDet)
                             End If
@@ -490,17 +507,20 @@ Public Class frm_MaterialesNegociados
                 .TipoOperacion = "1"
                 .IdMaterialesNegociados = oeMaterialesNegociados.Id
                 .FechaCreacion = Date.Parse("01/01/1901")
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             loMatNegociadosDet = olMatNegociadosDet.Listar(oeMatNegociadosDet)
             oeMaterialesNegociados.loMaterialesNegociadosDet = loMatNegociadosDet
             oeMatNeg = oeMaterialesNegociados
             oeMaterialesNegociados.TipoOperacion = "V"
+            oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
             olMaterialesNegociados.Guardar(oeMaterialesNegociados)
             oeMatNeg.Id = ""
             oeMatNeg.Vigente = 1
             oeMatNeg.TipoOperacion = "I"
             oeMatNeg.Fecha = Date.Now
             oeMatNeg.FechaCreacion = Date.Now
+            oeMatNeg.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMatNeg.Guardar(oeMatNeg) Then
                 mensajeEmergente.Confirmacion("Contrato Clonado Correctamente " & griLista.ActiveRow.Cells("Proveedor").Value.ToString)
                 Listar()
@@ -579,6 +599,7 @@ Public Class frm_MaterialesNegociados
             oeCotizacionDetalle.FechaFinal = rfFechaCotHasta.Value
             oeCotizacionDetalle.TipoOperacion = "A"
             ValidarFechaDesde_Hasta(rfFechaCotDesde, rfFechaCotHasta)
+            oeCotizacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
             loCotizacionDetalle = olCotizacionDetalle.Listar(oeCotizacionDetalle)
             '------Quitamos los registros de lista de materiales si es que estos ya estan en la lista requerimientos.------
             'If loMatNegociadosDet.Count > 0 Then
@@ -596,6 +617,7 @@ Public Class frm_MaterialesNegociados
         Try
             oeMatNegociadosDet = New e_MaterialesNegociadosDet
             oeMatNegociadosDet = griMatNegDet.ActiveRow.ListObject
+            oeMatNegociadosDet.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeMatNegociadosDet.TipoOperacion = "I" Then
                 loMatNegVig.Remove(oeMatNegociadosDet)
             End If
@@ -626,6 +648,7 @@ Public Class frm_MaterialesNegociados
                     oeMaterialesNegociados.IdProveedor = cboProveedorL.Value
                     oeMaterialesNegociados.TipoOperacion = "1"
                     oeMaterialesNegociados = olMaterialesNegociados.Obtener(oeMaterialesNegociados)
+                    oeMaterialesNegociados.PrefijoID = gs_PrefijoIdSucursal '@0001
                     ListarDetalle()
                 End If
             End If

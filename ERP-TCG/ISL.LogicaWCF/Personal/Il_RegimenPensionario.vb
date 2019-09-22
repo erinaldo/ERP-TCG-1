@@ -17,8 +17,8 @@ Public Interface Il_RegimenPensionario
     <OperationContract()> _
     Function Guardar(ByVal oeRegimenPensionario As e_RegimenPensionario) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leRegimenPensionario As List(Of e_RegimenPensionario)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leRegimenPensionario As List(Of e_RegimenPensionario), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeRegimenPensionario As e_RegimenPensionario) As Boolean

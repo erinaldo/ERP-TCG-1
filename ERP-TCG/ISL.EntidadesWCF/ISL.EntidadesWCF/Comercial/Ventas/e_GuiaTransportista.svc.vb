@@ -49,7 +49,8 @@ Public Class e_GuiaTransportista
     Public IdOperacion As String = ""
     <DataMember()> _
     Public IdMovimientoDoc As String = ""
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public GuiaTransportista As New List(Of e_GuiaTransportista)
     <DataMember()> _

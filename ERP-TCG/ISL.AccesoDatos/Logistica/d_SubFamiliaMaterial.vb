@@ -116,7 +116,7 @@ Public Class d_SubFamiliaMaterial
             With oeSubFamiliaMaterial
                 id = sqlhelper.ExecuteScalar("ALM.Isp_SubFamiliaMaterial_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .Codigo, _
                                           .Nombre, _

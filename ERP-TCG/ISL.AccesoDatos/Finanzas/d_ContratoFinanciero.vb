@@ -112,7 +112,7 @@ Public Class d_ContratoFinanciero
                 With oeContratoFinanciero
                     stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ContratoFinanciero_IAE", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID _
+                                                          .PrefijoID _
                             , .Id _
                             , .Codigo _
                             , .IdTipoDocumento _

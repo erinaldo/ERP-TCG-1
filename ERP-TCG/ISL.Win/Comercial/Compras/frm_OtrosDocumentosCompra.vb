@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -156,6 +164,7 @@ Public Class frm_OtrosDocumentosCompra
         Try
             Inicializar()
             oeMovimientoDocumento.TipoOperacion = "I"
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             IndMaterialServicio = cboMaterialServicio.Value
             MostrarTabs(1, ficFacturaCompra, 1)
             Operacion = "Nuevo"
@@ -265,6 +274,7 @@ Public Class frm_OtrosDocumentosCompra
                         If MessageBox.Show("Esta seguro de eliminar la Factura : " & .ActiveRow.Cells("NombreDocumento").Value.ToString & " ?", _
                                            "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeMovimientoDocumento.TipoOperacion = "E"
+                            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olMovimientoDocumento.Eliminar(oeMovimientoDocumento)
                             Consultar(True)
                         End If
@@ -631,6 +641,7 @@ Public Class frm_OtrosDocumentosCompra
             If CInt(Me.txtNumeroM.Text) = 0 Then Throw New Exception("Numero de Documento Incorrecto. Verificar")
             CargarObjects()
             If oeMovimientoDocumento.TipoOperacion = "I" Then Validar_ExistenciaComprobante()
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                 'If Me.chk_CajaChica.Checked Then
                 '    oePeriodo = New e_Periodo
@@ -826,6 +837,7 @@ Public Class frm_OtrosDocumentosCompra
                         .PrecioUnitarioSinImp = oeMat.Precio
                         .Precio = Math.Round(oeMat.Precio * (1 + oeIGV.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -851,6 +863,7 @@ Public Class frm_OtrosDocumentosCompra
                         .PrecioUnitarioSinImp = oeServicio.Precio
                         .Precio = Math.Round(oeServicio.Precio * (1 + oeIGV.Porcentaje), 4)
                         .Pos = lstDetalleDocumento.Count
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     lstDetalleDocumento.Add(oeDetalleDocumento)
                 Next
@@ -878,6 +891,7 @@ Public Class frm_OtrosDocumentosCompra
                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         For Each oeDD As e_DetalleDocumento In lstDetalleDocumento.Where(Function(item) item.Seleccion)
                             oeDD.TipoOperacion = "E"
+                            oeDD.PrefijoID = gs_PrefijoIdSucursal '@0001
                         Next
                         LLenarDetalleDocumento(lstDetalleDocumento)
                     End If
@@ -1451,6 +1465,7 @@ Public Class frm_OtrosDocumentosCompra
                         ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "2")
                 End Select
                 If IndNuevo Then
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCompraMaterial(oeMovimientoDocumento)
                     If lb_EmisionPerAnt = True Then
                         Guardar_AsientoxExistencia()
@@ -1460,6 +1475,7 @@ Public Class frm_OtrosDocumentosCompra
                 oeMovimientoDocumento.loCtaCtbleCSer = New List(Of e_CtaCtbleCatServicio)
                 oeMovimientoDocumento.loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, Periodo)
                 ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "3")
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olMovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
             End If
         Catch ex As Exception
@@ -1519,7 +1535,9 @@ Public Class frm_OtrosDocumentosCompra
                 If AsientoDet.Debe = "25" Then AsientoDet.Debe = "28"
                 If AsientoDet.Haber = "25" Then AsientoDet.Haber = "28"
                 AsientoDet.IdCuentaContable = oe_CtaAsoc.IdCuentaAsociada
+                AsientoDet.PrefijoID = gs_PrefijoIdSucursal '@0001
             Next
+            Asiento.PrefijoID = gs_PrefijoIdSucursal '@0001
         Next
     End Sub
 
@@ -1543,6 +1561,7 @@ Public Class frm_OtrosDocumentosCompra
             .IndOrigen = oeMovimientoDocumento.IndOrigenContable
             .IdPeriodo = ObtenerPeriodo(Date.Now).Id
             .IdUsuarioCrea = gUsuarioSGI.Id
+            .PrefijoID = gs_PrefijoIdSucursal '@0001
         End With
         Dim linea_c As Integer = 0
         For Each l_ctactble28 In lo_SubFamCtaCtble_28.Where(Function(g) g.NroCtaCtbleExistencias.StartsWith("28")).ToList
@@ -1572,6 +1591,7 @@ Public Class frm_OtrosDocumentosCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1602,6 +1622,7 @@ Public Class frm_OtrosDocumentosCompra
                 End If
                 .BandGuardMasivo = False
                 .TipoOperacion = "I"
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             lst_AsientoMovimiento.Add(oeAsientoMovimiento)
         Next
@@ -1611,6 +1632,8 @@ Public Class frm_OtrosDocumentosCompra
         oeAsiento_MovDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
         oeAsiento_MovDoc = olAsiento_MovDoc.Listar(oeAsiento_MovDoc).Item(0)
         oeAsiento.AsientoMovimiento = lst_AsientoMovimiento
+        oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+        oeAsiento_MovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
         If olAsiento.Guardar(oeAsiento, oeAsiento_MovDoc.IdAsiento) Then
             total_debe = 0.0
             total_haber = 0.0

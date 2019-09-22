@@ -78,7 +78,7 @@ Public Class d_ProcesoServicio
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeProcesoServicio
-                sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoServicio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoServicio_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdServicio _
                         , .IdProcesoNegocio _

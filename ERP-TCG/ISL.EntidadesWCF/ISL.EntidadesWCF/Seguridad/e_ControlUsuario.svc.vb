@@ -1,4 +1,12 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo d_DatosConfiguracion.PrefijoID por PrefijoID
+'=================================================================================================================
+
+
 <DataContract()> _
 Public Class e_ControlUsuario
     Implements Ie_ControlUsuario
@@ -21,8 +29,10 @@ Public Class e_ControlUsuario
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public IdArea As String = ""
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

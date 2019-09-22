@@ -74,7 +74,7 @@ Public Class d_InformeDetrac
             Dim stResultado() As String
             Using TransScope As New TransactionScope()
                 With oeInformeDetrac
-                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_InformeDetrac_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_InformeDetrac_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .NroInforme _
                             , .Total _
@@ -82,7 +82,7 @@ Public Class d_InformeDetrac
                             , .Fecha _
                             , .Activo _
                             , .FechaCreacion _
-                            , .UsuarioCreacion _
+                            , .UsuarioCreacion
                         ).ToString.Split("_")
 
                     For Each oeInformeDet As e_InformeDetrac_Det In .leInformeDetrac

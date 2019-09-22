@@ -89,7 +89,8 @@ Public Class e_GastoOperacion
     Public TipoBus As String = ""
     <DataMember()> _
     Public loAsientoModeloVale As New List(Of e_AsientoModelo)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

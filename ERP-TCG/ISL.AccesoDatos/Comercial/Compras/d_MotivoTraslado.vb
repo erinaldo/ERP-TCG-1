@@ -25,8 +25,8 @@ Public Class d_MotivoTraslado
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[CMP].[Isp_MotivoTraslado_Listar]", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeMotivoTraslado.Id)
+            ds = sqlhelper.ExecuteDataset("[CMP].[Isp_MotivoTraslado_Listar]", "",
+            Left(oeMotivoTraslado.PrefijoID, 1), "", oeMotivoTraslado.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeMotivoTraslado = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -69,7 +69,7 @@ Public Class d_MotivoTraslado
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMotivoTraslado
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

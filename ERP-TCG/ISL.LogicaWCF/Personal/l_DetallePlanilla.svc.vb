@@ -100,10 +100,10 @@ Public Class l_DetallePlanilla
         Return Retorna + ls_Tex
     End Function
 
-    Public Function GuardarMasivo(leDetallePla As List(Of e_DetallePlanilla)) As Boolean Implements Il_DetallePlanilla.GuardarMasivo
+    Public Function GuardarMasivo(leDetallePla As List(Of e_DetallePlanilla), ByVal PrefijoID As String) As Boolean Implements Il_DetallePlanilla.GuardarMasivo
         Try
             Dim dtPla As Data.DataTable = CrearDT()
-            Dim id As String = odDetallePlanilla.UltimoIdInserta
+            Dim id As String = odDetallePlanilla.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

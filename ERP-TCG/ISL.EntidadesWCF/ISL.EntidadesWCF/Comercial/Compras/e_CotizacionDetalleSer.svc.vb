@@ -23,7 +23,8 @@ Public Class e_CotizacionDetalleSer
     Public Modificado As Boolean
     <DataMember()> _
     Public Tipo As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

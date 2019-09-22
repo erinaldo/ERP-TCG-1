@@ -62,7 +62,7 @@ Public Class d_CuentaItemGasto
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaItemGasto
                 sqlhelper.ExecuteNonQuery("CON.ISP_CuentaItemGasto_IAE", "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .IdCuentaContable _
                                         , .IdItemGasto _

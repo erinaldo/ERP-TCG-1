@@ -77,7 +77,7 @@ Public Class d_KmMack
                 With oeKmMack
                     stResultado = bd.ExecuteScalar("[MAN].[Isp_KmMack_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .Codigo _
                             , .IdEstado _

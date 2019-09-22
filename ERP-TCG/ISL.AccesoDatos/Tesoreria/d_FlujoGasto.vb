@@ -135,7 +135,7 @@ Public Class d_FlujoGasto
                                                 .Nombre, _
                                                 .Abreviatura, _
                                                 .Activo, _
-                                                d_DatosConfiguracion.PrefijoID, _
+                                                .PrefijoID, _
                                                 Date.Now, _
                                                 .UsuarioCreacion, _
                                                 .IdItemGasto, _

@@ -19,7 +19,8 @@ Public Class e_AccidenteFoto
     Public Event DatoCambiado()
 
     'Private convert As Microsoft.
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

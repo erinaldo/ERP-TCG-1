@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -1443,7 +1451,8 @@ Public Class frm_Requerimiento
                     If oeRequerimiento.IdReferencia.Length > 0 Then
                         oeMaterialAlmacen.IdCentro = oeRequerimiento.IdReferencia.Substring(0, 3)
                     Else
-                        oeMaterialAlmacen.IdCentro = Prefijo.PrefijoID
+                        'oeMaterialAlmacen.IdCentro = Prefijo.PrefijoID '@0001
+                        oeMaterialAlmacen.IdCentro = gs_PrefijoIdSucursal '@0001
                     End If
                 Else
                     oeMaterialAlmacen.IdCentro = cboCentro.Value
@@ -2581,7 +2590,8 @@ Public Class frm_Requerimiento
             cboAreaL.Value = oeArea.Id
             LlenaComboCategoriaServicios()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
-            cboCentro.Value = Prefijo.PrefijoID
+            'cboCentro.Value = Prefijo.PrefijoID '@0001
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES LOGISTICA") Then
                 cboCentro.Enabled = True
             Else

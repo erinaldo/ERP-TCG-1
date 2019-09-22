@@ -78,7 +78,7 @@ Public Class d_DetalleAporteDescuento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _id As String
             With oeDetalleAporteDescuento
-                _id = sqlhelper.ExecuteScalar("PER.Isp_DetalleAporteDescuento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_DetalleAporteDescuento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAporteDescuento _
                         , .UnidadCalculo _

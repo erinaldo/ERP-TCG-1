@@ -30,8 +30,8 @@ Public Class d_LimiteCredito
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.Isp_LimiteCredito_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeLimiteCredito.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.Isp_LimiteCredito_Listar", "",
+            Left(oeLimiteCredito.PrefijoID, 1), "", oeLimiteCredito.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeLimiteCredito = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -48,7 +48,7 @@ Public Class d_LimiteCredito
             Dim ds As DataSet
             With oeLimiteCredito
                 ds = sqlhelper.ExecuteDataset("FIN.Isp_LimiteCredito_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdEmpresaBanco _
                         , .IdTipoDocumento _
@@ -78,7 +78,7 @@ Public Class d_LimiteCredito
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLimiteCredito
-                sqlhelper.ExecuteNonQuery("FIN.Isp_LimiteCredito_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_LimiteCredito_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdEmpresaBanco _
                         , .IdTipoDocumento _

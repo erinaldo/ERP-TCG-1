@@ -118,7 +118,7 @@ Public Class d_PrestamoDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oePrestamoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_PrestamoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_PrestamoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPrestamo _
                         , .NroCuota _

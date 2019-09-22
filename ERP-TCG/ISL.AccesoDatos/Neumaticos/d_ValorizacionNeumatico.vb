@@ -71,7 +71,7 @@ Public Class d_ValorizacionNeumatico
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeValorizacionNeumatico
-                    stResultado = sqlhelper.ExecuteScalar("NEU.Isp_ValorizacionNeumatico_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("NEU.Isp_ValorizacionNeumatico_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Fecha _
                             , .ValorTotalDolares _

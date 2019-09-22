@@ -35,7 +35,7 @@ Public Class d_OrdenCmp_OrdenTrb
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenCmp_OrdenTrb
-                sqlhelper.ExecuteNonQuery("CMP.Isp_OC_OT_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_OC_OT_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdOrdenCompra _
                         , .IdOrdenTrabajo _

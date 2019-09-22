@@ -26,7 +26,8 @@ Public Class e_RutaPeaje
     Public Property FechaModificacion() As Date
     <DataMember()>
      Public Property Activo() As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

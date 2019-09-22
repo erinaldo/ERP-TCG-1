@@ -70,7 +70,7 @@ Public Class d_CuentaPorCobrarDetalle
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaPorCobrarDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaPorCobrarDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaPorCobrarDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuentaPorCobrar _
                         , .Concepto _

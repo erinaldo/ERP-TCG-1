@@ -17,12 +17,12 @@ Public Class l_RecargaPeaje
         End Try
     End Function
 
-    Public Function GuardarMasivo(ListaRecargaPeaje As List(Of e_RecargaPeaje)) As Boolean Implements Il_RecargaPeaje.GuardarMasivo
+    Public Function GuardarMasivo(ListaRecargaPeaje As List(Of e_RecargaPeaje), ByVal PrefijoID As String) As Boolean Implements Il_RecargaPeaje.GuardarMasivo
         Try
             odRecargaPeaje = New d_RecargaPeaje
             Dim XML As New StringBuilder
             XML.AppendLine("<DETALLES>")
-            Dim Id As String = odRecargaPeaje.IdInsertar()
+            Dim Id As String = odRecargaPeaje.IdInsertar(PrefijoID)
             Dim lsPrefijo As String = Left(Id, 3)
             Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
             For Each _Movimiento As e_RecargaPeaje In ListaRecargaPeaje
@@ -43,7 +43,7 @@ Public Class l_RecargaPeaje
                 lsNumero += 1
             Next
             XML.AppendLine("</DETALLES>")
-            Return odRecargaPeaje.GuardarMasivo(XML.ToString)
+            Return odRecargaPeaje.GuardarMasivo(XML.ToString, PrefijoID)
         Catch ex As Exception
             Throw ex
         End Try

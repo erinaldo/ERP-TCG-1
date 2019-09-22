@@ -10,6 +10,9 @@ Public Class e_TipoUnidadMedida
     Private _Activo As Boolean
     Private _Modificado As Boolean = False
     Private _TipoOperacion As String
+
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

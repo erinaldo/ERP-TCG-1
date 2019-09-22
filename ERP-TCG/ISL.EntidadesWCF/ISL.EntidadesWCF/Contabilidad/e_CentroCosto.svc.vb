@@ -25,7 +25,8 @@ Public Class e_CentroCosto
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public ListUbicaciones As New List(Of e_CentroCostoUbicaciones)
 

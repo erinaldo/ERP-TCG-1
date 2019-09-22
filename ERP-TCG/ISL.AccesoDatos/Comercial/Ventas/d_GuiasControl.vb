@@ -81,9 +81,9 @@ Public Class d_GuiasControl
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeGuiasControl
-                    stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiasControl_IAE]", _
-                                                 .TipoOperacion, _
-                                                d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiasControl_IAE]",
+                                                 .TipoOperacion,
+                                                .PrefijoID,
                                                 .Id _
                                                 , .IdVehiculo _
                                                 , .Serie _
@@ -187,9 +187,9 @@ Public Class d_GuiasControl
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiasTalonarios
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiasTalonarios_IAE]", _
-                                           .TipoOperacion, _
-                                           d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiasTalonarios_IAE]",
+                                           .TipoOperacion,
+                                           .PrefijoID,
                                             .Id _
                                             , .IdGuiasControl _
                                             , .Inicial _

@@ -74,7 +74,7 @@ Public Class d_MontoFlujoDiario_Det
                         , .MontoPromedio _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

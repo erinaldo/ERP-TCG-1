@@ -14,7 +14,8 @@ Public Class e_OCMaterial_OSMaterial
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

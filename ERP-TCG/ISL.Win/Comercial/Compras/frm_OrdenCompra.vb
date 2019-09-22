@@ -1,4 +1,13 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -137,7 +146,7 @@ Public Class frm_OrdenCompra
 
     Dim idMovimientoInventario As String = "1CH000000002" 'ORDEN DE INGRESO POR COMPRA
     Dim idTipoOrden As String = "1CH000000001" 'Tipo de orden: De ingreso.
-    'Dim idProveedor As String = "1CH000006026" 'INDUAMERICA SERVICIOS LOGISTICOS S.A.C.
+
     'Dim idMoneda As String = "1CH01" 'Moneda en soles
     Dim oeOrdenIngreso As New e_Orden, olOrdenIngreso As New l_Orden
     Dim olDetalleOrdenIngreso As New l_OrdenMaterial, oeDetalleOrdenIngreso As New e_OrdenMaterial
@@ -360,7 +369,7 @@ Public Class frm_OrdenCompra
                         If MessageBox.Show("Esta seguro de eliminar la orden de compra N°: " & _
                                  Trim(.ActiveRow.Cells("NroOrden").Value.ToString) & " ?", _
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-
+                            oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oeOrdenCompra.TipoOperacion = "E"
                             olOrdenCompra.Eliminar(oeOrdenCompra)
                             Consultar(True)
@@ -545,6 +554,7 @@ Public Class frm_OrdenCompra
         cheAutoAprobar.Checked = 1
         gbeListadoMateriales.Expanded = 0
         'gbeListadoServicios.Expanded = 0
+        oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
     End Sub
 
     Private Sub Control_Bloqueo()
@@ -1086,6 +1096,7 @@ Public Class frm_OrdenCompra
                     oeDetalleOrdenIngreso.UnidadMedida = obj.UnidadMedida
                     oeDetalleOrdenIngreso.ValorVenta = oeDetalleOrdenIngreso.PrecioUnitario * oeDetalleOrdenIngreso.CantidadMaterial
                     TotalAtender += oeDetalleOrdenIngreso.ValorVenta
+                    oeDetalleOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                     llDetalleOrdenIngreso.Add(oeDetalleOrdenIngreso)
                 End If
             Next
@@ -1226,6 +1237,7 @@ Public Class frm_OrdenCompra
                     oeOrdenCompra = New e_OrdenCompra
                     oeOrdenCompra.Id = griListaOrdenCompra.ActiveRow.Cells("Id").Value
                     oeOrdenCompra.TipoOperacion = "G"
+                    oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOrdenCompra.Guardar(oeOrdenCompra) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                         Consultar(True)
@@ -1273,6 +1285,7 @@ Public Class frm_OrdenCompra
                 llDetalleOrdenIngreso = New List(Of e_OrdenMaterial)
                 cantTotalAtender = 0
                 TotalAtender = 0
+                oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If Not olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario)) Then
                     Return False
                 End If
@@ -1411,6 +1424,7 @@ Public Class frm_OrdenCompra
                     End If
                 End If
             End If
+            oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olOrdenCompra.Guardar(oeOrdenCompra) Then
                 Return False
             End If
@@ -1726,6 +1740,7 @@ Public Class frm_OrdenCompra
                 .PrecioUnitarioDolaresSinImp = Math.Round(.PrecioUnitarioSolesSinImp / cambioMon, 4)
                 .TipoOrdenCompra = "RM"
                 cont = MaximaPosicionMaterial() : cont += 1 : .Pos = cont
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraMaterial.Add(oeOrdenCompraMaterial)
 
@@ -1800,6 +1815,7 @@ Public Class frm_OrdenCompra
                 '.CodigoNombre = oeMat.CodigoNombre
                 .TipoOrdenCompra = "M"
                 cont = MaximaPosicionMaterial() : cont += 1 : .Pos = cont
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraMaterial.Add(oeOrdenCompraMaterial)
         Next
@@ -1840,6 +1856,7 @@ Public Class frm_OrdenCompra
                 .IdCotizacionDetalle = oeCotDet.Id
                 .TipoOrdenCompra = "C"
                 cont = MaximaPosicionMaterial() : cont += 1 : .Pos = cont
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraMaterial.Add(oeOrdenCompraMaterial)
         Next
@@ -2008,6 +2025,7 @@ Public Class frm_OrdenCompra
 
     Public Sub InicializaOrdenesOCporOS()
         oeOrdenCompra.TipoOperacion = "I"
+        oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
         TipoOC = "MATERIAL"
         Operacion = "RegistrarOCporOS"
         oeOrdenCompra.IndicadorConsignacion = True
@@ -2063,6 +2081,7 @@ Public Class frm_OrdenCompra
                         .Area = oeArea.Nombre 'goeUsuario.Area
                         .IdOrdenSalidaMaterial = obj.Id
                         cont = MaximaPosicionMaterial() : cont += 1 : .Pos = cont
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                         llOrdenCompraMaterial.Add(oeOrdenCompraMaterial)
                     End If
                 End With
@@ -2072,6 +2091,7 @@ Public Class frm_OrdenCompra
                     If ordmat.IdMaterial = ordcommat.IdMaterial Then
                         oeOCMaterial_OSMaterial = New e_OCMaterial_OSMaterial
                         oeOCMaterial_OSMaterial.IdOrdenAsociada = ordmat.Id
+                        oeOCMaterial_OSMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                         ordcommat.ListaOCMaterial_OSMaterial.Add(oeOCMaterial_OSMaterial)
                     End If
                 Next
@@ -2238,6 +2258,7 @@ Public Class frm_OrdenCompra
             End If
             oeOrdenIngreso.lstInventario = New List(Of e_Inventario)
             oeOrdenIngreso.lstInventario.AddRange(Inventario(oeOrdenIngreso.lstOrdenMaterial))
+            oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
             olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario)) 'Cambiamos el estado de la orden de ingreso de GENERADA a TERMINADA
             Dim IdOrdIngreso As String = oeOrdenIngreso.Id
             'listaRegistroInventario = New List(Of e_RegistroInventario)
@@ -2341,6 +2362,7 @@ Public Class frm_OrdenCompra
                         .ValorUnitario = Math.Round(.ValorUnitario * txtTC.Value, 4)
                     End If
                     .Usuario = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeRegistroInventario = New e_RegistroInventario
                 With oeRegistroInventario
@@ -2351,6 +2373,7 @@ Public Class frm_OrdenCompra
                     .IdUnidadMedida = oe.IdUnidadMedida
                     .Cantidad = oe.CantidadMaterial
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeInventario.oeRegistroInventario = New e_RegistroInventario
                 oeInventario.oeRegistroInventario = oeRegistroInventario
@@ -2505,6 +2528,7 @@ Public Class frm_OrdenCompra
             End If
             oeOrdCom.Id = oeOrdenCompra.Id
             oeOrdCom.TipoOperacion = "O"
+            oeOrdCom.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olOrdCom.Guardar1(oeOrdCom) Then
                 mensajeEmergente.Confirmacion("Se Termino la Orden: " & txtNumeroOrden.Text & " Correctamente", True)
                 btnTerminarOC.Enabled = False
@@ -2533,6 +2557,7 @@ Public Class frm_OrdenCompra
                         .TipoOperacion = "A"
                         .Id = oeOrdCom.IdTipoOrdenCompra
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeOrdCom.FechaOrden)
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
@@ -2553,6 +2578,7 @@ Public Class frm_OrdenCompra
                 .IdRegistro = griListaOrdenCompra.ActiveRow.Cells("Id").Value()
                 .Referencia = "OrdenCompra"
                 .UsuarioEdita = gUsuarioSGI.Id
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
         End If
@@ -2607,6 +2633,7 @@ Public Class frm_OrdenCompra
                 .PrecioUnitarioDolaresSinImp = Math.Round(oeMat.Precio / cambioMon, 4)
                 .TipoOrdenCompra = "M"
                 cont = MaximaPosicionMaterial() : cont += 1 : .Pos = cont
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             llOrdenCompraMaterial.Add(oeOrdenCompraMaterial)
             EjecutarCalculosComunes()
@@ -3638,6 +3665,7 @@ Public Class frm_OrdenCompra
                 oeRequerimientoMaterial.Activo = True
                 oeRequerimientoMaterial.Id = .ActiveRow.Cells("Id").Value.ToString()
                 oeRequerimientoMaterial.IndicadorAprobacion = 0
+                oeRequerimientoMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRequerimientoMaterial.Guardar(oeRequerimientoMaterial)
                 llenaGrillaReqMat(True)
             End With

@@ -19,8 +19,10 @@ Public Class e_MontoFlujoDiario_Det
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

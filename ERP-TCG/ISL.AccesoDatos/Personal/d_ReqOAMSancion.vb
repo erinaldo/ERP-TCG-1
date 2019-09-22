@@ -61,7 +61,7 @@ Public Class d_ReqOAMSancion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeReqOAMSancion
-                sqlhelper.ExecuteNonQuery("[PER].[Isp_Req_OAM_Sancion_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[PER].[Isp_Req_OAM_Sancion_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRequerimientoMaterial _
                         , .IdOrdenAsignacionMaterial _

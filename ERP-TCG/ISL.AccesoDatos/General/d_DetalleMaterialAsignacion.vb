@@ -100,7 +100,7 @@ Public Class d_DetalleMaterialAsignacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleMaterialAsignacion
-                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleMaterialAsignacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleMaterialAsignacion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRequerimientoMaterial _
                         , .IdMarca _

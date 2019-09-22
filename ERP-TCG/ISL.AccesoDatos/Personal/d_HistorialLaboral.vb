@@ -100,7 +100,7 @@ Public Class d_HistorialLaboral
         Try
             With oeHistorialLaboral
                 sqlhelper.ExecuteNonQuery("PER.ISP_oeHistorialLaboral_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .IdTrabajador, .FechaIngreso, .FechaCese, .IdMotivoCese, .Observaciones, .Activo, .UsuarioCreacion)
+                .PrefijoID, .Id, .IdTrabajador, .FechaIngreso, .FechaCese, .IdMotivoCese, .Observaciones, .Activo, .UsuarioCreacion)
             End With
             Return True
         Catch ex As Exception

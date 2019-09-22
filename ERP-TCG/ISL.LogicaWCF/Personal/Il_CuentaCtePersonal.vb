@@ -17,8 +17,8 @@ Public Interface Il_CuentaCtePersonal
     <OperationContract()> _
     Function Guardar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal oeCuentaCtePersonal As List(Of e_CuentaCtePersonal)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal oeCuentaCtePersonal As List(Of e_CuentaCtePersonal), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean

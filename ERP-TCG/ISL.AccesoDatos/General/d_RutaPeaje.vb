@@ -73,7 +73,7 @@ Public Class d_RutaPeaje
             With oeRutaPeaje
                 sqlhelper.ExecuteNonQuery("STD.Isp_RutaPeaje_IAE", _
                                           .TipoOperacion _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , .Id _
                                             , .IdRuta _
                                             , .IdPeaje _

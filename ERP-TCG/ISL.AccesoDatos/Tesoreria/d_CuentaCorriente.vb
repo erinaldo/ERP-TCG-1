@@ -98,7 +98,7 @@ Public Class d_CuentaCorriente
                                          , .Usuario _
                                          , .IdEstado _
                                          , .Activo _
-                                         , d_DatosConfiguracion.PrefijoID _
+                                         , .PrefijoID _
                                          , .Tipo _
                                          , .TotalCargo _
                                          , .TotalAbono _

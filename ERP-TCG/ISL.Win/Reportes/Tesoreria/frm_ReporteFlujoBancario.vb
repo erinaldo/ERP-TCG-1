@@ -62,7 +62,7 @@ Public Class frm_ReporteFlujoBancario
         Try
             If ValidarLista(loReporteFlujoBanco) Then
                 olReporteFlujoBanco = New l_ReporteFlujoBanco
-                If olReporteFlujoBanco.Guardar(loReporteFlujoBanco, cboMes.Value) Then
+                If olReporteFlujoBanco.Guardar(loReporteFlujoBanco, cboMes.Value, gs_PrefijoIdSucursal) Then
                     mensajeEmergente.Confirmacion("La Informacion se ha Guardado Correctamente", True)
                     loReporteFlujoBanco = New List(Of e_ReporteFlujoBanco)
                     griListaMov.DataSource = loReporteFlujoBanco

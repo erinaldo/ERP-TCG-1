@@ -73,9 +73,9 @@ Public Class d_BolsaViaje
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBolsaViaje
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_BolsaViaje_IAE]", _
-                                          "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_BolsaViaje_IAE]",
+                                          "I",
+                                          .PrefijoID,
                                             .Id _
                                             , .IdRuta _
                                             , .TipoVehiculo _

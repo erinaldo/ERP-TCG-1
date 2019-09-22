@@ -27,7 +27,8 @@ Public Class e_DocumentoVehiculoDetalle
     Public TipoOperacion As String
     Public Modificado As Boolean
     Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String
         Get

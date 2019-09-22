@@ -37,6 +37,8 @@ Public Class e_AplicaDetraccion
     Public _FechaFin As Date
     <DataMember()> _
     Public _IndAplicado As Integer
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

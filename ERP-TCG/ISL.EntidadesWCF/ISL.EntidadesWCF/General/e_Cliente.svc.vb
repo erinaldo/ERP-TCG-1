@@ -32,7 +32,8 @@ Public Class e_Cliente
     Public Equivale As Integer
     <DataMember()> _
     Public IndRelacionada As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

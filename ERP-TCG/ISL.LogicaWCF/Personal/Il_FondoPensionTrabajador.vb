@@ -17,8 +17,8 @@ Public Interface Il_FondoPensionTrabajador
     <OperationContract()> _
     Function Guardar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leFondoPensionTrabajador As List(Of e_FondoPensionTrabajador)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leFondoPensionTrabajador As List(Of e_FondoPensionTrabajador), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As Boolean

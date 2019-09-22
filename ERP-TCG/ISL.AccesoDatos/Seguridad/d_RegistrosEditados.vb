@@ -70,7 +70,7 @@ Public Class d_RegistrosEditados
             With oeRegistrosEditados
                 Return sqlhelper.ExecuteScalar("[SGD].[RegistrosEditados_IAE]", _
                                                 .TipoOperacion, _
-                                                d_DatosConfiguracion.PrefijoID, _
+                                                .PrefijoID, _
                                                 .Id _
                                                 , .IdTabla _
                                                 , .IdRegistro _

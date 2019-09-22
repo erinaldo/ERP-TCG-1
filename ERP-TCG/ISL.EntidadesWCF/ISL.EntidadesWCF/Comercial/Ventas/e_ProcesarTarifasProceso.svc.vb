@@ -36,6 +36,9 @@ Public Class e_ProcesarTarifasProceso
     Private _activo As Boolean
     Private _guardar As String
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
+
     <DataMember()> _
     Public Property Id() As String
         Get

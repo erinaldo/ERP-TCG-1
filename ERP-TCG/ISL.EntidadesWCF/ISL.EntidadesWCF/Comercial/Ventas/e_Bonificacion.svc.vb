@@ -13,6 +13,10 @@ Public Class e_Bonificacion
     Private _IndBonificacion As Integer
     Private _Observacion As String
     Private _Activo As Boolean
+
+    <DataMember()>
+    Public PrefijoID As String = ""
+
 #End Region
 
 #Region "Propiedades"

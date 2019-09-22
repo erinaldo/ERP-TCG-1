@@ -68,7 +68,7 @@ Public Class d_CuentaAsociada
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeCuentaAsociada
-                sqlhelper.ExecuteNonQuery("CON.ISP_CuentaAsociada_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.ISP_CuentaAsociada_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuentaContable _
                         , .DebeHaber _

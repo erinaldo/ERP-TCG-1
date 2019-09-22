@@ -104,7 +104,7 @@ Public Class d_Moneda
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeMoneda
-                sqlhelper.ExecuteNonQuery("CON.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, .Id, _
+                sqlhelper.ExecuteNonQuery("CON.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, .Id, _
                         .Codigo, .Nombre, .Abreviatura, .IdPais, .Activo)
             End With
             Return True

@@ -112,7 +112,7 @@ Public Class d_OcupacionTrabajador
                         , .IndRuta _
                         , .FechaEjecutaCese _
                         , .UsuarioEjecutaCese _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

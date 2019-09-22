@@ -29,7 +29,8 @@ Public Class e_PersonaDocumento
     Public leHistorial As New List(Of e_PersonaDocumento)
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

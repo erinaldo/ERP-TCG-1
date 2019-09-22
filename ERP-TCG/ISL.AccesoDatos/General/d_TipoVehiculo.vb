@@ -83,7 +83,7 @@ Public Class d_TipoVehiculo
             sqlhelper = New SqlHelper
             With oeTipoVehiculo
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoVehiculo_IAE]", .TipoOperacion, _
-                                                d_DatosConfiguracion.PrefijoID, _
+                                                .PrefijoID, _
                                                 .Id, _
                                                 .Codigo, _
                                                 .Nombre, _

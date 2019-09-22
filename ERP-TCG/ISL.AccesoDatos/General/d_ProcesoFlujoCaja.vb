@@ -82,7 +82,7 @@ Public Class d_ProcesoFlujoCaja
                 For Each Lista As e_ProcesoFlujoCaja In oeProcesoFlujoCaja.ListaProcesoFlujoCaja
                     If oeProcesoFlujoCaja.ListaProcesoFlujoCaja IsNot Nothing Then
                         With Lista
-                            sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoFlujoCaja_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                            sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoFlujoCaja_IAE", .TipoOperacion, .PrefijoID, _
                                     .Id _
                                     , .IdProcesoNegocio _
                                     , .IdFlujoCaja _

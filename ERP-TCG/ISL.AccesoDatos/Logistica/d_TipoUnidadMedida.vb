@@ -116,7 +116,7 @@ Public Class d_TipoUnidadMedida
             With oeTipoUnidadMedida
                 sqlhelper.ExecuteNonQuery("ALM.Isp_TipoUnidadMedida_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID _
+                                          .PrefijoID _
                                           , .Id, _
                                           .Codigo, _
                                           .Nombre, _

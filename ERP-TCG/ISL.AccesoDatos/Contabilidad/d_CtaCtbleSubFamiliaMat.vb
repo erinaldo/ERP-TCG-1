@@ -70,7 +70,7 @@ Public Class d_CtaCtbleSubFamiliaMat
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCtaCtbleSubFamiliaMat
-                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_SubFamiliaMat_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_SubFamiliaMat_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdSubFamilia _
                         , .IdCtaCtbleExistencias _

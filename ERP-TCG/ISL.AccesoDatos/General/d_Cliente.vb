@@ -179,7 +179,7 @@ Public Class d_Cliente
                         , .Comisionista _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True
@@ -213,7 +213,7 @@ Public Class d_Cliente
                         , .Comisionista _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return codigo

@@ -17,8 +17,8 @@ Public Interface Il_DetallePlanilla
     <OperationContract()> _
     Function Guardar(ByVal oeDetallePlanilla As e_DetallePlanilla) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leDetallePlanilla As List(Of e_DetallePlanilla)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leDetallePlanilla As List(Of e_DetallePlanilla), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeDetallePlanilla As e_DetallePlanilla) As Boolean

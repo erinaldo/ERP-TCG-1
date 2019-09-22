@@ -127,7 +127,7 @@ Public Class d_ProcesoTipoDocumento
         Try
             With oeProcesoTipoDocumento
                 sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoTipoDocumento_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .IdTipoDocumento, .IdProceso, .Activo)
+                .PrefijoID, .Id, .IdTipoDocumento, .IdProceso, .Activo)
             End With
             Return True
         Catch ex As Exception

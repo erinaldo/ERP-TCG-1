@@ -74,7 +74,7 @@ Public Class d_CuotaDocVeh_Movimiento
                 With oeCuotaDocVeh_Movimiento
                     stResultado = sqlhelper.ExecuteScalar("STD.Isp_CuotaDocumentoVeh_Movimiento_IAE", _
                                               .TipoOperacion _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , .Id _
                                             , .Tipo _
                                             , .Glosa _

@@ -33,7 +33,8 @@ Public Class e_Gratificacion
     Public leDetalle As List(Of e_DetalleGratificacion)
     <DataMember()> _
     Public dtDetalle As DataTable
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

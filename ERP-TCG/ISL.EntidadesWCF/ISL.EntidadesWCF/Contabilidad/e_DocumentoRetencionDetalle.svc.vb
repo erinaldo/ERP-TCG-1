@@ -22,8 +22,10 @@ Public Class e_DocumentoRetencionDetalle
     Private _usuariomodifica As String
     Private _activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

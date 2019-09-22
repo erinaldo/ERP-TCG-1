@@ -94,7 +94,7 @@ Public Class d_ActividadNegocio
                         , .Abreviatura _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

@@ -20,7 +20,9 @@ Public Class e_AlmacenMermas
     Public TipoOperacion As String
     <DataMember()> _
     Public IdCentro As String
-    
+    <DataMember()>
+    Public PrefijoID As String = ""
+
     <DataMember()> _
     Public Property Id() As String
         Get

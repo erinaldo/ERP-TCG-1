@@ -100,7 +100,7 @@ Public Class d_Despacho
                 With oeDespacho
                     IdResultado = bd.ExecuteScalar("[OPE].[Isp_Despacho_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .IdCentro _
                             , .Codigo _
@@ -112,7 +112,7 @@ Public Class d_Despacho
                             , .Glosa _
                             , .Observacion _
                             , .UsuarioCrea _
-                            , .Activo _
+                            , .Activo
                         ).ToString()
                     .Id = IdResultado
                     For Each DespachoOperaciones As e_DespachoOperaciones In .ListDespachoOperaciones

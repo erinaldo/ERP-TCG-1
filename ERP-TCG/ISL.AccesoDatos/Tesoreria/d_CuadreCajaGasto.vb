@@ -60,7 +60,7 @@ Public Class d_CuadreCajaGasto
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuadreCajaGasto
-                sqlhelper.ExecuteNonQuery("[TES].[Isp_CuadreCajaGasto_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[TES].[Isp_CuadreCajaGasto_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuadreCaja _
                         , .IdTipoDocumento _

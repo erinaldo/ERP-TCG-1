@@ -89,7 +89,7 @@ Public Class d_ComprobanteElectronicoBath
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 With oeComprobanteElectronicoBath
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_ComprobanteElectronicoBath_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_ComprobanteElectronicoBath_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .TipoReferencia _
                             , .FechaEnvio _

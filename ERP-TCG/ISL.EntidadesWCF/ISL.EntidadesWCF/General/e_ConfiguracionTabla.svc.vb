@@ -29,8 +29,10 @@ Public Class e_ConfiguracionTabla
     Public leColumna As New List(Of e_ConfiguracionColumna)
     <DataMember()> _
     Public leDato As New List(Of e_ConfiguracionDato)
-    <DataMember()> _
+    <DataMember()>
     Public dsCDato As New Data.DataTable
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

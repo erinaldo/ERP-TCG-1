@@ -100,7 +100,7 @@ Public Class frm_RegimenPensionario
                 Case 2
                     Dim _leAux = leDatosImportados.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        olRegimenPensionario.GuardarMasivo(_leAux)
+                        olRegimenPensionario.GuardarMasivo(_leAux, gs_PrefijoIdSucursal)
                         mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
                     Else
                         Throw New Exception("No hay datos para guardar")

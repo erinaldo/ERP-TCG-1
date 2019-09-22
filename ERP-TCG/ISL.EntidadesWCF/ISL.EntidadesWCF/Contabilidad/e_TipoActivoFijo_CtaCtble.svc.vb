@@ -7,6 +7,8 @@ Public Class e_TipoActivoFijo_CtaCtble
 
     Public TipoOperacion As String = String.Empty
     Public IndTipoVehiculo As Boolean = False
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

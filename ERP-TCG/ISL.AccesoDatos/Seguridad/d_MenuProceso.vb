@@ -120,7 +120,7 @@ Public Class d_MenuProceso
                           , .Protegido _
                           , .Explorador _
                           , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

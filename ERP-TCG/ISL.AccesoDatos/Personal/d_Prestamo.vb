@@ -174,7 +174,7 @@ Public Class d_Prestamo
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String
             With oePrestamo
-                id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .Glosa _
@@ -328,7 +328,7 @@ Public Class d_Prestamo
                 Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim _id As String = ""
                 With oePrestamo
-                    _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .Glosa _
@@ -370,7 +370,7 @@ Public Class d_Prestamo
                     Next
                 End With
                 'With oePrestTrans
-                '    _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                '    _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
                 '       .Id _
                 '       , .IdTrabajador _
                 '       , .Glosa _

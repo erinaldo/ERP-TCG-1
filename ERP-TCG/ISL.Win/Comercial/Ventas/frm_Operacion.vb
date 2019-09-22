@@ -1,4 +1,13 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -803,8 +812,9 @@ Public Class frm_Operacion
     Private Sub frm_Operacion_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
             gf_AsignarEventoSeleccionarTexto(Me)
-            olPrefijo = New l_Configuracion
-            PrefijoId = olPrefijo.PrefijoID
+            'olPrefijo = New l_Configuracion '@0001
+            'PrefijoId = olPrefijo.PrefijoID '@0001
+            PrefijoId = gs_PrefijoIdSucursal '@0001
             FechaServidor = ObtenerFechaServidor()
             ColorControles()
             fecViaje.Value = FechaServidor.Date

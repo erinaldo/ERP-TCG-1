@@ -84,7 +84,7 @@ Public Class d_ValesRendir
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeValesRendir
-                id = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .Glosa _
@@ -116,7 +116,7 @@ Public Class d_ValesRendir
             Dim id2 As String = ""
             Using TransScope As New TransactionScope()
                 With oeValesRendir
-                    id1 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id1 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTrabajador _
                             , .Glosa _
@@ -136,7 +136,7 @@ Public Class d_ValesRendir
                 End With
                 With oeValesRendido
                     .IdVale = id1
-                    id2 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id2 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTrabajador _
                             , .Glosa _

@@ -30,14 +30,14 @@ Public Class l_Planilla
 
                         Dim dsDetPla As Data.DataTable = olDetallePlanilla.CrearDT
                         Dim rwDetPla As Data.DataRow
-                        Dim _idDetPla As String = odDetallePlanilla.UltimoIdInserta
+                        Dim _idDetPla As String = odDetallePlanilla.UltimoIdInserta(.PrefijoID)
                         Dim _preDetPla As String = Left(_idDetPla, 3)
                         Dim _numDetPla As Integer = CInt(Right(_idDetPla, Len(_idDetPla) - 3))
                         Dim _idAux As String = ""
 
                         Dim dsDetCon As Data.DataTable = olDetalleConcepto.CrearDT
                         Dim rwDetCon As Data.DataRow
-                        Dim _idDetCon As String = odDetalleConcepto.UltimoIdInserta
+                        Dim _idDetCon As String = odDetalleConcepto.UltimoIdInserta(.PrefijoID)
                         Dim _preDetCon As String = Left(_idDetCon, 3)
                         Dim _numDetCon As Integer = CInt(Right(_idDetCon, Len(_idDetCon) - 3))
 

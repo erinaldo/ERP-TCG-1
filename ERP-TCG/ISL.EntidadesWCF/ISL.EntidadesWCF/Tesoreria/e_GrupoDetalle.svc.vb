@@ -46,8 +46,10 @@ Public Class e_GrupoDetalle
     Public Modificado As Boolean
     <DataMember()> _
     Public Equivale As Integer
-    <DataMember()> _
+    <DataMember()>
     Public IdCaja As String = ""
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

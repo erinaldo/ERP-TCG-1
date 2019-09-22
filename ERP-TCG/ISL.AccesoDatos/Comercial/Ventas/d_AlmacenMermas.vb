@@ -70,9 +70,9 @@ Public Class d_AlmacenMermas
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAlmacenMermas
-                sqlhelper.ExecuteNonQuery("OPE.Isp_AlmacenMermas_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_AlmacenMermas_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdIngresoSalidaMermas _
                                             , .IdMaterial _

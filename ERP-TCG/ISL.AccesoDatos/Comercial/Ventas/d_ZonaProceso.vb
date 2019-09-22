@@ -75,9 +75,9 @@ Public Class d_ZonaProceso
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeZonaProceso
-                sqlhelper.ExecuteNonQuery("OPE.Isp_ZonaOperacion_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_ZonaOperacion_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdActividadNegocio _
                                             , .IdCliente _

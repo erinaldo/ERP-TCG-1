@@ -53,7 +53,8 @@ Public Class e_Material
 
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public ListaMaterialCuentaContable As New List(Of e_MaterialCuentaContable)
 

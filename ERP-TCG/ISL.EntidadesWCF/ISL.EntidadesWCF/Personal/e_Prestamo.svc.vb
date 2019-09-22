@@ -41,7 +41,8 @@ Public Class e_Prestamo
     Public _CadenaId As String
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public leDetalle As New List(Of e_PrestamoDetalle)
     <DataMember()> _

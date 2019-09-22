@@ -72,8 +72,10 @@ Public Class e_Demanda
     Public NroDemanda As Integer
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Proceso As String
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeDetalleDemanda As New List(Of e_DemandaDetalle)
     <DataMember()> _

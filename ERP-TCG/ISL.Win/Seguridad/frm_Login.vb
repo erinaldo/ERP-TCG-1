@@ -1,4 +1,13 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports System.Net.Mail
 
@@ -11,7 +20,8 @@ Public Class frm_Login
     Dim olUsuario As l_Usuario
     'Dim oeTrabSeguridad As New e_TrabajadorSeguridad
     'Dim olTrabSeguridad As New l_TrabajadorSeguridad
-
+    Dim oeCombo = New e_Combo '@0001
+    Dim olCombo = New l_Combo '@0001
 #End Region
 
     Public Sub New()
@@ -96,10 +106,11 @@ Public Class frm_Login
         Try
             'Dim Encriptador As New ISL.Encripta.Genera
             'MsgBox(Encriptador.Desencriptar("C47F68340DCC65E21C5D1C5D402A85E3"))
+            LlenaCombos() '@0001
             txtUsuarioR.Text = My.Settings.Usuario
             Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Default
             Dim Prefijo As New l_Configuracion
-            If Prefijo.PrefijoID = "1SI" Then txtPasswordR.Text = "789-+"
+            'If Prefijo.PrefijoID = "1SI" Then txtPasswordR.Text = "789-+" '@0001
             lblFecha.Text = RetornarDia(Date.Now.DayOfWeek) & " " & IIf(CStr(Date.Now.Day).Length = 2, CStr(Date.Now.Day), ("0" & CStr(Date.Now.Day))) & " de " & RetornarMes(Date.Now.Month) & " del " & Date.Now.Year
             Timer1.Start()
         Catch ex As Exception
@@ -127,9 +138,18 @@ Public Class frm_Login
     ''' <remarks></remarks>
     Private Sub Autenticar()
         Try
+            '@0001
+            If cboCentro.Value = "" Then
+                cboCentro.Focus()
+                Throw New Exception("Seleccione SUCURSAL, con relacion al Giro del Negocio.")
+            Else
+                gs_PrefijoIdSucursal = cboCentro.Value
+            End If
+            '@0001
             olUsuario = New l_Usuario
             My.Settings.Usuario = txtUsuarioR.Text
             gUsuarioSGI = olUsuario.Autenticar(txtUsuarioR.Text, txtPasswordR.Text)
+
             If gUsuarioSGI.Autenticado Then
                 If gUsuarioSGI.Controlado > 0 Then
                     Dim oeControlUsuario As New e_ControlUsuario
@@ -137,6 +157,7 @@ Public Class frm_Login
                     oeControlUsuario.IdUsuario = gUsuarioSGI.Id
                     oeControlUsuario.Ipv4 = gUsuarioSGI.ObtenerLoginWindows & "(" & gUsuarioSGI.ObtenerIP & ")"
                     oeControlUsuario.TipoOperacion = "I"
+                    oeControlUsuario.PrefijoId = gs_PrefijoIdSucursal
                     gIdControl = olControlUsuario.Guardar(oeControlUsuario)
                 End If
                 My.Settings.Save()
@@ -193,8 +214,9 @@ Public Class frm_Login
     Private Sub txtPasswordR_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPasswordR.KeyDown
         If e.KeyCode = Keys.Enter Then btnAceptarR.PerformClick()
     End Sub
-
-    Private Sub UltraLabel1_Click(sender As Object, e As EventArgs) Handles UltraLabel1.Click
-
+    '@0001 Inicio
+    Private Sub LlenaCombos()
+        LlenarComboMaestro(cboCentro, CentroPublic, -1)
     End Sub
+    '@0001 Fin
 End Class

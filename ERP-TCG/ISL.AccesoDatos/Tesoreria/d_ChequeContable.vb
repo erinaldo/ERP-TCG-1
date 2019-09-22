@@ -99,7 +99,7 @@ Public Class d_ChequeContable
             With oeChequeContable
                 sqlhelper.ExecuteNonQuery("TES.Isp_ChequeContable_IAE", .TipoOperacion, _
             .Id, .IdCuentaBancaria, .NumeroChequera, .Fecha, .NumeroInicial, .NumeroFinal, _
-            .NumeroEmitir, .Activo, d_DatosConfiguracion.PrefijoID)
+            .NumeroEmitir, .Activo, .PrefijoID)
             End With
             Return True
         Catch ex As Exception

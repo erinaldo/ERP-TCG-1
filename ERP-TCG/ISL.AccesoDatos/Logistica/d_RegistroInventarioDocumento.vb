@@ -24,7 +24,7 @@ Public Class d_RegistroInventarioDocumento
     '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
     '        With oeRegistroInventarioDocumento
     '            sqlhelper.ExecuteNonQuery("ALM.Isp_AfectarInventarioDocumento", _
-    '                                      .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+    '                                      .TipoOperacion, .PrefijoID, _
     '                                      .IdTipoOrden, _
     '                                      .IdOrden, _
     '                                      .IdMovimientoDocumento, _
@@ -43,7 +43,7 @@ Public Class d_RegistroInventarioDocumento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRegistroInventarioDocumento
                 sqlhelper.ExecuteNonQuery("ALM.Isp_RegistroInventarioDocumento_IAE", _
-                                          "I", d_DatosConfiguracion.PrefijoID, _
+                                          "I", .PrefijoID, _
                                           .Id, _
                                           .Codigo, _
                                           .IdRegistroInventario, _

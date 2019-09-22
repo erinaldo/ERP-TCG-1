@@ -16,13 +16,13 @@ Public Class l_ReporteFlujoBanco
         End Try
     End Function
 
-    Public Function Guardar(lo As List(Of EntidadesWCF.e_ReporteFlujoBanco), IdPeriodo As String) As Boolean Implements Il_ReporteFlujoBanco.Guardar
+    Public Function Guardar(lo As List(Of EntidadesWCF.e_ReporteFlujoBanco), IdPeriodo As String, ByVal PrefijoID As String) As Boolean Implements Il_ReporteFlujoBanco.Guardar
         Try
             Using TransScope As New TransactionScope()
                 If olFuncionesGenerales.ValidarPeriodo(IdPeriodo, gAreasSGI.Tesoreria) Then
                     ' Insertar
                     Dim dt As Data.DataTable = CrearDT()
-                    Dim IdReporteFlujo As String = odReporteFlujoBanco.UltimoIdInserta()
+                    Dim IdReporteFlujo As String = odReporteFlujoBanco.UltimoIdInserta(PrefijoID)
                     Dim lsPrefijo As String = Left(IdReporteFlujo, 3)
                     Dim lsNumeroIdReporteFlujo As Integer = CInt(Right(IdReporteFlujo, Len(IdReporteFlujo) - 3))
                     For Each oe In lo.Where(Function(it) it.Id.Trim = "" And it.IdFlujoNuevo.Trim <> "").ToList

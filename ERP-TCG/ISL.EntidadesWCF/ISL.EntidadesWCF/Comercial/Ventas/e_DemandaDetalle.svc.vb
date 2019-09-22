@@ -61,8 +61,10 @@ Public Class e_DemandaDetalle
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Proceso As String
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeIncidenciaAutentificadas As New e_IncidenciasAutentificadas
 

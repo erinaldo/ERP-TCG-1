@@ -73,7 +73,7 @@ Public Class d_TipoCambio
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeTipoCambio
-                sqlhelper.ExecuteNonQuery("STD.ISP_TipoCambio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.ISP_TipoCambio_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMonedaOrigen _
                         , .IdMonedaDestino _

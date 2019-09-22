@@ -37,6 +37,8 @@ Public Class e_ControlMerma
     Public FechaDesde As String
     <DataMember()> _
     Public FechaHasta As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

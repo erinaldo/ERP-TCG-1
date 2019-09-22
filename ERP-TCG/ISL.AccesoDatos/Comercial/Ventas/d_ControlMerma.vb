@@ -88,9 +88,9 @@ Public Class d_ControlMerma
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlMermas
-                sqlhelper.ExecuteNonQuery("OPE.Isp_IngresoSalidaMermas_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_IngresoSalidaMermas_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                              .Id _
                                         , .IdMovimientoMermas _
                                         , .IndIngresoSalida _

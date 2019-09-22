@@ -74,14 +74,14 @@ Public Class d_InformeDetrac_Det
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeInformeDetrac_Det
-                sqlhelper.ExecuteNonQuery("CON.Isp_InformeDetrac_Det_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_InformeDetrac_Det_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdInformeDetrac _
                         , .IdVenta _
                         , .Monto _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

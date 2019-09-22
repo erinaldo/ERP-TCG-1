@@ -119,9 +119,9 @@ Public Class d_Flete
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeFlete
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_Flete_IAE]", _
-                                          "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_Flete_IAE]",
+                                          "I",
+                                          .PrefijoID,
                                             .Id _
                                             , .IdRuta _
                                             , .TipoVehiculo _

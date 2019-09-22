@@ -68,13 +68,13 @@ Public Class d_RecargaPeaje
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal xml As String) As Boolean
+    Public Function GuardarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
             sqlhelper = New SqlHelper
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE", _
+            sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
                                       "M" _
-                                        , d_DatosConfiguracion.PrefijoID _
+                                        , PrefijoID _
                                         , xml)
             Return True
         Catch ex As Exception
@@ -89,7 +89,7 @@ Public Class d_RecargaPeaje
             With oeRecargaPeaje
                 sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE", _
                                           "I" _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , "" _
                                             , .Id _
                                             , .IdMoneda _
@@ -139,14 +139,14 @@ Public Class d_RecargaPeaje
         End Try
     End Function
 
-    Public Function IdInsertar() As String
+    Public Function IdInsertar(ByVal PrefijoID As String) As String
         Try
             sqlhelper = New SqlHelper
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strResultado As String
-            strResultado = sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE", _
-                                                   "Z", _
-                                                   d_DatosConfiguracion.PrefijoID, _
+            strResultado = sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
+                                                   "Z",
+                                                   PrefijoID,
                                                    "")
 
 

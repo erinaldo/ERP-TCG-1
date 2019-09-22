@@ -78,7 +78,7 @@ Public Class d_MantenimientoEquipo
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
             With oeMantenimiento_Equipo
-                sqlhelper.ExecuteNonQuery("MAN.Isp_Mantenimiento_Equipo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("MAN.Isp_Mantenimiento_Equipo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMantenimiento _
                         , .IdEquipo _

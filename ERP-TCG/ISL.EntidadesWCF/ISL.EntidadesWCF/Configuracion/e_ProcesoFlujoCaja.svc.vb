@@ -18,7 +18,8 @@ Public Class e_ProcesoFlujoCaja
     Public Modificado As Boolean
     <DataMember()> _
     Public ListaProcesoFlujoCaja As New List(Of e_ProcesoFlujoCaja)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

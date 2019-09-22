@@ -20,7 +20,8 @@ Public Class e_CuotaDocumentoVehiculo
     Private _montoopera As Double
     Private _IdOrigen_CuotaMov As String
     Private _idmoneda As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

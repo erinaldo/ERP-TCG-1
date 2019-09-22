@@ -70,7 +70,7 @@ Public Class d_ControlActividad
                         , .UsuarioCreacion _
                         , .Glosa _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

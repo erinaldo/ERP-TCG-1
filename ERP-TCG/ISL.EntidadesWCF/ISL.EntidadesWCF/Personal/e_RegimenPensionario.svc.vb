@@ -30,7 +30,8 @@ Public Class e_RegimenPensionario
     Public Modificado As Boolean
     <DataMember()> _
     Public leHistorialPorcentaje As New List(Of e_RegimenPensionario)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -31,8 +31,8 @@ Public Class d_ObligacionPago
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionPago_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeObligacionPago.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionPago_Listar", "",
+            Left(oeObligacionPago.PrefijoID, 1), "", oeObligacionPago.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeObligacionPago = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -49,7 +49,7 @@ Public Class d_ObligacionPago
             Dim ds As DataSet
             With oeObligacionPago
                 ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionPago_Listar", .TipoOperacion _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdMovimientoCajaBanco _
                         , .IdObligacionFinanciera _
@@ -83,7 +83,7 @@ Public Class d_ObligacionPago
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeObligacionPago
-                stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionPago_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionPago_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMovimientoCajaBanco _
                         , .IdObligacionFinanciera _

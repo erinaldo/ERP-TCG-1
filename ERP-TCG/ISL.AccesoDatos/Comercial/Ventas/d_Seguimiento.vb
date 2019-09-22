@@ -182,9 +182,9 @@ Public Class d_Seguimiento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguimiento
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]", _
-                                         .TipoOperacion, _
-                                         d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]",
+                                         .TipoOperacion,
+                                         .PrefijoID,
                                        .Id _
                                        , .IdViaje _
                                 , Date.Parse("01/01/1901") _
@@ -244,9 +244,9 @@ Public Class d_Seguimiento
             Using transScope As New TransactionScope()
                 With oeSeguimiento
                     If .TipoOperacion <> "G" Then
-                        sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]", _
-                                  .TipoOperacion, _
-                                  d_DatosConfiguracion.PrefijoID, _
+                        sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]",
+                                  .TipoOperacion,
+                                  .PrefijoID,
                                 .Id _
                                 , .IdViaje _
                                 , .LlegadaOrigen _
@@ -425,7 +425,7 @@ Public Class d_Seguimiento
                 For Each viaje In listaViaje
                     sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]" _
                                 , "F" _
-                                , d_DatosConfiguracion.PrefijoID _
+                                , viaje.PrefijoID _
                                 , "" _
                                 , viaje.Id _
                                 , viaje.LlegadaOrigen _

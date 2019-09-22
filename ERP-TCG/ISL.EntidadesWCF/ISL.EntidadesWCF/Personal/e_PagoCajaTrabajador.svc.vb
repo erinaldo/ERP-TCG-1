@@ -27,7 +27,8 @@ Public Class e_PagoCajaTrabajador
     Public leDetalle As New List(Of e_DetallePagoCajaTrabajador)
     <DataMember()> _
     Public dtDetallePA As DataTable
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

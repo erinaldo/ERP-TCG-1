@@ -130,7 +130,7 @@ Public Class d_Direccion
                         , .Activo _
                         , .UsuarioCreacion _
                         , .IdLugar _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .CentroCosto _
                         , .CentroAsistenciaEsSalud _
                         , .IdPais)

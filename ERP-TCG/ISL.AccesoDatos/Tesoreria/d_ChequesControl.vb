@@ -71,7 +71,7 @@ Public Class d_ChequesControl
             Dim id As String = ""
             Using transScope As New TransactionScope()
                 With oeChequesControl
-                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequesControl_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequesControl_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdCuentaBancaria _
                             , .Activo _

@@ -77,7 +77,7 @@ Public Class d_BonificacionProduccion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBonificacionProduccion
-                sqlhelper.ExecuteNonQuery("PER.Isp_BonificacionProduccion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_BonificacionProduccion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPlanilla _
                         , .IdTrabajador _
@@ -120,11 +120,11 @@ Public Class d_BonificacionProduccion
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.BonificacionProduccion", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.BonificacionProduccion", PrefijoID
                                   )
             Return stResultado
         Catch ex As Exception

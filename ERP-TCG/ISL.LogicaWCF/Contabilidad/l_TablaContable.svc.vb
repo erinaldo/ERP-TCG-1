@@ -88,10 +88,10 @@ Public Class l_TablaContable
         Return TabCtble
     End Function
 
-    Public Function GuardarMasivo(leTablaContable As List(Of e_TablaContable)) As Boolean Implements Il_TablaContable.GuardarMasivo
+    Public Function GuardarMasivo(leTablaContable As List(Of e_TablaContable), ByVal PrefijoID As String) As Boolean Implements Il_TablaContable.GuardarMasivo
         Try
             Dim dtTC As Data.DataTable = CrearDT()
-            Dim id As String = odTablaContable.UltimoIdInserta
+            Dim id As String = odTablaContable.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

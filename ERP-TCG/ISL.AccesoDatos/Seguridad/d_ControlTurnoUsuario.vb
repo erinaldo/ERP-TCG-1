@@ -79,7 +79,7 @@ Public Class d_ControlTurnoUsuario
                         , .Intervalo _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

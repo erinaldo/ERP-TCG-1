@@ -17,7 +17,8 @@ Public Class e_LimiteCredito
 
     Public TipoOperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     Public Property Id() As String

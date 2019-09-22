@@ -52,8 +52,8 @@ Public Interface Il_ObligacionFinanciera
     <OperationContract()> _
     Function GuardarPago2(ByVal oeObliFin As e_ObligacionFin, oeAsientoModel As e_AsientoModelo, lst_DocRetDet As List(Of e_DocumentoRetencionDetalle)) As Boolean
 
-    <OperationContract()> _
-    Function GuardarLetras(ByVal leOblig As List(Of e_ObligacionFinanciera), ByVal IdUsuario As String) As Boolean
+    <OperationContract()>
+    Function GuardarLetras(ByVal leOblig As List(Of e_ObligacionFinanciera), ByVal IdUsuario As String, ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function GuardarCreditoHipotecario(ByVal oeMovCajaBanco As e_MovimientoCajaBanco, ByVal leObligacion As List(Of e_ObligacionFinanciera), oeCtaCtble As e_CuentaContable) As Boolean

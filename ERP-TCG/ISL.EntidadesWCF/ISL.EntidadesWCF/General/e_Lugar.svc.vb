@@ -26,10 +26,12 @@ Public Class e_Lugar
     Public Modificado As Boolean
     <DataMember()> _
     Public ListaClienteLugar As New List(Of e_ClienteLugar)
-    <DataMember()> _
+    <DataMember()>
     Public ListaVentanaHoraria As New List(Of e_VentanaHoraria)
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
+    <DataMember()>
     Public Property UsuarioCreacion() As String
         Get
             Return _usuariocreacion

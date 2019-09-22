@@ -32,6 +32,8 @@ Public Class e_OrdenAsignacion_Material
     Public oeReqMaterial As New e_RequerimientoMaterial
     <DataMember()> _
     Public Material As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

@@ -20,7 +20,8 @@ Public Class e_RevisionTecnica
     Public FechaCreacion As DateTime
     <DataMember()> _
     Public UsuarioCreacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Property Id() As String
         Get

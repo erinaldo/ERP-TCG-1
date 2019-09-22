@@ -23,7 +23,8 @@ Public Class e_ConceptoPonderado
     Public leDetalle As New List(Of e_DetalleConceptoPonderado)
     <DataMember()> _
     Public lbExcluir As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

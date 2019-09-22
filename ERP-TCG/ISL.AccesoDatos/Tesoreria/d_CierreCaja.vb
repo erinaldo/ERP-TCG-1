@@ -79,7 +79,7 @@ Public Class d_CierreCaja
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeCierreCaja
-                    id = sqlhelper.ExecuteScalar("TES.Isp_CierreCaja_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_CierreCaja_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .IdCaja _

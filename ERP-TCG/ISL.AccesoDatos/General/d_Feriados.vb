@@ -58,7 +58,7 @@ Public Class d_Feriados
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFeriados
-                sqlhelper.ExecuteNonQuery("STD.Isp_Feriados_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Feriados_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoFeriado _
                         , .Fecha _

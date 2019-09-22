@@ -24,7 +24,8 @@ Public Class e_CajaMonto
     Public Tipooperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

@@ -19,8 +19,10 @@ Public Class e_Marca
     <DataMember()> _
     Public Modificado As Boolean = False
     Private _usuariocreacion As String
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Sub New()
         Activo = True

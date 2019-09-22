@@ -96,7 +96,7 @@ Public Class d_ReadecuacionActivoFijo
                 With oeReadecuacionActivoFijo
                     IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ReadecuacionActivoFijo_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .IdActivoFijo _
                             , .IdPeriodo _

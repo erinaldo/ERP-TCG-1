@@ -54,7 +54,8 @@ Public Class e_Compra
     Public IndTipoOperacion As String
     <DataMember()> _
     Public PagoXCajaTesoreria As Double
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

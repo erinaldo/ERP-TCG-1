@@ -69,7 +69,7 @@ Public Class d_Accidente
             Using transcope As New TransactionScope
                 With oeAccidente
                     id = sqlhelper.ExecuteScalar("SPC.Isp_Accidente_IAE", .TipoOperacion, _
-                    d_DatosConfiguracion.PrefijoID, .Id, .Fecha, .Hora, .IdTipoAccidente, .Lugar, .Detalle)
+                    .PrefijoID, .Id, .Fecha, .Hora, .IdTipoAccidente, .Lugar, .Detalle)
                     For Each acctra As e_AccidentePersona In .loTrabajadoresAccidentados
                         If acctra.TipoOperacion = "" Then acctra.TipoOperacion = .TipoOperacion
                         acctra.IdAccidente = id

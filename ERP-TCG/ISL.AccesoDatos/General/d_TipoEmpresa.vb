@@ -67,7 +67,7 @@ Public Class d_TipoEmpresa
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTipoEmpresa
-                sqlhelper.ExecuteNonQuery("STD.Isp_TipoEmpresa_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_TipoEmpresa_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

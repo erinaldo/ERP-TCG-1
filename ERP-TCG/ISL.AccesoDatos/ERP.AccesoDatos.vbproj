@@ -140,6 +140,8 @@
     <Compile Include="Comercial\Ventas\d_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProcesoDetalle.vb" />
+    <Compile Include="Comercial\Ventas\d_OrdenVenta.vb" />
+    <Compile Include="Comercial\Ventas\d_OrdenVentaMaterial.vb" />
     <Compile Include="Comercial\Ventas\d_ProcesarTarifasProceso.vb" />
     <Compile Include="Comercial\Ventas\d_ReporteRecorrido.vb" />
     <Compile Include="Comercial\Ventas\d_GuiasControl.vb" />
@@ -266,6 +268,7 @@
     <Compile Include="General\d_ProcesoGlosa.vb" />
     <Compile Include="General\d_ProcesoServicio.vb" />
     <Compile Include="General\d_RutaPeaje.vb" />
+    <Compile Include="General\d_TablaDinamica_Dato.vb" />
     <Compile Include="General\d_TarjetaMovimiento.vb" />
     <Compile Include="General\d_TipoDocumento.vb" />
     <Compile Include="Comercial\Compras\d_TipoOrdenCompra.vb" />
@@ -667,13 +670,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\ISL.Encripta.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
       <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
       <Name>ERP.EntidadesWCF</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\ISL.Encripta.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

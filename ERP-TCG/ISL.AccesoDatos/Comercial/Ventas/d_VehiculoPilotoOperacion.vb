@@ -80,9 +80,9 @@ Public Class d_VehiculoPilotoOperacion
             Using transScope As New TransactionScope()
                 For Each VehiculoPiloto As e_VehiculoPilotoOperacion In oeListaVehiculoPiloto
                     With VehiculoPiloto
-                        sqlhelper.ExecuteNonQuery("OPE.Isp_VehiculoPilotoOperacion_IAE", _
-                                                  "I", _
-                                                  d_DatosConfiguracion.PrefijoID, _
+                        sqlhelper.ExecuteNonQuery("OPE.Isp_VehiculoPilotoOperacion_IAE",
+                                                  "I",
+                                                  .PrefijoID,
                                                     .Id _
                                                     , .IdVehiculo _
                                                     , .IdPiloto _

@@ -122,7 +122,7 @@ Public Class d_Planilla
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _id As String = ""
             With oePlanilla
-                _id = sqlhelper.ExecuteScalar("PER.Isp_Planilla_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_Planilla_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPeriodo _
                         , .IdConfiguracion _

@@ -120,9 +120,9 @@ Public Class d_TarifasCliente
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeTarifasCliente
-                    sqlhelper.ExecuteNonQuery("[OPE].[Isp_TarifaRuta_IAE]", _
-                                              .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("[OPE].[Isp_TarifaRuta_IAE]",
+                                              .TipoOperacion,
+                                              .PrefijoID,
                                                 .Id _
                                                 , .IdCliente _
                                                 , .IdTipoRuta _
@@ -154,9 +154,9 @@ Public Class d_TarifasCliente
                     For Each TarifasCliente As e_TarifasCliente In oeTarifasCliente.e_ListaTarifasCliente
                         TarifasCliente.TipoOperacion = "I"
                         With TarifasCliente
-                            sqlhelper.ExecuteNonQuery("[OPE].[Isp_TarifaRuta_IAE]", _
-                                                      .TipoOperacion, _
-                                                      d_DatosConfiguracion.PrefijoID, _
+                            sqlhelper.ExecuteNonQuery("[OPE].[Isp_TarifaRuta_IAE]",
+                                                      .TipoOperacion,
+                                                      .PrefijoID,
                                                         .Id _
                                                         , .IdCliente _
                                                         , .IdTipoRuta _

@@ -122,7 +122,7 @@ Public Class d_Ocupacion
                         , .OcupacionSunat _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

@@ -18,7 +18,8 @@ Public Class e_AsientoMovimiento
     Private _activo As Boolean
     <DataMember()> _
     Public DivideAnalisis As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

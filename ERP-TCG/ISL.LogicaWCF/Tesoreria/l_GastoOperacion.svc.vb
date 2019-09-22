@@ -65,7 +65,7 @@ Public Class l_GastoOperacion
         End Try
     End Function
 
-    Public Function GuardaListaMasiva(ByVal loGastoOperacionMasiva As List(Of e_GastoOperacion), loCuentasContables As List(Of e_Combo)) As Boolean Implements Il_GastoOperacion.GuardarListaMasiva
+    Public Function GuardaListaMasiva(ByVal loGastoOperacionMasiva As List(Of e_GastoOperacion), loCuentasContables As List(Of e_Combo), ByVal PrefijoID As String) As Boolean Implements Il_GastoOperacion.GuardarListaMasiva
         Try
             Using TransScope As New TransactionScope()
                 'objeto para ctas ctbles
@@ -296,10 +296,10 @@ Public Class l_GastoOperacion
                                 rowAsiento("IdTipoAsiento") = "1CH000020"
                                 rowAsiento("NroAsiento") = lsPrefijoNroAsientoDiario + olFunGen.CompletaConCeros(lsNumeroNroAsientoDiario, 7).ToString
                                 rowAsiento("Fecha") = fecAsiento
-                                rowAsiento("Glosa") = "DOC. SUSTENTO " & .oeMovimientoDocumento.Compra.TipoDoc.Abreviatura & "/" & .SerieDoc & .NroDoc & " " & .oeMovimientoDocumento.Compra.Proveedor.Nombre + " " + .FechaEmision.Date.Day.ToString + "/" + _
-                                .FechaEmision.Date.Month.ToString + "/" + .FechaEmision.Date.Year.ToString + _
+                                rowAsiento("Glosa") = "DOC. SUSTENTO " & .oeMovimientoDocumento.Compra.TipoDoc.Abreviatura & "/" & .SerieDoc & .NroDoc & " " & .oeMovimientoDocumento.Compra.Proveedor.Nombre + " " + .FechaEmision.Date.Day.ToString + "/" +
+                                .FechaEmision.Date.Month.ToString + "/" + .FechaEmision.Date.Year.ToString +
                                 " " + .Glosa + " V,G:" + .oeMovimientoDocumento.GlosaViajeGrupo
-                                rowAsiento("GlosaImprime") = "DOC. SUSTENTO " & .oeMovimientoDocumento.Compra.TipoDoc.Abreviatura & "/" & .SerieDoc & .NroDoc & " " & .oeMovimientoDocumento.Compra.Proveedor.Nombre + " " + .FechaEmision.Date.Day.ToString + "/" + _
+                                rowAsiento("GlosaImprime") = "DOC. SUSTENTO " & .oeMovimientoDocumento.Compra.TipoDoc.Abreviatura & "/" & .SerieDoc & .NroDoc & " " & .oeMovimientoDocumento.Compra.Proveedor.Nombre + " " + .FechaEmision.Date.Day.ToString + "/" +
                                 .FechaEmision.Date.Month.ToString + "/" + .FechaEmision.Date.Year.ToString
                                 rowAsiento("IdMoneda") = .IdMoneda
                                 rowAsiento("TipoCambio") = .TipoCambio
@@ -990,7 +990,7 @@ Public Class l_GastoOperacion
                         End With
                     Next
                 End If
-                If Not odGastoOperacion.GuardaMasivo(loGastoOperacionMasiva, dt_MD, dt_DD, dt_CMP, dt_ASI, dt_ASIMOV, dt_MOVANA, dt_MOVCJB, _
+                If Not odGastoOperacion.GuardaMasivo(loGastoOperacionMasiva, dt_MD, dt_DD, dt_CMP, dt_ASI, dt_ASIMOV, dt_MOVANA, dt_MOVCJB,
                                                      dt_ASIMOVDOC, dt_ASIMOVMOVDOC, dt_CTAXCP) Then
                     Return False
                 End If
@@ -1007,7 +1007,7 @@ Public Class l_GastoOperacion
                     Next
                     XML.AppendLine("</DETALLES>")
                     Dim olTarjetaMovimiento As New l_TarjetaMovimiento
-                    olTarjetaMovimiento.ActualizarMasivo(XML.ToString)
+                    olTarjetaMovimiento.ActualizarMasivo(XML.ToString, PrefijoID)
                 End If
                 'If Not GuardarLista(loGastoOperacion) Then
                 '    Return False

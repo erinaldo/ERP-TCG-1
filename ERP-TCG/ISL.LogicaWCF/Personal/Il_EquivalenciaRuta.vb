@@ -25,7 +25,7 @@ Public Interface Il_EquivalenciaRuta
     <OperationContract()> _
     Function CompletaConCeros(ByVal ls_Tex As String, ByVal lnCantidad As Integer) As String
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal lista As List(Of e_EquivalenciaRuta)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal lista As List(Of e_EquivalenciaRuta), ByVal PrefijoID As String) As Boolean
 
 End Interface

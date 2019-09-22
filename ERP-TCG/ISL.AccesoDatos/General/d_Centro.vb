@@ -48,7 +48,7 @@ Public Class d_Centro
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            Dim Prefijo As String = IIf(oeCentro.TipoOperacion = "3", oeCentro.Abreviatura, d_DatosConfiguracion.PrefijoID)
+            Dim Prefijo As String = IIf(oeCentro.TipoOperacion = "3", oeCentro.Abreviatura, oeCentro.PrefijoID)
             ds = sqlhelper.ExecuteDataset("STD.Isp_Centro_Listar", oeCentro.TipoOperacion _
                                         , oeCentro.Id _
                                         , oeCentro.Codigo _
@@ -134,7 +134,7 @@ Public Class d_Centro
             With oeCentro
                 sqlhelper.ExecuteNonQuery("STD.Isp_Centro_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .Codigo _
                                         , .IdEmpresa _

@@ -15,10 +15,12 @@ Public Class e_ValorizacionNeumatico
     Public TipoOperacion As String
     <DataMember()> _
     Public FechaInicio As Date
-    <DataMember()> _
+    <DataMember()>
     Public FechaFin As Date
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
+    <DataMember()>
     Public lstDetalleValorizacion As New List(Of e_DetalleValorizacionNeumatico)
 
     Public Event DatoCambiado()

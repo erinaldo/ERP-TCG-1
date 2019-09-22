@@ -47,7 +47,8 @@ Public Class e_DetalleProduccionPiloto
     Public Cuota As Double = 0
     <DataMember()> _
     Public indCalcular As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

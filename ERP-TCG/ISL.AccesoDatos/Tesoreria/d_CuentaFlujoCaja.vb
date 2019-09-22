@@ -66,7 +66,7 @@ Public Class d_CuentaFlujoCaja
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaFlujoCaja
-                sqlhelper.ExecuteNonQuery("TES.CuentaFlujoCaja_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.CuentaFlujoCaja_IAE", "I", .PrefijoID, _
                         .Id _
                         , .IdCuentaContable _
                         , .IdFlujoCaja _

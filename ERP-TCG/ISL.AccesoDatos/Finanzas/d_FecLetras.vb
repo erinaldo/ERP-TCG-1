@@ -5,13 +5,13 @@ Imports System.Data.SqlClient
 Public Class d_FecLetras
     Private sqlhelper As New SqlHelper
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.FecLetras", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.FecLetras", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False
@@ -22,7 +22,7 @@ Public Class d_FecLetras
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFecLetras
-                sqlhelper.ExecuteNonQuery("FIN.Isp_Fec_Letras_IAE ", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_Fec_Letras_IAE ", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdObligacionFinanciera _
                         , .IndClienteProveedor _

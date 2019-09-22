@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -57,6 +65,7 @@ Public Class frm_LetraCambio
     Public Overrides Sub Nuevo()
         Try
             oeMovimientoDocumento.TipoOperacion = "I"
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             MostrarTabs(1, ficLetra, 1)
             ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
             Inicializar()
@@ -148,6 +157,7 @@ Public Class frm_LetraCambio
             oeContratoFin.Activo = True
             oeContratoFin.FechaEmision = DtpFechaEmisionInicial.Value
             oeContratoFin.FechaVencimiento = DtpFechaEmisionFinal.Value
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             dsLetraObli = olContratoFin.ListarDS(oeContratoFin)
             ''''''''''''''''''''''''''''''''''''''''''''''
             'Tabla(0) CONTRATOS
@@ -283,6 +293,7 @@ Public Class frm_LetraCambio
             oeContratoFin.IndFec = True
             oeContratoFin.IdClienteProveedor = lstMovDocumentoLetra(0).IdClienteProveedor
             oeContratoFin.NombreBanco = cboBanco.Text
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratoFin.GuardarLetra(oeContratoFin, oeAsientoModel, ln_TasaRetencion) Then
                 Espere1.Visible = False
                 mensajeEmergente.Confirmacion("Registrado correctamente", True)
@@ -316,6 +327,7 @@ Public Class frm_LetraCambio
         BloqueaContrato()
         cboBanco.Focus()
         _idProveedor = String.Empty
+        oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
     End Sub
 
     Private Sub IniciliazaObliFin()
@@ -327,6 +339,7 @@ Public Class frm_LetraCambio
         txtMonto.Value = 0
         ' txtGlosa.Text = String.Empty
         'txtNumero.Focus()
+        oeObligacionFin.PrefijoID = gs_PrefijoIdSucursal '@0001
     End Sub
 
     Public Function ObtenerProceso(ByVal cad As String) As String
@@ -471,6 +484,7 @@ Public Class frm_LetraCambio
                 .IdMoneda = cboMoneda.Value
                 .Ejercicio = Date.Parse(fecFechaEmision.Value).Year
                 .IdClienteProveedor = cboProveedorFactura.Value
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             Proveedor = cboProveedorFactura.Value
 
@@ -538,6 +552,7 @@ Public Class frm_LetraCambio
             End If
         End If
         For Each oeMovDocumento As e_MovimientoDocumento In lstMovDocumento
+            oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If id = oeMovDocumento.Id Then
                 If ((_idProveedor = "") Or (_idProveedor <> "" And oeMovDocumento.IdClienteProveedor = _idProveedor)) Then
                     Bandera = True
@@ -546,6 +561,7 @@ Public Class frm_LetraCambio
                     If txtGlosa.Text = "" Then
                         txtGlosa.Text = oeMovimientoDocumento._NombreClienteProveedor
                     End If
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstMovDocumentoLetra.Add(oeMovimientoDocumento)
                     If _idProveedor = "" Then
                         _idProveedor = oeMovDocumento.IdClienteProveedor
@@ -553,6 +569,7 @@ Public Class frm_LetraCambio
                 End If
             End If
         Next
+        oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
         If Bandera = True Then
             lstMovDocumento.Remove(oeMovimientoDocumento)
         End If
@@ -577,10 +594,12 @@ Public Class frm_LetraCambio
             Dim id As String
             id = griFacturaAgregadas.ActiveRow.Cells("Id").Value.ToString
             For Each oeMovDocumento As e_MovimientoDocumento In lstMovDocumentoLetra
+                oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If id = oeMovDocumento.Id Then
                     If ((_idProveedor = "") Or (_idProveedor <> "" And oeMovDocumento.IdClienteProveedor = _idProveedor)) Then
                         oeMovimientoDocumento = New e_MovimientoDocumento()
                         oeMovimientoDocumento = oeMovDocumento.Clonar
+                        oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lstMovDocumento.Add(oeMovimientoDocumento)
                         lstMovDocumentoLetra.Remove(oeMovDocumento)
                         Exit For
@@ -629,6 +648,7 @@ Public Class frm_LetraCambio
                             oeDocLetra.Total = _MontoDocAux
                             oeDocLetra.UnidadMedida = _oeDoc.Serie & "-" & _oeDoc.Numero ' Nro Documento
                             oeDocLetra.NombreMaterialServicio = _oeLet.NroVencimiento ' Nro Letra
+                            oeDocLetra.PrefijoID = gs_PrefijoIdSucursal '@0001
                             leDocLetra.Add(oeDocLetra)
                             _MontoDocAux = 0
                         Else
@@ -639,6 +659,7 @@ Public Class frm_LetraCambio
                             oeDocLetra.Total = _MontoLetAux
                             oeDocLetra.UnidadMedida = _oeDoc.Serie & "-" & _oeDoc.Numero ' Nro Documento
                             oeDocLetra.NombreMaterialServicio = _oeLet.NroVencimiento ' Nro Letra
+                            oeDocLetra.PrefijoID = gs_PrefijoIdSucursal '@0001
                             leDocLetra.Add(oeDocLetra)
                             _oeLet.SaldoAux = 0
                         End If
@@ -889,6 +910,7 @@ Public Class frm_LetraCambio
                 .oeFecLetra.Activo = True
                 .oeFecLetra.NroLetra = txtNumero.Text
                 .oeFecLetra.IdClienteProveedor = lstMovDocumentoLetra(0).IdClienteProveedor
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             For Each fila In leObligacionFin
                 If txtNumero.Value = fila.NroVencimiento Then
@@ -902,7 +924,7 @@ Public Class frm_LetraCambio
                     Exit For
                 End If
             Next
-
+            oeObligacionFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             leObligacionFin.Add(oeObligacionFin)
 
             GridLetras.DataSource = leObligacionFin
@@ -1087,6 +1109,7 @@ Public Class frm_LetraCambio
             oeFinPago.FechaInicial = Date.Now()
             oeFinPago.FechaFinal = Date.Now()
             oeFinPago.IdObligacionFinanciera = GridObligacionLetras.ActiveRow.Cells("Id").Value
+            oeFinPago.PrefijoID = gs_PrefijoIdSucursal '@0001
             leFinPago = olFinPago.Listar(oeFinPago)
 
             If leFinPago.Count = 0 Then
@@ -1098,6 +1121,7 @@ Public Class frm_LetraCambio
                             oeLetra = GridObligacionLetras.ActiveRow.ListObject
                             oeLetra.TipoOperacion = "L"
                             oeLetra.NroLetra = oeLetra.Codigo
+                            oeLetra.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olLetra.GuardarObli(oeLetra)
                             GridObligacionLetras.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                             mensajeEmergente.Confirmacion("Se actualizó correctamente", False)

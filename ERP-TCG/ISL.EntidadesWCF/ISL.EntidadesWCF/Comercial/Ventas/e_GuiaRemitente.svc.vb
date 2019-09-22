@@ -28,6 +28,8 @@ Public Class e_GuiaRemitente
     Public IdMovimientoDoc As String
     <DataMember()> _
     Public IdRemitente As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Public Event DatoCambiado()
 

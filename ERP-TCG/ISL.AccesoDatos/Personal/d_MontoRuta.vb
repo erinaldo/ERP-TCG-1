@@ -83,7 +83,7 @@ Public Class d_MontoRuta
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeMontoRuta
-                id = sqlhelper.ExecuteScalar("PER.Isp_MontoRuta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                id = sqlhelper.ExecuteScalar("PER.Isp_MontoRuta_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRuta _
                         , .IdTipoVehiculo _
@@ -131,11 +131,11 @@ Public Class d_MontoRuta
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.MontoRuta", d_DatosConfiguracion.PrefijoID)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.MontoRuta", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

@@ -120,10 +120,10 @@ Public Class l_TablaContableDet
         Return TabCtbleDet
     End Function
 
-    Public Function GuardarMasivo(leTablaContableDet As List(Of e_TablaContableDet)) As Boolean Implements Il_TablaContableDet.GuardarMasivo
+    Public Function GuardarMasivo(leTablaContableDet As List(Of e_TablaContableDet), ByVal PrefijoID As String) As Boolean Implements Il_TablaContableDet.GuardarMasivo
         Try
             Dim dtTCD As Data.DataTable = CrearDT()
-            Dim id As String = odTablaContableDet.UltimoIdInserta
+            Dim id As String = odTablaContableDet.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

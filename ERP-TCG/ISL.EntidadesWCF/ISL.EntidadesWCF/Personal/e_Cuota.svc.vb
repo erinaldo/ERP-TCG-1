@@ -21,7 +21,8 @@ Public Class e_Cuota
     Public Shadows TipoOperacion As String = ""
     <DataMember()> _
     Public Shadows Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

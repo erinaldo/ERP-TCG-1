@@ -71,7 +71,7 @@ Public Class d_CierreCajaDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCierreCajaDet
-                sqlhelper.ExecuteNonQuery("TES.Isp_CierreCajaDet_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CierreCajaDet_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCierreCaja _
                         , .Glosa _

@@ -162,6 +162,8 @@
     <Content Include="Comercial\Ventas\e_MovimientoMermas.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProceso.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProcesoDetalle.svc" />
+    <Content Include="Comercial\Ventas\e_OrdenVenta.svc" />
+    <Content Include="Comercial\Ventas\e_OrdenVentaMaterial.svc" />
     <Content Include="Comercial\Ventas\e_ProcesarTarifasProceso.svc" />
     <Content Include="Comercial\Ventas\e_ReporteRecorrido.svc" />
     <Content Include="Comercial\Ventas\e_Demanda.svc" />
@@ -278,6 +280,7 @@
     <Content Include="General\e_RecargaPeajeDetalle.svc" />
     <Content Include="General\e_RendimientoCombustible.svc" />
     <Content Include="General\e_RutaPeaje.svc" />
+    <Content Include="General\e_TablaDinamica_Dato.svc" />
     <Content Include="General\e_TarjetaMovimiento.svc" />
     <Content Include="General\e_VehiculoEstado.svc" />
     <Content Include="General\e_VehiculoTarjeta.svc" />
@@ -830,6 +833,12 @@
     <Compile Include="Comercial\Ventas\e_OperacionesProcesoDetalle.svc.vb">
       <DependentUpon>e_OperacionesProcesoDetalle.svc</DependentUpon>
     </Compile>
+    <Compile Include="Comercial\Ventas\e_OrdenVenta.svc.vb">
+      <DependentUpon>e_OrdenVenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\e_OrdenVentaMaterial.svc.vb">
+      <DependentUpon>e_OrdenVentaMaterial.svc</DependentUpon>
+    </Compile>
     <Compile Include="Comercial\Ventas\e_ProcesarTarifasProceso.svc.vb">
       <DependentUpon>e_ProcesarTarifasProceso.svc</DependentUpon>
     </Compile>
@@ -952,6 +961,8 @@
     <Compile Include="Comercial\Ventas\Ie_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProcesoDetalle.vb" />
+    <Compile Include="Comercial\Ventas\Ie_OrdenVenta.vb" />
+    <Compile Include="Comercial\Ventas\Ie_OrdenVentaMaterial.vb" />
     <Compile Include="Comercial\Ventas\Ie_ProcesarTarifasProceso.vb" />
     <Compile Include="Comercial\Ventas\Ie_ReporteRecorrido.vb" />
     <Compile Include="Comercial\Ventas\Ie_Flete.vb" />
@@ -1246,6 +1257,9 @@
     <Compile Include="General\e_RutaPeaje.svc.vb">
       <DependentUpon>e_RutaPeaje.svc</DependentUpon>
     </Compile>
+    <Compile Include="General\e_TablaDinamica_Dato.svc.vb">
+      <DependentUpon>e_TablaDinamica_Dato.svc</DependentUpon>
+    </Compile>
     <Compile Include="General\e_TarjetaMovimiento.svc.vb">
       <DependentUpon>e_TarjetaMovimiento.svc</DependentUpon>
     </Compile>
@@ -1302,6 +1316,7 @@
     <Compile Include="General\Ie_RecargaPeajeDetalle.vb" />
     <Compile Include="General\Ie_RendimientoCombustible.vb" />
     <Compile Include="General\Ie_RutaPeaje.vb" />
+    <Compile Include="General\Ie_TablaDinamica_Dato.vb" />
     <Compile Include="General\Ie_TarjetaMovimiento.vb" />
     <Compile Include="General\Ie_VehiculoEstado.vb" />
     <Compile Include="General\Ie_VehiculoTarjeta.vb" />

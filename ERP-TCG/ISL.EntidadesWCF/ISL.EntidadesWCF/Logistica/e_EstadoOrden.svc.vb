@@ -9,6 +9,10 @@ Public Class e_EstadoOrden
     Private _Modificado As Boolean = False
     Private _NombreSubEstado As String
     Private _TipoOperacion As String
+
+    <DataMember()>
+    Public PrefijoID As String = ""
+
 #End Region
 
 #Region "Constructor"

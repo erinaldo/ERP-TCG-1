@@ -28,7 +28,8 @@ Public Class e_Persona
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public oeClienteProveedor As New e_ClienteProveedor
     <DataMember()> _

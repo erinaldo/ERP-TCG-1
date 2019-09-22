@@ -22,7 +22,8 @@ Public Class e_ChequeContable
     Public Modificado As Boolean = False
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructores"

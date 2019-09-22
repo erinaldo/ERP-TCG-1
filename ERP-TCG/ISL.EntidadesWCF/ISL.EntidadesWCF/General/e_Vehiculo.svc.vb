@@ -8,8 +8,9 @@ Public Class e_Vehiculo
     Implements ICloneable
 
 #Region "Variables"
-
-    <DataMember()> _
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
     Public TipoOperacion As String
     <DataMember()> _
     Public TipoActualizacion As String

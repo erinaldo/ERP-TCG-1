@@ -27,7 +27,8 @@ Public Class e_PreliminarInspeccion
     Public leDetallePre As New List(Of e_DetallePreliminar)
     <DataMember()> _
     Public oeRequerimiento As New e_Requerimiento
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

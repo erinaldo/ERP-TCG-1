@@ -47,7 +47,8 @@ Public Class e_OrdenCompraMaterial
     Private _Pos As Integer 'Para saber la posicion de cada registro y controlar si va o no va incluido el IGV segun la posicion.
     <DataMember()> _
     Public IdCotizacionDetalle As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public ListaOCMaterial_OSMaterial As New List(Of e_OCMaterial_OSMaterial)
 

@@ -20,8 +20,10 @@ Public Class e_DetalleRegistroDevolucion
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public oeVidaNeumatico As New e_VidaNeumatico
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

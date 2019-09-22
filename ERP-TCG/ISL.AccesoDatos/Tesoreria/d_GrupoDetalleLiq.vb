@@ -67,7 +67,7 @@ Public Class d_GrupoDetalleLiq
                         , .IdGrupo _
                         , .IdViaje _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Monto)
             End With
             Return True

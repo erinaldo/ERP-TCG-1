@@ -76,7 +76,7 @@ Public Class d_Transferencia
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeTransferencia
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_Transferencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_Transferencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdBanco _
                         , .Fecha _

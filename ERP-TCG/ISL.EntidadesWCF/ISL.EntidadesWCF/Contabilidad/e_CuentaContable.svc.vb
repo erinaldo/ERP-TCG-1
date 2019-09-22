@@ -43,12 +43,15 @@ Public Class e_CuentaContable
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public IdTipoCompra As String
 
     <DataMember()> _
     Public Equivale As Integer
+
+    Public TipoBusca As Integer
 
     Public Event DatoCambiado()
 
@@ -186,8 +189,8 @@ Public Class e_CuentaContable
         End Set
     End Property
 
-    <DataMember()> _
-    Public Property MonedaExtrangera() As Integer
+    <DataMember()>
+    Public Property MonedaExtranjera() As Integer
         Get
             Return _monedaextrangera
         End Get

@@ -136,7 +136,7 @@ Public Class d_ActivoFijo_CuentaContable
             With oeActivoFijo_CuentaContable
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ActivoFijo_CuentaContable_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdActivoFijo _
                         , .IdPeriodo _

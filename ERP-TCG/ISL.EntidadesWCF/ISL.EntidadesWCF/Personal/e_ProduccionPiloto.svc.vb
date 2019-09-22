@@ -27,7 +27,8 @@ Public Class e_ProduccionPiloto
     Public leDetalle As New List(Of e_DetalleProduccionPiloto)
     <DataMember()> _
     Public leBonoProd As New List(Of e_BonificacionProduccion)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

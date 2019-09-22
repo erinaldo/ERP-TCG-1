@@ -96,7 +96,7 @@ Public Class d_IncidenciaMaestro
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 'With oeIncidenciaMaestro
-                '    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_IncidenciaMaestro_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                '    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_IncidenciaMaestro_IAE", .TipoOperacion, .PrefijoID, _
                 '            .Id _
                 '            , .Codigo _
                 '            , .IdGradoIncidencia _

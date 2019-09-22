@@ -93,7 +93,7 @@ Public Class d_MovimientoPeaje
 
             Using TransScope As New TransactionScope()
                 With oePagoAdicional
-                    _idpa = sqlhelper.ExecuteScalar("STD.Isp_MovimientoPeaje_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idpa = sqlhelper.ExecuteScalar("STD.Isp_MovimientoPeaje_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .IdEmpresa _
@@ -138,7 +138,7 @@ Public Class d_MovimientoPeaje
             Using TransScope As New TransactionScope()
                 For Each Fil In leMovimientoPeaje
                     With Fil
-                        _idpa = sqlhelper.ExecuteScalar("STD.Isp_MovimientoPeaje_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                        _idpa = sqlhelper.ExecuteScalar("STD.Isp_MovimientoPeaje_IAE", .TipoOperacion, .PrefijoID, _
                                 .Id _
                                 , .Codigo _
                                 , .IdEmpresa _
@@ -169,7 +169,7 @@ Public Class d_MovimientoPeaje
             'Dim _idpa As String = ""
             'Using TransScope As New TransactionScope()
             '    With oePagoAdicional
-            '        _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+            '        _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
             '            .Id _
             '            , .IdPlanilla _
             '            , .Codigo _

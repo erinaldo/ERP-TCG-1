@@ -65,7 +65,7 @@ Public Class d_CodigoBarraMaterial
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCodigoBarraMaterial
-                sqlhelper.ExecuteNonQuery("ALM.Isp_CodigoBarraMaterial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_CodigoBarraMaterial_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMaterial _
                         , .CodigoBarras _

@@ -67,7 +67,7 @@ Public Class d_MedioPago
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMedioPago
-                sqlhelper.ExecuteNonQuery("STD.ISP_MedioPago_Listar_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.ISP_MedioPago_Listar_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Abreviatura _

@@ -33,7 +33,8 @@ Public Class e_Periodo
     Public IdUsuario As String
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 

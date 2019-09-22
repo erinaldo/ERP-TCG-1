@@ -33,8 +33,8 @@ Public Class d_MaterialesNegociadosDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CMP.Isp_MaterialesNegociadosDet_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeMaterialesNegociadosDet.Id)
+            ds = sqlhelper.ExecuteDataset("CMP.Isp_MaterialesNegociadosDet_Listar", "",
+            Left(oeMaterialesNegociadosDet.PrefijoID, 1), "", oeMaterialesNegociadosDet.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeMaterialesNegociadosDet = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -78,7 +78,7 @@ Public Class d_MaterialesNegociadosDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMaterialesNegociadosDet
-                sqlhelper.ExecuteNonQuery("CMP.Isp_MaterialesNegociadosDet_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_MaterialesNegociadosDet_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMaterialesNegociados _
                         , .IdMaterial _

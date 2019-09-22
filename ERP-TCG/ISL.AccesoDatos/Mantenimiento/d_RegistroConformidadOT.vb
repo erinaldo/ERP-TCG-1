@@ -28,8 +28,8 @@ Public Class d_RegistroConformidadOT
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("MAN.Isp_RegistroConformidadOT_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeRegistroConformidadOT.Id)
+            ds = sqlhelper.ExecuteDataset("MAN.Isp_RegistroConformidadOT_Listar", "",
+            Left(oeRegistroConformidadOT.PrefijoID, 1), "", oeRegistroConformidadOT.Id)
 
             If ds.Tables(0).Rows.Count > 0 Then
                 oeRegistroConformidadOT = Cargar(ds.Tables(0).Rows(0))
@@ -74,7 +74,7 @@ Public Class d_RegistroConformidadOT
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeRegistroConformidadOT
-                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_RegistroConformidadOT_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_RegistroConformidadOT_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Indicador _
                             , .Glosa _

@@ -110,9 +110,9 @@ Public Class d_TiempoCiclo
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeTiempoCiclo
-                sqlhelper.ExecuteNonQuery("[OPE].[Isp_TiempoCiclo_IAE]", _
-                                          "I", _
-                                          d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[OPE].[Isp_TiempoCiclo_IAE]",
+                                          "I",
+                                          .PrefijoID,
                                         .Id _
                                         , .IdRuta _
                                         , .TipoVehiculo _

@@ -93,7 +93,7 @@ Public Class d_GrupoAprobacion
                 With oeGrupoAprobacion
                     If .oeChequeEmitido IsNot Nothing Then
                         odChequeEmitido.Guardar(.oeChequeEmitido)
-                        id = sqlhelper.ExecuteScalar("TES.Isp_GrupoAprobacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                        id = sqlhelper.ExecuteScalar("TES.Isp_GrupoAprobacion_IAE", .TipoOperacion, .PrefijoID, _
                                 .Id _
                                 , .Glosa _
                                 , .oeChequeEmitido.Id _

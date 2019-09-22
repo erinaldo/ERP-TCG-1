@@ -24,8 +24,10 @@ Public Class e_AjusteTC
     Public Ejercicio As Integer
     <DataMember()> _
     Public IdAsientoModelo As String
-    <DataMember()> _
+    <DataMember()>
     Public IdCuentaContable As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 
