@@ -1,4 +1,13 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -331,6 +340,7 @@ Public Class frm_ReciboPorHonorario
             End With
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
             ' If oeMovimientoDocumento.FechaEmision >= Date.Parse("01/08/2014") Then ObtenerAportes()
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 Consultar(True)
@@ -397,6 +407,7 @@ Public Class frm_ReciboPorHonorario
                     oeMovimientoDocumento.loCtaCtbleCSer = LlenaCuentaCatServicio(oeMovimientoDocumento, loCtaCtbleCSer, oeMovimientoDocumento.Ejercicio)
                     oeMovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
                     ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.Ejercicio)
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCmpServicio(oeMovimientoDocumento)
                     'olMovimientoDocumento.InterfazCompra(oeMovimientoDocumento)
                     mensajeEmergente.Confirmacion("Se Envió Correctamente", True)

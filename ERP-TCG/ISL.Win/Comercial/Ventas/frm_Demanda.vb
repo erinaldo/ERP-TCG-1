@@ -1108,6 +1108,7 @@ Public Class frm_Demanda
                     oeDemanda.oeContratoTercero = griDetalleTercero.DataSource
                     FiltrarLista()
                     oeDemanda.oeListaBitacora = ListaBitacora
+                    oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olDemanda.GuardarDemandaPredemanda(oeDemanda) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     End If
@@ -3133,6 +3134,7 @@ Public Class frm_Demanda
 
     Public Sub GuardarDemandasEnviadas()
         Try
+            oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
             olDemanda.GuardarDemandasEnviadas(oeDemanda)
         Catch ex As Exception
             Throw ex
@@ -3949,6 +3951,7 @@ Public Class frm_Demanda
                 oeDemanda.UsuarioCreacion = gUsuarioSGI.Id
                 oeDemanda.TipoOperacion = "P"
                 oeDemanda.Id = griLista.Rows(e.Cell.Row.Index).Cells("IdDemanda").Value
+                oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olDemanda.GuardarObservacion(oeDemanda)
             End If
             ugb_Espera.Visible = False

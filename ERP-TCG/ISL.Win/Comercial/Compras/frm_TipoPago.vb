@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 
@@ -11,7 +19,6 @@ Public Class frm_TipoPago
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        'MUÑEKAZO
 
     End Sub
 
@@ -249,6 +256,7 @@ Public Class frm_TipoPago
 #Region "Métodos"
     Private Function GuardarTipoPago() As Boolean
         Try
+            oeTipoPago.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTipoPago.Guardar(oeTipoPago) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcTipoPago, 2)

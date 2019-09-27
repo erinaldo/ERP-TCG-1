@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -184,6 +192,7 @@ Public Class frm_ConfirmarGRT
             oeViaje.IndGrtConfirmada = verConfirmado.Checked
             oeViaje.IndDocumentos = verDocumentos.Checked
             oeViaje.IndGrtPerdido = verDoctsPerdido.Checked
+            oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
             olOperacion.GuardarViaje(oeViaje)
             IndGrtConfirmada = verConfirmado.Checked
             IndDocumentos = verDocumentos.Checked

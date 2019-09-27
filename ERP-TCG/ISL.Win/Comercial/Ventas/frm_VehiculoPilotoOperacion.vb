@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
@@ -583,6 +591,7 @@ Public Class frm_VehiculoPilotoOperacion
                             .FechaFin = fecFin.Value
                             .Actual = verActual.Checked
                         End With
+                        oeZonaProceso.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olZonaProceso.Guardar(oeZonaProceso)
                     Else
                         olVehiculoPiloto.Guardar(oeListaVP)
@@ -627,6 +636,7 @@ Public Class frm_VehiculoPilotoOperacion
                                         .Observacion = Fila.Cells("Observacion").Value
                                         .UsuarioCreacion = gUsuarioSGI.Id
                                     End With
+                                    oeProcesarTarifasProceso.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     oeOperacionesProceso.ListTarifaProceso.Add(oeProcesarTarifasProceso)
                                 Next
                                 For Each Fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griViajesProceso.Rows
@@ -707,6 +717,7 @@ Public Class frm_VehiculoPilotoOperacion
                                 If VHTP.Count <> VHPD.Count Then
                                     Throw New Exception("Verificar las unidades que se estan reportando no coinciden en su Detalle Costo Viajes.")
                                 End If
+                                oeOperacionesProceso.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 If olOperacionesProceso.Guardar(oeOperacionesProceso) Then
                                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                                     If MessageBox.Show("Desea Visualizar la Liquidacion en Excel:  ?", _
@@ -1008,6 +1019,7 @@ Public Class frm_VehiculoPilotoOperacion
                     .Actual = verActual.Checked
                     .UsuarioCrea = gUsuarioSGI.Id
                 End With
+                oeVehiculoPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeListaVP.Add(oeVehiculoPiloto)
                 LimpiaGrid(griVehiculoPiloto, ogdVehiculoPiloto)
                 griVehiculoPiloto.DataSource = oeListaVP.Where(Function(Item) Item.Activo = True).ToList
@@ -1521,6 +1533,7 @@ Public Class frm_VehiculoPilotoOperacion
                 oeOperacionesProceso = New e_OperacionesProceso
                 oeOperacionesProceso.TipoOperacion = "C"
                 oeOperacionesProceso.Id = griOPLista.ActiveRow.Cells("Id").Value
+                oeOperacionesProceso.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olOperacionesProceso.Guardar(oeOperacionesProceso)
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                 griOPLista.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Value

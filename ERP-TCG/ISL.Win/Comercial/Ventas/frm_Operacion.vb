@@ -6,7 +6,6 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-
 Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
@@ -379,6 +378,7 @@ Public Class frm_Operacion
                         .Id = oeViaje.IdCopiloto
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeViaje.LlegadaOrigen)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -436,6 +436,7 @@ Public Class frm_Operacion
                             .Referencia = "Viaje"
                             .UsuarioEdita = gUsuarioSGI.Id
                         End With
+                        oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                         IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
                     End If
 
@@ -1211,6 +1212,7 @@ Public Class frm_Operacion
                     oeViaje.UsuarioCreacion = gUsuarioSGI.Id
                     oeViaje.Fecha = Date.Now
                     oeViaje.IncidenciaOperaciones = Mensaje
+                    oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOperacion.GuardarViaje(oeViaje) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion ha sido grabada Satisfactoriamente; " & Mensaje, True)
                     oeUsuarioPerfil = New e_UsuarioPerfil
                     oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
@@ -1222,6 +1224,7 @@ Public Class frm_Operacion
                     oePerfil.Codigo = Mensaje
                     oePerfil.Nombre = "Area: Operaciones Informa, " & "Viaje: " & griLista.ActiveRow.Cells("Codigo").Value & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & Mensaje
                     oePerfil.Activo = True
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPerfil.Guardar(oePerfil)
                     ControlBoton(1, 1, 1, 0, 0, 1, 1, 1, 1)
                 Case "IdEscala"
@@ -1230,6 +1233,7 @@ Public Class frm_Operacion
                         oeViaje.TipoOperacion = "V"
                         oeViaje.Id = griLista.ActiveRow.Cells("Id").Value
                         oeViaje.ViajeRetorno = griLista.ActiveRow.Cells("ViajeRetorno").Value
+                        oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olOperacion.GuardarViaje(oeViaje)
                         mensajeEmergente.Confirmacion("La Informacion ha sido grabada Satisfactoriamente", True)
                         griLista.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Color
@@ -2351,6 +2355,7 @@ Public Class frm_Operacion
                         .Observacion = txtObservacionTercero.Text.Trim
                         .Cantidad = numCantidadTercero.Value
                         .SubTotal = numSubTotalTercero.Value
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     oeOperacion.oeContratoTercero.Add(oeContratoTercero)
                     griDetalleTercero.DataBind()
@@ -2526,6 +2531,7 @@ Public Class frm_Operacion
                     oeViaje.UsuarioCreacion = gUsuarioSGI.Id
                     oeViaje.Fecha = Date.Now
                     oeViaje.GlosaEscala = griDisponibleVehiculo.ActiveRow.Cells("GlosaEscala").Value
+                    oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOperacion.GuardarViaje(oeViaje) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion ha sido grabada Satisfactoriamente; " & griDisponibleVehiculo.ActiveRow.Cells("GlosaEscala").Value, True)
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
             End Select
@@ -4183,6 +4189,7 @@ Public Class frm_Operacion
                     .Subtotal = txtSubtotal.Value
                     .MotivoConsolidado = txtMotivoConsolidado.Text
                     .FalsoFlete = Me.chkIndFalsoFlete.Checked
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 If verPagoContraEntrega.Checked Then
                     oeOperacionDetalle.PagoEfectivoDeposito = "D"
@@ -4199,6 +4206,7 @@ Public Class frm_Operacion
                         .IdUsuarioIncidente = gUsuarioSGI.Id
                         .Glosa = "Cambio de tarifa variable"
                         .Indicador = "V"
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     oeOperacionDetalle.oeIncidenciaAutentificadas = incidencia
                 End If
@@ -5355,6 +5363,7 @@ Public Class frm_Operacion
                 FiltrarLista()
                 oeOperacion.oeListaBitacora = ListaBitacora
                 oeOperacion.oeContratoTercero = griDetalleTercero.DataSource
+                oeOperacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olOperacion.Guardar(oeOperacion) Then
                     EstadoViaje = "1CH00017"
                     ActualizaRegistroEditado(RegistroEditado, IdRegistroEditado)
@@ -5913,6 +5922,7 @@ Public Class frm_Operacion
                         oePerfil.TipoOperacion = "M"
                         oePerfil.Id = ObtenerPerfilPrincipal.Id
                         oePerfil.Nombre = "Area: Operaciones Informa, " & "Tracto: " & cboTracto.Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
+                        oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olPerfil.Guardar(oePerfil)
                         Return False
                     End If
@@ -5928,6 +5938,7 @@ Public Class frm_Operacion
                     oePerfil.TipoOperacion = "M"
                     oePerfil.Id = "1CH000000005"
                     oePerfil.Nombre = "Area: Operaciones Informa, " & "Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Tracto: " & cboTracto.Text & ", Se encuentra en Mantenimiento sin Liberar"
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPerfil.Guardar(oePerfil)
                     cboTracto.Focus()
                     Throw New Exception("Tracto Seleccionado se encuentra en Mantenimiento. Fecha Tentativa Salida: " & oeVehiculo.Fecha.ToString)
@@ -5962,6 +5973,7 @@ Public Class frm_Operacion
                             oePerfil.TipoOperacion = "M"
                             oePerfil.Id = ObtenerPerfilPrincipal.Id
                             oePerfil.Nombre = "Area: Operaciones Informa, " & "Carreta: " & cboCarreta.Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
+                            oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olPerfil.Guardar(oePerfil)
                             Return False
                         End If
@@ -5976,6 +5988,7 @@ Public Class frm_Operacion
                     oePerfil.TipoOperacion = "M"
                     oePerfil.Id = "1CH000000005"
                     oePerfil.Nombre = "Area: Operaciones Informa, " & "Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Carreta: " & cboCarreta.Text & ", Se encuentra en Mantenimiento sin Liberar"
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPerfil.Guardar(oePerfil)
                     cboCarreta.Focus()
                     Throw New Exception("Carreta Seleccionada se encuentra en Mantenimiento. Fecha Tentativa Salida: " & oeVehiculo.Fecha)
@@ -6398,6 +6411,7 @@ Public Class frm_Operacion
                 oePerfil.TipoOperacion = "P"
                 oePerfil.Id = "1CH000000023"
                 oePerfil.Nombre = "Area: Operaciones Documentos Vencidos, " & "Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", " & tipo & ": " & nombre & " " & TextoTotal
+                oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olPerfil.Guardar(oePerfil)
             End If
             Return False
@@ -6682,6 +6696,7 @@ Public Class frm_Operacion
                     oeViaje.Capacidad = CDec(txtViajeCapacidadUtil.Text)
                     oeViaje.IndCarga = 1
                     oeViaje.FleteUnitario = Convert.ToDecimal(txtFleteUnitarioViaje.Value)
+                    oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     IndCopiloto = False
                     AgregaViaje()
                     If verEscala.Checked = True Then
@@ -6728,6 +6743,7 @@ Public Class frm_Operacion
                             oeViaje.ViajeVacio = False
                             oeViaje.PorcentajeFlete = 100
                         End If
+                        oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                         AgregaViaje()
                     End If
                     CalcularTotalesDetalle()
@@ -6755,6 +6771,7 @@ Public Class frm_Operacion
                         oeViaje.DiaNoche = opcNocheDia.CheckedIndex
                         oeViaje.Capacidad = txtViajeCapacidadUtil.Value
                         oeViaje.IndCarga = 1
+                        oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                         IndCopiloto = False
                         AgregaViaje()
                         oeRuta = New e_Ruta
@@ -6805,6 +6822,7 @@ Public Class frm_Operacion
                     oeViaje.IndEscala = verEscalaBloque.Checked
                     oeViaje.Capacidad = txtViajeCapacidadUtil.Value
                     oeViaje.IndCarga = 1
+                    oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     AgregaViaje()
                 End If
 

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -861,6 +869,8 @@ Public Class frm_FacturarServicio
             End If
             ObtenerDatosControles()
             oeMovimientoDocumento.IndAfectaAnticipo = b_anticipo
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeAnticipo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If (olMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo)) Then
                 If cboEstadoFacturaM.Text = "GENERADA" Then
                     If MessageBox.Show("La Información ha sido grabada satisfactoriamente en " & Me.Text & Environment.NewLine _
@@ -1911,8 +1921,10 @@ Public Class frm_FacturarServicio
                     oeDocAsoc = New e_DocumentoAsociado
                     oeDocAsoc.TipoOperacion = "T"
                     oeDocAsoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
+                    oeDocAsoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeMovimientoDocumento.DocAsoc = olDocAsoc.Listar(oeDocAsoc)
                 End If
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeCuentaCorriente.Id <> "" Then
                     _banEmis = olMovimientoDocumento.GuardarVentaAsiento(oeMovimientoDocumento, oeAsientoModel, oeServCtaCtble, True, IdCtaCtableAux, oeMovimientoDocumento.IndAfectaAnticipo)
                 Else
@@ -1921,6 +1933,7 @@ Public Class frm_FacturarServicio
                         .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
                         .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
                     End With
+                    oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olCuentaCorriente.Guardar(oeCuentaCorriente)
                     _banEmis = olMovimientoDocumento.GuardarVentaAsiento(oeMovimientoDocumento, oeAsientoModel, oeServCtaCtble, True, IdCtaCtableAux, oeMovimientoDocumento.IndAfectaAnticipo)
                 End If

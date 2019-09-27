@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -230,6 +238,7 @@ Public Class frm_Seguimiento
                             .Referencia = "Seguimiento"
                             .UsuarioEdita = gUsuarioSGI.Id
                         End With
+                        oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                         IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
                     End If
                     If verIndFallaOP.Checked Then
@@ -605,6 +614,7 @@ Public Class frm_Seguimiento
                 .IndLlegadaOrigen = 1
             End With
             'ValidaLlegadaOrigen(oeSeguimiento.LlegadaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verLlegadaOrigen.Checked = True
                 Marcas()
@@ -631,6 +641,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaInicioCargaOrigen(oeSeguimiento.CargaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verCargaOrigen.Checked = True
                 Marcas()
@@ -656,6 +667,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaSalidaOrigen(oeSeguimiento.SalidaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verSalidaOrigen.Checked = True
                 Marcas()
@@ -703,6 +715,7 @@ Public Class frm_Seguimiento
                 .IndLlegadaDestino = 1
             End With
             ValidaLlegadaDestino(oeSeguimiento.LlegadaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verLlegadaDestino.Checked = True
                 Marcas()
@@ -734,6 +747,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaDescargaDestino(oeSeguimiento.DescargaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verDescargaDestino.Checked = True
                 Marcas()
@@ -767,6 +781,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaSalidaDestino(oeSeguimiento.SalidaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verSalidaDestino.Checked = True
                 InformacionTractoCarreta(1, 1, 1, 1, 1, 1)
@@ -794,6 +809,7 @@ Public Class frm_Seguimiento
             End With
 
             'ValidaLlegadaOrigen(oeSeguimiento.LlegadaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verLlegadaOrigenE.Checked = True
                 Marcas()
@@ -820,6 +836,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaIngresoComplejoOrigenE(oeSeguimiento.IngresoComplejoOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verIngresoComplejoOrigenE.Checked = True
                 Marcas()
@@ -845,6 +862,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaInicioCargaOrigenE(oeSeguimiento.CargaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verCargaOrigenE.Checked = True
                 Marcas()
@@ -870,6 +888,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaTerminoCargaOrigenE(oeSeguimiento.TerminoCargaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verTerminoCargaOrigenE.Checked = True
                 Marcas()
@@ -895,6 +914,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaImpresionGuiaOrigenE(oeSeguimiento.ImpresionGuiaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verImpresionGuiaOrigenE.Checked = True
                 Marcas()
@@ -922,6 +942,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaSalidaOrigenE(oeSeguimiento.SalidaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verSalidaOrigenE.Checked = True
                 Marcas()
@@ -963,6 +984,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaLlegadaAproximadaDestinoE(oeSeguimiento.LlegadaAproximadaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verLlegadaAproximadaDestinoE.Checked = True
                 Marcas()
@@ -993,6 +1015,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaLlegadaDestinoE(oeSeguimiento.LlegadaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verLlegadaDestinoE.Checked = True
                 Marcas()
@@ -1019,6 +1042,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaIngresoDestinoE(oeSeguimiento.IngresoDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verIngresoDestinoE.Checked = True
                 Marcas()
@@ -1044,6 +1068,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaDescargaDestinoE(oeSeguimiento.DescargaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verDescargaDestinoE.Checked = True
                 Marcas()
@@ -1069,6 +1094,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaTerminoDescargaDestinoE(oeSeguimiento.TerminoDescargaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verTerminoDescargaDestinoE.Checked = True
                 Marcas()
@@ -1103,6 +1129,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaSalidaDestinoE(oeSeguimiento.SalidaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verSalidaDestinoE.Checked = True
                 InformacionTractoCarreta(1, 1, 1, 1, 1, 1)
@@ -1153,7 +1180,7 @@ Public Class frm_Seguimiento
                         Mensaje = griLista.ActiveRow.Cells("IncidenciaSeguimiento").Value
                         .Incidencia = Mensaje
                     End With
-
+                    oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSeguimiento.Guardar(oeSeguimiento) Then
                         mensajeEmergente.Confirmacion("La Informacion ha sido grabada Satisfactoriamente; " & Mensaje, True)
                     End If
@@ -1168,7 +1195,7 @@ Public Class frm_Seguimiento
                         .Codigo = Mensaje
                         .Nombre = "Area: Call Center Comunica, " & "Viaje: " & griLista.ActiveRow.Cells("Codigo").Value & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & Mensaje
                     End With
-
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPerfil.Guardar(oePerfil)
                     ControlBoton(1, 0, 1, 0, 0, 1, 1, 1, 1)
             End Select
@@ -1251,6 +1278,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaTerminoCargaOrigen(oeSeguimiento.TerminoCargaOrigen)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verTerminoCargaOrigen.Checked = True
                 Marcas()
@@ -1278,6 +1306,7 @@ Public Class frm_Seguimiento
             End With
 
             ValidaTerminoDescargaDestino(oeSeguimiento.TerminoDescargaDestino)
+            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeguimiento.Guardar(oeSeguimiento) Then
                 verTerminoDescargaDestino.Checked = True
                 Marcas()
@@ -2044,6 +2073,7 @@ Public Class frm_Seguimiento
                     oeViaje.TipoOperacion = "S"
                     oeViaje.Id = griLista.ActiveRow.Cells("Id").Value.ToString()
                     oeViaje.IdEstado = IdEstadoProgramado
+                    oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOperacion.GuardarViaje(oeViaje) Then
                         MessageBox.Show("Operacion realizada con éxito", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         griLista.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Color
@@ -2813,6 +2843,7 @@ Public Class frm_Seguimiento
                     .Id = oeViaje.IdTipoVehiculo
                     .FechaModificado = DateAdd(DateInterval.Minute, 5, oeViaje.LlegadaOrigen)
                 End With
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegistroEditado.Guardar(oeRegistroEditado)
                 RegistroEditado = 1
             End If
@@ -3136,6 +3167,7 @@ Public Class frm_Seguimiento
                                             .LlegadaOrigen = Date.Parse(fecLlegadaOrigen.Value.ToShortDateString & " " & hLlegadaOrigen.Value.ToShortTimeString)
                                             .IndLlegadaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
                                     'inicio carga origen       
@@ -3150,6 +3182,7 @@ Public Class frm_Seguimiento
                                             .CargaOrigen = Date.Parse(fecCargaOrigen.Value.ToShortDateString & " " & hCargaOrigen.Value.ToShortTimeString)
                                             .IndCargaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
 
@@ -3165,6 +3198,7 @@ Public Class frm_Seguimiento
                                             .TerminoCargaOrigen = Date.Parse(fecTerminoCargaOrigen.Value.ToShortDateString & " " & hTerminoCargaOrigen.Value.ToShortTimeString)
                                             .IndTerminoCargaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
                                     'salida origen
@@ -3179,6 +3213,7 @@ Public Class frm_Seguimiento
                                             .SalidaOrigen = Date.Parse(fecSalidaOrigen.Value.ToShortDateString & " " & hSalidaOrigen.Value.ToShortTimeString)
                                             .IndSalidaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                         Marcas()
                                     End If
@@ -3214,6 +3249,7 @@ Public Class frm_Seguimiento
                                             .LlegadaOrigen = Date.Parse(fecLlegadaOrigen.Value.ToShortDateString & " " & hLlegadaOrigen.Value.ToShortTimeString)
                                             .IndLlegadaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
 
@@ -3228,6 +3264,7 @@ Public Class frm_Seguimiento
                                             .CargaOrigen = Date.Parse(fecCargaOrigen.Value.ToShortDateString & " " & hCargaOrigen.Value.ToShortTimeString)
                                             .IndCargaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
 
@@ -3242,6 +3279,7 @@ Public Class frm_Seguimiento
                                             .TerminoCargaOrigen = Date.Parse(fecTerminoCargaOrigen.Value.ToShortDateString & " " & hTerminoCargaOrigen.Value.ToShortTimeString)
                                             .IndTerminoCargaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
 
@@ -3256,6 +3294,7 @@ Public Class frm_Seguimiento
                                             .SalidaOrigen = Date.Parse(fecSalidaOrigen.Value.ToShortDateString & " " & hSalidaOrigen.Value.ToShortTimeString)
                                             .IndSalidaOrigen = 1
                                         End With
+                                        oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olSeguimiento.Guardar(oeSeguimiento)
                                     End If
 
@@ -3546,6 +3585,7 @@ Public Class frm_Seguimiento
                                                 .LlegadaOrigen = Date.Parse(fecLlegadaOrigenE.Value.ToShortDateString & " " & hLlegadaOrigenE.Value.ToShortTimeString)
                                                 .IndLlegadaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3561,6 +3601,7 @@ Public Class frm_Seguimiento
                                                 .IngresoComplejoOrigen = Date.Parse(fecIngresoComplejoOrigenE.Value.ToShortDateString & " " & hIngresoComplejoOrigenE.Value.ToShortTimeString)
                                                 .IndIngresoComplejoOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3576,6 +3617,7 @@ Public Class frm_Seguimiento
                                                 .CargaOrigen = Date.Parse(fecCargaOrigenE.Value.ToShortDateString & " " & hCargaOrigenE.Value.ToShortTimeString)
                                                 .IndCargaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3591,6 +3633,7 @@ Public Class frm_Seguimiento
                                                 .TerminoCargaOrigen = Date.Parse(fecTerminoCargaOrigenE.Value.ToShortDateString & " " & hTerminoCargaOrigenE.Value.ToShortTimeString)
                                                 .IndTerminoCargaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3606,6 +3649,7 @@ Public Class frm_Seguimiento
                                                 .ImpresionGuiaOrigen = Date.Parse(fecImpresionGuiaOrigenE.Value.ToShortDateString & " " & hImpresionGuiaOrigenE.Value.ToShortTimeString)
                                                 .IndImpresionGuiaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3621,6 +3665,7 @@ Public Class frm_Seguimiento
                                                 .SalidaOrigen = Date.Parse(fecSalidaOrigenE.Value.ToShortDateString & " " & hSalidaOrigenE.Value.ToShortTimeString)
                                                 .IndSalidaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3662,6 +3707,7 @@ Public Class frm_Seguimiento
                                                 .LlegadaOrigen = Date.Parse(fecLlegadaOrigenE.Value.ToShortDateString & " " & hLlegadaOrigenE.Value.ToShortTimeString)
                                                 .IndLlegadaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3677,6 +3723,7 @@ Public Class frm_Seguimiento
                                                 .IngresoComplejoOrigen = Date.Parse(fecIngresoComplejoOrigenE.Value.ToShortDateString & " " & hIngresoComplejoOrigenE.Value.ToShortTimeString)
                                                 .IndIngresoComplejoOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3692,6 +3739,7 @@ Public Class frm_Seguimiento
                                                 .CargaOrigen = Date.Parse(fecCargaOrigenE.Value.ToShortDateString & " " & hCargaOrigenE.Value.ToShortTimeString)
                                                 .IndCargaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3707,6 +3755,7 @@ Public Class frm_Seguimiento
                                                 .TerminoCargaOrigen = Date.Parse(fecTerminoCargaOrigenE.Value.ToShortDateString & " " & hTerminoCargaOrigenE.Value.ToShortTimeString)
                                                 .IndTerminoCargaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3722,6 +3771,7 @@ Public Class frm_Seguimiento
                                                 .ImpresionGuiaOrigen = Date.Parse(fecImpresionGuiaOrigenE.Value.ToShortDateString & " " & hImpresionGuiaOrigenE.Value.ToShortTimeString)
                                                 .IndImpresionGuiaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3737,6 +3787,7 @@ Public Class frm_Seguimiento
                                                 .SalidaOrigen = Date.Parse(fecSalidaOrigenE.Value.ToShortDateString & " " & hSalidaOrigenE.Value.ToShortTimeString)
                                                 .IndSalidaOrigen = 1
                                             End With
+                                            oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             olSeguimiento.Guardar(oeSeguimiento)
                                         End If
 
@@ -3822,6 +3873,7 @@ Public Class frm_Seguimiento
                 End With
                 FiltrarLista()
                 oeSeguimiento.oeListaBitacora = ListaBitacora
+                oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olSeguimiento.Guardar(oeSeguimiento) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     'Consultar(True)
@@ -4089,6 +4141,7 @@ Public Class frm_Seguimiento
                     .Fecha = fecEmisionGrr.Value
                     .Viaje = txtViajeCodigo.Text
                     .Glosa = txtGlosa.Text
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeSeguimiento.GuiaRemitente.Add(oeGuiaRemitente)
                 griGuiaRemitente.DataBind()
@@ -4140,6 +4193,7 @@ Public Class frm_Seguimiento
                     .IndDocumentos = 0
                     .IndGrtPerdido = 0
                     .Cantidad = txtGrtCantidad.Text
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeSeguimiento.GuiaTransportista.Add(oeGuiaTransportista)
                 griGuiaTransportista.DataBind()
@@ -4191,6 +4245,7 @@ Public Class frm_Seguimiento
                     .Fecha = fecEmisionGrr.Value
                     .Viaje = txtViajeCodigo.Text
                     .Glosa = txtGlosa.Text
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeSeguimiento.GuiaRemitente.Add(oeGuiaRemitente)
                 griGuiaRemitente.DataBind()
@@ -4595,6 +4650,7 @@ Public Class frm_Seguimiento
                     .Glosa = txtGlosaInterrumpido.Text
                     .Fecha = fecPartidaViajeInterrumpido.Value
                     .Viaje = txtViajeCodigo.Text
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 oeSeguimiento.GuiaTransportistaInterrumpida.Add(oeGrtInterrumpida)
                 griViajeInterrumpido.DataBind()

@@ -747,11 +747,13 @@ Public Class frm_FacturarCarga
                         .Id = Fila.Cells("Id").Value
                         .IdOperacion = txtCodigoOP.Text
                         .UsuarioCreacion = gUsuarioSGI.Id
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                     End With
                     leOperacionDet.Add(oeOperacionDet)
                 Next
                 If MessageBox.Show("Se va actualizar todos los REGISTROS de la lista activa seleccionados desea continuar ? ", _
                                    "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+
                     olOperacion.GuardarOperacionDetalleLista(leOperacionDet)
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente.", True)
                 End If
@@ -2494,6 +2496,7 @@ Public Class frm_FacturarCarga
                     oeDocAsoc.Monto_Operar = doc_antic.Cells("MontoOperar").Value
                     oeDocAsoc.Monto_Desc = doc_antic.Cells("MontoOriginal").Value
                     oeDocAsoc.IdMovimientoDocumentoAsoc = doc_antic.Cells("Id").Value
+                    oeDocAsoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstDocAsoc.Add(oeDocAsoc)
                 Next
                 If oeMovDocumento.TipoOperacion <> "I" Then
@@ -2502,6 +2505,7 @@ Public Class frm_FacturarCarga
                             oeDocAsoc = New e_DocumentoAsociado
                             oeDocAsoc.TipoOperacion = "E"
                             oeDocAsoc.Id = doc_ant_el.Id
+                            oeDocAsoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                             lstDocAsoc.Add(oeDocAsoc)
                         End If
                     Next
@@ -2519,6 +2523,7 @@ Public Class frm_FacturarCarga
                         detalle.Monto_Anticipo = Math.Round(total_antic, 2)
                         total_antic = 0
                     End If
+                    detalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Next
             Else
                 oeMovDocumento.IndAfectaAnticipo = False
@@ -2528,14 +2533,16 @@ Public Class frm_FacturarCarga
                     oeDocAsoc.TipoOperacion = "T"
                     oeDocAsoc.IdMovimientoDocumento = oeMovDocumento.Id
                     lstDocAsoc = New List(Of e_DocumentoAsociado)
+                    oeDocAsoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstDocAsoc = olDocAsoc.Listar(oeDocAsoc)
                     For Each doc_ant_el In lstDocAsoc
                         doc_ant_el.TipoOperacion = "E"
+                        doc_ant_el.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Next
                     oeMovDocumento.DocAsoc = lstDocAsoc
                 End If
             End If
-
+            oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovDocumento.GuardarMasivo(oeMovDocumento) Then
                 leDetalleDocOD = New List(Of e_DetalleDoc_OperacionDet)
                 If cboEstado.Text = "GENERADA" Then
@@ -3794,6 +3801,7 @@ Public Class frm_FacturarCarga
                     oeDocAsoc.IdMovimientoDocumento = oeMovDocumento.Id
                     oeMovDocumento.DocAsoc = olDocAsoc.Listar(oeDocAsoc)
                 End If
+                oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeCuentaCorriente.Id <> "" Then
                     _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, False, String.Empty, b_anticipo)
                 Else
@@ -3802,6 +3810,7 @@ Public Class frm_FacturarCarga
                         .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
                         .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
                     End With
+                    oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olCuentaCorriente.Guardar(oeCuentaCorriente)
                     _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, False, String.Empty, b_anticipo)
                 End If

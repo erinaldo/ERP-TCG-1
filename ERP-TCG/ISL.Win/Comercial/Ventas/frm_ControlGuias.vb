@@ -5,6 +5,7 @@
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
+
 Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
@@ -485,7 +486,7 @@ Public Class frm_ControlGuias
                     .GuiasTalanonarios = griTalonarios.DataSource
                     .UsuarioCreacion = gUsuarioSGI.Id
                 End With
-
+                oeGuiasControl.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olGuiasControl.Guardar(oeGuiasControl) Then
                     mensajeEmergente.Confirmacion(Me.Text & ": La informacion ha sido grabada satisfactoriamente", True)
                     ugb_Espera.Visible = False

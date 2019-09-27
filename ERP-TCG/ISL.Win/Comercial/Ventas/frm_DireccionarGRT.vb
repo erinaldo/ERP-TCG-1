@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -219,6 +227,7 @@ Public Class frm_DireccionarGRT
                 .IndGrtPerdido = verDoctsPerdido.Checked
                 .IdOperacionDetalle = txtIdOperacionDetalle.Text.Trim
             End With
+            oeGuiaTransportista.PrefijoID = gs_PrefijoIdSucursal '@0001
             olGuiaTransportista.Guardar(oeGuiaTransportista)
             IndDireccionarGRT = True
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)

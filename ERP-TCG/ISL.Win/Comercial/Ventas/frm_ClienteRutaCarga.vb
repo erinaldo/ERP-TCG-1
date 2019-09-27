@@ -1,4 +1,13 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -269,6 +278,7 @@ Public Class frm_ClienteRutaCarga
     Private Function GuardarClienteRuta() As Boolean
         Try
             LlenaObjeto()
+            oeClienteRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olClienteRuta.Guardar(oeClienteRuta) Then
                 Return False
             End If

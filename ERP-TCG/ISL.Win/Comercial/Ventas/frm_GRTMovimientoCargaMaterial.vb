@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Public Class frm_GRTMovimientoCargaMaterial
@@ -338,6 +346,7 @@ Public Class frm_GRTMovimientoCargaMaterial
                                 End If
                                 griListaGrt.ActiveRow.Cells("IndCarga").Value = 2
                         End Select
+                        oeGuiaTransportista.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olGuiaTransportita.Guardar(oeGuiaTransportista)
                     Else
                         Throw New Exception("Seleccione Local Almacen")

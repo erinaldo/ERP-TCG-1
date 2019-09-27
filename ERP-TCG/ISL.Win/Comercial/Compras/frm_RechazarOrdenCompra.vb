@@ -1,4 +1,13 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
+'=================================================================================================================
+
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -55,6 +64,7 @@ Public Class frm_RechazarOrdenCompra
             oeRechOrden.TipoOperacion = "I"
             oeRechOrden.UsuarioCreacion = gUsuarioSGI.Id
             Dim Mensaje As String = ""
+            oeRechOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olRechOrden.Guardar(oeRechOrden) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 Mensaje = oeRechOrden.Glosa
@@ -69,7 +79,9 @@ Public Class frm_RechazarOrdenCompra
                 oePerfil.Id = oeUsuarioPerfil.oePerfil.Id
                 oePerfil.Codigo = Mensaje
                 oePerfil.Nombre = "Rechazo de Orden: " & oeRechOrden.NroOrden & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Motivo: " & Mensaje
+                oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olPerfil.Guardar(oePerfil)
+                oeOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olOrdenCompra.Guardar1(oeOrdenCompra)
                 Me.Close()
             End If

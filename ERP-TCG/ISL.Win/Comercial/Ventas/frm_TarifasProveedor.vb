@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -133,6 +141,7 @@ Public Class frm_TarifasProveedor
             oeTarifasProveedor.IdMaterial = IdMaterialObj
             oeTarifasProveedor.Importe = numImporte.Value
             oeTarifasProveedor.IdLugar = cboLugar.Value
+            oeTarifasProveedor.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasProveedor.Guardar(oeTarifasProveedor) Then
                 mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente")
                 MostrarTabs(0, Ficha1, 0)
@@ -156,6 +165,7 @@ Public Class frm_TarifasProveedor
                     oeTraPro.TipoOperacion = "A"
                     oeTraPro.Importe = griTarifasProveedor.ActiveRow.Cells("Importe").Value
                     oeTraPro.Id = griTarifasProveedor.ActiveRow.Cells("Id").Value
+                    oeTraPro.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olTarifasProveedor.Guardar(oeTraPro) Then
                         mensajeEmergente.Confirmacion("La Informacion ha Sido Actualizada Correctamente")
                         Listar(IdProveedorObj, IdFlujoCajaObj, IdMaterialObj, IdClienteObj)

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -421,11 +429,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -468,9 +477,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioVea.Value
                     .FechaFin = fecInicioVea.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -524,11 +535,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -575,9 +587,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioTottus.Value
                     .FechaFin = fecInicioTottus.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -600,6 +614,7 @@ Public Class frm_TarifasCliente
                 .IndHistorial = txtUltimoHistorialAlicorp.Text
                 .IndActual = 1
             End With
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             ListaTarifasCliente.AddRange(olTarifasCliente.Listar(oeTarifasCliente))
             TarifasActualiza = ""
             For Each oeTarifas As e_TarifasCliente In ListaTarifasCliente
@@ -624,11 +639,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -669,9 +685,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioAlicorp.Value
                     .FechaFin = fecInicioAlicorp.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -726,11 +744,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -779,9 +798,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioCementos.Value
                     .FechaFin = fecInicioCementos.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -830,11 +851,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -877,9 +899,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioGloria.Value
                     .FechaFin = fecInicioGloria.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -928,11 +952,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -975,9 +1000,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioCencosud.Value
                     .FechaFin = fecInicioCencosud.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -1026,11 +1053,12 @@ Public Class frm_TarifasCliente
                     TarifasActualiza = TarifasActualiza & "'" & .Id & "',"
                     .Id = ""
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "T"
             oeTarifasCliente.Observacion = TarifasActualiza.Substring(0, TarifasActualiza.Length - 1)
-
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -1073,9 +1101,11 @@ Public Class frm_TarifasCliente
                     .FechaInicio = fecInicioInduamerica.Value
                     .FechaFin = fecInicioInduamerica.Value
                 End With
+                oeTarifas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTarifasCliente.e_ListaTarifasCliente.Add(oeTarifas)
             Next
             oeTarifasCliente.TipoOperacion = "X"
+            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTarifasCliente.Guardar(oeTarifasCliente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Listar()
@@ -1480,7 +1510,7 @@ Public Class frm_TarifasCliente
                     .AceptaComision = Me.chkAceptaComision.Checked
                     .IndMaterial = Me.chkIncluyeMaterial.Checked
                 End With
-
+                oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olTarifasCliente.Guardar(oeTarifasCliente) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                     Consultar(True)
@@ -1822,6 +1852,7 @@ Public Class frm_TarifasCliente
                     End With
                     Select Case e.Cell.Column.Key
                         Case "Observacion"
+                            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olTarifasCliente.Guardar(oeTarifasCliente)
                     End Select
                 Else
@@ -1915,6 +1946,7 @@ Public Class frm_TarifasCliente
                                 .IdMaterial = Fila.Cells("IdMaterial").Value
                                 .UsuarioCreacion = gUsuarioSGI.Id
                             End With
+                            oeTarifasCliente.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olTarifasCliente.Guardar(oeTarifasCliente)
                             Fila.CellAppearance.BackColor = Me.colorCambio.Color
                         End If

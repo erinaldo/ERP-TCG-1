@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -1048,6 +1056,7 @@ Public Class frm_ControlMermas
                             oeAlmacenMermas.PrecioVenta = .Cells("PrecioVenta").Value
                         End With
                         oeAlmacenMermas.TipoOperacion = "A"
+                        oeAlmacenMermas.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olAlmacenMermas.Guardar(oeAlmacenMermas) Then
                             mensajeEmergente.Confirmacion("Se Modifico el Precio Correctamente")
 
@@ -1332,6 +1341,7 @@ Public Class frm_ControlMermas
                         End With
                     End If
             End Select
+            oeMovimientoMermas.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimientoMermas.Guardar(oeMovimientoMermas) Then
                 If oeMovimientoMermas.IndIngresoSalida = 1 Then
                     Dim frm As New frm_VentaMerma
@@ -1468,6 +1478,7 @@ Public Class frm_ControlMermas
                     oeAlmacenMermas.IdMaterial = oeCom.Id
                     oeAlmacenMermas.IdUnidadMedida = "1PY000000011"
                     oeAlmacenMermas.UsuarioCreacion = gUsuarioSGI.Id
+                    oeAlmacenMermas.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olAlmacenMermas.Guardar(oeAlmacenMermas)
                 End If
             Else
@@ -1546,6 +1557,7 @@ Public Class frm_ControlMermas
             oeIngresoSalida.Serie = FormatoDocumento(griListaIngresos.ActiveRow.Cells("Serie").Value.ToString, 4)
             oeIngresoSalida.Numero = FormatoDocumento(griListaIngresos.ActiveRow.Cells("Numero").Value, 10)
             oeIngresoSalida.PrecioFactura = griListaIngresos.ActiveRow.Cells("PrecioFactura").Value
+            oeIngresoSalida.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olIngresoSalida.Guardar(oeIngresoSalida) Then
                 Return False
             End If
@@ -1562,6 +1574,7 @@ Public Class frm_ControlMermas
             oe.Id = griMovimiento.ActiveRow.Cells("Id").Value
             oe.UsuarioCreacion = gUsuarioSGI.Id
             oe.Total = griMovimiento.ActiveRow.Cells("Total").Value
+            oe.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olMovimientoMermas.Guardar(oe) Then
                 Return False
             End If

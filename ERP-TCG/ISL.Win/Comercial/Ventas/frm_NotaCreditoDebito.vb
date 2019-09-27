@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -541,6 +549,7 @@ Public Class frm_NotaCreditoDebito
                 oeCuentaCorriente = New e_CuentaCorriente
                 oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = oeMovDocumento.IdClienteProveedor
                 oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
+                oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeCuentaCorriente.Id <> "" Then
                     _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, IndServ, IdCtaCtableAux)
                 Else
@@ -549,6 +558,7 @@ Public Class frm_NotaCreditoDebito
                         .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
                         .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
                     End With
+                    oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olCuentaCorriente.Guardar(oeCuentaCorriente)
                     _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, IndServ, IdCtaCtableAux)
                 End If
@@ -882,6 +892,7 @@ Public Class frm_NotaCreditoDebito
             oeNotaCreditoDebito.Venta.Inafecto = IIf(decIgv.Value = 0, IIf(cboTipoMoneda.Text.Trim <> "SOLES", Math.Round(decSubTotal.Value * decTipoCambio.Value, 4), decSubTotal.Value), 0)
             oeNotaCreditoDebito.Venta.IdDireccion = oeDocAso.Venta.IdDireccion
             olNotaCreditoDebito.ValidarNC_ND(oeNotaCreditoDebito)
+            oeNotaCreditoDebito.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olNotaCreditoDebito.GuardarMasivo(oeNotaCreditoDebito) Then
                 'mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 If MessageBox.Show("La informacion ha sido grabada satisfactoriamente en " & Me.Text & _
