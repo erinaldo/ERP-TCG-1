@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -93,6 +101,7 @@ Public Class d_CuotaDocumentoVehiculo
 
                 If .leCuotaPago.Count > 0 Then
                     For Each obj In .leCuotaPago
+                        obj.PrefijoID = oeCuotaDocumentoVehiculo.PrefijoID '@0001
                         odCuotaDoVehPago.Guardar(obj)
                     Next
                 End If

@@ -74,6 +74,7 @@ Public Class d_DocumentoVehicular_Documento
                     )
                 If .leDocVehDocPago.Count > 0 Then
                     For Each obj In .leDocVehDocPago
+                        obj.PrefijoID = oeDocVeh_Doc.PrefijoID '@0001
                         odDocVehDocPago.Guardar(obj)
                     Next
                 End If

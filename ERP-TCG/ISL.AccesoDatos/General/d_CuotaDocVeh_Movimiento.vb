@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -106,8 +114,10 @@ Public Class d_CuotaDocVeh_Movimiento
                         .UsuarioCreacion = Cuota.IdUsuarioCreacion
                         .FechaCreacion = Date.Now()
                         .Activo = 1
+                        .PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     End With
                     Cuota.leCuotaPago.Add(CuotaPago)
+                    Cuota.PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     odCuotaDocumentoVehiculo.Guardar(Cuota)
                 Next
 
@@ -124,8 +134,10 @@ Public Class d_CuotaDocVeh_Movimiento
                         .FechaCreacion = Date.Now()
                         .UsuarioCreacion = oeCuotaDocVeh_Movimiento.UsuarioCreacion
                         .Activo = 1
+                        .PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     End With
                     Doc.leDocVehDocPago.Add(oeDocVehDocPago)
+                    Doc.PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     odDocumentoVeh_Documento.Guardar(Doc)
                 Next
 
@@ -134,6 +146,7 @@ Public Class d_CuotaDocVeh_Movimiento
                     CuotaNueva.IdOrigen_CuotaMov = stResultado(0)
                     CuotaNueva.SaldoAdministrativo = CuotaNueva.MontoOpera
                     CuotaNueva.SaldoContable = CuotaNueva.Monto
+                    CuotaNueva.PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     odCuotaDocumentoVehiculo.Guardar(CuotaNueva)
                 Next
                  

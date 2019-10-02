@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -243,6 +251,7 @@ Public Class frm_CuponesSeguros
             Dim oeCupon As New e_CuotaDocumentoVehiculo
             oeCupon = Grid_CuotaLista.ActiveRow.ListObject
             leCuotaListado.Remove(oeCupon)
+            oeCupon.PrefijoID = gs_PrefijoIdSucursal '@0001
             leCuotaSeleccion.Add(oeCupon)
             Grid_CuotaLista.DataBind()
             Grid_CuotaSel.DataBind()
@@ -257,6 +266,7 @@ Public Class frm_CuponesSeguros
             Dim oeCupon As New e_CuotaDocumentoVehiculo
             oeCupon = Grid_CuotaSel.ActiveRow.ListObject
             leCuotaSeleccion.Remove(oeCupon)
+            oeCupon.PrefijoID = gs_PrefijoIdSucursal '@0001
             leCuotaListado.Add(oeCupon)
             Grid_CuotaLista.DataBind()
             Grid_CuotaSel.DataBind()
@@ -271,6 +281,7 @@ Public Class frm_CuponesSeguros
             Dim oeDocumento As New e_DocumentoVehicular_Documento
             oeDocumento = Grid_DocRefLista.ActiveRow.ListObject
             leDocRefListado.Remove(oeDocumento)
+            oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             leDocRefSeleccion.Add(oeDocumento)
             Grid_DocRefLista.DataBind()
             Grid_DocRefSel.DataBind()
@@ -285,6 +296,7 @@ Public Class frm_CuponesSeguros
             Dim oeDocumento As New e_DocumentoVehicular_Documento
             oeDocumento = Grid_DocRefSel.ActiveRow.ListObject
             leDocRefSeleccion.Remove(oeDocumento)
+            oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             leDocRefListado.Add(oeDocumento)
             Grid_DocRefLista.DataBind()
             Grid_DocRefSel.DataBind()
@@ -308,6 +320,7 @@ Public Class frm_CuponesSeguros
             oeCuota.SaldoContable = oeCuota.Monto
             oeCuota.IdDocVeh_Doc = ""
             oeCuota.IdDocumento = ""
+            oeCuota.PrefijoID = gs_PrefijoIdSucursal '@0001
             leCuotaNueva.Add(oeCuota)
             Grid_CuotaNueva.DataSource = leCuotaNueva
             Grid_CuotaNueva.DataBind()
@@ -371,6 +384,7 @@ Public Class frm_CuponesSeguros
                 For Each obj In leCuotaNueva
                     obj.IdDocumento = IdDocumento
                     obj.IdUsuarioCreacion = gUsuarioSGI.Id
+                    obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Next
                 Dim oeCuotaMov As New e_CuotaDocVeh_Movimiento
                 Dim olCuotaMov As New l_CuotaDocVeh_Movimiento
@@ -398,6 +412,7 @@ Public Class frm_CuponesSeguros
                 oeCuotaMov.leDocumento = leDocRefSeleccion
                 oeCuotaMov.leCuotasNuevas = leCuotaNueva
                 oeCuotaMov.FechaCeacion = Date.Now()
+                oeCuotaMov.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olCuotaMov.GuardarCancelacion(oeCuotaMov)
             End If
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -1091,16 +1099,19 @@ Public Class d_Asiento
                     'RELACIONAR LiquidacionTrabajador <-> Asiento
                     If Not .oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador Is String.Empty Then
                         .oeLiquidacionTrabajador_Asiento.idasiento = stResultado(0)
+                        .oeLiquidacionTrabajador_Asiento.PrefijoID = .PrefijoID '@0001
                         odLiquidacionTrabjador.Guardar(.oeLiquidacionTrabajador_Asiento)
                     End If
                     '==============================================
                     If Not .Asiento_MovDoc Is Nothing Then
                         .Asiento_MovDoc.IdAsiento = stResultado(0)
+                        .Asiento_MovDoc.PrefijoID = .PrefijoID '@0001
                         odAsientoMovDoc.Guardar(.Asiento_MovDoc)
                     End If
                     If .AsientoReferencia.TipoOperacion = "I" Then
                         odAsientoReferencia = New d_AsientoReferencia
                         .AsientoReferencia.IdAsiento = stResultado(0)
+                        .AsientoReferencia.PrefijoID = .PrefijoID '@0001
                         odAsientoReferencia.Guardar(.AsientoReferencia)
                     End If
                     For Each oeAsiMov In .AsientoMovimiento
@@ -1108,11 +1119,13 @@ Public Class d_Asiento
                         If (oeAsiMov.ObligacionFinanciera.oeObligacionPago IsNot Nothing) AndAlso oeAsiMov.ObligacionFinanciera.oeObligacionPago.TipoOperacion <> "" Then
                             oeAsiMov.ObligacionFinanciera.oeObligacionPago.IdMovimientoCajaBanco = oeAsiento._IdMovimientoCajaBanco
                         End If
+                        oeAsiMov.PrefijoID = .PrefijoID '@0001
                         odAsientoMov.GuardarAsiMov(oeAsiMov)
                         If oeAsiMov._IdMovimientoCajaBanco <> "" Then oeAsiento._IdMovimientoCajaBanco = oeAsiMov._IdMovimientoCajaBanco
                     Next
 
                     If Not oeAsientoAnticipo Is Nothing Then
+                        oeAsientoAnticipo.PrefijoID = .PrefijoID '@0001
                         GuardarAsiento_AplicaAnticipo(oeAsientoAnticipo, stResultado(0))
                     End If
                 End With
@@ -1161,12 +1174,14 @@ Public Class d_Asiento
                         oeAsiento_Anticipo.IdAsientoAntic = stResultado(0)
                         oeAsiento_Anticipo.Activo = True
                         oeAsiento_Anticipo.TipoOperacion = oeAsiento.TipoOperacion
+                        oeAsiento_Anticipo.PrefijoID = .PrefijoID '@0001
                         odAsiento_Anticipo.Guardar(oeAsiento_Anticipo)
                     End If
                     '==============================================
 
                     For Each oeAsiMov In .AsientoMovimiento
                         oeAsiMov.IdAsiento = stResultado(0)
+                        oeAsiMov.PrefijoID = .PrefijoID '@0001
                         odAsientoMov.GuardarAsiMov(oeAsiMov)
                     Next
                 End With
