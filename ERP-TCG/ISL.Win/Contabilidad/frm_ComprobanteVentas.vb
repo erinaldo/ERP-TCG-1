@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_ComprobanteVentas
@@ -494,6 +502,7 @@ Public Class frm_ComprobanteVentas
                 oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = oeMovimientoDocumento.IdClienteProveedor
                 oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
                 If oeCuentaCorriente.Id <> "" Then
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarVentaAsiento(oeMovimientoDocumento, oeAsientoModel, oeServCtaCtble, IndServ, IdCtaCtableAux)
                 Else
                     With oeCuentaCorriente
@@ -501,7 +510,9 @@ Public Class frm_ComprobanteVentas
                         .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = Año1.Año : .Usuario = gUsuarioSGI.Id
                         .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
                     End With
+                    oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olCuentaCorriente.Guardar(oeCuentaCorriente)
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarVentaAsiento(oeMovimientoDocumento, oeAsientoModel, oeServCtaCtble, IndServ, IdCtaCtableAux)
                 End If
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)

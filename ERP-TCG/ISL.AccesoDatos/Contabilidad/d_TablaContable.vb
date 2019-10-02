@@ -100,6 +100,7 @@ Public Class d_TablaContable
 
                 For Each Detalle As e_TablaContableDet In .lstTablaCtbleDet
                     Detalle.IdTabla = stResultado(0)
+                    Detalle.PrefijoID = oeTablaContable.PrefijoID '@0001
                     odTablaContableDet.Guardar(Detalle)
                 Next
 

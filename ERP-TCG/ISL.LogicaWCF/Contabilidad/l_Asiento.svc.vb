@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -302,7 +310,7 @@ Public Class l_Asiento
     End Function
 
     Public Function GenerarAsientoConsumo(ByVal DtConsumo As System.Data.DataTable, ByVal ls_IdSubAlmacen As String, ByVal TipoCambio As Double,
-    ByVal IdPeriodo As String, ByVal FecUltimoDia As Date, ByVal IdUsuarioCrea As String) As Boolean Implements Il_Asiento.GenerarAsientoConsumo
+    ByVal IdPeriodo As String, ByVal FecUltimoDia As Date, ByVal IdUsuarioCrea As String, ByVal PrefijoId As String) As Boolean Implements Il_Asiento.GenerarAsientoConsumo
         Dim lnCont As Integer = 0
         Try
             Dim oeAsiento As New e_Asiento
@@ -347,6 +355,7 @@ Public Class l_Asiento
                             oeAsientoMovimiento.HaberME = Monto / TipoCambio
                             oeAsientoMovimiento.Glosa = oeAsiento.Glosa
                             oeAsientoMovimiento.IdUsuarioCrea = IdUsuarioCrea
+                            oeAsientoMovimiento.PrefijoID = PrefijoId '@0001
                             oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                         End If
                         Monto = 0
@@ -367,6 +376,7 @@ Public Class l_Asiento
                         oeMovAn.IdVehiculo = obj("IdVehiculo")
                         oeMovAn.Monto = obj("Total")
                         oeMovAn.Saldo = obj("Total")
+                        oeMovAn.PrefijoID = PrefijoId '@0001
                         oeAsientoMovimiento.MovimientoAnalisis.Add(oeMovAn)
                     Else
                         oeMovAn = New e_MovimientoAnalisis
@@ -377,6 +387,7 @@ Public Class l_Asiento
 
                         oeMovAn.Monto = obj("Total")
                         oeMovAn.Saldo = obj("Total")
+                        oeMovAn.PrefijoID = PrefijoId
                         oeAsientoMovimiento.MovimientoAnalisis.Add(oeMovAn)
                     End If
                     Monto = Monto + obj("Total")
@@ -384,6 +395,7 @@ Public Class l_Asiento
                     If lnUltimo = lnCont Then
                         oeAsientoMovimiento.DebeMN = Monto
                         oeAsientoMovimiento.DebeME = Monto / TipoCambio
+                        oeAsientoMovimiento.PrefijoID = PrefijoId
                         oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                         oeAsientoMovimiento = New e_AsientoMovimiento
                         oeAsientoMovimiento.TipoOperacion = "I"
@@ -394,12 +406,14 @@ Public Class l_Asiento
                         oeAsientoMovimiento.HaberME = Monto / TipoCambio
                         oeAsientoMovimiento.Glosa = oeAsiento.Glosa
                         oeAsientoMovimiento.IdUsuarioCrea = IdUsuarioCrea
+                        oeAsientoMovimiento.PrefijoID = PrefijoId '@0001
                         oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                     End If
 
                 Next
                 oeAsiento.TotalDebe = MontoTotal
                 oeAsiento.TotalHaber = MontoTotal
+                oeAsiento.PrefijoID = PrefijoId '@0001
                 Return Guardar(oeAsiento)
                 lnCont = lnCont
             End If

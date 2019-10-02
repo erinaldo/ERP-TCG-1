@@ -1,4 +1,12 @@
-﻿Imports Infragistics.Win.UltraWinGrid
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports Infragistics.Win.UltraWinGrid
 Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
@@ -223,6 +231,7 @@ Public Class frm_CuentasGenerales
         Try
             For Each obj As e_CuentasGenerales In lstCuentasGenerales
                 If Not (String.IsNullOrEmpty(obj.TipoOperacion)) Then
+                    obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olCuentasGenerales.Guardar(obj)
                 End If
             Next

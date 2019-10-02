@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -726,6 +734,7 @@ Public Class frm_ComprobanteCompra
                         oeMovDoc.Compra.Base1 = obj.Monto
                         leTCD = leTipoCompra.Where(Function(item) item.Id = obj.IdTipoCompraParaCompra).ToList
                         oeMovDoc.Compra.TipoCompra = leTCD.Item(0)
+                        oeMovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leMovDoc.Add(oeMovDoc)
                     End If
                     i = i + 1
@@ -733,6 +742,7 @@ Public Class frm_ComprobanteCompra
                 'If oeMovimientoDocumento.IdTipoDocumento = "1CH000000043" Then
                 '    If oeMovimientoDocumento.FechaEmision.Date >= Date.Parse("01/08/2014") Then ObtenerAportes()
                 'End If
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olMovimientoDocumento.GuardarCompra(oeMovimientoDocumento, leMovDoc, True, IIf(chkLeasing.Checked, oeObligacionfin, Nothing))
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                 MostrarTabs(0, tcComprobanteCompra, 2)

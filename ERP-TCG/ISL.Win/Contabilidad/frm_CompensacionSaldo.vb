@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -135,6 +143,7 @@ Public Class frm_CompensacionSaldo
                         Dim oeMdoc As New e_TipoDocumento
                         oeMdoc = leTipoDoc.Where(Function(item) item.Id = obj.IdTipoDocumento).ToList(0)
                         obj.oeTipoDocumento = oeMdoc
+                        obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Next
                     If olMovimientoDocumento.GuardarAnalisisYDocumento(leMovAnalisisAgrega, leMovDocAgregado, lobj) Then
                         mensajeEmergente.Confirmacion("Se registró correctamente")
@@ -158,6 +167,7 @@ Public Class frm_CompensacionSaldo
                             Dim oeMdoc As New e_TipoDocumento
                             oeMdoc = leTipoDoc.Where(Function(item) item.Id = obj.IdTipoDocumento).ToList(0)
                             obj.oeTipoDocumento = oeMdoc
+                            obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                         Next
                         If olMovimientoDocumento.GuardarCancelacion(leMovDocAgregado, lobj) Then
                             mensajeEmergente.Confirmacion("Se registró correctamente")
@@ -586,7 +596,6 @@ Public Class frm_CompensacionSaldo
                             importeMN = importeMN + .Monto * decTC.Value
                             importeME = importeME + .Monto
                         End If
-
                     End With
                 Next
                 For Each oeMovimientoDocumento As e_MovimientoDocumento In leMovDocAgregado
@@ -598,7 +607,6 @@ Public Class frm_CompensacionSaldo
                             importeMN = importeMN + .MontoOperar * decTC.Value
                             importeME = importeME + .MontoOperar
                         End If
-
                     End With
                 Next
             Else
@@ -612,7 +620,6 @@ Public Class frm_CompensacionSaldo
                                 importeMN = importeMN + .Monto * decTC.Value
                                 importeME = importeME + .Monto
                             End If
-
                         End With
                     Next
                 Else
@@ -625,7 +632,6 @@ Public Class frm_CompensacionSaldo
                                 importeMN = importeMN + .MontoOperar * decTC.Value
                                 importeME = importeME + .MontoOperar
                             End If
-
                         End With
                     Next
                 End If
@@ -718,6 +724,7 @@ Public Class frm_CompensacionSaldo
                 Dim oeMovAnalisis2 As New e_MovimientoAnalisis
                 oeMovAnalisis2 = gridDetallePersonal.ActiveRow.ListObject
                 oeMovAnalisis2.TipoOperacion = "I"
+                oeMovAnalisis2.PrefijoID = gs_PrefijoIdSucursal '@0001
                 '-----------------------
                 If ValidarAgregarDetalle(oeMovAnalisis2) Then
                     With leMovAnalisisAgrega

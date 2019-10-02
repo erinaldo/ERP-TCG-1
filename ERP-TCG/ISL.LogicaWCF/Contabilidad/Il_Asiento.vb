@@ -153,10 +153,10 @@ Public Interface Il_Asiento
     <OperationContract()> _
     Function Captura_Valor(ByVal cta As String, ByVal dsobj As DataTable) As Single
 
-    <OperationContract()> _
-    Function GenerarAsientoConsumo(ByVal DtConsumo As DataTable, ByVal ls_IdSubAlmacen As String, _
-    ByVal TipoCambio As Double, ByVal IdPeriodo As String, ByVal FecUltimoDia As Date, _
-    ByVal IdUsuarioCrea As String) As Boolean
+    <OperationContract()>
+    Function GenerarAsientoConsumo(ByVal DtConsumo As DataTable, ByVal ls_IdSubAlmacen As String,
+    ByVal TipoCambio As Double, ByVal IdPeriodo As String, ByVal FecUltimoDia As Date,
+    ByVal IdUsuarioCrea As String, ByVal PrefijoId As String) As Boolean
 
 #End Region
 

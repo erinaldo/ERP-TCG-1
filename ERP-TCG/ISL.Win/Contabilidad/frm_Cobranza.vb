@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -32,6 +40,7 @@ Public Class frm_Cobranza
                     .DifAGanancia = DecDifGanancia.Value
                     .IdCuentaCorriente = cboCliente.Value
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
                 
                 If OptPerdida.Checked Then indicadortipo = "PER"
@@ -558,6 +567,7 @@ Public Class frm_Cobranza
                 oeMovimientoDocumento = New e_MovimientoDocumento
                 oeMovimientoDocumento = gridCobranza.ActiveRow.ListObject
                 oeMovimientoDocumento.TipoOperacion = "I"
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 '-----------------------
                 If ValidarAgregarDetalle(oeMovimientoDocumento) Then
                     With leMovDocAgregado

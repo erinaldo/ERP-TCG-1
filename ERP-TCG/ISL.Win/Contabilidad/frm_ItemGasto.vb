@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System.ComponentModel
@@ -223,6 +231,7 @@ Public Class frm_ItemGasto
                     .UsuarioCrea = gUsuarioSGI.Id
                     .ListaCuentaItemGasto = griCuentaItemGasto.DataSource
                 End With
+                oeItemGasto.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olItemGasto.Guardar(oeItemGasto) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                     MostrarTabs(0, tcItemGasto, 2)
@@ -397,6 +406,7 @@ Public Class frm_ItemGasto
                         .IdTablaContableDet = RTrim(griLista.ActiveRow.Cells("IdTablaContableDet").Value)
                         .UsuarioCrea = gUsuarioSGI.Id
                     End With
+                    oeItemGasto.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olItemGasto.Guardar(oeItemGasto) Then
                         griLista.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                     End If

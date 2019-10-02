@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_TablaContableDet
@@ -236,6 +244,7 @@ Public Class frm_TablaContableDet
                 .IndTablaContable = IIf(verIndTablaContable.Checked, 1, 0)
                 .IdTablaContableDet = cboTablaContableDet.Value
             End With
+            oeTablaContableDet.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTablaContableDet.Guardar(oeTablaContableDet) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                 MostrarTabs(0, tcTablaContable, 2)

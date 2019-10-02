@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_TipoVenta
@@ -214,6 +222,7 @@ Public Class frm_TipoVenta
         Try
             oeTablaCtbleDet.TipoOperacion = "X"
             oeTablaCtbleDet.ListaTipoVenta = grTipoVenta.DataSource
+            oeTablaCtbleDet.PrefijoID = gs_PrefijoIdSucursal '@0001
             olTablaCtbleDet.Guardar(oeTablaCtbleDet)
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
             MostrarTabs(0, tc_TipoVenta, 2)
@@ -285,6 +294,7 @@ Public Class frm_TipoVenta
             oeTipoVenta.IdCuentaContable = Me.cboCuenta.Value
             oeTipoVenta.Cuenta = Me.cboCuenta.Text
             oeTipoVenta.Activo = True
+            oeTipoVenta.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeTablaCtbleDet.ListaTipoVenta.Add(oeTipoVenta)
             grTipoVenta.DataBind()
             oeTipoVenta = New e_TipoVenta

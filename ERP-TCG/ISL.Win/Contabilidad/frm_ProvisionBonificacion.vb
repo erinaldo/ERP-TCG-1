@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -71,6 +79,7 @@ Public Class frm_ProvisionBonificacion
                 oeAsientoModel.FechaMov = ld_Fecha
                 oeAsientoModel.TipoCambio = decTipoCambio.Value
                 oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id
+                oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olAsientoModel.ProvisionaBeneficios(oeAsientoModel, oePeriodo, leProvision) Then
                     mensajeEmergente.Confirmacion("¡Se ha guardado la informacion correctamente!", True)
                     mt_Habilitar(False)
@@ -205,6 +214,7 @@ Public Class frm_ProvisionBonificacion
                 oeProvision.CostoComputable = oeProvision.RemuneracionFija + (oeProvision.Gratificacion / 6)
                 oeProvision.Dias = fc_CalcularDias(oeProvision.FechaIngreso, oeProvision.FechaCese)
                 oeProvision.Importe = fc_CalcularMonto(cboTipoBono.SelectedIndex, oeProvision)
+                oeProvision.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leProvision.Add(oeProvision)
             Next
             mt_CargarProvBono(leProvision)

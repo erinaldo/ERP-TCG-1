@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports System.ServiceModel
@@ -213,7 +221,7 @@ Public Class frm_Pagos
 
                 If OptPago.Checked Then Opcion = "PAG"
                 If OptGanancia.Checked Then Opcion = "GAN"
-
+                oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olAsiento.GuardarPago(leMovDocAgregado, oeMovCajaBanco, oeMedioPago, gUsuarioSGI.Id, MacPCLocal, oeCtaCble, Opcion) Then
                     If Opcion <> "GAN" Then
                         mensajeEmergente.Confirmacion("Pago(s) guardados satisfactoriamente", True)
@@ -514,6 +522,7 @@ Public Class frm_Pagos
                 '---capturo datos a ingresar-----
                 oeMovimientoDocumento = gridPago.ActiveRow.ListObject
                 oeMovimientoDocumento.TipoOperacion = "I"
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oe_DetProgPag.IdMovimientoDocumento = oeMovimientoDocumento.Id
                 oe_DetProgPag.IdEstado = "1CH00017"
                 '-----------------------

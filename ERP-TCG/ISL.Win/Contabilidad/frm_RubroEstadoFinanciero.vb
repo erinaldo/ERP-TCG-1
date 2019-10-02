@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -106,6 +114,7 @@ Public Class frm_RubroEstadoFinanciero
             oeRubroEEFF.leDetalle = leDetalle
             oeRubroEEFF.leCuenta = leDetCuenta
             If oeRubroEEFF.TipoOperacion = "I" Then oeRubroEEFF.UsuarioCrea = gUsuarioSGI.Id Else oeRubroEEFF.UsuarioModifica = gUsuarioSGI.Id
+            oeRubroEEFF.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olRubroEEFF.Guardar(oeRubroEEFF) Then
                 mensajeEmergente.Confirmacion("Se guardo correctamente los datos", True)
                 MostrarTabs(0, ficRubroEEFF, 0)
@@ -205,6 +214,7 @@ Public Class frm_RubroEstadoFinanciero
                         oeDetalle.Identificador = oeAux.Identificador & oeDetalle.GeneraIdenticador
                     End If
                     oeDetalle.Superior = IIf(chkSuperior.Checked, 1, 0)
+                    oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If oeDetalle.TipoOperacion = "I" Then
                         leDetalle.Add(oeDetalle)
                     Else
@@ -682,6 +692,7 @@ Public Class frm_RubroEstadoFinanciero
                     _leObj(0).TipoOperacion = _oeDCCAct.TipoOperacion
                     _leObj(0).Activo = _oeDCCAct.Activo
                     _leObj(0).UsuarioModifica = _oeDCCAct.UsuarioModifica
+                    _leObj(0).PrefijoID = gs_PrefijoIdSucursal '@0001
                 End If
             Next
             leDetCuenta.AddRange(leDCCAux.Where(Function(it) it.TipoOperacion.Trim <> "" And it.TipoOperacion = "I").ToList)

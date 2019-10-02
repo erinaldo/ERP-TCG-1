@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_CtaCte_ProAdq
@@ -313,6 +321,7 @@ Public Class frm_CtaCte_ProAdq
             oeCtaCte.UsuarioCreacion = gUsuarioSGI.Id
             oeCtaCte.Empresa = cboProAdq.Text
             oeCtaCte.Cuenta = FormatoDocumento(txtCuenta.Text, 11)
+            oeCtaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCtaCte.Guardar(oeCtaCte) Then
                 Return True
             End If

@@ -1,4 +1,11 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -88,6 +95,7 @@ Public Class l_AsientoModelo
                                         .HaberMN = 0 : .HaberME = 0
                                         .IdUsuarioCrea = oeAsientoModelo.UsuarioCreacion : .Activo = True : .AsMov_MovDoc = Nothing
                                     End With
+                                    oeAsientoMov.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                                     oeAsiento.AsientoMovimiento.Add(oeAsientoMov)
                                 End If
                                 ' Asiento Movimiento - Gasto Administrativo
@@ -100,6 +108,7 @@ Public Class l_AsientoModelo
                                         .HaberMN = 0 : .HaberME = 0
                                         .IdUsuarioCrea = oeAsientoModelo.UsuarioCreacion : .Activo = True : .AsMov_MovDoc = Nothing
                                     End With
+                                    oeAsientoMov.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                                     oeAsiento.AsientoMovimiento.Add(oeAsientoMov)
                                 End If
                             Else
@@ -118,12 +127,15 @@ Public Class l_AsientoModelo
                                     oeMovAnalisis.Monto = _oeBonoDet.Importe
                                     oeMovAnalisis.Saldo = _oeBonoDet.Importe
                                     oeMovAnalisis.IdTrabajador = _oeBonoDet.IdTrabajador
+                                    oeAsientoMov.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                                     oeAsientoMov.MovimientoAnalisis.Add(oeMovAnalisis)
                                 Next
+                                oeAsientoMov.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                                 oeAsiento.AsientoMovimiento.Add(oeAsientoMov)
                             End If
                         Next
                     End With
+                    oeAsiento.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                     If olAsiento.GuardarAsientoDscto(oeAsiento) Then
                         'odGratificacion.Guardar(oeGratificacion)
                         TransScope.Complete()

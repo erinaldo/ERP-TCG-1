@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -70,6 +78,7 @@ Public Class frm_Prorrateo
                     .Fecha = ld_FechaMov
                     .IdPeriodo = ls_IdPeriodo
                 End With
+                oeMovAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leMovAnalisis.Add(oeMovAnalisis)
             Next
             If leMovAnalisis.Count = 0 Then Throw New Exception("No se Encontrado Datos para Guardar")

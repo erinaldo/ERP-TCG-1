@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -486,8 +494,10 @@ Public Class frm_ComprobanteDiario
                 If oeAsiento.TipoOperacion = "I" Then
                     For Each obj As e_AsientoMovimiento In oeAsiento.AsientoMovimiento
                         obj.TipoOperacion = "I"
+                        obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Next
                 End If
+                oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olAsiento.Guardar(oeAsiento) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                     MostrarTabs(0, tcComprobanteDiario, 2)
@@ -1462,6 +1472,7 @@ Public Class frm_ComprobanteDiario
                     End If
                 End If
                 With oeDetalleAsiento
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     If .TipoOperacion = "I" Then 'si es detalle nuevo agrego a objeto cabecera
                         oeDetalleAsiento.NroLinea = oeAsiento.AsientoMovimiento.Count + 1
                         oeDetalleAsiento.IdUsuarioCrea = gUsuarioSGI.Id
