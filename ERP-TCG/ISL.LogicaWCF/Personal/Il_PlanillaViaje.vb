@@ -8,8 +8,8 @@ Public Interface Il_PlanillaViaje
     <OperationContract()> _
     Function Listar(ByVal oePlanillaViaje As e_PlanillaViaje) As List(Of e_PlanillaViaje)
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal loPlanillaViaje As List(Of e_PlanillaViaje)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal loPlanillaViaje As List(Of e_PlanillaViaje), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function CrearDT() As Data.DataTable

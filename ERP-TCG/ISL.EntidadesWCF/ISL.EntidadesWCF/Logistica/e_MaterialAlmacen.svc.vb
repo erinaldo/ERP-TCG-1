@@ -32,7 +32,8 @@ Public Class e_MaterialAlmacen
     Public IdUnidad As String
     <DataMember()> _
     Public IdCentro As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public IdsAlmacenes As String
     <DataMember()> _
@@ -41,8 +42,12 @@ Public Class e_MaterialAlmacen
     Public IdSubAlmacen As String
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean = False
+
+
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
 #End Region
 

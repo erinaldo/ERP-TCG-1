@@ -59,7 +59,7 @@ Public Class d_ConfiguracionSisDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConfiguracionSisDet
-                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionSisDet_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionSisDet_IAE", "I", .PrefijoID, _
                         .Id _
                         , .Ejercicio _
                         , .IdConfiguracionSis _

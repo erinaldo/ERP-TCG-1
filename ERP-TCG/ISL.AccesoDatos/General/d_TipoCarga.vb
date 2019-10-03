@@ -70,7 +70,7 @@ Public Class d_TipoCarga
             With oeTipoCarga
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoCarga_IAE]", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .Codigo _
                                         , .Nombre _

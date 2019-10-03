@@ -1,4 +1,11 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
@@ -221,7 +228,7 @@ Public Class frm_ContabilidadConsumoMaterial
             If dtConsumo.Rows.Count = 0 Then Throw New Exception("No existen registros para procesar")
             Dim olAsiento As New l_Asiento
             Dim TipoC As Double = TipoCambio(Date.Now, True)(0)
-            Return olAsiento.GenerarAsientoConsumo(dtConsumo, gs_IdSubAlmacen, TipoC, cboMes.Value, fecUltimoDia, gUsuarioSGI.Id)
+            Return olAsiento.GenerarAsientoConsumo(dtConsumo, gs_IdSubAlmacen, TipoC, cboMes.Value, fecUltimoDia, gUsuarioSGI.Id, gs_PrefijoIdSucursal)
         Catch ex As Exception
             Throw ex
         End Try

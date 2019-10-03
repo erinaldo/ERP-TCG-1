@@ -865,7 +865,6 @@ Partial Class frm_ReciboPorHonorario
         Me.txtProveedor.TabIndex = 4
         Me.txtProveedor.TabStop = False
         Me.txtProveedor.Tag = ""
-        Me.txtProveedor.Text = "INDUAMERICA SERVICIOS LOGISTICOS S.A.C."
         '
         'decSubTotal
         '

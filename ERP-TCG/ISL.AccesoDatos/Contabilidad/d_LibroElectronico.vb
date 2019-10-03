@@ -82,7 +82,7 @@ Public Class d_LibroElectronico
                 With oeLibroElectronico
                     id = sqlhelper.ExecuteScalar("CON.Isp_LibroElectronico_IAE", _
                              .TipoOperacion, _
-                             d_DatosConfiguracion.PrefijoID, _
+                             .PrefijoID, _
                             .Id _
                             , .IdPeriodo _
                             , .IdTablaContableDet _

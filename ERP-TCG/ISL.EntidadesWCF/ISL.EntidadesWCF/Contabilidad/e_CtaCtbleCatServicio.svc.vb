@@ -17,7 +17,8 @@ Public Class e_CtaCtbleCatServicio
     Public Modificado As Boolean
     <DataMember()> _
     Public TotalCuenta As Double = 0
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

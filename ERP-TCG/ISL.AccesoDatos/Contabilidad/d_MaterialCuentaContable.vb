@@ -64,7 +64,7 @@ Public Class d_MaterialCuentaContable
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMaterialCuentaContable
-                sqlhelper.ExecuteNonQuery("CON.Isp_MaterialCuentaContable_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_MaterialCuentaContable_IAE", "I", .PrefijoID, _
                         .Id _
                         , .IdMaterial _
                         , .IdCuentaContable _

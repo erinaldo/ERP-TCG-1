@@ -52,7 +52,8 @@ Public Class e_VidaNeumatico
     Public Equivale As Integer = 0
     <DataMember()> _
     Public ls_IdMaterial As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

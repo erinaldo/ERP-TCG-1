@@ -1,4 +1,12 @@
-﻿Imports Infragistics.Win.UltraWinGrid
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
 Imports System.Configuration
 Imports System.Collections.Specialized
@@ -594,6 +602,7 @@ Public Class frm_CpeFacturacion
                         contEnvios += 1
                         oeDocumento.TipoOperacion = "EPC"
                         oeDocumento.IdUsuarioCrea = gUsuarioSGI.Id
+                        oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olDocumento.Guardar(oeDocumento)
                     Else
                         contNoEnvios += 1

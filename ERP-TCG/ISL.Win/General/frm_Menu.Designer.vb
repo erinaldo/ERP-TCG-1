@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_Menu
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,40 +20,9 @@ Partial Class frm_Menu
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedLeft, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"))
-        Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("21c36884-9705-4dc5-affb-fb306a6e6b52"), New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"), 0, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"), 0)
-        Dim DockAreaPane2 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.Floating, New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"))
-        Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton1 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton2 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton3 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton4 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance39 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool103 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Consultar")
         Dim ButtonTool108 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo")
         Dim ButtonTool109 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Editar")
@@ -63,7 +32,6 @@ Partial Class frm_Menu
         Dim ButtonTool2 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Imprimir")
         Dim ButtonTool30 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar Sesion")
         Dim ButtonTool29 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Salir")
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Menu))
         Dim ButtonTool1 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Consultar")
         Dim ButtonTool240 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo")
         Dim ButtonTool241 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Editar")
@@ -147,8 +115,33 @@ Partial Class frm_Menu
         Dim ButtonTool27 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ActivoConsulta")
         Dim ButtonTool47 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar Sesion")
         Dim LabelTool5 As Infragistics.Win.UltraWinToolbars.LabelTool = New Infragistics.Win.UltraWinToolbars.LabelTool("sbTipoCambio")
+        Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedLeft, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"))
+        Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("21c36884-9705-4dc5-affb-fb306a6e6b52"), New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"), 0, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"), 0)
+        Dim DockAreaPane2 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.Floating, New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"))
+        Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDesktopAlertButton1 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
+        Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDesktopAlertButton2 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
+        Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDesktopAlertButton3 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
+        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDesktopAlertButton4 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
+        Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Menu))
         Me.MenuISL = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
         Me._frm_Menu_Toolbars_Dock_Area_Left = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
+        Me.utm_ISLSGI = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
         Me._frm_Menu_Toolbars_Dock_Area_Right = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me._frm_Menu_Toolbars_Dock_Area_Top = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me._frm_Menu_Toolbars_Dock_Area_Bottom = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
@@ -183,12 +176,12 @@ Partial Class frm_Menu
         Me.AlertaBaja = New Infragistics.Win.Misc.UltraDesktopAlert(Me.components)
         Me.WindowDockingArea1 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
         Me.WindowDockingArea3 = New Infragistics.Win.UltraWinDock.WindowDockingArea()
-        Me.DockableWindow1 = New Infragistics.Win.UltraWinDock.DockableWindow()
         Me.ugb_Espera = New ISL.Win.Espere()
-        Me.utm_ISLSGI = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
         CType(Me.MenuISL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.utm_ISLSGI, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraDockManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me._frm_MenuAutoHideControl.SuspendLayout()
+        Me.DockableWindow2.SuspendLayout()
         CType(Me.UltraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Alerta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlertaOperaciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -203,8 +196,6 @@ Partial Class frm_Menu
         CType(Me.AlertaComun, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlertaInforma, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlertaBaja, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.DockableWindow1.SuspendLayout()
-        CType(Me.utm_ISLSGI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuISL
@@ -225,420 +216,10 @@ Partial Class frm_Menu
         Me._frm_Menu_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me._frm_Menu_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText
         Me._frm_Menu_Toolbars_Dock_Area_Left.InitialResizeAreaExtent = 4
-        Me._frm_Menu_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 114)
+        Me._frm_Menu_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 51)
         Me._frm_Menu_Toolbars_Dock_Area_Left.Name = "_frm_Menu_Toolbars_Dock_Area_Left"
-        Me._frm_Menu_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(4, 446)
+        Me._frm_Menu_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(4, 511)
         Me._frm_Menu_Toolbars_Dock_Area_Left.ToolbarsManager = Me.utm_ISLSGI
-        '
-        '_frm_Menu_Toolbars_Dock_Area_Right
-        '
-        Me._frm_Menu_Toolbars_Dock_Area_Right.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frm_Menu_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._frm_Menu_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
-        Me._frm_Menu_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frm_Menu_Toolbars_Dock_Area_Right.InitialResizeAreaExtent = 4
-        Me._frm_Menu_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1047, 114)
-        Me._frm_Menu_Toolbars_Dock_Area_Right.Name = "_frm_Menu_Toolbars_Dock_Area_Right"
-        Me._frm_Menu_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(4, 446)
-        Me._frm_Menu_Toolbars_Dock_Area_Right.ToolbarsManager = Me.utm_ISLSGI
-        '
-        '_frm_Menu_Toolbars_Dock_Area_Top
-        '
-        Me._frm_Menu_Toolbars_Dock_Area_Top.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frm_Menu_Toolbars_Dock_Area_Top.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._frm_Menu_Toolbars_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
-        Me._frm_Menu_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frm_Menu_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
-        Me._frm_Menu_Toolbars_Dock_Area_Top.Name = "_frm_Menu_Toolbars_Dock_Area_Top"
-        Me._frm_Menu_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1051, 114)
-        Me._frm_Menu_Toolbars_Dock_Area_Top.ToolbarsManager = Me.utm_ISLSGI
-        '
-        '_frm_Menu_Toolbars_Dock_Area_Bottom
-        '
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.InitialResizeAreaExtent = 4
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 560)
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Name = "_frm_Menu_Toolbars_Dock_Area_Bottom"
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1051, 30)
-        Me._frm_Menu_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.utm_ISLSGI
-        '
-        'UltraDockManager1
-        '
-        DockAreaPane1.DockedBefore = New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b")
-        DockAreaPane1.FloatingLocation = New System.Drawing.Point(147, 332)
-        DockableControlPane1.Control = Me.MenuISL
-        DockableControlPane1.FlyoutSize = New System.Drawing.Size(214, -1)
-        DockableControlPane1.OriginalControlBounds = New System.Drawing.Rectangle(0, 18, 178, 348)
-        DockableControlPane1.Pinned = False
-        DockableControlPane1.Size = New System.Drawing.Size(100, 100)
-        DockableControlPane1.Text = "Menu"
-        DockAreaPane1.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane1})
-        DockAreaPane1.Size = New System.Drawing.Size(214, 468)
-        DockAreaPane2.FloatingLocation = New System.Drawing.Point(147, 332)
-        DockAreaPane2.Size = New System.Drawing.Size(477, 323)
-        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane1, DockAreaPane2})
-        Me.UltraDockManager1.HostControl = Me
-        Me.UltraDockManager1.ShowCloseButton = False
-        '
-        '_frm_MenuUnpinnedTabAreaLeft
-        '
-        Me._frm_MenuUnpinnedTabAreaLeft.Dock = System.Windows.Forms.DockStyle.Left
-        Me._frm_MenuUnpinnedTabAreaLeft.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuUnpinnedTabAreaLeft.Location = New System.Drawing.Point(4, 114)
-        Me._frm_MenuUnpinnedTabAreaLeft.Name = "_frm_MenuUnpinnedTabAreaLeft"
-        Me._frm_MenuUnpinnedTabAreaLeft.Owner = Me.UltraDockManager1
-        Me._frm_MenuUnpinnedTabAreaLeft.Size = New System.Drawing.Size(21, 446)
-        Me._frm_MenuUnpinnedTabAreaLeft.TabIndex = 5
-        '
-        '_frm_MenuUnpinnedTabAreaRight
-        '
-        Me._frm_MenuUnpinnedTabAreaRight.Dock = System.Windows.Forms.DockStyle.Right
-        Me._frm_MenuUnpinnedTabAreaRight.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuUnpinnedTabAreaRight.Location = New System.Drawing.Point(1047, 114)
-        Me._frm_MenuUnpinnedTabAreaRight.Name = "_frm_MenuUnpinnedTabAreaRight"
-        Me._frm_MenuUnpinnedTabAreaRight.Owner = Me.UltraDockManager1
-        Me._frm_MenuUnpinnedTabAreaRight.Size = New System.Drawing.Size(0, 446)
-        Me._frm_MenuUnpinnedTabAreaRight.TabIndex = 6
-        '
-        '_frm_MenuUnpinnedTabAreaTop
-        '
-        Me._frm_MenuUnpinnedTabAreaTop.Dock = System.Windows.Forms.DockStyle.Top
-        Me._frm_MenuUnpinnedTabAreaTop.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuUnpinnedTabAreaTop.Location = New System.Drawing.Point(25, 114)
-        Me._frm_MenuUnpinnedTabAreaTop.Name = "_frm_MenuUnpinnedTabAreaTop"
-        Me._frm_MenuUnpinnedTabAreaTop.Owner = Me.UltraDockManager1
-        Me._frm_MenuUnpinnedTabAreaTop.Size = New System.Drawing.Size(1022, 0)
-        Me._frm_MenuUnpinnedTabAreaTop.TabIndex = 7
-        '
-        '_frm_MenuUnpinnedTabAreaBottom
-        '
-        Me._frm_MenuUnpinnedTabAreaBottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me._frm_MenuUnpinnedTabAreaBottom.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuUnpinnedTabAreaBottom.Location = New System.Drawing.Point(25, 560)
-        Me._frm_MenuUnpinnedTabAreaBottom.Name = "_frm_MenuUnpinnedTabAreaBottom"
-        Me._frm_MenuUnpinnedTabAreaBottom.Owner = Me.UltraDockManager1
-        Me._frm_MenuUnpinnedTabAreaBottom.Size = New System.Drawing.Size(1022, 0)
-        Me._frm_MenuUnpinnedTabAreaBottom.TabIndex = 8
-        '
-        '_frm_MenuAutoHideControl
-        '
-        Me._frm_MenuAutoHideControl.Controls.Add(Me.DockableWindow2)
-        Me._frm_MenuAutoHideControl.Controls.Add(Me.DockableWindow1)
-        Me._frm_MenuAutoHideControl.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuAutoHideControl.Location = New System.Drawing.Point(25, 114)
-        Me._frm_MenuAutoHideControl.Name = "_frm_MenuAutoHideControl"
-        Me._frm_MenuAutoHideControl.Owner = Me.UltraDockManager1
-        Me._frm_MenuAutoHideControl.Size = New System.Drawing.Size(19, 446)
-        Me._frm_MenuAutoHideControl.TabIndex = 9
-        '
-        'DockableWindow2
-        '
-        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
-        Me.DockableWindow2.Name = "DockableWindow2"
-        Me.DockableWindow2.Owner = Me.UltraDockManager1
-        Me.DockableWindow2.Size = New System.Drawing.Size(214, 511)
-        Me.DockableWindow2.TabIndex = 21
-        '
-        'HelpProvider1
-        '
-        Me.HelpProvider1.HelpNamespace = ""
-        '
-        'UltraTabbedMdiManager1
-        '
-        Me.UltraTabbedMdiManager1.MdiParent = Me
-        Me.UltraTabbedMdiManager1.TabGroupSettings.ShowTabListButton = Infragistics.Win.DefaultableBoolean.[True]
-        Appearance18.FontData.BoldAsString = "True"
-        Me.UltraTabbedMdiManager1.TabSettings.ActiveTabAppearance = Appearance18
-        Me.UltraTabbedMdiManager1.TabSettings.DisplayFormIcon = Infragistics.Win.DefaultableBoolean.[True]
-        Me.UltraTabbedMdiManager1.ViewStyle = Infragistics.Win.UltraWinTabbedMdi.ViewStyle.VisualStudio2005
-        '
-        'Alerta
-        '
-        Me.Alerta.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Fast
-        Me.Alerta.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        '
-        'Tiempo
-        '
-        Me.Tiempo.Enabled = True
-        Me.Tiempo.Interval = 150000
-        '
-        'ToolTip1
-        '
-        Me.ToolTip1.IsBalloon = True
-        Me.ToolTip1.ShowAlways = True
-        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
-        Me.ToolTip1.ToolTipTitle = "Mensaje del Sistema"
-        '
-        'TiempoHora
-        '
-        Me.TiempoHora.Interval = 1000
-        '
-        'AlertaOperaciones
-        '
-        Appearance19.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        UltraDesktopAlertButton1.Appearance = Appearance19
-        UltraDesktopAlertButton1.Key = "Operaciones - CallCenter"
-        UltraDesktopAlertButton1.ToolTipText = "Operaciones - CallCenter"
-        Me.AlertaOperaciones.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton1})
-        Me.AlertaOperaciones.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaOperaciones.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaOperaciones.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaOperaciones.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance20.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        Me.AlertaOperaciones.Appearance = Appearance20
-        Me.AlertaOperaciones.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaOperaciones.AutoCloseDelay = 11000
-        Me.AlertaOperaciones.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaOperaciones.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Appearance21.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaOperaciones.CaptionAppearance = Appearance21
-        Appearance22.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaOperaciones.CaptionAreaAppearance = Appearance22
-        Me.AlertaOperaciones.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaOperaciones.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaOperaciones.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaOperaciones.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaOperaciones.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaOperaciones.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
-        '
-        'AlertaLogistica
-        '
-        Appearance23.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        UltraDesktopAlertButton2.Appearance = Appearance23
-        UltraDesktopAlertButton2.Key = "AlertaLogistica"
-        UltraDesktopAlertButton2.ToolTipText = "Alerta Logistica"
-        Me.AlertaLogistica.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton2})
-        Me.AlertaLogistica.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaLogistica.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaLogistica.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaLogistica.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance24.Image = Global.ISL.Win.My.Resources.Resources.Cancelar
-        Me.AlertaLogistica.Appearance = Appearance24
-        Me.AlertaLogistica.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaLogistica.AutoCloseDelay = 11000
-        Me.AlertaLogistica.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaLogistica.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Appearance25.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaLogistica.CaptionAppearance = Appearance25
-        Appearance26.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaLogistica.CaptionAreaAppearance = Appearance26
-        Me.AlertaLogistica.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaLogistica.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaLogistica.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaLogistica.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaLogistica.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaLogistica.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
-        '
-        'AlertaPermisos
-        '
-        Me.AlertaPermisos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaPermisos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
-        '
-        'AlertaGuias
-        '
-        Appearance27.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        UltraDesktopAlertButton3.Appearance = Appearance27
-        UltraDesktopAlertButton3.Key = "Guias - Alerta Guias"
-        UltraDesktopAlertButton3.ToolTipText = "Guias - Alerta Guias"
-        Me.AlertaGuias.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton3})
-        Me.AlertaGuias.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaGuias.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaGuias.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaGuias.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance28.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Appearance28.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
-        Me.AlertaGuias.Appearance = Appearance28
-        Me.AlertaGuias.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaGuias.AutoCloseDelay = 11000
-        Me.AlertaGuias.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaGuias.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Appearance29.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaGuias.CaptionAppearance = Appearance29
-        Appearance30.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaGuias.CaptionAreaAppearance = Appearance30
-        Me.AlertaGuias.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaGuias.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaGuias.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaGuias.FixedSize = New System.Drawing.Size(200, 110)
-        Me.AlertaGuias.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaGuias.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaGuias.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
-        '
-        'AlertaTesoreria
-        '
-        Me.AlertaTesoreria.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaTesoreria.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
-        Me.AlertaTesoreria.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaTesoreria.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance31.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Appearance31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance31.Image = Global.ISL.Win.My.Resources.Resources.accounting_mail
-        Me.AlertaTesoreria.Appearance = Appearance31
-        Me.AlertaTesoreria.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'AlertaDocumentos
-        '
-        Me.AlertaDocumentos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaDocumentos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaDocumentos.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaDocumentos.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance32.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
-        Me.AlertaDocumentos.Appearance = Appearance32
-        Me.AlertaDocumentos.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaDocumentos.AutoCloseDelay = 11000
-        Me.AlertaDocumentos.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaDocumentos.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Appearance33.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.AlertaDocumentos.CaptionAppearance = Appearance33
-        Appearance34.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.AlertaDocumentos.CaptionAreaAppearance = Appearance34
-        Me.AlertaDocumentos.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaDocumentos.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaDocumentos.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaDocumentos.TreatTextAsLink = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'TiempoTC
-        '
-        Me.TiempoTC.Enabled = True
-        Me.TiempoTC.Interval = 1800000
-        '
-        'AlertaContratos
-        '
-        Me.AlertaContratos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaContratos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
-        Me.AlertaContratos.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaContratos.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance35.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Appearance35.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance35.Image = Global.ISL.Win.My.Resources.Resources.accounting_mail
-        Me.AlertaContratos.Appearance = Appearance35
-        Me.AlertaContratos.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaContratos.FixedSize = New System.Drawing.Size(330, 100)
-        '
-        'ControlDeVersion
-        '
-        Me.ControlDeVersion.Enabled = True
-        Me.ControlDeVersion.Interval = 60000
-        '
-        'AlertaDocumentoVehicular
-        '
-        Appearance36.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        UltraDesktopAlertButton4.Appearance = Appearance36
-        UltraDesktopAlertButton4.Key = "Operaciones - CallCenter"
-        UltraDesktopAlertButton4.ToolTipText = "Operaciones - CallCenter"
-        Me.AlertaDocumentoVehicular.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton4})
-        Me.AlertaDocumentoVehicular.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaDocumentoVehicular.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaDocumentoVehicular.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaDocumentoVehicular.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Appearance37.Image = Global.ISL.Win.My.Resources.Resources.Conectado
-        Me.AlertaDocumentoVehicular.Appearance = Appearance37
-        Me.AlertaDocumentoVehicular.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaDocumentoVehicular.AutoCloseDelay = 11000
-        Me.AlertaDocumentoVehicular.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaDocumentoVehicular.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Appearance38.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaDocumentoVehicular.CaptionAppearance = Appearance38
-        Appearance39.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
-        Me.AlertaDocumentoVehicular.CaptionAreaAppearance = Appearance39
-        Me.AlertaDocumentoVehicular.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaDocumentoVehicular.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaDocumentoVehicular.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaDocumentoVehicular.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaDocumentoVehicular.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaDocumentoVehicular.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
-        '
-        'AlertaComun
-        '
-        Me.AlertaComun.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Fast
-        Me.AlertaComun.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Me.AlertaComun.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaComun.AutoCloseDelay = 11000
-        Me.AlertaComun.ButtonImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaComun.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Appearance40.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.AlertaComun.CaptionAppearance = Appearance40
-        Appearance41.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.AlertaComun.CaptionAreaAppearance = Appearance41
-        Me.AlertaComun.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
-        Me.AlertaComun.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaComun.ImageSize = New System.Drawing.Size(30, 30)
-        Me.AlertaComun.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaComun.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
-        Me.AlertaComun.TreatTextAsLink = Infragistics.Win.DefaultableBoolean.[True]
-        '
-        'hiloWebServiceCovisol
-        '
-        Me.hiloWebServiceCovisol.WorkerSupportsCancellation = True
-        '
-        'AlertaInforma
-        '
-        Me.AlertaInforma.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaInforma.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaInforma.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaInforma.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Me.AlertaInforma.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaInforma.AutoCloseDelay = 11000
-        Me.AlertaInforma.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Me.AlertaInforma.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaInforma.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaInforma.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaInforma.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
-        '
-        'AlertaBaja
-        '
-        Me.AlertaBaja.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
-        Me.AlertaBaja.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
-        Me.AlertaBaja.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
-        Me.AlertaBaja.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
-        Me.AlertaBaja.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
-        Me.AlertaBaja.AutoCloseDelay = 11000
-        Me.AlertaBaja.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
-        Me.AlertaBaja.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
-        Me.AlertaBaja.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.AlertaBaja.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
-        Me.AlertaBaja.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
-        '
-        'WindowDockingArea1
-        '
-        Me.WindowDockingArea1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.WindowDockingArea1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea1.Location = New System.Drawing.Point(29, 51)
-        Me.WindowDockingArea1.Name = "WindowDockingArea1"
-        Me.WindowDockingArea1.Owner = Me.UltraDockManager1
-        Me.WindowDockingArea1.Size = New System.Drawing.Size(219, 468)
-        Me.WindowDockingArea1.TabIndex = 0
-        '
-        'WindowDockingArea3
-        '
-        Me.WindowDockingArea3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WindowDockingArea3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WindowDockingArea3.Location = New System.Drawing.Point(8, 160)
-        Me.WindowDockingArea3.Name = "WindowDockingArea3"
-        Me.WindowDockingArea3.Owner = Me.UltraDockManager1
-        Me.WindowDockingArea3.Size = New System.Drawing.Size(477, 323)
-        Me.WindowDockingArea3.TabIndex = 50
-        '
-        'DockableWindow1
-        '
-        Me.DockableWindow1.Controls.Add(Me.MenuISL)
-        Me.DockableWindow1.Location = New System.Drawing.Point(0, 0)
-        Me.DockableWindow1.Name = "DockableWindow1"
-        Me.DockableWindow1.Owner = Me.UltraDockManager1
-        Me.DockableWindow1.Size = New System.Drawing.Size(214, 511)
-        Me.DockableWindow1.TabIndex = 21
-        '
-        'ugb_Espera
-        '
-        Me.ugb_Espera.Location = New System.Drawing.Point(327, 261)
-        Me.ugb_Espera.Name = "ugb_Espera"
-        Me.ugb_Espera.Size = New System.Drawing.Size(397, 68)
-        Me.ugb_Espera.TabIndex = 15
-        Me.ugb_Espera.Visible = False
         '
         'utm_ISLSGI
         '
@@ -775,6 +356,391 @@ Partial Class frm_Menu
         Me.utm_ISLSGI.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool249, ButtonTool250, ButtonTool251, ButtonTool252, ButtonTool253, ButtonTool254, ButtonTool255, ButtonTool256, ComboBoxTool8, ComboBoxTool9, ComboBoxTool10, PopupMenuTool57, ButtonTool349, ButtonTool353, ButtonTool355, ButtonTool356, PopupGalleryTool1, PopupGalleryTool3, PopupMenuTool58, LabelTool22, LabelTool23, LabelTool24, LabelTool25, LabelTool26, LabelTool27, ButtonTool377, PopupMenuTool79, PopupMenuTool80, ButtonTool382, PopupMenuTool3, ButtonTool70, ButtonTool71, LabelTool2, ButtonTool21, ButtonTool23, LabelTool4, ButtonTool27, ButtonTool47, LabelTool5})
         Me.utm_ISLSGI.UseLargeImagesOnToolbar = True
         '
+        '_frm_Menu_Toolbars_Dock_Area_Right
+        '
+        Me._frm_Menu_Toolbars_Dock_Area_Right.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frm_Menu_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me._frm_Menu_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
+        Me._frm_Menu_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frm_Menu_Toolbars_Dock_Area_Right.InitialResizeAreaExtent = 4
+        Me._frm_Menu_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1047, 51)
+        Me._frm_Menu_Toolbars_Dock_Area_Right.Name = "_frm_Menu_Toolbars_Dock_Area_Right"
+        Me._frm_Menu_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(4, 511)
+        Me._frm_Menu_Toolbars_Dock_Area_Right.ToolbarsManager = Me.utm_ISLSGI
+        '
+        '_frm_Menu_Toolbars_Dock_Area_Top
+        '
+        Me._frm_Menu_Toolbars_Dock_Area_Top.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frm_Menu_Toolbars_Dock_Area_Top.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me._frm_Menu_Toolbars_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
+        Me._frm_Menu_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frm_Menu_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
+        Me._frm_Menu_Toolbars_Dock_Area_Top.Name = "_frm_Menu_Toolbars_Dock_Area_Top"
+        Me._frm_Menu_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1051, 51)
+        Me._frm_Menu_Toolbars_Dock_Area_Top.ToolbarsManager = Me.utm_ISLSGI
+        '
+        '_frm_Menu_Toolbars_Dock_Area_Bottom
+        '
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.SystemColors.ControlText
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.InitialResizeAreaExtent = 4
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 562)
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Name = "_frm_Menu_Toolbars_Dock_Area_Bottom"
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1051, 28)
+        Me._frm_Menu_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.utm_ISLSGI
+        '
+        'UltraDockManager1
+        '
+        DockAreaPane1.DockedBefore = New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b")
+        DockAreaPane1.FloatingLocation = New System.Drawing.Point(147, 332)
+        DockableControlPane1.Control = Me.MenuISL
+        DockableControlPane1.FlyoutSize = New System.Drawing.Size(214, -1)
+        DockableControlPane1.OriginalControlBounds = New System.Drawing.Rectangle(0, 18, 178, 348)
+        DockableControlPane1.Pinned = False
+        DockableControlPane1.Size = New System.Drawing.Size(100, 100)
+        DockableControlPane1.Text = "Menu"
+        DockAreaPane1.Panes.AddRange(New Infragistics.Win.UltraWinDock.DockablePaneBase() {DockableControlPane1})
+        DockAreaPane1.Size = New System.Drawing.Size(214, 468)
+        DockAreaPane2.FloatingLocation = New System.Drawing.Point(147, 332)
+        DockAreaPane2.Size = New System.Drawing.Size(477, 323)
+        Me.UltraDockManager1.DockAreas.AddRange(New Infragistics.Win.UltraWinDock.DockAreaPane() {DockAreaPane1, DockAreaPane2})
+        Me.UltraDockManager1.HostControl = Me
+        Me.UltraDockManager1.ShowCloseButton = False
+        '
+        '_frm_MenuUnpinnedTabAreaLeft
+        '
+        Me._frm_MenuUnpinnedTabAreaLeft.Dock = System.Windows.Forms.DockStyle.Left
+        Me._frm_MenuUnpinnedTabAreaLeft.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._frm_MenuUnpinnedTabAreaLeft.Location = New System.Drawing.Point(4, 51)
+        Me._frm_MenuUnpinnedTabAreaLeft.Name = "_frm_MenuUnpinnedTabAreaLeft"
+        Me._frm_MenuUnpinnedTabAreaLeft.Owner = Me.UltraDockManager1
+        Me._frm_MenuUnpinnedTabAreaLeft.Size = New System.Drawing.Size(21, 511)
+        Me._frm_MenuUnpinnedTabAreaLeft.TabIndex = 5
+        '
+        '_frm_MenuUnpinnedTabAreaRight
+        '
+        Me._frm_MenuUnpinnedTabAreaRight.Dock = System.Windows.Forms.DockStyle.Right
+        Me._frm_MenuUnpinnedTabAreaRight.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._frm_MenuUnpinnedTabAreaRight.Location = New System.Drawing.Point(1047, 51)
+        Me._frm_MenuUnpinnedTabAreaRight.Name = "_frm_MenuUnpinnedTabAreaRight"
+        Me._frm_MenuUnpinnedTabAreaRight.Owner = Me.UltraDockManager1
+        Me._frm_MenuUnpinnedTabAreaRight.Size = New System.Drawing.Size(0, 511)
+        Me._frm_MenuUnpinnedTabAreaRight.TabIndex = 6
+        '
+        '_frm_MenuUnpinnedTabAreaTop
+        '
+        Me._frm_MenuUnpinnedTabAreaTop.Dock = System.Windows.Forms.DockStyle.Top
+        Me._frm_MenuUnpinnedTabAreaTop.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._frm_MenuUnpinnedTabAreaTop.Location = New System.Drawing.Point(25, 51)
+        Me._frm_MenuUnpinnedTabAreaTop.Name = "_frm_MenuUnpinnedTabAreaTop"
+        Me._frm_MenuUnpinnedTabAreaTop.Owner = Me.UltraDockManager1
+        Me._frm_MenuUnpinnedTabAreaTop.Size = New System.Drawing.Size(1022, 0)
+        Me._frm_MenuUnpinnedTabAreaTop.TabIndex = 7
+        '
+        '_frm_MenuUnpinnedTabAreaBottom
+        '
+        Me._frm_MenuUnpinnedTabAreaBottom.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me._frm_MenuUnpinnedTabAreaBottom.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._frm_MenuUnpinnedTabAreaBottom.Location = New System.Drawing.Point(25, 562)
+        Me._frm_MenuUnpinnedTabAreaBottom.Name = "_frm_MenuUnpinnedTabAreaBottom"
+        Me._frm_MenuUnpinnedTabAreaBottom.Owner = Me.UltraDockManager1
+        Me._frm_MenuUnpinnedTabAreaBottom.Size = New System.Drawing.Size(1022, 0)
+        Me._frm_MenuUnpinnedTabAreaBottom.TabIndex = 8
+        '
+        '_frm_MenuAutoHideControl
+        '
+        Me._frm_MenuAutoHideControl.Controls.Add(Me.DockableWindow2)
+        Me._frm_MenuAutoHideControl.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._frm_MenuAutoHideControl.Location = New System.Drawing.Point(25, 114)
+        Me._frm_MenuAutoHideControl.Name = "_frm_MenuAutoHideControl"
+        Me._frm_MenuAutoHideControl.Owner = Me.UltraDockManager1
+        Me._frm_MenuAutoHideControl.Size = New System.Drawing.Size(19, 446)
+        Me._frm_MenuAutoHideControl.TabIndex = 9
+        '
+        'DockableWindow2
+        '
+        Me.DockableWindow2.Controls.Add(Me.MenuISL)
+        Me.DockableWindow2.Location = New System.Drawing.Point(0, 0)
+        Me.DockableWindow2.Name = "DockableWindow2"
+        Me.DockableWindow2.Owner = Me.UltraDockManager1
+        Me.DockableWindow2.Size = New System.Drawing.Size(214, 511)
+        Me.DockableWindow2.TabIndex = 21
+        '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = ""
+        '
+        'UltraTabbedMdiManager1
+        '
+        Me.UltraTabbedMdiManager1.MdiParent = Me
+        Me.UltraTabbedMdiManager1.TabGroupSettings.ShowTabListButton = Infragistics.Win.DefaultableBoolean.[True]
+        Appearance18.FontData.BoldAsString = "True"
+        Me.UltraTabbedMdiManager1.TabSettings.ActiveTabAppearance = Appearance18
+        Me.UltraTabbedMdiManager1.TabSettings.DisplayFormIcon = Infragistics.Win.DefaultableBoolean.[True]
+        Me.UltraTabbedMdiManager1.ViewStyle = Infragistics.Win.UltraWinTabbedMdi.ViewStyle.VisualStudio2005
+        '
+        'Alerta
+        '
+        Me.Alerta.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Fast
+        Me.Alerta.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        '
+        'Tiempo
+        '
+        Me.Tiempo.Enabled = True
+        Me.Tiempo.Interval = 150000
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.IsBalloon = True
+        Me.ToolTip1.ShowAlways = True
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.ToolTip1.ToolTipTitle = "Mensaje del Sistema"
+        '
+        'TiempoHora
+        '
+        Me.TiempoHora.Interval = 1000
+        '
+        'AlertaOperaciones
+        '
+        Appearance19.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        UltraDesktopAlertButton1.Appearance = Appearance19
+        UltraDesktopAlertButton1.Key = "Operaciones - CallCenter"
+        UltraDesktopAlertButton1.ToolTipText = "Operaciones - CallCenter"
+        Me.AlertaOperaciones.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton1})
+        Me.AlertaOperaciones.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaOperaciones.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaOperaciones.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaOperaciones.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance20.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        Me.AlertaOperaciones.Appearance = Appearance20
+        Me.AlertaOperaciones.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaOperaciones.AutoCloseDelay = 11000
+        Me.AlertaOperaciones.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaOperaciones.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Me.AlertaOperaciones.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaOperaciones.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaOperaciones.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaOperaciones.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaOperaciones.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaOperaciones.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
+        '
+        'AlertaLogistica
+        '
+        Appearance21.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        UltraDesktopAlertButton2.Appearance = Appearance21
+        UltraDesktopAlertButton2.Key = "AlertaLogistica"
+        UltraDesktopAlertButton2.ToolTipText = "Alerta Logistica"
+        Me.AlertaLogistica.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton2})
+        Me.AlertaLogistica.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaLogistica.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaLogistica.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaLogistica.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance22.Image = Global.ISL.Win.My.Resources.Resources.Cancelar
+        Me.AlertaLogistica.Appearance = Appearance22
+        Me.AlertaLogistica.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaLogistica.AutoCloseDelay = 11000
+        Me.AlertaLogistica.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaLogistica.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Me.AlertaLogistica.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaLogistica.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaLogistica.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaLogistica.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaLogistica.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaLogistica.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
+        '
+        'AlertaPermisos
+        '
+        Me.AlertaPermisos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaPermisos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
+        '
+        'AlertaGuias
+        '
+        Appearance23.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        UltraDesktopAlertButton3.Appearance = Appearance23
+        UltraDesktopAlertButton3.Key = "Guias - Alerta Guias"
+        UltraDesktopAlertButton3.ToolTipText = "Guias - Alerta Guias"
+        Me.AlertaGuias.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton3})
+        Me.AlertaGuias.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaGuias.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaGuias.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaGuias.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance24.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Appearance24.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
+        Me.AlertaGuias.Appearance = Appearance24
+        Me.AlertaGuias.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaGuias.AutoCloseDelay = 11000
+        Me.AlertaGuias.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaGuias.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.AlertaGuias.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaGuias.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaGuias.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaGuias.FixedSize = New System.Drawing.Size(200, 110)
+        Me.AlertaGuias.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaGuias.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaGuias.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
+        '
+        'AlertaTesoreria
+        '
+        Me.AlertaTesoreria.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaTesoreria.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
+        Me.AlertaTesoreria.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaTesoreria.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance25.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Appearance25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance25.Image = Global.ISL.Win.My.Resources.Resources.accounting_mail
+        Me.AlertaTesoreria.Appearance = Appearance25
+        Me.AlertaTesoreria.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'AlertaDocumentos
+        '
+        Me.AlertaDocumentos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaDocumentos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaDocumentos.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaDocumentos.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance26.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
+        Me.AlertaDocumentos.Appearance = Appearance26
+        Me.AlertaDocumentos.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaDocumentos.AutoCloseDelay = 11000
+        Me.AlertaDocumentos.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaDocumentos.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Appearance27.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.AlertaDocumentos.CaptionAppearance = Appearance27
+        Appearance28.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.AlertaDocumentos.CaptionAreaAppearance = Appearance28
+        Me.AlertaDocumentos.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaDocumentos.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaDocumentos.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaDocumentos.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaDocumentos.TreatTextAsLink = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'TiempoTC
+        '
+        Me.TiempoTC.Enabled = True
+        Me.TiempoTC.Interval = 1800000
+        '
+        'AlertaContratos
+        '
+        Me.AlertaContratos.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaContratos.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Medium
+        Me.AlertaContratos.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaContratos.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance29.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Appearance29.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance29.Image = Global.ISL.Win.My.Resources.Resources.accounting_mail
+        Me.AlertaContratos.Appearance = Appearance29
+        Me.AlertaContratos.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaContratos.FixedSize = New System.Drawing.Size(330, 100)
+        '
+        'ControlDeVersion
+        '
+        Me.ControlDeVersion.Enabled = True
+        Me.ControlDeVersion.Interval = 60000
+        '
+        'AlertaDocumentoVehicular
+        '
+        Appearance30.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        UltraDesktopAlertButton4.Appearance = Appearance30
+        UltraDesktopAlertButton4.Key = "Operaciones - CallCenter"
+        UltraDesktopAlertButton4.ToolTipText = "Operaciones - CallCenter"
+        Me.AlertaDocumentoVehicular.AlertButtons.AddRange(New Infragistics.Win.Misc.UltraDesktopAlertButton() {UltraDesktopAlertButton4})
+        Me.AlertaDocumentoVehicular.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaDocumentoVehicular.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaDocumentoVehicular.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaDocumentoVehicular.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Appearance31.Image = Global.ISL.Win.My.Resources.Resources.Conectado
+        Me.AlertaDocumentoVehicular.Appearance = Appearance31
+        Me.AlertaDocumentoVehicular.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaDocumentoVehicular.AutoCloseDelay = 11000
+        Me.AlertaDocumentoVehicular.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaDocumentoVehicular.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Me.AlertaDocumentoVehicular.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaDocumentoVehicular.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaDocumentoVehicular.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaDocumentoVehicular.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaDocumentoVehicular.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaDocumentoVehicular.Style = Infragistics.Win.Misc.DesktopAlertStyle.WindowsLiveMessenger
+        '
+        'AlertaComun
+        '
+        Me.AlertaComun.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Fast
+        Me.AlertaComun.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Me.AlertaComun.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaComun.AutoCloseDelay = 11000
+        Me.AlertaComun.ButtonImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaComun.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Appearance32.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.AlertaComun.CaptionAppearance = Appearance32
+        Appearance33.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.AlertaComun.CaptionAreaAppearance = Appearance33
+        Me.AlertaComun.CaptionAreaImageSize = New System.Drawing.Size(20, 20)
+        Me.AlertaComun.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaComun.ImageSize = New System.Drawing.Size(30, 30)
+        Me.AlertaComun.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaComun.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
+        Me.AlertaComun.TreatTextAsLink = Infragistics.Win.DefaultableBoolean.[True]
+        '
+        'hiloWebServiceCovisol
+        '
+        Me.hiloWebServiceCovisol.WorkerSupportsCancellation = True
+        '
+        'AlertaInforma
+        '
+        Me.AlertaInforma.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaInforma.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaInforma.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaInforma.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Me.AlertaInforma.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaInforma.AutoCloseDelay = 11000
+        Me.AlertaInforma.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Me.AlertaInforma.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaInforma.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaInforma.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaInforma.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
+        '
+        'AlertaBaja
+        '
+        Me.AlertaBaja.AnimationScrollDirectionShow = Infragistics.Win.Misc.AnimationScrollDirection.BottomLeftToTopRight
+        Me.AlertaBaja.AnimationSpeed = Infragistics.Win.Misc.AnimationSpeed.Slow
+        Me.AlertaBaja.AnimationStyleAutoClose = Infragistics.Win.Misc.AnimationStyle.Scroll
+        Me.AlertaBaja.AnimationStyleShow = Infragistics.Win.Misc.AnimationStyle.FadeAndScroll
+        Me.AlertaBaja.AutoClose = Infragistics.Win.DefaultableBoolean.[False]
+        Me.AlertaBaja.AutoCloseDelay = 11000
+        Me.AlertaBaja.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Office2007RibbonButton
+        Me.AlertaBaja.CloseButtonVisible = Infragistics.Win.DefaultableBoolean.[True]
+        Me.AlertaBaja.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AlertaBaja.MultipleWindowDisplayStyle = Infragistics.Win.Misc.MultipleWindowDisplayStyle.Tiled
+        Me.AlertaBaja.Style = Infragistics.Win.Misc.DesktopAlertStyle.Office2007
+        '
+        'WindowDockingArea1
+        '
+        Me.WindowDockingArea1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.WindowDockingArea1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea1.Location = New System.Drawing.Point(29, 51)
+        Me.WindowDockingArea1.Name = "WindowDockingArea1"
+        Me.WindowDockingArea1.Owner = Me.UltraDockManager1
+        Me.WindowDockingArea1.Size = New System.Drawing.Size(219, 468)
+        Me.WindowDockingArea1.TabIndex = 0
+        '
+        'WindowDockingArea3
+        '
+        Me.WindowDockingArea3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WindowDockingArea3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.WindowDockingArea3.Location = New System.Drawing.Point(8, 160)
+        Me.WindowDockingArea3.Name = "WindowDockingArea3"
+        Me.WindowDockingArea3.Owner = Me.UltraDockManager1
+        Me.WindowDockingArea3.Size = New System.Drawing.Size(477, 323)
+        Me.WindowDockingArea3.TabIndex = 50
+        '
+        'ugb_Espera
+        '
+        Me.ugb_Espera.Location = New System.Drawing.Point(327, 261)
+        Me.ugb_Espera.Name = "ugb_Espera"
+        Me.ugb_Espera.Size = New System.Drawing.Size(397, 68)
+        Me.ugb_Espera.TabIndex = 15
+        Me.ugb_Espera.Visible = False
+        '
         'frm_Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -795,12 +761,15 @@ Partial Class frm_Menu
         Me.Controls.Add(Me._frm_Menu_Toolbars_Dock_Area_Top)
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpButton = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "frm_Menu"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.MenuISL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.utm_ISLSGI, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraDockManager1, System.ComponentModel.ISupportInitialize).EndInit()
         Me._frm_MenuAutoHideControl.ResumeLayout(False)
+        Me.DockableWindow2.ResumeLayout(False)
         CType(Me.UltraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Alerta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlertaOperaciones, System.ComponentModel.ISupportInitialize).EndInit()
@@ -815,8 +784,6 @@ Partial Class frm_Menu
         CType(Me.AlertaComun, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlertaInforma, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlertaBaja, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.DockableWindow1.ResumeLayout(False)
-        CType(Me.utm_ISLSGI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -858,5 +825,4 @@ Partial Class frm_Menu
     Friend WithEvents hiloWebServiceCovisol As System.ComponentModel.BackgroundWorker
     Friend WithEvents AlertaInforma As Infragistics.Win.Misc.UltraDesktopAlert
     Friend WithEvents AlertaBaja As Infragistics.Win.Misc.UltraDesktopAlert
-    Friend WithEvents DockableWindow1 As Infragistics.Win.UltraWinDock.DockableWindow
 End Class

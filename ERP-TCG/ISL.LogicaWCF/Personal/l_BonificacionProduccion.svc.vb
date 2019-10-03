@@ -81,10 +81,10 @@ Public Class l_BonificacionProduccion
         Return BonPro
     End Function
 
-    Public Function GuardarMasivo(leBonificacionProduccion As List(Of e_BonificacionProduccion)) As Boolean Implements Il_BonificacionProduccion.GuardarMasivo
+    Public Function GuardarMasivo(leBonificacionProduccion As List(Of e_BonificacionProduccion), ByVal PrefijoID As String) As Boolean Implements Il_BonificacionProduccion.GuardarMasivo
         Try
             Dim dtBP As Data.DataTable = CrearDT()
-            Dim id As String = odBonificacionProduccion.UltimoIdInserta
+            Dim id As String = odBonificacionProduccion.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

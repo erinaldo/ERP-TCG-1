@@ -74,7 +74,8 @@ Public Class e_Trabajador
     Public IndRuta As Integer
 
     Public Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

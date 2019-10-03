@@ -58,7 +58,7 @@ Public Class d_DocumentoVehicular_Documento
             Dim stResultado As String = ""
             With oeDocVeh_Doc
                 stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicularDocumento_IAE" _
-                                              , .TipoOperacion, d_DatosConfiguracion.PrefijoID _
+                                              , .TipoOperacion, .PrefijoID _
                                             , .Id _
                                             , .IdDocumentoVehicular _
                                             , .Tipo _
@@ -74,6 +74,7 @@ Public Class d_DocumentoVehicular_Documento
                     )
                 If .leDocVehDocPago.Count > 0 Then
                     For Each obj In .leDocVehDocPago
+                        obj.PrefijoID = oeDocVeh_Doc.PrefijoID '@0001
                         odDocVehDocPago.Guardar(obj)
                     Next
                 End If

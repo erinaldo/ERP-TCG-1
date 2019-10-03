@@ -77,7 +77,7 @@ Public Class d_EncargadoSeguimiento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEncargadoSeguimiento
-                SqlHelper.ExecuteNonQuery("SPC.Isp_EncargadoSeguimiento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                SqlHelper.ExecuteNonQuery("SPC.Isp_EncargadoSeguimiento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdIncidencia _
                         , .FechaInicio _

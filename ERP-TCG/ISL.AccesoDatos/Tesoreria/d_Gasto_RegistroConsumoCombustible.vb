@@ -40,7 +40,7 @@ Public Class d_Gasto_RegistroConsumoCombustible
             Dim ds As DataSet
             With oeGasto_RegistroConsumoCombustible
                 ds = sqlhelper.ExecuteDataset("TES.Isp_Gasto_RegistroConsumoCombustible_Listar", "" _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdGastoOperacion _
                         , .IdRegistroConsumoCombustible _
@@ -63,7 +63,7 @@ Public Class d_Gasto_RegistroConsumoCombustible
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGasto_RegistroConsumoCombustible
-                sqlhelper.ExecuteNonQuery("TES.Isp_Gasto_RegistroConsumoCombustible_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Gasto_RegistroConsumoCombustible_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGastoOperacion _
                         , .IdRegistroConsumoCombustible _

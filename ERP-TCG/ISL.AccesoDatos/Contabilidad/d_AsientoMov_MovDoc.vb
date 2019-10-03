@@ -63,7 +63,7 @@ Public Class d_AsientoMov_MovDoc
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsientoMov_MovDoc
-                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoMov_MovDoc_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoMov_MovDoc_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdAsientoMovimiento _
@@ -95,26 +95,26 @@ Public Class d_AsientoMov_MovDoc
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", Left(PrefijoID, 1) & "SI"
                                   )
-            Return IIf(stResultado Is Nothing, Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" & "000000001", stResultado)
+            Return IIf(stResultado Is Nothing, Left(PrefijoID, 1) & "SI" & "000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False
         End Try
     End Function
 
-    Public Function UltimoIdInsertar() As String
+    Public Function UltimoIdInsertar(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

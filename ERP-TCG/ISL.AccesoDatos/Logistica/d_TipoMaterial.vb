@@ -114,7 +114,7 @@ Public Class d_TipoMaterial
             With oeTipoMaterial
                 sqlhelper.ExecuteNonQuery("ALM.Isp_TipoMaterial_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .Codigo, _
                                           .Nombre, _

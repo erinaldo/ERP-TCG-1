@@ -77,7 +77,7 @@ Public Class d_Caja
             Dim id As String = ""
             Using TransScope As New TransactionScope
                 With oeCaja
-                    id = sqlhelper.ExecuteScalar("TES.ISP_Caja_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.ISP_Caja_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Nombre _

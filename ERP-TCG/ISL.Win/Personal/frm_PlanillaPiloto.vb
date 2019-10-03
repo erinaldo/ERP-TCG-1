@@ -346,7 +346,7 @@ Public Class frm_PlanillaPiloto
                         For Each plavia In loPlanillaViaje
                             plavia.IdPlanillaPiloto = oePlanillaPiloto.Id
                         Next
-                        olPlanillaViaje.GuardarMasivo(loPlanillaViaje)
+                        olPlanillaViaje.GuardarMasivo(loPlanillaViaje, gs_PrefijoIdSucursal)
                     End If
                 End If
             End If

@@ -68,7 +68,7 @@ Public Class d_FondoFijo
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFondoFijo
-                sqlhelper.ExecuteNonQuery("STD.Isp_FondoFijo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_FondoFijo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .FondoFijo _
                          , .Glosa _

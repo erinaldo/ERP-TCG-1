@@ -90,7 +90,7 @@ Public Class d_DetalleRegistroDevolucion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleRegistroDevolucion
-                sqlhelper.ExecuteNonQuery("NEU.Isp_DetalleRegistroDevolucion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("NEU.Isp_DetalleRegistroDevolucion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdRegistroDevolucion _
                         , .IdVidaNeumatico _

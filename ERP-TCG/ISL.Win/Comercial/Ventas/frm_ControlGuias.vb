@@ -5,6 +5,7 @@
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
+
 Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
@@ -394,17 +395,17 @@ Public Class frm_ControlGuias
             If griLista.ActiveRow.Cells("Id").Value.ToString.Length > 0 Then
                 With griLista.ActiveRow
                     'If Prefijo.PrefijoID = "1LU" And .Cells("Flota").Text <> "LIMA" Then '@0001
-                    If PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
                         Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
                     End If
 
                     'If Prefijo.PrefijoID = "1SA" And .Cells("Flota").Text <> "LIMA" Then '@0001
-                    If PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
                         Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
                     End If
 
                     'If Prefijo.PrefijoID = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
-                    If PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
                         Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
                     End If
                     'If Prefijo.PrefijoID = "1CH" And .Cells("Flota").Text = "LIMA" Then
@@ -485,7 +486,7 @@ Public Class frm_ControlGuias
                     .GuiasTalanonarios = griTalonarios.DataSource
                     .UsuarioCreacion = gUsuarioSGI.Id
                 End With
-
+                oeGuiasControl.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olGuiasControl.Guardar(oeGuiasControl) Then
                     mensajeEmergente.Confirmacion(Me.Text & ": La informacion ha sido grabada satisfactoriamente", True)
                     ugb_Espera.Visible = False

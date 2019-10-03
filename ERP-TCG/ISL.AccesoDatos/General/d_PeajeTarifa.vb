@@ -75,7 +75,7 @@ Public Class d_PeajeTarifa
             With oePeajeTarifa
                 sqlhelper.ExecuteScalar("STD.Isp_PeajeTarifa_IAE", _
                                           .TipoOperacion _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , .Id _
                                             , .IdPeaje _
                                             , .CantidadEjes _

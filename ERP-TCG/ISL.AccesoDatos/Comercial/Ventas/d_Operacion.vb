@@ -299,7 +299,7 @@ Public Class d_Operacion
                                     With oeOperacion
                                         stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]", _
                                                 .Tipooperacion, _
-                                                d_DatosConfiguracion.PrefijoID, _
+                                                .PrefijoID, _
                                                 "A", _
                                                 .Id _
                                                 , .Codigo _

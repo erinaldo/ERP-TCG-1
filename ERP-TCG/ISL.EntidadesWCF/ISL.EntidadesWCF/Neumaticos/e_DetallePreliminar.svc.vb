@@ -41,8 +41,10 @@ Public Class e_DetallePreliminar
    Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-    <DataMember()> _
+    <DataMember()>
     Public Periodo As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

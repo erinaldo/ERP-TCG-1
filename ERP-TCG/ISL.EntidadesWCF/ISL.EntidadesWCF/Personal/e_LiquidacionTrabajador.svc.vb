@@ -89,7 +89,8 @@ Public Class e_LiquidacionTrabajador
     Public TipoCambio As Double = 0.0
     <DataMember()> _
     Public loPlacas As New List(Of e_Combo)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

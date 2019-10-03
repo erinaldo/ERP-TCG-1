@@ -75,7 +75,7 @@ Public Class d_CategoriaServicio
             Dim odCtaCtbleCatServ As New d_CtaCtbleCatServicio
             Using transCope As New TransactionScope()
                 With oeCategoriaServicio
-                    Id = sqlhelper.ExecuteScalar("STD.Isp_CategoriaServicio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    Id = sqlhelper.ExecuteScalar("STD.Isp_CategoriaServicio_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

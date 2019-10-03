@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -153,10 +161,12 @@ Public Class frm_ActivoFijo
                                                 If .TipoCambio = 0 Then
                                                     Throw New Exception("Tipo de cambio 0. Verificar")
                                                 End If
+                                                .PrefijoID = gs_PrefijoIdSucursal '@0001
                                             End With
+
                                             lstDepreciacionAF.Add(oeDepreciacionAF)
                                         Next
-                                        If olActivoFijo.GuardarDepreciacionPeriodo(lstDepreciacionAF) Then
+                                        If olActivoFijo.GuardarDepreciacionPeriodo(lstDepreciacionAF, gs_PrefijoIdSucursal) Then
                                             MessageBox.Show("Operación realizada con éxito", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         End If
                                     End If
@@ -838,7 +848,7 @@ Public Class frm_ActivoFijo
                         End If
                         .IdPeriodo = oePeriodo.Id
                     Else
-                        Throw New Exception("Verificar fecha de baja el periodo " & .FechaBaja.Year.ToString() & "-" & .FechaBaja.Month.ToString() & Environment.NewLine & _
+                        Throw New Exception("Verificar fecha de baja el periodo " & .FechaBaja.Year.ToString() & "-" & .FechaBaja.Month.ToString() & Environment.NewLine &
                                             "Aún no ha sido creado")
                     End If
                     'Verificar si en el periodo de baja ya se realizo la depreciación para ese activo
@@ -857,6 +867,7 @@ Public Class frm_ActivoFijo
                         Throw New Exception("Tipo de cambio 0. Verificar")
                     End If
                 End If
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             Return olActivoFijo.Guardar(oeActivoFijo)
         Catch ex As Exception

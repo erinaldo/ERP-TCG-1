@@ -78,7 +78,7 @@ Public Class d_Formula
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idFor As String = ""
             With oeFormula
-                _idFor = SqlHelper.ExecuteScalar("STD.Isp_Formula_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                _idFor = SqlHelper.ExecuteScalar("STD.Isp_Formula_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

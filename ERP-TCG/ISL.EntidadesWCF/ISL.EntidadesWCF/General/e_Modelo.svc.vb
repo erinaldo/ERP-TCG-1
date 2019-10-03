@@ -23,6 +23,8 @@ Public Class e_Modelo
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id

@@ -170,6 +170,8 @@
     <Content Include="Comercial\Ventas\l_MovimientoMermas.svc" />
     <Content Include="Comercial\Ventas\l_Operacion.svc" />
     <Content Include="Comercial\Ventas\l_OperacionesProceso.svc" />
+    <Content Include="Comercial\Ventas\l_OrdenVenta.svc" />
+    <Content Include="Comercial\Ventas\l_OrdenVentaMaterial.svc" />
     <Content Include="Comercial\Ventas\l_ProcesarTarifasProceso.svc" />
     <Content Include="Comercial\Ventas\l_ReporteDocumento.svc" />
     <Content Include="Comercial\Ventas\l_ReporteRecorrido.svc" />
@@ -298,6 +300,7 @@
     <Content Include="General\l_Ruta.svc" />
     <Content Include="General\l_RutaPeaje.svc" />
     <Content Include="General\l_Servicio.svc" />
+    <Content Include="General\l_TablaDinamica_Dato.svc" />
     <Content Include="General\l_TarjetaMovimiento.svc" />
     <Content Include="General\l_Telefono.svc" />
     <Content Include="General\l_TipoCambio.svc" />
@@ -733,6 +736,8 @@
     <Compile Include="Comercial\Ventas\Il_Liquidacion.vb" />
     <Compile Include="Comercial\Ventas\Il_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\Il_OperacionesProceso.vb" />
+    <Compile Include="Comercial\Ventas\Il_OrdenVenta.vb" />
+    <Compile Include="Comercial\Ventas\Il_OrdenVentaMaterial.vb" />
     <Compile Include="Comercial\Ventas\Il_ProcesarTarifasProceso.vb" />
     <Compile Include="Comercial\Ventas\Il_ReporteDocumento.vb" />
     <Compile Include="Comercial\Ventas\Il_ReporteRecorrido.vb" />
@@ -797,6 +802,12 @@
     </Compile>
     <Compile Include="Comercial\Ventas\l_OperacionesProceso.svc.vb">
       <DependentUpon>l_OperacionesProceso.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_OrdenVenta.svc.vb">
+      <DependentUpon>l_OrdenVenta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_OrdenVentaMaterial.svc.vb">
+      <DependentUpon>l_OrdenVentaMaterial.svc</DependentUpon>
     </Compile>
     <Compile Include="Comercial\Ventas\l_ProcesarTarifasProceso.svc.vb">
       <DependentUpon>l_ProcesarTarifasProceso.svc</DependentUpon>
@@ -977,6 +988,7 @@
     <Compile Include="General\Il_PeajeTarifa.vb" />
     <Compile Include="General\Il_RecargaPeaje.vb" />
     <Compile Include="General\Il_RutaPeaje.vb" />
+    <Compile Include="General\Il_TablaDinamica_Dato.vb" />
     <Compile Include="General\Il_TarjetaMovimiento.vb" />
     <Compile Include="General\Il_VehiculoTarjeta.vb" />
     <Compile Include="General\l_Bitacora.svc.vb">
@@ -1134,6 +1146,9 @@
     <Compile Include="General\Il_TipoZona.vb" />
     <Compile Include="General\l_RutaPeaje.svc.vb">
       <DependentUpon>l_RutaPeaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_TablaDinamica_Dato.svc.vb">
+      <DependentUpon>l_TablaDinamica_Dato.svc</DependentUpon>
     </Compile>
     <Compile Include="General\l_TarjetaMovimiento.svc.vb">
       <DependentUpon>l_TarjetaMovimiento.svc</DependentUpon>
@@ -2626,20 +2641,6 @@
     <Content Include="Web References\com.grupoinduamerica\server.wsdl" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ISL.AccesoDatos\ERP.AccesoDatos.vbproj">
-      <Project>{0E03020E-7BB0-439B-9390-B1C14818C019}</Project>
-      <Name>ERP.AccesoDatos</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
-      <Project>{D6821E32-CAAA-4DA7-88A5-22A551256E17}</Project>
-      <Name>ERP.EntidadesWCF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ISL.ServicioExterno\ERP.ServicioExterno.vbproj">
-      <Project>{4b1d26f9-a8f8-4345-8706-646a6d571ce7}</Project>
-      <Name>ERP.ServicioExterno</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
@@ -2660,6 +2661,20 @@
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>ISL_LogicaWCF_com_grupoinduamerica_ReferenciaServicioFactura</CachedSettingsPropName>
     </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ISL.AccesoDatos\ERP.AccesoDatos.vbproj">
+      <Project>{0e03020e-7bb0-439b-9390-b1c14818c019}</Project>
+      <Name>ERP.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISL.EntidadesWCF\ISL.EntidadesWCF\ERP.EntidadesWCF.vbproj">
+      <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
+      <Name>ERP.EntidadesWCF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ISL.ServicioExterno\ERP.ServicioExterno.vbproj">
+      <Project>{4b1d26f9-a8f8-4345-8706-646a6d571ce7}</Project>
+      <Name>ERP.ServicioExterno</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

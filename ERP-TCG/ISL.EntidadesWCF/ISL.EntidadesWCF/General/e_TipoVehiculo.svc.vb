@@ -23,8 +23,10 @@ Public Class e_TipoVehiculo
 
     <DataMember()> _
     Public Modificado As Boolean = False
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     Private _usuariocreacion As String
 

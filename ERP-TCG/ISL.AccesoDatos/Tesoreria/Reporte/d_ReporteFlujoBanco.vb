@@ -44,11 +44,11 @@ Public Class d_ReporteFlujoBanco
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.ReporteFlujoBanco", d_DatosConfiguracion.PrefijoID)
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.ReporteFlujoBanco", PrefijoID)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

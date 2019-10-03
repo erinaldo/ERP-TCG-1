@@ -96,7 +96,7 @@ Public Class d_RubroEstadoFinanciero
                 With oeRubroEstadoFinanciero
                     stResultado = sqlhelper.ExecuteScalar("[CON].[Isp_RubroEstadoFinanciero_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .Codigo _
                             , .NroRegistro _

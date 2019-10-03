@@ -15,7 +15,8 @@ Public Class e_VentanaHoraria
     Private _activo As Boolean
     Private _horainicio As Date
     Private _horafin As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

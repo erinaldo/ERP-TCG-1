@@ -81,7 +81,7 @@ Public Class d_ConceptoPonderado
             Dim _idcp As String = ""
             Using TransScope As New TransactionScope()
                 With oeConceptoPonderado
-                    _idcp = sqlhelper.ExecuteScalar("STD.Isp_ConceptoPonderado_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idcp = sqlhelper.ExecuteScalar("STD.Isp_ConceptoPonderado_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Nombre _

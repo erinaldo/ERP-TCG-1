@@ -81,13 +81,13 @@ Public Class d_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal xml As String) As Boolean
+    Public Function GuardarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
             sqlhelper = New SqlHelper
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE", _
+            sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
                                       "M" _
-                                        , d_DatosConfiguracion.PrefijoID _
+                                        , PrefijoID _
                                         , xml)
             Return True
         Catch ex As Exception
@@ -102,7 +102,7 @@ Public Class d_TarjetaMovimiento
             'With oePeajeTarifa
             '    sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE", _
             '                              .TipoOperacion _
-            '                                , d_DatosConfiguracion.PrefijoID _
+            '                                , .PrefijoID _
             '                                , .Id _
             '                                , .IdPeaje _
             '                                , .CantidadEjes _
@@ -140,14 +140,14 @@ Public Class d_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function IdInsertar() As String
+    Public Function IdInsertar(ByVal PrefijoID As String) As String
         Try
             sqlhelper = New SqlHelper
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strResultado As String
-            strResultado = sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE", _
-                                                   "Z", _
-                                                   d_DatosConfiguracion.PrefijoID, _
+            strResultado = sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
+                                                   "Z",
+                                                   PrefijoID,
                                                    "")
 
 
@@ -157,13 +157,13 @@ Public Class d_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function ActualizarMasivo(ByVal xml As String) As Boolean
+    Public Function ActualizarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
             sqlhelper = New SqlHelper
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE", _
+            sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
                                       "S" _
-                                        , d_DatosConfiguracion.PrefijoID _
+                                        , PrefijoID _
                                         , xml)
             Return True
         Catch ex As Exception

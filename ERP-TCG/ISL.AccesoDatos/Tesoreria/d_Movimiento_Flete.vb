@@ -94,7 +94,7 @@ Public Class d_Movimiento_Flete
                 If .oeChequeCobrar.TipoOperacion = "I" Then
                     odChequexCobrar.Guardar(.oeChequeCobrar)
                 End If
-                Id = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_Flete_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                Id = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_Flete_IAE", .TipoOperacion, .PrefijoID, _
                        .Id _
                        , .IdOperacionDetalle _
                        , .IdMovimiento _

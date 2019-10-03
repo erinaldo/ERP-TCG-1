@@ -60,7 +60,7 @@ Public Class l_RetencionQuinta
     Public Function ImportarDatos(oeRetencionQuinta As e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.ImportarDatos
         Try
             Dim dtDR5 As Data.DataTable = olDetalle.CrearDT()
-            Dim id As String = odDetalle.UltimoIdInserta
+            Dim id As String = odDetalle.UltimoIdInserta(oeRetencionQuinta.PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

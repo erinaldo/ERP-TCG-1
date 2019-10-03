@@ -74,7 +74,7 @@ Public Class d_AccionSistema
             Using TransScope As New TransactionScope()
                 Dim _id As String = ""
                 With oeAccionSistema
-                    _id = sqlhelper.ExecuteScalar("SGD.Isp_AccionSistema_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("SGD.Isp_AccionSistema_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Codigo _
                             , .Nombre _

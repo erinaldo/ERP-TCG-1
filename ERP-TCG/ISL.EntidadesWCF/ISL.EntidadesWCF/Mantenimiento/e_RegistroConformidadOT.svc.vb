@@ -12,12 +12,12 @@ Public Class e_RegistroConformidadOT
     Private _activo As Boolean
     <DataMember()> _
     Public lstDetalleRegConformidadOT As New List(Of e_DetalleRegConformidadOT)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public FechaInicio As Date
-    <DataMember()> _
+    <DataMember()>
     Public FechaFin As Date
-
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

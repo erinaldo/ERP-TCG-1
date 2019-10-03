@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -197,6 +205,7 @@ Public Class frm_GastosFinancieros
             l_FuncionesGenerales.ValidarNumeroDecimal(DecMonto.Value, "Ingrese el Monto")
             oeContratoFin = New e_ContratoFinanciero
             oeContratoFin.oeMovCajaBanco = New e_MovimientoCajaBanco
+            oeContratoFin.oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
             'Obtener Periodo
             oePeriodo = New e_Periodo
             oePeriodo = ObtenerPeriodo(CDate(fecEmision.Value))
@@ -237,6 +246,7 @@ Public Class frm_GastosFinancieros
             oeContratoFin.IdTipoDocumento = IIf(cboItemGasto.SelectedIndex > 0, cboItemGasto.Value, String.Empty)
             oeContratoFin.Codigo = cboCuenta.Value
             'oeContratoFin.NombreBanco = cboBanco.Text
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratoFin.GuardarGastoFin(oeContratoFin, oeAsientoModel) Then
                 mensajeEmergente.Confirmacion("Se registró Correctamente", True)
                 Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -183,6 +191,7 @@ Public Class frm_DistribucionAnalisis
                     oeAnalisis.TipoOperacion = "I" : oeAnalisis.Activo = True
                     oeAnalisis.IdAsientoMovimiento = oeAsientoMov.Id
                     oeAnalisis.NroFila = ln_NroAnalisis + 1
+                    oeAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                     mt_InicializarAnalisis()
                     cboTrabajador.Focus()
                     mt_ControlSubBoton(0, 0, 1, 1, 0, 0)
@@ -207,6 +216,7 @@ Public Class frm_DistribucionAnalisis
                         oeAnalisis.IdTrabajador = cboTrabajador.Value
                         oeAnalisis.Trabajador = cboTrabajador.Text.Trim
                         oeAnalisis.Monto = decMonto.Value
+                        oeAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If oeAnalisis.TipoOperacion = "I" Then
                             leAnalisis.Add(oeAnalisis)
                             ln_NroAnalisis = ln_NroAnalisis + 1
@@ -491,6 +501,7 @@ Public Class frm_DistribucionAnalisis
                         _nroAux = _nroAux + 1
                         oeAnalisis.NroFila = _nroAux
                         oeAnalisis.Activo = True
+                        oeAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leAuxiliar.Add(oeAnalisis)
                     Next
                 Next
@@ -540,6 +551,7 @@ Public Class frm_DistribucionAnalisis
                     _nroAux = _nroAux + 1
                     oeAnalisis.NroFila = _nroAux
                     oeAnalisis.Activo = True
+                    oeAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leAuxiliar.Add(oeAnalisis)
                 Next
             Next

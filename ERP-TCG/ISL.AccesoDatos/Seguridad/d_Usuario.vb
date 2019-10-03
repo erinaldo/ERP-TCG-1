@@ -511,7 +511,7 @@ Public Class d_Usuario
                     With oeUsuario
                         id = sqlhelper.ExecuteScalar("SGD.Isp_Usuario_IAE", .TipoOperacion, _
                          .Id, _idpadre, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave), _
-                        .IndFechaUltimoIngreso, .Controlado, .Activo, d_DatosConfiguracion.PrefijoID)
+                        .IndFechaUltimoIngreso, .Controlado, .Activo, .PrefijoID)
                     End With
                     If oeUsuario.leUsuarioPerfil IsNot Nothing Then
                         For Each oeUsuarioPerfil As e_UsuarioPerfil In oeUsuario.leUsuarioPerfil
@@ -577,7 +577,7 @@ Public Class d_Usuario
             With oeUsuario
                 Return sqlhelper.ExecuteNonQuery("SGD.Isp_Usuario_IAE", .TipoOperacion, _
                      .Id, .oePersona.Id, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave), _
-                    .IndFechaUltimoIngreso, .Controlado, .Activo, d_DatosConfiguracion.PrefijoID)
+                    .IndFechaUltimoIngreso, .Controlado, .Activo, .PrefijoID)
             End With
         Catch ex As Exception
             Throw ex

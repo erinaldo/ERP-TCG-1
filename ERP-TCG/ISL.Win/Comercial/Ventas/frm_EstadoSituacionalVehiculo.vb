@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -604,6 +612,7 @@ Public Class frm_EstadoSituacionalVehiculo
                         oeViaje.UsuarioCreacion = gUsuarioSGI.Id
                         oeViaje.Fecha = Date.Now
                         oeViaje.GlosaEscala = griDisponibleVehiculo.ActiveRow.Cells("GlosaEscala").Value
+                        oeViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olOperacion.GuardarViaje(oeViaje) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion ha sido grabada Satisfactoriamente; " & griDisponibleVehiculo.ActiveRow.Cells("GlosaEscala").Value, True)
                     Else
                         Throw New Exception("Usted Tiene Permiso de: " & _acl & " en " & Me.Text)
@@ -2042,6 +2051,7 @@ Public Class frm_EstadoSituacionalVehiculo
                         'End If
                         .UsuarioCrea = gUsuarioSGI.Id
                     End With
+                    oeDespacho.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olDespacho.Guardar(oeDespacho) Then
                         MessageBox.Show("Operación realiza con éxito", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                         MostrarTabs(0, utcDespacho, 0)
@@ -2872,6 +2882,7 @@ Public Class frm_EstadoSituacionalVehiculo
                         oeDespOp.TipoOperacion = "A"
                         oeDespOp.Id = Grilla.ActiveRow.Cells("Id").Value
                         oeDespOp.UsuarioCrea = gUsuarioSGI.Id
+                        oeDespOp.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olDespachoOperaciones.Guardar(oeDespOp) Then
                             MessageBox.Show("Operación realizada con éxito", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Consultar(True)

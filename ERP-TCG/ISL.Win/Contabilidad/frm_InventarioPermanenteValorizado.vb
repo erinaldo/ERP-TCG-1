@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports System.IO
@@ -401,9 +409,9 @@ Public Class frm_InventarioPermanenteValorizado
                 Dim IdKardex As String = "", IdKardexDetalle As String = "", IdKardexSaldo As String = ""
                 Dim lsPrefijo As String = ""
 
-                IdKardex = olKardex.UltimoIdInserta_Kardex()
-                IdKardexDetalle = olKardex.UltimoIdInserta_KardexDetalle()
-                IdKardexSaldo = olKardex.UltimoIdInserta_KardexSaldo()
+                IdKardex = olKardex.UltimoIdInserta_Kardex(gs_PrefijoIdSucursal)
+                IdKardexDetalle = olKardex.UltimoIdInserta_KardexDetalle(gs_PrefijoIdSucursal)
+                IdKardexSaldo = olKardex.UltimoIdInserta_KardexSaldo(gs_PrefijoIdSucursal)
                 lsPrefijo = Strings.Left(IdKardex, 3)
 
                 Dim lnNumeroKardex As Integer = CInt(Strings.Right(IdKardex, Len(IdKardex) - 3))

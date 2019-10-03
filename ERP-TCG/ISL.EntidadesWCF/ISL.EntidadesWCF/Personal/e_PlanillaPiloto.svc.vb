@@ -24,7 +24,8 @@ Public Class e_PlanillaPiloto
     Public Modificado As Boolean
     <DataMember()> _
     Public listaPlanillaPiloto As New List(Of e_PlanillaPilotoDet)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

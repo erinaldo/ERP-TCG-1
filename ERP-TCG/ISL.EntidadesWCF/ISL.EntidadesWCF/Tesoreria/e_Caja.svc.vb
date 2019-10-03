@@ -25,7 +25,8 @@ Public Class e_Caja
     Private _centro As String
     <DataMember()> _
     Public leCajaUsuario As New List(Of e_CajaUsuario)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

@@ -47,7 +47,8 @@ Public Class e_ContratoFinanciero
     Public IndFec As Boolean = False
     <DataMember()> _
     Public MacLocal As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     Public Property Id() As String

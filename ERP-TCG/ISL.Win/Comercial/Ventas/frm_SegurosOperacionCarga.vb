@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -293,6 +301,8 @@ Public Class frm_SegurosOperacionCarga
             MostrarTabs(1, ficPrimaSeguro, 1)
             oeClientePrima = New e_ClientePrima
             oeClientePrima.TipoOperacion = "I"
+            oeClientePrima.PrefijoID = gs_PrefijoIdSucursal '@0001
+
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -349,6 +359,7 @@ Public Class frm_SegurosOperacionCarga
             oeClientePrima.Vigente = cbVigencia.CheckState
             oeClientePrima.FechaCreacion = ObtenerFechaServidor()
             oeClientePrima.UsuarioCreacion = gUsuarioSGI.Id
+            oeClientePrima.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olClientePrima.Guardar(oeClientePrima) Then
                 mensajeEmergente.Confirmacion("La Informacion Ha Sido Guardada Correctamente", True)
                 MostrarTabs(0, ficPrimaSeguro, 1)
@@ -439,6 +450,7 @@ Public Class frm_SegurosOperacionCarga
         Try
             If loClienteViaPriCon.Count = 0 Then Throw New Exception("No Puede Guardar Sin Detalles")
             LlenaObjeto()
+            oeClienteViaPri.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olClienteViaPrim.Guardar(oeClienteViaPri) Then
                 Return False
             End If

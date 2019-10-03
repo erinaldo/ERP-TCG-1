@@ -132,7 +132,7 @@ Public Class d_LiquidacionTrabajador
 
             Using TransScope As New TransactionScope()
                 With oeLiquidacionTrabajador
-                    _id = sqlhelper.ExecuteScalar("PER.Isp_LiquidacionTrabajador_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("PER.Isp_LiquidacionTrabajador_IAE", .TipoOperacion, .PrefijoID, _
                                                 .Id _
                                                 , .Fecha _
                                                 , .FechaIngreso _
@@ -200,7 +200,7 @@ Public Class d_LiquidacionTrabajador
                 '    e_Prestamo.IdTrabajador = oeLiquidacionTrabajador.IdTrabajador
                 '    listaPrestamo = d_Prestamo.ListarDT(e_Prestamo)
                 '    For Each fila In listaPrestamo.Rows
-                '        sqlhelper.ExecuteNonQuery("PER.Isp_LiquidacionTrabajadorPrestamo_IAE", "I", d_DatosConfiguracion.PrefijoID, _
+                '        sqlhelper.ExecuteNonQuery("PER.Isp_LiquidacionTrabajadorPrestamo_IAE", "I", .PrefijoID, _
                 '                                  "", oeLiquidacionTrabajador.Id, fila("IdPrestamo"), fila("IdPrestamoDetalle"), _
                 '                                  fila("Saldo"), fila("ImporteCuota"), oeLiquidacionTrabajador.UsuarioCreacion)
                 '    Next

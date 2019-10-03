@@ -19,7 +19,8 @@ Public Class e_TipoDocumento
     Private _Activo As Boolean
     <DataMember()> _
     Public IndIGV As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public leDocumentoImpuesto As New List(Of e_DocumentoImpuesto)
 

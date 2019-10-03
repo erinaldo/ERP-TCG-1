@@ -60,7 +60,7 @@ Public Class l_Gratificacion
     Public Function ImportarDatos(oeGratificacion As e_Gratificacion) As Boolean Implements Il_Gratificacion.ImportarDatos
         Try
             Dim dtDet As Data.DataTable = olDetalle.CrearDT()
-            Dim id As String = odDetalle.UltimoIdInserta
+            Dim id As String = odDetalle.UltimoIdInserta(oeGratificacion.PrefijoID)
             Dim lsPrefijo As String = Left(id, 3)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
 

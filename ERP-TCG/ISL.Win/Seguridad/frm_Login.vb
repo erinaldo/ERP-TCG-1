@@ -143,7 +143,7 @@ Public Class frm_Login
                 cboCentro.Focus()
                 Throw New Exception("Seleccione SUCURSAL, con relacion al Giro del Negocio.")
             Else
-                PrefijoIdSucursal = cboCentro.Value
+                gs_PrefijoIdSucursal = cboCentro.Value
             End If
             '@0001
             olUsuario = New l_Usuario
@@ -157,7 +157,7 @@ Public Class frm_Login
                     oeControlUsuario.IdUsuario = gUsuarioSGI.Id
                     oeControlUsuario.Ipv4 = gUsuarioSGI.ObtenerLoginWindows & "(" & gUsuarioSGI.ObtenerIP & ")"
                     oeControlUsuario.TipoOperacion = "I"
-                    oeControlUsuario.PrefijoId = PrefijoIdSucursal
+                    oeControlUsuario.PrefijoId = gs_PrefijoIdSucursal
                     gIdControl = olControlUsuario.Guardar(oeControlUsuario)
                 End If
                 My.Settings.Save()

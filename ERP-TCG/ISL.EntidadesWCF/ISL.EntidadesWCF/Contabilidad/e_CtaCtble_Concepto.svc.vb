@@ -21,7 +21,8 @@ Public Class e_CtaCtble_Concepto
     Public Tipo As Integer
     <DataMember()> _
     Public Ejercicio As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

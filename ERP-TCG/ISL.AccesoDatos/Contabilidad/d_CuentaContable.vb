@@ -8,7 +8,7 @@ Public Class d_CuentaContable
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_CuentaContable
         Try
-            Dim oeCuentaContable = New e_CuentaContable( _
+            Dim oeCuentaContable = New e_CuentaContable(
                              o_fila("Id").ToString _
                              , o_fila("Cuenta").ToString _
                              , o_fila("Nombre").ToString _
@@ -48,8 +48,8 @@ Public Class d_CuentaContable
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", "N", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeCuentaContable.Id)
+            ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", "N",
+            Left(oeCuentaContable.PrefijoID, 1), "", oeCuentaContable.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeCuentaContable = Cargar(ds.Tables(0).Rows(0))
                 'Dim oeCuentaAsociada As New e_CuentaAsociada
@@ -70,9 +70,9 @@ Public Class d_CuentaContable
             Dim ldCuentaContable As New List(Of e_CuentaContable)
             Dim ds As DataSet
             With oeCuentaContable
-                ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", _
+                ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar",
                                               IIf(.TipoOperacion Is Nothing, "N", .TipoOperacion) _
-                                             , Left(d_DatosConfiguracion.PrefijoID, 1) _
+                                             , Left(.PrefijoID, 1) _
                                              , "" _
                                             , .Id _
                                             , .Cuenta _
@@ -85,7 +85,7 @@ Public Class d_CuentaContable
                                             , .TipoDocGeneral _
                                             , .Trabajador _
                                             , .Conciliacion _
-                                            , .MonedaExtrangera _
+                                            , .MonedaExtranjera _
                                             , .NroDocumento _
                                             , .FechaEmision _
                                             , .FechaVencimiento _
@@ -117,8 +117,8 @@ Public Class d_CuentaContable
         Try
             Using transScope As New TransactionScope()
                 With oeCuentaContable
-                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_CuentaContable_IAE", _
-                                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_CuentaContable_IAE",
+                                                          .TipoOperacion, .PrefijoID,
                                                             .Id _
                                                             , .Cuenta _
                                                             , .Nombre _
@@ -130,7 +130,7 @@ Public Class d_CuentaContable
                                                             , .TipoDocGeneral _
                                                             , .Trabajador _
                                                             , .Conciliacion _
-                                                            , .MonedaExtrangera _
+                                                            , .MonedaExtranjera _
                                                             , .Serie _
                                                             , .NroDocumento _
                                                             , .FechaEmision _
@@ -168,7 +168,7 @@ Public Class d_CuentaContable
 
     Public Function Eliminar(ByVal oeCuentaContable As e_CuentaContable) As Boolean
         Try
-            SqlHelper.ExecuteNonQuery("CON.ISP_CuentaContable_IAE", "E", _
+            sqlhelper.ExecuteNonQuery("CON.ISP_CuentaContable_IAE", "E",
              "", oeCuentaContable.Id)
             Return True
         Catch ex As Exception

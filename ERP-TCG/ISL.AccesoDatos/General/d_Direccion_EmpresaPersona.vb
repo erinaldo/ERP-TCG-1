@@ -133,7 +133,7 @@ Public Class d_Direccion_EmpresaPersona
                         , .Principal _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

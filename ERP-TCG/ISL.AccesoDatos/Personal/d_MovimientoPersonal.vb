@@ -121,7 +121,7 @@ Public Class d_MovimientoPersonal
             With oeMovimientoPersonal
                 sqlhelper.ExecuteNonQuery("PER.Isp_MovimientoPersonal_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .IdTrabajador _
                                         , .IdSituacionAdministrativa _

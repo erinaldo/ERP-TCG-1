@@ -87,9 +87,9 @@ Public Class d_OtrosIngresos
             Dim id As String = ""
             With oe
                 Dim strCorrelativo As String = ""
-                strCorrelativo = CargarCorrelativoLocal("VALE")
-                GrabarCorrelativo(strCorrelativo, "VALE")
-                id = sqlhelper.ExecuteScalar("TES.Isp_OtrosIngresos_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                strCorrelativo = CargarCorrelativoLocal("VALE", oe.PrefijoID)
+                GrabarCorrelativo(strCorrelativo, "VALE", oe.PrefijoID)
+                id = sqlhelper.ExecuteScalar("TES.Isp_OtrosIngresos_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdConceptoIngresos _
                         , .IdCuentaCorriente _
@@ -128,7 +128,7 @@ Public Class d_OtrosIngresos
         End Try
     End Function
 
-    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String) As String
+    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String, ByVal PrefijoID As String) As String
         Dim Numero As String = ""
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
@@ -137,7 +137,7 @@ Public Class d_OtrosIngresos
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
 
         oeCorrelativo.TipoOperacion = "1"
-        oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+        oeCorrelativo.Prefijo = PrefijoID
         oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
         oeCorrelativo = odCorrelativo.ObtenerLocal(oeCorrelativo)
         Numero = oeCorrelativo.Numero + 1
@@ -148,14 +148,14 @@ Public Class d_OtrosIngresos
         Return Numero
     End Function
 
-    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String) As Boolean
+    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String) As Boolean
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             oeTipodocumento.TipoOperacion = "B"
             oeTipodocumento.Nombre = TipoDocumento
             oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
 
-            Select Case d_DatosConfiguracion.PrefijoID
+            Select Case PrefijoID
                 Case "1CH"
                     oeCorrelativo.Serie = 1
                 Case "1PY"
@@ -176,7 +176,7 @@ Public Class d_OtrosIngresos
             Else
                 oeCorrelativo.TipoOperacion = "I"
                 oeCorrelativo.Numero = CInt(Numero)
-                oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+                oeCorrelativo.Prefijo = PrefijoID
                 oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
                 If odCorrelativo.GuardarLocal(oeCorrelativo) Then Return True
             End If

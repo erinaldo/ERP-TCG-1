@@ -40,7 +40,8 @@ Public Class e_Planilla
     Public NroMes As Integer
     <DataMember()> _
     Public Ejercicio As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

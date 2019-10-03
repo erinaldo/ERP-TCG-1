@@ -5240,7 +5240,7 @@ Public Class frm_Movimiento
                     End If
                 End If
             End If
-            If olGastoOperacion.GuardaListaMasiva(loGastoOperacionMasivo, CtaCtblePublic) Then
+            If olGastoOperacion.GuardaListaMasiva(loGastoOperacionMasivo, CtaCtblePublic, gs_PrefijoIdSucursal) Then
                 leGastoOperacion = New List(Of e_GastoOperacion)
                 ugb_Espera.Visible = False
                 mensajeEmergente.Confirmacion("Se han Rendido Gastos Correctamente", True)

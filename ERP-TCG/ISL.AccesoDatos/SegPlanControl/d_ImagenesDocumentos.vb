@@ -81,7 +81,7 @@ Public Class d_ImagenesDocumentos
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeImagenesDocumentosVehiculos
-                    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_ImagenesDocumentos_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_ImagenesDocumentos_IAE", .TipoOperacion, .PrefijoID, _
                             .Id, IIf(.RutaImagen Is Nothing, "", .RutaImagen), IIf(.NroDocumento Is Nothing, "", .NroDocumento), _
                             IIf(.Descripcion Is Nothing, "", .Descripcion), IIf(.IdVehiculo Is Nothing, "", .IdVehiculo), _
                             IIf(.IdTrabajador Is Nothing, "", .IdTrabajador), IIf(.IdTipoDocumento Is Nothing, "", .IdTipoDocumento) _

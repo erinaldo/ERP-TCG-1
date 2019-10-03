@@ -188,7 +188,7 @@ Public Class frm_Planilla
                             ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
                             Throw New Exception("Ingrese un Clave Correcta")
                         Else
-                            olDetallePla.GuardarMasivo(_leAux)
+                            olDetallePla.GuardarMasivo(_leAux, gs_PrefijoIdSucursal)
                             mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
                             SeleccionaTab(0)
                             Consultar(True)

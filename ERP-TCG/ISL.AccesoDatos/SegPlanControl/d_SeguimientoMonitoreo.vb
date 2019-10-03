@@ -96,7 +96,7 @@ Public Class d_SeguimientoMonitoreo
             Dim stResultado() As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguimientoMonitoreo
-                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_SeguimientoMonitoreo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_SeguimientoMonitoreo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .UsuarioCreacion _
                         , .Codigo _

@@ -18,7 +18,8 @@ Public Class e_FondoFijo
     Public Modificado As Boolean = False
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

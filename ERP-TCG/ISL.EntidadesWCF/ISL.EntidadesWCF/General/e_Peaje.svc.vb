@@ -40,7 +40,9 @@ Public Class e_Peaje
     Public Property Activo() As Boolean
     <DataMember()>
     Public ListaTarifa As List(Of e_PeajeTarifa)
-     
+    <DataMember()>
+    Public PrefijoID As String = ""
+
 #End Region
 
 #Region "Constructor"

@@ -62,7 +62,7 @@ Public Class d_CotizacionDetalleSer
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCotizacionDetalleSer
-                sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleSer_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleSer_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCotizacionProveedor _
                         , .IdRequerimientoServicio _
@@ -72,7 +72,7 @@ Public Class d_CotizacionDetalleSer
                         , .Glosa _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .FechaCreacion _
+                        , .FechaCreacion
                     )
             End With
             Return True

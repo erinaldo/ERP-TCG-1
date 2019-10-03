@@ -29,8 +29,8 @@ Public Class d_CuentaxPDocumentoRetencion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CON.Isp_CuentaxPDocumentoRetencion_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeCuentaxPDocumentoRetencion.Id)
+            ds = sqlhelper.ExecuteDataset("CON.Isp_CuentaxPDocumentoRetencion_Listar", "",
+            Left(oeCuentaxPDocumentoRetencion.PrefijoID, 1), "", oeCuentaxPDocumentoRetencion.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeCuentaxPDocumentoRetencion = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -47,7 +47,7 @@ Public Class d_CuentaxPDocumentoRetencion
             Dim ds As DataSet
             With oeCuentaxPDocumentoRetencion
                 ds = sqlhelper.ExecuteDataset("CON.Isp_CuentaxPDocumentoRetencion_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdDocumentoRetencion _
                         , .Activo _
@@ -71,7 +71,7 @@ Public Class d_CuentaxPDocumentoRetencion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaxPDocumentoRetencion
-                sqlhelper.ExecuteNonQuery("CON.Isp_CuentaxPDocumentoRetencion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CuentaxPDocumentoRetencion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDocumentoRetencion _
                         , .Activo _

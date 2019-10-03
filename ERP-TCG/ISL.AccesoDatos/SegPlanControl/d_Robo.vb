@@ -112,7 +112,7 @@ Public Class d_Robo
             Dim stResultado() As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRobo
-                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Robo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Robo_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .UsuarioCreacion _
                         , .Codigo _

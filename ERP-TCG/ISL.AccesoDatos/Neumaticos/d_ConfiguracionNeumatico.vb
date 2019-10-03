@@ -69,7 +69,7 @@ Public Class d_ConfiguracionNeumatico
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeConfiguracionNeumatico
-                stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_ConfiguracionNeumaticos_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_ConfiguracionNeumaticos_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .NroEjes _

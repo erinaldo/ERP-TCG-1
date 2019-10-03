@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 
@@ -222,6 +230,7 @@ Public Class frm_AsignarCtaCtbleItemGasto
         Try
             If Validar() Then
                 oeItemGasto.ListaCuentaItemGasto = grDetalleCtaGto.DataSource
+                oeItemGasto.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olItemGasto.Guardar(oeItemGasto) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                     MostrarTabs(0, tcItemGasto, 2)

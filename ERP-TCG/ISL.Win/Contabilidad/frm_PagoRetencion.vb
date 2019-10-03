@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports System.IO
 Imports System.Configuration
@@ -507,6 +515,7 @@ Public Class frm_PagoRetencion
                 If oeRetencion.IndEnviado = 0 Then Throw New Exception("¡Seleccione un Comprobante de Retención Electronico Enviado a SUNAT!")
                 If MessageBox.Show("¿Desea Anular este Comprobante?", "Mensaje de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                     oeRetencion.TipoOperacion = "X"
+                    oeRetencion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRetencion.Guardar(oeRetencion)
                     mensajeEmergente.Confirmacion("¡El Comprobante Electronico fue anulado!", True)
                     Retencion()
@@ -717,6 +726,7 @@ Public Class frm_PagoRetencion
                 oeMovimientoDocumento = gridPago.ActiveRow.ListObject
                 ls_Id = oeMovimientoDocumento.Id
                 oeMovimientoDocumento.TipoOperacion = "I"
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 '-----------------------
                 If ValidarAgregarDetalle(oeMovimientoDocumento) Then
                     With leMovDocAgregado
@@ -807,6 +817,7 @@ Public Class frm_PagoRetencion
             gridPagoAgregado.DataSource = leMovDocAgregado
             gridPago.DataSource = leMovDoc
             oeDocumentoRetencion.TipoOperacion = "I"
+            oeDocumentoRetencion.PrefijoID = gs_PrefijoIdSucursal '@0001
             LlenarCombos()
             DecTC.Value = TipoCambio(fecRetencion.Value, True)(0)
         Catch ex As Exception
@@ -897,6 +908,7 @@ Public Class frm_PagoRetencion
                 .TipoOperacion = "I"
                 .IdAsientoMovimiento = ""
             End With
+            oeDocumentoRetencion.PrefijoID = gs_PrefijoIdSucursal '@0001
             olDocumentoRetencion.Guardar(oeDocumentoRetencion)
             Retencion()
         Catch ex As Exception
@@ -982,7 +994,7 @@ Public Class frm_PagoRetencion
                 If ls_IdDet.Trim.Length > 0 Then
                     ls_IdDet = Microsoft.VisualBasic.Left(ls_IdDet.Trim, Len(ls_IdDet.Trim) - 1)
                 End If
-
+                oeDocumentoRetencion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olAsiento.GuardarPagoRetencion(leMovDocAgregado, oeDocumentoRetencion, ls_IdDet) Then
                     mensajeEmergente.Confirmacion("Pago(s) guardados satisfactoriamente", True)
                     If oeDocumentoRetencion.Id <> "" And Microsoft.VisualBasic.Left(oeDocumentoRetencion.Serie, 1) <> "R" Then

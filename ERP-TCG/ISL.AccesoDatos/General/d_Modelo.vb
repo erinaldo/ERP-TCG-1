@@ -113,7 +113,7 @@ Public Class d_Modelo
             With oeModeloVehiculo
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_ModeloVehiculo_IAE]", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID _
+                                          .PrefijoID _
                                         , .Id _
                                         , .Codigo _
                                         , .Nombre _

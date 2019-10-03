@@ -83,7 +83,7 @@ Public Class d_BolsaRuta
 
             With oeBolsaRuta
                 sqlhelper.ExecuteNonQuery("TES.Isp_BolsaRuta_IAE", .TipoOperacion, _
-                .Id, .IdRuta, .IdTipoVehiculo, .MontoMinimo, .MontoNormal, .MontoMaximo, .Activo, .Usuario, d_DatosConfiguracion.PrefijoID)
+                .Id, .IdRuta, .IdTipoVehiculo, .MontoMinimo, .MontoNormal, .MontoMaximo, .Activo, .Usuario, .PrefijoID)
             End With
             Return True
         Catch ex As Exception

@@ -59,7 +59,8 @@ Public Class e_MovimientoCajaBanco
     Public IdCta10 As String = ""
     <DataMember()> _
     Public MacLocal As String = ""
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

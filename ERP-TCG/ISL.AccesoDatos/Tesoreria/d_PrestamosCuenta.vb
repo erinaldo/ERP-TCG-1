@@ -38,8 +38,8 @@ Public Class d_PrestamosCuenta
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("TES.ISP_OtrosIngresos_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oePrestamosCuenta.Id)
+            ds = sqlhelper.ExecuteDataset("TES.ISP_OtrosIngresos_Listar", "",
+            Left(oePrestamosCuenta.PrefijoID, 1), "", oePrestamosCuenta.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oePrestamosCuenta = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -78,9 +78,9 @@ Public Class d_PrestamosCuenta
             Dim Id As String = ""
             Using transScope As New TransactionScope
                 With oePrestamosCuenta
-                    .Voucher = CargarCorrelativoLocal("VALE")
-                    GrabarCorrelativo(.Voucher, "VALE")
-                    Id = sqlhelper.ExecuteScalar("TES.ISP_PrestamosCuenta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    .Voucher = CargarCorrelativoLocal("VALE", oePrestamosCuenta.PrefijoID)
+                    GrabarCorrelativo(.Voucher, "VALE", oePrestamosCuenta.PrefijoID)
+                    Id = sqlhelper.ExecuteScalar("TES.ISP_PrestamosCuenta_IAE", .TipoOperacion, .PrefijoID, _
                             .Id, .IdConceptoIngresos, .Importe, .IndIngEgr, .Glosa, .Voucher, .UsuarioAutoriza _
                             , .UsuarioCreacion, .Fecha, .IdCentro, .FechaCierre, .oeCtaBancaria.Id)
 
@@ -95,7 +95,7 @@ Public Class d_PrestamosCuenta
         End Try
     End Function
 
-    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String) As Boolean
+    Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String) As Boolean
 
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
@@ -104,7 +104,7 @@ Public Class d_PrestamosCuenta
             oeTipodocumento.Nombre = TipoDocumento
             oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
 
-            Select Case d_DatosConfiguracion.PrefijoID
+            Select Case PrefijoID
                 Case "1CH"
                     oeCorrelativo.Serie = 1
                 Case "1PY"
@@ -125,7 +125,7 @@ Public Class d_PrestamosCuenta
             Else
                 oeCorrelativo.TipoOperacion = "I"
                 oeCorrelativo.Numero = CInt(Numero)
-                oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+                oeCorrelativo.Prefijo = PrefijoID
                 oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
                 If odCorrelativo.GuardarLocal(oeCorrelativo) Then Return True
             End If
@@ -135,7 +135,7 @@ Public Class d_PrestamosCuenta
         End Try
     End Function
 
-    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String) As String
+    Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String, ByVal PrefijoID As String) As String
 
 
         Dim Numero As String = ""
@@ -146,7 +146,7 @@ Public Class d_PrestamosCuenta
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
 
         oeCorrelativo.TipoOperacion = "1"
-        oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+        oeCorrelativo.Prefijo = PrefijoID
         oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
         oeCorrelativo = odCorrelativo.ObtenerLocal(oeCorrelativo)
         Numero = oeCorrelativo.Numero + 1

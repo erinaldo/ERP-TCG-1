@@ -17,8 +17,8 @@ Public Interface Il_SueldoTrabajador
     <OperationContract()> _
     Function Guardar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leSueldoTrabajador As List(Of e_SueldoTrabajador)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leSueldoTrabajador As List(Of e_SueldoTrabajador), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Eliminar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As Boolean

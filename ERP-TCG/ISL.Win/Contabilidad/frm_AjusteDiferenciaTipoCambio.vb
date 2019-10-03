@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -285,6 +293,7 @@ Public Class frm_AjusteDiferenciaTipoCambio
                         oeAjuste.Glosa = "AJUSTE TC " & obj.Cells("Tipo").Value & "/" & obj.Cells("Serie").Value & obj.Cells("Numero").Value & " " & obj.Cells("Cliente").Value
                         oeAjuste.Cuenta = obj.Cells("CuentaContable").Value
                         oeAjuste.IdAsientoModelo = IIf(oeAjuste.Haber > 0, ls_IdPerdida, ls_IdGanancia)
+                        oeAjuste.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leAjusteGuardar.Add(oeAjuste)
                         If olAjuste.GuardarAjusteTC(leAsientoModel, leAjusteGuardar) Then _ban = True Else _ban = False
                     End If
@@ -330,6 +339,7 @@ Public Class frm_AjusteDiferenciaTipoCambio
                         oeAjuste.Glosa = "AJUSTE TC " & obj.Cells("Tipo").Value & "/" & obj.Cells("Serie").Value & obj.Cells("Numero").Value & " " & obj.Cells("Cliente").Value
                         oeAjuste.Cuenta = obj.Cells("CuentaContable").Value
                         oeAjuste.IdAsientoModelo = IIf(oeAjuste.Haber > 0, ls_IdPerdida, ls_IdGanancia)
+                        oeAjuste.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leAjusteGuardar.Add(oeAjuste)
                         If olAjuste.GuardarAjusteTC(leAsientoModel, leAjusteGuardar) Then _ban = True Else _ban = False
                     End If

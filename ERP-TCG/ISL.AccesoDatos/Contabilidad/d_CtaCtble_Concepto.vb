@@ -58,7 +58,7 @@ Public Class d_CtaCtble_Concepto
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCtaCtble_Concepto
-                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_Concepto_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_Concepto_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCuentaContable _
                         , .IdConceptoIngresos _

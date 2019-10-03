@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -120,6 +128,7 @@ Public Class frm_ConciliacionBancaria
                     .TipoOperacion = IIf(chkConciliado.Checked, "X", "C")
                     .IdPeriodoConcilia = cboMes.Value
                 End With
+                oeMovimientosBancarios.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olMovimientosBancarios.GuardarConciliacion(oeMovimientosBancarios)
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                 Consultar(True)

@@ -34,7 +34,8 @@ Public Class e_OtrosDescuentos
     Public IndReferencia As Integer = 0
     <DataMember()> _
     Public IdReferencia As String = ""
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

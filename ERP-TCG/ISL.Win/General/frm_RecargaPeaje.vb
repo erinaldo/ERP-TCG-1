@@ -887,7 +887,7 @@ Public Class frm_RecargaPeaje
             Next
             Select Case Operacion
                 Case "Nuevo"
-                    Return olRecargaPeaje.GuardarMasivo(loDetalle)
+                    Return olRecargaPeaje.GuardarMasivo(loDetalle, gs_PrefijoIdSucursal)
                 Case "Editar", "Ejecutar"
                     Return olRecargaPeaje.EditarMasivo(loDetalle)
                 Case Else

@@ -498,7 +498,7 @@ Public Class d_MovimientoDocumento
         Try
             With oeMovimientoDocumento
                 sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                        d_DatosConfiguracion.PrefijoID, _
+                        .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -537,7 +537,7 @@ Public Class d_MovimientoDocumento
             Dim stResultado_Ant() As String
             With oeMovimientoDocumento
                 stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                        d_DatosConfiguracion.PrefijoID, _
+                        .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -659,7 +659,7 @@ Public Class d_MovimientoDocumento
                     If oeAnticipo.TipoOperacion = "I" Then
                         With oeAnticipo
                             stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                                    d_DatosConfiguracion.PrefijoID, _
+                                    .PrefijoID, _
                                     .Id _
                                     , .IdTipoDocumento _
                                     , .Serie _
@@ -726,7 +726,7 @@ Public Class d_MovimientoDocumento
             Using transScope As New TransactionScope()
                 Dim id() As String
                 With oeMovimientoDocumento
-                    id = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -845,7 +845,7 @@ Public Class d_MovimientoDocumento
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeMovimientoDocumento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -938,7 +938,7 @@ Public Class d_MovimientoDocumento
             Dim stResultado() As String
 
             With oeMovimientoDocumento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -1057,7 +1057,7 @@ Public Class d_MovimientoDocumento
             Using transScope As New TransactionScope()
                 Dim stResultado() As String
                 With oeMovimientoDocumento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -1102,7 +1102,7 @@ Public Class d_MovimientoDocumento
         Try
             Dim stResultado() As String
             With oeMovimientoDocumento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -1149,7 +1149,7 @@ Public Class d_MovimientoDocumento
         Try
             With oePagoAutomatico
                 sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumentoPago_I", .IdMovimientoDocumento, .IdPeriodo, _
-                d_DatosConfiguracion.PrefijoID, _
+                .PrefijoID, _
                 .Glosa _
                 , .GlosaGrupo _
                 , .IdMoneda _
@@ -1235,7 +1235,7 @@ Public Class d_MovimientoDocumento
                             , .IndServicioMaterial _
                         )
                 If .TipoOperacion = "ACT" Then
-                    sqlhelper.ExecuteNonQuery("CON.Isp_Compra_IAE", "D", d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("CON.Isp_Compra_IAE", "D", .PrefijoID, _
                            "", 0, 0, 0, 0, 0, 0, 0, 0, 0, .Id, True, "", 0, "", 0, 0, 0, 0, 0, 0, "" _
                         , 0, "", 0, "", .IndDetraccion)
                 End If
@@ -1468,7 +1468,7 @@ Public Class d_MovimientoDocumento
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeMovimientoDocumento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -1536,20 +1536,20 @@ Public Class d_MovimientoDocumento
 
 #End Region
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoDocumento", d_DatosConfiguracion.PrefijoID)
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000000001", stResultado)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoDocumento", PrefijoID)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function UltimoId() As String
+    Public Function UltimoId(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            Dim Prefijo As String = d_DatosConfiguracion.PrefijoID
+            Dim Prefijo As String = PrefijoID
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoDocumento", Prefijo)
             Return IIf(stResultado Is Nothing, Prefijo & "000000000001", stResultado)
         Catch ex As Exception
@@ -1891,7 +1891,7 @@ Public Class d_MovimientoDocumento
                 Dim stResultado() As String
                 With oeMovimientoDocumento
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                            d_DatosConfiguracion.PrefijoID, _
+                            .PrefijoID, _
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _

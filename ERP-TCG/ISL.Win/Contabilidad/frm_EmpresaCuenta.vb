@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_EmpresaCuenta
@@ -201,6 +209,7 @@ Public Class frm_EmpresaCuenta
 
     Private Function GuardarEmpresaCuenta() As Boolean
         Try
+            oeEmpresaCuenta.PrefijoID = gs_PrefijoIdSucursal '@0001
             If ValidarEmpresaCuenta() AndAlso olEmpresaCuenta.Guardar(oeEmpresaCuenta) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                 MostrarTabs(0, tcEmpresaCuenta, 2)
@@ -480,7 +489,7 @@ Public Class frm_EmpresaCuenta
                 cboProveedor.Visible = False
                 OpcTipo.Enabled = True
             End If
-            If oeCuenta.MonedaExtrangera = 1 Then
+            If oeCuenta.MonedaExtranjera = 1 Then
                 cboMoneda.Text = "DOLARES"
             Else
                 cboMoneda.Text = "SOLES"

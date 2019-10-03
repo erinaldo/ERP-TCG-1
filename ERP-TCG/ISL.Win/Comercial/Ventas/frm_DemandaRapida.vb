@@ -1196,7 +1196,7 @@ Public Class frm_DemandaRapida
                                "Capacidad", "IndCarga", "Produccion", "Cantidad", "FleteUnitario", "IncluyeIgv", "IncidenciaOperaciones")
 
                 'If Prefijo.PrefijoID = "1CH" Then '@0001
-                If PrefijoIdSucursal = "1CH" Then '@0001
+                If gs_PrefijoIdSucursal = "1CH" Then '@0001
                     .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
                     .DisplayLayout.Bands(0).Columns("Piloto").Hidden = True
                 End If
@@ -1696,7 +1696,7 @@ Public Class frm_DemandaRapida
                         Return False
                     End If
                 End If
-
+                oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olDemanda.GuardarDemandaPredemanda(oeDemanda) Then
                     '  mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     If MessageBox.Show("La informacion ha sido grabada satisfactoriamente en " & Me.Text & "¿Desea generar la DEMANDA?", "Información del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
@@ -1710,6 +1710,7 @@ Public Class frm_DemandaRapida
                         formulario.ShowDialog()
                         If formulario.bandDemandaEnviada <> "" Then
                             ' GuardarDemandasEnviadas()
+                            oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olDemanda.GuardarDemandasEnviadas(oeDemanda)
                         End If
                     End If
@@ -3431,6 +3432,7 @@ Public Class frm_DemandaRapida
 
     Public Sub GuardarDemandasEnviadas()
         Try
+            oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
             olDemanda.GuardarDemandasEnviadas(oeDemanda)
         Catch ex As Exception
             Throw ex
@@ -4185,6 +4187,7 @@ Public Class frm_DemandaRapida
                 oeDemanda.UsuarioCreacion = gUsuarioSGI.Id
                 oeDemanda.TipoOperacion = "O"
                 oeDemanda.Id = griLista.Rows(e.Cell.Row.Index).Cells("IdDemanda").Value
+                oeDemanda.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olDemanda.GuardarObservacion(oeDemanda)
             End If            
             ugb_Espera.Visible = False

@@ -122,8 +122,10 @@ Public Class e_DetalleRentaQuinta
     Public UITRango2 As Double = 0
     <DataMember()> _
     Public UITRango3 As Double = 0
-    <DataMember()> _
+    <DataMember()>
     Public UITRango4 As Double = 0
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

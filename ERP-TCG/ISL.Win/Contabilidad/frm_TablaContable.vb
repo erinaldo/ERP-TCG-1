@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports System.ComponentModel
 Imports Infragistics.Shared
@@ -51,6 +59,7 @@ Public Class frm_TablaContable
         Inicializar()
         oeTablaContable.TipoOperacion = "I"
         oeTablaContable.Modificado = False
+        oeTablaContable.PrefijoID = gs_PrefijoIdSucursal '@0001
         txtNombre.Focus()
         MyBase.Nuevo()
     End Sub
@@ -223,6 +232,7 @@ Public Class frm_TablaContable
     Private Function GuardarTabla() As Boolean
         Try
             oeTablaContable.lstTablaCtbleDet = lstTablaContableDet.Where(Function(item) Not String.IsNullOrEmpty(item.TipoOperacion)).ToList
+            oeTablaContable.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTablaContable.Guardar(oeTablaContable) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                 MostrarTabs(0, tcTablaContable, 2)
@@ -508,12 +518,14 @@ Public Class frm_TablaContable
                     oeTablaContableDet.TipoOperacion = "A"
                 Else
                     oeTablaContableDet.TipoOperacion = "I"
+                    oeTablaContableDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If Not String.IsNullOrEmpty(oeTablaContableDet.Nombre) Then
                         lstTablaContableDet.Add(oeTablaContableDet)
                     End If
                 End If
             ElseIf oeTablaContable.Tipooperacion = "I" Then
                 oeTablaContableDet.TipoOperacion = "I"
+                oeTablaContableDet.PrefijoID = gs_PrefijoIdSucursal '@0001
             End If
 
         Catch ex As Exception
@@ -524,6 +536,7 @@ Public Class frm_TablaContable
     Public Sub DatosTablaCtble(ByVal lstDatos As BindingList(Of e_TablaContableDet))
         Dim selectedDatos As New BindingList(Of e_TablaContableDet)
         For Each dato As e_TablaContableDet In lstDatos
+            dato.PrefijoID = gs_PrefijoIdSucursal '@0001
             If String.IsNullOrEmpty(dato.TipoOperacion) OrElse Not dato.TipoOperacion.ToUpper().Equals("E") Then
                 selectedDatos.Add(dato)
             End If

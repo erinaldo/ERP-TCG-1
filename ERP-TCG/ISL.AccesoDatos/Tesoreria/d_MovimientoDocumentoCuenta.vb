@@ -22,8 +22,8 @@ Public Class d_MovimientoDocumentoCuenta
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeMovimientoDocumentoCuenta.Id)
+            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
+            Left(oeMovimientoDocumentoCuenta.PrefijoID, 1), "", oeMovimientoDocumentoCuenta.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeMovimientoDocumentoCuenta = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -40,7 +40,7 @@ Public Class d_MovimientoDocumentoCuenta
             Dim ds As DataSet
             With oeMovimientoDocumentoCuenta
                 ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "" _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdMovimientoDocumento _
                         , .IdCuentaxCyP _
@@ -63,7 +63,7 @@ Public Class d_MovimientoDocumentoCuenta
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimientoDocumentoCuenta
-                sqlhelper.ExecuteNonQuery("TES.Isp_MovimientoDocumentoCuenta_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_MovimientoDocumentoCuenta_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .idMovimientoDocumento _
                         , .idCuentaxCyP _

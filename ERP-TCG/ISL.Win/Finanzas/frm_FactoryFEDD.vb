@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -247,6 +255,7 @@ Public Class frm_FactoryFEDD
             oeObligacionFin.Saldo = oeObligacionFin.MontoCapital + oeObligacionFin.MontoInteres
             oeObligacionFin.IdCuentaContable = IdCtaCtble
             oeObligacionFin.leOblFinDoc = ObtenerObliDoc(leMovDocAgregado)
+            oeObligacionFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             leObligacionFin.Add(oeObligacionFin)
             'Obtener Flujo Caja y Medio de Pago
             oeContratoFin = New e_ContratoFinanciero
@@ -279,6 +288,7 @@ Public Class frm_FactoryFEDD
             oeContratoFin.NombreBanco = CboBanco.Text
             oeContratoFin.Capital = DecSubTotal.Value
             'Guardar Contrato Financiero
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratoFin.GuardarFedd(oeContratoFin, oeAsientoModel) Then
                 Espere1.Visible = False
                 mensajeEmergente.Confirmacion("Se registró Correctamente", True)
@@ -378,6 +388,7 @@ Public Class frm_FactoryFEDD
             oeContratoFin.NombreBanco = CboBanco.Text
             oeContratoFin.Capital = DecTotalFactoring.Value
             'Guardar Contrato Financiero
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratoFin.GuardarFactDesc(oeContratoFin, leAsientoModel) Then
                 Espere1.Visible = False
                 mensajeEmergente.Confirmacion("Se registró Correctamente", True)
@@ -1064,6 +1075,7 @@ Public Class frm_FactoryFEDD
                 .Gastos = DecGastosFactoring.Value
                 .Saldo = .MontoCapital + .MontoInteres + .Comision + .Gastos
                 .Usuario = gUsuarioSGI.Id
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             leObligacionFin.Add(oeObligacionFin)
             GridFactoring.DataSource = leObligacionFin

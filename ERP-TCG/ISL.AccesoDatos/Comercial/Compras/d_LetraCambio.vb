@@ -89,7 +89,7 @@ Public Class d_LetraCambio
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLetraCambio
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .NroLetra _
                         , .IdProvedor _
@@ -105,7 +105,7 @@ Public Class d_LetraCambio
                         , .NroLetraOrigen _
                         , .IdPeriodo _
                         , .IdCuentaContable _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

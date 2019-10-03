@@ -17,8 +17,8 @@ Public Interface Il_OtrosDescuentos
     <OperationContract()> _
     Function Guardar(ByVal oeOtrosDescuentos As e_OtrosDescuentos) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ByVal leOtrosDescuentos As List(Of e_OtrosDescuentos)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ByVal leOtrosDescuentos As List(Of e_OtrosDescuentos), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function GuardarLista(ByVal leOtrosDescuentos As List(Of e_OtrosDescuentos)) As Boolean

@@ -177,7 +177,7 @@ Public Class d_TipoGasto
                                                           .Abreviatura, _
                                                           .Activo, _
                                                           .Usuario, _
-                                                          d_DatosConfiguracion.PrefijoID).ToString.Split("_")
+                                                          .PrefijoID).ToString.Split("_")
                 End With
                 For Each Detalle As e_TipoGastoDetalle In oeTipoGasto.oeTipoGastoDetalle
                     Detalle.IdTipoGasto = stResultado(0)
@@ -210,7 +210,7 @@ Public Class d_TipoGasto
                                           .IdTipoGasto, _
                                           .IdFlujoCaja, _
                                           .Activo, _
-                                          d_DatosConfiguracion.PrefijoID)
+                                          .PrefijoID)
             End With
             Return True
         Catch ex As Exception

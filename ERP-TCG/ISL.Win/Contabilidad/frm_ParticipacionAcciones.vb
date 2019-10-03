@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Public Class frm_ParticipacionAcciones
@@ -119,6 +127,7 @@ Public Class frm_ParticipacionAcciones
                     oeParticipacionAccion.FechaBaja = FechaBaja.Value
                     oeParticipacionAccion.UsuarioCreacion = gUsuarioSGI.Id
                     oeParticipacionAccion.Id = ugParticipantes.Rows(ugParticipantes.ActiveRow.Index).Cells("Id").Value
+                    oeParticipacionAccion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olParticipacionAccion.Guardar(oeParticipacionAccion) Then
                         mensajeEmergente.Confirmacion("Registro de Accionista Eliminado.", True)
                     End If
@@ -367,6 +376,7 @@ Public Class frm_ParticipacionAcciones
         End With
         If Validar_Datos() Then
             olParticipacionAccion = New l_ParticipacionAccion
+            oeParticipacionAccion.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olParticipacionAccion.Guardar(oeParticipacionAccion) Then
                 mensajeEmergente.Confirmacion("Registro de Accionista Correcto.", True)
                 Cancelar()

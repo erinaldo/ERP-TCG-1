@@ -55,7 +55,7 @@ Public Class d_MantenimientoMaterial
             Dim ds As DataSet
             With oeMantenimientoMaterial
                 ds = sqlhelper.ExecuteDataset("[MAN].[Isp_Mantenimiento_Material_Listar]", .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdMantenimiento _
                         , .IdMaterial _
@@ -83,7 +83,7 @@ Public Class d_MantenimientoMaterial
 
             With oeMantenimientoMaterial
                 sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Material_IAE]", .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                         .Id _
                         , .IdMantenimiento _
                         , .IdMaterial _

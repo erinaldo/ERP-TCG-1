@@ -20,7 +20,8 @@ Public Class e_ProcesoNegocio
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public leActividadNegocio As New List(Of e_ActividadNegocio)
     <DataMember()> _

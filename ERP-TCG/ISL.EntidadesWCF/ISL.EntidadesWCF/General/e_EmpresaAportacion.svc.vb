@@ -20,7 +20,8 @@ Public Class e_EmpresaAportacion
     Public Modificado As Boolean
     <DataMember()> _
     Public TotalPorcentaje As Double
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

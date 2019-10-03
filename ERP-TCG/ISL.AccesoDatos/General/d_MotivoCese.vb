@@ -57,7 +57,7 @@ Public Class d_MotivoCese
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMotivoCese
-                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoCese_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoCese_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .FechaCreacion _

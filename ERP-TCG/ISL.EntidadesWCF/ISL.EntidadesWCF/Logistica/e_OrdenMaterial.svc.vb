@@ -60,8 +60,13 @@ Public Class e_OrdenMaterial
     <DataMember()> _
     Public TipoOperacion As String
     '---------------------------
-    <DataMember()> _
+    <DataMember()>
     Public IdSubFamiliaMaterial As String = ""
+    <DataMember()>
+    Public PrefijoID As String = ""
+
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
 #End Region
 

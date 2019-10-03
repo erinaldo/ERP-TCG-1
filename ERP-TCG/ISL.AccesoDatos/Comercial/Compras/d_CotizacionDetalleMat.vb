@@ -87,17 +87,17 @@ Public Class d_CotizacionDetalleMat
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeCotizacionDetalle
-                sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleMat_IAE", .TipoOperacion, _
-                                                                           d_DatosConfiguracion.PrefijoID, _
-                                                                           .Id, _
-                                                                           .IdCotizacionProveedor, _
-                                                                           .IdRequerimientoMaterial, _
-                                                                           .IdMaterial, _
-                                                                           .IdSubAlmacen, _
-                                                                           .IdUnidadMedida, _
-                                                                           .Cantidad, _
-                                                                           .Activo, _
-                                                                           .UsuarioCreacion, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleMat_IAE", .TipoOperacion,
+                                                                           .PrefijoID,
+                                                                           .Id,
+                                                                           .IdCotizacionProveedor,
+                                                                           .IdRequerimientoMaterial,
+                                                                           .IdMaterial,
+                                                                           .IdSubAlmacen,
+                                                                           .IdUnidadMedida,
+                                                                           .Cantidad,
+                                                                           .Activo,
+                                                                           .UsuarioCreacion,
                                                                            .Precio)
             End With
             Return True

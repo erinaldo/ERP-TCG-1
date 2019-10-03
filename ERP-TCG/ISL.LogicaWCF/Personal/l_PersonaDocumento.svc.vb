@@ -53,10 +53,10 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function GuardarMasivo(lePersonaDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaDocumento)) As Boolean Implements Il_PersonaDocumento.GuardarMasivo
+    Public Function GuardarMasivo(lePersonaDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaDocumento), ByVal PrefijoID As String) As Boolean Implements Il_PersonaDocumento.GuardarMasivo
         Try
             Dim dtPD As Data.DataTable = CrearDT()
-            Dim id As String = odPersonaDocumento.UltimoIdInserta
+            Dim id As String = odPersonaDocumento.UltimoIdInserta(PrefijoID)
             Dim lsPrefijo As String = Left(id, 12)
             Dim lsNumero As Integer = CInt(Right(id, Len(id) - 12))
 

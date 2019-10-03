@@ -25,7 +25,8 @@ Public Class e_PrestamoDetalle
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public TipoEqui As Integer
     <DataMember()> _

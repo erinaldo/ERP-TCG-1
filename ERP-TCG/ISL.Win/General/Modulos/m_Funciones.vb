@@ -33,6 +33,150 @@ Imports Microsoft.Office.Interop
 
 Module m_Funciones
 
+
+#Region "EOS"
+
+    'Public gstrIdEmpresa As String = "1CIX00000001"
+    'Public gstrNombreEmpresa As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
+    'Public gstrRucEmpresa As String = "20603652810"
+    'Public gstrDireccionEmpresa As String = "CAL.NICOLAS AYLLON NRO. 900 URB. URRUNAGA SC. 1 LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
+    ''------
+    'Public gstrIdEmpresaSis As String = "1CIX001"
+    'Public gstrIdSucursal As String = "1CIX001"
+    'Public gstrNombreEmpresaSis As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
+    'Public gstrRucEmpresaSis As String = "20603652810"
+
+    Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
+        Dim ln_Retorna As Double = 0
+        'oeParametro = New e_Parametro
+        'oeParametro.TipoBusca = 2 : oeParametro.Abreviatura = ls_Abreviatura
+        'If gleParametro.Contains(oeParametro) Then
+        '    oeParametro = gleParametro.Item(gleParametro.IndexOf(oeParametro))
+        '    ln_Retorna = oeParametro.Valor
+        'End If
+
+        Return ln_Retorna
+    End Function
+
+    Public Sub gmt_ComboGrillaSubAlmacen(IdAlmacen As String, ByVal Grilla As UltraGrid)
+        Try
+            Dim loSubAlmacen As New List(Of e_Combo)
+            Dim objValueList As Infragistics.Win.ValueList = Nothing
+            Grilla.DisplayLayout.ValueLists.Clear()
+            objValueList = Grilla.DisplayLayout.ValueLists.Add("SubAlmacen")
+            loSubAlmacen = gloSubAlm.Where(Function(i) i.Descripcion = IdAlmacen).ToList
+            For Each item As e_Combo In loSubAlmacen
+                objValueList.ValueListItems.Add(item.Id, item.Nombre)
+            Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Function gfc_GeneraDTRef(leRef As List(Of e_AsientoModelo_Referencia)) As Data.DataTable
+        Try
+            Dim _IdAM As String = String.Empty
+            Dim _leAux As New List(Of e_AsientoModelo_Referencia)
+            For Each oeRef In leRef.OrderBy(Function(it) it.IdActividad).ToList
+                If _IdAM <> oeRef.IdActividad Then
+                    _IdAM = oeRef.IdActividad
+                    Dim _oeAux As New e_AsientoModelo_Referencia
+                    _oeAux.IdActividad = _IdAM
+                    Dim _lex = leRef.Where(Function(it) it.IdActividad = _IdAM).ToList
+                    _oeAux.Cant = _lex.Count
+                    _leAux.Add(_oeAux)
+                End If
+            Next
+            Dim dt As Data.DataTable = gfc_CrearDTRef(_leAux.OrderByDescending(Function(it) it.Cant).ToList(0))
+            Dim rwdt As Data.DataRow
+            Dim pos As Integer = 0
+            For Each oeRefAux In _leAux
+                rwdt = dt.NewRow
+                rwdt("IdAsientoModelo") = oeRefAux.IdActividad
+                pos = 0
+                For Each _oe In leRef.Where(Function(it) it.IdActividad = oeRefAux.IdActividad).OrderBy(Function(it) it.TipoReferencia).ToList
+                    pos = pos + 1
+                    rwdt("TipoRef" & pos) = _oe.TipoReferencia
+                    rwdt("IdRef" & pos) = _oe.IdReferencia
+                    rwdt("Ref" & pos) = _oe.Nombre
+                Next
+                dt.Rows.Add(rwdt)
+            Next
+            Return dt
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function gfc_CrearDTRef(oeEstruc As e_AsientoModelo_Referencia) As Data.DataTable
+        Dim dtStruc As New Data.DataTable
+        With dtStruc
+            .Columns.Add(New Data.DataColumn("IdAsientoModelo", Type.GetType("System.String")))
+            For i = 1 To oeEstruc.Cant
+                .Columns.Add(New Data.DataColumn("TipoRef" & i, Type.GetType("System.Int32")))
+                .Columns.Add(New Data.DataColumn("IdRef" & i, Type.GetType("System.String")))
+                .Columns.Add(New Data.DataColumn("Ref" & i, Type.GetType("System.String")))
+            Next
+        End With
+        Return dtStruc
+    End Function
+
+    Public Sub gmt_OcultarColumna(ByVal Grilla As UltraGrid, ByVal IndBand As Boolean, ByVal ParamArray aColumnas As String())
+        With Grilla.DisplayLayout.Bands(0)
+            If Not IndBand Then
+                For Each Colum As UltraGridColumn In .Columns
+                    Colum.Hidden = True
+                Next
+            End If
+            For i As Integer = 0 To aColumnas.Length - 1
+                For Each Colum As UltraGridColumn In .Columns
+                    If aColumnas(i).Trim <> "" Then
+                        If Colum.Key = aColumnas(i).ToString Then
+                            .Columns(aColumnas(i).ToString).Hidden = IndBand
+                            If Not IndBand Then .Columns(aColumnas(i).ToString).Header.VisiblePosition = i
+                        End If
+                    End If
+                Next
+            Next
+        End With
+    End Sub
+
+    Public Function gfc_ObtenerNumeroDoc(Serie As String, IdTipoDocumento As String, Tipo As Integer) As Integer
+        Try
+            Dim oeDocumento As New e_MovimientoDocumento
+            Dim olDocumento As New l_MovimientoDocumento
+            oeDocumento.TipoOperacion = "N"
+            oeDocumento.IdTipoDocumento = IdTipoDocumento
+            oeDocumento.Serie = Serie
+            oeDocumento.Tipo = Tipo
+            oeDocumento.IdEmpresaSis = gs_IdEmpresaSistema
+            oeDocumento = olDocumento.Obtener(oeDocumento)
+            If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
+            Return 1
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+    Public gloAlmMat As List(Of e_Combo)
+    Public gloSubAlm As List(Of e_Combo)
+    Public gloUniMed As List(Of e_Combo)
+    Public gloLugares As List(Of e_Combo)
+    Public gloEmpresa As List(Of e_Combo)
+    Public gloTipoPago As List(Of e_Combo)
+    Public gloPiloto As List(Of e_Combo)
+    Public gloMatSCta As List(Of e_Combo)
+    Public gloSerCCta As List(Of e_Combo)
+    Public gloTrabajador As List(Of e_Combo)
+    Public gloTipoDoc As List(Of e_Combo)
+    Public gloCajaTrabajador As List(Of e_Combo)
+    Public gloConceptos As List(Of e_Combo)
+    Public gloEquipo As List(Of e_Combo)
+
+#End Region
+
+
 #Region "Variables Globales de Logeo de Usuario"
 
     ''' <summary>
@@ -123,6 +267,82 @@ Module m_Funciones
     Public MostrarMensajeActualizarSGI As Boolean = False
 
 #End Region
+
+    Public Sub gmt_ListarEmpresa(Tipo As String, Combo As UltraCombo, IdProveedor As String, IndRuc As Boolean, Optional ByVal IndFiltro As Boolean = True)
+        Try
+            Dim oeEmpresa As New e_Empresa
+            Dim olEmpresa As New l_Empresa
+            Dim loEmpresa As New List(Of e_Empresa)
+            loEmpresa = New List(Of e_Empresa)
+            oeEmpresa.TipoOperacion = Tipo
+            If IdProveedor = "" Then
+                If IndRuc Then
+                    oeEmpresa.Ruc = Combo.Text.Trim
+                    loEmpresa = olEmpresa.Listar(oeEmpresa)
+                Else
+                    oeEmpresa.Nombre = Combo.Text.Trim
+                    loEmpresa = olEmpresa.Listar(oeEmpresa)
+                End If
+            Else
+                oeEmpresa.Id = IdProveedor
+                loEmpresa = olEmpresa.Listar(oeEmpresa)
+            End If
+            'If IndFiltro = True Then
+            '    Combo.DataSource = loEmpresa.Where(Function(it) it.NroDoc <> gstrRucEmpresa).ToList
+            'Else
+            Combo.DataSource = loEmpresa
+            'End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub gmt_MostrarTabs(ByVal Tab_Mostrar As Integer,
+                        ByVal TAB As UltraWinTabControl.UltraTabControl,
+                        Optional ByVal Tab_Adicional As Integer = 0)
+        Try
+            Dim I As Integer
+            For I = 0 To TAB.Tabs.Count - 1
+                If I = Tab_Mostrar Then
+                    TAB.Tabs(I).Enabled = True
+                    TAB.Tabs(I).Selected = True
+                ElseIf I = Tab_Adicional Then
+                    TAB.Tabs(I).Enabled = True
+                Else
+                    TAB.Tabs(I).Enabled = False
+                End If
+            Next
+
+            If Tab_Adicional <> 0 Then
+                For I = 0 To TAB.Tabs.Count - 1
+                    If I = Tab_Adicional Then
+                        TAB.Tabs(I).Enabled = True
+                    End If
+                Next
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+    Public Function gfc_TipoCambio(Fecha As Date, IndCompra As Boolean) As Double
+        Try
+            Dim oeTipoCambio As New e_TipoCambio
+            Dim olTipoCambio As New l_TipoCambio
+            oeTipoCambio.TipoOperacion = "1"
+            oeTipoCambio.FechaCambio = Fecha
+            oeTipoCambio = olTipoCambio.Obtener(oeTipoCambio)
+            If IndCompra Then
+                Return oeTipoCambio.CambioVenta
+            Else
+                Return oeTipoCambio.CambioCompra
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
@@ -382,7 +602,9 @@ Module m_Funciones
     Public o_Botonera As New e_Boton
 
     Public _Operacion As String
-    Public PrefijoIdSucursal As String '@0001
+    Public gs_PrefijoIdSucursal As String '@0001
+    Public gs_IdEmpresaSistema As String '@0001
+    Public gs_TxtEmpresaSistema As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -1178,11 +1400,11 @@ Module m_Funciones
         Return True
     End Function
 
-    Public Function CrearComboGridCelda(ByVal stNomColumnaGrilla As String, _
-                           ByVal stNomColumnaTabla As String, _
-                           ByVal inNroFila As Integer, _
-                           ByVal stGrilla As UltraWinGrid.UltraGrid, _
-                           ByVal Dt As DataTable, _
+    Public Function CrearComboGridCelda(ByVal stNomColumnaGrilla As String,
+                           ByVal stNomColumnaTabla As String,
+                           ByVal inNroFila As Integer,
+                           ByVal stGrilla As UltraWinGrid.UltraGrid,
+                           ByVal Dt As DataTable,
                            ByVal boDropDownList As Boolean)
         'Si el Grid ya sido creado o igualada un Datatable 
         With stGrilla.DisplayLayout
@@ -1214,6 +1436,34 @@ Module m_Funciones
         End With
 
         'stGrilla.DisplayLayout.ValueLists(stNomColumnaGrilla).ValueListItems.ValueList.SelectedItem = "Barriles"
+        Return True
+    End Function
+
+    Public Function gfc_CombroGrillaCelda(ColGri As String, ColTab As String, NroFila As Integer, stGrilla As UltraGrid, Dt As DataTable, Optional TipoLista As Boolean = True)
+        With stGrilla.DisplayLayout
+            If .Bands(0).Columns.Exists(ColGri) Then
+                .ValueLists.Clear()
+                .ValueLists.Add(ColGri)
+            Else
+                .Bands(0).Columns.Add().Key = ColGri
+                .ValueLists.Clear()
+                .ValueLists.Add(ColGri)
+            End If
+            With .ValueLists(ColGri).ValueListItems
+                .Clear()
+                For I As Integer = 0 To Dt.Rows.Count - 1
+                    .Add(Dt.Rows(I)(0), Dt.Rows(I)(ColTab))
+                Next
+            End With
+            If TipoLista Then
+                .Bands(0).Columns(ColGri).Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDownList
+            Else
+                .Bands(0).Columns(ColGri).Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DropDown
+            End If
+
+            stGrilla.Rows(NroFila).Cells(ColGri).ValueList = .ValueLists(ColGri)
+            .ValueLists(ColGri).MaxDropDownItems = 20
+        End With
         Return True
     End Function
 
@@ -3473,7 +3723,7 @@ Module m_Funciones
     Public Function Lugar() As String
         Dim Prefijo As New l_Configuracion
         'Select Case Prefijo.PrefijoID '@0001
-        Select Case PrefijoIdSucursal '@0001
+        Select Case gs_PrefijoIdSucursal '@0001
             Case "1CH"
                 Lugar = "sede Chiclayo"
             Case "1PY"
@@ -5045,6 +5295,30 @@ Module m_Funciones
             Throw ex
         End Try
     End Sub
+
+
+    Public Sub gmt_ControlBoton(Optional ByVal Consultar As Boolean = False _
+                                , Optional ByVal Nuevo As Boolean = False _
+                                , Optional ByVal Editar As Boolean = False _
+                                , Optional ByVal Guardar As Boolean = False _
+                                , Optional ByVal Cancelar As Boolean = False _
+                                , Optional ByVal Eliminar As Boolean = False _
+                                , Optional ByVal Imprimir As Boolean = False _
+                                , Optional ByVal Exportar As Boolean = False _
+                                , Optional ByVal Salir As Boolean = True)
+        o_Botonera.Consultar = Consultar
+        o_Botonera.Nuevo = Nuevo
+        o_Botonera.Editar = Editar
+        o_Botonera.Guardar = Guardar
+        o_Botonera.Cancelar = Cancelar
+        o_Botonera.Eliminar = Eliminar
+        o_Botonera.Imprimir = Imprimir
+        o_Botonera.Exportar = Exportar
+        o_Botonera.Salir = Salir
+        Botones(o_Botonera)
+    End Sub
+
+
 
     Private Sub ReleaseObject(ByVal o As Object)
         Try

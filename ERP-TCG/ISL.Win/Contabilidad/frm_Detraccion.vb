@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -380,6 +388,7 @@ Public Class frm_Detraccion
                 oeDetraccionDet.Monto = oeApli.Detraccion
                 oeDetraccionDet.UsuarioCreacion = gUsuarioSGI.Id
                 oeDetraccionDet.TipoOperacion = "I"
+                oeDetraccionDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leDetraccionDet.Add(oeDetraccionDet)
             Next
             Return leDetraccionDet
@@ -496,6 +505,7 @@ Public Class frm_Detraccion
                 oeInformeDetrac.Total = oeInformeDetrac.leInformeDetrac.Sum(Function(item) item.Monto)
                 oeInformeDetrac.Glosa = "INFORME DE DETRACCION"
                 oeInformeDetrac.UsuarioCreacion = gUsuarioSGI.Id
+                oeInformeDetrac.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olInformeDetrac.Guardar(oeInformeDetrac)
                 Dim idInforme As String = ""
                 idInforme = oeInformeDetrac.Id

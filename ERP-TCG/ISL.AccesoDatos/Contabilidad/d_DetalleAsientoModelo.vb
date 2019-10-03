@@ -95,7 +95,7 @@ Public Class d_DetalleAsientoModelo
             Dim _idDMR() As String
             Using TransScope As New TransactionScope()
                 With oeDetalleAsientoModelo
-                    _idDMR = sqlhelper.ExecuteScalar("CON.Isp_DetalleAsientoModelo_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    _idDMR = sqlhelper.ExecuteScalar("CON.Isp_DetalleAsientoModelo_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdAsientoModelo _
                             , .Codigo _

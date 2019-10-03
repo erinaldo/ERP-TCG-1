@@ -91,7 +91,7 @@ Public Class d_Peaje
                 With oePeaje
                     IdResultado = sqlhelper.ExecuteScalar("STD.Isp_Peaje_IAE", _
                                               .TipoOperacion _
-                                                , d_DatosConfiguracion.PrefijoID _
+                                                , .PrefijoID _
                                                 , .Id _
                                                 , .Codigo _
                                                 , .Nombre _

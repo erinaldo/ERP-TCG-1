@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_DocumentosXRendir
@@ -141,6 +149,8 @@ Public Class frm_DocumentosXRendir
                         .IdUsuarioCrea = gUsuarioSGI.Id
                         .IndOrigen = 17
                     End With
+                    oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olAsiento.GuardarDocumentoxRendir(leMovAnalisisAgrega, oeAsiento, oeDocumento)
                     mensajeEmergente.Confirmacion("Se registro Correctamente", True)
                     leMovAnalisisAgrega = New List(Of e_MovimientoAnalisis)
@@ -387,6 +397,7 @@ Public Class frm_DocumentosXRendir
                 '---capturo datos a ingresar-----
                 oeMovAnalisis = gridDetallePersonal.ActiveRow.ListObject
                 oeMovAnalisis.TipoOperacion = "I"
+                oeMovAnalisis.PrefijoID = gs_PrefijoIdSucursal '@0001
                 '-----------------------
                 If ValidarAgregarDetalle(oeMovAnalisis) Then
                     With leMovAnalisisAgrega

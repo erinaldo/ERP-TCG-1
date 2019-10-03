@@ -64,7 +64,7 @@ Public Class d_ChequeDocumento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeChequeDocumento
-                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeDocumento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeDocumento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdChequeEmitido _
                         , .IdMovimientoDocumento _

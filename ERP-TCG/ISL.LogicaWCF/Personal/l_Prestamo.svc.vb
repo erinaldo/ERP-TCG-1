@@ -47,8 +47,8 @@ Public Class l_Prestamo
                     'End If
                     Glosa = oePrestamo.Trabajador + " " + oePrestamo.Dni
                     oeCajaBanco.TotalMN = lePrestamo.Sum(Function(item As e_Prestamo) item.Monto)
-                    ContabilizaPrestamos(lePrestamo, oePrestamo.oePeriodo, oeCajaBanco, _
-                    oePrestamo.CtaBancaria.IdCuentaContable, oecta.MonedaExtrangera, Glosa)
+                    ContabilizaPrestamos(lePrestamo, oePrestamo.oePeriodo, oeCajaBanco,
+                    oePrestamo.CtaBancaria.IdCuentaContable, oecta.MonedaExtranjera, Glosa)
                 End If
                 Return True
             End If

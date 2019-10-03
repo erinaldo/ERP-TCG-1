@@ -139,7 +139,7 @@ Public Class d_Neumatico
                     Dim cadena() As String = oeNeumatico.Codigo.Split(","c)
                     For i As Integer = 0 To cadena.Length - 1
                         stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                             .Id _
                             , .IdMaterial _
                             , cadena(i).ToString _
@@ -185,7 +185,7 @@ Public Class d_Neumatico
                     Dim cod() As String = oeNeumatico.Codigo.Split(","c)
                     For i As Integer = 0 To id.Length - 1
                         stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                             id(i).ToString _
                             , .IdMaterial _
                             , cod(i).ToString _
@@ -233,7 +233,7 @@ Public Class d_Neumatico
                 Dim cadena() As String = oeNeumatico.Codigo.Split(","c)
                 For i As Integer = 0 To cadena.Length - 1
                     stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                         .Id _
                         , .IdMaterial _
                         , cadena(i).ToString _

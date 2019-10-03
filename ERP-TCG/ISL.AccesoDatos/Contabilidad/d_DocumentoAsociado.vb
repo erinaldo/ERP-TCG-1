@@ -98,7 +98,7 @@ Public Class d_DocumentoAsociado
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoAsociado
-                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoAsociado_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoAsociado_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdMovimientoDocumentoAsoc _

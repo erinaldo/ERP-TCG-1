@@ -250,7 +250,7 @@ Public Class d_Trabajador
                         id = sqlhelper.ExecuteScalar("PER.Isp_Trabajador_IAE", .TipoOperacion, _
                          .Id, .oeArea.Id, _idpadre, .Codigo, .FechaIngreso, .FechaCese, _
                          .Activo, .oeCargo.Id, .IdEstadoCivil, .IdGradoInstruccion, .IdLugarNacimiento, _
-                         .FechaCreacion, .UsuarioCreacion, .ClaveSeguridad, .Disponible, d_DatosConfiguracion.PrefijoID _
+                         .FechaCreacion, .UsuarioCreacion, .ClaveSeguridad, .Disponible, .PrefijoID _
                          , .IndEstado, .IndHijo, .IndTipo, .IndPiloto)
                     End With
                     oeTrabajador.Id = id

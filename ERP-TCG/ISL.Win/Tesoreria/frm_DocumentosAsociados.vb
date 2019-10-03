@@ -900,7 +900,7 @@ Public Class frm_DocumentosAsociados
                             oeAsiModAux.UsuarioCreacion = gUsuarioSGI.Id
                             oeAsiModAux.IndVinculado = True
                             leAsiMod.Add(oeAsiModAux)
-                            If olMovCuentaCte.GuardarLista2(leMovCuentaCte, leAsiMod) Then
+                            If olMovCuentaCte.GuardarLista2(leMovCuentaCte, leAsiMod, gs_PrefijoIdSucursal) Then
                                 mensajeEmergente.Confirmacion("Los Documentos se guardaron correctamente", True)
                                 MostrarTabs(0, ficDocAosciados)
                                 Consultar(True)
@@ -1324,9 +1324,9 @@ Public Class frm_DocumentosAsociados
             If leCtaCtble.Count > 0 Then
                 Dim _leAux = leCtaCtble.Where(Function(it) it.Cuenta.Trim.Length > 4).ToList
                 If _leAux.Count > 0 Then
-                    Dim _leAuxME = _leAux.Where(Function(it) it.Cuenta.Substring(0, 4) = "4212" And it.MonedaExtrangera = 1).ToList
+                    Dim _leAuxME = _leAux.Where(Function(it) it.Cuenta.Substring(0, 4) = "4212" And it.MonedaExtranjera = 1).ToList
                     If _leAuxME.Count > 0 Then IdCtaDolares = _leAuxME(0).Id
-                    Dim _leAuxMN = _leAux.Where(Function(it) it.Cuenta.Substring(0, 4) = "4212" And it.MonedaExtrangera = 0).ToList
+                    Dim _leAuxMN = _leAux.Where(Function(it) it.Cuenta.Substring(0, 4) = "4212" And it.MonedaExtranjera = 0).ToList
                     If _leAuxMN.Count > 0 Then IdCtaSoles = _leAuxMN(0).Id
                 End If
                 Dim _leAuxTrans = leCtaCtble.Where(Function(it) it.Cuenta.Trim = CtaTrans).ToList

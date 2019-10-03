@@ -84,7 +84,7 @@ Public Class d_DerechoHabiente
                 If oeDerechoHabiente.oePersona IsNot Nothing Then
                     odPersona.Guardar(oeDerechoHabiente.oePersona)
                     oeDerechoHabiente.IdPersona = oeDerechoHabiente.oePersona.Id
-                    sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, .PrefijoID, _
                        .Id _
                        , .IdTrabajador _
                        , .IdPersona _

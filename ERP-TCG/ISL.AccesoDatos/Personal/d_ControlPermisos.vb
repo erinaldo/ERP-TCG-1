@@ -100,7 +100,7 @@ Public Class d_ControlPermisos
                 id = sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE", _
                                              .TipoOperacion _
                                             , "" _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , .Id _
                                             , .IdCentro _
                                             , .IdTrabajador _
@@ -160,7 +160,7 @@ Public Class d_ControlPermisos
                 strResultado = sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE", _
                                                         .TipoOperacion _
                                                         , "" _
-                                                        , d_DatosConfiguracion.PrefijoID _
+                                                        , .PrefijoID _
                                                         , .Id _
                                                         , .IdCentro).ToString.Split("_")
 

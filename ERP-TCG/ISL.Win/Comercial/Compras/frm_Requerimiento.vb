@@ -721,7 +721,7 @@ Public Class frm_Requerimiento
             Dim FechaAtencion As Date = ObtenerFechaServidor()
             Dim oeComboPropio As e_Combo
             Dim oeEquipo As e_Equipo
-            Dim olEquipo As l_Equipo      
+            Dim olEquipo As l_Equipo
             If oeRequerimiento.MaterialServicio = "M" Then
                 If oeRequerimiento.TipoOperacion = "D" Or oeRequerimiento.TipoOperacion = "R" Then
                     If Not Referencia.Equals("OA") Then
@@ -729,7 +729,7 @@ Public Class frm_Requerimiento
                             Me.btnActualizarDetalle.Focus()
                             Throw New Exception("El Requerimiento ha Sido Actualizado por Mantenimiento. Actualizar Detalles")
                         End If
-                    End If                
+                    End If
                 End If
                 If oeRequerimiento.TipoOperacion = "C" Then oeRequerimiento.IdTrabajadorAprobacion = gUsuarioSGI.IdTrabajador
                 If Referencia.Equals("OA") Then
@@ -815,7 +815,7 @@ Public Class frm_Requerimiento
                     If Not Referencia.Equals("OA") Then
                         oeOrdenIngreso = New e_Orden
                         oeOrdenIngreso.lstOrdenMaterial = New List(Of e_OrdenMaterial)
-                    End If                  
+                    End If
 
                     If lstDetalleOrdenSalida.Count > 0 Then
                         oeOrdenSalida.lstOrdenMaterial.AddRange(lstDetalleOrdenSalida)
@@ -1007,6 +1007,7 @@ Public Class frm_Requerimiento
                 End If
                 oeRequerimiento.lstRequerimientoServicio = llRequerimientoServicio
             End If
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olRequerimiento.Guardar(oeRequerimiento) Then
                 If oeRequerimiento.TipoOperacion = "D" Then
                     Dim frm As New frm_ImprimirMaterialEntregado
@@ -1452,7 +1453,7 @@ Public Class frm_Requerimiento
                         oeMaterialAlmacen.IdCentro = oeRequerimiento.IdReferencia.Substring(0, 3)
                     Else
                         'oeMaterialAlmacen.IdCentro = Prefijo.PrefijoID '@0001
-                        oeMaterialAlmacen.IdCentro = PrefijoIdSucursal '@0001
+                        oeMaterialAlmacen.IdCentro = gs_PrefijoIdSucursal '@0001
                     End If
                 Else
                     oeMaterialAlmacen.IdCentro = cboCentro.Value
@@ -1733,6 +1734,7 @@ Public Class frm_Requerimiento
                 oeRegistroEditado.IdRegistro = griListaRequerimientos.ActiveRow.Cells("Id").Value()
                 oeRegistroEditado.Referencia = "Requerimiento"
                 oeRegistroEditado.UsuarioEdita = gUsuarioSGI.Id
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
             End If
         Catch ex As Exception
@@ -1761,6 +1763,7 @@ Public Class frm_Requerimiento
                         .Id = oeReq.UsuarioCreacion
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeReq.FechaCreacion)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -1778,6 +1781,7 @@ Public Class frm_Requerimiento
             If RegistroEditado = 1 Then
                 oeRegistroEditado = New e_RegistrosEditados
                 oeRegistroEditado.Id = IdRegistroEditado
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegistroEditado.Guardar(oeRegistroEditado)
                 RegistroEditado = 0
             End If
@@ -2591,7 +2595,7 @@ Public Class frm_Requerimiento
             LlenaComboCategoriaServicios()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
             'cboCentro.Value = Prefijo.PrefijoID '@0001
-            cboCentro.Value = PrefijoIdSucursal '@0001
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES LOGISTICA") Then
                 cboCentro.Enabled = True
             Else
@@ -3136,6 +3140,7 @@ Public Class frm_Requerimiento
                         oeReqMat.Id = .ActiveRow.Cells("Id").Value
                         oeReqMat.Glosa = .ActiveRow.Cells("Glosa").Value
                         oeReqMat.Tipooperacion = "G"
+                        oeReqMat.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If odReqMat.Guardar(oeReqMat) Then
                             mensajeEmergente.Confirmacion("Glosa Actualizada", True)
                         End If
@@ -3158,6 +3163,7 @@ Public Class frm_Requerimiento
                         oeReqMat.Id = .ActiveRow.Cells("Id").Value
                         oeReqMat.Glosa = .ActiveRow.Cells("Glosa").Value
                         oeReqMat.Tipooperacion = "G"
+                        oeReqMat.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If odReqMat.Guardar(oeReqMat) Then
                             mensajeEmergente.Confirmacion("Glosa Actualizada", True)
                         End If

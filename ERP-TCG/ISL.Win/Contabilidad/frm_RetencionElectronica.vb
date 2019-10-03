@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports System.IO.Compression
 
@@ -152,6 +160,7 @@ Public Class frm_RetencionElectronica
             oeRetencion = New e_RetencionImpresa
             loRetencion = New List(Of e_RetencionImpresa)
             oeRetencion.Fecha = DateTimePicker2.Value
+            oeRetencion.PrefijoID = gs_PrefijoIdSucursal '@0001
             loRetencion.AddRange(olRetencion.Listar(oeRetencion))
             griRetDet.DataSource = loRetencion.OrderBy(Function(i) i.NumeroRet).ToList
             griRetDet.DataBind()
@@ -186,6 +195,7 @@ Public Class frm_RetencionElectronica
 
             If IO.File.Exists(stNombreArchivo) = False Then IO.File.Create(stNombreArchivo)
             For Each oe As e_RetencionImpresa In loRetencion
+                oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 stTexto = oe.MotContigencia + "|" + oe.SerieRet + "|" + oe.NumeroRet + "|" + CStr(oe.FechaRet)
                 stTexto += "|" + oe.RucPro + "|" + oe.TipoDocPro + "|" + oe.RazonSocial
                 stTexto += "|" + oe.RegRet + "|" + "0" + oe.TasaRet.ToString("##0.00") + "|" + oe.ImpTotRet.ToString("##0.00") + "|" + oe.ImpTotPag.ToString("##0.00")
@@ -194,6 +204,7 @@ Public Class frm_RetencionElectronica
                 stTexto += "|" + oe.ImpRetenido.ToString("##0.00") + "|" + CStr(oe.FechaRetencion) + "|" + IIf(oe.ImpTotalPagar = 0, "0", "") + oe.ImpTotalPagar.ToString("##0.00")
                 stTexto += "|" + oe.MonExtranjera + "|" + IIf(CDbl(IIf(oe.TipoCambio = "", 0, oe.TipoCambio)) > 0, oe.TipoCambio, "") + "|" + IIf(oe.FechaTC = "01/01/1901", "", oe.FechaTC) + "|"
                 ObjTxt.WriteLine(stTexto)
+
             Next
             ObjTxt.Close()
 

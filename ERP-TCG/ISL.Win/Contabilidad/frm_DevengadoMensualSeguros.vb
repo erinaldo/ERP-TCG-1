@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_DevengadoMensualSeguros
@@ -60,9 +68,9 @@ Public Class frm_DevengadoMensualSeguros
                 Throw New Exception("Ingrese tipo de cambio")
             End If
             If tcSeguros.Tabs(0).Selected = True And tcSeguros.Tabs(1).Selected = False Then
-                olAsiento.GuardarSegurosDevengados(dtPolizas, oePeriodo, gUsuarioSGI.Id, oeMoneda, decTC.Value, "POLIZA")
+                olAsiento.GuardarSegurosDevengados(dtPolizas, oePeriodo, gUsuarioSGI.Id, oeMoneda, decTC.Value, "POLIZA", gs_PrefijoIdSucursal)
             ElseIf tcSeguros.Tabs(1).Selected = True And tcSeguros.Tabs(0).Selected = False Then
-                olAsiento.GuardarSegurosDevengados(dtSoat, oePeriodo, gUsuarioSGI.Id, oeMoneda, decTC.Value, "SOAT")
+                olAsiento.GuardarSegurosDevengados(dtSoat, oePeriodo, gUsuarioSGI.Id, oeMoneda, decTC.Value, "SOAT", gs_PrefijoIdSucursal)
             End If
             mensajeEmergente.Confirmacion("Ingreso correcto de seguros")
         Catch ex As Exception

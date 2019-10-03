@@ -38,7 +38,8 @@ Public Class e_DetalleDocumento
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _Seleccion As Boolean
     Private _Pos As Integer
 
@@ -72,6 +73,9 @@ Public Class e_DetalleDocumento
     Public IdGastoOperacion As String '--para Peaje Post Pago
     <DataMember()> _
     Public IdAlmacen As String  '--para compras de material como consignacion
+
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
     Public Event DatoCambiado()
 

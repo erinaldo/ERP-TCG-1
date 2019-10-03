@@ -24,8 +24,9 @@ Public Class e_RegistroInventario
     Private _valorunitarioreal As Double
     Private _nroMovimiento As String
     Private _nombreAlmacen As String
-    'Private _documento As String
-    'Private _tipodocumento As String
+
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
 
     <DataMember()> _
     Public FechaInicio As Date
@@ -33,7 +34,8 @@ Public Class e_RegistroInventario
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     'Para Listar Ingresos Salidas
     <DataMember()> _
     Public Anio As String

@@ -17,6 +17,8 @@ Public Class e_ClienteLugar
     Private _centrocosto As String
     Private _observacion As String
     Private _activo As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public TipoOperacion As String

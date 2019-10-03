@@ -64,7 +64,7 @@ Public Class d_PlanillaPilotoDet
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oePlanillaPilotoDet
-                sqlhelper.ExecuteNonQuery("PER.Isp_PlanillaPilotoDetalle_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_PlanillaPilotoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPlanillaPiloto _
                         , .IdTrabajador _

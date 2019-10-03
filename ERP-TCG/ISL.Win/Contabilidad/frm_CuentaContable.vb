@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_CuentaContable
@@ -225,7 +233,7 @@ Public Class frm_CuentaContable
                     chkFecEmision.Checked = .FechaEmision
                     chkFecVenc.Checked = .FechaVencimiento
                     chkFlujoCaja.Checked = .FlujoCaja
-                    chkMonedaExt.Checked = .MonedaExtrangera
+                    chkMonedaExt.Checked = .MonedaExtranjera
                     chkNroDoc.Checked = .NroDocumento
                     chkRuta.Checked = .Ruta
                     chkSerieDoc.Checked = .Serie
@@ -268,6 +276,7 @@ Public Class frm_CuentaContable
                     End If
                 End If
                 oeCuentaContable.IdTablaContableDet = cboGFAnalisis.Value
+                oeCuentaContable.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olCuentaContable.Guardar(oeCuentaContable)
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                 MostrarTabs(0, tcCuentaContable, 2)
@@ -703,7 +712,7 @@ Public Class frm_CuentaContable
     End Sub
 
     Private Sub chkMonedaExt_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkMonedaExt.CheckedChanged
-        oeCuentaContable.MonedaExtrangera = IIf(chkMonedaExt.Checked = True, 1, 0)
+        oeCuentaContable.MonedaExtranjera = IIf(chkMonedaExt.Checked = True, 1, 0)
     End Sub
 
     Private Sub chkConciliacion_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkConciliacion.CheckedChanged

@@ -69,7 +69,7 @@ Public Class d_MovimientoActivoFijo
             With oeMovimientoActivoFijo
                 sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoActivoFijo_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                         .Id _
                                         , .IdActivoFijo _
                                         , .IdUbicacionOrigen _

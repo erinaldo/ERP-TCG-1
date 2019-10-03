@@ -76,7 +76,7 @@ Public Class d_Historial
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeHistorial
-                    stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Historial_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Historial_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .IdSubAlmacen _
                             , .Fecha _
@@ -121,12 +121,12 @@ Public Class d_Historial
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial", d_DatosConfiguracion.PrefijoID)
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000001", stResultado)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial", PrefijoID)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

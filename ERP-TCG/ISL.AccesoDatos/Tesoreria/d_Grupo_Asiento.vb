@@ -45,7 +45,7 @@ Public Class d_Grupo_Asiento
                         , .ImporteTotal _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IdCheque
                     )
             End With

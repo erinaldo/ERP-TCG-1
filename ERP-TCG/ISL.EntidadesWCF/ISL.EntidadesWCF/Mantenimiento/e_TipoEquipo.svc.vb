@@ -13,8 +13,10 @@ Public Class e_TipoEquipo
 
     Private _tipooperacion As String
     Private _modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Id() As String
         Get
             Return _id

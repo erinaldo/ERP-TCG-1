@@ -89,7 +89,7 @@ Public Class d_Deposito
             Dim IdGrupo As String = ""
             Using TransScope As New TransactionScope()
                 With oeDeposito
-                    strIdDeposito = sqlhelper.ExecuteScalar("TES.Isp_Deposito_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    strIdDeposito = sqlhelper.ExecuteScalar("TES.Isp_Deposito_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Numero _
                             , .Fecha _

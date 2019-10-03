@@ -112,7 +112,7 @@ Public Class d_HistorialInventario
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeHistorialInventario
-                sqlhelper.ExecuteNonQuery("ALM.Isp_HistorialInventario_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_HistorialInventario_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdHistorial _
                         , .IdMaterial _
@@ -141,12 +141,12 @@ Public Class d_HistorialInventario
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial_Inventario", d_DatosConfiguracion.PrefijoID)
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "000000001", stResultado)
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial_Inventario", PrefijoID)
+            Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

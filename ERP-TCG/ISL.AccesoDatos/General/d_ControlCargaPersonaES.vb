@@ -71,7 +71,7 @@ Public Class d_ControlCargaPersonaES
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlCargaPersonaES
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdPersonaES _
                         , .Carga _

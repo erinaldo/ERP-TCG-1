@@ -104,7 +104,7 @@ Public Class d_RequerimientoMaterial
             With oeRequerimientoMaterial
                 stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_Requerimiento_Material_IAE]" _
                                 , .Tipooperacion _
-                                , d_DatosConfiguracion.PrefijoID, .Id, .IdRequerimiento _
+                                , .PrefijoID, .Id, .IdRequerimiento _
                                 , .IdMaterial, .Cantidad _
                                 , .Precio _
                                 , .Glosa _

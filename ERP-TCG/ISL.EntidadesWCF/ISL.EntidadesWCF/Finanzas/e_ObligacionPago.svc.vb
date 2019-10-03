@@ -28,7 +28,8 @@ Public Class e_ObligacionPago
     Public OeAsientoMov_ObligFin As New e_AsientoMov_ObligacionFin
     <DataMember()> _
     Public _IdAsientoMovimiento As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

@@ -32,7 +32,8 @@ Public Class e_TrabajadorSeguridad
     Public Modificado As Boolean
     '<DataMember()> _
     'Public NombreProceso As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _idProcesoNegocio As String
     Private _nombreProceso As String
 

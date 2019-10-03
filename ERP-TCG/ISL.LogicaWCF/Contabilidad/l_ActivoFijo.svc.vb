@@ -462,16 +462,16 @@ Public Class l_ActivoFijo
         End Try
     End Function
 
-    Public Function GuardarDepreciacionPeriodo(lstDepreciacion As List(Of e_DepreciacionActivoFijo)) As Boolean Implements Il_ActivoFijo.GuardarDepreciacionPeriodo
+    Public Function GuardarDepreciacionPeriodo(lstDepreciacion As List(Of e_DepreciacionActivoFijo), ByVal PrefijoId As String) As Boolean Implements Il_ActivoFijo.GuardarDepreciacionPeriodo
         Try
             oeAsiento = New e_Asiento
             Dim lstAsiento As New List(Of e_Asiento)
             oeAsientoMovimiento = New e_AsientoMovimiento
             Using TransScope As New TransactionScope()
                 'Agrupar las depreciaciones por IdTipoActivoFijo y por Periodo
-                Dim lstDeprecAgrupada = From x In lstDepreciacion _
-                                        Group x By x.IdTipoActivoFijo, x.TipoActivoFijo, x.IdPeriodo, x.TipoCambio, x.UsuarioCreacion, x.IdCuentaOrigen, x.IdCuentaDestino, x.IndTipoVehiculo _
-                                        Into TotalValor = Sum(x.Valor) _
+                Dim lstDeprecAgrupada = From x In lstDepreciacion
+                                        Group x By x.IdTipoActivoFijo, x.TipoActivoFijo, x.IdPeriodo, x.TipoCambio, x.UsuarioCreacion, x.IdCuentaOrigen, x.IdCuentaDestino, x.IndTipoVehiculo
+                                        Into TotalValor = Sum(x.Valor)
                                         Select IdTipoActivoFijo, TipoActivoFijo, IdPeriodo, TotalValor, TipoCambio, UsuarioCreacion, IdCuentaOrigen, IdCuentaDestino, IndTipoVehiculo
 
                 For Each TAF In lstDeprecAgrupada.ToList()
@@ -553,24 +553,24 @@ Public Class l_ActivoFijo
                                     lstAnalisis.Add(oeMovimientoAnalisis)
                                     '.MovimientoAnalisis.Add(oeMovimientoAnalisis)
                                 Next
-                                .MovimientoAnalisis.AddRange((From x In lstAnalisis _
-                                                         Group x By x.IdCentroCosto, x.IdMoneda, x.IdGastoFuncion, x.IdVehiculo
+                                .MovimientoAnalisis.AddRange((From x In lstAnalisis
+                                                              Group x By x.IdCentroCosto, x.IdMoneda, x.IdGastoFuncion, x.IdVehiculo
                                                          Into Monto = Sum(x.Monto)
-                                                         Select New e_MovimientoAnalisis With {.IdCentroCosto = IdCentroCosto, _
-                                                                                                .IdMoneda = IdMoneda, _
-                                                                                                .IdGastoFuncion = IdGastoFuncion, _
-                                                                                                .IdVehiculo = IdVehiculo, _
-                                                                                                .Monto = Monto, _
-                                                                                                .TipoOperacion = String.Empty, _
-                                                                                                .IdItemGasto = String.Empty, _
-                                                                                                .IdTrabajador = String.Empty, _
-                                                                                                .IdRuta = String.Empty, _
-                                                                                                .IdBanco = String.Empty, _
-                                                                                                .IdAnalisis1 = String.Empty, _
-                                                                                                .IdAnalisis2 = String.Empty, _
-                                                                                                .Activo = True, _
-                                                                                                .Saldo = 0.0, _
-                                                                                                ._IdMovimientoAnalisis = String.Empty, _
+                                                              Select New e_MovimientoAnalisis With {.IdCentroCosto = IdCentroCosto,
+                                                                                                .IdMoneda = IdMoneda,
+                                                                                                .IdGastoFuncion = IdGastoFuncion,
+                                                                                                .IdVehiculo = IdVehiculo,
+                                                                                                .Monto = Monto,
+                                                                                                .TipoOperacion = String.Empty,
+                                                                                                .IdItemGasto = String.Empty,
+                                                                                                .IdTrabajador = String.Empty,
+                                                                                                .IdRuta = String.Empty,
+                                                                                                .IdBanco = String.Empty,
+                                                                                                .IdAnalisis1 = String.Empty,
+                                                                                                .IdAnalisis2 = String.Empty,
+                                                                                                .Activo = True,
+                                                                                                .Saldo = 0.0,
+                                                                                                ._IdMovimientoAnalisis = String.Empty,
                                                                                                 .IdOrigenProrrateo = String.Empty
                                                                                                }).ToList())
                             End If
@@ -652,19 +652,19 @@ Public Class l_ActivoFijo
                 Dim dt_ASIMOV As Data.DataTable = olAsientoMovimiento.CrearDT()
                 Dim dt_ANALISIS As Data.DataTable = olMovimientoAnalisis.CrearDT()
                 'Ultimos Id Asiento
-                Dim IdAsiento As String = odAsiento.UltimoIdInserta()
+                Dim IdAsiento As String = odAsiento.UltimoIdInserta(PrefijoId)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
                 Dim lsNumeroIdAsiento As Integer = CInt(Right(IdAsiento, Len(IdAsiento) - 3))
                 'Ultimo Id AsientoMovimiento
-                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar()
+                Dim IdAsientoMovimiento As String = odAsientoMovimiento.UltimoIdInsertar(PrefijoId)
                 Dim lsPrefijoAsientoMovimiento As String = Left(IdAsientoMovimiento, 3)
                 Dim lsNumeroIdAsientoMovimiento As Integer = CInt(Right(IdAsientoMovimiento, Len(IdAsientoMovimiento) - 3))
                 'Ultimo Nro Asiento Diario
-                Dim NroAsientoDiario As String = odAsiento.UltimoNroAsiento(TipoAsientoDiario, If(lstDeprecAgrupada.Count > 0, lstDeprecAgrupada(0).IdPeriodo, String.Empty), "1")
+                Dim NroAsientoDiario As String = odAsiento.UltimoNroAsiento(TipoAsientoDiario, If(lstDeprecAgrupada.Count > 0, lstDeprecAgrupada(0).IdPeriodo, String.Empty), "1", PrefijoId)
                 Dim lsPrefijoNroAsientoDiario As String = Left(NroAsientoDiario, 2)
                 Dim lsNumeroNroAsientoDiario As Integer = CInt(Right(NroAsientoDiario, Len(NroAsientoDiario) - 2))
                 'Ultimo Id Movimiento Análisis
-                Dim IdMovAnalisis As String = odMovimientoAnalisis.UltimoIdInserta()
+                Dim IdMovAnalisis As String = odMovimientoAnalisis.UltimoIdInserta(PrefijoId)
                 Dim lsPrefijoMovAnalisis As String = Left(IdMovAnalisis, 3)
                 Dim lsNumeroIdMovAnalisis As Integer = CInt(Right(IdMovAnalisis, Len(IdMovAnalisis) - 3))
                 For Each Asiento As e_Asiento In lstAsiento
@@ -748,7 +748,7 @@ Public Class l_ActivoFijo
                 'DataTable para Depreciacón
                 'Ultimos Id Asiento
                 Dim dt_DEP As Data.DataTable = CrearDTDepreciacion()
-                Dim IdDepreciacion As String = odDepreciacionActivoFijo.UltimoIdInserta()
+                Dim IdDepreciacion As String = odDepreciacionActivoFijo.UltimoIdInserta(PrefijoId)
                 Dim lsPrefijoDepreciacion As String = Left(IdDepreciacion, 3)
                 Dim lsNumeroIdDepreciacion As Integer = CInt(Right(IdDepreciacion, Len(IdDepreciacion) - 3))
                 For Each Depreciacion As e_DepreciacionActivoFijo In lstDepreciacion

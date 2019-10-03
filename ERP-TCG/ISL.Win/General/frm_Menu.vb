@@ -540,8 +540,8 @@ Public Class frm_Menu
                     ContBD = ContBD + 1
                     If ContBD > 100 Then
                         Tiempo.Stop()
-                        MessageBox.Show("El Personal de Sistemas necesita urgentemente" & Environment.NewLine & _
-                                        "cerrar todas las sesiones activas. El sistema se cerrará" & Environment.NewLine & _
+                        MessageBox.Show("El Personal de Sistemas necesita urgentemente" & Environment.NewLine &
+                                        "cerrar todas las sesiones activas. El sistema se cerrará" & Environment.NewLine &
                                         "Vuelva a intentar a ingresar en aproximadamente 1 hora.", "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Application.Exit()
                     End If
@@ -557,7 +557,7 @@ Public Class frm_Menu
                     If Bandbd Then
                         Bandbd = False
                         Alerta.Appearance.BackColor = Color.Green
-                        Alerta.Show(CargarDatosAlerta("Mensaje de Sistema", "El proceso de mantenimiento de la base de datos ha sido suspendido" & Environment.NewLine & _
+                        Alerta.Show(CargarDatosAlerta("Mensaje de Sistema", "El proceso de mantenimiento de la base de datos ha sido suspendido" & Environment.NewLine &
                         "Puede continuar con su sesión e ignorar todos las alertas mostradas hasta el momento", My.Resources.reloj1.ToBitmap, "BaseDatosDisponible", ScreenPosition.Default))
                     End If
                 End If
@@ -1010,7 +1010,7 @@ Public Class frm_Menu
             End If
             mbolProcesoCancelado = False
         Catch ex As Exception
-            mensajeEmergente.Problema(ex.Message, True)
+            MensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
 
@@ -1342,7 +1342,7 @@ Public Class frm_Menu
             Dim ds As DataSet = olDocumentoVehicular.ListarDts(oeDocumentoVehicular)
 
             For i = 0 To ds.Tables(0).Rows.Count - 1
-                AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " + _
+                AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +
                                                         ds.Tables(0).Rows(i)("Unidades").ToString + " unidad(es) por vencer en los próximos " + ds.Tables(0).Rows(i)("Dias").ToString + " días." _
                                                         , , , ScreenPosition.BottomLeft))
             Next

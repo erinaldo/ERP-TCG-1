@@ -69,7 +69,7 @@ Public Class d_TipoBien
     '        With oeTipoBien
     '            stResultado = sqlhelper.ExecuteScalar("[CON].[Sp_TipoBien_IAE]" _
     '                    , .TipoOperacion _
-    '                    , d_DatosConfiguracion.PrefijoID _
+    '                    , .PrefijoID _
     '                    , .Id _
     '                    , .Codigo _
     '                    , .Nombre _

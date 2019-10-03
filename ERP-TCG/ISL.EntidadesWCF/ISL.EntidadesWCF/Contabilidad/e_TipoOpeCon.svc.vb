@@ -10,7 +10,8 @@ Public Class e_TipoOpeCon
     Private _Codigo As String
     Private _Nombre As String
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Constructor"

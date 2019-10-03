@@ -90,7 +90,7 @@ Public Class d_VehiculoTarjeta
             With oeVehiculoTarjeta
                 sqlhelper.ExecuteScalar("STD.Isp_VehiculoTarjeta_IAE", _
                                           .TipoOperacion _
-                                            , d_DatosConfiguracion.PrefijoID _
+                                            , .PrefijoID _
                                             , .Id _
                                             , .IdVehiculo _
                                             , .IdEmpresaPropietaria _

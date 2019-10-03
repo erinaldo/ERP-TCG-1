@@ -28,7 +28,8 @@ Public Class e_BonificacionProduccion
     Public Ejercicio As Integer
     <DataMember()> _
     Public Mes As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

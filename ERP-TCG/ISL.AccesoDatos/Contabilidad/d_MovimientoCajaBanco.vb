@@ -106,7 +106,7 @@ Public Class d_MovimientoCajaBanco
                 With oeMovimientoCajaBanco
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoCajaBanco_IAE", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID, _
+                                                          .PrefijoID, _
                                                             .Id _
                                                             , .IdFlujoCaja _
                                                             , .NroBoucher _
@@ -159,13 +159,13 @@ Public Class d_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoCajaBanco", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoCajaBanco", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000000000001", stResultado)
         Catch ex As Exception
             Throw ex
         End Try

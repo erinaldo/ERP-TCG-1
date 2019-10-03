@@ -60,7 +60,7 @@ Public Class d_BonificacionVehiculo
             With oeBonificacionVehiculo
                 sqlhelper.ExecuteNonQuery("STD.Isp_BonificacionVehiculo_IAE" _
                                               , .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID _
+                                              .PrefijoID _
                                             , .Id _
                                             , .IdDocumentoVehicular _
                                             , .Eje _

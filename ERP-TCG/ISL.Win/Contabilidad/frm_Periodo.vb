@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -237,6 +245,7 @@ Public Class frm_Periodo
     Private Function GuardarEjercicio() As Boolean
         Try
             If Validar() Then
+                oeEjercicio.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olEjercicio.Guardar(oeEjercicio)
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                 MostrarTabs(0, tcEjercicio, 2)

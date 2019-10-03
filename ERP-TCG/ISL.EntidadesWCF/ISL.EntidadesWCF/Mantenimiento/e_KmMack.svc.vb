@@ -21,8 +21,10 @@ Public Class e_KmMack
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public loKmMackDet As List(Of e_KmMackDet)
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

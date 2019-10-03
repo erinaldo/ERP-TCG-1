@@ -24,7 +24,8 @@ Public Class e_CuentaCorriente
     Public Tipooperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Private _TotalCargo As Double
     Private _TotalAbono As Double
     Private _Ejercicio As Integer

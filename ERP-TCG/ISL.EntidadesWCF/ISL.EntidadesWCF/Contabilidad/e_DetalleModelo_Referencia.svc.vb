@@ -27,8 +27,10 @@ Public Class e_DetalleModelo_Referencia
     Public Modificado As Boolean
     <DataMember()> _
     Public Equivale As Integer
-    <DataMember()> _
+    <DataMember()>
     Public Fila As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

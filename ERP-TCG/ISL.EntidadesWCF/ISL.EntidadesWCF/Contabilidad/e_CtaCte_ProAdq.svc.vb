@@ -16,8 +16,10 @@ Public Class e_CtaCte_ProAdq
     Private _FechaCreacion As Date
     Private _Activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

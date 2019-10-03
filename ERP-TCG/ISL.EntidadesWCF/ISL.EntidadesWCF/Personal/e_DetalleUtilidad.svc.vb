@@ -29,7 +29,8 @@ Public Class e_DetalleUtilidad
     Public Modificado As Boolean
     <DataMember()> _
     Public Año As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

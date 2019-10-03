@@ -79,7 +79,7 @@ Public Class d_Contratos
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeContratos
-                sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTrabajador _
                         , .IdOcupacion _
@@ -118,7 +118,7 @@ Public Class d_Contratos
                     sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", "V", "", .Id)
                 End With
                 With oeContrato2
-                    sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID, _
                             .Id, .IdTrabajador, .IdOcupacion, .IdEstado, .IdTipoContrato, .Sueldo, .FechaInicio _
                             , .FechaTermino, .Vigencia, .Activo, .FechaCreacion, .UsuarioCreacion, .FechaCese _
                             , .Glosa, .IdModalidadContrato, .RegimenLaboral, .JornadaTrabajoMax, .JornadaAcumulativo _

@@ -18,8 +18,9 @@ Public Class e_OrdenAsignacion
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
-
-    <DataMember()> _
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
     Public FechaDesde As Date
     <DataMember()> _
     Public FechaHasta As Date

@@ -28,8 +28,10 @@ Public Class e_DetraccionDetalle
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public CtaContable As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

@@ -127,7 +127,7 @@ Public Class d_SubAlmacen
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSubAlmacen
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_SubAlmacen_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_SubAlmacen_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .IdAlmacen _

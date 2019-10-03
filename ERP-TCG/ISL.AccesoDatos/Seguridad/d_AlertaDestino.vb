@@ -71,7 +71,7 @@ Public Class d_AlertaDestino
                         , .IdPersona _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

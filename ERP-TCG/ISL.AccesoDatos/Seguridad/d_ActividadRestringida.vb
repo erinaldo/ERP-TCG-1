@@ -66,7 +66,7 @@ Public Class d_ActividadRestringida
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeActividadRestringida
-                sqlhelper.ExecuteNonQuery("SGD.Isp_ActividadRestringida_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_ActividadRestringida_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdActividadNegocio _
                         , .IdAccionSistema _

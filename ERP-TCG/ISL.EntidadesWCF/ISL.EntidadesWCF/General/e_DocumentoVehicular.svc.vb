@@ -48,8 +48,10 @@ Public Class e_DocumentoVehicular
     Public ldDocVeh_Doc As New List(Of e_DocumentoVehicular_Documento)
     <DataMember()> _
    Public ldCuotaDocVeh_Movimiento As New List(Of e_CuotaDocVeh_Movimiento)
-    <DataMember()> _
+    <DataMember()>
     Public IndVigencia As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
 
     <DataMember()> _
     Public Property Id() As String

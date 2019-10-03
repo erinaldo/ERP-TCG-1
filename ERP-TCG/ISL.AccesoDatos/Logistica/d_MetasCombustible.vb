@@ -80,7 +80,7 @@ Public Class d_MetasCombustible
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMetasCombustible
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_MetasCombustible_IAE]", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_MetasCombustible_IAE]", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdModeloTracto _
                         , .IdModeloCarreta _

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -878,6 +886,7 @@ Public Class frm_Liquidaciones
                 If oeLiquidacion.ListaLiquidacionDetalle.Where(Function(Item) Item.Seleccion = True).Count < 1 Then
                     Throw New Exception("No a seleccionado los viajes que entraran a la liquidacion")
                 End If
+                oeLiquidacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olLiquidacion.Guardar(oeLiquidacion) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     If MessageBox.Show("Desea Visualizar la Liquidacion en Excel:  ?", _
@@ -1024,7 +1033,7 @@ Public Class frm_Liquidaciones
                         .Cells(ln_Fila + 9, 5) = obj.Destino
                         .Cells(ln_Fila + 9, 6) = obj.Tracto
                         .Cells(ln_Fila + 9, 7) = obj.Capacidad
-                        .Cells(ln_Fila + 9, 8) = "INDUAMERICA SL SAC"
+                        .Cells(ln_Fila + 9, 8) = gs_TxtEmpresaSistema
                         .Cells(ln_Fila + 9, 9) = obj.FleteUnitario
                         .Cells(ln_Fila + 9, 10) = obj.Ruta
                         .Cells(ln_Fila + 9, 11) = obj.NroCarga
@@ -1289,7 +1298,7 @@ Public Class frm_Liquidaciones
                 Dim Entro3 As Integer = 0
                 Dim Entro2 As Integer = 0
                 Dim Entro1 As Integer = 0
-                objWorkSheet.Cells(1, 1) = "FACTURACION          - TRANSPORTES INDUAMERICA SERVICIOS LOGISTICOS SAC"
+                objWorkSheet.Cells(1, 1) = "FACTURACION          - TRANSPORTES" + gs_TxtEmpresaSistema
                 For Each obj As e_LiquidacionDetalle In oeLiquidacion.ListaLiquidacionDetalle.Where(Function(Item) Item.Seleccion = True)
                     With objWorkSheet
                         .Cells(ln_Fila + 2, 1) = obj.Fecha.Date
@@ -2329,6 +2338,7 @@ Public Class frm_Liquidaciones
                 If MessageBox.Show("Se cambiara el estado de la Liquidacion " & Environment.NewLine & _
                                     "a EMITIDA para que sea Factura ", _
                                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                    oeLiquidacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olLiquidacion.Guardar(oeLiquidacion)
                     griLiquidacion.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Color
                 End If
@@ -3281,6 +3291,7 @@ Public Class frm_Liquidaciones
                     .Observacion = griLiquidacion.ActiveRow.Cells("Observacion").Value.ToString
                     .Igv = gIgv
                 End With
+                oeLiquidacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olLiquidacion.Guardar(oeLiquidacion)
             End If
         Catch ex As Exception
@@ -3404,6 +3415,7 @@ Public Class frm_Liquidaciones
                                 .Flete = ((Prorratear * gIgv) + Prorratear).ToString("###,##0.00")
                                 .UsuarioCreacion = gUsuarioSGI.Id
                             End With
+                            oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olOperacion.GuardarOperacionDetalle(oeOperacionDetalle) Then
                                 .CellAppearance.BackColor = Me.colorCambio.Color
                             End If

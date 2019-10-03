@@ -138,7 +138,7 @@ Public Class d_MovimientoAnalisis
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimientoAnalisis
-                sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoAnalisis_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoAnalisis_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCentroCosto _
                         , .IdItemGasto _
@@ -225,13 +225,13 @@ Public Class d_MovimientoAnalisis
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoAnalisis", d_DatosConfiguracion.PrefijoID _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoAnalisis", PrefijoID
                                   )
-            Return IIf(stResultado Is Nothing, d_DatosConfiguracion.PrefijoID & "0000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, PrefijoID & "0000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

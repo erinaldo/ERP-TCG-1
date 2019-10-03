@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Public Class frm_Fec
@@ -226,6 +234,7 @@ Public Class frm_Fec
             oeObligacionFin.IdCuentaContable = IdCtaCtble
             oeObligacionFin.MontoCapital = IIf(CboMoneda.Text = "SOLES", decMontoSoles.Value, decMontoDolar.Value)
             oeObligacionFin.Saldo = oeObligacionFin.MontoCapital + oeObligacionFin.MontoInteres
+            oeObligacionFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             leObligacionFin.Add(oeObligacionFin)
             'Obtener datos a contrato
             oeContratoFin.Codigo = TxtUnico.Text
@@ -247,6 +256,7 @@ Public Class frm_Fec
             'oeContratoFin.leDocLetra = ObtineCobros(lstMovDocumentoLetra, leObligacionFin)
             oeContratoFin.IdClienteProveedor = leMovDocAgregado(0).IdClienteProveedor
             oeContratoFin.NombreBanco = CboBanco.Text
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratoFin.GuardarFec(oeContratoFin, oeAsientoModel) Then
                 mensajeEmergente.Confirmacion("Registrado correctamente", True)
                 'LimpiarDatos()
@@ -586,6 +596,7 @@ Public Class frm_Fec
                 oeMovimientoDocumento = New e_MovimientoDocumento
                 oeMovimientoDocumento = gridDocumentosxPagar.ActiveRow.ListObject
                 oeMovimientoDocumento.TipoOperacion = "I"
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If ValidarAgregarDetalle() Then
                     With leMovDocAgregado
                         If Not .Contains(oeMovimientoDocumento) Then

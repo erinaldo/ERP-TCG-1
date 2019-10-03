@@ -33,7 +33,8 @@ Public Class e_DepreciacionActivoFijo
     Public Property IdAsiento() As String
     Public Property Periodo() As String
 
-    
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 
 #End Region

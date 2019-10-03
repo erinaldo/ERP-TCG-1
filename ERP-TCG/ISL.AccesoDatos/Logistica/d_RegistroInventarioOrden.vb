@@ -69,7 +69,7 @@ Public Class d_RegistroInventarioOrden
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRegistroInventarioOrden
-                sqlhelper.ExecuteNonQuery("ALM.Isp_RegistroInventarioOrden_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_RegistroInventarioOrden_IAE", .TipoOperacion, .PrefijoID, _
                         .Id, .IdRegistroInventario, .IdOrden, .UsuarioCreacion)
             End With
             Return True

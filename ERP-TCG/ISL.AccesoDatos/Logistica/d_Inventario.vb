@@ -156,7 +156,7 @@ Public Class d_Inventario
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
                     End If
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_Inventario_IAE]" _
-                            , d_DatosConfiguracion.PrefijoID, .Id, .FechaCreacion, .IdMaterial, .IdSubAlmacen _
+                            , .PrefijoID, .Id, .FechaCreacion, .IdMaterial, .IdSubAlmacen _
                             , .CantidadIngreso, .CantidadSalida, .ValorUnitario _
                             , .Usuario, .IndDevolucion, .oeRegistroInventario.Id, .IndValidar).ToString.Split("_")
                     .Id = stResultado(0)

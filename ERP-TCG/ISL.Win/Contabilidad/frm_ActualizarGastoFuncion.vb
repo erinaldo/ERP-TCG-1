@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -72,6 +80,7 @@ Public Class frm_ActualizarGastoFuncion
                     oeMovAsi.TipoOperacion = "Z"
                     oeMovAsi.Id = griDatos.ActiveRow.Cells("IdMovimientoAnalisis").Value
                     oeMovAsi.IdItemGasto = griDatos.ActiveRow.Cells("IdItemGasto").Value
+                    oeMovAsi.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMovAsi.Guardar(oeMovAsi) Then
                         mensajeEmergente.Confirmacion("¡Se Actualizo Correctamente!")
                         griDatos.UpdateData()

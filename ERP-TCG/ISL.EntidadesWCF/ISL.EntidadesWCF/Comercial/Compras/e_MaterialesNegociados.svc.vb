@@ -21,7 +21,8 @@ Public Class e_MaterialesNegociados
     Public loMaterialesNegociadosDet As New List(Of e_MaterialesNegociadosDet)
     <DataMember()> _
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

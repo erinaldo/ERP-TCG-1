@@ -60,7 +60,8 @@ Public Class e_CuentaxCyP
     Public TipoCambio As Double
     <DataMember()> _
     Public UsuarioModifica As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #End Region

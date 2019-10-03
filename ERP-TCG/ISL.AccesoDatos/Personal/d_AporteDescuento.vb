@@ -81,7 +81,7 @@ Public Class d_AporteDescuento
             Dim _bnd As Boolean = False
             Dim _id As String
             With oeAporteDescuento
-                _id = sqlhelper.ExecuteScalar("PER.Isp_AporteDescuento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_AporteDescuento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Codigo _
                         , .Nombre _

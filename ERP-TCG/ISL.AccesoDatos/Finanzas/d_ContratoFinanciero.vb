@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -112,7 +120,7 @@ Public Class d_ContratoFinanciero
                 With oeContratoFinanciero
                     stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ContratoFinanciero_IAE", _
                                                           .TipoOperacion, _
-                                                          d_DatosConfiguracion.PrefijoID _
+                                                          .PrefijoID _
                             , .Id _
                             , .Codigo _
                             , .IdTipoDocumento _
@@ -136,6 +144,7 @@ Public Class d_ContratoFinanciero
                         oeObligacionFin.IdContrato = stResultado(0)
                         oeObligacionFin.Usuario = .Usuario
                         oeObligacionFin.TipoOperacion = IIf(String.IsNullOrEmpty(oeObligacionFin.Id), "I", .TipoOperacion)
+                        oeObligacionFin.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                         odObligacionFin.Guardar(oeObligacionFin)
                     Next
 

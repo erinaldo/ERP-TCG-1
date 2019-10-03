@@ -176,7 +176,7 @@ Public Class frm_CuentaCtePersonal
                             ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
                             Throw New Exception("Ingrese un Clave Correcta")
                         Else
-                            If olCuentaCtePersonal.GuardarMasivo(_leAux) Then
+                            If olCuentaCtePersonal.GuardarMasivo(_leAux, gs_PrefijoIdSucursal) Then
                                 mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
                                 SeleccionarTab(0)
                                 Consultar(True)

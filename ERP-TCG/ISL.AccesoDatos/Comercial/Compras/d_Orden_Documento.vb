@@ -120,7 +120,7 @@ Public Class d_Orden_Documento
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrden_Documento
-                sqlhelper.ExecuteNonQuery("CMP.Isp_Orden_Documento_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_Orden_Documento_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .IdDocumento _

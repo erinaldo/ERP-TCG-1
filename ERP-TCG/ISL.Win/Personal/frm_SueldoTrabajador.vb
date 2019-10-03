@@ -118,7 +118,7 @@ Public Class frm_SueldoTrabajador
                 Case 2
                     Dim _leAux = leDatosImportados.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        olSueldoTrabajador.GuardarMasivo(_leAux)
+                        olSueldoTrabajador.GuardarMasivo(_leAux, gs_PrefijoIdSucursal)
                         mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
                     Else
                         Throw New Exception("No hay datos para guardar")

@@ -35,8 +35,8 @@ Public Class d_GuiaRRemitenteMaterial
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeGuiaRRemitenteMaterial.Id)
+            ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
+            Left(oeGuiaRRemitenteMaterial.PrefijoID, 1), "", oeGuiaRRemitenteMaterial.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeGuiaRRemitenteMaterial = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -82,7 +82,7 @@ Public Class d_GuiaRRemitenteMaterial
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiaRRemitenteMaterial
-                sqlhelper.ExecuteNonQuery("CMP.Isp_GuiaRemision_Material_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_GuiaRemision_Material_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdGuiaRemision _
                         , .IdMaterial _

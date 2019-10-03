@@ -61,7 +61,7 @@ Public Class d_CtaCtbleCatServicio
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCtaCtble_CatServicio
-                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_CatServicio_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_CatServicio_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdCategoriaServicio _
                         , .IdCuentaContable _

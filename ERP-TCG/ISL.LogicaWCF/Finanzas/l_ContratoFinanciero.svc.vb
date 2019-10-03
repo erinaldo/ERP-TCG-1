@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 
@@ -347,6 +355,7 @@ Public Class l_ContratoFinanciero
                     If odContratoFinanciero.Guardar(oeContratoFinanciero) Then
                         oeAsiento = New e_Asiento
                         With oeAsiento
+                            .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             .TipoOperacion = "I" : .IdPeriodo = oeContratoFinanciero.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                             .NroAsiento = String.Empty : .Fecha = oeContratoFinanciero.FechaEmision
                             .Glosa = oeAsientoModel.Nombre & " " & oeContratoFinanciero.Codigo & " " & oeContratoFinanciero.NombreBanco
@@ -358,6 +367,7 @@ Public Class l_ContratoFinanciero
                         For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
                             If oeAux.Repetir = 0 Then
                                 oeAsientoMov = New e_AsientoMovimiento
+                                oeAsientoMov.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                 oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdCuentaContable = oeAux.IdCuentaContable
                                 oeAsientoMov.Glosa = oeAux.Titulo & " " & oeContratoFinanciero.lstObligacionesFin(0).NroVencimiento
                                 oeAsientoMov.IdUsuarioCrea = oeContratoFinanciero.Usuario : oeAsientoMov.Activo = True
@@ -370,6 +380,7 @@ Public Class l_ContratoFinanciero
                                 End If
                                 ' Generar Asiento Movimiento Obligacion
                                 oeAsiMovObli = New e_AsientoMov_ObligacionFin
+                                oeAsiMovObli.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                 oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                 oeAsiMovObli.IdObligacionFinanciera = oeContratoFinanciero.lstObligacionesFin(0).Id
                                 oeAsientoMov.AsMov_ObligacionFin = oeAsiMovObli
@@ -380,6 +391,7 @@ Public Class l_ContratoFinanciero
                                     _MontoMN = IIf(oeAsientoModel.Moneda = "SOLES", oeDoc.MontoOperar, (oeDoc.MontoOperar * oeContratoFinanciero.TipoCambio))
                                     _MontoME = IIf(oeAsientoModel.Moneda = "SOLES", (oeDoc.MontoOperar / oeContratoFinanciero.TipoCambio), oeDoc.MontoOperar)
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdCuentaContable = oeAux.IdCuentaContable
                                     oeAsientoMov.Glosa = oeAux.Titulo & " " & oeDoc.Serie & "-" & oeDoc.Numero
                                     oeAsientoMov.IdUsuarioCrea = oeContratoFinanciero.Usuario : oeAsientoMov.Activo = True
@@ -390,6 +402,7 @@ Public Class l_ContratoFinanciero
                                     End If
                                     ' Generar Cuenta por Cobrar y Pagar
                                     oeAsientoMov.oeCuentaCP = New e_CuentaxCyP
+                                    oeAsientoMov.oeCuentaCP.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     oeAsientoMov.oeCuentaCP.TipoOperacion = "I"
                                     oeAsientoMov.oeCuentaCP.Fecha = oeContratoFinanciero.FechaEmision
                                     oeAsientoMov.oeCuentaCP.IdMovimientoDocumento = oeDoc.Id
@@ -400,6 +413,7 @@ Public Class l_ContratoFinanciero
                                     oeAsientoMov.oeCuentaCP.Activo = True
                                     ' Generar Obligacion Documento
                                     oeAsientoMov.oeCuentaCP.ObligacionDocumento = New e_ObligacionDocumento
+                                    oeAsientoMov.oeCuentaCP.ObligacionDocumento.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     oeAsientoMov.oeCuentaCP.ObligacionDocumento.TipoOperacion = "I"
                                     oeAsientoMov.oeCuentaCP.ObligacionDocumento.IdMovimientoDocumento = oeDoc.Id
                                     oeAsientoMov.oeCuentaCP.ObligacionDocumento.MontoMN = _MontoMN
@@ -410,6 +424,7 @@ Public Class l_ContratoFinanciero
                                     oeAsientoMov.oeCuentaCP.ObligacionDocumento.Activo = True
                                     ' Generar Asiento Movimiento Documento
                                     oeAsientoMov.oeCuentaCP.AsMov_MovDoc = New e_AsientoMov_MovDoc
+                                    oeAsientoMov.oeCuentaCP.AsMov_MovDoc.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     oeAsientoMov.oeCuentaCP.AsMov_MovDoc.TipoOperacion = "I"
                                     oeAsientoMov.oeCuentaCP.AsMov_MovDoc.IdMovimientoDocumento = oeDoc.Id
                                     oeAsientoMov.oeCuentaCP.AsMov_MovDoc.IdCuentaxCyP = String.Empty
@@ -442,6 +457,7 @@ Public Class l_ContratoFinanciero
                         _MontoGen = _MontoCap + _MontoInteres
                         oeAsiento = New e_Asiento
                         With oeAsiento
+                            .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             .TipoOperacion = "I" : .IdPeriodo = oeContratoFinanciero.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                             .NroAsiento = String.Empty : .Fecha = oeContratoFinanciero.FechaEmision
                             .Glosa = oeAsientoModel.Nombre & " " & oeContratoFinanciero.Codigo & " " & oeContratoFinanciero.NombreBanco
@@ -453,6 +469,7 @@ Public Class l_ContratoFinanciero
                         For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
                             oeAsientoMov = New e_AsientoMovimiento
                             With oeAsientoMov
+                                .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                 .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable
                                 .IdUsuarioCrea = oeContratoFinanciero.Usuario : .Activo = True
                                 Select Case Left(oeAux.Cuenta, 2)
@@ -476,6 +493,7 @@ Public Class l_ContratoFinanciero
                                         oeMovCajaBanco._Operador = 1 : oeMovCajaBanco.Fecha = oeContratoFinanciero.FechaEmision
                                         oeMovCajaBanco.TotalMN = IIf(oeAsientoModel.Moneda = "SOLES", _MontoCap, _MontoCap * oeContratoFinanciero.TipoCambio)
                                         oeMovCajaBanco.TotalME = IIf(oeAsientoModel.Moneda = "SOLES", _MontoCap / oeContratoFinanciero.TipoCambio, _MontoCap)
+                                        oeMovCajaBanco.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                         .MovimientoCajaBanco = oeMovCajaBanco
                                     Case "18"
                                         .Glosa = oeAux.Titulo
@@ -499,11 +517,14 @@ Public Class l_ContratoFinanciero
                                         oeAsiMovObli = New e_AsientoMov_ObligacionFin
                                         oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                         oeAsiMovObli.IdObligacionFinanciera = oeContratoFinanciero.lstObligacionesFin(0).Id
+                                        oeAsiMovObli.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                         .AsMov_ObligacionFin = oeAsiMovObli
                                 End Select
                             End With
+                            oeAsientoMov.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             oeAsiento.AsientoMovimiento.Add(oeAsientoMov)
                         Next
+                        oeAsiento.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                         If olAsiento.GuardarAsientoDscto(oeAsiento) Then
                             TransScope.Complete()
                             Return True
@@ -530,6 +551,7 @@ Public Class l_ContratoFinanciero
                         For Each oeAsiMod In leAsientoModel
                             oeAsiento = New e_Asiento
                             With oeAsiento
+                                .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                 .TipoOperacion = "I" : .IdPeriodo = oeContratoFinanciero.IdPeriodo : .IdTipoAsiento = oeAsiMod.IdTipoAsiento
                                 .NroAsiento = String.Empty : .Fecha = oeContratoFinanciero.FechaEmision
                                 .Glosa = oeAsiMod.Nombre : .GlosaImprime = String.Empty
@@ -541,6 +563,7 @@ Public Class l_ContratoFinanciero
                             For Each oeAux In oeAsiMod.leDetalle.OrderBy(Function(it) it.Fila).ToList
                                 oeAsientoMov = New e_AsientoMovimiento
                                 With oeAsientoMov
+                                    .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable
                                     .IdUsuarioCrea = oeContratoFinanciero.Usuario : .Activo = True
                                     Select Case Left(oeAux.Cuenta, 2)
@@ -556,6 +579,7 @@ Public Class l_ContratoFinanciero
                                             End If
                                             ' Generar Asiento Movimiento Caja y Banco
                                             oeMovCajaBanco = New e_MovimientoCajaBanco
+                                            oeMovCajaBanco.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                             oeMovCajaBanco.TipoOperacion = "I" : oeMovCajaBanco.Activo = True
                                             oeMovCajaBanco.IdFlujoCaja = oeContratoFinanciero.oeMovCajaBanco.IdFlujoCaja
                                             oeMovCajaBanco.IdMedioPago = oeContratoFinanciero.oeMovCajaBanco.IdMedioPago
@@ -587,6 +611,7 @@ Public Class l_ContratoFinanciero
                                             End If
                                             ' Generar Asiento Movimiento Obligacion
                                             oeAsiMovObli = New e_AsientoMov_ObligacionFin
+                                            oeAsiMovObli.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                             oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                             oeAsiMovObli.IdObligacionFinanciera = oeContratoFinanciero.lstObligacionesFin(0).Id
                                             .AsMov_ObligacionFin = oeAsiMovObli
@@ -620,6 +645,7 @@ Public Class l_ContratoFinanciero
                         _MontoGen = _MontoCap + _MontoInteres
                         oeAsiento = New e_Asiento
                         With oeAsiento
+                            .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             .TipoOperacion = "I" : .IdPeriodo = oeContratoFinanciero.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                             .NroAsiento = String.Empty : .Fecha = oeContratoFinanciero.FechaEmision
                             .Glosa = oeAsientoModel.Nombre & " " & oeContratoFinanciero.Codigo & " " & oeContratoFinanciero.NombreBanco
@@ -632,6 +658,7 @@ Public Class l_ContratoFinanciero
                             If oeAux.Repetir = 0 Then
                                 oeAsientoMov = New e_AsientoMovimiento
                                 With oeAsientoMov
+                                    .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                     .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable
                                     .Glosa = oeAsientoModel.Nombre & " " & oeContratoFinanciero.Codigo & " " & oeContratoFinanciero.NombreBanco
                                     .IdUsuarioCrea = oeContratoFinanciero.Usuario : .Activo = True
@@ -646,6 +673,7 @@ Public Class l_ContratoFinanciero
                                             End If
                                             ' Generar Asiento Movimiento Caja y Banco
                                             oeMovCajaBanco = New e_MovimientoCajaBanco
+                                            oeMovCajaBanco.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                             oeMovCajaBanco.TipoOperacion = "I" : oeMovCajaBanco.Activo = True
                                             oeMovCajaBanco.IdFlujoCaja = oeContratoFinanciero.oeMovCajaBanco.IdFlujoCaja
                                             oeMovCajaBanco.IdMedioPago = oeContratoFinanciero.oeMovCajaBanco.IdMedioPago
@@ -666,6 +694,7 @@ Public Class l_ContratoFinanciero
                                             End If
                                             'Generar Movimiento Analisis
                                             oeMovAnalisis = New e_MovimientoAnalisis
+                                            oeMovAnalisis.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                             oeMovAnalisis.TipoOperacion = "I"
                                             oeMovAnalisis.IdVehiculo = "1SI000000059"
                                             oeMovAnalisis.IdGastoFuncion = "1CH000088"
@@ -683,6 +712,7 @@ Public Class l_ContratoFinanciero
                                 For Each oeObliFin In oeContratoFinanciero.lstObligacionesFin
                                     oeAsientoMov = New e_AsientoMovimiento
                                     With oeAsientoMov
+                                        .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                         .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable
                                         .Glosa = oeAsientoModel.Nombre & " " & oeObliFin.NroVencimiento & " " & oeContratoFinanciero.NombreBanco
                                         .IdUsuarioCrea = oeContratoFinanciero.Usuario : .Activo = True
@@ -695,6 +725,7 @@ Public Class l_ContratoFinanciero
                                         End If
                                         ' Generar Asiento Movimiento Obligacion
                                         oeAsiMovObli = New e_AsientoMov_ObligacionFin
+                                        oeAsiMovObli.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                                         oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                         oeAsiMovObli.IdObligacionFinanciera = oeObliFin.Id
                                         oeAsiMovObli.UsuarioCreacion = oeContratoFinanciero.Usuario
@@ -707,7 +738,7 @@ Public Class l_ContratoFinanciero
                         Dim leAsiento As New List(Of e_Asiento)
                         leAsiento.Add(oeAsiento)
                         'If olAsiento.GuardarAsientoDscto(oeAsiento) Then
-                        If olAsiento.GuardarListaMasiva2(leAsiento) Then
+                        If olAsiento.GuardarListaMasiva2(leAsiento, oeContratoFinanciero.PrefijoID) Then
                             TransScope.Complete()
                             Return True
                         End If
@@ -723,6 +754,7 @@ Public Class l_ContratoFinanciero
         Try
             oeAsiento = New e_Asiento
             With oeAsiento
+                .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                 .TipoOperacion = "I" : .IdPeriodo = oeContratoFinanciero.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                 .NroAsiento = String.Empty : .Fecha = oeContratoFinanciero.FechaEmision
                 .Glosa = oeContratoFinanciero.NombreBanco : .GlosaImprime = String.Empty
@@ -733,6 +765,7 @@ Public Class l_ContratoFinanciero
             For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
                 oeAsientoMov = New e_AsientoMovimiento
                 With oeAsientoMov
+                    .PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                     .TipoOperacion = "I" : .IdUsuarioCrea = oeContratoFinanciero.Usuario
                     .Glosa = oeAux.Titulo : .Activo = True
                     If oeAux.Partida = 1 Then
@@ -745,6 +778,7 @@ Public Class l_ContratoFinanciero
                             .IdCuentaContable = oeAux.IdCuentaContable
                             ' Generar Asiento Movimiento Caja y Banco
                             oeMovCajaBanco = New e_MovimientoCajaBanco
+                            oeMovCajaBanco.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             oeMovCajaBanco.TipoOperacion = "I" : oeMovCajaBanco.Activo = True
                             oeMovCajaBanco.IdFlujoCaja = oeContratoFinanciero.oeMovCajaBanco.IdFlujoCaja
                             oeMovCajaBanco.IdMedioPago = oeContratoFinanciero.oeMovCajaBanco.IdMedioPago
@@ -760,6 +794,7 @@ Public Class l_ContratoFinanciero
                             .IdCuentaContable = oeContratoFinanciero.Codigo
                             'Generar Movimiento Analisis
                             oeMovAnalisis = New e_MovimientoAnalisis
+                            oeMovAnalisis.PrefijoID = oeContratoFinanciero.PrefijoID '@0001
                             oeMovAnalisis.TipoOperacion = "I"
                             oeMovAnalisis.IdVehiculo = String.Empty
                             oeMovAnalisis.IdGastoFuncion = oeContratoFinanciero.IdClienteProveedor ' Cargar Gasto Funcion

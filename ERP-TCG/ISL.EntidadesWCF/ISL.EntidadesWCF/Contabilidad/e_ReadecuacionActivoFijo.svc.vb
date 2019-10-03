@@ -6,7 +6,8 @@ Public Class e_ReadecuacionActivoFijo
 
     Public TipoOperacion As String = String.Empty
     Public ListReadecuacionAFDoc As List(Of e_ReadecuacionAF_Documento)
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

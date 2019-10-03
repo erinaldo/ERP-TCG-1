@@ -81,7 +81,7 @@ Public Class d_PersonaEmpresa_TipoPago
                         , .IdTipoPago _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                     )
             End With
             Return True

@@ -129,7 +129,7 @@ Public Class d_Almacen
                 With oeAlmacen
                     stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Almacen_IAE", _
                                               .TipoOperacion, _
-                                              d_DatosConfiguracion.PrefijoID, _
+                                              .PrefijoID, _
                                               .Id, _
                                               .Codigo, _
                                               .Nombre, _

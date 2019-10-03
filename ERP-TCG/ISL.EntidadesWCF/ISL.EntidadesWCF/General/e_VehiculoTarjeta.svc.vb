@@ -4,7 +4,8 @@ Public Class e_VehiculoTarjeta
     Implements Ie_VehiculoTarjeta
 
 #Region "Propiedades"
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()>
     Public TipoOperacion As String
     <DataMember()>

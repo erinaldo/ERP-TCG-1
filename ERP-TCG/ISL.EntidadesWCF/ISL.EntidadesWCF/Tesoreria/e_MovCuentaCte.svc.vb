@@ -29,8 +29,10 @@ Public Class e_MovCuentaCte
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As Boolean
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public Mac As String
     <DataMember()> _
@@ -48,7 +50,7 @@ Public Class e_MovCuentaCte
     <DataMember()> _
     Public oeMovCuentaCte_Asiento As New e_MovCuentaCte_Asiento
 
-    <DataMember()> _
+    <DataMember()>
     Public IdTrabajador As String
     <DataMember()> _
     Public IdCtaTrans As String = String.Empty

@@ -153,20 +153,20 @@ Public Interface Il_Asiento
     <OperationContract()> _
     Function Captura_Valor(ByVal cta As String, ByVal dsobj As DataTable) As Single
 
-    <OperationContract()> _
-    Function GenerarAsientoConsumo(ByVal DtConsumo As DataTable, ByVal ls_IdSubAlmacen As String, _
-    ByVal TipoCambio As Double, ByVal IdPeriodo As String, ByVal FecUltimoDia As Date, _
-    ByVal IdUsuarioCrea As String) As Boolean
+    <OperationContract()>
+    Function GenerarAsientoConsumo(ByVal DtConsumo As DataTable, ByVal ls_IdSubAlmacen As String,
+    ByVal TipoCambio As Double, ByVal IdPeriodo As String, ByVal FecUltimoDia As Date,
+    ByVal IdUsuarioCrea As String, ByVal PrefijoId As String) As Boolean
 
 #End Region
 
     <OperationContract()> _
     Function ListarDevengadoSeguros(ByVal FechaVencimiento As Date, ByVal lsTipoOper As String, ByVal lsIddoc As String) As DataTable
 
-    <OperationContract()> _
-    Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable, ByVal oePeriodo As e_Periodo, _
-    ByVal IdUsuarioCreacion As String, ByVal lsIdMoneda As e_Moneda, ByVal lnTipoCambio As Double, _
-    ByVal lsTipo As String) As Boolean
+    <OperationContract()>
+    Function GuardarSegurosDevengados(ByVal DtSeguros As DataTable, ByVal oePeriodo As e_Periodo,
+    ByVal IdUsuarioCreacion As String, ByVal lsIdMoneda As e_Moneda, ByVal lnTipoCambio As Double,
+    ByVal lsTipo As String, ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function ObtenerOrigenContable(ByVal Tipo As String, ByVal IdMovDoc As String) As Integer
@@ -179,17 +179,17 @@ Public Interface Il_Asiento
     <OperationContract()> _
     Function GuardarLista(loAsiento As List(Of e_Asiento)) As Boolean
 
-    <OperationContract()> _
-    Function GuardarListaMasiva(loAsiento As List(Of e_Asiento)) As Boolean
+    <OperationContract()>
+    Function GuardarListaMasiva(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean
 
-    <OperationContract()> _
-    Function GuardarListaMasiva2(loAsiento As List(Of e_Asiento)) As Boolean
+    <OperationContract()>
+    Function GuardarListaMasiva2(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean
 
-    <OperationContract()> _
-    Function GuardarListaMasiva3(loAsiento As List(Of e_Asiento)) As Boolean
+    <OperationContract()>
+    Function GuardarListaMasiva3(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean
 
-    <OperationContract()> _
-    Function GuardarListaMasiva4(loAsiento As List(Of e_Asiento)) As Boolean
+    <OperationContract()>
+    Function GuardarListaMasiva4(loAsiento As List(Of e_Asiento), ByVal PrefijoID As String) As Boolean
 
 #End Region
 
@@ -204,8 +204,8 @@ Public Interface Il_Asiento
     <OperationContract()> _
     Function GuardarAjusteTC(ByVal leAsientoModelo As List(Of e_AsientoModelo), ByVal oeAjusteTC As e_AjusteTC) As Boolean
 
-    <OperationContract()> _
-    Function GuardarApertura(ByVal leAsientoModel As List(Of e_AsientoModelo), ByVal leApertura As List(Of e_AjusteTC), ByVal lb_Obligacion As Boolean) As Boolean
+    <OperationContract()>
+    Function GuardarApertura(ByVal leAsientoModel As List(Of e_AsientoModelo), ByVal leApertura As List(Of e_AjusteTC), ByVal lb_Obligacion As Boolean, ByVal PrefijoID As String) As Boolean
 
 #End Region
 

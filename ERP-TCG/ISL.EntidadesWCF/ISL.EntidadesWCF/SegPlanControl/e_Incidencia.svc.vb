@@ -81,7 +81,8 @@ Public Class e_Incidencia
 
     Public TipoOperacion As String
     Public Modificado As Boolean
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Event DatoCambiado()
 #End Region
 

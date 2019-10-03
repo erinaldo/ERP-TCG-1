@@ -26,7 +26,8 @@ Public Class e_MenuProceso
     Public Modificado As Boolean
     <DataMember()> _
     Public TipoOperacion As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedad"

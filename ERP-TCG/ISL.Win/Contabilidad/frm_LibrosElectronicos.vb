@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -469,6 +477,7 @@ Public Class frm_LibrosElectronicos
                 oeDetalleLE._Ejercicio = dtp_FechaGuarda.Value.Year.ToString
                 oeDetalleLE._Mes = FormatoDocumento(cboMesGuarda.Text, 2)
                 oeDetalleLE.Año = dtp_FechaGuarda.Value.Year
+                oeDetalleLE.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Select Case cboLibroGuarda.Text
                     Case "REGISTRO DE COMPRAS"
                         oeDetalleLE.TipoOperacion = "C"
@@ -1275,6 +1284,7 @@ Public Class frm_LibrosElectronicos
                 If MessageBox.Show("Se cambiara el estado de la Libro Electronico" & Environment.NewLine & _
                                     "a DESCARGADA porque ya fue declarado en la sunat", _
                                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                    oeLibroElectronico.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olLibroElectronico.Guardar(oeLibroElectronico)
                 End If
             Else
@@ -1748,7 +1758,7 @@ Public Class frm_LibrosElectronicos
                 .SubTotal3 = Math.Round(decSubTotal3.Value, 2)
                 .SubTotal4 = Math.Round(decSubTotal4.Value, 2)
             End With
-
+            oeLibroElectronico.PrefijoID = gs_PrefijoIdSucursal '@0001
             olLibroElectronico.Guardar(oeLibroElectronico)
             leDetalleLeValidada = New List(Of e_DetalleLibroElectronico)
             Select Case cboLibroGuarda.Text

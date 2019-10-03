@@ -57,7 +57,8 @@ Public Class e_Empresa
     <DataMember()> _
     Public CargaCompleta As Boolean = False
     Public Event DatoCambiado()
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> _
     Public leContactos As New List(Of e_Persona)
 

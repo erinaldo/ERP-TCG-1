@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_OperacionDetalle
@@ -297,6 +305,7 @@ Public Class frm_OperacionDetalle
                         .Glosa = OperacionesDetalle.Substring(0, OperacionesDetalle.Length - 1)
                         .UsuarioCreacion = gUsuarioSGI.Id
                     End With
+                    oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olOperacion.GuardarOperacionDetalle(oeOperacionDetalle)
                 End If
             Else
@@ -336,6 +345,7 @@ Public Class frm_OperacionDetalle
                         .Glosa = OperacionesDetalle.Substring(0, OperacionesDetalle.Length - 1)
                         .UsuarioCreacion = gUsuarioSGI.Id
                     End With
+                    oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olOperacion.GuardarOperacionDetalle(oeOperacionDetalle)
                 End If
             End If
@@ -476,6 +486,7 @@ Public Class frm_OperacionDetalle
             If Mensaje = "OK" Then
                 oeContratoTercero.Id = griContratoTercero.ActiveRow.Cells("Id").Value
                 oeContratoTercero.UsuarioCrea = gUsuarioSGI.Id
+                oeContratoTercero.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olViajeTercero.Guardar(oeContratoTercero)
                 mensajeEmergente.Confirmacion("La Informacion ha sido grabada Satisfactoriamente", True)
                 griContratoTercero.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Color

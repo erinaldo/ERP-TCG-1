@@ -80,7 +80,7 @@ Public Class d_MovimientoNeumatico
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimientoNeumatico
                 sqlhelper.ExecuteNonQuery("[NEU].[Isp_MovimientoNeumatico_IAE]", _
-                                          .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                                          .TipoOperacion, .PrefijoID, _
                                           .Id _
                         , .IdVidaNeumatico _
                         , .IdMotivo _

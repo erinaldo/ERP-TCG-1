@@ -103,10 +103,10 @@ Public Class d_ClienteViajePrimaDet
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Dim stResultado As String
         Dim d_DatosConfiguracion As New d_DatosConfiguracion
-        stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "OPE.ClienteViajePrimaDet", d_DatosConfiguracion.PrefijoID)
+        stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "OPE.ClienteViajePrimaDet", PrefijoID)
         Return stResultado
     End Function
 

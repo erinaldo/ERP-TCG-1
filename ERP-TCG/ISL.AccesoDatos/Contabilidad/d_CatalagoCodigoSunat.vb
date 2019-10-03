@@ -70,7 +70,7 @@ Public Class d_CatalagoCodigoSunat
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCatalagoCodigoSunat
-                sqlhelper.ExecuteNonQuery("CON.Isp_CatalagoCodigoSunat_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CatalagoCodigoSunat_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .CodigoTabla _
                         , .CodigoElemento _

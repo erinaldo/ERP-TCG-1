@@ -18,7 +18,8 @@ Public Class e_ProvisionBonificacion
     Private _CostoComputable As Double
     Private _Dias As Double
     Private _Importe As Double
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

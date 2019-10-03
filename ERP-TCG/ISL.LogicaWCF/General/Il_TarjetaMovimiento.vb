@@ -7,8 +7,8 @@ Public Interface Il_TarjetaMovimiento
     <OperationContract()> _
     Function Guardar(oeTarjetaMovimiento As e_TarjetaMovimiento) As Boolean
 
-    <OperationContract()> _
-    Function GuardarMasivo(ListaMovTarjeta As List(Of e_TarjetaMovimiento)) As Boolean
+    <OperationContract()>
+    Function GuardarMasivo(ListaMovTarjeta As List(Of e_TarjetaMovimiento), ByVal PrefijoID As String) As Boolean
 
     <OperationContract()> _
     Function Obtener(oeTarjetaMovimiento As e_TarjetaMovimiento) As e_TarjetaMovimiento
@@ -19,7 +19,7 @@ Public Interface Il_TarjetaMovimiento
     <OperationContract()> _
     Function Eliminar(oeTarjetaMovimiento As e_TarjetaMovimiento) As Boolean
 
-    <OperationContract()> _
-    Function ActualizarMasivo(XML As String) As Boolean
+    <OperationContract()>
+    Function ActualizarMasivo(XML As String, ByVal PrefijoID As String) As Boolean
 
 End Interface

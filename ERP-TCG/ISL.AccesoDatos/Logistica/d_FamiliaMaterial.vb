@@ -113,7 +113,7 @@ Public Class d_FamiliaMaterial
             With oeFamiliaMaterial
                 sqlhelper.ExecuteNonQuery("ALM.Isp_FamiliaMaterial_IAE", _
                                           .TipoOperacion, _
-                                          d_DatosConfiguracion.PrefijoID, _
+                                          .PrefijoID, _
                                           .Id, _
                                           .IdTipoMaterial, _
                                           .Codigo, _

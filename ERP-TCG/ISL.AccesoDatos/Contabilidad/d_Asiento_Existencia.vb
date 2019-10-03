@@ -12,7 +12,7 @@ Public Class d_Asiento_Existencia
                 With oeAsiento_Existencia
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_Existencia_IAE", _
                                             .TipoOperacion, _
-                                            d_DatosConfiguracion.PrefijoID, _
+                                            .PrefijoID, _
                                             .Id, _
                                             .IdAsientoDoc, _
                                             .IdAsientoExis, _

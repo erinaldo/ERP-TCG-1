@@ -78,7 +78,7 @@ Public Class d_DocumentoSinAsociacion
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoSinAsociacion
-                sqlhelper.ExecuteNonQuery("CMP.Isp_DocumentoSinAsociacion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_DocumentoSinAsociacion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Glosa _
                         , .Fecha _
@@ -88,7 +88,7 @@ Public Class d_DocumentoSinAsociacion
                         , .IdTipoDocumento _
                         , .IdDocumento _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

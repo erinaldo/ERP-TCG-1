@@ -97,7 +97,7 @@ Public Class d_ConfiguracionTabla
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeConfiguracionTabla
-                    id = sqlhelper.ExecuteScalar("STD.Isp_ConfiguracionTabla_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("STD.Isp_ConfiguracionTabla_IAE", .TipoOperacion, .PrefijoID, _
                             .Id _
                             , .Esquema _
                             , .Codigo _

@@ -17,11 +17,11 @@ Public Class frm_DatoUsuario
             txtMensaje.CharacterCasing = CharacterCasing.Normal
             txtCorporativo.CharacterCasing = CharacterCasing.Normal
             txtPersonal.CharacterCasing = CharacterCasing.Normal
-            txtMensaje.Text = Environment.NewLine & _
-                "El Presente Formulario tiene como finalidad vincular su cuenta de SGI a algún correo corporativo " & _
-                " y/o personal donde se enviará cualquier mensaje de alerta y/o comunicado asociado a los procesos propios del Sistema." & _
-                Environment.NewLine & Environment.NewLine & "Esta información sera guardada con la debida reserve y es para el uso" & _
-                " exclusivo del SGI ISL"
+            txtMensaje.Text = Environment.NewLine &
+                "El Presente Formulario tiene como finalidad vincular su cuenta en el ERP a algún correo corporativo " &
+                " y/o personal donde se enviará cualquier mensaje de alerta y/o comunicado asociado a los procesos propios del Sistema." &
+                Environment.NewLine & Environment.NewLine & "Esta información sera guardada con la debida reserve y es para el uso" &
+                " exclusivo del sistema ERP"
             verCorporativo.Checked = False
             verPersonal.Checked = True
             txtCorporativo.Focus()

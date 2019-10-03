@@ -98,7 +98,7 @@ Public Class d_TipoGastoDetalle
 
             With oeTipoGastoDetalle
                 sqlhelper.ExecuteNonQuery("TES.Isp_TipoGastoDetalle_IAE", "I", _
-                .Id, .IdTipoGasto, .IdFlujoCaja, .Activo, d_DatosConfiguracion.PrefijoID)
+                .Id, .IdTipoGasto, .IdFlujoCaja, .Activo, .PrefijoID)
             End With
             Return True
         Catch ex As Exception

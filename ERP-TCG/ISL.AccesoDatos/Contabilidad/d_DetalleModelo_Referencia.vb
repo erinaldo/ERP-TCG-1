@@ -80,7 +80,7 @@ Public Class d_DetalleModelo_Referencia
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleModelo_Referencia
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleModelo_Referencia_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleModelo_Referencia_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdDetalleAsientoModelo _
                         , .TipoReferencia _

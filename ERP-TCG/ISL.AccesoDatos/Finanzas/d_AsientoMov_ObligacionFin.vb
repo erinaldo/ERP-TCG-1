@@ -40,8 +40,8 @@ Public Class d_AsientoMov_ObligacionFin
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("FIN.AsientoMov_ObligacionFin_Listar", "", _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", oeAsientoMov_ObligacionFin.Id)
+            ds = sqlhelper.ExecuteDataset("FIN.AsientoMov_ObligacionFin_Listar", "",
+            Left(oeAsientoMov_ObligacionFin.PrefijoID, 1), "", oeAsientoMov_ObligacionFin.Id)
             If ds.Tables(0).rows.Count > 0 Then
                 oeAsientoMov_ObligacionFin = Cargar(ds.Tables(0).Rows(0))
             End If
@@ -58,7 +58,7 @@ Public Class d_AsientoMov_ObligacionFin
             Dim ds As DataSet
             With oeAsientoMov_ObligacionFin
                 ds = sqlhelper.ExecuteDataset("FIN.AsientoMov_ObligacionFin_Listar", .TipoOperacion _
-        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdAsientoMovimiento _
                         , .IdObligacionFinanciera _
@@ -83,7 +83,7 @@ Public Class d_AsientoMov_ObligacionFin
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsientoMov_ObligacionFin
-                sqlhelper.ExecuteNonQuery("FIN.AsientoMov_ObligacionFin_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.AsientoMov_ObligacionFin_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdAsientoMovimiento _
                         , .IdObligacionFinanciera _
@@ -128,13 +128,13 @@ Public Class d_AsientoMov_ObligacionFin
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.AsientoMov_ObligacionFin", Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.AsientoMov_ObligacionFin", Left(PrefijoID, 1) & "SI"
                     )
-            Return IIf(stResultado Is Nothing, Left(d_DatosConfiguracion.PrefijoID, 1) & "SI" & "000000000001", stResultado)
+            Return IIf(stResultado Is Nothing, Left(PrefijoID, 1) & "SI" & "000000000001", stResultado)
         Catch ex As Exception
             Throw ex
             Return False

@@ -22,7 +22,7 @@ Public Class l_ConfiguracionTabla
         Try
             If Validar(oeConfiguracionTabla) Then
                 Dim dtCDato As Data.DataTable = olConfDato.CrearDT
-                Dim id As String = odConfDato.UltimoIdInserta
+                Dim id As String = odConfDato.UltimoIdInserta(oeConfiguracionTabla.PrefijoID)
                 Dim lsPrefijo As String = Left(id, 3)
                 Dim lsNumero As Integer = CInt(Right(id, Len(id) - 3))
                 Dim _leDatoAux = oeConfiguracionTabla.leDato.Where(Function(it) it.TipoOperacion = "I").ToList

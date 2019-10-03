@@ -27,7 +27,8 @@ Public Class e_AsientoModelo_Referencia
     Public Cant As Integer
     <DataMember()> _
     Public Equivale As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

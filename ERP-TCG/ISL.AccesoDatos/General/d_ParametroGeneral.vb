@@ -60,7 +60,7 @@ Public Class d_ParametroGeneral
         Try
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeParametroGeneral
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .Nombre _
                         , .Texto _

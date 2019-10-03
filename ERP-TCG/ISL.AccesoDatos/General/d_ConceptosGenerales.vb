@@ -98,7 +98,7 @@ Public Class d_ConceptosGenerales
         Try
             With oeConceptosGenerales
                 sqlhelper.ExecuteNonQuery("STD.ISP_ConceptosGenerales_IAE", .TipoOperacion, _
-                d_DatosConfiguracion.PrefijoID, .Id, .IdProcesoNegocio, .Codigo, .Nombre, .Abreviatura, .Orden, .Protegido, .UsuarioCreacion)
+                .PrefijoID, .Id, .IdProcesoNegocio, .Codigo, .Nombre, .Abreviatura, .Orden, .Protegido, .UsuarioCreacion)
             End With
             Return True
         Catch ex As Exception

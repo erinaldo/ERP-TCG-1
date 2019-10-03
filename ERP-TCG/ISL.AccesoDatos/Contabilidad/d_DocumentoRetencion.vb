@@ -51,7 +51,7 @@ Public Class d_DocumentoRetencion
             Dim ds As DataSet
             With oeDocumentoRetencion
                 ds = sqlhelper.ExecuteDataset("CON.Isp_DocumentoRetencion_Listar", .TipoOperacion, _
-            Left(d_DatosConfiguracion.PrefijoID, 1), "", .Id, .IdTipoDocumento, .Serie, .Numero, .FechaEmision, .Activo, .IdAsientoMovimiento)
+            Left(.PrefijoID, 1), "", .Id, .IdTipoDocumento, .Serie, .Numero, .FechaEmision, .Activo, .IdAsientoMovimiento)
             End With
             If ds.Tables(0).rows.Count > 0 Then
                 oeDocumentoRetencion = Cargar(ds.Tables(0).Rows(0))
@@ -69,7 +69,7 @@ Public Class d_DocumentoRetencion
             Dim ds As DataSet
             With oeDocumentoRetencion
                 ds = sqlhelper.ExecuteDataset("CON.Isp_DocumentoRetencion_Listar", .TipoOperacion _
-                        , Left(d_DatosConfiguracion.PrefijoID, 1), "" _
+                        , Left(.PrefijoID, 1), "" _
                         , .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -125,7 +125,7 @@ Public Class d_DocumentoRetencion
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeDocumentoRetencion
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_DocumentoRetencion_IAE", .TipoOperacion, d_DatosConfiguracion.PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_DocumentoRetencion_IAE", .TipoOperacion, .PrefijoID, _
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _

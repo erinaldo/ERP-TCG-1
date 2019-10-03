@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -333,6 +341,7 @@ Public Class frm_Guias
                             .Referencia = "GuiaTransportista"
                             .UsuarioEdita = gUsuarioSGI.Id
                         End With
+                        oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                         IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
                     End If
                     If gUsuarioSGI.Controlado <> 0 Then
@@ -1014,6 +1023,7 @@ Public Class frm_Guias
                     oeGuiaTransportista.Id = griLista.ActiveRow.Cells("Id").Value
                     Mensaje = griLista.ActiveRow.Cells("IncidenciaSeguimiento").Value
                     oeGuiaTransportista.Incidencia = Mensaje
+                    oeGuiaTransportista.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olGuiaTransportista.Guardar(oeGuiaTransportista) Then mensajeEmergente.Confirmacion(Me.Text & ": " & Mensaje, True)
                     oeUsuarioPerfil = New e_UsuarioPerfil
                     oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
@@ -1026,6 +1036,7 @@ Public Class frm_Guias
                     oePerfil.Nombre = "Area: Guias Informa, " & "GRT: " & griLista.ActiveRow.Cells("Codigo").Value & "-" & griLista.ActiveRow.Cells("Flota").Value & _
                     ", Viaje: " & griLista.ActiveRow.Cells("Operacion").Value & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & Mensaje
                     oePerfil.Activo = True
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPerfil.Guardar(oePerfil)
                     ControlBoton(1, 0, 1, 0, 0, 1, 1, 1, 1)
             End Select
@@ -1579,6 +1590,7 @@ Public Class frm_Guias
                             oeOperacionDetalle.Flete = .Cells("TotalFlete").Value
                             oeOperacionDetalle.Cliente = .Cells("Cliente").Value
                             oeOperacionDetalle.Activo = True
+                            oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oeGuiaTransportista.OperacionDetalle.Add(oeOperacionDetalle)
 
                             oeGuiaTransportista.GuiaRemitente = New List(Of e_GuiaRemitente)
@@ -1591,9 +1603,10 @@ Public Class frm_Guias
                             oeGuiaRemitente.Fecha = .Cells("LlegadaOrigen").Value
                             oeGuiaRemitente.Activo = True
                             oeGuiaRemitente.Viaje = RTrim(.Cells("Operacion").Value)
+                            oeGuiaRemitente.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oeGuiaTransportista.GuiaRemitente.Add(oeGuiaRemitente)
                         End With
-
+                        oeGuiaTransportista.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olGuiaTransportista.Guardar(oeGuiaTransportista) Then
                             griGrtConfirmarBloque.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                         End If
@@ -2008,6 +2021,7 @@ Public Class frm_Guias
                             oeOperacionDetalle.Cliente = .Cells("Cliente").Value
                             oeOperacionDetalle.Activo = True
                         End With
+                        oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olOperacion.GuardarOperacionDetalle(oeOperacionDetalle) Then
                             griViajeConfirmarBloque.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                         End If
@@ -2227,6 +2241,7 @@ Public Class frm_Guias
             If RegistroEditado = 1 Then
                 oeRegistroEditado = New e_RegistrosEditados
                 oeRegistroEditado.Id = IdRegistroEditado
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegistroEditado.Guardar(oeRegistroEditado)
                 RegistroEditado = 0
             End If
@@ -2596,6 +2611,7 @@ Public Class frm_Guias
                             .Id = oeViaje.TipoVehiculo
                             .FechaModificado = DateAdd(DateInterval.Minute, 5, oeViaje.LlegadaOrigen)
                         End With
+                        oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olRegistroEditado.Guardar(oeRegistroEditado)
                         RegistroEditado = 1
                     End If
@@ -2927,6 +2943,7 @@ Public Class frm_Guias
                             oeGuiaTransportista.GuiaTransportista = griGrtAnuladas.DataSource
                         End If
                         oeGuiaTransportista.IdPilotoTercero = Me.cboPilotoTercero.Value
+                        oeGuiaTransportista.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olGuiaTransportista.Guardar(oeGuiaTransportista) Then
                             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                             'ControlRangoFechaInicializa()
@@ -2979,7 +2996,7 @@ Public Class frm_Guias
                             End If
                         End If
                     End With
-
+                    oeSeguimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSeguimiento.Guardar(oeSeguimiento) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         'ControlRangoFechaInicializa()

@@ -205,7 +205,7 @@ Public Class d_Empresa
                             , .Abreviatura _
                             , .Activo _
                             , .UsuarioCreacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .IdTipoEmpresa _
                             , .IdMoneda _
                             , .IndAgentePercepcion _
@@ -355,7 +355,7 @@ Public Class d_Empresa
                         , .Abreviatura _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .IdTipoEmpresa _
                     )
 
@@ -378,7 +378,7 @@ Public Class d_Empresa
                         , "" _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , "" _
                         , "" _
                         , 0 _

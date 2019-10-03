@@ -25,7 +25,8 @@ Public Class e_RubroEstadoFinanciero_Detalle
     Public TipoOperacion As String = ""
     Public TipoBusca As Integer
     Public IdentificaPadre As String = ""
-
+    <DataMember()>
+    Public PrefijoID As String = ""
 #End Region
 
 #Region "Propiedades"

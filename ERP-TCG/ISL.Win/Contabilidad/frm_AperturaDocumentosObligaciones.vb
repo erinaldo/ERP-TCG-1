@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -116,6 +124,7 @@ Public Class frm_AperturaDocumentosObligaciones
                 '        oeApertura.Debe = Math.Abs(_MontoAux) : oeApertura.Haber = 0
                 '    End If
                 'End If
+                oeApertura.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leApertura.Add(oeApertura)
             Next
             leAsientoModel.Add(oeAsientoModel)
@@ -172,6 +181,7 @@ Public Class frm_AperturaDocumentosObligaciones
                     '    End If
                     'End If
                     oeApertura.IdAsientoModelo = IIf(oeApertura.Haber > 0, ls_IdAsientoPer, ls_IdAsientoGan)
+                    oeApertura.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leApertura.Add(oeApertura)
                 Next
                 leAsientoModel.Add(oeAsientoModGan)
@@ -181,7 +191,7 @@ Public Class frm_AperturaDocumentosObligaciones
             If opcCtaCte.CheckedIndex = 2 Then lb_Obli = True
             'Guardar Informacion
             olApertura = New l_Asiento
-            If olApertura.GuardarApertura(leAsientoModel, leApertura, lb_Obli) Then
+            If olApertura.GuardarApertura(leAsientoModel, leApertura, lb_Obli, gs_PrefijoIdSucursal) Then
                 mensajeEmergente.Confirmacion("¡Se Guardaron los Datos Correctamente!", True)
                 Consultar(True)
             End If

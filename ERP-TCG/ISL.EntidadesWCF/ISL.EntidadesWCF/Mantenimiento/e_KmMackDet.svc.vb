@@ -17,8 +17,10 @@ Public Class e_KmMackDet
     Private _UsuarioCreacion As String
     Private _Activo As Boolean
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
 
 #End Region
 

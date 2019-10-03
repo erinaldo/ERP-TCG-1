@@ -1,4 +1,13 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_TipoOrdenCompra
@@ -258,6 +267,7 @@ Public Class frm_TipoOrdenCompra
 #Region "Métodos"
     Private Function GuardarTipoOrdenCompra() As Boolean
         Try
+            oeTipoOrdenCompra.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTipoOrdenCompra.Guardar(oeTipoOrdenCompra) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcTipoPago, 2)

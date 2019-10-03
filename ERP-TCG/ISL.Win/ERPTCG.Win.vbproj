@@ -375,6 +375,12 @@
     <Compile Include="Comercial\Compras\frm_Requerimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.Designer.vb">
+      <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Ventas\frm_Visor.Designer.vb">
       <DependentUpon>frm_Visor.vb</DependentUpon>
     </Compile>
@@ -4171,6 +4177,7 @@
     <None Include="Resources\if_pdf_272699.png" />
     <None Include="Resources\if_table_tab_search_64788.png" />
     <Content Include="Camion1.ico" />
+    <Content Include="Resources\Logo Induamerica pequeño.jpg" />
     <Content Include="Resources\Pecsa.png" />
     <None Include="Resources\send_email.png" />
     <None Include="Resources\save.jpg" />
@@ -4231,6 +4238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Compras\frm_Requerimiento.resx">
       <DependentUpon>frm_Requerimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_OrdenVenMaterial.resx">
+      <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_Visor.resx">
       <DependentUpon>frm_Visor.vb</DependentUpon>
@@ -6482,7 +6492,6 @@
     <None Include="Resources\Conectado.png" />
     <None Include="Resources\Texto del sistema.jpg" />
     <None Include="Resources\Trayler con logo ISL.gif" />
-    <None Include="Resources\Logo Induamerica pequeño.jpg" />
     <None Include="Resources\Login.gif" />
     <None Include="Resources\lock.gif" />
     <None Include="Resources\boton_login.jpg" />

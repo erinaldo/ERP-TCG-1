@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_DetraccionesMasivas
@@ -366,12 +374,14 @@ Public Class frm_DetraccionesMasivas
                 oeMovDoc.TipoOperacion = "CAM"
                 oeMovDoc.Id = oe.IdMovimientoDocumento
                 oeMovDoc.Total = IIf(oe.IdMoneda = "1CH01", oe.Importe, Math.Round(oe.Importe / numTCAdq.Value, 2))
+                oeMovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeDetraccion.loDocumento.Add(oeMovDoc)
             Next
             oeDetraccion.IdPeriodo = oePeriodo.Id
             oeDetraccion.TipoCambio = numTCAdq.Value
             oeDetraccion.Ejercicio = oePeriodo.Ejercicio
             oeDetraccion.IdCtaBancoSoles = cboCtaBancariaSolesAdq.Value
+            oeDetraccion.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olDetraccion.GuardarAsiento(oeDetraccion, loDetDetAdqu, CtaCtblePublic) Then
                 mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente", True)
                 SeleccionTabs(0, ficDetraccion)
@@ -677,6 +687,7 @@ Public Class frm_DetraccionesMasivas
     Private Function GuardarDetraccion() As Boolean
         Try
             LlenaObjeto()
+            oeDetraccion.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olDetraccion.Guardar(oeDetraccion) Then Return False
             Return True
         Catch ex As Exception
@@ -855,6 +866,7 @@ Public Class frm_DetraccionesMasivas
             If Operacion = "Archivo" Then
                 oeDetraccion.TipoOperacion = "C"
                 oeDetraccion.loDetraccionDet = New List(Of e_DetraccionDetalle)
+                oeDetraccion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olDetraccion.Guardar(oeDetraccion) Then
                     mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente", True)
                     SeleccionTabs(0, ficDetraccion)

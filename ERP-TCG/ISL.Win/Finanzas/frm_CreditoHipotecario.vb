@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -292,6 +300,7 @@ Public Class frm_CreditoHipotecario
                             .MontoInteres = objWorkSheet.Cells(ln_Fila + 1, 5).Value
                             .Saldo = oeCuota.Total
                         End With
+                        oeCuota.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leCuota.Add(oeCuota)
                     Else
                         Exit For
@@ -538,6 +547,7 @@ Public Class frm_CreditoHipotecario
                 oeCuota.Saldo = oeCuota.Total
                 oeCuota.Usuario = gUsuarioSGI.Id
                 oeCuota.MacLocal = MacPCLocal()
+                oeCuota.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leCuota.Add(oeCuota)
                 gridCuotas.DataSource = leCuota
                 gridCuotas.DataBind()
@@ -571,6 +581,7 @@ Public Class frm_CreditoHipotecario
                     If _leDetAux.Count > 0 Then IdCtaCtble = _leDetAux(0).IdCuentaContable
                     For Each oeOFAux In leCuota
                         oeOFAux.IdCuentaContable = IdCtaCtble
+                        oeOFAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Next
                 End If
             Else
@@ -599,6 +610,7 @@ Public Class frm_CreditoHipotecario
             oeContratoFin.lstObligacionesFin = leCuota
             oeContratoFin.NombreBanco = cboBanco.Text
             oeContratoFin.Comision = ndComision.Value
+            oeContratoFin.PrefijoID = gs_PrefijoIdSucursal '@0001
             Return olContratoFin.GuardarCreditoHipotecario(oeContratoFin, oeAsientoModel)
         Catch ex As Exception
             Throw ex

@@ -61,7 +61,8 @@ Public Class e_RetencionImpresa
     Public Property TipoCambio As String
     <DataMember()> _
     Public Property FechaTC As Date
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     <DataMember()> Public Fecha As Date
 
     Sub New()
