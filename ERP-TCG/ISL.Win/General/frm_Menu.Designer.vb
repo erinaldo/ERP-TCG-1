@@ -115,30 +115,6 @@ Partial Class frm_Menu
         Dim ButtonTool27 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ActivoConsulta")
         Dim ButtonTool47 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar Sesion")
         Dim LabelTool5 As Infragistics.Win.UltraWinToolbars.LabelTool = New Infragistics.Win.UltraWinToolbars.LabelTool("sbTipoCambio")
-        Dim DockAreaPane1 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.DockedLeft, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"))
-        Dim DockableControlPane1 As Infragistics.Win.UltraWinDock.DockableControlPane = New Infragistics.Win.UltraWinDock.DockableControlPane(New System.Guid("21c36884-9705-4dc5-affb-fb306a6e6b52"), New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"), 0, New System.Guid("4869b1aa-d283-4674-8efc-db871f9bfa2f"), 0)
-        Dim DockAreaPane2 As Infragistics.Win.UltraWinDock.DockAreaPane = New Infragistics.Win.UltraWinDock.DockAreaPane(Infragistics.Win.UltraWinDock.DockedLocation.Floating, New System.Guid("de7e8dcb-71f0-4142-8151-8b0fa269585b"))
-        Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton1 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton2 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton3 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDesktopAlertButton4 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
-        Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Menu))
         Me.MenuISL = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
         Me._frm_Menu_Toolbars_Dock_Area_Left = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me.utm_ISLSGI = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
@@ -825,4 +801,5 @@ Partial Class frm_Menu
     Friend WithEvents hiloWebServiceCovisol As System.ComponentModel.BackgroundWorker
     Friend WithEvents AlertaInforma As Infragistics.Win.Misc.UltraDesktopAlert
     Friend WithEvents AlertaBaja As Infragistics.Win.Misc.UltraDesktopAlert
+    Friend WithEvents DockableWindow1 As Infragistics.Win.UltraWinDock.DockableWindow
 End Class
