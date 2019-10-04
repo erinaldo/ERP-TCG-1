@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Public Class frm_PagosObligacionesFinancieras
     Inherits ISL.Win.frm_MenuPadre
@@ -260,11 +268,13 @@ Public Class frm_PagosObligacionesFinancieras
                             .RetencionSoles = IIf(moneda = "1CH01", fila.RetencionMN, fila.RetencionME * DecTC.Value)
                             .MontoPagoSoles = IIf(moneda = "1CH01", oe_MovDoc.Total, oe_MovDoc.Total * DecTC.Value)
                             .TipoOperacion = "I"
+                            .PrefijoID = gs_PrefijoIdSucursal '@0001
                             If aux_lst.Count = 0 Then lst_DocRetDet.Add(oe_DocRetDet)
 
                         End With
                     Next
                 End If
+                oeObliFin.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olObligacionFinanciera.GuardarPago2(oeObliFin, oeAsientoModel, lst_DocRetDet) Then
                     mensajeEmergente.Confirmacion("Los Datos se han Guardado Correctamente", True)
                     Dim frm2 As New frm_ImprimeCobroPagoAnticipo(oeObliFin.oeMovCajaBanco.Id, 0, "Obligacion")

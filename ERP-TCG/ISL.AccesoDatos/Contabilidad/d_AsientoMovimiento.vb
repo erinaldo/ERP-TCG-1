@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -580,17 +588,20 @@ Public Class d_AsientoMovimiento
                 'Guardar Movimiento Caja Banco
                 If (.MovimientoCajaBanco IsNot Nothing) AndAlso .MovimientoCajaBanco.TipoOperacion = "I" Then
                     .MovimientoCajaBanco.IdAsientoMovimiento = stResultado(0)
+                    .MovimientoCajaBanco.PrefijoID = .PrefijoID '@0001
                     odMovCajaBanco.Guardar(.MovimientoCajaBanco)
                     If .MovimientoCajaBanco.IdCuentaBancaria <> "" Then ._IdMovimientoCajaBanco = .MovimientoCajaBanco.Id
                 End If
                 'Guardar Cuenta por Cobrar y Pagar
                 If (.oeCuentaCP IsNot Nothing) AndAlso .oeCuentaCP.TipoOperacion = "I" Then
                     .oeCuentaCP._IdAsientoMovimiento = stResultado(0)
+                    .oeCuentaCP.PrefijoID = .PrefijoID '@0001
                     odCtaCP.GuardarCuentaCyP_AsiMovMovDoc(.oeCuentaCP)
                 End If
                 'Guardar Asiento Movimiento - MovimientoDocumento
                 If (.AsMov_MovDoc IsNot Nothing) AndAlso .AsMov_MovDoc.TipoOperacion = "I" Then
                     .AsMov_MovDoc.IdAsientoMovimiento = stResultado(0)
+                    .AsMov_MovDoc.PrefijoID = .PrefijoID '@0001
                     odAsiMov_MovDoc.Guardar(.AsMov_MovDoc)
                 End If
                 'Guardar Asiento Movimiento - Obligacion Financiera
@@ -598,15 +609,18 @@ Public Class d_AsientoMovimiento
                     .AsMov_ObligacionFin.IdAsientoMovimiento = stResultado(0)
                     'Guardar Pago Obligacion
                     If (.ObligacionFinanciera.oeObligacionPago IsNot Nothing) AndAlso .ObligacionFinanciera.oeObligacionPago.TipoOperacion = "I" Then
+                        .ObligacionFinanciera.oeObligacionPago.PrefijoID = .PrefijoID '@0001
                         odObligacionbPago.Guardar(.ObligacionFinanciera.oeObligacionPago)
                         IdObliPago = .ObligacionFinanciera.oeObligacionPago.Id
                     End If
                     .AsMov_ObligacionFin.IdObligacionPago = IdObliPago
+                    .AsMov_ObligacionFin.PrefijoID = .PrefijoID '@0001
                     odAsiMov_OblFin.Guardar(.AsMov_ObligacionFin)
                 End If
                 'Guardar Asiento Movimiento - Grupo Asiento
                 If (.GrupoAsiento IsNot Nothing) AndAlso .GrupoAsiento.TipoOperacion = "I" Then
                     .GrupoAsiento.IdAsientoMovimiento = stResultado(0)
+                    .GrupoAsiento.PrefijoID = .PrefijoID '@0001
                     odGrupoAsiento.Guardar(.GrupoAsiento)
                 End If
             End With
