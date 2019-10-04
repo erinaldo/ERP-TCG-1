@@ -57,13 +57,12 @@ Public Class d_ConfiguracionSisDet
 
     Public Function Guardar(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConfiguracionSisDet
-                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionSisDet_IAE", "I", .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_ConfiguracionSisDet_IAE", "I", .PrefijoID,
                         .Id _
                         , .Ejercicio _
                         , .IdConfiguracionSis _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

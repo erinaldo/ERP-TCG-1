@@ -15,7 +15,6 @@ Public Class d_FecLetras
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.FecLetras", PrefijoID
                                   )
@@ -28,15 +27,14 @@ Public Class d_FecLetras
 
     Public Function Guardar(ByVal oeFecLetras As e_FecLetras) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFecLetras
-                sqlhelper.ExecuteNonQuery("FIN.Isp_Fec_Letras_IAE ", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_Fec_Letras_IAE ", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdObligacionFinanciera _
                         , .IndClienteProveedor _
                         , .IdClienteProveedor _
                         , .Activo _
-                        , .NroLetra _
+                        , .NroLetra
                     )
             End With
             Return True

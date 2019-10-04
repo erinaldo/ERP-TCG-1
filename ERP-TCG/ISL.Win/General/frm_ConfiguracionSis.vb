@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_ConfiguracionSis
@@ -178,6 +186,7 @@ Public Class frm_ConfiguracionSis
     Private Function GuardarConfiguracion() As Boolean
         Try
             oeConfiguracionSis.ListaConfiguracionSisDet = griEjercicio.DataSource
+            oeConfiguracionSis.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olConfiguracionSisDet.Guardar(oeConfiguracionSisDet) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                 MostrarTabs(0, tcConfSis, 2)
@@ -266,6 +275,7 @@ Public Class frm_ConfiguracionSis
                 oeConfiguracionSisDet.IdConfiguracionSis = oeConfiguracionSis.Id
                 oeConfiguracionSisDet.Ejercicio = Año.Año
                 oeConfiguracionSisDet.Activo = True
+                oeConfiguracionSisDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeConfiguracionSis.ListaConfiguracionSisDet.Add(oeConfiguracionSisDet)
                 Guardar()
                 oeConfiguracionSisDet = New e_ConfiguracionSisDet

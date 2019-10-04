@@ -77,7 +77,7 @@ Public Class d_ConceptoPonderado
 
     Public Function Guardar(ByVal oeConceptoPonderado As e_ConceptoPonderado) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim _idcp As String = ""
             Using TransScope As New TransactionScope()
                 With oeConceptoPonderado
@@ -96,6 +96,7 @@ Public Class d_ConceptoPonderado
 
                     For Each oeDet In .leDetalle
                         oeDet.IdConceptoPonderado = _idcp
+                        oeDet.PrefijoID = oeConceptoPonderado.PrefijoID '@0001
                         If oeDet.TipoOperacion <> "" Then
                             If oeDet.TipoOperacion = "E" Then
                                 odDetalleCP.Eliminar(oeDet)

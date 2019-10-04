@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,7 +83,7 @@ Public Class d_ConfiguracionMTC
 
     Public Function Guardar(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeConfiguracionMTC
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_ConfiguracionMTC_IAE]", _
                                           .TipoOperacion, _

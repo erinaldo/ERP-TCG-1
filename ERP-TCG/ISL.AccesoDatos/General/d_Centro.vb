@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que gestiona los establecimientos de la empresa Induamerica en el Territorio, por  ejemplo Lima,Chiclayo,Pacasmayo.
 ''' Fecha de Actualizacion:31/10/2011
@@ -46,7 +54,7 @@ Public Class d_Centro
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeCentro As e_Centro) As e_Centro
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ds As DataSet
             Dim Prefijo As String = IIf(oeCentro.TipoOperacion = "3", oeCentro.Abreviatura, oeCentro.PrefijoID)
             ds = sqlhelper.ExecuteDataset("STD.Isp_Centro_Listar", oeCentro.TipoOperacion _
@@ -130,7 +138,7 @@ Public Class d_Centro
     ''' centro es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeCentro As e_Centro) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeCentro
                 sqlhelper.ExecuteNonQuery("STD.Isp_Centro_IAE", _
                                           .TipoOperacion, _

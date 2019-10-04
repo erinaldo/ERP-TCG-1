@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -73,17 +81,15 @@ Public Class d_Cargo
 
     Public Function Guardar(ByVal oeCargo As e_Cargo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeCargo
-                SqlHelper.ExecuteNonQuery("STD.ISP_Cargo_IAE", .TipOoperacion, _
+                SqlHelper.ExecuteNonQuery("STD.ISP_Cargo_IAE", .TipOoperacion,
                         .Id _
                         , .Codigo _
                         , .Nombre _
                         , .Abreviatura _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

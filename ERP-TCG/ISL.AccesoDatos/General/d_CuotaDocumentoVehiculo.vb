@@ -80,7 +80,7 @@ Public Class d_CuotaDocumentoVehiculo
 
     Public Function Guardar(ByVal oeCuotaDocumentoVehiculo As e_CuotaDocumentoVehiculo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeCuotaDocumentoVehiculo
                 sqlhelper.ExecuteNonQuery("STD.Isp_CuotaDocumentoVehiculo_IAE" _
                                               , .TipoOperacion, .PrefijoID _

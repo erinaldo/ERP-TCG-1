@@ -91,9 +91,9 @@ Partial Class frm_BonificacionVehicular
         Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaCreacion")
         Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UsuarioCreacion")
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Capacidades", 113251141)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Capacidades", 81373954)
         Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("GrupoLinea", 113251142)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("GrupoLinea", 81373955)
         Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -188,6 +188,7 @@ Partial Class frm_BonificacionVehicular
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.odDocumentoBonificacion = New ISL.Controles.OrigenDatos(Me.components)
+        Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.GridBonificaciones = New Infragistics.Win.Misc.UltraGroupBox()
         Me.expVencer = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel4 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
@@ -275,7 +276,6 @@ Partial Class frm_BonificacionVehicular
         Me.Etiqueta1 = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta51 = New ISL.Controles.Etiqueta(Me.components)
         Me.ColorVencimiento = New ISL.Controles.Colores(Me.components)
-        Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.GroupListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupListado.SuspendLayout()
@@ -430,9 +430,9 @@ Partial Class frm_BonificacionVehicular
         Me.grid_Bonos.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[True]
         Me.grid_Bonos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid_Bonos.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grid_Bonos.Location = New System.Drawing.Point(2, 18)
+        Me.grid_Bonos.Location = New System.Drawing.Point(2, 19)
         Me.grid_Bonos.Name = "grid_Bonos"
-        Me.grid_Bonos.Size = New System.Drawing.Size(1143, 478)
+        Me.grid_Bonos.Size = New System.Drawing.Size(1143, 477)
         Me.grid_Bonos.TabIndex = 15
         '
         'MenuBonificaciones
@@ -467,6 +467,11 @@ Partial Class frm_BonificacionVehicular
         'odDocumentoBonificacion
         '
         Me.odDocumentoBonificacion.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11})
+        '
+        'Filtro1
+        '
+        Me.Filtro1.MenuSettings.RightAlignedMenus = True
+        Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
         'GridBonificaciones
         '
@@ -564,7 +569,7 @@ Partial Class frm_BonificacionVehicular
         Me.ColorPinta.Color = System.Drawing.Color.LightCoral
         Me.ColorPinta.Location = New System.Drawing.Point(167, 31)
         Me.ColorPinta.Name = "ColorPinta"
-        Me.ColorPinta.Size = New System.Drawing.Size(44, 21)
+        Me.ColorPinta.Size = New System.Drawing.Size(44, 22)
         Me.ColorPinta.TabIndex = 7
         Me.ColorPinta.Text = "LightCoral"
         '
@@ -622,9 +627,9 @@ Partial Class frm_BonificacionVehicular
         '
         Me.UltraPanel1.ClientArea.Controls.Add(Me.UltraPanel2)
         Me.UltraPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraPanel1.Location = New System.Drawing.Point(2, 18)
+        Me.UltraPanel1.Location = New System.Drawing.Point(2, 19)
         Me.UltraPanel1.Name = "UltraPanel1"
-        Me.UltraPanel1.Size = New System.Drawing.Size(1143, 262)
+        Me.UltraPanel1.Size = New System.Drawing.Size(1143, 261)
         Me.UltraPanel1.TabIndex = 2
         '
         'UltraPanel2
@@ -636,7 +641,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraPanel2.Location = New System.Drawing.Point(0, 0)
         Me.UltraPanel2.Name = "UltraPanel2"
-        Me.UltraPanel2.Size = New System.Drawing.Size(1143, 262)
+        Me.UltraPanel2.Size = New System.Drawing.Size(1143, 261)
         Me.UltraPanel2.TabIndex = 14
         '
         'UltraPanel4
@@ -651,7 +656,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraPanel4.Location = New System.Drawing.Point(0, 0)
         Me.UltraPanel4.Name = "UltraPanel4"
-        Me.UltraPanel4.Size = New System.Drawing.Size(1143, 262)
+        Me.UltraPanel4.Size = New System.Drawing.Size(1143, 261)
         Me.UltraPanel4.TabIndex = 343
         '
         'Grid_BonosDetalles
@@ -922,7 +927,7 @@ Partial Class frm_BonificacionVehicular
         Me.Grid_BonosDetalles.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Grid_BonosDetalles.Location = New System.Drawing.Point(0, 0)
         Me.Grid_BonosDetalles.Name = "Grid_BonosDetalles"
-        Me.Grid_BonosDetalles.Size = New System.Drawing.Size(876, 262)
+        Me.Grid_BonosDetalles.Size = New System.Drawing.Size(876, 261)
         Me.Grid_BonosDetalles.TabIndex = 22
         Me.Grid_BonosDetalles.Text = "UltraGrid1"
         '
@@ -938,11 +943,11 @@ Partial Class frm_BonificacionVehicular
         Me.UltraExpandableGroupBox1.ContentAreaAppearance = Appearance41
         Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(267, 262)
+        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(267, 261)
         Me.UltraExpandableGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOutsideBorder
         Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(876, 0)
         Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
-        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(267, 262)
+        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(267, 261)
         Me.UltraExpandableGroupBox1.TabIndex = 342
         Me.UltraExpandableGroupBox1.Text = "Detalle de bonificación vehicular:"
         Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -970,7 +975,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(25, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(239, 256)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(239, 255)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'UltraButton1
@@ -1002,7 +1007,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel18.AutoSize = True
         Me.UltraLabel18.Location = New System.Drawing.Point(3, 7)
         Me.UltraLabel18.Name = "UltraLabel18"
-        Me.UltraLabel18.Size = New System.Drawing.Size(94, 14)
+        Me.UltraLabel18.Size = New System.Drawing.Size(91, 15)
         Me.UltraLabel18.TabIndex = 354
         Me.UltraLabel18.Text = "Seleccione un eje"
         '
@@ -1013,7 +1018,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel23.AutoSize = True
         Me.UltraLabel23.Location = New System.Drawing.Point(3, 196)
         Me.UltraLabel23.Name = "UltraLabel23"
-        Me.UltraLabel23.Size = New System.Drawing.Size(101, 14)
+        Me.UltraLabel23.Size = New System.Drawing.Size(102, 15)
         Me.UltraLabel23.TabIndex = 361
         Me.UltraLabel23.Text = "Peso máx. por eje :"
         '
@@ -1045,7 +1050,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel21.AutoSize = True
         Me.UltraLabel21.Location = New System.Drawing.Point(3, 169)
         Me.UltraLabel21.Name = "UltraLabel21"
-        Me.UltraLabel21.Size = New System.Drawing.Size(109, 14)
+        Me.UltraLabel21.Size = New System.Drawing.Size(110, 15)
         Me.UltraLabel21.TabIndex = 360
         Me.UltraLabel21.Text = "Bonificación por eje :"
         '
@@ -1071,7 +1076,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel20.AutoSize = True
         Me.UltraLabel20.Location = New System.Drawing.Point(3, 142)
         Me.UltraLabel20.Name = "UltraLabel20"
-        Me.UltraLabel20.Size = New System.Drawing.Size(109, 14)
+        Me.UltraLabel20.Size = New System.Drawing.Size(107, 15)
         Me.UltraLabel20.TabIndex = 359
         Me.UltraLabel20.Text = "Clase de Neumático:"
         '
@@ -1097,7 +1102,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel19.AutoSize = True
         Me.UltraLabel19.Location = New System.Drawing.Point(3, 115)
         Me.UltraLabel19.Name = "UltraLabel19"
-        Me.UltraLabel19.Size = New System.Drawing.Size(86, 14)
+        Me.UltraLabel19.Size = New System.Drawing.Size(86, 15)
         Me.UltraLabel19.TabIndex = 358
         Me.UltraLabel19.Text = "Neumático (Kg.)"
         '
@@ -1123,7 +1128,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel17.AutoSize = True
         Me.UltraLabel17.Location = New System.Drawing.Point(3, 88)
         Me.UltraLabel17.Name = "UltraLabel17"
-        Me.UltraLabel17.Size = New System.Drawing.Size(119, 14)
+        Me.UltraLabel17.Size = New System.Drawing.Size(118, 15)
         Me.UltraLabel17.TabIndex = 357
         Me.UltraLabel17.Text = "Conj suspensión (Kg.):"
         '
@@ -1155,7 +1160,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel16.AutoSize = True
         Me.UltraLabel16.Location = New System.Drawing.Point(3, 61)
         Me.UltraLabel16.Name = "UltraLabel16"
-        Me.UltraLabel16.Size = New System.Drawing.Size(114, 14)
+        Me.UltraLabel16.Size = New System.Drawing.Size(115, 15)
         Me.UltraLabel16.TabIndex = 356
         Me.UltraLabel16.Text = "Eje o Conj. ejes (Kg.):"
         '
@@ -1181,7 +1186,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel15.AutoSize = True
         Me.UltraLabel15.Location = New System.Drawing.Point(3, 34)
         Me.UltraLabel15.Name = "UltraLabel15"
-        Me.UltraLabel15.Size = New System.Drawing.Size(105, 14)
+        Me.UltraLabel15.Size = New System.Drawing.Size(104, 15)
         Me.UltraLabel15.TabIndex = 355
         Me.UltraLabel15.Text = "Tipo de suspensión:"
         '
@@ -1258,7 +1263,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel24.AutoSize = True
         Me.UltraLabel24.Location = New System.Drawing.Point(11, 27)
         Me.UltraLabel24.Name = "UltraLabel24"
-        Me.UltraLabel24.Size = New System.Drawing.Size(91, 14)
+        Me.UltraLabel24.Size = New System.Drawing.Size(87, 15)
         Me.UltraLabel24.TabIndex = 343
         Me.UltraLabel24.Text = "Resolución MTC:"
         '
@@ -1269,7 +1274,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel22.AutoSize = True
         Me.UltraLabel22.Location = New System.Drawing.Point(11, 55)
         Me.UltraLabel22.Name = "UltraLabel22"
-        Me.UltraLabel22.Size = New System.Drawing.Size(77, 14)
+        Me.UltraLabel22.Size = New System.Drawing.Size(77, 15)
         Me.UltraLabel22.TabIndex = 342
         Me.UltraLabel22.Text = "Emp. emisora:"
         '
@@ -1280,7 +1285,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel14.AutoSize = True
         Me.UltraLabel14.Location = New System.Drawing.Point(53, 162)
         Me.UltraLabel14.Name = "UltraLabel14"
-        Me.UltraLabel14.Size = New System.Drawing.Size(37, 14)
+        Me.UltraLabel14.Size = New System.Drawing.Size(35, 15)
         Me.UltraLabel14.TabIndex = 341
         Me.UltraLabel14.Text = "Glosa:"
         '
@@ -1329,7 +1334,7 @@ Partial Class frm_BonificacionVehicular
         Me.OptRemolcadorPosterior.AutoSize = True
         Me.OptRemolcadorPosterior.Location = New System.Drawing.Point(22, 52)
         Me.OptRemolcadorPosterior.Name = "OptRemolcadorPosterior"
-        Me.OptRemolcadorPosterior.Size = New System.Drawing.Size(172, 17)
+        Me.OptRemolcadorPosterior.Size = New System.Drawing.Size(168, 17)
         Me.OptRemolcadorPosterior.TabIndex = 12
         Me.OptRemolcadorPosterior.Text = "Vehículo Remolcado Posterior "
         Me.OptRemolcadorPosterior.UseVisualStyleBackColor = True
@@ -1355,7 +1360,7 @@ Partial Class frm_BonificacionVehicular
         Me.OptRemolcadorDelantero.AutoSize = True
         Me.OptRemolcadorDelantero.Location = New System.Drawing.Point(22, 28)
         Me.OptRemolcadorDelantero.Name = "OptRemolcadorDelantero"
-        Me.OptRemolcadorDelantero.Size = New System.Drawing.Size(172, 17)
+        Me.OptRemolcadorDelantero.Size = New System.Drawing.Size(168, 17)
         Me.OptRemolcadorDelantero.TabIndex = 6
         Me.OptRemolcadorDelantero.Text = "Vehículo Remolcado delantero"
         Me.OptRemolcadorDelantero.UseVisualStyleBackColor = True
@@ -1366,7 +1371,7 @@ Partial Class frm_BonificacionVehicular
         Me.OptMotorizado.Checked = True
         Me.OptMotorizado.Location = New System.Drawing.Point(22, 7)
         Me.OptMotorizado.Name = "OptMotorizado"
-        Me.OptMotorizado.Size = New System.Drawing.Size(123, 17)
+        Me.OptMotorizado.Size = New System.Drawing.Size(120, 17)
         Me.OptMotorizado.TabIndex = 5
         Me.OptMotorizado.TabStop = True
         Me.OptMotorizado.Text = "Vehículo Motorizado"
@@ -1514,7 +1519,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel13.AutoSize = True
         Me.UltraLabel13.Location = New System.Drawing.Point(189, 171)
         Me.UltraLabel13.Name = "UltraLabel13"
-        Me.UltraLabel13.Size = New System.Drawing.Size(75, 14)
+        Me.UltraLabel13.Size = New System.Drawing.Size(74, 15)
         Me.UltraLabel13.TabIndex = 21
         Me.UltraLabel13.Text = "9. N° Ruedas:"
         '
@@ -1525,7 +1530,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel12.AutoSize = True
         Me.UltraLabel12.Location = New System.Drawing.Point(189, 144)
         Me.UltraLabel12.Name = "UltraLabel12"
-        Me.UltraLabel12.Size = New System.Drawing.Size(55, 14)
+        Me.UltraLabel12.Size = New System.Drawing.Size(55, 15)
         Me.UltraLabel12.TabIndex = 20
         Me.UltraLabel12.Text = "8. N°Ejes:"
         '
@@ -1536,7 +1541,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Location = New System.Drawing.Point(189, 119)
         Me.UltraLabel11.Name = "UltraLabel11"
-        Me.UltraLabel11.Size = New System.Drawing.Size(64, 14)
+        Me.UltraLabel11.Size = New System.Drawing.Size(67, 15)
         Me.UltraLabel11.TabIndex = 19
         Me.UltraLabel11.Text = "7. N° Motor:"
         '
@@ -1547,7 +1552,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel10.AutoSize = True
         Me.UltraLabel10.Location = New System.Drawing.Point(189, 92)
         Me.UltraLabel10.Name = "UltraLabel10"
-        Me.UltraLabel10.Size = New System.Drawing.Size(62, 14)
+        Me.UltraLabel10.Size = New System.Drawing.Size(63, 15)
         Me.UltraLabel10.TabIndex = 18
         Me.UltraLabel10.Text = "6. N° Serie:"
         '
@@ -1558,7 +1563,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel9.AutoSize = True
         Me.UltraLabel9.Location = New System.Drawing.Point(13, 197)
         Me.UltraLabel9.Name = "UltraLabel9"
-        Me.UltraLabel9.Size = New System.Drawing.Size(66, 14)
+        Me.UltraLabel9.Size = New System.Drawing.Size(67, 15)
         Me.UltraLabel9.TabIndex = 17
         Me.UltraLabel9.Text = "5. Año fabr.:"
         '
@@ -1569,7 +1574,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel8.AutoSize = True
         Me.UltraLabel8.Location = New System.Drawing.Point(13, 170)
         Me.UltraLabel8.Name = "UltraLabel8"
-        Me.UltraLabel8.Size = New System.Drawing.Size(57, 14)
+        Me.UltraLabel8.Size = New System.Drawing.Size(57, 15)
         Me.UltraLabel8.TabIndex = 16
         Me.UltraLabel8.Text = "4. Modelo:"
         '
@@ -1580,7 +1585,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel7.AutoSize = True
         Me.UltraLabel7.Location = New System.Drawing.Point(13, 143)
         Me.UltraLabel7.Name = "UltraLabel7"
-        Me.UltraLabel7.Size = New System.Drawing.Size(51, 14)
+        Me.UltraLabel7.Size = New System.Drawing.Size(51, 15)
         Me.UltraLabel7.TabIndex = 15
         Me.UltraLabel7.Text = "3. Marca:"
         '
@@ -1591,7 +1596,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel6.AutoSize = True
         Me.UltraLabel6.Location = New System.Drawing.Point(13, 119)
         Me.UltraLabel6.Name = "UltraLabel6"
-        Me.UltraLabel6.Size = New System.Drawing.Size(69, 14)
+        Me.UltraLabel6.Size = New System.Drawing.Size(69, 15)
         Me.UltraLabel6.TabIndex = 14
         Me.UltraLabel6.Text = "2. Categoria:"
         '
@@ -1602,7 +1607,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Location = New System.Drawing.Point(13, 92)
         Me.UltraLabel5.Name = "UltraLabel5"
-        Me.UltraLabel5.Size = New System.Drawing.Size(48, 14)
+        Me.UltraLabel5.Size = New System.Drawing.Size(47, 15)
         Me.UltraLabel5.TabIndex = 13
         Me.UltraLabel5.Text = "1. Placa:"
         '
@@ -1641,7 +1646,7 @@ Partial Class frm_BonificacionVehicular
         Me.dtp_FTermino.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_FTermino.Location = New System.Drawing.Point(108, 132)
         Me.dtp_FTermino.Name = "dtp_FTermino"
-        Me.dtp_FTermino.Size = New System.Drawing.Size(170, 20)
+        Me.dtp_FTermino.Size = New System.Drawing.Size(170, 21)
         Me.dtp_FTermino.TabIndex = 328
         '
         'UltraLabel1
@@ -1651,7 +1656,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel1.AutoSize = True
         Me.UltraLabel1.Location = New System.Drawing.Point(11, 135)
         Me.UltraLabel1.Name = "UltraLabel1"
-        Me.UltraLabel1.Size = New System.Drawing.Size(83, 14)
+        Me.UltraLabel1.Size = New System.Drawing.Size(82, 15)
         Me.UltraLabel1.TabIndex = 327
         Me.UltraLabel1.Text = "Fecha Termino:"
         '
@@ -1660,7 +1665,7 @@ Partial Class frm_BonificacionVehicular
         Me.dtp_FEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_FEmision.Location = New System.Drawing.Point(108, 106)
         Me.dtp_FEmision.Name = "dtp_FEmision"
-        Me.dtp_FEmision.Size = New System.Drawing.Size(170, 20)
+        Me.dtp_FEmision.Size = New System.Drawing.Size(170, 21)
         Me.dtp_FEmision.TabIndex = 326
         '
         'LblFechaInicio
@@ -1670,7 +1675,7 @@ Partial Class frm_BonificacionVehicular
         Me.LblFechaInicio.AutoSize = True
         Me.LblFechaInicio.Location = New System.Drawing.Point(10, 108)
         Me.LblFechaInicio.Name = "LblFechaInicio"
-        Me.LblFechaInicio.Size = New System.Drawing.Size(82, 14)
+        Me.LblFechaInicio.Size = New System.Drawing.Size(80, 15)
         Me.LblFechaInicio.TabIndex = 289
         Me.LblFechaInicio.Text = "Fecha Emisión:"
         '
@@ -1697,7 +1702,7 @@ Partial Class frm_BonificacionVehicular
         Me.LblNumero.AutoSize = True
         Me.LblNumero.Location = New System.Drawing.Point(10, 81)
         Me.LblNumero.Name = "LblNumero"
-        Me.LblNumero.Size = New System.Drawing.Size(80, 14)
+        Me.LblNumero.Size = New System.Drawing.Size(79, 15)
         Me.LblNumero.TabIndex = 13
         Me.LblNumero.Text = "Bonificación N:"
         '
@@ -1751,7 +1756,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Location = New System.Drawing.Point(653, 17)
         Me.UltraLabel4.Name = "UltraLabel4"
-        Me.UltraLabel4.Size = New System.Drawing.Size(62, 14)
+        Me.UltraLabel4.Size = New System.Drawing.Size(61, 15)
         Me.UltraLabel4.TabIndex = 334
         Me.UltraLabel4.Text = "Porcentaje:"
         '
@@ -1760,7 +1765,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel3.AutoSize = True
         Me.UltraLabel3.Location = New System.Drawing.Point(337, 17)
         Me.UltraLabel3.Name = "UltraLabel3"
-        Me.UltraLabel3.Size = New System.Drawing.Size(171, 14)
+        Me.UltraLabel3.Size = New System.Drawing.Size(170, 15)
         Me.UltraLabel3.TabIndex = 331
         Me.UltraLabel3.Text = "Peso bruto veh. con bonificación:"
         '
@@ -1784,7 +1789,7 @@ Partial Class frm_BonificacionVehicular
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Location = New System.Drawing.Point(6, 17)
         Me.UltraLabel2.Name = "UltraLabel2"
-        Me.UltraLabel2.Size = New System.Drawing.Size(223, 14)
+        Me.UltraLabel2.Size = New System.Drawing.Size(223, 15)
         Me.UltraLabel2.TabIndex = 290
         Me.UltraLabel2.Text = "Bonificación otorgada Peso bruto veh. (Kg):"
         '
@@ -1873,11 +1878,6 @@ Partial Class frm_BonificacionVehicular
         Me.ColorVencimiento.Size = New System.Drawing.Size(44, 21)
         Me.ColorVencimiento.TabIndex = 7
         Me.ColorVencimiento.Text = "LightCoral"
-        '
-        'Filtro1
-        '
-        Me.Filtro1.MenuSettings.RightAlignedMenus = True
-        Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
         'frm_BonificacionVehicular
         '

@@ -32,7 +32,6 @@ Partial Class frm_Menu
         Dim ButtonTool2 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Imprimir")
         Dim ButtonTool30 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cerrar Sesion")
         Dim ButtonTool29 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Salir")
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Menu))
         Dim ButtonTool1 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Consultar")
         Dim ButtonTool240 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo")
         Dim ButtonTool241 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Editar")
@@ -135,6 +134,7 @@ Partial Class frm_Menu
         Dim UltraDesktopAlertButton4 As Infragistics.Win.Misc.UltraDesktopAlertButton = New Infragistics.Win.Misc.UltraDesktopAlertButton()
         Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Menu))
         Me.MenuISL = New Infragistics.Win.UltraWinExplorerBar.UltraExplorerBar()
         Me._frm_Menu_Toolbars_Dock_Area_Left = New Infragistics.Win.UltraWinToolbars.UltraToolbarsDockArea()
         Me.utm_ISLSGI = New Infragistics.Win.UltraWinToolbars.UltraToolbarsManager(Me.components)
@@ -749,6 +749,7 @@ Partial Class frm_Menu
         Me.Controls.Add(Me._frm_Menu_Toolbars_Dock_Area_Top)
         Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.HelpButton = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.Name = "frm_Menu"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

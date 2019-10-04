@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -94,7 +102,6 @@ Public Class d_ConceptosGenerales
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del 
     ''' registro de tipo de documento es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeConceptosGenerales As e_ConceptosGenerales) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeConceptosGenerales
                 sqlhelper.ExecuteNonQuery("STD.ISP_ConceptosGenerales_IAE", .TipoOperacion, _
