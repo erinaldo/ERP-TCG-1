@@ -12,7 +12,8 @@ Public Class e_Provincia
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
     Public Event DatoCambiado()
 
 #Region "Constructores"

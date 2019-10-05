@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports System.IO
@@ -576,6 +584,7 @@ Public Class frm_Vehiculo
         Try
             mt_IniciaCursorEspera()
             mt_RecolectarDatos()
+            oeVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olVehiculo.Guardar(oeVehiculo) Then
                 mensajeEmergente.Confirmacion(Me.Text & ": La informacion ha sido grabada satisfactoriamente", True)
                 MostrarTabs(0, tcVehiculo, 2)
@@ -1696,6 +1705,7 @@ Public Class frm_Vehiculo
                             .NroNeumaticos = Fila.Cells("NroNeumaticos").Value
                             .UsuarioCreacion = gUsuarioSGI.Id
                         End With
+                        oeVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olVehiculo.Guardar(oeVehiculo) Then
                             Fila.CellAppearance.BackColor = Me.ColorBloque.Color
                         End If
@@ -1738,6 +1748,7 @@ Public Class frm_Vehiculo
                                     .UsuarioCreacion = gUsuarioSGI.Id
                                     .IndProrrateo = griLista.ActiveRow.Cells("IndProrrateo").Value
                                 End With
+                                oeVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 If olVehiculo.Guardar(oeVehiculo) Then
                                     griLista.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                                 End If

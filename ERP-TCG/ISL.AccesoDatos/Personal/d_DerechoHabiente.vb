@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -79,12 +87,11 @@ Public Class d_DerechoHabiente
 
     Public Function Guardar(ByVal oeDerechoHabiente As e_DerechoHabiente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDerechoHabiente
                 If oeDerechoHabiente.oePersona IsNot Nothing Then
                     odPersona.Guardar(oeDerechoHabiente.oePersona)
                     oeDerechoHabiente.IdPersona = oeDerechoHabiente.oePersona.Id
-                    sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, .PrefijoID,
                        .Id _
                        , .IdTrabajador _
                        , .IdPersona _
@@ -94,7 +101,7 @@ Public Class d_DerechoHabiente
                        , .MesConcepcion _
                        , .FechaCreacion _
                        , .UsuarioCreacion _
-                       , .Activo _
+                       , .Activo
                    )
                 Else
                     Throw New Exception("Datos de Persona Incompleta")

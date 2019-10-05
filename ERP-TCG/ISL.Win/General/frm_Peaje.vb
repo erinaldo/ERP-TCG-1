@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports System.Text
 Imports Infragistics.Win.UltraWinEditors
@@ -101,6 +109,7 @@ Public Class frm_Peaje
         Try
             If fc_ValidarRegistro() Then
                 mt_RecolectarDatos()
+                oePeaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olPeaje.Guardar(oePeaje) Then
                     MessageBox.Show("Registro guardado satisfactoriamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
                     MostrarTabs(0, FicPeaje, 0)

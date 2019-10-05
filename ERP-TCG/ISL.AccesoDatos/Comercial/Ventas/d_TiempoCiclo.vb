@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 ''' <summary>
 ''' Clase que gestiona los ciclos de tiempo en los procesos la empresa
@@ -43,13 +51,12 @@ Public Class d_TiempoCiclo
     ''' <returns>Devuelve una varible oeTiempoCiclo de tipo e_TiempoCiclo</returns>
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeTiempoCiclo As e_TiempoCiclo) As e_TiempoCiclo
-
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_TiempoCiclo_Listar]", _
-                                        oeTiempoCiclo.TipoOperacion, _
-                                        oeTiempoCiclo.Id, _
-                                        oeTiempoCiclo.TipoVehiculo, _
+            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_TiempoCiclo_Listar]",
+                                        oeTiempoCiclo.TipoOperacion,
+                                        oeTiempoCiclo.Id,
+                                        oeTiempoCiclo.TipoVehiculo,
                                         oeTiempoCiclo.IdRuta)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeTiempoCiclo = Cargar(ds.Tables(0).Rows(0))
@@ -107,7 +114,6 @@ Public Class d_TiempoCiclo
     ''' de tiempo de ciclo es positiva= true sino false 
     '''Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeTiempoCiclo As e_TiempoCiclo) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeTiempoCiclo
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_TiempoCiclo_IAE]",

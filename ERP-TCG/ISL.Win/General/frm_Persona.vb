@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports ISL.Controles
 Imports Infragistics.Win
@@ -246,7 +254,7 @@ Public Class frm_Persona
             If listaContactos Is Nothing Then
                 listaContactos = New List(Of e_Persona)
             End If
-            
+            oePersona.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olPersona.Guardar(oePersona) <> "" Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 If oePersona.Id <> "" Then
@@ -1075,7 +1083,9 @@ Public Class frm_Persona
                     Else
                         oePersona.TipoOperacion = "I"
                     End If
-                    oeDerHab.oePersona = oePersona : oeDerHab.oePersona.leDireccionEP = leDireccionEP : oeDerHab.oePersona.leTelefono = leTelefono
+                    oeDerHab.oePersona = oePersona
+                    oeDerHab.oePersona.leDireccionEP = leDireccionEP
+                    oeDerHab.oePersona.leTelefono = leTelefono
                     oePersona.oeSexo.Id = Sexo1.Sexo.Id
                     mensajeEmergente.Confirmacion("¡Los Datos se han Guardado Correctamente!", True)
                     Me.Close()
@@ -1132,6 +1142,7 @@ Public Class frm_Persona
             oeTelefono.Equivale = 1
             If Not leTelefono.Contains(oeTelefono) Then
                 oeTelefono.Equivale = 2
+                oeTelefono.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If Not leTelefono.Contains(oeTelefono) Then
                     oeTelefono.TipoOperacion = "I"
                     oeTelefono.Id = leTelefono.Count + 1
@@ -1148,6 +1159,7 @@ Public Class frm_Persona
                 End If
             Else
                 oeTelAux = New e_Telefono
+                oeTelAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTelAux = leTelefono.Item(leTelefono.IndexOf(oeTelefono))
                 _idTel = oeTelAux.Id
                 oeTelefono.Equivale = 2
@@ -1226,6 +1238,7 @@ Public Class frm_Persona
                 Case "AgregarDir"
                     InicializarDireccion()
                     oeDireccionEP = New e_Direccion_EmpresaPersona
+                    oeDireccionEP.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeDireccionEP.TipoOperacion = "I"
                     MostrarTabs(1, ficDireccion)
                     ControlSubMenu(mtDireccion, "Dir", 0, 0, 0, 1, 1, 0, 0)
@@ -1431,12 +1444,15 @@ Public Class frm_Persona
                 oeDireccion = olDireccion.Obtener(oeDireccion)
                 If oeDireccion.Id <> "" Then
                     oeDireccionEP.oeDireccion.Id = oeDireccion.Id
+                    oeDireccionEP.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    oeDireccionEP.oeDireccion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If Not leDireccionEP.Contains(oeDireccionEP) Then
                         oeDireccionEP.TipoOperacion = "I"
                         If griDireccion.Rows.Count = 0 Then CargarDireccion(leDireccionEP) : oeDireccionEP.Principal = 1
                         leDireccionEP.Add(oeDireccionEP)
                     Else
                         Dim oe As New e_Direccion_EmpresaPersona
+                        oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oe = leDireccionEP.Item(leDireccionEP.IndexOf(oeDireccionEP))
                         oe.oeDireccion.IdTipoVia = oeDireccionEP.oeDireccion.IdTipoVia
                         oe.oeDireccion.Via = oeDireccionEP.oeDireccion.Via
@@ -1461,12 +1477,14 @@ Public Class frm_Persona
                     End If
                 Else
                     oeDireccionEP.Equivale = "1"
+                    oeDireccionEP.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If Not leDireccionEP.Contains(oeDireccionEP) Then
                         oeDireccionEP.TipoOperacion = "C"
                         If griDireccion.Rows.Count = 0 Then CargarDireccion(leDireccionEP) : oeDireccionEP.Principal = 1
                         leDireccionEP.Add(oeDireccionEP)
                     Else
                         Dim oe As New e_Direccion_EmpresaPersona
+                        oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oe = leDireccionEP.Item(leDireccionEP.IndexOf(oeDireccionEP))
                         oe.oeDireccion.IdTipoVia = oeDireccionEP.oeDireccion.IdTipoVia
                         oe.oeDireccion.Via = oeDireccionEP.oeDireccion.Via
@@ -1934,6 +1952,7 @@ Public Class frm_Persona
             Dim _idEma As String = String.Empty
             RecogerDatosEma()
             oeTelefono.Equivale = 1
+            oeEmail.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not leEmail.Contains(oeEmail) Then
                 oeEmail.Equivale = 2
                 If Not leEmail.Contains(oeEmail) Then
@@ -1951,6 +1970,7 @@ Public Class frm_Persona
                 End If
             Else
                 oeEmaAux = New e_Email
+                oeEmaAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeEmaAux = leEmail.Item(leEmail.IndexOf(oeEmail))
                 _idEma = oeEmaAux.Id
                 oeEmail.Equivale = 2
@@ -2231,6 +2251,7 @@ Public Class frm_Persona
                                                      Nothing, .Cells("FechaNacimiento").Value, .Cells("Dni").Value, .Cells("Activo").Value)
                     opersona.TipoOperacion = "C"
                     opersona.UsuarioCreacion = .Cells("UsuarioCreacion").Value ' gUsuarioSGI.Id
+                    oePersona.PrefijoID = gs_PrefijoIdSucursal '@0001
                     listaContactos.Add(opersona)
                 End If
             End With

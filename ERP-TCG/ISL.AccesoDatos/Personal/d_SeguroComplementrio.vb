@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -81,9 +89,8 @@ Public Class d_SeguroComplementrio
 
     Public Function Guardar(ByVal oeSeguroComplementario As e_SeguroComplementario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguroComplementario
-                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroComplementario_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroComplementario_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTrabajador _
                         , .AportaSCTR _
@@ -97,7 +104,7 @@ Public Class d_SeguroComplementrio
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

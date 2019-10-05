@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,9 +85,8 @@ Public Class d_Contratos
 
     Public Function Guardar(ByVal oeContratos As e_Contratos) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeContratos
-                sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTrabajador _
                         , .IdOcupacion _
@@ -112,13 +119,12 @@ Public Class d_Contratos
 
     Public Function Clonar(ByVal oeContrato1 As e_Contratos, ByVal oeContrato2 As e_Contratos) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 With oeContrato1
                     sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", "V", "", .Id)
                 End With
                 With oeContrato2
-                    sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("PER.Isp_Contratos_IAE", .TipoOperacion, .PrefijoID,
                             .Id, .IdTrabajador, .IdOcupacion, .IdEstado, .IdTipoContrato, .Sueldo, .FechaInicio _
                             , .FechaTermino, .Vigencia, .Activo, .FechaCreacion, .UsuarioCreacion, .FechaCese _
                             , .Glosa, .IdModalidadContrato, .RegimenLaboral, .JornadaTrabajoMax, .JornadaAcumulativo _

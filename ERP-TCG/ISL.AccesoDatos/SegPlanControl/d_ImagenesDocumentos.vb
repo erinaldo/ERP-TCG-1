@@ -143,7 +143,7 @@ Public Class d_ImagenesDocumentos
             If listaAux.Count = 1 Then
                 oeImagenesDocumentosVehiculos = listaAux(0)
             End If
-
+            oeImagenesDocumentosVehiculos.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
             oeImagenesDocumentosVehiculos.TipoOperacion = "I"
             oeImagenesDocumentosVehiculos.IdTrabajador = oeDocumentoVehicular.Id
             oeImagenesDocumentosVehiculos.NroDocumento = oeDocumentoVehicular.Numero
@@ -154,7 +154,6 @@ Public Class d_ImagenesDocumentos
             oeImagenesDocumentosVehiculos.UsuarioCreacion = oeDocumentoVehicular.UsuarioCreacion
             oeImagenesDocumentosVehiculos.IdTipoDocumento = oeDocumentoVehicular.IdTipoDocumento
             oeImagenesDocumentosVehiculos.Activo = True
-            oeImagenesDocumentosVehiculos.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
             Return Guardar(oeImagenesDocumentosVehiculos)
         Catch ex As Exception
             Throw ex

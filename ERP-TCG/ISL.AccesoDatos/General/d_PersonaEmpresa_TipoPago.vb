@@ -80,16 +80,15 @@ Public Class d_PersonaEmpresa_TipoPago
 
     Public Function Guardar(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As Boolean
         Try
-
             With oePersonaEmpresa_TipoPago
-                sqlhelper.ExecuteNonQuery("STD.Isp_PersonaEmpresa_TipoPago_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_PersonaEmpresa_TipoPago_IAE", .TipoOperacion,
                         .Id _
                         , .IdClienteProveedor _
                         , .IndClienteProveedor _
                         , .IdTipoPago _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

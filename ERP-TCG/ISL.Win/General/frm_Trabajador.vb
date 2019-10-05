@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -1107,6 +1115,7 @@ Public Class frm_Trabajador
                     End If
                 End If
             End If
+            oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTrabajador.Guardar(oeTrabajador) Then
                 mensajeEmergente.Confirmacion("El trabajador " & oeTrabajador.oePersona.NombreCompleto & ", ha sido grabado satisfactoriamente", True)
                 If bandForm = "" Then
@@ -1379,6 +1388,7 @@ Public Class frm_Trabajador
             oeOcupacionTrab.FechaCese = FecFechaCese.Value
             oeOcupacionTrab.Principal = IIf(verPrincipal.Checked, 1, 0)
             oeOcupacionTrab.IndRuta = cboIndRuta.Value
+            oeOcupacionTrab.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeOcupacionTrab.TipoOperacion = "I" Then
                 If griOcupacion.Rows.Count = 0 Then oeOcupacionTrab.Principal = 1
                 loOcupacionTrabajador.Add(oeOcupacionTrab)
@@ -2097,6 +2107,7 @@ Public Class frm_Trabajador
                                     Throw New Exception("Ingrese un Clave Correcta")
                                 Else
                                     oeTrabajador.TipoOperacion = "A" : oeTrabajador.IndEstado = 0 : oeTrabajador.FechaCreacion = Date.Now
+                                    oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     If olTrabajador.Guardar(oeTrabajador) Then Consultar(True)
                                 End If
                             End If

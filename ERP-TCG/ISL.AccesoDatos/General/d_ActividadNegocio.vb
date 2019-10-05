@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -28,7 +36,6 @@ Public Class d_ActividadNegocio
     End Function
 
     Public Function Obtener(ByVal oeActividadNegocio As e_ActividadNegocio) As e_ActividadNegocio
-
         Try
             Dim ds As DataSet
             ds = SqlHelper.ExecuteDataset("STD.Isp_ActividadNegocio_Listar", "", oeActividadNegocio.Id)
@@ -83,10 +90,8 @@ Public Class d_ActividadNegocio
 
     Public Function Guardar(ByVal oeActividadNegocio As e_ActividadNegocio) As Boolean
         Try
-
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeActividadNegocio
-                SqlHelper.ExecuteNonQuery("STD.Isp_ActividadNegocio_IAE", .TipoOperacion, _
+                SqlHelper.ExecuteNonQuery("STD.Isp_ActividadNegocio_IAE", .TipoOperacion,
                         .Id _
                         , .IdProcesoNegocio _
                         , .Codigo _
@@ -94,7 +99,7 @@ Public Class d_ActividadNegocio
                         , .Abreviatura _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -112,18 +120,18 @@ Public Class d_TipoDocumento
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de 
     ''' tipo de documento es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeTipoDocumento As e_TipoDocumento) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             Using TransScope As New TransactionScope()
                 Dim id As String = ""
                 With oeTipoDocumento
-                    id = sqlhelper.ExecuteScalar("STD.Isp_TipoDocumento_IAE", .TipoOperacion, _
-                    .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
+                    id = sqlhelper.ExecuteScalar("STD.Isp_TipoDocumento_IAE", .TipoOperacion,
+                    .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura,
                      .Activo)
                 End With
                 If oeTipoDocumento.leDocumentoImpuesto IsNot Nothing Then
                     For Each oeDocumentoImpuesto As e_DocumentoImpuesto In oeTipoDocumento.leDocumentoImpuesto
                         oeDocumentoImpuesto.IdTipoDocumento = id
+                        oeDocumentoImpuesto.PrefijoID = oeTipoDocumento.PrefijoID '@0001
                         odDocumentoImpuesto.Guardar(oeDocumentoImpuesto)
                     Next
                 End If

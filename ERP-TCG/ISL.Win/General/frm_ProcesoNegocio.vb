@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -374,6 +382,7 @@ Public Class frm_ProcesoNegocio
             LlenarActividadNegocio()
             oeProcesoNegocio.Seguridad = cbSeguridad.Checked
             oeProcesoNegocio.UsuarioCreacion = gUsuarioSGI.Id
+            oeProcesoNegocio.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olProcesoNegocio.Guardar(oeProcesoNegocio) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, ficProcesoNegocio, 2)
@@ -552,6 +561,7 @@ Public Class frm_ProcesoNegocio
                 oeActividadNegocio.Codigo = fila.Cells("Codigo").Value
                 oeActividadNegocio.Abreviatura = fila.Cells("Abreviatura").Value
                 oeActividadNegocio.Activo = fila.Cells("Activo").Value
+                oeActividadNegocio.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeProcesoNegocio.leActividadNegocio.Add(oeActividadNegocio)
                 oeActividadNegocio = Nothing
             Next

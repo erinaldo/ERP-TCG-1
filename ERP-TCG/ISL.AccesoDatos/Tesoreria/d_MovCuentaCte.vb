@@ -1,12 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_MovCuentaCte
 
     Private sqlhelper As New SqlHelper
-
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
 
     Dim oeCuentaCte As New e_CuentaCorriente
     Dim odCuentaCte As New d_CuentaCorriente
@@ -111,10 +117,9 @@ Public Class d_MovCuentaCte
 
     Public Function Guardar(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeMovCuentaCte
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID,
                       .Id _
                       , .IdCuentaCorriente _
                       , .Fecha _
@@ -128,7 +133,7 @@ Public Class d_MovCuentaCte
                       , .UsuarioCreacion _
                       , .Activo _
                       , .FechaLiquida _
-                      , .UsuarioLiquida _
+                      , .UsuarioLiquida
                   ).ToString.Split("_")
             End With
             Return True
@@ -139,26 +144,28 @@ Public Class d_MovCuentaCte
 
     Public Function GuardarMovCtaCte(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odTransferencia As New d_Transferencia
             Dim odMovimientoDoc As New d_MovimientoDocumento
             Dim stResultado() As String
             With oeMovCuentaCte
 
                 If oeMovCuentaCte.TipoOperacion = "I" Then
+                    .oeTransferencia.PrefijoID = oeMovCuentaCte.PrefijoID '@0001
                     If oeMovCuentaCte.TipoReferencia = "0" Then
                         odTransferencia.Guardar(.oeTransferencia)
                         .IdReferencia = .oeTransferencia.Id
                     Else
+                        .oeMovimientoDoc.PrefijoID = oeMovCuentaCte.PrefijoID '@0001
+                        .oeAsiento.PrefijoID = oeMovCuentaCte.PrefijoID '@0001
                         If .Referencia <> "VALE" And .Referencia <> "SUSTENTO CONTABLE" Then
                             odMovimientoDoc.GuardarCompra(.oeMovimientoDoc, .oeAsiento)
                             .IdReferencia = .oeMovimientoDoc.Id
                         End If
-                        
+
                     End If
                 End If
 
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_MovCuentaCte_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCuentaCorriente _
                         , .Fecha _
@@ -172,10 +179,12 @@ Public Class d_MovCuentaCte
                         , .UsuarioCreacion _
                         , .Activo _
                         , .FechaLiquida _
-                        , .UsuarioLiquida _
+                        , .UsuarioLiquida
                     ).ToString.Split("_")
 
                 If Not .oeMovCuentaCte_Asiento Is Nothing Then
+                    .oeMovCuentaCte_Asiento.PrefijoID = oeMovCuentaCte.PrefijoID '@0001
+                    .oeAsiento.PrefijoID = oeMovCuentaCte.PrefijoID '@0001
                     If .oeMovCuentaCte_Asiento.TipoOperacion = "I" Then
                         .oeMovCuentaCte_Asiento.IdMovCuentaCte = stResultado(0)
                         odMovCtaCte_Asiento.Guardar(.oeMovCuentaCte_Asiento, .oeAsiento)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -74,10 +82,9 @@ Public Class d_Servicio
     Public Function Guardar(ByVal oeServicio As e_Servicio) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeServicio
-                    stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Servicio_IAE]", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Servicio_IAE]", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdCategoriaServicio _
                             , .Codigo _
@@ -90,6 +97,7 @@ Public Class d_Servicio
                     For Each ServicioCuentaContable As e_ServicioCuentaContable In oeServicio.ListaServicioCuentaContable
                         ServicioCuentaContable.Id = ""
                         ServicioCuentaContable.IdServicio = stResultado(0)
+                        ServicioCuentaContable.PrefijoID = oeServicio.PrefijoID '@0001
                         odServicioCuentaContable.Guardar(ServicioCuentaContable)
                     Next
                 End With

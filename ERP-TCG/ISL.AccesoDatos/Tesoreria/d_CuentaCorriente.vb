@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_CuentaCorriente
 
@@ -82,12 +90,11 @@ Public Class d_CuentaCorriente
 
     Public Function Guardar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim oeSaldoCtaCte As New e_SaldoCtaCorriente
             Dim odSaldoCtaCte As New d_SaldoCtaCorriente
             Dim id As String
             With oeCuentaCorriente
-                id = sqlhelper.ExecuteScalar("TES.Isp_CuentaCorriente_IAE", .TipoOperacion _
+                id = sqlhelper.ExecuteScalar("TES.Isp_CuentaCorriente_IAE", .Tipooperacion _
                                          , "A" _
                                          , .Id _
                                          , .Codigo _
@@ -113,10 +120,11 @@ Public Class d_CuentaCorriente
                         oeSaldoCtaCte.Monto = 0
                         oeSaldoCtaCte.TipoCuenta = .Tipo
                         oeSaldoCtaCte.UsuarioCreacion = .Usuario
+                        oeSaldoCtaCte.PrefijoID = oeCuentaCorriente.PrefijoID '@0001
                         odSaldoCtaCte.Guardar(oeSaldoCtaCte)
                     End If
                 End If
-            End With           
+            End With
             Return True
         Catch ex As Exception
             Throw ex

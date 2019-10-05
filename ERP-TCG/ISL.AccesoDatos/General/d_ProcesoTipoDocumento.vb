@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -122,11 +130,9 @@ Public Class d_ProcesoTipoDocumento
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del 
     ''' registro de tipo de documento es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
         Try
             With oeProcesoTipoDocumento
-                sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoTipoDocumento_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoTipoDocumento_IAE", .TipoOperacion,
                 .PrefijoID, .Id, .IdTipoDocumento, .IdProceso, .Activo)
             End With
             Return True

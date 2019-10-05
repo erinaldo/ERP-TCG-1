@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 ''' <summary>
 ''' Clase que gestina los vehiculos de la empresa.
@@ -96,12 +104,11 @@ Public Class d_Vehiculo
 
     Public Function Obtener(oeVehiculo As e_Vehiculo) As e_Vehiculo
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[STD].[Isp_Vehiculo_Listar]", _
-                                          oeVehiculo.TipoOperacion, _
-                                          oeVehiculo.Id, _
-                                          oeVehiculo.Placa, _
+            ds = sqlhelper.ExecuteDataset("[STD].[Isp_Vehiculo_Listar]",
+                                          oeVehiculo.TipoOperacion,
+                                          oeVehiculo.Id,
+                                          oeVehiculo.Placa,
                                           oeVehiculo.Codigo)
 
             If ds.Tables(0).Rows.Count > 0 Then
@@ -117,16 +124,15 @@ Public Class d_Vehiculo
 
     Public Function Listar(oeVehiculo As e_Vehiculo) As List(Of e_Vehiculo)
         Try
-            sqlhelper = New SqlHelper
             Dim ldVehiculo As New List(Of e_Vehiculo)
             Dim ds As DataSet
             With oeVehiculo
-                ds = sqlhelper.ExecuteDataset("[STD].[Isp_Vehiculo_Listar]", _
-                                              .TipoOperacion, .Id, .Placa, .Codigo, _
-                                              .Motriz, .IdTipoVehiculo, .IdMarca, _
-                                              .IdModelo, .IdModeloFuncional, _
-                                              .IdEmpresaPropietaria, .IdMaterialCombustible, _
-                                              .IdConfiguracionVehicularMTC, .AnioFabricacion, _
+                ds = sqlhelper.ExecuteDataset("[STD].[Isp_Vehiculo_Listar]",
+                                              .TipoOperacion, .Id, .Placa, .Codigo,
+                                              .Motriz, .IdTipoVehiculo, .IdMarca,
+                                              .IdModelo, .IdModeloFuncional,
+                                              .IdEmpresaPropietaria, .IdMaterialCombustible,
+                                              .IdConfiguracionVehicularMTC, .AnioFabricacion,
                                               .NroSerieMotor, .NroSerieChasis, ._Periodo, ._IndCompraVenta, .IdFlota)
             End With
             oeVehiculo = Nothing
@@ -145,7 +151,7 @@ Public Class d_Vehiculo
     Public Function Guardar(oeVehiculo As e_Vehiculo) As Boolean
         Try
             Dim stResultado() As String
-            sqlhelper = New SqlHelper
+
             odDocumentoVehicular = New d_DocumentoVehicular
             odPlaca = New d_Placa
             odDispositivo = New d_Dispositivo
@@ -154,7 +160,6 @@ Public Class d_Vehiculo
             odVehiculoEstado = New d_VehiculoEstado
             odVehiculoTarjeta = New d_VehiculoTarjeta
 
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeVehiculo
                     stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Vehiculo_IAE]", _
@@ -224,6 +229,7 @@ Public Class d_Vehiculo
                     'Placa
                     For Each Placa As e_Placa In .ListHistorialPlaca
                         With Placa
+                            .PrefijoID = oeVehiculo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odPlaca.Eliminar(Placa)
                             Else
@@ -236,6 +242,7 @@ Public Class d_Vehiculo
                     'Estados
                     For Each Estado As e_VehiculoEstado In .ListVehiculoEstados
                         With Estado
+                            .PrefijoID = oeVehiculo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odVehiculoEstado.Eliminar(Estado)
                             Else
@@ -248,6 +255,7 @@ Public Class d_Vehiculo
                     'Dispositivo
                     For Each Dispositivo As e_Dispositivo In .ListDispositivo
                         With Dispositivo
+                            .PrefijoID = oeVehiculo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odDispositivo.Eliminar(Dispositivo)
                             Else
@@ -260,6 +268,7 @@ Public Class d_Vehiculo
                     'Bonificacion
                     For Each Bonificacion As e_Bonificacion In .ListBonificacion
                         With Bonificacion
+                            .PrefijoID = oeVehiculo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odBonificacion.Eliminar(Bonificacion)
                             Else
@@ -272,6 +281,7 @@ Public Class d_Vehiculo
                     'Flota
                     For Each Flota As e_AsignacionFlota In .ListAsignacionFlota
                         With Flota
+                            .PrefijoID = oeVehiculo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odAsignacionFlota.Eliminar(Flota)
                             Else
@@ -283,6 +293,7 @@ Public Class d_Vehiculo
                     Next
                     'Tarjetas
                     For Each Tarjeta As e_VehiculoTarjeta In .ListVehiculoTarjeta
+                        Tarjeta.PrefijoID = oeVehiculo.PrefijoID '@0001
                         If Tarjeta.TipoOperacion = "E" Then
                             odVehiculoTarjeta.Eliminar(Tarjeta)
                         Else

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Provincia
@@ -307,6 +315,7 @@ Public Class frm_Provincia
 
     Private Function GuardarRegistro() As Boolean
         Try
+            oeProvincia.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olProvincia.Guardar(oeProvincia) Then
                 MostrarTabs(0, ficProvincia, 2)
                 Consultar(True)

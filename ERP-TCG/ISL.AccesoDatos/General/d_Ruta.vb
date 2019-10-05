@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -111,7 +119,6 @@ Public Class d_Ruta
         Dim stResultado() As String
         Try
             odRutaPeaje = New d_RutaPeaje
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeRuta
                     stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Ruta_IAE]", _
@@ -135,6 +142,7 @@ Public Class d_Ruta
                 If oeRuta.oeTiempoCiclo.Count > 0 Then
                     For Each TiempoCiclo As e_TiempoCiclo In oeRuta.oeTiempoCiclo
                         TiempoCiclo.IdRuta = stResultado(0)
+                        TiempoCiclo.PrefijoID = oeRuta.PrefijoID '@0001
                         odTiempoCiclo.Guardar(TiempoCiclo)
                     Next
                 End If
@@ -142,6 +150,7 @@ Public Class d_Ruta
                 If oeRuta.oeFlete.Count > 0 Then
                     For Each Flete As e_Flete In oeRuta.oeFlete
                         Flete.IdRuta = stResultado(0)
+                        Flete.PrefijoID = oeRuta.PrefijoID '@0001
                         odFlte.Guardar(Flete)
                     Next
                 End If
@@ -149,6 +158,7 @@ Public Class d_Ruta
                 If oeRuta.oeBolsaViaje.Count > 0 Then
                     For Each BolsaViaje As e_BolsaViaje In oeRuta.oeBolsaViaje
                         BolsaViaje.IdRuta = stResultado(0)
+                        BolsaViaje.PrefijoID = oeRuta.PrefijoID '@0001
                         odBolsaViaje.Guardar(BolsaViaje)
                     Next
                 End If
@@ -157,6 +167,7 @@ Public Class d_Ruta
                     For Each DistanciaZona As e_DistanciaZona In oeRuta.oeDistanciaZona
                         DistanciaZona.TipoOperacion = "I"
                         DistanciaZona.IdRuta = stResultado(0)
+                        DistanciaZona.PrefijoID = oeRuta.PrefijoID '@0001
                         odDistanciaZona.Guardar(DistanciaZona)
                     Next
                 End If
@@ -165,6 +176,7 @@ Public Class d_Ruta
                     For Each monrut As e_MontoRuta In oeRuta.loMontoRuta
                         If monrut.TipoOperacion = "" Then monrut.TipoOperacion = "A"
                         monrut.IdRuta = stResultado(0)
+                        monrut.PrefijoID = oeRuta.PrefijoID '@0001
                         odMontoRuta.Guardar(monrut)
                     Next
                 End If
@@ -172,11 +184,13 @@ Public Class d_Ruta
                 If oeRuta.loZonaD2.Count > 0 Then
                     For Each ZonaD2 As e_ZonaCombustible In oeRuta.loZonaD2
                         ZonaD2.IdRuta = stResultado(0)
+                        ZonaD2.PrefijoID = oeRuta.PrefijoID '@0001
                         odZonaCombustible.Guardar(ZonaD2)
                     Next
                 End If
                 For Each RutaPeaje As e_RutaPeaje In oeRuta.ListaRutaPeaje
                     With RutaPeaje
+                        .PrefijoID = oeRuta.PrefijoID '@0001
                         If .TipoOperacion = "E" Then
                             odRutaPeaje.Eliminar(RutaPeaje)
                         Else

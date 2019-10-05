@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -110,13 +118,11 @@ Public Class d_ProcesoNegocio
     ''' proceso de negocio es positiva= true sino false 
     ''' Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeProcesoNegocio As e_ProcesoNegocio) As Boolean
-
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeProcesoNegocio
-                    id = sqlhelper.ExecuteScalar("STD.Isp_ProcesoNegocio_IAE", .TipoOperacion, _
+                    id = sqlhelper.ExecuteScalar("STD.Isp_ProcesoNegocio_IAE", .TipoOperacion,
                       .Id _
                       , .Codigo _
                       , .Nombre _
@@ -125,13 +131,14 @@ Public Class d_ProcesoNegocio
                       , .Seguridad _
                       , .Activo _
                       , .UsuarioCreacion _
-                      , .PrefijoID _
+                      , .PrefijoID
                   )
                 End With
 
                 If Not oeProcesoNegocio.leActividadNegocio Is Nothing Then
                     For Each oeActividadNegocio As e_ActividadNegocio In oeProcesoNegocio.leActividadNegocio
                         oeActividadNegocio.IdProcesoNegocio = id
+                        oeActividadNegocio.PrefijoID = oeProcesoNegocio.PrefijoID '@0001
                         odActividadNegocio.Guardar(oeActividadNegocio)
                     Next
                 End If

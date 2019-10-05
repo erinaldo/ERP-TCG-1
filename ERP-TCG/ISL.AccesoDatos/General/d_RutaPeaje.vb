@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_RutaPeaje
     Private sqlhelper As SqlHelper
@@ -25,10 +33,9 @@ Public Class d_RutaPeaje
 
     Public Function Obtener(oeRutaPeaje As e_RutaPeaje) As e_RutaPeaje
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_RutaPeaje_Listar", _
-                                          "GEN", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_RutaPeaje_Listar",
+                                          "GEN",
                                           oeRutaPeaje.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeRutaPeaje = Cargar(ds.Tables(0).Rows(0))
@@ -43,11 +50,10 @@ Public Class d_RutaPeaje
 
     Public Function Listar(oeRutaPeaje As e_RutaPeaje) As List(Of e_RutaPeaje)
         Try
-            sqlhelper = New SqlHelper
             Dim ldRutaPeaje As New List(Of e_RutaPeaje)
             Dim ds As DataSet
             With oeRutaPeaje
-                ds = sqlhelper.ExecuteDataset("STD.Isp_RutaPeaje_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_RutaPeaje_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdRuta _
@@ -68,10 +74,8 @@ Public Class d_RutaPeaje
 
     Public Function Guardar(ByVal oeRutaPeaje As e_RutaPeaje) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRutaPeaje
-                sqlhelper.ExecuteNonQuery("STD.Isp_RutaPeaje_IAE", _
+                sqlhelper.ExecuteNonQuery("STD.Isp_RutaPeaje_IAE",
                                           .TipoOperacion _
                                             , .PrefijoID _
                                             , .Id _
@@ -89,9 +93,8 @@ Public Class d_RutaPeaje
 
     Public Function Eliminar(ByVal oeRutaPeaje As e_RutaPeaje) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeRutaPeaje
-                sqlhelper.ExecuteNonQuery("STD.Isp_RutaPeaje_IAE", _
+                sqlhelper.ExecuteNonQuery("STD.Isp_RutaPeaje_IAE",
                                           "E" _
                                             , "" _
                                             , .Id _

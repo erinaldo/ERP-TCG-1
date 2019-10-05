@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -206,6 +214,7 @@ Public Class frm_TipoVehiculo
                 .IndTipoVehiculo = IIf(verIndTipoVehiculo.Checked, 1, 0)
                 .IndSunarp = IIf(verIndSunarp.Checked, 1, 0)
             End With
+            oeTipoVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTipoVehiculo.Guardar(oeTipoVehiculo) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, tcTipoVehiculo, 2)
@@ -476,6 +485,7 @@ Public Class frm_TipoVehiculo
                         .IndTipoVehiculo = griLista.ActiveRow.Cells("IndTipoVehiculo").Value
                         .IndSunarp = griLista.ActiveRow.Cells("IndSunarp").Value
                     End With
+                    oeTipoVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olTipoVehiculo.Guardar(oeTipoVehiculo) Then
                         griLista.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                     End If
