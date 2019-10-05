@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -102,7 +110,6 @@ Public Class d_Orden
 
     Public Function Guardar(ByVal oeOrden As e_Orden) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeOrden
@@ -131,6 +138,7 @@ Public Class d_Orden
                     For Each Detalle As e_OrdenMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = .PrefijoID '@0001
                         odOrdenMaterial.Guardar(Detalle)
 
                         If .lstDetOrdenNeu.Count > 0 Then
@@ -143,6 +151,7 @@ Public Class d_Orden
                     Next
                     For Each Inventario As e_Inventario In .lstInventario
                         Inventario.IdOrden = stResultado(0)
+                        Inventario.PrefijoID = .PrefijoID '@0001
                         odInventario.GuardarInventario(Inventario)
                     Next
                     'Para Registro de Orden de Ingreso x Asignacion
@@ -161,6 +170,7 @@ Public Class d_Orden
                         oeOrdenDoc.IdOrden = stResultado(0)
                         oeOrdenDoc.UsuarioCreacion = oeOrden.UsuarioCreacion
                         oeOrdenDoc.Activo = True
+                        oeOrdenDoc.PrefijoID = .PrefijoID '@0001
                         If Not odOrdenDoc.Guardar(oeOrdenDoc) Then Return False
                     End If
                     'Insertar DetalleOrdenNeumatico
@@ -177,8 +187,10 @@ Public Class d_Orden
                                 Else
                                     oeDetON.oeNeumatico.TipoOperacion = "I"
                                 End If
+                                oeDetON.oeNeumatico.PrefijoID = .PrefijoID '@0001
                                 odNeumatico.PreGuardar(oeDetON.oeNeumatico)
                                 oeDetON.IdNeumatico = oeDetON.oeNeumatico.Id
+                                oeDetON.PrefijoID = .PrefijoID '@0001
                                 odDetalleOrdenNeu.Guardar(oeDetON)
                             Next
                         End If

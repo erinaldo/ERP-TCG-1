@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_MaterialAlmacen
@@ -89,20 +97,19 @@ Public Class d_MaterialAlmacen
     End Function
 
     Public Function GuardarDetalle(ByVal oeMaterialAlmacen As e_MaterialAlmacen) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeMaterialAlmacen
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .IdMaterial, _
-                                          .IdAlmacen, _
-                                          .UsuarioCreacion, _
-                                          .Activo, _
-                                          .StockMinimo, _
-                                          .StockMaximo, _
-                                          .IdZona, _
-                                          .IdUnidad, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .IdMaterial,
+                                          .IdAlmacen,
+                                          .UsuarioCreacion,
+                                          .Activo,
+                                          .StockMinimo,
+                                          .StockMaximo,
+                                          .IdZona,
+                                          .IdUnidad,
                                           .TipoReferencia)
             End With
             Return True

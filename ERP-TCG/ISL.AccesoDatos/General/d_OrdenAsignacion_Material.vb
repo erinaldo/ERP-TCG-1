@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -79,10 +87,9 @@ Public Class d_OrdenAsignacion_Material
 
     Public Function Guardar(ByVal oeOrdenAsignacion_Material As e_OrdenAsignacion_Material) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeOrdenAsignacion_Material
-                    sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_Material_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_Material_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdMaterial _
                             , .IdOrdenAsignacion _

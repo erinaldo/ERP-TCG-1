@@ -99,7 +99,6 @@ Public Class d_RequerimientoMaterial
     Public Function Guardar(ByVal oeRequerimientoMaterial As e_RequerimientoMaterial) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odSancion As New d_Sancion
             With oeRequerimientoMaterial
                 stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_Requerimiento_Material_IAE]" _
@@ -122,6 +121,7 @@ Public Class d_RequerimientoMaterial
                 If .lstDetalleMaterialAsignacion.Count > 0 AndAlso .Tipooperacion <> "A" Then
                     For Each fila As e_DetalleMaterialAsignacion In .lstDetalleMaterialAsignacion
                         fila.TipoOperacion = "I" : fila.IdRequerimientoMaterial = stResultado(0) : fila.Activo = True
+                        fila.PrefijoID = oeRequerimientoMaterial.PrefijoID '@0001
                         olDetalleMatAsig.Guardar(fila)
                     Next
                 End If
@@ -132,6 +132,7 @@ Public Class d_RequerimientoMaterial
                         For Each control As e_ControlEntregaMaterial In .loControlEntregaMaterial
                             control.TipoOperacion = "I"
                             control.IdRequerimientoMaterial = stResultado(0)
+                            control.PrefijoID = oeRequerimientoMaterial.PrefijoID '@0001
                             olCtrlEntreMat.Guardar(control)
                         Next
                     End If
@@ -141,10 +142,13 @@ Public Class d_RequerimientoMaterial
                     .oeSancion.oeReqOASan.TipoOperacion = "I"
                     .oeSancion.oeReqOASan.IdRequerimientoMaterial = stResultado(0)
                     .oeSancion.oeReqOASan.IdOrdenAsignacionMaterial = .IdOrdenAsignacionMaterial
+                    .oeSancion.oeReqOASan.PrefijoID = oeRequerimientoMaterial.PrefijoID '@0001
+                    .oeSancion.PrefijoID = oeRequerimientoMaterial.PrefijoID '@0001
                     odSancion.Guardar(.oeSancion)
                 End If
                 If .Tipooperacion = "D" And .oeSancion.Id <> "" Then
                     .oeSancion.TipoOperacion = "P"
+                    .oeSancion.PrefijoID = oeRequerimientoMaterial.PrefijoID '@0001
                     odSancion.Guardar(.oeSancion)
                 End If
             End With

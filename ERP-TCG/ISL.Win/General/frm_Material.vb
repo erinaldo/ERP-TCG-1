@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Material
@@ -535,6 +543,7 @@ Public Class frm_Material
                         Exit For
                     End If
                 Next
+                oeMaterialAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If add Then
                     lstMaterialAlmacenes.Add(oeMaterialAlmacen)
                     grid_Almacenes.DataBind()
@@ -825,6 +834,7 @@ Public Class frm_Material
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .IndActivoFijo = IIf(verActivoFijo.Checked, 1, 0)
             End With
+            oeMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMaterial.Guardar(oeMaterial) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 If oeMaterial.TipoOperacion = "I" Then
@@ -945,6 +955,7 @@ Public Class frm_Material
             oeCaracteristicaMaterial.UsuarioCreacion = gUsuarioSGI.Id
             oeCaracteristicaMaterial.FechaCreacion = ObtenerFechaServidor()
             oeCaracteristicaMaterial.TipoOperacion = "I"
+            oeCaracteristicaMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
             loCaracteristicaMaterial.Add(oeCaracteristicaMaterial)
             griCaracteristicaMaterial.DataBind()
             cboCaracteristicaEspecial.SelectedIndex = -1
@@ -1219,6 +1230,7 @@ Public Class frm_Material
                     oeCodBarras.IndPrincipal = True
                 End If
                 oeCodBarras.CodigoBarras = txtCodigoBarra.Text
+                oeCodBarras.PrefijoID = gs_PrefijoIdSucursal '@0001
                 MaterialCodBarras.Add(oeCodBarras)
                 griListaCodBarras.DataBind()
                 txtCodigoBarra.Text = String.Empty

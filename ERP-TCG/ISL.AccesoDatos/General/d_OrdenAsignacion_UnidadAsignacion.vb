@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -37,13 +45,11 @@ Public Class d_OrdenAsignacion_UnidadAsignacion
     End Function
 
     Public Function Obtener(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As e_OrdenAsignacion_UnidadAsignacion
-
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("STD.Isp_OrdenAsignacion_UnidadAsignacion_Listar", "" _
                                           , oeOrdenAsignacion_UnidadAsignacion.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeOrdenAsignacion_UnidadAsignacion = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeOrdenAsignacion_UnidadAsignacion
@@ -54,7 +60,6 @@ Public Class d_OrdenAsignacion_UnidadAsignacion
 
     Public Function Listar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As List(Of e_OrdenAsignacion_UnidadAsignacion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldOrdenAsignacion_UnidadAsignacion As New List(Of e_OrdenAsignacion_UnidadAsignacion)
             Dim ds As DataSet
             With oeOrdenAsignacion_UnidadAsignacion
@@ -66,7 +71,7 @@ Public Class d_OrdenAsignacion_UnidadAsignacion
                                               , .IdUnidadAsignacion _
                                               , .Activo _
                                               , .UsuarioCreacion _
-                                              , .FechaCreacion _
+                                              , .FechaCreacion
                                               )
             End With
             oeOrdenAsignacion_UnidadAsignacion = Nothing
@@ -84,7 +89,6 @@ Public Class d_OrdenAsignacion_UnidadAsignacion
 
     Public Function ListarTodo(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As List(Of e_OrdenAsignacion_UnidadAsignacion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldOrdenAsignacion_UnidadAsignacion As New List(Of e_OrdenAsignacion_UnidadAsignacion)
             Dim ds As DataSet
             With oeOrdenAsignacion_UnidadAsignacion
@@ -106,15 +110,14 @@ Public Class d_OrdenAsignacion_UnidadAsignacion
 
     Public Function Guardar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenAsignacion_UnidadAsignacion
-                sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_UnidadAsignacion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_OrdenAsignacion_UnidadAsignacion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOrdenAsignacion _
                         , .IndUnidadAsignacion _
                         , .IdUnidadAsignacion _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

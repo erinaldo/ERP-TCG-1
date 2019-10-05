@@ -1,4 +1,11 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
@@ -131,15 +138,14 @@ Public Class d_OrdenAsignacion
 
     Public Function Guardar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odReqMat As New d_RequerimientoMaterial
             Dim odReq As New d_Requerimiento
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeOrdenAsignacion
-                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_OrdenAsignacion_IAE", _
-                                                          .TipoOperacion, _
-                                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_OrdenAsignacion_IAE",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                                                           .Id _
                                                           , .Fecha _
                                                           , .NroOA _
@@ -155,16 +161,20 @@ Public Class d_OrdenAsignacion
                     For Each Detalle As e_OrdenAsignacion_UnidadAsignacion In .lstUnidadAsignada
                         Detalle.IdOrdenAsignacion = stResultado(0) : Detalle.UsuarioCreacion = .IdUsuario
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenAsignacion.PrefijoID '@0001
                         odUnidadAsignada.Guardar(Detalle)
                     Next
 
                     Dim oeOA_MA As New e_OrdenAsignacion_Material
+                    oeOA_MA.PrefijoID = oeOrdenAsignacion.PrefijoID '@0001
                     oeOA_MA.Id = "" : oeOA_MA.IdOrdenAsignacion = stResultado(0)
                     odUnidadAsignadaMat.Eliminar(oeOA_MA)
                     For Each item As e_OrdenAsignacion_Material In .lstUnidadAsignadaMat
                         item.IdOrdenAsignacion = stResultado(0) : item.UsuarioCreacion = .IdUsuario
                         item.TipoOperacion = IIf(String.IsNullOrEmpty(item.Id), "I", .TipoOperacion)
+                        item.PrefijoID = oeOrdenAsignacion.PrefijoID '@0001
                         odUnidadAsignadaMat.Guardar(item)
+                        item.oeReqMaterial.PrefijoID = oeOrdenAsignacion.PrefijoID '@0001
                         If Not item.oeReqMaterial Is Nothing Then
                             If Not String.IsNullOrEmpty(item.oeReqMaterial.Tipooperacion) Then odReqMat.Guardar(item.oeReqMaterial)
                         End If
@@ -172,6 +182,7 @@ Public Class d_OrdenAsignacion
 
                     For Each oerq In .lstRequerimiento
                         oerq.TipoOperacion = "B"
+                        oerq.PrefijoID = oeOrdenAsignacion.PrefijoID '@0001
                         odReq.Guardar(oerq)
                     Next
 

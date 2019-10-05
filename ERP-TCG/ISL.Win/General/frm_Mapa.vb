@@ -1,10 +1,18 @@
-﻿Imports System.Text
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports System.Text
 Imports System.Data.SqlClient
 Imports ISL.EntidadesWCF
 
 Public Class frm_Mapa
     Inherits ISL.Win.frm_MenuPadre
-    Dim conexion As New SqlConnection("Data Source=10.1.0.20;Initial Catalog=GPS;Persist Security Info=True;User ID=isl;Password=induamerica")
+    Dim conexion As New SqlConnection("Data Source=127.0.0.1;Initial Catalog=GPS;Persist Security Info=True;User ID=ERP;Password=Sistem@s789")
 
     Public Sub New()
 

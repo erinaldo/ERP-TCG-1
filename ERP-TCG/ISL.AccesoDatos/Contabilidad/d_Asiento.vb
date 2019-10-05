@@ -1070,10 +1070,9 @@ Public Class d_Asiento
         Try
             Dim odAsientoMov As New d_AsientoMovimiento, odAsientoMovDoc As New d_Asiento_MovDoc, odAsientoReferencia As d_AsientoReferencia, odLiquidacionTrabjador As New d_LiquidacionTrabajador_Asiento
             Using TransScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim stResultado() As String
                 With oeAsiento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                              .Id _
                             , .IdPeriodo _
                             , .IdTipoAsiento _
@@ -1092,7 +1091,7 @@ Public Class d_Asiento
                             , .FechaCreacion _
                             , .Activo _
                             , .IdentificaAsiento _
-                            , .IndOrigen _
+                            , .IndOrigen
                                 ).ToString.Split("_")
                     oeAsiento.Id = stResultado(0)
                     '==============================================

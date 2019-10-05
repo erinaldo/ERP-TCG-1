@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_ModeloFuncionalVehiculo
@@ -156,6 +164,7 @@ Public Class frm_ModeloFuncionalVehiculo
 #Region "Métodos"
     Private Function GuardarMarca() As Boolean
         Try
+            oeModeloFuncionalVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olModeloFuncionalVehiculo.Guardar(oeModeloFuncionalVehiculo) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcModeloFuncionalVehiculo, 2)

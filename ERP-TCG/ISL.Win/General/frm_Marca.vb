@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_Marca
@@ -291,7 +299,7 @@ Public Class frm_Marca
                 Case 2
                     oeMarca.TipoMarca = 2
             End Select
-
+            oeMarca.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olMarca.Guardar(oeMarca) Then Return False
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
             MostrarTabs(0, tcMarca, 2)

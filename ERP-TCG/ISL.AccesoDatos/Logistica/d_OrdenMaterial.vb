@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Data.SqlClient
 Imports System.Transactions
 
@@ -266,31 +274,31 @@ Public Class d_OrdenMaterial
 
     Public Function Guardar(ByVal oeOrdenMaterial As e_OrdenMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeOrdenMaterial
-                stResultado = sqlhelper.ExecuteScalar("ALM.Isp_OrdenMaterial_IAE", _
-                                         .TipoOperacion, _
-                                         .PrefijoID, _
-                                         .Id, _
-                                         .IdOrden, _
-                                         .IdMaterial, _
-                                         .CantidadMaterial, _
-                                         .IdUnidadMedida, _
-                                         .PrecioUnitario, _
-                                         .ValorVenta, _
-                                         .IndicadorIgv, _
-                                         .IdSubAlmacen, _
-                                         .IdReferencia, _
-                                         .Activo, _
-                                         .UsuarioCreacion, _
-                                         .IdRequerimientoMaterial, _
-                                         .IdAlmacen, _
+                stResultado = sqlhelper.ExecuteScalar("ALM.Isp_OrdenMaterial_IAE",
+                                         .TipoOperacion,
+                                         .PrefijoID,
+                                         .Id,
+                                         .IdOrden,
+                                         .IdMaterial,
+                                         .CantidadMaterial,
+                                         .IdUnidadMedida,
+                                         .PrecioUnitario,
+                                         .ValorVenta,
+                                         .IndicadorIgv,
+                                         .IdSubAlmacen,
+                                         .IdReferencia,
+                                         .Activo,
+                                         .UsuarioCreacion,
+                                         .IdRequerimientoMaterial,
+                                         .IdAlmacen,
                                          .TipoReferencia).ToString.Split("_")
                 .Id = stResultado(0).ToString
 
                 If .oeControlEntregaMat.CantidadEntregada > 0 Then
                     .oeControlEntregaMat.IdOrdenMaterialIngreso = .Id
+                    .oeControlEntregaMat.PrefijoID = .PrefijoID '@0001
                     odCtrlEntrMat.Guardar(.oeControlEntregaMat)
                 End If
 
@@ -298,6 +306,7 @@ Public Class d_OrdenMaterial
                     For Each control As e_ControlEntregaMaterial In .loControlEntregaMaterial
                         control.TipoOperacion = "I"
                         control.IdOrdenMaterialSalida = stResultado(0)
+                        control.PrefijoID = .PrefijoID '@0001
                         odCtrlEntrMat.Guardar(control)
                     Next
                 End If

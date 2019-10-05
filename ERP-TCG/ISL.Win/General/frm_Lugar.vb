@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
@@ -271,6 +279,7 @@ Public Class frm_Lugar
             End With
             oeLugar.ListaClienteLugar = griClienteLugarTienda.DataSource
             oeLugar.ListaVentanaHoraria = griVentanaHoraria.DataSource
+            oeLugar.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olLugar.Guardar(oeLugar) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 If Proceso = "TES" Then
@@ -361,6 +370,7 @@ Public Class frm_Lugar
                 .CentroCosto = txtCentroCosto.Text
                 .Observacion = txtObservacion.Text
             End With
+            oeClienteLugar.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeLugar.ListaClienteLugar.Add(oeClienteLugar)
             griClienteLugarTienda.DataBind()
             oeClienteLugar = New e_ClienteLugar
@@ -510,8 +520,8 @@ Public Class frm_Lugar
                 '.HoraFin = Date.Parse(fechaservidor.ToShortDateString & " " & fecHoraFinVH.Value.ToShortTimeString)
                 .HoraInicio = fecHoraInicioVH.Value
                 .HoraFin = fecHoraFinVH.Value
-
             End With
+            oeVentanaHoraria.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeLugar.ListaVentanaHoraria.Add(oeVentanaHoraria)
             griVentanaHoraria.DataBind()
             oeVentanaHoraria = New e_VentanaHoraria

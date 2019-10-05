@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_RegistroInventario
@@ -214,23 +222,24 @@ Public Class d_RegistroInventario
 
     Public Function GuardarRegistroInventario(ByVal oeRegistroInventario As e_RegistroInventario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odRegInvOrden As New d_RegistroInventarioOrden
             Dim stResultado() As String
             With oeRegistroInventario
-                stResultado = sqlhelper.ExecuteScalar("ALM.ISP_RegistroInventario_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("ALM.ISP_RegistroInventario_IAE", .TipoOperacion, .PrefijoID,
                         .Id, .IdMovimientoInventario, .IdSubAlmacen, .IdMaterial, .IdUnidadMedida _
                         , .Cantidad, .ValorUnitario, .CantidadReal, .ValorUnitarioReal _
                         , .ValorTotal, True, .UsuarioCreacion, .IdRegistroCombustible, .Fecha).ToString.Split("_")
                 If .lstDetalleAsignacion.Count > 0 Then
                     For Each Detalle As e_DetalleAsignacion In .lstDetalleAsignacion
                         Detalle.IdRegistroInventario = stResultado(0) : Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = .PrefijoID '@0001
                         odDetalleAsignacion.Guardar(Detalle)
                     Next
                 End If
                 If .oeRegInvOrden.TipoOperacion = "I" Then
                     .oeRegInvOrden.IdRegistroInventario = stResultado(0)
                     .oeRegInvOrden.UsuarioCreacion = .UsuarioCreacion
+                    .oeRegInvOrden.PrefijoID = .PrefijoID '@0001
                     odRegInvOrden.Guardar(.oeRegInvOrden)
                 End If
             End With

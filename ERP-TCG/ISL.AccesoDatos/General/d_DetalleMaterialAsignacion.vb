@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -29,11 +37,9 @@ Public Class d_DetalleMaterialAsignacion
     End Function
 
     Public Function Obtener(ByVal oeDetalleMaterialAsignacion As e_DetalleMaterialAsignacion) As e_DetalleMaterialAsignacion
-
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_DetalleMaterialAsignacion_Listar", "", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_DetalleMaterialAsignacion_Listar", "",
              oeDetalleMaterialAsignacion.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeDetalleMaterialAsignacion = Cargar(ds.Tables(0).Rows(0))
@@ -46,7 +52,6 @@ Public Class d_DetalleMaterialAsignacion
 
     Public Function Listar(ByVal oeDetalleMaterialAsignacion As e_DetalleMaterialAsignacion) As List(Of e_DetalleMaterialAsignacion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldDetalleMaterialAsignacion As New List(Of e_DetalleMaterialAsignacion)
             Dim ds As DataSet
             With oeDetalleMaterialAsignacion
@@ -58,7 +63,7 @@ Public Class d_DetalleMaterialAsignacion
                         , .Serie _
                         , .IdEstado _
                         , .Especificaciones _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeDetalleMaterialAsignacion = Nothing
@@ -98,9 +103,8 @@ Public Class d_DetalleMaterialAsignacion
 
     Public Function Guardar(ByVal oeDetalleMaterialAsignacion As e_DetalleMaterialAsignacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleMaterialAsignacion
-                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleMaterialAsignacion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_DetalleMaterialAsignacion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdRequerimientoMaterial _
                         , .IdMarca _
@@ -109,7 +113,7 @@ Public Class d_DetalleMaterialAsignacion
                         , .IdEstado _
                         , .Especificaciones _
                         , .FechaVencimiento _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

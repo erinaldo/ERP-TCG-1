@@ -603,6 +603,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -624,6 +625,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -645,6 +647,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -666,6 +669,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -687,6 +691,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -708,6 +713,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -729,6 +735,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.TipoOperacion = "M"
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If
@@ -761,6 +768,7 @@ Public Class frm_Menu
                                 oeUsuarioPerfil.Id = "M"
                                 oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
                                 oeUsuarioPerfil.oePerfil.Id = "1CH000000023"
+                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olUsuarioPerfil.Guardar(oeUsuarioPerfil)
                             End If
                         End If

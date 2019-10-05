@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -42,6 +50,7 @@ Public Class l_Orden
                 If lstRegInventario.Count > 0 Then
                     odRegistroInventario = New d_RegistroInventario
                     For Each oe As e_RegistroInventario In lstRegInventario
+                        oe.PrefijoID = oeOrden.PrefijoID '@0001
                         odRegistroInventario.GuardarRegistroInventario(oe)
                     Next
                 End If
@@ -59,6 +68,7 @@ Public Class l_Orden
                             oeAsiento = New e_Asiento
                             loAsientoMovimiento = New List(Of e_AsientoMovimiento)
                             With oeAsiento
+                                .PrefijoID = oeOrden.PrefijoID '@0001
                                 .TipoOperacion = "I" : .IdPeriodo = oeOrden.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
                                 .NroAsiento = String.Empty : .Fecha = oeOrden.FechaOrden
                                 .Glosa = IIf(oeOrden.IdMovimientoInventario = "1SI000000002", "INGRESO POR AJUSTE", asimod.Nombre) & " " & oeOrden.NroOrden & " " & oeOrden.Glosa & " " & oeOrden.NombreProveedor
@@ -68,6 +78,7 @@ Public Class l_Orden
                                 .IdEstado = "CUADRADO" : .IdUsuarioCrea = oeOrden.IdUsuarioEjecucion : oeAsiento.Activo = True
                                 .IndOrigen = 2
                                 .AsientoReferencia = New e_AsientoReferencia
+                                .AsientoReferencia.PrefijoID = oeOrden.PrefijoID '@0001
                                 .AsientoReferencia.TipoOperacion = "I"
                                 .AsientoReferencia.IdReferencia = oeOrden.Id
                                 .AsientoReferencia.TipoReferencia = 1
@@ -78,6 +89,7 @@ Public Class l_Orden
                                     oeAsientoMovimiento = New e_AsientoMovimiento
                                     flaganalisis = False
                                     With oeAsientoMovimiento
+                                        .PrefijoID = oeOrden.PrefijoID '@0001
                                         .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                         .IdUsuarioCrea = oeOrden.IdUsuarioEjecucion : .Activo = True : .Fila = asidet.Fila
                                         If Left(ctactblesfm.NroCtaCtbleExistencias, 2) = asidet.Cuenta.Trim Then
@@ -110,6 +122,7 @@ Public Class l_Orden
                                                 End If
                                                 If flaganalisis = True And asimod.TipoAsiento = "DIARIO" Then
                                                     oeAsientoAnalisis = New e_MovimientoAnalisis
+                                                    oeAsientoAnalisis.PrefijoID = oeOrden.PrefijoID '@0001
                                                     oeAsientoAnalisis.TipoOperacion = ""
                                                     oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                                     oeAsientoAnalisis.IdUsuarioCrea = oeOrden.IdUsuarioEjecucion
@@ -137,6 +150,7 @@ Public Class l_Orden
                             If titulo42 <> "" Then
                                 oeAsientoMovimiento = New e_AsientoMovimiento
                                 With oeAsientoMovimiento
+                                    .PrefijoID = oeOrden.PrefijoID '@0001
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                     .IdUsuarioCrea = oeOrden.IdUsuarioEjecucion : .Activo = True
                                     If asimod.IdMoneda = "1CH01" Then
@@ -369,6 +383,7 @@ Public Class l_Orden
                 For Each asimod As e_AsientoModelo In oeOrdenSalida.loAsientoModelo
                     oeAsiento = New e_Asiento
                     With oeAsiento
+                        .PrefijoID = oeOrdenSalida.PrefijoID '@0001
                         .TipoOperacion = "I" : .IdPeriodo = oeOrdenSalida.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
                         .NroAsiento = String.Empty : .Fecha = oeOrdenSalida.FechaOrden
                         .Glosa = asimod.Nombre & " " & oe.NroOrden & " " & LTrim(oe.Glosa)
@@ -378,6 +393,7 @@ Public Class l_Orden
                         .IdEstado = "CUADRADO" : .IdUsuarioCrea = oeOrdenSalida.IdUsuarioEjecucion : oeAsiento.Activo = True
                         .IndOrigen = 19
                         .AsientoReferencia = New e_AsientoReferencia
+                        .AsientoReferencia.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                         .AsientoReferencia.TipoOperacion = "I"
                         .AsientoReferencia.IdReferencia = oeOrdenSalida.Id
                         .AsientoReferencia.TipoReferencia = 2
@@ -386,6 +402,7 @@ Public Class l_Orden
                         For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle.OrderBy(Function(item) item.Fila).ToList
                             oeAsientoMovimiento = New e_AsientoMovimiento
                             With oeAsientoMovimiento
+                                .PrefijoID = oeOrdenSalida.PrefijoID '@0001
                                 .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                 .IdUsuarioCrea = oeOrdenSalida.IdUsuarioEjecucion : .Activo = True : .Fila = asidet.Fila
                                 If Left(ctactblesfm.NroCtaCtbleExistencias, 2) = asidet.Cuenta.Trim Then
@@ -401,6 +418,7 @@ Public Class l_Orden
                                     .DebeMN = ctactblesfm.TotalCuentas
                                     .DebeME = ctactblesfm.TotalCuentas / oeOrdenSalida.TipoCambio
                                     oeAsientoAnalisis = New e_MovimientoAnalisis
+                                    oeAsientoAnalisis.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                                     oeAsientoAnalisis.TipoOperacion = ""
                                     oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                     oeAsientoAnalisis.IdUsuarioCrea = oeOrdenSalida.IdUsuarioEjecucion

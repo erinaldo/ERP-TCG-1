@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_ModeloVehiculo
@@ -170,6 +178,7 @@ Public Class frm_ModeloVehiculo
                 .IndEmpresa = IIf(verIndEmpresa.Checked, 1, 0)
                 .IndSunarp = IIf(verIndSunarp.Checked, 1, 0)
             End With
+            oeModeloVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olModeloVehiculo.Guardar(oeModeloVehiculo) Then
                 Return False
             End If
@@ -365,6 +374,7 @@ Public Class frm_ModeloVehiculo
                         .IndEmpresa = griLista.ActiveRow.Cells("IndEmpresa").Value
                         .IndSunarp = griLista.ActiveRow.Cells("IndSunarp").Value
                     End With
+                    oeModeloVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olModeloVehiculo.Guardar(oeModeloVehiculo) Then
                         griLista.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                     End If

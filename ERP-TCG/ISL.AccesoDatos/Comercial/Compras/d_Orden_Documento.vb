@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -67,10 +75,9 @@ Public Class d_Orden_Documento
     Public Function Obtener(ByVal oeOrden_Documento As e_Orden_Documento) As e_Orden_Documento
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CMP.Isp_Orden_Documento_Listar", oeOrden_Documento.TipoOperacion, _
-                                           oeOrden_Documento.Id, oeOrden_Documento.IdTipoDocumento, _
+            ds = sqlhelper.ExecuteDataset("CMP.Isp_Orden_Documento_Listar", oeOrden_Documento.TipoOperacion,
+                                           oeOrden_Documento.Id, oeOrden_Documento.IdTipoDocumento,
                                            oeOrden_Documento.IdDocumento, oeOrden_Documento.IdTipoOrden, oeOrden_Documento.IdOrden)
             oeOrden_Documento = New e_Orden_Documento
             If ds.Tables.Count > 0 Then
@@ -78,7 +85,7 @@ Public Class d_Orden_Documento
                     oeOrden_Documento = Cargar(ds.Tables(0).Rows(0))
                 End If
             End If
-           
+
             Return oeOrden_Documento
         Catch ex As Exception
             Throw ex
@@ -87,7 +94,6 @@ Public Class d_Orden_Documento
 
     Public Function Listar(ByVal oeOrden_Documento As e_Orden_Documento) As List(Of e_Orden_Documento)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldOrden_Documento As New List(Of e_Orden_Documento)
             Dim ds As DataSet
             With oeOrden_Documento
@@ -100,7 +106,7 @@ Public Class d_Orden_Documento
                                               , .IdOrden _
                                               , .Activo _
                                               , .UsuarioCreacion _
-                                              , .FechaCreacion _
+                                              , .FechaCreacion
                                               )
             End With
             oeOrden_Documento = Nothing
@@ -118,16 +124,15 @@ Public Class d_Orden_Documento
 
     Public Function Guardar(ByVal oeOrden_Documento As e_Orden_Documento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrden_Documento
-                sqlhelper.ExecuteNonQuery("CMP.Isp_Orden_Documento_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_Orden_Documento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTipoDocumento _
                         , .IdDocumento _
                         , .IdTipoOrden _
                         , .IdOrden _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

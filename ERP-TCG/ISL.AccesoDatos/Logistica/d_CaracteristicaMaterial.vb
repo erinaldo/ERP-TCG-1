@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -63,15 +71,14 @@ Public Class d_CaracteristicaMaterial
 
     Public Function Guardar(ByVal oeCaracteristicaMaterial As e_CaracteristicaMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCaracteristicaMaterial
-                sqlhelper.ExecuteNonQuery("ALM.Isp_CaracteristicaMaterial_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_CaracteristicaMaterial_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCaracteristicaEspecial _
                         , .IdMaterial _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

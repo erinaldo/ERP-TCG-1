@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,10 +83,9 @@ Public Class d_Formula
 
     Public Function Guardar(ByVal oeFormula As e_Formula) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idFor As String = ""
             With oeFormula
-                _idFor = SqlHelper.ExecuteScalar("STD.Isp_Formula_IAE", .TipoOperacion, .PrefijoID, _
+                _idFor = SqlHelper.ExecuteScalar("STD.Isp_Formula_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -90,7 +97,7 @@ Public Class d_Formula
                         , .Descripcion _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
                 .Id = _idFor
             End With
