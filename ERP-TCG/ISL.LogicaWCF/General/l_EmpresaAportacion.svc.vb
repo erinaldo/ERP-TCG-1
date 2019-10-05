@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 ' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_EmpresaAportacion" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_EmpresaAportacion.svc o l_EmpresaAportacion.svc.vb en el Explorador de soluciones e inicie la depuración.

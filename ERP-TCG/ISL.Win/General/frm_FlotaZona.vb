@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -385,6 +393,7 @@ Public Class frm_FlotaZona
                 oeCuotas.Importe = numCuotaTracto.Value
                 oeCuotas.FechaInicio = fecCuota.Value
                 oeCuotas.Vigente = 1
+                oeCuotas.PrefijoID = gs_PrefijoIdSucursal '@0001
                 For Each oItem In lstCuotas.Where(Function(it) it.Vigente = 1).ToList
                     oItem.Vigente = 0 : oItem.TipoOperacion = "A" : oItem.UsuarioModifica = gUsuarioSGI.Id
                 Next
@@ -479,6 +488,7 @@ Public Class frm_FlotaZona
                     olCuota = New l_Flota_Cuota
                     oeCuotas = New e_Flota_Cuota : lstCuotas = New List(Of e_Flota_Cuota)
                     oeCuotas.IdFlota = oeFlota.Id : oeCuotas.Vigente = -1
+                    oeCuotas.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstCuotas = olCuota.Listar(oeCuotas)
                     mt_CargarCuota(lstCuotas)
                     MostrarTabs(1, ficDemanda, 1)
@@ -520,6 +530,7 @@ Public Class frm_FlotaZona
                     .ListJefes.AddRange(lstJefe)
                     .ListCuotas = lstCuotas
                 End With
+                oeFlota.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olFlota.Guardar(oeFlota) Then mensajeEmergente.Confirmacion(Me.Text & ": La informacion ha sido grabada satisfactoriamente", True)
                 Consultar(True)
                 Operacion = "Inicializa"
@@ -616,6 +627,7 @@ Public Class frm_FlotaZona
                         oeVehiculo.TipoOperacion = "M"
                         oeVehiculo.IdFlota = txtId.Text.Trim()
                         oeVehiculo.ConductorAsignada = lstJefe.Where(Function(i) i.TipoOperacion <> "E" And i.Actual)(0).IdTrabajador
+                        oeVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olVehiculo.GuardarJefeUnidad(oeVehiculo)
                     ElseIf DR = Windows.Forms.DialogResult.Cancel Then
                         Return False
@@ -752,6 +764,7 @@ Public Class frm_FlotaZona
                 'Colocar Actual 0 a todos los registros
                 For Each Jefe As e_Flota_Trabajador In lstJefe
                     Jefe.Actual = False
+                    Jefe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Next
                 'Agregar flota a la lista
                 lstJefe.Add(oeJefe)

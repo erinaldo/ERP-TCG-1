@@ -1305,7 +1305,7 @@ Partial Class frm_Empresa
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Right)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Bottom)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Top)
-        Me.utpDireccion.Location = New System.Drawing.Point(1, 22)
+        Me.utpDireccion.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDireccion.Name = "utpDireccion"
         Me.utpDireccion.Size = New System.Drawing.Size(1083, 352)
         '
@@ -1437,7 +1437,7 @@ Partial Class frm_Empresa
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griTelefono)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1083, 352)
         '
@@ -1467,27 +1467,27 @@ Partial Class frm_Empresa
         Me.MenuContextual2.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAgregar, Me.tsmiEditar, Me.tsmiQuitar})
         Me.MenuContextual2.Name = "MenuContextual2"
-        Me.MenuContextual2.Size = New System.Drawing.Size(112, 70)
+        Me.MenuContextual2.Size = New System.Drawing.Size(181, 92)
         '
         'tsmiAgregar
         '
         Me.tsmiAgregar.Image = Global.ISL.Win.My.Resources.Resources.Agregar
         Me.tsmiAgregar.Name = "tsmiAgregar"
-        Me.tsmiAgregar.Size = New System.Drawing.Size(111, 22)
+        Me.tsmiAgregar.Size = New System.Drawing.Size(180, 22)
         Me.tsmiAgregar.Text = "Agregar"
         '
         'tsmiEditar
         '
         Me.tsmiEditar.Image = Global.ISL.Win.My.Resources.Resources.Information
         Me.tsmiEditar.Name = "tsmiEditar"
-        Me.tsmiEditar.Size = New System.Drawing.Size(111, 22)
+        Me.tsmiEditar.Size = New System.Drawing.Size(180, 22)
         Me.tsmiEditar.Text = "Editar"
         '
         'tsmiQuitar
         '
         Me.tsmiQuitar.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
         Me.tsmiQuitar.Name = "tsmiQuitar"
-        Me.tsmiQuitar.Size = New System.Drawing.Size(111, 22)
+        Me.tsmiQuitar.Size = New System.Drawing.Size(180, 22)
         Me.tsmiQuitar.Text = "Quitar"
         '
         'ordTelefono
@@ -1752,7 +1752,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl1.Controls.Add(Me.ugb_Espera)
         Me.UltraTabPageControl1.Controls.Add(Me.griEmpresa)
         Me.UltraTabPageControl1.Controls.Add(Me.agrGrillaEmpresa)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1085, 528)
         '
@@ -2316,7 +2316,7 @@ Partial Class frm_Empresa
         Me.utpMantenimiento.AutoScroll = True
         Me.utpMantenimiento.Controls.Add(Me.ficDetalle)
         Me.utpMantenimiento.Controls.Add(Me.agrEmpresa)
-        Me.utpMantenimiento.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpMantenimiento.Location = New System.Drawing.Point(1, 22)
         Me.utpMantenimiento.Name = "utpMantenimiento"
         Me.utpMantenimiento.Size = New System.Drawing.Size(1085, 528)
         '

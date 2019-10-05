@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Distrito
@@ -305,6 +313,7 @@ Public Class frm_Distrito
 
     Private Function GuardarRegistro() As Boolean
         Try
+            oeDistrito.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olDistrito.Guardar(oeDistrito) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficDistrito, 2)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
@@ -523,6 +531,7 @@ Public Class frm_Empresa
                         oeEmpresa.TipoOperacion = "G"
                         oeEmpresa.Id = griEmpresa.ActiveRow.Cells("Id").Value
                         oeEmpresa.Abreviatura = griEmpresa.ActiveRow.Cells("Abreviatura").Value
+                        oeEmpresa.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olEmpresa.Guardar(oeEmpresa)
                         ActualizarEmpresasPublicas()
                     End If
@@ -563,6 +572,7 @@ Public Class frm_Empresa
                 .Morosidad = griEmpresa.ActiveRow.Cells("Morosidad").Value
                 .Credito = griEmpresa.ActiveRow.Cells("Credito").Value
             End With
+            oeEmpresa.PrefijoID = gs_PrefijoIdSucursal '@0001
             olEmpresa.Guardar(oeEmpresa)
             griEmpresa.ActiveRow.CellAppearance.BackColor = Me.colorCambio.Color
             ugb_Espera.Visible = False
@@ -1128,7 +1138,7 @@ Public Class frm_Empresa
                 oeEmpresa.leContactos = griContactos.DataSource
                 resultado = True
             End If
-
+            oeEmpresa.PrefijoID = gs_PrefijoIdSucursal '@0001
             If bandNuevoCliente.Trim <> "" Then
                 frm_DemandaRapida.codigoNuevoCLiente = olEmpresa.GuardarCliente(oeEmpresa)
                 If frm_DemandaRapida.codigoNuevoCLiente <> "" Then

@@ -73,6 +73,7 @@ Partial Class frm_FlotaZona
         Dim UltraDataColumn20 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("UsuarioModificacion")
         Dim UltraDataColumn21 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaModificacion")
         Dim UltraDataColumn22 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
+        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -84,7 +85,6 @@ Partial Class frm_FlotaZona
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl7 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrListaRegistro = New Infragistics.Win.Misc.UltraGroupBox()
         Me.griLista = New ISL.Controles.Grilla(Me.components)
@@ -110,6 +110,8 @@ Partial Class frm_FlotaZona
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
         Me.agrDatoGeneral = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.fecCuota = New System.Windows.Forms.DateTimePicker()
+        Me.UltraLabel5 = New Infragistics.Win.Misc.UltraLabel()
         Me.btnQuitarCuota = New Infragistics.Win.Misc.UltraButton()
         Me.btnAgregarCuota = New Infragistics.Win.Misc.UltraButton()
         Me.griCuota = New Infragistics.Win.UltraWinGrid.UltraGrid()
@@ -127,8 +129,6 @@ Partial Class frm_FlotaZona
         Me.txtCodigo = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.ficDemanda = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.UltraLabel5 = New Infragistics.Win.Misc.UltraLabel()
-        Me.fecCuota = New System.Windows.Forms.DateTimePicker()
         Me.UltraTabPageControl7.SuspendLayout()
         CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrListaRegistro.SuspendLayout()
@@ -530,6 +530,28 @@ Partial Class frm_FlotaZona
         Me.agrDatoGeneral.Text = "Dato General"
         Me.agrDatoGeneral.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'fecCuota
+        '
+        Me.fecCuota.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecCuota.Location = New System.Drawing.Point(663, 21)
+        Me.fecCuota.Name = "fecCuota"
+        Me.fecCuota.Size = New System.Drawing.Size(100, 21)
+        Me.fecCuota.TabIndex = 25
+        '
+        'UltraLabel5
+        '
+        Appearance5.BackColor = System.Drawing.Color.Transparent
+        Appearance5.ForeColor = System.Drawing.Color.Black
+        Appearance5.TextVAlignAsString = "Middle"
+        Me.UltraLabel5.Appearance = Appearance5
+        Me.UltraLabel5.AutoSize = True
+        Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel5.Location = New System.Drawing.Point(619, 24)
+        Me.UltraLabel5.Name = "UltraLabel5"
+        Me.UltraLabel5.Size = New System.Drawing.Size(38, 15)
+        Me.UltraLabel5.TabIndex = 24
+        Me.UltraLabel5.Text = "Fecha:"
+        '
         'btnQuitarCuota
         '
         Appearance6.BackColor = System.Drawing.Color.Transparent
@@ -749,28 +771,6 @@ Partial Class frm_FlotaZona
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(994, 488)
-        '
-        'UltraLabel5
-        '
-        Appearance5.BackColor = System.Drawing.Color.Transparent
-        Appearance5.ForeColor = System.Drawing.Color.Black
-        Appearance5.TextVAlignAsString = "Middle"
-        Me.UltraLabel5.Appearance = Appearance5
-        Me.UltraLabel5.AutoSize = True
-        Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel5.Location = New System.Drawing.Point(619, 24)
-        Me.UltraLabel5.Name = "UltraLabel5"
-        Me.UltraLabel5.Size = New System.Drawing.Size(38, 15)
-        Me.UltraLabel5.TabIndex = 24
-        Me.UltraLabel5.Text = "Fecha:"
-        '
-        'fecCuota
-        '
-        Me.fecCuota.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecCuota.Location = New System.Drawing.Point(663, 21)
-        Me.fecCuota.Name = "fecCuota"
-        Me.fecCuota.Size = New System.Drawing.Size(100, 21)
-        Me.fecCuota.TabIndex = 25
         '
         'frm_FlotaZona
         '

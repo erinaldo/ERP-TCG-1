@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -66,15 +74,14 @@ Public Class d_FondoFijo
 
     Public Function Guardar(ByVal oeFondoFijo As e_FondoFijo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFondoFijo
-                sqlhelper.ExecuteNonQuery("STD.Isp_FondoFijo_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_FondoFijo_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .FondoFijo _
                          , .Glosa _
                         , .Fecha _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

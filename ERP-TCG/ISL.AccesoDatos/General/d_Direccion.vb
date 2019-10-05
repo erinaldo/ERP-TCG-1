@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 ''' <summary>
 ''' Clase parcial de lo que es ubigeo para acceder a la información de los Direccions.
@@ -108,10 +116,9 @@ Public Class d_Direccion
 
     Public Function Guardar(ByVal oeDireccion As e_Direccion) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeDireccion
-                id = sqlhelper.ExecuteScalar("STD.Isp_Direccion_IAE", .TipoOperacion, _
+                id = sqlhelper.ExecuteScalar("STD.Isp_Direccion_IAE", .TipoOperacion,
                         .Id _
                         , .IdTipoVia _
                         , .Via _

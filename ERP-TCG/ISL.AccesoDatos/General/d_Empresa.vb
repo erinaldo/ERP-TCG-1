@@ -187,7 +187,7 @@ Public Class d_Empresa
     '''  de la empresa es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeEmpresa As e_Empresa) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim odDireccionEP As New d_Direccion_EmpresaPersona
             Dim oeDireccion As New e_Direccion
             Dim odDireccion As New d_Direccion
@@ -227,6 +227,7 @@ Public Class d_Empresa
                         For Each oeDEP As e_Direccion_EmpresaPersona In .leDireccionEP
                             oeDEP.TipoPersonaEmpresa = "2"
                             oeDEP.IdPersonaEmpresa = id
+                            oeDEP.PrefijoID = .PrefijoID '@0001
                             Select Case oeDEP.TipoOperacion
                                 Case "C"
                                     oeDireccion = New e_Direccion
@@ -248,6 +249,7 @@ Public Class d_Empresa
                                     oeDireccion.Zona = oeDEP.oeDireccion.Zona
                                     oeDireccion.IdLugar = oeDEP.oeDireccion.IdLugar
                                     oeDireccion.CentroCosto = oeDEP.oeDireccion.IdLugar
+                                    oeDireccion.PrefijoID = .PrefijoID '@0001
                                     idDireccion = odDireccion.Guardar(oeDireccion)
                                     oeDEP.oeDireccion.Id = idDireccion
                                     oeDEP.TipoOperacion = "I"
@@ -275,6 +277,7 @@ Public Class d_Empresa
                                     oeDireccion.IdLugar = oeDEP.oeDireccion.IdLugar
                                     oeDireccion.CentroCosto = oeDEP.oeDireccion.CentroCosto
                                     oeDireccion.IdPais = oeDEP.oeDireccion.IdPais
+                                    oeDireccion.PrefijoID = .PrefijoID '@0001
                                     odDireccion.Guardar(oeDireccion)
                                     odDireccionEP.Guardar(oeDEP)
                                 Case "E"
@@ -287,6 +290,7 @@ Public Class d_Empresa
                         For Each oeEmail As e_Email In .leEmail
                             oeEmail.TipoPersonaEmpresa = 2
                             oeEmail.IdPersonaEmpresa = id
+                            oeEmail.PrefijoID = .PrefijoID '@0001
                             odEmail.Guardar(oeEmail)
                         Next
                     End If
@@ -294,13 +298,14 @@ Public Class d_Empresa
                         For Each oeTelefono As e_Telefono In .leTelefono
                             oeTelefono.TipoPersonaEmpresa = 2
                             oeTelefono.IdPersonaEmpresa = id
+                            oeTelefono.PrefijoID = .PrefijoID '@0001
                             odTelefono.Guardar(oeTelefono)
                         Next
                     End If
                     If .oeClienteProveedor.Id <> "" Then
                         .oeClienteProveedor.TipoOperacion = "A"
                         .oeClienteProveedor.Activo = True
-
+                        .oeClienteProveedor.PrefijoID = .PrefijoID '@0001
                         odClienteProveedor.Guardar(.oeClienteProveedor)
                     Else
                         If .oeClienteProveedor.Cliente = 1 _
@@ -312,13 +317,14 @@ Public Class d_Empresa
                             .oeClienteProveedor.TipoPersonaEmpresa = 2
                             .oeClienteProveedor.Codigo = .Codigo
                             .oeClienteProveedor.IdPersonaEmpresa = id
+                            .oeClienteProveedor.PrefijoID = .PrefijoID '@0001
                             odClienteProveedor.Guardar(.oeClienteProveedor)
                         End If
                     End If
                     idClienteProveedor = .oeClienteProveedor.Id
                     If Not .leTipoPago Is Nothing Then
                         For Each oeTipoPago As e_PersonaEmpresa_TipoPago In .leTipoPago
-
+                            oeTipoPago.PrefijoID = .PrefijoID '@0001
                             oeTipoPago.IdClienteProveedor = .oeClienteProveedor.Id
                             Select Case oeTipoPago.TipoOperacion
                                 Case "I" : odPETipoPago.Guardar(oeTipoPago)
@@ -330,6 +336,7 @@ Public Class d_Empresa
                         For Each oePersona As e_Persona In .leContactos
                             If oePersona.Id <> "" Then
                                 oePersona.UsuarioCreacion = oeEmpresa.UsuarioCreacion
+                                oePersona.PrefijoID = .PrefijoID '@0001
                                 InsertarContacto(oePersona, id)
                             End If
                         Next
@@ -345,7 +352,7 @@ Public Class d_Empresa
 
     Public Function ActualizaFec(ByVal oeEmpresa As e_Empresa) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeEmpresa
                 sqlHelper.ExecuteNonQuery("STD.Isp_Empresa_IAE", .TipoOperacion, _
                         .Id _
@@ -368,7 +375,7 @@ Public Class d_Empresa
 
     Public Function InsertarContacto(ByVal oePersona As e_Persona, ByVal codigo As String) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oePersona
                 sqlHelper.ExecuteNonQuery("STD.Isp_Empresa_IAE", "C", _
                         codigo _
