@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -194,6 +202,7 @@ Public Class frm_CaracteristicaEspecial
                 .Abreviatura = txtAbreviatura.Text
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .FechaCreacion = ObtenerFechaServidor()
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olCaracteristicaEspecial.Guardar(oeCaracteristicaEspecial) Then
                     mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Satisfactoriamente")
                     Return True

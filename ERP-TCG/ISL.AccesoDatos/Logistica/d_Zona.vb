@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 
 Public Class d_Zona
@@ -87,22 +95,21 @@ Public Class d_Zona
 
     Public Function Guardar(ByVal oeZona As e_Zona) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeZona
-                sqlhelper.ExecuteScalar("ALM.Isp_Zona_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .IdDependencia, _
-                                          .IdAlmacen, _
-                                          .Zona, _
-                                          .SubZona, _
-                                          .Ubicacion, _
-                                          .Seccion, _
-                                          .Nivel, _
-                                          Date.Now, _
-                                          .UsuarioCreacion, _
+                sqlhelper.ExecuteScalar("ALM.Isp_Zona_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .IdDependencia,
+                                          .IdAlmacen,
+                                          .Zona,
+                                          .SubZona,
+                                          .Ubicacion,
+                                          .Seccion,
+                                          .Nivel,
+                                          Date.Now,
+                                          .UsuarioCreacion,
                                           .Activo)
                 Return True
             End With
