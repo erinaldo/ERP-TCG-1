@@ -9,7 +9,7 @@
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Public Class d_Peaje
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_Peaje
         Try

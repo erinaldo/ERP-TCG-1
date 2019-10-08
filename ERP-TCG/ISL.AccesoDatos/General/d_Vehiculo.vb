@@ -15,7 +15,7 @@ Imports System.Transactions
 ''' <remarks>Clase que controla los metodos de accesos la tabla Vehiculo,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 ''' 
 Public Class d_Vehiculo
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
     Private oeVehiculo As e_Vehiculo
     Private odDocumentoVehicular As d_DocumentoVehicular
     Private odPlaca As d_Placa

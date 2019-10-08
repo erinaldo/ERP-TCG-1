@@ -9,7 +9,7 @@
 Imports ISL.EntidadesWCF
 
 Public Class d_TipoVehiculo
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Public oeTipoVehiculo As e_TipoVehiculo
 

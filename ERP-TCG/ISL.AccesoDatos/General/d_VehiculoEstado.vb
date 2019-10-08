@@ -11,7 +11,7 @@ Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_VehiculoEstado
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_VehiculoEstado
         Try

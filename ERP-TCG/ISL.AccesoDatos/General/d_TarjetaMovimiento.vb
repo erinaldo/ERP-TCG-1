@@ -1,6 +1,6 @@
 ﻿Imports ISL.EntidadesWCF
 Public Class d_TarjetaMovimiento
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_TarjetaMovimiento
         Try

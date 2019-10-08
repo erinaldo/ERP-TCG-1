@@ -1,7 +1,7 @@
 ﻿Imports ISL.EntidadesWCF
 Public Class d_TipoActivoFijo_CtaCtble
 
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
     Private Function Cargar(Fila As DataRow) As e_TipoActivoFijo_CtaCtble
         Try
             Dim oeTipoActivoFijo_CtaCtble = New e_TipoActivoFijo_CtaCtble With {

@@ -2,7 +2,7 @@
 Imports ISL.EntidadesWCF
 
 Public Class d_ReadecuacionAF_Documento
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
     Private Function Cargar(Fila As DataRow) As e_ReadecuacionAF_Documento
         Try
             Dim oeReadecuacionAF_Documento = New e_ReadecuacionAF_Documento With {

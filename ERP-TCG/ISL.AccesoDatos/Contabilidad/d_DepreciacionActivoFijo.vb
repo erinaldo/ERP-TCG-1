@@ -3,7 +3,7 @@ Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_DepreciacionActivoFijo
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
     Private Function Cargar(Fila As DataRow) As e_DepreciacionActivoFijo
         Try
             Dim oeDepreciacionActivoFijo = New e_DepreciacionActivoFijo With {
