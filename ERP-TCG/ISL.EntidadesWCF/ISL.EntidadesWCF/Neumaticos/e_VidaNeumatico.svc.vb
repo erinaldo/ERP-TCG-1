@@ -54,6 +54,10 @@ Public Class e_VidaNeumatico
     Public ls_IdMaterial As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
 #End Region

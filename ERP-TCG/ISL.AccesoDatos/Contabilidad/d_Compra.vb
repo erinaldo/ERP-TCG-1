@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -117,9 +125,8 @@ Public Class d_Compra
 
     Public Function Guardar(ByVal oeCompra As e_Compra) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCompra
-                sqlhelper.ExecuteNonQuery("CON.Isp_Compra_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Compra_IAE", .TipoOperacion, .PrefijoID,
                            .Id _
                         , .AnoEmisionAduana _
                         , .Base1 _
@@ -145,7 +152,7 @@ Public Class d_Compra
                         , .ImpuestoRenta _
                         , .Glosa _
                         , .CobraCajaChica _
-                        , .IdMotivoDocumento _
+                        , .IdMotivoDocumento
                     )
             End With
             Return True
@@ -168,7 +175,6 @@ Public Class d_Compra
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Compra", PrefijoID)
             Return stResultado

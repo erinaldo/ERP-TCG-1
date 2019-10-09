@@ -11,6 +11,10 @@ Public Class e_Dispositivo
     Public Event DatoCambiado()
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Private _id As String
     Private _idtipodispositivo As String

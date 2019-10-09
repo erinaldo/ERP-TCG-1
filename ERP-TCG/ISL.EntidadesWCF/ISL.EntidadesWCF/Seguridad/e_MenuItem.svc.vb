@@ -20,6 +20,10 @@ Public Class e_MenuItem
     Public Modificado As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public Property Id() As String
         Get

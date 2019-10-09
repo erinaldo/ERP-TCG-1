@@ -32,6 +32,10 @@ Public Class e_Proveedor
     Public IndRelacionada As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oePersona As New e_Persona
     <DataMember()> _

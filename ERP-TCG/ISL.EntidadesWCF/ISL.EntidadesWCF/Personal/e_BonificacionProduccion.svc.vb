@@ -30,6 +30,10 @@ Public Class e_BonificacionProduccion
     Public Mes As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

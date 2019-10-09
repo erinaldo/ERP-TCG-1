@@ -35,6 +35,10 @@ Public Class e_Gratificacion
     Public dtDetalle As DataTable
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

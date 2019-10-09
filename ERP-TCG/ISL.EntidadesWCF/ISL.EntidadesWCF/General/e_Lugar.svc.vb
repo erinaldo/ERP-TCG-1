@@ -30,6 +30,10 @@ Public Class e_Lugar
     Public ListaVentanaHoraria As New List(Of e_VentanaHoraria)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()>
     Public Property UsuarioCreacion() As String

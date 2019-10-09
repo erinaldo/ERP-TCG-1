@@ -12,6 +12,10 @@ Public Class e_EstadoOrden
 
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

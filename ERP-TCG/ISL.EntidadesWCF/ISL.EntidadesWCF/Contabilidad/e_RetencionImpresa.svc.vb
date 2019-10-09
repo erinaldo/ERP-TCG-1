@@ -63,6 +63,10 @@ Public Class e_RetencionImpresa
     Public Property FechaTC As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> Public Fecha As Date
 
     Sub New()

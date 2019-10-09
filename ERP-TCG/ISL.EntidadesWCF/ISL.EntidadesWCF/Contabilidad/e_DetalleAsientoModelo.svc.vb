@@ -51,6 +51,10 @@ Public Class e_DetalleAsientoModelo
     Public Ejercicio As Integer = 0
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public oeCtaCtble As e_CuentaContable
 

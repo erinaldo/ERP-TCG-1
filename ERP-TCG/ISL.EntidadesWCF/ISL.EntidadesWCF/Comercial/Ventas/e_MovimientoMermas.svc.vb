@@ -41,6 +41,10 @@ Public Class e_MovimientoMermas
     Public FechaHasta As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 
     <DataMember()> _

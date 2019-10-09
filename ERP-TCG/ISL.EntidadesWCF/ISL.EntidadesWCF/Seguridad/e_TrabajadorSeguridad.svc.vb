@@ -34,6 +34,10 @@ Public Class e_TrabajadorSeguridad
     'Public NombreProceso As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Private _idProcesoNegocio As String
     Private _nombreProceso As String
 

@@ -24,6 +24,10 @@ Public Class e_CuotaDocVeh_Movimiento
     Public leCuotasNuevas As New List(Of e_CuotaDocumentoVehiculo)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     Public Property Id() As String

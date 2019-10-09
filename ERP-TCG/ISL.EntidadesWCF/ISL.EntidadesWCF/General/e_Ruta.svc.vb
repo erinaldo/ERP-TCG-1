@@ -49,6 +49,10 @@ Public Class e_Ruta
     Public ListaRutaPeaje As List(Of e_RutaPeaje)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id
         Get

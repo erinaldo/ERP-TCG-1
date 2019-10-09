@@ -69,14 +69,13 @@ Public Class d_AsientoMov_MovDoc
 
     Public Function Guardar(ByVal oeAsientoMov_MovDoc As e_AsientoMov_MovDoc) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsientoMov_MovDoc
-                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoMov_MovDoc_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoMov_MovDoc_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdAsientoMovimiento _
                         , .Activo _
-                        , .IdCuentaxCyP _
+                        , .IdCuentaxCyP
                     )
             End With
             Return True
@@ -105,7 +104,6 @@ Public Class d_AsientoMov_MovDoc
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", Left(PrefijoID, 1) & "SI"
                                   )
@@ -118,7 +116,6 @@ Public Class d_AsientoMov_MovDoc
 
     Public Function UltimoIdInsertar(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMov_MovDoc", PrefijoID
                                   )
@@ -138,7 +135,6 @@ Public Class d_AsientoMov_MovDoc
     ''' <remarks></remarks>
     Public Function GuardarMasivo(ByVal DTAsientoMov_MovDoc As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.AsientoMov_MovDoc", DTAsientoMov_MovDoc, False)
             Return True
         Catch ex As Exception

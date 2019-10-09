@@ -29,6 +29,10 @@ Public Class e_Historial
     Public lstHistorialInventario As New List(Of e_HistorialInventario)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

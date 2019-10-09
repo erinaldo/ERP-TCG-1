@@ -16,6 +16,10 @@ Public Class e_FamiliaMaterial
     Public UsuarioCreacion As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructor"

@@ -43,6 +43,10 @@ Public Class e_DetallePlanillaVacaciones
     Public Equivale As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

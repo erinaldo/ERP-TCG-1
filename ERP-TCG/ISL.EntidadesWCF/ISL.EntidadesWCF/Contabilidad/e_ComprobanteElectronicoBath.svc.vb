@@ -26,6 +26,10 @@ Public Class e_ComprobanteElectronicoBath
     Public leDetalle As New List(Of e_ComprobanteElectronicoBath_Detalle)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

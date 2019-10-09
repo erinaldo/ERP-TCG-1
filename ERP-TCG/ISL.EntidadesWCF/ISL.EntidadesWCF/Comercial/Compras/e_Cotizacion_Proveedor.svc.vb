@@ -24,6 +24,10 @@ Public Class e_Cotizacion_Proveedor
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public lstCotizacionDetalleMat As New List(Of e_CotizacionDetalleMat)
     <DataMember()> _

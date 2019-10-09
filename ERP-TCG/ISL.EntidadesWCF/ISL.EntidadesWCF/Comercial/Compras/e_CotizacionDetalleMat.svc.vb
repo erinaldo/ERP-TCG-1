@@ -35,6 +35,11 @@ Public Class e_CotizacionDetalleMat
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
+
     Private _posMat As Integer  'Indica la posicion del material para poder quitarlo del detalle
 
     Private _Seleccion As Boolean

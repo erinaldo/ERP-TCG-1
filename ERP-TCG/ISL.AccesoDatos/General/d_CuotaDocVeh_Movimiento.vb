@@ -74,13 +74,12 @@ Public Class d_CuotaDocVeh_Movimiento
 
     Public Function GuardarCancelacion(ByVal oeCuotaDocVeh_Movimiento As e_CuotaDocVeh_Movimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ListaDocVeh_Doc_Ayuda As New List(Of e_DocumentoVehicular_Documento)
             Dim stResultado() As String
             Using transScope As New TransactionScope()
 
                 With oeCuotaDocVeh_Movimiento
-                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_CuotaDocumentoVeh_Movimiento_IAE", _
+                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_CuotaDocumentoVeh_Movimiento_IAE",
                                               .TipoOperacion _
                                             , .PrefijoID _
                                             , .Id _
@@ -95,7 +94,7 @@ Public Class d_CuotaDocVeh_Movimiento
                                             , .MontoME _
                                             , .Activo _
                                             , .FechaCeacion _
-                                            , .UsuarioCreacion _
+                                            , .UsuarioCreacion
                                              ).ToString.Split("_")
                 End With
 
@@ -149,7 +148,7 @@ Public Class d_CuotaDocVeh_Movimiento
                     CuotaNueva.PrefijoID = oeCuotaDocVeh_Movimiento.PrefijoID '@0001
                     odCuotaDocumentoVehiculo.Guardar(CuotaNueva)
                 Next
-                 
+
                 transScope.Complete()
                 Return True
             End Using

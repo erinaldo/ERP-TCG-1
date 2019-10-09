@@ -32,6 +32,10 @@ Public Class e_RegimenPensionario
     Public leHistorialPorcentaje As New List(Of e_RegimenPensionario)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

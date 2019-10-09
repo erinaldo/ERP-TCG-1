@@ -19,6 +19,10 @@ Public Class e_TipoGasto
     Public oeTipoGastoDetalle As New List(Of e_TipoGastoDetalle)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructor"

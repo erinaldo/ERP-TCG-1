@@ -23,6 +23,10 @@ Public Class e_TipoCompra
     Public Modificado As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

@@ -49,6 +49,10 @@ Public Class e_OrdenCompraMaterial
     Public IdCotizacionDetalle As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public ListaOCMaterial_OSMaterial As New List(Of e_OCMaterial_OSMaterial)
 

@@ -11,6 +11,10 @@ Public Class e_DistanciaZona
 #Region "Propiedades"
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()>
     Public TipoOperacion As String

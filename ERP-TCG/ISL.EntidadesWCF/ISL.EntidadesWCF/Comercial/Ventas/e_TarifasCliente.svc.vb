@@ -44,6 +44,10 @@ Public Class e_TarifasCliente
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public e_ListaTarifasCliente As New List(Of e_TarifasCliente)
 

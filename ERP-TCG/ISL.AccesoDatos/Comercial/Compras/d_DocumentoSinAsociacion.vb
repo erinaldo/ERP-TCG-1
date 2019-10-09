@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -76,7 +84,6 @@ Public Class d_DocumentoSinAsociacion
 
     Public Function Guardar(ByVal oeDocumentoSinAsociacion As e_DocumentoSinAsociacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoSinAsociacion
                 sqlhelper.ExecuteNonQuery("CMP.Isp_DocumentoSinAsociacion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

@@ -23,6 +23,10 @@ Public Class e_ComprobanteElectronico
     Private _firma As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

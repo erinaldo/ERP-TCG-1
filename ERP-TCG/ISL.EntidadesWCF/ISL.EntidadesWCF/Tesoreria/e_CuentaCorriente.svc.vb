@@ -26,6 +26,10 @@ Public Class e_CuentaCorriente
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Private _TotalCargo As Double
     Private _TotalAbono As Double
     Private _Ejercicio As Integer

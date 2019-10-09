@@ -59,6 +59,10 @@ Public Class e_Empresa
     Public Event DatoCambiado()
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public leContactos As New List(Of e_Persona)
 

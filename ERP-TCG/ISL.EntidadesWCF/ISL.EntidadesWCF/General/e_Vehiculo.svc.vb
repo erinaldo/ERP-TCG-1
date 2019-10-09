@@ -11,6 +11,10 @@ Public Class e_Vehiculo
     <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
+    <DataMember()>
     Public TipoOperacion As String
     <DataMember()> _
     Public TipoActualizacion As String

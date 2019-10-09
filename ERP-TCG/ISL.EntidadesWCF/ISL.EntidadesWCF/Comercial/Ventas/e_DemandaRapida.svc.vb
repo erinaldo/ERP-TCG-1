@@ -82,6 +82,10 @@ Public Class e_DemandaRapida
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oeListaBitacora As New List(Of e_Bitacora)
 

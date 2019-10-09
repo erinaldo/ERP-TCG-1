@@ -20,6 +20,10 @@ Public Class e_CategoriaServicio
     Public loCtaCtbleCatServ As New List(Of e_CtaCtbleCatServicio)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public Property Id() As String Implements IPropiedadesBasicas.Id
         Get

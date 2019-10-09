@@ -25,6 +25,10 @@ Public Class e_KmMack
     Public loKmMackDet As List(Of e_KmMackDet)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

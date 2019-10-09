@@ -24,6 +24,10 @@ Public Class e_ChequeContable
     Public TipoOperacion As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructores"

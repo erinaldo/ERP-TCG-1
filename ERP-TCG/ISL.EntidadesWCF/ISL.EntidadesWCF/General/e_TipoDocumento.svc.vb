@@ -21,6 +21,10 @@ Public Class e_TipoDocumento
     Public IndIGV As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public leDocumentoImpuesto As New List(Of e_DocumentoImpuesto)
 

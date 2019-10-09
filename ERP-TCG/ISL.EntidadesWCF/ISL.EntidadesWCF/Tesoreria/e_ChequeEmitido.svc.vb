@@ -47,6 +47,10 @@ Public Class e_ChequeEmitido
     Public loAsientoModelo As New List(Of e_AsientoModelo)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

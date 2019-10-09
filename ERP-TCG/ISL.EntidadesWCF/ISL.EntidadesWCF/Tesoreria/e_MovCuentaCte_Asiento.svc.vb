@@ -16,6 +16,10 @@ Public Class e_MovCuentaCte_Asiento
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
 #End Region

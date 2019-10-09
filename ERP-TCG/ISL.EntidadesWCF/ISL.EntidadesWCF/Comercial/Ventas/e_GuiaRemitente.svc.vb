@@ -30,6 +30,10 @@ Public Class e_GuiaRemitente
     Public IdRemitente As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Event DatoCambiado()
 

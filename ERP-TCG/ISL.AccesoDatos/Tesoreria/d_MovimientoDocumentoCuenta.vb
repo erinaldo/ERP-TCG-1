@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -20,11 +28,10 @@ Public Class d_MovimientoDocumentoCuenta
     Public Function Obtener(ByVal oeMovimientoDocumentoCuenta As e_MovimientoDocumentoCuenta) As e_MovimientoDocumentoCuenta
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
             Left(oeMovimientoDocumentoCuenta.PrefijoID, 1), "", oeMovimientoDocumentoCuenta.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeMovimientoDocumentoCuenta = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeMovimientoDocumentoCuenta
@@ -35,15 +42,14 @@ Public Class d_MovimientoDocumentoCuenta
 
     Public Function Listar(ByVal oeMovimientoDocumentoCuenta As e_MovimientoDocumentoCuenta) As List(Of e_MovimientoDocumentoCuenta)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMovimientoDocumentoCuenta As New List(Of e_MovimientoDocumentoCuenta)
             Dim ds As DataSet
             With oeMovimientoDocumentoCuenta
-                ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "" _
+                ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "" _
         , Left(.PrefijoID, 1), "" _
                         , .Id _
-                        , .IdMovimientoDocumento _
-                        , .IdCuentaxCyP _
+                        , .idMovimientoDocumento _
+                        , .idCuentaxCyP
                         )
             End With
             oeMovimientoDocumentoCuenta = Nothing
@@ -61,12 +67,11 @@ Public Class d_MovimientoDocumentoCuenta
 
     Public Function Guardar(ByVal oeMovimientoDocumentoCuenta As e_MovimientoDocumentoCuenta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimientoDocumentoCuenta
-                sqlhelper.ExecuteNonQuery("TES.Isp_MovimientoDocumentoCuenta_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_MovimientoDocumentoCuenta_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .idMovimientoDocumento _
-                        , .idCuentaxCyP _
+                        , .idCuentaxCyP
                     )
             End With
             Return True

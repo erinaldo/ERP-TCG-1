@@ -14,6 +14,10 @@ Public Class e_RegistroConformidadOT
     Public lstDetalleRegConformidadOT As New List(Of e_DetalleRegConformidadOT)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public FechaInicio As Date
     <DataMember()>

@@ -19,6 +19,10 @@ Public Class e_ValorizacionNeumatico
     Public FechaFin As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()>
     Public lstDetalleValorizacion As New List(Of e_DetalleValorizacionNeumatico)

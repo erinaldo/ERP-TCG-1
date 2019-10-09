@@ -42,6 +42,10 @@ Public Class e_Peaje
     Public ListaTarifa As List(Of e_PeajeTarifa)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

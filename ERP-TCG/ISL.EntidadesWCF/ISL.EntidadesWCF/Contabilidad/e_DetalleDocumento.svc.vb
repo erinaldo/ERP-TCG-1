@@ -40,6 +40,10 @@ Public Class e_DetalleDocumento
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Private _Seleccion As Boolean
     Private _Pos As Integer
 

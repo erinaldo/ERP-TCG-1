@@ -9,6 +9,10 @@ Public Class e_DespachoOperaciones
     Public TipoOperacion As String = String.Empty
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

@@ -45,6 +45,10 @@ Public Class e_OrdenVenta
     Public oeDocumento As New e_MovimientoDocumento
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

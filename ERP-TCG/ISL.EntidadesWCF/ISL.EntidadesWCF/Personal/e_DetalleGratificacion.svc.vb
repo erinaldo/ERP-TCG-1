@@ -88,6 +88,10 @@ Public Class e_DetalleGratificacion
     Public Equivale As Integer = 0
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

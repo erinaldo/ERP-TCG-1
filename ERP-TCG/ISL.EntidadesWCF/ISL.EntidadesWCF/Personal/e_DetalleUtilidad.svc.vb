@@ -31,6 +31,10 @@ Public Class e_DetalleUtilidad
     Public Año As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

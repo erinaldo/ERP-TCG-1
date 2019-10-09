@@ -24,6 +24,10 @@ Public Class e_CierreCaja
     Public loCierreCajaDet As New List(Of e_CierreCajaDet)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oeMovimiento As New e_Movimiento
     <DataMember()> _

@@ -41,7 +41,10 @@ Public Class e_OrdenCompraServicio
     Private _Pos As Integer 'Para saber la posicion de cada registro y controlar si va o no va incluido el IGV segun la posicion.
     <DataMember()>
     Public PrefijoID As String = ""
-
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

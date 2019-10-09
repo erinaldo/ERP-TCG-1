@@ -96,6 +96,10 @@ Public Class e_Viaje
     'Public Event DatoCambiado As DatoCambiadoEventHandler
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

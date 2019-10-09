@@ -28,6 +28,10 @@ Public Class e_DerechoHabiente
     Public oePersona As New e_Persona
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

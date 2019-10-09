@@ -49,6 +49,10 @@ Public Class e_DetalleProduccionPiloto
     Public indCalcular As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

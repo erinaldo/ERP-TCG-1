@@ -34,6 +34,10 @@ Public Class e_Cliente
     Public IndRelacionada As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

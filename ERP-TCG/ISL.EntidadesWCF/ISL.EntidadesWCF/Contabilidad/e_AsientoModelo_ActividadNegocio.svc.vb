@@ -26,6 +26,10 @@ Public Class e_AsientoModelo_ActividadNegocio
     Public leReferencia As New List(Of e_AsientoModelo_Referencia)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

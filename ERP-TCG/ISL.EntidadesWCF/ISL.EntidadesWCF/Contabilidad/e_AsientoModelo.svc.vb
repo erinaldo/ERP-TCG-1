@@ -52,6 +52,10 @@ Public Class e_AsientoModelo
     Public Ejercicio As Integer = 0
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public TipoBusca As Integer
     Public CargaCompleta As Boolean

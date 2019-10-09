@@ -37,6 +37,10 @@ Public Class e_DetallePagoCajaTrabajador
     Public TipoBusca As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

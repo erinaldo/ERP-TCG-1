@@ -34,6 +34,10 @@ Public Class e_Robo
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

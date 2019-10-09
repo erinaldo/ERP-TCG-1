@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -99,7 +107,6 @@ Public Class d_DetalleDocumento
 
     Public Function Guardar(ByVal oeDetalleDocumento As e_DetalleDocumento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim idDetalle As String = ""
             With oeDetalleDocumento
                 idDetalle = sqlhelper.ExecuteScalar("CON.Isp_DetalleDocumento_IAE", .TipoOperacion _
@@ -111,7 +118,7 @@ Public Class d_DetalleDocumento
                 .Id = idDetalle
             End With
             Return True
-            
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -157,7 +164,6 @@ Public Class d_DetalleDocumento
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDocumento", PrefijoID
                                   )
@@ -170,7 +176,6 @@ Public Class d_DetalleDocumento
 
     Public Function GuardarMasivo(ByVal dtDetalleDoc As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.DetalleDocumento", dtDetalleDoc)
             Return True
         Catch ex As Exception

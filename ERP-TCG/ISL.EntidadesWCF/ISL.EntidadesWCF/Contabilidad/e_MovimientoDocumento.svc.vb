@@ -121,6 +121,10 @@ Public Class e_MovimientoDocumento
     Public Tipo As String = "" 'para compras FACTURACOMPRA
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
     '----------------------COMBUSTIBLE/WALTER----------------------------------------

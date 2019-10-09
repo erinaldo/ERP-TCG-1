@@ -35,6 +35,10 @@ Public Class e_OrdenTrabajo_Material
     Public oeReqMaterial As New e_RequerimientoMaterial
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> _
     Public Property Id() As String

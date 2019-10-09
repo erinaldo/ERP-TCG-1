@@ -34,6 +34,10 @@ Public Class e_PagoAutomatico
     Public Fecha As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Sub New()
 

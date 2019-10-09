@@ -32,6 +32,10 @@ Public Class e_Capacitacion
     Public leDetalle As New List(Of e_DetalleCapacitacion)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

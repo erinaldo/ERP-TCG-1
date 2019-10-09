@@ -1,4 +1,11 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
@@ -88,10 +95,9 @@ Public Class d_CuentaxCyP
 
     Public Function Guardar(ByRef oeCuentaxCyP As e_CuentaxCyP) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeCuentaxCyP
-                stResultado = sqlhelper.ExecuteScalar("TES.ISP_CuentaxCyP_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.ISP_CuentaxCyP_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMovimientoCajaBanco _
                         , .IdMovimientoDocumento _
@@ -105,12 +111,13 @@ Public Class d_CuentaxCyP
                         , .IndCargoAbono _
                         , .IdMoneda _
                         , .TipoCambio _
-                        , .UsuarioModifica _
+                        , .UsuarioModifica
                         ).ToString.Split("_")
                 oeCuentaxCyP.Id = stResultado(0)
                 If oeCuentaxCyP.MovDocCta.TipoOperacion = "I" Then
                     Dim odMovcDocCta As New d_MovimientoDocumentoCuenta
                     oeCuentaxCyP.MovDocCta.idCuentaxCyP = stResultado(0)
+                    oeCuentaxCyP.MovDocCta.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                     odMovcDocCta.Guardar(oeCuentaxCyP.MovDocCta)
                 End If
 
@@ -120,6 +127,7 @@ Public Class d_CuentaxCyP
                         If .TipoOperacion = "I" Then
                             Dim odObligacionCta As New d_ObligacionDocumento
                             .IdCuentaxCyP = stResultado(0)
+                            .PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                             odObligacionCta.Guardar(oeCuentaxCyP.ObligacionDocumento)
                         End If
                     End With
@@ -130,6 +138,7 @@ Public Class d_CuentaxCyP
                             If o_o.TipoOperacion = "I" Then
                                 Dim odObligacionCta2 As New d_ObligacionDocumento
                                 o_o.IdCuentaxCyP = stResultado(0)
+                                o_o.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                                 odObligacionCta2.Guardar(o_o)
                             End If
                         Next
@@ -143,6 +152,7 @@ Public Class d_CuentaxCyP
                         '.AsMov_MovDoc.IdAsientoMovimiento = stResultado(0)
                         .AsMov_MovDoc.IdAsientoMovimiento = ._IdAsientoMovimiento
                         .AsMov_MovDoc.IdCuentaxCyP = oeCuentaxCyP.Id
+                        .AsMov_MovDoc.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                         If .AsMov_MovDoc.TipoOperacion = "E" Then
                             odAsM.Eliminar(.AsMov_MovDoc)
                         Else
@@ -153,6 +163,7 @@ Public Class d_CuentaxCyP
                 If Not .CuentaxPDocumentoRetencion Is Nothing Then
                     .CuentaxPDocumentoRetencion.IdCuentaxCyP = stResultado(0)
                     Dim odCuentaxpCompraRet As New d_CuentaxPDocumentoRetencion
+                    .CuentaxPDocumentoRetencion.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                     odCuentaxpCompraRet.Guardar(.CuentaxPDocumentoRetencion)
                 End If
             End With
@@ -164,10 +175,9 @@ Public Class d_CuentaxCyP
 
     Public Function GuardarCuentaCyP_AsiMovMovDoc(ByRef oeCuentaxCyP As e_CuentaxCyP) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeCuentaxCyP
-                stResultado = sqlhelper.ExecuteScalar("TES.ISP_CuentaxCyP_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.ISP_CuentaxCyP_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMovimientoCajaBanco _
                         , .IdMovimientoDocumento _
@@ -181,7 +191,7 @@ Public Class d_CuentaxCyP
                         , .IndCargoAbono _
                         , .IdMoneda _
                         , .TipoCambio _
-                        , .UsuarioModifica _
+                        , .UsuarioModifica
                         ).ToString.Split("_")
                 oeCuentaxCyP.Id = stResultado(0)
                 ' Guardar Asiento Movimiento Movimiento Documento
@@ -228,7 +238,6 @@ Public Class d_CuentaxCyP
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "TES.CuentaxCyP", PrefijoID
                                   )
