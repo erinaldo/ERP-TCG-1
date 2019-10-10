@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_MaterialAlmacenRequerimiento
@@ -58,6 +66,7 @@ Public Class frm_MaterialAlmacenRequerimiento
             oeMaterialAlmacen.StockMaximo = numStockMaximo.Value
             oeMaterialAlmacen.StockMinimo = numStockMinimo.Value
             oeMaterialAlmacen.UsuarioCreacion = gUsuarioSGI.Id
+            oeMaterialAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMaterialAlmacen.Guardar1(oeMaterialAlmacen) Then
                 ActualizarListaPublica("MATERIAL ALMACEN")
                 Me.Close()

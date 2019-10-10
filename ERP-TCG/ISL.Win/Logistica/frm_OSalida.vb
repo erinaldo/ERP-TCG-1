@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Microsoft.Office.Interop
 
@@ -275,6 +283,7 @@ Public Class frm_OSalida
         Try
             LlenaObjeto()
             If ValidarOrden() Then
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olOrden.Guardar(oeOrden, New List(Of e_RegistroInventario))
                 Return True
             End If
@@ -342,6 +351,7 @@ Public Class frm_OSalida
                 End With
                 oeInventario.oeRegistroInventario = New e_RegistroInventario
                 oeInventario.oeRegistroInventario = oeRegistroInventario
+                oeInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loInventario.Add(oeInventario)
             Next
             Return loInventario
@@ -584,6 +594,7 @@ Public Class frm_OSalida
                         .Id = oeOrd.IdMovimientoInventario
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeOrd.FechaOrden)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -639,6 +650,7 @@ Public Class frm_OSalida
             lstMovimientoDocumentoAsoc = New List(Of e_MovimientoDocumento)
             oeMovimientoDocumento = olOrdenDoc.ObtenerDocumento(oeOrdenDoc)
             griOrdAsoc.DataSource = lstMovimientoDocumentoAsoc
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeMovimientoDocumento.Id.Length > 0 Then
                 oeOrden.TipoOperDocAsoc = "A"
                 lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
@@ -679,6 +691,7 @@ Public Class frm_OSalida
                         oeMovimientoDocumento.TipoPago = String.Empty
                         oeMovimientoDocumento.IdTipoPago = String.Empty
                         oeOrden.TipoOperDocAsoc = "A"
+                        oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
                         griOrdAsoc.DataBind()
                     Else
@@ -753,6 +766,7 @@ Public Class frm_OSalida
                     .Activo = True
                     .CodigoMaterial = oe.Codigo
                 End With
+                oeOrdenMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loOrdenMaterial.Add(oeOrdenMaterial)
             Next
             griOrdenMaterial.DataSource = loOrdenMaterial
@@ -770,6 +784,7 @@ Public Class frm_OSalida
             If lstMovimientoDocumentoAsoc.Count = 1 Then Exit Sub
             oeMovimientoDocumento = New e_MovimientoDocumento
             oeMovimientoDocumento = griListaDoc.ActiveRow.ListObject
+            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
             ListarProveedores(cboProveedor, oeMovimientoDocumento.IdClienteProveedor)
             cboProveedor.Value = oeMovimientoDocumento.IdClienteProveedor
@@ -831,6 +846,7 @@ Public Class frm_OSalida
                     .Activo = True
                     .CodigoMaterial = oe.Codigo
                 End With
+                oeOrdenMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loOrdenMaterial.Add(oeOrdenMaterial)
             Next
             griOrdenMaterial.DataSource = loOrdenMaterial
@@ -850,6 +866,7 @@ Public Class frm_OSalida
                 .Referencia = "Orden"
                 .UsuarioEdita = gUsuarioSGI.Id
             End With
+            oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
             IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
         End If
     End Sub
@@ -889,6 +906,7 @@ Public Class frm_OSalida
                     oeOrden.lstOrdenMaterial = olOrdenMaterial.Listar(oeOrdenMaterial)
                     EjecutarOrden()
                     oeOrden.lstInventario = New List(Of e_Inventario)
+                    oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOrden.Guardar(oeOrden, New List(Of e_RegistroInventario)) Then
                         mensajeEmergente.Confirmacion("Se Genero el Asiento de la Orden: " & oeOrden.NroOrden & ", Correctamente.", True)
                     End If
@@ -970,6 +988,7 @@ Public Class frm_OSalida
                         oeOrdenMaterial.UnidadMedida = ""
                         oeOrdenMaterial.ValorVenta = oeOrdenMaterial.PrecioUnitario * oeOrdenMaterial.CantidadMaterial
                         oeOrdenMaterial.Activo = True
+                        oeOrdenMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                         loOrdenMaterial.Add(oeOrdenMaterial)
                     Else
                         Exit For
@@ -1135,6 +1154,7 @@ Public Class frm_OSalida
                     oeMovimientoDocumento.TipoCambio = 0.0
                     oeMovimientoDocumento.TipoPago = String.Empty
                     oeMovimientoDocumento.IdTipoPago = String.Empty
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstMovimientoDocumento.Add(oeMovimientoDocumento)
                 Next
                 griListaDoc.DataSource = lstMovimientoDocumento

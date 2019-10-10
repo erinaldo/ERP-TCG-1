@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 ''' <summary>
@@ -64,6 +72,7 @@ Public Class frm_HistorialInventario
                 .ValorTotal = oe.ValorTotal
                 .Fecha = oe.FechaCreacion
             End With
+            oeHistorialInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
             listaHistorialInventario.Add(oeHistorialInventario)
         Next
         griListaInventario.DataSource = listaHistorialInventario
@@ -128,7 +137,8 @@ Public Class frm_HistorialInventario
             oeHistorial.usuariocreacion = gUsuarioSGI.Id
             oeHistorial.Id = ""
             oeHistorial.TipoOperacion = "I"
-            oeHistorial.fechacreacion = ObtenerFechaServidor()
+            oeHistorial.FechaCreacion = ObtenerFechaServidor()
+            oeHistorial.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olHistorial.GuardarMasivo(oeHistorial) Then mensajeEmergente.Confirmacion("Se Guardo satisfactoriamente en " & Me.Text)
             Return True
         Catch ex As Exception

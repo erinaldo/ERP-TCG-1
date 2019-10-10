@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -115,9 +123,8 @@ Public Class d_GastoOperacion
 
     Public Function GuardarSimple(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGastoOperacion
-                sqlhelper.ExecuteNonQuery("TES.Isp_GastoOperacion_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GastoOperacion_IAE", .TipoOperacion,
                         .Id _
                         , .IdCuentaCorriente _
                         , .TipoMovimiento _
@@ -133,11 +140,11 @@ Public Class d_GastoOperacion
                         , .Activo _
                         , .PrefijoID _
                         , 0 _
-                        , .FechaCierre, _
-                        "", _
-                        "", _
-                        0, _
-                        .IdCaja, _
+                        , .FechaCierre,
+                        "",
+                        "",
+                        0,
+                        .IdCaja,
                         .IndGasto)
             End With
             Return True
@@ -179,14 +186,13 @@ Public Class d_GastoOperacion
 
     Public Function GuardarGasto(oeGastoOperacion As e_GastoOperacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odAsiento As New d_Asiento
             Dim odGastoCaja As New d_Gasto_Caja
             Dim idGastoOpe As String = ""
 
             Dim IdRegComb As String = ""
             With oeGastoOperacion
-                .Id = sqlhelper.ExecuteScalar("TES.Isp_GastoOperacion_IAE", .TipoOperacion, _
+                .Id = sqlhelper.ExecuteScalar("TES.Isp_GastoOperacion_IAE", .TipoOperacion,
                         .Id, .IdCuentaCorriente, .TipoMovimiento, .IdFlujoCaja, .IdDocumento _
                         , .IdViaje, .FechaEmision, .Glosa, .Total, .IdEstado, .IdGrupo, .UsuarioCreacion _
                         , .Activo, .PrefijoID, .IndAlmacen, .FechaEmision, .IdProveedor _
@@ -195,10 +201,11 @@ Public Class d_GastoOperacion
                 If .oeRegistroCombustible IsNot Nothing Then
                     .oeRegistroCombustible.TipoOperacion = "I"
                     .oeRegistroCombustible.Ind_GastoViaje = 1
+                    .oeRegistroCombustible.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                     With oeGastoOperacion.oeRegistroCombustible
-                        IdRegComb = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
-                                            .TipoOperacion, _
-                                            .PrefijoID, _
+                        IdRegComb = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]",
+                                            .TipoOperacion,
+                                            .PrefijoID,
                                             .Id _
                                             , .IdViaje _
                                             , .IdVehiculo _
@@ -221,6 +228,7 @@ Public Class d_GastoOperacion
                         oeGastoRegConsumoCombustible.TipoOperacion = "I"
                         oeGastoRegConsumoCombustible.IdGastoOperacion = idGastoOpe
                         oeGastoRegConsumoCombustible.IdRegistroConsumoCombustible = IdRegComb
+                        oeGastoRegConsumoCombustible.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                         odGastoRegConsumoCombustible.Guardar(oeGastoRegConsumoCombustible)
                     End With
                 End If
@@ -228,9 +236,11 @@ Public Class d_GastoOperacion
                 If .TipoOperacion <> "G" AndAlso .TipoOperacion <> "L" AndAlso .IdViaje = "" Then
                     If .oeGasto_Caja.id = "" Then .oeGasto_Caja.TipoOperacion = "I"
                     .oeGasto_Caja.IdGastoOperacion = idGastoOpe
+                    .oeGasto_Caja.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                     odGastoCaja.Guardar(.oeGasto_Caja)
                     If .oeGasto_Caja.TipoOperacion = "I" And .oeGasto_Caja.IndCompraAlmacen Then
                         .oeMovimientoDocumento.TipoOperacion = "CAM"
+                        .oeMovimientoDocumento.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                         odMovimientoDocumento.GuardarGastoOperacion(.oeMovimientoDocumento)
                     End If
                 End If
@@ -238,6 +248,8 @@ Public Class d_GastoOperacion
                     If .GastoAsiento.TipoOperacion = "I" Then
                         Dim odGastoAsiento As New d_GastoAsiento
                         .GastoAsiento.IdGastoOperacion = idGastoOpe
+                        .GastoAsiento.PrefijoID = oeGastoOperacion.PrefijoID '@0001
+                        .oeAsiento.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                         odGastoAsiento.Guardar(.GastoAsiento, .oeAsiento)
                     End If
                 End If

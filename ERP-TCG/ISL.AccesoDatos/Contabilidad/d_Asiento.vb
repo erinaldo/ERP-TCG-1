@@ -154,10 +154,9 @@ Public Class d_Asiento
 
     Private Function GuardarAsiento(ByRef oeAsiento As e_Asiento, Optional idAsientoDocCmp As String = Nothing) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                          .Id _
                         , .IdPeriodo _
                         , .IdTipoAsiento _
@@ -183,6 +182,7 @@ Public Class d_Asiento
                 Dim odAsientoMov As New d_AsientoMovimiento
                 'detalle de asiento
                 For Each oeAsientoMovimiento As e_AsientoMovimiento In .AsientoMovimiento
+                    oeAsientoMovimiento.PrefijoID = oeAsiento.PrefijoID '@0001
                     With oeAsientoMovimiento
                         .IdAsiento = stResultado(0)
                         If oeAsiento._IdMovimientoCajaBanco <> "" Then
@@ -237,6 +237,7 @@ Public Class d_Asiento
                 If .Asiento_MovDoc.IdMovimientoDocumento <> "" Then
                     .Asiento_MovDoc.IdAsiento = stResultado(0)
                     Dim odAsientoMovDoc As New d_Asiento_MovDoc
+                    .Asiento_MovDoc.PrefijoID = oeAsiento.PrefijoID '@0001
                     odAsientoMovDoc.Guardar(.Asiento_MovDoc)
                 End If
                 If Not idAsientoDocCmp Is String.Empty And Not idAsientoDocCmp Is Nothing Then
@@ -249,6 +250,7 @@ Public Class d_Asiento
                         .IdUsuarioCrea = oeAsiento.IdUsuarioCrea
                         .Activo = True
                     End With
+                    oeAsiento_Existencia.PrefijoID = oeAsiento.PrefijoID '@0001
                     odAsiento_Existencia.Guardar(oeAsiento_Existencia)
                 End If
             End With

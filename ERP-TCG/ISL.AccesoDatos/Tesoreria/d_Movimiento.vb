@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -200,10 +208,9 @@ Public Class d_Movimiento
 
     Public Function GuardarSimple(ByVal oeMovimiento As e_Movimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion, _
-                                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion,
+                                                          .PrefijoID,
                                               .Id, .Fecha, .IdCuentaCorrienteOrigen, .IdCuentaCorrienteDestino _
                                             , .Ingreso, .Egreso, .Saldo, .Glosa, .Voucher, .UsuarioCreacion _
                                             , .Descuento, .TipoMovimiento, .IdEstado, .Activo, .TipoTransa _
@@ -233,7 +240,6 @@ Public Class d_Movimiento
 
     Public Function ActualizarMovimiento(oeMovimiento As e_Movimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.ExecuteDataset("TES.Isp_Movimiento_IAE", oeMovimiento.TipoOperacion, oeMovimiento.PrefijoID,
                              oeMovimiento.Id, Date.Parse("01/01/1901"), String.Empty, String.Empty, 0, 0, 0 _
                            , String.Empty, String.Empty, String.Empty, 0, 0, oeMovimiento.IdEstado)
@@ -245,7 +251,6 @@ Public Class d_Movimiento
 
     Public Function LiquidarHabilitar(ByVal oeMovimiento As e_Movimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento
                 sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_IAE", .TipoOperacion, .PrefijoID, .Id)
             End With
@@ -273,7 +278,6 @@ Public Class d_Movimiento
         Try
             Dim IdMovimiento As String = ""
             Dim strCorrelativo As String = ""
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope
                 If oeMov.Id <> "" Then ActualizarMovimiento(oeMov)
                 With oeMovimiento
@@ -323,7 +327,6 @@ Public Class d_Movimiento
 
     Private Function CargarCorrelativo(ByVal TipoDocumento As String, ByVal PrefijoID As String, Optional ByVal Tipo As Integer = 0) As String
         Dim Numero As String = ""
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         oeTipodocumento.TipoOperacion = "B"
         oeTipodocumento.Nombre = TipoDocumento
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
@@ -341,7 +344,6 @@ Public Class d_Movimiento
 
     Private Function CargarCorrelativoLocal(ByVal TipoDocumento As String, ByVal PrefijoID As String) As String
         Dim Numero As String = ""
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         oeTipodocumento.TipoOperacion = "B"
         oeTipodocumento.Nombre = TipoDocumento
         oeTipodocumento = odTipoDocumento.Obtener(oeTipodocumento)
@@ -357,7 +359,6 @@ Public Class d_Movimiento
     End Function
 
     Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String, Optional ByVal Tipo As Integer = 0) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             oeTipodocumento.TipoOperacion = "B"
             oeTipodocumento.Nombre = TipoDocumento
@@ -392,7 +393,6 @@ Public Class d_Movimiento
     End Function
 
     Private Function GrabarCorrelativo1(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             oeTipodocumento.TipoOperacion = "B"
             oeTipodocumento.Nombre = TipoDocumento

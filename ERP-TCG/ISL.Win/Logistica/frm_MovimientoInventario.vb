@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_MovimientoInventario
@@ -355,6 +363,7 @@ Public Class frm_MovimientoInventario
 
     Private Function GuardarRegistro() As Boolean
         Try
+            oeMovimientoInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimientoInventario.Guardar(oeMovimientoInventario) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficMovimientoInventario, 2)

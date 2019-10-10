@@ -168,12 +168,10 @@ Public Class d_AsientoMovimiento
     End Function
 
     Public Function Guardar(ByRef oeAsientoMovimiento As e_AsientoMovimiento) As Boolean
-
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -184,7 +182,7 @@ Public Class d_AsientoMovimiento
                         , .HaberME _
                         , .IdUsuarioCrea _
                         , .FechaCreacion _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
                 oeAsientoMovimiento.Id = stResultado(0)
 
@@ -192,6 +190,7 @@ Public Class d_AsientoMovimiento
                 If Not .MovimientoAnalisis Is Nothing Then
                     Dim Ids As String = ""
                     For Each oeMovAn As e_MovimientoAnalisis In .MovimientoAnalisis 'analisi relacionado a detalles de asiento
+                        oeMovAn.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         With oeMovAn
                             .IdAsientoMovimiento = stResultado(0)
                             If .TipoOperacion = "I" Or .TipoOperacion = "G" Then
@@ -226,6 +225,7 @@ Public Class d_AsientoMovimiento
                         Dim oeMovCB As New e_MovimientoCajaBanco
                         oeMovCB = .MovimientoCajaBanco
                         oeMovCB.IdAsientoMovimiento = stResultado(0)
+                        oeMovCB.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         If .MovimientoCajaBanco.TipoOperacion = "E" Then
                             odMovCB.Eliminar(oeMovCB)
                         Else
@@ -241,6 +241,7 @@ Public Class d_AsientoMovimiento
                         Dim oeMovDoc As New e_MovimientoDocumento
                         oeMovDoc = .MovimientoDocumento
                         oeMovDoc.IdAsientoMovimiento = stResultado(0)
+                        oeMovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         If .MovimientoDocumento.TipoOperacion = "E" Then
                             odMovDoc.Eliminar(oeMovDoc)
                         Else
@@ -256,6 +257,7 @@ Public Class d_AsientoMovimiento
                     If .AsMov_MovDoc.TipoOperacion <> "" Then 'relacion detalle de asiento y movimiento documento
                         Dim odAsM As New d_AsientoMov_MovDoc
                         .AsMov_MovDoc.IdAsientoMovimiento = stResultado(0)
+                        .AsMov_MovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         If .AsMov_MovDoc.TipoOperacion = "E" Then
                             odAsM.Eliminar(.AsMov_MovDoc)
                         Else
@@ -268,6 +270,7 @@ Public Class d_AsientoMovimiento
                     If .AsMov_ObligacionFin.TipoOperacion <> "" Then
                         Dim odAsM As New d_AsientoMov_ObligacionFin
                         .AsMov_ObligacionFin.IdAsientoMovimiento = stResultado(0)
+                        .AsMov_ObligacionFin.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         If .AsMov_ObligacionFin.TipoOperacion = "E" Then
                             odAsM.Eliminar(.AsMov_ObligacionFin)
                         Else
@@ -280,6 +283,7 @@ Public Class d_AsientoMovimiento
                     If .ObligacionFinanciera.TipoOperacion <> "" Then
                         Dim odObligacion As New d_ObligacionFinanciera
                         .ObligacionFinanciera._IdAsientoMovimiento = oeAsientoMovimiento.Id
+                        .ObligacionFinanciera.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odObligacion.Guardar(.ObligacionFinanciera, Nothing, False)
                     End If
                 End If
@@ -287,6 +291,7 @@ Public Class d_AsientoMovimiento
                     If .GrupoAsiento.TipoOperacion = "I" Then
                         Dim odGrupoAsiento As New d_Grupo_Asiento
                         .GrupoAsiento.IdAsientoMovimiento = stResultado(0)
+                        .GrupoAsiento.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odGrupoAsiento.Guardar(.GrupoAsiento)
                     End If
                 End If
@@ -295,6 +300,7 @@ Public Class d_AsientoMovimiento
                     If .DocumentoRetencion.TipoOperacion = "I" Then
                         Dim odDocumentoRetencion As New d_DocumentoRetencion
                         .DocumentoRetencion.IdAsientoMovimiento = stResultado(0)
+                        .DocumentoRetencion.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odDocumentoRetencion.Guardar(.DocumentoRetencion)
                     End If
                 End If
@@ -308,11 +314,10 @@ Public Class d_AsientoMovimiento
 
     Public Function GuardarMasivo(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Dim odMvimientoAnalisis As New d_MovimientoAnalisis
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -323,7 +328,7 @@ Public Class d_AsientoMovimiento
                         , .HaberME _
                         , .IdUsuarioCrea _
                         , .FechaCreacion _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
                 oeAsientoMovimiento.Id = stResultado(0)
                 If Not .DataTableAnalisis Is Nothing Then
@@ -337,6 +342,7 @@ Public Class d_AsientoMovimiento
                 Dim Ids As String = ""
                 If Not .MovimientoAnalisis Is Nothing Then
                     For Each oeMovAn As e_MovimientoAnalisis In .MovimientoAnalisis 'analisi relacionado a detalles de asiento
+                        oeMovAn.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         With oeMovAn
                             If ._TipoGuardarMasivo = "Rendir" Then
                                 If ._CambiaSaldo = True Then
@@ -374,6 +380,7 @@ Public Class d_AsientoMovimiento
                     Dim odAsMovMovDoc As New d_AsientoMov_MovDoc
                     If .AsMov_MovDoc.TipoOperacion = "I" Then
                         .AsMov_MovDoc.IdAsientoMovimiento = stResultado(0)
+                        .AsMov_MovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odAsMovMovDoc.Guardar(.AsMov_MovDoc)
                     End If
                     '--------
@@ -387,10 +394,9 @@ Public Class d_AsientoMovimiento
 
     Public Function GuardarComprobante(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAsiento _
                         , .IdCuentaContable _
@@ -401,11 +407,12 @@ Public Class d_AsientoMovimiento
                         , .HaberME _
                         , .IdUsuarioCrea _
                         , .FechaCreacion _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
                 Dim odMovAn As New d_MovimientoAnalisis
                 If Not .MovimientoAnalisis Is Nothing AndAlso .MovimientoAnalisis.Count > 0 Then
                     For Each oeMovAn As e_MovimientoAnalisis In .MovimientoAnalisis
+                        oeMovAn.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         With oeMovAn
                             .IdAsientoMovimiento = stResultado(0)
                             If .TipoOperacion = "I" Then
@@ -419,6 +426,7 @@ Public Class d_AsientoMovimiento
                     Dim oeMovAn As New e_MovimientoAnalisis
                     oeMovAn.IdAsientoMovimiento = stResultado(0)
                     oeMovAn.TipoOperacion = "L"
+                    oeMovAn.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                     odMovAn.Guardar(oeMovAn) '---elimina por AsientoMovimento
                 End If
 
@@ -430,6 +438,7 @@ Public Class d_AsientoMovimiento
                     Dim odAsMovMovDoc As New d_AsientoMov_MovDoc
                     If .AsMov_MovDoc.TipoOperacion = "I" Then
                         .AsMov_MovDoc.IdAsientoMovimiento = stResultado(0)
+                        .AsMov_MovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odAsMovMovDoc.Guardar(.AsMov_MovDoc)
                     ElseIf .AsMov_MovDoc.TipoOperacion = "A" Then
 
@@ -438,7 +447,7 @@ Public Class d_AsientoMovimiento
                         oeAsMovMovDoc.IdMovimientoDocumento = .AsMov_MovDoc.IdMovimientoDocumento
                         oeAsMovMovDoc.TipoOperacion = "I"
                         oeAsMovMovDoc.Activo = True
-
+                        oeAsMovMovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odAsMovMovDoc.Guardar(oeAsMovMovDoc)
                         '------------------------------
                     End If
@@ -458,6 +467,7 @@ Public Class d_AsientoMovimiento
                     If .ObligacionFin.TipoOperacion = "S" Then 'solo para el caso de compras por leasing debe entrar aqui
                         .ObligacionFin._IdAsientoMovimiento = stResultado(0)
                         Dim odObligacion As New d_ObligacionFinanciera
+                        .ObligacionFin.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                         odObligacion.GuardarObligacion2(.ObligacionFin)
                     End If
                 End If
@@ -489,7 +499,6 @@ Public Class d_AsientoMovimiento
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", Left(PrefijoID, 1) & "SI"
                                   )
@@ -502,7 +511,6 @@ Public Class d_AsientoMovimiento
 
     Public Function UltimoIdInsertar(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoMovimiento", PrefijoID
                                   )
@@ -520,7 +528,6 @@ Public Class d_AsientoMovimiento
     ''' <remarks></remarks>
     Public Function GuardarMasivo2(ByVal DTAsientoMovimiento As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.AsientoMovimiento", DTAsientoMovimiento, False)
             Return True
         Catch ex As Exception
@@ -556,7 +563,6 @@ Public Class d_AsientoMovimiento
     ''' <remarks></remarks>
     Public Function GuardarAsiMov(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odMovCajaBanco As New d_MovimientoCajaBanco, odMovAnalisis As New d_MovimientoAnalisis
             Dim odAsiMov_MovDoc As New d_AsientoMov_MovDoc, odAsiMov_OblFin As New d_AsientoMov_ObligacionFin
             Dim odObligacionbPago As New d_ObligacionPago
@@ -564,7 +570,7 @@ Public Class d_AsientoMovimiento
             Dim stResultado() As String
             Dim IdObliPago As String = ""
             With oeAsientoMovimiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_AsientoMovimiento_IAE", .TipoOperacion, .PrefijoID,
                        .Id _
                        , .IdAsiento _
                        , .IdCuentaContable _
@@ -575,7 +581,7 @@ Public Class d_AsientoMovimiento
                        , .HaberME _
                        , .IdUsuarioCrea _
                        , .FechaCreacion _
-                       , .Activo _
+                       , .Activo
                    ).ToString.Split("_")
                 .Id = stResultado(0)
                 'Guardar Movimiento Analisis

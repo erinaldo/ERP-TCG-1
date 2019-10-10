@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -66,10 +74,9 @@ Public Class d_Gasto_Caja
 
     Public Function Guardar(ByVal oeGasto_Caja As e_Gasto_Caja) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeGasto_Caja
-                id = sqlhelper.ExecuteScalar("TES.Isp_Gasto_Caja_IAE", .TipoOperacion, _
+                id = sqlhelper.ExecuteScalar("TES.Isp_Gasto_Caja_IAE", .TipoOperacion,
                         .id _
                         , .IdGastoOperacion _
                         , .IdRuta _
@@ -87,6 +94,7 @@ Public Class d_Gasto_Caja
                     gasveh.Id = ""
                     gasveh.TipoOperacion = "I"
                     gasveh.IdGastoCaja = id
+                    gasveh.PrefijoID = oeGasto_Caja.PrefijoID '@0001
                     odGastoVehiculo.Guardar(gasveh)
                 Next
             End With

@@ -40,10 +40,9 @@ Public Class d_OrdenAsignacion_Material
     Public Function Obtener(ByVal oeOrdenAsignacion_Material As e_OrdenAsignacion_Material) As e_OrdenAsignacion_Material
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_OrdenAsignacion_Material_Listar", _
-                                            "", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_OrdenAsignacion_Material_Listar",
+                                            "",
                                             oeOrdenAsignacion_Material.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeOrdenAsignacion_Material = Cargar(ds.Tables(0).Rows(0))
@@ -56,7 +55,6 @@ Public Class d_OrdenAsignacion_Material
 
     Public Function Listar(ByVal oeOrdenAsignacion_Material As e_OrdenAsignacion_Material) As List(Of e_OrdenAsignacion_Material)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldOrdenAsignacion_Material As New List(Of e_OrdenAsignacion_Material)
             Dim ds As DataSet
             With oeOrdenAsignacion_Material
@@ -69,7 +67,7 @@ Public Class d_OrdenAsignacion_Material
                         , .IdUnidadMedida _
                         , .IdSubAlmacen _
                         , .UsuarioCreacion _
-                        , .FechaCreacion _
+                        , .FechaCreacion
                         )
             End With
             oeOrdenAsignacion_Material = Nothing

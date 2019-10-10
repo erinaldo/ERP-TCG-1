@@ -1158,6 +1158,7 @@ Public Class d_MovimientoDocumento
                         Detalle.IdMovimientoDocumento = stResultado(0)
                         Detalle.UsuarioCreacion = .IdUsuarioCrea
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         odDetDoc.Guardar(Detalle)
                     Next
                 End If

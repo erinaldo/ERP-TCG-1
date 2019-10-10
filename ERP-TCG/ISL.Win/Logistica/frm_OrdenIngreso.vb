@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -1023,6 +1031,7 @@ Public Class frm_OrdenIngreso
             '-------------------------------------
             oeOrdenTrabajoMat.IdMaterial = filaMat.IdMaterial
             oeOrdenTrabajoMat.CantidadMaterialDevuelto = filaMat.CantidadMaterial
+            oeOrdenTrabajoMat.PrefijoID = gs_PrefijoIdSucursal '@0001
             olOrdenTrabajoMat.Guardar(oeOrdenTrabajoMat)
         Next
     End Sub
@@ -1042,6 +1051,7 @@ Public Class frm_OrdenIngreso
             '-------------------------------------
             oeOrdenAsignacionMat.IdMaterial = filaMat.IdMaterial
             oeOrdenAsignacionMat.CantidadMaterialDevuelto = filaMat.CantidadMaterial
+            oeOrdenAsignacionMat.PrefijoID = gs_PrefijoIdSucursal '@0001
             olOrdenAsignacionMat.Guardar(oeOrdenAsignacionMat)
         Next
     End Sub
@@ -1142,6 +1152,7 @@ Public Class frm_OrdenIngreso
             oeRegistroInventario.IdSubAlmacen = item.IdSubAlmacen
             oeRegistroInventario.TipoOperacion = oeOrden.TipoOperacion
             oeRegistroInventario.IdOrden = oeOrden.Id
+            oeRegistroInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
             listaRegistroInventario.Add(oeRegistroInventario)
         Next
     End Sub
@@ -1372,6 +1383,7 @@ Public Class frm_OrdenIngreso
                     Next
                 End If
             End If
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olOrden.Guardar(oeOrden, New List(Of e_RegistroInventario)) Then Return False
             Select Case oeOrden.TipoOperacion
                 Case "T"
@@ -1932,6 +1944,7 @@ Public Class frm_OrdenIngreso
                         .Id = oeOrd.IdMovimientoInventario
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeOrd.FechaOrden)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -1952,6 +1965,7 @@ Public Class frm_OrdenIngreso
                 .Referencia = "Orden"
                 .UsuarioEdita = gUsuarioSGI.Id
             End With
+            oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
             IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
         End If
     End Sub

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -294,6 +302,7 @@ Public Class frm_MaterialAlmacen
                 oeMaterialAlmacen.StockMaximo = matRow("StockMaximo")
                 oeMaterialAlmacen.IdZona = matRow("Zona")
                 oeMaterialAlmacen.UsuarioCreacion = gUsuarioSGI.Id
+                oeMaterialAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lstMateriales.Add(oeMaterialAlmacen)
             Next
 
@@ -1023,6 +1032,7 @@ Public Class frm_MaterialAlmacen
                 oeMatAlm.Id = .ActiveRow.Cells("Id").Value
                 oeMatAlm.IdZona = .ActiveRow.Cells("Zona").Value
                 oeMatAlm.TipoOperacion = "Z"
+                oeMatAlm.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMaterialAlmacen.Guardar1(oeMatAlm) Then
                     mensajeEmergente.Confirmacion("Informacion Actualizada Correctamente")
                     Listar(True)
@@ -1061,6 +1071,7 @@ Public Class frm_MaterialAlmacen
                             .Id = RTrim(Fila.Cells("Id").Value)
                             .IdZona = Fila.Cells("Zona").Value
                         End With
+                        oeMaterialAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lstMateriales.Add(oeMaterialAlmacen)
                     Next
                 End If

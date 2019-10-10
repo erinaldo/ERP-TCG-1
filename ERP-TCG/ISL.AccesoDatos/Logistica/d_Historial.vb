@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_Historial
@@ -72,17 +80,16 @@ Public Class d_Historial
 
     Public Function Guardar(ByVal oeHistorial As e_Historial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeHistorial
-                    stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Historial_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Historial_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdSubAlmacen _
                             , .Fecha _
                             , .Activo _
-                            , .usuariocreacion _
-                            , .Glosa _
+                            , .UsuarioCreacion _
+                            , .Glosa
                         ).ToString.Split("_")
 
                     For Each Detalle As e_HistorialInventario In .lstHistorialInventario

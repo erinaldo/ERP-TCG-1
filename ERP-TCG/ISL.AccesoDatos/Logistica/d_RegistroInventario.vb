@@ -207,7 +207,6 @@ Public Class d_RegistroInventario
 
     Public Function AjusarKardex(lstRegistroInventario As List(Of e_RegistroInventario)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For Each oe As e_RegistroInventario In lstRegistroInventario
                     oe.TipoOperacion = "J"
