@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -6,17 +14,16 @@ Public Class d_Operacion
 
     Public connectionString As String = d_Conexion.CadenaConexionSGI()
 
-    Dim sqlhelper As SqlHelper
-    Dim odSeguimiento As d_Seguimiento
-    Dim oeSeguimiento As e_Seguimiento
-    Dim odMovimiento As d_Movimiento
-    Dim oeMovimiento As e_Movimiento
-    Dim odMovimiento_Viaje As d_Movimiento_Viaje
-    Dim oeMovimiento_Viaje As e_Movimiento_Viaje
-    Dim odIncidenciaAutentificada As d_IncidenciasAutentificadas
-    Dim odProcesarTarifasProceso As d_ProcesarTarifasProceso
-    Dim odViajeTercero As d_ViajesTerceros
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
+    Private sqlhelper As New SqlHelper
+    Dim odSeguimiento As New d_Seguimiento
+    Dim oeSeguimiento As New e_Seguimiento
+    Dim odMovimiento As New d_Movimiento
+    Dim oeMovimiento As New e_Movimiento
+    Dim odMovimiento_Viaje As New d_Movimiento_Viaje
+    Dim oeMovimiento_Viaje As New e_Movimiento_Viaje
+    Dim odIncidenciaAutentificada As New d_IncidenciasAutentificadas
+    Dim odProcesarTarifasProceso As New d_ProcesarTarifasProceso
+    Dim odViajeTercero As New d_ViajesTerceros
     Dim odBitacora As New d_Bitacora
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_Operacion
@@ -44,10 +51,9 @@ Public Class d_Operacion
 
     Public Function Obtener(ByVal oeOperacion As e_Operacion) As e_Operacion
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Operacion_Listar]", _
-                                            "", _
+            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Operacion_Listar]",
+                                            "",
                                             oeOperacion.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeOperacion = Cargar(ds.Tables(0).Rows(0))
@@ -63,7 +69,6 @@ Public Class d_Operacion
 
     Public Function Listar(ByVal oeOperacion As e_Operacion) As List(Of e_Operacion)
         Try
-            sqlhelper = New SqlHelper
             Dim ldOperacion As New List(Of e_Operacion)
             Dim ds As DataSet
             With oeOperacion
@@ -92,8 +97,6 @@ Public Class d_Operacion
 
     Public Function Guardar(ByVal oeOperacion As e_Operacion) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            d_DatosConfiguracion = New d_DatosConfiguracion
             odViajeTercero = New d_ViajesTerceros
             odSeguimiento = New d_Seguimiento
             oeSeguimiento = New e_Seguimiento
@@ -137,6 +140,7 @@ Public Class d_Operacion
                             OperacionDetalle.IdOperacion = stResultado(0)
                             OperacionDetalle.TipoOperacion = "I"
                             OperacionDetalle.UsuarioCreacion = oeOperacion.UsuarioCreacion
+                            OperacionDetalle.PrefijoID = oeOperacion.PrefijoID '@0001
                             GuardarOperacionDetalle(OperacionDetalle)
                         Next
 
@@ -144,12 +148,13 @@ Public Class d_Operacion
                             ContratoTercero.TipoOperacion = "I"
                             ContratoTercero.IdOperacion = stResultado(0)
                             ContratoTercero.UsuarioCrea = oeOperacion.UsuarioCreacion
+                            ContratoTercero.PrefijoID = oeOperacion.PrefijoID '@0001
                             odViajeTercero.Guardar(ContratoTercero)
                         Next
                         Dim c As Integer = 1
                         For Each Viaje As e_Viaje In oeOperacion.oeViaje
                             'MOVIMIENTO ACTUALIZA CUENTA DE BOLSA                           '
-                            '
+                            Viaje.PrefijoID = oeOperacion.PrefijoID '@0001
                             Viaje.IndFormato = oeOperacion.IndFormato
                             Viaje.IdOperacion = stResultado(0)
                             Viaje.Carga = oeOperacion.oeOperacionDetalle.Count
@@ -183,6 +188,7 @@ Public Class d_Operacion
                                     .UsuarioCreacion = Viaje.UsuarioCreacion
                                     .FechaFalla = Viaje.Fecha
                                 End With
+                                oeSeguimiento.PrefijoID = oeOperacion.PrefijoID '@0001
                                 odSeguimiento.Guardar(oeSeguimiento)
                             End If
                             ' INSERTAR PARA HABILITAR BOLSA DE VIAJE
@@ -209,6 +215,8 @@ Public Class d_Operacion
                                     .oeMovimientoViaje = New e_Movimiento_Viaje
                                     .oeMovimientoViaje.IdViaje = stResultado1
                                 End With
+                                oeMovimiento.PrefijoID = oeOperacion.PrefijoID '@0001
+                                oeMovimiento.oeMovimientoViaje.PrefijoID = oeOperacion.PrefijoID '@0001
                                 odMovimiento.GuardarMovimiento(oeMovimiento, New e_Movimiento)
                             End If
                             Dim odDespachoOperaciones As New d_DespachoOperaciones
@@ -216,6 +224,7 @@ Public Class d_Operacion
                             'Actualizar IdViaje en Tabla DespachoOperaciones
                             If c = 1 AndAlso String.IsNullOrWhiteSpace(Viaje.Id) AndAlso Not String.IsNullOrWhiteSpace(Viaje.IdDespachoOperaciones) Then
                                 oeDespachoOperaciones = New e_DespachoOperaciones
+                                oeDespachoOperaciones.PrefijoID = oeOperacion.PrefijoID '@0001
                                 oeDespachoOperaciones.Id = Viaje.IdDespachoOperaciones
                                 oeDespachoOperaciones = odDespachoOperaciones.Obtener(oeDespachoOperaciones)
                                 If Not String.IsNullOrWhiteSpace(oeDespachoOperaciones.Id) Then
@@ -261,6 +270,7 @@ Public Class d_Operacion
                 Else
                     For I As Integer = 1 To oeOperacion.NroOperacionVueltas
                         For Each Viaje As e_Viaje In oeOperacion.oeViaje
+                            Viaje.PrefijoID = oeOperacion.PrefijoID '@0001
                             Tracto = Viaje.Tracto
                             Escala = Viaje.IndEscala
                             If Escala = 0 Then
@@ -284,12 +294,14 @@ Public Class d_Operacion
                                     OperacionDetalle.IdOperacion = stResultado(0)
                                     OperacionDetalle.TipoOperacion = oeOperacion.Tipooperacion
                                     OperacionDetalle.UsuarioCreacion = oeOperacion.UsuarioCreacion
+                                    OperacionDetalle.PrefijoID = oeOperacion.PrefijoID '@0001
                                     GuardarOperacionDetalle(OperacionDetalle)
                                 Next
                                 For Each ContratoTercero As e_ViajesTerceros In oeOperacion.oeContratoTercero
                                     ContratoTercero.TipoOperacion = "I"
                                     ContratoTercero.IdOperacion = stResultado(0)
                                     ContratoTercero.UsuarioCrea = oeOperacion.UsuarioCreacion
+                                    ContratoTercero.PrefijoID = oeOperacion.PrefijoID '@0001
                                     odViajeTercero.Guardar(ContratoTercero)
                                 Next
                                 Viaje.IdOperacion = stResultado(0)
@@ -297,10 +309,10 @@ Public Class d_Operacion
                             Else
                                 If TractoEscala <> Viaje.Tracto Then
                                     With oeOperacion
-                                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]", _
-                                                .Tipooperacion, _
-                                                .PrefijoID, _
-                                                "A", _
+                                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Operacion_IAE]",
+                                                .Tipooperacion,
+                                                .PrefijoID,
+                                                "A",
                                                 .Id _
                                                 , .Codigo _
                                                 , .IdRuta _
@@ -319,12 +331,14 @@ Public Class d_Operacion
                                         OperacionDetalle.IdOperacion = stResultado(0)
                                         OperacionDetalle.TipoOperacion = oeOperacion.Tipooperacion
                                         OperacionDetalle.UsuarioCreacion = oeOperacion.UsuarioCreacion
+                                        OperacionDetalle.PrefijoID = oeOperacion.PrefijoID '@0001
                                         GuardarOperacionDetalle(OperacionDetalle)
                                     Next
                                     For Each ContratoTercero As e_ViajesTerceros In oeOperacion.oeContratoTercero
                                         ContratoTercero.TipoOperacion = "I"
                                         ContratoTercero.IdOperacion = stResultado(0)
                                         ContratoTercero.UsuarioCrea = oeOperacion.UsuarioCreacion
+                                        ContratoTercero.PrefijoID = oeOperacion.PrefijoID '@0001
                                         odViajeTercero.Guardar(ContratoTercero)
                                     Next
                                     Viaje.IdOperacion = stResultado(0)
@@ -346,7 +360,7 @@ Public Class d_Operacion
                                 Viaje.Fecha = fecViaje
                             End If
                             Viaje.TipoOperacion = oeOperacion.Tipooperacion
-
+                            Viaje.PrefijoID = oeOperacion.PrefijoID '@0001
                             stResultado1 = GuardarViaje(Viaje)
 
                             ' INSERTAR SEGUIMIENTO PARA CALL CENTER
@@ -369,6 +383,7 @@ Public Class d_Operacion
                                     .UsuarioCreacion = Viaje.UsuarioCreacion
                                     .FechaFalla = Viaje.Fecha
                                 End With
+                                oeSeguimiento.PrefijoID = oeOperacion.PrefijoID '@0001
                                 odSeguimiento.Guardar(oeSeguimiento)
                             End If
                             ' INSERTAR PARA HABILITAR BOLSA DE VIAJE
@@ -395,6 +410,8 @@ Public Class d_Operacion
                                     .oeMovimientoViaje = New e_Movimiento_Viaje
                                     .oeMovimientoViaje.IdViaje = stResultado1
                                 End With
+                                oeMovimiento.PrefijoID = oeOperacion.PrefijoID '@0001
+                                oeMovimiento.oeMovimientoViaje.PrefijoID = oeOperacion.PrefijoID '@0001
                                 odMovimiento.GuardarMovimiento(oeMovimiento, New e_Movimiento)
                             End If
                             TractoEscala = Viaje.Tracto
@@ -408,10 +425,11 @@ Public Class d_Operacion
                         .Referencia = stResultado1
                         .FechaReferencia = fecViaje
                     End With
+                    oeOperacion.oeIncidenciaAutentificadas.PrefijoID = oeOperacion.PrefijoID '@0001
                     odIncidenciaAutentificada.Guardar(oeOperacion.oeIncidenciaAutentificadas)
                 End If
-                If oeOperacion.Id <> "" Then                 
-                        odBitacora.Guardar(oeOperacion.oeListaBitacora)         
+                If oeOperacion.Id <> "" Then
+                    odBitacora.Guardar(oeOperacion.oeListaBitacora)
                 End If
                 transScope.Complete()
             End Using
@@ -423,11 +441,10 @@ Public Class d_Operacion
 
     Public Function Eliminar(ByVal oeOperacion As e_Operacion) As Boolean
         Try
-            sqlhelper = New SqlHelper
             Dim resultado As Boolean = False
-            If sqlhelper.ExecuteNonQuery("[OPE].[Isp_Operacion_IAE]", _
-                                         "E", _
-                                         "", _
+            If sqlhelper.ExecuteNonQuery("[OPE].[Isp_Operacion_IAE]",
+                                         "E",
+                                         "",
                                          oeOperacion.Id) > 0 Then
                 resultado = True
             End If
@@ -439,10 +456,9 @@ Public Class d_Operacion
 
     Public Function ActualizaLista(ByVal oeViaje As e_Viaje) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            sqlhelper.ExecuteNonQuery("[OPE].[Isp_Viaje_IAE]", _
-                                      "P", _
-                                      "", _
+            sqlhelper.ExecuteNonQuery("[OPE].[Isp_Viaje_IAE]",
+                                      "P",
+                                      "",
                                       "", oeViaje.Id)
             Return True
         Catch ex As Exception
@@ -553,16 +569,15 @@ Public Class d_Operacion
 
     Public Function ObtenerViajeRango(ByVal oeViaje As e_Viaje) As e_Viaje
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeViaje
-                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]", _
-                                                .TipoOperacion, _
-                                                .Id, _
-                                                .IdEstado, _
-                                                .ViajeVacio, _
-                                                .Activo, _
-                                                .FechaDesde, _
+                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]",
+                                                .TipoOperacion,
+                                                .Id,
+                                                .IdEstado,
+                                                .ViajeVacio,
+                                                .Activo,
+                                                .FechaDesde,
                                                 .FechaHasta)
             End With
 
@@ -577,33 +592,32 @@ Public Class d_Operacion
 
     Public Function ObtenerViaje(ByVal oeViaje As e_Viaje) As e_Viaje
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeViaje
                 If oeViaje.TipoOperacion <> "K" And oeViaje.TipoOperacion <> "L" Then
-                    ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]", _
-                                           .TipoOperacion, _
-                                           .Id, _
-                                           .IdEstado, _
-                                           .ViajeVacio, _
-                                                         True, .FechaDesde, "", "", "", "", .Serie, "", "", _
-                                           .IdTracto, _
-                                           .IndMotriz, _
-                                           "", _
+                    ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]",
+                                           .TipoOperacion,
+                                           .Id,
+                                           .IdEstado,
+                                           .ViajeVacio,
+                                                         True, .FechaDesde, "", "", "", "", .Serie, "", "",
+                                           .IdTracto,
+                                           .IndMotriz,
+                                           "",
                                            "", "", .IndCarga)
                 Else
-                    ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]", _
-                                           .TipoOperacion, _
-                                           .Id, _
-                                           .IdEstado, _
-                                           .ViajeVacio, _
-                                                         True, .FechaDesde, "", "", "", "", "", "", "", _
-                                           .IdTracto, _
-                                           .IndMotriz, _
-                                           .IdTracto, _
+                    ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_Listar]",
+                                           .TipoOperacion,
+                                           .Id,
+                                           .IdEstado,
+                                           .ViajeVacio,
+                                                         True, .FechaDesde, "", "", "", "", "", "", "",
+                                           .IdTracto,
+                                           .IndMotriz,
+                                           .IdTracto,
                                            .IdCarreta, "", .IndCarga)
                 End If
-               
+
             End With
 
             If ds.Tables(0).Rows.Count > 0 Then
@@ -657,12 +671,11 @@ Public Class d_Operacion
 
     Public Function ListarViajeDT(ByVal oeViaje As e_Viaje) As DataTable
         Try
-            sqlhelper = New SqlHelper
             Dim ldViaje As New List(Of e_Viaje)
             Dim ds As SqlDataReader
             Dim Tabla As New DataTable
             With oeViaje
-                ds = sqlhelper.ExecuteReader(connectionString, "[OPE].[Isp_Viaje_Listar]", _
+                ds = SqlHelper.ExecuteReader(connectionString, "[OPE].[Isp_Viaje_Listar]",
                                               .TipoOperacion _
                                                 , .Id _
                                                 , .IdEstado _
@@ -707,11 +720,10 @@ Public Class d_Operacion
     'Lista Con SqlDataReader - ExecuteReader
     Public Function ListarViaje(ByVal oeViaje As e_Viaje) As List(Of e_Viaje)
         Try
-            sqlhelper = New SqlHelper
             Dim ldViaje As New List(Of e_Viaje)
             Dim ds As SqlDataReader
             With oeViaje
-                ds = sqlhelper.ExecuteReader(connectionString, "[OPE].[Isp_Viaje_Listar]", _
+                ds = SqlHelper.ExecuteReader(connectionString, "[OPE].[Isp_Viaje_Listar]",
                                               .TipoOperacion _
                                                 , .Id _
                                                 , .IdEstado _
@@ -736,22 +748,22 @@ Public Class d_Operacion
             Dim objViaje As e_Viaje
             While ds.Read()
 
-                objViaje = New e_Viaje(ds.Item("Seleccion"), ds.Item("Id"), ds.Item("Codigo"), ds.Item("IdOperacion"), _
-                    ds.Item("Operacion"), ds.Item("IdOrigen"), ds.Item("Origen"), ds.Item("IdDestino"), ds.Item("Destino"), _
-                    ds.Item("IdEscala"), ds.Item("Escala"), ds.Item("IndEscala"), ds.Item("ViajeVacio"), ds.Item("ViajeRetorno"), _
-                    ds.Item("IdPiloto"), ds.Item("Piloto"), ds.Item("DisponibleP"), ds.Item("IdCopiloto"), ds.Item("Copiloto"), _
-                    ds.Item("DisponibleC"), ds.Item("IdAyudante"), ds.Item("Ayudante"), ds.Item("DisponibleA"), ds.Item("IdTracto"), _
-                    ds.Item("Tracto"), ds.Item("IdTipoVehiculo"), ds.Item("TipoVehiculo"), ds.Item("IdCarreta"), ds.Item("Carreta"), _
-                    ds.Item("IdEstado"), ds.Item("Estado"), ds.Item("Fecha"), ds.Item("UsuarioCreacion"), ds.Item("Activo"), _
-                    ds.Item("Cliente"), ds.Item("CargaMaterial"), ds.Item("GlosaEscala"), ds.Item("Carga"), ds.Item("UsuarioModifica"), _
-                    ds.Item("UsuarioSeguimiento"), ds.Item("LlegadaOrigen"), ds.Item("IngresoComplejoOrigen"), ds.Item("CargaOrigen"), _
-                    ds.Item("TerminoCargaOrigen"), ds.Item("ImpresionGuiaOrigen"), ds.Item("SalidaOrigen"), ds.Item("LlegadaAproximadaDestino"), _
-                    ds.Item("LlegadaDestino"), ds.Item("IngresoDestino"), ds.Item("DescargaDestino"), ds.Item("TerminoDescargaDestino"), _
-                    ds.Item("SalidaDestino"), ds.Item("Flota"), ds.Item("IncidenciaOperaciones"), ds.Item("IncidenciaSeguimiento"), _
-                    ds.Item("Turno"), ds.Item("DiaNoche"), ds.Item("PesoToneladas"), ds.Item("TotalFlete"), ds.Item("Zona"), _
-                    ds.Item("KmTractoOrigen"), ds.Item("KmTractoDestino"), ds.Item("KmCarretaOrigen"), ds.Item("KmCarretaDestino"), _
-                    ds.Item("Tesoreria"), ds.Item("IndFecha"), ds.Item("PorcentajeFlete"), ds.Item("Cantidad"), ds.Item("FleteUnitario"), _
-                    ds.Item("IncluyeIgv"), ds.Item("Capacidad"), ds.Item("IndCarga"), ds.Item("Produccion"), ds.Item("FechaCreacion"), _
+                objViaje = New e_Viaje(ds.Item("Seleccion"), ds.Item("Id"), ds.Item("Codigo"), ds.Item("IdOperacion"),
+                    ds.Item("Operacion"), ds.Item("IdOrigen"), ds.Item("Origen"), ds.Item("IdDestino"), ds.Item("Destino"),
+                    ds.Item("IdEscala"), ds.Item("Escala"), ds.Item("IndEscala"), ds.Item("ViajeVacio"), ds.Item("ViajeRetorno"),
+                    ds.Item("IdPiloto"), ds.Item("Piloto"), ds.Item("DisponibleP"), ds.Item("IdCopiloto"), ds.Item("Copiloto"),
+                    ds.Item("DisponibleC"), ds.Item("IdAyudante"), ds.Item("Ayudante"), ds.Item("DisponibleA"), ds.Item("IdTracto"),
+                    ds.Item("Tracto"), ds.Item("IdTipoVehiculo"), ds.Item("TipoVehiculo"), ds.Item("IdCarreta"), ds.Item("Carreta"),
+                    ds.Item("IdEstado"), ds.Item("Estado"), ds.Item("Fecha"), ds.Item("UsuarioCreacion"), ds.Item("Activo"),
+                    ds.Item("Cliente"), ds.Item("CargaMaterial"), ds.Item("GlosaEscala"), ds.Item("Carga"), ds.Item("UsuarioModifica"),
+                    ds.Item("UsuarioSeguimiento"), ds.Item("LlegadaOrigen"), ds.Item("IngresoComplejoOrigen"), ds.Item("CargaOrigen"),
+                    ds.Item("TerminoCargaOrigen"), ds.Item("ImpresionGuiaOrigen"), ds.Item("SalidaOrigen"), ds.Item("LlegadaAproximadaDestino"),
+                    ds.Item("LlegadaDestino"), ds.Item("IngresoDestino"), ds.Item("DescargaDestino"), ds.Item("TerminoDescargaDestino"),
+                    ds.Item("SalidaDestino"), ds.Item("Flota"), ds.Item("IncidenciaOperaciones"), ds.Item("IncidenciaSeguimiento"),
+                    ds.Item("Turno"), ds.Item("DiaNoche"), ds.Item("PesoToneladas"), ds.Item("TotalFlete"), ds.Item("Zona"),
+                    ds.Item("KmTractoOrigen"), ds.Item("KmTractoDestino"), ds.Item("KmCarretaOrigen"), ds.Item("KmCarretaDestino"),
+                    ds.Item("Tesoreria"), ds.Item("IndFecha"), ds.Item("PorcentajeFlete"), ds.Item("Cantidad"), ds.Item("FleteUnitario"),
+                    ds.Item("IncluyeIgv"), ds.Item("Capacidad"), ds.Item("IndCarga"), ds.Item("Produccion"), ds.Item("FechaCreacion"),
                     ds.Item("FechaModifica"), ds.Item("IndPlanilla"), ds.Item("IdCentro"))
                 objViaje.Subtotal = ds.Item("Subtotal")
                 objViaje.Consolidado = ds.Item("Consolidado")
@@ -780,12 +792,11 @@ Public Class d_Operacion
 
     Public Function ListarViajesLurin(ByVal oeViaje As e_Viaje) As DataTable
         Try
-            sqlhelper = New SqlHelper
             Dim tabla As DataTable
             With oeViaje
-                tabla = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_LimaLurin]", _
-                                                  .TipoOperacion, _
-                                                  .FechaDesde, _
+                tabla = sqlhelper.ExecuteDataset("[OPE].[Isp_Viaje_LimaLurin]",
+                                                  .TipoOperacion,
+                                                  .FechaDesde,
                                                   .FechaHasta).Tables(0)
             End With
             Return tabla
@@ -796,17 +807,16 @@ Public Class d_Operacion
 
     Public Function ListarViajesProceso(ByVal oeViaje As e_Viaje) As DataSet
         Try
-            sqlhelper = New SqlHelper
             Dim Tablas As DataSet
             With oeViaje
-                Tablas = sqlhelper.ExecuteDataset("OPE.Isp_Viaje_Proceso", _
-                                                  .TipoOperacion, _
-                                                  .FechaDesde, _
-                                                  .FechaHasta, _
-                                                  .Cliente, _
-                                                  .TipoVehiculo, _
-                                                  .Tracto, _
-                                                  .IdOperacion, _
+                Tablas = sqlhelper.ExecuteDataset("OPE.Isp_Viaje_Proceso",
+                                                  .TipoOperacion,
+                                                  .FechaDesde,
+                                                  .FechaHasta,
+                                                  .Cliente,
+                                                  .TipoVehiculo,
+                                                  .Tracto,
+                                                  .IdOperacion,
                                                   .Codigo)
             End With
             Return ProcesarViajeProceso(Tablas, oeViaje)
@@ -1072,11 +1082,10 @@ Public Class d_Operacion
 
     Public Function ListarFletes(ByVal oeViaje As e_Viaje) As List(Of e_Viaje)
         Try
-            sqlhelper = New SqlHelper
             Dim ldViaje As New List(Of e_Viaje)
             Dim ds As DataSet
             With oeViaje
-                ds = sqlhelper.ExecuteDataset("[TES].[Isp_ProcesoFlete_Listar]", _
+                ds = sqlhelper.ExecuteDataset("[TES].[Isp_ProcesoFlete_Listar]",
                                               .TipoOperacion _
                                                 , .Operacion _
                                                 , .Codigo _
@@ -1106,7 +1115,6 @@ Public Class d_Operacion
 
     Public Function ListarVehiculoEstadoSituacional() As DataTable
         Try
-            sqlhelper = New SqlHelper
             Dim tabla As DataTable
             tabla = sqlhelper.ExecuteDataset("[OPE].[Isp_VehiculoEstadoSituacional]").Tables(0)
             Return tabla
@@ -1117,11 +1125,10 @@ Public Class d_Operacion
 
     Public Function ListarDocumentosViaje(ByVal oeViaje As e_Viaje) As DataTable
         Try
-            sqlhelper = New SqlHelper
             Dim tabla As DataTable
             With oeViaje
-                tabla = sqlhelper.ExecuteDataset("[OPE].[Isp_DocumentosViaje_Listar]", _
-                                                 "", _
+                tabla = sqlhelper.ExecuteDataset("[OPE].[Isp_DocumentosViaje_Listar]",
+                                                 "",
                                                  .Id).Tables(0)
             End With
             Return tabla
@@ -1132,9 +1139,7 @@ Public Class d_Operacion
 
     Public Function GuardarViaje(ByVal oeViaje As e_Viaje) As String
         Try
-            sqlhelper = New SqlHelper
             Dim stResultado() As String
-            d_DatosConfiguracion = New d_DatosConfiguracion
             With oeViaje
                 stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Viaje_IAE]",
                           .TipoOperacion,
@@ -1183,7 +1188,6 @@ Public Class d_Operacion
 
     Public Function EliminarViaje(ByVal oeViaje As e_Viaje) As String
         Try
-            sqlhelper = New SqlHelper
             With oeViaje
                 sqlhelper.ExecuteScalar("[OPE].[Isp_Viaje_IAE]", .TipoOperacion _
                                                       , "" _
@@ -1225,7 +1229,6 @@ Public Class d_Operacion
                     loDespachoOperaciones(0).UsuarioCrea = oeViaje.UsuarioCreacion
                     odDespachoOperaciones.Guardar(loDespachoOperaciones(0))
                 End If
-                sqlhelper = New SqlHelper
                 With oeViaje
                     res = sqlhelper.ExecuteScalar("[OPE].[Isp_Viaje_IAE]", .TipoOperacion _
                                                           , "" _
@@ -1344,12 +1347,11 @@ Public Class d_Operacion
 
     Public Function ObtenerOperacionDetalle(ByVal oeOperacionDetalle As e_OperacionDetalle) As e_OperacionDetalle
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeOperacionDetalle
-                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalle_Listar]", _
-                                                .TipoOperacion, _
-                                                .Id, _
+                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalle_Listar]",
+                                                .TipoOperacion,
+                                                .Id,
                                                 .IdOperacion)
             End With
 
@@ -1366,9 +1368,8 @@ Public Class d_Operacion
 
     Public Function FacturaOperacionDetalle(ByVal oeOperacionDetalle As e_OperacionDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeOperacionDetalle
-                sqlhelper.ExecuteNonQuery("OPE.Isp_OperacionDet_ListarDS", _
+                sqlhelper.ExecuteNonQuery("OPE.Isp_OperacionDet_ListarDS",
                                             .TipoOperacion _
                                             , .Id)
             End With
@@ -1381,11 +1382,10 @@ Public Class d_Operacion
 
     Public Function ListarOperacionDetalle(ByVal oeOperacionDetalle As e_OperacionDetalle) As List(Of e_OperacionDetalle)
         Try
-            sqlhelper = New SqlHelper
             Dim ldOperacionDetalle As New List(Of e_OperacionDetalle)
             Dim ds As DataSet
             With oeOperacionDetalle
-                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalle_Listar]", _
+                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalle_Listar]",
                                                 .TipoOperacion _
                                                 , .Id _
                                                 , .IdOperacion _
@@ -1457,11 +1457,10 @@ Public Class d_Operacion
 
     Public Function ListarOperacionDetalleDS(ByVal oeDetalleDocOpeDet As e_DetalleDoc_OperacionDet) As List(Of e_DetalleDoc_OperacionDet)
         Try
-            sqlhelper = New SqlHelper
             Dim leDetalleDetOpeDet As New List(Of e_DetalleDoc_OperacionDet)
             Dim ds As DataSet
             With oeDetalleDocOpeDet
-                ds = sqlhelper.ExecuteDataset("CON.Isp_DetalleDoc_OperacionDet_Listar", _
+                ds = sqlhelper.ExecuteDataset("CON.Isp_DetalleDoc_OperacionDet_Listar",
                                                 .TipoOperacion _
                                                 , .IdMovimientoDocumento _
                                                 , .IdOperacionDet _
@@ -1506,8 +1505,6 @@ Public Class d_Operacion
 
     Public Function GuardarOperacionDetalle(ByVal oeOperacionDetalle As e_OperacionDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim resultado As Boolean = False
             With oeOperacionDetalle
                 Dim codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_OperacionDetalle_IAE]",
@@ -1560,6 +1557,7 @@ Public Class d_Operacion
                             .Referencia = codigo
                             .FechaReferencia = fechaReferencia
                         End With
+                        oeOperacionDetalle.oeIncidenciaAutentificadas.PrefijoID = oeOperacionDetalle.PrefijoID '@0001
                         odIncidenciaAutentificada.Guardar(oeOperacionDetalle.oeIncidenciaAutentificadas)
                     End If
                 End If
@@ -1583,8 +1581,6 @@ Public Class d_Operacion
 
     Public Function RefacturarOperacionDet(ByVal OperacionDetalle As e_OperacionDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim result As Boolean = False
             With OperacionDetalle
 
@@ -1604,10 +1600,9 @@ Public Class d_Operacion
 
     Public Function EliminarOperacionDetalle(ByVal oeOperacionDetalle As e_OperacionDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
             Dim resultado As Boolean = False
-            If sqlhelper.ExecuteNonQuery("[OPE].[Isp_OperacionDetalle_IAE]", _
-                                         "E", _
+            If sqlhelper.ExecuteNonQuery("[OPE].[Isp_OperacionDetalle_IAE]",
+                                         "E",
                                          "", oeOperacionDetalle.Id) > 0 Then
                 resultado = True
             End If
@@ -1619,11 +1614,10 @@ Public Class d_Operacion
 
     Public Function ListarDataSet(ByVal oeViaje As e_Viaje) As DataSet
         Try
-            sqlhelper = New SqlHelper
             With oeViaje
-                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Liquidaciones_Listar_]", _
-                                                .Id, _
-                                                .FechaDesde, _
+                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Liquidaciones_Listar_]",
+                                                .Id,
+                                                .FechaDesde,
                                                 .FechaHasta)
             End With
         Catch ex As Exception
@@ -1633,11 +1627,10 @@ Public Class d_Operacion
 
     Public Function ListarDataSetViajesAntiguos(ByVal oeViaje As e_Viaje) As DataSet
         Try
-            sqlhelper = New SqlHelper
             With oeViaje
-                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Liquidaciones_Listar_ViajesAntiguos]", _
-                                                    .Id, _
-                                                    .FechaDesde, _
+                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Liquidaciones_Listar_ViajesAntiguos]",
+                                                    .Id,
+                                                    .FechaDesde,
                                                     .FechaHasta)
             End With
         Catch ex As Exception
@@ -1647,18 +1640,17 @@ Public Class d_Operacion
 
     Public Function ObtenerOperacionDetalleViaje(ByVal oeOperacionDetalle As e_OperacionDetalle) As e_OperacionDetalle
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeOperacionDetalle
-                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalleViaje_Listar]", _
-                                                .TipoOperacion, _
-                                                .IdOperacion, _
-                                                .Id, _
-                                                .Cliente, _
-                                                .Origen, _
-                                                .Destino, _
-                                                .Material, _
-                                                .Moneda, _
+                ds = sqlhelper.ExecuteDataset("[OPE].[Isp_OperacionDetalleViaje_Listar]",
+                                                .TipoOperacion,
+                                                .IdOperacion,
+                                                .Id,
+                                                .Cliente,
+                                                .Origen,
+                                                .Destino,
+                                                .Material,
+                                                .Moneda,
                                                 .Carga)
             End With
 

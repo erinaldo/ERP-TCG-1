@@ -488,6 +488,7 @@ Public Class d_MovimientoDocumento
 
     Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
         Try
+            oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
             If UsaTransaccion Then
                 Using transScope As New TransactionScope
                     GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
@@ -783,7 +784,7 @@ Public Class d_MovimientoDocumento
                             , .Monto_Anticipo).ToString.Split("_")
 
                     If id(0) <> "" Then
-
+                        oeMovimientoDocumento.Venta.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         oeMovimientoDocumento.Venta.IdMovimientoDocumento = id(0)
                         odVenta.Guardar(oeMovimientoDocumento.Venta)
 
@@ -814,6 +815,7 @@ Public Class d_MovimientoDocumento
                             Dim oeOperaDet As New e_OperacionDetalle
                             oeOperaDet.TipoOperacion = "F"
                             oeOperaDet.Id = .CadIdOperacionDet
+                            oeOperaDet.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                             odOperacionDet.FacturaOperacionDetalle(oeOperaDet)
                         End If
 
@@ -822,6 +824,7 @@ Public Class d_MovimientoDocumento
                             Dim oeGuiaTrans As New e_GuiaTransportista
                             oeGuiaTrans.TipoOperacion = "F"
                             oeGuiaTrans.Incidencia = .CadIdGuiasTrans
+                            oeGuiaTrans.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                             odGuiaTransportista.Guardar(oeGuiaTrans)
                         End If
 
@@ -829,6 +832,7 @@ Public Class d_MovimientoDocumento
                             If Not .DocAsoc Is Nothing Then
                                 Dim odDocAsoc As New d_DocumentoAsociado
                                 For Each obj As e_DocumentoAsociado In .DocAsoc
+                                    obj.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                                     If obj.TipoOperacion = "E" Then
                                         odDocAsoc.Eliminar(obj)
                                     ElseIf obj.TipoOperacion = "I" Then
@@ -843,6 +847,7 @@ Public Class d_MovimientoDocumento
                             If .DocAsoc.Count > 0 Then
                                 For Each oeDocAso As e_DocumentoAsociado In .DocAsoc
                                     oeDocAso.IdMovimientoDocumento = id(0)
+                                    oeDocAso.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                                     odDocAso.Guardar(oeDocAso)
                                 Next
                             End If

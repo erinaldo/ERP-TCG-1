@@ -6915,6 +6915,7 @@ Public Class frm_Operacion
                     objAuxiliar.Tipo = obj.Tipo
                     objAuxiliar.TipoOPeracion = obj.TipoOPeracion
                     objAuxiliar.UsuarioRegistro = obj.UsuarioRegistro
+                    objAuxiliar.PrefijoID = gs_PrefijoIdSucursal '@0001
                 End If
             Next
             If objAuxiliar.ValoresAnteriores.Count > 0 Then

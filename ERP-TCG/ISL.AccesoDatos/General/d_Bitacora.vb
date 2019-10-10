@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -43,11 +51,10 @@ Public Class d_Bitacora
 
     Public Function Guardar(ByVal l_Bitacora As List(Of e_Bitacora)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             For Each oeBitacora As e_Bitacora In l_Bitacora
                 With oeBitacora
                     sqlhelper.ExecuteNonQuery("[STD].[Isp_Bitacora_IAE]",
-                                              .Tipo, _
+                                              .Tipo,
                                               .PrefijoID _
                                             , .IdTablaCabecera _
                                             , .IdTablaDetalle _
@@ -76,7 +83,6 @@ Public Class d_Bitacora
         Dim cont As Integer = 0
         Try
             Dim oeBitacora = l_Bitacora.Item(0)
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBitacora              
                 cont = sqlhelper.ExecuteScalar("[STD].[Isp_Bitacora_IAE]",
                                           "V", _
