@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -71,9 +79,8 @@ Public Class d_Motivo
 
     Public Function Guardar(ByVal oeMotivo As e_Motivo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMotivo
-                sqlhelper.ExecuteNonQuery("[NEU].[Isp_Motivo_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[NEU].[Isp_Motivo_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
                         , .Codigo _
@@ -82,7 +89,7 @@ Public Class d_Motivo
                         , .IndReparacion _
                         , .IndBaja _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                                           )
             End With
             Return True

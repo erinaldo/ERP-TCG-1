@@ -187,6 +187,7 @@ Public Class l_Orden
     Private Sub GuardarITransferencia(oeOrdenSalida As e_Orden)
         Try
             Dim oeOrdenIngreso As New e_Orden
+            oeOrdenIngreso.PrefijoID = oeOrdenSalida.PrefijoID '@0001
             Dim listaOrdenMaterial As New List(Of e_OrdenMaterial)
             With oeOrdenIngreso
                 .TipoOperacion = "I"
@@ -205,6 +206,7 @@ Public Class l_Orden
                 oeOrdenIngreso.IdSubAlmacenDestino = ""
 
                 Dim oeOrdenTransferencia As New e_Orden
+                oeOrdenTransferencia.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                 oeOrdenTransferencia.Id = ""
                 oeOrdenTransferencia.NroOrden = oeOrdenSalida.Referencia
                 oeOrdenTransferencia = odOrden.Obtener(oeOrdenTransferencia)
@@ -215,6 +217,7 @@ Public Class l_Orden
                     item.Activo = 1
                     item.IdSubAlmacen = oeOrdenTransferencia.IdSubAlmacenDestino
                     item.IdAlmacen = "" 'oeOrdenTransferencia.IdSubAlmacenOrigen
+                    item.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                     listaOrdenMaterial.Add(item)
                 Next
                 oeOrdenIngreso.lstOrdenMaterial = New List(Of e_OrdenMaterial)

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System
@@ -507,6 +515,7 @@ Public Class frm_Neumatico
                                 oeNeumatico.lstVidaNeumatico = lstVidaNeumatico
                             End If
                     End Select
+                    oeNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olNeumatico.Guardar(oeNeumatico) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         tcNeumatico.Tabs(0).Enabled = True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -67,22 +75,22 @@ Public Class d_ValorizacionNeumatico
 
     Public Function Guardar(ByVal oeValorizacionNeumatico As e_ValorizacionNeumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeValorizacionNeumatico
-                    stResultado = sqlhelper.ExecuteScalar("NEU.Isp_ValorizacionNeumatico_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("NEU.Isp_ValorizacionNeumatico_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Fecha _
                             , .ValorTotalDolares _
                             , .Glosa _
                             , .UsuarioCreacion _
-                            , .Activo _
+                            , .Activo
                         ).ToString.Split("_")
 
                     For Each Detalle As e_DetalleValorizacionNeumatico In .lstDetalleValorizacion
                         Detalle.IdValorizacion = stResultado(0)
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeValorizacionNeumatico.PrefijoID '@0001
                         odDetalleValorizacion.Guardar(Detalle)
                     Next
                 End With

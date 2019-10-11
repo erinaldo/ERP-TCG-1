@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
@@ -319,6 +327,7 @@ Public Class frm_MovimientoNeumatico
                     If oeVidaNeumatico.IndLugar <> _indlugar Then
                         oeVidaNeumatico.TipoOperacion = "L"
                         oeVidaNeumatico.IndLugar = _indlugar
+                        oeVidaNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olVidaNeumatico.Guardar(oeVidaNeumatico)
                         CargarGrids()
                     Else

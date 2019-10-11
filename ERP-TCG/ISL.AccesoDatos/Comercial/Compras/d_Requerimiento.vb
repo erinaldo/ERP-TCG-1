@@ -247,7 +247,6 @@ Public Class d_Requerimiento
 
     Public Function ActualizarOT(ByVal oeRequerimiento As e_Requerimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeRequerimiento
                 stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Requerimiento_IAE" _

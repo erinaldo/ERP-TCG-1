@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -255,6 +263,7 @@ Public Class frm_OrdenTrabajo
                 End If
                 TransponerDetalleActividades()
                 VerificaCotizacion()
+                oeOrdenTrabajo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Dim _NroOT As String = olOrdenTrabajo.Guardar(oeOrdenTrabajo)
                 If _NroOT <> "" Then
                     Select Case oeOrdenTrabajo.TipoOperacion
@@ -342,6 +351,7 @@ Public Class frm_OrdenTrabajo
             oeRequerimiento.FechaAtencion = Date.Now
             TransponerDetalleMaterialRequerimiento(ls_IdEquipo)
             oeRequerimiento.Descripcion = ls_GlosaOrden
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             olRequerimiento.Guardar(oeRequerimiento)
         Catch ex As Exception
             Throw ex
@@ -370,6 +380,7 @@ Public Class frm_OrdenTrabajo
             oeRequerimiento.FechaAtencion = Date.Now
             TransponerDetalleServicioRequerimiento(ls_IdEquipo)
             oeRequerimiento.Descripcion = ls_GlosaOrden
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             olRequerimiento.Guardar(oeRequerimiento)
         Catch ex As Exception
             Throw ex
@@ -552,6 +563,7 @@ Public Class frm_OrdenTrabajo
                                         oeOrdenIngreso.TipoReferencia = "ORDEN TRABAJO"
                                         oeOrdenIngreso.Referencia = oeOrdenTrabajo.NroOT
                                         oeOrdenIngreso.UsuarioCreacion = gUsuarioSGI.Id
+                                        oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario))
                                         mensajeEmergente.Confirmacion("Devolución realizada con exito")
                                     End If

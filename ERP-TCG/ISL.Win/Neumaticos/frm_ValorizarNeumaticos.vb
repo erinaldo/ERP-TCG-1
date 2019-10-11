@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System
@@ -170,12 +178,14 @@ Public Class frm_ValorizarNeumaticos
             oeValorizacionNeumatico.UsuarioCreacion = gUsuarioSGI.Id
             For Each objdet As e_VidaNeumatico In lstVidaNeumatico
                 oeDetalleValorizacionNeumatico = New e_DetalleValorizacionNeumatico
+                oeDetalleValorizacionNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeDetalleValorizacionNeumatico.IdVidaNeumatico = objdet.Id
                 oeDetalleValorizacionNeumatico.ValorDolares = objdet.CostoActualDolares
                 oeValorizacionNeumatico.lstDetalleValorizacion.Add(oeDetalleValorizacionNeumatico)
                 vtd += objdet.CostoActualDolares
             Next
             oeValorizacionNeumatico.ValorTotalDolares = vtd
+            oeValorizacionNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olValorizacionNeumatico.Guardar(oeValorizacionNeumatico) Then Return False
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente.")
             MostrarTabs(0, tcValorizaciones)

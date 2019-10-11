@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -66,16 +74,15 @@ Public Class d_ConfiguracionNeumatico
 
     Public Function Guardar(ByVal oeConfiguracionNeumatico As e_ConfiguracionNeumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeConfiguracionNeumatico
-                stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_ConfiguracionNeumaticos_IAE]", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_ConfiguracionNeumaticos_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
                         , .NroEjes _
                         , .NroNeumaticos _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                                    ).ToString.Split("_")
 
                 Dim oeDetalleConfigNeumatico As New e_DetalleConfiguracionNeumatico
@@ -84,6 +91,7 @@ Public Class d_ConfiguracionNeumatico
                 For Each Detalle As e_DetalleConfiguracionNeumatico In .lstDetalleConfiguracionNeumatico
                     Detalle.IdConfiguracionNeumatico = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                     Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                    Detalle.PrefijoID = oeConfiguracionNeumatico.PrefijoID '@0001
                     odDetalleConfigNeu.Guardar(Detalle)
                 Next
 

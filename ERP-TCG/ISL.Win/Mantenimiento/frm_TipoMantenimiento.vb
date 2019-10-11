@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_TipoMantenimiento
@@ -280,6 +288,7 @@ Public Class frm_TipoMantenimiento
 
     Private Function GuardarTipoMantenimiento() As Boolean
         Try
+            oeTipoMantenimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTipoMantenimiento.Guardar(oeTipoMantenimiento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, tcTipoMantenimiento, 2)

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 
@@ -69,6 +77,7 @@ Public Class frm_EnviarNeumatico
             oeMovimientoNeumatico.IdTecnicoNeu = cboTecnico.Value
             oeMovimientoNeumatico.UsuarioCreacion = gUsuarioSGI.Id
             oeMovimientoNeumatico.FechaMov = fecMovimiento.Value
+            oeMovimientoNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimientoNeumatico.Guardar(oeMovimientoNeumatico) Then
                 MessageBox.Show("Registrado correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                 Me.DialogResult = Windows.Forms.DialogResult.OK

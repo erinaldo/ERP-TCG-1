@@ -1060,6 +1060,12 @@
     <Compile Include="Neumaticos\frm_ConfVehiNeumViaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Personal\frm_AsistenciaOperativos.Designer.vb">
+      <DependentUpon>frm_AsistenciaOperativos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\frm_AsistenciaOperativos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Personal\frm_AsistenciaPersonal.Designer.vb">
       <DependentUpon>frm_AsistenciaPersonal.vb</DependentUpon>
     </Compile>
@@ -4574,6 +4580,9 @@
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="Neumaticos\frm_ConfVehiNeumViaje.resx">
       <DependentUpon>frm_ConfVehiNeumViaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personal\frm_AsistenciaOperativos.resx">
+      <DependentUpon>frm_AsistenciaOperativos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal\frm_AsistenciaPersonal.resx">
       <DependentUpon>frm_AsistenciaPersonal.vb</DependentUpon>

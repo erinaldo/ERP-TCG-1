@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -705,6 +713,7 @@ Public Class frm_GeneraDevolucion
                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                         oeRegistroDevolucion.leDetalleRD = leDetalleRegDev
                         oeRegistroDevolucion.UsuarioCreacion = gUsuarioSGI.Id
+                        oeRegistroDevolucion.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olRegistroDevolucion.Guardar(oeRegistroDevolucion) Then
                             Consultar(True)
                             MostrarTabs(0, ficRegistroDevolucion)
@@ -716,6 +725,7 @@ Public Class frm_GeneraDevolucion
                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                         oeRegistroDevolucion.leDetalleRD = leDetalleRegDev
                         oeRegistroDevolucion.UsuarioCreacion = gUsuarioSGI.Id
+                        oeRegistroDevolucion.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olRegistroDevolucion.Guardar(oeRegistroDevolucion) Then
                             Consultar(True)
                             MostrarTabs(0, ficRegistroDevolucion)
@@ -727,6 +737,7 @@ Public Class frm_GeneraDevolucion
                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                         oeRegistroDevolucion.leDetalleRD = leDetalleRegDev
                         oeRegistroDevolucion.UsuarioCreacion = gUsuarioSGI.Id
+                        oeRegistroDevolucion.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olRegistroDevolucion.Guardar(oeRegistroDevolucion) Then
                             Consultar(True)
                             MostrarTabs(0, ficRegistroDevolucion)
