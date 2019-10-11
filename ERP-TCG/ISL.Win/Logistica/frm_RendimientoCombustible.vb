@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_RendimientoCombustible
@@ -320,6 +328,7 @@ Public Class frm_RendimientoCombustible
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .UsuarioModificacion = gUsuarioSGI.Id
             End With
+            oeRendimientoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olRendimientoCombustible.Guardar(oeRendimientoCombustible) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 Operacion = "Inicializa"
@@ -440,6 +449,7 @@ Public Class frm_RendimientoCombustible
                         .Activo = GridRendCombustible.ActiveRow.Cells("Activo").Value
                         .UsuarioModificacion = gUsuarioSGI.Id
                     End With
+                    oeRendimientoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olRendimientoCombustible.Guardar(oeRendimientoCombustible) Then
                         GridRendCombustible.ActiveRow.CellAppearance.BackColor = Me.ColorBloque.Color
                     End If

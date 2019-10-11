@@ -33,6 +33,7 @@ Public Class l_Requerimiento
                     If odRequerimiento.Guardar(oeRequerimiento) Then
                         If oeRequerimiento.TipoOperacion = "D" Or oeRequerimiento.TipoOperacion = "R" Then
                             olOrden = New l_Orden
+                            oeRequerimiento.oeOrdenSalida.PrefijoID = oeRequerimiento.PrefijoID '@0001
                             olOrden.GenerarAsientoConsumo(oeRequerimiento.oeOrdenSalida)
                         End If
                         TransScope.Complete()

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_TipoUnidadMedida
@@ -300,6 +308,7 @@ Public Class frm_TipoUnidadMedida
 
     Private Function GuardarRegistro() As Boolean
         Try
+            oeTipoUnidadMedida.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olTipoUnidadMedida.Guardar(oeTipoUnidadMedida) Then
                 Return False
             End If

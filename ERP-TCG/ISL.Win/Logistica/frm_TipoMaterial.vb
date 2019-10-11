@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_TipoMaterial
@@ -298,6 +306,7 @@ Public Class frm_TipoMaterial
     Private Function GuardarRegistro() As Boolean
         Try
             oeTipoMaterial.UsuarioCreacion = gUsuarioSGI.Id
+            oeTipoMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olTipoMaterial.Guardar(oeTipoMaterial) Then
                 Return False
             End If

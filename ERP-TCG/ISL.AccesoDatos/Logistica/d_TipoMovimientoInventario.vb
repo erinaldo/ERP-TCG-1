@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que se encarga de gestionar los tipos de movimiento de inventario en almacen.
 ''' Fecha de Actualizacion:31/10/2011
@@ -106,16 +114,14 @@ Public Class d_TipoMovimientoInventario
 
     Public Function Guardar(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeTipoMovimientoInventario
-                sqlhelper.ExecuteNonQuery("ALM.Isp_TipoMovimientoInventario_IAE", _
-                                          .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_TipoMovimientoInventario_IAE",
+                                          .TipoOperacion,
                                           .PrefijoID _
-                                          , .Id, _
-                                          .Codigo, _
-                                          .Nombre, _
-                                          .Abreviatura, _
+                                          , .Id,
+                                          .Codigo,
+                                          .Nombre,
+                                          .Abreviatura,
                                           .Activo)
             End With
             Return True
