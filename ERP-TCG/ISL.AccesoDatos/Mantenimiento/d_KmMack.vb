@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_KmMack
@@ -72,7 +80,6 @@ Public Class d_KmMack
         Try
             Dim stResultado() As String
             Dim odKmMackDet As New d_KmMackDet
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeKmMack
                     stResultado = bd.ExecuteScalar("[MAN].[Isp_KmMack_IAE]" _
@@ -93,6 +100,7 @@ Public Class d_KmMack
                         oe.IdKmMack = .Id
                         oe.TipoOperacion = .TipoOperacion
                         oe.UsuarioCreacion = .UsuarioCreacion
+                        oe.PrefijoID = oeKmMack.PrefijoID '@0001
                         odKmMackDet.Guardar(oe)
                     Next
                 End With

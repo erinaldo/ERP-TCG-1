@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -375,6 +383,7 @@ Public Class frm_ConfimarOTs
                 oeDetRegConformidadOT = New e_DetalleRegConformidadOT
                 oeDetRegConformidadOT.Id = ""
                 oeDetRegConformidadOT.IdOT = matRow("IdOT")
+                oeDetRegConformidadOT.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeRegConformidadOT.lstDetalleRegConformidadOT.Add(oeDetRegConformidadOT)
                 ls_NroOT &= Environment.NewLine & matRow("NroOT") & " : " & matRow("FechaProgramacion")
             End If
@@ -382,6 +391,7 @@ Public Class frm_ConfimarOTs
 
         If oeRegConformidadOT.lstDetalleRegConformidadOT.Count > 0 Then
             Dim frmGuardar As frm_GuardaConfirmacionOTs
+            oeDetRegConformidadOT.PrefijoID = gs_PrefijoIdSucursal '@0001
             frmGuardar = New frm_GuardaConfirmacionOTs(oeRegConformidadOT)
             frmGuardar.StartPosition = FormStartPosition.CenterScreen
             If frmGuardar.ShowDialog = Windows.Forms.DialogResult.OK Then

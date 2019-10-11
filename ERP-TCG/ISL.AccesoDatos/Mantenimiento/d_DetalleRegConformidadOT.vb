@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -23,11 +31,10 @@ Public Class d_DetalleRegConformidadOT
     Public Function Obtener(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As e_DetalleRegConformidadOT
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("MAN.Isp_DetalleRegConformidadOT_Listar", "", _
+            ds = sqlhelper.ExecuteDataset("MAN.Isp_DetalleRegConformidadOT_Listar", "",
             oeDetalleRegConformidadOT.Id, oeDetalleRegConformidadOT.IdOT, oeDetalleRegConformidadOT.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeDetalleRegConformidadOT = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeDetalleRegConformidadOT
@@ -38,7 +45,6 @@ Public Class d_DetalleRegConformidadOT
 
     Public Function Listar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As DataSet
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldDetalleRegConformidadOT As New List(Of e_DetalleRegConformidadOT)
             Dim ds As DataSet
             With oeDetalleRegConformidadOT
@@ -47,7 +53,7 @@ Public Class d_DetalleRegConformidadOT
                                               , .Id _
                                               , .IdOT _
                                               , .IdRegConformidadOT _
-                                              , .Activo _
+                                              , .Activo
                                               )
             End With
             oeDetalleRegConformidadOT = Nothing
@@ -59,14 +65,13 @@ Public Class d_DetalleRegConformidadOT
 
     Public Function Guardar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleRegConformidadOT
-                sqlhelper.ExecuteNonQuery("MAN.Isp_DetalleRegConformidadOT_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("MAN.Isp_DetalleRegConformidadOT_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOT _
                         , .IdRegConformidadOT _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

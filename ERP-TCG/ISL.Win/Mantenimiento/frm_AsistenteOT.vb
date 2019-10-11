@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -1761,6 +1769,7 @@ Public Class frm_AsistenteOT
                 TransponerDetalleOperarios()
             End If
             TransponerDetalleActividades()
+            oeOrdenTrabajo.PrefijoID = gs_PrefijoIdSucursal '@0001
             _IdOT = olOrdenTrabajo.Guardar(oeOrdenTrabajo)
             If _IdOT <> "" Then
                 If chkAutoIniciar.Checked Then
@@ -1822,6 +1831,7 @@ Public Class frm_AsistenteOT
             oeRequerimiento.FechaAtencion = Date.Parse("01/01/1901")
             TransponerDetalleMaterialRequerimiento(ls_IdEquipo)
             oeRequerimiento.Descripcion = ls_GlosaOrden
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             olRequerimiento.Guardar(oeRequerimiento)
         Catch ex As Exception
             Throw ex
@@ -1849,6 +1859,7 @@ Public Class frm_AsistenteOT
             oeRequerimiento.FechaAtencion = Date.Now
             TransponerDetalleServicioRequerimiento()
             oeRequerimiento.Descripcion = ls_GlosaOrden
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             olRequerimiento.Guardar(oeRequerimiento)
         Catch ex As Exception
             Throw ex

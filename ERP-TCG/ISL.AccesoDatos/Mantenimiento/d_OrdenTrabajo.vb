@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -179,9 +187,8 @@ Public Class d_OrdenTrabajo
 
     Public Function ActualizaEstadoOT(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenTrabajo
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID,
                  .Id, .NroOT, .IdEstadoOT, .IndicadorTipo, .FechaProgramacionIni, .FechaIngresoTaller, .FechaInicioTrabajo _
                  , .FechaFinTrabajo, .FechaTentativaSalida, .IdJefeTaller, .IdSupervisorMant, .Glosa, .Auxilio, .IdEmpresaExterna _
                  , .Activo, .Calibracion, .UsuarioCreacion)
@@ -194,13 +201,12 @@ Public Class d_OrdenTrabajo
        
     Public Function Guardar(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odReqMat As New d_RequerimientoMaterial
             Dim odReq As New d_Requerimiento
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeOrdenTrabajo
-                    stResultado = sqlhelper.ExecuteScalar("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[MAN].[Isp_OrdenTrabajo_IAE]", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .NroOT _
                             , .IdEstadoOT _
@@ -228,6 +234,7 @@ Public Class d_OrdenTrabajo
                         Detalle.IdOrdenTrabajo = stResultado(0)
                         Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOTMantenimientoEquipo.Guardar(Detalle)
                     Next
                     Dim oeOTMat As New e_OrdenTrabajo_Material
@@ -236,18 +243,22 @@ Public Class d_OrdenTrabajo
                     For Each Detalle As e_OrdenTrabajo_Material In .lstDetalleMaterial
                         Detalle.IdOrdenTrabajo = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOTMaterial.Guardar(Detalle)
                         If Not Detalle.oeReqMaterial Is Nothing Then
+                            Detalle.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                             If Not String.IsNullOrEmpty(Detalle.oeReqMaterial.Tipooperacion) Then odReqMat.Guardar(Detalle.oeReqMaterial)
                         End If
                     Next
                     If .oeOCOT.IdOrdenCompra <> "" Then
                         .oeOCOT.TipoOperacion = .TipoOperacion
                         .oeOCOT.IdOrdenTrabajo = stResultado(0)
+                        .oeOCOT.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOCOT.Guardar(.oeOCOT)
                     End If
                     For Each oerq In .lstRequerimiento
                         oerq.TipoOperacion = "B"
+                        oerq.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odReq.Guardar(oerq)
                     Next
                     Dim oeOTServ As New e_OrdenTrabajo_Servicio
@@ -256,6 +267,7 @@ Public Class d_OrdenTrabajo
                     For Each Detalle As e_OrdenTrabajo_Servicio In .lstDetalleServicio
                         Detalle.IdOrdenTrabajo = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOTServicio.Guardar(Detalle)
                     Next
                     Dim oeOTRec As New e_OrdenTrabajo_Recurso
@@ -264,6 +276,7 @@ Public Class d_OrdenTrabajo
                     For Each Detalle As e_OrdenTrabajo_Recurso In .lstDetalleRecurso
                         Detalle.IdOrdenTrabajo = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOTRecurso.Guardar(Detalle)
                     Next
                     Dim oeOTAct As New e_OrdenTrabajo_Actividad
@@ -272,6 +285,7 @@ Public Class d_OrdenTrabajo
                     For Each Detalle As e_OrdenTrabajo_Actividad In .lstDetalleActividad
                         Detalle.IdOrdenTrabajo = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                         odOTActividad.Guardar(Detalle)
                     Next
                     transScope.Complete()

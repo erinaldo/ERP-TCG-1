@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -72,10 +80,8 @@ Public Class d_Equipo
 
     Public Function Guardar(ByVal oeEquipo As e_Equipo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeEquipo
-                sqlhelper.ExecuteNonQuery("MAN.Isp_Equipo_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("MAN.Isp_Equipo_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -85,7 +91,7 @@ Public Class d_Equipo
                         , .IdVehiculo _
                         , .Activo _
                         , .Descripcion _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                         )
             End With
             Return True

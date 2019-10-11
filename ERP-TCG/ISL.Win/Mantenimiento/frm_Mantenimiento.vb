@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -354,6 +362,7 @@ Public Class frm_Mantenimiento
             oeMantenimiento.lstDetalleServicio = lstMantenimientoServicio 'lstMantenimientoServicio.Where(Function(item) String.IsNullOrEmpty(item.Id)).ToList
             oeMantenimiento.lstDetalleOcupacion = lstMantenimientoOcupacion 'lstMantenimientoOcupacion.Where(Function(item) String.IsNullOrEmpty(item.Id)).ToList
             oeMantenimiento.lstDetalleActividad = lstMantenimientoActividad 'lstMantenimientoActividad.Where(Function(item) String.IsNullOrEmpty(item.Id)).ToList
+            oeMantenimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMantenimiento.Guardar(oeMantenimiento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcMantenimiento, 2)
@@ -1360,6 +1369,7 @@ Public Class frm_Mantenimiento
                         oeMantenimientoEquipo.IdMantenimiento = mantRow("Id").ToString
                         oeMantenimientoEquipo.UsuarioCreacion = gUsuarioSGI.Id
                         oeMantenimientoEquipo.Activo = True
+                        oeMantenimientoEquipo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olMantenimientoEquipo.Guardar(oeMantenimientoEquipo)
                     End If
                 Next

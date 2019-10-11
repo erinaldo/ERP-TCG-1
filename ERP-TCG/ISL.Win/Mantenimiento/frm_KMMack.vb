@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_KMMack
@@ -284,6 +292,7 @@ Public Class frm_KMMack
     Private Function GuardarKm() As Boolean
         Try
             LlenaObjeto()
+            oeKmMack.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olKmMack.Guardar(oeKmMack) Then Return False
             Return True
         Catch ex As Exception
