@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -74,9 +82,8 @@ Public Class d_DetalleConfiguracionPlanilla
 
     Public Function Guardar(ByVal oeDetalleConfiguracionPlanilla As e_DetalleConfiguracionPlanilla) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleConfiguracionPlanilla
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleConfiguracionPlanilla_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleConfiguracionPlanilla_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdConfiguracionPlanilla _
                         , .IdAporteDescuento _
@@ -88,7 +95,7 @@ Public Class d_DetalleConfiguracionPlanilla
                         , .FechaModifica _
                         , .UsuarioModifica _
                         , .Activo _
-                        , .CodigoSunat _
+                        , .CodigoSunat
                     )
             End With
             Return True

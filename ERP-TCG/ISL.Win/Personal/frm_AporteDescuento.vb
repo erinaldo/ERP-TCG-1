@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -138,12 +146,15 @@ Public Class frm_AporteDescuento
                 oeDetADAux.UnidadCalculo = cboUnidad.Text
                 oeDetADAux.IdFormula = cboFormula.Value
                 oeDetADAux.UsuarioCreacion = gUsuarioSGI.Id
+                oeDetADAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeAporteDescuento.leHistorial.Add(oeDetADAux)
             Else
                 If oeAporteDescuento.TipoOperacion = "I" Then
+                    oeDetalleApoDes.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeAporteDescuento.leHistorial.Add(oeDetalleApoDes)
                 End If
             End If
+            oeAporteDescuento.PrefijoID = gs_PrefijoIdSucursal '@0001
             olAporteDescuento.Guardar(oeAporteDescuento)
             mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
             If bandcargar Then

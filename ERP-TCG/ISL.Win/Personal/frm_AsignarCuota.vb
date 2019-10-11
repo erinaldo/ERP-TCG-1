@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 
@@ -242,6 +250,7 @@ Public Class frm_AsignarCuota
 
             oeCuota.FechaInicio = CDate(Me.fecFechaInicio.Value)
             oeCuota.FechaFin = CDate(Me.fecFechaFin.Value)
+            oeCuota.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olCuota.Guardar(oeCuota) Then Return False
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
             MostrarTabs(0, ficTrabajador, 2)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -60,9 +68,8 @@ Public Class d_EquivalenciaRuta
 
     Public Function Guardar(ByVal oeEquivalenciaRuta As e_EquivalenciaRuta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEquivalenciaRuta
-                sqlhelper.ExecuteNonQuery("PER.Isp_EquivalenciaRuta_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_EquivalenciaRuta_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdRuta _
                         , .Cuenta _
@@ -70,7 +77,7 @@ Public Class d_EquivalenciaRuta
                         , .Equivalencia _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -91,7 +98,6 @@ Public Class d_EquivalenciaRuta
 
     Public Function GuardarMasivo(ByVal dtEquivalenciaRuta As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.EquivalenciaRuta", dtEquivalenciaRuta)
             Return True
         Catch ex As Exception
@@ -101,7 +107,6 @@ Public Class d_EquivalenciaRuta
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.EquivalenciaRuta", PrefijoID)
             Return stResultado

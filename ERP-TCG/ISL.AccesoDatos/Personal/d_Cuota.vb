@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_Cuota
@@ -83,12 +91,11 @@ Public Class d_Cuota
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Overloads Function Guardar(ByVal oeCuota As e_Cuota) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
 
             With oeCuota
-                sqlhelper.ExecuteScalar("OPE.Isp_Cuota_IAE", .TipoOperacion, _
-                 .Id, .IdTrabajador, .Codigo, .FechaInicio, .FechaFin, .Cuota, _
+                sqlhelper.ExecuteScalar("OPE.Isp_Cuota_IAE", .TipoOperacion,
+                 .Id, .IdTrabajador, .Codigo, .FechaInicio, .FechaFin, .Cuota,
                  .Activo, .FechaCreacion, .UsuarioCreacion, .PrefijoID)
             End With
             Return True

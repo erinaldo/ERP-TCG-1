@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,10 +83,9 @@ Public Class d_DetalleAporteDescuento
 
     Public Function Guardar(ByVal oeDetalleAporteDescuento As e_DetalleAporteDescuento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _id As String
             With oeDetalleAporteDescuento
-                _id = sqlhelper.ExecuteScalar("PER.Isp_DetalleAporteDescuento_IAE", .TipoOperacion, .PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_DetalleAporteDescuento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAporteDescuento _
                         , .UnidadCalculo _
@@ -89,7 +96,7 @@ Public Class d_DetalleAporteDescuento
                         , .Vigencia _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
                 .Id = _id
             End With

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -100,11 +108,10 @@ Public Class d_ProduccionPiloto
 
     Public Function Guardar(ByVal oeProduccionPiloto As e_ProduccionPiloto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idpp As String = ""
             Using TransScope As New TransactionScope()
                 With oeProduccionPiloto
-                    _idpp = sqlhelper.ExecuteScalar("PER.Isp_ProduccionPiloto_IAE", .TipoOperacion, .PrefijoID, _
+                    _idpp = sqlhelper.ExecuteScalar("PER.Isp_ProduccionPiloto_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdPlanilla _
                             , .IdEstado _
@@ -116,11 +123,12 @@ Public Class d_ProduccionPiloto
                             , .UsuarioCreacion _
                             , .FechaModifica _
                             , .UsuarioModifica _
-                            , .Activo _
+                            , .Activo
                         )
 
                     For Each oeDetAux In .leDetalle
                         oeDetAux.IdProduccionPiloto = _idpp
+                        oeDetAux.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                         If oeDetAux.TipoOperacion <> "" Then
                             If oeDetAux.TipoOperacion = "E" Then
                                 odDetPP.Eliminar(oeDetAux)
@@ -132,6 +140,7 @@ Public Class d_ProduccionPiloto
 
                     For Each oeBPAux In .leBonoProd
                         oeBPAux.IdPlanilla = .IdPlanilla
+                        oeBPAux.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                         If oeBPAux.TipoOperacion <> "" Then
                             If oeBPAux.TipoOperacion = "E" Then
                                 odBonoProd.Eliminar(oeBPAux)
@@ -158,6 +167,7 @@ Public Class d_ProduccionPiloto
                     oeResumenAsis.IdPlanilla = oeProduccionPiloto.IdPlanilla
                     oeResumenAsis.IndTipo = -1
                     oeResumenAsis.GozedeHaber = -1
+                    oeResumenAsis.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                     leResumenAsis = odResumenAsis.Listar(oeResumenAsis)
                     'Dim listaAux = leResumenAsis.Where(Function(x) x.IndTipoAux <> 0 And x.IndTipo = 2)
                     For Each oeDetAux In .leDetalle
@@ -172,6 +182,7 @@ Public Class d_ProduccionPiloto
                                         j.TipoOperacion = "E"
                                         j.UsuarioCreacion = oeDetAux.UsuarioModifica
                                         j.UsuarioModifica = oeDetAux.UsuarioModifica
+                                        j.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                                         odResumenAsis.Eliminar(j)
                                     End If
                                 Next
@@ -193,6 +204,7 @@ Public Class d_ProduccionPiloto
                                             j.Cantidad = j.Cantidad + diasDiferencias
                                             j.UsuarioCreacion = oeDetAux.UsuarioModifica
                                             j.UsuarioModifica = oeDetAux.UsuarioModifica
+                                            j.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                                             odResumenAsis.Guardar(j)
                                             Exit For
                                         End If
@@ -220,6 +232,7 @@ Public Class d_ProduccionPiloto
                                             .IdEstado = "1CH00009"
                                             .Activo = True
                                         End With
+                                        oeResumenAsis.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                                         odResumenAsis.Guardar(oeResumenAsis)
                                     End If
                                 End If
@@ -235,6 +248,7 @@ Public Class d_ProduccionPiloto
                                             j.Cantidad = j.Cantidad - diasDiferencias
                                             j.UsuarioCreacion = oeDetAux.UsuarioModifica
                                             j.UsuarioModifica = oeDetAux.UsuarioModifica
+                                            j.PrefijoID = oeProduccionPiloto.PrefijoID '@0001
                                             odResumenAsis.Guardar(j)
                                             Exit For
                                         End If
