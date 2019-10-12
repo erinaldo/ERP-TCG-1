@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -203,6 +211,7 @@ Public Class frm_RegistroPagoCuota
                     End If
                     CargarDsctoPend(leDscto)
                 End If
+                oeCuota.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leCuota.Add(oeCuota)
                 Dim _leCCPAux = leCuota.Where(Function(it) it.IdPrestamo = oeDscto.Id).ToList
                 CargarCuota(_leCCPAux)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -128,6 +136,7 @@ Public Class frm_RetencionImpuesto5ta
                 Case "GENERADA"
                     RecolectaDatos()
                     oeRetencionQuinta.UsuarioCreacion = gUsuarioSGI.Id
+                    oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRetencionQuinta.Guardar(oeRetencionQuinta)
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                 Case "ENVIAR"
@@ -140,6 +149,7 @@ Public Class frm_RetencionImpuesto5ta
                     Else
                         oeRetencionQuinta.IdEstado = cboEstado.Value
                         oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                        oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olRetencionQuinta.Guardar(oeRetencionQuinta)
                         mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -154,6 +164,7 @@ Public Class frm_RetencionImpuesto5ta
                     Else
                         oeRetencionQuinta.IdEstado = cboEstado.Value
                         oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                        oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olRetencionQuinta.Guardar(oeRetencionQuinta)
                         mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
                                                       " se Termino correctamente!", True)
@@ -1586,6 +1597,7 @@ Public Class frm_RetencionImpuesto5ta
                         If _leEst.Count > 0 Then
                             oeRetencionQuinta.IdEstado = _leEst(0).Id
                             oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                            oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olRetencionQuinta.Guardar(oeRetencionQuinta)
                             mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
                                                           " se Extornado correctamente!", True)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -342,6 +350,7 @@ Public Class frm_MontoRuta
                         oeMontoRuta.IndNacional = IIf(Convert.ToString(objWorkSheet.Cells(ln_Fila + 1, 12).Value) = "SI", True, False)
                         oeMontoRuta.IndCategoria = True
                         oeMontoRuta.UsuarioCreacion = gUsuarioSGI.Id
+                        oeMontoRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                         loMontoRutaImportar.Add(oeMontoRuta)
                     Else
                         Exit For
@@ -530,6 +539,7 @@ Public Class frm_MontoRuta
     Public Function GuardarMontoRuta() As Boolean
         Try
             LlenarObjeto()
+            oeMontoRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMontoRuta.Guardar(oeMontoRuta) Then
                 mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente")
             End If
@@ -704,6 +714,7 @@ Public Class frm_MontoRuta
                                         "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1)
                 Case Windows.Forms.DialogResult.Yes
                     oeMontoRuta.TipoOperacion = "V"
+                    oeMontoRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMontoRuta.Guardar(oeMontoRuta) Then
                         mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente", True)
                         Consultar(True)

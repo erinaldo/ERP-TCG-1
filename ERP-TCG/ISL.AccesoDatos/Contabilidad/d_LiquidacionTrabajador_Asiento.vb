@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -7,19 +15,18 @@ Public Class d_LiquidacionTrabajador_Asiento
 
     Public Function Guardar(ByVal oeLiquidacionTrabajador_Asiento As e_LiquidacionTrabajador_Asiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id() As String
             Using transScope As New TransactionScope()
                 With oeLiquidacionTrabajador_Asiento
-                    id = sqlhelper.ExecuteScalar("CON.Isp_LiquidacionTrabajador_Asiento_IAE", _
-                             .TipoOperacion, _
-                             .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("CON.Isp_LiquidacionTrabajador_Asiento_IAE",
+                             .TipoOperacion,
+                             .PrefijoID,
                             .Id _
                             , .idliquidaciontrabajador _
                             , .idasiento _
                             , .Activo _
                             , .Tipo _
-                            , .usuariocrea _
+                            , .usuariocrea
                         ).ToString.Split("-")
                 End With
                 transScope.Complete()

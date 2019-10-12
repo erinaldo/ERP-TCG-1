@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -102,9 +110,8 @@ Public Class d_DetallePlanilla
 
     Public Function Guardar(ByVal oeDetallePlanilla As e_DetallePlanilla) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetallePlanilla
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePlanilla_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePlanilla_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPlanilla _
                         , .IdTrabajador _
@@ -132,7 +139,7 @@ Public Class d_DetallePlanilla
                         , .UsuarioModifica _
                         , .Activo _
                         , .IsPagado _
-                        , .IndTipo _
+                        , .IndTipo
                     )
             End With
             Return True
@@ -144,7 +151,6 @@ Public Class d_DetallePlanilla
 
     Public Function GuardarMasivo(ByVal dtDetallePlanilla As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.DetallePlanilla", dtDetallePlanilla)
             Return True
         Catch ex As Exception
@@ -166,7 +172,6 @@ Public Class d_DetallePlanilla
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.DetallePlanilla", PrefijoID)
             Return stResultado

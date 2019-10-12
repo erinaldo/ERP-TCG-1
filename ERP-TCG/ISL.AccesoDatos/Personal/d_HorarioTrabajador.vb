@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions 
 
 Public Class d_HorarioTrabajador
@@ -74,11 +82,10 @@ Public Class d_HorarioTrabajador
 
     Public Function Guardar(ByVal loHorarioTrabajador As List(Of e_HorarioTrabajador)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For Each hortra As e_HorarioTrabajador In loHorarioTrabajador
                     With hortra
-                        sqlhelper.ExecuteNonQuery("PER.Isp_HorarioTrabajador_IAE", .TipoOperacion, .PrefijoID, _
+                        sqlhelper.ExecuteNonQuery("PER.Isp_HorarioTrabajador_IAE", .TipoOperacion, .PrefijoID,
                                                   .Id _
                                                   , .IdTrabajador _
                                                   , .IdHorario _

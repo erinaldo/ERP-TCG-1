@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -62,9 +70,8 @@ Public Class d_SeguroContraRiesgo
 
     Public Function Guardar(ByVal oeSeguroContraRiesgo As e_SeguroContraRiesgo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguroContraRiesgo
-                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroContraRiesgo_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_SeguroContraRiesgo_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdEmpresa _
                         , .Descripcion _
@@ -72,7 +79,7 @@ Public Class d_SeguroContraRiesgo
                         , .Importe _
                         , .Activo _
                         , .FechaCreacion _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

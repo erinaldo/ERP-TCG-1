@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -139,6 +147,7 @@ Public Class frm_Gratificacion
                 Case "GENERADA"
                     RecolectaDatos()
                     oeBonoComp.UsuarioCreacion = gUsuarioSGI.Id
+                    oeBonoComp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olBonoComp.Guardar(oeBonoComp) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         SeleccionaTab(0)
@@ -154,6 +163,7 @@ Public Class frm_Gratificacion
                     Else
                         oeBonoComp.IdEstado = cboEstado.Value
                         oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
+                        oeBonoComp.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olBonoComp.Guardar(oeBonoComp) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & " se Envio correctamente!", True)
                             SeleccionaTab(0)

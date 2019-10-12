@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -711,6 +719,8 @@ Public Class frm_LiquidacionTrabajador
                 LlenaObjeto()
                 oeLiquidacionTrabajador.TotalPagar = Math.Round(oeLiquidacionTrabajador.TotalPagar, 4)
                 If oeLiquidacionTrabajador.TotalPagar < 0 Then Throw New Exception("La liquidación no puede ser negativa.")
+                oeLiquidacionTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olLiquidacionTrabajador.Guardar(oeLiquidacionTrabajador, IIf(Operacion = "Pagar", oeMovCajaBanco, Nothing)) Then
                     Return True
                 Else
@@ -1692,6 +1702,7 @@ Public Class frm_LiquidacionTrabajador
                 Dim estado As String = griLiquidacionTrabajador.ActiveRow.Cells("Estado").Value.ToString
                 oe_LiquidacionTrabajador_Asiento.TipoOperacion = "E"
                 oe_LiquidacionTrabajador_Asiento.usuariocrea = gUsuarioSGI.Id
+                oe_LiquidacionTrabajador_Asiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If estado = "PAGADA" Then
                     oe_LiquidacionTrabajador_Asiento.idliquidaciontrabajador = griLiquidacionTrabajador.ActiveRow.Cells("Id").Value
                     oe_LiquidacionTrabajador_Asiento.Tipo = "1CH00038"

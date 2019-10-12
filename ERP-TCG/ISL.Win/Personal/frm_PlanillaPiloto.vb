@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -340,10 +348,12 @@ Public Class frm_PlanillaPiloto
     Private Function GuardarPlanillaPiloto() As Boolean
         Try
             LlenarObjeto()
+            oePlanillaPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olPlanillaPiloto.Guardar(oePlanillaPiloto) Then
                 If Operacion <> "Enviar" Then
                     If loPlanillaViaje.Count > 0 Then
                         For Each plavia In loPlanillaViaje
+                            plavia.PrefijoID = gs_PrefijoIdSucursal '@0001
                             plavia.IdPlanillaPiloto = oePlanillaPiloto.Id
                         Next
                         olPlanillaViaje.GuardarMasivo(loPlanillaViaje, gs_PrefijoIdSucursal)

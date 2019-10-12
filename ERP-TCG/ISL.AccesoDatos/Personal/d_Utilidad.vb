@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -82,9 +90,8 @@ Public Class d_Utilidad
 
     Public Function Guardar(ByVal oeUtilidad As e_Utilidad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeUtilidad
-                sqlhelper.ExecuteNonQuery("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .CantidadTrabajadores _
@@ -99,7 +106,7 @@ Public Class d_Utilidad
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -122,11 +129,10 @@ Public Class d_Utilidad
 
     Public Function ImportarDatos(ByVal oeUtilidad As e_Utilidad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _iduti As String = ""
             Using TransScope As New TransactionScope()
                 With oeUtilidad
-                    _iduti = sqlhelper.ExecuteScalar("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID, _
+                    _iduti = sqlhelper.ExecuteScalar("PER.Isp_Utilidad_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .CantidadTrabajadores _

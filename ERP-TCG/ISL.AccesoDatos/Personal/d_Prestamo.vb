@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -171,10 +179,9 @@ Public Class d_Prestamo
 
     Public Function GuardarPrest(ByRef oePrestamo As e_Prestamo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String
             With oePrestamo
-                id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
+                id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTrabajador _
                         , .Glosa _
@@ -193,12 +200,13 @@ Public Class d_Prestamo
                         , .IdCtaBancaria _
                         , .IdEstado _
                         , .UsuarioAprueba _
-                        , .FechaAprueba _
+                        , .FechaAprueba
                     )
                 .Id = id
 
                 For Each oeDet As e_PrestamoDetalle In .leDetalle
                     oeDet.IdPrestamo = .Id
+                    oeDet.PrefijoID = oePrestamo.PrefijoID '@0001
                     If oeDet.TipoOperacion.Trim <> "" Then
                         If oeDet.TipoOperacion.Trim = "E" Then
                             odDetalle.Eliminar(oeDet)

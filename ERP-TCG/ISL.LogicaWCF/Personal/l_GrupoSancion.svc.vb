@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 
@@ -21,6 +29,7 @@ Public Class l_GrupoSancion
             If Validar(oeGrupoSancion) Then
                 If oeGrupoSancion.Estado <> "GENERADA" Then
                     For Each oeDetalle As e_Sancion In oeGrupoSancion.leDetalle
+                        oeDetalle.PrefijoID = oeGrupoSancion.PrefijoID '@0001
                         If oeDetalle.TipoOperacion <> "E" Then
                             oeDetalle.TipoOperacion = "A"
                             oeDetalle.Activo = True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -230,6 +238,7 @@ Public Class frm_PagoDescuento
 
             For i As Integer = 0 To CadId.Length - 1
                 oePrestamoDet = New e_PrestamoDetalle
+                oePrestamoDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oePrestamoDet.TipoOperacion = "U"
                 oePrestamoDet.IdPrestamo = CadId(i)
                 oePrestamoDet.MontoPrest = Monto(i)
@@ -246,6 +255,7 @@ Public Class frm_PagoDescuento
 
             If leTemp.Count > 0 Then
                 For Each oeDet As e_PrestamoDetalle In leTemp
+                    oeDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If xCuota > 0 Then
                         If oeDet.MontoPrest > xCuota Then
                             oeDet.Importe = xCuota
@@ -266,6 +276,7 @@ Public Class frm_PagoDescuento
             Else
                 For i As Integer = 0 To CadId.Length - 1
                     oePrestamoDet = New e_PrestamoDetalle
+                    oePrestamoDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If xCuota > 0 Then
                         If Monto(i) > xCuota Then
                             oePrestamoDet.Importe = xCuota
@@ -379,6 +390,7 @@ Public Class frm_PagoDescuento
                     l_FuncionesGenerales.ValidarPeriodo(oePeriodo.Id, gAreasSGI.Tesoreria)
                     oePrestamoDet.oePreiodo = oePeriodo
                     oePrestamoDet.UsuarioCreacion = gUsuarioSGI.Id
+                    oePrestamoDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                     Dim lsPerioEje As String = FechaEjecucion.Year & FormatoDocumento(FechaEjecucion.Month, 2) & IIf(optNroDesc.CheckedIndex = 0, "1", "2")
                     oePrestamoDet.PeriodoEjec = FechaEjecucion.Year & FormatoDocumento(FechaEjecucion.Month, 2) & IIf(optNroDesc.CheckedIndex = 0, "1", "2")
                     olPrestamoDet.Ejecutar(oePrestamoDet, lePrestamo, ObtenerFechaServidor, IndAdelantoPrestamo, lsPerioEje) 'pagar dos campos tabla prestamos detalle fecha y cancelado
@@ -443,7 +455,9 @@ Public Class frm_PagoDescuento
                         oePrestamoDet.PeriodoEjec = oePrestamoDet.Anio & oePrestamoDet.Mes & "1"
                         oePrestamoDet.TipoOperacion = "I"
                         oePrestamoDet.UsuarioCreacion = gUsuarioSGI.Id
+                        oePrestamoDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oePrestamo.leDetalle.Add(oePrestamoDet)
+                        oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lePrestamo.Add(oePrestamo)
                     End If
                 Next

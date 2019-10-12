@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -81,9 +89,8 @@ Public Class d_ConsolidadoUtilidad
 
     Public Function Guardar(ByVal oeConsolidadoUtilidad As e_ConsolidadoUtilidad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConsolidadoUtilidad
-                sqlhelper.ExecuteNonQuery("PER.Isp_ConsolidadoUtilidad_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_ConsolidadoUtilidad_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdUtilidad _
                         , .IdTrabajador _
@@ -99,7 +106,7 @@ Public Class d_ConsolidadoUtilidad
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModfica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -110,7 +117,6 @@ Public Class d_ConsolidadoUtilidad
 
     Public Function GuardarMasivo(ByVal dtConUti As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.ConsolidadoUtilidad", dtConUti)
             Return True
         Catch ex As Exception
@@ -132,7 +138,6 @@ Public Class d_ConsolidadoUtilidad
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.ConsolidadoUtilidad", PrefijoID)
             Return stResultado

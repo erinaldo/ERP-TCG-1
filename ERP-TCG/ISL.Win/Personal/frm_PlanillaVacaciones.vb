@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -115,6 +123,7 @@ Public Class frm_PlanillaVacaciones
                 Case "GENERADA"
                     RecolectaDatos()
                     oePlanillaVacaciones.UsuarioCreacion = gUsuarioSGI.Id
+                    oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
                     mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
                                                   " se Guardo correctamente!", True)
@@ -129,6 +138,7 @@ Public Class frm_PlanillaVacaciones
                         'oePlanillaVacaciones.Monto = leDetallePlaVac.Sum(Function(it) it.Monto)
                         oePlanillaVacaciones.IdEstado = cboEstado.Value
                         oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                        oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
                         mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -143,6 +153,7 @@ Public Class frm_PlanillaVacaciones
                     Else
                         oePlanillaVacaciones.IdEstado = cboEstado.Value
                         oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                        oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
                         mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
                                                       " se Termino correctamente!", True)
@@ -1072,6 +1083,7 @@ Public Class frm_PlanillaVacaciones
                         If _leEst.Count > 0 Then
                             oePlanillaVacaciones.IdEstado = _leEst(0).Id
                             oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                            oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
                             mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
                                                           " se Extornado correctamente!", True)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -82,11 +90,10 @@ Public Class d_PagoAdicional
 
     Public Function Guardar(ByVal oePagoAdicional As e_PagoAdicional) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idpa As String = ""
             Using TransScope As New TransactionScope()
                 With oePagoAdicional
-                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
+                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdPlanilla _
                             , .Codigo _
@@ -96,9 +103,10 @@ Public Class d_PagoAdicional
                             , .UsuarioCreacion _
                             , .FechaModifica _
                             , .UsuarioModifica _
-                            , .Activo _
+                            , .Activo
                         )
                     For Each oeDetAux In .leDetalle.Where(Function(it) it.TipoOperacion.Trim <> "").ToList
+                        oeDetAux.PrefijoID = oePagoAdicional.PrefijoID '@0001
                         If oeDetAux.TipoOperacion = "E" Then
                             odDetPA.Eliminar(oeDetAux)
                         Else
@@ -128,11 +136,10 @@ Public Class d_PagoAdicional
 
     Public Function ImportarDatos(ByVal oePagoAdicional As e_PagoAdicional) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idpa As String = ""
             Using TransScope As New TransactionScope()
                 With oePagoAdicional
-                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
+                    _idpa = sqlhelper.ExecuteScalar("PER.Isp_PagoAdicional_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPlanilla _
                         , .Codigo _
@@ -142,7 +149,7 @@ Public Class d_PagoAdicional
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
 
                     If .dtDetallePA.Rows.Count > 0 Then

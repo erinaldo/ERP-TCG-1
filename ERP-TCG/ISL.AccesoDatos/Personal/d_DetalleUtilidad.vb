@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -68,9 +76,8 @@ Public Class d_DetalleUtilidad
 
     Public Function Guardar(ByVal oeDetalleUtilidad As e_DetalleUtilidad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleUtilidad
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleUtilidad_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleUtilidad_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdUtilidad _
                         , .IdPeriodo _
@@ -82,7 +89,7 @@ Public Class d_DetalleUtilidad
                         , .DiasLaborados _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -103,7 +110,6 @@ Public Class d_DetalleUtilidad
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.DetalleUtilidad", PrefijoID)
             Return stResultado
@@ -114,7 +120,6 @@ Public Class d_DetalleUtilidad
 
     Public Function GuardarMasivo(ByVal dtConUti As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.DetalleUtilidad", dtConUti)
             Return True
         Catch ex As Exception

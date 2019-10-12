@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -504,6 +512,7 @@ Public Class frm_GrupoSancion
         Try
             Select Case _opeGS
                 Case "GENERAR"
+                    oeGrupoSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olGrupoSancion.Guardar(oeGrupoSancion) Then
                         mensajeEmergente.Confirmacion("El Grupo Sancion de ha guardado correctamente en " & Me.Text, True)
                         MostrarTabs(0, ficGrupoSancion, 2)
@@ -513,9 +522,10 @@ Public Class frm_GrupoSancion
                     End If
                 Case "ENVIAR"
                     If leSancion.Count > 0 Then
-                        Throw New Exception("!No se puede Enviar por que hay " & leSancion.Count & " Sanciones que no se han confirmado!" & Environment.NewLine & _
+                        Throw New Exception("!No se puede Enviar por que hay " & leSancion.Count & " Sanciones que no se han confirmado!" & Environment.NewLine &
                                             "Se recomienda Pasar a Otro Grupo GENERADO o ANULAR las Sanciones")
                     End If
+                    oeGrupoSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olGrupoSancion.Guardar(oeGrupoSancion) Then
                         mensajeEmergente.Confirmacion("El Grupo Sancion de ha ENVIADO correctamente en" & Me.Text, True)
                         MostrarTabs(0, ficGrupoSancion, 2)
@@ -529,6 +539,7 @@ Public Class frm_GrupoSancion
                         oeGrupoSancion.leDetalle = leDetalleGrupo
                         oeGrupoSancion.Estado = cboEstado.Text
                     End If
+                    oeGrupoSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olGrupoSancion.Guardar(oeGrupoSancion) Then
                         mensajeEmergente.Confirmacion("El Grupo Sancion de ha EXTORNADO correctamente en " & Me.Text, True)
                         MostrarTabs(0, ficGrupoSancion, 2)
@@ -623,6 +634,7 @@ Public Class frm_GrupoSancion
                 If griGrupoDetalle.Rows.Count = 0 Then CargarSanciones(New List(Of e_Sancion), 1)
                 _oeSancion.TipoOperacion = "A"
                 _oeSancion.IdEstado = oeGrupoSancion.IdEstado
+                _oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leDetalleGrupo.Add(_oeSancion)
                 CargarSanciones(leDetalleGrupo, 1)
             Else
@@ -631,6 +643,7 @@ Public Class frm_GrupoSancion
                 oeAgre = leDetalleGrupo.Item(leDetalleGrupo.IndexOf(oeAgre))
                 oeAgre.IdEstado = oeGrupoSancion.IdEstado
                 oeAgre.TipoOperacion = "A"
+                oeAgre.PrefijoID = gs_PrefijoIdSucursal '@0001
                 CargarSanciones(leDetalleGrupo, 1)
             End If
 
@@ -638,6 +651,7 @@ Public Class frm_GrupoSancion
             oeEli.Id = id
             oeEli = leSancion.Item(leSancion.IndexOf(oeEli))
             oeEli.TipoOperacion = "A"
+            oeEli.PrefijoID = gs_PrefijoIdSucursal '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -650,6 +664,7 @@ Public Class frm_GrupoSancion
                 If griListaSancion.Rows.Count = 0 Then CargarSanciones(New List(Of e_Sancion), 2)
                 _oeSancion.TipoOperacion = ""
                 _oeSancion.Activo = 1
+                _oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leSancion.Add(_oeSancion)
                 CargarSanciones(leSancion, 2)
             Else
@@ -658,6 +673,7 @@ Public Class frm_GrupoSancion
                 oeAgre = leSancion.Item(leSancion.IndexOf(oeAgre))
                 oeAgre.TipoOperacion = ""
                 oeAgre.Activo = 1
+                oeAgre.PrefijoID = gs_PrefijoIdSucursal '@0001
                 CargarSanciones(leSancion, 2)
             End If
 
@@ -666,6 +682,7 @@ Public Class frm_GrupoSancion
             oeEli = leDetalleGrupo.Item(leDetalleGrupo.IndexOf(oeEli))
             oeEli.TipoOperacion = "E"
             oeEli.IdEstado = ""
+            oeEli.PrefijoID = gs_PrefijoIdSucursal '@0001
             'oeEli.Activo = 0
         Catch ex As Exception
             Throw ex
@@ -792,6 +809,7 @@ Public Class frm_GrupoSancion
             For Each Fila As UltraGridRow In grilla.Rows
                 oeSanc = New e_Sancion
                 oeSanc = Fila.ListObject
+                oeSanc.PrefijoID = gs_PrefijoIdSucursal '@0001
                 AgregarSancion(oeSanc)
             Next
             CargarSanciones(leSancion, 2)
@@ -822,6 +840,7 @@ Public Class frm_GrupoSancion
                             oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
                             oeSancion.TipoOperacion = "A"
                             If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
+                            oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olSancion.Guardar(oeSancion) Then
                                 mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
                                 CargarSancAprob(oeGrupoSancion.Id)
@@ -852,6 +871,7 @@ Public Class frm_GrupoSancion
                         Dim _leEstAux = leEstSancion.Where(Function(it) it.Nombre = _estado).ToList
                         For Each oeSanc In leSancion
                             oeSanc.TipoOperacion = "A"
+                            oeSanc.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If _leEstAux.Count > 0 Then oeSanc.IdEstado = _leEstAux(0).Id
                         Next
                         If olSancion.GuardarLista(leSancion) Then
@@ -892,6 +912,7 @@ Public Class frm_GrupoSancion
                                     oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
                                     oeSancion.TipoOperacion = "A"
                                     oeSancion.IdGrupo = ls_IdGSancion
+                                    oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     If olSancion.Guardar(oeSancion) Then
                                         mensajeEmergente.Confirmacion("La Sancion se ha Pasado al Grupo Correctamente", True)
                                         CargarSancAprob(oeGrupoSancion.Id)

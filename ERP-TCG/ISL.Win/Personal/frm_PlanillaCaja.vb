@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -158,6 +166,7 @@ Public Class frm_PlanillaCaja
                     If leDetallePla.Count > 0 AndAlso _total = 0 Then Throw New Exception("Debe Consolidar los Datos Calculados")
                     oePlanilla.leDetalle = leDetallePla
                     oePlanilla.leDetalleConcepto = leDetalleCon
+                    oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPlanilla.Guardar(oePlanilla) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         SeleccionaTab(0)
@@ -173,6 +182,7 @@ Public Class frm_PlanillaCaja
                     Else
                         oePlanilla.IdEstado = cboEstado.Value
                         oePlanilla.UsuarioModifica = gUsuarioSGI.Id
+                        oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olPlanilla.Guardar(oePlanilla) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Planilla General Nº: " & oePlanilla.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -492,6 +502,7 @@ Public Class frm_PlanillaCaja
                         oeDetallePla.Deducciones = 0
                         oeDetallePla.Aportes = 0
                         oeDetallePla.Activo = True
+                        oeDetallePla.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDetallePlaAux.Add(oeDetallePla)
                     End If
                 Next
@@ -1038,6 +1049,7 @@ Public Class frm_PlanillaCaja
                     'oeDetallePla.IsPagado = False
                     oeDetallePla.IndTipo = oeTrabajador.IndTipo
                 End If
+                oeDetallePla.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leDetallePla.Add(oeDetallePla)
             Next
             CargarDetallePla(leDetallePla)
@@ -1844,6 +1856,7 @@ Public Class frm_PlanillaCaja
                         oeDetalleCon.Importe = fil.Cells(oeCI.IdAporteDescuento).Value
                         oeDetalleCon.Tipo = _indicador
                         oeDetalleCon.UsuarioCreacion = gUsuarioSGI.Id
+                        oeDetalleCon.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDetalleCon.Add(oeDetalleCon)
                     Next
                 End If
@@ -2005,6 +2018,7 @@ Public Class frm_PlanillaCaja
                 oeDetallePla.Id = griDetallePlanillaTes.ActiveRow.Cells("Id").Value
                 oeDetallePla.ImportePagar = griDetallePlanillaTes.ActiveRow.Cells("ImportePagar").Value
                 oeDetallePla.IsPagado = 1
+                oeDetallePla.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olDetallePla.Guardar(oeDetallePla) Then
                     griDetallePlanillaTes.ActiveRow.Cells("IsPagado").Value = True
                     griDetallePlanillaTes.ActiveRow.Appearance.BackColor = ColorPagado.Color

@@ -435,6 +435,7 @@ Public Class l_Asiento
                 Dim olMovimientoAnalisis As New l_MovimientoAnalisis
                 'revisa si hay mas de 3 detalles en compras para inserta en masivo
                 For Each o_o As e_AsientoMovimiento In oeAsiento.AsientoMovimiento
+                    o_o.PrefijoID = oeAsiento.PrefijoID '@0001
                     If Not o_o.MovimientoAnalisis Is Nothing Then
                         If o_o.MovimientoAnalisis.Count > 3 Then
                             If bandera Then
@@ -447,6 +448,7 @@ Public Class l_Asiento
                             o_o.BandGuardMasivo = True
                             Dim dt_MA1 As Data.DataTable = olMovimientoAnalisis.CrearDT
                             For Each ob As e_MovimientoAnalisis In o_o.MovimientoAnalisis
+                                ob.PrefijoID = oeAsiento.PrefijoID '@0001
                                 If ob.TipoOperacion = "I" Then
                                     Dim rowDetalle As Data.DataRow
                                     rowDetalle = dt_MA1.NewRow
@@ -1161,8 +1163,10 @@ Public Class l_Asiento
                                                   ByVal indMonedaExtranjera As Integer, ByVal lsGlosa As String) As String
         Try
             Dim oeAsMov As New e_AsientoMovimiento
+            oeAsMov.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
             If lePrestamos.Count > 0 Then
                 Dim oeAsiento As New e_Asiento 'Asigno los datos al asiento
+                oeAsiento.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                 With oeAsiento
                     'Obtener el periodo deacuerdo a la fecha ingresada en el Formulario Cobranza
                     .IdPeriodo = oePeriodo.Id       'Prueba no admite campo nulos
@@ -1196,16 +1200,19 @@ Public Class l_Asiento
                 Dim lsConcepto As String = ""
                 Dim leLista As New List(Of e_AsientoMovimiento)
                 Dim oeMovimientoAnalisis As New e_MovimientoAnalisis
+                oeMovimientoAnalisis.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                 Dim oeTCD As New e_TablaContableDet, odTCD As New d_TablaContableDet
                 lePrestamos = lePrestamos.OrderBy(Function(item) item.IdConcepto).ToList
 
                 Dim MontoFilt As Double = 0
                 'Detalle
                 For Each oePrest As e_Prestamo In lePrestamos
+                    oePrest.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     With oePrest
                         If lsConcepto.Trim <> oePrest.IdConcepto.Trim Then
                             lsConcepto = oePrest.IdConcepto
                             oeAsMov = New e_AsientoMovimiento 'Detalles AsientoMovimiento
+                            oeAsMov.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                             oeTCD.TipoOperacion = "N"
                             oeTCD.Activo = True
                             oeTCD.Nombre = "CUENTAS GENERALES"
@@ -1240,6 +1247,7 @@ Public Class l_Asiento
                             oeAsMov.Activo = True
                             oeAsMov.TipoOperacion = "I"
                             oeMovimientoAnalisis = New e_MovimientoAnalisis
+                            oeMovimientoAnalisis.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                             oeMovimientoAnalisis.TipoOperacion = "I"
                             If indMonedaExtranjera = 1 Then
                                 oeMovimientoAnalisis.Monto = .Monto / lnTipoCambio
@@ -1252,6 +1260,7 @@ Public Class l_Asiento
                             leLista.Add(oeAsMov)
                         Else
                             oeMovimientoAnalisis = New e_MovimientoAnalisis
+                            oeMovimientoAnalisis.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                             oeMovimientoAnalisis.TipoOperacion = "I"
                             oeMovimientoAnalisis.Monto = .Monto
                             oeMovimientoAnalisis.Saldo = .Monto
@@ -1264,6 +1273,7 @@ Public Class l_Asiento
 
                 ' asiento detalle de cuenta 10
                 oeAsMov = New e_AsientoMovimiento
+                oeAsMov.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                 With oeAsMov
                     'Asiento Movimiento Cabecera
                     .Id = ""

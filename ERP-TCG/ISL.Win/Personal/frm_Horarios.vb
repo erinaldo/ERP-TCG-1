@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -192,6 +200,7 @@ Public Class frm_Horarios
                     hor.HoraFin = fechaservidor.Date & " " & hor.HoraFin.Hour & " : " & hor.HoraFin.Minute & " : " & "00"
                     If hor.TipoOperacion Is Nothing Then hor.TipoOperacion = "A"
                 End If
+                hor.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olHorarios.Guardar(hor) Then
                     flag = True
                 Else

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -59,6 +67,7 @@ Public Class frm_TipoHorario
             oeTipoHorario.UsuarioCreacion = gUsuarioSGI.Id
             oeTipoHorario.FechaCreacion = ObtenerFechaServidor()
             oeTipoHorario.TipoOperacion = "I"
+            oeTipoHorario.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olTipoHorario.Guardar(oeTipoHorario) Then
                 tipoAgregado = True
             End If
