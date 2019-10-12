@@ -1415,6 +1415,12 @@
     <Compile Include="Reportes\Comercial\Ventas\frm_ReporteContratoTercero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Comercial\Ventas\frm_ReporteFleteTerceros.Designer.vb">
+      <DependentUpon>frm_ReporteFleteTerceros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Comercial\Ventas\frm_ReporteFleteTerceros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\Comercial\Ventas\frm_UltimaUbicacionUnidades.Designer.vb">
       <DependentUpon>frm_UltimaUbicacionUnidades.vb</DependentUpon>
     </Compile>
@@ -1651,6 +1657,12 @@
       <DependentUpon>frm_ReporteProyeccion.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Neumatico\frm_ReporteProyeccion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Operaciones\frm_EstadoDocumentoVehiculo.Designer.vb">
+      <DependentUpon>frm_EstadoDocumentoVehiculo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Operaciones\frm_EstadoDocumentoVehiculo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Operaciones\frm_ReporteCargaUtilVsCargaReal.Designer.vb">
@@ -3114,6 +3126,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsMovPrestamo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tesoreria\frm_ImprimirProgramacionPago.Designer.vb">
+      <DependentUpon>frm_ImprimirProgramacionPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tesoreria\frm_ImprimirProgramacionPago.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Tesoreria\frm_ReporteAtrasoLiquidacion.Designer.vb">
       <DependentUpon>frm_ReporteAtrasoLiquidacion.vb</DependentUpon>
@@ -5272,6 +5290,9 @@
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_ReporteContratoTercero.resx">
       <DependentUpon>frm_ReporteContratoTercero.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_ReporteFleteTerceros.resx">
+      <DependentUpon>frm_ReporteFleteTerceros.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_UltimaUbicacionUnidades.resx">
       <DependentUpon>frm_UltimaUbicacionUnidades.vb</DependentUpon>
     </EmbeddedResource>
@@ -5371,6 +5392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Operaciones\frm_CarretaUltProgDesenganchada.resx">
       <DependentUpon>frm_CarretaUltProgDesenganchada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Operaciones\frm_EstadoDocumentoVehiculo.resx">
+      <DependentUpon>frm_EstadoDocumentoVehiculo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Operaciones\frm_ReporteCargaUtilVsCargaReal.resx">
       <DependentUpon>frm_ReporteCargaUtilVsCargaReal.vb</DependentUpon>
