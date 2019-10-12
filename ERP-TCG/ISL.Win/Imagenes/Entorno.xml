@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Entorno>
+  <ConexionBD EstadoDisponibilidadBD="Activa">
+ 	<MensajeInicial>Por cierre de año 2015 y apertura 2016 de las AREAS CONTABILIDAD, LOGISTICA, necesitamos realizar algunos cambios en la base de datos; por lo que no habrá sistema desde JUEVES 31 las 10:30 AM hasta 10:00 AM horas aprox. 02-01-2016 </MensajeInicial>
+  	<MensajeUsuariosConectados>Por cierre de año 2015 y apertura 2016, SGI va entrar en mantenimiento en 10 minutos,Por favor grabe su información y cierrre el SGI, pues en 10 minutos vamos a detener los servicios del SGI. Atentamente, Area Sistemas. JUEVES 31 las 10:30 AM hasta 10:00 AM horas aprox. 02-01-2016 </MensajeUsuariosConectados>
+  </ConexionBD>
+
+  <ConexionReplica EstadoDisponibilidadReplica="Activa">
+    <MensajeInicial>La réplica de la base de datos se encuentra en mantenimiento, por consiguiente la información de otras sedes de la empresa no será visualizada en esta sesión. JUEVES 31 las 10:30 AM hasta 10:00 AM horas aprox. 02-01-2016 </MensajeInicial>
+    <MensajeUsuariosConectados>La réplica de la base de datos va a entrar en mantenimiento en 10 minutos, por favor grabe y cierre su sesión. En todo caso, tenga en cuenta que sus datos no serán vistos en otras sedes de la empresa. JUEVES 31 las 10:30 AM hasta 10:00 AM horas aprox. 02-01-2016 </MensajeUsuariosConectados>
+  </ConexionReplica>
+
+  <FechaLimite Compras="15" Ventas="4" Contabilidad="20" Administracion="0" Neumaticos="3"/>
+
+  <FechaLimitePerfil Coordinador="7" Jefe="15" Gerente="30"/>
+</Entorno>
