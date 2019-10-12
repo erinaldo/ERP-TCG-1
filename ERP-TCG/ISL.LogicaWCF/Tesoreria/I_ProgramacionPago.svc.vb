@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -27,8 +35,7 @@ Public Class I_ProgramacionPago
     Public Function Guardar(ByVal oeProgramacionPago As EntidadesWCF.e_ProgramacionPago) As Boolean Implements Il_ProgramacionPago.Guardar
         Try
             Using TS As New TransactionScope
-                Dim odProgramacionPago As New d_ProgramacionPago
-                odProgramacionPago.Guardar(oeProgramacionPago)
+                dProgramacionPago.Guardar(oeProgramacionPago)
                 TS.Complete()
                 Return True
             End Using

@@ -1,4 +1,12 @@
-﻿Public Class frm_ImprimeRegInventarioPermVal
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Public Class frm_ImprimeRegInventarioPermVal
 
     Private Sub frm_ImprimeRegInventarioPermVal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         CargarDatos(Data, Ejercicio, Mes, Almacen)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -69,9 +77,8 @@ Public Class d_Descuentos
 
     Public Function Guardar(ByVal oeDescuentos As e_Descuentos) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDescuentos
-                sqlhelper.ExecuteNonQuery("PER.Isp_Descuentos_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_Descuentos_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPlanilla _
                         , .IdTrabajador _
@@ -79,7 +86,7 @@ Public Class d_Descuentos
                         , .MontoSancion _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -91,7 +98,6 @@ Public Class d_Descuentos
 
     Public Function GuardarMasivo(ByVal dtDscto As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.Descuentos", dtDscto)
             Return True
         Catch ex As Exception
@@ -113,7 +119,6 @@ Public Class d_Descuentos
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.Descuentos", PrefijoID
                                   )

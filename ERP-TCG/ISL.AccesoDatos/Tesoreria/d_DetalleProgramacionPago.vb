@@ -1,10 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Data.SqlClient
 Imports System.Configuration
 Public Class d_DetalleProgramacionPago
     Private sqlhelper As New SqlHelper
-    ' Private oeDetalleProgramacionPago As e_DetalleProgramacionPago
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+
     Public Function Cargar(ByVal o_fila As DataRow) As e_DetalleProgramacionPago
         Try
             Dim oeDetalleProgramacionPago = New e_DetalleProgramacionPago( _
