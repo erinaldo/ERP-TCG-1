@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -1995,7 +2003,7 @@ Public Class frm_RegistroEventosViaje
                     oeIncidenciaMaestro.lstAccidente = griListaAccidentes.DataSource
                     oeIncidenciaMaestro.lstIncidente = griListaIncidentes.DataSource
                     oeIncidenciaMaestro.lstRobo = griListaRobos.DataSource
-
+                    oeIncidenciaMaestro.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olIncidenciaMaestro.Guardar(oeIncidenciaMaestro) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         MostrarTabs(0, tcIncidencia, 2)
@@ -2450,6 +2458,7 @@ Public Class frm_RegistroEventosViaje
                 oeAreaResponsableEvento.UsuarioCreacion = gUsuarioSGI.Id
                 oeAreaResponsableEvento.TipoOperacion = "G"
                 oeAreaResponsableEvento.Id = griListaCerrarIncidencia.Rows(e.Cell.Row.Index).Cells("Id").Value
+                oeAreaResponsableEvento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olAreaResponsableEvento.GuardarGlosa(oeAreaResponsableEvento)
                 mensajeEmergente.Confirmacion("La Informacion ha sido grabada Satisfactoriamente", True)
             End If
@@ -2459,6 +2468,7 @@ Public Class frm_RegistroEventosViaje
                 oeAreaResponsableEvento.TipoOperacion = "S"
                 oeAreaResponsableEvento.Id = griListaCerrarIncidencia.Rows(e.Cell.Row.Index).Cells("Id").Value
                 oeAreaResponsableEvento.IdEstado = griListaCerrarIncidencia.Rows(e.Cell.Row.Index).Cells("IdEstado").Value
+                oeAreaResponsableEvento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olAreaResponsableEvento.GuardarEstado(oeAreaResponsableEvento)
                 mensajeEmergente.Confirmacion("La Informacion ha sido grabada Satisfactoriamente", True)
             End If

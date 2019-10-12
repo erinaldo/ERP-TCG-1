@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -268,7 +276,7 @@ Public Class frm_TipoEventoConfig
                                 oeAreaAsignada.IdArea = .ActiveRow.Cells("Id").Value
                                 oeAreaAsignada.Area = .ActiveRow.Cells("Nombre").Value
                                 oeAreaAsignada.UsuarioCreacion = gUsuarioSGI.Id
-
+                                oeAreaAsignada.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 listaAreaAsignada.Add(oeAreaAsignada)
                                 If griAreasAsignadas.Rows.Count < 1 Then
                                     griAreasAsignadas.DataSource = listaAreaAsignada
@@ -342,6 +350,7 @@ Public Class frm_TipoEventoConfig
             oeConcepto.Descripcion = txtDescripcion.Text.Trim
             oeConcepto.Prefijo = cboEvento.Value
             oeConcepto.UsuarioCreacion = gUsuarioSGI.Id
+            oeConcepto.Prefijo = gs_PrefijoIdSucursal '@0001
             If loConcepto.Guardar(oeConcepto, listaAreaAsignada) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, tcPrincipal)
@@ -530,6 +539,7 @@ Public Class frm_TipoEventoConfig
             End With
             griAreasAsignadas.DataBind()
             For Each oe As e_AreaTipoEvento In listaAreaAsignada
+                oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 For Each Fila As UltraWinGrid.UltraGridRow In griAreas.Rows
                     If Fila.Cells("Id").Value.trim = oe.IdArea.Trim And oe.Activo Then
                         Fila.Cells("Selec").Value = True

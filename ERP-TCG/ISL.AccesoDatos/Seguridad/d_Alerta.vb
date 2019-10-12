@@ -78,16 +78,15 @@ Public Class d_Alerta
     Public Function Guardar(ByVal oeAlerta As e_Alerta) As Boolean
         Try
             Using TransScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim id As String = ""
                 With oeAlerta
-                    id = sqlhelper.ExecuteScalar("SGD.Isp_Alerta_IAE", .TipoOperacion, _
+                    id = sqlhelper.ExecuteScalar("SGD.Isp_Alerta_IAE", .TipoOperacion,
                             .Id _
                             , .UsuarioCreacion _
                             , .IdActividadNegocio _
                             , .Estado _
                             , .Activo _
-                            , .PrefijoID _
+                            , .PrefijoID
                         )
                 End With
                 If oeAlerta.oeAlertaDetalle IsNot Nothing Then
@@ -95,12 +94,14 @@ Public Class d_Alerta
                     oeAlerta.oeAlertaDetalle.UsuarioCreacion = oeAlerta.UsuarioCreacion
                     oeAlerta.oeAlertaDetalle.Estado = oeAlerta.Estado
                     oeAlerta.oeAlertaDetalle.IdAlerta = id
+                    oeAlerta.oeAlertaDetalle.PrefijoID = oeAlerta.PrefijoID '@0001
                     odAlertaDetalle.Guardar(oeAlerta.oeAlertaDetalle)
                 End If
                 If oeAlerta.leDestino.Count > 0 Then
                     For Each oeAlertaDestino As e_AlertaDestino In oeAlerta.leDestino
                         oeAlertaDestino.IdAlerta = id
                         'oeAlertaDestino.UsuarioCreacion = oeAlerta.UsuarioCreacion
+                        oeAlertaDestino.PrefijoID = oeAlerta.PrefijoID '@0001
                         odAlertaDestino.Guardar(oeAlertaDestino)
                     Next
                 End If

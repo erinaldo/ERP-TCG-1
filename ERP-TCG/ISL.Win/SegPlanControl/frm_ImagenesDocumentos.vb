@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -966,6 +974,7 @@ Public Class frm_ImagenesDocumentos
         Try
             For Each drFila In documentos
                 oeDocumento = New e_MovimientoDocumento
+                oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeDocumento.Id = drFila.Id
                 Try
                     _ban = EnviarPortalSunat(oeDocumento)

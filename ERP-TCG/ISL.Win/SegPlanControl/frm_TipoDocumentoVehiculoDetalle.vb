@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -403,6 +411,7 @@ Public Class frm_TipoDocumentoVehiculoDetalle
                 oeDetalle.IdTipoDocumento = cboTipoDocumento.Value
                 oeDetalle.IndTodosCliente = chkTodosCliente.Checked
                 oeDetalle.UsuarioCreacion = gUsuarioSGI.Id
+                oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lista.Add(oeDetalle)
             Else
                 For Each fila In gridClientes.Rows
@@ -413,6 +422,7 @@ Public Class frm_TipoDocumentoVehiculoDetalle
                         oeDetalle.IndTodosCliente = False
                         oeDetalle.IdTipoDocumento = cboTipoDocumento.Value
                         oeDetalle.UsuarioCreacion = gUsuarioSGI.Id
+                        oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lista.Add(oeDetalle)
                     End If
                 Next
@@ -424,6 +434,7 @@ Public Class frm_TipoDocumentoVehiculoDetalle
                 oeDetalle.IdTipoDocumento = cboTipoDocumento.Value
                 oeDetalle.IndTodosMaterial = chkTodosMaterial.Checked
                 oeDetalle.UsuarioCreacion = gUsuarioSGI.Id
+                oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lista.Add(oeDetalle)
             Else
                 For Each fila In gridMateriales.Rows
@@ -434,6 +445,7 @@ Public Class frm_TipoDocumentoVehiculoDetalle
                         oeDetalle.IndTodosMaterial = chkTodosMaterial.Checked
                         oeDetalle.IdTipoDocumento = cboTipoDocumento.Value
                         oeDetalle.UsuarioCreacion = gUsuarioSGI.Id
+                        oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                         lista.Add(oeDetalle)
                     End If
                 Next

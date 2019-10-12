@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -88,7 +96,6 @@ Public Class d_Concepto
     Public Function Guardar(ByVal oeConcepto As e_Concepto, ByVal listaAreaTipoEvento As List(Of e_AreaTipoEvento)) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeConcepto
                     stResultado = sqlhelper.ExecuteScalar("SPC.Isp_Concepto_IAE", .TipoOperacion, .PrefijoID, _
@@ -109,6 +116,7 @@ Public Class d_Concepto
                     oeAreaTipoEvento.IdTipoEvento = oeConcepto.Prefijo.Trim
                     oeAreaTipoEvento.IdTipo = stResultado(0).Trim
                     oeAreaTipoEvento.UsuarioCreacion = oeConcepto.UsuarioCreacion
+                    oeAreaTipoEvento.PrefijoID = oeConcepto.Prefijo '@0001
                     odAreaTipoEvento.Eliminar(oeAreaTipoEvento)
 
                     If listaAreaTipoEvento.Count > 0 Then
@@ -117,6 +125,7 @@ Public Class d_Concepto
                             AreaTipoEvento.IdTipoEvento = oeConcepto.Prefijo
                             AreaTipoEvento.TipoOperacion = oeConcepto.TipoOperacion.Trim
                             AreaTipoEvento.UsuarioCreacion = oeConcepto.UsuarioCreacion.Trim
+                            AreaTipoEvento.PrefijoID = oeConcepto.Prefijo '@0001
                             odAreaTipoEvento.Guardar(AreaTipoEvento)
                         Next
                     End If

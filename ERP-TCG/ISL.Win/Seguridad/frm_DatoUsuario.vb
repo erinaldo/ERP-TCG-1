@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_DatoUsuario
@@ -52,6 +60,7 @@ Public Class frm_DatoUsuario
                 oeEmail.Nombre = txtCorporativo.Text.Trim
                 CargarDatos(oeEmail)
                 oeEmail.Principal = 1
+                oeEmail.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leEmail.Add(oeEmail)
             End If
             If Not verPersonal.Checked Then
@@ -59,6 +68,7 @@ Public Class frm_DatoUsuario
                 oeEmail.Nombre = txtPersonal.Text
                 CargarDatos(oeEmail)
                 oeEmail.Principal = IIf(verCorporativo.Checked, 1, 0)
+                oeEmail.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leEmail.Add(oeEmail)
             End If
             If leEmail.Count > 0 Then

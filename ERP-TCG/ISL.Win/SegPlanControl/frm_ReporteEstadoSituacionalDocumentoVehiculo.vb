@@ -1,4 +1,12 @@
-﻿Public Class frm_ReporteEstadoSituacionalDocumentoVehiculo
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Public Class frm_ReporteEstadoSituacionalDocumentoVehiculo
     Inherits frm_ReporteBasico
 
 #Region "Inicializar formulario"

@@ -1,10 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_AccidenteVehiculo
 
     Private sqlhelper As New SqlHelper
 
-    Private oeAccidenteVehiculo As e_AccidenteVehiculo
+    Private oeAccidenteVehiculo As New e_AccidenteVehiculo
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_AccidenteVehiculo
         Try
@@ -55,10 +63,8 @@ Public Class d_AccidenteVehiculo
 
     Public Function Guardar(ByVal oeAccidenteVehiculo As e_AccidenteVehiculo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeAccidenteVehiculo
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Vehiculo_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Vehiculo_IAE", .TipoOperacion,
                 .PrefijoID, .Id, .IdAccidente, .IdVehiculo, .PropiedadISL, .Detalle, .Observacion)
             End With
             Return True

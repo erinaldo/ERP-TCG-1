@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_AccidenteCarga
@@ -66,15 +74,14 @@ Public Class d_AccidenteCarga
 
     Public Function Guardar(ByVal oee_AccidenteCarga As e_AccidenteCarga) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oee_AccidenteCarga
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Carga_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Carga_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAccidente _
                         , .IdMaterial _
                         , .Detalle _
                         , .Observacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

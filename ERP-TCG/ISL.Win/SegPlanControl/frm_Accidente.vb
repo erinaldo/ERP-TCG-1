@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
@@ -505,6 +513,7 @@ Public Class frm_Accidente
             oeAccidente.loTrabajadoresAccidentados = lstTrabajadoresAccidentados
             oeAccidente.loEquiposAccidentados = lstVehiculosAccidentados
             oeAccidente.loFotosAccidentados = lstFotoAccidentados
+            oeAccidente.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olAccidente.Guardar(oeAccidente) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcAccidente, 2)

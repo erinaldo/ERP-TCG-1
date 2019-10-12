@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -89,7 +97,6 @@ Public Class d_Combo
     Public Function Listar(ByVal oeCombo As e_Combo) As List(Of e_Combo)
         Try
             Dim lista As New List(Of e_Combo)
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             band = oeCombo.Nombre
             With oeCombo
@@ -160,7 +167,6 @@ Public Class d_Combo
 
     Public Function Guardar(ByVal oeCombo As e_Combo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCombo
                 SqlHelper.ExecuteNonQuery("[STD].[Isp_Combo_IAE]", .Tipo, .Id, .Nombre)
             End With
