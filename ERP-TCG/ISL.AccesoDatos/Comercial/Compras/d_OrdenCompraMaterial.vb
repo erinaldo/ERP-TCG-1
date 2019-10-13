@@ -10,33 +10,34 @@ Public Class d_OrdenCompraMaterial
     Private Function Cargar(ByVal fila As DataRow) As e_OrdenCompraMaterial
 
         Try
-            Dim oeOrdenMaterial = New e_OrdenCompraMaterial( _
-                                                      fila("Seleccion"), _
-                                                      fila("Id"), _
-                                                      fila("IdOrden"), _
-                                                      fila("IdMaterial"), _
-                                                      fila("Material"), _
-                                                      fila("CantidadMaterial"), _
-                                                      fila("CostoUnitario"), _
-                                                      fila("CambioMoneda"), _
-                                                      fila("PrecioTotal"), _
-                                                      fila("IdAlmacen"), _
-                                                      fila("Almacen"), _
-                                                      fila("CantidadMaterialPendiente"), _
-                                                      fila("IndicadorIgv"), _
-                                                      fila("Activo"), _
-                                                      fila("IdUnidadMedida"), _
-                                                      fila("UnidadMedida"), _
-                                                      fila("IdTipoUnidadMedida"), _
-                                                      fila("Porcentaje"), _
-                                                      fila("Glosa"), _
-                                                      fila("Notas"), _
-                                                      fila("CodigoRequerimiento"), _
-                                                      fila("IdArea"), _
-                                                      fila("Area"), _
-                                                      fila("CodigoMaterial"), _
-                                                      fila("IdRequerimientoMaterial"), _
-                                                      fila("TipoMoneda"), _
+            Dim oeOrdenMaterial = New e_OrdenCompraMaterial(
+                                                      fila("Seleccion"),
+                                                      fila("Id"),
+                                                      fila("IdOrden"),
+                                                      fila("IdMaterial"),
+                                                      fila("Material"),
+                                                      fila("CantidadMaterial"),
+                                                      fila("CostoAdm"),
+                                                      fila("CostoUnitario"),
+                                                      fila("CambioMoneda"),
+                                                      fila("PrecioTotal"),
+                                                      fila("IdAlmacen"),
+                                                      fila("Almacen"),
+                                                      fila("CantidadMaterialPendiente"),
+                                                      fila("IndicadorIgv"),
+                                                      fila("Activo"),
+                                                      fila("IdUnidadMedida"),
+                                                      fila("UnidadMedida"),
+                                                      fila("IdTipoUnidadMedida"),
+                                                      fila("Porcentaje"),
+                                                      fila("Glosa"),
+                                                      fila("Notas"),
+                                                      fila("CodigoRequerimiento"),
+                                                      fila("IdArea"),
+                                                      fila("Area"),
+                                                      fila("CodigoMaterial"),
+                                                      fila("IdRequerimientoMaterial"),
+                                                      fila("TipoMoneda"),
                                                       fila("IdSubAlmacen"))
             Return oeOrdenMaterial
         Catch ex As Exception
@@ -115,25 +116,26 @@ Public Class d_OrdenCompraMaterial
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeOrdenMaterial
-                id = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompraMaterial_IAE", _
-                                         .TipoOperacion, _
-                                         .PrefijoID, _
-                                         .Id, _
-                                         .IdOrden, _
-                                         .IdMaterial, _
-                                         .CantidadMaterial, _
-                                         .CostoUnitario, _
-                                         .PrecioTotal, _
-                                         .IdSubAlmacen, _
-                                         .CantidadMaterialPendiente, _
-                                         .IndicadorIgv, _
-                                         .Activo, _
-                                         .IdUnidadMedida, _
-                                         .IdCentroCosto, _
-                                         .IdRequerimientoMaterial, _
-                                         .Glosa, _
-                                         .Notas, _
-                                         .IdArea, _
+                id = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompraMaterial_IAE",
+                                         .TipoOperacion,
+                                         .PrefijoID,
+                                         .Id,
+                                         .IdOrden,
+                                         .IdMaterial,
+                                         .CantidadMaterial,
+                                         .CostoAdm,
+                                         .CostoUnitario,
+                                         .PrecioTotal,
+                                         .IdSubAlmacen,
+                                         .CantidadMaterialPendiente,
+                                         .IndicadorIgv,
+                                         .Activo,
+                                         .IdUnidadMedida,
+                                         .IdCentroCosto,
+                                         .IdRequerimientoMaterial,
+                                         .Glosa,
+                                         .Notas,
+                                         .IdArea,
                                          .IdOrdenSalidaMaterial)
                 .Id = id
                 For Each oe As e_OCMaterial_OSMaterial In .ListaOCMaterial_OSMaterial

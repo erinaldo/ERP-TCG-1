@@ -67,6 +67,8 @@ Public Class e_OrdenMaterial
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String
+    <DataMember()>
+    Public Property CostoAdm() As Double = 0
 
 #End Region
 
@@ -371,24 +373,25 @@ Public Class e_OrdenMaterial
         TipoOperacion = String.Empty
     End Sub
 
-    Sub New(ByVal Seleccion As Boolean, _
-            ByVal Id As String, _
-            ByVal IdOrden As String, _
-            ByVal NroOrden As String, _
-            ByVal IdMaterial As String, _
-            ByVal Material As String, _
-            ByVal CantidadMaterial As Double, _
-            ByVal PrecioUnitario As Double, _
-            ByVal ValorVenta As Double, _
-            ByVal IdSubAlmacen As String, _
-            ByVal IdAlmacen As String, _
-            ByVal Almacen As String, _
-            ByVal IndicadorIgv As Boolean, _
-            ByVal Activo As Boolean, _
-            ByVal IdUnidadMedida As String, _
-            ByVal UnidadMedida As String, _
-            ByVal IdTipoUnidadMedida As String, _
-            ByVal CodigoMaterial As String, _
+    Sub New(ByVal Seleccion As Boolean,
+            ByVal Id As String,
+            ByVal IdOrden As String,
+            ByVal NroOrden As String,
+            ByVal IdMaterial As String,
+            ByVal Material As String,
+            ByVal CantidadMaterial As Double,
+            ByVal ld_CostoAdm As Double,
+            ByVal PrecioUnitario As Double,
+            ByVal ValorVenta As Double,
+            ByVal IdSubAlmacen As String,
+            ByVal IdAlmacen As String,
+            ByVal Almacen As String,
+            ByVal IndicadorIgv As Boolean,
+            ByVal Activo As Boolean,
+            ByVal IdUnidadMedida As String,
+            ByVal UnidadMedida As String,
+            ByVal IdTipoUnidadMedida As String,
+            ByVal CodigoMaterial As String,
             ByVal ls_Ubicacion As String)
         _Seleccion = Seleccion
         _Id = Id
@@ -397,6 +400,7 @@ Public Class e_OrdenMaterial
         _idMaterial = IdMaterial
         _Material = Material
         _CantidadMaterial = CantidadMaterial
+        CostoAdm = ld_CostoAdm
         _PrecioUnitario = PrecioUnitario
         _ValorVenta = ValorVenta 'Es el subtotal sin incluir IGV
         _SubAlmacen = IdSubAlmacen

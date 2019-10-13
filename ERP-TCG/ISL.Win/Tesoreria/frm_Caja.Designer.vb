@@ -26,7 +26,7 @@ Partial Class frm_Caja
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdCaja")
-        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
+        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha")
         Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Monto")
         Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdCuentaBancaria")
         Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
@@ -202,6 +202,7 @@ Partial Class frm_Caja
         Me.menContextualUsuariosCaja = New ISL.Controles.MenuContextual(Me.components)
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ogdUsuarioCaja = New ISL.Controles.OrigenDatos(Me.components)
+        Me.filtro1 = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
         Me.griTrabajador = New ISL.Controles.Grilla(Me.components)
         Me.UltraTabPageControl7 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrTotalCaja = New ISL.Controles.Agrupacion(Me.components)
@@ -238,7 +239,6 @@ Partial Class frm_Caja
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.frm_MenuPadre_Fill_Panel = New System.Windows.Forms.Panel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.filtro1 = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.griMontoCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mcMovimientosCaja.SuspendLayout()
@@ -339,7 +339,7 @@ Partial Class frm_Caja
         Me.griMontoCaja.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
         Me.griMontoCaja.DisplayLayout.Override.RowSelectorNumberStyle = Infragistics.Win.UltraWinGrid.RowSelectorNumberStyle.VisibleIndex
         Me.griMontoCaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griMontoCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griMontoCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griMontoCaja.Location = New System.Drawing.Point(0, 0)
         Me.griMontoCaja.Name = "griMontoCaja"
         Me.griMontoCaja.Size = New System.Drawing.Size(1137, 250)
@@ -689,7 +689,7 @@ Partial Class frm_Caja
         Me.ficMontoCaja.Controls.Add(Me.UltraTabPageControl3)
         Me.ficMontoCaja.Controls.Add(Me.UltraTabPageControl4)
         Me.ficMontoCaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficMontoCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficMontoCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficMontoCaja.Location = New System.Drawing.Point(0, 0)
         Me.ficMontoCaja.Name = "ficMontoCaja"
         Me.ficMontoCaja.SharedControlsPage = Me.UltraTabSharedControlsPage3
@@ -766,7 +766,7 @@ Partial Class frm_Caja
         Me.griUsuarioCaja.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[True]
         Me.griUsuarioCaja.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Extended
         Me.griUsuarioCaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griUsuarioCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.85!)
+        Me.griUsuarioCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griUsuarioCaja.Location = New System.Drawing.Point(0, 0)
         Me.griUsuarioCaja.Name = "griUsuarioCaja"
         Me.griUsuarioCaja.Size = New System.Drawing.Size(465, 273)
@@ -787,7 +787,7 @@ Partial Class frm_Caja
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         Me.ToolStripMenuItem4.Size = New System.Drawing.Size(102, 22)
         Me.ToolStripMenuItem4.Text = "Quitar"
-        Me.ToolStripMenuItem4.ToolTipText = "Si necesita quitar el usuario... deselecciónelo de la lista ubicada a la derecha " & _
+        Me.ToolStripMenuItem4.ToolTipText = "Si necesita quitar el usuario... deselecciónelo de la lista ubicada a la derecha " &
     ""
         '
         'ogdUsuarioCaja
@@ -804,7 +804,7 @@ Partial Class frm_Caja
         Me.griTrabajador.DisplayLayout.Override.RowSelectorHeaderStyle = Infragistics.Win.UltraWinGrid.RowSelectorHeaderStyle.ColumnChooserButton
         Me.griTrabajador.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Extended
         Me.griTrabajador.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTrabajador.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
+        Me.griTrabajador.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTrabajador.Location = New System.Drawing.Point(0, 0)
         Me.griTrabajador.Name = "griTrabajador"
         Me.griTrabajador.Size = New System.Drawing.Size(670, 273)
@@ -822,7 +822,7 @@ Partial Class frm_Caja
         '
         Me.agrTotalCaja.Controls.Add(Me.griListaCaja)
         Me.agrTotalCaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.agrTotalCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrTotalCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrTotalCaja.ForeColor = System.Drawing.Color.Black
         Me.agrTotalCaja.Location = New System.Drawing.Point(0, 0)
         Me.agrTotalCaja.Name = "agrTotalCaja"
@@ -866,10 +866,10 @@ Partial Class frm_Caja
         Me.griListaCaja.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
         Me.griListaCaja.DisplayLayout.Override.RowSelectorNumberStyle = Infragistics.Win.UltraWinGrid.RowSelectorNumberStyle.VisibleIndex
         Me.griListaCaja.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!)
-        Me.griListaCaja.Location = New System.Drawing.Point(2, 18)
+        Me.griListaCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griListaCaja.Location = New System.Drawing.Point(2, 19)
         Me.griListaCaja.Name = "griListaCaja"
-        Me.griListaCaja.Size = New System.Drawing.Size(1141, 458)
+        Me.griListaCaja.Size = New System.Drawing.Size(1141, 457)
         Me.griListaCaja.TabIndex = 1
         Me.griListaCaja.Text = "Listado de Cajas"
         '
@@ -943,7 +943,7 @@ Partial Class frm_Caja
         Me.ficMovimiento.Controls.Add(Me.UltraTabPageControl1)
         Me.ficMovimiento.Controls.Add(Me.UltraTabPageControl2)
         Me.ficMovimiento.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficMovimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficMovimiento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficMovimiento.Location = New System.Drawing.Point(2, 28)
         Me.ficMovimiento.Name = "ficMovimiento"
         Me.ficMovimiento.SharedControlsPage = Me.UltraTabSharedControlsPage2
@@ -1157,10 +1157,10 @@ Partial Class frm_Caja
         Appearance19.TextVAlignAsString = "Middle"
         Me.UltraLabel5.Appearance = Appearance19
         Me.UltraLabel5.AutoSize = True
-        Me.UltraLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel5.Location = New System.Drawing.Point(25, 75)
         Me.UltraLabel5.Name = "UltraLabel5"
-        Me.UltraLabel5.Size = New System.Drawing.Size(65, 14)
+        Me.UltraLabel5.Size = New System.Drawing.Size(66, 15)
         Me.UltraLabel5.TabIndex = 5
         Me.UltraLabel5.Text = "Abreviatura:"
         '
@@ -1199,10 +1199,10 @@ Partial Class frm_Caja
         Appearance22.TextVAlignAsString = "Middle"
         Me.UltraLabel22.Appearance = Appearance22
         Me.UltraLabel22.AutoSize = True
-        Me.UltraLabel22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel22.Location = New System.Drawing.Point(42, 52)
         Me.UltraLabel22.Name = "UltraLabel22"
-        Me.UltraLabel22.Size = New System.Drawing.Size(48, 14)
+        Me.UltraLabel22.Size = New System.Drawing.Size(48, 15)
         Me.UltraLabel22.TabIndex = 3
         Me.UltraLabel22.Text = "Nombre:"
         '
@@ -1213,10 +1213,10 @@ Partial Class frm_Caja
         Appearance23.TextVAlignAsString = "Middle"
         Me.UltraLabel2.Appearance = Appearance23
         Me.UltraLabel2.AutoSize = True
-        Me.UltraLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel2.Location = New System.Drawing.Point(47, 99)
         Me.UltraLabel2.Name = "UltraLabel2"
-        Me.UltraLabel2.Size = New System.Drawing.Size(41, 14)
+        Me.UltraLabel2.Size = New System.Drawing.Size(41, 15)
         Me.UltraLabel2.TabIndex = 1
         Me.UltraLabel2.Text = "Centro:"
         '
@@ -1227,10 +1227,10 @@ Partial Class frm_Caja
         Appearance24.TextVAlignAsString = "Middle"
         Me.UltraLabel4.Appearance = Appearance24
         Me.UltraLabel4.AutoSize = True
-        Me.UltraLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel4.Location = New System.Drawing.Point(47, 29)
         Me.UltraLabel4.Name = "UltraLabel4"
-        Me.UltraLabel4.Size = New System.Drawing.Size(43, 14)
+        Me.UltraLabel4.Size = New System.Drawing.Size(42, 15)
         Me.UltraLabel4.TabIndex = 1
         Me.UltraLabel4.Text = "Código:"
         '

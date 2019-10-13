@@ -27,6 +27,7 @@ Public Class e_RegistroInventario
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String
+    Public Property ValorAdm() As Double = 0
 
     <DataMember()> _
     Public FechaInicio As Date

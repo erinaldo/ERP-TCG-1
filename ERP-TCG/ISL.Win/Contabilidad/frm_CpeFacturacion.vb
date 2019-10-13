@@ -1576,47 +1576,47 @@ Public Class frm_CpeFacturacion
 
     Private Sub Pendientes_CPE()
         Try
-            Dim dt As DataTable
-            Dim sbMensaje As New StringBuilder
-            Dim tipo_doc As String = ""
-            oeDocumento = New e_MovimientoDocumento
-            oeDocumento.TipoOperacion = "PTE"
-            dt = olDocumento.ListaFacturacionElectronica(oeDocumento).Tables(0)
-            Dim msj As String = ""
-            If dt.Rows.Count > 0 Then
+            'Dim dt As DataTable
+            'Dim sbMensaje As New StringBuilder
+            'Dim tipo_doc As String = ""
+            'oeDocumento = New e_MovimientoDocumento
+            'oeDocumento.TipoOperacion = "PTE"
+            'dt = olDocumento.ListaFacturacionElectronica(oeDocumento).Tables(0)
+            'Dim msj As String = ""
+            'If dt.Rows.Count > 0 Then
 
-                For Each row As DataRow In dt.Rows
-                    If tipo_doc <> row.Item("TipoDocumento") Then
-                        tipo_doc = row.Item("TipoDocumento")
-                        sbMensaje.AppendLine(CStr(row.Item("TipoDocumento")).ToString())
-                        sbMensaje.Append(": ").AppendLine()
-                    End If
-                    msj = CStr(Format(row.Item("FechaEmision"), "dd-MM-yyyy")) & ": " & row.Item("Cantidad").ToString
-                    sbMensaje.Append(msj).AppendLine()
-                Next
-                frm_Menu.AlertaInforma.Show(CargarDatosAlerta("Documentos no informados a SUNAT", sbMensaje.ToString, My.Resources.Information, "ENVIO CPE", Misc.ScreenPosition.BottomLeft))
-                'frm_Menu.Alerta.Show("Documentos no informados a SUNAT", sbMensaje.ToString, My.Resources.Information)
-                'mensajeEmergente.Confirmacion(sbMensaje.ToString, True)
+            '    For Each row As DataRow In dt.Rows
+            '        If tipo_doc <> row.Item("TipoDocumento") Then
+            '            tipo_doc = row.Item("TipoDocumento")
+            '            sbMensaje.AppendLine(CStr(row.Item("TipoDocumento")).ToString())
+            '            sbMensaje.Append(": ").AppendLine()
+            '        End If
+            '        msj = CStr(Format(row.Item("FechaEmision"), "dd-MM-yyyy")) & ": " & row.Item("Cantidad").ToString
+            '        sbMensaje.Append(msj).AppendLine()
+            '    Next
+            '    frm_Menu.AlertaInforma.Show(CargarDatosAlerta("Documentos no informados a SUNAT", sbMensaje.ToString, My.Resources.Information, "ENVIO CPE", Misc.ScreenPosition.BottomLeft))
+            '    'frm_Menu.Alerta.Show("Documentos no informados a SUNAT", sbMensaje.ToString, My.Resources.Information)
+            '    'mensajeEmergente.Confirmacion(sbMensaje.ToString, True)
 
-            End If
-            sbMensaje.Clear()
+            'End If
+            'sbMensaje.Clear()
 
-            tipo_doc = ""
-            oeDocumento = New e_MovimientoDocumento
-            oeDocumento.TipoOperacion = "CBJ"
-            dt = olDocumento.ListaFacturacionElectronica(oeDocumento).Tables(0)
-            If dt.Rows.Count > 0 Then
-                For Each row As DataRow In dt.Rows
-                    If tipo_doc <> row.Item("TipoDocumento") Then
-                        tipo_doc = row.Item("TipoDocumento")
-                        sbMensaje.AppendLine(CStr(row.Item("TipoDocumento")).ToString())
-                        sbMensaje.Append(": ").AppendLine()
-                    End If
-                    msj = CStr(Format(row.Item("FechaEmision"), "dd-MM-yyyy")) & ": " & row.Item("Cantidad").ToString
-                    sbMensaje.Append(msj).AppendLine()
-                Next
-                frm_Menu.AlertaBaja.Show(CargarDatosAlerta("Documentos por Comunicar Baja a SUNAT", sbMensaje.ToString, My.Resources.Information, "ENVIO CPE - BAJAS", Misc.ScreenPosition.BottomRight))
-            End If
+            'tipo_doc = ""
+            'oeDocumento = New e_MovimientoDocumento
+            'oeDocumento.TipoOperacion = "CBJ"
+            'dt = olDocumento.ListaFacturacionElectronica(oeDocumento).Tables(0)
+            'If dt.Rows.Count > 0 Then
+            '    For Each row As DataRow In dt.Rows
+            '        If tipo_doc <> row.Item("TipoDocumento") Then
+            '            tipo_doc = row.Item("TipoDocumento")
+            '            sbMensaje.AppendLine(CStr(row.Item("TipoDocumento")).ToString())
+            '            sbMensaje.Append(": ").AppendLine()
+            '        End If
+            '        msj = CStr(Format(row.Item("FechaEmision"), "dd-MM-yyyy")) & ": " & row.Item("Cantidad").ToString
+            '        sbMensaje.Append(msj).AppendLine()
+            '    Next
+            '    frm_Menu.AlertaBaja.Show(CargarDatosAlerta("Documentos por Comunicar Baja a SUNAT", sbMensaje.ToString, My.Resources.Information, "ENVIO CPE - BAJAS", Misc.ScreenPosition.BottomRight))
+            'End If
 
 
         Catch ex As Exception
@@ -1624,7 +1624,7 @@ Public Class frm_CpeFacturacion
         End Try
 
     End Sub
-#End Region
 
+#End Region
 
 End Class

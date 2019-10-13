@@ -40,6 +40,7 @@ Public Class e_Inventario
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String
+    Public Property ValorAdm() As Double = 0
 
     Private _idmataterial As String
     Private _codmaterial As String

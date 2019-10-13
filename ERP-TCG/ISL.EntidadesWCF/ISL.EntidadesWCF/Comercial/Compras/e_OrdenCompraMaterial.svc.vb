@@ -52,8 +52,11 @@ Public Class e_OrdenCompraMaterial
     <DataMember()> _
     Public ListaOCMaterial_OSMaterial As New List(Of e_OCMaterial_OSMaterial)
 
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
+
+    <DataMember()>
+    Public Property CostoAdm() As Double
 
 #End Region
 
@@ -401,32 +404,33 @@ Public Class e_OrdenCompraMaterial
     End Sub
 
     '-------------------------------PARA LOS DETALLE DE ORDEN DE COMPRA -------------------------------------
-    Sub New(ByVal lb_Seleccion As Boolean, _
-            ByVal ls_Id As String, _
-            ByVal ls_IdOrden As String, _
-            ByVal ls_IdMaterial As String, _
-            ByVal ls_Material As String, _
-            ByVal ld_CantidadMaterial As Double, _
-            ByVal ld_CostoUnitario As Double, _
-            ByVal ld_CambioMoneda As Double, _
-            ByVal ld_PrecioTotal As Double, _
-            ByVal ls_IdAlmacen As String, _
-            ByVal ls_Almacen As String, _
-            ByVal ld_CantidadMaterialPendiente As Decimal, _
-            ByVal lb_IndicadorIgv As Boolean, _
-            ByVal lb_Activo As Boolean, _
-            ByVal ls_IdUnidadMedida As String, _
-            ByVal ls_UnidadMedida As String, _
-            ByVal ls_IdTipoUnidadMedida As String, _
-            ByVal ld_Porcentaje As Double, _
-            ByVal ls_Glosa As String, _
-             ByVal ls_Notas As String, _
-            ByVal ls_CodigoRequerimiento As String, _
-            ByVal ls_IdArea As String, _
-            ByVal ls_Area As String, _
-            ByVal ls_CodigoMaterial As String, _
-            ByVal ls_IdRequerimientoMaterial As String, _
-            ByVal ls_TipoMoneda As String, _
+    Sub New(ByVal lb_Seleccion As Boolean,
+            ByVal ls_Id As String,
+            ByVal ls_IdOrden As String,
+            ByVal ls_IdMaterial As String,
+            ByVal ls_Material As String,
+            ByVal ld_CantidadMaterial As Double,
+            ByVal ld_CostoAdm As Double,
+            ByVal ld_CostoUnitario As Double,
+            ByVal ld_CambioMoneda As Double,
+            ByVal ld_PrecioTotal As Double,
+            ByVal ls_IdAlmacen As String,
+            ByVal ls_Almacen As String,
+            ByVal ld_CantidadMaterialPendiente As Decimal,
+            ByVal lb_IndicadorIgv As Boolean,
+            ByVal lb_Activo As Boolean,
+            ByVal ls_IdUnidadMedida As String,
+            ByVal ls_UnidadMedida As String,
+            ByVal ls_IdTipoUnidadMedida As String,
+            ByVal ld_Porcentaje As Double,
+            ByVal ls_Glosa As String,
+             ByVal ls_Notas As String,
+            ByVal ls_CodigoRequerimiento As String,
+            ByVal ls_IdArea As String,
+            ByVal ls_Area As String,
+            ByVal ls_CodigoMaterial As String,
+            ByVal ls_IdRequerimientoMaterial As String,
+            ByVal ls_TipoMoneda As String,
             ByVal ls_IdSubAlmacen As String) '23 paranetros
 
         _Seleccion = lb_Seleccion
@@ -439,7 +443,7 @@ Public Class e_OrdenCompraMaterial
         'If lb_IndicadorIgv Then
         _PrecioUnitario = ld_PrecioTotal / CantidadMaterial
         'End If
-
+        CostoAdm = ld_CostoAdm
         '_ValorVenta = ValorVenta 'Es el subtotal sin incluir IGV        
         '_Importe = Math.Round(_PrecioUnitarioConImp * CantidadMaterial, 4)
         _preciototal = ld_PrecioTotal

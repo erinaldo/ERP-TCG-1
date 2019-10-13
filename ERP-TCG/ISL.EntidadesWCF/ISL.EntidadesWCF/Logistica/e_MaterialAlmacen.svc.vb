@@ -45,9 +45,9 @@ Public Class e_MaterialAlmacen
     <DataMember()>
     Public Modificado As Boolean = False
 
-
-    Public Property IdEmpresaSis() As String
-    Public Property IdSucursal() As String
+    Public Property IdEmpresaSis() As String = ""
+    Public Property IdSucursal() As String = ""
+    Public Property ValorAdm() As Double = 0
 
 #End Region
 

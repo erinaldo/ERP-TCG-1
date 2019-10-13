@@ -1088,6 +1088,7 @@ Public Class frm_OrdenCompra
                     oeDetalleOrdenIngreso.Material = obj.Material
                     oeDetalleOrdenIngreso.CantidadMaterial = obj.CantidadMaterialAAtender
                     oeDetalleOrdenIngreso.IndicadorIgv = obj.IndicadorIgv
+                    oeDetalleOrdenIngreso.CostoAdm = obj.CostoAdm
                     If cboMoneda.Text = "DOLARES" Then If txtTC.Value = 0 Then Throw New Exception("Ingrese Tipo Cambio")
                     oeDetalleOrdenIngreso.PrecioUnitario = obj.PrecioUnitario
                     oeDetalleOrdenIngreso.IdSubAlmacen = obj.IdSubAlmacen
