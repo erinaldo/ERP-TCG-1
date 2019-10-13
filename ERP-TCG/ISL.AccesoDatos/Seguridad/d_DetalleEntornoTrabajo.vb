@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -66,16 +74,13 @@ Public Class d_DetalleEntornoTrabajo
 
     Public Function Guardar(ByVal oeDetalleEntornoTrabajo As e_DetalleEntornoTrabajo) As Boolean
         Try
-
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeDetalleEntornoTrabajo
-                SqlHelper.ExecuteNonQuery("SGD.ISP_DetalleEntornoTrabajo_IAE", .TipoOperacion, _
+                SqlHelper.ExecuteNonQuery("SGD.ISP_DetalleEntornoTrabajo_IAE", .TipoOperacion,
                         .Id _
                         , .IdUsuario _
                         , .IdEntornoTrabajo _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

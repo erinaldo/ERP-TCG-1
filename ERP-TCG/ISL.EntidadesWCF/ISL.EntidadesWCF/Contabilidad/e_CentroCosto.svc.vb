@@ -27,6 +27,10 @@ Public Class e_CentroCosto
     Public Modificado As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public ListUbicaciones As New List(Of e_CentroCostoUbicaciones)
 

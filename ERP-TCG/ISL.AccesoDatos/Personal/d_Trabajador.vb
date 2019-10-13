@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -241,15 +249,15 @@ Public Class d_Trabajador
     ''' <remarks></remarks>
     Public Function Guardar(ByVal oeTrabajador As e_Trabajador) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope
+                oeTrabajador.oePersona.PrefijoID = oeTrabajador.PrefijoID '@0001
                 Dim _idpadre As String = odPersona.Guardar(oeTrabajador.oePersona)
                 If _idpadre <> "" Then
                     With oeTrabajador
-                        id = sqlhelper.ExecuteScalar("PER.Isp_Trabajador_IAE", .TipoOperacion, _
-                         .Id, .oeArea.Id, _idpadre, .Codigo, .FechaIngreso, .FechaCese, _
-                         .Activo, .oeCargo.Id, .IdEstadoCivil, .IdGradoInstruccion, .IdLugarNacimiento, _
+                        id = sqlhelper.ExecuteScalar("PER.Isp_Trabajador_IAE", .TipoOperacion,
+                         .Id, .oeArea.Id, _idpadre, .Codigo, .FechaIngreso, .FechaCese,
+                         .Activo, .oeCargo.Id, .IdEstadoCivil, .IdGradoInstruccion, .IdLugarNacimiento,
                          .FechaCreacion, .UsuarioCreacion, .ClaveSeguridad, .Disponible, .PrefijoID _
                          , .IndEstado, .IndHijo, .IndTipo, .IndPiloto)
                     End With
@@ -257,6 +265,7 @@ Public Class d_Trabajador
                     If oeTrabajador.leOcupacionTrabajador IsNot Nothing Then
                         For Each oeOcupacionTrabajador As e_OcupacionTrabajador In oeTrabajador.leOcupacionTrabajador
                             oeOcupacionTrabajador.IdTrabajador = id
+                            oeOcupacionTrabajador.PrefijoID = oeTrabajador.PrefijoID '@0001
                             Select Case oeOcupacionTrabajador.TipoOperacion
                                 Case "I", "A"
                                     odOcupacionTrabajador.Guardar(oeOcupacionTrabajador)
@@ -278,11 +287,13 @@ Public Class d_Trabajador
                         Else
                             oeTrabajador.oeCuentaCorriente.Tipooperacion = "I"
                         End If
+                        oeTrabajador.oeCuentaCorriente.PrefijoID = oeTrabajador.PrefijoID '@0001
                         odCuentaCorriente.Guardar(oeTrabajador.oeCuentaCorriente)
                     End If
                     If Not oeTrabajador.leCtaBancaria Is Nothing Then
                         For Each oeCtaBan In oeTrabajador.leCtaBancaria
                             oeCtaBan.IdTrabajador = id
+                            oeCtaBan.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeCtaBan.TipoOperacion = "E" Then
                                 odCtaBancaria.Eliminar(oeCtaBan)
                             Else
@@ -293,6 +304,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leSueldo Is Nothing Then
                         For Each oeSueTra In oeTrabajador.leSueldo
                             oeSueTra.IdTrabajador = id
+                            oeSueTra.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeSueTra.TipoOperacion = "E" Then
                                 odSueldo.Eliminar(oeSueTra)
                             Else
@@ -303,6 +315,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leFondoPension Is Nothing Then
                         For Each oeFonTra In oeTrabajador.leFondoPension
                             oeFonTra.IdTrabajador = id
+                            oeFonTra.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeFonTra.TipoOperacion = "E" Then
                                 odFondoPension.Eliminar(oeFonTra)
                             Else
@@ -313,6 +326,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leContratos Is Nothing Then
                         For Each oeContr In oeTrabajador.leContratos
                             oeContr.IdTrabajador = id
+                            oeContr.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeContr.TipoOperacion = "E" Then
                                 odContrato.Eliminar(oeContr)
                             Else
@@ -323,6 +337,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leRegimenSalud Is Nothing Then
                         For Each oeRegSalud In oeTrabajador.leRegimenSalud
                             oeRegSalud.IdTrabajador = id
+                            oeRegSalud.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeRegSalud.TipoOperacion = "E" Then
                                 odRegSalud.Eliminar(oeRegSalud)
                             Else
@@ -333,6 +348,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leSeguroComp Is Nothing Then
                         For Each oeSeguroComp In oeTrabajador.leSeguroComp
                             oeSeguroComp.IdTrabajador = id
+                            oeSeguroComp.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeSeguroComp.TipoOperacion = "E" Then
                                 odSeguroComp.Eliminar(oeSeguroComp)
                             Else
@@ -343,6 +359,7 @@ Public Class d_Trabajador
                     If Not oeTrabajador.leDerechoHabiente Is Nothing Then
                         For Each oeDerHabAux In oeTrabajador.leDerechoHabiente
                             oeDerHabAux.IdTrabajador = id
+                            oeDerHabAux.PrefijoID = oeTrabajador.PrefijoID '@0001
                             If oeDerHabAux.TipoOperacion = "E" Then
                                 odDerHab.Eliminar(oeDerHabAux)
                             Else

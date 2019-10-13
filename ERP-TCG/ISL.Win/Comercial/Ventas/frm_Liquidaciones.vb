@@ -1033,7 +1033,7 @@ Public Class frm_Liquidaciones
                         .Cells(ln_Fila + 9, 5) = obj.Destino
                         .Cells(ln_Fila + 9, 6) = obj.Tracto
                         .Cells(ln_Fila + 9, 7) = obj.Capacidad
-                        .Cells(ln_Fila + 9, 8) = "INDUAMERICA SL SAC"
+                        .Cells(ln_Fila + 9, 8) = gs_TxtEmpresaSistema
                         .Cells(ln_Fila + 9, 9) = obj.FleteUnitario
                         .Cells(ln_Fila + 9, 10) = obj.Ruta
                         .Cells(ln_Fila + 9, 11) = obj.NroCarga
@@ -1298,7 +1298,7 @@ Public Class frm_Liquidaciones
                 Dim Entro3 As Integer = 0
                 Dim Entro2 As Integer = 0
                 Dim Entro1 As Integer = 0
-                objWorkSheet.Cells(1, 1) = "FACTURACION          - TRANSPORTES INDUAMERICA SERVICIOS LOGISTICOS SAC"
+                objWorkSheet.Cells(1, 1) = "FACTURACION          - TRANSPORTES" + gs_TxtEmpresaSistema
                 For Each obj As e_LiquidacionDetalle In oeLiquidacion.ListaLiquidacionDetalle.Where(Function(Item) Item.Seleccion = True)
                     With objWorkSheet
                         .Cells(ln_Fila + 2, 1) = obj.Fecha.Date

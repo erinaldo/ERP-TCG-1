@@ -44,6 +44,10 @@ Public Class e_Movimiento_Flete
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()>
     Public oeChequeCobrar As New e_ChequexCobrar

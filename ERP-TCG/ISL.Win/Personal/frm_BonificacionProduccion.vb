@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -127,6 +135,7 @@ Public Class frm_BonificacionProduccion
                 Case "GENERADA"
                     RecolectaDatos()
                     oeProduccionPiloto.UsuarioCreacion = gUsuarioSGI.Id
+                    oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         SeleccionarTab(0)
@@ -142,6 +151,7 @@ Public Class frm_BonificacionProduccion
                     Else
                         oeProduccionPiloto.IdEstado = cboEstado.Value
                         oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                        oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -160,6 +170,7 @@ Public Class frm_BonificacionProduccion
                     Else
                         oeProduccionPiloto.IdEstado = cboEstado.Value
                         oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                        oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
                                                       " se Termino correctamente!", True)
@@ -1658,6 +1669,7 @@ Public Class frm_BonificacionProduccion
                         If _leEst.Count > 0 Then
                             oeProduccionPiloto.IdEstado = _leEst(0).Id
                             oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                            oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olProduccionPiloto.Guardar(oeProduccionPiloto)
                             mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
                                                           " se Extornado correctamente!", True)

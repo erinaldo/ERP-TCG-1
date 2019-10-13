@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,10 +85,8 @@ Public Class d_MantenimientoServicio
 
     Public Function Guardar(ByVal oeMantenimientoServicio As e_MantenimientoServicio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeMantenimientoServicio
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Servicio_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Servicio_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMantenimiento _
                         , .IdServicio _
@@ -89,7 +95,7 @@ Public Class d_MantenimientoServicio
                         , .Costo _
                         , .Descripcion _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                            )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinDataSource
@@ -136,6 +144,7 @@ Public Class frm_PreliminarInspeccion
             If MessageBox.Show("¿Desea Guardar los Cambios Realizados?", "Mensaje de Sistema", _
                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                 oePreliminarInsp.TipoOperacion = "A"
+                oePreliminarInsp.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olPreliminarInsp.Guardar(oePreliminarInsp)
                 mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
             End If
@@ -450,6 +459,7 @@ Public Class frm_PreliminarInspeccion
 
                     oePreliminarInsp.TipoOperacion = "A"
                     oePreliminarInsp.leDetallePre.AddRange(leDetPreGen)
+                    oePreliminarInsp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPreliminarInsp.Guardar(oePreliminarInsp)
 
                     mensajeEmergente.Confirmacion("Los Datos se Actualizaron Correctamente", True)
@@ -475,6 +485,7 @@ Public Class frm_PreliminarInspeccion
                     oePreliminarInsp.Periodo = fecPeriodo.Value.Year.ToString & FormatoDocumento(fecPeriodo.Value.Month.ToString, 2)
                     oePreliminarInsp.IdEstado = "1CH00014"
                     oePreliminarInsp.leDetallePre = leDetPreGen
+                    oePreliminarInsp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPreliminarInsp.Guardar(oePreliminarInsp)
 
                     mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
@@ -656,6 +667,7 @@ Public Class frm_PreliminarInspeccion
                     Throw New Exception("Debe Confirmar todos los Registros del Reporte")
                 Else
                     oePreliminarInsp.TipoOperacion = "T"
+                    oePreliminarInsp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPreliminarInsp.Guardar(oePreliminarInsp)
                     mensajeEmergente.Problema("Se ha Terminado el Registro Preliminar")
                 End If

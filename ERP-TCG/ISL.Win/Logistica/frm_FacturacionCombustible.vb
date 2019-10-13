@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -830,6 +838,8 @@ Public Class frm_FacturacionCombustible
             End If
             ConsolidarDetalleDocumentoCombustible()
             If ValidarPreciosCantidades() Then
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeMovimientoDocumento.Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                     Inicializar()

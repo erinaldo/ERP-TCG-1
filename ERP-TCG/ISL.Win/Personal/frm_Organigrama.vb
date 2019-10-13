@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -343,6 +351,7 @@ Public Class frm_Organigrama
                     .Activo = True
                     .Abreviatura = txtAbreviatura.Text
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     If .TipoOperacion <> "E" Then
                         _ban = olGerencia.Guardar(oeGerencia)
                     Else
@@ -359,6 +368,7 @@ Public Class frm_Organigrama
                     .Abreviatura = txtAbreviatura.Text
                     .IdGerencia = cboForanea.Value
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     If .TipoOperacion <> "E" Then
                         _ban = olArea.Guardar(oeArea)
                     Else
@@ -375,6 +385,7 @@ Public Class frm_Organigrama
                     .Abreviatura = txtAbreviatura.Text
                     .IdGerencia = cboForanea.Value
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     If .TipoOperacion <> "E" Then
                         _ban = olUnidad.Guardar(oeUnidad)
                     Else
@@ -391,6 +402,7 @@ Public Class frm_Organigrama
                     .OcupacionSunat = cboOcuSunat.Value
                     .IdUnidad = cboForanea.Value
                     .UsuarioCreacion = gUsuarioSGI.Id
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     If .TipoOperacion <> "E" Then
                         _ban = olOcupacion.Guardar(oeOcupacion)
                     Else

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -414,6 +422,8 @@ Public Class frm_RegistroConsumoCombustible
                     IdSubAlmacen = oeCombo.Id
                     oeRegConsumoCombustible.lstInventario = Inventario(oeRegConsumoCombustible, False, ObtenerFechaServidor())
                 End If
+                oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, oeOrden)
                 If oeRegConsumoCombustible.Id Is Nothing Then Return False
                 If Operacion = "Nuevo" Then
@@ -1262,6 +1272,7 @@ Public Class frm_RegistroConsumoCombustible
                 oeRegConsumoCombustible.Perfil = ObtenerPerfilPrincipal.Nombre
                 oeRegConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
                 oeRegConsumoCombustible.lstInventario = New List(Of e_Inventario)
+                oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden)
                 Consultar(True)
             End If
@@ -1286,6 +1297,7 @@ Public Class frm_RegistroConsumoCombustible
                         oeRegConsumoCombustible.Perfil = ObtenerPerfilPrincipal.Nombre
                         oeRegConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
                         oeRegConsumoCombustible.lstInventario = New List(Of e_Inventario)
+                        oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden)
                         ConsultarTanqueosNoAsociados(grid_TanqNoAsoc.ActiveRow.Cells("IdVehiculo").Value)
                         Consultar(True)
@@ -1656,6 +1668,7 @@ Public Class frm_RegistroConsumoCombustible
                             oeRegConsumoCombustible.FechaViaje = ugrOver.Cells("FechaViaje").Value
                             oeRegConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
                             oeRegConsumoCombustible.lstInventario = New List(Of e_Inventario)
+                            oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden)
                             ConsultarTanqueosNoAsociados(grid.ActiveRow.Cells("IdVehiculo").Value)
                             Consultar(True)
@@ -1802,6 +1815,7 @@ Public Class frm_RegistroConsumoCombustible
                         oeRegConsumoCombustible.Id = grid_ListadoTanqueo.ActiveRow.Cells("Id").Value
                         oeRegConsumoCombustible.Glosa = IIf(String.IsNullOrEmpty(grid_ListadoTanqueo.ActiveRow.Cells("Glosa").Value.ToString), "", grid_ListadoTanqueo.ActiveRow.Cells("Glosa").Value.ToString)
                         oeRegConsumoCombustible.lstInventario = New List(Of e_Inventario)
+                        oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden)
                     End If
                 End If
@@ -2486,6 +2500,8 @@ Public Class frm_RegistroConsumoCombustible
                     AsientoConsumo(oeRegConsumoMasivo, 0)
                     oeOrden.Total = Total
                 End If
+                oeRegConsumoMasivo.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoMasivo, oeOrden)
                 mensajeEmergente.Confirmacion("Los Tanqueos No asociado importados fueron grabados satisfactoriamente", True)
                 lstRegConsumoCombustible.Clear()
@@ -3119,6 +3135,8 @@ Public Class frm_RegistroConsumoCombustible
                 AsientoConsumo(oeConsumo, 1)
                 oeConsumo.lstInventario = New List(Of e_Inventario)
                 oeConsumo.lstInventario = Inventario(oeConsumo, True, ObtenerFechaServidor())
+                oeConsumo.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeConsumo = olRegConsumoCombustible.Guardar(oeConsumo, oeOrden)
                 If oeConsumo.Id Is Nothing Then
                     Throw New Exception("No se registró el tanqueo correctamente.")
@@ -3183,6 +3201,8 @@ Public Class frm_RegistroConsumoCombustible
                 AsientoConsumo(oeConsumo, 1)
                 oeConsumo.lstInventario = New List(Of e_Inventario)
                 oeConsumo.lstInventario = Inventario(oeConsumo, True, ObtenerFechaServidor())
+                oeConsumo.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeConsumo = olRegConsumoCombustible.Guardar(oeConsumo, oeOrden)
                 If oeConsumo.Id Is Nothing Then
                     Throw New Exception("No se registró el tanqueo correctamente.")
@@ -3396,6 +3416,7 @@ Public Class frm_RegistroConsumoCombustible
                     oe.lstInventario = Inventario(oe, False, FechaActual)
                 Next
                 oeRegConsumoMasivo.UsuarioCreacion = gUsuarioSGI.Id
+                oeRegConsumoMasivo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoMasivo, New e_Orden)
                 mensajeEmergente.Confirmacion("Los Tanqueos No Asociados Fueron Guardados Satisfactoriamente", True)
                 loRegDiesel = New List(Of e_RegistroConsumoCombustible)

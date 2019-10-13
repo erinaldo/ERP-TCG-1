@@ -64,6 +64,10 @@ Public Class e_OrdenMaterial
     Public IdSubFamiliaMaterial As String = ""
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String

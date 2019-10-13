@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 'Imports System.Math
 Imports Infragistics.Win.UltraWinGrid
@@ -135,6 +143,7 @@ Public Class frm_ReporteCajaDiario
                         oeCierreCajaDet.Glosa = rptcaja.Glosa
                         oeCierreCajaDet.Ingreso = rptcaja.Ingresos
                         oeCierreCajaDet.Egreso = rptcaja.Egresos
+                        oeCierreCajaDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                         loCierreCajaDet.Add(oeCierreCajaDet)
                     Next
                     .loCierreCajaDet = loCierreCajaDet
@@ -143,7 +152,9 @@ Public Class frm_ReporteCajaDiario
                     .oeOtrosIngresos = Nothing
                     .oeValesRendir = Nothing
                 End With
+                oeCierreCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olCierreCaja.Guardar(oeCierreCaja) Then
+                    oeSaldo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSaldo.Guardar(oeSaldo) Then
                         mensajeEmergente.Confirmacion("La informacion de cierre de caja ha sido grabada satisfactoriamente en " & Me.Text, True)
                         griCajaDiario.Focus()

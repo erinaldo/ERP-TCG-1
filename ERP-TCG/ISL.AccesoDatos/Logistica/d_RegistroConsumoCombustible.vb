@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -57,12 +65,11 @@ Public Class d_RegistroConsumoCombustible
     Public Function Obtener(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As e_RegistroConsumoCombustible
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[ALM].[Isp_RegistroConsumoCombustible_Listar]", _
-                                          oeRegistrarConsumoCombustible.TipoOperacion, _
-                                          oeRegistrarConsumoCombustible.Id, _
-                                          oeRegistrarConsumoCombustible.IdVehiculo, _
+            ds = sqlhelper.ExecuteDataset("[ALM].[Isp_RegistroConsumoCombustible_Listar]",
+                                          oeRegistrarConsumoCombustible.TipoOperacion,
+                                          oeRegistrarConsumoCombustible.Id,
+                                          oeRegistrarConsumoCombustible.IdVehiculo,
                                           oeRegistrarConsumoCombustible.FechaTanqueo)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeRegistrarConsumoCombustible = Cargar(ds.Tables(0).Rows(0))
@@ -75,7 +82,6 @@ Public Class d_RegistroConsumoCombustible
 
     Public Function Listar(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As List(Of e_RegistroConsumoCombustible)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldRegistrarConsumoCombustible As New List(Of e_RegistroConsumoCombustible)
             Dim ds As DataSet
             With oeRegistrarConsumoCombustible
@@ -110,14 +116,14 @@ Public Class d_RegistroConsumoCombustible
 
     Public Function GuardarMasivo(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As e_RegistroConsumoCombustible
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 For Each obj As e_RegistroConsumoCombustible In oeRegistrarConsumoCombustible.ListaRegistrosConsumoD2
+                    obj.PrefijoID = oeRegistrarConsumoCombustible.PrefijoID '@0001
                     With obj
-                        stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
-                                                              .TipoOperacion, _
-                                                              .PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]",
+                                                              .TipoOperacion,
+                                                              .PrefijoID,
                                 .Id _
                                 , .IdViaje _
                                 , .IdVehiculo _
@@ -139,13 +145,14 @@ Public Class d_RegistroConsumoCombustible
                                 , .Glosa _
                                 , .CodigoSurtidor _
                                 , .IndIsl _
-                                , .GlosaValeTanqueo _
+                                , .GlosaValeTanqueo
                                 ).ToString.Split("_")
 
                         obj.Id = stResultado(0)
 
                         For Each Inventario As e_Inventario In obj.lstInventario
                             Inventario.oeRegistroInventario.IdRegistroCombustible = obj.Id.Trim
+                            Inventario.PrefijoID = oeRegistrarConsumoCombustible.PrefijoID '@0001
                             odInventario.GuardarInventario(Inventario)
                         Next
                     End With
@@ -160,13 +167,12 @@ Public Class d_RegistroConsumoCombustible
 
     Public Function Guardar(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As e_RegistroConsumoCombustible
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeRegistrarConsumoCombustible
-                    stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]", _
-                                                          .TipoOperacion, _
-                                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_RegistroConsumoCombustible_IAE]",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                             .Id _
                             , .IdViaje _
                             , .IdVehiculo _
@@ -196,6 +202,7 @@ Public Class d_RegistroConsumoCombustible
                     If Inventario.oeRegistroInventario.IdRegistroCombustible.Trim = "" Then
                         Throw New Exception("Error en Despacho de Combustible. Comunicar a Sistemas.")
                     End If
+                    Inventario.PrefijoID = oeRegistrarConsumoCombustible.PrefijoID '@0001
                     odInventario.GuardarInventario(Inventario)
                 Next
                 transScope.Complete()

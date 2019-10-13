@@ -30,6 +30,10 @@ Public Class e_SaldoCtaCorriente
     Public leMovCtaCte As List(Of e_MovCuentaCte)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
 #End Region

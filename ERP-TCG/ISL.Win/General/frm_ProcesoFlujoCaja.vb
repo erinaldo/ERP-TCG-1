@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -145,6 +153,7 @@ Public Class frm_ProcesoFlujoCaja
 
         Try
             oeProcesoFlujoCaja.ListaProcesoFlujoCaja = loProcesoFlujoCajaRelacion
+            oeProcesoFlujoCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olProcesoFlujoCaja.Guardar(oeProcesoFlujoCaja) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 ' LlenaCombos()
@@ -334,7 +343,7 @@ Public Class frm_ProcesoFlujoCaja
                     loProcesoFlujoCajaRelacion = loProcesoFlujoCaja
 
                     oeProcesoFlujoCaja.IdFlujoCaja = .ActiveRow.Cells("Id").Value
-
+                    oeProcesoFlujoCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If Not loProcesoFlujoCajaRelacion.Contains(oeProcesoFlujoCaja) Then
                         If .ActiveRow.Cells("Selec").Value Then
                             oeProcesoFlujoCaja.IdProcesoNegocio = IdProcesoNegocio

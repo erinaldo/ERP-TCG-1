@@ -49,6 +49,10 @@ Public Class e_ContratoFinanciero
     Public MacLocal As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     Public Property Id() As String

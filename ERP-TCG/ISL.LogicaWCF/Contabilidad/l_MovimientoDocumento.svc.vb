@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -638,6 +646,7 @@ Public Class l_MovimientoDocumento
             End If
             'If olFuncionesGenerales.ValidarDocumentoDuplicado(oeMovimientoDocumento) Then
             'If ValidarTipoCambio(oeMovimientoDocumento) Then
+            oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
             If odMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo) Then
                 Return True
             End If

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -50,7 +58,6 @@ Public Class d_MantenimientoMaterial
 
     Public Function Listar(ByVal oeMantenimientoMaterial As e_MantenimientoMaterial) As List(Of e_MantenimientoMaterial)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMantenimientoMaterial As New List(Of e_MantenimientoMaterial)
             Dim ds As DataSet
             With oeMantenimientoMaterial
@@ -61,7 +68,7 @@ Public Class d_MantenimientoMaterial
                         , .IdMaterial _
                         , .Cantidad _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                         )
             End With
             oeMantenimientoMaterial = Nothing
@@ -79,18 +86,16 @@ Public Class d_MantenimientoMaterial
 
     Public Function Guardar(ByVal oeMantenimientoMaterial As e_MantenimientoMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeMantenimientoMaterial
-                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Material_IAE]", .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[MAN].[Isp_Mantenimiento_Material_IAE]", .TipoOperacion,
+                                          .PrefijoID,
                         .Id _
                         , .IdMantenimiento _
                         , .IdMaterial _
                         , .IdUnidadMedida _
                         , .Cantidad _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                                  )
             End With
             Return True

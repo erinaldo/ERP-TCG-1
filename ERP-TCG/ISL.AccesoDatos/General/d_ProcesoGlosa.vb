@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -21,13 +29,11 @@ Public Class d_ProcesoGlosa
     End Function
 
     Public Function Obtener(ByVal oeProcesoGlosa As e_ProcesoGlosa) As e_ProcesoGlosa
-
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.ISP_ProcesoGlosa_Listar", "", _
+            ds = sqlhelper.ExecuteDataset("STD.ISP_ProcesoGlosa_Listar", "",
             oeProcesoGlosa.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeProcesoGlosa = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeProcesoGlosa
@@ -38,7 +44,6 @@ Public Class d_ProcesoGlosa
 
     Public Function Listar(ByVal oeProcesoGlosa As e_ProcesoGlosa) As List(Of e_ProcesoGlosa)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldProcesoGlosa As New List(Of e_ProcesoGlosa)
             Dim ds As DataSet
             With oeProcesoGlosa
@@ -47,7 +52,7 @@ Public Class d_ProcesoGlosa
                         , .IdProcesoNegocio _
                         , .ProcesoNegocio _
                         , .Nombre _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeProcesoGlosa = Nothing
@@ -65,12 +70,8 @@ Public Class d_ProcesoGlosa
 
     Public Function Guardar(ByVal loProcesoGlosa As List(Of e_ProcesoGlosa)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             Using transScope As New TransactionScope()
-
                 For Each Lista As e_ProcesoGlosa In loProcesoGlosa
-
                     sqlhelper.ExecuteNonQuery("STD.ISP_ProcesoGlosa_IAE", Lista.TipoOperacion, Lista.PrefijoID,
                              Lista.Id _
                             , Lista.IdProcesoNegocio _

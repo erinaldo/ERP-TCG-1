@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -478,7 +486,7 @@ Public Class frm_DocumentosScanner
                 LlenarObjeto()
                 ValidarDocumentoVehiculo(oeDocVehIndividual)
                 Dim rutasImagenes As String = ""
-                
+
                 If griImagenesInd.Rows.Count > 0 Then
                     For i As Integer = 0 To griImagenesInd.Rows.Count - 1
                         Dim abreviaturaTipoDoc As String = TipoDocVehPublic.Where(Function(item) item.Id = Me.cboTipoDocumento.Value).ToList.Item(0).Descripcion
@@ -513,6 +521,7 @@ Public Class frm_DocumentosScanner
                         oeDocVehIndividual.RutaImagen = IIf(rutasImagenes.Length > 0, rutasImagenes.Substring(0, rutasImagenes.Length - 1), rutasImagenes)
                     End If
                 End If
+                oeDocVehIndividual.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olDocVehImg.Guardar(oeDocVehIndividual) Then
                     mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente", True)
                     Return True
@@ -539,6 +548,7 @@ Public Class frm_DocumentosScanner
             Dim listaDocumentoConError As New List(Of e_ImagenesDocumentos)
             If griVehiculos.Rows.Count > 0 Then
                 For Each obj As e_ImagenesDocumentos In listaImagenesDoc
+                    obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If ValidarDocumentoVehiculoGuardar(obj) Then
                         listaImagenes = New List(Of e_ImagenesDocumentos)
                         Dim objI As e_ImagenesDocumentos
@@ -603,6 +613,7 @@ Public Class frm_DocumentosScanner
                                 obj.RutaImagen = IIf(rutasImagenes.Length > 0, rutasImagenes.Substring(0, rutasImagenes.Length - 1), rutasImagenes)
                             End If
                         End If
+                        obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                         bol = olDocVehImg.Guardar(obj)
                         If Not bol Then
                             listaDocumentoConError.Add(obj)
@@ -641,6 +652,7 @@ Public Class frm_DocumentosScanner
             Dim listaDocumentoConError As New List(Of e_ImagenesDocumentos)
             If gridDocumentoVehiculoIgual.Rows.Count > 0 Then
                 For Each obj As e_ImagenesDocumentos In listaDocumentoIgual
+                    obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If ValidarDocumentoVehiculoGuardar(obj) Then
                         listaImagenesIgual = New List(Of e_ImagenesDocumentos)
                         Dim objI As e_ImagenesDocumentos
@@ -710,6 +722,7 @@ Public Class frm_DocumentosScanner
                                 obj.RutaImagen = IIf(rutasImagenes.Length > 0, rutasImagenes.Substring(0, rutasImagenes.Length - 1), rutasImagenes)
                             End If
                         End If
+                        obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                         bol = olDocVehImg.Guardar(obj)
                         If Not bol Then
                             listaDocumentoConError.Add(obj)
@@ -1191,6 +1204,7 @@ Public Class frm_DocumentosScanner
             oeDocVehImg.FechaVencimiento = griLista.ActiveRow.Cells("FechaVencimiento").Value
             oeDocVehImg.FechaVigencia = griLista.ActiveRow.Cells("FechaVigencia").Value
             oeDocVehImg.TipoOperacion = "V"
+            oeDocVehImg.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olDocVehImg.Guardar(oeDocVehImg) Then
                 mensajeEmergente.Confirmacion("El Documento ha Cambiado de Vigencia Correctamente", True)
                 Consultar(True)

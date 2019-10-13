@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -243,6 +251,7 @@ Public Class frm_FacturaPeaje
                         oeDetalleDoc.IndGravado = True
                         oeDetalleDoc.UsuarioCreacion = gUsuarioSGI.Id
                         oeDetalleDoc.FactorRefUni = 0
+                        oeDetalleDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                         loDetalleDoc.Add(oeDetalleDoc)
                     Next
                 End If
@@ -336,6 +345,8 @@ Public Class frm_FacturaPeaje
                     oeDocumento.Compra.NoGravadas = oeDocumento.Total
                 End If
                 oeDocumento.lstDetalleDocumento = loDetalleDoc
+                oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeDocumento.Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If Not olDocumento.Guardar(oeDocumento) Then
                     Return False
                 End If

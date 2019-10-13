@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -48,7 +56,7 @@ Public Class d_RevisionTecnica
 
     Public Function Guardar(ByVal oeRevisionTecnica As e_RevisionTecnica) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeRevisionTecnica
                 sqlhelper.ExecuteNonQuery("STD.Isp_RevisionTecnica_IAE" _
                                               , .TipoOperacion, _

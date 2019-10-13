@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -78,7 +86,7 @@ Public Class d_ImagenesDocumentos
     Public Function Guardar(ByVal oeImagenesDocumentosVehiculos As e_ImagenesDocumentos) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Using transScope As New TransactionScope()
                 With oeImagenesDocumentosVehiculos
                     stResultado = sqlhelper.ExecuteScalar("SPC.Isp_ImagenesDocumentos_IAE", .TipoOperacion, .PrefijoID, _
@@ -135,7 +143,7 @@ Public Class d_ImagenesDocumentos
             If listaAux.Count = 1 Then
                 oeImagenesDocumentosVehiculos = listaAux(0)
             End If
-
+            oeImagenesDocumentosVehiculos.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
             oeImagenesDocumentosVehiculos.TipoOperacion = "I"
             oeImagenesDocumentosVehiculos.IdTrabajador = oeDocumentoVehicular.Id
             oeImagenesDocumentosVehiculos.NroDocumento = oeDocumentoVehicular.Numero
@@ -146,7 +154,6 @@ Public Class d_ImagenesDocumentos
             oeImagenesDocumentosVehiculos.UsuarioCreacion = oeDocumentoVehicular.UsuarioCreacion
             oeImagenesDocumentosVehiculos.IdTipoDocumento = oeDocumentoVehicular.IdTipoDocumento
             oeImagenesDocumentosVehiculos.Activo = True
-
             Return Guardar(oeImagenesDocumentosVehiculos)
         Catch ex As Exception
             Throw ex

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_Requerimiento
@@ -116,7 +124,6 @@ Public Class d_Requerimiento
 
     Public Function Guardar(ByVal oeRequerimiento As e_Requerimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeRequerimiento
@@ -143,6 +150,7 @@ Public Class d_Requerimiento
                     'El campo IdReferencia no se manejara en requerimientos, siempre sera null=nothing
                     '--------------GENERANDO Y EJECUTANDO ORDENES DE SALIDA POR ATENCIÓN DE REQUERIMIENTOS--------------
                     If .TipoOperacion = "D" Or .TipoOperacion = "R" Then 'Si es por atención de requerimiento
+                        .oeOrdenSalida.PrefijoID = oeRequerimiento.PrefijoID '@0001
                         If .oeOrdenSalida.TipoOperacion <> String.Empty Then
                             odOrden.Guardar(.oeOrdenSalida) 'Generacion y ejecución de la orden de salida.
                             If Not String.IsNullOrEmpty(.IdReferencia.Trim) Then
@@ -154,12 +162,14 @@ Public Class d_Requerimiento
                                         oeOAMat.IdMaterial = filaMat.IdMaterial
                                         oeOAMat.CantidadMaterialEntregada = filaMat.CantidadMaterial
                                         oeOAMat.IdSubAlmacen = filaMat.IdSubAlmacen
+                                        oeOAMat.PrefijoID = oeRequerimiento.PrefijoID '@0001
                                         odOAMat.Guardar(oeOAMat)
                                     End If
                                 Next
                             End If
                         End If
                         If Not .oeOrdenIngreso Is Nothing Then
+                            .oeOrdenIngreso.PrefijoID = oeRequerimiento.PrefijoID '@0001
                             If Not .oeOrdenIngreso.IdMovimientoInventario Is Nothing Then odOrden.Guardar(.oeOrdenIngreso)
                         End If
 
@@ -178,6 +188,7 @@ Public Class d_Requerimiento
                         If Detalle.Tipooperacion = "R" Then
                             If Detalle.CantidadARegularizar > 0 Then : Detalle.CantidadPorRegularizar = Detalle.CantidadPorRegularizar - Detalle.CantidadARegularizar : End If
                         End If
+                        Detalle.PrefijoID = oeRequerimiento.PrefijoID '@0001
                         odRequerimientoMaterial.Guardar(Detalle)
                         If .TipoOperacion = "D" Then
                             oeOrdenTrabajoMat.TipoOperacion = "U"
@@ -187,11 +198,13 @@ Public Class d_Requerimiento
                             oeOrdenTrabajoMat.CantidadMaterialEntregada = Detalle.CantidadAAtender
                             oeOrdenTrabajoMat.IdSubAlmacen = Detalle.IdSubAlmacen
                             oeOrdenTrabajoMat.IdMantenimientoEquipo = Detalle.IdMantenimientoEquipo
+                            oeOrdenTrabajoMat.PrefijoID = oeRequerimiento.PrefijoID '@0001
                             odOrdenTrabajoMat.Guardar(oeOrdenTrabajoMat) 'Modificamos la orden de trabajo
                         End If
                     Next
                     For Each Detalle As e_RequerimientoServicio In .lstRequerimientoServicio
                         Detalle.IdRequerimiento = stResultado(0) : Detalle.Tipooperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeRequerimiento.PrefijoID '@0001
                         odRequerimientoServicio.Guardar(Detalle)
                     Next
                 End With
@@ -234,7 +247,6 @@ Public Class d_Requerimiento
 
     Public Function ActualizarOT(ByVal oeRequerimiento As e_Requerimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeRequerimiento
                 stResultado = sqlhelper.ExecuteScalar("CMP.Isp_Requerimiento_IAE" _

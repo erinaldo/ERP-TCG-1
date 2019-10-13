@@ -34,6 +34,10 @@ Public Class e_OrdenAsignacion_Material
     Public Material As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Event DatoCambiado()
 

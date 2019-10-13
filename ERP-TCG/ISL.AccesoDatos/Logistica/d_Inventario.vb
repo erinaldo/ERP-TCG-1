@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -134,7 +142,6 @@ Public Class d_Inventario
 
     Public Function GuardarInventario(oeInventario As e_Inventario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odRegInv As New d_RegistroInventario
             Dim odDetalleInventario As New d_DetalleInventario
             Using transScope As New TransactionScope()
@@ -144,15 +151,17 @@ Public Class d_Inventario
                         With .oeRegistroInventario
                             If oeInventario.IdOrden <> "" Then
                                 .oeRegInvOrden = New e_RegistroInventarioOrden
+                                .oeRegInvOrden.PrefijoID = oeInventario.PrefijoID '@0001
                                 .oeRegInvOrden.TipoOperacion = "I"
                                 .oeRegInvOrden.IdOrden = oeInventario.IdOrden
                                 .oeRegInvOrden.UsuarioCreacion = .UsuarioCreacion
-                            End If                 
+                            End If
                             .ValorUnitario = oeInventario.ValorUnitario
                             .CantidadReal = oeInventario.CantidadIngreso
                             .ValorUnitarioReal = oeInventario.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
                         End With
+                        .oeRegistroInventario.PrefijoID = .PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
                     End If
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_Inventario_IAE]" _
@@ -168,6 +177,7 @@ Public Class d_Inventario
                         With .oeRegistroInventario
                             If oeInventario.IdOrden <> "" Then
                                 .oeRegInvOrden = New e_RegistroInventarioOrden
+                                .oeRegInvOrden.PrefijoID = oeInventario.PrefijoID '@0001
                                 .oeRegInvOrden.TipoOperacion = "I"
                                 .oeRegInvOrden.IdOrden = oeInventario.IdOrden
                                 .oeRegInvOrden.UsuarioCreacion = .UsuarioCreacion
@@ -177,6 +187,7 @@ Public Class d_Inventario
                             .ValorUnitarioReal = oe.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
                         End With
+                        .oeRegistroInventario.PrefijoID = oeInventario.PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
                     End If
                 End With

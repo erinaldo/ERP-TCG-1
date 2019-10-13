@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que se encarga de gestionar las sub familia de material de los articulos en almacen.
 ''' Fecha de Actualizacion:31/10/2011
@@ -110,22 +118,22 @@ Public Class d_SubFamiliaMaterial
 
     Public Function Guardar(ByVal oeSubFamiliaMaterial As e_SubFamiliaMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odCtaCtblSubFam As New d_CtaCtbleSubFamiliaMat
             Dim id As String()
             With oeSubFamiliaMaterial
-                id = sqlhelper.ExecuteScalar("ALM.Isp_SubFamiliaMaterial_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .Codigo, _
-                                          .Nombre, _
-                                          .Abreviatura, _
-                                          .Activo, _
-                                          .IdFamilia, _
+                id = sqlhelper.ExecuteScalar("ALM.Isp_SubFamiliaMaterial_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .Codigo,
+                                          .Nombre,
+                                          .Abreviatura,
+                                          .Activo,
+                                          .IdFamilia,
                                           .UsuarioCreacion).ToString.Split("_")
                 For Each ctacble As e_CtaCtbleSubFamiliaMat In .loCtaCtbleSubFam
                     ctacble.IdSubFamilia = id(0)
+                    ctacble.PrefijoID = oeSubFamiliaMaterial.PrefijoID '@0001
                     odCtaCtblSubFam.Guardar(ctacble)
                 Next
 

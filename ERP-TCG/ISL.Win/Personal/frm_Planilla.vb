@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -156,6 +164,7 @@ Public Class frm_Planilla
                     If leDetallePla.Count > 0 AndAlso _total = 0 Then Throw New Exception("Debe Consolidar los Datos Calculados")
                     oePlanilla.leDetalle = leDetallePla
                     oePlanilla.leDetalleConcepto = leDetalleCon
+                    oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPlanilla.Guardar(oePlanilla) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         SeleccionaTab(0)
@@ -171,6 +180,7 @@ Public Class frm_Planilla
                     Else
                         oePlanilla.IdEstado = cboEstado.Value
                         oePlanilla.UsuarioModifica = gUsuarioSGI.Id
+                        oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olPlanilla.Guardar(oePlanilla) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Planilla General Nº: " & oePlanilla.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -668,6 +678,7 @@ Public Class frm_Planilla
                             .UsuarioCreacion = gUsuarioSGI.Id
                             .Activo = False
                         End With
+                        oeDetallePla.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDetPlaImportar.Add(oeDetallePla)
                     Else
                         Exit For

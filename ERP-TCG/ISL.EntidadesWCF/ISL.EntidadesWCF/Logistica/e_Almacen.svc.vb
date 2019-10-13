@@ -27,6 +27,10 @@ Public Class e_Almacen
     Public leSubAlmacen As List(Of e_SubAlmacen)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

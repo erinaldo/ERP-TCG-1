@@ -21,6 +21,10 @@ Public Class e_OrdenAsignacion
     <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
+    <DataMember()>
     Public FechaDesde As Date
     <DataMember()> _
     Public FechaHasta As Date

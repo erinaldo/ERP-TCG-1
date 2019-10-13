@@ -32,6 +32,10 @@ Public Class e_Gasto_Caja
     Public IdGastoFuncion As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
 #End Region

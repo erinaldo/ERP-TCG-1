@@ -1,8 +1,16 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_RecargaPeaje
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_RecargaPeaje
         Try
@@ -70,8 +78,6 @@ Public Class d_RecargaPeaje
 
     Public Function GuardarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
                                       "M" _
                                         , PrefijoID _
@@ -84,10 +90,8 @@ Public Class d_RecargaPeaje
 
     Public Function Guardar(ByVal oeRecargaPeaje As e_RecargaPeaje) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRecargaPeaje
-                sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
                                           "I" _
                                             , .PrefijoID _
                                             , "" _
@@ -113,9 +117,8 @@ Public Class d_RecargaPeaje
 
     Public Function Eliminar(ByVal oeRecargaPeaje As e_RecargaPeaje) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeRecargaPeaje
-                sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
                                           "E" _
                                             , "" _
                                             , "" _
@@ -141,8 +144,6 @@ Public Class d_RecargaPeaje
 
     Public Function IdInsertar(ByVal PrefijoID As String) As String
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strResultado As String
             strResultado = sqlhelper.ExecuteScalar("STD.Isp_RecargaPeaje_IAE",
                                                    "Z",

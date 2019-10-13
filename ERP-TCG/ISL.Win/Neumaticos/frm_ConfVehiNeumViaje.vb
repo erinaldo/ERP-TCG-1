@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinDataSource
@@ -130,6 +138,7 @@ Public Class frm_ConfVehiNeumViaje
             If MessageBox.Show("¿Desea Guardar los Cambios Realizados?", "Mensaje de Sistema", _
                                MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                 oePreliminarInsp.TipoOperacion = "A"
+                oePreliminarInsp.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olPreliminarInsp.Guardar(oePreliminarInsp)
                 mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
             End If

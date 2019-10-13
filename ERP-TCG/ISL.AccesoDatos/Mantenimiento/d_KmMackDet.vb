@@ -1,7 +1,15 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_KmMackDet
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
+
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_KmMackDet
@@ -71,7 +79,6 @@ Public Class d_KmMackDet
 
     Public Function Guardar(ByVal oeKmMackDet As e_KmMackDet) As Boolean
         Try
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim stResultado() As String
             With oeKmMackDet
                 stResultado = bd.ExecuteScalar("[MAN].[Isp_KmMackDet_IAE]" _

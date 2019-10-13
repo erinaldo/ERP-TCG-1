@@ -106,7 +106,7 @@ Public Class d_Flota
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro
     '''  de la flota es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeFlota As e_Flota) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
         Dim ldFlotaTrabajador As New d_Flota_Trabajador, ldFlotaCuota As New d_Flota_Cuota
         Try
             Using transScope As New TransactionScope()
@@ -132,6 +132,7 @@ Public Class d_Flota
                         Else
                             Jefe.TipoOperacion = "I"
                             Jefe.IdFlota = .Id
+                            Jefe.PrefijoID = .PrefijoID '@0001
                             ldFlotaTrabajador.Guardar(Jefe)
                         End If
                     Next
@@ -140,6 +141,7 @@ Public Class d_Flota
                             ldFlotaCuota.Eliminar(Cuota)
                         Else
                             Cuota.IdFlota = .Id
+                            Cuota.PrefijoID = .PrefijoID '@0001
                             ldFlotaCuota.Guardar(Cuota)
                         End If
                     Next

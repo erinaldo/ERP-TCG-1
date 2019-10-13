@@ -29,6 +29,10 @@ Public Class e_DetalleProgramacionPago
     Public Event DatoCambiado()
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructores"

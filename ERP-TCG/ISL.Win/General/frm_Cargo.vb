@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Cargo
@@ -286,6 +294,7 @@ Public Class frm_Cargo
     Private Function Guardando() As Boolean
         Try
             oeCargo.UsuarioCreacion = gUsuarioSGI.Id
+            oeCargo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCargo.Guardar(oeCargo) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficCargo, 2)

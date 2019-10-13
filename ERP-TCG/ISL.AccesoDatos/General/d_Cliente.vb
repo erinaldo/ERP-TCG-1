@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -157,16 +165,16 @@ Public Class d_Cliente
     ''' cliente es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeCliente As e_Cliente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             Dim idPersonaEmpresa As String = ""
             With oeCliente
                 If .TipoPersonaEmpresa = 1 Then
                     oeCliente.oePersona.Activo = oeCliente.Activo
+                    oeCliente.oePersona.PrefijoID = oeCliente.PrefijoID '@0001
                     idPersonaEmpresa = odPersona.Guardar(oeCliente.oePersona)
                     oeCliente.IdPersona = idPersonaEmpresa
                 Else
                     oeCliente.oeEmpresa.Activo = oeCliente.Activo
+                    oeCliente.oeEmpresa.PrefijoID = oeCliente.PrefijoID '@0001
                     idPersonaEmpresa = odEmpresa.Guardar(oeCliente.oeEmpresa)
                     oeCliente.IdPersona = idPersonaEmpresa
                 End If
@@ -191,20 +199,21 @@ Public Class d_Cliente
 
     Public Function GuardarClienteCom(ByVal oeCliente As e_Cliente) As Integer
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim codigo = 0
             Dim idPersonaEmpresa As String = ""
             With oeCliente
                 If .TipoPersonaEmpresa = 1 Then
                     oeCliente.oePersona.Activo = oeCliente.Activo
+                    oeCliente.oePersona.PrefijoID = oeCliente.PrefijoID '@0001
                     idPersonaEmpresa = odPersona.Guardar(oeCliente.oePersona)
                     oeCliente.IdPersona = idPersonaEmpresa
                 Else
                     oeCliente.oeEmpresa.Activo = oeCliente.Activo
+                    oeCliente.oeEmpresa.PrefijoID = oeCliente.PrefijoID '@0001
                     idPersonaEmpresa = odEmpresa.Guardar(oeCliente.oeEmpresa)
                     oeCliente.IdPersona = idPersonaEmpresa
                 End If
-                codigo = sqlhelper.ExecuteScalar("STD.Isp_Cliente_IAE", .TipoOperacion, _
+                codigo = sqlhelper.ExecuteScalar("STD.Isp_Cliente_IAE", .TipoOperacion,
                         .Id _
                         , .Codigo _
                         , .TipoPersonaEmpresa _
@@ -213,7 +222,7 @@ Public Class d_Cliente
                         , .Comisionista _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return codigo

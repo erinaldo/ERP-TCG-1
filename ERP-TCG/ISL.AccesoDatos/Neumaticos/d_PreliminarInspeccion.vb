@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -73,22 +81,22 @@ Public Class d_PreliminarInspeccion
 
     Public Function Guardar(ByVal oePreliminarInspeccion As e_PreliminarInspeccion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String
             Using TransScope As New TransactionScope()
                 With oePreliminarInspeccion
-                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Periodo _
                             , .IdEstado _
                             , .FechaCreacion _
                             , .UsuarioCreacion _
-                            , .Activo _
+                            , .Activo
                         )
                     .Id = id
                     For Each oeDet In .leDetallePre
                         oeDet.IdPreliminarInspeccion = .Id
+                        oeDet.PrefijoID = oePreliminarInspeccion.PrefijoID '@0001
                         If String.IsNullOrEmpty(oeDet.Id) Then
                             oeDet.TipoOperacion = "I"
                             oeDet.Confirmado = 0
@@ -109,23 +117,23 @@ Public Class d_PreliminarInspeccion
 
     Public Function Enviar(ByVal oePreliminarInspeccion As e_PreliminarInspeccion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odReq As New d_Requerimiento
             Dim id As String
             Using TransScope As New TransactionScope()
                 With oePreliminarInspeccion
-                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("NEU.Isp_PreliminarInspeccion_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Periodo _
                             , .IdEstado _
                             , .FechaCreacion _
                             , .UsuarioCreacion _
-                            , .Activo _
+                            , .Activo
                         )
                     .Id = id
 
                     If .oeRequerimiento IsNot Nothing AndAlso .oeRequerimiento.TipoOperacion <> "" Then
+                        .oeRequerimiento.PrefijoID = oePreliminarInspeccion.PrefijoID '@0001
                         odReq.Guardar(.oeRequerimiento)
                     End If
 

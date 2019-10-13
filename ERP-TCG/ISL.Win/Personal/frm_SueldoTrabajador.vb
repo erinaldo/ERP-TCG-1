@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -113,6 +121,7 @@ Public Class frm_SueldoTrabajador
                     LlenarSueldoTrabajador()
                     oeSueldoTrabajador.UsuarioCreacion = gUsuarioSGI.Id
                     oeSueldoTrabajador.FechaActividad = fecActividad.Value
+                    oeSueldoTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olSueldoTrabajador.Guardar(oeSueldoTrabajador)
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                 Case 2
@@ -131,6 +140,7 @@ Public Class frm_SueldoTrabajador
                             Case 1 : oeTrabajador.TipoOperacion = "D"
                         End Select
                         oeTrabajador.Codigo = _cad
+                        oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olTrabajador.Migrar(oeTrabajador)
                         mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
                     Else
@@ -320,6 +330,7 @@ Public Class frm_SueldoTrabajador
                             .FechaActividad = objWorkSheet.Cells(ln_Fila + 1, 4).Value
                             .Activo = False
                         End With
+                        oeSueldoTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDatosImportados.Add(oeSueldoTrabajador)
                     Else
                         Exit For
@@ -371,7 +382,8 @@ Public Class frm_SueldoTrabajador
                 _cad = String.Empty
 
                 For Each oeImp In leDatosImportados
-                    ' Verifica si los Trabajadores entan registradas en el SGI
+                    ' Verifica si los Trabajadores entan registradas en el ERP
+                    oeImp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If oeImp.IdTrabajador = "" Then
                         oeTrabajador = New e_Trabajador
                         oeTrabajador.TipoBusca = 2
@@ -389,6 +401,7 @@ Public Class frm_SueldoTrabajador
             ' Verifica si estan Registrados en Regimen Pensionario
             Listar()
             For Each oeSuelTra In leDatosImportados
+                oeSuelTra.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeSuelTra.IdTrabajador <> "" Then
                     If Not leSueldoTrabajador.Contains(oeSuelTra) Then
                         oeSuelTra.TipoOperacion = "I"
@@ -429,6 +442,7 @@ Public Class frm_SueldoTrabajador
                         If Not leSueldoTrabajador.Contains(oeSueldoTrabajador) Then
                             oeSueldoTrabajador.TipoOperacion = "I"
                             oeSueldoTrabajador.UsuarioCreacion = gUsuarioSGI.Id
+                            oeSueldoTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                             leSueldoTrabajador.Add(oeSueldoTrabajador)
                         Else
                             oeSueTraAux = leSueldoTrabajador.Item(leSueldoTrabajador.IndexOf(oeSueldoTrabajador))

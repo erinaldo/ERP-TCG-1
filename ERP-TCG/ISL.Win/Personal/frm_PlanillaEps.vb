@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -137,6 +145,7 @@ Public Class frm_PlanillaEps
                                 Throw New Exception("Ingrese un Clave Correcta")
                             Else
                                 For Each oePEPS In lePlanillaEps
+                                    oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     oePEPS.TipoOperacion = "E"
                                     oePEPS.UsuarioModifica = gUsuarioSGI.Id
                                 Next
@@ -342,6 +351,7 @@ Public Class frm_PlanillaEps
                         End If
                         oePlanillaEps.UsuarioCreacion = gUsuarioSGI.Id
                         oePlanillaEps.IdEstado = _idEst
+                        oePlanillaEps.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leCalculaEps.Add(oePlanillaEps)
                     End If
                 Next
@@ -396,6 +406,7 @@ Public Class frm_PlanillaEps
                     Else
                         Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
                         For Each oePEPS In lePlanillaEps
+                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oePEPS.TipoOperacion = "A"
                             oePEPS.UsuarioModifica = gUsuarioSGI.Id
                             If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
@@ -429,6 +440,7 @@ Public Class frm_PlanillaEps
                     Else
                         Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
                         For Each oePEPS In lePlanillaEps
+                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oePEPS.TipoOperacion = "A"
                             oePEPS.UsuarioModifica = gUsuarioSGI.Id
                             If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id

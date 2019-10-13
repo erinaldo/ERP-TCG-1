@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -108,6 +116,7 @@ Public Class frm_Formula
     Public Overrides Sub Guardar()
         Try
             oeFormula.UsuarioCreacion = gUsuarioSGI.Id
+            oeFormula.PrefijoID = gs_PrefijoIdSucursal '@0001
             olFormula.Guardar(oeFormula)
             mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
             If bandcargar Then

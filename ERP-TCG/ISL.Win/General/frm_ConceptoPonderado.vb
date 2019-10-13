@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -101,6 +109,7 @@ Public Class frm_ConceptoPonderado
             Else
                 RecolectaDatos()
                 oeConceptoPond.UsuarioCreacion = gUsuarioSGI.Id
+                oeConceptoPond.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olConceptoPond.Guardar(oeConceptoPond) Then
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                     MostrarTabs(0, ficConceptoPond)

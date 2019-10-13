@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
@@ -1071,6 +1079,7 @@ Public Class frm_MovimientoPeaje
                                 oeMovimiento.TipoOperacion = "H"
                                 oeMovimiento.Id = ugrOver.Cells("IdViaje").Value
                                 oeMovimiento.FechaCierre = Now.Date
+                                oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olMovimiento.GuardarSimple(oeMovimiento)
                                 oeMovimiento_Viaje.IdEstado = "1CH00012"
                             End If
@@ -1099,6 +1108,7 @@ Public Class frm_MovimientoPeaje
                                 oeGastoOperacion.oeMovimientoDocumento = Nothing
                                 oeGastoOperacion.oeRegistroCombustible = Nothing
                                 oeGastoOperacion.GastoAsiento = Nothing
+                                oeGastoOperacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olGastoOperacion.GuardarGasto(oeGastoOperacion)
                             Else
                                 'validar que asociar a viajes habilitados/liquidados
@@ -1146,12 +1156,14 @@ Public Class frm_MovimientoPeaje
                                 oeGastoOperacion.oeMovimientoDocumento = Nothing
                                 oeGastoOperacion.oeRegistroCombustible = Nothing
                                 oeGastoOperacion.GastoAsiento = Nothing
+                                oeGastoOperacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olGastoOperacion.GuardarGasto(oeGastoOperacion)
                                 ''asociar
                                 oeMovimientoPeajeA.TipoOperacion = "P"
                                 oeMovimientoPeajeA.IndIngresado = True
                                 oeMovimientoPeajeA.IdGastoOperacion = oeGastoOperacion.Id
                                 oeMovimientoPeajeA.UsuarioCreacion = gUsuarioSGI.Id
+                                oeMovimientoPeajeA.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 olMovimientoPeaje.Guardar(oeMovimientoPeajeA)
                             End If
 
@@ -1756,7 +1768,7 @@ Public Class frm_MovimientoPeaje
 
                 oeMovimientoDocumento.Compra.TotalBaseCompra = oeMovimientoDocumento.SubTotal
                 oeMovimientoDocumento.Compra.TotalIGVCompra = oeMovimientoDocumento.IGV
-
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 ListaDocumentos.Add(oeMovimientoDocumento)
                 'olMovimientoDocumento.GuardarCompra(oeMovimientoDocumento, leMovDoc, True, Nothing)
                 'fila.IdDocumento = oeMovimientoDocumento.Id
@@ -1869,6 +1881,7 @@ Public Class frm_MovimientoPeaje
                             oeMovDoc.Compra.Base1 = obj.Monto
                             leTCD = leTipoCompra.Where(Function(item) item.Id = obj.IdTipoCompraParaCompra).ToList
                             oeMovDoc.Compra.TipoCompra = leTCD.Item(0)
+                            oeMovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                             leMovDoc.Add(oeMovDoc)
                         End If
                         i = i + 1
@@ -1916,7 +1929,7 @@ Public Class frm_MovimientoPeaje
 
                 oeMovimientoDocumento.Compra.TotalBaseCompra = oeMovimientoDocumento.SubTotal
                 oeMovimientoDocumento.Compra.TotalIGVCompra = oeMovimientoDocumento.IGV
-
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 ListaDocumentos.Add(oeMovimientoDocumento)
                 'olMovimientoDocumento.GuardarCompra(oeMovimientoDocumento, leMovDoc, True, Nothing)
                 'fila.IdDocumento = oeMovimientoDocumento.Id
@@ -2166,6 +2179,7 @@ Public Class frm_MovimientoPeaje
                     oeMovPeaAux.IdGastoOperacion = ""
                     oeMovPeaAux.UsuarioCreacion = gUsuarioSGI.Id
                     oeMovPeaAux.Activo = True
+                    oeMovPeaAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leMovimientoPeajeCovisol.Add(oeMovPeaAux)
                 Next
 
@@ -2178,6 +2192,7 @@ Public Class frm_MovimientoPeaje
                     oeMovPeaAux.Monto = filaFac.igv + filaFac.subTotal
                     oeMovPeaAux.Fecha = filaFac.fechaEmision
                     oeMovPeaAux.IdEmpresa = cbeCtaCte.Value
+                    oeMovPeaAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leFacWsCovison.Add(oeMovPeaAux)
                     Continue For
                 End If
@@ -2348,7 +2363,7 @@ Public Class frm_MovimientoPeaje
 
                 oeMovimientoDocumento.Compra.TotalBaseCompra = oeMovimientoDocumento.SubTotal
                 oeMovimientoDocumento.Compra.TotalIGVCompra = oeMovimientoDocumento.IGV
-
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 ListaDocumentos.Add(oeMovimientoDocumento)
             Next
 

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_LiquidacionTrabajador
@@ -124,7 +132,6 @@ Public Class d_LiquidacionTrabajador
 
     Public Function Guardar(ByVal oeLiquidacionTrabajador As e_LiquidacionTrabajador) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim d_Prestamo As New d_Prestamo
             Dim e_Prestamo As New e_Prestamo
             Dim listaPrestamo As New DataTable
@@ -132,7 +139,7 @@ Public Class d_LiquidacionTrabajador
 
             Using TransScope As New TransactionScope()
                 With oeLiquidacionTrabajador
-                    _id = sqlhelper.ExecuteScalar("PER.Isp_LiquidacionTrabajador_IAE", .TipoOperacion, .PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("PER.Isp_LiquidacionTrabajador_IAE", .TipoOperacion, .PrefijoID,
                                                 .Id _
                                                 , .Fecha _
                                                 , .FechaIngreso _
@@ -208,8 +215,8 @@ Public Class d_LiquidacionTrabajador
 
                 TransScope.Complete()
             End Using
-            
-            
+
+
             Return True
         Catch ex As Exception
             Throw ex 

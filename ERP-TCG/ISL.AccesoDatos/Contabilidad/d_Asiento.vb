@@ -17,7 +17,7 @@ Public Class d_Asiento
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_Asiento
         Try
-            Dim oeAsiento = New e_Asiento( _
+            Dim oeAsiento = New e_Asiento(
                              o_fila("Id").ToString _
                              , o_fila("IdPeriodo").ToString _
                              , o_fila("IdTipoAsiento").ToString _
@@ -47,13 +47,13 @@ Public Class d_Asiento
         Try
             Dim ds As DataSet
             With oeAsiento
-                ds = sqlhelper.ExecuteDataset("CON.ISP_Asiento_Listar", _
-                                                .TipoOperacion, _
-                                                .Id, _
-                                                .IdPeriodo, _
-                                                .IdTipoAsiento, _
-                                                .NroAsiento, _
-                                                .Fecha, _
+                ds = sqlhelper.ExecuteDataset("CON.ISP_Asiento_Listar",
+                                                .TipoOperacion,
+                                                .Id,
+                                                .IdPeriodo,
+                                                .IdTipoAsiento,
+                                                .NroAsiento,
+                                                .Fecha,
                                                 .Glosa)
             End With
 
@@ -77,13 +77,13 @@ Public Class d_Asiento
         Try
             Dim ds As DataSet
             With oeAsiento
-                ds = sqlhelper.ExecuteDataset("CON.ISP_Asiento_Listar", _
-                                                .TipoOperacion, _
-                                                .Id, _
-                                                .IdPeriodo, _
-                                                .IdTipoAsiento, _
-                                                .NroAsiento, _
-                                                .Fecha, _
+                ds = sqlhelper.ExecuteDataset("CON.ISP_Asiento_Listar",
+                                                .TipoOperacion,
+                                                .Id,
+                                                .IdPeriodo,
+                                                .IdTipoAsiento,
+                                                .NroAsiento,
+                                                .Fecha,
                                                 .Glosa)
                 If ds.Tables(0).Rows.Count > 0 Then
                     oeAsiento = Cargar(ds.Tables(0).Rows(0))
@@ -118,7 +118,7 @@ Public Class d_Asiento
                         , .IdAsientoExtorno _
                         , .FechaCreacion _
                         , .Activo _
-                        , .IdentificaAsiento _
+                        , .IdentificaAsiento
                         )
             End With
             oeAsiento = Nothing
@@ -154,10 +154,9 @@ Public Class d_Asiento
 
     Private Function GuardarAsiento(ByRef oeAsiento As e_Asiento, Optional idAsientoDocCmp As String = Nothing) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                          .Id _
                         , .IdPeriodo _
                         , .IdTipoAsiento _
@@ -183,6 +182,7 @@ Public Class d_Asiento
                 Dim odAsientoMov As New d_AsientoMovimiento
                 'detalle de asiento
                 For Each oeAsientoMovimiento As e_AsientoMovimiento In .AsientoMovimiento
+                    oeAsientoMovimiento.PrefijoID = oeAsiento.PrefijoID '@0001
                     With oeAsientoMovimiento
                         .IdAsiento = stResultado(0)
                         If oeAsiento._IdMovimientoCajaBanco <> "" Then
@@ -237,6 +237,7 @@ Public Class d_Asiento
                 If .Asiento_MovDoc.IdMovimientoDocumento <> "" Then
                     .Asiento_MovDoc.IdAsiento = stResultado(0)
                     Dim odAsientoMovDoc As New d_Asiento_MovDoc
+                    .Asiento_MovDoc.PrefijoID = oeAsiento.PrefijoID '@0001
                     odAsientoMovDoc.Guardar(.Asiento_MovDoc)
                 End If
                 If Not idAsientoDocCmp Is String.Empty And Not idAsientoDocCmp Is Nothing Then
@@ -249,6 +250,7 @@ Public Class d_Asiento
                         .IdUsuarioCrea = oeAsiento.IdUsuarioCrea
                         .Activo = True
                     End With
+                    oeAsiento_Existencia.PrefijoID = oeAsiento.PrefijoID '@0001
                     odAsiento_Existencia.Guardar(oeAsiento_Existencia)
                 End If
             End With
@@ -263,9 +265,9 @@ Public Class d_Asiento
             Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", _
-                                                      .TipoOperacion, _
-                                                      .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE",
+                                                      .TipoOperacion,
+                                                      .PrefijoID,
                                                          .Id _
                                                         , .IdPeriodo _
                                                         , .IdTipoAsiento _
@@ -333,7 +335,7 @@ Public Class d_Asiento
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeAsiento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdPeriodo _
                             , .IdTipoAsiento _
@@ -352,7 +354,7 @@ Public Class d_Asiento
                             , .FechaCreacion _
                             , .Activo _
                             , .IdentificaAsiento _
-                            , .IndOrigen _
+                            , .IndOrigen
                         ).ToString.Split("_")
                     oeAsiento.Id = stResultado(0)
                     Dim odAsientoMov As New d_AsientoMovimiento
@@ -379,7 +381,7 @@ Public Class d_Asiento
             Dim stResultado() As String
             'transaccion viene de documento
             With oeAsiento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPeriodo _
                         , .IdTipoAsiento _
@@ -398,7 +400,7 @@ Public Class d_Asiento
                         , .FechaCreacion _
                         , .Activo _
                         , .IdentificaAsiento _
-                        , .IndOrigen _
+                        , .IndOrigen
                     ).ToString.Split("_")
                 Dim odAsientoMov As New d_AsientoMovimiento
                 If .TipoOperacion = "A" Then
@@ -441,7 +443,7 @@ Public Class d_Asiento
     Public Function DuplicaAsiento(ByVal oeAsiento As e_Asiento) As Boolean
         Try
             With oeAsiento
-                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "D", _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "D",
                  .PrefijoID, oeAsiento.Id, .IdPeriodo, .IdTipoAsiento, "", .Fecha, "" _
                         , "", "", 0, 0, 0, "", .IdUsuarioCrea)
             End With
@@ -456,13 +458,13 @@ Public Class d_Asiento
         Try
 
             With oeAsiento
-                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoExtorno", oeAsiento.TipoOperacion, _
-                                          .PrefijoID, _
-                                          oeAsiento.Id, _
-                                          oeAsiento.IdPeriodo, _
-                                          oeAsiento.IdTipoAsiento, _
-                                          oeAsiento.Glosa, _
-                                          oeAsiento.GlosaImprime, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_AsientoExtorno", oeAsiento.TipoOperacion,
+                                          .PrefijoID,
+                                          oeAsiento.Id,
+                                          oeAsiento.IdPeriodo,
+                                          oeAsiento.IdTipoAsiento,
+                                          oeAsiento.Glosa,
+                                          oeAsiento.GlosaImprime,
                                           oeAsiento.IdUsuarioCrea)
             End With
             Return True
@@ -486,12 +488,12 @@ Public Class d_Asiento
     Public Function Eliminar(ByVal oeAsiento As e_Asiento) As Boolean
         Try
             With oeAsiento
-                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "E", _
-                                        .PrefijoID, _
-                                        .Id, "", "", "", _
-                                        Date.Now, "", "", "", 0, _
-                                        .TotalDebe, 0, _
-                                        .IdUsuarioBloquea, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "E",
+                                        .PrefijoID,
+                                        .Id, "", "", "",
+                                        Date.Now, "", "", "", 0,
+                                        .TotalDebe, 0,
+                                        .IdUsuarioBloquea,
                                         .IdUsuarioCrea)
             End With
             Return True
@@ -504,8 +506,8 @@ Public Class d_Asiento
         Try
 
             With oeAsiento
-                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "J", _
-                 "", oeAsiento.Id, "", "", "", Date.Now, "", "", "", 0, 0, 0, "", oeAsiento.IdUsuarioCrea, "", _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "J",
+                 "", oeAsiento.Id, "", "", "", Date.Now, "", "", "", 0, 0, 0, "", oeAsiento.IdUsuarioCrea, "",
                  "", Date.Now, 1, "", 0)
             End With
             Return True
@@ -544,10 +546,10 @@ Public Class d_Asiento
     Public Function ExtornarEmitidoEnviado(ByVal oeAsiento As e_Asiento) As Boolean
         Try
             With oeAsiento
-                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "R", _
-                 .PrefijoID, _
-                 oeAsiento.Id, _
-                 "", _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Asiento_IAE", "R",
+                 .PrefijoID,
+                 oeAsiento.Id,
+                 "",
                  "", "", Date.Now, "", "", "", 0, 0, 0, "", oeAsiento.IdUsuarioCrea, "", "", Date.Now, 1, "", oeAsiento.IndOrigen)
             End With
 
@@ -568,17 +570,17 @@ Public Class d_Asiento
         End Try
     End Function
 
-    Public Function GuardarMasivo2(ByVal oeAsiento As e_Asiento, ByVal DTAM As DataTable, _
-                                   ByVal DTAM_MD As DataTable, ByVal DTAM_OFIN As DataTable, _
-                                   ByVal oeAsiento2 As e_Asiento, ByVal DTAM2 As DataTable, _
+    Public Function GuardarMasivo2(ByVal oeAsiento As e_Asiento, ByVal DTAM As DataTable,
+                                   ByVal DTAM_MD As DataTable, ByVal DTAM_OFIN As DataTable,
+                                   ByVal oeAsiento2 As e_Asiento, ByVal DTAM2 As DataTable,
                                    ByVal DTAM_MD2 As DataTable, ByVal DTAM_OFIN2 As DataTable, ByVal oeMovAnalis As e_MovimientoAnalisis) As Boolean
         Try
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeAsiento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", _
-                                                          .TipoOperacion, _
-                                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                                                         .Id _
                                                         , .IdPeriodo _
                                                         , .IdTipoAsiento _
@@ -597,7 +599,7 @@ Public Class d_Asiento
                                                         , .FechaCreacion _
                                                         , .Activo _
                                                         , .IdentificaAsiento _
-                                                        , .IndOrigen _
+                                                        , .IndOrigen
                                                     ).ToString.Split("_")
                 End With
                 oeAsiento.Id = stResultado(0)
@@ -618,9 +620,9 @@ Public Class d_Asiento
                 End If
                 If Not String.IsNullOrEmpty(oeAsiento2.TipoOperacion) Then
                     With oeAsiento2
-                        stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", _
-                                                              .TipoOperacion, _
-                                                              .PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE",
+                                                              .TipoOperacion,
+                                                              .PrefijoID,
                                                                 .Id _
                                                                 , .IdPeriodo _
                                                                 , .IdTipoAsiento _
@@ -639,7 +641,7 @@ Public Class d_Asiento
                                                                 , .FechaCreacion _
                                                                 , .Activo _
                                                                 , .IdentificaAsiento _
-                                                                , .IndOrigen _
+                                                                , .IndOrigen
                                                             ).ToString.Split("_")
                     End With
                     oeAsiento2.Id = stResultado(0)
@@ -695,8 +697,8 @@ Public Class d_Asiento
 
     Public Function GuardarCobranzaPago(ByVal DTAsiento As DataTable, ByVal DTAsientoMovimiento As DataTable _
                                     , ByVal DTMovCajaBanco As DataTable, ByVal DTAM_MovDoc As DataTable _
-                                    , ByVal DTCtaxCyP As DataTable, ByVal DTMA As DataTable, _
-                                    ByVal ListaDoc As List(Of e_MovimientoDocumento), _
+                                    , ByVal DTCtaxCyP As DataTable, ByVal DTMA As DataTable,
+                                    ByVal ListaDoc As List(Of e_MovimientoDocumento),
                                      ByVal oeMovCajaBanco As e_MovimientoCajaBanco) As Boolean
         Try
             Using transScope As New TransactionScope
@@ -709,7 +711,7 @@ Public Class d_Asiento
 
                 For Each obj In ListaDoc
                     With obj
-                        sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumento_IAE", _
+                        sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumento_IAE",
                                 "SAL" _
                                 , .PrefijoID _
                                 , .Id _
@@ -741,7 +743,7 @@ Public Class d_Asiento
                                 , .IdTipoBien _
                                 , .OrdenCompra _
                                 , "" _
-                                , .CodMotivo _
+                                , .CodMotivo
                                 )
                     End With
                 Next
@@ -760,7 +762,7 @@ Public Class d_Asiento
 
     Private Function CargarAjusteTC(ByVal o_fila As DataRow) As e_AjusteTC
         Try
-            Dim oeAjusteTC = New e_AjusteTC( _
+            Dim oeAjusteTC = New e_AjusteTC(
                              o_fila("IdMovimientoDocumento").ToString _
                              , o_fila("IdPeriodo").ToString _
                              , o_fila("TipoAsiento").ToString _
@@ -788,7 +790,7 @@ Public Class d_Asiento
                 ds = sqlhelper.ExecuteDataset("CON.Isp_AjusteTipoCambio_Listar", .TipoOperacion _
                         , .IdMovimientoDocumento _
                         , .IdPeriodo _
-                        , .Ejercicio _
+                        , .Ejercicio
                         )
             End With
             oeAjusteTC = Nothing
@@ -974,7 +976,7 @@ Public Class d_Asiento
         End Try
     End Function
 
-    Public Function ListarDetalles(ByVal TipoOperacion As String, ByVal IdPeriodo As String, _
+    Public Function ListarDetalles(ByVal TipoOperacion As String, ByVal IdPeriodo As String,
                                    ByVal IdCuentaContable As String, ByVal IdGastoFuncion As String) As DataTable
         Try
             Dim ds As DataSet
@@ -1070,10 +1072,9 @@ Public Class d_Asiento
         Try
             Dim odAsientoMov As New d_AsientoMovimiento, odAsientoMovDoc As New d_Asiento_MovDoc, odAsientoReferencia As d_AsientoReferencia, odLiquidacionTrabjador As New d_LiquidacionTrabajador_Asiento
             Using TransScope As New TransactionScope()
-                'Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim stResultado() As String
                 With oeAsiento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                              .Id _
                             , .IdPeriodo _
                             , .IdTipoAsiento _
@@ -1092,7 +1093,7 @@ Public Class d_Asiento
                             , .FechaCreacion _
                             , .Activo _
                             , .IdentificaAsiento _
-                            , .IndOrigen _
+                            , .IndOrigen
                                 ).ToString.Split("_")
                     oeAsiento.Id = stResultado(0)
                     '==============================================
@@ -1145,7 +1146,7 @@ Public Class d_Asiento
                 Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim stResultado() As String
                 With oeAsiento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,
                              .Id _
                             , .IdPeriodo _
                             , .IdTipoAsiento _
@@ -1164,7 +1165,7 @@ Public Class d_Asiento
                             , .FechaCreacion _
                             , .Activo _
                             , .IdentificaAsiento _
-                            , .IndOrigen _
+                            , .IndOrigen
                                 ).ToString.Split("_")
                     oeAsiento.Id = stResultado(0)
                     '==============================================

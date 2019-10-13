@@ -64,6 +64,10 @@ Public Class e_PlanillaEps
     Public Calcula As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

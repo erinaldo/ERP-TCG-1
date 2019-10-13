@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -78,9 +86,8 @@ Public Class d_MetasCombustible
 
     Public Function Guardar(ByVal oeMetasCombustible As e_MetasCombustible) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMetasCombustible
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_MetasCombustible_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_MetasCombustible_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdModeloTracto _
                         , .IdModeloCarreta _
@@ -89,7 +96,7 @@ Public Class d_MetasCombustible
                         , .Rendimiento _
                         , .Distancia _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                                       )
             End With
             Return True

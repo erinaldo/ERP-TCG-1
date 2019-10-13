@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -439,6 +447,7 @@ Public Class frm_ControlPermisos
                             oe.IndConfirmaSalida = .Cells("IndConfirmaSalida").Value
                             oe.FechaConfirmaSalida = .Cells("FechaConfirmaSalida").Value
                             oe.IdTrabajador = .Cells("IdTrabajador").Value
+                            oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olCtrlPermisos.Guardar(oe) Then
                                 MensajeConfirmacion()
                                 If oe.IndConfirmaIngreso Then
@@ -462,6 +471,7 @@ Public Class frm_ControlPermisos
                             oe.IndConfirmaIngreso = .Cells("IndConfirmaIngreso").Value
                             oe.FechaConfirmaIngreso = .Cells("FechaConfirmaIngreso").Value
                             oe.IdTrabajador = .Cells("IdTrabajador").Value
+                            oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olCtrlPermisos.Guardar(oe) Then
                                 MensajeConfirmacion()
                                 If oe.IndConfirmaIngreso Then
@@ -744,6 +754,7 @@ Public Class frm_ControlPermisos
     Private Function GuardarPapeleta() As Boolean
         Try
             mt_LlenarObjeto()
+            oeCtrlPermisos.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCtrlPermisos.Guardar(oeCtrlPermisos) Then
                 If oeCtrlPermisos.TipoOperacion = "I" Then
                     Dim frm As New frm_ReportePapeletaPermisos
@@ -903,6 +914,7 @@ Public Class frm_ControlPermisos
                 mt_LlenarObjeto()
                 Dim oePermiso As New e_ControlPermisos
                 oePermiso = oeCtrlPermisos.Clone
+                oePermiso.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loDetalles.Add(oePermiso)
                 griDetalles.DataBind()
                 cboTrabajadores.Focus()
@@ -953,7 +965,7 @@ Public Class frm_ControlPermisos
 
     Private Function fc_GuardarMasivo() As Boolean
         Try
-            Return olCtrlPermisos.GuardarMasivo(loDetalles)
+            Return olCtrlPermisos.GuardarMasivo(loDetalles, gs_PrefijoIdSucursal)
         Catch ex As Exception
             Throw ex
         End Try

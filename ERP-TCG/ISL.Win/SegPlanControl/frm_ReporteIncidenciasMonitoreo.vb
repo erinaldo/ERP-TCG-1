@@ -1,4 +1,12 @@
-﻿Public Class frm_ReporteIncidenciasMonitoreo
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Public Class frm_ReporteIncidenciasMonitoreo
     Inherits frm_ReporteBasico
 
 #Region "Inicializar formulario"
@@ -38,7 +46,7 @@
     End Sub
 
 #End Region
-    
+
     Private Sub frm_ReporteIncidenciasMonitoreo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

@@ -15,6 +15,10 @@ Public Class e_DetalleValorizacionNeumatico
     Private _activo As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> _
     Public TipoOperacion As String

@@ -6915,6 +6915,7 @@ Public Class frm_Operacion
                     objAuxiliar.Tipo = obj.Tipo
                     objAuxiliar.TipoOPeracion = obj.TipoOPeracion
                     objAuxiliar.UsuarioRegistro = obj.UsuarioRegistro
+                    objAuxiliar.PrefijoID = gs_PrefijoIdSucursal '@0001
                 End If
             Next
             If objAuxiliar.ValoresAnteriores.Count > 0 Then
@@ -7082,7 +7083,7 @@ Public Class frm_Operacion
 
                     Else
                         If (IndPropiedadTracto = 0) And griDetalleTercero.Rows.Count = 0 And
-                            NombrePropTracto <> "INDUAMERICA SERVICIOS LOGISTICOS S.A.C." And CargaVacia = 0 Then
+                            NombrePropTracto <> gs_TxtEmpresaSistema And CargaVacia = 0 Then
                             Throw New Exception("El tracto  NO ES PROPIETARIO, es necesario AGREGAR CONTRATO. Verifique")
                         Else
                             If (IndPropiedadCarreta = 0 And Me.cboCarreta.Value <> "") And griDetalleTercero.Rows.Count = 0 And CargaVacia = 0 Then

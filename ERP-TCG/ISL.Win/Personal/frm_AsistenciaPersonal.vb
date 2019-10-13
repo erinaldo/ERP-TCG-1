@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -149,6 +157,7 @@ Public Class frm_AsistenciaPersonal
             oeAsistenciaPersonal.IdTrabajador = IdTrabajador
             oeAsistenciaPersonal.Fecha = ObtenerFechaServidor()
             oeAsistenciaPersonal.TipoOperacion = "I"
+            oeAsistenciaPersonal.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olAsistenciaPersonal.Guardar(oeAsistenciaPersonal) Then
                 mensajeEmergente.Confirmacion("Informacion Guardada Correctamente")
             End If

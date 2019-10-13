@@ -54,6 +54,10 @@ Public Class e_ObligacionFin
     Public Mes As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oeFecLetra As New e_FecLetras
     <DataMember()> _

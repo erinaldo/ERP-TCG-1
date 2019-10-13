@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -119,6 +127,7 @@ Public Class frm_PagoAdicional
                 Case "GENERADA"
                     RecolectaDatos()
                     oePagoAdicional.UsuarioCreacion = gUsuarioSGI.Id
+                    oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPagoAdicional.Guardar(oePagoAdicional) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         SeleccionaTab(0)
@@ -134,6 +143,7 @@ Public Class frm_PagoAdicional
                     Else
                         oePagoAdicional.IdEstado = cboEstado.Value
                         oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                        oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olPagoAdicional.Guardar(oePagoAdicional) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
                                                       " se Envio correctamente!", True)
@@ -151,6 +161,7 @@ Public Class frm_PagoAdicional
                     Else
                         oePagoAdicional.IdEstado = cboEstado.Value
                         oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                        oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olPagoAdicional.Guardar(oePagoAdicional) Then
                             mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
                                                       " se Termino correctamente!", True)
@@ -1063,6 +1074,7 @@ Public Class frm_PagoAdicional
                         If _leEst.Count > 0 Then
                             oePagoAdicional.IdEstado = _leEst(0).Id
                             oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                            oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
                             olPagoAdicional.Guardar(oePagoAdicional)
                             mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
                                                           " se Extornado correctamente!", True)

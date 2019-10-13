@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_FamiliaMaterial
@@ -338,6 +346,7 @@ Public Class frm_FamiliaMaterial
     Private Function GuardarRegistro() As Boolean
         Try
             oeFamiliaMaterial.UsuarioCreacion = gUsuarioSGI.Id
+            oeFamiliaMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olFamiliaMaterial.Guardar(oeFamiliaMaterial) Then
                 Return False
             End If

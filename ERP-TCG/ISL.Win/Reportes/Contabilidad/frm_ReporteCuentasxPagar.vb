@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -569,6 +577,7 @@ Public Class frm_ReporteCuentasxPagar
                                     oeMovDoc.TipoOperacion = "P"
                                     oeMovDoc.Id = drFila.Cells("Id").Value
                                     oeMovDoc.IdEstadoDocumento = estado
+                                    oeMovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     lstMovDoc.Add(oeMovDoc)
                                     With oeDetProgPago
                                         .Id = ""
@@ -585,11 +594,13 @@ Public Class frm_ReporteCuentasxPagar
                                         End If
                                         .PorcAfect = drFila.Cells("PorcAfect").Value
                                     End With
+                                    oeDetProgPago.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     lstDetProgPago.Add(oeDetProgPago)
                                 Next
                                 .lst_MovimientoDocumento = lstMovDoc
                                 .lst_DetalleProgPago = lstDetProgPago
                             End With
+                            oeprogpago.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olProgramacionPago.Guardar(oeprogpago) Then mensajeEmergente.Confirmacion("Se ha Generado una Programación. Nro: " & nro_aux, True)
                             Listar()
                             Botones_Estado(1)
@@ -603,6 +614,7 @@ Public Class frm_ReporteCuentasxPagar
                                 oeMovDoc.IdUsuarioCrea = gUsuarioSGI.Id
                                 oeMovDoc.Id = drFila.Cells("Id").Value
                                 oeMovDoc.IdEstadoDocumento = estado
+                                oeMovDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 lstMovDoc.Add(oeMovDoc)
                                 oeMovDoc.IdEstadoDocumento = estado
                                 oeMovDoc.IdUsuarioCrea = gUsuarioSGI.Id

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,9 +83,8 @@ Public Class d_BonificacionProduccion
 
     Public Function Guardar(ByVal oeBonificacionProduccion As e_BonificacionProduccion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBonificacionProduccion
-                sqlhelper.ExecuteNonQuery("PER.Isp_BonificacionProduccion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_BonificacionProduccion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPlanilla _
                         , .IdTrabajador _
@@ -88,7 +95,7 @@ Public Class d_BonificacionProduccion
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -111,7 +118,6 @@ Public Class d_BonificacionProduccion
 
     Public Function GuardarMasivo(ByVal dtBonPro As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.BonificacionProduccion", dtBonPro)
             Return True
         Catch ex As Exception
@@ -122,7 +128,6 @@ Public Class d_BonificacionProduccion
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.BonificacionProduccion", PrefijoID
                                   )

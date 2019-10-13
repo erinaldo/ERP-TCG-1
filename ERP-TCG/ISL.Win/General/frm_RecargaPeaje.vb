@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports System.Text
@@ -884,6 +892,7 @@ Public Class frm_RecargaPeaje
                     .MontoTotal = Convert.ToDecimal(uneMontoTotal.Value)
                     .UsuarioCreacion = gUsuarioSGI.Id
                 End With
+                _Recarga.PrefijoID = gs_PrefijoIdSucursal '@0001
             Next
             Select Case Operacion
                 Case "Nuevo"

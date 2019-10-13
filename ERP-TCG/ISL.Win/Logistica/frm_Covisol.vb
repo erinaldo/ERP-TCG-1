@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.Win.CovisolR
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
@@ -435,6 +443,7 @@ Public Class frm_Covisol
             oeRegEditados.TipoOperacion = "T"
             loRegEditados.AddRange(olRegistrosEditados.Listar(oeRegEditados).ToList())
             'Si existe registro 
+            oeRegEditados.PrefijoID = gs_PrefijoIdSucursal '@0001
             If loRegEditados.Count > 0 Then
                 If loRegEditados.Where(Function(x) x.IndEditado).Count > 0 Then
                     'El registro esta editandose
@@ -458,6 +467,7 @@ Public Class frm_Covisol
                     .UsuarioEdita = gUsuarioSGI.Id
                     .IdRegistro = "1CH000000000001"
                 End With
+                oeRegEditados.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeRegEditados.Id = olRegistrosEditados.Guardar(oeRegEditados)
                 Return True
             End If

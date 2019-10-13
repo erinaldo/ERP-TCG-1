@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -79,11 +87,10 @@ Public Class d_SaldoCtaCorriente
 
     Public Function Guardar(ByVal oeSaldoCtaCorriente As e_SaldoCtaCorriente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSaldoCtaCorriente
-                sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdCuentaCorriente _
                                             , .TipoCuenta _
@@ -107,12 +114,11 @@ Public Class d_SaldoCtaCorriente
 
     Public Function PagoBono(ByVal oeSaldoCtaCorriente As e_SaldoCtaCorriente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 With oeSaldoCtaCorriente
-                    sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
-                                              "U", _
-                                              .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE",
+                                              "U",
+                                              .PrefijoID,
                                                 .Id _
                                                 , .IdCuentaCorriente _
                                                 , .TipoCuenta _
@@ -130,11 +136,12 @@ Public Class d_SaldoCtaCorriente
                     odMovCuentaCte = New d_MovCuentaCte
                     For Each _oeMovCte In .leMovCtaCte.Where(Function(it) it.TipoOperacion.Trim <> "").ToList
                         If _oeMovCte.TipoOperacion = "I" Then _oeMovCte.IdReferencia = .IdReferencia
+                        _oeMovCte.PrefijoID = oeSaldoCtaCorriente.PrefijoID '@0001
                         odMovCuentaCte.Guardar(_oeMovCte)
                     Next
-                    sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE", _
-                                              "I", _
-                                              .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE",
+                                              "I",
+                                              .PrefijoID,
                                                 "" _
                                                 , .IdCuentaCorriente _
                                                 , .TipoCuenta _

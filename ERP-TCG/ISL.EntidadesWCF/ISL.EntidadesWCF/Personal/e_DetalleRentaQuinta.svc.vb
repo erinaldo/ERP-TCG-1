@@ -126,6 +126,10 @@ Public Class e_DetalleRentaQuinta
     Public UITRango4 As Double = 0
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -22,11 +30,10 @@ Public Class d_GastoAsiento
     Public Function Obtener(ByVal oeGastoAsiento As e_GastoAsiento) As e_GastoAsiento
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_GastoAsiento_Listar", "",
             Left(oeGastoAsiento.PrefijoID, 1), "", oeGastoAsiento.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeGastoAsiento = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeGastoAsiento
@@ -37,7 +44,6 @@ Public Class d_GastoAsiento
 
     Public Function Listar(ByVal oeGastoAsiento As e_GastoAsiento) As List(Of e_GastoAsiento)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGastoAsiento As New List(Of e_GastoAsiento)
             Dim ds As DataSet
             With oeGastoAsiento
@@ -46,7 +52,7 @@ Public Class d_GastoAsiento
                         , .Id _
                         , .IdGastoOperacion _
                         , .IdAsiento _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeGastoAsiento = Nothing
@@ -64,26 +70,25 @@ Public Class d_GastoAsiento
 
     Public Function Guardar(ByVal oeGastoAsiento As e_GastoAsiento, ByVal OeAsiento As e_Asiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             If OeAsiento.TipoOperacion = "I" Then
                 Dim odAsiento As New d_Asiento
                 odAsiento.Guardar(OeAsiento, Nothing, False)
                 With oeGastoAsiento
                     .IdAsiento = OeAsiento.Id
-                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdGastoOperacion _
                             , .IdAsiento _
-                            , .Activo _
+                            , .Activo
                         )
                 End With
             Else
                 With oeGastoAsiento
-                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_GastoAsiento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdGastoOperacion _
                             , .IdAsiento _
-                            , .Activo _
+                            , .Activo
                         )
                 End With
             End If

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -171,6 +179,7 @@ Public Class frm_PersonaDocumento
                     oePersonaDocumento.UsuarioCreacion = gUsuarioSGI.Id
                     'oePersonaDocumento.FechaActividad = FecActividad.Value
                     'oePersonaDocumento.FechaVencimiento = fecVencimiento.Value
+                    oePersonaDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPersonaDocumento.Guardar(oePersonaDocumento) Then
                         mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                         MostrarTabs(0, ficPersonaDocumento)
@@ -389,6 +398,7 @@ Public Class frm_PersonaDocumento
                             .FechaVencimiento = objWorkSheet.Cells(ln_Fila + 1, 6).value
                             .Activo = False
                         End With
+                        oePersonaDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDatosImportados.Add(oePersonaDocumento)
                     Else
                         Exit For
@@ -440,7 +450,7 @@ Public Class frm_PersonaDocumento
                 Cursor.Show()
 
                 For Each oeImp In leDatosImportados
-                    ' Verifica si los Trabajadores entan registradas en el SGI
+                    ' Verifica si los Trabajadores entan registradas en el ERP
                     If oeImp.IdPersona = "" Then
                         oeTrabajador = New e_Trabajador
                         oeTrabajador.TipoBusca = 2

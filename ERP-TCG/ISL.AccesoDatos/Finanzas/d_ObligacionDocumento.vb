@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -28,7 +36,6 @@ Public Class d_ObligacionDocumento
     Public Function Obtener(ByVal oeObligacionDocumento As e_ObligacionDocumento) As e_ObligacionDocumento
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionDocumento_Listar", "",
             Left(oeObligacionDocumento.PrefijoID, 1), "", oeObligacionDocumento.Id)
@@ -43,7 +50,6 @@ Public Class d_ObligacionDocumento
 
     Public Function Listar(ByVal oeObligacionDocumento As e_ObligacionDocumento) As List(Of e_ObligacionDocumento)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldObligacionDocumento As New List(Of e_ObligacionDocumento)
             Dim ds As DataSet
             With oeObligacionDocumento
@@ -54,7 +60,7 @@ Public Class d_ObligacionDocumento
                         , .IdObligacionFinanciera _
                         , .MontoMN _
                         , .MontoME _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeObligacionDocumento = Nothing
@@ -72,9 +78,8 @@ Public Class d_ObligacionDocumento
 
     Public Function Guardar(ByVal oeObligacionDocumento As e_ObligacionDocumento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeObligacionDocumento
-                sqlhelper.ExecuteNonQuery("FIN.Isp_ObligacionDocumento_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_ObligacionDocumento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdObligacionFinanciera _
@@ -85,7 +90,7 @@ Public Class d_ObligacionDocumento
                         , .UsuarioCreacion _
                         , .FechaCreacion _
                         , .RetencionMN _
-                        , .RetencionME _
+                        , .RetencionME
                     )
             End With
             Return True
@@ -108,7 +113,6 @@ Public Class d_ObligacionDocumento
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.ObligacionDocumento", PrefijoID
                                   )

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,13 +83,12 @@ Public Class d_AporteDescuento
 
     Public Function Guardar(ByVal oeAporteDescuento As e_AporteDescuento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odDetalle As New d_DetalleAporteDescuento
             Dim _oeTemp As New e_DetalleAporteDescuento
             Dim _bnd As Boolean = False
             Dim _id As String
             With oeAporteDescuento
-                _id = sqlhelper.ExecuteScalar("PER.Isp_AporteDescuento_IAE", .TipoOperacion, .PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_AporteDescuento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -89,11 +96,12 @@ Public Class d_AporteDescuento
                         , .AporteDescuento _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
                 .Id = _id
                 For Each oeDet In .leHistorial
                     oeDet.IdAporteDescuento = _id
+                    oeDet.PrefijoID = oeAporteDescuento.PrefijoID '@0001
                     odDetalle.Guardar(oeDet)
                     If oeDet.TipoOperacion = "I" AndAlso .leHistorial.Count > 1 Then
                         _oeTemp = oeDet

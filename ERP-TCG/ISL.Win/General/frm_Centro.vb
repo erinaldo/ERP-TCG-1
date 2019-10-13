@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Centro
@@ -447,12 +455,13 @@ Public Class frm_Centro
             If cboLugar.Value IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(cboLugar.Value.ToString.Trim) Then
                 Dim lst_Lugar As New List(Of e_Lugar)
                 Dim wr_Lugar As New l_Lugar
-                lst_Lugar = wr_Lugar.Listar(New e_Lugar With {.Id = cboLugar.Value.ToString.Trim, _
+                lst_Lugar = wr_Lugar.Listar(New e_Lugar With {.Id = cboLugar.Value.ToString.Trim,
                                               .Activo = True})
                 If lst_Lugar.Count <= 0 Then
                     Throw New Exception("Ingrese lugar válido")
                 End If
             End If
+            oeCentro.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCentro.Guardar(oeCentro) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficCentro, 2)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_MaterialAlmacen
@@ -89,20 +97,19 @@ Public Class d_MaterialAlmacen
     End Function
 
     Public Function GuardarDetalle(ByVal oeMaterialAlmacen As e_MaterialAlmacen) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeMaterialAlmacen
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .IdMaterial, _
-                                          .IdAlmacen, _
-                                          .UsuarioCreacion, _
-                                          .Activo, _
-                                          .StockMinimo, _
-                                          .StockMaximo, _
-                                          .IdZona, _
-                                          .IdUnidad, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .IdMaterial,
+                                          .IdAlmacen,
+                                          .UsuarioCreacion,
+                                          .Activo,
+                                          .StockMinimo,
+                                          .StockMaximo,
+                                          .IdZona,
+                                          .IdUnidad,
                                           .TipoReferencia)
             End With
             Return True
@@ -114,7 +121,6 @@ Public Class d_MaterialAlmacen
 
     Public Function Guardar(ByVal listaObj As List(Of e_MaterialAlmacen)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             For Each Detalle As e_MaterialAlmacen In listaObj
                 GuardarDetalle(Detalle)
             Next
@@ -179,19 +185,17 @@ Public Class d_MaterialAlmacen
     End Function
 
     Public Function Eliminar(ByVal llMaterialAlmacen As List(Of e_MaterialAlmacen)) As Boolean
-
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
 
             For Each oeMaterialAlmacen As e_MaterialAlmacen In llMaterialAlmacen
 
                 With oeMaterialAlmacen
-                    sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", "E", _
-                                              .PrefijoID, _
-                                              .Id, _
-                                              .IdMaterial, _
-                                              .IdAlmacen, _
-                                              .UsuarioCreacion, _
+                    sqlhelper.ExecuteNonQuery("[ALM].[Isp_Material_Almacen_IAE]", "E",
+                                              .PrefijoID,
+                                              .Id,
+                                              .IdMaterial,
+                                              .IdAlmacen,
+                                              .UsuarioCreacion,
                                               .Activo)
                 End With
 
@@ -223,16 +227,15 @@ Public Class d_MaterialAlmacen
 
     Public Function ListarAL(ByVal oeMaterialAlmacen As e_MaterialAlmacen) As List(Of e_MaterialAlmacen)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As New DataSet
             Dim lista As New List(Of e_MaterialAlmacen)
             With oeMaterialAlmacen
-                ds = sqlhelper.ExecuteDataset("[ALM].[Isp_Material_Almacen_Listar]", _
-                                         oeMaterialAlmacen.TipoOperacion, _
-                                         oeMaterialAlmacen.IdCentro, _
-                                         oeMaterialAlmacen.Id, _
-                                         oeMaterialAlmacen.IdMaterial, _
-                                         oeMaterialAlmacen.IdAlmacen, _
+                ds = sqlhelper.ExecuteDataset("[ALM].[Isp_Material_Almacen_Listar]",
+                                         oeMaterialAlmacen.TipoOperacion,
+                                         oeMaterialAlmacen.IdCentro,
+                                         oeMaterialAlmacen.Id,
+                                         oeMaterialAlmacen.IdMaterial,
+                                         oeMaterialAlmacen.IdAlmacen,
                                          oeMaterialAlmacen.Activo)
             End With
             If ds.Tables.Count > 0 Then

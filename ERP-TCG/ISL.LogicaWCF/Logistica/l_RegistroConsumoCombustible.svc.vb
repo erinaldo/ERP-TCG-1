@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -77,6 +85,7 @@ Public Class l_RegistroConsumoCombustible
                 olAsiento = New l_Asiento
                 For Each asimod As e_AsientoModelo In oeOrdenSalida.loAsientoModelo
                     oeAsiento = New e_Asiento
+                    oeAsiento.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                     With oeAsiento
                         .TipoOperacion = "I" : .IdPeriodo = oeOrdenSalida.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
                         .NroAsiento = String.Empty : .Fecha = oeOrdenSalida.FechaOrden
@@ -90,9 +99,11 @@ Public Class l_RegistroConsumoCombustible
                         .AsientoReferencia.TipoOperacion = "I"
                         .AsientoReferencia.IdReferencia = idReg
                         .AsientoReferencia.TipoReferencia = 5
+                        .AsientoReferencia.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                     End With
                     For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle.OrderBy(Function(item) item.Fila).ToList
                         oeAsientoMovimiento = New e_AsientoMovimiento
+                        oeAsientoMovimiento.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                         With oeAsientoMovimiento
                             .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                             .IdUsuarioCrea = oeOrdenSalida.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila
@@ -101,6 +112,7 @@ Public Class l_RegistroConsumoCombustible
                                 .DebeMN = Math.Round(oeOrdenSalida.Total, 2)
                                 .DebeME = Math.Round(oeOrdenSalida.Total, 2)
                                 oeAsientoAnalisis = New e_MovimientoAnalisis
+                                oeAsientoAnalisis.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                                 oeAsientoAnalisis.TipoOperacion = ""
                                 oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                 oeAsientoAnalisis.IdUsuarioCrea = oeOrdenSalida.UsuarioCreacion
@@ -199,6 +211,7 @@ Public Class l_RegistroConsumoCombustible
                 olAsiento = New l_Asiento
                 For Each asimod As e_AsientoModelo In oeOrdenSalida.loAsientoModelo
                     oeAsiento = New e_Asiento
+                    oeAsiento.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                     With oeAsiento
                         .TipoOperacion = "I" : .IdPeriodo = oeOrdenSalida.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
                         .NroAsiento = String.Empty : .Fecha = oeOrdenSalida.FechaOrden
@@ -211,6 +224,7 @@ Public Class l_RegistroConsumoCombustible
                     End With
                     For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle.OrderBy(Function(item) item.Fila).ToList
                         oeAsientoMovimiento = New e_AsientoMovimiento
+                        oeAsientoMovimiento.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                         With oeAsientoMovimiento
                             .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                             .IdUsuarioCrea = oeOrdenSalida.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila
@@ -220,6 +234,7 @@ Public Class l_RegistroConsumoCombustible
                                 .DebeME = Math.Round(oeOrdenSalida.Total, 2)
                                 For Each concom As e_RegistroConsumoCombustible In oeRegCon.ListaRegistrosConsumoD2
                                     oeAsientoAnalisis = New e_MovimientoAnalisis
+                                    oeAsientoAnalisis.PrefijoID = oeOrdenSalida.PrefijoID '@0001
                                     oeAsientoAnalisis.TipoOperacion = ""
                                     oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                     oeAsientoAnalisis.IdUsuarioCrea = oeOrdenSalida.UsuarioCreacion

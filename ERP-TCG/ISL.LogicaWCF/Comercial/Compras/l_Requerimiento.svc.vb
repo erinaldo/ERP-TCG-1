@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -25,6 +33,7 @@ Public Class l_Requerimiento
                     If odRequerimiento.Guardar(oeRequerimiento) Then
                         If oeRequerimiento.TipoOperacion = "D" Or oeRequerimiento.TipoOperacion = "R" Then
                             olOrden = New l_Orden
+                            oeRequerimiento.oeOrdenSalida.PrefijoID = oeRequerimiento.PrefijoID '@0001
                             olOrden.GenerarAsientoConsumo(oeRequerimiento.oeOrdenSalida)
                         End If
                         TransScope.Complete()

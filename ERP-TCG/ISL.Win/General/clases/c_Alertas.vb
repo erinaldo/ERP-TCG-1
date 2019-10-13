@@ -123,7 +123,7 @@ Public Class c_Alertas
         showInfo.FooterText = "Cerrar"
         Dim olDatosConfiguracion As New ISL.LogicaWCF.l_Configuracion
 
-        showInfo.Image = New Icon(olDatosConfiguracion.RutaImagen & "\LogoInduamerica.ico").ToBitmap()
+        showInfo.Image = New Icon(olDatosConfiguracion.RutaImagen & "\LogoERP.ico").ToBitmap()
         showInfo.Sound = olDatosConfiguracion.RutaImagen & "\Sonido.wav"
 
         showInfo.ScreenPosition = ScreenPosition.Center

@@ -14,7 +14,12 @@ Public Class e_Distrito
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean = False
-
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
 #End Region

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -113,7 +121,6 @@ Public Class d_OperacionNeumatico
 
     Public Function Guardar(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOperacionNeumatico
                 sqlhelper.ExecuteNonQuery("[NEU].[Isp_OperacionNeumatico_IAE]", .TipoOperacion, .PrefijoID _
                 , .Operacion _
@@ -138,7 +145,7 @@ Public Class d_OperacionNeumatico
                         , .Activo _
                         , .UsuarioCreacion _
                         , .IdResponsable _
-                        , .IdConductor _
+                        , .IdConductor
                     )
             End With
             Return True

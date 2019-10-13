@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -131,6 +139,7 @@ Public Class d_Lugar
                     For Each oeClienteLugar As e_ClienteLugar In oeLugar.ListaClienteLugar
                         oeClienteLugar.IdLugar = stResultado(0)
                         oeClienteLugar.TipoOperacion = "I"
+                        oeClienteLugar.PrefijoID = oeLugar.PrefijoID '@0001
                         GuardarClienteLugar(oeClienteLugar)
                     Next
                 End If
@@ -138,6 +147,7 @@ Public Class d_Lugar
                     For Each oeVentanaHoraria As e_VentanaHoraria In oeLugar.ListaVentanaHoraria
                         oeVentanaHoraria.IdLugar = stResultado(0)
                         oeVentanaHoraria.TipoOperacion = "I"
+                        oeVentanaHoraria.PrefijoID = oeLugar.PrefijoID '@0001
                         GuardarVentanaHoraria(oeVentanaHoraria)
                     Next
                 End If

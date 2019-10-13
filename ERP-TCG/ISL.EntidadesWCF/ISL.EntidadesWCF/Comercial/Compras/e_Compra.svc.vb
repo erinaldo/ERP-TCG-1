@@ -45,7 +45,7 @@ Public Class e_Compra
     Public TipoCompra As e_TablaContableDet
     <DataMember()> _
     Public Proveedor As e_Proveedor
-    <DataMember()> _
+    <DataMember()>
     Public TotalIGVCompra As Double
     <DataMember()> _
     Public TotalBaseCompra As Double
@@ -56,6 +56,10 @@ Public Class e_Compra
     Public PagoXCajaTesoreria As Double
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Event DatoCambiado()
 

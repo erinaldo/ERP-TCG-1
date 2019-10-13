@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -286,6 +294,7 @@ Public Class frm_Almacen
                 oeSubAlmacen.IdDireccion = cboDireccion.Value
                 oeSubAlmacen.Referencia = cboDireccion.Text.Trim
                 oeSubAlmacen.Activo = True
+                oeSubAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If Not leSubAlmacen.Contains(oeSubAlmacen) Then
                     leSubAlmacen.Add(oeSubAlmacen)
                     griSubAlmacen.DataBind()
@@ -684,6 +693,7 @@ Public Class frm_Almacen
             oeAlmacen.IdProveedor = cboProveedor.Value.ToString
             oeAlmacen.lstZona = llZonas
             oeAlmacen.leSubAlmacen = leSubAlmacen
+            oeAlmacen.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olAlmacen.Guardar(oeAlmacen) Then
                 Return False
             End If

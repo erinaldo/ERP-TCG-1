@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 
@@ -80,6 +88,7 @@ Public Class frm_DetalleEntornoTrabajo
             With griDetalleEntorno
                 If .ActiveRow.Cells("Selec").Activated Then
                     Dim oeDetalleEntorno As New e_DetalleEntornoTrabajo
+                    oeDetalleEntorno.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeDetalleEntorno.IdEntornoTrabajo = .ActiveRow.Cells("Id").Value
                     If Not leDetalleEntorno.Contains(oeDetalleEntorno) Then
                         oeDetalleEntorno.IdUsuario = gUsuarioSGI.Id
@@ -144,6 +153,7 @@ Public Class frm_DetalleEntornoTrabajo
 
             If leDetalleEntorno.Count > 0 Then
                 For Each oe As e_DetalleEntornoTrabajo In leDetalleEntorno
+                    oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                     For Each Fila As UltraWinGrid.UltraGridRow In griDetalleEntorno.Rows
                         If Fila.Cells("Id").Value = oe.IdEntornoTrabajo And oe.Activo Then
                             Fila.Cells("Selec").Value = True

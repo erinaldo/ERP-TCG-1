@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -168,7 +176,6 @@ Public Class d_Persona
             Dim odDireccion As New d_Direccion
             Dim id As String = ""
             Dim idDireccion As String = ""
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 With oePersona
                     Dim var As String = .Id
@@ -178,17 +185,21 @@ Public Class d_Persona
                         If .TipoOperacion <> "E" Then .TipoOperacion = "A"
                     End If
 
-                    id = sqlhelper.ExecuteScalar("PER.Isp_Persona_IAE", .TipoOperacion, _
-                     .Id, .Codigo, .ApellidoPaterno, .ApellidoMaterno, .Nombre, _
-                    .oeSexo.Id, .FechaNacimiento, .Dni, .Activo, .UsuarioCreacion, .PrefijoID)
+                    id = sqlhelper.ExecuteScalar("PER.Isp_Persona_IAE", .TipoOperacion,
+                                                .Id, .Codigo, .ApellidoPaterno,
+                                                .ApellidoMaterno, .Nombre,
+                                                .oeSexo.Id, .FechaNacimiento, .Dni,
+                                                .Activo, .UsuarioCreacion, .PrefijoID)
                     .Id = id
                     If .leDireccionEP IsNot Nothing Then
                         For Each oeDEP As e_Direccion_EmpresaPersona In .leDireccionEP
                             oeDEP.TipoPersonaEmpresa = 1
                             oeDEP.IdPersonaEmpresa = id
+                            oeDEP.PrefijoID = oePersona.PrefijoID '@0001
                             Select Case oeDEP.TipoOperacion
                                 Case "C"
                                     oeDireccion = New e_Direccion
+                                    oeDireccion.PrefijoID = oePersona.PrefijoID '@0001
                                     oeDireccion.TipoOperacion = "I"
                                     oeDireccion.UsuarioCreacion = .UsuarioCreacion
                                     oeDireccion.CCPP = oeDEP.oeDireccion.CCPP
@@ -216,6 +227,7 @@ Public Class d_Persona
                                     odDireccionEP.Guardar(oeDEP)
                                 Case "A"
                                     oeDireccion = New e_Direccion
+                                    oeDireccion.PrefijoID = oePersona.PrefijoID '@0001
                                     oeDireccion.TipoOperacion = "A"
                                     oeDireccion.Id = oeDEP.oeDireccion.Id
                                     oeDireccion.IdTipoVia = oeDEP.oeDireccion.IdTipoVia
@@ -247,6 +259,7 @@ Public Class d_Persona
                         For Each oeEmail As e_Email In .leEmail
                             oeEmail.TipoPersonaEmpresa = 1
                             oeEmail.IdPersonaEmpresa = id
+                            oeEmail.PrefijoID = oePersona.PrefijoID '@0001
                             odEmail.Guardar(oeEmail)
                         Next
                     End If
@@ -254,9 +267,11 @@ Public Class d_Persona
                         For Each oeTelefono As e_Telefono In .leTelefono
                             oeTelefono.TipoPersonaEmpresa = 1
                             oeTelefono.IdPersonaEmpresa = id
+                            oeTelefono.PrefijoID = oePersona.PrefijoID '@0001
                             odTelefono.Guardar(oeTelefono)
                         Next
                     End If
+                    .oeClienteProveedor.PrefijoID = oePersona.PrefijoID '@0001
                     If .oeClienteProveedor.Id <> "" Then
                         .oeClienteProveedor.TipoOperacion = "A"
                         .oeClienteProveedor.Activo = True
@@ -277,6 +292,7 @@ Public Class d_Persona
                     If Not .leTipoPago Is Nothing Then
                         For Each oeTipoPago As e_PersonaEmpresa_TipoPago In .leTipoPago
                             oeTipoPago.IdClienteProveedor = .oeClienteProveedor.Id
+                            oeTipoPago.PrefijoID = oePersona.PrefijoID '@0001
                             Select Case oeTipoPago.TipoOperacion
                                 Case "I" : odPETipoPago.Guardar(oeTipoPago)
                                 Case "E" : odPETipoPago.Eliminar(oeTipoPago)
@@ -286,6 +302,7 @@ Public Class d_Persona
                     If Not .leDocumento Is Nothing Then
                         For Each oeDocPer In .leDocumento
                             oeDocPer.IdPersona = .Id
+                            oeDocPer.PrefijoID = oePersona.PrefijoID '@0001
                             If oeDocPer.TipoOperacion = "E" Then
                                 odPerDocumento.Eliminar(oeDocPer)
                             Else

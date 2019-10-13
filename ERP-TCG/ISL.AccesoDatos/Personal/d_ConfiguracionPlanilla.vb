@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,10 +85,9 @@ Public Class d_ConfiguracionPlanilla
 
     Public Function Guardar(ByVal oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String
             With oeConfiguracionPlanilla
-                id = sqlhelper.ExecuteScalar("PER.Isp_ConfiguracionPlanilla_IAE", .TipoOperacion, .PrefijoID, _
+                id = sqlhelper.ExecuteScalar("PER.Isp_ConfiguracionPlanilla_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -89,12 +96,13 @@ Public Class d_ConfiguracionPlanilla
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
                 .Id = id
 
                 For Each oeDetConPla In .leDetalle
                     oeDetConPla.IdConfiguracionPlanilla = .Id
+                    oeDetConPla.PrefijoID = oeConfiguracionPlanilla.PrefijoID '@0001
                     If .TipoOperacion = "E" Then
                         odDetalle.Eliminar(oeDetConPla)
                     Else

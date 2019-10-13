@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_ObligacionPago
@@ -105,6 +113,7 @@ Public Class d_ObligacionPago
                         Dim odAsientoMov_ObligaFin As New d_AsientoMov_ObligacionFin
                         .OeAsientoMov_ObligFin.IdObligacionPago = oeObligacionPago.Id
                         .OeAsientoMov_ObligFin.IdAsientoMovimiento = oeObligacionPago._IdAsientoMovimiento
+                        .OeAsientoMov_ObligFin.PrefijoID = .PrefijoID '@0001
                         odAsientoMov_ObligaFin.Guardar(.OeAsientoMov_ObligFin)
                     End If
                 End If

@@ -1,9 +1,16 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.AccesoDatos
 Imports System.Runtime.Serialization
-' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_DistanciaZona" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_DistanciaZona.svc o l_DistanciaZona.svc.vb en el Explorador de soluciones e inicie la depuración.
-<DataContract(), Serializable()> _
+
+<DataContract(), Serializable()>
 Public Class l_DistanciaZona
     Implements Il_DistanciaZona
 

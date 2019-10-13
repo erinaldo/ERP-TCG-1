@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 
@@ -76,6 +84,7 @@ Public Class frm_VidaNeumatico
             If chkCancelaRee.Checked Then ValidaVidaNeu(oeVidaNeumatico)
             If MessageBox.Show("¿Desea Guardar la Operacion Realizada?", "Mensaje de Sistema" _
                                , MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
+                oeVidaNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeVidaNeumatico = olVidaNeumatico.Guardar(oeVidaNeumatico)
                 GenerarMovimiento(oeVidaNeumatico.Id)
                 MessageBox.Show("Registrado correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
@@ -268,6 +277,7 @@ Public Class frm_VidaNeumatico
             oeMovimientoNeumatico.IdTecnicoNeu = cboTecnico.Value
             oeMovimientoNeumatico.IdVidaNeumatico = ls_IdVidaNeumatico
             oeMovimientoNeumatico.IndVigente = 1
+            oeMovimientoNeumatico.PrefijoID = gs_PrefijoIdSucursal '@0001
             olMovimientoNeumatico.Guardar(oeMovimientoNeumatico)
         Catch ex As Exception
             Throw ex

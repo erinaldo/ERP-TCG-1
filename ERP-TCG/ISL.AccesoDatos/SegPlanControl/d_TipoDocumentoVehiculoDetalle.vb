@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -72,7 +80,6 @@ Public Class d_TipoDocumentoVehiculoDetalle
     Public Function Guardar(ByVal oeTipoDocumentoVehiculoDetalle As e_TipoDocumentoVehiculoDetalle) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTipoDocumentoVehiculoDetalle
                 stResultado = sqlhelper.ExecuteScalar("SPC.Isp_TipoDocumentoVehiculoDetalle_IAE", .TipoOperacion, .PrefijoID, _
                                                        .UsuarioCreacion _
@@ -94,10 +101,9 @@ Public Class d_TipoDocumentoVehiculoDetalle
 
     Public Function Guardar(ByVal Lista As List(Of e_TipoDocumentoVehiculoDetalle)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             If Lista.Count < 1 Then Return True
             Using transScope As New TransactionScope()
-                sqlhelper.ExecuteNonQuery("SPC.Isp_TipoDocumentoVehiculoDetalle_IAE", "T", _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_TipoDocumentoVehiculoDetalle_IAE", "T",
                                           "", Lista(0).UsuarioCreacion, "", "", Lista(0).IdTipoDocumento)
 
                 For Each item In Lista

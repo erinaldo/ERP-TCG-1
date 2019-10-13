@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_LimiteCredito
@@ -179,6 +187,7 @@ Public Class frm_LimiteCredito
     Private Function GuardarLimiteCredito() As Boolean
         Try
             If Validar() Then
+                oeLimiteCredito.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olLimiteCredito.Guardar(oeLimiteCredito)
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente")
                 MostrarTabs(0, tcLimiteCredito, 2)

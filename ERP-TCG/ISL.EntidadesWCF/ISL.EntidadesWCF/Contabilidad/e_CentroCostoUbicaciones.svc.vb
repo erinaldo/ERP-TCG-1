@@ -21,6 +21,10 @@ Public Class e_CentroCostoUbicaciones
     Public UsuarioCreacion As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> _
     Public Property Id() As String

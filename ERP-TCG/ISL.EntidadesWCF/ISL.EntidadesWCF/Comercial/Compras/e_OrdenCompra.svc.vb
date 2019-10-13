@@ -52,6 +52,10 @@ Public Class e_OrdenCompra
     Public fechaInicio As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public lstOrdenMaterial As New List(Of e_OrdenCompraMaterial)
     <DataMember()> _

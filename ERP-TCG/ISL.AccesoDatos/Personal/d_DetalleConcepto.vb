@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,9 +85,8 @@ Public Class d_DetalleConcepto
 
     Public Function Guardar(ByVal oeDetalleConcepto As e_DetalleConcepto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleConcepto
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleConcepto_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleConcepto_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdDetallePlanilla _
                         , .IdAporteDescuento _
@@ -89,7 +96,7 @@ Public Class d_DetalleConcepto
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -101,7 +108,6 @@ Public Class d_DetalleConcepto
 
     Public Function GuardarMasivo(ByVal dtDetalleConcepto As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.DetalleConcepto", dtDetalleConcepto)
             Return True
         Catch ex As Exception
@@ -123,7 +129,6 @@ Public Class d_DetalleConcepto
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.DetalleConcepto", PrefijoID)
             Return stResultado

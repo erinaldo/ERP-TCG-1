@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -291,6 +299,7 @@ Public Class frm_PlanesEPS
                         LlenarRS()
                         oeRegimenSalud.TipoOperacion = "I"
                         oeRegimenSalud.Id = "ID"
+                        oeRegimenSalud.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leRegSaludAux.Add(oeRegimenSalud)
                     End If
                     mensajeEmergente.Confirmacion("Los Datos se han Guardado Correctamente!!", True)
@@ -321,6 +330,7 @@ Public Class frm_PlanesEPS
                         LlenarSC()
                         oeSeguroComplementario.TipoOperacion = "I"
                         oeSeguroComplementario.Id = "ID"
+                        oeSeguroComplementario.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leSegCompAux.Add(oeSeguroComplementario)
                     End If
                     mensajeEmergente.Confirmacion("Los Datos se han Guardado Correctamente!!", True)
@@ -468,6 +478,7 @@ Public Class frm_PlanesEPS
     Private Function Guardando() As Boolean
         Try
             oePlanesEPS.UsuarioCreacion = gUsuarioSGI.Id
+            oePlanesEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olPlanesEPS.Guardar(oePlanesEPS) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 SeleccionaTabs(0)

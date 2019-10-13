@@ -21,7 +21,12 @@ Public Class e_ReporteFlujoBanco
     Public Modificado As Boolean
     <DataMember()> _
     Public IdFlujoApoyo As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
 #End Region

@@ -35,6 +35,10 @@ Public Class e_PrestamosCuenta
     Public FechaCierre As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> Public oeSaldo As New e_Saldo
     '<DataMember()> Public oeAsiento As New e_Asiento

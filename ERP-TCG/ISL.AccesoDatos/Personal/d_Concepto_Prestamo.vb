@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -80,9 +88,8 @@ Public Class d_Concepto_Prestamo
 
     Public Function GuardarSancion(ByVal oeConcepto_Prestamo As e_Concepto_Prestamo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConcepto_Prestamo
-                sqlhelper.ExecuteNonQuery("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -91,7 +98,7 @@ Public Class d_Concepto_Prestamo
                         , .IdArea _
                         , .Activo _
                         , .FechaCreacion _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     ).ToString.Split("_")
             End With
 
@@ -105,11 +112,10 @@ Public Class d_Concepto_Prestamo
 
     Public Function GuardarPrestamo(ByVal oeConcepto_Prestamo As e_Concepto_Prestamo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope
                 With oeConcepto_Prestamo
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_Concepto_Prestamo_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Nombre _
@@ -118,11 +124,12 @@ Public Class d_Concepto_Prestamo
                             , .IdArea _
                             , .Activo _
                             , .FechaCreacion _
-                            , .UsuarioCreacion _
+                            , .UsuarioCreacion
                         ).ToString.Split("_")
 
                     For Each oeConcepSancion As e_Concepto_Prestamo In .leConceptoSancion
                         oeConcepSancion.IdConceptoPadre = stResultado(0)
+                        oeConcepSancion.PrefijoID = oeConcepto_Prestamo.PrefijoID '@0001
                         GuardarSancion(oeConcepSancion)
                     Next
 

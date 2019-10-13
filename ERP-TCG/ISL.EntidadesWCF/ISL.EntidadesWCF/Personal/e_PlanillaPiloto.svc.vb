@@ -26,6 +26,10 @@ Public Class e_PlanillaPiloto
     Public listaPlanillaPiloto As New List(Of e_PlanillaPilotoDet)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
     <DataMember()> _

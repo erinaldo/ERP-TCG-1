@@ -8,6 +8,10 @@ Public Class e_ReadecuacionActivoFijo
     Public ListReadecuacionAFDoc As List(Of e_ReadecuacionAF_Documento)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

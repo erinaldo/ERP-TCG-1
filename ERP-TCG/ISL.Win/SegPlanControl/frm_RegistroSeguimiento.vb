@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -783,7 +791,7 @@ Public Class frm_RegistroSeguimiento
                     oeSeguimientoMonitoreo.Glosa = txtGlosa.Text.Trim
                     oeSeguimientoMonitoreo.UsuarioCreacion = gUsuarioSGI.Id
                 End If
-
+                oeSeguimientoMonitoreo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olSeguimientoMonitoreo.Guardar(oeSeguimientoMonitoreo) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     MostrarTabs(0, tcPrincipal)
@@ -1201,7 +1209,7 @@ Public Class frm_RegistroSeguimiento
                     oeSeguimientoMonitoreo.Glosa = txtGlosa.Text.Trim
                     oeSeguimientoMonitoreo.UsuarioCreacion = gUsuarioSGI.Id
                 End If
-
+                oeSeguimientoMonitoreo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olSeguimientoMonitoreo.Guardar(oeSeguimientoMonitoreo) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     Me.Close()
@@ -1517,7 +1525,7 @@ Public Class frm_RegistroSeguimiento
                 Dim listaCombo As New List(Of e_Combo)
                 Dim tooltip As New StringBuilder
                 listaCombo = ValidarImportar(oeSeguimientoMonitoreo)
-
+                oeSeguimientoMonitoreo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If listaCombo.Count = 0 Then
                     If olSeguimientoMonitoreo.Guardar(oeSeguimientoMonitoreo) Then
                         Continue For

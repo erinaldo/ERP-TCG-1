@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_Servicio
@@ -249,6 +257,7 @@ Public Class frm_Servicio
     Private Function GuardarServicio() As Boolean
         Try
             oeServicio.ListaServicioCuentaContable = Me.grServCtaCtble.DataSource
+            oeServicio.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olServicio.Guardar(oeServicio) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcServicio, 2)
@@ -439,6 +448,7 @@ Public Class frm_Servicio
                 oeServicioCuentaContable.CuentaDebe = Me.cboCuentaDebe.Text
                 oeServicioCuentaContable.CuentaHaber = Me.cboCuentaHaber.Text
                 oeServicioCuentaContable.Activo = True
+                oeServicioCuentaContable.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeServicio.ListaServicioCuentaContable.Add(oeServicioCuentaContable)
                 grServCtaCtble.DataBind()
                 oeServicioCuentaContable = New e_ServicioCuentaContable

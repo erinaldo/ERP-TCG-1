@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System
@@ -665,6 +673,7 @@ Public Class frm_OperacionesNeumatico
                 objOperacion.Activo = True
                 objOperacion.KmNeumatico = objOperacion.KmRecorridoNeu
                 'olOperacionNeumatico.Guardar(objOperacion)
+                objOperacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             Next
             olOperacionNeumatico.GuardarLista(leOperacionNeu)
             mensajeEmergente.Confirmacion("Se realizo correctamente la inspeccion ")

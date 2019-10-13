@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -21,10 +29,9 @@ Public Class d_Gasto_RegistroConsumoCombustible
     Public Function Obtener(ByVal oeGasto_RegistroConsumoCombustible As e_Gasto_RegistroConsumoCombustible) As e_Gasto_RegistroConsumoCombustible
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_Gasto_RegistroConsumoCombustible_Listar", "", oeGasto_RegistroConsumoCombustible.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeGasto_RegistroConsumoCombustible = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeGasto_RegistroConsumoCombustible
@@ -35,7 +42,6 @@ Public Class d_Gasto_RegistroConsumoCombustible
 
     Public Function Listar(ByVal oeGasto_RegistroConsumoCombustible As e_Gasto_RegistroConsumoCombustible) As List(Of e_Gasto_RegistroConsumoCombustible)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGasto_RegistroConsumoCombustible As New List(Of e_Gasto_RegistroConsumoCombustible)
             Dim ds As DataSet
             With oeGasto_RegistroConsumoCombustible
@@ -43,7 +49,7 @@ Public Class d_Gasto_RegistroConsumoCombustible
                         , .PrefijoID _
                         , .Id _
                         , .IdGastoOperacion _
-                        , .IdRegistroConsumoCombustible _
+                        , .IdRegistroConsumoCombustible
                         )
             End With
             oeGasto_RegistroConsumoCombustible = Nothing
@@ -61,12 +67,11 @@ Public Class d_Gasto_RegistroConsumoCombustible
 
     Public Function Guardar(ByVal oeGasto_RegistroConsumoCombustible As e_Gasto_RegistroConsumoCombustible) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGasto_RegistroConsumoCombustible
-                sqlhelper.ExecuteNonQuery("TES.Isp_Gasto_RegistroConsumoCombustible_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Gasto_RegistroConsumoCombustible_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGastoOperacion _
-                        , .IdRegistroConsumoCombustible _
+                        , .IdRegistroConsumoCombustible
                     )
             End With
             Return True

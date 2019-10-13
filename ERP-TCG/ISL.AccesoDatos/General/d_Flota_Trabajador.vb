@@ -1,4 +1,12 @@
-﻿'Imports System.Transactions
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports System.Transactions
 Imports ISL.EntidadesWCF
 
 Public Class d_Flota_Trabajador
@@ -82,7 +90,6 @@ Public Class d_Flota_Trabajador
     Public Function Guardar(oeFlota_Trabajador As e_Flota_Trabajador) As Boolean
         Try
             'Using transScope As New TransactionScope()
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim IdResultado As String
             With oeFlota_Trabajador
                 IdResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Flota_Trabajador_IAE]" _

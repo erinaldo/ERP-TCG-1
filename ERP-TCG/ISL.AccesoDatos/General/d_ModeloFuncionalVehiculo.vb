@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -105,8 +113,6 @@ Public Class d_ModeloFuncionalVehiculo
     '''Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeModeloFuncionalVehiculo As e_ModeloFuncionalVehiculo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeModeloFuncionalVehiculo
                 sqlhelper.ExecuteNonQuery("[STD].[Isp_ModeloFuncionalVehiculo_IAE]", .TipoOperacion, .PrefijoID _
                         , .Id _

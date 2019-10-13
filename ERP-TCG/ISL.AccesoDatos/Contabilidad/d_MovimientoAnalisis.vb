@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -136,9 +144,8 @@ Public Class d_MovimientoAnalisis
 
     Public Function Guardar(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimientoAnalisis
-                sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoAnalisis_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoAnalisis_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCentroCosto _
                         , .IdItemGasto _
@@ -153,7 +160,7 @@ Public Class d_MovimientoAnalisis
                         , .Monto _
                         , .Saldo _
                         , ._IdMovimientoAnalisis _
-                        , .IdGastoFuncion _
+                        , .IdGastoFuncion
                     )
             End With
             Return True
@@ -171,7 +178,6 @@ Public Class d_MovimientoAnalisis
     ''' <remarks></remarks>
     Public Function GuardarMasivo(ByVal DTAnalisis As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.MovimientoAnalisis", DTAnalisis, False)
             Return True
         Catch ex As Exception
@@ -227,7 +233,6 @@ Public Class d_MovimientoAnalisis
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoAnalisis", PrefijoID
                                   )
@@ -240,9 +245,8 @@ Public Class d_MovimientoAnalisis
 
     Public Function UltimoIdInsertaProrrateo() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoAnalisis", "1SI" _
+            stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoAnalisis", "1SI"
                                   )
             Return IIf(stResultado Is Nothing, "1SI" & "0000000000001", stResultado)
         Catch ex As Exception

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_ZonaCombustible
@@ -33,14 +41,13 @@ Public Class d_ZonaCombustible
     End Function
 
     Public Function Obtener(ByVal oeZonaCombustible As e_ZonaCombustible) As e_ZonaCombustible
-
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_ZonaCombustible_Listar]", _
-                                        oeZonaCombustible.TipoOperacion, _
-                                        oeZonaCombustible.Id, _
-                                        oeZonaCombustible.IdRuta, _
-                                        oeZonaCombustible.IdFlota _
+            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_ZonaCombustible_Listar]",
+                                        oeZonaCombustible.TipoOperacion,
+                                        oeZonaCombustible.Id,
+                                        oeZonaCombustible.IdRuta,
+                                        oeZonaCombustible.IdFlota
                                         )
             If ds.Tables(0).Rows.Count > 0 Then
                 oeZonaCombustible = Cargar(ds.Tables(0).Rows(0))
@@ -81,7 +88,6 @@ Public Class d_ZonaCombustible
     End Function
 
     Public Function Guardar(ByVal oeZonaCombustible As e_ZonaCombustible) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeZonaCombustible
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]",
@@ -107,7 +113,6 @@ Public Class d_ZonaCombustible
 
     Public Function Eliminar(ByVal oeZonaCombustible As e_ZonaCombustible) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.ExecuteNonQuery("[OPE].[Isp_ZonaCombustible_IAE]",
                                         "E" _
                                         , oeZonaCombustible.PrefijoID _

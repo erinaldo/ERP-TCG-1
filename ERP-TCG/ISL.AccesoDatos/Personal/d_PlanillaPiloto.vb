@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -76,11 +84,10 @@ Public Class d_PlanillaPiloto
 
     Public Function Guardar(ByVal oePlanillaPiloto As e_PlanillaPiloto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             Using transScope As New TransactionScope()
                 With oePlanillaPiloto
-                    stResultado = sqlhelper.ExecuteScalar("PER.Isp_PlanillaPiloto_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("PER.Isp_PlanillaPiloto_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdPlanilla _
                             , .IdEstado _
@@ -95,6 +102,7 @@ Public Class d_PlanillaPiloto
                     .Id = stResultado
                     For Each plapildet As e_PlanillaPilotoDet In .listaPlanillaPiloto
                         plapildet.IdPlanillaPiloto = .Id
+                        plapildet.PrefijoID = oePlanillaPiloto.PrefijoID '@0001
                         odPlanillaPilotoDet.Guardar(plapildet)
                     Next
                 End With

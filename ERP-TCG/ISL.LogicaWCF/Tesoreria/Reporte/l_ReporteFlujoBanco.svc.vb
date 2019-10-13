@@ -45,6 +45,7 @@ Public Class l_ReporteFlujoBanco
                     ' Actualizar 
                     Dim _IdFBAux As String = String.Empty
                     Dim _oeRFBAux As New e_ReporteFlujoBanco
+                    _oeRFBAux.PrefijoID = PrefijoID '@0001
                     Dim _leRFB As New List(Of e_ReporteFlujoBanco)
                     Dim _lsCadena As String = ""
                     Dim _lbAdd As Boolean = False
@@ -58,6 +59,7 @@ Public Class l_ReporteFlujoBanco
                             End If
                             _IdFBAux = oe.IdFlujoNuevo
                             _oeRFBAux = New e_ReporteFlujoBanco
+                            _oeRFBAux.PrefijoID = PrefijoID '@0001
                             _lbAdd = True
                             _lsCadena = String.Empty
                             _lsCadena = "'" & oe.Id & "',"

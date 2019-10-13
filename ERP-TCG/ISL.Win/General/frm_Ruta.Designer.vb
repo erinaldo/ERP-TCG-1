@@ -31,38 +31,38 @@ Partial Class frm_Ruta
         Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Flota")
         Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Kilometros")
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Horas")
+        Dim UltraGridColumn178 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HorasSolo")
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn179 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HorasAcompañado")
+        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Horas")
+        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndicadorLocal")
         Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FactorReferencial")
-        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UsuarioModifica")
         Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Destino")
         Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Guardar")
-        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoRuta")
         Dim UltraGridColumn23 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdDistanciaZona")
         Dim UltraGridColumn24 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Cliente")
         Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdActividadNegocio")
         Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdZona")
         Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Distancia")
-        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RDZ")
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("RDZ")
+        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ZonaD2")
         Dim UltraGridColumn177 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantidadTarifas")
-        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn178 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HorasSolo")
-        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn179 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("HorasAcompañado")
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Band 1")
         Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Band 2")
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 972061641)
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 972061642)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 13180110)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 13180111)
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 1", 0)
         Dim UltraGridColumn32 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdRuta")
         Dim UltraGridColumn33 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoVehiculo")
@@ -1114,7 +1114,27 @@ Partial Class frm_Ruta
         UltraGridColumn14.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn14.Width = 50
         Appearance2.TextHAlignAsString = "Right"
-        UltraGridColumn15.CellAppearance = Appearance2
+        UltraGridColumn178.CellAppearance = Appearance2
+        UltraGridColumn178.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        UltraGridColumn178.Header.VisiblePosition = 22
+        UltraGridColumn178.MaskInput = "{LOC}nnnn.nn"
+        UltraGridColumn178.RowLayoutColumnInfo.OriginX = 9
+        UltraGridColumn178.RowLayoutColumnInfo.OriginY = 0
+        UltraGridColumn178.RowLayoutColumnInfo.ParentGroupIndex = 0
+        UltraGridColumn178.RowLayoutColumnInfo.ParentGroupKey = "NewGroup0"
+        UltraGridColumn178.Width = 40
+        Appearance3.TextHAlignAsString = "Right"
+        UltraGridColumn179.CellAppearance = Appearance3
+        UltraGridColumn179.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        UltraGridColumn179.Header.VisiblePosition = 23
+        UltraGridColumn179.MaskInput = "{LOC}nnnn.nn"
+        UltraGridColumn179.RowLayoutColumnInfo.OriginX = 11
+        UltraGridColumn179.RowLayoutColumnInfo.OriginY = 0
+        UltraGridColumn179.RowLayoutColumnInfo.ParentGroupIndex = 0
+        UltraGridColumn179.RowLayoutColumnInfo.ParentGroupKey = "NewGroup0"
+        UltraGridColumn179.Width = 40
+        Appearance4.TextHAlignAsString = "Right"
+        UltraGridColumn15.CellAppearance = Appearance4
         UltraGridColumn15.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn15.Header.VisiblePosition = 8
         UltraGridColumn15.MaskInput = "{LOC}nnn.nn"
@@ -1136,8 +1156,8 @@ Partial Class frm_Ruta
         UltraGridColumn16.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn16.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.CheckBox
         UltraGridColumn16.Width = 30
-        Appearance3.TextHAlignAsString = "Right"
-        UltraGridColumn17.CellAppearance = Appearance3
+        Appearance5.TextHAlignAsString = "Right"
+        UltraGridColumn17.CellAppearance = Appearance5
         UltraGridColumn17.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn17.Header.Caption = "Refer."
         UltraGridColumn17.Header.VisiblePosition = 10
@@ -1168,12 +1188,12 @@ Partial Class frm_Ruta
         UltraGridColumn20.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn20.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn20.Width = 200
-        Appearance4.Image = 3
-        Appearance4.ImageHAlign = Infragistics.Win.HAlign.Center
-        UltraGridColumn21.CellAppearance = Appearance4
-        Appearance5.Image = 1
-        Appearance5.ImageHAlign = Infragistics.Win.HAlign.Center
-        UltraGridColumn21.CellButtonAppearance = Appearance5
+        Appearance6.Image = 3
+        Appearance6.ImageHAlign = Infragistics.Win.HAlign.Center
+        UltraGridColumn21.CellAppearance = Appearance6
+        Appearance7.Image = 1
+        Appearance7.ImageHAlign = Infragistics.Win.HAlign.Center
+        UltraGridColumn21.CellButtonAppearance = Appearance7
         UltraGridColumn21.Header.VisiblePosition = 12
         UltraGridColumn21.RowLayoutColumnInfo.OriginX = 18
         UltraGridColumn21.RowLayoutColumnInfo.OriginY = 0
@@ -1226,8 +1246,8 @@ Partial Class frm_Ruta
         UltraGridColumn26.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn26.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn26.Width = 100
-        Appearance6.TextHAlignAsString = "Right"
-        UltraGridColumn27.CellAppearance = Appearance6
+        Appearance8.TextHAlignAsString = "Right"
+        UltraGridColumn27.CellAppearance = Appearance8
         UltraGridColumn27.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn27.Header.VisiblePosition = 17
         UltraGridColumn27.MaskInput = "{LOC}nnnn.nn"
@@ -1239,12 +1259,12 @@ Partial Class frm_Ruta
         UltraGridColumn27.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn27.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn27.Width = 50
-        Appearance7.Image = 3
-        Appearance7.ImageHAlign = Infragistics.Win.HAlign.Center
-        UltraGridColumn28.CellAppearance = Appearance7
-        Appearance8.Image = 1
-        Appearance8.ImageHAlign = Infragistics.Win.HAlign.Center
-        UltraGridColumn28.CellButtonAppearance = Appearance8
+        Appearance9.Image = 3
+        Appearance9.ImageHAlign = Infragistics.Win.HAlign.Center
+        UltraGridColumn28.CellAppearance = Appearance9
+        Appearance10.Image = 1
+        Appearance10.ImageHAlign = Infragistics.Win.HAlign.Center
+        UltraGridColumn28.CellButtonAppearance = Appearance10
         UltraGridColumn28.Header.VisiblePosition = 18
         UltraGridColumn28.RowLayoutColumnInfo.OriginX = 10
         UltraGridColumn28.RowLayoutColumnInfo.OriginY = 0
@@ -1265,32 +1285,12 @@ Partial Class frm_Ruta
         UltraGridColumn29.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn29.RowLayoutColumnInfo.SpanY = 2
         UltraGridColumn177.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
-        Appearance9.TextHAlignAsString = "Right"
-        UltraGridColumn177.CellAppearance = Appearance9
-        UltraGridColumn177.Header.VisiblePosition = 21
-        Appearance10.TextHAlignAsString = "Right"
-        UltraGridColumn178.CellAppearance = Appearance10
-        UltraGridColumn178.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        UltraGridColumn178.Header.VisiblePosition = 22
-        UltraGridColumn178.MaskInput = "{LOC}nnnn.nn"
-        UltraGridColumn178.RowLayoutColumnInfo.OriginX = 9
-        UltraGridColumn178.RowLayoutColumnInfo.OriginY = 0
-        UltraGridColumn178.RowLayoutColumnInfo.ParentGroupIndex = 0
-        UltraGridColumn178.RowLayoutColumnInfo.ParentGroupKey = "NewGroup0"
-        UltraGridColumn178.Width = 40
         Appearance11.TextHAlignAsString = "Right"
-        UltraGridColumn179.CellAppearance = Appearance11
-        UltraGridColumn179.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        UltraGridColumn179.Header.VisiblePosition = 23
-        UltraGridColumn179.MaskInput = "{LOC}nnnn.nn"
-        UltraGridColumn179.RowLayoutColumnInfo.OriginX = 11
-        UltraGridColumn179.RowLayoutColumnInfo.OriginY = 0
-        UltraGridColumn179.RowLayoutColumnInfo.ParentGroupIndex = 0
-        UltraGridColumn179.RowLayoutColumnInfo.ParentGroupKey = "NewGroup0"
-        UltraGridColumn179.Width = 40
+        UltraGridColumn177.CellAppearance = Appearance11
+        UltraGridColumn177.Header.VisiblePosition = 21
         UltraGridColumn30.Header.VisiblePosition = 24
         UltraGridColumn31.Header.VisiblePosition = 25
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn177, UltraGridColumn178, UltraGridColumn179, UltraGridColumn30, UltraGridColumn31})
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn178, UltraGridColumn179, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn177, UltraGridColumn30, UltraGridColumn31})
         UltraGridGroup1.Header.Caption = "DATOS DE RUTAS"
         UltraGridGroup1.Key = "NewGroup0"
         UltraGridGroup1.RowLayoutGroupInfo.OriginX = 0
@@ -1714,7 +1714,7 @@ Partial Class frm_Ruta
         '
         Me.UltraTabPageControl1.Controls.Add(Me.griTiempoCiclo)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1340, 386)
         '
@@ -3268,7 +3268,7 @@ Partial Class frm_Ruta
         Me.numCruceroP.Location = New System.Drawing.Point(494, 48)
         Me.numCruceroP.MaskInput = "{double:3.2}"
         Me.numCruceroP.MaxValue = 100.0R
-        Me.numCruceroP.MinValue = 0.0R
+        Me.numCruceroP.MinValue = 0R
         Me.numCruceroP.Name = "numCruceroP"
         Me.numCruceroP.Nullable = True
         Me.numCruceroP.NullText = "0.00"
@@ -3385,7 +3385,7 @@ Partial Class frm_Ruta
         Me.numPorcentajeCopi.Location = New System.Drawing.Point(322, 48)
         Me.numPorcentajeCopi.MaskInput = "{double:3.2}"
         Me.numPorcentajeCopi.MaxValue = 100.0R
-        Me.numPorcentajeCopi.MinValue = 0.0R
+        Me.numPorcentajeCopi.MinValue = 0R
         Me.numPorcentajeCopi.Name = "numPorcentajeCopi"
         Me.numPorcentajeCopi.Nullable = True
         Me.numPorcentajeCopi.NullText = "0.00"
@@ -3405,7 +3405,7 @@ Partial Class frm_Ruta
         Me.numPorcentajeAyu.Location = New System.Drawing.Point(322, 71)
         Me.numPorcentajeAyu.MaskInput = "{double:3.2}"
         Me.numPorcentajeAyu.MaxValue = 100.0R
-        Me.numPorcentajeAyu.MinValue = 0.0R
+        Me.numPorcentajeAyu.MinValue = 0R
         Me.numPorcentajeAyu.Name = "numPorcentajeAyu"
         Me.numPorcentajeAyu.Nullable = True
         Me.numPorcentajeAyu.NullText = "0.00"
@@ -3768,7 +3768,7 @@ Partial Class frm_Ruta
         Me.UltraTabPageControl14.Controls.Add(Me.griPeaje)
         Me.UltraTabPageControl14.Controls.Add(Me.tspPeaje)
         Me.UltraTabPageControl14.Controls.Add(Me.UltraGroupBox8)
-        Me.UltraTabPageControl14.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl14.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl14.Name = "UltraTabPageControl14"
         Me.UltraTabPageControl14.Size = New System.Drawing.Size(1340, 386)
         '
@@ -5305,7 +5305,7 @@ Partial Class frm_Ruta
         'UltraTabPageControl7
         '
         Me.UltraTabPageControl7.Controls.Add(Me.ficRutasMatenimiento)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1346, 538)
         '
@@ -5334,7 +5334,7 @@ Partial Class frm_Ruta
         '
         Me.utpDetalle.Controls.Add(Me.agrDetalle)
         Me.utpDetalle.Controls.Add(Me.agrDatoGeneral)
-        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1346, 538)
         '

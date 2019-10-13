@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -669,6 +677,7 @@ Public Class frm_Prestamo
             End If
             oePrestamo.Saldo = decSaldoPenCta.Value
             If oePrestamo.CtaBancaria Is Nothing Then oePrestamo.CtaBancaria = New e_CuentaBancaria
+            oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
             olPrestamo.Guardar(oePrestamo)
             decSaldo.Value = decSaldoPenCta.Value
             ' olPrestamoDetalle.GuardarLista(lePrestamoDetalle)
@@ -1350,6 +1359,7 @@ Public Class frm_Prestamo
             Select Case _opePrest
                 Case "PENDIENTE"
                     RecolectarDatos()
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPrestamo.Guardar(oePrestamo) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         SeleccionaTab(0)
@@ -1368,6 +1378,7 @@ Public Class frm_Prestamo
                     Next
                     If montoDetalle <> oePrestamo.Monto Then Throw New Exception("La suma del importe de cuotas debe ser igual al monto total")
                     '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPrestamo.Guardar(oePrestamo) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         SeleccionaTab(0)
@@ -1383,6 +1394,7 @@ Public Class frm_Prestamo
                     oePrestamo.FechaCancelado = fecAnular.Value
                     oePrestamo.GlosaCancelado = txtGlosa.Value
                     oePrestamo.Cancelado = 1
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olPrestamo.Guardar(oePrestamo) Then
                         mensajeEmergente.Confirmacion("Se ha ANULADO Correctamente el Prestamo en " & Me.Text, True)
                         SeleccionaTab(0)

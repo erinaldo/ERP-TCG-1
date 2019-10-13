@@ -28,6 +28,11 @@ Public Class e_DocumentoSinAsociacion
     Public FechaFin As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
+
     Public Event DatoCambiado()
 
     <DataMember()> _

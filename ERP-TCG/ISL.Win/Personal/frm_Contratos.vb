@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -226,6 +234,7 @@ Public Class frm_Contratos
     Public Function GuardarContrato() As Boolean
         Try
             LlenarObjeto()
+            oeContratos.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratos.Guardar(oeContratos) Then
                 mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente")
             End If
@@ -319,6 +328,7 @@ Public Class frm_Contratos
             oeContratos = New e_Contratos
             oeContratos.TipoOperacion = "V"
             oeContratos.Id = griContratos.ActiveRow.Cells("Id").Value
+            oeContratos.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olContratos.Guardar(oeContratos) Then
                 mensajeEmergente.Confirmacion("La Vigencia ha Sido Cambiada Correctamente")
                 Listar()

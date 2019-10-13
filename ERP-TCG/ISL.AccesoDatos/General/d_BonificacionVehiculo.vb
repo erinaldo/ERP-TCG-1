@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -56,10 +64,9 @@ Public Class d_BonificacionVehiculo
 
     Public Function Guardar(ByVal oeBonificacionVehiculo As e_BonificacionVehiculo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeBonificacionVehiculo
                 sqlhelper.ExecuteNonQuery("STD.Isp_BonificacionVehiculo_IAE" _
-                                              , .TipoOperacion, _
+                                              , .TipoOperacion,
                                               .PrefijoID _
                                             , .Id _
                                             , .IdDocumentoVehicular _
@@ -73,7 +80,7 @@ Public Class d_BonificacionVehiculo
                                             , .PesoEje _
                                             , .FechaCreacion _
                                             , .UsuarioCreacion _
-                                            , .Activo _
+                                            , .Activo
                     )
             End With
             Return True

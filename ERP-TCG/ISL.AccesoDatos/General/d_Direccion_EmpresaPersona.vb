@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -123,9 +131,8 @@ Public Class d_Direccion_EmpresaPersona
 
     Public Function Guardar(ByVal oeDireccion_EmpresaPersona As e_Direccion_EmpresaPersona) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDireccion_EmpresaPersona
-                sqlhelper.ExecuteNonQuery("STD.Isp_Direccion_EmpresaPersona_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Direccion_EmpresaPersona_IAE", .TipoOperacion,
                         .Id _
                         , .oeDireccion.Id _
                         , .TipoPersonaEmpresa _
@@ -133,7 +140,7 @@ Public Class d_Direccion_EmpresaPersona
                         , .Principal _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

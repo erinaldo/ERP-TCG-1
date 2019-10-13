@@ -215,6 +215,7 @@ Public Class frm_ReciboPorHonorario
             decImpRenta.Value = 0
             decTotal.Value = 0
             verImpuestoRenta.Checked = False
+            txtProveedor.Text = gs_TxtEmpresaSistema '@0001
         Catch ex As Exception
             Throw ex
         End Try

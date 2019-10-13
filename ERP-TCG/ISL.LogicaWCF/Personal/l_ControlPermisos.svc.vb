@@ -1,4 +1,10 @@
-﻿' NOTA: si cambia aquí el nombre de clase "l_ControlPermisos", también debe actualizar la referencia a "l_ControlPermisos" tanto en Web.config como en el archivo .svc asociado.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
 
 Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
@@ -62,13 +68,13 @@ Public Class l_ControlPermisos
         End Try
     End Function
 
-    Public Overloads Function GuardarMasivo(loControlPermisos As List(Of e_ControlPermisos)) As Boolean Implements Il_ControlPermisos.GuardarMasivo
+    Public Overloads Function GuardarMasivo(loControlPermisos As List(Of e_ControlPermisos), ByVal PrefijoID As String) As Boolean Implements Il_ControlPermisos.GuardarMasivo
         Try
             odControlPermisos = New d_ControlPermisos
             Dim XML As New StringBuilder
             XML.AppendLine("<DETALLES>")
-            Dim Id As String = odControlPermisos.IdCodigoInsertar(0)
-            Dim Codigo As String = odControlPermisos.IdCodigoInsertar(1)
+            Dim Id As String = odControlPermisos.IdCodigoInsertar(PrefijoID)(0)
+            Dim Codigo As String = odControlPermisos.IdCodigoInsertar(PrefijoID)(1)
             Dim lsPrefijo As String = Left(Id, 3)
             Dim lsNumero As Integer = CInt(Right(Id, Len(Id) - 3))
             Dim lsNumeroCodigo As Integer = CInt(Codigo)

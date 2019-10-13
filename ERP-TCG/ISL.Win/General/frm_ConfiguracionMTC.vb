@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -348,7 +356,7 @@ Public Class frm_ConfiguracionMTC
                     oeConfiguracionMTC.UsuarioCreacion = gUsuarioSGI.Id
                     oeConfiguracionMTC.Activo = True
                 End With
-
+                oeConfiguracionMTC.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olConfiguracionMTC.Guardar(oeConfiguracionMTC) Then mensajeEmergente.Confirmacion(Me.Text & ": La informacion ha sido grabada satisfactoriamente", True)
                 Consultar(True)
                 Return True

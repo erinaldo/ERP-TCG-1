@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -27,11 +35,10 @@ Public Class d_CuentaxPDocumentoRetencion
     Public Function Obtener(ByVal oeCuentaxPDocumentoRetencion As e_CuentaxPDocumentoRetencion) As e_CuentaxPDocumentoRetencion
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CON.Isp_CuentaxPDocumentoRetencion_Listar", "",
             Left(oeCuentaxPDocumentoRetencion.PrefijoID, 1), "", oeCuentaxPDocumentoRetencion.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeCuentaxPDocumentoRetencion = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeCuentaxPDocumentoRetencion
@@ -42,7 +49,6 @@ Public Class d_CuentaxPDocumentoRetencion
 
     Public Function Listar(ByVal oeCuentaxPDocumentoRetencion As e_CuentaxPDocumentoRetencion) As List(Of e_CuentaxPDocumentoRetencion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldCuentaxPDocumentoRetencion As New List(Of e_CuentaxPDocumentoRetencion)
             Dim ds As DataSet
             With oeCuentaxPDocumentoRetencion
@@ -51,7 +57,7 @@ Public Class d_CuentaxPDocumentoRetencion
                         , .Id _
                         , .IdDocumentoRetencion _
                         , .Activo _
-                        , .IdCuentaxCyP _
+                        , .IdCuentaxCyP
                         )
             End With
             oeCuentaxPDocumentoRetencion = Nothing
@@ -69,16 +75,15 @@ Public Class d_CuentaxPDocumentoRetencion
 
     Public Function Guardar(ByVal oeCuentaxPDocumentoRetencion As e_CuentaxPDocumentoRetencion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaxPDocumentoRetencion
-                sqlhelper.ExecuteNonQuery("CON.Isp_CuentaxPDocumentoRetencion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CuentaxPDocumentoRetencion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdDocumentoRetencion _
                         , .Activo _
                         , .IdCuentaxCyP _
                         , .IdMovimientoDocumento _
                         , .UsuarioCrea _
-                        , .UsuarioModifica _
+                        , .UsuarioModifica
                     )
             End With
             Return True

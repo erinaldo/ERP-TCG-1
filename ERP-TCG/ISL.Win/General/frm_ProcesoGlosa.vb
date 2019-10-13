@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports ISL.Controles
 Public Class frm_ProcesoGlosa
@@ -225,6 +233,7 @@ Public Class frm_ProcesoGlosa
                 oeProcesoGlosa.UsuarioCreacion = gUsuarioSGI.Id
                 oeProcesoGlosa.Activo = 1
                 'oeProcesoGlosa.Codigo = fila.Cells("Codigo").Value
+                oeProcesoGlosa.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loProcesoGlosa.Add(oeProcesoGlosa)
                 oeProcesoGlosa = Nothing
             Next
@@ -391,6 +400,7 @@ Public Class frm_ProcesoGlosa
             If griListaGlosa.Rows.Count = 0 Then
                 Listar(True)
             End If
+            oeProcesoGlosa.PrefijoID = gs_PrefijoIdSucursal '@0001
             loProcesoGlosa.Add(oeProcesoGlosa)
             griListaGlosa.DataBind()
         Catch ex As Exception

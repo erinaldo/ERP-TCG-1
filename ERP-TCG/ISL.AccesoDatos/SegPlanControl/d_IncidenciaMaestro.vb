@@ -93,7 +93,6 @@ Public Class d_IncidenciaMaestro
     Public Function Guardar(ByVal oeIncidenciaMaestro As e_IncidenciaMaestro) As Boolean
         'Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 'With oeIncidenciaMaestro
                 '    stResultado = sqlhelper.ExecuteScalar("SPC.Isp_IncidenciaMaestro_IAE", .TipoOperacion, .PrefijoID, _
@@ -135,6 +134,7 @@ Public Class d_IncidenciaMaestro
                 oeAlarma.FechaModifica = Date.Now
                 oeAlarma.leAreaAlarma = New List(Of e_AreaResponsableEvento)
                 oeAlarma.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
+                oeAlarma.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                 odAlarma.Guardar(oeAlarma)
 
                 Dim oeAccidente As New e_AccidenteIncidencia
@@ -156,6 +156,7 @@ Public Class d_IncidenciaMaestro
                 oeAccidente.FechaModifica = Date.Now
                 oeAccidente.leAreaAccidente = New List(Of e_AreaResponsableEvento)
                 oeAccidente.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
+                oeAccidente.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                 odAccidenteIncidencia.Guardar(oeAccidente)
 
                 Dim oeIncidente As New e_Incidente
@@ -175,6 +176,7 @@ Public Class d_IncidenciaMaestro
                 oeIncidente.FechaModifica = Date.Now
                 oeIncidente.leAreaIncidente = New List(Of e_AreaResponsableEvento)
                 oeIncidente.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
+                oeIncidente.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                 odIncidente.Guardar(oeIncidente)
 
                 Dim oeRobo As New e_Robo
@@ -195,6 +197,7 @@ Public Class d_IncidenciaMaestro
                 oeRobo.FechaModifica = Date.Now
                 oeRobo.leAreaRobo = New List(Of e_AreaResponsableEvento)
                 oeRobo.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
+                oeRobo.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                 odRobo.Guardar(oeRobo)
 
                 If oeIncidenciaMaestro.lstAlarma.Count > 0 Then
@@ -202,6 +205,7 @@ Public Class d_IncidenciaMaestro
                         Alarma.IdViaje = oeIncidenciaMaestro.IdViaje
                         Alarma.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
                         Alarma.TipoOperacion = oeIncidenciaMaestro.TipoOperacion
+                        Alarma.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                         odAlarma.Guardar(Alarma)
                     Next
                 End If
@@ -211,6 +215,7 @@ Public Class d_IncidenciaMaestro
                         Accidente.IdViaje = oeIncidenciaMaestro.IdViaje
                         Accidente.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
                         Accidente.TipoOperacion = oeIncidenciaMaestro.TipoOperacion
+                        Accidente.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                         odAccidenteIncidencia.Guardar(Accidente)
                     Next
                 End If
@@ -220,6 +225,7 @@ Public Class d_IncidenciaMaestro
                         Incidente.IdViaje = oeIncidenciaMaestro.IdViaje
                         Incidente.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
                         Incidente.TipoOperacion = oeIncidenciaMaestro.TipoOperacion
+                        Incidente.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                         odIncidente.Guardar(Incidente)
                     Next
                 End If
@@ -229,11 +235,12 @@ Public Class d_IncidenciaMaestro
                         Robo.IdViaje = oeIncidenciaMaestro.IdViaje
                         Robo.UsuarioCreacion = oeIncidenciaMaestro.UsuarioCreacion.Trim
                         Robo.TipoOperacion = oeIncidenciaMaestro.TipoOperacion
+                        Robo.PrefijoID = oeIncidenciaMaestro.PrefijoID '@0001
                         odRobo.Guardar(Robo)
                     Next
                 End If
 
-                
+
 
                 ''If oeIncidenciaMaestro.oeRobo.Count > 0 Then
                 ''    For Each Robo As e_Robo In oeIncidenciaMaestro.oeRobo

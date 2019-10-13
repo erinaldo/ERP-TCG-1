@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 
 Public Class frm_EmpresaAportacion
@@ -97,6 +105,7 @@ Public Class frm_EmpresaAportacion
     Private Function GuardarEmpresa() As Boolean
         Try
             With oeEmpresaAportacion
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
                 .TipoOperacion = "I"
                 .IdEmpresa = IdEmpresa
                 If Me.Agrupacion2.Enabled Then

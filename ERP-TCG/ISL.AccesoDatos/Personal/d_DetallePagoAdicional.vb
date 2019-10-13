@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -102,9 +110,8 @@ Public Class d_DetallePagoAdicional
 
     Public Function Guardar(ByVal oeDetallePagoAdicional As e_DetallePagoAdicional) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetallePagoAdicional
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePagoAdicional_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetallePagoAdicional_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPagoAdicional _
                         , .IdTrabajador _
@@ -124,7 +131,7 @@ Public Class d_DetallePagoAdicional
                         , .UsuarioModifica _
                         , .Activo _
                         , .HorasExtras _
-                        , .MinutosExtras _
+                        , .MinutosExtras
                     )
             End With
             Return True
@@ -136,7 +143,6 @@ Public Class d_DetallePagoAdicional
 
     Public Function GuardarMasivo(ByVal dtDetPA As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.DetallePagoAdicional", dtDetPA)
             Return True
         Catch ex As Exception
@@ -158,7 +164,6 @@ Public Class d_DetallePagoAdicional
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.DetallePagoAdicional", PrefijoID
                                   )

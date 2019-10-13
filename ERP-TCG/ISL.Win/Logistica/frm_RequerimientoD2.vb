@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -939,6 +947,7 @@ Public Class frm_RequerimientoD2
             Else
                 oeRequerimiento.lstRequerimientoServicio = llRequerimientoServicio
             End If
+            oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olRequerimiento.Guardar(oeRequerimiento) Then
                 'If oeRequerimiento.TipoOperacion = "D" Then
                 '    Dim frm As New frm_ImprimirMaterialEntregado
@@ -2451,6 +2460,7 @@ Public Class frm_RequerimientoD2
                         oeReqMat.Id = .ActiveRow.Cells("Id").Value
                         oeReqMat.Glosa = .ActiveRow.Cells("Glosa").Value
                         oeReqMat.Tipooperacion = "G"
+                        oeReqMat.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If odReqMat.Guardar(oeReqMat) Then
                             mensajeEmergente.Confirmacion("Glosa Actualizada")
                         End If
@@ -2473,6 +2483,7 @@ Public Class frm_RequerimientoD2
                         oeReqMat.Id = .ActiveRow.Cells("Id").Value
                         oeReqMat.Glosa = .ActiveRow.Cells("Glosa").Value
                         oeReqMat.Tipooperacion = "G"
+                        oeReqMat.PrefijoID = gs_PrefijoIdSucursal
                         If odReqMat.Guardar(oeReqMat) Then
                             mensajeEmergente.Confirmacion("Glosa Actualizada")
                         End If

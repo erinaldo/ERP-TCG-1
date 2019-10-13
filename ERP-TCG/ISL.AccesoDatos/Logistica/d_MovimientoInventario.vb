@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que se encarga de gestionar los movimientos de inventario en almacen.
 ''' Fecha de Actualizacion:31/10/2011
@@ -108,18 +116,15 @@ Public Class d_MovimientoInventario
 
     Public Function Guardar(ByVal oeMovimientoInventario As e_MovimientoInventario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeMovimientoInventario
-                sqlhelper.ExecuteNonQuery("ALM.Isp_MovimientoInventario_IAE", _
-                                          .TipoOperacion, _
-                                          d_DatosConfiguracion. _
-                                          PrefijoID, _
-                                          .Id, _
-                                          .Codigo, _
-                                          .Nombre, _
-                                          .Abreviatura, _
-                                          .Activo, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_MovimientoInventario_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .Codigo,
+                                          .Nombre,
+                                          .Abreviatura,
+                                          .Activo,
                                           .IdTipoMovimientoInventario)
                 Return True
             End With

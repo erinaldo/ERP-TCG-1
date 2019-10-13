@@ -7,6 +7,10 @@ Public Class e_RecargaPeaje
     <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
+    <DataMember()>
     Public TipoOperacion As String
     <DataMember()>
     Public Property Seleccion As Boolean

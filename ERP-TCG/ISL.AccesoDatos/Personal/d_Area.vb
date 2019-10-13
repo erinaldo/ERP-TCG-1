@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,10 +85,8 @@ Public Class d_Area
 
     Public Function Guardar(ByVal oeArea As e_Area) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeArea
-                SqlHelper.ExecuteNonQuery("PER.Isp_Area_IAE", .TipoOperacion, _
+                SqlHelper.ExecuteNonQuery("PER.Isp_Area_IAE", .TipoOperacion,
                         .Id _
                         , .Codigo _
                         , .Nombre _
@@ -91,7 +97,7 @@ Public Class d_Area
                         , .UsuarioCreacion _
                         , .PrefijoID _
                         , .IsGerencia _
-                        , .IdGerencia _
+                        , .IdGerencia
                     )
             End With
             Return True

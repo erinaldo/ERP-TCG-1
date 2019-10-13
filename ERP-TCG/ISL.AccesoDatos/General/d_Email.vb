@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -60,7 +68,6 @@ Public Class d_Email
     ''' <returns>Devuelve una varible oeEmail de tipo e_Email</returns>
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeEmail As e_Email) As e_Email
-
         Try
             Dim ds As DataSet
             With oeEmail
@@ -126,8 +133,6 @@ Public Class d_Email
     ''' registro del email es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeEmail As e_Email) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeEmail
                 sqlhelper.ExecuteNonQuery("STD.Isp_Email_IAE", .TipoOperacion _
                         , .Id _
@@ -137,7 +142,7 @@ Public Class d_Email
                         , .Nombre _
                          , .UsuarioCreacion _
                         , .Activo _
-                       , .PrefijoID _
+                       , .PrefijoID
                     )
             End With
             Return True

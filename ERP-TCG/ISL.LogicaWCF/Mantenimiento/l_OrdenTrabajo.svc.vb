@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 
@@ -65,6 +73,7 @@ Public Class l_OrdenTrabajo
                                 leRequerimiento = New List(Of e_Requerimiento)
                                 leReqAux = New List(Of e_Requerimiento)
                                 oeRequerimiento = New e_Requerimiento
+                                oeRequerimiento.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                 oeRequerimiento.TipoOperacion = "3"
                                 oeRequerimiento.TipoReferencia = "ORDEN TRABAJO"
                                 oeRequerimiento.IdReferencia = .Id
@@ -73,6 +82,7 @@ Public Class l_OrdenTrabajo
                                 If leRequerimiento.Count > 0 Then
                                     oeRequerimiento = New e_Requerimiento
                                     oeRequerimiento = leRequerimiento(0)
+                                    oeRequerimiento.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                     .lstRequerimiento.Add(oeRequerimiento)
                                     band = False
                                 Else
@@ -85,6 +95,7 @@ Public Class l_OrdenTrabajo
                                     _cantaux = _cantmataux - _cantentaux
                                     If _cantaux > 0 Then
                                         oeRequerimiento = New e_Requerimiento
+                                        oeRequerimiento.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                         oeRequerimiento.TipoOperacion = "N"
                                         oeRequerimiento.TipoReferencia = "ORDEN TRABAJO"
                                         oeRequerimiento.IdReferencia = .Id
@@ -103,6 +114,7 @@ Public Class l_OrdenTrabajo
                             If String.IsNullOrEmpty(oeOTMaterial.Id) Then
                                 'Insertar nuevo material
                                 oeReqMaterial = New e_RequerimientoMaterial
+                                oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                 oeReqMaterial.Tipooperacion = "I"
                                 oeReqMaterial.IdRequerimiento = oeRequerimiento.Id
                                 oeReqMaterial.IdMantenimiento = oeOTMaterial.IdMantenimiento
@@ -121,12 +133,14 @@ Public Class l_OrdenTrabajo
                                 oeReqMaterial.IdEstadoRequerimientoMaterial = "1CH000000006"
                                 oeReqMaterial.IndicadorAprobacion = True
                                 oeOTMaterial.oeReqMaterial = New e_RequerimientoMaterial
+                                oeOTMaterial.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                 oeOTMaterial.oeReqMaterial = oeReqMaterial
                             Else
                                 'Actualizar material
                                 _cant = oeOTMaterial.CantidadMaterial - oeOTMaterial.CantidadMaterialEntregada
                                 If _cant > 0 Then
                                     oeReqMaterial = New e_RequerimientoMaterial
+                                    oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                     If band = True Then
                                         'Si no tiene ningun requerimiento por atender
                                         oeReqMaterial.Tipooperacion = "I"
@@ -145,6 +159,7 @@ Public Class l_OrdenTrabajo
                                         oeReqMaterial.CantidadPorRegularizar = 0
                                         oeReqMaterial.IdEstadoRequerimientoMaterial = "1CH000000006"
                                         oeOTMaterial.oeReqMaterial = New e_RequerimientoMaterial
+                                        oeOTMaterial.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                         oeOTMaterial.oeReqMaterial = oeReqMaterial
                                     Else
                                         'Si tiene un requerimiento por atender
@@ -161,6 +176,7 @@ Public Class l_OrdenTrabajo
                                             _idrm = leReqMatAux(0).Id
                                             _cantreqaux = leReqMatAux(0).Cantidad
                                             oeReqMaterial = New e_RequerimientoMaterial
+                                            oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                             oeReqMaterial.Tipooperacion = "N"
                                             oeReqMaterial.Id = _idrm
                                             oeReqMaterial.Activo = 1
@@ -169,10 +185,12 @@ Public Class l_OrdenTrabajo
                                             oeReqMaterial.CantidadPorAtender = _cant
                                             oeReqMaterial.IdMantenimiento = oeOTMaterial.IdMantenimiento
                                             oeOTMaterial.oeReqMaterial = New e_RequerimientoMaterial
+                                            oeOTMaterial.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                             oeOTMaterial.oeReqMaterial = oeReqMaterial
                                         Else
                                             'Si no tiene un requerimiento material por atender
                                             oeReqMaterial = New e_RequerimientoMaterial
+                                            oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                             oeReqMaterial.Tipooperacion = "I"
                                             oeReqMaterial.IdRequerimiento = oeRequerimiento.Id
                                             oeReqMaterial.IdMantenimiento = oeOTMaterial.IdMantenimiento
@@ -189,6 +207,7 @@ Public Class l_OrdenTrabajo
                                             oeReqMaterial.CantidadPorRegularizar = 0
                                             oeReqMaterial.IdEstadoRequerimientoMaterial = "1CH000000006"
                                             oeOTMaterial.oeReqMaterial = New e_RequerimientoMaterial
+                                            oeOTMaterial.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                             oeOTMaterial.oeReqMaterial = oeReqMaterial
                                         End If
                                     End If
@@ -197,6 +216,7 @@ Public Class l_OrdenTrabajo
                                         _idrm = ""
                                         _cantreqaux = 0
                                         oeReqMaterial = New e_RequerimientoMaterial
+                                        oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                         oeReqMaterial.Tipooperacion = "5"
                                         oeReqMaterial.IdMaterial = oeOTMaterial.IdMaterial
                                         oeReqMaterial.IdRequerimiento = oeRequerimiento.Id
@@ -209,6 +229,7 @@ Public Class l_OrdenTrabajo
                                             Dim _nvocant = _cantreqaux + (oeOTMaterial.CantidadMaterial - oeOTMaterial.CantAux)
                                             If _nvocant > 0 Then
                                                 oeReqMaterial = New e_RequerimientoMaterial
+                                                oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                                 oeReqMaterial.Tipooperacion = "N"
                                                 oeReqMaterial.Id = _idrm
                                                 oeReqMaterial.Activo = 1
@@ -217,6 +238,7 @@ Public Class l_OrdenTrabajo
                                                 oeReqMaterial.CantidadPorAtender = _cant
                                                 oeReqMaterial.IdMantenimiento = oeOTMaterial.IdMantenimiento
                                                 oeOTMaterial.oeReqMaterial = New e_RequerimientoMaterial
+                                                oeOTMaterial.oeReqMaterial.PrefijoID = oeOrdenTrabajo.PrefijoID '@0001
                                                 oeOTMaterial.oeReqMaterial = oeReqMaterial
                                             End If
                                         End If

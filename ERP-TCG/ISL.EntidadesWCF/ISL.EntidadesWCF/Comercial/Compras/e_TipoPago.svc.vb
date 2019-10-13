@@ -23,6 +23,10 @@ Public Class e_TipoPago
     Public TipoClienteProveedor As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
 #End Region

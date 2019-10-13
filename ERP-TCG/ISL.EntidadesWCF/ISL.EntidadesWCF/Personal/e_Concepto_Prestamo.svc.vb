@@ -24,6 +24,10 @@ Public Class e_Concepto_Prestamo
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public leConceptoSancion As List(Of e_Concepto_Prestamo)
 

@@ -1,10 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Data.SqlClient
 Imports System.Configuration
 Public Class d_ProgramacionPago
     Private sqlhelper As New SqlHelper
-    Private oeProgramacionPago As e_ProgramacionPago
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+    Private oeProgramacionPago As New e_ProgramacionPago
 
     Public Function Cargar(ByVal o_fila As DataRow) As e_ProgramacionPago
         Try
@@ -39,8 +46,8 @@ Public Class d_ProgramacionPago
     Public Function Guardar(ByVal oeProgramacionPago As e_ProgramacionPago) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_MovDoc As d_MovimientoDocumento
-            Dim d_DetProgPago As d_DetalleProgramacionPago
+            Dim d_MovDoc As New d_MovimientoDocumento
+            Dim d_DetProgPago As New d_DetalleProgramacionPago
             With oeProgramacionPago
                 stResultado = sqlhelper.ExecuteScalar("[TES].[sp_ProgramacionPago_IAE]", .TipoOperacion, _
                          .PrefijoID, _
@@ -60,12 +67,14 @@ Public Class d_ProgramacionPago
                     For Each Fm As e_MovimientoDocumento In .lst_MovimientoDocumento.ToList
                         d_MovDoc = New d_MovimientoDocumento
                         Dim e_MovDoc As New e_MovimientoDocumento
+                        e_MovDoc.PrefijoID = oeProgramacionPago.PrefijoID '@0001
                         e_MovDoc = Fm
                         d_MovDoc.ActualizarEstadoPago(e_MovDoc)
                     Next
                     For Each Fd As e_DetalleProgramacionPago In .lst_DetalleProgPago.ToList
                         d_DetProgPago = New d_DetalleProgramacionPago
                         Dim e_DetProgPago As New e_DetalleProgramacionPago
+                        e_DetProgPago.PrefijoID = oeProgramacionPago.PrefijoID '@0001
                         e_DetProgPago = Fd
                         If .TipoOperacion = "I" Then e_DetProgPago.IdProgramacionPago = id
                         d_DetProgPago.Guardar(e_DetProgPago)

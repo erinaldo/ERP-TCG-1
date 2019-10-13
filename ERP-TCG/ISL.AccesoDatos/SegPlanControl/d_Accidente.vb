@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -59,7 +67,6 @@ Public Class d_Accidente
 
     Public Function Guardar(ByVal oeAccidente As e_Accidente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Dim odAccidenteMaterial As New d_AccidenteMaterial
             Dim odAccidenteVehiculo As New d_AccidenteVehiculo
@@ -68,29 +75,34 @@ Public Class d_Accidente
             Dim odAccidenteFoto As New d_AccidenteFoto
             Using transcope As New TransactionScope
                 With oeAccidente
-                    id = sqlhelper.ExecuteScalar("SPC.Isp_Accidente_IAE", .TipoOperacion, _
+                    id = sqlhelper.ExecuteScalar("SPC.Isp_Accidente_IAE", .TipoOperacion,
                     .PrefijoID, .Id, .Fecha, .Hora, .IdTipoAccidente, .Lugar, .Detalle)
                     For Each acctra As e_AccidentePersona In .loTrabajadoresAccidentados
+                        acctra.PrefijoID = oeAccidente.PrefijoID '@0001
                         If acctra.TipoOperacion = "" Then acctra.TipoOperacion = .TipoOperacion
                         acctra.IdAccidente = id
                         odAccidenteTrabajador.Guardar(acctra)
                     Next
                     For Each accequ As e_AccidenteVehiculo In .loEquiposAccidentados
+                        accequ.PrefijoID = oeAccidente.PrefijoID '@0001
                         If accequ.TipoOperacion = "" Then accequ.TipoOperacion = .TipoOperacion
                         accequ.IdAccidente = id
                         odAccidenteVehiculo.Guardar(accequ)
                     Next
                     For Each accmat As e_AccidenteMaterial In .loMaterialesAccidentados
+                        accmat.PrefijoID = oeAccidente.PrefijoID '@0001
                         If accmat.TipoOperacion = "" Then accmat.TipoOperacion = .TipoOperacion
                         accmat.IdAccidente = id
                         odAccidenteMaterial.Guardar(accmat)
                     Next
                     For Each acccar As e_AccidenteCarga In .loCargaAccidentados
+                        acccar.PrefijoID = oeAccidente.PrefijoID '@0001
                         If acccar.TipoOperacion = "" Then acccar.TipoOperacion = .TipoOperacion
                         acccar.IdAccidente = id
                         odAccidenteCarga.Guardar(acccar)
                     Next
                     For Each accfot As e_AccidenteFoto In .loFotosAccidentados
+                        accfot.PrefijoID = oeAccidente.PrefijoID '@0001
                         If accfot.TipoOperacion = "" Then accfot.TipoOperacion = .TipoOperacion
                         accfot.IdAccidente = id
                         odAccidenteFoto.Guardar(accfot)

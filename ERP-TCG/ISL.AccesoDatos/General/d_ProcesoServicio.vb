@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -37,7 +45,6 @@ Public Class d_ProcesoServicio
     End Function
 
     Public Function Obtener(ByVal oeProcesoServicio As e_ProcesoServicio) As e_ProcesoServicio
-
         Try
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("STD.Isp_ProcesoServicio_Listar", oeProcesoServicio.TipoOperacion _
@@ -76,13 +83,12 @@ Public Class d_ProcesoServicio
 
     Public Function Guardar(ByVal oeProcesoServicio As e_ProcesoServicio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeProcesoServicio
-                sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoServicio_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoServicio_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdServicio _
                         , .IdProcesoNegocio _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

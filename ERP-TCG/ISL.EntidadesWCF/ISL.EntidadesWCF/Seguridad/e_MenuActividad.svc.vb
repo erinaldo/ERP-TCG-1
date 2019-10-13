@@ -43,6 +43,10 @@ Public Class e_MenuActividad
     Public leSubMenu As New List(Of e_MenuActividad)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Private _menuproceso As String
 
 #End Region

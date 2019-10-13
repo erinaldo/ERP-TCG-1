@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -954,6 +962,7 @@ Public Class frm_OrdenAsignacion
                 oeMaterial_Almacen.StockMaximo = 1
                 oeMaterial_Almacen.IdZona = ""
                 oeMaterial_Almacen.UsuarioCreacion = gUsuarioSGI.Id
+                oeMaterial_Almacen.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lstMaterialesAlmacen.Add(oeMaterial_Almacen)
             Next
             olMaterialAlmacen.Guardar(lstMaterialesAlmacen)
@@ -1008,6 +1017,7 @@ Public Class frm_OrdenAsignacion
                 oeSubAlmacenIngreso.TipoOperacion = "I"
                 oeSubAlmacenIngreso.Codigo = ""
                 oeSubAlmacenIngreso.UsuarioCreacion = gUsuarioSGI.Id
+                oeSubAlmacenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olSubAlmacen.Guardar(oeSubAlmacenIngreso)
             End If
         Catch ex As Exception
@@ -1046,6 +1056,7 @@ Public Class frm_OrdenAsignacion
                 oeRequerimiento.IdEstadoRequerimiento = oeEstadoRequerimiento.Id
                 oeRequerimiento.lstRequerimientoMaterial = TransponerDetalleMaterialRequerimiento(oeRequerimiento)
                 Verificar_SubAlmacen(item.IndUnidadAsignacion, oeRequerimiento)
+                oeRequerimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lstRequerimiento.Add(oeRequerimiento)
             Next
             olRequerimiento.GuardarLista(lstRequerimiento)
@@ -1118,11 +1129,13 @@ Public Class frm_OrdenAsignacion
                 cantTotalAtender = 1
             End If
             If VerificarCambios(oeOrdenAsignacion.Id) Then Throw New Exception("Orden Actualizada Verificar")
+            oeOrdenAsignacion.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olOrdenAsignacion.Guardar(oeOrdenAsignacion) Then Return False
             Select Case oeOrdenAsignacion.TipoOperacion
                 Case "I"
                     mensajeEmergente.Confirmacion("La información se grabado satisfactoriamente se genero la OA N°: " & oeOrdenAsignacion.NroOA, True)
                 Case "A"
+                    oeUnidadAsignada.PrefijoID = gs_PrefijoIdSucursal '@0001
                     GuardarAlmacen(oeUnidadAsignada.IndUnidadAsignacion, False)
                     Verificar_MaterialAlmacen(oeOrdenAsignacion.lstUnidadAsignadaMat)
                     mensajeEmergente.Confirmacion("La información se actualizo satisfactoriamente.", True)
@@ -1280,6 +1293,7 @@ Public Class frm_OrdenAsignacion
                                     oeOrdenIngreso.TipoReferencia = "ORDEN ASIGNACION"
                                     oeOrdenIngreso.Referencia = oeOrdenAsignacion.NroOA
                                     oeOrdenIngreso.UsuarioCreacion = gUsuarioSGI.Id
+                                    oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     If olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario)) Then mensajeEmergente.Confirmacion("Devolucion Generada", True)
                                 End If
                             Else

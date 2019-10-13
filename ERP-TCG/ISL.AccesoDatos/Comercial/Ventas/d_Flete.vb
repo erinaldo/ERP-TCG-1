@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 ''' <summary>
 ''' Clase que gestiona el flete de la empresa
@@ -116,7 +124,6 @@ Public Class d_Flete
     ''' del flete es positiva= true sino false 
     '''Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeFlete As e_Flete) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeFlete
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_Flete_IAE]",

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Public Class d_ProcesoFlujoCaja
     Private sqlhelper As New SqlHelper
@@ -20,13 +28,10 @@ Public Class d_ProcesoFlujoCaja
     End Function
 
     Public Function Obtener(ByVal oeProcesoFlujoCaja As e_ProcesoFlujoCaja) As e_ProcesoFlujoCaja
-
         Try
-
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("STD.Isp_ProcesoFlujoCaja_Listar", "", oeProcesoFlujoCaja.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeProcesoFlujoCaja = Cargar(ds.Tables(0).Rows(0))
             End If
 
@@ -50,7 +55,6 @@ Public Class d_ProcesoFlujoCaja
 
     Public Function Listar(ByVal oeProcesoFlujoCaja As e_ProcesoFlujoCaja) As List(Of e_ProcesoFlujoCaja)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldProcesoFlujoCaja As New List(Of e_ProcesoFlujoCaja)
             Dim ds As DataSet
             With oeProcesoFlujoCaja
@@ -58,7 +62,7 @@ Public Class d_ProcesoFlujoCaja
                         , .Id _
                         , .IdProcesoNegocio _
                         , .IdFlujoCaja _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeProcesoFlujoCaja = Nothing
@@ -77,16 +81,15 @@ Public Class d_ProcesoFlujoCaja
     Public Function Guardar(ByVal oeProcesoFlujoCaja As e_ProcesoFlujoCaja) As Boolean
         Try
             Using TransScope As New TransactionScope
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
                 For Each Lista As e_ProcesoFlujoCaja In oeProcesoFlujoCaja.ListaProcesoFlujoCaja
                     If oeProcesoFlujoCaja.ListaProcesoFlujoCaja IsNot Nothing Then
+                        Lista.PrefijoID = oeProcesoFlujoCaja.PrefijoID '@0001
                         With Lista
-                            sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoFlujoCaja_IAE", .TipoOperacion, .PrefijoID, _
+                            sqlhelper.ExecuteNonQuery("STD.Isp_ProcesoFlujoCaja_IAE", .TipoOperacion, .PrefijoID,
                                     .Id _
                                     , .IdProcesoNegocio _
                                     , .IdFlujoCaja _
-                                    , .Activo _
+                                    , .Activo
                                 )
                         End With
                     End If

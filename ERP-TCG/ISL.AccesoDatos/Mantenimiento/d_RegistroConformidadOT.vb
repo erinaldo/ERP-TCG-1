@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -26,7 +34,6 @@ Public Class d_RegistroConformidadOT
     Public Function Obtener(ByVal oeRegistroConformidadOT As e_RegistroConformidadOT) As e_RegistroConformidadOT
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("MAN.Isp_RegistroConformidadOT_Listar", "",
             Left(oeRegistroConformidadOT.PrefijoID, 1), "", oeRegistroConformidadOT.Id)
@@ -42,7 +49,6 @@ Public Class d_RegistroConformidadOT
 
     Public Function Listar(ByVal oeRegistroConformidadOT As e_RegistroConformidadOT) As List(Of e_RegistroConformidadOT)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldRegistroConformidadOT As New List(Of e_RegistroConformidadOT)
             Dim ds As DataSet
             With oeRegistroConformidadOT
@@ -52,7 +58,7 @@ Public Class d_RegistroConformidadOT
                         , .FechaInicio _
                         , .FechaFin _
                         , .Activo _
-                        , .UsuarioConfirmo _
+                        , .UsuarioConfirmo
                         )
             End With
             oeRegistroConformidadOT = Nothing
@@ -70,23 +76,23 @@ Public Class d_RegistroConformidadOT
 
     Public Function Guardar(ByVal oeRegistroConformidadOT As e_RegistroConformidadOT) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeRegistroConformidadOT
-                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_RegistroConformidadOT_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_RegistroConformidadOT_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Indicador _
                             , .Glosa _
                             , .FechaConfirmo _
                             , .UsuarioConfirmo _
-                            , .Activo _
+                            , .Activo
                         ).ToString.Split("_")
 
                     For Each Detalle As e_DetalleRegConformidadOT In .lstDetalleRegConformidadOT
                         Detalle.IdRegConformidadOT = stResultado(0)
                         Detalle.UsuarioCreacion = .UsuarioConfirmo
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeRegistroConformidadOT.PrefijoID '@0001
                         odDetalleRegConformidadOT.Guardar(Detalle)
                     Next
                 End With

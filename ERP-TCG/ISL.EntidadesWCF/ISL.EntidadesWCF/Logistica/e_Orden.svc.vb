@@ -45,6 +45,10 @@ Public Class e_Orden
     Public TipoOperDocAsoc As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public lstOrdenMaterial As New List(Of e_OrdenMaterial)
     <DataMember()> _

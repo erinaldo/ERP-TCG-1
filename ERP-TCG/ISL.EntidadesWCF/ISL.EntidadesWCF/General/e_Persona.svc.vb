@@ -30,6 +30,10 @@ Public Class e_Persona
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oeClienteProveedor As New e_ClienteProveedor
     <DataMember()> _

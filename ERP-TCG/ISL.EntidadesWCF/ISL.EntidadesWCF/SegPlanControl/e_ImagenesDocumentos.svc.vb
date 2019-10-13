@@ -32,6 +32,10 @@ Public Class e_ImagenesDocumentos
     Public Identificador As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     '<DataMember()> _
     'Public ListaDetalle As New List(Of e_DocumentoVehiculoDetalle)
     <DataMember()> _

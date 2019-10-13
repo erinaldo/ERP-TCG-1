@@ -76,6 +76,10 @@ Public Class e_Demanda
     Public Proceso As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public oeDetalleDemanda As New List(Of e_DemandaDetalle)
     <DataMember()> _

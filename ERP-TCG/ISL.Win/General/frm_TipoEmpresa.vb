@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_TipoEmpresa
@@ -127,6 +135,7 @@ Public Class frm_TipoEmpresa
     Private Function GuardarRegistro() As Boolean
         Try
             oeTipoEmpresa.UsuarioCreacion = gUsuarioSGI.Id
+            oeTipoEmpresa.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olTipoEmpresa.Guardar(oeTipoEmpresa) Then
                 Return False
             End If

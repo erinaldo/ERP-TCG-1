@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -119,10 +127,9 @@ Public Class d_Planilla
 
     Public Function Guardar(ByVal oePlanilla As e_Planilla) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _id As String = ""
             With oePlanilla
-                _id = sqlhelper.ExecuteScalar("PER.Isp_Planilla_IAE", .TipoOperacion, .PrefijoID, _
+                _id = sqlhelper.ExecuteScalar("PER.Isp_Planilla_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPeriodo _
                         , .IdConfiguracion _
@@ -136,7 +143,7 @@ Public Class d_Planilla
                         , .UsuarioCreacion _
                         , .FechaModifica _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
 
                 If .dsDetalle IsNot Nothing AndAlso .dsDetalle.Rows.Count > 0 Then
@@ -155,6 +162,7 @@ Public Class d_Planilla
                     For Each oeDetPla In _leDetAux
                         oeDetPla.IdPlanilla = _id
                         oeDetPla.UsuarioModifica = .UsuarioModifica
+                        oeDetPla.PrefijoID = oePlanilla.PrefijoID '@0001
                         If oeDetPla.TipoOperacion = "E" Then
                             odDetallePla.Eliminar(oeDetPla)
                         Else
@@ -166,7 +174,7 @@ Public Class d_Planilla
                 'For Each oeDetCon In .leDetalleConcepto
                 '    oeDetCon.Id
                 'Next
-                
+
             End With
             Return True
         Catch ex As Exception

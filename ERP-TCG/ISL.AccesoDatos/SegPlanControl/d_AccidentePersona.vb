@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 ''' <summary>
 ''' Clase que se encarga de gestionar los Accidentes asociados a personas y/o trabajadores de la empresa
@@ -13,7 +21,7 @@ Public Class d_AccidentePersona
 
     Private sqlhelper As New SqlHelper
 
-    Private oeAccidentePersona As e_AccidentePersona
+    Private oeAccidentePersona As New e_AccidentePersona
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_AccidentePersona
         Try
@@ -124,10 +132,8 @@ Public Class d_AccidentePersona
     ''' <remarks>Este método genera una lista de Accidentes, a partir del objeto <see cref="e_Accidente"/><seealso cref="e_Empresa"/> que se pasa como parámetro</remarks>
     Public Function Guardar(ByVal oeAccidentePersona As e_AccidentePersona) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeAccidentePersona
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Persona_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Persona_IAE", .TipoOperacion,
                 .PrefijoID, .Id, .IdAccidente, .IdTrabajador, .Detalle, .Observacion)
             End With
             Return True

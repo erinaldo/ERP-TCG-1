@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que gestiona las diversas situaciones administrativas del personal o empleados de la empresa
 ''' Fecha de Actualizacion:05/12/2011
@@ -127,11 +135,10 @@ Public Class d_SituacionAdministrativa
     ''' SituacionAdministrativa es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSituacionAdministrativa
-                sqlhelper.ExecuteNonQuery("PER.Isp_SituacionAdministrativa_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_SituacionAdministrativa_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                         .Id _
                                         , .Codigo _
                                         , .Nombre _

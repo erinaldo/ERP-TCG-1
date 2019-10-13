@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que se encarga de gestionar los tipos de material en almacen.
 ''' Fecha de Actualizacion:31/10/2011
@@ -98,16 +106,14 @@ Public Class d_TipoOrden
 
     Public Function Guardar(ByVal oeTipoOrden As e_TipoOrden) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeTipoOrden
-                sqlhelper.ExecuteNonQuery("STD.Isp_TipoOrden_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .Codigo, _
-                                          .Nombre, _
-                                          .Abreviatura, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_TipoOrden_IAE",
+                                          .TipOoperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .Codigo,
+                                          .Nombre,
+                                          .Abreviatura,
                                           .Activo)
             End With
             Return True

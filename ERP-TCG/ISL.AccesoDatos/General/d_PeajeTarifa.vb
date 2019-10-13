@@ -1,6 +1,14 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Public Class d_PeajeTarifa
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_PeajeTarifa
         Try
@@ -25,10 +33,9 @@ Public Class d_PeajeTarifa
 
     Public Function Obtener(oePeajeTarifa As e_PeajeTarifa) As e_PeajeTarifa
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_PeajeTarifa_Listar", _
-                                          "GEN", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_PeajeTarifa_Listar",
+                                          "GEN",
                                           oePeajeTarifa.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oePeajeTarifa = Cargar(ds.Tables(0).Rows(0))
@@ -43,11 +50,10 @@ Public Class d_PeajeTarifa
 
     Public Function Listar(oePeajeTarifa As e_PeajeTarifa) As List(Of e_PeajeTarifa)
         Try
-            sqlhelper = New SqlHelper
             Dim ldPeajeTarifa As New List(Of e_PeajeTarifa)
             Dim ds As DataSet
             With oePeajeTarifa
-                ds = sqlhelper.ExecuteDataset("STD.Isp_PeajeTarifa_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_PeajeTarifa_Listar",
                                                 .TipoOperacion _
                                                 , .Id _
                                                 , .IdPeaje _
@@ -70,10 +76,8 @@ Public Class d_PeajeTarifa
 
     Public Function Guardar(ByVal oePeajeTarifa As e_PeajeTarifa) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oePeajeTarifa
-                sqlhelper.ExecuteScalar("STD.Isp_PeajeTarifa_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_PeajeTarifa_IAE",
                                           .TipoOperacion _
                                             , .PrefijoID _
                                             , .Id _
@@ -93,9 +97,8 @@ Public Class d_PeajeTarifa
 
     Public Function Eliminar(ByVal oePeajeTarifa As e_PeajeTarifa) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oePeajeTarifa
-                sqlhelper.ExecuteScalar("STD.Isp_PeajeTarifa_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_PeajeTarifa_IAE",
                                           "E" _
                                             , "" _
                                             , .Id _

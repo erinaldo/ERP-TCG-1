@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_ProcesoServicio
@@ -229,6 +237,7 @@ Public Class frm_ProcesoServicio
 
     Private Function Guardando() As Boolean
         Try
+            oeProcesoServicio.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olProcesoServicio.Guardar(oeProcesoServicio) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficConceptosGenerales, 2)

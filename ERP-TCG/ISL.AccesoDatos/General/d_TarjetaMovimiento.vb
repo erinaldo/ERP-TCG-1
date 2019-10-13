@@ -1,6 +1,14 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Public Class d_TarjetaMovimiento
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_TarjetaMovimiento
         Try
@@ -33,11 +41,10 @@ Public Class d_TarjetaMovimiento
 
     Public Function Obtener(oeTarjetaMovimiento As e_TarjetaMovimiento) As e_TarjetaMovimiento
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_TarjetaMovimiento_Listar", _
-                                          "GEN", _
-                                          oeTarjetaMovimiento.Id, _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_TarjetaMovimiento_Listar",
+                                          "GEN",
+                                          oeTarjetaMovimiento.Id,
                                           oeTarjetaMovimiento.NroTarjeta)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeTarjetaMovimiento = Cargar(ds.Tables(0).Rows(0))
@@ -52,11 +59,10 @@ Public Class d_TarjetaMovimiento
 
     Public Function Listar(oeTarjetaMovimiento As e_TarjetaMovimiento) As List(Of e_TarjetaMovimiento)
         Try
-            sqlhelper = New SqlHelper
             Dim ldPeajeTarifa As New List(Of e_TarjetaMovimiento)
             Dim ds As DataSet
             With oeTarjetaMovimiento
-                ds = sqlhelper.ExecuteDataset("STD.Isp_TarjetaMovimiento_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_TarjetaMovimiento_Listar",
                                                 .TipoOperacion _
                                                 , .Id _
                                                 , .NroTarjeta _
@@ -83,8 +89,6 @@ Public Class d_TarjetaMovimiento
 
     Public Function GuardarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
                                       "M" _
                                         , PrefijoID _

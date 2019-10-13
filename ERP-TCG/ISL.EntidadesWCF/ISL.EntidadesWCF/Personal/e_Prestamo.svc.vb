@@ -43,6 +43,10 @@ Public Class e_Prestamo
     Public Equivale As Integer
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public leDetalle As New List(Of e_PrestamoDetalle)
     <DataMember()> _

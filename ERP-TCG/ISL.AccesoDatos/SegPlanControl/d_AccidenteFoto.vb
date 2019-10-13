@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -55,11 +63,10 @@ Public Class d_AccidenteFoto
 
     Public Function Guardar(ByVal oeAccidenteFoto As e_AccidenteFoto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ms As New IO.MemoryStream
             With oeAccidenteFoto
                 .Foto.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
-                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Foto_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_Accidente_Foto_IAE", .TipoOperacion, .PrefijoID,
                     .Id _
                     , .IdAccidente _
                     , ms.ToArray() _

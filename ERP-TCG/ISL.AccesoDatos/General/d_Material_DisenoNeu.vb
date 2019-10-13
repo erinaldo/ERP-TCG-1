@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -72,9 +80,8 @@ Public Class d_Material_DisenoNeu
 
     Public Function Guardar(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMaterial_DisenoNeu
-                sqlhelper.ExecuteNonQuery("STD.Isp_Material_DisenoNeu_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Material_DisenoNeu_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMaterial _
                         , .IdDisenoNeumatico _
@@ -82,7 +89,7 @@ Public Class d_Material_DisenoNeu
                         , .EstadoNeu _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

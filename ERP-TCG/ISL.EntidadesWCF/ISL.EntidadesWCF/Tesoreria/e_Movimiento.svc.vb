@@ -64,6 +64,10 @@ Public Class e_Movimiento
     Private _IndAdministrativo As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public IndicadorCorrelativo As Boolean = False
 

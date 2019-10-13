@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -111,9 +119,8 @@ Public Class d_Venta
 
     Public Function Guardar(ByVal oeVenta As e_Venta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeVenta
-                sqlhelper.ExecuteNonQuery("CON.Isp_Venta_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_Venta_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Exportacion _
                         , .Gravado _
@@ -133,7 +140,7 @@ Public Class d_Venta
                         , .Glosa _
                         , .FactorRefUni _
                         , .PorcenDetra _
-                        , .IndCliente _
+                        , .IndCliente
                     )
             End With
             Return True

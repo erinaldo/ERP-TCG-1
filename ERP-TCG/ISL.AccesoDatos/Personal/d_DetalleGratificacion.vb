@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -117,9 +125,8 @@ Public Class d_DetalleGratificacion
 
     Public Function Guardar(ByVal oeDetalleGratificacion As e_DetalleGratificacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleGratificacion
-                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleBonoCompensatorio_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_DetalleBonoCompensatorio_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGratificacion _
                         , .IdTrabajador _
@@ -169,7 +176,7 @@ Public Class d_DetalleGratificacion
                         , .FechaModifica _
                         , .UsuarioModifica _
                         , .Activo _
-                        , .IndPendiente _
+                        , .IndPendiente
                     )
             End With
             Return True
@@ -181,7 +188,6 @@ Public Class d_DetalleGratificacion
 
     Public Function GuardarMasivo(ByVal dtDetGrat As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.DetalleBonoCompensatorio", dtDetGrat)
             Return True
         Catch ex As Exception
@@ -203,7 +209,6 @@ Public Class d_DetalleGratificacion
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.DetalleBonoCompensatorio", PrefijoID
                                   )

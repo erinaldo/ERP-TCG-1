@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -148,12 +156,11 @@ Public Class d_Mantenimiento
 
     Public Function Guardar(ByVal oeMantenimiento As e_Mantenimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
 
             Using transScope As New TransactionScope()
                 With oeMantenimiento
-                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_Mantenimiento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("MAN.Isp_Mantenimiento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdTipoMantenimiento _
                             , .Nombre _
@@ -164,7 +171,7 @@ Public Class d_Mantenimiento
                             , .IdUnidadMedida _
                             , .Activo _
                             , .UsuarioCreacion _
-                            , .Externa _
+                            , .Externa
                         ).ToString.Split("_")
 
                     Dim oeME As New e_MantenimientoEquipo
@@ -173,15 +180,18 @@ Public Class d_Mantenimiento
                     For Each Detalle As e_MantenimientoEquipo In .lstDetalleEquipo
                         Detalle.IdMantenimiento = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeMantenimiento.PrefijoID '@0001
                         odMantenimientoEquipo.Guardar(Detalle)
                     Next
 
                     Dim oeMM As New e_MantenimientoMaterial
+                    oeMM.PrefijoID = oeMantenimiento.PrefijoID '@0001
                     oeMM.Id = "" : oeMM.IdMantenimiento = stResultado(0)
                     odMantenimientoMaterial.Eliminar(oeMM)
                     For Each Detalle As e_MantenimientoMaterial In .lstDetalleMaterial
                         Detalle.IdMantenimiento = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeMantenimiento.PrefijoID '@0001
                         odMantenimientoMaterial.Guardar(Detalle)
                     Next
 
@@ -191,6 +201,7 @@ Public Class d_Mantenimiento
                     For Each Detalle As e_MantenimientoServicio In .lstDetalleServicio
                         Detalle.IdMantenimiento = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeMantenimiento.PrefijoID '@0001
                         odMantenimientoServicio.Guardar(Detalle)
                     Next
 
@@ -200,6 +211,7 @@ Public Class d_Mantenimiento
                     For Each Detalle As e_MantenimientoOcupacion In .lstDetalleOcupacion
                         Detalle.IdMantenimiento = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeMantenimiento.PrefijoID '@0001
                         odMantenimientoOcupacion.Guardar(Detalle)
                     Next
 
@@ -209,6 +221,7 @@ Public Class d_Mantenimiento
                     For Each Detalle As e_MantenimientoActividad In .lstDetalleActividad
                         Detalle.IdMantenimiento = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = IIf(String.IsNullOrEmpty(Detalle.Id), "I", .TipoOperacion)
+                        Detalle.PrefijoID = oeMantenimiento.PrefijoID '@0001
                         odMantenimientoActividad.Guardar(Detalle)
                     Next
 

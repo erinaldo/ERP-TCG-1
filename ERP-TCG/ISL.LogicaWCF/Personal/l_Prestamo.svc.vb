@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -31,7 +39,9 @@ Public Class l_Prestamo
                     oePrestamo.FechaIntegracion = oePrestamo.Fecha
                     lePrestamo.Add(oePrestamo)
                     Dim oecta As New e_CuentaContable
+                    oecta.PrefijoID = oePrestamo.PrefijoID '@0001
                     Dim oeCajaBanco As New e_MovimientoCajaBanco
+                    oeCajaBanco.PrefijoID = oePrestamo.PrefijoID '@0001
                     oeCajaBanco.TipoOperacion = "I"
                     oeCajaBanco._Operador = -1
                     oeCajaBanco.IdFlujoCaja = "1SI000000047"
@@ -117,7 +127,11 @@ Public Class l_Prestamo
         Try
             Using TransScope As New TransactionScope()
                 Dim oeAsiento As New e_Asiento, olAsiento As New l_Asiento, oeAsientoMov As New e_AsientoMovimiento
+                oeAsiento.PrefijoID = oePeriodo.PrefijoID '@0001
+                oeAsientoMov.PrefijoID = oePeriodo.PrefijoID '@0001
                 Dim oeMovCajaBanco As New e_MovimientoCajaBanco, oeMovAnalisis As New e_MovimientoAnalisis
+                oeMovCajaBanco.PrefijoID = oePeriodo.PrefijoID '@0001
+                oeMovAnalisis.PrefijoID = oePeriodo.PrefijoID '@0001
                 Dim lsGlosa As String = "", _strDesc As String() = Nothing, _strSanc As String() = Nothing
                 With oeAsiento
                     .TipoOperacion = "I" : .IdPeriodo = oePeriodo.Id
@@ -145,6 +159,7 @@ Public Class l_Prestamo
                         Dim leDebAux = lePrestamo.Where(Function(it) it.IndProv = oeDetAux.Fila).ToList
                         If leDebAux.Count > 0 Then
                             oeAsientoMov = New e_AsientoMovimiento
+                            oeAsientoMov.PrefijoID = oePeriodo.PrefijoID '@0001
                             With oeAsientoMov
                                 .TipoOperacion = "I" : .IdCuentaContable = oeDetAux.IdCuentaContable.Trim
                                 .Glosa = oeDetAux.Titulo & " MES " & oePeriodo.NomMes
@@ -154,6 +169,7 @@ Public Class l_Prestamo
                                 .IdUsuarioCrea = oeAsientoModel.UsuarioCreacion : .Activo = True : .AsMov_MovDoc = Nothing
                                 For Each oeDetDebe In leDebAux
                                     oeMovAnalisis = New e_MovimientoAnalisis
+                                    oeMovAnalisis.PrefijoID = oePeriodo.PrefijoID '@0001
                                     oeMovAnalisis.TipoOperacion = ""
                                     oeMovAnalisis.IdMoneda = oeAsientoModel.IdMoneda
                                     oeMovAnalisis.IdUsuarioCrea = oeAsientoModel.UsuarioCreacion
@@ -174,6 +190,7 @@ Public Class l_Prestamo
                         Next
                         If MontoHaberAux > 0 Then
                             oeAsientoMov = New e_AsientoMovimiento
+                            oeAsientoMov.PrefijoID = oePeriodo.PrefijoID '@0001
                             With oeAsientoMov
                                 .TipoOperacion = "I" : .IdCuentaContable = oeDetAux.IdCuentaContable.Trim
                                 .Glosa = oeDetAux.Titulo & " MES " & oePeriodo.NomMes
@@ -183,6 +200,7 @@ Public Class l_Prestamo
                                 'Llenar Movimiento Caja Banco para las Cuentas Configuradas por Flujo de Caja
                                 If oeDetAux.IdReferencia.Trim.Length > 0 Then
                                     oeMovCajaBanco = New e_MovimientoCajaBanco
+                                    oeMovCajaBanco.PrefijoID = oePeriodo.PrefijoID '@0001
                                     oeMovCajaBanco.TipoOperacion = "I" : oeMovCajaBanco._Operador = -1
                                     oeMovCajaBanco.IdFlujoCaja = oeDetAux.IdReferencia : oeMovCajaBanco.Fecha = Date.Now
                                     oeMovCajaBanco.TotalMN = MontoHaberAux
@@ -241,6 +259,7 @@ Public Class l_Prestamo
             oeTipoCambio = olTipoCambio.Listar(oeTipoCambio)(0)
 
             Dim olAsiento As New l_Asiento, oeAsiento As New e_Asiento
+            oeAsiento.PrefijoID = oeCajaBanco.PrefijoID '@0001
             Dim lsCodigoBanco As String
             oeCajaBanco.TotalME = oeCajaBanco.TotalMN / oeTipoCambio.CambioVenta
 

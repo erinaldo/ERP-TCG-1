@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -152,6 +160,7 @@ Public Class frm_ReporteDescTrabajador
                                     oeDescuento.IndTipo = 1
                                     oeDescuento.IdEstado = _leEstAux(0).Id
                                     oeDescuento.Activo = True
+                                    oeDescuento.PrefijoID = gs_PrefijoIdSucursal '@0001
                                     leDescuento.Add(oeDescuento)
                                 Next
                                 If olDescuento.GuardarMasivo(leDescuento, gs_PrefijoIdSucursal) Then

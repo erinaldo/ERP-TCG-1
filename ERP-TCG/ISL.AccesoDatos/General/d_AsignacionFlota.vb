@@ -1,9 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_AsignacionFlota
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_AsignacionFlota
         Try
@@ -25,10 +33,9 @@ Public Class d_AsignacionFlota
 
     Public Function Obtener(ByVal oeAsignacionFlota As e_AsignacionFlota) As e_AsignacionFlota
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_AsignacionFlota_Listar", _
-                                          "", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_AsignacionFlota_Listar",
+                                          "",
                                           oeAsignacionFlota.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeAsignacionFlota = Cargar(ds.Tables(0).Rows(0))
@@ -41,11 +48,10 @@ Public Class d_AsignacionFlota
 
     Public Function Listar(ByVal oeAsignacionFlota As e_AsignacionFlota) As List(Of e_AsignacionFlota)
         Try
-            sqlhelper = New SqlHelper
             Dim ldAsignacionFlota As New List(Of e_AsignacionFlota)
             Dim ds As DataSet
             With oeAsignacionFlota
-                ds = sqlhelper.ExecuteDataset("STD.Isp_AsignacionFlota_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_AsignacionFlota_Listar",
                                               "" _
                                                 , .Id _
                                                 , .IdVehiculo _
@@ -64,12 +70,10 @@ Public Class d_AsignacionFlota
 
     Public Function Guardar(ByVal oeAsignacionFlota As e_AsignacionFlota) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsignacionFlota
-                sqlhelper.ExecuteNonQuery("STD.Isp_AsignacionFlota_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_AsignacionFlota_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdVehiculo _
                                             , .IdFlota _
@@ -88,10 +92,9 @@ Public Class d_AsignacionFlota
 
     Public Function Eliminar(ByVal oeAsignacionFlota As e_AsignacionFlota) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            sqlhelper.ExecuteNonQuery("STD.Isp_AsignacionFlota_IAE", _
-                                      "E", _
-                                        "", _
+            sqlhelper.ExecuteNonQuery("STD.Isp_AsignacionFlota_IAE",
+                                      "E",
+                                        "",
                                         oeAsignacionFlota.Id)
             Return True
         Catch ex As Exception

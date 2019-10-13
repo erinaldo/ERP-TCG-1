@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -138,13 +146,12 @@ Public Class d_GrupoSancion
 
     Public Function Guardar(ByVal oeGrupoSancion As e_GrupoSancion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Dim est As String = oeGrupoSancion.Estado
             Dim idest As String = oeGrupoSancion.IdEstado
             Using transScope As New TransactionScope
                 With oeGrupoSancion
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_GrupoSancion_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_GrupoSancion_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .IdArea _
@@ -156,11 +163,12 @@ Public Class d_GrupoSancion
                             , .FechaCreacion _
                             , .UsuarioCreacion _
                             , ._CadenaId _
-                            , .Tipo _
+                            , .Tipo
                         ).ToString.Split("_")
 
                     For Each oeDet As e_Sancion In .leDetalle
                         oeDet.IdGrupo = stResultado(0)
+                        oeDet.PrefijoID = oeGrupoSancion.PrefijoID '@0001
                         If oeDet.TipoOperacion = "E" Then
                             odDetalle.Eliminar(oeDet)
                         Else

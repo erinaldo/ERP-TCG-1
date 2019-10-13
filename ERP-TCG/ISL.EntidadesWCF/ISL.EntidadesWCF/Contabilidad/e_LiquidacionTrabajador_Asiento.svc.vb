@@ -15,6 +15,10 @@ Public Class e_LiquidacionTrabajador_Asiento
     Public Event DatoCambiado()
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> _
     Public Property Id() As String

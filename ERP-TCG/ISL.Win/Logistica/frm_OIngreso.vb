@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Microsoft.Office.Interop
 
@@ -269,7 +277,9 @@ Public Class frm_OIngreso
                     EjecutarOrden(0)
                 ElseIf Operacion = "Rectificar" Then
                     For Each oe As e_RegistroInventario In listaRegistroInventario
+                        oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                         For Each oe1 As e_OrdenMaterial In loOrdenMaterial
+                            oe1.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If oe.IdMaterial = oe1.IdMaterial And oe1.Seleccion = True Then
                                 oe.TipoOperacion = "T"
                                 oe.Cantidad = oe1.CantidadMaterial
@@ -293,6 +303,7 @@ Public Class frm_OIngreso
         Try
             LlenaObjeto()
             If ValidarOrden() Then
+                oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olOrden.Guardar(oeOrden, loRegistroInventario)
                 Return True
             End If
@@ -438,6 +449,7 @@ Public Class frm_OIngreso
                 End With
                 oeInventario.oeRegistroInventario = New e_RegistroInventario
                 oeInventario.oeRegistroInventario = oeRegistroInventario
+                oeInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loInventario.Add(oeInventario)
             Next
             Return loInventario
@@ -634,6 +646,7 @@ Public Class frm_OIngreso
                         .Id = oeOrd.IdMovimientoInventario
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeOrd.FechaOrden)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -901,6 +914,7 @@ Public Class frm_OIngreso
                 .Referencia = "Orden"
                 .UsuarioEdita = gUsuarioSGI.Id
             End With
+            oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
             IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
         End If
     End Sub
@@ -940,6 +954,7 @@ Public Class frm_OIngreso
                     oeOrden.lstOrdenMaterial = olOrdenMaterial.Listar(oeOrdenMaterial)
                     EjecutarOrden(1)
                     oeOrden.lstInventario = New List(Of e_Inventario)
+                    oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOrden.Guardar(oeOrden, New List(Of e_RegistroInventario)) Then
                         mensajeEmergente.Confirmacion("Se Genero el Asiento de la Orden: " & oeOrden.NroOrden & ", Correctamente.", True)
                     End If

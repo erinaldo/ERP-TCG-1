@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -111,6 +119,7 @@ Public Class frm_FondoPensionTrabajador
                     oeFondoPensionTrabajador.FechaActividad = fecActividad.Value
                     oeFondoPensionTrabajador.Vigente = IIf(chkVidente.Checked, 1, 0)
                     oeFondoPensionTrabajador.Mixta = IIf(verMixta.Checked, 1, 0)
+                    oeFondoPensionTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olFondoPensionTrabajador.Guardar(oeFondoPensionTrabajador)
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                 Case 2
@@ -316,6 +325,7 @@ Public Class frm_FondoPensionTrabajador
                             .Mixta = IIf(Convert.ToString(objWorkSheet.Cells(ln_Fila + 1, 7).Value) = "NO", 0, 1)
                             .Activo = False
                         End With
+                        oeFondoPensionTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDatosImportados.Add(oeFondoPensionTrabajador)
                     Else
                         Exit For

@@ -17,6 +17,10 @@ Public Class e_VentanaHoraria
     Private _horafin As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 
@@ -43,21 +51,20 @@ Public Class d_SubAlmacen
 
     Public Function Obtener(ByVal oeSubAlmacen As e_SubAlmacen) As e_SubAlmacen
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As New DataSet
-            ds = sqlhelper.ExecuteDataset("[ALM].[Isp_SubAlmacen_Listar]", oeSubAlmacen.TipoOperacion, _
-                                          oeSubAlmacen.Id, _
-                                          oeSubAlmacen.Codigo, _
-                                          oeSubAlmacen.IdAlmacen, _
-                                          oeSubAlmacen.Activo, _
-                                          oeSubAlmacen.UsuarioCreacion, _
-                                          oeSubAlmacen.IdEquipo, _
-                                          oeSubAlmacen.IdGrifo, _
-                                          oeSubAlmacen.IdDireccion, _
-                                          oeSubAlmacen.IdTrabajador, _
-                                          oeSubAlmacen.IdArea, _
-                                          oeSubAlmacen.TipoReferencia, _
-                                          oeSubAlmacen.IdOrdenAsignacion, _
+            ds = sqlhelper.ExecuteDataset("[ALM].[Isp_SubAlmacen_Listar]", oeSubAlmacen.TipoOperacion,
+                                          oeSubAlmacen.Id,
+                                          oeSubAlmacen.Codigo,
+                                          oeSubAlmacen.IdAlmacen,
+                                          oeSubAlmacen.Activo,
+                                          oeSubAlmacen.UsuarioCreacion,
+                                          oeSubAlmacen.IdEquipo,
+                                          oeSubAlmacen.IdGrifo,
+                                          oeSubAlmacen.IdDireccion,
+                                          oeSubAlmacen.IdTrabajador,
+                                          oeSubAlmacen.IdArea,
+                                          oeSubAlmacen.TipoReferencia,
+                                          oeSubAlmacen.IdOrdenAsignacion,
                                           oeSubAlmacen.IndPrincipal)
             oeSubAlmacen = New e_SubAlmacen
             If Not ds Is Nothing AndAlso ds.Tables(0).Rows.Count > 0 Then
@@ -125,9 +132,8 @@ Public Class d_SubAlmacen
 
     Public Function Guardar(ByVal oeSubAlmacen As e_SubAlmacen) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSubAlmacen
-                sqlhelper.ExecuteNonQuery("[ALM].[Isp_SubAlmacen_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[ALM].[Isp_SubAlmacen_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .IdAlmacen _

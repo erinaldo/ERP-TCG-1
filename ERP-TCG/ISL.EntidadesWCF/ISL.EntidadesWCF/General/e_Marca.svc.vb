@@ -23,6 +23,10 @@ Public Class e_Marca
     Public TipoOperacion As String
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Sub New()
         Activo = True

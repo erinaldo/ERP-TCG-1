@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -108,6 +116,7 @@ Public Class frm_Utilidad
                                 .UsuarioCreacion = gUsuarioSGI.Id
                                 .leConsolidado = leConsolidado
                                 .leDetalle = leDetalle
+                                .PrefijoID = gs_PrefijoIdSucursal '@0001
                                 If olUtilidad.ImportarDatos(oeUtilidad) Then
                                     mensajeEmergente.Confirmacion("Los Datos se han Guardado Correctamente", True)
                                     SeleccionaTab(0)
@@ -118,6 +127,7 @@ Public Class frm_Utilidad
                             oeUtilidad.TipoOperacion = "A"
                             oeUtilidad.IdEstado = cboEstado.Value
                             oeUtilidad.UsuarioModifica = gUsuarioSGI.Id
+                            oeUtilidad.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olUtilidad.Guardar(oeUtilidad) Then
                                 mensajeEmergente.Confirmacion("Los Datos se han Guardado Correctamente", True)
                                 SeleccionaTab(0)

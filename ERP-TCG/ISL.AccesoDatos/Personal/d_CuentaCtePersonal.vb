@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -79,9 +87,8 @@ Public Class d_CuentaCtePersonal
 
     Public Function Guardar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaCtePersonal
-                sqlhelper.ExecuteNonQuery("PER.Isp_CuentaCtePersonal_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("PER.Isp_CuentaCtePersonal_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTrabajador _
                         , .IdEntidadBancaria _
@@ -93,7 +100,7 @@ Public Class d_CuentaCtePersonal
                         , .Vigente _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -105,7 +112,6 @@ Public Class d_CuentaCtePersonal
 
     Public Function GuardarMasivo(ByVal dtCtaCtePer As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("PER.CuentaCtePersonal", dtCtaCtePer)
             Return True
         Catch ex As Exception
@@ -127,7 +133,6 @@ Public Class d_CuentaCtePersonal
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.CuentaCtePersonal", PrefijoID
                                   )

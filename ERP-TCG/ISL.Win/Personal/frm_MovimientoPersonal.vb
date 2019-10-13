@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -470,6 +478,7 @@ Public Class frm_MovimientoPersonal
                             If _leEstAux.Count > 0 Then .IdEstado = _leEstAux(0).Id : .Estado = _leEstAux(0).Nombre
                             .Activo = False
                         End With
+                        oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leResAsisAux.Add(oeResumenAsis)
                     Else
                         Exit For
@@ -613,6 +622,7 @@ Public Class frm_MovimientoPersonal
                                                           .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 1
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -623,6 +633,7 @@ Public Class frm_MovimientoPersonal
                                                          .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 0
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -637,6 +648,7 @@ Public Class frm_MovimientoPersonal
                                                           .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 1
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -647,6 +659,7 @@ Public Class frm_MovimientoPersonal
                                                          .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 0
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -661,6 +674,7 @@ Public Class frm_MovimientoPersonal
                                                           .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 1
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -671,6 +685,7 @@ Public Class frm_MovimientoPersonal
                                                          .ActiveRow.Cells("Trabajador").Value & "?", "Mensaje de Sistema", _
                                                          MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
                                             oeResumenAsis.IndTipoAux = 0
+                                            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                             If olResumenAsis.Guardar(oeResumenAsis) Then
                                                 mensajeEmergente.Confirmacion("El dato se ha actulizado correctamente", True)
                                                 Consultar(True)
@@ -695,6 +710,7 @@ Public Class frm_MovimientoPersonal
                                 If cboEstadoCon.Text = gNombreEstadoEnviado Or cboEstadoCon.Text = gNombreEstadoTerminada Then
                                     If .ActiveRow.Cells("GozedeHaber").Value = False Then
                                         oeResumenAsis.GozedeHaber = 1
+                                        oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         If olResumenAsis.Guardar(oeResumenAsis) Then
                                             mensajeEmergente.Confirmacion("El dato se ha actualizado correctamente", True)
                                             Consultar(True)
@@ -702,6 +718,7 @@ Public Class frm_MovimientoPersonal
 
                                     Else
                                         oeResumenAsis.GozedeHaber = 0
+                                        oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                                         If olResumenAsis.Guardar(oeResumenAsis) Then
                                             mensajeEmergente.Confirmacion("El dato se ha actualizado correctamente", True)
                                             Consultar(True)
@@ -913,6 +930,7 @@ Public Class frm_MovimientoPersonal
         Try
             Validar(cboPlanillaEdicion.Value)
             LlenarObjeto()
+            oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olResumenAsis.Guardar(oeResumenAsis) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 'MostrarTabs(0, ficMovimientoPersonal, 2)
@@ -1296,6 +1314,7 @@ Public Class frm_MovimientoPersonal
                     Else
                         Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
                         For Each oeRA In leResumenAsis
+                            oeRA.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oeRA.TipoOperacion = "A" : oeRA.UsuarioModifica = gUsuarioSGI.Id
                             If _leEstAux.Count > 0 Then oeRA.IdEstado = _leEstAux(0).Id
                         Next
@@ -1329,6 +1348,7 @@ Public Class frm_MovimientoPersonal
                     Else
                         Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
                         For Each oePEPS In leResumenAsis
+                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oePEPS.TipoOperacion = "A" : oePEPS.UsuarioModifica = gUsuarioSGI.Id
                             If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
                         Next
@@ -1446,6 +1466,7 @@ Public Class frm_MovimientoPersonal
                             If _leEstAux.Count > 0 Then .IdEstado = _leEstAux(0).Id : .Estado = _leEstAux(0).Nombre
                             .Activo = False
                         End With
+                        oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leResAsisAux.Add(oeResumenAsis)
                     End If
                 End If
@@ -1473,6 +1494,7 @@ Public Class frm_MovimientoPersonal
                             If _leEstAux.Count > 0 Then .IdEstado = _leEstAux(0).Id : .Estado = _leEstAux(0).Nombre
                             .Activo = False
                         End With
+                        oeResumenAsis.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leResAsisAux.Add(oeResumenAsis)
                     End If
                 End If

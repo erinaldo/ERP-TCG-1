@@ -1,7 +1,15 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_VehiculoTarjeta
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(o_fila As DataRow) As e_VehiculoTarjeta
         Try
@@ -30,18 +38,17 @@ Public Class d_VehiculoTarjeta
 
     Public Function Obtener(oeVehiculoTarjeta As e_VehiculoTarjeta) As e_VehiculoTarjeta
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoTarjeta_Listar", _
-                                          "GEN", _
-                                            oeVehiculoTarjeta.Id, _
-                                            oeVehiculoTarjeta.IdVehiculo, _
-                                            oeVehiculoTarjeta.IdEmpresaPropietaria, _
-                                            oeVehiculoTarjeta.NroTarjeta, _
-                                            oeVehiculoTarjeta.FechaInicial, _
-                                            oeVehiculoTarjeta.FechaFinal, _
-                                            oeVehiculoTarjeta.Glosa, _
-                                            oeVehiculoTarjeta.Actual, _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoTarjeta_Listar",
+                                          "GEN",
+                                            oeVehiculoTarjeta.Id,
+                                            oeVehiculoTarjeta.IdVehiculo,
+                                            oeVehiculoTarjeta.IdEmpresaPropietaria,
+                                            oeVehiculoTarjeta.NroTarjeta,
+                                            oeVehiculoTarjeta.FechaInicial,
+                                            oeVehiculoTarjeta.FechaFinal,
+                                            oeVehiculoTarjeta.Glosa,
+                                            oeVehiculoTarjeta.Actual,
                                             oeVehiculoTarjeta.Activo)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeVehiculoTarjeta = Cargar(ds.Tables(0).Rows(0))
@@ -56,11 +63,10 @@ Public Class d_VehiculoTarjeta
 
     Public Function Listar(oeVehiculoTarjeta As e_VehiculoTarjeta) As List(Of e_VehiculoTarjeta)
         Try
-            sqlhelper = New SqlHelper
             Dim ldVehiculoTarjeta As New List(Of e_VehiculoTarjeta)
             Dim ds As DataSet
             With oeVehiculoTarjeta
-                ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoTarjeta_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoTarjeta_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdVehiculo _
@@ -85,10 +91,8 @@ Public Class d_VehiculoTarjeta
 
     Public Function Guardar(ByVal oeVehiculoTarjeta As e_VehiculoTarjeta) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeVehiculoTarjeta
-                sqlhelper.ExecuteScalar("STD.Isp_VehiculoTarjeta_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_VehiculoTarjeta_IAE",
                                           .TipoOperacion _
                                             , .PrefijoID _
                                             , .Id _
@@ -110,9 +114,8 @@ Public Class d_VehiculoTarjeta
 
     Public Function Eliminar(ByVal oeVehiculoTarjeta As e_VehiculoTarjeta) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeVehiculoTarjeta
-                sqlhelper.ExecuteScalar("STD.Isp_VehiculoTarjeta_IAE", _
+                sqlhelper.ExecuteScalar("STD.Isp_VehiculoTarjeta_IAE",
                                           "E" _
                                             , "" _
                                             , .Id _

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -70,21 +78,21 @@ Public Class d_AccionSistema
 
     Public Function Guardar(ByVal oeAccionSistema As e_AccionSistema) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 Dim _id As String = ""
                 With oeAccionSistema
-                    _id = sqlhelper.ExecuteScalar("SGD.Isp_AccionSistema_IAE", .TipoOperacion, .PrefijoID, _
+                    _id = sqlhelper.ExecuteScalar("SGD.Isp_AccionSistema_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Nombre _
                             , .Descripcion _
                             , .Activo _
                             , .FechaCreacion _
-                            , .UsuarioCreacion _
+                            , .UsuarioCreacion
                         )
                     If .leActividadRestringida.Count > 0 Then
                         For Each oe In .leActividadRestringida
+                            oe.PrefijoID = oeAccionSistema.PrefijoID '@0001
                             oe.IdAccionSistema = _id
                             If oe.TipoOperacion = "E" Then
                                 odAR.Eliminar(oe)

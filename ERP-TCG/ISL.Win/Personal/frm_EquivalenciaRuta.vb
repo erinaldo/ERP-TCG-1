@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -251,6 +259,7 @@ Public Class frm_EquivalenciaRuta
     Public Function GuardarEquivalencia() As Boolean
         Try
             LlenaObjeto()
+            oeEquivalenciaRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olEquivalenciaRuta.Guardar(oeEquivalenciaRuta) Then
                 mensajeEmergente.Confirmacion("La Informacion ha Sido Guardada Correctamente")
             End If
@@ -386,6 +395,7 @@ Public Class frm_EquivalenciaRuta
                         oeEquivalenciaRuta.Equivalencia = CDbl(IIf(Convert.ToString(objWorkSheet.Cells(ln_Fila + 1, 5).Value) = "", 0, Convert.ToString(objWorkSheet.Cells(ln_Fila + 1, 5).Value)))
                         oeEquivalenciaRuta.FechaCreacion = fecha
                         oeEquivalenciaRuta.UsuarioCreacion = gUsuarioSGI.Id
+                        oeEquivalenciaRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                         loEquivalenciaRutaImportar.Add(oeEquivalenciaRuta)
                     Else
                         Exit For

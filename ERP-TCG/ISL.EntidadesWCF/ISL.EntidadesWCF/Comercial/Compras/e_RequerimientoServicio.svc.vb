@@ -47,6 +47,10 @@ Public Class e_RequerimientoServicio
     Public FechaHasta As Date
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public Property Seleccion() As Boolean
         Get

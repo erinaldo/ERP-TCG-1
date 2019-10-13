@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -88,24 +96,23 @@ Public Class d_RequerimientoServicio
 
     Public Function Guardar(ByVal oeRequerimientoServicio As e_RequerimientoServicio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeRequerimientoServicio
-                sqlhelper.ExecuteNonQuery("[CMP].[Isp_Requerimiento_Servicio_IAE]", _
-                                                            .Tipooperacion, _
-                                                             .PrefijoID, _
-                                                            .Id, _
-                                                            .Activo, _
-                                                            .IdRequerimiento, _
-                                                            .IdServicio, _
-                                                            .IdCentroCosto, _
-                                                            .Asignado, _
-                                                            .Cantidad, _
-                                                            .Precio, _
-                                                            .Glosa, _
-                                                            .IdEmpresaServicio, _
-                                                            .UsuarioCreacion, _
-                                                            .IndicadorAprobacion, _
-                                                            .IdEstadoRequerimientoServicio, _
+                sqlhelper.ExecuteNonQuery("[CMP].[Isp_Requerimiento_Servicio_IAE]",
+                                                            .Tipooperacion,
+                                                             .PrefijoID,
+                                                            .Id,
+                                                            .Activo,
+                                                            .IdRequerimiento,
+                                                            .IdServicio,
+                                                            .IdCentroCosto,
+                                                            .Asignado,
+                                                            .Cantidad,
+                                                            .Precio,
+                                                            .Glosa,
+                                                            .IdEmpresaServicio,
+                                                            .UsuarioCreacion,
+                                                            .IndicadorAprobacion,
+                                                            .IdEstadoRequerimientoServicio,
                                                             .IdMantenimiento)
             End With
             Return True

@@ -1,5 +1,11 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_LiquidacionTrabajador" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_LiquidacionTrabajador.svc o l_LiquidacionTrabajador.svc.vb en el Explorador de soluciones e inicie la depuración.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Transactions
@@ -64,11 +70,13 @@ Public Class l_LiquidacionTrabajador
                     If odLiquidacionTrabajador.Guardar(oeLiquidacionTrabajador) Then
                         If oeLiquidacionTrabajador.TipoOperacion = "C" And oeLiquidacionTrabajador.IdEstado = "1CH00037" Then
                             oeTrabajador = New e_Trabajador
+                            oeTrabajador.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                             oeTrabajador.CargaCompleto = True
                             oeTrabajador.Id = oeLiquidacionTrabajador.IdTrabajador
                             oeTrabajador.TipoOperacion = "N"
                             oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                             oeLiquidacionTrabajador_Asiento = New e_LiquidacionTrabajador_Asiento
+                            oeLiquidacionTrabajador_Asiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                             olLiquidacionTrabajador_Asiento = New l_LiquidacionTrabajador_Asiento
                             oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador = oeLiquidacionTrabajador.Id
                             oeLiquidacionTrabajador_Asiento.Tipo = "1CH00037"
@@ -76,6 +84,7 @@ Public Class l_LiquidacionTrabajador
                             If olLiquidacionTrabajador_Asiento.Listar(oeLiquidacionTrabajador_Asiento).Count > 0 Then Throw New Exception("Ya se generó la provisión de liquidación del Trabajador: " & oeLiquidacionTrabajador.Trabajador)
 
                             oeAsiento = New e_Asiento
+                            oeAsiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                             loAsientoMovimiento = New List(Of e_AsientoMovimiento)
                             With oeAsiento
                                 .TipoOperacion = "I" : .IdPeriodo = oeLiquidacionTrabajador.IdPeriodo : .IdTipoAsiento = oeLiquidacionTrabajador.oeAsientoModelo.IdTipoAsiento
@@ -88,6 +97,7 @@ Public Class l_LiquidacionTrabajador
                                 .IndOrigen = 16
                             End With
                             oeLiquidacionTrabajador_Asiento = New e_LiquidacionTrabajador_Asiento
+                            oeLiquidacionTrabajador_Asiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                             oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador = oeLiquidacionTrabajador.Id
                             oeLiquidacionTrabajador_Asiento.TipoOperacion = "I"
                             oeLiquidacionTrabajador_Asiento.Tipo = oeLiquidacionTrabajador.IdEstado
@@ -96,6 +106,7 @@ Public Class l_LiquidacionTrabajador
                             oeAsiento.oeLiquidacionTrabajador_Asiento = oeLiquidacionTrabajador_Asiento
                             For Each asidet As e_DetalleAsientoModelo In oeLiquidacionTrabajador.oeAsientoModelo.leDetalle.Where(Function(i) i.Partida = 1).ToList
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 With oeAsientoMovimiento
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                     .IdUsuarioCrea = oeLiquidacionTrabajador.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila
@@ -154,15 +165,19 @@ Public Class l_LiquidacionTrabajador
                                 End With
                             Next
                             Dim oeAsientoMovAux As New e_AsientoMovimiento
+                            oeAsientoMovAux.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                             Dim loAsientoMovAux As New List(Of e_AsientoMovimiento)
                             For Each a As e_AsientoMovimiento In loAsientoMovimiento
+                                a.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 oeAsientoMovAux = New e_AsientoMovimiento
                                 oeAsientoMovAux.Fila = a.Fila
                                 oeAsientoMovAux.DebeMN = a.DebeMN
+                                oeAsientoMovAux.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 loAsientoMovAux.Add(oeAsientoMovAux)
                             Next
                             For Each asidet As e_DetalleAsientoModelo In oeLiquidacionTrabajador.oeAsientoModelo.leDetalle.Where(Function(i) i.Partida = 2).ToList
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 With oeAsientoMovimiento
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                     .IdUsuarioCrea = oeLiquidacionTrabajador.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila
@@ -265,17 +280,20 @@ Public Class l_LiquidacionTrabajador
                         Else
                             If oeLiquidacionTrabajador.TipoOperacion = "C" And oeLiquidacionTrabajador.IdEstado = "1CH00038" Then
                                 oeTrabajador = New e_Trabajador
+                                oeTrabajador.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 oeTrabajador.CargaCompleto = True
                                 oeTrabajador.Id = oeLiquidacionTrabajador.IdTrabajador
                                 oeTrabajador.TipoOperacion = "N"
                                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                                 oeLiquidacionTrabajador_Asiento = New e_LiquidacionTrabajador_Asiento
+                                oeLiquidacionTrabajador_Asiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 olLiquidacionTrabajador_Asiento = New l_LiquidacionTrabajador_Asiento
                                 oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador = oeLiquidacionTrabajador.Id
                                 oeLiquidacionTrabajador_Asiento.Tipo = "1CH00038"
                                 oeLiquidacionTrabajador_Asiento.Activo = 1
                                 If olLiquidacionTrabajador_Asiento.Listar(oeLiquidacionTrabajador_Asiento).Count > 0 Then Throw New Exception("Ya se generó el pagó de liquidación del Trabajador: " & oeLiquidacionTrabajador.Trabajador)
                                 oeAsiento = New e_Asiento
+                                oeAsiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 loAsientoMovimiento = New List(Of e_AsientoMovimiento)
                                 With oeAsiento
                                     .TipoOperacion = "I" : .IdPeriodo = oeLiquidacionTrabajador.IdPeriodo : .IdTipoAsiento = oeLiquidacionTrabajador.oeAsientoModelo.IdTipoAsiento
@@ -287,6 +305,7 @@ Public Class l_LiquidacionTrabajador
                                     .IndOrigen = 0
                                 End With
                                 oeLiquidacionTrabajador_Asiento = New e_LiquidacionTrabajador_Asiento
+                                oeLiquidacionTrabajador_Asiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                 oeLiquidacionTrabajador_Asiento.TipoOperacion = "I"
                                 oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador = oeLiquidacionTrabajador.Id
                                 oeLiquidacionTrabajador_Asiento.Tipo = oeLiquidacionTrabajador.IdEstado
@@ -294,7 +313,9 @@ Public Class l_LiquidacionTrabajador
                                 oeLiquidacionTrabajador_Asiento.usuariocrea = oeLiquidacionTrabajador.UsuarioCreacion
                                 oeAsiento.oeLiquidacionTrabajador_Asiento = oeLiquidacionTrabajador_Asiento
                                 For Each asidet As e_DetalleAsientoModelo In oeLiquidacionTrabajador.oeAsientoModelo.leDetalle.Where(Function(i) i.Partida = 1).ToList
+                                    asidet.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                     oeAsientoMovimiento = New e_AsientoMovimiento
+                                    oeAsientoMovimiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                     With oeAsientoMovimiento
                                         .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                         .IdUsuarioCrea = oeLiquidacionTrabajador.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila
@@ -345,7 +366,9 @@ Public Class l_LiquidacionTrabajador
                                 Next
 
                                 For Each asidet As e_DetalleAsientoModelo In oeLiquidacionTrabajador.oeAsientoModelo.leDetalle.Where(Function(i) i.Partida = 2).ToList
+                                    asidet.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                     oeAsientoMovimiento = New e_AsientoMovimiento
+                                    oeAsientoMovimiento.PrefijoID = oeLiquidacionTrabajador.PrefijoID '@0001
                                     With oeAsientoMovimiento
                                         .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                         .IdUsuarioCrea = oeLiquidacionTrabajador.UsuarioCreacion : .Activo = True : .Fila = asidet.Fila

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -140,7 +148,7 @@ Public Class frm_IntegrarGrupo
                     Dim _FecCuota As Date = #1/1/1901#
                     _FecCuota = DateAdd(DateInterval.Month, mescuota, Date.Parse("01/" & fechaServidor.Month & "/" & fechaServidor.Year))
                     oePrestamo.leDetalle.AddRange(GenerarCuotas(oePrestamo.Monto, _FecCuota, oePrestamo.CantidadCuotas))
-                    ''''
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lePrestamo.Add(oePrestamo)
                 Next
                 Dim olPeriodo As New l_Periodo, oePeriodo As New e_Periodo
@@ -148,6 +156,7 @@ Public Class frm_IntegrarGrupo
                 oePeriodo = olPeriodo.Obtener(oePeriodo)
                 l_FuncionesGenerales.ValidarPeriodo(oePeriodo.Id, gAreasSGI.Tesoreria)
                 oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id : oeAsientoModel.TipoCambio = decTipoCambio.Value : oeAsientoModel.IdMedioPago = cboMedioPago.Value
+                oePeriodo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olPrestamo.GuardarLista(lePrestamo, CadIdGroup, CadGroupDesc, oePeriodo, oeAsientoModel, strGrupoSanc, strGrupoDesc) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     MostrarTabs(0, ficIntegrarGrupo, 2)

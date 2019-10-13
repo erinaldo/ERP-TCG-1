@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -62,11 +70,10 @@ Public Class d_DocumentoVehicular
     ''' <returns>Devuelve una varible oeDocumentoVehicular de tipo e_DocumentoVehicular</returns>
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As e_DocumentoVehicular
-
         Try
             Dim ds As DataSet
             With oeDocumentoVehicular
-                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar",
                                                   .TipoOperacion _
                                                 , .Id _
                                                 , .IdEmpresaEmisora _
@@ -133,7 +140,6 @@ Public Class d_DocumentoVehicular
     ''' vehicular es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ListaDocVeh_Doc_Ayuda As New List(Of e_DocumentoVehicular_Documento)
             Dim stResultado() As String
             Using transScope As New TransactionScope()
@@ -171,11 +177,13 @@ Public Class d_DocumentoVehicular
 
                     For Each Doc As e_DocumentoVehicular_Documento In oeDocumentoVehicular.ldDocVeh_Doc
                         Dim oe As New e_DocumentoVehicular_Documento
+                        oe.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                         oe.Numero = Doc.Id
                         Doc.Id = IIf(Len(Trim(Doc.Id)) = 12, Doc.Id, "")
                         Doc.IdDocumentoVehicular = stResultado(0)
                         Doc.UsuarioCreacion = .UsuarioCreacion
                         Doc.TipoOperacion = .TipoOperacion
+                        Doc.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                         oe.Id = odDocVeh_Doc.Guardar(Doc)
                         ListaDocVeh_Doc_Ayuda.Add(oe)
                     Next
@@ -195,6 +203,7 @@ Public Class d_DocumentoVehicular
                             Else
                                 Detalle.IdDocVeh_Doc2 = ListaDocVeh_Doc_Ayuda.Where(Function(i) i.Numero = Detalle.IdDocVeh_Doc2).ToList(0).Id()
                             End If
+                            Detalle.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                             odDetalleDocumentoVehiculo.Guardar(Detalle)
                         Next
                     Else
@@ -202,6 +211,7 @@ Public Class d_DocumentoVehicular
                             Detalle.IdDocumento = stResultado(0)
                             Detalle.UsuarioCreacion = .UsuarioCreacion
                             Detalle.TipoOperacion = .TipoOperacion
+                            Detalle.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                             odDetalleDocumentoVehiculo.Guardar(Detalle)
                         Next
                     End If
@@ -215,6 +225,7 @@ Public Class d_DocumentoVehicular
                         Else
                             Cuota.IdDocVeh_Doc = ListaDocVeh_Doc_Ayuda.Where(Function(i) i.Numero = Cuota.IdDocVeh_Doc).ToList(0).Id()
                         End If
+                        Cuota.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                         odCuotaDocumentoVehiculo.Guardar(Cuota)
                     Next
 
@@ -222,6 +233,7 @@ Public Class d_DocumentoVehicular
                         Bono.IdDocumentoVehicular = stResultado(0)
                         Bono.UsuarioCreacion = .UsuarioCreacion
                         Bono.TipoOperacion = .TipoOperacion
+                        Bono.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                         odBonificacionVehiculo.Guardar(Bono)
                     Next
 
@@ -229,6 +241,7 @@ Public Class d_DocumentoVehicular
                         Revision.IdDocumentoVehicular = stResultado(0)
                         Revision.UsuarioCreacion = .UsuarioCreacion
                         Revision.TipoOperacion = .TipoOperacion
+                        Revision.PrefijoID = oeDocumentoVehicular.PrefijoID '@0001
                         odRevisionTecnica.Guardar(Revision)
                     Next
 
@@ -255,8 +268,6 @@ Public Class d_DocumentoVehicular
                                    ByVal ls_IdDocumento As String,
                                    ByVal ls_UsuarioCreacion As String, ByVal PrefijoID As String) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             sqlhelper.ExecuteNonQuery("STD.Isp_DetalleDocumentoVehiculo_IAE",
                                       "I",
                                       PrefijoID,
@@ -350,12 +361,11 @@ Public Class d_DocumentoVehicular
 
     Public Function Guardar2(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ListaDocVeh_Doc_Ayuda As New List(Of e_DocumentoVehicular_Documento)
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeDocumentoVehicular
-                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicularDocumento_IAE", _
+                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicularDocumento_IAE",
                                                           .TipoOperacion _
                                                          , .PrefijoID _
                                                         , .Id _
@@ -394,7 +404,6 @@ Public Class d_DocumentoVehicular
 
     Public Function UltimoIdDevengoInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "STD.DocumentoVehicularDevengo", PrefijoID)
             Return stResultado
@@ -406,7 +415,6 @@ Public Class d_DocumentoVehicular
 
     Public Function GuardarDevengo(ByVal dtDevengo As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("STD.DocumentoVehicularDevengo", dtDevengo)
             Return True
         Catch ex As Exception

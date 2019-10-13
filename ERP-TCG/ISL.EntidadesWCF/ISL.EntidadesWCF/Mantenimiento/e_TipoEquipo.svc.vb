@@ -15,6 +15,10 @@ Public Class e_TipoEquipo
     Private _modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()>
     Public Property Id() As String

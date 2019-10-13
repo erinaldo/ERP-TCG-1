@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -70,17 +78,15 @@ Public Class d_TipoCambio
 
     Public Function Guardar(ByVal oeTipoCambio As e_TipoCambio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeTipoCambio
-                sqlhelper.ExecuteNonQuery("STD.ISP_TipoCambio_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.ISP_TipoCambio_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMonedaOrigen _
                         , .IdMonedaDestino _
                         , .FechaCambio _
                         , .CambioVenta _
                         , .CambioCompra _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

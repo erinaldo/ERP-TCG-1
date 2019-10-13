@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -95,6 +103,7 @@ Public Class frm_RegimenPensionario
                 Case 1
                     oeRegimenPensionario.UsuarioCreacion = gUsuarioSGI.Id
                     oeRegimenPensionario.FechaActividad = fecActividad.Value
+                    oeRegimenPensionario.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegimenPensionario.Guardar(oeRegimenPensionario)
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                 Case 2
@@ -295,6 +304,7 @@ Public Class frm_RegimenPensionario
                             .PorcentajeTotalMixta = Math.Round(.PorcentajeObligatorio + .PorcentajeComisionMixta + .PorcentajeSeguros, 2)
                             .FechaActividad = objWorkSheet.Cells(ln_Fila + 1, 9).Value
                         End With
+                        oeRegimenPensionario.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leDatosImportados.Add(oeRegimenPensionario)
                     Else
                         Exit For
@@ -346,6 +356,7 @@ Public Class frm_RegimenPensionario
                 Cursor.Show()
 
                 For Each oeImp In leDatosImportados
+                    oeImp.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If oeImp.IdEmpresa = "" Then
                         oeEmpresa = New e_Empresa
                         oeEmpresa.TipoBusca = 2
@@ -363,6 +374,7 @@ Public Class frm_RegimenPensionario
             ' Verifica si estan Registrados en Regimen Pensionario
             Listar()
             For Each oeReg In leDatosImportados
+                oeReg.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeReg.IdEmpresa <> "" Then
                     If Not leRegimenPensionario.Contains(oeReg) Then
                         oeReg.TipoOperacion = "I"

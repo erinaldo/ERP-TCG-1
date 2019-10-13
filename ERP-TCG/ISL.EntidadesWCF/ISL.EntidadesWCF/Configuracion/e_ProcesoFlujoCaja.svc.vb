@@ -20,6 +20,10 @@ Public Class e_ProcesoFlujoCaja
     Public ListaProcesoFlujoCaja As New List(Of e_ProcesoFlujoCaja)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
     <DataMember()> _

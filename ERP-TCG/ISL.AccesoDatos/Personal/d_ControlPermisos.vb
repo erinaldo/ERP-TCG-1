@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -95,7 +103,6 @@ Public Class d_ControlPermisos
     Public Function Guardar(ByVal oeControlPermisos As e_ControlPermisos) As Boolean
         Try
             Dim id As String = ""
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlPermisos
                 id = sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE", _
                                              .TipoOperacion _
@@ -147,20 +154,18 @@ Public Class d_ControlPermisos
         End Try
     End Function
 
-    Public Function IdCodigoInsertar() As String()
+    Public Function IdCodigoInsertar(ByVal PrefijoID As String) As String()
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim oe As New e_ControlPermisos With {.TipoOperacion = "Z"}
             Dim strResultado() As String
             'Objeto ControlPermiso solo llenado con el centro
             Dim odCentro As New d_Centro
             oe.IdCentro = odCentro.Obtener(New e_Centro With {.TipoOperacion = "2"}).Id
             With oe
-                strResultado = sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE", _
+                strResultado = sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE",
                                                         .TipoOperacion _
                                                         , "" _
-                                                        , .PrefijoID _
+                                                        , PrefijoID _
                                                         , .Id _
                                                         , .IdCentro).ToString.Split("_")
 
@@ -173,9 +178,7 @@ Public Class d_ControlPermisos
 
     Public Function GuardarMasivo(CadenaXML As String) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE", _
+            sqlhelper.ExecuteScalar("PER.Isp_ControlPermisos_IAE",
                                       "M" _
                                       , CadenaXML)
             Return True

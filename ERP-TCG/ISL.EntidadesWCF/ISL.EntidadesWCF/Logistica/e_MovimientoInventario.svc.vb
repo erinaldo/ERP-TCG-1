@@ -1,4 +1,12 @@
-﻿<DataContract()> _
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+<DataContract()>
 Public Class e_MovimientoInventario
     Implements Ie_MovimientoInventario
 
@@ -15,6 +23,12 @@ Public Class e_MovimientoInventario
     Private _IndDevolucion As Boolean
     Private _Modificado As Boolean = False
     Private _TipoOperacion As String
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String

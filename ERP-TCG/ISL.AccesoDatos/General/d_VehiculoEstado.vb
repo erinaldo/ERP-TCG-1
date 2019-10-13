@@ -1,9 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_VehiculoEstado
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_VehiculoEstado
         Try
@@ -25,10 +33,9 @@ Public Class d_VehiculoEstado
 
     Public Function Obtener(ByVal oeVehiculoEstado As e_VehiculoEstado) As e_VehiculoEstado
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoEstado_Listar", _
-                                          "", _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoEstado_Listar",
+                                          "",
                                           oeVehiculoEstado.Id)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeVehiculoEstado = Cargar(ds.Tables(0).Rows(0))
@@ -41,11 +48,10 @@ Public Class d_VehiculoEstado
 
     Public Function Listar(ByVal oeVehiculoEstado As e_VehiculoEstado) As List(Of e_VehiculoEstado)
         Try
-            sqlhelper = New SqlHelper
             Dim ldVehiculoEstado As New List(Of e_VehiculoEstado)
             Dim ds As DataSet
             With oeVehiculoEstado
-                ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoEstado_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_VehiculoEstado_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdVehiculo _
@@ -71,12 +77,10 @@ Public Class d_VehiculoEstado
 
     Public Function Guardar(ByVal oeVehiculoEstado As e_VehiculoEstado) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeVehiculoEstado
-                sqlhelper.ExecuteNonQuery("STD.Isp_VehiculoEstado_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_VehiculoEstado_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdVehiculo _
                                             , .Indicador _
@@ -96,10 +100,9 @@ Public Class d_VehiculoEstado
 
     Public Function Eliminar(ByVal oeVehiculoEstado As e_VehiculoEstado) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            sqlhelper.ExecuteNonQuery("STD.Isp_VehiculoEstado_IAE", _
-                                      "E", _
-                                      "", _
+            sqlhelper.ExecuteNonQuery("STD.Isp_VehiculoEstado_IAE",
+                                      "E",
+                                      "",
                                       oeVehiculoEstado.Id)
             Return True
         Catch ex As Exception

@@ -27,6 +27,10 @@ Public Class e_RubroEstadoFinanciero_Detalle
     Public IdentificaPadre As String = ""
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

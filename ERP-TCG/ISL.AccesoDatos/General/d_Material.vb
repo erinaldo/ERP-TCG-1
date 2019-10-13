@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -291,33 +299,33 @@ Public Class d_Material
     ''' de material es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeMaterial As e_Material) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeMaterial
-                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_Material_IAE", _
-                                              .TipoOperacion, _
-                                              .PrefijoID, _
-                                              .Id, _
-                                              .Codigo, _
-                                              .Nombre, _
-                                              .IdSubFamilia, _
-                                              .IdUnidadMedida, _
-                                              .Medida, _
-                                              .Peso, _
-                                              .Serial, _
-                                              .AfectoIgv, _
-                                              .Glosa, _
-                                              .Activo, _
-                                              .IdTipoMaterial, _
-                                              .IdItemGasto, _
-                                              .UsuarioCreacion, _
-                                              .IndDivisible, _
+                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_Material_IAE",
+                                              .TipoOperacion,
+                                              .PrefijoID,
+                                              .Id,
+                                              .Codigo,
+                                              .Nombre,
+                                              .IdSubFamilia,
+                                              .IdUnidadMedida,
+                                              .Medida,
+                                              .Peso,
+                                              .Serial,
+                                              .AfectoIgv,
+                                              .Glosa,
+                                              .Activo,
+                                              .IdTipoMaterial,
+                                              .IdItemGasto,
+                                              .UsuarioCreacion,
+                                              .IndDivisible,
                                               .IndActivoFijo).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each MaterialCuentaContable As e_MaterialCuentaContable In oeMaterial.ListaMaterialCuentaContable
                         MaterialCuentaContable.Id = ""
                         MaterialCuentaContable.IdMaterial = stResultado(0)
+                        MaterialCuentaContable.PrefijoID = .PrefijoID '@0001
                         odMaterialCuentaContable.Guardar(MaterialCuentaContable)
                     Next
                     For Each codigobarra As e_CodigoBarraMaterial In oeMaterial.ListaCodigoBarras
@@ -325,19 +333,23 @@ Public Class d_Material
                         If codigobarra.TipoOperacion = "" Then
                             codigobarra.TipoOperacion = oeMaterial.TipoOperacion
                         End If
+                        codigobarra.PrefijoID = .PrefijoID '@0001
                         odCodigoBarra.Guardar(codigobarra)
                     Next
                     For Each carmat As e_CaracteristicaMaterial In oeMaterial.ListaCaracteristicaMaterial
                         carmat.IdMaterial = stResultado(0)
+                        carmat.PrefijoID = .PrefijoID '@0001
                         odCaracteristicaMaterial.Guardar(carmat)
                     Next
                     For Each almacen As e_MaterialAlmacen In oeMaterial.ListaAlmacenesAsignados
                         If almacen.TipoOperacion = "" Then almacen.TipoOperacion = .TipoOperacion
                         almacen.IdMaterial = stResultado(0)
+                        almacen.PrefijoID = .PrefijoID '@0001
                         odMaterialAlmacen.GuardarDetalle(almacen)
                     Next
 
                     If .oeMaterial_DisenoNeu IsNot Nothing Then
+                        .oeMaterial_DisenoNeu.PrefijoID = .PrefijoID '@0001
                         If .oeMaterial_DisenoNeu.Id <> "" Then
                             .oeMaterial_DisenoNeu.TipoOperacion = "A"
                             .oeMaterial_DisenoNeu.IdMaterial = stResultado(0)

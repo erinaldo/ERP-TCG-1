@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -590,6 +598,7 @@ Public Class frm_OrdenSalida
                     oeMovimientoDocumento.TipoCambio = 0.0
                     oeMovimientoDocumento.TipoPago = String.Empty
                     oeMovimientoDocumento.IdTipoPago = String.Empty
+                    oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     lstMovimientoDocumento.Add(oeMovimientoDocumento)
                 Next
                 griListaDoc.DataBind()
@@ -738,6 +747,7 @@ Public Class frm_OrdenSalida
                 oeMovimientoDocumento.TipoCambio = .ActiveRow.Cells("TipoCambio").Value.ToString
                 oeMovimientoDocumento.TipoPago = .ActiveRow.Cells("TipoPago").Value.ToString
                 oeMovimientoDocumento.IdTipoPago = .ActiveRow.Cells("IdTipoPago").Value.ToString
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
             End With
             GriAsocDoc.DataBind()
@@ -1071,9 +1081,11 @@ Public Class frm_OrdenSalida
                         item.Activo = 1
                         item.IdSubAlmacen = oeOrdenTransferencia.IdSubAlmacenDestino
                         item.IdAlmacen = "" 'oeOrdenTransferencia.IdSubAlmacenOrigen
+                        item.PrefijoID = gs_PrefijoIdSucursal '@0001
                         listaOrdenMaterial.Add(item)
                     Next
                     oeOrdenIngreso.lstOrdenMaterial = listaOrdenMaterial
+                    oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
                     'olOrden.Guardar(oeOrdenIngreso)
                 End If
             End If
@@ -1107,6 +1119,7 @@ Public Class frm_OrdenSalida
             oeRegistroInventario.IdSubAlmacen = item.IdSubAlmacen
             oeRegistroInventario.TipoOperacion = oeOrden.TipoOperacion
             oeRegistroInventario.IdOrden = oeOrden.Id
+            oeRegistroInventario.PrefijoID = gs_PrefijoIdSucursal '@0001
             listaRegistroInventario.Add(oeRegistroInventario)
 
             'oeInventario = New e_Inventario
@@ -1199,6 +1212,7 @@ Public Class frm_OrdenSalida
                 oeOrden.IdUsuarioEjecucion = gUsuarioSGI.Id
                 If oeOrden.IdMovimientoInventario <> "1CH000000023" Then AsientoConsumo()
             End If
+            oeOrden.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olOrden.Guardar(oeOrden, New List(Of e_RegistroInventario)) Then Return False
             Select Case oeOrden.TipoOperacion
                 Case "T"
@@ -1343,6 +1357,7 @@ Public Class frm_OrdenSalida
                     oeOrdenMaterial.ValorVenta = oeOrdenMaterial.PrecioUnitario * oeOrdenMaterial.CantidadMaterial
                     oeOrdenMaterial.Activo = True
                     oeOrdenMaterial.CodigoMaterial = obj.Codigo
+                    oeOrdenMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                     listaOrdenMaterial.Add(oeOrdenMaterial)
                 End If
             Next
@@ -1372,6 +1387,7 @@ Public Class frm_OrdenSalida
                     oeMaterial.Activo = True
                     oeMaterial.TipoOperacion = "5"
                     oeMaterial = olMaterial.ObtenerMaterialSegunAlmacen(oeMaterial)
+                    oeMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                     listaMaterial.Add(oeMaterial)
                 End If
             End If
@@ -1452,6 +1468,7 @@ Public Class frm_OrdenSalida
                 lstMovimientoDocumentoAsoc = New List(Of e_MovimientoDocumento)
                 oeMovimientoDocumento = olOrdenDoc.ObtenerDocumento(oeOrdenDoc)
                 GriAsocDoc.DataSource = lstMovimientoDocumentoAsoc
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If oeMovimientoDocumento.Id.Length > 0 Then
                     oeOrden.TipoOperDocAsoc = "A"
                     lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
@@ -1491,6 +1508,7 @@ Public Class frm_OrdenSalida
                             oeMovimientoDocumento.TipoPago = String.Empty
                             oeMovimientoDocumento.IdTipoPago = String.Empty
                             oeOrden.TipoOperDocAsoc = "A"
+                            oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                             lstMovimientoDocumentoAsoc.Add(oeMovimientoDocumento)
                             GriAsocDoc.DataBind()
                         Else
@@ -1650,6 +1668,7 @@ Public Class frm_OrdenSalida
                         .Id = oeOrd.IdMovimientoInventario
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeOrd.FechaOrden)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -1670,6 +1689,7 @@ Public Class frm_OrdenSalida
                 .Referencia = "Orden"
                 .UsuarioEdita = gUsuarioSGI.Id
             End With
+            oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
             IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
         End If
     End Sub
@@ -1681,6 +1701,7 @@ Public Class frm_OrdenSalida
                 With oeRegistroEditado
                     .Id = IdRegistroEditado
                 End With
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegistroEditado.Guardar(oeRegistroEditado)
                 RegistroEditado = 0
             End If
@@ -1757,6 +1778,7 @@ Public Class frm_OrdenSalida
                         oeOrdenMaterial.UnidadMedida = ""
                         oeOrdenMaterial.ValorVenta = oeOrdenMaterial.PrecioUnitario * oeOrdenMaterial.CantidadMaterial
                         oeOrdenMaterial.Activo = True
+                        oeOrdenMaterial.PrefijoID = gs_PrefijoIdSucursal '@0001
                         listaOrdenMaterial.Add(oeOrdenMaterial)
                     Else
                         Exit For

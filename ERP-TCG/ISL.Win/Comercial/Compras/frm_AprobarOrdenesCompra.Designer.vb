@@ -651,7 +651,7 @@ Partial Class frm_AprobarOrdenesCompra
         Me.UltraTabPageControl3.Controls.Add(Me.griListaDetalleOrdenCompraServicio)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1260, 413)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1258, 414)
         '
         'griListaDetalleOrdenCompraServicio
         '
@@ -772,7 +772,7 @@ Partial Class frm_AprobarOrdenesCompra
         Me.griListaDetalleOrdenCompraServicio.Font = New System.Drawing.Font("Tahoma", 7.5!)
         Me.griListaDetalleOrdenCompraServicio.Location = New System.Drawing.Point(0, 0)
         Me.griListaDetalleOrdenCompraServicio.Name = "griListaDetalleOrdenCompraServicio"
-        Me.griListaDetalleOrdenCompraServicio.Size = New System.Drawing.Size(1260, 413)
+        Me.griListaDetalleOrdenCompraServicio.Size = New System.Drawing.Size(1258, 414)
         Me.griListaDetalleOrdenCompraServicio.TabIndex = 246
         Me.griListaDetalleOrdenCompraServicio.Text = "Grilla2"
         '
@@ -1060,7 +1060,7 @@ Partial Class frm_AprobarOrdenesCompra
         Me.chaHistorialCompras.Axis.Y.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.chaHistorialCompras.Axis.Y.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.chaHistorialCompras.Axis.Y.MinorGridLines.Visible = False
-        Me.chaHistorialCompras.Axis.Y.TickmarkInterval = 100.0R
+        Me.chaHistorialCompras.Axis.Y.TickmarkInterval = 50.0R
         Me.chaHistorialCompras.Axis.Y.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.chaHistorialCompras.Axis.Y.Visible = True
         Me.chaHistorialCompras.Axis.Y2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
@@ -1087,7 +1087,7 @@ Partial Class frm_AprobarOrdenesCompra
         Me.chaHistorialCompras.Axis.Y2.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.chaHistorialCompras.Axis.Y2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.chaHistorialCompras.Axis.Y2.MinorGridLines.Visible = False
-        Me.chaHistorialCompras.Axis.Y2.TickmarkInterval = 100.0R
+        Me.chaHistorialCompras.Axis.Y2.TickmarkInterval = 50.0R
         Me.chaHistorialCompras.Axis.Y2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.chaHistorialCompras.Axis.Y2.Visible = False
         Me.chaHistorialCompras.Axis.Z.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
@@ -1838,20 +1838,18 @@ Partial Class frm_AprobarOrdenesCompra
         Me.MenuContextual1.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AprobarToolStripMenuItem, Me.RechazarToolStripMenuItem})
         Me.MenuContextual1.Name = "MenuContextual1"
-        Me.MenuContextual1.Size = New System.Drawing.Size(121, 48)
+        Me.MenuContextual1.Size = New System.Drawing.Size(181, 70)
         '
         'AprobarToolStripMenuItem
         '
-        Me.AprobarToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
         Me.AprobarToolStripMenuItem.Name = "AprobarToolStripMenuItem"
-        Me.AprobarToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.AprobarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AprobarToolStripMenuItem.Text = "Aprobar"
         '
         'RechazarToolStripMenuItem
         '
-        Me.RechazarToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Logo_Induamerica_pequeño
         Me.RechazarToolStripMenuItem.Name = "RechazarToolStripMenuItem"
-        Me.RechazarToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.RechazarToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RechazarToolStripMenuItem.Text = "Rechazar"
         '
         'ficRequerimiento

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -132,14 +140,13 @@ Public Class d_Neumatico
 
     Public Function Guardar(ByVal oeNeumatico As e_Neumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeNeumatico
                     Dim cadena() As String = oeNeumatico.Codigo.Split(","c)
                     For i As Integer = 0 To cadena.Length - 1
-                        stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                              .PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion,
+                                              .PrefijoID,
                             .Id _
                             , .IdMaterial _
                             , cadena(i).ToString _
@@ -159,10 +166,12 @@ Public Class d_Neumatico
                         For Each VidaNeu As e_VidaNeumatico In .lstVidaNeumatico
                             VidaNeu.IdNeumatico = stResultado(0) : VidaNeu.UsuarioCreacion = .UsuarioCreacion
                             VidaNeu.TipoOperacion = IIf(String.IsNullOrEmpty(VidaNeu.Id), "I", VidaNeu.TipoOperacion)
+                            VidaNeu.PrefijoID = oeNeumatico.PrefijoID '@0001
                             odVidaNeumatico.Guardar(VidaNeu)
                         Next
 
                         If .oeDetalleOrdenNeu IsNot Nothing Then
+                            .oeDetalleOrdenNeu.PrefijoID = oeNeumatico.PrefijoID '@0001
                             odDetalleON.Guardar(.oeDetalleOrdenNeu)
                         End If
                     Next
@@ -177,15 +186,14 @@ Public Class d_Neumatico
 
     Public Function ConfirmarNeu(ByVal oeNeumatico As e_Neumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeNeumatico
                     Dim id() As String = oeNeumatico.Id.Split(","c)
                     Dim cod() As String = oeNeumatico.Codigo.Split(","c)
                     For i As Integer = 0 To id.Length - 1
-                        stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                              .PrefijoID, _
+                        stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion,
+                                              .PrefijoID,
                             id(i).ToString _
                             , .IdMaterial _
                             , cod(i).ToString _
@@ -200,18 +208,20 @@ Public Class d_Neumatico
                             , .Activo _
                             , .UsuarioCreacion _
                             , .TipoBanda _
-                            , .DOT _
+                            , .DOT
                                              ).ToString.Split("_")
 
                         For Each VidaNeu As e_VidaNeumatico In .lstVidaNeumatico
                             VidaNeu.IdNeumatico = stResultado(0) : VidaNeu.UsuarioCreacion = .UsuarioCreacion
                             VidaNeu.TipoOperacion = "I"
+                            VidaNeu.PrefijoID = oeNeumatico.PrefijoID '@0001
                             odVidaNeumatico.Guardar(VidaNeu)
                         Next
 
                         If .oeDetalleOrdenNeu IsNot Nothing Then
                             .oeDetalleOrdenNeu.TipoOperacion = "A"
                             .oeDetalleOrdenNeu.IdNeumatico = stResultado(0)
+                            .oeDetalleOrdenNeu.PrefijoID = oeNeumatico.PrefijoID '@0001
                             odDetalleON.Guardar(.oeDetalleOrdenNeu)
                         End If
                     Next
@@ -226,14 +236,12 @@ Public Class d_Neumatico
 
     Public Function PreGuardar(ByVal oeNeumatico As e_Neumatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
-
             With oeNeumatico
                 Dim cadena() As String = oeNeumatico.Codigo.Split(","c)
                 For i As Integer = 0 To cadena.Length - 1
-                    stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion, _
-                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[NEU].[Isp_Neumatico_IAE]", .TipoOperacion,
+                                          .PrefijoID,
                         .Id _
                         , .IdMaterial _
                         , cadena(i).ToString _
@@ -250,7 +258,7 @@ Public Class d_Neumatico
                         , .TipoBanda _
                         , .DOT _
                         , .TipoCambio _
-                        , .FechaIngresoAlmacen _
+                        , .FechaIngresoAlmacen
                                          ).ToString.Split("_")
                     oeNeumatico.Id = stResultado(0)
                 Next

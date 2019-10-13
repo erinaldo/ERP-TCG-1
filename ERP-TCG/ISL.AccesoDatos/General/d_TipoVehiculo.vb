@@ -1,7 +1,15 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_TipoVehiculo
-    Private sqlhelper As SqlHelper
+    Private sqlhelper As New SqlHelper
 
     Public oeTipoVehiculo As e_TipoVehiculo
 
@@ -28,13 +36,12 @@ Public Class d_TipoVehiculo
 
     Public Function Obtener(ByVal oeTipoVehiculo As e_TipoVehiculo) As e_TipoVehiculo
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeTipoVehiculo
-                ds = sqlhelper.ExecuteDataset("[STD].[Isp_TipoVehiculo_Listar]", _
-                                                .TipoOperacion, _
-                                                 .Id, _
-                                                 "", _
+                ds = sqlhelper.ExecuteDataset("[STD].[Isp_TipoVehiculo_Listar]",
+                                                .TipoOperacion,
+                                                 .Id,
+                                                 "",
                                                   .Nombre)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -79,23 +86,21 @@ Public Class d_TipoVehiculo
 
     Public Function Guardar(ByVal oeTipoVehiculo As e_TipoVehiculo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            sqlhelper = New SqlHelper
             With oeTipoVehiculo
-                sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoVehiculo_IAE]", .TipoOperacion, _
-                                                .PrefijoID, _
-                                                .Id, _
-                                                .Codigo, _
-                                                .Nombre, _
-                                                .Abreviatura, _
-                                                .Motriz, _
-                                                .Carga, _
-                                                .Descripcion, _
-                                                .Activo, _
-                                                .IdTipoVehiculoOrigen, _
-                                                .UsuarioCreacion, _
-                                                .IndicadorFuncional, _
-                                                .IndTipoVehiculo, _
+                sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoVehiculo_IAE]", .TipoOperacion,
+                                                .PrefijoID,
+                                                .Id,
+                                                .Codigo,
+                                                .Nombre,
+                                                .Abreviatura,
+                                                .Motriz,
+                                                .Carga,
+                                                .Descripcion,
+                                                .Activo,
+                                                .IdTipoVehiculoOrigen,
+                                                .UsuarioCreacion,
+                                                .IndicadorFuncional,
+                                                .IndTipoVehiculo,
                                                 .IndSunarp)
             End With
             Return True
@@ -106,10 +111,9 @@ Public Class d_TipoVehiculo
 
     Public Function Eliminar(ByVal oeTipoVehiculo As e_TipoVehiculo) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoVehiculo_IAE]", _
-                                      oeTipoVehiculo.TipoOperacion, _
-                                      "", _
+            sqlhelper.ExecuteNonQuery("[STD].[Isp_TipoVehiculo_IAE]",
+                                      oeTipoVehiculo.TipoOperacion,
+                                      "",
                                       oeTipoVehiculo.Id)
             Return True
         Catch ex As Exception

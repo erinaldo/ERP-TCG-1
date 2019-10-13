@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System
@@ -628,6 +636,7 @@ Public Class frm_Seguros2
             Else
                 Throw New Exception("Ha ocurrido un error interno al guardar")
             End If
+            oeDocumentoVehicular.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olDocumentoVehicular.GuardarSeguro(oeDocumentoVehicular) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, tcSeguro, 2)

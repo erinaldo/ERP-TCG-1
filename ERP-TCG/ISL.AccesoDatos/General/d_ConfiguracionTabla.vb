@@ -115,6 +115,7 @@ Public Class d_ConfiguracionTabla
                         )
                     For Each oeCCol In .leColumna.Where(Function(it) it.TipoOperacion.Trim <> "").ToList
                         oeCCol.IdTabla = id
+                        oeCCol.PrefijoID = .PrefijoID '@0001
                         If oeCCol.TipoOperacion = "E" Then
                             odConfColumna.Eliminar(oeCCol)
                         Else
@@ -122,12 +123,14 @@ Public Class d_ConfiguracionTabla
                         End If
                     Next
                     For Each oeCDat In .leDato.Where(Function(it) it.TipoOperacion.Trim <> "" And it.TipoOperacion.Trim <> "I").ToList
+                        oeCDat.PrefijoID = .PrefijoID '@0001
                         If oeCDat.TipoOperacion = "E" Then odConfDato.Eliminar(oeCDat)
                         If oeCDat.TipoOperacion = "A" Then odConfDato.Guardar(oeCDat)
                     Next
                     If .dsCDato.Rows.Count > 0 Then odConfDato.GuardarMasivo(.dsCDato)
                     oeConfDato = New e_ConfiguracionDato
                     oeConfDato.TipoOperacion = "C" : oeConfDato.Activo = True : oeConfDato.IdReferencia = .Id
+                    oeConfDato.PrefijoID = .PrefijoID '@0001
                     odConfDato.Guardar(oeConfDato)
                 End With
                 TransScope.Complete()

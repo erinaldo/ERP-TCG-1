@@ -26,6 +26,10 @@ Public Class e_DocumentoVehicular_Documento
     Public leDocVehDocPago As New List(Of e_DocVehDocPago)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
     <DataMember()> _
    Public Property Id() As String

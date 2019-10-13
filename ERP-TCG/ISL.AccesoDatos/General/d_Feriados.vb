@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -56,9 +64,8 @@ Public Class d_Feriados
 
     Public Function Guardar(ByVal oeFeriados As e_Feriados) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeFeriados
-                sqlhelper.ExecuteNonQuery("STD.Isp_Feriados_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Feriados_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTipoFeriado _
                         , .Fecha _

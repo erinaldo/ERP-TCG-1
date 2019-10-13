@@ -1,0 +1,27 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=Ayuda del Sistema.chm
+Contents file=Table of Contents.hhc
+Default Window=Main
+Default topic=default.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x280a Español (Perú)
+Title=Ayuda del Sistema
+
+[WINDOWS]
+Main="Ayuda del Sistema","Table of Contents.hhc","Index.hhk","default.htm",,,,,,0x23520,,0x3006,,,0x11080,,,,,0
+
+
+[FILES]
+default.htm
+hhw_01.htm
+Tesoreria.htm
+Tes_001.htm
+Tes_002.htm
+Tes_003.htm
+
+[INFOTYPES]
+

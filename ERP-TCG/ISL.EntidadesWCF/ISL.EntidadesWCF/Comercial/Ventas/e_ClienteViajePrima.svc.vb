@@ -21,6 +21,10 @@ Public Class e_ClienteViajePrima
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public loViaPriCon As New List(Of e_ClienteViajePrimaCon)
     <DataMember()> _

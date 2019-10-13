@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_DatoUsuario
@@ -17,11 +25,11 @@ Public Class frm_DatoUsuario
             txtMensaje.CharacterCasing = CharacterCasing.Normal
             txtCorporativo.CharacterCasing = CharacterCasing.Normal
             txtPersonal.CharacterCasing = CharacterCasing.Normal
-            txtMensaje.Text = Environment.NewLine & _
-                "El Presente Formulario tiene como finalidad vincular su cuenta de SGI a algún correo corporativo " & _
-                " y/o personal donde se enviará cualquier mensaje de alerta y/o comunicado asociado a los procesos propios del Sistema." & _
-                Environment.NewLine & Environment.NewLine & "Esta información sera guardada con la debida reserve y es para el uso" & _
-                " exclusivo del SGI ISL"
+            txtMensaje.Text = Environment.NewLine &
+                "El Presente Formulario tiene como finalidad vincular su cuenta en el ERP a algún correo corporativo " &
+                " y/o personal donde se enviará cualquier mensaje de alerta y/o comunicado asociado a los procesos propios del Sistema." &
+                Environment.NewLine & Environment.NewLine & "Esta información sera guardada con la debida reserve y es para el uso" &
+                " exclusivo del sistema ERP"
             verCorporativo.Checked = False
             verPersonal.Checked = True
             txtCorporativo.Focus()
@@ -52,6 +60,7 @@ Public Class frm_DatoUsuario
                 oeEmail.Nombre = txtCorporativo.Text.Trim
                 CargarDatos(oeEmail)
                 oeEmail.Principal = 1
+                oeEmail.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leEmail.Add(oeEmail)
             End If
             If Not verPersonal.Checked Then
@@ -59,6 +68,7 @@ Public Class frm_DatoUsuario
                 oeEmail.Nombre = txtPersonal.Text
                 CargarDatos(oeEmail)
                 oeEmail.Principal = IIf(verCorporativo.Checked, 1, 0)
+                oeEmail.PrefijoID = gs_PrefijoIdSucursal '@0001
                 leEmail.Add(oeEmail)
             End If
             If leEmail.Count > 0 Then

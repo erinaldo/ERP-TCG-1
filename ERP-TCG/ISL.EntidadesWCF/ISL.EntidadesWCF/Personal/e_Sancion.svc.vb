@@ -46,6 +46,10 @@ Public Class e_Sancion
     Public oeReqOASan As New e_ReqOAMSancion
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
 
 #End Region

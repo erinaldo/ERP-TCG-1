@@ -28,6 +28,10 @@ Public Class e_MovimientoPersonal
     Public Modificado As Boolean
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public FechaDesde As String
     <DataMember()> _

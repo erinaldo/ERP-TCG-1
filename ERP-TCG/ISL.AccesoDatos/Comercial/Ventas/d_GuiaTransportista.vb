@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -320,10 +328,10 @@ Public Class d_GuiaTransportista
     Public Function Guardar(ByVal oeGuiaTransportista As e_Seguimiento) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For Each GuiaTransportista As e_GuiaTransportista In oeGuiaTransportista.GuiaTransportista
                     GuiaTransportista.UsuarioCreacion = oeGuiaTransportista.UsuarioCreacion
+                    GuiaTransportista.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                     With GuiaTransportista
                         stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]",
                                                               "I",
@@ -362,6 +370,7 @@ Public Class d_GuiaTransportista
                         For Each GuiaRemitente As e_GuiaRemitente In oeGuiaTransportista.GuiaRemitente.Where(Function(item) item.GuiaTransportista = GrtSerieNumero)
                             'If GrtSerieNumero = GuiaRemitente.GuiaTransportista Then
                             GuiaRemitente.IdGuiaTransportista = stResultado(0)
+                            GuiaRemitente.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                             odGuiaRemitente.Guardar(GuiaRemitente)
                             'End If
                         Next
@@ -380,7 +389,7 @@ Public Class d_GuiaTransportista
         Try
             Dim odOperacionDetalle As New d_Operacion
             Dim odGuiaTransportistaInterrumpida As New d_GuiaTransportistaInterrumpida
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Using transScope As New TransactionScope()
                 With oeGuiaTransportista
                     If .TipoOperacion = "I" Then
@@ -418,17 +427,20 @@ Public Class d_GuiaTransportista
                         If .TipoOperacion <> "F" Then
                             If .GuiaTransportistaInterrumpida.Count > 0 Then
                                 For Each GuiaTransportistaInterrumpida As e_GuiaTransportistaInterrumpida In .GuiaTransportistaInterrumpida
+                                    GuiaTransportistaInterrumpida.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                                     odGuiaTransportistaInterrumpida.Guardar(GuiaTransportistaInterrumpida)
                                 Next
                             End If
                             If .GuiaRemitente.Count > 0 Then
                                 For Each GuiaRemitente As e_GuiaRemitente In .GuiaRemitente
                                     GuiaRemitente.IdGuiaTransportista = stResultado(0)
+                                    GuiaRemitente.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                                     odGuiaRemitente.Guardar(GuiaRemitente)
                                 Next
                             End If
                             If .OperacionDetalle.Count > 0 Then
                                 For Each OperacionDetalle As e_OperacionDetalle In .OperacionDetalle '.Where(Function(Item) Item.Seleccion = True)
+                                    OperacionDetalle.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                                     If OperacionDetalle.TipoOperacion = "B" Then
                                         odOperacionDetalle.GuardarOperacionDetalle(OperacionDetalle)
                                     Else
@@ -444,10 +456,11 @@ Public Class d_GuiaTransportista
                         If .TipoOperacion = "A" Then
                             If .GuiaTransportista.Count > 0 Then
                                 For Each GuiaTransportistaAnuladas As e_GuiaTransportista In .GuiaTransportista
+                                    GuiaTransportistaAnuladas.PrefijoID = oeGuiaTransportista.PrefijoID '@0001
                                     With GuiaTransportistaAnuladas
-                                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
-                                                                 .TipoOperacion, _
-                                                                 .PrefijoID, _
+                                        stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]",
+                                                                 .TipoOperacion,
+                                                                 .PrefijoID,
                                                                    .Id _
                                                                    , FormatoDocumento(.Serie, 4) _
                                                                    , FormatoDocumento(.Numero, 10) _

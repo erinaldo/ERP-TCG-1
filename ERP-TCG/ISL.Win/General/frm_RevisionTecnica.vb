@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -316,6 +324,7 @@ Public Class frm_RevisionTecnica
             oeDocumentoVehicular.FechaVencimiento = dtp_FechaProxima.Value
             oeDocumentoVehicular.Descripcion = TxtDescripcion.Value
             oeDocumentoVehicular.UsuarioCreacion = gUsuarioSGI.Id
+            oeDocumentoVehicular.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olDocumentoVehicular.Guardar(oeDocumentoVehicular) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tc_DocumentosVehiculares, 2)

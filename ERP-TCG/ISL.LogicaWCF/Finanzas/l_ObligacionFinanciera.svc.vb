@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -4491,6 +4499,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
             Using TransScope As New TransactionScope()
                 If olFuncionesGenerales.ValidarPeriodo(oeAsientoModel.IdPeriodo, gAreasSGI.Tesoreria, oeObliFin.oeMovCajaBanco.Fecha, "") Then
                     With oeAsiento
+                        .PrefijoID = oeObliFin.PrefijoID '@0001
                         .TipoOperacion = "I" : .IdPeriodo = oeAsientoModel.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                         .NroAsiento = String.Empty : .Fecha = oeAsientoModel.FechaMov
                         .Glosa = oeAsientoModel.Nombre & " " & oeObliFin.IdTipoObligacion & " " & oeObliFin.NroVencimiento & " " & oeObliFin.Banco
@@ -4505,6 +4514,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                             Case "1"
                                 If Left(oeAuxDet.Cuenta, 2) = "10" Then
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                     oeAsientoMov.IdCuentaContable = oeObliFin.oeMovCajaBanco.IdCta10 : oeAsientoMov.Glosa = oeAsiento.Glosa
                                     If oeAuxDet.Partida = 1 Then
@@ -4514,6 +4524,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                     End If
                                     ' Generar Asiento Movimiento Caja y Banco
                                     oeMovCajaBanco = New e_MovimientoCajaBanco
+                                    oeMovCajaBanco.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeMovCajaBanco.TipoOperacion = "I" : oeMovCajaBanco.Activo = True
                                     oeMovCajaBanco.IdFlujoCaja = oeObliFin.oeMovCajaBanco.IdFlujoCaja
                                     oeMovCajaBanco.IdMedioPago = oeObliFin.oeMovCajaBanco.IdMedioPago
@@ -4532,6 +4543,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                     Dim ln_MontoGasto As Double = 0
                                     If _leGasto.Count > 0 Then
                                         oeAsientoMov = New e_AsientoMovimiento
+                                        oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                         oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                         oeAsientoMov.IdCuentaContable = oeAuxDet.IdCuentaContable : oeAsientoMov.Glosa = oeAsiento.Glosa
                                         If oeAsientoModel.Moneda.Trim = oeObliFin.IdMoneda.Trim Then
@@ -4552,6 +4564,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                             Case "4"
                                 If oeAuxDet.Cuenta = oeObliFin.CtaFec Then
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                     Dim Comision As Double = 0
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                     oeAsientoMov.IdCuentaContable = oeAuxDet.IdCuentaContable : oeAsientoMov.Glosa = oeAsiento.Glosa
@@ -4565,6 +4578,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                     End If
                                     ' Generar Asiento Movimiento Obligacion
                                     oeAsiMovObli = New e_AsientoMov_ObligacionFin
+                                    oeAsiMovObli.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                     oeAsiMovObli.IdObligacionFinanciera = oeObliFin.Id
                                     oeAsiMovObli.UsuarioCreacion = oeObliFin.UsuarioModifica
@@ -4599,10 +4613,12 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                         End If
                                     End If
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                     oeAsientoMov.IdCuentaContable = oeObliFin.IdCuentaContable : oeAsientoMov.Glosa = oeAsiento.Glosa
                                     ' Generar Obligacion Pago
                                     oeAsientoMov.ObligacionFinanciera.oeObligacionPago = New e_ObligacionPago
+                                    oeAsientoMov.ObligacionFinanciera.oeObligacionPago.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsientoMov.ObligacionFinanciera.oeObligacionPago.IdObligacionFinanciera = oeObliFin.Id
                                     oeAsientoMov.ObligacionFinanciera.oeObligacionPago.TipoOperacion = "I"
                                     oeAsientoMov.ObligacionFinanciera.oeObligacionPago.NroCuota = 1
@@ -4618,6 +4634,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                     oeAsientoMov.ObligacionFinanciera.oeObligacionPago.MontoInicialME = oeObliFin.oeMovCajaBanco.TotalME
                                     ' Generar Asiento Movimiento Obligacion
                                     oeAsiMovObli = New e_AsientoMov_ObligacionFin
+                                    oeAsiMovObli.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsiMovObli.TipoOperacion = "I" : oeAsiMovObli.Activo = True
                                     oeAsiMovObli.IdObligacionFinanciera = oeObliFin.Id
                                     oeAsiMovObli.UsuarioCreacion = oeObliFin.UsuarioModifica
@@ -4648,6 +4665,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                             Case "7"
                                 If oeAuxDet.IndAgregar And oeObliFin.MontoInteresDscto > 0 Then
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                     oeAsientoMov.IdCuentaContable = oeAuxDet.IdCuentaContable : oeAsientoMov.Glosa = oeAuxDet.Titulo
                                     If oeAuxDet.Partida = 1 Then
@@ -4663,6 +4681,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                                 If oeAuxDet.IndAgregar Then
                                     Dim ln_MontoAuxDet As Double = 0
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = oeObliFin.PrefijoID '@0001
                                     oeAsientoMov.TipoOperacion = "I" : oeAsientoMov.IdUsuarioCrea = oeObliFin.UsuarioModifica
                                     oeAsientoMov.IdCuentaContable = oeAuxDet.IdCuentaContable : oeAsientoMov.Glosa = oeAsiento.Glosa
                                     If oeAsientoModel.Moneda.Trim = oeObliFin.IdMoneda.Trim Then
@@ -4690,6 +4709,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
                         Dim ol_DocRetDet As l_DocumentoRetencionDetalle
                         For Each fila In lst_DocRetDet
                             ol_DocRetDet = New l_DocumentoRetencionDetalle
+                            fila.PrefijoID = oeObliFin.PrefijoID '@0001
                             ol_DocRetDet.Guardar(fila)
                         Next
                         TransScope.Complete()

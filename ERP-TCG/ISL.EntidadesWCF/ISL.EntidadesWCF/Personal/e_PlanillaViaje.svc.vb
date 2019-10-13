@@ -1,5 +1,5 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "e_PlanillaViaje" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione e_PlanillaViaje.svc o e_PlanillaViaje.svc.vb en el Explorador de soluciones e inicie la depuración.
+﻿
+<DataContract()>
 Public Class e_PlanillaViaje
     Implements Ie_PlanillaViaje
 
@@ -32,19 +32,24 @@ Public Class e_PlanillaViaje
     Private _bonocrucerocopiloto As Double
     Private _cuentapiloto As Integer
     Private _cuentacopiloto As Integer
-    
-    <DataMember()> _
-    Public TipoOperacion As String
-    <DataMember()> _
-    Public Modificado As Boolean
-    <DataMember()> _
-    Public FechaInicio As Date
-    <DataMember()> _
-    Public FechaFin As Date
 
+    <DataMember()>
+    Public TipoOperacion As String
+    <DataMember()>
+    Public Modificado As Boolean
+    <DataMember()>
+    Public FechaInicio As Date
+    <DataMember()>
+    Public FechaFin As Date
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Id() As String
         Get
             Return _id
@@ -54,7 +59,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdPlanillaPiloto() As String
         Get
             Return _idplanillapiloto.Id
@@ -65,7 +70,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdViaje() As String
         Get
             Return _viaje.Id
@@ -76,7 +81,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdPiloto() As String
         Get
             Return _idpiloto
@@ -87,7 +92,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Tipo() As Integer
         Get
             Return _tipo
@@ -97,7 +102,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IndVacio() As Boolean
         Get
             Return _indvacio
@@ -107,7 +112,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Ayudante() As String
         Get
             Return _ayudante
@@ -117,7 +122,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdAyudante() As String
         Get
             Return _idayudante
@@ -127,7 +132,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property CuentaPiloto() As Integer
         Get
             Return _cuentapiloto
@@ -137,7 +142,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property CuentaCoPiloto() As Integer
         Get
             Return _cuentacopiloto
@@ -147,7 +152,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property MontoPiloto() As Double
         Get
             Return _montopiloto
@@ -158,7 +163,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdCopiloto() As String
         Get
             Return _idcopiloto
@@ -169,7 +174,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property MontoCopiloto() As Double
         Get
             Return _montocopiloto
@@ -180,18 +185,18 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property MontoAyudante() As Double
         Get
-            Return _montoAyudante
+            Return _montoayudante
         End Get
         Set(ByVal value As Double)
-            _montoAyudante = value
+            _montoayudante = value
             RaiseEvent DatoCambiado()
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IndPago() As Boolean
         Get
             Return _indpago
@@ -201,7 +206,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property IdRuta() As String
         Get
             Return _ruta.Id
@@ -212,7 +217,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Origen() As String
         Get
             Return _ruta.Origen
@@ -222,7 +227,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Destino() As String
         Get
             Return _ruta.Destino
@@ -232,7 +237,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Copiloto() As String
         Get
             Return _copiloto
@@ -242,7 +247,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Piloto() As String
         Get
             Return _piloto
@@ -252,7 +257,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Viaje() As String
         Get
             Return _viaje.Codigo
@@ -262,7 +267,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property FechaViaje() As Date
         Get
             Return _viaje.Fecha
@@ -272,7 +277,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Retorno() As Integer
         Get
             Return _viaje.ViajeRetorno
@@ -282,7 +287,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Tracto() As String
         Get
             Return _viaje.Tracto
@@ -292,7 +297,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property MontoSolo() As Double
         Get
             Return _montosolo
@@ -303,7 +308,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property MontoAcompañado() As Double
         Get
             Return _montoacompañado
@@ -314,7 +319,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property PorcentajeCopiloto() As Double
         Get
             Return _porcentajecopiloto
@@ -325,7 +330,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property BonoCruceroCopiloto() As Double
         Get
             Return _bonocrucerocopiloto
@@ -335,7 +340,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property BonoCruceroPiloto() As Double
         Get
             Return _bonocruceropiloto
@@ -345,7 +350,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property BonoSolo() As Double
         Get
             Return _bonosolo
@@ -355,7 +360,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property FechaCreacion() As Date
         Get
             Return _fechacreacion
@@ -366,7 +371,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property UsuarioCreacion() As String
         Get
             Return _usuariocreacion
@@ -377,7 +382,7 @@ Public Class e_PlanillaViaje
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Activo() As Boolean
         Get
             Return _activo
@@ -396,7 +401,7 @@ Public Class e_PlanillaViaje
         TipoOperacion = ""
         Activo = True
         CuentaPiloto = 0
-        CuentaCopiloto = 0
+        CuentaCoPiloto = 0
         FechaCreacion = Date.Parse("01/01/1901")
         FechaInicio = Date.Parse("01/01/1901")
         FechaFin = Date.Parse("01/01/1901")

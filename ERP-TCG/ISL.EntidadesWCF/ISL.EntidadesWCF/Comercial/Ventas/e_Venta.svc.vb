@@ -34,6 +34,10 @@ Public Class e_Venta
     '----------------------variables de ayuda-----------------
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public TipoDoc As e_TipoDocumento
     <DataMember()> _

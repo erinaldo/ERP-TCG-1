@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_DistanciaZona
@@ -78,7 +86,6 @@ Public Class d_DistanciaZona
 
     Public Function Guardar(oeDistanciaZona As e_DistanciaZona) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDistanciaZona
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_DistanciaZona_IAE]",
                                           .TipoOperacion,

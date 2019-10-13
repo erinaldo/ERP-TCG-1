@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -88,8 +96,8 @@ Public Class d_Flota_Cuota
 
     Public Function Guardar(ByVal oeFlota_Cuota As e_Flota_Cuota) As Boolean
         Try
-            'Using transScope As New TransactionScope()
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            'Using transScope As New TransactionScope(
+
             Dim stResultado() As String
             With oeFlota_Cuota
                 stResultado = sqlhelper.ExecuteScalar("[STD].[Isp_Flota_Cuota_IAE]" _

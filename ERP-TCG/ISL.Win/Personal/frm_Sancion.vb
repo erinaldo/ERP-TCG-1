@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -541,6 +549,7 @@ Public Class frm_Sancion
                     RecolectaDatos()
                     oeSancion.UsuarioCreacion = gUsuarioSGI.Id
                     oeSancion.IdResponsable = gUsuarioSGI.IdTrabajador
+                    oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSancion.Guardar(oeSancion) Then
                         mensajeEmergente.Confirmacion("La Sanción ha sido guardado correctamente en " & Me.Text, True)
                         MostrarTabs(0, ficSancion, 2)
@@ -550,6 +559,7 @@ Public Class frm_Sancion
                     End If
                 Case "EDITAR"
                     RecolectaDatos()
+                    oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSancion.Guardar(oeSancion) Then
                         mensajeEmergente.Confirmacion("La Sanción ha sido editado correctamente en " & Me.Text, True)
                         MostrarTabs(0, ficSancion, 2)
@@ -561,6 +571,7 @@ Public Class frm_Sancion
                     RecolectaDatos()
                     oeSancion.IdUsuarioAprueba = gUsuarioSGI.Id
                     oeSancion.FechaAprobacion = Date.Now.Date
+                    oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olSancion.Guardar(oeSancion) Then
                         mensajeEmergente.Confirmacion("La Sanción ha sido APROBADA correctamente", True)
                         MostrarTabs(0, ficSancion, 2)
@@ -655,6 +666,7 @@ Public Class frm_Sancion
                                 oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
                                 oeSancion.TipoOperacion = "A"
                                 If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
+                                oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 If olSancion.Guardar(oeSancion) Then
                                     mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
                                     Consultar()

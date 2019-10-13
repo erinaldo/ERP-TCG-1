@@ -28,6 +28,10 @@ Public Class e_LibroElectronico
      Public dtDetalleLE As DataTable
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Event DatoCambiado()
 
 #End Region

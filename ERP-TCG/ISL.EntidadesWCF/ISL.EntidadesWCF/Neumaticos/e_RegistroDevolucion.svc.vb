@@ -27,6 +27,10 @@ Public Class e_RegistroDevolucion
     Public leDetalleRD As New List(Of e_DetalleRegistroDevolucion)
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Propiedades"

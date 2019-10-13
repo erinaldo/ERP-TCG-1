@@ -1,11 +1,19 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_Capacitacion
     Implements Il_Capacitacion
 
-    Dim odCapacitacion As d_Capacitacion
+    Dim odCapacitacion As New d_Capacitacion
 
     Public Function Eliminar(oeCapacitacion As EntidadesWCF.e_Capacitacion) As Boolean Implements Il_Capacitacion.Eliminar
         Try

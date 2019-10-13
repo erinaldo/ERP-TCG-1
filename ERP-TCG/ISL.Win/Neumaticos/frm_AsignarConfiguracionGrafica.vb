@@ -1,3 +1,11 @@
+'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
@@ -68,6 +76,7 @@ Public Class frm_AsignarConfiguracionGrafica
                 oeVehiculo.TipoOperacion = "A"
                 oeVehiculo.TipoActualizacion = "C"
                 oeVehiculo.Id = ms_IdVehiculo
+                oeVehiculo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olVehiculo.Guardar(oeVehiculo) Then
                     MessageBox.Show("Actualizado correctamente", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1)
                     Me.DialogResult = Windows.Forms.DialogResult.OK

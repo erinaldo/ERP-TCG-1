@@ -11,6 +11,10 @@ Public Class e_TipoMovimientoInventario
     Private _Modificado As Boolean = False
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructor"

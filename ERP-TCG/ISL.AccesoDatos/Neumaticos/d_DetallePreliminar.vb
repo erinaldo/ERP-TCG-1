@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -91,9 +99,8 @@ Public Class d_DetallePreliminar
 
     Public Function Guardar(ByVal oeDetallePreliminar As e_DetallePreliminar) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetallePreliminar
-                sqlhelper.ExecuteNonQuery("NEU.Isp_DetallePreliminar_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("NEU.Isp_DetallePreliminar_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdPreliminarInspeccion _
                         , .IdOperacionNeu _
@@ -103,7 +110,7 @@ Public Class d_DetallePreliminar
                         , .Observacion _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que se encarga de gestionar las unidades de medidad de los articulos en almacen 
 ''' Fecha de Actualizacion:31/10/2011
@@ -141,20 +149,18 @@ Public Class d_UnidadMedida
 
     Public Function Guardar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeUnidadMedida
-                sqlhelper.ExecuteNonQuery("ALM.Isp_UnidadMedida_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
-                                          .Id, _
-                                          .Codigo, _
-                                          .Nombre, _
-                                          .Abreviatura, _
-                                          .Activo, _
-                                          .IdTipoUnidadMedida, _
-                                          .Factor, _
-                                          .Base, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_UnidadMedida_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
+                                          .Id,
+                                          .Codigo,
+                                          .Nombre,
+                                          .Abreviatura,
+                                          .Activo,
+                                          .IdTipoUnidadMedida,
+                                          .Factor,
+                                          .Base,
                                           .Asignado)
             End With
             Return True

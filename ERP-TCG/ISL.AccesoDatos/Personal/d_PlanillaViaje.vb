@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -69,7 +77,6 @@ Public Class d_PlanillaViaje
 
     Public Function GuardarMasivo(ByVal dtPlanillaViaje As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim oeViaje As New e_Viaje
             oeViaje.Id = dtPlanillaViaje.Rows(0).Item("IdPlanillaPiloto").ToString
             sqlhelper.InsertarMasivo("PER.PlanillaViaje", dtPlanillaViaje)
@@ -82,7 +89,6 @@ Public Class d_PlanillaViaje
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "PER.PlanillaViaje", PrefijoID)
             Return stResultado

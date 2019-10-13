@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 
@@ -59,14 +67,13 @@ Public Class d_ReqOAMSancion
 
     Public Function Guardar(ByVal oeReqOAMSancion As e_ReqOAMSancion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeReqOAMSancion
-                sqlhelper.ExecuteNonQuery("[PER].[Isp_Req_OAM_Sancion_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[PER].[Isp_Req_OAM_Sancion_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdRequerimientoMaterial _
                         , .IdOrdenAsignacionMaterial _
                         , .IdSancion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

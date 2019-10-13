@@ -24,6 +24,10 @@ Public Class e_DetalleRegistroDevolucion
     Public oeVidaNeumatico As New e_VidaNeumatico
     <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Proveedor
@@ -446,10 +454,11 @@ Public Class frm_Proveedor
             Else
                 oeProveedor.oeEmpresa.UsuarioCreacion = gUsuarioSGI.Id
             End If
-
-
+            oeProveedor.oePersona.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeProveedor.oeEmpresa.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeProveedor.TipoPersonaEmpresa = TipoProveedor
             oeProveedor.UsuarioCreacion = gUsuarioSGI.Id
+            oeProveedor.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olProveedor.Guardar(oeProveedor) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 If RegistroProveedor = "TES" Then

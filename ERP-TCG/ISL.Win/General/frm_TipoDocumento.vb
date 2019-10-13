@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 
@@ -311,7 +319,7 @@ Public Class frm_TipoDocumento
                     leDocumentoImpuesto = oeTipoDocumento.leDocumentoImpuesto
 
                     oeDocumentoImpuesto.IdImpuesto = .ActiveRow.Cells("Id").Value
-
+                    oeDocumentoImpuesto.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If Not leDocumentoImpuesto.Contains(oeDocumentoImpuesto) Then
                         If .ActiveRow.Cells("Selec").Value Then
                             oeDocumentoImpuesto.IdTipoDocumento = oeTipoDocumento.Id
@@ -375,6 +383,7 @@ Public Class frm_TipoDocumento
     Private Function GuardarTipoDocumento() As Boolean
         Try
             oeTipoDocumento.leDocumentoImpuesto = leDocumentoImpuesto
+            oeTipoDocumento.PrefijoID = gs_IdEmpresaSistema '@0001
             If olTipoDocumento.Guardar(oeTipoDocumento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcTipoPago, 2)

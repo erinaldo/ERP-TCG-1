@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -605,6 +613,7 @@ Public Class frm_Ruta
             Select Case e.Cell.Column.Key
                 Case "Guardar"
                     oeRuta = New e_Ruta
+                    oeRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                     With oeRuta
                         .TipoOperacion = "B"
                         .Id = RTrim(griLista.ActiveRow.Cells("IdRuta").Value)
@@ -628,6 +637,7 @@ Public Class frm_Ruta
                             .IdZona = griLista.ActiveRow.Cells("IdZona").Value
                             .Distancia = griLista.ActiveRow.Cells("Distancia").Value
                         End With
+                        oeDistanciaZona.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olDistanciaZona.Guardar(oeDistanciaZona)
                     End If
             End Select
@@ -695,6 +705,7 @@ Public Class frm_Ruta
                     Cursor.Show()
                     For Each Fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griLista.Rows.Where(Function(item) item.IsFilteredOut = False)
                         oeRuta = New e_Ruta
+                        oeRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                         With oeRuta
                             .TipoOperacion = "B"
                             .Id = RTrim(Fila.Cells("IdRuta").Value)
@@ -745,6 +756,7 @@ Public Class frm_Ruta
                 .FechaInicio = fecInicioDZ.Value
                 .FechaFin = fecFinDZ.Value
                 .Actual = verActualDZ.Checked
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             oeRuta.oeDistanciaZona.Add(oeDistanciaZona)
             griDistanciaZona.DataBind()
@@ -839,6 +851,7 @@ Public Class frm_Ruta
                     For Each Fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griLista.Rows.Where(Function(item) item.IsFilteredOut = False)
                         If Fila.Cells("IdDistanciaZona").Value.ToString.Length > 0 Then
                             oeDistanciaZona = New e_DistanciaZona
+                            oeDistanciaZona.PrefijoID = gs_PrefijoIdSucursal '@0001
                             With oeDistanciaZona
                                 .TipoOperacion = "B"
                                 .Id = RTrim(Fila.Cells("IdDistanciaZona").Value)
@@ -1437,6 +1450,7 @@ Public Class frm_Ruta
                 .HorasCarga = mHorasCargaTC.Value
                 .HorasTraslado = mHorasTrasladoTc.Value
                 .HorasDescarga = mHorasDescargaTC.Value
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             If ValidaTiempoCiclo() Then
                 oeRuta.oeTiempoCiclo.Add(oeTiempoCiclo)
@@ -1482,6 +1496,7 @@ Public Class frm_Ruta
                 .DescripcionContrato = txtDescripcionContratoF.Text
                 .Tecnico = mTecnicoF.Value
                 .DescripcionTecnico = txtDescripcionTecnicoF.Text
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             If ValidaFlete() Then
                 oeRuta.oeFlete.Add(oeFlete)
@@ -1507,6 +1522,7 @@ Public Class frm_Ruta
                 .DescripcionNormal = txtDescripcionNormal.Text
                 .Maximo = mMaximoB.Value
                 .DescripcionMaximo = txtDescripcionMaximo.Text
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             If ValidaBolsaViaje() Then
                 oeRuta.oeBolsaViaje.Add(oeBolsaViaje)
@@ -1551,6 +1567,7 @@ Public Class frm_Ruta
                 .BonoCruceroCopiloto = numCruceroC.Value
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .FechaCreacion = ObtenerFechaServidor()
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             oeRuta.loMontoRuta.Add(oeMontoRuta)
             griMontoRuta.DataBind()
@@ -1775,6 +1792,7 @@ Public Class frm_Ruta
                 .Orden = oeRuta.loZonaD2.Where(Function(i) i.Activo = True And i.TipoOperacion <> "E").ToList.Count() + 1
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .UsuarioModifica = gUsuarioSGI.Id
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
             End With
             oeRuta.loZonaD2.Add(oeZonaD2)
             cboOrigenZonaD2.Value = oeRuta.loZonaD2.Where(Function(y) y.Orden = (NroMayor + 1) And y.TipoOperacion <> "E")(0).IdDestino
