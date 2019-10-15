@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -68,9 +76,8 @@ Public Class d_ControlTurnoUsuario
 
     Public Function Guardar(ByVal oeControlTurnoUsuario As e_ControlTurnoUsuario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlTurnoUsuario
-                sqlhelper.ExecuteNonQuery("SGD.Isp_ControlTurnoUsuario_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_ControlTurnoUsuario_IAE", .TipoOperacion,
                         .Id _
                         , .IdUsuario _
                         , .CierreAutomatico _
@@ -79,7 +86,7 @@ Public Class d_ControlTurnoUsuario
                         , .Intervalo _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

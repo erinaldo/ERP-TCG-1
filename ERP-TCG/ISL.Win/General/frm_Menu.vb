@@ -857,21 +857,21 @@ Public Class frm_Menu
         ugb_Espera.Location = New System.Drawing.Point((Me.Width / 2) - (ugb_Espera.Width / 2), (Me.Height / 2) - ugb_Espera.Height)
     End Sub
 
-    'Private Sub AlertaPermisos_DesktopAlertLinkClicked(ByVal sender As System.Object, ByVal e As Infragistics.Win.Misc.DesktopAlertLinkClickedEventArgs)
-    '    CargaFormMdiChild(frm_ControlPermisos)
-    '    frm_ControlPermisos.Listar()
-    'End Sub
+    Private Sub AlertaPermisos_DesktopAlertLinkClicked(ByVal sender As System.Object, ByVal e As Infragistics.Win.Misc.DesktopAlertLinkClickedEventArgs) Handles AlertaPermisos.DesktopAlertLinkClicked
+        CargaFormMdiChild(frm_ControlPermisos)
+        frm_ControlPermisos.Listar()
+    End Sub
 
-    'Private Sub AlertaTesoreria_DesktopAlertLinkClicked(ByVal sender As System.Object, ByVal e As Infragistics.Win.Misc.DesktopAlertLinkClickedEventArgs)
-    '    CargaFormMdiChild(frm_Grupo)
-    '    frm_Grupo.GruposPreEnviados()
-    'End Sub
+    Private Sub AlertaTesoreria_DesktopAlertLinkClicked(ByVal sender As System.Object, ByVal e As Infragistics.Win.Misc.DesktopAlertLinkClickedEventArgs) Handles AlertaTesoreria.DesktopAlertLinkClicked
+        CargaFormMdiChild(frm_Grupo)
+        frm_Grupo.GruposPreEnviados()
+    End Sub
 
-    'Private Sub AlertaContratos_DesktopAlertLinkClicked(sender As Object, e As DesktopAlertLinkClickedEventArgs)
-    '    CargaFormMdiChild(frm_Contratos)
-    '    frm_Contratos.rbPorVencer.Checked = True
-    '    frm_Contratos.ListarContratosXVencer()
-    'End Sub
+    Private Sub AlertaContratos_DesktopAlertLinkClicked(sender As Object, e As DesktopAlertLinkClickedEventArgs) Handles AlertaContratos.DesktopAlertLinkClicked
+        CargaFormMdiChild(frm_Contratos)
+        frm_Contratos.rbPorVencer.Checked = True
+        frm_Contratos.ListarContratosXVencer()
+    End Sub
 
     Private Sub AlertaComun_DesktopAlertLinkClicked(sender As Object, e As DesktopAlertLinkClickedEventArgs) Handles AlertaComun.DesktopAlertLinkClicked
         Try
@@ -1015,7 +1015,7 @@ Public Class frm_Menu
         End Try
     End Sub
 
-    Private Sub AlertaDocumentos_DesktopAlertLinkClicked(sender As Object, e As DesktopAlertLinkClickedEventArgs)
+    Private Sub AlertaDocumentos_DesktopAlertLinkClicked(sender As Object, e As DesktopAlertLinkClickedEventArgs) Handles AlertaDocumentos.DesktopAlertLinkClicked
         CargaFormMdiChild(frm_Seguros2)
         frm_Seguros2.IndMenu = True
         frm_Seguros2.ListarZ(True)
@@ -1253,57 +1253,57 @@ Public Class frm_Menu
 
     Private Sub DiasExcedidos()
         Try
-            'Dim oeCtrlPermisos As New e_ControlPermisos
-            'Dim olCtrlPermisos As New l_ControlPermisos
-            'Dim loCtrlPermisos As New List(Of e_ControlPermisos)
-            'Dim cantidad As Integer = 0
-            'Dim dias1 As Integer = 0
-            'Dim dias2 As Integer = 0
-            'Dim dias3 As Integer = 0
-            'oeCtrlPermisos.TipoOperacion = ""
-            'oeCtrlPermisos.Fecha = Date.Parse("01/01/1901")
-            'oeCtrlPermisos.FechaSalida = Date.Parse("01/01/1901")
-            'loCtrlPermisos = olCtrlPermisos.Listar(oeCtrlPermisos)
-            'loCtrlPermisos = loCtrlPermisos.Where(Function(Item) Item.IndConfirmaIngreso = False).ToList
-            'For Each permiso As e_ControlPermisos In loCtrlPermisos
-            '    If permiso.DiasExcedidos > 0 And permiso.IndConfirmaIngreso = False And permiso.IndConfirmaSalida = True Then
-            '        cantidad += 1
-            '    End If
-            '    Dim a As Integer = DateDiff(DateInterval.Day, Date.Now.Date, permiso.FechaSalida.Date)
-            '    Dim b As Integer = DateDiff(DateInterval.Day, Date.Now.Date, permiso.FechaIngreso.Date)
-            '    If a = 1 Then
-            '        dias1 += 1
-            '    End If
-            '    If b = 0 And permiso.IndConfirmaIngreso = False Then
-            '        dias2 += 1
-            '    End If
-            '    If b = 1 And permiso.IndConfirmaIngreso = False Then
-            '        dias3 += 1
-            '    End If
-            'Next
-            'If cantidad > 0 Or dias1 > 0 Or dias2 > 0 Then
-            '    If Not BandOC Then
-            '        Dim mensaje As String = " "
-            '        BandOC = True
+            Dim oeCtrlPermisos As New e_ControlPermisos
+            Dim olCtrlPermisos As New l_ControlPermisos
+            Dim loCtrlPermisos As New List(Of e_ControlPermisos)
+            Dim cantidad As Integer = 0
+            Dim dias1 As Integer = 0
+            Dim dias2 As Integer = 0
+            Dim dias3 As Integer = 0
+            oeCtrlPermisos.TipoOperacion = ""
+            oeCtrlPermisos.Fecha = Date.Parse("01/01/1901")
+            oeCtrlPermisos.FechaSalida = Date.Parse("01/01/1901")
+            loCtrlPermisos = olCtrlPermisos.Listar(oeCtrlPermisos)
+            loCtrlPermisos = loCtrlPermisos.Where(Function(Item) Item.IndConfirmaIngreso = False).ToList
+            For Each permiso As e_ControlPermisos In loCtrlPermisos
+                If permiso.DiasExcedidos > 0 And permiso.IndConfirmaIngreso = False And permiso.IndConfirmaSalida = True Then
+                    cantidad += 1
+                End If
+                Dim a As Integer = DateDiff(DateInterval.Day, Date.Now.Date, permiso.FechaSalida.Date)
+                Dim b As Integer = DateDiff(DateInterval.Day, Date.Now.Date, permiso.FechaIngreso.Date)
+                If a = 1 Then
+                    dias1 += 1
+                End If
+                If b = 0 And permiso.IndConfirmaIngreso = False Then
+                    dias2 += 1
+                End If
+                If b = 1 And permiso.IndConfirmaIngreso = False Then
+                    dias3 += 1
+                End If
+            Next
+            If cantidad > 0 Or dias1 > 0 Or dias2 > 0 Then
+                If Not BandOC Then
+                    Dim mensaje As String = " "
+                    BandOC = True
 
-            '        If cantidad > 0 Then
-            '            mensaje = "Existen " & cantidad & " Trabajadores con Dias Excedidos. "
-            '        End If
-            '        If dias1 > 0 Then
-            '            mensaje = mensaje & "Mañana salen de Permiso: " & dias1 & " Trabajadores.  "
-            '        End If
-            '        If dias2 > 0 Then
-            '            mensaje = mensaje & "Hoy Llegan de Permiso: " & dias2 & " Trabajadores. "
-            '        End If
-            '        If dias3 > 0 Then
-            '            mensaje = mensaje & "Mañana Llegan de Permiso: " & dias3 & " Trabajadores. "
-            '        End If
-            '        AlertaPermisos.Appearance.BackColor = Color.Coral
-            '        AlertaPermisos.TreatCaptionAsLink = DefaultableBoolean.False
-            '        AlertaPermisos.TreatTextAsLink = DefaultableBoolean.True
-            '        AlertaPermisos.Show(CargarDatosAlerta("Dias Permisos", mensaje, GeneraImagen("\ordering.ico"), "ControlPermisos", ScreenPosition.BottomLeft))
-            '    End If
-            'End If
+                    If cantidad > 0 Then
+                        mensaje = "Existen " & cantidad & " Trabajadores con Dias Excedidos. "
+                    End If
+                    If dias1 > 0 Then
+                        mensaje = mensaje & "Mañana salen de Permiso: " & dias1 & " Trabajadores.  "
+                    End If
+                    If dias2 > 0 Then
+                        mensaje = mensaje & "Hoy Llegan de Permiso: " & dias2 & " Trabajadores. "
+                    End If
+                    If dias3 > 0 Then
+                        mensaje = mensaje & "Mañana Llegan de Permiso: " & dias3 & " Trabajadores. "
+                    End If
+                    AlertaPermisos.Appearance.BackColor = Color.Coral
+                    AlertaPermisos.TreatCaptionAsLink = DefaultableBoolean.False
+                    AlertaPermisos.TreatTextAsLink = DefaultableBoolean.True
+                    AlertaPermisos.Show(CargarDatosAlerta("Dias Permisos", mensaje, GeneraImagen("\ordering.ico"), "ControlPermisos", ScreenPosition.BottomLeft))
+                End If
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -1311,25 +1311,25 @@ Public Class frm_Menu
 
     Private Sub ContratosXVencer()
         Try
-            'Dim oeContratos As New e_Contratos
-            'Dim olContratos As New l_Contratos
-            'Dim loContratos As New List(Of e_Contratos)
-            'Dim cantidad As Integer = 0
-            'oeContratos.TipoOperacion = "2"
-            'oeContratos.FechaDesde = ObtenerFechaServidor()
-            'loContratos = olContratos.Listar(oeContratos)
-            'If loContratos.Count > 0 Then
-            '    For Each contrato As e_Contratos In loContratos
-            '        cantidad += 1
-            '    Next
-            '    Dim mensaje As String = " "
-            '    BandOC = True
-            '    mensaje = "Este Mes Vencen: " & cantidad & " Contratos."
-            '    AlertaContratos.Appearance.BackColor = Color.Coral
-            '    AlertaContratos.TreatCaptionAsLink = DefaultableBoolean.False
-            '    AlertaContratos.TreatTextAsLink = DefaultableBoolean.True
-            '    AlertaContratos.Show(CargarDatosAlerta("Contratos a Vencer", mensaje, GeneraImagen("\ordering.ico"), "Contratos", ScreenPosition.BottomRight))
-            'End If
+            Dim oeContratos As New e_Contratos
+            Dim olContratos As New l_Contratos
+            Dim loContratos As New List(Of e_Contratos)
+            Dim cantidad As Integer = 0
+            oeContratos.TipoOperacion = "2"
+            oeContratos.FechaDesde = ObtenerFechaServidor()
+            loContratos = olContratos.Listar(oeContratos)
+            If loContratos.Count > 0 Then
+                For Each contrato As e_Contratos In loContratos
+                    cantidad += 1
+                Next
+                Dim mensaje As String = " "
+                BandOC = True
+                mensaje = "Este Mes Vencen: " & cantidad & " Contratos."
+                AlertaContratos.Appearance.BackColor = Color.Coral
+                AlertaContratos.TreatCaptionAsLink = DefaultableBoolean.False
+                AlertaContratos.TreatTextAsLink = DefaultableBoolean.True
+                AlertaContratos.Show(CargarDatosAlerta("Contratos a Vencer", mensaje, GeneraImagen("\ordering.ico"), "Contratos", ScreenPosition.BottomRight))
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -1337,10 +1337,10 @@ Public Class frm_Menu
 
     Private Sub DocumentosXVencer()
         Try
-            'Dim oeDocumentoVehicular As New e_DocumentoVehicular
-            'Dim olDocumentoVehicular As New l_DocumentoVehicular
-            'oeDocumentoVehicular.TipoOperacion = "M"
-            'Dim ds As DataSet = olDocumentoVehicular.ListarDts(oeDocumentoVehicular)
+            Dim oeDocumentoVehicular As New e_DocumentoVehicular
+            Dim olDocumentoVehicular As New l_DocumentoVehicular
+            oeDocumentoVehicular.TipoOperacion = "M"
+            Dim ds As DataSet = olDocumentoVehicular.ListarDts(oeDocumentoVehicular)
 
             'For i = 0 To ds.Tables(0).Rows.Count - 1
             '    AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +

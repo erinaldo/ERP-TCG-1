@@ -118,18 +118,94 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>449, 17</value>
+    <value>681, 17</value>
   </metadata>
   <metadata name="utm_ISLSGI.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>249, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>97</value>
+    <value>197</value>
   </metadata>
   <metadata name="UltraDockManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>288, 17</value>
+    <value>520, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAgBAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA2c/PAO3F1wDa0tEB1MnJA8W4
+        uAK7r64CvLewA8XCugTFxLwEzce9BNTLwQXY0MkE2tHQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMPCvgDZz88A78TYAN3T
+        0wDazMwAxrO0ALyvrgC9uLIAxcK5AMfHvgDQysAA1s7EANrTzADh2NkAysC4AdTNxwLm9csAz8vAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtcbHANnO
+        zgHoyNcA2tLRJ9TMzJrIwcGew728oMK+uZjGw7uUxsW9k83Ivo/VzMKO2dHKiN7V1A7Nx8QA19HNAOXz
+        wwLOxrsA1MzFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABsXlIAcGRXAHFl
+        WADW19ME2dnWANjU1IDV0s/v0cXA/8S7tP+6sKr/tq6l/761qP+/tKX/xLio/8m7rP/NwbT/0si859fN
+        xYLW0Mwk1cm5AM3FugDUzMUBy8CtANDHuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHdm
+        WQB8bWACgHNnAdzSzADVzcUA3dXQl9XLxP/Jv7L1wLaq+rWom/qsnY76sJyK+qyTfvqkkHz6sp+P+rim
+        lvrBsqL/ybuw/9DHv+jZ0sU60NLHANTLxADLvasBzsa3ANXKvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAdWRXA3xuYACCdWgAn42Co496b8rFrqbXxbKo/aejjP2ZkH7+m4x6/5SBbf+XemX/lW5X/0ww
+        GP5XQC3/ln5o/p6GcP2rlYL6tqaX/8G0rPXOyMDl083Fd8rArQDQx70D/fDiANrRzQAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAABbUkcCXFNIUVZMPa9XSDr/WEg5/15NQf9dTkH/U0s2/1JJNv9cTz//bFxM/3tk
+        Uv9uTzn/blM//2lSP/9zWkP/hGtT/pd+Z/+gjXn9r5+Q/7+xpv/Nxrv/2M7KbdTUwQDz59kC2tHNAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAHNxbpBeWlL/WlNF/2lgTvxnXkz9YFtL/mFbTP9nWkn+Z15O/2Vc
+        UP9yZ1v/eGla/3hlUv+IcV//hGtZ/1U6Iv9sUDT/gGRK/pR+Zf+olIL+tKWU/cK4qfrWysL/29TMbpeR
+        jQDa0c0AztvbAM3i4gAAAAAAAAAAAAAAAAAAAAAAenVygJGCcu+fjXX6o5N8/qGUfv6kl3v/qZh7/6iV
+        ff+Yi3r/lot8/5iMev+cjXn/hHVi/35sW/97ZVf/b1hG/56Dbf+HaVD/g2dM/3hhS/6qmIX/t6mZ/b2z
+        r/7Kw8X3CAgJIfrt4AfO1tUHytzgB9Dc5wDU1NQA1NTUANTU1ACqp6Zok4Fv5JJ8YP+Nd2H9j3tn/5h/
+        Yf+We1r/jnlf/8e5pv/DtqT/xrei/7WijP+gjXv/fGlZ/3RhUv9wXU//mX9u/45vV/+BY0j/W0Is/21a
+        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
+        fgIAAAAAzsKwAL6wngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALTNyADU2dIArbSwDp+n
+        qYiRmZsElqSlAHBECQBTAAAAbAAAAAAAAAAAAAAAWko8AJqDbQMAAAAAAAAAAAAAAACsmIQDwK6hAQAA
+        AACCcGEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoKKcAaCl
+        nQCjqJ8jnJ6bsZKTlhKVlpYCf1QgAng+AAF7CwACPAAAAgUAAAJnUkABAAAAAAAAAADTybQBz8azAQAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAC5sqQAxr+sAMjCrw6po5pZj4iFCpaPigAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAALexowDDvasAxb6lAKKbkACPiIUAlo+KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAuLKkAMW/rQDHwa4Ap6GYAo6IhQCVj4oAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////+AP//+AA///gAH//gAAP/gAAB/wAA
+        AP8AAAD/AAAAPwAAAD+AAABHwAAAB8AAAAfAAAAPwAAAB+AAAAfwAAAH9AAAB/wAAD/8AAD//AAH//5v
+        ///+/////v////7///////////////////8=
+</value>
+  </data>
   <data name="utm_ISLSGI.Ribbon.ApplicationMenuButtonImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -1564,39 +1640,66 @@
 </value>
   </data>
   <metadata name="AppStylistRuntime1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
+    <value>361, 17</value>
   </metadata>
   <metadata name="HelpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>744, 17</value>
-  </metadata>
-  <metadata name="UltraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>548, 17</value>
-  </metadata>
-  <metadata name="Alerta.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>815, 56</value>
-  </metadata>
-  <metadata name="Tiempo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>992, 17</value>
-  </metadata>
-  <metadata name="TiempoHora.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>873, 17</value>
-  </metadata>
-  <metadata name="TiempoTC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1085, 17</value>
-  </metadata>
-  <metadata name="udaControlVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <metadata name="UltraTabbedMdiManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>780, 17</value>
+  </metadata>
+  <metadata name="Alerta.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>513, 134</value>
+  </metadata>
+  <metadata name="Tiempo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>265, 56</value>
+  </metadata>
+  <metadata name="TiempoHora.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>146, 56</value>
+  </metadata>
+  <metadata name="AlertaOperaciones.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>358, 56</value>
+  </metadata>
+  <metadata name="AlertaLogistica.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>510, 56</value>
+  </metadata>
+  <metadata name="AlertaPermisos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>641, 56</value>
+  </metadata>
+  <metadata name="AlertaGuias.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>774, 56</value>
+  </metadata>
+  <metadata name="AlertaTesoreria.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
+  <metadata name="AlertaDocumentos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>287, 95</value>
+  </metadata>
+  <metadata name="TiempoTC.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>440, 95</value>
+  </metadata>
+  <metadata name="AlertaContratos.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>150, 95</value>
+  </metadata>
+  <metadata name="udaControlVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>547, 95</value>
+  </metadata>
   <metadata name="ControlDeVersion.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>171, 56</value>
+    <value>701, 95</value>
   </metadata>
   <metadata name="AlertaDocumentoVehicular.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>494, 56</value>
-  </metadata>
-  <metadata name="hiloWebServiceCovisol.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>319, 56</value>
+    <value>192, 134</value>
   </metadata>
   <metadata name="AlertaComun.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>692, 56</value>
+    <value>390, 134</value>
+  </metadata>
+  <metadata name="hiloWebServiceCovisol.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 134</value>
+  </metadata>
+  <metadata name="AlertaInforma.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>123, 17</value>
+  </metadata>
+  <metadata name="AlertaBaja.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.Encripta
 Imports System.Transactions
 
@@ -503,31 +511,34 @@ Public Class d_Usuario
     ''' de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeUsuario As e_Usuario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
+                oeUsuario.oePersona.PrefijoID = oeUsuario.PrefijoID '@0001
                 Dim _idpadre As String = odPersona.Guardar(oeUsuario.oePersona)
                 Dim id As String = ""
                 If _idpadre <> "" Then
                     With oeUsuario
-                        id = sqlhelper.ExecuteScalar("SGD.Isp_Usuario_IAE", .TipoOperacion, _
-                         .Id, _idpadre, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave), _
+                        id = sqlhelper.ExecuteScalar("SGD.Isp_Usuario_IAE", .TipoOperacion,
+                         .Id, _idpadre, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave),
                         .IndFechaUltimoIngreso, .Controlado, .Activo, .PrefijoID)
                     End With
                     If oeUsuario.leUsuarioPerfil IsNot Nothing Then
                         For Each oeUsuarioPerfil As e_UsuarioPerfil In oeUsuario.leUsuarioPerfil
                             oeUsuarioPerfil.oeUsuario.Id = id
+                            oeUsuarioPerfil.PrefijoID = oeUsuario.PrefijoID '@0001
                             odUsuarioPerfil.Guardar(oeUsuarioPerfil)
                         Next
                     End If
                     If oeUsuario.leTurnoUsuario IsNot Nothing Then
                         For Each oeTurnoUsuario As e_TurnoUsuario In oeUsuario.leTurnoUsuario
                             oeTurnoUsuario.IdUsuario = id
+                            oeTurnoUsuario.PrefijoID = oeUsuario.PrefijoID '@0001
                             odTurnoUsuario.Guardar(oeTurnoUsuario)
                         Next
                     End If
                     oeUsuario.oeControlTurnoUsuario.IdUsuario = id
                     oeUsuario.oeControlTurnoUsuario.TipoOperacion = ""
                     Dim odControlTU As New d_ControlTurnoUsuario
+                    oeUsuario.oeControlTurnoUsuario.PrefijoID = oeUsuario.PrefijoID '@0001
                     odControlTU.Guardar(oeUsuario.oeControlTurnoUsuario)
                 End If
                 TransScope.Complete()
@@ -572,11 +583,9 @@ Public Class d_Usuario
     ''' <remarks>Manda como parametro el tipo de operacion:"",Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function ActualizaFechaIngreso(ByVal oeUsuario As e_Usuario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeUsuario
-                Return sqlhelper.ExecuteNonQuery("SGD.Isp_Usuario_IAE", .TipoOperacion, _
-                     .Id, .oePersona.Id, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave), _
+                Return sqlhelper.ExecuteNonQuery("SGD.Isp_Usuario_IAE", .TipoOperacion,
+                     .Id, .oePersona.Id, "M", .Codigo, .Login, Encriptador.Encriptar(.Clave),
                     .IndFechaUltimoIngreso, .Controlado, .Activo, .PrefijoID)
             End With
         Catch ex As Exception

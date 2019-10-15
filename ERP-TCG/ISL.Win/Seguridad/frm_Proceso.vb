@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Proceso
@@ -190,6 +198,7 @@ Public Class frm_Proceso
     Private Function Guardando() As Boolean
         Try
             oeProceso.UsuarioCreacion = gUsuarioSGI.Id
+            oeProceso.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olProceso.Guardar(oeProceso) Then
                 Return False
             End If

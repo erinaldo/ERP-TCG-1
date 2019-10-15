@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -321,6 +329,7 @@ Public Class frm_Perfil
                         .UpdateData()
                         oeARUsuario = New e_ActividadRestringida_Usuario
                         oeARUsuario.IdActividadRestringida = .ActiveRow.Cells("Id").Value
+                        oeARUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If .ActiveRow.Cells("Selec").Value Then
                             If Not leARUsuario.Contains(oeARUsuario) Then
                                 oeARUsuario.TipoOperacion = "I"
@@ -402,6 +411,7 @@ Public Class frm_Perfil
                         oeARUsuario.IdUsuario = row.Cells("Id").Value
                         oeARUsuario.IdActividadRestringida = row2.Cells("IdActividadRestringida").Value
                         oeARUsuario.Activo = True
+                        oeARUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leARAAux.Add(oeARUsuario)
                     Next
                 Next
@@ -438,6 +448,7 @@ Public Class frm_Perfil
                         .UpdateData()
                         oeDetalle = New e_PerfilActividadNegocio
                         oeDetalle.IdActividadNegocio = .ActiveRow.Cells("Id").Value
+                        oeDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If .ActiveRow.Cells("Selec").Value Then
                             If Not leDetalle.Contains(oeDetalle) Then
                                 oeDetalle.TipoOperacion = "I"
@@ -535,6 +546,7 @@ Public Class frm_Perfil
         Try
             oePerfil.lePerfilActividadNegocio = leDetalle
             oePerfil.UsuarioCreacion = gUsuarioSGI.Id
+            oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olPerfil.Guardar(oePerfil) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, ficPerfil, 2)

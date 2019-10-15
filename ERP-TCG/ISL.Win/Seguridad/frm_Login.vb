@@ -157,7 +157,7 @@ Public Class frm_Login
                     oeControlUsuario.IdUsuario = gUsuarioSGI.Id
                     oeControlUsuario.Ipv4 = gUsuarioSGI.ObtenerLoginWindows & "(" & gUsuarioSGI.ObtenerIP & ")"
                     oeControlUsuario.TipoOperacion = "I"
-                    oeControlUsuario.PrefijoId = gs_PrefijoIdSucursal
+                    oeControlUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
                     gIdControl = olControlUsuario.Guardar(oeControlUsuario)
                 End If
                 My.Settings.Save()
