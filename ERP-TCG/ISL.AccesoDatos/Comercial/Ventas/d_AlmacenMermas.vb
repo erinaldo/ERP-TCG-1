@@ -68,7 +68,6 @@ Public Class d_AlmacenMermas
 
     Public Function Guardar(ByVal oeAlmacenMermas As e_AlmacenMermas) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAlmacenMermas
                 sqlhelper.ExecuteNonQuery("OPE.Isp_AlmacenMermas_IAE",
                                           .TipoOperacion,

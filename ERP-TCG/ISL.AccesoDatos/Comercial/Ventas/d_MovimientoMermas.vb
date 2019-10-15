@@ -87,7 +87,6 @@ Public Class d_MovimientoMermas
     Public Function Guardar(ByVal oeMovimientoMermas As e_MovimientoMermas) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeMovimientoMermas
                     If .TipoOperacion <> "C" Then
@@ -175,7 +174,6 @@ Public Class d_MovimientoMermas
 
     Public Function Cobrar(ByVal loMovimientoMermas As List(Of e_MovimientoMermas), oeOtrIng As e_OtrosIngresos) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For Each movmer As e_MovimientoMermas In loMovimientoMermas
                     Guardar(movmer)

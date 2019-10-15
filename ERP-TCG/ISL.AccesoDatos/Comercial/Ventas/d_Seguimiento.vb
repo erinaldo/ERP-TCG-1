@@ -180,48 +180,47 @@ Public Class d_Seguimiento
 
     Public Function Guardar1(ByVal oeSeguimiento As e_Seguimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeSeguimiento
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]",
-                                         .TipoOperacion,
-                                         .PrefijoID,
-                                       .Id _
-                                       , .IdViaje _
-                                , Date.Parse("01/01/1901") _
-                                , .IndLlegadaOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndIngresoComplejoOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndCargaOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndTerminoCargaOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndImpresionGuiaOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndSalidaOrigen _
-                                , Date.Parse("01/01/1901") _
-                                , .IndLlegadaAproximadaDestino _
-                                , Date.Parse("01/01/1901") _
-                                , .IndLlegadaDestino _
-                                , Date.Parse("01/01/1901") _
-                                , .IndIngresoDestino _
-                                , Date.Parse("01/01/1901") _
-                                , .IndDescargaDestino _
-                                , Date.Parse("01/01/1901") _
-                                , .IndTerminoDescargaDestino _
-                                , Date.Parse("01/01/1901") _
-                                , .IndSalidaDestino _
-                                , .KmTractoOrigen _
-                                , .KmTractoDestino _
-                                , .KmCarretaOrigen _
-                                , .KmCarretaDestino _
-                                , .HorasRecorreOrigen _
-                                , .HorasRecorreDestino _
-                               , .IdEstado _
-                                , .UsuarioCreacion _
-                                , .Observacion _
-                                , .Incidencia _
-                                , .PesoToneladas)
+                                     .TipoOperacion,
+                                     .PrefijoID,
+                                   .Id _
+                                   , .IdViaje _
+                            , Date.Parse("01/01/1901") _
+                            , .IndLlegadaOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndIngresoComplejoOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndCargaOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndTerminoCargaOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndImpresionGuiaOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndSalidaOrigen _
+                            , Date.Parse("01/01/1901") _
+                            , .IndLlegadaAproximadaDestino _
+                            , Date.Parse("01/01/1901") _
+                            , .IndLlegadaDestino _
+                            , Date.Parse("01/01/1901") _
+                            , .IndIngresoDestino _
+                            , Date.Parse("01/01/1901") _
+                            , .IndDescargaDestino _
+                            , Date.Parse("01/01/1901") _
+                            , .IndTerminoDescargaDestino _
+                            , Date.Parse("01/01/1901") _
+                            , .IndSalidaDestino _
+                            , .KmTractoOrigen _
+                            , .KmTractoDestino _
+                            , .KmCarretaOrigen _
+                            , .KmCarretaDestino _
+                            , .HorasRecorreOrigen _
+                            , .HorasRecorreDestino _
+                           , .IdEstado _
+                            , .UsuarioCreacion _
+                            , .Observacion _
+                            , .Incidencia _
+                            , .PesoToneladas)
             End With
             Return True
         Catch ex As Exception
@@ -240,7 +239,6 @@ Public Class d_Seguimiento
 
             Dim odOperacion As New d_Operacion
 
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeSeguimiento
                     If .TipoOperacion <> "G" Then

@@ -1477,7 +1477,7 @@ Public Class frm_Seguimiento
         'Try
         '    If MessageBox.Show("Desea enviar el mail:  ?", _
         '                        "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-        '        If EnviarEmail("ing.miguelherrera.sistemas@gmail.com", "ing.miguelherrera.sistemas@gmail.com", "", "", "Call Center Informa", txtObservacion.Text, "", True) Then
+        '        If EnviarEmail("consultores.tecnologicos.2010@gmail.com", "consultores.tecnologicos.2010@gmail.com", "", "", "Call Center Informa", txtObservacion.Text, "", True) Then
         '            Await MensajePC("email enviado")
         '            mensajeEmergente.Confirmacion("Se envió un email al área de Sistemas ISL", True)
         '        End If
@@ -4884,7 +4884,7 @@ Public Class frm_Seguimiento
             "Tracto: " & txtViajeTracto.Text & ". Carreta: " & txtViajeCarreta.Text & ". " & Environment.NewLine & _
             "Piloto: " & txtViajePiloto.Text & ". " & Environment.NewLine & _
             "Peso: " & txtPesoToneladas.Text
-            EnviarEmail("ing.miguelherrera.sistemas@gmail.com", "ing.miguelherrera.sistemas@gmail.com;ing.miguelherrera.sistemas@gmail.com;ing.miguelherrera.sistemas@gmail.com", "", "", "CALL CENTER", MensajeCarga, "", True)
+            EnviarEmail("consultores.tecnologicos.2010@gmail.com", "consultores.tecnologicos.2010@gmail.com;consultores.tecnologicos.2010@gmail.com;consultores.tecnologicos.2010@gmail.com", "", "", "CALL CENTER", MensajeCarga, "", True)
             Return True
             ';
         Catch ex As Exception

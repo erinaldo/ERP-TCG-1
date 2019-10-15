@@ -135,7 +135,6 @@ Public Class d_DespachoOperaciones
 
     Public Function Guardar(oeDespachoOperaciones As e_DespachoOperaciones) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim IdResultado As String
             With oeDespachoOperaciones
                 IdResultado = bd.ExecuteScalar("[OPE].[Isp_DespachoOperaciones_IAE]" _

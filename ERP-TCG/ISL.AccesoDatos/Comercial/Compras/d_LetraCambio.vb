@@ -87,7 +87,6 @@ Public Class d_LetraCambio
 
     Public Function Guardar(ByVal oeLetraCambio As e_LetraCambio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLetraCambio
                 sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

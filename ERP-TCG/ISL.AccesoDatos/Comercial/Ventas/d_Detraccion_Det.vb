@@ -61,7 +61,6 @@ Public Class d_Detraccion_Det
 
     Public Function Guardar(ByVal oeDetraccion_Det As e_Detraccion_Det) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetraccion_Det
                 sqlhelper.ExecuteNonQuery("CON.Isp_Detraccion_Det_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports MSScriptControl
@@ -276,6 +284,7 @@ Public Class frm_Descuento
                 oeMovimiento.IdCaja = idCajaCentro
                 oeMovimiento.Concepto = cboConceptos.Value
                 oeMovimiento.NroCuotas = numCuotas.Value
+                oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMovimiento.GuardarDsctoExtorno(oeMovimiento) Then
                     TipoOperacion = "6"
                     Dim formulario As New frm_ReporteVoucherMovimientoCaja
@@ -430,6 +439,7 @@ Public Class frm_Descuento
                     oeMovimiento.oeMovimientoViaje.IdViaje = idViaje
                     oeMovimiento.oeMovimientoViaje.IdTrabajadorRecepciona = cboPilotoViaje.Value
                     oeMovimiento.oeMovimientoViaje.TipoTRB = "E"
+                    oeMovimiento.oeMovimientoViaje.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMovimiento.GuardarDsctoExtorno(oeMovimiento) Then
                         mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                         oeMovimiento = New e_Movimiento
@@ -437,6 +447,7 @@ Public Class frm_Descuento
                         oeMovimiento.TipoOperacion = "X"
                         oeMovimiento.AsignadoGrupo = 1
                         oeMovimiento.oeMovimientoViaje = New e_Movimiento_Viaje
+                        oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olMovimiento.GuardarDsctoExtorno(oeMovimiento)
                         MostrarTabs(0, ficDescuentos, 2)
                         ControlBoton(1, 1, 0, 0, 0, 0, 0, 0, 1)

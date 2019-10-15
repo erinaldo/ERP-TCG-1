@@ -63,7 +63,6 @@ Public Class d_ClienteViajePrimaCon
 
     Public Function Guardar(ByVal oeClienteViajePrimaCon As e_ClienteViajePrimaCon) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeClienteViajePrimaCon
                 sqlhelper.ExecuteNonQuery("OPE.Isp_ClienteViajePrimaCon_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

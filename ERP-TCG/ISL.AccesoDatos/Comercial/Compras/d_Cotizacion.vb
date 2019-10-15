@@ -92,7 +92,6 @@ Public Class d_Cotizacion
     Public Function Guardar(ByVal oeCotizacion As e_Cotizacion) As Boolean
         Try
             Dim resultado As Boolean = False
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeCotizacion

@@ -23,7 +23,6 @@ Public Class d_MotivoTraslado
     Public Function Obtener(ByVal oeMotivoTraslado As e_MotivoTraslado) As e_MotivoTraslado
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("[CMP].[Isp_MotivoTraslado_Listar]", "",
             Left(oeMotivoTraslado.PrefijoID, 1), "", oeMotivoTraslado.Id)
@@ -38,18 +37,17 @@ Public Class d_MotivoTraslado
 
     Public Function Listar(ByVal oeMotivoTraslado As e_MotivoTraslado) As List(Of e_MotivoTraslado)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMotivoTraslado As New List(Of e_MotivoTraslado)
             Dim ds As DataSet
             With oeMotivoTraslado
-                ds = sqlhelper.ExecuteDataset("[CMP].[Isp_MotivoTraslado_Listar]", _
+                ds = sqlhelper.ExecuteDataset("[CMP].[Isp_MotivoTraslado_Listar]",
                          .TipoOperacion _
                         , .Id _
                         , .Codigo _
                         , .Nombre _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .FechaCreacion _
+                        , .FechaCreacion
                         )
             End With
             oeMotivoTraslado = Nothing
@@ -67,15 +65,14 @@ Public Class d_MotivoTraslado
 
     Public Function Guardar(ByVal oeMotivoTraslado As e_MotivoTraslado) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMotivoTraslado
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .FechaCreacion _
+                        , .FechaCreacion
                     )
             End With
             Return True

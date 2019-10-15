@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -125,24 +133,24 @@ Public Class d_FlujoGasto
     Public Function Guardar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
 
                 With oeFlujoGasto
-                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_FlujoCaja_IAE", .TipoOperacion, _
-                                                .Id, _
-                                                .Codigo, _
-                                                .Nombre, _
-                                                .Abreviatura, _
-                                                .Activo, _
-                                                .PrefijoID, _
-                                                Date.Now, _
-                                                .UsuarioCreacion, _
-                                                .IdItemGasto, _
+                    stResultado = sqlhelper.ExecuteScalar("TES.Isp_FlujoCaja_IAE", .TipoOperacion,
+                                                .Id,
+                                                .Codigo,
+                                                .Nombre,
+                                                .Abreviatura,
+                                                .Activo,
+                                                .PrefijoID,
+                                                Date.Now,
+                                                .UsuarioCreacion,
+                                                .IdItemGasto,
                                                 .IndMovimiento).ToString.Split("_")
                 End With
                 For Each CuentaFlujoCaja As e_CuentaFlujoCaja In oeFlujoGasto.ListaCuentaFlujoCaja
                     CuentaFlujoCaja.IdFlujoCaja = stResultado(0)
+                    CuentaFlujoCaja.PrefijoID = oeFlujoCaja.PrefijoID '@0001
                     odCuentaFlujoCaja.Guardar(CuentaFlujoCaja)
                 Next
                 transScope.Complete()

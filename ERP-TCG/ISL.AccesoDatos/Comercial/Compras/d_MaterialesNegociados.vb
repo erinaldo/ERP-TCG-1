@@ -26,7 +26,6 @@ Public Class d_MaterialesNegociados
     Public Function Obtener(ByVal oeMaterialesNegociados As e_MaterialesNegociados) As e_MaterialesNegociados
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CMP.Isp_MaterialesNegociados_Listar", oeMaterialesNegociados.TipoOperacion, oeMaterialesNegociados.Id, oeMaterialesNegociados.IdProveedor)
             If ds.Tables(0).rows.Count > 0 Then
@@ -40,7 +39,6 @@ Public Class d_MaterialesNegociados
 
     Public Function Listar(ByVal oeMaterialesNegociados As e_MaterialesNegociados) As DataSet
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMaterialesNegociados As New List(Of e_MaterialesNegociados)
             Dim ds As DataSet
             With oeMaterialesNegociados
@@ -52,7 +50,7 @@ Public Class d_MaterialesNegociados
                         , "" _
                         , Date.Parse(Now) _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                         )
             End With
             Return ds
@@ -71,11 +69,10 @@ Public Class d_MaterialesNegociados
 
     Public Function Guardar(ByVal oeMaterialesNegociados As e_MaterialesNegociados) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using transcope As New TransactionScope
                 With oeMaterialesNegociados
-                    id = sqlhelper.ExecuteScalar("CMP.Isp_MaterialesNegociados_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("CMP.Isp_MaterialesNegociados_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdProveedor _
                             , .Fecha _

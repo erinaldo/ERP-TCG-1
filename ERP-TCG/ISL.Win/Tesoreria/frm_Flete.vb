@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -248,9 +256,9 @@ Public Class frm_Flete
             If My.Computer.Network.IsAvailable Then
                 Try
                     If My.Computer.Network.Ping("8.8.8.8", 10) Then
-                        Dim txtDe As String = "ing.miguelherrera.sistemas@gmail.com"
-                        Dim txtPara As String = "ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; " & _
-                            "ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.come"
+                        Dim txtDe As String = "consultores.tecnologicos.2010@gmail.com"
+                        Dim txtPara As String = "consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; " &
+                            "consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com"
                         Dim txtAsunto As String = "FLETE CARGADO A CONDUCTOR"
                         Dim txtMensaje As String = ""
                         Dim oeMovVia As New e_Movimiento_Viaje
@@ -394,7 +402,10 @@ Public Class frm_Flete
                             oeOpeDet.Id = griViajeDetalle.ActiveRow.Cells("Id").Value.ToString
                             oeOpeDet.SaldoCarga = .Egreso
                             oeOpeDet.TipoOperacion = "S"
+                            oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                             If olMovimiento.Guardar(oeMovimiento, oeMovAux) Then
+                                oeOpeDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 If olOperacion.GuardarOperacionDetalle(oeOpeDet) Then
                                     If flag Then EnviarCorreo(oeMovimiento.oeMovimientoViaje.IdViaje, oeMovimiento.oeMovimientoFlete.Id)
                                     ugb_Espera.Visible = False
@@ -1117,6 +1128,7 @@ Public Class frm_Flete
                     oe.FleteUnitario = griViajeDetalle.ActiveRow.Cells("FleteUnitario").Value
                     oe.IncluyeIgv = griViajeDetalle.ActiveRow.Cells("IncluyeIgv").Value
                     oe.SaldoCarga = griViajeDetalle.ActiveRow.Cells("Flete").Value
+                    oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOperacion.GuardarOperacionDetalle(oe) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion del flete ha sido grabada Satisfactoriamente", True)
                     decMontoFlete.Value = griViajeDetalle.ActiveRow.Cells("Flete").Value
                     decSaldoFlete.Value = decMontoFlete.Value - CalcularSaldo()
@@ -1129,6 +1141,7 @@ Public Class frm_Flete
                     oe.TipoOperacion = "X"
                     oe.Id = griViajeDetalle.ActiveRow.Cells("Id").Value
                     oe.Glosa = griViajeDetalle.ActiveRow.Cells("Glosa").Value
+                    oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olOperacion.GuardarOperacionDetalle(oe) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion del flete ha sido grabada Satisfactoriamente", True)
             End Select
             griViajeDetalle.Rows.Item(0).Selected = True
@@ -1641,6 +1654,7 @@ Public Class frm_Flete
                     oeMovimiento.TipoOperacion = "T"
                     oeMovimiento.Fecha = Date.Parse("01/01/1901")
                     oeMovimiento.FechaCierre = Date.Parse("01/01/1901")
+                    oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMovimiento.GuardarSimple(oeMovimiento) Then
                         mensajeEmergente.Confirmacion("La Informacion ha Sido Eliminada Correctamente", True)
                         Consultar(True)

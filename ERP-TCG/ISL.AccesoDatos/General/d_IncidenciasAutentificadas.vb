@@ -1,10 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_IncidenciasAutentificadas
 
-    Dim sqlhelper As SqlHelper
+    Dim sqlhelper As New SqlHelper
     Private Function Cargar(ByVal o_fila As DataRow) As e_IncidenciasAutentificadas
         Try
             Dim oeIncidenciasAutentificadas = New e_IncidenciasAutentificadas( _
@@ -25,11 +33,10 @@ Public Class d_IncidenciasAutentificadas
 
     Public Function Obtener(ByVal oeIncidenciasAutentificadas As e_IncidenciasAutentificadas) As e_IncidenciasAutentificadas
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeIncidenciasAutentificadas
-                ds = sqlhelper.ExecuteDataset("[SGD].[Isp_IncidenciasAutentificadas_Listar]", _
-                                                "", _
+                ds = sqlhelper.ExecuteDataset("[SGD].[Isp_IncidenciasAutentificadas_Listar]",
+                                                "",
                                                 .Id)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -45,7 +52,6 @@ Public Class d_IncidenciasAutentificadas
 
     Public Function Listar(ByVal oeIncidenciasAutentificadas As e_IncidenciasAutentificadas) As List(Of e_IncidenciasAutentificadas)
         Try
-            sqlhelper = New SqlHelper
             Dim ldIncidenciasAutentificadas As New List(Of e_IncidenciasAutentificadas)
             Dim ds As DataSet
             With oeIncidenciasAutentificadas
@@ -74,12 +80,10 @@ Public Class d_IncidenciasAutentificadas
 
     Public Function Guardar(ByVal oeIncidenciasAutentificadas As e_IncidenciasAutentificadas) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeIncidenciasAutentificadas
-                sqlhelper.ExecuteNonQuery("[SGD].[Isp_IncidenciasAutentificadas_IAE]", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[SGD].[Isp_IncidenciasAutentificadas_IAE]",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdArea _
                                             , .IdActividadNegocio _
@@ -99,11 +103,10 @@ Public Class d_IncidenciasAutentificadas
 
     Public Function Eliminar(ByVal oeIncidenciasAutentificadas As e_IncidenciasAutentificadas) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeIncidenciasAutentificadas
-                sqlhelper.ExecuteNonQuery("[SGD].[Isp_IncidenciasAutentificadas_IAE]", _
-                                        "E", _
-                                        "", _
+                sqlhelper.ExecuteNonQuery("[SGD].[Isp_IncidenciasAutentificadas_IAE]",
+                                        "E",
+                                        "",
                                         .Id)
             End With
             Return True

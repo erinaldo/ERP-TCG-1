@@ -156,7 +156,6 @@ Public Class d_GastoOperacion
     Public Function Guardar(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean
         Dim oeMovimientoDocumento22 As New e_MovimientoDocumento
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim oeMovimientoDocumento As New e_MovimientoDocumento
             Dim odGasto As New d_GastoOperacion
             With oeGastoOperacion
@@ -171,6 +170,7 @@ Public Class d_GastoOperacion
                     Else
                         .oeMovimientoDocumento.IndCompraVenta = 1
                     End If
+                    .oeMovimientoDocumento.PrefijoID = oeGastoOperacion.PrefijoID '@0001
                     odMovimientoDocumento.GuardarGastoOperacion(.oeMovimientoDocumento)
                     .IdDocumento = .oeMovimientoDocumento.Id
                 End If

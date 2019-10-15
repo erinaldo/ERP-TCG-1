@@ -552,7 +552,7 @@ Public Class frm_ValesRendir
             Documento = objWorkbook.Path & "\" & objWorkbook.Name
             objXls.Workbooks.Close()
             objXls.Quit()
-            Dim listaMailTrabajadores As String = "ing.miguelherrera.sistemas@gmail.com; "
+            Dim listaMailTrabajadores As String = "consultores.tecnologicos.2010@gmail.com; "
             For Each detalle As e_ValesRendir In loValesRendir.Where(Function(item) item.Seleccion = True).ToList
                 oeCombo = New e_Combo
                 oeCombo.Id = detalle.IdTrabajador

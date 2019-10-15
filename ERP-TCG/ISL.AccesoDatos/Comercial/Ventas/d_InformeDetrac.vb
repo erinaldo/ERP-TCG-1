@@ -67,7 +67,6 @@ Public Class d_InformeDetrac
 
     Public Function Guardar(ByRef oeInformeDetrac As e_InformeDetrac) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odInformeDet As New d_InformeDetrac_Det
             Dim odDetracDet As New d_Detraccion_Det
             Dim oeDetracDet As New e_Detraccion_Det

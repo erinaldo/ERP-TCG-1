@@ -1,11 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_OrdenVenta
 
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
-    Dim sqlhelper As SqlHelper
+    Dim sqlhelper As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_OrdenVenta
         Try
@@ -116,7 +123,7 @@ Public Class d_OrdenVenta
                 With oeOrdenComercial
                     stResultado = sqlhelper.ExecuteScalar("[LGT].[Sp_OrdenComercial_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , "" _
                             , "" _

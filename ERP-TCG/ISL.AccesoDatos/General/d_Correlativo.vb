@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -79,12 +87,11 @@ Public Class d_Correlativo
 
     Public Function Guardar(ByVal oeCorrelativo As e_Correlativo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCorrelativo
-                sqlhelper.ExecuteNonQuery("STD.Isp_Correlativo_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_Correlativo_IAE", .TipoOperacion, .PrefijoID,
                         .IdTipoDocumento _
                         , .Numero _
-                        , .Serie )
+                        , .Serie)
             End With
             Return True
         Catch ex As Exception
@@ -95,9 +102,8 @@ Public Class d_Correlativo
 
     Public Function GuardarLocal(ByVal oeCorrelativo As e_Correlativo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCorrelativo
-                sqlhelper.ExecuteNonQuery("STD.Isp_CorrelativoLocal_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_CorrelativoLocal_IAE", .TipoOperacion, .PrefijoID,
                         .IdTipoDocumento _
                         , .Numero _
                         , .Serie _

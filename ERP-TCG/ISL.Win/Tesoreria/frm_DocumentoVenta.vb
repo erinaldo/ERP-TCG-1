@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Public Class frm_DocumentoVenta
@@ -312,10 +320,11 @@ Public Class frm_DocumentoVenta
                         .SubTotal = grilla.Cells("SubTotal").Value
                         .UsuarioCreacion = gUsuarioSGI.Id
                         .Activo = True
+                        .PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeDocumentoVenta.loDocumentoVentaDetalle.Add(oeDocumentoVentaDetalle)
                     End With
                 Next
-
+                oeDocumentoVenta.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olDocumentoVenta.Guardar(oeDocumentoVenta) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     Consultar(True)

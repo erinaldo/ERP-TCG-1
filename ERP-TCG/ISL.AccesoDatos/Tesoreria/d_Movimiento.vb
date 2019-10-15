@@ -158,7 +158,6 @@ Public Class d_Movimiento
 
     Public Function GuardarDsctoExtorno(ByVal oeMovimiento As e_Movimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strCorrelativo As String = ""
             With oeMovimiento
                 If .TipoMovimiento = 2 Then
@@ -166,8 +165,8 @@ Public Class d_Movimiento
                     GrabarCorrelativo(strCorrelativo, "VALE", .PrefijoID)
                 End If
                 Using transScope As New TransactionScope()
-                    strIdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, _
-                                                              .PrefijoID, _
+                    strIdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion,
+                                                              .PrefijoID,
                                                   .Id _
                                                 , .Fecha _
                                                 , .IdCuentaCorrienteOrigen _
@@ -194,6 +193,7 @@ Public Class d_Movimiento
                     If .oeMovimientoViaje.IdViaje <> "" Then
                         .oeMovimientoViaje.IdMovimiento = strIdMovimiento
                         .oeMovimientoViaje.TipoOperacion = "I"
+                        .oeMovimientoViaje.PrefijoID = oeMovimiento.PrefijoID '@0001
                         odMovimiento_Viaje.Guardar(.oeMovimientoViaje)
                     End If
                     .Id = strIdMovimiento
@@ -290,7 +290,7 @@ Public Class d_Movimiento
                             GrabarCorrelativo(strCorrelativo, "VALE", .PrefijoID)
                         End If
                     End If
-                    IdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, .PrefijoID, _
+                    IdMovimiento = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_IAE", .TipoOperacion, .PrefijoID,
                                                   .Id, .Fecha, .IdCuentaCorrienteOrigen, .IdCuentaCorrienteDestino, .Ingreso, .Egreso _
                                                 , .Saldo, .Glosa, strCorrelativo, .UsuarioCreacion, .Descuento, .TipoMovimiento, .IdEstado _
                                                 , .Activo, .TipoTransa, .AsignadoGrupo, .IndPrestamoHab, .Depositado, .SaldoPorDepositar _

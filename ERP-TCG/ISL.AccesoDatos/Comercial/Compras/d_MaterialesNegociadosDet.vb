@@ -31,7 +31,6 @@ Public Class d_MaterialesNegociadosDet
     Public Function Obtener(ByVal oeMaterialesNegociadosDet As e_MaterialesNegociadosDet) As e_MaterialesNegociadosDet
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CMP.Isp_MaterialesNegociadosDet_Listar", "",
             Left(oeMaterialesNegociadosDet.PrefijoID, 1), "", oeMaterialesNegociadosDet.Id)
@@ -46,7 +45,6 @@ Public Class d_MaterialesNegociadosDet
 
     Public Function Listar(ByVal oeMaterialesNegociadosDet As e_MaterialesNegociadosDet) As List(Of e_MaterialesNegociadosDet)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMaterialesNegociadosDet As New List(Of e_MaterialesNegociadosDet)
             Dim ds As DataSet
             With oeMaterialesNegociadosDet
@@ -76,9 +74,8 @@ Public Class d_MaterialesNegociadosDet
 
     Public Function Guardar(ByVal oeMaterialesNegociadosDet As e_MaterialesNegociadosDet) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMaterialesNegociadosDet
-                sqlhelper.ExecuteNonQuery("CMP.Isp_MaterialesNegociadosDet_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_MaterialesNegociadosDet_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMaterialesNegociados _
                         , .IdMaterial _

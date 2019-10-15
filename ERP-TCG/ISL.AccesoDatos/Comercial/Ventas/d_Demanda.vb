@@ -1,13 +1,20 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_Demanda
 
-    Dim sqlhelper As SqlHelper
-    Dim odIncidenciaAutentificada As d_IncidenciasAutentificadas
-    Dim odViajeTercero As d_ViajesTerceros
+    Dim sqlhelper As New SqlHelper
+    Dim odIncidenciaAutentificada As New d_IncidenciasAutentificadas
+    Dim odViajeTercero As New d_ViajesTerceros
     Dim odBitacora As New d_Bitacora
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
     Dim fechaReferencia As Date
     Public Function Cargar(ByVal o_fila As DataRow) As e_Demanda
         Try
@@ -174,7 +181,6 @@ Public Class d_Demanda
             sqlhelper = New SqlHelper
             odViajeTercero = New d_ViajesTerceros
             odIncidenciaAutentificada = New d_IncidenciasAutentificadas
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For I As Integer = 1 To oeDemanda.NroDemanda
                     With oeDemanda
@@ -227,8 +233,6 @@ Public Class d_Demanda
 
     Public Function GuardarDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            d_DatosConfiguracion = New d_DatosConfiguracion
             With oeDemandaDetalle
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_DemandaDetalle_IAE]", "I",
                                           .PrefijoID,
@@ -265,7 +269,6 @@ Public Class d_Demanda
             sqlhelper = New SqlHelper
             odViajeTercero = New d_ViajesTerceros
             odIncidenciaAutentificada = New d_IncidenciasAutentificadas
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim IdsDemandas As String = ""
             Using transScope As New TransactionScope()
                 If oeDemanda.Id <> "" And oeDemanda.oeListaBitacora.Count > 0 Then
@@ -340,8 +343,6 @@ Public Class d_Demanda
 
     Public Function GuardarDetalleDemandaPredemanda(ByVal oeDemandaDetalle As e_DemandaDetalle) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim codigo As String
             With oeDemandaDetalle
                 codigo = sqlhelper.ExecuteScalar("[OPE].[Isp_DemandaDetalle_DemandaPredemanda_IAE]", "I",
@@ -392,7 +393,7 @@ Public Class d_Demanda
                     With oeDemandaDetalle.oeIncidenciaAutentificadas
                         .TipoOperacion = "I"
                         .Referencia = codigo
-                        .FechaReferencia = fechaReferencia                        
+                        .FechaReferencia = fechaReferencia
                     End With
                     odIncidenciaAutentificada.Guardar(oeDemandaDetalle.oeIncidenciaAutentificadas)
                 End If

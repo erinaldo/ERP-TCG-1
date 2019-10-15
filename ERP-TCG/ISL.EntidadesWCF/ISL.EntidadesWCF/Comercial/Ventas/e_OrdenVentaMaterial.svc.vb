@@ -35,7 +35,12 @@ Public Class e_OrdenVentaMaterial
     Private _IndOperacion As Integer
     Private _IdOrigen As String
     Private _IdDestino As String
-
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
     Public TipoOperacion As String
 
 #End Region

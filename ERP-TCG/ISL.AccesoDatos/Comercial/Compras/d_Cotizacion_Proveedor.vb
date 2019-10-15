@@ -68,7 +68,6 @@ Public Class d_Cotizacion_Proveedor
 
     Public Function Guardar(ByVal oe As e_Cotizacion_Proveedor) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odCotizacionDetalleMar As New d_CotizacionDetalleMat
             Dim odCotizacionDetalleSer As New d_CotizacionDetalleSer
             Dim stResultado() As String

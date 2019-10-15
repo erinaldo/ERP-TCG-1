@@ -103,7 +103,6 @@ Public Class d_OperacionesProceso
     Public Function Guardar(ByVal oeOperacionesProceso As e_OperacionesProceso) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeOperacionesProceso
                     stResultado = sqlhelper.ExecuteScalar("OPE.Isp_OperacionesProceso_IAE",

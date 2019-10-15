@@ -81,7 +81,6 @@ Public Class l_GastoOperacion
                 oeComboCta = New e_Combo
                 odComboCta = New d_Combo
                 loComboCTa = New List(Of e_Combo)
-                odDatos = New d_DatosConfiguracion
                 'datatables
                 Dim dt_MD As Data.DataTable = olMovimientoDocumento.CrearDT()
                 Dim dt_DD As Data.DataTable = olDetalleDocumento.CrearDT()
@@ -99,7 +98,7 @@ Public Class l_GastoOperacion
                     IdPeriodo = loGastoOperacionMasiva.Where(Function(i) i.IdPeriodo.Trim <> "").ToList(0).IdPeriodo
                 End If
                 If loGastoOperacionMasiva.Where(Function(item) item.TipoOperacion = "I").Count > 0 Then
-                    oeComboCta.Id = odDatos.PrefijoID
+                    oeComboCta.Id = PrefijoID '@0001
                     oeComboCta.Nombre = "IdSyNroAsiento"
                     oeComboCta.Descripcion = IdPeriodo
                     loComboCTa = odComboCta.Listar(oeComboCta)
@@ -235,7 +234,7 @@ Public Class l_GastoOperacion
                         Dim rowAsientoMovDoc As Data.DataRow
                         Dim rowAsientoMovMovDoc As Data.DataRow
                         Dim rowCtaxCP As Data.DataRow
-
+                        oeGastoOperacion.PrefijoID = PrefijoID '@0001
                         With oeGastoOperacion
                             If .IdTipoDocumento = "1CH000000073" Then 'SUSTENTO CONTABLE
 

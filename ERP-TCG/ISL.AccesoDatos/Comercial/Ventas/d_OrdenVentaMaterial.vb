@@ -1,12 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_OrdenVentaMaterial
 
+    Dim sqlhelper As New SqlHelper
 
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
-        Dim sqlhelper As SqlHelper
-
-        Private Function Cargar(ByVal o_fila As DataRow) As e_OrdenVentaMaterial
+    Private Function Cargar(ByVal o_fila As DataRow) As e_OrdenVentaMaterial
             Try
                 Dim oeOrdenComercial_Material = New e_OrdenVentaMaterial(
                                  o_fila("Id").ToString _
@@ -91,9 +97,9 @@ Public Class d_OrdenVentaMaterial
             Try
                 Dim stResultado() As String
                 With oeOrdenComercial_Material
-                    stResultado = sqlhelper.ExecuteScalar("[LGT].[Sp_OrdenComercial_Material_IAE]" _
+                stResultado = sqlhelper.ExecuteScalar("[LGT].[Sp_OrdenComercial_Material_IAE]" _
                             , .TipoOperacion _
-                            , d_DatosConfiguracion.PrefijoID _
+                            , .PrefijoID _
                             , .Id _
                             , .IdEmpresaSis _
                             , .IdSucursal _
@@ -116,7 +122,7 @@ Public Class d_OrdenVentaMaterial
                             , .IdOrigen _
                             , .IdDestino
                             ).ToString.Split("_")
-                    .Id = stResultado(0)
+                .Id = stResultado(0)
                 End With
                 Return True
             Catch ex As Exception

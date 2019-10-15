@@ -61,10 +61,9 @@ Public Class d_ClienteViajePrima
     End Function
 
     Public Function Guardar(ByVal oeClienteViajePrima As e_ClienteViajePrima) As Boolean
+        Dim odClienteViajePrimaCon As New d_ClienteViajePrimaCon
+        Dim id() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            Dim odClienteViajePrimaCon As New d_ClienteViajePrimaCon
-            Dim id() As String
             With oeClienteViajePrima
                 id = sqlhelper.ExecuteScalar("[OPE].[Isp_ClienteViajePrima_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _

@@ -72,7 +72,6 @@ Public Class d_InformeDetrac_Det
 
     Public Function Guardar(ByVal oeInformeDetrac_Det As e_InformeDetrac_Det) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeInformeDetrac_Det
                 sqlhelper.ExecuteNonQuery("CON.Isp_InformeDetrac_Det_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

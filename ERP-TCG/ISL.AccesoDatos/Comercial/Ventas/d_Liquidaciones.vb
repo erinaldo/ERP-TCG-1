@@ -79,16 +79,14 @@ Public Class d_Liquidaciones
     Public Function Guardar(ByVal oeLiquidaciones As e_Liquidaciones) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             Using transScope As New TransactionScope()
                 '' Para tottus liquidaciones
                 If oeLiquidaciones.IndFormato = 100 Then
                     Dim LiquidacionTottus As New e_Liquidaciones
                     Dim ClaseServicio As String
 
-                    Dim SubClaseServicio = (From Detalle In oeLiquidaciones.ListaLiquidacionDetalle _
-                                        Select Detalle.Consolidado3).Distinct()
+                    Dim SubClaseServicio = (From Detalle In oeLiquidaciones.ListaLiquidacionDetalle
+                                            Select Detalle.Consolidado3).Distinct()
 
                     For Each SubClase In SubClaseServicio
                         LiquidacionTottus = New e_Liquidaciones
@@ -291,7 +289,6 @@ Public Class d_Liquidaciones
 
     Public Function GuardarLiquidacionDetalle(ByVal oeLiquidacioneDetalle As e_LiquidacionDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLiquidacioneDetalle
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_LiquidacionDetalle_IAE]",
                                           .TipoOperacion,

@@ -20,9 +20,8 @@ Public Class d_OrdenCmpCotizacion
 
     Public Function Guardar(ByVal oeOrdenCmpCotizacion As e_OrdenCmpCotizacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenCmpCotizacion
-                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenCompra_Cotizacion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenCompra_Cotizacion_IAE", .TipoOperacion, .PrefijoID,
                                           .Id _
                                                                , .IdOrdenCompra _
                                                                , .IdCotizacion)

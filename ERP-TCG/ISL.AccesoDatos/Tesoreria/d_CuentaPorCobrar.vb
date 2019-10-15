@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -82,9 +90,8 @@ Public Class d_CuentaPorCobrar
 
     Public Function Guardar(ByVal oeCuentaPorCobrar As e_CuentaPorCobrar) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuentaPorCobrar
-                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaPorCobrar_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaPorCobrar_IAE", .TipoOperacion, .PrefijoID,
                         "A" _
                         , .Id _
                         , .Codigo _
@@ -100,7 +107,7 @@ Public Class d_CuentaPorCobrar
                         , .FechaEmision _
                         , .FechaVencimiento _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

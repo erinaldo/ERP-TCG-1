@@ -45,14 +45,14 @@ Public Class frm_EnvioCorreo
 
 
     Public Function Liquidaciones() As Boolean
-        txtDe.Text = "ing.miguelherrera.sistemas@gmail.com"
+        txtDe.Text = "consultores.tecnologicos.2010@gmail.com"
         txtDe.Enabled = False
         txtAsunto.Text = "Viajes desde"
         Return True
     End Function
 
     Public Function DemandaRapida() As Boolean
-        txtDe.Text = "ing.miguelherrera.sistemas@gmail.com"
+        txtDe.Text = "consultores.tecnologicos.2010@gmail.com"
         txtDe.Enabled = False
         txtAsunto.Text = "Demanda Rapida"  
         txtMensaje.Text = ""
@@ -60,7 +60,7 @@ Public Class frm_EnvioCorreo
     End Function
 
     Public Function SeguienteFalla(Mensaje As String) As Boolean
-        txtDe.Text = "ing.miguelherrera.sistemas@gmail.com"
+        txtDe.Text = "consultores.tecnologicos.2010@gmail.com"
         txtDe.Enabled = False
         txtAsunto.Text = "Incidencia OP"
         txtMensaje.Text = Mensaje

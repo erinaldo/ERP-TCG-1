@@ -147,7 +147,6 @@ Public Class d_DemandaRapida
     ''' de la demanda rapida es positiva= true sino false 
     '''Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeDemandaRapida
                 sqlhelper.ExecuteNonQuery("OPE.Isp_PreDemanda_IAE", "I",

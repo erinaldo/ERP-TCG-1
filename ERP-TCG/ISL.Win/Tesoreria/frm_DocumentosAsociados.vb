@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -403,6 +411,7 @@ Public Class frm_DocumentosAsociados
                     oeMovAn.Saldo = decSubtotal.Value + decNoGravada.Value
                     oeMovAn.IdGastoFuncion = "1CH000087" '--costo de venta
                     oeMovAn.IdCuentaContable = oeFlujoCajaAux.CtaContable
+                    oeMovAn.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leListaAn.Add(oeMovAn)
                     'End If
                     If cboTipoDoc.Text = "SUSTENTO CONTABLE" And oeMovAn.IdCuentaContable.Trim = "" Then
@@ -411,6 +420,7 @@ Public Class frm_DocumentosAsociados
                     For Each obj As e_MovimientoAnalisis In leListaAn
                         obj.Monto = obj.Monto / Divide
                         obj.Saldo = obj.Saldo / Divide
+                        obj.PrefijoID = gs_PrefijoIdSucursal '@0001
                         .oeMovimientoDoc.MovimientoAnalisis.Add(obj)
                     Next
                     BandBusDoc = False
@@ -418,6 +428,7 @@ Public Class frm_DocumentosAsociados
                 End If
             End With
             olMovCuentaCte.Validar(oeMovCuentaCte)
+            oeMovCuentaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
             leMovCuentaCte.Add(oeMovCuentaCte)
             'CalculaSaldo(leMovCuentaCte)
             'griMovimiento.DataBind()
@@ -513,8 +524,9 @@ Public Class frm_DocumentosAsociados
                     oeMovCtaCte.TipoOperacion = "L"
                     oeMovCtaCte.Liquidado = 0
                     oeMovCtaCte.UsuarioLiquida = gUsuarioSGI.Id
+                    oeMovCtaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
                 Next
-                olMovCuentaCte.GuardarLista(leMovCuentaCte)
+                olMovCuentaCte.GuardarLista(leMovCuentaCte, gs_PrefijoIdSucursal)
                 MostrarTabs(0, ficDocAosciados)
                 Consultar(True)
             End If
@@ -630,6 +642,7 @@ Public Class frm_DocumentosAsociados
             leCuentaCteBusq = New List(Of e_CuentaCorriente)
             oeCuentaCte = New e_CuentaCorriente
             oeCuentaCte.Id = String.Empty : oeCuentaCte.Trabajador = "[TODOS]"
+            oeCuentaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
             leCuentaCteBusq.Add(oeCuentaCte)
             If cboTipoCuentaBusq.SelectedIndex = 0 Then
                 leCuentaCteBusq.AddRange(leCuentaCte.Where(Function(it) it.Tipo = 2).ToList)
@@ -648,6 +661,7 @@ Public Class frm_DocumentosAsociados
             oeDocPago = New e_MovimientoDocumento
             oeDocPago = griDocumentos.ActiveRow.ListObject
             oeDocPago.TipoOperacion = "I"
+            oeDocPago.PrefijoID = gs_PrefijoIdSucursal '@0001
             If ValidarAgregarDetalle(oeDocPago) Then
                 With leDocPago
                     If Not .Contains(oeDocPago) Then
@@ -692,6 +706,7 @@ Public Class frm_DocumentosAsociados
             objValueList = Me.griMovimiento.DisplayLayout.ValueLists.Add("IdMoneda")
 
             For Each oeTD As e_Moneda In leMoneda
+                oeTD.PrefijoID = gs_PrefijoIdSucursal '@0001
                 objValueList.ValueListItems.Add(oeTD.Id, oeTD.Nombre)
             Next
             CrearComboGrid3("IdMoneda", "Nombre", griMovimiento, True)
@@ -872,7 +887,7 @@ Public Class frm_DocumentosAsociados
             Select Case ficDocAosciados.SelectedTab.Index
                 Case 1
                     If ln_TipoCta = 2 Then ' Transferencia
-                        olMovCuentaCte.GuardarLista(leMovCuentaCte)
+                        olMovCuentaCte.GuardarLista(leMovCuentaCte, gs_PrefijoIdSucursal)
                         mensajeEmergente.Confirmacion("Los Movimientos se guardaron correctamente", True)
                         MostrarTabs(0, ficDocAosciados)
                         Consultar(True)
@@ -899,6 +914,7 @@ Public Class frm_DocumentosAsociados
                             oeAsiModAux.TipoCambio = _TipoCambio
                             oeAsiModAux.UsuarioCreacion = gUsuarioSGI.Id
                             oeAsiModAux.IndVinculado = True
+                            oeAsiModAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                             leAsiMod.Add(oeAsiModAux)
                             If olMovCuentaCte.GuardarLista2(leMovCuentaCte, leAsiMod, gs_PrefijoIdSucursal) Then
                                 mensajeEmergente.Confirmacion("Los Documentos se guardaron correctamente", True)
@@ -921,6 +937,7 @@ Public Class frm_DocumentosAsociados
                     Dim leEst As New List(Of e_Estado)
                     leEst = leEstado.Where(Function(item) item.Nombre = "HABILITADA").ToList
                     oeCuentaCte.IdEstado = leEst(0).Id
+                    oeCuentaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olCuentaCte.Guardar(oeCuentaCte) Then
                         mensajeEmergente.Confirmacion("Los Movimientos se guardaron correctamente", True)
                         If MessageBox.Show("¿Desea Agregar Movimiento a esta Cuenta?", "Mensaje de Sistema", _
@@ -976,6 +993,7 @@ Public Class frm_DocumentosAsociados
                             _oeMovAux.UsuarioLiquida = gUsuarioSGI.Id
                             _oeMovAux.Liquidado = 1
                         End If
+                        _oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeSaldoCuentaCte.leMovCtaCte.Add(_oeMovAux)
                     Next
                     ' Crear Movimiento de Pago
@@ -994,6 +1012,7 @@ Public Class frm_DocumentosAsociados
                     _oeMovAux.Liquidado = 1
                     _oeMovAux.FechaLiquida = Date.Now
                     _oeMovAux.UsuarioLiquida = gUsuarioSGI.Id
+                    _oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     oeSaldoCuentaCte.leMovCtaCte.Add(_oeMovAux)
                     ' Actualiza datos de Saldo
                     oeSaldoCuentaCte.FechaLiquida = fecPago.Value
@@ -1499,6 +1518,7 @@ Public Class frm_DocumentosAsociados
                 oeSaldoCuentaCte.TipoOperacion = "N"
                 oeSaldoCuentaCte.Id = griSaldoCuenta.ActiveRow.Cells("Id").Value
                 oeSaldoCuentaCte.Monto = _Monto
+                oeSaldoCuentaCte.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olSaldoCuentaCte.Guardar(oeSaldoCuentaCte) Then
                     mensajeEmergente.Confirmacion("Se Actualizo el Registro", True)
                     Consultar(True)

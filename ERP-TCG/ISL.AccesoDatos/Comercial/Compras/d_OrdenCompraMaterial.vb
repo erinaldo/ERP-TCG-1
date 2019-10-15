@@ -113,7 +113,6 @@ Public Class d_OrdenCompraMaterial
 
     Public Function Guardar(ByVal oeOrdenMaterial As e_OrdenCompraMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeOrdenMaterial
                 id = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompraMaterial_IAE",

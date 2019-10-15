@@ -65,7 +65,6 @@ Public Class d_ClienteRutaCarga
 
     Public Function Guardar(ByVal oeClienteRutaCarga As e_ClienteRutaCarga) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeClienteRutaCarga
                 sqlhelper.ExecuteNonQuery("OPE.Isp_ClienteRutaCarga_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

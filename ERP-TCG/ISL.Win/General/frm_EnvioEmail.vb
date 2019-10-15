@@ -48,7 +48,7 @@ Public Class frm_EnvioEmail
     End Function
 
     Public Function Liquidaciones() As Boolean
-        txtDe.Text = "ing.miguelherrera.sistemas@gmail.com"
+        txtDe.Text = "consultores.tecnologicos.2010@gmail.com"
         txtDe.Enabled = False
         txtAsunto.Text = "Viajes desde"
         txtMensaje.Visible = False
@@ -60,7 +60,7 @@ Public Class frm_EnvioEmail
             txtMensaje.Visible = True
             txtMensajeExtra.Height = 74
             If gUsuarioSGI.oePersona.leEmail.Count > 0 Then
-                txtDe.Text = gUsuarioSGI.oePersona.leEmail.Where(Function(Item) Item.Principal = 1 Or Item.Principal = 0).ToList.Item(0).Nombre.ToString ''"ing.miguelherrera.sistemas@gmail.com" '
+                txtDe.Text = gUsuarioSGI.oePersona.leEmail.Where(Function(Item) Item.Principal = 1 Or Item.Principal = 0).ToList.Item(0).Nombre.ToString ''"consultores.tecnologicos.2010@gmail.com" '
                     txtDe.Enabled = False            
             Else
                 txtDe.Text = ""
@@ -80,7 +80,7 @@ Public Class frm_EnvioEmail
 
     Public Function LlenarDatos() As Boolean
         Try
-            txtDe.Text = gUsuarioSGI.oePersona.leEmail.Where(Function(Item) Item.Principal = 1).ToList.Item(0).Nombre.ToString ''"ing.miguelherrera.sistemas@gmail.com" '
+            txtDe.Text = gUsuarioSGI.oePersona.leEmail.Where(Function(Item) Item.Principal = 1).ToList.Item(0).Nombre.ToString ''"consultores.tecnologicos.2010@gmail.com" '
             txtDe.Enabled = False
             txtAsunto.Text = asunto
             txtCC.Text = gUsuarioSGI.oePersona.leEmail.Where(Function(Item) Item.Principal = 1).ToList.Item(0).Nombre.ToString
@@ -94,9 +94,9 @@ Public Class frm_EnvioEmail
     End Function
 
     Public Function SeguienteFalla(Mensaje As String) As Boolean
-        txtDe.Text = "ing.miguelherrera.sistemas@gmail.com"
+        txtDe.Text = "consultores.tecnologicos.2010@gmail.com"
         txtDe.Enabled = False
-        txtPara.Text = IIf(bandFrmExterno = "SI", "ing.miguelherrera.sistemas@gmail.com", "")
+        txtPara.Text = IIf(bandFrmExterno = "SI", "consultores.tecnologicos.2010@gmail.com", "")
         txtAsunto.Text = asunto
         '  txtMensaje.DocumentText = Mensaje
         txtMensajeExtra.Text = Mensaje

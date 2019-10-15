@@ -66,7 +66,6 @@ Public Class d_ClientePrima
 
     Public Function Guardar(ByVal oeClientePrima As e_ClientePrima) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeClientePrima
                 sqlhelper.ExecuteNonQuery("OPE.Isp_ClientePrimaSeguro_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

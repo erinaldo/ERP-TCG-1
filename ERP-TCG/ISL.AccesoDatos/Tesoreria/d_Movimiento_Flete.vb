@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -44,10 +52,9 @@ Public Class d_Movimiento_Flete
     Public Function Obtener(ByVal oeMovimiento_Flete As e_Movimiento_Flete) As e_Movimiento_Flete
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Flete_Listar", oeMovimiento_Flete.TipoOperacion, oeMovimiento_Flete.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeMovimiento_Flete = Cargar(ds.Tables(0).Rows(0))
             Else
                 oeMovimiento_Flete = New e_Movimiento_Flete
@@ -60,7 +67,6 @@ Public Class d_Movimiento_Flete
 
     Public Function Listar(ByVal oeMovimiento_Flete As e_Movimiento_Flete) As List(Of e_Movimiento_Flete)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMovimiento_Flete As New List(Of e_Movimiento_Flete)
             Dim ds As DataSet
             With oeMovimiento_Flete
@@ -69,7 +75,7 @@ Public Class d_Movimiento_Flete
                         , .IdOperacionDetalle _
                         , .IdMovimiento _
                         , .IdCheque _
-                        , .TipoCobro _
+                        , .TipoCobro
                         )
             End With
             oeMovimiento_Flete = Nothing

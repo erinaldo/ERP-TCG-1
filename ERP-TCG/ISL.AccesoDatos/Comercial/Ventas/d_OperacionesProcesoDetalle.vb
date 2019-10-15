@@ -91,7 +91,6 @@ Public Class d_OperacionesProcesoDetalle
 
     Public Function Guardar(ByVal oeOperacionesProcesoDetalle As e_OperacionesProcesoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOperacionesProcesoDetalle
                 sqlhelper.ExecuteNonQuery("OPE.Isp_OperacionesProcesoDetalle_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

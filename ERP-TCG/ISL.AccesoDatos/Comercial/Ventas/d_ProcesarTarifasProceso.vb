@@ -85,7 +85,6 @@ Public Class d_ProcesarTarifasProceso
 
     Public Function Guardar(ByVal oeProcesarTarifasProceso As e_ProcesarTarifasProceso) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeProcesarTarifasProceso
                 sqlhelper.ExecuteNonQuery("OPE.Isp_ProcesarTarifasProceso_IAE",
                                           .TipoOperacion,

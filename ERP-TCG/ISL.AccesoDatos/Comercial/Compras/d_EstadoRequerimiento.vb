@@ -61,7 +61,6 @@ Public Class d_EstadoRequerimiento
 
     Public Function Guardar(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEstadoRequerimiento
                 sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

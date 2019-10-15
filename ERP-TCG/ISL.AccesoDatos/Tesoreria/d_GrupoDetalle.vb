@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -144,11 +152,10 @@ Public Class d_GrupoDetalle
     Public Function Obtener(ByVal oeGrupoDetalle As e_GrupoDetalle) As e_GrupoDetalle
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
             Left(oeGrupoDetalle.PrefijoID, 1), "", oeGrupoDetalle.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeGrupoDetalle = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeGrupoDetalle
@@ -159,7 +166,6 @@ Public Class d_GrupoDetalle
 
     Public Function Listar(ByVal oeGrupoDetalle As e_GrupoDetalle) As List(Of e_GrupoDetalle)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGrupoDetalle As New List(Of e_GrupoDetalle)
             Dim ds As DataSet
             With oeGrupoDetalle
@@ -168,7 +174,7 @@ Public Class d_GrupoDetalle
                         , .IdGrupo _
                         , .IdGastoOperacion _
                         , .IdCaja _
-                        , .Activo )
+                        , .Activo)
             End With
             oeGrupoDetalle = Nothing
             For Each o_Fila As DataRow In ds.Tables(0).Rows
@@ -183,7 +189,6 @@ Public Class d_GrupoDetalle
 
     Public Function ListarDesc(ByVal oeGrupoDetalle As e_GrupoDetalle) As List(Of e_GrupoDetalle)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGrupoDetalle As New List(Of e_GrupoDetalle)
             Dim ds As DataSet
             With oeGrupoDetalle
@@ -191,7 +196,7 @@ Public Class d_GrupoDetalle
                         , .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
-                        , .Activo  )
+                        , .Activo)
             End With
             oeGrupoDetalle = Nothing
             For Each o_Fila As DataRow In ds.Tables(0).Rows
@@ -207,7 +212,6 @@ Public Class d_GrupoDetalle
 
     Public Function ListarFlete(ByVal oeGrupoDetalle As e_GrupoDetalle) As List(Of e_GrupoDetalle)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGrupoDetalle As New List(Of e_GrupoDetalle)
             Dim ds As DataSet
             With oeGrupoDetalle
@@ -215,7 +219,7 @@ Public Class d_GrupoDetalle
                         , .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
-                        , .Activo )
+                        , .Activo)
             End With
             oeGrupoDetalle = Nothing
             For Each o_Fila As DataRow In ds.Tables(0).Rows
@@ -230,7 +234,6 @@ Public Class d_GrupoDetalle
 
     Public Function ListarLiq(ByVal oeGrupoDetalle As e_GrupoDetalle) As List(Of e_GrupoDetalle)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGrupoDetalle As New List(Of e_GrupoDetalle)
             Dim ds As DataSet ' tipooperacion estaba ""
             With oeGrupoDetalle
@@ -252,13 +255,12 @@ Public Class d_GrupoDetalle
 
     Public Function Guardar(ByVal oeGrupoDetalle As e_GrupoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalle_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalle_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -270,14 +272,13 @@ Public Class d_GrupoDetalle
 
     Public Function GuardarDesc(ByVal oeGrupoDetalle As e_GrupoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleDesc_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleDesc_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
                         , .Activo _
-                        , .IndFlete _
+                        , .IndFlete
                     )
             End With
             Return True
@@ -288,14 +289,13 @@ Public Class d_GrupoDetalle
 
     Public Function GuardarFlete(ByVal oeGrupoDetalle As e_GrupoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleFlete_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleFlete_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
                         , .Importe _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -306,14 +306,13 @@ Public Class d_GrupoDetalle
 
     Public Function GuardarLiq(ByVal oeGrupoDetalle As e_GrupoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleLiq_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_GrupoDetalleLiq_IAE", .TipoOperacion,
                         .Id _
                         , .IdGrupo _
                         , .IdGastoOperacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

@@ -94,12 +94,10 @@ Public Class d_TipoOrdenCompra
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de tipo 
     ''' de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeTipoPago As e_TipoOrdenCompra) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
         Try
             With oeTipoPago
-                SqlHelper.ExecuteNonQuery("CMP.Isp_TipoOrdenCompra_IAE", .TipoOperacion, _
-                .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_TipoOrdenCompra_IAE", .TipoOperacion,
+                .PrefijoID, .Id, .Codigo, .Nombre, .Abreviatura,
                  .Activo)
             End With
             Return True

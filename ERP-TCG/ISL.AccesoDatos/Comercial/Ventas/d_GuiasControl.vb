@@ -78,19 +78,18 @@ Public Class d_GuiasControl
     Public Function Guardar(ByVal oeGuiasControl As e_GuiasControl) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeGuiasControl
                     stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiasControl_IAE]",
-                                                 .TipoOperacion,
-                                                .PrefijoID,
-                                                .Id _
-                                                , .IdVehiculo _
-                                                , .Serie _
-                                                , .Correlativo _
-                                                , .Observacion _
-                                                , .UsuarioCreacion _
-                                                , .Activo).ToString.Split("_")
+                                             .TipoOperacion,
+                                            .PrefijoID,
+                                            .Id _
+                                            , .IdVehiculo _
+                                            , .Serie _
+                                            , .Correlativo _
+                                            , .Observacion _
+                                            , .UsuarioCreacion _
+                                            , .Activo).ToString.Split("_")
                 End With
 
                 For Each GuiasControl As e_GuiasTalonarios In oeGuiasControl.GuiasTalanonarios
@@ -185,7 +184,6 @@ Public Class d_GuiasControl
 
     Public Function Guardar(ByVal oeGuiasTalonarios As e_GuiasTalonarios) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiasTalonarios
                 sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiasTalonarios_IAE]",
                                            .TipoOperacion,

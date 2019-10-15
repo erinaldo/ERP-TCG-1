@@ -68,9 +68,8 @@ Public Class d_OrdenAprobacion
 
     Public Function Guardar(ByVal oeOrdenAprobacion As e_OrdenAprobacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOrdenAprobacion
-                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenAprobacion_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_OrdenAprobacion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOrden _
                         , .IdTrabajador _

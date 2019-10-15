@@ -66,9 +66,8 @@ Public Class d_OCMaterial_OSMaterial
 
     Public Function Guardar(ByVal oeOCMaterial_OSMaterial As e_OCMaterial_OSMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeOCMaterial_OSMaterial
-                sqlhelper.ExecuteNonQuery("CMP.OCMaterial_OSMaterial_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.OCMaterial_OSMaterial_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOrden _
                         , .IdOrdenAsociada _

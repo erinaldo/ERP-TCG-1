@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -56,7 +64,6 @@ Public Class d_Deposito
 
     Public Function Listar(ByVal oeDeposito As e_Deposito) As List(Of e_Deposito)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldDeposito As New List(Of e_Deposito)
             Dim ds As DataSet
             With oeDeposito
@@ -66,7 +73,7 @@ Public Class d_Deposito
                         , .IdCuentaBancaria _
                         , .Activo _
                         , .FechaDesde _
-                        , .FechaHasta _
+                        , .FechaHasta
                         )
             End With
             oeDeposito = Nothing
@@ -84,12 +91,11 @@ Public Class d_Deposito
 
     Public Function Guardar(ByVal oeDeposito As e_Deposito) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strIdDeposito As String = ""
             Dim IdGrupo As String = ""
             Using TransScope As New TransactionScope()
                 With oeDeposito
-                    strIdDeposito = sqlhelper.ExecuteScalar("TES.Isp_Deposito_IAE", .TipoOperacion, .PrefijoID, _
+                    strIdDeposito = sqlhelper.ExecuteScalar("TES.Isp_Deposito_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Numero _
                             , .Fecha _
@@ -98,7 +104,7 @@ Public Class d_Deposito
                             , .Total _
                             , .Activo _
                             , .FechaCreacion _
-                            , .UsuarioCreacion _
+                            , .UsuarioCreacion
                         )
                     If .loDepositoDetalle.Count > 0 Then
                         IdGrupo = .loDepositoDetalle(0).IdGrupo
@@ -107,6 +113,7 @@ Public Class d_Deposito
                             oeDepositoDetalle.TipoOperacion = "I"
                             oeDepositoDetalle.IdDeposito = strIdDeposito
                             'oeDepositoDetalle.IdMovimientoFlete = IdMovimientoFleteDD
+                            oeDepositoDetalle.PrefijoID = oeDeposito.PrefijoID '@0001
                             odDepositoDetalle.Guardar(oeDepositoDetalle)
                             'actualizar cargado y saldo por depositar en movimiento.... del flete
                             oeMovimiento = New e_Movimiento
@@ -114,6 +121,7 @@ Public Class d_Deposito
                             oeMovimiento.TipoOperacion = "F"
                             oeMovimiento.SaldoPorDepositar = oeDepositoDetalle.SaldoPorDepositar - oeDepositoDetalle.Importe
                             oeMovimiento.TipoProceso = "NORMAL"
+                            oeMovimiento.PrefijoID = oeDeposito.PrefijoID '@0001
                             odMovimiento.GuardarMovimiento(oeMovimiento, New e_Movimiento)
                         Next
                         'reducir saldo en grupo de flete para nivelar reporte ff
@@ -121,6 +129,7 @@ Public Class d_Deposito
                             oeGrupo.TipoOperacion = "P"
                             oeGrupo.Id = IdGrupo
                             oeGrupo.Saldo = oeDepositoDetalle.SaldoPorDepositar - oeDepositoDetalle.Importe
+                            oeGrupo.PrefijoID = oeDeposito.PrefijoID '@0001
                             odGrupo.Guardar(oeGrupo)
                         End If
                     End If

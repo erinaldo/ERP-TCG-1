@@ -60,7 +60,6 @@ Public Class d_CotizacionDetalleSer
 
     Public Function Guardar(ByVal oeCotizacionDetalleSer As e_CotizacionDetalleSer) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCotizacionDetalleSer
                 sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleSer_IAE", .TipoOperacion, .PrefijoID,
                         .Id _

@@ -92,7 +92,7 @@ Public Class d_TipoPago
     ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro
     '''  de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeTipoPago As e_TipoPago) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
         Try
             With oeTipoPago
                 sqlhelper.ExecuteNonQuery("CMP.Isp_TipoPago_IAE", .TipoOperacion, _

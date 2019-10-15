@@ -2413,7 +2413,7 @@ Module m_Funciones
                 Dim client As New SmtpClient("mail.induamerica.com.pe")
                 'client.EnableSsl = False
                 Dim clave As String = "wtb123"
-                client.Credentials = New NetworkCredential("ing.miguelherrera.sistemas@gmail.com", "wtb123")
+                client.Credentials = New NetworkCredential("consultores.tecnologicos.2010@gmail.com", "wtb123")
                 client.Send(lo_Message)
                 client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials
                 lo_Message.Attachments.Clear()

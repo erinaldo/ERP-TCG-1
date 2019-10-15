@@ -198,7 +198,7 @@ Public Class d_MovCuentaCte
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal leMovCuentaCte As List(Of e_MovCuentaCte)) As Boolean
+    Public Function GuardarLista(ByVal leMovCuentaCte As List(Of e_MovCuentaCte), ByVal PrefijoID As String) As Boolean
         Try
             Using TransScope As New TransactionScope()
 
@@ -212,6 +212,7 @@ Public Class d_MovCuentaCte
                 leMovCtaCte = leMovCuentaCte.Where(Function(item) item.TipoOperacion <> "").ToList
 
                 For Each oeMovCtaCte As e_MovCuentaCte In leMovCtaCte
+                    oeMovCtaCte.PrefijoID = PrefijoID '@0001
                     If oeMovCtaCte.TipoOperacion = "E" Then
                         Eliminar(oeMovCtaCte)
                     Else
@@ -220,6 +221,7 @@ Public Class d_MovCuentaCte
                 Next
 
                 For Each oeMovCtaCte As e_MovCuentaCte In leMov
+                    oeMovCtaCte.PrefijoID = PrefijoID '@0001
                     If oeMovCtaCte.IdMoneda = "1CH01" Then
                         ingreso = ingreso + oeMovCtaCte.Ingreso
                         egreso = egreso + oeMovCtaCte.Egreso
@@ -231,11 +233,13 @@ Public Class d_MovCuentaCte
                 If leMovCtaCte.Count > 0 Then
                     If leMovCtaCte(0).TipoOperacion <> "L" Then
                         oeCuentaCte = New e_CuentaCorriente
-                        oeCuentaCte.TipoOperacion = "S"
+                        oeCuentaCte.PrefijoID = PrefijoID '@0001
+                        oeCuentaCte.Tipooperacion = "S"
                         oeCuentaCte.Saldo = ingreso - egreso
                         oeCuentaCte.Id = leMovCtaCte(0).IdCuentaCorriente
                         odCuentaCte.Guardar(oeCuentaCte)
                         oeSaldoCte = New e_SaldoCtaCorriente
+                        oeSaldoCte.PrefijoID = PrefijoID '@0001
                         oeSaldoCte.TipoOperacion = "S"
                         oeSaldoCte.Monto = ingreso
                         oeSaldoCte.Saldo = ingreso - egreso
@@ -245,6 +249,7 @@ Public Class d_MovCuentaCte
                         odSaldoCte.Guardar(oeSaldoCte)
                     Else
                         oeSaldoCte = New e_SaldoCtaCorriente
+                        oeSaldoCte.PrefijoID = PrefijoID '@0001
                         oeSaldoCte.TipoOperacion = "L"
                         oeSaldoCte.Liquidado = 0
                         oeSaldoCte.TipoCuenta = 2
@@ -259,7 +264,7 @@ Public Class d_MovCuentaCte
                         oeSaldoCte.Monto = 0
                         oeSaldoCte.TipoCuenta = 2
                         oeSaldoCte.UsuarioCreacion = leMov(0).UsuarioLiquida
-
+                        oeSaldoCte.PrefijoID = PrefijoID '@0001
                         odSaldoCte.Guardar(oeSaldoCte)
                     End If
                 End If

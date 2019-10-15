@@ -82,26 +82,24 @@ Public Class d_OrdenCompraServicio
 
     Public Function Guardar(ByVal oeOrdenServicio As e_OrdenCompraServicio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeOrdenServicio
-                sqlhelper.ExecuteNonQuery("CMP.ISP_OrdenCompraServicio_IAE", _
-                                         .TipoOperacion, _
-                                         .PrefijoID, _
-                                         .Id, _
-                                         .IdOrden, _
-                                         .IdServicio, _
-                                         .Cantidad, _
-                                         .PrecioUnitarioConImp, _
-                                         .ValorVenta, _
-                                         .IndicadorIgv, _
-                                         .Activo, _
-                                         .IdCentroCosto, _
-                                         .Glosa, _
-                                         .Notas, _
-                                         .IdArea, _
-                                         .IdRequerimientoServicio, _
-                                         .IdEquipo _
+                sqlhelper.ExecuteNonQuery("CMP.ISP_OrdenCompraServicio_IAE",
+                                         .TipoOperacion,
+                                         .PrefijoID,
+                                         .Id,
+                                         .IdOrden,
+                                         .IdServicio,
+                                         .Cantidad,
+                                         .PrecioUnitarioConImp,
+                                         .ValorVenta,
+                                         .IndicadorIgv,
+                                         .Activo,
+                                         .IdCentroCosto,
+                                         .Glosa,
+                                         .Notas,
+                                         .IdArea,
+                                         .IdRequerimientoServicio,
+                                         .IdEquipo
                                          )
             End With
             Return True

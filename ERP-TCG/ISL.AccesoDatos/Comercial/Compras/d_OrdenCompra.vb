@@ -125,7 +125,6 @@ Public Class d_OrdenCompra
 
     Public Function Guardar(ByVal oeOrden As e_OrdenCompra) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odOrdenTrabajo As New d_OrdenTrabajo
             Dim stResultado() As String
             Using transScope As New TransactionScope()
@@ -201,15 +200,14 @@ Public Class d_OrdenCompra
 
     Public Function ModificarPrecios(ByVal oeOrden As e_OrdenCompra) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odOrdenTrabajo As New d_OrdenTrabajo
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeOrden
                     stResultado = sqlhelper.ExecuteScalar("CMP.Isp_OrdenCompra_IAE" _
-                                                        , "M", .PrefijoID, .Id, .NroOrden, .IdMoneda, .IdTrabajador, _
-                                                        .IdProveedor, .SubTotal, .Impuesto, .Total, Date.Parse("01/01/1901"), _
-                                                        Date.Parse("01/01/1901"), Date.Parse("01/01/1901"), _
+                                                        , "M", .PrefijoID, .Id, .NroOrden, .IdMoneda, .IdTrabajador,
+                                                        .IdProveedor, .SubTotal, .Impuesto, .Total, Date.Parse("01/01/1901"),
+                                                        Date.Parse("01/01/1901"), Date.Parse("01/01/1901"),
                                                         1, "", "", "", 1, "", "", "", 1, .UsuarioCreacion).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each Detalle As e_OrdenCompraMaterial In .lstOrdenMaterial

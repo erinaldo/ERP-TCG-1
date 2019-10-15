@@ -286,10 +286,10 @@ Public Class frm_CambiarClave
                 Dim clienteSMTP As New SmtpClient()
                 clienteSMTP.Host = "mail.induamerica.com.pe"
                 clienteSMTP.EnableSsl = False
-                clienteSMTP.Credentials = New Net.NetworkCredential("ing.miguelherrera.sistemas@gmail.com", "wtb123")
+                clienteSMTP.Credentials = New Net.NetworkCredential("consultores.tecnologicos.2010@gmail.com", "wtb123")
                 Dim correo As New MailMessage()
                 correo.To.Add(_leEmailAux(0).Nombre)
-                correo.From = New MailAddress("ing.miguelherrera.sistemas@gmail.com")
+                correo.From = New MailAddress("consultores.tecnologicos.2010@gmail.com")
                 If chkPrincipal.Checked Then
                     If chkSecundario.Checked Then
                         _subject = "Cambio de Clave Acceso y Seguridad de Trabajador del ERP T&L"

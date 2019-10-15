@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Public Class frm_FlujoGasto
     Inherits ISL.Win.frm_MenuPadre
@@ -337,6 +345,7 @@ Public Class frm_FlujoGasto
         Try
             oeFlujoGasto.IndMovimiento = optMovimiento.CheckedIndex
             oeFlujoGasto.UsuarioCreacion = gUsuarioSGI.Id
+            oeFlujoGasto.PrefijoID = gs_PrefijoIdSucursal '@0001
             If rbCuentaFlujoCaja.Checked Then
                 oeFlujoGasto.ListaCuentaFlujoCaja = Me.grCtaFlujoCaja.DataSource
                 oeFlujoGasto.IdItemGasto = ""

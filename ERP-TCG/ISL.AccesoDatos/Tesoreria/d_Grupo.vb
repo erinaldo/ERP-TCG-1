@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -105,7 +113,6 @@ Public Class d_Grupo
             Dim odMovimiento As New d_Movimiento
             Dim oeGastoOperacion As New e_GastoOperacion
             Dim odGastoOperacion As New d_GastoOperacion
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeGrupo
@@ -119,6 +126,7 @@ Public Class d_Grupo
                                 If oeGrupoDetalle.Id = "" Then
                                     oeGrupoDetalle.TipoOperacion = "I"
                                 End If
+                                oeGrupoDetalle.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odGrupoDetalle.GuardarLiq(oeGrupoDetalle)
                             Next
                         Case "2"
@@ -127,12 +135,14 @@ Public Class d_Grupo
                                     oeGrupoDetalle.TipoOperacion = "I"
                                 End If
                                 oeGrupoDetalle.IdGrupo = id
+                                oeGrupoDetalle.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odGrupoDetalle.Guardar(oeGrupoDetalle)
                                 oeGastoOperacion = New e_GastoOperacion
                                 oeGastoOperacion.oeRegistroCombustible = Nothing
                                 oeGastoOperacion.TipoOperacion = "G"
                                 oeGastoOperacion.Id = oeGrupoDetalle.IdGastoOperacion
                                 oeGastoOperacion.IdGrupo = id
+                                oeGastoOperacion.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odGastoOperacion.Guardar(oeGastoOperacion)
                             Next
                             If .TipoOperacion = "S" And .IdCentro <> "1CH001" Then
@@ -160,6 +170,7 @@ Public Class d_Grupo
                                     oeMovimiento.IndCerrado = 1
                                     oeMovimiento.FechaCierre = Date.Parse("01/01/1901")
                                     oeMovimiento.IdCaja = .IdCaja
+                                    oeMovimiento.PrefijoID = oeGrupo.PrefijoID '@0001
                                     odMovimiento.GuardarSimple(oeMovimiento)
                                 End If
                             End If
@@ -169,6 +180,7 @@ Public Class d_Grupo
                                     oeGrupoDetalleFlete.TipoOperacion = "I"
                                 End If
                                 oeGrupoDetalleFlete.IdGrupo = id
+                                oeGrupoDetalleFlete.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odGrupoDetalleDesc.GuardarFlete(oeGrupoDetalleFlete)
                                 oeGrupo.Id = id
                                 Dim oeMov = New e_Movimiento
@@ -176,6 +188,7 @@ Public Class d_Grupo
                                 oeMov.TipoProceso = "NORMAL"
                                 oeMov.TipoOperacion = "G"
                                 oeMov.AsignadoGrupo = 1
+                                oeMov.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odMovimiento.GuardarMovimiento(oeMov, New e_Movimiento)
                             Next
                         Case "4"
@@ -185,12 +198,14 @@ Public Class d_Grupo
                                 End If
                                 oeGrupoDetalleDesc.IdGrupo = id
                                 oeGrupoDetalleDesc.IndFlete = 0
+                                oeGrupoDetalleDesc.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odGrupoDetalleDesc.GuardarDesc(oeGrupoDetalleDesc)
                                 oeMovimiento = New e_Movimiento
                                 oeMovimiento.Id = oeGrupoDetalleDesc.IdGastoOperacion
                                 oeMovimiento.TipoOperacion = "G"
                                 oeMovimiento.TipoProceso = "NORMAL"
                                 oeMovimiento.AsignadoGrupo = 1
+                                oeMovimiento.PrefijoID = oeGrupo.PrefijoID '@0001
                                 odMovimiento.GuardarMovimiento(oeMovimiento, New e_Movimiento)
                             Next
                     End Select

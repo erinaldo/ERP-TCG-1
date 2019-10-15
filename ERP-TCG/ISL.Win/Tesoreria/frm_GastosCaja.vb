@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 
@@ -1209,6 +1217,7 @@ Public Class frm_GastosCaja
                     oeDetalleDoc.Igv = numIGV.Value + numPercepcion.Value
                     oeDetalleDoc.Total = numTotal.Value
                     oeDetalleDoc.IdVehiculo = .oeGasto_Caja.IdPlaca
+                    oeDetalleDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                     .oeMovimientoDocumento.lstDetalleDocumento.Add(oeDetalleDoc)
                 Else
                     .oeRegistroCombustible = Nothing
@@ -1225,11 +1234,13 @@ Public Class frm_GastosCaja
                         oeDetalleDoc.Igv = numIGV.Value + numPercepcion.Value
                         oeDetalleDoc.Total = numTotal.Value
                         oeDetalleDoc.IdVehiculo = cboPlaca.Value
+                        oeDetalleDoc.PrefijoID = gs_PrefijoIdSucursal '@0001
                         .lstDetalleDocumento.Add(oeDetalleDoc)
                     End With
                 End If
             End With
             If ValidaGastoDuplicado(oeGastoOpe.SerieDoc + oeGastoOpe.NroDoc, oeGastoOpe.IdTipoDocumento, oeGastoOpe.IdProveedor) Then
+                oeGastoOpe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loGastoOpe.Add(oeGastoOpe)
                 griGastoOperacion.DataBind()
             End If

@@ -2311,7 +2311,7 @@ Public Class frm_DemandaRapida
             olRuta.ValidarRutaNueva(oeRuta)
             Return True
         Catch ex As Exception
-            EnviarEmail("ing.miguelherrera.sistemas@gmail.com", "ing.miguelherrera.sistemas@gmail.com;ing.miguelherrera.sistemas@gmail.com", "", "", "Operaciones informa crear ruta", Mensaje, "", True)
+            EnviarEmail("consultores.tecnologicos.2010@gmail.com", "consultores.tecnologicos.2010@gmail.com;consultores.tecnologicos.2010@gmail.com", "", "", "Operaciones informa crear ruta", Mensaje, "", True)
             Throw New Exception(Mensaje & " " & ex.Message)
         End Try
     End Function
@@ -2391,7 +2391,7 @@ Public Class frm_DemandaRapida
                     olRuta.ValidarRutaNueva(oeRuta)
                 End If                
             Catch ex As Exception
-                EnviarEmail("ing.miguelherrera.sistemas@gmail.com", "ing.miguelherrera.sistemas@gmail.com;ing.miguelherrera.sistemas@gmail.com", "", "", "Operaciones informa crear ruta", cboOrigen.Text & " - " & cboDestino.Text, "", True)
+                EnviarEmail("consultores.tecnologicos.2010@gmail.com", "consultores.tecnologicos.2010@gmail.com;consultores.tecnologicos.2010@gmail.com", "", "", "Operaciones informa crear ruta", cboOrigen.Text & " - " & cboDestino.Text, "", True)
                 cboDestino.Focus()
                 cboDestino.SelectedIndex = -1
                 mensajeEmergente.Problema("Origen - Destino  : " & ex.Message, True)

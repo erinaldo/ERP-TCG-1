@@ -969,8 +969,8 @@ Public Class frm_Material
             If My.Computer.Network.IsAvailable Then
                 Try
                     If My.Computer.Network.Ping("8.8.8.8", 1000) Then
-                        Dim txtDe As String = "ing.miguelherrera.sistemas@gmail.com"
-                        Dim txtPara As String = "ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com; ing.miguelherrera.sistemas@gmail.com"
+                        Dim txtDe As String = "consultores.tecnologicos.2010@gmail.com"
+                        Dim txtPara As String = "consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com; consultores.tecnologicos.2010@gmail.com"
                         Dim txtAsunto As String = "NUEVO MATERIAL CREADO EN ERP T&L"
                         Dim txtMensaje As String = ""
                         oeMaterial = New e_Material

@@ -86,7 +86,6 @@ Public Class d_ControlMerma
 
     Public Function Guardar(ByVal oeControlMermas As e_ControlMerma) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlMermas
                 sqlhelper.ExecuteNonQuery("OPE.Isp_IngresoSalidaMermas_IAE",
                                           .TipoOperacion,

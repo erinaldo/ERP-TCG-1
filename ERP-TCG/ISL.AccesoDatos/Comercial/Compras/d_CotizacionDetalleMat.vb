@@ -84,7 +84,6 @@ Public Class d_CotizacionDetalleMat
     End Function
 
     Public Function Guardar(ByVal oeCotizacionDetalle As e_CotizacionDetalleMat) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeCotizacionDetalle
                 sqlhelper.ExecuteNonQuery("CMP.Isp_CotizacionDetalleMat_IAE", .TipoOperacion,

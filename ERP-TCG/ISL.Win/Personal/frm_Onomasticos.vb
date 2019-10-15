@@ -398,18 +398,18 @@ Public Class frm_Onomasticos
 
                 Dim listaMailProveedor As String = ""
 
-                listaMailProveedor = "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com," & _
-                "ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com,ing.miguelherrera.sistemas@gmail.com"
-                'listaMailProveedor = "ing.miguelherrera.sistemas@gmail.com"
+                listaMailProveedor = "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com," & _
+                "consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com,consultores.tecnologicos.2010@gmail.com"
+                'listaMailProveedor = "consultores.tecnologicos.2010@gmail.com"
                 Dim ms_CodEmpres As String = "ERP Transporte & Logistica"
                 Dim correoTrabajador As String = "" 'Quien lo envia                    
                 Dim formulario As frm_EnvioCorreo
@@ -422,7 +422,7 @@ Public Class frm_Onomasticos
 "Unión y fraternidad con sus seres queridos." & vbNewLine & vbNewLine & vbNewLine & _
 "Son los deseos a nombre del área de Recursos Humanos ISL"
                 'If goeUsuario.leEmail.Count > 0 Then correoTrabajador = goeUsuario.leEmail.Item(0).Nombre '"weezer@hotmail.com" 'Quiem lo envia 
-                correoTrabajador = "ing.miguelherrera.sistemas@gmail.com"
+                correoTrabajador = "consultores.tecnologicos.2010@gmail.com"
                 If formulario.ObtenerDatos(ms_CodEmpres, ruta, correoTrabajador, True, False, True, True, _
                      listaMailProveedor, mensajePersonalizado) Then
                     formulario.ShowDialog()

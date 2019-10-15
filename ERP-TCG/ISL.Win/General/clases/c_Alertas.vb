@@ -43,7 +43,7 @@ Public Class c_Alertas
                 'Envia email con detalles del error presentado
                 Dim rutaCompletaImagenCapturada As String = System.AppDomain.CurrentDomain.BaseDirectory.ToString & imagenPantallaCapturada
                 Dim mensajeHtml As String = "<html><body><table><tr><td>Usuario : " & gUsuarioSGI.oePersona.NombreCompleto & "</td></tr><tr><td>PC : " & gUsuarioSGI.ObtenerIP & "</td></tr><tr><td>Area : " & gUsuarioSGI.oeArea.Nombre & "</td></tr><tr><td>Fecha " & objetoMensajeError.Detail.Fecha.ToLocalTime & "</td></tr><tr><td>Formulario: " & formulario & " </td></tr><tr><td>Mensaje mostrado al Usuario: " & objetoMensajeError.Detail.Mensaje & " </td></tr><tr><td>Error específico del sistema: " & objetoMensajeError.Detail.Detalle & " </td></tr><tr><td>Pila: " & objetoMensajeError.Detail.Causa & "</td></tr></table></body></html>"
-                EnviarEmail("ing.miguelherrera.sistemas@gmail.com", "ing.miguelherrera.sistemas@gmail.com", "", "", "Error en ERP T&L", mensajeHtml, rutaCompletaImagenCapturada, False)
+                EnviarEmail("consultores.tecnologicos.2010@gmail.com", "consultores.tecnologicos.2010@gmail.com", "", "", "Error en ERP T&L", mensajeHtml, rutaCompletaImagenCapturada, False)
                 errorEnviadoEmail = True
             End If
             'Mostrar le mensaje al usuario

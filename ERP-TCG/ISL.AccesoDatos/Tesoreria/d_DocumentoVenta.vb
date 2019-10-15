@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -100,8 +108,6 @@ Public Class d_DocumentoVenta
 
     Public Function Guardar(ByVal oeDocumentoVenta As e_DocumentoVenta) As Boolean
         Dim stResultado As String
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
         Try
             Using transScope As New TransactionScope()
                 With oeDocumentoVenta
@@ -136,6 +142,7 @@ Public Class d_DocumentoVenta
                 'Guardando Detalle Venta 
                 For Each Detalle As e_DocumentoVentaDetalle In oeDocumentoVenta.loDocumentoVentaDetalle
                     Detalle.IdDocumentoVenta = stResultado
+                    Detalle.PrefijoID = oeDocumentoVenta.PrefijoID '@0001
                     GuardarDetalle(Detalle)
                 Next
                 'Guardando numero y serie correlativo
@@ -144,6 +151,7 @@ Public Class d_DocumentoVenta
                 oeCorrelativo.Numero = CInt(oeDocumentoVenta.Numero)
                 oeCorrelativo.Serie = CInt(oeDocumentoVenta.Serie)
                 oeCorrelativo.IdTipoDocumento = oeDocumentoVenta.IdTipoDocumento
+                oeCorrelativo.Prefijo = oeDocumentoVenta.PrefijoID '@0001
                 odCorrelativo.Guardar(oeCorrelativo)
                 'Inicio Cuenta por cobrar
                 If oeDocumentoVenta.TotalCredito > 0 Then
@@ -168,6 +176,7 @@ Public Class d_DocumentoVenta
                         .UsuarioCreacion = oeDocumentoVenta.UsuarioCreacion
                         .Activo = True
                     End With
+                    oeCuentaPorCobrar.PrefijoID = oeDocumentoVenta.PrefijoID '@0001
                     odCuentaPorCobrar.Guardar(oeCuentaPorCobrar)
                 End If
                 'Fin
@@ -181,19 +190,17 @@ Public Class d_DocumentoVenta
 
     Public Function GuardarDetalle(ByVal oeDocumentoVentaDetalle As e_DocumentoVentaDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeDocumentoVentaDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", "I", .PrefijoID, _
-                                          .Id, _
-                                          .IdDocumentoVenta, _
-                                          .TipoReferencia, _
-                                          .IdReferencia, _
-                                          .Descripcion, _
-                                          .Cantidad, _
-                                          .Precio, _
-                                          .SubTotal, _
-                                          .UsuarioCreacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_DocumentoVentaDetalle_IAE", "I", .PrefijoID,
+                                          .Id,
+                                          .IdDocumentoVenta,
+                                          .TipoReferencia,
+                                          .IdReferencia,
+                                          .Descripcion,
+                                          .Cantidad,
+                                          .Precio,
+                                          .SubTotal,
+                                          .UsuarioCreacion,
                                           .Activo)
             End With
             Return True

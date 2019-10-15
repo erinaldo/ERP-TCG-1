@@ -1,8 +1,16 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_Despacho
-    Private bd As SqlHelper
+    Private bd As New SqlHelper
     Private odDespachoOperacion As d_DespachoOperaciones
 
     Private Function Cargar(Fila As DataRow) As e_Despacho
@@ -93,8 +101,6 @@ Public Class d_Despacho
     Public Function Guardar(oeDespacho As e_Despacho) As Boolean
         Try
             Using transScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
-                bd = New SqlHelper
                 odDespachoOperacion = New d_DespachoOperaciones
                 Dim IdResultado As String
                 With oeDespacho

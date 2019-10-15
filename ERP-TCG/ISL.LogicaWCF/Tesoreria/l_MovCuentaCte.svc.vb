@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -75,7 +83,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal leMovCuentaCte As System.Collections.Generic.List(Of EntidadesWCF.e_MovCuentaCte)) As Boolean Implements Il_MovCuentaCte.GuardarLista
+    Public Function GuardarLista(ByVal leMovCuentaCte As System.Collections.Generic.List(Of EntidadesWCF.e_MovCuentaCte), ByVal PrefijoID As String) As Boolean Implements Il_MovCuentaCte.GuardarLista
         Try
             Dim oeTCD As e_TablaContableDet
             Dim oeTCD16 As e_TablaContableDet
@@ -88,6 +96,7 @@ Public Class l_MovCuentaCte
             Dim odMovimientoDocumento As New d_MovimientoDocumento
 
             For Each oeMovCtaCte As e_MovCuentaCte In leMovCuentaCte
+                oeMovCtaCte.PrefijoID = PrefijoID '@0001
                 With oeMovCtaCte
                     If .TipoOperacion = "I" Then
                         'If .TipoOperacion <> "G" AndAlso .TipoOperacion <> "L" Then
@@ -102,6 +111,7 @@ Public Class l_MovCuentaCte
 
                             If .oeMovimientoDoc.IdTipoDocumento = "1CH000000073" Then 'Sustento contable
                                 .oeAsiento = New e_Asiento
+                                .oeAsiento.PrefijoID = PrefijoID '@0001
                                 If Date.Now.Year > .oeMovimientoDoc.Ejercicio Then
                                     .oeAsiento.Fecha = Date.Parse("31/12/" & .oeMovimientoDoc.Ejercicio)
                                 Else
@@ -112,14 +122,14 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.TipoOperacion = "I"
                                 .oeAsiento.IdPeriodo = .oeMovimientoDoc.IdPeriodo
                                 .oeAsiento.IdTipoAsiento = "DIARIO" 'Tipo de asiento Compra
-                                .oeAsiento.Glosa = "DOC. SUSTENTO " & .oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" & _
+                                .oeAsiento.Glosa = "DOC. SUSTENTO " & .oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" &
                                 .oeMovimientoDoc.Serie & "-" & .oeMovimientoDoc.Numero & " " & .oeMovimientoDoc.Compra.Proveedor.Nombre + " " _
-                                + .oeMovimientoDoc.FechaEmision.Date.Day.ToString + "/" + _
-                                .oeMovimientoDoc.FechaEmision.Date.Month.ToString + "/" + .oeMovimientoDoc.FechaEmision.Date.Year.ToString + _
+                                + .oeMovimientoDoc.FechaEmision.Date.Day.ToString + "/" +
+                                .oeMovimientoDoc.FechaEmision.Date.Month.ToString + "/" + .oeMovimientoDoc.FechaEmision.Date.Year.ToString +
                                 " " + .Glosa + " V,G:" + .oeMovimientoDoc.GlosaViajeGrupo
-                                .oeAsiento.GlosaImprime = "DOC. SUSTENTO " & .oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" & _
+                                .oeAsiento.GlosaImprime = "DOC. SUSTENTO " & .oeMovimientoDoc.Compra.TipoDoc.Abreviatura & "/" &
                                 .oeMovimientoDoc.Serie & "-" & .oeMovimientoDoc.Numero & " " & .oeMovimientoDoc.Compra.Proveedor.Nombre + " " _
-                                + .oeMovimientoDoc.FechaEmision.Date.Day.ToString + "/" + _
+                                + .oeMovimientoDoc.FechaEmision.Date.Day.ToString + "/" +
                                 .oeMovimientoDoc.FechaEmision.Date.Month.ToString + "/" + .oeMovimientoDoc.FechaEmision.Date.Year.ToString
                                 .oeAsiento.IdMoneda = .oeMovimientoDoc.IdMoneda
                                 .oeAsiento.TipoCambio = .oeMovimientoDoc.TipoCambio
@@ -130,7 +140,9 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.IdAsientoExtorno = ""
 
                                 Dim oeAsientoMovimientoSustCont As New e_AsientoMovimiento
+                                oeAsientoMovimientoSustCont.PrefijoID = PrefijoID '@0001
                                 Dim oeMovimientoAnalisis As New e_MovimientoAnalisis
+                                oeMovimientoAnalisis.PrefijoID = PrefijoID '@0001
                                 oeAsientoMovimientoSustCont.TipoOperacion = "I"
                                 oeAsientoMovimientoSustCont.IdAsiento = ""
                                 oeAsientoMovimientoSustCont.IdUsuarioCrea = .UsuarioCreacion
@@ -147,6 +159,7 @@ Public Class l_MovCuentaCte
                                 ''------------------------------------------------------------------------
                                 ''-----------------------cuenta 10----------------------------------------
                                 oeAsientoMovimientoSustCont = New e_AsientoMovimiento
+                                oeAsientoMovimientoSustCont.PrefijoID = PrefijoID '@0001
                                 ListaFiltro = leCuentasGenerales.ToList
                                 oeTCD = ListaFiltro.Where(Function(it) it.Nombre = "CTA14").ToList(0)
                                 oeAsientoMovimientoSustCont.TipoOperacion = "I"
@@ -168,6 +181,7 @@ Public Class l_MovCuentaCte
                                     .oeMovimientoDoc.TipoOperacion = "CAM"
                                     '.oeMovimientoDoc.Total = .Total
                                     .oeMovimientoDoc.PagoAutomatico = New e_PagoAutomatico
+                                    .oeMovimientoDoc.PagoAutomatico.PrefijoID = PrefijoID '@0001
                                     With .oeMovimientoDoc
                                         .PagoAutomatico.IdPeriodo = .IdPeriodo
                                         .PagoAutomatico.Glosa = "PAGO " & .Compra.TipoDoc.Abreviatura & "/" & .Serie & .Numero & " " & .Compra.Proveedor.Nombre
@@ -207,7 +221,7 @@ Public Class l_MovCuentaCte
                                     .oeMovimientoDoc.Compra.TipoOperacion = "I"
                                     ''-----------valida una ves asignado datos de oeMovmiento---------
                                     olFuncionesGenerales.ValidarDocumentoDuplicado(.oeMovimientoDoc)
-                                    olFuncionesGenerales.ValidarPeriodo(.oeMovimientoDoc.IdPeriodo, gAreasSGI.Tesoreria, Date.Parse("01/01/1901"), "", _
+                                    olFuncionesGenerales.ValidarPeriodo(.oeMovimientoDoc.IdPeriodo, gAreasSGI.Tesoreria, Date.Parse("01/01/1901"), "",
                                     .oeMovimientoDoc.FechaEmision.Month, .oeMovimientoDoc)
                                     If .oeMovimientoDoc.Compra.TipoCompra.Id.ToString.Trim = "" Then Throw New Exception("Flujo de Caja sin Tipo de Compra Asociado")
                                     '-----------------------------------------------------------------
@@ -228,6 +242,7 @@ Public Class l_MovCuentaCte
                                     .oeMovimientoDoc.Compra.TipoCompra = leTD(0)
                                     .oeMovimientoDoc.Compra.IdTipoPago = "1CH000000004" '---CONTADO
                                     .oeAsiento = New e_Asiento
+                                    .oeAsiento.PrefijoID = PrefijoID '@0001
                                     If Date.Now.Year > .oeMovimientoDoc.Ejercicio Then
                                         .oeAsiento.Fecha = Date.Parse("31/12/" & .oeMovimientoDoc.Ejercicio)
                                     Else
@@ -249,6 +264,7 @@ Public Class l_MovCuentaCte
                                     .oeAsiento.IdEstado = "CUADRADO" 'Estado Cuadrado
                                     .oeAsiento.IdAsientoExtorno = ""
                                     .oeMovimientoDoc.PagoAutomatico = New e_PagoAutomatico
+                                    .oeMovimientoDoc.PagoAutomatico.PrefijoID = PrefijoID '@0001
                                     With .oeMovimientoDoc
                                         .PagoAutomatico.IdPeriodo = .IdPeriodo
                                         .PagoAutomatico.Glosa = "PAGO " & .Compra.TipoDoc.Abreviatura & "/" & .Serie & .Numero & " " & .Compra.Proveedor.Nombre
@@ -269,6 +285,7 @@ Public Class l_MovCuentaCte
                                     Dim olMovDoc As New l_MovimientoDocumento
                                     '------------------ linea(42)----------------------------
                                     Dim oeMovimientoAsiento42 As New e_AsientoMovimiento
+                                    oeMovimientoAsiento42.PrefijoID = PrefijoID '@0001
                                     ListaFiltro = leCuentasGenerales.ToList
                                     oeMovimientoAsiento42 = olMovDoc.Linea42(.oeMovimientoDoc, .oeAsiento, ListaFiltro)
                                     '-----------------------------------------------'
@@ -305,6 +322,7 @@ Public Class l_MovCuentaCte
 
                             If .oeMovimientoDoc.IdTipoDocumento = "1CH000000062" Then 'Vale de caja
                                 .oeAsiento = New e_Asiento
+                                .oeAsiento.PrefijoID = PrefijoID '@0001
                                 If Date.Now.Year > .oeMovimientoDoc.Ejercicio Then
                                     .oeAsiento.Fecha = Date.Parse("31/12/" & .oeMovimientoDoc.Ejercicio)
                                 Else
@@ -326,7 +344,9 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.IdAsientoExtorno = ""
                                 ''----------------------cuenta 10----------------------------------------
                                 Dim oeAsientoMovimiento As New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 Dim oeMovimientoAnalisis As New e_MovimientoAnalisis
+                                oeMovimientoAnalisis.PrefijoID = PrefijoID '@0001
                                 ListaFiltro = leCuentasGenerales.ToList
                                 oeTCD16 = ListaFiltro.Where(Function(it) it.Nombre = "CTA10").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -355,6 +375,7 @@ Public Class l_MovCuentaCte
                                 ''------------------------------------------------------------------------
                                 ''-----------------------cuenta 14----------------------------------------
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 ListaFiltro = leCuentasGenerales.ToList
                                 oeTCD = ListaFiltro.Where(Function(it) it.Nombre = "CTA14").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -369,6 +390,7 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.DebeME = 0
                                 oeAsientoMovimiento.HaberME = .oeMovimientoDoc.Total / .oeMovimientoDoc.TipoCambio
                                 Dim oeMovAnalis As New e_MovimientoAnalisis
+                                oeMovAnalis.PrefijoID = PrefijoID '@0001
                                 oeMovAnalis.TipoOperacion = "I"
                                 oeMovAnalis.IdTrabajador = .IdTrabajador
                                 oeMovAnalis.Monto = .oeMovimientoDoc.Total
@@ -378,6 +400,7 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.MovimientoAnalisis.Add(oeMovAnalis)
                                 .oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                                 .oeMovCuentaCte_Asiento = New e_MovCuentaCte_Asiento
+                                .oeMovCuentaCte_Asiento.PrefijoID = PrefijoID '@0001
                                 With .oeMovCuentaCte_Asiento
                                     .TipoOperacion = "I"
                                 End With
@@ -386,6 +409,7 @@ Public Class l_MovCuentaCte
                         Else 'transferencias
                             If .IngresoEgreso = 0 Then 'ingreso a la cta a rendir
                                 .oeAsiento = New e_Asiento
+                                .oeAsiento.PrefijoID = PrefijoID '@0001
                                 If Date.Now.Year > .oeTransferencia.oePeriodo.Ejercicio Then
                                     .oeAsiento.Fecha = Date.Parse("31/12/" & .oeMovimientoDoc.Ejercicio)
                                 Else
@@ -408,7 +432,9 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.IdAsientoExtorno = ""
                                 ''----------------------cuenta 14----------------------------------------
                                 Dim oeAsientoMovimiento As New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 Dim oeMovimientoAnalisis As New e_MovimientoAnalisis
+                                oeMovimientoAnalisis.PrefijoID = PrefijoID '@0001
                                 ListaFiltro = leCuentasGenerales.ToList
                                 oeTCD16 = ListaFiltro.Where(Function(it) it.Nombre = "CTA14").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -418,13 +444,14 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.Activo = True
                                 oeAsientoMovimiento.TipoOperacion = "I"
                                 oeAsientoMovimiento.IdCuentaContable = oeTCD16.Texto2
-                                oeAsientoMovimiento.DebeMN = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.DebeMN = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto, .oeTransferencia.Monto * .oeTransferencia.TipoCambio)
                                 oeAsientoMovimiento.HaberMN = 0
-                                oeAsientoMovimiento.DebeME = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.DebeME = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto / .oeTransferencia.TipoCambio, .oeTransferencia.Monto)
                                 oeAsientoMovimiento.HaberME = 0
                                 Dim oeMovAnalis As New e_MovimientoAnalisis
+                                oeMovAnalis.PrefijoID = PrefijoID '@0001
                                 oeMovAnalis.TipoOperacion = "I"
                                 oeMovAnalis.IdTrabajador = .IdTrabajador
                                 oeMovAnalis.Monto = .oeTransferencia.Monto
@@ -436,6 +463,7 @@ Public Class l_MovCuentaCte
                                 ''------------------------------------------------------------------------
                                 ''-----------------------cuenta 10----------------------------------------
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 'ListaFiltro = leCuentasGenerales.ToList
                                 'oeTCD = ListaFiltro.Where(Function(it) it.Nombre = "CTAFONDOFIJOSOLES").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -446,12 +474,13 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.TipoOperacion = "I"
                                 oeAsientoMovimiento.IdCuentaContable = .oeTransferencia.oeCtaBancaria.IdCuentaContable
                                 oeAsientoMovimiento.DebeMN = 0
-                                oeAsientoMovimiento.HaberMN = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.HaberMN = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto, .oeTransferencia.Monto * .oeTransferencia.TipoCambio)
                                 oeAsientoMovimiento.DebeME = 0
-                                oeAsientoMovimiento.HaberME = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.HaberME = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto / .oeTransferencia.TipoCambio, .oeTransferencia.Monto)
                                 oeAsientoMovimiento.MovimientoCajaBanco = New e_MovimientoCajaBanco
+                                oeAsientoMovimiento.MovimientoCajaBanco.PrefijoID = PrefijoID '@0001
                                 With oeAsientoMovimiento.MovimientoCajaBanco
                                     .TipoOperacion = "I"
                                     ._Operador = -1
@@ -461,19 +490,21 @@ Public Class l_MovCuentaCte
                                     .IdMedioPago = "1CH02" 'DEPOSITO EN CUENTA
                                     .IdFlujoCaja = "1CH000000208" 'otros
                                     .TipoCambio = oeMovCtaCte.oeTransferencia.TipoCambio
-                                    .TotalMN = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01", _
+                                    .TotalMN = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01",
                                     oeMovCtaCte.oeTransferencia.Monto, oeMovCtaCte.oeTransferencia.Monto * oeMovCtaCte.oeTransferencia.TipoCambio)
-                                    .TotalME = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01", _
+                                    .TotalME = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01",
                                     oeMovCtaCte.oeTransferencia.Monto / oeMovCtaCte.oeTransferencia.TipoCambio, oeMovCtaCte.oeTransferencia.Monto)
                                 End With
                                 .oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                                 .oeMovCuentaCte_Asiento = New e_MovCuentaCte_Asiento
+                                .oeMovCuentaCte_Asiento.PrefijoID = PrefijoID '@0001
                                 With .oeMovCuentaCte_Asiento
                                     .TipoOperacion = "I"
                                 End With
                                 ''------------------------------------------------------------------------
                             ElseIf .IngresoEgreso = 1 Then 'Egreso de la cta a rendir
                                 .oeAsiento = New e_Asiento
+                                .oeAsiento.PrefijoID = PrefijoID '@0001
                                 If Date.Now.Year > .oeTransferencia.oePeriodo.Ejercicio Then
                                     .oeAsiento.Fecha = Date.Parse("31/12/" & .oeMovimientoDoc.Ejercicio)
                                 Else
@@ -494,9 +525,12 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.IdEstado = "CUADRADO" 'Estado Cuadrado
                                 .oeAsiento.IdAsientoExtorno = ""
                                 Dim oeAsientoMovimiento As New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 Dim oeMovimientoAnalisis As New e_MovimientoAnalisis
+                                oeMovimientoAnalisis.PrefijoID = PrefijoID '@0001
                                 ''-----------------------cuenta 10----------------------------------------
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 'ListaFiltro = leCuentasGenerales.ToList
                                 'oeTCD = ListaFiltro.Where(Function(it) it.Nombre = "CTAFONDOFIJOSOLES").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -507,12 +541,13 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.TipoOperacion = "I"
                                 oeAsientoMovimiento.IdCuentaContable = .oeTransferencia.oeCtaBancaria.IdCuentaContable
                                 oeAsientoMovimiento.HaberMN = 0
-                                oeAsientoMovimiento.DebeMN = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.DebeMN = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto, .oeTransferencia.Monto * .oeTransferencia.TipoCambio)
                                 oeAsientoMovimiento.HaberME = 0
-                                oeAsientoMovimiento.DebeME = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.DebeME = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto / .oeTransferencia.TipoCambio, .oeTransferencia.Monto)
                                 oeAsientoMovimiento.MovimientoCajaBanco = New e_MovimientoCajaBanco
+                                oeAsientoMovimiento.MovimientoCajaBanco.PrefijoID = PrefijoID '@0001
                                 With oeAsientoMovimiento.MovimientoCajaBanco
                                     .TipoOperacion = "I"
                                     ._Operador = 1
@@ -522,14 +557,15 @@ Public Class l_MovCuentaCte
                                     .IdMedioPago = "1CH02" 'DEPOSITO EN CUENTA
                                     .IdFlujoCaja = "1CH000000208" 'otros
                                     .TipoCambio = oeMovCtaCte.oeTransferencia.TipoCambio
-                                    .TotalMN = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01", _
+                                    .TotalMN = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01",
                                     oeMovCtaCte.oeTransferencia.Monto, oeMovCtaCte.oeTransferencia.Monto * oeMovCtaCte.oeTransferencia.TipoCambio)
-                                    .TotalME = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01", _
+                                    .TotalME = IIf(oeMovCtaCte.oeTransferencia.IdMoneda = "1CH01",
                                     oeMovCtaCte.oeTransferencia.Monto / oeMovCtaCte.oeTransferencia.TipoCambio, oeMovCtaCte.oeTransferencia.Monto)
                                 End With
                                 .oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                                 ''----------------------cuenta 14----------------------------------------
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = PrefijoID '@0001
                                 ListaFiltro = leCuentasGenerales.ToList
                                 oeTCD16 = ListaFiltro.Where(Function(it) it.Nombre = "CTA14").ToList(0)
                                 oeAsientoMovimiento.TipoOperacion = "I"
@@ -539,13 +575,14 @@ Public Class l_MovCuentaCte
                                 oeAsientoMovimiento.Activo = True
                                 oeAsientoMovimiento.TipoOperacion = "I"
                                 oeAsientoMovimiento.IdCuentaContable = oeTCD16.Texto2
-                                oeAsientoMovimiento.HaberMN = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.HaberMN = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto, .oeTransferencia.Monto * .oeTransferencia.TipoCambio)
                                 oeAsientoMovimiento.DebeMN = 0
-                                oeAsientoMovimiento.HaberME = IIf(.oeTransferencia.IdMoneda = "1CH01", _
+                                oeAsientoMovimiento.HaberME = IIf(.oeTransferencia.IdMoneda = "1CH01",
                                 .oeTransferencia.Monto / .oeTransferencia.TipoCambio, .oeTransferencia.Monto)
                                 oeAsientoMovimiento.DebeME = 0
                                 Dim oeMovAnalis As New e_MovimientoAnalisis
+                                oeMovAnalis.PrefijoID = PrefijoID '@0001
                                 oeMovAnalis.TipoOperacion = "I"
                                 oeMovAnalis.IdTrabajador = .IdTrabajador
                                 oeMovAnalis.Monto = .oeTransferencia.Monto
@@ -556,6 +593,7 @@ Public Class l_MovCuentaCte
                                 .oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                                 ''------------------------------------------------------------------------
                                 .oeMovCuentaCte_Asiento = New e_MovCuentaCte_Asiento
+                                .oeMovCuentaCte_Asiento.PrefijoID = PrefijoID '@0001
                                 With .oeMovCuentaCte_Asiento
                                     .TipoOperacion = "I"
                                 End With
@@ -568,6 +606,7 @@ Public Class l_MovCuentaCte
                         If .IngresoEgreso = 0 Or .IngresoEgreso = 1 Then
                             Dim olMovCtaCteAsiento As New l_MovCuentaCte_Asiento
                             Dim oeMovCtaCteAsiento As New e_MovCuentaCte_Asiento
+                            oeMovCtaCteAsiento.PrefijoID = PrefijoID '@0001
                             oeMovCtaCteAsiento.IdMovCuentaCte = .Id
                             oeMovCtaCteAsiento = olMovCtaCteAsiento.Obtener(oeMovCtaCteAsiento)
                             .oeAsiento.Id = oeMovCtaCteAsiento.IdAsiento
@@ -575,7 +614,7 @@ Public Class l_MovCuentaCte
                     End If
                 End With
             Next
-            odMovCuentaCte.GuardarLista(leMovCuentaCte)
+            odMovCuentaCte.GuardarLista(leMovCuentaCte, PrefijoID)
         Catch ex As Exception
             Throw
         End Try
@@ -593,6 +632,7 @@ Public Class l_MovCuentaCte
                             If oeMovCtaCte.TipoReferencia = 1 And oeMovCtaCte.TipoOperacion = "I" Then
                                 _BandMasivo = True
                                 oeAsiento = New e_Asiento
+                                oeAsiento.PrefijoID = PrefijoID '@0001
                                 With oeAsiento
                                     .TipoOperacion = "I" : .IdPeriodo = _leAMAux(0).IdPeriodo : .IdTipoAsiento = _leAMAux(0).IdTipoAsiento
                                     .NroAsiento = String.Empty : .Fecha = _leAMAux(0).FechaMov
@@ -603,12 +643,15 @@ Public Class l_MovCuentaCte
                                     .IdEstado = "CUADRADO" : .IdUsuarioCrea = _leAMAux(0).UsuarioCreacion : oeAsiento.Activo = True
                                     ' Genera Asiento Movimiento Documento
                                     .Asiento_MovDoc = New e_Asiento_MovDoc
+                                    .Asiento_MovDoc.PrefijoID = PrefijoID '@0001
                                     .Asiento_MovDoc.TipoOperacion = "I"
                                     .Asiento_MovDoc.IdMovimientoDocumento = oeMovCtaCte.oeMovimientoDoc.Id
                                     .Asiento_MovDoc.Activo = True
                                 End With
                                 For Each oeAux In _leAMAux(0).leDetalle.OrderBy(Function(it) it.Fila).ToList
+                                    oeAux.PrefijoID = PrefijoID '@0001
                                     oeAsientoMov = New e_AsientoMovimiento
+                                    oeAsientoMov.PrefijoID = PrefijoID '@0001
                                     With oeAsientoMov
                                         .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                         .IdUsuarioCrea = _leAMAux(0).UsuarioCreacion : .Activo = True
@@ -625,6 +668,7 @@ Public Class l_MovCuentaCte
                                                 End If
                                                 ' Genera Movimiento Analisis por Vehiculo sin Repetir
                                                 oeMovAnalisis = New e_MovimientoAnalisis
+                                                oeMovAnalisis.PrefijoID = PrefijoID '@0001
                                                 oeMovAnalisis.TipoOperacion = "I"
                                                 oeMovAnalisis.IdGastoFuncion = "1CH000088" ' GASTO ADMINISTRATIVO
                                                 oeMovAnalisis.IdCentroCosto = "1CH000000005" ' ADMINISTRACION
@@ -662,6 +706,7 @@ Public Class l_MovCuentaCte
                                                 End If
                                                 'Genera AsientoMoviento - Movimiento Documento
                                                 oeAsientoMov.AsMov_MovDoc = New e_AsientoMov_MovDoc
+                                                oeAsientoMov.AsMov_MovDoc.PrefijoID = PrefijoID '@0001
                                                 oeAsientoMov.AsMov_MovDoc.TipoOperacion = "I"
                                                 oeAsientoMov.AsMov_MovDoc.IdMovimientoDocumento = oeMovCtaCte.oeMovimientoDoc.Id
                                                 oeAsientoMov.AsMov_MovDoc.IdCuentaxCyP = String.Empty
@@ -687,6 +732,7 @@ Public Class l_MovCuentaCte
                         End If
                         ' Actualizar Saldo
                         Dim oeSaldoCtaCte As New e_SaldoCtaCorriente
+                        oeSaldoCtaCte.PrefijoID = PrefijoID '@0001
                         oeSaldoCtaCte.TipoOperacion = "M"
                         oeSaldoCtaCte.IdCuentaCorriente = leMovCuentaCte(0).IdCuentaCorriente
                         If odSaldoCtaCte.Guardar(oeSaldoCtaCte) Then
