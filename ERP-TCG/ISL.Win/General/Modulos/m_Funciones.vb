@@ -5717,12 +5717,12 @@ Module m_Funciones
 
     Public Function RetornarDia(x As Integer) As String
         Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
-        Return dias(x - 1)
+        Return dias(x)
     End Function
 
     Public Function RetornarMes(x As Integer) As String
         Dim meses() As String = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"}
-        Return meses(x - 1)
+        Return meses(x)
     End Function
 
     Public Sub gmt_ComboEspecifico(Combo As UltraWinEditors.UltraComboEditor, DataSource As Object, SelectedIndex As Integer, Optional Display As String = "Nombre")

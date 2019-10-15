@@ -26,6 +26,7 @@ Public Class frm_Menu
     End Sub
 
 #Region "Variables para Alertas"
+
     Public IniciaSeccion As Boolean = False
     Public Conecta As Boolean = False
     Public Desconecta As Boolean = False
@@ -746,27 +747,27 @@ Public Class frm_Menu
                 '    End With
                 '    oeUsuarioPerfil = olUsuarioPerfil.Obtener(oeUsuarioPerfil)
 
-                If oeUsuarioPerfil.Id <> "" Then
-                    oePerfil = New e_Perfil
-                    oePerfil.TipoOperacion = "M"
-                    oePerfil.Nombre = gNombrePerfilDocumentosVehiculares
-                    oePerfil = olPerfil.Obtener(oePerfil)
-                    MensajeOperaciones = oePerfil.Nombre
-                    If RTrim(MensajeOperaciones) <> "" Then
-                        If MensajeOperaciones <> DocumentosVehiculares Then
-                            DocumentosVehiculares = MensajeOperaciones
-                            AlertaDocumentoVehicular.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
-                            oeUsuarioPerfil = New e_UsuarioPerfil
-                            oeUsuarioPerfil.TipoOperacion = "P"
-                            oeUsuarioPerfil.Id = "M"
-                            oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                            oeUsuarioPerfil.oePerfil.Id = "1CH000000023"
-                            olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                        End If
-                    End If
-                End If
-            End If
-            ''''''''''''''''''''
+                'If oeUsuarioPerfil.Id <> "" Then
+                '    oePerfil = New e_Perfil
+                '    oePerfil.TipoOperacion = "M"
+                '    oePerfil.Nombre = gNombrePerfilDocumentosVehiculares
+                '    oePerfil = olPerfil.Obtener(oePerfil)
+                '    MensajeOperaciones = oePerfil.Nombre
+                '    If RTrim(MensajeOperaciones) <> "" Then
+                '        If MensajeOperaciones <> DocumentosVehiculares Then
+                '            DocumentosVehiculares = MensajeOperaciones
+                '            AlertaDocumentoVehicular.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
+                '            oeUsuarioPerfil = New e_UsuarioPerfil
+                '            oeUsuarioPerfil.TipoOperacion = "P"
+                '            oeUsuarioPerfil.Id = "M"
+                '            oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '            oeUsuarioPerfil.oePerfil.Id = "1CH000000023"
+                '            olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '        End If
+                '    End If
+                'End If
+                'End If
+                ''''''''''''''''''''
 
             End If
 
@@ -1341,11 +1342,11 @@ Public Class frm_Menu
             'oeDocumentoVehicular.TipoOperacion = "M"
             'Dim ds As DataSet = olDocumentoVehicular.ListarDts(oeDocumentoVehicular)
 
-            For i = 0 To ds.Tables(0).Rows.Count - 1
-                AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +
-                                                        ds.Tables(0).Rows(i)("Unidades").ToString + " unidad(es) por vencer en los próximos " + ds.Tables(0).Rows(i)("Dias").ToString + " días." _
-                                                        , , , ScreenPosition.BottomLeft))
-            Next
+            'For i = 0 To ds.Tables(0).Rows.Count - 1
+            '    AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +
+            '                                            ds.Tables(0).Rows(i)("Unidades").ToString + " unidad(es) por vencer en los próximos " + ds.Tables(0).Rows(i)("Dias").ToString + " días." _
+            '                                            , , , ScreenPosition.BottomLeft))
+            'Next
         Catch ex As Exception
             Throw ex
         End Try
@@ -1540,6 +1541,10 @@ Public Class frm_Menu
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub frm_Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+
     End Sub
 
 #End Region
