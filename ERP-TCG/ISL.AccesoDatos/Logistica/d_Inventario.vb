@@ -166,7 +166,7 @@ Public Class d_Inventario
                     End If
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_Inventario_IAE]" _
                             , .PrefijoID, .Id, .FechaCreacion, .IdMaterial, .IdSubAlmacen _
-                            , .CantidadIngreso, .CantidadSalida, .ValorUnitario _
+                            , .CantidadIngreso, .CantidadSalida, .ValorUnitario, .ValorAdm _
                             , .Usuario, .IndDevolucion, .oeRegistroInventario.Id, .IndValidar).ToString.Split("_")
                     .Id = stResultado(0)
                     If .CantidadSalida > 0 Then
@@ -186,6 +186,7 @@ Public Class d_Inventario
                             .CantidadReal = oeInventario.CantidadSalida
                             .ValorUnitarioReal = oe.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
+
                         End With
                         .oeRegistroInventario.PrefijoID = oeInventario.PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
