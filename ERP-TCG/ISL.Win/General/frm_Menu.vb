@@ -26,6 +26,7 @@ Public Class frm_Menu
     End Sub
 
 #Region "Variables para Alertas"
+
     Public IniciaSeccion As Boolean = False
     Public Conecta As Boolean = False
     Public Desconecta As Boolean = False
@@ -588,192 +589,184 @@ Public Class frm_Menu
                     oeUsuarioPerfil.Activo = False
                 End Try
                 '''''''''''''''
-                If PerfilAsignado(gNombrePerfilFacturacionGuias) Or PerfilAsignado(gNombrePerfilAdministrador) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilFacturacionGuias
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeGuias = oePerfil.Nombre
-                        If RTrim(MensajeGuias) <> "" Then
-                            If MensajeGuias <> Guias Then
-                                Guias = MensajeGuias
-                                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeGuias, , "MensajeGuias", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilFacturacionGuias) Or PerfilAsignado(gNombrePerfilAdministrador) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilFacturacionGuias
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeGuias = oePerfil.Nombre
+                '        If RTrim(MensajeGuias) <> "" Then
+                '            If MensajeGuias <> Guias Then
+                '                Guias = MensajeGuias
+                '                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeGuias, , "MensajeGuias", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 ''''''''''''''
-                If PerfilAsignado(gNombrePerfilJefeMantenimiento) Or PerfilAsignado(gNombrePerfilAdministrador) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilJefeMantenimiento
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeMantenimiento = oePerfil.Nombre
-                        If RTrim(MensajeMantenimiento) <> "" Then
-                            If MensajeMantenimiento <> Mantenimiento Then
-                                Mantenimiento = MensajeMantenimiento
-                                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeMantenimiento, , "MensajeMantenimiento", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilJefeMantenimiento) Or PerfilAsignado(gNombrePerfilAdministrador) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilJefeMantenimiento
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeMantenimiento = oePerfil.Nombre
+                '        If RTrim(MensajeMantenimiento) <> "" Then
+                '            If MensajeMantenimiento <> Mantenimiento Then
+                '                Mantenimiento = MensajeMantenimiento
+                '                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeMantenimiento, , "MensajeMantenimiento", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 '''''''''''
-                If PerfilAsignado(gNombrePerfilJefeLogistica) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilAsistenteLogistica) Or PerfilAsignado(gNombrePerfilJefeAlmacen) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilSupervidorGeneral
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeLogistica = oePerfil.Nombre
-                        If RTrim(MensajeLogistica) <> "" Then
-                            If MensajeLogistica <> Logistica Then
-                                Logistica = MensajeLogistica
-                                AlertaLogistica.Show(CargarDatosAlerta("Mensaje Para Logistica", MensajeLogistica, , "MensajeLogistica", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilJefeLogistica) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilAsistenteLogistica) Or PerfilAsignado(gNombrePerfilJefeAlmacen) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilSupervidorGeneral
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeLogistica = oePerfil.Nombre
+                '        If RTrim(MensajeLogistica) <> "" Then
+                '            If MensajeLogistica <> Logistica Then
+                '                Logistica = MensajeLogistica
+                '                AlertaLogistica.Show(CargarDatosAlerta("Mensaje Para Logistica", MensajeLogistica, , "MensajeLogistica", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 '''''''''''''
-                If PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilSupervidorGeneral) Or PerfilAsignado(gNombrePerfilAsistenteLogistica) Or PerfilAsignado(gNombrePerfilJefeAlmacen) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilJefeLogistica
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeLogistica = oePerfil.Nombre
-                        If RTrim(MensajeLogistica) <> "" Then
-                            If MensajeLogistica <> Logistica Then
-                                Logistica = MensajeLogistica
-                                AlertaLogistica.Show(CargarDatosAlerta("Mensaje Para Logistica", MensajeLogistica, , "MensajeLogistica", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilSupervidorGeneral) Or PerfilAsignado(gNombrePerfilAsistenteLogistica) Or PerfilAsignado(gNombrePerfilJefeAlmacen) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilJefeLogistica
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeLogistica = oePerfil.Nombre
+                '        If RTrim(MensajeLogistica) <> "" Then
+                '            If MensajeLogistica <> Logistica Then
+                '                Logistica = MensajeLogistica
+                '                AlertaLogistica.Show(CargarDatosAlerta("Mensaje Para Logistica", MensajeLogistica, , "MensajeLogistica", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 ''''''''''''''''
-                If PerfilAsignado(gNombrePerfilSupervidorCallCenter) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilOperadorCallCenter) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilOperadorOperaciones
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeSeguimiento = oePerfil.Nombre
-                        If RTrim(MensajeSeguimiento) <> "" Then
-                            If MensajeSeguimiento <> Seguimiento Then
-                                Seguimiento = MensajeSeguimiento
-                                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeSeguimiento, , "MensajeSeguimiento", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilSupervidorCallCenter) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilOperadorCallCenter) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilOperadorOperaciones
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeSeguimiento = oePerfil.Nombre
+                '        If RTrim(MensajeSeguimiento) <> "" Then
+                '            If MensajeSeguimiento <> Seguimiento Then
+                '                Seguimiento = MensajeSeguimiento
+                '                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeSeguimiento, , "MensajeSeguimiento", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 '''''''''''''''
-                If PerfilAsignado(gNombrePerfilJefeOperaciones) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilOperadorOperaciones) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilOperadorCallCenter
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeOperaciones = oePerfil.Nombre
-                        If RTrim(MensajeOperaciones) <> "" Then
-                            If MensajeOperaciones <> Operaciones Then
-                                Operaciones = MensajeOperaciones
-                                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilJefeOperaciones) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilOperadorOperaciones) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilOperadorCallCenter
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeOperaciones = oePerfil.Nombre
+                '        If RTrim(MensajeOperaciones) <> "" Then
+                '            If MensajeOperaciones <> Operaciones Then
+                '                Operaciones = MensajeOperaciones
+                '                AlertaOperaciones.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 ''''''''''''''''
-                If PerfilAsignado(gNombrePerfilJefeTesoreria) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilGerenteAdministrativo) Then
-                    If oeUsuarioPerfil.Activo Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilCaja
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeTesoreria = oePerfil.Nombre
-                        If RTrim(MensajeTesoreria) <> "" Then
-                            If MensajeTesoreria <> Tesoreria Then
-                                Tesoreria = MensajeTesoreria
-                                AlertaTesoreria.Show(CargarDatosAlerta("Mensaje de Tesoreria", MensajeTesoreria, , "MensajeTesoreria", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "M"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If PerfilAsignado(gNombrePerfilJefeTesoreria) Or PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilGerenteAdministrativo) Then
+                '    If oeUsuarioPerfil.Activo Then
+                '        oePerfil = New e_Perfil
+                '        oePerfil.TipoOperacion = "M"
+                '        oePerfil.Nombre = gNombrePerfilCaja
+                '        oePerfil = olPerfil.Obtener(oePerfil)
+                '        MensajeTesoreria = oePerfil.Nombre
+                '        If RTrim(MensajeTesoreria) <> "" Then
+                '            If MensajeTesoreria <> Tesoreria Then
+                '                Tesoreria = MensajeTesoreria
+                '                AlertaTesoreria.Show(CargarDatosAlerta("Mensaje de Tesoreria", MensajeTesoreria, , "MensajeTesoreria", ScreenPosition.BottomLeft))
+                '                oeUsuarioPerfil = New e_UsuarioPerfil
+                '                oeUsuarioPerfil.TipoOperacion = "M"
+                '                oeUsuarioPerfil.Id = "M"
+                '                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '            End If
+                '        End If
+                '    End If
+                'End If
                 '''''''''''''''''
-                If PerfilAsignado(gNombrePerfilJefeCallCenter) Or PerfilAsignado(gNombrePerfilDocumentosVehiculares) Or PerfilAsignado(gNombrePerfilAdministrador) Then
-                    ''DOCUMENTOS VEHICULARES
-                    oeUsuarioPerfil = New e_UsuarioPerfil
-                    With oeUsuarioPerfil
-                        .TipoOperacion = "M"
-                        .oeUsuario.Id = gUsuarioSGI.Id
-                        .Principal = -1
-                        .oePerfil.Id = "1CH000000023"
-                    End With
-                    oeUsuarioPerfil = olUsuarioPerfil.Obtener(oeUsuarioPerfil)
+                'If PerfilAsignado(gNombrePerfilJefeCallCenter) Or PerfilAsignado(gNombrePerfilDocumentosVehiculares) Or PerfilAsignado(gNombrePerfilAdministrador) Then
+                '    ''DOCUMENTOS VEHICULARES
+                '    oeUsuarioPerfil = New e_UsuarioPerfil
+                '    With oeUsuarioPerfil
+                '        .TipoOperacion = "M"
+                '        .oeUsuario.Id = gUsuarioSGI.Id
+                '        .Principal = -1
+                '        .oePerfil.Id = "1CH000000023"
+                '    End With
+                '    oeUsuarioPerfil = olUsuarioPerfil.Obtener(oeUsuarioPerfil)
 
-                    If oeUsuarioPerfil.Id <> "" Then
-                        oePerfil = New e_Perfil
-                        oePerfil.TipoOperacion = "M"
-                        oePerfil.Nombre = gNombrePerfilDocumentosVehiculares
-                        oePerfil = olPerfil.Obtener(oePerfil)
-                        MensajeOperaciones = oePerfil.Nombre
-                        If RTrim(MensajeOperaciones) <> "" Then
-                            If MensajeOperaciones <> DocumentosVehiculares Then
-                                DocumentosVehiculares = MensajeOperaciones
-                                AlertaDocumentoVehicular.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
-                                oeUsuarioPerfil = New e_UsuarioPerfil
-                                oeUsuarioPerfil.TipoOperacion = "P"
-                                oeUsuarioPerfil.Id = "M"
-                                oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
-                                oeUsuarioPerfil.oePerfil.Id = "1CH000000023"
-                                oeUsuarioPerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                olUsuarioPerfil.Guardar(oeUsuarioPerfil)
-                            End If
-                        End If
-                    End If
-                End If
+                'If oeUsuarioPerfil.Id <> "" Then
+                '    oePerfil = New e_Perfil
+                '    oePerfil.TipoOperacion = "M"
+                '    oePerfil.Nombre = gNombrePerfilDocumentosVehiculares
+                '    oePerfil = olPerfil.Obtener(oePerfil)
+                '    MensajeOperaciones = oePerfil.Nombre
+                '    If RTrim(MensajeOperaciones) <> "" Then
+                '        If MensajeOperaciones <> DocumentosVehiculares Then
+                '            DocumentosVehiculares = MensajeOperaciones
+                '            AlertaDocumentoVehicular.Show(CargarDatosAlerta("Mensaje de Sistema", MensajeOperaciones, , "MensajeOperaciones", ScreenPosition.BottomLeft))
+                '            oeUsuarioPerfil = New e_UsuarioPerfil
+                '            oeUsuarioPerfil.TipoOperacion = "P"
+                '            oeUsuarioPerfil.Id = "M"
+                '            oeUsuarioPerfil.oeUsuario.Id = gUsuarioSGI.Id
+                '            oeUsuarioPerfil.oePerfil.Id = "1CH000000023"
+                '            olUsuarioPerfil.Guardar(oeUsuarioPerfil)
+                '        End If
+                '    End If
+                'End If
+                'End If
                 ''''''''''''''''''''
 
             End If
@@ -1349,11 +1342,11 @@ Public Class frm_Menu
             oeDocumentoVehicular.TipoOperacion = "M"
             Dim ds As DataSet = olDocumentoVehicular.ListarDts(oeDocumentoVehicular)
 
-            For i = 0 To ds.Tables(0).Rows.Count - 1
-                AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +
-                                                        ds.Tables(0).Rows(i)("Unidades").ToString + " unidad(es) por vencer en los próximos " + ds.Tables(0).Rows(i)("Dias").ToString + " días." _
-                                                        , , , ScreenPosition.BottomLeft))
-            Next
+            'For i = 0 To ds.Tables(0).Rows.Count - 1
+            '    AlertaDocumentos.Show(CargarDatosAlerta(ds.Tables(0).Rows(i)("Titulo").ToString, ds.Tables(0).Rows(i)("TipoDocumento").ToString + ": Existen " +
+            '                                            ds.Tables(0).Rows(i)("Unidades").ToString + " unidad(es) por vencer en los próximos " + ds.Tables(0).Rows(i)("Dias").ToString + " días." _
+            '                                            , , , ScreenPosition.BottomLeft))
+            'Next
         Catch ex As Exception
             Throw ex
         End Try
@@ -1548,6 +1541,10 @@ Public Class frm_Menu
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub frm_Menu_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+
     End Sub
 
 #End Region

@@ -59,16 +59,20 @@ Partial Class frm_Inventario
         Dim UltraGridColumn203 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Serial")
         Dim UltraGridColumn204 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Familia")
         Dim UltraGridColumn205 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SubFamilia")
-        Dim UltraGridColumn206 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Editar", 0)
+        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorAdm")
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Inventario))
+        Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaSis")
+        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdSucursal")
+        Dim UltraGridColumn206 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Editar", 0)
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings1 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "ValorTotal", 12, True, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "ValorTotal", 12, True)
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Inventario))
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim SummarySettings1 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "ValorTotal", 12, True, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "ValorTotal", 12, True)
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim SummarySettings2 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "PrecioTotal", 14, True, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "PrecioTotal", 14, True)
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim SummarySettings2 As Infragistics.Win.UltraWinGrid.SummarySettings = New Infragistics.Win.UltraWinGrid.SummarySettings("", Infragistics.Win.UltraWinGrid.SummaryType.Sum, Nothing, "PrecioTotal", 14, True, "Band 0", 0, Infragistics.Win.UltraWinGrid.SummaryPosition.UseSummaryPositionColumn, "PrecioTotal", 14, True)
         Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMaterial")
         Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
@@ -93,26 +97,29 @@ Partial Class frm_Inventario
         Dim UltraDataColumn22 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Serial")
         Dim UltraDataColumn23 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Familia")
         Dim UltraDataColumn24 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("SubFamilia")
+        Dim UltraDataColumn25 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorAdm")
+        Dim UltraDataColumn26 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEmpresaSis")
+        Dim UltraDataColumn27 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSucursal")
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn207 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn208 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdInventario")
         Dim UltraGridColumn209 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdMaterial")
         Dim UltraGridColumn210 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Cantidad")
-        Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn211 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorUnitario")
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn212 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha")
+        Dim UltraGridColumn211 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorUnitario")
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn213 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdSubAlmacen")
-        Dim UltraDataColumn25 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn26 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdInventario")
-        Dim UltraDataColumn27 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMaterial")
-        Dim UltraDataColumn28 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cantidad")
-        Dim UltraDataColumn29 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorUnitario")
-        Dim UltraDataColumn30 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
-        Dim UltraDataColumn31 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSubAlmacen")
+        Dim UltraGridColumn212 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha")
         Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn213 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdSubAlmacen")
+        Dim UltraDataColumn28 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn29 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdInventario")
+        Dim UltraDataColumn30 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMaterial")
+        Dim UltraDataColumn31 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cantidad")
+        Dim UltraDataColumn32 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorUnitario")
+        Dim UltraDataColumn33 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
+        Dim UltraDataColumn34 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSubAlmacen")
         Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn214 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn215 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion")
@@ -127,25 +134,25 @@ Partial Class frm_Inventario
         Dim UltraGridColumn224 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdGrifo")
         Dim UltraGridColumn225 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdDireccion")
         Dim UltraGridColumn226 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndPrincipal")
-        Dim UltraDataColumn32 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn33 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Seleccion")
-        Dim UltraDataColumn34 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
-        Dim UltraDataColumn35 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
-        Dim UltraDataColumn36 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdAlmacen")
-        Dim UltraDataColumn37 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Almacen")
-        Dim UltraDataColumn38 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Referencia")
-        Dim UltraDataColumn39 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEquipo")
-        Dim UltraDataColumn40 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("UsuarioCreacion")
-        Dim UltraDataColumn41 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
-        Dim UltraDataColumn42 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdGrifo")
-        Dim UltraDataColumn43 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdDireccion")
-        Dim UltraDataColumn44 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IndPrincipal")
-        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDataColumn35 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn36 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Seleccion")
+        Dim UltraDataColumn37 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
+        Dim UltraDataColumn38 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
+        Dim UltraDataColumn39 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdAlmacen")
+        Dim UltraDataColumn40 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Almacen")
+        Dim UltraDataColumn41 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Referencia")
+        Dim UltraDataColumn42 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEquipo")
+        Dim UltraDataColumn43 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("UsuarioCreacion")
+        Dim UltraDataColumn44 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
+        Dim UltraDataColumn45 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdGrifo")
+        Dim UltraDataColumn46 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdDireccion")
+        Dim UltraDataColumn47 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IndPrincipal")
         Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand4 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn227 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn228 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroMovimiento")
@@ -153,49 +160,49 @@ Partial Class frm_Inventario
         Dim UltraGridColumn230 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoMovimiento")
         Dim UltraGridColumn231 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim UltraGridColumn232 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Ingreso")
-        Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn233 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Salida")
         Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn234 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoUnitario")
+        Dim UltraGridColumn233 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Salida")
         Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn235 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoTotal")
+        Dim UltraGridColumn234 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoUnitario")
         Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn236 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioUnitario")
+        Dim UltraGridColumn235 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoTotal")
         Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn237 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioTotal")
+        Dim UltraGridColumn236 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioUnitario")
         Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn238 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroOrden")
+        Dim UltraGridColumn237 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioTotal")
         Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn238 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroOrden")
+        Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn239 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Vehiculo")
         Dim UltraGridColumn240 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Proveedor")
         Dim UltraGridColumn241 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Usuario")
         Dim UltraGridColumn242 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdOrden")
         Dim UltraGridColumn243 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Ubicacion")
-        Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn244 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoDocumento")
         Dim UltraGridColumn245 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Documento")
         Dim UltraGridColumn246 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Saldo")
-        Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDataColumn45 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn46 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMovimiento")
-        Dim UltraDataColumn47 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
-        Dim UltraDataColumn48 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoMovimiento")
-        Dim UltraDataColumn49 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
-        Dim UltraDataColumn50 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ingreso")
-        Dim UltraDataColumn51 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Salida")
-        Dim UltraDataColumn52 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoUnitario")
-        Dim UltraDataColumn53 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoTotal")
-        Dim UltraDataColumn54 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PrecioUnitario")
-        Dim UltraDataColumn55 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PrecioTotal")
-        Dim UltraDataColumn56 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroOrden")
-        Dim UltraDataColumn57 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Vehiculo")
-        Dim UltraDataColumn58 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Proveedor")
-        Dim UltraDataColumn59 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Usuario")
-        Dim UltraDataColumn60 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdOrden")
-        Dim UltraDataColumn61 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ubicacion")
-        Dim UltraDataColumn62 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoDocumento")
-        Dim UltraDataColumn63 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Documento")
-        Dim UltraDataColumn64 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Saldo")
+        Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDataColumn48 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn49 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMovimiento")
+        Dim UltraDataColumn50 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
+        Dim UltraDataColumn51 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoMovimiento")
+        Dim UltraDataColumn52 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
+        Dim UltraDataColumn53 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ingreso")
+        Dim UltraDataColumn54 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Salida")
+        Dim UltraDataColumn55 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoUnitario")
+        Dim UltraDataColumn56 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoTotal")
+        Dim UltraDataColumn57 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PrecioUnitario")
+        Dim UltraDataColumn58 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PrecioTotal")
+        Dim UltraDataColumn59 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroOrden")
+        Dim UltraDataColumn60 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Vehiculo")
+        Dim UltraDataColumn61 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Proveedor")
+        Dim UltraDataColumn62 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Usuario")
+        Dim UltraDataColumn63 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdOrden")
+        Dim UltraDataColumn64 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ubicacion")
+        Dim UltraDataColumn65 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoDocumento")
+        Dim UltraDataColumn66 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Documento")
+        Dim UltraDataColumn67 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Saldo")
         Dim UltraGridBand5 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn247 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn248 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdRegistroInventario")
@@ -208,71 +215,70 @@ Partial Class frm_Inventario
         Dim UltraGridColumn255 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Serie")
         Dim UltraGridColumn256 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Especificaciones")
         Dim UltraGridColumn257 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
-        Dim UltraDataColumn65 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn66 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdRegistroInventario")
-        Dim UltraDataColumn67 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMarca")
-        Dim UltraDataColumn68 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreMarca")
-        Dim UltraDataColumn69 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdModelo")
-        Dim UltraDataColumn70 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreModelo")
-        Dim UltraDataColumn71 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEstado")
-        Dim UltraDataColumn72 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreEstado")
-        Dim UltraDataColumn73 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Serie")
-        Dim UltraDataColumn74 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Especificaciones")
-        Dim UltraDataColumn75 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
-        Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDataColumn68 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn69 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdRegistroInventario")
+        Dim UltraDataColumn70 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMarca")
+        Dim UltraDataColumn71 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreMarca")
+        Dim UltraDataColumn72 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdModelo")
+        Dim UltraDataColumn73 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreModelo")
+        Dim UltraDataColumn74 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEstado")
+        Dim UltraDataColumn75 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreEstado")
+        Dim UltraDataColumn76 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Serie")
+        Dim UltraDataColumn77 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Especificaciones")
+        Dim UltraDataColumn78 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim Appearance39 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand6 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn258 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn259 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroMovimiento")
-        Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn260 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha")
         Dim Appearance42 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn261 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoMovimiento")
+        Dim UltraGridColumn260 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Fecha")
         Dim Appearance43 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn261 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("TipoMovimiento")
+        Dim Appearance44 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn262 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim UltraGridColumn263 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantIngreso")
-        Dim Appearance44 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn264 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoIngreso")
         Dim Appearance45 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn265 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorIngreso")
+        Dim UltraGridColumn264 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoIngreso")
         Dim Appearance46 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn266 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantSalida")
+        Dim UltraGridColumn265 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorIngreso")
         Dim Appearance47 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn267 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoSalida")
+        Dim UltraGridColumn266 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantSalida")
         Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn268 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorSalida")
+        Dim UltraGridColumn267 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoSalida")
         Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn269 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantSaldo")
+        Dim UltraGridColumn268 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorSalida")
         Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn270 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoSaldo")
+        Dim UltraGridColumn269 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantSaldo")
         Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn271 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorSaldo")
+        Dim UltraGridColumn270 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CostoSaldo")
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Ingresos", 102954922)
+        Dim UltraGridColumn271 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorSaldo")
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Ingresos", 7981532)
         Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Salidas", 102954923)
         Dim Appearance55 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Salidas", 7981533)
         Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Existencias", 102954924)
         Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Existencias", 7981534)
         Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDataColumn76 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn77 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMovimiento")
-        Dim UltraDataColumn78 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
-        Dim UltraDataColumn79 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoMovimiento")
-        Dim UltraDataColumn80 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
-        Dim UltraDataColumn81 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantIngreso")
-        Dim UltraDataColumn82 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoIngreso")
-        Dim UltraDataColumn83 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorIngreso")
-        Dim UltraDataColumn84 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantSalida")
-        Dim UltraDataColumn85 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoSalida")
-        Dim UltraDataColumn86 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorSalida")
-        Dim UltraDataColumn87 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantSaldo")
-        Dim UltraDataColumn88 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoSaldo")
-        Dim UltraDataColumn89 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorSaldo")
         Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraDataColumn79 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn80 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMovimiento")
+        Dim UltraDataColumn81 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Fecha")
+        Dim UltraDataColumn82 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoMovimiento")
+        Dim UltraDataColumn83 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
+        Dim UltraDataColumn84 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantIngreso")
+        Dim UltraDataColumn85 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoIngreso")
+        Dim UltraDataColumn86 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorIngreso")
+        Dim UltraDataColumn87 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantSalida")
+        Dim UltraDataColumn88 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoSalida")
+        Dim UltraDataColumn89 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorSalida")
+        Dim UltraDataColumn90 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CantSaldo")
+        Dim UltraDataColumn91 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CostoSaldo")
+        Dim UltraDataColumn92 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorSaldo")
         Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -289,6 +295,7 @@ Partial Class frm_Inventario
         Dim Appearance73 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance74 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance75 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance76 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -538,54 +545,64 @@ Partial Class frm_Inventario
         UltraGridColumn197.CellAppearance = Appearance9
         UltraGridColumn197.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn197.Header.Caption = "Actualizado Al"
-        UltraGridColumn197.Header.VisiblePosition = 17
-        UltraGridColumn198.Header.VisiblePosition = 18
+        UltraGridColumn197.Header.VisiblePosition = 18
+        UltraGridColumn198.Header.VisiblePosition = 19
         UltraGridColumn198.Hidden = True
         Appearance10.TextHAlignAsString = "Right"
         UltraGridColumn199.CellAppearance = Appearance10
         UltraGridColumn199.Header.Caption = "Stock Min."
-        UltraGridColumn199.Header.VisiblePosition = 19
+        UltraGridColumn199.Header.VisiblePosition = 20
         UltraGridColumn199.Hidden = True
         UltraGridColumn199.MaskInput = "{double:-9.3:c}"
         Appearance11.TextHAlignAsString = "Right"
         UltraGridColumn200.CellAppearance = Appearance11
         UltraGridColumn200.Header.Caption = "Stock Max."
-        UltraGridColumn200.Header.VisiblePosition = 20
+        UltraGridColumn200.Header.VisiblePosition = 21
         UltraGridColumn200.Hidden = True
         UltraGridColumn200.MaskInput = "{double:-9.3:c}"
-        UltraGridColumn201.Header.VisiblePosition = 21
+        UltraGridColumn201.Header.VisiblePosition = 22
         UltraGridColumn201.Width = 75
         UltraGridColumn202.Header.Fixed = True
         UltraGridColumn202.Header.VisiblePosition = 3
         UltraGridColumn202.Width = 68
-        UltraGridColumn203.Header.VisiblePosition = 24
+        UltraGridColumn203.Header.VisiblePosition = 25
         UltraGridColumn203.Width = 159
-        UltraGridColumn204.Header.VisiblePosition = 22
+        UltraGridColumn204.Header.VisiblePosition = 23
         UltraGridColumn204.Width = 293
-        UltraGridColumn205.Header.VisiblePosition = 23
+        UltraGridColumn205.Header.VisiblePosition = 24
         UltraGridColumn205.Width = 265
-        Appearance12.Image = CType(resources.GetObject("Appearance12.Image"), Object)
-        Appearance12.ImageHAlign = Infragistics.Win.HAlign.Center
-        Appearance12.ImageVAlign = Infragistics.Win.VAlign.Middle
-        UltraGridColumn206.CellAppearance = Appearance12
+        Appearance12.TextHAlignAsString = "Right"
+        UltraGridColumn1.CellAppearance = Appearance12
+        UltraGridColumn1.Format = "#,##0.0000"
+        UltraGridColumn1.Header.VisiblePosition = 17
+        UltraGridColumn1.MaskInput = "{double:-9.3:c}"
+        UltraGridColumn1.Width = 90
+        UltraGridColumn2.Header.VisiblePosition = 26
+        UltraGridColumn2.Hidden = True
+        UltraGridColumn3.Header.VisiblePosition = 27
+        UltraGridColumn3.Hidden = True
         Appearance13.Image = CType(resources.GetObject("Appearance13.Image"), Object)
         Appearance13.ImageHAlign = Infragistics.Win.HAlign.Center
-        UltraGridColumn206.CellButtonAppearance = Appearance13
+        Appearance13.ImageVAlign = Infragistics.Win.VAlign.Middle
+        UltraGridColumn206.CellAppearance = Appearance13
+        Appearance14.Image = CType(resources.GetObject("Appearance14.Image"), Object)
+        Appearance14.ImageHAlign = Infragistics.Win.HAlign.Center
+        UltraGridColumn206.CellButtonAppearance = Appearance14
         UltraGridColumn206.Header.Caption = "Rect."
         UltraGridColumn206.Header.Fixed = True
         UltraGridColumn206.Header.VisiblePosition = 0
         UltraGridColumn206.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
         UltraGridColumn206.Width = 33
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn182, UltraGridColumn183, UltraGridColumn184, UltraGridColumn185, UltraGridColumn186, UltraGridColumn187, UltraGridColumn188, UltraGridColumn189, UltraGridColumn190, UltraGridColumn191, UltraGridColumn192, UltraGridColumn193, UltraGridColumn194, UltraGridColumn195, UltraGridColumn196, UltraGridColumn197, UltraGridColumn198, UltraGridColumn199, UltraGridColumn200, UltraGridColumn201, UltraGridColumn202, UltraGridColumn203, UltraGridColumn204, UltraGridColumn205, UltraGridColumn206})
-        Appearance14.TextHAlignAsString = "Right"
-        SummarySettings1.Appearance = Appearance14
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn182, UltraGridColumn183, UltraGridColumn184, UltraGridColumn185, UltraGridColumn186, UltraGridColumn187, UltraGridColumn188, UltraGridColumn189, UltraGridColumn190, UltraGridColumn191, UltraGridColumn192, UltraGridColumn193, UltraGridColumn194, UltraGridColumn195, UltraGridColumn196, UltraGridColumn197, UltraGridColumn198, UltraGridColumn199, UltraGridColumn200, UltraGridColumn201, UltraGridColumn202, UltraGridColumn203, UltraGridColumn204, UltraGridColumn205, UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn206})
+        Appearance15.TextHAlignAsString = "Right"
+        SummarySettings1.Appearance = Appearance15
         SummarySettings1.DisplayFormat = "{0:#,##0.00}"
-        SummarySettings1.GroupBySummaryValueAppearance = Appearance15
+        SummarySettings1.GroupBySummaryValueAppearance = Appearance16
         SummarySettings1.SummaryDisplayArea = Infragistics.Win.UltraWinGrid.SummaryDisplayAreas.Top
-        Appearance16.TextHAlignAsString = "Right"
-        SummarySettings2.Appearance = Appearance16
+        Appearance17.TextHAlignAsString = "Right"
+        SummarySettings2.Appearance = Appearance17
         SummarySettings2.DisplayFormat = "{0:#,##0.00}"
-        SummarySettings2.GroupBySummaryValueAppearance = Appearance17
+        SummarySettings2.GroupBySummaryValueAppearance = Appearance18
         SummarySettings2.SummaryDisplayArea = Infragistics.Win.UltraWinGrid.SummaryDisplayAreas.Top
         UltraGridBand1.Summaries.AddRange(New Infragistics.Win.UltraWinGrid.SummarySettings() {SummarySettings1, SummarySettings2})
         UltraGridBand1.SummaryFooterCaption = ""
@@ -663,7 +680,8 @@ Partial Class frm_Inventario
         UltraDataColumn17.DataType = GetType(Boolean)
         UltraDataColumn18.DataType = GetType(Double)
         UltraDataColumn19.DataType = GetType(Double)
-        Me.odInventario.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17, UltraDataColumn18, UltraDataColumn19, UltraDataColumn20, UltraDataColumn21, UltraDataColumn22, UltraDataColumn23, UltraDataColumn24})
+        UltraDataColumn25.DataType = GetType(Double)
+        Me.odInventario.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17, UltraDataColumn18, UltraDataColumn19, UltraDataColumn20, UltraDataColumn21, UltraDataColumn22, UltraDataColumn23, UltraDataColumn24, UltraDataColumn25, UltraDataColumn26, UltraDataColumn27})
         '
         'Filtro1
         '
@@ -705,19 +723,19 @@ Partial Class frm_Inventario
         UltraGridColumn208.Hidden = True
         UltraGridColumn209.Header.VisiblePosition = 2
         UltraGridColumn209.Hidden = True
-        Appearance18.TextHAlignAsString = "Right"
-        UltraGridColumn210.CellAppearance = Appearance18
+        Appearance19.TextHAlignAsString = "Right"
+        UltraGridColumn210.CellAppearance = Appearance19
         UltraGridColumn210.Header.VisiblePosition = 4
         UltraGridColumn210.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn210.Width = 92
-        Appearance19.TextHAlignAsString = "Right"
-        UltraGridColumn211.CellAppearance = Appearance19
+        Appearance20.TextHAlignAsString = "Right"
+        UltraGridColumn211.CellAppearance = Appearance20
         UltraGridColumn211.Header.VisiblePosition = 5
         UltraGridColumn211.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn211.Width = 90
         UltraGridColumn212.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
-        Appearance20.TextHAlignAsString = "Center"
-        UltraGridColumn212.CellAppearance = Appearance20
+        Appearance21.TextHAlignAsString = "Center"
+        UltraGridColumn212.CellAppearance = Appearance21
         UltraGridColumn212.Header.VisiblePosition = 3
         UltraGridColumn212.Width = 73
         UltraGridColumn213.Header.VisiblePosition = 6
@@ -744,12 +762,12 @@ Partial Class frm_Inventario
         '
         Me.odDetInv.AllowAdd = False
         Me.odDetInv.AllowDelete = False
-        UltraDataColumn28.DataType = GetType(Double)
-        UltraDataColumn28.DefaultValue = 0.0R
-        UltraDataColumn29.DataType = GetType(Double)
-        UltraDataColumn29.DefaultValue = 0.0R
-        UltraDataColumn30.DataType = GetType(Date)
-        Me.odDetInv.Band.Columns.AddRange(New Object() {UltraDataColumn25, UltraDataColumn26, UltraDataColumn27, UltraDataColumn28, UltraDataColumn29, UltraDataColumn30, UltraDataColumn31})
+        UltraDataColumn31.DataType = GetType(Double)
+        UltraDataColumn31.DefaultValue = 0R
+        UltraDataColumn32.DataType = GetType(Double)
+        UltraDataColumn32.DefaultValue = 0R
+        UltraDataColumn33.DataType = GetType(Date)
+        Me.odDetInv.Band.Columns.AddRange(New Object() {UltraDataColumn28, UltraDataColumn29, UltraDataColumn30, UltraDataColumn31, UltraDataColumn32, UltraDataColumn33, UltraDataColumn34})
         '
         'UltraExpandableGroupBox1
         '
@@ -780,9 +798,9 @@ Partial Class frm_Inventario
         '
         'Etiqueta8
         '
-        Appearance21.BackColor = System.Drawing.Color.Transparent
-        Appearance21.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta8.Appearance = Appearance21
+        Appearance22.BackColor = System.Drawing.Color.Transparent
+        Appearance22.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta8.Appearance = Appearance22
         Me.Etiqueta8.AutoSize = True
         Me.Etiqueta8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.Black
@@ -794,8 +812,8 @@ Partial Class frm_Inventario
         '
         'btnInventariar
         '
-        Appearance22.Image = Global.ISL.Win.My.Resources.Resources.Insertar
-        Me.btnInventariar.Appearance = Appearance22
+        Appearance23.Image = Global.ISL.Win.My.Resources.Resources.Insertar
+        Me.btnInventariar.Appearance = Appearance23
         Me.btnInventariar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnInventariar.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnInventariar.Location = New System.Drawing.Point(1199, 13)
@@ -862,9 +880,9 @@ Partial Class frm_Inventario
         '
         Me.odSubAlmacen.AllowAdd = False
         Me.odSubAlmacen.AllowDelete = False
-        UltraDataColumn33.DataType = GetType(Boolean)
-        UltraDataColumn41.DataType = GetType(Boolean)
-        Me.odSubAlmacen.Band.Columns.AddRange(New Object() {UltraDataColumn32, UltraDataColumn33, UltraDataColumn34, UltraDataColumn35, UltraDataColumn36, UltraDataColumn37, UltraDataColumn38, UltraDataColumn39, UltraDataColumn40, UltraDataColumn41, UltraDataColumn42, UltraDataColumn43, UltraDataColumn44})
+        UltraDataColumn36.DataType = GetType(Boolean)
+        UltraDataColumn44.DataType = GetType(Boolean)
+        Me.odSubAlmacen.Band.Columns.AddRange(New Object() {UltraDataColumn35, UltraDataColumn36, UltraDataColumn37, UltraDataColumn38, UltraDataColumn39, UltraDataColumn40, UltraDataColumn41, UltraDataColumn42, UltraDataColumn43, UltraDataColumn44, UltraDataColumn45, UltraDataColumn46, UltraDataColumn47})
         '
         'gbDatosAdicionales
         '
@@ -921,8 +939,8 @@ Partial Class frm_Inventario
         '
         'etiStock
         '
-        Appearance23.ForeColor = System.Drawing.Color.Navy
-        Me.etiStock.Appearance = Appearance23
+        Appearance24.ForeColor = System.Drawing.Color.Navy
+        Me.etiStock.Appearance = Appearance24
         Me.etiStock.AutoSize = True
         Me.etiStock.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiStock.ForeColor = System.Drawing.Color.Black
@@ -942,8 +960,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta13
         '
-        Appearance24.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta13.Appearance = Appearance24
+        Appearance25.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta13.Appearance = Appearance25
         Me.Etiqueta13.AutoSize = True
         Me.Etiqueta13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta13.ForeColor = System.Drawing.Color.Black
@@ -955,8 +973,8 @@ Partial Class frm_Inventario
         '
         'etifechaAl
         '
-        Appearance25.ForeColor = System.Drawing.Color.Navy
-        Me.etifechaAl.Appearance = Appearance25
+        Appearance26.ForeColor = System.Drawing.Color.Navy
+        Me.etifechaAl.Appearance = Appearance26
         Me.etifechaAl.AutoSize = True
         Me.etifechaAl.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etifechaAl.ForeColor = System.Drawing.Color.MidnightBlue
@@ -968,8 +986,8 @@ Partial Class frm_Inventario
         '
         'cboAlmacen
         '
-        Appearance26.ForeColor = System.Drawing.Color.Black
-        Me.cboAlmacen.Appearance = Appearance26
+        Appearance27.ForeColor = System.Drawing.Color.Black
+        Me.cboAlmacen.Appearance = Appearance27
         Me.cboAlmacen.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboAlmacen.DisplayMember = "Nombre"
         Me.cboAlmacen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -985,8 +1003,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta5
         '
-        Appearance27.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta5.Appearance = Appearance27
+        Appearance28.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta5.Appearance = Appearance28
         Me.Etiqueta5.AutoSize = True
         Me.Etiqueta5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.Black
@@ -998,8 +1016,8 @@ Partial Class frm_Inventario
         '
         'cboCentro
         '
-        Appearance28.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Appearance = Appearance28
+        Appearance29.ForeColor = System.Drawing.Color.Black
+        Me.cboCentro.Appearance = Appearance29
         Me.cboCentro.DisplayMember = "Nombre"
         Me.cboCentro.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCentro.DropDownListWidth = 180
@@ -1055,42 +1073,42 @@ Partial Class frm_Inventario
         UltraGridColumn230.Width = 85
         UltraGridColumn231.Header.VisiblePosition = 4
         UltraGridColumn231.Width = 306
-        Appearance29.TextHAlignAsString = "Right"
-        UltraGridColumn232.CellAppearance = Appearance29
+        Appearance30.TextHAlignAsString = "Right"
+        UltraGridColumn232.CellAppearance = Appearance30
         UltraGridColumn232.Format = "#,##0.0000"
         UltraGridColumn232.Header.VisiblePosition = 5
         UltraGridColumn232.Width = 88
-        Appearance30.TextHAlignAsString = "Right"
-        UltraGridColumn233.CellAppearance = Appearance30
+        Appearance31.TextHAlignAsString = "Right"
+        UltraGridColumn233.CellAppearance = Appearance31
         UltraGridColumn233.Format = "#,##0.0000"
         UltraGridColumn233.Header.VisiblePosition = 6
         UltraGridColumn233.Width = 87
-        Appearance31.TextHAlignAsString = "Right"
-        UltraGridColumn234.CellAppearance = Appearance31
+        Appearance32.TextHAlignAsString = "Right"
+        UltraGridColumn234.CellAppearance = Appearance32
         UltraGridColumn234.Format = "#,##0.0000"
         UltraGridColumn234.Header.Caption = "Costo Unit."
         UltraGridColumn234.Header.VisiblePosition = 7
         UltraGridColumn234.Width = 82
-        Appearance32.TextHAlignAsString = "Right"
-        UltraGridColumn235.CellAppearance = Appearance32
+        Appearance33.TextHAlignAsString = "Right"
+        UltraGridColumn235.CellAppearance = Appearance33
         UltraGridColumn235.Format = "#,##0.0000"
         UltraGridColumn235.Header.Caption = "Costo Total"
         UltraGridColumn235.Header.VisiblePosition = 8
         UltraGridColumn235.Width = 83
-        Appearance33.TextHAlignAsString = "Right"
-        UltraGridColumn236.CellAppearance = Appearance33
+        Appearance34.TextHAlignAsString = "Right"
+        UltraGridColumn236.CellAppearance = Appearance34
         UltraGridColumn236.Format = "#,##0.0000"
         UltraGridColumn236.Header.Caption = "Precio Unit."
         UltraGridColumn236.Header.VisiblePosition = 9
         UltraGridColumn236.Width = 90
-        Appearance34.TextHAlignAsString = "Right"
-        UltraGridColumn237.CellAppearance = Appearance34
+        Appearance35.TextHAlignAsString = "Right"
+        UltraGridColumn237.CellAppearance = Appearance35
         UltraGridColumn237.Format = "#,##0.0000"
         UltraGridColumn237.Header.Caption = "Precio Total"
         UltraGridColumn237.Header.VisiblePosition = 10
-        Appearance35.BackColor = System.Drawing.Color.Khaki
-        Appearance35.Image = CType(resources.GetObject("Appearance35.Image"), Object)
-        UltraGridColumn238.CellAppearance = Appearance35
+        Appearance36.BackColor = System.Drawing.Color.Khaki
+        Appearance36.Image = CType(resources.GetObject("Appearance36.Image"), Object)
+        UltraGridColumn238.CellAppearance = Appearance36
         UltraGridColumn238.Header.Caption = "N° Orden"
         UltraGridColumn238.Header.VisiblePosition = 13
         UltraGridColumn238.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
@@ -1101,8 +1119,8 @@ Partial Class frm_Inventario
         UltraGridColumn241.Header.VisiblePosition = 16
         UltraGridColumn242.Header.VisiblePosition = 17
         UltraGridColumn242.Hidden = True
-        Appearance36.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        UltraGridColumn243.CellAppearance = Appearance36
+        Appearance37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        UltraGridColumn243.CellAppearance = Appearance37
         UltraGridColumn243.Header.VisiblePosition = 12
         UltraGridColumn243.Hidden = True
         UltraGridColumn244.Header.Caption = "Tipo Documento"
@@ -1110,8 +1128,8 @@ Partial Class frm_Inventario
         UltraGridColumn245.Header.Caption = "N° Documento"
         UltraGridColumn245.Header.VisiblePosition = 19
         UltraGridColumn245.Width = 113
-        Appearance37.TextHAlignAsString = "Right"
-        UltraGridColumn246.CellAppearance = Appearance37
+        Appearance38.TextHAlignAsString = "Right"
+        UltraGridColumn246.CellAppearance = Appearance38
         UltraGridColumn246.Format = "#,##0.0000"
         UltraGridColumn246.Header.VisiblePosition = 11
         UltraGridColumn246.MaskInput = ""
@@ -1142,35 +1160,35 @@ Partial Class frm_Inventario
         '
         Me.mnuRegInv.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExtornoToolStripMenuItem, Me.AsientoToolStripMenuItem})
         Me.mnuRegInv.Name = "menuExtorno"
-        Me.mnuRegInv.Size = New System.Drawing.Size(153, 70)
+        Me.mnuRegInv.Size = New System.Drawing.Size(116, 48)
         '
         'ExtornoToolStripMenuItem
         '
         Me.ExtornoToolStripMenuItem.Enabled = False
         Me.ExtornoToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.back
         Me.ExtornoToolStripMenuItem.Name = "ExtornoToolStripMenuItem"
-        Me.ExtornoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExtornoToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.ExtornoToolStripMenuItem.Text = "Extorno"
         '
         'AsientoToolStripMenuItem
         '
         Me.AsientoToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Actualiza
         Me.AsientoToolStripMenuItem.Name = "AsientoToolStripMenuItem"
-        Me.AsientoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AsientoToolStripMenuItem.Size = New System.Drawing.Size(115, 22)
         Me.AsientoToolStripMenuItem.Text = "Asiento"
         '
         'odRegistroInventario
         '
         Me.odRegistroInventario.AllowAdd = False
         Me.odRegistroInventario.AllowDelete = False
-        UltraDataColumn50.DataType = GetType(Double)
-        UltraDataColumn51.DataType = GetType(Double)
-        UltraDataColumn52.DataType = GetType(Double)
         UltraDataColumn53.DataType = GetType(Double)
         UltraDataColumn54.DataType = GetType(Double)
         UltraDataColumn55.DataType = GetType(Double)
-        UltraDataColumn64.DataType = GetType(Double)
-        Me.odRegistroInventario.Band.Columns.AddRange(New Object() {UltraDataColumn45, UltraDataColumn46, UltraDataColumn47, UltraDataColumn48, UltraDataColumn49, UltraDataColumn50, UltraDataColumn51, UltraDataColumn52, UltraDataColumn53, UltraDataColumn54, UltraDataColumn55, UltraDataColumn56, UltraDataColumn57, UltraDataColumn58, UltraDataColumn59, UltraDataColumn60, UltraDataColumn61, UltraDataColumn62, UltraDataColumn63, UltraDataColumn64})
+        UltraDataColumn56.DataType = GetType(Double)
+        UltraDataColumn57.DataType = GetType(Double)
+        UltraDataColumn58.DataType = GetType(Double)
+        UltraDataColumn67.DataType = GetType(Double)
+        Me.odRegistroInventario.Band.Columns.AddRange(New Object() {UltraDataColumn48, UltraDataColumn49, UltraDataColumn50, UltraDataColumn51, UltraDataColumn52, UltraDataColumn53, UltraDataColumn54, UltraDataColumn55, UltraDataColumn56, UltraDataColumn57, UltraDataColumn58, UltraDataColumn59, UltraDataColumn60, UltraDataColumn61, UltraDataColumn62, UltraDataColumn63, UltraDataColumn64, UltraDataColumn65, UltraDataColumn66, UltraDataColumn67})
         '
         'gb_DetalleAsignacion
         '
@@ -1249,7 +1267,7 @@ Partial Class frm_Inventario
         '
         Me.odDetalleAsignacion.AllowAdd = False
         Me.odDetalleAsignacion.AllowDelete = False
-        Me.odDetalleAsignacion.Band.Columns.AddRange(New Object() {UltraDataColumn65, UltraDataColumn66, UltraDataColumn67, UltraDataColumn68, UltraDataColumn69, UltraDataColumn70, UltraDataColumn71, UltraDataColumn72, UltraDataColumn73, UltraDataColumn74, UltraDataColumn75})
+        Me.odDetalleAsignacion.Band.Columns.AddRange(New Object() {UltraDataColumn68, UltraDataColumn69, UltraDataColumn70, UltraDataColumn71, UltraDataColumn72, UltraDataColumn73, UltraDataColumn74, UltraDataColumn75, UltraDataColumn76, UltraDataColumn77, UltraDataColumn78})
         '
         'agrupacionRI
         '
@@ -1268,8 +1286,8 @@ Partial Class frm_Inventario
         '
         'UltraButton1
         '
-        Appearance38.Image = Global.ISL.Win.My.Resources.Resources.Excel
-        Me.UltraButton1.Appearance = Appearance38
+        Appearance39.Image = Global.ISL.Win.My.Resources.Resources.Excel
+        Me.UltraButton1.Appearance = Appearance39
         Me.UltraButton1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraButton1.ImageSize = New System.Drawing.Size(20, 20)
         Me.UltraButton1.Location = New System.Drawing.Point(263, 4)
@@ -1288,8 +1306,8 @@ Partial Class frm_Inventario
         '
         'btnConsultar
         '
-        Appearance39.Image = Global.ISL.Win.My.Resources.Resources.Consultar
-        Me.btnConsultar.Appearance = Appearance39
+        Appearance40.Image = Global.ISL.Win.My.Resources.Resources.Consultar
+        Me.btnConsultar.Appearance = Appearance40
         Me.btnConsultar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar.ImageSize = New System.Drawing.Size(20, 20)
         Me.btnConsultar.Location = New System.Drawing.Point(144, 4)
@@ -1300,8 +1318,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta7
         '
-        Appearance40.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta7.Appearance = Appearance40
+        Appearance41.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta7.Appearance = Appearance41
         Me.Etiqueta7.AutoSize = True
         Me.Etiqueta7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1378,9 +1396,9 @@ Partial Class frm_Inventario
         Me.grilla_Valorizado.DataSource = Me.odValorizado
         UltraGridColumn258.Header.VisiblePosition = 0
         UltraGridColumn258.Hidden = True
-        Appearance41.TextHAlignAsString = "Center"
-        Appearance41.TextVAlignAsString = "Middle"
-        UltraGridColumn259.CellAppearance = Appearance41
+        Appearance42.TextHAlignAsString = "Center"
+        Appearance42.TextVAlignAsString = "Middle"
+        UltraGridColumn259.CellAppearance = Appearance42
         UltraGridColumn259.Header.Caption = "N° Movimiento"
         UltraGridColumn259.Header.VisiblePosition = 1
         UltraGridColumn259.MergedCellStyle = Infragistics.Win.UltraWinGrid.MergedCellStyle.Always
@@ -1391,9 +1409,9 @@ Partial Class frm_Inventario
         UltraGridColumn259.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn259.RowLayoutColumnInfo.SpanY = 6
         UltraGridColumn260.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
-        Appearance42.TextHAlignAsString = "Left"
-        Appearance42.TextVAlignAsString = "Middle"
-        UltraGridColumn260.CellAppearance = Appearance42
+        Appearance43.TextHAlignAsString = "Left"
+        Appearance43.TextVAlignAsString = "Middle"
+        UltraGridColumn260.CellAppearance = Appearance43
         UltraGridColumn260.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn260.Header.VisiblePosition = 2
         UltraGridColumn260.MergedCellStyle = Infragistics.Win.UltraWinGrid.MergedCellStyle.Never
@@ -1404,8 +1422,8 @@ Partial Class frm_Inventario
         UltraGridColumn260.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn260.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn260.Width = 91
-        Appearance43.TextVAlignAsString = "Middle"
-        UltraGridColumn261.CellAppearance = Appearance43
+        Appearance44.TextVAlignAsString = "Middle"
+        UltraGridColumn261.CellAppearance = Appearance44
         UltraGridColumn261.Header.Caption = "Tipo Movimiento"
         UltraGridColumn261.Header.VisiblePosition = 3
         UltraGridColumn261.RowLayoutColumnInfo.OriginX = 4
@@ -1423,8 +1441,8 @@ Partial Class frm_Inventario
         UltraGridColumn262.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn262.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn262.Width = 210
-        Appearance44.TextHAlignAsString = "Right"
-        UltraGridColumn263.CellAppearance = Appearance44
+        Appearance45.TextHAlignAsString = "Right"
+        UltraGridColumn263.CellAppearance = Appearance45
         UltraGridColumn263.Header.Caption = "Cantidad"
         UltraGridColumn263.Header.VisiblePosition = 5
         UltraGridColumn263.MaskInput = "{double:-9.2:c}"
@@ -1436,8 +1454,8 @@ Partial Class frm_Inventario
         UltraGridColumn263.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn263.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn263.Width = 88
-        Appearance45.TextHAlignAsString = "Right"
-        UltraGridColumn264.CellAppearance = Appearance45
+        Appearance46.TextHAlignAsString = "Right"
+        UltraGridColumn264.CellAppearance = Appearance46
         UltraGridColumn264.Header.Caption = "Costo"
         UltraGridColumn264.Header.VisiblePosition = 6
         UltraGridColumn264.MaskInput = "{double:-9.2:c}"
@@ -1449,8 +1467,8 @@ Partial Class frm_Inventario
         UltraGridColumn264.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn264.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn264.Width = 85
-        Appearance46.TextHAlignAsString = "Right"
-        UltraGridColumn265.CellAppearance = Appearance46
+        Appearance47.TextHAlignAsString = "Right"
+        UltraGridColumn265.CellAppearance = Appearance47
         UltraGridColumn265.Header.Caption = "Valor"
         UltraGridColumn265.Header.VisiblePosition = 7
         UltraGridColumn265.MaskInput = "{double:-9.2:c}"
@@ -1461,8 +1479,8 @@ Partial Class frm_Inventario
         UltraGridColumn265.RowLayoutColumnInfo.PreferredCellSize = New System.Drawing.Size(74, 20)
         UltraGridColumn265.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn265.RowLayoutColumnInfo.SpanY = 4
-        Appearance47.TextHAlignAsString = "Right"
-        UltraGridColumn266.CellAppearance = Appearance47
+        Appearance48.TextHAlignAsString = "Right"
+        UltraGridColumn266.CellAppearance = Appearance48
         UltraGridColumn266.Header.Caption = "Cantidad"
         UltraGridColumn266.Header.VisiblePosition = 8
         UltraGridColumn266.MaskInput = "{double:-9.2:c}"
@@ -1474,8 +1492,8 @@ Partial Class frm_Inventario
         UltraGridColumn266.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn266.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn266.Width = 69
-        Appearance48.TextHAlignAsString = "Right"
-        UltraGridColumn267.CellAppearance = Appearance48
+        Appearance49.TextHAlignAsString = "Right"
+        UltraGridColumn267.CellAppearance = Appearance49
         UltraGridColumn267.Header.Caption = "Costo"
         UltraGridColumn267.Header.VisiblePosition = 9
         UltraGridColumn267.MaskInput = "{double:-9.2:c}"
@@ -1487,8 +1505,8 @@ Partial Class frm_Inventario
         UltraGridColumn267.RowLayoutColumnInfo.SpanX = 1
         UltraGridColumn267.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn267.Width = 85
-        Appearance49.TextHAlignAsString = "Right"
-        UltraGridColumn268.CellAppearance = Appearance49
+        Appearance50.TextHAlignAsString = "Right"
+        UltraGridColumn268.CellAppearance = Appearance50
         UltraGridColumn268.Header.Caption = "Valor"
         UltraGridColumn268.Header.VisiblePosition = 10
         UltraGridColumn268.MaskInput = "{double:-9.2:c}"
@@ -1500,8 +1518,8 @@ Partial Class frm_Inventario
         UltraGridColumn268.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn268.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn268.Width = 72
-        Appearance50.TextHAlignAsString = "Right"
-        UltraGridColumn269.CellAppearance = Appearance50
+        Appearance51.TextHAlignAsString = "Right"
+        UltraGridColumn269.CellAppearance = Appearance51
         UltraGridColumn269.Header.Caption = "Cantidad"
         UltraGridColumn269.Header.VisiblePosition = 11
         UltraGridColumn269.MaskInput = "{double:-9.2:c}"
@@ -1513,8 +1531,8 @@ Partial Class frm_Inventario
         UltraGridColumn269.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn269.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn269.Width = 70
-        Appearance51.TextHAlignAsString = "Right"
-        UltraGridColumn270.CellAppearance = Appearance51
+        Appearance52.TextHAlignAsString = "Right"
+        UltraGridColumn270.CellAppearance = Appearance52
         UltraGridColumn270.Header.Caption = "Costo"
         UltraGridColumn270.Header.VisiblePosition = 12
         UltraGridColumn270.MaskInput = "{double:-9.2:c}"
@@ -1526,8 +1544,8 @@ Partial Class frm_Inventario
         UltraGridColumn270.RowLayoutColumnInfo.SpanX = 2
         UltraGridColumn270.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn270.Width = 80
-        Appearance52.TextHAlignAsString = "Right"
-        UltraGridColumn271.CellAppearance = Appearance52
+        Appearance53.TextHAlignAsString = "Right"
+        UltraGridColumn271.CellAppearance = Appearance53
         UltraGridColumn271.Header.Caption = "Valor"
         UltraGridColumn271.Header.VisiblePosition = 13
         UltraGridColumn271.MaskInput = "{double:-9.2:c}"
@@ -1540,29 +1558,29 @@ Partial Class frm_Inventario
         UltraGridColumn271.RowLayoutColumnInfo.SpanY = 4
         UltraGridColumn271.Width = 86
         UltraGridBand6.Columns.AddRange(New Object() {UltraGridColumn258, UltraGridColumn259, UltraGridColumn260, UltraGridColumn261, UltraGridColumn262, UltraGridColumn263, UltraGridColumn264, UltraGridColumn265, UltraGridColumn266, UltraGridColumn267, UltraGridColumn268, UltraGridColumn269, UltraGridColumn270, UltraGridColumn271})
-        Appearance53.BackColor = System.Drawing.Color.PowderBlue
-        UltraGridGroup1.CellAppearance = Appearance53
         Appearance54.BackColor = System.Drawing.Color.PowderBlue
-        Appearance54.ForeColor = System.Drawing.Color.Blue
-        UltraGridGroup1.Header.Appearance = Appearance54
+        UltraGridGroup1.CellAppearance = Appearance54
+        Appearance55.BackColor = System.Drawing.Color.PowderBlue
+        Appearance55.ForeColor = System.Drawing.Color.Blue
+        UltraGridGroup1.Header.Appearance = Appearance55
         UltraGridGroup1.Key = "Ingresos"
         UltraGridGroup1.RowLayoutGroupInfo.OriginX = 7
         UltraGridGroup1.RowLayoutGroupInfo.OriginY = 0
         UltraGridGroup1.RowLayoutGroupInfo.SpanX = 6
         UltraGridGroup1.RowLayoutGroupInfo.SpanY = 6
-        Appearance55.BackColor = System.Drawing.Color.PaleGreen
-        UltraGridGroup2.CellAppearance = Appearance55
-        Appearance56.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        UltraGridGroup2.Header.Appearance = Appearance56
+        Appearance56.BackColor = System.Drawing.Color.PaleGreen
+        UltraGridGroup2.CellAppearance = Appearance56
+        Appearance57.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        UltraGridGroup2.Header.Appearance = Appearance57
         UltraGridGroup2.Key = "Salidas"
         UltraGridGroup2.RowLayoutGroupInfo.OriginX = 13
         UltraGridGroup2.RowLayoutGroupInfo.OriginY = 0
         UltraGridGroup2.RowLayoutGroupInfo.SpanX = 5
         UltraGridGroup2.RowLayoutGroupInfo.SpanY = 6
-        Appearance57.BackColor = System.Drawing.Color.SandyBrown
-        UltraGridGroup3.CellAppearance = Appearance57
-        Appearance58.ForeColor = System.Drawing.Color.Maroon
-        UltraGridGroup3.Header.Appearance = Appearance58
+        Appearance58.BackColor = System.Drawing.Color.SandyBrown
+        UltraGridGroup3.CellAppearance = Appearance58
+        Appearance59.ForeColor = System.Drawing.Color.Maroon
+        UltraGridGroup3.Header.Appearance = Appearance59
         UltraGridGroup3.Key = "Existencias"
         UltraGridGroup3.RowLayoutGroupInfo.OriginX = 18
         UltraGridGroup3.RowLayoutGroupInfo.OriginY = 0
@@ -1591,8 +1609,8 @@ Partial Class frm_Inventario
         '
         Me.odValorizado.AllowAdd = False
         Me.odValorizado.AllowDelete = False
-        UltraDataColumn78.DataType = GetType(Date)
-        Me.odValorizado.Band.Columns.AddRange(New Object() {UltraDataColumn76, UltraDataColumn77, UltraDataColumn78, UltraDataColumn79, UltraDataColumn80, UltraDataColumn81, UltraDataColumn82, UltraDataColumn83, UltraDataColumn84, UltraDataColumn85, UltraDataColumn86, UltraDataColumn87, UltraDataColumn88, UltraDataColumn89})
+        UltraDataColumn81.DataType = GetType(Date)
+        Me.odValorizado.Band.Columns.AddRange(New Object() {UltraDataColumn79, UltraDataColumn80, UltraDataColumn81, UltraDataColumn82, UltraDataColumn83, UltraDataColumn84, UltraDataColumn85, UltraDataColumn86, UltraDataColumn87, UltraDataColumn88, UltraDataColumn89, UltraDataColumn90, UltraDataColumn91, UltraDataColumn92})
         Me.odValorizado.Rows.AddRange(New Object() {New Infragistics.Win.UltraWinDataSource.UltraDataRow(New Object(-1) {})})
         '
         'GroupBox1
@@ -1624,9 +1642,9 @@ Partial Class frm_Inventario
         '
         'decActual
         '
-        Appearance59.BackColor = System.Drawing.Color.Khaki
-        Appearance59.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.decActual.Appearance = Appearance59
+        Appearance60.BackColor = System.Drawing.Color.Khaki
+        Appearance60.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.decActual.Appearance = Appearance60
         Me.decActual.BackColor = System.Drawing.Color.Khaki
         Me.decActual.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decActual.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1641,8 +1659,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta6
         '
-        Appearance60.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta6.Appearance = Appearance60
+        Appearance61.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta6.Appearance = Appearance61
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
@@ -1654,8 +1672,8 @@ Partial Class frm_Inventario
         '
         'FechaValorizado
         '
-        Appearance61.ForeColor = System.Drawing.Color.Black
-        Me.FechaValorizado.Appearance = Appearance61
+        Appearance62.ForeColor = System.Drawing.Color.Black
+        Me.FechaValorizado.Appearance = Appearance62
         Me.FechaValorizado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.FechaValorizado.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FechaValorizado.ForeColor = System.Drawing.Color.Black
@@ -1668,8 +1686,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta4
         '
-        Appearance62.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta4.Appearance = Appearance62
+        Appearance63.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta4.Appearance = Appearance63
         Me.Etiqueta4.AutoSize = True
         Me.Etiqueta4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta4.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1681,8 +1699,8 @@ Partial Class frm_Inventario
         '
         'txtUniMed
         '
-        Appearance63.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtUniMed.Appearance = Appearance63
+        Appearance64.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtUniMed.Appearance = Appearance64
         Me.txtUniMed.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtUniMed.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtUniMed.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1697,8 +1715,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta3
         '
-        Appearance64.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta3.Appearance = Appearance64
+        Appearance65.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta3.Appearance = Appearance65
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
@@ -1710,8 +1728,8 @@ Partial Class frm_Inventario
         '
         'decMin
         '
-        Appearance65.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.decMin.Appearance = Appearance65
+        Appearance66.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.decMin.Appearance = Appearance66
         Me.decMin.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decMin.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decMin.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1725,8 +1743,8 @@ Partial Class frm_Inventario
         '
         'decMax
         '
-        Appearance66.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.decMax.Appearance = Appearance66
+        Appearance67.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.decMax.Appearance = Appearance67
         Me.decMax.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decMax.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decMax.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1740,8 +1758,8 @@ Partial Class frm_Inventario
         '
         'etiMin
         '
-        Appearance67.ForeColor = System.Drawing.Color.Navy
-        Me.etiMin.Appearance = Appearance67
+        Appearance68.ForeColor = System.Drawing.Color.Navy
+        Me.etiMin.Appearance = Appearance68
         Me.etiMin.AutoSize = True
         Me.etiMin.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiMin.ForeColor = System.Drawing.Color.Black
@@ -1753,8 +1771,8 @@ Partial Class frm_Inventario
         '
         'etiMax
         '
-        Appearance68.ForeColor = System.Drawing.Color.Navy
-        Me.etiMax.Appearance = Appearance68
+        Appearance69.ForeColor = System.Drawing.Color.Navy
+        Me.etiMax.Appearance = Appearance69
         Me.etiMax.AutoSize = True
         Me.etiMax.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiMax.ForeColor = System.Drawing.Color.Black
@@ -1766,8 +1784,8 @@ Partial Class frm_Inventario
         '
         'txtMaterial
         '
-        Appearance69.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtMaterial.Appearance = Appearance69
+        Appearance70.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtMaterial.Appearance = Appearance70
         Me.txtMaterial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1782,8 +1800,8 @@ Partial Class frm_Inventario
         '
         'eti_Material
         '
-        Appearance70.ForeColor = System.Drawing.Color.Navy
-        Me.eti_Material.Appearance = Appearance70
+        Appearance71.ForeColor = System.Drawing.Color.Navy
+        Me.eti_Material.Appearance = Appearance71
         Me.eti_Material.AutoSize = True
         Me.eti_Material.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eti_Material.ForeColor = System.Drawing.Color.Black
@@ -1795,8 +1813,8 @@ Partial Class frm_Inventario
         '
         'txtCentro
         '
-        Appearance71.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtCentro.Appearance = Appearance71
+        Appearance72.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtCentro.Appearance = Appearance72
         Me.txtCentro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCentro.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCentro.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1811,8 +1829,8 @@ Partial Class frm_Inventario
         '
         'txtAlmacen
         '
-        Appearance72.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtAlmacen.Appearance = Appearance72
+        Appearance73.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtAlmacen.Appearance = Appearance73
         Me.txtAlmacen.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAlmacen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtAlmacen.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1828,8 +1846,8 @@ Partial Class frm_Inventario
         '
         'eti_TituloValorizado
         '
-        Appearance73.ForeColor = System.Drawing.Color.Navy
-        Me.eti_TituloValorizado.Appearance = Appearance73
+        Appearance74.ForeColor = System.Drawing.Color.Navy
+        Me.eti_TituloValorizado.Appearance = Appearance74
         Me.eti_TituloValorizado.AutoSize = True
         Me.eti_TituloValorizado.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eti_TituloValorizado.ForeColor = System.Drawing.Color.Black
@@ -1841,8 +1859,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta1
         '
-        Appearance74.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta1.Appearance = Appearance74
+        Appearance75.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta1.Appearance = Appearance75
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
@@ -1854,8 +1872,8 @@ Partial Class frm_Inventario
         '
         'Etiqueta2
         '
-        Appearance75.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta2.Appearance = Appearance75
+        Appearance76.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta2.Appearance = Appearance76
         Me.Etiqueta2.AutoSize = True
         Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black

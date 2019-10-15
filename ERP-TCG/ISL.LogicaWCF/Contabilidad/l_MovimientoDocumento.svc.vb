@@ -646,7 +646,8 @@ Public Class l_MovimientoDocumento
             End If
             'If olFuncionesGenerales.ValidarDocumentoDuplicado(oeMovimientoDocumento) Then
             'If ValidarTipoCambio(oeMovimientoDocumento) Then
-            oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+            'oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+            oeAnticipo = New e_MovimientoDocumento
             If odMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo) Then
                 Return True
             End If

@@ -227,7 +227,7 @@ Public Class d_RegistroInventario
                 stResultado = sqlhelper.ExecuteScalar("ALM.ISP_RegistroInventario_IAE", .TipoOperacion, .PrefijoID,
                         .Id, .IdMovimientoInventario, .IdSubAlmacen, .IdMaterial, .IdUnidadMedida _
                         , .Cantidad, .ValorUnitario, .CantidadReal, .ValorUnitarioReal _
-                        , .ValorTotal, True, .UsuarioCreacion, .IdRegistroCombustible, .Fecha).ToString.Split("_")
+                        , .ValorTotal, .ValorAdm, True, .UsuarioCreacion, .IdRegistroCombustible, .Fecha).ToString.Split("_")
                 If .lstDetalleAsignacion.Count > 0 Then
                     For Each Detalle As e_DetalleAsignacion In .lstDetalleAsignacion
                         Detalle.IdRegistroInventario = stResultado(0) : Detalle.TipoOperacion = .TipoOperacion

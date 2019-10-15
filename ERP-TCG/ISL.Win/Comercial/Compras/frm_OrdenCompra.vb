@@ -2358,6 +2358,7 @@ Public Class frm_OrdenCompra
                     Else
                         .ValorUnitario = oe.PrecioUnitario
                     End If
+                    .ValorAdm = oe.CostoAdm
                     If oeOrdenCompra.IdMoneda = "1CH02" Then
                         If txtTC.Value = 0 Then Throw New Exception("Verificar Tipo de Cambio")
                         .ValorUnitario = Math.Round(.ValorUnitario * txtTC.Value, 4)
@@ -2373,6 +2374,7 @@ Public Class frm_OrdenCompra
                     .IdMovimientoInventario = oeOrdenIngreso.IdMovimientoInventario
                     .IdUnidadMedida = oe.IdUnidadMedida
                     .Cantidad = oe.CantidadMaterial
+                    .ValorAdm = oe.CostoAdm
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .PrefijoID = gs_PrefijoIdSucursal '@0001
                 End With
