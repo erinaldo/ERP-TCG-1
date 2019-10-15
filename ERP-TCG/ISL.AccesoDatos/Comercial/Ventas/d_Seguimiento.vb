@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -295,7 +303,8 @@ Public Class d_Seguimiento
                                 , .GlosaFalla)
                     End If
                     If .oeListaBitacora.Count > 0 Then
-                        odBitacora.Guardar(.oeListaBitacora)
+
+                        odBitacora.Guardar(.oeListaBitacora, oeSeguimiento.PrefijoID)
                     End If
                 End With
 
@@ -313,6 +322,7 @@ Public Class d_Seguimiento
                     oeVehiculo.Odometro = oeSeguimiento.KmTractoDestino
                     oeVehiculo.Horometro = oeSeguimiento.HorasRecorreDestino
                     oeVehiculo.Activo = True
+                    oeVehiculo.PrefijoID = oeSeguimiento.PrefijoID '@0001
                     odVehiculo.Guardar(oeVehiculo)
 
                     ''Para la Carreta
@@ -321,6 +331,7 @@ Public Class d_Seguimiento
                     oeVehiculo.Odometro = oeSeguimiento.KmCarretaDestino
                     oeVehiculo.Horometro = 0
                     oeVehiculo.Activo = True
+                    oeVehiculo.PrefijoID = oeSeguimiento.PrefijoID '@0001
                     odVehiculo.Guardar(oeVehiculo)
                     ' End If
 
@@ -328,6 +339,7 @@ Public Class d_Seguimiento
 
                     If oeSeguimiento.GuiaTransportistaInterrumpida.Count > 0 Then
                         For Each GuiaTransportistaInterrumpida As e_GuiaTransportistaInterrumpida In oeSeguimiento.GuiaTransportistaInterrumpida
+                            GuiaTransportistaInterrumpida.PrefijoID = oeSeguimiento.PrefijoID '@0001
                             odGuiaTransportistaInterrumpida.Guardar(GuiaTransportistaInterrumpida)
                         Next
                     End If
@@ -335,22 +347,26 @@ Public Class d_Seguimiento
                     If oeSeguimiento.OperacionDetalle.Count > 0 Then
                         For Each OperacionDetalle As e_OperacionDetalle In oeSeguimiento.OperacionDetalle
                             OperacionDetalle.TipoOperacion = "I"
+                            OperacionDetalle.PrefijoID = oeSeguimiento.PrefijoID '@0001
                             odOperacion.GuardarOperacionDetalle(OperacionDetalle)
                         Next
                     End If
                 End If
 
                 If oeSeguimiento.TipoOperacion = "G" Then
+
                     odGuiaTransportista.Guardar(oeSeguimiento)
 
                     If oeSeguimiento.GuiaTransportistaInterrumpida.Count > 0 Then
                         For Each GuiaTransportistaInterrumpida As e_GuiaTransportistaInterrumpida In oeSeguimiento.GuiaTransportistaInterrumpida
+                            GuiaTransportistaInterrumpida.PrefijoID = oeSeguimiento.PrefijoID '@0001
                             odGuiaTransportistaInterrumpida.Guardar(GuiaTransportistaInterrumpida)
                         Next
                     End If
                     If oeSeguimiento.OperacionDetalle.Count > 0 Then
                         For Each OperacionDetalle As e_OperacionDetalle In oeSeguimiento.OperacionDetalle
                             OperacionDetalle.TipoOperacion = "G"
+                            OperacionDetalle.PrefijoID = oeSeguimiento.PrefijoID '@0001
                             odOperacion.GuardarOperacionDetalle(OperacionDetalle)
                         Next
                     End If
@@ -360,7 +376,9 @@ Public Class d_Seguimiento
                         .TipoOperacion = "I"
                         .Referencia = oeSeguimiento.Id
                         .FechaReferencia = oeSeguimiento.LlegadaOrigen
+                        .PrefijoID = oeSeguimiento.PrefijoID '@0001
                     End With
+
                     odIncidenciaAutentificada.Guardar(oeSeguimiento.IncidenciaAutentificadas)
                 End If
                 transScope.Complete()

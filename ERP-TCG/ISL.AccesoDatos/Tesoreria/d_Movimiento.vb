@@ -228,6 +228,7 @@ Public Class d_Movimiento
             Using transScope As New TransactionScope
                 If oeMov.Id <> "" Then ActualizarMovimiento(oeMov)
                 For Each mov As e_Movimiento In loMovimiento
+                    mov.PrefijoID = oeMov.PrefijoID '@0001
                     GuardarMovimiento(mov, New e_Movimiento)
                 Next
                 transScope.Complete()

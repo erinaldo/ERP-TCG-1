@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -87,13 +95,13 @@ Public Class d_GrupoAprobacion
 
     Public Function Guardar(ByVal oeGrupoAprobacion As e_GrupoAprobacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeGrupoAprobacion
                     If .oeChequeEmitido IsNot Nothing Then
+                        .oeChequeEmitido.PrefijoID = oeGrupoAprobacion.PrefijoID '@0001
                         odChequeEmitido.Guardar(.oeChequeEmitido)
-                        id = sqlhelper.ExecuteScalar("TES.Isp_GrupoAprobacion_IAE", .TipoOperacion, .PrefijoID, _
+                        id = sqlhelper.ExecuteScalar("TES.Isp_GrupoAprobacion_IAE", .TipoOperacion, .PrefijoID,
                                 .Id _
                                 , .Glosa _
                                 , .oeChequeEmitido.Id _
@@ -109,6 +117,7 @@ Public Class d_GrupoAprobacion
                         For Each det As e_GrupoAprobacionDet In .loListaGrupoAprobacionDet
                             If det.TipoOperacion <> "I" Then det.TipoOperacion = .TipoOperacion
                             det.IdGrupoAprobacion = id
+                            det.PrefijoID = oeGrupoAprobacion.PrefijoID '@0001
                             odGrupoAprobacionDet.Guardar(det)
                         Next
                     End If

@@ -213,7 +213,7 @@ Public Class l_Prestamo
                         End If
                     End If
                 Next
-                If odPrestamo.GuardarLista(lePrestamo, IdGrupo, GrupoDesc) Then
+                If odPrestamo.GuardarLista(lePrestamo, IdGrupo, GrupoDesc, oePeriodo.PrefijoID) Then
                     olAsiento.GuardarAsientoDscto(oeAsiento)
                     TransScope.Complete()
                     Return True

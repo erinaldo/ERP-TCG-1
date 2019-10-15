@@ -1101,19 +1101,19 @@ Public Class d_Asiento
                     'RELACIONAR LiquidacionTrabajador <-> Asiento
                     If Not .oeLiquidacionTrabajador_Asiento.idliquidaciontrabajador Is String.Empty Then
                         .oeLiquidacionTrabajador_Asiento.idasiento = stResultado(0)
-                        .oeLiquidacionTrabajador_Asiento.PrefijoID = .PrefijoID '@0001
+                        .oeLiquidacionTrabajador_Asiento.PrefijoID = oeAsiento.PrefijoID '@0001
                         odLiquidacionTrabjador.Guardar(.oeLiquidacionTrabajador_Asiento)
                     End If
                     '==============================================
                     If Not .Asiento_MovDoc Is Nothing Then
                         .Asiento_MovDoc.IdAsiento = stResultado(0)
-                        .Asiento_MovDoc.PrefijoID = .PrefijoID '@0001
+                        .Asiento_MovDoc.PrefijoID = oeAsiento.PrefijoID '@0001
                         odAsientoMovDoc.Guardar(.Asiento_MovDoc)
                     End If
                     If .AsientoReferencia.TipoOperacion = "I" Then
                         odAsientoReferencia = New d_AsientoReferencia
                         .AsientoReferencia.IdAsiento = stResultado(0)
-                        .AsientoReferencia.PrefijoID = .PrefijoID '@0001
+                        .AsientoReferencia.PrefijoID = oeAsiento.PrefijoID '@0001
                         odAsientoReferencia.Guardar(.AsientoReferencia)
                     End If
                     For Each oeAsiMov In .AsientoMovimiento
@@ -1121,13 +1121,13 @@ Public Class d_Asiento
                         If (oeAsiMov.ObligacionFinanciera.oeObligacionPago IsNot Nothing) AndAlso oeAsiMov.ObligacionFinanciera.oeObligacionPago.TipoOperacion <> "" Then
                             oeAsiMov.ObligacionFinanciera.oeObligacionPago.IdMovimientoCajaBanco = oeAsiento._IdMovimientoCajaBanco
                         End If
-                        oeAsiMov.PrefijoID = .PrefijoID '@0001
+                        oeAsiMov.PrefijoID = oeAsiento.PrefijoID '@0001
                         odAsientoMov.GuardarAsiMov(oeAsiMov)
                         If oeAsiMov._IdMovimientoCajaBanco <> "" Then oeAsiento._IdMovimientoCajaBanco = oeAsiMov._IdMovimientoCajaBanco
                     Next
 
                     If Not oeAsientoAnticipo Is Nothing Then
-                        oeAsientoAnticipo.PrefijoID = .PrefijoID '@0001
+                        oeAsientoAnticipo.PrefijoID = oeAsiento.PrefijoID '@0001
                         GuardarAsiento_AplicaAnticipo(oeAsientoAnticipo, stResultado(0))
                     End If
                 End With
@@ -1144,7 +1144,6 @@ Public Class d_Asiento
             Dim odAsientoMov As New d_AsientoMovimiento, odAsientoMovDoc As New d_Asiento_MovDoc
             Dim oeAsiento_Anticipo As New e_Asiento_Anticipo, odAsiento_Anticipo As New d_Asiento_Anticipo
             Using TransScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim stResultado() As String
                 With oeAsiento
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE", .TipoOperacion, .PrefijoID,

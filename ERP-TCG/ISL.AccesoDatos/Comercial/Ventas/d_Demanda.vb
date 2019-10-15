@@ -206,12 +206,14 @@ Public Class d_Demanda
                     End With
                     For Each Detalle As e_DemandaDetalle In oeDemanda.oeDetalleDemanda
                         Detalle.IdDemanda = stResultado(0)
+                        Detalle.PrefijoID = oeDemanda.PrefijoID '@0001
                         GuardarDetalle(Detalle)
                     Next
                     For Each ContratoTercero As e_ViajesTerceros In oeDemanda.oeContratoTercero
                         ContratoTercero.TipoOperacion = "I"
                         ContratoTercero.IdDemanda = stResultado(0)
                         ContratoTercero.UsuarioCrea = oeDemanda.UsuarioCreacion
+                        ContratoTercero.PrefijoID = oeDemanda.PrefijoID '@0001
                         odViajeTercero.Guardar(ContratoTercero)
                     Next
                     If oeDemanda.oeIncidenciaAutentificadas.IdResponsableAutoriza <> "" Then
@@ -219,7 +221,9 @@ Public Class d_Demanda
                             .TipoOperacion = "I"
                             .Referencia = stResultado(0)
                             .FechaReferencia = oeDemanda.FechaAtendida
+                            .PrefijoID = oeDemanda.PrefijoID '@0001
                         End With
+
                         odIncidenciaAutentificada.Guardar(oeDemanda.oeIncidenciaAutentificadas)
                     End If
                 Next
@@ -272,7 +276,7 @@ Public Class d_Demanda
             Dim IdsDemandas As String = ""
             Using transScope As New TransactionScope()
                 If oeDemanda.Id <> "" And oeDemanda.oeListaBitacora.Count > 0 Then
-                    odBitacora.Guardar(oeDemanda.oeListaBitacora)
+                    odBitacora.Guardar(oeDemanda.oeListaBitacora, oeDemanda.PrefijoID)
                 End If
                 For I As Integer = 1 To oeDemanda.NroDemanda
                     With oeDemanda

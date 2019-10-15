@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,11 +83,10 @@ Public Class d_CierreCaja
 
     Public Function Guardar(ByVal oeCierreCaja As e_CierreCaja) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeCierreCaja
-                    id = sqlhelper.ExecuteScalar("TES.Isp_CierreCaja_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_CierreCaja_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .IdCaja _
@@ -92,18 +99,23 @@ Public Class d_CierreCaja
                     For Each cierredet As e_CierreCajaDet In .loCierreCajaDet
                         cierredet.TipoOperacion = "I"
                         cierredet.IdCierreCaja = id
+                        cierredet.PrefijoID = oeCierreCaja.PrefijoID '@0001
                         odCierreCajaDet.Guardar(cierredet)
                     Next
                     If .oeMovimiento IsNot Nothing Then
+                        .oeMovimiento.PrefijoID = oeCierreCaja.PrefijoID '@0001
                         odMovimiento.GuardarSimple(.oeMovimiento)
                     End If
                     If .oeGastoOperacion IsNot Nothing Then
+                        .oeGastoOperacion.PrefijoID = oeCierreCaja.PrefijoID '@0001
                         odGastoOperacion.GuardarSimple(.oeGastoOperacion)
                     End If
                     If .oeValesRendir IsNot Nothing Then
+                        .oeValesRendir.PrefijoID = oeCierreCaja.PrefijoID '@0001
                         odValesRendir.Guardar(.oeValesRendir)
                     End If
                     If .oeOtrosIngresos IsNot Nothing Then
+                        .oeOtrosIngresos.PrefijoID = oeCierreCaja.PrefijoID '@0001
                         odOtrosIngresos.Guardar(.oeOtrosIngresos)
                     End If
                 End With

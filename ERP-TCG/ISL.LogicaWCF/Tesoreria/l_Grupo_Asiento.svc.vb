@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -21,6 +29,8 @@ Public Class l_Grupo_Asiento
             Using TransScope As New TransactionScope()
                 ImporteTotal = Math.Round(oeGrupoAsiento.loGrupoAsiento.Sum(Function(item) item.ImporteTotal), 2)
                 For Each asimod As e_AsientoModelo In oeGrupoAsiento.loAsientoModelo
+                    asimod.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
+                    oeAsiento.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                     With oeAsiento
                         .TipoOperacion = "I" : .IdTipoAsiento = asimod.IdTipoAsiento : .NroAsiento = String.Empty
                         .Glosa = asimod.Nombre & " CON CHEQUE NRO: " & oeGrupoAsiento.NroCheque : .GlosaImprime = String.Empty
@@ -28,9 +38,12 @@ Public Class l_Grupo_Asiento
                         .TotalDebe = ImporteTotal : .TotalHaber = ImporteTotal
                     End With
                     For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle
+                        asidet.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                         If asidet.Partida = "1" Then
                             For Each gruasi As e_Grupo_Asiento In oeGrupoAsiento.loGrupoAsiento
+                                gruasi.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                                 oeAsientoMovimiento = New e_AsientoMovimiento
+                                oeAsientoMovimiento.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                                 With oeAsientoMovimiento
                                     .TipoOperacion = "I"
                                     .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -55,8 +68,10 @@ Public Class l_Grupo_Asiento
                                         .TotalMN = ImporteTotal
                                         .TotalME = Math.Round(ImporteTotal / oeAsiento.TipoCambio, 2)
                                         ._Operador = 1
+                                        .PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                                     End With
                                     oeGruAsi = New e_Grupo_Asiento
+                                    oeGruAsi.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                                     With oeGruAsi
                                         .TipoOperacion = "I"
                                         .ImporteTotal = gruasi.ImporteTotal
@@ -71,6 +86,7 @@ Public Class l_Grupo_Asiento
                             Next
                         Else
                             oeAsientoMovimiento = New e_AsientoMovimiento
+                            oeAsientoMovimiento.PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                             With oeAsientoMovimiento
                                 .TipoOperacion = "I"
                                 .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -96,6 +112,7 @@ Public Class l_Grupo_Asiento
                                     .TotalMN = ImporteTotal
                                     .TotalME = Math.Round(ImporteTotal, 2)
                                     ._Operador = -1
+                                    .PrefijoID = oeGrupoAsiento.PrefijoID '@0001
                                 End With
                                 If .HaberMN > 0 Then loAsientoMovimiento.Add(oeAsientoMovimiento)
                             End With

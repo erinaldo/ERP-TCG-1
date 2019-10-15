@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -35,7 +43,6 @@ Public Class d_ValesRendir
     Public Function Obtener(ByVal oeValesRendir As e_ValesRendir) As e_ValesRendir
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_ValesRendir_Listar", oeValesRendir.TipoOperacion, oeValesRendir.Id)
             oeValesRendir = New e_ValesRendir
@@ -50,7 +57,6 @@ Public Class d_ValesRendir
 
     Public Function Listar(ByVal oeValesRendir As e_ValesRendir) As List(Of e_ValesRendir)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldValesRendir As New List(Of e_ValesRendir)
             Dim ds As DataSet
             With oeValesRendir
@@ -81,10 +87,9 @@ Public Class d_ValesRendir
 
     Public Function Guardar(ByVal oeValesRendir As e_ValesRendir) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             With oeValesRendir
-                id = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
+                id = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTrabajador _
                         , .Glosa _
@@ -111,12 +116,11 @@ Public Class d_ValesRendir
 
     Public Function Rendir(ByVal oeValesRendir As e_ValesRendir, ByVal oeValesRendido As e_ValesRendir) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id1 As String = ""
             Dim id2 As String = ""
             Using TransScope As New TransactionScope()
                 With oeValesRendir
-                    id1 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
+                    id1 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdTrabajador _
                             , .Glosa _
@@ -136,7 +140,7 @@ Public Class d_ValesRendir
                 End With
                 With oeValesRendido
                     .IdVale = id1
-                    id2 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID, _
+                    id2 = sqlhelper.ExecuteScalar("TES.Isp_ValesRendir_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdTrabajador _
                             , .Glosa _

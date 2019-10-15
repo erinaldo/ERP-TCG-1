@@ -241,16 +241,18 @@ Public Class d_Prestamo
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal lePrestamo As List(Of e_Prestamo), ByVal IdGrupo As String, ByVal GrupoDesc As String) As Boolean
+    Public Function GuardarLista(ByVal lePrestamo As List(Of e_Prestamo), ByVal IdGrupo As String, ByVal GrupoDesc As String, ByVal PrefijoID As String) As Boolean
         Try
             Dim odPrestamoSancion As New d_Prestamo_Sancion
             Dim odGrupoSancion As New d_GrupoSancion
             Using TransScope As New TransactionScope()
                 For Each oePrest As e_Prestamo In lePrestamo
+                    oePrest.PrefijoID = PrefijoID '@0001
                     Guardar(oePrest, False)
                     If oePrest.leSancion.Count > 0 Then
                         For Each oePrestSanc As e_Prestamo_Sancion In oePrest.leSancion
                             oePrestSanc.IdPrestamo = oePrest.Id
+                            oePrestSanc.PrefijoID = PrefijoID '@0001
                             odPrestamoSancion.Guardar(oePrestSanc)
                         Next
                     End If
@@ -258,11 +260,13 @@ Public Class d_Prestamo
                 If IdGrupo.Trim <> "" Then
                     Dim oeGrupo As New e_GrupoSancion
                     oeGrupo.TipoOperacion = "R" : oeGrupo.Tipo = 1 : oeGrupo._CadenaId = IdGrupo
+                    oeGrupo.PrefijoID = PrefijoID '@0001
                     odGrupoSancion.Guardar(oeGrupo)
                 End If
                 If GrupoDesc.Trim <> "" Then
                     Dim oeGrupo As New e_GrupoSancion
                     oeGrupo.TipoOperacion = "R" : oeGrupo.Tipo = 2 : oeGrupo._CadenaId = GrupoDesc
+                    oeGrupo.PrefijoID = PrefijoID '@0001
                     odGrupoSancion.Guardar(oeGrupo)
                 End If
                 TransScope.Complete()

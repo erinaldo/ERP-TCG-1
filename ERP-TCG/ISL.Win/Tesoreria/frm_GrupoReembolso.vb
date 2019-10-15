@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
@@ -131,6 +139,8 @@ Public Class frm_GrupoReembolso
             ValidarCombo(cboMoneda, "Moneda")
             ValidarCombo(cboFlujoCaja, "Flujo de Caja")
             l_FuncionesGenerales.ValidarNumero(decTipoCambio.Value, "Tipo de Cambio")
+            oeGrupoAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olGrupoAsiento.GuardarAsiento(oeGrupoAsiento, oeAsiento) Then
                 Dim lsCodigo As String = oeAsiento._IdMovimientoCajaBanco
                 If lsCodigo <> "" Then
@@ -330,6 +340,7 @@ Public Class frm_GrupoReembolso
                 oe.TipoOperacion = "I"
                 oe._IdEstado = o_Fila.Cells("IdEstado").Value
                 If griDatos.Rows.Count < 1 Then LlenarLista(loGrupoAsiento)
+                oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loGrupoAsiento.Add(oe)
             Else
                 If oe.TipoOperacion = "E" Then
@@ -603,6 +614,7 @@ Public Class frm_GrupoReembolso
             oeAsientoModeloGrupo.Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString
             oeAsientoModeloGrupo = olAsientoModelo.Obtener(oeAsientoModeloGrupo)
             oeGrupoAsiento.loAsientoModelo = New List(Of e_AsientoModelo)
+            oeAsientoModeloGrupo.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeGrupoAsiento.loAsientoModelo.Add(oeAsientoModeloGrupo)
         Catch ex As Exception
             Throw ex

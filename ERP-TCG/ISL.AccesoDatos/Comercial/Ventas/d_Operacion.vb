@@ -429,7 +429,7 @@ Public Class d_Operacion
                     odIncidenciaAutentificada.Guardar(oeOperacion.oeIncidenciaAutentificadas)
                 End If
                 If oeOperacion.Id <> "" Then
-                    odBitacora.Guardar(oeOperacion.oeListaBitacora)
+                    odBitacora.Guardar(oeOperacion.oeListaBitacora, oeOperacion.PrefijoID)
                 End If
                 transScope.Complete()
             End Using

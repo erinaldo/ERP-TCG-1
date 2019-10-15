@@ -49,13 +49,13 @@ Public Class d_Bitacora
         End Try
     End Function
 
-    Public Function Guardar(ByVal l_Bitacora As List(Of e_Bitacora)) As Boolean
+    Public Function Guardar(ByVal l_Bitacora As List(Of e_Bitacora), ByVal PrefijoID As String) As Boolean
         Try
             For Each oeBitacora As e_Bitacora In l_Bitacora
                 With oeBitacora
                     sqlhelper.ExecuteNonQuery("[STD].[Isp_Bitacora_IAE]",
                                               .Tipo,
-                                              .PrefijoID _
+                                              PrefijoID _
                                             , .IdTablaCabecera _
                                             , .IdTablaDetalle _
                                             , .NombreTablaCabecera _
@@ -102,13 +102,13 @@ Public Class d_Bitacora
             End With
 
             If cont = 0 Then
-                Guardar(l_Bitacora)
+                Guardar(l_Bitacora, oeBitacora.PrefijoID)
             Else
                 Dim listaN = New List(Of e_Bitacora)
                 Dim obj As e_Bitacora = l_Bitacora.Item(0)
                 obj.Tipo = "G"
                 listaN.Add(obj)
-                Guardar(listaN)
+                Guardar(listaN, oeBitacora.PrefijoID)
             End If
             Return True
         Catch ex As Exception

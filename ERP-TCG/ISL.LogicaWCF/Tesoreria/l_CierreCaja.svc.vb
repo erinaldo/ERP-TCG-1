@@ -1,6 +1,13 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
-' NOTA: si cambia aquí el nombre de clase "l_CierreCaja", también debe actualizar la referencia a "l_CierreCaja" tanto en Web.config como en el archivo .svc asociado.
 
 Public Class l_CierreCaja
     Implements Il_CierreCaja

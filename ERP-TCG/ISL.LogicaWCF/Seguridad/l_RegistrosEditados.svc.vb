@@ -1,4 +1,11 @@
-﻿' NOTA: si cambia aquí el nombre de clase "l_RegistrosEditados", también debe actualizar la referencia a "l_RegistrosEditados" tanto en Web.config como en el archivo .svc asociado.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports ISL.AccesoDatos
 Imports System.Runtime.Serialization

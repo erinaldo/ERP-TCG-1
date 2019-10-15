@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -77,11 +85,10 @@ Public Class d_MontoFlujoDiario
 
     Public Function Guardar(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeMontoFlujoDiario
-                    id = sqlhelper.ExecuteScalar("TES.Isp_MontoFlujoDiario_IAE", .TipoOperacion, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_MontoFlujoDiario_IAE", .TipoOperacion,
                             .Id _
                             , .IdFlujoCaja _
                             , .IdTipoVehiculo _
@@ -90,13 +97,14 @@ Public Class d_MontoFlujoDiario
                             , .FechaCreacion _
                             , .UsuarioCreacion _
                             , .Activo _
-                            , .PrefijoID _
+                            , .PrefijoID
                         )
                 End With
                 If oeMontoFlujoDiario.leMontoFlujoDiarioDet IsNot Nothing Then
                     For Each oe As e_MontoFlujoDiario_Det In oeMontoFlujoDiario.leMontoFlujoDiarioDet
                         oe.IdMontoFlujoDiario = id
                         If oe.TipoOperacion = "E" Then odMFDDetalle.Eliminar(oe)
+                        oe.PrefijoID = oeMontoFlujoDiario.PrefijoID '@0001
                         odMFDDetalle.Guardar(oe)
                     Next
                 End If

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Shared
 Imports Infragistics.Win
@@ -635,6 +643,7 @@ Public Class frm_Grupo
                     oeGrupo.IdPeriodo = oePeriodo.Id
                 End If
             End If
+            oeGrupo.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeGrupo.Tipo = 3 And IndFleteAdm = True Then
                 oeGrupo.TipoOperacion = "I"
                 oeGrupo.IdEstado = "ENVIADO"
@@ -753,6 +762,7 @@ Public Class frm_Grupo
             Dim Importe As Double = 0
             For Each oe As e_GrupoDetalle In loDetGruCC
                 Importe += oe.Importe
+                oe.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olGrupoDetalle.Guardar(oe)
                 oeGasOpe = New e_GastoOperacion
                 oeGasOpe.Id = oe.IdGastoOperacion
@@ -775,6 +785,7 @@ Public Class frm_Grupo
                 .IndRendido = 0
                 .IndCerrado = 0
                 .IdCentro = oeGrupo.IdCentro
+                .PrefijoID = gs_PrefijoIdSucursal '@0001
                 If Not olValRen.Guardar(oeValRen) Then
                     Throw New Exception("Error")
                 End If
@@ -1398,6 +1409,7 @@ Public Class frm_Grupo
                         oePerfil.TipoOperacion = "M"
                         oePerfil.Id = "1CH000000017"
                         oePerfil.Nombre = "Envio de Grupo de Caja Chica: " & oeGrupo.Codigo & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", En Espera de Aprobacion. "
+                        oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olPerfil.Guardar(oePerfil)
                     End If
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
@@ -1808,6 +1820,7 @@ Public Class frm_Grupo
             oeGrupo.TipoOperacion = "C"
             oeGrupo.Tipo = ""
             oeGrupo.IdEstado = "GENERADA"
+            oeGrupo.PrefijoID = gs_PrefijoIdSucursal '@0001
             olGrupo.Guardar(oeGrupo)
             Consultar(True)
         Catch ex As Exception
@@ -1867,6 +1880,7 @@ Public Class frm_Grupo
                         oeDetGru.Id = .Cells("Id").Value.ToString
                         oeDetGru.IdGrupo = .Cells("IdGrupo").Value.ToString
                         oeDetGru.Monto = .Cells("Importe").Value
+                        oeDetGru.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olDetGru.Guardar(oeDetGru) Then
                             Mostrar()
                         End If

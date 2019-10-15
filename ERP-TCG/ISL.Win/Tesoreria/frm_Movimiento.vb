@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -488,6 +496,7 @@ Public Class frm_Movimiento
             ElseIf oeMovimientoIngresoFF.IdCaja = "1CH006" Then
                 Throw New Exception("Caja Administrativa solo Habilitada para Movimientos con Fletes")
             End If
+            oeMovimientoIngresoFF.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimiento.Guardar(oeMovimientoIngresoFF, New e_Movimiento) Then
                 Dim formulario As New frm_ReporteVoucherMovimientoCaja
                 formulario.CargarDatos(TipoOperacion, oeMovimientoIngresoFF.Id)
@@ -582,6 +591,8 @@ Public Class frm_Movimiento
                     oeMovimiento.IdEstado = gNombreEstadoHabilitada
                     oeMovimiento.IndPrestamoHab = 0
                 End If
+                oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMovimiento.Guardar(oeMovimiento, oeMovAux) Then
                     'If opcSalidaEntrada.CheckedIndex = 0 Then
                     Dim formulario As New frm_ReporteVoucherMovimientoCaja
@@ -674,8 +685,11 @@ Public Class frm_Movimiento
                     oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorClave = idTrabEntr
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                     Dim loMovimientoPrestamo As New List(Of e_Movimiento)
+                    oeMovimientoPrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loMovimientoPrestamo.Add(oeMovimientoPrestamo)
+                    oeMovimientoPrestamo2.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loMovimientoPrestamo.Add(oeMovimientoPrestamo2)
+                    oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMovimiento.GuardarDobleMovimiento(loMovimientoPrestamo, oeMovAux) Then '---------cuenta y piloto
                         ActualizaRegistroEditado()
                         Dim formulario As New frm_ReporteVoucherMovimientoCaja
@@ -739,8 +753,11 @@ Public Class frm_Movimiento
                         .IndicadorCorrelativo = True
                         .oeMovimientoViaje = New e_Movimiento_Viaje
                     End With
+                    oeMovDev.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loMovimientosDev.Add(oeMovDev)
-                    If olMovimiento.GuardarDobleMovimiento(loMovimientosDev, New e_Movimiento) Then
+                    Dim oeMovimientoDM = New e_Movimiento '@0001
+                    oeMovimientoDM.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olMovimiento.GuardarDobleMovimiento(loMovimientosDev, oeMovimientoDM) Then
                         TipoOperacion = "5"
                         Dim formulario As frm_ReporteVoucherMovimientoCaja
                         formulario = New frm_ReporteVoucherMovimientoCaja
@@ -838,8 +855,11 @@ Public Class frm_Movimiento
                     oeMovViaPres.IdMovimiento = idMovimiento
                     oeMovPres.oeMovimientoViaje = oeMovViaPres
                     Dim loMovimientoDoble As New List(Of e_Movimiento)
+                    oeMovimientoPrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loMovimientoDoble.Add(oeMovimientoPrestamo)
+                    oeMovPres.PrefijoID = gs_PrefijoIdSucursal '@0001
                     loMovimientoDoble.Add(oeMovPres)
+                    oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olMovimiento.GuardarDobleMovimiento(loMovimientoDoble, oeMovAux) Then
                         MostrarTabs(1, ficMovimiento, 1)
                         MostrarTabs(0, ficMovimientoDetalle)
@@ -903,6 +923,7 @@ Public Class frm_Movimiento
                 End With
             End With
             If oeMovimientoDescuento.IdCuentaCorrienteDestino = "" Then Throw New Exception("Trabajador sin Cuenta Corriente Verificar")
+            oeMovimientoDescuento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olMovimiento.Guardar(oeMovimientoDescuento, New e_Movimiento) Then
                 TipoOperacion = "2"
                 Dim formulario As New frm_ReporteVoucherMovimientoCaja
@@ -2806,6 +2827,7 @@ Public Class frm_Movimiento
                         oeMovimientoGlosa.Glosa = griMovimiento.ActiveRow.Cells("Glosa").Value
                         oeMovimientoGlosa.Id = griMovimiento.ActiveRow.Cells("IdMovimiento").Value
                         oeMovimientoGlosa.TipoTransa = griMovimiento.ActiveRow.Cells("TipoTransa").Value
+                        oeMovimientoGlosa.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olMovimiento.Guardar(oeMovimientoGlosa, New e_Movimiento) Then mensajeEmergente.Confirmacion(Me.Text & ": La Informacion ha sido grabada Satisfactoriamente; " & griMovimiento.ActiveRow.Cells("Glosa").Value, True)
                         'ControlBoton(0, 0, 0,1, 1, 0, 0, 0, 0)
                 End Select
@@ -6425,6 +6447,7 @@ Public Class frm_Movimiento
                         End If
                     Next
                     Using Scope As New TransactionScope()
+                        oeSaldo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If GriCuentaAdministrativa.Rows.Count > 0 Then
                             oeSaldo.TipoOperacion = "I"
                             oeSaldo.Saldo = Me.decSaldoCuentaAdm.Value
@@ -6471,6 +6494,7 @@ Public Class frm_Movimiento
                                 oeCierreCajaDet.Glosa = movadm.Glosa
                                 oeCierreCajaDet.Ingreso = movadm.Egreso
                                 oeCierreCajaDet.Egreso = movadm.Ingreso
+                                oeCierreCajaDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                                 loCierreCajaDet.Add(oeCierreCajaDet)
                             Next
                             .loCierreCajaDet.AddRange(loCierreCajaDet)
@@ -6479,6 +6503,7 @@ Public Class frm_Movimiento
                             .oeValesRendir = oeValeRendir
                             .oeOtrosIngresos = oeOtrosIngresos
                         End With
+                        oeCierreCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olCierreCaja.Guardar(oeCierreCaja) Then
                             _ban = True
                             Scope.Complete()
@@ -6587,6 +6612,7 @@ Public Class frm_Movimiento
                     oeVia.TipoOperacion = "X"
                     oeVia.GlosaEscala = griLista.ActiveRow.Cells("Glosa").Value
                     oeVia.Id = griLista.ActiveRow.Cells("IdViaje").Value
+                    oeVia.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If olVia.GuardarViaje(oeVia) Then mensajeEmergente.Confirmacion("Se Actualizó la Glosa Referencial Correctamente", True)
                     Listar(True)
             End Select
@@ -6627,6 +6653,7 @@ Public Class frm_Movimiento
             oeSeg.PesoToneladas = decPeso.Value
             oeSeg.TipoOperacion = "P"
             oeSeg.UsuarioCreacion = gUsuarioSGI.Id
+            oeSeg.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olSeg.Guardar1(oeSeg) Then
                 mensajeEmergente.Confirmacion("PesoActualizadoCorrectamente", True)
                 MostrarPeso(IdViaje)
@@ -6653,6 +6680,7 @@ Public Class frm_Movimiento
             oeOperacionDetalle.TipoOperacion = "2"
             oeOperacionDetalle.Id = IdViaje
             oeOperacionDetalle.Consolidado = numCostoEstiba.Value
+            oeOperacionDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
             olOperacion.GuardarOperacionDetalle(oeOperacionDetalle)
             mensajeEmergente.Confirmacion("Se ingreso Correctamente el Costo de Estiba", True)
         Catch ex As Exception
@@ -6707,6 +6735,7 @@ Public Class frm_Movimiento
                     .Referencia = "Movimiento"
                     .UsuarioEdita = gUsuarioSGI.Id
                 End With
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 IdRegistroEditado = olRegistroEditado.Guardar(oeRegistroEditado)
             End If
         Catch ex As Exception
@@ -6735,6 +6764,7 @@ Public Class frm_Movimiento
                         .Id = oeMov.IdCuentaCorrienteDestino
                         .FechaModificado = DateAdd(DateInterval.Minute, 5, oeMov.Fecha)
                     End With
+                    oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olRegistroEditado.Guardar(oeRegistroEditado)
                     RegistroEditado = 1
                 End If
@@ -6754,6 +6784,7 @@ Public Class frm_Movimiento
                 With oeRegistroEditado
                     .Id = IdRegistroEditado
                 End With
+                oeRegistroEditado.PrefijoID = gs_PrefijoIdSucursal '@0001
                 olRegistroEditado.Guardar(oeRegistroEditado)
                 RegistroEditado = 0
             End If

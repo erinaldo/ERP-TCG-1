@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -480,6 +488,7 @@ Public Class frm_GruposAprobacion
                     .FechaCreacion = Date.Now
                     .IdEstado = "1CH00014"
                 End If
+                oeGrupoAprobacion.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olGrupoAprobacion.Guardar(oeGrupoAprobacion) Then
                     If .TipoOperacion = "I" Then
                         Dim frm As New frm_ImprimirGrupoAprobacion

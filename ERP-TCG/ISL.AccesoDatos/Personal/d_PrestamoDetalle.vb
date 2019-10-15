@@ -109,7 +109,7 @@ Public Class d_PrestamoDetalle
             Using transScope As New TransactionScope
                 Guardar(oePrestamoDetalle)
                 If Not lePrestamo Is Nothing Then
-                    odPrestamo.GuardarLista(lePrestamo, "", "")
+                    odPrestamo.GuardarLista(lePrestamo, "", "", oePrestamoDetalle.PrefijoID)
                 End If
                 oePrest.TipoOperacion = "S"
                 odPrestamo.Guardar(oePrest, False)
