@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 ''' <summary>
@@ -109,10 +117,8 @@ Public Class d_MenuGrupo
     ''' de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeMenuGrupo As e_MenuGrupo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeMenuGrupo
-                sqlhelper.ExecuteNonQuery("SGD.ISP_MenuGrupo_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SGD.ISP_MenuGrupo_IAE", .TipoOperacion,
                         .Id _
                         , .IdMenuProceso _
                         , .Codigo _
@@ -122,7 +128,7 @@ Public Class d_MenuGrupo
                         , .Orden _
                         , .Protegido _
                 , .UsuarioCreacion _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

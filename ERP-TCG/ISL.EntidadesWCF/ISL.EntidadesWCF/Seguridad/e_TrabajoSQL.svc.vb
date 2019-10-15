@@ -14,8 +14,14 @@ Public Class e_TrabajoSQL
 
     <DataMember()> _
     Public TipoOperacion As String
-    <DataMember()> _
+    <DataMember()>
     Public Modificado As String
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 
 #End Region
 

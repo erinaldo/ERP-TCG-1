@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -614,6 +622,10 @@ Public Class frm_Usuario
             oeUsuario.leUsuarioPerfil = olUsuarioPerfil
             oeUsuario.leTurnoUsuario = olTurnoUsuario
             oeUsuario.oeControlTurnoUsuario = oeControlTU
+            oeUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeUsuario.oeControlTurnoUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeUsuario.oeArea.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeUsuario.oePersona.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olUsuario.Guardar(oeUsuario) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, ficUsuario, 2)

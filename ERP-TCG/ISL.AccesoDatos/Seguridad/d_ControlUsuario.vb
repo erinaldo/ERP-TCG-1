@@ -77,7 +77,6 @@ Public Class d_ControlUsuario
     Public Function Guardar(ByVal oeControlUsuario As e_ControlUsuario) As String
         Try
             Dim id As String = ""
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlUsuario
                 id = sqlhelper.ExecuteScalar("SGD.Isp_ControlUsuario_IAE", .TipoOperacion,
                         .Id _

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Formulario
@@ -301,6 +309,7 @@ Public Class frm_Formulario
     Private Function Guardando() As Boolean
         Try
             oeFormulario.UsuarioCreacion = gUsuarioSGI.Id
+            oeFormulario.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olFormulario.Guardar(oeFormulario) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, ficFormulario, 2)

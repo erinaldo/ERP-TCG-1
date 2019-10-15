@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_Turno
@@ -302,6 +310,7 @@ Public Class frm_Turno
     Private Function Guardando() As Boolean
         Try
             oeTurno.UsuarioCreacion = gUsuarioSGI.Id
+            oeTurno.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olTurno.Guardar(oeTurno) Then
                 Return False
             End If

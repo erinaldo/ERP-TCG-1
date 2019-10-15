@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 ''' <summary>
 ''' Clase que gestiona los proceso que se tienen el menu del sistema.
@@ -107,10 +115,8 @@ Public Class d_MenuProceso
     '''  de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeProceso As e_MenuProceso) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeProceso
-                sqlhelper.ExecuteNonQuery("SGD.Isp_MenuProceso_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_MenuProceso_IAE", .TipoOperacion,
                          .Id _
                         , .Codigo _
                         , .Nombre _
@@ -120,7 +126,7 @@ Public Class d_MenuProceso
                           , .Protegido _
                           , .Explorador _
                           , .UsuarioCreacion _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

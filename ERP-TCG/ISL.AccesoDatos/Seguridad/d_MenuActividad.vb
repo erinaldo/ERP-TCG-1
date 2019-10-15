@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -131,9 +139,8 @@ Public Class d_MenuActividad
     '''  de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeMenuActividad As e_MenuActividad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMenuActividad
-                sqlhelper.ExecuteNonQuery("SGD.Isp_MenuActividad_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_MenuActividad_IAE", .TipoOperacion,
                         .Id _
                         , .IdActividadNegocio _
                         , .IdMenuGrupo _
@@ -150,8 +157,8 @@ Public Class d_MenuActividad
                         , .Tamano _
                         , .Texto _
                         , .Formulario _
-                        , .menu _
-                        , .PrefijoID _
+                        , .Menu _
+                        , .PrefijoID
                     )
             End With
             Return True
