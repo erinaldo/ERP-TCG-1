@@ -87,14 +87,14 @@ Public Class d_Movimiento_Flete
 
     Public Function Guardar(ByVal oeMovimiento_Flete As e_Movimiento_Flete) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odChequexCobrar As New d_ChequexCobrar
             Dim Id As String = ""
             With oeMovimiento_Flete
                 If .oeChequeCobrar.TipoOperacion = "I" Then
+                    .oeChequeCobrar.PrefijoID = oeMovimiento_Flete.PrefijoID '@0001
                     odChequexCobrar.Guardar(.oeChequeCobrar)
                 End If
-                Id = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_Flete_IAE", .TipoOperacion, .PrefijoID, _
+                Id = sqlhelper.ExecuteScalar("TES.Isp_Movimiento_Flete_IAE", .TipoOperacion, .PrefijoID,
                        .Id _
                        , .IdOperacionDetalle _
                        , .IdMovimiento _

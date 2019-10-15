@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Public Class frm_CuentaBancaria
     Inherits ISL.Win.frm_MenuPadre
@@ -406,6 +414,7 @@ Public Class frm_CuentaBancaria
         Try
             oeCuentaBancaria.Usuario = gUsuarioSGI.Id
             oeCuentaBancaria.IdCuentaContable = 1
+            oeCuentaBancaria.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olCuentaBancaria.Guardar(oeCuentaBancaria) Then
                 Return False
             End If

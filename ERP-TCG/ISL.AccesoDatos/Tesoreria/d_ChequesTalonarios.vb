@@ -1,4 +1,11 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
@@ -74,10 +81,9 @@ Public Class d_ChequesTalonarios
 
     Public Function Guardar(ByVal oeChequesTalonarios As e_ChequesTalonarios) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeChequesTalonarios
-                sqlhelper.ExecuteNonQuery("TES.Isp_ChequesTalonarios_IAE", .TipoOperacion, .PrefijoID, _
-                        .Id, .IdChequesControl, .IdCaja, .FechaIngreso, .Inicial, .Final, .Talonario, .Activo, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_ChequesTalonarios_IAE", .TipoOperacion, .PrefijoID,
+                        .Id, .IdChequesControl, .IdCaja, .FechaIngreso, .Inicial, .Final, .Talonario, .Activo,
                         .IdResponsable, .IndAnulado, .IndTerminado, .FechaCreacion, .UsuarioCreacion, .Observacion, .Correlativo)
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -715,7 +723,7 @@ Public Class frm_ChequeEmitido
                 End If
                 .IdTrabajador = gUsuarioSGI.IdTrabajador
             End With
-
+            oeChequeEmitido.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olChequeEmitido.Guardar(oeChequeEmitido, loCtaCtble_Concepto, CtaCtblePublic) Then
                 If oeChequeEmitido.TipoOperacion = "I" Then
                     Dim frm As New frm_ImprimirChequesEmitidos

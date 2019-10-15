@@ -67,17 +67,17 @@ Public Class d_ChequesControl
 
     Public Function Guardar(ByVal oeChequesControl As e_ChequesControl) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using transScope As New TransactionScope()
                 With oeChequesControl
-                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequesControl_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.Isp_ChequesControl_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdCuentaBancaria _
                             , .Activo _
                             , .UsuarioCreacion _
                             , .FechaCreacion)
                     For Each oeCheTal As e_ChequesTalonarios In .listaChequeTalonario
+                        oeCheTal.PrefijoID = oeChequesControl.PrefijoID '@0001
                         If oeCheTal.TipoOperacion <> "I" Then oeCheTal.TipoOperacion = "A"
                         oeCheTal.IdChequesControl = id
                         odChequesTalonarios.Guardar(oeCheTal)

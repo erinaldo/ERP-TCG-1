@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Public Class frm_CuentaCorriente
@@ -415,6 +423,7 @@ Public Class frm_CuentaCorriente
                 .TotalAbono = decTotalAbono.Value
                 .Ejercicio = decEjercicio.Value
             End With
+            oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
             olCuentaCorriente.Guardar(oeCuentaCorriente)
             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
             Operacion = "Inicializa"

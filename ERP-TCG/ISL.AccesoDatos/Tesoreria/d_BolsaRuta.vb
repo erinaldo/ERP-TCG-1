@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Public Class d_BolsaRuta
     Private sqlhelper As New SqlHelper
 
@@ -79,10 +87,8 @@ Public Class d_BolsaRuta
 
     Public Function Guardar(ByVal oeBolsaRuta As e_BolsaRuta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeBolsaRuta
-                sqlhelper.ExecuteNonQuery("TES.Isp_BolsaRuta_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_BolsaRuta_IAE", .TipoOperacion,
                 .Id, .IdRuta, .IdTipoVehiculo, .MontoMinimo, .MontoNormal, .MontoMaximo, .Activo, .Usuario, .PrefijoID)
             End With
             Return True

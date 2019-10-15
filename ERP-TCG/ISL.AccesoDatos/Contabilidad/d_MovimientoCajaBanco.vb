@@ -108,13 +108,12 @@ Public Class d_MovimientoCajaBanco
 
     Public Function Guardar(ByRef oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope
                 With oeMovimientoCajaBanco
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoCajaBanco_IAE", _
-                                                          .TipoOperacion, _
-                                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoCajaBanco_IAE",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                                                             .Id _
                                                             , .IdFlujoCaja _
                                                             , .NroBoucher _

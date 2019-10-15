@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 ''' <summary>
 ''' Clase que se encarga de gestionar los bancos asociados a la empresa
@@ -163,10 +171,8 @@ Public Class d_Banco
     ''' <remarks>Este método genera una lista de Bancos, a partir del objeto <see cref="e_Banco"/><seealso cref="e_Empresa"/> que se pasa como parámetro</remarks>
     Public Function Guardar(ByVal oeBanco As e_Banco) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeBanco
-                sqlhelper.ExecuteNonQuery("TES.Isp_Banco_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Banco_IAE", .TipoOperacion,
                 .Id, .Codigo, .Nombre, .Abreviatura, .Activo, .PrefijoID)
             End With
             Return True

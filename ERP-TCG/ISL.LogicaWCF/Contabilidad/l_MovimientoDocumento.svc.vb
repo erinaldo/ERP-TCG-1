@@ -1000,6 +1000,7 @@ Public Class l_MovimientoDocumento
                 '    oeMovimientoDocumento.IdCuentaContable = IIf(oeMovimientoDocumento.IdMoneda = "1CH01", leCuentasGenerales.Where(Function(i) i.Nombre = "CTAPROVEEDORANTSOLES")(0).Texto2, leCuentasGenerales.Where(Function(i) i.Nombre = "CTAPROVEEDORANTDOLARES")(0).Texto2)
                 'End If
                 Dim oeAsiento As New e_Asiento
+                oeAsiento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                 With oeAsiento
                     .TipoOperacion = "I"
                     .IdPeriodo = oeMovimientoDocumento.IdPeriodo
@@ -1016,7 +1017,9 @@ Public Class l_MovimientoDocumento
                     .IndOrigen = IIf(Tipo = "Proveedor", 11, 12)
                     '
                     For Each DetalleAsientoModelo As e_DetalleAsientoModelo In oeMovimientoDocumento.oeAsientoModelo.leDetalle
+                        DetalleAsientoModelo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         Dim oeAsientoMov As New e_AsientoMovimiento
+                        oeAsientoMov.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         With oeAsientoMov
                             .TipoOperacion = "I"
                             If DetalleAsientoModelo.IndDocumento = True Then
@@ -1145,6 +1148,7 @@ Public Class l_MovimientoDocumento
                 End With
 
                 Dim odAsiento As New d_Asiento
+                oeAsiento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                 odAsiento.GuardarAsientoContable(oeAsiento)
                 oeMovCajaBanco.Id = oeAsiento._IdMovimientoCajaBanco
             End If

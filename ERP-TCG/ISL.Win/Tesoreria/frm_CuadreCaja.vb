@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
@@ -294,6 +302,7 @@ Public Class frm_CuadreCaja
             LlenaObjeto()
             oeCuadreCaja.loCajaBolsa = loCuadreCajaBolsa
             oeCuadreCaja.loCajaGasto = loCuadreCajaGasto
+            oeCuadreCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCuadreCaja.Guardar(oeCuadreCaja) Then
                 ImprimirCuadre()
                 mensajeEmergente.Confirmacion("La Informacion ha sido Guardada Correctamente", True)

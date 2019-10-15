@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_CuentaBancaria
     Private sqlhelper As New SqlHelper
@@ -97,12 +105,10 @@ Public Class d_CuentaBancaria
     Public Function Guardar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeCuentaBancaria
-                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaBancaria_IAE", .TipoOperacion, _
-                .Id, .IdBanco, .NumeroCuenta, .IdMoneda, .IdCuentaContable, .SaldoInicial, _
-                .Contacto, .ContactoTelefono, .TasaActiva, .TasaPasiva, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CuentaBancaria_IAE", .TipoOperacion,
+                .Id, .IdBanco, .NumeroCuenta, .IdMoneda, .IdCuentaContable, .SaldoInicial,
+                .Contacto, .ContactoTelefono, .TasaActiva, .TasaPasiva,
                 .LineaCredito, .NumeroCorrelativo, .Activo, .PrefijoID)
             End With
             Return True

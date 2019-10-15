@@ -299,11 +299,13 @@ Public Class d_Movimiento
                     If .oeMovimientoViaje.IdViaje <> "" Then
                         .oeMovimientoViaje.IdMovimiento = IdMovimiento
                         .oeMovimientoViaje.TipoOperacion = .TipoOperacion
+                        .oeMovimientoViaje.PrefijoID = oeMovimiento.PrefijoID '@0001
                         odMovimiento_Viaje.Guardar(.oeMovimientoViaje)
                     End If
                     If .oeMovimientoFlete.IdViaje <> "" Then
                         .oeMovimientoFlete.IdMovimiento = IdMovimiento
                         .oeMovimientoFlete.TipoOperacion = "I"
+                        .oeMovimientoFlete.PrefijoID = oeMovimiento.PrefijoID '@0001
                         odMovimiento_Flete.Guardar(.oeMovimientoFlete)
                     End If
                     If .TipoProceso = "HABILITACION_CUENTA" Then
@@ -314,6 +316,7 @@ Public Class d_Movimiento
                         oeChequeEmitido.IdCuentaCorriente = .IdCuentaCorrienteDestino
                         oeChequeEmitido.Id = .IdCheque
                         oeChequeEmitido.IdEstado = "1CH00032"
+                        oeChequeEmitido.PrefijoID = oeMovimiento.PrefijoID '@0001
                         odChequeEmitido.Guardar(oeChequeEmitido)
                     End If
                 End With

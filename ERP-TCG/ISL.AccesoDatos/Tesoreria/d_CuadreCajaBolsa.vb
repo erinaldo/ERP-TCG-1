@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -57,15 +65,14 @@ Public Class d_CuadreCajaBolsa
 
     Public Function Guardar(ByVal oeCuadreCajaBolsa As e_CuadreCajaBolsa) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCuadreCajaBolsa
-                sqlhelper.ExecuteNonQuery("[TES].[Isp_CuadreCajaBolsa_IAE]", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("[TES].[Isp_CuadreCajaBolsa_IAE]", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCuadreCaja _
                         , .IdTrabajador _
                         , .Fecha _
                         , .Importe _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

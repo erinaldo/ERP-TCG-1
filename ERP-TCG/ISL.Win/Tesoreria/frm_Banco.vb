@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Imports System.ServiceModel
@@ -451,6 +459,7 @@ Public Class frm_Banco
     ''' <remarks></remarks>
     Private Function GuardarBanco() As Boolean
         Try
+            oebanco.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olbanco.Guardar(oebanco) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcbanco, 2)

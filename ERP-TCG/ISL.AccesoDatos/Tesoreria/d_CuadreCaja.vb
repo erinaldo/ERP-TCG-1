@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,25 +83,26 @@ Public Class d_CuadreCaja
 
     Public Function Guardar(ByVal oeCuadreCaja As e_CuadreCaja) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeCuadreCaja
-                    stResultado = sqlhelper.ExecuteScalar("[TES].[Isp_CuadreCaja_IAE]", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("[TES].[Isp_CuadreCaja_IAE]", .TipoOperacion, .PrefijoID,
                             .Id, .IdCaja, .Fecha, .SaldoSistema, .Otros, .Diferencia, .Observacion, .num200, .num100, .num50 _
                             , .num20, .num10, .num5, .num2, .num1, .num05, .num02, .num01, .num005, .UsuarioCreacion).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each cuagas As e_CuadreCajaGasto In .loCajaGasto
                         cuagas.IdCuadreCaja = stResultado(0)
+                        cuagas.PrefijoID = oeCuadreCaja.PrefijoID '@0001
                         odCuadreGasto.Guardar(cuagas)
                     Next
                     For Each cuabol As e_CuadreCajaBolsa In .loCajaBolsa
                         cuabol.IdCuadreCaja = stResultado(0)
+                        cuabol.PrefijoID = oeCuadreCaja.PrefijoID '@0001
                         odCuadreBolsa.Guardar(cuabol)
                     Next
                 End With
                 transScope.Complete()
-            End Using        
+            End Using
             Return True
         Catch ex As Exception
             Throw ex

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Public Class d_Caja
     Private sqlhelper As New SqlHelper
@@ -73,24 +81,24 @@ Public Class d_Caja
 
     Public Function Guardar(ByVal oeCaja As e_Caja) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope
                 With oeCaja
-                    id = sqlhelper.ExecuteScalar("TES.ISP_Caja_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("TES.ISP_Caja_IAE", .Tipooperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Nombre _
                             , .Abreviatura _
                             , .UsuarioCreacion _
                             , .Activo _
-                            , .IdCentro _
+                            , .IdCentro
                         )
                 End With
                 If oeCaja.leCajaUsuario IsNot Nothing Then
                     For Each oeCajaUsuario As e_CajaUsuario In oeCaja.leCajaUsuario
                         oeCajaUsuario.IdCaja = id
                         oeCajaUsuario.UsuarioCreacion = oeCaja.UsuarioCreacion
+                        oeCajaUsuario.PrefijoID = oeCaja.PrefijoID '@0001
                         odCajaUsuario.Guardar(oeCajaUsuario)
                     Next
                 End If

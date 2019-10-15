@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -297,6 +305,7 @@ Public Class frm_ChequesControl
                 Next
             Next
             oeChequesControl.listaChequeTalonario = loChequesTalonarios
+            oeChequesControl.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olChequesControl.Guardar(oeChequesControl) Then
                 MostrarTabs(0, ficControlCheques, 0)
                 mensajeEmergente.Confirmacion("La Informacion ha sido Guardada Correctamente")

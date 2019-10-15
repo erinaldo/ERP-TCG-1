@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -78,7 +86,6 @@ Public Class d_ChequeEmitido
 
     Public Function Guardar(ByVal oeChequeEmitido As e_ChequeEmitido) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Dim odMovimientoDocumento As New d_MovimientoDocumento
             Dim odChequeDocumento As New d_ChequeDocumento
@@ -91,6 +98,7 @@ Public Class d_ChequeEmitido
                     .Id = id
                     If .loChequeDocumento.Count > 0 Then
                         For Each oe As e_ChequeDocumento In .loChequeDocumento
+                            oe.PrefijoID = oeChequeEmitido.PrefijoID '@0001
                             If .TipoOperacion = "I" Or .TipoOperacion = "A" Or .TipoOperacion = "E" Then
                                 oe.TipoOperacion = .TipoOperacion
                                 oe.IdChequeEmitido = .Id
@@ -99,6 +107,7 @@ Public Class d_ChequeEmitido
                             End If
                             If .TipoOperacion = "C" Then
                                 Dim oeMovDoc As New e_MovimientoDocumento
+                                oeMovDoc.PrefijoID = oeChequeEmitido.PrefijoID '@0001
                                 oeMovDoc.Id = oe.IdMovimientoDocumento
                                 oeMovDoc.TipoOperacion = "CAM"
                                 oeMovDoc.Total = oe.Importe
@@ -108,7 +117,7 @@ Public Class d_ChequeEmitido
                     End If
                 End With
                 TransScope.Complete()
-            End Using 
+            End Using
             Return True
         Catch ex As Exception
             Throw ex

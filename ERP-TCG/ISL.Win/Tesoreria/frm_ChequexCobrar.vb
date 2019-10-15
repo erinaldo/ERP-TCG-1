@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 
@@ -395,6 +403,7 @@ Public Class frm_ChequexCobrar
             oeChequexCobrar.TipoTransa = 0
             oeChequexCobrar.Fecha = Me.fecFecha.Value
             oeChequexCobrar.FechaCobro = Me.fecFechaCobro.Value
+            oeChequexCobrar.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olChequexCobrar.Guardar(oeChequexCobrar) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 MostrarTabs(0, ficChequexCobrar, 2)

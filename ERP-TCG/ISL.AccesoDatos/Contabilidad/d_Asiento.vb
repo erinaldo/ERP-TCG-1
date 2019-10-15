@@ -262,7 +262,6 @@ Public Class d_Asiento
 
     Public Function GuardarAsientoContable(ByRef oeAsiento As e_Asiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsiento
                 stResultado = sqlhelper.ExecuteScalar("CON.Isp_Asiento_IAE",
@@ -293,12 +292,14 @@ Public Class d_Asiento
             If Not oeAsiento.Asiento_MovDoc Is Nothing Then
                 Dim odAsiento_MovDoc As New d_Asiento_MovDoc
                 oeAsiento.Asiento_MovDoc.IdAsiento = oeAsiento.Id
+                oeAsiento.Asiento_MovDoc.PrefijoID = oeAsiento.PrefijoID '@0001
                 odAsiento_MovDoc.Guardar(oeAsiento.Asiento_MovDoc)
             End If
 
             For Each obj In oeAsiento.AsientoMovimiento
                 obj.IdAsiento = oeAsiento.Id
                 Dim odAsientoMovimiento As New d_AsientoMovimiento
+                obj.PrefijoID = oeAsiento.PrefijoID '@0001
                 odAsientoMovimiento.Guardar(obj)
                 If Not obj.MovimientoCajaBanco Is Nothing Then
                     oeAsiento._IdMovimientoCajaBanco = obj.MovimientoCajaBanco.Id

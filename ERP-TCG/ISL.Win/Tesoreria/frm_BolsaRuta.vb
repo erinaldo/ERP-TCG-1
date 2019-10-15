@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Public Class frm_BolsaRuta
     Inherits ISL.Win.frm_MenuPadre
@@ -306,6 +314,7 @@ Public Class frm_BolsaRuta
     Private Function GuardarBolsaRuta() As Boolean
         Try
             oeBolsaRuta.Activo = verActivo.Checked
+            oeBolsaRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olBolsaRuta.Guardar(oeBolsaRuta) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcBolsaRuta, 2)

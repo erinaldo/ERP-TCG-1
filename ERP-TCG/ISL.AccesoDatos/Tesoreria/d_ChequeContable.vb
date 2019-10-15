@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que gestiona los cheques contables de la empresa.  
 ''' Fecha de Actualizacion:31/10/2011
@@ -94,11 +102,9 @@ Public Class d_ChequeContable
     ''' de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeChequeContable As e_ChequeContable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeChequeContable
-                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeContable_IAE", .TipoOperacion, _
-            .Id, .IdCuentaBancaria, .NumeroChequera, .Fecha, .NumeroInicial, .NumeroFinal, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeContable_IAE", .TipoOperacion,
+            .Id, .IdCuentaBancaria, .NumeroChequera, .Fecha, .NumeroInicial, .NumeroFinal,
             .NumeroEmitir, .Activo, .PrefijoID)
             End With
             Return True

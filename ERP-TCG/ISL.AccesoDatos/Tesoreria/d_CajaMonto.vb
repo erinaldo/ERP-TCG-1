@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_CajaMonto
     Private sqlhelper As New SqlHelper
@@ -66,16 +74,15 @@ Public Class d_CajaMonto
 
     Public Function Guardar(ByVal oeCajaMonto As e_CajaMonto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCajaMonto
-                sqlhelper.ExecuteNonQuery("TES.Isp_CajaMonto_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_CajaMonto_IAE", .Tipooperacion, .PrefijoID,
                         .Id _
                         , .IdCaja _
                         , .Fecha _
                         , .Monto _
                         , .IdCuentaBancaria _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -59,18 +67,17 @@ Public Class d_Movimiento_Viaje
 
     Public Function Obtener(ByVal oeMovimiento_Viaje As e_Movimiento_Viaje) As e_Movimiento_Viaje
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             With oeMovimiento_Viaje
-                ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Viaje_Listar", _
-                                             .TipoOperacion, _
-                                             .Id, _
-                                             .IdMovimiento, _
-                                             .TipoTransa, _
-                                             .IdViaje, _
-                                             .Viaje, _
-                                             .IdPiloto, _
-                                             .IdTracto, _
+                ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Viaje_Listar",
+                                             .TipoOperacion,
+                                             .Id,
+                                             .IdMovimiento,
+                                             .TipoTransa,
+                                             .IdViaje,
+                                             .Viaje,
+                                             .IdPiloto,
+                                             .IdTracto,
                                              .VincularViajePiloto)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -86,7 +93,6 @@ Public Class d_Movimiento_Viaje
 
     Public Function Listar(ByVal oeMovimiento_Viaje As e_Movimiento_Viaje) As List(Of e_Movimiento_Viaje)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMovimiento_Viaje As New List(Of e_Movimiento_Viaje)
             Dim ds As DataSet
             With oeMovimiento_Viaje
@@ -121,9 +127,8 @@ Public Class d_Movimiento_Viaje
 
     Public Function Guardar(ByVal oeMovimiento_Viaje As e_Movimiento_Viaje) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento_Viaje
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Viaje_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Viaje_IAE", .TipoOperacion, .PrefijoID,
                         "" _
                         , .IdMovimiento _
                         , .IdViaje _

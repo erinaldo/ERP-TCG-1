@@ -1,4 +1,11 @@
-﻿' NOTA: si cambia aquí el nombre de clase "l_ChequeEmitido", también debe actualizar la referencia a "l_ChequeEmitido" tanto en Web.config como en el archivo .svc asociado.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
@@ -108,10 +115,11 @@ Public Class l_ChequeEmitido
                             Dim rowAsientoMovMovDoc As Data.DataRow
                             Dim rowCtaxCP As Data.DataRow
                             Dim oeCtaCon As New e_CtaCtble_Concepto
-
+                            oeCtaCon.PrefijoID = oeChequeEmitido.PrefijoID '@0001
                             With oeChequeEmitido
 
                                 oeCtaCon = New e_CtaCtble_Concepto
+                                oeCtaCon.PrefijoID = oeChequeEmitido.PrefijoID '@0001
                                 oeCtaCon.IdConceptoIngresos = .IdConcepto
                                 oeCtaCon.Tipo = 1
                                 If loCtaCtbleConcepto.Contains(oeCtaCon) Then
@@ -210,6 +218,7 @@ Public Class l_ChequeEmitido
                                 If .loChequeDocumento.Count > 0 Then
                                     Dim i As Integer = 1
                                     For Each oe As e_ChequeDocumento In .loChequeDocumento
+                                        oe.PrefijoID = oeChequeEmitido.PrefijoID '@0001
                                         rowAsiMovDebe = dt_ASIMOV.NewRow
                                         rowAsiMovDebe("Id") = lsPrefijoAsientoMovimiento + olFuncionesGenerales.CompletaConCeros(lsNumeroIdAsientoMovimiento.ToString, 13)
                                         rowAsiMovDebe("IdAsiento") = rowAsiento("Id")

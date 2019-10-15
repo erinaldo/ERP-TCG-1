@@ -387,6 +387,9 @@ Public Class frm_AnticipoClienteProveedor
                 End With
 
                 oeMovimientoDocumento.oeAsientoModelo = ObtenerAsientoModelo(cboMoneda.Value)
+                oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeMovimientoDocumento.oeAsientoModelo.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMovimientoDocumento.GuardarAnticipo(oeMovimientoDocumento, oeMovCajaBanco, TipoAnticipo) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                     MostrarTabs(0, tcAnticipos, 2)
@@ -867,6 +870,7 @@ Public Class frm_AnticipoClienteProveedor
                 oeMovCajaBanco.IdFlujoCaja = cboFlujoGasto.Value
                 oeMovCajaBanco.IdTipoGasto = cboTipoGasto.Value
                 oeMovCajaBanco.IdCuentaBancaria = cboCuentaBancaria.Value
+                oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olMovCajaBanco.Guardar(oeMovCajaBanco) Then
                     mensajeEmergente.Confirmacion("Se actualizo correctamente", True)
                     MostrarTabs(0, tcAnticipos)

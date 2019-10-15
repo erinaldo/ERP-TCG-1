@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -297,6 +305,7 @@ Public Class frm_Caja
             If Not VerificarMonto Then Throw New Exception("El monto asignado no es correcto " & Me.Text)
             If decMonto.Value <= 0 Then Throw New Exception("El monto asignado no es correcto")
             oeCajaMonto.Activo = verActivoMonto.Checked
+            oeCajaMonto.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olCajaMonto.Guardar(oeCajaMonto) Then
                 Return False
             End If
@@ -862,7 +871,7 @@ Public Class frm_Caja
     Private Function GuardarCaja() As Boolean
         Try
             oeCaja.IdCentro = cboCentro.Value
-
+            oeCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olCaja.Guardar(oeCaja) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcCaja, 2)

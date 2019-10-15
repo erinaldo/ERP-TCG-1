@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_ChequeContable
@@ -346,6 +354,7 @@ Public Class frm_ChequeContable
 #Region "Métodos"
     Private Function GuardarChequeContable() As Boolean
         Try
+            oeChequeContable.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olChequeContable.Guardar(oeChequeContable) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcChequeContable, 2)

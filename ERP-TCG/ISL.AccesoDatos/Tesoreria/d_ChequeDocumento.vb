@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -62,9 +70,8 @@ Public Class d_ChequeDocumento
 
     Public Function Guardar(ByVal oeChequeDocumento As e_ChequeDocumento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeChequeDocumento
-                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeDocumento_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_ChequeDocumento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdChequeEmitido _
                         , .IdMovimientoDocumento _
