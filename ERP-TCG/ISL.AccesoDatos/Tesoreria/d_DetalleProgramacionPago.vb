@@ -46,11 +46,10 @@ Public Class d_DetalleProgramacionPago
 
     Public Function Guardar(ByVal oeDetalleProgramacionPago As e_DetalleProgramacionPago) As Boolean
         Try
-
             Dim stResultado() As String
             With oeDetalleProgramacionPago
-                stResultado = sqlhelper.ExecuteScalar("[TES].[sp_DetalleProgramacionPago_IAE]", .TipoOperacion, _
-                        .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("[TES].[sp_DetalleProgramacionPago_IAE]", .TipoOperacion,
+                        .PrefijoID,
                         .Id _
                         , .IdMovimientoDocumento _
                         , .IdEstado _
@@ -68,7 +67,7 @@ Public Class d_DetalleProgramacionPago
                           , .FlujoGasto _
                          , .CtaContable _
                          , .MedioPago _
-                         , .FechaPago _
+                         , .FechaPago
                         ).ToString.Split("_")
                 .Id = stResultado(0)
             End With

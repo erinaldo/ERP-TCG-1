@@ -2539,7 +2539,8 @@ Module m_Funciones
         Try
             If RutaPersonalizada = False Then
                 Dim olDatosConfiguracion As New l_Configuracion
-                RutaImagen = olDatosConfiguracion.RutaImagen()
+                'RutaImagen = olDatosConfiguracion.RutaImagen() '@0001
+                RutaImagen = Path.Combine(Application.StartupPath, "Imagenes") '@0001
             End If
             archivo = RutaImagen & archivo
             If System.IO.File.Exists(archivo) Then
@@ -5426,7 +5427,8 @@ Module m_Funciones
         Try
             Dim olDatosConfiguracion As New l_Configuracion
 
-            Dim strRuta1 As String = olDatosConfiguracion.RutaImagen() & "\Iconos\"
+            'Dim strRuta1 As String = olDatosConfiguracion.RutaImagen() & "\Iconos\" '@0001
+            Dim strRuta1 As String = Path.Combine(Application.StartupPath, "Imagenes") & "\Iconos\" '@0001
             oeIcono = New e_Icono : oeIcono.Nombre = "Agregar" : oeIcono.Ruta = strRuta1 & "agregar.png" : oeIcono.Icono = New Bitmap(oeIcono.Ruta) : gLstIconos.Add(oeIcono)
             oeIcono = New e_Icono : oeIcono.Nombre = "Modificar" : oeIcono.Ruta = strRuta1 & "modificar.png" : oeIcono.Icono = New Bitmap(oeIcono.Ruta) : gLstIconos.Add(oeIcono)
             oeIcono = New e_Icono : oeIcono.Nombre = "Quitar" : oeIcono.Ruta = strRuta1 & "quitar.png" : oeIcono.Icono = New Bitmap(oeIcono.Ruta) : gLstIconos.Add(oeIcono)

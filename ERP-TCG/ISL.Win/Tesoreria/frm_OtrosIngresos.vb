@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -471,6 +479,7 @@ Public Class frm_OtrosIngresos
                 oeOtrosIngresos.IdReferencia = oeOrdenMaterial.IdOrden
                 oeOtrosIngresos.TipoReferencia = "ORDEN DE SALIDA"
             End If
+            oeOtrosIngresos.PrefijoID = gs_PrefijoIdSucursal '@0001
             If olOtrosIngresos.Guardar(oeOtrosIngresos) Then
                 If oeOtrosIngresos.IndIngresoEgreso = True Then
                     Dim formulario As New frm_ReporteVoucherMovimientoCaja

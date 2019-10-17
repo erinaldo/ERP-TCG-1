@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -82,6 +90,7 @@ Public Class d_MaterialesNegociados
                             , .Activo _
                             , .UsuarioCreacion)
                     For Each material As e_MaterialesNegociadosDet In .loMaterialesNegociadosDet
+                        material.PrefijoID = oeMaterialesNegociados.PrefijoID '@0001
                         If material.TipoOperacion <> "I" Then
                             If material.TipoOperacion <> "E" Then material.TipoOperacion = .TipoOperacion
                         End If

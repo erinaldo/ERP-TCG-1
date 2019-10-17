@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports ISL.Controles
 Public Class frm_TipoGasto
@@ -457,9 +465,11 @@ Public Class frm_TipoGasto
                 oeTipoGastoDetalle.Id = griFlujoGasto.Rows(I).Cells("Id").Value
                 oeTipoGastoDetalle.IdTipoGasto = griFlujoGasto.Rows(I).Cells("IdTipoGasto").Value
                 oeTipoGastoDetalle.Activo = True
+                oeTipoGastoDetalle.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeTipoGasto.oeTipoGastoDetalle.Add(oeTipoGastoDetalle)
                 oeTipoGastoDetalle = Nothing
             Next
+            oeTipoGasto.PrefijoID = gs_PrefijoIdSucursal '@0001
             If Not olTipoGasto.Guardar(oeTipoGasto) Then
                 Return False
             End If

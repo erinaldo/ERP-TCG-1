@@ -43,30 +43,30 @@ Public Class d_Trabajador
         Try
             Dim valorSexo As Integer = IIf(IsDBNull(o_fila("Sexo")), 1, o_fila("Sexo"))
             Dim objSexo As New e_Sexo(CType(valorSexo, String))
-            Dim oeTrabajador = New e_Trabajador(0, _
-                                            o_fila("Id"), _
-                                            o_fila("IdArea"), _
-                                            o_fila("Area"), _
-                                            o_fila("IdCargo"), _
-                                            o_fila("Cargo"), _
-                                            o_fila("IdPersona").ToString.Trim, _
-                                            o_fila("Codigo"), _
-                                            o_fila("DNI"), _
-                                            o_fila("ApellidoPaterno"), _
-                                            o_fila("ApellidoMaterno"), _
-                                            o_fila("Nombre"), _
-                                            objSexo, _
-                                            o_fila("FechaNacimiento"), _
-                                            o_fila("FechaIngreso"), _
-                                            o_fila("FechaCese"), _
-                                            o_fila("Activo"), _
-                                             o_fila("IdOcupacion"), _
-                                            o_fila("Ocupacion"), _
-                                            o_fila("Disponible"), _
-                                            IIf(IsDBNull(o_fila("IdEstadoCivil")), "", o_fila("IdEstadoCivil")), _
-                                            IIf(IsDBNull(o_fila("IdGradoInstruccion")), "", o_fila("IdGradoInstruccion")), _
-                                            IIf(IsDBNull(o_fila("IdLugarNacimiento")), "", o_fila("IdLugarNacimiento")), _
-                                            IIf(IsDBNull(o_fila("IdTipoRelacionLaboral")), "", o_fila("IdTipoRelacionLaboral")), _
+            Dim oeTrabajador = New e_Trabajador(0,
+                                            o_fila("Id"),
+                                            o_fila("IdArea"),
+                                            o_fila("Area"),
+                                            o_fila("IdCargo"),
+                                            o_fila("Cargo"),
+                                            o_fila("IdPersona").ToString.Trim,
+                                            o_fila("Codigo"),
+                                            o_fila("DNI"),
+                                            o_fila("ApellidoPaterno"),
+                                            o_fila("ApellidoMaterno"),
+                                            o_fila("Nombre"),
+                                            objSexo,
+                                            o_fila("FechaNacimiento"),
+                                            o_fila("FechaIngreso"),
+                                            o_fila("FechaCese"),
+                                            o_fila("Activo"),
+                                             o_fila("IdOcupacion"),
+                                            o_fila("Ocupacion"),
+                                            o_fila("Disponible"),
+                                            IIf(IsDBNull(o_fila("IdEstadoCivil")), "", o_fila("IdEstadoCivil")),
+                                            IIf(IsDBNull(o_fila("IdGradoInstruccion")), "", o_fila("IdGradoInstruccion")),
+                                            IIf(IsDBNull(o_fila("IdLugarNacimiento")), "", o_fila("IdLugarNacimiento")),
+                                            IIf(IsDBNull(o_fila("IdTipoRelacionLaboral")), "", o_fila("IdTipoRelacionLaboral")),
                                             IIf(IsDBNull(o_fila("RelacionLaboral")), "", o_fila("RelacionLaboral")) _
                                             , o_fila("IndEstado") _
                                             , o_fila("IndHijos") _
@@ -75,6 +75,7 @@ Public Class d_Trabajador
                                             , o_fila("ClaveSeguridad").ToString _
                                             , o_fila("IdCentro").ToString _
                                             , o_fila("IndRuta") _
+                                            , o_fila("Foto")
                                             )
             Return oeTrabajador
         Catch ex As Exception
@@ -259,7 +260,7 @@ Public Class d_Trabajador
                          .Id, .oeArea.Id, _idpadre, .Codigo, .FechaIngreso, .FechaCese,
                          .Activo, .oeCargo.Id, .IdEstadoCivil, .IdGradoInstruccion, .IdLugarNacimiento,
                          .FechaCreacion, .UsuarioCreacion, .ClaveSeguridad, .Disponible, .PrefijoID _
-                         , .IndEstado, .IndHijo, .IndTipo, .IndPiloto)
+                         , .IndEstado, .IndHijo, .IndTipo, .IndPiloto, .Foto) '@0001 foto
                     End With
                     oeTrabajador.Id = id
                     If oeTrabajador.leOcupacionTrabajador IsNot Nothing Then

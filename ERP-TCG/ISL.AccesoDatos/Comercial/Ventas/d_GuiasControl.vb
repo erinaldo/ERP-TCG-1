@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -95,6 +103,7 @@ Public Class d_GuiasControl
                 For Each GuiasControl As e_GuiasTalonarios In oeGuiasControl.GuiasTalanonarios
                     GuiasControl.TipoOperacion = oeGuiasControl.TipoOperacion
                     GuiasControl.IdGuiasControl = stResultado(0)
+                    GuiasControl.PrefijoID = oeGuiasControl.PrefijoID '@0001
                     Guardar(GuiasControl)
                 Next
                 transScope.Complete()

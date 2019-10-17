@@ -2713,9 +2713,11 @@ Public Class l_Asiento
             Dim Id As String = "", lsPrefijo As String = "", lsNumero As Integer = 0
             Id = odMovimientoAnalisis.UltimoIdInserta(oeAsiento.PrefijoID) : lsPrefijo = Left(Id, 3) : lsNumero = CInt(Right(Id, Len(Id) - 3))
             For Each oeAsiMov In oeAsiento.AsientoMovimiento
+                oeAsiMov.PrefijoID = oeAsiento.PrefijoID '@0001
                 If oeAsiMov.MovimientoAnalisis.Count > 0 Then
                     Dim dtMovAna As Data.DataTable = olMovimientoAnalisis.CrearDT
                     For Each oeMovAna In oeAsiMov.MovimientoAnalisis
+                        oeMovAna.PrefijoID = oeAsiento.PrefijoID '@0001
                         Dim rowMovAna As Data.DataRow
                         rowMovAna = dtMovAna.NewRow
                         rowMovAna("Id") = lsPrefijo & olFuncionesGenerales.CompletaConCeros(lsNumero.ToString, 13)
@@ -2740,6 +2742,7 @@ Public Class l_Asiento
                     oeAsiMov.DataTableAnalisis = dtMovAna
                 End If
             Next
+            oeAsientoAnticipo.PrefijoID = oeAsiento.PrefijoID '@0001
             Return odAsiento.GuardarAsientoDscto(oeAsiento, oeAsientoAnticipo)
         Catch ex As Exception
             Throw ex

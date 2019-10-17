@@ -86,6 +86,7 @@ Public Class l_MovimientoCajaBanco
                 lePeriodo.AddRange(olPeriodo.Listar(oePeriodo))
                 oeMovimientoCajaBancoOrigen.IdFlujoCaja = "1CH000000212"
                 oeMovimientoCajaBancoDestino.IdFlujoCaja = "1CH000000211"
+                oeAsiento.PrefijoID = oeMovimientoCajaBancoOrigen.PrefijoID '@0001
                 With oeAsiento
                     .TipoOperacion = "I"
                     .IdPeriodo = lePeriodo(0).Id
@@ -108,6 +109,7 @@ Public Class l_MovimientoCajaBanco
                     .IdEstado = "CUADRADO"
                 End With
                 Dim oeAsientoMovimiento As New e_AsientoMovimiento
+                oeAsientoMovimiento.PrefijoID = oeMovimientoCajaBancoOrigen.PrefijoID '@0001
                 With oeAsientoMovimiento
                     .TipoOperacion = "I"
                     .IdCuentaContable = oeMovimientoCajaBancoDestino._IdCuentaContable
@@ -125,6 +127,7 @@ Public Class l_MovimientoCajaBanco
                 End With
                 oeAsiento.AsientoMovimiento.Add(oeAsientoMovimiento)
                 oeAsientoMovimiento = New e_AsientoMovimiento
+                oeAsientoMovimiento.PrefijoID = oeMovimientoCajaBancoOrigen.PrefijoID '@0001
                 With oeAsientoMovimiento
                     .TipoOperacion = "I"
                     .IdCuentaContable = oeMovimientoCajaBancoOrigen._IdCuentaContable
@@ -196,6 +199,7 @@ Public Class l_MovimientoCajaBanco
             Dim oeAsiento As New e_Asiento, olAsiento As New l_Asiento, oeAsientoMov As New e_AsientoMovimiento, oeMovAnalisis As New e_MovimientoAnalisis
             Dim oePrestamo As New e_Prestamo, odPrestamo As New d_Prestamo, lePrestInserta As New List(Of e_Prestamo)
             Using TransScope As New TransactionScope()
+                oeAsiento.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                 With oeAsiento
                     .TipoOperacion = "I" : .IdPeriodo = oeMovCajaBanco.IdPeriodoCtble : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                     .NroAsiento = String.Empty : .Fecha = oeMovCajaBanco.Fecha : .Glosa = oeAsientoModel.Nombre
@@ -206,14 +210,18 @@ Public Class l_MovimientoCajaBanco
                     .IdEstado = "CUADRADO" : .IdUsuarioCrea = oeMovCajaBanco.UsuarioCreacion : oeAsiento.Activo = True
                 End With
                 For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
+                    oeAux.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     oeAsientoMov = New e_AsientoMovimiento
+                    oeAsientoMov.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     With oeAsientoMov
                         .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable.Trim : .Glosa = oeAsiento.Glosa
                         If oeAux.Partida = 1 Then
                             .DebeMN = oeMovCajaBanco.TotalMN : .DebeME = oeMovCajaBanco.TotalME
                             If lePrestamo.Count > 0 Then
                                 For Each oePresAux In lePrestamo
+                                    oePresAux.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                                     oeMovAnalisis = New e_MovimientoAnalisis
+                                    oeMovAnalisis.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                                     oeMovAnalisis.TipoOperacion = ""
                                     oeMovAnalisis.IdMoneda = oeAsientoModel.IdMoneda
                                     oeMovAnalisis.IdUsuarioCrea = oeMovCajaBanco.UsuarioCreacion
@@ -253,6 +261,7 @@ Public Class l_MovimientoCajaBanco
             Dim oeAsiento As New e_Asiento, olAsiento As New l_Asiento, oeAsientoMov As New e_AsientoMovimiento, oeMovAnalisis As New e_MovimientoAnalisis
             Dim odDscto As New d_Prestamo
             Using TransScope As New TransactionScope()
+                oeAsiento.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                 With oeAsiento
                     .TipoOperacion = "I" : .IdPeriodo = oeMovCajaBanco.IdPeriodoCtble : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                     .NroAsiento = String.Empty : .Fecha = oeMovCajaBanco.Fecha : .Glosa = oeAsientoModel.Nombre & ": " & leAnalisis(0).Trabajador
@@ -262,7 +271,9 @@ Public Class l_MovimientoCajaBanco
                     .IdEstado = "CUADRADO" : .IdUsuarioCrea = oeMovCajaBanco.UsuarioCreacion : oeAsiento.Activo = True
                 End With
                 For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
+                    oeAux.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     oeAsientoMov = New e_AsientoMovimiento
+                    oeAsientoMov.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     With oeAsientoMov
                         .TipoOperacion = "I" : .IdCuentaContable = oeAux.IdCuentaContable.Trim : .Glosa = oeAsiento.Glosa
                         If oeAux.Partida = 1 Then
@@ -274,7 +285,9 @@ Public Class l_MovimientoCajaBanco
                                 .HaberME = IIf(oeAsientoModel.Moneda = "SOLES", (_montoaux / oeAsiento.TipoCambio), _montoaux)
                                 If leAnalisis.Count > 0 Then
                                     For Each oePresAux In leAnalisis.Where(Function(it) it.IndProv = oeAux.Fila).ToList
+                                        oePresAux.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                                         oeMovAnalisis = New e_MovimientoAnalisis
+                                        oeMovAnalisis.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                                         oeMovAnalisis.TipoOperacion = ""
                                         oeMovAnalisis.IdMoneda = oeAsientoModel.IdMoneda
                                         oeMovAnalisis.IdUsuarioCrea = oeAsientoModel.UsuarioCreacion

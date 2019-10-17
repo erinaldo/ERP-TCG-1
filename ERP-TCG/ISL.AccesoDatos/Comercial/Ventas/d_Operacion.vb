@@ -231,6 +231,7 @@ Public Class d_Operacion
                                     oeDespachoOperaciones.TipoOperacion = "I"
                                     oeDespachoOperaciones.IdViaje = stResultado1
                                     oeDespachoOperaciones.UsuarioCrea = Viaje.UsuarioCreacion
+                                    oeDespachoOperaciones.PrefijoID = oeOperacion.PrefijoID '@0001
                                     odDespachoOperaciones.Guardar(oeDespachoOperaciones)
                                 End If
                             End If
@@ -1227,6 +1228,7 @@ Public Class d_Operacion
                     loDespachoOperaciones(0).TipoOperacion = "I"
                     loDespachoOperaciones(0).IdViaje = String.Empty
                     loDespachoOperaciones(0).UsuarioCrea = oeViaje.UsuarioCreacion
+                    loDespachoOperaciones(0).PrefijoID = oeViaje.PrefijoID '@0001
                     odDespachoOperaciones.Guardar(loDespachoOperaciones(0))
                 End If
                 With oeViaje

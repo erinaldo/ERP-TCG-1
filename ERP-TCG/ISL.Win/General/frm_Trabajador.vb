@@ -10,6 +10,10 @@ Imports ISL.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
+Imports System.IO
+Imports System.ComponentModel
+Imports Infragistics.Win.UltraWinEditors
+Imports Infragistics.Win.UltraWinToolTip
 
 Public Class frm_Trabajador
     Inherits ISL.Win.frm_MenuPadre
@@ -41,7 +45,10 @@ Public Class frm_Trabajador
     Private oePlanEPS As New e_PlanesEPS, olPlanEPS As New l_PlanesEPS, lePlanEPS As New List(Of e_PlanesEPS)
     Private olDerechoHabiente As New l_DerechoHabiente, leDerechoHab As New List(Of e_DerechoHabiente), oeDerechoHab As New e_DerechoHabiente
     Private _opeTrab As String = "", _acl As String = "", _estado As String = ""
-
+    Private Fs As FileStream = Nothing
+    Private FotoRuta As String = ""
+    Private FotoInsert As Integer = 0
+    Private FotoTamaño As Integer = 0
 #End Region
 
 #Region "Inicializar formulario"
@@ -1084,6 +1091,14 @@ Public Class frm_Trabajador
                 CargarSeguroComp(.leSeguroComp)
                 leDerechoHab = .leDerechoHabiente
                 CargarDerechoHabiente(leDerechoHab)
+                If .Foto.Length <> 4 Then
+                    upbFoto.Image = .Foto
+                    Dim tc As TypeConverter = TypeDescriptor.GetConverter(GetType(Bitmap))
+                    Dim bitmap As Bitmap = DirectCast(tc.ConvertFrom(.Foto), Bitmap)
+                    Dim imagen As Image = bitmap
+                    imagenGuardar.Image = imagen
+                    btnDescargarJpg.Enabled = True
+                End If
             End With
         Catch ex As Exception
             Throw ex
@@ -1116,6 +1131,15 @@ Public Class frm_Trabajador
                 End If
             End If
             oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
+            If upbFoto.Image IsNot Nothing Then
+                Dim ms As New System.IO.MemoryStream()
+                If ms.Length <> 0 Or FotoInsert = 1 Then
+                    upbFoto.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg)
+                    oeTrabajador.Foto = ms.GetBuffer()
+                Else
+                    oeTrabajador.Foto = upbFoto.Image()
+                End If
+            End If
             If olTrabajador.Guardar(oeTrabajador) Then
                 mensajeEmergente.Confirmacion("El trabajador " & oeTrabajador.oePersona.NombreCompleto & ", ha sido grabado satisfactoriamente", True)
                 If bandForm = "" Then
@@ -2087,6 +2111,70 @@ Public Class frm_Trabajador
         End If
     End Sub
 
+    Private Sub btnExaminar_Click(sender As Object, e As EventArgs) Handles btnExaminar.Click
+        Try
+            FotoInsert = 0
+            FotoRuta = ""
+            FotoTamaño = 0
+            Dim ofd_Imagen As New OpenFileDialog
+            With ofd_Imagen
+                .Filter = "Imágenes JPG (*.jpg)|*.jpg"
+                .FilterIndex = 1
+                .Title = "Abrir imagen ..."
+            End With
+            If ofd_Imagen.ShowDialog = Windows.Forms.DialogResult.OK Then
+                FotoRuta = ofd_Imagen.FileName
+                Fs = New FileStream(ofd_Imagen.FileName, IO.FileMode.Open, IO.FileAccess.Read)
+                upbFoto.Image = System.Drawing.Image.FromStream(Fs)
+                FotoInsert = 1
+            End If
+            ofd_Imagen.Dispose()
+            ofd_Imagen = Nothing
+            If FotoRuta <> "" Then
+                Dim fichero As New FileInfo(FotoRuta)
+                FotoTamaño = fichero.Length
+                If FotoTamaño > 51200 Then
+                    FotoRuta = ""
+                    Fs.Dispose()
+                    upbFoto.Image = Nothing
+                    Throw New Exception("El tamaño del archivo es: " & FormatNumber((FotoTamaño / 1024), 2) & " KB. excede a lo permito de 50 KB.")
+                End If
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
+    Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
+        Try
+            FotoInsert = 0
+            upbFoto.Image = Nothing
+            oeTrabajador.Foto = Nothing
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
+    Private Sub btnDescargarJpg_Click(sender As Object, e As EventArgs) Handles btnDescargarJpg.Click
+        Try
+            If upbFoto.Image IsNot Nothing Then
+                Dim NombreArchivo As String = ""
+                Dim sfd_Dialogo As New System.Windows.Forms.SaveFileDialog
+                sfd_Dialogo.Filter = "Imágenes JPG (*.jpg)|*.jpg"
+                sfd_Dialogo.DefaultExt = "jpg"
+                sfd_Dialogo.FilterIndex = 1
+                sfd_Dialogo.Title = "Guardar imagen ..."
+                sfd_Dialogo.FileName = txtDni.Text.Trim
+                Dim result As DialogResult = sfd_Dialogo.ShowDialog()
+                If result = DialogResult.Cancel Then Return
+                Dim stNombreArchivo As String = sfd_Dialogo.FileName
+                imagenGuardar.Image.Save(stNombreArchivo, System.Drawing.Imaging.ImageFormat.Jpeg)
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
     Private Sub EliminaciónDefinitivaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminaciónDefinitivaToolStripMenuItem.Click
         Try
             _acl = gAccionSistema.ELIMINAR.ToString
@@ -2097,7 +2185,7 @@ Public Class frm_Trabajador
                         oeTrabajador.Id = .ActiveRow.Cells("ID").Value : oeTrabajador.CargaCompleto = True
                         oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                         If oeTrabajador.IndEstado = 2 Then
-                            If MessageBox.Show("Esta seguro en dar de baja el Trabajador: " & oeTrabajador.oePersona.NombreCompleto & " ?", "Mensaje de Sistema", _
+                            If MessageBox.Show("Esta seguro en dar de baja el Trabajador: " & oeTrabajador.oePersona.NombreCompleto & " ?", "Mensaje de Sistema",
                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                                 Dim formulario As frm_AutenticarTrabajador
                                 formulario = New frm_AutenticarTrabajador

@@ -615,6 +615,15 @@ Partial Class frm_Vehiculo
         Dim Appearance173 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance174 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance175 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem32 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem26 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem27 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem28 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem29 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance176 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance177 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance178 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -688,15 +697,6 @@ Partial Class frm_Vehiculo
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem32 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem26 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem27 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem28 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem29 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Me.tapVehiculo = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griLista = New ISL.Controles.Grilla(Me.components)
         Me.MenuContextual1 = New ISL.Controles.MenuContextual(Me.components)
@@ -958,6 +958,10 @@ Partial Class frm_Vehiculo
         Me.UltraTabPageControl11 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraExpandableGroupBox8 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel8 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
+        Me.cboTipoCarroceria = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.Etiqueta35 = New ISL.Controles.Etiqueta(Me.components)
+        Me.cboClasificacionISL = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.Etiqueta37 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboPilotoAsignado = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.Etiqueta77 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboRutaAsignada = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
@@ -1030,10 +1034,6 @@ Partial Class frm_Vehiculo
         Me.tcVehiculo = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.cboTipoCarroceria = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.Etiqueta35 = New ISL.Controles.Etiqueta(Me.components)
-        Me.cboClasificacionISL = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.Etiqueta37 = New ISL.Controles.Etiqueta(Me.components)
         Me.tapVehiculo.SuspendLayout()
         CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuContextual1.SuspendLayout()
@@ -1202,6 +1202,8 @@ Partial Class frm_Vehiculo
         CType(Me.UltraExpandableGroupBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraExpandableGroupBox8.SuspendLayout()
         Me.UltraExpandableGroupBoxPanel8.SuspendLayout()
+        CType(Me.cboTipoCarroceria, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboClasificacionISL, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPilotoAsignado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboRutaAsignada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboModalidad, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1242,8 +1244,6 @@ Partial Class frm_Vehiculo
         CType(Me.Colores4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tcVehiculo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcVehiculo.SuspendLayout()
-        CType(Me.cboTipoCarroceria, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboClasificacionISL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tapVehiculo
@@ -1968,7 +1968,7 @@ Partial Class frm_Vehiculo
         Me.ColorDuplicado.Name = "ColorDuplicado"
         Me.ColorDuplicado.Size = New System.Drawing.Size(43, 22)
         Me.ColorDuplicado.TabIndex = 23
-        Me.ColorDuplicado.Text = "255, 128, 255"
+        Me.ColorDuplicado.Text = "255; 128; 255"
         '
         'ColorPrestada
         '
@@ -1977,7 +1977,7 @@ Partial Class frm_Vehiculo
         Me.ColorPrestada.Name = "ColorPrestada"
         Me.ColorPrestada.Size = New System.Drawing.Size(43, 22)
         Me.ColorPrestada.TabIndex = 22
-        Me.ColorPrestada.Text = "128, 255, 255"
+        Me.ColorPrestada.Text = "128; 255; 255"
         '
         'Etiqueta6
         '
@@ -2008,7 +2008,7 @@ Partial Class frm_Vehiculo
         Me.ColorPerdida.Name = "ColorPerdida"
         Me.ColorPerdida.Size = New System.Drawing.Size(43, 22)
         Me.ColorPerdida.TabIndex = 19
-        Me.ColorPerdida.Text = "255, 192, 128"
+        Me.ColorPerdida.Text = "255; 192; 128"
         '
         'Etiqueta12
         '
@@ -2028,7 +2028,7 @@ Partial Class frm_Vehiculo
         Me.ColorOficina.Name = "ColorOficina"
         Me.ColorOficina.Size = New System.Drawing.Size(43, 22)
         Me.ColorOficina.TabIndex = 18
-        Me.ColorOficina.Text = "192, 192, 0"
+        Me.ColorOficina.Text = "192; 192; 0"
         '
         'Etiqueta19
         '
@@ -2489,7 +2489,7 @@ Partial Class frm_Vehiculo
         Me.OficinaSit.Name = "OficinaSit"
         Me.OficinaSit.Size = New System.Drawing.Size(43, 22)
         Me.OficinaSit.TabIndex = 23
-        Me.OficinaSit.Text = "192, 255, 255"
+        Me.OficinaSit.Text = "192; 255; 255"
         '
         'Etiqueta27
         '
@@ -2509,7 +2509,7 @@ Partial Class frm_Vehiculo
         Me.DuplicadoSit.Name = "DuplicadoSit"
         Me.DuplicadoSit.Size = New System.Drawing.Size(43, 22)
         Me.DuplicadoSit.TabIndex = 21
-        Me.DuplicadoSit.Text = "192, 192, 0"
+        Me.DuplicadoSit.Text = "192; 192; 0"
         '
         'Etiqueta20
         '
@@ -2529,7 +2529,7 @@ Partial Class frm_Vehiculo
         Me.PrestadaSit.Name = "PrestadaSit"
         Me.PrestadaSit.Size = New System.Drawing.Size(43, 22)
         Me.PrestadaSit.TabIndex = 20
-        Me.PrestadaSit.Text = "255, 192, 255"
+        Me.PrestadaSit.Text = "255; 192; 255"
         '
         'Etiqueta24
         '
@@ -2549,7 +2549,7 @@ Partial Class frm_Vehiculo
         Me.PerdidaSit.Name = "PerdidaSit"
         Me.PerdidaSit.Size = New System.Drawing.Size(43, 22)
         Me.PerdidaSit.TabIndex = 17
-        Me.PerdidaSit.Text = "192, 192, 255"
+        Me.PerdidaSit.Text = "192; 192; 255"
         '
         'Etiqueta25
         '
@@ -4396,7 +4396,7 @@ Partial Class frm_Vehiculo
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox6)
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox2)
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox1)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(986, 243)
         '
@@ -4408,11 +4408,12 @@ Partial Class frm_Vehiculo
         Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance133
         Me.UltraExpandableGroupBox6.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
         Me.UltraExpandableGroupBox6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBox6.Expanded = False
         Me.UltraExpandableGroupBox6.ExpandedSize = New System.Drawing.Size(308, 243)
         Me.UltraExpandableGroupBox6.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox6.Location = New System.Drawing.Point(678, 0)
         Me.UltraExpandableGroupBox6.Name = "UltraExpandableGroupBox6"
-        Me.UltraExpandableGroupBox6.Size = New System.Drawing.Size(308, 243)
+        Me.UltraExpandableGroupBox6.Size = New System.Drawing.Size(28, 243)
         Me.UltraExpandableGroupBox6.TabIndex = 2
         Me.UltraExpandableGroupBox6.TabStop = False
         Me.UltraExpandableGroupBox6.Text = "Imagen Unidad"
@@ -4421,11 +4422,11 @@ Partial Class frm_Vehiculo
         'UltraExpandableGroupBoxPanel6
         '
         Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.upbFoto)
-        Me.UltraExpandableGroupBoxPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(20, 3)
+        Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
         Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(285, 237)
         Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel6.Visible = False
         '
         'upbFoto
         '
@@ -5382,7 +5383,7 @@ Partial Class frm_Vehiculo
         'UltraTabPageControl11
         '
         Me.UltraTabPageControl11.Controls.Add(Me.UltraExpandableGroupBox8)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(986, 243)
         '
@@ -5464,6 +5465,64 @@ Partial Class frm_Vehiculo
         Me.UltraExpandableGroupBoxPanel8.Name = "UltraExpandableGroupBoxPanel8"
         Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(980, 237)
         Me.UltraExpandableGroupBoxPanel8.TabIndex = 0
+        '
+        'cboTipoCarroceria
+        '
+        Me.cboTipoCarroceria.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        ValueListItem7.DataValue = "ValueListItem0"
+        ValueListItem7.DisplayText = "LIMA"
+        ValueListItem8.DataValue = "ValueListItem1"
+        ValueListItem8.DisplayText = "NACIONAL"
+        ValueListItem9.DataValue = "ValueListItem2"
+        ValueListItem9.DisplayText = "PACASMAYO"
+        ValueListItem10.DataValue = "ValueListItem3"
+        ValueListItem10.DisplayText = "PIURA"
+        ValueListItem32.DataValue = "ValueListItem4"
+        ValueListItem32.DisplayText = "TRUJILLO"
+        Me.cboTipoCarroceria.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem32})
+        Me.cboTipoCarroceria.Location = New System.Drawing.Point(338, 194)
+        Me.cboTipoCarroceria.Name = "cboTipoCarroceria"
+        Me.cboTipoCarroceria.Size = New System.Drawing.Size(150, 22)
+        Me.cboTipoCarroceria.TabIndex = 53
+        '
+        'Etiqueta35
+        '
+        Me.Etiqueta35.AutoSize = True
+        Me.Etiqueta35.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta35.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta35.Location = New System.Drawing.Point(251, 198)
+        Me.Etiqueta35.Name = "Etiqueta35"
+        Me.Etiqueta35.Size = New System.Drawing.Size(84, 15)
+        Me.Etiqueta35.TabIndex = 54
+        Me.Etiqueta35.Text = "Tipo Carroceria:"
+        '
+        'cboClasificacionISL
+        '
+        Me.cboClasificacionISL.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        ValueListItem26.DataValue = "ValueListItem0"
+        ValueListItem26.DisplayText = "ACTIVO PROPIO"
+        ValueListItem27.DataValue = "ValueListItem1"
+        ValueListItem27.DisplayText = "CESION CPSA"
+        ValueListItem28.DataValue = "ValueListItem2"
+        ValueListItem28.DisplayText = "LEASING"
+        ValueListItem29.DataValue = "ValueListItem3"
+        ValueListItem29.DisplayText = "TRACUSAPE"
+        Me.cboClasificacionISL.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem26, ValueListItem27, ValueListItem28, ValueListItem29})
+        Me.cboClasificacionISL.Location = New System.Drawing.Point(88, 194)
+        Me.cboClasificacionISL.Name = "cboClasificacionISL"
+        Me.cboClasificacionISL.Size = New System.Drawing.Size(150, 22)
+        Me.cboClasificacionISL.TabIndex = 51
+        '
+        'Etiqueta37
+        '
+        Me.Etiqueta37.AutoSize = True
+        Me.Etiqueta37.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta37.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta37.Location = New System.Drawing.Point(30, 197)
+        Me.Etiqueta37.Name = "Etiqueta37"
+        Me.Etiqueta37.Size = New System.Drawing.Size(55, 15)
+        Me.Etiqueta37.TabIndex = 52
+        Me.Etiqueta37.Text = "Clasf. ISL:"
         '
         'cboPilotoAsignado
         '
@@ -6445,64 +6504,6 @@ Partial Class frm_Vehiculo
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
-        'cboTipoCarroceria
-        '
-        Me.cboTipoCarroceria.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem7.DataValue = "ValueListItem0"
-        ValueListItem7.DisplayText = "LIMA"
-        ValueListItem8.DataValue = "ValueListItem1"
-        ValueListItem8.DisplayText = "NACIONAL"
-        ValueListItem9.DataValue = "ValueListItem2"
-        ValueListItem9.DisplayText = "PACASMAYO"
-        ValueListItem10.DataValue = "ValueListItem3"
-        ValueListItem10.DisplayText = "PIURA"
-        ValueListItem32.DataValue = "ValueListItem4"
-        ValueListItem32.DisplayText = "TRUJILLO"
-        Me.cboTipoCarroceria.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem32})
-        Me.cboTipoCarroceria.Location = New System.Drawing.Point(338, 194)
-        Me.cboTipoCarroceria.Name = "cboTipoCarroceria"
-        Me.cboTipoCarroceria.Size = New System.Drawing.Size(150, 22)
-        Me.cboTipoCarroceria.TabIndex = 53
-        '
-        'Etiqueta35
-        '
-        Me.Etiqueta35.AutoSize = True
-        Me.Etiqueta35.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta35.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta35.Location = New System.Drawing.Point(251, 198)
-        Me.Etiqueta35.Name = "Etiqueta35"
-        Me.Etiqueta35.Size = New System.Drawing.Size(84, 15)
-        Me.Etiqueta35.TabIndex = 54
-        Me.Etiqueta35.Text = "Tipo Carroceria:"
-        '
-        'cboClasificacionISL
-        '
-        Me.cboClasificacionISL.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem26.DataValue = "ValueListItem0"
-        ValueListItem26.DisplayText = "ACTIVO PROPIO"
-        ValueListItem27.DataValue = "ValueListItem1"
-        ValueListItem27.DisplayText = "CESION CPSA"
-        ValueListItem28.DataValue = "ValueListItem2"
-        ValueListItem28.DisplayText = "LEASING"
-        ValueListItem29.DataValue = "ValueListItem3"
-        ValueListItem29.DisplayText = "TRACUSAPE"
-        Me.cboClasificacionISL.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem26, ValueListItem27, ValueListItem28, ValueListItem29})
-        Me.cboClasificacionISL.Location = New System.Drawing.Point(88, 194)
-        Me.cboClasificacionISL.Name = "cboClasificacionISL"
-        Me.cboClasificacionISL.Size = New System.Drawing.Size(150, 22)
-        Me.cboClasificacionISL.TabIndex = 51
-        '
-        'Etiqueta37
-        '
-        Me.Etiqueta37.AutoSize = True
-        Me.Etiqueta37.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta37.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta37.Location = New System.Drawing.Point(30, 197)
-        Me.Etiqueta37.Name = "Etiqueta37"
-        Me.Etiqueta37.Size = New System.Drawing.Size(55, 15)
-        Me.Etiqueta37.TabIndex = 52
-        Me.Etiqueta37.Text = "Clasf. ISL:"
-        '
         'frm_Vehiculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6711,6 +6712,8 @@ Partial Class frm_Vehiculo
         Me.UltraExpandableGroupBox8.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel8.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel8.PerformLayout()
+        CType(Me.cboTipoCarroceria, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboClasificacionISL, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPilotoAsignado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboRutaAsignada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboModalidad, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6751,8 +6754,6 @@ Partial Class frm_Vehiculo
         CType(Me.Colores4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tcVehiculo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tcVehiculo.ResumeLayout(False)
-        CType(Me.cboTipoCarroceria, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboClasificacionISL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

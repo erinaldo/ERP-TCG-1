@@ -155,6 +155,7 @@ Public Class d_Requerimiento
                             odOrden.Guardar(.oeOrdenSalida) 'Generacion y ejecución de la orden de salida.
                             If Not String.IsNullOrEmpty(.IdReferencia.Trim) Then
                                 For Each filaMat As e_OrdenMaterial In .oeOrdenSalida.lstOrdenMaterial
+                                    filaMat.PrefijoID = oeRequerimiento.PrefijoID '@0001
                                     If .TipoReferencia.Equals("ORDEN ASIGNACION") Then
                                         oeOAMat.TipoOperacion = "U"
                                         oeOAMat.Activo = True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -93,6 +101,7 @@ Public Class d_MovimientoMermas
                         If .IndIngresoSalida = 1 Then
                             If .TipoPago = 1 Or .TipoPago = 2 Then
                                 oeSancion = New e_Sancion
+                                oeSancion.PrefijoID = oeMovimientoMermas.PrefijoID '@0001
                                 If .IdSancion = "" Then
                                     oeSancion.TipoOperacion = "I"
                                 Else
@@ -148,6 +157,7 @@ Public Class d_MovimientoMermas
                         For Each oeControlMerma As e_ControlMerma In .ListaControlMermas
                             oeControlMerma.TipoOperacion = "I"
                             oeControlMerma.IdMovimientoMermas = stResultado(0)
+                            oeControlMerma.PrefijoID = oeMovimientoMermas.PrefijoID '@0001
                             odControlMermas.Guardar(oeControlMerma)
                         Next
                     End If

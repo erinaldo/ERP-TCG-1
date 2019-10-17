@@ -11,7 +11,7 @@ Imports System.Transactions
 
 Public Class d_Despacho
     Private bd As New SqlHelper
-    Private odDespachoOperacion As d_DespachoOperaciones
+    Private odDespachoOperacion As New d_DespachoOperaciones
 
     Private Function Cargar(Fila As DataRow) As e_Despacho
         Try
@@ -122,6 +122,7 @@ Public Class d_Despacho
                         ).ToString()
                     .Id = IdResultado
                     For Each DespachoOperaciones As e_DespachoOperaciones In .ListDespachoOperaciones
+                        DespachoOperaciones.PrefijoID = oeDespacho.PrefijoID '@0001
                         With oeDespacho
                             If DespachoOperaciones.TipoOperacion = "E" Then
                                 DespachoOperaciones.UsuarioCrea = .UsuarioCrea
@@ -146,7 +147,6 @@ Public Class d_Despacho
     Public Function Eliminar(oeDespacho As e_Despacho) As Boolean
         Try
             Using transScope As New TransactionScope()
-                bd = New SqlHelper
                 Dim oeDespachoOperaciones As New e_DespachoOperaciones
                 oeDespachoOperaciones.IdDespacho = oeDespacho.Id
                 Dim loDespachoOperacion As List(Of e_DespachoOperaciones)

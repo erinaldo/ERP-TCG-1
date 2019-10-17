@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -83,6 +91,7 @@ Public Class d_Liquidaciones
                 '' Para tottus liquidaciones
                 If oeLiquidaciones.IndFormato = 100 Then
                     Dim LiquidacionTottus As New e_Liquidaciones
+                    LiquidacionTottus.PrefijoID = oeLiquidaciones.PrefijoID '@0001
                     Dim ClaseServicio As String
 
                     Dim SubClaseServicio = (From Detalle In oeLiquidaciones.ListaLiquidacionDetalle
@@ -90,10 +99,12 @@ Public Class d_Liquidaciones
 
                     For Each SubClase In SubClaseServicio
                         LiquidacionTottus = New e_Liquidaciones
+                        LiquidacionTottus.PrefijoID = oeLiquidaciones.PrefijoID '@0001
                         ClaseServicio = SubClase
                         For Each DetalleTottus As e_LiquidacionDetalle In oeLiquidaciones.ListaLiquidacionDetalle.Where(Function(Item) Item.Consolidado3 = ClaseServicio)
                             DetalleTottus.Id = ""
                             DetalleTottus.IdLiquidacion = ""
+                            DetalleTottus.PrefijoID = oeLiquidaciones.PrefijoID '@0001
                             LiquidacionTottus.ListaLiquidacionDetalle.Add(DetalleTottus)
                         Next
                         LiquidacionTottus.TipoOperacion = "I"
@@ -126,6 +137,7 @@ Public Class d_Liquidaciones
                             LiquidacionDetalle.TipoOperacion = "I"
                             LiquidacionDetalle.IndFormato = LiquidacionTottus.IndFormato
                             LiquidacionDetalle.IdLiquidacion = stResultado(0)
+                            LiquidacionDetalle.PrefijoID = oeLiquidaciones.PrefijoID '@0001
                             GuardarLiquidacionDetalle(LiquidacionDetalle)
                         Next
                     Next
@@ -168,6 +180,7 @@ Public Class d_Liquidaciones
                         LiquidacionDetalle.TipoOperacion = "I"
                         LiquidacionDetalle.IndFormato = oeLiquidaciones.IndFormato
                         LiquidacionDetalle.IdLiquidacion = stResultado(0)
+                        LiquidacionDetalle.PrefijoID = oeLiquidaciones.PrefijoID '@0001
                         GuardarLiquidacionDetalle(LiquidacionDetalle)
                     Next
                 End If

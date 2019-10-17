@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -83,12 +91,14 @@ Public Class d_Cotizacion_Proveedor
 
                 For Each Detalle As e_CotizacionDetalleMat In .lstCotizacionDetalleMat
                     Detalle.IdCotizacionProveedor = stResultado(0) : Detalle.TipoOperacion = .Tipooperacion
+                    Detalle.PrefijoID = oe.PrefijoID '@0001
                     odCotizacionDetalleMar.Guardar(Detalle)
                 Next
 
                 For Each detalleser As e_CotizacionDetalleSer In .lstCotizacionDetalleSer
                     detalleser.IdCotizacionProveedor = stResultado(0)
                     If detalleser.TipoOperacion = "" Then detalleser.TipoOperacion = .Tipooperacion
+                    detalleser.PrefijoID = oe.PrefijoID '@0001
                     odCotizacionDetalleSer.Guardar(detalleser)
                 Next
             End With
