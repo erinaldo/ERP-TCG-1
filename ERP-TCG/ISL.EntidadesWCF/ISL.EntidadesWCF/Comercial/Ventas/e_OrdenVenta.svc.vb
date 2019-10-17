@@ -378,7 +378,6 @@ Public Class e_OrdenVenta
               , ByVal ld_Fecha As Date _
               , ByVal ls_OrdenComercial As String _
               , ByVal ls_Glosa As String _
-              , ByVal ln_Tipo As Integer _
               , ByVal ln_TipoExistencia As Integer _
               , ByVal ln_TipoCompra As Integer _
               , ByVal ls_TipoCompra As String _
@@ -409,7 +408,6 @@ Public Class e_OrdenVenta
         _fecha = ld_Fecha
         _ordencomercial = ls_OrdenComercial
         _glosa = ls_Glosa
-        _tipo = ln_Tipo
         _tipoexistencia = ln_TipoExistencia
         _tipocompra = ln_TipoCompra
         _nombretipocompra = ls_TipoCompra
