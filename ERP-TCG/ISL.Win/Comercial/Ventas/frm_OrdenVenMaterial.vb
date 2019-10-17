@@ -1354,7 +1354,7 @@ Public Class frm_OrdenVenMaterial
                 'Else : .IdCompraVenta = "V" 'Venta    
                 'End If
                 .Material = txtMaterial.Text
-                loAlmMaterial = olAlmMaterial.Listar(oeAlmMaterial)
+                'loAlmMaterial = olAlmMaterial.Listar(oeAlmMaterial)
                 griAlmacenMaterial.DataSource = loAlmMaterial
             End With
         Catch ex As Exception
