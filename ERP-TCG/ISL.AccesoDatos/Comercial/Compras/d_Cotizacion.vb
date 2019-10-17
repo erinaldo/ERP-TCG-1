@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 ''' <summary>
@@ -8,7 +16,7 @@ Imports System.Transactions
 ''' <remarks>Las cotizaciones se realizan a los diferentes proveedores,Capa del Sistema:Capa de Acceso a Datos</remarks>
 Public Class d_Cotizacion
 
-    Private oeCotizacion As e_Cotizacion
+    Private oeCotizacion As New e_Cotizacion
     Private sqlhelper As New SqlHelper
     Dim odCotizacionDetalle As New d_CotizacionDetalleMat
     Dim odCotizacionDetalleSer As New d_CotizacionDetalleSer
@@ -111,6 +119,7 @@ Public Class d_Cotizacion
                             , .Importe).ToString.Split()
                     For Each Detalle As e_Cotizacion_Proveedor In .lstCotizacionProveedor
                         Detalle.IdCotizacion = stResultado(0) : Detalle.Tipooperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeCotizacion.PrefijoID '@0001
                         odCotizacionProveedor.Guardar(Detalle)
                     Next
                     resultado = True

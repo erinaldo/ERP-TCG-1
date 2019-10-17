@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_OrdenCompra
@@ -164,28 +172,33 @@ Public Class d_OrdenCompra
                         Detalle.IdOrden = stResultado(0)
                         If Detalle.TipoOperacion <> "I" Then Detalle.TipoOperacion = .TipoOperacion
                         If Detalle.CantidadMaterialAAtender > 0 Then : Detalle.CantidadMaterialPendiente = Detalle.CantidadMaterialPendiente - Detalle.CantidadMaterialAAtender : End If
+                        Detalle.PrefijoID = oeOrden.PrefijoID '@0001
                         odDetalleOrdenMaterial.Guardar(Detalle)
                     Next
                     If Not .lstOrdenServicio Is Nothing Then
                         For Each Detalle As e_OrdenCompraServicio In .lstOrdenServicio
                             Detalle.IdOrden = stResultado(0)
                             Detalle.TipoOperacion = .TipoOperacion
+                            Detalle.PrefijoID = oeOrden.PrefijoID '@0001
                             odDetalleOrdenServicio.Guardar(Detalle)
                         Next
                     End If
                     If .oeOrdCmpCot.IdCotizacion <> "" Then
                         .oeOrdCmpCot.IdOrdenCompra = .Id
                         .oeOrdCmpCot.TipoOperacion = .TipoOperacion
+                        .oeOrdCmpCot.PrefijoID = oeOrden.PrefijoID '@0001
                         odOrdenCmpCot.Guardar(.oeOrdCmpCot)
                     End If
                     If .oeOrdenTrabajo.TipoOperacion = "I" Then
                         .oeOrdenTrabajo.oeOCOT.IdOrdenCompra = .Id
+                        .oeOrdenTrabajo.PrefijoID = oeOrden.PrefijoID '@0001
                         odOrdenTrabajo.Guardar(.oeOrdenTrabajo)
                     End If
                     If .TipoOperacion = "1" Or .TipoOperacion = "A" Or .TipoOperacion = "I" Then
                         If .OrdenAprobacion.IdTrabajador <> "" Then
                             If .OrdenAprobacion.TipoOperacion <> "I" Then .OrdenAprobacion.TipoOperacion = IIf(.TipoOperacion = "1", "I", "A")
                             .OrdenAprobacion.IdOrden = stResultado(0)
+                            .OrdenAprobacion.PrefijoID = oeOrden.PrefijoID '@0001
                             odOrdenAprobacion.Guardar(.OrdenAprobacion)
                         End If               
                     End If

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que indica los tipos de pago al realizar una compra que se requieren por ejemplo: contado,credito,etc.  
 ''' Fecha Actualizada:31/10/2011.
@@ -7,7 +15,7 @@
 
 Public Class d_TipoPago
 
-    Private oetipoPago As e_TipoPago
+    Private oetipoPago As New e_TipoPago
     Private sqlhelper As New SqlHelper
 
     ''' <summary>

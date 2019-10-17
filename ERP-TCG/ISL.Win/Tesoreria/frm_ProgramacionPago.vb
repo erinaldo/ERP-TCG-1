@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -846,6 +854,7 @@ Public Class frm_ProgramacionPago
         oe_ProgramacionPago.lst_MovimientoDocumento = lst_MovimientoDocumento
         oe_ProgramacionPago.TipoOperacion = "A"
         ol_ProgramacionPago = New I_ProgramacionPago
+        oe_ProgramacionPago.PrefijoID = gs_PrefijoIdSucursal '@0001
         If ol_ProgramacionPago.Guardar(oe_ProgramacionPago) Then
             mensajeEmergente.Confirmacion("Se Efectuó la Anulación de Cuentas Programados para Pagar.", True)
             gmt_MostrarDetallesProgramacion()
@@ -879,6 +888,7 @@ Public Class frm_ProgramacionPago
                     oe_ProgramacionPago.Retencion = 0.0
                     oe_ProgramacionPago.TipoOperacion = "E"
                     ol_ProgramacionPago = New I_ProgramacionPago
+                    oe_ProgramacionPago.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If ol_ProgramacionPago.Guardar(oe_ProgramacionPago) Then
                         mensajeEmergente.Confirmacion("Se Efectuó la Anulación de Cuentas Programados para Pagar.", True)
                         gmt_MostrarDetallesProgramacion()
@@ -963,9 +973,10 @@ Public Class frm_ProgramacionPago
                         oe_DetalleProgramacionPago.MontoPago = fila.Cells("MontoPago").Value
                         oe_DetalleProgramacionPago.FechaPago = fecPago.Value
                         ol_DetalleProgramacionPago = New I_DetalleProgramacionPago
+                        oe_DetalleProgramacionPago.PrefijoID = gs_PrefijoIdSucursal '@0001
                         ol_DetalleProgramacionPago.Guardar(oe_DetalleProgramacionPago)
                     Next
-
+                    oeMovCajaBanco.PrefijoID = gs_PrefijoIdSucursal '@0001
                     With oeMovCajaBanco
                         .IdFlujoCaja = cboFlujoCaja.Value
                         .NroBoucher = txtOperaciones.Text
@@ -991,7 +1002,10 @@ Public Class frm_ProgramacionPago
                     oe_ProgramacionPago.MontoPago = monto_total
                     oe_ProgramacionPago.IdUsuario = gUsuarioSGI.IdTrabajador
                     ol_ProgramacionPago = New I_ProgramacionPago
+                    oe_ProgramacionPago.PrefijoID = gs_PrefijoIdSucursal '@0001
                     ol_ProgramacionPago.Guardar(oe_ProgramacionPago)
+                    oeMedioPago.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    oeCtaCble.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olAsiento.GuardarPago(listaMovDoc, oeMovCajaBanco, oeMedioPago, gUsuarioSGI.Id, MacPCLocal, oeCtaCble, "PAG")
                     TS.Complete()
                     Return True

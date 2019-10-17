@@ -436,7 +436,6 @@ Public Class d_Seguimiento
 
     Public Function GuardarImportar(ByVal listaViaje As List(Of e_Viaje)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 For Each viaje In listaViaje
                     sqlhelper.ExecuteNonQuery("[OPE].[Isp_Seguimiento_IAE]" _

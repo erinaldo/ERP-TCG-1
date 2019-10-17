@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 ''' <summary>
 ''' Clase que gestiona los diferentes tipos de gastos que se presentan en tesoreria.  
@@ -163,8 +171,6 @@ Public Class d_TipoGasto
     '''  tipo de gasto es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeTipoGasto As e_TipoGasto) As Boolean
         Dim stResultado() As String
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
         Try
             Using transScope As New TransactionScope()
                 With oeTipoGasto
@@ -181,6 +187,7 @@ Public Class d_TipoGasto
                 End With
                 For Each Detalle As e_TipoGastoDetalle In oeTipoGasto.oeTipoGastoDetalle
                     Detalle.IdTipoGasto = stResultado(0)
+                    Detalle.PrefijoID = oeTipoGasto.PrefijoID '@0001
                     GuardarDetalle(Detalle)
                 Next
                 transScope.Complete()
@@ -202,14 +209,12 @@ Public Class d_TipoGasto
     ''' detalle tipo de gasto es positiva= true, si hay una excepcion el valor sera false,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function GuardarDetalle(ByVal oeTipoGastoDetalle As e_TipoGastoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oeTipoGastoDetalle
-                sqlhelper.ExecuteNonQuery("TES.Isp_TipoGastoDetalle_IAE", "I", _
-                                          .Id, _
-                                          .IdTipoGasto, _
-                                          .IdFlujoCaja, _
-                                          .Activo, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_TipoGastoDetalle_IAE", "I",
+                                          .Id,
+                                          .IdTipoGasto,
+                                          .IdFlujoCaja,
+                                          .Activo,
                                           .PrefijoID)
             End With
             Return True

@@ -1,9 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_CotizacionDetalleMat
     Private sqlhelper As New SqlHelper
 
-    Private oeCotizacionDetalle As e_CotizacionDetalleMat
+    Private oeCotizacionDetalle As New e_CotizacionDetalleMat
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_CotizacionDetalleMat
         Try

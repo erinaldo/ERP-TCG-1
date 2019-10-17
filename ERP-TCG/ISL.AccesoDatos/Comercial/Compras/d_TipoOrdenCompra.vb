@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 ''' <summary>
 ''' Clase que indica los tipos de orden compra que se requieren por ejemplo: orden de compra normal,
 ''' orden de compra por consignacion,etc.  
@@ -11,7 +19,7 @@ Public Class d_TipoOrdenCompra
 
     Private sqlhelper As New SqlHelper
 
-    Private oetipoOrdenCompra As e_TipoOrdenCompra
+    Private oetipoOrdenCompra As New e_TipoOrdenCompra
 
     ''' <summary>
     ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow

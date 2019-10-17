@@ -1,4 +1,11 @@
-﻿' NOTA: si cambia aquí el nombre de clase "l_PrestamosCuenta", también debe actualizar la referencia a "l_PrestamosCuenta" tanto en Web.config como en el archivo .svc asociado.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
@@ -27,7 +34,9 @@ Public Class l_PrestamosCuenta
                 If odPrestamosCuenta.Guardar(oePrestamosCuenta) Then
                     If oePrestamosCuenta.loAsientoModelo.Count > 0 Then
                         For Each asimod As e_AsientoModelo In oePrestamosCuenta.loAsientoModelo
+                            asimod.PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                             oeAsiento = New e_Asiento
+                            oeAsiento.PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                             With oeAsiento
                                 .TipoOperacion = "I" : .IdTipoAsiento = asimod.IdTipoAsiento : .NroAsiento = String.Empty : .GlosaImprime = String.Empty
                                 If oePrestamosCuenta.IndIngEgr = "I" Then
@@ -40,8 +49,10 @@ Public Class l_PrestamosCuenta
                                 .IdUsuarioCrea = oePrestamosCuenta.UsuarioCreacion : .IdPeriodo = oePrestamosCuenta.oePeriodo.Id
                             End With
                             For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle
+                                asidet.PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                                 If asidet.Partida = "1" Then
                                     oeAsientoMovimiento = New e_AsientoMovimiento
+                                    oeAsientoMovimiento.PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                                     With oeAsientoMovimiento
                                         .TipoOperacion = "I"
                                         .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -67,6 +78,7 @@ Public Class l_PrestamosCuenta
                                                 .TotalMN = oePrestamosCuenta.Importe
                                                 .TotalME = Math.Round(oePrestamosCuenta.Importe / oeAsiento.TipoCambio, 2)
                                                 ._Operador = 1
+                                                .PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                                             End With
                                         End If
 
@@ -74,6 +86,7 @@ Public Class l_PrestamosCuenta
                                     End With
                                 Else
                                     oeAsientoMovimiento = New e_AsientoMovimiento
+                                    oeAsientoMovimiento.PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                                     With oeAsientoMovimiento
                                         .TipoOperacion = "I"
                                         .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -100,6 +113,7 @@ Public Class l_PrestamosCuenta
                                                 .TotalMN = oePrestamosCuenta.Importe
                                                 .TotalME = Math.Round(oePrestamosCuenta.Importe / oeAsiento.TipoCambio, 2)
                                                 ._Operador = -1
+                                                .PrefijoID = oePrestamosCuenta.PrefijoID '@0001
                                             End With
                                         End If
                                         If .HaberMN > 0 Then loAsientoMovimiento.Add(oeAsientoMovimiento)

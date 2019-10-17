@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports ISL.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
@@ -58,7 +66,9 @@ Public Class l_OtrosIngresos
                     If odOtrosIngresos.Guardar(oeOtrosIngresos) Then
                         If oeOtrosIngresos.loAsientoModelo.Count > 0 Then
                             For Each asimod As e_AsientoModelo In oeOtrosIngresos.loAsientoModelo
+                                asimod.PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                 oeAsiento = New e_Asiento
+                                oeAsiento.PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                 With oeAsiento
                                     .TipoOperacion = "I" : .IdTipoAsiento = asimod.IdTipoAsiento : .NroAsiento = String.Empty : .GlosaImprime = String.Empty
                                     .Glosa = asimod.Nombre & " " & oeOtrosIngresos.Glosa
@@ -67,8 +77,10 @@ Public Class l_OtrosIngresos
                                     .IdUsuarioCrea = oeOtrosIngresos.UsuarioCreacion : .IdPeriodo = oeOtrosIngresos.IdPeriodo
                                 End With
                                 For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle
+                                    asidet.PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                     If asidet.Partida = "1" Then
                                         oeAsientoMovimiento = New e_AsientoMovimiento
+                                        oeAsientoMovimiento.PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                         With oeAsientoMovimiento
                                             .TipoOperacion = "I"
                                             .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -89,12 +101,14 @@ Public Class l_OtrosIngresos
                                                     .TotalMN = oeOtrosIngresos.Importe
                                                     .TotalME = Math.Round(oeOtrosIngresos.Importe / oeAsiento.TipoCambio, 2)
                                                     ._Operador = 1
+                                                    .PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                                 End With
                                             End If
                                             If .DebeMN > 0 Then loAsientoMovimiento.Add(oeAsientoMovimiento)
-                                        End With                             
+                                        End With
                                     Else
                                         oeAsientoMovimiento = New e_AsientoMovimiento
+                                        oeAsientoMovimiento.PrefijoID = oeOtrosIngresos.PrefijoID '@0001
                                         With oeAsientoMovimiento
                                             .TipoOperacion = "I"
                                             .IdUsuarioCrea = oeAsiento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila

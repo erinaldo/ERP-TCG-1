@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -86,8 +94,10 @@ Public Class d_InformeDetrac
 
                     For Each oeInformeDet As e_InformeDetrac_Det In .leInformeDetrac
                         oeInformeDet.IdInformeDetrac = stResultado(0)
+                        oeInformeDet.PrefijoID = oeInformeDetrac.PrefijoID '@0001
                         odInformeDet.Guardar(oeInformeDet)
                         oeDetracDet = New e_Detraccion_Det
+                        oeDetracDet.PrefijoID = oeInformeDetrac.PrefijoID '@0001
                         oeDetracDet.IdVenta = oeInformeDet.IdVenta
                         oeDetracDet.Monto = oeInformeDet.Monto
                         oeDetracDet.UsuarioCreacion = oeInformeDet.UsuarioCreacion

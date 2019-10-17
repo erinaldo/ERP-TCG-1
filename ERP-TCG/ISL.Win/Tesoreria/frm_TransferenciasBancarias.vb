@@ -1,4 +1,12 @@
-﻿Imports ISL.LogicaWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.LogicaWCF
 Imports ISL.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -203,6 +211,9 @@ Public Class frm_TransferenciasBancarias
             If Validar() Then
                 Select Case cboTipoMovimiento.SelectedIndex
                     Case 0 'Cuenta a Cuenta
+                        oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeMovimientosBancariosDestino.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olMovimientosBancarios.GuardarTranferencia(oeMovimientosBancariosOrigen, _
                oeMovimientosBancariosDestino, oeAsiento, chkReposicionCajaChica.Checked) Then
                             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
@@ -236,6 +247,8 @@ Public Class frm_TransferenciasBancarias
                             .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
                             .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
                         End With
+                        oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olMovimientosBancarios.GuardarTransBancaria(oeMovimientosBancariosOrigen, oeAsientoModel, lePresAnalisis, chkDsctoPlanilla.Checked) Then
                             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                             MostrarTabs(0, tcTransferenciaBancaria, 2)
@@ -265,6 +278,8 @@ Public Class frm_TransferenciasBancarias
                             .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
                             .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
                         End With
+                        oeMovimientosBancariosDestino.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
                         If olMovimientosBancarios.GuardarTransBancaria2(oeMovimientosBancariosDestino, oeAsientoModel, lePresAnalisis, leDsctoGrab, leCuotaGrab) Then
                             mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
                             MostrarTabs(0, tcTransferenciaBancaria, 2)
@@ -678,6 +693,7 @@ Public Class frm_TransferenciasBancarias
             _FecCuota = DateAdd(DateInterval.Month, mescuota, Date.Parse("01/" & fechaServidor.Month & "/" & fechaServidor.Year))
             oePrestamo.leDetalle = GenerarCuotas(oePrestamo.Monto, _FecCuota, oePrestamo.CantidadCuotas)
             ''''''''''''''
+            oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
             lePresAnalisis.Add(oePrestamo)
         Catch ex As Exception
             Throw ex
@@ -689,8 +705,9 @@ Public Class frm_TransferenciasBancarias
             Dim leAnaRet As New List(Of e_Prestamo)
             If leCPAux.Count > 0 Then
                 For Each oeCPAux In leCuotaGrab
-                    oeCPAux.Glosa = cboMedioPago.Text & ", Periodo: " & FormatoDocumento(fecTransf.Value.Month, 2) & "/" & _
-                FormatoDocumento(fecTransf.Value.Year, 4) & ", Monto: " & DecImporte.Value & " " & cboMoneda.Text & _
+                    oeCPAux.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    oeCPAux.Glosa = cboMedioPago.Text & ", Periodo: " & FormatoDocumento(fecTransf.Value.Month, 2) & "/" &
+                FormatoDocumento(fecTransf.Value.Year, 4) & ", Monto: " & DecImporte.Value & " " & cboMoneda.Text &
                     " EN " & IdBanco & " OP:" & txtCheque.Text
                 Next
                 Dim _leCA = leCPAux.Where(Function(it) it.IndProv = "A").ToList
@@ -698,6 +715,7 @@ Public Class frm_TransferenciasBancarias
                     oePrestamo = New e_Prestamo
                     oePrestamo.IndProv = "A" : oePrestamo.IdTrabajador = cboTrabajadorOrigen.Value : oePrestamo.Trabajador = cboTrabajadorOrigen.Text
                     oePrestamo.Monto = _leCA.Sum(Function(it) it.Importe)
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leAnaRet.Add(oePrestamo)
                 End If
                 Dim _leCB = leCPAux.Where(Function(it) it.IndProv = "B").ToList
@@ -705,6 +723,7 @@ Public Class frm_TransferenciasBancarias
                     oePrestamo = New e_Prestamo
                     oePrestamo.IndProv = "B" : oePrestamo.IdTrabajador = cboTrabajadorOrigen.Value : oePrestamo.Trabajador = cboTrabajadorOrigen.Text
                     oePrestamo.Monto = _leCB.Sum(Function(it) it.Importe)
+                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                     leAnaRet.Add(oePrestamo)
                 End If
             End If
@@ -1119,6 +1138,7 @@ Public Class frm_TransferenciasBancarias
                             .Monto = CDbl(SubTotal1) + CDbl(SubTotal2)
                             .Activo = False
                         End With
+                        oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
                         leImportaDatos.Add(oePrestamo)
                     Else
                         Exit For
@@ -1166,6 +1186,7 @@ Public Class frm_TransferenciasBancarias
                 Cursor.Show()
                 FondoPension()
                 For Each IDAux In leImportaDatos
+                    IDAux.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If IDAux.IdTrabajador.Trim <> "" Then
                         IDAux.Activo = True
                     Else

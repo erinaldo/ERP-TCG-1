@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 
@@ -141,6 +149,7 @@ Public Class d_OrdenCompraMaterial
                     oe.TipoOperacion = "I"
                     oe.IdOrden = id
                     oe.Activo = 1
+                    oe.PrefijoID = oeOrdenMaterial.PrefijoID '@0001
                     odOCMaterial_OSMaterial.Guardar(oe)
                 Next
             End With

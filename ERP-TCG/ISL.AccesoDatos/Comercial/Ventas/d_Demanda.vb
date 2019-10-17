@@ -59,11 +59,10 @@ Public Class d_Demanda
 
     Public Function Obtener(ByVal oeDemanda As e_Demanda) As e_Demanda
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Demanda_Listar]", _
-                                            oeDemanda.TipoOperacion, _
-                                            oeDemanda.Id, _
+            ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Demanda_Listar]",
+                                            oeDemanda.TipoOperacion,
+                                            oeDemanda.Id,
                                             oeDemanda.Codigo)
 
             If ds.Tables(0).Rows.Count > 0 Then
@@ -82,7 +81,6 @@ Public Class d_Demanda
     Public Function Listar(ByVal oeDemanda As e_Demanda) As List(Of e_Demanda)
         Try
             Dim ldDemanda As New List(Of e_Demanda)
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeDemanda
                 ds = sqlhelper.ExecuteDataset("[OPE].[Isp_Demanda_Listar]", .TipoOperacion _
@@ -109,15 +107,14 @@ Public Class d_Demanda
 
     Public Function ListarDataSet(ByVal oeDemanda As e_Demanda) As DataSet
         Try
-            sqlhelper = New SqlHelper
             With oeDemanda
-                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Demanda_Listar]", _
-                                               .TipoOperacion, _
-                                               "", _
-                                               .Codigo, _
-                                               .FechaDesde, _
-                                               .FechaHasta, _
-                                               .Activo, _
+                Return sqlhelper.ExecuteDataset("[OPE].[Isp_Demanda_Listar]",
+                                               .TipoOperacion,
+                                               "",
+                                               .Codigo,
+                                               .FechaDesde,
+                                               .FechaHasta,
+                                               .Activo,
                                                .UsuarioCreacion)
             End With
         Catch ex As Exception
@@ -127,20 +124,19 @@ Public Class d_Demanda
 
     Public Function ListarDemandaRapidaDataSet(ByVal oeDemanda As e_Demanda) As DataSet
         Try
-            sqlhelper = New SqlHelper
             With oeDemanda
-                Return sqlhelper.ExecuteDataset("[OPE].[Isp_PreDemandaRapida_Listar]", _
-                                               .TipoOperacion, _
-                                               "", _
-                                               .Codigo, _
-                                               .FechaDesde, _
-                                               .FechaHasta, _
-                                               .Activo, _
-                                               .UsuarioCreacion, _
-                                               "", _
-                                               .Tipo, _
-                                               .Estado, _
-                                               .IndicadorTercero, _
+                Return sqlhelper.ExecuteDataset("[OPE].[Isp_PreDemandaRapida_Listar]",
+                                               .TipoOperacion,
+                                               "",
+                                               .Codigo,
+                                               .FechaDesde,
+                                               .FechaHasta,
+                                               .Activo,
+                                               .UsuarioCreacion,
+                                               "",
+                                               .Tipo,
+                                               .Estado,
+                                               .IndicadorTercero,
                                                .Indicador)
             End With
         Catch ex As Exception
@@ -150,13 +146,12 @@ Public Class d_Demanda
 
     Public Function ConfirmarDemanda(ByVal oeDemanda As e_Demanda) As Boolean
         Try
-            sqlhelper = New SqlHelper
             Using transScope As New TransactionScope()
                 Dim ids = oeDemanda.Id.Split(";")
                 For cont As Integer = 0 To ids.Count - 1
-                    sqlhelper.ExecuteNonQuery("OPE.Isp_Demanda_IAE", "G", _
+                    sqlhelper.ExecuteNonQuery("OPE.Isp_Demanda_IAE", "G",
             "", "", ids(cont), "", "", "", "", "", "", Nothing, 0, 0, "", oeDemanda.UsuarioCreacion)
-                Next                
+                Next
                 transScope.Complete()
             End Using
             Return True
@@ -178,7 +173,6 @@ Public Class d_Demanda
     Public Function Guardar(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Dim stResultado() As String
-            sqlhelper = New SqlHelper
             odViajeTercero = New d_ViajesTerceros
             odIncidenciaAutentificada = New d_IncidenciasAutentificadas
             Using transScope As New TransactionScope()
@@ -270,7 +264,6 @@ Public Class d_Demanda
     Public Function GuardarDemandaPredemanda(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Dim stResultado() As String
-            sqlhelper = New SqlHelper
             odViajeTercero = New d_ViajesTerceros
             odIncidenciaAutentificada = New d_IncidenciasAutentificadas
             Dim IdsDemandas As String = ""
@@ -316,12 +309,14 @@ Public Class d_Demanda
                         Detalle.IdDemanda = stResultado(0)
                         '   oeDemanda.Id = stResultado(0)
                         Detalle.Usuario = oeDemanda.UsuarioCreacion
+                        Detalle.PrefijoID = oeDemanda.PrefijoID '@0001
                         GuardarDetalleDemandaPredemanda(Detalle)
                     Next
                     For Each ContratoTercero As e_ViajesTerceros In oeDemanda.oeContratoTercero
                         ContratoTercero.TipoOperacion = "I"
                         ContratoTercero.IdDemanda = stResultado(0)
                         ContratoTercero.UsuarioCrea = oeDemanda.UsuarioCreacion
+                        ContratoTercero.PrefijoID = oeDemanda.PrefijoID '@0001
                         odViajeTercero.Guardar(ContratoTercero)
                     Next
                     If oeDemanda.oeIncidenciaAutentificadas IsNot Nothing Then
@@ -330,6 +325,7 @@ Public Class d_Demanda
                                 .TipoOperacion = "I"
                                 .Referencia = stResultado(0)
                                 .FechaReferencia = oeDemanda.FechaAtendida
+                                .PrefijoID = oeDemanda.PrefijoID '@0001
                             End With
                             odIncidenciaAutentificada.Guardar(oeDemanda.oeIncidenciaAutentificadas)
                         End If
@@ -398,6 +394,7 @@ Public Class d_Demanda
                         .TipoOperacion = "I"
                         .Referencia = codigo
                         .FechaReferencia = fechaReferencia
+                        .PrefijoID = oeDemandaDetalle.PrefijoID '@0001
                     End With
                     odIncidenciaAutentificada.Guardar(oeDemandaDetalle.oeIncidenciaAutentificadas)
                 End If
@@ -410,11 +407,10 @@ Public Class d_Demanda
 
     Public Function Eliminar(ByVal oeDemanda As e_Demanda) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            sqlhelper.ExecuteNonQuery("[OPE].[Isp_Demanda_IAE]", _
-                                      "E", _
-                                      "", _
-                                      "", _
+            sqlhelper.ExecuteNonQuery("[OPE].[Isp_Demanda_IAE]",
+                                      "E",
+                                      "",
+                                      "",
                                       oeDemanda.Id)
             Return True
         Catch ex As Exception
@@ -424,16 +420,15 @@ Public Class d_Demanda
 
     Public Function Cancelar(ByVal oeDemanda As e_Demanda) As Boolean
         Try
-            sqlhelper = New SqlHelper
             odIncidenciaAutentificada = New d_IncidenciasAutentificadas
             Dim stResultado() As String
             Using transScope As New TransactionScope()
-                stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Demanda_IAE]", _
+                stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_Demanda_IAE]",
                                                                  oeDemanda.TipoOperacion _
-                                                                 , "", "", _
-                                                                 oeDemanda.Id, "", "", "", "", "", "", _
-                                                                 Date.Parse("01/01/1901"), 0, 0, _
-                                                                 oeDemanda.Observacion, _
+                                                                 , "", "",
+                                                                 oeDemanda.Id, "", "", "", "", "", "",
+                                                                 Date.Parse("01/01/1901"), 0, 0,
+                                                                 oeDemanda.Observacion,
                                                                  oeDemanda.UsuarioCreacion).ToString.Split("_")
 
                 If oeDemanda.oeIncidenciaAutentificadas.IdResponsableAutoriza <> "" Then
@@ -513,10 +508,9 @@ Public Class d_Demanda
 
     Public Function ObtenerDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle) As e_DemandaDetalle
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("OPE.Isp_DemandaDetalle_Listar", "", _
-                                          oeDemandaDetalle.Id, _
+            ds = sqlhelper.ExecuteDataset("OPE.Isp_DemandaDetalle_Listar", "",
+                                          oeDemandaDetalle.Id,
                                           oeDemandaDetalle.IdDemanda)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeDemandaDetalle = CargarDetalle(ds.Tables(0).Rows(0))
@@ -534,7 +528,6 @@ Public Class d_Demanda
     Public Function ListarDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle, Optional ByVal Usuario As String = "") As List(Of e_DemandaDetalle)
         Try
             Me.usuario = Usuario
-            sqlhelper = New SqlHelper
             Dim ldDemandaDetalle As New List(Of e_DemandaDetalle)
             Dim ds As DataSet
             With oeDemandaDetalle
@@ -562,19 +555,17 @@ Public Class d_Demanda
 
     Public Function GuardarDemandasEnviadas(ByVal oeDemanda As e_Demanda) As Boolean
         Try
-            'cambiios
-            sqlhelper = New SqlHelper
             Using transScope As New TransactionScope()
                 Dim ids = oeDemanda.Id.Split(";")
-                For cont As Integer = 0 To ids.Count - 1                    
+                For cont As Integer = 0 To ids.Count - 1
 
-                    sqlhelper.ExecuteNonQuery("OPE.Isp_Demanda_IAE", "K", _
+                    sqlhelper.ExecuteNonQuery("OPE.Isp_Demanda_IAE", "K",
                      "", "", ids(cont), "", "", "", "", "", "", Nothing, 0, 0, "", oeDemanda.UsuarioCreacion)
                 Next
                 transScope.Complete()
             End Using
 
-            
+
             Return True
         Catch ex As Exception
             Throw ex

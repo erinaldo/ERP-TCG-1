@@ -1,4 +1,11 @@
-﻿
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
@@ -127,6 +134,7 @@ Public Class d_OperacionesProceso
                     For Each ProcesoDetalle In oeOperacionesProceso.ListProcesoDetalle
                         ProcesoDetalle.TipoOperacion = "I"
                         ProcesoDetalle.IdOperacionProceso = stResultado(0)
+                        ProcesoDetalle.PrefijoID = oeOperacionesProceso.PrefijoID '@0001
                         odProcesoDetalle.Guardar(ProcesoDetalle)
                     Next
                 End If
@@ -134,11 +142,13 @@ Public Class d_OperacionesProceso
                     For Each TarifaProceso In oeOperacionesProceso.ListTarifaProceso
                         TarifaProceso.TipoOperacion = "I"
                         TarifaProceso.IdOperacionProceso = stResultado(0)
+                        TarifaProceso.PrefijoID = oeOperacionesProceso.PrefijoID '@0001
                         odTarifasProceso.Guardar(TarifaProceso)
                     Next
                 End If
                 If oeOperacionesProceso.ListOperacionDetalle.Count > 0 Then
                     For Each OperacionDetalle In oeOperacionesProceso.ListOperacionDetalle
+                        OperacionDetalle.PrefijoID = oeOperacionesProceso.PrefijoID '@0001
                         odOperacionDetalle.GuardarOperacionDetalle(OperacionDetalle)
                     Next
                 End If

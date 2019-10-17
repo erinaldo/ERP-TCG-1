@@ -117,7 +117,6 @@ Public Class d_OrdenVenta
             'Dim odOrdenComercialOrden As New d_OrdenComercial_Orden
             'Dim oeOrdenComercialOrden As New e_OrdenVentaOrden
             Dim odDocumento As New d_MovimientoDocumento
-            sqlhelper = New SqlHelper
             Using transScope As New TransactionScope()
                 Dim stResultado() As String
                 With oeOrdenComercial

@@ -319,6 +319,7 @@ Public Class d_Asiento
             Dim odMovAnalis As New d_MovimientoAnalisis
             Using transScope As New TransactionScope
                 For Each obj As e_MovimientoAnalisis In leMovAnalisis
+                    obj.PrefijoID = oeAsiento.PrefijoID '@0001
                     odMovAnalis.Guardar(obj)
                 Next
                 Guardar(oeAsiento, False)
@@ -711,6 +712,7 @@ Public Class d_Asiento
                 sqlhelper.InsertarMasivo("CON.MovimientoAnalisis", DTMA, False)
 
                 For Each obj In ListaDoc
+                    obj.PrefijoID = oeMovCajaBanco.PrefijoID '@0001
                     With obj
                         sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumento_IAE",
                                 "SAL" _
