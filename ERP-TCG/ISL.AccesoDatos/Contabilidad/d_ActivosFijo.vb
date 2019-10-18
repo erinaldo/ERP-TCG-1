@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -9,7 +17,7 @@ Public Class d_ActivosFijo
     Private odDepreciacionAF As New d_DepreciacionActivoFijo
     Private odReadecuacionAF As New d_ReadecuacionActivoFijo
     Private odAsiento As New d_Asiento
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+
 
     Private Function Cargar(Fila As DataRow) As e_ActivoFijo
         Try
@@ -82,7 +90,6 @@ Public Class d_ActivosFijo
 
     Public Function ExecuteLST(oeActivoFijo As e_ActivoFijo) As DataSet
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeActivoFijo
                 ds = sqlhelper.ExecuteDataset("[CON].[Isp_ActivoFijo_Listar]" _
@@ -241,6 +248,7 @@ Public Class d_ActivosFijo
                         Dim lb_Readeacuacion As Boolean = False
                         With AFCuentaContable
                             .UsuarioCreacion = oeActivoFijo.UsuarioCreacion
+                            .PrefijoID = oeActivoFijo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odAFCuentaContable.Eliminar(AFCuentaContable)
                             Else
@@ -248,13 +256,13 @@ Public Class d_ActivosFijo
                                 .TipoOperacion = "I"
                                 .IdActivoFijo = oeActivoFijo.Id
                                 odAFCuentaContable.Guardar(AFCuentaContable)
-
                             End If
                         End With
                     Next
                     For Each Readecuacion As e_ReadecuacionActivoFijo In .ListReadecuacionAF
                         With Readecuacion
                             .UsuarioCreacion = oeActivoFijo.UsuarioCreacion
+                            .PrefijoID = oeActivoFijo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 odReadecuacionAF.Eliminar(Readecuacion)
                             Else
@@ -273,6 +281,7 @@ Public Class d_ActivosFijo
                         oeAFReclasificado.IdAFReclasifica = .Id
                         oeAFReclasificado.UsuarioCreacion = .UsuarioCreacion
                         oeAFReclasificado.IdAsientoReclasificacion = IdAsientoReclasificacion
+                        oeAFReclasificado.PrefijoID = oeActivoFijo.PrefijoID '@0001
                         Guardar(oeAFReclasificado)
                     End If
                 End With

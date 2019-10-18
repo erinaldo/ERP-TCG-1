@@ -2300,7 +2300,7 @@ Public Class frm_OrdenTrabajo
             LlenaComboJefeFlota()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
             LlenarCombo(cboCentroMaterial, "Nombre", CentroPublic, 0)
-            _idcentro = Prefijo.PrefijoID
+            _idcentro = gs_PrefijoIdSucursal '@0001
             cboCentro.Value = _idcentro
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES MANTENIMIENTO") Then
                 cboCentro.Enabled = True

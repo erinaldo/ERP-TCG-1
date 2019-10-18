@@ -8,11 +8,6 @@
 
 Imports ISL.EntidadesWCF
 
-''' <summary>
-''' Clase parcial de lo que es ubigeo para acceder a la información de los Direccions.
-''' Fecha de Actualizacion:17/11/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Ubigeo,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 Public Class d_Direccion
 
     Private sqlhelper As New SqlHelper

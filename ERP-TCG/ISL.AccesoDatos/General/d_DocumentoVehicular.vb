@@ -10,11 +10,6 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a los datos de la tabla DocumentoVehicular
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Tipo Orden Compra,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 Public Class d_DocumentoVehicular
 
     Private sqlhelper As New SqlHelper
@@ -23,17 +18,10 @@ Public Class d_DocumentoVehicular
     Dim odBonificacionVehiculo As New d_BonificacionVehiculo
     Dim odRevisionTecnica As New d_RevisionTecnica
     Dim odDocVeh_Doc As New d_DocumentoVehicular_Documento
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_DocumentoVehicular y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeDocumentoVehicular) de tipo e_DocumentoVehicular</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Cargar(ByVal o_fila As DataRow) As e_DocumentoVehicular
         Try
-            Dim oeDocumentoVehicular = New e_DocumentoVehicular( _
+            Dim oeDocumentoVehicular = New e_DocumentoVehicular(
                              o_fila("Id").ToString _
                              , o_fila("IdTipoDocumento").ToString _
                              , o_fila("Tipo Documento").ToString _
@@ -53,7 +41,7 @@ Public Class d_DocumentoVehicular
                              , o_fila("Porcentaje").ToString _
                              , o_fila("Tipo").ToString _
                              , o_fila("Resultado").ToString _
-                             , o_fila("FechaAdquisicion").ToString _
+                             , o_fila("FechaAdquisicion").ToString
             )
             Return oeDocumentoVehicular
         Catch ex As Exception
@@ -61,14 +49,7 @@ Public Class d_DocumentoVehicular
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un documento del vehiculo, el cual es consultado por el procedimiento almacenado STD.Isp_DocumentoVehicular_Listar
-    ''' enviando su id del documento vehicular.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_DocumentoVehicular.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeDocumentoVehicular">Recibe una variable oeDocumentoVehicular de tipo e_DocumentoVehicular-</param>
-    ''' <returns>Devuelve una varible oeDocumentoVehicular de tipo e_DocumentoVehicular</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As e_DocumentoVehicular
         Try
             Dim ds As DataSet
@@ -92,20 +73,13 @@ Public Class d_DocumentoVehicular
             Throw
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_DocumentoVehicular, el cual es consultado por el procedimiento almacenado STD.Isp_DocumentoVehicular_Listar
-    ''' enviando sus atributos del documento vehicular.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeDocumentoVehicular">Recibe una Variable oeDocumentoVehicular de tipo e_DocumentoVehicular </param>
-    ''' <returns>Devuelve una lista generica(ldDocumentoVehicular) de objetos de tipo e_DocumentoVehicular</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As List(Of e_DocumentoVehicular)
         Try
             Dim ldDocumentoVehicular As New List(Of e_DocumentoVehicular)
             Dim ds As DataSet
             With oeDocumentoVehicular
-                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdEmpresaEmisora _
@@ -128,23 +102,14 @@ Public Class d_DocumentoVehicular
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del documento vehicular,a travez del procedimiento almacenado
-    ''' STD.Isp_DocumentoVehicular_IAE,por el cual van a ser enviados y registrados los datos del documento vehicular y
-    ''' obtendremos una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeDocumentoVehicular">Recibe una variable oeDocumentoVehicular de tipo e_DocumentoVehicular</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de documento 
-    ''' vehicular es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Guardar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean
         Try
             Dim ListaDocVeh_Doc_Ayuda As New List(Of e_DocumentoVehicular_Documento)
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeDocumentoVehicular
-                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicular_IAE", _
+                    stResultado = sqlhelper.ExecuteScalar("STD.Isp_DocumentoVehicular_IAE",
                                                           .TipoOperacion _
                                                          , .PrefijoID _
                                                         , .Id _
@@ -254,16 +219,8 @@ Public Class d_DocumentoVehicular
             Return False
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del detalle del documento vehicular,a travez del procedimiento almacenado
-    ''' STD.Isp_DetalleDocumentoVehiculo_IAE,por el cual van a ser enviados y registrados los datos del detalle documento vehicular y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="ls_IdVehiculo">Recibe el Id del Vehiculo</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro del 
-    ''' documento vehicular es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
+
+
     Public Function GuardarDetalle(ByVal ls_IdVehiculo As String,
                                    ByVal ls_IdDocumento As String,
                                    ByVal ls_UsuarioCreacion As String, ByVal PrefijoID As String) As Boolean
@@ -283,20 +240,11 @@ Public Class d_DocumentoVehicular
             Return False
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del documento vehicular,a travez del procedimiento almacenado
-    ''' STD.Isp_DocumentoVehicular_IAE,por el cual va a ser enviado el id del documento vehicular a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeDocumentoVehicular">Recibe una variable oeDocumentoVehicular de tipo objeto e_DocumentoVehicular</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean
         Try
             Using transScope As New TransactionScope()
-                sqlhelper.ExecuteNonQuery("STD.Isp_DocumentoVehicular_IAE", oeDocumentoVehicular.TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_DocumentoVehicular_IAE", oeDocumentoVehicular.TipoOperacion,
                     "", oeDocumentoVehicular.Id)
 
                 Dim d_ImgDoc As New d_ImagenesDocumentos
@@ -316,13 +264,13 @@ Public Class d_DocumentoVehicular
     Public Function ListarDts(ByVal oeDocVeh As e_DocumentoVehicular) As DataSet
         Try
             With oeDocVeh
-                Return sqlhelper.ExecuteDataset("[STD].[Isp_DocumentoVehicular_Listar]", _
-                                              .TipoOperacion, _
-                                              .Id, _
-                                              .IdEmpresaEmisora, _
-                                              .TipoDocumento, _
-                                              .Activo, _
-                                              .IdVehiculo, _
+                Return sqlhelper.ExecuteDataset("[STD].[Isp_DocumentoVehicular_Listar]",
+                                              .TipoOperacion,
+                                              .Id,
+                                              .IdEmpresaEmisora,
+                                              .TipoDocumento,
+                                              .Activo,
+                                              .IdVehiculo,
                                               .IndVigencia)
             End With
         Catch ex As Exception
@@ -335,7 +283,7 @@ Public Class d_DocumentoVehicular
             Dim ldDocumentoVehicular As New List(Of e_DocumentoVehicular)
             Dim ds As DataSet
             With oeDocumentoVehicular
-                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdEmpresaEmisora _
@@ -386,7 +334,7 @@ Public Class d_DocumentoVehicular
         Try
             Dim ds As DataSet
             With oeDocumentoVehicular
-                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar", _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_DocumentoVehicular_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .IdEmpresaEmisora _
@@ -399,7 +347,7 @@ Public Class d_DocumentoVehicular
         Catch ex As Exception
             Throw ex
         End Try
-        
+
     End Function
 
     Public Function UltimoIdDevengoInserta(ByVal PrefijoID As String) As String

@@ -168,7 +168,6 @@ Public Class d_MovimientoCajaBanco
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.MovimientoCajaBanco", PrefijoID
                                   )

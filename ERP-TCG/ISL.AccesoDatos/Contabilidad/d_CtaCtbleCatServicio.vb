@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -59,9 +67,8 @@ Public Class d_CtaCtbleCatServicio
 
     Public Function Guardar(ByVal oeCtaCtble_CatServicio As e_CtaCtbleCatServicio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCtaCtble_CatServicio
-                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_CatServicio_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CtaCtble_CatServicio_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCategoriaServicio _
                         , .IdCuentaContable _

@@ -1,5 +1,11 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "e_TablaDinamica_Dato" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione e_TablaDinamica_Dato.svc o e_TablaDinamica_Dato.svc.vb en el Explorador de soluciones e inicie la depuración.
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
 Imports ISL.EntidadesWCF
 
 Public Class e_TablaDinamica_Dato
@@ -24,7 +30,12 @@ Public Class e_TablaDinamica_Dato
 
     Public TipoOperacion As String
     Public TipoBusca As Integer
-
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public IdEmpresaSistema As String = ""
+    <DataMember()>
+    Public IdSucursalSistema As String = ""
 #End Region
 
 #Region "Constructor"

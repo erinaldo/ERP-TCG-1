@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Imports System.ComponentModel
@@ -130,12 +138,11 @@ Public Class d_ItemGasto
     Public Function Guardar(ByVal oeItemGasto As e_ItemGasto) As Boolean
         Dim stResultado() As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using transScope As New TransactionScope()
                 With oeItemGasto
-                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_ItemGasto_IAE", _
-                                                          .TipoOperacion, _
-                                                          .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.ISP_ItemGasto_IAE",
+                                                          .TipoOperacion,
+                                                          .PrefijoID,
                                                           .Id _
                                                           , .Nombre _
                                                           , .IdTablaContableDet _
@@ -143,6 +150,7 @@ Public Class d_ItemGasto
                 End With
                 For Each CuentaItemGasto As e_CuentaItemGasto In oeItemGasto.ListaCuentaItemGasto
                     CuentaItemGasto.IdItemGasto = stResultado(0)
+                    CuentaItemGasto.PrefijoID = oeItemGasto.PrefijoID '@0001
                     odCuentaItemGasto.Guardar(CuentaItemGasto)
                 Next
                 transScope.Complete()

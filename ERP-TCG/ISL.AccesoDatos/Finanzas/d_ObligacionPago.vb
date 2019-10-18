@@ -37,11 +37,10 @@ Public Class d_ObligacionPago
     Public Function Obtener(ByVal oeObligacionPago As e_ObligacionPago) As e_ObligacionPago
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("FIN.Isp_ObligacionPago_Listar", "",
             Left(oeObligacionPago.PrefijoID, 1), "", oeObligacionPago.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeObligacionPago = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeObligacionPago
@@ -52,7 +51,6 @@ Public Class d_ObligacionPago
 
     Public Function Listar(ByVal oeObligacionPago As e_ObligacionPago) As List(Of e_ObligacionPago)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldObligacionPago As New List(Of e_ObligacionPago)
             Dim ds As DataSet
             With oeObligacionPago
@@ -70,7 +68,7 @@ Public Class d_ObligacionPago
                         , .MontoFinalMN _
                         , .MontoFinalME _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                         )
             End With
             oeObligacionPago = Nothing
@@ -88,10 +86,9 @@ Public Class d_ObligacionPago
 
     Public Function Guardar(ByVal oeObligacionPago As e_ObligacionPago) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeObligacionPago
-                stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionPago_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ObligacionPago_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdMovimientoCajaBanco _
                         , .IdObligacionFinanciera _
@@ -105,7 +102,7 @@ Public Class d_ObligacionPago
                         , .MontoFinalME _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .MacPCLocalCreacion _
+                        , .MacPCLocalCreacion
                     ).ToString.Split("_")
                 oeObligacionPago.Id = stResultado(0)
                 If Not .OeAsientoMov_ObligFin Is Nothing Then
@@ -113,7 +110,7 @@ Public Class d_ObligacionPago
                         Dim odAsientoMov_ObligaFin As New d_AsientoMov_ObligacionFin
                         .OeAsientoMov_ObligFin.IdObligacionPago = oeObligacionPago.Id
                         .OeAsientoMov_ObligFin.IdAsientoMovimiento = oeObligacionPago._IdAsientoMovimiento
-                        .OeAsientoMov_ObligFin.PrefijoID = .PrefijoID '@0001
+                        .OeAsientoMov_ObligFin.PrefijoID = oeObligacionPago.PrefijoID '@0001
                         odAsientoMov_ObligaFin.Guardar(.OeAsientoMov_ObligFin)
                     End If
                 End If

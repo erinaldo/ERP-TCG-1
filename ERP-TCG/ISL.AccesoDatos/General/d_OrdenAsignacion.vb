@@ -61,7 +61,6 @@ Public Class d_OrdenAsignacion
     Public Function Obtener(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As e_OrdenAsignacion
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("STD.Isp_OrdenAsignacion_Listar", "1", oeOrdenAsignacion.Id, oeOrdenAsignacion.NroOA)
             If ds.Tables(0).Rows.Count > 0 Then
@@ -75,7 +74,6 @@ Public Class d_OrdenAsignacion
 
     Public Function Listar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As List(Of e_OrdenAsignacion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldOrdenAsignacion As New List(Of e_OrdenAsignacion)
             Dim ds As DataSet
             With oeOrdenAsignacion
@@ -90,9 +88,9 @@ Public Class d_OrdenAsignacion
                                               , .FechaDesde _
                                               , .FechaHasta _
                                               , .Idunidadasignada _
-                                              , .IndUnidad _
+                                              , .IndUnidad
                                               )
-                  	
+
             End With
             oeOrdenAsignacion = Nothing
             If ds.Tables.Count > 0 Then
@@ -109,7 +107,6 @@ Public Class d_OrdenAsignacion
 
     Public Function ListarReporte(ByVal oeReporteOA As e_ReporteOA) As List(Of e_ReporteOA)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldReporteOA As New List(Of e_ReporteOA)
             Dim ds As DataSet
             With oeReporteOA
@@ -119,7 +116,7 @@ Public Class d_OrdenAsignacion
                                               , .IdMaterial _
                                               , .FechaDesde _
                                               , .FechaHasta _
-                                              , .IdAlmacen _
+                                              , .IdAlmacen
                                               )
 
             End With

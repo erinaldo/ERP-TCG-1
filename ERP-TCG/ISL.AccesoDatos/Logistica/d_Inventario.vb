@@ -161,7 +161,7 @@ Public Class d_Inventario
                             .ValorUnitarioReal = oeInventario.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
                         End With
-                        .oeRegistroInventario.PrefijoID = .PrefijoID '@0001
+                        .oeRegistroInventario.PrefijoID = oeInventario.PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
                     End If
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_Inventario_IAE]" _

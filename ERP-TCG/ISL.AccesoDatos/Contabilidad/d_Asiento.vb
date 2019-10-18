@@ -12,7 +12,7 @@ Imports System.Data.SqlClient
 
 Public Class d_Asiento
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+
     Private odMovimientoCajaBanco As New d_MovimientoCajaBanco
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_Asiento
@@ -199,6 +199,8 @@ Public Class d_Asiento
                                     .MovimientoDocumento.CuentaxCyP.CuentaxPDocumentoRetencion.IdDocumentoRetencion = ls_IdDocumentoRetencion
                                 End If
                             End If
+                            .MovimientoDocumento.PrefijoID = oeAsiento.PrefijoID '@0001
+                            .MovimientoDocumento.CuentaxCyP.PrefijoID = oeAsiento.PrefijoID '@0001
                         End If
                         If .TipoOperacion = "I" Or .TipoOperacion = "A" Or .TipoOperacion = "S" Then 'inserta, actualiza,modificacion de Saldo
                             If .BandGuardMasivo Then
@@ -213,6 +215,7 @@ Public Class d_Asiento
                                 oeAsiento._IdMovimientoCajaBanco = oeAsientoMovimiento._IdMovimientoCajaBanco
                             End If
                             If Not oeAsientoMovimiento.DocumentoRetencion Is Nothing Then
+                                oeAsientoMovimiento.DocumentoRetencion.PrefijoID = oeAsiento.PrefijoID '@0001
                                 If ls_IdDocumentoRetencion = "" Then
                                     ls_IdDocumentoRetencion = oeAsientoMovimiento.DocumentoRetencion.Id
                                     oeAsiento.IdRetencion = ls_IdDocumentoRetencion
@@ -363,6 +366,7 @@ Public Class d_Asiento
                     For Each oeAsientomovimiento As e_AsientoMovimiento In .AsientoMovimiento
                         With oeAsientomovimiento
                             .IdAsiento = stResultado(0)
+                            .PrefijoID = oeAsiento.PrefijoID '@0001
                             If .TipoOperacion = "I" Then
                                 odAsientoMov.GuardarMasivo(oeAsientomovimiento)
                             End If
@@ -409,6 +413,7 @@ Public Class d_Asiento
                     ''PRIMERO ELIMINAMOS LOS detalles del ASIENTO
                     For Each oeAsientomovimiento As e_AsientoMovimiento In .AsientoMovimiento
                         With oeAsientomovimiento
+                            .PrefijoID = oeAsiento.PrefijoID '@0001
                             .IdAsiento = stResultado(0)
                             If .TipoOperacion = "E" Then ''eliminamos todo y despues volvemos a insertar
                                 odAsientoMov.Eliminar(oeAsientomovimiento)
@@ -419,6 +424,7 @@ Public Class d_Asiento
 
                 For Each oeAsientomovimiento As e_AsientoMovimiento In .AsientoMovimiento
                     With oeAsientomovimiento
+                        .PrefijoID = oeAsiento.PrefijoID '@0001
                         .IdAsiento = stResultado(0)
                         If .TipoOperacion = "I" Or .TipoOperacion = "A" Then
                             If .BandGuardMasivo Then
@@ -431,6 +437,7 @@ Public Class d_Asiento
                     End With
                 Next
                 If .Asiento_MovDoc.IdMovimientoDocumento <> "" Then
+                    .Asiento_MovDoc.PrefijoID = oeAsiento.PrefijoID '@0001
                     .Asiento_MovDoc.IdAsiento = stResultado(0)
                     Dim odAsientoMovDoc As New d_Asiento_MovDoc
                     odAsientoMovDoc.Guardar(.Asiento_MovDoc)
@@ -477,10 +484,7 @@ Public Class d_Asiento
 
     Public Function CorrelativoAsiento(ByVal IdPeriodo As String) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             sqlhelper.ExecuteNonQuery("CON.ISP_Asiento_Correlativo", IdPeriodo)
-
             Return True
         Catch ex As Exception
             Throw ex
@@ -662,6 +666,7 @@ Public Class d_Asiento
 
                     If Not oeMovAnalis Is Nothing Then
                         Dim odAnalisis As New d_MovimientoAnalisis
+                        oeMovAnalis.PrefijoID = oeAsiento.PrefijoID '@0001
                         odAnalisis.Guardar(oeMovAnalis)
                     End If
 
@@ -1276,7 +1281,7 @@ Public Class d_Asiento
 
     Public Function GuardarMasivo3(ByVal DTAsiento As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             sqlhelper.InsertarMasivo("CON.Asiento", DTAsiento, False)
             Return True
         Catch ex As Exception

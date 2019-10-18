@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Data.SqlClient
 Imports System.Transactions
 
@@ -268,7 +276,6 @@ Public Class d_OrdenMaterial
 
     Public Function Guardar(ByVal oeOrdenMaterial As e_OrdenMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeOrdenMaterial
                 stResultado = sqlhelper.ExecuteScalar("ALM.Isp_OrdenMaterial_IAE",
@@ -294,6 +301,7 @@ Public Class d_OrdenMaterial
 
                 If .oeControlEntregaMat.CantidadEntregada > 0 Then
                     .oeControlEntregaMat.IdOrdenMaterialIngreso = .Id
+                    .oeControlEntregaMat.PrefijoID = oeOrdenMaterial.PrefijoID '@0001
                     odCtrlEntrMat.Guardar(.oeControlEntregaMat)
                 End If
 
@@ -301,6 +309,7 @@ Public Class d_OrdenMaterial
                     For Each control As e_ControlEntregaMaterial In .loControlEntregaMaterial
                         control.TipoOperacion = "I"
                         control.IdOrdenMaterialSalida = stResultado(0)
+                        control.PrefijoID = oeOrdenMaterial.PrefijoID '@0001
                         odCtrlEntrMat.Guardar(control)
                     Next
                 End If

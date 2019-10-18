@@ -247,7 +247,7 @@ Public Class frm_TrabajadorAsistencia
             oeCentro = New e_Centro : leCentro = New List(Of e_Centro)
             leCentro = olCentro.Listar(oeCentro)
             LlenarCombo(cboSede, "Nombre", leCentro, 0)
-            cboSede.Value = Prefijo.PrefijoID.ToString
+            cboSede.Value = gs_PrefijoIdSucursal.ToString
         Catch ex As Exception
             Throw ex
         End Try

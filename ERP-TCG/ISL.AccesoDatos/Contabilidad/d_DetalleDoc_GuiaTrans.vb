@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -65,15 +73,14 @@ Public Class d_DetalleDoc_GuiaTrans
 
     Public Function Guardar(ByVal oeDetalleDoc_GuiaTrans As e_DetalleDoc_GuiaTrans) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleDoc_GuiaTrans
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDoc_GuiaTrans_IAE ", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDoc_GuiaTrans_IAE ", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdDetalleDoc _
                         , .IdGuiaTrans _
                         , .IdEstado _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
@@ -101,7 +108,6 @@ Public Class d_DetalleDoc_GuiaTrans
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleDoc_GuiaTrans", PrefijoID
                                   )
@@ -114,7 +120,6 @@ Public Class d_DetalleDoc_GuiaTrans
 
     Public Function GuardarMasivo(ByVal dtDetalleDocGT As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.DetalleDoc_GuiaTrans", dtDetalleDocGT)
             Return True
         Catch ex As Exception

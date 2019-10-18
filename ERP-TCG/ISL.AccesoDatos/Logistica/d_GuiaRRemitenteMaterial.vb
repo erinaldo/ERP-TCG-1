@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_GuiaRRemitenteMaterial
@@ -33,7 +41,6 @@ Public Class d_GuiaRRemitenteMaterial
     Public Function Obtener(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As e_GuiaRRemitenteMaterial
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
             Left(oeGuiaRRemitenteMaterial.PrefijoID, 1), "", oeGuiaRRemitenteMaterial.Id)
@@ -48,7 +55,6 @@ Public Class d_GuiaRRemitenteMaterial
 
     Public Function Listar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As List(Of e_GuiaRRemitenteMaterial)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGuiaRRemitenteMaterial As New List(Of e_GuiaRRemitenteMaterial)
             Dim ds As DataSet
             With oeGuiaRRemitenteMaterial
@@ -62,7 +68,7 @@ Public Class d_GuiaRRemitenteMaterial
                         , .Glosa _
                         , .Activo _
                         , .UsuarioCreacion _
-                        , .FechaCreacion _
+                        , .FechaCreacion
                         )
             End With
             oeGuiaRRemitenteMaterial = Nothing
@@ -80,9 +86,8 @@ Public Class d_GuiaRRemitenteMaterial
 
     Public Function Guardar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGuiaRRemitenteMaterial
-                sqlhelper.ExecuteNonQuery("CMP.Isp_GuiaRemision_Material_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CMP.Isp_GuiaRemision_Material_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdGuiaRemision _
                         , .IdMaterial _

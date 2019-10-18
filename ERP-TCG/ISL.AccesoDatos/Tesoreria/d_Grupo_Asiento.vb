@@ -44,9 +44,8 @@ Public Class d_Grupo_Asiento
 
     Public Function Guardar(ByVal oeGrupo_Asiento As e_Grupo_Asiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGrupo_Asiento
-                sqlhelper.ExecuteNonQuery("TES.Isp_Grupo_Asiento_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Grupo_Asiento_IAE", .TipoOperacion,
                         .Id _
                         , .IdGrupo _
                         , .IdAsientoMovimiento _
@@ -66,12 +65,12 @@ Public Class d_Grupo_Asiento
 
     Public Function GuardarLista(ByVal loGrupoAsiento As List(Of e_Grupo_Asiento), ByVal oeAsiento As e_Asiento) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 Dim odGrupo As New d_Grupo
                 Dim oeGrupo As New e_Grupo
                 For Each oeGrupoAsiento As e_Grupo_Asiento In loGrupoAsiento
                     oeGrupo = New e_Grupo
+                    oeGrupo.PrefijoID = oeAsiento.PrefijoID '@0001
                     With oeGrupoAsiento
                         If .Saldo - .ImportePagar = 0 Then
                             oeGrupo.TipoOperacion = "R"

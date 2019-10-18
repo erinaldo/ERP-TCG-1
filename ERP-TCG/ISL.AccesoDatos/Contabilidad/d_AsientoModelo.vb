@@ -107,11 +107,10 @@ Public Class d_AsientoModelo
 
     Public Function Guardar(ByVal oeAsientoModelo As e_AsientoModelo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idAM() As String
             Using TransScope As New TransactionScope()
                 With oeAsientoModelo
-                    _idAM = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_IAE", .TipoOperacion, .PrefijoID, _
+                    _idAM = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Codigo _
                             , .Nombre _
@@ -125,12 +124,13 @@ Public Class d_AsientoModelo
                             , .FechaCreacion _
                             , .UsuarioModificacion _
                             , .FechaModificacion _
-                            , .Activo _
+                            , .Activo
                         ).ToString.Split("_")
                     'Guadar Detalle de Asiento Modelo
                     For Each oeDet In .leDetalle
                         oeDet.IdAsientoModelo = _idAM(0)
                         oeDet.leDMReferencia = .leDMReferencia.Where(Function(it) it.Fila = oeDet.Codigo).ToList
+                        oeDet.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                         Select Case oeDet.TipoOperacion
                             Case "I", "A" : odDetalle.Guardar(oeDet)
                             Case "E" : odDetalle.Eliminar(oeDet)
@@ -140,6 +140,7 @@ Public Class d_AsientoModelo
                     For Each oeActividad In .leAMActiviad
                         oeActividad.IdAsientoModelo = _idAM(0)
                         oeActividad.leReferencia = .leAMReferencia.Where(Function(it) it.IdActividad = oeActividad.IdActividadNegocio).ToList
+                        oeActividad.PrefijoID = oeAsientoModelo.PrefijoID '@0001
                         Select Case oeActividad.TipoOperacion
                             Case "I", "A" : odAMActividad.Guardar(oeActividad)
                             Case "E" : odAMActividad.Eliminar(oeActividad)

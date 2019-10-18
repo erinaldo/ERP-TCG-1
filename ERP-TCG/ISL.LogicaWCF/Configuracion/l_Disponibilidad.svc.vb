@@ -1,4 +1,13 @@
-﻿Imports System.IO
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-08-30  |   NSOFT   |   Se comento los mensaje emergentes
+' @0002 |   2019-01-01  |   CT2010  |   LLenar Combo
+'=================================================================================================================
+
+Imports System.IO
 Imports System.Xml
 Imports System.Configuration
 Imports System.Collections.Specialized
@@ -14,7 +23,6 @@ Public Class l_Disponibilidad
     Public IPServidor As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor")
 
     'Archivo XML, que debe estar copiado en la carpeta compartida Imagenes del servidor
-
     Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno.xml"
     Private directorioFotos As String = "\\" & IPServidor & "\Fotos"
 

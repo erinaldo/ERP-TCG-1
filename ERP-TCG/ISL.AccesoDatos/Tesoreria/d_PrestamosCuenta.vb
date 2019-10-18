@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -36,7 +44,6 @@ Public Class d_PrestamosCuenta
     Public Function Obtener(ByVal oePrestamosCuenta As e_PrestamosCuenta) As e_PrestamosCuenta
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.ISP_OtrosIngresos_Listar", "",
             Left(oePrestamosCuenta.PrefijoID, 1), "", oePrestamosCuenta.Id)
@@ -51,7 +58,6 @@ Public Class d_PrestamosCuenta
 
     Public Function Listar(ByVal oePrestamosCuenta As e_PrestamosCuenta) As List(Of e_PrestamosCuenta)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldPrestamosCuenta As New List(Of e_PrestamosCuenta)
             Dim ds As DataSet
             With oePrestamosCuenta
@@ -73,14 +79,13 @@ Public Class d_PrestamosCuenta
 
     Public Function Guardar(ByVal oePrestamosCuenta As e_PrestamosCuenta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odAsiento As New d_Asiento
             Dim Id As String = ""
             Using transScope As New TransactionScope
                 With oePrestamosCuenta
                     .Voucher = CargarCorrelativoLocal("VALE", oePrestamosCuenta.PrefijoID)
                     GrabarCorrelativo(.Voucher, "VALE", oePrestamosCuenta.PrefijoID)
-                    Id = sqlhelper.ExecuteScalar("TES.ISP_PrestamosCuenta_IAE", .TipoOperacion, .PrefijoID, _
+                    Id = sqlhelper.ExecuteScalar("TES.ISP_PrestamosCuenta_IAE", .TipoOperacion, .PrefijoID,
                             .Id, .IdConceptoIngresos, .Importe, .IndIngEgr, .Glosa, .Voucher, .UsuarioAutoriza _
                             , .UsuarioCreacion, .Fecha, .IdCentro, .FechaCierre, .oeCtaBancaria.Id)
 
@@ -96,8 +101,6 @@ Public Class d_PrestamosCuenta
     End Function
 
     Private Function GrabarCorrelativo(ByVal Numero As String, ByVal TipoDocumento As String, ByVal PrefijoID As String) As Boolean
-
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
         Try
             oeTipodocumento.TipoOperacion = "B"
@@ -139,7 +142,6 @@ Public Class d_PrestamosCuenta
 
 
         Dim Numero As String = ""
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
         oeTipodocumento.TipoOperacion = "B"
         oeTipodocumento.Nombre = TipoDocumento

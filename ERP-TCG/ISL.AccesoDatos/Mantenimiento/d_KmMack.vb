@@ -10,7 +10,7 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_KmMack
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
+
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_KmMack

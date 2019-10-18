@@ -1,4 +1,12 @@
-﻿'Imports System.Transactions
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+'Imports System.Transactions
 Imports ISL.EntidadesWCF
 
 Public Class d_ReadecuacionAF_Documento
@@ -80,8 +88,7 @@ Public Class d_ReadecuacionAF_Documento
     Public Function Guardar(oeReadecuacionAF_Documento As e_ReadecuacionAF_Documento) As Boolean
         Try
             'Using transScope As New TransactionScope()
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim IdResultado As String
             With oeReadecuacionAF_Documento
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ReadecuacionAF_Documento_IAE]" _

@@ -5362,12 +5362,12 @@ Public Class l_MovimientoDocumento
         Return sFacturacionElectronica.GenerarXmlFacturaElectronica(dataTable, Nothing, dataTable1, p3, p4)
     End Function
 
-    Function GenerarXmlComprobantesBaja(dataTable As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String) As String
-        Return sFacturacionElectronica.GenerarXmlComprobantesBaja(dataTable, fechaGeneracion, rutaFE, usuario)
+    Function GenerarXmlComprobantesBaja(dataTable As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.GenerarXmlComprobantesBaja(dataTable, fechaGeneracion, rutaFE, usuario, PrefijoID)
     End Function
 
-    Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String) As String
-        Return sFacturacionElectronica.EnviarXMLGetStatus(rutaFE, ticket)
+    Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.EnviarXMLGetStatus(rutaFE, ticket, PrefijoID)
     End Function
 
     Function ObtenerEnviarData(oeDocumento As e_MovimientoDocumento) As DataSet '*** Implements Il_Documento.ListaFacturacionElectronica
@@ -5406,8 +5406,8 @@ Public Class l_MovimientoDocumento
     End Function
 
     'RESUMEN DIARIO BOLETAS 2018
-    Function GenerarXmlFacturaElectronicaBath_2018(dataTable As DataTable, DT As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean) As String
-        Return sFacturacionElectronica.GenerarXmlComprobantesBath_2018(dataTable, DT, fechaGeneracion, rutaFE, usuario, b_Baja)
+    Function GenerarXmlFacturaElectronicaBath_2018(dataTable As DataTable, DT As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.GenerarXmlComprobantesBath_2018(dataTable, DT, fechaGeneracion, rutaFE, usuario, b_Baja, PrefijoID)
     End Function
 
     Function GenerarXmlFacturaElectronica_Resumen(dataTable As DataTable, dataTable1 As DataTable, dataTable2 As DataTable, p3 As String, p4 As String) As Boolean

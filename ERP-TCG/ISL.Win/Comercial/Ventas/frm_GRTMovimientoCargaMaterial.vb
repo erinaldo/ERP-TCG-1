@@ -239,7 +239,7 @@ Public Class frm_GRTMovimientoCargaMaterial
             LlenaCombos()
             ComboGrilla()
             ControlRangoFechaInicializa()
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             ListaStockAlmacenes()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

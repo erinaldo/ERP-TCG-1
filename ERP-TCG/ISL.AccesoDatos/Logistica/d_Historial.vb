@@ -95,6 +95,7 @@ Public Class d_Historial
                     For Each Detalle As e_HistorialInventario In .lstHistorialInventario
                         Detalle.IdHistorial = stResultado(0)
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeHistorial.PrefijoID '@0001
                         odHistorialInventario.Guardar(Detalle)
                     Next
 
@@ -131,7 +132,6 @@ Public Class d_Historial
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial", PrefijoID)
             Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception

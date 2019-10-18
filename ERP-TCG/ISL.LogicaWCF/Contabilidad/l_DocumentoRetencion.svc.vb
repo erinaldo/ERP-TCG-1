@@ -104,9 +104,9 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Function EnviarXMLGetStatus(ByVal ticket As String, usuario As String) As String
+    Function EnviarXMLGetStatus(ByVal ticket As String, usuario As String, ByVal PrefijoID As String) As String
         Dim strRuta As String = olDatosConfiguracion.DocElectronico()
-        Return osRetencionElectronico.EnviarXMLGetStatus(strRuta, ticket, usuario)
+        Return osRetencionElectronico.EnviarXMLGetStatus(strRuta, ticket, usuario, PrefijoID)
     End Function
     Public Function ConsultarDocumento(oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.ConsultarDocumento
         Try

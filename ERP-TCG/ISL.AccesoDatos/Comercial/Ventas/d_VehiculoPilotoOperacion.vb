@@ -84,7 +84,7 @@ Public Class d_VehiculoPilotoOperacion
 
     Public Function Guardar(ByVal oeListaVehiculoPiloto As List(Of e_VehiculoPilotoOperacion)) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Using transScope As New TransactionScope()
                 For Each VehiculoPiloto As e_VehiculoPilotoOperacion In oeListaVehiculoPiloto
                     With VehiculoPiloto

@@ -36,7 +36,7 @@ Public Class d_ProcesoFlujoCaja
             End If
 
 
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            '
             'Dim IdProcesoNegocio As String = oeProcesoFlujoCaja.IdProcesoNegocio
             ''Dim ds As DataSet
             ''ds = sqlhelper.ExecuteDataset("STD.Isp_ProcesoFlujoCaja_Listar", "", oeProcesoFlujoCaja.Id)

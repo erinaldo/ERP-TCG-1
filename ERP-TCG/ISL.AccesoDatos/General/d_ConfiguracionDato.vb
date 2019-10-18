@@ -104,7 +104,6 @@ Public Class d_ConfiguracionDato
 
     Public Function GuardarMasivo(ByVal dtConfDato As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("STD.ConfiguracionDato", dtConfDato)
             Return True
         Catch ex As Exception
@@ -126,7 +125,7 @@ Public Class d_ConfiguracionDato
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "STD.ConfiguracionDato", PrefijoID
                                   )

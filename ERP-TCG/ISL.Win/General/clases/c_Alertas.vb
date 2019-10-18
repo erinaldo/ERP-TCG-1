@@ -1,7 +1,17 @@
-﻿Imports Infragistics.Win.Misc
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports Infragistics.Win.Misc
 Imports Infragistics.Win.SoundEvents
 Imports System.Net.Mail
 Imports System.ServiceModel
+Imports System.IO
+Imports System.Net
 
 Public Class c_Alertas
 
@@ -122,9 +132,12 @@ Public Class c_Alertas
         showInfo.Text = mensaje
         showInfo.FooterText = "Cerrar"
         Dim olDatosConfiguracion As New ISL.LogicaWCF.l_Configuracion
-
-        showInfo.Image = New Icon(olDatosConfiguracion.RutaImagen & "\LogoERP.ico").ToBitmap()
-        showInfo.Sound = olDatosConfiguracion.RutaImagen & "\Sonido.wav"
+        '@0001
+        'showInfo.Image = New Icon(olDatosConfiguracion.RutaImagen & "\LogoERP.ico").ToBitmap()
+        'showInfo.Sound = olDatosConfiguracion.RutaImagen & "\Sonido.wav"
+        '@0001
+        showInfo.Image = New Icon(Path.Combine(Application.StartupPath, "Imagenes") & "\LogoERP.ico").ToBitmap()
+        showInfo.Sound = Path.Combine(Application.StartupPath, "Imagenes") & "\Sonido.wav"
 
         showInfo.ScreenPosition = ScreenPosition.Center
 

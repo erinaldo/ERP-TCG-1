@@ -255,6 +255,7 @@ Public Class d_Orden
                     For Each Detalle As e_OrdenMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeOrden.PrefijoID '@0001
                         odOrdenMaterial.Guardar(Detalle)
                     Next
                 End With

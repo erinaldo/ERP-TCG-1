@@ -1248,7 +1248,7 @@ Public Class s_Facturacion
     End Sub
 
 
-    Public Function GenerarXmlComprobantesBaja(ByVal dtCab As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String) As String
+    Public Function GenerarXmlComprobantesBaja(ByVal dtCab As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, ByVal PrefijoID As String) As String
         ' Create XmlWriterSettings.
         Dim nombre As String = ""
         Dim settings As XmlWriterSettings = New XmlWriterSettings()
@@ -1362,7 +1362,7 @@ Public Class s_Facturacion
                 zip.Save(rutaFE.Trim() & nombre.Trim() & ".zip")
             End Using
             ticket = Me.EnviarBajaXML(rutaFE, nombre, definicion)
-            odComprobanteElectronicoBath.AdicionarComprobanteBath(dtCab, fechaGeneracion, nombre, definicion, True, ticket, usuario, "", "")
+            odComprobanteElectronicoBath.AdicionarComprobanteBath(dtCab, fechaGeneracion, nombre, definicion, True, ticket, usuario, "", "", PrefijoID)
             'EnviarXMLGetStatus(rutaFE, ticket)
         Catch ex As Exception
             If ticket Is Nothing Then
@@ -1428,7 +1428,7 @@ Public Class s_Facturacion
         Return writer
     End Function
 
-    Public Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String) As Boolean
+    Public Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal PrefijoID As String) As Boolean
         Dim clienteRemotoObj As New sFacturacion.billServiceClient
         Dim datos As New sFacturacion.getStatusResponse
         Dim envio As New sFacturacion.getStatusRequest
@@ -1503,7 +1503,7 @@ Public Class s_Facturacion
             End If
             If (Not (dtCab Is Nothing)) And (Not (dtDet Is Nothing)) Then
                 If cdrXML.Trim <> "" Then
-                    odComprobanteBath.ActualizarEstadoBath(dtCab, dtDet, cdrXML, flagError, dtCab.Item(0).IndBaja)
+                    odComprobanteBath.ActualizarEstadoBath(dtCab, dtDet, cdrXML, flagError, dtCab.Item(0).IndBaja, PrefijoID)
                 End If
             End If
             If File.Exists(rutaFE & "R-" & Nombre & ".xml") Then
@@ -1515,7 +1515,7 @@ Public Class s_Facturacion
 
 
 #Region "Resumen Diario de Boletas 2018"
-    Public Function GenerarXmlComprobantesBath_2018(ByVal dtCab As DataTable, dtRow As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean) As String
+    Public Function GenerarXmlComprobantesBath_2018(ByVal dtCab As DataTable, dtRow As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean, ByVal PrefijoID As String) As String
         Dim nombre As String = ""
         Dim settings As XmlWriterSettings = New XmlWriterSettings()
         Dim prefixCac As String
@@ -1616,7 +1616,7 @@ Public Class s_Facturacion
             End Using
 
             ticket = Me.EnviarBajaXML(rutaFE, nombre, definicion)
-            odComprobanteElectronicoBath.AdicionarComprobanteBath(dtCab, fechaGeneracion, nombre, definicion, b_Baja, ticket, usuario, "", "")
+            odComprobanteElectronicoBath.AdicionarComprobanteBath(dtCab, fechaGeneracion, nombre, definicion, b_Baja, ticket, usuario, "", "", PrefijoID)
         Catch ex As Exception
             If ticket Is Nothing Then
                 Throw ex

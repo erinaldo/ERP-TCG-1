@@ -7,23 +7,13 @@
 '=================================================================================================================
 
 Imports ISL.EntidadesWCF
-''' <summary>
-''' Clase que gestiona las diversas situaciones administrativas del personal o empleados de la empresa
-''' Fecha de Actualizacion:05/12/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla SituacionAdministrativa,Capa del Sistema: Capa de Acceso a Datos.</remarks>
+
+
 Public Class d_SituacionAdministrativa
     Private oeSituacionAdministrativa As New e_SituacionAdministrativa
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_SituacionAdministrativa y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeSituacionAdministrativa) de tipo e_SituacionAdministrativa</returns>
-    ''' <remarks>Capa del Sistema:Capa Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_SituacionAdministrativa
         Try
             Dim oeSituacionAdministrativa = New e_SituacionAdministrativa( _
@@ -45,14 +35,7 @@ Public Class d_SituacionAdministrativa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un SituacionAdministrativa de establecimiento, el cual es consultado por el procedimiento almacenado PER.Isp_SituacionAdministrativa_Listar
-    ''' enviando su id del SituacionAdministrativa.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_SituacionAdministrativa.
-    ''' Fecha de Actualizacion:05/12/2011
-    ''' </summary>
-    ''' <param name="oeSituacionAdministrativa">Recibe una variable oeSituacionAdministrativa de tipo e_SituacionAdministrativa</param>
-    ''' <returns>Devuelve una varible oeSituacionAdministrativa de tipo e_SituacionAdministrativa</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As e_SituacionAdministrativa
         Try
             Dim ds As DataSet
@@ -68,12 +51,7 @@ Public Class d_SituacionAdministrativa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Caso especial para obtener la situación administrativa específica a partir de su Id
-    ''' </summary>
-    ''' <param name="id"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function Obtener(ByVal id As String) As e_SituacionAdministrativa
         Try
             Dim ds As DataSet
@@ -89,14 +67,7 @@ Public Class d_SituacionAdministrativa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_SituacionAdministrativa, el cual es consultado por el procedimiento almacenado PER.Isp_SituacionAdministrativa_Listar
-    ''' enviando sus atributos del SituacionAdministrativa.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:05/12/2011
-    ''' </summary>
-    ''' <param name="oeSituacionAdministrativa">Recibe una Variable oeSituacionAdministrativa de tipo e_SituacionAdministrativa </param>
-    ''' <returns>Devuelve una lista generica(lista) de objetos de tipo e_SituacionAdministrativa</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As List(Of e_SituacionAdministrativa)
         Try
             Dim ldSituacionAdministrativa As New List(Of e_SituacionAdministrativa)
@@ -123,16 +94,7 @@ Public Class d_SituacionAdministrativa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del SituacionAdministrativa,a travez del procedimiento almacenado
-    ''' PER.Isp_SituacionAdministrativa_IAE,por el cual van a ser enviados y registrados los datos del SituacionAdministrativa y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:05/12/2011
-    ''' </summary>
-    ''' <param name="oeSituacionAdministrativa">Recibe una variable oeSituacionAdministrativa de tipo e_SituacionAdministrativa</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de 
-    ''' SituacionAdministrativa es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
+
     Public Function Guardar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean
         Try
             With oeSituacionAdministrativa
@@ -157,15 +119,6 @@ Public Class d_SituacionAdministrativa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de SituacionAdministrativa,a travez del procedimiento almacenado
-    ''' PER.Isp_SituacionAdministrativa_IAE,por el cual va a ser enviado el id del SituacionAdministrativa a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:05/12/2011
-    ''' </summary>
-    ''' <param name="oeSituacionAdministrativa">Recibe una variable oeSituacionAdministrativa de tipo objeto e_SituacionAdministrativa</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Eliminar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean
         Try
             sqlhelper.ExecuteNonQuery("PER.Isp_SituacionAdministrativa_IAE", _

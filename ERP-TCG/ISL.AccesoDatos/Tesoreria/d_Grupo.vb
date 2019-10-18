@@ -76,7 +76,7 @@ Public Class d_Grupo
 
     Public Function Listar(ByVal oeGrupo As e_Grupo) As List(Of e_Grupo)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ldGrupo As New List(Of e_Grupo)
             Dim ds As DataSet
             With oeGrupo

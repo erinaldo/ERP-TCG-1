@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -80,12 +88,10 @@ Public Class d_Periodo
 
     Public Function Guardar(ByVal oePeriodo As e_Periodo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
             With oePeriodo
-                sqlhelper.ExecuteNonQuery("CON.ISP_Periodo_IAE", .TipoOperacion, _
-                .PrefijoID, .Id, .Codigo, .Ejercicio, .Mes, _
-                .FechaInicio, .FechaFin, .CierreCompras, .CierraVentas, .CierreAlmacen, .CierreTesoreria, .CierreContabilidad, _
+                sqlhelper.ExecuteNonQuery("CON.ISP_Periodo_IAE", .TipoOperacion,
+                .PrefijoID, .Id, .Codigo, .Ejercicio, .Mes,
+                .FechaInicio, .FechaFin, .CierreCompras, .CierraVentas, .CierreAlmacen, .CierreTesoreria, .CierreContabilidad,
                 .CambioCompra, .CambioVenta, .Activo, .CierreCombustible, .CierrePlanilla, .CierreCajaLiquidacion)
             End With
             Return True

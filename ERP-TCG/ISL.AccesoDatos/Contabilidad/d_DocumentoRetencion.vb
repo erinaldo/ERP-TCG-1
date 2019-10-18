@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -47,13 +55,12 @@ Public Class d_DocumentoRetencion
     Public Function Obtener(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As e_DocumentoRetencion
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             With oeDocumentoRetencion
-                ds = sqlhelper.ExecuteDataset("CON.Isp_DocumentoRetencion_Listar", .TipoOperacion, _
+                ds = sqlhelper.ExecuteDataset("CON.Isp_DocumentoRetencion_Listar", .TipoOperacion,
             Left(.PrefijoID, 1), "", .Id, .IdTipoDocumento, .Serie, .Numero, .FechaEmision, .Activo, .IdAsientoMovimiento)
             End With
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeDocumentoRetencion = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeDocumentoRetencion
@@ -64,7 +71,6 @@ Public Class d_DocumentoRetencion
 
     Public Function Listar(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As List(Of e_DocumentoRetencion)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldDocumentoRetencion As New List(Of e_DocumentoRetencion)
             Dim ds As DataSet
             With oeDocumentoRetencion
@@ -77,7 +83,7 @@ Public Class d_DocumentoRetencion
                         , .FechaEmision _
                         , .Activo _
                         , .IdAsientoMovimiento _
-                        , .FechaFin _
+                        , .FechaFin
                         )
             End With
             oeDocumentoRetencion = Nothing
@@ -122,10 +128,9 @@ Public Class d_DocumentoRetencion
 
     Public Function Guardar(ByRef oeDocumentoRetencion As e_DocumentoRetencion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeDocumentoRetencion
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_DocumentoRetencion_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_DocumentoRetencion_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -153,7 +158,7 @@ Public Class d_DocumentoRetencion
                         , .IndExterno _
                         , .UsuarioCrea _
                         , .UsuarioModifica _
-                        , .IdProveedor _
+                        , .IdProveedor
                     ).ToString.Split("_")
                 oeDocumentoRetencion.Id = stResultado(0)
             End With

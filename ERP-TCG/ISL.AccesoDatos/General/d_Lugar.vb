@@ -9,24 +9,11 @@
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
-''' <summary>
-''' Clase que gestiona el lugar o ubicacion del territorio.
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Tipo Orden Compra,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 
 Public Class d_Lugar
 
     Private sqlhelper As New SqlHelper
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Lugar y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeLugar) de tipo e_Lugar</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_Lugar
         Try
             Dim oeLugar = New e_Lugar(o_fila("Id").ToString, _
@@ -44,14 +31,8 @@ Public Class d_Lugar
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene un lugar, el cual es consultado por el procedimiento almacenado XXX.ISP_XXXXXX_Listar
-    ''' enviando su id del  -.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo -.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeLugar">Recibe una variable oeLugar de tipo e_Lugar</param>
-    ''' <returns>Devuelve una varible oeLugar de tipo e_Lugar</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
+
     Public Function Obtener(ByVal oeLugar As e_Lugar) As e_Lugar
         Try
             Dim ds As DataSet
@@ -71,14 +52,7 @@ Public Class d_Lugar
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Lugar, el cual es consultado por el procedimiento almacenado 
-    ''' STD.Isp_Lugar_Listar,enviando sus atributos del lugar.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeLugar">Recibe una Variable oeLugar de tipo e_Lugar </param>
-    ''' <returns>Devuelve una lista generica(ldLugar) de objetos de tipo e_Lugar</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeLugar As e_Lugar) As List(Of e_Lugar)
         Try
             Dim ldLugar As New List(Of e_Lugar)
@@ -106,17 +80,8 @@ Public Class d_Lugar
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del lugar,a travez del procedimiento almacenado
-    ''' STD.Isp_Lugar_Listar,por el cual van a ser enviados y registrados los datos del lugar y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeLugar">Recibe una variable oeLugar de tipo e_Lugar</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del 
-    ''' registro del lugar es positiva= true sino false 
-    '''Capa del Sistema:Capa de Acceso a Datos</remarks>
+
+
     Public Function Guardar(ByVal oeLugar As e_Lugar) As Boolean
 
         Dim stResultado() As String
@@ -158,21 +123,12 @@ Public Class d_Lugar
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un lugar,a travez del procedimiento almacenado
-    ''' CON.ISP_XXXXXXXXXXXXXXX_IAE,por el cual va a ser enviado el id del lugar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeLugar">Recibe una variable oeLugar de tipo objeto e_Lugar</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeLugar As e_Lugar) As Boolean
         Try
-            sqlhelper.ExecuteNonQuery("[STD].[Isp_Lugar_IAE]", _
-                                        "E", _
-                                        "", _
+            sqlhelper.ExecuteNonQuery("[STD].[Isp_Lugar_IAE]",
+                                        "E",
+                                        "",
                                         oeLugar.Id)
             Return True
         Catch ex As Exception

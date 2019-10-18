@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -78,9 +86,8 @@ Public Class d_GastoViatico
 
     Public Function Guardar(ByVal oeGastoViatico As e_GastoViatico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeGastoViatico
-                sqlhelper.ExecuteNonQuery("TES.ISP_GastoViatico_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("TES.ISP_GastoViatico_IAE", .TipoOperacion,
                         .Id _
                         , .IdViaje _
                         , .Fecha _
@@ -94,7 +101,7 @@ Public Class d_GastoViatico
                         , .IdEstado _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

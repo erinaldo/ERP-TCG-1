@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -7,7 +15,6 @@ Public Class d_CentroCosto
     'Private oeCentroCosto As e_CentroCosto
     Private sqlhelper As New SqlHelper
     Private odCCUbicaciones As New d_CentroCostoUbicaciones
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
     Public Function Cargar(ByVal o_fila As DataRow) As e_CentroCosto
         Try
@@ -110,6 +117,7 @@ Public Class d_CentroCosto
                             Ubicaciones.TipoOperacion = "I"
                             Ubicaciones.IdCentroCosto = stResultado(0)
                             Ubicaciones.UsuarioCreacion = .UsuarioCreacion
+                            Ubicaciones.PrefijoID = oeCentroCosto.PrefijoID '@0001
                             odCCUbicaciones.Guardar(Ubicaciones)
                         Next
                     End If

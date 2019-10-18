@@ -58,7 +58,7 @@ Public Class frm_BuscarViajes
     Public Sub IniciarFiltros()
         Try
             olPrefijo = New l_Configuracion
-            PrefijoId = olPrefijo.PrefijoID
+            PrefijoId = gs_PrefijoIdSucursal '@0001
             FechaServidor = ObtenerFechaServidor()
             ColorControles()
             'fecViaje.Value = FechaServidor.Date

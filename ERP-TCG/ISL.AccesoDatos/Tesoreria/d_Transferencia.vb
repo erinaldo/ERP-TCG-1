@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -73,10 +81,9 @@ Public Class d_Transferencia
 
     Public Function Guardar(ByVal oeTransferencia As e_Transferencia) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeTransferencia
-                stResultado = sqlhelper.ExecuteScalar("TES.Isp_Transferencia_IAE", .TipoOperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("TES.Isp_Transferencia_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdBanco _
                         , .Fecha _
@@ -88,7 +95,7 @@ Public Class d_Transferencia
                         , .IdCuentaCorrienteOrigen _
                         , .IdCuentaCorrienteDestino _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
 
                 oeTransferencia.Id = stResultado(0)

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -75,14 +83,13 @@ Public Class d_LibroElectronico
 
     Public Function Guardar(ByVal oeLibroElectronico As e_LibroElectronico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim odDetalleLE As New d_DetalleLibroElectronico
             Dim id() As String
             Using transScope As New TransactionScope()
                 With oeLibroElectronico
-                    id = sqlhelper.ExecuteScalar("CON.Isp_LibroElectronico_IAE", _
-                             .TipoOperacion, _
-                             .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("CON.Isp_LibroElectronico_IAE",
+                             .TipoOperacion,
+                             .PrefijoID,
                             .Id _
                             , .IdPeriodo _
                             , .IdTablaContableDet _
@@ -95,7 +102,7 @@ Public Class d_LibroElectronico
                             , .SubTotal5 _
                             , .FechaCreacion _
                             , .UsuarioCreacion _
-                            , .Activo _
+                            , .Activo
                         ).ToString.Split("-")
                     If id(0) <> "" Then
                         If .TipoOperacion = "I" AndAlso .dtDetalleLE.Rows.Count > 0 Then

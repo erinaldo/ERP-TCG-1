@@ -2023,7 +2023,7 @@ Public Class frm_RequerimientoD2
             LlenaComboCategoriaServicios()
 
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
 
             If PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilJefeAlmacen) _
             Or PerfilAsignado(gNombrePerfilJefeLogistica) Or PerfilAsignado(gNombrePerfilJefeTesoreria) Then

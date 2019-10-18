@@ -102,7 +102,7 @@ Public Class d_TarjetaMovimiento
     Public Function Guardar(ByVal oePeajeTarifa As e_TarjetaMovimiento) As Boolean
         Try
             'sqlhelper = New SqlHelper
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            '
             'With oePeajeTarifa
             '    sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE", _
             '                              .TipoOperacion _
@@ -146,8 +146,6 @@ Public Class d_TarjetaMovimiento
 
     Public Function IdInsertar(ByVal PrefijoID As String) As String
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim strResultado As String
             strResultado = sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
                                                    "Z",
@@ -163,8 +161,6 @@ Public Class d_TarjetaMovimiento
 
     Public Function ActualizarMasivo(ByVal xml As String, ByVal PrefijoID As String) As Boolean
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.ExecuteScalar("STD.Isp_TarjetaMovimiento_IAE",
                                       "S" _
                                         , PrefijoID _

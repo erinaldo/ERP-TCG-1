@@ -941,7 +941,7 @@ Public Class s_Retencion
         End Try
     End Function
 
-    Public Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal Usuario As String) As Boolean
+    Public Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal Usuario As String, ByVal PrefijoID As String) As Boolean
 
         Dim clienteRemotoObj As New sRetencion.billServiceClient
         Dim datos As New sRetencion.getStatusResponse
@@ -1018,7 +1018,7 @@ Public Class s_Retencion
             End If
 
             If cdrXML.Trim <> "" Then
-                odComprobanteBath.ActualizarEstadoBath_Retencion(l_ComprobanteElectronicoBath, l_ComprobanteElectronicoBathD, cdrXML, flagError, Usuario)
+                odComprobanteBath.ActualizarEstadoBath_Retencion(l_ComprobanteElectronicoBath, l_ComprobanteElectronicoBathD, cdrXML, flagError, Usuario, PrefijoID)
             End If
 
             If File.Exists(rutaFE & "\Retencion\" & "R-" & Nombre & ".xml") Then

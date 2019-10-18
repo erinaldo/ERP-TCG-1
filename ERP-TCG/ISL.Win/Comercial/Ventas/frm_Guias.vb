@@ -608,7 +608,7 @@ Public Class frm_Guias
             LlenaCombos()
             ComboGrilla()
             ControlRangoFechaInicializa()
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             If PerfilAsignado(gNombrePerfilAutorizaTarifas) Then
                 With griViajeDetalle.DisplayLayout.Bands(0)
                     .Columns("Carga").Header.Enabled = True

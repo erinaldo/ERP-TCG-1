@@ -10,12 +10,6 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que 
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Tipo Orden Compra,Capa del Sistema: Capa de Acceso a Datos.</remarks>
-
 Public Class d_Material
 
     Private sqlhelper As New SqlHelper
@@ -25,34 +19,27 @@ Public Class d_Material
     Private oeMatDisNeu As New e_Material_DisenoNeu
     Private odMatDisNeu As New d_Material_DisenoNeu
     Private odMaterialAlmacen As New d_MaterialAlmacen
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Material y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="fila">Recibe una variable fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeMaterial) de tipo e_Material </returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Cargar_Detalle(ByVal fila As DataRow) As e_Material
         Try
-            Dim oeMaterial = New e_Material(fila("Seleccion"), _
-                                            fila("Id"), _
-                                            fila("Codigo"), _
-                                            fila("Nombre"), _
-                                            fila("IdTipoUnidadMedida"), _
-                                            fila("TipoUnidadMedida"), _
-                                            fila("IdUnidadMedida"), _
-                                            fila("UnidadMedida"), _
-                                            fila("Medida"), _
-                                            fila("Peso"), _
-                                            fila("Serial"), _
-                                            fila("AfectoIgv"), _
-                                            fila("Glosa"), _
-                                            fila("IdAlmacen"), _
-                                            fila("Almacen"), _
-                                            fila("IdSubAlmacen"), _
-                                            fila("Activo"), _
-                                            fila("Precio"), _
+            Dim oeMaterial = New e_Material(fila("Seleccion"),
+                                            fila("Id"),
+                                            fila("Codigo"),
+                                            fila("Nombre"),
+                                            fila("IdTipoUnidadMedida"),
+                                            fila("TipoUnidadMedida"),
+                                            fila("IdUnidadMedida"),
+                                            fila("UnidadMedida"),
+                                            fila("Medida"),
+                                            fila("Peso"),
+                                            fila("Serial"),
+                                            fila("AfectoIgv"),
+                                            fila("Glosa"),
+                                            fila("IdAlmacen"),
+                                            fila("Almacen"),
+                                            fila("IdSubAlmacen"),
+                                            fila("Activo"),
+                                            fila("Precio"),
                                             fila("Stock"))
             Return oeMaterial
         Catch ex As Exception
@@ -119,19 +106,12 @@ Public Class d_Material
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene un material, el cual es consultado por el procedimiento almacenado STD.Isp_Material_Listar
-    ''' enviando su id del material.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_Material.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMaterial">Recibe una variable oeMaterial de tipo e_Material</param>
-    ''' <returns>Devuelve una varible oeMaterial de tipo -</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeMaterial As e_Material) As e_Material
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar", _
-                                          oeMaterial.TipoOperacion, _
+            ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar",
+                                          oeMaterial.TipoOperacion,
                                           oeMaterial.Id, oeMaterial.Codigo, oeMaterial.Nombre)
             If ds.Tables.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then
                 oeMaterial = Cargar(ds.Tables(0).Rows(0))
@@ -189,28 +169,19 @@ Public Class d_Material
         End Try
     End Function
 
-
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Material, el cual es consultado por el procedimiento almacenado STD.Isp_Material_Listar
-    ''' enviando sus atributos del material.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMaterial">Recibe una Variable oeMaterial de tipo e_Material </param>
-    ''' <returns>Devuelve una lista generica(ldMaterial) de objetos de tipo e_Material</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeMaterial As e_Material) As List(Of e_Material)
         Try
             Dim ldMaterial As New List(Of e_Material)
             Dim ds As DataSet
             With oeMaterial
-                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar", _
-                                                  .TipoOperacion, _
-                                                  .Id, _
-                                                  .Codigo, _
-                                                  .Nombre, _
-                                                  "", _
-                                                  .IdTipoMaterial, _
-                                                  .IdFamilia, _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar",
+                                                  .TipoOperacion,
+                                                  .Id,
+                                                  .Codigo,
+                                                  .Nombre,
+                                                  "",
+                                                  .IdTipoMaterial,
+                                                  .IdFamilia,
                                                   .IdSubFamilia, "", .Tipo)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -227,14 +198,13 @@ Public Class d_Material
 
     Public Function Listar_(ByVal oeMaterial As e_Material) As List(Of e_Material)
         Try
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldMaterial As New List(Of e_Material)
             Dim ds As DataSet
             With oeMaterial
-                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar", _
-                                                  .TipoOperacion, _
-                                                  .Id, _
-                                                  .Codigo, _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar",
+                                                  .TipoOperacion,
+                                                  .Id,
+                                                  .Codigo,
                                                   .Nombre, "", "", "", "", .IdCentro, .Tipo)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -251,13 +221,12 @@ Public Class d_Material
 
     Public Function Obtener_(ByVal oeMaterial As e_Material) As e_Material
         Try
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             With oeMaterial
-                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar", _
-                                                  .TipoOperacion, _
-                                                  .Id, _
-                                                  .Codigo, _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_Material_Listar",
+                                                  .TipoOperacion,
+                                                  .Id,
+                                                  .Codigo,
                                                   .Nombre, "", "", "", "", .IdCentro, .Tipo)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -270,11 +239,7 @@ Public Class d_Material
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Este metodo se encarga de llenar 
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function ComboGrilla(ByVal ListaMaterial As List(Of e_Material))
         Dim ds = New DataTable
         ds.Columns.Add("Id")
@@ -287,16 +252,7 @@ Public Class d_Material
         Next
         Return ds
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del material,a travez del procedimiento almacenado
-    ''' STD.Isp_Material_IAE,por el cual van a ser enviados y registrados los datos del material y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMaterial">Recibe una variable oeMaterial de tipo e_Material</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro 
-    ''' de material es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Guardar(ByVal oeMaterial As e_Material) As Boolean
         Try
             Dim stResultado() As String
@@ -370,15 +326,7 @@ Public Class d_Material
             Throw ex 
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del material,a travez del procedimiento almacenado
-    ''' STD.Isp_Material_IAE,por el cual va a ser enviado el id del material a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMaterial">Recibe una variable oeMaterial de tipo objeto e_Material</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
 
     Public Function Eliminar(ByVal oeMaterial As e_Material) As Boolean
         Try

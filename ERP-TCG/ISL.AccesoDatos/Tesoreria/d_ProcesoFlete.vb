@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 
 Public Class d_ProcesoFlete
@@ -48,9 +56,8 @@ Public Class d_ProcesoFlete
     Public Function Obtener(ByVal oeProcesoFlete As e_ProcesoFlete) As e_ProcesoFlete
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("TES.Isp_ProcesoFlete_Listar", "", _
+            ds = sqlhelper.ExecuteDataset("TES.Isp_ProcesoFlete_Listar", "",
              oeProcesoFlete.TipoOperacion)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeProcesoFlete = Cargar(ds.Tables(0).Rows(0))
@@ -63,7 +70,7 @@ Public Class d_ProcesoFlete
 
     'Public Function Listar(ByVal oeMovimiento As e_Movimiento) As List(Of e_Movimiento)
     '    Try
-    '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+    '        
     '        Dim ldMovimiento As New List(Of e_Movimiento)
     '        Dim ds As DataSet
     '        With oeMovimiento

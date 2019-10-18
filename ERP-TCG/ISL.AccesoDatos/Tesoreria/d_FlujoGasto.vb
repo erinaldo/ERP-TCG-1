@@ -10,12 +10,7 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que gestiona los flujos de caja, se entiende por ello a los flujos de entradas y salidas de caja o efectivo, en un período dado.  
-''' Es la acumulación neta de activos líquidos en un periodo determinado y, por lo tanto, constituye un indicador importante de la liquidez de una empresa.
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla FlujoCaja,Capa del Sistema:Capa de Acceso a Datos.</remarks>
+
 Public Class d_FlujoGasto
     Private sqlhelper As New SqlHelper
 
@@ -23,14 +18,7 @@ Public Class d_FlujoGasto
     Private oeItemGasto As New e_ItemGasto
     Private odCuentaFlujoCaja As New d_CuentaFlujoCaja
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo  y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeFlujoGasto) de tipo e_FlujoGasto</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_FlujoCaja
         Try
             Dim oeFlujoGasto = New e_FlujoCaja( _
@@ -44,14 +32,6 @@ Public Class d_FlujoGasto
 
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un flujo de caja, el cual es consultado por el procedimiento almacenado TES.Isp_FlujoGasto_Listar
-    ''' enviando su id del flujo de caja.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_FlujoGasto.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeFlujoCaja">Recibe una variable oeFlujoGasto de tipo e_FlujoGasto</param>
-    ''' <returns>Devuelve una varible oeFlujoGasto de tipo e_FlujoGasto</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeFlujoCaja As e_FlujoCaja) As e_FlujoCaja
         Try
             Dim ds As New DataSet
@@ -99,14 +79,6 @@ Public Class d_FlujoGasto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_FlujoCaja, el cual es consultado por el procedimiento almacenado TES.Isp_FlujoCaja_Listar
-    ''' enviando sus atributos del flujo de caja.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeFlujoCaja">Recibe una Variable oeFlujoCaja de tipo e_FlujoCaja</param>
-    ''' <returns>Devuelve una lista generica(ldFlujoCaja) de objetos de tipo e_FlujoCaja</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeFlujoCaja As e_FlujoCaja) As List(Of e_FlujoCaja)
         Try
             Dim ldFlujoGasto As New List(Of e_FlujoCaja)
@@ -160,15 +132,6 @@ Public Class d_FlujoGasto
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del tipo de documento,a travez del procedimiento almacenado
-    ''' STD.Isp_TipoDocumento_IAE,por el cual va a ser enviado el id del tipo de documento a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeFlujoGasto">Recibe una variable oeFlujoCaja de tipo objeto e_FlujoCaja</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean
         Try

@@ -199,14 +199,14 @@ Public Class d_CuentaxCyP
                     Dim odAsM As New d_AsientoMov_MovDoc
                     .AsMov_MovDoc.IdAsientoMovimiento = ._IdAsientoMovimiento
                     .AsMov_MovDoc.IdCuentaxCyP = oeCuentaxCyP.Id
-                    .AsMov_MovDoc.PrefijoID = .PrefijoID '@0001
+                    .AsMov_MovDoc.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                     odAsM.Guardar(.AsMov_MovDoc)
                 End If
                 ' Guardar Obligacion Fin Movimiento Documento
                 If (.ObligacionDocumento IsNot Nothing) AndAlso .ObligacionDocumento.TipoOperacion = "I" Then
                     Dim odObliFinMovDoc As New d_ObligacionDocumento
                     .ObligacionDocumento.IdCuentaxCyP = oeCuentaxCyP.Id
-                    .ObligacionDocumento.PrefijoID = .PrefijoID '@0001
+                    .ObligacionDocumento.PrefijoID = oeCuentaxCyP.PrefijoID '@0001
                     odObliFinMovDoc.Guardar(.ObligacionDocumento)
                 End If
             End With

@@ -8,24 +8,9 @@
 
 Imports ISL.EntidadesWCF
 
-''' <summary>
-''' Clase que gestiona los proceso que se tienen el menu del sistema.
-''' Fecha Actualizada:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla MenuProceso,Capa del Sistema:Capa de Acceso a Datos.</remarks>
-
 Public Class d_MenuProceso
     Private sqlhelper As New SqlHelper
 
-
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo  e_MenuProceso y enviada al metodo que lo utilizo.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeProceso) de tipo e_MenuProceso </returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_MenuProceso
         Try
             Dim oeProceso = New e_MenuProceso( _
@@ -45,14 +30,6 @@ Public Class d_MenuProceso
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un proceso del menu, el cual es consultado por el procedimiento almacenado SGD.Isp_MenuProceso_Listar
-    ''' enviando su id del proceso.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_MenuProceso.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProceso">Recibe una variable oeProceso de tipo e_MenuProceso</param>
-    ''' <returns>Devuelve una varible oeProceso  de tipo e_MenuProceso</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeProceso As e_MenuProceso) As e_MenuProceso
 
         Try
@@ -69,13 +46,6 @@ Public Class d_MenuProceso
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_MenuProceso, el cual es consultado por el procedimiento almacenado STD.Isp_TipoDocumento_Listar
-    ''' enviando sus atributos del proceso de menu.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' </summary>
-    ''' <param name="oeProceso">Recibe una Variable oeProceso de tipo e_MenuProceso </param>
-    ''' <returns>Devuelve una lista generica(ldProceso) de objetos de tipo e_MenuProceso </returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeProceso As e_MenuProceso) As List(Of e_MenuProceso)
         Try
             Dim ldProceso As New List(Of e_MenuProceso)
@@ -103,16 +73,6 @@ Public Class d_MenuProceso
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos de un proceso del menu,a travez del procedimiento almacenado
-    ''' SGD.Isp_MenuProceso_IAE,por el cual van a ser enviados y registrados los datos del proceso del menu y
-    ''' obtendremos una respuesta de confirmacion del registro guardado.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProceso">Recibe una variable oeProceso de tipo e_MenuProceso</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de tipo
-    '''  de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeProceso As e_MenuProceso) As Boolean
         Try
             With oeProceso
@@ -136,15 +96,6 @@ Public Class d_MenuProceso
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de proceso del menu,a travez del procedimiento almacenado
-    ''' STD.Isp_MenuProceso_IAE,por el cual va a ser enviado el id del proceso del menu a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProceso">Recibe una variable oeProceso de tipo objeto e_MenuProceso</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeProceso As e_MenuProceso) As Boolean
         Try

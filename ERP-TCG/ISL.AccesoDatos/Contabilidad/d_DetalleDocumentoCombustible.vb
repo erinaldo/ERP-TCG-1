@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -34,7 +42,7 @@ Public Class d_DetalleDocumentoCombustible
     'Public Function Obtener(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As e_DetalleDocumentoCombustible
 
     '    Try
-    '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+    '        
     '        Dim ds As DataSet
     '        ds = SqlHelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
     '        Left(.PrefijoID, 1), "", oeDetalleDocumentoCombustible.Id)
@@ -49,7 +57,7 @@ Public Class d_DetalleDocumentoCombustible
 
     'Public Function Listar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As List(Of e_DetalleDocumentoCombustible)
     '    Try
-    '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+    '        
     '        Dim ldDetalleDocumentoCombustible As New List(Of e_DetalleDocumentoCombustible)
     '        Dim ds As DataSet
     '        With oeDetalleDocumentoCombustible
@@ -86,16 +94,15 @@ Public Class d_DetalleDocumentoCombustible
 
     Public Function Guardar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleDocumentoCombustible
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDocumentoCombustible_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleDocumentoCombustible_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdRegConsumoCombustible _
                         , .Cantidad _
                         , .NroLinea _
                         , .IdDetalleDocumento _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

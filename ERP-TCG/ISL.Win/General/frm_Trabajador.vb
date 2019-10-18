@@ -974,7 +974,7 @@ Public Class frm_Trabajador
                 With oeOcupacionTrab
                     .IdArea = "1CH000000015" 'OPERACIONES
                     .IdCargo = "1PY004" 'LOCACION DE SERVICIOS
-                    .IdCentro = Prefijo.PrefijoID 'PACASMAYO, SEGUN PREFIJO
+                    .IdCentro = gs_PrefijoIdSucursal 'PACASMAYO, SEGUN PREFIJO
                     .IdOcupacion = "1CH000000023" ' CONDUCTOR
                     TipoRelacionLaboral1.Seleccionar("1SI003") ' LOCACION DE SERVICIOS
                     '.IndRuta
@@ -984,7 +984,7 @@ Public Class frm_Trabajador
                     .Area = "OPERACIONES"
                     .Cargo = "LOCACION DE SERVICIOS"
                     'prefijocambio
-                    .Centro = DevolverCentroXPrefijo(Prefijo.PrefijoID)
+                    .Centro = DevolverCentroXPrefijo(gs_PrefijoIdSucursal)
                     .Ocupacion = "CONDUCTOR"
                     .TipoRelacionLaboral = "LOCACION DE SERVICIOS"
                     chkYaNoLabora.Checked = False

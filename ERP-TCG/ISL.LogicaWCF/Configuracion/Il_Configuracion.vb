@@ -7,8 +7,8 @@ Public Interface Il_Configuracion
     <OperationContract()> _
     Function Sedes() As List(Of String)
 
-    <OperationContract()> _
-    Function RutaImagen() As String
+    '<OperationContract()> _
+    'Function RutaImagen() As String
 
     <OperationContract()> _
     Function RutaAyuda() As String
@@ -25,8 +25,8 @@ Public Interface Il_Configuracion
     <OperationContract()> _
     Function Fotos() As String
 
-    <OperationContract()> _
-    Function PrefijoID() As String
+    '<OperationContract()> _
+    'Function PrefijoID() As String
 
     <OperationContract()> _
     Function DocElectronico() As String

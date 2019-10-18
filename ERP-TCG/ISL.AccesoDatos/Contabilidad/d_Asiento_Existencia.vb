@@ -11,7 +11,6 @@ Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_Asiento_Existencia
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
 
     Public Function Guardar(ByVal oeAsiento_Existencia As e_Asiento_Existencia) As Boolean
         Dim stResultado() As String

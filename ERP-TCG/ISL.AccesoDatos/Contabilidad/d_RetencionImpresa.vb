@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -44,6 +52,7 @@ Public Class d_RetencionImpresa
             Using transScope As New TransactionScope()
                 For Each oe As e_RetencionImpresa In lo
                     oeRetDoc = New e_DocumentoRetencion
+                    oeRetDoc.PrefijoID = oe.PrefijoID '@0001
                     oeRetDoc.TipoOperacion = "T"
                     oeRetDoc.Id = oe.IdDocRet
                     oeRetDoc.FechaEmision = Date.Parse("01/01/1901")

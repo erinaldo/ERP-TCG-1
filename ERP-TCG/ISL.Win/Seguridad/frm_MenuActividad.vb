@@ -11,6 +11,8 @@ Imports ISL.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinToolbars
+Imports System.IO
+Imports System.Net
 
 Public Class frm_MenuActividad
     Inherits ISL.Win.frm_MenuPadre
@@ -148,7 +150,8 @@ Public Class frm_MenuActividad
 
     Private Sub btnAbrir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAbrir.Click
         Dim olConfiguracion As New l_Configuracion
-        OpenFileDialog1.InitialDirectory = olConfiguracion.RutaImagen
+        'OpenFileDialog1.InitialDirectory = olConfiguracion.RutaImagen '@0001
+        OpenFileDialog1.InitialDirectory = Path.Combine(Application.StartupPath, "Imagenes") '@0001
         OpenFileDialog1.Filter = "Icono (*.ico)|*.ico|Portable Network Graphics (*.png)|*.png"
         If OpenFileDialog1.ShowDialog() = Windows.Forms.DialogResult.OK Then
             txtImagen.Text = "\" & OpenFileDialog1.SafeFileName

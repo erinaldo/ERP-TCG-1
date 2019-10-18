@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -25,7 +33,7 @@ Public Class d_Kardex
     'Public Function Obtener(ByVal oeKardex As e_Kardex) As e_Kardex
 
     '    Try
-    '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+    '        
     '        Dim ds As DataSet
     '        ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "", _
     '        Left(.PrefijoID, 1), "", oeKardex.Id)
@@ -38,11 +46,11 @@ Public Class d_Kardex
     '    End Try
     'End Function
 
-    
+
 
     'Public Function Guardar(ByVal oeKardex As e_Kardex) As Boolean
     '    Try
-    '        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+    '        
     '        With oeKardex
     '            sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
     '                    .Id _
@@ -75,7 +83,6 @@ Public Class d_Kardex
 
     Public Function ListarKardex(ByVal oeKardex As e_Kardex) As DataTable
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldKardex As New List(Of e_Kardex)
             Dim ds As DataSet
             With oeKardex
@@ -85,7 +92,7 @@ Public Class d_Kardex
                         , .IdPeriodo _
                         , .IdCuentaContable _
                         , .IdPeriodoSgt _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             oeKardex = Nothing
@@ -102,7 +109,6 @@ Public Class d_Kardex
     ''' <remarks></remarks>
     Public Function UltimoIdInserta_Kardex(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.Kardex", PrefijoID
                                   )
@@ -115,7 +121,6 @@ Public Class d_Kardex
 
     Public Function UltimoIdInserta_KardexDetalle(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexDetalle", PrefijoID
                                   )
@@ -128,7 +133,6 @@ Public Class d_Kardex
 
     Public Function UltimoIdInserta_KardexSaldo(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.KardexSaldo", PrefijoID
                                   )
@@ -157,7 +161,6 @@ Public Class d_Kardex
 
     Public Function GuardarMasivo_Kardex(ByVal dtKardex As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.Kardex", dtKardex)
             Return True
         Catch ex As Exception
@@ -168,7 +171,6 @@ Public Class d_Kardex
 
     Public Function GuardarMasivo_KardexDetalle(ByVal dtKardexDetalle As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.KardexDetalle", dtKardexDetalle)
             Return True
         Catch ex As Exception
@@ -179,7 +181,6 @@ Public Class d_Kardex
 
     Public Function GuardarMasivo_KardexSaldo(ByVal dtKardexSaldo As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.KardexSaldo", dtKardexSaldo)
             Return True
         Catch ex As Exception

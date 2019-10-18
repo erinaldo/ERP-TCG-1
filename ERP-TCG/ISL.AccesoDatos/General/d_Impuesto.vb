@@ -1,16 +1,18 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 
 Public Class d_Impuesto
 
     Private sqlHelper As New SqlHelper
     Private oeImpuesto As New e_Impuesto
 
-    ''' <summary>
-    ''' Obtiene la información del IGV vigente
-    ''' </summary>
-    ''' <param name="fecha">Fecha del IGV que se quiere consultar</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function IGV(ByVal fecha As Date) As e_Impuesto
         Try
             Dim ds As New DataSet
@@ -26,12 +28,6 @@ Public Class d_Impuesto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtener la información de algún impuesto específico
-    ''' </summary>
-    ''' <param name="oeImpuesto"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Obtener(ByVal oeImpuesto As e_Impuesto) As e_Impuesto
         Try
             Dim ds As New DataSet
@@ -49,12 +45,6 @@ Public Class d_Impuesto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Carga toda la información existente del impuesto
-    ''' </summary>
-    ''' <param name="fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Cargar(ByVal fila As DataRow) As e_Impuesto
         Try
             If Not IsDate(fila("fechaFin")) Then
@@ -67,12 +57,6 @@ Public Class d_Impuesto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Lista los impuestos existentes según algún criterio de búsqueda específico
-    ''' </summary>
-    ''' <param name="oeImpuesto">Entidad impuesto con criterios de búsqueda relacionados</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Listar(ByVal oeImpuesto As e_Impuesto) As List(Of e_Impuesto)
         Try
             Dim ds As New DataSet
@@ -95,12 +79,6 @@ Public Class d_Impuesto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Guardar la información de impuestos
-    ''' </summary>
-    ''' <param name="oeImpuesto"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Guardar(ByVal oeImpuesto As e_Impuesto) As Boolean
         Try
             Dim resultado As Boolean = False
@@ -114,12 +92,6 @@ Public Class d_Impuesto
         End Try
     End Function
 
-    ''' <summary>
-    ''' Desactivar algún impuesto específico
-    ''' </summary>
-    ''' <param name="oeImpuesto">Entidad impuesto con Id establecido para poder ser eliminado</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Eliminar(ByVal oeImpuesto As e_Impuesto) As Boolean
         Try
             Dim resultado As Boolean = False

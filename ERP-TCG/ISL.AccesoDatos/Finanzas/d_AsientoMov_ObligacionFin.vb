@@ -46,11 +46,10 @@ Public Class d_AsientoMov_ObligacionFin
     Public Function Obtener(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As e_AsientoMov_ObligacionFin
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("FIN.AsientoMov_ObligacionFin_Listar", "",
             Left(oeAsientoMov_ObligacionFin.PrefijoID, 1), "", oeAsientoMov_ObligacionFin.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeAsientoMov_ObligacionFin = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeAsientoMov_ObligacionFin
@@ -61,7 +60,6 @@ Public Class d_AsientoMov_ObligacionFin
 
     Public Function Listar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As List(Of e_AsientoMov_ObligacionFin)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldAsientoMov_ObligacionFin As New List(Of e_AsientoMov_ObligacionFin)
             Dim ds As DataSet
             With oeAsientoMov_ObligacionFin
@@ -71,7 +69,7 @@ Public Class d_AsientoMov_ObligacionFin
                         , .IdAsientoMovimiento _
                         , .IdObligacionFinanciera _
                         , .Activo _
-                        , .IdObligacionPago _
+                        , .IdObligacionPago
                         )
             End With
             oeAsientoMov_ObligacionFin = Nothing
@@ -89,15 +87,14 @@ Public Class d_AsientoMov_ObligacionFin
 
     Public Function Guardar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAsientoMov_ObligacionFin
-                sqlhelper.ExecuteNonQuery("FIN.AsientoMov_ObligacionFin_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.AsientoMov_ObligacionFin_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdAsientoMovimiento _
                         , .IdObligacionFinanciera _
                         , .Activo _
                         , .IdObligacionPago _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True
@@ -138,7 +135,6 @@ Public Class d_AsientoMov_ObligacionFin
     ''' <remarks></remarks>
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "FIN.AsientoMov_ObligacionFin", Left(PrefijoID, 1) & "SI"
                     )
@@ -157,7 +153,6 @@ Public Class d_AsientoMov_ObligacionFin
     ''' <remarks></remarks>
     Public Function GuardarMasivo(ByVal DTAsientoMov_Ofin As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("FIN.AsientoMov_ObligacionFin", DTAsientoMov_Ofin, False)
             Return True
         Catch ex As Exception

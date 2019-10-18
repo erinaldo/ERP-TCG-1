@@ -14,12 +14,6 @@ Public Class d_Cuota
 
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' Cargar un Trabajador
-    ''' </summary>
-    ''' <param name="o_fila">Fila de Dato de Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_Cuota
         Try
             Dim oeCuota = New e_Cuota(o_fila("Id"), _
@@ -36,12 +30,6 @@ Public Class d_Cuota
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtiene un Trabajador con su Cuota
-    ''' </summary>
-    ''' <param name="oeCuota">Objeto Cuota</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Obtener(ByVal oeCuota As e_Cuota) As e_Cuota
         Try
             Dim ds As DataSet
@@ -58,12 +46,6 @@ Public Class d_Cuota
         End Try
     End Function
 
-    ''' <summary>
-    ''' Listar Cuota Trabajador
-    ''' </summary>
-    ''' <param name="oeCuota">Objeto Cuota</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Listar(ByVal oeCuota As e_Cuota) As List(Of e_Cuota)
         Try
             Dim olCuota As New List(Of e_Cuota)
@@ -84,12 +66,6 @@ Public Class d_Cuota
         End Try
     End Function
 
-    ''' <summary>
-    ''' Guardar Datos de Cuota de Trabajador
-    ''' </summary>
-    ''' <param name="oeCuota ">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Guardar(ByVal oeCuota As e_Cuota) As Boolean
         Try
 
@@ -105,12 +81,6 @@ Public Class d_Cuota
         End Try
     End Function
 
-    ''' <summary>
-    ''' Eliminar una Asignacion de Cuota
-    ''' </summary>
-    ''' <param name="oeCuota">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Eliminar(ByVal oeCuota As e_Cuota) As Boolean
         Try
             With oeCuota

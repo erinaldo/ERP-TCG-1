@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_ComprobanteElectronicoBath
@@ -86,7 +94,6 @@ Public Class d_ComprobanteElectronicoBath
     Public Function Guardar(ByRef oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As Boolean
         Try
             Dim stResultado() As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Using TransScope As New TransactionScope()
                 With oeComprobanteElectronicoBath
                     stResultado = sqlhelper.ExecuteScalar("CON.Isp_ComprobanteElectronicoBath_IAE", .TipoOperacion, .PrefijoID, _
@@ -108,6 +115,7 @@ Public Class d_ComprobanteElectronicoBath
                     If Not .leDetalle Is Nothing Then
                         For Each oeDet In .leDetalle
                             oeDet.IdBath = .Id
+                            oeDet.PrefijoID = oeComprobanteElectronicoBath.PrefijoID '@0001
                             Select Case oeDet.TipoOperacion
                                 Case "I", "A" : odDetalleBath.Guardar(oeDet)
                                 Case "E" : odDetalleBath.Eliminar(oeDet)
@@ -134,7 +142,7 @@ Public Class d_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function AdicionarComprobanteBath(ByVal dtCab As DataTable, ByVal fechaEnvio As DateTime, ByVal nombrexml As String, ByVal xmlbase64 As String, ByVal esBaja As Boolean, ByVal ticket As String, ByVal usuario As String, ByVal valorresumen As String, ByVal firma As String) As Boolean
+    Public Function AdicionarComprobanteBath(ByVal dtCab As DataTable, ByVal fechaEnvio As DateTime, ByVal nombrexml As String, ByVal xmlbase64 As String, ByVal esBaja As Boolean, ByVal ticket As String, ByVal usuario As String, ByVal valorresumen As String, ByVal firma As String, ByVal PrefijoID As String) As Boolean
         Try
             Dim i As Integer = 0
             Dim odComprobanteBathDet As New d_ComprobanteElectronicoBath_Detalle
@@ -151,10 +159,10 @@ Public Class d_ComprobanteElectronicoBath
             obj.IndBaja = esBaja
             obj.Estado = "E"
             obj.UsuarioCrea = usuario
-
+            obj.PrefijoID = PrefijoID '@0001
             Guardar(obj)
             For Each drFila As DataRow In dtCab.Rows
-              
+
                 i = i + 1
                 oeComprobanteBathDet = New e_ComprobanteElectronicoBath_Detalle
                 oeComprobanteBathDet.TipoOperacion = "I"
@@ -163,6 +171,7 @@ Public Class d_ComprobanteElectronicoBath
                 oeComprobanteBathDet.IdReferencia = drFila.Item("idcomp")
                 oeComprobanteBathDet.TipoReferencia = "1"
                 oeComprobanteBathDet.UsuarioCrea = usuario
+                oeComprobanteBathDet.PrefijoID = PrefijoID '@0001
                 odComprobanteBathDet.Guardar(oeComprobanteBathDet)
             Next
 
@@ -172,7 +181,7 @@ Public Class d_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function ActualizarEstadoBath(ByVal dtCab As List(Of e_ComprobanteElectronicoBath), ByVal dtDet As List(Of e_ComprobanteElectronicoBath_Detalle), ByVal cdrxml As String, ByVal flagError As Boolean, ByVal flagBaja As Boolean) As Boolean
+    Public Function ActualizarEstadoBath(ByVal dtCab As List(Of e_ComprobanteElectronicoBath), ByVal dtDet As List(Of e_ComprobanteElectronicoBath_Detalle), ByVal cdrxml As String, ByVal flagError As Boolean, ByVal flagBaja As Boolean, ByVal PrefijoID As String) As Boolean
         Dim odDocumento As New d_MovimientoDocumento
         Try
             Using transScope As New TransactionScope()
@@ -182,6 +191,7 @@ Public Class d_ComprobanteElectronicoBath
                         drFila.TipoOperacion = "A"
                         drFila.Estado = "R"
                         drFila.cdrxml = cdrxml
+                        drFila.PrefijoID = PrefijoID '@0001
                         Guardar(drFila)
                     Next
                     For Each drFila In dtDet
@@ -192,6 +202,7 @@ Public Class d_ComprobanteElectronicoBath
                         drFila.TipoOperacion = "A"
                         drFila.Estado = "A"
                         drFila.cdrxml = cdrxml
+                        drFila.PrefijoID = PrefijoID '@0001
                         Guardar(drFila)
                     Next
                     For Each drFila In dtDet
@@ -230,7 +241,7 @@ Public Class d_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Sub ActualizarEstadoBath_Retencion(ByVal dtCab As List(Of e_ComprobanteElectronicoBath), ByVal dtDet As List(Of e_ComprobanteElectronicoBath_Detalle), ByVal cdrxml As String, ByVal flagError As Boolean, ByVal Usuario As String)
+    Public Sub ActualizarEstadoBath_Retencion(ByVal dtCab As List(Of e_ComprobanteElectronicoBath), ByVal dtDet As List(Of e_ComprobanteElectronicoBath_Detalle), ByVal cdrxml As String, ByVal flagError As Boolean, ByVal Usuario As String, ByVal PrefijoID As String)
         Dim odDocumento As New d_DocumentoRetencion
         Dim oeDocumento As New e_DocumentoRetencion
         Try
@@ -240,15 +251,18 @@ Public Class d_ComprobanteElectronicoBath
                     drFila.cdrxml = cdrxml
                     drFila.UsuarioModifica = Usuario
                     drFila.TipoOperacion = "U"
+                    drFila.PrefijoID = PrefijoID '@0001
                     Guardar(drFila)
                 Next
                 For Each drFila In dtDet
+                    drFila.PrefijoID = PrefijoID '@0001
                     With oeDocumento
                         .Id = drFila.Id
                         .EstadoElectronico = "R"
                         .UsuarioModifica = Usuario
                         .TipoOperacion = "U"
                     End With
+                    oeDocumento.PrefijoID = PrefijoID '@0001
                     odDocumento.Guardar(oeDocumento)
                 Next
             Else
@@ -256,15 +270,18 @@ Public Class d_ComprobanteElectronicoBath
                     drFila.Estado = "A"
                     drFila.cdrxml = cdrxml
                     drFila.TipoOperacion = "U"
+                    drFila.PrefijoID = PrefijoID '@0001
                     Guardar(drFila)
                 Next
                 For Each drFila In dtDet
+                    drFila.PrefijoID = PrefijoID '@0001
                     With oeDocumento
                         .Id = drFila.Id
                         .EstadoElectronico = "A"
                         .UsuarioModifica = Usuario
                         .TipoOperacion = "U"
                     End With
+                    oeDocumento.PrefijoID = PrefijoID '@0001
                     odDocumento.Guardar(oeDocumento)
                 Next
             End If

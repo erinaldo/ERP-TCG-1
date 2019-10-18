@@ -89,6 +89,7 @@ Public Class d_DerechoHabiente
         Try
             With oeDerechoHabiente
                 If oeDerechoHabiente.oePersona IsNot Nothing Then
+                    oeDerechoHabiente.oePersona.PrefijoID = oeDerechoHabiente.PrefijoID '@0001
                     odPersona.Guardar(oeDerechoHabiente.oePersona)
                     oeDerechoHabiente.IdPersona = oeDerechoHabiente.oePersona.Id
                     sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, .PrefijoID,

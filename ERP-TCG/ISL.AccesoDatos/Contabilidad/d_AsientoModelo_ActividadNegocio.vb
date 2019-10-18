@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -68,11 +76,10 @@ Public Class d_AsientoModelo_ActividadNegocio
 
     Public Function Guardar(ByVal oeAsientoModelo_ActividadNegocio As e_AsientoModelo_ActividadNegocio) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idAMAN() As String
             Using TransScope As New TransactionScope()
                 With oeAsientoModelo_ActividadNegocio
-                    _idAMAN = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_ActividadNegocio_IAE", .TipoOperacion, .PrefijoID, _
+                    _idAMAN = sqlhelper.ExecuteScalar("CON.Isp_AsientoModelo_ActividadNegocio_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdAsientoModelo _
                             , .IdActividadNegocio _
@@ -80,11 +87,12 @@ Public Class d_AsientoModelo_ActividadNegocio
                             , .FechaCreacion _
                             , .UsuarioModifica _
                             , .FechaModifica _
-                            , .Activo _
+                            , .Activo
                         ).ToString.Split("_")
                     'Guardar Referencia de Asiento Modelo por Actividad
                     For Each oeReferencia In .leReferencia
                         oeReferencia.IdAsiMod_ActNeg = _idAMAN(0)
+                        oeReferencia.PrefijoID = oeAsientoModelo_ActividadNegocio.PrefijoID '@0001
                         Select Case oeReferencia.TipoOperacion
                             Case "I", "A" : odReferencia.Guardar(oeReferencia)
                             Case "E" : odReferencia.Eliminar(oeReferencia)

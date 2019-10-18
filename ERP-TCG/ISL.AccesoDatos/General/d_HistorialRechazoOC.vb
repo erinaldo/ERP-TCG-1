@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -23,11 +31,10 @@ Public Class d_HistorialRechazoOC
     Public Function Obtener(ByVal oeHistorialRechazoOC As e_HistorialRechazoOC) As e_HistorialRechazoOC
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("XXX.ISP_XXXXXX_Listar", "",
             Left(oeHistorialRechazoOC.PrefijoID, 1), "", oeHistorialRechazoOC.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeHistorialRechazoOC = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeHistorialRechazoOC
@@ -38,7 +45,6 @@ Public Class d_HistorialRechazoOC
 
     Public Function Listar(ByVal oeHistorialRechazoOC As e_HistorialRechazoOC) As List(Of e_HistorialRechazoOC)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldHistorialRechazoOC As New List(Of e_HistorialRechazoOC)
             Dim ds As DataSet
             With oeHistorialRechazoOC
@@ -46,7 +52,7 @@ Public Class d_HistorialRechazoOC
                                               , .Id _
                         , .IdOrdenCompra _
                         , .Glosa _
-                        , .Fecha _
+                        , .Fecha
                         )
             End With
             oeHistorialRechazoOC = Nothing
@@ -64,9 +70,8 @@ Public Class d_HistorialRechazoOC
 
     Public Function Guardar(ByVal oeHistorialRechazoOC As e_HistorialRechazoOC) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeHistorialRechazoOC
-                sqlhelper.ExecuteNonQuery("STD.Isp_HistorialRechazoOC_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_HistorialRechazoOC_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdOrdenCompra _
                         , .Glosa _

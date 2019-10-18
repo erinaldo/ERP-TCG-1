@@ -1,4 +1,12 @@
-﻿Imports ISL.AccesoDatos
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -34,22 +42,19 @@ Public Class l_Configuracion
         Return odDatosConfiguracion.IPServidorReportes
     End Function
 
-    ''' <summary>
-    ''' Obtener el prefijo del lugar donde está conectado el usuario
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Public Function PrefijoID() As String Implements Il_Configuracion.PrefijoID
-        Return odDatosConfiguracion.PrefijoID
-    End Function
+    '@0001
+    'Public Function PrefijoID() As String Implements Il_Configuracion.PrefijoID
+    '    Return odDatosConfiguracion.PrefijoID
+    'End Function
 
     Public Function RutaAyuda() As String Implements Il_Configuracion.RutaAyuda
         Return odDatosConfiguracion.RutaAyuda
     End Function
 
-    Public Function RutaImagen() As String Implements Il_Configuracion.RutaImagen
-        Return odDatosConfiguracion.RutaImagen
-    End Function
+    '@0001
+    'Public Function RutaImagen() As String Implements Il_Configuracion.RutaImagen
+    '    Return odDatosConfiguracion.RutaImagen
+    'End Function
 
     Public Function Sedes() As System.Collections.Generic.List(Of String) Implements Il_Configuracion.Sedes
         Return odDatosConfiguracion.Sedes

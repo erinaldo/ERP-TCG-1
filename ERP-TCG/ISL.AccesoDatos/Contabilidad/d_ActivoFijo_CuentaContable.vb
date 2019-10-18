@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -130,8 +138,6 @@ Public Class d_ActivoFijo_CuentaContable
     Public Function Guardar(oeActivoFijo_CuentaContable As e_ActivoFijo_CuentaContable) As Boolean
         Try
             'Using transScope As New TransactionScope()
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim IdResultado As String
             With oeActivoFijo_CuentaContable
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_ActivoFijo_CuentaContable_IAE]" _
@@ -178,7 +184,6 @@ Public Class d_ActivoFijo_CuentaContable
 
     Public Function Eliminar(oeActivoFijo_CuentaContable As e_ActivoFijo_CuentaContable) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeActivoFijo_CuentaContable
                 sqlhelper.ExecuteNonQuery("[CON].[Isp_ActivoFijo_CuentaContable_IAE]" _
                        , "E" _
@@ -207,7 +212,7 @@ Public Class d_ActivoFijo_CuentaContable
                        , .ValorCuota _
                        , .FechaVencimiento _
                        , .Ejercicio _
-                       , .IdTipoActivo _
+                       , .IdTipoActivo
                    )
             End With
             Return True

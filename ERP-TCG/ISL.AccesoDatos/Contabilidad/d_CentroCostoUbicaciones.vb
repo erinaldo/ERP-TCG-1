@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -56,11 +64,10 @@ Public Class d_CentroCostoUbicaciones
 
     Public Function Guardar(ByVal oeCentroCostoUbicaciones As e_CentroCostoUbicaciones) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCentroCostoUbicaciones
-                sqlhelper.ExecuteNonQuery("CON.Isp_CentroCostoUbicaciones_IAE", _
-                                          .TipoOperacion, _
-                                          .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CentroCostoUbicaciones_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
                                             .Id _
                                             , .IdCentroCosto _
                                             , .Nombre _

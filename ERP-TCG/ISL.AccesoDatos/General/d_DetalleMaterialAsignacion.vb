@@ -10,10 +10,6 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a los datos de detalle en la asignación de materiales a almacén
-''' </summary>
-''' <remarks></remarks>
 Public Class d_DetalleMaterialAsignacion
 
     Private sqlhelper As New SqlHelper

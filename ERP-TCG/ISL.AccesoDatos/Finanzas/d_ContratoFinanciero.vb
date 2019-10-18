@@ -114,12 +114,11 @@ Public Class d_ContratoFinanciero
 
     Public Function Guardar(ByVal oeContratoFinanciero As e_ContratoFinanciero) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeContratoFinanciero
-                    stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ContratoFinanciero_IAE", _
-                                                          .TipoOperacion, _
+                    stResultado = sqlhelper.ExecuteScalar("FIN.Isp_ContratoFinanciero_IAE",
+                                                          .TipoOperacion,
                                                           .PrefijoID _
                             , .Id _
                             , .Codigo _
@@ -136,7 +135,7 @@ Public Class d_ContratoFinanciero
                             , .TasaInteres _
                             , .Activo _
                             , .Usuario _
-                            , .Comision _
+                            , .Comision
                         ).ToString.Split("_")
 
                     'Registra Detalle

@@ -1,26 +1,27 @@
-﻿Imports System.Configuration
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports System.Configuration
 Imports System.Data.SqlClient
 Imports System.Text
 Imports System.Collections.Specialized
 
-''' <summary>
-''' Clase para administrar las cadenas de conexión al SGI
-''' </summary>
-''' <remarks>Esta clase se utiliza junto al sql helper,Capa del Sistema:Capa de Datos</remarks>
 Public Class d_Conexion
 
     Public Sub New()
 
     End Sub
 
-    ''' <summary>
-    ''' Cadena de conexión de la base de datos de la empresa ISL
-    ''' </summary>
-    ''' <returns>Devuelve un cadena</returns>
-    ''' <remarks></remarks>
+
     Public Shared Function CadenaConexionSGI() As String
         Try
-            Return ConfigurationManager.ConnectionStrings("ISL").ConnectionString
+            'Return ConfigurationManager.ConnectionStrings("ISL").ConnectionString '@0001
+            Return "Data Source=127.0.0.1;Initial Catalog=ERPTCG;User ID=sa;Password=sql2014;Connect Timeout=120"
             'Dim config As System.Configuration.Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
 
             'Dim TipoConex As String = config.AppSettings.Settings.Item("0").Value

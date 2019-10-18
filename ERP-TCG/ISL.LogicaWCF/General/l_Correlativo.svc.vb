@@ -29,8 +29,7 @@ Public Class l_Correlativo
 
     Public Function Obtener(ByVal oeCorrelativo As EntidadesWCF.e_Correlativo) As EntidadesWCF.e_Correlativo Implements Il_Correlativo.Obtener
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
-            oeCorrelativo.Prefijo = d_DatosConfiguracion.PrefijoID
+            oeCorrelativo.Prefijo = oeCorrelativo.PrefijoID
             Return odCorrelativo.Obtener(oeCorrelativo)
         Catch ex As Exception
             Throw

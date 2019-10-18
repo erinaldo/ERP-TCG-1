@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_HistorialInventario
@@ -110,9 +118,8 @@ Public Class d_HistorialInventario
 
     Public Function Guardar(ByVal oeHistorialInventario As e_HistorialInventario) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeHistorialInventario
-                sqlhelper.ExecuteNonQuery("ALM.Isp_HistorialInventario_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("ALM.Isp_HistorialInventario_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdHistorial _
                         , .IdMaterial _
@@ -120,7 +127,7 @@ Public Class d_HistorialInventario
                         , .CantidadFinal _
                         , .ValorUnitario _
                         , .ValorTotal _
-                        , .Fecha _
+                        , .Fecha
                     )
             End With
             Return True
@@ -144,7 +151,6 @@ Public Class d_HistorialInventario
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
             Dim stResultado As String
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "ALM.Historial_Inventario", PrefijoID)
             Return IIf(stResultado Is Nothing, PrefijoID & "000000001", stResultado)
         Catch ex As Exception

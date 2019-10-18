@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -68,9 +76,8 @@ Public Class d_CatalagoCodigoSunat
 
     Public Function Guardar(ByVal oeCatalagoCodigoSunat As e_CatalagoCodigoSunat) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeCatalagoCodigoSunat
-                sqlhelper.ExecuteNonQuery("CON.Isp_CatalagoCodigoSunat_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_CatalagoCodigoSunat_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .CodigoTabla _
                         , .CodigoElemento _
@@ -80,7 +87,7 @@ Public Class d_CatalagoCodigoSunat
                         , .UsuarioCrea _
                         , .FechaCrea _
                         , .UsuarioModifica _
-                        , .FechaModifica _
+                        , .FechaModifica
                     )
             End With
             Return True

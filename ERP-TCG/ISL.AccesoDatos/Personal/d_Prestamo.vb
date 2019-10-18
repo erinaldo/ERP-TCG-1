@@ -337,7 +337,7 @@ Public Class d_Prestamo
     Public Function TransferirDeuda(ByVal oePrestamo As e_Prestamo, oePrestTrans As e_Prestamo) As Boolean
         Try
             Using TransScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
                 Dim _id As String = ""
                 With oePrestamo
                     _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _

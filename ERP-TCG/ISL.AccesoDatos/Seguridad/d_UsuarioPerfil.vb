@@ -13,7 +13,6 @@ Imports System.Data.SqlClient
 Public Class d_UsuarioPerfil
 
     Dim SqlHelper As New SqlHelper
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_UsuarioPerfil
         Try

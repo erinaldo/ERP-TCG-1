@@ -1,22 +1,19 @@
-﻿Imports ISL.EntidadesWCF
-''' <summary>
-''' Clase que gestiona los diversos movimientos de entrada y salida del personal o empleados de la empresa
-''' Fecha de Actualizacion:06/12/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla MovimientoPersonal,Capa del Sistema: Capa de Acceso a Datos.</remarks>
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
+
 Public Class d_MovimientoPersonal
 
     Private oeMovimientoPersonal As New e_MovimientoPersonal
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_MovimientoPersonal y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:06/12/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeMovimientoPersonal) de tipo e_MovimientoPersonal</returns>
-    ''' <remarks>Capa del Sistema:Capa Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_MovimientoPersonal
         Try
             Dim oeMovimientoPersonal = New e_MovimientoPersonal( _
@@ -46,14 +43,7 @@ Public Class d_MovimientoPersonal
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un MovimientoPersonal de establecimiento, el cual es consultado por el procedimiento almacenado PER.Isp_MovimientoPersonal_Listar
-    ''' enviando su id del MovimientoPersonal.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_MovimientoPersonal.
-    ''' Fecha de Actualizacion:06/12/2011
-    ''' </summary>
-    ''' <param name="oeMovimientoPersonal">Recibe una variable oeMovimientoPersonal de tipo e_MovimientoPersonal</param>
-    ''' <returns>Devuelve una varible oeMovimientoPersonal de tipo e_MovimientoPersonal</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As e_MovimientoPersonal
         Try
             Dim ds As DataSet
@@ -69,14 +59,7 @@ Public Class d_MovimientoPersonal
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_MovimientoPersonal, el cual es consultado por el procedimiento almacenado PER.Isp_MovimientoPersonal_Listar
-    ''' enviando sus atributos del MovimientoPersonal.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:06/12/2011
-    ''' </summary>
-    ''' <param name="oeMovimientoPersonal">Recibe una Variable oeMovimientoPersonal de tipo e_MovimientoPersonal </param>
-    ''' <returns>Devuelve una lista generica(lista) de objetos de tipo e_MovimientoPersonal</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As List(Of e_MovimientoPersonal)
         Try
             Dim ldMovimientoPersonal As New List(Of e_MovimientoPersonal)
@@ -105,19 +88,9 @@ Public Class d_MovimientoPersonal
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del MovimientoPersonal,a travez del procedimiento almacenado
-    ''' PER.Isp_MovimientoPersonal_IAE,por el cual van a ser enviados y registrados los datos del MovimientoPersonal y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:06/12/2011
-    ''' </summary>
-    ''' <param name="oeMovimientoPersonal">Recibe una variable oeMovimientoPersonal de tipo e_MovimientoPersonal</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de 
-    ''' MovimientoPersonal es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             With oeMovimientoPersonal
                 sqlhelper.ExecuteNonQuery("PER.Isp_MovimientoPersonal_IAE", _
                                           .TipoOperacion, _
@@ -141,15 +114,7 @@ Public Class d_MovimientoPersonal
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de MovimientoPersonal,a travez del procedimiento almacenado
-    ''' PER.Isp_MovimientoPersonal_IAE,por el cual va a ser enviado el id del MovimientoPersonal a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:06/12/2011
-    ''' </summary>
-    ''' <param name="oeMovimientoPersonal">Recibe una variable oeMovimientoPersonal de tipo objeto e_MovimientoPersonal</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Eliminar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As Boolean
         Try
             sqlhelper.ExecuteNonQuery("PER.Isp_MovimientoPersonal_IAE", _

@@ -10,10 +10,6 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a datos de la tabla DireccionEmpresaPersona
-''' </summary>
-''' <remarks></remarks>
 Public Class d_Direccion_EmpresaPersona
 
     Private sqlhelper As New SqlHelper

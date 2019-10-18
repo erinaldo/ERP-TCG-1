@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -69,9 +77,8 @@ Public Class d_Auditoria
 
     Public Function Guardar(ByVal oeAuditoria As e_Auditoria) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeAuditoria
-                sqlhelper.ExecuteNonQuery("SGD.Isp_Historial_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_Historial_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdActividadNegocio _
                         , .UsuarioCreacion _
@@ -80,7 +87,7 @@ Public Class d_Auditoria
                         , .IdReferencia _
                         , .Codigo _
                         , .Referencia _
-                        , .MacPc _
+                        , .MacPc
                     )
             End With
             Return True

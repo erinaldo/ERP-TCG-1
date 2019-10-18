@@ -49,7 +49,7 @@ Public Class d_Deposito
     Public Function Obtener(ByVal oeDeposito As e_Deposito) As e_Deposito
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.ISP_Deposito_Listar", "", _
              oeDeposito.Id)

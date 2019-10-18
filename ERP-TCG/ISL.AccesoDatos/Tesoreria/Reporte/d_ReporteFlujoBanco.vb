@@ -12,7 +12,7 @@ Imports System.Data.SqlClient
 
 Public Class d_ReporteFlujoBanco
     Private sqlhelper As New SqlHelper
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_ReporteFlujoBanco
         Try

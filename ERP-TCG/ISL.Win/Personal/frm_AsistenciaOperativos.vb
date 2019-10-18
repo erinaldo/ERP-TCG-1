@@ -455,10 +455,10 @@ Public Class frm_AsistenciaOperativos
             oeCentro = New e_Centro : leCentro = New List(Of e_Centro)
             leCentro = olCentro.Listar(oeCentro)
             LlenarCombo(cboSede, "Nombre", leCentro, 0)
-            cboSedeBus.Value = Prefijo.PrefijoID.ToString
+            cboSedeBus.Value = gs_PrefijoIdSucursal.ToString '@0001
             ' Cargar Centro            
             LlenarCombo(cboSede, "Nombre", leCentro, 0)
-            cboSede.Value = Prefijo.PrefijoID.ToString
+            cboSede.Value = gs_PrefijoIdSucursal.ToString '@0001
             ' Cargar Planilla  
             oePlanilla = New e_Planilla
             oePlanilla.TipoOperacion = "" : oePlanilla.Activo = True : oePlanilla.Tipo = 0

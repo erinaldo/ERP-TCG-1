@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -28,11 +36,10 @@ Public Class d_LimiteCredito
     Public Function Obtener(ByVal oeLimiteCredito As e_LimiteCredito) As e_LimiteCredito
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("FIN.Isp_LimiteCredito_Listar", "",
             Left(oeLimiteCredito.PrefijoID, 1), "", oeLimiteCredito.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeLimiteCredito = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeLimiteCredito
@@ -43,7 +50,6 @@ Public Class d_LimiteCredito
 
     Public Function Listar(ByVal oeLimiteCredito As e_LimiteCredito) As List(Of e_LimiteCredito)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldLimiteCredito As New List(Of e_LimiteCredito)
             Dim ds As DataSet
             With oeLimiteCredito
@@ -58,7 +64,7 @@ Public Class d_LimiteCredito
                         , .Activo _
                         , .TipoCambio _
                         , .MontoCreditoME _
-                        , .IdMoneda _
+                        , .IdMoneda
                         )
             End With
             oeLimiteCredito = Nothing
@@ -76,9 +82,8 @@ Public Class d_LimiteCredito
 
     Public Function Guardar(ByVal oeLimiteCredito As e_LimiteCredito) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeLimiteCredito
-                sqlhelper.ExecuteNonQuery("FIN.Isp_LimiteCredito_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("FIN.Isp_LimiteCredito_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdEmpresaBanco _
                         , .IdTipoDocumento _
@@ -88,7 +93,7 @@ Public Class d_LimiteCredito
                         , .Activo _
                         , .TipoCambio _
                         , .MontoCreditoME _
-                        , .IdMoneda _
+                        , .IdMoneda
                     )
             End With
             Return True

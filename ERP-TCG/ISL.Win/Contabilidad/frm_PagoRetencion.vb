@@ -1082,7 +1082,7 @@ Public Class frm_PagoRetencion
                 Cursor.Show()
                 If gridTicket.Selected.Rows.Count = 0 Then Throw New Exception("Debe seleccionar 1 Ticket para consultar.")
                 Dim ticket As String = gridTicket.ActiveRow.Cells("Ticket").Value
-                olMovDocumento.EnviarXMLGetStatus(ticket, gUsuarioSGI.Id)
+                olMovDocumento.EnviarXMLGetStatus(ticket, gUsuarioSGI.Id, gs_PrefijoIdSucursal)
                 mensajeEmergente.Confirmacion("Comprobante aceptado por la SUNAT.")
             Else
                 If ficRetencion.SelectedTab.Index = 0 Then

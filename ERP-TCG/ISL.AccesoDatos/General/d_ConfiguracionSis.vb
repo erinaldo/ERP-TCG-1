@@ -57,13 +57,12 @@ Public Class d_ConfiguracionSis
 
     Public Function Guardar(ByVal oeConfiguracionSis As e_ConfiguracionSis) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConfiguracionSis
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
                         , .NombreTabla _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

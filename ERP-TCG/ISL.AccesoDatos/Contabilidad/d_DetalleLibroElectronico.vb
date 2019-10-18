@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -115,9 +123,8 @@ Public Class d_DetalleLibroElectronico
 
     Public Function Guardar(ByVal oeDetalleLibroElectronico As e_DetalleLibroElectronico) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleLibroElectronico
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdLibroElectronico _
                         , .IdMovimientoDocumento _
@@ -174,7 +181,6 @@ Public Class d_DetalleLibroElectronico
 
     Public Function GuardarMasivo(ByVal dt As Data.DataTable) As Integer
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.DetalleLibroElectronico", dt)
             Return True
         Catch ex As Exception
@@ -185,7 +191,6 @@ Public Class d_DetalleLibroElectronico
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DetalleLibroElectronico", PrefijoID)
             Return stResultado

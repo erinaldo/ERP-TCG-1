@@ -9,12 +9,6 @@
 Imports ISL.EntidadesWCF
 Imports System.Transactions
 
-''' <summary>
-''' Clase: Persona
-''' Capa: Acceso a Datos
-''' Ultima actualización: 08/11/2011
-''' </summary>
-''' <remarks></remarks>
 Public Class d_Persona
     Private sqlhelper As New SqlHelper
 
@@ -32,12 +26,6 @@ Public Class d_Persona
     Private oePerDocumento As New e_PersonaDocumento
     Private odPerDocumento As New d_PersonaDocumento
 
-    ''' <summary>
-    ''' Carga los datos puntuales de una persona
-    ''' </summary>
-    ''' <param name="o_fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_Persona
         Try
             Dim objSexo = Nothing
@@ -61,13 +49,7 @@ Public Class d_Persona
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtener los datos de una persona específica
-    ''' </summary>
-    ''' <param name="oePersona">Objeto de tipo Persona</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    ''' 
+
     Public Function Obtener(ByVal oePersona As e_Persona) As e_Persona
         Try
             Dim ds As New DataSet
@@ -125,12 +107,7 @@ Public Class d_Persona
         End Try
     End Function
 
-    ''' <summary>
-    ''' Crear una lista de personas
-    ''' </summary>
-    ''' <param name="oePersona">Objeto de tipo Persona</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function Listar(ByVal oePersona As e_Persona) As List(Of e_Persona)
         Try
             Dim ldPersona As New List(Of e_Persona)
@@ -155,20 +132,6 @@ Public Class d_Persona
         End Try
     End Function
 
-    'Public Function listar(ByVal Activo As Boolean) As Data.DataSet
-    '    Try
-    '        Return SqlHelper.ExecuteDataset("", "")
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-    'End Function
-
-    ''' <summary>
-    ''' Guardar información de una persona
-    ''' </summary>
-    ''' <param name="oePersona">Objeto de tipo Persona</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Guardar(ByVal oePersona As e_Persona) As String
         Try
             Dim odDireccionEP As New d_Direccion_EmpresaPersona
@@ -320,12 +283,6 @@ Public Class d_Persona
         End Try
     End Function
 
-    ''' <summary>
-    ''' Eliminar una persona
-    ''' </summary>
-    ''' <param name="oePersona">Objeto de tipo Persona</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Eliminar(ByVal oePersona As e_Persona) As Boolean
         Try
             With oePersona
@@ -362,12 +319,6 @@ Public Class d_Persona
         End Try
     End Function
 
-    ''' <summary>
-    ''' Retorna la foto de la persona a partir de su DNI
-    ''' </summary>
-    ''' <param name="DNI"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
         Dim odDatosConfiguracion As New d_DatosConfiguracion
         Dim sinFoto As String = odDatosConfiguracion.Fotos & "\SinFoto.jpg"

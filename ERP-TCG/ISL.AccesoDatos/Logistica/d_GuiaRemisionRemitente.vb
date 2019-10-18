@@ -1,12 +1,22 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
+
 Public Class d_GuiaRemisionRemitente
+
     Private sqlhelper As New SqlHelper
     Dim odGRRMaterial As New d_GuiaRRemitenteMaterial
     Public Function Cargar(ByVal o_fila As DataRow) As e_GuiaRemisionRemitente
         Try
-            Dim oeGuiaRemisionRemitente = New e_GuiaRemisionRemitente( _
+            Dim oeGuiaRemisionRemitente = New e_GuiaRemisionRemitente(
                              o_fila("Id").ToString _
                              , o_fila("IdEmpresaProveedor").ToString _
                              , o_fila("Nombre").ToString _
@@ -30,7 +40,7 @@ Public Class d_GuiaRemisionRemitente
                              , o_fila("Activo").ToString _
                              , o_fila("nombreUsuario").ToString _
                              , o_fila("UsuarioCreacion").ToString _
-                             , o_fila("FechaCreacion").ToString _
+                             , o_fila("FechaCreacion").ToString
             )
             Return oeGuiaRemisionRemitente
         Catch ex As Exception
@@ -41,11 +51,10 @@ Public Class d_GuiaRemisionRemitente
     Public Function Obtener(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As e_GuiaRemisionRemitente
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("[CMP].[Isp_GuiaRemision_Listar]", oeGuiaRemisionRemitente.TipoOperacion, oeGuiaRemisionRemitente.Id, _
+            ds = sqlhelper.ExecuteDataset("[CMP].[Isp_GuiaRemision_Listar]", oeGuiaRemisionRemitente.TipoOperacion, oeGuiaRemisionRemitente.Id,
                                          oeGuiaRemisionRemitente.IdEmpresaProveedor, "", oeGuiaRemisionRemitente.Serie, oeGuiaRemisionRemitente.Numero)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeGuiaRemisionRemitente = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeGuiaRemisionRemitente
@@ -77,7 +86,6 @@ Public Class d_GuiaRemisionRemitente
     End Function
     Public Function Listar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As List(Of e_GuiaRemisionRemitente)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldGuiaRemisionRemitente As New List(Of e_GuiaRemisionRemitente)
             Dim ds As DataSet
             With oeGuiaRemisionRemitente
@@ -102,7 +110,7 @@ Public Class d_GuiaRemisionRemitente
                         , .UsuarioCreacion _
                         , .FechaCreacion _
                         , .fechaInicio _
-                        , .fechaFin _
+                        , .fechaFin
                         )
             End With
             oeGuiaRemisionRemitente = Nothing
@@ -120,12 +128,11 @@ Public Class d_GuiaRemisionRemitente
 
     Public Function Guardar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeGuiaRemisionRemitente
                     stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_GuiaRemision_IAE]" _
-                            , .TipoOperacion, .PrefijoID, _
+                            , .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdEmpresaProveedor _
                             , .IdTipoGuia _
@@ -144,12 +151,13 @@ Public Class d_GuiaRemisionRemitente
                             , .IdEstado _
                             , .Activo _
                             , .UsuarioCreacion _
-                            , .FechaCreacion _
+                            , .FechaCreacion
                         ).ToString.Split("_")
 
                     For Each Detalle As e_GuiaRRemitenteMaterial In .lstGRRMaterial
                         Detalle.IdGuiaRemision = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeGuiaRemisionRemitente.PrefijoID '@0001
                         odGRRMaterial.Guardar(Detalle)
                     Next
                     '---Asociar a Orden
@@ -165,6 +173,7 @@ Public Class d_GuiaRemisionRemitente
                         oeOrden_Documento.Activo = .Activo
                         oeOrden_Documento.UsuarioCreacion = .UsuarioCreacion
                         oeOrden_Documento.IdTipoDocumento = .IdTipoGuia
+                        oeOrden_Documento.PrefijoID = oeGuiaRemisionRemitente.PrefijoID '@0001
                         odOrden_Documento.Guardar(oeOrden_Documento)
                     Next
                 End With
@@ -178,7 +187,7 @@ Public Class d_GuiaRemisionRemitente
 
     Public Function Eliminar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As Boolean
         Try
-            sqlhelper.ExecuteNonQuery("[CMP].[Isp_GuiaRemision_IAE]", "E", _
+            sqlhelper.ExecuteNonQuery("[CMP].[Isp_GuiaRemision_IAE]", "E",
              "", oeGuiaRemisionRemitente.Id)
             Return True
         Catch ex As Exception

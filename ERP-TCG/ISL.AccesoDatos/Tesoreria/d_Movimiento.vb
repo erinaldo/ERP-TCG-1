@@ -82,7 +82,7 @@ Public Class d_Movimiento
 
     Public Function ObtenerMovimiento(ByVal oeMovimiento As e_Movimiento) As e_Movimiento
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Listar", oeMovimiento.TipoOperacion, _
              oeMovimiento.Id)
@@ -98,7 +98,7 @@ Public Class d_Movimiento
 
     Public Function Obtener(ByVal oeMovimiento As e_Movimiento) As e_Movimiento
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Listar", oeMovimiento.TipoOperacion, _
              oeMovimiento.Id)
@@ -113,7 +113,7 @@ Public Class d_Movimiento
 
     Public Function Listar(ByVal oeMovimiento As e_Movimiento) As List(Of e_Movimiento)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ldMovimiento As New List(Of e_Movimiento)
             Dim ds As DataSet
             With oeMovimiento
@@ -137,7 +137,7 @@ Public Class d_Movimiento
 
     Public Function ListarDscto(ByVal oeMovimiento As e_Movimiento) As List(Of e_Movimiento)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ldMovimiento As New List(Of e_Movimiento)
             Dim ds As DataSet
             With oeMovimiento

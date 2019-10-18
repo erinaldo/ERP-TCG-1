@@ -10,10 +10,7 @@ Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a datos de la entidad Correlativo, utilizado en la generación de numeración de vales de tesorería
-''' </summary>
-''' <remarks></remarks>
+
 Public Class d_Correlativo
     Private sqlhelper As New SqlHelper
     Private Function Cargar(ByVal o_fila As DataRow) As e_Correlativo

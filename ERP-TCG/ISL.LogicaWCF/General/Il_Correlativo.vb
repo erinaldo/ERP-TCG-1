@@ -5,7 +5,7 @@ Imports ISL.EntidadesWCF
 <ServiceContract()> _
 Public Interface Il_Correlativo
 
-    <OperationContract()> _
+    <OperationContract()>
     Function Obtener(ByVal oeCorrelativo As e_Correlativo) As e_Correlativo
 
     <OperationContract()> _

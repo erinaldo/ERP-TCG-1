@@ -1,10 +1,13 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
 
-''' <summary>
-''' Clase: HistorialLaboral
-''' Fecha: 23/03/2012
-''' </summary>
-''' <remarks></remarks>
+Imports ISL.EntidadesWCF
+
 Public Class d_HistorialLaboral
 
     Dim oeHistorialLaboral As New e_HistorialLaboral
@@ -12,12 +15,6 @@ Public Class d_HistorialLaboral
 
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' Cargar un HistorialLaboral
-    ''' </summary>
-    ''' <param name="o_fila">Fila de Dato de HistorialLaboral</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_HistorialLaboral
         Try
             Dim oeHistorialLaboral = New e_HistorialLaboral( _
@@ -35,12 +32,6 @@ Public Class d_HistorialLaboral
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtiene un HistorialLaboral
-    ''' </summary>
-    ''' <param name="oeHistorialLaboral">Objeto HistorialLaboral</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Obtener(ByVal oeHistorialLaboral As e_HistorialLaboral) As e_HistorialLaboral
         Try
             Dim ds As DataSet
@@ -60,12 +51,6 @@ Public Class d_HistorialLaboral
         End Try
     End Function
 
-    ''' <summary>
-    ''' Listar HistorialLaboral
-    ''' </summary>
-    ''' <param name="oeHistorialLaboral">Objeto HistorialLaboral</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Listar(ByVal oeHistorialLaboral As e_HistorialLaboral) As List(Of e_HistorialLaboral)
         Try
             Dim ldHistorialLaboral As New List(Of e_HistorialLaboral)
@@ -89,14 +74,8 @@ Public Class d_HistorialLaboral
         End Try
     End Function
 
-    ''' <summary>
-    ''' Guardar Datos de HistorialLaboral
-    ''' </summary>
-    ''' <param name="oeHistorialLaboral">Objeto HistorialLaboral</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Guardar(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
         Try
             With oeHistorialLaboral
                 sqlhelper.ExecuteNonQuery("PER.ISP_oeHistorialLaboral_IAE", .TipoOperacion, _
@@ -108,12 +87,6 @@ Public Class d_HistorialLaboral
         End Try
     End Function
 
-    ''' <summary>
-    ''' Eliminar un HistorialLaboral
-    ''' </summary>
-    ''' <param name="oeHistorialLaboral">Objeto HistorialLaboral</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Overloads Function Eliminar(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean
         Try
             With oeHistorialLaboral

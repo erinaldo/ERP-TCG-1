@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -65,16 +73,15 @@ Public Class d_EmpresaCuenta
 
     Public Function Guardar(ByVal oeEmpresaCuenta As e_EmpresaCuenta) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEmpresaCuenta
-                sqlhelper.ExecuteNonQuery("CON.Isp_EmpresaCuenta_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_EmpresaCuenta_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdCuentaContable _
                         , .IdProveedorCliente _
                         , .IdMoneda _
                         , .Activo _
                         , .IndCompraVenta _
-                        , .Ejercicio _
+                        , .Ejercicio
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -62,15 +70,14 @@ Public Class d_ControlActividad
 
     Public Function Guardar(ByVal oeControlActividad As e_ControlActividad) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeControlActividad
-                sqlhelper.ExecuteNonQuery("SGD.Isp_ControlActividad_IAE", .TipoOperacion, _
+                sqlhelper.ExecuteNonQuery("SGD.Isp_ControlActividad_IAE", .TipoOperacion,
                         .Id _
                         , .IdActividad _
                         , .UsuarioCreacion _
                         , .Glosa _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

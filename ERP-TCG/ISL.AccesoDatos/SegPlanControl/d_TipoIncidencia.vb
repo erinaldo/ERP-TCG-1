@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -63,16 +71,15 @@ Public Class d_TipoIncidencia
 
     Public Function Guardar(ByVal oeTipoIncidencia As e_TipoIncidencia) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTipoIncidencia
-                sqlhelper.ExecuteNonQuery("SPC.Isp_TipoIncidencia_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("SPC.Isp_TipoIncidencia_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
                         , .Activo _
                         , .UsuarioCreacion _
                         , .FechaCreacion _
                         , .FechaModifica _
-                        , .UsuarioModifica _
+                        , .UsuarioModifica
                     )
             End With
             Return True

@@ -1,11 +1,15 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ISL.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a datos de la entidad Conceptos de gasto
-''' </summary>
-''' <remarks></remarks>
 Public Class d_ConceptoGasto
     Private sqlhelper As New SqlHelper
     Private Function Cargar(ByVal o_fila As DataRow) As e_ConceptoGasto
@@ -69,13 +73,12 @@ Public Class d_ConceptoGasto
 
     Public Function Guardar(ByVal oeConceptoGasto As e_ConceptoGasto) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConceptoGasto
-                SqlHelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Codigo _
                         , .Nombre _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True
