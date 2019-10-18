@@ -970,6 +970,12 @@
     <Compile Include="General\frm_TarjetaPropiedad.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\frm_EstacionServicio.Designer.vb">
+      <DependentUpon>frm_EstacionServicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\frm_EstacionServicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISLDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -6110,6 +6116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\frm_TarjetaPropiedad.resx">
       <DependentUpon>frm_TarjetaPropiedad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\frm_EstacionServicio.resx">
+      <DependentUpon>frm_EstacionServicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_Covisol.resx">
       <DependentUpon>frm_Covisol.vb</DependentUpon>
