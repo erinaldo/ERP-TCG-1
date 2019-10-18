@@ -52,12 +52,12 @@ Public Class d_OrdenVentaMaterial
             Try
                 Dim ds As DataSet
                 With oeOrdenComercial_Material
-                    ds = sqlhelper.ExecuteDataset("[LGT].[Sp_OrdenComercial_Material_LST]" _
+                ds = sqlhelper.ExecuteDataset("[CMP].[Isp_OrdenVenta_Material_Listar]" _
                             , .TipoOperacion _
                             , .Id _
                             , .IdOrdenComercial _
                             , .IdSubAlmacen)
-                End With
+            End With
                 Return ds
             Catch ex As Exception
                 Throw ex
@@ -97,7 +97,7 @@ Public Class d_OrdenVentaMaterial
             Try
                 Dim stResultado() As String
                 With oeOrdenComercial_Material
-                stResultado = sqlhelper.ExecuteScalar("[LGT].[Sp_OrdenComercial_Material_IAE]" _
+                stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_OrdenVenta_Material_IAE]" _
                             , .TipoOperacion _
                             , .PrefijoID _
                             , .Id _
@@ -133,11 +133,11 @@ Public Class d_OrdenVentaMaterial
         Public Function Eliminar(ByVal oeOrdenComercial_Material As e_OrdenVentaMaterial) As Boolean
             Try
                 With oeOrdenComercial_Material
-                    sqlhelper.ExecuteNonQuery("[LGT].[Sp_OrdenComercial_Material_IAE]" _
+                sqlhelper.ExecuteNonQuery("[CMP].[Isp_OrdenVenta_Material_IAE]" _
                            , "E" _
                            , "" _
                            , .Id)
-                End With
+            End With
                 Return True
             Catch ex As Exception
                 Throw ex

@@ -1223,7 +1223,7 @@ Partial Class frm_OrdenCompra
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griListaRequerimientos)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(583, 251)
         '
@@ -1371,7 +1371,7 @@ Partial Class frm_OrdenCompra
         Me.UltraTabPageControl3.Controls.Add(Me.Agrupacion14)
         Me.UltraTabPageControl3.Controls.Add(Me.Agrupacion13)
         Me.UltraTabPageControl3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(583, 251)
         '
@@ -1835,7 +1835,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabPageControl12.Controls.Add(Me.gridDetalleOCMaterial)
         Me.UltraTabPageControl12.Controls.Add(Me.gbeListadoMateriales)
-        Me.UltraTabPageControl12.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl12.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
         Me.UltraTabPageControl12.Size = New System.Drawing.Size(1347, 280)
         '
@@ -2054,7 +2054,7 @@ Partial Class frm_OrdenCompra
         Me.gridDetalleOCMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gridDetalleOCMaterial.Location = New System.Drawing.Point(0, 0)
         Me.gridDetalleOCMaterial.Name = "gridDetalleOCMaterial"
-        Me.gridDetalleOCMaterial.Size = New System.Drawing.Size(1325, 280)
+        Me.gridDetalleOCMaterial.Size = New System.Drawing.Size(739, 280)
         Me.gridDetalleOCMaterial.TabIndex = 0
         Me.gridDetalleOCMaterial.TabStop = False
         Me.gridDetalleOCMaterial.Text = "Grilla2"
@@ -2076,12 +2076,11 @@ Partial Class frm_OrdenCompra
         Me.gbeListadoMateriales.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeListadoMateriales.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.gbeListadoMateriales.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeListadoMateriales.Expanded = False
         Me.gbeListadoMateriales.ExpandedSize = New System.Drawing.Size(608, 280)
         Me.gbeListadoMateriales.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.gbeListadoMateriales.Location = New System.Drawing.Point(1325, 0)
+        Me.gbeListadoMateriales.Location = New System.Drawing.Point(739, 0)
         Me.gbeListadoMateriales.Name = "gbeListadoMateriales"
-        Me.gbeListadoMateriales.Size = New System.Drawing.Size(22, 280)
+        Me.gbeListadoMateriales.Size = New System.Drawing.Size(608, 280)
         Me.gbeListadoMateriales.TabIndex = 1
         Me.gbeListadoMateriales.TabStop = False
         Me.gbeListadoMateriales.Text = " Materiales"
@@ -2090,11 +2089,11 @@ Partial Class frm_OrdenCompra
         'UltraExpandableGroupBoxPanel1
         '
         Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.utcListadosMateriales)
-        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
         Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(585, 274)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel1.Visible = False
         '
         'utcListadosMateriales
         '
@@ -2132,7 +2131,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabPageControl13.Controls.Add(Me.griDetalleOrdenIngreso)
         Me.UltraTabPageControl13.Controls.Add(Me.griListaOrdenIngreso)
-        Me.UltraTabPageControl13.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl13.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
         Me.UltraTabPageControl13.Size = New System.Drawing.Size(1347, 280)
         '

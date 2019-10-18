@@ -32,7 +32,6 @@ Public Class d_OrdenVenta
                              , o_fila("Fecha").ToString _
                              , o_fila("OrdenComercial").ToString _
                              , o_fila("Glosa").ToString _
-                             , o_fila("Tipo").ToString _
                              , o_fila("TipoExistencia").ToString _
                              , o_fila("TipoCompra").ToString _
                              , o_fila("NombreTipoCompra").ToString _
@@ -59,16 +58,15 @@ Public Class d_OrdenVenta
             Dim ds As DataSet
             sqlhelper = New SqlHelper
             With oeOrdenComercial
-                ds = sqlhelper.ExecuteDataset("[LGT].[Sp_OrdenComercial_LST]" _
+                ds = sqlhelper.ExecuteDataset("[CMP].[Isp_OrdenVenta_Listar]" _
                         , .TipoOperacion _
                         , .Id _
-                        , "" _
-                        , "" _
+                        , .IdEmpresaSis _
+                        , .IdSucursal _
                         , .IdEmpresa _
                         , .IdEstado _
                         , .IdMoneda _
                         , .OrdenComercial _
-                        , .Tipo _
                         , .TipoExistencia _
                         , .Fecha _
                         , .FechaCrea _
@@ -120,7 +118,7 @@ Public Class d_OrdenVenta
             Using transScope As New TransactionScope()
                 Dim stResultado() As String
                 With oeOrdenComercial
-                    stResultado = sqlhelper.ExecuteScalar("[LGT].[Sp_OrdenComercial_IAE]" _
+                    stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_OrdenVenta_IAE]" _
                             , .TipoOperacion _
                             , .PrefijoID _
                             , .Id _
@@ -187,7 +185,7 @@ Public Class d_OrdenVenta
         Try
             sqlhelper = New SqlHelper
             With oeOrdenComercial
-                sqlhelper.ExecuteNonQuery("[LGT].[Sp_OrdenComercial_IAE]", .TipoOperacion, "", .Id, "", "" _
+                sqlhelper.ExecuteNonQuery("[CMP].[Isp_OrdenVenta_IAE]", .TipoOperacion, "", .Id, "", "" _
                             , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
                             , .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
                             , .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _

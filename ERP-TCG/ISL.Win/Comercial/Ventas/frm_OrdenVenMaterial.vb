@@ -56,6 +56,7 @@ Public Class frm_OrdenVenMaterial
     Private oeCombo As e_Combo
     Private olCombo As l_Combo
     Private loEmpresa As List(Of e_Empresa)
+    Private loEmpresaCliente As List(Of e_Empresa)
 
     ''Carga mis Detalles Combos y Grillas
     Dim ds As Data.DataSet
@@ -90,7 +91,7 @@ Public Class frm_OrdenVenMaterial
 
     'Private oeSaldoCtaCte As e_SaldoCuentaCorriente, olSaldoCtaCte As l_SaldoCuentaCorriente, leSaldoCtaCte As List(Of e_SaldoCuentaCorriente)
     Private oeTDDato As e_TablaDinamica_Dato, olTDDato As l_TablaDinamica_Dato, leTipoMovCtaCte As List(Of e_TablaDinamica_Dato)
-    Private oeEstado As e_Estado, olEstado As l_Estado, leEstado As List(Of e_Estado)
+    Private oeEstado As e_EstadoOrden, olEstado As l_EstadoOrden, leEstado As List(Of e_EstadoOrden)
 
     Private mdblCantidadPrecio As Double = 0
     Private mdblIGV As Double = gfc_ParametroValor("IGV")
@@ -102,6 +103,12 @@ Public Class frm_OrdenVenMaterial
 
     Private oeEmpresa As e_Empresa
     Private olEmpresa As l_Empresa
+    'Private loEmpresa As List(Of e_Empresa)
+
+    Dim oeTipoPago As New e_TipoPago
+    Dim olTipoPago As New l_TipoPago
+    Dim llTipoPago As New List(Of e_TipoPago)
+
     Private indFacturaBoleta As Integer = 0
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
@@ -319,7 +326,7 @@ Public Class frm_OrdenVenMaterial
         Try
             If e.KeyCode = Keys.Enter Then
                 If Not String.IsNullOrEmpty(cbgCliente.Text.Trim) Then
-                    gmt_ListarEmpresa("CLI", cbgCliente, String.Empty, cbRuc.Checked)
+                    gmt_ListarEmpresa("2", cbgCliente, String.Empty, cbRuc.Checked)
                 End If
             End If
         Catch ex As Exception
@@ -625,18 +632,7 @@ Public Class frm_OrdenVenMaterial
         End If
     End Sub
 
-    Private Sub cmbTipoPago_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoPago.ValueChanged
-        Try
-            oeCombo = New e_Combo
-            oeCombo.Id = cmbTipoPago.Value
-            If gloTipoPago.Contains(oeCombo) Then
-                oeCombo = gloTipoPago.Item(gloTipoPago.IndexOf(oeCombo))
-                dtpFechaPago.Value = dtpFecha.Value.AddDays(CInt(oeCombo.Descripcion))
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-        End Try
-    End Sub
+
 
     Private Sub ficDetalleOrdenComercial_SelectedTabChanged(sender As Object, e As Infragistics.Win.UltraWinTabControl.SelectedTabChangedEventArgs) Handles ficDetalleOrdenComercial.SelectedTabChanged
         Try
@@ -1083,7 +1079,7 @@ Public Class frm_OrdenVenMaterial
         cmbMoneda.SelectedIndex = 0
         txtMaterial.Text = String.Empty
         gbeMateriales.Visible = True
-        cmbTipoPago.SelectedIndex = 0
+        cboTipoPago.SelectedIndex = 0
         cmbTipoDocumento.Value = 0
         txtSerie.Text = String.Empty
         txtNumero.Text = String.Empty
@@ -1141,30 +1137,36 @@ Public Class frm_OrdenVenMaterial
         olCtaCtable = New l_CuentaContable
         'olSaldoCtaCte = New l_SaldoCuentaCorriente
         olTDDato = New l_TablaDinamica_Dato
-        olEstado = New l_Estado
+        olEstado = New l_EstadoOrden
     End Sub
 
     Private Sub mt_CargarCombos()
         Try
-            Dim oeMoneda As New e_TablaDinamica_Dato
-            Dim olMoneda As New l_TablaDinamica_Dato
-            Dim loMoneda, loMoneda1 As New List(Of e_TablaDinamica_Dato)
-            oeMoneda.TipoOperacion = "G"
+            Dim oeMoneda As New e_Moneda
+            Dim olMoneda As New l_Moneda
             oeMoneda.Activo = True
-            oeMoneda.TipoReferencia = "TipoMoneda"
-            oeMoneda.IdReferencia = "NOMBRE"
-            loMoneda.AddRange(olMoneda.Listar(oeMoneda))
-            gmt_ComboEspecifico(cmbMoneda, loMoneda, 0, "Descripcion")
-            oeMoneda = New e_TablaDinamica_Dato
+            oeMoneda.TipoOperacion = "1"
+            Dim loMoneda = olMoneda.Listar(oeMoneda)
+            gmt_ComboEspecifico(cmbMoneda, loMoneda, 0, "Nombre")
+
+            Dim loMoneda1 As New List(Of e_Moneda)
+            oeMoneda = New e_Moneda
             oeMoneda.Id = ""
-            oeMoneda.Descripcion = "TODOS"
+            oeMoneda.Nombre = "TODOS"
             loMoneda1.Add(oeMoneda)
             loMoneda1.AddRange(loMoneda)
-            gmt_ComboEspecifico(cmbMonedaB, loMoneda1, 0, "Descripcion")
+            gmt_ComboEspecifico(cmbMonedaB, loMoneda1, 0, "Nombre")
 
-            Dim oeTipoPago As New e_TipoPago
-            Dim olTipoPago As New l_TipoPago
-            gmt_ComboEspecifico(cmbTipoPago, olTipoPago.Listar(oeTipoPago), 0)
+
+            oeTipoPago.Id = "CERO"
+            oeTipoPago.Nombre = "TODOS"
+            llTipoPago.Add(oeTipoPago)
+            oeTipoPago = New e_TipoPago
+            oeTipoPago.Activo = True
+            llTipoPago.AddRange(olTipoPago.Listar(oeTipoPago))
+
+            oeTipoPago.Activo = True
+            LlenarComboMaestro(cboTipoPago, olTipoPago.Listar(oeTipoPago), 0)
 
             Dim oeTipoDoc As New e_TipoDocumento
             Dim olTipoDoc As New l_TipoDocumento
@@ -1173,6 +1175,12 @@ Public Class frm_OrdenVenMaterial
             loTipoDoc.AddRange(olTipoDoc.Listar(oeTipoDoc))
             gmt_ComboEspecifico(cmbTipoDocumento, loTipoDoc, -1)
 
+            oeEmpresa = New e_Empresa
+            olEmpresa = New l_Empresa
+            loEmpresaCliente = New List(Of e_Empresa)
+
+            cbgCliente.DataSource = loEmpresaCliente
+            cbgClienteAlterno.DataSource = loEmpresaCliente
 
             olCombo = New l_Combo
             ListLugar = New List(Of e_Combo)
@@ -1191,9 +1199,19 @@ Public Class frm_OrdenVenMaterial
             ListVendedores.AddRange(olCombo.Listar(oeCombo))
             gmt_ComboEspecifico(cboVendedor, ListVendedores, 3)
             ' Cargar Estado
-            oeEstado = New e_Estado
-            oeEstado.TipoOperacion = "A" ': oeEstado.Nombre = ls_IdActividadNegocio
-            leEstado = olEstado.Listar(oeEstado)
+            leEstado = New List(Of e_EstadoOrden)
+            oeEstado = New e_EstadoOrden
+            oeEstado.Id = "CERO"
+            oeEstado.Nombre = "TODOS"
+            leEstado.Add(oeEstado)
+            oeEstado = New e_EstadoOrden
+            oeEstado.Activo = True
+            oeEstado.TipoOperacion = "2"
+            leEstado.AddRange(olEstado.Listar(oeEstado))
+            gmt_ComboEspecifico(cboEstado, leEstado, 3)
+            '_IdEstadoOrden = cboEstadoOrden.Value
+            cboEstado.SelectedIndex = 0
+
             'Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = "EMITIDO").ToList
             'If _leEstAux.Count > 0 Then ls_EstadoEmitido = _leEstAux(0).Id
             'Dim _leEstAux2 = leEstado.Where(Function(it) it.Nombre = "CUADRADO").ToList
@@ -1203,16 +1221,16 @@ Public Class frm_OrdenVenMaterial
             ' Cargar Saldo Cuenta Corriente
             mt_CargarSaldoCtaCte()
             ' Cargar Tipo Movimiento Cuenta Corriente
-            oeTDDato = New e_TablaDinamica_Dato : leTipoMovCtaCte = New List(Of e_TablaDinamica_Dato)
-            oeTDDato.TipoOperacion = "G" : oeTDDato.TipoReferencia = "TipoMovimientoCtaCte" : oeTDDato.IdReferencia = "NOMBRE"
-            leTipoMovCtaCte = olTDDato.Listar(oeTDDato)
-            Dim _leMCCProv = leTipoMovCtaCte.Where(Function(it) it.Descripcion.Contains("CLIENTE")).ToList
-            If _leMCCProv.Count > 0 Then
-                Dim _leProv1 = _leMCCProv.Where(Function(it) it.Descripcion.Contains("FACTURA")).ToList
-                If _leProv1.Count > 0 Then ls_IdProv1 = _leProv1(0).Id
-                Dim _leProv2 = _leMCCProv.Where(Function(it) it.Descripcion.Contains("CREDITO")).ToList
-                If _leProv2.Count > 0 Then ls_IdProv2 = _leProv2(0).Id
-            End If
+            'oeTDDato = New e_TablaDinamica_Dato : leTipoMovCtaCte = New List(Of e_TablaDinamica_Dato)
+            'oeTDDato.TipoOperacion = "G" : oeTDDato.TipoReferencia = "TipoMovimientoCtaCte" : oeTDDato.IdReferencia = "NOMBRE"
+            'leTipoMovCtaCte = olTDDato.Listar(oeTDDato)
+            'Dim _leMCCProv = leTipoMovCtaCte.Where(Function(it) it.Descripcion.Contains("CLIENTE")).ToList
+            'If _leMCCProv.Count > 0 Then
+            '    Dim _leProv1 = _leMCCProv.Where(Function(it) it.Descripcion.Contains("FACTURA")).ToList
+            '    If _leProv1.Count > 0 Then ls_IdProv1 = _leProv1(0).Id
+            '    Dim _leProv2 = _leMCCProv.Where(Function(it) it.Descripcion.Contains("CREDITO")).ToList
+            '    If _leProv2.Count > 0 Then ls_IdProv2 = _leProv2(0).Id
+            'End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -1262,7 +1280,7 @@ Public Class frm_OrdenVenMaterial
                 gmt_ListarEmpresa("CLI", cbgCliente, .IdEmpresa, False)
                 cbgCliente.Value = .IdEmpresa
                 cmbMoneda.Value = .IdMoneda
-                cmbTipoPago.Value = .IdTipoPago
+                cboTipoPago.Value = .IdTipoPago
                 txtOrden.Text = .OrdenComercial
                 txtEstado.Text = .Estado
                 txtGlosa.Text = .Glosa
@@ -1336,7 +1354,7 @@ Public Class frm_OrdenVenMaterial
                 'Else : .IdCompraVenta = "V" 'Venta    
                 'End If
                 .Material = txtMaterial.Text
-                loAlmMaterial.AddRange(olAlmMaterial.Listar(oeAlmMaterial))
+                'loAlmMaterial = olAlmMaterial.Listar(oeAlmMaterial)
                 griAlmacenMaterial.DataSource = loAlmMaterial
             End With
         Catch ex As Exception
@@ -2288,7 +2306,7 @@ Public Class frm_OrdenVenMaterial
                 .lstOrdenComercialMaterial.AddRange(loOrdenComercialMaterial)
                 .Fecha = dtpFecha.Value
                 .IdMoneda = cmbMoneda.Value
-                .IdTipoPago = cmbTipoPago.Value
+                .IdTipoPago = cboTipoPago.Value
                 .Glosa = txtGlosa.Text
                 .Total = decTotal.Value
                 .SubTotal = decSubTotal.Value
@@ -2300,6 +2318,22 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Function
+
+    Private Sub ActualizarTipoPago()
+        Try
+            Dim oe As New e_Combo
+            oe.Id = cboTipoPago.Value
+            oe.Tipo = 0
+            If TipoPagoPublic.Contains(oe) Then
+                oe = TipoPagoPublic.Item(TipoPagoPublic.IndexOf(oe))
+                dtpFechaPago.Value = dtpFecha.Value.AddDays(CInt(oe.Descripcion))
+            Else
+                Throw New Exception("No se Encuentra el Tipo de Pago. Verificar")
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     Private Function fc_EmitirDocumento() As Boolean
         Try
@@ -2362,6 +2396,28 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Function
 
+    Private Sub cbgClienteAlterno_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgClienteAlterno.InitializeLayout
+        Me.cbgClienteAlterno.ValueMember = "Id"
+        Me.cbgClienteAlterno.DisplayMember = "Nombre"
+        With cbgClienteAlterno.DisplayLayout.Bands(0)
+            .Columns("Id").Hidden = True
+            .Columns("TipoEmpresa").Hidden = True
+            .Columns("Codigo").Hidden = True
+            .Columns("IdDireccionTanqueo").Hidden = True
+            .Columns("Morosidad").Hidden = True
+            .Columns("Credito").Hidden = True
+            .Columns("IndNivelComercial").Hidden = True
+            .Columns("Moneda").Hidden = True
+            .Columns("IndClasificacion").Hidden = True
+            .Columns("UsuarioCreacion").Hidden = True
+            .Columns("IndCategoriaEmpresaSGI").Hidden = True
+            '.Columns("Activo").Hidden = True
+            .Columns("Ruc").Header.Caption = "N° RUC"
+            .Columns("Ruc").Width = 80
+            .Columns("Nombre").Width = 250
+        End With
+    End Sub
+
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)
         Try
             loDetDocumento = New List(Of e_DetalleDocumento)
@@ -2409,6 +2465,36 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Function
 
+    Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgCliente.InitializeLayout
+        Me.cbgCliente.ValueMember = "Id"
+        Me.cbgCliente.DisplayMember = "Nombre"
+        With cbgCliente.DisplayLayout.Bands(0)
+            .Columns("Id").Hidden = True
+            .Columns("TipoEmpresa").Hidden = True
+            .Columns("Codigo").Hidden = True
+            .Columns("IdDireccionTanqueo").Hidden = True
+            .Columns("Morosidad").Hidden = True
+            .Columns("Credito").Hidden = True
+            .Columns("IndNivelComercial").Hidden = True
+            .Columns("Moneda").Hidden = True
+            .Columns("IndClasificacion").Hidden = True
+            .Columns("UsuarioCreacion").Hidden = True
+            .Columns("IndCategoriaEmpresaSGI").Hidden = True
+            '.Columns("Activo").Hidden = True
+            .Columns("Ruc").Header.Caption = "N° RUC"
+            .Columns("Ruc").Width = 80
+            .Columns("Nombre").Width = 250
+        End With
+    End Sub
+
+    Private Sub cboTipoPago_ValueChanged(sender As Object, e As EventArgs) Handles cboTipoPago.ValueChanged
+        Try
+            ActualizarTipoPago()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
     Private Function fc_OrdenDocumento() As e_Orden_Documento
         Try
             oeOrdDocumento = New e_Orden_Documento
@@ -2435,7 +2521,7 @@ Public Class frm_OrdenVenMaterial
                 .IdSucursal = gs_PrefijoIdSucursal
                 .Gravado = Math.Round(decSubTotal.Value, 2)
                 .IGV = Math.Round(decImpuesto.Value, 2)
-                .IdTipoPago = cmbTipoPago.Value
+                .IdTipoPago = cboTipoPago.Value
                 .Glosa = txtGlosa.Text
                 '.u = gUsuarioSGI.Id
                 .TipoOperacion = "I"
@@ -2480,6 +2566,14 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Function
+
+    Private Sub cbgClienteAlterno_KeyDown(sender As Object, e As KeyEventArgs) Handles cbgClienteAlterno.KeyDown
+
+    End Sub
+
+    Private Sub cbgClienteAlterno_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbgClienteAlterno.KeyPress
+
+    End Sub
 
 #End Region
 

@@ -80,6 +80,8 @@ Public Class e_Trabajador
     Public IdEmpresaSistema As String = ""
     <DataMember()>
     Public IdSucursalSistema As String = ""
+    <DataMember()>
+    Public Property Foto() As Byte()
 #End Region
 
 #Region "Constructor"
@@ -95,9 +97,10 @@ Public Class e_Trabajador
         _usuariocreacion = ""
         _disponible = True
         _claveseguridad = String.Empty
+        Foto = Nothing
     End Sub
 
-    Public Sub New(ByVal lb_Seleccion As Boolean, _
+    Public Sub New(ByVal lb_Seleccion As Boolean,
           ByVal Id As String _
           , ByVal IdArea As String _
           , ByVal Area As String _
@@ -129,6 +132,7 @@ Public Class e_Trabajador
           , ByVal ls_ClaveSeguridad As String _
           , ByVal ls_IdCentro As String _
           , ByVal ln_IndRuta As Integer _
+          , ByVal ln_Foto As Byte()
           )
 
         _id = Id
@@ -163,6 +167,7 @@ Public Class e_Trabajador
         _claveseguridad = ls_ClaveSeguridad
         IdCentro = ls_IdCentro
         IndRuta = ln_IndRuta
+        Foto = ln_Foto
     End Sub
 
     Public Sub New(ByVal _oePersona As e_Persona)
