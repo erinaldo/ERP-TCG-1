@@ -9,6 +9,7 @@
 Imports ISL.LogicaWCF
 Imports Microsoft.Reporting.WinForms
 Public Class frm_DocumentoRentencion
+    Inherits ISL.Win.frm_MenuPadre
     Private Id As String
 
 
@@ -31,7 +32,7 @@ Public Class frm_DocumentoRentencion
             Dim oReport As New ReportDataSource("dsImprimirRetencion_dtImprimirRetencion", dt)
 
             Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
+            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras",
             UCase(ConvertirNumeroALetras(Math.Round(Monto, 2).ToString)) & " NUEVOS SOLES")
             myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Destino", "PROVEEDOR", True)
 

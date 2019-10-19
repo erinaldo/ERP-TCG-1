@@ -2,15 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Image Name="image1">
-        <Source>Embedded</Source>
-        <Value>logo_induamerica_pequeño</Value>
-        <MIMEType>image/jpeg</MIMEType>
-        <Left>1.625cm</Left>
-        <Height>1.50794cm</Height>
-        <Width>1.34921cm</Width>
-        <Style />
-      </Image>
       <Textbox Name="textbox1">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -34,7 +25,6 @@
         <Left>3.375cm</Left>
         <Height>0.63492cm</Height>
         <Width>10.25cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -65,7 +55,7 @@
         <Left>14.125cm</Left>
         <Height>0.63492cm</Height>
         <Width>1.25cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -96,7 +86,7 @@
         <Left>1.75cm</Left>
         <Height>0.63492cm</Height>
         <Width>4.75cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -127,7 +117,7 @@
         <Left>13.875cm</Left>
         <Height>0.63492cm</Height>
         <Width>1.5cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -158,7 +148,7 @@
         <Left>3.125cm</Left>
         <Height>0.63492cm</Height>
         <Width>3.25cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -189,7 +179,7 @@
         <Left>1.75cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -220,7 +210,7 @@
         <Left>7.25cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -251,7 +241,7 @@
         <Left>13cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -282,7 +272,7 @@
         <Left>9.875cm</Left>
         <Height>0.63492cm</Height>
         <Width>1.75cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -311,7 +301,7 @@
         <Left>6.625cm</Left>
         <Height>0.5cm</Height>
         <Width>11.5cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -617,7 +607,7 @@
         <Left>1.5cm</Left>
         <Height>1.5cm</Height>
         <Width>17cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style />
       </Tablix>
       <Textbox Name="Codigo">
@@ -641,7 +631,7 @@
         <Left>15.5cm</Left>
         <Height>0.63492cm</Height>
         <Width>3cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -672,7 +662,7 @@
         <Left>15.5cm</Left>
         <Height>0.63492cm</Height>
         <Width>3cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -701,7 +691,7 @@
         <Left>11.5cm</Left>
         <Height>0.63492cm</Height>
         <Width>2cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -733,7 +723,7 @@
         <Left>6.25cm</Left>
         <Height>0.63492cm</Height>
         <Width>2.53968cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -746,7 +736,7 @@
         <Left>1.75cm</Left>
         <Height>0cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -758,7 +748,7 @@
         <Left>7.25cm</Left>
         <Height>0cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -770,7 +760,7 @@
         <Left>13cm</Left>
         <Height>0cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -800,7 +790,7 @@
         <Left>1.5cm</Left>
         <Height>0.63492cm</Height>
         <Width>4.75cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -827,7 +817,7 @@
         <Left>6.25cm</Left>
         <Height>0.63492cm</Height>
         <Width>12cm</Width>
-        <ZIndex>20</ZIndex>
+        <ZIndex>19</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>

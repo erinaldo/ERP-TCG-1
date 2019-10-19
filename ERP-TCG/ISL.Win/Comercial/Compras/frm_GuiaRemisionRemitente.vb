@@ -768,7 +768,7 @@ Public Class frm_GuiaRemisionRemitente
             rfechasHasta.Value = Date.Now
             oeGRRemitente.UsuarioCreacion = gUsuarioSGI.Id
             oeGRRemitente.Fecha = fecGuiaRemision.Value
-            'Obtener Id de Induamerica como empresa destino
+            'Obtener Id de EMP como empresa destino
             ObtenerIdProveedorInduamerica(Me.txtProveedor.Text.Trim)
             'Obtener tipo de documento
             oeGRRemitente.IdTipoGuia = ObtenerTipoDocumento("GUÍA DE REMISIÓN - REMITENTE")
@@ -819,7 +819,7 @@ Public Class frm_GuiaRemisionRemitente
             oeEstado.Nombre = "COMPRAS"
             LlenarComboMaestro(cboEstado, olEstado.Listar(oeEstado), 0)
 
-            'Direcciones de induamerica
+            'Direcciones de EMP
             'If oeGRRemitente.IdEmpresaDestino <> "" Then
             oeDireccion = New e_Direccion
             oeDireccion.TipoOperacion = 2

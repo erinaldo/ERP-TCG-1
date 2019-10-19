@@ -272,9 +272,7 @@
     <Content Include="General\l_HistorialRechazoOC.svc" />
     <Content Include="General\l_Impuesto.svc" />
     <Content Include="General\l_IncidenciasAutentificadas.svc" />
-    <Content Include="General\l_Lugar.svc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="General\l_Lugar.svc" />
     <Content Include="General\l_Marca.svc" />
     <Content Include="General\l_Material.svc" />
     <Content Include="General\l_MedioPago.svc" />
@@ -1612,7 +1610,6 @@
     </Compile>
     <Compile Include="General\l_Lugar.svc.vb">
       <DependentUpon>l_Lugar.svc</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="General\l_Marca.svc.vb">
       <DependentUpon>l_Marca.svc</DependentUpon>

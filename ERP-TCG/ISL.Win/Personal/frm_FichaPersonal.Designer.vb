@@ -92,8 +92,8 @@ Partial Class frm_FichaPersonal
         Dim UltraGridColumn88 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GuardarIngresoConfirmado", 1)
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 974611657)
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 974611658)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 187039313)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 187039314)
         Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdTrabajador")
         Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
@@ -131,6 +131,8 @@ Partial Class frm_FichaPersonal
         Dim UltraDataColumn35 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TotalDias")
         Dim UltraDataColumn36 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaFinVtaVacaciones")
         Dim UltraDataColumn37 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaInicioVtaVacaciones")
+        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -157,8 +159,6 @@ Partial Class frm_FichaPersonal
         Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.utpOcupaciones = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griOcupacion = New ISL.Controles.Grilla(Me.components)
         Me.utpTelefono = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -182,6 +182,8 @@ Partial Class frm_FichaPersonal
         Me.VerDatosTrabajadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImprimirFichaDelTrabajadorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Agrupacion1 = New ISL.Controles.Agrupacion(Me.components)
+        Me.cboCentroBus = New ISL.Controles.Combo(Me.components)
+        Me.Etiqueta9 = New ISL.Controles.Etiqueta(Me.components)
         Me.etiTrabajadoresNoDisponibles = New ISL.Controles.Etiqueta(Me.components)
         Me.ColoresTrabajadoresNoDisponibles = New ISL.Controles.Colores(Me.components)
         Me.utpMantenimiento = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -223,8 +225,6 @@ Partial Class frm_FichaPersonal
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraDataSource1 = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.cboCentroBus = New ISL.Controles.Combo(Me.components)
-        Me.Etiqueta9 = New ISL.Controles.Etiqueta(Me.components)
         Me.utpOcupaciones.SuspendLayout()
         CType(Me.griOcupacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utpTelefono.SuspendLayout()
@@ -247,6 +247,7 @@ Partial Class frm_FichaPersonal
         Me.mnuListado.SuspendLayout()
         CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Agrupacion1.SuspendLayout()
+        CType(Me.cboCentroBus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ColoresTrabajadoresNoDisponibles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utpMantenimiento.SuspendLayout()
         CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -274,7 +275,6 @@ Partial Class frm_FichaPersonal
         CType(Me.ficTrabajador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficTrabajador.SuspendLayout()
         CType(Me.UltraDataSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboCentroBus, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'utpOcupaciones
@@ -737,7 +737,7 @@ Partial Class frm_FichaPersonal
         '
         Me.utpLista.Controls.Add(Me.agrGrillaTrabajador)
         Me.utpLista.Controls.Add(Me.Agrupacion1)
-        Me.utpLista.Location = New System.Drawing.Point(1, 22)
+        Me.utpLista.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpLista.Name = "utpLista"
         Me.utpLista.Size = New System.Drawing.Size(1132, 576)
         '
@@ -781,18 +781,18 @@ Partial Class frm_FichaPersonal
         '
         Me.mnuListado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.VerDatosTrabajadorToolStripMenuItem, Me.ImprimirFichaDelTrabajadorToolStripMenuItem})
         Me.mnuListado.Name = "mnuListado"
-        Me.mnuListado.Size = New System.Drawing.Size(231, 48)
+        Me.mnuListado.Size = New System.Drawing.Size(229, 48)
         '
         'VerDatosTrabajadorToolStripMenuItem
         '
         Me.VerDatosTrabajadorToolStripMenuItem.Name = "VerDatosTrabajadorToolStripMenuItem"
-        Me.VerDatosTrabajadorToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.VerDatosTrabajadorToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.VerDatosTrabajadorToolStripMenuItem.Text = "Ver Datos del Trabajador"
         '
         'ImprimirFichaDelTrabajadorToolStripMenuItem
         '
         Me.ImprimirFichaDelTrabajadorToolStripMenuItem.Name = "ImprimirFichaDelTrabajadorToolStripMenuItem"
-        Me.ImprimirFichaDelTrabajadorToolStripMenuItem.Size = New System.Drawing.Size(230, 22)
+        Me.ImprimirFichaDelTrabajadorToolStripMenuItem.Size = New System.Drawing.Size(228, 22)
         Me.ImprimirFichaDelTrabajadorToolStripMenuItem.Text = "Imprimir Ficha del Trabajador"
         '
         'Agrupacion1
@@ -810,6 +810,35 @@ Partial Class frm_FichaPersonal
         Me.Agrupacion1.TabIndex = 1
         Me.Agrupacion1.Text = "Información complementaria"
         Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'cboCentroBus
+        '
+        Appearance12.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboCentroBus.Appearance = Appearance12
+        Me.cboCentroBus.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboCentroBus.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboCentroBus.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboCentroBus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCentroBus.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboCentroBus.Location = New System.Drawing.Point(56, 23)
+        Me.cboCentroBus.Name = "cboCentroBus"
+        Me.cboCentroBus.Size = New System.Drawing.Size(132, 21)
+        Me.cboCentroBus.TabIndex = 26
+        Me.cboCentroBus.ValueMember = "Id"
+        '
+        'Etiqueta9
+        '
+        Appearance13.BackColor = System.Drawing.Color.Transparent
+        Appearance13.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta9.Appearance = Appearance13
+        Me.Etiqueta9.AutoSize = True
+        Me.Etiqueta9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta9.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta9.Location = New System.Drawing.Point(12, 27)
+        Me.Etiqueta9.Name = "Etiqueta9"
+        Me.Etiqueta9.Size = New System.Drawing.Size(41, 15)
+        Me.Etiqueta9.TabIndex = 25
+        Me.Etiqueta9.Text = "Centro:"
         '
         'etiTrabajadoresNoDisponibles
         '
@@ -838,7 +867,7 @@ Partial Class frm_FichaPersonal
         '
         Me.utpMantenimiento.Controls.Add(Me.ficDetalle)
         Me.utpMantenimiento.Controls.Add(Me.agrTrabajador)
-        Me.utpMantenimiento.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpMantenimiento.Location = New System.Drawing.Point(1, 22)
         Me.utpMantenimiento.Name = "utpMantenimiento"
         Me.utpMantenimiento.Size = New System.Drawing.Size(1132, 576)
         '
@@ -976,9 +1005,9 @@ Partial Class frm_FichaPersonal
         Me.etiTiempoPermanencia.ForeColor = System.Drawing.Color.Black
         Me.etiTiempoPermanencia.Location = New System.Drawing.Point(43, 35)
         Me.etiTiempoPermanencia.Name = "etiTiempoPermanencia"
-        Me.etiTiempoPermanencia.Size = New System.Drawing.Size(161, 14)
+        Me.etiTiempoPermanencia.Size = New System.Drawing.Size(153, 14)
         Me.etiTiempoPermanencia.TabIndex = 41
-        Me.etiTiempoPermanencia.Text = "Tiempo de Permanencia en ISL:"
+        Me.etiTiempoPermanencia.Text = "Tiempo de Permanencia EMP:"
         '
         'verActivo
         '
@@ -1348,35 +1377,6 @@ Partial Class frm_FichaPersonal
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
-        'cboCentroBus
-        '
-        Appearance12.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboCentroBus.Appearance = Appearance12
-        Me.cboCentroBus.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Me.cboCentroBus.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboCentroBus.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboCentroBus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboCentroBus.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboCentroBus.Location = New System.Drawing.Point(56, 23)
-        Me.cboCentroBus.Name = "cboCentroBus"
-        Me.cboCentroBus.Size = New System.Drawing.Size(132, 21)
-        Me.cboCentroBus.TabIndex = 26
-        Me.cboCentroBus.ValueMember = "Id"
-        '
-        'Etiqueta9
-        '
-        Appearance13.BackColor = System.Drawing.Color.Transparent
-        Appearance13.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta9.Appearance = Appearance13
-        Me.Etiqueta9.AutoSize = True
-        Me.Etiqueta9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta9.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta9.Location = New System.Drawing.Point(12, 27)
-        Me.Etiqueta9.Name = "Etiqueta9"
-        Me.Etiqueta9.Size = New System.Drawing.Size(41, 15)
-        Me.Etiqueta9.TabIndex = 25
-        Me.Etiqueta9.Text = "Centro:"
-        '
         'frm_FichaPersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1408,6 +1408,7 @@ Partial Class frm_FichaPersonal
         CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Agrupacion1.ResumeLayout(False)
         Me.Agrupacion1.PerformLayout()
+        CType(Me.cboCentroBus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ColoresTrabajadoresNoDisponibles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.utpMantenimiento.ResumeLayout(False)
         CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1438,7 +1439,6 @@ Partial Class frm_FichaPersonal
         CType(Me.ficTrabajador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficTrabajador.ResumeLayout(False)
         CType(Me.UltraDataSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboCentroBus, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -2505,7 +2505,7 @@ Public Class frm_Guias
             oeCombo.Nombre = "Transportista"
             ListTercero.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
             '   LlenarComboMaestro(cboTransportista, ListTercero, 1)
-            '  cboTransportista.Value = "1CH000004444" 'induamerica isl
+            '  cboTransportista.Value = "1CH000004444" ' EMP ERP
         Catch ex As Exception
             Throw ex
         End Try
