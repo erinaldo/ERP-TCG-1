@@ -330,7 +330,7 @@ Public Class frm_MovimientoPersonal
             oeTrabajador.Id = oeMovimientoPersonal.IdTrabajador
             oeTrabajador = olTrabajador.Obtener(oeTrabajador)
 
-            If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
 
             'ListarMovimientos(True)
 

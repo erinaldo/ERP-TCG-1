@@ -221,7 +221,7 @@ Public Class frm_Menu
     End Sub
 
     ''' <summary>
-    ''' Método para verificar la disponibilidad de la base de datos ISL
+    ''' Método para verificar la disponibilidad de la base de datos ERP
     ''' </summary>
     ''' <remarks></remarks>
     ''' 
@@ -536,7 +536,7 @@ Public Class frm_Menu
             End If
 
             If Conecta AndAlso BandRestablece Then
-                'Rutina para Cerrar la Aplicacion luego de 10 Minutos por No estar disponible la Base de Datos Isl
+                'Rutina para Cerrar la Aplicacion luego de 10 Minutos por No estar disponible la Base de Datos ERP
                 If Bandbd Then
                     ContBD = ContBD + 1
                     If ContBD > 100 Then
@@ -1050,7 +1050,7 @@ Public Class frm_Menu
     End Sub
 
     ''' <summary>
-    ''' Método para verificar la disponibilidad de la conexión del sistema a la red ISL
+    ''' Método para verificar la disponibilidad de la conexión del sistema a la red ERP
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub AnalizaConexion()

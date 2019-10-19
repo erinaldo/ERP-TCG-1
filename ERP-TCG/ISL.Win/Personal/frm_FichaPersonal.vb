@@ -304,7 +304,7 @@ Public Class frm_FichaPersonal
     End Sub
 
     Private Sub CargarFotoTrabajador(ByVal oeTrabajador As e_Trabajador)
-        Fotografia.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+        'Fotografia.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
     End Sub
 
     Private Sub CargaDatosPersonales(ByVal oeTrabajador As e_Trabajador)

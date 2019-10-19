@@ -205,7 +205,7 @@ Public Class frm_HorarioTrabajador
                 Dim olTrabajador As New l_Trabajador
                 oeTrabajador.Id = oeMovimientoPersonal.IdTrabajador
                 oeTrabajador = olTrabajador.ObtenerObjeto(oeTrabajador)
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 txtArea.Text = oeTrabajador.oeArea.Nombre
                 txtCargo.Text = oeTrabajador.oeCargo.Nombre
                 fecFechaIngreso.Value = oeTrabajador.FechaIngreso

@@ -80,7 +80,7 @@ Public Class frm_AsignarCuota
             oeCuota.IdTrabajador = oeMovimientoPersonal.IdTrabajador
             oeCuota.NombreCompleto = cboTrabajadores.Text
 
-            If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
 
             FotoTrabajador.Visible = True
             agrDatosBasicos.Visible = True
@@ -320,7 +320,7 @@ Public Class frm_AsignarCuota
     End Sub
 
     Private Sub CargarFotoTrabajador(ByVal oeTrabajador As e_Trabajador)
-        FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+        'FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
     End Sub
 
     Private Sub CargaDatosPersonales(ByVal oeCuota As e_Cuota)

@@ -48,13 +48,13 @@ Public Class l_Persona
     ''' <param name="DNI"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Persona.Foto
-        Try
-            Return odPersona.Foto(DNI)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
+    'Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Persona.Foto
+    '    Try
+    '        Return odPersona.Foto(DNI)
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Function
 
     ''' <summary>
     ''' Guardar o grabar la información de la persona

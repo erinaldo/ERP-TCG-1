@@ -26,7 +26,7 @@ Public Interface Il_Persona
     <OperationContract()> _
     Function Listar(ByVal oePersona As e_Persona) As List(Of e_Persona)
 
-    <OperationContract()> _
-    Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '<OperationContract()> _
+    'Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
 
 End Interface

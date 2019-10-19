@@ -46,13 +46,13 @@ Public Class l_Cliente
     ''' <param name="DNI">Número de DNI del cliente</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Cliente.Foto
-        Try
-            Return olPersona.Foto(DNI)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
+    'Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Cliente.Foto
+    '    Try
+    '        Return olPersona.Foto(DNI)
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Function
 
     ''' <summary>
     ''' Guardar la información del cliente

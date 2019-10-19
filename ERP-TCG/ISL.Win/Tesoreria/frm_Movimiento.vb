@@ -2143,7 +2143,7 @@ Public Class frm_Movimiento
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 ExpGroupBoxReceptor.Expanded = True
             End If
-            If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picRecibidor.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picRecibidor.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
             If opcVerOtro.Checked Then
                 picRecibidor.Image = Nothing
                 cboTrabajador.Visible = True

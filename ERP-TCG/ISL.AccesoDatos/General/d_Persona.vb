@@ -318,24 +318,24 @@ Public Class d_Persona
             Throw ex
         End Try
     End Function
-
-    Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
-        Dim odDatosConfiguracion As New d_DatosConfiguracion
-        Dim sinFoto As String = odDatosConfiguracion.Fotos & "\SinFoto.jpg"
-        Foto = System.Drawing.Bitmap.FromFile(sinFoto)
-        If DNI.Length = 8 Then
-            Try
-                Dim archivoFoto As String = odDatosConfiguracion.Fotos & "\" & DNI & ".jpg"
-                If System.IO.File.Exists(archivoFoto) Then
-                    Foto = System.Drawing.Bitmap.FromFile(archivoFoto)
-                Else
-                    Foto = System.Drawing.Bitmap.FromFile(sinFoto)
-                End If
-            Catch ex As Exception
-                Throw ex
-            End Try
-        End If
-        Return Foto
-    End Function
+    '@0001
+    'Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '    Dim odDatosConfiguracion As New d_DatosConfiguracion
+    '    Dim sinFoto As String = odDatosConfiguracion.Fotos & "\SinFoto.jpg"
+    '    Foto = System.Drawing.Bitmap.FromFile(sinFoto)
+    '    If DNI.Length = 8 Then
+    '        Try
+    '            Dim archivoFoto As String = odDatosConfiguracion.Fotos & "\" & DNI & ".jpg"
+    '            If System.IO.File.Exists(archivoFoto) Then
+    '                Foto = System.Drawing.Bitmap.FromFile(archivoFoto)
+    '            Else
+    '                Foto = System.Drawing.Bitmap.FromFile(sinFoto)
+    '            End If
+    '        Catch ex As Exception
+    '            Throw ex
+    '        End Try
+    '    End If
+    '    Return Foto
+    'End Function
 
 End Class

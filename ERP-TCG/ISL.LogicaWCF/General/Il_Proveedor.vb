@@ -26,7 +26,7 @@ Public Interface Il_Proveedor
     <OperationContract()> _
     Function Eliminar(ByVal oeProveedor As e_Proveedor) As Boolean
 
-    <OperationContract()> _
-    Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '<OperationContract()> _
+    'Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
 
 End Interface

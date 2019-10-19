@@ -308,7 +308,7 @@ Public Class frm_Sancion
                 txtDni.Text = oeTrabajador.oePersona.Dni
                 txtArea.Text = oeTrabajador.oeArea.Nombre
                 txtOcupacion.Text = oeTrabajador.oeOcupacion.Nombre
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 'oeSueldo = New e_SueldoTrabajador
                 'oeSueldo.IdTrabajador = oeTrabajador.Id
                 'oeSueldo.Equivale = 1
@@ -604,7 +604,7 @@ Public Class frm_Sancion
         Try
             'oeTrab (Id, NombreCompleto, Dni) {e_Trabajador}
             Dim oeTrab = cboTrabajador.Items(cboTrabajador.SelectedIndex).ListObject
-            If Not String.IsNullOrEmpty(oeTrab.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrab.Dni)
+            'If Not String.IsNullOrEmpty(oeTrab.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrab.Dni)
         Catch ex As Exception
             Throw ex
         End Try

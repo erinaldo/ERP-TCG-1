@@ -346,17 +346,17 @@ Module m_Funciones
 
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
-    'Declara constante pública del Id de la Empresa ISL
+    'Declara constante pública del Id de la Empresa
     Public Const ISL_IdClienteProveedor As String = "1CH000004444"
     Public Const ISL_IdProveedor As String = "1CH000004444"
     Public Const ISL_IdEmpresa As String = "1CH000006026"
-    'Public Const ISL_Nombre As String = "INDUAMERICA SERVICIOS LOGISTICOS S.A.C."
+    'Public Const ERP_Nombre As String = "ERP"
     Public Const ISL_Nombre As String = "MI EMPRESA S.A.C."
     Public Const ISL_RUC As String = "20479729141"
     Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
-    Public Abrev_Empresa As String = "ISL"
+    Public Abrev_Empresa As String = "ERP"
 
     'Declara constantes públicas para nombres de perfiles utilizados por diferentes módulos
     Public Const gNombrePerfilSupervidorGeneral As String = "SUPERVISOR GENERAL"
@@ -1715,8 +1715,8 @@ Module m_Funciones
                 If result = DialogResult.Cancel Then Return
                 Dim stNombreArchivo As String = sfd_Dialogo.FileName
                 uge_Exportar.Export(Grilla, stNombreArchivo)
-                If MessageBox.Show("Se ha exportado satisfactoriamente el archivo, desea poder visualizarlo?", _
-                "ISL", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                If MessageBox.Show("Se ha exportado satisfactoriamente el archivo, desea poder visualizarlo?",
+                "ERP", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Process.Start(stNombreArchivo)
                 End If
             Else
@@ -2210,7 +2210,7 @@ Module m_Funciones
 
     Public Sub MuestraImagenUsuario()
         Dim olPersona As New l_Persona
-        frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.AppearancesSmall.Appearance.Image = olPersona.Foto(gUsuarioSGI.oePersona.Dni)
+        'frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.AppearancesSmall.Appearance.Image = olPersona.Foto(gUsuarioSGI.oePersona.Dni)
         frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.ToolTipText = gUsuarioSGI.oePersona.NombreCompleto
         frm_Menu.utm_ISLSGI.Tools("sbNombreUsuario").SharedProps.Visible = False
     End Sub
@@ -4470,12 +4470,7 @@ Module m_Funciones
 
 #Region "Grillas Configuracion"
 
-    ''' <summary>
-    ''' Calcula Totales de una Grilla ISL
-    ''' </summary>
-    ''' <param name="Grilla">Grilla Isl</param>
-    ''' <param name="aColumnas">Nombre de las Columnas Separadas por coma</param>
-    ''' <remarks></remarks>
+
     Public Sub CalcularTotales(ByVal Grilla As UltraGrid, ByVal ParamArray aColumnas As String())
         With Grilla.DisplayLayout.Bands(0)
             .Summaries.Clear()

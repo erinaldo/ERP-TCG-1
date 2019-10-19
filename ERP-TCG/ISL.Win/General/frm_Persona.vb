@@ -940,7 +940,7 @@ Public Class frm_Persona
                 End If
             End If
         End If
-        If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olPersona.Foto(oePersona.Dni)
+        'If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olPersona.Foto(oePersona.Dni)
     End Sub
 
     Private Sub verActivo_CheckedChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles verActivo.CheckedChanged

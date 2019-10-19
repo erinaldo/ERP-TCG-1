@@ -362,7 +362,7 @@ Public Class frm_Trabajador
                         CargaDatosPersonales(oeTrabajador)
 
                     End If
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 Else
                     Inicializar()
                 End If
@@ -932,7 +932,7 @@ Public Class frm_Trabajador
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 If oeTrabajador.Activo Then
                     CargaDatosPersonales(oeTrabajador)
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                     oeTrabajador.Modificado = False
                     MostrarTabs(1, ficTrabajador, 1)
                     MyBase.Editar()
@@ -959,7 +959,7 @@ Public Class frm_Trabajador
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 If oeTrabajador.Activo Then
                     CargaDatosPersonales(oeTrabajador)
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                     oeTrabajador.Modificado = False
                     MostrarTabs(1, ficTrabajador, 1)
                     MyBase.Editar()

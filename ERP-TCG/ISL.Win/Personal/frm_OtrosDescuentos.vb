@@ -263,7 +263,7 @@ Public Class frm_OtrosDescuentos
                     txtDni.Text = oeTrabajador.oePersona.Dni
                     txtArea.Text = oeTrabajador.oeArea.Nombre
                     txtOcupacion.Text = oeTrabajador.oeOcupacion.Nombre
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                     oeSueldo = New e_SueldoTrabajador
                     oeSueldo.IdTrabajador = oeTrabajador.Id
                     oeSueldo.Equivale = 1

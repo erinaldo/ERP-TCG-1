@@ -594,7 +594,7 @@ Public Class frm_DocumentoVenta
                 etiNombre.Text = oeTrabajador.oePersona.NombreCompleto
                 etiNumeroCuenta.Text = oeCuentaTrabajador.Codigo
                 etiSaldoCuentaTrabajador.Text = oeCuentaTrabajador.Saldo
-                If Not String.IsNullOrEmpty(etiDni.Text) Then picRecibidor.Image = olPersona.Foto(etiDni.Text)
+                'If Not String.IsNullOrEmpty(etiDni.Text) Then picRecibidor.Image = olPersona.Foto(etiDni.Text)
             End If
         End With
     End Sub

@@ -578,7 +578,7 @@ Public Class frm_ControlPermisos
                 'oeMovimientoPersonal.IdTrabajador = cboTrabajadores.Value
                 oeTrabajador.Id = cboTrabajadores.Value 'oeMovimientoPersonal.IdTrabajador
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 FotoTrabajador.Visible = True
                 agrDatosBasicos.Visible = True
                 txtArea.Text = oeTrabajador.oeArea.Nombre

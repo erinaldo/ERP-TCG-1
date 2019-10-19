@@ -1358,7 +1358,7 @@ Public Class frm_LiquidacionTrabajador
                 txtCargo.Text = oeTrabajador.oeCargo.Nombre
                 txtOcupacion.Text = oeTrabajador.oeOcupacion.Nombre
                 txtOcupacion.Tag = oeTrabajador.oeOcupacion.Id
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 oeSueldo = New e_SueldoTrabajador
                 oeSueldo.IdTrabajador = oeTrabajador.Id
                 oeSueldo.Equivale = 1

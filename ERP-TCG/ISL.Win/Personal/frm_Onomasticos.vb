@@ -478,7 +478,7 @@ Public Class frm_Onomasticos
         Try
             If griOnomasticos.ActiveRow.Index > -1 Then
                 Dim olTrabajador As New l_Trabajador
-                PictureBox1.Image = olPersona.Foto(griOnomasticos.ActiveRow.Cells("Dni").Value)
+                'PictureBox1.Image = olPersona.Foto(griOnomasticos.ActiveRow.Cells("Dni").Value)
             End If
         Catch ex As Exception
             Throw ex

@@ -293,7 +293,7 @@ Public Class frm_Cliente
                     Inicializar()
                 End If
             End If
-            If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olCliente.Foto(oeCliente.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olCliente.Foto(oeCliente.oePersona.Dni)
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
         End Try

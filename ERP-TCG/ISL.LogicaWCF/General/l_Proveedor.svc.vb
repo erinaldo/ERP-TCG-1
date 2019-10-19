@@ -40,13 +40,13 @@ Public Class l_Proveedor
     ''' <param name="DNI"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Proveedor.Foto
-        Try
-            Return olPersona.Foto(DNI)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
+    'Public Function Foto(ByVal DNI As String) As System.Drawing.Bitmap Implements Il_Proveedor.Foto
+    '    Try
+    '        Return olPersona.Foto(DNI)
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Function
 
     Public Function Guardar(ByVal oeProveedor As EntidadesWCF.e_Proveedor) As Boolean Implements Il_Proveedor.Guardar
         Try

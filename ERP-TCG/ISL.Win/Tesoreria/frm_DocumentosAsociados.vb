@@ -829,7 +829,7 @@ Public Class frm_DocumentosAsociados
             Dim _oeTrab = cboTrabajador.SelectedItem.ListObject
             With _oeTrab
                 txtNroDni.Text = .Dni
-                If Not String.IsNullOrEmpty(.Dni) Then imaTrab.Image = olPersona.Foto(.Dni)
+                'If Not String.IsNullOrEmpty(.Dni) Then imaTrab.Image = olPersona.Foto(.Dni)
                 txtApellidoPaterno.Text = .ApellidoPaterno
                 txtApellidoMaterno.Text = .ApellidoMaterno
                 txtNombre.Text = .Nombre

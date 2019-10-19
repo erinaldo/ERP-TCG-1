@@ -26,7 +26,7 @@ Public Interface Il_Cliente
     <OperationContract()> _
     Function Eliminar(ByVal oeCliente As e_Cliente) As Boolean
 
-    <OperationContract()> _
-    Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '<OperationContract()> _
+    'Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
 
 End Interface

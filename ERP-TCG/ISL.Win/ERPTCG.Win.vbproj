@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>ISL.Win.My.MyApplication</StartupObject>
     <RootNamespace>ISL.Win</RootNamespace>
-    <AssemblyName>ISL.Win</AssemblyName>
+    <AssemblyName>ERPTCG.Win</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -63,7 +63,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -75,7 +75,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugSymbols>true</DebugSymbols>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -86,7 +86,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -99,7 +99,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugType>Full</DebugType>
@@ -4134,6 +4134,9 @@
     <Content Include="bin\Debug\ISL.Cache.dll" />
     <Content Include="bin\Debug\ISL.Controles.dll" />
     <Content Include="bin\Debug\ISL.Encripta.dll" />
+    <Content Include="Fotos\SinFoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\01_messages.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5376,6 +5379,9 @@
     <Content Include="Imagenes\sign-up.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagenes\SinFoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\SinPing1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5673,6 +5679,20 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Fotos\eImpresion\Doc.Electronico.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoCL.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoCL_NC.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.Electronico_NC.mrt" />
+    <None Include="Fotos\eImpresion\eRetencion.mrt" />
+    <None Include="Fotos\eImpresion\_Doc.Electronico.mrt" />
+    <None Include="Fotos\eImpresion\_Doc.Electronico_NC.mrt" />
     <None Include="packages.config" />
     <None Include="Service References\WCF_CpeIndu\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
@@ -7771,67 +7791,27 @@
   <ItemGroup>
     <Content Include="ISLWin.sdm" />
     <Content Include="LogoInduamerica.ico" />
-    <Content Include="PLANTILLAS_SGI\Plantilla_Cotizacion.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_Compra_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="PLANTILLAS_SGI\Plantilla_Cotizacion.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_Compra_SGI.xlt" />
     <Content Include="PLANTILLAS_SGI\Plantilla_RegInventarioValorizado_SGI.xlt" />
-    <Content Include="Plantilla_Cotizacion.xls">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Combustible.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillaSPSAFlotaPequeña.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PlantillaSPSAFlotaPequeña.xls">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDRansa.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDSFVES.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasMaestro.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasTottus.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMabel_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMiguel_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraRamiro_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSixto_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSuzzette_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraWilson_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov2.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\ValesRendir.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillaRenting.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Plantilla_Cotizacion.xls" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Combustible.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillaSPSAFlotaPequeña.xlt" />
+    <Content Include="PlantillaSPSAFlotaPequeña.xls" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDRansa.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDSFVES.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasMaestro.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasTottus.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMabel_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMiguel_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraRamiro_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSixto_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSuzzette_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraWilson_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov2.xlt" />
+    <Content Include="PLANTILLAS_SGI\ValesRendir.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillaRenting.xlt" />
     <None Include="Reportes\Comercial\Ventas\dsDetalleDoc.xsc">
       <DependentUpon>dsDetalleDoc.xsd</DependentUpon>
     </None>
@@ -8148,7 +8128,6 @@
     <Folder Include="bin\Debug\Reportes\" />
     <Folder Include="bin\Release\" />
     <Folder Include="ComprobanteElectronico\" />
-    <Folder Include="Fotos\eImpresion\" />
     <Folder Include="Libreria\" />
   </ItemGroup>
   <ItemGroup>

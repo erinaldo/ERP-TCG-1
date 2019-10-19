@@ -184,7 +184,7 @@ Public Class frm_CambiarClave
                 txtApellidoMaterno.Text = .oePersona.ApellidoMaterno
                 txtNombres.Text = .oePersona.Nombre
                 fecUltimaSesion.Value = .FechaUltimoIngreso
-                If Not String.IsNullOrEmpty(.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(.oePersona.Dni)
                 If gUsuarioSGI.IdTrabajador.Trim <> "" Then
                     oeTrab = New e_Trabajador
                     oeTrab.TipoOperacion = "N"

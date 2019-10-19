@@ -13,6 +13,7 @@ Imports System.Configuration
 Imports System.Collections.Specialized
 Imports ISL.EntidadesWCF
 
+Imports System.Net
 
 <DataContract()> _
 Public Class l_Disponibilidad
@@ -23,8 +24,12 @@ Public Class l_Disponibilidad
     Public IPServidor As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor")
 
     'Archivo XML, que debe estar copiado en la carpeta compartida Imagenes del servidor
-    Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno.xml"
-    Private directorioFotos As String = "\\" & IPServidor & "\Fotos"
+    'Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno.xml"
+    Public archivoXML As String = My.Computer.FileSystem.CombinePath("Imagenes", "Entorno.xml")
+
+    'Private directorioFotos As String = "\\" & IPServidor & "\Fotos"
+    Private directorioFotos As String = My.Computer.FileSystem.CombinePath("Fotos", "")
+
 
     'Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno2.xml"
     'Private directorioFotos As String = "D:\Fotos"
