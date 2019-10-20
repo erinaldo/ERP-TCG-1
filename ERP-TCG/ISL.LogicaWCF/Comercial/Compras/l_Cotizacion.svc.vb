@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -20,7 +21,7 @@ Public Class l_Cotizacion
     ''' <param name="oeCotizacion">Recibe una Variable oeCotizacion de tipo e_Cotizacion</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema=Capa de Logica</remarks>
-    Public Function Eliminar(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As Boolean Implements Il_Cotizacion.Eliminar
+    Public Function Eliminar(ByVal oeCotizacion As e_Cotizacion) As Boolean Implements Il_Cotizacion.Eliminar
         Try
             Return odCotizacion.Eliminar(oeCotizacion)
         Catch ex As Exception
@@ -35,7 +36,7 @@ Public Class l_Cotizacion
     ''' <param name="oeCotizacion">Recibe una Variable oeCotizacion de tipo e_Cotizacion</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema=Capa de Logica</remarks>
-    Public Function Guardar(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As Boolean Implements Il_Cotizacion.Guardar
+    Public Function Guardar(ByVal oeCotizacion As e_Cotizacion) As Boolean Implements Il_Cotizacion.Guardar
         Try
             If Validar(oeCotizacion) Then
                 Return odCotizacion.Guardar(oeCotizacion)
@@ -51,7 +52,7 @@ Public Class l_Cotizacion
     ''' </summary>
     ''' <returns>Devuelve una lista generica de objetos de tipo e_Cotizacion</returns>
     ''' <remarks>Capa del Sistema:Capa de Logica</remarks>
-    Public Function Listar(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As System.Collections.Generic.List(Of EntidadesWCF.e_Cotizacion) Implements Il_Cotizacion.Listar
+    Public Function Listar(ByVal oeCotizacion As e_Cotizacion) As System.Collections.Generic.List(Of e_Cotizacion) Implements Il_Cotizacion.Listar
         Try
             ValidarL(oeCotizacion)
             Return odCotizacion.Listar(oeCotizacion)
@@ -85,7 +86,7 @@ Public Class l_Cotizacion
     ''' <param name="oeCotizacion">Recibe una variable oeCotizacion de tipo e_Cotizacion</param>
     ''' <returns>Devuelve un objeto tipo e_Cotizacion</returns>
     ''' <remarks>Capa del Sitema:Capa de Logica</remarks>
-    Public Function Obtener(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As EntidadesWCF.e_Cotizacion Implements Il_Cotizacion.Obtener
+    Public Function Obtener(ByVal oeCotizacion As e_Cotizacion) As e_Cotizacion Implements Il_Cotizacion.Obtener
         Try
             Return odCotizacion.Obtener(oeCotizacion)
         Catch ex As Exception
@@ -99,14 +100,14 @@ Public Class l_Cotizacion
     ''' <param name="oeCotizacion">Recibe una Variable oeCotizacion de tipo e_Cotizacion</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema=Capa de Logica</remarks>
-    Public Function Validar(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As Boolean Implements Il_Cotizacion.Validar
+    Public Function Validar(ByVal oeCotizacion As e_Cotizacion) As Boolean Implements Il_Cotizacion.Validar
         Try
             With oeCotizacion
                 If (Not .lstCotizacionProveedor Is Nothing) AndAlso .lstCotizacionProveedor.Count = 0 Then
                     Throw New Exception("Debe agregar al menos un proveedor para generar una cotización.")
                 Else
                     If .TipoOperacion = "I" Then
-                        For Each cotpro As EntidadesWCF.e_Cotizacion_Proveedor In .lstCotizacionProveedor
+                        For Each cotpro As e_Cotizacion_Proveedor In .lstCotizacionProveedor
                             With cotpro
                                 If oeCotizacion.IndMaterialServicio = "M" Then
                                     If (Not .lstCotizacionDetalleMat Is Nothing) AndAlso .lstCotizacionDetalleMat.Count = 0 Then
@@ -129,7 +130,7 @@ Public Class l_Cotizacion
         End Try
     End Function
 
-    Public Function ValidarL(ByVal oeCotizacion As EntidadesWCF.e_Cotizacion) As Boolean Implements Il_Cotizacion.ValidarL
+    Public Function ValidarL(ByVal oeCotizacion As e_Cotizacion) As Boolean Implements Il_Cotizacion.ValidarL
         Try
             With oeCotizacion
                 If oeCotizacion.FechaFinal.Date < oeCotizacion.FechaInicio.Date Then

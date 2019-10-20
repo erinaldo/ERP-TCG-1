@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_MedidaNeumatico
     Dim odMedidaNeumatico As New d_MedidaNeumatico
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeMedidaNeumatico As EntidadesWCF.e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Eliminar
+    Public Function Eliminar(ByVal oeMedidaNeumatico As e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Eliminar
         Try
             Return odMedidaNeumatico.Eliminar(oeMedidaNeumatico)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_MedidaNeumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMedidaNeumatico As EntidadesWCF.e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Guardar
+    Public Function Guardar(ByVal oeMedidaNeumatico As e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Guardar
         Try
             If Validar(oeMedidaNeumatico) Then
                 Return odMedidaNeumatico.Guardar(oeMedidaNeumatico)
@@ -35,7 +35,7 @@ Public Class l_MedidaNeumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMedidaNeumatico As EntidadesWCF.e_MedidaNeumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_MedidaNeumatico) Implements Il_MedidaNeumatico.Listar
+    Public Function Listar(ByVal oeMedidaNeumatico As e_MedidaNeumatico) As System.Collections.Generic.List(Of e_MedidaNeumatico) Implements Il_MedidaNeumatico.Listar
         Try
             Return odMedidaNeumatico.Listar(oeMedidaNeumatico)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_MedidaNeumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMedidaNeumatico As EntidadesWCF.e_MedidaNeumatico) As EntidadesWCF.e_MedidaNeumatico Implements Il_MedidaNeumatico.Obtener
+    Public Function Obtener(ByVal oeMedidaNeumatico As e_MedidaNeumatico) As e_MedidaNeumatico Implements Il_MedidaNeumatico.Obtener
         Try
             Return odMedidaNeumatico.Obtener(oeMedidaNeumatico)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_MedidaNeumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMedidaNeumatico As EntidadesWCF.e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Validar
+    Public Function Validar(ByVal oeMedidaNeumatico As e_MedidaNeumatico) As Boolean Implements Il_MedidaNeumatico.Validar
         Try
             With oeMedidaNeumatico
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre")

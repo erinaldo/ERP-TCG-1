@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Flete
 
     Dim odFlete As New d_Flete
 
-    Public Function Obtener(ByVal oeFlete As EntidadesWCF.e_Flete) As EntidadesWCF.e_Flete Implements Il_Flete.Obtener
+    Public Function Obtener(ByVal oeFlete As e_Flete) As e_Flete Implements Il_Flete.Obtener
         Try
             Return odFlete.Obtener(oeFlete)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Flete
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFlete As EntidadesWCF.e_Flete) As System.Collections.Generic.List(Of EntidadesWCF.e_Flete) Implements Il_Flete.Listar
+    Public Function Listar(ByVal oeFlete As e_Flete) As System.Collections.Generic.List(Of e_Flete) Implements Il_Flete.Listar
         Try
             Return odFlete.Listar(oeFlete)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Flete
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFlete As EntidadesWCF.e_Flete) As Boolean Implements Il_Flete.Guardar
+    Public Function Guardar(ByVal oeFlete As e_Flete) As Boolean Implements Il_Flete.Guardar
         Try
             If Validar(oeFlete) Then
                 Return odFlete.Guardar(oeFlete)
@@ -34,7 +34,7 @@ Public Class l_Flete
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeFlete As EntidadesWCF.e_Flete) As Boolean Implements Il_Flete.Eliminar
+    Public Function Eliminar(ByVal oeFlete As e_Flete) As Boolean Implements Il_Flete.Eliminar
         Try
             Return odFlete.Eliminar(oeFlete)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Flete
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFlete As EntidadesWCF.e_Flete) As Boolean Implements Il_Flete.Validar
+    Public Function Validar(ByVal oeFlete As e_Flete) As Boolean Implements Il_Flete.Validar
         Try
             With oeFlete
                 ValidarTipoVehiculo(oeFlete.TipoVehiculo)

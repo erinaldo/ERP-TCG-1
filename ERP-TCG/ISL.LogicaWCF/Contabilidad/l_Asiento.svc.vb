@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -129,7 +129,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function DuplicaAsiento(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.DuplicaAsiento
+    Public Function DuplicaAsiento(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.DuplicaAsiento
         Try
             '----------valida-----------------
             Dim loFuncionesGenerales As New l_FuncionesGenerales
@@ -141,7 +141,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.Eliminar
+    Public Function Eliminar(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.Eliminar
         Try
             Return odAsiento.Eliminar(oeAsiento)
         Catch ex As Exception
@@ -149,7 +149,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function EliminarCobroPago(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.EliminarCobroPago
+    Public Function EliminarCobroPago(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.EliminarCobroPago
         Try
             Dim oe_Asto As New e_Asiento
             Dim ol_Asto As New l_Asiento
@@ -263,7 +263,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function EliminarCobroPago2(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.EliminarCobroPago2
+    Public Function EliminarCobroPago2(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.EliminarCobroPago2
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, "01/01/1901", oeAsiento.IdPeriodo)
@@ -422,7 +422,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeAsiento As EntidadesWCF.e_Asiento, Optional idAsientoDocCmp As String = Nothing) As Boolean Implements Il_Asiento.Guardar
+    Public Function Guardar(ByVal oeAsiento As e_Asiento, Optional idAsientoDocCmp As String = Nothing) As Boolean Implements Il_Asiento.Guardar
         Try
             If Validar(oeAsiento) Then
                 Dim bandera As Boolean = True
@@ -484,7 +484,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Private Function GuardarAsientoDocumentoRendir(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean
+    Private Function GuardarAsientoDocumentoRendir(ByVal oeAsiento As e_Asiento) As Boolean
         Try
             'If Validar(oeAsiento) Then
             Dim bandera As Boolean = True
@@ -545,7 +545,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarDocumentoxRendir(ByVal leMovAnalisisAgrega As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoAnalisis), ByVal oeAsiento As EntidadesWCF.e_Asiento, ByVal oeDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_Asiento.GuardarDocumentoxRendir
+    Public Function GuardarDocumentoxRendir(ByVal leMovAnalisisAgrega As System.Collections.Generic.List(Of e_MovimientoAnalisis), ByVal oeAsiento As e_Asiento, ByVal oeDocumento As e_MovimientoDocumento) As Boolean Implements Il_Asiento.GuardarDocumentoxRendir
         Try
             Dim olDocumento As New l_MovimientoDocumento
             Dim odDcoumento As New d_MovimientoDocumento
@@ -678,8 +678,8 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarPagoRetencion(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento),
-                                         ByRef oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion,
+    Public Function GuardarPagoRetencion(ByVal leMovDocAgregado As System.Collections.Generic.List(Of e_MovimientoDocumento),
+                                         ByRef oeDocumentoRetencion As e_DocumentoRetencion,
                                          ByVal ls_Actualizar As String) As Object Implements Il_Asiento.GuardarPagoRetencion
         Try
             If ValidarCobranzaPago(leMovDocAgregado, oeDocumentoRetencion.FechaEmision) Then
@@ -889,7 +889,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeAsiento As EntidadesWCF.e_Asiento) As System.Collections.Generic.List(Of EntidadesWCF.e_Asiento) Implements Il_Asiento.Listar
+    Public Function Listar(ByVal oeAsiento As e_Asiento) As System.Collections.Generic.List(Of e_Asiento) Implements Il_Asiento.Listar
         Try
             Return odAsiento.Listar(oeAsiento)
         Catch ex As Exception
@@ -897,7 +897,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ListarAsientosDescuadrados(ByVal oeAsiento As EntidadesWCF.e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarAsientosDescuadrados
+    Public Function ListarAsientosDescuadrados(ByVal oeAsiento As e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarAsientosDescuadrados
         Try
             Return odAsiento.ListarAsientosDescuadrados(oeAsiento)
         Catch ex As Exception
@@ -905,7 +905,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ListarBalanceComprobacion(ByVal oeAsiento As EntidadesWCF.e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarBalanceComprobacion
+    Public Function ListarBalanceComprobacion(ByVal oeAsiento As e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarBalanceComprobacion
         Try
             Return odAsiento.ListarBalanceComprobacion(oeAsiento)
         Catch ex As Exception
@@ -913,7 +913,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ListarBalanceComprobacionDestino(ByVal oeAsiento As EntidadesWCF.e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarBalanceComprobacionDestino
+    Public Function ListarBalanceComprobacionDestino(ByVal oeAsiento As e_Asiento) As System.Data.DataTable Implements Il_Asiento.ListarBalanceComprobacionDestino
         Try
             Return odAsiento.ListarBalanceComprobacionDestino(oeAsiento)
         Catch ex As Exception
@@ -921,7 +921,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ListarConsumoMaterial(ByVal oePeriodo As EntidadesWCF.e_Periodo, ByVal lsIdSubAlmacen As String) As System.Data.DataTable Implements Il_Asiento.ListarConsumoMaterial
+    Public Function ListarConsumoMaterial(ByVal oePeriodo As e_Periodo, ByVal lsIdSubAlmacen As String) As System.Data.DataTable Implements Il_Asiento.ListarConsumoMaterial
         Try
             Dim dtConsumo As DataTable
             Dim dtCantidad As DataTable
@@ -1030,7 +1030,7 @@ Public Class l_Asiento
 
     End Function
 
-    Public Function Obtener(ByVal oeAsiento As EntidadesWCF.e_Asiento) As EntidadesWCF.e_Asiento Implements Il_Asiento.Obtener
+    Public Function Obtener(ByVal oeAsiento As e_Asiento) As e_Asiento Implements Il_Asiento.Obtener
         Try
             Return odAsiento.Obtener(oeAsiento)
         Catch ex As Exception
@@ -1091,7 +1091,7 @@ Public Class l_Asiento
 
     End Function
 
-    Public Function Validar(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.Validar
+    Public Function Validar(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.Validar
         Try
             With oeAsiento
                 For Each obj As e_AsientoMovimiento In .AsientoMovimiento
@@ -1146,7 +1146,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ValidarCobranzaPago(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal fecha As Date) As Object Implements Il_Asiento.ValidarCobranzaPago
+    Public Function ValidarCobranzaPago(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal fecha As Date) As Object Implements Il_Asiento.ValidarCobranzaPago
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, fecha, fecha.Year.ToString + "-" + fecha.Month.ToString)
@@ -1157,7 +1157,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function IntegracionPrestamosProvision(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo),
+    Public Function IntegracionPrestamosProvision(ByVal lePrestamos As System.Collections.Generic.List(Of e_Prestamo),
                                                   ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double,
                                                   ByVal IdCuentaCaja As String, ByRef oeMovCajaBanco As e_MovimientoCajaBanco,
                                                   ByVal indMonedaExtranjera As Integer, ByVal lsGlosa As String) As String
@@ -1304,7 +1304,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function IntegracionPrestamosDescuentoPlanilla(ByVal lePrestamos As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo),
+    Public Function IntegracionPrestamosDescuentoPlanilla(ByVal lePrestamos As System.Collections.Generic.List(Of e_Prestamo),
                                                   ByVal oePeriodo As e_Periodo, ByVal IdUsuario As String, ByVal lnTipoCambio As Double,
                                                   ByVal fechaEjecucion As Date) As String
         Try
@@ -1619,12 +1619,12 @@ Public Class l_Asiento
 
 #Region "Cobranzas y Pagos"
 
-    Public Function GuardarCobranza(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento),
-                                    ByVal oeMovCajaBanco As EntidadesWCF.e_MovimientoCajaBanco,
-                                    ByVal oeMedioCobro As EntidadesWCF.e_MedioPago,
+    Public Function GuardarCobranza(ByVal leMovDocAgregado As System.Collections.Generic.List(Of e_MovimientoDocumento),
+                                    ByVal oeMovCajaBanco As e_MovimientoCajaBanco,
+                                    ByVal oeMedioCobro As e_MedioPago,
                                     ByVal idUsuario As String,
                                     ByVal MacLocal As String,
-                                    ByVal oeCtaCble As EntidadesWCF.e_CuentaContable,
+                                    ByVal oeCtaCble As e_CuentaContable,
                                     ByVal Opcion As String) As Boolean Implements Il_Asiento.GuardarCobranza
         Try
             Dim cadena As String = ""
@@ -2038,7 +2038,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ValidarCobranza(ByVal cadena As String, ByVal leDocumentosAgregados As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal fecha As Date, ByVal Opcion As String) As Object Implements Il_Asiento.ValidarCobranza
+    Public Function ValidarCobranza(ByVal cadena As String, ByVal leDocumentosAgregados As System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal fecha As Date, ByVal Opcion As String) As Object Implements Il_Asiento.ValidarCobranza
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, fecha, fecha.Year.ToString + "-" + fecha.Month.ToString)
@@ -2070,10 +2070,10 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function GuardarPago(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento),
-    ByRef oeMovCajaBanco As EntidadesWCF.e_MovimientoCajaBanco,
-    ByVal oeMedioPago As EntidadesWCF.e_MedioPago, ByVal idUsuario As String, ByVal MacLocal As String,
-    ByVal oeCtaCble As EntidadesWCF.e_CuentaContable, ByVal lsOpcion As String) As Boolean Implements Il_Asiento.GuardarPago
+    Public Function GuardarPago(ByVal leMovDocAgregado As System.Collections.Generic.List(Of e_MovimientoDocumento),
+    ByRef oeMovCajaBanco As e_MovimientoCajaBanco,
+    ByVal oeMedioPago As e_MedioPago, ByVal idUsuario As String, ByVal MacLocal As String,
+    ByVal oeCtaCble As e_CuentaContable, ByVal lsOpcion As String) As Boolean Implements Il_Asiento.GuardarPago
         Try
 
             Dim cadena As String = ""
@@ -2425,7 +2425,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ValidarPago(ByVal cadena As String, ByVal leDocumentosAgregados As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal fecha As Date, ByVal Opcion As String) As Object Implements Il_Asiento.ValidarPago
+    Public Function ValidarPago(ByVal cadena As String, ByVal leDocumentosAgregados As System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal fecha As Date, ByVal Opcion As String) As Object Implements Il_Asiento.ValidarPago
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, fecha, fecha.Year.ToString + "-" + fecha.Month.ToString)
@@ -2564,7 +2564,7 @@ Public Class l_Asiento
 
 #Region "Porrrateos , Extornos"
 
-    Public Function GuardarProrrateoCompra(ByVal leListaOrigen As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo), ByVal leListaDestino As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo), ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.GuardarProrrateoCompra
+    Public Function GuardarProrrateoCompra(ByVal leListaOrigen As System.Collections.Generic.List(Of e_Vehiculo), ByVal leListaDestino As System.Collections.Generic.List(Of e_Vehiculo), ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.GuardarProrrateoCompra
         Try
             Dim cadena As String = ""
             For i = 0 To leListaOrigen.Count() - 1
@@ -2626,7 +2626,7 @@ Public Class l_Asiento
 
     End Function
 
-    Public Function GuardarProrrateoVenta(ByVal leListaOrigen As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo), ByVal leListaDestino As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo), ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.GuardarProrrateoVenta
+    Public Function GuardarProrrateoVenta(ByVal leListaOrigen As System.Collections.Generic.List(Of e_Vehiculo), ByVal leListaDestino As System.Collections.Generic.List(Of e_Vehiculo), ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.GuardarProrrateoVenta
         Try
             Dim cadena As String = ""
             For i = 0 To leListaOrigen.Count() - 1
@@ -2687,7 +2687,7 @@ Public Class l_Asiento
         End Try
     End Function
 
-    Public Function ExtornarAsiento(ByVal oeAsiento As EntidadesWCF.e_Asiento) As Boolean Implements Il_Asiento.ExtornarAsiento
+    Public Function ExtornarAsiento(ByVal oeAsiento As e_Asiento) As Boolean Implements Il_Asiento.ExtornarAsiento
         Try
             Return odAsiento.ExtornarAsiento(oeAsiento)
         Catch ex As Exception

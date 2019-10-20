@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 Imports ISL.ServicioExterno
@@ -32,7 +32,7 @@ Public Class I_ProgramacionPago
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeProgramacionPago As EntidadesWCF.e_ProgramacionPago) As Boolean Implements Il_ProgramacionPago.Guardar
+    Public Function Guardar(ByVal oeProgramacionPago As e_ProgramacionPago) As Boolean Implements Il_ProgramacionPago.Guardar
         Try
             Using TS As New TransactionScope
                 dProgramacionPago.Guardar(oeProgramacionPago)

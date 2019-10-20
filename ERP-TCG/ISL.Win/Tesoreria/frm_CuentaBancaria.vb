@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Public Class frm_CuentaBancaria
     Inherits ISL.Win.frm_MenuPadre
 

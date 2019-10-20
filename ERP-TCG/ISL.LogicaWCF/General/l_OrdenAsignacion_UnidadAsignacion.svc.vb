@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
 
     Dim odOrdenAsignacion_UnidadAsignacion As New d_OrdenAsignacion_UnidadAsignacion
 
-    Public Function Eliminar(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Eliminar
+    Public Function Eliminar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Eliminar
         Try
             Return odOrdenAsignacion_UnidadAsignacion.Eliminar(oeOrdenAsignacion_UnidadAsignacion)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Guardar
+    Public Function Guardar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Guardar
         Try
             If Validar(oeOrdenAsignacion_UnidadAsignacion) Then
                 Return odOrdenAsignacion_UnidadAsignacion.Guardar(oeOrdenAsignacion_UnidadAsignacion)
@@ -27,7 +27,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) Implements Il_OrdenAsignacion_UnidadAsignacion.Listar
+    Public Function Listar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As System.Collections.Generic.List(Of e_OrdenAsignacion_UnidadAsignacion) Implements Il_OrdenAsignacion_UnidadAsignacion.Listar
         Try
             Return odOrdenAsignacion_UnidadAsignacion.Listar(oeOrdenAsignacion_UnidadAsignacion)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion Implements Il_OrdenAsignacion_UnidadAsignacion.Obtener
+    Public Function Obtener(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As e_OrdenAsignacion_UnidadAsignacion Implements Il_OrdenAsignacion_UnidadAsignacion.Obtener
         Try
             Return odOrdenAsignacion_UnidadAsignacion.Obtener(oeOrdenAsignacion_UnidadAsignacion)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Validar
+    Public Function Validar(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As Boolean Implements Il_OrdenAsignacion_UnidadAsignacion.Validar
         Try
             With oeOrdenAsignacion_UnidadAsignacion
                 '---------VALIDARRRRRRRRRR-------------
@@ -54,7 +54,7 @@ Public Class l_OrdenAsignacion_UnidadAsignacion
         End Try
     End Function
 
-    Public Function ListarTodo(ByVal oeOrdenAsignacion_UnidadAsignacion As EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenAsignacion_UnidadAsignacion) Implements Il_OrdenAsignacion_UnidadAsignacion.ListarTodo
+    Public Function ListarTodo(ByVal oeOrdenAsignacion_UnidadAsignacion As e_OrdenAsignacion_UnidadAsignacion) As System.Collections.Generic.List(Of e_OrdenAsignacion_UnidadAsignacion) Implements Il_OrdenAsignacion_UnidadAsignacion.ListarTodo
         Try
             Return odOrdenAsignacion_UnidadAsignacion.ListarTodo(oeOrdenAsignacion_UnidadAsignacion)
         Catch ex As Exception

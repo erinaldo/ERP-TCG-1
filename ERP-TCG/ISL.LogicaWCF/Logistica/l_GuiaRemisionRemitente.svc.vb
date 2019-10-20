@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_GuiaRemisionRemitente
     Dim odGuiaRemisionRemitente As New d_GuiaRemisionRemitente
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Eliminar
+    Public Function Eliminar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Eliminar
         Try
             Return odGuiaRemisionRemitente.Eliminar(oeGuiaRemisionRemitente)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Guardar
+    Public Function Guardar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Guardar
         Try
             If Validar(oeGuiaRemisionRemitente) Then
                 Return odGuiaRemisionRemitente.Guardar(oeGuiaRemisionRemitente)
@@ -27,7 +27,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Function Listar(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As System.Collections.Generic.List(Of EntidadesWCF.e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.Listar
+    Public Function Listar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As System.Collections.Generic.List(Of e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.Listar
         Try
             Return odGuiaRemisionRemitente.Listar(oeGuiaRemisionRemitente)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As EntidadesWCF.e_GuiaRemisionRemitente Implements Il_GuiaRemisionRemitente.Obtener
+    Public Function Obtener(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As e_GuiaRemisionRemitente Implements Il_GuiaRemisionRemitente.Obtener
         Try
             Return odGuiaRemisionRemitente.Obtener(oeGuiaRemisionRemitente)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Function ObtenerDetallesGr(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As System.Collections.Generic.List(Of EntidadesWCF.e_Material) Implements Il_GuiaRemisionRemitente.ObtenerDetallesGr
+    Public Function ObtenerDetallesGr(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As System.Collections.Generic.List(Of e_Material) Implements Il_GuiaRemisionRemitente.ObtenerDetallesGr
         Try
             Return odGuiaRemisionRemitente.ListarDetallesGRemision(oeGuiaRemisionRemitente)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Function Validar(ByVal oeGuiaRemisionRemitente As EntidadesWCF.e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Validar
+    Public Function Validar(ByVal oeGuiaRemisionRemitente As e_GuiaRemisionRemitente) As Boolean Implements Il_GuiaRemisionRemitente.Validar
         Try
             With oeGuiaRemisionRemitente
                 '---------VALIDARRRRRRRRRR-------------
@@ -76,7 +76,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Function
 
-    Public Sub ValidarGuiaRemisionRemitente(ByVal oeGRRemitente As EntidadesWCF.e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.ValidarGuiaRemisionRemitente
+    Public Sub ValidarGuiaRemisionRemitente(ByVal oeGRRemitente As e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.ValidarGuiaRemisionRemitente
         Try
             Dim oeGRR As New e_GuiaRemisionRemitente, olGRR As New l_GuiaRemisionRemitente
             oeGRR.Serie = oeGRRemitente.Serie
@@ -92,7 +92,7 @@ Public Class l_GuiaRemisionRemitente
         End Try
     End Sub
 
-    Public Sub ValidarProveedor(ByVal oeGRRemitente As EntidadesWCF.e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.ValidarProveedor
+    Public Sub ValidarProveedor(ByVal oeGRRemitente As e_GuiaRemisionRemitente) Implements Il_GuiaRemisionRemitente.ValidarProveedor
         Try
             Dim oeProveedor As New e_Proveedor, olProveedor As New l_Proveedor
             oeProveedor.Id = oeGRRemitente.IdEmpresaProveedor

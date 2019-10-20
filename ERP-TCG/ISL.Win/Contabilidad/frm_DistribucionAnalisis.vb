@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 
 Public Class frm_DistribucionAnalisis

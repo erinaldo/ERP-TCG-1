@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -44,7 +44,7 @@ Public Class l_CuentaCtePersonal
         Return CtaCtePer
     End Function
 
-    Public Function Eliminar(ByVal oeCuentaCtePersonal As EntidadesWCF.e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Eliminar
+    Public Function Eliminar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Eliminar
         Try
             Return odCuentaCtePersonal.Eliminar(oeCuentaCtePersonal)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaCtePersonal As EntidadesWCF.e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Guardar
+    Public Function Guardar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Guardar
         Try
             If Validar(oeCuentaCtePersonal) Then
                 Return odCuentaCtePersonal.Guardar(oeCuentaCtePersonal)
@@ -62,7 +62,7 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leCuentaCtePersonal As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaCtePersonal), ByVal PrefijoID As String) As Boolean Implements Il_CuentaCtePersonal.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leCuentaCtePersonal As System.Collections.Generic.List(Of e_CuentaCtePersonal), ByVal PrefijoID As String) As Boolean Implements Il_CuentaCtePersonal.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
             Dim id As String = odCuentaCtePersonal.UltimoIdInserta(PrefijoID)
@@ -96,7 +96,7 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaCtePersonal As EntidadesWCF.e_CuentaCtePersonal) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaCtePersonal) Implements Il_CuentaCtePersonal.Listar
+    Public Function Listar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As System.Collections.Generic.List(Of e_CuentaCtePersonal) Implements Il_CuentaCtePersonal.Listar
         Try
             Return odCuentaCtePersonal.Listar(oeCuentaCtePersonal)
         Catch ex As Exception
@@ -104,7 +104,7 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaCtePersonal As EntidadesWCF.e_CuentaCtePersonal) As EntidadesWCF.e_CuentaCtePersonal Implements Il_CuentaCtePersonal.Obtener
+    Public Function Obtener(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As e_CuentaCtePersonal Implements Il_CuentaCtePersonal.Obtener
         Try
             Return odCuentaCtePersonal.Obtener(oeCuentaCtePersonal)
         Catch ex As Exception
@@ -112,7 +112,7 @@ Public Class l_CuentaCtePersonal
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaCtePersonal As EntidadesWCF.e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Validar
+    Public Function Validar(ByVal oeCuentaCtePersonal As e_CuentaCtePersonal) As Boolean Implements Il_CuentaCtePersonal.Validar
         Try
             With oeCuentaCtePersonal
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "No ha Ingresado Trabajador")

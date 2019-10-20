@@ -7,7 +7,7 @@
     <ProjectGuid>{4B1D26F9-A8F8-4345-8706-646A6D571CE7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ISL.ServicioExterno</RootNamespace>
-    <AssemblyName>ISL.ServicioExterno</AssemblyName>
+    <AssemblyName>ERP.ServicioExterno</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
+    <DocumentationFile>ERP.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -33,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
+    <DocumentationFile>ERP.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>

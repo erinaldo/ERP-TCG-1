@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_DetallePlanilla
     Private odDetallePlanilla As New d_DetallePlanilla
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetallePlanilla As EntidadesWCF.e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Eliminar
+    Public Function Eliminar(oeDetallePlanilla As e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Eliminar
         Try
             Return odDetallePlanilla.Eliminar(oeDetallePlanilla)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_DetallePlanilla
         End Try
     End Function
 
-    Public Function Guardar(oeDetallePlanilla As EntidadesWCF.e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Guardar
+    Public Function Guardar(oeDetallePlanilla As e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Guardar
         Try
             If Validar(oeDetallePlanilla) Then
                 Return odDetallePlanilla.Guardar(oeDetallePlanilla)
@@ -35,7 +35,7 @@ Public Class l_DetallePlanilla
         End Try
     End Function
 
-    Public Function Listar(oeDetallePlanilla As EntidadesWCF.e_DetallePlanilla) As List(Of EntidadesWCF.e_DetallePlanilla) Implements Il_DetallePlanilla.Listar
+    Public Function Listar(oeDetallePlanilla As e_DetallePlanilla) As List(Of e_DetallePlanilla) Implements Il_DetallePlanilla.Listar
         Try
             Return odDetallePlanilla.Listar(oeDetallePlanilla)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_DetallePlanilla
         End Try
     End Function
 
-    Public Function Obtener(oeDetallePlanilla As EntidadesWCF.e_DetallePlanilla) As EntidadesWCF.e_DetallePlanilla Implements Il_DetallePlanilla.Obtener
+    Public Function Obtener(oeDetallePlanilla As e_DetallePlanilla) As e_DetallePlanilla Implements Il_DetallePlanilla.Obtener
         Try
             Return odDetallePlanilla.Obtener(oeDetallePlanilla)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_DetallePlanilla
         End Try
     End Function
 
-    Public Function Validar(oeDetallePlanilla As EntidadesWCF.e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Validar
+    Public Function Validar(oeDetallePlanilla As e_DetallePlanilla) As Boolean Implements Il_DetallePlanilla.Validar
         Try
             With oeDetallePlanilla
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

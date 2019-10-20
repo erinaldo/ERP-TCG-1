@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_ConfiguracionDato
@@ -8,7 +8,7 @@ Public Class l_ConfiguracionDato
     Dim odConfiguracionDato As New d_ConfiguracionDato
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeConfiguracionDato As EntidadesWCF.e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Eliminar
+    Public Function Eliminar(oeConfiguracionDato As e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Eliminar
         Try
             Return odConfiguracionDato.Eliminar(oeConfiguracionDato)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ConfiguracionDato
         End Try
     End Function
 
-    Public Function Guardar(oeConfiguracionDato As EntidadesWCF.e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Guardar
+    Public Function Guardar(oeConfiguracionDato As e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Guardar
         Try
             If Validar(oeConfiguracionDato) Then
                 Return odConfiguracionDato.Guardar(oeConfiguracionDato)
@@ -26,7 +26,7 @@ Public Class l_ConfiguracionDato
         End Try
     End Function
 
-    Public Function Listar(oeConfiguracionDato As EntidadesWCF.e_ConfiguracionDato) As List(Of EntidadesWCF.e_ConfiguracionDato) Implements Il_ConfiguracionDato.Listar
+    Public Function Listar(oeConfiguracionDato As e_ConfiguracionDato) As List(Of e_ConfiguracionDato) Implements Il_ConfiguracionDato.Listar
         Try
             Return odConfiguracionDato.Listar(oeConfiguracionDato)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_ConfiguracionDato
         End Try
     End Function
 
-    Public Function Obtener(oeConfiguracionDato As EntidadesWCF.e_ConfiguracionDato) As EntidadesWCF.e_ConfiguracionDato Implements Il_ConfiguracionDato.Obtener
+    Public Function Obtener(oeConfiguracionDato As e_ConfiguracionDato) As e_ConfiguracionDato Implements Il_ConfiguracionDato.Obtener
         Try
             Return odConfiguracionDato.Obtener(oeConfiguracionDato)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ConfiguracionDato
         End Try
     End Function
 
-    Public Function Validar(oeConfiguracionDato As EntidadesWCF.e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Validar
+    Public Function Validar(oeConfiguracionDato As e_ConfiguracionDato) As Boolean Implements Il_ConfiguracionDato.Validar
         Try
             With oeConfiguracionDato
                 ' l_FuncionesGenerales.ValidarCampoNoNulo(oeConfiguracionDato.Descripcion , "No se ha Ingresado Nombre")

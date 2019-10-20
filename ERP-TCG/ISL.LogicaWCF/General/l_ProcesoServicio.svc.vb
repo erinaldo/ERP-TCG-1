@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ProcesoServicio
     Dim odProcesoServicio As New d_ProcesoServicio
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Eliminar
+    Public Function Eliminar(ByVal oeProcesoServicio As e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Eliminar
         Try
             Return odProcesoServicio.Eliminar(oeProcesoServicio)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_ProcesoServicio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Guardar
+    Public Function Guardar(ByVal oeProcesoServicio As e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Guardar
         Try
             If Validar(oeProcesoServicio) Then
                 Return odProcesoServicio.Guardar(oeProcesoServicio)
@@ -35,7 +35,7 @@ Public Class l_ProcesoServicio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As System.Collections.Generic.List(Of EntidadesWCF.e_ProcesoServicio) Implements Il_ProcesoServicio.Listar
+    Public Function Listar(ByVal oeProcesoServicio As e_ProcesoServicio) As System.Collections.Generic.List(Of e_ProcesoServicio) Implements Il_ProcesoServicio.Listar
         Try
             Return odProcesoServicio.Listar(oeProcesoServicio)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ProcesoServicio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As EntidadesWCF.e_ProcesoServicio Implements Il_ProcesoServicio.Obtener
+    Public Function Obtener(ByVal oeProcesoServicio As e_ProcesoServicio) As e_ProcesoServicio Implements Il_ProcesoServicio.Obtener
         Try
             Return odProcesoServicio.Obtener(oeProcesoServicio)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ProcesoServicio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Validar
+    Public Function Validar(ByVal oeProcesoServicio As e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.Validar
         Try
             With oeProcesoServicio
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdProcesoNegocio, "Debe seleccionar algún proceso")
@@ -64,7 +64,7 @@ Public Class l_ProcesoServicio
         End Try
     End Function
 
-    Public Function ValidarDuplicado(ByVal oeProcesoServicio As EntidadesWCF.e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.ValidarDuplicado
+    Public Function ValidarDuplicado(ByVal oeProcesoServicio As e_ProcesoServicio) As Boolean Implements Il_ProcesoServicio.ValidarDuplicado
         Try
             If String.IsNullOrEmpty(oeProcesoServicio.IdProcesoNegocio) Then Throw New Exception("No se ha definido que proceso se va a verificar si existe")
             If String.IsNullOrEmpty(oeProcesoServicio.IdServicio) Then Throw New Exception("No se ha especificado el Servicio que se va a validar")

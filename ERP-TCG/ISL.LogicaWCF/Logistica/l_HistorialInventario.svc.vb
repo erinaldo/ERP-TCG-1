@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_HistorialInventario
 
     Dim odHistorialInventario As New d_HistorialInventario
 
-    Public Function Eliminar(ByVal oeHistorialInventario As EntidadesWCF.e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Eliminar
+    Public Function Eliminar(ByVal oeHistorialInventario As e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Eliminar
         Try
             Return odHistorialInventario.Eliminar(oeHistorialInventario)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_HistorialInventario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeHistorialInventario As EntidadesWCF.e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Guardar
+    Public Function Guardar(ByVal oeHistorialInventario As e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Guardar
         Try
             If Validar(oeHistorialInventario) Then
                 Return odHistorialInventario.Guardar(oeHistorialInventario)
@@ -26,7 +26,7 @@ Public Class l_HistorialInventario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeHistorialInventario As EntidadesWCF.e_HistorialInventario) As System.Collections.Generic.List(Of EntidadesWCF.e_HistorialInventario) Implements Il_HistorialInventario.Listar
+    Public Function Listar(ByVal oeHistorialInventario As e_HistorialInventario) As System.Collections.Generic.List(Of e_HistorialInventario) Implements Il_HistorialInventario.Listar
         Try
             Return odHistorialInventario.Listar(oeHistorialInventario)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_HistorialInventario
         End Try
     End Function
 
-    Public Function Listar_Inventario(ByVal oeInventario As EntidadesWCF.e_Inventario) As System.Collections.Generic.List(Of EntidadesWCF.e_HistorialInventario) Implements Il_HistorialInventario.Listar_Inventario
+    Public Function Listar_Inventario(ByVal oeInventario As e_Inventario) As System.Collections.Generic.List(Of e_HistorialInventario) Implements Il_HistorialInventario.Listar_Inventario
         Try
             Return odHistorialInventario.Listar_Inventario(oeInventario)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_HistorialInventario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeHistorialInventario As EntidadesWCF.e_HistorialInventario) As EntidadesWCF.e_HistorialInventario Implements Il_HistorialInventario.Obtener
+    Public Function Obtener(ByVal oeHistorialInventario As e_HistorialInventario) As e_HistorialInventario Implements Il_HistorialInventario.Obtener
         Try
             Return odHistorialInventario.Obtener(oeHistorialInventario)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_HistorialInventario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeHistorialInventario As EntidadesWCF.e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Validar
+    Public Function Validar(ByVal oeHistorialInventario As e_HistorialInventario) As Boolean Implements Il_HistorialInventario.Validar
         Try
             With oeHistorialInventario
                 '---------VALIDARRRRRRRRRR-------------

@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -189,7 +189,7 @@ Public Class d_Kardex
         End Try
     End Function
 
-    Public Function Listar_KardexCorte(ByVal kardex As EntidadesWCF.e_Kardex) As DataTable
+    Public Function Listar_KardexCorte(ByVal kardex As e_Kardex) As DataTable
         Try
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CON.Kardex_Valorizado", kardex.Año, kardex.Mes, kardex.IdPeriodo)
@@ -199,7 +199,7 @@ Public Class d_Kardex
         End Try
     End Function
 
-    Public Function Listar(ByVal kardex As EntidadesWCF.e_Kardex) As DataTable
+    Public Function Listar(ByVal kardex As e_Kardex) As DataTable
         Try
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CON.Isp_InventarioPermanenteValorizado", kardex.Año, kardex.Mes, kardex.IdPeriodo, kardex.IdCuentaContable)
@@ -211,12 +211,12 @@ Public Class d_Kardex
 
 
 
-    Public Function Listar2(ByVal kardex As EntidadesWCF.e_Kardex) As DataTable
+    Public Function Listar2(ByVal kardex As e_Kardex) As DataTable
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("CON.Isp_InventarioPermanenteValorizado2", _
-                                          kardex.TipoOperacion, _
-                                          kardex.Año, kardex.Mes, _
+            ds = sqlhelper.ExecuteDataset("CON.Isp_InventarioPermanenteValorizado2",
+                                          kardex.TipoOperacion,
+                                          kardex.Año, kardex.Mes,
                                           kardex.IdPeriodo, kardex.IdCuentaContable, kardex.IdSubAlmacen)
             Return ds.Tables(0)
         Catch ex As Exception
@@ -246,7 +246,7 @@ Public Class d_Kardex
     'End Function
 
 
-    Public Function ListarCortePeriodo(ByVal kardex As EntidadesWCF.e_Kardex) As DataSet
+    Public Function ListarCortePeriodo(ByVal kardex As e_Kardex) As DataSet
         Try
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CON.Kardex_Listar", kardex.TipoOperacion)

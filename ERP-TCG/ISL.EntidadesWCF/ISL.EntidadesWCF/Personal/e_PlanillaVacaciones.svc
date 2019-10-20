@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_PlanillaVacaciones" CodeBehind="e_PlanillaVacaciones.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_PlanillaVacaciones" CodeBehind="e_PlanillaVacaciones.svc.vb" %>

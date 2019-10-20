@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 Public Class l_TipoFeriado

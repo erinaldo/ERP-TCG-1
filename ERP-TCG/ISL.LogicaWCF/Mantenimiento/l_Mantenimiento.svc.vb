@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Mantenimiento
     Dim odMantenimiento As New d_Mantenimiento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Eliminar
+    Public Function Eliminar(ByVal oeMantenimiento As e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Eliminar
         Try
             Return odMantenimiento.Eliminar(oeMantenimiento)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Guardar
+    Public Function Guardar(ByVal oeMantenimiento As e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Guardar
         Try
             If Validar(oeMantenimiento) Then
                 Return odMantenimiento.Guardar(oeMantenimiento)
@@ -35,7 +35,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_Mantenimiento) Implements Il_Mantenimiento.Listar
+    Public Function Listar(ByVal oeMantenimiento As e_Mantenimiento) As System.Collections.Generic.List(Of e_Mantenimiento) Implements Il_Mantenimiento.Listar
         Try
             Return odMantenimiento.Listar(oeMantenimiento)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function ListarDS(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As System.Data.DataSet Implements Il_Mantenimiento.ListarDS
+    Public Function ListarDS(ByVal oeMantenimiento As e_Mantenimiento) As System.Data.DataSet Implements Il_Mantenimiento.ListarDS
         Try
             Return odMantenimiento.ListarDS(oeMantenimiento)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As EntidadesWCF.e_Mantenimiento Implements Il_Mantenimiento.Obtener
+    Public Function Obtener(ByVal oeMantenimiento As e_Mantenimiento) As e_Mantenimiento Implements Il_Mantenimiento.Obtener
         Try
             Return odMantenimiento.Obtener(oeMantenimiento)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMantenimiento As EntidadesWCF.e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Validar
+    Public Function Validar(ByVal oeMantenimiento As e_Mantenimiento) As Boolean Implements Il_Mantenimiento.Validar
         Try
             With oeMantenimiento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre del mantenimiento")
@@ -102,7 +102,7 @@ Public Class l_Mantenimiento
         End Try
     End Function
 
-    Public Function ListarProyMant(ByVal oeProyMant As EntidadesWCF.e_ProyMantenimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_ProyMantenimiento) Implements Il_Mantenimiento.ListarProyMant
+    Public Function ListarProyMant(ByVal oeProyMant As e_ProyMantenimiento) As System.Collections.Generic.List(Of e_ProyMantenimiento) Implements Il_Mantenimiento.ListarProyMant
         Try
             Return odMantenimiento.ListarProyMant(oeProyMant)
         Catch ex As Exception

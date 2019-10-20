@@ -11,7 +11,7 @@ Imports System.IO
 Imports System.Xml
 Imports System.Configuration
 Imports System.Collections.Specialized
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Imports System.Net
 

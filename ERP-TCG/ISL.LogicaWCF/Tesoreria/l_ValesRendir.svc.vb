@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 ' NOTA: si cambia aquí el nombre de clase "l_ValesRendir", también debe actualizar la referencia a "l_ValesRendir" tanto en Web.config como en el archivo .svc asociado.
 Public Class l_ValesRendir

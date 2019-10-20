@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -19,7 +19,7 @@ Public Class l_Historial
     Dim olFuncionesGenerales As New l_FuncionesGenerales
 
 
-    Public Function Eliminar(ByVal oeHistorial As EntidadesWCF.e_Historial) As Boolean Implements Il_Historial.Eliminar
+    Public Function Eliminar(ByVal oeHistorial As e_Historial) As Boolean Implements Il_Historial.Eliminar
         Try
             Return odHistorial.Eliminar(oeHistorial)
         Catch ex As Exception
@@ -27,7 +27,7 @@ Public Class l_Historial
         End Try
     End Function
 
-    Public Function Listar(ByVal oeHistorial As EntidadesWCF.e_Historial) As System.Collections.Generic.List(Of EntidadesWCF.e_Historial) Implements Il_Historial.Listar
+    Public Function Listar(ByVal oeHistorial As e_Historial) As System.Collections.Generic.List(Of e_Historial) Implements Il_Historial.Listar
         Try
             Return odHistorial.Listar(oeHistorial)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_Historial
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeHistorial As EntidadesWCF.e_Historial) As EntidadesWCF.e_Historial Implements Il_Historial.Obtener
+    Public Function Obtener(ByVal oeHistorial As e_Historial) As e_Historial Implements Il_Historial.Obtener
         Try
             Return odHistorial.Obtener(oeHistorial)
         Catch ex As Exception

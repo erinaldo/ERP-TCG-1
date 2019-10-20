@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_RegimenSalud
     Private odRegimenSalud As New d_RegimenSalud
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeRegimenSalud As EntidadesWCF.e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Eliminar
+    Public Function Eliminar(oeRegimenSalud As e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Eliminar
         Try
             Return odRegimenSalud.Eliminar(oeRegimenSalud)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_RegimenSalud
         End Try
     End Function
 
-    Public Function Guardar(oeRegimenSalud As EntidadesWCF.e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Guardar
+    Public Function Guardar(oeRegimenSalud As e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Guardar
         Try
             If Validar(oeRegimenSalud) Then
                 Return odRegimenSalud.Guardar(oeRegimenSalud)
@@ -27,7 +27,7 @@ Public Class l_RegimenSalud
         End Try
     End Function
 
-    Public Function Listar(oeRegimenSalud As EntidadesWCF.e_RegimenSalud) As List(Of EntidadesWCF.e_RegimenSalud) Implements Il_RegimenSalud.Listar
+    Public Function Listar(oeRegimenSalud As e_RegimenSalud) As List(Of e_RegimenSalud) Implements Il_RegimenSalud.Listar
         Try
             Return odRegimenSalud.Listar(oeRegimenSalud)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_RegimenSalud
         End Try
     End Function
 
-    Public Function Obtener(oeRegimenSalud As EntidadesWCF.e_RegimenSalud) As EntidadesWCF.e_RegimenSalud Implements Il_RegimenSalud.Obtener
+    Public Function Obtener(oeRegimenSalud As e_RegimenSalud) As e_RegimenSalud Implements Il_RegimenSalud.Obtener
         Try
             Return odRegimenSalud.Obtener(oeRegimenSalud)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_RegimenSalud
         End Try
     End Function
 
-    Public Function Validar(oeRegimenSalud As EntidadesWCF.e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Validar
+    Public Function Validar(oeRegimenSalud As e_RegimenSalud) As Boolean Implements Il_RegimenSalud.Validar
         Try
             With oeRegimenSalud
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 ' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_TipoOpecon" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_TipoOpecon.svc o l_TipoOpecon.svc.vb en el Explorador de soluciones e inicie la depuración.
@@ -9,7 +9,7 @@ Public Class l_TipoOpeCon
 
     Private odTipoOpeCon As d_TipoOpeCon
 
-    Public Function ComboGrillaCodigo(ByVal TipoOperacion As System.Collections.Generic.List(Of EntidadesWCF.e_TipoOpeCon)) As Object
+    Public Function ComboGrillaCodigo(ByVal TipoOperacion As System.Collections.Generic.List(Of e_TipoOpeCon)) As Object
         Try
             Dim ds = New DataTable
             ds.Columns.Add("Id")

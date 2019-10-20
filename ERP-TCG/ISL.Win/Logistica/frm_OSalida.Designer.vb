@@ -1300,7 +1300,7 @@ Partial Class frm_OSalida
         '
         'ERegistroInventarioBindingSource
         '
-        Me.ERegistroInventarioBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_RegistroInventario)
+        Me.ERegistroInventarioBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_RegistroInventario)
         '
         'UltraTabPageControl1
         '

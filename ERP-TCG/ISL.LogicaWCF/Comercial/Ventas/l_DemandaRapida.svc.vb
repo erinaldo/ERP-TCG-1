@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -11,7 +11,7 @@ Public Class l_DemandaRapida
     Dim oeCombo As New e_Combo
     Dim odCombo As New d_Combo
     Dim olBitacora As New l_Bitacora
-    Public Function Eliminar(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Eliminar
+    Public Function Eliminar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Eliminar
         Try
                 odDemandaRapida.Eliminar(oeDemandaRapida)
             Return True
@@ -20,7 +20,7 @@ Public Class l_DemandaRapida
         End Try
     End Function
 
-    Public Function Cancelar(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As Boolean
+    Public Function Cancelar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean
         Try
             odDemandaRapida.Cancelar(oeDemandaRapida)
             Return True
@@ -28,14 +28,14 @@ Public Class l_DemandaRapida
             Throw
         End Try
     End Function
-    Public Function CambioDeEstado(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As Boolean
+    Public Function CambioDeEstado(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean
         Try
             Return odDemandaRapida.CambioDeEstado(oeDemandaRapida)
         Catch ex As Exception
             Throw
         End Try
     End Function
-    Public Function Guardar(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Guardar
+    Public Function Guardar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Guardar
         Try
             If Validar(oeDemandaRapida) Then
                 Return odDemandaRapida.Guardar(oeDemandaRapida)
@@ -45,14 +45,14 @@ Public Class l_DemandaRapida
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As System.Collections.Generic.List(Of EntidadesWCF.e_DemandaRapida) Implements Il_DemandaRapida.Listar
+    Public Function Listar(ByVal oeDemandaRapida As e_DemandaRapida) As System.Collections.Generic.List(Of e_DemandaRapida) Implements Il_DemandaRapida.Listar
         Try
             Return odDemandaRapida.Listar(oeDemandaRapida)
         Catch ex As Exception
             Throw
         End Try
     End Function
-    Public Function ListarDemandarapida(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As System.Collections.Generic.List(Of EntidadesWCF.e_DemandaRapida)
+    Public Function ListarDemandarapida(ByVal oeDemandaRapida As e_DemandaRapida) As System.Collections.Generic.List(Of e_DemandaRapida)
         Try
             Return odDemandaRapida.ListarDemandaRapida(oeDemandaRapida)
         Catch ex As Exception
@@ -60,7 +60,7 @@ Public Class l_DemandaRapida
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As EntidadesWCF.e_DemandaRapida Implements Il_DemandaRapida.Obtener
+    Public Function Obtener(ByVal oeDemandaRapida As e_DemandaRapida) As e_DemandaRapida Implements Il_DemandaRapida.Obtener
         Try
             Return odDemandaRapida.Obtener(oeDemandaRapida)
         Catch ex As Exception
@@ -68,7 +68,7 @@ Public Class l_DemandaRapida
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDemandaRapida As EntidadesWCF.e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Validar
+    Public Function Validar(ByVal oeDemandaRapida As e_DemandaRapida) As Boolean Implements Il_DemandaRapida.Validar
         Try
             With oeDemandaRapida
                 ValidarRuta(oeDemandaRapida.IdRuta)

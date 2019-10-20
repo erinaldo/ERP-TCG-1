@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_TipoMovimientoInventario
     Private odTipoMovimientoInventario As New d_TipoMovimientoInventario
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTipoMovimientoInventario As EntidadesWCF.e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Eliminar
+    Public Function Eliminar(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Eliminar
         Try
             Return odTipoMovimientoInventario.Eliminar(oeTipoMovimientoInventario)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_TipoMovimientoInventario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoMovimientoInventario As EntidadesWCF.e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Guardar
+    Public Function Guardar(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Guardar
         Try
             If Validar(oeTipoMovimientoInventario) Then
                 Return odTipoMovimientoInventario.Guardar(oeTipoMovimientoInventario)
@@ -35,7 +35,7 @@ Public Class l_TipoMovimientoInventario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoMovimientoInventario As EntidadesWCF.e_TipoMovimientoInventario) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoMovimientoInventario) Implements Il_TipoMovimientoInventario.Listar
+    Public Function Listar(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As System.Collections.Generic.List(Of e_TipoMovimientoInventario) Implements Il_TipoMovimientoInventario.Listar
         Try
             Return odTipoMovimientoInventario.Listar(oeTipoMovimientoInventario)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_TipoMovimientoInventario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoMovimientoInventario As EntidadesWCF.e_TipoMovimientoInventario) As EntidadesWCF.e_TipoMovimientoInventario Implements Il_TipoMovimientoInventario.Obtener
+    Public Function Obtener(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As e_TipoMovimientoInventario Implements Il_TipoMovimientoInventario.Obtener
         Try
             Return odTipoMovimientoInventario.Obtener(oeTipoMovimientoInventario)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_TipoMovimientoInventario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoMovimientoInventario As EntidadesWCF.e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Validar
+    Public Function Validar(ByVal oeTipoMovimientoInventario As e_TipoMovimientoInventario) As Boolean Implements Il_TipoMovimientoInventario.Validar
         Try
             With oeTipoMovimientoInventario
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el codigo")

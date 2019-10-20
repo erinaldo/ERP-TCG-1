@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 Public Class Sexo
 
     ''' <summary>

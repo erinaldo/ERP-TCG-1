@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Estado
 
     Dim odEstado As New d_Estado
 
-    Public Function Listar(ByVal oeEstado As EntidadesWCF.e_Estado) As System.Collections.Generic.List(Of EntidadesWCF.e_Estado) Implements Il_Estado.Listar
+    Public Function Listar(ByVal oeEstado As e_Estado) As System.Collections.Generic.List(Of e_Estado) Implements Il_Estado.Listar
         Try
             Return odEstado.Listar(oeEstado)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Estado
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal Lista As System.Collections.Generic.List(Of EntidadesWCF.e_Estado)) As Object Implements Il_Estado.ComboGrilla
+    Public Function ComboGrilla(ByVal Lista As System.Collections.Generic.List(Of e_Estado)) As Object Implements Il_Estado.ComboGrilla
         Try
             Return odEstado.ComboGrilla(Lista)
         Catch ex As Exception

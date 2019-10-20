@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 ''' <summary>
 ''' Clase parcial de lo que es ubigeo.
 ''' Fecha de Actualizacion:31/10/2011

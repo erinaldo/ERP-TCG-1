@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_TipoDocumento
     Dim odTipoDocumento As New d_TipoDocumento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal TipoDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_TipoDocumento)) As Object Implements Il_TipoDocumento.ComboGrilla
+    Public Function ComboGrilla(ByVal TipoDocumento As System.Collections.Generic.List(Of e_TipoDocumento)) As Object Implements Il_TipoDocumento.ComboGrilla
         Try
             Return odTipoDocumento.ComboGrilla(TipoDocumento)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function ComboGrillaCodigo(ByVal TipoDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_TipoDocumento)) As Object
+    Public Function ComboGrillaCodigo(ByVal TipoDocumento As System.Collections.Generic.List(Of e_TipoDocumento)) As Object
         Try
             Dim ds = New DataTable
             ds.Columns.Add("Id")
@@ -42,7 +42,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeTipoDocumento As EntidadesWCF.e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Eliminar
+    Public Function Eliminar(ByVal oeTipoDocumento As e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Eliminar
         Try
             Return odTipoDocumento.Eliminar(oeTipoDocumento)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoDocumento As EntidadesWCF.e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Guardar
+    Public Function Guardar(ByVal oeTipoDocumento As e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Guardar
         Try
             If Validar(oeTipoDocumento) Then
                 Return odTipoDocumento.Guardar(oeTipoDocumento)
@@ -60,7 +60,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoDocumento As EntidadesWCF.e_TipoDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoDocumento) Implements Il_TipoDocumento.Listar
+    Public Function Listar(ByVal oeTipoDocumento As e_TipoDocumento) As System.Collections.Generic.List(Of e_TipoDocumento) Implements Il_TipoDocumento.Listar
         Try
             Return odTipoDocumento.Listar(oeTipoDocumento)
         Catch ex As Exception
@@ -68,7 +68,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoDocumento As EntidadesWCF.e_TipoDocumento) As EntidadesWCF.e_TipoDocumento Implements Il_TipoDocumento.Obtener
+    Public Function Obtener(ByVal oeTipoDocumento As e_TipoDocumento) As e_TipoDocumento Implements Il_TipoDocumento.Obtener
         Try
             Return odTipoDocumento.Obtener(oeTipoDocumento)
         Catch ex As Exception
@@ -76,7 +76,7 @@ Public Class l_TipoDocumento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoDocumento As EntidadesWCF.e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Validar
+    Public Function Validar(ByVal oeTipoDocumento As e_TipoDocumento) As Boolean Implements Il_TipoDocumento.Validar
         Try
             With oeTipoDocumento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar codigo SUNAT")

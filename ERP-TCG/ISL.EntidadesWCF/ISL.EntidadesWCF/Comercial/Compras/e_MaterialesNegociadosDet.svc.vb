@@ -248,13 +248,13 @@ Public Class e_MaterialesNegociadosDet
         Return materialesnegociadosdet
     End Function
 
-    Public Overloads Function Equals(ByVal oeMatNegDet As e_MaterialesNegociadosDet) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_MaterialesNegociadosDet).Equals
+    Public Overloads Function Equals(ByVal oeMatNegDet As e_MaterialesNegociadosDet) As Boolean Implements IEquatable(Of e_MaterialesNegociadosDet).Equals
         If Me.IdMaterial.Trim = oeMatNegDet.IdMaterial.Trim Then Return True
         Return False
     End Function
 
 #End Region
-    
+
 End Class
 
 

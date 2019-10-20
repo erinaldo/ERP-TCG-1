@@ -1244,7 +1244,7 @@ Partial Class frm_ComprobanteCompra
         '
         'EMovimientoDocumentoBindingSource
         '
-        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_MovimientoDocumento)
+        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
         '
         'Agrupacion10
         '

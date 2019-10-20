@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -7,7 +7,7 @@ Public Class l_DepositoDetalle
     Implements Il_DepositoDetalle
     Dim odDepositoDetalle As New d_DepositoDetalle
 
-    Public Function Eliminar(ByVal oeDepositoDetalle As EntidadesWCF.e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Eliminar
+    Public Function Eliminar(ByVal oeDepositoDetalle As e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Eliminar
         Try
             Return odDepositoDetalle.Eliminar(oeDepositoDetalle)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_DepositoDetalle
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDepositoDetalle As EntidadesWCF.e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Guardar
+    Public Function Guardar(ByVal oeDepositoDetalle As e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Guardar
         Try
             If Validar(oeDepositoDetalle) Then
                 Return odDepositoDetalle.Guardar(oeDepositoDetalle)
@@ -25,7 +25,7 @@ Public Class l_DepositoDetalle
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDepositoDetalle As EntidadesWCF.e_DepositoDetalle) As System.Collections.Generic.List(Of EntidadesWCF.e_DepositoDetalle) Implements Il_DepositoDetalle.Listar
+    Public Function Listar(ByVal oeDepositoDetalle As e_DepositoDetalle) As System.Collections.Generic.List(Of e_DepositoDetalle) Implements Il_DepositoDetalle.Listar
         Try
             Return odDepositoDetalle.Listar(oeDepositoDetalle)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_DepositoDetalle
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDepositoDetalle As EntidadesWCF.e_DepositoDetalle) As EntidadesWCF.e_DepositoDetalle Implements Il_DepositoDetalle.Obtener
+    Public Function Obtener(ByVal oeDepositoDetalle As e_DepositoDetalle) As e_DepositoDetalle Implements Il_DepositoDetalle.Obtener
         Try
             Return odDepositoDetalle.Obtener(oeDepositoDetalle)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_DepositoDetalle
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDepositoDetalle As EntidadesWCF.e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Validar
+    Public Function Validar(ByVal oeDepositoDetalle As e_DepositoDetalle) As Boolean Implements Il_DepositoDetalle.Validar
         Try
             With oeDepositoDetalle
                 '---------VALIDARRRRRRRRRR-------------

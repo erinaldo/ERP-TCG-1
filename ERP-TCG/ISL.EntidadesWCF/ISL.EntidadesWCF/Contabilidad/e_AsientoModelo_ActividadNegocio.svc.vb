@@ -184,7 +184,7 @@ Public Class e_AsientoModelo_ActividadNegocio
         Return asientomodeloactividadnegocio
     End Function
 
-    Public Overloads Function Equals(ByVal oeAMActNeg As e_AsientoModelo_ActividadNegocio) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_AsientoModelo_ActividadNegocio).Equals
+    Public Overloads Function Equals(ByVal oeAMActNeg As e_AsientoModelo_ActividadNegocio) As Boolean Implements IEquatable(Of e_AsientoModelo_ActividadNegocio).Equals
         Select Case oeAMActNeg.Equivale
             Case 0 : If Me.Id.Trim = oeAMActNeg.Id.Trim Then Return True
             Case 1 : If Me.IdActividadNegocio.Trim = oeAMActNeg.IdActividadNegocio.Trim Then Return True

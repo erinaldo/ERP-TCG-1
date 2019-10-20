@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports ISL.ServicioExterno
 Imports System.Runtime.Serialization
 
@@ -11,7 +11,7 @@ Public Class l_DocumentoRetencion
     Dim osRetencionElectronico As New s_Retencion
     Dim olDatosConfiguracion As New l_Configuracion
 
-    Public Function Eliminar(ByVal oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Eliminar
+    Public Function Eliminar(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Eliminar
         Try
             Return odDocumentoRetencion.Eliminar(oeDocumentoRetencion)
         Catch ex As Exception
@@ -19,7 +19,7 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Guardar
+    Public Function Guardar(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Guardar
         Try
             If Validar(oeDocumentoRetencion) Then
                 Return odDocumentoRetencion.Guardar(oeDocumentoRetencion)
@@ -29,7 +29,7 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion) As System.Collections.Generic.List(Of EntidadesWCF.e_DocumentoRetencion) Implements Il_DocumentoRetencion.Listar
+    Public Function Listar(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As System.Collections.Generic.List(Of e_DocumentoRetencion) Implements Il_DocumentoRetencion.Listar
         Try
             Return odDocumentoRetencion.Listar(oeDocumentoRetencion)
         Catch ex As Exception
@@ -37,7 +37,7 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion) As EntidadesWCF.e_DocumentoRetencion Implements Il_DocumentoRetencion.Obtener
+    Public Function Obtener(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As e_DocumentoRetencion Implements Il_DocumentoRetencion.Obtener
         Try
             Return odDocumentoRetencion.Obtener(oeDocumentoRetencion)
         Catch ex As Exception
@@ -45,7 +45,7 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDocumentoRetencion As EntidadesWCF.e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Validar
+    Public Function Validar(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.Validar
         Try
             With oeDocumentoRetencion
                 '---------VALIDARRRRRRRRRR-------------

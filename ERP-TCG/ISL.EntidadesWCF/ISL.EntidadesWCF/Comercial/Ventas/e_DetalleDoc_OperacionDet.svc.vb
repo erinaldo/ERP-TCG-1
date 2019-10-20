@@ -546,7 +546,7 @@ Public Class e_DetalleDoc_OperacionDet
 #Region "Metodos"
 
     Public Overloads Function Equals(ByVal oeDDOD As e_DetalleDoc_OperacionDet) _
-    As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_DetalleDoc_OperacionDet).Equals
+    As Boolean Implements IEquatable(Of e_DetalleDoc_OperacionDet).Equals
         If Me.IdOperacionDetalle = oeDDOD.IdOperacionDetalle Then
             Return True
         Else

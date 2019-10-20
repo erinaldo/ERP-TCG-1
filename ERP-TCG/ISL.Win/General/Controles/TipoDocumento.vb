@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 Imports ISL.LogicaWCF
 ''' <summary>
 ''' Control creado para seleccionar los tipos de documentos asociados a un proceso específico

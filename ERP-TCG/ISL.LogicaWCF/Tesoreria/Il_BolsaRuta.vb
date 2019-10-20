@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_BolsaRuta", también debe actualizar la referencia a "Il_BolsaRuta" en Web.config.
 <ServiceContract()> _

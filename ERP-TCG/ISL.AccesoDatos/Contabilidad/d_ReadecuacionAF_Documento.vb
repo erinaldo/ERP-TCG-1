@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 'Imports System.Transactions
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class d_ReadecuacionAF_Documento
     Private sqlhelper As New SqlHelper

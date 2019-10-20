@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_PlanillaEps
@@ -16,7 +16,7 @@ Public Class l_PlanillaEps
     Private odPlanillaEps As New d_PlanillaEps
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oePlanillaEps As EntidadesWCF.e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Eliminar
+    Public Function Eliminar(oePlanillaEps As e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Eliminar
         Try
             Return odPlanillaEps.Eliminar(oePlanillaEps)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_PlanillaEps
         End Try
     End Function
 
-    Public Function Guardar(oePlanillaEps As EntidadesWCF.e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Guardar
+    Public Function Guardar(oePlanillaEps As e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Guardar
         Try
             If Validar(oePlanillaEps) Then
                 Return odPlanillaEps.Guardar(oePlanillaEps)
@@ -34,7 +34,7 @@ Public Class l_PlanillaEps
         End Try
     End Function
 
-    Public Function Listar(oePlanillaEps As EntidadesWCF.e_PlanillaEps) As List(Of EntidadesWCF.e_PlanillaEps) Implements Il_PlanillaEps.Listar
+    Public Function Listar(oePlanillaEps As e_PlanillaEps) As List(Of e_PlanillaEps) Implements Il_PlanillaEps.Listar
         Try
             Return odPlanillaEps.Listar(oePlanillaEps)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_PlanillaEps
         End Try
     End Function
 
-    Public Function Obtener(oePlanillaEps As EntidadesWCF.e_PlanillaEps) As EntidadesWCF.e_PlanillaEps Implements Il_PlanillaEps.Obtener
+    Public Function Obtener(oePlanillaEps As e_PlanillaEps) As e_PlanillaEps Implements Il_PlanillaEps.Obtener
         Try
             Return odPlanillaEps.Obtener(oePlanillaEps)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_PlanillaEps
         End Try
     End Function
 
-    Public Function Validar(oePlanillaEps As EntidadesWCF.e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Validar
+    Public Function Validar(oePlanillaEps As e_PlanillaEps) As Boolean Implements Il_PlanillaEps.Validar
         Try
             With oePlanillaEps
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

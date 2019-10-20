@@ -1,12 +1,12 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 
 Public Class l_PagoDescuento
     Implements Il_PagoDescuento
 
     Dim odPagoDescuento As New d_PagoDescuento
 
-    Public Function Listar(ByVal oePagoDescuento As EntidadesWCF.e_PagoDescuento) As System.Collections.Generic.List(Of EntidadesWCF.e_PagoDescuento) Implements Il_PagoDescuento.Listar
+    Public Function Listar(ByVal oePagoDescuento As e_PagoDescuento) As System.Collections.Generic.List(Of e_PagoDescuento) Implements Il_PagoDescuento.Listar
         Try
             Return odPagoDescuento.Listar(oePagoDescuento)
         Catch ex As Exception

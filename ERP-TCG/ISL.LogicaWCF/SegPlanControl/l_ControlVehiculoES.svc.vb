@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_ControlVehiculoES
 
     Dim odControlVehiculoES As New d_ControlVehiculoES
 
-    Public Function Eliminar(ByVal oeControlVehiculoES As EntidadesWCF.e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Eliminar
+    Public Function Eliminar(ByVal oeControlVehiculoES As e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Eliminar
         Try
             Return odControlVehiculoES.Eliminar(oeControlVehiculoES)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_ControlVehiculoES
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeControlVehiculoES As EntidadesWCF.e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Guardar
+    Public Function Guardar(ByVal oeControlVehiculoES As e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Guardar
         Try
             If Validar(oeControlVehiculoES) Then
                 Return odControlVehiculoES.Guardar(oeControlVehiculoES)
@@ -34,9 +34,9 @@ Public Class l_ControlVehiculoES
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal lstControlVehiculoES As List(Of EntidadesWCF.e_ControlVehiculoES)) As Boolean Implements Il_ControlVehiculoES.GuardarLista
+    Public Function GuardarLista(ByVal lstControlVehiculoES As List(Of e_ControlVehiculoES)) As Boolean Implements Il_ControlVehiculoES.GuardarLista
         Try
-            For Each obj As EntidadesWCF.e_ControlVehiculoES In lstControlVehiculoES
+            For Each obj As e_ControlVehiculoES In lstControlVehiculoES
                 Validar(obj)
             Next
             Return odControlVehiculoES.GuardarLista(lstControlVehiculoES)
@@ -45,7 +45,7 @@ Public Class l_ControlVehiculoES
         End Try
     End Function
 
-    Public Function Listar(ByVal oeControlVehiculoES As EntidadesWCF.e_ControlVehiculoES) As System.Collections.Generic.List(Of EntidadesWCF.e_ControlVehiculoES) Implements Il_ControlVehiculoES.Listar
+    Public Function Listar(ByVal oeControlVehiculoES As e_ControlVehiculoES) As System.Collections.Generic.List(Of e_ControlVehiculoES) Implements Il_ControlVehiculoES.Listar
         Try
             Return odControlVehiculoES.Listar(oeControlVehiculoES)
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class l_ControlVehiculoES
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeControlVehiculoES As EntidadesWCF.e_ControlVehiculoES) As EntidadesWCF.e_ControlVehiculoES Implements Il_ControlVehiculoES.Obtener
+    Public Function Obtener(ByVal oeControlVehiculoES As e_ControlVehiculoES) As e_ControlVehiculoES Implements Il_ControlVehiculoES.Obtener
         Try
             Return odControlVehiculoES.Obtener(oeControlVehiculoES)
         Catch ex As Exception
@@ -61,7 +61,7 @@ Public Class l_ControlVehiculoES
         End Try
     End Function
 
-    Public Function Validar(ByVal oeControlVehiculoES As EntidadesWCF.e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Validar
+    Public Function Validar(ByVal oeControlVehiculoES As e_ControlVehiculoES) As Boolean Implements Il_ControlVehiculoES.Validar
         Try
             With oeControlVehiculoES
                 '---------VALIDARRRRRRRRRR-------------

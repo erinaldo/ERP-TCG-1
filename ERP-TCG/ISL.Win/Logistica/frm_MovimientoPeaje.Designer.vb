@@ -3270,7 +3270,7 @@ Partial Class frm_MovimientoPeaje
         '
         'EMovimientoDocumentoBindingSource
         '
-        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_MovimientoDocumento)
+        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
         '
         'UltraDataSource4
         '

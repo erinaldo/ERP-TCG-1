@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_DetalleConcepto
@@ -8,7 +8,7 @@ Public Class l_DetalleConcepto
     Private odDetalleConcepto As New d_DetalleConcepto
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetalleConcepto As EntidadesWCF.e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Eliminar
+    Public Function Eliminar(oeDetalleConcepto As e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Eliminar
         Try
             Return odDetalleConcepto.Eliminar(oeDetalleConcepto)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_DetalleConcepto
         End Try
     End Function
 
-    Public Function Guardar(oeDetalleConcepto As EntidadesWCF.e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Guardar
+    Public Function Guardar(oeDetalleConcepto As e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Guardar
         Try
             If Validar(oeDetalleConcepto) Then
                 Return odDetalleConcepto.Guardar(oeDetalleConcepto)
@@ -26,7 +26,7 @@ Public Class l_DetalleConcepto
         End Try
     End Function
 
-    Public Function Listar(oeDetalleConcepto As EntidadesWCF.e_DetalleConcepto) As List(Of EntidadesWCF.e_DetalleConcepto) Implements Il_DetalleConcepto.Listar
+    Public Function Listar(oeDetalleConcepto As e_DetalleConcepto) As List(Of e_DetalleConcepto) Implements Il_DetalleConcepto.Listar
         Try
             Return odDetalleConcepto.Listar(oeDetalleConcepto)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_DetalleConcepto
         End Try
     End Function
 
-    Public Function Obtener(oeDetalleConcepto As EntidadesWCF.e_DetalleConcepto) As EntidadesWCF.e_DetalleConcepto Implements Il_DetalleConcepto.Obtener
+    Public Function Obtener(oeDetalleConcepto As e_DetalleConcepto) As e_DetalleConcepto Implements Il_DetalleConcepto.Obtener
         Try
             Return odDetalleConcepto.Obtener(oeDetalleConcepto)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DetalleConcepto
         End Try
     End Function
 
-    Public Function Validar(oeDetalleConcepto As EntidadesWCF.e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Validar
+    Public Function Validar(oeDetalleConcepto As e_DetalleConcepto) As Boolean Implements Il_DetalleConcepto.Validar
         Try
             With oeDetalleConcepto
                 ' l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

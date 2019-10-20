@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Asiento_MovDoc
 
     Dim odAsiento_MovDoc As New d_Asiento_MovDoc
 
-    Public Function Eliminar(ByVal oeAsiento_MovDoc As EntidadesWCF.e_Asiento_MovDoc) As Boolean Implements Il_Asiento_MovDoc.Eliminar
+    Public Function Eliminar(ByVal oeAsiento_MovDoc As e_Asiento_MovDoc) As Boolean Implements Il_Asiento_MovDoc.Eliminar
         Try
             Return odAsiento_MovDoc.Eliminar(oeAsiento_MovDoc)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Asiento_MovDoc
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeAsiento_MovDoc As EntidadesWCF.e_Asiento_MovDoc) As Boolean Implements Il_Asiento_MovDoc.Guardar
+    Public Function Guardar(ByVal oeAsiento_MovDoc As e_Asiento_MovDoc) As Boolean Implements Il_Asiento_MovDoc.Guardar
         Try
             Return odAsiento_MovDoc.Guardar(oeAsiento_MovDoc)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Asiento_MovDoc
         End Try
     End Function
 
-    Public Function Listar(ByVal oeAsiento_MovDoc As EntidadesWCF.e_Asiento_MovDoc) As System.Collections.Generic.List(Of EntidadesWCF.e_Asiento_MovDoc) Implements Il_Asiento_MovDoc.Listar
+    Public Function Listar(ByVal oeAsiento_MovDoc As e_Asiento_MovDoc) As System.Collections.Generic.List(Of e_Asiento_MovDoc) Implements Il_Asiento_MovDoc.Listar
         Try
             Return odAsiento_MovDoc.Listar(oeAsiento_MovDoc)
         Catch ex As Exception
@@ -32,7 +32,7 @@ Public Class l_Asiento_MovDoc
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeAsiento_MovDoc As EntidadesWCF.e_Asiento_MovDoc) As EntidadesWCF.e_Asiento_MovDoc Implements Il_Asiento_MovDoc.Obtener
+    Public Function Obtener(ByVal oeAsiento_MovDoc As e_Asiento_MovDoc) As e_Asiento_MovDoc Implements Il_Asiento_MovDoc.Obtener
         Try
             Return odAsiento_MovDoc.Obtener(oeAsiento_MovDoc)
         Catch ex As Exception

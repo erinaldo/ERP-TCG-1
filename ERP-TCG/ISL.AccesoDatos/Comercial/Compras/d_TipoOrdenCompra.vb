@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 ''' <summary>
 ''' Clase que indica los tipos de orden compra que se requieren por ejemplo: orden de compra normal,
 ''' orden de compra por consignacion,etc.  

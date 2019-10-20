@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ChequeContable
     Dim odChequeContable As New d_ChequeContable
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeChequeContable As EntidadesWCF.e_ChequeContable) As Boolean Implements Il_ChequeContable.Eliminar
+    Public Function Eliminar(ByVal oeChequeContable As e_ChequeContable) As Boolean Implements Il_ChequeContable.Eliminar
         Try
             Return odChequeContable.Eliminar(oeChequeContable)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_ChequeContable
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeChequeContable As EntidadesWCF.e_ChequeContable) As Boolean Implements Il_ChequeContable.Guardar
+    Public Function Guardar(ByVal oeChequeContable As e_ChequeContable) As Boolean Implements Il_ChequeContable.Guardar
         Try
             If Validar(oeChequeContable) Then
                 Return odChequeContable.Guardar(oeChequeContable)
@@ -35,7 +35,7 @@ Public Class l_ChequeContable
         End Try
     End Function
 
-    Public Function Listar(ByVal oeChequeContable As EntidadesWCF.e_ChequeContable) As System.Collections.Generic.List(Of EntidadesWCF.e_ChequeContable) Implements Il_ChequeContable.Listar
+    Public Function Listar(ByVal oeChequeContable As e_ChequeContable) As System.Collections.Generic.List(Of e_ChequeContable) Implements Il_ChequeContable.Listar
         Try
             Return odChequeContable.Listar(oeChequeContable)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ChequeContable
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeChequeContable As EntidadesWCF.e_ChequeContable) As EntidadesWCF.e_ChequeContable Implements Il_ChequeContable.Obtener
+    Public Function Obtener(ByVal oeChequeContable As e_ChequeContable) As e_ChequeContable Implements Il_ChequeContable.Obtener
         Try
             Return odChequeContable.Obtener(oeChequeContable)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ChequeContable
         End Try
     End Function
 
-    Public Function Validar(ByVal oeChequeContable As EntidadesWCF.e_ChequeContable) As Boolean Implements Il_ChequeContable.Validar
+    Public Function Validar(ByVal oeChequeContable As e_ChequeContable) As Boolean Implements Il_ChequeContable.Validar
         Try
             With oeChequeContable
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdBanco, "Seleccione Banco")

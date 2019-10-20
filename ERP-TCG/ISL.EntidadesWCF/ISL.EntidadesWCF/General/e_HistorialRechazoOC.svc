@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_HistorialRechazoOC" CodeBehind="e_HistorialRechazoOC.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_HistorialRechazoOC" CodeBehind="e_HistorialRechazoOC.svc.vb" %>

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -31,7 +31,7 @@ Public Class l_Persona
     ''' <param name="oePersona">Objeto Persona</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oePersona As EntidadesWCF.e_Persona) As Boolean Implements Il_Persona.Eliminar
+    Public Function Eliminar(ByVal oePersona As e_Persona) As Boolean Implements Il_Persona.Eliminar
         Try
             If Validar(oePersona) Then
                 odPersona.Eliminar(oePersona)
@@ -62,7 +62,7 @@ Public Class l_Persona
     ''' <param name="oePersona"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oePersona As EntidadesWCF.e_Persona) As String Implements Il_Persona.Guardar
+    Public Function Guardar(ByVal oePersona As e_Persona) As String Implements Il_Persona.Guardar
         Try
             Dim _IdPersona As String = ""
             If Validar(oePersona) Then
@@ -76,7 +76,7 @@ Public Class l_Persona
         End Try
     End Function
 
-    Public Function ActualizarDatos(ByVal oePersona As EntidadesWCF.e_Persona) As String
+    Public Function ActualizarDatos(ByVal oePersona As e_Persona) As String
         Try
             Dim _IdPersona As String = ""
             _IdPersona = odPersona.ActualizarDatos(oePersona)
@@ -87,7 +87,7 @@ Public Class l_Persona
         End Try
     End Function
 
-    Public Function Listar(ByVal oePersona As EntidadesWCF.e_Persona) As System.Collections.Generic.List(Of EntidadesWCF.e_Persona) Implements Il_Persona.Listar
+    Public Function Listar(ByVal oePersona As e_Persona) As System.Collections.Generic.List(Of e_Persona) Implements Il_Persona.Listar
         Try
             Return odPersona.Listar(oePersona)
         Catch ex As Exception
@@ -95,7 +95,7 @@ Public Class l_Persona
         End Try
     End Function
 
-    Public Function Obtener(ByVal oePersona As EntidadesWCF.e_Persona) As EntidadesWCF.e_Persona Implements Il_Persona.Obtener
+    Public Function Obtener(ByVal oePersona As e_Persona) As e_Persona Implements Il_Persona.Obtener
         Try
             Return odPersona.Obtener(oePersona)
         Catch ex As Exception
@@ -109,7 +109,7 @@ Public Class l_Persona
     ''' <param name="oePersona">Objeto Persona</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oePersona As EntidadesWCF.e_Persona) As Boolean Implements Il_Persona.Validar
+    Public Function Validar(ByVal oePersona As e_Persona) As Boolean Implements Il_Persona.Validar
         Try
             With oePersona
                 ValidarDNI(.Id, .Dni)

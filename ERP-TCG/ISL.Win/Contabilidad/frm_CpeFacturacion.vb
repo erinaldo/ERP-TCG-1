@@ -15,7 +15,7 @@ Imports System.Xml
 Imports System.Xml.Schema
 Imports System.IO
 Imports System.Threading
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.Misc
 

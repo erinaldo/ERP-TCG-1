@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 ' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_ClienteViajePrimaDet" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_ClienteViajePrimaDet.svc o l_ClienteViajePrimaDet.svc.vb en el Explorador de soluciones e inicie la depuración.
 Public Class l_ClienteViajePrimaDet
@@ -6,7 +7,7 @@ Public Class l_ClienteViajePrimaDet
 
     Dim odClienteViajePrimaDet As New d_ClienteViajePrimaDet
 
-    Public Function Eliminar(oeClienteViajePrimaDet As EntidadesWCF.e_ClienteViajePrimaDet) As Boolean Implements Il_ClienteViajePrimaDet.Eliminar
+    Public Function Eliminar(oeClienteViajePrimaDet As e_ClienteViajePrimaDet) As Boolean Implements Il_ClienteViajePrimaDet.Eliminar
         Try
             Return odClienteViajePrimaDet.Eliminar(oeClienteViajePrimaDet)
         Catch ex As Exception
@@ -14,7 +15,7 @@ Public Class l_ClienteViajePrimaDet
         End Try
     End Function
 
-    Public Function Guardar(oeClienteViajePrimaDet As EntidadesWCF.e_ClienteViajePrimaDet) As Boolean Implements Il_ClienteViajePrimaDet.Guardar
+    Public Function Guardar(oeClienteViajePrimaDet As e_ClienteViajePrimaDet) As Boolean Implements Il_ClienteViajePrimaDet.Guardar
         Try
             Return odClienteViajePrimaDet.Guardar(oeClienteViajePrimaDet)
         Catch ex As Exception
@@ -22,7 +23,7 @@ Public Class l_ClienteViajePrimaDet
         End Try
     End Function
 
-    Public Function Listar(oeClienteViajePrimaDet As EntidadesWCF.e_ClienteViajePrimaDet) As List(Of EntidadesWCF.e_ClienteViajePrimaDet) Implements Il_ClienteViajePrimaDet.Listar
+    Public Function Listar(oeClienteViajePrimaDet As e_ClienteViajePrimaDet) As List(Of e_ClienteViajePrimaDet) Implements Il_ClienteViajePrimaDet.Listar
         Try
             Return odClienteViajePrimaDet.Listar(oeClienteViajePrimaDet)
         Catch ex As Exception
@@ -30,7 +31,7 @@ Public Class l_ClienteViajePrimaDet
         End Try
     End Function
 
-    Public Function Obtener(oeClienteViajePrimaDet As EntidadesWCF.e_ClienteViajePrimaDet) As EntidadesWCF.e_ClienteViajePrimaDet Implements Il_ClienteViajePrimaDet.Obtener
+    Public Function Obtener(oeClienteViajePrimaDet As e_ClienteViajePrimaDet) As e_ClienteViajePrimaDet Implements Il_ClienteViajePrimaDet.Obtener
         Try
             Return odClienteViajePrimaDet.Obtener(oeClienteViajePrimaDet)
         Catch ex As Exception

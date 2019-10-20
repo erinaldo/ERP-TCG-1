@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_DetalleRegConformidadOT
 
     Dim odDetalleRegConformidadOT As New d_DetalleRegConformidadOT
 
-    Public Function Eliminar(ByVal oeDetalleRegConformidadOT As EntidadesWCF.e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Eliminar
+    Public Function Eliminar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Eliminar
         Try
             Return odDetalleRegConformidadOT.Eliminar(oeDetalleRegConformidadOT)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_DetalleRegConformidadOT
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDetalleRegConformidadOT As EntidadesWCF.e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Guardar
+    Public Function Guardar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Guardar
         Try
             If Validar(oeDetalleRegConformidadOT) Then
                 Return odDetalleRegConformidadOT.Guardar(oeDetalleRegConformidadOT)
@@ -26,7 +26,7 @@ Public Class l_DetalleRegConformidadOT
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDetalleRegConformidadOT As EntidadesWCF.e_DetalleRegConformidadOT) As System.Data.DataSet Implements Il_DetalleRegConformidadOT.Listar
+    Public Function Listar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As System.Data.DataSet Implements Il_DetalleRegConformidadOT.Listar
         Try
             Return odDetalleRegConformidadOT.Listar(oeDetalleRegConformidadOT)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_DetalleRegConformidadOT
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDetalleRegConformidadOT As EntidadesWCF.e_DetalleRegConformidadOT) As EntidadesWCF.e_DetalleRegConformidadOT Implements Il_DetalleRegConformidadOT.Obtener
+    Public Function Obtener(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As e_DetalleRegConformidadOT Implements Il_DetalleRegConformidadOT.Obtener
         Try
             Return odDetalleRegConformidadOT.Obtener(oeDetalleRegConformidadOT)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DetalleRegConformidadOT
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDetalleRegConformidadOT As EntidadesWCF.e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Validar
+    Public Function Validar(ByVal oeDetalleRegConformidadOT As e_DetalleRegConformidadOT) As Boolean Implements Il_DetalleRegConformidadOT.Validar
         Try
             With oeDetalleRegConformidadOT
                 '---------VALIDARRRRRRRRRR-------------

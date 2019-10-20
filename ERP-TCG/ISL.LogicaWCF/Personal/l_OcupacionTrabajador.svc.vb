@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_OcupacionTrabajador
 
     Dim odOcupacionTrabajador As New d_OcupacionTrabajador
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
-    Public Function Eliminar(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Eliminar
+    Public Function Eliminar(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Eliminar
         Try
             Return odOcupacionTrabajador.Eliminar(oeOcupacionTrabajador)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_OcupacionTrabajador
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Guardar
+    Public Function Guardar(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Guardar
         Try
             If Validar(oeOcupacionTrabajador) Then
                 Return odOcupacionTrabajador.Guardar(oeOcupacionTrabajador)
@@ -26,7 +26,7 @@ Public Class l_OcupacionTrabajador
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_OcupacionTrabajador) Implements Il_OcupacionTrabajador.Listar
+    Public Function Listar(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) As System.Collections.Generic.List(Of e_OcupacionTrabajador) Implements Il_OcupacionTrabajador.Listar
         Try
             Return odOcupacionTrabajador.Listar(oeOcupacionTrabajador)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_OcupacionTrabajador
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) As EntidadesWCF.e_OcupacionTrabajador Implements Il_OcupacionTrabajador.Obtener
+    Public Function Obtener(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) As e_OcupacionTrabajador Implements Il_OcupacionTrabajador.Obtener
         Try
             Return odOcupacionTrabajador.Obtener(oeOcupacionTrabajador)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OcupacionTrabajador
         End Try
     End Function
 
-    Public Sub ObtenerJefeArea(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) Implements Il_OcupacionTrabajador.ObtenerJefeArea
+    Public Sub ObtenerJefeArea(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) Implements Il_OcupacionTrabajador.ObtenerJefeArea
         Try
             odOcupacionTrabajador.ObtenerJefeArea(oeOcupacionTrabajador)
         Catch ex As Exception
@@ -56,7 +56,7 @@ Public Class l_OcupacionTrabajador
     ''' <param name="oeOcupacionTrabajador"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeOcupacionTrabajador As EntidadesWCF.e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Validar
+    Public Function Validar(ByVal oeOcupacionTrabajador As e_OcupacionTrabajador) As Boolean Implements Il_OcupacionTrabajador.Validar
         Try
             With oeOcupacionTrabajador
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdArea, "Falta ingresar el Area donde presta servicios el trabajador")

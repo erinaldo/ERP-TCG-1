@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ConceptosGenerales
     Dim odConceptosGenerales As New d_ConceptosGenerales
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Eliminar
+    Public Function Eliminar(ByVal oeConceptosGenerales As e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Eliminar
         Try
             If oeConceptosGenerales.Protegido Then Throw New Exception("El concepto general está protegido y por tal no puede ser eliminado")
             Return odConceptosGenerales.Eliminar(oeConceptosGenerales)
@@ -26,7 +26,7 @@ Public Class l_ConceptosGenerales
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Guardar
+    Public Function Guardar(ByVal oeConceptosGenerales As e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Guardar
         Try
             If Validar(oeConceptosGenerales) Then Return odConceptosGenerales.Guardar(oeConceptosGenerales)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_ConceptosGenerales
         End Try
     End Function
 
-    Public Function Listar(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As System.Collections.Generic.List(Of EntidadesWCF.e_ConceptosGenerales) Implements Il_ConceptosGenerales.Listar
+    Public Function Listar(ByVal oeConceptosGenerales As e_ConceptosGenerales) As System.Collections.Generic.List(Of e_ConceptosGenerales) Implements Il_ConceptosGenerales.Listar
         Try
             Return odConceptosGenerales.Listar(oeConceptosGenerales)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ConceptosGenerales
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As EntidadesWCF.e_ConceptosGenerales Implements Il_ConceptosGenerales.Obtener
+    Public Function Obtener(ByVal oeConceptosGenerales As e_ConceptosGenerales) As e_ConceptosGenerales Implements Il_ConceptosGenerales.Obtener
         Try
             Return odConceptosGenerales.Obtener(oeConceptosGenerales)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_ConceptosGenerales
         End Try
     End Function
 
-    Public Function Validar(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Validar
+    Public Function Validar(ByVal oeConceptosGenerales As e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.Validar
         Try
             With oeConceptosGenerales
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdProcesoNegocio, "Debe seleccionar algún proceso asociado")
@@ -69,7 +69,7 @@ Public Class l_ConceptosGenerales
     ''' <param name="oeConceptosGenerales">Objeto de tipo ConceptosGenerales</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ValidarDuplicado(ByVal oeConceptosGenerales As EntidadesWCF.e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.ValidarDuplicado
+    Public Function ValidarDuplicado(ByVal oeConceptosGenerales As e_ConceptosGenerales) As Boolean Implements Il_ConceptosGenerales.ValidarDuplicado
         Try
             If String.IsNullOrEmpty(oeConceptosGenerales.IdProcesoNegocio) Then Throw New Exception("No se ha definido que proceso se va a verificar si existe")
             If String.IsNullOrEmpty(oeConceptosGenerales.Nombre) Then Throw New Exception("No se ha especificado concepto que se va a validar")

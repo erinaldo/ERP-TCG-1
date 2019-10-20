@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_FondoPensionTrabajador
     Private odFondoPensionTrabajador As New d_FondoPensionTrabajador
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeFondoPensionTrabajador As EntidadesWCF.e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Eliminar
+    Public Function Eliminar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Eliminar
         Try
             Return odFondoPensionTrabajador.Eliminar(oeFondoPensionTrabajador)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_FondoPensionTrabajador
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFondoPensionTrabajador As EntidadesWCF.e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Guardar
+    Public Function Guardar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Guardar
         Try
             If Validar(oeFondoPensionTrabajador) Then
                 Return odFondoPensionTrabajador.Guardar(oeFondoPensionTrabajador)
@@ -35,7 +35,7 @@ Public Class l_FondoPensionTrabajador
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leFondoPensionTrabajador As System.Collections.Generic.List(Of EntidadesWCF.e_FondoPensionTrabajador), ByVal PrefijoID As String) As Boolean Implements Il_FondoPensionTrabajador.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leFondoPensionTrabajador As System.Collections.Generic.List(Of e_FondoPensionTrabajador), ByVal PrefijoID As String) As Boolean Implements Il_FondoPensionTrabajador.GuardarMasivo
         Try
             Dim dtRP As Data.DataTable = CrearDT()
             Dim id As String = odFondoPensionTrabajador.UltimoIdInserta(PrefijoID)
@@ -68,7 +68,7 @@ Public Class l_FondoPensionTrabajador
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFondoPensionTrabajador As EntidadesWCF.e_FondoPensionTrabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_FondoPensionTrabajador) Implements Il_FondoPensionTrabajador.Listar
+    Public Function Listar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As System.Collections.Generic.List(Of e_FondoPensionTrabajador) Implements Il_FondoPensionTrabajador.Listar
         Try
             Return odFondoPensionTrabajador.Listar(oeFondoPensionTrabajador)
         Catch ex As Exception
@@ -76,7 +76,7 @@ Public Class l_FondoPensionTrabajador
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeFondoPensionTrabajador As EntidadesWCF.e_FondoPensionTrabajador) As EntidadesWCF.e_FondoPensionTrabajador Implements Il_FondoPensionTrabajador.Obtener
+    Public Function Obtener(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As e_FondoPensionTrabajador Implements Il_FondoPensionTrabajador.Obtener
         Try
             Return odFondoPensionTrabajador.Obtener(oeFondoPensionTrabajador)
         Catch ex As Exception
@@ -84,7 +84,7 @@ Public Class l_FondoPensionTrabajador
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFondoPensionTrabajador As EntidadesWCF.e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Validar
+    Public Function Validar(ByVal oeFondoPensionTrabajador As e_FondoPensionTrabajador) As Boolean Implements Il_FondoPensionTrabajador.Validar
         Try
             With oeFondoPensionTrabajador
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "No ha Ingresado Trabajador")

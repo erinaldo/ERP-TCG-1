@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -27,7 +27,7 @@ Public Class l_Banco
     ''' <param name="oeBanco"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeBanco As EntidadesWCF.e_Banco) As Boolean Implements Il_Banco.Eliminar
+    Public Function Eliminar(ByVal oeBanco As e_Banco) As Boolean Implements Il_Banco.Eliminar
         Try
             Return odBanco.Eliminar(oeBanco)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_Banco
     ''' <param name="oeBanco"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeBanco As EntidadesWCF.e_Banco) As Boolean Implements Il_Banco.Guardar
+    Public Function Guardar(ByVal oeBanco As e_Banco) As Boolean Implements Il_Banco.Guardar
         Try
             If Validar(oeBanco) Then
                 Return odBanco.Guardar(oeBanco)
@@ -57,7 +57,7 @@ Public Class l_Banco
     ''' <param name="oeBanco"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeBanco As EntidadesWCF.e_Banco) As System.Collections.Generic.List(Of EntidadesWCF.e_Banco) Implements Il_Banco.Listar
+    Public Function Listar(ByVal oeBanco As e_Banco) As System.Collections.Generic.List(Of e_Banco) Implements Il_Banco.Listar
         Try
             Return odBanco.Listar(oeBanco)
         Catch ex As Exception
@@ -71,7 +71,7 @@ Public Class l_Banco
     ''' <param name="oeBanco"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeBanco As EntidadesWCF.e_Banco) As EntidadesWCF.e_Banco Implements Il_Banco.Obtener
+    Public Function Obtener(ByVal oeBanco As e_Banco) As e_Banco Implements Il_Banco.Obtener
         Try
             Return odBanco.Obtener(oeBanco)
         Catch ex As Exception
@@ -85,7 +85,7 @@ Public Class l_Banco
     ''' <param name="oeBanco"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeBanco As EntidadesWCF.e_Banco) As Boolean Implements Il_Banco.Validar
+    Public Function Validar(ByVal oeBanco As e_Banco) As Boolean Implements Il_Banco.Validar
         Try
             With oeBanco
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre del Banco")

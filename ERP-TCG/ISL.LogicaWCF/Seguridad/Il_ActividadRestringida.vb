@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 ' NOTA: si cambia aquí el nombre de clase "Il_ActividadRestringida", también debe actualizar la referencia a "Il_ActividadRestringida" en Web.config.
 <ServiceContract()> _
 Public Interface Il_ActividadRestringida

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -15,7 +15,7 @@ Public Class l_OrdenAsignacion
     Dim oeIgv As New e_Impuesto
     Dim olIgv As New l_Impuesto
 
-    Public Function Eliminar(ByVal oeOrdenAsignacion As EntidadesWCF.e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Eliminar
+    Public Function Eliminar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Eliminar
         Try
             Return odOrdenAsignacion.Eliminar(oeOrdenAsignacion)
         Catch ex As Exception
@@ -23,7 +23,7 @@ Public Class l_OrdenAsignacion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenAsignacion As EntidadesWCF.e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Guardar
+    Public Function Guardar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Guardar
         Try
             Dim idOT As String = ""
             Dim nigv As Double = 0
@@ -235,7 +235,7 @@ Public Class l_OrdenAsignacion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenAsignacion As EntidadesWCF.e_OrdenAsignacion) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenAsignacion) Implements Il_OrdenAsignacion.Listar
+    Public Function Listar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As System.Collections.Generic.List(Of e_OrdenAsignacion) Implements Il_OrdenAsignacion.Listar
         Try
             Return odOrdenAsignacion.Listar(oeOrdenAsignacion)
         Catch ex As Exception
@@ -243,7 +243,7 @@ Public Class l_OrdenAsignacion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenAsignacion As EntidadesWCF.e_OrdenAsignacion) As EntidadesWCF.e_OrdenAsignacion Implements Il_OrdenAsignacion.Obtener
+    Public Function Obtener(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As e_OrdenAsignacion Implements Il_OrdenAsignacion.Obtener
         Try
             Return odOrdenAsignacion.Obtener(oeOrdenAsignacion)
         Catch ex As Exception
@@ -251,7 +251,7 @@ Public Class l_OrdenAsignacion
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenAsignacion As EntidadesWCF.e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Validar
+    Public Function Validar(ByVal oeOrdenAsignacion As e_OrdenAsignacion) As Boolean Implements Il_OrdenAsignacion.Validar
         Try
             With oeOrdenAsignacion
 
@@ -269,7 +269,7 @@ Public Class l_OrdenAsignacion
         End Try
     End Function
 
-    Public Function ListarReporte(ByVal oeReporteOA As EntidadesWCF.e_ReporteOA) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteOA) Implements Il_OrdenAsignacion.ListarReporte
+    Public Function ListarReporte(ByVal oeReporteOA As e_ReporteOA) As System.Collections.Generic.List(Of e_ReporteOA) Implements Il_OrdenAsignacion.ListarReporte
         Try
             Return odOrdenAsignacion.ListarReporte(oeReporteOA)
         Catch ex As Exception

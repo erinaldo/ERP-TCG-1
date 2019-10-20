@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_ConfiguracionSisDet
 
     Dim odConfiguracionSisDet As New d_ConfiguracionSisDet
 
-    Public Function Eliminar(ByVal oeConfiguracionSisDet As EntidadesWCF.e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Eliminar
+    Public Function Eliminar(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Eliminar
         Try
             Return odConfiguracionSisDet.Eliminar(oeConfiguracionSisDet)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_ConfiguracionSisDet
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeConfiguracionSisDet As EntidadesWCF.e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Guardar
+    Public Function Guardar(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Guardar
         Try
             If Validar(oeConfiguracionSisDet) Then
                 Return odConfiguracionSisDet.Guardar(oeConfiguracionSisDet)
@@ -34,7 +34,7 @@ Public Class l_ConfiguracionSisDet
         End Try
     End Function
 
-    Public Function Listar(ByVal oeConfiguracionSisDet As EntidadesWCF.e_ConfiguracionSisDet) As System.Collections.Generic.List(Of EntidadesWCF.e_ConfiguracionSisDet) Implements Il_ConfiguracionSisDet.Listar
+    Public Function Listar(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As System.Collections.Generic.List(Of e_ConfiguracionSisDet) Implements Il_ConfiguracionSisDet.Listar
         Try
             Return odConfiguracionSisDet.Listar(oeConfiguracionSisDet)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ConfiguracionSisDet
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeConfiguracionSisDet As EntidadesWCF.e_ConfiguracionSisDet) As EntidadesWCF.e_ConfiguracionSisDet Implements Il_ConfiguracionSisDet.Obtener
+    Public Function Obtener(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As e_ConfiguracionSisDet Implements Il_ConfiguracionSisDet.Obtener
         Try
             Return odConfiguracionSisDet.Obtener(oeConfiguracionSisDet)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_ConfiguracionSisDet
         End Try
     End Function
 
-    Public Function Validar(ByVal oeConfiguracionSisDet As EntidadesWCF.e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Validar
+    Public Function Validar(ByVal oeConfiguracionSisDet As e_ConfiguracionSisDet) As Boolean Implements Il_ConfiguracionSisDet.Validar
         Try
             With oeConfiguracionSisDet
                 If oeConfiguracionSisDet.IdConfiguracionSis <> "1CH000001" Then

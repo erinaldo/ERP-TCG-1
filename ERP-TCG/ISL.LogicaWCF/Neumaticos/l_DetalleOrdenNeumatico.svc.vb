@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_DetalleOrdenNeumatico
@@ -8,7 +8,7 @@ Public Class l_DetalleOrdenNeumatico
 
     Dim odDetalleOrdenNeumatico As New d_DetalleOrdenNeumatico
 
-    Public Function Eliminar(ByVal oedetalleordenneumatico As EntidadesWCF.e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Eliminar
+    Public Function Eliminar(ByVal oedetalleordenneumatico As e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Eliminar
         Try
             Return odDetalleOrdenNeumatico.Eliminar(oedetalleordenneumatico)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_DetalleOrdenNeumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oedetalleordenneumatico As EntidadesWCF.e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Guardar
+    Public Function Guardar(ByVal oedetalleordenneumatico As e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Guardar
         Try
             If Validar(oedetalleordenneumatico) Then
                 Return odDetalleOrdenNeumatico.Guardar(oedetalleordenneumatico)
@@ -26,7 +26,7 @@ Public Class l_DetalleOrdenNeumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oedetalleordenneumatico As EntidadesWCF.e_DetalleOrdenNeumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_DetalleOrdenNeumatico) Implements Il_DetalleOrdenNeumatico.Listar
+    Public Function Listar(ByVal oedetalleordenneumatico As e_DetalleOrdenNeumatico) As System.Collections.Generic.List(Of e_DetalleOrdenNeumatico) Implements Il_DetalleOrdenNeumatico.Listar
         Try
             Return odDetalleOrdenNeumatico.Listar(oedetalleordenneumatico)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_DetalleOrdenNeumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oedetalleordenneumatico As EntidadesWCF.e_DetalleOrdenNeumatico) As EntidadesWCF.e_DetalleOrdenNeumatico Implements Il_DetalleOrdenNeumatico.Obtener
+    Public Function Obtener(ByVal oedetalleordenneumatico As e_DetalleOrdenNeumatico) As e_DetalleOrdenNeumatico Implements Il_DetalleOrdenNeumatico.Obtener
         Try
             Return odDetalleOrdenNeumatico.Obtener(oedetalleordenneumatico)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DetalleOrdenNeumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oedetalleordenneumatico As EntidadesWCF.e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Validar
+    Public Function Validar(ByVal oedetalleordenneumatico As e_DetalleOrdenNeumatico) As Boolean Implements Il_DetalleOrdenNeumatico.Validar
 
     End Function
 End Class

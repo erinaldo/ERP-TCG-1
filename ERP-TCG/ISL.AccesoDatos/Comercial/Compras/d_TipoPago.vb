@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 ''' <summary>
 ''' Clase que indica los tipos de pago al realizar una compra que se requieren por ejemplo: contado,credito,etc.  
 ''' Fecha Actualizada:31/10/2011.

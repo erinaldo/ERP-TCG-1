@@ -1,7 +1,7 @@
 ﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_VehiculoPilotoOperacion" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_VehiculoPilotoOperacion.svc o l_VehiculoPilotoOperacion.svc.vb en el Explorador de soluciones e inicie la depuración.
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 

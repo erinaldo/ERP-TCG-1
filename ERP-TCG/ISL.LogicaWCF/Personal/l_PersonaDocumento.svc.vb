@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -43,7 +43,7 @@ Public Class l_PersonaDocumento
         Return CtaCtePer
     End Function
 
-    Public Function Eliminar(oePersonaDocumento As EntidadesWCF.e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Eliminar
+    Public Function Eliminar(oePersonaDocumento As e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Eliminar
         Try
             Return odPersonaDocumento.Eliminar(oePersonaDocumento)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function Guardar(oePersonaDocumento As EntidadesWCF.e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Guardar
+    Public Function Guardar(oePersonaDocumento As e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Guardar
         Try
             If Validar(oePersonaDocumento) Then
                 Return odPersonaDocumento.Guardar(oePersonaDocumento)
@@ -61,7 +61,7 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function GuardarMasivo(lePersonaDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaDocumento), ByVal PrefijoID As String) As Boolean Implements Il_PersonaDocumento.GuardarMasivo
+    Public Function GuardarMasivo(lePersonaDocumento As System.Collections.Generic.List(Of e_PersonaDocumento), ByVal PrefijoID As String) As Boolean Implements Il_PersonaDocumento.GuardarMasivo
         Try
             Dim dtPD As Data.DataTable = CrearDT()
             Dim id As String = odPersonaDocumento.UltimoIdInserta(PrefijoID)
@@ -94,7 +94,7 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function Listar(oePersonaDocumento As EntidadesWCF.e_PersonaDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaDocumento) Implements Il_PersonaDocumento.Listar
+    Public Function Listar(oePersonaDocumento As e_PersonaDocumento) As System.Collections.Generic.List(Of e_PersonaDocumento) Implements Il_PersonaDocumento.Listar
         Try
             Return odPersonaDocumento.Listar(oePersonaDocumento)
         Catch ex As Exception
@@ -102,7 +102,7 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function Obtener(oePersonaDocumento As EntidadesWCF.e_PersonaDocumento) As EntidadesWCF.e_PersonaDocumento Implements Il_PersonaDocumento.Obtener
+    Public Function Obtener(oePersonaDocumento As e_PersonaDocumento) As e_PersonaDocumento Implements Il_PersonaDocumento.Obtener
         Try
             Return odPersonaDocumento.Obtener(oePersonaDocumento)
         Catch ex As Exception
@@ -110,7 +110,7 @@ Public Class l_PersonaDocumento
         End Try
     End Function
 
-    Public Function Validar(oePersonaDocumento As EntidadesWCF.e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Validar
+    Public Function Validar(oePersonaDocumento As e_PersonaDocumento) As Boolean Implements Il_PersonaDocumento.Validar
         Try
             With oePersonaDocumento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdPersona, "No ha Ingresado Persona")

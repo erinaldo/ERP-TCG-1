@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_ActividadNegocio
     Dim odActividadNegocio As New d_ActividadNegocio
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeActividadNegocio As EntidadesWCF.e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Eliminar
+    Public Function Eliminar(ByVal oeActividadNegocio As e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Eliminar
         Try
             Return odActividadNegocio.Eliminar(oeActividadNegocio)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_ActividadNegocio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeActividadNegocio As EntidadesWCF.e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Guardar
+    Public Function Guardar(ByVal oeActividadNegocio As e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Guardar
         Try
             If Validar(oeActividadNegocio) Then
                 Return odActividadNegocio.Guardar(oeActividadNegocio)
@@ -35,7 +35,7 @@ Public Class l_ActividadNegocio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeActividadNegocio As EntidadesWCF.e_ActividadNegocio) As System.Collections.Generic.List(Of EntidadesWCF.e_ActividadNegocio) Implements Il_ActividadNegocio.Listar
+    Public Function Listar(ByVal oeActividadNegocio As e_ActividadNegocio) As System.Collections.Generic.List(Of e_ActividadNegocio) Implements Il_ActividadNegocio.Listar
         Try
             Return odActividadNegocio.Listar(oeActividadNegocio)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ActividadNegocio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeActividadNegocio As EntidadesWCF.e_ActividadNegocio) As EntidadesWCF.e_ActividadNegocio Implements Il_ActividadNegocio.Obtener
+    Public Function Obtener(ByVal oeActividadNegocio As e_ActividadNegocio) As e_ActividadNegocio Implements Il_ActividadNegocio.Obtener
         Try
             Return odActividadNegocio.Obtener(oeActividadNegocio)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ActividadNegocio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeActividadNegocio As EntidadesWCF.e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Validar
+    Public Function Validar(ByVal oeActividadNegocio As e_ActividadNegocio) As Boolean Implements Il_ActividadNegocio.Validar
         Try
             With oeActividadNegocio
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese Codigo")
@@ -63,7 +63,7 @@ Public Class l_ActividadNegocio
         End Try
     End Function
 
-    Public Function ValidarLista(ByVal leActividadNegocio As System.Collections.Generic.List(Of EntidadesWCF.e_ActividadNegocio)) As Boolean Implements Il_ActividadNegocio.ValidarLista
+    Public Function ValidarLista(ByVal leActividadNegocio As System.Collections.Generic.List(Of e_ActividadNegocio)) As Boolean Implements Il_ActividadNegocio.ValidarLista
         Try
             If Not leActividadNegocio Is Nothing Then
                 For i As Integer = 0 To leActividadNegocio.Count - 1

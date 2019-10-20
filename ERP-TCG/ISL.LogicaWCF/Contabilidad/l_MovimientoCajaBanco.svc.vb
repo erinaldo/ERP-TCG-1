@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -39,7 +39,7 @@ Public Class l_MovimientoCajaBanco
         Return MovCajaBanco
     End Function
 
-    Public Function Eliminar(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Eliminar
+    Public Function Eliminar(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Eliminar
         Try
             Return odMovimientoCajaBanco.Eliminar(oeMovimientoCajaBanco)
         Catch ex As Exception
@@ -47,7 +47,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Guardar
+    Public Function Guardar(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Guardar
         Try
             If Validar(oeMovimientoCajaBanco) Then
                 Return odMovimientoCajaBanco.Guardar(oeMovimientoCajaBanco)
@@ -57,7 +57,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function GuardarConciliacion(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.GuardarConciliacion
+    Public Function GuardarConciliacion(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.GuardarConciliacion
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo(oeMovimientoCajaBanco.IdPeriodoConcilia, gAreasSGI.Contabilidad)
@@ -67,9 +67,9 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function GuardarTranferencia(ByRef oeMovimientoCajaBancoOrigen As EntidadesWCF.e_MovimientoCajaBanco, _
-            ByVal oeMovimientoCajaBancoDestino As EntidadesWCF.e_MovimientoCajaBanco, _
-            ByVal oeAsiento As EntidadesWCF.e_Asiento, ByVal IndicaReposicion As Boolean, _
+    Public Function GuardarTranferencia(ByRef oeMovimientoCajaBancoOrigen As e_MovimientoCajaBanco, _
+            ByVal oeMovimientoCajaBancoDestino As e_MovimientoCajaBanco, _
+            ByVal oeAsiento As e_Asiento, ByVal IndicaReposicion As Boolean, _
             Optional ByVal TipoTransf As String = "") As Boolean Implements Il_MovimientoCajaBanco.GuardarTranferencia
         Try
             If ValidarTransferencia(oeMovimientoCajaBancoOrigen) Then
@@ -150,7 +150,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoCajaBanco) Implements Il_MovimientoCajaBanco.Listar
+    Public Function Listar(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As System.Collections.Generic.List(Of e_MovimientoCajaBanco) Implements Il_MovimientoCajaBanco.Listar
         Try
             Return odMovimientoCajaBanco.Listar(oeMovimientoCajaBanco)
         Catch ex As Exception
@@ -158,7 +158,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As EntidadesWCF.e_MovimientoCajaBanco Implements Il_MovimientoCajaBanco.Obtener
+    Public Function Obtener(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As e_MovimientoCajaBanco Implements Il_MovimientoCajaBanco.Obtener
         Try
             Return odMovimientoCajaBanco.Obtener(oeMovimientoCajaBanco)
         Catch ex As Exception
@@ -166,7 +166,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Validar
+    Public Function Validar(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.Validar
         Try
             With oeMovimientoCajaBanco
                 '---------VALIDARRRRRRRRRR-------------
@@ -177,7 +177,7 @@ Public Class l_MovimientoCajaBanco
         End Try
     End Function
 
-    Public Function ValidarTransferencia(ByVal oeMovimientoCajaBanco As EntidadesWCF.e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.ValidarTransferencia
+    Public Function ValidarTransferencia(ByVal oeMovimientoCajaBanco As e_MovimientoCajaBanco) As Boolean Implements Il_MovimientoCajaBanco.ValidarTransferencia
         Try
             With oeMovimientoCajaBanco
                 '---------VALIDARRRRRRRRRR-------------

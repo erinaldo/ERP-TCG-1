@@ -8,7 +8,7 @@
 
 Imports System.Text
 Imports System.Data.SqlClient
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class frm_Mapa
     Inherits ISL.Win.frm_MenuPadre

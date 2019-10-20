@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 
 Public Class l_ContratoFinanciero
@@ -20,7 +20,7 @@ Public Class l_ContratoFinanciero
     Private leObliFinAux As New List(Of e_ObligacionFin), leAsiento As New List(Of e_Asiento)
     Private olFunGen As New l_FuncionesGenerales
 
-    Public Function Obtener(ByVal oeContratoFinanciero As EntidadesWCF.e_ContratoFinanciero) As EntidadesWCF.e_ContratoFinanciero Implements Il_ContratoFinanciero.e_ContratoFinanciero
+    Public Function Obtener(ByVal oeContratoFinanciero As e_ContratoFinanciero) As e_ContratoFinanciero Implements Il_ContratoFinanciero.e_ContratoFinanciero
         Try
             Return odContratoFinanciero.Obtener(oeContratoFinanciero)
         Catch ex As Exception
@@ -28,7 +28,7 @@ Public Class l_ContratoFinanciero
         End Try
     End Function
 
-    Public Function Listar(ByVal oeContratoFinanciero As EntidadesWCF.e_ContratoFinanciero) As List(Of EntidadesWCF.e_ContratoFinanciero) Implements Il_ContratoFinanciero.Listar
+    Public Function Listar(ByVal oeContratoFinanciero As e_ContratoFinanciero) As List(Of e_ContratoFinanciero) Implements Il_ContratoFinanciero.Listar
         Try
             Return odContratoFinanciero.Listar(oeContratoFinanciero)
         Catch ex As Exception
@@ -36,7 +36,7 @@ Public Class l_ContratoFinanciero
         End Try
     End Function
 
-    Public Function ListarDS(ByVal oeContratoFinanciero As EntidadesWCF.e_ContratoFinanciero) As System.Data.DataSet Implements Il_ContratoFinanciero.ListarDS
+    Public Function ListarDS(ByVal oeContratoFinanciero As e_ContratoFinanciero) As System.Data.DataSet Implements Il_ContratoFinanciero.ListarDS
         Try
             Return odContratoFinanciero.ListarDS(oeContratoFinanciero)
         Catch ex As Exception

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Neumatico
     Dim odNeumatico As New d_Neumatico
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As Boolean Implements Il_Neumatico.Eliminar
+    Public Function Eliminar(ByVal oeNeumatico As e_Neumatico) As Boolean Implements Il_Neumatico.Eliminar
         Try
             Return odNeumatico.Eliminar(oeNeumatico)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As Boolean Implements Il_Neumatico.Guardar
+    Public Function Guardar(ByVal oeNeumatico As e_Neumatico) As Boolean Implements Il_Neumatico.Guardar
         Try
             If Validar(oeNeumatico) Then
                 Return odNeumatico.Guardar(oeNeumatico)
@@ -35,7 +35,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_Neumatico) Implements Il_Neumatico.Listar
+    Public Function Listar(ByVal oeNeumatico As e_Neumatico) As System.Collections.Generic.List(Of e_Neumatico) Implements Il_Neumatico.Listar
         Try
             Return odNeumatico.Listar(oeNeumatico)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function ListarDS(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As System.Data.DataSet Implements Il_Neumatico.ListarDS
+    Public Function ListarDS(ByVal oeNeumatico As e_Neumatico) As System.Data.DataSet Implements Il_Neumatico.ListarDS
         Try
             Return odNeumatico.ListarDS(oeNeumatico)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As EntidadesWCF.e_Neumatico Implements Il_Neumatico.Obtener
+    Public Function Obtener(ByVal oeNeumatico As e_Neumatico) As e_Neumatico Implements Il_Neumatico.Obtener
         Try
             Return odNeumatico.Obtener(oeNeumatico)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As Boolean Implements Il_Neumatico.Validar
+    Public Function Validar(ByVal oeNeumatico As e_Neumatico) As Boolean Implements Il_Neumatico.Validar
         Try
             With oeNeumatico
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeNeumatico.Codigo, "No ha ingresado Codigo nuevo: ")
@@ -96,7 +96,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function Confirmar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As Boolean Implements Il_Neumatico.Confirmar
+    Public Function Confirmar(ByVal oeNeumatico As e_Neumatico) As Boolean Implements Il_Neumatico.Confirmar
         Try
             If Validar(oeNeumatico) Then
                 Return odNeumatico.ConfirmarNeu(oeNeumatico)
@@ -177,7 +177,7 @@ Public Class l_Neumatico
         End Try
     End Function
 
-    Public Function GuardarSinValidar(ByVal oeNeumatico As EntidadesWCF.e_Neumatico) As Boolean Implements Il_Neumatico.GuardarSinValidar
+    Public Function GuardarSinValidar(ByVal oeNeumatico As e_Neumatico) As Boolean Implements Il_Neumatico.GuardarSinValidar
         Try
             Return odNeumatico.Guardar(oeNeumatico)
         Catch ex As Exception

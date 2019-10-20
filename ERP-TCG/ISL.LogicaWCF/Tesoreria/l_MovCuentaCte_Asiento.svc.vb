@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -10,7 +10,7 @@ Public Class l_MovCuentaCte_Asiento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
 
-    Public Function Eliminar(ByVal oeMovCuentaCte_Asiento As EntidadesWCF.e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Eliminar
+    Public Function Eliminar(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Eliminar
         Try
             Return odMovCuentaCte_Asiento.Eliminar(oeMovCuentaCte_Asiento)
         Catch ex As Exception
@@ -18,7 +18,7 @@ Public Class l_MovCuentaCte_Asiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovCuentaCte_Asiento As EntidadesWCF.e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Guardar
+    Public Function Guardar(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Guardar
         Try
             If Validar(oeMovCuentaCte_Asiento) Then
                 Return odMovCuentaCte_Asiento.Guardar(oeMovCuentaCte_Asiento, Nothing)
@@ -28,7 +28,7 @@ Public Class l_MovCuentaCte_Asiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMovCuentaCte_Asiento As EntidadesWCF.e_MovCuentaCte_Asiento) As System.Collections.Generic.List(Of EntidadesWCF.e_MovCuentaCte_Asiento) Implements Il_MovCuentaCte_Asiento.Listar
+    Public Function Listar(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento) As System.Collections.Generic.List(Of e_MovCuentaCte_Asiento) Implements Il_MovCuentaCte_Asiento.Listar
         Try
             Return odMovCuentaCte_Asiento.Listar(oeMovCuentaCte_Asiento)
         Catch ex As Exception
@@ -36,7 +36,7 @@ Public Class l_MovCuentaCte_Asiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMovCuentaCte_Asiento As EntidadesWCF.e_MovCuentaCte_Asiento) As EntidadesWCF.e_MovCuentaCte_Asiento Implements Il_MovCuentaCte_Asiento.Obtener
+    Public Function Obtener(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento) As e_MovCuentaCte_Asiento Implements Il_MovCuentaCte_Asiento.Obtener
         Try
             Return odMovCuentaCte_Asiento.Obtener(oeMovCuentaCte_Asiento)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_MovCuentaCte_Asiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovCuentaCte_Asiento As EntidadesWCF.e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Validar
+    Public Function Validar(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento) As Boolean Implements Il_MovCuentaCte_Asiento.Validar
         Try
             With oeMovCuentaCte_Asiento
                 '---------VALIDARRRRRRRRRR-------------

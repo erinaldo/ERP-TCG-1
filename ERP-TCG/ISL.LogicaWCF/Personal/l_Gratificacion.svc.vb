@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -20,7 +20,7 @@ Public Class l_Gratificacion
     Private odDetalle As New d_DetalleGratificacion
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeGratificacion As EntidadesWCF.e_Gratificacion) As Boolean Implements Il_Gratificacion.Eliminar
+    Public Function Eliminar(oeGratificacion As e_Gratificacion) As Boolean Implements Il_Gratificacion.Eliminar
         Try
             Return odGratificacion.Eliminar(oeGratificacion)
         Catch ex As Exception
@@ -28,7 +28,7 @@ Public Class l_Gratificacion
         End Try
     End Function
 
-    Public Function Guardar(oeGratificacion As EntidadesWCF.e_Gratificacion) As Boolean Implements Il_Gratificacion.Guardar
+    Public Function Guardar(oeGratificacion As e_Gratificacion) As Boolean Implements Il_Gratificacion.Guardar
         Try
             If Validar(oeGratificacion) Then
                 Return odGratificacion.Guardar(oeGratificacion)
@@ -38,7 +38,7 @@ Public Class l_Gratificacion
         End Try
     End Function
 
-    Public Function Listar(oeGratificacion As EntidadesWCF.e_Gratificacion) As List(Of EntidadesWCF.e_Gratificacion) Implements Il_Gratificacion.Listar
+    Public Function Listar(oeGratificacion As e_Gratificacion) As List(Of e_Gratificacion) Implements Il_Gratificacion.Listar
         Try
             Return odGratificacion.Listar(oeGratificacion)
         Catch ex As Exception
@@ -46,7 +46,7 @@ Public Class l_Gratificacion
         End Try
     End Function
 
-    Public Function Obtener(oeGratificacion As EntidadesWCF.e_Gratificacion) As EntidadesWCF.e_Gratificacion Implements Il_Gratificacion.Obtener
+    Public Function Obtener(oeGratificacion As e_Gratificacion) As e_Gratificacion Implements Il_Gratificacion.Obtener
         Try
             Return odGratificacion.Obtener(oeGratificacion)
         Catch ex As Exception
@@ -54,7 +54,7 @@ Public Class l_Gratificacion
         End Try
     End Function
 
-    Public Function Validar(oeGratificacion As EntidadesWCF.e_Gratificacion) As Boolean Implements Il_Gratificacion.Validar
+    Public Function Validar(oeGratificacion As e_Gratificacion) As Boolean Implements Il_Gratificacion.Validar
         Try
             With oeGratificacion
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

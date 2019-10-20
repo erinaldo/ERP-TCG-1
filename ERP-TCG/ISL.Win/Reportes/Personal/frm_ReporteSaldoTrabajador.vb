@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports Microsoft.Reporting.WinForms
 
 Public Class frm_ReporteSaldoTrabajador

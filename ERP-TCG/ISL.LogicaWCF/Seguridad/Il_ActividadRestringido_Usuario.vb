@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_ActividadRestringido_Usuario", también debe actualizar la referencia a "Il_ActividadRestringido_Usuario" en Web.config.
 <ServiceContract()> _

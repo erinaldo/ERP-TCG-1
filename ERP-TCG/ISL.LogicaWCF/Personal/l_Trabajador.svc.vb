@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_Trabajador
     Dim odTrabajador As New d_Trabajador
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal ListaTrabajador As System.Collections.Generic.List(Of EntidadesWCF.e_Trabajador)) As Object Implements Il_Trabajador.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaTrabajador As System.Collections.Generic.List(Of e_Trabajador)) As Object Implements Il_Trabajador.ComboGrilla
         Try
             Return odTrabajador.ComboGrilla(ListaTrabajador)
         Catch ex As Exception
@@ -30,7 +30,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function EliminacionDefinitiva(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As Boolean Implements Il_Trabajador.EliminacionDefinitiva
+    Public Function EliminacionDefinitiva(ByVal oeTrabajador As e_Trabajador) As Boolean Implements Il_Trabajador.EliminacionDefinitiva
         Try
             If Validar(oeTrabajador) Then
                 odTrabajador.EliminacionDefinitiva(oeTrabajador)
@@ -47,7 +47,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador">Objeto Trabajador</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As Boolean Implements Il_Trabajador.Eliminar
+    Public Function Eliminar(ByVal oeTrabajador As e_Trabajador) As Boolean Implements Il_Trabajador.Eliminar
         Try
             If Validar(oeTrabajador) Then
                 odTrabajador.Eliminar(oeTrabajador)
@@ -64,7 +64,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador">Objeto Trabajador</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As Boolean Implements Il_Trabajador.Guardar
+    Public Function Guardar(ByVal oeTrabajador As e_Trabajador) As Boolean Implements Il_Trabajador.Guardar
         Try
             If Validar(oeTrabajador) Then
                 Return odTrabajador.Guardar(oeTrabajador)
@@ -80,7 +80,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador">Objeto Trabajador</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_Trabajador) Implements Il_Trabajador.Listar
+    Public Function Listar(ByVal oeTrabajador As e_Trabajador) As System.Collections.Generic.List(Of e_Trabajador) Implements Il_Trabajador.Listar
         Try
             Return odTrabajador.Listar(oeTrabajador)
         Catch ex As Exception
@@ -88,7 +88,7 @@ Public Class l_Trabajador
         End Try
     End Function
 
-    Public Function Listar2(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_Trabajador) Implements Il_Trabajador.Listar2
+    Public Function Listar2(ByVal oeTrabajador As e_Trabajador) As System.Collections.Generic.List(Of e_Trabajador) Implements Il_Trabajador.Listar2
         Try
             Return odTrabajador.Listar2(oeTrabajador)
         Catch ex As Exception
@@ -96,7 +96,7 @@ Public Class l_Trabajador
         End Try
     End Function
 
-    Public Function ListarOnomasticos(ByVal mes As String, Optional ByVal dia As String = "") As System.Collections.Generic.List(Of EntidadesWCF.e_Onomastico) Implements Il_Trabajador.ListarOnomasticos
+    Public Function ListarOnomasticos(ByVal mes As String, Optional ByVal dia As String = "") As System.Collections.Generic.List(Of e_Onomastico) Implements Il_Trabajador.ListarOnomasticos
         Try
             Return odTrabajador.ListarOnomasticos(mes, dia)
         Catch ex As Exception
@@ -110,7 +110,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador">Objeto Trabajador</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As EntidadesWCF.e_Trabajador Implements Il_Trabajador.Obtener
+    Public Function Obtener(ByVal oeTrabajador As e_Trabajador) As e_Trabajador Implements Il_Trabajador.Obtener
         Try
             Return odTrabajador.Obtener(oeTrabajador)
         Catch ex As Exception
@@ -118,7 +118,7 @@ Public Class l_Trabajador
         End Try
     End Function
 
-    Public Function ObtenerObjeto(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As EntidadesWCF.e_Trabajador Implements Il_Trabajador.ObtenerObjeto
+    Public Function ObtenerObjeto(ByVal oeTrabajador As e_Trabajador) As e_Trabajador Implements Il_Trabajador.ObtenerObjeto
         Try
             Return odTrabajador.ObtenerObjeto(oeTrabajador)
         Catch ex As Exception
@@ -132,7 +132,7 @@ Public Class l_Trabajador
     ''' <param name="oeTrabajador">Objeto Trabajador</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeTrabajador As EntidadesWCF.e_Trabajador) As Boolean Implements Il_Trabajador.Validar
+    Public Function Validar(ByVal oeTrabajador As e_Trabajador) As Boolean Implements Il_Trabajador.Validar
         Try
             With oeTrabajador
                 l_FuncionesGenerales.ValidarCampoNoNulo(.oePersona.Dni, "No ha Ingresado Dni")

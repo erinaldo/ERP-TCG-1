@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_DetalleDocumentoCombustible
 
     Dim odDetalleDocumentoCombustible As New d_DetalleDocumentoCombustible
 
-    Public Function Eliminar(ByVal oeDetalleDocumentoCombustible As EntidadesWCF.e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Eliminar
+    Public Function Eliminar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Eliminar
         Try
             Return odDetalleDocumentoCombustible.Eliminar(oeDetalleDocumentoCombustible)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_DetalleDocumentoCombustible
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDetalleDocumentoCombustible As EntidadesWCF.e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Guardar
+    Public Function Guardar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Guardar
         Try
             If Validar(oeDetalleDocumentoCombustible) Then
                 Return odDetalleDocumentoCombustible.Guardar(oeDetalleDocumentoCombustible)
@@ -26,7 +26,7 @@ Public Class l_DetalleDocumentoCombustible
         End Try
     End Function
 
-    'Public Function Listar(ByVal oeDetalleDocumentoCombustible As EntidadesWCF.e_DetalleDocumentoCombustible) As System.Collections.Generic.List(Of EntidadesWCF.e_DetalleDocumentoCombustible) Implements Il_DetalleDocumentoCombustible.Listar
+    'Public Function Listar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As System.Collections.Generic.List(Of e_DetalleDocumentoCombustible) Implements Il_DetalleDocumentoCombustible.Listar
     '    Try
     '        Return odDetalleDocumentoCombustible.Listar(oeDetalleDocumentoCombustible)
     '    Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_DetalleDocumentoCombustible
     '    End Try
     'End Function
 
-    'Public Function Obtener(ByVal oeDetalleDocumentoCombustible As EntidadesWCF.e_DetalleDocumentoCombustible) As EntidadesWCF.e_DetalleDocumentoCombustible Implements Il_DetalleDocumentoCombustible.Obtener
+    'Public Function Obtener(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As e_DetalleDocumentoCombustible Implements Il_DetalleDocumentoCombustible.Obtener
     '    Try
     '        Return odDetalleDocumentoCombustible.Obtener(oeDetalleDocumentoCombustible)
     '    Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DetalleDocumentoCombustible
     '    End Try
     'End Function
 
-    Public Function Validar(ByVal oeDetalleDocumentoCombustible As EntidadesWCF.e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Validar
+    Public Function Validar(ByVal oeDetalleDocumentoCombustible As e_DetalleDocumentoCombustible) As Boolean Implements Il_DetalleDocumentoCombustible.Validar
         Try
             With oeDetalleDocumentoCombustible
                 '---------VALIDARRRRRRRRRR-------------

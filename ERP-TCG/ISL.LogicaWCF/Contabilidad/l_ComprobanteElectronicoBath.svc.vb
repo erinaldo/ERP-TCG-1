@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 <DataContract(), Serializable()> _
 Public Class l_ComprobanteElectronicoBath
@@ -7,7 +7,7 @@ Public Class l_ComprobanteElectronicoBath
 
     Dim odComprobanteElectronicoBath As New d_ComprobanteElectronicoBath
 
-    Public Function Eliminar(oeComprobanteElectronicoBath As EntidadesWCF.e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Eliminar
+    Public Function Eliminar(oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Eliminar
         Try
             Return odComprobanteElectronicoBath.Eliminar(oeComprobanteElectronicoBath)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function Guardar(oeComprobanteElectronicoBath As EntidadesWCF.e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Guardar
+    Public Function Guardar(oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Guardar
         Try
             If Validar(oeComprobanteElectronicoBath) Then
                 Return odComprobanteElectronicoBath.Guardar(oeComprobanteElectronicoBath)
@@ -25,7 +25,7 @@ Public Class l_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function Listar(oeComprobanteElectronicoBath As EntidadesWCF.e_ComprobanteElectronicoBath) As List(Of EntidadesWCF.e_ComprobanteElectronicoBath) Implements Il_ComprobanteElectronicoBath.Listar
+    Public Function Listar(oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As List(Of e_ComprobanteElectronicoBath) Implements Il_ComprobanteElectronicoBath.Listar
         Try
             Return odComprobanteElectronicoBath.Listar(oeComprobanteElectronicoBath)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function Obtener(oeComprobanteElectronicoBath As EntidadesWCF.e_ComprobanteElectronicoBath) As EntidadesWCF.e_ComprobanteElectronicoBath Implements Il_ComprobanteElectronicoBath.Obtener
+    Public Function Obtener(oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As e_ComprobanteElectronicoBath Implements Il_ComprobanteElectronicoBath.Obtener
         Try
             Return odComprobanteElectronicoBath.Obtener(oeComprobanteElectronicoBath)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_ComprobanteElectronicoBath
         End Try
     End Function
 
-    Public Function Validar(oeComprobanteElectronicoBath As EntidadesWCF.e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Validar
+    Public Function Validar(oeComprobanteElectronicoBath As e_ComprobanteElectronicoBath) As Boolean Implements Il_ComprobanteElectronicoBath.Validar
         Try
             With oeComprobanteElectronicoBath
                 '---------VALIDARRRRRRRRRR-------------

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_PlanillaViaje
@@ -53,7 +53,7 @@ Public Class l_PlanillaViaje
         Return PlanillaViaje
     End Function
 
-    Public Function GuardarMasivo(ByVal loPlanillaViaje As System.Collections.Generic.List(Of EntidadesWCF.e_PlanillaViaje), ByVal PrefijoID As String) As Boolean Implements Il_PlanillaViaje.GuardarMasivo
+    Public Function GuardarMasivo(ByVal loPlanillaViaje As System.Collections.Generic.List(Of e_PlanillaViaje), ByVal PrefijoID As String) As Boolean Implements Il_PlanillaViaje.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
             Dim id As String = odPlanillaViaje.UltimoIdInserta(PrefijoID)

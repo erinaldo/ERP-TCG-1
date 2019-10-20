@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 

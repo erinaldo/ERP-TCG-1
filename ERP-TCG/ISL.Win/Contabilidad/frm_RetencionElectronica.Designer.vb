@@ -273,7 +273,7 @@ Partial Class frm_RetencionElectronica
         '
         'ERetencionImpresaBindingSource
         '
-        Me.ERetencionImpresaBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_RetencionImpresa)
+        Me.ERetencionImpresaBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_RetencionImpresa)
         '
         'UltraGroupBox1
         '

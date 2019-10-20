@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_BonificacionProduccion
@@ -8,7 +8,7 @@ Public Class l_BonificacionProduccion
     Private odBonificacionProduccion As New d_BonificacionProduccion
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeBonificacionProduccion As EntidadesWCF.e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Eliminar
+    Public Function Eliminar(oeBonificacionProduccion As e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Eliminar
         Try
             Return odBonificacionProduccion.Eliminar(oeBonificacionProduccion)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_BonificacionProduccion
         End Try
     End Function
 
-    Public Function Guardar(oeBonificacionProduccion As EntidadesWCF.e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Guardar
+    Public Function Guardar(oeBonificacionProduccion As e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Guardar
         Try
             If Validar(oeBonificacionProduccion) Then
                 Return odBonificacionProduccion.Guardar(oeBonificacionProduccion)
@@ -26,7 +26,7 @@ Public Class l_BonificacionProduccion
         End Try
     End Function
 
-    Public Function Listar(oeBonificacionProduccion As EntidadesWCF.e_BonificacionProduccion) As List(Of EntidadesWCF.e_BonificacionProduccion) Implements Il_BonificacionProduccion.Listar
+    Public Function Listar(oeBonificacionProduccion As e_BonificacionProduccion) As List(Of e_BonificacionProduccion) Implements Il_BonificacionProduccion.Listar
         Try
             Return odBonificacionProduccion.Listar(oeBonificacionProduccion)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_BonificacionProduccion
         End Try
     End Function
 
-    Public Function Obtener(oeBonificacionProduccion As EntidadesWCF.e_BonificacionProduccion) As EntidadesWCF.e_BonificacionProduccion Implements Il_BonificacionProduccion.Obtener
+    Public Function Obtener(oeBonificacionProduccion As e_BonificacionProduccion) As e_BonificacionProduccion Implements Il_BonificacionProduccion.Obtener
         Try
             Return odBonificacionProduccion.Obtener(oeBonificacionProduccion)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_BonificacionProduccion
         End Try
     End Function
 
-    Public Function Validar(oeBonificacionProduccion As EntidadesWCF.e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Validar
+    Public Function Validar(oeBonificacionProduccion As e_BonificacionProduccion) As Boolean Implements Il_BonificacionProduccion.Validar
         Try
             With oeBonificacionProduccion
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

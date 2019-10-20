@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-
+Imports ERP.EntidadesWCF
 Public Class frm_GeneraCorrelativoAsiento
     Inherits ISL.Win.frm_MenuPadre
     Private Shared instancia As frm_GeneraCorrelativoAsiento = Nothing
@@ -56,7 +56,7 @@ Public Class frm_GeneraCorrelativoAsiento
             Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "CTB")
             If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
                 Dim olAsiento As New l_Asiento
-                l_FuncionesGenerales.ValidarPeriodo(frm.cboMes.Value, EntidadesWCF.gAreasSGI.Contabilidad)
+                l_FuncionesGenerales.ValidarPeriodo(frm.cboMes.Value, gAreasSGI.Contabilidad)
                 olAsiento.CorrelativoAsiento(frm.cboMes.Value)
                 mensajeEmergente.Confirmacion("Se Generó los correlativos, correctamente", True)
             End If

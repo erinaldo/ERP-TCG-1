@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 Public Class l_DocumentoRetencionDetalle
     Implements Il_DocumentoRetencionDetalle

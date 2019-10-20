@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_MovimientoDocumento", también debe actualizar la referencia a "Il_MovimientoDocumento" en Web.config.
 <ServiceContract()> _
@@ -35,7 +35,7 @@ Public Interface Il_MovimientoDocumento
     Function GuardarMasivo(ByVal oeMovimientoDoc As e_MovimientoDocumento) As Boolean
 
     <OperationContract()> _
-    Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing) As Boolean
+    Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
 
     <OperationContract()> _
     Function VerificarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
@@ -44,7 +44,7 @@ Public Interface Il_MovimientoDocumento
     Function CambiarPeriodo(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 
     <OperationContract()> _
-    Function ValidarTipoCambio(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean
+    Function ValidarTipoCambio(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 
     <OperationContract()> _
     Function AjusteTipoCambio(ByVal TipoOperacion As String, ByVal oePeriodo As e_Periodo, ByVal leMovimientoDocumento As List(Of e_MovimientoDocumento)) As Boolean
@@ -116,8 +116,8 @@ Public Interface Il_MovimientoDocumento
 
     <OperationContract()> _
     Function GuardarAnalisisYDocumento(ByVal leMovimientosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoAnalisis), ByVal leDocumentosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal Obj() As Object) As Boolean
+    System.Collections.Generic.List(Of e_MovimientoAnalisis), ByVal leDocumentosAgregados As  _
+    System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal Obj() As Object) As Boolean
 
 #End Region
 

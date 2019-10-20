@@ -261,7 +261,7 @@ Partial Class frm_KMMack
         '
         'EKmMackBindingSource
         '
-        Me.EKmMackBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_KmMack)
+        Me.EKmMackBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_KmMack)
         '
         'UltraGroupBox3
         '
@@ -446,7 +446,7 @@ Partial Class frm_KMMack
         '
         'EKmMackDetBindingSource
         '
-        Me.EKmMackDetBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_KmMackDet)
+        Me.EKmMackDetBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_KmMackDet)
         '
         'UltraGroupBox1
         '

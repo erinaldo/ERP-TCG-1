@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -36,7 +36,7 @@ Public Class l_DetalleDocumento
         Return DetalleDoc
     End Function
 
-    Public Function Eliminar(ByVal oeDetalleDocumento As EntidadesWCF.e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Eliminar
+    Public Function Eliminar(ByVal oeDetalleDocumento As e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Eliminar
         Try
             Return odDetalleDocumento.Eliminar(oeDetalleDocumento)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_DetalleDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDetalleDocumento As EntidadesWCF.e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Guardar
+    Public Function Guardar(ByVal oeDetalleDocumento As e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Guardar
         Try
             If Validar(oeDetalleDocumento) Then
                 Return odDetalleDocumento.Guardar(oeDetalleDocumento)
@@ -54,7 +54,7 @@ Public Class l_DetalleDocumento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDetalleDocumento As EntidadesWCF.e_DetalleDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_DetalleDocumento) Implements Il_DetalleDocumento.Listar
+    Public Function Listar(ByVal oeDetalleDocumento As e_DetalleDocumento) As System.Collections.Generic.List(Of e_DetalleDocumento) Implements Il_DetalleDocumento.Listar
         Try
             Return odDetalleDocumento.Listar(oeDetalleDocumento)
         Catch ex As Exception
@@ -62,7 +62,7 @@ Public Class l_DetalleDocumento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDetalleDocumento As EntidadesWCF.e_DetalleDocumento) As EntidadesWCF.e_DetalleDocumento Implements Il_DetalleDocumento.Obtener
+    Public Function Obtener(ByVal oeDetalleDocumento As e_DetalleDocumento) As e_DetalleDocumento Implements Il_DetalleDocumento.Obtener
         Try
             Return odDetalleDocumento.Obtener(oeDetalleDocumento)
         Catch ex As Exception
@@ -70,7 +70,7 @@ Public Class l_DetalleDocumento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDetalleDocumento As EntidadesWCF.e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Validar
+    Public Function Validar(ByVal oeDetalleDocumento As e_DetalleDocumento) As Boolean Implements Il_DetalleDocumento.Validar
         Try
             With oeDetalleDocumento
                 '---------VALIDARRRRRRRRRR-------------

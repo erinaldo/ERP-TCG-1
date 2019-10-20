@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices

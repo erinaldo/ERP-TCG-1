@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_PlanillaVacaciones
     Private odPlanillaVacaciones As New d_PlanillaVacaciones
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oePlanillaVacaciones As EntidadesWCF.e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Eliminar
+    Public Function Eliminar(oePlanillaVacaciones As e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Eliminar
         Try
             Return odPlanillaVacaciones.Eliminar(oePlanillaVacaciones)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_PlanillaVacaciones
         End Try
     End Function
 
-    Public Function Guardar(oePlanillaVacaciones As EntidadesWCF.e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Guardar
+    Public Function Guardar(oePlanillaVacaciones As e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Guardar
         Try
             If Validar(oePlanillaVacaciones) Then
                 Return odPlanillaVacaciones.Guardar(oePlanillaVacaciones)
@@ -35,7 +35,7 @@ Public Class l_PlanillaVacaciones
         End Try
     End Function
 
-    Public Function Listar(oePlanillaVacaciones As EntidadesWCF.e_PlanillaVacaciones) As List(Of EntidadesWCF.e_PlanillaVacaciones) Implements Il_PlanillaVacaciones.Listar
+    Public Function Listar(oePlanillaVacaciones As e_PlanillaVacaciones) As List(Of e_PlanillaVacaciones) Implements Il_PlanillaVacaciones.Listar
         Try
             Return odPlanillaVacaciones.Listar(oePlanillaVacaciones)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_PlanillaVacaciones
         End Try
     End Function
 
-    Public Function Obtener(oePlanillaVacaciones As EntidadesWCF.e_PlanillaVacaciones) As EntidadesWCF.e_PlanillaVacaciones Implements Il_PlanillaVacaciones.Obtener
+    Public Function Obtener(oePlanillaVacaciones As e_PlanillaVacaciones) As e_PlanillaVacaciones Implements Il_PlanillaVacaciones.Obtener
         Try
             Return odPlanillaVacaciones.Obtener(oePlanillaVacaciones)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_PlanillaVacaciones
         End Try
     End Function
 
-    Public Function Validar(oePlanillaVacaciones As EntidadesWCF.e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Validar
+    Public Function Validar(oePlanillaVacaciones As e_PlanillaVacaciones) As Boolean Implements Il_PlanillaVacaciones.Validar
         Try
             With oePlanillaVacaciones
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdPlanilla, "No ha Seleccionado Planilla Asociada")

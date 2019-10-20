@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Cargo
     Dim odCargo As New d_Cargo
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCargo As EntidadesWCF.e_Cargo) As Boolean Implements Il_Cargo.Eliminar
+    Public Function Eliminar(ByVal oeCargo As e_Cargo) As Boolean Implements Il_Cargo.Eliminar
         Try
             Return odCargo.Eliminar(oeCargo)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Cargo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCargo As EntidadesWCF.e_Cargo) As Boolean Implements Il_Cargo.Guardar
+    Public Function Guardar(ByVal oeCargo As e_Cargo) As Boolean Implements Il_Cargo.Guardar
         Try
             If Validar(oeCargo) Then
                 Return odCargo.Guardar(oeCargo)
@@ -35,7 +35,7 @@ Public Class l_Cargo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCargo As EntidadesWCF.e_Cargo) As System.Collections.Generic.List(Of EntidadesWCF.e_Cargo) Implements Il_Cargo.Listar
+    Public Function Listar(ByVal oeCargo As e_Cargo) As System.Collections.Generic.List(Of e_Cargo) Implements Il_Cargo.Listar
         Try
             Return odCargo.Listar(oeCargo)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Cargo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCargo As EntidadesWCF.e_Cargo) As EntidadesWCF.e_Cargo Implements Il_Cargo.Obtener
+    Public Function Obtener(ByVal oeCargo As e_Cargo) As e_Cargo Implements Il_Cargo.Obtener
         Try
             Return odCargo.Obtener(oeCargo)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Cargo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCargo As EntidadesWCF.e_Cargo) As Boolean Implements Il_Cargo.Validar
+    Public Function Validar(ByVal oeCargo As e_Cargo) As Boolean Implements Il_Cargo.Validar
         Try
             With oeCargo
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeCargo.Nombre, "No se ha Ingresado Nombre")

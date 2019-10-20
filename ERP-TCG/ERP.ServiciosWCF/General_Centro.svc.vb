@@ -1,7 +1,7 @@
 ﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "General_Centro" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione General_Centro.svc o General_Centro.svc.vb en el Explorador de soluciones e inicie la depuración.
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports ISL.LogicaWCF
 
 Public Class General_Centro

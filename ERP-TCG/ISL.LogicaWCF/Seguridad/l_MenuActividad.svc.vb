@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_MenuActividad
     Dim odMenuActividad As New d_MenuActividad
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeMenuActividad As EntidadesWCF.e_MenuActividad) As Boolean Implements Il_MenuActividad.Eliminar
+    Public Function Eliminar(ByVal oeMenuActividad As e_MenuActividad) As Boolean Implements Il_MenuActividad.Eliminar
         Try
             Return odMenuActividad.Eliminar(oeMenuActividad)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_MenuActividad
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMenuActividad As EntidadesWCF.e_MenuActividad) As Boolean Implements Il_MenuActividad.Guardar
+    Public Function Guardar(ByVal oeMenuActividad As e_MenuActividad) As Boolean Implements Il_MenuActividad.Guardar
         Try
             If Validar(oeMenuActividad) Then
                 Return odMenuActividad.Guardar(oeMenuActividad)
@@ -34,7 +34,7 @@ Public Class l_MenuActividad
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMenuActividad As EntidadesWCF.e_MenuActividad) As System.Collections.Generic.List(Of EntidadesWCF.e_MenuActividad) Implements Il_MenuActividad.Listar
+    Public Function Listar(ByVal oeMenuActividad As e_MenuActividad) As System.Collections.Generic.List(Of e_MenuActividad) Implements Il_MenuActividad.Listar
         Try
             Return odMenuActividad.Listar(oeMenuActividad)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MenuActividad
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMenuActividad As EntidadesWCF.e_MenuActividad) As EntidadesWCF.e_MenuActividad Implements Il_MenuActividad.Obtener
+    Public Function Obtener(ByVal oeMenuActividad As e_MenuActividad) As e_MenuActividad Implements Il_MenuActividad.Obtener
         Try
             Return odMenuActividad.Obtener(oeMenuActividad)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_MenuActividad
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMenuActividad As EntidadesWCF.e_MenuActividad) As Boolean Implements Il_MenuActividad.Validar
+    Public Function Validar(ByVal oeMenuActividad As e_MenuActividad) As Boolean Implements Il_MenuActividad.Validar
         Try
             With oeMenuActividad
                 ValidarCodigo(.Id, .Codigo)

@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 <ServiceContract()>
 Public Interface Il_RubroEstadoFinanciero_Detalle

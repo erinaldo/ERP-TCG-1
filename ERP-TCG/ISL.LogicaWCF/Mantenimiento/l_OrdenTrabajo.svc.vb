@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -24,7 +24,7 @@ Public Class l_OrdenTrabajo
     Dim olIgv As New l_Impuesto
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ActualizaEstadoOT(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.ActualizaEstadoOT
+    Public Function ActualizaEstadoOT(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.ActualizaEstadoOT
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.ActualizaEstadoOT(oeOrdenTrabajo)
@@ -33,7 +33,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.Eliminar
+    Public Function Eliminar(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.Eliminar
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.Eliminar(oeOrdenTrabajo)
@@ -42,7 +42,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As String Implements Il_OrdenTrabajo.Guardar
+    Public Function Guardar(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As String Implements Il_OrdenTrabajo.Guardar
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Dim idOT As String = ""
@@ -257,7 +257,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As System.Data.DataSet Implements Il_OrdenTrabajo.Listar
+    Public Function Listar(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As System.Data.DataSet Implements Il_OrdenTrabajo.Listar
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.Listar(oeOrdenTrabajo)
@@ -266,7 +266,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As EntidadesWCF.e_OrdenTrabajo Implements Il_OrdenTrabajo.Obtener
+    Public Function Obtener(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As e_OrdenTrabajo Implements Il_OrdenTrabajo.Obtener
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.Obtener(oeOrdenTrabajo)
@@ -275,7 +275,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenTrabajo As EntidadesWCF.e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.Validar
+    Public Function Validar(ByVal oeOrdenTrabajo As e_OrdenTrabajo) As Boolean Implements Il_OrdenTrabajo.Validar
         Try
             With oeOrdenTrabajo
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdJefeTaller, "Seleccione un Jefe de Taller")
@@ -289,7 +289,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function ListarReporteCE(ByVal oeReporteCE As EntidadesWCF.e_ReporteConsumoEquipo) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteConsumoEquipo) Implements Il_OrdenTrabajo.ListarReporteCE
+    Public Function ListarReporteCE(ByVal oeReporteCE As e_ReporteConsumoEquipo) As System.Collections.Generic.List(Of e_ReporteConsumoEquipo) Implements Il_OrdenTrabajo.ListarReporteCE
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.ListarReporteCE(oeReporteCE)
@@ -298,7 +298,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function ListarRMDOT(ByVal oeReporteMDOT As EntidadesWCF.e_MovimientoDiarioOT) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDiarioOT) Implements Il_OrdenTrabajo.ListarRMDOT
+    Public Function ListarRMDOT(ByVal oeReporteMDOT As e_MovimientoDiarioOT) As System.Collections.Generic.List(Of e_MovimientoDiarioOT) Implements Il_OrdenTrabajo.ListarRMDOT
         Try
             odOrdenTrabajo = New d_OrdenTrabajo
             Return odOrdenTrabajo.ListarRMDOT(oeReporteMDOT)
@@ -307,7 +307,7 @@ Public Class l_OrdenTrabajo
         End Try
     End Function
 
-    Public Function ObtieneGlosa(ByVal leOTMaterial As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenTrabajo_Material), ByVal Equipo As String) As String Implements Il_OrdenTrabajo.ObtieneGlosa
+    Public Function ObtieneGlosa(ByVal leOTMaterial As System.Collections.Generic.List(Of e_OrdenTrabajo_Material), ByVal Equipo As String) As String Implements Il_OrdenTrabajo.ObtieneGlosa
         Try
             Dim leAux = leOTMaterial.Where(Function(item) item.IdEquipo = Equipo And item.CantidadMaterial > item.CantidadMaterialEntregada).ToList
             Dim _cad As String = ""

@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 Imports System.ServiceModel
 
 ' NOTA: si cambia aquí el nombre de clase "Il_AccidenteCarga", también debe actualizar la referencia a "Il_AccidenteCarga" en Web.config.

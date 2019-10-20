@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _

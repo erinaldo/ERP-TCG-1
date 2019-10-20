@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_TipoCambio
     Dim odTipoCambio As New d_TipoCambio
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTipoCambio As EntidadesWCF.e_TipoCambio) As Boolean Implements Il_TipoCambio.Eliminar
+    Public Function Eliminar(ByVal oeTipoCambio As e_TipoCambio) As Boolean Implements Il_TipoCambio.Eliminar
         Try
             Return odTipoCambio.Eliminar(oeTipoCambio)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_TipoCambio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoCambio As EntidadesWCF.e_TipoCambio) As Boolean Implements Il_TipoCambio.Guardar
+    Public Function Guardar(ByVal oeTipoCambio As e_TipoCambio) As Boolean Implements Il_TipoCambio.Guardar
         Try
             If Validar(oeTipoCambio) Then
                 Return odTipoCambio.Guardar(oeTipoCambio)
@@ -35,7 +35,7 @@ Public Class l_TipoCambio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoCambio As EntidadesWCF.e_TipoCambio) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoCambio) Implements Il_TipoCambio.Listar
+    Public Function Listar(ByVal oeTipoCambio As e_TipoCambio) As System.Collections.Generic.List(Of e_TipoCambio) Implements Il_TipoCambio.Listar
         Try
             Return odTipoCambio.Listar(oeTipoCambio)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_TipoCambio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoCambio As EntidadesWCF.e_TipoCambio) As EntidadesWCF.e_TipoCambio Implements Il_TipoCambio.Obtener
+    Public Function Obtener(ByVal oeTipoCambio As e_TipoCambio) As e_TipoCambio Implements Il_TipoCambio.Obtener
         Try
             Return odTipoCambio.Obtener(oeTipoCambio)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_TipoCambio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoCambio As EntidadesWCF.e_TipoCambio) As Boolean Implements Il_TipoCambio.Validar
+    Public Function Validar(ByVal oeTipoCambio As e_TipoCambio) As Boolean Implements Il_TipoCambio.Validar
         Try
             With oeTipoCambio
                 If oeTipoCambio.CambioCompra <= 0 Then Throw New Exception("Falta ingresar el tipo de cambio de compra")

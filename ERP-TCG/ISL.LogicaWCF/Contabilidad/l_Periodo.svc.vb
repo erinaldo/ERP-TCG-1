@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Periodo
 
     Dim odEjercicio As New d_Periodo
 
-    Public Function Eliminar(ByVal oeEjercicio As EntidadesWCF.e_Periodo) As Boolean Implements Il_Periodo.Eliminar
+    Public Function Eliminar(ByVal oeEjercicio As e_Periodo) As Boolean Implements Il_Periodo.Eliminar
         Try
             Return odEjercicio.Eliminar(oeEjercicio)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Periodo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEjercicio As EntidadesWCF.e_Periodo) As Boolean Implements Il_Periodo.Guardar
+    Public Function Guardar(ByVal oeEjercicio As e_Periodo) As Boolean Implements Il_Periodo.Guardar
         Try
             If Validar(oeEjercicio) Then
                 Return odEjercicio.Guardar(oeEjercicio)
@@ -26,7 +26,7 @@ Public Class l_Periodo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEjercicio As EntidadesWCF.e_Periodo) As System.Collections.Generic.List(Of EntidadesWCF.e_Periodo) Implements Il_Periodo.Listar
+    Public Function Listar(ByVal oeEjercicio As e_Periodo) As System.Collections.Generic.List(Of e_Periodo) Implements Il_Periodo.Listar
         Try
             Return odEjercicio.Listar(oeEjercicio)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_Periodo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEjercicio As EntidadesWCF.e_Periodo) As EntidadesWCF.e_Periodo Implements Il_Periodo.Obtener
+    Public Function Obtener(ByVal oeEjercicio As e_Periodo) As e_Periodo Implements Il_Periodo.Obtener
         Try
             Return odEjercicio.Obtener(oeEjercicio)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_Periodo
         End Try
     End Function
 
-    Public Function Validar(ByVal oePeriodo As EntidadesWCF.e_Periodo) As Boolean Implements Il_Periodo.Validar
+    Public Function Validar(ByVal oePeriodo As e_Periodo) As Boolean Implements Il_Periodo.Validar
         Try
             With oePeriodo
                 ValidarDuplicado(.Id, .Codigo, "codigo")

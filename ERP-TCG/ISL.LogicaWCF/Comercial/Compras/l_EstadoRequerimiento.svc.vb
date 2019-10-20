@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -7,7 +8,7 @@ Public Class l_EstadoRequerimiento
 
     Dim odEstadoRequerimiento As New d_EstadoRequerimiento
 
-    Public Function Eliminar(ByVal oeEstadoRequerimiento As EntidadesWCF.e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Eliminar
+    Public Function Eliminar(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Eliminar
         Try
             Return odEstadoRequerimiento.Eliminar(oeEstadoRequerimiento)
         Catch ex As Exception
@@ -15,7 +16,7 @@ Public Class l_EstadoRequerimiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEstadoRequerimiento As EntidadesWCF.e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Guardar
+    Public Function Guardar(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Guardar
         Try
             If Validar(oeEstadoRequerimiento) Then
                 Return odEstadoRequerimiento.Guardar(oeEstadoRequerimiento)
@@ -25,7 +26,7 @@ Public Class l_EstadoRequerimiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEstadoRequerimiento As EntidadesWCF.e_EstadoRequerimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_EstadoRequerimiento) Implements Il_EstadoRequerimiento.Listar
+    Public Function Listar(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As System.Collections.Generic.List(Of e_EstadoRequerimiento) Implements Il_EstadoRequerimiento.Listar
         Try
             Return odEstadoRequerimiento.Listar(oeEstadoRequerimiento)
         Catch ex As Exception
@@ -33,7 +34,7 @@ Public Class l_EstadoRequerimiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEstadoRequerimiento As EntidadesWCF.e_EstadoRequerimiento) As EntidadesWCF.e_EstadoRequerimiento Implements Il_EstadoRequerimiento.Obtener
+    Public Function Obtener(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As e_EstadoRequerimiento Implements Il_EstadoRequerimiento.Obtener
         Try
             Return odEstadoRequerimiento.Obtener(oeEstadoRequerimiento)
         Catch ex As Exception
@@ -41,7 +42,7 @@ Public Class l_EstadoRequerimiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeEstadoRequerimiento As EntidadesWCF.e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Validar
+    Public Function Validar(ByVal oeEstadoRequerimiento As e_EstadoRequerimiento) As Boolean Implements Il_EstadoRequerimiento.Validar
         Try
             With oeEstadoRequerimiento
                 '---------VALIDARRRRRRRRRR-------------

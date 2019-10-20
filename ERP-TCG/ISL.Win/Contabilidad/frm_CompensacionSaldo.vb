@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_CompensacionSaldo
@@ -217,7 +217,7 @@ Public Class frm_CompensacionSaldo
         End Try
     End Function
 
-    Public Function ValidarDocumentoAgregado(ByVal movimientosDocumento As List(Of EntidadesWCF.e_MovimientoDocumento)) As Boolean
+    Public Function ValidarDocumentoAgregado(ByVal movimientosDocumento As List(Of e_MovimientoDocumento)) As Boolean
         Try
             If chkPersonal.Checked = False And chkPersonalCtas.Checked = False Then
                 If movimientosDocumento.Count < 2 Then Throw New Exception("Ingrese al menos 2 detalles")

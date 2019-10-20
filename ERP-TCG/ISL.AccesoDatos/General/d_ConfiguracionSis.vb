@@ -1,4 +1,4 @@
-﻿Imports ISL.EntidadesWCF
+﻿Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 

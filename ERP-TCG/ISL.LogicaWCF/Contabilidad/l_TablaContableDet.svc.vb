@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_TablaContableDet
     Dim odTablaContableDet As New d_TablaContableDet
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Eliminar
+    Public Function Eliminar(ByVal oeTablaContableDet As e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Eliminar
         Try
             Return odTablaContableDet.Eliminar(oeTablaContableDet)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_TablaContableDet
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Guardar
+    Public Function Guardar(ByVal oeTablaContableDet As e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Guardar
         Try
             If Validar(oeTablaContableDet) Then
                 Return odTablaContableDet.Guardar(oeTablaContableDet)
@@ -27,7 +27,7 @@ Public Class l_TablaContableDet
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet) Implements Il_TablaContableDet.Listar
+    Public Function Listar(ByVal oeTablaContableDet As e_TablaContableDet) As System.Collections.Generic.List(Of e_TablaContableDet) Implements Il_TablaContableDet.Listar
         Try
             Return odTablaContableDet.Listar(oeTablaContableDet)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_TablaContableDet
         End Try
     End Function
 
-    Public Function ListarBind(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As System.ComponentModel.BindingList(Of EntidadesWCF.e_TablaContableDet) Implements Il_TablaContableDet.ListarBind
+    Public Function ListarBind(ByVal oeTablaContableDet As e_TablaContableDet) As System.ComponentModel.BindingList(Of e_TablaContableDet) Implements Il_TablaContableDet.ListarBind
         Try
             Return odTablaContableDet.ListarBind(oeTablaContableDet)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_TablaContableDet
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As EntidadesWCF.e_TablaContableDet Implements Il_TablaContableDet.Obtener
+    Public Function Obtener(ByVal oeTablaContableDet As e_TablaContableDet) As e_TablaContableDet Implements Il_TablaContableDet.Obtener
         Try
             Return odTablaContableDet.Obtener(oeTablaContableDet)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_TablaContableDet
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTablaContableDet As EntidadesWCF.e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Validar
+    Public Function Validar(ByVal oeTablaContableDet As e_TablaContableDet) As Boolean Implements Il_TablaContableDet.Validar
         Try
             With oeTablaContableDet
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeTablaContableDet.Nombre, "Ingrese el Nombre del Item")

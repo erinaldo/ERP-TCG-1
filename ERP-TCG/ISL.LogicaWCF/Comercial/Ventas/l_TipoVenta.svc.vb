@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_TipoVenta
 
     Dim odTipoVenta As New d_TipoVenta
 
-    Public Function Eliminar(ByVal oeTipoVenta As EntidadesWCF.e_TipoVenta) As Boolean Implements Il_TipoVenta.Eliminar
+    Public Function Eliminar(ByVal oeTipoVenta As e_TipoVenta) As Boolean Implements Il_TipoVenta.Eliminar
         Try
             Return odTipoVenta.Eliminar(oeTipoVenta)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_TipoVenta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoVenta As EntidadesWCF.e_TipoVenta) As Boolean Implements Il_TipoVenta.Guardar
+    Public Function Guardar(ByVal oeTipoVenta As e_TipoVenta) As Boolean Implements Il_TipoVenta.Guardar
         Try
             If Validar(oeTipoVenta) Then
                 Return odTipoVenta.Guardar(oeTipoVenta)
@@ -26,7 +26,7 @@ Public Class l_TipoVenta
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoVenta As EntidadesWCF.e_TipoVenta) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoVenta) Implements Il_TipoVenta.Listar
+    Public Function Listar(ByVal oeTipoVenta As e_TipoVenta) As System.Collections.Generic.List(Of e_TipoVenta) Implements Il_TipoVenta.Listar
         Try
             Return odTipoVenta.Listar(oeTipoVenta)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_TipoVenta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoVenta As EntidadesWCF.e_TipoVenta) As EntidadesWCF.e_TipoVenta Implements Il_TipoVenta.Obtener
+    Public Function Obtener(ByVal oeTipoVenta As e_TipoVenta) As e_TipoVenta Implements Il_TipoVenta.Obtener
         Try
             Return odTipoVenta.Obtener(oeTipoVenta)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_TipoVenta
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoVenta As EntidadesWCF.e_TipoVenta) As Boolean Implements Il_TipoVenta.Validar
+    Public Function Validar(ByVal oeTipoVenta As e_TipoVenta) As Boolean Implements Il_TipoVenta.Validar
         Try
             With oeTipoVenta
                 '---------VALIDARRRRRRRRRR-------------

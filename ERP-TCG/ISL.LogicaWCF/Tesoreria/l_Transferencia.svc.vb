@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_Transferencia
@@ -7,7 +7,7 @@ Public Class l_Transferencia
 
     Dim odTransferencia As New d_Transferencia
 
-    Public Function Eliminar(ByVal oeTransferencia As EntidadesWCF.e_Transferencia) As Boolean Implements Il_Transferencia.Eliminar
+    Public Function Eliminar(ByVal oeTransferencia As e_Transferencia) As Boolean Implements Il_Transferencia.Eliminar
         Try
             Return odTransferencia.Eliminar(oeTransferencia)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_Transferencia
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTransferencia As EntidadesWCF.e_Transferencia) As Boolean Implements Il_Transferencia.Guardar
+    Public Function Guardar(ByVal oeTransferencia As e_Transferencia) As Boolean Implements Il_Transferencia.Guardar
         Try
             If Validar(oeTransferencia) Then
                 Return odTransferencia.Guardar(oeTransferencia)
@@ -25,7 +25,7 @@ Public Class l_Transferencia
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTransferencia As EntidadesWCF.e_Transferencia) As System.Collections.Generic.List(Of EntidadesWCF.e_Transferencia) Implements Il_Transferencia.Listar
+    Public Function Listar(ByVal oeTransferencia As e_Transferencia) As System.Collections.Generic.List(Of e_Transferencia) Implements Il_Transferencia.Listar
         Try
             Return odTransferencia.Listar(oeTransferencia)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_Transferencia
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTransferencia As EntidadesWCF.e_Transferencia) As EntidadesWCF.e_Transferencia Implements Il_Transferencia.Obtener
+    Public Function Obtener(ByVal oeTransferencia As e_Transferencia) As e_Transferencia Implements Il_Transferencia.Obtener
         Try
             Return odTransferencia.Obtener(oeTransferencia)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_Transferencia
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTransferencia As EntidadesWCF.e_Transferencia) As Boolean Implements Il_Transferencia.Validar
+    Public Function Validar(ByVal oeTransferencia As e_Transferencia) As Boolean Implements Il_Transferencia.Validar
         Try
             With oeTransferencia
                 '---------VALIDARRRRRRRRRR-------------

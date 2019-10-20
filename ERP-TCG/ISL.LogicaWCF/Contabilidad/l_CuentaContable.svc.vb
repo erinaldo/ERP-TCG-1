@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_CuentaContable
 
     Dim odCuentaContable As New d_CuentaContable
 
-    Public Function Eliminar(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As Boolean Implements Il_CuentaContable.Eliminar
+    Public Function Eliminar(ByVal oeCuentaContable As e_CuentaContable) As Boolean Implements Il_CuentaContable.Eliminar
         Try
             Return odCuentaContable.Eliminar(oeCuentaContable)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_CuentaContable
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As Boolean Implements Il_CuentaContable.Guardar
+    Public Function Guardar(ByVal oeCuentaContable As e_CuentaContable) As Boolean Implements Il_CuentaContable.Guardar
         Try
             If Validar(oeCuentaContable) Then
                 Return odCuentaContable.Guardar(oeCuentaContable)
@@ -26,7 +26,7 @@ Public Class l_CuentaContable
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaContable) Implements Il_CuentaContable.Listar
+    Public Function Listar(ByVal oeCuentaContable As e_CuentaContable) As System.Collections.Generic.List(Of e_CuentaContable) Implements Il_CuentaContable.Listar
         Try
             Return odCuentaContable.Listar(oeCuentaContable)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CuentaContable
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As EntidadesWCF.e_CuentaContable Implements Il_CuentaContable.Obtener
+    Public Function Obtener(ByVal oeCuentaContable As e_CuentaContable) As e_CuentaContable Implements Il_CuentaContable.Obtener
         Try
             Return odCuentaContable.Obtener(oeCuentaContable)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CuentaContable
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As Boolean Implements Il_CuentaContable.Validar
+    Public Function Validar(ByVal oeCuentaContable As e_CuentaContable) As Boolean Implements Il_CuentaContable.Validar
         Try
             With oeCuentaContable
                 If oeCuentaContable.TipoOperacion = "I" Then
@@ -62,7 +62,7 @@ Public Class l_CuentaContable
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal oeCuentaContable As EntidadesWCF.e_CuentaContable) As Object Implements Il_CuentaContable.ComboGrilla
+    Public Function ComboGrilla(ByVal oeCuentaContable As e_CuentaContable) As Object Implements Il_CuentaContable.ComboGrilla
         Try
             Return odCuentaContable.ComboGrilla(oeCuentaContable)
         Catch ex As Exception

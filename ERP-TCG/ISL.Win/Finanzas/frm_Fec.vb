@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Public Class frm_Fec
     Inherits ISL.Win.frm_MenuPadre

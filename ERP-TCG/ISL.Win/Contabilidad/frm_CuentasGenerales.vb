@@ -8,7 +8,7 @@
 
 Imports Infragistics.Win.UltraWinGrid
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class frm_CuentasGenerales
 

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_TrabajoSQL
     Dim odTrabajoSQL As New d_TrabajoSQL
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Guardar(ByVal oeTrabajoSQL As EntidadesWCF.e_TrabajoSQL) As Boolean Implements Il_TrabajoSQL.Guardar
+    Public Function Guardar(ByVal oeTrabajoSQL As e_TrabajoSQL) As Boolean Implements Il_TrabajoSQL.Guardar
         Try
             If Validar(oeTrabajoSQL) Then
                 Return odTrabajoSQL.Guardar(oeTrabajoSQL)
@@ -26,7 +26,7 @@ Public Class l_TrabajoSQL
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTrabajoSQL As EntidadesWCF.e_TrabajoSQL) As System.Collections.Generic.List(Of EntidadesWCF.e_TrabajoSQL) Implements Il_TrabajoSQL.Listar
+    Public Function Listar(ByVal oeTrabajoSQL As e_TrabajoSQL) As System.Collections.Generic.List(Of e_TrabajoSQL) Implements Il_TrabajoSQL.Listar
         Try
             Return odTrabajoSQL.Listar(oeTrabajoSQL)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_TrabajoSQL
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTrabajoSQL As EntidadesWCF.e_TrabajoSQL) As EntidadesWCF.e_TrabajoSQL Implements Il_TrabajoSQL.Obtener
+    Public Function Obtener(ByVal oeTrabajoSQL As e_TrabajoSQL) As e_TrabajoSQL Implements Il_TrabajoSQL.Obtener
         Try
             Return odTrabajoSQL.Obtener(oeTrabajoSQL)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_TrabajoSQL
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTrabajoSQL As EntidadesWCF.e_TrabajoSQL) As Boolean Implements Il_TrabajoSQL.Validar
+    Public Function Validar(ByVal oeTrabajoSQL As e_TrabajoSQL) As Boolean Implements Il_TrabajoSQL.Validar
         Try
             With oeTrabajoSQL
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Comando, "No ha Ingresado Nombre")

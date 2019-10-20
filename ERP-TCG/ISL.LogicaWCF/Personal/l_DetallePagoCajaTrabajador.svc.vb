@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_DetallePagoCajaTrabajador" en el código, en svc y en el archivo de configuración a la vez.
@@ -11,7 +11,7 @@ Public Class l_DetallePagoCajaTrabajador
     Private odDetallePagoCajaTrabajador As New d_DetallePagoCajaTrabajador
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetallePagoCajaTrabajador As EntidadesWCF.e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Eliminar
+    Public Function Eliminar(oeDetallePagoCajaTrabajador As e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Eliminar
         Try
             Return odDetallePagoCajaTrabajador.Eliminar(oeDetallePagoCajaTrabajador)
         Catch ex As Exception
@@ -19,7 +19,7 @@ Public Class l_DetallePagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Guardar(oeDetallePagoCajaTrabajador As EntidadesWCF.e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Guardar
+    Public Function Guardar(oeDetallePagoCajaTrabajador As e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Guardar
         Try
             If Validar(oeDetallePagoCajaTrabajador) Then
                 Return odDetallePagoCajaTrabajador.Guardar(oeDetallePagoCajaTrabajador)
@@ -29,7 +29,7 @@ Public Class l_DetallePagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Listar(oeDetallePagoCajaTrabajador As EntidadesWCF.e_DetallePagoCajaTrabajador) As List(Of EntidadesWCF.e_DetallePagoCajaTrabajador) Implements Il_DetallePagoCajaTrabajador.Listar
+    Public Function Listar(oeDetallePagoCajaTrabajador As e_DetallePagoCajaTrabajador) As List(Of e_DetallePagoCajaTrabajador) Implements Il_DetallePagoCajaTrabajador.Listar
         Try
             Return odDetallePagoCajaTrabajador.Listar(oeDetallePagoCajaTrabajador)
         Catch ex As Exception
@@ -37,7 +37,7 @@ Public Class l_DetallePagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Obtener(oeDetallePagoCajaTrabajador As EntidadesWCF.e_DetallePagoCajaTrabajador) As EntidadesWCF.e_DetallePagoCajaTrabajador Implements Il_DetallePagoCajaTrabajador.Obtener
+    Public Function Obtener(oeDetallePagoCajaTrabajador As e_DetallePagoCajaTrabajador) As e_DetallePagoCajaTrabajador Implements Il_DetallePagoCajaTrabajador.Obtener
         Try
             Return odDetallePagoCajaTrabajador.Obtener(oeDetallePagoCajaTrabajador)
         Catch ex As Exception
@@ -45,7 +45,7 @@ Public Class l_DetallePagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Validar(oeDetallePagoCajaTrabajador As EntidadesWCF.e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Validar
+    Public Function Validar(oeDetallePagoCajaTrabajador As e_DetallePagoCajaTrabajador) As Boolean Implements Il_DetallePagoCajaTrabajador.Validar
         Try
             With oeDetallePagoCajaTrabajador
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Equipo
     Dim odEquipo As New d_Equipo
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeEquipo As EntidadesWCF.e_Equipo) As Boolean Implements Il_Equipo.Eliminar
+    Public Function Eliminar(ByVal oeEquipo As e_Equipo) As Boolean Implements Il_Equipo.Eliminar
         Try
             Return odEquipo.Eliminar(oeEquipo)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Equipo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEquipo As EntidadesWCF.e_Equipo) As Boolean Implements Il_Equipo.Guardar
+    Public Function Guardar(ByVal oeEquipo As e_Equipo) As Boolean Implements Il_Equipo.Guardar
         Try
             If Validar(oeEquipo) Then
                 Return odEquipo.Guardar(oeEquipo)
@@ -35,7 +35,7 @@ Public Class l_Equipo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEquipo As EntidadesWCF.e_Equipo) As System.Collections.Generic.List(Of EntidadesWCF.e_Equipo) Implements Il_Equipo.Listar
+    Public Function Listar(ByVal oeEquipo As e_Equipo) As System.Collections.Generic.List(Of e_Equipo) Implements Il_Equipo.Listar
         Try
             Return odEquipo.Listar(oeEquipo)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Equipo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEquipo As EntidadesWCF.e_Equipo) As EntidadesWCF.e_Equipo Implements Il_Equipo.Obtener
+    Public Function Obtener(ByVal oeEquipo As e_Equipo) As e_Equipo Implements Il_Equipo.Obtener
         Try
             Return odEquipo.Obtener(oeEquipo)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Equipo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeEquipo As EntidadesWCF.e_Equipo) As Boolean Implements Il_Equipo.Validar
+    Public Function Validar(ByVal oeEquipo As e_Equipo) As Boolean Implements Il_Equipo.Validar
         Try
             With oeEquipo
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre del documento")

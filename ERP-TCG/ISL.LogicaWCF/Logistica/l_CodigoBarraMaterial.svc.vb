@@ -1,6 +1,6 @@
 ﻿' NOTA: si cambia aquí el nombre de clase "l_CodigoBarraMaterial", también debe actualizar la referencia a "l_CodigoBarraMaterial" tanto en Web.config como en el archivo .svc asociado.
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 Public Class l_CodigoBarraMaterial
     Implements Il_CodigoBarraMaterial

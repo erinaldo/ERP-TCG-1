@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Imports System.Configuration
@@ -486,7 +486,7 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
         Try
             oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
             If UsaTransaccion Then
@@ -540,13 +540,13 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing) As Boolean
+    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
         Try
             Dim stResultado() As String
             Dim stResultado_Ant() As String
             With oeMovimientoDocumento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                        .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion,
+                        .PrefijoID,
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -676,8 +676,8 @@ Public Class d_MovimientoDocumento
                 If Not oeAnticipo Is Nothing Then
                     If oeAnticipo.TipoOperacion = "I" Then
                         With oeAnticipo
-                            stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                                    .PrefijoID, _
+                            stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion,
+                                    .PrefijoID,
                                     .Id _
                                     , .IdTipoDocumento _
                                     , .Serie _

@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Public Class frm_BolsaRuta
     Inherits ISL.Win.frm_MenuPadre
 

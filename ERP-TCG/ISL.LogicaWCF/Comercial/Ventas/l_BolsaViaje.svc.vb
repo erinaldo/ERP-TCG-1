@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_BolsaViaje
 
     Dim odBolsaViaje As New d_BolsaViaje
 
-    Public Function Eliminar(ByVal oeBolsaViaje As EntidadesWCF.e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Eliminar
+    Public Function Eliminar(ByVal oeBolsaViaje As e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Eliminar
         Try
             Return odBolsaViaje.Eliminar(oeBolsaViaje)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_BolsaViaje
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeBolsaViaje As EntidadesWCF.e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Guardar
+    Public Function Guardar(ByVal oeBolsaViaje As e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Guardar
         Try
             If Validar(oeBolsaViaje) Then
                 Return odBolsaViaje.Guardar(oeBolsaViaje)
@@ -26,7 +26,7 @@ Public Class l_BolsaViaje
         End Try
     End Function
 
-    Public Function Listar(ByVal oeBolsaViaje As EntidadesWCF.e_BolsaViaje) As System.Collections.Generic.List(Of EntidadesWCF.e_BolsaViaje) Implements Il_BolsaViaje.Listar
+    Public Function Listar(ByVal oeBolsaViaje As e_BolsaViaje) As System.Collections.Generic.List(Of e_BolsaViaje) Implements Il_BolsaViaje.Listar
         Try
             Return odBolsaViaje.Listar(oeBolsaViaje)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_BolsaViaje
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeBolsaViaje As EntidadesWCF.e_BolsaViaje) As EntidadesWCF.e_BolsaViaje Implements Il_BolsaViaje.Obtener
+    Public Function Obtener(ByVal oeBolsaViaje As e_BolsaViaje) As e_BolsaViaje Implements Il_BolsaViaje.Obtener
         Try
             Return odBolsaViaje.Obtener(oeBolsaViaje)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_BolsaViaje
         End Try
     End Function
 
-    Public Function Validar(ByVal oeBolsaViaje As EntidadesWCF.e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Validar
+    Public Function Validar(ByVal oeBolsaViaje As e_BolsaViaje) As Boolean Implements Il_BolsaViaje.Validar
         Try
             With oeBolsaViaje
                 ValidarTipoVehiculo(oeBolsaViaje.TipoVehiculo)

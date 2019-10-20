@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -132,7 +132,7 @@ Public Class l_Grupo_Asiento
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal loGrupoAsiento As System.Collections.Generic.List(Of EntidadesWCF.e_Grupo_Asiento), ByVal obj As Object) As String Implements Il_Grupo_Asiento.GuardarLista
+    Public Function GuardarLista(ByVal loGrupoAsiento As System.Collections.Generic.List(Of e_Grupo_Asiento), ByVal obj As Object) As String Implements Il_Grupo_Asiento.GuardarLista
         Try
             'obj(0) Tipo de Asiento
             'obj(1) cuenta contable
@@ -270,7 +270,7 @@ Public Class l_Grupo_Asiento
 
     End Function
 
-    Public Function Obtener(ByVal oeGrupo_Asiento As EntidadesWCF.e_Grupo_Asiento) As EntidadesWCF.e_Grupo_Asiento Implements Il_Grupo_Asiento.Obtener
+    Public Function Obtener(ByVal oeGrupo_Asiento As e_Grupo_Asiento) As e_Grupo_Asiento Implements Il_Grupo_Asiento.Obtener
         Try
             Return odGrupo_Asiento.Obtener(oeGrupo_Asiento)
         Catch ex As Exception
@@ -278,7 +278,7 @@ Public Class l_Grupo_Asiento
         End Try
     End Function
 
-    Public Function ValidarLista(ByVal leGrupo_Asiento As System.Collections.Generic.List(Of EntidadesWCF.e_Grupo_Asiento), ByVal ldFechaOperacion As Date) As Boolean Implements Il_Grupo_Asiento.ValidarLista
+    Public Function ValidarLista(ByVal leGrupo_Asiento As System.Collections.Generic.List(Of e_Grupo_Asiento), ByVal ldFechaOperacion As Date) As Boolean Implements Il_Grupo_Asiento.ValidarLista
         Try
             l_FuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, ldFechaOperacion, ldFechaOperacion.Year.ToString + "-" + ldFechaOperacion.Month.ToString)
             For Each obj As e_Grupo_Asiento In leGrupo_Asiento

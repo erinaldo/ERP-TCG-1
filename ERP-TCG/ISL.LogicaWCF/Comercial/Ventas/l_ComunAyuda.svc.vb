@@ -1,6 +1,6 @@
 ﻿' NOTA: si cambia aquí el nombre de clase "Il_ComunAyuda", también debe actualizar la referencia a "Il_ComunAyuda" tanto en Web.config como en el archivo .svc asociado.
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _

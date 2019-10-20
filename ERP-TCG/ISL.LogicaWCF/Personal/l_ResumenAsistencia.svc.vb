@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_ResumenAsistencia
@@ -16,7 +16,7 @@ Public Class l_ResumenAsistencia
     Private odResumenAsistencia As New d_ResumenAsistencia
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeResumenAsistencia As EntidadesWCF.e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Eliminar
+    Public Function Eliminar(oeResumenAsistencia As e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Eliminar
         Try
             Return odResumenAsistencia.Eliminar(oeResumenAsistencia)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_ResumenAsistencia
         End Try
     End Function
 
-    Public Function Guardar(oeResumenAsistencia As EntidadesWCF.e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Guardar
+    Public Function Guardar(oeResumenAsistencia As e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Guardar
         Try
             If Validar(oeResumenAsistencia) Then
                 Return odResumenAsistencia.Guardar(oeResumenAsistencia)
@@ -34,7 +34,7 @@ Public Class l_ResumenAsistencia
         End Try
     End Function
 
-    Public Function Listar(oeResumenAsistencia As EntidadesWCF.e_ResumenAsistencia) As List(Of EntidadesWCF.e_ResumenAsistencia) Implements Il_ResumenAsistencia.Listar
+    Public Function Listar(oeResumenAsistencia As e_ResumenAsistencia) As List(Of e_ResumenAsistencia) Implements Il_ResumenAsistencia.Listar
         Try
             Return odResumenAsistencia.Listar(oeResumenAsistencia)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ResumenAsistencia
         End Try
     End Function
 
-    Public Function Obtener(oeResumenAsistencia As EntidadesWCF.e_ResumenAsistencia) As EntidadesWCF.e_ResumenAsistencia Implements Il_ResumenAsistencia.Obtener
+    Public Function Obtener(oeResumenAsistencia As e_ResumenAsistencia) As e_ResumenAsistencia Implements Il_ResumenAsistencia.Obtener
         Try
             Return odResumenAsistencia.Obtener(oeResumenAsistencia)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_ResumenAsistencia
         End Try
     End Function
 
-    Public Function Validar(oeResumenAsistencia As EntidadesWCF.e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Validar
+    Public Function Validar(oeResumenAsistencia As e_ResumenAsistencia) As Boolean Implements Il_ResumenAsistencia.Validar
         Try
             With oeResumenAsistencia
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

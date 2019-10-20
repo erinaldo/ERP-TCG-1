@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_Descuentos
@@ -41,7 +41,7 @@ Public Class l_Descuentos
         Return Dscto
     End Function
 
-    Public Function Eliminar(oeDescuentos As EntidadesWCF.e_Descuentos) As Boolean Implements Il_Descuentos.Eliminar
+    Public Function Eliminar(oeDescuentos As e_Descuentos) As Boolean Implements Il_Descuentos.Eliminar
         Try
             Return odDescuentos.Eliminar(oeDescuentos)
         Catch ex As Exception
@@ -49,7 +49,7 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function Guardar(oeDescuentos As EntidadesWCF.e_Descuentos) As Boolean Implements Il_Descuentos.Guardar
+    Public Function Guardar(oeDescuentos As e_Descuentos) As Boolean Implements Il_Descuentos.Guardar
         Try
             If Validar(oeDescuentos) Then
                 Return odDescuentos.Guardar(oeDescuentos)
@@ -59,7 +59,7 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function GuardarMasivo(leDescuentos As List(Of EntidadesWCF.e_Descuentos), ByVal PrefijoID As String) As Boolean Implements Il_Descuentos.GuardarMasivo
+    Public Function GuardarMasivo(leDescuentos As List(Of e_Descuentos), ByVal PrefijoID As String) As Boolean Implements Il_Descuentos.GuardarMasivo
         Try
             Dim dtDscto As Data.DataTable = CrearDT()
             Dim id As String = odDescuentos.UltimoIdInserta(PrefijoID)
@@ -90,7 +90,7 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function Listar(oeDescuentos As EntidadesWCF.e_Descuentos) As List(Of EntidadesWCF.e_Descuentos) Implements Il_Descuentos.Listar
+    Public Function Listar(oeDescuentos As e_Descuentos) As List(Of e_Descuentos) Implements Il_Descuentos.Listar
         Try
             Return odDescuentos.Listar(oeDescuentos)
         Catch ex As Exception
@@ -98,7 +98,7 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function Obtener(oeDescuentos As EntidadesWCF.e_Descuentos) As EntidadesWCF.e_Descuentos Implements Il_Descuentos.Obtener
+    Public Function Obtener(oeDescuentos As e_Descuentos) As e_Descuentos Implements Il_Descuentos.Obtener
         Try
             Return odDescuentos.Obtener(oeDescuentos)
         Catch ex As Exception
@@ -106,7 +106,7 @@ Public Class l_Descuentos
         End Try
     End Function
 
-    Public Function Validar(oeDescuentos As EntidadesWCF.e_Descuentos) As Boolean Implements Il_Descuentos.Validar
+    Public Function Validar(oeDescuentos As e_Descuentos) As Boolean Implements Il_Descuentos.Validar
         Try
             With oeDescuentos
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

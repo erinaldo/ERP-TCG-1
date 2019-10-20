@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Venta
 
     Dim odVenta As New d_Venta
 
-    Public Function Eliminar(ByVal oeVenta As EntidadesWCF.e_Venta) As Boolean Implements Il_Venta.Eliminar
+    Public Function Eliminar(ByVal oeVenta As e_Venta) As Boolean Implements Il_Venta.Eliminar
         Try
             Return odVenta.Eliminar(oeVenta)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Venta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeVenta As EntidadesWCF.e_Venta) As Boolean Implements Il_Venta.Guardar
+    Public Function Guardar(ByVal oeVenta As e_Venta) As Boolean Implements Il_Venta.Guardar
         Try
             If Validar(oeVenta) Then
                 Return odVenta.Guardar(oeVenta)
@@ -26,7 +26,7 @@ Public Class l_Venta
         End Try
     End Function
 
-    Public Function Listar(ByVal oeVenta As EntidadesWCF.e_Venta) As System.Collections.Generic.List(Of EntidadesWCF.e_Venta) Implements Il_Venta.Listar
+    Public Function Listar(ByVal oeVenta As e_Venta) As System.Collections.Generic.List(Of e_Venta) Implements Il_Venta.Listar
         Try
             Return odVenta.Listar(oeVenta)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_Venta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeVenta As EntidadesWCF.e_Venta) As EntidadesWCF.e_Venta Implements Il_Venta.Obtener
+    Public Function Obtener(ByVal oeVenta As e_Venta) As e_Venta Implements Il_Venta.Obtener
         Try
             Return odVenta.Obtener(oeVenta)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Venta
         End Try
     End Function
 
-    Public Function Validar(ByVal oeVenta As EntidadesWCF.e_Venta) As Boolean Implements Il_Venta.Validar
+    Public Function Validar(ByVal oeVenta As e_Venta) As Boolean Implements Il_Venta.Validar
         Try
             With oeVenta
                 '---------VALIDARRRRRRRRRR-------------

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ConceptoPonderado
     Dim odConceptoPonderado As New d_ConceptoPonderado
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeConceptoPonderado As EntidadesWCF.e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Eliminar
+    Public Function Eliminar(oeConceptoPonderado As e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Eliminar
         Try
             Return odConceptoPonderado.Eliminar(oeConceptoPonderado)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_ConceptoPonderado
         End Try
     End Function
 
-    Public Function Guardar(oeConceptoPonderado As EntidadesWCF.e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Guardar
+    Public Function Guardar(oeConceptoPonderado As e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Guardar
         Try
             If Validar(oeConceptoPonderado) Then
                 Return odConceptoPonderado.Guardar(oeConceptoPonderado)
@@ -35,7 +35,7 @@ Public Class l_ConceptoPonderado
         End Try
     End Function
 
-    Public Function Listar(oeConceptoPonderado As EntidadesWCF.e_ConceptoPonderado) As List(Of EntidadesWCF.e_ConceptoPonderado) Implements Il_ConceptoPonderado.Listar
+    Public Function Listar(oeConceptoPonderado As e_ConceptoPonderado) As List(Of e_ConceptoPonderado) Implements Il_ConceptoPonderado.Listar
         Try
             Return odConceptoPonderado.Listar(oeConceptoPonderado)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ConceptoPonderado
         End Try
     End Function
 
-    Public Function Obtener(oeConceptoPonderado As EntidadesWCF.e_ConceptoPonderado) As EntidadesWCF.e_ConceptoPonderado Implements Il_ConceptoPonderado.Obtener
+    Public Function Obtener(oeConceptoPonderado As e_ConceptoPonderado) As e_ConceptoPonderado Implements Il_ConceptoPonderado.Obtener
         Try
             Return odConceptoPonderado.Obtener(oeConceptoPonderado)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ConceptoPonderado
         End Try
     End Function
 
-    Public Function Validar(oeConceptoPonderado As EntidadesWCF.e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Validar
+    Public Function Validar(oeConceptoPonderado As e_ConceptoPonderado) As Boolean Implements Il_ConceptoPonderado.Validar
         Try
             With oeConceptoPonderado
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese Codigo")

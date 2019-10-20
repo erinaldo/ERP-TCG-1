@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -28,7 +28,7 @@ Public Class l_Provincia
     ''' <param name="oeProvincia"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeProvincia As EntidadesWCF.e_Provincia) As Boolean Implements Il_Provincia.Eliminar
+    Public Function Eliminar(ByVal oeProvincia As e_Provincia) As Boolean Implements Il_Provincia.Eliminar
         Try
             If String.IsNullOrEmpty(oeProvincia.Id) Then Throw New Exception("Falta especificar el Id de la provincia que se va a eliminar")
             Return odProvincia.Eliminar(oeProvincia)
@@ -43,7 +43,7 @@ Public Class l_Provincia
     ''' <param name="oeProvincia"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeProvincia As EntidadesWCF.e_Provincia) As Boolean Implements Il_Provincia.Guardar
+    Public Function Guardar(ByVal oeProvincia As e_Provincia) As Boolean Implements Il_Provincia.Guardar
         Try
             If Validar(oeProvincia) Then
                 Return odProvincia.Guardar(oeProvincia)
@@ -58,7 +58,7 @@ Public Class l_Provincia
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeProvincia As EntidadesWCF.e_Provincia) As System.Collections.Generic.List(Of EntidadesWCF.e_Provincia) Implements Il_Provincia.Listar
+    Public Function Listar(ByVal oeProvincia As e_Provincia) As System.Collections.Generic.List(Of e_Provincia) Implements Il_Provincia.Listar
         Try
             Return odProvincia.Listar(oeProvincia)
         Catch ex As Exception
@@ -72,7 +72,7 @@ Public Class l_Provincia
     ''' <param name="oeProvincia"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeProvincia As EntidadesWCF.e_Provincia) As EntidadesWCF.e_Provincia Implements Il_Provincia.Obtener
+    Public Function Obtener(ByVal oeProvincia As e_Provincia) As e_Provincia Implements Il_Provincia.Obtener
         Try
             Return odProvincia.Obtener(oeProvincia)
         Catch ex As Exception
@@ -80,7 +80,7 @@ Public Class l_Provincia
         End Try
     End Function
 
-    Public Function Validar(ByVal oeProvincia As EntidadesWCF.e_Provincia) As Boolean Implements Il_Provincia.Validar
+    Public Function Validar(ByVal oeProvincia As e_Provincia) As Boolean Implements Il_Provincia.Validar
         Try
             With oeProvincia
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el código de la Provincia")

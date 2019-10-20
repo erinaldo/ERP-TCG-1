@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Material
     Dim odMaterial As New d_Material
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal ListaMaterial As System.Collections.Generic.List(Of EntidadesWCF.e_Material)) As Object Implements Il_Material.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaMaterial As System.Collections.Generic.List(Of e_Material)) As Object Implements Il_Material.ComboGrilla
         Try
             Return odMaterial.ComboGrilla(ListaMaterial)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeMaterial As EntidadesWCF.e_Material) As Boolean Implements Il_Material.Eliminar
+    Public Function Eliminar(ByVal oeMaterial As e_Material) As Boolean Implements Il_Material.Eliminar
         Try
             Return odMaterial.Eliminar(oeMaterial)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMaterial As EntidadesWCF.e_Material) As Boolean Implements Il_Material.Guardar
+    Public Function Guardar(ByVal oeMaterial As e_Material) As Boolean Implements Il_Material.Guardar
         Try
             If Validar(oeMaterial) Then
                 Return odMaterial.Guardar(oeMaterial)
@@ -43,7 +43,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMaterial As EntidadesWCF.e_Material) As System.Collections.Generic.List(Of EntidadesWCF.e_Material) Implements Il_Material.Listar
+    Public Function Listar(ByVal oeMaterial As e_Material) As System.Collections.Generic.List(Of e_Material) Implements Il_Material.Listar
         Try
             Return odMaterial.Listar(oeMaterial)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Listar_(ByVal oeMaterial As EntidadesWCF.e_Material) As System.Collections.Generic.List(Of EntidadesWCF.e_Material) Implements Il_Material.Listar_
+    Public Function Listar_(ByVal oeMaterial As e_Material) As System.Collections.Generic.List(Of e_Material) Implements Il_Material.Listar_
         Try
             Return odMaterial.Listar_(oeMaterial)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function ListarDS(ByVal oeMaterial As EntidadesWCF.e_Material) As System.Data.DataSet Implements Il_Material.ListarDS
+    Public Function ListarDS(ByVal oeMaterial As e_Material) As System.Data.DataSet Implements Il_Material.ListarDS
         Try
             Return odMaterial.ListarDS(oeMaterial)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function ListarMatAlm(ByVal oeMaterial As EntidadesWCF.e_Material) As System.Collections.Generic.List(Of EntidadesWCF.e_MaterialAlmacen) Implements Il_Material.ListarMatAlm
+    Public Function ListarMatAlm(ByVal oeMaterial As e_Material) As System.Collections.Generic.List(Of e_MaterialAlmacen) Implements Il_Material.ListarMatAlm
         Try
             Dim lstMat As New List(Of e_Material)
             Dim lstMatAlm As New List(Of e_MaterialAlmacen)
@@ -93,7 +93,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMaterial As EntidadesWCF.e_Material) As EntidadesWCF.e_Material Implements Il_Material.Obtener
+    Public Function Obtener(ByVal oeMaterial As e_Material) As e_Material Implements Il_Material.Obtener
         Try
             Return odMaterial.Obtener(oeMaterial)
         Catch ex As Exception
@@ -101,7 +101,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function ObtenerMatNeu(ByVal oeMaterial As EntidadesWCF.e_Material) As EntidadesWCF.e_Material Implements Il_Material.ObtenerMatNeu
+    Public Function ObtenerMatNeu(ByVal oeMaterial As e_Material) As e_Material Implements Il_Material.ObtenerMatNeu
         Try
             Return odMaterial.ObtenerMatNeu(oeMaterial)
         Catch ex As Exception
@@ -109,7 +109,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function ObtenerMaterialSegunAlmacen(ByVal oeMaterial As EntidadesWCF.e_Material) As EntidadesWCF.e_Material Implements Il_Material.ObtenerMaterialSegunAlmacen
+    Public Function ObtenerMaterialSegunAlmacen(ByVal oeMaterial As e_Material) As e_Material Implements Il_Material.ObtenerMaterialSegunAlmacen
         Try
             Return odMaterial.ObtenerMaterialSegunAlmacen(oeMaterial)
         Catch ex As Exception
@@ -117,7 +117,7 @@ Public Class l_Material
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMaterial As EntidadesWCF.e_Material) As Boolean Implements Il_Material.Validar
+    Public Function Validar(ByVal oeMaterial As e_Material) As Boolean Implements Il_Material.Validar
         Try
             With oeMaterial
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

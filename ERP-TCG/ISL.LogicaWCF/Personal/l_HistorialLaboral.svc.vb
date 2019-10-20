@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_HistorialLaboral
     Dim odHistorialLaboral As New d_HistorialLaboral
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Eliminar
+    Public Function Eliminar(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Eliminar
         Try
             Return odHistorialLaboral.Eliminar(oeHistorialLaboral)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_HistorialLaboral
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Guardar
+    Public Function Guardar(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Guardar
         Try
             If Validar(oeHistorialLaboral) Then Return odHistorialLaboral.Guardar(oeHistorialLaboral)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_HistorialLaboral
         End Try
     End Function
 
-    Public Function Listar(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As System.Collections.Generic.List(Of EntidadesWCF.e_HistorialLaboral) Implements Il_HistorialLaboral.Listar
+    Public Function Listar(ByVal oeHistorialLaboral As e_HistorialLaboral) As System.Collections.Generic.List(Of e_HistorialLaboral) Implements Il_HistorialLaboral.Listar
         Try
             Return odHistorialLaboral.Listar(oeHistorialLaboral)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_HistorialLaboral
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As EntidadesWCF.e_HistorialLaboral Implements Il_HistorialLaboral.Obtener
+    Public Function Obtener(ByVal oeHistorialLaboral As e_HistorialLaboral) As e_HistorialLaboral Implements Il_HistorialLaboral.Obtener
         Try
             Return odHistorialLaboral.Obtener(oeHistorialLaboral)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_HistorialLaboral
         End Try
     End Function
 
-    Public Function Validar(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Validar
+    Public Function Validar(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.Validar
         Try
             With oeHistorialLaboral
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "No se ha identificado el trabajador")
@@ -60,7 +60,7 @@ Public Class l_HistorialLaboral
     ''' <param name="oeHistorialLaboral">Objeto de tipo HistorialLaboral</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ValidarDuplicado(ByVal oeHistorialLaboral As EntidadesWCF.e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.ValidarDuplicado
+    Public Function ValidarDuplicado(ByVal oeHistorialLaboral As e_HistorialLaboral) As Boolean Implements Il_HistorialLaboral.ValidarDuplicado
         Try
             'If String.IsNullOrEmpty(oeHistorialLaboral.IdProcesoNegocio) Then Throw New Exception("No se ha definido que proceso se va a verificar si existe")
             'If String.IsNullOrEmpty(oeHistorialLaboral.Nombre) Then Throw New Exception("No se ha especificado concepto que se va a validar")

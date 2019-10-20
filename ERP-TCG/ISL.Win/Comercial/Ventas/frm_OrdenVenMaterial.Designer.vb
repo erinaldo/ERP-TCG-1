@@ -2186,7 +2186,7 @@ Partial Class frm_OrdenVenMaterial
         '
         'odEmpresa
         '
-        Me.odEmpresa.DataSource = GetType(ISL.EntidadesWCF.e_Empresa)
+        Me.odEmpresa.DataSource = GetType(ERP.EntidadesWCF.e_Empresa)
         '
         'UltraTabPageControl2
         '

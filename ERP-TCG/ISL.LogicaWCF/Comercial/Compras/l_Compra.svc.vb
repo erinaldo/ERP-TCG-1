@@ -1,14 +1,14 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
 Public Class l_Compra
     Implements Il_Compra
 
-    Dim odCompra As New d_Compra
+    Private odCompra As New d_Compra
 
-    Public Function Eliminar(ByVal oeCompra As EntidadesWCF.e_Compra) As Boolean Implements Il_Compra.Eliminar
+    Public Function Eliminar(ByVal oeCompra As e_Compra) As Boolean Implements Il_Compra.Eliminar
         Try
             Return odCompra.Eliminar(oeCompra)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Compra
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCompra As EntidadesWCF.e_Compra) As Boolean Implements Il_Compra.Guardar
+    Public Function Guardar(ByVal oeCompra As e_Compra) As Boolean Implements Il_Compra.Guardar
         Try
             If Validar(oeCompra) Then
                 Return odCompra.Guardar(oeCompra)
@@ -26,7 +26,7 @@ Public Class l_Compra
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCompra As EntidadesWCF.e_Compra) As System.Collections.Generic.List(Of EntidadesWCF.e_Compra) Implements Il_Compra.Listar
+    Public Function Listar(ByVal oeCompra As e_Compra) As System.Collections.Generic.List(Of e_Compra) Implements Il_Compra.Listar
         Try
             Return odCompra.Listar(oeCompra)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_Compra
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCompra As EntidadesWCF.e_Compra) As EntidadesWCF.e_Compra Implements Il_Compra.Obtener
+    Public Function Obtener(ByVal oeCompra As e_Compra) As e_Compra Implements Il_Compra.Obtener
         Try
             Return odCompra.Obtener(oeCompra)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Compra
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCompra As EntidadesWCF.e_Compra) As Boolean Implements Il_Compra.Validar
+    Public Function Validar(ByVal oeCompra As e_Compra) As Boolean Implements Il_Compra.Validar
         Try
             With oeCompra
                 '---------VALIDARRRRRRRRRR-------------

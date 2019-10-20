@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_ConfiguracionMTC
 
     Dim odConfiguracionMTC As New d_ConfiguracionMTC
 
-    Public Function Eliminar(ByVal oeConfiguracionMTC As EntidadesWCF.e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Eliminar
+    Public Function Eliminar(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Eliminar
         Try
             Return odConfiguracionMTC.Eliminar(oeConfiguracionMTC)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ConfiguracionMTC
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeConfiguracionMTC As EntidadesWCF.e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Guardar
+    Public Function Guardar(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Guardar
         Try
             If Validar(oeConfiguracionMTC) Then
                 Return odConfiguracionMTC.Guardar(oeConfiguracionMTC)
@@ -26,7 +26,7 @@ Public Class l_ConfiguracionMTC
         End Try
     End Function
 
-    Public Function Listar(ByVal oeConfiguracionMTC As EntidadesWCF.e_ConfiguracionMTC) As System.Collections.Generic.List(Of EntidadesWCF.e_ConfiguracionMTC) Implements Il_ConfiguracionMTC.Listar
+    Public Function Listar(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As System.Collections.Generic.List(Of e_ConfiguracionMTC) Implements Il_ConfiguracionMTC.Listar
         Try
             Return odConfiguracionMTC.Listar(oeConfiguracionMTC)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_ConfiguracionMTC
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeConfiguracionMTC As EntidadesWCF.e_ConfiguracionMTC) As EntidadesWCF.e_ConfiguracionMTC Implements Il_ConfiguracionMTC.Obtener
+    Public Function Obtener(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As e_ConfiguracionMTC Implements Il_ConfiguracionMTC.Obtener
         Try
             Return odConfiguracionMTC.Obtener(oeConfiguracionMTC)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ConfiguracionMTC
         End Try
     End Function
 
-    Public Function Validar(ByVal oeConfiguracionMTC As EntidadesWCF.e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Validar
+    Public Function Validar(ByVal oeConfiguracionMTC As e_ConfiguracionMTC) As Boolean Implements Il_ConfiguracionMTC.Validar
         Try
             With oeConfiguracionMTC
                 '---------VALIDARRRRRRRRRR-------------

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -23,7 +23,7 @@ Public Class l_Centro
     ''' <param name="oeCentro"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeCentro As EntidadesWCF.e_Centro) As Boolean Implements Il_Centro.Eliminar
+    Public Function Eliminar(ByVal oeCentro As e_Centro) As Boolean Implements Il_Centro.Eliminar
         Try
             Return odCentro.Eliminar(oeCentro)
         Catch ex As Exception
@@ -37,7 +37,7 @@ Public Class l_Centro
     ''' <param name="oeCentro"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeCentro As EntidadesWCF.e_Centro) As Boolean Implements Il_Centro.Guardar
+    Public Function Guardar(ByVal oeCentro As e_Centro) As Boolean Implements Il_Centro.Guardar
         Try
             If Validar(oeCentro) Then
                 Return odCentro.Guardar(oeCentro)
@@ -53,7 +53,7 @@ Public Class l_Centro
     ''' <param name="oeCentro"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeCentro As EntidadesWCF.e_Centro) As System.Collections.Generic.List(Of EntidadesWCF.e_Centro) Implements Il_Centro.Listar
+    Public Function Listar(ByVal oeCentro As e_Centro) As System.Collections.Generic.List(Of e_Centro) Implements Il_Centro.Listar
         Try
             Return odCentro.Listar(oeCentro)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_Centro
     ''' <param name="oeCentro"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeCentro As EntidadesWCF.e_Centro) As EntidadesWCF.e_Centro Implements Il_Centro.Obtener
+    Public Function Obtener(ByVal oeCentro As e_Centro) As e_Centro Implements Il_Centro.Obtener
         Try
             Return odCentro.Obtener(oeCentro)
         Catch ex As Exception
@@ -75,7 +75,7 @@ Public Class l_Centro
         End Try
     End Function
 
-    Public Function ObtenerSAlmacen(ByVal oeCentro As EntidadesWCF.e_Centro) As EntidadesWCF.e_Centro Implements Il_Centro.ObtenerSAlmacen
+    Public Function ObtenerSAlmacen(ByVal oeCentro As e_Centro) As e_Centro Implements Il_Centro.ObtenerSAlmacen
         Try
             Return odCentro.ObtenerCentroSAlmacen(oeCentro)
         Catch ex As Exception
@@ -89,7 +89,7 @@ Public Class l_Centro
     ''' <param name="oeCentro"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeCentro As EntidadesWCF.e_Centro) As Boolean Implements Il_Centro.Validar
+    Public Function Validar(ByVal oeCentro As e_Centro) As Boolean Implements Il_Centro.Validar
         Try
             With oeCentro
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el codigo del centro")
@@ -142,7 +142,7 @@ Public Class l_Centro
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal ListaCentro As System.Collections.Generic.List(Of EntidadesWCF.e_Centro)) As Object Implements Il_Centro.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaCentro As System.Collections.Generic.List(Of e_Centro)) As Object Implements Il_Centro.ComboGrilla
         Try
             Return odCentro.ComboGrilla(ListaCentro)
         Catch ex As Exception

@@ -1,6 +1,6 @@
 ﻿Imports System.ServiceModel
 Imports System.ComponentModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_TablaContableDet", también debe actualizar la referencia a "Il_TablaContableDet" en Web.config.
 <ServiceContract()> _

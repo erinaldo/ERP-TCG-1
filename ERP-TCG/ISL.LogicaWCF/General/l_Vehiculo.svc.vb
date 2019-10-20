@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -19,7 +19,7 @@ Public Class l_Vehiculo
     Dim l_FuncionesGenerales As l_FuncionesGenerales
     Dim odVehiculoEstado As d_VehiculoEstado
 
-    Public Function ComboGrilla(ByVal listaVehiculo As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo)) As Object Implements Il_Vehiculo.ComboGrilla
+    Public Function ComboGrilla(ByVal listaVehiculo As System.Collections.Generic.List(Of e_Vehiculo)) As Object Implements Il_Vehiculo.ComboGrilla
         Try
             odVehiculo = New d_Vehiculo
             Return odVehiculo.ComboGrilla(listaVehiculo)
@@ -28,7 +28,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As Boolean Implements Il_Vehiculo.Eliminar
+    Public Function Eliminar(ByVal oeVehiculo As e_Vehiculo) As Boolean Implements Il_Vehiculo.Eliminar
         Try
             odVehiculo = New d_Vehiculo
             Return odVehiculo.Eliminar(oeVehiculo)
@@ -37,7 +37,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function GuardarJefeUnidad(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As Boolean
+    Public Function GuardarJefeUnidad(ByVal oeVehiculo As e_Vehiculo) As Boolean
         Try
             odVehiculo = New d_Vehiculo
             Return odVehiculo.Guardar(oeVehiculo)
@@ -46,7 +46,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As Boolean Implements Il_Vehiculo.Guardar
+    Public Function Guardar(ByVal oeVehiculo As e_Vehiculo) As Boolean Implements Il_Vehiculo.Guardar
         Try
             odVehiculo = New d_Vehiculo
             If Validar(oeVehiculo) Then
@@ -57,7 +57,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As System.Collections.Generic.List(Of EntidadesWCF.e_Vehiculo) Implements Il_Vehiculo.Listar
+    Public Function Listar(ByVal oeVehiculo As e_Vehiculo) As System.Collections.Generic.List(Of e_Vehiculo) Implements Il_Vehiculo.Listar
         Try
             odVehiculo = New d_Vehiculo
             Return odVehiculo.Listar(oeVehiculo)
@@ -66,7 +66,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As EntidadesWCF.e_Vehiculo Implements Il_Vehiculo.Obtener
+    Public Function Obtener(ByVal oeVehiculo As e_Vehiculo) As e_Vehiculo Implements Il_Vehiculo.Obtener
         Try
             odVehiculo = New d_Vehiculo
             Return odVehiculo.Obtener(oeVehiculo)
@@ -75,7 +75,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As Boolean Implements Il_Vehiculo.Validar
+    Public Function Validar(ByVal oeVehiculo As e_Vehiculo) As Boolean Implements Il_Vehiculo.Validar
         Try
             l_FuncionesGenerales = New l_FuncionesGenerales
             If oeVehiculo.TipoActualizacion <> "C" And oeVehiculo.TipoOperacion <> "L" Then
@@ -156,7 +156,7 @@ Public Class l_Vehiculo
         End Try
     End Function
 
-    Public Function ValidarVehiculo(ByVal oeVehiculo As EntidadesWCF.e_Vehiculo) As e_Vehiculo Implements Il_Vehiculo.ValidarVehiculo
+    Public Function ValidarVehiculo(ByVal oeVehiculo As e_Vehiculo) As e_Vehiculo Implements Il_Vehiculo.ValidarVehiculo
         Try
             l_FuncionesGenerales = New l_FuncionesGenerales
             odVehiculo = New d_Vehiculo

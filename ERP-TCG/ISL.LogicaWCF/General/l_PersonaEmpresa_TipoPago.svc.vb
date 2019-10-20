@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_PersonaEmpresa_TipoPago
 
     Dim odPersonaEmpresa_TipoPago As New d_PersonaEmpresa_TipoPago
 
-    Public Function Eliminar(ByVal oePersonaEmpresa_TipoPago As EntidadesWCF.e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Eliminar
+    Public Function Eliminar(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Eliminar
         Try
             Return odPersonaEmpresa_TipoPago.Eliminar(oePersonaEmpresa_TipoPago)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_PersonaEmpresa_TipoPago
         End Try
     End Function
 
-    Public Function Guardar(ByVal oePersonaEmpresa_TipoPago As EntidadesWCF.e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Guardar
+    Public Function Guardar(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Guardar
         Try
             If Validar(oePersonaEmpresa_TipoPago) Then
                 Return odPersonaEmpresa_TipoPago.Guardar(oePersonaEmpresa_TipoPago)
@@ -26,7 +26,7 @@ Public Class l_PersonaEmpresa_TipoPago
         End Try
     End Function
 
-    Public Function Listar(ByVal oePersonaEmpresa_TipoPago As EntidadesWCF.e_PersonaEmpresa_TipoPago) As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaEmpresa_TipoPago) Implements Il_PersonaEmpresa_TipoPago.Listar
+    Public Function Listar(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As System.Collections.Generic.List(Of e_PersonaEmpresa_TipoPago) Implements Il_PersonaEmpresa_TipoPago.Listar
         Try
             Return odPersonaEmpresa_TipoPago.Listar(oePersonaEmpresa_TipoPago)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_PersonaEmpresa_TipoPago
         End Try
     End Function
 
-    Public Function Obtener(ByVal oePersonaEmpresa_TipoPago As EntidadesWCF.e_PersonaEmpresa_TipoPago) As EntidadesWCF.e_PersonaEmpresa_TipoPago Implements Il_PersonaEmpresa_TipoPago.Obtener
+    Public Function Obtener(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As e_PersonaEmpresa_TipoPago Implements Il_PersonaEmpresa_TipoPago.Obtener
         Try
             Return odPersonaEmpresa_TipoPago.Obtener(oePersonaEmpresa_TipoPago)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_PersonaEmpresa_TipoPago
         End Try
     End Function
 
-    Public Function Validar(ByVal oePersonaEmpresa_TipoPago As EntidadesWCF.e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Validar
+    Public Function Validar(ByVal oePersonaEmpresa_TipoPago As e_PersonaEmpresa_TipoPago) As Boolean Implements Il_PersonaEmpresa_TipoPago.Validar
         Try
             With oePersonaEmpresa_TipoPago
                 '---------VALIDARRRRRRRRRR-------------

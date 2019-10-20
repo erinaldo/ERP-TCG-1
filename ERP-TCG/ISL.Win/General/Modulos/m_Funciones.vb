@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports ISL.LogicaWCF
 Imports System.Data.OleDb
 Imports Infragistics.Win

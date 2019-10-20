@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_CajaTurno
 
     Dim odCajaTurno As New d_CajaTurno
 
-    Public Function Eliminar(ByVal oeCajaTurno As EntidadesWCF.e_CajaTurno) As Boolean Implements Il_CajaTurno.Eliminar
+    Public Function Eliminar(ByVal oeCajaTurno As e_CajaTurno) As Boolean Implements Il_CajaTurno.Eliminar
         Try
             Return odCajaTurno.Eliminar(oeCajaTurno)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_CajaTurno
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCajaTurno As EntidadesWCF.e_CajaTurno) As Boolean Implements Il_CajaTurno.Guardar
+    Public Function Guardar(ByVal oeCajaTurno As e_CajaTurno) As Boolean Implements Il_CajaTurno.Guardar
         Try
             If Validar(oeCajaTurno) Then
                 Return odCajaTurno.Guardar(oeCajaTurno)
@@ -26,7 +26,7 @@ Public Class l_CajaTurno
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCajaTurno As EntidadesWCF.e_CajaTurno) As System.Collections.Generic.List(Of EntidadesWCF.e_CajaTurno) Implements Il_CajaTurno.Listar
+    Public Function Listar(ByVal oeCajaTurno As e_CajaTurno) As System.Collections.Generic.List(Of e_CajaTurno) Implements Il_CajaTurno.Listar
         Try
             Return odCajaTurno.Listar(oeCajaTurno)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CajaTurno
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCajaTurno As EntidadesWCF.e_CajaTurno) As EntidadesWCF.e_CajaTurno Implements Il_CajaTurno.Obtener
+    Public Function Obtener(ByVal oeCajaTurno As e_CajaTurno) As e_CajaTurno Implements Il_CajaTurno.Obtener
         Try
             Return odCajaTurno.Obtener(oeCajaTurno)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CajaTurno
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCajaTurno As EntidadesWCF.e_CajaTurno) As Boolean Implements Il_CajaTurno.Validar
+    Public Function Validar(ByVal oeCajaTurno As e_CajaTurno) As Boolean Implements Il_CajaTurno.Validar
         Try
             With oeCajaTurno
                 '---------VALIDARRRRRRRRRR-------------

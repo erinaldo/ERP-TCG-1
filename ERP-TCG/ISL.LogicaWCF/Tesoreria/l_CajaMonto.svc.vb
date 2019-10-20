@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_CajaMonto
     Dim odCajaMonto As New d_CajaMonto
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCajaMonto As EntidadesWCF.e_CajaMonto) As Boolean Implements Il_CajaMonto.Eliminar
+    Public Function Eliminar(ByVal oeCajaMonto As e_CajaMonto) As Boolean Implements Il_CajaMonto.Eliminar
         Try
             Return odCajaMonto.Eliminar(oeCajaMonto)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_CajaMonto
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCajaMonto As EntidadesWCF.e_CajaMonto) As Boolean Implements Il_CajaMonto.Guardar
+    Public Function Guardar(ByVal oeCajaMonto As e_CajaMonto) As Boolean Implements Il_CajaMonto.Guardar
         Try
             If Validar(oeCajaMonto) Then
                 Return odCajaMonto.Guardar(oeCajaMonto)
@@ -35,7 +35,7 @@ Public Class l_CajaMonto
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCajaMonto As EntidadesWCF.e_CajaMonto) As System.Collections.Generic.List(Of EntidadesWCF.e_CajaMonto) Implements Il_CajaMonto.Listar
+    Public Function Listar(ByVal oeCajaMonto As e_CajaMonto) As System.Collections.Generic.List(Of e_CajaMonto) Implements Il_CajaMonto.Listar
         Try
             Return odCajaMonto.Listar(oeCajaMonto)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_CajaMonto
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCajaMonto As EntidadesWCF.e_CajaMonto) As EntidadesWCF.e_CajaMonto Implements Il_CajaMonto.Obtener
+    Public Function Obtener(ByVal oeCajaMonto As e_CajaMonto) As e_CajaMonto Implements Il_CajaMonto.Obtener
         Try
             Return odCajaMonto.Obtener(oeCajaMonto)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_CajaMonto
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCajaMonto As EntidadesWCF.e_CajaMonto) As Boolean Implements Il_CajaMonto.Validar
+    Public Function Validar(ByVal oeCajaMonto As e_CajaMonto) As Boolean Implements Il_CajaMonto.Validar
         Try
             With oeCajaMonto
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdCaja, "Seleccione caja")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -22,7 +22,7 @@ Public Class l_Utilidad
     Private odDetalle As New d_DetalleUtilidad
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeUtilidad As EntidadesWCF.e_Utilidad) As Boolean Implements Il_Utilidad.Eliminar
+    Public Function Eliminar(oeUtilidad As e_Utilidad) As Boolean Implements Il_Utilidad.Eliminar
         Try
             Return odUtilidad.Eliminar(oeUtilidad)
         Catch ex As Exception
@@ -30,7 +30,7 @@ Public Class l_Utilidad
         End Try
     End Function
 
-    Public Function Guardar(oeUtilidad As EntidadesWCF.e_Utilidad) As Boolean Implements Il_Utilidad.Guardar
+    Public Function Guardar(oeUtilidad As e_Utilidad) As Boolean Implements Il_Utilidad.Guardar
         Try
             If Validar(oeUtilidad) Then
                 Return odUtilidad.Guardar(oeUtilidad)
@@ -40,7 +40,7 @@ Public Class l_Utilidad
         End Try
     End Function
 
-    Public Function Listar(oeUtilidad As EntidadesWCF.e_Utilidad) As List(Of EntidadesWCF.e_Utilidad) Implements Il_Utilidad.Listar
+    Public Function Listar(oeUtilidad As e_Utilidad) As List(Of e_Utilidad) Implements Il_Utilidad.Listar
         Try
             Return odUtilidad.Listar(oeUtilidad)
         Catch ex As Exception
@@ -48,7 +48,7 @@ Public Class l_Utilidad
         End Try
     End Function
 
-    Public Function Obtener(oeUtilidad As EntidadesWCF.e_Utilidad) As EntidadesWCF.e_Utilidad Implements Il_Utilidad.Obtener
+    Public Function Obtener(oeUtilidad As e_Utilidad) As e_Utilidad Implements Il_Utilidad.Obtener
         Try
             Return odUtilidad.Obtener(oeUtilidad)
         Catch ex As Exception
@@ -56,7 +56,7 @@ Public Class l_Utilidad
         End Try
     End Function
 
-    Public Function Validar(oeUtilidad As EntidadesWCF.e_Utilidad) As Boolean Implements Il_Utilidad.Validar
+    Public Function Validar(oeUtilidad As e_Utilidad) As Boolean Implements Il_Utilidad.Validar
         Try
             With oeUtilidad
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

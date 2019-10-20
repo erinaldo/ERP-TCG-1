@@ -1,7 +1,7 @@
 ﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_TarjetaMovimiento" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_TarjetaMovimiento.svc o l_TarjetaMovimiento.svc.vb en el Explorador de soluciones e inicie la depuración.
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Globalization
 
 Public Class l_TarjetaMovimiento
@@ -27,7 +27,7 @@ Public Class l_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function Listar(oeTarjetaMovimiento As e_TarjetaMovimiento) As List(Of EntidadesWCF.e_TarjetaMovimiento) Implements Il_TarjetaMovimiento.Listar
+    Public Function Listar(oeTarjetaMovimiento As e_TarjetaMovimiento) As List(Of e_TarjetaMovimiento) Implements Il_TarjetaMovimiento.Listar
         Try
             odTarjetaMovimiento = New d_TarjetaMovimiento
             Return odTarjetaMovimiento.Listar(oeTarjetaMovimiento)
@@ -36,7 +36,7 @@ Public Class l_TarjetaMovimiento
         End Try
     End Function
 
-    Public Function Obtener(oeTarjetaMovimiento As e_TarjetaMovimiento) As EntidadesWCF.e_TarjetaMovimiento Implements Il_TarjetaMovimiento.Obtener
+    Public Function Obtener(oeTarjetaMovimiento As e_TarjetaMovimiento) As e_TarjetaMovimiento Implements Il_TarjetaMovimiento.Obtener
         Try
             odTarjetaMovimiento = New d_TarjetaMovimiento
             Return odTarjetaMovimiento.Obtener(oeTarjetaMovimiento)

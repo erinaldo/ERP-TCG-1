@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -7,7 +8,7 @@ Public Class l_LetraCambio
 
     Dim odLetraCambio As New d_LetraCambio
 
-    Public Function Eliminar(ByVal oeLetraCambio As EntidadesWCF.e_LetraCambio) As Boolean Implements Il_LetraCambio.Eliminar
+    Public Function Eliminar(ByVal oeLetraCambio As e_LetraCambio) As Boolean Implements Il_LetraCambio.Eliminar
         Try
             Return odLetraCambio.Eliminar(oeLetraCambio)
         Catch ex As Exception
@@ -15,7 +16,7 @@ Public Class l_LetraCambio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeLetraCambio As EntidadesWCF.e_LetraCambio) As Boolean Implements Il_LetraCambio.Guardar
+    Public Function Guardar(ByVal oeLetraCambio As e_LetraCambio) As Boolean Implements Il_LetraCambio.Guardar
         Try
             If Validar(oeLetraCambio) Then
                 Return odLetraCambio.Guardar(oeLetraCambio)
@@ -25,7 +26,7 @@ Public Class l_LetraCambio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeLetraCambio As EntidadesWCF.e_LetraCambio) As System.Collections.Generic.List(Of EntidadesWCF.e_LetraCambio) Implements Il_LetraCambio.Listar
+    Public Function Listar(ByVal oeLetraCambio As e_LetraCambio) As System.Collections.Generic.List(Of e_LetraCambio) Implements Il_LetraCambio.Listar
         Try
             Return odLetraCambio.Listar(oeLetraCambio)
         Catch ex As Exception
@@ -33,7 +34,7 @@ Public Class l_LetraCambio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeLetraCambio As EntidadesWCF.e_LetraCambio) As EntidadesWCF.e_LetraCambio Implements Il_LetraCambio.Obtener
+    Public Function Obtener(ByVal oeLetraCambio As e_LetraCambio) As e_LetraCambio Implements Il_LetraCambio.Obtener
         Try
             Return odLetraCambio.Obtener(oeLetraCambio)
         Catch ex As Exception
@@ -41,7 +42,7 @@ Public Class l_LetraCambio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeLetraCambio As EntidadesWCF.e_LetraCambio) As Boolean Implements Il_LetraCambio.Validar
+    Public Function Validar(ByVal oeLetraCambio As e_LetraCambio) As Boolean Implements Il_LetraCambio.Validar
         Try
             With oeLetraCambio
                 '---------VALIDARRRRRRRRRR-------------

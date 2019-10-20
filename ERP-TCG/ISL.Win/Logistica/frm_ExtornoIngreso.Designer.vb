@@ -400,7 +400,7 @@ Partial Class frm_ExtornoIngreso
         '
         'EDetalleLibroElectronicoBindingSource
         '
-        Me.EDetalleLibroElectronicoBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_DetalleLibroElectronico)
+        Me.EDetalleLibroElectronicoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_DetalleLibroElectronico)
         '
         'UltraTabPageControl3
         '

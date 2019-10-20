@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class d_MovimientoInventarioAlmacen
     Private sqlhelper As New SqlHelper

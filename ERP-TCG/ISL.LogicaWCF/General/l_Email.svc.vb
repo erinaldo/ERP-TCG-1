@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Email
     Dim odEmail As New d_Email
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeEmail As EntidadesWCF.e_Email) As Boolean Implements Il_Email.Eliminar
+    Public Function Eliminar(ByVal oeEmail As e_Email) As Boolean Implements Il_Email.Eliminar
         Try
             Return odEmail.Eliminar(oeEmail)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Email
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEmail As EntidadesWCF.e_Email) As Boolean Implements Il_Email.Guardar
+    Public Function Guardar(ByVal oeEmail As e_Email) As Boolean Implements Il_Email.Guardar
         Try
             If Validar(oeEmail) Then
                 Return odEmail.Guardar(oeEmail)
@@ -35,7 +35,7 @@ Public Class l_Email
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEmail As EntidadesWCF.e_Email) As System.Collections.Generic.List(Of EntidadesWCF.e_Email) Implements Il_Email.Listar
+    Public Function Listar(ByVal oeEmail As e_Email) As System.Collections.Generic.List(Of e_Email) Implements Il_Email.Listar
         Try
             Return odEmail.Listar(oeEmail)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Email
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEmail As EntidadesWCF.e_Email) As EntidadesWCF.e_Email Implements Il_Email.Obtener
+    Public Function Obtener(ByVal oeEmail As e_Email) As e_Email Implements Il_Email.Obtener
         Try
             Return odEmail.Obtener(oeEmail)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Email
         End Try
     End Function
 
-    Public Function Validar(ByVal oeEmail As EntidadesWCF.e_Email) As Boolean Implements Il_Email.Validar
+    Public Function Validar(ByVal oeEmail As e_Email) As Boolean Implements Il_Email.Validar
         Try
             ValidarNombre(oeEmail.Id, oeEmail.Nombre)
             Return True
@@ -60,7 +60,7 @@ Public Class l_Email
         End Try
     End Function
 
-    Public Function ValidarLista(ByVal leEmail As System.Collections.Generic.List(Of EntidadesWCF.e_Email)) As Boolean Implements Il_Email.ValidarLista
+    Public Function ValidarLista(ByVal leEmail As System.Collections.Generic.List(Of e_Email)) As Boolean Implements Il_Email.ValidarLista
         Try
             If Not leEmail Is Nothing Then
                 'For i As Integer = 0 To leEmail.Count - 1

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_ObligacionPago
 
     Dim odObligacionPago As New d_ObligacionPago
 
-    Public Function Eliminar(ByVal oeObligacionPago As EntidadesWCF.e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Eliminar
+    Public Function Eliminar(ByVal oeObligacionPago As e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Eliminar
         Try
             Return odObligacionPago.Eliminar(oeObligacionPago)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ObligacionPago
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeObligacionPago As EntidadesWCF.e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Guardar
+    Public Function Guardar(ByVal oeObligacionPago As e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Guardar
         Try
             If Validar(oeObligacionPago) Then
                 Return odObligacionPago.Guardar(oeObligacionPago)
@@ -26,7 +26,7 @@ Public Class l_ObligacionPago
         End Try
     End Function
 
-    Public Function Listar(ByVal oeObligacionPago As EntidadesWCF.e_ObligacionPago) As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionPago) Implements Il_ObligacionPago.Listar
+    Public Function Listar(ByVal oeObligacionPago As e_ObligacionPago) As System.Collections.Generic.List(Of e_ObligacionPago) Implements Il_ObligacionPago.Listar
         Try
             Return odObligacionPago.Listar(oeObligacionPago)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_ObligacionPago
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeObligacionPago As EntidadesWCF.e_ObligacionPago) As EntidadesWCF.e_ObligacionPago Implements Il_ObligacionPago.Obtener
+    Public Function Obtener(ByVal oeObligacionPago As e_ObligacionPago) As e_ObligacionPago Implements Il_ObligacionPago.Obtener
         Try
             Return odObligacionPago.Obtener(oeObligacionPago)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ObligacionPago
         End Try
     End Function
 
-    Public Function Validar(ByVal oeObligacionPago As EntidadesWCF.e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Validar
+    Public Function Validar(ByVal oeObligacionPago As e_ObligacionPago) As Boolean Implements Il_ObligacionPago.Validar
         Try
             With oeObligacionPago
                 '---------VALIDARRRRRRRRRR-------------

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_Placa
     Dim odPlaca As New d_Placa
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oePlaca As EntidadesWCF.e_Placa) As Boolean Implements Il_Placa.Eliminar
+    Public Function Eliminar(ByVal oePlaca As e_Placa) As Boolean Implements Il_Placa.Eliminar
         Try
             Return odPlaca.Eliminar(oePlaca)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_Placa
         End Try
     End Function
 
-    Public Function Guardar(ByVal oePlaca As EntidadesWCF.e_Placa) As Boolean Implements Il_Placa.Guardar
+    Public Function Guardar(ByVal oePlaca As e_Placa) As Boolean Implements Il_Placa.Guardar
         Try
             If Validar(oePlaca) Then
                 Return odPlaca.Guardar(oePlaca)
@@ -27,7 +27,7 @@ Public Class l_Placa
         End Try
     End Function
 
-    Public Function Listar(ByVal oePlaca As EntidadesWCF.e_Placa) As System.Collections.Generic.List(Of EntidadesWCF.e_Placa) Implements Il_Placa.Listar
+    Public Function Listar(ByVal oePlaca As e_Placa) As System.Collections.Generic.List(Of e_Placa) Implements Il_Placa.Listar
         Try
             Return odPlaca.Listar(oePlaca)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_Placa
         End Try
     End Function
 
-    Public Function Obtener(ByVal oePlaca As EntidadesWCF.e_Placa) As EntidadesWCF.e_Placa Implements Il_Placa.Obtener
+    Public Function Obtener(ByVal oePlaca As e_Placa) As e_Placa Implements Il_Placa.Obtener
         Try
             Return odPlaca.Obtener(oePlaca)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Placa
         End Try
     End Function
 
-    Public Function Validar(ByVal oePlaca As EntidadesWCF.e_Placa) As Boolean Implements Il_Placa.Validar
+    Public Function Validar(ByVal oePlaca As e_Placa) As Boolean Implements Il_Placa.Validar
         Try
             With oePlaca
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre placa")

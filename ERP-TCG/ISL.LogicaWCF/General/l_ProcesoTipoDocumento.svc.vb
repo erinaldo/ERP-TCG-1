@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ProcesoTipoDocumento
     Dim odProcesoTipoDocumento As New d_ProcesoTipoDocumento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Eliminar
+    Public Function Eliminar(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Eliminar
         Try
             Return odProcesoTipoDocumento.Eliminar(oeProcesoTipoDocumento)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_ProcesoTipoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Guardar
+    Public Function Guardar(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Guardar
         Try
             If Validar(oeProcesoTipoDocumento) Then
                 Return odProcesoTipoDocumento.Guardar(oeProcesoTipoDocumento)
@@ -35,7 +35,7 @@ Public Class l_ProcesoTipoDocumento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_ProcesoTipoDocumento) Implements Il_ProcesoTipoDocumento.Listar
+    Public Function Listar(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As System.Collections.Generic.List(Of e_ProcesoTipoDocumento) Implements Il_ProcesoTipoDocumento.Listar
         Try
             Return odProcesoTipoDocumento.Listar(oeProcesoTipoDocumento)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ProcesoTipoDocumento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As EntidadesWCF.e_ProcesoTipoDocumento Implements Il_ProcesoTipoDocumento.Obtener
+    Public Function Obtener(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As e_ProcesoTipoDocumento Implements Il_ProcesoTipoDocumento.Obtener
         Try
             Return odProcesoTipoDocumento.Obtener(oeProcesoTipoDocumento)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ProcesoTipoDocumento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Validar
+    Public Function Validar(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.Validar
         Try
             With oeProcesoTipoDocumento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdProceso, "Debe seleccionar algún proceso")
@@ -70,7 +70,7 @@ Public Class l_ProcesoTipoDocumento
     ''' <param name="oeProcesoTipoDocumento">Objeto de tipo ProcesoTipoDocumento</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ValidarDuplicado(ByVal oeProcesoTipoDocumento As EntidadesWCF.e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.ValidarDuplicado
+    Public Function ValidarDuplicado(ByVal oeProcesoTipoDocumento As e_ProcesoTipoDocumento) As Boolean Implements Il_ProcesoTipoDocumento.ValidarDuplicado
         Try
             If String.IsNullOrEmpty(oeProcesoTipoDocumento.IdProceso) Then Throw New Exception("No se ha definido que proceso se va a verificar si existe")
             If String.IsNullOrEmpty(oeProcesoTipoDocumento.IdTipoDocumento) Then Throw New Exception("No se ha especificado el tipo de documento que se va a validar")

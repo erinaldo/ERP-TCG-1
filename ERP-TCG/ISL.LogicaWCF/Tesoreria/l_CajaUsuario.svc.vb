@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -12,7 +12,7 @@ Public Class l_CajaUsuario
     Dim _Activo As Boolean = True
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCajaUsuario As EntidadesWCF.e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Eliminar
+    Public Function Eliminar(ByVal oeCajaUsuario As e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Eliminar
         Try
             Return odCajaUsuario.Eliminar(oeCajaUsuario)
         Catch ex As Exception
@@ -20,7 +20,7 @@ Public Class l_CajaUsuario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCajaUsuario As EntidadesWCF.e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Guardar
+    Public Function Guardar(ByVal oeCajaUsuario As e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Guardar
         Try
             If Validar(oeCajaUsuario) Then
                 'If Existe = False Then
@@ -34,7 +34,7 @@ Public Class l_CajaUsuario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCajaUsuario As EntidadesWCF.e_CajaUsuario) As System.Collections.Generic.List(Of EntidadesWCF.e_CajaUsuario) Implements Il_CajaUsuario.Listar
+    Public Function Listar(ByVal oeCajaUsuario As e_CajaUsuario) As System.Collections.Generic.List(Of e_CajaUsuario) Implements Il_CajaUsuario.Listar
         Try
             Return odCajaUsuario.Listar(oeCajaUsuario)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CajaUsuario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCajaUsuario As EntidadesWCF.e_CajaUsuario) As EntidadesWCF.e_CajaUsuario Implements Il_CajaUsuario.Obtener
+    Public Function Obtener(ByVal oeCajaUsuario As e_CajaUsuario) As e_CajaUsuario Implements Il_CajaUsuario.Obtener
         Try
             Return odCajaUsuario.Obtener(oeCajaUsuario)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_CajaUsuario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCajaUsuario As EntidadesWCF.e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Validar
+    Public Function Validar(ByVal oeCajaUsuario As e_CajaUsuario) As Boolean Implements Il_CajaUsuario.Validar
         Try
             With oeCajaUsuario
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdCaja, "Seleccione Caja")

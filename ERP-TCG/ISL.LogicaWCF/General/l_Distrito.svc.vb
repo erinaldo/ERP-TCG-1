@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -20,7 +20,7 @@ Public Class l_Distrito
     ''' <param name="oeDistrito"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeDistrito As EntidadesWCF.e_Distrito) As Boolean Implements Il_Distrito.Eliminar
+    Public Function Eliminar(ByVal oeDistrito As e_Distrito) As Boolean Implements Il_Distrito.Eliminar
         Try
             Return odDistrito.Eliminar(oeDistrito)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_Distrito
     ''' <param name="oeDistrito"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeDistrito As EntidadesWCF.e_Distrito) As Boolean Implements Il_Distrito.Guardar
+    Public Function Guardar(ByVal oeDistrito As e_Distrito) As Boolean Implements Il_Distrito.Guardar
         Try
             If Validar(oeDistrito) Then
                 Return odDistrito.Guardar(oeDistrito)
@@ -51,7 +51,7 @@ Public Class l_Distrito
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeDistrito As EntidadesWCF.e_Distrito) As System.Collections.Generic.List(Of EntidadesWCF.e_Distrito) Implements Il_Distrito.Listar
+    Public Function Listar(ByVal oeDistrito As e_Distrito) As System.Collections.Generic.List(Of e_Distrito) Implements Il_Distrito.Listar
         Try
             Return odDistrito.Listar(oeDistrito)
         Catch ex As Exception
@@ -65,7 +65,7 @@ Public Class l_Distrito
     ''' <param name="oeDistrito"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeDistrito As EntidadesWCF.e_Distrito) As EntidadesWCF.e_Distrito Implements Il_Distrito.Obtener
+    Public Function Obtener(ByVal oeDistrito As e_Distrito) As e_Distrito Implements Il_Distrito.Obtener
         Try
             Return odDistrito.Obtener(oeDistrito)
         Catch ex As Exception
@@ -79,7 +79,7 @@ Public Class l_Distrito
     ''' <param name="oeDistrito"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeDistrito As EntidadesWCF.e_Distrito) As Boolean Implements Il_Distrito.Validar
+    Public Function Validar(ByVal oeDistrito As e_Distrito) As Boolean Implements Il_Distrito.Validar
         Try
             With oeDistrito
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el código del Distrito")

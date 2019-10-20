@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_OrdenTrabajo_Material
 
     Dim odOrdenTrabajoMaterial As New d_OrdenTrabajo_Material
 
-    Public Function Eliminar(ByVal oeOrdenTrabajoMaterial As EntidadesWCF.e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Eliminar
+    Public Function Eliminar(ByVal oeOrdenTrabajoMaterial As e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Eliminar
         Try
             Return odOrdenTrabajoMaterial.Eliminar(oeOrdenTrabajoMaterial)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_OrdenTrabajo_Material
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenTrabajoMaterial As EntidadesWCF.e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Guardar
+    Public Function Guardar(ByVal oeOrdenTrabajoMaterial As e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Guardar
         Try
             If Validar(oeOrdenTrabajoMaterial) Then
                 Return odOrdenTrabajoMaterial.Guardar(oeOrdenTrabajoMaterial)
@@ -26,7 +26,7 @@ Public Class l_OrdenTrabajo_Material
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenTrabajoMaterial As EntidadesWCF.e_OrdenTrabajo_Material) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenTrabajo_Material) Implements Il_OrdenTrabajo_Material.Listar
+    Public Function Listar(ByVal oeOrdenTrabajoMaterial As e_OrdenTrabajo_Material) As System.Collections.Generic.List(Of e_OrdenTrabajo_Material) Implements Il_OrdenTrabajo_Material.Listar
         Try
             Return odOrdenTrabajoMaterial.Listar(oeOrdenTrabajoMaterial)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OrdenTrabajo_Material
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenTrabajoMaterial As EntidadesWCF.e_OrdenTrabajo_Material) As EntidadesWCF.e_OrdenTrabajo_Material Implements Il_OrdenTrabajo_Material.Obtener
+    Public Function Obtener(ByVal oeOrdenTrabajoMaterial As e_OrdenTrabajo_Material) As e_OrdenTrabajo_Material Implements Il_OrdenTrabajo_Material.Obtener
         Try
             Return odOrdenTrabajoMaterial.Obtener(oeOrdenTrabajoMaterial)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_OrdenTrabajo_Material
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenTrabajoMaterial As EntidadesWCF.e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Validar
+    Public Function Validar(ByVal oeOrdenTrabajoMaterial As e_OrdenTrabajo_Material) As Boolean Implements Il_OrdenTrabajo_Material.Validar
         Try
             With oeOrdenTrabajoMaterial
                 '---------VALIDARRRRRRRRRR-------------
@@ -61,7 +61,7 @@ Public Class l_OrdenTrabajo_Material
         End Try
     End Function
 
-    Public Function ListarReporte(ByVal oeReporteOTM As EntidadesWCF.e_ReporteOTMaterial) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteOTMaterial) Implements Il_OrdenTrabajo_Material.ListarReporte
+    Public Function ListarReporte(ByVal oeReporteOTM As e_ReporteOTMaterial) As System.Collections.Generic.List(Of e_ReporteOTMaterial) Implements Il_OrdenTrabajo_Material.ListarReporte
         Try
             Return odOrdenTrabajoMaterial.ListarReporte(oeReporteOTM)
         Catch ex As Exception

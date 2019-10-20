@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Transactions
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_ReporteFlujoBanco
     Dim odReporteFlujoBanco As New d_ReporteFlujoBanco
     Dim olFuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Listar(oe As EntidadesWCF.e_ReporteFlujoBanco) As List(Of EntidadesWCF.e_ReporteFlujoBanco) Implements Il_ReporteFlujoBanco.Listar
+    Public Function Listar(oe As e_ReporteFlujoBanco) As List(Of e_ReporteFlujoBanco) Implements Il_ReporteFlujoBanco.Listar
         Try
             Return odReporteFlujoBanco.Listar(oe)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ReporteFlujoBanco
         End Try
     End Function
 
-    Public Function Guardar(lo As List(Of EntidadesWCF.e_ReporteFlujoBanco), IdPeriodo As String, ByVal PrefijoID As String) As Boolean Implements Il_ReporteFlujoBanco.Guardar
+    Public Function Guardar(lo As List(Of e_ReporteFlujoBanco), IdPeriodo As String, ByVal PrefijoID As String) As Boolean Implements Il_ReporteFlujoBanco.Guardar
         Try
             Using TransScope As New TransactionScope()
                 If olFuncionesGenerales.ValidarPeriodo(IdPeriodo, gAreasSGI.Tesoreria) Then
@@ -85,8 +85,8 @@ Public Class l_ReporteFlujoBanco
 
     Public Function Validar(IdPeriodo As String) As Boolean Implements Il_ReporteFlujoBanco.Validar
         Try
-            Dim oe As New EntidadesWCF.e_ReporteFlujoBanco
-            Dim lo As New List(Of EntidadesWCF.e_ReporteFlujoBanco)
+            Dim oe As New e_ReporteFlujoBanco
+            Dim lo As New List(Of e_ReporteFlujoBanco)
             oe.IdPeriodo = IdPeriodo
             oe.TipoOperacion = "1"
             lo = odReporteFlujoBanco.Listar(oe)

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -31,7 +31,7 @@ Public Class l_Lugar
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal ListaLugar As System.Collections.Generic.List(Of EntidadesWCF.e_Lugar)) As Object Implements Il_Lugar.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaLugar As System.Collections.Generic.List(Of e_Lugar)) As Object Implements Il_Lugar.ComboGrilla
         Try
             Return odLugar.ComboGrilla(ListaLugar)
         Catch ex As Exception
@@ -81,7 +81,7 @@ Public Class l_Lugar
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeLugar As EntidadesWCF.e_Lugar) As EntidadesWCF.e_Lugar Implements Il_Lugar.Obtener
+    Public Function Obtener(ByVal oeLugar As e_Lugar) As e_Lugar Implements Il_Lugar.Obtener
         Try
             Return odLugar.Obtener(oeLugar)
         Catch ex As Exception
@@ -89,7 +89,7 @@ Public Class l_Lugar
         End Try
     End Function
 
-    Public Function Validar(ByVal oeLugar As EntidadesWCF.e_Lugar) As Boolean Implements Il_Lugar.Validar
+    Public Function Validar(ByVal oeLugar As e_Lugar) As Boolean Implements Il_Lugar.Validar
         Try
             If oeLugar.TipoOperacion <> "B" Then
                 With oeLugar
@@ -105,7 +105,7 @@ Public Class l_Lugar
         End Try
     End Function
 
-    Public Function VerificarAntesEliminar(ByVal oeLugar As EntidadesWCF.e_Lugar) As Integer
+    Public Function VerificarAntesEliminar(ByVal oeLugar As e_Lugar) As Integer
         Try
             Return odLugar.VerificarAntesEliminar(oeLugar)
         Catch ex As Exception

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -19,7 +19,7 @@ Public Class l_PagoCajaTrabajador
     Private odDetalle As New d_DetallePagoCajaTrabajador
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oePagoCajaTrabajador As EntidadesWCF.e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Eliminar
+    Public Function Eliminar(oePagoCajaTrabajador As e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Eliminar
         Try
             Return odPagoCajaTrabajador.Eliminar(oePagoCajaTrabajador)
         Catch ex As Exception
@@ -27,7 +27,7 @@ Public Class l_PagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Guardar(oePagoCajaTrabajador As EntidadesWCF.e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Guardar
+    Public Function Guardar(oePagoCajaTrabajador As e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Guardar
         Try
             If Validar(oePagoCajaTrabajador) Then
                 Return odPagoCajaTrabajador.Guardar(oePagoCajaTrabajador)
@@ -37,7 +37,7 @@ Public Class l_PagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Listar(oePagoCajaTrabajador As EntidadesWCF.e_PagoCajaTrabajador) As List(Of EntidadesWCF.e_PagoCajaTrabajador) Implements Il_PagoCajaTrabajador.Listar
+    Public Function Listar(oePagoCajaTrabajador As e_PagoCajaTrabajador) As List(Of e_PagoCajaTrabajador) Implements Il_PagoCajaTrabajador.Listar
         Try
             Return odPagoCajaTrabajador.Listar(oePagoCajaTrabajador)
         Catch ex As Exception
@@ -45,7 +45,7 @@ Public Class l_PagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Obtener(oePagoCajaTrabajador As EntidadesWCF.e_PagoCajaTrabajador) As EntidadesWCF.e_PagoCajaTrabajador Implements Il_PagoCajaTrabajador.Obtener
+    Public Function Obtener(oePagoCajaTrabajador As e_PagoCajaTrabajador) As e_PagoCajaTrabajador Implements Il_PagoCajaTrabajador.Obtener
         Try
             Return odPagoCajaTrabajador.Obtener(oePagoCajaTrabajador)
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class l_PagoCajaTrabajador
         End Try
     End Function
 
-    Public Function Validar(oePagoCajaTrabajador As EntidadesWCF.e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Validar
+    Public Function Validar(oePagoCajaTrabajador As e_PagoCajaTrabajador) As Boolean Implements Il_PagoCajaTrabajador.Validar
         Try
             With oePagoCajaTrabajador
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

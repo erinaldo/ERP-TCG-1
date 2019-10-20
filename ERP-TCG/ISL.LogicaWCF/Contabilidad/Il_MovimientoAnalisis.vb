@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_MovimientoAnalisis", también debe actualizar la referencia a "Il_MovimientoAnalisis" en Web.config.
 <ServiceContract()> _

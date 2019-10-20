@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_OtrosDescuentos
@@ -16,7 +16,7 @@ Public Class l_OtrosDescuentos
     Private odOtrosDescuentos As New d_OtrosDescuentos
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeOtrosDescuentos As EntidadesWCF.e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Eliminar
+    Public Function Eliminar(oeOtrosDescuentos As e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Eliminar
         Try
             Return odOtrosDescuentos.Eliminar(oeOtrosDescuentos)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_OtrosDescuentos
         End Try
     End Function
 
-    Public Function Guardar(oeOtrosDescuentos As EntidadesWCF.e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Guardar
+    Public Function Guardar(oeOtrosDescuentos As e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Guardar
         Try
             If Validar(oeOtrosDescuentos) Then
                 Return odOtrosDescuentos.Guardar(oeOtrosDescuentos)
@@ -34,7 +34,7 @@ Public Class l_OtrosDescuentos
         End Try
     End Function
 
-    Public Function Listar(oeOtrosDescuentos As EntidadesWCF.e_OtrosDescuentos) As List(Of EntidadesWCF.e_OtrosDescuentos) Implements Il_OtrosDescuentos.Listar
+    Public Function Listar(oeOtrosDescuentos As e_OtrosDescuentos) As List(Of e_OtrosDescuentos) Implements Il_OtrosDescuentos.Listar
         Try
             Return odOtrosDescuentos.Listar(oeOtrosDescuentos)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OtrosDescuentos
         End Try
     End Function
 
-    Public Function Obtener(oeOtrosDescuentos As EntidadesWCF.e_OtrosDescuentos) As EntidadesWCF.e_OtrosDescuentos Implements Il_OtrosDescuentos.Obtener
+    Public Function Obtener(oeOtrosDescuentos As e_OtrosDescuentos) As e_OtrosDescuentos Implements Il_OtrosDescuentos.Obtener
         Try
             Return odOtrosDescuentos.Obtener(oeOtrosDescuentos)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_OtrosDescuentos
         End Try
     End Function
 
-    Public Function Validar(oeOtrosDescuentos As EntidadesWCF.e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Validar
+    Public Function Validar(oeOtrosDescuentos As e_OtrosDescuentos) As Boolean Implements Il_OtrosDescuentos.Validar
         Try
             With oeOtrosDescuentos
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdPlanilla, "Seleccione un Planilla")

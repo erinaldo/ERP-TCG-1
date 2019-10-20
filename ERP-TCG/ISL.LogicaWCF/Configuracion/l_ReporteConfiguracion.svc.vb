@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_ReporteConfiguracion
     ''' <param name="oeReporteConfiguracion"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeReporteConfiguracion As EntidadesWCF.e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Eliminar
+    Public Function Eliminar(ByVal oeReporteConfiguracion As e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Eliminar
         Try
             Return odReporteConfiguracion.Eliminar(oeReporteConfiguracion)
         Catch ex As Exception
@@ -31,7 +31,7 @@ Public Class l_ReporteConfiguracion
     ''' <param name="oeReporteConfiguracion"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeReporteConfiguracion As EntidadesWCF.e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Guardar
+    Public Function Guardar(ByVal oeReporteConfiguracion As e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Guardar
         Try
             If Validar(oeReporteConfiguracion) Then
                 Return odReporteConfiguracion.Guardar(oeReporteConfiguracion)
@@ -47,7 +47,7 @@ Public Class l_ReporteConfiguracion
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeReporteConfiguracion As EntidadesWCF.e_ReporteConfiguracion) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteConfiguracion) Implements Il_ReporteConfiguracion.Listar
+    Public Function Listar(ByVal oeReporteConfiguracion As e_ReporteConfiguracion) As System.Collections.Generic.List(Of e_ReporteConfiguracion) Implements Il_ReporteConfiguracion.Listar
         Try
             Return odReporteConfiguracion.Listar(oeReporteConfiguracion)
         Catch ex As Exception
@@ -61,7 +61,7 @@ Public Class l_ReporteConfiguracion
     ''' <param name="oeReporteConfiguracion"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeReporteConfiguracion As EntidadesWCF.e_ReporteConfiguracion) As EntidadesWCF.e_ReporteConfiguracion Implements Il_ReporteConfiguracion.Obtener
+    Public Function Obtener(ByVal oeReporteConfiguracion As e_ReporteConfiguracion) As e_ReporteConfiguracion Implements Il_ReporteConfiguracion.Obtener
         Try
             Return odReporteConfiguracion.Obtener(oeReporteConfiguracion)
         Catch ex As Exception
@@ -75,7 +75,7 @@ Public Class l_ReporteConfiguracion
     ''' <param name="oeReporteConfiguracion"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeReporteConfiguracion As EntidadesWCF.e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Validar
+    Public Function Validar(ByVal oeReporteConfiguracion As e_ReporteConfiguracion) As Boolean Implements Il_ReporteConfiguracion.Validar
         Try
             With oeReporteConfiguracion
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre del Reporte")

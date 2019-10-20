@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -7,7 +7,7 @@ Public Class l_OrdenTrabajo_Recurso
     Implements Il_OrdenTrabajo_Recurso
     Dim odOrdenTrabajo_Recurso As New d_OrdenTrabajo_Recurso
 
-    Public Function Eliminar(ByVal oeOrdenTrabajo_Recurso As EntidadesWCF.e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Eliminar
+    Public Function Eliminar(ByVal oeOrdenTrabajo_Recurso As e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Eliminar
         Try
             Return odOrdenTrabajo_Recurso.Eliminar(oeOrdenTrabajo_Recurso)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_OrdenTrabajo_Recurso
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenTrabajo_Recurso As EntidadesWCF.e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Guardar
+    Public Function Guardar(ByVal oeOrdenTrabajo_Recurso As e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Guardar
         Try
             If Validar(oeOrdenTrabajo_Recurso) Then
                 Return odOrdenTrabajo_Recurso.Guardar(oeOrdenTrabajo_Recurso)
@@ -25,7 +25,7 @@ Public Class l_OrdenTrabajo_Recurso
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenTrabajo_Recurso As EntidadesWCF.e_OrdenTrabajo_Recurso) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenTrabajo_Recurso) Implements Il_OrdenTrabajo_Recurso.Listar
+    Public Function Listar(ByVal oeOrdenTrabajo_Recurso As e_OrdenTrabajo_Recurso) As System.Collections.Generic.List(Of e_OrdenTrabajo_Recurso) Implements Il_OrdenTrabajo_Recurso.Listar
         Try
             Return odOrdenTrabajo_Recurso.Listar(oeOrdenTrabajo_Recurso)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_OrdenTrabajo_Recurso
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenTrabajo_Recurso As EntidadesWCF.e_OrdenTrabajo_Recurso) As EntidadesWCF.e_OrdenTrabajo_Recurso Implements Il_OrdenTrabajo_Recurso.Obtener
+    Public Function Obtener(ByVal oeOrdenTrabajo_Recurso As e_OrdenTrabajo_Recurso) As e_OrdenTrabajo_Recurso Implements Il_OrdenTrabajo_Recurso.Obtener
         Try
             Return odOrdenTrabajo_Recurso.Obtener(oeOrdenTrabajo_Recurso)
         Catch ex As Exception
@@ -49,7 +49,7 @@ Public Class l_OrdenTrabajo_Recurso
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenTrabajo_Recurso As EntidadesWCF.e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Validar
+    Public Function Validar(ByVal oeOrdenTrabajo_Recurso As e_OrdenTrabajo_Recurso) As Boolean Implements Il_OrdenTrabajo_Recurso.Validar
         Try
             With oeOrdenTrabajo_Recurso
                 '---------VALIDARRRRRRRRRR-------------

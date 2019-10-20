@@ -375,7 +375,7 @@ Public Class e_DetalleAsientoModelo
         Return detalleasientomodelo
     End Function
 
-    Public Overloads Function Equals(ByVal oeDetAM As e_DetalleAsientoModelo) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_DetalleAsientoModelo).Equals
+    Public Overloads Function Equals(ByVal oeDetAM As e_DetalleAsientoModelo) As Boolean Implements IEquatable(Of e_DetalleAsientoModelo).Equals
         Select Case oeDetAM.Equivale
             Case 0 : If Me.Codigo.Trim = oeDetAM.Codigo.Trim Then Return True
             Case 1 : If Me.Id.Trim = oeDetAM.Id.Trim Then Return True

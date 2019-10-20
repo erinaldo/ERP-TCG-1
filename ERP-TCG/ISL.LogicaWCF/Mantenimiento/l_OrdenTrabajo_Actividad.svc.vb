@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_OrdenTrabajo_Actividad
 
     Dim odOrdenTrabajo_Actividad As New d_OrdenTrabajo_Actividad
 
-    Public Function Eliminar(ByVal oeOrdenTrabajo_Actividad As EntidadesWCF.e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Eliminar
+    Public Function Eliminar(ByVal oeOrdenTrabajo_Actividad As e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Eliminar
         Try
             Return odOrdenTrabajo_Actividad.Eliminar(oeOrdenTrabajo_Actividad)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_OrdenTrabajo_Actividad
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenTrabajo_Actividad As EntidadesWCF.e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Guardar
+    Public Function Guardar(ByVal oeOrdenTrabajo_Actividad As e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Guardar
         Try
             If Validar(oeOrdenTrabajo_Actividad) Then
                 Return odOrdenTrabajo_Actividad.Guardar(oeOrdenTrabajo_Actividad)
@@ -26,7 +26,7 @@ Public Class l_OrdenTrabajo_Actividad
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenTrabajo_Actividad As EntidadesWCF.e_OrdenTrabajo_Actividad) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenTrabajo_Actividad) Implements Il_OrdenTrabajo_Actividad.Listar
+    Public Function Listar(ByVal oeOrdenTrabajo_Actividad As e_OrdenTrabajo_Actividad) As System.Collections.Generic.List(Of e_OrdenTrabajo_Actividad) Implements Il_OrdenTrabajo_Actividad.Listar
         Try
             Return odOrdenTrabajo_Actividad.Listar(oeOrdenTrabajo_Actividad)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OrdenTrabajo_Actividad
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenTrabajo_Actividad As EntidadesWCF.e_OrdenTrabajo_Actividad) As EntidadesWCF.e_OrdenTrabajo_Actividad Implements Il_OrdenTrabajo_Actividad.Obtener
+    Public Function Obtener(ByVal oeOrdenTrabajo_Actividad As e_OrdenTrabajo_Actividad) As e_OrdenTrabajo_Actividad Implements Il_OrdenTrabajo_Actividad.Obtener
         Try
             Return odOrdenTrabajo_Actividad.Obtener(oeOrdenTrabajo_Actividad)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_OrdenTrabajo_Actividad
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenTrabajo_Actividad As EntidadesWCF.e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Validar
+    Public Function Validar(ByVal oeOrdenTrabajo_Actividad As e_OrdenTrabajo_Actividad) As Boolean Implements Il_OrdenTrabajo_Actividad.Validar
         Try
             With oeOrdenTrabajo_Actividad
                 '---------VALIDARRRRRRRRRR-------------

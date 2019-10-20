@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports ISL.LogicaWCF
 
 Public Class frm_TipoOrdenCompra

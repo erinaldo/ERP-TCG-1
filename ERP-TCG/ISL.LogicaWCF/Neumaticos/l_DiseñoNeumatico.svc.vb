@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_DiseñoNeumatico
     Dim odDiseñoNeumatico As New d_DiseñoNeumatico
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeDiseñoNeumatico As EntidadesWCF.e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Eliminar
+    Public Function Eliminar(ByVal oeDiseñoNeumatico As e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Eliminar
         Try
             Return odDiseñoNeumatico.Eliminar(oeDiseñoNeumatico)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_DiseñoNeumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDiseñoNeumatico As EntidadesWCF.e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Guardar
+    Public Function Guardar(ByVal oeDiseñoNeumatico As e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Guardar
         Try
             If Validar(oeDiseñoNeumatico) Then
                 Return odDiseñoNeumatico.Guardar(oeDiseñoNeumatico)
@@ -34,7 +34,7 @@ Public Class l_DiseñoNeumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDiseñoNeumatico As EntidadesWCF.e_DiseñoNeumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_DiseñoNeumatico) Implements Il_DiseñoNeumatico.Listar
+    Public Function Listar(ByVal oeDiseñoNeumatico As e_DiseñoNeumatico) As System.Collections.Generic.List(Of e_DiseñoNeumatico) Implements Il_DiseñoNeumatico.Listar
         Try
             Return odDiseñoNeumatico.Listar(oeDiseñoNeumatico)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DiseñoNeumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDiseñoNeumatico As EntidadesWCF.e_DiseñoNeumatico) As EntidadesWCF.e_DiseñoNeumatico Implements Il_DiseñoNeumatico.Obtener
+    Public Function Obtener(ByVal oeDiseñoNeumatico As e_DiseñoNeumatico) As e_DiseñoNeumatico Implements Il_DiseñoNeumatico.Obtener
         Try
             Return odDiseñoNeumatico.Obtener(oeDiseñoNeumatico)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_DiseñoNeumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDiseñoNeumatico As EntidadesWCF.e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Validar
+    Public Function Validar(ByVal oeDiseñoNeumatico As e_DiseñoNeumatico) As Boolean Implements Il_DiseñoNeumatico.Validar
         Try
             With oeDiseñoNeumatico
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre.")

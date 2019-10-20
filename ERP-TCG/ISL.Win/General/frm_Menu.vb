@@ -12,7 +12,7 @@ Imports System.IO
 Imports Infragistics.Win
 Imports Infragistics.Win.Misc
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Threading
 Imports System.Configuration
 Imports System.Collections.Specialized

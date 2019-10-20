@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_BolsaRuta
     Dim odBolsaRuta As New d_BolsaRuta
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeBolsaRuta As EntidadesWCF.e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Eliminar
+    Public Function Eliminar(ByVal oeBolsaRuta As e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Eliminar
         Try
             Return odBolsaRuta.Eliminar(oeBolsaRuta)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_BolsaRuta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeBolsaRuta As EntidadesWCF.e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Guardar
+    Public Function Guardar(ByVal oeBolsaRuta As e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Guardar
         Try
             If Validar(oeBolsaRuta) Then
                 Return odBolsaRuta.Guardar(oeBolsaRuta)
@@ -35,7 +35,7 @@ Public Class l_BolsaRuta
         End Try
     End Function
 
-    Public Function Listar(ByVal oeBolsaRuta As EntidadesWCF.e_BolsaRuta) As System.Collections.Generic.List(Of EntidadesWCF.e_BolsaRuta) Implements Il_BolsaRuta.Listar
+    Public Function Listar(ByVal oeBolsaRuta As e_BolsaRuta) As System.Collections.Generic.List(Of e_BolsaRuta) Implements Il_BolsaRuta.Listar
         Try
             Return odBolsaRuta.Listar(oeBolsaRuta)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_BolsaRuta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeBolsaRuta As EntidadesWCF.e_BolsaRuta) As EntidadesWCF.e_BolsaRuta Implements Il_BolsaRuta.Obtener
+    Public Function Obtener(ByVal oeBolsaRuta As e_BolsaRuta) As e_BolsaRuta Implements Il_BolsaRuta.Obtener
         Try
             Return odBolsaRuta.Obtener(oeBolsaRuta)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_BolsaRuta
         End Try
     End Function
 
-    Public Function Validar(ByVal oeBolsaRuta As EntidadesWCF.e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Validar
+    Public Function Validar(ByVal oeBolsaRuta As e_BolsaRuta) As Boolean Implements Il_BolsaRuta.Validar
         Try
             With oeBolsaRuta
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdRuta, "Seleccione Ruta")

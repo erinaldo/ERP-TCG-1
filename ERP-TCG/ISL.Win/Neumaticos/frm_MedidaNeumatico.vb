@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid

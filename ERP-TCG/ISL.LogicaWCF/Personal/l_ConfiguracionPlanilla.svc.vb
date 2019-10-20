@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_ConfiguracionPlanilla
     Private odConfiguracionPlanilla As New d_ConfiguracionPlanilla
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeConfiguracionPlanilla As EntidadesWCF.e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Eliminar
+    Public Function Eliminar(oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Eliminar
         Try
             Return odConfiguracionPlanilla.Eliminar(oeConfiguracionPlanilla)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_ConfiguracionPlanilla
         End Try
     End Function
 
-    Public Function Guardar(oeConfiguracionPlanilla As EntidadesWCF.e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Guardar
+    Public Function Guardar(oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Guardar
         Try
             If Validar(oeConfiguracionPlanilla) Then
                 Return odConfiguracionPlanilla.Guardar(oeConfiguracionPlanilla)
@@ -35,7 +35,7 @@ Public Class l_ConfiguracionPlanilla
         End Try
     End Function
 
-    Public Function Listar(oeConfiguracionPlanilla As EntidadesWCF.e_ConfiguracionPlanilla) As List(Of EntidadesWCF.e_ConfiguracionPlanilla) Implements Il_ConfiguracionPlanilla.Listar
+    Public Function Listar(oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As List(Of e_ConfiguracionPlanilla) Implements Il_ConfiguracionPlanilla.Listar
         Try
             Return odConfiguracionPlanilla.Listar(oeConfiguracionPlanilla)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ConfiguracionPlanilla
         End Try
     End Function
 
-    Public Function Obtener(oeConfiguracionPlanilla As EntidadesWCF.e_ConfiguracionPlanilla) As EntidadesWCF.e_ConfiguracionPlanilla Implements Il_ConfiguracionPlanilla.Obtener
+    Public Function Obtener(oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As e_ConfiguracionPlanilla Implements Il_ConfiguracionPlanilla.Obtener
         Try
             Return odConfiguracionPlanilla.Obtener(oeConfiguracionPlanilla)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_ConfiguracionPlanilla
         End Try
     End Function
 
-    Public Function Validar(oeConfiguracionPlanilla As EntidadesWCF.e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Validar
+    Public Function Validar(oeConfiguracionPlanilla As e_ConfiguracionPlanilla) As Boolean Implements Il_ConfiguracionPlanilla.Validar
         Try
             With oeConfiguracionPlanilla
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

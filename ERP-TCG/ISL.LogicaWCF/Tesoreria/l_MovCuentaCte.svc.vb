@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -27,7 +27,7 @@ Public Class l_MovCuentaCte
     Private odAsientoMov As New d_AsientoMovimiento, olAsientoMov As New l_AsientoMovimiento
     Private odSaldoCtaCte As New d_SaldoCtaCorriente
 
-    Public Function Eliminar(ByVal oeMovCuentaCte As EntidadesWCF.e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Eliminar
+    Public Function Eliminar(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Eliminar
         Try
             Return odMovCuentaCte.Eliminar(oeMovCuentaCte)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovCuentaCte As EntidadesWCF.e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Guardar
+    Public Function Guardar(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Guardar
         Try
             If Validar(oeMovCuentaCte) Then
                 Return odMovCuentaCte.Guardar(oeMovCuentaCte)
@@ -45,7 +45,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMovCuentaCte As EntidadesWCF.e_MovCuentaCte) As System.Collections.Generic.List(Of EntidadesWCF.e_MovCuentaCte) Implements Il_MovCuentaCte.Listar
+    Public Function Listar(ByVal oeMovCuentaCte As e_MovCuentaCte) As System.Collections.Generic.List(Of e_MovCuentaCte) Implements Il_MovCuentaCte.Listar
         Try
             Return odMovCuentaCte.Listar(oeMovCuentaCte)
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMovCuentaCte As EntidadesWCF.e_MovCuentaCte) As EntidadesWCF.e_MovCuentaCte Implements Il_MovCuentaCte.Obtener
+    Public Function Obtener(ByVal oeMovCuentaCte As e_MovCuentaCte) As e_MovCuentaCte Implements Il_MovCuentaCte.Obtener
         Try
             Return odMovCuentaCte.Obtener(oeMovCuentaCte)
         Catch ex As Exception
@@ -61,7 +61,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovCuentaCte As EntidadesWCF.e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Validar
+    Public Function Validar(ByVal oeMovCuentaCte As e_MovCuentaCte) As Boolean Implements Il_MovCuentaCte.Validar
         Try
             With oeMovCuentaCte
                 If .TipoReferencia = "0" Then
@@ -83,7 +83,7 @@ Public Class l_MovCuentaCte
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal leMovCuentaCte As System.Collections.Generic.List(Of EntidadesWCF.e_MovCuentaCte), ByVal PrefijoID As String) As Boolean Implements Il_MovCuentaCte.GuardarLista
+    Public Function GuardarLista(ByVal leMovCuentaCte As System.Collections.Generic.List(Of e_MovCuentaCte), ByVal PrefijoID As String) As Boolean Implements Il_MovCuentaCte.GuardarLista
         Try
             Dim oeTCD As e_TablaContableDet
             Dim oeTCD16 As e_TablaContableDet

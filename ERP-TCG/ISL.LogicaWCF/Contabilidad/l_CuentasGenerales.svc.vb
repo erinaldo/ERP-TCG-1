@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_CuentasGenerales
 
     Dim odCuentasGenerales As New d_CuentasGenerales
 
-    Public Function Eliminar(ByVal oeCuentasGenerales As EntidadesWCF.e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Eliminar
+    Public Function Eliminar(ByVal oeCuentasGenerales As e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Eliminar
         Try
             Return odCuentasGenerales.Eliminar(oeCuentasGenerales)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_CuentasGenerales
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentasGenerales As EntidadesWCF.e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Guardar
+    Public Function Guardar(ByVal oeCuentasGenerales As e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Guardar
         Try
             If Validar(oeCuentasGenerales) Then
                 Return odCuentasGenerales.Guardar(oeCuentasGenerales)
@@ -26,7 +26,7 @@ Public Class l_CuentasGenerales
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentasGenerales As EntidadesWCF.e_CuentasGenerales) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentasGenerales) Implements Il_CuentasGenerales.Listar
+    Public Function Listar(ByVal oeCuentasGenerales As e_CuentasGenerales) As System.Collections.Generic.List(Of e_CuentasGenerales) Implements Il_CuentasGenerales.Listar
         Try
             Return odCuentasGenerales.Listar(oeCuentasGenerales)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CuentasGenerales
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentasGenerales As EntidadesWCF.e_CuentasGenerales) As EntidadesWCF.e_CuentasGenerales Implements Il_CuentasGenerales.Obtener
+    Public Function Obtener(ByVal oeCuentasGenerales As e_CuentasGenerales) As e_CuentasGenerales Implements Il_CuentasGenerales.Obtener
         Try
             Return odCuentasGenerales.Obtener(oeCuentasGenerales)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CuentasGenerales
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentasGenerales As EntidadesWCF.e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Validar
+    Public Function Validar(ByVal oeCuentasGenerales As e_CuentasGenerales) As Boolean Implements Il_CuentasGenerales.Validar
         Try
             With oeCuentasGenerales
                 '---------VALIDARRRRRRRRRR-------------

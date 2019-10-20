@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -18,7 +18,7 @@ Public Class l_DocumentoVehicular
     Dim odDocumentoVehicular As New d_DocumentoVehicular
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Eliminar
+    Public Function Eliminar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Eliminar
         Try
             Return odDocumentoVehicular.Eliminar(oeDocumentoVehicular)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Guardar
+    Public Function Guardar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Guardar
         Try
             If Validar(oeDocumentoVehicular) Then
                 Return odDocumentoVehicular.Guardar(oeDocumentoVehicular)
@@ -36,7 +36,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function GuardarSeguro(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.GuardarSeguro
+    Public Function GuardarSeguro(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.GuardarSeguro
         Try
             If ValidarSeguro(oeDocumentoVehicular) Then
                 Return odDocumentoVehicular.Guardar(oeDocumentoVehicular)
@@ -46,7 +46,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As System.Collections.Generic.List(Of EntidadesWCF.e_DocumentoVehicular) Implements Il_DocumentoVehicular.Listar
+    Public Function Listar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As System.Collections.Generic.List(Of e_DocumentoVehicular) Implements Il_DocumentoVehicular.Listar
         Try
             Return odDocumentoVehicular.Listar(oeDocumentoVehicular)
         Catch ex As Exception
@@ -54,7 +54,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function ListarDts(ByVal oeDocVeh As EntidadesWCF.e_DocumentoVehicular) As System.Data.DataSet Implements Il_DocumentoVehicular.ListarDts
+    Public Function ListarDts(ByVal oeDocVeh As e_DocumentoVehicular) As System.Data.DataSet Implements Il_DocumentoVehicular.ListarDts
         Try
             Dim dts As New DataSet
             dts = odDocumentoVehicular.ListarDts(oeDocVeh)
@@ -64,7 +64,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As EntidadesWCF.e_DocumentoVehicular Implements Il_DocumentoVehicular.Obtener
+    Public Function Obtener(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As e_DocumentoVehicular Implements Il_DocumentoVehicular.Obtener
         Try
             Return odDocumentoVehicular.Obtener(oeDocumentoVehicular)
         Catch ex As Exception
@@ -72,7 +72,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Validar
+    Public Function Validar(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.Validar
         Try
             With oeDocumentoVehicular
 
@@ -117,7 +117,7 @@ Public Class l_DocumentoVehicular
         End Try
     End Function
 
-    Public Function ValidarSeguro(ByVal oeDocumentoVehicular As EntidadesWCF.e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.ValidarSeguro
+    Public Function ValidarSeguro(ByVal oeDocumentoVehicular As e_DocumentoVehicular) As Boolean Implements Il_DocumentoVehicular.ValidarSeguro
         Try
             With oeDocumentoVehicular
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Numero, "Debe ingresar numero de certificado")

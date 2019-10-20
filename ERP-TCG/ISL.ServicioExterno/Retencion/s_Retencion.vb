@@ -2,8 +2,8 @@
 Imports System.IO
 Imports System.Security.Cryptography.X509Certificates
 Imports System.Security.Cryptography.Xml
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports Ionic.Zip
 
 Public Class s_Retencion

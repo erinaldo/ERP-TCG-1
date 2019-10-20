@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_CategoriaServicio
     Dim odCategoriaServicio As New d_CategoriaServicio
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCategoriaServicio As EntidadesWCF.e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Eliminar
+    Public Function Eliminar(ByVal oeCategoriaServicio As e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Eliminar
         Try
             Return odCategoriaServicio.Eliminar(oeCategoriaServicio)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_CategoriaServicio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCategoriaServicio As EntidadesWCF.e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Guardar
+    Public Function Guardar(ByVal oeCategoriaServicio As e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Guardar
         Try
             If Validar(oeCategoriaServicio) Then
                 Return odCategoriaServicio.Guardar(oeCategoriaServicio)
@@ -35,7 +35,7 @@ Public Class l_CategoriaServicio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCategoriaServicio As EntidadesWCF.e_CategoriaServicio) As System.Collections.Generic.List(Of EntidadesWCF.e_CategoriaServicio) Implements Il_CategoriaServicio.Listar
+    Public Function Listar(ByVal oeCategoriaServicio As e_CategoriaServicio) As System.Collections.Generic.List(Of e_CategoriaServicio) Implements Il_CategoriaServicio.Listar
         Try
             Return odCategoriaServicio.Listar(oeCategoriaServicio)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_CategoriaServicio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCategoriaServicio As EntidadesWCF.e_CategoriaServicio) As EntidadesWCF.e_CategoriaServicio Implements Il_CategoriaServicio.Obtener
+    Public Function Obtener(ByVal oeCategoriaServicio As e_CategoriaServicio) As e_CategoriaServicio Implements Il_CategoriaServicio.Obtener
         Try
             Return odCategoriaServicio.Obtener(oeCategoriaServicio)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_CategoriaServicio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCategoriaServicio As EntidadesWCF.e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Validar
+    Public Function Validar(ByVal oeCategoriaServicio As e_CategoriaServicio) As Boolean Implements Il_CategoriaServicio.Validar
         Try
             With oeCategoriaServicio
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre")

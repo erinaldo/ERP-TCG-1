@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_CuentaItemGasto
 
     Dim odCuentaItemGasto As New d_CuentaItemGasto
 
-    Public Function Eliminar(ByVal oeCuentaItemGasto As EntidadesWCF.e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Eliminar
+    Public Function Eliminar(ByVal oeCuentaItemGasto As e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Eliminar
         Try
             Return odCuentaItemGasto.Eliminar(oeCuentaItemGasto)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_CuentaItemGasto
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaItemGasto As EntidadesWCF.e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Guardar
+    Public Function Guardar(ByVal oeCuentaItemGasto As e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Guardar
         Try
             If Validar(oeCuentaItemGasto) Then
                 Return odCuentaItemGasto.Guardar(oeCuentaItemGasto)
@@ -26,7 +26,7 @@ Public Class l_CuentaItemGasto
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaItemGasto As EntidadesWCF.e_CuentaItemGasto) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaItemGasto) Implements Il_CuentaItemGasto.Listar
+    Public Function Listar(ByVal oeCuentaItemGasto As e_CuentaItemGasto) As System.Collections.Generic.List(Of e_CuentaItemGasto) Implements Il_CuentaItemGasto.Listar
         Try
             Return odCuentaItemGasto.Listar(oeCuentaItemGasto)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CuentaItemGasto
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaItemGasto As EntidadesWCF.e_CuentaItemGasto) As EntidadesWCF.e_CuentaItemGasto Implements Il_CuentaItemGasto.Obtener
+    Public Function Obtener(ByVal oeCuentaItemGasto As e_CuentaItemGasto) As e_CuentaItemGasto Implements Il_CuentaItemGasto.Obtener
         Try
             Return odCuentaItemGasto.Obtener(oeCuentaItemGasto)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CuentaItemGasto
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaItemGasto As EntidadesWCF.e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Validar
+    Public Function Validar(ByVal oeCuentaItemGasto As e_CuentaItemGasto) As Boolean Implements Il_CuentaItemGasto.Validar
         Try
             With oeCuentaItemGasto
                 '---------VALIDARRRRRRRRRR-------------

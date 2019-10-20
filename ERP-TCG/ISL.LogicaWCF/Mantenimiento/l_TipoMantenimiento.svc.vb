@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -18,7 +18,7 @@ Public Class l_TipoMantenimiento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
 
-    Public Function Eliminar(ByVal oeTipoMantenimiento As EntidadesWCF.e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Eliminar
+    Public Function Eliminar(ByVal oeTipoMantenimiento As e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Eliminar
         Try
             Return odTipoMantenimiento.Eliminar(oeTipoMantenimiento)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_TipoMantenimiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoMantenimiento As EntidadesWCF.e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Guardar
+    Public Function Guardar(ByVal oeTipoMantenimiento As e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Guardar
         Try
             If Validar(oeTipoMantenimiento) Then
                 Return odTipoMantenimiento.Guardar(oeTipoMantenimiento)
@@ -36,7 +36,7 @@ Public Class l_TipoMantenimiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoMantenimiento As EntidadesWCF.e_TipoMantenimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoMantenimiento) Implements Il_TipoMantenimiento.Listar
+    Public Function Listar(ByVal oeTipoMantenimiento As e_TipoMantenimiento) As System.Collections.Generic.List(Of e_TipoMantenimiento) Implements Il_TipoMantenimiento.Listar
         Try
             Return odTipoMantenimiento.Listar(oeTipoMantenimiento)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_TipoMantenimiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoMantenimiento As EntidadesWCF.e_TipoMantenimiento) As EntidadesWCF.e_TipoMantenimiento Implements Il_TipoMantenimiento.Obtener
+    Public Function Obtener(ByVal oeTipoMantenimiento As e_TipoMantenimiento) As e_TipoMantenimiento Implements Il_TipoMantenimiento.Obtener
         Try
             Return odTipoMantenimiento.Obtener(oeTipoMantenimiento)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_TipoMantenimiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoMantenimiento As EntidadesWCF.e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Validar
+    Public Function Validar(ByVal oeTipoMantenimiento As e_TipoMantenimiento) As Boolean Implements Il_TipoMantenimiento.Validar
         Try
             With oeTipoMantenimiento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar codigo")

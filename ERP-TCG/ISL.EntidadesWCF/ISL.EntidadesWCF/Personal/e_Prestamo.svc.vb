@@ -424,7 +424,7 @@ Public Class e_Prestamo
         Return prestamo
     End Function
 
-    Public Overloads Function Equals(ByVal oePrest As e_Prestamo) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_Prestamo).Equals
+    Public Overloads Function Equals(ByVal oePrest As e_Prestamo) As Boolean Implements IEquatable(Of e_Prestamo).Equals
         Select Case oePrest.Equivale
             Case 0 : If Me.Id.Trim = oePrest.Id.Trim Then Return True
         End Select

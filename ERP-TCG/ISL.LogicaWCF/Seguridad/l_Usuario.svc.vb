@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Usuario
 
     Dim odUsuario As New d_Usuario
 
-    Public Function ActualizaFechaUltimoIngreso(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.ActualizaFechaUltimoIngreso
+    Public Function ActualizaFechaUltimoIngreso(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.ActualizaFechaUltimoIngreso
         Try
             Return odUsuario.ActualizaFechaIngreso(oeUsuario)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Area(ByVal oeUsuario As EntidadesWCF.e_Usuario) As EntidadesWCF.e_Area Implements Il_Usuario.Area
+    Public Function Area(ByVal oeUsuario As e_Usuario) As e_Area Implements Il_Usuario.Area
         Try
             Dim olTrabajador As New l_Trabajador
             Dim oeTrabajador As New e_Trabajador
@@ -43,7 +43,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function CambiarClave(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.CambiarClave
+    Public Function CambiarClave(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.CambiarClave
         Try
             Return odUsuario.CambiarClave(oeUsuario)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.Eliminar
+    Public Function Eliminar(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.Eliminar
         Try
             If Validar(oeUsuario) Then
                 odUsuario.Eliminar(oeUsuario)
@@ -62,7 +62,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.Guardar
+    Public Function Guardar(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.Guardar
         Try
             If Validar(oeUsuario) Then
                 Return odUsuario.Guardar(oeUsuario)
@@ -72,7 +72,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function IniciarSesion(ByVal oeUsuario As EntidadesWCF.e_Usuario) As EntidadesWCF.e_Usuario Implements Il_Usuario.IniciarSesion
+    Public Function IniciarSesion(ByVal oeUsuario As e_Usuario) As e_Usuario Implements Il_Usuario.IniciarSesion
         Try
             Dim usuario As e_Usuario = odUsuario.Cargar(oeUsuario)
             Return usuario
@@ -81,7 +81,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeUsuario As EntidadesWCF.e_Usuario) As System.Collections.Generic.List(Of EntidadesWCF.e_Usuario) Implements Il_Usuario.Listar
+    Public Function Listar(ByVal oeUsuario As e_Usuario) As System.Collections.Generic.List(Of e_Usuario) Implements Il_Usuario.Listar
         Try
             Return odUsuario.Listar(oeUsuario)
         Catch ex As Exception
@@ -89,7 +89,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ListarIngreso(ByVal oeUsuario As EntidadesWCF.e_Usuario) As System.Collections.Generic.List(Of EntidadesWCF.e_Usuario) Implements Il_Usuario.ListarIngreso
+    Public Function ListarIngreso(ByVal oeUsuario As e_Usuario) As System.Collections.Generic.List(Of e_Usuario) Implements Il_Usuario.ListarIngreso
         Try
             Return odUsuario.ListarIngreso(oeUsuario)
         Catch ex As Exception
@@ -147,7 +147,7 @@ Public Class l_Usuario
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ListarConectados() As System.Collections.Generic.List(Of EntidadesWCF.e_UsuarioConectado) Implements Il_Usuario.ListarConectados
+    Public Function ListarConectados() As System.Collections.Generic.List(Of e_UsuarioConectado) Implements Il_Usuario.ListarConectados
         Try
             Return odUsuario.ListarConectados()
         Catch ex As Exception
@@ -160,7 +160,7 @@ Public Class l_Usuario
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ListarDesconectados() As System.Collections.Generic.List(Of EntidadesWCF.e_UsuarioDesconectado) Implements Il_Usuario.ListarDesconectados
+    Public Function ListarDesconectados() As System.Collections.Generic.List(Of e_UsuarioDesconectado) Implements Il_Usuario.ListarDesconectados
         Try
             Return odUsuario.ListarDesconectados()
         Catch ex As Exception
@@ -168,7 +168,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ListarSinAccesoUnaSemana() As System.Collections.Generic.List(Of EntidadesWCF.e_UsuarioSinAcceso) Implements Il_Usuario.ListarSinAccesoUnaSemana
+    Public Function ListarSinAccesoUnaSemana() As System.Collections.Generic.List(Of e_UsuarioSinAcceso) Implements Il_Usuario.ListarSinAccesoUnaSemana
         Try
             Return odUsuario.ListarUsuariosSinAccesoUltimaSemana()
         Catch ex As Exception
@@ -176,7 +176,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ListarSinAccesoMasDeUnaSemana() As System.Collections.Generic.List(Of EntidadesWCF.e_UsuarioSinAcceso) Implements Il_Usuario.ListarSinAccesoMasDeUnaSemana
+    Public Function ListarSinAccesoMasDeUnaSemana() As System.Collections.Generic.List(Of e_UsuarioSinAcceso) Implements Il_Usuario.ListarSinAccesoMasDeUnaSemana
         Try
             Return odUsuario.ListarUsuariosSinAccesoMasDeUnaSemana()
         Catch ex As Exception
@@ -184,7 +184,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeUsuario As EntidadesWCF.e_Usuario) As EntidadesWCF.e_Usuario Implements Il_Usuario.Obtener
+    Public Function Obtener(ByVal oeUsuario As e_Usuario) As e_Usuario Implements Il_Usuario.Obtener
         Try
             Return odUsuario.Obtener(oeUsuario)
         Catch ex As Exception
@@ -192,7 +192,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function Obtener2(ByVal oeUsuario As EntidadesWCF.e_Usuario) As EntidadesWCF.e_Usuario Implements Il_Usuario.Obtener2
+    Public Function Obtener2(ByVal oeUsuario As e_Usuario) As e_Usuario Implements Il_Usuario.Obtener2
         Try
             Return odUsuario.Obtener2(oeUsuario)
         Catch ex As Exception
@@ -200,7 +200,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ObtenerAutorizado(ByVal oeUsuario As EntidadesWCF.e_Usuario) As e_Usuario Implements Il_Usuario.ObtenerAutorizado
+    Public Function ObtenerAutorizado(ByVal oeUsuario As e_Usuario) As e_Usuario Implements Il_Usuario.ObtenerAutorizado
         Try
             Return odUsuario.ObtenerAutorizacion(oeUsuario)
         Catch ex As Exception
@@ -214,7 +214,7 @@ Public Class l_Usuario
     ''' <param name="oeUsuario"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.Validar
+    Public Function Validar(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.Validar
         Try
             If String.IsNullOrEmpty(oeUsuario.Login) Then Throw New Exception("No ha ingreso el Login")
             If String.IsNullOrEmpty(oeUsuario.Clave) Then Throw New Exception("No ha ingreso el Clave")
@@ -245,7 +245,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ValidaSalida(ByVal oeUsuario As EntidadesWCF.e_Usuario) As System.Data.DataSet Implements Il_Usuario.ValidaSalida
+    Public Function ValidaSalida(ByVal oeUsuario As e_Usuario) As System.Data.DataSet Implements Il_Usuario.ValidaSalida
         Try
             Return odUsuario.ValidaSalida(oeUsuario)
         Catch ex As Exception
@@ -253,7 +253,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ValidaTurno(ByVal oeUsuario As EntidadesWCF.e_Usuario) As Boolean Implements Il_Usuario.ValidaTurno
+    Public Function ValidaTurno(ByVal oeUsuario As e_Usuario) As Boolean Implements Il_Usuario.ValidaTurno
         Try
             Return odUsuario.ValidaTurno(oeUsuario)
         Catch ex As Exception
@@ -261,7 +261,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    Public Function ObtenerUsuarioInicial(ByVal oeUsuario As EntidadesWCF.e_Usuario) As EntidadesWCF.e_Usuario Implements Il_Usuario.ObtenerUsuarioInicial
+    Public Function ObtenerUsuarioInicial(ByVal oeUsuario As e_Usuario) As e_Usuario Implements Il_Usuario.ObtenerUsuarioInicial
         Try
             Return odUsuario.ObtenerUsuarioInicial(oeUsuario)
         Catch ex As Exception
@@ -269,7 +269,7 @@ Public Class l_Usuario
         End Try
     End Function
 
-    'Public Function Inicializar() As EntidadesWCF.e_Usuario Implements Il_Usuario.Inicializar
+    'Public Function Inicializar() As e_Usuario Implements Il_Usuario.Inicializar
     '    Dim oeUsuario As New e_Usuario
     '    Dim area As New e_Area
     '    area.Activo = True

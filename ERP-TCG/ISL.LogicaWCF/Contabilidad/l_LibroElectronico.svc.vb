@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 
 Public Class l_LibroElectronico
     Implements Il_LibroElectronico
@@ -8,7 +8,7 @@ Public Class l_LibroElectronico
     Dim olDetalleLibroElectronico As New l_DetalleLibroElectronico
     Dim odDetalleLibroElectronico As New d_DetalleLibroElectronico
 
-    Public Function Eliminar(ByVal oeLibroElectronico As EntidadesWCF.e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Eliminar
+    Public Function Eliminar(ByVal oeLibroElectronico As e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Eliminar
         Try
             Return odLibroElectronico.Eliminar(oeLibroElectronico)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_LibroElectronico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeLibroElectronico As EntidadesWCF.e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Guardar
+    Public Function Guardar(ByVal oeLibroElectronico As e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Guardar
         Try
             'Se cambio el procedimiento de guardar en la BD el detalle antes "I"
             Dim dtDLE As Data.DataTable = olDetalleLibroElectronico.CrearDT
@@ -94,7 +94,7 @@ Public Class l_LibroElectronico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeLibroElectronico As EntidadesWCF.e_LibroElectronico) As System.Collections.Generic.List(Of EntidadesWCF.e_LibroElectronico) Implements Il_LibroElectronico.Listar
+    Public Function Listar(ByVal oeLibroElectronico As e_LibroElectronico) As System.Collections.Generic.List(Of e_LibroElectronico) Implements Il_LibroElectronico.Listar
         Try
             Return odLibroElectronico.Listar(oeLibroElectronico)
         Catch ex As Exception
@@ -102,7 +102,7 @@ Public Class l_LibroElectronico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeLibroElectronico As EntidadesWCF.e_LibroElectronico) As EntidadesWCF.e_LibroElectronico Implements Il_LibroElectronico.Obtener
+    Public Function Obtener(ByVal oeLibroElectronico As e_LibroElectronico) As e_LibroElectronico Implements Il_LibroElectronico.Obtener
         Try
             Return odLibroElectronico.Obtener(oeLibroElectronico)
         Catch ex As Exception
@@ -110,7 +110,7 @@ Public Class l_LibroElectronico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeLibroElectronico As EntidadesWCF.e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Validar
+    Public Function Validar(ByVal oeLibroElectronico As e_LibroElectronico) As Boolean Implements Il_LibroElectronico.Validar
         Try
 
         Catch ex As Exception

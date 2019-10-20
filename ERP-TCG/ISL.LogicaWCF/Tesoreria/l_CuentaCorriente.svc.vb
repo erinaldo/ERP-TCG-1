@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_CuentaCorriente
     Dim odCuentaCorriente As New d_CuentaCorriente
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCuentaCorriente As EntidadesWCF.e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Eliminar
+    Public Function Eliminar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Eliminar
         Try
             Return odCuentaCorriente.Eliminar(oeCuentaCorriente)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_CuentaCorriente
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaCorriente As EntidadesWCF.e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Guardar
+    Public Function Guardar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Guardar
         Try
             If Validar(oeCuentaCorriente) Then
                 Return odCuentaCorriente.Guardar(oeCuentaCorriente)
@@ -35,7 +35,7 @@ Public Class l_CuentaCorriente
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaCorriente As EntidadesWCF.e_CuentaCorriente) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaCorriente) Implements Il_CuentaCorriente.Listar
+    Public Function Listar(ByVal oeCuentaCorriente As e_CuentaCorriente) As System.Collections.Generic.List(Of e_CuentaCorriente) Implements Il_CuentaCorriente.Listar
         Try
             Return odCuentaCorriente.Listar(oeCuentaCorriente)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_CuentaCorriente
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaCorriente As EntidadesWCF.e_CuentaCorriente) As EntidadesWCF.e_CuentaCorriente Implements Il_CuentaCorriente.Obtener
+    Public Function Obtener(ByVal oeCuentaCorriente As e_CuentaCorriente) As e_CuentaCorriente Implements Il_CuentaCorriente.Obtener
         Try
             Return odCuentaCorriente.Obtener(oeCuentaCorriente)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_CuentaCorriente
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaCorriente As EntidadesWCF.e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Validar
+    Public Function Validar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean Implements Il_CuentaCorriente.Validar
         Try
             With oeCuentaCorriente
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "Ingrese el trabajador")

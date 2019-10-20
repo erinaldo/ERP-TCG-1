@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_RetencionQuinta
@@ -18,7 +18,7 @@ Public Class l_RetencionQuinta
     Private odDetalle As New d_DetalleRentaQuinta
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeRetencionQuinta As EntidadesWCF.e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Eliminar
+    Public Function Eliminar(oeRetencionQuinta As e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Eliminar
         Try
             Return odRetencionQuinta.Eliminar(oeRetencionQuinta)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_RetencionQuinta
         End Try
     End Function
 
-    Public Function Guardar(oeRetencionQuinta As EntidadesWCF.e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Guardar
+    Public Function Guardar(oeRetencionQuinta As e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Guardar
         Try
             If Validar(oeRetencionQuinta) Then
                 Return odRetencionQuinta.Guardar(oeRetencionQuinta)
@@ -36,7 +36,7 @@ Public Class l_RetencionQuinta
         End Try
     End Function
 
-    Public Function Listar(oeRetencionQuinta As EntidadesWCF.e_RetencionQuinta) As List(Of EntidadesWCF.e_RetencionQuinta) Implements Il_RetencionQuinta.Listar
+    Public Function Listar(oeRetencionQuinta As e_RetencionQuinta) As List(Of e_RetencionQuinta) Implements Il_RetencionQuinta.Listar
         Try
             Return odRetencionQuinta.Listar(oeRetencionQuinta)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_RetencionQuinta
         End Try
     End Function
 
-    Public Function Obtener(oeRetencionQuinta As EntidadesWCF.e_RetencionQuinta) As EntidadesWCF.e_RetencionQuinta Implements Il_RetencionQuinta.Obtener
+    Public Function Obtener(oeRetencionQuinta As e_RetencionQuinta) As e_RetencionQuinta Implements Il_RetencionQuinta.Obtener
         Try
             Return odRetencionQuinta.Obtener(oeRetencionQuinta)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_RetencionQuinta
         End Try
     End Function
 
-    Public Function Validar(oeRetencionQuinta As EntidadesWCF.e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Validar
+    Public Function Validar(oeRetencionQuinta As e_RetencionQuinta) As Boolean Implements Il_RetencionQuinta.Validar
         Try
             With oeRetencionQuinta
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")
