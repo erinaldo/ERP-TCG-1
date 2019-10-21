@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_Concepto" CodeBehind="l_Concepto.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_Concepto" CodeBehind="l_Concepto.svc.vb" %>

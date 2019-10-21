@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 ''' <summary>
 ''' Formulario diseñado para almacenar la información del historial del inventario en un momento determinado

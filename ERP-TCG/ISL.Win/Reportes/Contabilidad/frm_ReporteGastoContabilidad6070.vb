@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_ReporteGastoContabilidad6070
     Inherits frm_ReporteBasico

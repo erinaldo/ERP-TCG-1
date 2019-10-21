@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports MSScriptControl
@@ -21,7 +21,7 @@ Imports System.Configuration
 Imports System.Collections.Specialized
 
 Public Class frm_Gratificacion
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

@@ -7,10 +7,10 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ISL.Controles
 Public Class frm_ProcesoGlosa
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.

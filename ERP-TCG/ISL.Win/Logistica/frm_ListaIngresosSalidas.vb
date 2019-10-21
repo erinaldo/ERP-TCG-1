@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.UltraChart.Shared.Styles
 
 Public Class frm_ListaIngresosSalidas

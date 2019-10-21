@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_EstadoCuenta
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form invalida a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()>

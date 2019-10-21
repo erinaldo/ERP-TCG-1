@@ -7,12 +7,12 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports System.Net.Mail
 
 Public Class frm_CambiarClave
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

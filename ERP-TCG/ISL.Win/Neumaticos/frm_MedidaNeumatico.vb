@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win
@@ -14,7 +14,7 @@ Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_MedidaNeumatico
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializar el formulario"
 

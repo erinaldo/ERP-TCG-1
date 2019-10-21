@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_CtaCtbleSubFamiliaMat" CodeBehind="l_CtaCtbleSubFamiliaMat.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_CtaCtbleSubFamiliaMat" CodeBehind="l_CtaCtbleSubFamiliaMat.svc.vb" %>

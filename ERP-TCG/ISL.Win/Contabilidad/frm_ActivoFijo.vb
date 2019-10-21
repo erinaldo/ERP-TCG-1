@@ -7,16 +7,16 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_ActivoFijo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 
-    Dim ColorFilaEdit As Controles.Colores
+    Dim ColorFilaEdit As ISL.Controles.Colores
     Dim Label2 As Label
 
     Public Sub New()

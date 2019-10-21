@@ -7,13 +7,13 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
 
 
 Public Class frm_ValesRendir
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion"
 

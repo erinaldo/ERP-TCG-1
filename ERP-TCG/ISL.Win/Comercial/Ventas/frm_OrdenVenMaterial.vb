@@ -1,5 +1,5 @@
 ﻿Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_OrdenVenMaterial

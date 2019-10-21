@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -17,7 +17,7 @@ Imports Infragistics.Win.CalcEngine
 Imports Infragistics.Win.UltraWinDataSource
 
 Public Class frm_ConsultaMaterialStock
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 

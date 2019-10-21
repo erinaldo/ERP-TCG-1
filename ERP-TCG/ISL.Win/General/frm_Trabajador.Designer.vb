@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_Trabajador
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -4272,8 +4272,8 @@ Partial Class frm_Trabajador
     Friend WithEvents UltraExpandableGroupBoxPanel6 As Infragistics.Win.Misc.UltraExpandableGroupBoxPanel
     Friend WithEvents upbFoto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents imagenes As ImageList
-    Friend WithEvents btnDescargarJpg As Controles.Boton
-    Friend WithEvents btnBorrar As Controles.Boton
-    Friend WithEvents btnExaminar As Controles.Boton
+    Friend WithEvents btnDescargarJpg As ISL.Controles.Boton
+    Friend WithEvents btnBorrar As ISL.Controles.Boton
+    Friend WithEvents btnExaminar As ISL.Controles.Boton
     Friend WithEvents imagenGuardar As PictureBox
 End Class

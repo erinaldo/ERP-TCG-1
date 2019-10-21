@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports System.Text
 
 Public Class frm_TipoActivoFijo_CtaCtble

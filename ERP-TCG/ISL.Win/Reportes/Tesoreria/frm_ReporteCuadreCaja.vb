@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Microsoft.Reporting.WinForms
 Imports Infragistics.Win.UltraWinGrid

@@ -16,7 +16,7 @@ Imports System.Xml.Schema
 Imports System.IO
 Imports System.Threading
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.Misc
 
 Public Class frm_CpeFacturacion

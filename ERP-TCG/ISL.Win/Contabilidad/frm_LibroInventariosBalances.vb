@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Microsoft.Reporting.WinForms
 Imports Infragistics.Win.UltraWinGrid
@@ -14,7 +14,7 @@ Imports Infragistics.Win
 
 Public Class frm_LibroInventariosBalances
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Private Shared instancia As frm_LibroInventariosBalances = Nothing
     Private Shared Operacion As String
     Private oeAsiento As New e_Asiento, olAsiento As New l_Asiento

@@ -7,12 +7,12 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 
 Public Class frm_TipoDocumento
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
 

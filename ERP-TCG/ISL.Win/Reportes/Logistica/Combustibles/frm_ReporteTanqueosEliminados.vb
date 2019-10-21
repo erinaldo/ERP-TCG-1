@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_ReporteTanqueosEliminados
     Inherits frm_ReporteBasico

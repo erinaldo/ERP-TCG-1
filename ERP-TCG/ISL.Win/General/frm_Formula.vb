@@ -7,13 +7,13 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports System.Text.RegularExpressions
 
 Public Class frm_Formula
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

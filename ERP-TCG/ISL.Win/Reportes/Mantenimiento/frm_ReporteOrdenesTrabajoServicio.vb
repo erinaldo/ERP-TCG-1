@@ -7,13 +7,13 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.UltraChart.Shared.Styles
 
 Public Class frm_ReporteOrdenesTrabajoServicio
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "clase"
     Class CustomMergedCellEvaluator

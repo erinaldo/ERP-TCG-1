@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports System.IO
 Imports System.Configuration
@@ -14,7 +14,7 @@ Imports Infragistics.Win
 Imports System.Text
 
 Public Class frm_PagoRetencion
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
 

@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
@@ -18,7 +18,7 @@ Imports System.Text
 Imports System.Runtime.InteropServices
 
 Public Class frm_MovimientoPeaje
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
 

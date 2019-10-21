@@ -1,5 +1,5 @@
 ﻿Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 ''' <summary>
 ''' Control creado para generar una lista de centros poblados a partir de su departamento, provincia y distrito

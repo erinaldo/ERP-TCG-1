@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 
 Public Class frm_TablaContableDet
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Private WithEvents oeTablaContableDet As New e_TablaContableDet
     Private olTablaContableDet As New l_TablaContableDet
     Private oeTablaContable As New e_TablaContable

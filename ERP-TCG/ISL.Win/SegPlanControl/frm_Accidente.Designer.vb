@@ -1805,7 +1805,7 @@ Partial Class frm_Accidente
         Me.mnDetalle.Appearance = Appearance61
         Me.mnDetalle.DesignerFlags = 1
         Me.mnDetalle.DockWithinContainer = Me
-        Me.mnDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.mnDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.mnDetalle.MdiMergeable = False
         Me.mnDetalle.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007
         UltraToolbar1.DockedColumn = 0

@@ -672,7 +672,7 @@ Partial Class frm_EnvioCorreo
         Me.MenuDetalle.Appearance = Appearance33
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.ImageSizeSmall = New System.Drawing.Size(32, 32)
         Me.MenuDetalle.MdiMergeable = False
         Me.MenuDetalle.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool3, ButtonTool4})

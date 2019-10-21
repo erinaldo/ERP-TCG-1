@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports System.Net.Mail
 

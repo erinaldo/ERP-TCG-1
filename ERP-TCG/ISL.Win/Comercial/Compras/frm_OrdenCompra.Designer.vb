@@ -4739,7 +4739,7 @@ Partial Class frm_OrdenCompra
         Me.MenuDetalle.Appearance = Appearance213
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.ImageListLarge = Me.imagenes
         Me.MenuDetalle.ImageListSmall = Me.imagenes
         Me.MenuDetalle.MdiMergeable = False

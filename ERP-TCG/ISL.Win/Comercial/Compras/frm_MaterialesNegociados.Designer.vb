@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_MaterialesNegociados
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -1309,7 +1309,7 @@ Partial Class frm_MaterialesNegociados
         Me.MenuDetalle.Appearance = Appearance55
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.MdiMergeable = False
         Me.MenuDetalle.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool13, ButtonTool14})
         Me.MenuDetalle.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007

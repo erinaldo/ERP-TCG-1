@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
@@ -28,7 +28,7 @@ Imports Microsoft.VisualBasic
 Imports Microsoft.Office.Interop
 
 Public Class frm_Seguimiento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

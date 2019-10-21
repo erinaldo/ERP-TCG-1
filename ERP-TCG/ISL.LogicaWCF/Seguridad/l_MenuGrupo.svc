@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_MenuGrupo" CodeBehind="l_MenuGrupo.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_MenuGrupo" CodeBehind="l_MenuGrupo.svc.vb" %>

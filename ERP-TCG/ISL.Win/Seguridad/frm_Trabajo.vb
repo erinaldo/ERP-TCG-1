@@ -7,11 +7,11 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_Trabajo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.

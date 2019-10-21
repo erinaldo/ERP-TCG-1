@@ -7,12 +7,12 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_MetasCombustible
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
     Private Shared instancia As frm_MetasCombustible = Nothing

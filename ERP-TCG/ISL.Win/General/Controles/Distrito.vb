@@ -1,5 +1,5 @@
 ﻿Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 ''' <summary>
 ''' Control creado para obtener la lista de distritos de un departamento y provincia específicos

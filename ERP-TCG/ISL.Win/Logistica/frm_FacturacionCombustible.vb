@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinGrid.UltraGridAction
@@ -17,7 +17,7 @@ Imports Infragistics.Documents.Excel
 Imports System.Text
 
 Public Class frm_FacturacionCombustible
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
 

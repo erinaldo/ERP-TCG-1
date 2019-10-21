@@ -7,10 +7,10 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_Distrito
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Private Shared instancia As frm_Distrito = Nothing
     ''' Instancia unica de Formulario: frm_Distrito

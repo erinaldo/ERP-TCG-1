@@ -11,7 +11,7 @@
 Imports System.IO
 Imports Infragistics.Win
 Imports Infragistics.Win.Misc
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports System.Threading
 Imports System.Configuration

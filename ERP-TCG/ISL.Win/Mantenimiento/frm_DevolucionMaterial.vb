@@ -7,11 +7,11 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 
 Public Class frm_DevolucionMaterial
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Dim oeMaterial As New e_Material, olMaterial As New l_Material
     Public md_CantEntregada As Double
     Dim _cantPendienteDevolver As Double

@@ -7,13 +7,13 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Microsoft.Reporting.WinForms
 
 Public Class frm_ReportePrestamo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Private Shared instancia As frm_ReportePrestamo = Nothing
     Private Shared Operacion As String

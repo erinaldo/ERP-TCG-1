@@ -2465,7 +2465,7 @@ Partial Class frm_OrdenIngreso
         Me.MenuDetalle.Appearance = Appearance134
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.MdiMergeable = False
         Me.MenuDetalle.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         Me.MenuDetalle.MiniToolbar.ToolRowCount = 1

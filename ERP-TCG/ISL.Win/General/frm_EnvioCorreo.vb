@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports System.Text.RegularExpressions
 Imports System.Net.Mail
 Imports System.IO
@@ -16,7 +16,7 @@ Imports Infragistics.Win
 
 Public Class frm_EnvioCorreo
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         'Llamada necesaria para el Diseñador de Windows Forms.

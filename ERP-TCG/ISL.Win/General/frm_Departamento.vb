@@ -11,7 +11,7 @@ Imports System.ServiceModel
 
 
 Public Class frm_Departamento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.

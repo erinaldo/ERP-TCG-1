@@ -4,14 +4,14 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ISL" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISL (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ISL.Win.My.MySettings.GlobalReference.Default.ISL" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ISL" IsAppSettingsProperty="true" Modifier="Assembly" Name="ISL (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ISL.Win.My.MySettings.GlobalReference.Default.ISL" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables />
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ValedeTanqueo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ValedeTanqueo" msprop:Generator_UserDSName="ValedeTanqueo" msprop:EnableTableAdapterManager="true">
+  <xs:element name="ValedeTanqueo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ValedeTanqueo" msprop:Generator_UserDSName="ValedeTanqueo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded" />
     </xs:complexType>

@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.Il_ComunAyuda" CodeBehind="l_ComunAyuda.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.Il_ComunAyuda" CodeBehind="l_ComunAyuda.svc.vb" %>

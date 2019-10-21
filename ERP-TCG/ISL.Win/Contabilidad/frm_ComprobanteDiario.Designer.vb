@@ -2461,7 +2461,7 @@ Partial Class frm_ComprobanteDiario
         Me.mnuDetalleAsiento.Appearance = Appearance81
         Me.mnuDetalleAsiento.DesignerFlags = 1
         Me.mnuDetalleAsiento.DockWithinContainer = Me
-        Me.mnuDetalleAsiento.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.mnuDetalleAsiento.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.mnuDetalleAsiento.MdiMergeable = False
         Me.mnuDetalleAsiento.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         Me.mnuDetalleAsiento.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007

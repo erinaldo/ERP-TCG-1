@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 
 Public Class frm_GastosFinancieros
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Private _ItemCta As String = ""
     Private oeCtaBancaria As New e_CuentaBancaria, olCtaBancaria As New l_CuentaBancaria, leCuentaBancaria As New List(Of e_CuentaBancaria)

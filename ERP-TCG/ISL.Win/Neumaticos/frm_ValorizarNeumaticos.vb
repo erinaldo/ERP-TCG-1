@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports ISL.Controles
 Imports System
@@ -22,7 +22,7 @@ Imports System.Collections
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_ValorizarNeumaticos
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Dim oeValorizacionNeumatico As New e_ValorizacionNeumatico, olValorizacionNeumatico As New l_ValorizacionNeumatico
     Dim oeDetalleValorizacionNeumatico As New e_DetalleValorizacionNeumatico, olDetalleValorizacionNeumatico As New l_DetalleValorizacionNeumatico
     Dim oeVidaNeumatico As New e_VidaNeumatico, olVidaNeumatico As New l_VidaNeumatico

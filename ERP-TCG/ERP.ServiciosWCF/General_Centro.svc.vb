@@ -2,7 +2,7 @@
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione General_Centro.svc o General_Centro.svc.vb en el Explorador de soluciones e inicie la depuración.
 Imports ERP.EntidadesWCF
 Imports ERP.AccesoDatos
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 
 Public Class General_Centro
     Implements IGeneral_Centro

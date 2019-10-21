@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.UltraChart.Shared.Styles
@@ -15,7 +15,7 @@ Imports Infragistics.UltraChart.Resources.Appearance
 Imports Infragistics.UltraChart.Core.Layers
 
 Public Class frm_ReporteClienteMensual
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

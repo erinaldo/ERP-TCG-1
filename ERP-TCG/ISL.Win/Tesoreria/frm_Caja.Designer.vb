@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_Caja
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -980,7 +980,7 @@ Partial Class frm_Caja
         Me.MenuMovimiento.Appearance = Appearance10
         Me.MenuMovimiento.DesignerFlags = 1
         Me.MenuMovimiento.DockWithinContainer = Me
-        Me.MenuMovimiento.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuMovimiento.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuMovimiento.MdiMergeable = False
         Me.MenuMovimiento.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         Me.MenuMovimiento.Office2007UICompatibility = False

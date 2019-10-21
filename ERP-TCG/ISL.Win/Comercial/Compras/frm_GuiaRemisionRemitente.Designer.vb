@@ -1674,7 +1674,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.MenuDetalle.Appearance = Appearance59
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.MdiMergeable = False
         Me.MenuDetalle.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool13, ButtonTool14})
         Me.MenuDetalle.MiniToolbar.ToolRowCount = 1

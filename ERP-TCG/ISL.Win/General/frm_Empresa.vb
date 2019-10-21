@@ -7,14 +7,14 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinToolbars
 Imports Infragistics.Win.UltraWinTabControl
 
 Public Class frm_Empresa
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 

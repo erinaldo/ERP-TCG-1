@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports System.IO
@@ -16,7 +16,7 @@ Imports Infragistics.Win.UltraWinEditors
 Imports Infragistics.Win.UltraWinToolTip
 
 Public Class frm_Trabajador
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 

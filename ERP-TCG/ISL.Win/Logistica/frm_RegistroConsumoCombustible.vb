@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinEditors
@@ -18,7 +18,7 @@ Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices
 
 Public Class frm_RegistroConsumoCombustible
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 

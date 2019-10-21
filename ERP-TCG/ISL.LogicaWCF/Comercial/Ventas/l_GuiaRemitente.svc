@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_GuiaRemitente" CodeBehind="l_GuiaRemitente.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_GuiaRemitente" CodeBehind="l_GuiaRemitente.svc.vb" %>

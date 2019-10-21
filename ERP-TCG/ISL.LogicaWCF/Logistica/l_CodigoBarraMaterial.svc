@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_CodigoBarraMaterial" CodeBehind="l_CodigoBarraMaterial.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_CodigoBarraMaterial" CodeBehind="l_CodigoBarraMaterial.svc.vb" %>

@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Public Class frm_ConfirmarCargaOperacionGRT
     Private mensajeEmergente As New c_Alertas

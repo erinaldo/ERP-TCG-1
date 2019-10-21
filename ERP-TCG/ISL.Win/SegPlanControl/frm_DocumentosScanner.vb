@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
 Imports System.IO
@@ -23,7 +23,7 @@ Imports System.Text
 Imports System.Runtime.InteropServices
 
 Public Class frm_DocumentosScanner
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 
 #Region "Inicialización del formulario"

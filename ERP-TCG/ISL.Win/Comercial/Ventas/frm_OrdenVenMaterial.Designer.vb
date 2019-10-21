@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_OrdenVenMaterial
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -3415,5 +3415,5 @@ Partial Class frm_OrdenVenMaterial
     Friend WithEvents btnEliminar As Infragistics.Win.Misc.UltraButton
     Friend WithEvents UltraLabel21 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents cbgClienteAlterno As Infragistics.Win.UltraWinGrid.UltraCombo
-    Friend WithEvents cboTipoPago As Controles.ComboMaestros
+    Friend WithEvents cboTipoPago As ISL.Controles.ComboMaestros
 End Class

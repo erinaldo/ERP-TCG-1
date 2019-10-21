@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports System.IO
@@ -16,7 +16,7 @@ Imports Infragistics.Win.UltraWinToolTip
 Imports Infragistics.Win
 
 Public Class frm_Vehiculo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia/Constructor"
 

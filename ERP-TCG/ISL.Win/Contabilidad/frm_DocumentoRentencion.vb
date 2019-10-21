@@ -6,10 +6,10 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Microsoft.Reporting.WinForms
 Public Class frm_DocumentoRentencion
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Private Id As String
 
 

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_Mantenimiento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -2731,7 +2731,7 @@ Partial Class frm_Mantenimiento
         Me.mnDetalle.Appearance = Appearance163
         Me.mnDetalle.DesignerFlags = 1
         Me.mnDetalle.DockWithinContainer = Me
-        Me.mnDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.mnDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.mnDetalle.MdiMergeable = False
         Me.mnDetalle.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007
         UltraToolbar1.DockedColumn = 0
