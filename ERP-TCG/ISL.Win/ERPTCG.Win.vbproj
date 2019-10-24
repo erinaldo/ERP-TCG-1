@@ -4600,15 +4600,6 @@
     <Content Include="Imagenes\Empleados.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Imagenes\Entorno.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\Entorno2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\EntornoAntes.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Imagenes\Envelope.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -227,6 +227,7 @@
     <Content Include="General\l_DetalleConceptoPonderado.svc" />
     <Content Include="General\l_DocumentoVehicular_Documento.svc" />
     <Content Include="General\l_EmpresaAportacion.svc" />
+    <Content Include="General\l_EmpresaSistemas.svc" />
     <Content Include="General\l_Feriados.svc" />
     <Content Include="General\l_Flota_Cuota.svc" />
     <Content Include="General\l_Flota_Trabajador.svc" />
@@ -979,6 +980,7 @@
       <DependentUpon>l_FecLetras.svc</DependentUpon>
     </Compile>
     <Compile Include="General\Il_Bitacora.vb" />
+    <Compile Include="General\Il_EmpresaSistemas.vb" />
     <Compile Include="General\Il_Flota_Cuota.vb" />
     <Compile Include="General\Il_Flota_Trabajador.vb" />
     <Compile Include="General\Il_MovimientoPeaje.vb" />
@@ -1034,6 +1036,9 @@
     </Compile>
     <Compile Include="General\l_EmpresaAportacion.svc.vb">
       <DependentUpon>l_EmpresaAportacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_EmpresaSistemas.svc.vb">
+      <DependentUpon>l_EmpresaSistemas.svc</DependentUpon>
     </Compile>
     <Compile Include="General\l_Feriados.svc.vb">
       <DependentUpon>l_Feriados.svc</DependentUpon>

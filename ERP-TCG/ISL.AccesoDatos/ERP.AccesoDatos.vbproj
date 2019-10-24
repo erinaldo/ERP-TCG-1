@@ -223,6 +223,7 @@
     <Compile Include="General\d_CuotaDocVeh_Movimiento.vb" />
     <Compile Include="General\d_DocumentoVehicular_Documento.vb" />
     <Compile Include="General\d_EmpresaAportacion.vb" />
+    <Compile Include="General\d_EmpresaSistemas.vb" />
     <Compile Include="General\d_Feriados.vb" />
     <Compile Include="General\d_Flota_Cuota.vb" />
     <Compile Include="General\d_Flota_Trabajador.vb" />

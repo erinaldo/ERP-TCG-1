@@ -269,6 +269,7 @@
     <Content Include="General\e_ConceptoPonderado.svc" />
     <Content Include="General\e_DetalleConceptoPonderado.svc" />
     <Content Include="General\e_EmpresaAportacion.svc" />
+    <Content Include="General\e_EmpresaSistemas.svc" />
     <Content Include="General\e_Flota_Cuota.svc" />
     <Content Include="General\e_Flota_Trabajador.svc" />
     <Content Include="General\e_Icono.svc" />
@@ -1230,6 +1231,9 @@
     </Compile>
     <Compile Include="Finanzas\RefactorizarFinanzas\Ie_ContratoFinanciero.vb" />
     <Compile Include="Finanzas\RefactorizarFinanzas\Ie_ObligacionFin.vb" />
+    <Compile Include="General\e_EmpresaSistemas.svc.vb">
+      <DependentUpon>e_EmpresaSistemas.svc</DependentUpon>
+    </Compile>
     <Compile Include="General\e_Flota_Cuota.svc.vb">
       <DependentUpon>e_Flota_Cuota.svc</DependentUpon>
     </Compile>
@@ -1305,6 +1309,7 @@
     <Compile Include="General\Ie_ConceptoPonderado.vb" />
     <Compile Include="General\Ie_DetalleConceptoPonderado.vb" />
     <Compile Include="General\Ie_EmpresaAportacion.vb" />
+    <Compile Include="General\Ie_EmpresaSistemas.vb" />
     <Compile Include="General\Ie_Flota_Cuota.vb" />
     <Compile Include="General\Ie_Flota_Trabajador.vb" />
     <Compile Include="General\Ie_Icono.vb" />
