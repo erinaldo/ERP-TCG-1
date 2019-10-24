@@ -47,7 +47,7 @@ Module m_Funciones
     'Public gstrRucEmpresaSis As String = "20603652810"
 
     Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
-        Dim ln_Retorna As Double = 0
+        Dim ln_Retorna As Double = 0.18
         'oeParametro = New e_Parametro
         'oeParametro.TipoBusca = 2 : oeParametro.Abreviatura = ls_Abreviatura
         'If gleParametro.Contains(oeParametro) Then
