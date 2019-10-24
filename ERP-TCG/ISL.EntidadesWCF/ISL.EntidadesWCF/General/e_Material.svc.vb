@@ -121,18 +121,20 @@ Public Class e_Material
         _codigonombre = ls_Material & " - " & " [ " & Trim(ls_Codigo) & " ]"
     End Sub
 
-    Public Sub New(ByVal ls_seleccion As Boolean, _
-                  ByVal ls_id As String, _
-                  ByVal ls_codigo As String, _
-                  ByVal ls_nombre As String, _
-                  ByVal ls_unidadMedida As String, _
-                  ByVal ls_nombresubfamilia As String, _
+    Public Sub New(ByVal ls_seleccion As Boolean,
+                  ByVal ls_id As String,
+                  ByVal ls_codigo As String,
+                  ByVal ls_nombre As String,
+                 ByVal ls_idunidadmedida As String,
+                  ByVal ls_unidadMedida As String,
+                  ByVal ls_nombresubfamilia As String,
                   ByVal ls_activo As String)
 
         _Seleccion = ls_seleccion
         _id = ls_id
         _codigo = ls_codigo
         _nombre = ls_nombre
+        _idunidadmedida = ls_idunidadmedida
         _unidadmedida = ls_unidadMedida
         _subfamilia = ls_nombresubfamilia
         _activo = ls_activo

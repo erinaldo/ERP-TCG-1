@@ -34,12 +34,13 @@ Public Class d_MaterialAlmacen
     Private Function CargarMaterial(ByVal fila As DataRow) As e_Material
         Try
 
-            Dim oeMaterial = New e_Material(fila("Seleccion"), _
-                                            fila("Id"), _
-                                            fila("Codigo"), _
-                                            fila("Nombre"), _
-                                            fila("NombreUnidadMedida"), _
-                                            fila("NombreSubFamilia"), _
+            Dim oeMaterial = New e_Material(fila("Seleccion"),
+                                            fila("Id"),
+                                            fila("Codigo"),
+                                            fila("Nombre"),
+                                            fila("NombreMarca"),
+                                            fila("NombreUnidadMedida"),
+                                            fila("NombreSubFamilia"),
                                             fila("Activo"))
 
             Return oeMaterial
