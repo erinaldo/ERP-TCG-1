@@ -10,7 +10,7 @@ Imports ERP.AccesoDatos
 Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
-Imports ISL.ServicioExterno
+Imports ERP.ServicioExterno
 
 
 

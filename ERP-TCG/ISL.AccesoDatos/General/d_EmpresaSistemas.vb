@@ -61,7 +61,9 @@ Public Class d_EmpresaSistemas
                              , o_fila("Cajero").ToString _
                              , o_fila("Coordinador").ToString _
                              , o_fila("Jefe").ToString _
-                             , o_fila("Gerente").ToString
+                             , o_fila("Gerente").ToString _
+                             , o_fila("VersionSis").ToString _
+                             , o_fila("FotosDisponible").ToString
             )
             Return oeEmpresaSistemas
         Catch ex As Exception
@@ -130,7 +132,9 @@ Public Class d_EmpresaSistemas
                         , .Cajero _
                         , .Coordinador _
                         , .Jefe _
-                        , .Gerente
+                        , .Gerente _
+                        , .VersionSis _
+                        , .FotosDisponible
                         )
             End With
             Return ds
@@ -228,7 +232,9 @@ Public Class d_EmpresaSistemas
                         , .Cajero _
                         , .Coordinador _
                         , .Jefe _
-                        , .Gerente
+                        , .Gerente _
+                        , .VersionSis _
+                        , .FotosDisponible
                     ).ToString.Split("_")
                 .Id = stResultado(0)
             End With
@@ -297,7 +303,9 @@ Public Class d_EmpresaSistemas
                        , .Cajero _
                        , .Coordinador _
                        , .Jefe _
-                       , .Gerente
+                       , .Gerente _
+                       , .VersionSis _
+                       , .FotosDisponible
                    )
 
             End With

@@ -62,6 +62,9 @@ Public Class e_EmpresaSistemas
     Private _Coordinador As String
     Private _Jefe As String
     Private _Gerente As String
+    Private _VersionSis As String
+    Private _FotosDisponible As Boolean
+
     <DataMember()>
     Public TipoOperacion As String
     <DataMember()>
@@ -132,6 +135,8 @@ Public Class e_EmpresaSistemas
         _Coordinador = ""
         _Jefe = ""
         _Gerente = ""
+        _VersionSis = ""
+        _FotosDisponible = True
     End Sub
 
     Public Sub New(
@@ -188,7 +193,9 @@ Public Class e_EmpresaSistemas
           , ByVal ls_Cajero As String _
           , ByVal ls_Coordinador As String _
           , ByVal ls_Jefe As String _
-          , ByVal ls_Gerente As String
+          , ByVal ls_Gerente As String _
+          , ByVal ls_VersionSis As String _
+          , ByVal lb_FotosDisponible As Boolean
        )
         _Id = ls_Id
         _Codigo = ls_Codigo
@@ -244,6 +251,8 @@ Public Class e_EmpresaSistemas
         _Coordinador = ls_Coordinador
         _Jefe = ls_Jefe
         _Gerente = ls_Gerente
+        _VersionSis = ls_VersionSis
+        _FotosDisponible = lb_FotosDisponible
     End Sub
 
 #End Region
@@ -732,6 +741,22 @@ Public Class e_EmpresaSistemas
         End Get
         Set(ByVal value As String)
             _Gerente = value
+        End Set
+    End Property
+    Public Property VersionSis() As String
+        Get
+            Return _VersionSis
+        End Get
+        Set(ByVal value As String)
+            _VersionSis = value
+        End Set
+    End Property
+    Public Property FotosDisponible() As Boolean
+        Get
+            Return _FotosDisponible
+        End Get
+        Set(ByVal value As Boolean)
+            _FotosDisponible = value
         End Set
     End Property
 

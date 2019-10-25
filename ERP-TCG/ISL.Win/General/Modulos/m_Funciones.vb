@@ -4,6 +4,7 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales
+' @0001 |   2019-10-01  |  CT2010   |   Version Sistema
 '=================================================================================================================
 
 
@@ -33,7 +34,7 @@ Imports Microsoft.Office.Interop
 
 Module m_Funciones
 
-
+    Dim olEmpresaSistema As New l_EmpresaSistemas
 #Region "EOS"
 
     'Public gstrIdEmpresa As String = "1CIX00000001"
@@ -605,6 +606,7 @@ Module m_Funciones
     Public gs_PrefijoIdSucursal As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
     Public gs_TxtEmpresaSistema As String '@0001
+    Public gs_VersionSis As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -1088,13 +1090,22 @@ Module m_Funciones
 #Region "Metodos"
 
     Public Function VersionDelSistema() As String
+
         Dim version As String = String.Empty
-        If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
-            version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-        Else
-            version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
-        End If
+        '@0003
+        'If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
+        '    version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
+        'Else
+        '    version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
+        'End If
+        'Return version
+        '@0003 Inicio
+        Dim oeEmpresaSistemas As New e_EmpresaSistemas
+        oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
+        version = oeEmpresaSistemas.VersionSis.Trim
+        gs_VersionSis = version
         Return version
+        '@0003 Fin
     End Function
 
     Public Function AutenticarUsuario() As Boolean
