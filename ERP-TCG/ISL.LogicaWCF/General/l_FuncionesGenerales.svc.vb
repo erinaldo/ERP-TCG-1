@@ -1,13 +1,13 @@
 ﻿Imports System.Data.OleDb
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
 Public Class l_FuncionesGenerales
     Implements Il_FuncionesGenerales
 
-    Public Function CuentasGenerales(ByVal oeTablaCtbleDet As EntidadesWCF.e_TablaContableDet) As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet) Implements Il_FuncionesGenerales.CuentasGenerales
+    Public Function CuentasGenerales(ByVal oeTablaCtbleDet As e_TablaContableDet) As System.Collections.Generic.List(Of e_TablaContableDet) Implements Il_FuncionesGenerales.CuentasGenerales
         Try
             Dim leTablaCtbleDet As New List(Of e_TablaContableDet)
             Dim odTablaCtbleDet As New d_TablaContableDet
@@ -21,7 +21,7 @@ Public Class l_FuncionesGenerales
         End Try
     End Function
 
-    Public Function l_GeneraID(ByVal C_Base As EntidadesWCF.e_Base) As String Implements Il_FuncionesGenerales.l_GeneraID
+    Public Function l_GeneraID(ByVal C_Base As e_Base) As String Implements Il_FuncionesGenerales.l_GeneraID
         Dim ObjId As New d_Datos
         Return ObjId.d_GeneraId(C_Base)
     End Function
@@ -44,7 +44,7 @@ Public Class l_FuncionesGenerales
         End Try
     End Function
 
-    Public Function ValidarDatosDeDctoExistente(ByVal ListaValida As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), _
+    Public Function ValidarDatosDeDctoExistente(ByVal ListaValida As System.Collections.Generic.List(Of e_MovimientoDocumento), _
     Optional ByVal IndValSaldo As Boolean = False) As Boolean Implements Il_FuncionesGenerales.ValidarDatosDeDctoExistente
         Try
             For Each obj As e_MovimientoDocumento In ListaValida
@@ -104,7 +104,7 @@ Public Class l_FuncionesGenerales
         End Try
     End Function
 
-    Public Function ValidarDatosDeObligacionExistente(ByVal ListaValida As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), Optional ByVal IndValSaldo As Boolean = False) As Boolean Implements Il_FuncionesGenerales.ValidarDatosDeObligacionExistente
+    Public Function ValidarDatosDeObligacionExistente(ByVal ListaValida As System.Collections.Generic.List(Of e_ObligacionFinanciera), Optional ByVal IndValSaldo As Boolean = False) As Boolean Implements Il_FuncionesGenerales.ValidarDatosDeObligacionExistente
         Try
             For Each obj As e_ObligacionFinanciera In ListaValida
                 Dim oeMD As New e_ObligacionFinanciera
@@ -128,7 +128,7 @@ Public Class l_FuncionesGenerales
 
     End Function
 
-    Public Function ValidarDocumentoDuplicado(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, Optional ByVal Venta As Boolean = False) As Boolean Implements Il_FuncionesGenerales.ValidarDocumentoDuplicado
+    Public Function ValidarDocumentoDuplicado(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional ByVal Venta As Boolean = False) As Boolean Implements Il_FuncionesGenerales.ValidarDocumentoDuplicado
         Dim odMovDoc As New d_MovimientoDocumento
         Dim oeMovDoc As New e_MovimientoDocumento
         Dim indicador As Integer = 0
@@ -230,7 +230,7 @@ Public Class l_FuncionesGenerales
     End Function
 
     Public Function ValidarPeriodo(ByVal IdPeriodo As String, ByVal Modulo As gAreasSGI, ByVal _Fecha As Date, ByVal Codigo As String, _
-    Optional ByVal MesPosterior As Integer = 0, Optional ByVal OemovDoc As EntidadesWCF.e_MovimientoDocumento = Nothing) As Boolean Implements Il_FuncionesGenerales.ValidarPeriodo
+    Optional ByVal MesPosterior As Integer = 0, Optional ByVal OemovDoc As e_MovimientoDocumento = Nothing) As Boolean Implements Il_FuncionesGenerales.ValidarPeriodo
         Try
             Dim oePeriodo As New e_Periodo
             Dim lePeriodo As New List(Of e_Periodo)

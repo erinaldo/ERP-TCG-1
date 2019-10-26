@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -90,8 +98,7 @@ Public Class d_DepreciacionActivoFijo
     Public Function Guardar(oeDepreciacionActivoFijo As e_DepreciacionActivoFijo) As Boolean
         Try
             'Using transScope As New TransactionScope()
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim IdResultado As String
             With oeDepreciacionActivoFijo
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_DepreciacionActivoFijo_IAE]" _
@@ -169,8 +176,7 @@ Public Class d_DepreciacionActivoFijo
 
     Private Sub ActualizarDeprecAcumulada(XML As String)
         Try
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim oeDepreciacionActivoFijo As New e_DepreciacionActivoFijo
             With oeDepreciacionActivoFijo
                 sqlhelper.ExecuteNonQuery("[CON].[Isp_DepreciacionActivoFijo_IAE]" _
@@ -199,7 +205,6 @@ Public Class d_DepreciacionActivoFijo
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.DepreciacionActivoFijo", PrefijoID
                                   )

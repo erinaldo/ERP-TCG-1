@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -60,13 +68,12 @@ Public Class d_EstadoOT
 
     Public Function Guardar(ByVal oeEstadoOT As e_EstadoOT) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeEstadoOT
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
                         , .Activo _
-                        , .UsuarioCreacion _
+                        , .UsuarioCreacion
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 
 Public Class d_MotivoDocumento
     Private sqlhelper As New SqlHelper
@@ -63,10 +71,9 @@ Public Class d_MotivoDocumento
     End Function
 
     Public Function Guardar(ByVal oeMotivoDocumento As e_MotivoDocumento) As Boolean
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             With oeMotivoDocumento
-                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoDocumento_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("STD.Isp_MotivoDocumento_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdTipoDocumento _
                         , .Codigo _
@@ -74,7 +81,7 @@ Public Class d_MotivoDocumento
                         , .Abreviatura _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

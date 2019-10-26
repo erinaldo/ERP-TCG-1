@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 
 Public Class frm_DocumentosXRendir
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 

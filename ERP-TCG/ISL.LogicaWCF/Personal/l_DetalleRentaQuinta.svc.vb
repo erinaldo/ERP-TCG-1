@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_DetalleRentaQuinta
     Private odDetalleRentaQuinta As New d_DetalleRentaQuinta
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetalleRentaQuinta As EntidadesWCF.e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Eliminar
+    Public Function Eliminar(oeDetalleRentaQuinta As e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Eliminar
         Try
             Return odDetalleRentaQuinta.Eliminar(oeDetalleRentaQuinta)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_DetalleRentaQuinta
         End Try
     End Function
 
-    Public Function Guardar(oeDetalleRentaQuinta As EntidadesWCF.e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Guardar
+    Public Function Guardar(oeDetalleRentaQuinta As e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Guardar
         Try
             If Validar(oeDetalleRentaQuinta) Then
                 Return odDetalleRentaQuinta.Guardar(oeDetalleRentaQuinta)
@@ -27,7 +27,7 @@ Public Class l_DetalleRentaQuinta
         End Try
     End Function
 
-    Public Function Listar(oeDetalleRentaQuinta As EntidadesWCF.e_DetalleRentaQuinta) As List(Of EntidadesWCF.e_DetalleRentaQuinta) Implements Il_DetalleRentaQuinta.Listar
+    Public Function Listar(oeDetalleRentaQuinta As e_DetalleRentaQuinta) As List(Of e_DetalleRentaQuinta) Implements Il_DetalleRentaQuinta.Listar
         Try
             Return odDetalleRentaQuinta.Listar(oeDetalleRentaQuinta)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_DetalleRentaQuinta
         End Try
     End Function
 
-    Public Function Obtener(oeDetalleRentaQuinta As EntidadesWCF.e_DetalleRentaQuinta) As EntidadesWCF.e_DetalleRentaQuinta Implements Il_DetalleRentaQuinta.Obtener
+    Public Function Obtener(oeDetalleRentaQuinta As e_DetalleRentaQuinta) As e_DetalleRentaQuinta Implements Il_DetalleRentaQuinta.Obtener
         Try
             Return odDetalleRentaQuinta.Obtener(oeDetalleRentaQuinta)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_DetalleRentaQuinta
         End Try
     End Function
 
-    Public Function Validar(oeDetalleRentaQuinta As EntidadesWCF.e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Validar
+    Public Function Validar(oeDetalleRentaQuinta As e_DetalleRentaQuinta) As Boolean Implements Il_DetalleRentaQuinta.Validar
         Try
             With oeDetalleRentaQuinta
             End With

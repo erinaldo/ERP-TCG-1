@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -46,7 +54,6 @@ Public Class d_CuentaContable
     Public Function Obtener(ByVal oeCuentaContable As e_CuentaContable) As e_CuentaContable
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", "N",
             Left(oeCuentaContable.PrefijoID, 1), "", oeCuentaContable.Id)
@@ -66,7 +73,6 @@ Public Class d_CuentaContable
 
     Public Function Listar(ByVal oeCuentaContable As e_CuentaContable) As List(Of e_CuentaContable)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldCuentaContable As New List(Of e_CuentaContable)
             Dim ds As DataSet
             With oeCuentaContable
@@ -113,7 +119,6 @@ Public Class d_CuentaContable
 
     Public Function Guardar(ByVal oeCuentaContable As e_CuentaContable) As Boolean
         Dim stResultado() As String
-        Dim d_DatosConfiguracion As New d_DatosConfiguracion
         Try
             Using transScope As New TransactionScope()
                 With oeCuentaContable
@@ -150,6 +155,7 @@ Public Class d_CuentaContable
                     For Each oeCuentaAsociada As e_CuentaAsociada In .CuentaAsociada
                         With oeCuentaAsociada
                             .IdCuentaContable = stResultado(0)
+                            .PrefijoID = oeCuentaContable.PrefijoID '@0001
                             If .TipoOperacion = "I" Then
                                 odCuentaAsociada.Guardar(oeCuentaAsociada)
                             ElseIf .TipoOperacion = "E" Then

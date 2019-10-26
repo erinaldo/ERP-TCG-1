@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 
 Public Class frm_TrabajadorAsistencia
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 
@@ -247,7 +247,7 @@ Public Class frm_TrabajadorAsistencia
             oeCentro = New e_Centro : leCentro = New List(Of e_Centro)
             leCentro = olCentro.Listar(oeCentro)
             LlenarCombo(cboSede, "Nombre", leCentro, 0)
-            cboSede.Value = Prefijo.PrefijoID.ToString
+            cboSede.Value = gs_PrefijoIdSucursal.ToString
         Catch ex As Exception
             Throw ex
         End Try

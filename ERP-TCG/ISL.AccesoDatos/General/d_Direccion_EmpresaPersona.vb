@@ -6,14 +6,10 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que permite el acceso a datos de la tabla DireccionEmpresaPersona
-''' </summary>
-''' <remarks></remarks>
 Public Class d_Direccion_EmpresaPersona
 
     Private sqlhelper As New SqlHelper

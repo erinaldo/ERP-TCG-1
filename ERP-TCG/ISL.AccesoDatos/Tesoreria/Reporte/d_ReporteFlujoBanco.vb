@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_ReporteFlujoBanco
     Private sqlhelper As New SqlHelper
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_ReporteFlujoBanco
         Try

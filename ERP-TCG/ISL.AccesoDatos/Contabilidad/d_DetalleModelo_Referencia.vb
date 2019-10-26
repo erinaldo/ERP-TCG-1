@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -78,9 +86,8 @@ Public Class d_DetalleModelo_Referencia
 
     Public Function Guardar(ByVal oeDetalleModelo_Referencia As e_DetalleModelo_Referencia) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDetalleModelo_Referencia
-                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleModelo_Referencia_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DetalleModelo_Referencia_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdDetalleAsientoModelo _
                         , .TipoReferencia _
@@ -92,7 +99,7 @@ Public Class d_DetalleModelo_Referencia
                         , .FechaCreacion _
                         , .UsuarioModifica _
                         , .FechaModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

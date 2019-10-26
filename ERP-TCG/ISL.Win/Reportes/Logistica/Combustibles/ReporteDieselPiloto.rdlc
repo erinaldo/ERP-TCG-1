@@ -538,19 +538,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Image1">
-        <Source>Embedded</Source>
-        <Value>LogoInduamerica</Value>
-        <Sizing>FitProportional</Sizing>
-        <Height>1.78752cm</Height>
-        <Width>1.96674cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
     </ReportItems>
     <Height>2in</Height>
     <Style />

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_MenuProceso
     Dim odProceso As New d_MenuProceso
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeProceso As EntidadesWCF.e_MenuProceso) As Boolean Implements Il_MenuProceso.Eliminar
+    Public Function Eliminar(ByVal oeProceso As e_MenuProceso) As Boolean Implements Il_MenuProceso.Eliminar
         Try
             Return odProceso.Eliminar(oeProceso)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_MenuProceso
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeProceso As EntidadesWCF.e_MenuProceso) As Boolean Implements Il_MenuProceso.Guardar
+    Public Function Guardar(ByVal oeProceso As e_MenuProceso) As Boolean Implements Il_MenuProceso.Guardar
         Try
             If Validar(oeProceso) Then
                 Return odProceso.Guardar(oeProceso)
@@ -34,7 +34,7 @@ Public Class l_MenuProceso
         End Try
     End Function
 
-    Public Function Listar(ByVal oeProceso As EntidadesWCF.e_MenuProceso) As System.Collections.Generic.List(Of EntidadesWCF.e_MenuProceso) Implements Il_MenuProceso.Listar
+    Public Function Listar(ByVal oeProceso As e_MenuProceso) As System.Collections.Generic.List(Of e_MenuProceso) Implements Il_MenuProceso.Listar
         Try
             Return odProceso.Listar(oeProceso)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MenuProceso
         End Try
     End Function
 
-    Public Function ListarMenu(ByVal idUsuario As String) As System.Collections.Generic.List(Of EntidadesWCF.e_MenuProceso) Implements Il_MenuProceso.ListarMenu
+    Public Function ListarMenu(ByVal idUsuario As String) As System.Collections.Generic.List(Of e_MenuProceso) Implements Il_MenuProceso.ListarMenu
         Try
             Return odProceso.ListarMenu(idUsuario)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_MenuProceso
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeProceso As EntidadesWCF.e_MenuProceso) As EntidadesWCF.e_MenuProceso Implements Il_MenuProceso.Obtener
+    Public Function Obtener(ByVal oeProceso As e_MenuProceso) As e_MenuProceso Implements Il_MenuProceso.Obtener
         Try
             Return odProceso.Obtener(oeProceso)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_MenuProceso
         End Try
     End Function
 
-    Public Function Validar(ByVal oeProceso As EntidadesWCF.e_MenuProceso) As Boolean Implements Il_MenuProceso.Validar
+    Public Function Validar(ByVal oeProceso As e_MenuProceso) As Boolean Implements Il_MenuProceso.Validar
         Try
             With oeProceso
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeProceso.Codigo, "Ingrese Codigo")

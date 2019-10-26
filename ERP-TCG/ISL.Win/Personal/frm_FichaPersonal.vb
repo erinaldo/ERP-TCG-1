@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_FichaPersonal
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 
@@ -304,7 +304,7 @@ Public Class frm_FichaPersonal
     End Sub
 
     Private Sub CargarFotoTrabajador(ByVal oeTrabajador As e_Trabajador)
-        Fotografia.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+        'Fotografia.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
     End Sub
 
     Private Sub CargaDatosPersonales(ByVal oeTrabajador As e_Trabajador)

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -12,7 +12,7 @@ Public Class l_Demanda
     Dim odCombo As New d_Combo
     Dim olBitacora As New l_Bitacora
 
-    Public Function Eliminar(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean Implements Il_Demanda.Eliminar
+    Public Function Eliminar(ByVal oeDemanda As e_Demanda) As Boolean Implements Il_Demanda.Eliminar
         Try
             Return odDemanda.Eliminar(oeDemanda)
         Catch ex As Exception
@@ -20,7 +20,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function Cancelar(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean Implements Il_Demanda.Cancelar
+    Public Function Cancelar(ByVal oeDemanda As e_Demanda) As Boolean Implements Il_Demanda.Cancelar
         Try
             Return odDemanda.Cancelar(oeDemanda)
         Catch ex As Exception
@@ -28,7 +28,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean Implements Il_Demanda.Guardar
+    Public Function Guardar(ByVal oeDemanda As e_Demanda) As Boolean Implements Il_Demanda.Guardar
         Try
             If Validar(oeDemanda) Then
                 Return odDemanda.Guardar(oeDemanda)
@@ -39,7 +39,7 @@ Public Class l_Demanda
     End Function
 
     'Tania
-    Public Function GuardarDemandaPredemanda(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean
+    Public Function GuardarDemandaPredemanda(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             If Validar(oeDemanda) Then
                 odDemanda.GuardarDemandaPredemanda(oeDemanda)
@@ -50,7 +50,7 @@ Public Class l_Demanda
             Throw ex
         End Try
     End Function
-    Public Function GuardarObservacion(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean
+    Public Function GuardarObservacion(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Return odDemanda.GuardarObservacion(oeDemanda)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function ConfirmarDemanda(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean
+    Public Function ConfirmarDemanda(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Return odDemanda.ConfirmarDemanda(oeDemanda)
         Catch ex As Exception
@@ -66,7 +66,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDemanda As EntidadesWCF.e_Demanda) As System.Collections.Generic.List(Of EntidadesWCF.e_Demanda) Implements Il_Demanda.Listar
+    Public Function Listar(ByVal oeDemanda As e_Demanda) As System.Collections.Generic.List(Of e_Demanda) Implements Il_Demanda.Listar
         Try
             Return odDemanda.Listar(oeDemanda)
         Catch ex As Exception
@@ -74,22 +74,22 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function ListarDataSet(ByVal oeDemanda As EntidadesWCF.e_Demanda) As System.Data.DataSet Implements Il_Demanda.ListarDataSet
+    Public Function ListarDataSet(ByVal oeDemanda As e_Demanda) As System.Data.DataSet Implements Il_Demanda.ListarDataSet
         Return odDemanda.ListarDataSet(oeDemanda)
     End Function
 
-    Public Function ListarDemandaRapidaDataSet(ByVal oeDemanda As EntidadesWCF.e_Demanda) As System.Data.DataSet
+    Public Function ListarDemandaRapidaDataSet(ByVal oeDemanda As e_Demanda) As System.Data.DataSet
         Return odDemanda.ListarDemandaRapidaDataSet(oeDemanda)
     End Function
 
-    Public Function ListarDetalle(ByVal oeDemandaDetalle As EntidadesWCF.e_DemandaDetalle, Optional ByVal Usuario As String = "") As System.Collections.Generic.List(Of EntidadesWCF.e_DemandaDetalle)
+    Public Function ListarDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle, Optional ByVal Usuario As String = "") As System.Collections.Generic.List(Of e_DemandaDetalle)
         Try
             Return odDemanda.ListarDetalle(oeDemandaDetalle, Usuario)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
-    Public Function ListarDetalle(ByVal oeDemandaDetalle As EntidadesWCF.e_DemandaDetalle) As System.Collections.Generic.List(Of EntidadesWCF.e_DemandaDetalle) Implements Il_Demanda.ListarDetalle
+    Public Function ListarDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle) As System.Collections.Generic.List(Of e_DemandaDetalle) Implements Il_Demanda.ListarDetalle
         Try
             Return odDemanda.ListarDetalle(oeDemandaDetalle)
         Catch ex As Exception
@@ -97,7 +97,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDemanda As EntidadesWCF.e_Demanda) As EntidadesWCF.e_Demanda Implements Il_Demanda.Obtener
+    Public Function Obtener(ByVal oeDemanda As e_Demanda) As e_Demanda Implements Il_Demanda.Obtener
         Try
             Return odDemanda.Obtener(oeDemanda)
         Catch ex As Exception
@@ -105,7 +105,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function ObtenerDetalle(ByVal oeDemandaDetalle As EntidadesWCF.e_DemandaDetalle) As EntidadesWCF.e_DemandaDetalle Implements Il_Demanda.ObtenerDetalle
+    Public Function ObtenerDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle) As e_DemandaDetalle Implements Il_Demanda.ObtenerDetalle
         Try
             Return odDemanda.ObtenerDetalle(oeDemandaDetalle)
         Catch ex As Exception
@@ -113,7 +113,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean Implements Il_Demanda.Validar
+    Public Function Validar(ByVal oeDemanda As e_Demanda) As Boolean Implements Il_Demanda.Validar
         Try
             With oeDemanda
                 If .TipoOperacion <> "C" Then
@@ -177,7 +177,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function ValidarDetalle(ByVal oeDemandaDetalle As EntidadesWCF.e_DemandaDetalle) As Boolean Implements Il_Demanda.ValidarDetalle
+    Public Function ValidarDetalle(ByVal oeDemandaDetalle As e_DemandaDetalle) As Boolean Implements Il_Demanda.ValidarDetalle
         Try
             With oeDemandaDetalle
                 ValidarCliente(oeDemandaDetalle.Cliente)
@@ -234,7 +234,7 @@ Public Class l_Demanda
         End Try
     End Function
 
-    Public Function RevertirDemanda(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean
+    Public Function RevertirDemanda(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Return odDemanda.RevertirDemanda(oeDemanda)
 
@@ -242,7 +242,7 @@ Public Class l_Demanda
             Throw ex
         End Try
     End Function
-    Public Function GuardarDemandasEnviadas(ByVal oeDemanda As EntidadesWCF.e_Demanda) As Boolean
+    Public Function GuardarDemandasEnviadas(ByVal oeDemanda As e_Demanda) As Boolean
         Try
             Return odDemanda.GuardarDemandasEnviadas(oeDemanda)
         Catch ex As Exception

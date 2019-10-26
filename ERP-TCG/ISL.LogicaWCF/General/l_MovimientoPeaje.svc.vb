@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -19,7 +19,7 @@ Public Class l_MovimientoPeaje
     ' Private odDetalle As New d_DetallePagoAdicional
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oePagoAdicional As EntidadesWCF.e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Eliminar
+    Public Function Eliminar(oePagoAdicional As e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Eliminar
         Try
             Return odMovimientoPeaje.Eliminar(oePagoAdicional)
         Catch ex As Exception
@@ -27,7 +27,7 @@ Public Class l_MovimientoPeaje
         End Try
     End Function
 
-    Public Function Guardar(oeMovimientoPeaje As EntidadesWCF.e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Guardar
+    Public Function Guardar(oeMovimientoPeaje As e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Guardar
         Try
             If Validar(oeMovimientoPeaje) Then
                 Return odMovimientoPeaje.Guardar(oeMovimientoPeaje)
@@ -61,7 +61,7 @@ Public Class l_MovimientoPeaje
         End Try
     End Function
 
-    Public Function Listar(oeMovimientoPeaje As EntidadesWCF.e_MovimientoPeaje) As List(Of EntidadesWCF.e_MovimientoPeaje) Implements Il_MovimientoPeaje.Listar
+    Public Function Listar(oeMovimientoPeaje As e_MovimientoPeaje) As List(Of e_MovimientoPeaje) Implements Il_MovimientoPeaje.Listar
         Try
             Return odMovimientoPeaje.Listar(oeMovimientoPeaje)
         Catch ex As Exception
@@ -69,7 +69,7 @@ Public Class l_MovimientoPeaje
         End Try
     End Function
 
-    Public Function Obtener(oePagoAdicional As EntidadesWCF.e_MovimientoPeaje) As EntidadesWCF.e_MovimientoPeaje Implements Il_MovimientoPeaje.Obtener
+    Public Function Obtener(oePagoAdicional As e_MovimientoPeaje) As e_MovimientoPeaje Implements Il_MovimientoPeaje.Obtener
         Try
             Return odMovimientoPeaje.Obtener(oePagoAdicional)
         Catch ex As Exception
@@ -77,7 +77,7 @@ Public Class l_MovimientoPeaje
         End Try
     End Function
 
-    Public Function Validar(oePagoAdicional As EntidadesWCF.e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Validar
+    Public Function Validar(oePagoAdicional As e_MovimientoPeaje) As Boolean Implements Il_MovimientoPeaje.Validar
         Try
             'With oePagoAdicional
             '    l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

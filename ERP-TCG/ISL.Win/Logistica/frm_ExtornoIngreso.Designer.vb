@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_ExtornoIngreso
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -400,7 +400,7 @@ Partial Class frm_ExtornoIngreso
         '
         'EDetalleLibroElectronicoBindingSource
         '
-        Me.EDetalleLibroElectronicoBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_DetalleLibroElectronico)
+        Me.EDetalleLibroElectronicoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_DetalleLibroElectronico)
         '
         'UltraTabPageControl3
         '

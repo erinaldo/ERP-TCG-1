@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_Ocupacion
 
     Dim odOcupacion As New d_Ocupacion
 
-    Public Function Eliminar(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As Boolean Implements Il_Ocupacion.Eliminar
+    Public Function Eliminar(ByVal oeOcupacion As e_Ocupacion) As Boolean Implements Il_Ocupacion.Eliminar
         Try
             Return odOcupacion.Eliminar(oeOcupacion)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Ocupacion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As Boolean Implements Il_Ocupacion.Guardar
+    Public Function Guardar(ByVal oeOcupacion As e_Ocupacion) As Boolean Implements Il_Ocupacion.Guardar
         Try
             If Validar(oeOcupacion) Then
                 Return odOcupacion.Guardar(oeOcupacion)
@@ -34,7 +34,7 @@ Public Class l_Ocupacion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As System.Collections.Generic.List(Of EntidadesWCF.e_Ocupacion) Implements Il_Ocupacion.Listar
+    Public Function Listar(ByVal oeOcupacion As e_Ocupacion) As System.Collections.Generic.List(Of e_Ocupacion) Implements Il_Ocupacion.Listar
         Try
             Return odOcupacion.Listar(oeOcupacion)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Ocupacion
         End Try
     End Function
 
-    Public Function Listar2(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As System.Collections.Generic.List(Of EntidadesWCF.e_Ocupacion) Implements Il_Ocupacion.Listar2
+    Public Function Listar2(ByVal oeOcupacion As e_Ocupacion) As System.Collections.Generic.List(Of e_Ocupacion) Implements Il_Ocupacion.Listar2
         Try
             Return odOcupacion.Listar2(oeOcupacion)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_Ocupacion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As EntidadesWCF.e_Ocupacion Implements Il_Ocupacion.Obtener
+    Public Function Obtener(ByVal oeOcupacion As e_Ocupacion) As e_Ocupacion Implements Il_Ocupacion.Obtener
         Try
             Return odOcupacion.Obtener(oeOcupacion)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_Ocupacion
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOcupacion As EntidadesWCF.e_Ocupacion) As Boolean Implements Il_Ocupacion.Validar
+    Public Function Validar(ByVal oeOcupacion As e_Ocupacion) As Boolean Implements Il_Ocupacion.Validar
         Try
             With oeOcupacion
                 ValidarDuplicado(.Id, .Nombre, "nombre")

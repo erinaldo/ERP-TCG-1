@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_FamiliaMaterial
     Dim odFamiliaMaterial As New d_FamiliaMaterial
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeFamiliaMaterial As EntidadesWCF.e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Eliminar
+    Public Function Eliminar(ByVal oeFamiliaMaterial As e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Eliminar
         Try
             Return odFamiliaMaterial.Eliminar(oeFamiliaMaterial)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_FamiliaMaterial
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFamiliaMaterial As EntidadesWCF.e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Guardar
+    Public Function Guardar(ByVal oeFamiliaMaterial As e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Guardar
         Try
             If Validar(oeFamiliaMaterial) Then
                 Return odFamiliaMaterial.Guardar(oeFamiliaMaterial)
@@ -34,7 +34,7 @@ Public Class l_FamiliaMaterial
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFamiliaMaterial As EntidadesWCF.e_FamiliaMaterial) As System.Collections.Generic.List(Of EntidadesWCF.e_FamiliaMaterial) Implements Il_FamiliaMaterial.Listar
+    Public Function Listar(ByVal oeFamiliaMaterial As e_FamiliaMaterial) As System.Collections.Generic.List(Of e_FamiliaMaterial) Implements Il_FamiliaMaterial.Listar
         Try
             Return odFamiliaMaterial.Listar(oeFamiliaMaterial)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_FamiliaMaterial
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeFamiliaMaterial As EntidadesWCF.e_FamiliaMaterial) As EntidadesWCF.e_FamiliaMaterial Implements Il_FamiliaMaterial.Obtener
+    Public Function Obtener(ByVal oeFamiliaMaterial As e_FamiliaMaterial) As e_FamiliaMaterial Implements Il_FamiliaMaterial.Obtener
         Try
             Return odFamiliaMaterial.Obtener(oeFamiliaMaterial)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_FamiliaMaterial
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFamiliaMaterial As EntidadesWCF.e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Validar
+    Public Function Validar(ByVal oeFamiliaMaterial As e_FamiliaMaterial) As Boolean Implements Il_FamiliaMaterial.Validar
         Try
             With oeFamiliaMaterial
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

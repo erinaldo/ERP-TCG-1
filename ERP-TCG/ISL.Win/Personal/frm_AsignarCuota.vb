@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 
 Public Class frm_AsignarCuota
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 
@@ -80,7 +80,7 @@ Public Class frm_AsignarCuota
             oeCuota.IdTrabajador = oeMovimientoPersonal.IdTrabajador
             oeCuota.NombreCompleto = cboTrabajadores.Text
 
-            If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
 
             FotoTrabajador.Visible = True
             agrDatosBasicos.Visible = True
@@ -320,7 +320,7 @@ Public Class frm_AsignarCuota
     End Sub
 
     Private Sub CargarFotoTrabajador(ByVal oeTrabajador As e_Trabajador)
-        FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+        'FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
     End Sub
 
     Private Sub CargaDatosPersonales(ByVal oeCuota As e_Cuota)

@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -73,7 +73,7 @@ Public Class d_Concepto
     Public Function Guardar(ByVal oeConcepto As e_Concepto) As Boolean
         Try
             'Dim stResultado() As String
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            '
             'With oeConcepto
             '    stResultado = sqlhelper.ExecuteNonQuery("SPC.Isp_Concepto_IAE", _
             '                                            .TipoOperacion, _

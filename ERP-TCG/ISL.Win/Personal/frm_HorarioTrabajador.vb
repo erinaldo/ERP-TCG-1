@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_HorarioTrabajador
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion"
 
@@ -205,7 +205,7 @@ Public Class frm_HorarioTrabajador
                 Dim olTrabajador As New l_Trabajador
                 oeTrabajador.Id = oeMovimientoPersonal.IdTrabajador
                 oeTrabajador = olTrabajador.ObtenerObjeto(oeTrabajador)
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 txtArea.Text = oeTrabajador.oeArea.Nombre
                 txtCargo.Text = oeTrabajador.oeCargo.Nombre
                 fecFechaIngreso.Value = oeTrabajador.FechaIngreso

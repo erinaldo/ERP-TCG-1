@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_ChequeEmitido", también debe actualizar la referencia a "Il_ChequeEmitido" en Web.config.
 <ServiceContract()> _

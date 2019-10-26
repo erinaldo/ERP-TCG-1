@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -43,10 +43,9 @@ Public Class d_DepositoDetalle
     Public Function Obtener(ByVal oeDepositoDetalle As e_DepositoDetalle) As e_DepositoDetalle
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_DepositoDetalle_Listar", "", oeDepositoDetalle.Id)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeDepositoDetalle = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeDepositoDetalle
@@ -57,14 +56,13 @@ Public Class d_DepositoDetalle
 
     Public Function Listar(ByVal oeDepositoDetalle As e_DepositoDetalle) As List(Of e_DepositoDetalle)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldDepositoDetalle As New List(Of e_DepositoDetalle)
             Dim ds As DataSet
             With oeDepositoDetalle
                 ds = sqlhelper.ExecuteDataset("TES.Isp_DepositoDetalle_Listar", .TipoOperacion _
                         , .Id _
                         , .IdDeposito _
-                        , .IdMovimientoFlete _
+                        , .IdMovimientoFlete
                         )
             End With
             oeDepositoDetalle = Nothing

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Almacen
     Private odAlmacen As New d_Almacen
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeAlmacen As EntidadesWCF.e_Almacen) As Boolean Implements Il_Almacen.Eliminar
+    Public Function Eliminar(ByVal oeAlmacen As e_Almacen) As Boolean Implements Il_Almacen.Eliminar
         Try
             Return odAlmacen.Eliminar(oeAlmacen)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Almacen
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeAlmacen As EntidadesWCF.e_Almacen) As Boolean Implements Il_Almacen.Guardar
+    Public Function Guardar(ByVal oeAlmacen As e_Almacen) As Boolean Implements Il_Almacen.Guardar
         Try
             If Validar(oeAlmacen) Then
                 Return odAlmacen.Guardar(oeAlmacen)
@@ -35,7 +35,7 @@ Public Class l_Almacen
         End Try
     End Function
 
-    Public Function Listar(ByVal oeAlmacen As EntidadesWCF.e_Almacen) As System.Collections.Generic.List(Of EntidadesWCF.e_Almacen) Implements Il_Almacen.Listar
+    Public Function Listar(ByVal oeAlmacen As e_Almacen) As System.Collections.Generic.List(Of e_Almacen) Implements Il_Almacen.Listar
         Try
             Return odAlmacen.Listar(oeAlmacen)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Almacen
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeAlmacen As EntidadesWCF.e_Almacen) As EntidadesWCF.e_Almacen Implements Il_Almacen.Obtener
+    Public Function Obtener(ByVal oeAlmacen As e_Almacen) As e_Almacen Implements Il_Almacen.Obtener
         Try
             Return odAlmacen.Obtener(oeAlmacen)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Almacen
         End Try
     End Function
 
-    Public Function Validar(ByVal oeAlmacen As EntidadesWCF.e_Almacen) As Boolean Implements Il_Almacen.Validar
+    Public Function Validar(ByVal oeAlmacen As e_Almacen) As Boolean Implements Il_Almacen.Validar
         Try
             With oeAlmacen
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

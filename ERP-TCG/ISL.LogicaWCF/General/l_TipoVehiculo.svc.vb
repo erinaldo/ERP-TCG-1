@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -18,7 +18,7 @@ Public Class l_TipoVehiculo
     Dim odTipoVehiculo As d_TipoVehiculo
     Dim l_FuncionesGenerales As l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal ListaTipoVehiculo As System.Collections.Generic.List(Of EntidadesWCF.e_TipoVehiculo)) As Object Implements Il_TipoVehiculo.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaTipoVehiculo As System.Collections.Generic.List(Of e_TipoVehiculo)) As Object Implements Il_TipoVehiculo.ComboGrilla
         Try
             odTipoVehiculo = New d_TipoVehiculo
             Return odTipoVehiculo.ComboGrilla(ListaTipoVehiculo)
@@ -27,7 +27,7 @@ Public Class l_TipoVehiculo
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeTipoVehiculo As EntidadesWCF.e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Eliminar
+    Public Function Eliminar(ByVal oeTipoVehiculo As e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Eliminar
         Try
             odTipoVehiculo = New d_TipoVehiculo
             Return odTipoVehiculo.Eliminar(oeTipoVehiculo)
@@ -36,7 +36,7 @@ Public Class l_TipoVehiculo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoVehiculo As EntidadesWCF.e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Guardar
+    Public Function Guardar(ByVal oeTipoVehiculo As e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Guardar
         Try
             odTipoVehiculo = New d_TipoVehiculo
             If Validar(oeTipoVehiculo) Then
@@ -47,7 +47,7 @@ Public Class l_TipoVehiculo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoVehiculo As EntidadesWCF.e_TipoVehiculo) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoVehiculo) Implements Il_TipoVehiculo.Listar
+    Public Function Listar(ByVal oeTipoVehiculo As e_TipoVehiculo) As System.Collections.Generic.List(Of e_TipoVehiculo) Implements Il_TipoVehiculo.Listar
         Try
             odTipoVehiculo = New d_TipoVehiculo
             Return odTipoVehiculo.Listar(oeTipoVehiculo)
@@ -56,7 +56,7 @@ Public Class l_TipoVehiculo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoVehiculo As EntidadesWCF.e_TipoVehiculo) As EntidadesWCF.e_TipoVehiculo Implements Il_TipoVehiculo.Obtener
+    Public Function Obtener(ByVal oeTipoVehiculo As e_TipoVehiculo) As e_TipoVehiculo Implements Il_TipoVehiculo.Obtener
         Try
             odTipoVehiculo = New d_TipoVehiculo
             Return odTipoVehiculo.Obtener(oeTipoVehiculo)
@@ -65,7 +65,7 @@ Public Class l_TipoVehiculo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoVehiculo As EntidadesWCF.e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Validar
+    Public Function Validar(ByVal oeTipoVehiculo As e_TipoVehiculo) As Boolean Implements Il_TipoVehiculo.Validar
         Try
             If oeTipoVehiculo.TipoOperacion <> "1" Then
                 l_FuncionesGenerales = New l_FuncionesGenerales

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -27,7 +27,7 @@ Public Class l_Modelo
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeModeloVehiculo As EntidadesWCF.e_Modelo) As Boolean Implements Il_Modelo.Eliminar
+    Public Function Eliminar(ByVal oeModeloVehiculo As e_Modelo) As Boolean Implements Il_Modelo.Eliminar
         Try
             odModeloVehiculo = New d_Modelo
             Return odModeloVehiculo.Eliminar(oeModeloVehiculo)
@@ -36,7 +36,7 @@ Public Class l_Modelo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeModeloVehiculo As EntidadesWCF.e_Modelo) As Boolean Implements Il_Modelo.Guardar
+    Public Function Guardar(ByVal oeModeloVehiculo As e_Modelo) As Boolean Implements Il_Modelo.Guardar
         Try
             odModeloVehiculo = New d_Modelo
             If Validar(oeModeloVehiculo) Then
@@ -47,7 +47,7 @@ Public Class l_Modelo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeModeloVehiculo As EntidadesWCF.e_Modelo) As System.Collections.Generic.List(Of EntidadesWCF.e_Modelo) Implements Il_Modelo.Listar
+    Public Function Listar(ByVal oeModeloVehiculo As e_Modelo) As System.Collections.Generic.List(Of e_Modelo) Implements Il_Modelo.Listar
         Try
             odModeloVehiculo = New d_Modelo
             Return odModeloVehiculo.Listar(oeModeloVehiculo)
@@ -56,7 +56,7 @@ Public Class l_Modelo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeModeloVehiculo As EntidadesWCF.e_Modelo) As EntidadesWCF.e_Modelo Implements Il_Modelo.Obtener
+    Public Function Obtener(ByVal oeModeloVehiculo As e_Modelo) As e_Modelo Implements Il_Modelo.Obtener
         Try
             odModeloVehiculo = New d_Modelo
             Return odModeloVehiculo.Obtener(oeModeloVehiculo)
@@ -65,7 +65,7 @@ Public Class l_Modelo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeModeloVehiculo As EntidadesWCF.e_Modelo) As Boolean Implements Il_Modelo.Validar
+    Public Function Validar(ByVal oeModeloVehiculo As e_Modelo) As Boolean Implements Il_Modelo.Validar
         Try
             l_FuncionesGenerales = New l_FuncionesGenerales
             If oeModeloVehiculo.TipoOperacion <> "1" Then

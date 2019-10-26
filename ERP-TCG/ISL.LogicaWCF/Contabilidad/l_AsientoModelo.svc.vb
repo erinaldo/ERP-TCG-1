@@ -5,8 +5,8 @@
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -18,7 +18,7 @@ Public Class l_AsientoModelo
     Dim odAsientoModelo As New d_AsientoModelo
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeAsiModActNeg As EntidadesWCF.e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Eliminar
+    Public Function Eliminar(oeAsiModActNeg As e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Eliminar
         Try
             Return odAsientoModelo.Eliminar(oeAsiModActNeg)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_AsientoModelo
         End Try
     End Function
 
-    Public Function Guardar(oeAsiModActNeg As EntidadesWCF.e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Guardar
+    Public Function Guardar(oeAsiModActNeg As e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Guardar
         Try
             If Validar(oeAsiModActNeg) Then
                 Return odAsientoModelo.Guardar(oeAsiModActNeg)
@@ -36,7 +36,7 @@ Public Class l_AsientoModelo
         End Try
     End Function
 
-    Public Function Listar(oeAsiModActNeg As EntidadesWCF.e_AsientoModelo) As List(Of EntidadesWCF.e_AsientoModelo) Implements Il_AsientoModelo.Listar
+    Public Function Listar(oeAsiModActNeg As e_AsientoModelo) As List(Of e_AsientoModelo) Implements Il_AsientoModelo.Listar
         Try
             Return odAsientoModelo.Listar(oeAsiModActNeg)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_AsientoModelo
         End Try
     End Function
 
-    Public Function Obtener(oeAsiModActNeg As EntidadesWCF.e_AsientoModelo) As EntidadesWCF.e_AsientoModelo Implements Il_AsientoModelo.Obtener
+    Public Function Obtener(oeAsiModActNeg As e_AsientoModelo) As e_AsientoModelo Implements Il_AsientoModelo.Obtener
         Try
             Return odAsientoModelo.Obtener(oeAsiModActNeg)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_AsientoModelo
         End Try
     End Function
 
-    Public Function Validar(oeAsiModActNeg As EntidadesWCF.e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Validar
+    Public Function Validar(oeAsiModActNeg As e_AsientoModelo) As Boolean Implements Il_AsientoModelo.Validar
         Try
             With oeAsiModActNeg
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "No ha Ingresado Nombre")

@@ -281,7 +281,7 @@ Public Class e_PrestamoDetalle
 
 #Region "Métodos"
 
-    Public Overloads Function Equals(ByVal oePD As e_PrestamoDetalle) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_PrestamoDetalle).Equals
+    Public Overloads Function Equals(ByVal oePD As e_PrestamoDetalle) As Boolean Implements IEquatable(Of e_PrestamoDetalle).Equals
         Select Case oePD.Equivale
             Case 0 : If Me.NroCuota.Trim = oePD.NroCuota.Trim Then Return True
             Case 1 : If Me.Id.Trim = oePD.Id.Trim Then Return True

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_Requerimiento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -3385,7 +3385,7 @@ Partial Class frm_Requerimiento
         Me.mnuCotizacionProveedor.Appearance = Appearance200
         Me.mnuCotizacionProveedor.DesignerFlags = 1
         Me.mnuCotizacionProveedor.DockWithinContainer = Me
-        Me.mnuCotizacionProveedor.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.mnuCotizacionProveedor.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.mnuCotizacionProveedor.MdiMergeable = False
         Me.mnuCotizacionProveedor.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         Me.mnuCotizacionProveedor.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007

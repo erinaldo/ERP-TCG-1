@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Imports System.Configuration
@@ -15,7 +15,7 @@ Imports System.Text
 Public Class d_MovimientoDocumento
 
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+
     Dim odDetDocComb As New d_DetalleDocumentoCombustible
     Dim odDetDoc As New d_DetalleDocumento
     Dim odDetDocGT As New d_DetalleDoc_GuiaTrans
@@ -486,7 +486,7 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
         Try
             oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
             If UsaTransaccion Then
@@ -540,13 +540,13 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing) As Boolean
+    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
         Try
             Dim stResultado() As String
             Dim stResultado_Ant() As String
             With oeMovimientoDocumento
-                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                        .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion,
+                        .PrefijoID,
                         .Id _
                         , .IdTipoDocumento _
                         , .Serie _
@@ -676,8 +676,8 @@ Public Class d_MovimientoDocumento
                 If Not oeAnticipo Is Nothing Then
                     If oeAnticipo.TipoOperacion = "I" Then
                         With oeAnticipo
-                            stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, _
-                                    .PrefijoID, _
+                            stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion,
+                                    .PrefijoID,
                                     .Id _
                                     , .IdTipoDocumento _
                                     , .Serie _
@@ -993,6 +993,7 @@ Public Class d_MovimientoDocumento
                     Dim odCuotaMovimiento As New d_CuotaDocVeh_Movimiento
                     For Each obj In .leCuotaDocVehMovimiento
                         obj.IdMovimientoDocumento = .Id
+                        obj.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         odCuotaMovimiento.GuardarCancelacion(obj)
                     Next
                 End If
@@ -1026,6 +1027,7 @@ Public Class d_MovimientoDocumento
                     .Compra.IdMovimientoDocumento = stResultado(0)
                     Dim odCompra As New d_Compra
                     'guardo en la tabla compra
+                    .Compra.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     odCompra.Guardar(.Compra)
                     If Not .IndAsientoGuia Then
                         Dim odAsiento As New d_Asiento
@@ -1046,6 +1048,7 @@ Public Class d_MovimientoDocumento
                         Detalle.IdMovimientoDocumento = stResultado(0)
                         Detalle.UsuarioCreacion = .IdUsuarioCrea
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         odDetDoc.Guardar(Detalle)
                     Next
                 End If
@@ -1053,6 +1056,7 @@ Public Class d_MovimientoDocumento
                 If Not .DocAsoc Is Nothing Then 'para el caso de ND y NC
                     Dim odDocAsoc As New d_DocumentoAsociado
                     For Each obj As e_DocumentoAsociado In .DocAsoc
+                        obj.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         If obj.TipoOperacion = "E" Then
                             odDocAsoc.Eliminar(obj)
                         ElseIf obj.TipoOperacion = "I" Then
@@ -1065,6 +1069,7 @@ Public Class d_MovimientoDocumento
 
                 If Not .PagoAutomatico Is Nothing Then
                     .PagoAutomatico.IdMovimientoDocumento = stResultado(0)
+                    .PagoAutomatico.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     GuardarPagoCompra(.PagoAutomatico)
                 End If
 
@@ -1107,6 +1112,7 @@ Public Class d_MovimientoDocumento
                             , .IndServicioMaterial _
                         ).ToString.Split("_")
                     oeMovimientoDocumento.Id = stResultado(0)
+                    .Compra.PrefijoID = oeMovimientoDocumento.PrefijoID '@001
                     odCompra.Guardar(.Compra)
                 End With
 
@@ -1535,12 +1541,14 @@ Public Class d_MovimientoDocumento
                     If .Venta.IdTipoVenta <> "" Then
                         .Venta.IdMovimientoDocumento = stResultado(0)
                         Dim odVenta As New d_Venta
+                        .Venta.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         odVenta.Guardar(.Venta)
                     End If
                     'Guardar Documento Asociado
                     If Not .DocAsoc Is Nothing Then
                         Dim odDocAsoc As New d_DocumentoAsociado
                         For Each obj As e_DocumentoAsociado In .DocAsoc
+                            obj.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                             If obj.TipoOperacion = "E" Then
                                 odDocAsoc.Eliminar(obj)
                             ElseIf obj.TipoOperacion = "I" Then

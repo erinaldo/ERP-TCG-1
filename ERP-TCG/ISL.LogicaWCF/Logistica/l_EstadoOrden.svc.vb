@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_EstadoOrden
     Dim odEstadoOrden As New d_EstadoOrden
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeEstadoOrden As EntidadesWCF.e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Eliminar
+    Public Function Eliminar(ByVal oeEstadoOrden As e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Eliminar
         Try
             Return odEstadoOrden.Eliminar(oeEstadoOrden)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_EstadoOrden
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEstadoOrden As EntidadesWCF.e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Guardar
+    Public Function Guardar(ByVal oeEstadoOrden As e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Guardar
         Try
             If Validar(oeEstadoOrden) Then
                 Return odEstadoOrden.Guardar(oeEstadoOrden)
@@ -26,7 +26,7 @@ Public Class l_EstadoOrden
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEstadoOrden As EntidadesWCF.e_EstadoOrden) As System.Collections.Generic.List(Of EntidadesWCF.e_EstadoOrden) Implements Il_EstadoOrden.Listar
+    Public Function Listar(ByVal oeEstadoOrden As e_EstadoOrden) As System.Collections.Generic.List(Of e_EstadoOrden) Implements Il_EstadoOrden.Listar
         Try
             Return odEstadoOrden.Listar(oeEstadoOrden)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_EstadoOrden
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEstadoOrden As EntidadesWCF.e_EstadoOrden) As EntidadesWCF.e_EstadoOrden Implements Il_EstadoOrden.Obtener
+    Public Function Obtener(ByVal oeEstadoOrden As e_EstadoOrden) As e_EstadoOrden Implements Il_EstadoOrden.Obtener
         Try
             Return odEstadoOrden.Obtener(oeEstadoOrden)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_EstadoOrden
         End Try
     End Function
 
-    Public Function Validar(ByVal oeEstadoOrden As EntidadesWCF.e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Validar
+    Public Function Validar(ByVal oeEstadoOrden As e_EstadoOrden) As Boolean Implements Il_EstadoOrden.Validar
         Try
             With oeEstadoOrden
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -25,7 +25,7 @@ Public Class l_Marca
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeMarca As EntidadesWCF.e_Marca) As Boolean Implements Il_Marca.Eliminar
+    Public Function Eliminar(ByVal oeMarca As e_Marca) As Boolean Implements Il_Marca.Eliminar
         Try
             Return odMarca.Eliminar(oeMarca)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_Marca
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMarca As EntidadesWCF.e_Marca) As Boolean Implements Il_Marca.Guardar
+    Public Function Guardar(ByVal oeMarca As e_Marca) As Boolean Implements Il_Marca.Guardar
         Try
             If Validar(oeMarca) Then
                 Return odMarca.Guardar(oeMarca)
@@ -43,7 +43,7 @@ Public Class l_Marca
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMarca As EntidadesWCF.e_Marca) As System.Collections.Generic.List(Of EntidadesWCF.e_Marca) Implements Il_Marca.Listar
+    Public Function Listar(ByVal oeMarca As e_Marca) As System.Collections.Generic.List(Of e_Marca) Implements Il_Marca.Listar
         Try
             Return odMarca.Listar(oeMarca)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Marca
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMarca As EntidadesWCF.e_Marca) As EntidadesWCF.e_Marca Implements Il_Marca.Obtener
+    Public Function Obtener(ByVal oeMarca As e_Marca) As e_Marca Implements Il_Marca.Obtener
         Try
             Return odMarca.Obtener(oeMarca)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Marca
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMarca As EntidadesWCF.e_Marca) As Boolean Implements Il_Marca.Validar
+    Public Function Validar(ByVal oeMarca As e_Marca) As Boolean Implements Il_Marca.Validar
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(oeMarca.Nombre, "Debe ingresar nombre de la marca")
             ValidarDuplicado(oeMarca.Id, oeMarca.Nombre)

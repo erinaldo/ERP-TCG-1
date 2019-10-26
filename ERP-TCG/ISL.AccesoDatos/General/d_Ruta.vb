@@ -6,15 +6,9 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 
-''' <summary>
-''' Clase que se encarga de gestionar las ruta de la empresa
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Ruta,
-''' Capa del Sistema: Capa de Acceso a Datos.</remarks>
 Public Class d_Ruta
 
 #Region "Variables"

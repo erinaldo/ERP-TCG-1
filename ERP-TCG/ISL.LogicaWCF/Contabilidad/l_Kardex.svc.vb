@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 <DataContract(), Serializable()> _
 Public Class l_Kardex
@@ -335,7 +335,7 @@ Public Class l_Kardex
         End Try
     End Function
 
-    Public Function Validar(ByVal oeKardex As EntidadesWCF.e_Kardex) As Boolean 'Implements Il_OrdenTrabajo.Validar
+    Public Function Validar(ByVal oeKardex As e_Kardex) As Boolean 'Implements Il_OrdenTrabajo.Validar
         Try
             With oeKardex
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdPeriodo, "Seleccione un periodo.")

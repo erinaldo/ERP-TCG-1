@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 
 ' NOTA: si cambia aquí el nombre de clase "l_ControlMerma", también debe actualizar la referencia a "l_ControlMerma" tanto en Web.config como en el archivo .svc asociado.
 Public Class l_ControlMerma

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -19,7 +19,7 @@ Public Class l_RendimientoCombustible
     Dim odRendimientoCombustible As New d_RendimientoCombustible
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Guardar(ByVal oeRendimientoCombustible As EntidadesWCF.e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Guardar
+    Public Function Guardar(ByVal oeRendimientoCombustible As e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Guardar
         Try
             If Validar(oeRendimientoCombustible) Then
                 Return odRendimientoCombustible.Guardar(oeRendimientoCombustible)
@@ -29,7 +29,7 @@ Public Class l_RendimientoCombustible
         End Try
     End Function
 
-    Public Function Listar(ByVal oeRendimientoCombustible As EntidadesWCF.e_RendimientoCombustible) As System.Collections.Generic.List(Of EntidadesWCF.e_RendimientoCombustible) Implements Il_RendimientoCombustible.Listar
+    Public Function Listar(ByVal oeRendimientoCombustible As e_RendimientoCombustible) As System.Collections.Generic.List(Of e_RendimientoCombustible) Implements Il_RendimientoCombustible.Listar
         Try
             Return odRendimientoCombustible.Listar(oeRendimientoCombustible)
         Catch ex As Exception
@@ -37,7 +37,7 @@ Public Class l_RendimientoCombustible
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRendimientoCombustible As EntidadesWCF.e_RendimientoCombustible) As EntidadesWCF.e_RendimientoCombustible Implements Il_RendimientoCombustible.Obtener
+    Public Function Obtener(ByVal oeRendimientoCombustible As e_RendimientoCombustible) As e_RendimientoCombustible Implements Il_RendimientoCombustible.Obtener
         Try
             Return odRendimientoCombustible.Obtener(oeRendimientoCombustible)
         Catch ex As Exception
@@ -45,7 +45,7 @@ Public Class l_RendimientoCombustible
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRendimientoCombustible As EntidadesWCF.e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Validar
+    Public Function Validar(ByVal oeRendimientoCombustible As e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Validar
         Try
             'If oeRendimientoCombustible.TipoOperacion = "I" Then
             '    Dim oeRend As New e_RendimientoCombustible
@@ -65,7 +65,7 @@ Public Class l_RendimientoCombustible
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeRendimientoCombustible As EntidadesWCF.e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Eliminar
+    Public Function Eliminar(ByVal oeRendimientoCombustible As e_RendimientoCombustible) As Boolean Implements Il_RendimientoCombustible.Eliminar
         Try
             Return odRendimientoCombustible.Eliminar(oeRendimientoCombustible)
         Catch ex As Exception

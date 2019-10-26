@@ -6,12 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 Public Class d_Asiento_Existencia
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
 
     Public Function Guardar(ByVal oeAsiento_Existencia As e_Asiento_Existencia) As Boolean
         Dim stResultado() As String

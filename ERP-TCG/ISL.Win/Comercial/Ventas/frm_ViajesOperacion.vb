@@ -7,8 +7,8 @@
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_ViajesOperacion
     Private FechaServidor As Date = ObtenerFechaServidor()

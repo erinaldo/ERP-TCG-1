@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_CodigoBarraMaterial", también debe actualizar la referencia a "Il_CodigoBarraMaterial" en Web.config.
 <ServiceContract()> _

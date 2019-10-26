@@ -6,18 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Public Class d_BolsaRuta
     Private sqlhelper As New SqlHelper
 
     Private oeBolsaRuta As e_BolsaRuta
 
-    ''' <summary>
-    ''' Crear el objeto Bolsa Ruta
-    ''' </summary>
-    ''' <param name="o_fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_BolsaRuta
         Try
             Dim oeBolsaRuta = New e_BolsaRuta(o_fila("Id"), _
@@ -36,12 +30,6 @@ Public Class d_BolsaRuta
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtiene un objeto de Bolsa Ruta a partir de su Id
-    ''' </summary>
-    ''' <param name="oeBolsaRuta">Objeto de Bolsa Ruta</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Obtener(ByVal oeBolsaRuta As e_BolsaRuta) As e_BolsaRuta
         Try
             Dim ds As New DataSet
@@ -56,12 +44,6 @@ Public Class d_BolsaRuta
         End Try
     End Function
 
-    ''' <summary>
-    ''' Crear una lista de objetos de Bolsa Ruta
-    ''' </summary>
-    ''' <param name="oeBolsaRuta"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Listar(ByVal oeBolsaRuta As e_BolsaRuta) As List(Of e_BolsaRuta)
         Try
             Dim ldBolsaRuta As New List(Of e_BolsaRuta)

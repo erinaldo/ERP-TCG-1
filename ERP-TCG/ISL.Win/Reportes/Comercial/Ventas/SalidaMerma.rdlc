@@ -35,15 +35,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="image1">
-        <Source>Embedded</Source>
-        <Value>logo_induamerica_pequeño</Value>
-        <MIMEType>image/jpeg</MIMEType>
-        <Height>1.50794cm</Height>
-        <Width>1.34921cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style />
-      </Image>
       <Textbox Name="Textbox3">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -66,7 +57,7 @@
         <Top>1.58432cm</Top>
         <Height>0.6cm</Height>
         <Width>1.75917cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -100,7 +91,7 @@
         <Left>1.79444cm</Left>
         <Height>0.6cm</Height>
         <Width>3.135cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -134,7 +125,7 @@
         <Left>6.37328cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -164,7 +155,7 @@
         <Left>8.94384cm</Left>
         <Height>0.6cm</Height>
         <Width>8.34034cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -732,7 +723,7 @@
         <Top>2.85433cm</Top>
         <Height>1.8cm</Height>
         <Width>17.28418cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -762,7 +753,7 @@
         <Left>9.78418cm</Left>
         <Height>0.6cm</Height>
         <Width>7.5cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -801,7 +792,7 @@
         <Left>9.78418cm</Left>
         <Height>0.6cm</Height>
         <Width>5cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -837,7 +828,7 @@
         <Left>14.78418cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -872,7 +863,7 @@
         <Left>9.78418cm</Left>
         <Height>0.6cm</Height>
         <Width>5cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -908,7 +899,7 @@
         <Left>14.78418cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

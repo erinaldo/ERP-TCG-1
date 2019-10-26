@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -23,7 +23,7 @@ Public Class l_SituacionAdministrativa
     ''' <param name="oeSituacionAdministrativa"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeSituacionAdministrativa As EntidadesWCF.e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Eliminar
+    Public Function Eliminar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Eliminar
         Try
             Return odSituacionAdministrativa.Eliminar(oeSituacionAdministrativa)
         Catch ex As Exception
@@ -37,7 +37,7 @@ Public Class l_SituacionAdministrativa
     ''' <param name="oeSituacionAdministrativa"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeSituacionAdministrativa As EntidadesWCF.e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Guardar
+    Public Function Guardar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Guardar
         Try
             If Validar(oeSituacionAdministrativa) Then
                 Return odSituacionAdministrativa.Guardar(oeSituacionAdministrativa)
@@ -53,7 +53,7 @@ Public Class l_SituacionAdministrativa
     ''' <param name="oeSituacionAdministrativa"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeSituacionAdministrativa As EntidadesWCF.e_SituacionAdministrativa) As System.Collections.Generic.List(Of EntidadesWCF.e_SituacionAdministrativa) Implements Il_SituacionAdministrativa.Listar
+    Public Function Listar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As System.Collections.Generic.List(Of e_SituacionAdministrativa) Implements Il_SituacionAdministrativa.Listar
         Try
             Return odSituacionAdministrativa.Listar(oeSituacionAdministrativa)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_SituacionAdministrativa
     ''' <param name="oeSituacionAdministrativa"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeSituacionAdministrativa As EntidadesWCF.e_SituacionAdministrativa) As EntidadesWCF.e_SituacionAdministrativa Implements Il_SituacionAdministrativa.Obtener
+    Public Function Obtener(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As e_SituacionAdministrativa Implements Il_SituacionAdministrativa.Obtener
         Try
             Return odSituacionAdministrativa.Obtener(oeSituacionAdministrativa)
         Catch ex As Exception
@@ -81,7 +81,7 @@ Public Class l_SituacionAdministrativa
     ''' <param name="oeSituacionAdministrativa"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeSituacionAdministrativa As EntidadesWCF.e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Validar
+    Public Function Validar(ByVal oeSituacionAdministrativa As e_SituacionAdministrativa) As Boolean Implements Il_SituacionAdministrativa.Validar
         Try
             With oeSituacionAdministrativa
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre del SituacionAdministrativa")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_MontoFlujoDiario
     Dim odMontoFlujoDiario As New d_MontoFlujoDiario
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeMontoFlujoDiario As EntidadesWCF.e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Eliminar
+    Public Function Eliminar(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Eliminar
         Try
             Return odMontoFlujoDiario.Eliminar(oeMontoFlujoDiario)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_MontoFlujoDiario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMontoFlujoDiario As EntidadesWCF.e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Guardar
+    Public Function Guardar(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Guardar
         Try
             If Validar(oeMontoFlujoDiario) Then
                 Return odMontoFlujoDiario.Guardar(oeMontoFlujoDiario)
@@ -34,7 +34,7 @@ Public Class l_MontoFlujoDiario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMontoFlujoDiario As EntidadesWCF.e_MontoFlujoDiario) As System.Collections.Generic.List(Of EntidadesWCF.e_MontoFlujoDiario) Implements Il_MontoFlujoDiario.Listar
+    Public Function Listar(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As System.Collections.Generic.List(Of e_MontoFlujoDiario) Implements Il_MontoFlujoDiario.Listar
         Try
             Return odMontoFlujoDiario.Listar(oeMontoFlujoDiario)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MontoFlujoDiario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMontoFlujoDiario As EntidadesWCF.e_MontoFlujoDiario) As EntidadesWCF.e_MontoFlujoDiario Implements Il_MontoFlujoDiario.Obtener
+    Public Function Obtener(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As e_MontoFlujoDiario Implements Il_MontoFlujoDiario.Obtener
         Try
             Return odMontoFlujoDiario.Obtener(oeMontoFlujoDiario)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_MontoFlujoDiario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMontoFlujoDiario As EntidadesWCF.e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Validar
+    Public Function Validar(ByVal oeMontoFlujoDiario As e_MontoFlujoDiario) As Boolean Implements Il_MontoFlujoDiario.Validar
         Try
             With oeMontoFlujoDiario
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdRuta, "Ingrese Ruta")

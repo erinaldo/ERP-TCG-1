@@ -6,21 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class d_CuentaBancaria
     Private sqlhelper As New SqlHelper
 
     Private oeCuentaBancaria As e_CuentaBancaria
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_CuentaBancaria y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeCuentaBancaria) de tipo e_CuentaBancaria </returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Cargar(ByVal o_fila As DataRow) As e_CuentaBancaria
         Try
             Dim oeCuentaBancaria = New e_CuentaBancaria(o_fila("Seleccion").ToString, _
@@ -35,14 +27,6 @@ Public Class d_CuentaBancaria
 
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una cuenta bancaria, el cual es consultado por el procedimiento almacenado TES.Isp_CuentaBancaria_Listar
-    ''' enviando su id de la cuenta bancaria.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_CuentaBancaria.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCuentaBancaria">Recibe una variable oeCuentaBancaria de tipo e_CuentaBancaria</param>
-    ''' <returns>Devuelve una varible oeCuentaBancaria de tipo e_CuentaBancaria</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeCuentaBancaria As e_CuentaBancaria) As e_CuentaBancaria
         Try
             Dim ds As New DataSet
@@ -58,15 +42,7 @@ Public Class d_CuentaBancaria
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_CuentaBancaria, el cual es consultado por el procedimiento almacenado TES.Isp_CuentaBancaria_Listar
-    ''' enviando sus atributos de la cuenta bancaria.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCuentaBancaria">Recibe una Variable oeCuentaBancaria de tipo e_CuentaBancaria </param>
-    ''' <returns>Devuelve una lista generica(ldCuentaBancaria) de objetos de tipo e_CuentaBancaria</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
-    ''' 
+
     Public Function Listar(ByVal oeCuentaBancaria As e_CuentaBancaria) As List(Of e_CuentaBancaria)
         Try
             Dim ldCuentaBancaria As New List(Of e_CuentaBancaria)
@@ -92,16 +68,8 @@ Public Class d_CuentaBancaria
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos de la cuenta contable,a travez del procedimiento almacenado
-    ''' TES.Isp_CuentaBancaria_IAE,por el cual van a ser enviados y registrados los datos de la cuenta bancaria y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCuentaBancaria">Recibe una variable oeCuentaBancaria de tipo e_CuentaBancaria </param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de 
-    ''' tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
+
+
     Public Function Guardar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean
 
         Try
@@ -116,15 +84,8 @@ Public Class d_CuentaBancaria
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar una cuenta contable,a travez del procedimiento almacenado
-    ''' TES.Isp_CuentaBancaria_IAE,por el cual va a ser enviado el id del tipo de documento a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCuentaBancaria">Recibe una variable oeCuentaBancaria de tipo objeto e_CuentaBancaria </param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
+
     Public Function Eliminar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean
         Try
             SqlHelper.ExecuteNonQuery("TES.Isp_CuentaBancaria_IAE", "E", oeCuentaBancaria.Id)

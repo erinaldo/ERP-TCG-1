@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports System.Net.Mail
 
 Public Class frm_CambiarClave
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 
@@ -184,7 +184,7 @@ Public Class frm_CambiarClave
                 txtApellidoMaterno.Text = .oePersona.ApellidoMaterno
                 txtNombres.Text = .oePersona.Nombre
                 fecUltimaSesion.Value = .FechaUltimoIngreso
-                If Not String.IsNullOrEmpty(.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(.oePersona.Dni) Then pbFoto.Image = olPersona.Foto(.oePersona.Dni)
                 If gUsuarioSGI.IdTrabajador.Trim <> "" Then
                     oeTrab = New e_Trabajador
                     oeTrab.TipoOperacion = "N"

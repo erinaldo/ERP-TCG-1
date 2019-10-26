@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Sancion
     Dim odSancion As New d_Sancion
     Dim IslFuncion As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeSancion As EntidadesWCF.e_Sancion) As Boolean Implements Il_Sancion.Eliminar
+    Public Function Eliminar(ByVal oeSancion As e_Sancion) As Boolean Implements Il_Sancion.Eliminar
         Try
             Return odSancion.Eliminar(oeSancion)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Sancion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeSancion As EntidadesWCF.e_Sancion) As Boolean Implements Il_Sancion.Guardar
+    Public Function Guardar(ByVal oeSancion As e_Sancion) As Boolean Implements Il_Sancion.Guardar
         Try
             If Validar(oeSancion) Then
                 Return odSancion.Guardar(oeSancion)
@@ -35,7 +35,7 @@ Public Class l_Sancion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeSancion As EntidadesWCF.e_Sancion) As System.Collections.Generic.List(Of EntidadesWCF.e_Sancion) Implements Il_Sancion.Listar
+    Public Function Listar(ByVal oeSancion As e_Sancion) As System.Collections.Generic.List(Of e_Sancion) Implements Il_Sancion.Listar
         Try
             Return odSancion.Listar(oeSancion)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Sancion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeSancion As EntidadesWCF.e_Sancion) As EntidadesWCF.e_Sancion Implements Il_Sancion.Obtener
+    Public Function Obtener(ByVal oeSancion As e_Sancion) As e_Sancion Implements Il_Sancion.Obtener
         Try
             Return odSancion.Obtener(oeSancion)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Sancion
         End Try
     End Function
 
-    Public Function Validar(ByVal oeSancion As EntidadesWCF.e_Sancion) As Boolean Implements Il_Sancion.Validar
+    Public Function Validar(ByVal oeSancion As e_Sancion) As Boolean Implements Il_Sancion.Validar
         Try
             With oeSancion
                 IslFuncion.ValidarCampoNoNulo(.IdTrabajador, "Seleccione Trabajador")

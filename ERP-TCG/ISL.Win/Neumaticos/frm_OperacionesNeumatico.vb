@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports ISL.Controles
 Imports System
 Imports System.Collections.Generic
@@ -23,7 +23,7 @@ Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinGrid.UltraGridAction
 
 Public Class frm_OperacionesNeumatico
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
 

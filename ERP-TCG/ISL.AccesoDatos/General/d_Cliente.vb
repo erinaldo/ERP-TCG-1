@@ -6,14 +6,9 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
-''' <summary>
-''' Clase que gestiona los clientes que trabajan con la empresa
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla ClienteProveedor,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 
 Public Class d_Cliente
 
@@ -25,14 +20,7 @@ Public Class d_Cliente
     Private oeEmpresa As New e_Empresa
     Private odEmpresa As New d_Empresa
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo ----- y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeCliente) de tipo e_Cliente</returns>
-    ''' <remarks>Capa del Sistema:Capa Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_Cliente
         Try
             Dim oeCliente = New e_Cliente( _
@@ -54,13 +42,7 @@ Public Class d_Cliente
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un cliente, el cual es consultado por el procedimiento almacenado [STD].[Isp_Cliente_Listar]
-    ''' enviando su id del cliente.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_Cliente.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCliente">Objeto cliente, para recuperar datos debe tener asignado el Id del cliente</param>
-    ''' <returns>Devuelve una varible oeCliente de tipo e_Cliente</returns>
+
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeCliente As e_Cliente) As e_Cliente
         Try
@@ -101,13 +83,6 @@ Public Class d_Cliente
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Cliente, el cual es consultado por el procedimiento almacenado [STD].[Isp_Cliente_Listar]
-    ''' enviando sus atributos del cliente.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCliente">Recibe una Variable oeCliente de tipo e_Cliente </param>
-    ''' <returns>Devuelve una lista generica(ldCliente) de objetos de tipo e_Cliente</returns>
     ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeCliente As e_Cliente) As List(Of e_Cliente)
         Try
@@ -153,16 +128,6 @@ Public Class d_Cliente
         Return ds
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del cliente,a travez del procedimiento almacenado
-    ''' CON.ISP_XXXXXXXXXXXXXXX_IAE,por el cual van a ser enviados y registrados los datos del cliente y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCliente">Recibe una variable oeCliente de tipo e_Cliente</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro del 
-    ''' cliente es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeCliente As e_Cliente) As Boolean
         Try
             Dim idPersonaEmpresa As String = ""
@@ -232,15 +197,7 @@ Public Class d_Cliente
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del cliente,a travez del procedimiento almacenado
-    ''' CON.ISP_XXXXXXXXXXXXXXX_IAE,por el cual va a ser enviado el id del cliente a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeCliente">Recibe una variable oeCliente de tipo objeto e_Cliente</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Eliminar(ByVal oeCliente As e_Cliente) As Boolean
         Try
             sqlhelper.ExecuteNonQuery("STD.Isp_Cliente_IAE", "E", oeCliente.Id)

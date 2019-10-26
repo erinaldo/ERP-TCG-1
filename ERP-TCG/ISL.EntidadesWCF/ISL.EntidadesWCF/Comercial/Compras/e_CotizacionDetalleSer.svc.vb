@@ -203,7 +203,7 @@ Public Class e_CotizacionDetalleSer
         Return cotizacionDetalleSer
     End Function
 
-    Public Function Equals1(ByVal other As e_CotizacionDetalleSer) As Boolean Implements System.IEquatable(Of ISL.EntidadesWCF.e_CotizacionDetalleSer).Equals
+    Public Function Equals1(ByVal other As e_CotizacionDetalleSer) As Boolean Implements System.IEquatable(Of e_CotizacionDetalleSer).Equals
         Select Case other.Tipo
             Case 0
                 If Me.IdServicio = other.IdServicio.Trim Then Return True

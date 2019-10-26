@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_Ruta
 
     Dim odRuta As New d_Ruta
 
-    Public Function Eliminar(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.Eliminar
+    Public Function Eliminar(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.Eliminar
         Try
             Return odRuta.Eliminar(oeRuta)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.Guardar
+    Public Function Guardar(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.Guardar
         Try
             If Validar(oeRuta) Then
                 Return odRuta.Guardar(oeRuta)
@@ -34,7 +34,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function Listar(ByVal oeRuta As EntidadesWCF.e_Ruta) As System.Collections.Generic.List(Of EntidadesWCF.e_Ruta) Implements Il_Ruta.Listar
+    Public Function Listar(ByVal oeRuta As e_Ruta) As System.Collections.Generic.List(Of e_Ruta) Implements Il_Ruta.Listar
         Try
             Return odRuta.Listar(oeRuta)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function ListarGrupos(ByVal oeRuta As EntidadesWCF.e_Ruta) As System.Data.DataSet Implements Il_Ruta.ListarGrupos
+    Public Function ListarGrupos(ByVal oeRuta As e_Ruta) As System.Data.DataSet Implements Il_Ruta.ListarGrupos
         Try
             Return odRuta.ListarGrupos(oeRuta)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRuta As EntidadesWCF.e_Ruta) As EntidadesWCF.e_Ruta Implements Il_Ruta.Obtener
+    Public Function Obtener(ByVal oeRuta As e_Ruta) As e_Ruta Implements Il_Ruta.Obtener
         Try
             Return odRuta.Obtener(oeRuta)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.Validar
+    Public Function Validar(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.Validar
         Try
             With oeRuta
                 ValidarOrigen(oeRuta.IdOrigen)
@@ -133,7 +133,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function ValidarRuta(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.ValidarRuta
+    Public Function ValidarRuta(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.ValidarRuta
         Try
             Dim odRuta As New d_Ruta
             oeRuta = odRuta.Obtener(oeRuta)
@@ -147,7 +147,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function ValidarRutaNueva(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.ValidarRutaNueva
+    Public Function ValidarRutaNueva(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.ValidarRutaNueva
         Try
             Dim odRuta As New d_Ruta
             oeRuta = odRuta.Obtener(oeRuta)
@@ -160,7 +160,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function ValidarZonaD2(ByVal oeRuta As EntidadesWCF.e_Ruta) As Boolean Implements Il_Ruta.ValidarZonaD2
+    Public Function ValidarZonaD2(ByVal oeRuta As e_Ruta) As Boolean Implements Il_Ruta.ValidarZonaD2
         Try
             If oeRuta.TipoOperacion <> "E" Then
                 If Trim(oeRuta.Id) <> "" And oeRuta.loZonaD2.Count = 0 Then Exit Function
@@ -179,7 +179,7 @@ Public Class l_Ruta
         End Try
     End Function
 
-    Public Function VerificarAntesEliminar(ByVal oeRuta As EntidadesWCF.e_Ruta) As Integer
+    Public Function VerificarAntesEliminar(ByVal oeRuta As e_Ruta) As Integer
         Try
             Return odRuta.VerificarAntesEliminar(oeRuta)
         Catch ex As Exception

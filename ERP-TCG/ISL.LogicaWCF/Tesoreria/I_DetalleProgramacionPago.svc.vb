@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 Imports ISL.ServicioExterno
@@ -24,7 +24,7 @@ Public Class I_DetalleProgramacionPago
     '     e incluya la siguiente línea en el cuerpo de la operación:
     '         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml"
 
-    Public Function Guardar(ByVal oe_DetalleProgramacionPago As EntidadesWCF.e_DetalleProgramacionPago) As Boolean Implements Il_DetalleProgramacionPago.Guardar
+    Public Function Guardar(ByVal oe_DetalleProgramacionPago As e_DetalleProgramacionPago) As Boolean Implements Il_DetalleProgramacionPago.Guardar
         Try
             Using TS As New TransactionScope
                 dDetalleProgramacionPago.Guardar(oe_DetalleProgramacionPago)

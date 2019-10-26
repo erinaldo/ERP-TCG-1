@@ -6,14 +6,9 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 
-''' <summary>
-''' Clase que se encarga de gestionar los procesos de negocio de la empresa
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla ProcesoNegocio,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 Public Class d_ProcesoNegocio
 
     Private sqlhelper As New SqlHelper
@@ -23,17 +18,9 @@ Public Class d_ProcesoNegocio
     Private odActividadNegocio As New d_ActividadNegocio
     Private oeFlujoCaja As New e_FlujoCaja, odFlujoCaja As New d_FlujoGasto
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_ProcesoNegocio y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeProcesoNegocio) de tipo e_ProcesoNegocio</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_ProcesoNegocio
         Try
-            Dim oeProcesoNegocio = New e_ProcesoNegocio( _
+            Dim oeProcesoNegocio = New e_ProcesoNegocio(
                          o_fila("Id").ToString _
                          , o_fila("Codigo").ToString _
                          , o_fila("Nombre").ToString _
@@ -41,7 +28,7 @@ Public Class d_ProcesoNegocio
                          , o_fila("Protegido").ToString _
                          , o_fila("IndSeguridad") _
                          , o_fila("Activo").ToString _
-                         , o_fila("UsuarioCreacion").ToString _
+                         , o_fila("UsuarioCreacion").ToString
         )
             Return oeProcesoNegocio
         Catch ex As Exception
@@ -49,14 +36,7 @@ Public Class d_ProcesoNegocio
         End Try
 
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene un proceso de negocio, el cual es consultado por el procedimiento almacenado STD.ISP_ProcesoNegocio_Listar
-    ''' enviando su id del proceso de negocio.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_ProcesoNegocio.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProcesoNegocio">Recibe una variable oeProcesoNegocio de tipo e_ProcesoNegocio</param>
-    ''' <returns>Devuelve una varible oeProcesoNegocio de tipo e_ProcesoNegocio</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeProcesoNegocio As e_ProcesoNegocio) As e_ProcesoNegocio
         Try
             Dim ds As DataSet
@@ -77,21 +57,13 @@ Public Class d_ProcesoNegocio
             Throw
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_ProcesoNegocio, el cual es consultado por el procedimiento 
-    ''' almacenado STD.ISP_ProcesoNegocio_Listar,enviando sus atributos del proceso de negocio.Una vez obtenido los registros 
-    ''' son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProcesoNegocio">Recibe una Variable oeProcesoNegocio de tipo e_ProcesoNegocio </param>
-    ''' <returns>Devuelve una lista generica(ldTipoMantenimiento) de objetos de tipo e_ProcesoNegocio</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeProcesoNegocio As e_ProcesoNegocio) As List(Of e_ProcesoNegocio)
         Try
             Dim ldProcesoNegocio As New List(Of e_ProcesoNegocio)
             Dim ds As DataSet
             With oeProcesoNegocio
-                ds = sqlhelper.ExecuteDataset("STD.ISP_ProcesoNegocio_Listar", .TipoOperacion, .Id, .Codigo, _
+                ds = sqlhelper.ExecuteDataset("STD.ISP_ProcesoNegocio_Listar", .TipoOperacion, .Id, .Codigo,
                         .Nombre, .Indicador, .Activo)
             End With
             oeProcesoNegocio = Nothing
@@ -106,17 +78,7 @@ Public Class d_ProcesoNegocio
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del proceso de negocio,a travez del procedimiento almacenado
-    ''' STD.Isp_ProcesoNegocio_IAE,por el cual van a ser enviados y registrados los datos del proceso de negocio y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProcesoNegocio">Recibe una variable oeProcesoNegocio de tipo e_ProcesoNegocio</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de
-    ''' proceso de negocio es positiva= true sino false 
-    ''' Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Guardar(ByVal oeProcesoNegocio As e_ProcesoNegocio) As Boolean
         Try
             Dim id As String = ""
@@ -150,15 +112,6 @@ Public Class d_ProcesoNegocio
             Return False
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de proceso de negocio,a travez del procedimiento almacenado
-    ''' STD.Isp_ProcesoNegocio_IAE,por el cual va a ser enviado el id del proceso de negocio a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeProcesoNegocio">Recibe una variable oeProcesoNegocio de tipo objeto e_ProcesoNegocio</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeProcesoNegocio As e_ProcesoNegocio) As Boolean
         Try

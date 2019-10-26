@@ -1,11 +1,11 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_Correlativo", también debe actualizar la referencia a "Il_Correlativo" en Web.config.
 <ServiceContract()> _
 Public Interface Il_Correlativo
 
-    <OperationContract()> _
+    <OperationContract()>
     Function Obtener(ByVal oeCorrelativo As e_Correlativo) As e_Correlativo
 
     <OperationContract()> _

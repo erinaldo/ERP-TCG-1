@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Microsoft.Office.Interop
 
 Public Class frm_Onomasticos
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicialización del formulario"
 
@@ -478,7 +478,7 @@ Public Class frm_Onomasticos
         Try
             If griOnomasticos.ActiveRow.Index > -1 Then
                 Dim olTrabajador As New l_Trabajador
-                PictureBox1.Image = olPersona.Foto(griOnomasticos.ActiveRow.Cells("Dni").Value)
+                'PictureBox1.Image = olPersona.Foto(griOnomasticos.ActiveRow.Cells("Dni").Value)
             End If
         Catch ex As Exception
             Throw ex

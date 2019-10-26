@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_TipoGastoDetalle", también debe actualizar la referencia a "Il_TipoGastoDetalle" en Web.config.
 <ServiceContract()> _

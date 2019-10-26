@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_TurnoUsuario
 
     Dim odTurnoUsuario As New d_TurnoUsuario
 
-    Public Function Eliminar(ByVal oeTurnoUsuario As EntidadesWCF.e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Eliminar
+    Public Function Eliminar(ByVal oeTurnoUsuario As e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Eliminar
         Try
             Return odTurnoUsuario.Eliminar(oeTurnoUsuario)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_TurnoUsuario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTurnoUsuario As EntidadesWCF.e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Guardar
+    Public Function Guardar(ByVal oeTurnoUsuario As e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Guardar
         Try
             If Validar(oeTurnoUsuario) Then
                 Return odTurnoUsuario.Guardar(oeTurnoUsuario)
@@ -26,7 +26,7 @@ Public Class l_TurnoUsuario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTurnoUsuario As EntidadesWCF.e_TurnoUsuario) As System.Collections.Generic.List(Of EntidadesWCF.e_TurnoUsuario) Implements Il_TurnoUsuario.Listar
+    Public Function Listar(ByVal oeTurnoUsuario As e_TurnoUsuario) As System.Collections.Generic.List(Of e_TurnoUsuario) Implements Il_TurnoUsuario.Listar
         Try
             Return odTurnoUsuario.Listar(oeTurnoUsuario)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_TurnoUsuario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTurnoUsuario As EntidadesWCF.e_TurnoUsuario) As EntidadesWCF.e_TurnoUsuario Implements Il_TurnoUsuario.Obtener
+    Public Function Obtener(ByVal oeTurnoUsuario As e_TurnoUsuario) As e_TurnoUsuario Implements Il_TurnoUsuario.Obtener
         Try
             Return odTurnoUsuario.Obtener(oeTurnoUsuario)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_TurnoUsuario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTurnoUsuario As EntidadesWCF.e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Validar
+    Public Function Validar(ByVal oeTurnoUsuario As e_TurnoUsuario) As Boolean Implements Il_TurnoUsuario.Validar
         Try
             With oeTurnoUsuario
                 '---------VALIDARRRRRRRRRR-------------

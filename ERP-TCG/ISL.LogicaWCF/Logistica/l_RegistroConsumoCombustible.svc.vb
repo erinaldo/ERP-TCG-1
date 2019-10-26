@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -34,7 +34,7 @@ Public Class l_RegistroConsumoCombustible
     Dim loAsientoMovimiento As List(Of e_AsientoMovimiento)
     Dim oeAsientoAnalisis As e_MovimientoAnalisis
 
-    Public Function Eliminar(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.Eliminar
+    Public Function Eliminar(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.Eliminar
         Try
             odRegistrarConsumoCombustible = New d_RegistroConsumoCombustible
             If oeRegistrarConsumoCombustible.IndIsl Then
@@ -262,7 +262,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Public Function Listar(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) As System.Collections.Generic.List(Of EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.Listar
+    Public Function Listar(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As System.Collections.Generic.List(Of e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.Listar
         Try
             odRegistrarConsumoCombustible = New d_RegistroConsumoCombustible
             Return odRegistrarConsumoCombustible.Listar(oeRegistrarConsumoCombustible)
@@ -271,7 +271,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Function
 
-    Public Function ListarDts(ByVal oeRegCon As EntidadesWCF.e_RegistroConsumoCombustible) As System.Data.DataSet Implements Il_RegistroConsumoCombustible.ListarDts
+    Public Function ListarDts(ByVal oeRegCon As e_RegistroConsumoCombustible) As System.Data.DataSet Implements Il_RegistroConsumoCombustible.ListarDts
         Try
             odRegistrarConsumoCombustible = New d_RegistroConsumoCombustible
             Dim dts As New DataSet
@@ -282,7 +282,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) As EntidadesWCF.e_RegistroConsumoCombustible Implements Il_RegistroConsumoCombustible.Obtener
+    Public Function Obtener(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As e_RegistroConsumoCombustible Implements Il_RegistroConsumoCombustible.Obtener
         Try
             odRegistrarConsumoCombustible = New d_RegistroConsumoCombustible
             Return odRegistrarConsumoCombustible.Obtener(oeRegistrarConsumoCombustible)
@@ -291,7 +291,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.Validar
+    Public Function Validar(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.Validar
         Try
             l_FuncionesGenerales = New l_FuncionesGenerales
             With oeRegistrarConsumoCombustible
@@ -347,7 +347,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Function
 
-    Public Sub ValidarDireccion(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarDireccion
+    Public Sub ValidarDireccion(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarDireccion
         Try
             Dim oeDireccion As New e_Direccion, olDireccion As New l_Direccion
             oeDireccion.TipoOperacion = ""
@@ -365,7 +365,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Public Function ValidarFechaTanqueo(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.ValidarFechaTanqueo
+    Public Function ValidarFechaTanqueo(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) As Boolean Implements Il_RegistroConsumoCombustible.ValidarFechaTanqueo
         Try
             If Trim(oeRegistrarConsumoCombustible.IdViaje) = "" Then
                 Exit Try
@@ -406,7 +406,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Function
 
-    Public Sub ValidarGrifo(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarGrifo
+    Public Sub ValidarGrifo(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarGrifo
         Try
             If Not String.IsNullOrEmpty(oeRegistrarConsumoCombustible.IdGrifo) Then
                 Dim oeEmpresa As New e_Empresa, olEmpresa As New l_Empresa
@@ -424,7 +424,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Public Sub ValidarNroValeDireccion(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarNroValeDireccion
+    Public Sub ValidarNroValeDireccion(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarNroValeDireccion
         Try
             Dim oeRegConsumo, oeRegConsumoI As New e_RegistroConsumoCombustible, olRegConsumo As New l_RegistroConsumoCombustible
             oeRegConsumo.TipoOperacion = 5
@@ -439,7 +439,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Public Sub ValidarSubAlmacen(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarSubAlmacen
+    Public Sub ValidarSubAlmacen(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarSubAlmacen
         Try
             oeSubAlmacen = New e_SubAlmacen
             olSubAlmacen = New l_SubAlmacen
@@ -466,7 +466,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Function ValidarFechaTanqueoActual(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarFechaTanqueActual
+    Function ValidarFechaTanqueoActual(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarFechaTanqueActual
         Try
             If oeRegistrarConsumoCombustible.FechaTanqueo > Date.Now().AddMinutes(5) Then
                 Throw New Exception("Fecha de Tanqueo es mayor a la fecha actual")
@@ -490,7 +490,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Public Sub ValidarPeriodo(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarPeriodo
+    Public Sub ValidarPeriodo(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.ValidarPeriodo
         Try
             If oeRegistrarConsumoCombustible.FechaTanqueo < oePeriodo.FechaInicio.AddMonths(1) Then
                 Throw New Exception("El periodo de Combustibles para " + oePeriodo.Codigo + " se ha cerrado; verifique su consumo")
@@ -500,7 +500,7 @@ Public Class l_RegistroConsumoCombustible
         End Try
     End Sub
 
-    Function Validar48Horas(ByVal oeRegistrarConsumoCombustible As EntidadesWCF.e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.Validar48Horas
+    Function Validar48Horas(ByVal oeRegistrarConsumoCombustible As e_RegistroConsumoCombustible) Implements Il_RegistroConsumoCombustible.Validar48Horas
         Try
             If oeRegistrarConsumoCombustible.TipoOperacion = "A" Then
                 Dim oeCompara As New e_RegistroConsumoCombustible

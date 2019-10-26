@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -28,7 +28,7 @@ Public Class l_AsientoMovimiento
         Return AsientoMovimiento
     End Function
 
-    Public Function Eliminar(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Eliminar
+    Public Function Eliminar(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Eliminar
         Try
             Return odAsientoMovimiento.Eliminar(oeAsientoMovimiento)
         Catch ex As Exception
@@ -36,7 +36,7 @@ Public Class l_AsientoMovimiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Guardar
+    Public Function Guardar(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Guardar
         Try
             If Validar(oeAsientoMovimiento) Then
                 Return odAsientoMovimiento.Guardar(oeAsientoMovimiento)
@@ -46,7 +46,7 @@ Public Class l_AsientoMovimiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento) Implements Il_AsientoMovimiento.Listar
+    Public Function Listar(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As System.Collections.Generic.List(Of e_AsientoMovimiento) Implements Il_AsientoMovimiento.Listar
         Try
             Return odAsientoMovimiento.Listar(oeAsientoMovimiento)
         Catch ex As Exception
@@ -54,7 +54,7 @@ Public Class l_AsientoMovimiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As EntidadesWCF.e_AsientoMovimiento Implements Il_AsientoMovimiento.Obtener
+    Public Function Obtener(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As e_AsientoMovimiento Implements Il_AsientoMovimiento.Obtener
         Try
             Return odAsientoMovimiento.Obtener(oeAsientoMovimiento)
         Catch ex As Exception
@@ -62,7 +62,7 @@ Public Class l_AsientoMovimiento
         End Try
     End Function
 
-    Public Function Obtener2(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As EntidadesWCF.e_AsientoMovimiento Implements Il_AsientoMovimiento.Obtener2
+    Public Function Obtener2(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As e_AsientoMovimiento Implements Il_AsientoMovimiento.Obtener2
         Try
             Return odAsientoMovimiento.Obtener2(oeAsientoMovimiento)
         Catch ex As Exception
@@ -70,7 +70,7 @@ Public Class l_AsientoMovimiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeAsientoMovimiento As EntidadesWCF.e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Validar
+    Public Function Validar(ByVal oeAsientoMovimiento As e_AsientoMovimiento) As Boolean Implements Il_AsientoMovimiento.Validar
         Try
             With oeAsientoMovimiento
                 '---------VALIDARRRRRRRRRR-------------

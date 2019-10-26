@@ -7,8 +7,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{0E03020E-7BB0-439B-9390-B1C14818C019}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISL.AccesoDatos</RootNamespace>
-    <AssemblyName>ISL.AccesoDatos</AssemblyName>
+    <RootNamespace>ERP.AccesoDatos</RootNamespace>
+    <AssemblyName>ERP.AccesoDatos</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -47,7 +47,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ISL.AccesoDatos.xml</DocumentationFile>
+    <DocumentationFile>ERP.AccesoDatos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -59,7 +59,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ISL.AccesoDatos.xml</DocumentationFile>
+    <DocumentationFile>ERP.AccesoDatos.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -223,6 +223,7 @@
     <Compile Include="General\d_CuotaDocVeh_Movimiento.vb" />
     <Compile Include="General\d_DocumentoVehicular_Documento.vb" />
     <Compile Include="General\d_EmpresaAportacion.vb" />
+    <Compile Include="General\d_EmpresaSistemas.vb" />
     <Compile Include="General\d_Feriados.vb" />
     <Compile Include="General\d_Flota_Cuota.vb" />
     <Compile Include="General\d_Flota_Trabajador.vb" />

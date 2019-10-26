@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 Public Class l_EquivalenciaRuta
     Implements Il_EquivalenciaRuta
@@ -82,7 +82,7 @@ Public Class l_EquivalenciaRuta
         Return MontoRuta
     End Function
 
-    Public Function GuardarMasivo(ByVal loEquivalenciaRuta As System.Collections.Generic.List(Of EntidadesWCF.e_EquivalenciaRuta), ByVal PrefijoID As String) As Boolean Implements Il_EquivalenciaRuta.GuardarMasivo
+    Public Function GuardarMasivo(ByVal loEquivalenciaRuta As System.Collections.Generic.List(Of e_EquivalenciaRuta), ByVal PrefijoID As String) As Boolean Implements Il_EquivalenciaRuta.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
             Dim id As String = odEquivalenciaRuta.UltimoIdInserta(PrefijoID)

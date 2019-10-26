@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_CompensacionSaldo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de Variables"
 
@@ -217,7 +217,7 @@ Public Class frm_CompensacionSaldo
         End Try
     End Function
 
-    Public Function ValidarDocumentoAgregado(ByVal movimientosDocumento As List(Of EntidadesWCF.e_MovimientoDocumento)) As Boolean
+    Public Function ValidarDocumentoAgregado(ByVal movimientosDocumento As List(Of e_MovimientoDocumento)) As Boolean
         Try
             If chkPersonal.Checked = False And chkPersonalCtas.Checked = False Then
                 If movimientosDocumento.Count < 2 Then Throw New Exception("Ingrese al menos 2 detalles")

@@ -1,22 +1,37 @@
-﻿Imports System.IO
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-08-30  |   NSOFT   |   Se comento los mensaje emergentes
+' @0002 |   2019-01-01  |   CT2010  |   LLenar Combo
+' @0003 |   2019-10-01  |   CT2010  |   Cambiar la funcionalidad del archivo entorno.Tabla SGD.EmpresaSistemas en BD
+'=================================================================================================================
+
+Imports System.IO
 Imports System.Xml
 Imports System.Configuration
 Imports System.Collections.Specialized
-Imports ISL.EntidadesWCF
-
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports System.Net
 
 <DataContract()> _
 Public Class l_Disponibilidad
     Implements Il_Disponibilidad
 
+    Private odEmpresaSistemas As New d_EmpresaSistemas
 #Region "Declaración de variables"
 
     Public IPServidor As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor")
 
     'Archivo XML, que debe estar copiado en la carpeta compartida Imagenes del servidor
+    'Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno.xml" '@0003
+    'Public archivoXML As String = My.Computer.FileSystem.CombinePath("Imagenes", "Entorno.xml") '@0003
 
-    Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno.xml"
-    Private directorioFotos As String = "\\" & IPServidor & "\Fotos"
+    'Private directorioFotos As String = "\\" & IPServidor & "\Fotos" '@0003
+    Private directorioFotos As String = My.Computer.FileSystem.CombinePath("Fotos", "")
+
 
     'Public archivoXML As String = "\\" & IPServidor & "\Imagenes\Entorno2.xml"
     'Private directorioFotos As String = "D:\Fotos"
@@ -119,25 +134,38 @@ Public Class l_Disponibilidad
     ''' <remarks></remarks>
     Public Function VerificarDisponibilidadBD() As Boolean Implements Il_Disponibilidad.VerificarDisponibilidadBD
         Try
-            Dim m_xmld As XmlDocument
-            Dim m_nodelist As XmlNodeList
-            Dim m_node As XmlNode
-            'Creamos el "XML Document"
-            m_xmld = New XmlDocument()
-            If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la disponibilidad del acceso a la base de datos")
-            m_xmld.Load(archivoXML)
-            'Obtenemos la lista de los nodos "name"
-            m_nodelist = m_xmld.SelectNodes("/Entorno/ConexionBD")
-            'Iniciamos el ciclo de lectura
-            For Each m_node In m_nodelist
-                'Obtenemos el atributo del Estado
-                EstadoDisponibilidadBD = m_node.Attributes.GetNamedItem("EstadoDisponibilidadBD").Value
-                'Obtenemos el Elemento nombre
-                MensajeInicial = m_node.ChildNodes.Item(0).InnerText
-                'Obtenemos el Elemento apellido
-                MensajeUsuariosConectados = m_node.ChildNodes.Item(1).InnerText
-            Next
-            If EstadoDisponibilidadBD = "Activa" Then Return True
+            'Dim m_xmld As XmlDocument
+            'Dim m_nodelist As XmlNodeList
+            'Dim m_node As XmlNode
+            ''Creamos el "XML Document"
+            'm_xmld = New XmlDocument()
+            'If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la disponibilidad del acceso a la base de datos")
+            'm_xmld.Load(archivoXML)
+            ''Obtenemos la lista de los nodos "name"
+            'm_nodelist = m_xmld.SelectNodes("/Entorno/ConexionBD")
+            ''Iniciamos el ciclo de lectura
+            'For Each m_node In m_nodelist
+            '    'Obtenemos el atributo del Estado
+            '    EstadoDisponibilidadBD = m_node.Attributes.GetNamedItem("EstadoDisponibilidadBD").Value
+            '    'Obtenemos el Elemento nombre
+            '    MensajeInicial = m_node.ChildNodes.Item(0).InnerText
+            '    'Obtenemos el Elemento apellido
+            '    MensajeUsuariosConectados = m_node.ChildNodes.Item(1).InnerText
+            'Next
+            'If EstadoDisponibilidadBD = "Activa" Then Return True
+
+            '@0003
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            oeEmpresaSistema = odEmpresaSistemas.Obtener(oeEmpresaSistema)
+            With oeEmpresaSistema
+                If .EstadoDisponibilidadBD.Trim = "Activa" Then
+                    Return True
+                Else
+                    MensajeInicial = .MensajeInicialBD.Trim
+                    MensajeUsuariosConectados = .MensajeUsuariosConectadosBD.Trim
+                End If
+            End With
+            '@0003
         Catch ex As Exception
             Throw ex
         End Try
@@ -152,25 +180,38 @@ Public Class l_Disponibilidad
     ''' <remarks></remarks>
     Public Function VerificarDisponibilidadReplica() As Boolean Implements Il_Disponibilidad.VerificarDisponibilidadReplica
         Try
-            Dim m_xmld As XmlDocument
-            Dim m_nodelist As XmlNodeList
-            Dim m_node As XmlNode
-            'Creamos el "XML Document"
-            m_xmld = New XmlDocument()
-            If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la disponibilidad del acceso a la base de datos")
-            m_xmld.Load(archivoXML)
-            'Obtenemos la lista de los nodos "name"
-            m_nodelist = m_xmld.SelectNodes("/Entorno/ConexionReplica")
-            'Iniciamos el ciclo de lectura
-            For Each m_node In m_nodelist
-                'Obtenemos el atributo del Estado
-                EstadoDisponibilidadReplica = m_node.Attributes.GetNamedItem("EstadoDisponibilidadReplica").Value
-                'Obtenemos el Elemento nombre
-                MensajeInicial = m_node.ChildNodes.Item(0).InnerText
-                'Obtenemos el Elemento apellido
-                MensajeUsuariosConectados = m_node.ChildNodes.Item(1).InnerText
-            Next
-            If EstadoDisponibilidadReplica = "Activa" Then Return True
+            '@0003 Inicio Comentario
+            'Dim m_xmld As XmlDocument
+            'Dim m_nodelist As XmlNodeList
+            'Dim m_node As XmlNode
+            ''Creamos el "XML Document"
+            'm_xmld = New XmlDocument()
+            'If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la disponibilidad del acceso a la base de datos")
+            'm_xmld.Load(archivoXML)
+            ''Obtenemos la lista de los nodos "name"
+            'm_nodelist = m_xmld.SelectNodes("/Entorno/ConexionReplica")
+            ''Iniciamos el ciclo de lectura
+            'For Each m_node In m_nodelist
+            '    'Obtenemos el atributo del Estado
+            '    EstadoDisponibilidadReplica = m_node.Attributes.GetNamedItem("EstadoDisponibilidadReplica").Value
+            '    'Obtenemos el Elemento nombre
+            '    MensajeInicial = m_node.ChildNodes.Item(0).InnerText
+            '    'Obtenemos el Elemento apellido
+            '    MensajeUsuariosConectados = m_node.ChildNodes.Item(1).InnerText
+            'Next
+            'If EstadoDisponibilidadReplica = "Activa" Then Return True
+            '@0003 Inicio
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            oeEmpresaSistema = odEmpresaSistemas.Obtener(oeEmpresaSistema)
+            With oeEmpresaSistema
+                If .EstadoDisponibilidadReplica.Trim = "Activa" Then
+                    Return True
+                Else
+                    MensajeInicial = .MensajeInicialRP.Trim
+                    MensajeUsuariosConectados = .MensajeUsuariosConectadosRP.Trim
+                End If
+            End With
+            '@0003 Fin
         Catch ex As Exception
             Throw ex
         End Try
@@ -195,34 +236,57 @@ Public Class l_Disponibilidad
     ''' <remarks></remarks>
     Public Function FechaLimite(area As gAreasSGI) As Date Implements Il_Disponibilidad.FechaLimite
         Try
-            Dim m_xmld As XmlDocument
-            Dim m_nodelist As XmlNodeList
-            Dim m_node As XmlNode
-            'Creamos el "XML Document"
-            m_xmld = New XmlDocument()
-            If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la última Fecha del acceso a la base de datos")
-            m_xmld.Load(archivoXML)
-            'Obtenemos la lista de los nodos "name"
-            m_nodelist = m_xmld.SelectNodes("/Entorno/FechaLimite")
-            'Iniciamos el ciclo de lectura
+            '@0003 Inicio Comentario
+            'Dim m_xmld As XmlDocument
+            'Dim m_nodelist As XmlNodeList
+            'Dim m_node As XmlNode
+            ''Creamos el "XML Document"
+            'm_xmld = New XmlDocument()
+            'If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la última Fecha del acceso a la base de datos")
+            'm_xmld.Load(archivoXML)
+            ''Obtenemos la lista de los nodos "name"
+            'm_nodelist = m_xmld.SelectNodes("/Entorno/FechaLimite")
+            ''Iniciamos el ciclo de lectura
+            'Dim NroDias As String = String.Empty
+            'For Each m_node In m_nodelist
+            '    Select Case area
+            '        Case gAreasSGI.Compras
+            '            NroDias = m_node.Attributes.GetNamedItem("Compras").Value
+            '        Case gAreasSGI.Ventas
+            '            NroDias = m_node.Attributes.GetNamedItem("Ventas").Value
+            '        Case gAreasSGI.Administracion
+            '            NroDias = m_node.Attributes.GetNamedItem("Administracion").Value
+            '        Case gAreasSGI.Contabilidad
+            '            NroDias = m_node.Attributes.GetNamedItem("Contabilidad").Value
+            '        Case gAreasSGI.Neumaticos
+            '            NroDias = m_node.Attributes.GetNamedItem("Neumaticos").Value
+            '        Case Else
+            '            Throw New Exception("Area sin datos de configuración para fecha límite")
+            '    End Select
+            'Next
+            'Return DateSerial(Now.Year, Now.Month, CInt(NroDias))
+            '@0003 Inicio
             Dim NroDias As String = String.Empty
-            For Each m_node In m_nodelist
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            oeEmpresaSistema = odEmpresaSistemas.Obtener(oeEmpresaSistema)
+            With oeEmpresaSistema
                 Select Case area
                     Case gAreasSGI.Compras
-                        NroDias = m_node.Attributes.GetNamedItem("Compras").Value
+                        NroDias = .Compras.Trim
                     Case gAreasSGI.Ventas
-                        NroDias = m_node.Attributes.GetNamedItem("Ventas").Value
+                        NroDias = .Ventas.Trim
                     Case gAreasSGI.Administracion
-                        NroDias = m_node.Attributes.GetNamedItem("Administracion").Value
+                        NroDias = .Administracion.Trim
                     Case gAreasSGI.Contabilidad
-                        NroDias = m_node.Attributes.GetNamedItem("Contabilidad").Value
+                        NroDias = .Contabilidad.Trim
                     Case gAreasSGI.Neumaticos
-                        NroDias = m_node.Attributes.GetNamedItem("Neumaticos").Value
+                        NroDias = .Neumaticos.Trim
                     Case Else
                         Throw New Exception("Area sin datos de configuración para fecha límite")
                 End Select
-            Next
+            End With
             Return DateSerial(Now.Year, Now.Month, CInt(NroDias))
+            '@0003
         Catch ex As Exception
             Throw ex
         End Try
@@ -230,32 +294,53 @@ Public Class l_Disponibilidad
 
     Public Function FechaLimitePerfil(Perifl As String) As Integer Implements Il_Disponibilidad.FechaLimitePerfil
         Try
-            Dim m_xmld As XmlDocument
-            Dim m_nodelist As XmlNodeList
-            Dim m_node As XmlNode
-            'Creamos el "XML Document"
-            m_xmld = New XmlDocument()
-            If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la última Fecha del acceso a la base de datos")
-            m_xmld.Load(archivoXML)
-            'Obtenemos la lista de los nodos "name"
-            m_nodelist = m_xmld.SelectNodes("/Entorno/FechaLimite")
-            'Iniciamos el ciclo de lectura
+            '@0003 Inicio Comentario
+            'Dim m_xmld As XmlDocument
+            'Dim m_nodelist As XmlNodeList
+            'Dim m_node As XmlNode
+            ''Creamos el "XML Document"
+            'm_xmld = New XmlDocument()
+            'If Not File.Exists(archivoXML) Then Throw New Exception("No se encuentra el archivo de Configuración para verificar la última Fecha del acceso a la base de datos")
+            'm_xmld.Load(archivoXML)
+            ''Obtenemos la lista de los nodos "name"
+            'm_nodelist = m_xmld.SelectNodes("/Entorno/FechaLimite")
+            ''Iniciamos el ciclo de lectura
+            'Dim NroDias As String = String.Empty
+            'For Each m_node In m_nodelist
+            '    Select Case Perifl
+            '        Case "Compras"
+            '            NroDias = m_node.Attributes.GetNamedItem("Compras").Value
+            '        Case "Ventas"
+            '            NroDias = m_node.Attributes.GetNamedItem("Ventas").Value
+            '        Case "Administracion"
+            '            NroDias = m_node.Attributes.GetNamedItem("Administracion").Value
+            '        Case "Contabilidad"
+            '            NroDias = m_node.Attributes.GetNamedItem("Contabilidad").Value
+            '        Case "Neumaticos"
+            '            NroDias = m_node.Attributes.GetNamedItem("Neumaticos").Value
+            '    End Select
+            'Next
+            'Return NroDias
+            '@0003 Inicio
             Dim NroDias As String = String.Empty
-            For Each m_node In m_nodelist
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            oeEmpresaSistema = odEmpresaSistemas.Obtener(oeEmpresaSistema)
+            With oeEmpresaSistema
                 Select Case Perifl
                     Case "Compras"
-                        NroDias = m_node.Attributes.GetNamedItem("Compras").Value
+                        NroDias = .Compras.Trim
                     Case "Ventas"
-                        NroDias = m_node.Attributes.GetNamedItem("Ventas").Value
+                        NroDias = .Ventas.Trim
                     Case "Administracion"
-                        NroDias = m_node.Attributes.GetNamedItem("Administracion").Value
+                        NroDias = .Administracion.Trim
                     Case "Contabilidad"
-                        NroDias = m_node.Attributes.GetNamedItem("Contabilidad").Value
+                        NroDias = .Contabilidad.Trim
                     Case "Neumaticos"
-                        NroDias = m_node.Attributes.GetNamedItem("Neumaticos").Value
+                        NroDias = .Neumaticos.Trim
                 End Select
-            Next
+            End With
             Return NroDias
+            '@0003 Fin
         Catch ex As Exception
             Throw ex
         End Try

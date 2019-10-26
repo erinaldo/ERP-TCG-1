@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -26,7 +26,7 @@ Public Class l_CuentaxCyP
         Return CuentaxCyP
     End Function
 
-    Public Function Eliminar(ByVal oeCuentaxCyP As EntidadesWCF.e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Eliminar
+    Public Function Eliminar(ByVal oeCuentaxCyP As e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Eliminar
         Try
             Return odCuentaxCyP.Eliminar(oeCuentaxCyP)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CuentaxCyP
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaxCyP As EntidadesWCF.e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Guardar
+    Public Function Guardar(ByVal oeCuentaxCyP As e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Guardar
         Try
             If Validar(oeCuentaxCyP) Then
                 Return odCuentaxCyP.Guardar(oeCuentaxCyP)
@@ -45,7 +45,7 @@ Public Class l_CuentaxCyP
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaxCyP As EntidadesWCF.e_CuentaxCyP) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaxCyP) Implements Il_CuentaxCyP.Listar
+    Public Function Listar(ByVal oeCuentaxCyP As e_CuentaxCyP) As System.Collections.Generic.List(Of e_CuentaxCyP) Implements Il_CuentaxCyP.Listar
         Try
             Return odCuentaxCyP.Listar(oeCuentaxCyP)
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class l_CuentaxCyP
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaxCyP As EntidadesWCF.e_CuentaxCyP) As EntidadesWCF.e_CuentaxCyP Implements Il_CuentaxCyP.Obtener
+    Public Function Obtener(ByVal oeCuentaxCyP As e_CuentaxCyP) As e_CuentaxCyP Implements Il_CuentaxCyP.Obtener
         Try
             Return odCuentaxCyP.Obtener(oeCuentaxCyP)
         Catch ex As Exception
@@ -109,7 +109,7 @@ Public Class l_CuentaxCyP
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaxCyP As EntidadesWCF.e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Validar
+    Public Function Validar(ByVal oeCuentaxCyP As e_CuentaxCyP) As Boolean Implements Il_CuentaxCyP.Validar
         Try
             With oeCuentaxCyP
                 '---------VALIDARRRRRRRRRR-------------

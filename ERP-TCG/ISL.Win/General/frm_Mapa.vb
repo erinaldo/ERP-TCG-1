@@ -8,10 +8,10 @@
 
 Imports System.Text
 Imports System.Data.SqlClient
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class frm_Mapa
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Dim conexion As New SqlConnection("Data Source=127.0.0.1;Initial Catalog=GPS;Persist Security Info=True;User ID=ERP;Password=Sistem@s789")
 
     Public Sub New()

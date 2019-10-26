@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_ControlPermisos" CodeBehind="l_ControlPermisos.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_ControlPermisos" CodeBehind="l_ControlPermisos.svc.vb" %>

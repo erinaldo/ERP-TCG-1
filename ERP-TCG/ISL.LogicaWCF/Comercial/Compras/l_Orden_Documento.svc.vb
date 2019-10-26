@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_Orden_Documento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrden_Documento As e_Orden_Documento) As EntidadesWCF.e_Orden_Documento Implements Il_Orden_Documento.Obtener
+    Public Function Obtener(ByVal oeOrden_Documento As e_Orden_Documento) As e_Orden_Documento Implements Il_Orden_Documento.Obtener
         Try
             Return odOrden_Documento.Obtener(oeOrden_Documento)
         Catch ex As Exception
@@ -32,7 +32,7 @@ Public Class l_Orden_Documento
         End Try
     End Function
 
-    Public Function ObtenerDocumento(ByVal oeOrden_Documento As e_Orden_Documento) As EntidadesWCF.e_MovimientoDocumento Implements Il_Orden_Documento.ObtenerDocumento
+    Public Function ObtenerDocumento(ByVal oeOrden_Documento As e_Orden_Documento) As e_MovimientoDocumento Implements Il_Orden_Documento.ObtenerDocumento
         Try
             Return odOrden_Documento.ObtenerDoc(oeOrden_Documento)
         Catch ex As Exception
@@ -40,7 +40,7 @@ Public Class l_Orden_Documento
         End Try
     End Function
 
-    Public Function ObtenerDocumentoGuiaRemision(ByVal oeOrden_Documento As e_Orden_Documento) As EntidadesWCF.e_GuiaRemisionRemitente Implements Il_Orden_Documento.ObtenerDocumentoGuiaRemision
+    Public Function ObtenerDocumentoGuiaRemision(ByVal oeOrden_Documento As e_Orden_Documento) As e_GuiaRemisionRemitente Implements Il_Orden_Documento.ObtenerDocumentoGuiaRemision
         Try
             Return odOrden_Documento.ObtenerDocGuiaRemision(oeOrden_Documento)
         Catch ex As Exception

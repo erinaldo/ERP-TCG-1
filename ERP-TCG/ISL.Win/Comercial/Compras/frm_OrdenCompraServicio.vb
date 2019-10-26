@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid

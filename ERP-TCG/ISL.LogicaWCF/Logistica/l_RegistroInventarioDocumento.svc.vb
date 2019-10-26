@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -45,7 +45,7 @@ Public Class l_RegistroInventarioDocumento
     Dim odDetalleDocumento As New d_DetalleDocumento
     Dim odDocAsoc As New d_DocumentoAsociado
 
-    Public Function Afectar_RegistroInv_Documento(ByRef oeMovimientoDoc As EntidadesWCF.e_MovimientoDocumento, Optional ByVal lsIdDocumento As String = "") As Boolean Implements Il_RegistroInventarioDocumento.Afectar_RegistroInv_Documento
+    Public Function Afectar_RegistroInv_Documento(ByRef oeMovimientoDoc As e_MovimientoDocumento, Optional ByVal lsIdDocumento As String = "") As Boolean Implements Il_RegistroInventarioDocumento.Afectar_RegistroInv_Documento
         Try
             'Asociado a OI
             oeMovimientoDoc.LstOrden.Clear()
@@ -92,7 +92,7 @@ Public Class l_RegistroInventarioDocumento
 
     End Function
 
-    Public Function Afectar_RegistroInv_NotaCredito(ByVal oeNotaCredito As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_RegistroInventarioDocumento.Afectar_RegistroInv_NotaCredito
+    Public Function Afectar_RegistroInv_NotaCredito(ByVal oeNotaCredito As e_MovimientoDocumento) As Boolean Implements Il_RegistroInventarioDocumento.Afectar_RegistroInv_NotaCredito
         Try
             'Obtener Primer Documento Factura/Boleta
             oeDocAsoc = New e_DocumentoAsociado
@@ -118,7 +118,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Function
 
-    Public Sub CargarDetallesDocumento(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDetallesDocumento
+    Public Sub CargarDetallesDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDetallesDocumento
         Try
             Dim oeDetalleDocumento As New e_DetalleDocumento
             oeDetalleDocumento.TipoOperacion = "COM"
@@ -131,7 +131,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Sub
 
-    Public Sub CargarDocumento(ByRef oeMovDocumento As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDocumento
+    Public Sub CargarDocumento(ByRef oeMovDocumento As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDocumento
         Try
             oeMovDocumento.TipoOperacion = "COM"
             oeMovDocumento.IndCompraVenta = 1
@@ -142,7 +142,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Sub
 
-    Public Sub CargarDocumentoAsociado(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDocumentoAsociado
+    Public Sub CargarDocumentoAsociado(ByVal oeMovimientoDocumento As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarDocumentoAsociado
         Try
             Dim oeDoc_Asoc = New e_DocumentoAsociado
             oeDoc_Asoc.TipoOperacion = ""
@@ -157,7 +157,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Sub
 
-    Public Sub CargarOrdenAsociada(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarOrdenAsociada
+    Public Sub CargarOrdenAsociada(ByVal oeMovimientoDocumento As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.CargarOrdenAsociada
         Try
             Dim oeOrden = New e_Orden
             oeOrden.TipoOperacion = "3"
@@ -169,7 +169,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Sub
 
-    Public Function f_LlenarOrden_Detalles(ByVal oe_Orden_Ingreso As EntidadesWCF.e_Orden) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenMaterial) Implements Il_RegistroInventarioDocumento.f_LlenarOrden_Detalles
+    Public Function f_LlenarOrden_Detalles(ByVal oe_Orden_Ingreso As e_Orden) As System.Collections.Generic.List(Of e_OrdenMaterial) Implements Il_RegistroInventarioDocumento.f_LlenarOrden_Detalles
         oe_Orden_Ingreso = odOrden.Obtener(oe_Orden_Ingreso)
         lstOrdenMaterial.Clear()
         odOrdenMaterial = New d_OrdenMaterial
@@ -181,7 +181,7 @@ Public Class l_RegistroInventarioDocumento
         Return lstOrdenMaterial
     End Function
 
-    Public Function f_Valida(ByVal oeOrdenMaterial As EntidadesWCF.e_OrdenMaterial, ByVal oeDetalle As EntidadesWCF.e_DetalleDocumento, ByVal ln_TC As Double) As Object Implements Il_RegistroInventarioDocumento.f_Valida
+    Public Function f_Valida(ByVal oeOrdenMaterial As e_OrdenMaterial, ByVal oeDetalle As e_DetalleDocumento, ByVal ln_TC As Double) As Object Implements Il_RegistroInventarioDocumento.f_Valida
         If ln_TC = 1 AndAlso oeOrdenMaterial.PrecioUnitario <> oeDetalle.Precio Then
             Return True
         ElseIf ln_TC <> 1 AndAlso oeDetalle.Precio <> oeOrdenMaterial.PrecioUnitario / ln_TipoCambio Then
@@ -191,7 +191,7 @@ Public Class l_RegistroInventarioDocumento
         End If
     End Function
 
-    Public Function Guardar(ByVal lstRegistroInventarioDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_RegistroInventarioDocumento)) As Boolean Implements Il_RegistroInventarioDocumento.Guardar
+    Public Function Guardar(ByVal lstRegistroInventarioDocumento As System.Collections.Generic.List(Of e_RegistroInventarioDocumento)) As Boolean Implements Il_RegistroInventarioDocumento.Guardar
         Try
             Return odRegistroInventarioDocumento.Guardar(lstRegistroInventarioDocumento)
         Catch ex As Exception
@@ -199,7 +199,7 @@ Public Class l_RegistroInventarioDocumento
         End Try
     End Function
 
-    Public Sub ModificaDetallesDocumento(ByRef oeMovDocAsoc As EntidadesWCF.e_MovimientoDocumento, ByRef oeMovDoc As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.ModificaDetallesDocumento
+    Public Sub ModificaDetallesDocumento(ByRef oeMovDocAsoc As e_MovimientoDocumento, ByRef oeMovDoc As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.ModificaDetallesDocumento
         Dim IdMaterial As String = ""
         CargarDocumento(oeMovDocAsoc) : CargarDetallesDocumento(oeMovDocAsoc)
         CargarDocumento(oeMovDoc) : CargarDetallesDocumento(oeMovDoc)
@@ -240,7 +240,7 @@ Public Class l_RegistroInventarioDocumento
         lstRegistroInventario = odRegistroInventario.Listar(oeRegistroInventario)
     End Sub
 
-    Public Sub s_RectificaOI(ByVal oeOrden As EntidadesWCF.e_Orden, ByVal oeMovimientoDoc As EntidadesWCF.e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.s_RectificaOI
+    Public Sub s_RectificaOI(ByVal oeOrden As e_Orden, ByVal oeMovimientoDoc As e_MovimientoDocumento) Implements Il_RegistroInventarioDocumento.s_RectificaOI
         lb_rectifica = 0
         ls_IdMaterial = ""
         s_BuscaRegistroInv(oeOrden.Id)

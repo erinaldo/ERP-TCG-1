@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -43,7 +51,7 @@ Public Class d_Movimiento_Administrativo
     Public Function Obtener(ByVal oeMovimiento_Administrativo As e_Movimiento_Administrativo) As e_Movimiento_Administrativo
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ds As DataSet
             With oeMovimiento_Administrativo
                 ds = sqlhelper.ExecuteDataset("TES.Isp_Movimiento_Administrativo_Listar", .TipoOperacion, _
@@ -61,7 +69,7 @@ Public Class d_Movimiento_Administrativo
 
     Public Function Listar(ByVal oeMovimiento_Administrativo As e_Movimiento_Administrativo) As List(Of e_Movimiento_Administrativo)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ldMovimiento_Administrativo As New List(Of e_Movimiento_Administrativo)
             Dim ds As DataSet
             With oeMovimiento_Administrativo
@@ -84,10 +92,9 @@ Public Class d_Movimiento_Administrativo
 
     Public Function Guardar(ByVal oeMovimiento_Administrativo As e_Movimiento_Administrativo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeMovimiento_Administrativo
-                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Administrativo_IAE", .TipoOperacion, .PrefijoID, _
-                        .Id _
+                sqlhelper.ExecuteNonQuery("TES.Isp_Movimiento_Administrativo_IAE", .TipoOperacion, .PrefijoID,
+                        .Id
                     )
             End With
             Return True

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_ItemGasto
 
     Dim odItemGasto As New d_ItemGasto
 
-    Public Function Buscar(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As Boolean Implements Il_ItemGasto.Buscar
+    Public Function Buscar(ByVal oeItemGasto As e_ItemGasto) As Boolean Implements Il_ItemGasto.Buscar
         Try
             Return odItemGasto.Buscar(oeItemGasto)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As Boolean Implements Il_ItemGasto.Eliminar
+    Public Function Eliminar(ByVal oeItemGasto As e_ItemGasto) As Boolean Implements Il_ItemGasto.Eliminar
         Try
             Return odItemGasto.Eliminar(oeItemGasto)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As Boolean Implements Il_ItemGasto.Guardar
+    Public Function Guardar(ByVal oeItemGasto As e_ItemGasto) As Boolean Implements Il_ItemGasto.Guardar
         Try
             If Validar(oeItemGasto) Then
                 Return odItemGasto.Guardar(oeItemGasto)
@@ -34,7 +34,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function Listar(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As System.Collections.Generic.List(Of EntidadesWCF.e_ItemGasto) Implements Il_ItemGasto.Listar
+    Public Function Listar(ByVal oeItemGasto As e_ItemGasto) As System.Collections.Generic.List(Of e_ItemGasto) Implements Il_ItemGasto.Listar
         Try
             Return odItemGasto.Listar(oeItemGasto)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function ListarBind(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As System.ComponentModel.BindingList(Of EntidadesWCF.e_ItemGasto) Implements Il_ItemGasto.ListarBind
+    Public Function ListarBind(ByVal oeItemGasto As e_ItemGasto) As System.ComponentModel.BindingList(Of e_ItemGasto) Implements Il_ItemGasto.ListarBind
         Try
             Return odItemGasto.ListarBind(oeItemGasto)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As EntidadesWCF.e_ItemGasto Implements Il_ItemGasto.Obtener
+    Public Function Obtener(ByVal oeItemGasto As e_ItemGasto) As e_ItemGasto Implements Il_ItemGasto.Obtener
         Try
             Return odItemGasto.Obtener(oeItemGasto)
         Catch ex As Exception
@@ -66,7 +66,7 @@ Public Class l_ItemGasto
         End Try
     End Function
 
-    Public Function Validar(ByVal oeItemGasto As EntidadesWCF.e_ItemGasto) As Boolean Implements Il_ItemGasto.Validar
+    Public Function Validar(ByVal oeItemGasto As e_ItemGasto) As Boolean Implements Il_ItemGasto.Validar
         Try
             With oeItemGasto
                 If .TipoOperacion = "I" And .Id = "" Then

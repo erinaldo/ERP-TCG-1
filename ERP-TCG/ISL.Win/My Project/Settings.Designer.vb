@@ -54,18 +54,6 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute(".")>  _
-        Public Property Usuario() As String
-            Get
-                Return CType(Me("Usuario"),String)
-            End Get
-            Set
-                Me("Usuario") = value
-            End Set
-        End Property
-        
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
@@ -79,23 +67,24 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SRVISLCIXSIS05;Initial Catalog=ISL;Persist Security Info=True;User ID"& _ 
-            "=sa;Password=Induameric@;Application Name=SGI-ISL")>  _
-        Public ReadOnly Property ISL() As String
-            Get
-                Return CType(Me("ISL"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
          Global.System.Configuration.DefaultSettingValueAttribute("http://recargas.covisol.com.pe:80/CovisolWeb/GetDatos")>  _
         Public ReadOnly Property ISL_Win_CovisolR_GetDatosService() As String
             Get
                 Return CType(Me("ISL_Win_CovisolR_GetDatosService"),String)
             End Get
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute(".")>  _
+        Public Property Usuario() As String
+            Get
+                Return CType(Me("Usuario"),String)
+            End Get
+            Set
+                Me("Usuario") = value
+            End Set
         End Property
     End Class
 End Namespace

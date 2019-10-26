@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_TrabajadorSeguridad
 
     Dim odTrabajadorSeguridad As New d_TrabajadorSeguridad
 
-    Public Function Eliminar(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Eliminar
+    Public Function Eliminar(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Eliminar
         Try
             Return odTrabajadorSeguridad.Eliminar(oeTrabajadorSeguridad)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_TrabajadorSeguridad
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Guardar
+    Public Function Guardar(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Guardar
         Try
             If Validar(oeTrabajadorSeguridad) Then
                 Return odTrabajadorSeguridad.Guardar(oeTrabajadorSeguridad)
@@ -34,7 +34,7 @@ Public Class l_TrabajadorSeguridad
         End Try
     End Function
 
-    'Public Function ListarProcesosDelTrabajador(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As System.Collections.Generic.List(Of EntidadesWCF.e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.ListarProcesosDelTrabajador
+    'Public Function ListarProcesosDelTrabajador(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As System.Collections.Generic.List(Of e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.ListarProcesosDelTrabajador
     '    Try
     '        'Return odTrabajadorSeguridad.ListarProcesosDelTrabajador(oeTrabajadorSeguridad)
     '    Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_TrabajadorSeguridad
     '    End Try
     'End Function
 
-    Public Function Listar(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As System.Collections.Generic.List(Of EntidadesWCF.e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.Listar
+    Public Function Listar(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As System.Collections.Generic.List(Of e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.Listar
         Try
             Return odTrabajadorSeguridad.Listar(oeTrabajadorSeguridad)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_TrabajadorSeguridad
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As EntidadesWCF.e_TrabajadorSeguridad Implements Il_TrabajadorSeguridad.Obtener
+    Public Function Obtener(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As e_TrabajadorSeguridad Implements Il_TrabajadorSeguridad.Obtener
         Try
             Return odTrabajadorSeguridad.Obtener(oeTrabajadorSeguridad)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_TrabajadorSeguridad
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Validar
+    Public Function Validar(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) As Boolean Implements Il_TrabajadorSeguridad.Validar
         Try
             With oeTrabajadorSeguridad
                 '---------VALIDARRRRRRRRRR-------------
@@ -74,7 +74,7 @@ Public Class l_TrabajadorSeguridad
         End Try
     End Function
 
-    Public Sub ValidarDuplicado(ByVal oeTrabajadorSeguridad As EntidadesWCF.e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.ValidarDuplicado
+    Public Sub ValidarDuplicado(ByVal oeTrabajadorSeguridad As e_TrabajadorSeguridad) Implements Il_TrabajadorSeguridad.ValidarDuplicado
         Dim oeTraSeg As New e_TrabajadorSeguridad
         Try
             oeTraSeg = odTrabajadorSeguridad.Obtener(oeTrabajadorSeguridad)

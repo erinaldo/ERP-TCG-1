@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4B1D26F9-A8F8-4345-8706-646A6D571CE7}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISL.ServicioExterno</RootNamespace>
-    <AssemblyName>ISL.ServicioExterno</AssemblyName>
+    <RootNamespace>ERP.ServicioExterno</RootNamespace>
+    <AssemblyName>ERP.ServicioExterno</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
+    <DocumentationFile>ERP.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -33,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ISL.ServicioExterno.xml</DocumentationFile>
+    <DocumentationFile>ERP.ServicioExterno.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -142,7 +142,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\sConsultarFactura\billConsultService1.wsdl" />
-    <None Include="Service References\sConsultarFactura\ISL.ServicioExterno.sConsultarFactura.statusResponse.datasource">
+    <None Include="Service References\sConsultarFactura\ERP.ServicioExterno.sConsultarFactura.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\sFacturacion\billService1.xsd">
@@ -150,7 +150,7 @@
     </None>
     <None Include="Service References\sFacturacion\billService3.wsdl" />
     <None Include="Service References\sFacturacion\billService31.wsdl" />
-    <None Include="Service References\sFacturacion\ISL.ServicioExterno.sFacturacion.statusResponse.datasource">
+    <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\sRetencion\billService.wsdl" />
@@ -158,7 +158,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\sRetencion\billService1.wsdl" />
-    <None Include="Service References\sRetencion\ISL.ServicioExterno.sRetencion.statusResponse.datasource">
+    <None Include="Service References\sRetencion\ERP.ServicioExterno.sRetencion.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

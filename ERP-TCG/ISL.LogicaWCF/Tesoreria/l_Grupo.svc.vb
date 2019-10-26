@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_Grupo
     Dim odGrupo As New d_Grupo
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeGrupo As EntidadesWCF.e_Grupo) As Boolean Implements Il_Grupo.Eliminar
+    Public Function Eliminar(ByVal oeGrupo As e_Grupo) As Boolean Implements Il_Grupo.Eliminar
         Try
             Return odGrupo.Eliminar(oeGrupo)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Grupo
         End Try
     End Function
 
-    Public Function Enviar(ByVal oeGrupo As EntidadesWCF.e_Grupo) As Boolean Implements Il_Grupo.Enviar
+    Public Function Enviar(ByVal oeGrupo As e_Grupo) As Boolean Implements Il_Grupo.Enviar
         Try
             If Validar(oeGrupo) Then
                 Return odGrupo.Enviar(oeGrupo)
@@ -34,7 +34,7 @@ Public Class l_Grupo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeGrupo As EntidadesWCF.e_Grupo) As Boolean Implements Il_Grupo.Guardar
+    Public Function Guardar(ByVal oeGrupo As e_Grupo) As Boolean Implements Il_Grupo.Guardar
         Try
             Dim Band As Boolean = False
             If Validar(oeGrupo) Then
@@ -46,7 +46,7 @@ Public Class l_Grupo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeGrupo As EntidadesWCF.e_Grupo) As System.Collections.Generic.List(Of EntidadesWCF.e_Grupo) Implements Il_Grupo.Listar
+    Public Function Listar(ByVal oeGrupo As e_Grupo) As System.Collections.Generic.List(Of e_Grupo) Implements Il_Grupo.Listar
         Try
             Return odGrupo.Listar(oeGrupo)
         Catch ex As Exception
@@ -54,7 +54,7 @@ Public Class l_Grupo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeGrupo As EntidadesWCF.e_Grupo) As EntidadesWCF.e_Grupo Implements Il_Grupo.Obtener
+    Public Function Obtener(ByVal oeGrupo As e_Grupo) As e_Grupo Implements Il_Grupo.Obtener
         Try
             Return odGrupo.Obtener(oeGrupo)
         Catch ex As Exception
@@ -62,7 +62,7 @@ Public Class l_Grupo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeGrupo As EntidadesWCF.e_Grupo) As Boolean Implements Il_Grupo.Validar
+    Public Function Validar(ByVal oeGrupo As e_Grupo) As Boolean Implements Il_Grupo.Validar
         Try
             With oeGrupo
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese Codigo de Grupo")

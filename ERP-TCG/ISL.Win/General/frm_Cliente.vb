@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_Cliente
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.
@@ -293,7 +293,7 @@ Public Class frm_Cliente
                     Inicializar()
                 End If
             End If
-            If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olCliente.Foto(oeCliente.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olCliente.Foto(oeCliente.oePersona.Dni)
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
         End Try

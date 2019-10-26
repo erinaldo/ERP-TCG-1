@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Cuota
     Dim odCuota As New d_Cuota
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Overloads Function Eliminar(ByVal oeCuota As EntidadesWCF.e_Cuota) As Boolean Implements Il_Cuota.Eliminar
+    Public Overloads Function Eliminar(ByVal oeCuota As e_Cuota) As Boolean Implements Il_Cuota.Eliminar
         Try
             If Validar(oeCuota) Then
                 odCuota.Eliminar(oeCuota)
@@ -28,7 +28,7 @@ Public Class l_Cuota
         End Try
     End Function
 
-    Public Overloads Function Guardar(ByVal oeCuota As EntidadesWCF.e_Cuota) As Boolean Implements Il_Cuota.Guardar
+    Public Overloads Function Guardar(ByVal oeCuota As e_Cuota) As Boolean Implements Il_Cuota.Guardar
         Try
             If Validar(oeCuota) Then
                 Return odCuota.Guardar(oeCuota)
@@ -44,7 +44,7 @@ Public Class l_Cuota
     ''' <param name="oeCuota">Objeto Couta</param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Overloads Function Listar(ByVal oeCuota As EntidadesWCF.e_Cuota) As System.Collections.Generic.List(Of EntidadesWCF.e_Cuota) Implements Il_Cuota.Listar
+    Public Overloads Function Listar(ByVal oeCuota As e_Cuota) As System.Collections.Generic.List(Of e_Cuota) Implements Il_Cuota.Listar
         Try
             Return odCuota.Listar(oeCuota)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_Cuota
         End Try
     End Function
 
-    Public Overloads Function Obtener(ByVal oeCuota As EntidadesWCF.e_Cuota) As EntidadesWCF.e_Cuota Implements Il_Cuota.Obtener
+    Public Overloads Function Obtener(ByVal oeCuota As e_Cuota) As e_Cuota Implements Il_Cuota.Obtener
         Try
             Return odCuota.Obtener(oeCuota)
         Catch ex As Exception
@@ -60,7 +60,7 @@ Public Class l_Cuota
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuota As EntidadesWCF.e_Cuota) As Boolean Implements Il_Cuota.Validar
+    Public Function Validar(ByVal oeCuota As e_Cuota) As Boolean Implements Il_Cuota.Validar
         Try
             'l_FuncionesGenerales.ValidarCampoNoNulo(oeCuota.NombreCompleto, "Error Dato No Encontrado")
             Return True

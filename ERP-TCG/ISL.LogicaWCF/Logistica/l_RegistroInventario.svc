@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_RegistroInventario" CodeBehind="l_RegistroInventario.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_RegistroInventario" CodeBehind="l_RegistroInventario.svc.vb" %>

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_Telefono
     Dim odTelefono As New d_Telefono
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTelefono As EntidadesWCF.e_Telefono) As Boolean Implements Il_Telefono.Eliminar
+    Public Function Eliminar(ByVal oeTelefono As e_Telefono) As Boolean Implements Il_Telefono.Eliminar
         Try
             Return odTelefono.Eliminar(oeTelefono)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_Telefono
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTelefono As EntidadesWCF.e_Telefono) As Boolean Implements Il_Telefono.Guardar
+    Public Function Guardar(ByVal oeTelefono As e_Telefono) As Boolean Implements Il_Telefono.Guardar
         Try
             If Validar(oeTelefono) Then
                 Return odTelefono.Guardar(oeTelefono)
@@ -27,7 +27,7 @@ Public Class l_Telefono
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTelefono As EntidadesWCF.e_Telefono) As System.Collections.Generic.List(Of EntidadesWCF.e_Telefono) Implements Il_Telefono.Listar
+    Public Function Listar(ByVal oeTelefono As e_Telefono) As System.Collections.Generic.List(Of e_Telefono) Implements Il_Telefono.Listar
         Try
             Return odTelefono.Listar(oeTelefono)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_Telefono
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTelefono As EntidadesWCF.e_Telefono) As EntidadesWCF.e_Telefono Implements Il_Telefono.Obtener
+    Public Function Obtener(ByVal oeTelefono As e_Telefono) As e_Telefono Implements Il_Telefono.Obtener
         Try
             Return odTelefono.Obtener(oeTelefono)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Telefono
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTelefono As EntidadesWCF.e_Telefono) As Boolean Implements Il_Telefono.Validar
+    Public Function Validar(ByVal oeTelefono As e_Telefono) As Boolean Implements Il_Telefono.Validar
         Try
             ValidarNombre(oeTelefono)
             Return True
@@ -52,7 +52,7 @@ Public Class l_Telefono
         End Try
     End Function
 
-    Public Function ValidarLista(ByVal leTelefono As System.Collections.Generic.List(Of EntidadesWCF.e_Telefono)) As Boolean Implements Il_Telefono.ValidarLista
+    Public Function ValidarLista(ByVal leTelefono As System.Collections.Generic.List(Of e_Telefono)) As Boolean Implements Il_Telefono.ValidarLista
         Try
             If Not leTelefono Is Nothing Then
                 For Each oeTelf In leTelefono

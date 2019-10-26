@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Formulario
     Dim odFormulario As New d_Formulario
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeFormulario As EntidadesWCF.e_Formulario) As Boolean Implements Il_Formulario.Eliminar
+    Public Function Eliminar(ByVal oeFormulario As e_Formulario) As Boolean Implements Il_Formulario.Eliminar
         Try
             Return odFormulario.Eliminar(oeFormulario)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Formulario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFormulario As EntidadesWCF.e_Formulario) As Boolean Implements Il_Formulario.Guardar
+    Public Function Guardar(ByVal oeFormulario As e_Formulario) As Boolean Implements Il_Formulario.Guardar
         Try
             If Validar(oeFormulario) Then
                 Return odFormulario.Guardar(oeFormulario)
@@ -35,7 +35,7 @@ Public Class l_Formulario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFormulario As EntidadesWCF.e_Formulario) As System.Collections.Generic.List(Of EntidadesWCF.e_Formulario) Implements Il_Formulario.Listar
+    Public Function Listar(ByVal oeFormulario As e_Formulario) As System.Collections.Generic.List(Of e_Formulario) Implements Il_Formulario.Listar
         Try
             Return odFormulario.Listar(oeFormulario)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Formulario
         End Try
     End Function
 
-    Public Function ListarPadre(ByVal oeFormulario As EntidadesWCF.e_Formulario) As System.Collections.Generic.List(Of EntidadesWCF.e_Formulario) Implements Il_Formulario.ListarPadre
+    Public Function ListarPadre(ByVal oeFormulario As e_Formulario) As System.Collections.Generic.List(Of e_Formulario) Implements Il_Formulario.ListarPadre
         Try
             Return odFormulario.ListarPadre(oeFormulario)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Formulario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeFormulario As EntidadesWCF.e_Formulario) As EntidadesWCF.e_Formulario Implements Il_Formulario.Obtener
+    Public Function Obtener(ByVal oeFormulario As e_Formulario) As e_Formulario Implements Il_Formulario.Obtener
         Try
             Return odFormulario.Obtener(oeFormulario)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Formulario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFormulario As EntidadesWCF.e_Formulario) As Boolean Implements Il_Formulario.Validar
+    Public Function Validar(ByVal oeFormulario As e_Formulario) As Boolean Implements Il_Formulario.Validar
         Try
             With oeFormulario
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo: ")

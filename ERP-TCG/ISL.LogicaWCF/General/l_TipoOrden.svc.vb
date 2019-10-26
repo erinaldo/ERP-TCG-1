@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_TipoOrden
     Dim odTipoOrden As New d_TipoOrden
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTipoOrden As EntidadesWCF.e_TipoOrden) As Boolean Implements Il_TipoOrden.Eliminar
+    Public Function Eliminar(ByVal oeTipoOrden As e_TipoOrden) As Boolean Implements Il_TipoOrden.Eliminar
         Try
             Return odTipoOrden.Eliminar(oeTipoOrden)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_TipoOrden
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoOrden As EntidadesWCF.e_TipoOrden) As Boolean Implements Il_TipoOrden.Guardar
+    Public Function Guardar(ByVal oeTipoOrden As e_TipoOrden) As Boolean Implements Il_TipoOrden.Guardar
         Try
             If Validar(oeTipoOrden) Then
                 Return odTipoOrden.Guardar(oeTipoOrden)
@@ -35,7 +35,7 @@ Public Class l_TipoOrden
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoOrden As EntidadesWCF.e_TipoOrden) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoOrden) Implements Il_TipoOrden.Listar
+    Public Function Listar(ByVal oeTipoOrden As e_TipoOrden) As System.Collections.Generic.List(Of e_TipoOrden) Implements Il_TipoOrden.Listar
         Try
             Return odTipoOrden.Listar(oeTipoOrden)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_TipoOrden
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoOrden As EntidadesWCF.e_TipoOrden) As EntidadesWCF.e_TipoOrden Implements Il_TipoOrden.Obtener
+    Public Function Obtener(ByVal oeTipoOrden As e_TipoOrden) As e_TipoOrden Implements Il_TipoOrden.Obtener
         Try
             Return odTipoOrden.Obtener(oeTipoOrden)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_TipoOrden
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoOrden As EntidadesWCF.e_TipoOrden) As Boolean Implements Il_TipoOrden.Validar
+    Public Function Validar(ByVal oeTipoOrden As e_TipoOrden) As Boolean Implements Il_TipoOrden.Validar
         Try
             With oeTipoOrden
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports System.Text.RegularExpressions
 Imports System.Net.Mail
 Imports System.IO
@@ -16,7 +16,7 @@ Imports Infragistics.Win
 
 Public Class frm_EnvioEmail
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         'Llamada necesaria para el Diseñador de Windows Forms.

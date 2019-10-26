@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -23,7 +23,7 @@ Public Class l_Empresa
     Dim odEmpresa As New d_Empresa
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal Empresa As System.Collections.Generic.List(Of EntidadesWCF.e_Empresa)) As Object Implements Il_Empresa.ComboGrilla
+    Public Function ComboGrilla(ByVal Empresa As System.Collections.Generic.List(Of e_Empresa)) As Object Implements Il_Empresa.ComboGrilla
         Try
             Return odEmpresa.ComboGrilla(Empresa)
         Catch ex As Exception
@@ -31,7 +31,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As Boolean Implements Il_Empresa.Eliminar
+    Public Function Eliminar(ByVal oeEmpresa As e_Empresa) As Boolean Implements Il_Empresa.Eliminar
         Try
             Return odEmpresa.Eliminar(oeEmpresa)
         Catch ex As Exception
@@ -39,7 +39,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As Boolean Implements Il_Empresa.Guardar
+    Public Function Guardar(ByVal oeEmpresa As e_Empresa) As Boolean Implements Il_Empresa.Guardar
         Try
             Dim id As String = ""
             Dim Retorna As Boolean = False
@@ -53,7 +53,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function GuardarCliente(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As String
+    Public Function GuardarCliente(ByVal oeEmpresa As e_Empresa) As String
         Try
             Dim id As String = ""
             Dim Retorna As Boolean = False
@@ -67,7 +67,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Listar(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As System.Collections.Generic.List(Of EntidadesWCF.e_Empresa) Implements Il_Empresa.Listar
+    Public Function Listar(ByVal oeEmpresa As e_Empresa) As System.Collections.Generic.List(Of e_Empresa) Implements Il_Empresa.Listar
         Try
             Return odEmpresa.Listar(oeEmpresa)
         Catch ex As Exception
@@ -75,7 +75,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As EntidadesWCF.e_Empresa Implements Il_Empresa.Obtener
+    Public Function Obtener(ByVal oeEmpresa As e_Empresa) As e_Empresa Implements Il_Empresa.Obtener
         Try
             Return odEmpresa.Obtener(oeEmpresa)
         Catch ex As Exception
@@ -83,7 +83,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Validar(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As Boolean Implements Il_Empresa.Validar
+    Public Function Validar(ByVal oeEmpresa As e_Empresa) As Boolean Implements Il_Empresa.Validar
         Try
             With oeEmpresa
                 If .TipoOperacion = "G" Or .TipoOperacion = "B" Then
@@ -171,7 +171,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function ValidarTipoPago(ByVal oeClieProv As EntidadesWCF.e_ClienteProveedor, ByVal leTipPag As System.Collections.Generic.List(Of EntidadesWCF.e_PersonaEmpresa_TipoPago)) As Boolean Implements Il_Empresa.ValidarTipoPago
+    Public Function ValidarTipoPago(ByVal oeClieProv As e_ClienteProveedor, ByVal leTipPag As System.Collections.Generic.List(Of e_PersonaEmpresa_TipoPago)) As Boolean Implements Il_Empresa.ValidarTipoPago
         Try
             Dim letp As New List(Of e_PersonaEmpresa_TipoPago)
             If oeClieProv.Cliente = 1 Then
@@ -187,7 +187,7 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function ActualizaFec(ByVal oeEmpresa As EntidadesWCF.e_Empresa) As Boolean Implements Il_Empresa.ActualizaFec
+    Public Function ActualizaFec(ByVal oeEmpresa As e_Empresa) As Boolean Implements Il_Empresa.ActualizaFec
         Try
             Return odEmpresa.ActualizaFec(oeEmpresa)
         Catch ex As Exception

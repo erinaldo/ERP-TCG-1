@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
-Imports ISL.ServicioExterno
+Imports ERP.ServicioExterno
 
 
 
@@ -41,8 +41,8 @@ Public Class l_MovimientoDocumento
     ''' <remarks></remarks>
     ''' 
 
-    Public Function AjusteTipoCambio(ByVal TipoOperacion As String, ByVal oePeriodo As EntidadesWCF.e_Periodo, _
-    ByVal leMovimientoDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento)) As Boolean Implements Il_MovimientoDocumento.AjusteTipoCambio
+    Public Function AjusteTipoCambio(ByVal TipoOperacion As String, ByVal oePeriodo As e_Periodo, _
+    ByVal leMovimientoDocumento As System.Collections.Generic.List(Of e_MovimientoDocumento)) As Boolean Implements Il_MovimientoDocumento.AjusteTipoCambio
         Try
             Dim lsCtaPerdida As String = ""
             Dim lsCtaGanancia As String = ""
@@ -252,8 +252,8 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function AjusteTipoCambioObligacion(ByVal TipoOperacion As String, ByVal oePeriodo As EntidadesWCF.e_Periodo, _
-    ByVal leMovimientoDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), _
+    Public Function AjusteTipoCambioObligacion(ByVal TipoOperacion As String, ByVal oePeriodo As e_Periodo, _
+    ByVal leMovimientoDocumento As System.Collections.Generic.List(Of e_ObligacionFinanciera), _
     ByVal IdUsuariocrea As String) As Boolean Implements Il_MovimientoDocumento.AjusteTipoCambioObligacion
         Try
             Dim lsCtaPerdida As String = ""
@@ -469,7 +469,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Anular(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, ByVal IdUsuario As String) As Boolean Implements Il_MovimientoDocumento.Anular
+    Public Function Anular(ByVal oeMovimientoDocumento As e_MovimientoDocumento, ByVal IdUsuario As String) As Boolean Implements Il_MovimientoDocumento.Anular
         Try
             Using transScope As New TransactionScope()
                 If oeMovimientoDocumento.TipoOperacion <> "ACT" Then
@@ -486,7 +486,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function CambiarGlosa(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.CambiarGlosa
+    Public Function CambiarGlosa(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.CambiarGlosa
         Try
             Return odMovimientoDocumento.CambiarGlosa(oeMovimientoDocumento)
 
@@ -533,7 +533,7 @@ Public Class l_MovimientoDocumento
         End If
     End Sub
 
-    Public Function Eliminar(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Eliminar
+    Public Function Eliminar(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Eliminar
         Try
             Return odMovimientoDocumento.Eliminar(oeMovimientoDocumento)
         Catch ex As Exception
@@ -541,7 +541,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function EliminarAnticipo(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EliminarAnticipo
+    Public Function EliminarAnticipo(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EliminarAnticipo
         Try
             olFuncionesGenerales.ValidarPeriodo(oeMovimientoDocumento.IdPeriodo, gAreasSGI.Tesoreria)
             olFuncionesGenerales.ValidarPeriodo(oeMovimientoDocumento.IdPeriodo, gAreasSGI.Contabilidad)
@@ -551,7 +551,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function EliminarComprobante(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, Optional ByVal OeAsiento As EntidadesWCF.e_Asiento = Nothing) As Boolean Implements Il_MovimientoDocumento.EliminarComprobante
+    Public Function EliminarComprobante(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional ByVal OeAsiento As e_Asiento = Nothing) As Boolean Implements Il_MovimientoDocumento.EliminarComprobante
         Try
             If Math.Round(oeMovimientoDocumento.Saldo, 2) <> Math.Round(oeMovimientoDocumento.Total, 2) Then
                 Throw New Exception("No se puede Operar por existen Cobros/Pagos Asociados")
@@ -578,7 +578,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    Public Function EliminarDocumentoVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EliminarDocumentoVenta
+    Public Function EliminarDocumentoVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EliminarDocumentoVenta
         Try
             odMovimientoDocumento.EliminarDocumentoVenta(oeMovimientoDocumento)
             Return True
@@ -588,7 +588,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Emitir(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Emitir
+    Public Function Emitir(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Emitir
         Try
             oeMovimientoDocumento.TipoOperacion = "EMI"
             oeMovimientoDocumento.EstadoDocumento = "EMITIDA"
@@ -598,7 +598,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ExisteCta(ByVal Lista As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento), ByVal IdCta As String) As EntidadesWCF.e_AsientoMovimiento Implements Il_MovimientoDocumento.ExisteCta
+    Public Function ExisteCta(ByVal Lista As System.Collections.Generic.List(Of e_AsientoMovimiento), ByVal IdCta As String) As e_AsientoMovimiento Implements Il_MovimientoDocumento.ExisteCta
         For Each obj As e_AsientoMovimiento In Lista
             If obj.IdCuentaContable = IdCta Then
                 Return obj
@@ -607,7 +607,7 @@ Public Class l_MovimientoDocumento
         Return Nothing
     End Function
 
-    Public Function ExtornarDocEmitidoEnviado(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, ByVal IdUsuario As String) As Boolean Implements Il_MovimientoDocumento.ExtornarDocEmitidoEnviado
+    Public Function ExtornarDocEmitidoEnviado(ByVal oeMovimientoDocumento As e_MovimientoDocumento, ByVal IdUsuario As String) As Boolean Implements Il_MovimientoDocumento.ExtornarDocEmitidoEnviado
         Try
             If Math.Round(oeMovimientoDocumento.Saldo, 1) <> Math.Round(oeMovimientoDocumento.Total, 1) Then
                 Throw New Exception("No se puede Operar por existen Cobros/Pagos Asociados")
@@ -634,7 +634,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, Optional oeAnticipo As EntidadesWCF.e_MovimientoDocumento = Nothing) As Boolean Implements Il_MovimientoDocumento.Guardar
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean Implements Il_MovimientoDocumento.Guardar
         Try
             If oeMovimientoDocumento.TipoOperacion <> "EPC" Then
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.IdTipoDocumento, "Seleciona Tipo Documento")
@@ -658,7 +658,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ValidarTipoCambio(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarTipoCambio
+    Public Function ValidarTipoCambio(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarTipoCambio
         Try
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
             Return True
@@ -667,7 +667,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function CambiarPeriodo(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.CambiarPeriodo
+    Public Function CambiarPeriodo(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.CambiarPeriodo
         Try
             l_FuncionesGenerales.ValidarPeriodo(oeMovimientoDocumento.IdPeriodo, gAreasSGI.Contabilidad, Date.Parse("01/01/1901"), "")
             Return odMovimientoDocumento.CambiaPeriodoVerifica(oeMovimientoDocumento)
@@ -1160,7 +1160,7 @@ Public Class l_MovimientoDocumento
     End Function
 
     Public Function GuardarCancelacion(ByVal leDocumentosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal Obj() As Object) As Boolean Implements Il_MovimientoDocumento.GuardarCancelacion
+    System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal Obj() As Object) As Boolean Implements Il_MovimientoDocumento.GuardarCancelacion
         Try
             If ValidarCancelacionDocumentos(leDocumentosAgregados, Obj(0)) Then
                 Dim oePeriodo As New e_Periodo, olPeriodo As New l_Periodo
@@ -1303,7 +1303,7 @@ Public Class l_MovimientoDocumento
     End Function
 
     Public Function GuardarCancelacionMovimientoAnalisis(ByVal leMovimientosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoAnalisis), ByVal Obj() As Object) As Boolean _
+    System.Collections.Generic.List(Of e_MovimientoAnalisis), ByVal Obj() As Object) As Boolean _
     Implements Il_MovimientoDocumento.GuardarCancelacionMovimientoAnalisis
         Try
 
@@ -1484,8 +1484,8 @@ Public Class l_MovimientoDocumento
     End Function
 
     Public Function GuardarAnalisisYDocumento(ByVal leMovimientosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoAnalisis), ByVal leDocumentosAgregados As  _
-    System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal Obj() As Object) As Boolean _
+    System.Collections.Generic.List(Of e_MovimientoAnalisis), ByVal leDocumentosAgregados As  _
+    System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal Obj() As Object) As Boolean _
     Implements Il_MovimientoDocumento.GuardarAnalisisYDocumento
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
@@ -1756,8 +1756,8 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    Public Function GuardarCompra(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, _
-     ByVal leMovimientoDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), _
+    Public Function GuardarCompra(ByVal oeMovimientoDocumento As e_MovimientoDocumento, _
+     ByVal leMovimientoDocumento As System.Collections.Generic.List(Of e_MovimientoDocumento), _
     Optional ByVal IndComprobanteCompra As Boolean = False,
     Optional ByVal oeObligacion As e_ObligacionFin = Nothing) As Boolean _
     Implements Il_MovimientoDocumento.GuardarCompra
@@ -1888,7 +1888,7 @@ Public Class l_MovimientoDocumento
     ''' <param name="oeMovimientoDoc"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function GuardarMasivo(ByVal oeMovimientoDoc As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.GuardarMasivo
+    Public Function GuardarMasivo(ByVal oeMovimientoDoc As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.GuardarMasivo
         Try
             Dim olDetalleDoc As New l_DetalleDocumento, odDetalleDoc As New d_DetalleDocumento
             Dim olDetalleDocGuiaTrans As New l_DetalleDoc_GuiaTrans, odDetalleDocGuiaTrans As New d_DetalleDoc_GuiaTrans
@@ -1977,7 +1977,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    'Public Function GuardarVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, Optional ByVal leDocumentos As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento) = Nothing) As Boolean Implements Il_MovimientoDocumento.GuardarVenta
+    'Public Function GuardarVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional ByVal leDocumentos As System.Collections.Generic.List(Of e_MovimientoDocumento) = Nothing) As Boolean Implements Il_MovimientoDocumento.GuardarVenta
     '    Try
     '        If ValidarVenta(oeMovimientoDocumento) Then
     '            With oeMovimientoDocumento
@@ -2620,7 +2620,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    'Public Function InterfazCompra(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.InterfazCompra
+    'Public Function InterfazCompra(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.InterfazCompra
     '    Try
     '        If ValidarCompraVenta(oeMovimientoDocumento, True, gAreasSGI.Compras) Then
     '            If ValidarTipoCambio(oeMovimientoDocumento) Then
@@ -2959,7 +2959,7 @@ Public Class l_MovimientoDocumento
 
     'End Function
 
-    'Public Function InterfazVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.InterfazVenta
+    'Public Function InterfazVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.InterfazVenta
     '    Try
     '        If ValidarCompraVenta(oeMovimientoDocumento, False, gAreasSGI.Ventas) Then
     '            With oeMovimientoDocumento
@@ -3103,7 +3103,7 @@ Public Class l_MovimientoDocumento
 
     'End Function
 
-    'Public Function Linea12(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento, ByVal leCuentaGeneral As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet)) As EntidadesWCF.e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea12
+    'Public Function Linea12(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento, ByVal leCuentaGeneral As System.Collections.Generic.List(Of e_TablaContableDet)) As e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea12
     '    Dim oeMovimientoAsiento As New e_AsientoMovimiento
     '    With oeMovDoc
     '        '------------tablaa AsientoMov_MovDoc---------------
@@ -3175,7 +3175,7 @@ Public Class l_MovimientoDocumento
 
     'End Function
 
-    Public Function Linea42(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento, ByVal leCuentasGenerales As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet)) As EntidadesWCF.e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea42
+    Public Function Linea42(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento, ByVal leCuentasGenerales As System.Collections.Generic.List(Of e_TablaContableDet)) As e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea42
         Dim oeMovimientoAsiento As New e_AsientoMovimiento
         With oeMovDoc
             oeMovimientoAsiento.AsMov_MovDoc = New e_AsientoMov_MovDoc
@@ -3245,9 +3245,9 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    Public Function Linea60(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, _
-    ByVal oeAs As EntidadesWCF.e_Asiento, Optional ByVal Masivo As Boolean = True, _
-    Optional ByVal oeObligacion As e_ObligacionFin = Nothing) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento) Implements Il_MovimientoDocumento.Linea60
+    Public Function Linea60(ByVal oeMovDoc As e_MovimientoDocumento, _
+    ByVal oeAs As e_Asiento, Optional ByVal Masivo As Boolean = True, _
+    Optional ByVal oeObligacion As e_ObligacionFin = Nothing) As System.Collections.Generic.List(Of e_AsientoMovimiento) Implements Il_MovimientoDocumento.Linea60
         Dim oeAsientoMovimiento As New e_AsientoMovimiento
         Dim olMovimientoAnalisis As New l_MovimientoAnalisis
         Dim leMovAs As New List(Of e_AsientoMovimiento)
@@ -3456,7 +3456,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    'Public Function Linea70(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento) As EntidadesWCF.e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea70
+    'Public Function Linea70(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento) As e_AsientoMovimiento Implements Il_MovimientoDocumento.Linea70
     '    Dim oeAsientoMovimiento As New e_AsientoMovimiento
     '    With oeMovDoc
     '        oeAsientoMovimiento = New e_AsientoMovimiento
@@ -3545,7 +3545,7 @@ Public Class l_MovimientoDocumento
 
     'End Function
 
-    Public Function LineaImpuestosCompras(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento, ByVal leCuentasGenerales As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet)) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineaImpuestosCompras
+    Public Function LineaImpuestosCompras(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento, ByVal leCuentasGenerales As System.Collections.Generic.List(Of e_TablaContableDet)) As System.Collections.Generic.List(Of e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineaImpuestosCompras
         Dim leMovLista As New List(Of e_AsientoMovimiento)
         Dim oeMovimientoAsiento As e_AsientoMovimiento
         With oeMovDoc
@@ -3677,7 +3677,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    'Public Function LineaImpuestosVentas(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento, ByVal leCuentaGeneral As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContableDet)) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineaImpuestosVentas
+    'Public Function LineaImpuestosVentas(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento, ByVal leCuentaGeneral As System.Collections.Generic.List(Of e_TablaContableDet)) As System.Collections.Generic.List(Of e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineaImpuestosVentas
     '    Dim leMovLista As New List(Of e_AsientoMovimiento)
     '    Dim oeMovimientoAsiento As e_AsientoMovimiento
     '    With oeMovDoc
@@ -3809,7 +3809,7 @@ Public Class l_MovimientoDocumento
 
     'End Function
 
-    Public Function LineasDestinoCompras(ByVal oeMovDoc As EntidadesWCF.e_MovimientoDocumento, ByVal oeAs As EntidadesWCF.e_Asiento) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineasDestinoCompras
+    Public Function LineasDestinoCompras(ByVal oeMovDoc As e_MovimientoDocumento, ByVal oeAs As e_Asiento) As System.Collections.Generic.List(Of e_AsientoMovimiento) Implements Il_MovimientoDocumento.LineasDestinoCompras
         Dim leMovLista As New List(Of e_AsientoMovimiento)
         Dim oeMovimientoAsiento As e_AsientoMovimiento
         With oeMovDoc
@@ -3889,7 +3889,7 @@ Public Class l_MovimientoDocumento
         Return leMovLista
     End Function
 
-    Public Function Listar(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento) Implements Il_MovimientoDocumento.Listar
+    Public Function Listar(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As System.Collections.Generic.List(Of e_MovimientoDocumento) Implements Il_MovimientoDocumento.Listar
         Try
             Return odMovimientoDocumento.Listar(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3897,7 +3897,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ListarDetallesPorDocumentos(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_Material) Implements Il_MovimientoDocumento.ListarDetallesPorDocumentos
+    Public Function ListarDetallesPorDocumentos(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As System.Collections.Generic.List(Of e_Material) Implements Il_MovimientoDocumento.ListarDetallesPorDocumentos
         Try
             Return odMovimientoDocumento.ListarDetallesPorDocumentos(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3905,7 +3905,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ListarDocumentosPorCompras(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento) Implements Il_MovimientoDocumento.ListarDocumentosPorCompras
+    Public Function ListarDocumentosPorCompras(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As System.Collections.Generic.List(Of e_MovimientoDocumento) Implements Il_MovimientoDocumento.ListarDocumentosPorCompras
         Try
             Return odMovimientoDocumento.ListarDocumentosPorCompras(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3921,7 +3921,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.Obtener
+    Public Function Obtener(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.Obtener
         Try
             Return odMovimientoDocumento.Obtener(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3929,7 +3929,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Obtener2(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.Obtener2
+    Public Function Obtener2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.Obtener2
         Try
             Return odMovimientoDocumento.Obtener2(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3937,7 +3937,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ObtenerCompra(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerCompra
+    Public Function ObtenerCompra(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerCompra
         Try
             Return odMovimientoDocumento.ObtenerCompra(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3945,7 +3945,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ObtenerDocumentosPorCompras(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerDocumentosPorCompras
+    Public Function ObtenerDocumentosPorCompras(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerDocumentosPorCompras
         Try
             Return odMovimientoDocumento.ObtenerDocumentosPorCompras(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3953,7 +3953,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ObtenerNumDoc(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerNumDoc
+    Public Function ObtenerNumDoc(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerNumDoc
         Try
             Return odMovimientoDocumento.ObtienerNumDoc(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3961,7 +3961,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ObtenerVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerVenta
+    Public Function ObtenerVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerVenta
         Try
             Return odMovimientoDocumento.ObtenerVenta(oeMovimientoDocumento)
         Catch ex As Exception
@@ -3969,7 +3969,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Validar
+    Public Function Validar(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Validar
         Try
             With oeMovimientoDocumento
                 Dim olFuncionesGenerales As New l_FuncionesGenerales
@@ -4013,7 +4013,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    Public Function ValidarNC_ND(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarNC_ND
+    Public Function ValidarNC_ND(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarNC_ND
         Try
 
             'obtener lista de documentos
@@ -4058,7 +4058,7 @@ Public Class l_MovimientoDocumento
 
     End Function
 
-    Public Function ValidarAnticipo(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarAnticipo
+    Public Function ValidarAnticipo(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarAnticipo
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, oeMovimientoDocumento.FechaEmision, oeMovimientoDocumento.FechaEmision.Year.ToString + "-" + oeMovimientoDocumento.FechaEmision.Month.ToString)
@@ -4068,7 +4068,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ValidarCancelacionDocumentos(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), ByVal fecha As Date) As Boolean Implements Il_MovimientoDocumento.ValidarCancelacionDocumentos
+    Public Function ValidarCancelacionDocumentos(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of e_MovimientoDocumento), ByVal fecha As Date) As Boolean Implements Il_MovimientoDocumento.ValidarCancelacionDocumentos
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             loFuncionesGenerales.ValidarPeriodo("", gAreasSGI.Tesoreria, fecha, fecha.Year.ToString + "-" + fecha.Month.ToString)
@@ -4084,7 +4084,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ValidarVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarVenta
+    Public Function ValidarVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarVenta
         Try
             'validar saldo
             '
@@ -4103,7 +4103,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ValidarMonto(ByVal movimientosDocumento As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoDocumento), _
+    Public Function ValidarMonto(ByVal movimientosDocumento As System.Collections.Generic.List(Of e_MovimientoDocumento), _
                                  ByVal tipoMovimiento As String) As Boolean Implements Il_MovimientoDocumento.ValidarMonto
         Try
             For Each oeMovimientoDocumento As e_MovimientoDocumento In movimientosDocumento
@@ -4377,7 +4377,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function ObtenerCantDoc(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As EntidadesWCF.e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerCantDoc
+    Public Function ObtenerCantDoc(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.ObtenerCantDoc
         Try
             Return odMovimientoDocumento.ObtenerCantDoc(oeMovimientoDocumento)
         Catch ex As Exception
@@ -4865,7 +4865,7 @@ Public Class l_MovimientoDocumento
 
 #Region "Compras"
 
-    Public Function EnviarCompra(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EnviarCompra
+    Public Function EnviarCompra(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EnviarCompra
         Try
             If oeMovimientoDocumento.IndServicioMaterial = "S" Then
                 GuardarCmpServicio(oeMovimientoDocumento)
@@ -4875,7 +4875,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    'Public Function EnviarCompraxServicio(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean
+    'Public Function EnviarCompraxServicio(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
     '    Try
     '        If ValidarCompraVenta(oeMovimientoDocumento, True, gAreasSGI.Compras) Then
 
@@ -5300,7 +5300,7 @@ Public Class l_MovimientoDocumento
 
 #Region "Glosas,Verificacions y Cambios de Periodo"
 
-    Public Function VerificarDocumento(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.VerificarDocumento
+    Public Function VerificarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.VerificarDocumento
         Try
             Return odMovimientoDocumento.CambiaPeriodoVerifica(oeMovimientoDocumento)
         Catch ex As Exception
@@ -5312,7 +5312,7 @@ Public Class l_MovimientoDocumento
 
 #Region "Validaciones"
 
-    Public Function ValidarCompraVenta(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento, _
+    Public Function ValidarCompraVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento, _
     Optional ByVal indCompra As Boolean = False, Optional ByVal Modulo As gAreasSGI = gAreasSGI.Contabilidad) As Boolean Implements Il_MovimientoDocumento.ValidarCompraVenta
         Try
             With oeMovimientoDocumento
@@ -5362,12 +5362,12 @@ Public Class l_MovimientoDocumento
         Return sFacturacionElectronica.GenerarXmlFacturaElectronica(dataTable, Nothing, dataTable1, p3, p4)
     End Function
 
-    Function GenerarXmlComprobantesBaja(dataTable As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String) As String
-        Return sFacturacionElectronica.GenerarXmlComprobantesBaja(dataTable, fechaGeneracion, rutaFE, usuario)
+    Function GenerarXmlComprobantesBaja(dataTable As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.GenerarXmlComprobantesBaja(dataTable, fechaGeneracion, rutaFE, usuario, PrefijoID)
     End Function
 
-    Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String) As String
-        Return sFacturacionElectronica.EnviarXMLGetStatus(rutaFE, ticket)
+    Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.EnviarXMLGetStatus(rutaFE, ticket, PrefijoID)
     End Function
 
     Function ObtenerEnviarData(oeDocumento As e_MovimientoDocumento) As DataSet '*** Implements Il_Documento.ListaFacturacionElectronica
@@ -5406,15 +5406,15 @@ Public Class l_MovimientoDocumento
     End Function
 
     'RESUMEN DIARIO BOLETAS 2018
-    Function GenerarXmlFacturaElectronicaBath_2018(dataTable As DataTable, DT As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean) As String
-        Return sFacturacionElectronica.GenerarXmlComprobantesBath_2018(dataTable, DT, fechaGeneracion, rutaFE, usuario, b_Baja)
+    Function GenerarXmlFacturaElectronicaBath_2018(dataTable As DataTable, DT As DataTable, ByVal fechaGeneracion As DateTime, ByVal rutaFE As String, ByVal usuario As String, b_Baja As Boolean, ByVal PrefijoID As String) As String
+        Return sFacturacionElectronica.GenerarXmlComprobantesBath_2018(dataTable, DT, fechaGeneracion, rutaFE, usuario, b_Baja, PrefijoID)
     End Function
 
     Function GenerarXmlFacturaElectronica_Resumen(dataTable As DataTable, dataTable1 As DataTable, dataTable2 As DataTable, p3 As String, p4 As String) As Boolean
         Return sFacturacionElectronica.GenerarXmlFacturaElectronica_Resumen(dataTable, dataTable1, dataTable2, p3, p4)
     End Function
     'FACTURAS POR ANTICIPOS
-    Public Function Listar_Anticipos(ByVal oeMovimientoDocumento As EntidadesWCF.e_MovimientoDocumento) As DataTable Implements Il_MovimientoDocumento.Listar_Anticipos
+    Public Function Listar_Anticipos(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable Implements Il_MovimientoDocumento.Listar_Anticipos
         Try
             Return odMovimientoDocumento.Listar_Anticipos(oeMovimientoDocumento)
         Catch ex As Exception

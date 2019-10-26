@@ -6,14 +6,14 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Microsoft.Office.Interop
 
 
 Public Class frm_ValesRendir
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion"
 
@@ -621,7 +621,7 @@ Public Class frm_ValesRendir
                 Dim olTrabajador As New l_Trabajador
                 oeTrabajador.Id = oeMovimientoPersonal.IdTrabajador
                 oeTrabajador = olTrabajador.ObtenerObjeto(oeTrabajador)
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then FotoTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 FotoTrabajador.Visible = True
                 agrDatosBasicos.Visible = True
                 txtArea.Text = oeTrabajador.oeArea.Nombre

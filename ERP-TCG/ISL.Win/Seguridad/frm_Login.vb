@@ -7,8 +7,8 @@
 '=================================================================================================================
 
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports System.Net.Mail
 
 Public Class frm_Login

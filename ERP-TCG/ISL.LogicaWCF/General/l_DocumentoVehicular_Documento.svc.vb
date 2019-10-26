@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ' NOTA: si cambia aquí el nombre de clase "l_DocumentoVehicular_Documento", también debe actualizar la referencia a "l_DocumentoVehicular_Documento" tanto en Web.config como en el archivo .svc asociado.
@@ -25,7 +25,7 @@ Public Class l_DocumentoVehicular_Documento
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal Lista As System.Collections.Generic.List(Of EntidadesWCF.e_DocumentoVehicular_Documento)) As Object Implements Il_DocumentoVehicular_Documento.ComboGrilla
+    Public Function ComboGrilla(ByVal Lista As System.Collections.Generic.List(Of e_DocumentoVehicular_Documento)) As Object Implements Il_DocumentoVehicular_Documento.ComboGrilla
         Try
             Return odDocVeh_Doc.ComboGrilla(Lista)
         Catch ex As Exception

@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_Usuario
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializa"
 
@@ -293,7 +293,7 @@ Public Class frm_Usuario
                     CargaDatosPersonales()
 
                 End If
-                If Not String.IsNullOrEmpty(oeUsuario.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeUsuario.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeUsuario.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeUsuario.oePersona.Dni)
             Else
                 Inicializar()
             End If
@@ -605,7 +605,7 @@ Public Class frm_Usuario
                 oeUsuario.IndCompleto = True
                 oeUsuario = olUsuario.Obtener(oeUsuario)
                 CargaDatosPersonales()
-                If Not String.IsNullOrEmpty(oeUsuario.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeUsuario.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeUsuario.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeUsuario.oePersona.Dni)
                 MostrarTabs(1, ficUsuario, 1)
                 ficDetalle.Tabs("Perfil").Selected = True
                 MyBase.Editar()

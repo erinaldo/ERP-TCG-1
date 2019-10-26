@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_TipoCompra
 
     Dim odTipoCompra As New d_TipoCompra
 
-    Public Function Eliminar(ByVal oeTipoCompra As EntidadesWCF.e_TipoCompra) As Boolean Implements Il_TipoCompra.Eliminar
+    Public Function Eliminar(ByVal oeTipoCompra As e_TipoCompra) As Boolean Implements Il_TipoCompra.Eliminar
         Try
             Return odTipoCompra.Eliminar(oeTipoCompra)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_TipoCompra
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoCompra As EntidadesWCF.e_TipoCompra) As Boolean Implements Il_TipoCompra.Guardar
+    Public Function Guardar(ByVal oeTipoCompra As e_TipoCompra) As Boolean Implements Il_TipoCompra.Guardar
         Try
             If Validar(oeTipoCompra) Then
                 Return odTipoCompra.Guardar(oeTipoCompra)
@@ -26,7 +26,7 @@ Public Class l_TipoCompra
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoCompra As EntidadesWCF.e_TipoCompra) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoCompra) Implements Il_TipoCompra.Listar
+    Public Function Listar(ByVal oeTipoCompra As e_TipoCompra) As System.Collections.Generic.List(Of e_TipoCompra) Implements Il_TipoCompra.Listar
         Try
             Return odTipoCompra.Listar(oeTipoCompra)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_TipoCompra
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoCompra As EntidadesWCF.e_TipoCompra) As EntidadesWCF.e_TipoCompra Implements Il_TipoCompra.Obtener
+    Public Function Obtener(ByVal oeTipoCompra As e_TipoCompra) As e_TipoCompra Implements Il_TipoCompra.Obtener
         Try
             Return odTipoCompra.Obtener(oeTipoCompra)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_TipoCompra
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoCompra As EntidadesWCF.e_TipoCompra) As Boolean Implements Il_TipoCompra.Validar
+    Public Function Validar(ByVal oeTipoCompra As e_TipoCompra) As Boolean Implements Il_TipoCompra.Validar
         Try
             With oeTipoCompra
                 'ValidarDuplicado(.Id, .Ejercicio, "Ejercicio")

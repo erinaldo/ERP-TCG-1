@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_TablaContable
     Dim odTablaContable As New d_TablaContable
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTablaContable As EntidadesWCF.e_TablaContable) As Boolean Implements Il_TablaContable.Eliminar
+    Public Function Eliminar(ByVal oeTablaContable As e_TablaContable) As Boolean Implements Il_TablaContable.Eliminar
         Try
             Return odTablaContable.Eliminar(oeTablaContable)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_TablaContable
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTablaContable As EntidadesWCF.e_TablaContable) As Boolean Implements Il_TablaContable.Guardar
+    Public Function Guardar(ByVal oeTablaContable As e_TablaContable) As Boolean Implements Il_TablaContable.Guardar
         Try
             If Validar(oeTablaContable) Then
                 Return odTablaContable.Guardar(oeTablaContable)
@@ -27,7 +27,7 @@ Public Class l_TablaContable
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTablaContable As EntidadesWCF.e_TablaContable) As System.Collections.Generic.List(Of EntidadesWCF.e_TablaContable) Implements Il_TablaContable.Listar
+    Public Function Listar(ByVal oeTablaContable As e_TablaContable) As System.Collections.Generic.List(Of e_TablaContable) Implements Il_TablaContable.Listar
         Try
             Return odTablaContable.Listar(oeTablaContable)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_TablaContable
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTablaContable As EntidadesWCF.e_TablaContable) As EntidadesWCF.e_TablaContable Implements Il_TablaContable.Obtener
+    Public Function Obtener(ByVal oeTablaContable As e_TablaContable) As e_TablaContable Implements Il_TablaContable.Obtener
         Try
             Return odTablaContable.Obtener(oeTablaContable)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_TablaContable
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTablaContable As EntidadesWCF.e_TablaContable) As Boolean Implements Il_TablaContable.Validar
+    Public Function Validar(ByVal oeTablaContable As e_TablaContable) As Boolean Implements Il_TablaContable.Validar
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(oeTablaContable.Nombre, "Ingrese el Nombre de la Tabla Contable")
             If oeTablaContable.Tipooperacion = "I" Then

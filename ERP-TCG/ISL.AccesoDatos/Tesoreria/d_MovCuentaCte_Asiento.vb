@@ -1,11 +1,19 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_MovCuentaCte_Asiento
 
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
+
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_MovCuentaCte_Asiento
         Try
@@ -60,17 +68,16 @@ Public Class d_MovCuentaCte_Asiento
 
     Public Function Guardar(ByVal oeMovCuentaCte_Asiento As e_MovCuentaCte_Asiento, ByVal oeAsiento As e_Asiento) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             If oeAsiento.TipoOperacion = "I" Then
                 Dim odAsiento As New d_Asiento
                 odAsiento.Guardar(oeAsiento, Nothing, False)
                 With oeMovCuentaCte_Asiento
                     .IdAsiento = oeAsiento.Id
-                    sqlhelper.ExecuteNonQuery("TES.Isp_MovCuentaCte_Asiento_IAE", .TipoOperacion, .PrefijoID, _
+                    sqlhelper.ExecuteNonQuery("TES.Isp_MovCuentaCte_Asiento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdMovCuentaCte _
                             , .IdAsiento _
-                            , .Activo _
+                            , .Activo
                         )
                 End With
             End If

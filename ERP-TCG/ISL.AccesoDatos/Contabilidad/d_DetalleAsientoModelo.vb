@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -91,11 +99,10 @@ Public Class d_DetalleAsientoModelo
 
     Public Function Guardar(ByVal oeDetalleAsientoModelo As e_DetalleAsientoModelo) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim _idDMR() As String
             Using TransScope As New TransactionScope()
                 With oeDetalleAsientoModelo
-                    _idDMR = sqlhelper.ExecuteScalar("CON.Isp_DetalleAsientoModelo_IAE", .TipoOperacion, .PrefijoID, _
+                    _idDMR = sqlhelper.ExecuteScalar("CON.Isp_DetalleAsientoModelo_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdAsientoModelo _
                             , .Codigo _
@@ -112,11 +119,12 @@ Public Class d_DetalleAsientoModelo
                             , .UsuarioCreacion _
                             , .FechaCreacion _
                             , .UsuarioModificacion _
-                            , .FechaModificacion _
+                            , .FechaModificacion
                         ).ToString.Split("_")
                     'Guardar Referencia de Asiento Modelo por Actividad
                     For Each oeReferencia In .leDMReferencia
                         oeReferencia.IdDetalleAsientoModelo = _idDMR(0)
+                        oeReferencia.PrefijoID = oeDetalleAsientoModelo.PrefijoID '@0001
                         Select Case oeReferencia.TipoOperacion
                             Case "I", "A" : odReferencia.Guardar(oeReferencia)
                             Case "E" : odReferencia.Eliminar(oeReferencia)

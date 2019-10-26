@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_FondoFijo
 
     Dim odFondoFijo As New d_FondoFijo
 
-    Public Function Eliminar(ByVal oeFondoFijo As EntidadesWCF.e_FondoFijo) As Boolean Implements Il_FondoFijo.Eliminar
+    Public Function Eliminar(ByVal oeFondoFijo As e_FondoFijo) As Boolean Implements Il_FondoFijo.Eliminar
         Try
             Return odFondoFijo.Eliminar(oeFondoFijo)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_FondoFijo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFondoFijo As EntidadesWCF.e_FondoFijo) As Boolean Implements Il_FondoFijo.Guardar
+    Public Function Guardar(ByVal oeFondoFijo As e_FondoFijo) As Boolean Implements Il_FondoFijo.Guardar
         Try
             If Validar(oeFondoFijo) Then
                 Return odFondoFijo.Guardar(oeFondoFijo)
@@ -34,7 +34,7 @@ Public Class l_FondoFijo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFondoFijo As EntidadesWCF.e_FondoFijo) As System.Collections.Generic.List(Of EntidadesWCF.e_FondoFijo) Implements Il_FondoFijo.Listar
+    Public Function Listar(ByVal oeFondoFijo As e_FondoFijo) As System.Collections.Generic.List(Of e_FondoFijo) Implements Il_FondoFijo.Listar
         Try
             Return odFondoFijo.Listar(oeFondoFijo)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_FondoFijo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeFondoFijo As EntidadesWCF.e_FondoFijo) As EntidadesWCF.e_FondoFijo Implements Il_FondoFijo.Obtener
+    Public Function Obtener(ByVal oeFondoFijo As e_FondoFijo) As e_FondoFijo Implements Il_FondoFijo.Obtener
         Try
             Return odFondoFijo.Obtener(oeFondoFijo)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_FondoFijo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFondoFijo As EntidadesWCF.e_FondoFijo) As Boolean Implements Il_FondoFijo.Validar
+    Public Function Validar(ByVal oeFondoFijo As e_FondoFijo) As Boolean Implements Il_FondoFijo.Validar
         Try
             Dim _ban As Boolean = True
             With oeFondoFijo

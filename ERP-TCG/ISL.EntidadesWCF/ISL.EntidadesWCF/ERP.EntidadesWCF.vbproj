@@ -9,8 +9,8 @@
     <ProjectGuid>{D6821E32-CAAA-4DA7-88A5-22A551256E17}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISL.EntidadesWCF</RootNamespace>
-    <AssemblyName>ISL.EntidadesWCF</AssemblyName>
+    <RootNamespace>ERP.EntidadesWCF</RootNamespace>
+    <AssemblyName>ERP.EntidadesWCF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
@@ -41,7 +41,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISL.EntidadesWCF.xml</DocumentationFile>
+    <DocumentationFile>ERP.EntidadesWCF.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -53,7 +53,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISL.EntidadesWCF.xml</DocumentationFile>
+    <DocumentationFile>ERP.EntidadesWCF.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -269,6 +269,7 @@
     <Content Include="General\e_ConceptoPonderado.svc" />
     <Content Include="General\e_DetalleConceptoPonderado.svc" />
     <Content Include="General\e_EmpresaAportacion.svc" />
+    <Content Include="General\e_EmpresaSistemas.svc" />
     <Content Include="General\e_Flota_Cuota.svc" />
     <Content Include="General\e_Flota_Trabajador.svc" />
     <Content Include="General\e_Icono.svc" />
@@ -1230,6 +1231,9 @@
     </Compile>
     <Compile Include="Finanzas\RefactorizarFinanzas\Ie_ContratoFinanciero.vb" />
     <Compile Include="Finanzas\RefactorizarFinanzas\Ie_ObligacionFin.vb" />
+    <Compile Include="General\e_EmpresaSistemas.svc.vb">
+      <DependentUpon>e_EmpresaSistemas.svc</DependentUpon>
+    </Compile>
     <Compile Include="General\e_Flota_Cuota.svc.vb">
       <DependentUpon>e_Flota_Cuota.svc</DependentUpon>
     </Compile>
@@ -1305,6 +1309,7 @@
     <Compile Include="General\Ie_ConceptoPonderado.vb" />
     <Compile Include="General\Ie_DetalleConceptoPonderado.vb" />
     <Compile Include="General\Ie_EmpresaAportacion.vb" />
+    <Compile Include="General\Ie_EmpresaSistemas.vb" />
     <Compile Include="General\Ie_Flota_Cuota.vb" />
     <Compile Include="General\Ie_Flota_Trabajador.vb" />
     <Compile Include="General\Ie_Icono.vb" />

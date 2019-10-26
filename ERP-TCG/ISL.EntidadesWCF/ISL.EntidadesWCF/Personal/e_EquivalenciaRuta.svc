@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_EquivalenciaRuta" CodeBehind="e_EquivalenciaRuta.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_EquivalenciaRuta" CodeBehind="e_EquivalenciaRuta.svc.vb" %>

@@ -1,23 +1,19 @@
-﻿Imports ISL.EntidadesWCF
-''' <summary>
-''' Clase que gestiona los detalles de tipo de gastos.
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla TipoGastoDetalle,Capa del Sistema: Capa de Acceso a Datos.</remarks>
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 
 Public Class d_TipoGastoDetalle
     Private sqlhelper As New SqlHelper
 
     Private oeTipoGastoDetalle As e_TipoGastoDetalle
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_TipoGastoDetalle y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeTipoGastodetalle) de tipo e_TipoGastoDetalle</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_TipoGastoDetalle
         Try
             Dim oeTipoGastodetalle = New e_TipoGastoDetalle( _
@@ -29,14 +25,7 @@ Public Class d_TipoGastoDetalle
 
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un detalle de tipo de gasto, el cual es consultado por el procedimiento almacenado TES.Isp_TipoGastoDetalle_Listar
-    ''' enviando su id del detalle del tipo de gasto.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_TipoGastoDetalle.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeTipoGastodetalle">Recibe una variable oeTipoGastodetalle de tipo e_TipoGastoDetalle</param>
-    ''' <returns>Devuelve una varible oeTipoGastodetalle de tipo e_TipoGastoDetalle</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Obtener(ByVal oeTipoGastodetalle As e_TipoGastoDetalle) As e_TipoGastoDetalle
         Try
             Dim ds As DataSet
@@ -51,14 +40,7 @@ Public Class d_TipoGastoDetalle
             Throw
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_TipoGastoDetalle, el cual es consultado por el procedimiento almacenado TES.Isp_TipoGastoDetalle_Listar
-    ''' enviando sus atributos del detalle del tipo de gasto.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeTipoGastoDetalle">Recibe una Variable oeTipoGasto de tipo </param>
-    ''' <returns>Devuelve una lista generica(ldTipoGastoDetalle) de objetos de tipo e_TipoGastoDetalle</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
 
     Public Function Listar(ByVal oeTipoGastodetalle As e_TipoGastoDetalle) As List(Of e_TipoGastoDetalle)
         Try
@@ -82,19 +64,10 @@ Public Class d_TipoGastoDetalle
             Throw
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del detalle tipo de gastos ,a travez del procedimiento almacenado
-    ''' TES.Isp_TipoGastoDetalle_IAE,por el cual van a ser enviados y registrados los datos del detalle de tipo de gastos y
-    ''' obtendremos una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeTipoGastoDetalle">Recibe una variable oeTipoGastoDetalle de tipo e_TipoGastoDetalle</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I",Si la confirmacion del registro de
-    '''  tipo de gasto es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Guardar(ByVal oeTipoGastoDetalle As e_TipoGastoDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
 
             With oeTipoGastoDetalle
                 sqlhelper.ExecuteNonQuery("TES.Isp_TipoGastoDetalle_IAE", "I", _
@@ -106,15 +79,7 @@ Public Class d_TipoGastoDetalle
             Return False
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del detalle tipo de gasto,a travez del procedimiento almacenado
-    ''' TES.Isp_TipoGastoDetalle_IAE,por el cual va a ser enviado el id del detalle tipo de gasto a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeTipoGasto">Recibe una variable oeTipoGasto de tipo objeto e_TipoGastoDetalle</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
 
     Public Function Eliminar(ByVal oeTipoGasto As e_TipoGastoDetalle) As Boolean
         Try

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_CuentaAsociada
 
     Dim odCuentaAsociada As New d_CuentaAsociada
 
-    Public Function Eliminar(ByVal oeCuentaAsociada As EntidadesWCF.e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Eliminar
+    Public Function Eliminar(ByVal oeCuentaAsociada As e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Eliminar
         Try
             Return odCuentaAsociada.Eliminar(oeCuentaAsociada)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_CuentaAsociada
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaAsociada As EntidadesWCF.e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Guardar
+    Public Function Guardar(ByVal oeCuentaAsociada As e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Guardar
         Try
             If Validar(oeCuentaAsociada) Then
                 Return odCuentaAsociada.Guardar(oeCuentaAsociada)
@@ -26,7 +26,7 @@ Public Class l_CuentaAsociada
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaAsociada As EntidadesWCF.e_CuentaAsociada) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaAsociada) Implements Il_CuentaAsociada.Listar
+    Public Function Listar(ByVal oeCuentaAsociada As e_CuentaAsociada) As System.Collections.Generic.List(Of e_CuentaAsociada) Implements Il_CuentaAsociada.Listar
         Try
             Return odCuentaAsociada.Listar(oeCuentaAsociada)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_CuentaAsociada
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaAsociada As EntidadesWCF.e_CuentaAsociada) As EntidadesWCF.e_CuentaAsociada Implements Il_CuentaAsociada.Obtener
+    Public Function Obtener(ByVal oeCuentaAsociada As e_CuentaAsociada) As e_CuentaAsociada Implements Il_CuentaAsociada.Obtener
         Try
             Return odCuentaAsociada.Obtener(oeCuentaAsociada)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_CuentaAsociada
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaAsociada As EntidadesWCF.e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Validar
+    Public Function Validar(ByVal oeCuentaAsociada As e_CuentaAsociada) As Boolean Implements Il_CuentaAsociada.Validar
         Try
             With oeCuentaAsociada
                 '---------VALIDARRRRRRRRRR-------------

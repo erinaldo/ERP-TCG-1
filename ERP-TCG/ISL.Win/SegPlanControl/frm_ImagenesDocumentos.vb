@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
 Imports System.IO
@@ -19,7 +19,7 @@ Imports System.Data
 Imports System.Text
 
 Public Class frm_ImagenesDocumentos
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 
 #Region "Inicialización del formulario"
@@ -848,7 +848,7 @@ Public Class frm_ImagenesDocumentos
 
             If gridEnviarBaja.Rows.Where(Function(g) g.Cells("Select").Value = True).Count < 1 Then Throw New Exception("Debe seleccionar más de 1 registro a dar de baja")
 
-            ticket = olMovDocumento.GenerarXmlComprobantesBaja(ObtenerComprobantesEnviar(), Date.Now, RutaArchivos, gUsuarioSGI.Id)
+            ticket = olMovDocumento.GenerarXmlComprobantesBaja(ObtenerComprobantesEnviar(), Date.Now, RutaArchivos, gUsuarioSGI.Id, gs_PrefijoIdSucursal)
 
             mensajeEmergente.Problema("Comprobantes declarados de baja, el numero de ticket es:" & ticket & ". Ticket Aceptado.", True)
 
@@ -873,7 +873,7 @@ Public Class frm_ImagenesDocumentos
 
             If gridTicket.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 ticket")
             Dim ticket As String = gridTicket.ActiveRow.Cells("Ticket").Value
-            olMovDocumento.EnviarXMLGetStatus(RutaArchivos, ticket)
+            olMovDocumento.EnviarXMLGetStatus(RutaArchivos, ticket, gs_PrefijoIdSucursal)
             'dtAux = factura1Obj.BuscarComprobantes(ticket)
             'For Each drFila As DataRow In dtAux.Rows
             '    ids &= "'" & drFila.Item("id_documento") & "',"
@@ -1211,7 +1211,7 @@ Public Class frm_ImagenesDocumentos
                 DT.ImportRow(dsComprobante.Tables(0).Rows(0))
 
             Next
-            ticket = olMovDocumento.GenerarXmlFacturaElectronicaBath_2018(ObtenerComprobantesBath(DT), DT, fecDesde.Value, RutaArchivos, gUsuarioSGI.Id, b_Baja)
+            ticket = olMovDocumento.GenerarXmlFacturaElectronicaBath_2018(ObtenerComprobantesBath(DT), DT, fecDesde.Value, RutaArchivos, gUsuarioSGI.Id, b_Baja, gs_PrefijoIdSucursal)
             If b_Baja Then
                 mensajeEmergente.Confirmacion("Comprobantes declarados, Ticket Aceptado Nº" & ticket & ".")
             Else
@@ -1237,7 +1237,7 @@ Public Class frm_ImagenesDocumentos
                 Cursor.Show()
                 If gridTicket.Selected.Rows.Count = 0 Then Throw New Exception("Debe seleccionar 1 Ticket para consultar.")
                 Dim ticket As String = gridTicket.ActiveRow.Cells("Ticket").Value
-                olMovDocumento.EnviarXMLGetStatus(RutaArchivos, ticket)
+                olMovDocumento.EnviarXMLGetStatus(RutaArchivos, ticket, gs_PrefijoIdSucursal)
                 mensajeEmergente.Confirmacion("Comprobante aceptado por la SUNAT.")
                 ugb_Espera.Visible = False
             ElseIf ficImgDocVeh.SelectedTab.Index = 1 Then

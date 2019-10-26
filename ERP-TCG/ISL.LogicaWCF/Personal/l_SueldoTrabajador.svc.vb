@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -44,7 +44,7 @@ Public Class l_SueldoTrabajador
         Return SueTra
     End Function
 
-    Public Function Eliminar(ByVal oeSueldoTrabajador As EntidadesWCF.e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Eliminar
+    Public Function Eliminar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Eliminar
         Try
             Return odSueldoTrabajador.Eliminar(oeSueldoTrabajador)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeSueldoTrabajador As EntidadesWCF.e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Guardar
+    Public Function Guardar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Guardar
         Try
             If Validar(oeSueldoTrabajador) Then
                 Return odSueldoTrabajador.Guardar(oeSueldoTrabajador)
@@ -62,7 +62,7 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leSueldoTrabajador As System.Collections.Generic.List(Of EntidadesWCF.e_SueldoTrabajador), ByVal PrefijoID As String) As Boolean Implements Il_SueldoTrabajador.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leSueldoTrabajador As System.Collections.Generic.List(Of e_SueldoTrabajador), ByVal PrefijoID As String) As Boolean Implements Il_SueldoTrabajador.GuardarMasivo
         Try
             Dim dtST As Data.DataTable = CrearDT()
             Dim id As String = odSueldoTrabajador.UltimoIdInserta(PrefijoID)
@@ -94,7 +94,7 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function Listar(ByVal oeSueldoTrabajador As EntidadesWCF.e_SueldoTrabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_SueldoTrabajador) Implements Il_SueldoTrabajador.Listar
+    Public Function Listar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As System.Collections.Generic.List(Of e_SueldoTrabajador) Implements Il_SueldoTrabajador.Listar
         Try
             Return odSueldoTrabajador.Listar(oeSueldoTrabajador)
         Catch ex As Exception
@@ -102,7 +102,7 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeSueldoTrabajador As EntidadesWCF.e_SueldoTrabajador) As EntidadesWCF.e_SueldoTrabajador Implements Il_SueldoTrabajador.Obtener
+    Public Function Obtener(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As e_SueldoTrabajador Implements Il_SueldoTrabajador.Obtener
         Try
             Return odSueldoTrabajador.Obtener(oeSueldoTrabajador)
         Catch ex As Exception
@@ -110,7 +110,7 @@ Public Class l_SueldoTrabajador
         End Try
     End Function
 
-    Public Function Validar(ByVal oeSueldoTrabajador As EntidadesWCF.e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Validar
+    Public Function Validar(ByVal oeSueldoTrabajador As e_SueldoTrabajador) As Boolean Implements Il_SueldoTrabajador.Validar
         Try
             With oeSueldoTrabajador
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "No ha Ingresado Trabajador")

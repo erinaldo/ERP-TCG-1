@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -28,7 +28,7 @@ Imports Microsoft.VisualBasic
 Imports Microsoft.Office.Interop
 
 Public Class frm_Seguimiento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 
@@ -593,8 +593,8 @@ Public Class frm_Seguimiento
             LlenaCombos()
             ComboGrilla()
             ControlRangoFechaInicializa()
-            cboCentro.Value = Prefijo.PrefijoID
-            cboCentroImportar.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
+            cboCentroImportar.Value = gs_PrefijoIdSucursal '@0001
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -2931,8 +2931,8 @@ Public Class frm_Seguimiento
             oeCombo.Id = Destino
             oeCombo.Nombre = Cliente
             LlenarComboMaestro(cboLugarTienda, olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList, 0)
-
-            If Prefijo.PrefijoID = "1LU" Or Prefijo.PrefijoID = "1LI" Then
+            '@0001
+            If gs_PrefijoIdSucursal = "1LU" Or gs_PrefijoIdSucursal = "1LI" Then
                 oeCliente.Id = ""
             End If
 

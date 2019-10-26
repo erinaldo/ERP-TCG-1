@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Microsoft.Reporting.WinForms
 
 Public Class frm_ReporteBasico
@@ -73,7 +73,8 @@ Public Class frm_ReporteBasico
         Try
             Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
             Dim olConfiguracion As New l_Configuracion
-            If olConfiguracion.PrefijoID = "1PY" Then
+            '@0001
+            If gs_PrefijoIdSucursal = "1PY" Then
                 ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
             Else
                 ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")

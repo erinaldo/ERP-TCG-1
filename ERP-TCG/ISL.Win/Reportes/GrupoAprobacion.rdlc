@@ -32,15 +32,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="image1">
-        <Source>Embedded</Source>
-        <Value>logo_induamerica_pequeño</Value>
-        <MIMEType>image/jpeg</MIMEType>
-        <Height>1.50794cm</Height>
-        <Width>1.34921cm</Width>
-        <ZIndex>1</ZIndex>
-        <Style />
-      </Image>
       <Textbox Name="textbox1">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -65,7 +56,7 @@
         <Left>1.75cm</Left>
         <Height>0.5cm</Height>
         <Width>10.25cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -96,7 +87,7 @@
         <Left>13.75cm</Left>
         <Height>0.5cm</Height>
         <Width>3.25cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -127,7 +118,7 @@
         <Left>12.5cm</Left>
         <Height>0.5cm</Height>
         <Width>1.25cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -441,7 +432,7 @@
         <Top>1.75cm</Top>
         <Height>1.5cm</Height>
         <Width>17.02643cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <FontSize>8.5pt</FontSize>
         </Style>
@@ -468,7 +459,7 @@
         <Top>3.5cm</Top>
         <Height>0.5cm</Height>
         <Width>4.75cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -499,7 +490,7 @@
         <Left>12.25cm</Left>
         <Height>0.5cm</Height>
         <Width>1.5cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -529,7 +520,7 @@
         <Left>13.75cm</Left>
         <Height>0.5cm</Height>
         <Width>3.25cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -542,7 +533,7 @@
         <Left>11.5cm</Left>
         <Height>0cm</Height>
         <Width>5.25926cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -554,7 +545,7 @@
         <Left>5.75cm</Left>
         <Height>0cm</Height>
         <Width>5.25926cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -566,7 +557,7 @@
         <Left>0.25cm</Left>
         <Height>0cm</Height>
         <Width>5.25926cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -596,7 +587,7 @@
         <Left>1.5cm</Left>
         <Height>0.5cm</Height>
         <Width>3.25cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -628,7 +619,7 @@
         <Left>4.75cm</Left>
         <Height>0.5cm</Height>
         <Width>3cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -659,7 +650,7 @@
         <Left>0.25cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>14</ZIndex>
+        <ZIndex>13</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -690,7 +681,7 @@
         <Left>5.75cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>15</ZIndex>
+        <ZIndex>14</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -721,7 +712,7 @@
         <Left>11.5cm</Left>
         <Height>0.63492cm</Height>
         <Width>5.25cm</Width>
-        <ZIndex>16</ZIndex>
+        <ZIndex>15</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -752,7 +743,7 @@
         <Left>8.25cm</Left>
         <Height>0.5cm</Height>
         <Width>1.75cm</Width>
-        <ZIndex>17</ZIndex>
+        <ZIndex>16</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -783,7 +774,7 @@
         <Left>10cm</Left>
         <Height>0.5cm</Height>
         <Width>2cm</Width>
-        <ZIndex>18</ZIndex>
+        <ZIndex>17</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -810,7 +801,7 @@
         <Left>7.43162cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
-        <ZIndex>19</ZIndex>
+        <ZIndex>18</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>

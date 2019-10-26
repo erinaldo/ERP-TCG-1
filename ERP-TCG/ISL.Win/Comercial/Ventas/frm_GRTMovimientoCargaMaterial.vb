@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win.UltraWinGrid
 Public Class frm_GRTMovimientoCargaMaterial
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion del Formulario"
 
@@ -239,7 +239,7 @@ Public Class frm_GRTMovimientoCargaMaterial
             LlenaCombos()
             ComboGrilla()
             ControlRangoFechaInicializa()
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             ListaStockAlmacenes()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

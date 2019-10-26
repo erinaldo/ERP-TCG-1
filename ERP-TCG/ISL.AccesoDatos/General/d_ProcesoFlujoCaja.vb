@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Public Class d_ProcesoFlujoCaja
     Private sqlhelper As New SqlHelper
@@ -36,7 +36,7 @@ Public Class d_ProcesoFlujoCaja
             End If
 
 
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            '
             'Dim IdProcesoNegocio As String = oeProcesoFlujoCaja.IdProcesoNegocio
             ''Dim ds As DataSet
             ''ds = sqlhelper.ExecuteDataset("STD.Isp_ProcesoFlujoCaja_Listar", "", oeProcesoFlujoCaja.Id)

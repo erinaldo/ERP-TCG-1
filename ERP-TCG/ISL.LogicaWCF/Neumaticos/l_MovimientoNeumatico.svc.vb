@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_MovimientoNeumatico
 
     Dim odMovimientoNeumatico As New d_MovimientoNeumatico
 
-    Public Function Eliminar(ByVal oeMovimientoNeumatico As EntidadesWCF.e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Eliminar
+    Public Function Eliminar(ByVal oeMovimientoNeumatico As e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Eliminar
         Try
             Return odMovimientoNeumatico.Eliminar(oeMovimientoNeumatico)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_MovimientoNeumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoNeumatico As EntidadesWCF.e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Guardar
+    Public Function Guardar(ByVal oeMovimientoNeumatico As e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Guardar
         Try
             If Validar(oeMovimientoNeumatico) Then
                 Return odMovimientoNeumatico.Guardar(oeMovimientoNeumatico)
@@ -34,7 +34,7 @@ Public Class l_MovimientoNeumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMovimientoNeumatico As EntidadesWCF.e_MovimientoNeumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoNeumatico) Implements Il_MovimientoNeumatico.Listar
+    Public Function Listar(ByVal oeMovimientoNeumatico As e_MovimientoNeumatico) As System.Collections.Generic.List(Of e_MovimientoNeumatico) Implements Il_MovimientoNeumatico.Listar
         Try
             Return odMovimientoNeumatico.Listar(oeMovimientoNeumatico)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MovimientoNeumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeVidaNeumatico_Motivo As EntidadesWCF.e_MovimientoNeumatico) As EntidadesWCF.e_MovimientoNeumatico Implements Il_MovimientoNeumatico.Obtener
+    Public Function Obtener(ByVal oeVidaNeumatico_Motivo As e_MovimientoNeumatico) As e_MovimientoNeumatico Implements Il_MovimientoNeumatico.Obtener
         Try
             Return odMovimientoNeumatico.Obtener(oeVidaNeumatico_Motivo)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_MovimientoNeumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovimientoNeumatico As EntidadesWCF.e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Validar
+    Public Function Validar(ByVal oeMovimientoNeumatico As e_MovimientoNeumatico) As Boolean Implements Il_MovimientoNeumatico.Validar
         Try
             With oeMovimientoNeumatico
                 '---------VALIDARRRRRRRRRR-------------

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_UnidadMedida
     Private odUnidadMedida As New d_UnidadMedida
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As Object Implements Il_UnidadMedida.ComboGrilla
+    Public Function ComboGrilla(ByVal oeUnidadMedida As e_UnidadMedida) As Object Implements Il_UnidadMedida.ComboGrilla
         Try
             Return odUnidadMedida.ComboGrilla(oeUnidadMedida)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Eliminar
+    Public Function Eliminar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Eliminar
         Try
             Return odUnidadMedida.Eliminar(oeUnidadMedida)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Guardar
+    Public Function Guardar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Guardar
         Try
             If Validar(oeUnidadMedida) Then
                 Return odUnidadMedida.Guardar(oeUnidadMedida)
@@ -43,7 +43,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function Listar(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As System.Collections.Generic.List(Of EntidadesWCF.e_UnidadMedida) Implements Il_UnidadMedida.Listar
+    Public Function Listar(ByVal oeUnidadMedida As e_UnidadMedida) As System.Collections.Generic.List(Of e_UnidadMedida) Implements Il_UnidadMedida.Listar
         Try
             Return odUnidadMedida.Listar(oeUnidadMedida)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function ListarD(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As System.Data.DataSet Implements Il_UnidadMedida.ListarD
+    Public Function ListarD(ByVal oeUnidadMedida As e_UnidadMedida) As System.Data.DataSet Implements Il_UnidadMedida.ListarD
         Try
             Return odUnidadMedida.ListarD(oeUnidadMedida)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As EntidadesWCF.e_UnidadMedida Implements Il_UnidadMedida.Obtener
+    Public Function Obtener(ByVal oeUnidadMedida As e_UnidadMedida) As e_UnidadMedida Implements Il_UnidadMedida.Obtener
         Try
             Return odUnidadMedida.Obtener(oeUnidadMedida)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_UnidadMedida
         End Try
     End Function
 
-    Public Function Validar(ByVal oeUnidadMedida As EntidadesWCF.e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Validar
+    Public Function Validar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean Implements Il_UnidadMedida.Validar
         Try
             With oeUnidadMedida
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_RegimenPensionario
     Private odRegimenPensionario As New d_RegimenPensionario
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeRegimenPensionario As EntidadesWCF.e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Eliminar
+    Public Function Eliminar(ByVal oeRegimenPensionario As e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Eliminar
         Try
             Return odRegimenPensionario.Eliminar(oeRegimenPensionario)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeRegimenPensionario As EntidadesWCF.e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Guardar
+    Public Function Guardar(ByVal oeRegimenPensionario As e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Guardar
         Try
             If Validar(oeRegimenPensionario) Then
                 Return odRegimenPensionario.Guardar(oeRegimenPensionario)
@@ -35,7 +35,7 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeRegimenPensionario As EntidadesWCF.e_RegimenPensionario) As System.Collections.Generic.List(Of EntidadesWCF.e_RegimenPensionario) Implements Il_RegimenPensionario.Listar
+    Public Function Listar(ByVal oeRegimenPensionario As e_RegimenPensionario) As System.Collections.Generic.List(Of e_RegimenPensionario) Implements Il_RegimenPensionario.Listar
         Try
             Return odRegimenPensionario.Listar(oeRegimenPensionario)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRegimenPensionario As EntidadesWCF.e_RegimenPensionario) As EntidadesWCF.e_RegimenPensionario Implements Il_RegimenPensionario.Obtener
+    Public Function Obtener(ByVal oeRegimenPensionario As e_RegimenPensionario) As e_RegimenPensionario Implements Il_RegimenPensionario.Obtener
         Try
             Return odRegimenPensionario.Obtener(oeRegimenPensionario)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRegimenPensionario As EntidadesWCF.e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Validar
+    Public Function Validar(ByVal oeRegimenPensionario As e_RegimenPensionario) As Boolean Implements Il_RegimenPensionario.Validar
         Try
             With oeRegimenPensionario
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdEmpresa, "No ha Ingresado Empresa")
@@ -63,7 +63,7 @@ Public Class l_RegimenPensionario
         End Try
     End Function
 
-    Public Function GuardarMasivo(ByVal leRegimenPensionario As System.Collections.Generic.List(Of EntidadesWCF.e_RegimenPensionario), ByVal PrefijoID As String) As Boolean Implements Il_RegimenPensionario.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leRegimenPensionario As System.Collections.Generic.List(Of e_RegimenPensionario), ByVal PrefijoID As String) As Boolean Implements Il_RegimenPensionario.GuardarMasivo
         Try
             Dim dtRP As Data.DataTable = CrearDT()
             Dim id As String = odRegimenPensionario.UltimoIdInserta(PrefijoID)

@@ -1,7 +1,7 @@
 ﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_GradoIncidencia" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_GradoIncidencia.svc o l_GradoIncidencia.svc.vb en el Explorador de soluciones e inicie la depuración.
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 
 Public Class l_GradoIncidencia
     Implements Il_GradoIncidencia

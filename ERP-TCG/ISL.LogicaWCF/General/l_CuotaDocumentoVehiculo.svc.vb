@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_CuotaDocumentoVehiculo
@@ -15,7 +15,7 @@ Public Class l_CuotaDocumentoVehiculo
         End Try
     End Function
 
-    Public Function ListarDts(ByVal oeCuotaDocVeh As EntidadesWCF.e_CuotaDocumentoVehiculo) As System.Data.DataSet Implements Il_CuotaDocumentoVehiculo.ListarDts
+    Public Function ListarDts(ByVal oeCuotaDocVeh As e_CuotaDocumentoVehiculo) As System.Data.DataSet Implements Il_CuotaDocumentoVehiculo.ListarDts
         Try
             Dim dts As New DataSet
             dts = odCuotaDocumentoVehiculo.ListarDts(oeCuotaDocVeh)

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -24,7 +24,7 @@ Public Class l_Orden
     Dim odOrdTraMat As d_OrdenTrabajo_Material
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeOrden As EntidadesWCF.e_Orden) As Boolean Implements Il_Orden.Eliminar
+    Public Function Eliminar(oeOrden As e_Orden) As Boolean Implements Il_Orden.Eliminar
         Try
             odOrden = New d_Orden
             Return odOrden.Eliminar(oeOrden)
@@ -33,7 +33,7 @@ Public Class l_Orden
         End Try
     End Function
 
-    Public Function Guardar(oeOrden As EntidadesWCF.e_Orden, lstRegInventario As List(Of e_RegistroInventario)) As Boolean Implements Il_Orden.Guardar
+    Public Function Guardar(oeOrden As e_Orden, lstRegInventario As List(Of e_RegistroInventario)) As Boolean Implements Il_Orden.Guardar
         Try
             Dim oeAsientoModelo As New e_AsientoModelo
             Dim oeAsiento As New e_Asiento
@@ -229,7 +229,7 @@ Public Class l_Orden
         End Try
     End Sub
 
-    'Public Function GuardarOrdenSalidaPorRequerimiento(ByVal oeOrden As EntidadesWCF.e_Orden) As String Implements Il_Orden.GuardarOrdenSalidaPorRequerimiento
+    'Public Function GuardarOrdenSalidaPorRequerimiento(ByVal oeOrden As e_Orden) As String Implements Il_Orden.GuardarOrdenSalidaPorRequerimiento
     '    Try
     '        odOrden = New d_Orden
     '        Validar(oeOrden)
@@ -239,7 +239,7 @@ Public Class l_Orden
     '    End Try
     'End Function
 
-    Public Function Listar(ByVal oeOrden As EntidadesWCF.e_Orden) As System.Collections.Generic.List(Of EntidadesWCF.e_Orden) Implements Il_Orden.Listar
+    Public Function Listar(ByVal oeOrden As e_Orden) As System.Collections.Generic.List(Of e_Orden) Implements Il_Orden.Listar
         Try
             odOrden = New d_Orden
             Return odOrden.Listar(oeOrden)
@@ -248,7 +248,7 @@ Public Class l_Orden
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrden As EntidadesWCF.e_Orden) As EntidadesWCF.e_Orden Implements Il_Orden.Obtener
+    Public Function Obtener(ByVal oeOrden As e_Orden) As e_Orden Implements Il_Orden.Obtener
         Try
             odOrden = New d_Orden
             If Not oeOrden.TipoOrden Is Nothing Then
@@ -268,7 +268,7 @@ Public Class l_Orden
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrden As EntidadesWCF.e_Orden) As Boolean Implements Il_Orden.Validar
+    Public Function Validar(ByVal oeOrden As e_Orden) As Boolean Implements Il_Orden.Validar
         Try
             With oeOrden
                 'Dim odMovInvAlmacen As New d_MovimientoInventarioAlmacen
@@ -298,7 +298,7 @@ Public Class l_Orden
         End Try
     End Function
 
-    Public Sub ValidarProveedor(ByVal oeOrden As EntidadesWCF.e_Orden) Implements Il_Orden.ValidarProveedor
+    Public Sub ValidarProveedor(ByVal oeOrden As e_Orden) Implements Il_Orden.ValidarProveedor
         Try
             Dim oeProveedor As New e_Proveedor, olProveedor As New l_Proveedor
             oeProveedor.TipoOperacion = ""

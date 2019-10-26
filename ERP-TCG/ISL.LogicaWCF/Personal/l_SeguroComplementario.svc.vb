@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_SeguroComplementario
     Private odSeguroComplementario As New d_SeguroComplementrio
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeSeguroComplementario As EntidadesWCF.e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Eliminar
+    Public Function Eliminar(oeSeguroComplementario As e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Eliminar
         Try
             Return odSeguroComplementario.Eliminar(oeSeguroComplementario)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_SeguroComplementario
         End Try
     End Function
 
-    Public Function Guardar(oeSeguroComplementario As EntidadesWCF.e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Guardar
+    Public Function Guardar(oeSeguroComplementario As e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Guardar
         Try
             If Validar(oeSeguroComplementario) Then
                 Return odSeguroComplementario.Guardar(oeSeguroComplementario)
@@ -27,7 +27,7 @@ Public Class l_SeguroComplementario
         End Try
     End Function
 
-    Public Function Listar(oeSeguroComplementario As EntidadesWCF.e_SeguroComplementario) As List(Of EntidadesWCF.e_SeguroComplementario) Implements Il_SeguroComplementario.Listar
+    Public Function Listar(oeSeguroComplementario As e_SeguroComplementario) As List(Of e_SeguroComplementario) Implements Il_SeguroComplementario.Listar
         Try
             Return odSeguroComplementario.Listar(oeSeguroComplementario)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_SeguroComplementario
         End Try
     End Function
 
-    Public Function Obtener(oeSeguroComplementario As EntidadesWCF.e_SeguroComplementario) As EntidadesWCF.e_SeguroComplementario Implements Il_SeguroComplementario.Obtener
+    Public Function Obtener(oeSeguroComplementario As e_SeguroComplementario) As e_SeguroComplementario Implements Il_SeguroComplementario.Obtener
         Try
             Return odSeguroComplementario.Obtener(oeSeguroComplementario)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_SeguroComplementario
         End Try
     End Function
 
-    Public Function Validar(oeSeguroComplementario As EntidadesWCF.e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Validar
+    Public Function Validar(oeSeguroComplementario As e_SeguroComplementario) As Boolean Implements Il_SeguroComplementario.Validar
         Try
             With oeSeguroComplementario
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

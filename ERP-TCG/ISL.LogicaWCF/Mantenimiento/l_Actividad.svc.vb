@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Actividad
     Dim odActividad As New d_Actividad
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeActividad As EntidadesWCF.e_Actividad) As Boolean Implements Il_Actividad.Eliminar
+    Public Function Eliminar(ByVal oeActividad As e_Actividad) As Boolean Implements Il_Actividad.Eliminar
         Try
             Return odActividad.Eliminar(oeActividad)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Actividad
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeActividad As EntidadesWCF.e_Actividad) As Boolean Implements Il_Actividad.Guardar
+    Public Function Guardar(ByVal oeActividad As e_Actividad) As Boolean Implements Il_Actividad.Guardar
         Try
             If Validar(oeActividad) Then
                 Return odActividad.Guardar(oeActividad)
@@ -35,7 +35,7 @@ Public Class l_Actividad
         End Try
     End Function
 
-    Public Function Listar(ByVal oeActividad As EntidadesWCF.e_Actividad) As System.Collections.Generic.List(Of EntidadesWCF.e_Actividad) Implements Il_Actividad.Listar
+    Public Function Listar(ByVal oeActividad As e_Actividad) As System.Collections.Generic.List(Of e_Actividad) Implements Il_Actividad.Listar
         Try
             Return odActividad.Listar(oeActividad)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_Actividad
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeActividad As EntidadesWCF.e_Actividad) As EntidadesWCF.e_Actividad Implements Il_Actividad.Obtener
+    Public Function Obtener(ByVal oeActividad As e_Actividad) As e_Actividad Implements Il_Actividad.Obtener
         Try
             Return odActividad.Obtener(oeActividad)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Actividad
         End Try
     End Function
 
-    Public Function Validar(ByVal oeActividad As EntidadesWCF.e_Actividad) As Boolean Implements Il_Actividad.Validar
+    Public Function Validar(ByVal oeActividad As e_Actividad) As Boolean Implements Il_Actividad.Validar
         Try
             With oeActividad
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar nombre")

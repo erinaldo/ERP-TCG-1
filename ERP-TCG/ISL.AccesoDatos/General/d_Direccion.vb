@@ -6,13 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
-''' <summary>
-''' Clase parcial de lo que es ubigeo para acceder a la información de los Direccions.
-''' Fecha de Actualizacion:17/11/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Ubigeo,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 Public Class d_Direccion
 
     Private sqlhelper As New SqlHelper

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -93,11 +101,10 @@ Public Class d_ConfiguracionTabla
 
     Public Function Guardar(ByVal oeConfiguracionTabla As e_ConfiguracionTabla) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim id As String = ""
             Using TransScope As New TransactionScope()
                 With oeConfiguracionTabla
-                    id = sqlhelper.ExecuteScalar("STD.Isp_ConfiguracionTabla_IAE", .TipoOperacion, .PrefijoID, _
+                    id = sqlhelper.ExecuteScalar("STD.Isp_ConfiguracionTabla_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .Esquema _
                             , .Codigo _
@@ -111,11 +118,11 @@ Public Class d_ConfiguracionTabla
                             , .IndTipo _
                             , .UsuarioCreacion _
                             , .UsuarioModifica _
-                            , .Activo _
+                            , .Activo
                         )
                     For Each oeCCol In .leColumna.Where(Function(it) it.TipoOperacion.Trim <> "").ToList
                         oeCCol.IdTabla = id
-                        oeCCol.PrefijoID = .PrefijoID '@0001
+                        oeCCol.PrefijoID = oeConfiguracionTabla.PrefijoID '@0001
                         If oeCCol.TipoOperacion = "E" Then
                             odConfColumna.Eliminar(oeCCol)
                         Else
@@ -123,14 +130,14 @@ Public Class d_ConfiguracionTabla
                         End If
                     Next
                     For Each oeCDat In .leDato.Where(Function(it) it.TipoOperacion.Trim <> "" And it.TipoOperacion.Trim <> "I").ToList
-                        oeCDat.PrefijoID = .PrefijoID '@0001
+                        oeCDat.PrefijoID = oeConfiguracionTabla.PrefijoID '@0001
                         If oeCDat.TipoOperacion = "E" Then odConfDato.Eliminar(oeCDat)
                         If oeCDat.TipoOperacion = "A" Then odConfDato.Guardar(oeCDat)
                     Next
                     If .dsCDato.Rows.Count > 0 Then odConfDato.GuardarMasivo(.dsCDato)
                     oeConfDato = New e_ConfiguracionDato
                     oeConfDato.TipoOperacion = "C" : oeConfDato.Activo = True : oeConfDato.IdReferencia = .Id
-                    oeConfDato.PrefijoID = .PrefijoID '@0001
+                    oeConfDato.PrefijoID = oeConfiguracionTabla.PrefijoID '@0001
                     odConfDato.Guardar(oeConfDato)
                 End With
                 TransScope.Complete()

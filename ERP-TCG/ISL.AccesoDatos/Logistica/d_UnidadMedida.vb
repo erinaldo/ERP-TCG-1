@@ -6,25 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-''' <summary>
-''' Clase que se encarga de gestionar las unidades de medidad de los articulos en almacen 
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla UnidadMedida,Capa del Sistema: Capa de Acceso a Datos.</remarks>
+Imports ERP.EntidadesWCF
 
 Public Class d_UnidadMedida
     Private sqlhelper As New SqlHelper
 
     Private oeUnidadMedida As New e_UnidadMedida
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_UnidadMedida y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeUnidadMedida) de tipo e_UnidadMedida</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Cargar(ByVal fila As DataRow) As e_UnidadMedida
         Try
@@ -43,14 +30,6 @@ Public Class d_UnidadMedida
             Throw ex
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que obtiene una unidad de medida, el cual es consultado por el procedimiento almacenado ALM.Isp_UnidadMedida_Listar
-    ''' enviando su id del tipo de unidad de medida.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_UnidadMedida.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUnidadMedida">Recibe una variable oeUnidadMedida de tipo e_UnidadMedida</param>
-    ''' <returns>Devuelve una varible oeUnidadMedida de tipo e_UnidadMedida</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Obtener(ByVal oeUnidadMedida As e_UnidadMedida) As e_UnidadMedida
         Try
@@ -75,30 +54,21 @@ Public Class d_UnidadMedida
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_UnidadMedida, el cual es consultado por el procedimiento almacenado ALM.Isp_UnidadMedida_Listar
-    ''' enviando sus atributos de la unidad de medida.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUnidadMedida">Recibe una Variable oeUnidadMedida de tipo e_UnidadMedida</param>
-    ''' <returns>Devuelve una lista generica(lista) de objetos de tipo e_UnidadMedida</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
-
     Public Function Listar(ByVal oeUnidadMedida As e_UnidadMedida) As List(Of e_UnidadMedida)
         Try
             Dim ds As New DataSet
             Dim lista As New List(Of e_UnidadMedida)
             With oeUnidadMedida
-                ds = sqlhelper.ExecuteDataset("ALM.Isp_UnidadMedida_Listar", _
-                                              .TipoOperacion, _
-                                              .Id, _
-                                              .Codigo, _
-                                              .Nombre, _
-                                              .Abreviatura, _
-                                              .Activo, _
-                                              .IdTipoUnidadMedida, _
-                                              .Factor, _
-                                              .Base, _
+                ds = sqlhelper.ExecuteDataset("ALM.Isp_UnidadMedida_Listar",
+                                              .TipoOperacion,
+                                              .Id,
+                                              .Codigo,
+                                              .Nombre,
+                                              .Abreviatura,
+                                              .Activo,
+                                              .IdTipoUnidadMedida,
+                                              .Factor,
+                                              .Base,
                                               .Asignado)
             End With
             If ds.Tables.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then
@@ -136,17 +106,6 @@ Public Class d_UnidadMedida
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar la unidad de medida,a travez del procedimiento almacenado
-    ''' ALM.Isp_UnidadMedida_IAE,por el cual van a ser enviados y registrados los datos del tipo de material y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUnidadMedida">Recibe una variable oeUnidadMedida de tipo e_UnidadMedida </param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro 
-    ''' de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
-
     Public Function Guardar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean
         Try
             With oeUnidadMedida
@@ -169,15 +128,6 @@ Public Class d_UnidadMedida
             Return False
         End Try
     End Function
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar una unidad de medida,a travez del procedimiento almacenado
-    ''' ALM.Isp_UnidadMedida_IAE,por el cual va a ser enviado el id de la unidad de medida, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUnidadMedida">Recibe una variable oeUnidadMedida de tipo objeto e_UnidadMedida</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeUnidadMedida As e_UnidadMedida) As Boolean
         Try

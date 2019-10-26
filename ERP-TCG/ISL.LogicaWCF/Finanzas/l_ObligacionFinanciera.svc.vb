@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -96,7 +96,7 @@ Public Class l_ObligacionFinanciera
 
 #End Region
 
-    Public Function Obtener(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As EntidadesWCF.e_ObligacionFinanciera Implements Il_ObligacionFinanciera.Obtener
+    Public Function Obtener(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As e_ObligacionFinanciera Implements Il_ObligacionFinanciera.Obtener
         Try
             Return odObligacionFinanciera.Obtener(oeObligacionFinanciera)
         Catch ex As Exception
@@ -104,7 +104,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function Listar(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera) Implements Il_ObligacionFinanciera.Listar
+    Public Function Listar(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As System.Collections.Generic.List(Of e_ObligacionFinanciera) Implements Il_ObligacionFinanciera.Listar
         Try
             Return odObligacionFinanciera.Listar(oeObligacionFinanciera)
         Catch ex As Exception
@@ -112,7 +112,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function Validar(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, _
+    Public Function Validar(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, _
                             ByVal lsNombreObligacion As String) As Boolean Implements Il_ObligacionFinanciera.Validar
         Try
             With oeObligacionFinanciera
@@ -147,7 +147,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.Eliminar
+    Public Function Eliminar(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.Eliminar
         Try
             If Validar(oeObligacionFinanciera, "") Then
                 Return odObligacionFinanciera.Eliminar(oeObligacionFinanciera)
@@ -157,7 +157,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function GuardarObli(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.GuardarObli
+    Public Function GuardarObli(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.GuardarObli
         Try
             Return odObligacionFinanciera.GuardarObli(oeObligacionFinanciera)
         Catch ex As Exception
@@ -165,7 +165,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function CambiarGlosa(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.CambiarGlosa
+    Public Function CambiarGlosa(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.CambiarGlosa
         Try
             Return odObligacionFinanciera.CambiarGlosa(oeObligacionFinanciera)
         Catch ex As Exception
@@ -173,7 +173,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function GuardarFEC(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.GuardarFEC
+    Public Function GuardarFEC(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As Boolean Implements Il_ObligacionFinanciera.GuardarFEC
         Try
             If Validar(oeObligacionFinanciera, "FEC") Then
                 '--------------recupera id de FEC------------------
@@ -341,7 +341,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function GuardarFedd(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As Boolean Implements Il_ObligacionFinanciera.GuardarFedd
+    Public Function GuardarFedd(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean Implements Il_ObligacionFinanciera.GuardarFedd
         Try
             Dim oeObligacioDoc As New e_ObligacionDocumento
             If Validar(oeObligacionFinanciera, "FEDD") Then
@@ -507,7 +507,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Private Function GuardarFactoringReal(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera) As Boolean
+    Private Function GuardarFactoringReal(ByVal oeObligacionFinanciera As e_ObligacionFinanciera) As Boolean
         Try
             If Validar(oeObligacionFinanciera, "FACTORING") Then
                 '--------------recupera id de factory------------------
@@ -678,8 +678,8 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Private Function GuardarFactoringCanje(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, _
-    ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria, ByVal o_Oblig() As Object) As Boolean
+    Private Function GuardarFactoringCanje(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, _
+    ByVal oeCuentaBancaria As e_CuentaBancaria, ByVal o_Oblig() As Object) As Boolean
         Try
             'Dim CodigoUnico As String = Date.Now.Year.ToString + Strings.Right("0" + Date.Now.Month.ToString, 2) + Strings.Right("0" + Date.Now.Day.ToString, 2) + Strings.Right("0" + Date.Now.Hour.ToString, 2) _
             '+ Strings.Right("0" + Date.Now.Minute.ToString, 2) + Strings.Right("0" + Date.Now.Second.ToString, 2) + Strings.Right("0" + Date.Now.Millisecond.ToString, 2)
@@ -945,8 +945,8 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function GuardarFactoring(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, _
-    ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria, ByVal o_Oblig() As Object, _
+    Public Function GuardarFactoring(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, _
+    ByVal oeCuentaBancaria As e_CuentaBancaria, ByVal o_Oblig() As Object, _
     ByVal FactoringReal As Boolean) As Boolean Implements Il_ObligacionFinanciera.GuardarFactoring
         Try
             'If FactoringReal Then
@@ -961,7 +961,7 @@ Public Class l_ObligacionFinanciera
         End Try
     End Function
 
-    Public Function GuardarLeasing(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, _
+    Public Function GuardarLeasing(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, _
                                    ByVal o_Oblig() As Object) As Boolean Implements Il_ObligacionFinanciera.GuardarLeasing
         Try
             'Dim CodigoUnico As String = Date.Now.Year.ToString + Strings.Right("0" + Date.Now.Month.ToString, 2) + Strings.Right("0" + Date.Now.Day.ToString, 2) + Strings.Right("0" + Date.Now.Hour.ToString, 2) _
@@ -3813,8 +3813,8 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
         End Try
     End Function
 
-    Public Function GuardarPagarePrestamo(ByVal oeObligacionFinanciera As EntidadesWCF.e_ObligacionFinanciera, _
-                                   ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria, _
+    Public Function GuardarPagarePrestamo(ByVal oeObligacionFinanciera As e_ObligacionFinanciera, _
+                                   ByVal oeCuentaBancaria As e_CuentaBancaria, _
                                    ByVal o_Oblig() As Object, ByVal lsTipo As String) As Boolean Implements Il_ObligacionFinanciera.GuardarPagarePrestamo
         Try
             'Dim CodigoUnico As String = Date.Now.Year.ToString + Strings.Right("0" + Date.Now.Month.ToString, 2) + Strings.Right("0" + Date.Now.Day.ToString, 2) + Strings.Right("0" + Date.Now.Hour.ToString, 2) _
@@ -3992,7 +3992,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
         End Try
     End Function
 
-    Public Function ValidarPagoObligacion(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), ByVal fecha As Date) As Object Implements Il_ObligacionFinanciera.ValidarPagoObligacion
+    Public Function ValidarPagoObligacion(ByVal leDocumentosAgregados As System.Collections.Generic.List(Of e_ObligacionFinanciera), ByVal fecha As Date) As Object Implements Il_ObligacionFinanciera.ValidarPagoObligacion
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
 
@@ -4004,10 +4004,10 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
         End Try
     End Function
 
-    Public Function GuardarPago(ByVal leMovDocAgregado As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), _
-                                ByRef oeMovCajaBanco As EntidadesWCF.e_MovimientoCajaBanco, _
-                                ByVal oeMedioPago As EntidadesWCF.e_MedioPago, ByVal idUsuario As String, _
-                                ByVal MacLocal As String, ByVal oeCtaCble As EntidadesWCF.e_CuentaContable) As Boolean Implements Il_ObligacionFinanciera.GuardarPago
+    Public Function GuardarPago(ByVal leMovDocAgregado As System.Collections.Generic.List(Of e_ObligacionFinanciera), _
+                                ByRef oeMovCajaBanco As e_MovimientoCajaBanco, _
+                                ByVal oeMedioPago As e_MedioPago, ByVal idUsuario As String, _
+                                ByVal MacLocal As String, ByVal oeCtaCble As e_CuentaContable) As Boolean Implements Il_ObligacionFinanciera.GuardarPago
         Try
             Dim oeAsMov As e_AsientoMovimiento
             Dim oeAsMovInteres As e_AsientoMovimiento
@@ -4734,7 +4734,7 @@ ByVal UsuarioCreacion As String, ByVal lsIdObligacion As String, ByVal lsFechaAs
 
 #Region "Obligaciones Financieras"
 
-    Public Function GuardarLetras(ByVal leOblig As System.Collections.Generic.List(Of EntidadesWCF.e_ObligacionFinanciera), IdUsuario As String, ByVal PrefijoID As String) As Boolean Implements Il_ObligacionFinanciera.GuardarLetras
+    Public Function GuardarLetras(ByVal leOblig As System.Collections.Generic.List(Of e_ObligacionFinanciera), IdUsuario As String, ByVal PrefijoID As String) As Boolean Implements Il_ObligacionFinanciera.GuardarLetras
         Try
             Dim loFuncionesGenerales As New l_FuncionesGenerales
             Dim oeOblig As New e_ObligacionFinanciera

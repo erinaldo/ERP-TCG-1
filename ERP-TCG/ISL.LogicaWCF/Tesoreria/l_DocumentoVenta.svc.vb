@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_DocumentoVenta
     Dim odDocumentoVenta As New d_DocumentoVenta
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeDocumentoVenta As EntidadesWCF.e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Eliminar
+    Public Function Eliminar(ByVal oeDocumentoVenta As e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Eliminar
         Try
             Return odDocumentoVenta.Eliminar(oeDocumentoVenta)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_DocumentoVenta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeDocumentoVenta As EntidadesWCF.e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Guardar
+    Public Function Guardar(ByVal oeDocumentoVenta As e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Guardar
         Try
             If Validar(oeDocumentoVenta) Then
                 Return odDocumentoVenta.Guardar(oeDocumentoVenta)
@@ -34,7 +34,7 @@ Public Class l_DocumentoVenta
         End Try
     End Function
 
-    Public Function Listar(ByVal oeDocumentoVenta As EntidadesWCF.e_DocumentoVenta) As System.Collections.Generic.List(Of EntidadesWCF.e_DocumentoVenta) Implements Il_DocumentoVenta.Listar
+    Public Function Listar(ByVal oeDocumentoVenta As e_DocumentoVenta) As System.Collections.Generic.List(Of e_DocumentoVenta) Implements Il_DocumentoVenta.Listar
         Try
             Return odDocumentoVenta.Listar(oeDocumentoVenta)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_DocumentoVenta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeDocumentoVenta As EntidadesWCF.e_DocumentoVenta) As EntidadesWCF.e_DocumentoVenta Implements Il_DocumentoVenta.Obtener
+    Public Function Obtener(ByVal oeDocumentoVenta As e_DocumentoVenta) As e_DocumentoVenta Implements Il_DocumentoVenta.Obtener
         Try
             Return odDocumentoVenta.Obtener(oeDocumentoVenta)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_DocumentoVenta
         End Try
     End Function
 
-    Public Function Validar(ByVal oeDocumentoVenta As EntidadesWCF.e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Validar
+    Public Function Validar(ByVal oeDocumentoVenta As e_DocumentoVenta) As Boolean Implements Il_DocumentoVenta.Validar
         Try
             With oeDocumentoVenta
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTipoDocumento, "Seleccione Tipo Dcumento")

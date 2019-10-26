@@ -1,9 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_Detraccion
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_Detraccion
@@ -96,14 +104,17 @@ Public Class d_Detraccion
                         detdet.IdDetraccion = .Id
                         If detdet.TipoOperacion = "" Then detdet.TipoOperacion = .TipoOperacion
                         detdet.UsuarioCreacion = .UsuarioCreacion
+                        detdet.PrefijoID = oeDetraccion.PrefijoID '@0001
                         odDetDetalle.Guardar(detdet)     
                     Next
                     If .TipoOperacion = "S" Then
                         For Each oe As e_MovimientoDocumento In .loDocumento
+                            oe.PrefijoID = oeDetraccion.PrefijoID '@0001
                             odMovimientoDocumento.GuardarGastoOperacion(oe)
                         Next
                         For Each detdet As e_DetraccionDetalle In .loDetraccionDet
                             detdet.TipoOperacion = .TipoOperacion
+                            detdet.PrefijoID = oeDetraccion.PrefijoID '@0001
                             odDetDetalle.Guardar(detdet)
                         Next
                     End If

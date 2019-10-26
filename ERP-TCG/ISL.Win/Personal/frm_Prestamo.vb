@@ -6,13 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_Prestamo
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Instancia"
 
@@ -373,7 +373,7 @@ Public Class frm_Prestamo
                 txtDni.Text = oeTrabajador.oePersona.Dni
                 txtArea.Text = oeTrabajador.oeArea.Nombre
                 txtOcupacion.Text = oeTrabajador.oeOcupacion.Nombre
-                If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 oeSueldo = New e_SueldoTrabajador
                 oeSueldo.IdTrabajador = oeTrabajador.Id
                 oeSueldo.Equivale = 1
@@ -1556,7 +1556,7 @@ Public Class frm_Prestamo
         Try
             'oeTrab (Id, NombreCompleto, Dni) {e_Trabajador}
             Dim oeTrab = cboTrabajador.Items(cboTrabajador.SelectedIndex).ListObject
-            If Not String.IsNullOrEmpty(oeTrab.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrab.Dni)
+            'If Not String.IsNullOrEmpty(oeTrab.Dni) Then picTrabajador.Image = olPersona.Foto(oeTrab.Dni)
         Catch ex As Exception
             Throw ex
         End Try

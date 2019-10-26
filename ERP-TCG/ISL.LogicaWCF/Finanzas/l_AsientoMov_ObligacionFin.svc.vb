@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -23,7 +23,7 @@ Public Class l_AsientoMov_ObligacionFin
         Return Analisis
     End Function
 
-    Public Function Eliminar(ByVal oeAsientoMov_ObligacionFin As EntidadesWCF.e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Eliminar
+    Public Function Eliminar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Eliminar
         Try
             Return odAsientoMov_ObligacionFin.Eliminar(oeAsientoMov_ObligacionFin)
         Catch ex As Exception
@@ -31,7 +31,7 @@ Public Class l_AsientoMov_ObligacionFin
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeAsientoMov_ObligacionFin As EntidadesWCF.e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Guardar
+    Public Function Guardar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Guardar
         Try
             If Validar(oeAsientoMov_ObligacionFin) Then
                 Return odAsientoMov_ObligacionFin.Guardar(oeAsientoMov_ObligacionFin)
@@ -41,7 +41,7 @@ Public Class l_AsientoMov_ObligacionFin
         End Try
     End Function
 
-    Public Function Listar(ByVal oeAsientoMov_ObligacionFin As EntidadesWCF.e_AsientoMov_ObligacionFin) As System.Collections.Generic.List(Of EntidadesWCF.e_AsientoMov_ObligacionFin) Implements Il_AsientoMov_ObligacionFin.Listar
+    Public Function Listar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As System.Collections.Generic.List(Of e_AsientoMov_ObligacionFin) Implements Il_AsientoMov_ObligacionFin.Listar
         Try
             Return odAsientoMov_ObligacionFin.Listar(oeAsientoMov_ObligacionFin)
         Catch ex As Exception
@@ -49,7 +49,7 @@ Public Class l_AsientoMov_ObligacionFin
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeAsientoMov_ObligacionFin As EntidadesWCF.e_AsientoMov_ObligacionFin) As EntidadesWCF.e_AsientoMov_ObligacionFin Implements Il_AsientoMov_ObligacionFin.Obtener
+    Public Function Obtener(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As e_AsientoMov_ObligacionFin Implements Il_AsientoMov_ObligacionFin.Obtener
         Try
             Return odAsientoMov_ObligacionFin.Obtener(oeAsientoMov_ObligacionFin)
         Catch ex As Exception
@@ -57,7 +57,7 @@ Public Class l_AsientoMov_ObligacionFin
         End Try
     End Function
 
-    Public Function Validar(ByVal oeAsientoMov_ObligacionFin As EntidadesWCF.e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Validar
+    Public Function Validar(ByVal oeAsientoMov_ObligacionFin As e_AsientoMov_ObligacionFin) As Boolean Implements Il_AsientoMov_ObligacionFin.Validar
         Try
             With oeAsientoMov_ObligacionFin
                 '---------VALIDARRRRRRRRRR-------------

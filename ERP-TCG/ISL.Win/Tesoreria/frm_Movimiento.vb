@@ -6,14 +6,14 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports System.Transactions
 
 Public Class frm_Movimiento
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion"
 
@@ -2143,7 +2143,7 @@ Public Class frm_Movimiento
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 ExpGroupBoxReceptor.Expanded = True
             End If
-            If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picRecibidor.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picRecibidor.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
             If opcVerOtro.Checked Then
                 picRecibidor.Image = Nothing
                 cboTrabajador.Visible = True

@@ -374,7 +374,7 @@ Public Class e_Sancion
 
 #Region "Métodos"
 
-    Public Overloads Function Equals(ByVal oeSancion As e_Sancion) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_Sancion).Equals
+    Public Overloads Function Equals(ByVal oeSancion As e_Sancion) As Boolean Implements IEquatable(Of e_Sancion).Equals
         If Me.Id = oeSancion.Id Then
             Return True
         Else

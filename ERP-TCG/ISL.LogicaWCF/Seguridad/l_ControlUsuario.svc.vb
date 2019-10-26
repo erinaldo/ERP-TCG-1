@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_ControlUsuario
 
     Dim odControlUsuario As New d_ControlUsuario
 
-    Public Function Eliminar(ByVal oeControlUsuario As EntidadesWCF.e_ControlUsuario) As Boolean Implements Il_ControlUsuario.Eliminar
+    Public Function Eliminar(ByVal oeControlUsuario As e_ControlUsuario) As Boolean Implements Il_ControlUsuario.Eliminar
         Try
             Return odControlUsuario.Eliminar(oeControlUsuario)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_ControlUsuario
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeControlUsuario As EntidadesWCF.e_ControlUsuario) As String Implements Il_ControlUsuario.Guardar
+    Public Function Guardar(ByVal oeControlUsuario As e_ControlUsuario) As String Implements Il_ControlUsuario.Guardar
         Try
             Dim id As String = ""
             If Validar(oeControlUsuario) Then
@@ -36,7 +36,7 @@ Public Class l_ControlUsuario
         End Try
     End Function
 
-    Public Function Listar(ByVal oeControlUsuario As EntidadesWCF.e_ControlUsuario) As System.Collections.Generic.List(Of EntidadesWCF.e_ControlUsuario) Implements Il_ControlUsuario.Listar
+    Public Function Listar(ByVal oeControlUsuario As e_ControlUsuario) As System.Collections.Generic.List(Of e_ControlUsuario) Implements Il_ControlUsuario.Listar
         Try
             Return odControlUsuario.Listar(oeControlUsuario)
         Catch ex As Exception
@@ -44,7 +44,7 @@ Public Class l_ControlUsuario
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeControlUsuario As EntidadesWCF.e_ControlUsuario) As EntidadesWCF.e_ControlUsuario Implements Il_ControlUsuario.Obtener
+    Public Function Obtener(ByVal oeControlUsuario As e_ControlUsuario) As e_ControlUsuario Implements Il_ControlUsuario.Obtener
         Try
             Return odControlUsuario.Obtener(oeControlUsuario)
         Catch ex As Exception
@@ -52,7 +52,7 @@ Public Class l_ControlUsuario
         End Try
     End Function
 
-    Public Function Validar(ByVal oeControlUsuario As EntidadesWCF.e_ControlUsuario) As Boolean Implements Il_ControlUsuario.Validar
+    Public Function Validar(ByVal oeControlUsuario As e_ControlUsuario) As Boolean Implements Il_ControlUsuario.Validar
         Try
             With oeControlUsuario
                 '---------VALIDARRRRRRRRRR-------------

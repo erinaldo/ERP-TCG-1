@@ -7,8 +7,8 @@
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -21,7 +21,7 @@ Imports System.Runtime.InteropServices
 Imports Infragistics.Win.UltraWinGrid.UltraGridAction
 
 Public Class frm_CotizacionProveedor
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaración de variables"
 

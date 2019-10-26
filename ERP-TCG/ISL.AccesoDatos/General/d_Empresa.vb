@@ -1,12 +1,14 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
-
-''' <summary>
-''' Clase que gestiona las empresa.
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Empresa,Capa del Sistema: Capa de Acceso a Datos.</remarks>
 
 Public Class d_Empresa
 
@@ -22,14 +24,6 @@ Public Class d_Empresa
     Private oePersona As New e_Persona
     Private odPersona As New d_Persona
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Empresa y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeEmpresa) de tipo e_Empresa</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_Empresa
         Try
             Dim oeEmpresa = New e_Empresa(o_fila("Id").ToString _
@@ -63,14 +57,6 @@ Public Class d_Empresa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una empresa, el cual es consultado por el procedimiento almacenado STD.Isp_Empresa_Listar
-    ''' enviando su id de la empresa.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_Empresa.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeEmpresa">Recibe una variable oe de tipo e_Empresa</param>
-    ''' <returns>Devuelve una varible oe de tipo e_Empresa</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeEmpresa As e_Empresa) As e_Empresa
         Try
             Dim ds As DataSet
@@ -121,21 +107,12 @@ Public Class d_Empresa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Empresa, el cual es consultado por el procedimiento almacenado
-    ''' STD.Isp_Empresa_Listar enviando sus atributos de la empresa.Una vez obtenido los registros son cargados y 
-    ''' devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeEmpresa">Recibe una Variable oeEmpresa de tipo e_Empresa </param>
-    ''' <returns>Devuelve una lista generica(ldEmpresa) de objetos de tipo e_Empresa</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeEmpresa As e_Empresa) As List(Of e_Empresa)
         Try
             Dim ldEmpresa As New List(Of e_Empresa)
             Dim ds As DataSet
             With oeEmpresa
-                ds = sqlHelper.ExecuteDataset("STD.Isp_Empresa_Listar", _
+                ds = sqlHelper.ExecuteDataset("STD.Isp_Empresa_Listar",
                                               .TipoOperacion _
                                             , .Id _
                                             , .Codigo _
@@ -150,7 +127,7 @@ Public Class d_Empresa
             oeEmpresa = Nothing
             If ds.Tables(0).Rows.Count > 0 Then
                 For Each o_Fila As DataRow In ds.Tables(0).Rows
-                    oeEmpresa = Cargar(o_Fila)                                     
+                    oeEmpresa = Cargar(o_Fila)
                     ldEmpresa.Add(oeEmpresa)
                 Next
             Else
@@ -175,16 +152,7 @@ Public Class d_Empresa
         Return ds
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos de la empresa,a travez del procedimiento almacenado
-    ''' STD.Isp_Empresa_IAE,por el cual van a ser enviados y registrados los datos de la empresa y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeEmpresa">Recibe una variable oeEmpresa de tipo e_Empresa</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro
-    '''  de la empresa es positiva= true sino false,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Guardar(ByVal oeEmpresa As e_Empresa) As String
         Try
 
@@ -249,7 +217,7 @@ Public Class d_Empresa
                                     oeDireccion.Zona = oeDEP.oeDireccion.Zona
                                     oeDireccion.IdLugar = oeDEP.oeDireccion.IdLugar
                                     oeDireccion.CentroCosto = oeDEP.oeDireccion.IdLugar
-                                    oeDireccion.PrefijoID = .PrefijoID '@0001
+                                    oeDireccion.PrefijoID = oeEmpresa.PrefijoID '@0001
                                     idDireccion = odDireccion.Guardar(oeDireccion)
                                     oeDEP.oeDireccion.Id = idDireccion
                                     oeDEP.TipoOperacion = "I"
@@ -277,7 +245,7 @@ Public Class d_Empresa
                                     oeDireccion.IdLugar = oeDEP.oeDireccion.IdLugar
                                     oeDireccion.CentroCosto = oeDEP.oeDireccion.CentroCosto
                                     oeDireccion.IdPais = oeDEP.oeDireccion.IdPais
-                                    oeDireccion.PrefijoID = .PrefijoID '@0001
+                                    oeDireccion.PrefijoID = oeEmpresa.PrefijoID '@0001
                                     odDireccion.Guardar(oeDireccion)
                                     odDireccionEP.Guardar(oeDEP)
                                 Case "E"
@@ -290,7 +258,7 @@ Public Class d_Empresa
                         For Each oeEmail As e_Email In .leEmail
                             oeEmail.TipoPersonaEmpresa = 2
                             oeEmail.IdPersonaEmpresa = id
-                            oeEmail.PrefijoID = .PrefijoID '@0001
+                            oeEmail.PrefijoID = oeEmpresa.PrefijoID '@0001
                             odEmail.Guardar(oeEmail)
                         Next
                     End If
@@ -298,14 +266,14 @@ Public Class d_Empresa
                         For Each oeTelefono As e_Telefono In .leTelefono
                             oeTelefono.TipoPersonaEmpresa = 2
                             oeTelefono.IdPersonaEmpresa = id
-                            oeTelefono.PrefijoID = .PrefijoID '@0001
+                            oeTelefono.PrefijoID = oeEmpresa.PrefijoID '@0001
                             odTelefono.Guardar(oeTelefono)
                         Next
                     End If
                     If .oeClienteProveedor.Id <> "" Then
                         .oeClienteProveedor.TipoOperacion = "A"
                         .oeClienteProveedor.Activo = True
-                        .oeClienteProveedor.PrefijoID = .PrefijoID '@0001
+                        .oeClienteProveedor.PrefijoID = oeEmpresa.PrefijoID '@0001
                         odClienteProveedor.Guardar(.oeClienteProveedor)
                     Else
                         If .oeClienteProveedor.Cliente = 1 _
@@ -324,7 +292,7 @@ Public Class d_Empresa
                     idClienteProveedor = .oeClienteProveedor.Id
                     If Not .leTipoPago Is Nothing Then
                         For Each oeTipoPago As e_PersonaEmpresa_TipoPago In .leTipoPago
-                            oeTipoPago.PrefijoID = .PrefijoID '@0001
+                            oeTipoPago.PrefijoID = oeEmpresa.PrefijoID '@0001
                             oeTipoPago.IdClienteProveedor = .oeClienteProveedor.Id
                             Select Case oeTipoPago.TipoOperacion
                                 Case "I" : odPETipoPago.Guardar(oeTipoPago)
@@ -336,7 +304,7 @@ Public Class d_Empresa
                         For Each oePersona As e_Persona In .leContactos
                             If oePersona.Id <> "" Then
                                 oePersona.UsuarioCreacion = oeEmpresa.UsuarioCreacion
-                                oePersona.PrefijoID = .PrefijoID '@0001
+                                oePersona.PrefijoID = oeEmpresa.PrefijoID '@0001
                                 InsertarContacto(oePersona, id)
                             End If
                         Next
@@ -410,15 +378,7 @@ Public Class d_Empresa
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de la empresa,a travez del procedimiento almacenado
-    ''' STD.Isp_Empresa_IAE,por el cual va a ser enviado el id de la empresa a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeEmpresa">Recibe una variable oeEmpresa de tipo objeto e_Empresa</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Eliminar(ByVal oeEmpresa As e_Empresa) As Boolean
         Try
             sqlHelper.ExecuteNonQuery("STD.Isp_Empresa_IAE", "E", oeEmpresa.Id, "", "", "", "", 1, oeEmpresa.UsuarioCreacion)

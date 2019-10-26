@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_OrdenCompra
     Dim odOrdenCompra As New d_OrdenCompra
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Eliminar
+    Public Function Eliminar(ByVal oeOrden As e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Eliminar
         Try
             Return odOrdenCompra.Eliminar(oeOrden)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Guardar
+    Public Function Guardar(ByVal oeOrden As e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Guardar
         Try
             If Validar(oeOrden) Then
                 Return odOrdenCompra.Guardar(oeOrden)
@@ -27,7 +27,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Function Guardar1(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Guardar1
+    Public Function Guardar1(ByVal oeOrden As e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Guardar1
         Try
             Return odOrdenCompra.Guardar(oeOrden)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Sub GuardarLista(ByVal llOrden As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenCompra), ByVal tipoOperacion As String, ByVal IdTrabajador As String, ByVal IdUsuario As String) Implements Il_OrdenCompra.GuardarLista
+    Public Sub GuardarLista(ByVal llOrden As System.Collections.Generic.List(Of e_OrdenCompra), ByVal tipoOperacion As String, ByVal IdTrabajador As String, ByVal IdUsuario As String) Implements Il_OrdenCompra.GuardarLista
         Try
             For Each oeOrdenCompra As e_OrdenCompra In llOrden.Where(Function(item) item.IndicadorAprobacion)
                 oeOrdenCompra.TipoOperacion = tipoOperacion
@@ -56,7 +56,7 @@ Public Class l_OrdenCompra
         End Try
     End Sub
 
-    Public Function Listar(ByVal oeOrden As EntidadesWCF.e_OrdenCompra, ByVal oeFecha As EntidadesWCF.e_Fechas) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenCompra) Implements Il_OrdenCompra.Listar
+    Public Function Listar(ByVal oeOrden As e_OrdenCompra, ByVal oeFecha As e_Fechas) As System.Collections.Generic.List(Of e_OrdenCompra) Implements Il_OrdenCompra.Listar
         Try
             Return odOrdenCompra.Listar(oeOrden, oeFecha)
         Catch ex As Exception
@@ -64,7 +64,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) As EntidadesWCF.e_OrdenCompra Implements Il_OrdenCompra.Obtener
+    Public Function Obtener(ByVal oeOrden As e_OrdenCompra) As e_OrdenCompra Implements Il_OrdenCompra.Obtener
         Try
             Return odOrdenCompra.Obtener(oeOrden)
         Catch ex As Exception
@@ -72,7 +72,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Validar
+    Public Function Validar(ByVal oeOrden As e_OrdenCompra) As Boolean Implements Il_OrdenCompra.Validar
         Try
             With oeOrden
                 If .TipoOperacion <> "1" Then 'Si es deferente de aprobar ordenes de compra.
@@ -103,7 +103,7 @@ Public Class l_OrdenCompra
         End Try
     End Function
 
-    Public Sub ValidarDuplicado(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) Implements Il_OrdenCompra.ValidarDuplicado
+    Public Sub ValidarDuplicado(ByVal oeOrden As e_OrdenCompra) Implements Il_OrdenCompra.ValidarDuplicado
         Try
             Dim oeOrd As New e_OrdenCompra
             oeOrd.NroOrden = oeOrden.NroOrden
@@ -120,7 +120,7 @@ Public Class l_OrdenCompra
         End Try
     End Sub
 
-    Public Sub ValidarProveedor(ByVal oeOrden As EntidadesWCF.e_OrdenCompra) Implements Il_OrdenCompra.ValidarProveedor
+    Public Sub ValidarProveedor(ByVal oeOrden As e_OrdenCompra) Implements Il_OrdenCompra.ValidarProveedor
         Try
             Dim oeProveedor As New e_Proveedor
             Dim olProveedor As New l_Proveedor

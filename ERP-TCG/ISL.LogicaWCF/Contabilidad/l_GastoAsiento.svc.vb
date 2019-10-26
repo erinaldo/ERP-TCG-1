@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_GastoAsiento
 
     Dim odGastoAsiento As New d_GastoAsiento
 
-    Public Function Eliminar(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Eliminar
+    Public Function Eliminar(ByVal oeGastoAsiento As e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Eliminar
         Try
             Return odGastoAsiento.Eliminar(oeGastoAsiento)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_GastoAsiento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Guardar
+    Public Function Guardar(ByVal oeGastoAsiento As e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Guardar
         Try
             If Validar(oeGastoAsiento) Then
                 Dim oeAsieto As New e_Asiento
@@ -27,7 +27,7 @@ Public Class l_GastoAsiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As System.Collections.Generic.List(Of EntidadesWCF.e_GastoAsiento) Implements Il_GastoAsiento.Listar
+    Public Function Listar(ByVal oeGastoAsiento As e_GastoAsiento) As System.Collections.Generic.List(Of e_GastoAsiento) Implements Il_GastoAsiento.Listar
         Try
             Return odGastoAsiento.Listar(oeGastoAsiento)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_GastoAsiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As EntidadesWCF.e_GastoAsiento Implements Il_GastoAsiento.Obtener
+    Public Function Obtener(ByVal oeGastoAsiento As e_GastoAsiento) As e_GastoAsiento Implements Il_GastoAsiento.Obtener
         Try
             Return odGastoAsiento.Obtener(oeGastoAsiento)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_GastoAsiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Validar
+    Public Function Validar(ByVal oeGastoAsiento As e_GastoAsiento) As Boolean Implements Il_GastoAsiento.Validar
         Try
             With oeGastoAsiento
                 '---------VALIDARRRRRRRRRR-------------
@@ -54,7 +54,7 @@ Public Class l_GastoAsiento
         End Try
     End Function
 
-    Public Function ListarGAFAnalisis(ByVal oeGastoAsiento As EntidadesWCF.e_GastoAsiento) As DataTable Implements Il_GastoAsiento.ListarGAAnalisis
+    Public Function ListarGAFAnalisis(ByVal oeGastoAsiento As e_GastoAsiento) As DataTable Implements Il_GastoAsiento.ListarGAAnalisis
         Try
             Return odGastoAsiento.ListarGFAnalisis(oeGastoAsiento)
         Catch ex As Exception

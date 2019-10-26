@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 
 Public Class d_KmMack
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
+
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_KmMack

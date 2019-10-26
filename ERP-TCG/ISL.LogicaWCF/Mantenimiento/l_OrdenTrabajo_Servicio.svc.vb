@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_OrdenTrabajo_Servicio
 
     Dim odOrdenTrabajo_Servicio As New d_OrdenTrabajo_Servicio
 
-    Public Function Eliminar(ByVal oeOrdenTrabajo_Servicio As EntidadesWCF.e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Eliminar
+    Public Function Eliminar(ByVal oeOrdenTrabajo_Servicio As e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Eliminar
         Try
             Return odOrdenTrabajo_Servicio.Eliminar(oeOrdenTrabajo_Servicio)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_OrdenTrabajo_Servicio
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrdenTrabajo_Servicio As EntidadesWCF.e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Guardar
+    Public Function Guardar(ByVal oeOrdenTrabajo_Servicio As e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Guardar
         Try
             If Validar(oeOrdenTrabajo_Servicio) Then
                 Return odOrdenTrabajo_Servicio.Guardar(oeOrdenTrabajo_Servicio)
@@ -26,7 +26,7 @@ Public Class l_OrdenTrabajo_Servicio
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOrdenTrabajo_Servicio As EntidadesWCF.e_OrdenTrabajo_Servicio) As System.Collections.Generic.List(Of EntidadesWCF.e_OrdenTrabajo_Servicio) Implements Il_OrdenTrabajo_Servicio.Listar
+    Public Function Listar(ByVal oeOrdenTrabajo_Servicio As e_OrdenTrabajo_Servicio) As System.Collections.Generic.List(Of e_OrdenTrabajo_Servicio) Implements Il_OrdenTrabajo_Servicio.Listar
         Try
             Return odOrdenTrabajo_Servicio.Listar(oeOrdenTrabajo_Servicio)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OrdenTrabajo_Servicio
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOrdenTrabajo_Servicio As EntidadesWCF.e_OrdenTrabajo_Servicio) As EntidadesWCF.e_OrdenTrabajo_Servicio Implements Il_OrdenTrabajo_Servicio.Obtener
+    Public Function Obtener(ByVal oeOrdenTrabajo_Servicio As e_OrdenTrabajo_Servicio) As e_OrdenTrabajo_Servicio Implements Il_OrdenTrabajo_Servicio.Obtener
         Try
             Return odOrdenTrabajo_Servicio.Obtener(oeOrdenTrabajo_Servicio)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_OrdenTrabajo_Servicio
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOrdenTrabajo_Servicio As EntidadesWCF.e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Validar
+    Public Function Validar(ByVal oeOrdenTrabajo_Servicio As e_OrdenTrabajo_Servicio) As Boolean Implements Il_OrdenTrabajo_Servicio.Validar
         Try
             With oeOrdenTrabajo_Servicio
                 '---------VALIDARRRRRRRRRR-------------
@@ -61,7 +61,7 @@ Public Class l_OrdenTrabajo_Servicio
         End Try
     End Function
 
-    Public Function ListarReporte(ByVal oeReporteOTS As EntidadesWCF.e_ReporteOTServicio) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteOTServicio) Implements Il_OrdenTrabajo_Servicio.ListarReporte
+    Public Function ListarReporte(ByVal oeReporteOTS As e_ReporteOTServicio) As System.Collections.Generic.List(Of e_ReporteOTServicio) Implements Il_OrdenTrabajo_Servicio.ListarReporte
         Try
             Return odOrdenTrabajo_Servicio.ListarReporte(oeReporteOTS)
         Catch ex As Exception

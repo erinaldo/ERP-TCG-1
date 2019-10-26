@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_DetallePagoAdicional
     Private odDetallePagoAdicional As New d_DetallePagoAdicional
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetallePagoAdicional As EntidadesWCF.e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Eliminar
+    Public Function Eliminar(oeDetallePagoAdicional As e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Eliminar
         Try
             Return odDetallePagoAdicional.Eliminar(oeDetallePagoAdicional)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_DetallePagoAdicional
         End Try
     End Function
 
-    Public Function Guardar(oeDetallePagoAdicional As EntidadesWCF.e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Guardar
+    Public Function Guardar(oeDetallePagoAdicional As e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Guardar
         Try
             If Validar(oeDetallePagoAdicional) Then
                 Return odDetallePagoAdicional.Guardar(oeDetallePagoAdicional)
@@ -27,7 +27,7 @@ Public Class l_DetallePagoAdicional
         End Try
     End Function
 
-    Public Function Listar(oeDetallePagoAdicional As EntidadesWCF.e_DetallePagoAdicional) As List(Of EntidadesWCF.e_DetallePagoAdicional) Implements Il_DetallePagoAdicional.Listar
+    Public Function Listar(oeDetallePagoAdicional As e_DetallePagoAdicional) As List(Of e_DetallePagoAdicional) Implements Il_DetallePagoAdicional.Listar
         Try
             Return odDetallePagoAdicional.Listar(oeDetallePagoAdicional)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_DetallePagoAdicional
         End Try
     End Function
 
-    Public Function Obtener(oeDetallePagoAdicional As EntidadesWCF.e_DetallePagoAdicional) As EntidadesWCF.e_DetallePagoAdicional Implements Il_DetallePagoAdicional.Obtener
+    Public Function Obtener(oeDetallePagoAdicional As e_DetallePagoAdicional) As e_DetallePagoAdicional Implements Il_DetallePagoAdicional.Obtener
         Try
             Return odDetallePagoAdicional.Obtener(oeDetallePagoAdicional)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_DetallePagoAdicional
         End Try
     End Function
 
-    Public Function Validar(oeDetallePagoAdicional As EntidadesWCF.e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Validar
+    Public Function Validar(oeDetallePagoAdicional As e_DetallePagoAdicional) As Boolean Implements Il_DetallePagoAdicional.Validar
         Try
             With oeDetallePagoAdicional
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

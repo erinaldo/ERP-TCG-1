@@ -1,4 +1,12 @@
-﻿Imports System.Configuration
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports System.Configuration
 Imports System.Collections.Specialized
 Imports System.Xml
 Imports System.Data.SqlClient
@@ -12,22 +20,18 @@ Public Class d_DatosConfiguracion
         Return listaSedes
     End Function
 
-    ''' <summary>
-    ''' Variable necesaria como prefijo para la generación del Id
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Public Function PrefijoID() As String
-        Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoID")
-    End Function
+    '@0001
+    'Public Function PrefijoID() As String
+    '    Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoID")
+    'End Function
 
-    Public Function PrefijoID(ByVal sede As Integer) As String
-        If sede = 1 Then
-            Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoIDSede1")
-        Else
-            Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoIDSede2")
-        End If
-    End Function
+    'Public Function PrefijoID(ByVal sede As Integer) As String
+    '    If sede = 1 Then
+    '        Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoIDSede1")
+    '    Else
+    '        Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("PrefijoIDSede2")
+    '    End If
+    'End Function
 
     ''' <summary>
     ''' Retorna la IP del Servidor por defecto 
@@ -51,15 +55,10 @@ Public Class d_DatosConfiguracion
         Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidorReportes")
     End Function
 
-
-    ''' <summary>
-    ''' Ruta de Imagenes del Sistema
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Public Function RutaImagen() As String
-        Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("RutaImagen")
-    End Function
+    '@0001
+    'Public Function RutaImagen() As String
+    '    Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("RutaImagen")
+    'End Function
 
     Public Function RutaAyuda() As String
         Return DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("RutaAyuda")

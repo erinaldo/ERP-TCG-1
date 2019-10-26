@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -72,7 +80,6 @@ Public Class d_Denominacion
 
     Public Function Guardar(ByVal oeDenominacion As e_Denominacion) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDenominacion
                 sqlhelper.ExecuteNonQuery("TES.Isp_Denominacion_IAE", .TipoOperacion _
                         , .IdMoneda _
@@ -85,7 +92,7 @@ Public Class d_Denominacion
                         , .FechaCreacion _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .PrefijoID _
+                        , .PrefijoID
                     )
             End With
             Return True

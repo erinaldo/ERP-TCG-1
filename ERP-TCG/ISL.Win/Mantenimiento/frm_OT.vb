@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 
 Public Class frm_OT
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Definición del Formulario base"
 
@@ -2321,7 +2321,7 @@ Public Class frm_OT
             LlenaComboJefeFlota()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
             LlenarCombo(cboCentroMaterial, "Nombre", CentroPublic, 0)
-            _idcentro = Prefijo.PrefijoID
+            _idcentro = gs_PrefijoIdSucursal '@0001
             cboCentro.Value = _idcentro
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES") Then
                 cboCentro.Enabled = True

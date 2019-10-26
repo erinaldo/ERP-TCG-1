@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_TipoGasto
     Dim odTipoGasto As New d_TipoGasto
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As Boolean Implements Il_TipoGasto.Eliminar
+    Public Function Eliminar(ByVal oeTipoGasto As e_TipoGasto) As Boolean Implements Il_TipoGasto.Eliminar
         Try
             Return odTipoGasto.Eliminar(oeTipoGasto)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As Boolean Implements Il_TipoGasto.Guardar
+    Public Function Guardar(ByVal oeTipoGasto As e_TipoGasto) As Boolean Implements Il_TipoGasto.Guardar
         Try
             If Validar(oeTipoGasto) Then
                 Return odTipoGasto.Guardar(oeTipoGasto)
@@ -34,7 +34,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function Listar(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As System.Data.DataSet Implements Il_TipoGasto.Listar
+    Public Function Listar(ByVal oeTipoGasto As e_TipoGasto) As System.Data.DataSet Implements Il_TipoGasto.Listar
         Try
             Dim odTipoGasto As New d_TipoGasto
             Return odTipoGasto.Listar(oeTipoGasto)
@@ -43,7 +43,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function Listar2(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoGasto) Implements Il_TipoGasto.Listar2
+    Public Function Listar2(ByVal oeTipoGasto As e_TipoGasto) As System.Collections.Generic.List(Of e_TipoGasto) Implements Il_TipoGasto.Listar2
         Try
             Return odTipoGasto.Listar2(oeTipoGasto)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function ListarDetalle(ByVal oeTipoGastoDetalle As EntidadesWCF.e_TipoGastoDetalle) As System.Collections.Generic.List(Of EntidadesWCF.e_TipoGastoDetalle) Implements Il_TipoGasto.ListarDetalle
+    Public Function ListarDetalle(ByVal oeTipoGastoDetalle As e_TipoGastoDetalle) As System.Collections.Generic.List(Of e_TipoGastoDetalle) Implements Il_TipoGasto.ListarDetalle
         Try
             Return odTipoGasto.ListarDetalle(oeTipoGastoDetalle)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As EntidadesWCF.e_TipoGasto Implements Il_TipoGasto.Obtener
+    Public Function Obtener(ByVal oeTipoGasto As e_TipoGasto) As e_TipoGasto Implements Il_TipoGasto.Obtener
         Try
             Return odTipoGasto.Obtener(oeTipoGasto)
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class l_TipoGasto
         End Try
     End Function
 
-    Public Function Validar(ByVal oeTipoGasto As EntidadesWCF.e_TipoGasto) As Boolean Implements Il_TipoGasto.Validar
+    Public Function Validar(ByVal oeTipoGasto As e_TipoGasto) As Boolean Implements Il_TipoGasto.Validar
         Try
             With oeTipoGasto
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese el codigo")

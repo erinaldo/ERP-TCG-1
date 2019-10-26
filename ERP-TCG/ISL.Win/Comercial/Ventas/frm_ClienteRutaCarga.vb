@@ -7,8 +7,8 @@
 '=================================================================================================================
 
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -21,7 +21,7 @@ Imports System.Runtime.InteropServices
 Imports Infragistics.Win.UltraWinGrid.UltraGridAction
 
 Public Class frm_ClienteRutaCarga
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializacion del Formulario"
 

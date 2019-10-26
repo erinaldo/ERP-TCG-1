@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_Proveedor", también debe actualizar la referencia a "Il_Proveedor" en Web.config.
 <ServiceContract()> _
@@ -26,7 +26,7 @@ Public Interface Il_Proveedor
     <OperationContract()> _
     Function Eliminar(ByVal oeProveedor As e_Proveedor) As Boolean
 
-    <OperationContract()> _
-    Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '<OperationContract()> _
+    'Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
 
 End Interface

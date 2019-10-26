@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -12,7 +13,7 @@ Public Class l_Cotizacion_Proveedor
 
     Dim odCotizacionProveedor As New d_Cotizacion_Proveedor
 
-    Public Function Eliminar(ByVal oeCotizacionDetalle As EntidadesWCF.e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Eliminar
+    Public Function Eliminar(ByVal oeCotizacionDetalle As e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Eliminar
         Try
             Return odCotizacionProveedor.Eliminar(oeCotizacionDetalle)
         Catch ex As Exception
@@ -27,7 +28,7 @@ Public Class l_Cotizacion_Proveedor
     ''' <param name="oeCotizacionDetalle">Recibe una Variable oeCotizacion de tipo e_Cotizacion</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema=Capa de Logica</remarks>
-    Public Function Guardar(ByVal oeCotizacionDetalle As EntidadesWCF.e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Guardar
+    Public Function Guardar(ByVal oeCotizacionDetalle As e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Guardar
         Try
             If Validar(oeCotizacionDetalle) Then
                 Return odCotizacionProveedor.Guardar(oeCotizacionDetalle)
@@ -44,7 +45,7 @@ Public Class l_Cotizacion_Proveedor
     ''' <param name="oeCotizacionDetalle">Recibe una variable oeCotizacionDetalle y de tipo e_Cotizacion_Proveedor</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema:Capa de Logica</remarks>
-    Public Function Listar(ByVal oeCotizacionDetalle As EntidadesWCF.e_Cotizacion_Proveedor) As System.Collections.Generic.List(Of EntidadesWCF.e_Cotizacion_Proveedor) Implements Il_Cotizacion_Proveedor.Listar
+    Public Function Listar(ByVal oeCotizacionDetalle As e_Cotizacion_Proveedor) As System.Collections.Generic.List(Of e_Cotizacion_Proveedor) Implements Il_Cotizacion_Proveedor.Listar
         Try
             Return odCotizacionProveedor.Listar(oeCotizacionDetalle)
         Catch ex As Exception
@@ -59,7 +60,7 @@ Public Class l_Cotizacion_Proveedor
     ''' <param name="oeCotizacionDetalle">Recibe una variable oeCotizacionDetalle de tipo e_Cotizacion_Proveedor</param>
     ''' <returns>Devuelve un objeto de tipo e_Cotizacion_Proveedor</returns>
     ''' <remarks>Capa del Sitema:Capa de Logica</remarks>
-    Public Function Obtener(ByVal oeCotizacionDetalle As EntidadesWCF.e_Cotizacion_Proveedor) As EntidadesWCF.e_Cotizacion_Proveedor Implements Il_Cotizacion_Proveedor.Obtener
+    Public Function Obtener(ByVal oeCotizacionDetalle As e_Cotizacion_Proveedor) As e_Cotizacion_Proveedor Implements Il_Cotizacion_Proveedor.Obtener
         Try
             Return odCotizacionProveedor.Obtener(oeCotizacionDetalle)
         Catch ex As Exception
@@ -73,7 +74,7 @@ Public Class l_Cotizacion_Proveedor
     ''' <param name="oeCotizacionDetalle">Recibe una Variable oeCotizacionDetalle de tipo e_Cotizacion_Proveedor</param>
     ''' <returns>Devuelve un valor booleano</returns>
     ''' <remarks>Capa del Sistema=Capa de Logica</remarks>
-    Public Function Validar(ByVal oeCotizacionDetalle As EntidadesWCF.e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Validar
+    Public Function Validar(ByVal oeCotizacionDetalle As e_Cotizacion_Proveedor) As Boolean Implements Il_Cotizacion_Proveedor.Validar
         Try
             With oeCotizacionDetalle
                 'l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar codigo de la cotización")

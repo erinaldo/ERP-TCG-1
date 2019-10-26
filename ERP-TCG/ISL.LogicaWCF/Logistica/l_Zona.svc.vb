@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_Zona
     Dim odZona As New d_Zona
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function ComboGrilla(ByVal oeZona As EntidadesWCF.e_Zona) As Object Implements Il_Zona.ComboGrilla
+    Public Function ComboGrilla(ByVal oeZona As e_Zona) As Object Implements Il_Zona.ComboGrilla
         Try
             Return odZona.ComboGrilla(oeZona)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_Zona
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeZona As EntidadesWCF.e_Zona) As Boolean Implements Il_Zona.Eliminar
+    Public Function Eliminar(ByVal oeZona As e_Zona) As Boolean Implements Il_Zona.Eliminar
         Try
             Return odZona.Eliminar(oeZona)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_Zona
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeZona As EntidadesWCF.e_Zona) As Boolean Implements Il_Zona.Guardar
+    Public Function Guardar(ByVal oeZona As e_Zona) As Boolean Implements Il_Zona.Guardar
         Try
             If Validar(oeZona) Then
                 Return odZona.Guardar(oeZona)
@@ -34,7 +34,7 @@ Public Class l_Zona
         End Try
     End Function
 
-    Public Function Listar(ByVal oeZona As EntidadesWCF.e_Zona) As System.Collections.Generic.List(Of EntidadesWCF.e_Zona) Implements Il_Zona.Listar
+    Public Function Listar(ByVal oeZona As e_Zona) As System.Collections.Generic.List(Of e_Zona) Implements Il_Zona.Listar
         Try
             Return odZona.Listar(oeZona)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_Zona
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeZona As EntidadesWCF.e_Zona) As EntidadesWCF.e_Zona Implements Il_Zona.Obtener
+    Public Function Obtener(ByVal oeZona As e_Zona) As e_Zona Implements Il_Zona.Obtener
         Try
             Return odZona.Obtener(oeZona)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_Zona
         End Try
     End Function
 
-    Public Function Validar(ByVal oeZona As EntidadesWCF.e_Zona) As Boolean Implements Il_Zona.Validar
+    Public Function Validar(ByVal oeZona As e_Zona) As Boolean Implements Il_Zona.Validar
         Try
             'With oeZona
             '    l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre")

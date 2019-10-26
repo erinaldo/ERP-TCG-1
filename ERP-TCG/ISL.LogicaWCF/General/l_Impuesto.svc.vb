@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_Impuesto
     Private odImpuesto As New d_Impuesto
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeImpuesto As EntidadesWCF.e_Impuesto) As Boolean Implements Il_Impuesto.Eliminar
+    Public Function Eliminar(ByVal oeImpuesto As e_Impuesto) As Boolean Implements Il_Impuesto.Eliminar
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(oeImpuesto.Id, "Falta especificar el Id del impuesto que se va a eliminar")
             Return odImpuesto.Eliminar(oeImpuesto)
@@ -18,7 +18,7 @@ Public Class l_Impuesto
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeImpuesto As EntidadesWCF.e_Impuesto) As Boolean Implements Il_Impuesto.Guardar
+    Public Function Guardar(ByVal oeImpuesto As e_Impuesto) As Boolean Implements Il_Impuesto.Guardar
         Try
             If Validar(oeImpuesto) Then
                 Return odImpuesto.Guardar(oeImpuesto)
@@ -28,7 +28,7 @@ Public Class l_Impuesto
         End Try
     End Function
 
-    Public Function IGV(ByVal fecha As Date) As EntidadesWCF.e_Impuesto Implements Il_Impuesto.IGV
+    Public Function IGV(ByVal fecha As Date) As e_Impuesto Implements Il_Impuesto.IGV
         Try
             If Not IsDate(fecha) Then fecha = Now
             Return odImpuesto.IGV(fecha)
@@ -37,7 +37,7 @@ Public Class l_Impuesto
         End Try
     End Function
 
-    Public Function Listar(ByVal oeImpuesto As EntidadesWCF.e_Impuesto) As System.Collections.Generic.List(Of EntidadesWCF.e_Impuesto) Implements Il_Impuesto.Listar
+    Public Function Listar(ByVal oeImpuesto As e_Impuesto) As System.Collections.Generic.List(Of e_Impuesto) Implements Il_Impuesto.Listar
         Try
             Return odImpuesto.Listar(oeImpuesto)
         Catch ex As Exception
@@ -45,7 +45,7 @@ Public Class l_Impuesto
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeImpuesto As EntidadesWCF.e_Impuesto) As EntidadesWCF.e_Impuesto Implements Il_Impuesto.Obtener
+    Public Function Obtener(ByVal oeImpuesto As e_Impuesto) As e_Impuesto Implements Il_Impuesto.Obtener
         Try
             Return odImpuesto.Obtener(oeImpuesto)
         Catch ex As Exception
@@ -53,7 +53,7 @@ Public Class l_Impuesto
         End Try
     End Function
 
-    Public Function Validar(ByVal oeImpuesto As EntidadesWCF.e_Impuesto) As Boolean Implements Il_Impuesto.Validar
+    Public Function Validar(ByVal oeImpuesto As e_Impuesto) As Boolean Implements Il_Impuesto.Validar
         Try
             With oeImpuesto
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Nombre, "Debe ingresar el nombre completo del Impuesto")

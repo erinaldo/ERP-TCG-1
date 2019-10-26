@@ -6,14 +6,13 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_Perfil
 
     Private sqlHelper As New SqlHelper
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
     Dim odPerfilActividad As New d_PerfilActividadNegocio
     Dim oePerfilActividad As New e_PerfilActividadNegocio
 

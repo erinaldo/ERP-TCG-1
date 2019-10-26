@@ -6,14 +6,14 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports ISL.Controles
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win
 
 Public Class frm_Accidente
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicializar el formulario"
 

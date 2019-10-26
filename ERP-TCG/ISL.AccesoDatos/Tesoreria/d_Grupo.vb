@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -76,7 +76,7 @@ Public Class d_Grupo
 
     Public Function Listar(ByVal oeGrupo As e_Grupo) As List(Of e_Grupo)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim ldGrupo As New List(Of e_Grupo)
             Dim ds As DataSet
             With oeGrupo

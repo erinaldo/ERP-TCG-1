@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_ControlPersonaVehiculoES
 
     Dim odControlPersonaVehiculoES As New d_ControlPersonaVehiculoES
 
-    Public Function Eliminar(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Eliminar
+    Public Function Eliminar(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Eliminar
         Try
             Return odControlPersonaVehiculoES.Eliminar(oeControlPersonaVehiculoES)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_ControlPersonaVehiculoES
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Guardar
+    Public Function Guardar(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Guardar
         Try
             If Validar(oeControlPersonaVehiculoES) Then
                 Return odControlPersonaVehiculoES.Guardar(oeControlPersonaVehiculoES)
@@ -26,7 +26,7 @@ Public Class l_ControlPersonaVehiculoES
         End Try
     End Function
 
-    Public Function Listar(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As System.Collections.Generic.List(Of EntidadesWCF.e_ControlPersonaVehiculoES) Implements Il_ControlPersonaVehiculoES.Listar
+    Public Function Listar(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As System.Collections.Generic.List(Of e_ControlPersonaVehiculoES) Implements Il_ControlPersonaVehiculoES.Listar
         Try
             Return odControlPersonaVehiculoES.Listar(oeControlPersonaVehiculoES)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_ControlPersonaVehiculoES
         End Try
     End Function
 
-    Public Function ListarTablas(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As System.Data.DataSet Implements Il_ControlPersonaVehiculoES.ListarTablas
+    Public Function ListarTablas(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As System.Data.DataSet Implements Il_ControlPersonaVehiculoES.ListarTablas
         Try
             Return odControlPersonaVehiculoES.Listar_Tablas(oeControlPersonaVehiculoES)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_ControlPersonaVehiculoES
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As EntidadesWCF.e_ControlPersonaVehiculoES Implements Il_ControlPersonaVehiculoES.Obtener
+    Public Function Obtener(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As e_ControlPersonaVehiculoES Implements Il_ControlPersonaVehiculoES.Obtener
         Try
             Return odControlPersonaVehiculoES.Obtener(oeControlPersonaVehiculoES)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_ControlPersonaVehiculoES
         End Try
     End Function
 
-    Public Function Validar(ByVal oeControlPersonaVehiculoES As EntidadesWCF.e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Validar
+    Public Function Validar(ByVal oeControlPersonaVehiculoES As e_ControlPersonaVehiculoES) As Boolean Implements Il_ControlPersonaVehiculoES.Validar
         Try
             With oeControlPersonaVehiculoES
                 '---------VALIDARRRRRRRRRR-------------

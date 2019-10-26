@@ -1,10 +1,17 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
 Public Class d_RubroEstadoFinanciero
     Private sqlhelper As New SqlHelper
-    Private d_DatosConfiguracion As New d_DatosConfiguracion
     Private oeDetalle As e_RubroEstadoFinanciero_Detalle, odDetalle As New d_RubroEstadoFinanciero_Detalle
     Private oeCuenta As e_RubroEEFFDetalle_CuentaContable, odCuenta As New d_RubroEEFFDetalle_CuentaContable
 
@@ -110,6 +117,7 @@ Public Class d_RubroEstadoFinanciero
                         ).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each oeDet In .leDetalle.OrderBy(Function(it) it.Identificador).Where(Function(it) it.TipoOperacion.Trim <> "").ToList
+                        oeDet.PrefijoID = oeRubroEstadoFinanciero.PrefijoID '@0001
                         If oeDet.TipoOperacion = "E" Then
                             odDetalle.Eliminar(oeDet)
                         Else
@@ -117,6 +125,7 @@ Public Class d_RubroEstadoFinanciero
                                 oeDetalle = New e_RubroEstadoFinanciero_Detalle
                                 oeDetalle.Identificador = oeDet.IdentificaPadre
                                 oeDetalle.TipoBusca = 3
+                                oeDetalle.PrefijoID = oeRubroEstadoFinanciero.PrefijoID '@0001
                                 If .leDetalle.Contains(oeDetalle) Then
                                     oeDetalle = .leDetalle.Item(.leDetalle.IndexOf(oeDetalle))
                                     oeDet.IdDepende = oeDetalle.Id
@@ -129,12 +138,14 @@ Public Class d_RubroEstadoFinanciero
                         End If
                     Next
                     For Each oeCC In .leCuenta.Where(Function(it) it.TipoOperacion.Trim <> "").ToList
+                        oeCC.PrefijoID = oeRubroEstadoFinanciero.PrefijoID '@0001
                         If oeCC.TipoOperacion = "E" Then
                             odCuenta.Eliminar(oeCC)
                         Else
                             oeDetalle = New e_RubroEstadoFinanciero_Detalle
                             oeDetalle.Identificador = oeCC.Identificador
                             oeDetalle.TipoBusca = 3
+                            oeDetalle.PrefijoID = oeRubroEstadoFinanciero.PrefijoID '@0001
                             If .leDetalle.Contains(oeDetalle) Then
                                 oeDetalle = .leDetalle.Item(.leDetalle.IndexOf(oeDetalle))
                                 oeCC.IdRubroEEFFDetalle = oeDetalle.Id

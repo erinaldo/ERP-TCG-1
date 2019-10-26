@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -19,7 +19,7 @@ Imports System.Threading
 Imports System.Data.OleDb
 
 Public Class frm_BuscarViajes
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.
@@ -58,7 +58,7 @@ Public Class frm_BuscarViajes
     Public Sub IniciarFiltros()
         Try
             olPrefijo = New l_Configuracion
-            PrefijoId = olPrefijo.PrefijoID
+            PrefijoId = gs_PrefijoIdSucursal '@0001
             FechaServidor = ObtenerFechaServidor()
             ColorControles()
             'fecViaje.Value = FechaServidor.Date

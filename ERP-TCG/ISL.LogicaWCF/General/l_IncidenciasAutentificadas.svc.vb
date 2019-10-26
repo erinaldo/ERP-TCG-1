@@ -1,6 +1,6 @@
 ﻿' NOTA: si cambia aquí el nombre de clase "l_IncidenciasAutentificadas", también debe actualizar la referencia a "l_IncidenciasAutentificadas" tanto en Web.config como en el archivo .svc asociado.
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _

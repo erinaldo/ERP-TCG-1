@@ -191,7 +191,7 @@ Public Class e_Concepto_Prestamo
 #Region "Métodos"
 
     Public Overloads Function Equals(ByVal oeConcepPrest As e_Concepto_Prestamo) _
- As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_Concepto_Prestamo).Equals
+ As Boolean Implements IEquatable(Of e_Concepto_Prestamo).Equals
         If Me.Id = oeConcepPrest.Id Then
             Return True
         Else

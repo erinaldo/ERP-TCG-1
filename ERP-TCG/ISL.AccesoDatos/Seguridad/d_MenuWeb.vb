@@ -1,14 +1,14 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
 
-''' <summary>
-''' Clase que se encarga de accesar a la información de los menús de la aplicación Web ISL, almacenados en la tabla dbo.Menu
-''' </summary>
-''' <example> Este ejemplo muestra como cargar una clase de tipo d_MenuWeb
-''' <code>
-'''    Dim odMenuWeb As New d_MenuWeb
-''' </code>
-''' </example>
-''' <remarks>Esta clase controla los metodos de acceso a la tabla Menu, mediante la entidad <see cref="e_MenuWeb"/></remarks>
+Imports ERP.EntidadesWCF
+
+
 Public Class d_MenuWeb
 
     Private sqlhelper As New SqlHelper
@@ -74,7 +74,7 @@ Public Class d_MenuWeb
 
     Public Function Guardar(ByVal oeMenuWeb As e_MenuWeb) As Boolean
         Try
-            'Dim d_DatosConfiguracion As New d_DatosConfiguracion
+            '
 
             'With oeMenuWeb
             '    sqlhelper.ExecuteNonQuery("Isp_MenuWeb_IAE", .TipoOperacion, _

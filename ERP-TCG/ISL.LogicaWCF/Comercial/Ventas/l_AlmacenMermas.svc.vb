@@ -1,6 +1,6 @@
 ﻿' NOTA: si cambia aquí el nombre de clase "l_AlmacenMermas", también debe actualizar la referencia a "l_AlmacenMermas" tanto en Web.config como en el archivo .svc asociado.
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 
 Public Class l_AlmacenMermas
     Implements Il_AlmacenMermas

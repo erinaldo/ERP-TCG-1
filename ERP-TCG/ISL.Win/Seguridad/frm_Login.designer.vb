@@ -340,5 +340,5 @@ Partial Class frm_Login
     Friend WithEvents Imagen5 As ISL.Controles.Imagen
     Friend WithEvents UltraLabel1 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents UltraLabel2 As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents cboCentro As Controles.ComboMaestros
+    Friend WithEvents cboCentro As ISL.Controles.ComboMaestros
 End Class

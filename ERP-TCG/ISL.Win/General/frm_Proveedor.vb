@@ -6,12 +6,12 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_Proveedor
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.
@@ -293,7 +293,7 @@ Public Class frm_Proveedor
 
     Private Sub txtDni_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtDni.ValueChanged
         oeProveedor.oePersona.Dni = txtDni.Text.Trim
-        If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olProveedor.Foto(oeProveedor.oePersona.Dni)
+        'If Not String.IsNullOrEmpty(txtDni.Text) Then PictureBox1.Image = olProveedor.Foto(oeProveedor.oePersona.Dni)
     End Sub
 
     Private Sub txtNombre_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtNombre.KeyDown

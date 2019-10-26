@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 Public Class l_ReporteDocumento
@@ -7,7 +7,7 @@ Public Class l_ReporteDocumento
 
     Dim odReporteDoc As New d_ReporteDocumento
 
-    Public Function Listar(ByVal oeReportDoc As EntidadesWCF.e_ReporteDocumento) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteDocumento) Implements Il_ReporteDocumento.Listar
+    Public Function Listar(ByVal oeReportDoc As e_ReporteDocumento) As System.Collections.Generic.List(Of e_ReporteDocumento) Implements Il_ReporteDocumento.Listar
         Try
             Return odReporteDoc.Listar(oeReportDoc)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_ReporteDocumento
         End Try
     End Function
 
-    Public Function ListarRCM(ByVal oeReportCM As EntidadesWCF.e_ReporteClienteMensual) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteClienteMensual) Implements Il_ReporteDocumento.ListarRCM
+    Public Function ListarRCM(ByVal oeReportCM As e_ReporteClienteMensual) As System.Collections.Generic.List(Of e_ReporteClienteMensual) Implements Il_ReporteDocumento.ListarRCM
         Try
             Return odReporteDoc.ListarRCM(oeReportCM)
         Catch ex As Exception

@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>ISL.Win.My.MyApplication</StartupObject>
     <RootNamespace>ISL.Win</RootNamespace>
-    <AssemblyName>ISL.Win</AssemblyName>
+    <AssemblyName>ERPTCG.Win</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -63,7 +63,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -75,7 +75,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugSymbols>true</DebugSymbols>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
@@ -86,7 +86,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Debug\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -99,7 +99,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\x86\Release\</OutputPath>
-    <DocumentationFile>ISL.Win.xml</DocumentationFile>
+    <DocumentationFile>ERPTCG.Win.xml</DocumentationFile>
     <Optimize>true</Optimize>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <DebugType>Full</DebugType>
@@ -243,8 +243,14 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\..\SGI\ISL.Win\bin\Release\Microsoft.Office.Interop.PowerPoint.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.337.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -485,10 +491,8 @@
     </Compile>
     <Compile Include="Comercial\Ventas\frm_Operacion.Designer.vb">
       <DependentUpon>frm_Operacion.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Comercial\Ventas\frm_Operacion.vb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Comercial\Ventas\frm_OperacionDetalle.Designer.vb">
@@ -619,11 +623,9 @@
     </Compile>
     <Compile Include="Comercial\Ventas\frm_Guias.Designer.vb">
       <DependentUpon>frm_Guias.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Comercial\Ventas\frm_Guias.vb">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Comercial\Ventas\frm_Seguimiento.Designer.vb">
       <DependentUpon>frm_Seguimiento.vb</DependentUpon>
@@ -887,6 +889,12 @@
       <DependentUpon>frm_ReporteCajaBanco.vb.vb</DependentUpon>
     </Compile>
     <Compile Include="Contabilidad\frm_ReporteCajaBanco.vb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Seleccionar.designer.vb">
@@ -2425,19 +2433,15 @@
     </Compile>
     <Compile Include="Contabilidad\frm_TablaContable.Designer.vb">
       <DependentUpon>frm_TablaContable.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Contabilidad\frm_TablaContable.vb">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Contabilidad\frm_TablaContableDet.Designer.vb">
       <DependentUpon>frm_TablaContableDet.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Contabilidad\frm_TablaContableDet.vb">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Contabilidad\frm_Cobranza.Designer.vb">
       <DependentUpon>frm_Cobranza.vb</DependentUpon>
@@ -4119,6 +4123,9 @@
     <Content Include="bin\Debug\ISL.Cache.dll" />
     <Content Include="bin\Debug\ISL.Controles.dll" />
     <Content Include="bin\Debug\ISL.Encripta.dll" />
+    <Content Include="Fotos\SinFoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\01_messages.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4593,15 +4600,6 @@
     <Content Include="Imagenes\Empleados.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Imagenes\Entorno.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\Entorno2.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\EntornoAntes.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Imagenes\Envelope.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -4648,12 +4646,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imagenes\Fondo azul con logo ERP.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\Fondo azul con logo Induamerica.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\FondoISL.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imagenes\fork1.ico">
@@ -4956,16 +4948,7 @@
     <Content Include="Imagenes\Login_Manager.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Imagenes\Logo Induamerica.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Imagenes\LogoERP.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\LogoInduamerica.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Imagenes\LogoInduamerica.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Imagenes\Logout.ico">
@@ -5376,6 +5359,9 @@
     <Content Include="Imagenes\sign-up.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagenes\SinFoto.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Imagenes\SinPing1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -5659,6 +5645,36 @@
     <Content Include="Imagenes\Iconos\Thumbs.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="SqlServerTypes\Loader.cs" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Fotos\eImpresion\Doc.Electronico.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoCL.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoCL_NC.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC_A.mrt" />
+    <None Include="Fotos\eImpresion\Doc.Electronico_NC.mrt" />
+    <None Include="Fotos\eImpresion\eRetencion.mrt" />
+    <None Include="Fotos\eImpresion\_Doc.Electronico.mrt" />
+    <None Include="Fotos\eImpresion\_Doc.Electronico_NC.mrt" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
+    <None Include="packages.config" />
     <None Include="Service References\WCF_CpeIndu\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -5879,7 +5895,6 @@
     <EmbeddedResource Include="Comercial\Ventas\frm_Guias.resx">
       <DependentUpon>frm_Guias.vb</DependentUpon>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_InformeGRT.resx">
       <DependentUpon>frm_InformeGRT.vb</DependentUpon>
@@ -5896,7 +5911,6 @@
     <EmbeddedResource Include="Comercial\Ventas\frm_Operacion.resx">
       <DependentUpon>frm_Operacion.vb</DependentUpon>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_OperacionDetalle.resx">
       <DependentUpon>frm_OperacionDetalle.vb</DependentUpon>
@@ -6076,6 +6090,9 @@
     <EmbeddedResource Include="Contabilidad\frm_ReporteCajaBanco.vb.resx">
       <DependentUpon>frm_ReporteCajaBanco.vb.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Seleccionar.resx">
       <DependentUpon>frm_Seleccionar.vb</DependentUpon>
@@ -6350,9 +6367,7 @@
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_VentaMerma.resx">
       <DependentUpon>frm_VentaMerma.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\frm_DeudaBancaria.resx">
       <DependentUpon>frm_DeudaBancaria.vb</DependentUpon>
     </EmbeddedResource>
@@ -6408,9 +6423,7 @@
     <Content Include="Reportes\Logistica\Combustibles\ReporteDieselPlaca.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reportes\Logistica\Combustibles\ReporteDieselPiloto.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\Logistica\Combustibles\ReporteDieselPiloto.rdlc" />
     <EmbeddedResource Include="Reportes\Logistica\frmReporteRegistroInventario.resx">
       <DependentUpon>frmReporteRegistroInventario.vb</DependentUpon>
     </EmbeddedResource>
@@ -6504,18 +6517,14 @@
     <EmbeddedResource Include="Reportes\Administracion\frm_ReporteDiaCobro.resx">
       <DependentUpon>frm_ReporteDiaCobro.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\ChequesPendientes.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\ChequesPendientes.rdlc" />
     <EmbeddedResource Include="Reportes\Administracion\frm_ReporteOperacionPendienteFac.resx">
       <DependentUpon>frm_ReporteOperacionPendienteFac.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Comercial\Compras\frm_ImprimirMaterialEntregado.resx">
       <DependentUpon>frm_ImprimirMaterialEntregado.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\MaterialEntregado.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\MaterialEntregado.rdlc" />
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_rptNotaCredito.resx">
       <DependentUpon>frm_rptNotaCredito.vb</DependentUpon>
     </EmbeddedResource>
@@ -6551,9 +6560,7 @@
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ReportePLE.resx">
       <DependentUpon>frm_ReportePLE.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\Contabilidad\ImprimeRegInventarioPermVal.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\Contabilidad\ImprimeRegInventarioPermVal.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ReporteRegistroCompra.resx">
       <DependentUpon>frm_ReporteRegistroCompra.vb</DependentUpon>
     </EmbeddedResource>
@@ -6813,12 +6820,10 @@
     <EmbeddedResource Include="Contabilidad\frm_TablaContable.resx">
       <DependentUpon>frm_TablaContable.vb</DependentUpon>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Contabilidad\frm_TablaContableDet.resx">
       <DependentUpon>frm_TablaContableDet.vb</DependentUpon>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Contabilidad\frm_Cobranza.resx">
       <DependentUpon>frm_Cobranza.vb</DependentUpon>
@@ -7054,9 +7059,7 @@
     <EmbeddedResource Include="Reportes\Finanzas\frm_ReporteResumenLetras.resx">
       <DependentUpon>frm_ReporteResumenLetras.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\LiquidacionTrabajador.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\LiquidacionTrabajador.rdlc" />
     <EmbeddedResource Include="Reportes\Logistica\Combustibles\frm_ReporteCompraD2.resx">
       <DependentUpon>frm_ReporteCompraD2.vb</DependentUpon>
     </EmbeddedResource>
@@ -7186,9 +7189,7 @@
       <DependentUpon>frm_ReporteAutorizacion.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\PapeletaPermiso.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\PapeletaPermiso.rdlc" />
     <EmbeddedResource Include="Reportes\Personal\frm_ImprimirLiquidacion.resx">
       <DependentUpon>frm_ImprimirLiquidacion.vb</DependentUpon>
     </EmbeddedResource>
@@ -7204,9 +7205,7 @@
     <EmbeddedResource Include="Reportes\Personal\frm_ReportePapeletaPermisos.resx">
       <DependentUpon>frm_ReportePapeletaPermisos.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\ImprimirOrden.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\ImprimirOrden.rdlc" />
     <EmbeddedResource Include="Reportes\Personal\frm_ReporteSaldoTrabajador.resx">
       <DependentUpon>frm_ReporteSaldoTrabajador.vb</DependentUpon>
     </EmbeddedResource>
@@ -7274,9 +7273,7 @@
       <DependentUpon>frm_ReportePrestamo.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\GrupoAprobacion.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\GrupoAprobacion.rdlc" />
     <EmbeddedResource Include="Reportes\Tesoreria\MovimientoPrestamo.rdlc" />
     <EmbeddedResource Include="Reportes\Tesoreria\PagoMerma.rdlc" />
     <EmbeddedResource Include="Reportes\Tesoreria\rptGrupoSancionDetalle.rdlc" />
@@ -7494,9 +7491,7 @@
       <DependentUpon>frm_ReporteAlmacen.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\Reporte.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\Reporte.rdlc" />
     <EmbeddedResource Include="Reportes\Seguridad\frm_ControlUsuarios.resx">
       <DependentUpon>frm_ControlUsuarios.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -7505,9 +7500,7 @@
       <DependentUpon>frm_ReporteBanco.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\ValeCaja.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Reportes\ValeCaja.rdlc" />
     <EmbeddedResource Include="Seguridad\frm_Alerta.resx">
       <DependentUpon>frm_Alerta.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -7778,68 +7771,27 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ISLWin.sdm" />
-    <Content Include="LogoInduamerica.ico" />
-    <Content Include="PLANTILLAS_SGI\Plantilla_Cotizacion.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_Compra_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="PLANTILLAS_SGI\Plantilla_Cotizacion.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_Compra_SGI.xlt" />
     <Content Include="PLANTILLAS_SGI\Plantilla_RegInventarioValorizado_SGI.xlt" />
-    <Content Include="Plantilla_Cotizacion.xls">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Combustible.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillaSPSAFlotaPequeña.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PlantillaSPSAFlotaPequeña.xls">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDRansa.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDSFVES.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasMaestro.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasTottus.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMabel_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMiguel_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraRamiro_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSixto_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSuzzette_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraWilson_SGI.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov2.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\ValesRendir.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PLANTILLAS_SGI\PlantillaRenting.xlt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Plantilla_Cotizacion.xls" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Combustible.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillaSPSAFlotaPequeña.xlt" />
+    <Content Include="PlantillaSPSAFlotaPequeña.xls" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDRansa.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDSFVES.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasMaestro.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasTottus.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMabel_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraMiguel_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraRamiro_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSixto_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraSuzzette_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_Orden_CompraWilson_SGI.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillasSPSACDLurin_Prov2.xlt" />
+    <Content Include="PLANTILLAS_SGI\ValesRendir.xlt" />
+    <Content Include="PLANTILLAS_SGI\PlantillaRenting.xlt" />
     <None Include="Reportes\Comercial\Ventas\dsDetalleDoc.xsc">
       <DependentUpon>dsDetalleDoc.xsd</DependentUpon>
     </None>
@@ -8155,6 +8107,7 @@
     <Folder Include="bin\Debug\PLANTILLAS_SGI\" />
     <Folder Include="bin\Debug\Reportes\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="ComprobanteElectronico\" />
     <Folder Include="Libreria\" />
   </ItemGroup>
   <ItemGroup>
@@ -9910,13 +9863,33 @@
     </PublishFile>
     <PublishFile Include="LogoInduamerica.ico">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Ink">
+      <Visible>False</Visible>
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
-      <FileType>File</FileType>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Ink">
       <Visible>False</Visible>
@@ -9924,8 +9897,16 @@
       </Group>
       <TargetPath>
       </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Office.Interop.Excel">
@@ -9934,8 +9915,16 @@
       </Group>
       <TargetPath>
       </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
       <PublishState>Include</PublishState>
       <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Office.Interop.PowerPoint">
@@ -9944,58 +9933,16 @@
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.Common">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.WinForms">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Vbe.Interop">
@@ -10004,18 +9951,16 @@
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="PlantillaSPSAFlotaPequeña.xls">

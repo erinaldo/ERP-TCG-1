@@ -1,16 +1,24 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Data.SqlClient
 
 Public Class d_TipoOpeCon
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_TipoOpeCon
         Try
-            Dim oeTipoOpeCon = New e_TipoOpeCon( _
-                             o_Fila("Id").ToString _
-                             , o_Fila("Codigo").ToString _
-                             , o_Fila("Nombre").ToString _
+            Dim oeTipoOpeCon = New e_TipoOpeCon(
+                             o_fila("Id").ToString _
+                             , o_fila("Codigo").ToString _
+                             , o_fila("Nombre").ToString
             )
             Return oeTipoOpeCon
         Catch ex As Exception
@@ -26,7 +34,7 @@ Public Class d_TipoOpeCon
                         , .TipoOperacion _
                         , .Id _
                         , .Codigo _
-                        , .Nombre _
+                        , .Nombre
                         )
             End With
             Return ds
@@ -38,7 +46,7 @@ Public Class d_TipoOpeCon
     Public Function Obtener(ByVal oeTipoOpeCon As e_TipoOpeCon) As e_TipoOpeCon
         Try
             Dim ds As DataSet = ExecuteLST(oeTipoOpeCon)
-            If ds.Tables(0).rows.Count > 0 Then
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeTipoOpeCon = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeTipoOpeCon
@@ -74,7 +82,7 @@ Public Class d_TipoOpeCon
                         , .PrefijoID _
                         , .Id _
                         , .Codigo _
-                        , .Nombre _
+                        , .Nombre
                     ).ToString.Split("_")
                 .Id = stResultado(0)
             End With

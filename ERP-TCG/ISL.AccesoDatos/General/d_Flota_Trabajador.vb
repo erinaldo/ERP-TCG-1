@@ -7,7 +7,7 @@
 '=================================================================================================================
 
 Imports System.Transactions
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 Public Class d_Flota_Trabajador
     Private sqlhelper As New SqlHelper

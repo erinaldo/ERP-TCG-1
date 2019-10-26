@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+﻿Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports ISL.Controles
 
 ''' <summary>

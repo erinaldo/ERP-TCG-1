@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -32,7 +32,7 @@ Public Class l_MovimientoAnalisis
         Return Analisis
     End Function
 
-    Public Function Eliminar(ByVal oeMovimientoAnalisis As EntidadesWCF.e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Eliminar
+    Public Function Eliminar(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Eliminar
         Try
             Return odMovimientoAnalisis.Eliminar(oeMovimientoAnalisis)
         Catch ex As Exception
@@ -40,7 +40,7 @@ Public Class l_MovimientoAnalisis
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoAnalisis As EntidadesWCF.e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Guardar
+    Public Function Guardar(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Guardar
         Try
             If Validar(oeMovimientoAnalisis) Then
                 Return odMovimientoAnalisis.Guardar(oeMovimientoAnalisis)
@@ -50,7 +50,7 @@ Public Class l_MovimientoAnalisis
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMovimientoAnalisis As EntidadesWCF.e_MovimientoAnalisis) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoAnalisis) Implements Il_MovimientoAnalisis.Listar
+    Public Function Listar(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As System.Collections.Generic.List(Of e_MovimientoAnalisis) Implements Il_MovimientoAnalisis.Listar
         Try
             Return odMovimientoAnalisis.Listar(oeMovimientoAnalisis)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_MovimientoAnalisis
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMovimientoAnalisis As EntidadesWCF.e_MovimientoAnalisis) As EntidadesWCF.e_MovimientoAnalisis Implements Il_MovimientoAnalisis.Obtener
+    Public Function Obtener(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As e_MovimientoAnalisis Implements Il_MovimientoAnalisis.Obtener
         Try
             Return odMovimientoAnalisis.Obtener(oeMovimientoAnalisis)
         Catch ex As Exception
@@ -66,7 +66,7 @@ Public Class l_MovimientoAnalisis
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMovimientoAnalisis As EntidadesWCF.e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Validar
+    Public Function Validar(ByVal oeMovimientoAnalisis As e_MovimientoAnalisis) As Boolean Implements Il_MovimientoAnalisis.Validar
         Try
             With oeMovimientoAnalisis
                 '---------VALIDARRRRRRRRRR-------------

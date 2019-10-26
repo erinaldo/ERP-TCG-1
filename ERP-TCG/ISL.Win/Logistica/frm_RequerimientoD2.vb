@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -17,7 +17,7 @@ Imports Infragistics.Win.CalcEngine
 Imports Infragistics.Win.UltraWinDataSource
 
 Public Class frm_RequerimientoD2
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Inicialización del formulario"
 
@@ -2023,7 +2023,7 @@ Public Class frm_RequerimientoD2
             LlenaComboCategoriaServicios()
 
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
 
             If PerfilAsignado(gNombrePerfilAdministrador) Or PerfilAsignado(gNombrePerfilJefeAlmacen) _
             Or PerfilAsignado(gNombrePerfilJefeLogistica) Or PerfilAsignado(gNombrePerfilJefeTesoreria) Then

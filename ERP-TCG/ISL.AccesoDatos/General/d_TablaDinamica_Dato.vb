@@ -1,10 +1,16 @@
-﻿
-Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 
 Public Class d_TablaDinamica_Dato
 
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
-
+    Dim bd As New SqlHelper
     Private Function Cargar(ByVal o_fila As DataRow) As e_TablaDinamica_Dato
         Try
             Dim oeTablaDinamica_Dato = New e_TablaDinamica_Dato(
@@ -30,7 +36,7 @@ Public Class d_TablaDinamica_Dato
 
     Private Function ExecuteLST(ByVal oeTablaDinamica_Dato As e_TablaDinamica_Dato) As DataSet
         Try
-            Dim bd As New SqlHelper
+
             Dim ds As DataSet
             With oeTablaDinamica_Dato
                 ds = bd.ExecuteDataset("[GEN].[Sp_TablaDinamica_Dato_LST]" _
@@ -87,13 +93,12 @@ Public Class d_TablaDinamica_Dato
 
     Public Function Guardar(ByVal oeTablaDinamica_Dato As e_TablaDinamica_Dato) As Boolean
         Try
-            Dim bd As New SqlHelper
             'Using transScope As New TransactionScope()
             Dim stResultado() As String
             With oeTablaDinamica_Dato
                 stResultado = bd.ExecuteScalar("[GEN].[Sp_TablaDinamica_Dato_IAE]" _
                         , .TipoOperacion _
-                        , d_DatosConfiguracion.PrefijoID _
+                        , .PrefijoID _
                         , .Id _
                         , .IdColumna _
                         , .NroFila _
@@ -115,7 +120,6 @@ Public Class d_TablaDinamica_Dato
 
     Public Function Eliminar(ByVal oeTablaDinamica_Dato As e_TablaDinamica_Dato) As Boolean
         Try
-            Dim bd As New SqlHelper
             With oeTablaDinamica_Dato
                 bd.ExecuteNonQuery("[GEN].[Sp_TablaDinamica_Dato_IAE]" _
                        , "E" _
@@ -137,12 +141,10 @@ Public Class d_TablaDinamica_Dato
         End Try
     End Function
 
-    Public Function UltimoIdInserta() As String
+    Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim bd As New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
-            stResultado = bd.ExecuteScalar("GEN.Sp_UltimoId_Inserta", "GEN.TablaDinamica_Dato", d_DatosConfiguracion.PrefijoID)
+            stResultado = bd.ExecuteScalar("GEN.Sp_UltimoId_Inserta", "GEN.TablaDinamica_Dato", PrefijoID)
             Return stResultado
         Catch ex As Exception
             Throw ex

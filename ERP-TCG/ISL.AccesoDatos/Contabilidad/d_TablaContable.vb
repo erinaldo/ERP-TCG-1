@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -80,10 +88,9 @@ Public Class d_TablaContable
 
     Public Function Guardar(ByVal oeTablaContable As e_TablaContable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado() As String
             With oeTablaContable
-                stResultado = sqlhelper.ExecuteScalar("CON.ISP_TablaContable_IAE", .Tipooperacion, .PrefijoID, _
+                stResultado = sqlhelper.ExecuteScalar("CON.ISP_TablaContable_IAE", .Tipooperacion, .PrefijoID,
                          .Id _
                         , .Nombre _
                         , .Texto1 _
@@ -95,7 +102,7 @@ Public Class d_TablaContable
                         , .Logico1 _
                         , .Logico2 _
                         , .Logico3 _
-                        , .Activo _
+                        , .Activo
                     ).ToString.Split("_")
 
                 For Each Detalle As e_TablaContableDet In .lstTablaCtbleDet
@@ -114,7 +121,6 @@ Public Class d_TablaContable
 
     Public Function GuardarMasivo(ByVal dtTabCtble As DataTable) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             sqlhelper.InsertarMasivo("CON.TablaContable", dtTabCtble)
             Return True
         Catch ex As Exception
@@ -136,7 +142,6 @@ Public Class d_TablaContable
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = sqlhelper.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.TablaContable", PrefijoID
                                   )

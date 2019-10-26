@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_MantenimientoActividad
 
     Dim odMantenimientoActividad As New d_MantenimientoActividad
 
-    Public Function Eliminar(ByVal oeMantenimientoActividad As EntidadesWCF.e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Eliminar
+    Public Function Eliminar(ByVal oeMantenimientoActividad As e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Eliminar
         Try
             Return odMantenimientoActividad.Eliminar(oeMantenimientoActividad)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_MantenimientoActividad
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMantenimientoActividad As EntidadesWCF.e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Guardar
+    Public Function Guardar(ByVal oeMantenimientoActividad As e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Guardar
         Try
             If Validar(oeMantenimientoActividad) Then
                 Return odMantenimientoActividad.Guardar(oeMantenimientoActividad)
@@ -26,7 +26,7 @@ Public Class l_MantenimientoActividad
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMantenimientoActividad As EntidadesWCF.e_MantenimientoActividad) As System.Collections.Generic.List(Of EntidadesWCF.e_MantenimientoActividad) Implements Il_MantenimientoActividad.Listar
+    Public Function Listar(ByVal oeMantenimientoActividad As e_MantenimientoActividad) As System.Collections.Generic.List(Of e_MantenimientoActividad) Implements Il_MantenimientoActividad.Listar
         Try
             Return odMantenimientoActividad.Listar(oeMantenimientoActividad)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_MantenimientoActividad
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMantenimientoActividad As EntidadesWCF.e_MantenimientoActividad) As EntidadesWCF.e_MantenimientoActividad Implements Il_MantenimientoActividad.Obtener
+    Public Function Obtener(ByVal oeMantenimientoActividad As e_MantenimientoActividad) As e_MantenimientoActividad Implements Il_MantenimientoActividad.Obtener
         Try
             Return odMantenimientoActividad.Obtener(oeMantenimientoActividad)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MantenimientoActividad
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMantenimientoActividad As EntidadesWCF.e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Validar
+    Public Function Validar(ByVal oeMantenimientoActividad As e_MantenimientoActividad) As Boolean Implements Il_MantenimientoActividad.Validar
         Try
             With oeMantenimientoActividad
                 '---------VALIDARRRRRRRRRR-------------

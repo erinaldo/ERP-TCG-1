@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -65,7 +65,7 @@ Public Class l_PrestamoDetalle
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal lePrestamoDet As System.Collections.Generic.List(Of EntidadesWCF.e_PrestamoDetalle)) As Boolean Implements Il_PrestamoDetalle.GuardarLista
+    Public Function GuardarLista(ByVal lePrestamoDet As System.Collections.Generic.List(Of e_PrestamoDetalle)) As Boolean Implements Il_PrestamoDetalle.GuardarLista
         Try
             Return odPrestamoDetalle.GuardarLista(lePrestamoDet)
         Catch ex As Exception
@@ -73,7 +73,7 @@ Public Class l_PrestamoDetalle
         End Try
     End Function
 
-    Public Function Ejecutar(ByVal oePrestamoDetalle As EntidadesWCF.e_PrestamoDetalle, _
+    Public Function Ejecutar(ByVal oePrestamoDetalle As e_PrestamoDetalle, _
                              ByVal lePrestamo As List(Of e_Prestamo), ByVal FechaEjecucion As Date, _
                              ByVal IndAdelantoPrestamo As Boolean, ByVal ls_PeriodoEjec As String) As Boolean Implements Il_PrestamoDetalle.Ejecutar
         Try
@@ -107,7 +107,7 @@ Public Class l_PrestamoDetalle
         End Try
     End Function
 
-    'Public Function Liquidar(ByVal oePrestamoDetalle As EntidadesWCF.e_PrestamoDetalle) As Boolean Implements Il_PrestamoDetalle.Liquidar
+    'Public Function Liquidar(ByVal oePrestamoDetalle As e_PrestamoDetalle) As Boolean Implements Il_PrestamoDetalle.Liquidar
     '    Try
     '        Dim cadid() As String
     '        cadid = oePrestamoDetalle.CadIdPrestDet.Split(",")

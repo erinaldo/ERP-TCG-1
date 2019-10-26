@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 ' NOTA: si cambia aquí el nombre de clase "l_AccidenteCarga", también debe actualizar la referencia a "l_AccidenteCarga" tanto en Web.config como en el archivo .svc asociado.
 Public Class l_AccidenteCarga
     Implements Il_AccidenteCarga

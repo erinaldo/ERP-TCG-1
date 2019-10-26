@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_AporteDescuento
     Private odAporteDescuento As New d_AporteDescuento
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeAporteDescuento As EntidadesWCF.e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Eliminar
+    Public Function Eliminar(oeAporteDescuento As e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Eliminar
         Try
             Return odAporteDescuento.Eliminar(oeAporteDescuento)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_AporteDescuento
         End Try
     End Function
 
-    Public Function Guardar(oeAporteDescuento As EntidadesWCF.e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Guardar
+    Public Function Guardar(oeAporteDescuento As e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Guardar
         Try
             If Validar(oeAporteDescuento) Then
                 Return odAporteDescuento.Guardar(oeAporteDescuento)
@@ -35,7 +35,7 @@ Public Class l_AporteDescuento
         End Try
     End Function
 
-    Public Function Listar(oeAporteDescuento As EntidadesWCF.e_AporteDescuento) As System.Collections.Generic.List(Of EntidadesWCF.e_AporteDescuento) Implements Il_AporteDescuento.Listar
+    Public Function Listar(oeAporteDescuento As e_AporteDescuento) As System.Collections.Generic.List(Of e_AporteDescuento) Implements Il_AporteDescuento.Listar
         Try
             Return odAporteDescuento.Listar(oeAporteDescuento)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_AporteDescuento
         End Try
     End Function
 
-    Public Function Obtener(oeAporteDescuento As EntidadesWCF.e_AporteDescuento) As EntidadesWCF.e_AporteDescuento Implements Il_AporteDescuento.Obtener
+    Public Function Obtener(oeAporteDescuento As e_AporteDescuento) As e_AporteDescuento Implements Il_AporteDescuento.Obtener
         Try
             Return odAporteDescuento.Obtener(oeAporteDescuento)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_AporteDescuento
         End Try
     End Function
 
-    Public Function Validar(oeAporteDescuento As EntidadesWCF.e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Validar
+    Public Function Validar(oeAporteDescuento As e_AporteDescuento) As Boolean Implements Il_AporteDescuento.Validar
         Try
             With oeAporteDescuento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "No ha Ingresado Codigo")

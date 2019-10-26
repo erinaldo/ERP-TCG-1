@@ -4,11 +4,12 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales
+' @0001 |   2019-10-01  |  CT2010   |   Version Sistema
 '=================================================================================================================
 
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports System.Data.OleDb
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
@@ -33,7 +34,7 @@ Imports Microsoft.Office.Interop
 
 Module m_Funciones
 
-
+    Dim olEmpresaSistema As New l_EmpresaSistemas
 #Region "EOS"
 
     'Public gstrIdEmpresa As String = "1CIX00000001"
@@ -47,7 +48,7 @@ Module m_Funciones
     'Public gstrRucEmpresaSis As String = "20603652810"
 
     Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
-        Dim ln_Retorna As Double = 0
+        Dim ln_Retorna As Double = 0.18
         'oeParametro = New e_Parametro
         'oeParametro.TipoBusca = 2 : oeParametro.Abreviatura = ls_Abreviatura
         'If gleParametro.Contains(oeParametro) Then
@@ -346,17 +347,17 @@ Module m_Funciones
 
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
-    'Declara constante pública del Id de la Empresa ISL
+    'Declara constante pública del Id de la Empresa
     Public Const ISL_IdClienteProveedor As String = "1CH000004444"
     Public Const ISL_IdProveedor As String = "1CH000004444"
     Public Const ISL_IdEmpresa As String = "1CH000006026"
-    'Public Const ISL_Nombre As String = "INDUAMERICA SERVICIOS LOGISTICOS S.A.C."
+    'Public Const ERP_Nombre As String = "ERP"
     Public Const ISL_Nombre As String = "MI EMPRESA S.A.C."
     Public Const ISL_RUC As String = "20479729141"
     Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
-    Public Abrev_Empresa As String = "ISL"
+    Public Abrev_Empresa As String = "ERP"
 
     'Declara constantes públicas para nombres de perfiles utilizados por diferentes módulos
     Public Const gNombrePerfilSupervidorGeneral As String = "SUPERVISOR GENERAL"
@@ -605,6 +606,7 @@ Module m_Funciones
     Public gs_PrefijoIdSucursal As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
     Public gs_TxtEmpresaSistema As String '@0001
+    Public gs_VersionSis As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -1088,13 +1090,22 @@ Module m_Funciones
 #Region "Metodos"
 
     Public Function VersionDelSistema() As String
+
         Dim version As String = String.Empty
-        If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
-            version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-        Else
-            version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
-        End If
+        '@0003
+        'If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
+        '    version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
+        'Else
+        '    version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
+        'End If
+        'Return version
+        '@0003 Inicio
+        Dim oeEmpresaSistemas As New e_EmpresaSistemas
+        oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
+        version = oeEmpresaSistemas.VersionSis.Trim
+        gs_VersionSis = version
         Return version
+        '@0003 Fin
     End Function
 
     Public Function AutenticarUsuario() As Boolean
@@ -1715,8 +1726,8 @@ Module m_Funciones
                 If result = DialogResult.Cancel Then Return
                 Dim stNombreArchivo As String = sfd_Dialogo.FileName
                 uge_Exportar.Export(Grilla, stNombreArchivo)
-                If MessageBox.Show("Se ha exportado satisfactoriamente el archivo, desea poder visualizarlo?", _
-                "ISL", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                If MessageBox.Show("Se ha exportado satisfactoriamente el archivo, desea poder visualizarlo?",
+                "ERP", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Process.Start(stNombreArchivo)
                 End If
             Else
@@ -2210,7 +2221,7 @@ Module m_Funciones
 
     Public Sub MuestraImagenUsuario()
         Dim olPersona As New l_Persona
-        frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.AppearancesSmall.Appearance.Image = olPersona.Foto(gUsuarioSGI.oePersona.Dni)
+        'frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.AppearancesSmall.Appearance.Image = olPersona.Foto(gUsuarioSGI.oePersona.Dni)
         frm_Menu.utm_ISLSGI.Tools("iconusuario").SharedProps.ToolTipText = gUsuarioSGI.oePersona.NombreCompleto
         frm_Menu.utm_ISLSGI.Tools("sbNombreUsuario").SharedProps.Visible = False
     End Sub
@@ -4470,12 +4481,7 @@ Module m_Funciones
 
 #Region "Grillas Configuracion"
 
-    ''' <summary>
-    ''' Calcula Totales de una Grilla ISL
-    ''' </summary>
-    ''' <param name="Grilla">Grilla Isl</param>
-    ''' <param name="aColumnas">Nombre de las Columnas Separadas por coma</param>
-    ''' <remarks></remarks>
+
     Public Sub CalcularTotales(ByVal Grilla As UltraGrid, ByVal ParamArray aColumnas As String())
         With Grilla.DisplayLayout.Bands(0)
             .Summaries.Clear()

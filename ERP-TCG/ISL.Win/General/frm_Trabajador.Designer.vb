@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_Trabajador
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -115,7 +115,7 @@ Partial Class frm_Trabajador
         Dim Appearance78 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance79 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance80 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim E_Sexo1 As ISL.EntidadesWCF.e_Sexo = New ISL.EntidadesWCF.e_Sexo()
+        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance81 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance82 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance83 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -143,13 +143,20 @@ Partial Class frm_Trabajador
         Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool6 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarDoc")
         Dim Appearance93 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Trabajador))
+        Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance111 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim E_Sexo2 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance99 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance100 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim E_Sexo2 As ISL.EntidadesWCF.e_Sexo = New ISL.EntidadesWCF.e_Sexo()
         Dim Appearance101 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance102 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance103 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -159,8 +166,6 @@ Partial Class frm_Trabajador
         Dim Appearance107 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance111 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -176,11 +181,6 @@ Partial Class frm_Trabajador
         Dim UltraTab11 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab12 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab13 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Trabajador))
-        Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl13 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griOcupacion = New ISL.Controles.Grilla(Me.components)
         Me.mnuOcupacion = New ISL.Controles.MenuContextual(Me.components)
@@ -355,6 +355,14 @@ Partial Class frm_Trabajador
         Me.utpDocPer = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.utcDatosPersonales = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.upMantenumiento = New Infragistics.Win.Misc.UltraPanel()
+        Me.imagenGuardar = New System.Windows.Forms.PictureBox()
+        Me.btnDescargarJpg = New ISL.Controles.Boton(Me.components)
+        Me.imagenes = New System.Windows.Forms.ImageList(Me.components)
+        Me.btnBorrar = New ISL.Controles.Boton(Me.components)
+        Me.btnExaminar = New ISL.Controles.Boton(Me.components)
+        Me.UltraExpandableGroupBox6 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
+        Me.UltraExpandableGroupBoxPanel6 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
+        Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.ficDatos2 = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage5 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.agrDatosBasicos = New ISL.Controles.Agrupacion(Me.components)
@@ -421,14 +429,6 @@ Partial Class frm_Trabajador
         Me.CerrarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ficTrabajador = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.UltraExpandableGroupBox6 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
-        Me.UltraExpandableGroupBoxPanel6 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
-        Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
-        Me.imagenes = New System.Windows.Forms.ImageList(Me.components)
-        Me.btnDescargarJpg = New ISL.Controles.Boton(Me.components)
-        Me.btnBorrar = New ISL.Controles.Boton(Me.components)
-        Me.btnExaminar = New ISL.Controles.Boton(Me.components)
-        Me.imagenGuardar = New System.Windows.Forms.PictureBox()
         Me.UltraTabPageControl13.SuspendLayout()
         CType(Me.griOcupacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuOcupacion.SuspendLayout()
@@ -533,6 +533,10 @@ Partial Class frm_Trabajador
         Me.utcDatosPersonales.SuspendLayout()
         Me.upMantenumiento.ClientArea.SuspendLayout()
         Me.upMantenumiento.SuspendLayout()
+        CType(Me.imagenGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraExpandableGroupBox6.SuspendLayout()
+        Me.UltraExpandableGroupBoxPanel6.SuspendLayout()
         CType(Me.ficDatos2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficDatos2.SuspendLayout()
         CType(Me.agrDatosBasicos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -580,10 +584,6 @@ Partial Class frm_Trabajador
         Me.mcFormulario.SuspendLayout()
         CType(Me.ficTrabajador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficTrabajador.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox6.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel6.SuspendLayout()
-        CType(Me.imagenGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl13
@@ -591,7 +591,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl13.Controls.Add(Me.griOcupacion)
         Me.UltraTabPageControl13.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
-        Me.UltraTabPageControl13.Size = New System.Drawing.Size(861, 121)
+        Me.UltraTabPageControl13.Size = New System.Drawing.Size(884, 121)
         '
         'griOcupacion
         '
@@ -600,7 +600,7 @@ Partial Class frm_Trabajador
         Me.griOcupacion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOcupacion.Location = New System.Drawing.Point(0, 0)
         Me.griOcupacion.Name = "griOcupacion"
-        Me.griOcupacion.Size = New System.Drawing.Size(861, 121)
+        Me.griOcupacion.Size = New System.Drawing.Size(884, 121)
         Me.griOcupacion.TabIndex = 0
         Me.griOcupacion.Text = "Ocupaciones Asignadas"
         '
@@ -977,7 +977,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl2.Controls.Add(Me.agrOcupacion)
         Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(889, 318)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(898, 318)
         '
         'agrSueldoTrab
         '
@@ -1140,7 +1140,7 @@ Partial Class frm_Trabajador
         Me.agrDatosLaborales.ForeColor = System.Drawing.Color.Black
         Me.agrDatosLaborales.Location = New System.Drawing.Point(3, 3)
         Me.agrDatosLaborales.Name = "agrDatosLaborales"
-        Me.agrDatosLaborales.Size = New System.Drawing.Size(869, 80)
+        Me.agrDatosLaborales.Size = New System.Drawing.Size(892, 80)
         Me.agrDatosLaborales.TabIndex = 43
         Me.agrDatosLaborales.Text = "Información sobre aspectos laborales"
         Me.agrDatosLaborales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1294,7 +1294,7 @@ Partial Class frm_Trabajador
         Me.agrOcupacion.ForeColor = System.Drawing.Color.Black
         Me.agrOcupacion.Location = New System.Drawing.Point(3, 89)
         Me.agrOcupacion.Name = "agrOcupacion"
-        Me.agrOcupacion.Size = New System.Drawing.Size(869, 164)
+        Me.agrOcupacion.Size = New System.Drawing.Size(892, 164)
         Me.agrOcupacion.TabIndex = 1
         Me.agrOcupacion.Text = "Información de Ocupaciones del Trabajador"
         Me.agrOcupacion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1309,7 +1309,7 @@ Partial Class frm_Trabajador
         Me.ficManOcupacion.Location = New System.Drawing.Point(3, 17)
         Me.ficManOcupacion.Name = "ficManOcupacion"
         Me.ficManOcupacion.SharedControlsPage = Me.UltraTabSharedControlsPage6
-        Me.ficManOcupacion.Size = New System.Drawing.Size(863, 144)
+        Me.ficManOcupacion.Size = New System.Drawing.Size(886, 144)
         Me.ficManOcupacion.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficManOcupacion.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl13
@@ -1323,7 +1323,7 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabSharedControlsPage6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage6.Name = "UltraTabSharedControlsPage6"
-        Me.UltraTabSharedControlsPage6.Size = New System.Drawing.Size(861, 121)
+        Me.UltraTabSharedControlsPage6.Size = New System.Drawing.Size(884, 121)
         '
         'UltraTabPageControl3
         '
@@ -1332,7 +1332,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl3.Controls.Add(Me.agrFondoPension)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(889, 318)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(898, 318)
         '
         'agrRegimenSalud
         '
@@ -2026,7 +2026,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl11.Controls.Add(Me.agrDatosTributarios)
         Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
-        Me.UltraTabPageControl11.Size = New System.Drawing.Size(889, 318)
+        Me.UltraTabPageControl11.Size = New System.Drawing.Size(898, 318)
         '
         'agrDatosTributarios
         '
@@ -2540,7 +2540,7 @@ Partial Class frm_Trabajador
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.AutoSize = True
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.ForeColor = System.Drawing.Color.Black
-        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(89, 4)
+        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(104, 4)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Name = "object_f37db69f_510c_45cc_acbf_5242ddf3f978"
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Size = New System.Drawing.Size(29, 14)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.TabIndex = 1
@@ -2893,7 +2893,7 @@ Partial Class frm_Trabajador
         Me.utcDatosPersonales.Controls.Add(Me.upMantenumiento)
         Me.utcDatosPersonales.Location = New System.Drawing.Point(1, 22)
         Me.utcDatosPersonales.Name = "utcDatosPersonales"
-        Me.utcDatosPersonales.Size = New System.Drawing.Size(1162, 522)
+        Me.utcDatosPersonales.Size = New System.Drawing.Size(980, 522)
         '
         'upMantenumiento
         '
@@ -2901,18 +2901,132 @@ Partial Class frm_Trabajador
         '
         'upMantenumiento.ClientArea
         '
-        Me.upMantenumiento.ClientArea.Controls.Add(Me.imagenGuardar)
-        Me.upMantenumiento.ClientArea.Controls.Add(Me.btnDescargarJpg)
-        Me.upMantenumiento.ClientArea.Controls.Add(Me.btnBorrar)
-        Me.upMantenumiento.ClientArea.Controls.Add(Me.btnExaminar)
         Me.upMantenumiento.ClientArea.Controls.Add(Me.UltraExpandableGroupBox6)
         Me.upMantenumiento.ClientArea.Controls.Add(Me.ficDatos2)
         Me.upMantenumiento.ClientArea.Controls.Add(Me.agrDatosBasicos)
         Me.upMantenumiento.Dock = System.Windows.Forms.DockStyle.Fill
         Me.upMantenumiento.Location = New System.Drawing.Point(0, 0)
         Me.upMantenumiento.Name = "upMantenumiento"
-        Me.upMantenumiento.Size = New System.Drawing.Size(1162, 522)
+        Me.upMantenumiento.Size = New System.Drawing.Size(980, 522)
         Me.upMantenumiento.TabIndex = 50
+        '
+        'imagenGuardar
+        '
+        Me.imagenGuardar.Location = New System.Drawing.Point(645, 142)
+        Me.imagenGuardar.Name = "imagenGuardar"
+        Me.imagenGuardar.Size = New System.Drawing.Size(45, 24)
+        Me.imagenGuardar.TabIndex = 332
+        Me.imagenGuardar.TabStop = False
+        Me.imagenGuardar.Visible = False
+        '
+        'btnDescargarJpg
+        '
+        Appearance95.ForeColor = System.Drawing.Color.Navy
+        Appearance95.Image = 2
+        Appearance95.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnDescargarJpg.Appearance = Appearance95
+        Me.btnDescargarJpg.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnDescargarJpg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnDescargarJpg.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDescargarJpg.ForeColor = System.Drawing.Color.Black
+        Me.btnDescargarJpg.ImageList = Me.imagenes
+        Me.btnDescargarJpg.Location = New System.Drawing.Point(824, 194)
+        Me.btnDescargarJpg.Name = "btnDescargarJpg"
+        Me.btnDescargarJpg.Size = New System.Drawing.Size(70, 25)
+        Me.btnDescargarJpg.TabIndex = 54
+        Me.btnDescargarJpg.TabStop = False
+        Me.btnDescargarJpg.Text = "Descarga"
+        '
+        'imagenes
+        '
+        Me.imagenes.ImageStream = CType(resources.GetObject("imagenes.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.imagenes.TransparentColor = System.Drawing.Color.Transparent
+        Me.imagenes.Images.SetKeyName(0, "")
+        Me.imagenes.Images.SetKeyName(1, "")
+        Me.imagenes.Images.SetKeyName(2, "")
+        Me.imagenes.Images.SetKeyName(3, "")
+        Me.imagenes.Images.SetKeyName(4, "")
+        Me.imagenes.Images.SetKeyName(5, "")
+        Me.imagenes.Images.SetKeyName(6, "")
+        Me.imagenes.Images.SetKeyName(7, "")
+        Me.imagenes.Images.SetKeyName(8, "")
+        Me.imagenes.Images.SetKeyName(9, "")
+        Me.imagenes.Images.SetKeyName(10, "")
+        Me.imagenes.Images.SetKeyName(11, "add.ico")
+        Me.imagenes.Images.SetKeyName(12, "06_calculator.ico")
+        Me.imagenes.Images.SetKeyName(13, "Consultar.ico")
+        Me.imagenes.Images.SetKeyName(14, "266.png")
+        '
+        'btnBorrar
+        '
+        Appearance110.ForeColor = System.Drawing.Color.Navy
+        Appearance110.Image = 3
+        Appearance110.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnBorrar.Appearance = Appearance110
+        Me.btnBorrar.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBorrar.ForeColor = System.Drawing.Color.Black
+        Me.btnBorrar.ImageList = Me.imagenes
+        Me.btnBorrar.Location = New System.Drawing.Point(762, 194)
+        Me.btnBorrar.Name = "btnBorrar"
+        Me.btnBorrar.Size = New System.Drawing.Size(56, 25)
+        Me.btnBorrar.TabIndex = 53
+        Me.btnBorrar.TabStop = False
+        Me.btnBorrar.Text = "Borrar"
+        '
+        'btnExaminar
+        '
+        Appearance111.ForeColor = System.Drawing.Color.Navy
+        Appearance111.Image = 7
+        Appearance111.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnExaminar.Appearance = Appearance111
+        Me.btnExaminar.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExaminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnExaminar.ForeColor = System.Drawing.Color.Black
+        Me.btnExaminar.ImageList = Me.imagenes
+        Me.btnExaminar.Location = New System.Drawing.Point(706, 194)
+        Me.btnExaminar.Name = "btnExaminar"
+        Me.btnExaminar.Size = New System.Drawing.Size(50, 25)
+        Me.btnExaminar.TabIndex = 52
+        Me.btnExaminar.TabStop = False
+        Me.btnExaminar.Text = "Foto"
+        '
+        'UltraExpandableGroupBox6
+        '
+        Me.UltraExpandableGroupBox6.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
+        Appearance94.BackColor = System.Drawing.Color.White
+        Appearance94.BackColor2 = System.Drawing.Color.White
+        Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance94
+        Me.UltraExpandableGroupBox6.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
+        Me.UltraExpandableGroupBox6.Expanded = False
+        Me.UltraExpandableGroupBox6.ExpandedSize = New System.Drawing.Size(188, 227)
+        Me.UltraExpandableGroupBox6.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
+        Me.UltraExpandableGroupBox6.Location = New System.Drawing.Point(911, 8)
+        Me.UltraExpandableGroupBox6.Name = "UltraExpandableGroupBox6"
+        Me.UltraExpandableGroupBox6.Size = New System.Drawing.Size(22, 227)
+        Me.UltraExpandableGroupBox6.TabIndex = 40
+        Me.UltraExpandableGroupBox6.TabStop = False
+        Me.UltraExpandableGroupBox6.Text = "Imagen"
+        Me.UltraExpandableGroupBox6.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'UltraExpandableGroupBoxPanel6
+        '
+        Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.PictureBox1)
+        Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
+        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(220, 221)
+        Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel6.Visible = False
+        '
+        'upbFoto
+        '
+        Me.upbFoto.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFoto.Location = New System.Drawing.Point(701, 20)
+        Me.upbFoto.Name = "upbFoto"
+        Me.upbFoto.Size = New System.Drawing.Size(193, 164)
+        Me.upbFoto.TabIndex = 0
         '
         'ficDatos2
         '
@@ -2924,7 +3038,7 @@ Partial Class frm_Trabajador
         Me.ficDatos2.Location = New System.Drawing.Point(5, 241)
         Me.ficDatos2.Name = "ficDatos2"
         Me.ficDatos2.SharedControlsPage = Me.UltraTabSharedControlsPage5
-        Me.ficDatos2.Size = New System.Drawing.Size(891, 341)
+        Me.ficDatos2.Size = New System.Drawing.Size(900, 341)
         Me.ficDatos2.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficDatos2.TabIndex = 51
         UltraTab3.TabPage = Me.UltraTabPageControl2
@@ -2940,32 +3054,36 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabSharedControlsPage5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage5.Name = "UltraTabSharedControlsPage5"
-        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(889, 318)
+        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(898, 318)
         '
         'agrDatosBasicos
         '
-        Me.agrDatosBasicos.Controls.Add(Me.PictureBox1)
+        Me.agrDatosBasicos.Controls.Add(Me.upbFoto)
+        Me.agrDatosBasicos.Controls.Add(Me.btnDescargarJpg)
         Me.agrDatosBasicos.Controls.Add(Me.Agrupacion2)
+        Me.agrDatosBasicos.Controls.Add(Me.btnBorrar)
+        Me.agrDatosBasicos.Controls.Add(Me.btnExaminar)
         Me.agrDatosBasicos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrDatosBasicos.ForeColor = System.Drawing.Color.Black
         Me.agrDatosBasicos.Location = New System.Drawing.Point(5, 8)
         Me.agrDatosBasicos.Name = "agrDatosBasicos"
-        Me.agrDatosBasicos.Size = New System.Drawing.Size(890, 227)
+        Me.agrDatosBasicos.Size = New System.Drawing.Size(900, 227)
         Me.agrDatosBasicos.TabIndex = 42
         Me.agrDatosBasicos.Text = "Datos Básicos:"
         Me.agrDatosBasicos.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(702, 22)
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 3)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(172, 197)
+        Me.PictureBox1.Size = New System.Drawing.Size(159, 209)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 39
         Me.PictureBox1.TabStop = False
         '
         'Agrupacion2
         '
+        Me.Agrupacion2.Controls.Add(Me.imagenGuardar)
         Me.Agrupacion2.Controls.Add(Me.verHijos)
         Me.Agrupacion2.Controls.Add(Me.btnCelular)
         Me.Agrupacion2.Controls.Add(Me.btnTelefono)
@@ -2998,8 +3116,8 @@ Partial Class frm_Trabajador
         '
         'verHijos
         '
-        Appearance98.ForeColor = System.Drawing.Color.Navy
-        Me.verHijos.Appearance = Appearance98
+        Appearance96.ForeColor = System.Drawing.Color.Navy
+        Me.verHijos.Appearance = Appearance96
         Me.verHijos.AutoSize = True
         Me.verHijos.BackColor = System.Drawing.Color.Transparent
         Me.verHijos.BackColorInternal = System.Drawing.Color.Transparent
@@ -3013,8 +3131,8 @@ Partial Class frm_Trabajador
         '
         'btnCelular
         '
-        Appearance99.ForeColor = System.Drawing.Color.Navy
-        Me.btnCelular.Appearance = Appearance99
+        Appearance97.ForeColor = System.Drawing.Color.Navy
+        Me.btnCelular.Appearance = Appearance97
         Me.btnCelular.AutoSize = True
         Me.btnCelular.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3028,8 +3146,8 @@ Partial Class frm_Trabajador
         '
         'btnTelefono
         '
-        Appearance100.ForeColor = System.Drawing.Color.Navy
-        Me.btnTelefono.Appearance = Appearance100
+        Appearance98.ForeColor = System.Drawing.Color.Navy
+        Me.btnTelefono.Appearance = Appearance98
         Me.btnTelefono.AutoSize = True
         Me.btnTelefono.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3068,8 +3186,8 @@ Partial Class frm_Trabajador
         '
         'btnEmail
         '
-        Appearance101.ForeColor = System.Drawing.Color.Navy
-        Me.btnEmail.Appearance = Appearance101
+        Appearance99.ForeColor = System.Drawing.Color.Navy
+        Me.btnEmail.Appearance = Appearance99
         Me.btnEmail.AutoSize = True
         Me.btnEmail.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3083,8 +3201,8 @@ Partial Class frm_Trabajador
         '
         'btnDireccion
         '
-        Appearance102.ForeColor = System.Drawing.Color.Navy
-        Me.btnDireccion.Appearance = Appearance102
+        Appearance100.ForeColor = System.Drawing.Color.Navy
+        Me.btnDireccion.Appearance = Appearance100
         Me.btnDireccion.AutoSize = True
         Me.btnDireccion.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnDireccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3132,8 +3250,8 @@ Partial Class frm_Trabajador
         '
         'txtDni
         '
-        Appearance103.ForeColor = System.Drawing.Color.Black
-        Me.txtDni.Appearance = Appearance103
+        Appearance101.ForeColor = System.Drawing.Color.Black
+        Me.txtDni.Appearance = Appearance101
         Me.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDni.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtDni.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3165,8 +3283,8 @@ Partial Class frm_Trabajador
         '
         'txtNombre
         '
-        Appearance104.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Appearance = Appearance104
+        Appearance102.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Appearance = Appearance102
         Me.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNombre.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3178,9 +3296,9 @@ Partial Class frm_Trabajador
         '
         'etiFechaNacimiento
         '
-        Appearance105.BackColor = System.Drawing.Color.Transparent
-        Appearance105.ForeColor = System.Drawing.Color.Navy
-        Me.etiFechaNacimiento.Appearance = Appearance105
+        Appearance103.BackColor = System.Drawing.Color.Transparent
+        Appearance103.ForeColor = System.Drawing.Color.Navy
+        Me.etiFechaNacimiento.Appearance = Appearance103
         Me.etiFechaNacimiento.AutoSize = True
         Me.etiFechaNacimiento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiFechaNacimiento.ForeColor = System.Drawing.Color.Black
@@ -3214,8 +3332,8 @@ Partial Class frm_Trabajador
         '
         'txtApellidoMaterno
         '
-        Appearance106.ForeColor = System.Drawing.Color.Black
-        Me.txtApellidoMaterno.Appearance = Appearance106
+        Appearance104.ForeColor = System.Drawing.Color.Black
+        Me.txtApellidoMaterno.Appearance = Appearance104
         Me.txtApellidoMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoMaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoMaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3227,8 +3345,8 @@ Partial Class frm_Trabajador
         '
         'txtApellidoPaterno
         '
-        Appearance107.ForeColor = System.Drawing.Color.Black
-        Me.txtApellidoPaterno.Appearance = Appearance107
+        Appearance105.ForeColor = System.Drawing.Color.Black
+        Me.txtApellidoPaterno.Appearance = Appearance105
         Me.txtApellidoPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoPaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoPaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3240,9 +3358,9 @@ Partial Class frm_Trabajador
         '
         'etiApellidoPaterno
         '
-        Appearance108.BackColor = System.Drawing.Color.Transparent
-        Appearance108.ForeColor = System.Drawing.Color.Navy
-        Me.etiApellidoPaterno.Appearance = Appearance108
+        Appearance106.BackColor = System.Drawing.Color.Transparent
+        Appearance106.ForeColor = System.Drawing.Color.Navy
+        Me.etiApellidoPaterno.Appearance = Appearance106
         Me.etiApellidoPaterno.AutoSize = True
         Me.etiApellidoPaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiApellidoPaterno.ForeColor = System.Drawing.Color.Black
@@ -3254,9 +3372,9 @@ Partial Class frm_Trabajador
         '
         'etiDni
         '
-        Appearance109.BackColor = System.Drawing.Color.Transparent
-        Appearance109.ForeColor = System.Drawing.Color.Navy
-        Me.etiDni.Appearance = Appearance109
+        Appearance107.BackColor = System.Drawing.Color.Transparent
+        Appearance107.ForeColor = System.Drawing.Color.Navy
+        Me.etiDni.Appearance = Appearance107
         Me.etiDni.AutoSize = True
         Me.etiDni.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiDni.ForeColor = System.Drawing.Color.Black
@@ -3268,9 +3386,9 @@ Partial Class frm_Trabajador
         '
         'etiApellidoMaterno
         '
-        Appearance110.BackColor = System.Drawing.Color.Transparent
-        Appearance110.ForeColor = System.Drawing.Color.Navy
-        Me.etiApellidoMaterno.Appearance = Appearance110
+        Appearance108.BackColor = System.Drawing.Color.Transparent
+        Appearance108.ForeColor = System.Drawing.Color.Navy
+        Me.etiApellidoMaterno.Appearance = Appearance108
         Me.etiApellidoMaterno.AutoSize = True
         Me.etiApellidoMaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiApellidoMaterno.ForeColor = System.Drawing.Color.Black
@@ -3282,9 +3400,9 @@ Partial Class frm_Trabajador
         '
         'etiNombre
         '
-        Appearance111.BackColor = System.Drawing.Color.Transparent
-        Appearance111.ForeColor = System.Drawing.Color.Navy
-        Me.etiNombre.Appearance = Appearance111
+        Appearance109.BackColor = System.Drawing.Color.Transparent
+        Appearance109.ForeColor = System.Drawing.Color.Navy
+        Me.etiNombre.Appearance = Appearance109
         Me.etiNombre.AutoSize = True
         Me.etiNombre.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiNombre.ForeColor = System.Drawing.Color.Black
@@ -3300,7 +3418,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl4.Controls.Add(Me.upComplemento)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1027, 522)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1162, 522)
         '
         'upComplemento
         '
@@ -3310,7 +3428,7 @@ Partial Class frm_Trabajador
         Me.upComplemento.Dock = System.Windows.Forms.DockStyle.Fill
         Me.upComplemento.Location = New System.Drawing.Point(0, 0)
         Me.upComplemento.Name = "upComplemento"
-        Me.upComplemento.Size = New System.Drawing.Size(1027, 522)
+        Me.upComplemento.Size = New System.Drawing.Size(1162, 522)
         Me.upComplemento.TabIndex = 44
         '
         'agrDerechoHabiente
@@ -3382,7 +3500,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1029, 545)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1164, 545)
         '
         'AgrGrillaTrabajador
         '
@@ -3392,7 +3510,7 @@ Partial Class frm_Trabajador
         Me.AgrGrillaTrabajador.ForeColor = System.Drawing.Color.Black
         Me.AgrGrillaTrabajador.Location = New System.Drawing.Point(0, 56)
         Me.AgrGrillaTrabajador.Name = "AgrGrillaTrabajador"
-        Me.AgrGrillaTrabajador.Size = New System.Drawing.Size(1029, 489)
+        Me.AgrGrillaTrabajador.Size = New System.Drawing.Size(1164, 489)
         Me.AgrGrillaTrabajador.TabIndex = 2
         Me.AgrGrillaTrabajador.Text = "Información complementaria"
         Me.AgrGrillaTrabajador.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -3413,7 +3531,7 @@ Partial Class frm_Trabajador
         Me.griTrabajador.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTrabajador.Location = New System.Drawing.Point(3, 17)
         Me.griTrabajador.Name = "griTrabajador"
-        Me.griTrabajador.Size = New System.Drawing.Size(1023, 469)
+        Me.griTrabajador.Size = New System.Drawing.Size(1158, 469)
         Me.griTrabajador.TabIndex = 1
         Me.griTrabajador.Text = "Información de trabajadores"
         '
@@ -3468,7 +3586,7 @@ Partial Class frm_Trabajador
         Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion1.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion1.Name = "Agrupacion1"
-        Me.Agrupacion1.Size = New System.Drawing.Size(1029, 56)
+        Me.Agrupacion1.Size = New System.Drawing.Size(1164, 56)
         Me.Agrupacion1.TabIndex = 1
         Me.Agrupacion1.Text = "Datos de Búsqueda:"
         Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -3629,7 +3747,7 @@ Partial Class frm_Trabajador
         Me.utcMantenimiento.Controls.Add(Me.ficMantenimientoTrab)
         Me.utcMantenimiento.Location = New System.Drawing.Point(1, 22)
         Me.utcMantenimiento.Name = "utcMantenimiento"
-        Me.utcMantenimiento.Size = New System.Drawing.Size(1164, 545)
+        Me.utcMantenimiento.Size = New System.Drawing.Size(982, 545)
         '
         'ficMantenimientoTrab
         '
@@ -3641,7 +3759,7 @@ Partial Class frm_Trabajador
         Me.ficMantenimientoTrab.Location = New System.Drawing.Point(0, 0)
         Me.ficMantenimientoTrab.Name = "ficMantenimientoTrab"
         Me.ficMantenimientoTrab.SharedControlsPage = Me.UltraTabSharedControlsPage2
-        Me.ficMantenimientoTrab.Size = New System.Drawing.Size(1164, 545)
+        Me.ficMantenimientoTrab.Size = New System.Drawing.Size(982, 545)
         Me.ficMantenimientoTrab.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficMantenimientoTrab.TabIndex = 42
         UltraTab10.TabPage = Me.utcDatosPersonales
@@ -3655,7 +3773,7 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabSharedControlsPage2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage2.Name = "UltraTabSharedControlsPage2"
-        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(1162, 522)
+        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(980, 522)
         '
         'etiSexo
         '
@@ -3702,7 +3820,7 @@ Partial Class frm_Trabajador
         Me.ficTrabajador.Location = New System.Drawing.Point(0, 0)
         Me.ficTrabajador.Name = "ficTrabajador"
         Me.ficTrabajador.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficTrabajador.Size = New System.Drawing.Size(1166, 568)
+        Me.ficTrabajador.Size = New System.Drawing.Size(984, 568)
         Me.ficTrabajador.TabIndex = 0
         UltraTab12.TabPage = Me.UltraTabPageControl1
         UltraTab12.Text = "Lista"
@@ -3715,132 +3833,14 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1164, 545)
-        '
-        'UltraExpandableGroupBox6
-        '
-        Me.UltraExpandableGroupBox6.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
-        Appearance97.BackColor = System.Drawing.Color.White
-        Appearance97.BackColor2 = System.Drawing.Color.White
-        Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance97
-        Me.UltraExpandableGroupBox6.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
-        Me.UltraExpandableGroupBox6.ExpandedSize = New System.Drawing.Size(243, 227)
-        Me.UltraExpandableGroupBox6.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.UltraExpandableGroupBox6.Location = New System.Drawing.Point(901, 8)
-        Me.UltraExpandableGroupBox6.Name = "UltraExpandableGroupBox6"
-        Me.UltraExpandableGroupBox6.Size = New System.Drawing.Size(243, 227)
-        Me.UltraExpandableGroupBox6.TabIndex = 40
-        Me.UltraExpandableGroupBox6.TabStop = False
-        Me.UltraExpandableGroupBox6.Text = "Imagen Unidad"
-        Me.UltraExpandableGroupBox6.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'UltraExpandableGroupBoxPanel6
-        '
-        Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.upbFoto)
-        Me.UltraExpandableGroupBoxPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(20, 3)
-        Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
-        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(220, 221)
-        Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
-        '
-        'upbFoto
-        '
-        Me.upbFoto.BorderShadowColor = System.Drawing.Color.Empty
-        Me.upbFoto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.upbFoto.Location = New System.Drawing.Point(0, 0)
-        Me.upbFoto.Name = "upbFoto"
-        Me.upbFoto.Size = New System.Drawing.Size(220, 221)
-        Me.upbFoto.TabIndex = 0
-        '
-        'imagenes
-        '
-        Me.imagenes.ImageStream = CType(resources.GetObject("imagenes.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imagenes.TransparentColor = System.Drawing.Color.Transparent
-        Me.imagenes.Images.SetKeyName(0, "")
-        Me.imagenes.Images.SetKeyName(1, "")
-        Me.imagenes.Images.SetKeyName(2, "")
-        Me.imagenes.Images.SetKeyName(3, "")
-        Me.imagenes.Images.SetKeyName(4, "")
-        Me.imagenes.Images.SetKeyName(5, "")
-        Me.imagenes.Images.SetKeyName(6, "")
-        Me.imagenes.Images.SetKeyName(7, "")
-        Me.imagenes.Images.SetKeyName(8, "")
-        Me.imagenes.Images.SetKeyName(9, "")
-        Me.imagenes.Images.SetKeyName(10, "")
-        Me.imagenes.Images.SetKeyName(11, "add.ico")
-        Me.imagenes.Images.SetKeyName(12, "06_calculator.ico")
-        Me.imagenes.Images.SetKeyName(13, "Consultar.ico")
-        Me.imagenes.Images.SetKeyName(14, "266.png")
-        '
-        'btnDescargarJpg
-        '
-        Appearance94.ForeColor = System.Drawing.Color.Navy
-        Appearance94.Image = 2
-        Appearance94.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnDescargarJpg.Appearance = Appearance94
-        Me.btnDescargarJpg.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnDescargarJpg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnDescargarJpg.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDescargarJpg.ForeColor = System.Drawing.Color.Black
-        Me.btnDescargarJpg.ImageList = Me.imagenes
-        Me.btnDescargarJpg.Location = New System.Drawing.Point(1067, 241)
-        Me.btnDescargarJpg.Name = "btnDescargarJpg"
-        Me.btnDescargarJpg.Size = New System.Drawing.Size(77, 25)
-        Me.btnDescargarJpg.TabIndex = 54
-        Me.btnDescargarJpg.TabStop = False
-        Me.btnDescargarJpg.Text = "Descarga"
-        '
-        'btnBorrar
-        '
-        Appearance95.ForeColor = System.Drawing.Color.Navy
-        Appearance95.Image = 3
-        Appearance95.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnBorrar.Appearance = Appearance95
-        Me.btnBorrar.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBorrar.ForeColor = System.Drawing.Color.Black
-        Me.btnBorrar.ImageList = Me.imagenes
-        Me.btnBorrar.Location = New System.Drawing.Point(984, 241)
-        Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(77, 25)
-        Me.btnBorrar.TabIndex = 53
-        Me.btnBorrar.TabStop = False
-        Me.btnBorrar.Text = "Limpiar..."
-        '
-        'btnExaminar
-        '
-        Appearance96.ForeColor = System.Drawing.Color.Navy
-        Appearance96.Image = 7
-        Appearance96.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnExaminar.Appearance = Appearance96
-        Me.btnExaminar.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnExaminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnExaminar.ForeColor = System.Drawing.Color.Black
-        Me.btnExaminar.ImageList = Me.imagenes
-        Me.btnExaminar.Location = New System.Drawing.Point(901, 241)
-        Me.btnExaminar.Name = "btnExaminar"
-        Me.btnExaminar.Size = New System.Drawing.Size(77, 25)
-        Me.btnExaminar.TabIndex = 52
-        Me.btnExaminar.TabStop = False
-        Me.btnExaminar.Text = "Imagen..."
-        '
-        'imagenGuardar
-        '
-        Me.imagenGuardar.Location = New System.Drawing.Point(933, 266)
-        Me.imagenGuardar.Name = "imagenGuardar"
-        Me.imagenGuardar.Size = New System.Drawing.Size(45, 24)
-        Me.imagenGuardar.TabIndex = 332
-        Me.imagenGuardar.TabStop = False
-        Me.imagenGuardar.Visible = False
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(982, 545)
         '
         'frm_Trabajador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1166, 568)
+        Me.ClientSize = New System.Drawing.Size(984, 568)
         Me.ContextMenuStrip = Me.mcFormulario
         Me.Controls.Add(Me.ficTrabajador)
         Me.MaximizeBox = False
@@ -3963,6 +3963,10 @@ Partial Class frm_Trabajador
         Me.utcDatosPersonales.ResumeLayout(False)
         Me.upMantenumiento.ClientArea.ResumeLayout(False)
         Me.upMantenumiento.ResumeLayout(False)
+        CType(Me.imagenGuardar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBox6.ResumeLayout(False)
+        Me.UltraExpandableGroupBoxPanel6.ResumeLayout(False)
         CType(Me.ficDatos2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficDatos2.ResumeLayout(False)
         CType(Me.agrDatosBasicos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4013,10 +4017,6 @@ Partial Class frm_Trabajador
         Me.mcFormulario.ResumeLayout(False)
         CType(Me.ficTrabajador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficTrabajador.ResumeLayout(False)
-        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.UltraExpandableGroupBox6.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel6.ResumeLayout(False)
-        CType(Me.imagenGuardar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4272,8 +4272,8 @@ Partial Class frm_Trabajador
     Friend WithEvents UltraExpandableGroupBoxPanel6 As Infragistics.Win.Misc.UltraExpandableGroupBoxPanel
     Friend WithEvents upbFoto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents imagenes As ImageList
-    Friend WithEvents btnDescargarJpg As Controles.Boton
-    Friend WithEvents btnBorrar As Controles.Boton
-    Friend WithEvents btnExaminar As Controles.Boton
+    Friend WithEvents btnDescargarJpg As ISL.Controles.Boton
+    Friend WithEvents btnBorrar As ISL.Controles.Boton
+    Friend WithEvents btnExaminar As ISL.Controles.Boton
     Friend WithEvents imagenGuardar As PictureBox
 End Class

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_leasing
 
     Dim odLeasing As New d_Leasing
 
-    Public Function Eliminar(ByVal oeLeasing As EntidadesWCF.e_Leasing) As Boolean Implements Il_leasing.Eliminar
+    Public Function Eliminar(ByVal oeLeasing As e_Leasing) As Boolean Implements Il_leasing.Eliminar
         Try
             Return odLeasing.Eliminar(oeLeasing)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_leasing
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeLeasing As EntidadesWCF.e_Leasing) As Boolean Implements Il_leasing.Guardar
+    Public Function Guardar(ByVal oeLeasing As e_Leasing) As Boolean Implements Il_leasing.Guardar
         Try
             '' If Validar(oeCompra) Then
             Return odLeasing.Guardar(oeLeasing)
@@ -26,7 +26,7 @@ Public Class l_leasing
         End Try
     End Function
 
-    Public Function Listar(ByVal oeLeasing As EntidadesWCF.e_Leasing) As System.Collections.Generic.List(Of EntidadesWCF.e_Leasing) Implements Il_leasing.Listar
+    Public Function Listar(ByVal oeLeasing As e_Leasing) As System.Collections.Generic.List(Of e_Leasing) Implements Il_leasing.Listar
         Try
             Return odLeasing.Listar(oeLeasing)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_leasing
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeLeasing As EntidadesWCF.e_Leasing) As EntidadesWCF.e_Leasing Implements Il_leasing.Obtener
+    Public Function Obtener(ByVal oeLeasing As e_Leasing) As e_Leasing Implements Il_leasing.Obtener
         Try
             Return odLeasing.Obtener(oeLeasing)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_leasing
         End Try
     End Function
 
-    Public Function Validar(ByVal oeLeasing As EntidadesWCF.e_Leasing) As Boolean Implements Il_leasing.Validar
+    Public Function Validar(ByVal oeLeasing As e_Leasing) As Boolean Implements Il_leasing.Validar
         Try
             With oeLeasing
                 '---------VALIDARRRRRRRRRR-------------

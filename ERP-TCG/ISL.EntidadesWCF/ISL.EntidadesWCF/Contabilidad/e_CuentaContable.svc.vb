@@ -452,7 +452,7 @@ Public Class e_CuentaContable
         Return cuentaContable
     End Function
 
-    Public Overloads Function Equals(ByVal oeCta As e_CuentaContable) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_CuentaContable).Equals
+    Public Overloads Function Equals(ByVal oeCta As e_CuentaContable) As Boolean Implements IEquatable(Of e_CuentaContable).Equals
         Select Case oeCta.Equivale
             Case 0 : If Me.Cuenta.Trim = oeCta.Cuenta.Trim Then Return True
             Case 1 : If Me.Id.Trim = oeCta.Id.Trim Then Return True

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -89,8 +97,6 @@ Public Class d_ReadecuacionActivoFijo
     Public Function Guardar(oeReadecuacionActivoFijo As e_ReadecuacionActivoFijo) As Boolean
         Try
             Using transScope As New TransactionScope()
-                sqlhelper = New SqlHelper
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
                 Dim ldReadecuacionAFDoc As New d_ReadecuacionAF_Documento
                 Dim IdResultado As String
                 With oeReadecuacionActivoFijo
@@ -108,12 +114,13 @@ Public Class d_ReadecuacionActivoFijo
                             , .Actual _
                             , .Activo _
                             , .UsuarioCreacion _
-                            , .ValorResidualAgregar _
+                            , .ValorResidualAgregar
                         ).ToString()
                     .Id = IdResultado
                     For Each ReadecAFDoc As e_ReadecuacionAF_Documento In .ListReadecuacionAFDoc
                         With ReadecAFDoc
                             .UsuarioCreacion = oeReadecuacionActivoFijo.UsuarioCreacion
+                            .PrefijoID = oeReadecuacionActivoFijo.PrefijoID '@0001
                             If .TipoOperacion = "E" Then
                                 ldReadecuacionAFDoc.Eliminar(ReadecAFDoc)
                             Else

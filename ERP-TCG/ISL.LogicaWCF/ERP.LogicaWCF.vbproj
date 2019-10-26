@@ -9,8 +9,8 @@
     <ProjectGuid>{8483DC1C-9CC3-431B-8997-B1C7D353EBFB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>ISL.LogicaWCF</RootNamespace>
-    <AssemblyName>ISL.LogicaWCF</AssemblyName>
+    <RootNamespace>ERP.LogicaWCF</RootNamespace>
+    <AssemblyName>ERP.LogicaWCF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
@@ -37,7 +37,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISL.LogicaWCF.xml</DocumentationFile>
+    <DocumentationFile>ERP.LogicaWCF.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -49,7 +49,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>ISL.LogicaWCF.xml</DocumentationFile>
+    <DocumentationFile>ERP.LogicaWCF.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
@@ -227,6 +227,7 @@
     <Content Include="General\l_DetalleConceptoPonderado.svc" />
     <Content Include="General\l_DocumentoVehicular_Documento.svc" />
     <Content Include="General\l_EmpresaAportacion.svc" />
+    <Content Include="General\l_EmpresaSistemas.svc" />
     <Content Include="General\l_Feriados.svc" />
     <Content Include="General\l_Flota_Cuota.svc" />
     <Content Include="General\l_Flota_Trabajador.svc" />
@@ -272,9 +273,7 @@
     <Content Include="General\l_HistorialRechazoOC.svc" />
     <Content Include="General\l_Impuesto.svc" />
     <Content Include="General\l_IncidenciasAutentificadas.svc" />
-    <Content Include="General\l_Lugar.svc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="General\l_Lugar.svc" />
     <Content Include="General\l_Marca.svc" />
     <Content Include="General\l_Material.svc" />
     <Content Include="General\l_MedioPago.svc" />
@@ -981,6 +980,7 @@
       <DependentUpon>l_FecLetras.svc</DependentUpon>
     </Compile>
     <Compile Include="General\Il_Bitacora.vb" />
+    <Compile Include="General\Il_EmpresaSistemas.vb" />
     <Compile Include="General\Il_Flota_Cuota.vb" />
     <Compile Include="General\Il_Flota_Trabajador.vb" />
     <Compile Include="General\Il_MovimientoPeaje.vb" />
@@ -1036,6 +1036,9 @@
     </Compile>
     <Compile Include="General\l_EmpresaAportacion.svc.vb">
       <DependentUpon>l_EmpresaAportacion.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_EmpresaSistemas.svc.vb">
+      <DependentUpon>l_EmpresaSistemas.svc</DependentUpon>
     </Compile>
     <Compile Include="General\l_Feriados.svc.vb">
       <DependentUpon>l_Feriados.svc</DependentUpon>
@@ -1612,7 +1615,6 @@
     </Compile>
     <Compile Include="General\l_Lugar.svc.vb">
       <DependentUpon>l_Lugar.svc</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="General\l_Marca.svc.vb">
       <DependentUpon>l_Marca.svc</DependentUpon>
@@ -2645,6 +2647,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />

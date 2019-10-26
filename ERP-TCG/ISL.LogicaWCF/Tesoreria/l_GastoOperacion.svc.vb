@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -43,7 +43,7 @@ Public Class l_GastoOperacion
     Dim loComboCTa As List(Of e_Combo)
     Dim odDatos As d_DatosConfiguracion
 
-    Public Function Eliminar(ByVal oeGastoOperacion As EntidadesWCF.e_GastoOperacion) As Boolean Implements Il_GastoOperacion.Eliminar
+    Public Function Eliminar(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean Implements Il_GastoOperacion.Eliminar
         Try
             Return odGastoOperacion.Eliminar(oeGastoOperacion)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_GastoOperacion
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeGastoOperacion As EntidadesWCF.e_GastoOperacion) As Boolean Implements Il_GastoOperacion.Guardar
+    Public Function Guardar(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean Implements Il_GastoOperacion.Guardar
         Try
             Return odGastoOperacion.Guardar(oeGastoOperacion)
         Catch ex As Exception
@@ -65,7 +65,7 @@ Public Class l_GastoOperacion
     ''' <param name="oeGastoOperacion"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function GuardarGasto(ByVal oeGastoOperacion As EntidadesWCF.e_GastoOperacion) As Boolean Implements Il_GastoOperacion.GuardarGasto
+    Public Function GuardarGasto(ByVal oeGastoOperacion As e_GastoOperacion) As Boolean Implements Il_GastoOperacion.GuardarGasto
         Try
             Return odGastoOperacion.GuardarGasto(oeGastoOperacion)
         Catch ex As Exception
@@ -1027,7 +1027,7 @@ Public Class l_GastoOperacion
         End Try
     End Function
 
-    Public Function Listar(ByVal oeGastoOperacion As EntidadesWCF.e_GastoOperacion) As System.Collections.Generic.List(Of EntidadesWCF.e_GastoOperacion) Implements Il_GastoOperacion.Listar
+    Public Function Listar(ByVal oeGastoOperacion As e_GastoOperacion) As System.Collections.Generic.List(Of e_GastoOperacion) Implements Il_GastoOperacion.Listar
         Try
             Return odGastoOperacion.Listar(oeGastoOperacion)
         Catch ex As Exception
@@ -1035,7 +1035,7 @@ Public Class l_GastoOperacion
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeGastoOperacion As EntidadesWCF.e_GastoOperacion) As EntidadesWCF.e_GastoOperacion Implements Il_GastoOperacion.Obtener
+    Public Function Obtener(ByVal oeGastoOperacion As e_GastoOperacion) As e_GastoOperacion Implements Il_GastoOperacion.Obtener
         Try
             Return odGastoOperacion.Obtener(oeGastoOperacion)
         Catch ex As Exception

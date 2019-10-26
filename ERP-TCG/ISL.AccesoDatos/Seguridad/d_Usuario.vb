@@ -6,16 +6,10 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports ISL.Encripta
 Imports System.Transactions
 
-''' <summary>
-''' Clase que gestiona los procesos del usuario.
-''' Clase de Hereda: d_Persona
-''' Fecha Actualizada:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Usuario,Capa del Sistema:Capa de Acceso a Datos </remarks>
 Public Class d_Usuario
 
     Private sqlhelper As New SqlHelper
@@ -33,14 +27,7 @@ Public Class d_Usuario
     Dim oeEmail As New e_Email
     Dim odEmail As New d_Email
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Usuario y enviada al metodo que lo utilizo.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeusuario) de tipo e_Usuario</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_Usuario
         Try
             Dim objSexo As New e_Sexo(CType(o_fila("Sexo"), String))
@@ -78,12 +65,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Función especial agregada para recuperar la lista de usuarios actualmente conectados al SGI
-    ''' </summary>
-    ''' <param name="o_fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function CargarUsuariosConectados(ByVal o_fila As DataRow) As e_UsuarioConectado
         Try
             Dim oeUsuarioConectado As New e_UsuarioConectado(o_fila("Id"), _
@@ -100,12 +81,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Cargar información de los usuarios actualmente desconectados, pero que trabajador el día 
-    ''' </summary>
-    ''' <param name="o_fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function CargarUsuariosDesconectados(ByVal o_fila As DataRow) As e_UsuarioDesconectado
         Try
             Dim oeUsuarioDesconectado As New e_UsuarioDesconectado(o_fila("Id"), _
@@ -122,12 +97,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Cargar usuarios sin acceso durante un tiempo determinado
-    ''' </summary>
-    ''' <param name="o_fila"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function CargarUsuariosSinAcceso(ByVal o_fila As DataRow) As e_UsuarioSinAcceso
         Try
             Dim oeUsuarioSinAcceso As New e_UsuarioSinAcceso(o_fila("Id"), _
@@ -143,14 +112,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un usuario, el cual es consultado por el procedimiento almacenado SGD.Isp_Usuario_Listar
-    ''' enviando su id del usuario.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_Usuario.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una variable oeUsuario de tipo e_Usuario</param>
-    ''' <returns>Devuelve una varible oeUsuario de tipo e_Usuario</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeUsuario As e_Usuario) As e_Usuario
         Try
             Dim ds As DataSet
@@ -200,12 +161,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Función implementada para WCF con la finalidad de obtener exclusivamente el usuario que se logea 
-    ''' </summary>
-    ''' <param name="oeUsuario"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function ObtenerUsuarioInicial(ByVal oeUsuario As e_Usuario) As e_Usuario
         Try
             Dim ds As DataSet
@@ -299,14 +254,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Usuario, el cual es consultado por el procedimiento 
-    ''' almacenado SGD.Isp_Usuario_Listar enviando sus atributos del usuario.Una vez obtenido los registros son cargados
-    ''' y devueltos en una lista generica.
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una Variable oeUsuario de tipo e_Usuario </param>
-    ''' <returns>Devuelve una lista generica(lUsuario) de objetos de tipo e_Usuario</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Listar(ByVal oeUsuario As e_Usuario) As List(Of e_Usuario)
         Try
             Dim lUsuario As New List(Of e_Usuario)
@@ -375,11 +322,7 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Genera la lista de usuarios que se han desconectado del SGI
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function ListarDesconectados() As List(Of e_UsuarioDesconectado)
         Try
             Dim lUsuario As New List(Of e_Usuario)
@@ -400,11 +343,7 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Generar una lista de usuarios que no han accedido al SGI durante la última semaan
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function ListarUsuariosSinAccesoUltimaSemana() As List(Of e_UsuarioSinAcceso)
         Try
             Dim lUsuario As New List(Of e_Usuario)
@@ -425,11 +364,7 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Generar una lista de usuarios que no han accedido al SGI más de una semana / incluso nunca 
-    ''' </summary>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function ListarUsuariosSinAccesoMasDeUnaSemana() As List(Of e_UsuarioSinAcceso)
         Try
             Dim lUsuario As New List(Of e_Usuario)
@@ -450,13 +385,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo por la cual se verifica el inicio de sesion del usuario,a travez del procedimiento almacenado
-    ''' SGD.ISP_UsuarioValidar se enviaran el login y clave del usuario.
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una Variable oeUsuario de tipo e_Usuario </param>
-    ''' <returns>Devuelve un dataset, con los datos del usuario</returns>
-    ''' <remarks>Capa del sistema:Capa de Acceso a Datos</remarks>
     Public Function IniciarSesion(ByVal oeUsuario As e_Usuario) As Data.DataSet
         Try
             Return sqlhelper.ExecuteDataset("SGD.ISP_UsuarioValidar", "", oeUsuario.Login, Encriptador.Encriptar(oeUsuario.Clave))
@@ -465,13 +393,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que permite obtener iniciar sesion del usuario, a travez de su metodo IniciarSesion obtendremos si el 
-    ''' usuario es verificado con su datos o no encontrado en la base de datos.
-    ''' </summary>
-    ''' <param name="usuario">Objeto que trae el Login y Claves ingresados por el usuario al momento de autenticarse</param>
-    ''' <returns>Devuelve una objeto usuario de tipo e_Usuario</returns>
-    ''' <remarks>Capa del sistema:Capa de Acceso a Datos</remarks>
     Public Function Cargar(ByVal usuario As e_Usuario) As e_Usuario
         Dim datos As New DataSet
         Try
@@ -499,16 +420,6 @@ Public Class d_Usuario
 
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del usuario,a travez del procedimiento almacenado
-    ''' SGD.Isp_Usuario_IAE,por el cual van a ser enviados y registrados los datos del usuario y
-    ''' obtendremos una respuesta de confirmacion del registro guardado.
-    ''' Fecha Actualizada:31/10/2011.
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una variable oeUsuario de tipo e_Usuario</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro 
-    ''' de tipo de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeUsuario As e_Usuario) As Boolean
         Try
             Using TransScope As New TransactionScope()
@@ -549,15 +460,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del usuario,a travez del procedimiento almacenado
-    ''' SGD.Isp_Usuario_IAE,por el cual va a ser enviado el id del usuario a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una variable oeUsuario de tipo objeto e_Usuario</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
 
     Public Function Eliminar(ByVal oeUsuario As e_Usuario) As Boolean
         Try
@@ -573,14 +475,6 @@ Public Class d_Usuario
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encarga de actualizar la fecha de ingreso del usuario en el ingreso y salida del sistema,a travez del 
-    ''' procedimiento almacenado SGD.Isp_Usuario_IAE, por el cual va ser enviado los datos del usuario para realizar la actualizacion
-    ''' obtendremos una respuesta de confirmacion del registro.
-    ''' </summary>
-    ''' <param name="oeUsuario">Recibe una variable oeUsuario de tipo objeto e_Usuario</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"",Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function ActualizaFechaIngreso(ByVal oeUsuario As e_Usuario) As Boolean
         Try
             With oeUsuario

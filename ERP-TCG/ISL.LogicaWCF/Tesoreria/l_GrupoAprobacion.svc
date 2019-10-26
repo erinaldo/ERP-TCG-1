@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_GrupoAprobacion" CodeBehind="l_GrupoAprobacion.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_GrupoAprobacion" CodeBehind="l_GrupoAprobacion.svc.vb" %>

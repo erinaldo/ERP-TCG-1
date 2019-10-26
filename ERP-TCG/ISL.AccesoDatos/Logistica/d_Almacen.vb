@@ -6,13 +6,10 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
-''' <summary>
-''' Clase que gestiona los almacenes del sistema, se define como un lugar o espacio físico para el almacenaje de bienes
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Almacen,Capa del Sistema: Capa de Datos.</remarks>
+
+
 Public Class d_Almacen
     Private sqlhelper As New SqlHelper
 
@@ -20,14 +17,6 @@ Public Class d_Almacen
     Dim odDetalleZona As New d_Zona
     Private oeSubAlmacen As e_SubAlmacen, odSubAlmacen As New d_SubAlmacen
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Almacen y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="fila">Recibe una variable fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeAlmacen) de tipo e_Almacen</returns>
-    ''' <remarks>Capa del Sistema:Capa Datos</remarks>
     Public Function Cargar(ByVal fila As DataRow) As e_Almacen
         Try
             Dim oeAlmacen = New e_Almacen(fila("Seleccion"), fila("Id"), fila("Codigo"), fila("Nombre"), _
@@ -40,14 +29,7 @@ Public Class d_Almacen
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un almacen, el cual es consultado por el procedimiento almacenado ALM.Isp_Almacen_Listar
-    ''' enviando su id del almacen.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_Almacen.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeAlmacen">Recibe una variable oeAlmacen de tipo e_Almacen</param>
-    ''' <returns>Devuelve una varible oeAlmacen de tipo e_Almacen</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa Datos</remarks>
+
     Public Function Obtener(ByVal oeAlmacen As e_Almacen) As e_Almacen
         Try
             Dim ds As DataSet
@@ -81,14 +63,7 @@ Public Class d_Almacen
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Almacen, el cual es consultado por el procedimiento almacenado ALM.Isp_Almacen_Listar
-    ''' enviando sus atributos del almacen.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeAlmacen">Recibe una Variable oeAlmacen de tipo e_Almacen </param>
-    ''' <returns>Devuelve una lista generica(ldAlmacen) de objetos de tipo e_Almacen</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa Datos</remarks>
+
     Public Function Listar(ByVal oeAlmacen As e_Almacen) As List(Of e_Almacen)
         Try
             Dim ds As DataSet
@@ -119,16 +94,6 @@ Public Class d_Almacen
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos del almacen,a travez del procedimiento almacenado
-    ''' ALM.Isp_Almacen_IAE,por el cual van a ser enviados y registrados los datos del almacen y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeAlmacen">Recibe una variable oeAlmacen de tipo e_Almacen</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro
-    '''  de tipo de documento es positiva= true sino false Capa del Sistema:Capa Datos</remarks>
     Public Function Guardar(ByVal oeAlmacen As e_Almacen) As Boolean
         Try
             Dim stResultado() As String
@@ -178,15 +143,6 @@ Public Class d_Almacen
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de almacen,a travez del procedimiento almacenado
-    ''' ALM.Isp_Almacen_IA,por el cual va a ser enviado el id del almacen a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeAlmacen">Recibe una variable oeAlmacen de tipo objeto e_Almacen</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa Datos</remarks>
     Public Function Eliminar(ByVal oeAlmacen As e_Almacen) As Boolean
         Try
             With oeAlmacen

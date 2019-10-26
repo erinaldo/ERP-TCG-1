@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_OperacionNeumatico
 
     Dim odOperacionNeumatico As New d_OperacionNeumatico
 
-    Public Function Eliminar(ByVal oeOperacionNeumatico As EntidadesWCF.e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Eliminar
+    Public Function Eliminar(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Eliminar
         Try
             Return odOperacionNeumatico.Eliminar(oeOperacionNeumatico)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_OperacionNeumatico
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOperacionNeumatico As EntidadesWCF.e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Guardar
+    Public Function Guardar(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Guardar
         Try
             If Validar(oeOperacionNeumatico) Then
                 Return odOperacionNeumatico.Guardar(oeOperacionNeumatico)
@@ -34,7 +34,7 @@ Public Class l_OperacionNeumatico
         End Try
     End Function
 
-    Public Function Listar(ByVal oeOperacionNeumatico As EntidadesWCF.e_OperacionNeumatico) As System.Collections.Generic.List(Of EntidadesWCF.e_OperacionNeumatico) Implements Il_OperacionNeumatico.Listar
+    Public Function Listar(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As System.Collections.Generic.List(Of e_OperacionNeumatico) Implements Il_OperacionNeumatico.Listar
         Try
             Return odOperacionNeumatico.Listar(oeOperacionNeumatico)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_OperacionNeumatico
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeOperacionNeumatico As EntidadesWCF.e_OperacionNeumatico) As EntidadesWCF.e_OperacionNeumatico Implements Il_OperacionNeumatico.Obtener
+    Public Function Obtener(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As e_OperacionNeumatico Implements Il_OperacionNeumatico.Obtener
         Try
             Return odOperacionNeumatico.Obtener(oeOperacionNeumatico)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_OperacionNeumatico
         End Try
     End Function
 
-    Public Function Validar(ByVal oeOperacionNeumatico As EntidadesWCF.e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Validar
+    Public Function Validar(ByVal oeOperacionNeumatico As e_OperacionNeumatico) As Boolean Implements Il_OperacionNeumatico.Validar
         Try
             With oeOperacionNeumatico
                 '---------VALIDARRRRRRRRRR-------------

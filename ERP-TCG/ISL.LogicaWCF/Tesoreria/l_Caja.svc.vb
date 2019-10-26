@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_Caja
     Dim odCaja As New d_Caja
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCaja As EntidadesWCF.e_Caja) As Boolean Implements Il_Caja.Eliminar
+    Public Function Eliminar(ByVal oeCaja As e_Caja) As Boolean Implements Il_Caja.Eliminar
         Try
             Return odCaja.Eliminar(oeCaja)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_Caja
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCaja As EntidadesWCF.e_Caja) As Boolean Implements Il_Caja.Guardar
+    Public Function Guardar(ByVal oeCaja As e_Caja) As Boolean Implements Il_Caja.Guardar
         Try
             If Validar(oeCaja) Then
                 Return odCaja.Guardar(oeCaja)
@@ -43,7 +43,7 @@ Public Class l_Caja
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCaja As EntidadesWCF.e_Caja) As System.Collections.Generic.List(Of EntidadesWCF.e_Caja) Implements Il_Caja.Listar
+    Public Function Listar(ByVal oeCaja As e_Caja) As System.Collections.Generic.List(Of e_Caja) Implements Il_Caja.Listar
         Try
             Return odCaja.Listar(oeCaja)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_Caja
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCaja As EntidadesWCF.e_Caja) As EntidadesWCF.e_Caja Implements Il_Caja.Obtener
+    Public Function Obtener(ByVal oeCaja As e_Caja) As e_Caja Implements Il_Caja.Obtener
         Try
             Return odCaja.Obtener(oeCaja)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_Caja
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCaja As EntidadesWCF.e_Caja) As Boolean Implements Il_Caja.Validar
+    Public Function Validar(ByVal oeCaja As e_Caja) As Boolean Implements Il_Caja.Validar
         Try
             With oeCaja
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese el codigo")

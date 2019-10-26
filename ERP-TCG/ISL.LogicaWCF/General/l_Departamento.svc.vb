@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -19,7 +19,7 @@ Public Class l_Departamento
     ''' <param name="oeDepartamento"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeDepartamento As EntidadesWCF.e_Departamento) As Boolean Implements Il_Departamento.Eliminar
+    Public Function Eliminar(ByVal oeDepartamento As e_Departamento) As Boolean Implements Il_Departamento.Eliminar
         Try
             Return odDepartamento.Eliminar(oeDepartamento)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_Departamento
     ''' <param name="oeDepartamento"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeDepartamento As EntidadesWCF.e_Departamento) As Boolean Implements Il_Departamento.Guardar
+    Public Function Guardar(ByVal oeDepartamento As e_Departamento) As Boolean Implements Il_Departamento.Guardar
         Try
             If Validar(oeDepartamento) Then
                 Return odDepartamento.Guardar(oeDepartamento)
@@ -50,7 +50,7 @@ Public Class l_Departamento
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeDepartamento As EntidadesWCF.e_Departamento) As System.Collections.Generic.List(Of EntidadesWCF.e_Departamento) Implements Il_Departamento.Listar
+    Public Function Listar(ByVal oeDepartamento As e_Departamento) As System.Collections.Generic.List(Of e_Departamento) Implements Il_Departamento.Listar
         Try
             Return odDepartamento.Listar(oeDepartamento)
         Catch ex As Exception
@@ -64,7 +64,7 @@ Public Class l_Departamento
     ''' <param name="oeDepartamento"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeDepartamento As EntidadesWCF.e_Departamento) As e_Departamento Implements Il_Departamento.Obtener
+    Public Function Obtener(ByVal oeDepartamento As e_Departamento) As e_Departamento Implements Il_Departamento.Obtener
         Try
             Return odDepartamento.Obtener(oeDepartamento)
         Catch ex As Exception
@@ -78,7 +78,7 @@ Public Class l_Departamento
     ''' <param name="oeDepartamento"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeDepartamento As EntidadesWCF.e_Departamento) As Boolean Implements Il_Departamento.Validar
+    Public Function Validar(ByVal oeDepartamento As e_Departamento) As Boolean Implements Il_Departamento.Validar
         Try
             With oeDepartamento
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el código del deparmento")

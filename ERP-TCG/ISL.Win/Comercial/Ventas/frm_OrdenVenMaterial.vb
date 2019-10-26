@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+﻿Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
 Public Class frm_OrdenVenMaterial
@@ -36,9 +36,9 @@ Public Class frm_OrdenVenMaterial
     Private olOrdenComercialMaterial As l_OrdenVentaMaterial
     Private loOrdenComercialMaterial As List(Of e_OrdenVentaMaterial)
 
-    Private oeAlmMaterial As e_MaterialAlmacen
+    Private oeAlmMaterial As e_Material
     Private olAlmMaterial As l_MaterialAlmacen
-    Private loAlmMaterial As List(Of e_MaterialAlmacen)
+    Private loAlmMaterial As List(Of e_Material)
 
     Private oeOrdenSalida As e_Orden
     Private olOrdenSalida As l_Orden
@@ -270,11 +270,11 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Private Sub griAlmacenMaterial_InitializeLayout(sender As Object, e As Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs) Handles griAlmacenMaterial.InitializeLayout
-        With griAlmacenMaterial
-            .DisplayLayout.Bands(0).SortedColumns.Add("CodigoMaterial", False, True)
-            .DisplayLayout.GroupByBox.Hidden = True
-            .DisplayLayout.GroupByBox.Style = GroupByBoxStyle.Compact
-        End With
+        'With griAlmacenMaterial
+        '    .DisplayLayout.Bands(0).SortedColumns.Add("CodigoMaterial", False, True)
+        '    .DisplayLayout.GroupByBox.Hidden = True
+        '    .DisplayLayout.GroupByBox.Style = GroupByBoxStyle.Compact
+        'End With
     End Sub
 
     Private Sub griAlmacenMaterial_CellChange(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.CellChange
@@ -569,7 +569,7 @@ Public Class frm_OrdenVenMaterial
         btnAtender.Enabled = 0 : btnAnular.Enabled = 0 : btnEliminar.Enabled = 0
         If griOrdenComercial.ActiveRow.Index > -1 Then
             Select Case griOrdenComercial.ActiveRow.Cells("Estado").Value
-                Case "EVALUADO"
+                Case "EVALUADA"
                     btnAtender.Enabled = 1
                     btnAnular.Enabled = 1
                 Case "ATENDIDO PARCIALMENTE"
@@ -1058,8 +1058,8 @@ Public Class frm_OrdenVenMaterial
         oeOrdenComercialMaterial = New e_OrdenVentaMaterial
         loOrdenComercialMaterial = New List(Of e_OrdenVentaMaterial)
         griOrdenComercialMaterial.DataSource = loOrdenComercialMaterial
-        oeAlmMaterial = New e_MaterialAlmacen
-        loAlmMaterial = New List(Of e_MaterialAlmacen)
+        oeAlmMaterial = New e_Material
+        loAlmMaterial = New List(Of e_Material)
         griAlmacenMaterial.DataSource = loAlmMaterial
         loEmpresa = New List(Of e_Empresa)
         cbgCliente.DataSource = loEmpresa
@@ -1201,7 +1201,7 @@ Public Class frm_OrdenVenMaterial
             ' Cargar Estado
             leEstado = New List(Of e_EstadoOrden)
             oeEstado = New e_EstadoOrden
-            oeEstado.Id = "CERO"
+            oeEstado.Id = ""
             oeEstado.Nombre = "TODOS"
             leEstado.Add(oeEstado)
             oeEstado = New e_EstadoOrden
@@ -1277,7 +1277,7 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
             oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
             With oeOrdenComercial
-                gmt_ListarEmpresa("CLI", cbgCliente, .IdEmpresa, False)
+                gmt_ListarEmpresa("", cbgCliente, .IdEmpresa, False)
                 cbgCliente.Value = .IdEmpresa
                 cmbMoneda.Value = .IdMoneda
                 cboTipoPago.Value = .IdTipoPago
@@ -1315,7 +1315,7 @@ Public Class frm_OrdenVenMaterial
             Else
                 ejecuta = 0 'Para mostrar --ORDENES ASOCIADAS de tipo 'C' 
             End If
-            mt_ListarOS()
+            'mt_ListarOS()
             oeDocumento = New e_MovimientoDocumento
             oeOrdDocumento = New e_Orden_Documento
             oeOrdDocumento.IdOrden = oeOrdenComercial.Id
@@ -1343,18 +1343,19 @@ Public Class frm_OrdenVenMaterial
     Private Sub mt_ListarMateriales()
         Try
             If txtMaterial.Text = String.Empty Then Throw New Exception("Escriba Nombre del Material")
-            oeAlmMaterial = New e_MaterialAlmacen
-            loAlmMaterial = New List(Of e_MaterialAlmacen)
+
+            oeAlmMaterial = New e_Material
+            loAlmMaterial = New List(Of e_Material)
             With oeAlmMaterial
                 .TipoOperacion = "O"
-                .IdEmpresaSis = gs_IdEmpresaSistema
+                '.IdEmpresaSis = gs_IdEmpresaSistema
                 '.IdSucursal = gs_PrefijoIdSucursal
                 'If chkTipoMaterial.Checked Then
                 '    .IdCompraVenta = "CV" 'CompraVenta  
                 'Else : .IdCompraVenta = "V" 'Venta    
                 'End If
-                .Material = txtMaterial.Text
-                'loAlmMaterial = olAlmMaterial.Listar(oeAlmMaterial)
+                .Nombre = txtMaterial.Text
+                loAlmMaterial = olAlmMaterial.Listar(New e_MaterialAlmacen With {.TipoOperacion = "O", .Material = txtMaterial.Text})
                 griAlmacenMaterial.DataSource = loAlmMaterial
             End With
         Catch ex As Exception
@@ -1364,26 +1365,27 @@ Public Class frm_OrdenVenMaterial
 
     Public Sub mt_AsignarMaterial()
         Try
-            For Each oe As e_MaterialAlmacen In loAlmMaterial.Where(Function(i) i.Seleccion = True).ToList
+            For Each oe As e_Material In loAlmMaterial.Where(Function(i) i.Seleccion = True).ToList
                 oeOrdenComercialMaterial = New e_OrdenVentaMaterial
                 With oeOrdenComercialMaterial
                     oe.Seleccion = False
                     .TipoOperacion = "I"
+                    .PrefijoID = gs_PrefijoIdSucursal
                     .IndImpuesto = True
                     .IdEmpresaSis = gs_IdEmpresaSistema
                     .IdSucursal = gs_PrefijoIdSucursal
                     .UsuarioCrea = gUsuarioSGI.Id
-                    .IdMaterial = oe.IdMaterial
-                    .Material = oe.Material
-                    .Codigo = oe.CodigoMaterial
+                    .IdMaterial = oe.Id
+                    .Material = oe.Nombre
+                    .Codigo = oe.Codigo
                     .Cantidad = 1
                     .CantidadPendiente = 1
-                    .CostoUnitario = oe.CostoUnitario
-                    .CostoInventario = oe.CostoUnitario
-                    .PrecioUnitario = oe.CostoUnitario * (mdblIGV + 1)
+                    .CostoUnitario = oe.Precio   'oe.CostoUnitario
+                    .CostoInventario = 0 'oe.CostoUnitario
+                    .PrecioUnitario = oe.Precio * (mdblIGV + 1)
                     '.IdTipoUnidadMedida = oe.idu
                     .IdAlmacen = oe.IdAlmacen
-                    .IdUnidadMedida = oe.IdUnidad
+                    .IdUnidadMedida = oe.IdUnidadMedida
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
                     .IndOperacion = IIf(chkTransporte.Checked, 1, 0)
@@ -1429,19 +1431,19 @@ Public Class frm_OrdenVenMaterial
 
     Private Sub mt_CombosGrilla(Grilla As UltraGrid)
         Try
-            With Grilla
-                For j As Integer = 0 To .Rows.Count - 1
-                    Dim strIdTipoUnidad As String = .Rows(j).Cells("IdTipoUnidadMedida").Value.ToString
-                    gfc_CombroGrillaCelda("IdUnidadMedida", "Nombre", j, Grilla, olCombo.ComboGrilla(gloUniMed.Where(Function(i) i.Descripcion = strIdTipoUnidad).ToList))
+            'With Grilla
+            '    For j As Integer = 0 To .Rows.Count - 1
+            '        Dim strIdTipoUnidad As String = .Rows(j).Cells("IdTipoUnidadMedida").Value
+            '        gfc_CombroGrillaCelda("IdUnidadMedida", "Nombre", j, Grilla, olCombo.ComboGrilla(gloUniMed.Where(Function(i) i.Descripcion = strIdTipoUnidad).ToList))
 
-                    Dim strIdMaterial As String = .Rows(j).Cells("IdMaterial").Value.ToString
-                    gfc_CombroGrillaCelda("IdAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloAlmMat.Where(Function(i) i.Descripcion = strIdMaterial).ToList))
+            '        Dim strIdMaterial As String = .Rows(j).Cells("IdMaterial").Value.ToString
+            '        gfc_CombroGrillaCelda("IdAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloAlmMat.Where(Function(i) i.Descripcion = strIdMaterial).ToList))
 
-                    Dim strIdAlmacen As String = .Rows(j).Cells("IdAlmacen").Value.ToString
-                    gfc_CombroGrillaCelda("IdSubAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloSubAlm.Where(Function(i) i.Descripcion = strIdAlmacen).ToList))
-                Next
-                .DataBind()
-            End With
+            '        Dim strIdAlmacen As String = .Rows(j).Cells("IdAlmacen").Value.ToString
+            '        gfc_CombroGrillaCelda("IdSubAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloSubAlm.Where(Function(i) i.Descripcion = strIdAlmacen).ToList))
+            '    Next
+            '    .DataBind()
+            'End With
         Catch ex As Exception
             Throw ex
         End Try
@@ -2255,9 +2257,10 @@ Public Class frm_OrdenVenMaterial
     Public Function fc_LlenaObjeto() As Boolean
         Try
             With oeOrdenComercial
+                .PrefijoID = gs_PrefijoIdSucursal
                 .IdEmpresaSis = gs_IdEmpresaSistema
                 .IdSucursal = gs_PrefijoIdSucursal
-                .UsuarioCrea = gUsuarioSGI.Id
+                .UsuarioCrea = gUsuarioSGI.Login
                 .Tipo = 2
                 .TipoExistencia = 1
                 .TipoCambio = decTipoCambio.Value
@@ -2268,7 +2271,7 @@ Public Class frm_OrdenVenMaterial
                 Select Case Operacion
                     Case "Nuevo"
                         .TipoOperacion = "I"
-                        .IdEstado = "1CIX022" 'Evaluado
+                        .IdEstado = "1CH000000011" 'Evaluado
                         If cbDocumento.Checked = True Then : .IndFacturadoProducto = True : End If
                         .IdTrabajadorAprobacion = gUsuarioSGI.oePersona.Id
                         fc_ValidarNumeroDoc()

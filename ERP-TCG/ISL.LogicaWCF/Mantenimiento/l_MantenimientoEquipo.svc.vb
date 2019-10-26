@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_MantenimientoEquipo
 
     Dim odMantenimientoEquipo As New d_MantenimientoEquipo
 
-    Public Function Eliminar(ByVal oeMantenimientoEquipo As EntidadesWCF.e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Eliminar
+    Public Function Eliminar(ByVal oeMantenimientoEquipo As e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Eliminar
         Try
             Return odMantenimientoEquipo.Eliminar(oeMantenimientoEquipo)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_MantenimientoEquipo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMantenimientoEquipo As EntidadesWCF.e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Guardar
+    Public Function Guardar(ByVal oeMantenimientoEquipo As e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Guardar
         Try
             If Validar(oeMantenimientoEquipo) Then
                 Return odMantenimientoEquipo.Guardar(oeMantenimientoEquipo)
@@ -34,7 +34,7 @@ Public Class l_MantenimientoEquipo
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMantenimientoEquipo As EntidadesWCF.e_MantenimientoEquipo) As System.Collections.Generic.List(Of EntidadesWCF.e_MantenimientoEquipo) Implements Il_MantenimientoEquipo.Listar
+    Public Function Listar(ByVal oeMantenimientoEquipo As e_MantenimientoEquipo) As System.Collections.Generic.List(Of e_MantenimientoEquipo) Implements Il_MantenimientoEquipo.Listar
         Try
             Return odMantenimientoEquipo.Listar(oeMantenimientoEquipo)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_MantenimientoEquipo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMantenimientoEquipo As EntidadesWCF.e_MantenimientoEquipo) As EntidadesWCF.e_MantenimientoEquipo Implements Il_MantenimientoEquipo.Obtener
+    Public Function Obtener(ByVal oeMantenimientoEquipo As e_MantenimientoEquipo) As e_MantenimientoEquipo Implements Il_MantenimientoEquipo.Obtener
         Try
             Return odMantenimientoEquipo.Obtener(oeMantenimientoEquipo)
         Catch ex As Exception
@@ -50,7 +50,7 @@ Public Class l_MantenimientoEquipo
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMantenimientoEquipo As EntidadesWCF.e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Validar
+    Public Function Validar(ByVal oeMantenimientoEquipo As e_MantenimientoEquipo) As Boolean Implements Il_MantenimientoEquipo.Validar
         Try
             With oeMantenimientoEquipo
                 '---------VALIDARRRRRRRRRR-------------

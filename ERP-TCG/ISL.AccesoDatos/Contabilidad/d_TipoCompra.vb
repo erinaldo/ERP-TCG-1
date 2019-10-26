@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -68,9 +76,8 @@ Public Class d_TipoCompra
 
     Public Function Guardar(ByVal oeTipoCompra As e_TipoCompra) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeTipoCompra
-                sqlhelper.ExecuteNonQuery("CON.Isp_TipoCompra_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_TipoCompra_IAE", .TipoOperacion, .PrefijoID,
                 .Id _
                 , .IdTablaContableDet _
                 , .Cuenta _

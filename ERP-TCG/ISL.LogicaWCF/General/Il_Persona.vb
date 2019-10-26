@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_Persona", también debe actualizar la referencia a "Il_Persona" en Web.config.
 <ServiceContract()> _
@@ -26,7 +26,7 @@ Public Interface Il_Persona
     <OperationContract()> _
     Function Listar(ByVal oePersona As e_Persona) As List(Of e_Persona)
 
-    <OperationContract()> _
-    Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
+    '<OperationContract()> _
+    'Function Foto(ByVal DNI As String) As System.Drawing.Bitmap
 
 End Interface

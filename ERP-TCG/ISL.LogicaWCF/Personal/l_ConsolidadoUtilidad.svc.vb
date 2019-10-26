@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -9,7 +9,7 @@ Public Class l_ConsolidadoUtilidad
     Private odDetalleUtilidad As New d_ConsolidadoUtilidad
     Private l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(oeDetalleUtilidad As EntidadesWCF.e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Eliminar
+    Public Function Eliminar(oeDetalleUtilidad As e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Eliminar
         Try
             Return odDetalleUtilidad.Eliminar(oeDetalleUtilidad)
         Catch ex As Exception
@@ -17,7 +17,7 @@ Public Class l_ConsolidadoUtilidad
         End Try
     End Function
 
-    Public Function Guardar(oeDetalleUtilidad As EntidadesWCF.e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Guardar
+    Public Function Guardar(oeDetalleUtilidad As e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Guardar
         Try
             If Validar(oeDetalleUtilidad) Then
                 Return odDetalleUtilidad.Guardar(oeDetalleUtilidad)
@@ -27,7 +27,7 @@ Public Class l_ConsolidadoUtilidad
         End Try
     End Function
 
-    Public Function Listar(oeDetalleUtilidad As EntidadesWCF.e_ConsolidadoUtilidad) As List(Of EntidadesWCF.e_ConsolidadoUtilidad) Implements Il_ConsolidadoUtilidad.Listar
+    Public Function Listar(oeDetalleUtilidad As e_ConsolidadoUtilidad) As List(Of e_ConsolidadoUtilidad) Implements Il_ConsolidadoUtilidad.Listar
         Try
             Return odDetalleUtilidad.Listar(oeDetalleUtilidad)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_ConsolidadoUtilidad
         End Try
     End Function
 
-    Public Function Obtener(oeDetalleUtilidad As EntidadesWCF.e_ConsolidadoUtilidad) As EntidadesWCF.e_ConsolidadoUtilidad Implements Il_ConsolidadoUtilidad.Obtener
+    Public Function Obtener(oeDetalleUtilidad As e_ConsolidadoUtilidad) As e_ConsolidadoUtilidad Implements Il_ConsolidadoUtilidad.Obtener
         Try
             Return odDetalleUtilidad.Obtener(oeDetalleUtilidad)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_ConsolidadoUtilidad
         End Try
     End Function
 
-    Public Function Validar(oeDetalleUtilidad As EntidadesWCF.e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Validar
+    Public Function Validar(oeDetalleUtilidad As e_ConsolidadoUtilidad) As Boolean Implements Il_ConsolidadoUtilidad.Validar
         Try
             With oeDetalleUtilidad
 

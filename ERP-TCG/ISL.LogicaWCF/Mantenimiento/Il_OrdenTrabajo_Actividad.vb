@@ -1,5 +1,5 @@
 ﻿Imports System.ServiceModel
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
 ' NOTA: si cambia aquí el nombre de clase "Il_OrdenTrabajo_Actividad", también debe actualizar la referencia a "Il_OrdenTrabajo_Actividad" en Web.config.
 <ServiceContract()> _

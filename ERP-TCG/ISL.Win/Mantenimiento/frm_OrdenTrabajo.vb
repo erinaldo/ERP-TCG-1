@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Shared
@@ -2300,7 +2300,7 @@ Public Class frm_OrdenTrabajo
             LlenaComboJefeFlota()
             LlenarCombo(cboCentro, "Nombre", CentroPublic, 0)
             LlenarCombo(cboCentroMaterial, "Nombre", CentroPublic, 0)
-            _idcentro = Prefijo.PrefijoID
+            _idcentro = gs_PrefijoIdSucursal '@0001
             cboCentro.Value = _idcentro
             If olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "VER SEDES MANTENIMIENTO") Then
                 cboCentro.Enabled = True

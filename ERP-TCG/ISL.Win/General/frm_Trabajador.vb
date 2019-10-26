@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports System.IO
@@ -16,7 +16,7 @@ Imports Infragistics.Win.UltraWinEditors
 Imports Infragistics.Win.UltraWinToolTip
 
 Public Class frm_Trabajador
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
 
@@ -362,7 +362,7 @@ Public Class frm_Trabajador
                         CargaDatosPersonales(oeTrabajador)
 
                     End If
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                 Else
                     Inicializar()
                 End If
@@ -932,7 +932,7 @@ Public Class frm_Trabajador
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 If oeTrabajador.Activo Then
                     CargaDatosPersonales(oeTrabajador)
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                     oeTrabajador.Modificado = False
                     MostrarTabs(1, ficTrabajador, 1)
                     MyBase.Editar()
@@ -959,7 +959,7 @@ Public Class frm_Trabajador
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 If oeTrabajador.Activo Then
                     CargaDatosPersonales(oeTrabajador)
-                    If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+                    'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then PictureBox1.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
                     oeTrabajador.Modificado = False
                     MostrarTabs(1, ficTrabajador, 1)
                     MyBase.Editar()
@@ -974,7 +974,7 @@ Public Class frm_Trabajador
                 With oeOcupacionTrab
                     .IdArea = "1CH000000015" 'OPERACIONES
                     .IdCargo = "1PY004" 'LOCACION DE SERVICIOS
-                    .IdCentro = Prefijo.PrefijoID 'PACASMAYO, SEGUN PREFIJO
+                    .IdCentro = gs_PrefijoIdSucursal 'PACASMAYO, SEGUN PREFIJO
                     .IdOcupacion = "1CH000000023" ' CONDUCTOR
                     TipoRelacionLaboral1.Seleccionar("1SI003") ' LOCACION DE SERVICIOS
                     '.IndRuta
@@ -984,7 +984,7 @@ Public Class frm_Trabajador
                     .Area = "OPERACIONES"
                     .Cargo = "LOCACION DE SERVICIOS"
                     'prefijocambio
-                    .Centro = DevolverCentroXPrefijo(Prefijo.PrefijoID)
+                    .Centro = DevolverCentroXPrefijo(gs_PrefijoIdSucursal)
                     .Ocupacion = "CONDUCTOR"
                     .TipoRelacionLaboral = "LOCACION DE SERVICIOS"
                     chkYaNoLabora.Checked = False

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 ' NOTA: si cambia aquí el nombre de clase "l_GrupoAprobacionDet", también debe actualizar la referencia a "l_GrupoAprobacionDet" tanto en Web.config como en el archivo .svc asociado.
 Public Class l_GrupoAprobacionDet

@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -89,9 +89,8 @@ Public Class d_DocumentoRetencionDetalle
 
     Public Function Guardar(ByVal oeDocumentoRetencionDetalle As e_DocumentoRetencionDetalle) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeDocumentoRetencionDetalle
-                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoRetencionDetalle_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("CON.Isp_DocumentoRetencionDetalle_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .IdDocumentoRetencion _
                         , .FechaPago _
@@ -106,7 +105,7 @@ Public Class d_DocumentoRetencionDetalle
                         , .RetencionSoles _
                         , .UsuarioCreacion _
                         , .UsuarioModifica _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

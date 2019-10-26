@@ -358,7 +358,7 @@
         <DataSetName>ISL_EntidadesWCF_e_OrdenMaterial</DataSetName>
         <Top>3.1668cm</Top>
         <Height>1.26984cm</Height>
-        <Width>17.28417cm</Width>
+        <Width>17.28418cm</Width>
         <Style>
           <FontSize>8pt</FontSize>
         </Style>
@@ -490,15 +490,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="image1">
-        <Source>Embedded</Source>
-        <Value>logo_induamerica_pequeño</Value>
-        <MIMEType>image/jpeg</MIMEType>
-        <Height>1.50794cm</Height>
-        <Width>1.34921cm</Width>
-        <ZIndex>5</ZIndex>
-        <Style />
-      </Image>
       <Textbox Name="textbox6">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -523,7 +514,7 @@
         <Left>1.75cm</Left>
         <Height>0.5cm</Height>
         <Width>8.45083cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -535,7 +526,7 @@
     <Height>4.43664cm</Height>
     <Style />
   </Body>
-  <Width>17.28417cm</Width>
+  <Width>17.28418cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

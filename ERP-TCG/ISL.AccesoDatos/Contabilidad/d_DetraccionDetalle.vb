@@ -1,13 +1,20 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Data.SqlClient
 
 Public Class d_DetraccionDetalle
-    Dim d_DatosConfiguracion As New d_DatosConfiguracion
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_DetraccionDetalle
         Try
-            Dim oeDetraccionDetalle = New e_DetraccionDetalle( _
+            Dim oeDetraccionDetalle = New e_DetraccionDetalle(
                              o_fila("Id").ToString _
                              , o_fila("IdDetraccion").ToString _
                              , o_fila("IdClienteProveedor").ToString _

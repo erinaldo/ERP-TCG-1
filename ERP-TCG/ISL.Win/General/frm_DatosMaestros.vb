@@ -6,14 +6,14 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports System.Collections.Generic
 Imports System.Xml
 Imports System.IO
 
 Public Class frm_DatosMaestros
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Private ruta As String = System.AppDomain.CurrentDomain.BaseDirectory()
 
     Private Shared instancia As frm_DatosMaestros = Nothing

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -17,7 +17,7 @@ Public Class l_CuentaBancaria
     Dim odCuentaBancaria As New d_CuentaBancaria
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Eliminar
+    Public Function Eliminar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Eliminar
         Try
             Return odCuentaBancaria.Eliminar(oeCuentaBancaria)
         Catch ex As Exception
@@ -25,7 +25,7 @@ Public Class l_CuentaBancaria
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Guardar
+    Public Function Guardar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Guardar
         Try
             If Validar(oeCuentaBancaria) Then
                 Return odCuentaBancaria.Guardar(oeCuentaBancaria)
@@ -35,7 +35,7 @@ Public Class l_CuentaBancaria
         End Try
     End Function
 
-    Public Function Listar(ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As System.Collections.Generic.List(Of EntidadesWCF.e_CuentaBancaria) Implements Il_CuentaBancaria.Listar
+    Public Function Listar(ByVal oeCuentaBancaria As e_CuentaBancaria) As System.Collections.Generic.List(Of e_CuentaBancaria) Implements Il_CuentaBancaria.Listar
         Try
             Return odCuentaBancaria.Listar(oeCuentaBancaria)
         Catch ex As Exception
@@ -43,7 +43,7 @@ Public Class l_CuentaBancaria
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As EntidadesWCF.e_CuentaBancaria Implements Il_CuentaBancaria.Obtener
+    Public Function Obtener(ByVal oeCuentaBancaria As e_CuentaBancaria) As e_CuentaBancaria Implements Il_CuentaBancaria.Obtener
         Try
             Return odCuentaBancaria.Obtener(oeCuentaBancaria)
         Catch ex As Exception
@@ -51,7 +51,7 @@ Public Class l_CuentaBancaria
         End Try
     End Function
 
-    Public Function Validar(ByVal oeCuentaBancaria As EntidadesWCF.e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Validar
+    Public Function Validar(ByVal oeCuentaBancaria As e_CuentaBancaria) As Boolean Implements Il_CuentaBancaria.Validar
         Try
             With oeCuentaBancaria
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdBanco, "Seleccione banco")

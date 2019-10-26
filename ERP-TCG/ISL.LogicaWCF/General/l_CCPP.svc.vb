@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 ''' <summary>
@@ -20,7 +20,7 @@ Public Class l_CCPP
     ''' <param name="oeCCPP"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeCCPP As EntidadesWCF.e_CCPP) As Boolean Implements Il_CCPP.Eliminar
+    Public Function Eliminar(ByVal oeCCPP As e_CCPP) As Boolean Implements Il_CCPP.Eliminar
         Try
             Return odCCPP.Eliminar(oeCCPP)
         Catch ex As Exception
@@ -35,7 +35,7 @@ Public Class l_CCPP
     ''' <param name="oeCCPP"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeCCPP As EntidadesWCF.e_CCPP) As Boolean Implements Il_CCPP.Guardar
+    Public Function Guardar(ByVal oeCCPP As e_CCPP) As Boolean Implements Il_CCPP.Guardar
         Try
             If Validar(oeCCPP) Then
                 Return odCCPP.Guardar(oeCCPP)
@@ -51,7 +51,7 @@ Public Class l_CCPP
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeCCPP As EntidadesWCF.e_CCPP) As System.Collections.Generic.List(Of EntidadesWCF.e_CCPP) Implements Il_CCPP.Listar
+    Public Function Listar(ByVal oeCCPP As e_CCPP) As System.Collections.Generic.List(Of e_CCPP) Implements Il_CCPP.Listar
         Try
             Return odCCPP.Listar(oeCCPP)
         Catch ex As Exception
@@ -65,7 +65,7 @@ Public Class l_CCPP
     ''' <param name="oeCCPP"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeCCPP As EntidadesWCF.e_CCPP) As EntidadesWCF.e_CCPP Implements Il_CCPP.Obtener
+    Public Function Obtener(ByVal oeCCPP As e_CCPP) As e_CCPP Implements Il_CCPP.Obtener
         Try
             Return odCCPP.Obtener(oeCCPP)
         Catch ex As Exception
@@ -79,7 +79,7 @@ Public Class l_CCPP
     ''' <param name="oeCCPP"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeCCPP As EntidadesWCF.e_CCPP) As Boolean Implements Il_CCPP.Validar
+    Public Function Validar(ByVal oeCCPP As e_CCPP) As Boolean Implements Il_CCPP.Validar
         Try
             With oeCCPP
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Debe ingresar el código del CCPP")

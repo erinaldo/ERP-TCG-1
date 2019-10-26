@@ -6,9 +6,10 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
+Imports ERP.LogicaWCF
 Imports Microsoft.Reporting.WinForms
 Public Class frm_DocumentoRentencion
+    Inherits frm_MenuPadre
     Private Id As String
 
 
@@ -31,7 +32,7 @@ Public Class frm_DocumentoRentencion
             Dim oReport As New ReportDataSource("dsImprimirRetencion_dtImprimirRetencion", dt)
 
             Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
+            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras",
             UCase(ConvertirNumeroALetras(Math.Round(Monto, 2).ToString)) & " NUEVOS SOLES")
             myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Destino", "PROVEEDOR", True)
 

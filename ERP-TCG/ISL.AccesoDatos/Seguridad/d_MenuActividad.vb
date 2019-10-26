@@ -6,27 +6,14 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
-''' <summary>
-''' Clase que gestiona los procesos de las actividades que se realizan dentro del menu del sistema.
-''' Fecha Actualizada:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Tipo Orden Compra,Capa del Sistema: Capa de Acceso a Datos</remarks>
 Public Class d_MenuActividad
 
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_MenuActividad y enviada al metodo que lo llamo.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeTipoDocumento) de tipo e_TipoDocumento</returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Cargar(ByVal o_fila As DataRow) As e_MenuActividad
         Try
             Dim oeMenuActividad = New e_MenuActividad( _
@@ -62,14 +49,6 @@ Public Class d_MenuActividad
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene un objeto de tipo e_MenuActividad, el cual es consultado por el procedimiento almacenado SGD.Isp_MenuActividad_Listar
-    ''' enviando su id de la actividad del menu.Una vez obtenido el registro consultado es cargado y devuelto en un objeto de tipo e_MenuActividad.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMenuActividad">Recibe una variable oeMenuActividad de tipo e_MenuActividad</param>
-    ''' <returns>Devuelve una varible oeMenuActividad de tipo e_MenuActividad</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Obtener(ByVal oeMenuActividad As e_MenuActividad) As e_MenuActividad
         Try
             Dim ds As DataSet
@@ -86,13 +65,7 @@ Public Class d_MenuActividad
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_MenuActividad, el cual es consultado por el procedimiento almacenado SGD.Isp_MenuActividad_Listar
-    ''' enviando sus atributos de la actividad del menu.Una vez obtenido los registros son cargados y devueltos en una lista generica.
-    ''' </summary>
-    ''' <param name="oeMenuActividad">Recibe una Variable oeMenuActividad de tipo e_MenuActividad </param>
-    ''' <returns>Devuelve una lista generica(ld) de objetos de tipo e_MenuActividad</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeMenuActividad As e_MenuActividad) As List(Of e_MenuActividad)
         Try
             Dim ld As New List(Of e_MenuActividad)
@@ -127,16 +100,6 @@ Public Class d_MenuActividad
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de registrar los datos de la actividad del menu,a travez del procedimiento almacenado
-    ''' SGD.Isp_MenuActividad_IAE,por el cual van a ser enviados y registrados los datos de la actividad del menu y
-    ''' obtendremos una respuesta de confirmacion del registro guardado
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMenuActividad">Recibe una variable oeMenuActividad de tipo e_MenuActividad</param>
-    ''' <returns>Devuelve una valor de tipo Boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"I" o "A" de actualizar,Si la confirmacion del registro de tipo
-    '''  de documento es positiva= true sino false Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Guardar(ByVal oeMenuActividad As e_MenuActividad) As Boolean
         Try
             With oeMenuActividad
@@ -168,15 +131,6 @@ Public Class d_MenuActividad
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro de la actividad del menu,a travez del procedimiento almacenado
-    ''' SGD.Isp_MenuActividad_IAE,por el cual va a ser enviado el id de la actividad del menu a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha Actualizada:31/10/2011
-    ''' </summary>
-    ''' <param name="oeMenuActividad">Recibe una variable oeMenuActividad de tipo objeto e_MenuActividad</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
     Public Function Eliminar(ByVal oeMenuActividad As e_MenuActividad) As Boolean
         Try
             sqlhelper.ExecuteNonQuery("SGD.Isp_MenuActividad_IAE", "E", oeMenuActividad.Id)

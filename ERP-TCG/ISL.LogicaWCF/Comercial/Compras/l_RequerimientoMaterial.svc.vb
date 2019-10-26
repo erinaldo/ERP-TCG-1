@@ -6,7 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -15,7 +16,7 @@ Public Class l_RequerimientoMaterial
 
     Dim odRequerimientoMaterial As New d_RequerimientoMaterial
 
-    Public Function Guardar(ByVal oeRequerimientoMaterial As EntidadesWCF.e_RequerimientoMaterial) As Boolean Implements Il_RequerimientoMaterial.Guardar
+    Public Function Guardar(ByVal oeRequerimientoMaterial As e_RequerimientoMaterial) As Boolean Implements Il_RequerimientoMaterial.Guardar
         Try
             If Validar(oeRequerimientoMaterial) Then
                 Return odRequerimientoMaterial.Guardar(oeRequerimientoMaterial)
@@ -25,7 +26,7 @@ Public Class l_RequerimientoMaterial
         End Try
     End Function
 
-    Public Function Listar(ByVal oeRequerimientoMaterial As EntidadesWCF.e_RequerimientoMaterial) As System.Collections.Generic.List(Of EntidadesWCF.e_RequerimientoMaterial) Implements Il_RequerimientoMaterial.Listar
+    Public Function Listar(ByVal oeRequerimientoMaterial As e_RequerimientoMaterial) As System.Collections.Generic.List(Of e_RequerimientoMaterial) Implements Il_RequerimientoMaterial.Listar
         Try
             Return odRequerimientoMaterial.Listar(oeRequerimientoMaterial)
         Catch ex As Exception
@@ -33,7 +34,7 @@ Public Class l_RequerimientoMaterial
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRequerimientoMaterial As EntidadesWCF.e_RequerimientoMaterial) As EntidadesWCF.e_RequerimientoMaterial Implements Il_RequerimientoMaterial.Obtener
+    Public Function Obtener(ByVal oeRequerimientoMaterial As e_RequerimientoMaterial) As e_RequerimientoMaterial Implements Il_RequerimientoMaterial.Obtener
         Try
             Return odRequerimientoMaterial.Obtener(oeRequerimientoMaterial)
         Catch ex As Exception
@@ -41,7 +42,7 @@ Public Class l_RequerimientoMaterial
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRequerimientoMaterial As EntidadesWCF.e_RequerimientoMaterial) As Boolean Implements Il_RequerimientoMaterial.Validar
+    Public Function Validar(ByVal oeRequerimientoMaterial As e_RequerimientoMaterial) As Boolean Implements Il_RequerimientoMaterial.Validar
         Try
             With oeRequerimientoMaterial
                 '---------VALIDARRRRRRRRRR-------------

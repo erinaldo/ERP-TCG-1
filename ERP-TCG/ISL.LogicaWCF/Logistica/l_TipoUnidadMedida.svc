@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_TipoUnidadMedida" CodeBehind="l_TipoUnidadMedida.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_TipoUnidadMedida" CodeBehind="l_TipoUnidadMedida.svc.vb" %>

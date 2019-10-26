@@ -1,9 +1,16 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Data.SqlClient
 
 Public Class d_AsientoReferencia
 
-    Dim d_DatosConfiguracion As d_DatosConfiguracion
     Dim bd As New SqlHelper
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_AsientoReferencia
@@ -69,7 +76,6 @@ Public Class d_AsientoReferencia
 
     Public Function Guardar(ByVal oeAsientoReferencia As e_AsientoReferencia) As Boolean
         Try
-            d_DatosConfiguracion = New d_DatosConfiguracion
             Dim stResultado() As String
             With oeAsientoReferencia
                 stResultado = bd.ExecuteScalar("[CON].[Isp_AsientoReferencia_IAE]", .TipoOperacion, .PrefijoID _
@@ -95,7 +101,6 @@ Public Class d_AsientoReferencia
 
     Public Function UltimoIdInserta(ByVal PrefijoID As String) As String
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim stResultado As String
             stResultado = bd.ExecuteScalar("STD.Isp_UltimoId_Inserta", "CON.AsientoReferencia", PrefijoID)
             Return IIf(stResultado Is Nothing, PrefijoID & "0000000000001", stResultado)

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 Public Class l_MontoRuta
@@ -109,7 +109,7 @@ Public Class l_MontoRuta
         Return MontoRuta
     End Function
 
-    Public Function GuardarMasivo(ByVal leMontoRuta As System.Collections.Generic.List(Of EntidadesWCF.e_MontoRuta), ByVal PrefijoID As String) As Boolean Implements Il_MontoRuta.GuardarMasivo
+    Public Function GuardarMasivo(ByVal leMontoRuta As System.Collections.Generic.List(Of e_MontoRuta), ByVal PrefijoID As String) As Boolean Implements Il_MontoRuta.GuardarMasivo
         Try
             Dim dtCCP As Data.DataTable = CrearDT()
             Dim id As String = odMontoRuta.UltimoIdInserta(PrefijoID)

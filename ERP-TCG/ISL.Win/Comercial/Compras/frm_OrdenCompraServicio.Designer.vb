@@ -3474,7 +3474,7 @@ Partial Class frm_OrdenCompraServicio
         Me.MenuDetalle.Appearance = Appearance134
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.MenuDetalle.ImageListLarge = Me.imagenes
         Me.MenuDetalle.ImageListSmall = Me.imagenes
         Me.MenuDetalle.MdiMergeable = False
@@ -3864,7 +3864,7 @@ Partial Class frm_OrdenCompraServicio
         Appearance166.ForeColor = System.Drawing.Color.Navy
         Me.Menu1.Appearance = Appearance166
         Me.Menu1.DesignerFlags = 1
-        Me.Menu1.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.Menu1.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.Menu1.ImageListLarge = Me.imagenes
         Me.Menu1.ImageListSmall = Me.imagenes
         Me.Menu1.MdiMergeable = False

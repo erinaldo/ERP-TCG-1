@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -161,7 +161,7 @@ Public Class d_Inventario
                             .ValorUnitarioReal = oeInventario.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
                         End With
-                        .oeRegistroInventario.PrefijoID = .PrefijoID '@0001
+                        .oeRegistroInventario.PrefijoID = oeInventario.PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)
                     End If
                     stResultado = sqlhelper.ExecuteScalar("[ALM].[Isp_Inventario_IAE]" _

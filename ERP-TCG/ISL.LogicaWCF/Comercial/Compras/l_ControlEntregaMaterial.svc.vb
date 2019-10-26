@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 ' NOTA: si cambia aquí el nombre de clase "l_ControlEntregaMaterial", también debe actualizar la referencia a "l_ControlEntregaMaterial" tanto en Web.config como en el archivo .svc asociado.
 Public Class l_ControlEntregaMaterial
     Implements Il_ControlEntregaMaterial

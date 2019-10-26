@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -8,7 +8,7 @@ Public Class l_GuiaRRemitenteMaterial
 
     Dim odGuiaRRemitenteMaterial As New d_GuiaRRemitenteMaterial
 
-    Public Function Eliminar(ByVal oeGuiaRRemitenteMaterial As EntidadesWCF.e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Eliminar
+    Public Function Eliminar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Eliminar
         Try
             Return odGuiaRRemitenteMaterial.Eliminar(oeGuiaRRemitenteMaterial)
         Catch ex As Exception
@@ -16,7 +16,7 @@ Public Class l_GuiaRRemitenteMaterial
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeGuiaRRemitenteMaterial As EntidadesWCF.e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Guardar
+    Public Function Guardar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Guardar
         Try
             If Validar(oeGuiaRRemitenteMaterial) Then
                 Return odGuiaRRemitenteMaterial.Guardar(oeGuiaRRemitenteMaterial)
@@ -26,7 +26,7 @@ Public Class l_GuiaRRemitenteMaterial
         End Try
     End Function
 
-    Public Function Listar(ByVal oeGuiaRRemitenteMaterial As EntidadesWCF.e_GuiaRRemitenteMaterial) As System.Collections.Generic.List(Of EntidadesWCF.e_GuiaRRemitenteMaterial) Implements Il_GuiaRRemitenteMaterial.Listar
+    Public Function Listar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As System.Collections.Generic.List(Of e_GuiaRRemitenteMaterial) Implements Il_GuiaRRemitenteMaterial.Listar
         Try
             Return odGuiaRRemitenteMaterial.Listar(oeGuiaRRemitenteMaterial)
         Catch ex As Exception
@@ -34,7 +34,7 @@ Public Class l_GuiaRRemitenteMaterial
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeGuiaRRemitenteMaterial As EntidadesWCF.e_GuiaRRemitenteMaterial) As EntidadesWCF.e_GuiaRRemitenteMaterial Implements Il_GuiaRRemitenteMaterial.Obtener
+    Public Function Obtener(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As e_GuiaRRemitenteMaterial Implements Il_GuiaRRemitenteMaterial.Obtener
         Try
             Return odGuiaRRemitenteMaterial.Obtener(oeGuiaRRemitenteMaterial)
         Catch ex As Exception
@@ -42,7 +42,7 @@ Public Class l_GuiaRRemitenteMaterial
         End Try
     End Function
 
-    Public Function Validar(ByVal oeGuiaRRemitenteMaterial As EntidadesWCF.e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Validar
+    Public Function Validar(ByVal oeGuiaRRemitenteMaterial As e_GuiaRRemitenteMaterial) As Boolean Implements Il_GuiaRRemitenteMaterial.Validar
         Try
             With oeGuiaRRemitenteMaterial
                 '---------VALIDARRRRRRRRRR-------------

@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.LogicaWCF.l_ConfiguracionMTC" CodeBehind="l_ConfiguracionMTC.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_ConfiguracionMTC" CodeBehind="l_ConfiguracionMTC.svc.vb" %>

@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -21,7 +29,6 @@ Public Class d_ConceptoIngresos
     Public Function Obtener(ByVal oeConceptoIngresos As e_ConceptoIngresos) As e_ConceptoIngresos
 
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ds As DataSet
             ds = sqlhelper.ExecuteDataset("TES.Isp_ConceptoIngresos_Listar", "", oeConceptoIngresos.Id)
             If ds.Tables(0).Rows.Count > 0 Then
@@ -35,7 +42,6 @@ Public Class d_ConceptoIngresos
 
     Public Function Listar(ByVal oeConceptoIngresos As e_ConceptoIngresos) As List(Of e_ConceptoIngresos)
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             Dim ldConceptoIngresos As New List(Of e_ConceptoIngresos)
             Dim ds As DataSet
             With oeConceptoIngresos
@@ -60,12 +66,11 @@ Public Class d_ConceptoIngresos
 
     Public Function Guardar(ByVal oeConceptoIngresos As e_ConceptoIngresos) As Boolean
         Try
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
             With oeConceptoIngresos
-                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID, _
+                sqlhelper.ExecuteNonQuery("XXX.ISP_XXXXXXXXXXXXXXX_IAE", .TipoOperacion, .PrefijoID,
                         .Id _
                         , .Nombre _
-                        , .Activo _
+                        , .Activo
                     )
             End With
             Return True

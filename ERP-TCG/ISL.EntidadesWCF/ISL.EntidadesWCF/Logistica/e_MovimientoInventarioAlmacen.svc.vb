@@ -182,7 +182,7 @@ Public Class e_MovimientoInventarioAlmacen
         Return movimientoInventarioAlmacen
     End Function
 
-    Public Overloads Function Equals(ByVal oeMovInvAlmacen As e_MovimientoInventarioAlmacen) As Boolean Implements IEquatable(Of ISL.EntidadesWCF.e_MovimientoInventarioAlmacen).Equals
+    Public Overloads Function Equals(ByVal oeMovInvAlmacen As e_MovimientoInventarioAlmacen) As Boolean Implements IEquatable(Of e_MovimientoInventarioAlmacen).Equals
         If Me.IdAlmacen.Trim = oeMovInvAlmacen.IdAlmacen.Trim Then Return True
         Return False
     End Function

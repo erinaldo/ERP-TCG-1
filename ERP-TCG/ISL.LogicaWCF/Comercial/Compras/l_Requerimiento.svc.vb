@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -18,7 +18,7 @@ Public Class l_Requerimiento
     Dim odRequerimiento As New d_Requerimiento
     Dim olOrden As l_Orden
 
-    Public Function Eliminar(ByVal oeRequerimiento As EntidadesWCF.e_Requerimiento) As Boolean Implements Il_Requerimiento.Eliminar
+    Public Function Eliminar(ByVal oeRequerimiento As e_Requerimiento) As Boolean Implements Il_Requerimiento.Eliminar
         Try
             Return odRequerimiento.Eliminar(oeRequerimiento)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_Requerimiento
         End Try
     End Function
 
-    Public Function Guardar(oeRequerimiento As EntidadesWCF.e_Requerimiento) As Boolean Implements Il_Requerimiento.Guardar
+    Public Function Guardar(oeRequerimiento As e_Requerimiento) As Boolean Implements Il_Requerimiento.Guardar
         Try
             Using TransScope As New TransactionScope()
                 If Validar(oeRequerimiento) Then
@@ -46,7 +46,7 @@ Public Class l_Requerimiento
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal lstRequerimientos As System.Collections.Generic.List(Of EntidadesWCF.e_Requerimiento)) As Boolean Implements Il_Requerimiento.GuardarLista
+    Public Function GuardarLista(ByVal lstRequerimientos As System.Collections.Generic.List(Of e_Requerimiento)) As Boolean Implements Il_Requerimiento.GuardarLista
         Try
             Return odRequerimiento.GuardarLista(lstRequerimientos)
         Catch ex As Exception
@@ -54,7 +54,7 @@ Public Class l_Requerimiento
         End Try
     End Function
 
-    Public Function Listar(ByVal oeRequerimiento As EntidadesWCF.e_Requerimiento) As System.Collections.Generic.List(Of EntidadesWCF.e_Requerimiento) Implements Il_Requerimiento.Listar
+    Public Function Listar(ByVal oeRequerimiento As e_Requerimiento) As System.Collections.Generic.List(Of e_Requerimiento) Implements Il_Requerimiento.Listar
         Try
             Return odRequerimiento.Listar(oeRequerimiento)
         Catch ex As Exception
@@ -62,7 +62,7 @@ Public Class l_Requerimiento
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeRequerimiento As EntidadesWCF.e_Requerimiento) As EntidadesWCF.e_Requerimiento Implements Il_Requerimiento.Obtener
+    Public Function Obtener(ByVal oeRequerimiento As e_Requerimiento) As e_Requerimiento Implements Il_Requerimiento.Obtener
         Try
             Return odRequerimiento.Obtener(oeRequerimiento)
         Catch ex As Exception
@@ -70,7 +70,7 @@ Public Class l_Requerimiento
         End Try
     End Function
 
-    Public Function Validar(ByVal oeRequerimiento As EntidadesWCF.e_Requerimiento) As Boolean Implements Il_Requerimiento.Validar
+    Public Function Validar(ByVal oeRequerimiento As e_Requerimiento) As Boolean Implements Il_Requerimiento.Validar
         Try
 
             Dim oeRequerimientoMaterial As New e_RequerimientoMaterial, lstRequerimientoMaterial As List(Of e_RequerimientoMaterial)

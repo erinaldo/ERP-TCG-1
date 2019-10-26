@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 ' NOTA: si cambia aquí el nombre de clase "l_Bonificacion", también debe actualizar la referencia a "l_Bonificacion" tanto en Web.config como en el archivo .svc asociado.
 

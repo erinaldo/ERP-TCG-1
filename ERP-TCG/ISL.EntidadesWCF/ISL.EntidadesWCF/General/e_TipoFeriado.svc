@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_TipoFeriado" CodeBehind="e_TipoFeriado.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_TipoFeriado" CodeBehind="e_TipoFeriado.svc.vb" %>

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class frm_KMMack
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -261,7 +261,7 @@ Partial Class frm_KMMack
         '
         'EKmMackBindingSource
         '
-        Me.EKmMackBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_KmMack)
+        Me.EKmMackBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_KmMack)
         '
         'UltraGroupBox3
         '
@@ -446,7 +446,7 @@ Partial Class frm_KMMack
         '
         'EKmMackDetBindingSource
         '
-        Me.EKmMackDetBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_KmMackDet)
+        Me.EKmMackDetBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_KmMackDet)
         '
         'UltraGroupBox1
         '

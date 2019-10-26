@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Public Class frm_DocumentoVenta
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
 #Region "Declaracion de Variables"
     Private WithEvents oeDocumentoVenta As New e_DocumentoVenta
@@ -594,7 +594,7 @@ Public Class frm_DocumentoVenta
                 etiNombre.Text = oeTrabajador.oePersona.NombreCompleto
                 etiNumeroCuenta.Text = oeCuentaTrabajador.Codigo
                 etiSaldoCuentaTrabajador.Text = oeCuentaTrabajador.Saldo
-                If Not String.IsNullOrEmpty(etiDni.Text) Then picRecibidor.Image = olPersona.Foto(etiDni.Text)
+                'If Not String.IsNullOrEmpty(etiDni.Text) Then picRecibidor.Image = olPersona.Foto(etiDni.Text)
             End If
         End With
     End Sub

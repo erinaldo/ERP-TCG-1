@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.LogicaWCF
-Imports ISL.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Shared
 Imports Infragistics.Win.UltraWinGrid
@@ -20,7 +20,7 @@ Imports System.Data.OleDb
 
 Public Class frm_Guias
 
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Public Sub New()
         'Llamada necesaria para el Diseñador de Windows Forms.
@@ -608,7 +608,7 @@ Public Class frm_Guias
             LlenaCombos()
             ComboGrilla()
             ControlRangoFechaInicializa()
-            cboCentro.Value = Prefijo.PrefijoID
+            cboCentro.Value = gs_PrefijoIdSucursal '@0001
             If PerfilAsignado(gNombrePerfilAutorizaTarifas) Then
                 With griViajeDetalle.DisplayLayout.Bands(0)
                     .Columns("Carga").Header.Enabled = True
@@ -2505,7 +2505,7 @@ Public Class frm_Guias
             oeCombo.Nombre = "Transportista"
             ListTercero.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
             '   LlenarComboMaestro(cboTransportista, ListTercero, 1)
-            '  cboTransportista.Value = "1CH000004444" 'induamerica isl
+            '  cboTransportista.Value = "1CH000004444" ' EMP ERP
         Catch ex As Exception
             Throw ex
         End Try

@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -15,7 +15,7 @@ Public Class l_PrestamosCuenta
     Implements Il_PrestamosCuenta
     Dim odPrestamosCuenta As New d_PrestamosCuenta
 
-    Public Function Eliminar(ByVal oePrestamosCuenta As EntidadesWCF.e_PrestamosCuenta) As Boolean Implements Il_PrestamosCuenta.Eliminar
+    Public Function Eliminar(ByVal oePrestamosCuenta As e_PrestamosCuenta) As Boolean Implements Il_PrestamosCuenta.Eliminar
         Try
             Return odPrestamosCuenta.Eliminar(oePrestamosCuenta)
         Catch ex As Exception
@@ -23,7 +23,7 @@ Public Class l_PrestamosCuenta
         End Try
     End Function
 
-    Public Function Guardar(ByVal oePrestamosCuenta As EntidadesWCF.e_PrestamosCuenta) As Boolean Implements Il_PrestamosCuenta.Guardar
+    Public Function Guardar(ByVal oePrestamosCuenta As e_PrestamosCuenta) As Boolean Implements Il_PrestamosCuenta.Guardar
         Try
             Dim oeAsiento As New e_Asiento
             Dim loAsiento As New List(Of e_Asiento)
@@ -327,7 +327,7 @@ Public Class l_PrestamosCuenta
         End Try
     End Function
 
-    Public Function Listar(ByVal oePrestamosCuenta As EntidadesWCF.e_PrestamosCuenta) As System.Collections.Generic.List(Of EntidadesWCF.e_PrestamosCuenta) Implements Il_PrestamosCuenta.Listar
+    Public Function Listar(ByVal oePrestamosCuenta As e_PrestamosCuenta) As System.Collections.Generic.List(Of e_PrestamosCuenta) Implements Il_PrestamosCuenta.Listar
         Try
             Return odPrestamosCuenta.Listar(oePrestamosCuenta)
         Catch ex As Exception
@@ -335,7 +335,7 @@ Public Class l_PrestamosCuenta
         End Try
     End Function
 
-    Public Function Obtener(ByVal oePrestamosCuenta As EntidadesWCF.e_PrestamosCuenta) As EntidadesWCF.e_PrestamosCuenta Implements Il_PrestamosCuenta.Obtener
+    Public Function Obtener(ByVal oePrestamosCuenta As e_PrestamosCuenta) As e_PrestamosCuenta Implements Il_PrestamosCuenta.Obtener
         Try
             Return odPrestamosCuenta.Obtener(oePrestamosCuenta)
         Catch ex As Exception

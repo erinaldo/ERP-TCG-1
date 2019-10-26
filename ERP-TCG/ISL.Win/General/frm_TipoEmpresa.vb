@@ -6,11 +6,11 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 
 Public Class frm_TipoEmpresa
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
 
     Private Shared instancia As frm_TipoEmpresa = Nothing
     Private Shared Operacion As String

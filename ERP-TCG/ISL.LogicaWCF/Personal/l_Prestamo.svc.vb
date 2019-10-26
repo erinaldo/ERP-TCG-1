@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 Imports System.Transactions
 
@@ -18,7 +18,7 @@ Public Class l_Prestamo
     Dim odPrestamo As New d_Prestamo
     Dim IslFuncion As New l_FuncionesGenerales
 
-    Public Function Eliminar(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As Boolean Implements Il_Prestamo.Eliminar
+    Public Function Eliminar(ByVal oePrestamo As e_Prestamo) As Boolean Implements Il_Prestamo.Eliminar
         Try
             Return odPrestamo.Eliminar(oePrestamo)
         Catch ex As Exception
@@ -26,7 +26,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function Guardar(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As Boolean Implements Il_Prestamo.Guardar
+    Public Function Guardar(ByVal oePrestamo As e_Prestamo) As Boolean Implements Il_Prestamo.Guardar
         Try
             If Validar(oePrestamo) Then
                 odPrestamo.Guardar(oePrestamo)
@@ -67,7 +67,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function Listar(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo) Implements Il_Prestamo.Listar
+    Public Function Listar(ByVal oePrestamo As e_Prestamo) As System.Collections.Generic.List(Of e_Prestamo) Implements Il_Prestamo.Listar
         Try
             Return odPrestamo.Listar(oePrestamo)
         Catch ex As Exception
@@ -75,7 +75,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function Obtener(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As EntidadesWCF.e_Prestamo Implements Il_Prestamo.Obtener
+    Public Function Obtener(ByVal oePrestamo As e_Prestamo) As e_Prestamo Implements Il_Prestamo.Obtener
         Try
             Return odPrestamo.Obtener(oePrestamo)
         Catch ex As Exception
@@ -83,7 +83,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function Validar(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As Boolean Implements Il_Prestamo.Validar
+    Public Function Validar(ByVal oePrestamo As e_Prestamo) As Boolean Implements Il_Prestamo.Validar
         Try
             With oePrestamo
                 IslFuncion.ValidarCampoNoNulo(.IdTrabajador, "Seleccione Trabajador")
@@ -121,7 +121,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function GuardarLista(ByVal lePrestamo As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo), _
+    Public Function GuardarLista(ByVal lePrestamo As System.Collections.Generic.List(Of e_Prestamo), _
                                  ByVal IdGrupo As String, ByVal GrupoDesc As String, ByVal oePeriodo As e_Periodo, ByVal oeAsientoModel As e_AsientoModelo, _
                                  ByVal ls_GrupoSanc As String, ByVal ls_GrupoDesc As String) As Boolean Implements Il_Prestamo.GuardarLista
         Try
@@ -249,7 +249,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Private Function ContabilizaPrestamos(ByVal lePrestamo As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo), _
+    Private Function ContabilizaPrestamos(ByVal lePrestamo As System.Collections.Generic.List(Of e_Prestamo), _
       ByVal oePeriodo As e_Periodo, ByVal oeCajaBanco As e_MovimientoCajaBanco, ByVal lsIdCta As String, _
       ByVal IndMonedaExtrangera As Integer, ByVal lsGlosa As String) As Boolean
         Try
@@ -272,7 +272,7 @@ Public Class l_Prestamo
 
     End Function
 
-    Public Function ListarDS(ByVal oePrestamo As EntidadesWCF.e_Prestamo) As System.Data.DataSet Implements Il_Prestamo.ListarDS
+    Public Function ListarDS(ByVal oePrestamo As e_Prestamo) As System.Data.DataSet Implements Il_Prestamo.ListarDS
         Try
             Return odPrestamo.ListarDS(oePrestamo)
         Catch ex As Exception
@@ -280,7 +280,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function ListarRDT(ByVal oeRDT As EntidadesWCF.e_ReporteDescTrabajador) As System.Collections.Generic.List(Of EntidadesWCF.e_ReporteDescTrabajador) Implements Il_Prestamo.ListarRDT
+    Public Function ListarRDT(ByVal oeRDT As e_ReporteDescTrabajador) As System.Collections.Generic.List(Of e_ReporteDescTrabajador) Implements Il_Prestamo.ListarRDT
         Try
             Return odPrestamo.ListarRDT(oeRDT)
         Catch ex As Exception
@@ -288,7 +288,7 @@ Public Class l_Prestamo
         End Try
     End Function
 
-    Public Function Liquidar(ByVal lePrestamo As System.Collections.Generic.List(Of EntidadesWCF.e_Prestamo)) As Boolean Implements Il_Prestamo.Liquidar
+    Public Function Liquidar(ByVal lePrestamo As System.Collections.Generic.List(Of e_Prestamo)) As Boolean Implements Il_Prestamo.Liquidar
         Try
             Return odPrestamo.Liquidar(lePrestamo)
         Catch ex As Exception

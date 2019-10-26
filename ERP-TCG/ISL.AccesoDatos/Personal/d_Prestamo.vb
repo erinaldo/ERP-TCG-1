@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -337,7 +337,7 @@ Public Class d_Prestamo
     Public Function TransferirDeuda(ByVal oePrestamo As e_Prestamo, oePrestTrans As e_Prestamo) As Boolean
         Try
             Using TransScope As New TransactionScope()
-                Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
                 Dim _id As String = ""
                 With oePrestamo
                     _id = sqlhelper.ExecuteScalar("TES.Isp_Prestamo_IAE", .TipoOperacion, .PrefijoID, _

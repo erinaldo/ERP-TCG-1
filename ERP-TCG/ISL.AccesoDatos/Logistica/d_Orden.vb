@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -255,6 +255,7 @@ Public Class d_Orden
                     For Each Detalle As e_OrdenMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
                         Detalle.TipoOperacion = .TipoOperacion
+                        Detalle.PrefijoID = oeOrden.PrefijoID '@0001
                         odOrdenMaterial.Guardar(Detalle)
                     Next
                 End With

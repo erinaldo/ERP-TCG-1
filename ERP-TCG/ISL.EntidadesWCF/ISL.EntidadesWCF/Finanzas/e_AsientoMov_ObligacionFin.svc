@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="VB" Debug="true" Service="ISL.EntidadesWCF.e_AsientoMov_ObligacionFin" CodeBehind="e_AsientoMov_ObligacionFin.svc.vb" %>
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_AsientoMov_ObligacionFin" CodeBehind="e_AsientoMov_ObligacionFin.svc.vb" %>

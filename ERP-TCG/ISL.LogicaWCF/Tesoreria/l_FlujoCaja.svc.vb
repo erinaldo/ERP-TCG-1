@@ -6,8 +6,8 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -16,7 +16,7 @@ Public Class l_FlujoCaja
     Dim odFlujoGasto As New d_FlujoGasto
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
 
-    Public Function Buscar(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Buscar
+    Public Function Buscar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Buscar
         Try
             Return odFlujoGasto.Buscar(oeFlujoGasto)
         Catch ex As Exception
@@ -24,7 +24,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function ComboGrilla(ByVal ListaFlujo As System.Collections.Generic.List(Of EntidadesWCF.e_FlujoCaja)) As Object Implements Il_FlujoGasto.ComboGrilla
+    Public Function ComboGrilla(ByVal ListaFlujo As System.Collections.Generic.List(Of e_FlujoCaja)) As Object Implements Il_FlujoGasto.ComboGrilla
         Try
             Return odFlujoGasto.ComboGrilla(ListaFlujo)
         Catch ex As Exception
@@ -32,7 +32,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Eliminar
+    Public Function Eliminar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Eliminar
         Try
             Return odFlujoGasto.Eliminar(oeFlujoGasto)
         Catch ex As Exception
@@ -40,7 +40,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Guardar
+    Public Function Guardar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Guardar
         Try
             If Validar(oeFlujoGasto) Then
                 Return odFlujoGasto.Guardar(oeFlujoGasto)
@@ -50,7 +50,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function Listar(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As System.Collections.Generic.List(Of EntidadesWCF.e_FlujoCaja) Implements Il_FlujoGasto.Listar
+    Public Function Listar(ByVal oeFlujoGasto As e_FlujoCaja) As System.Collections.Generic.List(Of e_FlujoCaja) Implements Il_FlujoGasto.Listar
         Try
             Return odFlujoGasto.Listar(oeFlujoGasto)
         Catch ex As Exception
@@ -58,7 +58,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As EntidadesWCF.e_FlujoCaja Implements Il_FlujoGasto.Obtener
+    Public Function Obtener(ByVal oeFlujoGasto As e_FlujoCaja) As e_FlujoCaja Implements Il_FlujoGasto.Obtener
         Try
             Return odFlujoGasto.Obtener(oeFlujoGasto)
         Catch ex As Exception
@@ -66,7 +66,7 @@ Public Class l_FlujoCaja
         End Try
     End Function
 
-    Public Function Validar(ByVal oeFlujoGasto As EntidadesWCF.e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Validar
+    Public Function Validar(ByVal oeFlujoGasto As e_FlujoCaja) As Boolean Implements Il_FlujoGasto.Validar
         Try
             With oeFlujoGasto
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Codigo, "Ingrese el codigo")

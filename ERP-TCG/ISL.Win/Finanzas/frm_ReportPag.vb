@@ -8,7 +8,7 @@
 
 Public Class frm_ReportPag
 #Region "Instancia"
-    Inherits ISL.Win.frm_MenuPadre
+    Inherits frm_MenuPadre
     Public Sub New()
         ' Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()

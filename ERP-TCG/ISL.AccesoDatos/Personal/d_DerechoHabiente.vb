@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -89,6 +89,7 @@ Public Class d_DerechoHabiente
         Try
             With oeDerechoHabiente
                 If oeDerechoHabiente.oePersona IsNot Nothing Then
+                    oeDerechoHabiente.oePersona.PrefijoID = oeDerechoHabiente.PrefijoID '@0001
                     odPersona.Guardar(oeDerechoHabiente.oePersona)
                     oeDerechoHabiente.IdPersona = oeDerechoHabiente.oePersona.Id
                     sqlhelper.ExecuteNonQuery("PER.Isp_DerechoHabiente_IAE", .TipoOperacion, .PrefijoID,

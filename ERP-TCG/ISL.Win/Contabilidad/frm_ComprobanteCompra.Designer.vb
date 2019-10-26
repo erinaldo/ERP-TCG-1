@@ -1244,7 +1244,7 @@ Partial Class frm_ComprobanteCompra
         '
         'EMovimientoDocumentoBindingSource
         '
-        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ISL.EntidadesWCF.e_MovimientoDocumento)
+        Me.EMovimientoDocumentoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
         '
         'Agrupacion10
         '
@@ -1286,7 +1286,7 @@ Partial Class frm_ComprobanteCompra
         Me.mnuDetalleAsiento.Appearance = Appearance5
         Me.mnuDetalleAsiento.DesignerFlags = 1
         Me.mnuDetalleAsiento.DockWithinContainer = Me
-        Me.mnuDetalleAsiento.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
+        Me.mnuDetalleAsiento.DockWithinContainerBaseType = GetType(frm_MenuPadre)
         Me.mnuDetalleAsiento.MdiMergeable = False
         Me.mnuDetalleAsiento.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool31, ButtonTool32})
         Me.mnuDetalleAsiento.Style = Infragistics.Win.UltraWinToolbars.ToolbarStyle.Office2007

@@ -1,29 +1,25 @@
-﻿Imports ISL.EntidadesWCF
-''' <summary>
-''' Clase que gestiona los estados de los documentos en la empresa
-''' Fecha de Actualizacion:31/10/2011
-''' </summary>
-''' <remarks>Clase que controla los metodos de accesos la tabla Estado,Capa del Sistema: Capa de Acceso a Datos.</remarks>
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
+
 
 Public Class d_Estado
 
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' Metodo que obtiene una lista generica de objetos de tipo e_Estado, el cual es consultado por el procedimiento almacenado
-    ''' [STD].[Isp_Estado_Listar],enviando sus atributos del estado.Una vez obtenido los registros son cargados y 
-    ''' devueltos en una lista generica.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeEstado">Recibe una Variable oeEstado de tipo e_Estado </param>
-    ''' <returns>Devuelve una lista generica(ldEstado) de objetos de tipo e_Estado</returns>
-    ''' <remarks>Si el dataset no contiene ningun registro se devuelve un valor nothing,Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Public Function Listar(ByVal oeEstado As e_Estado) As List(Of e_Estado)
         Try
             Dim ldEstado As New List(Of e_Estado)
             Dim ds As DataSet
             With oeEstado
-                ds = SqlHelper.ExecuteDataset("[STD].[Isp_Estado_Listar]", _
+                ds = sqlhelper.ExecuteDataset("[STD].[Isp_Estado_Listar]",
             .Nombre)
             End With
             oeEstado = Nothing
@@ -40,14 +36,7 @@ Public Class d_Estado
             Throw
         End Try
     End Function
-    ''' <summary>
-    ''' El metodo se encarga de recibir un registro en una variable o_fila de tipo datarow
-    ''' el cual es cargado a una varible de tipo e_Estado y enviada al metodo que lo llamo.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="o_fila">Recibe una variable o_fila de tipo datarow.</param>
-    ''' <returns>Devuelve una variable(oeEstado) de tipo e_Estado </returns>
-    ''' <remarks>Capa del Sistema:Capa de Acceso a Datos</remarks>
+
     Private Function Cargar(ByVal o_fila As DataRow) As e_Estado
         Try
             Dim oeEstado = New e_Estado( _

@@ -24,7 +24,7 @@ Imports System.Xml.Serialization
 Namespace com.grupoinduamerica
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code"),  _
      System.Web.Services.WebServiceBindingAttribute(Name:="ReferenciaServicioFacturaBinding", [Namespace]:="urn:ReferenciaServicioFactura")>  _
@@ -38,7 +38,7 @@ Namespace com.grupoinduamerica
         '''<remarks/>
         Public Sub New()
             MyBase.New
-            Me.Url = Global.ISL.LogicaWCF.My.MySettings.Default.ISL_LogicaWCF_com_grupoinduamerica_ReferenciaServicioFactura
+            Me.Url = Global.ERP.LogicaWCF.My.MySettings.Default.ISL_LogicaWCF_com_grupoinduamerica_ReferenciaServicioFactura
             If (Me.IsLocalFileSystemWebService(Me.Url) = true) Then
                 Me.UseDefaultCredentials = true
                 Me.useDefaultCredentialsSetExplicitly = false
@@ -121,11 +121,11 @@ Namespace com.grupoinduamerica
     End Class
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0")>  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0")>  _
     Public Delegate Sub enviardataCompletedEventHandler(ByVal sender As Object, ByVal e As enviardataCompletedEventArgs)
     
     '''<remarks/>
-    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.7.3056.0"),  _
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3752.0"),  _
      System.Diagnostics.DebuggerStepThroughAttribute(),  _
      System.ComponentModel.DesignerCategoryAttribute("code")>  _
     Partial Public Class enviardataCompletedEventArgs

@@ -6,17 +6,9 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 
-''' <summary>
-''' Clase que se encarga de gestionar los bancos asociados a la empresa
-''' </summary>
-''' <example> Este ejemplo muestra como cargar una clase de tipo d_Banco 
-''' <code>
-'''    Dim odBanco As New d_Banco
-''' </code>
-''' </example>
-''' <remarks>Esta clase controla los metodos de accesos la tabla Banco<see cref="e_Banco"/><seealso cref="e_Empresa"/></remarks>
+
 Public Class d_Banco
     Private sqlhelper As New SqlHelper
 
@@ -33,16 +25,7 @@ Public Class d_Banco
 
     End Function
 
-    ''' <summary>
-    ''' El metodo se encarga de obtener un banco específico, a partir de algunos datos cargados en el objeto e_Banco
-    ''' que se le pasa como parámetro
-    ''' </summary>
-    ''' <param name="oeBanco">Recibe una variable oeBanco de tipo e_Banco.</param>
-    ''' <returns>Devuelve un objeto de tipo e_Banco
-    ''' </returns>
-    ''' <example> Este ejemplo muestra como obtener el Id del objeto de tipo <see cref="e_Banco"/>, a partir de su nombre 
-    ''' <code>
-    ''' 
+
     ''' Dim odBanco As New d_Banco
     ''' Dim oeBanco as New e_Banco 
     ''' 
@@ -56,10 +39,8 @@ Public Class d_Banco
     '''         Throw
     '''     End Try
     '''  End Function
-    ''' 
-    ''' </code>
-    ''' </example>
-    ''' <remarks>Clase que controla los metodos de accesos la tabla Banco, a través del objeto <see cref="e_Banco"/><seealso cref="e_Empresa"/></remarks>
+
+
     Public Function Obtener(ByVal oeBanco As e_Banco) As e_Banco
         Try
             Dim ds As New DataSet
@@ -74,12 +55,6 @@ Public Class d_Banco
         End Try
     End Function
 
-    ''' <summary>
-    ''' Caso especial para obtener la situación administrativa específica a partir de su Id
-    ''' </summary>
-    ''' <param name="id"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Obtener(ByVal id As String) As e_Banco
         Try
             Dim ds As DataSet
@@ -95,16 +70,7 @@ Public Class d_Banco
         End Try
     End Function
 
-    ''' <summary>
-    ''' Esta función permite generar una lista de Bancos o EntidadesWCF financieras, a partir de algunos datos cargados en el objeto e_Banco
-    ''' que se le pasa como parámetro
-    ''' </summary>
-    ''' <param name="oeBanco">Recibe una variable oeBanco de tipo e_Banco.</param>
-    ''' <returns>Devuelve una lista de objetos de tipo e_Banco
-    ''' </returns>
-    ''' <example> Este ejemplo muestra como obtener una lista de todos los objetos de tipo <see cref="e_Banco"/> se encuentran Activos en el sistema
-    ''' <code>
-    ''' 
+
     ''' Public Function ListarBancosActivos(ByVal oeBanco As e_Banco) As List(Of e_Banco)
     '''     Try
     '''         oeBanco.Activo = True
@@ -114,10 +80,7 @@ Public Class d_Banco
     '''         Throw
     '''     End Try
     ''' End Function
-    ''' 
-    ''' </code>
-    ''' </example>
-    ''' <remarks>Este método genera una lista de Bancos, a partir del objeto <see cref="e_Banco"/><seealso cref="e_Empresa"/> que se pasa como parámetro</remarks>
+
     Public Function Listar(ByVal oeBanco As e_Banco) As List(Of e_Banco)
         Try
             Dim ldBanco As New List(Of e_Banco)
@@ -141,16 +104,8 @@ Public Class d_Banco
         End Try
     End Function
 
-    ''' <summary>
-    ''' Esta función permite Guardar o Grabar la información de un Banco o EntidadesWCF financiera específico, a partir de algunos datos cargados en el objeto e_Banco
-    ''' que se le pasa como parámetro
-    ''' </summary>
-    ''' <param name="oeBanco">Recibe una variable oeBanco de tipo <see cref="e_Banco"/></param>
-    ''' <returns>Devuelve un valor de tipo booleano, True en caso la grabación sea exitosa, False en caso se haya presentado algún tipo de error al momento de grabar
-    ''' </returns>
-    ''' <example> Este ejemplo muestra como Guardar la información de un banco, habiendo cargado directamente en el objeto los datos de éste
-    ''' <code>
-    ''' 
+
+
     ''' Sub GrabarBanco()
     '''    Try
     '''        Dim oeBanco as new e_Banco
@@ -164,11 +119,8 @@ Public Class d_Banco
     ''' Thow New Exception("El banco fue grabado exitosamente")
     ''' 
     ''' EndSub
-    ''' 
-    ''' 
-    ''' </code>
-    ''' </example>
-    ''' <remarks>Este método genera una lista de Bancos, a partir del objeto <see cref="e_Banco"/><seealso cref="e_Empresa"/> que se pasa como parámetro</remarks>
+
+
     Public Function Guardar(ByVal oeBanco As e_Banco) As Boolean
         Try
             With oeBanco
@@ -182,15 +134,7 @@ Public Class d_Banco
         End Try
     End Function
 
-    ''' <summary>
-    ''' Metodo que se encargara de desactivar un regitro del tipo de documento,a travez del procedimiento almacenado
-    ''' STD.Isp_TipoDocumento_IAE,por el cual va a ser enviado el id del tipo de documento a desactivar, obtendremos 
-    ''' una respuesta de confirmacion del registro guardado.
-    ''' Fecha de Actualizacion:31/10/2011
-    ''' </summary>
-    ''' <param name="oeBanco">Recibe una variable oeBanco de tipo objeto e_Banco</param>
-    ''' <returns>Devuelve un valor de tipo boolean</returns>
-    ''' <remarks>Manda como parametro el tipo de operacion:"E",Capa del Sistema:Capa de Acceso a Datos</remarks>
+
 
     Public Function Eliminar(ByVal oeBanco As e_Banco) As Boolean
         Try

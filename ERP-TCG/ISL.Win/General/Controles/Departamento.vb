@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.LogicaWCF
+﻿Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 
 ''' <summary>
 ''' Control creado para generar una lista de departamentos del Perú

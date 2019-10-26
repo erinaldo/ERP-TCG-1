@@ -1,4 +1,12 @@
-﻿Imports ISL.EntidadesWCF
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+Imports ERP.EntidadesWCF
 Public Class d_TipoActivoFijo_CtaCtble
 
     Private sqlhelper As New SqlHelper
@@ -45,7 +53,6 @@ Public Class d_TipoActivoFijo_CtaCtble
 
     Private Function ExecuteLST(oeTipoActivoFijo_CtaCtble As e_TipoActivoFijo_CtaCtble) As DataSet
         Try
-            sqlhelper = New SqlHelper
             Dim ds As DataSet
             With oeTipoActivoFijo_CtaCtble
                 ds = sqlhelper.ExecuteDataset("[CON].[Isp_TipoActivoFijo_CtaCtble_Listar]" _
@@ -61,7 +68,7 @@ Public Class d_TipoActivoFijo_CtaCtble
                         , .IdCtaCtbleReadecuacionD _
                         , .IdCtaCtbleReadecuacionH _
                         , .Ejercicio _
-                        , .Activo _
+                        , .Activo
                         )
             End With
             Return ds
@@ -104,8 +111,7 @@ Public Class d_TipoActivoFijo_CtaCtble
     Public Function Guardar(oeTipoActivoFijo_CtaCtble As e_TipoActivoFijo_CtaCtble) As Boolean
         Try
             'Using transScope As New TransactionScope()
-            sqlhelper = New SqlHelper
-            Dim d_DatosConfiguracion As New d_DatosConfiguracion
+
             Dim IdResultado As String
             With oeTipoActivoFijo_CtaCtble
                 IdResultado = sqlhelper.ExecuteScalar("[CON].[Isp_TipoActivoFijo_CtaCtble_IAE]" _
@@ -141,7 +147,6 @@ Public Class d_TipoActivoFijo_CtaCtble
 
     Public Function Eliminar(oeTipoActivoFijo_CtaCtble As e_TipoActivoFijo_CtaCtble) As Boolean
         Try
-            sqlhelper = New SqlHelper
             With oeTipoActivoFijo_CtaCtble
                 sqlhelper.ExecuteNonQuery("[CON].[Isp_TipoActivoFijo_CtaCtble_IAE]" _
                        , "E" _

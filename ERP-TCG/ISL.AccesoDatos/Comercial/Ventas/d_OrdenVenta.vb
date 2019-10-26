@@ -6,7 +6,7 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 Imports System.Data.SqlClient
 
@@ -109,7 +109,7 @@ Public Class d_OrdenVenta
 
     Public Function Guardar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
         Try
-            'Dim odOrdenComercialMaterial As New d_OrdenComercialMaterial
+            Dim odOrdenComercialMaterial As New d_OrdenVentaMaterial
             'Dim odOrdenComercialServicio As New d_OrdenComercialServicio
             Dim odOrden As New d_Orden
             'Dim odOrdenComercialOrden As New d_OrdenComercial_Orden
@@ -146,11 +146,11 @@ Public Class d_OrdenVenta
                             , .IndFacturadoProducto _
                             , .IdVendedorTrabajador).ToString.Split("_")
                     .Id = stResultado(0)
-                    'For Each oe As e_OrdenVentaMaterial In .lstOrdenComercialMaterial
-                    '    If oe.TipoOperacion = "" Then oe.TipoOperacion = "A"
-                    '    oe.IdOrdenComercial = .Id
-                    '    odOrdenComercialMaterial.Guardar(oe)
-                    'Next
+                    For Each oe As e_OrdenVentaMaterial In .lstOrdenComercialMaterial
+                        If oe.TipoOperacion = "" Then oe.TipoOperacion = "A"
+                        oe.IdOrdenComercial = .Id
+                        odOrdenComercialMaterial.Guardar(oe)
+                    Next
                     'For Each oe As e_OrdenVentaServicio In .lstOrdenComercialServicio
                     '    If oe.TipoOperacion = "" Then oe.TipoOperacion = "A"
                     '    If .TipoOperacion = "T" Then oe.TipoOperacion = "T"

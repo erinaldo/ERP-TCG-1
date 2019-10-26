@@ -1,5 +1,5 @@
-﻿Imports ISL.EntidadesWCF
-Imports ISL.AccesoDatos
+﻿Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -15,7 +15,7 @@ Public Class l_MovimientoPersonal
     ''' <param name="oeMovimientoPersonal"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Eliminar(ByVal oeMovimientoPersonal As EntidadesWCF.e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Eliminar
+    Public Function Eliminar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Eliminar
         Try
             Return odMovimientoPersonal.Eliminar(oeMovimientoPersonal)
         Catch ex As Exception
@@ -29,7 +29,7 @@ Public Class l_MovimientoPersonal
     ''' <param name="oeMovimientoPersonal"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Guardar(ByVal oeMovimientoPersonal As EntidadesWCF.e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Guardar
+    Public Function Guardar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Guardar
         Try
             If Validar(oeMovimientoPersonal) Then
                 Return odMovimientoPersonal.Guardar(oeMovimientoPersonal)
@@ -45,7 +45,7 @@ Public Class l_MovimientoPersonal
     ''' <param name="oeMovimientoPersonal"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Listar(ByVal oeMovimientoPersonal As EntidadesWCF.e_MovimientoPersonal) As System.Collections.Generic.List(Of EntidadesWCF.e_MovimientoPersonal) Implements Il_MovimientoPersonal.Listar
+    Public Function Listar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As System.Collections.Generic.List(Of e_MovimientoPersonal) Implements Il_MovimientoPersonal.Listar
         Try
             Return odMovimientoPersonal.Listar(oeMovimientoPersonal)
         Catch ex As Exception
@@ -59,7 +59,7 @@ Public Class l_MovimientoPersonal
     ''' <param name="oeMovimientoPersonal"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Obtener(ByVal oeMovimientoPersonal As EntidadesWCF.e_MovimientoPersonal) As EntidadesWCF.e_MovimientoPersonal Implements Il_MovimientoPersonal.Obtener
+    Public Function Obtener(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As e_MovimientoPersonal Implements Il_MovimientoPersonal.Obtener
         Try
             Return odMovimientoPersonal.Obtener(oeMovimientoPersonal)
         Catch ex As Exception
@@ -73,7 +73,7 @@ Public Class l_MovimientoPersonal
     ''' <param name="oeMovimientoPersonal"></param>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Validar(ByVal oeMovimientoPersonal As EntidadesWCF.e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Validar
+    Public Function Validar(ByVal oeMovimientoPersonal As e_MovimientoPersonal) As Boolean Implements Il_MovimientoPersonal.Validar
         Try
             With oeMovimientoPersonal
                 l_FuncionesGenerales.ValidarCampoNoNulo(.IdTrabajador, "Debe seleccionar algún empleado")

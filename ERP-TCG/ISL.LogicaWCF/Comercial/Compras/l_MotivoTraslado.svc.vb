@@ -1,4 +1,5 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _
@@ -7,7 +8,7 @@ Public Class l_MotivoTraslado
 
     Dim odMotivoTraslado As New d_MotivoTraslado
 
-    Public Function Eliminar(ByVal oeMotivoTraslado As EntidadesWCF.e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Eliminar
+    Public Function Eliminar(ByVal oeMotivoTraslado As e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Eliminar
         Try
             Return odMotivoTraslado.Eliminar(oeMotivoTraslado)
         Catch ex As Exception
@@ -15,7 +16,7 @@ Public Class l_MotivoTraslado
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMotivoTraslado As EntidadesWCF.e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Guardar
+    Public Function Guardar(ByVal oeMotivoTraslado As e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Guardar
         Try
             If Validar(oeMotivoTraslado) Then
                 Return odMotivoTraslado.Guardar(oeMotivoTraslado)
@@ -25,7 +26,7 @@ Public Class l_MotivoTraslado
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMotivoTraslado As EntidadesWCF.e_MotivoTraslado) As System.Collections.Generic.List(Of EntidadesWCF.e_MotivoTraslado) Implements Il_MotivoTraslado.Listar
+    Public Function Listar(ByVal oeMotivoTraslado As e_MotivoTraslado) As System.Collections.Generic.List(Of e_MotivoTraslado) Implements Il_MotivoTraslado.Listar
         Try
             Return odMotivoTraslado.Listar(oeMotivoTraslado)
         Catch ex As Exception
@@ -33,7 +34,7 @@ Public Class l_MotivoTraslado
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMotivoTraslado As EntidadesWCF.e_MotivoTraslado) As EntidadesWCF.e_MotivoTraslado Implements Il_MotivoTraslado.Obtener
+    Public Function Obtener(ByVal oeMotivoTraslado As e_MotivoTraslado) As e_MotivoTraslado Implements Il_MotivoTraslado.Obtener
         Try
             Return odMotivoTraslado.Obtener(oeMotivoTraslado)
         Catch ex As Exception
@@ -41,7 +42,7 @@ Public Class l_MotivoTraslado
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMotivoTraslado As EntidadesWCF.e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Validar
+    Public Function Validar(ByVal oeMotivoTraslado As e_MotivoTraslado) As Boolean Implements Il_MotivoTraslado.Validar
         Try
             With oeMotivoTraslado
                 '---------VALIDARRRRRRRRRR-------------

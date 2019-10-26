@@ -6,14 +6,9 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
 '=================================================================================================================
 
-Imports ISL.EntidadesWCF
+Imports ERP.EntidadesWCF
 Imports System.Transactions
 
-''' <summary>
-''' Clase: Trabajador
-''' Fecha: 15/10/2011
-''' </summary>
-''' <remarks></remarks>
 Public Class d_Trabajador
 
     Dim oeOcupacionTrabajador As New e_OcupacionTrabajador
@@ -33,12 +28,6 @@ Public Class d_Trabajador
 
     Private sqlhelper As New SqlHelper
 
-    ''' <summary>
-    ''' Cargar un Trabajador
-    ''' </summary>
-    ''' <param name="o_fila">Fila de Dato de Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Private Function Cargar(ByVal o_fila As DataRow) As e_Trabajador
         Try
             Dim valorSexo As Integer = IIf(IsDBNull(o_fila("Sexo")), 1, o_fila("Sexo"))
@@ -83,12 +72,6 @@ Public Class d_Trabajador
         End Try
     End Function
 
-    ''' <summary>
-    ''' Obtiene un Trabajador
-    ''' </summary>
-    ''' <param name="oeTrabajador">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Obtener(ByVal oeTrabajador As e_Trabajador) As e_Trabajador
         Try
             Dim ds As DataSet
@@ -181,12 +164,6 @@ Public Class d_Trabajador
         End Try
     End Function
 
-    ''' <summary>
-    ''' Listar Trabajador
-    ''' </summary>
-    ''' <param name="oeTrabajador">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Listar(ByVal oeTrabajador As e_Trabajador) As List(Of e_Trabajador)
         Try
             Dim olTrabajador As New List(Of e_Trabajador)
@@ -242,12 +219,6 @@ Public Class d_Trabajador
         End Try
     End Function
 
-    ''' <summary>
-    ''' Guardar Datos de Trabajador
-    ''' </summary>
-    ''' <param name="oeTrabajador">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
     Public Function Guardar(ByVal oeTrabajador As e_Trabajador) As Boolean
         Try
             Dim id As String = ""
@@ -390,12 +361,7 @@ Public Class d_Trabajador
         End Try
     End Function
 
-    ''' <summary>
-    ''' Eliminar un Trabajador
-    ''' </summary>
-    ''' <param name="oeTrabajador">Objeto Trabajador</param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function Eliminar(ByVal oeTrabajador As e_Trabajador) As Boolean
         Try
             With oeTrabajador
@@ -511,12 +477,7 @@ Public Class d_Trabajador
 
 #Region "Información para onomásticos de trabajadores"
 
-    ''' <summary>
-    ''' Genera una lista de trabajadores con sus respectivas fechas de nacimiento
-    ''' </summary>
-    ''' <param name="mes"></param>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
+
     Public Function ListarOnomasticos(Optional ByVal mes As String = "", Optional ByVal dia As String = "") As List(Of e_Onomastico)
         Try
             Dim olOnomastico As New List(Of e_Onomastico)

@@ -1,5 +1,5 @@
-﻿Imports ISL.AccesoDatos
-Imports ISL.EntidadesWCF
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
 Imports System.Runtime.Serialization
 
 Public Class l_Material_DisenoNeu
@@ -7,7 +7,7 @@ Public Class l_Material_DisenoNeu
 
     Dim odMaterial_DisenoNeu As New d_Material_DisenoNeu
 
-    Public Function Eliminar(ByVal oeMaterial_DisenoNeu As EntidadesWCF.e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Eliminar
+    Public Function Eliminar(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Eliminar
         Try
             Return odMaterial_DisenoNeu.Eliminar(oeMaterial_DisenoNeu)
         Catch ex As Exception
@@ -15,7 +15,7 @@ Public Class l_Material_DisenoNeu
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMaterial_DisenoNeu As EntidadesWCF.e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Guardar
+    Public Function Guardar(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Guardar
         Try
             If Validar(oeMaterial_DisenoNeu) Then
                 Return odMaterial_DisenoNeu.Guardar(oeMaterial_DisenoNeu)
@@ -25,7 +25,7 @@ Public Class l_Material_DisenoNeu
         End Try
     End Function
 
-    Public Function Listar(ByVal oeMaterial_DisenoNeu As EntidadesWCF.e_Material_DisenoNeu) As System.Collections.Generic.List(Of EntidadesWCF.e_Material_DisenoNeu) Implements Il_Material_DisenoNeu.Listar
+    Public Function Listar(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As System.Collections.Generic.List(Of e_Material_DisenoNeu) Implements Il_Material_DisenoNeu.Listar
         Try
             Return odMaterial_DisenoNeu.Listar(oeMaterial_DisenoNeu)
         Catch ex As Exception
@@ -33,7 +33,7 @@ Public Class l_Material_DisenoNeu
         End Try
     End Function
 
-    Public Function Obtener(ByVal oeMaterial_DisenoNeu As EntidadesWCF.e_Material_DisenoNeu) As EntidadesWCF.e_Material_DisenoNeu Implements Il_Material_DisenoNeu.Obtener
+    Public Function Obtener(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As e_Material_DisenoNeu Implements Il_Material_DisenoNeu.Obtener
         Try
             Return odMaterial_DisenoNeu.Obtener(oeMaterial_DisenoNeu)
         Catch ex As Exception
@@ -41,7 +41,7 @@ Public Class l_Material_DisenoNeu
         End Try
     End Function
 
-    Public Function Validar(ByVal oeMaterial_DisenoNeu As EntidadesWCF.e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Validar
+    Public Function Validar(ByVal oeMaterial_DisenoNeu As e_Material_DisenoNeu) As Boolean Implements Il_Material_DisenoNeu.Validar
         Try
             With oeMaterial_DisenoNeu
                 '---------VALIDARRRRRRRRRR-------------
