@@ -11,7 +11,7 @@ Public Class d_EstacionServicio
                 .IdSucursal = fila("IdSucursal"),
                 .Nombre = fila("Nombre"),
                 .Estado = fila("Estado"),
-                .Activo = fila("Activo")}
+                .Activo = IIf(fila("Activo"), 1, 0)}
             Return oeEstacionServicio
         Catch ex As Exception
             Throw ex
@@ -23,14 +23,14 @@ Public Class d_EstacionServicio
             Dim ds As DataSet
             With oeEstacionServicio
                 ds = sqlhelper.ExecuteDataset("GRF.EstacionServicio_LST",
-                                        .TipoOperacion,
-                                        .Id,
-                                        .IdEmpresaSis,
-                                        .IdSucursal,
-                                        .Nombre,
-                                        .Estado,
-                                        .Usuario,
-                                        .Activo)
+                                              .TipoOperacion,
+                                              .Id,
+                                              .IdEmpresaSis,
+                                              .IdSucursal,
+                                              .Nombre,
+                                              .Estado,
+                                              .Usuario,
+                                              .Activo)
             End With
 
             If ds.Tables.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then

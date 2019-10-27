@@ -1,4 +1,7 @@
-﻿Public Class frm_EstacionServicio
+﻿Imports ERP.LogicaWCF
+Imports ERP.EntidadesWCF
+
+Public Class frm_EstacionServicio
     Inherits frm_MenuPadre
 
     Public Sub New()
@@ -26,14 +29,19 @@
 
 #Region "Declaracion de Variables"
 
-
+    Private olEstacionServicio As l_EstacionServicio
 
 #End Region
 
 #Region "Eventos"
 
     Private Sub frm_EstacionServicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Try
+            olEstacionServicio = New l_EstacionServicio
+            Me.UltraGrid1.DataSource = olEstacionServicio.mt_Listar(New e_EstacionServicio With {.TipoOperacion = "N"})
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub frm_EstacionServicio_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

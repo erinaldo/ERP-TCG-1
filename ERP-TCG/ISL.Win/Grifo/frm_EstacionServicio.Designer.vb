@@ -28,59 +28,308 @@ Partial Class frm_EstacionServicio
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Me.ugbHead = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.btnDocumento = New Infragistics.Win.Misc.UltraButton()
-        Me.btnVale = New Infragistics.Win.Misc.UltraButton()
-        Me.UltraButton1 = New Infragistics.Win.Misc.UltraButton()
-        Me.ugbTipoVenta = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.ugbTipoPago = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.btnContado = New Infragistics.Win.Misc.UltraButton()
-        Me.btnCredito = New Infragistics.Win.Misc.UltraButton()
-        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.tabLado = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
-        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl4 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl5 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraButton2 = New Infragistics.Win.Misc.UltraButton()
-        Me.UltraButton3 = New Infragistics.Win.Misc.UltraButton()
-        Me.UltraButton4 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton5 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraButton4 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraButton3 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraButton2 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraButton6 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton7 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton8 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton9 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraButton10 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl4 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraButton11 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl5 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraButton12 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton13 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton14 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton15 = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraButton16 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton17 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton18 = New Infragistics.Win.Misc.UltraButton()
         Me.UltraButton19 = New Infragistics.Win.Misc.UltraButton()
-        CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ugbHead.SuspendLayout()
-        CType(Me.ugbTipoVenta, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ugbTipoVenta.SuspendLayout()
-        CType(Me.ugbTipoPago, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ugbTipoPago.SuspendLayout()
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer1.Panel1.SuspendLayout()
-        Me.SplitContainer1.SuspendLayout()
-        CType(Me.tabLado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabLado.SuspendLayout()
+        Me.ugbHead = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.ugbTipoPago = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btnContado = New Infragistics.Win.Misc.UltraButton()
+        Me.btnCredito = New Infragistics.Win.Misc.UltraButton()
+        Me.ugbTipoVenta = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btnDocumento = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraButton1 = New Infragistics.Win.Misc.UltraButton()
+        Me.btnVale = New Infragistics.Win.Misc.UltraButton()
+        Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.tabLado = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
+        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.UltraGrid1 = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         Me.UltraTabPageControl3.SuspendLayout()
         Me.UltraTabPageControl4.SuspendLayout()
         Me.UltraTabPageControl5.SuspendLayout()
         Me.UltraTabPageControl6.SuspendLayout()
+        CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ugbHead.SuspendLayout()
+        CType(Me.ugbTipoPago, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ugbTipoPago.SuspendLayout()
+        CType(Me.ugbTipoVenta, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ugbTipoVenta.SuspendLayout()
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer1.Panel1.SuspendLayout()
+        Me.SplitContainer1.Panel2.SuspendLayout()
+        Me.SplitContainer1.SuspendLayout()
+        CType(Me.tabLado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabLado.SuspendLayout()
+        CType(Me.UltraGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'UltraTabPageControl1
+        '
+        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton5)
+        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton4)
+        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton3)
+        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton2)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(50, 1)
+        Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton5
+        '
+        Me.UltraButton5.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton5.Location = New System.Drawing.Point(11, 183)
+        Me.UltraButton5.Name = "UltraButton5"
+        Me.UltraButton5.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton5.TabIndex = 4
+        Me.UltraButton5.Text = "G95"
+        Me.UltraButton5.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton4
+        '
+        Me.UltraButton4.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton4.Location = New System.Drawing.Point(11, 126)
+        Me.UltraButton4.Name = "UltraButton4"
+        Me.UltraButton4.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton4.TabIndex = 3
+        Me.UltraButton4.Text = "G90"
+        Me.UltraButton4.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton3
+        '
+        Me.UltraButton3.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton3.Location = New System.Drawing.Point(11, 69)
+        Me.UltraButton3.Name = "UltraButton3"
+        Me.UltraButton3.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton3.TabIndex = 2
+        Me.UltraButton3.Text = "G84"
+        Me.UltraButton3.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton2
+        '
+        Me.UltraButton2.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton2.Location = New System.Drawing.Point(11, 12)
+        Me.UltraButton2.Name = "UltraButton2"
+        Me.UltraButton2.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton2.TabIndex = 1
+        Me.UltraButton2.Text = "DB5"
+        Me.UltraButton2.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraTabPageControl2
+        '
+        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton6)
+        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton7)
+        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton8)
+        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton9)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton6
+        '
+        Me.UltraButton6.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton6.Location = New System.Drawing.Point(11, 12)
+        Me.UltraButton6.Name = "UltraButton6"
+        Me.UltraButton6.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton6.TabIndex = 8
+        Me.UltraButton6.Text = "G95"
+        Me.UltraButton6.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton7
+        '
+        Me.UltraButton7.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton7.Location = New System.Drawing.Point(11, 69)
+        Me.UltraButton7.Name = "UltraButton7"
+        Me.UltraButton7.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton7.TabIndex = 7
+        Me.UltraButton7.Text = "G90"
+        Me.UltraButton7.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton8
+        '
+        Me.UltraButton8.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton8.Location = New System.Drawing.Point(11, 126)
+        Me.UltraButton8.Name = "UltraButton8"
+        Me.UltraButton8.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton8.TabIndex = 6
+        Me.UltraButton8.Text = "G84"
+        Me.UltraButton8.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton9
+        '
+        Me.UltraButton9.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton9.Location = New System.Drawing.Point(11, 183)
+        Me.UltraButton9.Name = "UltraButton9"
+        Me.UltraButton9.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton9.TabIndex = 5
+        Me.UltraButton9.Text = "DB5"
+        Me.UltraButton9.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraTabPageControl3
+        '
+        Me.UltraTabPageControl3.Controls.Add(Me.UltraButton10)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton10
+        '
+        Me.UltraButton10.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton10.Location = New System.Drawing.Point(11, 13)
+        Me.UltraButton10.Name = "UltraButton10"
+        Me.UltraButton10.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton10.TabIndex = 6
+        Me.UltraButton10.Text = "DB5"
+        Me.UltraButton10.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraTabPageControl4
+        '
+        Me.UltraTabPageControl4.Controls.Add(Me.UltraButton11)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton11
+        '
+        Me.UltraButton11.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton11.Location = New System.Drawing.Point(11, 12)
+        Me.UltraButton11.Name = "UltraButton11"
+        Me.UltraButton11.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton11.TabIndex = 7
+        Me.UltraButton11.Text = "DB5"
+        Me.UltraButton11.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraTabPageControl5
+        '
+        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton12)
+        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton13)
+        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton14)
+        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton15)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton12
+        '
+        Me.UltraButton12.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton12.Location = New System.Drawing.Point(11, 184)
+        Me.UltraButton12.Name = "UltraButton12"
+        Me.UltraButton12.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton12.TabIndex = 8
+        Me.UltraButton12.Text = "G95"
+        Me.UltraButton12.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton13
+        '
+        Me.UltraButton13.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton13.Location = New System.Drawing.Point(11, 127)
+        Me.UltraButton13.Name = "UltraButton13"
+        Me.UltraButton13.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton13.TabIndex = 7
+        Me.UltraButton13.Text = "G90"
+        Me.UltraButton13.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton14
+        '
+        Me.UltraButton14.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton14.Location = New System.Drawing.Point(11, 70)
+        Me.UltraButton14.Name = "UltraButton14"
+        Me.UltraButton14.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton14.TabIndex = 6
+        Me.UltraButton14.Text = "G84"
+        Me.UltraButton14.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton15
+        '
+        Me.UltraButton15.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton15.Location = New System.Drawing.Point(11, 13)
+        Me.UltraButton15.Name = "UltraButton15"
+        Me.UltraButton15.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton15.TabIndex = 5
+        Me.UltraButton15.Text = "DB5"
+        Me.UltraButton15.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraTabPageControl6
+        '
+        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton16)
+        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton17)
+        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton18)
+        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton19)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(181, 329)
+        '
+        'UltraButton16
+        '
+        Me.UltraButton16.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton16.Location = New System.Drawing.Point(11, 15)
+        Me.UltraButton16.Name = "UltraButton16"
+        Me.UltraButton16.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton16.TabIndex = 12
+        Me.UltraButton16.Text = "G95"
+        Me.UltraButton16.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton17
+        '
+        Me.UltraButton17.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton17.Location = New System.Drawing.Point(11, 72)
+        Me.UltraButton17.Name = "UltraButton17"
+        Me.UltraButton17.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton17.TabIndex = 11
+        Me.UltraButton17.Text = "G90"
+        Me.UltraButton17.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton18
+        '
+        Me.UltraButton18.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton18.Location = New System.Drawing.Point(11, 129)
+        Me.UltraButton18.Name = "UltraButton18"
+        Me.UltraButton18.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton18.TabIndex = 10
+        Me.UltraButton18.Text = "G84"
+        Me.UltraButton18.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton19
+        '
+        Me.UltraButton19.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton19.Location = New System.Drawing.Point(11, 186)
+        Me.UltraButton19.Name = "UltraButton19"
+        Me.UltraButton19.Size = New System.Drawing.Size(56, 51)
+        Me.UltraButton19.TabIndex = 9
+        Me.UltraButton19.Text = "DB5"
+        Me.UltraButton19.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
         'ugbHead
         '
@@ -92,48 +341,6 @@ Partial Class frm_EstacionServicio
         Me.ugbHead.Size = New System.Drawing.Size(1123, 119)
         Me.ugbHead.TabIndex = 0
         Me.ugbHead.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'btnDocumento
-        '
-        Me.btnDocumento.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.btnDocumento.Location = New System.Drawing.Point(15, 25)
-        Me.btnDocumento.Name = "btnDocumento"
-        Me.btnDocumento.Size = New System.Drawing.Size(121, 37)
-        Me.btnDocumento.TabIndex = 0
-        Me.btnDocumento.Text = "CON DOCUMENTO"
-        Me.btnDocumento.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'btnVale
-        '
-        Me.btnVale.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.btnVale.Location = New System.Drawing.Point(142, 25)
-        Me.btnVale.Name = "btnVale"
-        Me.btnVale.Size = New System.Drawing.Size(121, 37)
-        Me.btnVale.TabIndex = 1
-        Me.btnVale.Text = "CON VALE"
-        Me.btnVale.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton1
-        '
-        Me.UltraButton1.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton1.Location = New System.Drawing.Point(269, 25)
-        Me.UltraButton1.Name = "UltraButton1"
-        Me.UltraButton1.Size = New System.Drawing.Size(121, 37)
-        Me.UltraButton1.TabIndex = 2
-        Me.UltraButton1.Text = "VARIOS"
-        Me.UltraButton1.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'ugbTipoVenta
-        '
-        Me.ugbTipoVenta.Controls.Add(Me.btnDocumento)
-        Me.ugbTipoVenta.Controls.Add(Me.UltraButton1)
-        Me.ugbTipoVenta.Controls.Add(Me.btnVale)
-        Me.ugbTipoVenta.Location = New System.Drawing.Point(12, 28)
-        Me.ugbTipoVenta.Name = "ugbTipoVenta"
-        Me.ugbTipoVenta.Size = New System.Drawing.Size(404, 79)
-        Me.ugbTipoVenta.TabIndex = 3
-        Me.ugbTipoVenta.Text = "Tipo de Venta:"
-        Me.ugbTipoVenta.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.XP
         '
         'ugbTipoPago
         '
@@ -166,6 +373,48 @@ Partial Class frm_EstacionServicio
         Me.btnCredito.Text = "CRÉDITO"
         Me.btnCredito.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
+        'ugbTipoVenta
+        '
+        Me.ugbTipoVenta.Controls.Add(Me.btnDocumento)
+        Me.ugbTipoVenta.Controls.Add(Me.UltraButton1)
+        Me.ugbTipoVenta.Controls.Add(Me.btnVale)
+        Me.ugbTipoVenta.Location = New System.Drawing.Point(12, 28)
+        Me.ugbTipoVenta.Name = "ugbTipoVenta"
+        Me.ugbTipoVenta.Size = New System.Drawing.Size(404, 79)
+        Me.ugbTipoVenta.TabIndex = 3
+        Me.ugbTipoVenta.Text = "Tipo de Venta:"
+        Me.ugbTipoVenta.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.XP
+        '
+        'btnDocumento
+        '
+        Me.btnDocumento.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnDocumento.Location = New System.Drawing.Point(15, 25)
+        Me.btnDocumento.Name = "btnDocumento"
+        Me.btnDocumento.Size = New System.Drawing.Size(121, 37)
+        Me.btnDocumento.TabIndex = 0
+        Me.btnDocumento.Text = "CON DOCUMENTO"
+        Me.btnDocumento.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'UltraButton1
+        '
+        Me.UltraButton1.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.UltraButton1.Location = New System.Drawing.Point(269, 25)
+        Me.UltraButton1.Name = "UltraButton1"
+        Me.UltraButton1.Size = New System.Drawing.Size(121, 37)
+        Me.UltraButton1.TabIndex = 2
+        Me.UltraButton1.Text = "VARIOS"
+        Me.UltraButton1.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
+        'btnVale
+        '
+        Me.btnVale.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnVale.Location = New System.Drawing.Point(142, 25)
+        Me.btnVale.Name = "btnVale"
+        Me.btnVale.Size = New System.Drawing.Size(121, 37)
+        Me.btnVale.TabIndex = 1
+        Me.btnVale.Text = "CON VALE"
+        Me.btnVale.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        '
         'SplitContainer1
         '
         Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -175,6 +424,10 @@ Partial Class frm_EstacionServicio
         'SplitContainer1.Panel1
         '
         Me.SplitContainer1.Panel1.Controls.Add(Me.tabLado)
+        '
+        'SplitContainer1.Panel2
+        '
+        Me.SplitContainer1.Panel2.Controls.Add(Me.UltraGrid1)
         Me.SplitContainer1.Size = New System.Drawing.Size(1123, 331)
         Me.SplitContainer1.SplitterDistance = 232
         Me.SplitContainer1.TabIndex = 1
@@ -217,239 +470,67 @@ Partial Class frm_EstacionServicio
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(181, 329)
         '
-        'UltraTabPageControl1
+        'UltraGrid1
         '
-        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton5)
-        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton4)
-        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton3)
-        Me.UltraTabPageControl1.Controls.Add(Me.UltraButton2)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(50, 1)
-        Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraTabPageControl2
-        '
-        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton6)
-        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton7)
-        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton8)
-        Me.UltraTabPageControl2.Controls.Add(Me.UltraButton9)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraTabPageControl3
-        '
-        Me.UltraTabPageControl3.Controls.Add(Me.UltraButton10)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraTabPageControl4
-        '
-        Me.UltraTabPageControl4.Controls.Add(Me.UltraButton11)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraTabPageControl5
-        '
-        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton12)
-        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton13)
-        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton14)
-        Me.UltraTabPageControl5.Controls.Add(Me.UltraButton15)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraTabPageControl6
-        '
-        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton16)
-        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton17)
-        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton18)
-        Me.UltraTabPageControl6.Controls.Add(Me.UltraButton19)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(181, 329)
-        '
-        'UltraButton2
-        '
-        Me.UltraButton2.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton2.Location = New System.Drawing.Point(11, 12)
-        Me.UltraButton2.Name = "UltraButton2"
-        Me.UltraButton2.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton2.TabIndex = 1
-        Me.UltraButton2.Text = "DB5"
-        Me.UltraButton2.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton3
-        '
-        Me.UltraButton3.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton3.Location = New System.Drawing.Point(11, 69)
-        Me.UltraButton3.Name = "UltraButton3"
-        Me.UltraButton3.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton3.TabIndex = 2
-        Me.UltraButton3.Text = "G84"
-        Me.UltraButton3.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton4
-        '
-        Me.UltraButton4.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton4.Location = New System.Drawing.Point(11, 126)
-        Me.UltraButton4.Name = "UltraButton4"
-        Me.UltraButton4.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton4.TabIndex = 3
-        Me.UltraButton4.Text = "G90"
-        Me.UltraButton4.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton5
-        '
-        Me.UltraButton5.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton5.Location = New System.Drawing.Point(11, 183)
-        Me.UltraButton5.Name = "UltraButton5"
-        Me.UltraButton5.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton5.TabIndex = 4
-        Me.UltraButton5.Text = "G95"
-        Me.UltraButton5.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton6
-        '
-        Me.UltraButton6.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton6.Location = New System.Drawing.Point(11, 12)
-        Me.UltraButton6.Name = "UltraButton6"
-        Me.UltraButton6.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton6.TabIndex = 8
-        Me.UltraButton6.Text = "G95"
-        Me.UltraButton6.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton7
-        '
-        Me.UltraButton7.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton7.Location = New System.Drawing.Point(11, 69)
-        Me.UltraButton7.Name = "UltraButton7"
-        Me.UltraButton7.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton7.TabIndex = 7
-        Me.UltraButton7.Text = "G90"
-        Me.UltraButton7.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton8
-        '
-        Me.UltraButton8.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton8.Location = New System.Drawing.Point(11, 126)
-        Me.UltraButton8.Name = "UltraButton8"
-        Me.UltraButton8.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton8.TabIndex = 6
-        Me.UltraButton8.Text = "G84"
-        Me.UltraButton8.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton9
-        '
-        Me.UltraButton9.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton9.Location = New System.Drawing.Point(11, 183)
-        Me.UltraButton9.Name = "UltraButton9"
-        Me.UltraButton9.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton9.TabIndex = 5
-        Me.UltraButton9.Text = "DB5"
-        Me.UltraButton9.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton10
-        '
-        Me.UltraButton10.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton10.Location = New System.Drawing.Point(11, 13)
-        Me.UltraButton10.Name = "UltraButton10"
-        Me.UltraButton10.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton10.TabIndex = 6
-        Me.UltraButton10.Text = "DB5"
-        Me.UltraButton10.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton11
-        '
-        Me.UltraButton11.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton11.Location = New System.Drawing.Point(11, 12)
-        Me.UltraButton11.Name = "UltraButton11"
-        Me.UltraButton11.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton11.TabIndex = 7
-        Me.UltraButton11.Text = "DB5"
-        Me.UltraButton11.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton12
-        '
-        Me.UltraButton12.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton12.Location = New System.Drawing.Point(11, 184)
-        Me.UltraButton12.Name = "UltraButton12"
-        Me.UltraButton12.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton12.TabIndex = 8
-        Me.UltraButton12.Text = "G95"
-        Me.UltraButton12.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton13
-        '
-        Me.UltraButton13.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton13.Location = New System.Drawing.Point(11, 127)
-        Me.UltraButton13.Name = "UltraButton13"
-        Me.UltraButton13.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton13.TabIndex = 7
-        Me.UltraButton13.Text = "G90"
-        Me.UltraButton13.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton14
-        '
-        Me.UltraButton14.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton14.Location = New System.Drawing.Point(11, 70)
-        Me.UltraButton14.Name = "UltraButton14"
-        Me.UltraButton14.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton14.TabIndex = 6
-        Me.UltraButton14.Text = "G84"
-        Me.UltraButton14.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton15
-        '
-        Me.UltraButton15.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton15.Location = New System.Drawing.Point(11, 13)
-        Me.UltraButton15.Name = "UltraButton15"
-        Me.UltraButton15.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton15.TabIndex = 5
-        Me.UltraButton15.Text = "DB5"
-        Me.UltraButton15.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton16
-        '
-        Me.UltraButton16.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton16.Location = New System.Drawing.Point(11, 15)
-        Me.UltraButton16.Name = "UltraButton16"
-        Me.UltraButton16.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton16.TabIndex = 12
-        Me.UltraButton16.Text = "G95"
-        Me.UltraButton16.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton17
-        '
-        Me.UltraButton17.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton17.Location = New System.Drawing.Point(11, 72)
-        Me.UltraButton17.Name = "UltraButton17"
-        Me.UltraButton17.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton17.TabIndex = 11
-        Me.UltraButton17.Text = "G90"
-        Me.UltraButton17.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton18
-        '
-        Me.UltraButton18.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton18.Location = New System.Drawing.Point(11, 129)
-        Me.UltraButton18.Name = "UltraButton18"
-        Me.UltraButton18.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton18.TabIndex = 10
-        Me.UltraButton18.Text = "G84"
-        Me.UltraButton18.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
-        '
-        'UltraButton19
-        '
-        Me.UltraButton19.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.UltraButton19.Location = New System.Drawing.Point(11, 186)
-        Me.UltraButton19.Name = "UltraButton19"
-        Me.UltraButton19.Size = New System.Drawing.Size(56, 51)
-        Me.UltraButton19.TabIndex = 9
-        Me.UltraButton19.Text = "DB5"
-        Me.UltraButton19.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
+        Appearance1.BackColor = System.Drawing.SystemColors.Window
+        Appearance1.BorderColor = System.Drawing.SystemColors.InactiveCaption
+        Me.UltraGrid1.DisplayLayout.Appearance = Appearance1
+        Me.UltraGrid1.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.UltraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
+        Appearance2.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Appearance2.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance2.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical
+        Appearance2.BorderColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.GroupByBox.Appearance = Appearance2
+        Appearance3.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.UltraGrid1.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance3
+        Me.UltraGrid1.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Appearance4.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Appearance4.BackColor2 = System.Drawing.SystemColors.Control
+        Appearance4.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance4.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.UltraGrid1.DisplayLayout.GroupByBox.PromptAppearance = Appearance4
+        Me.UltraGrid1.DisplayLayout.MaxColScrollRegions = 1
+        Me.UltraGrid1.DisplayLayout.MaxRowScrollRegions = 1
+        Appearance5.BackColor = System.Drawing.SystemColors.Window
+        Appearance5.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.UltraGrid1.DisplayLayout.Override.ActiveCellAppearance = Appearance5
+        Appearance6.BackColor = System.Drawing.SystemColors.Highlight
+        Appearance6.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.UltraGrid1.DisplayLayout.Override.ActiveRowAppearance = Appearance6
+        Me.UltraGrid1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.UltraGrid1.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
+        Appearance7.BackColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.Override.CardAreaAppearance = Appearance7
+        Appearance8.BorderColor = System.Drawing.Color.Silver
+        Appearance8.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter
+        Me.UltraGrid1.DisplayLayout.Override.CellAppearance = Appearance8
+        Me.UltraGrid1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        Me.UltraGrid1.DisplayLayout.Override.CellPadding = 0
+        Appearance9.BackColor = System.Drawing.SystemColors.Control
+        Appearance9.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance9.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element
+        Appearance9.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance9.BorderColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.Override.GroupByRowAppearance = Appearance9
+        Appearance10.TextHAlignAsString = "Left"
+        Me.UltraGrid1.DisplayLayout.Override.HeaderAppearance = Appearance10
+        Me.UltraGrid1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
+        Me.UltraGrid1.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
+        Appearance11.BackColor = System.Drawing.SystemColors.Window
+        Appearance11.BorderColor = System.Drawing.Color.Silver
+        Me.UltraGrid1.DisplayLayout.Override.RowAppearance = Appearance11
+        Me.UltraGrid1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
+        Appearance12.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.UltraGrid1.DisplayLayout.Override.TemplateAddRowAppearance = Appearance12
+        Me.UltraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
+        Me.UltraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
+        Me.UltraGrid1.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy
+        Me.UltraGrid1.Location = New System.Drawing.Point(26, 22)
+        Me.UltraGrid1.Name = "UltraGrid1"
+        Me.UltraGrid1.Size = New System.Drawing.Size(550, 260)
+        Me.UltraGrid1.TabIndex = 2
+        Me.UltraGrid1.Text = "UltraGrid1"
         '
         'frm_EstacionServicio
         '
@@ -460,23 +541,25 @@ Partial Class frm_EstacionServicio
         Me.Controls.Add(Me.ugbHead)
         Me.Name = "frm_EstacionServicio"
         Me.Text = "frm_EstacionServicio"
-        CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ugbHead.ResumeLayout(False)
-        CType(Me.ugbTipoVenta, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ugbTipoVenta.ResumeLayout(False)
-        CType(Me.ugbTipoPago, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ugbTipoPago.ResumeLayout(False)
-        Me.SplitContainer1.Panel1.ResumeLayout(False)
-        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer1.ResumeLayout(False)
-        CType(Me.tabLado, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.tabLado.ResumeLayout(False)
         Me.UltraTabPageControl1.ResumeLayout(False)
         Me.UltraTabPageControl2.ResumeLayout(False)
         Me.UltraTabPageControl3.ResumeLayout(False)
         Me.UltraTabPageControl4.ResumeLayout(False)
         Me.UltraTabPageControl5.ResumeLayout(False)
         Me.UltraTabPageControl6.ResumeLayout(False)
+        CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ugbHead.ResumeLayout(False)
+        CType(Me.ugbTipoPago, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ugbTipoPago.ResumeLayout(False)
+        CType(Me.ugbTipoVenta, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ugbTipoVenta.ResumeLayout(False)
+        Me.SplitContainer1.Panel1.ResumeLayout(False)
+        Me.SplitContainer1.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer1.ResumeLayout(False)
+        CType(Me.tabLado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabLado.ResumeLayout(False)
+        CType(Me.UltraGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -516,4 +599,5 @@ Partial Class frm_EstacionServicio
     Friend WithEvents UltraButton17 As Infragistics.Win.Misc.UltraButton
     Friend WithEvents UltraButton18 As Infragistics.Win.Misc.UltraButton
     Friend WithEvents UltraButton19 As Infragistics.Win.Misc.UltraButton
+    Friend WithEvents UltraGrid1 As Infragistics.Win.UltraWinGrid.UltraGrid
 End Class
