@@ -349,6 +349,7 @@
     <Compile Include="General\d_VehiculoEstado.vb" />
     <Compile Include="General\d_IncidenciasAutentificadas.vb" />
     <Compile Include="General\d_VehiculoTarjeta.vb" />
+    <Compile Include="Grifo\d_EstacionServicio.vb" />
     <Compile Include="Grifo\d_gTurno.vb" />
     <Compile Include="Logistica\d_CaracteristicaEspecial.vb" />
     <Compile Include="Logistica\d_CaracteristicaMaterial.vb" />

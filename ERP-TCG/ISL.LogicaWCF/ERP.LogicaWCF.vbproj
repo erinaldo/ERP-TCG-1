@@ -313,6 +313,7 @@
     <Content Include="General\l_CuotaDocVeh_Movimiento.svc" />
     <Content Include="General\l_CuotaDocVehPago.svc" />
     <Content Include="General\l_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\l_EstacionServicio.svc" />
     <Content Include="Logistica\l_CaracteristicaEspecial.svc" />
     <Content Include="Logistica\l_CaracteristicaMaterial.svc" />
     <Content Include="Logistica\l_CodigoBarraMaterial.svc" />
@@ -1168,6 +1169,10 @@
     <Compile Include="Contabilidad\Il_DetalleModelo_Referencia.vb" />
     <Compile Include="General\l_VehiculoTarjeta.svc.vb">
       <DependentUpon>l_VehiculoTarjeta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Il_EstacionServicio.vb" />
+    <Compile Include="Grifo\l_EstacionServicio.svc.vb">
+      <DependentUpon>l_EstacionServicio.svc</DependentUpon>
     </Compile>
     <Compile Include="Logistica\Il_RendimientoCombustible.vb" />
     <Compile Include="Logistica\Il_Surtidor.vb" />

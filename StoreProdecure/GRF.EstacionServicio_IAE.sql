@@ -1,4 +1,3 @@
-
 -- =============================================
 -- Author:		UNKNOW
 -- Create date: 2019-10-27
@@ -18,6 +17,7 @@ BEGIN
 	BEGIN
 		INSERT INTO GRF.EstacionServicio(IdEmpresaSis,IdSucursal,Nombre,Estado,UsuarioCreacion,FechaCreacion,Activo)
 		VALUES(@IdEmpresaSis,@IdSucursal,@Nombre,@Estado,@Usuario,GETDATE(),1)
+		SELECT @@IDENTITY
 	END
 	ELSE
 	IF @Tipo = 'A'
@@ -28,6 +28,7 @@ BEGIN
 		UsuarioModifica = @Usuario,
 		FechaModifica = GETDATE()
 		WHERE Id = @Id
+		SELECT @Id
 	END
 	ELSE
 	BEGIN
@@ -38,4 +39,3 @@ BEGIN
 		WHERE Id = @Id
 	END
 END
-GO

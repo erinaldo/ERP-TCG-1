@@ -285,6 +285,7 @@
     <Content Include="General\e_TarjetaMovimiento.svc" />
     <Content Include="General\e_VehiculoEstado.svc" />
     <Content Include="General\e_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\e_EstacionServicio.svc" />
     <Content Include="Mantenimiento\e_KmMack.svc" />
     <Content Include="Mantenimiento\e_KmMackDet.svc" />
     <Content Include="Personal\e_AreaAO.svc" />
@@ -1325,6 +1326,10 @@
     <Compile Include="General\Ie_TarjetaMovimiento.vb" />
     <Compile Include="General\Ie_VehiculoEstado.vb" />
     <Compile Include="General\Ie_VehiculoTarjeta.vb" />
+    <Compile Include="Grifo\e_EstacionServicio.svc.vb">
+      <DependentUpon>e_EstacionServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Ie_EstacionServicio.vb" />
     <Compile Include="Mantenimiento\e_KmMack.svc.vb">
       <DependentUpon>e_KmMack.svc</DependentUpon>
     </Compile>
