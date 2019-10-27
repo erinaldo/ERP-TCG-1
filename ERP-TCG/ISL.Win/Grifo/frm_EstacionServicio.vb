@@ -1,4 +1,6 @@
-﻿Imports ERP.LogicaWCF
+﻿' Hola Maurixito
+
+Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 
 Public Class frm_EstacionServicio
