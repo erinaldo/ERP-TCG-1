@@ -1,6 +1,8 @@
 ﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_EstacionServicio" en el código, en svc y en el archivo de configuración a la vez.
 ' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_EstacionServicio.svc o l_EstacionServicio.svc.vb en el Explorador de soluciones e inicie la depuración.
 
+' Hola Simpatico
+
 Imports ERP.AccesoDatos
 Imports ERP.EntidadesWCF
 
