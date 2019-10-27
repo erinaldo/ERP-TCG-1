@@ -99,6 +99,7 @@ Public Class d_Lado
         Try
             With oeLado
                 sqlhelper.ExecuteNonQuery("GRF.Lado_IAE", "E", .Id, .IdEmpresaSis, .IdSucursal, .IdIsla, .Nombre, .Estado, .Usuario)
+
             End With
             Return True
         Catch ex As Exception
