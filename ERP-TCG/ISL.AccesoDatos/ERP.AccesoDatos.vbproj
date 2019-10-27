@@ -351,6 +351,8 @@
     <Compile Include="General\d_VehiculoTarjeta.vb" />
     <Compile Include="Grifo\d_EstacionServicio.vb" />
     <Compile Include="Grifo\d_gTurno.vb" />
+    <Compile Include="Grifo\d_Isla.vb" />
+    <Compile Include="Grifo\d_Lado.vb" />
     <Compile Include="Logistica\d_CaracteristicaEspecial.vb" />
     <Compile Include="Logistica\d_CaracteristicaMaterial.vb" />
     <Compile Include="Logistica\d_CodigoBarraMaterial.vb" />

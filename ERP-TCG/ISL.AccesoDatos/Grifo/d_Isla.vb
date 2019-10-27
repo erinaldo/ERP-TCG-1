@@ -1,32 +1,33 @@
 ﻿Imports ERP.EntidadesWCF
 
-Public Class d_EstacionServicio
-
+Public Class d_Isla
     Private sqlhelper As New SqlHelper
 
-    Public Function mt_Cargar(fila As DataRow) As e_EstacionServicio
+    Public Function mt_Cargar(fila As DataRow) As e_isla
         Try
-            Dim oeEstacionServicio = New e_EstacionServicio With {.Id = fila("Id"),
+            Dim oeIsla = New e_Isla With {.Id = fila("Id"),
                 .IdEmpresaSis = fila("IdEmpresaSis"),
                 .IdSucursal = fila("IdSucursal"),
+                .IdEstacionServicio = fila("IdSucursal"),
                 .Nombre = fila("Nombre"),
                 .Estado = fila("Estado"),
                 .Activo = IIf(fila("Activo"), 1, 0)}
-            Return oeEstacionServicio
+            Return oeIsla
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Obtener(ByVal oeEstacionServicio As e_EstacionServicio) As e_EstacionServicio
+    Public Function mt_Obtener(ByVal oeIsla As e_Isla) As e_Isla
         Try
             Dim ds As DataSet
-            With oeEstacionServicio
-                ds = sqlhelper.ExecuteDataset("GRF.EstacionServicio_LST",
+            With oeIsla
+                ds = sqlhelper.ExecuteDataset("GRF.Isla_LST",
                                               .TipoOperacion,
                                               .Id,
                                               .IdEmpresaSis,
                                               .IdSucursal,
+                                              .IdEstacionServicio,
                                               .Nombre,
                                               .Estado,
                                               .Usuario,
@@ -34,26 +35,27 @@ Public Class d_EstacionServicio
             End With
 
             If ds.Tables.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then
-                oeEstacionServicio = mt_Cargar(ds.Tables(0).Rows(0))
+                oeIsla = mt_Cargar(ds.Tables(0).Rows(0))
             Else
-                oeEstacionServicio = New e_EstacionServicio
+                oeIsla = New e_Isla
             End If
-            Return oeEstacionServicio
+            Return oeIsla
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Listar(ByVal oeEstacionServicio As e_EstacionServicio) As List(Of e_EstacionServicio)
+    Public Function mt_Listar(ByVal oeIsla As e_Isla) As List(Of e_Isla)
         Try
-            Dim olEstacionServicio As New List(Of e_EstacionServicio)
+            Dim olIsla As New List(Of e_Isla)
             Dim ds As DataSet
-            With oeEstacionServicio
-                ds = sqlhelper.ExecuteDataset("GRF.EstacionServicio_LST",
+            With oeIsla
+                ds = sqlhelper.ExecuteDataset("GRF.Isla_LST",
                                             .TipoOperacion,
                                             .Id,
                                             .IdEmpresaSis,
                                             .IdSucursal,
+                                            .IdEstacionServicio,
                                             .Nombre,
                                             .Estado,
                                             .Usuario,
@@ -61,25 +63,26 @@ Public Class d_EstacionServicio
             End With
             If ds.Tables(0).Rows.Count > 0 Then
                 For Each o_Fila As DataRow In ds.Tables(0).Rows
-                    oeEstacionServicio = mt_Cargar(o_Fila)
-                    olEstacionServicio.Add(oeEstacionServicio)
+                    oeIsla = mt_Cargar(o_Fila)
+                    olIsla.Add(oeIsla)
                 Next
             End If
-            Return olEstacionServicio
+            Return olIsla
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Guardar(ByVal oeEstacionServicio As e_EstacionServicio) As Boolean
+    Public Function mt_Guardar(ByVal oeIsla As e_Isla) As Boolean
         Try
             Dim stResultado() As String
-            With oeEstacionServicio
-                stResultado = sqlhelper.ExecuteScalar("GRF.EstacionServicio_IAE",
+            With oeIsla
+                stResultado = sqlhelper.ExecuteScalar("GRF.Isla_IAE",
                                               .TipoOperacion,
                                               .Id,
                                               .IdEmpresaSis,
                                               .IdSucursal,
+                                              .IdEstacionServicio,
                                               .Nombre,
                                               .Estado,
                                               .Usuario).ToString.Split("_")
@@ -91,10 +94,10 @@ Public Class d_EstacionServicio
         End Try
     End Function
 
-    Public Function mt_Eliminar(ByVal oeEstacionServicio As e_EstacionServicio) As Boolean
+    Public Function mt_Eliminar(ByVal oeIsla As e_Isla) As Boolean
         Try
-            With oeEstacionServicio
-                sqlhelper.ExecuteNonQuery("GRF.EstacionServicio_IAE", "E", .Id, .IdEmpresaSis, .IdSucursal, .Nombre, .Estado, .Usuario)
+            With oeIsla
+                sqlhelper.ExecuteNonQuery("GRF.Isla_IAE", "E", .Id, .IdEmpresaSis, .IdSucursal, .IdEstacionServicio, .Nombre, .Estado, .Usuario)
             End With
             Return True
         Catch ex As Exception
