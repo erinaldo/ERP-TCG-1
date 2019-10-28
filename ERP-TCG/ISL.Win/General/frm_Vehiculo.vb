@@ -93,7 +93,8 @@ Public Class frm_Vehiculo
 
     Private _acl As String = ""
 
-    Private Const URLConsultaVehicular As String = "https://m.sunarp.gob.pe/mobile/m_ConsultaVehicular.aspx"
+    'Private Const URLConsultaVehicular As String = "https://m.sunarp.gob.pe/mobile/m_ConsultaVehicular.aspx"
+    Private Const URLConsultaVehicular As String = "https://www.sunarp.gob.pe/seccion/servicios/detalles/0/c3.html"
 #End Region
 
 #Region "Botones"
@@ -2990,6 +2991,7 @@ Public Class frm_Vehiculo
             mensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
+
 
 #End Region
 
