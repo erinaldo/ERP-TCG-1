@@ -25,6 +25,7 @@ BEGIN
 	BEGIN
 		INSERT INTO GRF.Contometro_Mecanico(IdEmpresaSis,IdSucursal,IdTurno,IdDistribuidor,IdContometro_Electronico,Conteo_inicial,Conteo_final,Movimiento_contometro,Movimiento_galon,Diferencia,Estado,UsuarioCreacion,FechaCreacion,Activo)
 		VALUES(@IdEmpresaSis,@IdSucursal,@IdTurno,@IdDistribuidor,@IdContometro_Electronico,@Conteo_inicial,@Conteo_final,@Movimiento_contometro,@Movimiento_galon,@Diferencia,@Estado,@Usuario,GETDATE(),1)
+		SELECT @@IDENTITY
 	END
 	ELSE
 	IF @Tipo = 'A'
@@ -39,6 +40,7 @@ BEGIN
 		UsuarioModifica = @Usuario,
 		FechaModifica = GETDATE()
 		WHERE Id = @Id
+		SELECT @Id
 	END
 	ELSE
 	BEGIN

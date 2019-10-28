@@ -26,6 +26,7 @@ BEGIN
 	BEGIN
 		INSERT INTO GRF.Contometro_Electronico(IdEmpresaSis,IdSucursal,IdTurno,IdDistribuidor,Conteo_inicial,Conteo_final,Movimiento_galones,Conteo_inicial_Venta,Diferencia_galones,Precio_Referencial,Monto_Factor,Estado,UsuarioCreacion,FechaCreacion,Activo)
 		VALUES(@IdEmpresaSis,@IdSucursal,@IdTurno,@IdDistribuidor,@Conteo_inicial,@Conteo_final,@Movimiento_galones,@Conteo_inicial_Ventas,@Diferencia_galones,@Precio_Referencial,@Monto_Factor,@Estado,@Usuario,GETDATE(),1)
+		SELECT @@IDENTITY
 	END
 	ELSE
 	IF @Tipo = 'A'
@@ -42,6 +43,7 @@ BEGIN
 		UsuarioModifica = @Usuario,
 		FechaModifica = GETDATE()
 		WHERE Id = @Id
+		SELECT @Id
 	END
 	ELSE
 	BEGIN

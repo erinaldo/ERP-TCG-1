@@ -20,6 +20,7 @@ BEGIN
 	BEGIN
 		INSERT INTO GRF.Distribuidor(IdEmpresaSis,IdSucursal,IdLado,IdMaterial,Nombre,Estado,UsuarioCreacion,FechaCreacion,Activo)
 		VALUES(@IdEmpresaSis,@IdSucursal,@IdLado,@IdMaterial,@Nombre,@Estado,@Usuario,GETDATE(),1)
+		SELECT @@IDENTITY
 	END
 	ELSE
 	IF @Tipo = 'A'
@@ -30,6 +31,7 @@ BEGIN
 		UsuarioModifica = @Usuario,
 		FechaModifica = GETDATE()
 		WHERE Id = @Id
+		SELECT @Id
 	END
 	ELSE
 	BEGIN
