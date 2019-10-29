@@ -4330,7 +4330,8 @@ Module m_Funciones
 
     Public Function ObtenerDesdeSunat(Ruc As String) As e_Persona
         Try
-            Dim strUrl As String = "http://www.sunat.gob.pe/w/wapS01Alias?ruc="
+            Dim strUrl As String = "https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias?ruc="
+
             Dim request As WebRequest = WebRequest.Create(strUrl & Ruc)
             Dim response As WebResponse = request.GetResponse()
             Dim reader As New StreamReader(response.GetResponseStream())

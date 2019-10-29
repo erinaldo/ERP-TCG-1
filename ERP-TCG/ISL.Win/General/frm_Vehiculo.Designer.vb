@@ -123,7 +123,7 @@ Partial Class frm_Vehiculo
         Dim UltraGridColumn128 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Observacion")
         Dim UltraGridColumn129 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim ColScrollRegion1 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(1359)
-        Dim ColScrollRegion2 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-250)
+        Dim ColScrollRegion2 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-193)
         Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn34 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
@@ -1248,9 +1248,9 @@ Partial Class frm_Vehiculo
         'tabSeguros
         '
         Me.tabSeguros.Controls.Add(Me.griDocumentoVehicular)
-        Me.tabSeguros.Location = New System.Drawing.Point(1, 20)
+        Me.tabSeguros.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabSeguros.Name = "tabSeguros"
-        Me.tabSeguros.Size = New System.Drawing.Size(1175, 266)
+        Me.tabSeguros.Size = New System.Drawing.Size(1175, 307)
         '
         'griDocumentoVehicular
         '
@@ -1300,7 +1300,7 @@ Partial Class frm_Vehiculo
         Me.griDocumentoVehicular.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDocumentoVehicular.Location = New System.Drawing.Point(0, 0)
         Me.griDocumentoVehicular.Name = "griDocumentoVehicular"
-        Me.griDocumentoVehicular.Size = New System.Drawing.Size(1175, 266)
+        Me.griDocumentoVehicular.Size = New System.Drawing.Size(1175, 307)
         Me.griDocumentoVehicular.TabIndex = 0
         Me.griDocumentoVehicular.Tag = ""
         Me.griDocumentoVehicular.Text = "GUIAS REMITENTE"
@@ -1321,7 +1321,7 @@ Partial Class frm_Vehiculo
         Me.tabPlacas.Controls.Add(Me.Agrupacion2)
         Me.tabPlacas.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabPlacas.Name = "tabPlacas"
-        Me.tabPlacas.Size = New System.Drawing.Size(1175, 266)
+        Me.tabPlacas.Size = New System.Drawing.Size(1175, 307)
         '
         'griHistorialPlaca
         '
@@ -1386,7 +1386,7 @@ Partial Class frm_Vehiculo
         Me.griHistorialPlaca.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griHistorialPlaca.Location = New System.Drawing.Point(0, 64)
         Me.griHistorialPlaca.Name = "griHistorialPlaca"
-        Me.griHistorialPlaca.Size = New System.Drawing.Size(1175, 202)
+        Me.griHistorialPlaca.Size = New System.Drawing.Size(1175, 243)
         Me.griHistorialPlaca.TabIndex = 4
         Me.griHistorialPlaca.Tag = ""
         Me.griHistorialPlaca.Text = "GUIAS REMITENTE"
@@ -1485,7 +1485,7 @@ Partial Class frm_Vehiculo
         Me.tabEstados.Controls.Add(Me.Agrupacion4)
         Me.tabEstados.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabEstados.Name = "tabEstados"
-        Me.tabEstados.Size = New System.Drawing.Size(1175, 266)
+        Me.tabEstados.Size = New System.Drawing.Size(1175, 307)
         '
         'griEstados
         '
@@ -1568,7 +1568,7 @@ Partial Class frm_Vehiculo
         Me.griEstados.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griEstados.Location = New System.Drawing.Point(0, 86)
         Me.griEstados.Name = "griEstados"
-        Me.griEstados.Size = New System.Drawing.Size(1175, 180)
+        Me.griEstados.Size = New System.Drawing.Size(1175, 221)
         Me.griEstados.TabIndex = 5
         Me.griEstados.Tag = ""
         '
@@ -1698,7 +1698,7 @@ Partial Class frm_Vehiculo
         Me.tabDispositivos.Controls.Add(Me.agDispositivos)
         Me.tabDispositivos.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabDispositivos.Name = "tabDispositivos"
-        Me.tabDispositivos.Size = New System.Drawing.Size(1175, 266)
+        Me.tabDispositivos.Size = New System.Drawing.Size(1175, 307)
         '
         'griDispositivo
         '
@@ -1775,7 +1775,7 @@ Partial Class frm_Vehiculo
         Me.griDispositivo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDispositivo.Location = New System.Drawing.Point(0, 65)
         Me.griDispositivo.Name = "griDispositivo"
-        Me.griDispositivo.Size = New System.Drawing.Size(1175, 201)
+        Me.griDispositivo.Size = New System.Drawing.Size(1175, 242)
         Me.griDispositivo.TabIndex = 8
         Me.griDispositivo.Tag = ""
         '
@@ -1934,7 +1934,7 @@ Partial Class frm_Vehiculo
         Me.tabBonificacion.Controls.Add(Me.Agrupacion1)
         Me.tabBonificacion.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabBonificacion.Name = "tabBonificacion"
-        Me.tabBonificacion.Size = New System.Drawing.Size(1175, 266)
+        Me.tabBonificacion.Size = New System.Drawing.Size(1175, 307)
         '
         'griBonificacion
         '
@@ -2006,7 +2006,7 @@ Partial Class frm_Vehiculo
         Me.griBonificacion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griBonificacion.Location = New System.Drawing.Point(0, 61)
         Me.griBonificacion.Name = "griBonificacion"
-        Me.griBonificacion.Size = New System.Drawing.Size(1175, 205)
+        Me.griBonificacion.Size = New System.Drawing.Size(1175, 246)
         Me.griBonificacion.TabIndex = 10
         Me.griBonificacion.Tag = ""
         '
@@ -2163,7 +2163,7 @@ Partial Class frm_Vehiculo
         Me.tabFlota.Controls.Add(Me.Agrupacion3)
         Me.tabFlota.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabFlota.Name = "tabFlota"
-        Me.tabFlota.Size = New System.Drawing.Size(1175, 266)
+        Me.tabFlota.Size = New System.Drawing.Size(1175, 307)
         '
         'griAsignacionFlota
         '
@@ -2234,7 +2234,7 @@ Partial Class frm_Vehiculo
         Me.griAsignacionFlota.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAsignacionFlota.Location = New System.Drawing.Point(0, 62)
         Me.griAsignacionFlota.Name = "griAsignacionFlota"
-        Me.griAsignacionFlota.Size = New System.Drawing.Size(1175, 204)
+        Me.griAsignacionFlota.Size = New System.Drawing.Size(1175, 245)
         Me.griAsignacionFlota.TabIndex = 10
         Me.griAsignacionFlota.Tag = ""
         '
@@ -2365,7 +2365,7 @@ Partial Class frm_Vehiculo
         Me.tabEquipos.Controls.Add(Me.griAsignacionEquipos)
         Me.tabEquipos.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabEquipos.Name = "tabEquipos"
-        Me.tabEquipos.Size = New System.Drawing.Size(1175, 266)
+        Me.tabEquipos.Size = New System.Drawing.Size(1175, 307)
         '
         'griAsignacionEquipos
         '
@@ -2416,7 +2416,7 @@ Partial Class frm_Vehiculo
         Me.griAsignacionEquipos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAsignacionEquipos.Location = New System.Drawing.Point(0, 0)
         Me.griAsignacionEquipos.Name = "griAsignacionEquipos"
-        Me.griAsignacionEquipos.Size = New System.Drawing.Size(1175, 266)
+        Me.griAsignacionEquipos.Size = New System.Drawing.Size(1175, 307)
         Me.griAsignacionEquipos.TabIndex = 12
         Me.griAsignacionEquipos.Tag = ""
         Me.griAsignacionEquipos.Text = "GUIAS REMITENTE"
@@ -2433,7 +2433,7 @@ Partial Class frm_Vehiculo
         Me.tabDocumentos.Controls.Add(Me.UltraGroupBox1)
         Me.tabDocumentos.Location = New System.Drawing.Point(-10000, -10000)
         Me.tabDocumentos.Name = "tabDocumentos"
-        Me.tabDocumentos.Size = New System.Drawing.Size(1175, 266)
+        Me.tabDocumentos.Size = New System.Drawing.Size(1175, 307)
         '
         'gridControlDoc
         '
@@ -2525,7 +2525,7 @@ Partial Class frm_Vehiculo
         Me.gridControlDoc.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gridControlDoc.Location = New System.Drawing.Point(0, 39)
         Me.gridControlDoc.Name = "gridControlDoc"
-        Me.gridControlDoc.Size = New System.Drawing.Size(1175, 227)
+        Me.gridControlDoc.Size = New System.Drawing.Size(1175, 268)
         Me.gridControlDoc.TabIndex = 14
         Me.gridControlDoc.TabStop = False
         Me.gridControlDoc.Text = "Grilla1"
@@ -2628,7 +2628,7 @@ Partial Class frm_Vehiculo
         Me.TabTarjetasCovisol.Controls.Add(Me.Agrupacion5)
         Me.TabTarjetasCovisol.Location = New System.Drawing.Point(-10000, -10000)
         Me.TabTarjetasCovisol.Name = "TabTarjetasCovisol"
-        Me.TabTarjetasCovisol.Size = New System.Drawing.Size(1175, 266)
+        Me.TabTarjetasCovisol.Size = New System.Drawing.Size(1175, 307)
         '
         'griTarjetaCovisol
         '
@@ -2704,7 +2704,7 @@ Partial Class frm_Vehiculo
         Me.griTarjetaCovisol.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTarjetaCovisol.Location = New System.Drawing.Point(0, 86)
         Me.griTarjetaCovisol.Name = "griTarjetaCovisol"
-        Me.griTarjetaCovisol.Size = New System.Drawing.Size(1175, 180)
+        Me.griTarjetaCovisol.Size = New System.Drawing.Size(1175, 221)
         Me.griTarjetaCovisol.TabIndex = 5
         Me.griTarjetaCovisol.Tag = ""
         '
@@ -2844,9 +2844,9 @@ Partial Class frm_Vehiculo
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.griMantenimiento)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1175, 266)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1175, 307)
         '
         'griMantenimiento
         '
@@ -2901,7 +2901,7 @@ Partial Class frm_Vehiculo
         Me.griMantenimiento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griMantenimiento.Location = New System.Drawing.Point(0, 0)
         Me.griMantenimiento.Name = "griMantenimiento"
-        Me.griMantenimiento.Size = New System.Drawing.Size(1175, 266)
+        Me.griMantenimiento.Size = New System.Drawing.Size(1175, 307)
         Me.griMantenimiento.TabIndex = 6
         Me.griMantenimiento.Tag = ""
         '
@@ -2924,7 +2924,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapVehiculo.Controls.Add(Me.griLista)
         Me.tapVehiculo.Controls.Add(Me.agrBusqueda)
-        Me.tapVehiculo.Location = New System.Drawing.Point(1, 22)
+        Me.tapVehiculo.Location = New System.Drawing.Point(-10000, -10000)
         Me.tapVehiculo.Name = "tapVehiculo"
         Me.tapVehiculo.Size = New System.Drawing.Size(1183, 556)
         '
@@ -3876,7 +3876,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapSituacional.Controls.Add(Me.griListaSituacional)
         Me.tapSituacional.Controls.Add(Me.UltraGroupBox2)
-        Me.tapSituacional.Location = New System.Drawing.Point(-10000, -10000)
+        Me.tapSituacional.Location = New System.Drawing.Point(1, 22)
         Me.tapSituacional.Name = "tapSituacional"
         Me.tapSituacional.Size = New System.Drawing.Size(1183, 556)
         '
@@ -4395,7 +4395,7 @@ Partial Class frm_Vehiculo
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox6)
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox2)
         Me.UltraTabPageControl9.Controls.Add(Me.UltraExpandableGroupBox1)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1183, 556)
         '
@@ -5092,9 +5092,9 @@ Partial Class frm_Vehiculo
         '
         Me.UltraTabPageControl10.Controls.Add(Me.wbrConsultaVehicular)
         Me.UltraTabPageControl10.Controls.Add(Me.UltraExpandableGroupBox7)
-        Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl10.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
-        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1183, 556)
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1183, 565)
         '
         'wbrConsultaVehicular
         '
@@ -5102,7 +5102,7 @@ Partial Class frm_Vehiculo
         Me.wbrConsultaVehicular.Location = New System.Drawing.Point(0, 61)
         Me.wbrConsultaVehicular.MinimumSize = New System.Drawing.Size(10, 10)
         Me.wbrConsultaVehicular.Name = "wbrConsultaVehicular"
-        Me.wbrConsultaVehicular.Size = New System.Drawing.Size(1183, 495)
+        Me.wbrConsultaVehicular.Size = New System.Drawing.Size(1183, 504)
         Me.wbrConsultaVehicular.TabIndex = 1
         '
         'UltraExpandableGroupBox7
@@ -5371,7 +5371,7 @@ Partial Class frm_Vehiculo
         Me.UltraTabPageControl11.Controls.Add(Me.UltraExpandableGroupBox8)
         Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
-        Me.UltraTabPageControl11.Size = New System.Drawing.Size(1183, 556)
+        Me.UltraTabPageControl11.Size = New System.Drawing.Size(1183, 565)
         '
         'UltraExpandableGroupBox8
         '
@@ -5380,11 +5380,11 @@ Partial Class frm_Vehiculo
         Me.UltraExpandableGroupBox8.ContentAreaAppearance = Appearance175
         Me.UltraExpandableGroupBox8.Controls.Add(Me.UltraExpandableGroupBoxPanel8)
         Me.UltraExpandableGroupBox8.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBox8.ExpandedSize = New System.Drawing.Size(1183, 556)
+        Me.UltraExpandableGroupBox8.ExpandedSize = New System.Drawing.Size(1183, 565)
         Me.UltraExpandableGroupBox8.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.None
         Me.UltraExpandableGroupBox8.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox8.Name = "UltraExpandableGroupBox8"
-        Me.UltraExpandableGroupBox8.Size = New System.Drawing.Size(1183, 556)
+        Me.UltraExpandableGroupBox8.Size = New System.Drawing.Size(1183, 565)
         Me.UltraExpandableGroupBox8.TabIndex = 0
         Me.UltraExpandableGroupBox8.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -5450,7 +5450,7 @@ Partial Class frm_Vehiculo
         Me.UltraExpandableGroupBoxPanel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel8.Location = New System.Drawing.Point(3, 3)
         Me.UltraExpandableGroupBoxPanel8.Name = "UltraExpandableGroupBoxPanel8"
-        Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(1177, 550)
+        Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(1177, 559)
         Me.UltraExpandableGroupBoxPanel8.TabIndex = 0
         '
         'tabs
@@ -5468,10 +5468,10 @@ Partial Class frm_Vehiculo
         Me.tabs.Controls.Add(Me.UltraTabPageControl1)
         Me.tabs.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.tabs.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tabs.Location = New System.Drawing.Point(0, 263)
+        Me.tabs.Location = New System.Drawing.Point(0, 231)
         Me.tabs.Name = "tabs"
         Me.tabs.SharedControlsPage = Me.UltraTabSharedControlsPage4
-        Me.tabs.Size = New System.Drawing.Size(1177, 287)
+        Me.tabs.Size = New System.Drawing.Size(1177, 328)
         Me.tabs.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.VisualStudio2005
         Me.tabs.TabIndex = 0
         UltraTab13.TabPage = Me.tabSeguros
@@ -5501,7 +5501,7 @@ Partial Class frm_Vehiculo
         '
         Me.UltraTabSharedControlsPage4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage4.Name = "UltraTabSharedControlsPage4"
-        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1175, 266)
+        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1175, 307)
         '
         'cboTipoCarroceria
         '
@@ -6346,7 +6346,7 @@ Partial Class frm_Vehiculo
         Me.utpDetalle.Controls.Add(Me.tabDatosUnidades)
         Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
-        Me.utpDetalle.Size = New System.Drawing.Size(1185, 579)
+        Me.utpDetalle.Size = New System.Drawing.Size(1185, 588)
         '
         'tabDatosUnidades
         '
@@ -6358,7 +6358,7 @@ Partial Class frm_Vehiculo
         Me.tabDatosUnidades.Location = New System.Drawing.Point(0, 0)
         Me.tabDatosUnidades.Name = "tabDatosUnidades"
         Me.tabDatosUnidades.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.tabDatosUnidades.Size = New System.Drawing.Size(1185, 579)
+        Me.tabDatosUnidades.Size = New System.Drawing.Size(1185, 588)
         Me.tabDatosUnidades.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.tabDatosUnidades.TabIndex = 0
         UltraTab3.TabPage = Me.UltraTabPageControl9
@@ -6374,7 +6374,7 @@ Partial Class frm_Vehiculo
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(1183, 556)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(1183, 565)
         '
         'Colores1
         '
@@ -6464,7 +6464,7 @@ Partial Class frm_Vehiculo
         Me.tcVehiculo.Location = New System.Drawing.Point(0, 0)
         Me.tcVehiculo.Name = "tcVehiculo"
         Me.tcVehiculo.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.tcVehiculo.Size = New System.Drawing.Size(1187, 602)
+        Me.tcVehiculo.Size = New System.Drawing.Size(1187, 611)
         Me.tcVehiculo.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.tcVehiculo.TabIndex = 0
         UltraTab1.Key = "Lista"
@@ -6481,7 +6481,7 @@ Partial Class frm_Vehiculo
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1185, 579)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1185, 588)
         '
         'UltraToolTipManager1
         '
@@ -6495,7 +6495,7 @@ Partial Class frm_Vehiculo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1187, 602)
+        Me.ClientSize = New System.Drawing.Size(1187, 611)
         Me.Controls.Add(Me.tcVehiculo)
         Me.KeyPreview = True
         Me.MaximizeBox = False
