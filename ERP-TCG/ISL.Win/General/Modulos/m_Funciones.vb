@@ -150,7 +150,7 @@ Module m_Funciones
             oeDocumento.IdTipoDocumento = IdTipoDocumento
             oeDocumento.Serie = Serie
             oeDocumento.Tipo = Tipo
-            oeDocumento.IdEmpresaSis = gs_IdEmpresaSistema
+            oeDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
             oeDocumento = olDocumento.Obtener(oeDocumento)
             If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
             Return 1
@@ -348,9 +348,9 @@ Module m_Funciones
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
     'Declara constante pública del Id de la Empresa
-    Public Const ISL_IdClienteProveedor As String = "1CH000004444"
-    Public Const ISL_IdProveedor As String = "1CH000004444"
-    Public Const ISL_IdEmpresa As String = "1CH000006026"
+    Public Const ISL_IdClienteProveedor As String = "" '@0001 "1CH000004444"
+    Public Const ISL_IdProveedor As String = "" '@00001 "1CH000004444"
+    Public Const ISL_IdEmpresa As String = "" '@00001 "1CH000006026"
     'Public Const ERP_Nombre As String = "ERP"
     Public Const ISL_Nombre As String = "MI EMPRESA S.A.C."
     Public Const ISL_RUC As String = "20479729141"
@@ -604,6 +604,7 @@ Module m_Funciones
 
     Public _Operacion As String
     Public gs_PrefijoIdSucursal As String '@0001
+    Public gs_IdClienteProveedorSistema As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
     Public gs_TxtEmpresaSistema As String '@0001
     Public gs_VersionSis As String '@0001

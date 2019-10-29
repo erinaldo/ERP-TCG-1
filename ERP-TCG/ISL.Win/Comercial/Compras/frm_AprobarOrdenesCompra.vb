@@ -410,7 +410,7 @@ Public Class frm_AprobarOrdenesCompra
                 oeMatNegDet.PrefijoID = gs_PrefijoIdSucursal '@0001
                 loMatNegDet = olMatNegDet.Listar(oeMatNegDet)
                 If loMatNegDet.Count = 0 Then
-                    oeMatNeg.IdProveedor = "1CH000004444"
+                    oeMatNeg.IdProveedor = gs_IdClienteProveedorSistema.Trim '@0001
                     oeMatNeg = olMatNeg.Obtener(oeMatNeg)
                     oeMatNegDet.IdMaterialesNegociados = oeMatNeg.Id
                     loMatNegDet = olMatNegDet.Listar(oeMatNegDet)

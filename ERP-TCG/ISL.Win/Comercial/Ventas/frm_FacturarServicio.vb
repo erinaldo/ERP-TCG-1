@@ -1253,7 +1253,7 @@ Public Class frm_FacturarServicio
             oeUsuario = olUsuario.Obtener(oeUsuario)
             oeArea = olUsuario.Area(oeUsuario)
             oeEmpresa = New e_Empresa
-            oeEmpresa.Id = ISL_IdEmpresa
+            oeEmpresa.Id = gs_IdEmpresaSistema.Trim
             oeEmpresa.CargaCompleta = True
             oeEmpresa = olEmpresa.Obtener(oeEmpresa)
             LlenaCombos()

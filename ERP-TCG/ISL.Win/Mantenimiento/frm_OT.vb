@@ -417,8 +417,8 @@ Public Class frm_OT
                     oeOrdenTrabajo.IndicadorTipo = "I"
                     ficOrdenTrabajoDet.Tabs(3).Visible = True
                     cboProveedor.Enabled = False
-                    ListarProveedores(cboProveedor, ISL_IdProveedor, 0)
-                    cboProveedor.Value = ISL_IdProveedor
+                    ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim, 0)
+                    cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
                 Case 1
                     oeOrdenTrabajo.IndicadorTipo = "E"
                     ficOrdenTrabajoDet.Tabs(3).Visible = False
@@ -639,8 +639,8 @@ Public Class frm_OT
                     oeOrdenTrabajo.IndicadorTipo = "I"
                     ficOrdenTrabajoDet.Tabs(3).Visible = True
                     cboProveedor.Enabled = False
-                    ListarProveedores(cboProveedor, ISL_IdClienteProveedor, False)
-                    cboProveedor.Value = ISL_IdProveedor
+                    ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim, False)
+                    cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
                     grid_Equipos.DisplayLayout.Bands(0).ColumnFilters.ClearAllFilters()
                     For x As Integer = 0 To grid_Equipos.Rows.Count - 1
                         Me.grid_Equipos.Rows(x).CollapseAll()
@@ -3751,7 +3751,7 @@ Public Class frm_OT
                                         oeEquipo = olEquipo.Obtener(oeEquipo)
                                         oeOrdenIngreso.Glosa = oeEquipo.Nombre & " / " & .ActiveRow.ParentRow.Cells("MantenimientoMaterial").Value.ToString
                                         '---------------------------------------
-                                        oeOrdenIngreso.IdProveedor = ISL_IdProveedor  'idProveedor   
+                                        oeOrdenIngreso.IdProveedor = gs_IdClienteProveedorSistema.Trim  'idProveedor   
 
                                         '---------------------------------------
                                         oeOrdenIngreso.FechaOrden = Date.Now

@@ -162,6 +162,13 @@ Public Class frm_Login
                 End If
                 My.Settings.Save()
             End If
+            '@0001 Inicio Variables globales
+            gs_IdClienteProveedorSistema = "GCH000000001"
+            gs_IdEmpresaSistema = "1SI000004245"
+            gs_TxtEmpresaSistema = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
+
+
+            '@0001 Fin VG
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

@@ -1285,7 +1285,7 @@ Public Class frm_OrdenAsignacion
                                     UnidadAsignada = .ActiveRow.ParentRow.Cells("UnidadAsignada").Value.ToString
                                     TipoUnidad = .ActiveRow.ParentRow.Cells("TipoUnidad").Value.ToString()
                                     oeOrdenIngreso.Glosa = TipoUnidad & " / " & UnidadAsignada
-                                    oeOrdenIngreso.IdProveedor = ISL_IdProveedor
+                                    oeOrdenIngreso.IdProveedor = gs_IdClienteProveedorSistema.Trim
                                     oeOrdenIngreso.FechaOrden = Date.Now
                                     oeOrdenIngreso.TipoOperacion = "I"
                                     oeOrdenIngreso.IdSubAlmacenDestino = ""

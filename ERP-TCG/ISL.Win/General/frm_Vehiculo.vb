@@ -990,7 +990,7 @@ Public Class frm_Vehiculo
             oeCombo.Descripcion = "PROPIETARIO"
             ListCombo.AddRange(olCombo.Listar(oeCombo))
             LlenarComboMaestro(cboPropietario, ListCombo, -1)
-            cboPropietario.Value = ISL_IdEmpresa
+            cboPropietario.Value = gs_IdEmpresaSistema.Trim
             ListCombo = New List(Of e_Combo)
             oeCombo.Descripcion = "GPS"
             ListCombo.AddRange(olCombo.Listar(oeCombo))
@@ -1327,7 +1327,7 @@ Public Class frm_Vehiculo
             Dim loTipoEmpresa As New List(Of e_TipoEmpresa)
             loTipoEmpresa.AddRange(olTipoEmpresa.Listar(oeTipoEmpresa))
             If loTipoEmpresa.Count > 0 Then
-                loEmpresa.Add(New e_Empresa With {.Id = ISL_IdEmpresa, .Nombre = ISL_Nombre})
+                loEmpresa.Add(New e_Empresa With {.Id = gs_IdEmpresaSistema.Trim, .Nombre = ISL_Nombre})
                 loEmpresa.AddRange(
                     olEmpresa.Listar(New e_Empresa With {.IdTipoEmpresa = loTipoEmpresa(0).Id})
                     )

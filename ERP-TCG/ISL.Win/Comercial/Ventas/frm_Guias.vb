@@ -1069,7 +1069,8 @@ Public Class frm_Guias
         Dim ListTercero = New List(Of e_Combo)
         oeCombo = New e_Combo
         oeCombo.Nombre = "Transportista"
-        ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = "1CH000004444").ToList.OrderBy(Function(Item) Item.Nombre).ToList)
+        'ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = "1CH000004444").ToList.OrderBy(Function(Item) Item.Nombre).ToList)
+        ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = gs_IdClienteProveedorSistema.Trim).ToList.OrderBy(Function(Item) Item.Nombre).ToList)
         LlenarComboMaestro(cboTransportista, ListTercero, 0)                
         'cambioss
     End Sub
@@ -1576,7 +1577,8 @@ Public Class frm_Guias
                             oeGuiaTransportista.IndDocumentos = .Cells("DiaNoche").Value
                             oeGuiaTransportista.IndGrtPerdido = .Cells("IndEscala").Value
                             oeGuiaTransportista.Incidencia = ""
-                            oeGuiaTransportista.IndGuiaTercero = IIf(.Cells("IdTercero").Value = "1CH000004444", False, True)
+                            'oeGuiaTransportista.IndGuiaTercero = IIf(.Cells("IdTercero").Value = "1CH000004444", False, True) '@0001
+                            oeGuiaTransportista.IndGuiaTercero = IIf(.Cells("IdTercero").Value = gs_IdClienteProveedorSistema.Trim, False, True) '@0001
 
                             oeGuiaTransportista.OperacionDetalle = New List(Of e_OperacionDetalle)
                             oeOperacionDetalle = New e_OperacionDetalle
@@ -2430,7 +2432,8 @@ Public Class frm_Guias
                 If tabLista.Tabs(2).Selected Then
                     For Each obj As UltraGridRow In griGrtConfirmarBloque.Rows
                         If obj.Cells("DisponibleA").Value = False Then
-                            obj.Cells("IdTercero").Value = "1CH000004444"
+                            'obj.Cells("IdTercero").Value = "1CH000004444" '@0001
+                            obj.Cells("IdTercero").Value = gs_IdClienteProveedorSistema.Trim '@0001
                         Else
                             Dim ass = obj.Cells("IdTercero").Value
                         End If
@@ -2784,7 +2787,7 @@ Public Class frm_Guias
                         Dim ListTercero = New List(Of e_Combo)
                         oeCombo = New e_Combo
                         oeCombo.Nombre = "Transportista"
-                        ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = "1CH000004444").ToList.OrderBy(Function(Item) Item.Nombre).ToList)
+                        ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = gs_IdClienteProveedorSistema.Trim).ToList.OrderBy(Function(Item) Item.Nombre).ToList)
                         LlenarComboMaestro(cboTransportista, ListTercero, 0)
                         Me.chkGuiaTercero.Checked = False
                         chkGuiaTercero_CheckedChanged(Nothing, Nothing)
@@ -2793,7 +2796,7 @@ Public Class frm_Guias
                     Dim ListTercero = New List(Of e_Combo)
                     oeCombo = New e_Combo
                     oeCombo.Nombre = "Transportista"
-                    ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = "1CH000004444").ToList.OrderBy(Function(Item) Item.Nombre).ToList)
+                    ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = gs_IdClienteProveedorSistema.Trim).ToList.OrderBy(Function(Item) Item.Nombre).ToList)
                     LlenarComboMaestro(cboTransportista, ListTercero, 0)
                     Me.chkGuiaTercero.Visible = False
                     Me.chkGuiaTercero.Checked = False
@@ -3102,7 +3105,7 @@ Public Class frm_Guias
                     oeGuiaTransportista.Serie = Serie
                     oeGuiaTransportista.Numero = Numero
                     oeGuiaTransportista.IndGuiaTercero = IndGuiaTercero
-                    oeGuiaTransportista.Glosa = IIf(Me.cboTransportista.Value <> "1CH000004444", Me.cboTransportista.Value, "")
+                    oeGuiaTransportista.Glosa = IIf(Me.cboTransportista.Value <> gs_IdClienteProveedorSistema.Trim, Me.cboTransportista.Value, "")
                     oeGuiaTransportista = olGuiaTransportista.Obtener(oeGuiaTransportista)
                     If oeGuiaTransportista.Serie <> "" And oeGuiaTransportista.Id <> IdGuiaTransportista Then
                         Throw New Exception(oeGuiaTransportista.Serie & "-" & oeGuiaTransportista.Numero & " GRT ya fue Ingresado en Viaje: " & oeGuiaTransportista.Viaje & IIf(IndGuiaTercero = True, " Se uso LA GUIA DE TERCERO", "") &
@@ -3127,7 +3130,7 @@ Public Class frm_Guias
                 oeGuiaTransportista.Serie = Serie
                 oeGuiaTransportista.Numero = Numero
                 oeGuiaTransportista.IndGuiaTercero = Me.chkGuiaTercero.Checked
-                oeGuiaTransportista.Glosa = IIf(Me.cboTransportista.Value <> "1CH000004444", Me.cboTransportista.Value, "")
+                oeGuiaTransportista.Glosa = IIf(Me.cboTransportista.Value <> gs_IdClienteProveedorSistema.Trim, Me.cboTransportista.Value, "")
                 oeGuiaTransportista = olGuiaTransportista.Obtener(oeGuiaTransportista)
                 If oeGuiaTransportista.Serie <> "" Then
                     Throw New Exception(oeGuiaTransportista.Serie & "-" & oeGuiaTransportista.Numero & " fue Anulado en esta fecha: " & oeGuiaTransportista.Fecha)
@@ -3897,8 +3900,8 @@ Public Class frm_Guias
                     txtIdGrt.Text = .Id
                     txtGlosa.Text = .Glosa                    
                     txtGrtPT.Text = .PesoToneladas
-                    Me.chkGuiaTercero.Checked = .IndGuiaTercero                    
-                    Me.cboTransportista.Value = "1CH000004444"
+                    Me.chkGuiaTercero.Checked = .IndGuiaTercero
+                    Me.cboTransportista.Value = gs_IdClienteProveedorSistema.Trim
                 End With
             End If
             MostrarTabs(1, ficGuias, 1)
@@ -3956,10 +3959,10 @@ Public Class frm_Guias
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Cells("IdTipoVehiculo").Text, "Ingrese Grr-Serie")
                 l_FuncionesGenerales.ValidarCampoNoNulo(.Cells("TipoVehiculo").Text, "Ingrese Grr-Numero")
                 If RTrim(.Cells("Id").Value) = "" Then
-                    ValidaGuiaTransportista(RTrim(.Cells("Id").Value), _
-                                            FormatoDocumento(RTrim(.Cells("Codigo").Value), 4), _
+                    ValidaGuiaTransportista(RTrim(.Cells("Id").Value),
+                                            FormatoDocumento(RTrim(.Cells("Codigo").Value), 4),
                                             FormatoDocumento(RTrim(.Cells("IdCopiloto").Value), 10),
-                                            IIf(.Cells("IdTercero").Value = "1CH000004444", False, True))
+                                            IIf(.Cells("IdTercero").Value = gs_IdClienteProveedorSistema.Trim, False, True))
                     ValidaGuiaRemitente(RTrim(.Cells("IdEscala").Value), _
                                         FormatoDocumento(RTrim(.Cells("IdTipoVehiculo").Value), 4), _
                                         FormatoDocumento(RTrim(.Cells("TipoVehiculo").Value), 10), griGuiaRemitente)
@@ -4121,9 +4124,9 @@ Public Class frm_Guias
                 Dim ListTercero = New List(Of e_Combo)
                 oeCombo = New e_Combo
                 oeCombo.Nombre = "Transportista"
-                ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = "1CH000004444").ToList.OrderBy(Function(Item) Item.Nombre).ToList)
+                ListTercero.AddRange(olCombo.Listar(oeCombo).Where(Function(Item) Item.Id = gs_IdClienteProveedorSistema.Trim).ToList.OrderBy(Function(Item) Item.Nombre).ToList)
                 LlenarComboMaestro(cboTransportista, ListTercero, 0)
-                Me.cboTransportista.Value = "1CH000004444"
+                Me.cboTransportista.Value = gs_IdClienteProveedorSistema.Trim
             End If
 
         Catch ex As Exception

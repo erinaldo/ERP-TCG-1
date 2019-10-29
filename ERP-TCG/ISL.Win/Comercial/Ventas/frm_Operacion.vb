@@ -2051,7 +2051,7 @@ Public Class frm_Operacion
                 'If griViajeDetalle.Rows.Count = 0 Then
                 oeOperacionDetalle = New e_OperacionDetalle
                 oeOperacionDetalle.TipoOperacion = "2"
-                oeOperacionDetalle.Cliente = ISL_IdClienteProveedor
+                oeOperacionDetalle.Cliente = gs_IdClienteProveedorSistema.Trim '@0001
                 griViajeDetalle.DataSource = olOperacion.ListarOperacionDetalle(oeOperacionDetalle)
                 For Each Fila As UltraGridRow In griViajeDetalle.Rows
                     Fila.Cells("Origen").Value = cboRutaOrigen.Value
@@ -6932,9 +6932,10 @@ Public Class frm_Operacion
                     Case 0 'Listado
                         Select Case tabViajesLista.SelectedTab.Index
                             Case 0 'Viajes
-                                If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse _
-                                    gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse _
-                                    gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse _
+                                If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse
+                                    gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones OrElse '@0001
+                                    gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse
+                                    gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse
                                     gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas Then
                                     If griLista.Rows.Count > 0 Then
                                         ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)

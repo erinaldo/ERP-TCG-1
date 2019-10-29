@@ -416,9 +416,9 @@ Public Class frm_OrdenIngreso
     Private Sub CargaComboMovimientoInventario()
         Select Case cboMovimientoInventario.Value
             Case "1CH000000021", "1SI000000002", "1CH000000039"
-                ListarProveedores(cboProveedor, ISL_IdProveedor)
-                oeOrden.IdProveedor = ISL_IdProveedor
-                cboProveedor.Value = ISL_IdProveedor
+                ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim)
+                oeOrden.IdProveedor = gs_IdClienteProveedorSistema.Trim
+                cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
                 ActivarMateriales(True)
                 LimpiarDocAsoc()
                 cboMoneda.SelectedIndex = -1
@@ -1082,7 +1082,7 @@ Public Class frm_OrdenIngreso
             .Activo = True
             .IdMoneda = "1CH01" ' Soles 
             .IdTipoOrden = "1CH000000002" 'ORDEN DE SALIDA
-            .IdProveedor = ISL_IdProveedor
+            .IdProveedor = gs_IdClienteProveedorSistema.Trim
             .IdMovimientoInventario = "1CH000000030" 'SALIDA POR DEVOLUCION
             .FechaOrden = ObtenerFechaServidor()
             .TipoOperacion = "D"

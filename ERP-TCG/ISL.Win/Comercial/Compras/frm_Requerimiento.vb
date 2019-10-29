@@ -659,7 +659,7 @@ Public Class frm_Requerimiento
             oeOrdenIngreso.Activo = True
             oeOrdenIngreso.IdMoneda = "1CH01" ' Soles 
             oeOrdenIngreso.IdTipoOrden = "1CH000000001" 'ORDEN DE INGRESO
-            oeOrdenIngreso.IdProveedor = ISL_IdProveedor
+            oeOrdenIngreso.IdProveedor = gs_IdClienteProveedorSistema.Trim '@0001
             oeOrdenIngreso.IdMovimientoInventario = "1CH000000036" 'INGRESO POR ASIGNACION
             oeOrdenIngreso.FechaOrden = FechaServidor
             oeOrdenIngreso.TipoOperacion = "O"
@@ -822,7 +822,7 @@ Public Class frm_Requerimiento
                         oeOrdenSalida.Activo = True
                         oeOrdenSalida.IdMoneda = "1CH01" ' Soles 
                         oeOrdenSalida.IdTipoOrden = "1CH000000002" 'ORDEN DE SALIDA
-                        oeOrdenSalida.IdProveedor = ISL_IdProveedor
+                        oeOrdenSalida.IdProveedor = gs_IdClienteProveedorSistema.Trim
                         oeOrdenSalida.IdMovimientoInventario = oeMovimientoInventario.Id
                         oeOrdenSalida.TipoReferencia = "REQUERIMIENTO"
                         oeOrdenSalida.Referencia = oeRequerimiento.Codigo
@@ -912,7 +912,7 @@ Public Class frm_Requerimiento
                         oeOrdenSalida.Activo = True
                         oeOrdenSalida.IdMoneda = "1CH01" ' Soles 
                         oeOrdenSalida.IdTipoOrden = "1CH000000002" 'oeTipoOrden.Id ORDEN DE SALIDA
-                        oeOrdenSalida.IdProveedor = ISL_IdProveedor
+                        oeOrdenSalida.IdProveedor = gs_IdClienteProveedorSistema.Trim
                         oeOrdenSalida.IdMovimientoInventario = oeMovimientoInventario.Id
                         oeOrdenSalida.TipoReferencia = "REQUERIMIENTO"
                         oeOrdenSalida.Referencia = oeRequerimiento.Codigo

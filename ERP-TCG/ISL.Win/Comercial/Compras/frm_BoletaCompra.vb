@@ -330,7 +330,7 @@ Public Class frm_BoletaCompra
             txtTc.Value = cambioMon
             txtPorcenIGV.Value = oeIGVGlobal.Porcentaje
             oeEmpresa = New e_Empresa
-            oeEmpresa.Id = ISL_IdEmpresa
+            oeEmpresa.Id = gs_IdEmpresaSistema.Trim
             oeEmpresa = olEmpresa.Obtener(oeEmpresa)
             txtEmpresa.Value = oeEmpresa.Nombre
             LlenaCombos()

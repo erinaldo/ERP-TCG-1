@@ -810,7 +810,6 @@ Partial Class frm_Demanda
         Me.ogdDetalleTercero = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.UltraExpandableGroupBox6 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel6 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
-        Me.ugb_Espera = New ISL.Win.Espere()
         Me.chkIndPlantilla = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.txtTelefonoContacto = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtApellidoMaternoContacto = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -998,6 +997,7 @@ Partial Class frm_Demanda
         Me.ficDemanda = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
+        Me.ugb_Espera = New ISL.Win.Espere()
         Me.UltraTabPageControl5.SuspendLayout()
         CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrListaRegistro.SuspendLayout()
@@ -1196,7 +1196,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.agrListaRegistro)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1344, 522)
         '
@@ -1363,7 +1363,7 @@ Partial Class frm_Demanda
         Me.Menu.ForeColor = System.Drawing.Color.Black
         Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Insert, Me.Update, Me.Delete, Me.ProgramarViaje, Me.EstadoAsignada, Me.CancelarDemanda, Me.EnviarCorreoToolStripMenuItem, Me.RevertirDemandaToolStripMenuItem})
         Me.Menu.Name = "MenuContextual1"
-        Me.Menu.Size = New System.Drawing.Size(161, 202)
+        Me.Menu.Size = New System.Drawing.Size(161, 180)
         '
         'Insert
         '
@@ -1458,7 +1458,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griFactura)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1344, 522)
         '
@@ -1624,16 +1624,16 @@ Partial Class frm_Demanda
         'ogdDemandaDetalle
         '
         UltraDataColumn5.DataType = GetType(Double)
-        UltraDataColumn5.DefaultValue = 0.0R
+        UltraDataColumn5.DefaultValue = 0R
         UltraDataColumn6.DataType = GetType(Double)
-        UltraDataColumn6.DefaultValue = 0.0R
+        UltraDataColumn6.DefaultValue = 0R
         UltraDataColumn7.DataType = GetType(Boolean)
         UltraDataColumn8.DataType = GetType(Boolean)
         UltraDataColumn11.DataType = GetType(Double)
-        UltraDataColumn11.DefaultValue = 0.0R
+        UltraDataColumn11.DefaultValue = 0R
         UltraDataColumn12.DataType = GetType(Object)
         UltraDataColumn13.DataType = GetType(Double)
-        UltraDataColumn13.DefaultValue = 0.0R
+        UltraDataColumn13.DefaultValue = 0R
         UltraDataColumn21.DataType = GetType(Boolean)
         Me.ogdDemandaDetalle.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17, UltraDataColumn18, UltraDataColumn19, UltraDataColumn20, UltraDataColumn21, UltraDataColumn22})
         '
@@ -3109,14 +3109,14 @@ Partial Class frm_Demanda
         '
         UltraDataColumn41.DataType = GetType(Object)
         UltraDataColumn43.DataType = GetType(Double)
-        UltraDataColumn43.DefaultValue = 0.0R
+        UltraDataColumn43.DefaultValue = 0R
         UltraDataColumn44.DataType = GetType(Double)
         UltraDataColumn45.DataType = GetType(Double)
-        UltraDataColumn45.DefaultValue = 0.0R
+        UltraDataColumn45.DefaultValue = 0R
         UltraDataColumn46.DataType = GetType(Double)
-        UltraDataColumn46.DefaultValue = 0.0R
+        UltraDataColumn46.DefaultValue = 0R
         UltraDataColumn48.DataType = GetType(Double)
-        UltraDataColumn48.DefaultValue = 0.0R
+        UltraDataColumn48.DefaultValue = 0R
         UltraDataColumn51.DataType = GetType(Boolean)
         Me.ogdDetalleTercero.Band.Columns.AddRange(New Object() {UltraDataColumn37, UltraDataColumn38, UltraDataColumn39, UltraDataColumn40, UltraDataColumn41, UltraDataColumn42, UltraDataColumn43, UltraDataColumn44, UltraDataColumn45, UltraDataColumn46, UltraDataColumn47, UltraDataColumn48, UltraDataColumn49, UltraDataColumn50, UltraDataColumn51, UltraDataColumn52, UltraDataColumn53, UltraDataColumn54, UltraDataColumn55, UltraDataColumn56, UltraDataColumn57, UltraDataColumn58, UltraDataColumn59, UltraDataColumn60, UltraDataColumn61, UltraDataColumn62, UltraDataColumn63})
         '
@@ -3139,7 +3139,6 @@ Partial Class frm_Demanda
         '
         'UltraExpandableGroupBoxPanel6
         '
-        Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.ugb_Espera)
         Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.chkIndPlantilla)
         Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.txtTelefonoContacto)
         Me.UltraExpandableGroupBoxPanel6.Controls.Add(Me.txtApellidoMaternoContacto)
@@ -3173,14 +3172,6 @@ Partial Class frm_Demanda
         Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
         Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(1336, 126)
         Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
-        '
-        'ugb_Espera
-        '
-        Me.ugb_Espera.Location = New System.Drawing.Point(419, 8)
-        Me.ugb_Espera.Name = "ugb_Espera"
-        Me.ugb_Espera.Size = New System.Drawing.Size(393, 65)
-        Me.ugb_Espera.TabIndex = 24
-        Me.ugb_Espera.Visible = False
         '
         'chkIndPlantilla
         '
@@ -5120,12 +5111,11 @@ Partial Class frm_Demanda
         '
         'ColorAprobada
         '
-        Me.ColorAprobada.Color = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ColorAprobada.Location = New System.Drawing.Point(304, 44)
         Me.ColorAprobada.Name = "ColorAprobada"
         Me.ColorAprobada.Size = New System.Drawing.Size(43, 21)
         Me.ColorAprobada.TabIndex = 56
-        Me.ColorAprobada.Text = "192, 255, 192"
+        Me.ColorAprobada.Text = "Control"
         '
         'Etiqueta1
         '
@@ -5258,11 +5248,12 @@ Partial Class frm_Demanda
         Appearance77.Image = 10
         UltraTab1.SelectedAppearance = Appearance77
         UltraTab1.TabPage = Me.UltraTabPageControl8
-        UltraTab1.Text = "Detalle Demanda"
+        UltraTab1.Text = "Detalle Carga"
         Appearance78.Image = 9
         UltraTab2.SelectedAppearance = Appearance78
         UltraTab2.TabPage = Me.UltraTabPageControl9
         UltraTab2.Text = "Contrato Tercero"
+        UltraTab2.Visible = False
         Me.tabs.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
         Me.tabs.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
@@ -5352,6 +5343,7 @@ Partial Class frm_Demanda
         Me.chkTercerizacion.Size = New System.Drawing.Size(117, 17)
         Me.chkTercerizacion.TabIndex = 27
         Me.chkTercerizacion.Text = "TERCERIZACION"
+        Me.chkTercerizacion.Visible = False
         '
         'udtHoraSolicita
         '
@@ -5789,6 +5781,7 @@ Partial Class frm_Demanda
         Me.exgruConsultas.ContentAreaAppearance = Appearance98
         Me.exgruConsultas.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.exgruConsultas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.exgruConsultas.Expanded = False
         Me.exgruConsultas.ExpandedSize = New System.Drawing.Size(1346, 26)
         Me.exgruConsultas.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.exgruConsultas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5803,11 +5796,11 @@ Partial Class frm_Demanda
         'UltraExpandableGroupBoxPanel2
         '
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.ficConsultas)
-        Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(3, 20)
+        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
         Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(1340, 3)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel2.Visible = False
         '
         'ficConsultas
         '
@@ -5922,11 +5915,20 @@ Partial Class frm_Demanda
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
+        'ugb_Espera
+        '
+        Me.ugb_Espera.Location = New System.Drawing.Point(478, 298)
+        Me.ugb_Espera.Name = "ugb_Espera"
+        Me.ugb_Espera.Size = New System.Drawing.Size(393, 65)
+        Me.ugb_Espera.TabIndex = 25
+        Me.ugb_Espera.Visible = False
+        '
         'frm_Demanda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1348, 661)
+        Me.Controls.Add(Me.ugb_Espera)
         Me.Controls.Add(Me.ficDemanda)
         Me.Name = "frm_Demanda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -6435,6 +6437,5 @@ Partial Class frm_Demanda
     Friend WithEvents txtTelfDescarga As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents txtTelfCarga As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents chkIndPlantilla As Infragistics.Win.UltraWinEditors.UltraCheckEditor
-    Friend WithEvents ugb_Espera As ISL.Win.Espere
-
+    Friend WithEvents ugb_Espera As Espere
 End Class

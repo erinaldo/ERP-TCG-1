@@ -1421,7 +1421,7 @@ Public Class frm_RegistroConsumoCombustible
                     txt_NroVale.ReadOnly = True
                     chk_Credito.Checked = False
                     chk_Credito.Visible = False
-                    cboGrifo.Value = ISL_IdEmpresa
+                    cboGrifo.Value = gs_IdEmpresaSistema.Trim
                     cboGrifo.Enabled = False
                     decStock.Visible = True
                     etiStock.Visible = True
@@ -1492,7 +1492,7 @@ Public Class frm_RegistroConsumoCombustible
                 Me.cboLugar.Value = Nothing
                 Me.cboLugar.DataSource = Nothing
             End If
-            If Me.cboGrifo.Value = ISL_IdEmpresa Then Me.VerISL.Checked = True
+            If Me.cboGrifo.Value = gs_IdEmpresaSistema.Trim Then Me.VerISL.Checked = True
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -1725,14 +1725,14 @@ Public Class frm_RegistroConsumoCombustible
             TiempoSurtidor.Enabled = False
             IdSubAlmacen = ""
             If ficConCombustible.Tabs(3).Selected Then
-                CboGrifoS.Value = "1CH000006026"
+                CboGrifoS.Value = gs_IdEmpresaSistema.Trim
                 CboLugarS.Value = "1CH0001173"
                 CboDireccionS.Value = "1SI0000475"
                 TiempoSurtidor.Enabled = True
-                ObtenerStockUltPrecioS("1CH000006026", "1SI0000471")
+                ObtenerStockUltPrecioS(gs_IdEmpresaSistema.Trim, "1SI0000471")
                 ActualizarSurtidores()
             ElseIf ficConCombustible.Tabs(2).Selected Then
-                CboGrifoS.Value = "1CH000006026"
+                CboGrifoS.Value = gs_IdEmpresaSistema.Trim
                 CboLugarS.Value = "1CH0001173"
                 CboDireccionS.Value = "1SI0000475"
             ElseIf ficConCombustible.Tabs(4).Selected Then

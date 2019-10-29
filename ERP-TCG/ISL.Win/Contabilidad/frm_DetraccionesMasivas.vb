@@ -662,7 +662,7 @@ Public Class frm_DetraccionesMasivas
         Try
             With oeDetraccion
                 If Operacion = "Nuevo" Then .TipoOperacion = "I"
-                .IdAdquirienteProveedor = ISL_IdClienteProveedor
+                .IdAdquirienteProveedor = gs_IdClienteProveedorSistema.Trim
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .IdEstado = "1CH00016"
                 .loDetraccionDet = New List(Of e_DetraccionDetalle)
