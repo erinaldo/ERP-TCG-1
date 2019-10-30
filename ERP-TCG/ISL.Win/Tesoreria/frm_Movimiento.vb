@@ -249,7 +249,7 @@ Public Class frm_Movimiento
 
     Public Overrides Sub Guardar()
         Try
-            If Not ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then Throw New Exception("No puede Realizar Movimientos en esta Sede")
+            'If Not ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then Throw New Exception("No puede Realizar Movimientos en esta Sede")
             oeMovimiento.IndPrestamoHab = 0
             Select Case ficMovimiento.SelectedTab.Index
                 Case 0
