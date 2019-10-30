@@ -2579,9 +2579,9 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl2.Controls.Add(Me.UltraLabel6)
         Me.UltraTabPageControl2.Controls.Add(Me.txtTaraTracto)
         Me.UltraTabPageControl2.Controls.Add(Me.cboCarretaPeso)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(498, 98)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(115, 73)
         '
         'UltraLabel35
         '
@@ -2711,7 +2711,7 @@ Partial Class frm_Operacion
         Me.griBonificacionTracto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griBonificacionTracto.Location = New System.Drawing.Point(0, 0)
         Me.griBonificacionTracto.Name = "griBonificacionTracto"
-        Me.griBonificacionTracto.Size = New System.Drawing.Size(120, 98)
+        Me.griBonificacionTracto.Size = New System.Drawing.Size(120, 73)
         Me.griBonificacionTracto.TabIndex = 0
         Me.griBonificacionTracto.TabStop = False
         Me.griBonificacionTracto.Tag = ""
@@ -2788,9 +2788,9 @@ Partial Class frm_Operacion
         Me.griBonificacionCarreta.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griBonificacionCarreta.Dock = System.Windows.Forms.DockStyle.Right
         Me.griBonificacionCarreta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griBonificacionCarreta.Location = New System.Drawing.Point(378, 0)
+        Me.griBonificacionCarreta.Location = New System.Drawing.Point(-5, 0)
         Me.griBonificacionCarreta.Name = "griBonificacionCarreta"
-        Me.griBonificacionCarreta.Size = New System.Drawing.Size(120, 98)
+        Me.griBonificacionCarreta.Size = New System.Drawing.Size(120, 73)
         Me.griBonificacionCarreta.TabIndex = 8
         Me.griBonificacionCarreta.TabStop = False
         Me.griBonificacionCarreta.Tag = ""
@@ -2929,7 +2929,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox11)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(498, 98)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(115, 73)
         '
         'UltraGroupBox12
         '
@@ -2940,7 +2940,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraGroupBox12.Location = New System.Drawing.Point(233, 0)
         Me.UltraGroupBox12.Name = "UltraGroupBox12"
-        Me.UltraGroupBox12.Size = New System.Drawing.Size(265, 98)
+        Me.UltraGroupBox12.Size = New System.Drawing.Size(0, 73)
         Me.UltraGroupBox12.TabIndex = 1
         Me.UltraGroupBox12.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -2994,7 +2994,7 @@ Partial Class frm_Operacion
         Me.griEscala.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griEscala.Location = New System.Drawing.Point(3, 3)
         Me.griEscala.Name = "griEscala"
-        Me.griEscala.Size = New System.Drawing.Size(259, 92)
+        Me.griEscala.Size = New System.Drawing.Size(0, 67)
         Me.griEscala.TabIndex = 4
         Me.griEscala.Tag = ""
         '
@@ -3028,7 +3028,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox11.Dock = System.Windows.Forms.DockStyle.Left
         Me.UltraGroupBox11.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox11.Name = "UltraGroupBox11"
-        Me.UltraGroupBox11.Size = New System.Drawing.Size(233, 98)
+        Me.UltraGroupBox11.Size = New System.Drawing.Size(233, 73)
         Me.UltraGroupBox11.TabIndex = 0
         Me.UltraGroupBox11.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -3085,7 +3085,7 @@ Partial Class frm_Operacion
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griTarifas)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(115, 73)
         '
@@ -7754,7 +7754,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1252, 710)
         '
@@ -8911,7 +8911,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficViaje)
         Me.UltraTabPageControl1.Controls.Add(Me.expGeneral)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1252, 710)
         '

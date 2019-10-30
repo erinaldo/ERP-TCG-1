@@ -1170,9 +1170,10 @@ Public Class frm_Operacion
                 .IdUnidad = IdVehiculo
                 .IndConsultaGuardar = False
                 .LlenaCombos()
+                .pIdActividadNegocio = "1CH000000008" '@0001
                 .Editar()
                 .StartPosition = FormStartPosition.CenterParent
-                .Size = New Size(800, 650)
+                .Size = New Size(900, 600)
                 .ShowDialog()
                 mt_ControlBotoneria()
             End With
