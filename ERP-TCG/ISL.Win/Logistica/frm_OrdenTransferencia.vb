@@ -286,7 +286,7 @@ Public Class frm_OrdenTransferencia
             rfOrdenTransferenciaDesde.Value = Date.Now.AddDays(-7)
             rfOrdenTransferenciaHasta.Value = Date.Now
             InicializarColores()
-            txtProveedor.Text = ISL_Nombre
+            txtProveedor.Text = gs_TxtEmpresaSistema.Trim
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

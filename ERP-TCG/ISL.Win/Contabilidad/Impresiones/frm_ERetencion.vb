@@ -25,7 +25,7 @@ Public Class frm_ERetencion
 
     Private Sub frm_ERetencion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Me.Text = "REPRESENTACION IMPRESA - " & ISL_Nombre
+            Me.Text = "REPRESENTACION IMPRESA - " & gs_TxtEmpresaSistema.Trim
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

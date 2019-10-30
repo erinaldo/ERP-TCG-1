@@ -42,7 +42,8 @@ Public Class e_Usuario
     Public oeControlTurnoUsuario As New e_ControlTurnoUsuario
     <DataMember()> _
     Public leARUsuario As New List(Of e_ActividadRestringida_Usuario)
-
+    <DataMember()>
+    Public leUsuarioSucursal As New List(Of e_UsuarioSucursal) '@0001
     'Public leMenu As New List(Of e_MenuProceso)
     <DataMember()> _
     Public Shadows TipoOperacion As String

@@ -27,7 +27,7 @@ Public Class frm_FacturaBoletaElectronico
 
     Private Sub frm_FacturaBoletaElectronico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Me.Text = "REPRESENTACION IMPRESA - " & ISL_Nombre
+            Me.Text = "REPRESENTACION IMPRESA - " & gs_TxtEmpresaSistema.Trim
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try

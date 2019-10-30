@@ -465,6 +465,7 @@
     <Content Include="Seguridad\l_TurnoUsuario.svc" />
     <Content Include="Seguridad\l_Usuario.svc" />
     <Content Include="Seguridad\l_UsuarioPerfil.svc" />
+    <Content Include="Seguridad\l_UsuarioSucursal.svc" />
     <Content Include="Tesoreria\I_DetalleProgramacionPago.svc" />
     <Content Include="Tesoreria\I_ProgramacionPago.svc" />
     <Content Include="Tesoreria\l_ChequeDocumento.svc" />
@@ -1742,6 +1743,7 @@
     <Compile Include="General\l_TipoZona.svc.vb">
       <DependentUpon>l_TipoZona.svc</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\Il_UsuarioSucursal.vb" />
     <Compile Include="Seguridad\l_AccionSistema.svc.vb">
       <DependentUpon>l_AccionSistema.svc</DependentUpon>
     </Compile>
@@ -1956,6 +1958,9 @@
     </Compile>
     <Compile Include="Seguridad\l_UsuarioPerfil.svc.vb">
       <DependentUpon>l_UsuarioPerfil.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_UsuarioSucursal.svc.vb">
+      <DependentUpon>l_UsuarioSucursal.svc</DependentUpon>
     </Compile>
     <Compile Include="Tesoreria\Il_ChequeDocumento.vb" />
     <Compile Include="Tesoreria\Il_ChequeEmitido.vb" />

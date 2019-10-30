@@ -119,7 +119,7 @@ Public Class frm_ReporteInspeccion
             Dim oReport As New ReportDataSource("dsInspeccion_NeuInspeccion", dtInspeccion)
             Dim parametros As New List(Of ReportParameter)
             parametros.Add(New ReportParameter("Fecha", Date.Now, False))
-            parametros.Add(New ReportParameter("Cliente", ISL_Nombre, False))
+            parametros.Add(New ReportParameter("Cliente", gs_TxtEmpresaSistema.Trim, False))
             parametros.Add(New ReportParameter("Placa", oeVeh.Placa, False))
             parametros.Add(New ReportParameter("Descripcion_vehiculo", oeVeh.Marca & " - " & oeVeh.Modelo, False))
             Me.rptInspeccion.LocalReport.DataSources.Clear()

@@ -26,10 +26,10 @@ Partial Class frm_Usuario
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdUsuario")
-        Dim UltraGridColumn3 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdPerfil")
-        Dim UltraGridColumn4 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Perfil")
-        Dim UltraGridColumn5 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
-        Dim UltraGridColumn6 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
+        Dim UltraGridColumn11 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdPerfil")
+        Dim UltraGridColumn12 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Perfil")
+        Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdUsuario")
         Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdPerfil")
@@ -37,19 +37,32 @@ Partial Class frm_Usuario
         Dim UltraDataColumn5 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
         Dim UltraDataColumn6 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim UltraGridBand2 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
-        Dim UltraGridColumn7 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim UltraGridColumn8 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo")
-        Dim UltraGridColumn9 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
-        Dim UltraGridColumn10 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
+        Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
+        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo")
+        Dim UltraGridColumn17 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
+        Dim UltraGridColumn18 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim UltraDataColumn7 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn8 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
         Dim UltraDataColumn9 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre")
         Dim UltraDataColumn10 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
+        Dim UltraGridColumn19 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
+        Dim UltraGridColumn20 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdUsuario")
+        Dim UltraGridColumn21 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdCentro")
+        Dim UltraGridColumn22 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Sucursal")
+        Dim UltraGridColumn25 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn26 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
+        Dim UltraGridBand4 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
+        Dim UltraGridColumn27 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
+        Dim UltraGridColumn28 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo")
+        Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
+        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -65,22 +78,32 @@ Partial Class frm_Usuario
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDataColumn11 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn12 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
-        Dim UltraDataColumn13 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Dni")
-        Dim UltraDataColumn14 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Login")
-        Dim UltraDataColumn15 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreCompleto")
-        Dim UltraDataColumn16 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Area")
-        Dim UltraDataColumn17 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaNacimiento")
-        Dim UltraDataColumn18 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Sexo")
-        Dim UltraDataColumn19 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Clave")
-        Dim UltraDataColumn20 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
+        Dim UltraDataColumn21 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn22 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
+        Dim UltraDataColumn23 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Dni")
+        Dim UltraDataColumn24 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Login")
+        Dim UltraDataColumn25 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreCompleto")
+        Dim UltraDataColumn26 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Area")
+        Dim UltraDataColumn27 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaNacimiento")
+        Dim UltraDataColumn28 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Sexo")
+        Dim UltraDataColumn29 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Clave")
+        Dim UltraDataColumn30 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraDataColumn11 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn12 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdUsuario")
+        Dim UltraDataColumn13 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdCentro")
+        Dim UltraDataColumn14 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Sucursal")
+        Dim UltraDataColumn15 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Descripcion")
+        Dim UltraDataColumn16 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
+        Dim UltraDataColumn17 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn18 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Codigo")
+        Dim UltraDataColumn19 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre")
+        Dim UltraDataColumn20 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
+        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Usuario))
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrPerfil = New ISL.Controles.Agrupacion(Me.components)
@@ -105,6 +128,12 @@ Partial Class frm_Usuario
         Me.verCierreAutomatico = New ISL.Controles.Chequear(Me.components)
         Me.etiTiempoAlerta = New ISL.Controles.Etiqueta(Me.components)
         Me.etiIntervalo = New ISL.Controles.Etiqueta(Me.components)
+        Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.Agrupacion1 = New ISL.Controles.Agrupacion(Me.components)
+        Me.griCentro = New ISL.Controles.Grilla(Me.components)
+        Me.UltraExpandableGroupBox1 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
+        Me.UltraExpandableGroupBoxPanel3 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
+        Me.griCentroder = New ISL.Controles.Grilla(Me.components)
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrTotalUsuarios = New ISL.Controles.Agrupacion(Me.components)
         Me.griUsuario = New ISL.Controles.Grilla(Me.components)
@@ -112,6 +141,8 @@ Partial Class frm_Usuario
         Me.tsmiNuevo = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEditar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEliminar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiExportar = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.ficDetalle = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
@@ -135,7 +166,6 @@ Partial Class frm_Usuario
         Me.etiNombre = New ISL.Controles.Etiqueta(Me.components)
         Me.txtApellidoPaterno = New ISL.Controles.Texto(Me.components)
         Me.txtApellidoMaterno = New ISL.Controles.Texto(Me.components)
-        Me.Sexo1 = New ISL.Win.Sexo()
         Me.txtNombre = New ISL.Controles.Texto(Me.components)
         Me.etiFechaNacimiento = New ISL.Controles.Etiqueta(Me.components)
         Me.txtDni = New ISL.Controles.Texto(Me.components)
@@ -145,8 +175,9 @@ Partial Class frm_Usuario
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
-        Me.tsmiExportar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ordCentro = New ISL.Controles.OrigenDatos(Me.components)
+        Me.ordCentroDer = New ISL.Controles.OrigenDatos(Me.components)
+        Me.Sexo1 = New ISL.Win.Sexo()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.agrPerfil, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrPerfil.SuspendLayout()
@@ -170,6 +201,14 @@ Partial Class frm_Usuario
         CType(Me.numTiempoAlerta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.verLanzaAlerta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.verCierreAutomatico, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraTabPageControl6.SuspendLayout()
+        CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Agrupacion1.SuspendLayout()
+        CType(Me.griCentro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraExpandableGroupBox1.SuspendLayout()
+        Me.UltraExpandableGroupBoxPanel3.SuspendLayout()
+        CType(Me.griCentroder, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.agrTotalUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrTotalUsuarios.SuspendLayout()
@@ -198,15 +237,17 @@ Partial Class frm_Usuario
         CType(Me.ordUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficUsuario.SuspendLayout()
+        CType(Me.ordCentro, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ordCentroDer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.agrPerfil)
         Me.UltraTabPageControl3.Controls.Add(Me.agrListaPerfil)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(807, 215)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1121, 215)
         '
         'agrPerfil
         '
@@ -216,7 +257,7 @@ Partial Class frm_Usuario
         Me.agrPerfil.ForeColor = System.Drawing.Color.Black
         Me.agrPerfil.Location = New System.Drawing.Point(458, 0)
         Me.agrPerfil.Name = "agrPerfil"
-        Me.agrPerfil.Size = New System.Drawing.Size(349, 215)
+        Me.agrPerfil.Size = New System.Drawing.Size(663, 215)
         Me.agrPerfil.TabIndex = 3
         Me.agrPerfil.Text = "Perfiles"
         Me.agrPerfil.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
@@ -229,22 +270,22 @@ Partial Class frm_Usuario
         UltraGridColumn2.Header.VisiblePosition = 1
         UltraGridColumn2.Hidden = True
         UltraGridColumn2.Width = 66
-        UltraGridColumn3.Header.VisiblePosition = 2
-        UltraGridColumn3.Hidden = True
-        UltraGridColumn3.Width = 299
-        UltraGridColumn4.Header.VisiblePosition = 3
-        UltraGridColumn4.Width = 235
-        UltraGridColumn5.Header.VisiblePosition = 4
-        UltraGridColumn5.Hidden = True
-        UltraGridColumn6.Header.VisiblePosition = 5
-        UltraGridColumn6.Hidden = True
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6})
+        UltraGridColumn11.Header.VisiblePosition = 2
+        UltraGridColumn11.Hidden = True
+        UltraGridColumn11.Width = 299
+        UltraGridColumn12.Header.VisiblePosition = 3
+        UltraGridColumn12.Width = 235
+        UltraGridColumn13.Header.VisiblePosition = 4
+        UltraGridColumn13.Hidden = True
+        UltraGridColumn14.Header.VisiblePosition = 5
+        UltraGridColumn14.Hidden = True
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14})
         Me.griPerfil.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.griPerfil.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griPerfil.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griPerfil.Location = New System.Drawing.Point(2, 18)
         Me.griPerfil.Name = "griPerfil"
-        Me.griPerfil.Size = New System.Drawing.Size(345, 195)
+        Me.griPerfil.Size = New System.Drawing.Size(659, 195)
         Me.griPerfil.TabIndex = 0
         '
         'ordPerfil
@@ -278,15 +319,15 @@ Partial Class frm_Usuario
         'griPerfilder
         '
         Me.griPerfilder.DataSource = Me.ordPerfilDer
-        UltraGridColumn7.Header.VisiblePosition = 0
-        UltraGridColumn7.Hidden = True
-        UltraGridColumn8.Header.VisiblePosition = 1
-        UltraGridColumn8.Width = 97
-        UltraGridColumn9.Header.VisiblePosition = 2
-        UltraGridColumn9.Width = 297
-        UltraGridColumn10.Header.VisiblePosition = 3
-        UltraGridColumn10.Hidden = True
-        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10})
+        UltraGridColumn15.Header.VisiblePosition = 0
+        UltraGridColumn15.Hidden = True
+        UltraGridColumn16.Header.VisiblePosition = 1
+        UltraGridColumn16.Width = 97
+        UltraGridColumn17.Header.VisiblePosition = 2
+        UltraGridColumn17.Width = 297
+        UltraGridColumn18.Header.VisiblePosition = 3
+        UltraGridColumn18.Hidden = True
+        UltraGridBand2.Columns.AddRange(New Object() {UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18})
         Me.griPerfilder.DisplayLayout.BandsSerializer.Add(UltraGridBand2)
         Me.griPerfilder.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griPerfilder.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -306,7 +347,7 @@ Partial Class frm_Usuario
         Me.UltraTabPageControl4.Controls.Add(Me.agrListaTurno)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(807, 215)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1121, 215)
         '
         'agrTurno
         '
@@ -316,7 +357,7 @@ Partial Class frm_Usuario
         Me.agrTurno.ForeColor = System.Drawing.Color.Black
         Me.agrTurno.Location = New System.Drawing.Point(454, 0)
         Me.agrTurno.Name = "agrTurno"
-        Me.agrTurno.Size = New System.Drawing.Size(353, 215)
+        Me.agrTurno.Size = New System.Drawing.Size(667, 215)
         Me.agrTurno.TabIndex = 1
         Me.agrTurno.Text = "Turnos"
         Me.agrTurno.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
@@ -327,7 +368,7 @@ Partial Class frm_Usuario
         Me.griTurno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTurno.Location = New System.Drawing.Point(2, 18)
         Me.griTurno.Name = "griTurno"
-        Me.griTurno.Size = New System.Drawing.Size(349, 195)
+        Me.griTurno.Size = New System.Drawing.Size(663, 195)
         Me.griTurno.TabIndex = 0
         '
         'agrListaTurno
@@ -374,7 +415,7 @@ Partial Class frm_Usuario
         Me.UltraTabPageControl5.Controls.Add(Me.etiIntervalo)
         Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(807, 215)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1121, 215)
         '
         'Etiqueta4
         '
@@ -472,12 +513,99 @@ Partial Class frm_Usuario
         Me.etiIntervalo.TabIndex = 0
         Me.etiIntervalo.Text = "Intervalo:"
         '
+        'UltraTabPageControl6
+        '
+        Me.UltraTabPageControl6.Controls.Add(Me.Agrupacion1)
+        Me.UltraTabPageControl6.Controls.Add(Me.UltraExpandableGroupBox1)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1121, 215)
+        '
+        'Agrupacion1
+        '
+        Me.Agrupacion1.Controls.Add(Me.griCentro)
+        Me.Agrupacion1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion1.Location = New System.Drawing.Point(458, 0)
+        Me.Agrupacion1.Name = "Agrupacion1"
+        Me.Agrupacion1.Size = New System.Drawing.Size(663, 215)
+        Me.Agrupacion1.TabIndex = 5
+        Me.Agrupacion1.Text = "Sucursal"
+        Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        '
+        'griCentro
+        '
+        Me.griCentro.DataSource = Me.ordCentro
+        UltraGridColumn19.Header.VisiblePosition = 0
+        UltraGridColumn19.Hidden = True
+        UltraGridColumn20.Header.VisiblePosition = 1
+        UltraGridColumn20.Hidden = True
+        UltraGridColumn20.Width = 66
+        UltraGridColumn21.Header.VisiblePosition = 2
+        UltraGridColumn22.Header.VisiblePosition = 3
+        UltraGridColumn25.Header.VisiblePosition = 4
+        UltraGridColumn25.Hidden = True
+        UltraGridColumn26.Header.VisiblePosition = 5
+        UltraGridColumn26.Hidden = True
+        UltraGridBand3.Columns.AddRange(New Object() {UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn25, UltraGridColumn26})
+        Me.griCentro.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
+        Me.griCentro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griCentro.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griCentro.Location = New System.Drawing.Point(2, 18)
+        Me.griCentro.Name = "griCentro"
+        Me.griCentro.Size = New System.Drawing.Size(659, 195)
+        Me.griCentro.TabIndex = 0
+        '
+        'UltraExpandableGroupBox1
+        '
+        Me.UltraExpandableGroupBox1.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
+        Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
+        Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(458, 215)
+        Me.UltraExpandableGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
+        Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
+        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(458, 215)
+        Me.UltraExpandableGroupBox1.TabIndex = 4
+        Me.UltraExpandableGroupBox1.Text = "<< Lista de Sucursal >>"
+        Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        '
+        'UltraExpandableGroupBoxPanel3
+        '
+        Me.UltraExpandableGroupBoxPanel3.Controls.Add(Me.griCentroder)
+        Me.UltraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel3.Location = New System.Drawing.Point(22, 2)
+        Me.UltraExpandableGroupBoxPanel3.Name = "UltraExpandableGroupBoxPanel3"
+        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(434, 211)
+        Me.UltraExpandableGroupBoxPanel3.TabIndex = 0
+        '
+        'griCentroder
+        '
+        Me.griCentroder.DataSource = Me.ordCentroDer
+        UltraGridColumn27.Header.VisiblePosition = 0
+        UltraGridColumn27.Hidden = True
+        UltraGridColumn28.Header.VisiblePosition = 1
+        UltraGridColumn28.Width = 97
+        UltraGridColumn29.Header.VisiblePosition = 2
+        UltraGridColumn29.Width = 297
+        UltraGridColumn30.Header.VisiblePosition = 3
+        UltraGridColumn30.Hidden = True
+        UltraGridBand4.Columns.AddRange(New Object() {UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn30})
+        Me.griCentroder.DisplayLayout.BandsSerializer.Add(UltraGridBand4)
+        Me.griCentroder.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griCentroder.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griCentroder.Location = New System.Drawing.Point(0, 0)
+        Me.griCentroder.Name = "griCentroder"
+        Me.griCentroder.Size = New System.Drawing.Size(434, 211)
+        Me.griCentroder.TabIndex = 0
+        '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrTotalUsuarios)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(809, 511)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1123, 511)
         '
         'agrTotalUsuarios
         '
@@ -487,7 +615,7 @@ Partial Class frm_Usuario
         Me.agrTotalUsuarios.ForeColor = System.Drawing.Color.Black
         Me.agrTotalUsuarios.Location = New System.Drawing.Point(0, 0)
         Me.agrTotalUsuarios.Name = "agrTotalUsuarios"
-        Me.agrTotalUsuarios.Size = New System.Drawing.Size(809, 511)
+        Me.agrTotalUsuarios.Size = New System.Drawing.Size(1123, 511)
         Me.agrTotalUsuarios.TabIndex = 1
         Me.agrTotalUsuarios.Text = "Total de Usuarios"
         Me.agrTotalUsuarios.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
@@ -512,7 +640,7 @@ Partial Class frm_Usuario
         Me.griUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griUsuario.Location = New System.Drawing.Point(2, 18)
         Me.griUsuario.Name = "griUsuario"
-        Me.griUsuario.Size = New System.Drawing.Size(805, 491)
+        Me.griUsuario.Size = New System.Drawing.Size(1119, 491)
         Me.griUsuario.TabIndex = 1
         Me.griUsuario.Text = "Información de Usuarios"
         '
@@ -522,13 +650,13 @@ Partial Class frm_Usuario
         Me.MenuContextual1.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiNuevo, Me.tsmiEditar, Me.tsmiEliminar, Me.ToolStripSeparator1, Me.tsmiExportar})
         Me.MenuContextual1.Name = "MenuContextual1"
-        Me.MenuContextual1.Size = New System.Drawing.Size(153, 120)
+        Me.MenuContextual1.Size = New System.Drawing.Size(114, 98)
         '
         'tsmiNuevo
         '
         Me.tsmiNuevo.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
         Me.tsmiNuevo.Name = "tsmiNuevo"
-        Me.tsmiNuevo.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiNuevo.Size = New System.Drawing.Size(113, 22)
         Me.tsmiNuevo.Text = "Nuevo"
         Me.tsmiNuevo.ToolTipText = "Insertar un nuevo Usuario"
         '
@@ -536,7 +664,7 @@ Partial Class frm_Usuario
         '
         Me.tsmiEditar.Image = Global.ISL.Win.My.Resources.Resources.Editar
         Me.tsmiEditar.Name = "tsmiEditar"
-        Me.tsmiEditar.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiEditar.Size = New System.Drawing.Size(113, 22)
         Me.tsmiEditar.Text = "Editar"
         Me.tsmiEditar.ToolTipText = "Actualizar o modificar el Usuario seleccionado"
         '
@@ -544,17 +672,29 @@ Partial Class frm_Usuario
         '
         Me.tsmiEliminar.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
         Me.tsmiEliminar.Name = "tsmiEliminar"
-        Me.tsmiEliminar.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiEliminar.Size = New System.Drawing.Size(113, 22)
         Me.tsmiEliminar.Text = "Eliminar"
         Me.tsmiEliminar.ToolTipText = "Eliminar el Usuario seleccionado"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(110, 6)
+        '
+        'tsmiExportar
+        '
+        Me.tsmiExportar.Image = Global.ISL.Win.My.Resources.Resources.Excel
+        Me.tsmiExportar.Name = "tsmiExportar"
+        Me.tsmiExportar.Size = New System.Drawing.Size(113, 22)
+        Me.tsmiExportar.Text = "Exportar"
         '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrUsuario)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(809, 511)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1123, 511)
         '
         'ficDetalle
         '
@@ -562,12 +702,13 @@ Partial Class frm_Usuario
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl3)
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl4)
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl5)
+        Me.ficDetalle.Controls.Add(Me.UltraTabPageControl6)
         Me.ficDetalle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ficDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficDetalle.Location = New System.Drawing.Point(0, 273)
         Me.ficDetalle.Name = "ficDetalle"
         Me.ficDetalle.SharedControlsPage = Me.UltraTabSharedControlsPage2
-        Me.ficDetalle.Size = New System.Drawing.Size(809, 238)
+        Me.ficDetalle.Size = New System.Drawing.Size(1123, 238)
         Me.ficDetalle.TabIndex = 4
         UltraTab3.Key = "Perfil"
         UltraTab3.TabPage = Me.UltraTabPageControl3
@@ -576,14 +717,16 @@ Partial Class frm_Usuario
         UltraTab4.Text = "Turno"
         UltraTab5.TabPage = Me.UltraTabPageControl5
         UltraTab5.Text = "Control"
-        Me.ficDetalle.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab3, UltraTab4, UltraTab5})
+        UltraTab6.TabPage = Me.UltraTabPageControl6
+        UltraTab6.Text = "Sucursal"
+        Me.ficDetalle.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab3, UltraTab4, UltraTab5, UltraTab6})
         Me.ficDetalle.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
         'UltraTabSharedControlsPage2
         '
         Me.UltraTabSharedControlsPage2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage2.Name = "UltraTabSharedControlsPage2"
-        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(807, 215)
+        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(1121, 215)
         '
         'agrUsuario
         '
@@ -595,7 +738,7 @@ Partial Class frm_Usuario
         Me.agrUsuario.ForeColor = System.Drawing.Color.Black
         Me.agrUsuario.Location = New System.Drawing.Point(0, 0)
         Me.agrUsuario.Name = "agrUsuario"
-        Me.agrUsuario.Size = New System.Drawing.Size(809, 273)
+        Me.agrUsuario.Size = New System.Drawing.Size(1123, 273)
         Me.agrUsuario.TabIndex = 0
         Me.agrUsuario.Text = "Datos"
         Me.agrUsuario.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
@@ -872,19 +1015,6 @@ Partial Class frm_Usuario
         Me.txtApellidoMaterno.TabIndex = 5
         Me.ToolTip1.SetToolTip(Me.txtApellidoMaterno, "Digite el apellido materno del usuario")
         '
-        'Sexo1
-        '
-        Me.Sexo1.BackColor = System.Drawing.Color.Transparent
-        Me.Sexo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sexo1.Location = New System.Drawing.Point(375, 78)
-        Me.Sexo1.Name = "Sexo1"
-        E_Sexo1.Abreviatura = "M"
-        E_Sexo1.Id = "1"
-        E_Sexo1.Nombre = "Masculino"
-        Me.Sexo1.Sexo = E_Sexo1
-        Me.Sexo1.Size = New System.Drawing.Size(206, 24)
-        Me.Sexo1.TabIndex = 8
-        '
         'txtNombre
         '
         Appearance18.ForeColor = System.Drawing.Color.Black
@@ -939,8 +1069,8 @@ Partial Class frm_Usuario
         '
         'ordUsuario
         '
-        UltraDataColumn20.DataType = GetType(Boolean)
-        Me.ordUsuario.Band.Columns.AddRange(New Object() {UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17, UltraDataColumn18, UltraDataColumn19, UltraDataColumn20})
+        UltraDataColumn30.DataType = GetType(Boolean)
+        Me.ordUsuario.Band.Columns.AddRange(New Object() {UltraDataColumn21, UltraDataColumn22, UltraDataColumn23, UltraDataColumn24, UltraDataColumn25, UltraDataColumn26, UltraDataColumn27, UltraDataColumn28, UltraDataColumn29, UltraDataColumn30})
         '
         'ficUsuario
         '
@@ -952,7 +1082,7 @@ Partial Class frm_Usuario
         Me.ficUsuario.Location = New System.Drawing.Point(0, 0)
         Me.ficUsuario.Name = "ficUsuario"
         Me.ficUsuario.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficUsuario.Size = New System.Drawing.Size(811, 534)
+        Me.ficUsuario.Size = New System.Drawing.Size(1125, 534)
         Me.ficUsuario.TabIndex = 0
         UltraTab1.Key = "ficLista"
         UltraTab1.TabPage = Me.UltraTabPageControl1
@@ -967,7 +1097,7 @@ Partial Class frm_Usuario
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(809, 511)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1123, 511)
         '
         'ToolTip1
         '
@@ -980,23 +1110,34 @@ Partial Class frm_Usuario
         Me.Filtro1.MenuSettings.RightAlignedMenus = True
         Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
-        'tsmiExportar
+        'ordCentro
         '
-        Me.tsmiExportar.Image = Global.ISL.Win.My.Resources.Resources.Excel
-        Me.tsmiExportar.Name = "tsmiExportar"
-        Me.tsmiExportar.Size = New System.Drawing.Size(152, 22)
-        Me.tsmiExportar.Text = "Exportar"
+        UltraDataColumn16.DataType = GetType(Boolean)
+        Me.ordCentro.Band.Columns.AddRange(New Object() {UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16})
         '
-        'ToolStripSeparator1
+        'ordCentroDer
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
+        UltraDataColumn20.DataType = GetType(Boolean)
+        Me.ordCentroDer.Band.Columns.AddRange(New Object() {UltraDataColumn17, UltraDataColumn18, UltraDataColumn19, UltraDataColumn20})
+        '
+        'Sexo1
+        '
+        Me.Sexo1.BackColor = System.Drawing.Color.Transparent
+        Me.Sexo1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sexo1.Location = New System.Drawing.Point(375, 78)
+        Me.Sexo1.Name = "Sexo1"
+        E_Sexo1.Abreviatura = "M"
+        E_Sexo1.Id = "1"
+        E_Sexo1.Nombre = "Masculino"
+        Me.Sexo1.Sexo = E_Sexo1
+        Me.Sexo1.Size = New System.Drawing.Size(206, 24)
+        Me.Sexo1.TabIndex = 8
         '
         'frm_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(811, 534)
+        Me.ClientSize = New System.Drawing.Size(1125, 534)
         Me.Controls.Add(Me.ficUsuario)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -1027,6 +1168,14 @@ Partial Class frm_Usuario
         CType(Me.numTiempoAlerta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.verLanzaAlerta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.verCierreAutomatico, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraTabPageControl6.ResumeLayout(False)
+        CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion1.ResumeLayout(False)
+        CType(Me.griCentro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBox1.ResumeLayout(False)
+        Me.UltraExpandableGroupBoxPanel3.ResumeLayout(False)
+        CType(Me.griCentroder, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl1.ResumeLayout(False)
         CType(Me.agrTotalUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.agrTotalUsuarios.ResumeLayout(False)
@@ -1057,6 +1206,8 @@ Partial Class frm_Usuario
         CType(Me.ordUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficUsuario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficUsuario.ResumeLayout(False)
+        CType(Me.ordCentro, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ordCentroDer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1125,4 +1276,12 @@ Partial Class frm_Usuario
     Friend WithEvents agrDatoUsuario As ISL.Controles.Agrupacion
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents tsmiExportar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UltraTabPageControl6 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+    Friend WithEvents Agrupacion1 As Controles.Agrupacion
+    Friend WithEvents griCentro As Controles.Grilla
+    Friend WithEvents UltraExpandableGroupBox1 As Infragistics.Win.Misc.UltraExpandableGroupBox
+    Friend WithEvents UltraExpandableGroupBoxPanel3 As Infragistics.Win.Misc.UltraExpandableGroupBoxPanel
+    Friend WithEvents griCentroder As Controles.Grilla
+    Friend WithEvents ordCentro As Controles.OrigenDatos
+    Friend WithEvents ordCentroDer As Controles.OrigenDatos
 End Class

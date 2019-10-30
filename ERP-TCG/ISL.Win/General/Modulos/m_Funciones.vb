@@ -186,7 +186,7 @@ Module m_Funciones
     ''' <remarks></remarks>
     Public gUsuarioSGI As New e_Usuario
     Public leUsuarios As New List(Of e_Usuario)
-
+    Public gEmpSis As New e_EmpresaSistemas
     'Nombre completo del usuario que se ha logueado al sistema
     'Id del usuario que se ha logueado en el sistema / Utilizado como UsuarioCreacion para todo lo que haga 
 
@@ -348,13 +348,13 @@ Module m_Funciones
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
     'Declara constante pública del Id de la Empresa
-    Public Const ISL_IdClienteProveedor As String = "" '@0001 "1CH000004444"
-    Public Const ISL_IdProveedor As String = "" '@00001 "1CH000004444"
-    Public Const ISL_IdEmpresa As String = "" '@00001 "1CH000006026"
+    'Public Const ISL_IdClienteProveedor As String = "" '@0001 "1CH000004444"
+    'Public Const ISL_IdProveedor As String = "" '@00001 "1CH000004444"
+    'Public Const ISL_IdEmpresa As String = "" '@00001 "1CH000006026"
     'Public Const ERP_Nombre As String = "ERP"
-    Public Const ISL_Nombre As String = "MI EMPRESA S.A.C."
-    Public Const ISL_RUC As String = "20479729141"
-    Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
+    'Public Const ISL_Nombre As String = "MI EMPRESA S.A.C." '@00001
+    'Public Const ISL_RUC As String = "20479729141" '@00001
+    'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
     Public Abrev_Empresa As String = "ERP"
@@ -607,6 +607,8 @@ Module m_Funciones
     Public gs_IdClienteProveedorSistema As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
     Public gs_TxtEmpresaSistema As String '@0001
+    Public gs_RucEmpresaSistema As String '@0001
+    Public gs_DireccionEmpresaSistema As String '@0001
     Public gs_VersionSis As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer

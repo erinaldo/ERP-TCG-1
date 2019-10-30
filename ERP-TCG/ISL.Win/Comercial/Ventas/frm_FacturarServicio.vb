@@ -2131,8 +2131,8 @@ Public Class frm_FacturarServicio
                 SerieDes = griListaFacturaCompra.ActiveRow.Cells("Serie").Value
                 NumeroDes = griListaFacturaCompra.ActiveRow.Cells("Numero").Value.ToString.Substring(2, 8)
 
-                RutaArchivos = RutaArchivos + ISL_RUC + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
-                sNombreArchivo = sNombreArchivo + "\" + ISL_RUC + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                RutaArchivos = RutaArchivos + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                sNombreArchivo = sNombreArchivo + "\" + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
                 My.Computer.FileSystem.CopyFile(RutaArchivos, sNombreArchivo, True)
                 mensajeEmergente.Confirmacion("Se copio archivo correctamente", True)
             End If

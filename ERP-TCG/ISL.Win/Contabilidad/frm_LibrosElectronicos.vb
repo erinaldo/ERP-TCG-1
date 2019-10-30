@@ -250,8 +250,8 @@ Public Class frm_LibrosElectronicos
                     For Each oe As e_DetalleLibroElectronico In leDetalleLE
                         IndMat = False
                         oe.TipoDocumentoAso = CStr(dtp_FechaGuarda.Value.Year) + FormatoDocumento(cboMesGuarda.Text, 2) + "00"
-                        oe.SerieAso = ISL_RUC
-                        oe.NumeroDocAso = ISL_Nombre
+                        oe.SerieAso = gs_RucEmpresaSistema.Trim
+                        oe.NumeroDocAso = gs_TxtEmpresaSistema.Trim
                         If Cont > 0 Then
                             If oe.CodConvenio.Trim = leDetalleLE.Item(Cont - 1).CodConvenio.Trim Then IndMat = True
                             oe.SubTotal3 = IIf(IndMat, leDetalleLE.Item(Cont - 1).SubTotal3 + oe.SubTotal1 + oe.SubTotal2, oe.SubTotal1 + oe.SubTotal2)
@@ -271,8 +271,8 @@ Public Class frm_LibrosElectronicos
                 Case 11
                     For Each oe As e_DetalleLibroElectronico In leDetalleLE
                         oe.TipoDocumentoAso = CStr(dtp_FechaGuarda.Value.Year) + FormatoDocumento(cboMesGuarda.Text, 2) + "00"
-                        oe.SerieAso = ISL_RUC
-                        oe.NumeroDocAso = ISL_Nombre
+                        oe.SerieAso = gs_RucEmpresaSistema.Trim
+                        oe.NumeroDocAso = gs_TxtEmpresaSistema.Trim
                         oe.NumeroDocAso2 = "PROMEDIO PONDERADO"
                         If IsNumeric(oe.SerieDoc) Then
                             If CInt(oe.SerieDoc) = 0 Then oe.SerieDoc = String.Empty
@@ -2065,7 +2065,7 @@ Public Class frm_LibrosElectronicos
                     Case Else : strCC = "04"
                 End Select
             End If
-            NombreArchivo = "LE" & ISL_RUC & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & If(leDetalleLeValidada.Count > 0, "1", "0") & "11"
+            NombreArchivo = "LE" & gs_RucEmpresaSistema.Trim & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & If(leDetalleLeValidada.Count > 0, "1", "0") & "11"
             Dim sfd_Dialogo As New System.Windows.Forms.SaveFileDialog
             With sfd_Dialogo
                 .Filter = "Libros de Texto Plano (*.txt)|*.txt|Todos Los Archivos (*.*)|*.*"
@@ -2832,7 +2832,7 @@ Public Class frm_LibrosElectronicos
                 End Select
             End If
             'NombreArchivo = "LE" & ISL_RUC & CadPeriodo & "00" & LibroTipo & "00" & "1" & If(leDetalleLeValidada.Count > 0, "1", "0") & "11"
-            NombreArchivo = "LE" & ISL_RUC & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & If(leDetalleLeValidada.Count > 0, "1", "0") & "11"
+            NombreArchivo = "LE" & gs_RucEmpresaSistema.Trim & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & If(leDetalleLeValidada.Count > 0, "1", "0") & "11"
             Dim sfd_Dialogo As New System.Windows.Forms.SaveFileDialog
             With sfd_Dialogo
                 .Filter = "Libros de Texto Plano (*.txt)|*.txt|Todos Los Archivos (*.*)|*.*"
@@ -3601,7 +3601,7 @@ Public Class frm_LibrosElectronicos
             End If
 
             'NombreArchivo = "LE" & ISL_RUC & CadPeriodo & "00" & LibroTipo & "00" & "1111"
-            NombreArchivo = "LE" & ISL_RUC & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & "1" & "11"
+            NombreArchivo = "LE" & gs_RucEmpresaSistema.Trim & CadPeriodo & IIf(bandInv, DiaMes, "00") & LibroTipo & IIf(bandInv, strCC, "00") & "1" & "1" & "11"
 
             Dim bandAux As Boolean = True
             If Not bandAnual And Not bandInv Then bandAux = False

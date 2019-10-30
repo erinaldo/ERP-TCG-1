@@ -1327,7 +1327,7 @@ Public Class frm_Vehiculo
             Dim loTipoEmpresa As New List(Of e_TipoEmpresa)
             loTipoEmpresa.AddRange(olTipoEmpresa.Listar(oeTipoEmpresa))
             If loTipoEmpresa.Count > 0 Then
-                loEmpresa.Add(New e_Empresa With {.Id = gs_IdEmpresaSistema.Trim, .Nombre = ISL_Nombre})
+                loEmpresa.Add(New e_Empresa With {.Id = gs_IdEmpresaSistema.Trim, .Nombre = gs_TxtEmpresaSistema.Trim})
                 loEmpresa.AddRange(
                     olEmpresa.Listar(New e_Empresa With {.IdTipoEmpresa = loTipoEmpresa(0).Id})
                     )

@@ -4915,7 +4915,7 @@ Public Class frm_Operacion
                         Cantidad = .Cells("Cantidad").Value
                     End If
 
-                    If .Cells("Material").Text = "VACIO" And .Cells("Cliente").Text = ISL_Nombre Then
+                    If .Cells("Material").Text = "VACIO" And .Cells("Cliente").Text = gs_TxtEmpresaSistema.Trim Then
                         For Each Fila As UltraGridRow In griViaje.Rows.Where(Function(Item) Item.Cells("ViajeVacio").Value = False)
                             Throw New Exception("Cuando la CargaMaterial se igual a - VACIO -, considerar el indicador Vacio para todos sus VIAJES")
                         Next

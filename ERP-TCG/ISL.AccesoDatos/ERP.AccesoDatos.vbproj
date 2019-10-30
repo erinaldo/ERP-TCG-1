@@ -561,6 +561,7 @@
     <Compile Include="Seguridad\d_TurnoUsuario.vb" />
     <Compile Include="Seguridad\d_Usuario.vb" />
     <Compile Include="Seguridad\d_UsuarioPerfil.vb" />
+    <Compile Include="Seguridad\d_UsuarioSucursal.vb" />
     <Compile Include="Tesoreria\d_Banco.vb" />
     <Compile Include="Tesoreria\d_BolsaRuta.vb" />
     <Compile Include="Tesoreria\d_Caja.vb" />

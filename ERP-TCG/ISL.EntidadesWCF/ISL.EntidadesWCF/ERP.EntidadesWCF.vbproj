@@ -604,6 +604,7 @@
     <Content Include="Seguridad\e_TurnoUsuario.svc" />
     <Content Include="Seguridad\e_Usuario.svc" />
     <Content Include="Seguridad\e_UsuarioPerfil.svc" />
+    <Content Include="Seguridad\e_UsuarioSucursal.svc" />
     <Content Include="Tesoreria\e_ChequeDocumento.svc" />
     <Content Include="Tesoreria\e_CuadreCajaBolsa.svc" />
     <Content Include="Tesoreria\e_ChequeEmitido.svc" />
@@ -2622,6 +2623,9 @@
     <Compile Include="Seguridad\e_UsuarioPerfil.svc.vb">
       <DependentUpon>e_UsuarioPerfil.svc</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\e_UsuarioSucursal.svc.vb">
+      <DependentUpon>e_UsuarioSucursal.svc</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Ie_AccionSistema.vb" />
     <Compile Include="Seguridad\Ie_ActividadRestringida.vb" />
     <Compile Include="Seguridad\Ie_ActividadRestringida_Usuario.vb" />
@@ -2649,6 +2653,7 @@
     <Compile Include="Seguridad\Ie_TurnoUsuario.vb" />
     <Compile Include="Seguridad\Ie_Usuario.vb" />
     <Compile Include="Seguridad\Ie_UsuarioPerfil.vb" />
+    <Compile Include="Seguridad\Ie_UsuarioSucursal.vb" />
     <Compile Include="Tesoreria\e_ChequeDocumento.svc.vb">
       <DependentUpon>e_ChequeDocumento.svc</DependentUpon>
     </Compile>
