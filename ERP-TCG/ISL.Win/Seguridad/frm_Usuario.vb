@@ -39,8 +39,10 @@ Public Class frm_Usuario
 #Region "Definicion de Variables"
     Private oeUsuario As New e_Usuario, olUsuario As New l_Usuario, leUsuario As New List(Of e_Usuario)
     Private olUsuarioPerfil As New List(Of e_UsuarioPerfil)
+    Private olUsuarioSucursal As New List(Of e_UsuarioSucursal) '@0001
     Private olTurnoUsuario As New List(Of e_TurnoUsuario)
     Private oePerfil As New e_Perfil, olPerfil As New l_Perfil
+    Private oeCentro As New e_Centro, olCentro As New l_Centro '@0001
     Private oeTurno As New e_Turno, olTurno As New l_Turno
     Private oeControlTU As New e_ControlTurnoUsuario
     Private olPersona As New l_Persona
@@ -590,6 +592,7 @@ Public Class frm_Usuario
             ListarTurno()
             AsociarMenu()
             oeControlTU = New e_ControlTurnoUsuario
+            ListarSucursal() '@0001
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
         End Try
@@ -794,7 +797,7 @@ Public Class frm_Usuario
 
             MostrarPerfil()
             MostrarTurno()
-
+            MostrarSucursal() '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -962,7 +965,93 @@ Public Class frm_Usuario
             Throw ex
         End Try
     End Sub
+    '@0001 Inicio
+    Private Sub ListarSucursal()
+        Try
 
+            oeCentro = New e_Centro
+            olCentro = New l_Centro
+
+            With griCentroder
+
+                .ResetDisplayLayout()
+                .DataSource = olCentro.Listar(oeCentro)
+
+                .DisplayLayout.Bands(0).Columns.Add("Selec", "Seleccionar")
+                .DisplayLayout.Bands(0).Columns("Selec").DataType = System.Type.GetType("System.Boolean")
+                .DisplayLayout.Bands(0).Columns("Selec").DefaultCellValue = False
+                .DisplayLayout.Bands(0).Columns("Selec").Header.VisiblePosition = 1
+                .DisplayLayout.Bands(0).Columns("Selec").Width = 60
+
+                .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Abreviatura").Hidden = True
+                .DisplayLayout.Bands(0).Columns("FechaCreacion").Hidden = True
+                .DisplayLayout.Bands(0).Columns("UsuarioCreacion").Hidden = True
+
+                .DisplayLayout.Bands(0).Columns("Codigo").Width = 80
+                .DisplayLayout.Bands(0).Columns("Nombre").Width = 250
+
+                .DisplayLayout.Override.FilterOperatorDefaultValue = Infragistics.Win.UltraWinGrid.FilterOperatorDefaultValue.Contains
+                .DisplayLayout.Override.FilterUIType = Infragistics.Win.UltraWinGrid.FilterUIType.FilterRow
+
+                .DisplayLayout.Bands(0).Columns("Codigo").CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+                .DisplayLayout.Bands(0).Columns("Nombre").CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+
+            End With
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub LlenarSucursal(ByVal leSucursalUsuario As List(Of e_UsuarioSucursal))
+        Try
+
+            With griCentro
+
+                Dim _leUsuAux = From le In leSucursalUsuario
+                                Select le.Id, IdCentro = le.oeCentro.Id, Perfil = le.oeCentro.Nombre, le.Principal
+
+                .DataSource = _leUsuAux.ToList
+
+                .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+                .DisplayLayout.Bands(0).Columns("IdCentro").Hidden = True
+
+                .DisplayLayout.Bands(0).Columns("Principal").Style = UltraWinGrid.ColumnStyle.CheckBox
+
+                .DisplayLayout.Bands(0).Columns("Sucursal").CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+
+
+            End With
+
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub MostrarSucursal()
+        Try
+            If oeUsuario.leUsuarioSucursal.Count > 0 Then
+
+                LlenarSucursal(oeUsuario.leUsuarioSucursal)
+
+                For Each oe As e_UsuarioSucursal In oeUsuario.leUsuarioSucursal
+                    For Each Fila As UltraWinGrid.UltraGridRow In griCentroder.Rows
+                        If Fila.Cells("Id").Value = oe.oeCentro.Id And oe.Activo Then
+                            Fila.Cells("Selec").Value = True
+                            Exit For
+                        End If
+                    Next
+                Next
+
+                griCentroder.UpdateData()
+
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message)
+        End Try
+    End Sub
+    '@0001 Fin
 #End Region
 
 #Region "Menú contextual"
@@ -971,6 +1060,90 @@ Public Class frm_Usuario
         griUsuario.ContextMenuStrip = MenuContextual1
     End Sub
 
+    Private Sub griCentro_CellChange(sender As Object, e As CellEventArgs) Handles griCentro.CellChange
+        Try
+            With griCentro
+                If .ActiveRow.Cells("Principal").Activated Then
+                    Dim oeUsuarioSucursal As New e_UsuarioSucursal
+                    olUsuarioSucursal = oeUsuario.leUsuarioSucursal
+                    oeUsuarioSucursal.oeCentro.Id = .ActiveRow.Cells("IdCentro").Value
+                    oeUsuarioSucursal = olUsuarioSucursal.Item(olUsuarioSucursal.IndexOf(oeUsuarioSucursal))
+                    oeUsuarioSucursal.Principal = Not .ActiveRow.Cells("Principal").Value
+                    For Each fila As UltraWinGrid.UltraGridRow In .Rows
+                        If fila.Cells("IdCentro").Value <> oeUsuarioSucursal.oeCentro.Id Then fila.Cells("Principal").Value = False
+                    Next
+                    .DataBind()
+                    .UpdateData()
+                End If
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub griCentroder_CellChange(sender As Object, e As CellEventArgs) Handles griCentroder.CellChange
+        Try
+            With griCentroder
+                .UpdateData()
+                If .ActiveRow.Cells("Selec").Activated Then
+                    Dim oeUsuarioSucursal As New e_UsuarioSucursal
+                    olUsuarioSucursal = oeUsuario.leUsuarioSucursal
+
+                    oeUsuarioSucursal.oeCentro.Id = .ActiveRow.Cells("Id").Value
+
+                    If Not olUsuarioSucursal.Contains(oeUsuarioSucursal) Then
+                        If .ActiveRow.Cells("Selec").Value Then
+                            oeUsuarioSucursal.oeUsuario.Id = oeUsuario.Id
+                            oeUsuarioSucursal.oeCentro.Nombre = .ActiveRow.Cells("Nombre").Value
+                            If griCentro.Rows.Count < 1 Then
+                                LlenarSucursal(olUsuarioSucursal)
+                                'oeOcupacionTrabajador.Principal = True
+                            End If
+
+                            olUsuarioSucursal.Add(oeUsuarioSucursal)
+
+                        End If
+                    Else
+                        oeUsuarioSucursal = olUsuarioSucursal.Item(olUsuarioSucursal.IndexOf(oeUsuarioSucursal))
+                        If .ActiveRow.Cells("Selec").Value Then
+                            If oeUsuarioSucursal.TipoOperacion = "E" Then
+                                oeUsuarioSucursal.TipoOperacion = ""
+                                For Each fila As UltraWinGrid.UltraGridRow In griCentro.Rows
+                                    If fila.Cells("IdCentro").Value = oeUsuarioSucursal.oeCentro.Id Then
+                                        fila.Hidden = False
+                                        Exit For
+                                    End If
+                                Next
+                            Else
+                                Throw New Exception("El Centro: " & .ActiveRow.Cells("Nombre").Value & " ya esta Asignada")
+                            End If
+
+                        Else
+                            If oeUsuarioSucursal.Id <> "" Then
+                                oeUsuarioSucursal.TipoOperacion = "E"
+                                For Each fila As UltraWinGrid.UltraGridRow In griCentro.Rows
+                                    If fila.Cells("IdCentro").Value = oeUsuarioSucursal.oeCentro.Id Then
+                                        fila.Hidden = True
+                                        Exit For
+                                    End If
+                                Next
+                            Else
+                                olUsuarioSucursal.Remove(oeUsuarioSucursal)
+                            End If
+
+                        End If
+
+                    End If
+
+                End If
+
+            End With
+            LlenarSucursal(olUsuarioSucursal)
+            griCentro.DataBind()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message)
+        End Try
+    End Sub
 
     Private Sub tsmiNuevo_Click(sender As Object, e As EventArgs) Handles tsmiNuevo.Click
         Nuevo()

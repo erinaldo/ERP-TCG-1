@@ -349,7 +349,13 @@
     <Compile Include="General\d_VehiculoEstado.vb" />
     <Compile Include="General\d_IncidenciasAutentificadas.vb" />
     <Compile Include="General\d_VehiculoTarjeta.vb" />
+    <Compile Include="Grifo\d_Contometro_Electronico.vb" />
+    <Compile Include="Grifo\d_Contometro_Mecanico.vb" />
+    <Compile Include="Grifo\d_Distribuidor.vb" />
+    <Compile Include="Grifo\d_EstacionServicio.vb" />
     <Compile Include="Grifo\d_gTurno.vb" />
+    <Compile Include="Grifo\d_Isla.vb" />
+    <Compile Include="Grifo\d_Lado.vb" />
     <Compile Include="Logistica\d_CaracteristicaEspecial.vb" />
     <Compile Include="Logistica\d_CaracteristicaMaterial.vb" />
     <Compile Include="Logistica\d_CodigoBarraMaterial.vb" />
@@ -555,6 +561,7 @@
     <Compile Include="Seguridad\d_TurnoUsuario.vb" />
     <Compile Include="Seguridad\d_Usuario.vb" />
     <Compile Include="Seguridad\d_UsuarioPerfil.vb" />
+    <Compile Include="Seguridad\d_UsuarioSucursal.vb" />
     <Compile Include="Tesoreria\d_Banco.vb" />
     <Compile Include="Tesoreria\d_BolsaRuta.vb" />
     <Compile Include="Tesoreria\d_Caja.vb" />

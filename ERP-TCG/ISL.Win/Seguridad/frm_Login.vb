@@ -162,6 +162,13 @@ Public Class frm_Login
                 End If
                 My.Settings.Save()
             End If
+            '@0001 Inicio Variables globales
+            gs_IdClienteProveedorSistema = "GCH000000001"
+            gs_IdEmpresaSistema = "1SI000004245"
+            gs_TxtEmpresaSistema = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
+            gs_RucEmpresaSistema = "20480099720"
+            gs_DireccionEmpresaSistema = "CAL.LORA Y LORA NRO. 2450 P.J. SANTA ANA (GRIFO REPSOL - OFICINA SEGUNDO PISO) LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
+            '@0001 Fin VG
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

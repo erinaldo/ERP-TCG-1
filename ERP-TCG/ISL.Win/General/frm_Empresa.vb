@@ -4,6 +4,7 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+' @0002 |   2019-09-01  |  CT2010   |   ConsultaRUC
 '=================================================================================================================
 
 Imports ERP.EntidadesWCF
@@ -686,11 +687,19 @@ Public Class frm_Empresa
         End If
     End Sub
 
-    Private Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) Handles btnObtenerSunat.Click
+    Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) Handles btnObtenerSunat.Click
         Try
-            Dim oeEmp As New e_Persona
-            oeEmp = ObtenerDesdeSunat(Me.txtRuc.Value)
-            txtNombre.Text = oeEmp.Nombre
+            '@0002 Inicio
+            'Dim oeEmp As New e_Persona
+            'oeEmp = ObtenerDesdeSunat(Me.txtRuc.Value)
+            'txtNombre.Text = oeEmp.Nombre
+            '@0002 Fin Inicio
+            Dim consultaRucSunat As New ConsultaRucSunat()
+            Dim contribuyente As New Contribuyente
+            contribuyente = Await consultaRucSunat.SunatConsultaRuc(txtRuc.Text)
+            txtNombre.Text = contribuyente.RazonSocial
+            txtDireccionFiscal.Text = contribuyente.Direccion
+            '@0002 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -2027,6 +2036,10 @@ Public Class frm_Empresa
     Private Sub tsmiAgregarTP_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiAgregarTP.Click
         InicializaTipoPago()
         agrContenedorTP.Expanded = True
+    End Sub
+
+    Private Sub etiRuc_Click(sender As Object, e As EventArgs) Handles etiRuc.Click
+
     End Sub
 
     Private Sub tsmiQuitarTP_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiQuitarTP.Click

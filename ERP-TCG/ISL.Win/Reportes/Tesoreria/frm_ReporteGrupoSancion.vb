@@ -58,7 +58,7 @@ Public Class frm_ReporteGrupoSancion
 
             'Parámetros de la cabecera de Informe
             Dim parametros As New List(Of ReportParameter)
-            parametros.Add(New ReportParameter("NombreEmpresa", ISL_Nombre, False))
+            parametros.Add(New ReportParameter("NombreEmpresa", gs_TxtEmpresaSistema.Trim, False))
             parametros.Add(New ReportParameter("CodigoGrupo", oeGrupo.Codigo, False))
             parametros.Add(New ReportParameter("Glosa", oeGrupo.Glosa, False))
 

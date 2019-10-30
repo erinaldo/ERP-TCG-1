@@ -1,4 +1,4 @@
-﻿Imports ISL.AccesoDatos
+﻿Imports ERP.AccesoDatos
 
 Public Class d_gTurno
 

@@ -331,7 +331,7 @@ Public Class frm_OtrosDocumentosCompra
             oeIGV = olIGV.IGV(fecFechaActual.Value)
             decPorcenIGV.Value = oeIGV.Porcentaje
             oeEmpresa = New e_Empresa
-            oeEmpresa.Id = ISL_IdEmpresa
+            oeEmpresa.Id = gs_IdEmpresaSistema.Trim
             oeEmpresa = olEmpresa.Obtener(oeEmpresa)
             txtEmpresa.Value = oeEmpresa.Nombre
             LlenaCombos()

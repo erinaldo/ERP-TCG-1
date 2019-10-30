@@ -2046,7 +2046,7 @@ Public Class frm_AsistenteOT
         LlenaCombos()
         btnAtras.Visible = False
         Me.cmbEmpresaExterna.Enabled = False
-        cmbEmpresaExterna.Value = ISL_IdProveedor
+        cmbEmpresaExterna.Value = gs_IdClienteProveedorSistema.Trim
 
         _TipoCambio = TipoCambio(dtp_FecIngTaller.Value, True)(0)
         If _TipoCambio = 0 Then
@@ -2288,7 +2288,7 @@ Public Class frm_AsistenteOT
                 Case 0
                     oeOrdenTrabajo.IndicadorTipo = "I"
                     cmbEmpresaExterna.Enabled = False
-                    cmbEmpresaExterna.Value = ISL_IdProveedor
+                    cmbEmpresaExterna.Value = gs_IdClienteProveedorSistema.Trim
                 Case 1
                     oeOrdenTrabajo.IndicadorTipo = "E"
                     cmbEmpresaExterna.Enabled = True

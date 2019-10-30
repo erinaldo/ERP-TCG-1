@@ -172,8 +172,8 @@ Public Class frm_Almacen
         oeAlmacen.Propio = verPropio.Checked
         If verPropio.Checked Then
             cboProveedor.Enabled = False
-            ListarProveedores(ISL_IdProveedor)
-            cboProveedor.Value = ISL_IdProveedor
+            ListarProveedores(gs_IdClienteProveedorSistema.Trim)
+            cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
         Else
             cboProveedor.Enabled = True
             cboProveedor.Text = String.Empty

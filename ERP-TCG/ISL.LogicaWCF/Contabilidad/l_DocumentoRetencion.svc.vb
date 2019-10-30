@@ -1,6 +1,6 @@
 ﻿Imports ERP.AccesoDatos
 Imports ERP.EntidadesWCF
-Imports ISL.ServicioExterno
+Imports ERP.ServicioExterno
 Imports System.Runtime.Serialization
 
 <DataContract(), Serializable()> _

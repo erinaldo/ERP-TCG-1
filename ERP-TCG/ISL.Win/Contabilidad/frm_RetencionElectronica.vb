@@ -71,8 +71,8 @@ Public Class frm_RetencionElectronica
 
     Private Sub frm_RetencionElectronica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         olRetencion = New l_RetencionImpresa
-        txtRucAdq.Text = ISL_RUC
-        txtRazonSocialAdq.Text = ISL_Nombre
+        txtRucAdq.Text = gs_RucEmpresaSistema.Trim
+        txtRazonSocialAdq.Text = gs_TxtEmpresaSistema.Trim
         ControlBoton(1)
     End Sub
 
@@ -173,7 +173,7 @@ Public Class frm_RetencionElectronica
     Private Sub GenerarArchivo()
         Dim FechaActual As Date = DateTimePicker2.Value
         Dim NombreArchivo As String = ""
-        NombreArchivo = ISL_RUC & "-20-" & CStr(FechaActual.Year) & FormatoDocumento(CStr(FechaActual.Month), 2) & FormatoDocumento(CStr(FechaActual.Day), 2) & "-" & Lote.Text
+        NombreArchivo = gs_RucEmpresaSistema.Trim & "-20-" & CStr(FechaActual.Year) & FormatoDocumento(CStr(FechaActual.Month), 2) & FormatoDocumento(CStr(FechaActual.Day), 2) & "-" & Lote.Text
         Try
             Dim stTexto As String = ""
             Dim LibroTipo As String = ""

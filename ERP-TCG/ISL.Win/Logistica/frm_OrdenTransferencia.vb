@@ -286,7 +286,7 @@ Public Class frm_OrdenTransferencia
             rfOrdenTransferenciaDesde.Value = Date.Now.AddDays(-7)
             rfOrdenTransferenciaHasta.Value = Date.Now
             InicializarColores()
-            txtProveedor.Text = ISL_Nombre
+            txtProveedor.Text = gs_TxtEmpresaSistema.Trim
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -892,7 +892,7 @@ Public Class frm_OrdenTransferencia
             oeOrden.lstOrdenMaterial = listaOrdenMaterial
             oeOrden.IdTipoOrden = "1CH000000003" 'ORDEN DE TRANSFERENCIA
             oeOrden.IdMovimientoInventario = ""
-            oeOrden.IdProveedor = ISL_IdProveedor
+            oeOrden.IdProveedor = gs_IdClienteProveedorSistema.Trim
             oeOrden.FechaOrden = fecOrden.Value
             oeOrden.IdMoneda = "1CH01" 'ObtenerMoneda("SOLES")
             oeOrden.IdSubAlmacenOrigen = cboSubAlmacenOrigen.Value  'cboAlmacenOrigen.Value
@@ -953,7 +953,7 @@ Public Class frm_OrdenTransferencia
             oeOrdenSalida.Referencia = oeOrden.NroOrden
             oeOrdenSalida.Id = ""
             oeOrdenSalida.NroOrden = ""
-            oeOrdenSalida.IdProveedor = ISL_IdProveedor
+            oeOrdenSalida.IdProveedor = gs_IdClienteProveedorSistema.Trim
             oeOrdenSalida.FechaOrden = Date.Now
             oeOrdenSalida.IdMoneda = ObtenerMoneda("SOLES")
             oeOrdenSalida.IdMovimientoInventario = "1CH000000023" 'SALIDA POR TRANSFERENCIA ENTRE ALMACENES

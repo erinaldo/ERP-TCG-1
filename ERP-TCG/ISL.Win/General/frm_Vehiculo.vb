@@ -93,7 +93,8 @@ Public Class frm_Vehiculo
 
     Private _acl As String = ""
 
-    Private Const URLConsultaVehicular As String = "https://m.sunarp.gob.pe/mobile/m_ConsultaVehicular.aspx"
+    'Private Const URLConsultaVehicular As String = "https://m.sunarp.gob.pe/mobile/m_ConsultaVehicular.aspx"
+    Private Const URLConsultaVehicular As String = "https://www.sunarp.gob.pe/seccion/servicios/detalles/0/c3.html"
 #End Region
 
 #Region "Botones"
@@ -989,7 +990,7 @@ Public Class frm_Vehiculo
             oeCombo.Descripcion = "PROPIETARIO"
             ListCombo.AddRange(olCombo.Listar(oeCombo))
             LlenarComboMaestro(cboPropietario, ListCombo, -1)
-            cboPropietario.Value = ISL_IdEmpresa
+            cboPropietario.Value = gs_IdEmpresaSistema.Trim
             ListCombo = New List(Of e_Combo)
             oeCombo.Descripcion = "GPS"
             ListCombo.AddRange(olCombo.Listar(oeCombo))
@@ -1326,7 +1327,7 @@ Public Class frm_Vehiculo
             Dim loTipoEmpresa As New List(Of e_TipoEmpresa)
             loTipoEmpresa.AddRange(olTipoEmpresa.Listar(oeTipoEmpresa))
             If loTipoEmpresa.Count > 0 Then
-                loEmpresa.Add(New e_Empresa With {.Id = ISL_IdEmpresa, .Nombre = ISL_Nombre})
+                loEmpresa.Add(New e_Empresa With {.Id = gs_IdEmpresaSistema.Trim, .Nombre = gs_TxtEmpresaSistema.Trim})
                 loEmpresa.AddRange(
                     olEmpresa.Listar(New e_Empresa With {.IdTipoEmpresa = loTipoEmpresa(0).Id})
                     )
@@ -2990,6 +2991,7 @@ Public Class frm_Vehiculo
             mensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
+
 
 #End Region
 

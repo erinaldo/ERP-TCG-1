@@ -1185,7 +1185,7 @@ Public Class frm_OrdenVenMaterial
             olCombo = New l_Combo
             ListLugar = New List(Of e_Combo)
             oeCombo = New e_Combo
-            oeCombo.IdEmpresaSis = gs_IdEmpresaSistema
+            oeCombo.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
             ''Lugares
             oeCombo.TipoOperacion = "LUGAR"
             ListLugar.AddRange(olCombo.Listar(oeCombo))
@@ -1239,7 +1239,7 @@ Public Class frm_OrdenVenMaterial
     Private Sub mt_Listar()
         Try
             oeOrdenComercial = New e_OrdenVenta
-            oeOrdenComercial.IdEmpresaSis = gs_IdEmpresaSistema
+            oeOrdenComercial.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
             oeOrdenComercial.IdSucursal = gs_PrefijoIdSucursal
             oeOrdenComercial.Tipo = 2
             oeOrdenComercial.TipoExistencia = 1
@@ -1372,7 +1372,7 @@ Public Class frm_OrdenVenMaterial
                     .TipoOperacion = "I"
                     .PrefijoID = gs_PrefijoIdSucursal
                     .IndImpuesto = True
-                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdSucursal = gs_PrefijoIdSucursal
                     .UsuarioCrea = gUsuarioSGI.Id
                     .IdMaterial = oe.Id
@@ -1533,7 +1533,7 @@ Public Class frm_OrdenVenMaterial
                 oeDetalleOrden = New e_OrdenMaterial
                 loDetalleOrdenSalida = New List(Of e_OrdenMaterial)
                 oeDetalleOrden.IdOrden = oeOrdenSalida.Id
-                oeDetalleOrden.IdEmpresaSis = gs_IdEmpresaSistema
+                oeDetalleOrden.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 loDetalleOrdenSalida.AddRange(olDetalleOrden.Listar(oeDetalleOrden))
 
                 With griDetalleOrden
@@ -1895,7 +1895,7 @@ Public Class frm_OrdenVenMaterial
                 oeInventario = New e_Inventario
                 With oeInventario
                     .IdSucursal = gs_PrefijoIdSucursal
-                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadSalida = oe.CantidadMaterial
@@ -1911,7 +1911,7 @@ Public Class frm_OrdenVenMaterial
                 With oeMovimientoInventario
                     .TipoOperacion = "I"
                     .IdSucursal = gs_PrefijoIdSucursal
-                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
@@ -1933,7 +1933,7 @@ Public Class frm_OrdenVenMaterial
             oeDocumento = New e_MovimientoDocumento
             With oeDocumento
                 .TipoOperacion = "I"
-                .IdEmpresaSis = gs_IdEmpresaSistema
+                .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .IdClienteProveedor = oeOrdenComercial.IdEmpresa
                 .IdTipoDocumento = cmbTipoDocumento.Value
@@ -2258,7 +2258,7 @@ Public Class frm_OrdenVenMaterial
         Try
             With oeOrdenComercial
                 .PrefijoID = gs_PrefijoIdSucursal
-                .IdEmpresaSis = gs_IdEmpresaSistema
+                .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .UsuarioCrea = gUsuarioSGI.Login
                 .Tipo = 2
@@ -2360,7 +2360,7 @@ Public Class frm_OrdenVenMaterial
         Try
             oeOrdenSalida = New e_Orden
             With oeOrdenSalida
-                .IdEmpresaSis = gs_IdEmpresaSistema
+                .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text
                 .TipoOperacion = "I"
@@ -2379,7 +2379,7 @@ Public Class frm_OrdenVenMaterial
             For Each oe As e_OrdenVentaMaterial In loOrdenComercialMaterial.Where(Function(i) i.CantidadAtender > 0).ToList
                 oeDetalleOrden = New e_OrdenMaterial
                 With oeDetalleOrden
-                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdSucursal = gs_PrefijoIdSucursal
                     .UsuarioCreacion = oeOrdenSalida.UsuarioCreacion
                     .IdSubAlmacen = oe.IdSubAlmacen
@@ -2428,7 +2428,7 @@ Public Class frm_OrdenVenMaterial
                 oeDetDocumento = New e_DetalleDocumento
                 With oeDetDocumento
                     .TipoOperacion = "I"
-                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdSucursal = gs_PrefijoIdSucursal
                     .IdMaterialServicio = oe.IdMaterial
                     .IdTipoUnidadMedida = oe.IdTipoUnidadMedida
@@ -2520,7 +2520,7 @@ Public Class frm_OrdenVenMaterial
         Try
             oeVenta = New e_Venta
             With oeVenta
-                .IdEmpresaSis = gs_IdEmpresaSistema
+                .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .Gravado = Math.Round(decSubTotal.Value, 2)
                 .IGV = Math.Round(decImpuesto.Value, 2)

@@ -313,6 +313,12 @@
     <Content Include="General\l_CuotaDocVeh_Movimiento.svc" />
     <Content Include="General\l_CuotaDocVehPago.svc" />
     <Content Include="General\l_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\l_Contometro_Electronico.svc" />
+    <Content Include="Grifo\l_Contometro_Mecanico.svc" />
+    <Content Include="Grifo\l_Distribuidor.svc" />
+    <Content Include="Grifo\l_EstacionServicio.svc" />
+    <Content Include="Grifo\l_Isla.svc" />
+    <Content Include="Grifo\l_Lado.svc" />
     <Content Include="Logistica\l_CaracteristicaEspecial.svc" />
     <Content Include="Logistica\l_CaracteristicaMaterial.svc" />
     <Content Include="Logistica\l_CodigoBarraMaterial.svc" />
@@ -459,6 +465,7 @@
     <Content Include="Seguridad\l_TurnoUsuario.svc" />
     <Content Include="Seguridad\l_Usuario.svc" />
     <Content Include="Seguridad\l_UsuarioPerfil.svc" />
+    <Content Include="Seguridad\l_UsuarioSucursal.svc" />
     <Content Include="Tesoreria\I_DetalleProgramacionPago.svc" />
     <Content Include="Tesoreria\I_ProgramacionPago.svc" />
     <Content Include="Tesoreria\l_ChequeDocumento.svc" />
@@ -1169,6 +1176,30 @@
     <Compile Include="General\l_VehiculoTarjeta.svc.vb">
       <DependentUpon>l_VehiculoTarjeta.svc</DependentUpon>
     </Compile>
+    <Compile Include="Grifo\Il_Contometro_Electronico.vb" />
+    <Compile Include="Grifo\Il_Contometro_Mecanico.vb" />
+    <Compile Include="Grifo\Il_Distribuidor.vb" />
+    <Compile Include="Grifo\Il_EstacionServicio.vb" />
+    <Compile Include="Grifo\Il_Isla.vb" />
+    <Compile Include="Grifo\Il_Lado.vb" />
+    <Compile Include="Grifo\l_Contometro_Electronico.svc.vb">
+      <DependentUpon>l_Contometro_Electronico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_Contometro_Mecanico.svc.vb">
+      <DependentUpon>l_Contometro_Mecanico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_Distribuidor.svc.vb">
+      <DependentUpon>l_Distribuidor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_EstacionServicio.svc.vb">
+      <DependentUpon>l_EstacionServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_Isla.svc.vb">
+      <DependentUpon>l_Isla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_Lado.svc.vb">
+      <DependentUpon>l_Lado.svc</DependentUpon>
+    </Compile>
     <Compile Include="Logistica\Il_RendimientoCombustible.vb" />
     <Compile Include="Logistica\Il_Surtidor.vb" />
     <Compile Include="Contabilidad\l_DetalleModelo_Referencia.svc.vb">
@@ -1712,6 +1743,7 @@
     <Compile Include="General\l_TipoZona.svc.vb">
       <DependentUpon>l_TipoZona.svc</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\Il_UsuarioSucursal.vb" />
     <Compile Include="Seguridad\l_AccionSistema.svc.vb">
       <DependentUpon>l_AccionSistema.svc</DependentUpon>
     </Compile>
@@ -1926,6 +1958,9 @@
     </Compile>
     <Compile Include="Seguridad\l_UsuarioPerfil.svc.vb">
       <DependentUpon>l_UsuarioPerfil.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\l_UsuarioSucursal.svc.vb">
+      <DependentUpon>l_UsuarioSucursal.svc</DependentUpon>
     </Compile>
     <Compile Include="Tesoreria\Il_ChequeDocumento.vb" />
     <Compile Include="Tesoreria\Il_ChequeEmitido.vb" />

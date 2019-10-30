@@ -824,7 +824,7 @@ Public Class frm_GuiaRemisionRemitente
             oeDireccion = New e_Direccion
             oeDireccion.TipoOperacion = 2
             oeDireccion.Activo = True
-            oeDireccion.Id = ISL_IdEmpresa
+            oeDireccion.Id = gs_IdEmpresaSistema.Trim
             LlenarCombo(cboDirDestino, "Via", olDireccion.Listar(oeDireccion), 0)
             'End If
 

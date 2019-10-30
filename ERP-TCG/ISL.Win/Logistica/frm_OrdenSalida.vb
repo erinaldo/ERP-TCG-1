@@ -888,7 +888,7 @@ Public Class frm_OrdenSalida
         'Obtengo el movimiento segun un nombre de un movimiento.
         cboMovimientoInventario.Value = "1CH000000030" 'ObtenerMovInventario("SALIDA POR DEVOLUCION")
         'obtengo el proveedor ISL
-        oeOrden.IdProveedor = ISL_IdProveedor
+        oeOrden.IdProveedor = gs_IdClienteProveedorSistema.Trim
         LimpiarListas()
         'limpiar()
         'ListarMaterial(True)
@@ -1060,7 +1060,7 @@ Public Class frm_OrdenSalida
                     oeOrdenIngreso.Referencia = oeOrden.Referencia
                     oeOrdenIngreso.Id = ""
                     oeOrdenIngreso.NroOrden = ""
-                    oeOrdenIngreso.IdProveedor = ISL_IdProveedor
+                    oeOrdenIngreso.IdProveedor = gs_IdClienteProveedorSistema.Trim
                     oeOrdenIngreso.FechaOrden = Date.Now
                     oeOrdenIngreso.IdMoneda = ObtenerMoneda("SOLES")
                     oeOrdenIngreso.IdMovimientoInventario = "1CH000000022" 'INGRESO POR TRANSFERENCIA ENTRE ALMACENES

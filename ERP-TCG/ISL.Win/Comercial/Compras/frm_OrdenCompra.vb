@@ -834,7 +834,7 @@ Public Class frm_OrdenCompra
             objWorkSheet.Cells(10, 15) = Date.Parse(oeOrdenCompra.FechaOrden).Date.Day & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Month & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Year
             'DATOS DE EMPRESA GENERADORA            
             oeEmpresa = New e_Empresa
-            oeEmpresa.Id = ISL_IdEmpresa
+            oeEmpresa.Id = gs_IdEmpresaSistema.Trim
             oeEmpresa = olEmpresa.Obtener(oeEmpresa)
             objWorkSheet.Cells(1, 3) = oeEmpresa.Abreviatura
             objWorkSheet.Cells(4, 3) = oeEmpresa.Nombre

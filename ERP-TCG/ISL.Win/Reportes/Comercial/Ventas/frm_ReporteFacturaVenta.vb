@@ -259,7 +259,7 @@ Public Class frm_ReporteFacturaVenta
                 With oeDir
                     .TipoOperacion = "A"
                     .TipoPersonaEmpresa = 2
-                    .IdPersonaEmpresa = ISL_IdEmpresa
+                    .IdPersonaEmpresa = gs_IdEmpresaSistema.Trim
                     .Principal = -1
                 End With
 
@@ -371,7 +371,7 @@ Public Class frm_ReporteFacturaVenta
                 With oeDir
                     .TipoOperacion = "A"
                     .TipoPersonaEmpresa = 2
-                    .IdPersonaEmpresa = ISL_IdEmpresa
+                    .IdPersonaEmpresa = gs_IdEmpresaSistema.Trim
                     .Principal = -1
                 End With
                 leDir = olDir.Listar(oeDir)

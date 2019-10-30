@@ -285,6 +285,13 @@
     <Content Include="General\e_TarjetaMovimiento.svc" />
     <Content Include="General\e_VehiculoEstado.svc" />
     <Content Include="General\e_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\e_Contometro_Electronico.svc" />
+    <Content Include="Grifo\e_Contometro_Mecanico.svc" />
+    <Content Include="Grifo\e_Distribuidor.svc" />
+    <Content Include="Grifo\e_EstacionServicio.svc" />
+    <Content Include="Grifo\e_Isla.svc" />
+    <Content Include="Grifo\e_Lado.svc" />
+    <Content Include="Grifo\e_TurnoCierre.svc" />
     <Content Include="Mantenimiento\e_KmMack.svc" />
     <Content Include="Mantenimiento\e_KmMackDet.svc" />
     <Content Include="Personal\e_AreaAO.svc" />
@@ -597,6 +604,7 @@
     <Content Include="Seguridad\e_TurnoUsuario.svc" />
     <Content Include="Seguridad\e_Usuario.svc" />
     <Content Include="Seguridad\e_UsuarioPerfil.svc" />
+    <Content Include="Seguridad\e_UsuarioSucursal.svc" />
     <Content Include="Tesoreria\e_ChequeDocumento.svc" />
     <Content Include="Tesoreria\e_CuadreCajaBolsa.svc" />
     <Content Include="Tesoreria\e_ChequeEmitido.svc" />
@@ -1325,6 +1333,34 @@
     <Compile Include="General\Ie_TarjetaMovimiento.vb" />
     <Compile Include="General\Ie_VehiculoEstado.vb" />
     <Compile Include="General\Ie_VehiculoTarjeta.vb" />
+    <Compile Include="Grifo\e_Contometro_Electronico.svc.vb">
+      <DependentUpon>e_Contometro_Electronico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_Contometro_Mecanico.svc.vb">
+      <DependentUpon>e_Contometro_Mecanico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_Distribuidor.svc.vb">
+      <DependentUpon>e_Distribuidor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_EstacionServicio.svc.vb">
+      <DependentUpon>e_EstacionServicio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_Isla.svc.vb">
+      <DependentUpon>e_Isla.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_Lado.svc.vb">
+      <DependentUpon>e_Lado.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_TurnoCierre.svc.vb">
+      <DependentUpon>e_TurnoCierre.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Ie_Contometro_Electronico.vb" />
+    <Compile Include="Grifo\Ie_Contometro_Mecanico.vb" />
+    <Compile Include="Grifo\Ie_Distribuidor.vb" />
+    <Compile Include="Grifo\Ie_EstacionServicio.vb" />
+    <Compile Include="Grifo\Ie_Isla.vb" />
+    <Compile Include="Grifo\Ie_Lado.vb" />
+    <Compile Include="Grifo\Ie_TurnoCierre.vb" />
     <Compile Include="Mantenimiento\e_KmMack.svc.vb">
       <DependentUpon>e_KmMack.svc</DependentUpon>
     </Compile>
@@ -2587,6 +2623,9 @@
     <Compile Include="Seguridad\e_UsuarioPerfil.svc.vb">
       <DependentUpon>e_UsuarioPerfil.svc</DependentUpon>
     </Compile>
+    <Compile Include="Seguridad\e_UsuarioSucursal.svc.vb">
+      <DependentUpon>e_UsuarioSucursal.svc</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Ie_AccionSistema.vb" />
     <Compile Include="Seguridad\Ie_ActividadRestringida.vb" />
     <Compile Include="Seguridad\Ie_ActividadRestringida_Usuario.vb" />
@@ -2614,6 +2653,7 @@
     <Compile Include="Seguridad\Ie_TurnoUsuario.vb" />
     <Compile Include="Seguridad\Ie_Usuario.vb" />
     <Compile Include="Seguridad\Ie_UsuarioPerfil.vb" />
+    <Compile Include="Seguridad\Ie_UsuarioSucursal.vb" />
     <Compile Include="Tesoreria\e_ChequeDocumento.svc.vb">
       <DependentUpon>e_ChequeDocumento.svc</DependentUpon>
     </Compile>

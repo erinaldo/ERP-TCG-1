@@ -425,8 +425,8 @@ Public Class frm_OSalida
     End Sub
 
     Private Sub Inicializar()
-        ListarProveedores(cboProveedor, ISL_IdProveedor)
-        cboProveedor.Value = ISL_IdProveedor
+        ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim)
+        cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
         oeOrden = New e_Orden
         oeOrdenMaterial = New e_OrdenMaterial
         loOrdenMaterial = New List(Of e_OrdenMaterial)
@@ -1200,8 +1200,8 @@ Public Class frm_OSalida
 
     Private Sub uceMovInventario_ValueChanged(sender As Object, e As EventArgs) Handles uceMovInventario.ValueChanged
         Try
-            ListarProveedores(cboProveedor, ISL_IdProveedor)
-            cboProveedor.Value = ISL_IdProveedor
+            ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim)
+            cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
             ControlGrillaDetalle(0)
              Select uceMovInventario.Value
                 Case "1SI000000001"

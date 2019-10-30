@@ -447,7 +447,7 @@ Public Class frm_Centro
 
     Private Function GuardarRegistro() As Boolean
         Try
-            oeCentro.IdEmpresa = ISL_IdEmpresa
+            oeCentro.IdEmpresa = gs_IdEmpresaSistema.Trim
             oeCentro.Codigo = txtCodigo.Text.Trim
             oeCentro.Nombre = txtNombre.Text.Trim
             oeCentro.Abreviatura = txtAbreviatura.Text.Trim

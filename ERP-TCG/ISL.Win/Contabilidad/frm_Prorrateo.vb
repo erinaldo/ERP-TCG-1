@@ -113,7 +113,7 @@ Public Class frm_Prorrateo
             Me.Cursor = Cursors.WaitCursor
             ''RELACIÓN TOTAL DE VEHÍCULOS
             oeVehiculo = New e_Vehiculo : leVehiculo = New List(Of e_Vehiculo)
-            oeVehiculo.Motriz = -1 : oeVehiculo.Activo = True : oeVehiculo.IdEmpresaPropietaria = ISL_IdEmpresa
+            oeVehiculo.Motriz = -1 : oeVehiculo.Activo = True : oeVehiculo.IdEmpresaPropietaria = gs_IdEmpresaSistema.Trim
             leVehiculo = olVehiculo.Listar(oeVehiculo)
             CargarVeh(leVehiculo)
             ''FINALIZA

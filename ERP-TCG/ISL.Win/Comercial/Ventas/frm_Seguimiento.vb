@@ -179,7 +179,10 @@ Public Class frm_Seguimiento
                 Select Case tabListado.SelectedTab.Index
                     Case tapViajes.Tab.Index
                         Listar()
-                        If gUsuarioSGI.oeArea.Nombre = gNombreAreaPlaneamientoControl Or gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Then
+                        If gUsuarioSGI.oeArea.Nombre = gNombreAreaPlaneamientoControl Or
+                           gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones Or
+                           gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or
+                            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Then
                             If griLista.Rows.Count > 0 Then
                                 ControlBoton(1, 0, 1, 0, 0, 0, 1, 1, 1)
                             Else
@@ -449,7 +452,10 @@ Public Class frm_Seguimiento
     End Sub
 
     Private Sub griLista_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles griLista.DoubleClick
-        If gUsuarioSGI.oeArea.Nombre = gNombreAreaPlaneamientoControl Or gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Then
+        If gUsuarioSGI.oeArea.Nombre = gNombreAreaPlaneamientoControl Or
+           gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or
+           gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Then
             If griLista.Selected.Rows.Count > 0 Then Editar()
         End If
     End Sub

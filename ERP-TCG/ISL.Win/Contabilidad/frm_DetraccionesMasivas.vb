@@ -168,8 +168,8 @@ Public Class frm_DetraccionesMasivas
             InicializarLogicas()
             CargarListas()
             ComboGrids()
-            txtRucAdq.Text = ISL_RUC : txtRucPro.Text = ISL_RUC
-            txtRazonSocialAdq.Text = ISL_Nombre : txtRazonSocialPro.Text = ISL_Nombre
+            txtRucAdq.Text = gs_RucEmpresaSistema.Trim : txtRucPro.Text = gs_RucEmpresaSistema.Trim
+            txtRazonSocialAdq.Text = gs_TxtEmpresaSistema : txtRazonSocialPro.Text = gs_TxtEmpresaSistema
             UltraColorPicker1.Color = Color.White
             UltraColorPicker2.Color = Color.LightSteelBlue
             UltraColorPicker3.Color = Color.LightGreen
@@ -662,7 +662,7 @@ Public Class frm_DetraccionesMasivas
         Try
             With oeDetraccion
                 If Operacion = "Nuevo" Then .TipoOperacion = "I"
-                .IdAdquirienteProveedor = ISL_IdClienteProveedor
+                .IdAdquirienteProveedor = gs_IdClienteProveedorSistema.Trim
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .IdEstado = "1CH00016"
                 .loDetraccionDet = New List(Of e_DetraccionDetalle)
@@ -783,7 +783,7 @@ Public Class frm_DetraccionesMasivas
 
     Private Sub GenerarArchivo(Tipo As Integer)
         Dim NombreArchivo As String = ""
-        NombreArchivo = "D" & ISL_RUC & IIf(Tipo = 1, txtLoteAdq.Text, txtNroLotePro.Text)
+        NombreArchivo = "D" & gs_RucEmpresaSistema.Trim & IIf(Tipo = 1, txtLoteAdq.Text, txtNroLotePro.Text)
         Try
             Dim stTexto As String = ""
             Dim LibroTipo As String = ""
@@ -814,7 +814,7 @@ Public Class frm_DetraccionesMasivas
                     Total += CInt(oe.Importe)
                 Next
             End If
-            stTexto = IIf(Tipo = 1, "*", "P") + ISL_RUC + Replace(Replace(ISL_Nombre, ".", ""), " ", "") + "  " _
+            stTexto = IIf(Tipo = 1, "*", "P") + gs_RucEmpresaSistema.Trim + Replace(Replace(gs_TxtEmpresaSistema.Trim, ".", ""), " ", "") + "  " _
                 + oeDetraccion.NroLote + FormatoDocumento(CStr(CInt(Total)), 13) + "00"
             ObjTxt.WriteLine(stTexto)
             Dim listaArchivo As New List(Of e_DetraccionDetalle)

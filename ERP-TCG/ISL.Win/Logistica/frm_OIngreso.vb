@@ -1161,8 +1161,8 @@ Public Class frm_OIngreso
                     ficDetalle.Tabs(0).Selected = True
                     uegMateriales.Enabled = True
                     uegMateriales.Expanded = True
-                    ListarProveedores(cboProveedor, ISL_IdProveedor)
-                    cboProveedor.Value = ISL_IdProveedor
+                    ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim)
+                    cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
                     ControlGrillaDetalle(0)
                 Case Else
             End Select

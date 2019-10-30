@@ -1875,7 +1875,6 @@ Partial Class frm_Operacion
         Me.tabAdicional = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage3 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraGroupBox14 = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.ugb_Espera = New ISL.Win.Espere()
         Me.hViaje = New Infragistics.Win.UltraWinEditors.UltraDateTimeEditor()
         Me.fecViaje = New System.Windows.Forms.DateTimePicker()
         Me.verViajeRetorno = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
@@ -2264,6 +2263,7 @@ Partial Class frm_Operacion
         Me.ficOperacion = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
+        Me.ugb_Espera = New ISL.Win.Espere()
         Me.UltraTabPageControl2.SuspendLayout
         CType(Me.griBonificacionTracto, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Calcular1, System.ComponentModel.ISupportInitialize).BeginInit
@@ -2579,7 +2579,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl2.Controls.Add(Me.UltraLabel6)
         Me.UltraTabPageControl2.Controls.Add(Me.txtTaraTracto)
         Me.UltraTabPageControl2.Controls.Add(Me.cboCarretaPeso)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(498, 98)
         '
@@ -3085,9 +3085,9 @@ Partial Class frm_Operacion
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griTarifas)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(498, 98)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(115, 73)
         '
         'griTarifas
         '
@@ -3150,7 +3150,7 @@ Partial Class frm_Operacion
         Me.griTarifas.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTarifas.Location = New System.Drawing.Point(0, 0)
         Me.griTarifas.Name = "griTarifas"
-        Me.griTarifas.Size = New System.Drawing.Size(498, 98)
+        Me.griTarifas.Size = New System.Drawing.Size(115, 73)
         Me.griTarifas.TabIndex = 5
         Me.griTarifas.Tag = ""
         '
@@ -5001,7 +5001,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl4.Controls.Add(Me.griViaje)
         Me.UltraTabPageControl4.Controls.Add(Me.expViaje)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1248, 387)
         '
@@ -5323,9 +5323,9 @@ Partial Class frm_Operacion
         Me.griViaje.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griViaje.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griViaje.Location = New System.Drawing.Point(0, 150)
+        Me.griViaje.Location = New System.Drawing.Point(0, 125)
         Me.griViaje.Name = "griViaje"
-        Me.griViaje.Size = New System.Drawing.Size(1248, 237)
+        Me.griViaje.Size = New System.Drawing.Size(1248, 262)
         Me.griViaje.TabIndex = 1
         Me.griViaje.Tag = ""
         '
@@ -5358,11 +5358,11 @@ Partial Class frm_Operacion
         Me.expViaje.ContentAreaAppearance = Appearance156
         Me.expViaje.Controls.Add(Me.UltraExpandableGroupBoxPanel18)
         Me.expViaje.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expViaje.ExpandedSize = New System.Drawing.Size(1248, 150)
+        Me.expViaje.ExpandedSize = New System.Drawing.Size(1248, 125)
         Me.expViaje.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.expViaje.Location = New System.Drawing.Point(0, 0)
         Me.expViaje.Name = "expViaje"
-        Me.expViaje.Size = New System.Drawing.Size(1248, 150)
+        Me.expViaje.Size = New System.Drawing.Size(1248, 125)
         Me.expViaje.TabIndex = 0
         Me.expViaje.TabStop = False
         Me.expViaje.Text = "Ingreso de Datos para Crear / Actualizar un Viaje "
@@ -5375,7 +5375,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel18.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel18.Name = "UltraExpandableGroupBoxPanel18"
-        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1242, 127)
+        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1242, 102)
         Me.UltraExpandableGroupBoxPanel18.TabIndex = 0
         '
         'exgruEscalaBloque
@@ -5386,18 +5386,19 @@ Partial Class frm_Operacion
         Me.exgruEscalaBloque.ContentAreaAppearance = Appearance157
         Me.exgruEscalaBloque.Controls.Add(Me.UltraExpandableGroupBoxPanel4)
         Me.exgruEscalaBloque.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.exgruEscalaBloque.ExpandedSize = New System.Drawing.Size(525, 127)
+        Me.exgruEscalaBloque.ExpandedSize = New System.Drawing.Size(142, 102)
         Me.exgruEscalaBloque.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.exgruEscalaBloque.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.exgruEscalaBloque.Location = New System.Drawing.Point(717, 0)
+        Me.exgruEscalaBloque.Location = New System.Drawing.Point(1100, 0)
         Me.exgruEscalaBloque.Name = "exgruEscalaBloque"
-        Me.exgruEscalaBloque.Size = New System.Drawing.Size(525, 127)
+        Me.exgruEscalaBloque.Size = New System.Drawing.Size(142, 102)
         Me.exgruEscalaBloque.TabIndex = 1
         Me.exgruEscalaBloque.TabStop = False
         Me.exgruEscalaBloque.Text = "Adicionales"
         UltraToolTipInfo4.ToolTipText = "Escala en Bloque"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.exgruEscalaBloque, UltraToolTipInfo4)
         Me.exgruEscalaBloque.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        Me.exgruEscalaBloque.Visible = False
         '
         'UltraExpandableGroupBoxPanel4
         '
@@ -5405,7 +5406,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel4.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel4.Name = "UltraExpandableGroupBoxPanel4"
-        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(502, 121)
+        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(119, 96)
         Me.UltraExpandableGroupBoxPanel4.TabIndex = 0
         '
         'tabAdicional
@@ -5422,7 +5423,7 @@ Partial Class frm_Operacion
         Me.tabAdicional.Location = New System.Drawing.Point(0, 0)
         Me.tabAdicional.Name = "tabAdicional"
         Me.tabAdicional.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.tabAdicional.Size = New System.Drawing.Size(502, 121)
+        Me.tabAdicional.Size = New System.Drawing.Size(119, 96)
         Me.tabAdicional.TabIndex = 0
         UltraTab6.TabPage = Me.UltraTabPageControl2
         UltraTab6.Text = "Simulador Pesos"
@@ -5437,13 +5438,12 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(498, 98)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(115, 73)
         '
         'UltraGroupBox14
         '
         Appearance176.BorderColor = System.Drawing.Color.White
         Me.UltraGroupBox14.Appearance = Appearance176
-        Me.UltraGroupBox14.Controls.Add(Me.ugb_Espera)
         Me.UltraGroupBox14.Controls.Add(Me.hViaje)
         Me.UltraGroupBox14.Controls.Add(Me.fecViaje)
         Me.UltraGroupBox14.Controls.Add(Me.verViajeRetorno)
@@ -5479,16 +5479,8 @@ Partial Class frm_Operacion
         Me.UltraGroupBox14.Dock = System.Windows.Forms.DockStyle.Left
         Me.UltraGroupBox14.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox14.Name = "UltraGroupBox14"
-        Me.UltraGroupBox14.Size = New System.Drawing.Size(717, 127)
+        Me.UltraGroupBox14.Size = New System.Drawing.Size(1100, 102)
         Me.UltraGroupBox14.TabIndex = 0
-        '
-        'ugb_Espera
-        '
-        Me.ugb_Espera.Location = New System.Drawing.Point(324, 4)
-        Me.ugb_Espera.Name = "ugb_Espera"
-        Me.ugb_Espera.Size = New System.Drawing.Size(395, 65)
-        Me.ugb_Espera.TabIndex = 12
-        Me.ugb_Espera.Visible = False
         '
         'hViaje
         '
@@ -5545,7 +5537,7 @@ Partial Class frm_Operacion
         Appearance179.TextVAlignAsString = "Middle"
         Me.UltraLabel37.Appearance = Appearance179
         Me.UltraLabel37.AutoSize = True
-        Me.UltraLabel37.Location = New System.Drawing.Point(593, 100)
+        Me.UltraLabel37.Location = New System.Drawing.Point(966, 77)
         Me.UltraLabel37.Name = "UltraLabel37"
         Me.UltraLabel37.Size = New System.Drawing.Size(23, 14)
         Me.UltraLabel37.TabIndex = 28
@@ -5565,7 +5557,7 @@ Partial Class frm_Operacion
         Me.cboCarreta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCarreta.ForeColor = System.Drawing.Color.Black
         Me.cboCarreta.ImageList = Me.imagenes
-        Me.cboCarreta.Location = New System.Drawing.Point(395, 97)
+        Me.cboCarreta.Location = New System.Drawing.Point(768, 74)
         Me.cboCarreta.Name = "cboCarreta"
         Me.cboCarreta.Size = New System.Drawing.Size(92, 21)
         Me.cboCarreta.TabIndex = 16
@@ -5578,7 +5570,7 @@ Partial Class frm_Operacion
         Me.txtViajeCapacidadUtil.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtViajeCapacidadUtil.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtViajeCapacidadUtil.InputMask = "{double:5.2}"
-        Me.txtViajeCapacidadUtil.Location = New System.Drawing.Point(618, 97)
+        Me.txtViajeCapacidadUtil.Location = New System.Drawing.Point(991, 74)
         Me.txtViajeCapacidadUtil.Name = "txtViajeCapacidadUtil"
         Me.txtViajeCapacidadUtil.NonAutoSizeHeight = 20
         Me.txtViajeCapacidadUtil.Size = New System.Drawing.Size(55, 20)
@@ -5595,7 +5587,7 @@ Partial Class frm_Operacion
         Appearance183.TextVAlignAsString = "Middle"
         Me.UltraLabel38.Appearance = Appearance183
         Me.UltraLabel38.AutoSize = True
-        Me.UltraLabel38.Location = New System.Drawing.Point(352, 78)
+        Me.UltraLabel38.Location = New System.Drawing.Point(725, 55)
         Me.UltraLabel38.Name = "UltraLabel38"
         Me.UltraLabel38.Size = New System.Drawing.Size(38, 14)
         Me.UltraLabel38.TabIndex = 18
@@ -5608,7 +5600,7 @@ Partial Class frm_Operacion
         Me.txtFleteUnitarioViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFleteUnitarioViaje.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtFleteUnitarioViaje.InputMask = "{double:5.4}"
-        Me.txtFleteUnitarioViaje.Location = New System.Drawing.Point(533, 74)
+        Me.txtFleteUnitarioViaje.Location = New System.Drawing.Point(906, 51)
         Me.txtFleteUnitarioViaje.Name = "txtFleteUnitarioViaje"
         Me.txtFleteUnitarioViaje.NonAutoSizeHeight = 20
         Me.txtFleteUnitarioViaje.ReadOnly = True
@@ -5626,7 +5618,7 @@ Partial Class frm_Operacion
         Appearance185.TextVAlignAsString = "Middle"
         Me.UltraLabel28.Appearance = Appearance185
         Me.UltraLabel28.AutoSize = True
-        Me.UltraLabel28.Location = New System.Drawing.Point(356, 9)
+        Me.UltraLabel28.Location = New System.Drawing.Point(342, 32)
         Me.UltraLabel28.Name = "UltraLabel28"
         Me.UltraLabel28.Size = New System.Drawing.Size(35, 14)
         Me.UltraLabel28.TabIndex = 12
@@ -5655,7 +5647,7 @@ Partial Class frm_Operacion
         Appearance187.TextVAlignAsString = "Middle"
         Me.UltraLabel31.Appearance = Appearance187
         Me.UltraLabel31.AutoSize = True
-        Me.UltraLabel31.Location = New System.Drawing.Point(343, 32)
+        Me.UltraLabel31.Location = New System.Drawing.Point(329, 55)
         Me.UltraLabel31.Name = "UltraLabel31"
         Me.UltraLabel31.Size = New System.Drawing.Size(48, 14)
         Me.UltraLabel31.TabIndex = 14
@@ -5668,7 +5660,7 @@ Partial Class frm_Operacion
         Me.txtFletePorcentaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFletePorcentaje.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Integer]
         Me.txtFletePorcentaje.InputMask = "nnn"
-        Me.txtFletePorcentaje.Location = New System.Drawing.Point(533, 97)
+        Me.txtFletePorcentaje.Location = New System.Drawing.Point(906, 74)
         Me.txtFletePorcentaje.Name = "txtFletePorcentaje"
         Me.txtFletePorcentaje.NonAutoSizeHeight = 20
         Me.txtFletePorcentaje.NullText = "100"
@@ -5685,7 +5677,7 @@ Partial Class frm_Operacion
         Appearance189.TextVAlignAsString = "Middle"
         Me.UltraLabel40.Appearance = Appearance189
         Me.UltraLabel40.AutoSize = True
-        Me.UltraLabel40.Location = New System.Drawing.Point(493, 78)
+        Me.UltraLabel40.Location = New System.Drawing.Point(866, 55)
         Me.UltraLabel40.Name = "UltraLabel40"
         Me.UltraLabel40.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel40.TabIndex = 20
@@ -5725,7 +5717,7 @@ Partial Class frm_Operacion
         Appearance191.TextVAlignAsString = "Middle"
         Me.UltraLabel25.Appearance = Appearance191
         Me.UltraLabel25.AutoSize = True
-        Me.UltraLabel25.Location = New System.Drawing.Point(489, 100)
+        Me.UltraLabel25.Location = New System.Drawing.Point(862, 77)
         Me.UltraLabel25.Name = "UltraLabel25"
         Me.UltraLabel25.Size = New System.Drawing.Size(44, 14)
         Me.UltraLabel25.TabIndex = 26
@@ -5745,7 +5737,7 @@ Partial Class frm_Operacion
         Me.cboTracto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTracto.ForeColor = System.Drawing.Color.Black
         Me.cboTracto.ImageList = Me.imagenes
-        Me.cboTracto.Location = New System.Drawing.Point(395, 74)
+        Me.cboTracto.Location = New System.Drawing.Point(768, 51)
         Me.cboTracto.Name = "cboTracto"
         Me.cboTracto.Size = New System.Drawing.Size(92, 21)
         Me.cboTracto.TabIndex = 14
@@ -5785,7 +5777,7 @@ Partial Class frm_Operacion
         Me.cboCopiloto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCopiloto.ForeColor = System.Drawing.Color.Black
         Me.cboCopiloto.ImageList = Me.imagenes
-        Me.cboCopiloto.Location = New System.Drawing.Point(395, 28)
+        Me.cboCopiloto.Location = New System.Drawing.Point(381, 51)
         Me.cboCopiloto.Name = "cboCopiloto"
         Me.cboCopiloto.Size = New System.Drawing.Size(316, 21)
         Me.cboCopiloto.TabIndex = 12
@@ -5808,11 +5800,11 @@ Partial Class frm_Operacion
         '
         Me.txtGlosaEscala.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtGlosaEscala.Enabled = False
-        Me.txtGlosaEscala.Location = New System.Drawing.Point(7, 96)
+        Me.txtGlosaEscala.Location = New System.Drawing.Point(381, 5)
         Me.txtGlosaEscala.Multiline = True
         Me.txtGlosaEscala.Name = "txtGlosaEscala"
         Me.txtGlosaEscala.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtGlosaEscala.Size = New System.Drawing.Size(311, 25)
+        Me.txtGlosaEscala.Size = New System.Drawing.Size(700, 21)
         Me.txtGlosaEscala.TabIndex = 10
         UltraToolTipInfo8.ToolTipText = "Ingrese Justificacion de Escala Creada"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaEscala, UltraToolTipInfo8)
@@ -5824,7 +5816,7 @@ Partial Class frm_Operacion
         Me.txtFlete.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFlete.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtFlete.InputMask = "{double:5.4}"
-        Me.txtFlete.Location = New System.Drawing.Point(605, 74)
+        Me.txtFlete.Location = New System.Drawing.Point(978, 51)
         Me.txtFlete.Name = "txtFlete"
         Me.txtFlete.NonAutoSizeHeight = 20
         Me.txtFlete.ReadOnly = True
@@ -5853,7 +5845,7 @@ Partial Class frm_Operacion
         Appearance199.ForeColor = System.Drawing.Color.Navy
         Me.verCarreta.Appearance = Appearance199
         Me.verCarreta.AutoSize = True
-        Me.verCarreta.Location = New System.Drawing.Point(330, 99)
+        Me.verCarreta.Location = New System.Drawing.Point(703, 76)
         Me.verCarreta.Name = "verCarreta"
         Me.verCarreta.Size = New System.Drawing.Size(62, 17)
         Me.verCarreta.TabIndex = 15
@@ -5866,7 +5858,7 @@ Partial Class frm_Operacion
         Appearance200.TextVAlignAsString = "Middle"
         Me.UltraLabel34.Appearance = Appearance200
         Me.UltraLabel34.AutoSize = True
-        Me.UltraLabel34.Location = New System.Drawing.Point(338, 55)
+        Me.UltraLabel34.Location = New System.Drawing.Point(324, 78)
         Me.UltraLabel34.Name = "UltraLabel34"
         Me.UltraLabel34.Size = New System.Drawing.Size(54, 14)
         Me.UltraLabel34.TabIndex = 16
@@ -5894,7 +5886,7 @@ Partial Class frm_Operacion
         Me.cboAyudante.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboAyudante.ForeColor = System.Drawing.Color.Black
         Me.cboAyudante.ImageList = Me.imagenes
-        Me.cboAyudante.Location = New System.Drawing.Point(395, 51)
+        Me.cboAyudante.Location = New System.Drawing.Point(381, 74)
         Me.cboAyudante.Name = "cboAyudante"
         Me.cboAyudante.Size = New System.Drawing.Size(316, 21)
         Me.cboAyudante.TabIndex = 13
@@ -5906,7 +5898,7 @@ Partial Class frm_Operacion
         Me.btnAgregarViaje.Appearance = Appearance203
         Me.btnAgregarViaje.ImageList = Me.imagenes
         Me.btnAgregarViaje.ImageSize = New System.Drawing.Size(23, 23)
-        Me.btnAgregarViaje.Location = New System.Drawing.Point(677, 82)
+        Me.btnAgregarViaje.Location = New System.Drawing.Point(1050, 59)
         Me.btnAgregarViaje.Name = "btnAgregarViaje"
         Me.btnAgregarViaje.Size = New System.Drawing.Size(34, 36)
         Me.btnAgregarViaje.TabIndex = 21
@@ -5939,7 +5931,7 @@ Partial Class frm_Operacion
         Me.cboPiloto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboPiloto.ForeColor = System.Drawing.Color.Black
         Me.cboPiloto.ImageList = Me.imagenes
-        Me.cboPiloto.Location = New System.Drawing.Point(395, 5)
+        Me.cboPiloto.Location = New System.Drawing.Point(381, 28)
         Me.cboPiloto.Name = "cboPiloto"
         Me.cboPiloto.Size = New System.Drawing.Size(316, 21)
         Me.cboPiloto.TabIndex = 11
@@ -6197,7 +6189,7 @@ Partial Class frm_Operacion
         Me.expListaDemandas.Size = New System.Drawing.Size(288, 179)
         Me.expListaDemandas.TabIndex = 1
         Me.expListaDemandas.TabStop = False
-        Me.expListaDemandas.Text = "Lista demandas"
+        Me.expListaDemandas.Text = "Lista Pedido Carga"
         Me.expListaDemandas.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'UltraExpandableGroupBoxPanel16
@@ -6362,7 +6354,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox3.Size = New System.Drawing.Size(265, 55)
         Me.UltraExpandableGroupBox3.TabIndex = 1
         Me.UltraExpandableGroupBox3.TabStop = False
-        Me.UltraExpandableGroupBox3.Text = "Consultas: Demandas para Consumir"
+        Me.UltraExpandableGroupBox3.Text = "Consultas: Pedido Carga para Consumir"
         Me.UltraExpandableGroupBox3.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'UltraExpandableGroupBoxPanel9
@@ -6403,9 +6395,9 @@ Partial Class frm_Operacion
         Me.lblDemandaProgramar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDemandaProgramar.Location = New System.Drawing.Point(250, 9)
         Me.lblDemandaProgramar.Name = "lblDemandaProgramar"
-        Me.lblDemandaProgramar.Size = New System.Drawing.Size(152, 14)
+        Me.lblDemandaProgramar.Size = New System.Drawing.Size(150, 14)
         Me.lblDemandaProgramar.TabIndex = 7
-        Me.lblDemandaProgramar.Text = "Cod.Demanda Seleccionada:"
+        Me.lblDemandaProgramar.Text = "Codigo Pedido Carga Selec.:"
         Me.lblDemandaProgramar.Visible = False
         '
         'cboZonaDemanda
@@ -7167,7 +7159,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl8.Controls.Add(Me.griDetalleTercero)
         Me.UltraTabPageControl8.Controls.Add(Me.expContratoTercero)
-        Me.UltraTabPageControl8.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl8.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl8.Name = "UltraTabPageControl8"
         Me.UltraTabPageControl8.Size = New System.Drawing.Size(1248, 387)
         '
@@ -7799,6 +7791,7 @@ Partial Class frm_Operacion
         UltraTab2.Text = "Viajes"
         UltraTab3.TabPage = Me.UltraTabPageControl10
         UltraTab3.Text = "Viajes x Terceros"
+        UltraTab3.Visible = False
         UltraTab5.TabPage = Me.UltraTabPageControl16
         UltraTab5.Text = "Desenganches"
         UltraTab1.TabPage = Me.utpTrazabilidad
@@ -8941,6 +8934,7 @@ Partial Class frm_Operacion
         UltraTab12.Text = "Carga Operacion"
         UltraTab13.TabPage = Me.UltraTabPageControl8
         UltraTab13.Text = "Contrato Tercero"
+        UltraTab13.Visible = False
         Me.ficViaje.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab10, UltraTab12, UltraTab13})
         Me.ficViaje.TabStop = False
         Me.ficViaje.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
@@ -10308,6 +10302,7 @@ Partial Class frm_Operacion
         Me.chkIndTercero.Size = New System.Drawing.Size(96, 17)
         Me.chkIndTercero.TabIndex = 20
         Me.chkIndTercero.Text = "TERCERIZAC"
+        Me.chkIndTercero.Visible = False
         '
         'UltraLabel7
         '
@@ -11402,7 +11397,7 @@ Partial Class frm_Operacion
         '
         Appearance433.ForeColor = System.Drawing.Color.Navy
         Me.chkCarretaTransabilidad.Appearance = Appearance433
-        Me.chkCarretaTransabilidad.AutoSize = true
+        Me.chkCarretaTransabilidad.AutoSize = True
         Me.chkCarretaTransabilidad.Location = New System.Drawing.Point(174, 4)
         Me.chkCarretaTransabilidad.Name = "chkCarretaTransabilidad"
         Me.chkCarretaTransabilidad.Size = New System.Drawing.Size(14, 13)
@@ -11414,7 +11409,7 @@ Partial Class frm_Operacion
         Me.ficOperacion.Controls.Add(Me.UltraTabPageControl7)
         Me.ficOperacion.Controls.Add(Me.UltraTabPageControl1)
         Me.ficOperacion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficOperacion.Font = New System.Drawing.Font("Tahoma", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.ficOperacion.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficOperacion.Location = New System.Drawing.Point(0, 0)
         Me.ficOperacion.Name = "ficOperacion"
         Me.ficOperacion.SharedControlsPage = Me.UltraTabSharedControlsPage1
@@ -11427,7 +11422,7 @@ Partial Class frm_Operacion
         UltraTab15.TabPage = Me.UltraTabPageControl1
         UltraTab15.Text = "Mantenimiento"
         Me.ficOperacion.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab14, UltraTab15})
-        Me.ficOperacion.TabStop = false
+        Me.ficOperacion.TabStop = False
         Me.ficOperacion.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
         'UltraTabSharedControlsPage1
@@ -11443,11 +11438,20 @@ Partial Class frm_Operacion
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
+        'ugb_Espera
+        '
+        Me.ugb_Espera.Location = New System.Drawing.Point(430, 334)
+        Me.ugb_Espera.Name = "ugb_Espera"
+        Me.ugb_Espera.Size = New System.Drawing.Size(395, 65)
+        Me.ugb_Espera.TabIndex = 13
+        Me.ugb_Espera.Visible = False
+        '
         'frm_Operacion
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1254, 733)
+        Me.Controls.Add(Me.ugb_Espera)
         Me.Controls.Add(Me.ficOperacion)
         Me.KeyPreview = true
         Me.Name = "frm_Operacion"
@@ -12222,7 +12226,6 @@ End Sub
     Friend WithEvents UltraLabel59 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents cboVehiculoDisponible As ISL.Controles.Combo
     Friend WithEvents btnConsultarDisponibles As Infragistics.Win.Misc.UltraButton
-    Friend WithEvents ugb_Espera As ISL.Win.Espere
     Friend WithEvents griDisponibleVehiculo As ISL.Controles.Grilla
     Friend WithEvents Flota As System.Windows.Forms.Label
     Friend WithEvents cboFlota As Infragistics.Win.UltraWinEditors.UltraComboEditor
@@ -12237,4 +12240,5 @@ End Sub
     Friend WithEvents decProduccionIGV As Infragistics.Win.UltraWinEditors.UltraNumericEditor
     Friend WithEvents lblProduccionSinIGV As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents lblProduccionIGV As Infragistics.Win.Misc.UltraLabel
+    Friend WithEvents ugb_Espera As Espere
 End Class

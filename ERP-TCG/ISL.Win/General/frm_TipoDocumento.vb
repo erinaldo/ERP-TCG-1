@@ -383,7 +383,7 @@ Public Class frm_TipoDocumento
     Private Function GuardarTipoDocumento() As Boolean
         Try
             oeTipoDocumento.leDocumentoImpuesto = leDocumentoImpuesto
-            oeTipoDocumento.PrefijoID = gs_IdEmpresaSistema '@0001
+            oeTipoDocumento.PrefijoID = gs_IdClienteProveedorSistema.Trim '@0001
             If olTipoDocumento.Guardar(oeTipoDocumento) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcTipoPago, 2)

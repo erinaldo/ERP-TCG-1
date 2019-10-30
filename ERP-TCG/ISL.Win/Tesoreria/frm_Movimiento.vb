@@ -1076,7 +1076,7 @@ Public Class frm_Movimiento
             oeVehiculo.TipoOperacion = "A"
             oeVehiculo.Motriz = True
             oeVehiculo.Activo = True
-            oeVehiculo.IdEmpresaPropietaria = ISL_IdEmpresa
+            oeVehiculo.IdEmpresaPropietaria = gs_IdEmpresaSistema.Trim
             loVeh.AddRange(olVehiculo.Listar(oeVehiculo))
             LlenarCombo(cboTracto, "Placa", loVeh, 0)
             'Carga Estado Bolsa de Viaje
@@ -5448,8 +5448,8 @@ Public Class frm_Movimiento
                     End If
                 End If
                 If cboTipoDocumento.Text <> "VALE" And cboTipoDocumento.Text <> "SUSTENTO CONTABLE" Then
-                    If cboProveedores.Value = "1CH000004444" Then ''proveedor ISL
-                        Throw New Exception("El proveedor no debe ser ISL")
+                    If cboProveedores.Value = gs_IdClienteProveedorSistema.Trim Then ''proveedor EMP '@0001
+                        Throw New Exception("El proveedor no debe ser ")
                     End If
                 Else
                     If TipoMov = 2 And cboTrabajador2.Text = "" And cboTipoDocumento.Text <> "SUSTENTO CONTABLE" Then

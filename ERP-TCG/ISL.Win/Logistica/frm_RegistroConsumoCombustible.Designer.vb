@@ -2570,7 +2570,7 @@ Partial Class frm_RegistroConsumoCombustible
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea9)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea10)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatoGeneral)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1193, 411)
         '
@@ -3243,9 +3243,9 @@ Partial Class frm_RegistroConsumoCombustible
         Me.VerISL.ForeColor = System.Drawing.Color.Navy
         Me.VerISL.Location = New System.Drawing.Point(340, 30)
         Me.VerISL.Name = "VerISL"
-        Me.VerISL.Size = New System.Drawing.Size(63, 17)
+        Me.VerISL.Size = New System.Drawing.Size(68, 17)
         Me.VerISL.TabIndex = 9
-        Me.VerISL.Text = "VER ISL"
+        Me.VerISL.Text = "VER EMP"
         Me.VerISL.UseVisualStyleBackColor = False
         '
         'txtPiloto
@@ -3633,7 +3633,7 @@ Partial Class frm_RegistroConsumoCombustible
         '
         Me.UltraTabPageControl9.Controls.Add(Me.SplitContainer1)
         Me.UltraTabPageControl9.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1193, 411)
         '

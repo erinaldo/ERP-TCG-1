@@ -4,6 +4,7 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales
+' @0001 |   2019-10-01  |  CT2010   |   Version Sistema
 '=================================================================================================================
 
 
@@ -33,7 +34,7 @@ Imports Microsoft.Office.Interop
 
 Module m_Funciones
 
-
+    Dim olEmpresaSistema As New l_EmpresaSistemas
 #Region "EOS"
 
     'Public gstrIdEmpresa As String = "1CIX00000001"
@@ -149,7 +150,7 @@ Module m_Funciones
             oeDocumento.IdTipoDocumento = IdTipoDocumento
             oeDocumento.Serie = Serie
             oeDocumento.Tipo = Tipo
-            oeDocumento.IdEmpresaSis = gs_IdEmpresaSistema
+            oeDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
             oeDocumento = olDocumento.Obtener(oeDocumento)
             If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
             Return 1
@@ -185,7 +186,7 @@ Module m_Funciones
     ''' <remarks></remarks>
     Public gUsuarioSGI As New e_Usuario
     Public leUsuarios As New List(Of e_Usuario)
-
+    Public gEmpSis As New e_EmpresaSistemas
     'Nombre completo del usuario que se ha logueado al sistema
     'Id del usuario que se ha logueado en el sistema / Utilizado como UsuarioCreacion para todo lo que haga 
 
@@ -347,13 +348,13 @@ Module m_Funciones
 #Region "VariablesGlobalesPerfilesAreasEstados"
 
     'Declara constante pública del Id de la Empresa
-    Public Const ISL_IdClienteProveedor As String = "1CH000004444"
-    Public Const ISL_IdProveedor As String = "1CH000004444"
-    Public Const ISL_IdEmpresa As String = "1CH000006026"
+    'Public Const ISL_IdClienteProveedor As String = "" '@0001 "1CH000004444"
+    'Public Const ISL_IdProveedor As String = "" '@00001 "1CH000004444"
+    'Public Const ISL_IdEmpresa As String = "" '@00001 "1CH000006026"
     'Public Const ERP_Nombre As String = "ERP"
-    Public Const ISL_Nombre As String = "MI EMPRESA S.A.C."
-    Public Const ISL_RUC As String = "20479729141"
-    Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
+    'Public Const ISL_Nombre As String = "MI EMPRESA S.A.C." '@00001
+    'Public Const ISL_RUC As String = "20479729141" '@00001
+    'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
     Public Abrev_Empresa As String = "ERP"
@@ -603,8 +604,12 @@ Module m_Funciones
 
     Public _Operacion As String
     Public gs_PrefijoIdSucursal As String '@0001
+    Public gs_IdClienteProveedorSistema As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
     Public gs_TxtEmpresaSistema As String '@0001
+    Public gs_RucEmpresaSistema As String '@0001
+    Public gs_DireccionEmpresaSistema As String '@0001
+    Public gs_VersionSis As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -1088,13 +1093,22 @@ Module m_Funciones
 #Region "Metodos"
 
     Public Function VersionDelSistema() As String
+
         Dim version As String = String.Empty
-        If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
-            version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-        Else
-            version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
-        End If
+        '@0003
+        'If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
+        '    version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
+        'Else
+        '    version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
+        'End If
+        'Return version
+        '@0003 Inicio
+        Dim oeEmpresaSistemas As New e_EmpresaSistemas
+        oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
+        version = oeEmpresaSistemas.VersionSis.Trim
+        gs_VersionSis = version
         Return version
+        '@0003 Fin
     End Function
 
     Public Function AutenticarUsuario() As Boolean
@@ -4319,7 +4333,8 @@ Module m_Funciones
 
     Public Function ObtenerDesdeSunat(Ruc As String) As e_Persona
         Try
-            Dim strUrl As String = "http://www.sunat.gob.pe/w/wapS01Alias?ruc="
+            Dim strUrl As String = "https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias?ruc="
+
             Dim request As WebRequest = WebRequest.Create(strUrl & Ruc)
             Dim response As WebResponse = request.GetResponse()
             Dim reader As New StreamReader(response.GetResponseStream())

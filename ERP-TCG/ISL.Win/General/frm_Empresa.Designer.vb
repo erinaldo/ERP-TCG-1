@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_Empresa
     Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_Empresa
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
@@ -190,6 +190,7 @@ Partial Class frm_Empresa
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab11 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab12 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance47 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
@@ -325,6 +326,8 @@ Partial Class frm_Empresa
         Me.UltraTabSharedControlsPage4 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraTabPageControl8 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griContactos = New ISL.Controles.Grilla(Me.components)
+        Me.UltraTabPageControl10 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.ugb_Espera = New ISL.Win.Espere()
         Me.griEmpresa = New ISL.Controles.Grilla(Me.components)
@@ -465,6 +468,7 @@ Partial Class frm_Empresa
         Me.Ficha1.SuspendLayout()
         Me.UltraTabPageControl8.SuspendLayout()
         CType(Me.griContactos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraTabPageControl10.SuspendLayout()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.griEmpresa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuContextual1.SuspendLayout()
@@ -530,7 +534,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl2.Controls.Add(Me.griDireccion)
         Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1081, 305)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1227, 331)
         '
         'griDireccion
         '
@@ -551,7 +555,7 @@ Partial Class frm_Empresa
         Me.griDireccion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDireccion.Location = New System.Drawing.Point(0, 0)
         Me.griDireccion.Name = "griDireccion"
-        Me.griDireccion.Size = New System.Drawing.Size(1081, 305)
+        Me.griDireccion.Size = New System.Drawing.Size(1227, 331)
         Me.griDireccion.TabIndex = 1
         Me.griDireccion.Text = "Listado de Direcciones"
         '
@@ -564,7 +568,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl3.Controls.Add(Me.agrDatoIngresoDireccion)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1081, 305)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1227, 331)
         '
         'agrDatoIngresoDireccion
         '
@@ -575,7 +579,7 @@ Partial Class frm_Empresa
         Me.agrDatoIngresoDireccion.ForeColor = System.Drawing.Color.Black
         Me.agrDatoIngresoDireccion.Location = New System.Drawing.Point(0, 0)
         Me.agrDatoIngresoDireccion.Name = "agrDatoIngresoDireccion"
-        Me.agrDatoIngresoDireccion.Size = New System.Drawing.Size(1081, 305)
+        Me.agrDatoIngresoDireccion.Size = New System.Drawing.Size(1227, 331)
         Me.agrDatoIngresoDireccion.TabIndex = 0
         Me.agrDatoIngresoDireccion.Text = "Ingresos de Datos:"
         Me.agrDatoIngresoDireccion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1061,7 +1065,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl9.Controls.Add(Me.ugb_Finanzas)
         Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
-        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1081, 329)
+        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1227, 355)
         '
         'UltraGroupBox1
         '
@@ -1074,7 +1078,7 @@ Partial Class frm_Empresa
         Me.UltraGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraGroupBox1.Location = New System.Drawing.Point(275, 0)
         Me.UltraGroupBox1.Name = "UltraGroupBox1"
-        Me.UltraGroupBox1.Size = New System.Drawing.Size(806, 329)
+        Me.UltraGroupBox1.Size = New System.Drawing.Size(952, 355)
         Me.UltraGroupBox1.TabIndex = 37
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -1104,7 +1108,7 @@ Partial Class frm_Empresa
         Me.ugb_Finanzas.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ugb_Finanzas.Location = New System.Drawing.Point(0, 0)
         Me.ugb_Finanzas.Name = "ugb_Finanzas"
-        Me.ugb_Finanzas.Size = New System.Drawing.Size(275, 329)
+        Me.ugb_Finanzas.Size = New System.Drawing.Size(275, 355)
         Me.ugb_Finanzas.TabIndex = 36
         Me.ugb_Finanzas.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -1305,9 +1309,9 @@ Partial Class frm_Empresa
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Right)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Bottom)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Top)
-        Me.utpDireccion.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDireccion.Location = New System.Drawing.Point(1, 22)
         Me.utpDireccion.Name = "utpDireccion"
-        Me.utpDireccion.Size = New System.Drawing.Size(1083, 352)
+        Me.utpDireccion.Size = New System.Drawing.Size(1229, 378)
         '
         'utpDireccion_Fill_Panel
         '
@@ -1319,7 +1323,7 @@ Partial Class frm_Empresa
         Me.utpDireccion_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.utpDireccion_Fill_Panel.Location = New System.Drawing.Point(0, 24)
         Me.utpDireccion_Fill_Panel.Name = "utpDireccion_Fill_Panel"
-        Me.utpDireccion_Fill_Panel.Size = New System.Drawing.Size(1083, 328)
+        Me.utpDireccion_Fill_Panel.Size = New System.Drawing.Size(1229, 354)
         Me.utpDireccion_Fill_Panel.TabIndex = 0
         '
         'ficDireccion
@@ -1332,7 +1336,7 @@ Partial Class frm_Empresa
         Me.ficDireccion.Location = New System.Drawing.Point(0, 0)
         Me.ficDireccion.Name = "ficDireccion"
         Me.ficDireccion.SharedControlsPage = Me.UltraTabSharedControlsPage5
-        Me.ficDireccion.Size = New System.Drawing.Size(1083, 328)
+        Me.ficDireccion.Size = New System.Drawing.Size(1229, 354)
         Me.ficDireccion.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficDireccion.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl2
@@ -1352,7 +1356,7 @@ Partial Class frm_Empresa
         '
         Me.UltraTabSharedControlsPage5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage5.Name = "UltraTabSharedControlsPage5"
-        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1081, 305)
+        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1227, 331)
         '
         '_utpDireccion_Toolbars_Dock_Area_Left
         '
@@ -1362,7 +1366,7 @@ Partial Class frm_Empresa
         Me._utpDireccion_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.Color.Navy
         Me._utpDireccion_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 24)
         Me._utpDireccion_Toolbars_Dock_Area_Left.Name = "_utpDireccion_Toolbars_Dock_Area_Left"
-        Me._utpDireccion_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 328)
+        Me._utpDireccion_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 354)
         Me._utpDireccion_Toolbars_Dock_Area_Left.ToolbarsManager = Me.mnuDireccion
         '
         'mnuDireccion
@@ -1407,9 +1411,9 @@ Partial Class frm_Empresa
         Me._utpDireccion_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._utpDireccion_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me._utpDireccion_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.Color.Navy
-        Me._utpDireccion_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1083, 24)
+        Me._utpDireccion_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1229, 24)
         Me._utpDireccion_Toolbars_Dock_Area_Right.Name = "_utpDireccion_Toolbars_Dock_Area_Right"
-        Me._utpDireccion_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 328)
+        Me._utpDireccion_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 354)
         Me._utpDireccion_Toolbars_Dock_Area_Right.ToolbarsManager = Me.mnuDireccion
         '
         '_utpDireccion_Toolbars_Dock_Area_Bottom
@@ -1418,9 +1422,9 @@ Partial Class frm_Empresa
         Me._utpDireccion_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._utpDireccion_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me._utpDireccion_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.Color.Navy
-        Me._utpDireccion_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 352)
+        Me._utpDireccion_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 378)
         Me._utpDireccion_Toolbars_Dock_Area_Bottom.Name = "_utpDireccion_Toolbars_Dock_Area_Bottom"
-        Me._utpDireccion_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1083, 0)
+        Me._utpDireccion_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1229, 0)
         Me._utpDireccion_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.mnuDireccion
         '
         '_utpDireccion_Toolbars_Dock_Area_Top
@@ -1431,15 +1435,15 @@ Partial Class frm_Empresa
         Me._utpDireccion_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.Color.Navy
         Me._utpDireccion_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
         Me._utpDireccion_Toolbars_Dock_Area_Top.Name = "_utpDireccion_Toolbars_Dock_Area_Top"
-        Me._utpDireccion_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1083, 24)
+        Me._utpDireccion_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1229, 24)
         Me._utpDireccion_Toolbars_Dock_Area_Top.ToolbarsManager = Me.mnuDireccion
         '
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griTelefono)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1229, 378)
         '
         'griTelefono
         '
@@ -1458,7 +1462,7 @@ Partial Class frm_Empresa
         Me.griTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTelefono.Location = New System.Drawing.Point(0, 0)
         Me.griTelefono.Name = "griTelefono"
-        Me.griTelefono.Size = New System.Drawing.Size(1083, 352)
+        Me.griTelefono.Size = New System.Drawing.Size(1229, 378)
         Me.griTelefono.TabIndex = 1
         '
         'MenuContextual2
@@ -1467,27 +1471,27 @@ Partial Class frm_Empresa
         Me.MenuContextual2.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAgregar, Me.tsmiEditar, Me.tsmiQuitar})
         Me.MenuContextual2.Name = "MenuContextual2"
-        Me.MenuContextual2.Size = New System.Drawing.Size(181, 92)
+        Me.MenuContextual2.Size = New System.Drawing.Size(112, 70)
         '
         'tsmiAgregar
         '
         Me.tsmiAgregar.Image = Global.ISL.Win.My.Resources.Resources.Agregar
         Me.tsmiAgregar.Name = "tsmiAgregar"
-        Me.tsmiAgregar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiAgregar.Size = New System.Drawing.Size(111, 22)
         Me.tsmiAgregar.Text = "Agregar"
         '
         'tsmiEditar
         '
         Me.tsmiEditar.Image = Global.ISL.Win.My.Resources.Resources.Information
         Me.tsmiEditar.Name = "tsmiEditar"
-        Me.tsmiEditar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiEditar.Size = New System.Drawing.Size(111, 22)
         Me.tsmiEditar.Text = "Editar"
         '
         'tsmiQuitar
         '
         Me.tsmiQuitar.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
         Me.tsmiQuitar.Name = "tsmiQuitar"
-        Me.tsmiQuitar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiQuitar.Size = New System.Drawing.Size(111, 22)
         Me.tsmiQuitar.Text = "Quitar"
         '
         'ordTelefono
@@ -1501,7 +1505,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl4.Controls.Add(Me.griEmail)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1229, 378)
         '
         'griEmail
         '
@@ -1519,7 +1523,7 @@ Partial Class frm_Empresa
         Me.griEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griEmail.Location = New System.Drawing.Point(0, 0)
         Me.griEmail.Name = "griEmail"
-        Me.griEmail.Size = New System.Drawing.Size(1083, 352)
+        Me.griEmail.Size = New System.Drawing.Size(1229, 378)
         Me.griEmail.TabIndex = 1
         '
         'ordEmail
@@ -1534,7 +1538,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl6.Controls.Add(Me.agrContenedorTP)
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1229, 378)
         '
         'agrTipoPago
         '
@@ -1544,7 +1548,7 @@ Partial Class frm_Empresa
         Me.agrTipoPago.ForeColor = System.Drawing.Color.Black
         Me.agrTipoPago.Location = New System.Drawing.Point(309, 0)
         Me.agrTipoPago.Name = "agrTipoPago"
-        Me.agrTipoPago.Size = New System.Drawing.Size(774, 352)
+        Me.agrTipoPago.Size = New System.Drawing.Size(920, 378)
         Me.agrTipoPago.TabIndex = 1
         Me.agrTipoPago.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -1555,7 +1559,7 @@ Partial Class frm_Empresa
         Me.griTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTipoPago.Location = New System.Drawing.Point(2, 2)
         Me.griTipoPago.Name = "griTipoPago"
-        Me.griTipoPago.Size = New System.Drawing.Size(770, 348)
+        Me.griTipoPago.Size = New System.Drawing.Size(916, 374)
         Me.griTipoPago.TabIndex = 0
         Me.griTipoPago.Text = "Lista de Tipo Pago"
         '
@@ -1585,12 +1589,12 @@ Partial Class frm_Empresa
         '
         Me.agrContenedorTP.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.agrContenedorTP.Dock = System.Windows.Forms.DockStyle.Left
-        Me.agrContenedorTP.ExpandedSize = New System.Drawing.Size(309, 352)
+        Me.agrContenedorTP.ExpandedSize = New System.Drawing.Size(309, 378)
         Me.agrContenedorTP.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.None
         Me.agrContenedorTP.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.agrContenedorTP.Location = New System.Drawing.Point(0, 0)
         Me.agrContenedorTP.Name = "agrContenedorTP"
-        Me.agrContenedorTP.Size = New System.Drawing.Size(309, 352)
+        Me.agrContenedorTP.Size = New System.Drawing.Size(309, 378)
         Me.agrContenedorTP.TabIndex = 0
         Me.agrContenedorTP.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -1605,7 +1609,7 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(2, 2)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
-        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(305, 348)
+        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(305, 374)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
         '
         'btnCancelarTP
@@ -1689,7 +1693,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl7.Controls.Add(Me.Ficha1)
         Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
-        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1229, 378)
         '
         'Ficha1
         '
@@ -1700,7 +1704,7 @@ Partial Class frm_Empresa
         Me.Ficha1.Location = New System.Drawing.Point(0, 0)
         Me.Ficha1.Name = "Ficha1"
         Me.Ficha1.SharedControlsPage = Me.UltraTabSharedControlsPage4
-        Me.Ficha1.Size = New System.Drawing.Size(1083, 352)
+        Me.Ficha1.Size = New System.Drawing.Size(1229, 378)
         Me.Ficha1.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.Ficha1.TabIndex = 37
         UltraTab3.TabPage = Me.UltraTabPageControl9
@@ -1712,14 +1716,14 @@ Partial Class frm_Empresa
         '
         Me.UltraTabSharedControlsPage4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage4.Name = "UltraTabSharedControlsPage4"
-        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1081, 329)
+        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1227, 355)
         '
         'UltraTabPageControl8
         '
         Me.UltraTabPageControl8.Controls.Add(Me.griContactos)
         Me.UltraTabPageControl8.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl8.Name = "UltraTabPageControl8"
-        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1229, 378)
         '
         'griContactos
         '
@@ -1743,9 +1747,26 @@ Partial Class frm_Empresa
         Me.griContactos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griContactos.Location = New System.Drawing.Point(0, 0)
         Me.griContactos.Name = "griContactos"
-        Me.griContactos.Size = New System.Drawing.Size(1083, 352)
+        Me.griContactos.Size = New System.Drawing.Size(1229, 378)
         Me.griContactos.TabIndex = 2
         Me.griContactos.Text = "Listado de Direcciones"
+        '
+        'UltraTabPageControl10
+        '
+        Me.UltraTabPageControl10.Controls.Add(Me.WebBrowser1)
+        Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1229, 378)
+        '
+        'WebBrowser1
+        '
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(1229, 378)
+        Me.WebBrowser1.TabIndex = 2
+        Me.WebBrowser1.Url = New System.Uri("https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias", System.UriKind.Absolute)
         '
         'UltraTabPageControl1
         '
@@ -1754,7 +1775,7 @@ Partial Class frm_Empresa
         Me.UltraTabPageControl1.Controls.Add(Me.agrGrillaEmpresa)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1085, 528)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1231, 528)
         '
         'ugb_Espera
         '
@@ -1881,9 +1902,9 @@ Partial Class frm_Empresa
         Me.griEmpresa.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griEmpresa.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griEmpresa.ImageList = Me.imagenes
-        Me.griEmpresa.Location = New System.Drawing.Point(0, 100)
+        Me.griEmpresa.Location = New System.Drawing.Point(0, 105)
         Me.griEmpresa.Name = "griEmpresa"
-        Me.griEmpresa.Size = New System.Drawing.Size(1085, 428)
+        Me.griEmpresa.Size = New System.Drawing.Size(1231, 423)
         Me.griEmpresa.TabIndex = 1
         Me.griEmpresa.Text = "Información básica de empresas"
         '
@@ -1964,7 +1985,7 @@ Partial Class frm_Empresa
         Me.agrGrillaEmpresa.ForeColor = System.Drawing.Color.MidnightBlue
         Me.agrGrillaEmpresa.Location = New System.Drawing.Point(0, 0)
         Me.agrGrillaEmpresa.Name = "agrGrillaEmpresa"
-        Me.agrGrillaEmpresa.Size = New System.Drawing.Size(1085, 100)
+        Me.agrGrillaEmpresa.Size = New System.Drawing.Size(1231, 105)
         Me.agrGrillaEmpresa.TabIndex = 0
         Me.agrGrillaEmpresa.Text = "Busqueda"
         Me.agrGrillaEmpresa.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1977,14 +1998,14 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBox3.ContentAreaAppearance = Appearance42
         Me.UltraExpandableGroupBox3.Controls.Add(Me.UltraExpandableGroupBoxPanel5)
         Me.UltraExpandableGroupBox3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox3.ExpandedSize = New System.Drawing.Size(208, 80)
+        Me.UltraExpandableGroupBox3.ExpandedSize = New System.Drawing.Size(208, 85)
         Me.UltraExpandableGroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraExpandableGroupBox3.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox3.Location = New System.Drawing.Point(588, 17)
         Me.UltraExpandableGroupBox3.Name = "UltraExpandableGroupBox3"
-        Me.UltraExpandableGroupBox3.Size = New System.Drawing.Size(208, 80)
+        Me.UltraExpandableGroupBox3.Size = New System.Drawing.Size(208, 85)
         Me.UltraExpandableGroupBox3.TabIndex = 60
-        Me.UltraExpandableGroupBox3.Text = "Categoria SGI"
+        Me.UltraExpandableGroupBox3.Text = "Categoria EMP"
         Me.UltraExpandableGroupBox3.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'UltraExpandableGroupBoxPanel5
@@ -1994,7 +2015,7 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBoxPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel5.Location = New System.Drawing.Point(29, 3)
         Me.UltraExpandableGroupBoxPanel5.Name = "UltraExpandableGroupBoxPanel5"
-        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(176, 74)
+        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(176, 79)
         Me.UltraExpandableGroupBoxPanel5.TabIndex = 0
         '
         'chkIndicadorSGI
@@ -2059,11 +2080,11 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBox1.ContentAreaAppearance = Appearance45
         Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(275, 80)
+        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(275, 85)
         Me.UltraExpandableGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(313, 17)
         Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
-        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(275, 80)
+        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(275, 85)
         Me.UltraExpandableGroupBox1.TabIndex = 2
         Me.UltraExpandableGroupBox1.Text = "Clasificac. Cliente"
         Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2081,7 +2102,7 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(30, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(242, 74)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(242, 79)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'Colores4
@@ -2168,11 +2189,11 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBox4.ContentAreaAppearance = Appearance46
         Me.UltraExpandableGroupBox4.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
         Me.UltraExpandableGroupBox4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(310, 80)
+        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(310, 85)
         Me.UltraExpandableGroupBox4.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox4.Location = New System.Drawing.Point(3, 17)
         Me.UltraExpandableGroupBox4.Name = "UltraExpandableGroupBox4"
-        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(310, 80)
+        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(310, 85)
         Me.UltraExpandableGroupBox4.TabIndex = 1
         Me.UltraExpandableGroupBox4.Text = "Nivel Comerc."
         Me.UltraExpandableGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2194,7 +2215,7 @@ Partial Class frm_Empresa
         Me.UltraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel3.Location = New System.Drawing.Point(30, 3)
         Me.UltraExpandableGroupBoxPanel3.Name = "UltraExpandableGroupBoxPanel3"
-        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(277, 74)
+        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(277, 79)
         Me.UltraExpandableGroupBoxPanel3.TabIndex = 0
         '
         'Colores1
@@ -2318,7 +2339,7 @@ Partial Class frm_Empresa
         Me.utpMantenimiento.Controls.Add(Me.agrEmpresa)
         Me.utpMantenimiento.Location = New System.Drawing.Point(1, 22)
         Me.utpMantenimiento.Name = "utpMantenimiento"
-        Me.utpMantenimiento.Size = New System.Drawing.Size(1085, 528)
+        Me.utpMantenimiento.Size = New System.Drawing.Size(1231, 528)
         '
         'ficDetalle
         '
@@ -2329,12 +2350,13 @@ Partial Class frm_Empresa
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl6)
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl7)
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl8)
+        Me.ficDetalle.Controls.Add(Me.UltraTabPageControl10)
         Me.ficDetalle.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ficDetalle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficDetalle.Location = New System.Drawing.Point(0, 153)
+        Me.ficDetalle.Location = New System.Drawing.Point(0, 127)
         Me.ficDetalle.Name = "ficDetalle"
         Me.ficDetalle.SharedControlsPage = Me.UltraTabSharedControlsPage2
-        Me.ficDetalle.Size = New System.Drawing.Size(1085, 375)
+        Me.ficDetalle.Size = New System.Drawing.Size(1231, 401)
         Me.ficDetalle.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficDetalle.TabIndex = 1
         UltraTab4.TabPage = Me.utpDireccion
@@ -2350,14 +2372,16 @@ Partial Class frm_Empresa
         UltraTab11.Key = "tabContactos"
         UltraTab11.TabPage = Me.UltraTabPageControl8
         UltraTab11.Text = "Contactos"
-        Me.ficDetalle.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab4, UltraTab5, UltraTab6, UltraTab7, UltraTab8, UltraTab11})
+        UltraTab12.TabPage = Me.UltraTabPageControl10
+        UltraTab12.Text = "Consulta RUC"
+        Me.ficDetalle.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab4, UltraTab5, UltraTab6, UltraTab7, UltraTab8, UltraTab11, UltraTab12})
         Me.ficDetalle.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
         'UltraTabSharedControlsPage2
         '
         Me.UltraTabSharedControlsPage2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage2.Name = "UltraTabSharedControlsPage2"
-        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(1083, 352)
+        Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(1229, 378)
         '
         'agrEmpresa
         '
@@ -2389,7 +2413,7 @@ Partial Class frm_Empresa
         Me.agrEmpresa.ForeColor = System.Drawing.Color.MidnightBlue
         Me.agrEmpresa.Location = New System.Drawing.Point(0, 0)
         Me.agrEmpresa.Name = "agrEmpresa"
-        Me.agrEmpresa.Size = New System.Drawing.Size(1085, 153)
+        Me.agrEmpresa.Size = New System.Drawing.Size(1231, 127)
         Me.agrEmpresa.TabIndex = 0
         Me.agrEmpresa.Text = "Datos"
         Me.agrEmpresa.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2400,7 +2424,7 @@ Partial Class frm_Empresa
         Me.chkRelacionada.BackColor = System.Drawing.Color.Transparent
         Me.chkRelacionada.BackColorInternal = System.Drawing.Color.Transparent
         Me.chkRelacionada.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chkRelacionada.Location = New System.Drawing.Point(320, 100)
+        Me.chkRelacionada.Location = New System.Drawing.Point(602, 63)
         Me.chkRelacionada.Name = "chkRelacionada"
         Me.chkRelacionada.Size = New System.Drawing.Size(136, 18)
         Me.chkRelacionada.TabIndex = 24
@@ -2413,9 +2437,9 @@ Partial Class frm_Empresa
         Me.UltraGroupBox5.Controls.Add(Me.UltraGroupBox4)
         Me.UltraGroupBox5.Dock = System.Windows.Forms.DockStyle.Right
         Me.UltraGroupBox5.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.UltraGroupBox5.Location = New System.Drawing.Point(674, 17)
+        Me.UltraGroupBox5.Location = New System.Drawing.Point(847, 17)
         Me.UltraGroupBox5.Name = "UltraGroupBox5"
-        Me.UltraGroupBox5.Size = New System.Drawing.Size(235, 133)
+        Me.UltraGroupBox5.Size = New System.Drawing.Size(208, 107)
         Me.UltraGroupBox5.TabIndex = 10
         Me.UltraGroupBox5.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -2426,7 +2450,7 @@ Partial Class frm_Empresa
         Me.UltraGroupBox2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox2.Location = New System.Drawing.Point(3, 3)
         Me.UltraGroupBox2.Name = "UltraGroupBox2"
-        Me.UltraGroupBox2.Size = New System.Drawing.Size(229, 49)
+        Me.UltraGroupBox2.Size = New System.Drawing.Size(202, 33)
         Me.UltraGroupBox2.TabIndex = 0
         Me.UltraGroupBox2.Text = "Cliente"
         Me.UltraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2452,7 +2476,7 @@ Partial Class frm_Empresa
         Me.opcCliente.ItemSpacingHorizontal = 5
         Me.opcCliente.Location = New System.Drawing.Point(3, 17)
         Me.opcCliente.Name = "opcCliente"
-        Me.opcCliente.Size = New System.Drawing.Size(223, 29)
+        Me.opcCliente.Size = New System.Drawing.Size(196, 13)
         Me.opcCliente.TabIndex = 5
         Me.opcCliente.Text = "No (0)"
         '
@@ -2461,9 +2485,9 @@ Partial Class frm_Empresa
         Me.UltraGroupBox3.Controls.Add(Me.opcProveedor)
         Me.UltraGroupBox3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UltraGroupBox3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraGroupBox3.Location = New System.Drawing.Point(3, 52)
+        Me.UltraGroupBox3.Location = New System.Drawing.Point(3, 36)
         Me.UltraGroupBox3.Name = "UltraGroupBox3"
-        Me.UltraGroupBox3.Size = New System.Drawing.Size(229, 39)
+        Me.UltraGroupBox3.Size = New System.Drawing.Size(202, 35)
         Me.UltraGroupBox3.TabIndex = 1
         Me.UltraGroupBox3.Text = "Proveedor"
         Me.UltraGroupBox3.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2489,7 +2513,7 @@ Partial Class frm_Empresa
         Me.opcProveedor.ItemSpacingHorizontal = 5
         Me.opcProveedor.Location = New System.Drawing.Point(3, 17)
         Me.opcProveedor.Name = "opcProveedor"
-        Me.opcProveedor.Size = New System.Drawing.Size(223, 19)
+        Me.opcProveedor.Size = New System.Drawing.Size(196, 15)
         Me.opcProveedor.TabIndex = 5
         Me.opcProveedor.Text = "No (0)"
         '
@@ -2498,9 +2522,9 @@ Partial Class frm_Empresa
         Me.UltraGroupBox4.Controls.Add(Me.opcComisionista)
         Me.UltraGroupBox4.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.UltraGroupBox4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraGroupBox4.Location = New System.Drawing.Point(3, 91)
+        Me.UltraGroupBox4.Location = New System.Drawing.Point(3, 71)
         Me.UltraGroupBox4.Name = "UltraGroupBox4"
-        Me.UltraGroupBox4.Size = New System.Drawing.Size(229, 39)
+        Me.UltraGroupBox4.Size = New System.Drawing.Size(202, 33)
         Me.UltraGroupBox4.TabIndex = 2
         Me.UltraGroupBox4.Text = "Comisionista"
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2526,7 +2550,7 @@ Partial Class frm_Empresa
         Me.opcComisionista.ItemSpacingHorizontal = 5
         Me.opcComisionista.Location = New System.Drawing.Point(3, 17)
         Me.opcComisionista.Name = "opcComisionista"
-        Me.opcComisionista.Size = New System.Drawing.Size(223, 19)
+        Me.opcComisionista.Size = New System.Drawing.Size(196, 13)
         Me.opcComisionista.TabIndex = 5
         Me.opcComisionista.Text = "No (0)"
         '
@@ -2537,7 +2561,7 @@ Partial Class frm_Empresa
         Me.Etiqueta13.AutoSize = True
         Me.Etiqueta13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta13.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta13.Location = New System.Drawing.Point(27, 126)
+        Me.Etiqueta13.Location = New System.Drawing.Point(27, 102)
         Me.Etiqueta13.Name = "Etiqueta13"
         Me.Etiqueta13.Size = New System.Drawing.Size(54, 15)
         Me.Etiqueta13.TabIndex = 23
@@ -2547,7 +2571,7 @@ Partial Class frm_Empresa
         '
         Me.txtDireccionFiscal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtDireccionFiscal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccionFiscal.Location = New System.Drawing.Point(87, 122)
+        Me.txtDireccionFiscal.Location = New System.Drawing.Point(87, 98)
         Me.txtDireccionFiscal.Name = "txtDireccionFiscal"
         Me.txtDireccionFiscal.Size = New System.Drawing.Size(445, 22)
         Me.txtDireccionFiscal.TabIndex = 8
@@ -2606,9 +2630,9 @@ Partial Class frm_Empresa
         Me.btnActualizaDoc.ForeColor = System.Drawing.Color.Black
         Me.btnActualizaDoc.Location = New System.Drawing.Point(538, 22)
         Me.btnActualizaDoc.Name = "btnActualizaDoc"
-        Me.btnActualizaDoc.Size = New System.Drawing.Size(130, 44)
+        Me.btnActualizaDoc.Size = New System.Drawing.Size(75, 35)
         Me.btnActualizaDoc.TabIndex = 9
-        Me.btnActualizaDoc.Text = "Actualizar Fecha Pago"
+        Me.btnActualizaDoc.Text = "Actualizar F.Pago"
         '
         'etitipoempresa
         '
@@ -2618,11 +2642,11 @@ Partial Class frm_Empresa
         Me.etitipoempresa.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etitipoempresa.ForeColor = System.Drawing.Color.MidnightBlue
         Me.etitipoempresa.ImageTransparentColor = System.Drawing.Color.Empty
-        Me.etitipoempresa.Location = New System.Drawing.Point(4, 102)
+        Me.etitipoempresa.Location = New System.Drawing.Point(538, 80)
         Me.etitipoempresa.Name = "etitipoempresa"
-        Me.etitipoempresa.Size = New System.Drawing.Size(77, 15)
+        Me.etitipoempresa.Size = New System.Drawing.Size(30, 15)
         Me.etitipoempresa.TabIndex = 14
-        Me.etitipoempresa.Text = "Tipo Empresa:"
+        Me.etitipoempresa.Text = "Tipo:"
         '
         'cboTipoEmpresa
         '
@@ -2636,7 +2660,7 @@ Partial Class frm_Empresa
         Me.cboTipoEmpresa.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoEmpresa.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboTipoEmpresa.ImageList = Me.imagenes
-        Me.cboTipoEmpresa.Location = New System.Drawing.Point(87, 98)
+        Me.cboTipoEmpresa.Location = New System.Drawing.Point(538, 98)
         Me.cboTipoEmpresa.Name = "cboTipoEmpresa"
         Me.cboTipoEmpresa.Size = New System.Drawing.Size(200, 22)
         Me.cboTipoEmpresa.TabIndex = 6
@@ -2651,7 +2675,7 @@ Partial Class frm_Empresa
         Me.verActivo.BackColorInternal = System.Drawing.Color.Transparent
         Me.verActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.verActivo.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.verActivo.Location = New System.Drawing.Point(577, 73)
+        Me.verActivo.Location = New System.Drawing.Point(619, 28)
         Me.verActivo.Name = "verActivo"
         Me.verActivo.Size = New System.Drawing.Size(51, 17)
         Me.verActivo.TabIndex = 7
@@ -2770,11 +2794,11 @@ Partial Class frm_Empresa
         Me.UltraGroupBox6.Dock = System.Windows.Forms.DockStyle.Right
         Me.UltraGroupBox6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox6.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
-        Me.UltraGroupBox6.Location = New System.Drawing.Point(909, 17)
+        Me.UltraGroupBox6.Location = New System.Drawing.Point(1055, 17)
         Me.UltraGroupBox6.Name = "UltraGroupBox6"
-        Me.UltraGroupBox6.Size = New System.Drawing.Size(173, 133)
+        Me.UltraGroupBox6.Size = New System.Drawing.Size(173, 107)
         Me.UltraGroupBox6.TabIndex = 11
-        Me.UltraGroupBox6.Text = "Clasificación ISL"
+        Me.UltraGroupBox6.Text = "Clasificación EMP"
         Me.UltraGroupBox6.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'opcCategoria
@@ -2800,7 +2824,7 @@ Partial Class frm_Empresa
         Me.opcCategoria.ItemSpacingVertical = 8
         Me.opcCategoria.Location = New System.Drawing.Point(3, 17)
         Me.opcCategoria.Name = "opcCategoria"
-        Me.opcCategoria.Size = New System.Drawing.Size(167, 113)
+        Me.opcCategoria.Size = New System.Drawing.Size(167, 87)
         Me.opcCategoria.TabIndex = 0
         Me.opcCategoria.Text = "Ninguno (0)"
         '
@@ -2814,7 +2838,7 @@ Partial Class frm_Empresa
         Me.ficEmpresa.Location = New System.Drawing.Point(0, 0)
         Me.ficEmpresa.Name = "ficEmpresa"
         Me.ficEmpresa.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficEmpresa.Size = New System.Drawing.Size(1087, 551)
+        Me.ficEmpresa.Size = New System.Drawing.Size(1233, 551)
         Me.ficEmpresa.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficEmpresa.TabIndex = 0
         UltraTab9.TabPage = Me.UltraTabPageControl1
@@ -2828,13 +2852,13 @@ Partial Class frm_Empresa
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1085, 528)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1231, 528)
         '
         'frm_Empresa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1087, 551)
+        Me.ClientSize = New System.Drawing.Size(1233, 551)
         Me.Controls.Add(Me.ficEmpresa)
         Me.Name = "frm_Empresa"
         Me.Text = "Empresa"
@@ -2909,6 +2933,7 @@ Partial Class frm_Empresa
         Me.Ficha1.ResumeLayout(False)
         Me.UltraTabPageControl8.ResumeLayout(False)
         CType(Me.griContactos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraTabPageControl10.ResumeLayout(False)
         Me.UltraTabPageControl1.ResumeLayout(False)
         CType(Me.griEmpresa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuContextual1.ResumeLayout(False)
@@ -3145,5 +3170,6 @@ Partial Class frm_Empresa
     Friend WithEvents cboPais As Infragistics.Win.UltraWinEditors.UltraComboEditor
     Friend WithEvents Etiqueta19 As ISL.Controles.Etiqueta
     Friend WithEvents chkRelacionada As Infragistics.Win.UltraWinEditors.UltraCheckEditor
-
+    Friend WithEvents UltraTabPageControl10 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

@@ -5,6 +5,7 @@
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-08-30  |   NSOFT   |   Se comento los mensaje emergentes
 ' @0002 |   2019-01-01  |   CT2010  |   LLenar Combo
+' @0003 |   2019-10-01  |   CT2010  |   Disponibilidad de BD tabla EmpresaSistemas
 '=================================================================================================================
 
 
@@ -68,7 +69,8 @@ Public Class frm_Menu
     Dim oeUsuarioPerfil As New e_UsuarioPerfil
     Dim olUsuarioPerfil As l_UsuarioPerfil
     Dim oePerfil As New e_Perfil
-    Dim olPerfil As l_Perfil
+    Dim olPerfil As New l_Perfil
+    Dim olEmpresaSistema As New l_EmpresaSistemas
 
 
 #End Region
@@ -539,7 +541,8 @@ Public Class frm_Menu
                 'Rutina para Cerrar la Aplicacion luego de 10 Minutos por No estar disponible la Base de Datos ERP
                 If Bandbd Then
                     ContBD = ContBD + 1
-                    If ContBD > 100 Then
+                    'If ContBD > 100 Then '@0003
+                    If ContBD > 10 Then  '@0003 
                         Tiempo.Stop()
                         MessageBox.Show("El Personal de Sistemas necesita urgentemente" & Environment.NewLine &
                                         "cerrar todas las sesiones activas. El sistema se cerrará" & Environment.NewLine &
@@ -948,37 +951,52 @@ Public Class frm_Menu
     End Sub
 
     Private Sub ControlDeVersion_Tick(sender As Object, e As EventArgs) Handles ControlDeVersion.Tick
-        Dim informacion As UpdateCheckInfo = Nothing
-        Dim actualizacion As ApplicationDeployment
+        'Dim informacion As UpdateCheckInfo = Nothing
+        'Dim actualizacion As ApplicationDeployment
 
-        If ApplicationDeployment.IsNetworkDeployed Then
+        'If ApplicationDeployment.IsNetworkDeployed Then
 
-            'ControlDeVersion.Enabled = False
-            actualizacion = ApplicationDeployment.CurrentDeployment
+        '    'ControlDeVersion.Enabled = False
+        '    actualizacion = ApplicationDeployment.CurrentDeployment
+        '    Try
+        '        informacion = actualizacion.CheckForDetailedUpdate
+        '    Catch dde As DeploymentDownloadException
+        '        MessageBox.Show("La nueva versión de la aplicación no se puede descargar en este momento." & Environment.NewLine() & "Verifique su conexión, Error: " & dde.Message)
+        '    Catch ide As InvalidDeploymentException
+        '        MessageBox.Show("Problemas en la aplicación que controla las versiones diponibles, Error: " & ide.Message)
+        '    Catch ioe As Exception
+        '        MessageBox.Show("No se puede actualizar esta versión de la aplicación, Error " & ioe.Message)
+        '    End Try
+
+        '    If informacion.UpdateAvailable Then
+        '        Try
+
+        '            Dim Contenido As String = "Esta disponible una nueva versión del sistema. " & Environment.NewLine & "Para aplicar dichos cambios es necesario reiniciar la aplicación."
+        '            Alerta.Appearance.BackColor = Amarillo
+        '            Alerta.TreatCaptionAsLink = DefaultableBoolean.False
+        '            Alerta.Show(CargarDatosAlerta("Actualizacion ERP T&L", Contenido, GeneraImagen("\globo.ico"), "Version", ScreenPosition.Default))
+        '            Alerta.Appearance.Tag = "ControlVersion"
+
+        '        Catch dde As DeploymentDownloadException
+        '            MessageBox.Show("No se puede instalar la última versión de la aplicación" & Environment.NewLine() & "Verifique su conexión, Error: " & dde.Message)
+        '        End Try
+        '    End If
+        'End If
+        Dim oeEmpresaSistema As New e_EmpresaSistemas
+        oeEmpresaSistema = olEmpresaSistema.Obtener(oeEmpresaSistema)
+        If oeEmpresaSistema.VersionSis.Trim <> gs_VersionSis Then
             Try
-                informacion = actualizacion.CheckForDetailedUpdate
+                Dim Contenido As String = "Esta disponible una nueva versión del sistema. " & Environment.NewLine & "Para aplicar dichos cambios es necesario reiniciar la aplicación."
+                Alerta.Appearance.BackColor = Amarillo
+                Alerta.TreatCaptionAsLink = DefaultableBoolean.False
+                Alerta.Show(CargarDatosAlerta("Actualizacion ERP T&L", Contenido, GeneraImagen("\globo.ico"), "Version", ScreenPosition.Default))
+                Alerta.Appearance.Tag = "ControlVersion"
+
             Catch dde As DeploymentDownloadException
-                MessageBox.Show("La nueva versión de la aplicación no se puede descargar en este momento." & Environment.NewLine() & "Verifique su conexión, Error: " & dde.Message)
-            Catch ide As InvalidDeploymentException
-                MessageBox.Show("Problemas en la aplicación que controla las versiones diponibles, Error: " & ide.Message)
-            Catch ioe As Exception
-                MessageBox.Show("No se puede actualizar esta versión de la aplicación, Error " & ioe.Message)
+                MessageBox.Show("No se puede instalar la última versión de la aplicación" & Environment.NewLine() & "Verifique su conexión, Error: " & dde.Message)
             End Try
-
-            If informacion.UpdateAvailable Then
-                Try
-
-                    Dim Contenido As String = "Esta disponible una nueva versión del sistema. " & Environment.NewLine & "Para aplicar dichos cambios es necesario reiniciar la aplicación."
-                    Alerta.Appearance.BackColor = Amarillo
-                    Alerta.TreatCaptionAsLink = DefaultableBoolean.False
-                    Alerta.Show(CargarDatosAlerta("Actualizacion ERP T&L", Contenido, GeneraImagen("\globo.ico"), "Version", ScreenPosition.Default))
-                    Alerta.Appearance.Tag = "ControlVersion"
-
-                Catch dde As DeploymentDownloadException
-                    MessageBox.Show("No se puede instalar la última versión de la aplicación" & Environment.NewLine() & "Verifique su conexión, Error: " & dde.Message)
-                End Try
-            End If
         End If
+
         'ControlDeVersion.Enabled = True
     End Sub
 
