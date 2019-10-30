@@ -2924,7 +2924,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapVehiculo.Controls.Add(Me.griLista)
         Me.tapVehiculo.Controls.Add(Me.agrBusqueda)
-        Me.tapVehiculo.Location = New System.Drawing.Point(1, 22)
+        Me.tapVehiculo.Location = New System.Drawing.Point(-10000, -10000)
         Me.tapVehiculo.Name = "tapVehiculo"
         Me.tapVehiculo.Size = New System.Drawing.Size(1183, 565)
         '
@@ -3876,7 +3876,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapSituacional.Controls.Add(Me.griListaSituacional)
         Me.tapSituacional.Controls.Add(Me.UltraGroupBox2)
-        Me.tapSituacional.Location = New System.Drawing.Point(-10000, -10000)
+        Me.tapSituacional.Location = New System.Drawing.Point(1, 22)
         Me.tapSituacional.Name = "tapSituacional"
         Me.tapSituacional.Size = New System.Drawing.Size(1183, 565)
         '
@@ -5492,6 +5492,7 @@ Partial Class frm_Vehiculo
         UltraTab19.Text = "Documentos"
         UltraTab9.TabPage = Me.TabTarjetasCovisol
         UltraTab9.Text = "Tarjetas Covisol"
+        UltraTab9.Visible = False
         UltraTab10.TabPage = Me.UltraTabPageControl1
         UltraTab10.Text = "Mantenimiento"
         Me.tabs.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab13, UltraTab14, UltraTab8, UltraTab15, UltraTab16, UltraTab17, UltraTab18, UltraTab19, UltraTab9, UltraTab10})
@@ -6312,7 +6313,7 @@ Partial Class frm_Vehiculo
         'UltraTabPageControl7
         '
         Me.UltraTabPageControl7.Controls.Add(Me.tabLista)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1185, 588)
         '
@@ -6344,7 +6345,7 @@ Partial Class frm_Vehiculo
         'utpDetalle
         '
         Me.utpDetalle.Controls.Add(Me.tabDatosUnidades)
-        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
+        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1185, 588)
         '
