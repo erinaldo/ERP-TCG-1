@@ -3,7 +3,7 @@
 '=================================================================================================================
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
-' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo y Foto
 '=================================================================================================================
 
 Imports ERP.LogicaWCF
@@ -969,6 +969,7 @@ Public Class frm_Movimiento
         opcSalidaEntrada.CheckedIndex = 0
         etiLiquidar.Visible = False
         btnLiquidar.Visible = False
+        upbFoto.Image = Nothing '@0001
     End Sub
 
     Private Sub Listar(ByVal Activo As Boolean)
@@ -2143,9 +2144,16 @@ Public Class frm_Movimiento
                 oeTrabajador = olTrabajador.Obtener(oeTrabajador)
                 ExpGroupBoxReceptor.Expanded = True
             End If
+
             'If Not String.IsNullOrEmpty(oeTrabajador.oePersona.Dni) Then picRecibidor.Image = olPersona.Foto(oeTrabajador.oePersona.Dni)
+            '@0001
+            If oeTrabajador.Foto.Length <> 4 Then
+                upbFoto.Image = oeTrabajador.Foto
+            End If
+            '@0001
             If opcVerOtro.Checked Then
                 picRecibidor.Image = Nothing
+                upbFoto.Image = Nothing '@0001
                 cboTrabajador.Visible = True
                 etiFechaRecepcion.Visible = True
                 fechaRecibidor.Visible = True
