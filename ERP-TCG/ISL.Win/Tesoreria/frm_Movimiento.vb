@@ -5381,7 +5381,7 @@ Public Class frm_Movimiento
 
     Private Function ValidaGasto() As Boolean
         Try
-            ValidarCombo(cboGrupo, " Grupo")
+            'ValidarCombo(cboGrupo, " Grupo")
             If ValidaCombos() Then
                 If TipoMov = 1 Then
                     If DateDiff(DateInterval.Day, dtpFechaEmision.Value.Date, CDate(Me.fecFechaViaje.Value)) > 31 Then
