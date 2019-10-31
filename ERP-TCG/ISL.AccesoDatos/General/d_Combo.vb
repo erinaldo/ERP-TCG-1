@@ -101,7 +101,7 @@ Public Class d_Combo
             band = oeCombo.Nombre
             With oeCombo
                 If .Nombre = "Guias" Then .Id = .PrefijoID
-                If .Nombre = "IdSyNroAsiento" Then .Id = .PrefijoID
+                'If .Nombre = "IdSyNroAsiento" Then .Id = .PrefijoID
                 If .Nombre = "ConceptoEliminacion" Or .Nombre = "ConceptoCancelacion" Or .Nombre = "ConceptoAsignacion" Then
                     ds = SqlHelper.ExecuteDataset("[STD].[Isp_ConfiguracionDato_Listar]", _
                                                   "L", _

@@ -2119,6 +2119,7 @@ Public Class l_MovimientoDocumento
                                 loAsientoMovimiento = New List(Of e_AsientoMovimiento)
                                 With oeAsiento
                                     .TipoOperacion = "I" : .IdPeriodo = oeMovimientoDocumento.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
+                                    .PrefijoID = oeMovimientoDocumento.PrefijoID
                                     .NroAsiento = String.Empty : .Fecha = fecAsiento : .Glosa = asimod.Nombre & " " _
                                         & oeMovimientoDocumento.Compra.TipoDoc.Abreviatura & "/" & oeMovimientoDocumento.Serie & oeMovimientoDocumento.Numero & " " & _
                                         oeMovimientoDocumento.Compra.Proveedor.Nombre

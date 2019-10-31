@@ -3847,6 +3847,7 @@ Public Class frm_Movimiento
                         griMovTarjeta.DataBind()
                     End If
                 End If
+                .IdGrupo = String.Empty
                 .IdPeriodo = oePeriodo.Id
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .IdViaje = IdViaje
@@ -3900,7 +3901,7 @@ Public Class frm_Movimiento
                 .SubTotal = numImporte.Value
                 .IGV = numIGV.Value
                 .Total = numTotal.Value
-                .IdGrupo = cboGrupo.Value
+                '.IdGrupo = cboGrupo.Value
                 .NroGrupo = cboGrupo.Text
                 If .IdMoneda = "" Then .IdMoneda = "1CH01"
                 .TipoOperacion = "I"

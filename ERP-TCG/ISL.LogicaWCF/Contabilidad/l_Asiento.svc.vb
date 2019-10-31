@@ -2742,7 +2742,7 @@ Public Class l_Asiento
                     oeAsiMov.DataTableAnalisis = dtMovAna
                 End If
             Next
-            oeAsientoAnticipo.PrefijoID = oeAsiento.PrefijoID '@0001
+            'oeAsientoAnticipo.PrefijoID = oeAsiento.PrefijoID '@0001
             Return odAsiento.GuardarAsientoDscto(oeAsiento, oeAsientoAnticipo)
         Catch ex As Exception
             Throw ex
