@@ -7551,7 +7551,9 @@
       <DependentUpon>frm_ReporteBanco.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\ValeCaja.rdlc" />
+    <Content Include="Reportes\ValeCaja.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Seguridad\frm_Alerta.resx">
       <DependentUpon>frm_Alerta.vb</DependentUpon>
       <SubType>Designer</SubType>
