@@ -10,7 +10,7 @@ Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
-
+Imports System.ComponentModel
 Public Class frm_FichaPersonal
     Inherits frm_MenuPadre
 
@@ -272,6 +272,7 @@ Public Class frm_FichaPersonal
             fecFechaNacimiento.Value = Nothing
             Fotografia.Image = Nothing
             verActivo.Checked = True
+            upbFoto.Image = Nothing '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -342,6 +343,16 @@ Public Class frm_FichaPersonal
                 CargarDireccion(oePersona.leDireccionEP)
                 'Cargar Permisos de Trabajador
                 CargarPermisos(.Id)
+                '@0001
+                If .Foto.Length <> 4 Then
+                    upbFoto.Image = .Foto
+                    'Dim tc As TypeConverter = TypeDescriptor.GetConverter(GetType(Bitmap))
+                    'Dim bitmap As Bitmap = DirectCast(tc.ConvertFrom(.Foto), Bitmap)
+                    'Dim imagen As Image = bitmap
+                    'imagenGuardar.Image = imagen
+                    'btnDescargarJpg.Enabled = True
+                End If
+                '@0001
             End With
         Catch ex As Exception
             Throw ex

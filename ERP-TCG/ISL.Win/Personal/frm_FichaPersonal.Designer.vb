@@ -92,8 +92,8 @@ Partial Class frm_FichaPersonal
         Dim UltraGridColumn88 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GuardarIngresoConfirmado", 1)
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 187039313)
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 187039314)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 177479063)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 177479064)
         Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdTrabajador")
         Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
@@ -225,6 +225,7 @@ Partial Class frm_FichaPersonal
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraDataSource1 = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
+        Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.utpOcupaciones.SuspendLayout()
         CType(Me.griOcupacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.utpTelefono.SuspendLayout()
@@ -1328,6 +1329,7 @@ Partial Class frm_FichaPersonal
         '
         'UltraExpandableGroupBoxPanelFoto
         '
+        Me.UltraExpandableGroupBoxPanelFoto.Controls.Add(Me.upbFoto)
         Me.UltraExpandableGroupBoxPanelFoto.Controls.Add(Me.Fotografia)
         Me.UltraExpandableGroupBoxPanelFoto.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanelFoto.Location = New System.Drawing.Point(25, 3)
@@ -1337,10 +1339,9 @@ Partial Class frm_FichaPersonal
         '
         'Fotografia
         '
-        Me.Fotografia.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Fotografia.Location = New System.Drawing.Point(0, 0)
         Me.Fotografia.Name = "Fotografia"
-        Me.Fotografia.Size = New System.Drawing.Size(217, 307)
+        Me.Fotografia.Size = New System.Drawing.Size(217, 36)
         Me.Fotografia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Fotografia.TabIndex = 0
         Me.Fotografia.TabStop = False
@@ -1376,6 +1377,15 @@ Partial Class frm_FichaPersonal
         Me.UltraToolTipManager1.DisplayStyle = Infragistics.Win.ToolTipDisplayStyle.BalloonTip
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
+        '
+        'upbFoto
+        '
+        Me.upbFoto.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFoto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.upbFoto.Location = New System.Drawing.Point(0, 0)
+        Me.upbFoto.Name = "upbFoto"
+        Me.upbFoto.Size = New System.Drawing.Size(217, 307)
+        Me.upbFoto.TabIndex = 1
         '
         'frm_FichaPersonal
         '
@@ -1508,6 +1518,7 @@ Partial Class frm_FichaPersonal
     Friend WithEvents griControlPermisos As ISL.Controles.Grilla
     Friend WithEvents cboCentroBus As ISL.Controles.Combo
     Friend WithEvents Etiqueta9 As ISL.Controles.Etiqueta
+    Friend WithEvents upbFoto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     'Friend WithEvents Ccpp1 As ISL.Win.CCPP
 
 End Class

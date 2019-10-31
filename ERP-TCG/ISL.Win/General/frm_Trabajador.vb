@@ -355,6 +355,8 @@ Public Class frm_Trabajador
                             oeTrabajador.leOcupacionTrabajador = oeTemp.leOcupacionTrabajador
                             oeTrabajador.TipoOperacion = "A"
                         Else
+                            '@0001 Sin Foto
+                            oeTrabajador.Foto = BitConverter.GetBytes(0)
                             oeTrabajador.leOcupacionTrabajador = New List(Of e_OcupacionTrabajador)
                         End If
 
@@ -920,6 +922,7 @@ Public Class frm_Trabajador
         fecInicioSComp.Value = Date.Now.Date
         fecFinSComp.Value = Date.Now.Date
         ocultarTabs(True)
+        upbFoto.Image = Nothing '@0001
     End Sub
 
     Private Sub Mostrar()
@@ -1091,6 +1094,7 @@ Public Class frm_Trabajador
                 CargarSeguroComp(.leSeguroComp)
                 leDerechoHab = .leDerechoHabiente
                 CargarDerechoHabiente(leDerechoHab)
+                '@0001
                 If .Foto.Length <> 4 Then
                     upbFoto.Image = .Foto
                     Dim tc As TypeConverter = TypeDescriptor.GetConverter(GetType(Bitmap))
@@ -1099,6 +1103,7 @@ Public Class frm_Trabajador
                     imagenGuardar.Image = imagen
                     btnDescargarJpg.Enabled = True
                 End If
+                '@0001
             End With
         Catch ex As Exception
             Throw ex
@@ -1130,7 +1135,7 @@ Public Class frm_Trabajador
                     End If
                 End If
             End If
-            oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001 Inicio
             If upbFoto.Image IsNot Nothing Then
                 Dim ms As New System.IO.MemoryStream()
                 If ms.Length <> 0 Or FotoInsert = 1 Then
@@ -1140,6 +1145,7 @@ Public Class frm_Trabajador
                     oeTrabajador.Foto = upbFoto.Image()
                 End If
             End If
+            '@0001 Fin
             If olTrabajador.Guardar(oeTrabajador) Then
                 mensajeEmergente.Confirmacion("El trabajador " & oeTrabajador.oePersona.NombreCompleto & ", ha sido grabado satisfactoriamente", True)
                 If bandForm = "" Then

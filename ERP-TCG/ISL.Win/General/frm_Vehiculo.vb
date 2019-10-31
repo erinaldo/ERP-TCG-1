@@ -44,10 +44,10 @@ Public Class frm_Vehiculo
     Private bolExistRowCheck As Boolean = False
     Public Operacion As String
     Private _ingresando_datos As Boolean = False
-    Private Fs As FileStream = Nothing
-    Private FotoRuta As String = ""
-    Private FotoInsert As Integer = 0
-    Private FotoTamaño As Integer = 0
+    Private Fs As FileStream = Nothing '@0001
+    Private FotoRuta As String = "" '@0001
+    Private FotoInsert As Integer = 0 '@0001
+    Private FotoTamaño As Integer = 0 '@0001
     Public IdUnidad As String = ""
     Public IndConsultaGuardar As Boolean = True
     Public PlacaOriginal As String = ""
