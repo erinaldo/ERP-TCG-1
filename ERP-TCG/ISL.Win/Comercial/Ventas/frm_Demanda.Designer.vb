@@ -1196,7 +1196,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.agrListaRegistro)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1344, 522)
         '
@@ -1458,7 +1458,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griFactura)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1344, 522)
         '

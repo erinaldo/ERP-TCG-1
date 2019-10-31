@@ -284,9 +284,11 @@ Public Class frm_CambiarClave
                 Dim _subject As String = ""
                 Dim _body As String = ""
                 Dim clienteSMTP As New SmtpClient()
-                clienteSMTP.Host = "mail.induamerica.com.pe"
+                'clienteSMTP.Host = "mail.induamerica.com.pe"
+                clienteSMTP.Host = "smtp.gmail.com"
+                clienteSMTP.Port = 587
                 clienteSMTP.EnableSsl = False
-                clienteSMTP.Credentials = New Net.NetworkCredential("consultores.tecnologicos.2010@gmail.com", "wtb123")
+                clienteSMTP.Credentials = New Net.NetworkCredential("consultores.tecnologicos.2010@gmail.com", "-+2010+-")
                 Dim correo As New MailMessage()
                 correo.To.Add(_leEmailAux(0).Nombre)
                 correo.From = New MailAddress("consultores.tecnologicos.2010@gmail.com")
