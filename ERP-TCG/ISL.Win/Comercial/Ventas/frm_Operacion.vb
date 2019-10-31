@@ -48,46 +48,46 @@ Public Class frm_Operacion
 
 #Region "Declaración de variables"
 
-    Dim oeDemanda As e_Demanda
-    Dim olDemanda As l_Demanda
+    Dim oeDemanda As New e_Demanda
+    Dim olDemanda As New l_Demanda
 
-    Dim oeDemandaDetalle As e_DemandaDetalle
+    Dim oeDemandaDetalle As New e_DemandaDetalle
 
-    Dim oeRuta As e_Ruta
-    Dim oeRutaDemanda As e_Ruta
-    Dim olRuta As l_Ruta
-    Dim oeRutaVacio As e_Ruta
+    Dim oeRuta As New e_Ruta
+    Dim oeRutaDemanda As New e_Ruta
+    Dim olRuta As New l_Ruta
+    Dim oeRutaVacio As New e_Ruta
 
-    Dim olCombo As l_Combo
-    Dim oeCombo As e_Combo
+    Dim olCombo As New l_Combo
+    Dim oeCombo As New e_Combo
 
-    Dim olTrabajador As l_Trabajador
+    Dim olTrabajador As New l_Trabajador
 
-    Dim oeLugar As e_Lugar
-    Dim olLugar As l_Lugar
+    Dim oeLugar As New e_Lugar
+    Dim olLugar As New l_Lugar
 
-    Dim ListaEscala As List(Of e_Combo)
+    Dim ListaEscala As New List(Of e_Combo)
 
-    Dim oeVehiculo As e_Vehiculo
+    Dim oeVehiculo As New e_Vehiculo
 
-    Dim olVehiculo As l_Vehiculo
+    Dim olVehiculo As New l_Vehiculo
 
-    Dim oeViaje As e_Viaje
-    Dim oeOperacionDetalle As e_OperacionDetalle
+    Dim oeViaje As New e_Viaje
+    Dim oeOperacionDetalle As New e_OperacionDetalle
 
-    Dim oeOperacion As e_Operacion
-    Dim olOperacion As l_Operacion
+    Dim oeOperacion As New e_Operacion
+    Dim olOperacion As New l_Operacion
 
-    Dim oeUsuario As e_Usuario
+    Dim oeUsuario As New e_Usuario
 
-    Dim oeFlete As e_Flete
-    Dim olFlete As l_Flete
+    Dim oeFlete As New e_Flete
+    Dim olFlete As New l_Flete
 
-    Dim oeTarifa As e_TarifasCliente
-    Dim olTarifa As l_TarifasCliente
+    Dim oeTarifa As New e_TarifasCliente
+    Dim olTarifa As New l_TarifasCliente
 
-    Dim ListaViajeControl As List(Of e_Viaje)
-    Dim ListaViaje As List(Of e_Viaje)
+    Dim ListaViajeControl As New List(Of e_Viaje)
+    Dim ListaViaje As New List(Of e_Viaje)
 
 
     Dim _ingresando_datos As Boolean = False
@@ -100,19 +100,19 @@ Public Class frm_Operacion
     Dim OperacionEscala As Integer = 1
     Dim FechaViaje As Date
 
-    Dim oeUsuarioPerfil As e_UsuarioPerfil
-    Dim olUsuarioPerfil As l_UsuarioPerfil
+    Dim oeUsuarioPerfil As New e_UsuarioPerfil
+    Dim olUsuarioPerfil As New l_UsuarioPerfil
 
-    Dim oePerfil As e_Perfil
-    Dim olPerfil As l_Perfil
+    Dim oePerfil As New e_Perfil
+    Dim olPerfil As New l_Perfil
 
-    Dim oeRegistroEditado As e_RegistrosEditados
-    Dim olRegistroEditado As l_RegistrosEditados
+    Dim oeRegistroEditado As New e_RegistrosEditados
+    Dim olRegistroEditado As New l_RegistrosEditados
 
-    Dim oeDistanciaZona As e_DistanciaZona
-    Dim olDistanciaZona As l_DistanciaZona
+    Dim oeDistanciaZona As New e_DistanciaZona
+    Dim olDistanciaZona As New l_DistanciaZona
 
-    Dim olPrefijo As l_Configuracion
+    Dim olPrefijo As New l_Configuracion
 
     Dim RutaOperacion As String = ""
     Dim RutaIdOrigen As String = ""
@@ -126,9 +126,9 @@ Public Class frm_Operacion
     Dim IdRegistroEditado As String = ""
     Dim IndCopiloto As Boolean = False
 
-    Dim oeBonificacion As e_Bonificacion
-    Dim olBonificacion As l_Bonificacion
-    Dim ListaBonificacion As List(Of e_Bonificacion)
+    Dim oeBonificacion As New e_Bonificacion
+    Dim olBonificacion As New l_Bonificacion
+    Dim ListaBonificacion As New List(Of e_Bonificacion)
 
     Dim TextoMensaje As String = ""
 
@@ -150,9 +150,9 @@ Public Class frm_Operacion
 
     Private _acl As String = "", _estado As String = ""
 
-    Dim olViajeTercero As l_ViajesTerceros
-    Dim oeContratoTercero As e_ViajesTerceros
-    Dim oeIgv As e_Impuesto
+    Dim olViajeTercero As New l_ViajesTerceros
+    Dim oeContratoTercero As New e_ViajesTerceros
+    Dim oeIgv As New e_Impuesto
 
     Dim PrefijoId As String = ""
 
@@ -160,9 +160,9 @@ Public Class frm_Operacion
 
     Dim ValorIgv As Double = 0
 
-    Dim olFuncionesGenerales As l_FuncionesGenerales
+    Dim olFuncionesGenerales As New l_FuncionesGenerales
 
-    Dim ListTercero As List(Of e_Combo)
+    Dim ListTercero As New List(Of e_Combo)
 
     Dim ProcesoNegocio As String = "OPERACION"
 
@@ -180,7 +180,7 @@ Public Class frm_Operacion
     Public Shared codigoNuevoCLiente As String = ""
     Public codigoTercero As String = ""
     Dim olIgv As New l_Impuesto
-    Dim listaPagoEfectivo As List(Of e_Combo)
+    Dim listaPagoEfectivo As New List(Of e_Combo)
 
     'bitacora
     Dim columnas As New List(Of String)
@@ -193,8 +193,8 @@ Public Class frm_Operacion
     Dim GlosaDetalleDemanda As String = ""
     Dim ValoresAnterioresDetalleDemanda As String = ""
     Dim ValoresActualesDetalleDemanda As String = ""
-    Dim objEliminarTercero As e_Bitacora
-    Dim objEliminarDetalle As e_Bitacora
+    Dim objEliminarTercero As New e_Bitacora
+    Dim objEliminarDetalle As New e_Bitacora
 
     Dim cadenaDemandas As String = ""
     Dim cadenaDevuelta As Array
@@ -2914,6 +2914,8 @@ Public Class frm_Operacion
                 .Descripcion = "TIPOFUNCIONAL"
             End With
             olCombo.Listar(oeCombo)
+            '@0001 Inicio
+            FotoTracto(cboTracto.Value)
         End If
 
     End Sub
@@ -4478,7 +4480,8 @@ Public Class frm_Operacion
         ficViaje.SelectedTab = ficViaje.Tabs(1)
 
         mt_HabilitarSumatoria(False)
-
+        upbFoto.Image = Nothing
+        upbFotoTracto.Image = Nothing
     End Sub
 
     Public Sub Listar(Tipo As String, ByVal griLista As UltraWinGrid.UltraGrid)
@@ -7143,7 +7146,46 @@ Public Class frm_Operacion
         Next
         Return -1
     End Function
-
+    '@0001 Inicio
+    Private Sub cboPiloto_ValueChanged(sender As Object, e As EventArgs) Handles cboPiloto.ValueChanged
+        If cboPiloto.Value <> "" Then
+            FotoPiloto(cboPiloto.Value)
+        End If
+    End Sub
+    Private Sub FotoPiloto(ByVal IdTrabajador As String)
+        Try
+            upbFoto.Image = Nothing
+            Dim oeTrabajadorFoto As New e_Trabajador
+            oeTrabajadorFoto.CargaCompleto = False
+            oeTrabajadorFoto.Id = IdTrabajador
+            oeTrabajadorFoto = olTrabajador.Obtener(oeTrabajadorFoto)
+            If String.IsNullOrEmpty(oeTrabajadorFoto.Id) Then
+                oeTrabajadorFoto.Foto = BitConverter.GetBytes(0)
+            End If
+            If oeTrabajadorFoto.Foto.Length <> 4 Then
+                upbFoto.Image = oeTrabajadorFoto.Foto
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+    Private Sub FotoTracto(ByVal IdTracto As String)
+        Try
+            upbFotoTracto.Image = Nothing
+            Dim oeVehiculoFoto As New e_Vehiculo
+            oeVehiculoFoto.Id = IdTracto
+            oeVehiculoFoto = olVehiculo.Obtener(oeVehiculoFoto)
+            If String.IsNullOrEmpty(oeVehiculoFoto.Id) Then
+                oeVehiculoFoto.Foto = BitConverter.GetBytes(0)
+            End If
+            If oeVehiculoFoto.Foto.Length <> 4 Then
+                upbFotoTracto.Image = oeVehiculoFoto.Foto
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+    '@0001 Fin
     Public Function llenarTabla() As String
         Dim estiloTh As String = "<th style='white-space: nowrap' text-align: left;vertical-align: top;border: 1px solid #000;border-collapse: collapse;padding: 0.3em;caption-side: bottom;>"
         Dim estiloTd As String = "<td style='white-space: nowrap' align='left' valign='top'>"

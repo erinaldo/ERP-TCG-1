@@ -2424,12 +2424,14 @@ Module m_Funciones
 
                     Next
                 End If
-                Dim client As New SmtpClient("mail.induamerica.com.pe")
-                'client.EnableSsl = False
-                Dim clave As String = "wtb123"
-                client.Credentials = New NetworkCredential("consultores.tecnologicos.2010@gmail.com", "wtb123")
+                'Dim client As New SmtpClient("mail.induamerica.com.pe")
+                Dim client As New SmtpClient("smtp.gmail.com")
+                client.EnableSsl = False
+                client.Port = 587
+                Dim clave As String = "-+2010+-"
+                client.Credentials = New NetworkCredential("consultores.tecnologicos.2010@gmail.com", "-+2010+-")
                 client.Send(lo_Message)
-                client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials
+                'client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials
                 lo_Message.Attachments.Clear()
                 lo_Message = Nothing
                 client = Nothing
