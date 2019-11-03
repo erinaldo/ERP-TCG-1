@@ -5120,6 +5120,7 @@ Public Class l_MovimientoDocumento
                                 .Asiento_MovDoc.TipoOperacion = "I"
                                 .Asiento_MovDoc.IdMovimientoDocumento = oeMovDocumento.Id
                                 .Asiento_MovDoc.Activo = True
+                                .PrefijoID = oeMovDocumento.PrefijoID
                             End With
                             For Each oeAux In oeAsientoModel.leDetalle.OrderBy(Function(it) it.Fila).ToList
                                 oeAsientoMov = New e_AsientoMovimiento
