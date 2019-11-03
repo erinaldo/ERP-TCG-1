@@ -209,16 +209,16 @@ Public Class frm_GastosCaja
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
-                Validar_ExistenciaComprobante(False)
-                If GuardarGasto() Then
+            'If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            Validar_ExistenciaComprobante(False)
+            If GuardarGasto() Then
                     mensajeEmergente.Confirmacion("Gastos Ingresados Correctamente", True)
                     MostrarTabs(0, ficGastosCaja, 0)
                     Consultar(True)
                 End If
-            Else
-                Throw New Exception("No puede Realizar Movimientos en esta Sede")
-            End If
+            'Else
+            '    Throw New Exception("No puede Realizar Movimientos en esta Sede")
+            'End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -1085,8 +1085,8 @@ Public Class frm_GastosCaja
                 .IdMoneda = oeMoneda.Id
                 .FechaCreacion = FechaActual
                 .FechaEmision = dtpFechaEmision.Value
-                .IdGrupo = cboGrupo.Value
-                .NroGrupo = cboGrupo.Text
+                .IdGrupo = String.Empty ' cboGrupo.Value
+                .NroGrupo = String.Empty ' cboGrupo.Text
                 .IdFlujoCaja = cboFlujoCaja.Value
                 .TipoDocumento = cboTipoDocumento.Text
                 .SerieDoc = gfc_ConcatenarCeros(Me.txtSerie.Text, lenSerie)
@@ -1484,10 +1484,10 @@ Public Class frm_GastosCaja
             '    dtpFechaEmision.Focus()
             '    Throw New Exception("No Puede Ingresar Documento con mas 6 meses de Antiguedad")
             'End If
-            If cboGrupo.SelectedIndex = -1 Then
-                cboGrupo.Focus()
-                Throw New Exception("Seleccione Grupo")
-            End If
+            'If cboGrupo.SelectedIndex = -1 Then
+            '    cboGrupo.Focus()
+            '    Throw New Exception("Seleccione Grupo")
+            'End If
             If cboTipoGasto.SelectedIndex = -1 Then
                 cboTipoGasto.Focus()
                 Throw New Exception("Seleccione Tipo de Gasto")
@@ -1573,10 +1573,10 @@ Public Class frm_GastosCaja
                 fecPeriodo.Focus()
                 Throw New Exception("No Puede Ingresar un Gasto a un Periodo Menor")
             End If
-            If oePeriodo.Id <> oePerGrupo.Id Then
-                fecPeriodo.Focus()
-                Throw New Exception("Periodo Seleccionado Diferente al Periodo del Grupo")
-            End If
+            'If oePeriodo.Id <> oePerGrupo.Id Then
+            '    fecPeriodo.Focus()
+            '    Throw New Exception("Periodo Seleccionado Diferente al Periodo del Grupo")
+            'End If
             Return True
         Catch ex As Exception
             Throw ex
