@@ -103,6 +103,7 @@ Public Class frm_GastosCaja
     Private IndCompraAlmacen As Boolean = False
 
     Private lenSerie As Integer = 0, lenNumero As Integer = 0
+    Private mb_Load As Boolean = False
 
     'Concepto
     Private oeConcepto As New e_Concepto
@@ -209,16 +210,16 @@ Public Class frm_GastosCaja
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
-                Validar_ExistenciaComprobante(False)
-                If GuardarGasto() Then
+            'If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            Validar_ExistenciaComprobante(False)
+            If GuardarGasto() Then
                     mensajeEmergente.Confirmacion("Gastos Ingresados Correctamente", True)
                     MostrarTabs(0, ficGastosCaja, 0)
                     Consultar(True)
                 End If
-            Else
-                Throw New Exception("No puede Realizar Movimientos en esta Sede")
-            End If
+            'Else
+            '    Throw New Exception("No puede Realizar Movimientos en esta Sede")
+            'End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -270,6 +271,41 @@ Public Class frm_GastosCaja
 
 #End Region
 
+    Private Sub lr_ConfigurarGrillas(lo As List(Of e_MovimientoDocumento))
+        Try
+            With griListaDocumentoCompra
+                .DataSource = lo
+                If mb_Load Then
+                    .ResetDisplayLayout()
+                    .Text = String.Empty
+                    gmt_ConfiguraGrilla(griListaDocumentoCompra, "Tahoma", True, UIElementBorderStyle.Default)
+                    gmt_OcultarColumna(griListaDocumentoCompra, False, "NombreProveedor", "Serie", "Numero", "FechaEmision", "Moneda", "Saldo", "Total")
+                    .DisplayLayout.Bands(0).Columns("NombreProveedor").Width = 140
+                    .DisplayLayout.Bands(0).Columns("FechaEmision").Width = 90
+                    .DisplayLayout.Bands(0).Columns("Serie").Width = 40
+                    .DisplayLayout.Bands(0).Columns("Numero").Width = 80
+                    .DisplayLayout.Bands(0).Columns("Moneda").Width = 100
+                    .DisplayLayout.Bands(0).Columns("Saldo").Width = 100
+                    .DisplayLayout.Bands(0).Columns("Total").Width = 100
+                    '.DisplayLayout.Bands(0).Columns("Sel").CellClickAction = UltraWinGrid.CellClickAction.RowSelect
+                    '.DisplayLayout.Bands(0).Columns("Sel").Header.CheckBoxVisibility = HeaderCheckBoxVisibility.Never
+                    '.DisplayLayout.Bands(0).Columns("Sel").Header.Caption = ""
+                    .DisplayLayout.Bands(0).Columns("NombreProveedor").Header.Caption = "Proveedor"
+                    .DisplayLayout.ViewStyle = UltraWinGrid.ViewStyle.SingleBand
+                    .DisplayLayout.Override.AllowColSizing = UltraWinGrid.AllowColSizing.Free
+                    .DisplayLayout.Override.CellClickAction = UltraWinGrid.CellClickAction.RowSelect
+                    .DisplayLayout.Override.AllowUpdate = DefaultableBoolean.True
+                    .DisplayLayout.Override.BorderStyleCell = UIElementBorderStyle.Dotted
+                    .DisplayLayout.Override.BorderStyleRow = UIElementBorderStyle.Dotted
+                    '.DisplayLayout.Bands(0).Columns("FechaEmision").CellActivation = Activation.NoEdit
+                    gmt_FormatoColumna(griListaDocumentoCompra, "#,##0.00", UltraWinGrid.ColumnStyle.Double, HAlign.Right, "Saldo", "Total")
+                End If
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
 #Region "Eventos"
 
     Private Sub frm_GastosCaja_Activated(sender As Object, e As EventArgs) Handles Me.Activated
@@ -290,6 +326,9 @@ Public Class frm_GastosCaja
             gf_AsignarEventoSeleccionarTexto(Me)
             InicializarLogicas()
             CargarCombos()
+            mb_Load = True
+            lr_ConfigurarGrillas(New List(Of e_MovimientoDocumento))
+            mb_Load = False
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -1085,8 +1124,8 @@ Public Class frm_GastosCaja
                 .IdMoneda = oeMoneda.Id
                 .FechaCreacion = FechaActual
                 .FechaEmision = dtpFechaEmision.Value
-                .IdGrupo = cboGrupo.Value
-                .NroGrupo = cboGrupo.Text
+                .IdGrupo = String.Empty ' cboGrupo.Value
+                .NroGrupo = String.Empty ' cboGrupo.Text
                 .IdFlujoCaja = cboFlujoCaja.Value
                 .TipoDocumento = cboTipoDocumento.Text
                 .SerieDoc = gfc_ConcatenarCeros(Me.txtSerie.Text, lenSerie)
@@ -1096,7 +1135,7 @@ Public Class frm_GastosCaja
                 .TipoDocumento = cboTipoDocumento.Text.Trim
                 .IdProveedor = IIf(cboProveedores.Value <> Nothing, cboProveedores.Value, "")
                 .Proveedor = cboProveedores.Text
-                .IdPeriodo = oePerGrupo.Id
+                .IdPeriodo = oePeriodo.Id ' oePerGrupo.Id
                 .SubTotal = numSubTotal.Value
                 .IGV = numIGV.Value
                 .Total = numTotal.Value
@@ -1421,12 +1460,13 @@ Public Class frm_GastosCaja
                 .IdTipoDocumento = cboDocumentoAlmacen.Value
                 .IdMoneda = "1CH01"
             End With
-            With griListaDocumentoCompra
-                .DataSource = olMovimientoDocumento.ListarDocumentosPorCompras(oeMovDoc)
-                .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
-                .DisplayLayout.Bands(0).Columns("IndServicioMaterial").Hidden = True
-                .DisplayLayout.Bands(0).Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
-            End With
+            'With griListaDocumentoCompra
+            '    .DataSource = olMovimientoDocumento.ListarDocumentosPorCompras(oeMovDoc)
+            '    .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            '    .DisplayLayout.Bands(0).Columns("IndServicioMaterial").Hidden = True
+            '    .DisplayLayout.Bands(0).Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
+            'End With+
+            lr_ConfigurarGrillas(olMovimientoDocumento.ListarDocumentosPorCompras(oeMovDoc))
             With griListaDocumentoCompra
                 'Ubica el cursor el el primer registro de la grilla
                 If .Rows.Count > 0 Then
@@ -1484,10 +1524,10 @@ Public Class frm_GastosCaja
             '    dtpFechaEmision.Focus()
             '    Throw New Exception("No Puede Ingresar Documento con mas 6 meses de Antiguedad")
             'End If
-            If cboGrupo.SelectedIndex = -1 Then
-                cboGrupo.Focus()
-                Throw New Exception("Seleccione Grupo")
-            End If
+            'If cboGrupo.SelectedIndex = -1 Then
+            '    cboGrupo.Focus()
+            '    Throw New Exception("Seleccione Grupo")
+            'End If
             If cboTipoGasto.SelectedIndex = -1 Then
                 cboTipoGasto.Focus()
                 Throw New Exception("Seleccione Tipo de Gasto")
@@ -1573,10 +1613,10 @@ Public Class frm_GastosCaja
                 fecPeriodo.Focus()
                 Throw New Exception("No Puede Ingresar un Gasto a un Periodo Menor")
             End If
-            If oePeriodo.Id <> oePerGrupo.Id Then
-                fecPeriodo.Focus()
-                Throw New Exception("Periodo Seleccionado Diferente al Periodo del Grupo")
-            End If
+            'If oePeriodo.Id <> oePerGrupo.Id Then
+            '    fecPeriodo.Focus()
+            '    Throw New Exception("Periodo Seleccionado Diferente al Periodo del Grupo")
+            'End If
             Return True
         Catch ex As Exception
             Throw ex

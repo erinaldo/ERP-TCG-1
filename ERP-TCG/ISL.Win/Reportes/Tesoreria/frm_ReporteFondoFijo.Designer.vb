@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_ReporteFondoFijo
     Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,17 @@ Partial Class frm_ReporteFondoFijo
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim PaintElement1 As Infragistics.UltraChart.Resources.Appearance.PaintElement = New Infragistics.UltraChart.Resources.Appearance.PaintElement()
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.agrFondoFijo = New ISL.Controles.Agrupacion(Me.components)
         Me.agrDetalleFondoFijo = New ISL.Controles.Agrupacion(Me.components)
         Me.griDetalle = New ISL.Controles.Grilla(Me.components)
@@ -52,7 +51,6 @@ Partial Class frm_ReporteFondoFijo
         Me.decSaldo = New ISL.Controles.NumeroDecimal(Me.components)
         Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.ugb_Espera = New ISL.Win.Espere()
-        Me.lblMaximo = New Infragistics.Win.Misc.UltraLabel()
         CType(Me.agrFondoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrFondoFijo.SuspendLayout()
         CType(Me.agrDetalleFondoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -277,7 +275,6 @@ Partial Class frm_ReporteFondoFijo
         '
         'Agrupacion1
         '
-        Me.Agrupacion1.Controls.Add(Me.lblMaximo)
         Me.Agrupacion1.Controls.Add(Me.griMovimientoFondoFijo)
         Me.Agrupacion1.Controls.Add(Me.agrTotales)
         Me.Agrupacion1.Dock = System.Windows.Forms.DockStyle.Left
@@ -323,9 +320,9 @@ Partial Class frm_ReporteFondoFijo
         '
         'agrTotales
         '
-        Appearance2.BackColor = System.Drawing.Color.White
-        Appearance2.BackColor2 = System.Drawing.Color.White
-        Me.agrTotales.ContentAreaAppearance = Appearance2
+        Appearance1.BackColor = System.Drawing.Color.White
+        Appearance1.BackColor2 = System.Drawing.Color.White
+        Me.agrTotales.ContentAreaAppearance = Appearance1
         Me.agrTotales.Controls.Add(Me.Etiqueta3)
         Me.agrTotales.Controls.Add(Me.Etiqueta2)
         Me.agrTotales.Controls.Add(Me.Etiqueta1)
@@ -344,9 +341,9 @@ Partial Class frm_ReporteFondoFijo
         '
         'Etiqueta3
         '
-        Appearance3.BackColor = System.Drawing.Color.Transparent
-        Appearance3.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta3.Appearance = Appearance3
+        Appearance2.BackColor = System.Drawing.Color.Transparent
+        Appearance2.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta3.Appearance = Appearance2
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
@@ -358,9 +355,9 @@ Partial Class frm_ReporteFondoFijo
         '
         'Etiqueta2
         '
-        Appearance4.BackColor = System.Drawing.Color.Transparent
-        Appearance4.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta2.Appearance = Appearance4
+        Appearance3.BackColor = System.Drawing.Color.Transparent
+        Appearance3.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta2.Appearance = Appearance3
         Me.Etiqueta2.AutoSize = True
         Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
@@ -372,9 +369,9 @@ Partial Class frm_ReporteFondoFijo
         '
         'Etiqueta1
         '
-        Appearance5.BackColor = System.Drawing.Color.Transparent
-        Appearance5.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta1.Appearance = Appearance5
+        Appearance4.BackColor = System.Drawing.Color.Transparent
+        Appearance4.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta1.Appearance = Appearance4
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
@@ -386,8 +383,8 @@ Partial Class frm_ReporteFondoFijo
         '
         'decIngresos
         '
-        Appearance6.ForeColor = System.Drawing.Color.Black
-        Me.decIngresos.Appearance = Appearance6
+        Appearance5.ForeColor = System.Drawing.Color.Black
+        Me.decIngresos.Appearance = Appearance5
         Me.decIngresos.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decIngresos.ForeColor = System.Drawing.Color.Black
@@ -403,8 +400,8 @@ Partial Class frm_ReporteFondoFijo
         '
         'decEgresos
         '
-        Appearance7.ForeColor = System.Drawing.Color.Black
-        Me.decEgresos.Appearance = Appearance7
+        Appearance6.ForeColor = System.Drawing.Color.Black
+        Me.decEgresos.Appearance = Appearance6
         Me.decEgresos.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decEgresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decEgresos.ForeColor = System.Drawing.Color.Black
@@ -420,8 +417,8 @@ Partial Class frm_ReporteFondoFijo
         '
         'decSaldo
         '
-        Appearance8.ForeColor = System.Drawing.Color.Black
-        Me.decSaldo.Appearance = Appearance8
+        Appearance7.ForeColor = System.Drawing.Color.Black
+        Me.decSaldo.Appearance = Appearance7
         Me.decSaldo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decSaldo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decSaldo.ForeColor = System.Drawing.Color.Black
@@ -447,22 +444,6 @@ Partial Class frm_ReporteFondoFijo
         Me.ugb_Espera.Size = New System.Drawing.Size(394, 68)
         Me.ugb_Espera.TabIndex = 9
         Me.ugb_Espera.Visible = False
-        '
-        'lblMaximo
-        '
-        Appearance1.BackColor = System.Drawing.Color.White
-        Appearance1.BackColor2 = System.Drawing.Color.White
-        Appearance1.FontData.BoldAsString = "True"
-        Appearance1.ForeColor = System.Drawing.Color.Navy
-        Appearance1.TextHAlignAsString = "Center"
-        Appearance1.TextVAlignAsString = "Middle"
-        Me.lblMaximo.Appearance = Appearance1
-        Me.lblMaximo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
-        Me.lblMaximo.Location = New System.Drawing.Point(3, 292)
-        Me.lblMaximo.Name = "lblMaximo"
-        Me.lblMaximo.Size = New System.Drawing.Size(344, 24)
-        Me.lblMaximo.TabIndex = 1
-        Me.lblMaximo.Text = "IMPORTE MÁXIMO EN CAJA GENERAL: S/. 485,000.00"
         '
         'frm_ReporteFondoFijo
         '
@@ -517,5 +498,4 @@ Partial Class frm_ReporteFondoFijo
     Friend WithEvents griDetalle As ISL.Controles.Grilla
     Friend WithEvents Filtro1 As ISL.Controles.Filtro
     Friend WithEvents ugb_Espera As ISL.Win.Espere
-    Friend WithEvents lblMaximo As Infragistics.Win.Misc.UltraLabel
 End Class
