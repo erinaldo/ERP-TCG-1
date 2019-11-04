@@ -42,8 +42,9 @@ Public Class e_Inventario
     <DataMember()>
     Public IdSucursalSistema As String = ""
 
-    Public Property IdEmpresaSis() As String
-    Public Property IdSucursal() As String
+    'Public Property IdEmpresaSis() As String
+    'Public Property IdSucursal() As String
+    <DataMember()>
     Public Property ValorAdm() As Double = 0
 
     Private _idmataterial As String
@@ -328,7 +329,7 @@ Public Class e_Inventario
         _cantidadingreso = 0
     End Sub
 
-    Public Sub New( _
+    Public Sub New(
               ByVal ls_Id As String _
               , ByVal ls_IdMaterial As String _
               , ByVal ls_Codigo As String _
@@ -344,6 +345,7 @@ Public Class e_Inventario
               , ByVal ln_CostoTotal As Double _
               , ByVal ln_PrecioUnitario As Double _
               , ByVal ln_PrecioTotal As Double _
+              , ByVal ln_ValorAdm As Double _
               , ByVal ld_FechaCreacion As Date _
               , ByVal ln_StockMax As Double _
               , ByVal ln_StockMin As Double _
@@ -375,6 +377,7 @@ Public Class e_Inventario
         _ubicacion = ls_Ubicacion
         _subfamilia = ls_SubFamilia
         _familia = ls_Familia
+        ValorAdm = ln_ValorAdm
     End Sub
 
     Public Sub New( _

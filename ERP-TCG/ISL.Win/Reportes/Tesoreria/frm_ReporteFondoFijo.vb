@@ -150,8 +150,8 @@ Public Class frm_ReporteFondoFijo
             Dim oeFondoFijo As New e_FondoFijo
             Dim olFondoFijo As New l_FondoFijo
             oeFondoFijo.Activo = 2
-            Dim fondo As Double = Math.Round(olFondoFijo.Listar(oeFondoFijo).Item(0).FondoFijo, 2)
-            lblMaximo.Text = "IMPORTE MÁXIMO EN CAJA GENERAL: S/. " & CStr(FormatNumber(fondo, 2))
+            'Dim fondo As Double = Math.Round(olFondoFijo.Listar(oeFondoFijo).Item(0).FondoFijo, 2)
+            'lblMaximo.Text = "IMPORTE MÁXIMO EN CAJA GENERAL: S/. " & CStr(FormatNumber(fondo, 2))
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
         Finally

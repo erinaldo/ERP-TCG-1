@@ -1894,8 +1894,8 @@ Public Class frm_OrdenVenMaterial
             For Each oe As e_OrdenMaterial In lo
                 oeInventario = New e_Inventario
                 With oeInventario
-                    .IdSucursal = gs_PrefijoIdSucursal
-                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
+                    .IdSucursalSistema = gs_PrefijoIdSucursal
+                    .IdEmpresaSistema = gs_IdClienteProveedorSistema.Trim
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadSalida = oe.CantidadMaterial
