@@ -74,6 +74,70 @@ Module m_Funciones
         End Try
     End Sub
 
+    'CONFIGURACION DE GRILLA
+    Public Sub gmt_ConfiguraGrilla(ByVal Grilla As UltraGrid, ByVal TipoLetra As String, IndFiltro As Boolean, Estilo As UIElementBorderStyle, ParamArray aColumnas As String())
+        Dim Band As Boolean
+        With Grilla
+            If TipoLetra.Trim.Length = 0 Then TipoLetra = "Microsoft Sans Serif"
+            .Font = New System.Drawing.Font(TipoLetra, 8.0!)
+            .DisplayLayout.Override.BorderStyleCell = Estilo
+            .DisplayLayout.Override.BorderStyleRow = Estilo
+            .DisplayLayout.Override.HeaderClickAction = HeaderClickAction.SortSingle
+            If IndFiltro Then
+                Dim Filtro As New SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider
+                .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
+                .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
+                .DisplayLayout.Override.FilterUIProvider = Filtro
+            End If
+            If aColumnas.Length > 0 Then
+                .DisplayLayout.Override.AllowUpdate = DefaultableBoolean.Default
+                .DisplayLayout.Override.CellClickAction = CellClickAction.Default
+                For Each Colum In .DisplayLayout.Bands(0).Columns
+                    Band = True
+                    For i As Integer = 0 To aColumnas.Length - 1
+                        If aColumnas(i).Trim <> "" Then
+                            If Colum.Key = aColumnas(i).ToString Then
+                                Colum.CellClickAction = CellClickAction.Edit
+                                Colum.CellActivation = Activation.AllowEdit
+                                Band = False
+                                Exit For
+                            End If
+                        End If
+                    Next
+                    If Band Then
+                        Colum.CellActivation = Activation.NoEdit
+                        Colum.CellClickAction = CellClickAction.CellSelect
+                    End If
+                Next
+            Else
+                .DisplayLayout.Override.AllowUpdate = DefaultableBoolean.False
+                .DisplayLayout.Override.CellClickAction = CellClickAction.RowSelect
+            End If
+            .DisplayLayout.Override.RowSelectorHeaderStyle = RowSelectorHeaderStyle.ColumnChooserButton
+            .DisplayLayout.Override.RowSelectorNumberStyle = RowSelectorNumberStyle.VisibleIndex
+            .DisplayLayout.MaxColScrollRegions = 1
+            .DisplayLayout.MaxRowScrollRegions = 1
+            .DisplayLayout.Override.SelectTypeRow = SelectType.Single
+        End With
+    End Sub
+
+    Public Sub gmt_FormatoColumna(ByVal Grilla As UltraGrid, ByVal _formato As String, ByVal _estilo As UltraWinGrid.ColumnStyle _
+                           , ByVal _alineacion As HAlign, ByVal ParamArray aColumnas As String())
+        With Grilla.DisplayLayout.Bands(0)
+            For i As Integer = 0 To aColumnas.Length - 1
+                For Each Colum As UltraGridColumn In .Columns
+                    If aColumnas(i).Trim <> "" Then
+                        If Colum.Key = aColumnas(i).ToString Then
+                            If _formato.Trim <> "" Then .Columns(aColumnas(i).ToString).Format = _formato
+                            .Columns(aColumnas(i).ToString).Style = _estilo
+                            .Columns(aColumnas(i).ToString).CellAppearance.TextHAlign = _alineacion
+                        End If
+                    End If
+                Next
+            Next
+        End With
+    End Sub
+
     Public Function gfc_GeneraDTRef(leRef As List(Of e_AsientoModelo_Referencia)) As Data.DataTable
         Try
             Dim _IdAM As String = String.Empty

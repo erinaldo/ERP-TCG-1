@@ -237,6 +237,8 @@ Partial Class frm_GastosCaja
         Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -245,8 +247,6 @@ Partial Class frm_GastosCaja
         Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance42 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance43 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance44 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance45 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance46 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -333,6 +333,17 @@ Partial Class frm_GastosCaja
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griGastoOperacion = New ISL.Controles.Grilla(Me.components)
         Me.UltraGroupBox3 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.expDocumento = New Infragistics.Win.Misc.UltraExpandableGroupBox()
+        Me.UltraExpandableGroupBoxPanel11 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
+        Me.Ficha1 = New ISL.Controles.Ficha(Me.components)
+        Me.UltraTabSharedControlsPage8 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.Agrupacion9 = New ISL.Controles.Agrupacion(Me.components)
+        Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.txtNumeroDoc = New ISL.Controles.Texto(Me.components)
+        Me.txtSerieDoc = New ISL.Controles.Texto(Me.components)
+        Me.cboDocumentoAlmacen = New ISL.Controles.Combo(Me.components)
+        Me.Etiqueta46 = New ISL.Controles.Etiqueta(Me.components)
+        Me.btnBuscarDocumento = New ISL.Controles.Boton(Me.components)
         Me.ExpRegistroConsumoCombustible = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel8 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
         Me.Agrupacion4 = New ISL.Controles.Agrupacion(Me.components)
@@ -346,17 +357,6 @@ Partial Class frm_GastosCaja
         Me.cboMaterial = New ISL.Controles.ComboMaestros(Me.components)
         Me.Etiqueta27 = New ISL.Controles.Etiqueta(Me.components)
         Me.ugb_Espera = New ISL.Win.Espere()
-        Me.expDocumento = New Infragistics.Win.Misc.UltraExpandableGroupBox()
-        Me.UltraExpandableGroupBoxPanel11 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
-        Me.Ficha1 = New ISL.Controles.Ficha(Me.components)
-        Me.UltraTabSharedControlsPage8 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.Agrupacion9 = New ISL.Controles.Agrupacion(Me.components)
-        Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.txtNumeroDoc = New ISL.Controles.Texto(Me.components)
-        Me.txtSerieDoc = New ISL.Controles.Texto(Me.components)
-        Me.cboDocumentoAlmacen = New ISL.Controles.Combo(Me.components)
-        Me.Etiqueta46 = New ISL.Controles.Etiqueta(Me.components)
-        Me.btnBuscarDocumento = New ISL.Controles.Boton(Me.components)
         Me.numTotal = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
         Me.numPercepcion = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
         Me.numGravada = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
@@ -428,17 +428,6 @@ Partial Class frm_GastosCaja
         CType(Me.griGastoOperacion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox3.SuspendLayout()
-        CType(Me.ExpRegistroConsumoCombustible, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ExpRegistroConsumoCombustible.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel8.SuspendLayout()
-        CType(Me.Agrupacion4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion4.SuspendLayout()
-        CType(Me.cboLugar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Agrupacion2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion2.SuspendLayout()
-        CType(Me.DecCantidadGalones, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.expDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.expDocumento.SuspendLayout()
         Me.UltraExpandableGroupBoxPanel11.SuspendLayout()
@@ -451,6 +440,17 @@ Partial Class frm_GastosCaja
         CType(Me.txtNumeroDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSerieDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboDocumentoAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ExpRegistroConsumoCombustible, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ExpRegistroConsumoCombustible.SuspendLayout()
+        Me.UltraExpandableGroupBoxPanel8.SuspendLayout()
+        CType(Me.Agrupacion4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Agrupacion4.SuspendLayout()
+        CType(Me.cboLugar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Agrupacion2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Agrupacion2.SuspendLayout()
+        CType(Me.DecCantidadGalones, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numTotal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numPercepcion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.numGravada, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -588,7 +588,7 @@ Partial Class frm_GastosCaja
         Me.griListaDocumentoCompra.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaDocumentoCompra.DisplayLayout.ViewStyle = Infragistics.Win.UltraWinGrid.ViewStyle.SingleBand
         Me.griListaDocumentoCompra.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaDocumentoCompra.Font = New System.Drawing.Font("Tahoma", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griListaDocumentoCompra.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaDocumentoCompra.Location = New System.Drawing.Point(0, 0)
         Me.griListaDocumentoCompra.Name = "griListaDocumentoCompra"
         Me.griListaDocumentoCompra.Size = New System.Drawing.Size(663, 110)
@@ -942,6 +942,7 @@ Partial Class frm_GastosCaja
         UltraGridColumn150.Header.VisiblePosition = 8
         UltraGridColumn150.Hidden = True
         UltraGridColumn151.Header.VisiblePosition = 10
+        UltraGridColumn151.Hidden = True
         UltraGridColumn152.Header.VisiblePosition = 11
         UltraGridColumn152.Hidden = True
         UltraGridColumn153.Header.VisiblePosition = 12
@@ -1008,6 +1009,7 @@ Partial Class frm_GastosCaja
         UltraGridColumn185.Hidden = True
         UltraGridColumn186.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         UltraGridColumn186.Header.VisiblePosition = 29
+        UltraGridColumn186.Hidden = True
         UltraGridColumn186.Width = 107
         UltraGridColumn187.Header.VisiblePosition = 30
         UltraGridColumn187.Hidden = True
@@ -1100,9 +1102,9 @@ Partial Class frm_GastosCaja
         '
         'UltraGroupBox3
         '
+        Me.UltraGroupBox3.Controls.Add(Me.expDocumento)
         Me.UltraGroupBox3.Controls.Add(Me.ExpRegistroConsumoCombustible)
         Me.UltraGroupBox3.Controls.Add(Me.ugb_Espera)
-        Me.UltraGroupBox3.Controls.Add(Me.expDocumento)
         Me.UltraGroupBox3.Controls.Add(Me.numTotal)
         Me.UltraGroupBox3.Controls.Add(Me.numPercepcion)
         Me.UltraGroupBox3.Controls.Add(Me.numGravada)
@@ -1161,203 +1163,13 @@ Partial Class frm_GastosCaja
         Me.UltraGroupBox3.TabIndex = 0
         Me.UltraGroupBox3.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
-        'ExpRegistroConsumoCombustible
-        '
-        Me.ExpRegistroConsumoCombustible.Controls.Add(Me.UltraExpandableGroupBoxPanel8)
-        Me.ExpRegistroConsumoCombustible.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ExpRegistroConsumoCombustible.Expanded = False
-        Me.ExpRegistroConsumoCombustible.ExpandedSize = New System.Drawing.Size(294, 228)
-        Me.ExpRegistroConsumoCombustible.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.RightOutsideBorder
-        Me.ExpRegistroConsumoCombustible.Location = New System.Drawing.Point(1063, 3)
-        Me.ExpRegistroConsumoCombustible.Name = "ExpRegistroConsumoCombustible"
-        Me.ExpRegistroConsumoCombustible.Size = New System.Drawing.Size(23, 228)
-        Me.ExpRegistroConsumoCombustible.TabIndex = 51
-        Me.ExpRegistroConsumoCombustible.TabStop = False
-        Me.ExpRegistroConsumoCombustible.Text = "Registro Consumo de Combustible"
-        Me.ExpRegistroConsumoCombustible.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        Me.ExpRegistroConsumoCombustible.Visible = False
-        '
-        'UltraExpandableGroupBoxPanel8
-        '
-        Me.UltraExpandableGroupBoxPanel8.Controls.Add(Me.Agrupacion4)
-        Me.UltraExpandableGroupBoxPanel8.Controls.Add(Me.Agrupacion2)
-        Me.UltraExpandableGroupBoxPanel8.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraExpandableGroupBoxPanel8.Name = "UltraExpandableGroupBoxPanel8"
-        Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(266, 222)
-        Me.UltraExpandableGroupBoxPanel8.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel8.Visible = False
-        '
-        'Agrupacion4
-        '
-        Me.Agrupacion4.Controls.Add(Me.Etiqueta38)
-        Me.Agrupacion4.Controls.Add(Me.cboLugar)
-        Me.Agrupacion4.Controls.Add(Me.Etiqueta39)
-        Me.Agrupacion4.Controls.Add(Me.cboDireccion)
-        Me.Agrupacion4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Agrupacion4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agrupacion4.ForeColor = System.Drawing.Color.Black
-        Me.Agrupacion4.Location = New System.Drawing.Point(0, 75)
-        Me.Agrupacion4.Name = "Agrupacion4"
-        Me.Agrupacion4.Size = New System.Drawing.Size(266, 147)
-        Me.Agrupacion4.TabIndex = 1
-        Me.Agrupacion4.Text = "Datos Grifo"
-        Me.Agrupacion4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'Etiqueta38
-        '
-        Appearance36.BackColor = System.Drawing.Color.Transparent
-        Appearance36.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta38.Appearance = Appearance36
-        Me.Etiqueta38.AutoSize = True
-        Me.Etiqueta38.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta38.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta38.Location = New System.Drawing.Point(18, 26)
-        Me.Etiqueta38.Name = "Etiqueta38"
-        Me.Etiqueta38.Size = New System.Drawing.Size(36, 15)
-        Me.Etiqueta38.TabIndex = 0
-        Me.Etiqueta38.Text = "Lugar:"
-        '
-        'cboLugar
-        '
-        Appearance37.ForeColor = System.Drawing.Color.Black
-        Me.cboLugar.Appearance = Appearance37
-        Me.cboLugar.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Me.cboLugar.DisplayMember = "Nombre"
-        Me.cboLugar.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboLugar.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboLugar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboLugar.ForeColor = System.Drawing.Color.Black
-        Me.cboLugar.Location = New System.Drawing.Point(59, 21)
-        Me.cboLugar.Name = "cboLugar"
-        Me.cboLugar.Size = New System.Drawing.Size(201, 22)
-        Me.cboLugar.TabIndex = 1
-        Me.cboLugar.ValueMember = "Id"
-        '
-        'Etiqueta39
-        '
-        Appearance38.BackColor = System.Drawing.Color.Transparent
-        Appearance38.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta39.Appearance = Appearance38
-        Me.Etiqueta39.AutoSize = True
-        Me.Etiqueta39.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta39.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta39.Location = New System.Drawing.Point(6, 48)
-        Me.Etiqueta39.Name = "Etiqueta39"
-        Me.Etiqueta39.Size = New System.Drawing.Size(54, 15)
-        Me.Etiqueta39.TabIndex = 2
-        Me.Etiqueta39.Text = "Direccion:"
-        '
-        'cboDireccion
-        '
-        Appearance39.ForeColor = System.Drawing.Color.Black
-        Me.cboDireccion.Appearance = Appearance39
-        Me.cboDireccion.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Me.cboDireccion.DisplayMember = "Nombre"
-        Me.cboDireccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboDireccion.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboDireccion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboDireccion.ForeColor = System.Drawing.Color.Black
-        Me.cboDireccion.Location = New System.Drawing.Point(6, 68)
-        Me.cboDireccion.Name = "cboDireccion"
-        Me.cboDireccion.Size = New System.Drawing.Size(257, 22)
-        Me.cboDireccion.TabIndex = 3
-        Me.cboDireccion.ValueMember = "Id"
-        '
-        'Agrupacion2
-        '
-        Me.Agrupacion2.Controls.Add(Me.Etiqueta22)
-        Me.Agrupacion2.Controls.Add(Me.DecCantidadGalones)
-        Me.Agrupacion2.Controls.Add(Me.cboMaterial)
-        Me.Agrupacion2.Controls.Add(Me.Etiqueta27)
-        Me.Agrupacion2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Agrupacion2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
-        Me.Agrupacion2.Location = New System.Drawing.Point(0, 0)
-        Me.Agrupacion2.Name = "Agrupacion2"
-        Me.Agrupacion2.Size = New System.Drawing.Size(266, 75)
-        Me.Agrupacion2.TabIndex = 0
-        Me.Agrupacion2.Text = "Datos a Ingresar"
-        Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'Etiqueta22
-        '
-        Appearance40.BackColor = System.Drawing.Color.Transparent
-        Appearance40.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta22.Appearance = Appearance40
-        Me.Etiqueta22.AutoSize = True
-        Me.Etiqueta22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta22.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta22.Location = New System.Drawing.Point(5, 23)
-        Me.Etiqueta22.Name = "Etiqueta22"
-        Me.Etiqueta22.Size = New System.Drawing.Size(48, 15)
-        Me.Etiqueta22.TabIndex = 0
-        Me.Etiqueta22.Text = "Galones:"
-        '
-        'DecCantidadGalones
-        '
-        Appearance41.ForeColor = System.Drawing.Color.Black
-        Me.DecCantidadGalones.Appearance = Appearance41
-        Me.DecCantidadGalones.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.DecCantidadGalones.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DecCantidadGalones.ForeColor = System.Drawing.Color.Black
-        Me.DecCantidadGalones.Location = New System.Drawing.Point(59, 19)
-        Me.DecCantidadGalones.MaskInput = "{double:4.3}"
-        Me.DecCantidadGalones.MaxValue = 1000.0R
-        Me.DecCantidadGalones.MinValue = 0.0R
-        Me.DecCantidadGalones.Name = "DecCantidadGalones"
-        Me.DecCantidadGalones.NullText = "0.00"
-        Me.DecCantidadGalones.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.DecCantidadGalones.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.DecCantidadGalones.Size = New System.Drawing.Size(54, 22)
-        Me.DecCantidadGalones.TabIndex = 1
-        '
-        'cboMaterial
-        '
-        Appearance42.ForeColor = System.Drawing.Color.Black
-        Me.cboMaterial.Appearance = Appearance42
-        Me.cboMaterial.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Me.cboMaterial.DisplayMember = "Nombre"
-        Me.cboMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboMaterial.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboMaterial.ForeColor = System.Drawing.Color.Black
-        Me.cboMaterial.Location = New System.Drawing.Point(59, 46)
-        Me.cboMaterial.Name = "cboMaterial"
-        Me.cboMaterial.Size = New System.Drawing.Size(201, 22)
-        Me.cboMaterial.TabIndex = 3
-        Me.cboMaterial.ValueMember = "Id"
-        '
-        'Etiqueta27
-        '
-        Appearance43.BackColor = System.Drawing.Color.Transparent
-        Appearance43.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta27.Appearance = Appearance43
-        Me.Etiqueta27.AutoSize = True
-        Me.Etiqueta27.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta27.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta27.Location = New System.Drawing.Point(7, 50)
-        Me.Etiqueta27.Name = "Etiqueta27"
-        Me.Etiqueta27.Size = New System.Drawing.Size(48, 15)
-        Me.Etiqueta27.TabIndex = 2
-        Me.Etiqueta27.Text = "Material:"
-        '
-        'ugb_Espera
-        '
-        Me.ugb_Espera.BackColor = System.Drawing.Color.Transparent
-        Me.ugb_Espera.ForeColor = System.Drawing.Color.Navy
-        Me.ugb_Espera.Location = New System.Drawing.Point(375, 105)
-        Me.ugb_Espera.Name = "ugb_Espera"
-        Me.ugb_Espera.Size = New System.Drawing.Size(394, 68)
-        Me.ugb_Espera.TabIndex = 5
-        Me.ugb_Espera.Visible = False
-        '
         'expDocumento
         '
         Me.expDocumento.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.expDocumento.Controls.Add(Me.UltraExpandableGroupBoxPanel11)
         Me.expDocumento.Dock = System.Windows.Forms.DockStyle.Left
         Me.expDocumento.Expanded = False
-        Me.expDocumento.ExpandedSize = New System.Drawing.Size(693, 228)
+        Me.expDocumento.ExpandedSize = New System.Drawing.Size(739, 228)
         Me.expDocumento.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.expDocumento.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOutsideBorder
         Me.expDocumento.Location = New System.Drawing.Point(3, 3)
@@ -1456,8 +1268,8 @@ Partial Class frm_GastosCaja
         '
         'cboDocumentoAlmacen
         '
-        Appearance44.ForeColor = System.Drawing.Color.Black
-        Me.cboDocumentoAlmacen.Appearance = Appearance44
+        Appearance36.ForeColor = System.Drawing.Color.Black
+        Me.cboDocumentoAlmacen.Appearance = Appearance36
         Me.cboDocumentoAlmacen.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboDocumentoAlmacen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboDocumentoAlmacen.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
@@ -1471,9 +1283,9 @@ Partial Class frm_GastosCaja
         '
         'Etiqueta46
         '
-        Appearance45.BackColor = System.Drawing.Color.Transparent
-        Appearance45.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta46.Appearance = Appearance45
+        Appearance37.BackColor = System.Drawing.Color.Transparent
+        Appearance37.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta46.Appearance = Appearance37
         Me.Etiqueta46.AutoSize = True
         Me.Etiqueta46.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta46.ForeColor = System.Drawing.Color.Black
@@ -1485,8 +1297,8 @@ Partial Class frm_GastosCaja
         '
         'btnBuscarDocumento
         '
-        Appearance46.ForeColor = System.Drawing.Color.Navy
-        Me.btnBuscarDocumento.Appearance = Appearance46
+        Appearance38.ForeColor = System.Drawing.Color.Navy
+        Me.btnBuscarDocumento.Appearance = Appearance38
         Me.btnBuscarDocumento.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnBuscarDocumento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBuscarDocumento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1496,6 +1308,196 @@ Partial Class frm_GastosCaja
         Me.btnBuscarDocumento.Size = New System.Drawing.Size(83, 25)
         Me.btnBuscarDocumento.TabIndex = 3
         Me.btnBuscarDocumento.Text = "Buscar"
+        '
+        'ExpRegistroConsumoCombustible
+        '
+        Me.ExpRegistroConsumoCombustible.Controls.Add(Me.UltraExpandableGroupBoxPanel8)
+        Me.ExpRegistroConsumoCombustible.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ExpRegistroConsumoCombustible.Expanded = False
+        Me.ExpRegistroConsumoCombustible.ExpandedSize = New System.Drawing.Size(294, 228)
+        Me.ExpRegistroConsumoCombustible.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.RightOutsideBorder
+        Me.ExpRegistroConsumoCombustible.Location = New System.Drawing.Point(1063, 3)
+        Me.ExpRegistroConsumoCombustible.Name = "ExpRegistroConsumoCombustible"
+        Me.ExpRegistroConsumoCombustible.Size = New System.Drawing.Size(23, 228)
+        Me.ExpRegistroConsumoCombustible.TabIndex = 51
+        Me.ExpRegistroConsumoCombustible.TabStop = False
+        Me.ExpRegistroConsumoCombustible.Text = "Registro Consumo de Combustible"
+        Me.ExpRegistroConsumoCombustible.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        Me.ExpRegistroConsumoCombustible.Visible = False
+        '
+        'UltraExpandableGroupBoxPanel8
+        '
+        Me.UltraExpandableGroupBoxPanel8.Controls.Add(Me.Agrupacion4)
+        Me.UltraExpandableGroupBoxPanel8.Controls.Add(Me.Agrupacion2)
+        Me.UltraExpandableGroupBoxPanel8.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraExpandableGroupBoxPanel8.Name = "UltraExpandableGroupBoxPanel8"
+        Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(266, 222)
+        Me.UltraExpandableGroupBoxPanel8.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel8.Visible = False
+        '
+        'Agrupacion4
+        '
+        Me.Agrupacion4.Controls.Add(Me.Etiqueta38)
+        Me.Agrupacion4.Controls.Add(Me.cboLugar)
+        Me.Agrupacion4.Controls.Add(Me.Etiqueta39)
+        Me.Agrupacion4.Controls.Add(Me.cboDireccion)
+        Me.Agrupacion4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Agrupacion4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion4.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion4.Location = New System.Drawing.Point(0, 75)
+        Me.Agrupacion4.Name = "Agrupacion4"
+        Me.Agrupacion4.Size = New System.Drawing.Size(266, 147)
+        Me.Agrupacion4.TabIndex = 1
+        Me.Agrupacion4.Text = "Datos Grifo"
+        Me.Agrupacion4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'Etiqueta38
+        '
+        Appearance39.BackColor = System.Drawing.Color.Transparent
+        Appearance39.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta38.Appearance = Appearance39
+        Me.Etiqueta38.AutoSize = True
+        Me.Etiqueta38.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta38.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta38.Location = New System.Drawing.Point(18, 26)
+        Me.Etiqueta38.Name = "Etiqueta38"
+        Me.Etiqueta38.Size = New System.Drawing.Size(36, 15)
+        Me.Etiqueta38.TabIndex = 0
+        Me.Etiqueta38.Text = "Lugar:"
+        '
+        'cboLugar
+        '
+        Appearance40.ForeColor = System.Drawing.Color.Black
+        Me.cboLugar.Appearance = Appearance40
+        Me.cboLugar.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.cboLugar.DisplayMember = "Nombre"
+        Me.cboLugar.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboLugar.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboLugar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLugar.ForeColor = System.Drawing.Color.Black
+        Me.cboLugar.Location = New System.Drawing.Point(59, 21)
+        Me.cboLugar.Name = "cboLugar"
+        Me.cboLugar.Size = New System.Drawing.Size(201, 22)
+        Me.cboLugar.TabIndex = 1
+        Me.cboLugar.ValueMember = "Id"
+        '
+        'Etiqueta39
+        '
+        Appearance41.BackColor = System.Drawing.Color.Transparent
+        Appearance41.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta39.Appearance = Appearance41
+        Me.Etiqueta39.AutoSize = True
+        Me.Etiqueta39.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta39.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta39.Location = New System.Drawing.Point(6, 48)
+        Me.Etiqueta39.Name = "Etiqueta39"
+        Me.Etiqueta39.Size = New System.Drawing.Size(54, 15)
+        Me.Etiqueta39.TabIndex = 2
+        Me.Etiqueta39.Text = "Direccion:"
+        '
+        'cboDireccion
+        '
+        Appearance42.ForeColor = System.Drawing.Color.Black
+        Me.cboDireccion.Appearance = Appearance42
+        Me.cboDireccion.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.cboDireccion.DisplayMember = "Nombre"
+        Me.cboDireccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboDireccion.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboDireccion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboDireccion.ForeColor = System.Drawing.Color.Black
+        Me.cboDireccion.Location = New System.Drawing.Point(6, 68)
+        Me.cboDireccion.Name = "cboDireccion"
+        Me.cboDireccion.Size = New System.Drawing.Size(257, 22)
+        Me.cboDireccion.TabIndex = 3
+        Me.cboDireccion.ValueMember = "Id"
+        '
+        'Agrupacion2
+        '
+        Me.Agrupacion2.Controls.Add(Me.Etiqueta22)
+        Me.Agrupacion2.Controls.Add(Me.DecCantidadGalones)
+        Me.Agrupacion2.Controls.Add(Me.cboMaterial)
+        Me.Agrupacion2.Controls.Add(Me.Etiqueta27)
+        Me.Agrupacion2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Agrupacion2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion2.Location = New System.Drawing.Point(0, 0)
+        Me.Agrupacion2.Name = "Agrupacion2"
+        Me.Agrupacion2.Size = New System.Drawing.Size(266, 75)
+        Me.Agrupacion2.TabIndex = 0
+        Me.Agrupacion2.Text = "Datos a Ingresar"
+        Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'Etiqueta22
+        '
+        Appearance43.BackColor = System.Drawing.Color.Transparent
+        Appearance43.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta22.Appearance = Appearance43
+        Me.Etiqueta22.AutoSize = True
+        Me.Etiqueta22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta22.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta22.Location = New System.Drawing.Point(5, 23)
+        Me.Etiqueta22.Name = "Etiqueta22"
+        Me.Etiqueta22.Size = New System.Drawing.Size(48, 15)
+        Me.Etiqueta22.TabIndex = 0
+        Me.Etiqueta22.Text = "Galones:"
+        '
+        'DecCantidadGalones
+        '
+        Appearance44.ForeColor = System.Drawing.Color.Black
+        Me.DecCantidadGalones.Appearance = Appearance44
+        Me.DecCantidadGalones.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.DecCantidadGalones.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DecCantidadGalones.ForeColor = System.Drawing.Color.Black
+        Me.DecCantidadGalones.Location = New System.Drawing.Point(59, 19)
+        Me.DecCantidadGalones.MaskInput = "{double:4.3}"
+        Me.DecCantidadGalones.MaxValue = 1000.0R
+        Me.DecCantidadGalones.MinValue = 0R
+        Me.DecCantidadGalones.Name = "DecCantidadGalones"
+        Me.DecCantidadGalones.NullText = "0.00"
+        Me.DecCantidadGalones.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.DecCantidadGalones.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.DecCantidadGalones.Size = New System.Drawing.Size(54, 22)
+        Me.DecCantidadGalones.TabIndex = 1
+        '
+        'cboMaterial
+        '
+        Appearance45.ForeColor = System.Drawing.Color.Black
+        Me.cboMaterial.Appearance = Appearance45
+        Me.cboMaterial.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboMaterial.DisplayMember = "Nombre"
+        Me.cboMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboMaterial.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboMaterial.ForeColor = System.Drawing.Color.Black
+        Me.cboMaterial.Location = New System.Drawing.Point(59, 46)
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(201, 22)
+        Me.cboMaterial.TabIndex = 3
+        Me.cboMaterial.ValueMember = "Id"
+        '
+        'Etiqueta27
+        '
+        Appearance46.BackColor = System.Drawing.Color.Transparent
+        Appearance46.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta27.Appearance = Appearance46
+        Me.Etiqueta27.AutoSize = True
+        Me.Etiqueta27.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta27.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta27.Location = New System.Drawing.Point(7, 50)
+        Me.Etiqueta27.Name = "Etiqueta27"
+        Me.Etiqueta27.Size = New System.Drawing.Size(48, 15)
+        Me.Etiqueta27.TabIndex = 2
+        Me.Etiqueta27.Text = "Material:"
+        '
+        'ugb_Espera
+        '
+        Me.ugb_Espera.BackColor = System.Drawing.Color.Transparent
+        Me.ugb_Espera.ForeColor = System.Drawing.Color.Navy
+        Me.ugb_Espera.Location = New System.Drawing.Point(375, 105)
+        Me.ugb_Espera.Name = "ugb_Espera"
+        Me.ugb_Espera.Size = New System.Drawing.Size(394, 68)
+        Me.ugb_Espera.TabIndex = 5
+        Me.ugb_Espera.Visible = False
         '
         'numTotal
         '
@@ -2303,19 +2305,6 @@ Partial Class frm_GastosCaja
         CType(Me.UltraGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox3.ResumeLayout(False)
         Me.UltraGroupBox3.PerformLayout()
-        CType(Me.ExpRegistroConsumoCombustible, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ExpRegistroConsumoCombustible.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel8.ResumeLayout(False)
-        CType(Me.Agrupacion4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Agrupacion4.ResumeLayout(False)
-        Me.Agrupacion4.PerformLayout()
-        CType(Me.cboLugar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Agrupacion2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Agrupacion2.ResumeLayout(False)
-        Me.Agrupacion2.PerformLayout()
-        CType(Me.DecCantidadGalones, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.expDocumento, System.ComponentModel.ISupportInitialize).EndInit()
         Me.expDocumento.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel11.ResumeLayout(False)
@@ -2330,6 +2319,19 @@ Partial Class frm_GastosCaja
         CType(Me.txtNumeroDoc, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSerieDoc, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboDocumentoAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ExpRegistroConsumoCombustible, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ExpRegistroConsumoCombustible.ResumeLayout(False)
+        Me.UltraExpandableGroupBoxPanel8.ResumeLayout(False)
+        CType(Me.Agrupacion4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion4.ResumeLayout(False)
+        Me.Agrupacion4.PerformLayout()
+        CType(Me.cboLugar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Agrupacion2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion2.ResumeLayout(False)
+        Me.Agrupacion2.PerformLayout()
+        CType(Me.DecCantidadGalones, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numTotal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numPercepcion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.numGravada, System.ComponentModel.ISupportInitialize).EndInit()
