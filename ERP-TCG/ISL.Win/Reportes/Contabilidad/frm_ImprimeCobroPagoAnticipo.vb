@@ -30,7 +30,7 @@ Public Class frm_ImprimeCobroPagoAnticipo
             End If
             ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
 
-            Dim oReport As New ReportDataSource("dsAnticipoCobroPago", dt)
+            Dim oReport As New ReportDataSource("dsAnticipoCobroPago_CobroPagoAnticipo", dt)
 
             Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
             myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
