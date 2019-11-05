@@ -513,14 +513,14 @@ Public Class frm_Detraccion
                 ofrm.CargarDetalleInforme(idInforme)
                 ofrm.StartPosition = FormStartPosition.CenterScreen
                 ofrm.ShowDialog()
-                Dim DetraccionMasiva As New frm_DetraccionesMasivas
-                DetraccionMasiva = DetraccionMasiva.getInstancia()
-                DetraccionMasiva.MdiParent = frm_Menu
-                DetraccionMasiva.Show()
-                DetraccionMasiva.NuevoProveedor()
-                DetraccionMasiva.ListarDetProveedor()
-                leSelec = New List(Of e_AplicaDetraccion)
-                Me.Close()
+                'Dim DetraccionMasiva As New frm_DetraccionesMasivas
+                'DetraccionMasiva = DetraccionMasiva.getInstancia()
+                'DetraccionMasiva.MdiParent = frm_Menu
+                'DetraccionMasiva.Show()
+                'DetraccionMasiva.NuevoProveedor()
+                'DetraccionMasiva.ListarDetProveedor()
+                'leSelec = New List(Of e_AplicaDetraccion)
+                'Me.Close()
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
