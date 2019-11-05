@@ -5698,20 +5698,48 @@
     <Content Include="Fotos\CumpleFormato3.pptm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Fotos\eImpresion\Doc.Electronico.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoCL.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoCL_NC.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_A.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2_A.mrt" />
-    <None Include="Fotos\eImpresion\Doc.ElectronicoISL_NC_A.mrt" />
-    <None Include="Fotos\eImpresion\Doc.Electronico_NC.mrt" />
-    <None Include="Fotos\eImpresion\eRetencion.mrt" />
-    <None Include="Fotos\eImpresion\_Doc.Electronico.mrt" />
-    <None Include="Fotos\eImpresion\_Doc.Electronico_NC.mrt" />
+    <Content Include="Fotos\eImpresion\Doc.Electronico.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoCL.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoCL_NC.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_A.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_NC.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_NC2_A.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoISL_NC_A.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\Doc.Electronico_NC.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\eRetencion.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\_Doc.Electronico.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\eImpresion\_Doc.Electronico_NC.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Fotos\tessdata\eng.DangAmbigs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -8170,6 +8198,7 @@
     <Folder Include="bin\Debug\Reportes\" />
     <Folder Include="bin\Release\" />
     <Folder Include="ComprobanteElectronico\" />
+    <Folder Include="Fotos\ComprobanteElectronico\" />
     <Folder Include="Libreria\" />
   </ItemGroup>
   <ItemGroup>
