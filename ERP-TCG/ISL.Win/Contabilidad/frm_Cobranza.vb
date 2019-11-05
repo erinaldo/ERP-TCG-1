@@ -50,9 +50,9 @@ Public Class frm_Cobranza
                 If olAsiento.GuardarCobranza(leMovDocAgregado, oeMovCajaBanco, oeMedioPago, gUsuarioSGI.Id, MacPCLocal, oeCtaCble, indicadortipo) Then
                     If indicadortipo <> "PER" Then
                         mensajeEmergente.Confirmacion("Cobro(s) guardados satisfactoriamente", True)
-                        Dim frm2 As New frm_ImprimeCobroPagoAnticipo(oeMovCajaBanco.Id, 1, "Documento")
-                        frm2.ShowDialog()
-                        frm2 = Nothing
+                        'Dim frm2 As New frm_ImprimeCobroPagoAnticipo(oeMovCajaBanco.Id, 1, "Documento")
+                        'frm2.ShowDialog()
+                        'frm2 = Nothing
                     End If
                 End If
             End If
