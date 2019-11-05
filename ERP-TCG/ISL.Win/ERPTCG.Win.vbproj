@@ -5689,6 +5689,15 @@
     <Content Include="Content\tessdata\eng.unicharset" />
     <Content Include="Content\tessdata\eng.user-words" />
     <Content Include="Content\tessdata\eng.word-dawg" />
+    <Content Include="Fotos\CumpleFormato1.pptm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\CumpleFormato2.pptm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\CumpleFormato3.pptm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Fotos\eImpresion\Doc.Electronico.mrt" />
     <None Include="Fotos\eImpresion\Doc.ElectronicoCL.mrt" />
     <None Include="Fotos\eImpresion\Doc.ElectronicoCL_NC.mrt" />

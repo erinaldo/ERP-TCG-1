@@ -72,7 +72,7 @@ Public Class frm_ReporteSaldoTrabajador
             If cboTrabajador.SelectedIndex <> -1 Then
                 Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
                 Dim olConfiguracion As New l_Configuracion
-                ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_SRVSQLISLPYO")
+                ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
                 ReportViewer1.ServerReport.ReportPath = "/Reportes/PER - Saldo Descuento Trabajador"
                 Dim myParams(0) As Microsoft.Reporting.WinForms.ReportParameter
                 myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("Trabajador", cboTrabajador.Value.ToString)
