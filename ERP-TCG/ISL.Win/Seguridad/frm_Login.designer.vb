@@ -87,7 +87,7 @@ Partial Class frm_Login
         Me.btnAceptarR.Location = New System.Drawing.Point(522, 176)
         Me.btnAceptarR.Name = "btnAceptarR"
         Me.btnAceptarR.Size = New System.Drawing.Size(45, 42)
-        Me.btnAceptarR.TabIndex = 7
+        Me.btnAceptarR.TabIndex = 3
         Me.btnAceptarR.Text = "&"
         UltraToolTipInfo4.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         UltraToolTipInfo4.ToolTipText = "Haga clic para accesar al sistema"
@@ -113,7 +113,7 @@ Partial Class frm_Login
         Appearance11.TextHAlignAsString = "Center"
         Me.txtUsuarioR.NullTextAppearance = Appearance11
         Me.txtUsuarioR.Size = New System.Drawing.Size(150, 25)
-        Me.txtUsuarioR.TabIndex = 5
+        Me.txtUsuarioR.TabIndex = 0
         UltraToolTipInfo3.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
         UltraToolTipInfo3.ToolTipText = "Digite su nombre de usuario"
         UltraToolTipInfo3.ToolTipTitle = "Información del sistema"
@@ -139,7 +139,7 @@ Partial Class frm_Login
         Me.txtPasswordR.NullTextAppearance = Appearance9
         Me.txtPasswordR.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPasswordR.Size = New System.Drawing.Size(150, 25)
-        Me.txtPasswordR.TabIndex = 6
+        Me.txtPasswordR.TabIndex = 1
         UltraToolTipInfo2.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
         UltraToolTipInfo2.ToolTipText = "Digite su clave de acceso al sistema"
         UltraToolTipInfo2.ToolTipTitle = "Información del sistema"
@@ -268,7 +268,7 @@ Partial Class frm_Login
         Me.cboCentro.Name = "cboCentro"
         Me.cboCentro.NullText = "SUCURSAL / GIRO"
         Me.cboCentro.Size = New System.Drawing.Size(150, 21)
-        Me.cboCentro.TabIndex = 28
+        Me.cboCentro.TabIndex = 2
         Me.cboCentro.ValueMember = "Id"
         '
         'UltraLabel2

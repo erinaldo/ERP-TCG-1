@@ -387,6 +387,7 @@ Public Class d_Movimiento
                 oeCorrelativo.TipoOperacion = "I"
                 oeCorrelativo.Numero = CInt(Numero)
                 oeCorrelativo.Prefijo = PrefijoID
+                oeCorrelativo.PrefijoID = PrefijoID
                 oeCorrelativo.IdTipoDocumento = oeTipodocumento.Id
                 oeCorrelativo.Tipo = Tipo
                 If odCorrelativo.GuardarLocal(oeCorrelativo) Then Return True

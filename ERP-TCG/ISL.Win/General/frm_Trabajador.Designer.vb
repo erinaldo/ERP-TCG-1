@@ -589,7 +589,7 @@ Partial Class frm_Trabajador
         'UltraTabPageControl13
         '
         Me.UltraTabPageControl13.Controls.Add(Me.griOcupacion)
-        Me.UltraTabPageControl13.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl13.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
         Me.UltraTabPageControl13.Size = New System.Drawing.Size(917, 121)
         '
@@ -646,9 +646,9 @@ Partial Class frm_Trabajador
         'UltraTabPageControl14
         '
         Me.UltraTabPageControl14.Controls.Add(Me.agrManOcupacion)
-        Me.UltraTabPageControl14.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl14.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl14.Name = "UltraTabPageControl14"
-        Me.UltraTabPageControl14.Size = New System.Drawing.Size(884, 121)
+        Me.UltraTabPageControl14.Size = New System.Drawing.Size(917, 121)
         '
         'agrManOcupacion
         '
@@ -879,9 +879,9 @@ Partial Class frm_Trabajador
         Me.chkYaNoLabora.ForeColor = System.Drawing.Color.Black
         Me.chkYaNoLabora.Location = New System.Drawing.Point(409, 90)
         Me.chkYaNoLabora.Name = "chkYaNoLabora"
-        Me.chkYaNoLabora.Size = New System.Drawing.Size(118, 17)
+        Me.chkYaNoLabora.Size = New System.Drawing.Size(125, 17)
         Me.chkYaNoLabora.TabIndex = 23
-        Me.chkYaNoLabora.Text = "Ya no labora en ISL"
+        Me.chkYaNoLabora.Text = "Ya no labora en EMP"
         '
         'etiArea
         '
@@ -2139,7 +2139,7 @@ Partial Class frm_Trabajador
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griDerechoHabiente)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(957, 170)
         '
@@ -2197,7 +2197,7 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabPageControl6.Controls.Add(Me.agrDatosCompleDH)
         Me.UltraTabPageControl6.Controls.Add(Me.agrDatosPersonalDH)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(957, 170)
         '
@@ -2540,7 +2540,7 @@ Partial Class frm_Trabajador
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.AutoSize = True
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.ForeColor = System.Drawing.Color.Black
-        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(121, 4)
+        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(141, 4)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Name = "object_f37db69f_510c_45cc_acbf_5242ddf3f978"
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Size = New System.Drawing.Size(29, 14)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.TabIndex = 1
@@ -3419,7 +3419,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl4.Controls.Add(Me.upComplemento)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(980, 615)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1080, 615)
         '
         'upComplemento
         '
@@ -3429,7 +3429,7 @@ Partial Class frm_Trabajador
         Me.upComplemento.Dock = System.Windows.Forms.DockStyle.Fill
         Me.upComplemento.Location = New System.Drawing.Point(0, 0)
         Me.upComplemento.Name = "upComplemento"
-        Me.upComplemento.Size = New System.Drawing.Size(980, 615)
+        Me.upComplemento.Size = New System.Drawing.Size(1080, 615)
         Me.upComplemento.TabIndex = 44
         '
         'agrDerechoHabiente

@@ -5932,7 +5932,7 @@ Partial Class frm_Demanda
         Me.Controls.Add(Me.ficDemanda)
         Me.Name = "frm_Demanda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Demanda"
+        Me.Text = "Pedido Carga"
         Me.UltraTabPageControl5.ResumeLayout(False)
         CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.agrListaRegistro.ResumeLayout(False)

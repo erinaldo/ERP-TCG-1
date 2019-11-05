@@ -15,7 +15,7 @@ Public Class d_Inventario
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_Inventario
         Try
-            Dim oeInventario = New e_Inventario( _
+            Dim oeInventario = New e_Inventario(
                              o_fila("Id").ToString _
                              , o_fila("IdMaterial").ToString _
                              , o_fila("Codigo").ToString _
@@ -31,6 +31,7 @@ Public Class d_Inventario
                              , o_fila("ValorTotal").ToString _
                              , o_fila("PrecioUnitario").ToString _
                              , o_fila("PrecioTotal").ToString _
+                             , o_fila("ValorAdm") _
                              , o_fila("Fecha").ToString _
                              , o_fila("StockMaximo").ToString _
                              , o_fila("StockMinimo").ToString _

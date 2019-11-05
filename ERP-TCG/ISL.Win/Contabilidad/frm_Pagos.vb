@@ -225,9 +225,9 @@ Public Class frm_Pagos
                 If olAsiento.GuardarPago(leMovDocAgregado, oeMovCajaBanco, oeMedioPago, gUsuarioSGI.Id, MacPCLocal, oeCtaCble, Opcion) Then
                     If Opcion <> "GAN" Then
                         mensajeEmergente.Confirmacion("Pago(s) guardados satisfactoriamente", True)
-                        Dim frm2 As New frm_ImprimeCobroPagoAnticipo(oeMovCajaBanco.Id, 0, "Documento")
-                        frm2.ShowDialog()
-                        frm2 = Nothing
+                        'Dim frm2 As New frm_ImprimeCobroPagoAnticipo(oeMovCajaBanco.Id, 0, "Documento")
+                        'frm2.ShowDialog()
+                        'frm2 = Nothing
                     End If
                 End If
                 Return True
