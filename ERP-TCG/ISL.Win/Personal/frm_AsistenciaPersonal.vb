@@ -184,7 +184,7 @@ Public Class frm_AsistenciaPersonal
             Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
 
             Dim olConfiguracion As New l_Configuracion
-            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_SRVSQLISLPYO")
+            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
             ReportViewer1.ServerReport.ReportPath = ubicacionReporte + nombreReporte
             'If Not myParams Is Nothing Then
             Dim myParams(3) As Microsoft.Reporting.WinForms.ReportParameter

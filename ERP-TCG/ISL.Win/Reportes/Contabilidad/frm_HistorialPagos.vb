@@ -130,7 +130,7 @@ Public Class frm_HistorialPagos
         Try
             Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
             Dim olConfiguracion As New l_Configuracion
-            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_SRVSQLISLPYO")
+            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
             'ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_HEAVEN")
             ReportViewer1.ServerReport.ReportPath = "/Reportes/" + "CON - Reporte de Historial de Pagos"
             Dim myParams(2) As Microsoft.Reporting.WinForms.ReportParameter

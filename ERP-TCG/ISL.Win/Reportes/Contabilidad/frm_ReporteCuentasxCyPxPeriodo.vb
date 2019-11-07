@@ -113,7 +113,7 @@ Public Class frm_ReporteCuentasxCyPxPeriodo
             Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
 
             Dim olConfiguracion As New l_Configuracion
-            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_SRVSQLISLPYO")
+            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
             'If Not myParams Is Nothing Then
             Dim myParams(5) As Microsoft.Reporting.WinForms.ReportParameter
             myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("TipoResumen", CStr(IIf(chkResumen.Checked, "SI", "NO")))

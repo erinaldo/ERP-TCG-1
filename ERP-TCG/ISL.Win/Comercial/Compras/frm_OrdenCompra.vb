@@ -2268,9 +2268,9 @@ Public Class frm_OrdenCompra
             'olRegistroInventario.Guardar(listaRegistroInventario) 'Registramos los movimientos generados por el ingreso de material
             InicializarListasOrdenIngreso() 'Limpio las grillas de ordenes de ingreso(Cabezera y detalle)
             listarOrdenIngreso(True) 'Listo nuevamente en mi formulario las ordenes de ingreso y verifico que una orden de ingreso debería haber pasado de estado GENERADA a TERMINADA.
-            If MessageBox.Show("Desea Imprimir el Registro de Ingreso?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) = Windows.Forms.DialogResult.Yes Then
-                ImprimirOI(IdOrdIngreso)
-            End If
+            'If MessageBox.Show("Desea Imprimir el Registro de Ingreso?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) = Windows.Forms.DialogResult.Yes Then
+            '    ImprimirOI(IdOrdIngreso)
+            'End If
             mensajeEmergente.Confirmacion("La orden de ingreso se ha ejecutado correctamente.", True)
             ControlBoton(0, 0, 0, 0, 1, 0, 1)
         Catch ex As Exception
