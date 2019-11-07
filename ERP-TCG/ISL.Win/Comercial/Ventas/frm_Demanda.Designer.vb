@@ -4823,7 +4823,7 @@ Partial Class frm_Demanda
         Me.tabDemandaCargas.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.tabDemandaCargas.TabIndex = 18
         UltraTab7.TabPage = Me.UltraTabPageControl5
-        UltraTab7.Text = "Demanda"
+        UltraTab7.Text = "Cargas"
         UltraTab8.TabPage = Me.UltraTabPageControl6
         UltraTab8.Text = "Cargas Operaciones"
         Me.tabDemandaCargas.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab7, UltraTab8})

@@ -590,7 +590,7 @@ Partial Class frm_Guias
         Dim UltraDataColumn154 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim UltraDataColumn155 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Viaje")
         Dim UltraDataColumn156 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Glosa")
-        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRR", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo7 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRR", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance89 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance90 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -689,7 +689,7 @@ Partial Class frm_Guias
         Dim Appearance123 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance124 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRR", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo8 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRR", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance125 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance126 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance127 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -870,20 +870,20 @@ Partial Class frm_Guias
         Dim Appearance147 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance148 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance149 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo7 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Numero GRT Empresa SubContrata", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo9 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Numero GRT Empresa SubContrata", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance150 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo8 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Numero Final GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo10 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Numero Final GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance151 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo9 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Serie GRT Empresa SubContrata", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo11 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Serie GRT Empresa SubContrata", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance152 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo10 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Numero de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo12 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Numero de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance153 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo11 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Serie de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo13 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Serie de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance154 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance155 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance156 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance157 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo12 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo14 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Glosa de GRT", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance158 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance159 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance160 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -894,7 +894,7 @@ Partial Class frm_Guias
         Dim Appearance165 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance166 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance167 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo13 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Fecha Emision de la Guia Remision Transportista", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo15 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Fecha Emision de la Guia Remision Transportista", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance168 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton2 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance169 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -955,7 +955,7 @@ Partial Class frm_Guias
         Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance189 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance190 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo14 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Actvidad de la Operacion", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo16 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Actvidad de la Operacion", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance191 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance192 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance193 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1058,9 +1058,11 @@ Partial Class frm_Guias
         Dim UltraTab12 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab13 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance47 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Filtro Viaje Vacio", Infragistics.Win.ToolTipImage.Warning, "Información del sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Filtro Viaje Retorno", Infragistics.Win.ToolTipImage.Warning, "Información del sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Estado de un Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Estado de un Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1070,11 +1072,11 @@ Partial Class frm_Guias
         Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccione Tracto para el Filtro en el Listado de Viajes", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccione Tracto para el Filtro en el Listado de Viajes", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Listado de Remitente", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Listado de Remitente", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Guia Remision Remitente :Serie-Numero", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Guia Remision Remitente :Serie-Numero", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -3441,8 +3443,8 @@ Partial Class frm_Guias
         Me.txtRemitenteGlosa.Name = "txtRemitenteGlosa"
         Me.txtRemitenteGlosa.Size = New System.Drawing.Size(150, 43)
         Me.txtRemitenteGlosa.TabIndex = 42
-        UltraToolTipInfo5.ToolTipText = "Ingrese Glosa de GRR"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtRemitenteGlosa, UltraToolTipInfo5)
+        UltraToolTipInfo7.ToolTipText = "Ingrese Glosa de GRR"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtRemitenteGlosa, UltraToolTipInfo7)
         '
         'fecEmisionGrr
         '
@@ -4048,8 +4050,8 @@ Partial Class frm_Guias
         Me.txtGlosaRemitente.Name = "txtGlosaRemitente"
         Me.txtGlosaRemitente.Size = New System.Drawing.Size(200, 40)
         Me.txtGlosaRemitente.TabIndex = 28
-        UltraToolTipInfo6.ToolTipText = "Ingrese Glosa de GRR"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaRemitente, UltraToolTipInfo6)
+        UltraToolTipInfo8.ToolTipText = "Ingrese Glosa de GRR"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaRemitente, UltraToolTipInfo8)
         '
         'txtGrrViaje
         '
@@ -4531,8 +4533,8 @@ Partial Class frm_Guias
         Me.txtSubNumero.NullText = ""
         Me.txtSubNumero.Size = New System.Drawing.Size(70, 20)
         Me.txtSubNumero.TabIndex = 21
-        UltraToolTipInfo7.ToolTipText = "Ingrese Numero GRT Empresa SubContrata"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSubNumero, UltraToolTipInfo7)
+        UltraToolTipInfo9.ToolTipText = "Ingrese Numero GRT Empresa SubContrata"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSubNumero, UltraToolTipInfo9)
         '
         'txtRangoFinalNumeroAnulado
         '
@@ -4547,8 +4549,8 @@ Partial Class frm_Guias
         Me.txtRangoFinalNumeroAnulado.NullText = ""
         Me.txtRangoFinalNumeroAnulado.Size = New System.Drawing.Size(70, 20)
         Me.txtRangoFinalNumeroAnulado.TabIndex = 4
-        UltraToolTipInfo8.ToolTipText = "Numero Final GRT"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtRangoFinalNumeroAnulado, UltraToolTipInfo8)
+        UltraToolTipInfo10.ToolTipText = "Numero Final GRT"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtRangoFinalNumeroAnulado, UltraToolTipInfo10)
         Me.txtRangoFinalNumeroAnulado.Visible = False
         '
         'txtSubSerie
@@ -4564,8 +4566,8 @@ Partial Class frm_Guias
         Me.txtSubSerie.NullText = ""
         Me.txtSubSerie.Size = New System.Drawing.Size(35, 20)
         Me.txtSubSerie.TabIndex = 20
-        UltraToolTipInfo9.ToolTipText = "Ingrese Serie GRT Empresa SubContrata"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSubSerie, UltraToolTipInfo9)
+        UltraToolTipInfo11.ToolTipText = "Ingrese Serie GRT Empresa SubContrata"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSubSerie, UltraToolTipInfo11)
         '
         'txtNumero
         '
@@ -4580,8 +4582,8 @@ Partial Class frm_Guias
         Me.txtNumero.NullText = ""
         Me.txtNumero.Size = New System.Drawing.Size(70, 20)
         Me.txtNumero.TabIndex = 3
-        UltraToolTipInfo10.ToolTipText = "Numero de GRT"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtNumero, UltraToolTipInfo10)
+        UltraToolTipInfo12.ToolTipText = "Numero de GRT"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtNumero, UltraToolTipInfo12)
         '
         'txtSerie
         '
@@ -4596,8 +4598,8 @@ Partial Class frm_Guias
         Me.txtSerie.NullText = ""
         Me.txtSerie.Size = New System.Drawing.Size(35, 20)
         Me.txtSerie.TabIndex = 2
-        UltraToolTipInfo11.ToolTipText = "Serie de GRT"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSerie, UltraToolTipInfo11)
+        UltraToolTipInfo13.ToolTipText = "Serie de GRT"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtSerie, UltraToolTipInfo13)
         '
         'verDoctsPerdido
         '
@@ -4657,8 +4659,8 @@ Partial Class frm_Guias
         Me.txtGlosa.Name = "txtGlosa"
         Me.txtGlosa.Size = New System.Drawing.Size(60, 150)
         Me.txtGlosa.TabIndex = 27
-        UltraToolTipInfo12.ToolTipText = "Ingrese Glosa de GRT"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosa, UltraToolTipInfo12)
+        UltraToolTipInfo14.ToolTipText = "Ingrese Glosa de GRT"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosa, UltraToolTipInfo14)
         '
         'verDocumentos
         '
@@ -4834,8 +4836,8 @@ Partial Class frm_Guias
         Me.fecEmision.Name = "fecEmision"
         Me.fecEmision.Size = New System.Drawing.Size(80, 21)
         Me.fecEmision.TabIndex = 6
-        UltraToolTipInfo13.ToolTipText = "Fecha Emision de la Guia Remision Transportista"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.fecEmision, UltraToolTipInfo13)
+        UltraToolTipInfo15.ToolTipText = "Fecha Emision de la Guia Remision Transportista"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.fecEmision, UltraToolTipInfo15)
         Me.fecEmision.Value = New Date(2014, 11, 14, 0, 0, 0, 0)
         '
         'UltraLabel8
@@ -5215,8 +5217,8 @@ Partial Class frm_Guias
         Me.cboActividadNegocio.Name = "cboActividadNegocio"
         Me.cboActividadNegocio.Size = New System.Drawing.Size(150, 21)
         Me.cboActividadNegocio.TabIndex = 32
-        UltraToolTipInfo14.ToolTipText = "Actvidad de la Operacion"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboActividadNegocio, UltraToolTipInfo14)
+        UltraToolTipInfo16.ToolTipText = "Actvidad de la Operacion"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboActividadNegocio, UltraToolTipInfo16)
         Me.cboActividadNegocio.ValueMember = "Id"
         '
         'UltraLabel21
@@ -5792,7 +5794,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1232, 419)
         '
@@ -5875,22 +5877,30 @@ Partial Class frm_Guias
         Appearance47.ForeColor = System.Drawing.Color.Navy
         Me.verViajeVacio.Appearance = Appearance47
         Me.verViajeVacio.AutoSize = True
-        Me.verViajeVacio.Location = New System.Drawing.Point(305, 30)
+        Me.verViajeVacio.Location = New System.Drawing.Point(378, 29)
         Me.verViajeVacio.Name = "verViajeVacio"
-        Me.verViajeVacio.Size = New System.Drawing.Size(63, 17)
+        Me.verViajeVacio.Size = New System.Drawing.Size(76, 17)
         Me.verViajeVacio.TabIndex = 56
-        Me.verViajeVacio.Text = "V. Vacio"
+        Me.verViajeVacio.Text = "Viaje Vacio"
+        UltraToolTipInfo1.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
+        UltraToolTipInfo1.ToolTipText = "Filtro Viaje Vacio"
+        UltraToolTipInfo1.ToolTipTitle = "Información del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verViajeVacio, UltraToolTipInfo1)
         '
         'verViajeRetorno
         '
         Appearance48.ForeColor = System.Drawing.Color.Navy
         Me.verViajeRetorno.Appearance = Appearance48
         Me.verViajeRetorno.AutoSize = True
-        Me.verViajeRetorno.Location = New System.Drawing.Point(380, 30)
+        Me.verViajeRetorno.Location = New System.Drawing.Point(368, 78)
         Me.verViajeRetorno.Name = "verViajeRetorno"
-        Me.verViajeRetorno.Size = New System.Drawing.Size(75, 17)
+        Me.verViajeRetorno.Size = New System.Drawing.Size(88, 17)
         Me.verViajeRetorno.TabIndex = 55
-        Me.verViajeRetorno.Text = "V. Retorno"
+        Me.verViajeRetorno.Text = "Viaje Retorno"
+        UltraToolTipInfo2.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
+        UltraToolTipInfo2.ToolTipText = "Filtro Viaje Retorno"
+        UltraToolTipInfo2.ToolTipTitle = "Información del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verViajeRetorno, UltraToolTipInfo2)
         '
         'grupoEstado
         '
@@ -5913,8 +5923,8 @@ Partial Class frm_Guias
         Me.grupoEstado.Name = "grupoEstado"
         Me.grupoEstado.Size = New System.Drawing.Size(570, 25)
         Me.grupoEstado.TabIndex = 54
-        UltraToolTipInfo1.ToolTipText = "Estado de un Viaje"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoEstado, UltraToolTipInfo1)
+        UltraToolTipInfo3.ToolTipText = "Estado de un Viaje"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoEstado, UltraToolTipInfo3)
         Me.grupoEstado.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'ColorFin
@@ -6042,9 +6052,9 @@ Partial Class frm_Guias
         Me.UltraGroupBox11.Controls.Add(Me.UltraLabel39)
         Me.UltraGroupBox11.Controls.Add(Me.fecDesde)
         Me.UltraGroupBox11.Controls.Add(Me.UltraLabel41)
-        Me.UltraGroupBox11.Location = New System.Drawing.Point(3, 19)
+        Me.UltraGroupBox11.Location = New System.Drawing.Point(2, 19)
         Me.UltraGroupBox11.Name = "UltraGroupBox11"
-        Me.UltraGroupBox11.Size = New System.Drawing.Size(150, 55)
+        Me.UltraGroupBox11.Size = New System.Drawing.Size(135, 55)
         Me.UltraGroupBox11.TabIndex = 53
         Me.UltraGroupBox11.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -6052,7 +6062,7 @@ Partial Class frm_Guias
         '
         Me.fecHasta.DateTime = New Date(2014, 11, 14, 0, 0, 0, 0)
         Me.fecHasta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.fecHasta.Location = New System.Drawing.Point(50, 29)
+        Me.fecHasta.Location = New System.Drawing.Point(41, 29)
         Me.fecHasta.MaskInput = ""
         Me.fecHasta.Name = "fecHasta"
         Me.fecHasta.Size = New System.Drawing.Size(90, 21)
@@ -6067,7 +6077,7 @@ Partial Class frm_Guias
         Me.UltraLabel39.Appearance = Appearance55
         Me.UltraLabel39.AutoSize = True
         Me.UltraLabel39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel39.Location = New System.Drawing.Point(10, 33)
+        Me.UltraLabel39.Location = New System.Drawing.Point(3, 33)
         Me.UltraLabel39.Name = "UltraLabel39"
         Me.UltraLabel39.Size = New System.Drawing.Size(37, 14)
         Me.UltraLabel39.TabIndex = 49
@@ -6077,7 +6087,7 @@ Partial Class frm_Guias
         '
         Me.fecDesde.DateTime = New Date(2014, 11, 14, 0, 0, 0, 0)
         Me.fecDesde.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.fecDesde.Location = New System.Drawing.Point(50, 6)
+        Me.fecDesde.Location = New System.Drawing.Point(41, 6)
         Me.fecDesde.MaskInput = ""
         Me.fecDesde.Name = "fecDesde"
         Me.fecDesde.Size = New System.Drawing.Size(90, 21)
@@ -6092,7 +6102,7 @@ Partial Class frm_Guias
         Me.UltraLabel41.Appearance = Appearance56
         Me.UltraLabel41.AutoSize = True
         Me.UltraLabel41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel41.Location = New System.Drawing.Point(7, 10)
+        Me.UltraLabel41.Location = New System.Drawing.Point(1, 10)
         Me.UltraLabel41.Name = "UltraLabel41"
         Me.UltraLabel41.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel41.TabIndex = 47
@@ -6103,7 +6113,7 @@ Partial Class frm_Guias
         Appearance57.ForeColor = System.Drawing.Color.Navy
         Me.verTracto.Appearance = Appearance57
         Me.verTracto.AutoSize = True
-        Me.verTracto.Location = New System.Drawing.Point(161, 52)
+        Me.verTracto.Location = New System.Drawing.Point(146, 53)
         Me.verTracto.Name = "verTracto"
         Me.verTracto.Size = New System.Drawing.Size(56, 17)
         Me.verTracto.TabIndex = 26
@@ -6119,12 +6129,12 @@ Partial Class frm_Guias
         Me.cboTractoLista.Enabled = False
         Me.cboTractoLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTractoLista.ForeColor = System.Drawing.Color.Black
-        Me.cboTractoLista.Location = New System.Drawing.Point(219, 51)
+        Me.cboTractoLista.Location = New System.Drawing.Point(204, 51)
         Me.cboTractoLista.Name = "cboTractoLista"
-        Me.cboTractoLista.Size = New System.Drawing.Size(80, 21)
+        Me.cboTractoLista.Size = New System.Drawing.Size(90, 21)
         Me.cboTractoLista.TabIndex = 25
-        UltraToolTipInfo2.ToolTipText = "Seleccione Tracto para el Filtro en el Listado de Viajes"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboTractoLista, UltraToolTipInfo2)
+        UltraToolTipInfo4.ToolTipText = "Seleccione Tracto para el Filtro en el Listado de Viajes"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboTractoLista, UltraToolTipInfo4)
         Me.cboTractoLista.ValueMember = "Id"
         '
         'cboRemitenteBusca
@@ -6138,10 +6148,10 @@ Partial Class frm_Guias
         Me.cboRemitenteBusca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboRemitenteBusca.Location = New System.Drawing.Point(4, 75)
         Me.cboRemitenteBusca.Name = "cboRemitenteBusca"
-        Me.cboRemitenteBusca.Size = New System.Drawing.Size(450, 22)
+        Me.cboRemitenteBusca.Size = New System.Drawing.Size(350, 22)
         Me.cboRemitenteBusca.TabIndex = 5
-        UltraToolTipInfo3.ToolTipText = "Listado de Remitente"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboRemitenteBusca, UltraToolTipInfo3)
+        UltraToolTipInfo5.ToolTipText = "Listado de Remitente"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboRemitenteBusca, UltraToolTipInfo5)
         Me.cboRemitenteBusca.ValueMember = "Id"
         '
         'txtGuiaRemitente
@@ -6159,8 +6169,8 @@ Partial Class frm_Guias
         Me.txtGuiaRemitente.Name = "txtGuiaRemitente"
         Me.txtGuiaRemitente.Size = New System.Drawing.Size(100, 21)
         Me.txtGuiaRemitente.TabIndex = 4
-        UltraToolTipInfo4.ToolTipText = "Guia Remision Remitente :Serie-Numero"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGuiaRemitente, UltraToolTipInfo4)
+        UltraToolTipInfo6.ToolTipText = "Guia Remision Remitente :Serie-Numero"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGuiaRemitente, UltraToolTipInfo6)
         '
         'UltraLabel19
         '
@@ -6170,7 +6180,7 @@ Partial Class frm_Guias
         Me.UltraLabel19.Appearance = Appearance61
         Me.UltraLabel19.AutoSize = True
         Me.UltraLabel19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel19.Location = New System.Drawing.Point(304, 56)
+        Me.UltraLabel19.Location = New System.Drawing.Point(305, 56)
         Me.UltraLabel19.Name = "UltraLabel19"
         Me.UltraLabel19.Size = New System.Drawing.Size(48, 14)
         Me.UltraLabel19.TabIndex = 3
@@ -6183,7 +6193,7 @@ Partial Class frm_Guias
         Appearance62.TextVAlignAsString = "Middle"
         Me.UltraLabel46.Appearance = Appearance62
         Me.UltraLabel46.AutoSize = True
-        Me.UltraLabel46.Location = New System.Drawing.Point(157, 30)
+        Me.UltraLabel46.Location = New System.Drawing.Point(161, 30)
         Me.UltraLabel46.Name = "UltraLabel46"
         Me.UltraLabel46.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel46.TabIndex = 1
@@ -6199,9 +6209,9 @@ Partial Class frm_Guias
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboCentro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Location = New System.Drawing.Point(199, 27)
+        Me.cboCentro.Location = New System.Drawing.Point(204, 27)
         Me.cboCentro.Name = "cboCentro"
-        Me.cboCentro.Size = New System.Drawing.Size(100, 21)
+        Me.cboCentro.Size = New System.Drawing.Size(150, 21)
         Me.cboCentro.TabIndex = 2
         Me.cboCentro.ValueMember = "Id"
         '
@@ -6408,7 +6418,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox7)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1232, 419)
         '

@@ -5972,7 +5972,7 @@ Partial Class frm_Seguimiento
         Me.UltraTabPageControl7.Controls.Add(Me.tabListado)
         Me.UltraTabPageControl7.Controls.Add(Me.gruopExpanUnidadesSinReportar)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1082, 588)
         '
@@ -6091,11 +6091,11 @@ Partial Class frm_Seguimiento
         Me.UltraExpandableGroupBox7.ContentAreaAppearance = Appearance39
         Me.UltraExpandableGroupBox7.Controls.Add(Me.UltraExpandableGroupBoxPanel15)
         Me.UltraExpandableGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(883, 100)
+        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(801, 100)
         Me.UltraExpandableGroupBox7.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.UltraExpandableGroupBox7.Location = New System.Drawing.Point(196, 17)
+        Me.UltraExpandableGroupBox7.Location = New System.Drawing.Point(278, 17)
         Me.UltraExpandableGroupBox7.Name = "UltraExpandableGroupBox7"
-        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(883, 100)
+        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(801, 100)
         Me.UltraExpandableGroupBox7.TabIndex = 53
         Me.UltraExpandableGroupBox7.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -6112,7 +6112,7 @@ Partial Class frm_Seguimiento
         Me.UltraExpandableGroupBoxPanel15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel15.Location = New System.Drawing.Point(18, 3)
         Me.UltraExpandableGroupBoxPanel15.Name = "UltraExpandableGroupBoxPanel15"
-        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(862, 94)
+        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(780, 94)
         Me.UltraExpandableGroupBoxPanel15.TabIndex = 0
         '
         'UltraLabel6
@@ -6187,7 +6187,7 @@ Partial Class frm_Seguimiento
         Me.grupoEstado.ForeColor = System.Drawing.Color.MidnightBlue
         Me.grupoEstado.Location = New System.Drawing.Point(0, 69)
         Me.grupoEstado.Name = "grupoEstado"
-        Me.grupoEstado.Size = New System.Drawing.Size(570, 25)
+        Me.grupoEstado.Size = New System.Drawing.Size(565, 25)
         Me.grupoEstado.TabIndex = 30
         UltraToolTipInfo1.ToolTipText = "Estado de un Viaje"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoEstado, UltraToolTipInfo1)
@@ -6351,7 +6351,7 @@ Partial Class frm_Seguimiento
         Me.grupoTipoVehiculo.ForeColor = System.Drawing.Color.MidnightBlue
         Me.grupoTipoVehiculo.Location = New System.Drawing.Point(0, 0)
         Me.grupoTipoVehiculo.Name = "grupoTipoVehiculo"
-        Me.grupoTipoVehiculo.Size = New System.Drawing.Size(570, 70)
+        Me.grupoTipoVehiculo.Size = New System.Drawing.Size(565, 70)
         Me.grupoTipoVehiculo.TabIndex = 29
         UltraToolTipInfo2.ToolTipText = "Tipo Vehiculo (Modelo Funcional)"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoTipoVehiculo, UltraToolTipInfo2)
@@ -6729,11 +6729,11 @@ Partial Class frm_Seguimiento
         Me.UltraExpandableGroupBox4.ContentAreaAppearance = Appearance66
         Me.UltraExpandableGroupBox4.Controls.Add(Me.UltraExpandableGroupBoxPanel12)
         Me.UltraExpandableGroupBox4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(193, 100)
+        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(275, 100)
         Me.UltraExpandableGroupBox4.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox4.Location = New System.Drawing.Point(3, 17)
         Me.UltraExpandableGroupBox4.Name = "UltraExpandableGroupBox4"
-        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(193, 100)
+        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(275, 100)
         Me.UltraExpandableGroupBox4.TabIndex = 52
         Me.UltraExpandableGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -6747,7 +6747,7 @@ Partial Class frm_Seguimiento
         Me.UltraExpandableGroupBoxPanel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel12.Location = New System.Drawing.Point(18, 3)
         Me.UltraExpandableGroupBoxPanel12.Name = "UltraExpandableGroupBoxPanel12"
-        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(172, 94)
+        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(254, 94)
         Me.UltraExpandableGroupBoxPanel12.TabIndex = 0
         '
         'cboTractoLista
@@ -6760,9 +6760,9 @@ Partial Class frm_Seguimiento
         Me.cboTractoLista.Enabled = False
         Me.cboTractoLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTractoLista.ForeColor = System.Drawing.Color.Black
-        Me.cboTractoLista.Location = New System.Drawing.Point(61, 73)
+        Me.cboTractoLista.Location = New System.Drawing.Point(160, 58)
         Me.cboTractoLista.Name = "cboTractoLista"
-        Me.cboTractoLista.Size = New System.Drawing.Size(80, 21)
+        Me.cboTractoLista.Size = New System.Drawing.Size(90, 21)
         Me.cboTractoLista.TabIndex = 27
         UltraToolTipInfo3.ToolTipText = "Seleccione Tracto para el Filtro en el Listado de Viajes"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.cboTractoLista, UltraToolTipInfo3)
@@ -6778,9 +6778,9 @@ Partial Class frm_Seguimiento
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboCentro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Location = New System.Drawing.Point(61, 0)
+        Me.cboCentro.Location = New System.Drawing.Point(49, 9)
         Me.cboCentro.Name = "cboCentro"
-        Me.cboCentro.Size = New System.Drawing.Size(100, 21)
+        Me.cboCentro.Size = New System.Drawing.Size(200, 21)
         Me.cboCentro.TabIndex = 11
         Me.cboCentro.ValueMember = "Id"
         '
@@ -6789,7 +6789,7 @@ Partial Class frm_Seguimiento
         Appearance69.ForeColor = System.Drawing.Color.Navy
         Me.verTracto.Appearance = Appearance69
         Me.verTracto.AutoSize = True
-        Me.verTracto.Location = New System.Drawing.Point(3, 74)
+        Me.verTracto.Location = New System.Drawing.Point(180, 38)
         Me.verTracto.Name = "verTracto"
         Me.verTracto.Size = New System.Drawing.Size(57, 18)
         Me.verTracto.TabIndex = 28
@@ -6802,7 +6802,7 @@ Partial Class frm_Seguimiento
         Appearance70.TextVAlignAsString = "Middle"
         Me.UltraLabel46.Appearance = Appearance70
         Me.UltraLabel46.AutoSize = True
-        Me.UltraLabel46.Location = New System.Drawing.Point(18, 4)
+        Me.UltraLabel46.Location = New System.Drawing.Point(5, 13)
         Me.UltraLabel46.Name = "UltraLabel46"
         Me.UltraLabel46.Size = New System.Drawing.Size(41, 15)
         Me.UltraLabel46.TabIndex = 12
@@ -6814,9 +6814,9 @@ Partial Class frm_Seguimiento
         Me.UltraGroupBox11.Controls.Add(Me.UltraLabel8)
         Me.UltraGroupBox11.Controls.Add(Me.fecDesde)
         Me.UltraGroupBox11.Controls.Add(Me.UltraLabel10)
-        Me.UltraGroupBox11.Location = New System.Drawing.Point(10, 22)
+        Me.UltraGroupBox11.Location = New System.Drawing.Point(5, 34)
         Me.UltraGroupBox11.Name = "UltraGroupBox11"
-        Me.UltraGroupBox11.Size = New System.Drawing.Size(150, 50)
+        Me.UltraGroupBox11.Size = New System.Drawing.Size(140, 55)
         Me.UltraGroupBox11.TabIndex = 54
         Me.UltraGroupBox11.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -6824,7 +6824,7 @@ Partial Class frm_Seguimiento
         '
         Me.fecHasta.DateTime = New Date(2014, 12, 1, 0, 0, 0, 0)
         Me.fecHasta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.fecHasta.Location = New System.Drawing.Point(50, 26)
+        Me.fecHasta.Location = New System.Drawing.Point(44, 28)
         Me.fecHasta.MaskInput = ""
         Me.fecHasta.Name = "fecHasta"
         Me.fecHasta.Size = New System.Drawing.Size(90, 22)
@@ -6839,7 +6839,7 @@ Partial Class frm_Seguimiento
         Me.UltraLabel8.Appearance = Appearance71
         Me.UltraLabel8.AutoSize = True
         Me.UltraLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel8.Location = New System.Drawing.Point(10, 30)
+        Me.UltraLabel8.Location = New System.Drawing.Point(6, 31)
         Me.UltraLabel8.Name = "UltraLabel8"
         Me.UltraLabel8.Size = New System.Drawing.Size(37, 14)
         Me.UltraLabel8.TabIndex = 49
@@ -6849,7 +6849,7 @@ Partial Class frm_Seguimiento
         '
         Me.fecDesde.DateTime = New Date(2014, 12, 1, 0, 0, 0, 0)
         Me.fecDesde.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.fecDesde.Location = New System.Drawing.Point(50, 4)
+        Me.fecDesde.Location = New System.Drawing.Point(44, 6)
         Me.fecDesde.MaskInput = ""
         Me.fecDesde.Name = "fecDesde"
         Me.fecDesde.Size = New System.Drawing.Size(90, 22)
@@ -6864,7 +6864,7 @@ Partial Class frm_Seguimiento
         Me.UltraLabel10.Appearance = Appearance72
         Me.UltraLabel10.AutoSize = True
         Me.UltraLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel10.Location = New System.Drawing.Point(7, 8)
+        Me.UltraLabel10.Location = New System.Drawing.Point(3, 10)
         Me.UltraLabel10.Name = "UltraLabel10"
         Me.UltraLabel10.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel10.TabIndex = 47
@@ -6876,7 +6876,7 @@ Partial Class frm_Seguimiento
         Me.utpDetalle.Controls.Add(Me.tabGuias)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox10)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox9)
-        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
+        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1082, 588)
         '

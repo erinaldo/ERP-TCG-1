@@ -39,6 +39,10 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERPTCG_Internet", "ERPTCG_I
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERPTCG_Local", "ERPTCG_Local\ERPTCG_Local.vdproj", "{7696FDC3-E927-462E-9F3A-F90534B2514E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Internet Ver1107", "Internet Ver1107\Internet Ver1107.vdproj", "{8CE99D84-B336-4B4C-B10A-231FB1523B15}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Local Ver1107", "Local Ver1107\Local Ver1107.vdproj", "{0CE11E16-0B8D-40E6-8644-504BFFA3B607}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -103,6 +107,14 @@ Global
 		{7696FDC3-E927-462E-9F3A-F90534B2514E}.Debug|x86.ActiveCfg = Debug
 		{7696FDC3-E927-462E-9F3A-F90534B2514E}.Release|Any CPU.ActiveCfg = Release
 		{7696FDC3-E927-462E-9F3A-F90534B2514E}.Release|x86.ActiveCfg = Release
+		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Debug|Any CPU.ActiveCfg = Debug
+		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Debug|x86.ActiveCfg = Debug
+		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Release|Any CPU.ActiveCfg = Release
+		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Release|x86.ActiveCfg = Release
+		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Debug|Any CPU.ActiveCfg = Debug
+		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Debug|x86.ActiveCfg = Debug
+		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Release|Any CPU.ActiveCfg = Release
+		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
