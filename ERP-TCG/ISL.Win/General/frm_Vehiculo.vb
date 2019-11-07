@@ -53,37 +53,37 @@ Public Class frm_Vehiculo
     Public PlacaOriginal As String = ""
 
     'Vehiculo
-    Private oeVehiculo As e_Vehiculo
+    Private oeVehiculo As New e_Vehiculo
     Private loVehiculo As New List(Of e_Vehiculo)
     Private olVehiculo As New l_Vehiculo
     'Combos
-    Private oeMarca As e_Marca
+    Private oeMarca As New e_Marca
     Private olMarca As New l_Marca
-    Private oeConfiguracionNeumatico As e_ConfiguracionNeumatico
+    Private oeConfiguracionNeumatico As New e_ConfiguracionNeumatico
     Private olConfiguracionNeumatico As New l_ConfiguracionNeumatico
-    Private oeModeloVehiculo As e_Modelo
+    Private oeModeloVehiculo As New e_Modelo
     Private olModeloVehiculo As New l_Modelo
-    Private ListaTipoDispositivo As List(Of e_TipoDocumento)
-    Private oeCombo As e_Combo
+    Private ListaTipoDispositivo As New List(Of e_TipoDocumento)
+    Private oeCombo As New e_Combo
     Private olCombo As New l_Combo
-    Private ListCombo As List(Of e_Combo)
+    Private ListCombo As New List(Of e_Combo)
     'Placa
-    Private oePlaca As e_Placa
+    Private oePlaca As New e_Placa
     Private loPlaca As New List(Of e_Placa)
     'Estado
-    Private oeVehiculoEstado As e_VehiculoEstado
+    Private oeVehiculoEstado As New e_VehiculoEstado
     Private loVehiculoEstado As New List(Of e_VehiculoEstado)
     'Dispositivo
-    Private oeDispositivo As e_Dispositivo
+    Private oeDispositivo As New e_Dispositivo
     Private loDispositivo As New List(Of e_Dispositivo)
     'Bonificacion
-    Private oeBonificacion As e_Bonificacion
+    Private oeBonificacion As New e_Bonificacion
     Private loBonificacion As New List(Of e_Bonificacion)
     'Flota
-    Private oeAsignacionFlota As e_AsignacionFlota
+    Private oeAsignacionFlota As New e_AsignacionFlota
     Private loAsignacionFlota As New List(Of e_AsignacionFlota)
     'Tarjeta
-    Private oeVehiculoTarj As e_VehiculoTarjeta
+    Private oeVehiculoTarj As New e_VehiculoTarjeta
     Private loVehiculoTarj As New List(Of e_VehiculoTarjeta)
     Private olVehociloTarj As New l_VehiculoTarjeta
     'Concepto
@@ -533,6 +533,7 @@ Public Class frm_Vehiculo
                 If Operacion = "Nuevo" Then
                     'Placa
                     oePlaca = New e_Placa
+                    loPlaca = New List(Of e_Placa)
                     With oePlaca
                         .Nombre = txtPlaca.Text.Trim()
                         .FechaInicio = Date.Now.AddDays(-15).Date
@@ -541,6 +542,7 @@ Public Class frm_Vehiculo
                     loPlaca.Add(oePlaca)
                     'Estado
                     oeVehiculoEstado = New e_VehiculoEstado
+                    loVehiculoEstado = New List(Of e_VehiculoEstado)
                     With oeVehiculoEstado
                         '.Indicador = opcEstado.CheckedIndex
                         .Indicador = cboEstadoMan.Value
@@ -552,6 +554,7 @@ Public Class frm_Vehiculo
                     loVehiculoEstado.Add(oeVehiculoEstado)
                     'Flota
                     oeAsignacionFlota = New e_AsignacionFlota
+                    loAsignacionFlota = New List(Of e_AsignacionFlota)
                     With oeAsignacionFlota
                         .IdFlota = cboFlota.Value
                         .Observacion = String.Empty
@@ -933,7 +936,7 @@ Public Class frm_Vehiculo
             tabEstados.Tab.Visible = True
             tabFlota.Tab.Visible = True
             tabDocumentos.Tab.Visible = True
-            TabTarjetasCovisol.Tab.Visible = True
+            'TabTarjetasCovisol.Tab.Visible = True '@0001
             Select Case Operacion
                 Case "Nuevo"
                     tabSeguros.Tab.Visible = False
@@ -947,11 +950,12 @@ Public Class frm_Vehiculo
                     'opcEstado.Enabled = False
                     cboEstadoMan.Enabled = False
             End Select
-            tabs.SelectedTab = TabTarjetasCovisol.Tab
+            'tabs.SelectedTab = TabTarjetasCovisol.Tab @0001
             'Para que llene los combos dependientes a IndMotriz
             verMotriz_CheckedChanged(Nothing, Nothing)
             'Web Browser Consulta Vehicular
             wbrConsultaVehicular.Navigate(URLConsultaVehicular)
+            wbrConsultaVehicular.ScriptErrorsSuppressed = True
         Catch ex As Exception
             Throw ex
         End Try
@@ -2942,51 +2946,54 @@ Public Class frm_Vehiculo
 
     Private Sub btnObtenerDatos_Click(sender As Object, e As EventArgs) Handles btnObtenerDatos.Click
         Try
-            If wbrConsultaVehicular.Document.GetElementById("MainContent_lblNuPlac") IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(wbrConsultaVehicular.Document.GetElementById("MainContent_lblNuPlac").InnerText) Then
-                With wbrConsultaVehicular.Document
-                    txtSerieChasis.Text = .GetElementById("MainContent_lblNoSeri").InnerText
-                    txtSerieMotor.Text = .GetElementById("MainContent_lblNoMotr").InnerText
-                    txtColor.Text = .GetElementById("MainContent_lblColr").InnerText
-                    'comprobar marca
-                    If lstMarca.Where(Function(x) x.Nombre = .GetElementById("MainContent_lblMarca").InnerText.Trim()).Count > 0 Then
-                        cboMarca.Value = lstMarca.Where(Function(x) x.Nombre = .GetElementById("MainContent_lblMarca").InnerText.Trim())(0).Id
-                        'Comprobar modelo
-                        oeModeloVehiculo = New e_Modelo
-                        oeModeloVehiculo.IdMarca = cboMarca.Value
-                        Dim ListModeloVehiculo As New List(Of e_Modelo)
-                        ListModeloVehiculo.AddRange(olModeloVehiculo.Listar(oeModeloVehiculo))
-                        If ListModeloVehiculo.Where(Function(Item) Item.IndSunarp = 1 And Item.Nombre.Replace(" ", "").ToUpper = .GetElementById("MainContent_lblModelo").InnerText.Trim().Replace(" ", "").ToUpper).Count > 0 Then
-                            cboModeloSunarp.Value = ListModeloVehiculo.Where(Function(Item) Item.IndSunarp = 1 And Item.Nombre.Replace(" ", "").ToUpper = .GetElementById("MainContent_lblModelo").InnerText.Trim().Replace(" ", "").ToUpper)(0).Id
-                        End If
-                    End If
-                    'Obtener Propietario
-                    oeCombo = New e_Combo
-                    oeCombo.Nombre = "EMPRESAINDICADOR"
-                    oeCombo.Descripcion = "PROPIETARIO"
-                    Dim lstPropietario As New List(Of e_Combo)
-                    lstPropietario.AddRange(olCombo.Listar(oeCombo))
-                    Dim _table As HtmlElement, _tr As HtmlElement, _td As HtmlElement
-                    _table = .GetElementById("MainContent_t_propietarios")
-                    For i = 0 To _table.GetElementsByTagName("tr").Count - 1
-                        _tr = _table.GetElementsByTagName("tr").Item(i)
-                        Select Case i
-                            Case 0
-                                For j = 0 To _tr.GetElementsByTagName("td").Count - 1
-                                    _td = _tr.GetElementsByTagName("td").Item(j)
-                                    Select Case j
-                                        Case 0
-                                            If lstPropietario.Where(Function(x) x.Nombre = _td.InnerText.Trim()).Count > 0 Then
-                                                cboPropietario.Value = lstPropietario.Where(Function(x) x.Nombre = _td.InnerText.Trim())(0).Id
-                                            End If
-                                    End Select
-                                Next
-                        End Select
-                    Next
-                End With
-            Else
-                MessageBox.Show("No se encontraron datos", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                wbrConsultaVehicular.Navigate(URLConsultaVehicular)
-            End If
+            'If wbrConsultaVehicular.Document.GetElementById("MainContent_lblNuPlac") IsNot Nothing AndAlso Not String.IsNullOrWhiteSpace(wbrConsultaVehicular.Document.GetElementById("MainContent_lblNuPlac").InnerText) Then
+            '    With wbrConsultaVehicular.Document
+            '        txtSerieChasis.Text = .GetElementById("MainContent_lblNoSeri").InnerText
+            '        txtSerieMotor.Text = .GetElementById("MainContent_lblNoMotr").InnerText
+            '        txtColor.Text = .GetElementById("MainContent_lblColr").InnerText
+            '        'comprobar marca
+            '        If lstMarca.Where(Function(x) x.Nombre = .GetElementById("MainContent_lblMarca").InnerText.Trim()).Count > 0 Then
+            '            cboMarca.Value = lstMarca.Where(Function(x) x.Nombre = .GetElementById("MainContent_lblMarca").InnerText.Trim())(0).Id
+            '            'Comprobar modelo
+            '            oeModeloVehiculo = New e_Modelo
+            '            oeModeloVehiculo.IdMarca = cboMarca.Value
+            '            Dim ListModeloVehiculo As New List(Of e_Modelo)
+            '            ListModeloVehiculo.AddRange(olModeloVehiculo.Listar(oeModeloVehiculo))
+            '            If ListModeloVehiculo.Where(Function(Item) Item.IndSunarp = 1 And Item.Nombre.Replace(" ", "").ToUpper = .GetElementById("MainContent_lblModelo").InnerText.Trim().Replace(" ", "").ToUpper).Count > 0 Then
+            '                cboModeloSunarp.Value = ListModeloVehiculo.Where(Function(Item) Item.IndSunarp = 1 And Item.Nombre.Replace(" ", "").ToUpper = .GetElementById("MainContent_lblModelo").InnerText.Trim().Replace(" ", "").ToUpper)(0).Id
+            '            End If
+            '        End If
+            '        'Obtener Propietario
+            '        oeCombo = New e_Combo
+            '        oeCombo.Nombre = "EMPRESAINDICADOR"
+            '        oeCombo.Descripcion = "PROPIETARIO"
+            '        Dim lstPropietario As New List(Of e_Combo)
+            '        lstPropietario.AddRange(olCombo.Listar(oeCombo))
+            '        Dim _table As HtmlElement, _tr As HtmlElement, _td As HtmlElement
+            '        _table = .GetElementById("MainContent_t_propietarios")
+            '        For i = 0 To _table.GetElementsByTagName("tr").Count - 1
+            '            _tr = _table.GetElementsByTagName("tr").Item(i)
+            '            Select Case i
+            '                Case 0
+            '                    For j = 0 To _tr.GetElementsByTagName("td").Count - 1
+            '                        _td = _tr.GetElementsByTagName("td").Item(j)
+            '                        Select Case j
+            '                            Case 0
+            '                                If lstPropietario.Where(Function(x) x.Nombre = _td.InnerText.Trim()).Count > 0 Then
+            '                                    cboPropietario.Value = lstPropietario.Where(Function(x) x.Nombre = _td.InnerText.Trim())(0).Id
+            '                                End If
+            '                        End Select
+            '                    Next
+            '            End Select
+            '        Next
+            '    End With
+            'Else
+            '    MessageBox.Show("No se encontraron datos", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            '    wbrConsultaVehicular.Navigate(URLConsultaVehicular)
+            'End If
+            '@0001 Web Browser Consulta Vehicular
+            wbrConsultaVehicular.Navigate(URLConsultaVehicular)
+            wbrConsultaVehicular.ScriptErrorsSuppressed = True
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

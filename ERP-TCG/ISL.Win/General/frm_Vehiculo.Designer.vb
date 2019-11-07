@@ -5150,7 +5150,7 @@ Partial Class frm_Vehiculo
         Me.btnObtenerDatos.Size = New System.Drawing.Size(90, 25)
         Me.btnObtenerDatos.TabIndex = 9
         Me.btnObtenerDatos.TabStop = False
-        Me.btnObtenerDatos.Text = "Obtener Datos"
+        Me.btnObtenerDatos.Text = "Sunarp Web"
         Me.btnObtenerDatos.UseVisualStyleBackColor = True
         '
         'btnEnviarPlaca
@@ -5556,7 +5556,7 @@ Partial Class frm_Vehiculo
         Me.Etiqueta37.AutoSize = True
         Me.Etiqueta37.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta37.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta37.Location = New System.Drawing.Point(30, 197)
+        Me.Etiqueta37.Location = New System.Drawing.Point(25, 197)
         Me.Etiqueta37.Name = "Etiqueta37"
         Me.Etiqueta37.Size = New System.Drawing.Size(60, 15)
         Me.Etiqueta37.TabIndex = 52
@@ -6333,6 +6333,7 @@ Partial Class frm_Vehiculo
         UltraTab6.Text = "Unidades"
         UltraTab7.TabPage = Me.tapSituacional
         UltraTab7.Text = "Situacional"
+        UltraTab7.Visible = False
         Me.tabLista.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab6, UltraTab7})
         Me.tabLista.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
