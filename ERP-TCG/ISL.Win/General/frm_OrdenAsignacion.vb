@@ -982,36 +982,36 @@ Public Class frm_OrdenAsignacion
                     oeEqu.TipoOperacion = "S"
                     oeEqu.Id = oeRequerimiento.IdEquipo
                     oeEqu = olEqu.Obtener(oeEqu)
-                    If oeEqu.Marca = "C" Then
-                        oeSubAlmacenIngreso.IdAlmacen = "1CH000000009"
-                    Else
-                        If oeEqu.Modelo = "1" Then
-                            oeSubAlmacenIngreso.IdAlmacen = "1CH000000008"
-                        Else
-                            oeSubAlmacenIngreso.IdAlmacen = "1CH000000024"
-                        End If
-                    End If
+                    'If oeEqu.Marca = "C" Then
+                    oeSubAlmacenIngreso.IdAlmacen = "TCH000000004"
+                    'Else
+                    '    If oeEqu.Modelo = "1" Then
+                    '        oeSubAlmacenIngreso.IdAlmacen = "1CH000000008"
+                    '    Else
+                    '        oeSubAlmacenIngreso.IdAlmacen = "1CH000000024"
+                    '    End If
+                    'End If
                     oeSubAlmacenIngreso.Descripcion = oeEqu.Nombre
                 Case "A"
                     oeComboAux = New e_Combo
-                    oeComboAux.Tipo = 1
+                    oeComboAux.Tipo = 0
                     oeComboAux.Id = oeRequerimiento.IdArea
                     If AreasPublic.Contains(oeComboAux) Then
                         oeComboAux = AreasPublic.Item(AreasPublic.IndexOf(oeComboAux))
                     End If
                     oeSubAlmacenIngreso.IdArea = oeComboAux.Id
                     oeSubAlmacenIngreso.Descripcion = oeComboAux.Nombre
-                    oeSubAlmacenIngreso.IdAlmacen = "1CH000000026"
+                    oeSubAlmacenIngreso.IdAlmacen = "TCH000000002"
                 Case "T"
                     oeComboAux = New e_Combo
                     oeComboAux.Id = oeRequerimiento.IdTrabajador
-                    oeComboAux.Tipo = 1
+                    oeComboAux.Tipo = 0
                     If TrabajadorPublic.Contains(oeComboAux) Then
                         oeComboAux = TrabajadorPublic.Item(TrabajadorPublic.IndexOf(oeComboAux))
                     End If
                     oeSubAlmacenIngreso.IdTrabajador = oeComboAux.Id
                     oeSubAlmacenIngreso.Descripcion = oeComboAux.Nombre
-                    oeSubAlmacenIngreso.IdAlmacen = "1CH000000010"
+                    oeSubAlmacenIngreso.IdAlmacen = "TCH000000003"
             End Select
             If IndGuardar Then
                 oeSubAlmacenIngreso.TipoOperacion = "I"

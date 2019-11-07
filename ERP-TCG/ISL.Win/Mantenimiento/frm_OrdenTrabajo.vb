@@ -2323,7 +2323,8 @@ Public Class frm_OrdenTrabajo
             oeTrabajador = New e_Trabajador
             oeTrabajador.Activo = True
             oeTrabajador.TipoOperacion = "P"
-            oeTrabajador.oeCargo.Id = "1CH005"
+            'oeTrabajador.oeCargo.Id = "1CH005"
+            oeTrabajador.oeCargo.Id = "1CH003"
             Dim _leTrabJTAux = olTrabajador.Listar(oeTrabajador)
             Dim _leTrabJT = From le In _leTrabJTAux _
                             Select le.Id, le.oePersona.NombreCompleto, le.IndEstado

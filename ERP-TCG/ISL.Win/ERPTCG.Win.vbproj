@@ -6612,7 +6612,9 @@
     <EmbeddedResource Include="Reportes\Comercial\Compras\frm_ImprimirMaterialEntregado.resx">
       <DependentUpon>frm_ImprimirMaterialEntregado.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\MaterialEntregado.rdlc" />
+    <Content Include="Reportes\MaterialEntregado.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_rptNotaCredito.resx">
       <DependentUpon>frm_rptNotaCredito.vb</DependentUpon>
     </EmbeddedResource>
