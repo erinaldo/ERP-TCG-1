@@ -7854,11 +7854,11 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox7.ContentAreaAppearance = Appearance96
         Me.UltraExpandableGroupBox7.Controls.Add(Me.UltraExpandableGroupBoxPanel15)
         Me.UltraExpandableGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(896, 125)
+        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(866, 125)
         Me.UltraExpandableGroupBox7.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.UltraExpandableGroupBox7.Location = New System.Drawing.Point(353, 17)
+        Me.UltraExpandableGroupBox7.Location = New System.Drawing.Point(383, 17)
         Me.UltraExpandableGroupBox7.Name = "UltraExpandableGroupBox7"
-        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(896, 125)
+        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(866, 125)
         Me.UltraExpandableGroupBox7.TabIndex = 1
         Me.UltraExpandableGroupBox7.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -7878,7 +7878,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel15.Location = New System.Drawing.Point(18, 3)
         Me.UltraExpandableGroupBoxPanel15.Name = "UltraExpandableGroupBoxPanel15"
-        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(875, 119)
+        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(845, 119)
         Me.UltraExpandableGroupBoxPanel15.TabIndex = 0
         '
         'decProduccionSinIGV
@@ -7886,7 +7886,7 @@ Partial Class frm_Operacion
         Appearance97.FontData.BoldAsString = "True"
         Me.decProduccionSinIGV.Appearance = Appearance97
         Me.decProduccionSinIGV.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.decProduccionSinIGV.Location = New System.Drawing.Point(726, 79)
+        Me.decProduccionSinIGV.Location = New System.Drawing.Point(669, 79)
         Me.decProduccionSinIGV.MaskInput = "{double:-9.2}"
         Me.decProduccionSinIGV.Name = "decProduccionSinIGV"
         Me.decProduccionSinIGV.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -7897,7 +7897,7 @@ Partial Class frm_Operacion
         'decProduccionIGV
         '
         Me.decProduccionIGV.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.decProduccionIGV.Location = New System.Drawing.Point(726, 30)
+        Me.decProduccionIGV.Location = New System.Drawing.Point(669, 30)
         Me.decProduccionIGV.MaskInput = "{double:-9.2}"
         Me.decProduccionIGV.Name = "decProduccionIGV"
         Me.decProduccionIGV.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -7911,7 +7911,7 @@ Partial Class frm_Operacion
         Appearance98.ForeColor = System.Drawing.Color.Navy
         Me.lblProduccionSinIGV.Appearance = Appearance98
         Me.lblProduccionSinIGV.AutoSize = True
-        Me.lblProduccionSinIGV.Location = New System.Drawing.Point(726, 58)
+        Me.lblProduccionSinIGV.Location = New System.Drawing.Point(669, 58)
         Me.lblProduccionSinIGV.Name = "lblProduccionSinIGV"
         Me.lblProduccionSinIGV.Size = New System.Drawing.Size(105, 15)
         Me.lblProduccionSinIGV.TabIndex = 10
@@ -7923,7 +7923,7 @@ Partial Class frm_Operacion
         Appearance99.ForeColor = System.Drawing.Color.Navy
         Me.lblProduccionIGV.Appearance = Appearance99
         Me.lblProduccionIGV.AutoSize = True
-        Me.lblProduccionIGV.Location = New System.Drawing.Point(726, 8)
+        Me.lblProduccionIGV.Location = New System.Drawing.Point(669, 8)
         Me.lblProduccionIGV.Name = "lblProduccionIGV"
         Me.lblProduccionIGV.Size = New System.Drawing.Size(109, 15)
         Me.lblProduccionIGV.TabIndex = 9
@@ -7948,7 +7948,7 @@ Partial Class frm_Operacion
         Me.grupoEstado.ForeColor = System.Drawing.Color.MidnightBlue
         Me.grupoEstado.Location = New System.Drawing.Point(0, 89)
         Me.grupoEstado.Name = "grupoEstado"
-        Me.grupoEstado.Size = New System.Drawing.Size(570, 30)
+        Me.grupoEstado.Size = New System.Drawing.Size(560, 30)
         Me.grupoEstado.TabIndex = 2
         UltraToolTipInfo1.ToolTipText = "Estado de un Viaje"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoEstado, UltraToolTipInfo1)
@@ -7958,7 +7958,7 @@ Partial Class frm_Operacion
         '
         Me.ColorFin.Color = System.Drawing.Color.LimeGreen
         Me.ColorFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorFin.Location = New System.Drawing.Point(515, 5)
+        Me.ColorFin.Location = New System.Drawing.Point(512, 5)
         Me.ColorFin.Name = "ColorFin"
         Me.ColorFin.Size = New System.Drawing.Size(43, 19)
         Me.ColorFin.TabIndex = 9
@@ -7968,7 +7968,7 @@ Partial Class frm_Operacion
         '
         Me.ColorProgramado.Color = System.Drawing.Color.White
         Me.ColorProgramado.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorProgramado.Location = New System.Drawing.Point(87, 5)
+        Me.ColorProgramado.Location = New System.Drawing.Point(84, 5)
         Me.ColorProgramado.Name = "ColorProgramado"
         Me.ColorProgramado.Size = New System.Drawing.Size(44, 19)
         Me.ColorProgramado.TabIndex = 1
@@ -7978,7 +7978,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCarga.Color = System.Drawing.Color.Yellow
         Me.ColorCarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCarga.Location = New System.Drawing.Point(201, 5)
+        Me.ColorCarga.Location = New System.Drawing.Point(198, 5)
         Me.ColorCarga.Name = "ColorCarga"
         Me.ColorCarga.Size = New System.Drawing.Size(44, 19)
         Me.ColorCarga.TabIndex = 3
@@ -7992,7 +7992,7 @@ Partial Class frm_Operacion
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta6.Location = New System.Drawing.Point(19, 7)
+        Me.Etiqueta6.Location = New System.Drawing.Point(16, 7)
         Me.Etiqueta6.Name = "Etiqueta6"
         Me.Etiqueta6.Size = New System.Drawing.Size(68, 14)
         Me.Etiqueta6.TabIndex = 0
@@ -8006,7 +8006,7 @@ Partial Class frm_Operacion
         Me.Etiqueta5.AutoSize = True
         Me.Etiqueta5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta5.Location = New System.Drawing.Point(164, 7)
+        Me.Etiqueta5.Location = New System.Drawing.Point(161, 7)
         Me.Etiqueta5.Name = "Etiqueta5"
         Me.Etiqueta5.Size = New System.Drawing.Size(37, 14)
         Me.Etiqueta5.TabIndex = 2
@@ -8016,7 +8016,7 @@ Partial Class frm_Operacion
         '
         Me.ColorTransito.Color = System.Drawing.Color.DarkOrange
         Me.ColorTransito.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorTransito.Location = New System.Drawing.Point(319, 5)
+        Me.ColorTransito.Location = New System.Drawing.Point(316, 5)
         Me.ColorTransito.Name = "ColorTransito"
         Me.ColorTransito.Size = New System.Drawing.Size(43, 19)
         Me.ColorTransito.TabIndex = 5
@@ -8030,7 +8030,7 @@ Partial Class frm_Operacion
         Me.Etiqueta7.AutoSize = True
         Me.Etiqueta7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta7.Location = New System.Drawing.Point(492, 7)
+        Me.Etiqueta7.Location = New System.Drawing.Point(489, 7)
         Me.Etiqueta7.Name = "Etiqueta7"
         Me.Etiqueta7.Size = New System.Drawing.Size(22, 14)
         Me.Etiqueta7.TabIndex = 8
@@ -8040,7 +8040,7 @@ Partial Class frm_Operacion
         '
         Me.ColorDescarga.Color = System.Drawing.Color.Silver
         Me.ColorDescarga.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorDescarga.Location = New System.Drawing.Point(428, 5)
+        Me.ColorDescarga.Location = New System.Drawing.Point(425, 5)
         Me.ColorDescarga.Name = "ColorDescarga"
         Me.ColorDescarga.Size = New System.Drawing.Size(43, 19)
         Me.ColorDescarga.TabIndex = 7
@@ -8054,7 +8054,7 @@ Partial Class frm_Operacion
         Me.Etiqueta4.AutoSize = True
         Me.Etiqueta4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta4.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta4.Location = New System.Drawing.Point(271, 7)
+        Me.Etiqueta4.Location = New System.Drawing.Point(268, 7)
         Me.Etiqueta4.Name = "Etiqueta4"
         Me.Etiqueta4.Size = New System.Drawing.Size(47, 14)
         Me.Etiqueta4.TabIndex = 4
@@ -8068,7 +8068,7 @@ Partial Class frm_Operacion
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta3.Location = New System.Drawing.Point(373, 7)
+        Me.Etiqueta3.Location = New System.Drawing.Point(370, 7)
         Me.Etiqueta3.Name = "Etiqueta3"
         Me.Etiqueta3.Size = New System.Drawing.Size(54, 14)
         Me.Etiqueta3.TabIndex = 6
@@ -8123,7 +8123,7 @@ Partial Class frm_Operacion
         Me.grupoTipoVehiculo.ForeColor = System.Drawing.Color.MidnightBlue
         Me.grupoTipoVehiculo.Location = New System.Drawing.Point(0, -1)
         Me.grupoTipoVehiculo.Name = "grupoTipoVehiculo"
-        Me.grupoTipoVehiculo.Size = New System.Drawing.Size(570, 90)
+        Me.grupoTipoVehiculo.Size = New System.Drawing.Size(560, 90)
         Me.grupoTipoVehiculo.TabIndex = 0
         UltraToolTipInfo2.ToolTipText = "Tipo Vehiculo (Modelo Funcional)"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.grupoTipoVehiculo, UltraToolTipInfo2)
@@ -8133,7 +8133,7 @@ Partial Class frm_Operacion
         '
         Me.Colores6.Color = System.Drawing.Color.RosyBrown
         Me.Colores6.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Colores6.Location = New System.Drawing.Point(319, 67)
+        Me.Colores6.Location = New System.Drawing.Point(316, 67)
         Me.Colores6.Name = "Colores6"
         Me.Colores6.Size = New System.Drawing.Size(44, 19)
         Me.Colores6.TabIndex = 34
@@ -8147,7 +8147,7 @@ Partial Class frm_Operacion
         Me.Etiqueta47.AutoSize = True
         Me.Etiqueta47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta47.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta47.Location = New System.Drawing.Point(253, 31)
+        Me.Etiqueta47.Location = New System.Drawing.Point(250, 31)
         Me.Etiqueta47.Name = "Etiqueta47"
         Me.Etiqueta47.Size = New System.Drawing.Size(65, 14)
         Me.Etiqueta47.TabIndex = 14
@@ -8157,7 +8157,7 @@ Partial Class frm_Operacion
         '
         Me.Colores7.Color = System.Drawing.Color.MediumSpringGreen
         Me.Colores7.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Colores7.Location = New System.Drawing.Point(427, 67)
+        Me.Colores7.Location = New System.Drawing.Point(424, 67)
         Me.Colores7.Name = "Colores7"
         Me.Colores7.Size = New System.Drawing.Size(44, 19)
         Me.Colores7.TabIndex = 36
@@ -8167,7 +8167,7 @@ Partial Class frm_Operacion
         '
         Me.ColorParihuelero.Color = System.Drawing.Color.PaleGreen
         Me.ColorParihuelero.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorParihuelero.Location = New System.Drawing.Point(319, 27)
+        Me.ColorParihuelero.Location = New System.Drawing.Point(316, 27)
         Me.ColorParihuelero.Name = "ColorParihuelero"
         Me.ColorParihuelero.Size = New System.Drawing.Size(44, 19)
         Me.ColorParihuelero.TabIndex = 15
@@ -8177,7 +8177,7 @@ Partial Class frm_Operacion
         '
         Me.Colores8.Color = System.Drawing.Color.OliveDrab
         Me.Colores8.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Colores8.Location = New System.Drawing.Point(201, 67)
+        Me.Colores8.Location = New System.Drawing.Point(198, 67)
         Me.Colores8.Name = "Colores8"
         Me.Colores8.Size = New System.Drawing.Size(44, 19)
         Me.Colores8.TabIndex = 32
@@ -8187,7 +8187,7 @@ Partial Class frm_Operacion
         '
         Me.ColorPlataforma.Color = System.Drawing.Color.Coral
         Me.ColorPlataforma.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorPlataforma.Location = New System.Drawing.Point(88, 7)
+        Me.ColorPlataforma.Location = New System.Drawing.Point(85, 7)
         Me.ColorPlataforma.Name = "ColorPlataforma"
         Me.ColorPlataforma.Size = New System.Drawing.Size(44, 19)
         Me.ColorPlataforma.TabIndex = 1
@@ -8201,7 +8201,7 @@ Partial Class frm_Operacion
         Me.Etiqueta48.AutoSize = True
         Me.Etiqueta48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta48.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta48.Location = New System.Drawing.Point(269, 70)
+        Me.Etiqueta48.Location = New System.Drawing.Point(266, 70)
         Me.Etiqueta48.Name = "Etiqueta48"
         Me.Etiqueta48.Size = New System.Drawing.Size(49, 14)
         Me.Etiqueta48.TabIndex = 33
@@ -8211,7 +8211,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCamion20M3.Color = System.Drawing.Color.PaleTurquoise
         Me.ColorCamion20M3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCamion20M3.Location = New System.Drawing.Point(515, 7)
+        Me.ColorCamion20M3.Location = New System.Drawing.Point(512, 7)
         Me.ColorCamion20M3.Name = "ColorCamion20M3"
         Me.ColorCamion20M3.Size = New System.Drawing.Size(44, 19)
         Me.ColorCamion20M3.TabIndex = 9
@@ -8225,7 +8225,7 @@ Partial Class frm_Operacion
         Me.Etiqueta49.AutoSize = True
         Me.Etiqueta49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta49.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta49.Location = New System.Drawing.Point(377, 71)
+        Me.Etiqueta49.Location = New System.Drawing.Point(374, 71)
         Me.Etiqueta49.Name = "Etiqueta49"
         Me.Etiqueta49.Size = New System.Drawing.Size(49, 14)
         Me.Etiqueta49.TabIndex = 35
@@ -8239,7 +8239,7 @@ Partial Class frm_Operacion
         Me.Etiqueta29.AutoSize = True
         Me.Etiqueta29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta29.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta29.Location = New System.Drawing.Point(365, 31)
+        Me.Etiqueta29.Location = New System.Drawing.Point(362, 31)
         Me.Etiqueta29.Name = "Etiqueta29"
         Me.Etiqueta29.Size = New System.Drawing.Size(62, 14)
         Me.Etiqueta29.TabIndex = 16
@@ -8253,7 +8253,7 @@ Partial Class frm_Operacion
         Me.Etiqueta50.AutoSize = True
         Me.Etiqueta50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta50.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta50.Location = New System.Drawing.Point(37, 70)
+        Me.Etiqueta50.Location = New System.Drawing.Point(34, 70)
         Me.Etiqueta50.Name = "Etiqueta50"
         Me.Etiqueta50.Size = New System.Drawing.Size(49, 14)
         Me.Etiqueta50.TabIndex = 29
@@ -8267,7 +8267,7 @@ Partial Class frm_Operacion
         Me.Etiqueta28.AutoSize = True
         Me.Etiqueta28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta28.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta28.Location = New System.Drawing.Point(156, 10)
+        Me.Etiqueta28.Location = New System.Drawing.Point(153, 10)
         Me.Etiqueta28.Name = "Etiqueta28"
         Me.Etiqueta28.Size = New System.Drawing.Size(43, 14)
         Me.Etiqueta28.TabIndex = 2
@@ -8281,7 +8281,7 @@ Partial Class frm_Operacion
         Me.Etiqueta51.AutoSize = True
         Me.Etiqueta51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta51.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta51.Location = New System.Drawing.Point(475, 70)
+        Me.Etiqueta51.Location = New System.Drawing.Point(472, 70)
         Me.Etiqueta51.Name = "Etiqueta51"
         Me.Etiqueta51.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta51.TabIndex = 37
@@ -8291,7 +8291,7 @@ Partial Class frm_Operacion
         '
         Me.ColorTolvaVolteo.Color = System.Drawing.Color.RosyBrown
         Me.ColorTolvaVolteo.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorTolvaVolteo.Location = New System.Drawing.Point(319, 47)
+        Me.ColorTolvaVolteo.Location = New System.Drawing.Point(316, 47)
         Me.ColorTolvaVolteo.Name = "ColorTolvaVolteo"
         Me.ColorTolvaVolteo.Size = New System.Drawing.Size(44, 19)
         Me.ColorTolvaVolteo.TabIndex = 24
@@ -8305,7 +8305,7 @@ Partial Class frm_Operacion
         Me.Etiqueta52.AutoSize = True
         Me.Etiqueta52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta52.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta52.Location = New System.Drawing.Point(150, 70)
+        Me.Etiqueta52.Location = New System.Drawing.Point(147, 70)
         Me.Etiqueta52.Name = "Etiqueta52"
         Me.Etiqueta52.Size = New System.Drawing.Size(49, 14)
         Me.Etiqueta52.TabIndex = 31
@@ -8319,7 +8319,7 @@ Partial Class frm_Operacion
         Me.Etiqueta27.AutoSize = True
         Me.Etiqueta27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta27.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta27.Location = New System.Drawing.Point(374, 10)
+        Me.Etiqueta27.Location = New System.Drawing.Point(371, 10)
         Me.Etiqueta27.Name = "Etiqueta27"
         Me.Etiqueta27.Size = New System.Drawing.Size(52, 14)
         Me.Etiqueta27.TabIndex = 6
@@ -8329,7 +8329,7 @@ Partial Class frm_Operacion
         '
         Me.Colores9.Color = System.Drawing.Color.Violet
         Me.Colores9.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Colores9.Location = New System.Drawing.Point(515, 67)
+        Me.Colores9.Location = New System.Drawing.Point(512, 67)
         Me.Colores9.Name = "Colores9"
         Me.Colores9.Size = New System.Drawing.Size(44, 19)
         Me.Colores9.TabIndex = 38
@@ -8343,7 +8343,7 @@ Partial Class frm_Operacion
         Me.Etiqueta25.AutoSize = True
         Me.Etiqueta25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta25.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta25.Location = New System.Drawing.Point(260, 11)
+        Me.Etiqueta25.Location = New System.Drawing.Point(257, 11)
         Me.Etiqueta25.Name = "Etiqueta25"
         Me.Etiqueta25.Size = New System.Drawing.Size(58, 14)
         Me.Etiqueta25.TabIndex = 4
@@ -8353,7 +8353,7 @@ Partial Class frm_Operacion
         '
         Me.Colores10.Color = System.Drawing.Color.Orange
         Me.Colores10.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Colores10.Location = New System.Drawing.Point(88, 67)
+        Me.Colores10.Location = New System.Drawing.Point(85, 67)
         Me.Colores10.Name = "Colores10"
         Me.Colores10.Size = New System.Drawing.Size(44, 19)
         Me.Colores10.TabIndex = 30
@@ -8363,7 +8363,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCamion65M3.Color = System.Drawing.Color.MediumSpringGreen
         Me.ColorCamion65M3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCamion65M3.Location = New System.Drawing.Point(427, 47)
+        Me.ColorCamion65M3.Location = New System.Drawing.Point(424, 47)
         Me.ColorCamion65M3.Name = "ColorCamion65M3"
         Me.ColorCamion65M3.Size = New System.Drawing.Size(44, 19)
         Me.ColorCamion65M3.TabIndex = 26
@@ -8373,7 +8373,7 @@ Partial Class frm_Operacion
         '
         Me.ColorContenedor.Color = System.Drawing.Color.OliveDrab
         Me.ColorContenedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorContenedor.Location = New System.Drawing.Point(201, 47)
+        Me.ColorContenedor.Location = New System.Drawing.Point(198, 47)
         Me.ColorContenedor.Name = "ColorContenedor"
         Me.ColorContenedor.Size = New System.Drawing.Size(44, 19)
         Me.ColorContenedor.TabIndex = 22
@@ -8387,7 +8387,7 @@ Partial Class frm_Operacion
         Me.Etiqueta222.AutoSize = True
         Me.Etiqueta222.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta222.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta222.Location = New System.Drawing.Point(475, 10)
+        Me.Etiqueta222.Location = New System.Drawing.Point(472, 10)
         Me.Etiqueta222.Name = "Etiqueta222"
         Me.Etiqueta222.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta222.TabIndex = 8
@@ -8397,7 +8397,7 @@ Partial Class frm_Operacion
         '
         Me.ColorGranelero.Color = System.Drawing.Color.YellowGreen
         Me.ColorGranelero.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorGranelero.Location = New System.Drawing.Point(319, 7)
+        Me.ColorGranelero.Location = New System.Drawing.Point(316, 7)
         Me.ColorGranelero.Name = "ColorGranelero"
         Me.ColorGranelero.Size = New System.Drawing.Size(44, 19)
         Me.ColorGranelero.TabIndex = 5
@@ -8407,7 +8407,7 @@ Partial Class frm_Operacion
         '
         Me.ColorFurgon.Color = System.Drawing.Color.Gold
         Me.ColorFurgon.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorFurgon.Location = New System.Drawing.Point(201, 7)
+        Me.ColorFurgon.Location = New System.Drawing.Point(198, 7)
         Me.ColorFurgon.Name = "ColorFurgon"
         Me.ColorFurgon.Size = New System.Drawing.Size(44, 19)
         Me.ColorFurgon.TabIndex = 3
@@ -8417,7 +8417,7 @@ Partial Class frm_Operacion
         '
         Me.ColorFurgonLargo.Color = System.Drawing.Color.PeachPuff
         Me.ColorFurgonLargo.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorFurgonLargo.Location = New System.Drawing.Point(88, 27)
+        Me.ColorFurgonLargo.Location = New System.Drawing.Point(85, 27)
         Me.ColorFurgonLargo.Name = "ColorFurgonLargo"
         Me.ColorFurgonLargo.Size = New System.Drawing.Size(44, 19)
         Me.ColorFurgonLargo.TabIndex = 11
@@ -8431,7 +8431,7 @@ Partial Class frm_Operacion
         Me.Etiqueta24.AutoSize = True
         Me.Etiqueta24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta24.Location = New System.Drawing.Point(26, 10)
+        Me.Etiqueta24.Location = New System.Drawing.Point(23, 10)
         Me.Etiqueta24.Name = "Etiqueta24"
         Me.Etiqueta24.Size = New System.Drawing.Size(62, 14)
         Me.Etiqueta24.TabIndex = 0
@@ -8445,7 +8445,7 @@ Partial Class frm_Operacion
         Me.Etiqueta30.AutoSize = True
         Me.Etiqueta30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta30.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta30.Location = New System.Drawing.Point(248, 50)
+        Me.Etiqueta30.Location = New System.Drawing.Point(245, 50)
         Me.Etiqueta30.Name = "Etiqueta30"
         Me.Etiqueta30.Size = New System.Drawing.Size(70, 14)
         Me.Etiqueta30.TabIndex = 23
@@ -8459,7 +8459,7 @@ Partial Class frm_Operacion
         Me.Etiqueta21.AutoSize = True
         Me.Etiqueta21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta21.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta21.Location = New System.Drawing.Point(388, 51)
+        Me.Etiqueta21.Location = New System.Drawing.Point(385, 51)
         Me.Etiqueta21.Name = "Etiqueta21"
         Me.Etiqueta21.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta21.TabIndex = 25
@@ -8469,7 +8469,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCamioneta.Color = System.Drawing.Color.LightSeaGreen
         Me.ColorCamioneta.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCamioneta.Location = New System.Drawing.Point(427, 27)
+        Me.ColorCamioneta.Location = New System.Drawing.Point(424, 27)
         Me.ColorCamioneta.Name = "ColorCamioneta"
         Me.ColorCamioneta.Size = New System.Drawing.Size(44, 19)
         Me.ColorCamioneta.TabIndex = 17
@@ -8479,7 +8479,7 @@ Partial Class frm_Operacion
         '
         Me.ColorVolquete.Color = System.Drawing.Color.Peru
         Me.ColorVolquete.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorVolquete.Location = New System.Drawing.Point(427, 7)
+        Me.ColorVolquete.Location = New System.Drawing.Point(424, 7)
         Me.ColorVolquete.Name = "ColorVolquete"
         Me.ColorVolquete.Size = New System.Drawing.Size(44, 19)
         Me.ColorVolquete.TabIndex = 7
@@ -8493,7 +8493,7 @@ Partial Class frm_Operacion
         Me.Etiqueta31.AutoSize = True
         Me.Etiqueta31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta31.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta31.Location = New System.Drawing.Point(13, 30)
+        Me.Etiqueta31.Location = New System.Drawing.Point(10, 30)
         Me.Etiqueta31.Name = "Etiqueta31"
         Me.Etiqueta31.Size = New System.Drawing.Size(75, 14)
         Me.Etiqueta31.TabIndex = 10
@@ -8507,7 +8507,7 @@ Partial Class frm_Operacion
         Me.Etiqueta32.AutoSize = True
         Me.Etiqueta32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta32.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta32.Location = New System.Drawing.Point(4, 50)
+        Me.Etiqueta32.Location = New System.Drawing.Point(1, 50)
         Me.Etiqueta32.Name = "Etiqueta32"
         Me.Etiqueta32.Size = New System.Drawing.Size(84, 14)
         Me.Etiqueta32.TabIndex = 19
@@ -8521,7 +8521,7 @@ Partial Class frm_Operacion
         Me.Etiqueta23.AutoSize = True
         Me.Etiqueta23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta23.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta23.Location = New System.Drawing.Point(475, 50)
+        Me.Etiqueta23.Location = New System.Drawing.Point(472, 50)
         Me.Etiqueta23.Name = "Etiqueta23"
         Me.Etiqueta23.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta23.TabIndex = 27
@@ -8531,7 +8531,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCamion30M3.Color = System.Drawing.Color.DeepSkyBlue
         Me.ColorCamion30M3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCamion30M3.Location = New System.Drawing.Point(515, 27)
+        Me.ColorCamion30M3.Location = New System.Drawing.Point(512, 27)
         Me.ColorCamion30M3.Name = "ColorCamion30M3"
         Me.ColorCamion30M3.Size = New System.Drawing.Size(44, 19)
         Me.ColorCamion30M3.TabIndex = 18
@@ -8545,7 +8545,7 @@ Partial Class frm_Operacion
         Me.Etiqueta20.AutoSize = True
         Me.Etiqueta20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta20.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta20.Location = New System.Drawing.Point(134, 50)
+        Me.Etiqueta20.Location = New System.Drawing.Point(131, 50)
         Me.Etiqueta20.Name = "Etiqueta20"
         Me.Etiqueta20.Size = New System.Drawing.Size(67, 14)
         Me.Etiqueta20.TabIndex = 21
@@ -8559,7 +8559,7 @@ Partial Class frm_Operacion
         Me.Etiqueta26.AutoSize = True
         Me.Etiqueta26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta26.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta26.Location = New System.Drawing.Point(150, 31)
+        Me.Etiqueta26.Location = New System.Drawing.Point(147, 31)
         Me.Etiqueta26.Name = "Etiqueta26"
         Me.Etiqueta26.Size = New System.Drawing.Size(49, 14)
         Me.Etiqueta26.TabIndex = 12
@@ -8569,7 +8569,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCalicera.Color = System.Drawing.Color.DarkKhaki
         Me.ColorCalicera.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCalicera.Location = New System.Drawing.Point(201, 27)
+        Me.ColorCalicera.Location = New System.Drawing.Point(198, 27)
         Me.ColorCalicera.Name = "ColorCalicera"
         Me.ColorCalicera.Size = New System.Drawing.Size(44, 19)
         Me.ColorCalicera.TabIndex = 13
@@ -8579,7 +8579,7 @@ Partial Class frm_Operacion
         '
         Me.ColorCamion40M3.Color = System.Drawing.Color.Violet
         Me.ColorCamion40M3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorCamion40M3.Location = New System.Drawing.Point(515, 47)
+        Me.ColorCamion40M3.Location = New System.Drawing.Point(512, 47)
         Me.ColorCamion40M3.Name = "ColorCamion40M3"
         Me.ColorCamion40M3.Size = New System.Drawing.Size(44, 19)
         Me.ColorCamion40M3.TabIndex = 28
@@ -8593,7 +8593,7 @@ Partial Class frm_Operacion
         Me.Etiqueta22.AutoSize = True
         Me.Etiqueta22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta22.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta22.Location = New System.Drawing.Point(475, 31)
+        Me.Etiqueta22.Location = New System.Drawing.Point(472, 31)
         Me.Etiqueta22.Name = "Etiqueta22"
         Me.Etiqueta22.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta22.TabIndex = 62
@@ -8603,7 +8603,7 @@ Partial Class frm_Operacion
         '
         Me.ColorMediaBaranda.Color = System.Drawing.Color.Orange
         Me.ColorMediaBaranda.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ColorMediaBaranda.Location = New System.Drawing.Point(88, 47)
+        Me.ColorMediaBaranda.Location = New System.Drawing.Point(85, 47)
         Me.ColorMediaBaranda.Name = "ColorMediaBaranda"
         Me.ColorMediaBaranda.Size = New System.Drawing.Size(44, 19)
         Me.ColorMediaBaranda.TabIndex = 20
@@ -8619,7 +8619,7 @@ Partial Class frm_Operacion
         CalculatorButton1.Text = ","
         Me.CalculadoraGrilla.Buttons.AddRange(New Infragistics.Win.UltraWinEditors.UltraWinCalc.CalculatorButton() {CalculatorButton1})
         Me.CalculadoraGrilla.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.CalculadoraGrilla.Location = New System.Drawing.Point(593, 4)
+        Me.CalculadoraGrilla.Location = New System.Drawing.Point(562, 4)
         Me.CalculadoraGrilla.MaxLength = 15
         Me.CalculadoraGrilla.Name = "CalculadoraGrilla"
         Me.CalculadoraGrilla.NullText = "0.00"
@@ -8630,7 +8630,7 @@ Partial Class frm_Operacion
         'colorCambio
         '
         Me.colorCambio.Color = System.Drawing.Color.Cyan
-        Me.colorCambio.Location = New System.Drawing.Point(593, 95)
+        Me.colorCambio.Location = New System.Drawing.Point(562, 95)
         Me.colorCambio.Name = "colorCambio"
         Me.colorCambio.Size = New System.Drawing.Size(44, 22)
         Me.colorCambio.TabIndex = 8
@@ -8643,7 +8643,7 @@ Partial Class frm_Operacion
         Me.Etiqueta45.AutoSize = True
         Me.Etiqueta45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta45.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta45.Location = New System.Drawing.Point(593, 80)
+        Me.Etiqueta45.Location = New System.Drawing.Point(562, 80)
         Me.Etiqueta45.Name = "Etiqueta45"
         Me.Etiqueta45.Size = New System.Drawing.Size(69, 14)
         Me.Etiqueta45.TabIndex = 7
@@ -8657,7 +8657,7 @@ Partial Class frm_Operacion
         Me.Etiqueta44.AutoSize = True
         Me.Etiqueta44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta44.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta44.Location = New System.Drawing.Point(589, 33)
+        Me.Etiqueta44.Location = New System.Drawing.Point(558, 33)
         Me.Etiqueta44.Name = "Etiqueta44"
         Me.Etiqueta44.Size = New System.Drawing.Size(105, 14)
         Me.Etiqueta44.TabIndex = 3
@@ -8666,7 +8666,7 @@ Partial Class frm_Operacion
         'colorCargaConsolidada
         '
         Me.colorCargaConsolidada.Color = System.Drawing.Color.SaddleBrown
-        Me.colorCargaConsolidada.Location = New System.Drawing.Point(593, 48)
+        Me.colorCargaConsolidada.Location = New System.Drawing.Point(562, 48)
         Me.colorCargaConsolidada.Name = "colorCargaConsolidada"
         Me.colorCargaConsolidada.Size = New System.Drawing.Size(44, 22)
         Me.colorCargaConsolidada.TabIndex = 4
@@ -8679,11 +8679,11 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox4.ContentAreaAppearance = Appearance130
         Me.UltraExpandableGroupBox4.Controls.Add(Me.UltraExpandableGroupBoxPanel12)
         Me.UltraExpandableGroupBox4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(350, 125)
+        Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(380, 125)
         Me.UltraExpandableGroupBox4.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox4.Location = New System.Drawing.Point(3, 17)
         Me.UltraExpandableGroupBox4.Name = "UltraExpandableGroupBox4"
-        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(350, 125)
+        Me.UltraExpandableGroupBox4.Size = New System.Drawing.Size(380, 125)
         Me.UltraExpandableGroupBox4.TabIndex = 0
         Me.UltraExpandableGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -8705,7 +8705,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel12.Location = New System.Drawing.Point(18, 3)
         Me.UltraExpandableGroupBoxPanel12.Name = "UltraExpandableGroupBoxPanel12"
-        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(329, 119)
+        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(359, 119)
         Me.UltraExpandableGroupBoxPanel12.TabIndex = 0
         '
         'verPilotoLista
@@ -8713,7 +8713,7 @@ Partial Class frm_Operacion
         Appearance131.ForeColor = System.Drawing.Color.Navy
         Me.verPilotoLista.Appearance = Appearance131
         Me.verPilotoLista.AutoSize = True
-        Me.verPilotoLista.Location = New System.Drawing.Point(2, 98)
+        Me.verPilotoLista.Location = New System.Drawing.Point(1, 98)
         Me.verPilotoLista.Name = "verPilotoLista"
         Me.verPilotoLista.Size = New System.Drawing.Size(53, 18)
         Me.verPilotoLista.TabIndex = 16
@@ -8732,7 +8732,7 @@ Partial Class frm_Operacion
         Me.cboPilotoLista.ImageList = Me.imagenes
         Me.cboPilotoLista.Location = New System.Drawing.Point(58, 97)
         Me.cboPilotoLista.Name = "cboPilotoLista"
-        Me.cboPilotoLista.Size = New System.Drawing.Size(270, 21)
+        Me.cboPilotoLista.Size = New System.Drawing.Size(300, 21)
         Me.cboPilotoLista.TabIndex = 15
         Me.cboPilotoLista.ValueMember = "Id"
         '
@@ -8741,7 +8741,7 @@ Partial Class frm_Operacion
         Appearance133.ForeColor = System.Drawing.Color.Navy
         Me.verCarretaLista.Appearance = Appearance133
         Me.verCarretaLista.AutoSize = True
-        Me.verCarretaLista.Location = New System.Drawing.Point(166, 75)
+        Me.verCarretaLista.Location = New System.Drawing.Point(194, 75)
         Me.verCarretaLista.Name = "verCarretaLista"
         Me.verCarretaLista.Size = New System.Drawing.Size(62, 18)
         Me.verCarretaLista.TabIndex = 11
@@ -8757,9 +8757,9 @@ Partial Class frm_Operacion
         Me.cboCarretaLista.Enabled = False
         Me.cboCarretaLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCarretaLista.ForeColor = System.Drawing.Color.Black
-        Me.cboCarretaLista.Location = New System.Drawing.Point(228, 74)
+        Me.cboCarretaLista.Location = New System.Drawing.Point(258, 74)
         Me.cboCarretaLista.Name = "cboCarretaLista"
-        Me.cboCarretaLista.Size = New System.Drawing.Size(85, 21)
+        Me.cboCarretaLista.Size = New System.Drawing.Size(100, 21)
         Me.cboCarretaLista.TabIndex = 12
         Me.cboCarretaLista.ValueMember = "Id"
         '
@@ -8769,7 +8769,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox13.Controls.Add(Me.fecDesde)
         Me.UltraGroupBox13.Controls.Add(Me.UltraLabel39)
         Me.UltraGroupBox13.Controls.Add(Me.UltraLabel41)
-        Me.UltraGroupBox13.Location = New System.Drawing.Point(3, 6)
+        Me.UltraGroupBox13.Location = New System.Drawing.Point(0, 6)
         Me.UltraGroupBox13.Name = "UltraGroupBox13"
         Me.UltraGroupBox13.Size = New System.Drawing.Size(150, 60)
         Me.UltraGroupBox13.TabIndex = 0
@@ -8799,7 +8799,7 @@ Partial Class frm_Operacion
         Me.UltraLabel39.Appearance = Appearance135
         Me.UltraLabel39.AutoSize = True
         Me.UltraLabel39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel39.Location = New System.Drawing.Point(9, 36)
+        Me.UltraLabel39.Location = New System.Drawing.Point(8, 37)
         Me.UltraLabel39.Name = "UltraLabel39"
         Me.UltraLabel39.Size = New System.Drawing.Size(38, 14)
         Me.UltraLabel39.TabIndex = 2
@@ -8813,7 +8813,7 @@ Partial Class frm_Operacion
         Me.UltraLabel41.Appearance = Appearance136
         Me.UltraLabel41.AutoSize = True
         Me.UltraLabel41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel41.Location = New System.Drawing.Point(6, 13)
+        Me.UltraLabel41.Location = New System.Drawing.Point(5, 12)
         Me.UltraLabel41.Name = "UltraLabel41"
         Me.UltraLabel41.Size = New System.Drawing.Size(41, 14)
         Me.UltraLabel41.TabIndex = 0
@@ -8824,7 +8824,7 @@ Partial Class frm_Operacion
         Appearance137.ForeColor = System.Drawing.Color.Navy
         Me.verTracto.Appearance = Appearance137
         Me.verTracto.AutoSize = True
-        Me.verTracto.Location = New System.Drawing.Point(2, 75)
+        Me.verTracto.Location = New System.Drawing.Point(1, 75)
         Me.verTracto.Name = "verTracto"
         Me.verTracto.Size = New System.Drawing.Size(56, 18)
         Me.verTracto.TabIndex = 9
@@ -8842,7 +8842,7 @@ Partial Class frm_Operacion
         Me.cboTractoLista.ForeColor = System.Drawing.Color.Black
         Me.cboTractoLista.Location = New System.Drawing.Point(58, 74)
         Me.cboTractoLista.Name = "cboTractoLista"
-        Me.cboTractoLista.Size = New System.Drawing.Size(85, 21)
+        Me.cboTractoLista.Size = New System.Drawing.Size(100, 21)
         Me.cboTractoLista.TabIndex = 10
         Me.cboTractoLista.ValueMember = "Id"
         '
@@ -8856,9 +8856,9 @@ Partial Class frm_Operacion
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboCentro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Location = New System.Drawing.Point(228, 26)
+        Me.cboCentro.Location = New System.Drawing.Point(208, 26)
         Me.cboCentro.Name = "cboCentro"
-        Me.cboCentro.Size = New System.Drawing.Size(100, 21)
+        Me.cboCentro.Size = New System.Drawing.Size(150, 21)
         Me.cboCentro.TabIndex = 4
         Me.cboCentro.ValueMember = "Id"
         '
@@ -8870,7 +8870,7 @@ Partial Class frm_Operacion
         Me.UltraLabel20.Appearance = Appearance140
         Me.UltraLabel20.AutoSize = True
         Me.UltraLabel20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel20.Location = New System.Drawing.Point(182, 30)
+        Me.UltraLabel20.Location = New System.Drawing.Point(161, 30)
         Me.UltraLabel20.Name = "UltraLabel20"
         Me.UltraLabel20.Size = New System.Drawing.Size(43, 14)
         Me.UltraLabel20.TabIndex = 3
@@ -8886,7 +8886,7 @@ Partial Class frm_Operacion
         Me.cboUsuario.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUsuario.ForeColor = System.Drawing.Color.Black
-        Me.cboUsuario.Location = New System.Drawing.Point(228, 3)
+        Me.cboUsuario.Location = New System.Drawing.Point(208, 3)
         Me.cboUsuario.Name = "cboUsuario"
         Me.cboUsuario.Size = New System.Drawing.Size(100, 21)
         Me.cboUsuario.TabIndex = 2
@@ -8900,7 +8900,7 @@ Partial Class frm_Operacion
         Me.UltraLabel62.Appearance = Appearance142
         Me.UltraLabel62.AutoSize = True
         Me.UltraLabel62.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel62.Location = New System.Drawing.Point(177, 7)
+        Me.UltraLabel62.Location = New System.Drawing.Point(156, 7)
         Me.UltraLabel62.Name = "UltraLabel62"
         Me.UltraLabel62.Size = New System.Drawing.Size(48, 14)
         Me.UltraLabel62.TabIndex = 1
@@ -8916,9 +8916,9 @@ Partial Class frm_Operacion
         Me.cboZona.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboZona.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboZona.ForeColor = System.Drawing.Color.Black
-        Me.cboZona.Location = New System.Drawing.Point(228, 49)
+        Me.cboZona.Location = New System.Drawing.Point(208, 49)
         Me.cboZona.Name = "cboZona"
-        Me.cboZona.Size = New System.Drawing.Size(100, 21)
+        Me.cboZona.Size = New System.Drawing.Size(150, 21)
         Me.cboZona.TabIndex = 6
         Me.cboZona.ValueMember = "Id"
         '
@@ -8930,7 +8930,7 @@ Partial Class frm_Operacion
         Me.UltraLabel16.Appearance = Appearance144
         Me.UltraLabel16.AutoSize = True
         Me.UltraLabel16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel16.Location = New System.Drawing.Point(191, 54)
+        Me.UltraLabel16.Location = New System.Drawing.Point(170, 53)
         Me.UltraLabel16.Name = "UltraLabel16"
         Me.UltraLabel16.Size = New System.Drawing.Size(34, 14)
         Me.UltraLabel16.TabIndex = 5

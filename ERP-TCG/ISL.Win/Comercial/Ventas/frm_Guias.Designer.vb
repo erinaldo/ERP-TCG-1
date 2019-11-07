@@ -1904,7 +1904,7 @@ Partial Class frm_Guias
         Me.MenuGrt.ForeColor = System.Drawing.Color.Black
         Me.MenuGrt.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ActualizarGrt, Me.AgregarGrt, Me.EliminarGrt, Me.ConfirmarViaje, Me.DocumentosViaje, Me.DireccionarGRT})
         Me.MenuGrt.Name = "MenuContextual1"
-        Me.MenuGrt.Size = New System.Drawing.Size(191, 158)
+        Me.MenuGrt.Size = New System.Drawing.Size(191, 136)
         '
         'ActualizarGrt
         '
@@ -5792,7 +5792,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1232, 419)
         '
@@ -5833,8 +5833,10 @@ Partial Class frm_Guias
         UltraTab6.Text = "GRT - Anuladas"
         UltraTab12.TabPage = Me.UltraTabPageControl12
         UltraTab12.Text = "GRT - Confirmar Bloque"
+        UltraTab12.Visible = False
         UltraTab13.TabPage = Me.UltraTabPageControl13
         UltraTab13.Text = "Viaje Confirmar Sin Doct"
+        UltraTab13.Visible = False
         Me.tabLista.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab5, UltraTab6, UltraTab12, UltraTab13})
         Me.tabLista.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
@@ -6406,7 +6408,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox7)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1232, 419)
         '
@@ -6450,6 +6452,7 @@ Partial Class frm_Guias
         UltraTab7.Text = "Agregar GRT Viaje"
         UltraTab15.TabPage = Me.UltraTabPageControl15
         UltraTab15.Text = "Viaje - Terceros"
+        UltraTab15.Visible = False
         Me.tabDetalleGrt.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab4, UltraTab8, UltraTab3, UltraTab7, UltraTab15})
         Me.tabDetalleGrt.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '

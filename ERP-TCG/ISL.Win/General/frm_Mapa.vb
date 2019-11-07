@@ -12,7 +12,7 @@ Imports ERP.EntidadesWCF
 
 Public Class frm_Mapa
     Inherits frm_MenuPadre
-    Dim conexion As New SqlConnection("Data Source=127.0.0.1;Initial Catalog=GPS;Persist Security Info=True;User ID=ERP;Password=Sistem@s789")
+    Dim conexion As New SqlConnection("Data Source=190.117.126.71;Initial Catalog=GPS; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120")
 
     Public Sub New()
 

@@ -39,10 +39,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn362 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, false)
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup4 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup4 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -69,10 +69,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn369 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup5 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup6 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup7 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup8 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup5 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup6 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup7 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup8 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -92,10 +92,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn376 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup9 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup10 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup11 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup12 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup9 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup10 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup11 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup12 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -115,10 +115,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn383 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup13 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup14 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup15 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup16 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup13 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup14 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup15 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup16 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance42 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance43 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance44 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -138,10 +138,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn390 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup17 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup18 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup19 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup20 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup17 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup18 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup19 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup20 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance55 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -161,10 +161,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn404 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup21 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup22 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup23 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup24 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup21 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup22 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup23 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup24 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance64 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance65 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance66 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -184,10 +184,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance73 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn411 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance74 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup25 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup26 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup27 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup28 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup25 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup26 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup27 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup28 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance75 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance76 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance77 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -207,10 +207,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance84 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn418 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance85 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup29 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup30 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup31 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup32 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup29 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup30 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup31 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup32 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance86 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance87 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -230,10 +230,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn425 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup33 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup34 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup35 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup36 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup33 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup34 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup35 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup36 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance99 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -253,10 +253,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance106 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn432 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance107 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup37 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup38 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup39 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup40 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup37 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup38 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup39 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup40 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -276,10 +276,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance117 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn446 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance118 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup41 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup42 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup43 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup44 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup41 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup42 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup43 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup44 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance119 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance120 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance121 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -299,10 +299,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance128 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn453 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance129 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup45 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup46 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup47 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup48 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup45 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup46 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup47 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup48 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance130 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance131 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance132 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -322,10 +322,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance139 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn460 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance140 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup49 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup50 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup51 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup52 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup49 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup50 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup51 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup52 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance141 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance142 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance143 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -345,10 +345,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance150 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn467 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance151 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup53 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup54 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup55 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup56 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup53 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup54 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup55 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup56 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance152 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance153 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance154 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -368,10 +368,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance161 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn474 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance162 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup57 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup58 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup59 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup60 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup57 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup58 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
+        Dim UltraGridGroup59 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup60 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance163 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance164 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance165 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -391,11 +391,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance172 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn488 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance173 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup61 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup62 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup61 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup62 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
         Dim Appearance174 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup63 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup64 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup63 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup64 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance175 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance176 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance177 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -415,11 +415,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn495 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance185 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup65 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup66 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup65 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588719)
+        Dim UltraGridGroup66 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588720)
         Dim Appearance186 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup67 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup68 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup67 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588721)
+        Dim UltraGridGroup68 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588722)
         Dim Appearance187 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance188 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance189 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -439,11 +439,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance196 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn502 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance197 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup69 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup70 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup69 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup70 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance198 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup71 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup72 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup71 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup72 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance199 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance200 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance201 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -463,11 +463,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance208 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn509 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance209 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup73 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup74 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup73 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup74 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance210 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup75 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup76 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup75 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup76 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance211 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance212 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance213 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -487,11 +487,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance220 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn516 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance221 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup77 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup78 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup77 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup78 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance222 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup79 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup80 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup79 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup80 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance223 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance224 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance225 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -512,11 +512,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance233 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn530 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance234 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup81 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup82 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup81 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup82 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance235 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup83 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup84 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup83 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup84 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance236 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance237 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance238 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -537,11 +537,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance246 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn537 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance247 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup85 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup86 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup85 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup86 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance248 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup87 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup88 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup87 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup88 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance249 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance250 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance251 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -562,11 +562,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance259 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn544 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance260 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup89 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup90 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup89 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup90 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance261 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup91 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup92 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup91 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup92 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance262 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance263 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance264 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -587,11 +587,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance272 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn551 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance273 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup93 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup94 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup93 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup94 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance274 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup95 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup96 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup95 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup96 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance275 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance276 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance277 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -612,11 +612,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance285 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn558 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance286 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup97 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup98 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup97 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup98 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance287 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup99 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup100 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup99 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup100 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance288 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance289 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance290 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -637,11 +637,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance298 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn572 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance299 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup101 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup102 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup101 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup102 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance300 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup103 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup104 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup103 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup104 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance301 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance302 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance303 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -662,11 +662,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance311 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn579 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance312 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup105 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup106 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup105 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup106 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance313 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup107 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup108 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup107 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup108 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance314 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance315 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance316 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -687,11 +687,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance324 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn586 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance325 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup109 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup110 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup109 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup110 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance326 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup111 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup112 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup111 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup112 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance327 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance328 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance329 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -712,11 +712,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance337 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn593 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance338 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup113 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup114 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup113 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup114 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance339 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup115 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup116 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup115 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup116 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance340 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance341 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance342 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -737,11 +737,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance350 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn600 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance351 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup117 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup118 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup117 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup118 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance352 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup119 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup120 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup119 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup120 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance353 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance354 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance355 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -762,11 +762,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance363 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn614 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance364 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup121 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup122 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup121 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup122 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance365 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup123 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup124 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup123 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup124 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance366 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance367 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance368 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -787,11 +787,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance376 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn621 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance377 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup125 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup126 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup125 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup126 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance378 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup127 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup128 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup127 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup128 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance379 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance380 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance381 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -812,11 +812,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance389 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn628 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance390 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup129 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup130 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup129 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup130 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance391 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup131 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup132 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup131 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup132 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance392 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance393 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance394 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -837,11 +837,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance402 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn635 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance403 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup133 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup134 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup133 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup134 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance404 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup135 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup136 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup135 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup136 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance405 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance406 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance407 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -862,11 +862,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance415 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn642 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance416 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup137 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup138 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
+        Dim UltraGridGroup137 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup138 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance417 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup139 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup140 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup139 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup140 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance418 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance419 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance420 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -886,10 +886,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance427 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn355 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance428 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup141 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup142 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup143 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
-        Dim UltraGridGroup144 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup141 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup142 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
+        Dim UltraGridGroup143 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup144 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance429 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance430 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance431 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -924,11 +924,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance447 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn397 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance448 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup145 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986532)
-        Dim UltraGridGroup146 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986533)
-        Dim UltraGridGroup147 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986534)
+        Dim UltraGridGroup145 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup146 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
+        Dim UltraGridGroup147 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
         Dim Appearance449 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup148 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986535)
+        Dim UltraGridGroup148 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance450 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance451 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance452 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -962,10 +962,10 @@ Partial Class frm_TarifasCliente
         Dim Appearance468 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn439 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance469 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup149 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986547)
-        Dim UltraGridGroup150 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986548)
-        Dim UltraGridGroup151 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986549)
-        Dim UltraGridGroup152 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986550)
+        Dim UltraGridGroup149 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup150 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
+        Dim UltraGridGroup151 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup152 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance470 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance471 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance472 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -999,11 +999,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance488 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn481 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance489 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup153 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986547)
-        Dim UltraGridGroup154 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986548)
+        Dim UltraGridGroup153 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup154 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance490 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup155 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986549)
-        Dim UltraGridGroup156 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986550)
+        Dim UltraGridGroup155 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup156 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance491 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance492 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance493 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1038,11 +1038,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance510 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn523 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance511 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup157 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986547)
-        Dim UltraGridGroup158 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986548)
+        Dim UltraGridGroup157 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup158 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance512 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup159 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986549)
-        Dim UltraGridGroup160 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986550)
+        Dim UltraGridGroup159 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup160 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance513 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance514 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance515 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1077,11 +1077,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance532 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn565 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance533 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup161 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986547)
-        Dim UltraGridGroup162 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986548)
+        Dim UltraGridGroup161 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup162 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance534 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup163 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986549)
-        Dim UltraGridGroup164 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986550)
+        Dim UltraGridGroup163 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup164 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance535 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance536 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance537 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1116,11 +1116,11 @@ Partial Class frm_TarifasCliente
         Dim Appearance554 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn607 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Origen")
         Dim Appearance555 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup165 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 334986547)
-        Dim UltraGridGroup166 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 334986548)
+        Dim UltraGridGroup165 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 217588735)
+        Dim UltraGridGroup166 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 217588736)
         Dim Appearance556 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup167 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 334986549)
-        Dim UltraGridGroup168 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 334986550)
+        Dim UltraGridGroup167 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 217588737)
+        Dim UltraGridGroup168 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 217588738)
         Dim Appearance557 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance558 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance559 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1564,223 +1564,223 @@ Partial Class frm_TarifasCliente
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.UltraTabPageControl25.SuspendLayout
-        CType(Me.griVeaH1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ogdTarifas,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griVeaH1, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdTarifas, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl26.SuspendLayout
-        CType(Me.griVeaH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griVeaH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl27.SuspendLayout
-        CType(Me.griVeaH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griVeaH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl28.SuspendLayout
-        CType(Me.griVeaH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griVeaH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl29.SuspendLayout
-        CType(Me.griVeaH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griVeaH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl30.SuspendLayout
-        CType(Me.griTottusH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griTottusH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl31.SuspendLayout
-        CType(Me.griTottusH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griTottusH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl32.SuspendLayout
-        CType(Me.griTottusH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griTottusH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl33.SuspendLayout
-        CType(Me.griTottusH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griTottusH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl34.SuspendLayout
-        CType(Me.griTottusH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griTottusH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl35.SuspendLayout
-        CType(Me.griAlicorpH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griAlicorpH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl36.SuspendLayout
-        CType(Me.griAlicorpH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griAlicorpH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl37.SuspendLayout
-        CType(Me.griAlicorpH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griAlicorpH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl38.SuspendLayout
-        CType(Me.griAlicorpH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griAlicorpH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl39.SuspendLayout
-        CType(Me.griAlicorpH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griAlicorpH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl40.SuspendLayout
-        CType(Me.griCementosH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCementosH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl41.SuspendLayout
-        CType(Me.griCementosH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCementosH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl42.SuspendLayout
-        CType(Me.griCementosH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCementosH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl43.SuspendLayout
-        CType(Me.griCementosH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCementosH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl44.SuspendLayout
-        CType(Me.griCementosH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCementosH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl20.SuspendLayout
-        CType(Me.griGloriaH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griGloriaH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl21.SuspendLayout
-        CType(Me.griGloriaH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griGloriaH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl22.SuspendLayout
-        CType(Me.griGloriaH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griGloriaH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl23.SuspendLayout
-        CType(Me.griGloriaH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griGloriaH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl24.SuspendLayout
-        CType(Me.griGloriaH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griGloriaH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl47.SuspendLayout
-        CType(Me.griCencosudH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCencosudH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl48.SuspendLayout
-        CType(Me.griCencosudH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCencosudH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl49.SuspendLayout
-        CType(Me.griCencosudH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCencosudH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl50.SuspendLayout
-        CType(Me.griCencosudH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCencosudH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl51.SuspendLayout
-        CType(Me.griCencosudH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griCencosudH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl54.SuspendLayout
-        CType(Me.griInduamericaH1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griInduamericaH1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl55.SuspendLayout
-        CType(Me.griInduamericaH2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griInduamericaH2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl56.SuspendLayout
-        CType(Me.griInduamericaH3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griInduamericaH3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl57.SuspendLayout
-        CType(Me.griInduamericaH4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griInduamericaH4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl58.SuspendLayout
-        CType(Me.griInduamericaH5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griInduamericaH5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl9.SuspendLayout
-        CType(Me.griListaTarifasVea,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasVea, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox2.SuspendLayout
         Me.UltraExpandableGroupBoxPanel2.SuspendLayout
-        CType(Me.fecInicioVea,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioVea, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox1.SuspendLayout
         Me.UltraExpandableGroupBoxPanel1.SuspendLayout
-        CType(Me.tabHistorialVea,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialVea, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialVea.SuspendLayout
         Me.UltraTabPageControl13.SuspendLayout
-        CType(Me.griListaTarifasTOTTUS,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasTOTTUS, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox3.SuspendLayout
         Me.UltraExpandableGroupBoxPanel3.SuspendLayout
-        CType(Me.fecInicioTottus,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioTottus, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox4.SuspendLayout
         Me.UltraExpandableGroupBoxPanel4.SuspendLayout
-        CType(Me.tabHistorialTottus,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialTottus, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialTottus.SuspendLayout
         Me.UltraTabPageControl15.SuspendLayout
-        CType(Me.griListaTarifasALICORP,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasALICORP, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox5.SuspendLayout
         Me.UltraExpandableGroupBoxPanel5.SuspendLayout
-        CType(Me.fecInicioAlicorp,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox6,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioAlicorp, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox6.SuspendLayout
         Me.UltraExpandableGroupBoxPanel6.SuspendLayout
-        CType(Me.tabHistorialAlicorp,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialAlicorp, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialAlicorp.SuspendLayout
         Me.UltraTabPageControl17.SuspendLayout
-        CType(Me.griListaTarifasCEMENTOS,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasCEMENTOS, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox7, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox7.SuspendLayout
         Me.UltraExpandableGroupBoxPanel7.SuspendLayout
-        CType(Me.fecInicioCementos,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox8,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioCementos, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox8, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox8.SuspendLayout
         Me.UltraExpandableGroupBoxPanel8.SuspendLayout
-        CType(Me.tabHistorialCementos,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialCementos, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialCementos.SuspendLayout
         Me.UltraTabPageControl19.SuspendLayout
-        CType(Me.griListaTarifasGLORIA,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox9,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasGLORIA, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox9, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox9.SuspendLayout
         Me.UltraExpandableGroupBoxPanel9.SuspendLayout
-        CType(Me.fecInicioGloria,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox10,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioGloria, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox10, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox10.SuspendLayout
         Me.UltraExpandableGroupBoxPanel10.SuspendLayout
-        CType(Me.tabHistorialGloria,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialGloria, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialGloria.SuspendLayout
         Me.UltraTabPageControl46.SuspendLayout
-        CType(Me.griListaTarifasCENCOSUD,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox11,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasCENCOSUD, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox11, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox11.SuspendLayout
         Me.UltraExpandableGroupBoxPanel11.SuspendLayout
-        CType(Me.fecInicioCencosud,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox12,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioCencosud, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox12, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox12.SuspendLayout
         Me.UltraExpandableGroupBoxPanel12.SuspendLayout
-        CType(Me.tabHistorialCencosud,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialCencosud, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialCencosud.SuspendLayout
         Me.UltraTabPageControl53.SuspendLayout
-        CType(Me.griListaTarifasINDUAMERICA,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox13,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griListaTarifasINDUAMERICA, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox13, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox13.SuspendLayout
         Me.UltraExpandableGroupBoxPanel13.SuspendLayout
-        CType(Me.fecInicioInduamerica,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox14,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioInduamerica, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox14, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox14.SuspendLayout
         Me.UltraExpandableGroupBoxPanel14.SuspendLayout
-        CType(Me.tabHistorialInduamerica,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.tabHistorialInduamerica, System.ComponentModel.ISupportInitialize).BeginInit
         Me.tabHistorialInduamerica.SuspendLayout
         Me.UltraTabPageControl1.SuspendLayout
-        CType(Me.griLista,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Menu.SuspendLayout
-        CType(Me.ogdTarifasCliente,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.UltraExpandableGroupBox15,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdTarifasCliente, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox15, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox15.SuspendLayout
         Me.UltraExpandableGroupBoxPanel15.SuspendLayout
-        CType(Me.UltraExpandableGroupBox16,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox16, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraExpandableGroupBox16.SuspendLayout
         Me.UltraExpandableGroupBoxPanel16.SuspendLayout
-        CType(Me.fecFinCampaña,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.fecInicioCampaña,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboClienteLista,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecFinCampaña, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioCampaña, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboClienteLista, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl3.SuspendLayout
-        CType(Me.UltraTabControl1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl1.SuspendLayout
         Me.UltraTabPageControl4.SuspendLayout
-        CType(Me.UltraTabControl2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl2.SuspendLayout
         Me.UltraTabPageControl5.SuspendLayout
-        CType(Me.UltraTabControl3,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl3, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl3.SuspendLayout
         Me.UltraTabPageControl6.SuspendLayout
-        CType(Me.UltraTabControl4,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl4, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl4.SuspendLayout
         Me.UltraTabPageControl8.SuspendLayout
-        CType(Me.UltraTabControl5,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl5, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl5.SuspendLayout
         Me.UltraTabPageControl11.SuspendLayout
-        CType(Me.UltraTabControl7,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl7, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl7.SuspendLayout
         Me.UltraTabPageControl12.SuspendLayout
-        CType(Me.UltraTabControl13,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraTabControl13, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabControl13.SuspendLayout
         Me.UltraTabPageControl7.SuspendLayout
-        CType(Me.ficListaTarifas,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ficListaTarifas, System.ComponentModel.ISupportInitialize).BeginInit
         Me.ficListaTarifas.SuspendLayout
         Me.utpDetalle.SuspendLayout
-        CType(Me.agrDatoGeneral,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.agrDatoGeneral, System.ComponentModel.ISupportInitialize).BeginInit
         Me.agrDatoGeneral.SuspendLayout
-        CType(Me.UltraGroupBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraGroupBox1.SuspendLayout
-        CType(Me.UltraGroupBox2,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraGroupBox2.SuspendLayout
-        CType(Me.cboMaterial,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.chkIncluyeMaterial,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.chkAceptaComision,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.colorCambio,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtObservacion,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.txtId,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.fecFinCamp,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboCliente,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.fecInicioCamp,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboTipoRuta,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboTipoVehiculo,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboTipoCarga,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboOrigen,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.cboDestino,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.fecFin,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verActual,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.fecInicio,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Agrupacion6,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboMaterial, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.chkIncluyeMaterial, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.chkAceptaComision, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.colorCambio, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtId, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecFinCamp, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboCliente, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicioCamp, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboTipoRuta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboTipoVehiculo, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboTipoCarga, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecFin, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verActual, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecInicio, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Agrupacion6, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Agrupacion6.SuspendLayout
-        CType(Me.verOtros,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verVariable,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verCargar,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verDescarga,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verContraEntrega,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.verConsolidado,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ficDemanda,System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verOtros, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verVariable, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verCargar, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verDescarga, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verContraEntrega, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verConsolidado, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ficDemanda, System.ComponentModel.ISupportInitialize).BeginInit
         Me.ficDemanda.SuspendLayout
         Me.SuspendLayout
         '
@@ -1904,7 +1904,7 @@ Partial Class frm_TarifasCliente
         Appearance9.TextHAlignAsString = "Center"
         UltraGridGroup4.Header.Appearance = Appearance9
         UltraGridGroup4.Header.Caption = "CAMPAÑA"
-        UltraGridGroup4.Hidden = true
+        UltraGridGroup4.Hidden = True
         UltraGridGroup4.Key = "NewGroup3"
         UltraGridGroup4.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup4.RowLayoutGroupInfo.OriginY = 0
@@ -1915,7 +1915,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand1.SummaryFooterCaption = "Totales:"
         Me.griVeaH1.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.griVeaH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griVeaH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griVeaH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griVeaH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griVeaH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griVeaH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
@@ -1934,7 +1934,7 @@ Partial Class frm_TarifasCliente
         Me.griVeaH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griVeaH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griVeaH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griVeaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griVeaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griVeaH1.Location = New System.Drawing.Point(0, 0)
         Me.griVeaH1.Name = "griVeaH1"
         Me.griVeaH1.Size = New System.Drawing.Size(423, 463)
@@ -2071,7 +2071,7 @@ Partial Class frm_TarifasCliente
         Appearance20.TextHAlignAsString = "Center"
         UltraGridGroup8.Header.Appearance = Appearance20
         UltraGridGroup8.Header.Caption = "CAMPAÑA"
-        UltraGridGroup8.Hidden = true
+        UltraGridGroup8.Hidden = True
         UltraGridGroup8.Key = "NewGroup3"
         UltraGridGroup8.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup8.RowLayoutGroupInfo.OriginY = 0
@@ -2082,7 +2082,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand2.SummaryFooterCaption = "Totales:"
         Me.griVeaH2.DisplayLayout.BandsSerializer.Add(UltraGridBand2)
         Me.griVeaH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griVeaH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griVeaH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griVeaH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griVeaH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griVeaH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
@@ -2101,7 +2101,7 @@ Partial Class frm_TarifasCliente
         Me.griVeaH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griVeaH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griVeaH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griVeaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griVeaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griVeaH2.Location = New System.Drawing.Point(0, 0)
         Me.griVeaH2.Name = "griVeaH2"
         Me.griVeaH2.Size = New System.Drawing.Size(423, 463)
@@ -2229,7 +2229,7 @@ Partial Class frm_TarifasCliente
         Appearance31.TextHAlignAsString = "Center"
         UltraGridGroup12.Header.Appearance = Appearance31
         UltraGridGroup12.Header.Caption = "CAMPAÑA"
-        UltraGridGroup12.Hidden = true
+        UltraGridGroup12.Hidden = True
         UltraGridGroup12.Key = "NewGroup3"
         UltraGridGroup12.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup12.RowLayoutGroupInfo.OriginY = 0
@@ -2240,7 +2240,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand3.SummaryFooterCaption = "Totales:"
         Me.griVeaH3.DisplayLayout.BandsSerializer.Add(UltraGridBand3)
         Me.griVeaH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griVeaH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griVeaH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griVeaH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griVeaH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griVeaH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
@@ -2259,7 +2259,7 @@ Partial Class frm_TarifasCliente
         Me.griVeaH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griVeaH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griVeaH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griVeaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griVeaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griVeaH3.Location = New System.Drawing.Point(0, 0)
         Me.griVeaH3.Name = "griVeaH3"
         Me.griVeaH3.Size = New System.Drawing.Size(423, 463)
@@ -2387,7 +2387,7 @@ Partial Class frm_TarifasCliente
         Appearance42.TextHAlignAsString = "Center"
         UltraGridGroup16.Header.Appearance = Appearance42
         UltraGridGroup16.Header.Caption = "CAMPAÑA"
-        UltraGridGroup16.Hidden = true
+        UltraGridGroup16.Hidden = True
         UltraGridGroup16.Key = "NewGroup3"
         UltraGridGroup16.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup16.RowLayoutGroupInfo.OriginY = 0
@@ -2398,7 +2398,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand4.SummaryFooterCaption = "Totales:"
         Me.griVeaH4.DisplayLayout.BandsSerializer.Add(UltraGridBand4)
         Me.griVeaH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griVeaH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griVeaH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griVeaH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griVeaH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griVeaH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
@@ -2417,7 +2417,7 @@ Partial Class frm_TarifasCliente
         Me.griVeaH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griVeaH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griVeaH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griVeaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griVeaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griVeaH4.Location = New System.Drawing.Point(0, 0)
         Me.griVeaH4.Name = "griVeaH4"
         Me.griVeaH4.Size = New System.Drawing.Size(423, 463)
@@ -2545,7 +2545,7 @@ Partial Class frm_TarifasCliente
         Appearance53.TextHAlignAsString = "Center"
         UltraGridGroup20.Header.Appearance = Appearance53
         UltraGridGroup20.Header.Caption = "CAMPAÑA"
-        UltraGridGroup20.Hidden = true
+        UltraGridGroup20.Hidden = True
         UltraGridGroup20.Key = "NewGroup3"
         UltraGridGroup20.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup20.RowLayoutGroupInfo.OriginY = 0
@@ -2556,7 +2556,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand5.SummaryFooterCaption = "Totales:"
         Me.griVeaH5.DisplayLayout.BandsSerializer.Add(UltraGridBand5)
         Me.griVeaH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griVeaH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griVeaH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griVeaH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griVeaH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griVeaH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
@@ -2575,7 +2575,7 @@ Partial Class frm_TarifasCliente
         Me.griVeaH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griVeaH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griVeaH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griVeaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griVeaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griVeaH5.Location = New System.Drawing.Point(0, 0)
         Me.griVeaH5.Name = "griVeaH5"
         Me.griVeaH5.Size = New System.Drawing.Size(423, 463)
@@ -2695,7 +2695,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup22.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup22.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup23.Header.Caption = "CAMPAÑA"
-        UltraGridGroup23.Hidden = true
+        UltraGridGroup23.Hidden = True
         UltraGridGroup23.Key = "NewGroup2"
         UltraGridGroup23.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup23.RowLayoutGroupInfo.OriginY = 0
@@ -2715,7 +2715,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH1.DisplayLayout.BandsSerializer.Add(UltraGridBand6)
         Me.griTottusH1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griTottusH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griTottusH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griTottusH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griTottusH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griTottusH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griTottusH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -2734,7 +2734,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griTottusH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griTottusH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTottusH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griTottusH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTottusH1.Location = New System.Drawing.Point(0, 0)
         Me.griTottusH1.Name = "griTottusH1"
         Me.griTottusH1.Size = New System.Drawing.Size(473, 564)
@@ -2854,7 +2854,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup26.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup26.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup27.Header.Caption = "CAMPAÑA"
-        UltraGridGroup27.Hidden = true
+        UltraGridGroup27.Hidden = True
         UltraGridGroup27.Key = "NewGroup2"
         UltraGridGroup27.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup27.RowLayoutGroupInfo.OriginY = 0
@@ -2874,7 +2874,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH2.DisplayLayout.BandsSerializer.Add(UltraGridBand7)
         Me.griTottusH2.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griTottusH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griTottusH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griTottusH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griTottusH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griTottusH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griTottusH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -2893,7 +2893,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griTottusH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griTottusH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTottusH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griTottusH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTottusH2.Location = New System.Drawing.Point(0, 0)
         Me.griTottusH2.Name = "griTottusH2"
         Me.griTottusH2.Size = New System.Drawing.Size(473, 564)
@@ -3013,7 +3013,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup30.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup30.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup31.Header.Caption = "CAMPAÑA"
-        UltraGridGroup31.Hidden = true
+        UltraGridGroup31.Hidden = True
         UltraGridGroup31.Key = "NewGroup2"
         UltraGridGroup31.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup31.RowLayoutGroupInfo.OriginY = 0
@@ -3033,7 +3033,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH3.DisplayLayout.BandsSerializer.Add(UltraGridBand8)
         Me.griTottusH3.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griTottusH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griTottusH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griTottusH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griTottusH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griTottusH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griTottusH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3052,7 +3052,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griTottusH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griTottusH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTottusH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griTottusH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTottusH3.Location = New System.Drawing.Point(0, 0)
         Me.griTottusH3.Name = "griTottusH3"
         Me.griTottusH3.Size = New System.Drawing.Size(473, 564)
@@ -3172,7 +3172,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup34.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup34.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup35.Header.Caption = "CAMPAÑA"
-        UltraGridGroup35.Hidden = true
+        UltraGridGroup35.Hidden = True
         UltraGridGroup35.Key = "NewGroup2"
         UltraGridGroup35.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup35.RowLayoutGroupInfo.OriginY = 0
@@ -3192,7 +3192,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH4.DisplayLayout.BandsSerializer.Add(UltraGridBand9)
         Me.griTottusH4.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griTottusH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griTottusH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griTottusH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griTottusH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griTottusH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griTottusH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3211,7 +3211,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griTottusH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griTottusH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTottusH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griTottusH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTottusH4.Location = New System.Drawing.Point(0, 0)
         Me.griTottusH4.Name = "griTottusH4"
         Me.griTottusH4.Size = New System.Drawing.Size(473, 564)
@@ -3331,7 +3331,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup38.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup38.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup39.Header.Caption = "CAMPAÑA"
-        UltraGridGroup39.Hidden = true
+        UltraGridGroup39.Hidden = True
         UltraGridGroup39.Key = "NewGroup2"
         UltraGridGroup39.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup39.RowLayoutGroupInfo.OriginY = 0
@@ -3351,7 +3351,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH5.DisplayLayout.BandsSerializer.Add(UltraGridBand10)
         Me.griTottusH5.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griTottusH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griTottusH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griTottusH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griTottusH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griTottusH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griTottusH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3370,7 +3370,7 @@ Partial Class frm_TarifasCliente
         Me.griTottusH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griTottusH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griTottusH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griTottusH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griTottusH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTottusH5.Location = New System.Drawing.Point(0, 0)
         Me.griTottusH5.Name = "griTottusH5"
         Me.griTottusH5.Size = New System.Drawing.Size(473, 564)
@@ -3418,7 +3418,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn442.CellAppearance = Appearance114
         UltraGridColumn442.Header.Caption = ""
         UltraGridColumn442.Header.VisiblePosition = 2
-        UltraGridColumn442.Hidden = true
+        UltraGridColumn442.Hidden = True
         UltraGridColumn442.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn442.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn442.RowLayoutColumnInfo.OriginY = 0
@@ -3502,7 +3502,7 @@ Partial Class frm_TarifasCliente
         Appearance119.TextHAlignAsString = "Center"
         UltraGridGroup44.Header.Appearance = Appearance119
         UltraGridGroup44.Header.Caption = "Campaña Navideña"
-        UltraGridGroup44.Hidden = true
+        UltraGridGroup44.Hidden = True
         UltraGridGroup44.Key = "NewGroup3"
         UltraGridGroup44.RowLayoutGroupInfo.LabelSpan = 1
         UltraGridGroup44.RowLayoutGroupInfo.OriginX = 10
@@ -3515,7 +3515,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH1.DisplayLayout.BandsSerializer.Add(UltraGridBand11)
         Me.griAlicorpH1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griAlicorpH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griAlicorpH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griAlicorpH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griAlicorpH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griAlicorpH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griAlicorpH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3534,7 +3534,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griAlicorpH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAlicorpH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griAlicorpH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griAlicorpH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAlicorpH1.Location = New System.Drawing.Point(0, 0)
         Me.griAlicorpH1.Name = "griAlicorpH1"
         Me.griAlicorpH1.Size = New System.Drawing.Size(423, 564)
@@ -3582,7 +3582,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn449.CellAppearance = Appearance125
         UltraGridColumn449.Header.Caption = ""
         UltraGridColumn449.Header.VisiblePosition = 2
-        UltraGridColumn449.Hidden = true
+        UltraGridColumn449.Hidden = True
         UltraGridColumn449.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn449.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn449.RowLayoutColumnInfo.OriginY = 0
@@ -3666,7 +3666,7 @@ Partial Class frm_TarifasCliente
         Appearance130.TextHAlignAsString = "Center"
         UltraGridGroup48.Header.Appearance = Appearance130
         UltraGridGroup48.Header.Caption = "Campaña Navideña"
-        UltraGridGroup48.Hidden = true
+        UltraGridGroup48.Hidden = True
         UltraGridGroup48.Key = "NewGroup3"
         UltraGridGroup48.RowLayoutGroupInfo.LabelSpan = 1
         UltraGridGroup48.RowLayoutGroupInfo.OriginX = 10
@@ -3679,7 +3679,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH2.DisplayLayout.BandsSerializer.Add(UltraGridBand12)
         Me.griAlicorpH2.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griAlicorpH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griAlicorpH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griAlicorpH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griAlicorpH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griAlicorpH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griAlicorpH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3698,7 +3698,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griAlicorpH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAlicorpH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griAlicorpH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griAlicorpH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAlicorpH2.Location = New System.Drawing.Point(0, 0)
         Me.griAlicorpH2.Name = "griAlicorpH2"
         Me.griAlicorpH2.Size = New System.Drawing.Size(423, 564)
@@ -3746,7 +3746,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn456.CellAppearance = Appearance136
         UltraGridColumn456.Header.Caption = ""
         UltraGridColumn456.Header.VisiblePosition = 2
-        UltraGridColumn456.Hidden = true
+        UltraGridColumn456.Hidden = True
         UltraGridColumn456.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn456.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn456.RowLayoutColumnInfo.OriginY = 0
@@ -3830,7 +3830,7 @@ Partial Class frm_TarifasCliente
         Appearance141.TextHAlignAsString = "Center"
         UltraGridGroup52.Header.Appearance = Appearance141
         UltraGridGroup52.Header.Caption = "Campaña Navideña"
-        UltraGridGroup52.Hidden = true
+        UltraGridGroup52.Hidden = True
         UltraGridGroup52.Key = "NewGroup3"
         UltraGridGroup52.RowLayoutGroupInfo.LabelSpan = 1
         UltraGridGroup52.RowLayoutGroupInfo.OriginX = 10
@@ -3843,7 +3843,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH3.DisplayLayout.BandsSerializer.Add(UltraGridBand13)
         Me.griAlicorpH3.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griAlicorpH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griAlicorpH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griAlicorpH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griAlicorpH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griAlicorpH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griAlicorpH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -3862,7 +3862,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griAlicorpH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAlicorpH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griAlicorpH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griAlicorpH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAlicorpH3.Location = New System.Drawing.Point(0, 0)
         Me.griAlicorpH3.Name = "griAlicorpH3"
         Me.griAlicorpH3.Size = New System.Drawing.Size(423, 564)
@@ -3910,7 +3910,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn463.CellAppearance = Appearance147
         UltraGridColumn463.Header.Caption = ""
         UltraGridColumn463.Header.VisiblePosition = 2
-        UltraGridColumn463.Hidden = true
+        UltraGridColumn463.Hidden = True
         UltraGridColumn463.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn463.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn463.RowLayoutColumnInfo.OriginY = 0
@@ -3994,7 +3994,7 @@ Partial Class frm_TarifasCliente
         Appearance152.TextHAlignAsString = "Center"
         UltraGridGroup56.Header.Appearance = Appearance152
         UltraGridGroup56.Header.Caption = "Campaña Navideña"
-        UltraGridGroup56.Hidden = true
+        UltraGridGroup56.Hidden = True
         UltraGridGroup56.Key = "NewGroup3"
         UltraGridGroup56.RowLayoutGroupInfo.LabelSpan = 1
         UltraGridGroup56.RowLayoutGroupInfo.OriginX = 10
@@ -4007,7 +4007,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH4.DisplayLayout.BandsSerializer.Add(UltraGridBand14)
         Me.griAlicorpH4.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griAlicorpH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griAlicorpH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griAlicorpH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griAlicorpH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griAlicorpH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griAlicorpH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4026,7 +4026,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griAlicorpH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAlicorpH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griAlicorpH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griAlicorpH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAlicorpH4.Location = New System.Drawing.Point(0, 0)
         Me.griAlicorpH4.Name = "griAlicorpH4"
         Me.griAlicorpH4.Size = New System.Drawing.Size(423, 564)
@@ -4074,7 +4074,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn470.CellAppearance = Appearance158
         UltraGridColumn470.Header.Caption = ""
         UltraGridColumn470.Header.VisiblePosition = 2
-        UltraGridColumn470.Hidden = true
+        UltraGridColumn470.Hidden = True
         UltraGridColumn470.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn470.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn470.RowLayoutColumnInfo.OriginY = 0
@@ -4158,7 +4158,7 @@ Partial Class frm_TarifasCliente
         Appearance163.TextHAlignAsString = "Center"
         UltraGridGroup60.Header.Appearance = Appearance163
         UltraGridGroup60.Header.Caption = "Campaña Navideña"
-        UltraGridGroup60.Hidden = true
+        UltraGridGroup60.Hidden = True
         UltraGridGroup60.Key = "NewGroup3"
         UltraGridGroup60.RowLayoutGroupInfo.LabelSpan = 1
         UltraGridGroup60.RowLayoutGroupInfo.OriginX = 10
@@ -4171,7 +4171,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH5.DisplayLayout.BandsSerializer.Add(UltraGridBand15)
         Me.griAlicorpH5.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[True]
         Me.griAlicorpH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griAlicorpH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griAlicorpH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griAlicorpH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griAlicorpH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griAlicorpH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4190,7 +4190,7 @@ Partial Class frm_TarifasCliente
         Me.griAlicorpH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griAlicorpH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAlicorpH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griAlicorpH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griAlicorpH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAlicorpH5.Location = New System.Drawing.Point(0, 0)
         Me.griAlicorpH5.Name = "griAlicorpH5"
         Me.griAlicorpH5.Size = New System.Drawing.Size(423, 564)
@@ -4318,7 +4318,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup62.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup62.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup63.Header.Caption = ""
-        UltraGridGroup63.Hidden = true
+        UltraGridGroup63.Hidden = True
         UltraGridGroup63.Key = "NewGroup2"
         UltraGridGroup63.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup63.RowLayoutGroupInfo.OriginY = 0
@@ -4327,7 +4327,7 @@ Partial Class frm_TarifasCliente
         Appearance175.TextHAlignAsString = "Center"
         UltraGridGroup64.Header.Appearance = Appearance175
         UltraGridGroup64.Header.Caption = "Campaña Navideña"
-        UltraGridGroup64.Hidden = true
+        UltraGridGroup64.Hidden = True
         UltraGridGroup64.Key = "NewGroup3"
         UltraGridGroup64.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup64.RowLayoutGroupInfo.OriginY = 0
@@ -4338,7 +4338,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand16.SummaryFooterCaption = "Totales:"
         Me.griCementosH1.DisplayLayout.BandsSerializer.Add(UltraGridBand16)
         Me.griCementosH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCementosH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCementosH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griCementosH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griCementosH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCementosH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4357,7 +4357,7 @@ Partial Class frm_TarifasCliente
         Me.griCementosH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCementosH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCementosH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCementosH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCementosH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCementosH1.Location = New System.Drawing.Point(0, 0)
         Me.griCementosH1.Name = "griCementosH1"
         Me.griCementosH1.Size = New System.Drawing.Size(423, 564)
@@ -4485,7 +4485,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup66.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup66.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup67.Header.Caption = ""
-        UltraGridGroup67.Hidden = true
+        UltraGridGroup67.Hidden = True
         UltraGridGroup67.Key = "NewGroup2"
         UltraGridGroup67.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup67.RowLayoutGroupInfo.OriginY = 0
@@ -4494,7 +4494,7 @@ Partial Class frm_TarifasCliente
         Appearance187.TextHAlignAsString = "Center"
         UltraGridGroup68.Header.Appearance = Appearance187
         UltraGridGroup68.Header.Caption = "Campaña Navideña"
-        UltraGridGroup68.Hidden = true
+        UltraGridGroup68.Hidden = True
         UltraGridGroup68.Key = "NewGroup3"
         UltraGridGroup68.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup68.RowLayoutGroupInfo.OriginY = 0
@@ -4505,7 +4505,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand17.SummaryFooterCaption = "Totales:"
         Me.griCementosH2.DisplayLayout.BandsSerializer.Add(UltraGridBand17)
         Me.griCementosH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCementosH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCementosH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griCementosH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griCementosH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCementosH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4524,7 +4524,7 @@ Partial Class frm_TarifasCliente
         Me.griCementosH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCementosH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCementosH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCementosH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCementosH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCementosH2.Location = New System.Drawing.Point(0, 0)
         Me.griCementosH2.Name = "griCementosH2"
         Me.griCementosH2.Size = New System.Drawing.Size(423, 564)
@@ -4652,7 +4652,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup70.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup70.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup71.Header.Caption = ""
-        UltraGridGroup71.Hidden = true
+        UltraGridGroup71.Hidden = True
         UltraGridGroup71.Key = "NewGroup2"
         UltraGridGroup71.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup71.RowLayoutGroupInfo.OriginY = 0
@@ -4661,7 +4661,7 @@ Partial Class frm_TarifasCliente
         Appearance199.TextHAlignAsString = "Center"
         UltraGridGroup72.Header.Appearance = Appearance199
         UltraGridGroup72.Header.Caption = "Campaña Navideña"
-        UltraGridGroup72.Hidden = true
+        UltraGridGroup72.Hidden = True
         UltraGridGroup72.Key = "NewGroup3"
         UltraGridGroup72.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup72.RowLayoutGroupInfo.OriginY = 0
@@ -4672,7 +4672,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand18.SummaryFooterCaption = "Totales:"
         Me.griCementosH3.DisplayLayout.BandsSerializer.Add(UltraGridBand18)
         Me.griCementosH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCementosH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCementosH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griCementosH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griCementosH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCementosH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4691,7 +4691,7 @@ Partial Class frm_TarifasCliente
         Me.griCementosH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCementosH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCementosH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCementosH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCementosH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCementosH3.Location = New System.Drawing.Point(0, 0)
         Me.griCementosH3.Name = "griCementosH3"
         Me.griCementosH3.Size = New System.Drawing.Size(423, 564)
@@ -4819,7 +4819,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup74.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup74.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup75.Header.Caption = ""
-        UltraGridGroup75.Hidden = true
+        UltraGridGroup75.Hidden = True
         UltraGridGroup75.Key = "NewGroup2"
         UltraGridGroup75.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup75.RowLayoutGroupInfo.OriginY = 0
@@ -4828,7 +4828,7 @@ Partial Class frm_TarifasCliente
         Appearance211.TextHAlignAsString = "Center"
         UltraGridGroup76.Header.Appearance = Appearance211
         UltraGridGroup76.Header.Caption = "Campaña Navideña"
-        UltraGridGroup76.Hidden = true
+        UltraGridGroup76.Hidden = True
         UltraGridGroup76.Key = "NewGroup3"
         UltraGridGroup76.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup76.RowLayoutGroupInfo.OriginY = 0
@@ -4839,7 +4839,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand19.SummaryFooterCaption = "Totales:"
         Me.griCementosH4.DisplayLayout.BandsSerializer.Add(UltraGridBand19)
         Me.griCementosH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCementosH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCementosH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griCementosH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griCementosH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCementosH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -4858,7 +4858,7 @@ Partial Class frm_TarifasCliente
         Me.griCementosH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCementosH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCementosH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCementosH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCementosH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCementosH4.Location = New System.Drawing.Point(0, 0)
         Me.griCementosH4.Name = "griCementosH4"
         Me.griCementosH4.Size = New System.Drawing.Size(423, 564)
@@ -4986,7 +4986,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup78.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup78.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup79.Header.Caption = ""
-        UltraGridGroup79.Hidden = true
+        UltraGridGroup79.Hidden = True
         UltraGridGroup79.Key = "NewGroup2"
         UltraGridGroup79.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup79.RowLayoutGroupInfo.OriginY = 0
@@ -4995,7 +4995,7 @@ Partial Class frm_TarifasCliente
         Appearance223.TextHAlignAsString = "Center"
         UltraGridGroup80.Header.Appearance = Appearance223
         UltraGridGroup80.Header.Caption = "Campaña Navideña"
-        UltraGridGroup80.Hidden = true
+        UltraGridGroup80.Hidden = True
         UltraGridGroup80.Key = "NewGroup3"
         UltraGridGroup80.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup80.RowLayoutGroupInfo.OriginY = 0
@@ -5006,7 +5006,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand20.SummaryFooterCaption = "Totales:"
         Me.griCementosH5.DisplayLayout.BandsSerializer.Add(UltraGridBand20)
         Me.griCementosH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCementosH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCementosH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griCementosH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griCementosH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCementosH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5025,7 +5025,7 @@ Partial Class frm_TarifasCliente
         Me.griCementosH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCementosH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCementosH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCementosH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCementosH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCementosH5.Location = New System.Drawing.Point(0, 0)
         Me.griCementosH5.Name = "griCementosH5"
         Me.griCementosH5.Size = New System.Drawing.Size(423, 564)
@@ -5153,7 +5153,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup82.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup82.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup83.Header.Caption = ""
-        UltraGridGroup83.Hidden = true
+        UltraGridGroup83.Hidden = True
         UltraGridGroup83.Key = "NewGroup2"
         UltraGridGroup83.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup83.RowLayoutGroupInfo.OriginY = 0
@@ -5162,7 +5162,7 @@ Partial Class frm_TarifasCliente
         Appearance236.TextHAlignAsString = "Center"
         UltraGridGroup84.Header.Appearance = Appearance236
         UltraGridGroup84.Header.Caption = "Campaña Navideña"
-        UltraGridGroup84.Hidden = true
+        UltraGridGroup84.Hidden = True
         UltraGridGroup84.Key = "NewGroup3"
         UltraGridGroup84.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup84.RowLayoutGroupInfo.OriginY = 0
@@ -5173,7 +5173,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand21.SummaryFooterCaption = "Totales:"
         Me.griGloriaH1.DisplayLayout.BandsSerializer.Add(UltraGridBand21)
         Me.griGloriaH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griGloriaH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griGloriaH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griGloriaH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griGloriaH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griGloriaH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5192,7 +5192,7 @@ Partial Class frm_TarifasCliente
         Me.griGloriaH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griGloriaH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griGloriaH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griGloriaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griGloriaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGloriaH1.Location = New System.Drawing.Point(0, 0)
         Me.griGloriaH1.Name = "griGloriaH1"
         Me.griGloriaH1.Size = New System.Drawing.Size(423, 564)
@@ -5320,7 +5320,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup86.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup86.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup87.Header.Caption = ""
-        UltraGridGroup87.Hidden = true
+        UltraGridGroup87.Hidden = True
         UltraGridGroup87.Key = "NewGroup2"
         UltraGridGroup87.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup87.RowLayoutGroupInfo.OriginY = 0
@@ -5329,7 +5329,7 @@ Partial Class frm_TarifasCliente
         Appearance249.TextHAlignAsString = "Center"
         UltraGridGroup88.Header.Appearance = Appearance249
         UltraGridGroup88.Header.Caption = "Campaña Navideña"
-        UltraGridGroup88.Hidden = true
+        UltraGridGroup88.Hidden = True
         UltraGridGroup88.Key = "NewGroup3"
         UltraGridGroup88.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup88.RowLayoutGroupInfo.OriginY = 0
@@ -5340,7 +5340,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand22.SummaryFooterCaption = "Totales:"
         Me.griGloriaH2.DisplayLayout.BandsSerializer.Add(UltraGridBand22)
         Me.griGloriaH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griGloriaH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griGloriaH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griGloriaH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griGloriaH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griGloriaH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5359,7 +5359,7 @@ Partial Class frm_TarifasCliente
         Me.griGloriaH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griGloriaH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griGloriaH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griGloriaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griGloriaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGloriaH2.Location = New System.Drawing.Point(0, 0)
         Me.griGloriaH2.Name = "griGloriaH2"
         Me.griGloriaH2.Size = New System.Drawing.Size(423, 564)
@@ -5487,7 +5487,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup90.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup90.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup91.Header.Caption = ""
-        UltraGridGroup91.Hidden = true
+        UltraGridGroup91.Hidden = True
         UltraGridGroup91.Key = "NewGroup2"
         UltraGridGroup91.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup91.RowLayoutGroupInfo.OriginY = 0
@@ -5496,7 +5496,7 @@ Partial Class frm_TarifasCliente
         Appearance262.TextHAlignAsString = "Center"
         UltraGridGroup92.Header.Appearance = Appearance262
         UltraGridGroup92.Header.Caption = "Campaña Navideña"
-        UltraGridGroup92.Hidden = true
+        UltraGridGroup92.Hidden = True
         UltraGridGroup92.Key = "NewGroup3"
         UltraGridGroup92.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup92.RowLayoutGroupInfo.OriginY = 0
@@ -5507,7 +5507,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand23.SummaryFooterCaption = "Totales:"
         Me.griGloriaH3.DisplayLayout.BandsSerializer.Add(UltraGridBand23)
         Me.griGloriaH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griGloriaH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griGloriaH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griGloriaH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griGloriaH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griGloriaH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5526,7 +5526,7 @@ Partial Class frm_TarifasCliente
         Me.griGloriaH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griGloriaH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griGloriaH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griGloriaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griGloriaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGloriaH3.Location = New System.Drawing.Point(0, 0)
         Me.griGloriaH3.Name = "griGloriaH3"
         Me.griGloriaH3.Size = New System.Drawing.Size(423, 564)
@@ -5654,7 +5654,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup94.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup94.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup95.Header.Caption = ""
-        UltraGridGroup95.Hidden = true
+        UltraGridGroup95.Hidden = True
         UltraGridGroup95.Key = "NewGroup2"
         UltraGridGroup95.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup95.RowLayoutGroupInfo.OriginY = 0
@@ -5663,7 +5663,7 @@ Partial Class frm_TarifasCliente
         Appearance275.TextHAlignAsString = "Center"
         UltraGridGroup96.Header.Appearance = Appearance275
         UltraGridGroup96.Header.Caption = "Campaña Navideña"
-        UltraGridGroup96.Hidden = true
+        UltraGridGroup96.Hidden = True
         UltraGridGroup96.Key = "NewGroup3"
         UltraGridGroup96.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup96.RowLayoutGroupInfo.OriginY = 0
@@ -5674,7 +5674,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand24.SummaryFooterCaption = "Totales:"
         Me.griGloriaH4.DisplayLayout.BandsSerializer.Add(UltraGridBand24)
         Me.griGloriaH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griGloriaH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griGloriaH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griGloriaH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griGloriaH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griGloriaH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5693,7 +5693,7 @@ Partial Class frm_TarifasCliente
         Me.griGloriaH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griGloriaH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griGloriaH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griGloriaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griGloriaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGloriaH4.Location = New System.Drawing.Point(0, 0)
         Me.griGloriaH4.Name = "griGloriaH4"
         Me.griGloriaH4.Size = New System.Drawing.Size(423, 564)
@@ -5821,7 +5821,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup98.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup98.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup99.Header.Caption = ""
-        UltraGridGroup99.Hidden = true
+        UltraGridGroup99.Hidden = True
         UltraGridGroup99.Key = "NewGroup2"
         UltraGridGroup99.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup99.RowLayoutGroupInfo.OriginY = 0
@@ -5830,7 +5830,7 @@ Partial Class frm_TarifasCliente
         Appearance288.TextHAlignAsString = "Center"
         UltraGridGroup100.Header.Appearance = Appearance288
         UltraGridGroup100.Header.Caption = "Campaña Navideña"
-        UltraGridGroup100.Hidden = true
+        UltraGridGroup100.Hidden = True
         UltraGridGroup100.Key = "NewGroup3"
         UltraGridGroup100.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup100.RowLayoutGroupInfo.OriginY = 0
@@ -5841,7 +5841,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand25.SummaryFooterCaption = "Totales:"
         Me.griGloriaH5.DisplayLayout.BandsSerializer.Add(UltraGridBand25)
         Me.griGloriaH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griGloriaH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griGloriaH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griGloriaH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griGloriaH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griGloriaH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -5860,7 +5860,7 @@ Partial Class frm_TarifasCliente
         Me.griGloriaH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griGloriaH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griGloriaH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griGloriaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griGloriaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGloriaH5.Location = New System.Drawing.Point(0, 0)
         Me.griGloriaH5.Name = "griGloriaH5"
         Me.griGloriaH5.Size = New System.Drawing.Size(423, 564)
@@ -5988,7 +5988,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup102.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup102.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup103.Header.Caption = ""
-        UltraGridGroup103.Hidden = true
+        UltraGridGroup103.Hidden = True
         UltraGridGroup103.Key = "NewGroup2"
         UltraGridGroup103.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup103.RowLayoutGroupInfo.OriginY = 0
@@ -5997,7 +5997,7 @@ Partial Class frm_TarifasCliente
         Appearance301.TextHAlignAsString = "Center"
         UltraGridGroup104.Header.Appearance = Appearance301
         UltraGridGroup104.Header.Caption = "Campaña Navideña"
-        UltraGridGroup104.Hidden = true
+        UltraGridGroup104.Hidden = True
         UltraGridGroup104.Key = "NewGroup3"
         UltraGridGroup104.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup104.RowLayoutGroupInfo.OriginY = 0
@@ -6008,7 +6008,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand26.SummaryFooterCaption = "Totales:"
         Me.griCencosudH1.DisplayLayout.BandsSerializer.Add(UltraGridBand26)
         Me.griCencosudH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCencosudH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCencosudH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griCencosudH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griCencosudH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCencosudH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6027,7 +6027,7 @@ Partial Class frm_TarifasCliente
         Me.griCencosudH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCencosudH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCencosudH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCencosudH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCencosudH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCencosudH1.Location = New System.Drawing.Point(0, 0)
         Me.griCencosudH1.Name = "griCencosudH1"
         Me.griCencosudH1.Size = New System.Drawing.Size(423, 564)
@@ -6155,7 +6155,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup106.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup106.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup107.Header.Caption = ""
-        UltraGridGroup107.Hidden = true
+        UltraGridGroup107.Hidden = True
         UltraGridGroup107.Key = "NewGroup2"
         UltraGridGroup107.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup107.RowLayoutGroupInfo.OriginY = 0
@@ -6164,7 +6164,7 @@ Partial Class frm_TarifasCliente
         Appearance314.TextHAlignAsString = "Center"
         UltraGridGroup108.Header.Appearance = Appearance314
         UltraGridGroup108.Header.Caption = "Campaña Navideña"
-        UltraGridGroup108.Hidden = true
+        UltraGridGroup108.Hidden = True
         UltraGridGroup108.Key = "NewGroup3"
         UltraGridGroup108.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup108.RowLayoutGroupInfo.OriginY = 0
@@ -6175,7 +6175,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand27.SummaryFooterCaption = "Totales:"
         Me.griCencosudH2.DisplayLayout.BandsSerializer.Add(UltraGridBand27)
         Me.griCencosudH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCencosudH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCencosudH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griCencosudH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griCencosudH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCencosudH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6194,7 +6194,7 @@ Partial Class frm_TarifasCliente
         Me.griCencosudH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCencosudH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCencosudH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCencosudH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCencosudH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCencosudH2.Location = New System.Drawing.Point(0, 0)
         Me.griCencosudH2.Name = "griCencosudH2"
         Me.griCencosudH2.Size = New System.Drawing.Size(423, 564)
@@ -6322,7 +6322,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup110.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup110.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup111.Header.Caption = ""
-        UltraGridGroup111.Hidden = true
+        UltraGridGroup111.Hidden = True
         UltraGridGroup111.Key = "NewGroup2"
         UltraGridGroup111.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup111.RowLayoutGroupInfo.OriginY = 0
@@ -6331,7 +6331,7 @@ Partial Class frm_TarifasCliente
         Appearance327.TextHAlignAsString = "Center"
         UltraGridGroup112.Header.Appearance = Appearance327
         UltraGridGroup112.Header.Caption = "Campaña Navideña"
-        UltraGridGroup112.Hidden = true
+        UltraGridGroup112.Hidden = True
         UltraGridGroup112.Key = "NewGroup3"
         UltraGridGroup112.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup112.RowLayoutGroupInfo.OriginY = 0
@@ -6342,7 +6342,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand28.SummaryFooterCaption = "Totales:"
         Me.griCencosudH3.DisplayLayout.BandsSerializer.Add(UltraGridBand28)
         Me.griCencosudH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCencosudH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCencosudH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griCencosudH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griCencosudH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCencosudH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6361,7 +6361,7 @@ Partial Class frm_TarifasCliente
         Me.griCencosudH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCencosudH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCencosudH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCencosudH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCencosudH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCencosudH3.Location = New System.Drawing.Point(0, 0)
         Me.griCencosudH3.Name = "griCencosudH3"
         Me.griCencosudH3.Size = New System.Drawing.Size(423, 564)
@@ -6489,7 +6489,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup114.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup114.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup115.Header.Caption = ""
-        UltraGridGroup115.Hidden = true
+        UltraGridGroup115.Hidden = True
         UltraGridGroup115.Key = "NewGroup2"
         UltraGridGroup115.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup115.RowLayoutGroupInfo.OriginY = 0
@@ -6498,7 +6498,7 @@ Partial Class frm_TarifasCliente
         Appearance340.TextHAlignAsString = "Center"
         UltraGridGroup116.Header.Appearance = Appearance340
         UltraGridGroup116.Header.Caption = "Campaña Navideña"
-        UltraGridGroup116.Hidden = true
+        UltraGridGroup116.Hidden = True
         UltraGridGroup116.Key = "NewGroup3"
         UltraGridGroup116.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup116.RowLayoutGroupInfo.OriginY = 0
@@ -6509,7 +6509,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand29.SummaryFooterCaption = "Totales:"
         Me.griCencosudH4.DisplayLayout.BandsSerializer.Add(UltraGridBand29)
         Me.griCencosudH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCencosudH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCencosudH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griCencosudH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griCencosudH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCencosudH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6528,7 +6528,7 @@ Partial Class frm_TarifasCliente
         Me.griCencosudH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCencosudH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCencosudH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCencosudH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCencosudH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCencosudH4.Location = New System.Drawing.Point(0, 0)
         Me.griCencosudH4.Name = "griCencosudH4"
         Me.griCencosudH4.Size = New System.Drawing.Size(423, 564)
@@ -6656,7 +6656,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup118.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup118.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup119.Header.Caption = ""
-        UltraGridGroup119.Hidden = true
+        UltraGridGroup119.Hidden = True
         UltraGridGroup119.Key = "NewGroup2"
         UltraGridGroup119.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup119.RowLayoutGroupInfo.OriginY = 0
@@ -6665,7 +6665,7 @@ Partial Class frm_TarifasCliente
         Appearance353.TextHAlignAsString = "Center"
         UltraGridGroup120.Header.Appearance = Appearance353
         UltraGridGroup120.Header.Caption = "Campaña Navideña"
-        UltraGridGroup120.Hidden = true
+        UltraGridGroup120.Hidden = True
         UltraGridGroup120.Key = "NewGroup3"
         UltraGridGroup120.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup120.RowLayoutGroupInfo.OriginY = 0
@@ -6676,7 +6676,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand30.SummaryFooterCaption = "Totales:"
         Me.griCencosudH5.DisplayLayout.BandsSerializer.Add(UltraGridBand30)
         Me.griCencosudH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griCencosudH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griCencosudH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griCencosudH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griCencosudH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griCencosudH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6695,7 +6695,7 @@ Partial Class frm_TarifasCliente
         Me.griCencosudH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griCencosudH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griCencosudH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griCencosudH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griCencosudH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griCencosudH5.Location = New System.Drawing.Point(0, 0)
         Me.griCencosudH5.Name = "griCencosudH5"
         Me.griCencosudH5.Size = New System.Drawing.Size(423, 564)
@@ -6823,7 +6823,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup122.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup122.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup123.Header.Caption = ""
-        UltraGridGroup123.Hidden = true
+        UltraGridGroup123.Hidden = True
         UltraGridGroup123.Key = "NewGroup2"
         UltraGridGroup123.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup123.RowLayoutGroupInfo.OriginY = 0
@@ -6832,7 +6832,7 @@ Partial Class frm_TarifasCliente
         Appearance366.TextHAlignAsString = "Center"
         UltraGridGroup124.Header.Appearance = Appearance366
         UltraGridGroup124.Header.Caption = "Campaña Navideña"
-        UltraGridGroup124.Hidden = true
+        UltraGridGroup124.Hidden = True
         UltraGridGroup124.Key = "NewGroup3"
         UltraGridGroup124.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup124.RowLayoutGroupInfo.OriginY = 0
@@ -6843,7 +6843,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand31.SummaryFooterCaption = "Totales:"
         Me.griInduamericaH1.DisplayLayout.BandsSerializer.Add(UltraGridBand31)
         Me.griInduamericaH1.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griInduamericaH1.DisplayLayout.GroupByBox.Hidden = true
+        Me.griInduamericaH1.DisplayLayout.GroupByBox.Hidden = True
         Me.griInduamericaH1.DisplayLayout.MaxColScrollRegions = 1
         Me.griInduamericaH1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griInduamericaH1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -6862,7 +6862,7 @@ Partial Class frm_TarifasCliente
         Me.griInduamericaH1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griInduamericaH1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griInduamericaH1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griInduamericaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griInduamericaH1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griInduamericaH1.Location = New System.Drawing.Point(0, 0)
         Me.griInduamericaH1.Name = "griInduamericaH1"
         Me.griInduamericaH1.Size = New System.Drawing.Size(423, 564)
@@ -6990,7 +6990,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup126.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup126.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup127.Header.Caption = ""
-        UltraGridGroup127.Hidden = true
+        UltraGridGroup127.Hidden = True
         UltraGridGroup127.Key = "NewGroup2"
         UltraGridGroup127.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup127.RowLayoutGroupInfo.OriginY = 0
@@ -6999,7 +6999,7 @@ Partial Class frm_TarifasCliente
         Appearance379.TextHAlignAsString = "Center"
         UltraGridGroup128.Header.Appearance = Appearance379
         UltraGridGroup128.Header.Caption = "Campaña Navideña"
-        UltraGridGroup128.Hidden = true
+        UltraGridGroup128.Hidden = True
         UltraGridGroup128.Key = "NewGroup3"
         UltraGridGroup128.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup128.RowLayoutGroupInfo.OriginY = 0
@@ -7010,7 +7010,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand32.SummaryFooterCaption = "Totales:"
         Me.griInduamericaH2.DisplayLayout.BandsSerializer.Add(UltraGridBand32)
         Me.griInduamericaH2.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griInduamericaH2.DisplayLayout.GroupByBox.Hidden = true
+        Me.griInduamericaH2.DisplayLayout.GroupByBox.Hidden = True
         Me.griInduamericaH2.DisplayLayout.MaxColScrollRegions = 1
         Me.griInduamericaH2.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griInduamericaH2.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -7029,7 +7029,7 @@ Partial Class frm_TarifasCliente
         Me.griInduamericaH2.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griInduamericaH2.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griInduamericaH2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griInduamericaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griInduamericaH2.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griInduamericaH2.Location = New System.Drawing.Point(0, 0)
         Me.griInduamericaH2.Name = "griInduamericaH2"
         Me.griInduamericaH2.Size = New System.Drawing.Size(423, 564)
@@ -7157,7 +7157,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup130.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup130.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup131.Header.Caption = ""
-        UltraGridGroup131.Hidden = true
+        UltraGridGroup131.Hidden = True
         UltraGridGroup131.Key = "NewGroup2"
         UltraGridGroup131.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup131.RowLayoutGroupInfo.OriginY = 0
@@ -7166,7 +7166,7 @@ Partial Class frm_TarifasCliente
         Appearance392.TextHAlignAsString = "Center"
         UltraGridGroup132.Header.Appearance = Appearance392
         UltraGridGroup132.Header.Caption = "Campaña Navideña"
-        UltraGridGroup132.Hidden = true
+        UltraGridGroup132.Hidden = True
         UltraGridGroup132.Key = "NewGroup3"
         UltraGridGroup132.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup132.RowLayoutGroupInfo.OriginY = 0
@@ -7177,7 +7177,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand33.SummaryFooterCaption = "Totales:"
         Me.griInduamericaH3.DisplayLayout.BandsSerializer.Add(UltraGridBand33)
         Me.griInduamericaH3.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griInduamericaH3.DisplayLayout.GroupByBox.Hidden = true
+        Me.griInduamericaH3.DisplayLayout.GroupByBox.Hidden = True
         Me.griInduamericaH3.DisplayLayout.MaxColScrollRegions = 1
         Me.griInduamericaH3.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griInduamericaH3.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -7196,7 +7196,7 @@ Partial Class frm_TarifasCliente
         Me.griInduamericaH3.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griInduamericaH3.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griInduamericaH3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griInduamericaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griInduamericaH3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griInduamericaH3.Location = New System.Drawing.Point(0, 0)
         Me.griInduamericaH3.Name = "griInduamericaH3"
         Me.griInduamericaH3.Size = New System.Drawing.Size(423, 564)
@@ -7324,7 +7324,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup134.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup134.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup135.Header.Caption = ""
-        UltraGridGroup135.Hidden = true
+        UltraGridGroup135.Hidden = True
         UltraGridGroup135.Key = "NewGroup2"
         UltraGridGroup135.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup135.RowLayoutGroupInfo.OriginY = 0
@@ -7333,7 +7333,7 @@ Partial Class frm_TarifasCliente
         Appearance405.TextHAlignAsString = "Center"
         UltraGridGroup136.Header.Appearance = Appearance405
         UltraGridGroup136.Header.Caption = "Campaña Navideña"
-        UltraGridGroup136.Hidden = true
+        UltraGridGroup136.Hidden = True
         UltraGridGroup136.Key = "NewGroup3"
         UltraGridGroup136.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup136.RowLayoutGroupInfo.OriginY = 0
@@ -7344,7 +7344,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand34.SummaryFooterCaption = "Totales:"
         Me.griInduamericaH4.DisplayLayout.BandsSerializer.Add(UltraGridBand34)
         Me.griInduamericaH4.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griInduamericaH4.DisplayLayout.GroupByBox.Hidden = true
+        Me.griInduamericaH4.DisplayLayout.GroupByBox.Hidden = True
         Me.griInduamericaH4.DisplayLayout.MaxColScrollRegions = 1
         Me.griInduamericaH4.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griInduamericaH4.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -7363,7 +7363,7 @@ Partial Class frm_TarifasCliente
         Me.griInduamericaH4.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griInduamericaH4.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griInduamericaH4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griInduamericaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griInduamericaH4.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griInduamericaH4.Location = New System.Drawing.Point(0, 0)
         Me.griInduamericaH4.Name = "griInduamericaH4"
         Me.griInduamericaH4.Size = New System.Drawing.Size(423, 564)
@@ -7491,7 +7491,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup138.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup138.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup139.Header.Caption = ""
-        UltraGridGroup139.Hidden = true
+        UltraGridGroup139.Hidden = True
         UltraGridGroup139.Key = "NewGroup2"
         UltraGridGroup139.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup139.RowLayoutGroupInfo.OriginY = 0
@@ -7500,7 +7500,7 @@ Partial Class frm_TarifasCliente
         Appearance418.TextHAlignAsString = "Center"
         UltraGridGroup140.Header.Appearance = Appearance418
         UltraGridGroup140.Header.Caption = "Campaña Navideña"
-        UltraGridGroup140.Hidden = true
+        UltraGridGroup140.Hidden = True
         UltraGridGroup140.Key = "NewGroup3"
         UltraGridGroup140.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup140.RowLayoutGroupInfo.OriginY = 0
@@ -7511,7 +7511,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand35.SummaryFooterCaption = "Totales:"
         Me.griInduamericaH5.DisplayLayout.BandsSerializer.Add(UltraGridBand35)
         Me.griInduamericaH5.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griInduamericaH5.DisplayLayout.GroupByBox.Hidden = true
+        Me.griInduamericaH5.DisplayLayout.GroupByBox.Hidden = True
         Me.griInduamericaH5.DisplayLayout.MaxColScrollRegions = 1
         Me.griInduamericaH5.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griInduamericaH5.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -7530,7 +7530,7 @@ Partial Class frm_TarifasCliente
         Me.griInduamericaH5.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griInduamericaH5.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griInduamericaH5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griInduamericaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griInduamericaH5.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griInduamericaH5.Location = New System.Drawing.Point(0, 0)
         Me.griInduamericaH5.Name = "griInduamericaH5"
         Me.griInduamericaH5.Size = New System.Drawing.Size(423, 564)
@@ -7678,7 +7678,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand36.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasVea.DisplayLayout.BandsSerializer.Add(UltraGridBand36)
         Me.griListaTarifasVea.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasVea.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasVea.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasVea.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasVea.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasVea.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -7697,7 +7697,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasVea.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasVea.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasVea.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasVea.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasVea.Name = "griListaTarifasVea"
         Me.griListaTarifasVea.Size = New System.Drawing.Size(848, 422)
@@ -7753,8 +7753,8 @@ Partial Class frm_TarifasCliente
         Appearance433.ForeColor = System.Drawing.Color.Navy
         Appearance433.TextVAlignAsString = "Middle"
         Me.UltraLabel26.Appearance = Appearance433
-        Me.UltraLabel26.AutoSize = true
-        Me.UltraLabel26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel26.AutoSize = True
+        Me.UltraLabel26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel26.Location = New System.Drawing.Point(364, 6)
         Me.UltraLabel26.Name = "UltraLabel26"
         Me.UltraLabel26.Size = New System.Drawing.Size(40, 14)
@@ -7771,7 +7771,7 @@ Partial Class frm_TarifasCliente
         Me.txtUltimoHistorialVea.Location = New System.Drawing.Point(88, 25)
         Me.txtUltimoHistorialVea.Name = "txtUltimoHistorialVea"
         Me.txtUltimoHistorialVea.NonAutoSizeHeight = 20
-        Me.txtUltimoHistorialVea.ReadOnly = true
+        Me.txtUltimoHistorialVea.ReadOnly = True
         Me.txtUltimoHistorialVea.Size = New System.Drawing.Size(35, 21)
         Me.txtUltimoHistorialVea.TabIndex = 300
         Me.txtUltimoHistorialVea.Text = "1"
@@ -7782,7 +7782,7 @@ Partial Class frm_TarifasCliente
         Appearance435.ForeColor = System.Drawing.Color.Navy
         Appearance435.TextVAlignAsString = "Middle"
         Me.UltraLabel4.Appearance = Appearance435
-        Me.UltraLabel4.AutoSize = true
+        Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Location = New System.Drawing.Point(1, 28)
         Me.UltraLabel4.Name = "UltraLabel4"
         Me.UltraLabel4.Size = New System.Drawing.Size(84, 15)
@@ -7795,7 +7795,7 @@ Partial Class frm_TarifasCliente
         Appearance436.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance436.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarVea.Appearance = Appearance436
-        Me.btnActualizarVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarVea.ImageList = Me.imagenes
         Me.btnActualizarVea.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarVea.Location = New System.Drawing.Point(249, 3)
@@ -7806,7 +7806,7 @@ Partial Class frm_TarifasCliente
         '
         'imagenes
         '
-        Me.imagenes.ImageStream = CType(resources.GetObject("imagenes.ImageStream"),System.Windows.Forms.ImageListStreamer)
+        Me.imagenes.ImageStream = CType(resources.GetObject("imagenes.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.imagenes.TransparentColor = System.Drawing.Color.Transparent
         Me.imagenes.Images.SetKeyName(0, "")
         Me.imagenes.Images.SetKeyName(1, "")
@@ -7830,7 +7830,7 @@ Partial Class frm_TarifasCliente
         Appearance437.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance437.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarVea.Appearance = Appearance437
-        Me.btnGuardarVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarVea.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarVea.ImageList = Me.imagenes
         Me.btnGuardarVea.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarVea.Location = New System.Drawing.Point(133, 3)
@@ -7859,7 +7859,7 @@ Partial Class frm_TarifasCliente
         Appearance439.ForeColor = System.Drawing.Color.Navy
         Appearance439.TextVAlignAsString = "Middle"
         Me.UltraLabel9.Appearance = Appearance439
-        Me.UltraLabel9.AutoSize = true
+        Me.UltraLabel9.AutoSize = True
         Me.UltraLabel9.Location = New System.Drawing.Point(11, 7)
         Me.UltraLabel9.Name = "UltraLabel9"
         Me.UltraLabel9.Size = New System.Drawing.Size(75, 15)
@@ -8072,7 +8072,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand37.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasTOTTUS.DisplayLayout.BandsSerializer.Add(UltraGridBand37)
         Me.griListaTarifasTOTTUS.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasTOTTUS.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasTOTTUS.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasTOTTUS.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasTOTTUS.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasTOTTUS.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -8091,7 +8091,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasTOTTUS.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasTOTTUS.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasTOTTUS.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasTOTTUS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasTOTTUS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasTOTTUS.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasTOTTUS.Name = "griListaTarifasTOTTUS"
         Me.griListaTarifasTOTTUS.Size = New System.Drawing.Size(1276, 422)
@@ -8147,8 +8147,8 @@ Partial Class frm_TarifasCliente
         Appearance454.ForeColor = System.Drawing.Color.Navy
         Appearance454.TextVAlignAsString = "Middle"
         Me.UltraLabel28.Appearance = Appearance454
-        Me.UltraLabel28.AutoSize = true
-        Me.UltraLabel28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel28.AutoSize = True
+        Me.UltraLabel28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel28.Location = New System.Drawing.Point(364, 6)
         Me.UltraLabel28.Name = "UltraLabel28"
         Me.UltraLabel28.Size = New System.Drawing.Size(40, 14)
@@ -8175,7 +8175,7 @@ Partial Class frm_TarifasCliente
         Appearance456.ForeColor = System.Drawing.Color.Navy
         Appearance456.TextVAlignAsString = "Middle"
         Me.UltraLabel11.Appearance = Appearance456
-        Me.UltraLabel11.AutoSize = true
+        Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Location = New System.Drawing.Point(1, 28)
         Me.UltraLabel11.Name = "UltraLabel11"
         Me.UltraLabel11.Size = New System.Drawing.Size(84, 15)
@@ -8188,7 +8188,7 @@ Partial Class frm_TarifasCliente
         Appearance457.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance457.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarTottus.Appearance = Appearance457
-        Me.btnActualizarTottus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarTottus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarTottus.ImageList = Me.imagenes
         Me.btnActualizarTottus.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarTottus.Location = New System.Drawing.Point(249, 3)
@@ -8203,7 +8203,7 @@ Partial Class frm_TarifasCliente
         Appearance458.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance458.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarTottus.Appearance = Appearance458
-        Me.btnGuardarTottus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarTottus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarTottus.ImageList = Me.imagenes
         Me.btnGuardarTottus.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarTottus.Location = New System.Drawing.Point(133, 3)
@@ -8232,7 +8232,7 @@ Partial Class frm_TarifasCliente
         Appearance460.ForeColor = System.Drawing.Color.Navy
         Appearance460.TextVAlignAsString = "Middle"
         Me.UltraLabel19.Appearance = Appearance460
-        Me.UltraLabel19.AutoSize = true
+        Me.UltraLabel19.AutoSize = True
         Me.UltraLabel19.Location = New System.Drawing.Point(11, 7)
         Me.UltraLabel19.Name = "UltraLabel19"
         Me.UltraLabel19.Size = New System.Drawing.Size(75, 15)
@@ -8246,7 +8246,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox4.ContentAreaAppearance = Appearance461
         Me.UltraExpandableGroupBox4.Controls.Add(Me.UltraExpandableGroupBoxPanel4)
         Me.UltraExpandableGroupBox4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox4.Expanded = false
+        Me.UltraExpandableGroupBox4.Expanded = False
         Me.UltraExpandableGroupBox4.ExpandedSize = New System.Drawing.Size(500, 492)
         Me.UltraExpandableGroupBox4.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox4.Location = New System.Drawing.Point(1276, 0)
@@ -8263,7 +8263,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel4.Name = "UltraExpandableGroupBoxPanel4"
         Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(477, 587)
         Me.UltraExpandableGroupBoxPanel4.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel4.Visible = false
+        Me.UltraExpandableGroupBoxPanel4.Visible = False
         '
         'tabHistorialTottus
         '
@@ -8348,7 +8348,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn435.CellAppearance = Appearance465
         UltraGridColumn435.Header.Caption = ""
         UltraGridColumn435.Header.VisiblePosition = 2
-        UltraGridColumn435.Hidden = true
+        UltraGridColumn435.Hidden = True
         UltraGridColumn435.MaskInput = "{LOC}nn,nnn.nn"
         UltraGridColumn435.RowLayoutColumnInfo.OriginX = 2
         UltraGridColumn435.RowLayoutColumnInfo.OriginY = 0
@@ -8429,7 +8429,7 @@ Partial Class frm_TarifasCliente
         Appearance470.TextHAlignAsString = "Center"
         UltraGridGroup152.Header.Appearance = Appearance470
         UltraGridGroup152.Header.Caption = "Campaña Navideña"
-        UltraGridGroup152.Hidden = true
+        UltraGridGroup152.Hidden = True
         UltraGridGroup152.Key = "NewGroup3"
         UltraGridGroup152.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup152.RowLayoutGroupInfo.OriginY = 0
@@ -8440,7 +8440,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand38.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasALICORP.DisplayLayout.BandsSerializer.Add(UltraGridBand38)
         Me.griListaTarifasALICORP.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasALICORP.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasALICORP.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasALICORP.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasALICORP.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasALICORP.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -8459,7 +8459,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasALICORP.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasALICORP.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasALICORP.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasALICORP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasALICORP.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasALICORP.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasALICORP.Name = "griListaTarifasALICORP"
         Me.griListaTarifasALICORP.Size = New System.Drawing.Size(1276, 422)
@@ -8515,8 +8515,8 @@ Partial Class frm_TarifasCliente
         Appearance474.ForeColor = System.Drawing.Color.Navy
         Appearance474.TextVAlignAsString = "Middle"
         Me.UltraLabel30.Appearance = Appearance474
-        Me.UltraLabel30.AutoSize = true
-        Me.UltraLabel30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel30.AutoSize = True
+        Me.UltraLabel30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel30.Location = New System.Drawing.Point(365, 6)
         Me.UltraLabel30.Name = "UltraLabel30"
         Me.UltraLabel30.Size = New System.Drawing.Size(40, 14)
@@ -8543,7 +8543,7 @@ Partial Class frm_TarifasCliente
         Appearance476.ForeColor = System.Drawing.Color.Navy
         Appearance476.TextVAlignAsString = "Middle"
         Me.UltraLabel12.Appearance = Appearance476
-        Me.UltraLabel12.AutoSize = true
+        Me.UltraLabel12.AutoSize = True
         Me.UltraLabel12.Location = New System.Drawing.Point(2, 28)
         Me.UltraLabel12.Name = "UltraLabel12"
         Me.UltraLabel12.Size = New System.Drawing.Size(84, 15)
@@ -8556,7 +8556,7 @@ Partial Class frm_TarifasCliente
         Appearance477.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance477.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarAlicorp.Appearance = Appearance477
-        Me.btnActualizarAlicorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarAlicorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarAlicorp.ImageList = Me.imagenes
         Me.btnActualizarAlicorp.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarAlicorp.Location = New System.Drawing.Point(250, 3)
@@ -8571,7 +8571,7 @@ Partial Class frm_TarifasCliente
         Appearance478.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance478.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarAlicorp.Appearance = Appearance478
-        Me.btnGuardarAlicorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarAlicorp.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarAlicorp.ImageList = Me.imagenes
         Me.btnGuardarAlicorp.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarAlicorp.Location = New System.Drawing.Point(134, 3)
@@ -8600,7 +8600,7 @@ Partial Class frm_TarifasCliente
         Appearance480.ForeColor = System.Drawing.Color.Navy
         Appearance480.TextVAlignAsString = "Middle"
         Me.UltraLabel20.Appearance = Appearance480
-        Me.UltraLabel20.AutoSize = true
+        Me.UltraLabel20.AutoSize = True
         Me.UltraLabel20.Location = New System.Drawing.Point(12, 7)
         Me.UltraLabel20.Name = "UltraLabel20"
         Me.UltraLabel20.Size = New System.Drawing.Size(75, 15)
@@ -8614,7 +8614,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance481
         Me.UltraExpandableGroupBox6.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
         Me.UltraExpandableGroupBox6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox6.Expanded = false
+        Me.UltraExpandableGroupBox6.Expanded = False
         Me.UltraExpandableGroupBox6.ExpandedSize = New System.Drawing.Size(450, 492)
         Me.UltraExpandableGroupBox6.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox6.Location = New System.Drawing.Point(1276, 0)
@@ -8631,7 +8631,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
         Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(427, 587)
         Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel6.Visible = false
+        Me.UltraExpandableGroupBoxPanel6.Visible = False
         '
         'tabHistorialAlicorp
         '
@@ -8794,7 +8794,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup154.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup154.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup155.Header.Caption = ""
-        UltraGridGroup155.Hidden = true
+        UltraGridGroup155.Hidden = True
         UltraGridGroup155.Key = "NewGroup2"
         UltraGridGroup155.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup155.RowLayoutGroupInfo.OriginY = 0
@@ -8803,7 +8803,7 @@ Partial Class frm_TarifasCliente
         Appearance491.TextHAlignAsString = "Center"
         UltraGridGroup156.Header.Appearance = Appearance491
         UltraGridGroup156.Header.Caption = "Campaña Navideña"
-        UltraGridGroup156.Hidden = true
+        UltraGridGroup156.Hidden = True
         UltraGridGroup156.Key = "NewGroup3"
         UltraGridGroup156.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup156.RowLayoutGroupInfo.OriginY = 0
@@ -8814,7 +8814,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand39.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasCEMENTOS.DisplayLayout.BandsSerializer.Add(UltraGridBand39)
         Me.griListaTarifasCEMENTOS.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasCEMENTOS.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasCEMENTOS.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasCEMENTOS.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasCEMENTOS.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasCEMENTOS.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -8833,7 +8833,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasCEMENTOS.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasCEMENTOS.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasCEMENTOS.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasCEMENTOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasCEMENTOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasCEMENTOS.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasCEMENTOS.Name = "griListaTarifasCEMENTOS"
         Me.griListaTarifasCEMENTOS.Size = New System.Drawing.Size(1276, 422)
@@ -8889,8 +8889,8 @@ Partial Class frm_TarifasCliente
         Appearance495.ForeColor = System.Drawing.Color.Navy
         Appearance495.TextVAlignAsString = "Middle"
         Me.UltraLabel32.Appearance = Appearance495
-        Me.UltraLabel32.AutoSize = true
-        Me.UltraLabel32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel32.AutoSize = True
+        Me.UltraLabel32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel32.Location = New System.Drawing.Point(364, 6)
         Me.UltraLabel32.Name = "UltraLabel32"
         Me.UltraLabel32.Size = New System.Drawing.Size(40, 14)
@@ -8917,7 +8917,7 @@ Partial Class frm_TarifasCliente
         Appearance497.ForeColor = System.Drawing.Color.Navy
         Appearance497.TextVAlignAsString = "Middle"
         Me.UltraLabel13.Appearance = Appearance497
-        Me.UltraLabel13.AutoSize = true
+        Me.UltraLabel13.AutoSize = True
         Me.UltraLabel13.Location = New System.Drawing.Point(1, 28)
         Me.UltraLabel13.Name = "UltraLabel13"
         Me.UltraLabel13.Size = New System.Drawing.Size(84, 15)
@@ -8930,7 +8930,7 @@ Partial Class frm_TarifasCliente
         Appearance498.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance498.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarCementos.Appearance = Appearance498
-        Me.btnActualizarCementos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarCementos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarCementos.ImageList = Me.imagenes
         Me.btnActualizarCementos.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarCementos.Location = New System.Drawing.Point(249, 3)
@@ -8945,7 +8945,7 @@ Partial Class frm_TarifasCliente
         Appearance499.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance499.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarCementos.Appearance = Appearance499
-        Me.btnGuardarCementos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarCementos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarCementos.ImageList = Me.imagenes
         Me.btnGuardarCementos.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarCementos.Location = New System.Drawing.Point(133, 3)
@@ -8974,7 +8974,7 @@ Partial Class frm_TarifasCliente
         Appearance501.ForeColor = System.Drawing.Color.Navy
         Appearance501.TextVAlignAsString = "Middle"
         Me.UltraLabel21.Appearance = Appearance501
-        Me.UltraLabel21.AutoSize = true
+        Me.UltraLabel21.AutoSize = True
         Me.UltraLabel21.Location = New System.Drawing.Point(11, 7)
         Me.UltraLabel21.Name = "UltraLabel21"
         Me.UltraLabel21.Size = New System.Drawing.Size(75, 15)
@@ -8988,7 +8988,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox8.ContentAreaAppearance = Appearance502
         Me.UltraExpandableGroupBox8.Controls.Add(Me.UltraExpandableGroupBoxPanel8)
         Me.UltraExpandableGroupBox8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox8.Expanded = false
+        Me.UltraExpandableGroupBox8.Expanded = False
         Me.UltraExpandableGroupBox8.ExpandedSize = New System.Drawing.Size(450, 492)
         Me.UltraExpandableGroupBox8.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox8.Location = New System.Drawing.Point(1276, 0)
@@ -9005,7 +9005,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel8.Name = "UltraExpandableGroupBoxPanel8"
         Me.UltraExpandableGroupBoxPanel8.Size = New System.Drawing.Size(427, 587)
         Me.UltraExpandableGroupBoxPanel8.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel8.Visible = false
+        Me.UltraExpandableGroupBoxPanel8.Visible = False
         '
         'tabHistorialCementos
         '
@@ -9168,7 +9168,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup158.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup158.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup159.Header.Caption = ""
-        UltraGridGroup159.Hidden = true
+        UltraGridGroup159.Hidden = True
         UltraGridGroup159.Key = "NewGroup2"
         UltraGridGroup159.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup159.RowLayoutGroupInfo.OriginY = 0
@@ -9177,7 +9177,7 @@ Partial Class frm_TarifasCliente
         Appearance513.TextHAlignAsString = "Center"
         UltraGridGroup160.Header.Appearance = Appearance513
         UltraGridGroup160.Header.Caption = "Campaña Navideña"
-        UltraGridGroup160.Hidden = true
+        UltraGridGroup160.Hidden = True
         UltraGridGroup160.Key = "NewGroup3"
         UltraGridGroup160.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup160.RowLayoutGroupInfo.OriginY = 0
@@ -9188,7 +9188,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand40.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasGLORIA.DisplayLayout.BandsSerializer.Add(UltraGridBand40)
         Me.griListaTarifasGLORIA.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasGLORIA.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasGLORIA.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasGLORIA.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasGLORIA.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasGLORIA.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -9207,7 +9207,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasGLORIA.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasGLORIA.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasGLORIA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasGLORIA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasGLORIA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasGLORIA.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasGLORIA.Name = "griListaTarifasGLORIA"
         Me.griListaTarifasGLORIA.Size = New System.Drawing.Size(1276, 422)
@@ -9263,8 +9263,8 @@ Partial Class frm_TarifasCliente
         Appearance517.ForeColor = System.Drawing.Color.Navy
         Appearance517.TextVAlignAsString = "Middle"
         Me.UltraLabel34.Appearance = Appearance517
-        Me.UltraLabel34.AutoSize = true
-        Me.UltraLabel34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel34.AutoSize = True
+        Me.UltraLabel34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel34.Location = New System.Drawing.Point(364, 6)
         Me.UltraLabel34.Name = "UltraLabel34"
         Me.UltraLabel34.Size = New System.Drawing.Size(40, 14)
@@ -9291,7 +9291,7 @@ Partial Class frm_TarifasCliente
         Appearance519.ForeColor = System.Drawing.Color.Navy
         Appearance519.TextVAlignAsString = "Middle"
         Me.UltraLabel14.Appearance = Appearance519
-        Me.UltraLabel14.AutoSize = true
+        Me.UltraLabel14.AutoSize = True
         Me.UltraLabel14.Location = New System.Drawing.Point(1, 28)
         Me.UltraLabel14.Name = "UltraLabel14"
         Me.UltraLabel14.Size = New System.Drawing.Size(84, 15)
@@ -9304,7 +9304,7 @@ Partial Class frm_TarifasCliente
         Appearance520.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance520.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarGloria.Appearance = Appearance520
-        Me.btnActualizarGloria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarGloria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarGloria.ImageList = Me.imagenes
         Me.btnActualizarGloria.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarGloria.Location = New System.Drawing.Point(249, 3)
@@ -9319,7 +9319,7 @@ Partial Class frm_TarifasCliente
         Appearance521.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance521.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarGloria.Appearance = Appearance521
-        Me.btnGuardarGloria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarGloria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarGloria.ImageList = Me.imagenes
         Me.btnGuardarGloria.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarGloria.Location = New System.Drawing.Point(133, 3)
@@ -9348,7 +9348,7 @@ Partial Class frm_TarifasCliente
         Appearance523.ForeColor = System.Drawing.Color.Navy
         Appearance523.TextVAlignAsString = "Middle"
         Me.UltraLabel22.Appearance = Appearance523
-        Me.UltraLabel22.AutoSize = true
+        Me.UltraLabel22.AutoSize = True
         Me.UltraLabel22.Location = New System.Drawing.Point(11, 7)
         Me.UltraLabel22.Name = "UltraLabel22"
         Me.UltraLabel22.Size = New System.Drawing.Size(75, 15)
@@ -9362,7 +9362,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox10.ContentAreaAppearance = Appearance524
         Me.UltraExpandableGroupBox10.Controls.Add(Me.UltraExpandableGroupBoxPanel10)
         Me.UltraExpandableGroupBox10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox10.Expanded = false
+        Me.UltraExpandableGroupBox10.Expanded = False
         Me.UltraExpandableGroupBox10.ExpandedSize = New System.Drawing.Size(450, 492)
         Me.UltraExpandableGroupBox10.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox10.Location = New System.Drawing.Point(1276, 0)
@@ -9379,7 +9379,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel10.Name = "UltraExpandableGroupBoxPanel10"
         Me.UltraExpandableGroupBoxPanel10.Size = New System.Drawing.Size(427, 587)
         Me.UltraExpandableGroupBoxPanel10.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel10.Visible = false
+        Me.UltraExpandableGroupBoxPanel10.Visible = False
         '
         'tabHistorialGloria
         '
@@ -9542,7 +9542,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup162.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup162.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup163.Header.Caption = ""
-        UltraGridGroup163.Hidden = true
+        UltraGridGroup163.Hidden = True
         UltraGridGroup163.Key = "NewGroup2"
         UltraGridGroup163.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup163.RowLayoutGroupInfo.OriginY = 0
@@ -9551,7 +9551,7 @@ Partial Class frm_TarifasCliente
         Appearance535.TextHAlignAsString = "Center"
         UltraGridGroup164.Header.Appearance = Appearance535
         UltraGridGroup164.Header.Caption = "Campaña Navideña"
-        UltraGridGroup164.Hidden = true
+        UltraGridGroup164.Hidden = True
         UltraGridGroup164.Key = "NewGroup3"
         UltraGridGroup164.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup164.RowLayoutGroupInfo.OriginY = 0
@@ -9562,7 +9562,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand41.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasCENCOSUD.DisplayLayout.BandsSerializer.Add(UltraGridBand41)
         Me.griListaTarifasCENCOSUD.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasCENCOSUD.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasCENCOSUD.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasCENCOSUD.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasCENCOSUD.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasCENCOSUD.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -9581,7 +9581,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasCENCOSUD.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasCENCOSUD.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasCENCOSUD.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasCENCOSUD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasCENCOSUD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasCENCOSUD.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasCENCOSUD.Name = "griListaTarifasCENCOSUD"
         Me.griListaTarifasCENCOSUD.Size = New System.Drawing.Size(1276, 422)
@@ -9637,8 +9637,8 @@ Partial Class frm_TarifasCliente
         Appearance539.ForeColor = System.Drawing.Color.Navy
         Appearance539.TextVAlignAsString = "Middle"
         Me.UltraLabel36.Appearance = Appearance539
-        Me.UltraLabel36.AutoSize = true
-        Me.UltraLabel36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel36.AutoSize = True
+        Me.UltraLabel36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel36.Location = New System.Drawing.Point(365, 6)
         Me.UltraLabel36.Name = "UltraLabel36"
         Me.UltraLabel36.Size = New System.Drawing.Size(40, 14)
@@ -9665,7 +9665,7 @@ Partial Class frm_TarifasCliente
         Appearance541.ForeColor = System.Drawing.Color.Navy
         Appearance541.TextVAlignAsString = "Middle"
         Me.UltraLabel15.Appearance = Appearance541
-        Me.UltraLabel15.AutoSize = true
+        Me.UltraLabel15.AutoSize = True
         Me.UltraLabel15.Location = New System.Drawing.Point(2, 28)
         Me.UltraLabel15.Name = "UltraLabel15"
         Me.UltraLabel15.Size = New System.Drawing.Size(84, 15)
@@ -9678,7 +9678,7 @@ Partial Class frm_TarifasCliente
         Appearance542.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance542.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarCencosud.Appearance = Appearance542
-        Me.btnActualizarCencosud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarCencosud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarCencosud.ImageList = Me.imagenes
         Me.btnActualizarCencosud.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarCencosud.Location = New System.Drawing.Point(250, 3)
@@ -9693,7 +9693,7 @@ Partial Class frm_TarifasCliente
         Appearance543.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance543.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarCencosud.Appearance = Appearance543
-        Me.btnGuardarCencosud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarCencosud.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarCencosud.ImageList = Me.imagenes
         Me.btnGuardarCencosud.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarCencosud.Location = New System.Drawing.Point(134, 3)
@@ -9722,7 +9722,7 @@ Partial Class frm_TarifasCliente
         Appearance545.ForeColor = System.Drawing.Color.Navy
         Appearance545.TextVAlignAsString = "Middle"
         Me.UltraLabel23.Appearance = Appearance545
-        Me.UltraLabel23.AutoSize = true
+        Me.UltraLabel23.AutoSize = True
         Me.UltraLabel23.Location = New System.Drawing.Point(12, 7)
         Me.UltraLabel23.Name = "UltraLabel23"
         Me.UltraLabel23.Size = New System.Drawing.Size(75, 15)
@@ -9736,7 +9736,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox12.ContentAreaAppearance = Appearance546
         Me.UltraExpandableGroupBox12.Controls.Add(Me.UltraExpandableGroupBoxPanel12)
         Me.UltraExpandableGroupBox12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox12.Expanded = false
+        Me.UltraExpandableGroupBox12.Expanded = False
         Me.UltraExpandableGroupBox12.ExpandedSize = New System.Drawing.Size(450, 492)
         Me.UltraExpandableGroupBox12.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox12.Location = New System.Drawing.Point(1276, 0)
@@ -9753,7 +9753,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel12.Name = "UltraExpandableGroupBoxPanel12"
         Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(427, 587)
         Me.UltraExpandableGroupBoxPanel12.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel12.Visible = false
+        Me.UltraExpandableGroupBoxPanel12.Visible = False
         '
         'tabHistorialCencosud
         '
@@ -9916,7 +9916,7 @@ Partial Class frm_TarifasCliente
         UltraGridGroup166.RowLayoutGroupInfo.SpanX = 4
         UltraGridGroup166.RowLayoutGroupInfo.SpanY = 4
         UltraGridGroup167.Header.Caption = ""
-        UltraGridGroup167.Hidden = true
+        UltraGridGroup167.Hidden = True
         UltraGridGroup167.Key = "NewGroup2"
         UltraGridGroup167.RowLayoutGroupInfo.OriginX = 8
         UltraGridGroup167.RowLayoutGroupInfo.OriginY = 0
@@ -9925,7 +9925,7 @@ Partial Class frm_TarifasCliente
         Appearance557.TextHAlignAsString = "Center"
         UltraGridGroup168.Header.Appearance = Appearance557
         UltraGridGroup168.Header.Caption = "Campaña Navideña"
-        UltraGridGroup168.Hidden = true
+        UltraGridGroup168.Hidden = True
         UltraGridGroup168.Key = "NewGroup3"
         UltraGridGroup168.RowLayoutGroupInfo.OriginX = 10
         UltraGridGroup168.RowLayoutGroupInfo.OriginY = 0
@@ -9936,7 +9936,7 @@ Partial Class frm_TarifasCliente
         UltraGridBand42.SummaryFooterCaption = "Totales:"
         Me.griListaTarifasINDUAMERICA.DisplayLayout.BandsSerializer.Add(UltraGridBand42)
         Me.griListaTarifasINDUAMERICA.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griListaTarifasINDUAMERICA.DisplayLayout.GroupByBox.Hidden = true
+        Me.griListaTarifasINDUAMERICA.DisplayLayout.GroupByBox.Hidden = True
         Me.griListaTarifasINDUAMERICA.DisplayLayout.MaxColScrollRegions = 1
         Me.griListaTarifasINDUAMERICA.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griListaTarifasINDUAMERICA.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
@@ -9955,7 +9955,7 @@ Partial Class frm_TarifasCliente
         Me.griListaTarifasINDUAMERICA.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griListaTarifasINDUAMERICA.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griListaTarifasINDUAMERICA.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griListaTarifasINDUAMERICA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griListaTarifasINDUAMERICA.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaTarifasINDUAMERICA.Location = New System.Drawing.Point(0, 70)
         Me.griListaTarifasINDUAMERICA.Name = "griListaTarifasINDUAMERICA"
         Me.griListaTarifasINDUAMERICA.Size = New System.Drawing.Size(1276, 422)
@@ -10011,8 +10011,8 @@ Partial Class frm_TarifasCliente
         Appearance561.ForeColor = System.Drawing.Color.Navy
         Appearance561.TextVAlignAsString = "Middle"
         Me.UltraLabel38.Appearance = Appearance561
-        Me.UltraLabel38.AutoSize = true
-        Me.UltraLabel38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel38.AutoSize = True
+        Me.UltraLabel38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel38.Location = New System.Drawing.Point(367, 7)
         Me.UltraLabel38.Name = "UltraLabel38"
         Me.UltraLabel38.Size = New System.Drawing.Size(40, 14)
@@ -10039,7 +10039,7 @@ Partial Class frm_TarifasCliente
         Appearance563.ForeColor = System.Drawing.Color.Navy
         Appearance563.TextVAlignAsString = "Middle"
         Me.UltraLabel16.Appearance = Appearance563
-        Me.UltraLabel16.AutoSize = true
+        Me.UltraLabel16.AutoSize = True
         Me.UltraLabel16.Location = New System.Drawing.Point(3, 28)
         Me.UltraLabel16.Name = "UltraLabel16"
         Me.UltraLabel16.Size = New System.Drawing.Size(84, 15)
@@ -10052,7 +10052,7 @@ Partial Class frm_TarifasCliente
         Appearance564.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance564.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnActualizarInduamerica.Appearance = Appearance564
-        Me.btnActualizarInduamerica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnActualizarInduamerica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnActualizarInduamerica.ImageList = Me.imagenes
         Me.btnActualizarInduamerica.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnActualizarInduamerica.Location = New System.Drawing.Point(251, 3)
@@ -10067,7 +10067,7 @@ Partial Class frm_TarifasCliente
         Appearance565.ImageHAlign = Infragistics.Win.HAlign.Left
         Appearance565.ImageVAlign = Infragistics.Win.VAlign.Bottom
         Me.btnGuardarInduamerica.Appearance = Appearance565
-        Me.btnGuardarInduamerica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.btnGuardarInduamerica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnGuardarInduamerica.ImageList = Me.imagenes
         Me.btnGuardarInduamerica.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnGuardarInduamerica.Location = New System.Drawing.Point(135, 3)
@@ -10096,7 +10096,7 @@ Partial Class frm_TarifasCliente
         Appearance567.ForeColor = System.Drawing.Color.Navy
         Appearance567.TextVAlignAsString = "Middle"
         Me.UltraLabel24.Appearance = Appearance567
-        Me.UltraLabel24.AutoSize = true
+        Me.UltraLabel24.AutoSize = True
         Me.UltraLabel24.Location = New System.Drawing.Point(13, 7)
         Me.UltraLabel24.Name = "UltraLabel24"
         Me.UltraLabel24.Size = New System.Drawing.Size(75, 15)
@@ -10110,7 +10110,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBox14.ContentAreaAppearance = Appearance568
         Me.UltraExpandableGroupBox14.Controls.Add(Me.UltraExpandableGroupBoxPanel14)
         Me.UltraExpandableGroupBox14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UltraExpandableGroupBox14.Expanded = false
+        Me.UltraExpandableGroupBox14.Expanded = False
         Me.UltraExpandableGroupBox14.ExpandedSize = New System.Drawing.Size(450, 492)
         Me.UltraExpandableGroupBox14.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox14.Location = New System.Drawing.Point(1276, 0)
@@ -10127,7 +10127,7 @@ Partial Class frm_TarifasCliente
         Me.UltraExpandableGroupBoxPanel14.Name = "UltraExpandableGroupBoxPanel14"
         Me.UltraExpandableGroupBoxPanel14.Size = New System.Drawing.Size(427, 587)
         Me.UltraExpandableGroupBoxPanel14.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel14.Visible = false
+        Me.UltraExpandableGroupBoxPanel14.Visible = False
         '
         'tabHistorialInduamerica
         '
@@ -10181,7 +10181,7 @@ Partial Class frm_TarifasCliente
         Me.griLista.ContextMenuStrip = Me.Menu
         Me.griLista.DataSource = Me.ogdTarifasCliente
         UltraGridColumn322.Header.VisiblePosition = 0
-        UltraGridColumn322.Hidden = true
+        UltraGridColumn322.Hidden = True
         UltraGridColumn322.Width = 85
         UltraGridColumn323.Header.Caption = "Cliente"
         UltraGridColumn323.Header.VisiblePosition = 1
@@ -10213,10 +10213,10 @@ Partial Class frm_TarifasCliente
         UltraGridColumn328.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Button
         UltraGridColumn328.Width = 32
         UltraGridColumn329.Header.VisiblePosition = 5
-        UltraGridColumn329.Hidden = true
+        UltraGridColumn329.Hidden = True
         UltraGridColumn329.Width = 100
         UltraGridColumn330.Header.VisiblePosition = 16
-        UltraGridColumn330.Hidden = true
+        UltraGridColumn330.Hidden = True
         UltraGridColumn330.Width = 30
         UltraGridColumn331.Header.Caption = "Origen"
         UltraGridColumn331.Header.VisiblePosition = 6
@@ -10242,7 +10242,7 @@ Partial Class frm_TarifasCliente
         UltraGridColumn335.Width = 45
         UltraGridColumn336.Header.Caption = "Actual"
         UltraGridColumn336.Header.VisiblePosition = 12
-        UltraGridColumn336.Hidden = true
+        UltraGridColumn336.Hidden = True
         UltraGridColumn336.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.CheckBox
         UltraGridColumn336.Width = 20
         UltraGridColumn337.Header.Caption = "TipoCarga"
@@ -10305,7 +10305,7 @@ Partial Class frm_TarifasCliente
         Me.griLista.DisplayLayout.BandsSerializer.Add(UltraGridBand43)
         Me.griLista.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
         Me.griLista.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.ExtendRowSelector
-        Me.griLista.DisplayLayout.GroupByBox.Hidden = true
+        Me.griLista.DisplayLayout.GroupByBox.Hidden = True
         Me.griLista.DisplayLayout.MaxColScrollRegions = 1
         Me.griLista.DisplayLayout.Override.AllowColSizing = Infragistics.Win.UltraWinGrid.AllowColSizing.Free
         Me.griLista.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.[True]
@@ -10321,7 +10321,7 @@ Partial Class frm_TarifasCliente
         Me.griLista.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griLista.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griLista.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.griLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griLista.ImageList = Me.imagenes
         Me.griLista.Location = New System.Drawing.Point(0, 80)
         Me.griLista.Name = "griLista"
@@ -10331,7 +10331,7 @@ Partial Class frm_TarifasCliente
         '
         'Menu
         '
-        Me.Menu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Menu.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Menu.ForeColor = System.Drawing.Color.Black
         Me.Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Insert, Me.Update, Me.Delete})
         Me.Menu.Name = "MenuContextual1"
@@ -10371,7 +10371,7 @@ Partial Class frm_TarifasCliente
         '
         'Filtro1
         '
-        Me.Filtro1.MenuSettings.RightAlignedMenus = true
+        Me.Filtro1.MenuSettings.RightAlignedMenus = True
         Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
         'UltraExpandableGroupBox15
@@ -10452,7 +10452,7 @@ Partial Class frm_TarifasCliente
         Appearance579.ForeColor = System.Drawing.Color.Navy
         Appearance579.TextVAlignAsString = "Middle"
         Me.UltraLabel31.Appearance = Appearance579
-        Me.UltraLabel31.AutoSize = true
+        Me.UltraLabel31.AutoSize = True
         Me.UltraLabel31.Location = New System.Drawing.Point(226, 8)
         Me.UltraLabel31.Name = "UltraLabel31"
         Me.UltraLabel31.Size = New System.Drawing.Size(71, 15)
@@ -10491,8 +10491,8 @@ Partial Class frm_TarifasCliente
         Appearance582.ForeColor = System.Drawing.Color.Navy
         Appearance582.TextVAlignAsString = "Middle"
         Me.UltraLabel27.Appearance = Appearance582
-        Me.UltraLabel27.AutoSize = true
-        Me.UltraLabel27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel27.AutoSize = True
+        Me.UltraLabel27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel27.Location = New System.Drawing.Point(5, 8)
         Me.UltraLabel27.Name = "UltraLabel27"
         Me.UltraLabel27.Size = New System.Drawing.Size(96, 14)
@@ -10519,8 +10519,8 @@ Partial Class frm_TarifasCliente
         Appearance584.ForeColor = System.Drawing.Color.Navy
         Appearance584.TextVAlignAsString = "Middle"
         Me.UltraLabel25.Appearance = Appearance584
-        Me.UltraLabel25.AutoSize = true
-        Me.UltraLabel25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.UltraLabel25.AutoSize = True
+        Me.UltraLabel25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel25.Location = New System.Drawing.Point(16, 31)
         Me.UltraLabel25.Name = "UltraLabel25"
         Me.UltraLabel25.Size = New System.Drawing.Size(85, 14)
@@ -10534,7 +10534,7 @@ Partial Class frm_TarifasCliente
         Me.cboClienteLista.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboClienteLista.DisplayMember = "Nombre"
         Me.cboClienteLista.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboClienteLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.cboClienteLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboClienteLista.ForeColor = System.Drawing.Color.Black
         Me.cboClienteLista.Location = New System.Drawing.Point(48, 9)
         Me.cboClienteLista.Name = "cboClienteLista"
@@ -10548,7 +10548,7 @@ Partial Class frm_TarifasCliente
         Appearance586.ForeColor = System.Drawing.Color.Navy
         Appearance586.TextVAlignAsString = "Middle"
         Me.UltraLabel29.Appearance = Appearance586
-        Me.UltraLabel29.AutoSize = true
+        Me.UltraLabel29.AutoSize = True
         Me.UltraLabel29.Location = New System.Drawing.Point(2, 13)
         Me.UltraLabel29.Name = "UltraLabel29"
         Me.UltraLabel29.Size = New System.Drawing.Size(42, 15)
@@ -10800,18 +10800,25 @@ Partial Class frm_TarifasCliente
         UltraTab50.Text = "Tarifas"
         UltraTab51.TabPage = Me.UltraTabPageControl3
         UltraTab51.Text = "Vea"
+        UltraTab51.Visible = False
         UltraTab52.TabPage = Me.UltraTabPageControl4
         UltraTab52.Text = "Tottus"
+        UltraTab52.Visible = False
         UltraTab53.TabPage = Me.UltraTabPageControl5
         UltraTab53.Text = "Alicorp"
+        UltraTab53.Visible = False
         UltraTab54.TabPage = Me.UltraTabPageControl6
         UltraTab54.Text = "Cementos"
+        UltraTab54.Visible = False
         UltraTab55.TabPage = Me.UltraTabPageControl8
         UltraTab55.Text = "Gloria"
+        UltraTab55.Visible = False
         UltraTab56.TabPage = Me.UltraTabPageControl11
         UltraTab56.Text = "Cencosud"
+        UltraTab56.Visible = False
         UltraTab57.TabPage = Me.UltraTabPageControl12
         UltraTab57.Text = "Induamerica"
+        UltraTab57.Visible = False
         Me.ficListaTarifas.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab50, UltraTab51, UltraTab52, UltraTab53, UltraTab54, UltraTab55, UltraTab56, UltraTab57})
         Me.ficListaTarifas.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '

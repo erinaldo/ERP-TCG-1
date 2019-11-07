@@ -1205,252 +1205,252 @@ Partial Class frm_Seguimiento
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.tapViajes.SuspendLayout()
-        CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Menu.SuspendLayout()
-        CType(Me.ogdListaSeguimiento, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tapAlertaViajes.SuspendLayout()
-        CType(Me.griAlertaViajes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl2.SuspendLayout()
-        CType(Me.griGuiaRemitente, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuGuiaRemitente.SuspendLayout()
-        CType(Me.ogdGuiaRemitente, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraExpandableGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox3.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel1.SuspendLayout()
-        CType(Me.griGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuGuiaTransportista.SuspendLayout()
-        CType(Me.ogdGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraExpandableGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox5.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel4.SuspendLayout()
-        CType(Me.txtGlosa, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecEmisionGrt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboRemitente, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboDestinatario, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecEmisionGrr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtGrt, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtGrr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtRangoGrr, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl4.SuspendLayout()
-        CType(Me.griViajeInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdGuiaTransportistaInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraGroupBox4.SuspendLayout()
-        CType(Me.fecPartidaViajeInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIdGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboMotivoTrasladoInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtGlosaInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl5.SuspendLayout()
-        CType(Me.griViajeDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdOperacionDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl1.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox6.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel3.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox1.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel9.SuspendLayout()
-        CType(Me.hFalla, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecFalla, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtGlosaFalla, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verIndFallaOP, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verClienteConf, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verPilotoConf, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTractoConf, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verCarretaConf, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verCopilotoConf, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeRuta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verViajeRetorno, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajePiloto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeCarreta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verViajeVacio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeCodigo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hViaje, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecViaje, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtCliente, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeTracto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeEstado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraExpandableGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox2.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel2.SuspendLayout()
-        CType(Me.grupoEnviarCorreo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoEnviarCorreo.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel5.SuspendLayout()
-        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboLugarTienda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeEscala, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grupoMarca01, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoMarca01.SuspendLayout()
-        CType(Me.grupoLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoLlegada.SuspendLayout()
-        CType(Me.fecLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.exGroupMarca, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.exGroupMarca.SuspendLayout()
-        Me.exGroupMarcaDentro.SuspendLayout()
-        CType(Me.fecCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIdOperacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtViajeId, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIdTracto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtSeguimientoId, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIdCarreta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grupoMarca02, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoMarca02.SuspendLayout()
-        CType(Me.grupoLlegadaE, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoLlegadaE.SuspendLayout()
-        CType(Me.fecLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.exGroupMarcaE, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.exGroupMarcaE.SuspendLayout()
-        Me.exGroupMarcaEDentro.SuspendLayout()
-        CType(Me.verLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.hLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl3.SuspendLayout()
-        CType(Me.griListadoTanqueo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuCombustible.SuspendLayout()
-        CType(Me.odRegistroConsCombustible, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl8.SuspendLayout()
-        CType(Me.gridImportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl7.SuspendLayout()
-        CType(Me.tabListado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabListado.SuspendLayout()
-        CType(Me.gruopExpanUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gruopExpanUnidadesSinReportar.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel8.SuspendLayout()
-        CType(Me.gridUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrBusqueda.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox7.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel15.SuspendLayout()
-        CType(Me.grupoEstado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoEstado.SuspendLayout()
-        CType(Me.ColorFin, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorProgramado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCarga, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorTransito, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorDescarga, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.grupoTipoVehiculo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grupoTipoVehiculo.SuspendLayout()
-        CType(Me.ColorParihuelero, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorPlataforma, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCamion20M3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorTolvaVolteo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCamion65M3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorContenedor, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorGranelero, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorFurgon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorFurgonLargo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCamioneta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorVolquete, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCamion30M3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCalicera, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorCamion40M3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ColorMediaBaranda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.colorCambio, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraExpandableGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox4.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel12.SuspendLayout()
-        CType(Me.cboTractoLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.verTracto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UltraGroupBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraGroupBox11.SuspendLayout()
-        CType(Me.fecHasta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.fecDesde, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.utpDetalle.SuspendLayout()
-        CType(Me.tabGuias, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabGuias.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox10.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel7.SuspendLayout()
-        CType(Me.Agrupacion8, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion8.SuspendLayout()
-        CType(Me.Agrupacion5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion5.SuspendLayout()
-        CType(Me.verKmTractoValida, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Agrupacion7, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion7.SuspendLayout()
-        CType(Me.Agrupacion6, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion6.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox9.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel6.SuspendLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabControl1.SuspendLayout()
-        Me.UltraTabPageControl6.SuspendLayout()
-        CType(Me.tabImportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabImportar.SuspendLayout()
-        CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraGroupBox1.SuspendLayout()
-        CType(Me.UltraExpandableGroupBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraExpandableGroupBox11.SuspendLayout()
-        Me.UltraExpandableGroupBoxPanel11.SuspendLayout()
-        CType(Me.cboTractoImportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboCentroImportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdGuiaTransportistaDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdDemandaRapida, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ficDemanda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficDemanda.SuspendLayout()
-        Me.SuspendLayout()
+        Me.tapViajes.SuspendLayout
+        CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Menu.SuspendLayout
+        CType(Me.ogdListaSeguimiento, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tapAlertaViajes.SuspendLayout
+        CType(Me.griAlertaViajes, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl2.SuspendLayout
+        CType(Me.griGuiaRemitente, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.MenuGuiaRemitente.SuspendLayout
+        CType(Me.ogdGuiaRemitente, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox3.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel1.SuspendLayout
+        CType(Me.griGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.MenuGuiaTransportista.SuspendLayout
+        CType(Me.ogdGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox5.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel4.SuspendLayout
+        CType(Me.txtGlosa, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecEmisionGrt, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboRemitente, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboDestinatario, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecEmisionGrr, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtGrt, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtGrr, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtRangoGrr, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl4.SuspendLayout
+        CType(Me.griViajeInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdGuiaTransportistaInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraGroupBox4.SuspendLayout
+        CType(Me.fecPartidaViajeInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtIdGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtGuiaTransportista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboMotivoTrasladoInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtGlosaInterrumpido, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl5.SuspendLayout
+        CType(Me.griViajeDetalle, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdOperacionDetalle, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl1.SuspendLayout
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox6.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel3.SuspendLayout
+        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox1.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel9.SuspendLayout
+        CType(Me.hFalla, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecFalla, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtGlosaFalla, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verIndFallaOP, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verClienteConf, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verPilotoConf, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTractoConf, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verCarretaConf, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verCopilotoConf, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeRuta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verViajeRetorno, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajePiloto, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeCarreta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verViajeVacio, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeCodigo, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hViaje, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecViaje, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtCliente, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeTracto, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeEstado, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox2.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel2.SuspendLayout
+        CType(Me.grupoEnviarCorreo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoEnviarCorreo.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel5.SuspendLayout
+        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboLugarTienda, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeEscala, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.grupoMarca01, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoMarca01.SuspendLayout
+        CType(Me.grupoLlegada, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoLlegada.SuspendLayout
+        CType(Me.fecLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verLlegadaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.exGroupMarca, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.exGroupMarca.SuspendLayout
+        Me.exGroupMarcaDentro.SuspendLayout
+        CType(Me.fecCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecSalidaDestino, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecSalidaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecLlegadaOrigen, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtIdOperacion, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtViajeId, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtIdTracto, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtSeguimientoId, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtIdCarreta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.grupoMarca02, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoMarca02.SuspendLayout
+        CType(Me.grupoLlegadaE, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoLlegadaE.SuspendLayout
+        CType(Me.fecLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.exGroupMarcaE, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.exGroupMarcaE.SuspendLayout
+        Me.exGroupMarcaEDentro.SuspendLayout
+        CType(Me.verLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecLlegadaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verCargaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecIngresoDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecDescargaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecSalidaDestinoE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.hLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecSalidaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecLlegadaOrigenE, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl3.SuspendLayout
+        CType(Me.griListadoTanqueo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.MenuCombustible.SuspendLayout
+        CType(Me.odRegistroConsCombustible, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl8.SuspendLayout
+        CType(Me.gridImportar, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl7.SuspendLayout
+        CType(Me.tabListado, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabListado.SuspendLayout
+        CType(Me.gruopExpanUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.gruopExpanUnidadesSinReportar.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel8.SuspendLayout
+        CType(Me.gridUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdUnidadesSinReportar, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.agrBusqueda.SuspendLayout
+        CType(Me.UltraExpandableGroupBox7, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox7.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel15.SuspendLayout
+        CType(Me.grupoEstado, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoEstado.SuspendLayout
+        CType(Me.ColorFin, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorProgramado, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCarga, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorTransito, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorDescarga, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.grupoTipoVehiculo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.grupoTipoVehiculo.SuspendLayout
+        CType(Me.ColorParihuelero, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorPlataforma, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCamion20M3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorTolvaVolteo, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCamion65M3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorContenedor, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorGranelero, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorFurgon, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorFurgonLargo, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCamioneta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorVolquete, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCamion30M3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCalicera, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorCamion40M3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ColorMediaBaranda, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.colorCambio, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraExpandableGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox4.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel12.SuspendLayout
+        CType(Me.cboTractoLista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.verTracto, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.UltraGroupBox11, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraGroupBox11.SuspendLayout
+        CType(Me.fecHasta, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.fecDesde, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.utpDetalle.SuspendLayout
+        CType(Me.tabGuias, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabGuias.SuspendLayout
+        CType(Me.UltraExpandableGroupBox10, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox10.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel7.SuspendLayout
+        CType(Me.Agrupacion8, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Agrupacion8.SuspendLayout
+        CType(Me.Agrupacion5, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Agrupacion5.SuspendLayout
+        CType(Me.verKmTractoValida, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Agrupacion7, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Agrupacion7.SuspendLayout
+        CType(Me.Agrupacion6, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Agrupacion6.SuspendLayout
+        CType(Me.UltraExpandableGroupBox9, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox9.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel6.SuspendLayout
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabControl1.SuspendLayout
+        Me.UltraTabPageControl6.SuspendLayout
+        CType(Me.tabImportar, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabImportar.SuspendLayout
+        CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraGroupBox1.SuspendLayout
+        CType(Me.UltraExpandableGroupBox11, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraExpandableGroupBox11.SuspendLayout
+        Me.UltraExpandableGroupBoxPanel11.SuspendLayout
+        CType(Me.cboTractoImportar, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboCentroImportar, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdGuiaTransportistaDetalle, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdDemandaRapida, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ficDemanda, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ficDemanda.SuspendLayout
+        Me.SuspendLayout
         '
         'tapViajes
         '
@@ -3546,7 +3546,7 @@ Partial Class frm_Seguimiento
         Appearance123.ForeColor = System.Drawing.Color.Navy
         Me.verPilotoConf.Appearance = Appearance123
         Me.verPilotoConf.AutoSize = True
-        Me.verPilotoConf.Location = New System.Drawing.Point(319, 6)
+        Me.verPilotoConf.Location = New System.Drawing.Point(317, 5)
         Me.verPilotoConf.Name = "verPilotoConf"
         Me.verPilotoConf.Size = New System.Drawing.Size(72, 18)
         Me.verPilotoConf.TabIndex = 50
@@ -3558,7 +3558,7 @@ Partial Class frm_Seguimiento
         Appearance124.ForeColor = System.Drawing.Color.Navy
         Me.verTractoConf.Appearance = Appearance124
         Me.verTractoConf.AutoSize = True
-        Me.verTractoConf.Location = New System.Drawing.Point(627, 5)
+        Me.verTractoConf.Location = New System.Drawing.Point(625, 5)
         Me.verTractoConf.Name = "verTractoConf"
         Me.verTractoConf.Size = New System.Drawing.Size(72, 18)
         Me.verTractoConf.TabIndex = 49
@@ -3570,7 +3570,7 @@ Partial Class frm_Seguimiento
         Appearance125.ForeColor = System.Drawing.Color.Navy
         Me.verCarretaConf.Appearance = Appearance125
         Me.verCarretaConf.AutoSize = True
-        Me.verCarretaConf.Location = New System.Drawing.Point(627, 28)
+        Me.verCarretaConf.Location = New System.Drawing.Point(624, 28)
         Me.verCarretaConf.Name = "verCarretaConf"
         Me.verCarretaConf.Size = New System.Drawing.Size(73, 18)
         Me.verCarretaConf.TabIndex = 48
@@ -3596,7 +3596,7 @@ Partial Class frm_Seguimiento
         Appearance127.ForeColor = System.Drawing.Color.Navy
         Me.verCopilotoConf.Appearance = Appearance127
         Me.verCopilotoConf.AutoSize = True
-        Me.verCopilotoConf.Location = New System.Drawing.Point(319, 28)
+        Me.verCopilotoConf.Location = New System.Drawing.Point(316, 27)
         Me.verCopilotoConf.Name = "verCopilotoConf"
         Me.verCopilotoConf.Size = New System.Drawing.Size(73, 18)
         Me.verCopilotoConf.TabIndex = 42
@@ -5972,7 +5972,7 @@ Partial Class frm_Seguimiento
         Me.UltraTabPageControl7.Controls.Add(Me.tabListado)
         Me.UltraTabPageControl7.Controls.Add(Me.gruopExpanUnidadesSinReportar)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1082, 588)
         '
@@ -5991,6 +5991,7 @@ Partial Class frm_Seguimiento
         UltraTab2.Text = "Viajes"
         UltraTab3.TabPage = Me.tapAlertaViajes
         UltraTab3.Text = "Alerta Viajes"
+        UltraTab3.Visible = False
         Me.tabListado.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab2, UltraTab3})
         Me.tabListado.TabStop = False
         Me.tabListado.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
@@ -6875,7 +6876,7 @@ Partial Class frm_Seguimiento
         Me.utpDetalle.Controls.Add(Me.tabGuias)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox10)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox9)
-        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1082, 588)
         '
@@ -7303,6 +7304,7 @@ Partial Class frm_Seguimiento
         UltraTab16.SelectedAppearance = Appearance212
         UltraTab16.TabPage = Me.UltraTabPageControl3
         UltraTab16.Text = "Informacion Combustible"
+        UltraTab16.Visible = False
         Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab15, UltraTab16})
         Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
@@ -7514,6 +7516,7 @@ Partial Class frm_Seguimiento
         UltraTab1.Key = "Importar"
         UltraTab1.TabPage = Me.UltraTabPageControl6
         UltraTab1.Text = "Importar"
+        UltraTab1.Visible = False
         Me.ficDemanda.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab17, UltraTab18, UltraTab1})
         Me.ficDemanda.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
@@ -7545,271 +7548,271 @@ Partial Class frm_Seguimiento
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seguimiento Viaje"
         Me.tapViajes.ResumeLayout(False)
-        CType(Me.griLista, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griLista, System.ComponentModel.ISupportInitialize).EndInit
         Me.Menu.ResumeLayout(False)
-        CType(Me.ogdListaSeguimiento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ogdListaSeguimiento, System.ComponentModel.ISupportInitialize).EndInit
         Me.tapAlertaViajes.ResumeLayout(False)
-        CType(Me.griAlertaViajes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griAlertaViajes, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl2.ResumeLayout(False)
-        CType(Me.griGuiaRemitente, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griGuiaRemitente, System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuGuiaRemitente.ResumeLayout(False)
-        CType(Me.ogdGuiaRemitente, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraExpandableGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ogdGuiaRemitente, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraExpandableGroupBox3, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox3.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel1.ResumeLayout(False)
-        CType(Me.griGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuGuiaTransportista.ResumeLayout(False)
-        CType(Me.ogdGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraExpandableGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ogdGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraExpandableGroupBox5, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox5.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel4.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel4.PerformLayout()
-        CType(Me.txtGlosa, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecEmisionGrt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboRemitente, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboDestinatario, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecEmisionGrr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtGrt, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtGrr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtRangoGrr, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel4.PerformLayout
+        CType(Me.txtGlosa, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecEmisionGrt, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboRemitente, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboDestinatario, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecEmisionGrr, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtGrt, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtGrr, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtRangoGrr, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl4.ResumeLayout(False)
-        CType(Me.griViajeInterrumpido, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ogdGuiaTransportistaInterrumpido, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griViajeInterrumpido, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdGuiaTransportistaInterrumpido, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraGroupBox4.ResumeLayout(False)
-        Me.UltraGroupBox4.PerformLayout()
-        CType(Me.fecPartidaViajeInterrumpido, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIdGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboMotivoTrasladoInterrumpido, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtGlosaInterrumpido, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraGroupBox4.PerformLayout
+        CType(Me.fecPartidaViajeInterrumpido, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtGuiaTransportista, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboMotivoTrasladoInterrumpido, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtGlosaInterrumpido, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl5.ResumeLayout(False)
-        CType(Me.griViajeDetalle, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ogdOperacionDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griViajeDetalle, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdOperacionDetalle, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl1.ResumeLayout(False)
-        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox6.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel3.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel3.PerformLayout()
-        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel3.PerformLayout
+        CType(Me.UltraExpandableGroupBox1, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox1.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel9.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel9.PerformLayout()
-        CType(Me.hFalla, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecFalla, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtGlosaFalla, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verIndFallaOP, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verClienteConf, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verPilotoConf, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTractoConf, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verCarretaConf, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verCopilotoConf, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeRuta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verViajeRetorno, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajePiloto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeCarreta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verViajeVacio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeCodigo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hViaje, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecViaje, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtCliente, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeTracto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeEstado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraExpandableGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel9.PerformLayout
+        CType(Me.hFalla, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecFalla, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtGlosaFalla, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verIndFallaOP, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verClienteConf, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verPilotoConf, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTractoConf, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verCarretaConf, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verCopilotoConf, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeRuta, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verViajeRetorno, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajePiloto, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeCarreta, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verViajeVacio, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeCodigo, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hViaje, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecViaje, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtCliente, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeTracto, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeEstado, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraExpandableGroupBox2, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox2.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel2.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel2.PerformLayout()
-        CType(Me.grupoEnviarCorreo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel2.PerformLayout
+        CType(Me.grupoEnviarCorreo, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoEnviarCorreo.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel5.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel5.PerformLayout()
-        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboLugarTienda, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeEscala, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grupoMarca01, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel5.PerformLayout
+        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboLugarTienda, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeEscala, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.grupoMarca01, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoMarca01.ResumeLayout(False)
-        Me.grupoMarca01.PerformLayout()
-        CType(Me.grupoLlegada, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoMarca01.PerformLayout
+        CType(Me.grupoLlegada, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoLlegada.ResumeLayout(False)
-        Me.grupoLlegada.PerformLayout()
-        CType(Me.fecLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.exGroupMarca, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoLlegada.PerformLayout
+        CType(Me.fecLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verLlegadaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.exGroupMarca, System.ComponentModel.ISupportInitialize).EndInit
         Me.exGroupMarca.ResumeLayout(False)
         Me.exGroupMarcaDentro.ResumeLayout(False)
-        Me.exGroupMarcaDentro.PerformLayout()
-        CType(Me.fecCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIdOperacion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtViajeId, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIdTracto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtSeguimientoId, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIdCarreta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grupoMarca02, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.exGroupMarcaDentro.PerformLayout
+        CType(Me.fecCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecTerminoDescargaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hTerminoCargaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecSalidaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecSalidaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecLlegadaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtViajeId, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdTracto, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtSeguimientoId, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdCarreta, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.grupoMarca02, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoMarca02.ResumeLayout(False)
-        Me.grupoMarca02.PerformLayout()
-        CType(Me.grupoLlegadaE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoMarca02.PerformLayout
+        CType(Me.grupoLlegadaE, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoLlegadaE.ResumeLayout(False)
-        Me.grupoLlegadaE.PerformLayout()
-        CType(Me.fecLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.exGroupMarcaE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoLlegadaE.PerformLayout
+        CType(Me.fecLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hLlegadaAproximadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.exGroupMarcaE, System.ComponentModel.ISupportInitialize).EndInit
         Me.exGroupMarcaE.ResumeLayout(False)
         Me.exGroupMarcaEDentro.ResumeLayout(False)
-        Me.exGroupMarcaEDentro.PerformLayout()
-        CType(Me.verLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.hLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.exGroupMarcaEDentro.PerformLayout
+        CType(Me.verLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecLlegadaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTerminoCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verImpresionGuiaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verCargaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verIngresoComplejoOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecTerminoDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecIngresoDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecDescargaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecSalidaDestinoE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.hLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecSalidaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecLlegadaOrigenE, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl3.ResumeLayout(False)
-        CType(Me.griListadoTanqueo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.griListadoTanqueo, System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuCombustible.ResumeLayout(False)
-        CType(Me.odRegistroConsCombustible, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.odRegistroConsCombustible, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl8.ResumeLayout(False)
-        CType(Me.gridImportar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridImportar, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl7.ResumeLayout(False)
-        CType(Me.tabListado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabListado, System.ComponentModel.ISupportInitialize).EndInit
         Me.tabListado.ResumeLayout(False)
-        CType(Me.gruopExpanUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gruopExpanUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit
         Me.gruopExpanUnidadesSinReportar.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel8.ResumeLayout(False)
-        CType(Me.gridUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ogdUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdUnidadesSinReportar, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).EndInit
         Me.agrBusqueda.ResumeLayout(False)
-        CType(Me.UltraExpandableGroupBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox7, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox7.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel15.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel15.PerformLayout()
-        CType(Me.grupoEstado, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel15.PerformLayout
+        CType(Me.grupoEstado, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoEstado.ResumeLayout(False)
-        Me.grupoEstado.PerformLayout()
-        CType(Me.ColorFin, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorProgramado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCarga, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorTransito, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorDescarga, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.grupoTipoVehiculo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoEstado.PerformLayout
+        CType(Me.ColorFin, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorProgramado, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCarga, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorTransito, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorDescarga, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.grupoTipoVehiculo, System.ComponentModel.ISupportInitialize).EndInit
         Me.grupoTipoVehiculo.ResumeLayout(False)
-        Me.grupoTipoVehiculo.PerformLayout()
-        CType(Me.ColorParihuelero, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorPlataforma, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCamion20M3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorTolvaVolteo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCamion65M3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorContenedor, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorGranelero, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorFurgon, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorFurgonLargo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCamioneta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorVolquete, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCamion30M3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCalicera, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorCamion40M3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ColorMediaBaranda, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.colorCambio, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraExpandableGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grupoTipoVehiculo.PerformLayout
+        CType(Me.ColorParihuelero, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorPlataforma, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCamion20M3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorTolvaVolteo, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCamion65M3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorContenedor, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorGranelero, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorFurgon, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorFurgonLargo, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCamioneta, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorVolquete, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCamion30M3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCalicera, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorCamion40M3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ColorMediaBaranda, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.colorCambio, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraExpandableGroupBox4, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox4.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel12.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel12.PerformLayout()
-        CType(Me.cboTractoLista, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.verTracto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UltraGroupBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel12.PerformLayout
+        CType(Me.cboTractoLista, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.verTracto, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraGroupBox11, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraGroupBox11.ResumeLayout(False)
-        Me.UltraGroupBox11.PerformLayout()
-        CType(Me.fecHasta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.fecDesde, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraGroupBox11.PerformLayout
+        CType(Me.fecHasta, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.fecDesde, System.ComponentModel.ISupportInitialize).EndInit
         Me.utpDetalle.ResumeLayout(False)
-        CType(Me.tabGuias, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabGuias, System.ComponentModel.ISupportInitialize).EndInit
         Me.tabGuias.ResumeLayout(False)
-        CType(Me.UltraExpandableGroupBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox10, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox10.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel7.ResumeLayout(False)
-        CType(Me.Agrupacion8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Agrupacion8, System.ComponentModel.ISupportInitialize).EndInit
         Me.Agrupacion8.ResumeLayout(False)
-        Me.Agrupacion8.PerformLayout()
-        CType(Me.Agrupacion5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion8.PerformLayout
+        CType(Me.Agrupacion5, System.ComponentModel.ISupportInitialize).EndInit
         Me.Agrupacion5.ResumeLayout(False)
-        Me.Agrupacion5.PerformLayout()
-        CType(Me.verKmTractoValida, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Agrupacion7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion5.PerformLayout
+        CType(Me.verKmTractoValida, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Agrupacion7, System.ComponentModel.ISupportInitialize).EndInit
         Me.Agrupacion7.ResumeLayout(False)
-        Me.Agrupacion7.PerformLayout()
-        CType(Me.Agrupacion6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion7.PerformLayout
+        CType(Me.Agrupacion6, System.ComponentModel.ISupportInitialize).EndInit
         Me.Agrupacion6.ResumeLayout(False)
-        Me.Agrupacion6.PerformLayout()
-        CType(Me.UltraExpandableGroupBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Agrupacion6.PerformLayout
+        CType(Me.UltraExpandableGroupBox9, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox9.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel6.ResumeLayout(False)
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabControl1.ResumeLayout(False)
         Me.UltraTabPageControl6.ResumeLayout(False)
-        CType(Me.tabImportar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tabImportar, System.ComponentModel.ISupportInitialize).EndInit
         Me.tabImportar.ResumeLayout(False)
-        CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraGroupBox1.ResumeLayout(False)
-        CType(Me.UltraExpandableGroupBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraExpandableGroupBox11, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraExpandableGroupBox11.ResumeLayout(False)
         Me.UltraExpandableGroupBoxPanel11.ResumeLayout(False)
-        Me.UltraExpandableGroupBoxPanel11.PerformLayout()
-        CType(Me.cboTractoImportar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboCentroImportar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ogdGuiaTransportistaDetalle, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ogdDemandaRapida, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ficDemanda, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraExpandableGroupBoxPanel11.PerformLayout
+        CType(Me.cboTractoImportar, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboCentroImportar, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdGuiaTransportistaDetalle, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdDemandaRapida, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ficDemanda, System.ComponentModel.ISupportInitialize).EndInit
         Me.ficDemanda.ResumeLayout(False)
         Me.ResumeLayout(False)
 
