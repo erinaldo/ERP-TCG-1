@@ -419,8 +419,11 @@ Module m_Funciones
     'Public Const ISL_Nombre As String = "MI EMPRESA S.A.C." '@00001
     'Public Const ISL_RUC As String = "20479729141" '@00001
     'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
-    Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
-    Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
+    'Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
+    Public ISL_RutaImpresion As String = Path.Combine(Application.StartupPath, "Fotos") & "\eImpresion\"
+    'Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
+    Public RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+
     Public Abrev_Empresa As String = "ERP"
 
     'Declara constantes públicas para nombres de perfiles utilizados por diferentes módulos
@@ -674,6 +677,9 @@ Module m_Funciones
     Public gs_RucEmpresaSistema As String '@0001
     Public gs_DireccionEmpresaSistema As String '@0001
     Public gs_VersionSis As String '@0001
+    Public gs_SmtpClientSis As String '@0001
+    Public gs_userNameCorreo As String '@0001
+    Public gs_passwordCorreo As String '@0001
     '------------Variables Globales Demanda
     Public gNroDemanda As Integer
 
@@ -2488,14 +2494,12 @@ Module m_Funciones
 
                     Next
                 End If
-                'Dim client As New SmtpClient("mail.induamerica.com.pe")
-                Dim client As New SmtpClient("smtp.gmail.com")
-                client.EnableSsl = False
-                client.Port = 587
-                Dim clave As String = "-+2010+-"
-                client.Credentials = New NetworkCredential("consultores.tecnologicos.2010@gmail.com", "-+2010+-")
+                Dim client As New SmtpClient(gs_SmtpClientSis.Trim)
+                'client.EnableSsl = False
+                'client.Port = 587
+                client.Credentials = New NetworkCredential(gs_userNameCorreo.Trim, gs_passwordCorreo.Trim)
                 client.Send(lo_Message)
-                'client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials
+                client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials
                 lo_Message.Attachments.Clear()
                 lo_Message = Nothing
                 client = Nothing

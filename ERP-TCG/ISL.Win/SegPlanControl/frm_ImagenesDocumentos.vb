@@ -1296,7 +1296,8 @@ Public Class frm_ImagenesDocumentos
             If contAceptados > 0 Then
                 sbMensaje.AppendLine(contAceptados.ToString().Trim & " comprobantes fueron consultados a SUNAT.")
                 Dim strNombre As String = ol_ComprobElect.Obtener(New e_ComprobanteElectronico With {.TipoReferencia = 1, .IdReferencia = oeMovDocumento.Id}).nombrexml
-                Dim strRuta As String = olConfiguracion.DocElectronico
+                'Dim strRuta As String = olConfiguracion.DocElectronico
+                Dim strRuta As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico")
                 If File.Exists(strRuta.Trim() & "\Facturacion\R-" & strNombre.Trim() & ".zip") Then
                     My.Computer.FileSystem.CopyFile(strRuta.Trim() & "\Facturacion\R-" & strNombre.Trim() & ".zip", "D:\R-" & strNombre.Trim() & ".zip")
 
@@ -1346,7 +1347,8 @@ Public Class frm_ImagenesDocumentos
                 oeMovDocumento.Id = gridEnviados.Rows(gridEnviados.ActiveRow.Index).Cells("Id").Value
                 Dim ol_ComprobElect As New l_ComprobanteElectronico
                 Dim olConfiguracion As New l_Configuracion
-                strRuta = olConfiguracion.DocElectronico
+                'strRuta = olConfiguracion.DocElectronico
+                strRuta = Path.Combine(Application.StartupPath, "ComprobanteElectronico")
                 strNombre = ol_ComprobElect.Obtener(New e_ComprobanteElectronico With {.TipoReferencia = 1, .IdReferencia = oeMovDocumento.Id}).nombrexml
                 If File.Exists(strRuta.Trim() & "\Facturacion\" & strNombre.Trim() & ".zip") Then
                     My.Computer.FileSystem.CopyFile(strRuta.Trim() & "\Facturacion\" & strNombre.Trim() & ".zip", "D:\" & strNombre.Trim() & ".zip")

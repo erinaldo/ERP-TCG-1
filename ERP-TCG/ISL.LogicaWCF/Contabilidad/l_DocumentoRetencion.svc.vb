@@ -74,7 +74,7 @@ Public Class l_DocumentoRetencion
 
     Public Function EnviarSunat(oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.EnviarSunat
         Try
-            Dim strRuta As String = olDatosConfiguracion.DocElectronico()
+            'Dim strRuta As String = olDatosConfiguracion.DocElectronico() '@0001
             Dim dsRetencion As DataSet
             dsRetencion = odDocumentoRetencion.ObtenerRetencion(oeDocumentoRetencion)
             'osRetencionElectronico.GenerarXml(dsRetencion.Tables(0), dsRetencion.Tables(1), strRuta, "", "", "", False, oeDocumentoRetencion.UsuarioModifica)
@@ -94,7 +94,7 @@ Public Class l_DocumentoRetencion
     Public Function ComunicaBajaSunat(oeDocumentoRetencion As e_DocumentoRetencion) As String Implements Il_DocumentoRetencion.ComunicaBajaSunat
         Try
             Dim ls_Respuesta As String = ""
-            Dim strRuta As String = olDatosConfiguracion.DocElectronico()
+            'Dim strRuta As String = olDatosConfiguracion.DocElectronico() '@0001
             Dim dsRetencion As DataSet
             dsRetencion = odDocumentoRetencion.ObtenerRetencion(oeDocumentoRetencion)
             'ls_Respuesta = osRetencionElectronico.GenerarXmlComprobantesBaja(dsRetencion.Tables(0), oeDocumentoRetencion.FechaEmision, strRuta, oeDocumentoRetencion.UsuarioCrea)
@@ -104,13 +104,13 @@ Public Class l_DocumentoRetencion
         End Try
     End Function
 
-    Function EnviarXMLGetStatus(ByVal ticket As String, usuario As String, ByVal PrefijoID As String) As String
-        Dim strRuta As String = olDatosConfiguracion.DocElectronico()
+    Function EnviarXMLGetStatus(ByVal ticket As String, usuario As String, ByVal PrefijoID As String, ByVal strRuta As String) As String
+        'Dim strRuta As String = olDatosConfiguracion.DocElectronico() '@0001
         Return osRetencionElectronico.EnviarXMLGetStatus(strRuta, ticket, usuario, PrefijoID)
     End Function
-    Public Function ConsultarDocumento(oeDocumentoRetencion As e_DocumentoRetencion) As Boolean Implements Il_DocumentoRetencion.ConsultarDocumento
+    Public Function ConsultarDocumento(oeDocumentoRetencion As e_DocumentoRetencion, ByVal strRuta As String) As Boolean Implements Il_DocumentoRetencion.ConsultarDocumento
         Try
-            Dim strRuta As String = olDatosConfiguracion.DocElectronico()
+            'Dim strRuta As String = olDatosConfiguracion.DocElectronico() '@0001
             Dim dsRetencion As DataSet
             dsRetencion = odDocumentoRetencion.ObtenerRetencion(oeDocumentoRetencion)
             osRetencionElectronico.ConsultarDocumento(dsRetencion, strRuta, oeDocumentoRetencion.UsuarioModifica, False)

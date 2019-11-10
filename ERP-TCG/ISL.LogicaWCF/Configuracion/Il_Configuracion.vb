@@ -22,13 +22,13 @@ Public Interface Il_Configuracion
     <OperationContract()> _
     Function IPServidorReportes() As String
 
-    <OperationContract()> _
-    Function Fotos() As String
+    '<OperationContract()> _
+    'Function Fotos() As String
 
     '<OperationContract()> _
     'Function PrefijoID() As String
 
-    <OperationContract()> _
-    Function DocElectronico() As String
+    '<OperationContract()> _
+    'Function DocElectronico() As String
 
 End Interface

@@ -35,7 +35,7 @@ Public Interface Il_DocumentoRetencion
     <OperationContract()> _
     Function ImpresionElectronico(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As System.Data.DataSet
 
-    <OperationContract()> _
-    Function ConsultarDocumento(ByVal oeDocumentoRetencion As e_DocumentoRetencion) As Boolean
+    <OperationContract()>
+    Function ConsultarDocumento(ByVal oeDocumentoRetencion As e_DocumentoRetencion, ByVal strRuta As String) As Boolean
 
 End Interface

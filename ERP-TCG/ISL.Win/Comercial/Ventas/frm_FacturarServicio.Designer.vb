@@ -656,7 +656,7 @@ Partial Class frm_FacturarServicio
         Me.UltraTabPageControl4.Controls.Add(Me.griListaServicios)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(709, 388)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(709, 412)
         '
         'griListaServicios
         '
@@ -709,7 +709,7 @@ Partial Class frm_FacturarServicio
         Me.griListaServicios.Font = New System.Drawing.Font("Tahoma", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaServicios.Location = New System.Drawing.Point(0, 0)
         Me.griListaServicios.Name = "griListaServicios"
-        Me.griListaServicios.Size = New System.Drawing.Size(709, 388)
+        Me.griListaServicios.Size = New System.Drawing.Size(709, 412)
         Me.griListaServicios.TabIndex = 0
         Me.griListaServicios.Tag = ""
         '
@@ -719,7 +719,7 @@ Partial Class frm_FacturarServicio
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox1)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(709, 412)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(709, 388)
         '
         'griListaDocumentoVenta
         '
@@ -836,7 +836,7 @@ Partial Class frm_FacturarServicio
         Me.griListaDocumentoVenta.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaDocumentoVenta.Location = New System.Drawing.Point(0, 49)
         Me.griListaDocumentoVenta.Name = "griListaDocumentoVenta"
-        Me.griListaDocumentoVenta.Size = New System.Drawing.Size(709, 363)
+        Me.griListaDocumentoVenta.Size = New System.Drawing.Size(709, 339)
         Me.griListaDocumentoVenta.TabIndex = 5
         Me.griListaDocumentoVenta.TabStop = False
         Me.griListaDocumentoVenta.Text = "UltraGrid1"
@@ -1377,7 +1377,7 @@ Partial Class frm_FacturarServicio
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom)
         Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1220, 686)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1220, 710)
         '
         'Agrupacion4
         '
@@ -1403,7 +1403,7 @@ Partial Class frm_FacturarServicio
         Me.Agrupacion4.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion4.Location = New System.Drawing.Point(0, 217)
         Me.Agrupacion4.Name = "Agrupacion4"
-        Me.Agrupacion4.Size = New System.Drawing.Size(1220, 469)
+        Me.Agrupacion4.Size = New System.Drawing.Size(1220, 493)
         Me.Agrupacion4.TabIndex = 1
         Me.Agrupacion4.Tag = " "
         Me.Agrupacion4.Text = "Detalle"
@@ -1419,7 +1419,7 @@ Partial Class frm_FacturarServicio
         Me.Agrupacion6.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion6.Location = New System.Drawing.Point(3, 43)
         Me.Agrupacion6.Name = "Agrupacion6"
-        Me.Agrupacion6.Size = New System.Drawing.Size(1214, 423)
+        Me.Agrupacion6.Size = New System.Drawing.Size(1214, 447)
         Me.Agrupacion6.TabIndex = 0
         Me.Agrupacion6.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -1578,7 +1578,7 @@ Partial Class frm_FacturarServicio
         Me.griAnticipos.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griAnticipos.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy
         Me.griAnticipos.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.griAnticipos.Location = New System.Drawing.Point(3, 181)
+        Me.griAnticipos.Location = New System.Drawing.Point(3, 205)
         Me.griAnticipos.Name = "griAnticipos"
         Me.griAnticipos.Size = New System.Drawing.Size(474, 239)
         Me.griAnticipos.TabIndex = 6
@@ -1590,11 +1590,11 @@ Partial Class frm_FacturarServicio
         Me.gbeListadoMatSer.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeListadoMatSer.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.gbeListadoMatSer.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeListadoMatSer.ExpandedSize = New System.Drawing.Size(734, 417)
+        Me.gbeListadoMatSer.ExpandedSize = New System.Drawing.Size(734, 441)
         Me.gbeListadoMatSer.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeListadoMatSer.Location = New System.Drawing.Point(477, 3)
         Me.gbeListadoMatSer.Name = "gbeListadoMatSer"
-        Me.gbeListadoMatSer.Size = New System.Drawing.Size(734, 417)
+        Me.gbeListadoMatSer.Size = New System.Drawing.Size(734, 441)
         Me.gbeListadoMatSer.TabIndex = 1
         Me.gbeListadoMatSer.Text = " "
         Me.gbeListadoMatSer.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1605,7 +1605,7 @@ Partial Class frm_FacturarServicio
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(711, 411)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(711, 435)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'utcListadoMatSer
@@ -1617,7 +1617,7 @@ Partial Class frm_FacturarServicio
         Me.utcListadoMatSer.Location = New System.Drawing.Point(0, 0)
         Me.utcListadoMatSer.Name = "utcListadoMatSer"
         Me.utcListadoMatSer.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.utcListadoMatSer.Size = New System.Drawing.Size(711, 411)
+        Me.utcListadoMatSer.Size = New System.Drawing.Size(711, 435)
         Me.utcListadoMatSer.TabIndex = 0
         UltraTab6.Key = "1"
         UltraTab6.TabPage = Me.UltraTabPageControl4
@@ -1631,7 +1631,7 @@ Partial Class frm_FacturarServicio
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(709, 388)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(709, 412)
         '
         'griListaDetalleFactura
         '
@@ -1771,7 +1771,7 @@ Partial Class frm_FacturarServicio
         Me.griListaDetalleFactura.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaDetalleFactura.Location = New System.Drawing.Point(3, 3)
         Me.griListaDetalleFactura.Name = "griListaDetalleFactura"
-        Me.griListaDetalleFactura.Size = New System.Drawing.Size(1208, 417)
+        Me.griListaDetalleFactura.Size = New System.Drawing.Size(1208, 441)
         Me.griListaDetalleFactura.TabIndex = 0
         '
         '_frm_MenuPadre_Toolbars_Dock_Area_Top
@@ -1791,7 +1791,7 @@ Partial Class frm_FacturarServicio
         Me.MenuDetalle.Appearance = Appearance50
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
         Me.MenuDetalle.ImageListLarge = Me.imagenes
         Me.MenuDetalle.ImageListSmall = Me.imagenes
         Me.MenuDetalle.MdiMergeable = False
@@ -1874,7 +1874,7 @@ Partial Class frm_FacturarServicio
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.Color.MidnightBlue
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(3, 466)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(3, 490)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Bottom"
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(1214, 0)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.MenuDetalle
@@ -1887,7 +1887,7 @@ Partial Class frm_FacturarServicio
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.Color.MidnightBlue
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(3, 17)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Left"
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 449)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 473)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.ToolbarsManager = Me.MenuDetalle
         '
         '_frm_MenuPadre_Toolbars_Dock_Area_Right
@@ -1898,7 +1898,7 @@ Partial Class frm_FacturarServicio
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.Color.MidnightBlue
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1217, 17)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Right"
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 449)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 473)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.ToolbarsManager = Me.MenuDetalle
         '
         'UltraToolbarsDockArea13
@@ -1917,7 +1917,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea14.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea14.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me.UltraToolbarsDockArea14.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea14.Location = New System.Drawing.Point(3, 466)
+        Me.UltraToolbarsDockArea14.Location = New System.Drawing.Point(3, 490)
         Me.UltraToolbarsDockArea14.Name = "UltraToolbarsDockArea14"
         Me.UltraToolbarsDockArea14.Size = New System.Drawing.Size(1214, 0)
         '
@@ -1929,7 +1929,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea17.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea17.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea17.Name = "UltraToolbarsDockArea17"
-        Me.UltraToolbarsDockArea17.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea17.Size = New System.Drawing.Size(0, 473)
         '
         'UltraToolbarsDockArea18
         '
@@ -1939,7 +1939,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea18.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea18.Location = New System.Drawing.Point(1217, 17)
         Me.UltraToolbarsDockArea18.Name = "UltraToolbarsDockArea18"
-        Me.UltraToolbarsDockArea18.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea18.Size = New System.Drawing.Size(0, 473)
         '
         'UltraToolbarsDockArea15
         '
@@ -1957,7 +1957,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea16.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea16.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me.UltraToolbarsDockArea16.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea16.Location = New System.Drawing.Point(3, 466)
+        Me.UltraToolbarsDockArea16.Location = New System.Drawing.Point(3, 490)
         Me.UltraToolbarsDockArea16.Name = "UltraToolbarsDockArea16"
         Me.UltraToolbarsDockArea16.Size = New System.Drawing.Size(1214, 0)
         '
@@ -1969,7 +1969,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea20.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea20.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea20.Name = "UltraToolbarsDockArea20"
-        Me.UltraToolbarsDockArea20.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea20.Size = New System.Drawing.Size(0, 473)
         '
         'UltraToolbarsDockArea21
         '
@@ -1979,7 +1979,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea21.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea21.Location = New System.Drawing.Point(1217, 17)
         Me.UltraToolbarsDockArea21.Name = "UltraToolbarsDockArea21"
-        Me.UltraToolbarsDockArea21.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea21.Size = New System.Drawing.Size(0, 473)
         '
         'UltraToolbarsDockArea9
         '
@@ -1997,7 +1997,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea10.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea10.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me.UltraToolbarsDockArea10.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea10.Location = New System.Drawing.Point(3, 466)
+        Me.UltraToolbarsDockArea10.Location = New System.Drawing.Point(3, 490)
         Me.UltraToolbarsDockArea10.Name = "UltraToolbarsDockArea10"
         Me.UltraToolbarsDockArea10.Size = New System.Drawing.Size(1214, 0)
         '
@@ -2009,7 +2009,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea11.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea11.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea11.Name = "UltraToolbarsDockArea11"
-        Me.UltraToolbarsDockArea11.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea11.Size = New System.Drawing.Size(0, 473)
         '
         'UltraToolbarsDockArea12
         '
@@ -2019,7 +2019,7 @@ Partial Class frm_FacturarServicio
         Me.UltraToolbarsDockArea12.ForeColor = System.Drawing.Color.MidnightBlue
         Me.UltraToolbarsDockArea12.Location = New System.Drawing.Point(1217, 17)
         Me.UltraToolbarsDockArea12.Name = "UltraToolbarsDockArea12"
-        Me.UltraToolbarsDockArea12.Size = New System.Drawing.Size(0, 449)
+        Me.UltraToolbarsDockArea12.Size = New System.Drawing.Size(0, 473)
         '
         'Agrupacion2
         '
@@ -2811,7 +2811,7 @@ Partial Class frm_FacturarServicio
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Left.ForeColor = System.Drawing.Color.MidnightBlue
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Left.Location = New System.Drawing.Point(0, 0)
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Left.Name = "_UltraTabPageControl2_Toolbars_Dock_Area_1_Left"
-        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Left.Size = New System.Drawing.Size(0, 686)
+        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Left.Size = New System.Drawing.Size(0, 710)
         '
         '_UltraTabPageControl2_Toolbars_Dock_Area_1_Right
         '
@@ -2821,7 +2821,7 @@ Partial Class frm_FacturarServicio
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right.ForeColor = System.Drawing.Color.MidnightBlue
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right.Location = New System.Drawing.Point(1220, 0)
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right.Name = "_UltraTabPageControl2_Toolbars_Dock_Area_1_Right"
-        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right.Size = New System.Drawing.Size(0, 686)
+        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right.Size = New System.Drawing.Size(0, 710)
         '
         '_UltraTabPageControl2_Toolbars_Dock_Area_1_Top
         '
@@ -2839,7 +2839,7 @@ Partial Class frm_FacturarServicio
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.ForeColor = System.Drawing.Color.MidnightBlue
-        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.Location = New System.Drawing.Point(0, 686)
+        Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.Location = New System.Drawing.Point(0, 710)
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.Name = "_UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom"
         Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom.Size = New System.Drawing.Size(1220, 0)
         '
@@ -2850,10 +2850,10 @@ Partial Class frm_FacturarServicio
         Me.ficFacturaCompra.Controls.Add(Me.UltraTabPageControl2)
         Me.ficFacturaCompra.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ficFacturaCompra.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficFacturaCompra.Location = New System.Drawing.Point(0, 24)
+        Me.ficFacturaCompra.Location = New System.Drawing.Point(0, 0)
         Me.ficFacturaCompra.Name = "ficFacturaCompra"
         Me.ficFacturaCompra.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficFacturaCompra.Size = New System.Drawing.Size(1222, 709)
+        Me.ficFacturaCompra.Size = New System.Drawing.Size(1222, 733)
         Me.ficFacturaCompra.TabIndex = 0
         UltraTab1.Key = "Lista"
         UltraTab1.TabPage = Me.UltraTabPageControl1
@@ -2868,7 +2868,7 @@ Partial Class frm_FacturarServicio
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1220, 686)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1220, 710)
         '
         'odListadoDocumentos
         '
@@ -2894,13 +2894,13 @@ Partial Class frm_FacturarServicio
         Me.MenuContextual2.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiNuevo, Me.tsmiActualizar, Me.tsmiEliminar, Me.tsmiAnular, Me.tsmiEmitir, Me.tsmiDescargarPDF, Me.tsmiDescargarXML})
         Me.MenuContextual2.Name = "MenuContextual1"
-        Me.MenuContextual2.Size = New System.Drawing.Size(181, 180)
+        Me.MenuContextual2.Size = New System.Drawing.Size(149, 158)
         '
         'tsmiNuevo
         '
         Me.tsmiNuevo.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
         Me.tsmiNuevo.Name = "tsmiNuevo"
-        Me.tsmiNuevo.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiNuevo.Size = New System.Drawing.Size(148, 22)
         Me.tsmiNuevo.Text = "Nuevo"
         Me.tsmiNuevo.ToolTipText = "Insertar un nuevo Requerimiento"
         '
@@ -2908,7 +2908,7 @@ Partial Class frm_FacturarServicio
         '
         Me.tsmiActualizar.Image = Global.ISL.Win.My.Resources.Resources.Editar
         Me.tsmiActualizar.Name = "tsmiActualizar"
-        Me.tsmiActualizar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiActualizar.Size = New System.Drawing.Size(148, 22)
         Me.tsmiActualizar.Text = "Actualizar"
         Me.tsmiActualizar.ToolTipText = "Actualizar o modificar el Requerimiento seleccionado"
         '
@@ -2916,34 +2916,34 @@ Partial Class frm_FacturarServicio
         '
         Me.tsmiEliminar.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
         Me.tsmiEliminar.Name = "tsmiEliminar"
-        Me.tsmiEliminar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiEliminar.Size = New System.Drawing.Size(148, 22)
         Me.tsmiEliminar.Text = "Eliminar"
         Me.tsmiEliminar.ToolTipText = "Eliminar el Requerimiento seleccionado"
         '
         'tsmiAnular
         '
         Me.tsmiAnular.Name = "tsmiAnular"
-        Me.tsmiAnular.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiAnular.Size = New System.Drawing.Size(148, 22)
         Me.tsmiAnular.Text = "Anular"
         '
         'tsmiEmitir
         '
         Me.tsmiEmitir.Name = "tsmiEmitir"
-        Me.tsmiEmitir.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiEmitir.Size = New System.Drawing.Size(148, 22)
         Me.tsmiEmitir.Text = "Emitir"
         '
         'tsmiDescargarPDF
         '
         Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
-        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
         Me.tsmiDescargarPDF.Text = "Ver PDF"
         '
         'tsmiDescargarXML
         '
         Me.tsmiDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarXML.Name = "tsmiDescargarXML"
-        Me.tsmiDescargarXML.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDescargarXML.Size = New System.Drawing.Size(148, 22)
         Me.tsmiDescargarXML.Text = "Descargar XML"
         '
         'odDetalleDocumento

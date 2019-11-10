@@ -465,7 +465,8 @@ Public Class frm_PagoRetencion
                 If oeRetencion.IndElectronico = 1 Then
                     If Not oeRetencion.IndEnviado Then Throw New Exception("¡El Comprobante no ha sido enviado a SUNAT!")
                     olDocElectronico = New l_ComprobanteElectronico : olConfiguracion = New l_Configuracion
-                    strRuta = olConfiguracion.DocElectronico
+                    'strRuta = olConfiguracion.DocElectronico
+                    strRuta = Path.Combine(Application.StartupPath, "ComprobanteElectronico")
                     strNombre = olDocElectronico.Obtener(New e_ComprobanteElectronico With {.TipoReferencia = 2, .IdReferencia = oeRetencion.Id}).nombrexml
                     'If File.Exists(strRuta.Trim() & "\Retencion\" & strNombre.Trim() & ".zip") Then
                     '    My.Computer.FileSystem.CopyFile(strRuta.Trim() & "\Retencion\" & strNombre.Trim() & ".zip", "D:\" & strNombre.Trim() & ".zip")
@@ -1082,7 +1083,7 @@ Public Class frm_PagoRetencion
                 Cursor.Show()
                 If gridTicket.Selected.Rows.Count = 0 Then Throw New Exception("Debe seleccionar 1 Ticket para consultar.")
                 Dim ticket As String = gridTicket.ActiveRow.Cells("Ticket").Value
-                olMovDocumento.EnviarXMLGetStatus(ticket, gUsuarioSGI.Id, gs_PrefijoIdSucursal)
+                olMovDocumento.EnviarXMLGetStatus(ticket, gUsuarioSGI.Id, gs_PrefijoIdSucursal, Path.Combine(Application.StartupPath, "ComprobanteElectronico"))
                 mensajeEmergente.Confirmacion("Comprobante aceptado por la SUNAT.")
             Else
                 If ficRetencion.SelectedTab.Index = 0 Then
@@ -1118,7 +1119,7 @@ Public Class frm_PagoRetencion
                     ' oeMovDocumento.TipoOperacion = "2"
                     oeDocumentoRetencion.Id = Grilla1.Rows(Grilla1.ActiveRow.Index).Cells("Id").Value
                     oeDocumentoRetencion.TipoOperacion = "E"
-                    olRetencion.ConsultarDocumento(oeDocumentoRetencion)
+                    olRetencion.ConsultarDocumento(oeDocumentoRetencion, Path.Combine(Application.StartupPath, "ComprobanteElectronico"))
                 Catch ex As Exception
                     sbMensajeError.AppendLine("Documento " & Grilla1.Rows(Grilla1.ActiveRow.Index).Cells("Id").Value & ": " & ex.Message)
                     contErrores += 1

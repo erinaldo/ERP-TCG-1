@@ -168,6 +168,10 @@ Public Class frm_Login
             gs_TxtEmpresaSistema = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
             gs_RucEmpresaSistema = "20480099720"
             gs_DireccionEmpresaSistema = "CAL.LORA Y LORA NRO. 2450 P.J. SANTA ANA (GRIFO REPSOL - OFICINA SEGUNDO PISO) LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
+            gs_SmtpClientSis = "mail.alexylalito.pe"
+            gs_userNameCorreo = "mail_erptcg@alexylalito.pe"
+            gs_passwordCorreo = "789-+ERPtcg"
+
             '@0001 Fin VG
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

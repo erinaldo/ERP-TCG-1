@@ -20,9 +20,9 @@ Public Class l_Configuracion
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function Fotos() As String Implements Il_Configuracion.Fotos
-        Return odDatosConfiguracion.Fotos
-    End Function
+    'Public Function Fotos() As String Implements Il_Configuracion.Fotos
+    '    Return odDatosConfiguracion.Fotos
+    'End Function
 
     ''' <summary>
     ''' Retorna el IP del Servidor por defecto
@@ -60,8 +60,8 @@ Public Class l_Configuracion
         Return odDatosConfiguracion.Sedes
     End Function
 
-    Public Function DocElectronico() As String Implements Il_Configuracion.DocElectronico
-        Return odDatosConfiguracion.DocElectronico
-    End Function
+    'Public Function DocElectronico() As String Implements Il_Configuracion.DocElectronico
+    '    Return odDatosConfiguracion.DocElectronico
+    'End Function
 
 End Class

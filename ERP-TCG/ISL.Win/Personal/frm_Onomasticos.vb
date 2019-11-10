@@ -9,6 +9,7 @@
 Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
 Imports Microsoft.Office.Interop
+Imports System.IO
 
 Public Class frm_Onomasticos
     Inherits frm_MenuPadre
@@ -242,11 +243,11 @@ Public Class frm_Onomasticos
             Dim oPres As PowerPoint.Presentation
             Dim sTemplate As String
             If opcFormato1.Checked Then
-                sTemplate = "\\" & olConfiguracion.IPServidor & "\Fotos\CumpleFormato1.pptm"
+                sTemplate = "\\" & Path.Combine(Application.StartupPath, "Fotos") & "\CumpleFormato1.pptm"
             ElseIf opcFormato2.Checked Then
-                sTemplate = "\\" & olConfiguracion.IPServidor & "\Fotos\CumpleFormato2.pptm"
+                sTemplate = "\\" & Path.Combine(Application.StartupPath, "Fotos") & "\CumpleFormato2.pptm"
             Else
-                sTemplate = "\\" & olConfiguracion.IPServidor & "\Fotos\CumpleFormato3.pptm"
+                sTemplate = "\\" & Path.Combine(Application.StartupPath, "Fotos") & "\CumpleFormato3.pptm"
             End If
 
             If Not System.IO.File.Exists(sTemplate) Then Throw New Exception("El archivo " & sTemplate & " no existe, comuníquese con el área de sistemas para recuperarlo")
@@ -268,7 +269,7 @@ Public Class frm_Onomasticos
 
 
             Dim foto As String = "\\" & olConfiguracion.IPServidor & "\Fotos\" & griOnomasticos.ActiveRow.Cells("Dni").Value & ".jpg"
-            Dim logo As String = "\\" & olConfiguracion.IPServidor & "\Imagenes\Logo Induamerica.jpg"
+            Dim logo As String = "\\" & Path.Combine(Application.StartupPath, "Imagenes") & "\Logo EMP.jpg"
 
 
             If opcFormato1.Checked Then
@@ -449,7 +450,7 @@ Public Class frm_Onomasticos
 
     Private Sub frm_Onomasticos_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
         ControlBoton(1, 0, 0, 0, 0, 0, 0, 0, 1)
-        Dim archivoComplemetario = "\\" & olConfiguracion.IPServidor & "\Fotos\SinFoto.jpg"
+        Dim archivoComplemetario = "\\" & Path.Combine(Application.StartupPath, "Fotos") & "\SinFoto.jpg"
         If Not System.IO.File.Exists(archivoComplemetario) Then Throw New Exception("El archivo SinFoto.jpg ha sido eliminado, comuníquese con el área de sistemas para recuperarlo")
     End Sub
 
