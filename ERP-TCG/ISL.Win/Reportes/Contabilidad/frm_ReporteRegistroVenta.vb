@@ -94,14 +94,15 @@ Public Class frm_ReporteRegistroVenta
 
             ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
 
-            Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("Ejercicio", Año1.Año.ToString, True)
-            myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Mes", cboMes.Text, True)
-
+            'Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
+            'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("Ejercicio", Año1.Año.ToString, True)
+            'myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Mes", cboMes.Text, True)
+            dt.Rows(0).Item("EmpresaSis") = gs_TxtEmpresaSistema.Trim
+            dt.Rows(0).Item("RucSis") = gs_RucEmpresaSistema.Trim
             Dim oReport As New ReportDataSource("dsRegistroVentas_Ventas", dt)
 
             ReportViewer1.LocalReport.DataSources.Clear()
-            ReportViewer1.LocalReport.SetParameters(myParams)
+            'ReportViewer1.LocalReport.SetParameters(myParams)
             ReportViewer1.LocalReport.DataSources.Add(oReport)
 
             ReportViewer1.LocalReport.Refresh()

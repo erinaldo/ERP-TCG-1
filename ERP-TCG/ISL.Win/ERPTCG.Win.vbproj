@@ -250,23 +250,11 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Nevado\Desktop\Nueva carpeta\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Nevado\Desktop\Nueva carpeta\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Nevado\Desktop\Nueva carpeta\Microsoft.ReportViewer.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Nevado\Desktop\Nueva carpeta\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\Nevado\Desktop\Nueva carpeta\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -6494,6 +6482,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\Libro12-1.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\Libro13-1.rdlc" />
+    <EmbeddedResource Include="Reportes\Contabilidad\rpt_RegistroVentas.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_ValesConsumoCombustible.rdlc" />
     <EmbeddedResource Include="Reportes\frm_FacturaBoletaElectronico.resx">
       <DependentUpon>frm_FacturaBoletaElectronico.vb</DependentUpon>
@@ -6689,7 +6678,9 @@
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ReporteRelacionVentaTracto.resx">
       <DependentUpon>frm_ReporteRelacionVentaTracto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Contabilidad\ReporteVentas.rdlc" />
+    <EmbeddedResource Include="Reportes\Contabilidad\ReporteVentas.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\EstadoCuenta.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\frm_EstadoCuenta.resx">
       <DependentUpon>frm_EstadoCuenta.vb</DependentUpon>
@@ -9975,26 +9966,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Office.Interop.Excel">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.Common">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
       <Group>
       </Group>

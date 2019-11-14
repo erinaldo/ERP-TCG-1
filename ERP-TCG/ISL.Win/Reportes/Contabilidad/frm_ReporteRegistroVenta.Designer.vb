@@ -22,19 +22,19 @@ Partial Class frm_ReporteRegistroVenta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
+        Me.components = New System.ComponentModel.Container()
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.VentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.dsRegistroVentas = New ISL.Win.dsRegistroVentas
+        Me.dsRegistroVentas = New ISL.Win.dsRegistroVentas()
         Me.Agrupacion1 = New ISL.Controles.Agrupacion(Me.components)
         Me.Etiqueta7 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboMes = New ISL.Controles.Combo(Me.components)
-        Me.Año1 = New ISL.Win.Año
+        Me.Año1 = New ISL.Win.Año()
         Me.numAño = New ISL.Controles.NumeroEntero(Me.components)
         Me.Etiqueta2 = New ISL.Controles.Etiqueta(Me.components)
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.VentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dsRegistroVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,7 +98,7 @@ Partial Class frm_ReporteRegistroVenta
         '
         'Año1
         '
-        Me.Año1.Año = 2013
+        Me.Año1.Año = 2019
         Me.Año1.Controls.Add(Me.numAño)
         Me.Año1.Location = New System.Drawing.Point(61, 26)
         Me.Año1.Name = "Año1"
@@ -107,8 +107,8 @@ Partial Class frm_ReporteRegistroVenta
         '
         'numAño
         '
-        Appearance25.ForeColor = System.Drawing.Color.Black
-        Me.numAño.Appearance = Appearance25
+        Appearance2.ForeColor = System.Drawing.Color.Black
+        Me.numAño.Appearance = Appearance2
         Me.numAño.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.numAño.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.numAño.ForeColor = System.Drawing.Color.Black
@@ -141,7 +141,7 @@ Partial Class frm_ReporteRegistroVenta
         ReportDataSource1.Name = "dsRegistroVentas_Ventas"
         ReportDataSource1.Value = Me.VentasBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ISL.Win.ReporteVentas.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_RegistroVentas.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 55)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(714, 428)

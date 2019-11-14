@@ -331,6 +331,10 @@ Partial Public Class dsRegistroVentas
         
         Private columnNumeroAsoc As Global.System.Data.DataColumn
         
+        Private columnEmpresaSis As Global.System.Data.DataColumn
+        
+        Private columnRucSis As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -559,6 +563,22 @@ Partial Public Class dsRegistroVentas
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EmpresaSisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmpresaSis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property RucSisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRucSis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -619,9 +639,11 @@ Partial Public Class dsRegistroVentas
                     ByVal FechaAsoc As String,  _
                     ByVal TipoDocAsoc As String,  _
                     ByVal SerieAsoc As String,  _
-                    ByVal NumeroAsoc As String) As VentasRow
+                    ByVal NumeroAsoc As String,  _
+                    ByVal EmpresaSis As String,  _
+                    ByVal RucSis As String) As VentasRow
             Dim rowVentasRow As VentasRow = CType(Me.NewRow,VentasRow)
-            Dim columnValuesArray() As Object = New Object() {FechaEmision, FechaVencimiento, TipoDoc, Serie, Numero, TipoIdent, Dni, Nombre, Abreviatura, TipoCambio, Grabado, IGV, Exportacion, Exonerado, ISC, Inafecto, OtrosTributos, Total, Ejercicio, Mes, FechaAsoc, TipoDocAsoc, SerieAsoc, NumeroAsoc}
+            Dim columnValuesArray() As Object = New Object() {FechaEmision, FechaVencimiento, TipoDoc, Serie, Numero, TipoIdent, Dni, Nombre, Abreviatura, TipoCambio, Grabado, IGV, Exportacion, Exonerado, ISC, Inafecto, OtrosTributos, Total, Ejercicio, Mes, FechaAsoc, TipoDocAsoc, SerieAsoc, NumeroAsoc, EmpresaSis, RucSis}
             rowVentasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowVentasRow)
             Return rowVentasRow
@@ -668,6 +690,8 @@ Partial Public Class dsRegistroVentas
             Me.columnTipoDocAsoc = MyBase.Columns("TipoDocAsoc")
             Me.columnSerieAsoc = MyBase.Columns("SerieAsoc")
             Me.columnNumeroAsoc = MyBase.Columns("NumeroAsoc")
+            Me.columnEmpresaSis = MyBase.Columns("EmpresaSis")
+            Me.columnRucSis = MyBase.Columns("RucSis")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -721,6 +745,10 @@ Partial Public Class dsRegistroVentas
             MyBase.Columns.Add(Me.columnSerieAsoc)
             Me.columnNumeroAsoc = New Global.System.Data.DataColumn("NumeroAsoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumeroAsoc)
+            Me.columnEmpresaSis = New Global.System.Data.DataColumn("EmpresaSis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmpresaSis)
+            Me.columnRucSis = New Global.System.Data.DataColumn("RucSis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRucSis)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1227,6 +1255,36 @@ Partial Public Class dsRegistroVentas
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmpresaSis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVentas.EmpresaSisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EmpresaSis' de la tabla 'Ventas' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVentas.EmpresaSisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property RucSis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableVentas.RucSisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'RucSis' de la tabla 'Ventas' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableVentas.RucSisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsFechaEmisionNull() As Boolean
             Return Me.IsNull(Me.tableVentas.FechaEmisionColumn)
         End Function
@@ -1511,6 +1569,30 @@ Partial Public Class dsRegistroVentas
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetNumeroAsocNull()
             Me(Me.tableVentas.NumeroAsocColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsEmpresaSisNull() As Boolean
+            Return Me.IsNull(Me.tableVentas.EmpresaSisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetEmpresaSisNull()
+            Me(Me.tableVentas.EmpresaSisColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsRucSisNull() As Boolean
+            Return Me.IsNull(Me.tableVentas.RucSisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetRucSisNull()
+            Me(Me.tableVentas.RucSisColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
