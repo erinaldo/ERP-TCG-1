@@ -2894,7 +2894,7 @@ TOTAL</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>="REGISTRO DE VENTAS DEL MES DE " &amp; MonthName(First(Fields!Mes.Value, "dsRegistroVentas_Ventas")) &amp; " DEL " &amp; First(Fields!Ejercicio.Value, "dsRegistroVentas_Ventas")</Value>
+                  <Value>="REGISTRO DE VENTAS DEL MES DE " &amp; UCase(MonthName(First(Fields!Mes.Value, "dsRegistroVentas_Ventas"))) &amp; " DEL " &amp; First(Fields!Ejercicio.Value, "dsRegistroVentas_Ventas")</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
                   </Style>
