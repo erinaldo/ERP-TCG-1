@@ -47,7 +47,7 @@ Partial Class frm_ImprimeCobroPagoAnticipo
         ReportDataSource1.Name = "dsAnticipoCobroPago_CobroPagoAnticipo"
         ReportDataSource1.Value = Me.CobroPagoAnticipoBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ISL.Win.CobroPagoAnticipo.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_CobroPagoAnticipo.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(949, 548)

@@ -6482,6 +6482,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\Libro12-1.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\Libro13-1.rdlc" />
+    <EmbeddedResource Include="Reportes\Contabilidad\rpt_CobroPagoAnticipo.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_RegistroVentas.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_ValesConsumoCombustible.rdlc" />
     <EmbeddedResource Include="Reportes\frm_FacturaBoletaElectronico.resx">

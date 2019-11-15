@@ -309,6 +309,12 @@ Partial Public Class dsAnticipoCobroPago
         
         Private columnTipoGasto As Global.System.Data.DataColumn
         
+        Private columnEmpresaSis As Global.System.Data.DataColumn
+        
+        Private columnCantidadLetras As Global.System.Data.DataColumn
+        
+        Private columnIndIngreso As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -449,6 +455,30 @@ Partial Public Class dsAnticipoCobroPago
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EmpresaSisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmpresaSis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CantidadLetrasColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCantidadLetras
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IndIngresoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnIndIngreso
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -485,9 +515,25 @@ Partial Public Class dsAnticipoCobroPago
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddCobroPagoAnticipoRow(ByVal FecMov As String, ByVal CtaOrigen As String, ByVal NroCtaOrigen As String, ByVal FlujoCaja As String, ByVal Glosa As String, ByVal Moneda As String, ByVal Importe As String, ByVal FecConsulta As String, ByVal Usuario As String, ByVal NroImpresion As String, ByVal ProvClie As String, ByVal Dni As String, ByVal TipoGasto As String) As CobroPagoAnticipoRow
+        Public Overloads Function AddCobroPagoAnticipoRow( _
+                    ByVal FecMov As String,  _
+                    ByVal CtaOrigen As String,  _
+                    ByVal NroCtaOrigen As String,  _
+                    ByVal FlujoCaja As String,  _
+                    ByVal Glosa As String,  _
+                    ByVal Moneda As String,  _
+                    ByVal Importe As String,  _
+                    ByVal FecConsulta As String,  _
+                    ByVal Usuario As String,  _
+                    ByVal NroImpresion As String,  _
+                    ByVal ProvClie As String,  _
+                    ByVal Dni As String,  _
+                    ByVal TipoGasto As String,  _
+                    ByVal EmpresaSis As String,  _
+                    ByVal CantidadLetras As String,  _
+                    ByVal IndIngreso As String) As CobroPagoAnticipoRow
             Dim rowCobroPagoAnticipoRow As CobroPagoAnticipoRow = CType(Me.NewRow,CobroPagoAnticipoRow)
-            Dim columnValuesArray() As Object = New Object() {FecMov, CtaOrigen, NroCtaOrigen, FlujoCaja, Glosa, Moneda, Importe, FecConsulta, Usuario, NroImpresion, ProvClie, Dni, TipoGasto}
+            Dim columnValuesArray() As Object = New Object() {FecMov, CtaOrigen, NroCtaOrigen, FlujoCaja, Glosa, Moneda, Importe, FecConsulta, Usuario, NroImpresion, ProvClie, Dni, TipoGasto, EmpresaSis, CantidadLetras, IndIngreso}
             rowCobroPagoAnticipoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCobroPagoAnticipoRow)
             Return rowCobroPagoAnticipoRow
@@ -523,6 +569,9 @@ Partial Public Class dsAnticipoCobroPago
             Me.columnProvClie = MyBase.Columns("ProvClie")
             Me.columnDni = MyBase.Columns("Dni")
             Me.columnTipoGasto = MyBase.Columns("TipoGasto")
+            Me.columnEmpresaSis = MyBase.Columns("EmpresaSis")
+            Me.columnCantidadLetras = MyBase.Columns("CantidadLetras")
+            Me.columnIndIngreso = MyBase.Columns("IndIngreso")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -554,6 +603,12 @@ Partial Public Class dsAnticipoCobroPago
             MyBase.Columns.Add(Me.columnDni)
             Me.columnTipoGasto = New Global.System.Data.DataColumn("TipoGasto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTipoGasto)
+            Me.columnEmpresaSis = New Global.System.Data.DataColumn("EmpresaSis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmpresaSis)
+            Me.columnCantidadLetras = New Global.System.Data.DataColumn("CantidadLetras", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCantidadLetras)
+            Me.columnIndIngreso = New Global.System.Data.DataColumn("IndIngreso", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnIndIngreso)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -895,6 +950,52 @@ Partial Public Class dsAnticipoCobroPago
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmpresaSis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCobroPagoAnticipo.EmpresaSisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EmpresaSis' de la tabla 'CobroPagoAnticipo' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCobroPagoAnticipo.EmpresaSisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CantidadLetras() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCobroPagoAnticipo.CantidadLetrasColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CantidadLetras' de la tabla 'CobroPagoAnticipo' es DBNull"& _ 
+                            ".", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCobroPagoAnticipo.CantidadLetrasColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property IndIngreso() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCobroPagoAnticipo.IndIngresoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'IndIngreso' de la tabla 'CobroPagoAnticipo' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCobroPagoAnticipo.IndIngresoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsFecMovNull() As Boolean
             Return Me.IsNull(Me.tableCobroPagoAnticipo.FecMovColumn)
         End Function
@@ -1047,6 +1148,42 @@ Partial Public Class dsAnticipoCobroPago
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetTipoGastoNull()
             Me(Me.tableCobroPagoAnticipo.TipoGastoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsEmpresaSisNull() As Boolean
+            Return Me.IsNull(Me.tableCobroPagoAnticipo.EmpresaSisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetEmpresaSisNull()
+            Me(Me.tableCobroPagoAnticipo.EmpresaSisColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCantidadLetrasNull() As Boolean
+            Return Me.IsNull(Me.tableCobroPagoAnticipo.CantidadLetrasColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCantidadLetrasNull()
+            Me(Me.tableCobroPagoAnticipo.CantidadLetrasColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsIndIngresoNull() As Boolean
+            Return Me.IsNull(Me.tableCobroPagoAnticipo.IndIngresoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetIndIngresoNull()
+            Me(Me.tableCobroPagoAnticipo.IndIngresoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

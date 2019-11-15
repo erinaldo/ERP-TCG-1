@@ -28,16 +28,29 @@ Public Class frm_ImprimeCobroPagoAnticipo
             If dt.Rows.Count = 0 And msTipoOperacion <> "Obligacion" Then
                 dt = olAsiento.ImprimeCobroPagoAnticipoObligacion(Id, "Obligacion")
             End If
+            '@0001 Ini
+            Dim dc As DataColumn
+            dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
+            dt.Columns.Add(dc)
+            dc = New DataColumn("CantidadLetras", Type.GetType("System.String"))
+            dt.Columns.Add(dc)
+            dc = New DataColumn("IndIngreso", Type.GetType("System.String"))
+            dt.Columns.Add(dc)
+            dt.Rows(0).Item("EmpresaSis") = gs_TxtEmpresaSistema.Trim
+            dt.Rows(0).Item("CantidadLetras") = Conversiones.NumerosALetras.Ejecutar(Math.Round(dt.Rows(0).Item("Importe"), 2), True)
+            dt.Rows(0).Item("IndIngreso") = Ingreso
+            '@0001 Fin
             ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
 
             Dim oReport As New ReportDataSource("dsAnticipoCobroPago_CobroPagoAnticipo", dt)
-
-            Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
-            Conversiones.NumerosALetras.Ejecutar(Math.Round(dt.Rows(0).Item("Importe"), 2), True))
-            myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("IndIngreso", Ingreso, True)
+            '@0001 Ini
+            'Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
+            'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
+            'Conversiones.NumerosALetras.Ejecutar(Math.Round(dt.Rows(0).Item("Importe"), 2), True))
+            'myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("IndIngreso", Ingreso, True)
+            '@0001 Fin
             ReportViewer1.LocalReport.DataSources.Clear()
-            ReportViewer1.LocalReport.SetParameters(myParams)
+            'ReportViewer1.LocalReport.SetParameters(myParams) '@0001
             ReportViewer1.LocalReport.DataSources.Add(oReport)
 
             ReportViewer1.LocalReport.Refresh()
