@@ -102,6 +102,7 @@ Public Class frm_Usuario
                 txtDni.Focus()
                 'Habilitar(IIf(Not PerfilIdAsignado("1CH000000001"), False, True))
                 agrListaPerfil.Expanded = False
+                agrListaCentro.Expanded = False
                 agrListaTurno.Expanded = False
                 Operacion = "Editar"
                 MyBase.Editar()
@@ -592,6 +593,7 @@ Public Class frm_Usuario
             ListarTurno()
             AsociarMenu()
             oeControlTU = New e_ControlTurnoUsuario
+            LimpiaGrid(griCentro, ordCentro)
             ListarSucursal() '@0001
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
@@ -623,6 +625,7 @@ Public Class frm_Usuario
             'LlenarPerfil()
             oeUsuario.oePersona.oeSexo.Id = Sexo1.Sexo.Id
             oeUsuario.leUsuarioPerfil = olUsuarioPerfil
+            oeUsuario.leUsuarioSucursal = olUsuarioSucursal
             oeUsuario.leTurnoUsuario = olTurnoUsuario
             oeUsuario.oeControlTurnoUsuario = oeControlTU
             oeUsuario.PrefijoID = gs_PrefijoIdSucursal '@0001
@@ -787,7 +790,7 @@ Public Class frm_Usuario
             verActivo.Checked = oeUsuario.Activo
             olUsuarioPerfil = oeUsuario.leUsuarioPerfil
             olTurnoUsuario = oeUsuario.leTurnoUsuario
-
+            olUsuarioSucursal = oeUsuario.leUsuarioSucursal '@0001
             verCierreAutomatico.Checked = oeUsuario.oeControlTurnoUsuario.CierreAutomatico
             verLanzaAlerta.Checked = oeUsuario.oeControlTurnoUsuario.LanzaAlerta
             numIntervalo.Value = oeUsuario.oeControlTurnoUsuario.Intervalo
@@ -985,6 +988,10 @@ Public Class frm_Usuario
 
                 .DisplayLayout.Bands(0).Columns("Id").Hidden = True
                 .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Codigo").Hidden = True
+                .DisplayLayout.Bands(0).Columns("IdEmpresa").Hidden = True
+                .DisplayLayout.Bands(0).Columns("IdAlmacen").Hidden = True
+                .DisplayLayout.Bands(0).Columns("IdLugar").Hidden = True
                 .DisplayLayout.Bands(0).Columns("Abreviatura").Hidden = True
                 .DisplayLayout.Bands(0).Columns("FechaCreacion").Hidden = True
                 .DisplayLayout.Bands(0).Columns("UsuarioCreacion").Hidden = True
@@ -1010,16 +1017,15 @@ Public Class frm_Usuario
             With griCentro
 
                 Dim _leUsuAux = From le In leSucursalUsuario
-                                Select le.Id, IdCentro = le.oeCentro.Id, Perfil = le.oeCentro.Nombre, le.Principal
+                                Select le.Id, IdCentro = le.oeCentro.Id, Centro = le.oeCentro.Nombre, le.Principal
 
                 .DataSource = _leUsuAux.ToList
 
                 .DisplayLayout.Bands(0).Columns("Id").Hidden = True
                 .DisplayLayout.Bands(0).Columns("IdCentro").Hidden = True
-
                 .DisplayLayout.Bands(0).Columns("Principal").Style = UltraWinGrid.ColumnStyle.CheckBox
 
-                .DisplayLayout.Bands(0).Columns("Sucursal").CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
+                .DisplayLayout.Bands(0).Columns("Centro").CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
 
 
             End With

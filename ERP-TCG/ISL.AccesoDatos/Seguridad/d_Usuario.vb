@@ -18,6 +18,8 @@ Public Class d_Usuario
     Dim odPersona As New d_Persona
     Dim oeUsuarioPerfil As New e_UsuarioPerfil
     Dim odUsuarioPerfil As New d_UsuarioPerfil
+    Dim oeUsuarioSucursal As New e_UsuarioSucursal
+    Dim odUsuarioSucursal As New d_UsuarioSucursal
     Dim oeTurnoUsuario As New e_TurnoUsuario
     Dim odTurnoUsuario As New d_TurnoUsuario
     Dim oeControlTurnoUsuario As New e_ControlTurnoUsuario
@@ -215,6 +217,8 @@ Public Class d_Usuario
                     If lb_Ind Then
                         oeUsuarioPerfil.oeUsuario.Id = oeUsu.Id
                         oeUsu.leUsuarioPerfil = odUsuarioPerfil.Listar(oeUsuarioPerfil)
+                        oeUsuarioSucursal.oeUsuario.Id = oeUsu.Id '@0001
+                        oeUsu.leUsuarioSucursal = odUsuarioSucursal.Listar(oeUsuarioSucursal) '@0001
                         oeTurnoUsuario.IdUsuario = oeUsu.Id
                         oeUsu.leTurnoUsuario = odTurnoUsuario.Listar(oeTurnoUsuario)
                         oeControlTurnoUsuario.IdUsuario = oeUsu.Id
@@ -439,6 +443,15 @@ Public Class d_Usuario
                             odUsuarioPerfil.Guardar(oeUsuarioPerfil)
                         Next
                     End If
+                    '@0001 Ini
+                    If oeUsuario.leUsuarioSucursal IsNot Nothing Then
+                        For Each oeUsuarioSucursal As e_UsuarioSucursal In oeUsuario.leUsuarioSucursal
+                            oeUsuarioSucursal.oeUsuario.Id = id
+                            oeUsuarioSucursal.PrefijoID = oeUsuario.PrefijoID
+                            odUsuarioSucursal.Guardar(oeUsuarioSucursal)
+                        Next
+                    End If
+                    '@0001 Fin
                     If oeUsuario.leTurnoUsuario IsNot Nothing Then
                         For Each oeTurnoUsuario As e_TurnoUsuario In oeUsuario.leTurnoUsuario
                             oeTurnoUsuario.IdUsuario = id

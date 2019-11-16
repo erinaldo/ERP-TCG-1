@@ -116,7 +116,7 @@ Public Class d_UsuarioSucursal
                 SqlHelper.ExecuteNonQuery("SGD.Isp_UsuarioSucursal_IAE", .TipoOperacion _
                         , .Id _
                         , .oeUsuario.Id _
-                        , .oeCentro.Id _
+                        , .oeCentro.Id.Trim _
                         , .Descripcion _
                         , .Principal _
                         , .Activo _
