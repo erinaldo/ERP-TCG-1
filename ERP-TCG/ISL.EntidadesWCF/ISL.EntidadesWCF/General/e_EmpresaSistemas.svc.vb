@@ -12,7 +12,9 @@ Public Class e_EmpresaSistemas
     Private _Codigo As String
     Private _Abreviatura As String
     Private _Nombre As String
+    Private _IdClienteProveedor As String
     Private _IdEmpresa As String
+    Private _Ruc As String
     Private _TokenRuc As String
     Private _IndPrincipal As Boolean
     Private _UsuarioCrea As String
@@ -64,7 +66,9 @@ Public Class e_EmpresaSistemas
     Private _Gerente As String
     Private _VersionSis As String
     Private _FotosDisponible As Boolean
-
+    Private _SmtpClient As String
+    Private _UserName As String
+    Private _Password As String
     <DataMember()>
     Public TipoOperacion As String
     <DataMember()>
@@ -85,7 +89,9 @@ Public Class e_EmpresaSistemas
         _Codigo = ""
         _Abreviatura = ""
         _Nombre = ""
+        _IdClienteProveedor = ""
         _IdEmpresa = ""
+        _Ruc = ""
         _TokenRuc = ""
         _IndPrincipal = True
         _UsuarioCrea = ""
@@ -137,6 +143,9 @@ Public Class e_EmpresaSistemas
         _Gerente = ""
         _VersionSis = ""
         _FotosDisponible = True
+        _SmtpClient = ""
+        _userName = ""
+        _password = ""
     End Sub
 
     Public Sub New(
@@ -144,7 +153,9 @@ Public Class e_EmpresaSistemas
           , ByVal ls_Codigo As String _
           , ByVal ls_Abreviatura As String _
           , ByVal ls_Nombre As String _
+          , ByVal ls_IdClienteProveedor As String _
           , ByVal ls_IdEmpresa As String _
+          , ByVal ls_Ruc As String _
           , ByVal ls_TokenRuc As String _
           , ByVal lb_IndPrincipal As Boolean _
           , ByVal ls_UsuarioCrea As String _
@@ -195,13 +206,18 @@ Public Class e_EmpresaSistemas
           , ByVal ls_Jefe As String _
           , ByVal ls_Gerente As String _
           , ByVal ls_VersionSis As String _
-          , ByVal lb_FotosDisponible As Boolean
+          , ByVal lb_FotosDisponible As Boolean _
+          , ByVal ls_SmtpClient As String _
+          , ByVal ls_UserName As String _
+          , ByVal ls_Password As String
        )
         _Id = ls_Id
         _Codigo = ls_Codigo
         _Abreviatura = ls_Abreviatura
         _Nombre = ls_Nombre
+        _IdClienteProveedor = ls_IdClienteProveedor
         _IdEmpresa = ls_IdEmpresa
+        _Ruc = ls_Ruc
         _TokenRuc = ls_TokenRuc
         _IndPrincipal = lb_IndPrincipal
         _UsuarioCrea = ls_UsuarioCrea
@@ -253,11 +269,14 @@ Public Class e_EmpresaSistemas
         _Gerente = ls_Gerente
         _VersionSis = ls_VersionSis
         _FotosDisponible = lb_FotosDisponible
+        _SmtpClient = ls_SmtpClient
+        _userName = ls_UserName
+        _Password = ls_Password
     End Sub
 
 #End Region
 #Region "Propiedades"
-
+    <DataMember()>
     Public Property Id() As String
         Get
             Return _Id
@@ -266,7 +285,7 @@ Public Class e_EmpresaSistemas
             _Id = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Codigo() As String
         Get
             Return _Codigo
@@ -275,7 +294,7 @@ Public Class e_EmpresaSistemas
             _Codigo = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Abreviatura() As String
         Get
             Return _Abreviatura
@@ -284,7 +303,7 @@ Public Class e_EmpresaSistemas
             _Abreviatura = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Nombre() As String
         Get
             Return _Nombre
@@ -293,7 +312,16 @@ Public Class e_EmpresaSistemas
             _Nombre = value
         End Set
     End Property
-
+    <DataMember()>
+    Public Property IdClienteProveedor() As String
+        Get
+            Return _IdClienteProveedor
+        End Get
+        Set(ByVal value As String)
+            _IdClienteProveedor = value
+        End Set
+    End Property
+    <DataMember()>
     Public Property IdEmpresa() As String
         Get
             Return _IdEmpresa
@@ -302,7 +330,16 @@ Public Class e_EmpresaSistemas
             _IdEmpresa = value
         End Set
     End Property
-
+    <DataMember()>
+    Public Property Ruc() As String
+        Get
+            Return _Ruc
+        End Get
+        Set(ByVal value As String)
+            _Ruc = value
+        End Set
+    End Property
+    <DataMember()>
     Public Property TokenRuc() As String
         Get
             Return _TokenRuc
@@ -311,7 +348,7 @@ Public Class e_EmpresaSistemas
             _TokenRuc = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property IndPrincipal() As Boolean
         Get
             Return _IndPrincipal
@@ -320,7 +357,7 @@ Public Class e_EmpresaSistemas
             _IndPrincipal = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property UsuarioCrea() As String
         Get
             Return _UsuarioCrea
@@ -329,7 +366,7 @@ Public Class e_EmpresaSistemas
             _UsuarioCrea = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property FechaCrea() As Date
         Get
             Return _FechaCrea
@@ -338,7 +375,7 @@ Public Class e_EmpresaSistemas
             _FechaCrea = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property UsuarioModifica() As String
         Get
             Return _UsuarioModifica
@@ -347,7 +384,7 @@ Public Class e_EmpresaSistemas
             _UsuarioModifica = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property FechaModifica() As Date
         Get
             Return _FechaModifica
@@ -356,7 +393,7 @@ Public Class e_EmpresaSistemas
             _FechaModifica = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Activo() As Boolean
         Get
             Return _Activo
@@ -365,7 +402,7 @@ Public Class e_EmpresaSistemas
             _Activo = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property RutaDocumentos() As String
         Get
             Return _RutaDocumentos
@@ -374,7 +411,7 @@ Public Class e_EmpresaSistemas
             _RutaDocumentos = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property RutaCDR() As String
         Get
             Return _RutaCDR
@@ -383,7 +420,7 @@ Public Class e_EmpresaSistemas
             _RutaCDR = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property RutaFirma() As String
         Get
             Return _RutaFirma
@@ -392,7 +429,7 @@ Public Class e_EmpresaSistemas
             _RutaFirma = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property ClaveFirma() As String
         Get
             Return _ClaveFirma
@@ -401,7 +438,7 @@ Public Class e_EmpresaSistemas
             _ClaveFirma = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Ubigeo() As String
         Get
             Return _Ubigeo
@@ -410,7 +447,7 @@ Public Class e_EmpresaSistemas
             _Ubigeo = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Departamento() As String
         Get
             Return _Departamento
@@ -419,7 +456,7 @@ Public Class e_EmpresaSistemas
             _Departamento = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Provincia() As String
         Get
             Return _Provincia
@@ -428,7 +465,7 @@ Public Class e_EmpresaSistemas
             _Provincia = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Distrito() As String
         Get
             Return _Distrito
@@ -437,7 +474,7 @@ Public Class e_EmpresaSistemas
             _Distrito = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Direccion() As String
         Get
             Return _Direccion
@@ -446,7 +483,7 @@ Public Class e_EmpresaSistemas
             _Direccion = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property UsuarioSol() As String
         Get
             Return _UsuarioSol
@@ -455,7 +492,7 @@ Public Class e_EmpresaSistemas
             _UsuarioSol = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property ClaveSol() As String
         Get
             Return _ClaveSol
@@ -464,7 +501,7 @@ Public Class e_EmpresaSistemas
             _ClaveSol = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property EstadoDisponibilidadBD() As String
         Get
             Return _EstadoDisponibilidadBD
@@ -473,7 +510,7 @@ Public Class e_EmpresaSistemas
             _EstadoDisponibilidadBD = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property MensajeInicialBD() As String
         Get
             Return _MensajeInicialBD
@@ -482,7 +519,7 @@ Public Class e_EmpresaSistemas
             _MensajeInicialBD = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property MensajeUsuariosConectadosBD() As String
         Get
             Return _MensajeUsuariosConectadosBD
@@ -491,7 +528,7 @@ Public Class e_EmpresaSistemas
             _MensajeUsuariosConectadosBD = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property EstadoDisponibilidadReplica() As String
         Get
             Return _EstadoDisponibilidadReplica
@@ -500,7 +537,7 @@ Public Class e_EmpresaSistemas
             _EstadoDisponibilidadReplica = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property MensajeInicialRP() As String
         Get
             Return _MensajeInicialRP
@@ -509,7 +546,7 @@ Public Class e_EmpresaSistemas
             _MensajeInicialRP = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property MensajeUsuariosConectadosRP() As String
         Get
             Return _MensajeUsuariosConectadosRP
@@ -518,7 +555,7 @@ Public Class e_EmpresaSistemas
             _MensajeUsuariosConectadosRP = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Compras() As String
         Get
             Return _Compras
@@ -527,7 +564,7 @@ Public Class e_EmpresaSistemas
             _Compras = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Ventas() As String
         Get
             Return _Ventas
@@ -536,7 +573,7 @@ Public Class e_EmpresaSistemas
             _Ventas = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Contabilidad() As String
         Get
             Return _Contabilidad
@@ -545,7 +582,7 @@ Public Class e_EmpresaSistemas
             _Contabilidad = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Administracion() As String
         Get
             Return _Administracion
@@ -554,7 +591,7 @@ Public Class e_EmpresaSistemas
             _Administracion = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Neumaticos() As String
         Get
             Return _Neumaticos
@@ -563,7 +600,7 @@ Public Class e_EmpresaSistemas
             _Neumaticos = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Operaciones() As String
         Get
             Return _Operaciones
@@ -572,7 +609,7 @@ Public Class e_EmpresaSistemas
             _Operaciones = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Planeamiento() As String
         Get
             Return _Planeamiento
@@ -581,7 +618,7 @@ Public Class e_EmpresaSistemas
             _Planeamiento = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Finanzas() As String
         Get
             Return _Finanzas
@@ -590,7 +627,7 @@ Public Class e_EmpresaSistemas
             _Finanzas = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Logistica() As String
         Get
             Return _Logistica
@@ -599,7 +636,7 @@ Public Class e_EmpresaSistemas
             _Logistica = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Mantenimiento() As String
         Get
             Return _Mantenimiento
@@ -608,7 +645,7 @@ Public Class e_EmpresaSistemas
             _Mantenimiento = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Personal() As String
         Get
             Return _Personal
@@ -617,7 +654,7 @@ Public Class e_EmpresaSistemas
             _Personal = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Tesoreria() As String
         Get
             Return _Tesoreria
@@ -626,7 +663,7 @@ Public Class e_EmpresaSistemas
             _Tesoreria = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Comercial() As String
         Get
             Return _Comercial
@@ -635,7 +672,7 @@ Public Class e_EmpresaSistemas
             _Comercial = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Reportes() As String
         Get
             Return _Reportes
@@ -644,7 +681,7 @@ Public Class e_EmpresaSistemas
             _Reportes = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Seguridad() As String
         Get
             Return _Seguridad
@@ -653,7 +690,7 @@ Public Class e_EmpresaSistemas
             _Seguridad = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Configuracion() As String
         Get
             Return _Configuracion
@@ -662,7 +699,7 @@ Public Class e_EmpresaSistemas
             _Configuracion = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Operador() As String
         Get
             Return _Operador
@@ -671,7 +708,7 @@ Public Class e_EmpresaSistemas
             _Operador = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Asistente() As String
         Get
             Return _Asistente
@@ -680,7 +717,7 @@ Public Class e_EmpresaSistemas
             _Asistente = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Analista() As String
         Get
             Return _Analista
@@ -689,7 +726,7 @@ Public Class e_EmpresaSistemas
             _Analista = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Administrador() As String
         Get
             Return _Administrador
@@ -698,7 +735,7 @@ Public Class e_EmpresaSistemas
             _Administrador = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Supervisor() As String
         Get
             Return _Supervisor
@@ -707,7 +744,7 @@ Public Class e_EmpresaSistemas
             _Supervisor = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Cajero() As String
         Get
             Return _Cajero
@@ -716,7 +753,7 @@ Public Class e_EmpresaSistemas
             _Cajero = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Coordinador() As String
         Get
             Return _Coordinador
@@ -725,7 +762,7 @@ Public Class e_EmpresaSistemas
             _Coordinador = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Jefe() As String
         Get
             Return _Jefe
@@ -734,7 +771,7 @@ Public Class e_EmpresaSistemas
             _Jefe = value
         End Set
     End Property
-
+    <DataMember()>
     Public Property Gerente() As String
         Get
             Return _Gerente
@@ -743,6 +780,7 @@ Public Class e_EmpresaSistemas
             _Gerente = value
         End Set
     End Property
+    <DataMember()>
     Public Property VersionSis() As String
         Get
             Return _VersionSis
@@ -751,6 +789,7 @@ Public Class e_EmpresaSistemas
             _VersionSis = value
         End Set
     End Property
+    <DataMember()>
     Public Property FotosDisponible() As Boolean
         Get
             Return _FotosDisponible
@@ -759,7 +798,33 @@ Public Class e_EmpresaSistemas
             _FotosDisponible = value
         End Set
     End Property
-
+    <DataMember()>
+    Public Property SmtpClient() As String
+        Get
+            Return _SmtpClient
+        End Get
+        Set(ByVal value As String)
+            _SmtpClient = value
+        End Set
+    End Property
+    <DataMember()>
+    Public Property UserName() As String
+        Get
+            Return _UserName
+        End Get
+        Set(ByVal value As String)
+            _UserName = value
+        End Set
+    End Property
+    <DataMember()>
+    Public Property Password() As String
+        Get
+            Return _Password
+        End Get
+        Set(ByVal value As String)
+            _Password = value
+        End Set
+    End Property
 #End Region
 
 #Region "Métodos"

@@ -12,7 +12,9 @@ Public Class d_EmpresaSistemas
                              , o_fila("Codigo").ToString _
                              , o_fila("Abreviatura").ToString _
                              , o_fila("Nombre").ToString _
+                             , o_fila("IdClienteProveedor").ToString _
                              , o_fila("IdEmpresa").ToString _
+                             , o_fila("Ruc").ToString _
                              , o_fila("TokenRuc").ToString _
                              , o_fila("IndPrincipal").ToString _
                              , o_fila("UsuarioCrea").ToString _
@@ -63,7 +65,10 @@ Public Class d_EmpresaSistemas
                              , o_fila("Jefe").ToString _
                              , o_fila("Gerente").ToString _
                              , o_fila("VersionSis").ToString _
-                             , o_fila("FotosDisponible").ToString
+                             , o_fila("FotosDisponible").ToString _
+                              , o_fila("SmtpClient").ToString _
+                               , o_fila("UserName").ToString _
+                                , o_fila("Password").ToString
             )
             Return oeEmpresaSistemas
         Catch ex As Exception
@@ -83,7 +88,9 @@ Public Class d_EmpresaSistemas
                         , .Codigo _
                         , .Abreviatura _
                         , .Nombre _
+                        , .IdClienteProveedor _
                         , .IdEmpresa _
+                        , .Ruc _
                         , .TokenRuc _
                         , .IndPrincipal _
                         , .UsuarioCrea _
@@ -134,7 +141,10 @@ Public Class d_EmpresaSistemas
                         , .Jefe _
                         , .Gerente _
                         , .VersionSis _
-                        , .FotosDisponible
+                        , .FotosDisponible _
+                        , .SmtpClient _
+                        , .UserName _
+                        , .Password
                         )
             End With
             Return ds
@@ -183,7 +193,9 @@ Public Class d_EmpresaSistemas
                         , .Codigo _
                         , .Abreviatura _
                         , .Nombre _
+                        , .IdClienteProveedor _
                         , .IdEmpresa _
+                        , .Ruc _
                         , .TokenRuc _
                         , .IndPrincipal _
                         , .UsuarioCrea _
@@ -234,7 +246,10 @@ Public Class d_EmpresaSistemas
                         , .Jefe _
                         , .Gerente _
                         , .VersionSis _
-                        , .FotosDisponible
+                        , .FotosDisponible _
+                                                , .SmtpClient _
+                        , .UserName _
+                        , .Password
                     ).ToString.Split("_")
                 .Id = stResultado(0)
             End With

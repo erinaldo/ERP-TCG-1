@@ -20,8 +20,10 @@ Public Class frm_Login
     Dim olUsuario As l_Usuario
     'Dim oeTrabSeguridad As New e_TrabajadorSeguridad
     'Dim olTrabSeguridad As New l_TrabajadorSeguridad
-    Dim oeCombo = New e_Combo '@0001
-    Dim olCombo = New l_Combo '@0001
+    Dim oeCombo As New e_Combo '@0001
+    Dim olCombo As New l_Combo '@0001
+    Dim olEmpresaSistema As New l_EmpresaSistemas '@0001
+
 #End Region
 
     Public Sub New()
@@ -163,15 +165,18 @@ Public Class frm_Login
                 My.Settings.Save()
             End If
             '@0001 Inicio Variables globales
-            gs_IdClienteProveedorSistema = "GCH000000001"
-            gs_IdEmpresaSistema = "1SI000004245"
-            gs_TxtEmpresaSistema = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
-            gs_RucEmpresaSistema = "20480099720"
-            gs_DireccionEmpresaSistema = "CAL.LORA Y LORA NRO. 2450 P.J. SANTA ANA (GRIFO REPSOL - OFICINA SEGUNDO PISO) LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ"
-            gs_SmtpClientSis = "mail.alexylalito.pe"
-            gs_userNameCorreo = "mail_erptcg@alexylalito.pe"
-            gs_passwordCorreo = "789-+ERPtcg"
-
+            Dim oeEmpSis As New e_EmpresaSistemas
+            oeEmpSis = olEmpresaSistema.Obtener(oeEmpSis)
+            With oeEmpSis
+                gs_IdClienteProveedorSistema = .IdClienteProveedor.Trim
+                gs_IdEmpresaSistema = .IdEmpresa.Trim
+                gs_TxtEmpresaSistema = .Nombre
+                gs_RucEmpresaSistema = .Ruc
+                gs_DireccionEmpresaSistema = .Direccion.Trim
+                gs_SmtpClientSis = .SmtpClient.Trim
+                gs_userNameCorreo = .UserName.Trim
+                gs_passwordCorreo = .Password.Trim
+            End With
             '@0001 Fin VG
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
