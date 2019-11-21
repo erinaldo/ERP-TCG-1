@@ -396,6 +396,7 @@ Public Class frm_PlanesEPS
             oeEmpresa = New e_Empresa
             oeEmpresa.TipoOperacion = ""
             oeEmpresa.Activo = True
+            oeEmpresa.IdTipoEmpresa = "1CH000000006" '@0001 "PRESTADORA DE SALUD"
             leEmpresa = olEmpresa.Listar(oeEmpresa)
             Dim _leEmp = leEmpresa.Where(Function(it) it.TipoEmpresa = "PRESTADORA DE SALUD").ToList
             LlenarCombo(cboEmpresa, "Nombre", _leEmp, -1)

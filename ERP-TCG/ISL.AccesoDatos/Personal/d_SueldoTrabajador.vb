@@ -15,7 +15,7 @@ Public Class d_SueldoTrabajador
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_SueldoTrabajador
         Try
-            Dim oeSueldoTrabajador = New e_SueldoTrabajador( _
+            Dim oeSueldoTrabajador = New e_SueldoTrabajador(
                              o_fila("Id").ToString _
                              , o_fila("IdTrabajador").ToString _
                              , o_fila("Trabajador").ToString _
@@ -29,6 +29,7 @@ Public Class d_SueldoTrabajador
                              , o_fila("FechaCreacion") _
                              , o_fila("UsuarioCreacion").ToString _
                              , o_fila("Activo") _
+                             , o_fila("SueldoCaja")
             )
             Return oeSueldoTrabajador
         Catch ex As Exception
@@ -99,7 +100,8 @@ Public Class d_SueldoTrabajador
                         , .Vigente _
                         , .FechaCreacion _
                         , .UsuarioCreacion _
-                        , .Activo
+                        , .Activo _
+                        , .SueldoCaja
                     )
             End With
             Return True

@@ -1,4 +1,12 @@
-﻿<DataContract()> _
+﻿'=================================================================================================================
+' Historial de Cambios
+'=================================================================================================================
+' Nro   |   Fecha       |   User    |   Descripcion
+'-----------------------------------------------------------------------------------------------------------------
+' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+'=================================================================================================================
+
+<DataContract()>
 Public Class e_SueldoTrabajador
     Implements Ie_SueldoTrabajador
     Implements IEquatable(Of e_SueldoTrabajador)
@@ -18,7 +26,7 @@ Public Class e_SueldoTrabajador
     Private _fechacreacion As Date
     Private _usuariocreacion As String
     Private _activo As Boolean
-
+    Private _sueldocaja As Double '@0001
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _
@@ -166,7 +174,15 @@ Public Class e_SueldoTrabajador
             _activo = value
         End Set
     End Property
-
+    <DataMember()>
+    Public Property SueldoCaja() As Double
+        Get
+            Return _sueldocaja
+        End Get
+        Set(ByVal value As Double)
+            _sueldocaja = value
+        End Set
+    End Property
 #End Region
 
 #Region "Contructor"
@@ -185,9 +201,10 @@ Public Class e_SueldoTrabajador
         _fechacreacion = #1/1/1901#
         _usuariocreacion = String.Empty
         _activo = True
+        _sueldocaja = 0
     End Sub
 
-    Public Sub New( _
+    Public Sub New(
               ByVal ls_Id As String _
               , ByVal ls_IdTrabajador As String _
               , ByVal ls_Trabajador As String _
@@ -201,6 +218,7 @@ Public Class e_SueldoTrabajador
               , ByVal ld_FechaCreacion As Date _
               , ByVal ls_UsuarioCreacion As String _
               , ByVal lb_Activo As Boolean _
+              , ByVal ln_SueldoCaja As Double
            )
         _id = ls_Id
         _idtrabajador = ls_IdTrabajador
@@ -215,6 +233,7 @@ Public Class e_SueldoTrabajador
         _fechacreacion = ld_FechaCreacion
         _usuariocreacion = ls_UsuarioCreacion
         _activo = lb_Activo
+        _sueldocaja = ln_SueldoCaja
     End Sub
 
 #End Region

@@ -55,10 +55,10 @@ Partial Class frm_Trabajador
         Dim Appearance30 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance31 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance32 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance33 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -72,16 +72,16 @@ Partial Class frm_Trabajador
         Dim Appearance45 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance46 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance47 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -98,13 +98,13 @@ Partial Class frm_Trabajador
         Dim Appearance65 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance66 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance67 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance68 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance69 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance68 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance70 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim Appearance69 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance70 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance71 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance72 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance73 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -115,46 +115,46 @@ Partial Class frm_Trabajador
         Dim Appearance78 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance79 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance80 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance81 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance82 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance83 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance84 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance85 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance86 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance87 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraToolbar1 As Infragistics.Win.UltraWinToolbars.UltraToolbar = New Infragistics.Win.UltraWinToolbars.UltraToolbar("utCuentasBancarias")
         Dim ButtonTool13 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("AgregarCta")
         Dim ButtonTool14 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarCta")
         Dim ButtonTool15 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarCta")
         Dim ButtonTool16 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("AgregarCta")
-        Dim Appearance87 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ButtonTool17 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarCta")
-        Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ButtonTool18 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarCta")
         Dim Appearance89 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ButtonTool17 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarCta")
         Dim Appearance90 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ButtonTool18 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarCta")
+        Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraToolbar2 As Infragistics.Win.UltraWinToolbars.UltraToolbar = New Infragistics.Win.UltraWinToolbars.UltraToolbar("utDocPer")
         Dim ButtonTool1 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("AgregarDoc")
         Dim ButtonTool2 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarDoc")
         Dim ButtonTool3 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarDoc")
         Dim ButtonTool4 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("AgregarDoc")
-        Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ButtonTool5 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarDoc")
-        Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ButtonTool6 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarDoc")
         Dim Appearance93 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ButtonTool5 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ModificarDoc")
         Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ButtonTool6 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("QuitarDoc")
+        Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Trabajador))
-        Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Trabajador))
         Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim E_Sexo2 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance99 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance100 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim E_Sexo2 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
         Dim Appearance101 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance102 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance103 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -166,17 +166,19 @@ Partial Class frm_Trabajador
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance111 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance112 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance113 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab9 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance112 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance113 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance114 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance115 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance116 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance117 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance118 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance119 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance120 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab10 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab11 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab12 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -213,6 +215,8 @@ Partial Class frm_Trabajador
         Me.FecFechaCese = New ISL.Controles.Fecha(Me.components)
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrSueldoTrab = New ISL.Controles.Agrupacion(Me.components)
+        Me.ndSueldoCaja = New ISL.Controles.NumeroDecimal(Me.components)
+        Me.Etiqueta41 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboPeriocidad = New ISL.Controles.Combo(Me.components)
         Me.Etiqueta20 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboTipoPago = New ISL.Controles.Combo(Me.components)
@@ -448,6 +452,7 @@ Partial Class frm_Trabajador
         Me.UltraTabPageControl2.SuspendLayout()
         CType(Me.agrSueldoTrab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrSueldoTrab.SuspendLayout()
+        CType(Me.ndSueldoCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPeriocidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTipoPago, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ndSueldoBasico, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -589,9 +594,9 @@ Partial Class frm_Trabajador
         'UltraTabPageControl13
         '
         Me.UltraTabPageControl13.Controls.Add(Me.griOcupacion)
-        Me.UltraTabPageControl13.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl13.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
-        Me.UltraTabPageControl13.Size = New System.Drawing.Size(917, 121)
+        Me.UltraTabPageControl13.Size = New System.Drawing.Size(922, 132)
         '
         'griOcupacion
         '
@@ -600,7 +605,7 @@ Partial Class frm_Trabajador
         Me.griOcupacion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOcupacion.Location = New System.Drawing.Point(0, 0)
         Me.griOcupacion.Name = "griOcupacion"
-        Me.griOcupacion.Size = New System.Drawing.Size(917, 121)
+        Me.griOcupacion.Size = New System.Drawing.Size(922, 132)
         Me.griOcupacion.TabIndex = 0
         Me.griOcupacion.Text = "Ocupaciones Asignadas"
         '
@@ -646,9 +651,9 @@ Partial Class frm_Trabajador
         'UltraTabPageControl14
         '
         Me.UltraTabPageControl14.Controls.Add(Me.agrManOcupacion)
-        Me.UltraTabPageControl14.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl14.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl14.Name = "UltraTabPageControl14"
-        Me.UltraTabPageControl14.Size = New System.Drawing.Size(917, 121)
+        Me.UltraTabPageControl14.Size = New System.Drawing.Size(922, 132)
         '
         'agrManOcupacion
         '
@@ -981,6 +986,8 @@ Partial Class frm_Trabajador
         '
         'agrSueldoTrab
         '
+        Me.agrSueldoTrab.Controls.Add(Me.ndSueldoCaja)
+        Me.agrSueldoTrab.Controls.Add(Me.Etiqueta41)
         Me.agrSueldoTrab.Controls.Add(Me.cboPeriocidad)
         Me.agrSueldoTrab.Controls.Add(Me.Etiqueta20)
         Me.agrSueldoTrab.Controls.Add(Me.cboTipoPago)
@@ -992,37 +999,66 @@ Partial Class frm_Trabajador
         Me.agrSueldoTrab.Controls.Add(Me.Etiqueta11)
         Me.agrSueldoTrab.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrSueldoTrab.ForeColor = System.Drawing.Color.Black
-        Me.agrSueldoTrab.Location = New System.Drawing.Point(6, 257)
+        Me.agrSueldoTrab.Location = New System.Drawing.Point(1, 261)
         Me.agrSueldoTrab.Name = "agrSueldoTrab"
-        Me.agrSueldoTrab.Size = New System.Drawing.Size(867, 54)
+        Me.agrSueldoTrab.Size = New System.Drawing.Size(930, 54)
         Me.agrSueldoTrab.TabIndex = 0
         Me.agrSueldoTrab.Text = "Renumeracion"
         Me.agrSueldoTrab.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
-        'cboPeriocidad
+        'ndSueldoCaja
         '
         Appearance17.ForeColor = System.Drawing.Color.Black
-        Me.cboPeriocidad.Appearance = Appearance17
+        Me.ndSueldoCaja.Appearance = Appearance17
+        Me.ndSueldoCaja.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.ndSueldoCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ndSueldoCaja.ForeColor = System.Drawing.Color.Black
+        Me.ndSueldoCaja.Location = New System.Drawing.Point(672, 23)
+        Me.ndSueldoCaja.Name = "ndSueldoCaja"
+        Me.ndSueldoCaja.NullText = "0.00"
+        Me.ndSueldoCaja.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.ndSueldoCaja.ReadOnly = True
+        Me.ndSueldoCaja.Size = New System.Drawing.Size(81, 22)
+        Me.ndSueldoCaja.TabIndex = 10
+        '
+        'Etiqueta41
+        '
+        Appearance18.BackColor = System.Drawing.Color.Transparent
+        Appearance18.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta41.Appearance = Appearance18
+        Me.Etiqueta41.AutoSize = True
+        Me.Etiqueta41.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta41.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta41.Location = New System.Drawing.Point(584, 27)
+        Me.Etiqueta41.Name = "Etiqueta41"
+        Me.Etiqueta41.Size = New System.Drawing.Size(85, 15)
+        Me.Etiqueta41.TabIndex = 9
+        Me.Etiqueta41.Text = "Monto por Caja:"
+        '
+        'cboPeriocidad
+        '
+        Appearance19.ForeColor = System.Drawing.Color.Black
+        Me.cboPeriocidad.Appearance = Appearance19
         Me.cboPeriocidad.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboPeriocidad.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboPeriocidad.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboPeriocidad.ForeColor = System.Drawing.Color.Black
-        Me.cboPeriocidad.Location = New System.Drawing.Point(419, 24)
+        Me.cboPeriocidad.Location = New System.Drawing.Point(332, 24)
         Me.cboPeriocidad.Name = "cboPeriocidad"
         Me.cboPeriocidad.ReadOnly = True
-        Me.cboPeriocidad.Size = New System.Drawing.Size(144, 22)
+        Me.cboPeriocidad.Size = New System.Drawing.Size(150, 22)
         Me.cboPeriocidad.TabIndex = 8
         Me.cboPeriocidad.ValueMember = "Id"
         '
         'Etiqueta20
         '
-        Appearance18.BackColor = System.Drawing.Color.Transparent
-        Appearance18.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta20.Appearance = Appearance18
+        Appearance20.BackColor = System.Drawing.Color.Transparent
+        Appearance20.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta20.Appearance = Appearance20
         Me.Etiqueta20.AutoSize = True
         Me.Etiqueta20.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta20.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta20.Location = New System.Drawing.Point(354, 28)
+        Me.Etiqueta20.Location = New System.Drawing.Point(335, 7)
         Me.Etiqueta20.Name = "Etiqueta20"
         Me.Etiqueta20.Size = New System.Drawing.Size(59, 15)
         Me.Etiqueta20.TabIndex = 7
@@ -1030,28 +1066,28 @@ Partial Class frm_Trabajador
         '
         'cboTipoPago
         '
-        Appearance19.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoPago.Appearance = Appearance19
+        Appearance21.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoPago.Appearance = Appearance21
         Me.cboTipoPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoPago.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboTipoPago.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoPago.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoPago.Location = New System.Drawing.Point(204, 24)
+        Me.cboTipoPago.Location = New System.Drawing.Point(175, 24)
         Me.cboTipoPago.Name = "cboTipoPago"
         Me.cboTipoPago.ReadOnly = True
-        Me.cboTipoPago.Size = New System.Drawing.Size(144, 22)
+        Me.cboTipoPago.Size = New System.Drawing.Size(150, 22)
         Me.cboTipoPago.TabIndex = 6
         Me.cboTipoPago.ValueMember = "Id"
         '
         'Etiqueta8
         '
-        Appearance20.BackColor = System.Drawing.Color.Transparent
-        Appearance20.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta8.Appearance = Appearance20
+        Appearance22.BackColor = System.Drawing.Color.Transparent
+        Appearance22.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta8.Appearance = Appearance22
         Me.Etiqueta8.AutoSize = True
         Me.Etiqueta8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta8.Location = New System.Drawing.Point(144, 28)
+        Me.Etiqueta8.Location = New System.Drawing.Point(178, 7)
         Me.Etiqueta8.Name = "Etiqueta8"
         Me.Etiqueta8.Size = New System.Drawing.Size(54, 15)
         Me.Etiqueta8.TabIndex = 5
@@ -1059,14 +1095,14 @@ Partial Class frm_Trabajador
         '
         'btnEditarSueldo
         '
-        Appearance21.ForeColor = System.Drawing.Color.Navy
-        Appearance21.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.btnEditarSueldo.Appearance = Appearance21
+        Appearance23.ForeColor = System.Drawing.Color.Navy
+        Appearance23.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.btnEditarSueldo.Appearance = Appearance23
         Me.btnEditarSueldo.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEditarSueldo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnEditarSueldo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEditarSueldo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEditarSueldo.ForeColor = System.Drawing.Color.Black
-        Me.btnEditarSueldo.Location = New System.Drawing.Point(757, 23)
+        Me.btnEditarSueldo.Location = New System.Drawing.Point(775, 17)
         Me.btnEditarSueldo.Name = "btnEditarSueldo"
         Me.btnEditarSueldo.Size = New System.Drawing.Size(90, 25)
         Me.btnEditarSueldo.TabIndex = 4
@@ -1075,20 +1111,20 @@ Partial Class frm_Trabajador
         'fecSueldoActividad
         '
         Me.fecSueldoActividad.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecSueldoActividad.Location = New System.Drawing.Point(661, 25)
+        Me.fecSueldoActividad.Location = New System.Drawing.Point(488, 24)
         Me.fecSueldoActividad.Name = "fecSueldoActividad"
         Me.fecSueldoActividad.Size = New System.Drawing.Size(90, 21)
         Me.fecSueldoActividad.TabIndex = 3
         '
         'Etiqueta12
         '
-        Appearance22.BackColor = System.Drawing.Color.Transparent
-        Appearance22.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta12.Appearance = Appearance22
+        Appearance24.BackColor = System.Drawing.Color.Transparent
+        Appearance24.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta12.Appearance = Appearance24
         Me.Etiqueta12.AutoSize = True
         Me.Etiqueta12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta12.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta12.Location = New System.Drawing.Point(569, 28)
+        Me.Etiqueta12.Location = New System.Drawing.Point(491, 7)
         Me.Etiqueta12.Name = "Etiqueta12"
         Me.Etiqueta12.Size = New System.Drawing.Size(86, 15)
         Me.Etiqueta12.TabIndex = 2
@@ -1096,12 +1132,12 @@ Partial Class frm_Trabajador
         '
         'ndSueldoBasico
         '
-        Appearance23.ForeColor = System.Drawing.Color.Black
-        Me.ndSueldoBasico.Appearance = Appearance23
+        Appearance25.ForeColor = System.Drawing.Color.Black
+        Me.ndSueldoBasico.Appearance = Appearance25
         Me.ndSueldoBasico.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndSueldoBasico.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndSueldoBasico.ForeColor = System.Drawing.Color.Black
-        Me.ndSueldoBasico.Location = New System.Drawing.Point(57, 24)
+        Me.ndSueldoBasico.Location = New System.Drawing.Point(87, 24)
         Me.ndSueldoBasico.Name = "ndSueldoBasico"
         Me.ndSueldoBasico.NullText = "0.00"
         Me.ndSueldoBasico.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -1111,17 +1147,17 @@ Partial Class frm_Trabajador
         '
         'Etiqueta11
         '
-        Appearance24.BackColor = System.Drawing.Color.Transparent
-        Appearance24.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta11.Appearance = Appearance24
+        Appearance26.BackColor = System.Drawing.Color.Transparent
+        Appearance26.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta11.Appearance = Appearance26
         Me.Etiqueta11.AutoSize = True
         Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta11.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta11.Location = New System.Drawing.Point(12, 28)
+        Me.Etiqueta11.Location = New System.Drawing.Point(5, 28)
         Me.Etiqueta11.Name = "Etiqueta11"
-        Me.Etiqueta11.Size = New System.Drawing.Size(39, 15)
+        Me.Etiqueta11.Size = New System.Drawing.Size(77, 15)
         Me.Etiqueta11.TabIndex = 0
-        Me.Etiqueta11.Text = "Monto:"
+        Me.Etiqueta11.Text = "Sueldo Basico:"
         '
         'agrDatosLaborales
         '
@@ -1138,17 +1174,17 @@ Partial Class frm_Trabajador
         Me.agrDatosLaborales.Controls.Add(Me.verActivo)
         Me.agrDatosLaborales.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrDatosLaborales.ForeColor = System.Drawing.Color.Black
-        Me.agrDatosLaborales.Location = New System.Drawing.Point(3, 3)
+        Me.agrDatosLaborales.Location = New System.Drawing.Point(1, 2)
         Me.agrDatosLaborales.Name = "agrDatosLaborales"
-        Me.agrDatosLaborales.Size = New System.Drawing.Size(925, 80)
+        Me.agrDatosLaborales.Size = New System.Drawing.Size(930, 80)
         Me.agrDatosLaborales.TabIndex = 43
         Me.agrDatosLaborales.Text = "Información sobre aspectos laborales"
         Me.agrDatosLaborales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'cboCategoriaPiloto
         '
-        Appearance25.ForeColor = System.Drawing.Color.Black
-        Me.cboCategoriaPiloto.Appearance = Appearance25
+        Appearance27.ForeColor = System.Drawing.Color.Black
+        Me.cboCategoriaPiloto.Appearance = Appearance27
         Me.cboCategoriaPiloto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCategoriaPiloto.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCategoriaPiloto.ForeColor = System.Drawing.Color.Black
@@ -1160,9 +1196,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta40
         '
-        Appearance26.BackColor = System.Drawing.Color.Transparent
-        Appearance26.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta40.Appearance = Appearance26
+        Appearance28.BackColor = System.Drawing.Color.Transparent
+        Appearance28.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta40.Appearance = Appearance28
         Me.Etiqueta40.AutoSize = True
         Me.Etiqueta40.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta40.ForeColor = System.Drawing.Color.Black
@@ -1174,8 +1210,8 @@ Partial Class frm_Trabajador
         '
         'cboTipoTrabajador
         '
-        Appearance27.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoTrabajador.Appearance = Appearance27
+        Appearance29.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoTrabajador.Appearance = Appearance29
         Me.cboTipoTrabajador.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoTrabajador.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoTrabajador.ForeColor = System.Drawing.Color.Black
@@ -1187,9 +1223,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta38
         '
-        Appearance28.BackColor = System.Drawing.Color.Transparent
-        Appearance28.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta38.Appearance = Appearance28
+        Appearance30.BackColor = System.Drawing.Color.Transparent
+        Appearance30.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta38.Appearance = Appearance30
         Me.Etiqueta38.AutoSize = True
         Me.Etiqueta38.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta38.ForeColor = System.Drawing.Color.Black
@@ -1211,8 +1247,8 @@ Partial Class frm_Trabajador
         '
         'cboEstadoTra
         '
-        Appearance29.ForeColor = System.Drawing.Color.Black
-        Me.cboEstadoTra.Appearance = Appearance29
+        Appearance31.ForeColor = System.Drawing.Color.Black
+        Me.cboEstadoTra.Appearance = Appearance31
         Me.cboEstadoTra.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboEstadoTra.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboEstadoTra.ForeColor = System.Drawing.Color.Black
@@ -1224,9 +1260,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta9
         '
-        Appearance30.BackColor = System.Drawing.Color.Transparent
-        Appearance30.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta9.Appearance = Appearance30
+        Appearance32.BackColor = System.Drawing.Color.Transparent
+        Appearance32.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta9.Appearance = Appearance32
         Me.Etiqueta9.AutoSize = True
         Me.Etiqueta9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta9.ForeColor = System.Drawing.Color.Black
@@ -1248,9 +1284,9 @@ Partial Class frm_Trabajador
         '
         'etiCodigo
         '
-        Appearance31.BackColor = System.Drawing.Color.Transparent
-        Appearance31.ForeColor = System.Drawing.Color.Navy
-        Me.etiCodigo.Appearance = Appearance31
+        Appearance33.BackColor = System.Drawing.Color.Transparent
+        Appearance33.ForeColor = System.Drawing.Color.Navy
+        Me.etiCodigo.Appearance = Appearance33
         Me.etiCodigo.AutoSize = True
         Me.etiCodigo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiCodigo.ForeColor = System.Drawing.Color.Black
@@ -1262,8 +1298,8 @@ Partial Class frm_Trabajador
         '
         'txtCodigo
         '
-        Appearance32.ForeColor = System.Drawing.Color.Black
-        Me.txtCodigo.Appearance = Appearance32
+        Appearance34.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigo.Appearance = Appearance34
         Me.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodigo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1292,9 +1328,9 @@ Partial Class frm_Trabajador
         Me.agrOcupacion.Controls.Add(Me.ficManOcupacion)
         Me.agrOcupacion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrOcupacion.ForeColor = System.Drawing.Color.Black
-        Me.agrOcupacion.Location = New System.Drawing.Point(3, 89)
+        Me.agrOcupacion.Location = New System.Drawing.Point(1, 84)
         Me.agrOcupacion.Name = "agrOcupacion"
-        Me.agrOcupacion.Size = New System.Drawing.Size(925, 164)
+        Me.agrOcupacion.Size = New System.Drawing.Size(930, 175)
         Me.agrOcupacion.TabIndex = 1
         Me.agrOcupacion.Text = "Información de Ocupaciones del Trabajador"
         Me.agrOcupacion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1309,7 +1345,7 @@ Partial Class frm_Trabajador
         Me.ficManOcupacion.Location = New System.Drawing.Point(3, 17)
         Me.ficManOcupacion.Name = "ficManOcupacion"
         Me.ficManOcupacion.SharedControlsPage = Me.UltraTabSharedControlsPage6
-        Me.ficManOcupacion.Size = New System.Drawing.Size(919, 144)
+        Me.ficManOcupacion.Size = New System.Drawing.Size(924, 155)
         Me.ficManOcupacion.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.ficManOcupacion.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl13
@@ -1323,7 +1359,7 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabSharedControlsPage6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage6.Name = "UltraTabSharedControlsPage6"
-        Me.UltraTabSharedControlsPage6.Size = New System.Drawing.Size(917, 121)
+        Me.UltraTabSharedControlsPage6.Size = New System.Drawing.Size(922, 132)
         '
         'UltraTabPageControl3
         '
@@ -1360,8 +1396,8 @@ Partial Class frm_Trabajador
         '
         'ndCuotaEPS
         '
-        Appearance33.ForeColor = System.Drawing.Color.Black
-        Me.ndCuotaEPS.Appearance = Appearance33
+        Appearance35.ForeColor = System.Drawing.Color.Black
+        Me.ndCuotaEPS.Appearance = Appearance35
         Me.ndCuotaEPS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndCuotaEPS.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndCuotaEPS.ForeColor = System.Drawing.Color.Black
@@ -1376,9 +1412,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta37
         '
-        Appearance34.BackColor = System.Drawing.Color.Transparent
-        Appearance34.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta37.Appearance = Appearance34
+        Appearance36.BackColor = System.Drawing.Color.Transparent
+        Appearance36.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta37.Appearance = Appearance36
         Me.Etiqueta37.AutoSize = True
         Me.Etiqueta37.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta37.ForeColor = System.Drawing.Color.Black
@@ -1390,9 +1426,9 @@ Partial Class frm_Trabajador
         '
         'btnEditarRegSalud
         '
-        Appearance35.ForeColor = System.Drawing.Color.Navy
-        Appearance35.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.btnEditarRegSalud.Appearance = Appearance35
+        Appearance37.ForeColor = System.Drawing.Color.Navy
+        Appearance37.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.btnEditarRegSalud.Appearance = Appearance37
         Me.btnEditarRegSalud.AutoSize = True
         Me.btnEditarRegSalud.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEditarRegSalud.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1406,8 +1442,8 @@ Partial Class frm_Trabajador
         '
         'cboPlanEPS
         '
-        Appearance36.ForeColor = System.Drawing.Color.Black
-        Me.cboPlanEPS.Appearance = Appearance36
+        Appearance38.ForeColor = System.Drawing.Color.Black
+        Me.cboPlanEPS.Appearance = Appearance38
         Me.cboPlanEPS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboPlanEPS.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboPlanEPS.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1421,9 +1457,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta34
         '
-        Appearance37.BackColor = System.Drawing.Color.Transparent
-        Appearance37.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta34.Appearance = Appearance37
+        Appearance39.BackColor = System.Drawing.Color.Transparent
+        Appearance39.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta34.Appearance = Appearance39
         Me.Etiqueta34.AutoSize = True
         Me.Etiqueta34.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta34.ForeColor = System.Drawing.Color.Black
@@ -1435,8 +1471,8 @@ Partial Class frm_Trabajador
         '
         'cboEntidadPS
         '
-        Appearance38.ForeColor = System.Drawing.Color.Black
-        Me.cboEntidadPS.Appearance = Appearance38
+        Appearance40.ForeColor = System.Drawing.Color.Black
+        Me.cboEntidadPS.Appearance = Appearance40
         Me.cboEntidadPS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboEntidadPS.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboEntidadPS.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1450,9 +1486,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta33
         '
-        Appearance39.BackColor = System.Drawing.Color.Transparent
-        Appearance39.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta33.Appearance = Appearance39
+        Appearance41.BackColor = System.Drawing.Color.Transparent
+        Appearance41.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta33.Appearance = Appearance41
         Me.Etiqueta33.AutoSize = True
         Me.Etiqueta33.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta33.ForeColor = System.Drawing.Color.Black
@@ -1473,9 +1509,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta24
         '
-        Appearance40.BackColor = System.Drawing.Color.Transparent
-        Appearance40.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta24.Appearance = Appearance40
+        Appearance42.BackColor = System.Drawing.Color.Transparent
+        Appearance42.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta24.Appearance = Appearance42
         Me.Etiqueta24.AutoSize = True
         Me.Etiqueta24.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.Black
@@ -1496,9 +1532,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta23
         '
-        Appearance41.BackColor = System.Drawing.Color.Transparent
-        Appearance41.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta23.Appearance = Appearance41
+        Appearance43.BackColor = System.Drawing.Color.Transparent
+        Appearance43.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta23.Appearance = Appearance43
         Me.Etiqueta23.AutoSize = True
         Me.Etiqueta23.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta23.ForeColor = System.Drawing.Color.Black
@@ -1510,8 +1546,8 @@ Partial Class frm_Trabajador
         '
         'cboRegimenSalud
         '
-        Appearance42.ForeColor = System.Drawing.Color.Black
-        Me.cboRegimenSalud.Appearance = Appearance42
+        Appearance44.ForeColor = System.Drawing.Color.Black
+        Me.cboRegimenSalud.Appearance = Appearance44
         Me.cboRegimenSalud.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboRegimenSalud.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboRegimenSalud.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1525,9 +1561,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta22
         '
-        Appearance43.BackColor = System.Drawing.Color.Transparent
-        Appearance43.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta22.Appearance = Appearance43
+        Appearance45.BackColor = System.Drawing.Color.Transparent
+        Appearance45.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta22.Appearance = Appearance45
         Me.Etiqueta22.AutoSize = True
         Me.Etiqueta22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta22.ForeColor = System.Drawing.Color.Black
@@ -1561,9 +1597,9 @@ Partial Class frm_Trabajador
         '
         'btnEditarSComp
         '
-        Appearance44.ForeColor = System.Drawing.Color.Navy
-        Appearance44.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.btnEditarSComp.Appearance = Appearance44
+        Appearance46.ForeColor = System.Drawing.Color.Navy
+        Appearance46.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.btnEditarSComp.Appearance = Appearance46
         Me.btnEditarSComp.AutoSize = True
         Me.btnEditarSComp.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEditarSComp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1586,9 +1622,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta35
         '
-        Appearance45.BackColor = System.Drawing.Color.Transparent
-        Appearance45.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta35.Appearance = Appearance45
+        Appearance47.BackColor = System.Drawing.Color.Transparent
+        Appearance47.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta35.Appearance = Appearance47
         Me.Etiqueta35.AutoSize = True
         Me.Etiqueta35.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta35.ForeColor = System.Drawing.Color.Black
@@ -1609,9 +1645,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta36
         '
-        Appearance46.BackColor = System.Drawing.Color.Transparent
-        Appearance46.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta36.Appearance = Appearance46
+        Appearance48.BackColor = System.Drawing.Color.Transparent
+        Appearance48.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta36.Appearance = Appearance48
         Me.Etiqueta36.AutoSize = True
         Me.Etiqueta36.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta36.ForeColor = System.Drawing.Color.Black
@@ -1623,8 +1659,8 @@ Partial Class frm_Trabajador
         '
         'optCoberturaSalud
         '
-        Appearance47.ForeColor = System.Drawing.Color.Navy
-        Me.optCoberturaSalud.Appearance = Appearance47
+        Appearance49.ForeColor = System.Drawing.Color.Navy
+        Me.optCoberturaSalud.Appearance = Appearance49
         Me.optCoberturaSalud.BackColor = System.Drawing.Color.Transparent
         Me.optCoberturaSalud.BackColorInternal = System.Drawing.Color.Transparent
         Me.optCoberturaSalud.BorderStyle = Infragistics.Win.UIElementBorderStyle.None
@@ -1645,8 +1681,8 @@ Partial Class frm_Trabajador
         '
         'optSCTRPension
         '
-        Appearance48.ForeColor = System.Drawing.Color.Navy
-        Me.optSCTRPension.Appearance = Appearance48
+        Appearance50.ForeColor = System.Drawing.Color.Navy
+        Me.optSCTRPension.Appearance = Appearance50
         Me.optSCTRPension.BackColor = System.Drawing.Color.Transparent
         Me.optSCTRPension.BackColorInternal = System.Drawing.Color.Transparent
         Me.optSCTRPension.BorderStyle = Infragistics.Win.UIElementBorderStyle.None
@@ -1667,8 +1703,8 @@ Partial Class frm_Trabajador
         '
         'optAportaSCTR
         '
-        Appearance49.ForeColor = System.Drawing.Color.Navy
-        Me.optAportaSCTR.Appearance = Appearance49
+        Appearance51.ForeColor = System.Drawing.Color.Navy
+        Me.optAportaSCTR.Appearance = Appearance51
         Me.optAportaSCTR.BackColor = System.Drawing.Color.Transparent
         Me.optAportaSCTR.BackColorInternal = System.Drawing.Color.Transparent
         Me.optAportaSCTR.BorderStyle = Infragistics.Win.UIElementBorderStyle.None
@@ -1689,9 +1725,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta21
         '
-        Appearance50.BackColor = System.Drawing.Color.Transparent
-        Appearance50.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta21.Appearance = Appearance50
+        Appearance52.BackColor = System.Drawing.Color.Transparent
+        Appearance52.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta21.Appearance = Appearance52
         Me.Etiqueta21.AutoSize = True
         Me.Etiqueta21.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta21.ForeColor = System.Drawing.Color.Black
@@ -1703,9 +1739,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta7
         '
-        Appearance51.BackColor = System.Drawing.Color.Transparent
-        Appearance51.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta7.Appearance = Appearance51
+        Appearance53.BackColor = System.Drawing.Color.Transparent
+        Appearance53.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta7.Appearance = Appearance53
         Me.Etiqueta7.AutoSize = True
         Me.Etiqueta7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.Black
@@ -1717,9 +1753,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta5
         '
-        Appearance52.BackColor = System.Drawing.Color.Transparent
-        Appearance52.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta5.Appearance = Appearance52
+        Appearance54.BackColor = System.Drawing.Color.Transparent
+        Appearance54.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta5.Appearance = Appearance54
         Me.Etiqueta5.AutoSize = True
         Me.Etiqueta5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.Black
@@ -1756,8 +1792,8 @@ Partial Class frm_Trabajador
         '
         'btnEditarFondo
         '
-        Appearance53.Image = Global.ISL.Win.My.Resources.Resources.Information
-        Me.btnEditarFondo.Appearance = Appearance53
+        Appearance55.Image = Global.ISL.Win.My.Resources.Resources.Information
+        Me.btnEditarFondo.Appearance = Appearance55
         Me.btnEditarFondo.AutoSize = True
         Me.btnEditarFondo.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEditarFondo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1800,8 +1836,8 @@ Partial Class frm_Trabajador
         '
         'ndSaldoMixta
         '
-        Appearance54.ForeColor = System.Drawing.Color.Black
-        Me.ndSaldoMixta.Appearance = Appearance54
+        Appearance56.ForeColor = System.Drawing.Color.Black
+        Me.ndSaldoMixta.Appearance = Appearance56
         Me.ndSaldoMixta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndSaldoMixta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndSaldoMixta.ForeColor = System.Drawing.Color.Black
@@ -1816,8 +1852,8 @@ Partial Class frm_Trabajador
         '
         'ndComisionMixta
         '
-        Appearance55.ForeColor = System.Drawing.Color.Black
-        Me.ndComisionMixta.Appearance = Appearance55
+        Appearance57.ForeColor = System.Drawing.Color.Black
+        Me.ndComisionMixta.Appearance = Appearance57
         Me.ndComisionMixta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndComisionMixta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndComisionMixta.ForeColor = System.Drawing.Color.Black
@@ -1832,8 +1868,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta19
         '
-        Appearance56.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta19.Appearance = Appearance56
+        Appearance58.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta19.Appearance = Appearance58
         Me.Etiqueta19.AutoSize = True
         Me.Etiqueta19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta19.ForeColor = System.Drawing.Color.Black
@@ -1845,8 +1881,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta10
         '
-        Appearance57.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta10.Appearance = Appearance57
+        Appearance59.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta10.Appearance = Appearance59
         Me.Etiqueta10.AutoSize = True
         Me.Etiqueta10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta10.ForeColor = System.Drawing.Color.Black
@@ -1871,8 +1907,8 @@ Partial Class frm_Trabajador
         '
         'ndComision
         '
-        Appearance58.ForeColor = System.Drawing.Color.Black
-        Me.ndComision.Appearance = Appearance58
+        Appearance60.ForeColor = System.Drawing.Color.Black
+        Me.ndComision.Appearance = Appearance60
         Me.ndComision.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndComision.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndComision.ForeColor = System.Drawing.Color.Black
@@ -1908,8 +1944,8 @@ Partial Class frm_Trabajador
         '
         'ndSeguro
         '
-        Appearance59.ForeColor = System.Drawing.Color.Black
-        Me.ndSeguro.Appearance = Appearance59
+        Appearance61.ForeColor = System.Drawing.Color.Black
+        Me.ndSeguro.Appearance = Appearance61
         Me.ndSeguro.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndSeguro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndSeguro.ForeColor = System.Drawing.Color.Black
@@ -1924,8 +1960,8 @@ Partial Class frm_Trabajador
         '
         'ndObligacion
         '
-        Appearance60.ForeColor = System.Drawing.Color.Black
-        Me.ndObligacion.Appearance = Appearance60
+        Appearance62.ForeColor = System.Drawing.Color.Black
+        Me.ndObligacion.Appearance = Appearance62
         Me.ndObligacion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndObligacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndObligacion.ForeColor = System.Drawing.Color.Black
@@ -1940,8 +1976,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta18
         '
-        Appearance61.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta18.Appearance = Appearance61
+        Appearance63.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta18.Appearance = Appearance63
         Me.Etiqueta18.AutoSize = True
         Me.Etiqueta18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta18.ForeColor = System.Drawing.Color.Black
@@ -1953,8 +1989,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta16
         '
-        Appearance62.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta16.Appearance = Appearance62
+        Appearance64.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta16.Appearance = Appearance64
         Me.Etiqueta16.AutoSize = True
         Me.Etiqueta16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta16.ForeColor = System.Drawing.Color.Black
@@ -1966,8 +2002,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta15
         '
-        Appearance63.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta15.Appearance = Appearance63
+        Appearance65.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta15.Appearance = Appearance65
         Me.Etiqueta15.AutoSize = True
         Me.Etiqueta15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta15.ForeColor = System.Drawing.Color.Black
@@ -1987,8 +2023,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta14
         '
-        Appearance64.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta14.Appearance = Appearance64
+        Appearance66.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta14.Appearance = Appearance66
         Me.Etiqueta14.AutoSize = True
         Me.Etiqueta14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta14.ForeColor = System.Drawing.Color.Black
@@ -2010,8 +2046,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta13
         '
-        Appearance65.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta13.Appearance = Appearance65
+        Appearance67.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta13.Appearance = Appearance67
         Me.Etiqueta13.AutoSize = True
         Me.Etiqueta13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta13.ForeColor = System.Drawing.Color.Black
@@ -2047,8 +2083,8 @@ Partial Class frm_Trabajador
         '
         'cboConvenio
         '
-        Appearance66.ForeColor = System.Drawing.Color.Black
-        Me.cboConvenio.Appearance = Appearance66
+        Appearance68.ForeColor = System.Drawing.Color.Black
+        Me.cboConvenio.Appearance = Appearance68
         Me.cboConvenio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboConvenio.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboConvenio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2061,8 +2097,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta27
         '
-        Appearance67.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta27.Appearance = Appearance67
+        Appearance69.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta27.Appearance = Appearance69
         Me.Etiqueta27.AutoSize = True
         Me.Etiqueta27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta27.ForeColor = System.Drawing.Color.Black
@@ -2093,8 +2129,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta26
         '
-        Appearance68.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta26.Appearance = Appearance68
+        Appearance70.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta26.Appearance = Appearance70
         Me.Etiqueta26.AutoSize = True
         Me.Etiqueta26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta26.ForeColor = System.Drawing.Color.Black
@@ -2125,8 +2161,8 @@ Partial Class frm_Trabajador
         '
         'Etiqueta25
         '
-        Appearance69.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta25.Appearance = Appearance69
+        Appearance71.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta25.Appearance = Appearance71
         Me.Etiqueta25.AutoSize = True
         Me.Etiqueta25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta25.ForeColor = System.Drawing.Color.Black
@@ -2219,8 +2255,8 @@ Partial Class frm_Trabajador
         '
         'cboTipoDocDH
         '
-        Appearance70.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoDocDH.Appearance = Appearance70
+        Appearance72.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoDocDH.Appearance = Appearance72
         Me.cboTipoDocDH.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoDocDH.DropDownListWidth = 350
         Me.cboTipoDocDH.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2233,8 +2269,8 @@ Partial Class frm_Trabajador
         '
         'cboVinculoDH
         '
-        Appearance71.ForeColor = System.Drawing.Color.Black
-        Me.cboVinculoDH.Appearance = Appearance71
+        Appearance73.ForeColor = System.Drawing.Color.Black
+        Me.cboVinculoDH.Appearance = Appearance73
         Me.cboVinculoDH.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboVinculoDH.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboVinculoDH.ForeColor = System.Drawing.Color.Black
@@ -2267,9 +2303,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel4
         '
-        Appearance72.BackColor = System.Drawing.Color.Transparent
-        Appearance72.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel4.Appearance = Appearance72
+        Appearance74.BackColor = System.Drawing.Color.Transparent
+        Appearance74.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel4.Appearance = Appearance74
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel4.Location = New System.Drawing.Point(742, 12)
@@ -2280,9 +2316,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel3
         '
-        Appearance73.BackColor = System.Drawing.Color.Transparent
-        Appearance73.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel3.Appearance = Appearance73
+        Appearance75.BackColor = System.Drawing.Color.Transparent
+        Appearance75.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel3.Appearance = Appearance75
         Me.UltraLabel3.AutoSize = True
         Me.UltraLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel3.Location = New System.Drawing.Point(516, 12)
@@ -2293,9 +2329,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel2
         '
-        Appearance74.BackColor = System.Drawing.Color.Transparent
-        Appearance74.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel2.Appearance = Appearance74
+        Appearance76.BackColor = System.Drawing.Color.Transparent
+        Appearance76.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel2.Appearance = Appearance76
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel2.Location = New System.Drawing.Point(222, 12)
@@ -2306,9 +2342,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel1
         '
-        Appearance75.BackColor = System.Drawing.Color.Transparent
-        Appearance75.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel1.Appearance = Appearance75
+        Appearance77.BackColor = System.Drawing.Color.Transparent
+        Appearance77.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel1.Appearance = Appearance77
         Me.UltraLabel1.AutoSize = True
         Me.UltraLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel1.Location = New System.Drawing.Point(14, 12)
@@ -2392,9 +2428,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel14
         '
-        Appearance76.BackColor = System.Drawing.Color.Transparent
-        Appearance76.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel14.Appearance = Appearance76
+        Appearance78.BackColor = System.Drawing.Color.Transparent
+        Appearance78.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel14.Appearance = Appearance78
         Me.UltraLabel14.AutoSize = True
         Me.UltraLabel14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel14.Location = New System.Drawing.Point(575, 92)
@@ -2405,9 +2441,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel13
         '
-        Appearance77.BackColor = System.Drawing.Color.Transparent
-        Appearance77.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel13.Appearance = Appearance77
+        Appearance79.BackColor = System.Drawing.Color.Transparent
+        Appearance79.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel13.Appearance = Appearance79
         Me.UltraLabel13.AutoSize = True
         Me.UltraLabel13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel13.Location = New System.Drawing.Point(575, 68)
@@ -2436,9 +2472,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel12
         '
-        Appearance78.BackColor = System.Drawing.Color.Transparent
-        Appearance78.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel12.Appearance = Appearance78
+        Appearance80.BackColor = System.Drawing.Color.Transparent
+        Appearance80.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel12.Appearance = Appearance80
         Me.UltraLabel12.AutoSize = True
         Me.UltraLabel12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel12.Location = New System.Drawing.Point(40, 92)
@@ -2449,9 +2485,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel11
         '
-        Appearance79.BackColor = System.Drawing.Color.Transparent
-        Appearance79.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel11.Appearance = Appearance79
+        Appearance81.BackColor = System.Drawing.Color.Transparent
+        Appearance81.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel11.Appearance = Appearance81
         Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel11.Location = New System.Drawing.Point(40, 65)
@@ -2507,9 +2543,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel10
         '
-        Appearance80.BackColor = System.Drawing.Color.Transparent
-        Appearance80.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel10.Appearance = Appearance80
+        Appearance82.BackColor = System.Drawing.Color.Transparent
+        Appearance82.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel10.Appearance = Appearance82
         Me.UltraLabel10.AutoSize = True
         Me.UltraLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel10.Location = New System.Drawing.Point(612, 11)
@@ -2532,7 +2568,7 @@ Partial Class frm_Trabajador
         E_Sexo1.Id = "1"
         E_Sexo1.Nombre = "Masculino"
         Me.Sexo2.Sexo = E_Sexo1
-        Me.Sexo2.Size = New System.Drawing.Size(240, 24)
+        Me.Sexo2.Size = New System.Drawing.Size(297, 24)
         Me.Sexo2.TabIndex = 6
         '
         'object_f37db69f_510c_45cc_acbf_5242ddf3f978
@@ -2540,7 +2576,7 @@ Partial Class frm_Trabajador
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.AutoSize = True
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.ForeColor = System.Drawing.Color.Black
-        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(141, 4)
+        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(260, 4)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Name = "object_f37db69f_510c_45cc_acbf_5242ddf3f978"
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Size = New System.Drawing.Size(29, 14)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.TabIndex = 1
@@ -2548,9 +2584,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel9
         '
-        Appearance81.BackColor = System.Drawing.Color.Transparent
-        Appearance81.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel9.Appearance = Appearance81
+        Appearance83.BackColor = System.Drawing.Color.Transparent
+        Appearance83.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel9.Appearance = Appearance83
         Me.UltraLabel9.AutoSize = True
         Me.UltraLabel9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel9.Location = New System.Drawing.Point(297, 11)
@@ -2561,9 +2597,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel8
         '
-        Appearance82.BackColor = System.Drawing.Color.Transparent
-        Appearance82.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel8.Appearance = Appearance82
+        Appearance84.BackColor = System.Drawing.Color.Transparent
+        Appearance84.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel8.Appearance = Appearance84
         Me.UltraLabel8.AutoSize = True
         Me.UltraLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel8.Location = New System.Drawing.Point(591, 38)
@@ -2574,9 +2610,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel7
         '
-        Appearance83.BackColor = System.Drawing.Color.Transparent
-        Appearance83.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel7.Appearance = Appearance83
+        Appearance85.BackColor = System.Drawing.Color.Transparent
+        Appearance85.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel7.Appearance = Appearance85
         Me.UltraLabel7.AutoSize = True
         Me.UltraLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel7.Location = New System.Drawing.Point(297, 38)
@@ -2587,9 +2623,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel6
         '
-        Appearance84.BackColor = System.Drawing.Color.Transparent
-        Appearance84.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel6.Appearance = Appearance84
+        Appearance86.BackColor = System.Drawing.Color.Transparent
+        Appearance86.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel6.Appearance = Appearance86
         Me.UltraLabel6.AutoSize = True
         Me.UltraLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel6.Location = New System.Drawing.Point(21, 38)
@@ -2600,9 +2636,9 @@ Partial Class frm_Trabajador
         '
         'UltraLabel5
         '
-        Appearance85.BackColor = System.Drawing.Color.Transparent
-        Appearance85.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel5.Appearance = Appearance85
+        Appearance87.BackColor = System.Drawing.Color.Transparent
+        Appearance87.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel5.Appearance = Appearance87
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel5.Location = New System.Drawing.Point(87, 11)
@@ -2698,8 +2734,8 @@ Partial Class frm_Trabajador
         '
         'mnuCuentasBancarias
         '
-        Appearance86.ForeColor = System.Drawing.Color.Black
-        Me.mnuCuentasBancarias.Appearance = Appearance86
+        Appearance88.ForeColor = System.Drawing.Color.Black
+        Me.mnuCuentasBancarias.Appearance = Appearance88
         Me.mnuCuentasBancarias.DesignerFlags = 1
         Me.mnuCuentasBancarias.DockWithinContainer = Me.utpCuentasBancarias_Fill_Panel.ClientArea
         Me.mnuCuentasBancarias.ShowQuickCustomizeButton = False
@@ -2709,16 +2745,16 @@ Partial Class frm_Trabajador
         UltraToolbar1.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool13, ButtonTool14, ButtonTool15})
         UltraToolbar1.Text = "utCuentasBancarias"
         Me.mnuCuentasBancarias.Toolbars.AddRange(New Infragistics.Win.UltraWinToolbars.UltraToolbar() {UltraToolbar1})
-        Appearance87.Image = Global.ISL.Win.My.Resources.Resources.Agregar
-        ButtonTool16.SharedPropsInternal.AppearancesSmall.Appearance = Appearance87
+        Appearance89.Image = Global.ISL.Win.My.Resources.Resources.Agregar
+        ButtonTool16.SharedPropsInternal.AppearancesSmall.Appearance = Appearance89
         ButtonTool16.SharedPropsInternal.Caption = "Agregar"
         ButtonTool16.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance88.Image = Global.ISL.Win.My.Resources.Resources.Information
-        ButtonTool17.SharedPropsInternal.AppearancesSmall.Appearance = Appearance88
+        Appearance90.Image = Global.ISL.Win.My.Resources.Resources.Information
+        ButtonTool17.SharedPropsInternal.AppearancesSmall.Appearance = Appearance90
         ButtonTool17.SharedPropsInternal.Caption = "Modificar"
         ButtonTool17.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance89.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
-        ButtonTool18.SharedPropsInternal.AppearancesSmall.Appearance = Appearance89
+        Appearance91.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
+        ButtonTool18.SharedPropsInternal.AppearancesSmall.Appearance = Appearance91
         ButtonTool18.SharedPropsInternal.Caption = "Quitar"
         ButtonTool18.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
         Me.mnuCuentasBancarias.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool16, ButtonTool17, ButtonTool18})
@@ -2821,8 +2857,8 @@ Partial Class frm_Trabajador
         '
         'mnuDocPer
         '
-        Appearance90.ForeColor = System.Drawing.Color.Black
-        Me.mnuDocPer.Appearance = Appearance90
+        Appearance92.ForeColor = System.Drawing.Color.Black
+        Me.mnuDocPer.Appearance = Appearance92
         Me.mnuDocPer.DesignerFlags = 1
         Me.mnuDocPer.DockWithinContainer = Me.UltraTabSharedControlsPage4_Fill_Panel.ClientArea
         Me.mnuDocPer.ShowQuickCustomizeButton = False
@@ -2834,16 +2870,16 @@ Partial Class frm_Trabajador
         UltraToolbar2.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2, ButtonTool3})
         UltraToolbar2.Text = "utDocPer"
         Me.mnuDocPer.Toolbars.AddRange(New Infragistics.Win.UltraWinToolbars.UltraToolbar() {UltraToolbar2})
-        Appearance91.Image = Global.ISL.Win.My.Resources.Resources.Agregar
-        ButtonTool4.SharedPropsInternal.AppearancesSmall.Appearance = Appearance91
+        Appearance93.Image = Global.ISL.Win.My.Resources.Resources.Agregar
+        ButtonTool4.SharedPropsInternal.AppearancesSmall.Appearance = Appearance93
         ButtonTool4.SharedPropsInternal.Caption = "Agregar"
         ButtonTool4.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance92.Image = Global.ISL.Win.My.Resources.Resources.Information
-        ButtonTool5.SharedPropsInternal.AppearancesSmall.Appearance = Appearance92
+        Appearance94.Image = Global.ISL.Win.My.Resources.Resources.Information
+        ButtonTool5.SharedPropsInternal.AppearancesSmall.Appearance = Appearance94
         ButtonTool5.SharedPropsInternal.Caption = "Modificar"
         ButtonTool5.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance93.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
-        ButtonTool6.SharedPropsInternal.AppearancesSmall.Appearance = Appearance93
+        Appearance95.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
+        ButtonTool6.SharedPropsInternal.AppearancesSmall.Appearance = Appearance95
         ButtonTool6.SharedPropsInternal.Caption = "Quitar"
         ButtonTool6.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
         Me.mnuDocPer.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool4, ButtonTool5, ButtonTool6})
@@ -2913,9 +2949,9 @@ Partial Class frm_Trabajador
         'UltraExpandableGroupBox6
         '
         Me.UltraExpandableGroupBox6.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
-        Appearance94.BackColor = System.Drawing.Color.White
-        Appearance94.BackColor2 = System.Drawing.Color.White
-        Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance94
+        Appearance96.BackColor = System.Drawing.Color.White
+        Appearance96.BackColor2 = System.Drawing.Color.White
+        Me.UltraExpandableGroupBox6.ContentAreaAppearance = Appearance96
         Me.UltraExpandableGroupBox6.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
         Me.UltraExpandableGroupBox6.Expanded = False
         Me.UltraExpandableGroupBox6.ExpandedSize = New System.Drawing.Size(188, 227)
@@ -2954,7 +2990,7 @@ Partial Class frm_Trabajador
         Me.ficDatos2.Controls.Add(Me.UltraTabPageControl3)
         Me.ficDatos2.Controls.Add(Me.UltraTabPageControl11)
         Me.ficDatos2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficDatos2.Location = New System.Drawing.Point(5, 241)
+        Me.ficDatos2.Location = New System.Drawing.Point(3, 233)
         Me.ficDatos2.Name = "ficDatos2"
         Me.ficDatos2.SharedControlsPage = Me.UltraTabSharedControlsPage5
         Me.ficDatos2.Size = New System.Drawing.Size(935, 341)
@@ -2984,7 +3020,7 @@ Partial Class frm_Trabajador
         Me.agrDatosBasicos.Controls.Add(Me.btnExaminar)
         Me.agrDatosBasicos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrDatosBasicos.ForeColor = System.Drawing.Color.Black
-        Me.agrDatosBasicos.Location = New System.Drawing.Point(5, 8)
+        Me.agrDatosBasicos.Location = New System.Drawing.Point(3, 3)
         Me.agrDatosBasicos.Name = "agrDatosBasicos"
         Me.agrDatosBasicos.Size = New System.Drawing.Size(935, 227)
         Me.agrDatosBasicos.TabIndex = 42
@@ -3001,10 +3037,10 @@ Partial Class frm_Trabajador
         '
         'btnDescargarJpg
         '
-        Appearance95.ForeColor = System.Drawing.Color.Navy
-        Appearance95.Image = 2
-        Appearance95.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnDescargarJpg.Appearance = Appearance95
+        Appearance97.ForeColor = System.Drawing.Color.Navy
+        Appearance97.Image = 2
+        Appearance97.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnDescargarJpg.Appearance = Appearance97
         Me.btnDescargarJpg.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnDescargarJpg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnDescargarJpg.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3081,8 +3117,8 @@ Partial Class frm_Trabajador
         '
         'verHijos
         '
-        Appearance96.ForeColor = System.Drawing.Color.Navy
-        Me.verHijos.Appearance = Appearance96
+        Appearance98.ForeColor = System.Drawing.Color.Navy
+        Me.verHijos.Appearance = Appearance98
         Me.verHijos.AutoSize = True
         Me.verHijos.BackColor = System.Drawing.Color.Transparent
         Me.verHijos.BackColorInternal = System.Drawing.Color.Transparent
@@ -3096,8 +3132,8 @@ Partial Class frm_Trabajador
         '
         'btnCelular
         '
-        Appearance97.ForeColor = System.Drawing.Color.Navy
-        Me.btnCelular.Appearance = Appearance97
+        Appearance99.ForeColor = System.Drawing.Color.Navy
+        Me.btnCelular.Appearance = Appearance99
         Me.btnCelular.AutoSize = True
         Me.btnCelular.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnCelular.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3111,8 +3147,8 @@ Partial Class frm_Trabajador
         '
         'btnTelefono
         '
-        Appearance98.ForeColor = System.Drawing.Color.Navy
-        Me.btnTelefono.Appearance = Appearance98
+        Appearance100.ForeColor = System.Drawing.Color.Navy
+        Me.btnTelefono.Appearance = Appearance100
         Me.btnTelefono.AutoSize = True
         Me.btnTelefono.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3151,8 +3187,8 @@ Partial Class frm_Trabajador
         '
         'btnEmail
         '
-        Appearance99.ForeColor = System.Drawing.Color.Navy
-        Me.btnEmail.Appearance = Appearance99
+        Appearance101.ForeColor = System.Drawing.Color.Navy
+        Me.btnEmail.Appearance = Appearance101
         Me.btnEmail.AutoSize = True
         Me.btnEmail.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3166,8 +3202,8 @@ Partial Class frm_Trabajador
         '
         'btnDireccion
         '
-        Appearance100.ForeColor = System.Drawing.Color.Navy
-        Me.btnDireccion.Appearance = Appearance100
+        Appearance102.ForeColor = System.Drawing.Color.Navy
+        Me.btnDireccion.Appearance = Appearance102
         Me.btnDireccion.AutoSize = True
         Me.btnDireccion.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnDireccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -3215,8 +3251,8 @@ Partial Class frm_Trabajador
         '
         'txtDni
         '
-        Appearance101.ForeColor = System.Drawing.Color.Black
-        Me.txtDni.Appearance = Appearance101
+        Appearance103.ForeColor = System.Drawing.Color.Black
+        Me.txtDni.Appearance = Appearance103
         Me.txtDni.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtDni.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtDni.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3248,8 +3284,8 @@ Partial Class frm_Trabajador
         '
         'txtNombre
         '
-        Appearance102.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Appearance = Appearance102
+        Appearance104.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Appearance = Appearance104
         Me.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNombre.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3261,9 +3297,9 @@ Partial Class frm_Trabajador
         '
         'etiFechaNacimiento
         '
-        Appearance103.BackColor = System.Drawing.Color.Transparent
-        Appearance103.ForeColor = System.Drawing.Color.Navy
-        Me.etiFechaNacimiento.Appearance = Appearance103
+        Appearance105.BackColor = System.Drawing.Color.Transparent
+        Appearance105.ForeColor = System.Drawing.Color.Navy
+        Me.etiFechaNacimiento.Appearance = Appearance105
         Me.etiFechaNacimiento.AutoSize = True
         Me.etiFechaNacimiento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiFechaNacimiento.ForeColor = System.Drawing.Color.Black
@@ -3297,8 +3333,8 @@ Partial Class frm_Trabajador
         '
         'txtApellidoMaterno
         '
-        Appearance104.ForeColor = System.Drawing.Color.Black
-        Me.txtApellidoMaterno.Appearance = Appearance104
+        Appearance106.ForeColor = System.Drawing.Color.Black
+        Me.txtApellidoMaterno.Appearance = Appearance106
         Me.txtApellidoMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoMaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoMaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3310,8 +3346,8 @@ Partial Class frm_Trabajador
         '
         'txtApellidoPaterno
         '
-        Appearance105.ForeColor = System.Drawing.Color.Black
-        Me.txtApellidoPaterno.Appearance = Appearance105
+        Appearance107.ForeColor = System.Drawing.Color.Black
+        Me.txtApellidoPaterno.Appearance = Appearance107
         Me.txtApellidoPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoPaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoPaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3323,9 +3359,9 @@ Partial Class frm_Trabajador
         '
         'etiApellidoPaterno
         '
-        Appearance106.BackColor = System.Drawing.Color.Transparent
-        Appearance106.ForeColor = System.Drawing.Color.Navy
-        Me.etiApellidoPaterno.Appearance = Appearance106
+        Appearance108.BackColor = System.Drawing.Color.Transparent
+        Appearance108.ForeColor = System.Drawing.Color.Navy
+        Me.etiApellidoPaterno.Appearance = Appearance108
         Me.etiApellidoPaterno.AutoSize = True
         Me.etiApellidoPaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiApellidoPaterno.ForeColor = System.Drawing.Color.Black
@@ -3337,9 +3373,9 @@ Partial Class frm_Trabajador
         '
         'etiDni
         '
-        Appearance107.BackColor = System.Drawing.Color.Transparent
-        Appearance107.ForeColor = System.Drawing.Color.Navy
-        Me.etiDni.Appearance = Appearance107
+        Appearance109.BackColor = System.Drawing.Color.Transparent
+        Appearance109.ForeColor = System.Drawing.Color.Navy
+        Me.etiDni.Appearance = Appearance109
         Me.etiDni.AutoSize = True
         Me.etiDni.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiDni.ForeColor = System.Drawing.Color.Black
@@ -3351,9 +3387,9 @@ Partial Class frm_Trabajador
         '
         'etiApellidoMaterno
         '
-        Appearance108.BackColor = System.Drawing.Color.Transparent
-        Appearance108.ForeColor = System.Drawing.Color.Navy
-        Me.etiApellidoMaterno.Appearance = Appearance108
+        Appearance110.BackColor = System.Drawing.Color.Transparent
+        Appearance110.ForeColor = System.Drawing.Color.Navy
+        Me.etiApellidoMaterno.Appearance = Appearance110
         Me.etiApellidoMaterno.AutoSize = True
         Me.etiApellidoMaterno.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiApellidoMaterno.ForeColor = System.Drawing.Color.Black
@@ -3365,9 +3401,9 @@ Partial Class frm_Trabajador
         '
         'etiNombre
         '
-        Appearance109.BackColor = System.Drawing.Color.Transparent
-        Appearance109.ForeColor = System.Drawing.Color.Navy
-        Me.etiNombre.Appearance = Appearance109
+        Appearance111.BackColor = System.Drawing.Color.Transparent
+        Appearance111.ForeColor = System.Drawing.Color.Navy
+        Me.etiNombre.Appearance = Appearance111
         Me.etiNombre.AutoSize = True
         Me.etiNombre.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiNombre.ForeColor = System.Drawing.Color.Black
@@ -3379,10 +3415,10 @@ Partial Class frm_Trabajador
         '
         'btnBorrar
         '
-        Appearance110.ForeColor = System.Drawing.Color.Navy
-        Appearance110.Image = 3
-        Appearance110.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnBorrar.Appearance = Appearance110
+        Appearance112.ForeColor = System.Drawing.Color.Navy
+        Appearance112.Image = 3
+        Appearance112.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnBorrar.Appearance = Appearance112
         Me.btnBorrar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnBorrar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3397,10 +3433,10 @@ Partial Class frm_Trabajador
         '
         'btnExaminar
         '
-        Appearance111.ForeColor = System.Drawing.Color.Navy
-        Appearance111.Image = 7
-        Appearance111.ImageHAlign = Infragistics.Win.HAlign.Right
-        Me.btnExaminar.Appearance = Appearance111
+        Appearance113.ForeColor = System.Drawing.Color.Navy
+        Appearance113.Image = 7
+        Appearance113.ImageHAlign = Infragistics.Win.HAlign.Right
+        Me.btnExaminar.Appearance = Appearance113
         Me.btnExaminar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnExaminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnExaminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3606,8 +3642,8 @@ Partial Class frm_Trabajador
         '
         'cboTipoTrabBus
         '
-        Appearance112.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoTrabBus.Appearance = Appearance112
+        Appearance114.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoTrabBus.Appearance = Appearance114
         Me.cboTipoTrabBus.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoTrabBus.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboTipoTrabBus.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3620,9 +3656,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta39
         '
-        Appearance113.BackColor = System.Drawing.Color.Transparent
-        Appearance113.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta39.Appearance = Appearance113
+        Appearance115.BackColor = System.Drawing.Color.Transparent
+        Appearance115.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta39.Appearance = Appearance115
         Me.Etiqueta39.AutoSize = True
         Me.Etiqueta39.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta39.ForeColor = System.Drawing.Color.Black
@@ -3650,9 +3686,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta31
         '
-        Appearance114.BackColor = System.Drawing.Color.Transparent
-        Appearance114.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta31.Appearance = Appearance114
+        Appearance116.BackColor = System.Drawing.Color.Transparent
+        Appearance116.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta31.Appearance = Appearance116
         Me.Etiqueta31.AutoSize = True
         Me.Etiqueta31.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta31.ForeColor = System.Drawing.Color.Black
@@ -3664,9 +3700,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta30
         '
-        Appearance115.BackColor = System.Drawing.Color.Transparent
-        Appearance115.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta30.Appearance = Appearance115
+        Appearance117.BackColor = System.Drawing.Color.Transparent
+        Appearance117.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta30.Appearance = Appearance117
         Me.Etiqueta30.AutoSize = True
         Me.Etiqueta30.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta30.ForeColor = System.Drawing.Color.Black
@@ -3678,9 +3714,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta29
         '
-        Appearance116.BackColor = System.Drawing.Color.Transparent
-        Appearance116.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta29.Appearance = Appearance116
+        Appearance118.BackColor = System.Drawing.Color.Transparent
+        Appearance118.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta29.Appearance = Appearance118
         Me.Etiqueta29.AutoSize = True
         Me.Etiqueta29.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta29.ForeColor = System.Drawing.Color.Black
@@ -3716,8 +3752,8 @@ Partial Class frm_Trabajador
         '
         'cboBuscaEstado
         '
-        Appearance117.ForeColor = System.Drawing.Color.Black
-        Me.cboBuscaEstado.Appearance = Appearance117
+        Appearance119.ForeColor = System.Drawing.Color.Black
+        Me.cboBuscaEstado.Appearance = Appearance119
         Me.cboBuscaEstado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboBuscaEstado.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboBuscaEstado.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3730,9 +3766,9 @@ Partial Class frm_Trabajador
         '
         'Etiqueta28
         '
-        Appearance118.BackColor = System.Drawing.Color.Transparent
-        Appearance118.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta28.Appearance = Appearance118
+        Appearance120.BackColor = System.Drawing.Color.Transparent
+        Appearance120.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta28.Appearance = Appearance120
         Me.Etiqueta28.AutoSize = True
         Me.Etiqueta28.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta28.ForeColor = System.Drawing.Color.Black
@@ -3869,6 +3905,7 @@ Partial Class frm_Trabajador
         CType(Me.agrSueldoTrab, System.ComponentModel.ISupportInitialize).EndInit()
         Me.agrSueldoTrab.ResumeLayout(False)
         Me.agrSueldoTrab.PerformLayout()
+        CType(Me.ndSueldoCaja, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPeriocidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTipoPago, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ndSueldoBasico, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4277,4 +4314,6 @@ Partial Class frm_Trabajador
     Friend WithEvents btnBorrar As ISL.Controles.Boton
     Friend WithEvents btnExaminar As ISL.Controles.Boton
     Friend WithEvents imagenGuardar As PictureBox
+    Friend WithEvents ndSueldoCaja As Controles.NumeroDecimal
+    Friend WithEvents Etiqueta41 As Controles.Etiqueta
 End Class

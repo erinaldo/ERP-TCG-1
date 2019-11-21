@@ -164,20 +164,7 @@ Public Class frm_Login
                 End If
                 My.Settings.Save()
             End If
-            '@0001 Inicio Variables globales
-            Dim oeEmpSis As New e_EmpresaSistemas
-            oeEmpSis = olEmpresaSistema.Obtener(oeEmpSis)
-            With oeEmpSis
-                gs_IdClienteProveedorSistema = .IdClienteProveedor.Trim
-                gs_IdEmpresaSistema = .IdEmpresa.Trim
-                gs_TxtEmpresaSistema = .Nombre
-                gs_RucEmpresaSistema = .Ruc
-                gs_DireccionEmpresaSistema = .Direccion.Trim
-                gs_SmtpClientSis = .SmtpClient.Trim
-                gs_userNameCorreo = .UserName.Trim
-                gs_passwordCorreo = .Password.Trim
-            End With
-            '@0001 Fin VG
+
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -232,6 +219,21 @@ Public Class frm_Login
     End Sub
     '@0001 Inicio
     Private Sub LlenaCombos()
+        '@0001 Inicio Variables globales
+        Dim oeEmpSis As New e_EmpresaSistemas
+        oeEmpSis = olEmpresaSistema.Obtener(oeEmpSis)
+        With oeEmpSis
+            gs_IdClienteProveedorSistema = .IdClienteProveedor.Trim
+            gs_IdEmpresaSistema = .IdEmpresa.Trim
+            gs_TxtEmpresaSistema = .Nombre
+            gs_RucEmpresaSistema = .Ruc
+            gs_DireccionEmpresaSistema = .Direccion.Trim
+            gs_SmtpClientSis = .SmtpClient.Trim
+            gs_userNameCorreo = .UserName.Trim
+            gs_passwordCorreo = .Password.Trim
+        End With
+        cmbEmpresa.Text = gs_TxtEmpresaSistema.Trim
+        '@0001 Fin VG
         LlenarComboMaestro(cboCentro, CentroPublic, -1)
     End Sub
     '@0001 Fin

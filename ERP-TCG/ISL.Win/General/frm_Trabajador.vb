@@ -353,6 +353,17 @@ Public Class frm_Trabajador
                             oeTrabajador.oeCargo.Id = oeTemp.oeCargo.Id
                             oeTrabajador.FechaIngreso = oeTemp.FechaIngreso
                             oeTrabajador.leOcupacionTrabajador = oeTemp.leOcupacionTrabajador
+                            '@0001 Ini
+                            oeTrabajador.oePersona.leDocumento = oeTemp.oePersona.leDocumento
+                            oeTrabajador.leCtaBancaria = oeTemp.leCtaBancaria
+                            oeTrabajador.leSueldo = oeTemp.leSueldo
+                            oeTrabajador.leFondoPension = oeTemp.leFondoPension
+                            oeTrabajador.leContratos = oeTemp.leContratos
+                            oeTrabajador.leRegimenSalud = oeTemp.leRegimenSalud
+                            oeTrabajador.leSeguroComp = oeTemp.leSeguroComp
+                            oeTrabajador.leDerechoHabiente = oeTemp.leDerechoHabiente
+                            oeTrabajador.leSueldo = oeTemp.leSueldo
+                            '@0001 Fin
                             oeTrabajador.TipoOperacion = "A"
                         Else
                             '@0001 Sin Foto
@@ -882,6 +893,7 @@ Public Class frm_Trabajador
         txtTelefono.Text = String.Empty
         MostrarTabs(0, ficManOcupacion)
         ndSueldoBasico.Value = 0
+        ndSueldoCaja.Value = 0 '@0001
         cboTipoPago.SelectedIndex = -1
         cboPeriocidad.SelectedIndex = -1
         fecSueldoActividad.Value = Date.Now.Date
@@ -1094,7 +1106,11 @@ Public Class frm_Trabajador
                 CargarSeguroComp(.leSeguroComp)
                 leDerechoHab = .leDerechoHabiente
                 CargarDerechoHabiente(leDerechoHab)
-                '@0001
+                '@0001 Ini
+                If IsNothing(.Foto) Then
+                    oeTrabajador.Foto = BitConverter.GetBytes(0)
+                End If
+
                 If .Foto.Length <> 4 Then
                     upbFoto.Image = .Foto
                     Dim tc As TypeConverter = TypeDescriptor.GetConverter(GetType(Bitmap))
@@ -1103,7 +1119,8 @@ Public Class frm_Trabajador
                     imagenGuardar.Image = imagen
                     btnDescargarJpg.Enabled = True
                 End If
-                '@0001
+                '@0001 Fin
+
             End With
         Catch ex As Exception
             Throw ex
@@ -1311,6 +1328,7 @@ Public Class frm_Trabajador
             oeEmpresa = New e_Empresa
             oeEmpresa.TipoOperacion = ""
             oeEmpresa.Activo = True
+            oeEmpresa.IdTipoEmpresa = "1CH000000006" '@0001 "PRESTADORA DE SALUD"
             leEmpresa = olEmpresa.Listar(oeEmpresa)
             Dim _leEmp = leEmpresa.Where(Function(it) it.TipoEmpresa = "PRESTADORA DE SALUD").ToList
             LlenarCombo(cboEntidadPS, "Nombre", _leEmp, -1)
@@ -1733,6 +1751,7 @@ Public Class frm_Trabajador
                     cboTipoPago.Value = _leSueAux(0).TipoPago
                     cboPeriocidad.Value = _leSueAux(0).Periocidad
                     fecSueldoActividad.Value = _leSueAux(0).FechaActividad
+                    ndSueldoCaja.Value = _leSueAux(0).SueldoCaja '@0001
                 Else
                     fecSueldoActividad.Value = Date.Now.Date
                 End If

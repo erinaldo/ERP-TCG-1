@@ -460,6 +460,7 @@ Public Class frm_SueldoTrabajador
                         oeSueldoTrabajador.Equivale = 2
                         If Not leSueldoTrabajador.Contains(oeSueldoTrabajador) Then
                             oeSueTraAux.Sueldo = oeSueldoTrabajador.Sueldo
+                            oeSueTraAux.SueldoCaja = oeSueldoTrabajador.SueldoCaja
                             oeSueTraAux.TipoOperacion = "A"
                         Else
                             oeSueTraAux = leSueldoTrabajador.Item(leSueldoTrabajador.IndexOf(oeSueldoTrabajador))
@@ -695,6 +696,7 @@ Public Class frm_SueldoTrabajador
             oeSueldoTrabajador.TipoPago = cboTipoPago.Value
             oeSueldoTrabajador.Periocidad = cboPeriocidad.Value
             oeSueldoTrabajador.Vigente = IIf(chkVigente.Checked, 1, 0)
+            oeSueldoTrabajador.SueldoCaja = ndCaja.Value
         Catch ex As Exception
             Throw ex
         End Try
@@ -832,6 +834,8 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("Sueldo").Format = "#,##0.00"
                 .DisplayLayout.Bands(0).Columns("Activo").Header.Caption = "OK"
                 .DisplayLayout.Bands(0).Columns("Vigente").Style = ColumnStyle.CheckBox
+                .DisplayLayout.Bands(0).Columns("SueldoCaja").CellAppearance.TextHAlign = HAlign.Right '@0001
+                .DisplayLayout.Bands(0).Columns("SueldoCaja").Format = "#,##0.00" '@0001
 
                 .DisplayLayout.Bands(0).Columns("Dni").Header.VisiblePosition = 0
                 .DisplayLayout.Bands(0).Columns("Trabajador").Header.VisiblePosition = 1
@@ -842,6 +846,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("FechaInactividad").Header.VisiblePosition = 6
                 .DisplayLayout.Bands(0).Columns("Vigente").Header.VisiblePosition = 7
                 .DisplayLayout.Bands(0).Columns("Activo").Header.VisiblePosition = 8
+                .DisplayLayout.Bands(0).Columns("SueldoCaja").Header.VisiblePosition = 9 '@0001
 
                 .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
                 .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
@@ -867,6 +872,7 @@ Public Class frm_SueldoTrabajador
             ndSueldo.Value = .Sueldo
             fecActividad.Value = .FechaActividad
             chkVigente.Checked = IIf(.Vigente = 1, True, False)
+            ndCaja.Value = .SueldoCaja
             CargarHistorial(.leHistorial)
         End With
     End Sub
@@ -955,6 +961,14 @@ Public Class frm_SueldoTrabajador
             mensajeEmergente.Problema(ex.Message, True)
         End Try
         
+    End Sub
+
+    Private Sub ndCaja_ValueChanged(sender As Object, e As EventArgs) Handles ndCaja.ValueChanged
+        If Not IsDBNull(ndCaja.Value) Then
+            oeSueldoTrabajador.SueldoCaja = ndCaja.Value
+        Else
+            ndCaja.Value = 0
+        End If
     End Sub
 
     Private Sub tsmiNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiNuevo.Click
