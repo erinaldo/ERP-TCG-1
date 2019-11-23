@@ -35,10 +35,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Librerias", "Librerias\", "
 		SlnRelativePath = "Librerias\"
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Internet Ver1107", "Internet Ver1107\Internet Ver1107.vdproj", "{8CE99D84-B336-4B4C-B10A-231FB1523B15}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Local Ver1107", "Local Ver1107\Local Ver1107.vdproj", "{0CE11E16-0B8D-40E6-8644-504BFFA3B607}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,14 +91,6 @@ Global
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.ActiveCfg = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.Build.0 = Debug|Any CPU
-		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Debug|Any CPU.ActiveCfg = Debug
-		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Debug|x86.ActiveCfg = Debug
-		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Release|Any CPU.ActiveCfg = Release
-		{8CE99D84-B336-4B4C-B10A-231FB1523B15}.Release|x86.ActiveCfg = Release
-		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Debug|Any CPU.ActiveCfg = Debug
-		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Debug|x86.ActiveCfg = Debug
-		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Release|Any CPU.ActiveCfg = Release
-		{0CE11E16-0B8D-40E6-8644-504BFFA3B607}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
