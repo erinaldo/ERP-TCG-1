@@ -276,7 +276,7 @@ Public Class d_Material
                                               .IdItemGasto,
                                               .UsuarioCreacion,
                                               .IndDivisible,
-                                              .IndActivoFijo).ToString.Split("_")
+                                              .IndActivoFijo, .Precio).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each MaterialCuentaContable As e_MaterialCuentaContable In oeMaterial.ListaMaterialCuentaContable
                         MaterialCuentaContable.Id = ""

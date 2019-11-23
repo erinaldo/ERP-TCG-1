@@ -208,15 +208,20 @@ Module m_Funciones
 
     Public Function gfc_ObtenerNumeroDoc(Serie As String, IdTipoDocumento As String, Tipo As Integer) As Integer
         Try
-            Dim oeDocumento As New e_MovimientoDocumento
+            'Dim oeDocumento As New e_MovimientoDocumento
             Dim olDocumento As New l_MovimientoDocumento
-            oeDocumento.TipoOperacion = "N"
-            oeDocumento.IdTipoDocumento = IdTipoDocumento
-            oeDocumento.Serie = Serie
-            oeDocumento.Tipo = Tipo
-            oeDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
-            oeDocumento = olDocumento.Obtener(oeDocumento)
-            If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
+            'oeDocumento.TipoOperacion = "N"
+            'oeDocumento.IdTipoDocumento = IdTipoDocumento
+            'oeDocumento.Serie = Serie
+            'oeDocumento.Tipo = Tipo
+            'oeDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
+            'oeDocumento = olDocumento.Obtener(oeDocumento)
+            'If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
+            Dim oe As New e_MovimientoDocumento
+            oe.TipoOperacion = "NUM"
+            oe.Serie = Serie
+            oe.IdTipoDocumento = IdTipoDocumento
+            Return olDocumento.ObtenerNumDoc(oe).Numero
             Return 1
         Catch ex As Exception
             Throw ex
@@ -338,7 +343,7 @@ Module m_Funciones
             Dim oeEmpresa As New e_Empresa
             Dim olEmpresa As New l_Empresa
             Dim loEmpresa As New List(Of e_Empresa)
-            loEmpresa = New List(Of e_Empresa)
+            'loEmpresa = New List(Of e_Empresa)
             oeEmpresa.TipoOperacion = Tipo
             If IdProveedor = "" Then
                 If IndRuc Then

@@ -3816,7 +3816,7 @@ Public Class frm_FacturarCarga
                     _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, False, String.Empty, b_anticipo)
                 End If
                 If _banEmis = True Then
-                    mensajeEmergente.Confirmacion("El Documento Nº " & oeMovDocumento.Serie & " - " & oeMovDocumento.Numero & " ha sido Emitida", True)
+                    mensajeEmergente.Confirmacion("El Documento Nº " & oeMovDocumento.Serie & " - " & oeMovDocumento.Numero & " ha sido Emitido", True)
                     'Dim WCF_Cpe As New WCF_CpeIndu.WCF_CpeClient("Indu_IWCF_Cpe")
                     Dim dsComprobante As DataSet
                     'Dim dt_cpe As DataTable

@@ -81,6 +81,7 @@ Public Class frm_Material
         Try
             ControlBoton(1, 1, 0, 0, 0, 0, 0, 0, 1)
             MostrarTabs(0, ficMaterial)
+            gf_AsignarEventoSeleccionarTexto(Me)
             InicializarLogicas()
             griMaterial.DisplayLayout.Override.RowSelectorHeaderStyle = Infragistics.Win.UltraWinGrid.RowSelectorHeaderStyle.ColumnChooserButton
             griMaterial.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True
@@ -673,6 +674,7 @@ Public Class frm_Material
         txtNombre.Text = String.Empty
         cboSubFamilia.Enabled = True
         decPeso.Value = 0
+        une_Precio.Value = 0
         cboTipoUnidadMedida.SelectedIndex = -1
         cboFamilia.SelectedIndex = -1
         cboSubFamilia.SelectedIndex = -1
@@ -747,6 +749,7 @@ Public Class frm_Material
                     txtMedida.Text = .Medida
                     decPeso.Value = .Peso
                     'cboMarca.Value = oeMaterial.IdMarca
+                    une_Precio.Value = .Precio
                     cboTipoUnidadMedida.Value = .IdTipoUnidadMedida
                     cboUnidadMedida.Value = .IdUnidadMedida
                     txtGlosa.Text = .Glosa
@@ -815,10 +818,6 @@ Public Class frm_Material
 
     Private Function GuardarRegistro() As Boolean
         Try
-            'If chkAsignarAlmacen.Checked Then
-            '    oeMaterial.IndAsignar = chkAsignarAlmacen.Checked
-            '    oeMaterial.IdAlmacen = cbAlmacen.Value
-            'End If
             With oeMaterial
                 If .Nombre Is Nothing Or .Nombre = "" Then
                     Throw New Exception("Ingrese nombre de material")
@@ -831,6 +830,7 @@ Public Class frm_Material
                 If lstMaterialAlmacenes.Count > 0 Then .ListaAlmacenesAsignados = lstMaterialAlmacenes
                 .IndDivisible = chkContabilizable.Checked
                 .oeMaterial_DisenoNeu = oeMaterial_DisenoNeu
+                .Precio = une_Precio.Value
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .IndActivoFijo = IIf(verActivoFijo.Checked, 1, 0)
             End With
@@ -839,7 +839,7 @@ Public Class frm_Material
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                 If oeMaterial.TipoOperacion = "I" Then
                     EnviarCorreo(oeMaterial.Id)
-                End If             
+                End If
                 MostrarTabs(0, ficMaterial, 2)
                 Consultar(True)
                 griMaterial.Focus()

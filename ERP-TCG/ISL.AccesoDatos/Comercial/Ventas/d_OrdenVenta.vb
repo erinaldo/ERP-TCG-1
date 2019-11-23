@@ -112,7 +112,7 @@ Public Class d_OrdenVenta
             Dim odOrdenComercialMaterial As New d_OrdenVentaMaterial
             'Dim odOrdenComercialServicio As New d_OrdenComercialServicio
             Dim odOrden As New d_Orden
-            'Dim odOrdenComercialOrden As New d_OrdenComercial_Orden
+            'Dim odOrdenComercialOrden As New 
             'Dim oeOrdenComercialOrden As New e_OrdenVentaOrden
             Dim odDocumento As New d_MovimientoDocumento
             Using transScope As New TransactionScope()
@@ -164,9 +164,9 @@ Public Class d_OrdenVenta
                     '    oeOrdenComercialOrden.IdOrden = .oeOrdenIngreso.Id
                     '    oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
                     '    odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
-                    'ElseIf .oeOrdenSalida.TipoOperacion <> "" Then
+                    'If .oeOrdenSalida.TipoOperacion <> "" Then
                     '    odOrden.Guardar(.oeOrdenSalida)
-                    '    oeOrdenComercialOrden.TipoOperacion = "I"
+                    '    .TipoOperacion = "I"
                     '    oeOrdenComercialOrden.IdOrdenComercial = .Id
                     '    oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
                     '    oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
