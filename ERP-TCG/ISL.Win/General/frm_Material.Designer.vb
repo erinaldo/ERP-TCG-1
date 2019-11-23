@@ -212,21 +212,19 @@ Partial Class frm_Material
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance64 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance65 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton6 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance66 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance67 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton6 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance68 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance69 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance70 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton7 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance71 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance72 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton7 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance73 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance74 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance75 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -234,20 +232,19 @@ Partial Class frm_Material
         Dim Appearance77 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance78 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance79 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton8 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance80 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance81 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton9 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
+        Dim EditorButton8 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance82 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance83 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton10 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
+        Dim EditorButton9 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance84 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance85 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton11 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
+        Dim EditorButton10 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance86 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance87 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton11 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance89 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance90 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -255,6 +252,8 @@ Partial Class frm_Material
         Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn60 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn61 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMaterial")
         Dim UltraDataColumn62 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdCuentaContable")
@@ -291,6 +290,9 @@ Partial Class frm_Material
         Dim UltraDataColumn87 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn88 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Nombre")
         Dim UltraDataColumn89 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Abreviatura")
+        Dim Appearance89 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.grid_Almacenes = New ISL.Controles.Grilla(Me.components)
         Me.odAlmacenes = New ISL.Controles.OrigenDatos(Me.components)
@@ -362,7 +364,6 @@ Partial Class frm_Material
         Me.cboTipoUnidadMedida = New ISL.Controles.ComboMaestros(Me.components)
         Me.cboSubFamilia = New ISL.Controles.ComboMaestros(Me.components)
         Me.cboFamilia = New ISL.Controles.ComboMaestros(Me.components)
-        Me.Etiqueta12 = New ISL.Controles.Etiqueta(Me.components)
         Me.verIgv = New ISL.Controles.Chequear(Me.components)
         Me.Etiqueta11 = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta9 = New ISL.Controles.Etiqueta(Me.components)
@@ -381,6 +382,9 @@ Partial Class frm_Material
         Me.odMaterialFamilia = New ISL.Controles.OrigenDatos(Me.components)
         Me.odMaterialMedida = New ISL.Controles.OrigenDatos(Me.components)
         Me.ugb_Espera = New ISL.Win.Espere()
+        Me.Etiqueta12 = New ISL.Controles.Etiqueta(Me.components)
+        Me.Etiqueta17 = New ISL.Controles.Etiqueta(Me.components)
+        Me.une_Precio = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
         Me.UltraTabPageControl6.SuspendLayout()
         CType(Me.grid_Almacenes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.odAlmacenes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -442,6 +446,7 @@ Partial Class frm_Material
         Me.ficMaterial.SuspendLayout()
         CType(Me.odMaterialFamilia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.odMaterialMedida, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.une_Precio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl6
@@ -535,7 +540,7 @@ Partial Class frm_Material
         Me.grid_Almacenes.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[True]
         Me.grid_Almacenes.DisplayLayout.Override.SelectTypeRow = Infragistics.Win.UltraWinGrid.SelectType.Extended
         Me.grid_Almacenes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grid_Almacenes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grid_Almacenes.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_Almacenes.Location = New System.Drawing.Point(0, 58)
         Me.grid_Almacenes.Name = "grid_Almacenes"
         Me.grid_Almacenes.Size = New System.Drawing.Size(1229, 197)
@@ -561,7 +566,7 @@ Partial Class frm_Material
         Me.Agrupacion2.Controls.Add(Me.btnAgregarAlmacen)
         Me.Agrupacion2.Controls.Add(Me.cbAlmacen)
         Me.Agrupacion2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Agrupacion2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion2.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion2.Name = "Agrupacion2"
@@ -576,13 +581,13 @@ Partial Class frm_Material
         Me.txtZona.Appearance = Appearance7
         Me.txtZona.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtZona.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtZona.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtZona.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtZona.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtZona.ImageTransparentColor = System.Drawing.Color.Empty
         Me.txtZona.Location = New System.Drawing.Point(897, 27)
         Me.txtZona.MaxLength = 20
         Me.txtZona.Name = "txtZona"
-        Me.txtZona.Size = New System.Drawing.Size(113, 21)
+        Me.txtZona.Size = New System.Drawing.Size(113, 22)
         Me.txtZona.TabIndex = 7
         Me.txtZona.Tag = "0"
         '
@@ -591,12 +596,12 @@ Partial Class frm_Material
         Appearance8.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta25.Appearance = Appearance8
         Me.Etiqueta25.AutoSize = True
-        Me.Etiqueta25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta25.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta25.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta25.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta25.Location = New System.Drawing.Point(860, 29)
         Me.Etiqueta25.Name = "Etiqueta25"
-        Me.Etiqueta25.Size = New System.Drawing.Size(32, 14)
+        Me.Etiqueta25.Size = New System.Drawing.Size(33, 15)
         Me.Etiqueta25.TabIndex = 6
         Me.Etiqueta25.Text = "Zona:"
         '
@@ -605,13 +610,13 @@ Partial Class frm_Material
         Appearance9.ForeColor = System.Drawing.Color.Black
         Me.ndStockMaximo.Appearance = Appearance9
         Me.ndStockMaximo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.ndStockMaximo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ndStockMaximo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndStockMaximo.ForeColor = System.Drawing.Color.Black
         Me.ndStockMaximo.Location = New System.Drawing.Point(747, 26)
         Me.ndStockMaximo.Name = "ndStockMaximo"
         Me.ndStockMaximo.NullText = "0.00"
         Me.ndStockMaximo.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.ndStockMaximo.Size = New System.Drawing.Size(90, 21)
+        Me.ndStockMaximo.Size = New System.Drawing.Size(90, 22)
         Me.ndStockMaximo.TabIndex = 5
         '
         'Etiqueta24
@@ -619,12 +624,12 @@ Partial Class frm_Material
         Appearance10.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta24.Appearance = Appearance10
         Me.Etiqueta24.AutoSize = True
-        Me.Etiqueta24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta24.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta24.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta24.Location = New System.Drawing.Point(669, 28)
         Me.Etiqueta24.Name = "Etiqueta24"
-        Me.Etiqueta24.Size = New System.Drawing.Size(76, 14)
+        Me.Etiqueta24.Size = New System.Drawing.Size(77, 15)
         Me.Etiqueta24.TabIndex = 4
         Me.Etiqueta24.Text = "Stock Maximo:"
         '
@@ -633,13 +638,13 @@ Partial Class frm_Material
         Appearance11.ForeColor = System.Drawing.Color.Black
         Me.ndStockMinimo.Appearance = Appearance11
         Me.ndStockMinimo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.ndStockMinimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ndStockMinimo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndStockMinimo.ForeColor = System.Drawing.Color.Black
         Me.ndStockMinimo.Location = New System.Drawing.Point(561, 26)
         Me.ndStockMinimo.Name = "ndStockMinimo"
         Me.ndStockMinimo.NullText = "0.00"
         Me.ndStockMinimo.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.ndStockMinimo.Size = New System.Drawing.Size(90, 21)
+        Me.ndStockMinimo.Size = New System.Drawing.Size(90, 22)
         Me.ndStockMinimo.TabIndex = 3
         '
         'Etiqueta23
@@ -647,12 +652,12 @@ Partial Class frm_Material
         Appearance12.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta23.Appearance = Appearance12
         Me.Etiqueta23.AutoSize = True
-        Me.Etiqueta23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta23.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta23.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta23.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta23.Location = New System.Drawing.Point(483, 28)
         Me.Etiqueta23.Name = "Etiqueta23"
-        Me.Etiqueta23.Size = New System.Drawing.Size(73, 14)
+        Me.Etiqueta23.Size = New System.Drawing.Size(75, 15)
         Me.Etiqueta23.TabIndex = 2
         Me.Etiqueta23.Text = "Stock Minimo:"
         '
@@ -661,12 +666,12 @@ Partial Class frm_Material
         Appearance13.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta2.Appearance = Appearance13
         Me.Etiqueta2.AutoSize = True
-        Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta2.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta2.Location = New System.Drawing.Point(17, 28)
         Me.Etiqueta2.Name = "Etiqueta2"
-        Me.Etiqueta2.Size = New System.Drawing.Size(50, 14)
+        Me.Etiqueta2.Size = New System.Drawing.Size(51, 15)
         Me.Etiqueta2.TabIndex = 0
         Me.Etiqueta2.Text = "Almacen:"
         '
@@ -706,11 +711,11 @@ Partial Class frm_Material
         Me.cbAlmacen.DisplayMember = "Nombre"
         Me.cbAlmacen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cbAlmacen.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cbAlmacen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAlmacen.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAlmacen.ForeColor = System.Drawing.Color.Black
         Me.cbAlmacen.Location = New System.Drawing.Point(72, 26)
         Me.cbAlmacen.Name = "cbAlmacen"
-        Me.cbAlmacen.Size = New System.Drawing.Size(377, 21)
+        Me.cbAlmacen.Size = New System.Drawing.Size(377, 22)
         Me.cbAlmacen.TabIndex = 1
         Me.cbAlmacen.ValueMember = "Id"
         '
@@ -1048,7 +1053,7 @@ Partial Class frm_Material
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrLista)
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1231, 546)
         '
@@ -1341,7 +1346,7 @@ Partial Class frm_Material
         '
         Me.UltraTabPageControl2.Controls.Add(Me.tcDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrMantenimiento)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1231, 546)
         '
@@ -1378,6 +1383,8 @@ Partial Class frm_Material
         Appearance60.BackColor = System.Drawing.Color.White
         Appearance60.BackColor2 = System.Drawing.Color.White
         Me.agrMantenimiento.ContentAreaAppearance = Appearance60
+        Me.agrMantenimiento.Controls.Add(Me.une_Precio)
+        Me.agrMantenimiento.Controls.Add(Me.Etiqueta17)
         Me.agrMantenimiento.Controls.Add(Me.verActivoFijo)
         Me.agrMantenimiento.Controls.Add(Me.chkContabilizable)
         Me.agrMantenimiento.Controls.Add(Me.cmbModelo)
@@ -1412,19 +1419,19 @@ Partial Class frm_Material
         Me.agrMantenimiento.Controls.Add(Me.txtNombre)
         Me.agrMantenimiento.Controls.Add(Me.etiNombre)
         Me.agrMantenimiento.Dock = System.Windows.Forms.DockStyle.Top
-        Me.agrMantenimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrMantenimiento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrMantenimiento.ForeColor = System.Drawing.Color.MidnightBlue
         Me.agrMantenimiento.Location = New System.Drawing.Point(0, 0)
         Me.agrMantenimiento.Name = "agrMantenimiento"
         Me.agrMantenimiento.Size = New System.Drawing.Size(1231, 268)
-        Me.agrMantenimiento.TabIndex = 0
+        Me.agrMantenimiento.TabIndex = 1
         Me.agrMantenimiento.Text = "Dato"
         Me.agrMantenimiento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'verActivoFijo
         '
-        Appearance61.FontData.BoldAsString = "True"
-        Me.verActivoFijo.Appearance = Appearance61
+        Appearance63.FontData.BoldAsString = "True"
+        Me.verActivoFijo.Appearance = Appearance63
         Me.verActivoFijo.AutoSize = True
         Me.verActivoFijo.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.verActivoFijo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1432,7 +1439,7 @@ Partial Class frm_Material
         Me.verActivoFijo.Location = New System.Drawing.Point(422, 240)
         Me.verActivoFijo.Name = "verActivoFijo"
         Me.verActivoFijo.Size = New System.Drawing.Size(77, 17)
-        Me.verActivoFijo.TabIndex = 23
+        Me.verActivoFijo.TabIndex = 33
         Me.verActivoFijo.Text = "Activo Fijo:"
         '
         'chkContabilizable
@@ -1441,81 +1448,81 @@ Partial Class frm_Material
         Me.chkContabilizable.Location = New System.Drawing.Point(298, 241)
         Me.chkContabilizable.Name = "chkContabilizable"
         Me.chkContabilizable.Size = New System.Drawing.Size(80, 20)
-        Me.chkContabilizable.TabIndex = 22
+        Me.chkContabilizable.TabIndex = 21
         Me.chkContabilizable.Text = "Divisible:"
         '
         'cmbModelo
         '
-        Appearance62.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cmbModelo.Appearance = Appearance62
+        Appearance64.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cmbModelo.Appearance = Appearance64
         Me.cmbModelo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance63.Image = 7
-        EditorButton5.Appearance = Appearance63
+        Appearance65.Image = 7
+        EditorButton5.Appearance = Appearance65
         Me.cmbModelo.ButtonsRight.Add(EditorButton5)
         Me.cmbModelo.DisplayMember = "Nombre"
         Me.cmbModelo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cmbModelo.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cmbModelo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbModelo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbModelo.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cmbModelo.ImageList = Me.imagenes
         Me.cmbModelo.Location = New System.Drawing.Point(593, 76)
         Me.cmbModelo.Name = "cmbModelo"
-        Me.cmbModelo.Size = New System.Drawing.Size(272, 21)
-        Me.cmbModelo.TabIndex = 27
+        Me.cmbModelo.Size = New System.Drawing.Size(272, 22)
+        Me.cmbModelo.TabIndex = 25
         Me.cmbModelo.ValueMember = "Id"
         '
         'Etiqueta27
         '
-        Appearance64.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta27.Appearance = Appearance64
+        Appearance66.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta27.Appearance = Appearance66
         Me.Etiqueta27.AutoSize = True
-        Me.Etiqueta27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta27.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta27.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta27.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta27.Location = New System.Drawing.Point(542, 76)
         Me.Etiqueta27.Name = "Etiqueta27"
-        Me.Etiqueta27.Size = New System.Drawing.Size(43, 14)
-        Me.Etiqueta27.TabIndex = 26
+        Me.Etiqueta27.Size = New System.Drawing.Size(44, 15)
+        Me.Etiqueta27.TabIndex = 24
         Me.Etiqueta27.Text = "Modelo:"
         '
         'cmbMarca
         '
-        Appearance65.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cmbMarca.Appearance = Appearance65
+        Appearance67.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cmbMarca.Appearance = Appearance67
         Me.cmbMarca.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance66.Image = 7
-        EditorButton6.Appearance = Appearance66
+        Appearance68.Image = 7
+        EditorButton6.Appearance = Appearance68
         Me.cmbMarca.ButtonsRight.Add(EditorButton6)
         Me.cmbMarca.DisplayMember = "Nombre"
         Me.cmbMarca.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cmbMarca.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cmbMarca.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbMarca.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMarca.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cmbMarca.ImageList = Me.imagenes
         Me.cmbMarca.Location = New System.Drawing.Point(593, 48)
         Me.cmbMarca.Name = "cmbMarca"
-        Me.cmbMarca.Size = New System.Drawing.Size(272, 21)
-        Me.cmbMarca.TabIndex = 25
+        Me.cmbMarca.Size = New System.Drawing.Size(272, 22)
+        Me.cmbMarca.TabIndex = 23
         Me.cmbMarca.ValueMember = "Id"
         '
         'Etiqueta26
         '
-        Appearance67.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta26.Appearance = Appearance67
+        Appearance69.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta26.Appearance = Appearance69
         Me.Etiqueta26.AutoSize = True
-        Me.Etiqueta26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta26.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta26.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta26.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta26.Location = New System.Drawing.Point(542, 49)
         Me.Etiqueta26.Name = "Etiqueta26"
-        Me.Etiqueta26.Size = New System.Drawing.Size(38, 14)
-        Me.Etiqueta26.TabIndex = 24
+        Me.Etiqueta26.Size = New System.Drawing.Size(38, 15)
+        Me.Etiqueta26.TabIndex = 22
         Me.Etiqueta26.Text = "Marca:"
         '
         'btnGuardarProveedor
         '
-        Appearance68.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        Me.btnGuardarProveedor.Appearance = Appearance68
+        Appearance70.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        Me.btnGuardarProveedor.Appearance = Appearance70
         Me.btnGuardarProveedor.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnGuardarProveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardarProveedor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1523,14 +1530,14 @@ Partial Class frm_Material
         Me.btnGuardarProveedor.Location = New System.Drawing.Point(273, 210)
         Me.btnGuardarProveedor.Name = "btnGuardarProveedor"
         Me.btnGuardarProveedor.Size = New System.Drawing.Size(77, 25)
-        Me.btnGuardarProveedor.TabIndex = 18
+        Me.btnGuardarProveedor.TabIndex = 17
         Me.btnGuardarProveedor.Text = "Guardar"
         Me.btnGuardarProveedor.Visible = False
         '
         'txtId
         '
-        Appearance69.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtId.Appearance = Appearance69
+        Appearance71.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtId.Appearance = Appearance71
         Me.txtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtId.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1545,36 +1552,36 @@ Partial Class frm_Material
         '
         'cboTipoMaterial
         '
-        Appearance70.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboTipoMaterial.Appearance = Appearance70
+        Appearance72.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboTipoMaterial.Appearance = Appearance72
         Me.cboTipoMaterial.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance71.Image = 7
-        EditorButton7.Appearance = Appearance71
+        Appearance73.Image = 7
+        EditorButton7.Appearance = Appearance73
         Me.cboTipoMaterial.ButtonsRight.Add(EditorButton7)
         Me.cboTipoMaterial.DisplayMember = "Nombre"
         Me.cboTipoMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoMaterial.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboTipoMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTipoMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoMaterial.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboTipoMaterial.ImageList = Me.imagenes
         Me.cboTipoMaterial.Location = New System.Drawing.Point(173, 78)
         Me.cboTipoMaterial.Name = "cboTipoMaterial"
-        Me.cboTipoMaterial.Size = New System.Drawing.Size(326, 21)
-        Me.cboTipoMaterial.TabIndex = 7
+        Me.cboTipoMaterial.Size = New System.Drawing.Size(326, 22)
+        Me.cboTipoMaterial.TabIndex = 6
         Me.cboTipoMaterial.ValueMember = "Id"
         '
         'Etiqueta4
         '
-        Appearance72.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta4.Appearance = Appearance72
+        Appearance74.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta4.Appearance = Appearance74
         Me.Etiqueta4.AutoSize = True
-        Me.Etiqueta4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta4.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta4.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta4.Location = New System.Drawing.Point(74, 83)
         Me.Etiqueta4.Name = "Etiqueta4"
-        Me.Etiqueta4.Size = New System.Drawing.Size(86, 14)
-        Me.Etiqueta4.TabIndex = 6
+        Me.Etiqueta4.Size = New System.Drawing.Size(89, 15)
+        Me.Etiqueta4.TabIndex = 5
         Me.Etiqueta4.Text = "Tipo de Material:"
         '
         'Etiqueta3
@@ -1586,13 +1593,13 @@ Partial Class frm_Material
         Me.Etiqueta3.Location = New System.Drawing.Point(271, 241)
         Me.Etiqueta3.Name = "Etiqueta3"
         Me.Etiqueta3.Size = New System.Drawing.Size(21, 14)
-        Me.Etiqueta3.TabIndex = 21
+        Me.Etiqueta3.TabIndex = 20
         Me.Etiqueta3.Text = "Kg."
         '
         'decPeso
         '
-        Appearance73.ForeColor = System.Drawing.Color.Black
-        Me.decPeso.Appearance = Appearance73
+        Appearance75.ForeColor = System.Drawing.Color.Black
+        Me.decPeso.Appearance = Appearance75
         Me.decPeso.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decPeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decPeso.ForeColor = System.Drawing.Color.Black
@@ -1601,12 +1608,12 @@ Partial Class frm_Material
         Me.decPeso.NullText = "0.00"
         Me.decPeso.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decPeso.Size = New System.Drawing.Size(90, 21)
-        Me.decPeso.TabIndex = 20
+        Me.decPeso.TabIndex = 19
         '
         'txtMedida
         '
-        Appearance74.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtMedida.Appearance = Appearance74
+        Appearance76.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtMedida.Appearance = Appearance76
         Me.txtMedida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtMedida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1615,162 +1622,149 @@ Partial Class frm_Material
         Me.txtMedida.Location = New System.Drawing.Point(174, 212)
         Me.txtMedida.Name = "txtMedida"
         Me.txtMedida.Size = New System.Drawing.Size(90, 21)
-        Me.txtMedida.TabIndex = 17
+        Me.txtMedida.TabIndex = 16
         Me.txtMedida.Tag = "0"
         '
         'Etiqueta15
         '
-        Appearance75.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta15.Appearance = Appearance75
+        Appearance77.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta15.Appearance = Appearance77
         Me.Etiqueta15.AutoSize = True
-        Me.Etiqueta15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta15.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta15.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta15.Location = New System.Drawing.Point(126, 241)
         Me.Etiqueta15.Name = "Etiqueta15"
-        Me.Etiqueta15.Size = New System.Drawing.Size(32, 14)
-        Me.Etiqueta15.TabIndex = 19
+        Me.Etiqueta15.Size = New System.Drawing.Size(32, 15)
+        Me.Etiqueta15.TabIndex = 18
         Me.Etiqueta15.Text = "Peso:"
         '
         'Etiqueta14
         '
-        Appearance76.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta14.Appearance = Appearance76
+        Appearance78.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta14.Appearance = Appearance78
         Me.Etiqueta14.AutoSize = True
-        Me.Etiqueta14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta14.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta14.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta14.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta14.Location = New System.Drawing.Point(115, 214)
         Me.Etiqueta14.Name = "Etiqueta14"
-        Me.Etiqueta14.Size = New System.Drawing.Size(43, 14)
-        Me.Etiqueta14.TabIndex = 16
+        Me.Etiqueta14.Size = New System.Drawing.Size(44, 15)
+        Me.Etiqueta14.TabIndex = 15
         Me.Etiqueta14.Text = "Medida:"
         '
         'txtGlosa
         '
-        Appearance77.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtGlosa.Appearance = Appearance77
+        Appearance79.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtGlosa.Appearance = Appearance79
         Me.txtGlosa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtGlosa.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtGlosa.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGlosa.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtGlosa.ImageTransparentColor = System.Drawing.Color.Empty
-        Me.txtGlosa.Location = New System.Drawing.Point(593, 132)
+        Me.txtGlosa.Location = New System.Drawing.Point(593, 159)
         Me.txtGlosa.MaxLength = 500
         Me.txtGlosa.Multiline = True
         Me.txtGlosa.Name = "txtGlosa"
-        Me.txtGlosa.Size = New System.Drawing.Size(272, 103)
-        Me.txtGlosa.TabIndex = 31
+        Me.txtGlosa.Size = New System.Drawing.Size(272, 76)
+        Me.txtGlosa.TabIndex = 32
         Me.txtGlosa.Tag = "0"
         '
         'txtSerial
         '
-        Appearance78.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtSerial.Appearance = Appearance78
+        Appearance80.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtSerial.Appearance = Appearance80
         Me.txtSerial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSerial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtSerial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSerial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSerial.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtSerial.ImageTransparentColor = System.Drawing.Color.Empty
         Me.txtSerial.Location = New System.Drawing.Point(593, 103)
         Me.txtSerial.MaxLength = 20
         Me.txtSerial.Name = "txtSerial"
-        Me.txtSerial.Size = New System.Drawing.Size(272, 21)
-        Me.txtSerial.TabIndex = 29
+        Me.txtSerial.Size = New System.Drawing.Size(272, 22)
+        Me.txtSerial.TabIndex = 28
         Me.txtSerial.Tag = "0"
         '
         'cboUnidadMedida
         '
-        Appearance79.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboUnidadMedida.Appearance = Appearance79
+        Appearance81.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboUnidadMedida.Appearance = Appearance81
         Me.cboUnidadMedida.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance80.Image = 7
-        EditorButton8.Appearance = Appearance80
+        Appearance82.Image = 7
+        EditorButton8.Appearance = Appearance82
         Me.cboUnidadMedida.ButtonsRight.Add(EditorButton8)
         Me.cboUnidadMedida.DisplayMember = "Nombre"
         Me.cboUnidadMedida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboUnidadMedida.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboUnidadMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboUnidadMedida.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboUnidadMedida.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboUnidadMedida.ImageList = Me.imagenes
         Me.cboUnidadMedida.Location = New System.Drawing.Point(175, 185)
         Me.cboUnidadMedida.Name = "cboUnidadMedida"
-        Me.cboUnidadMedida.Size = New System.Drawing.Size(272, 21)
-        Me.cboUnidadMedida.TabIndex = 15
+        Me.cboUnidadMedida.Size = New System.Drawing.Size(272, 22)
+        Me.cboUnidadMedida.TabIndex = 14
         Me.cboUnidadMedida.ValueMember = "Id"
         '
         'cboTipoUnidadMedida
         '
-        Appearance81.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboTipoUnidadMedida.Appearance = Appearance81
+        Appearance83.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboTipoUnidadMedida.Appearance = Appearance83
         Me.cboTipoUnidadMedida.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance82.Image = 7
-        EditorButton9.Appearance = Appearance82
+        Appearance84.Image = 7
+        EditorButton9.Appearance = Appearance84
         Me.cboTipoUnidadMedida.ButtonsRight.Add(EditorButton9)
         Me.cboTipoUnidadMedida.DisplayMember = "Nombre"
         Me.cboTipoUnidadMedida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoUnidadMedida.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboTipoUnidadMedida.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTipoUnidadMedida.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoUnidadMedida.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboTipoUnidadMedida.ImageList = Me.imagenes
         Me.cboTipoUnidadMedida.Location = New System.Drawing.Point(175, 159)
         Me.cboTipoUnidadMedida.Name = "cboTipoUnidadMedida"
-        Me.cboTipoUnidadMedida.Size = New System.Drawing.Size(272, 21)
-        Me.cboTipoUnidadMedida.TabIndex = 13
+        Me.cboTipoUnidadMedida.Size = New System.Drawing.Size(272, 22)
+        Me.cboTipoUnidadMedida.TabIndex = 12
         Me.cboTipoUnidadMedida.ValueMember = "Id"
         '
         'cboSubFamilia
         '
-        Appearance83.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboSubFamilia.Appearance = Appearance83
+        Appearance85.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboSubFamilia.Appearance = Appearance85
         Me.cboSubFamilia.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance84.Image = 7
-        EditorButton10.Appearance = Appearance84
+        Appearance86.Image = 7
+        EditorButton10.Appearance = Appearance86
         Me.cboSubFamilia.ButtonsRight.Add(EditorButton10)
         Me.cboSubFamilia.DisplayMember = "Nombre"
         Me.cboSubFamilia.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboSubFamilia.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboSubFamilia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubFamilia.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSubFamilia.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboSubFamilia.ImageList = Me.imagenes
         Me.cboSubFamilia.Location = New System.Drawing.Point(174, 132)
         Me.cboSubFamilia.Name = "cboSubFamilia"
-        Me.cboSubFamilia.Size = New System.Drawing.Size(325, 21)
-        Me.cboSubFamilia.TabIndex = 11
+        Me.cboSubFamilia.Size = New System.Drawing.Size(325, 22)
+        Me.cboSubFamilia.TabIndex = 10
         Me.cboSubFamilia.ValueMember = "Id"
         '
         'cboFamilia
         '
-        Appearance85.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboFamilia.Appearance = Appearance85
+        Appearance87.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboFamilia.Appearance = Appearance87
         Me.cboFamilia.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance86.Image = 7
-        EditorButton11.Appearance = Appearance86
+        Appearance88.Image = 7
+        EditorButton11.Appearance = Appearance88
         Me.cboFamilia.ButtonsRight.Add(EditorButton11)
         Me.cboFamilia.DisplayMember = "Nombre"
         Me.cboFamilia.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboFamilia.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboFamilia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboFamilia.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboFamilia.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboFamilia.ImageList = Me.imagenes
         Me.cboFamilia.Location = New System.Drawing.Point(174, 105)
         Me.cboFamilia.Name = "cboFamilia"
-        Me.cboFamilia.Size = New System.Drawing.Size(325, 21)
-        Me.cboFamilia.TabIndex = 9
+        Me.cboFamilia.Size = New System.Drawing.Size(325, 22)
+        Me.cboFamilia.TabIndex = 8
         Me.cboFamilia.ValueMember = "Id"
-        '
-        'Etiqueta12
-        '
-        Appearance87.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta12.Appearance = Appearance87
-        Me.Etiqueta12.AutoSize = True
-        Me.Etiqueta12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta12.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta12.Location = New System.Drawing.Point(542, 133)
-        Me.Etiqueta12.Name = "Etiqueta12"
-        Me.Etiqueta12.Size = New System.Drawing.Size(36, 14)
-        Me.Etiqueta12.TabIndex = 30
-        Me.Etiqueta12.Text = "Glosa:"
         '
         'verIgv
         '
@@ -1786,78 +1780,78 @@ Partial Class frm_Material
         '
         'Etiqueta11
         '
-        Appearance88.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta11.Appearance = Appearance88
+        Appearance90.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta11.Appearance = Appearance90
         Me.Etiqueta11.AutoSize = True
-        Me.Etiqueta11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta11.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta11.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta11.Location = New System.Drawing.Point(542, 104)
         Me.Etiqueta11.Name = "Etiqueta11"
-        Me.Etiqueta11.Size = New System.Drawing.Size(35, 14)
-        Me.Etiqueta11.TabIndex = 28
+        Me.Etiqueta11.Size = New System.Drawing.Size(36, 15)
+        Me.Etiqueta11.TabIndex = 27
         Me.Etiqueta11.Text = "Serial:"
         '
         'Etiqueta9
         '
-        Appearance89.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta9.Appearance = Appearance89
+        Appearance91.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta9.Appearance = Appearance91
         Me.Etiqueta9.AutoSize = True
-        Me.Etiqueta9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta9.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta9.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta9.Location = New System.Drawing.Point(63, 187)
         Me.Etiqueta9.Name = "Etiqueta9"
-        Me.Etiqueta9.Size = New System.Drawing.Size(96, 14)
-        Me.Etiqueta9.TabIndex = 14
+        Me.Etiqueta9.Size = New System.Drawing.Size(98, 15)
+        Me.Etiqueta9.TabIndex = 13
         Me.Etiqueta9.Text = "Unidad de Medida:"
         '
         'Etiqueta8
         '
-        Appearance90.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta8.Appearance = Appearance90
+        Appearance92.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta8.Appearance = Appearance92
         Me.Etiqueta8.AutoSize = True
-        Me.Etiqueta8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta8.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta8.Location = New System.Drawing.Point(39, 161)
         Me.Etiqueta8.Name = "Etiqueta8"
-        Me.Etiqueta8.Size = New System.Drawing.Size(120, 14)
-        Me.Etiqueta8.TabIndex = 12
+        Me.Etiqueta8.Size = New System.Drawing.Size(123, 15)
+        Me.Etiqueta8.TabIndex = 11
         Me.Etiqueta8.Text = "Tipo Unidad de Medida:"
         '
         'Etiqueta7
         '
-        Appearance91.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta7.Appearance = Appearance91
+        Appearance93.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta7.Appearance = Appearance93
         Me.Etiqueta7.AutoSize = True
-        Me.Etiqueta7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta7.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta7.Location = New System.Drawing.Point(98, 133)
         Me.Etiqueta7.Name = "Etiqueta7"
-        Me.Etiqueta7.Size = New System.Drawing.Size(62, 14)
-        Me.Etiqueta7.TabIndex = 10
+        Me.Etiqueta7.Size = New System.Drawing.Size(62, 15)
+        Me.Etiqueta7.TabIndex = 9
         Me.Etiqueta7.Text = "SubFamilia:"
         '
         'Etiqueta6
         '
-        Appearance92.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta6.Appearance = Appearance92
+        Appearance94.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta6.Appearance = Appearance94
         Me.Etiqueta6.AutoSize = True
-        Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta6.ImageTransparentColor = System.Drawing.Color.Empty
         Me.Etiqueta6.Location = New System.Drawing.Point(117, 108)
         Me.Etiqueta6.Name = "Etiqueta6"
-        Me.Etiqueta6.Size = New System.Drawing.Size(43, 14)
-        Me.Etiqueta6.TabIndex = 8
+        Me.Etiqueta6.Size = New System.Drawing.Size(43, 15)
+        Me.Etiqueta6.TabIndex = 7
         Me.Etiqueta6.Text = "Familia:"
         '
         'txtCodigo
         '
-        Appearance93.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtCodigo.Appearance = Appearance93
+        Appearance95.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtCodigo.Appearance = Appearance95
         Me.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodigo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1867,21 +1861,21 @@ Partial Class frm_Material
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(90, 21)
-        Me.txtCodigo.TabIndex = 2
+        Me.txtCodigo.TabIndex = 1
         Me.txtCodigo.TabStop = False
         Me.txtCodigo.Tag = "0"
         '
         'Etiqueta1
         '
-        Appearance94.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta1.Appearance = Appearance94
+        Appearance96.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta1.Appearance = Appearance96
         Me.Etiqueta1.AutoSize = True
-        Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta1.Location = New System.Drawing.Point(115, 26)
         Me.Etiqueta1.Name = "Etiqueta1"
-        Me.Etiqueta1.Size = New System.Drawing.Size(42, 14)
-        Me.Etiqueta1.TabIndex = 1
+        Me.Etiqueta1.Size = New System.Drawing.Size(42, 15)
+        Me.Etiqueta1.TabIndex = 0
         Me.Etiqueta1.Text = "Código:"
         '
         'verActivo
@@ -1893,15 +1887,15 @@ Partial Class frm_Material
         Me.verActivo.Location = New System.Drawing.Point(270, 25)
         Me.verActivo.Name = "verActivo"
         Me.verActivo.Size = New System.Drawing.Size(120, 20)
-        Me.verActivo.TabIndex = 3
+        Me.verActivo.TabIndex = 2
         Me.verActivo.TabStop = False
         Me.verActivo.Text = "Activo"
         Me.verActivo.Visible = False
         '
         'txtNombre
         '
-        Appearance95.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtNombre.Appearance = Appearance95
+        Appearance97.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtNombre.Appearance = Appearance97
         Me.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1911,20 +1905,20 @@ Partial Class frm_Material
         Me.txtNombre.MaxLength = 100
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(325, 21)
-        Me.txtNombre.TabIndex = 5
+        Me.txtNombre.TabIndex = 4
         Me.txtNombre.Tag = "0"
         '
         'etiNombre
         '
-        Appearance96.BackColor = System.Drawing.Color.Transparent
-        Me.etiNombre.Appearance = Appearance96
+        Appearance98.BackColor = System.Drawing.Color.Transparent
+        Me.etiNombre.Appearance = Appearance98
         Me.etiNombre.AutoSize = True
-        Me.etiNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.etiNombre.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiNombre.ForeColor = System.Drawing.Color.MidnightBlue
         Me.etiNombre.Location = New System.Drawing.Point(115, 53)
         Me.etiNombre.Name = "etiNombre"
-        Me.etiNombre.Size = New System.Drawing.Size(46, 14)
-        Me.etiNombre.TabIndex = 4
+        Me.etiNombre.Size = New System.Drawing.Size(48, 15)
+        Me.etiNombre.TabIndex = 3
         Me.etiNombre.Text = "Nombre:"
         '
         'odMaterialCtaCtble
@@ -1941,7 +1935,7 @@ Partial Class frm_Material
         Me.ficMaterial.Controls.Add(Me.UltraTabPageControl1)
         Me.ficMaterial.Controls.Add(Me.UltraTabPageControl2)
         Me.ficMaterial.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficMaterial.Location = New System.Drawing.Point(0, 0)
         Me.ficMaterial.Name = "ficMaterial"
         Me.ficMaterial.SharedControlsPage = Me.UltraTabSharedControlsPage1
@@ -1983,8 +1977,46 @@ Partial Class frm_Material
         Me.ugb_Espera.Location = New System.Drawing.Point(418, 250)
         Me.ugb_Espera.Name = "ugb_Espera"
         Me.ugb_Espera.Size = New System.Drawing.Size(397, 68)
-        Me.ugb_Espera.TabIndex = 23
+        Me.ugb_Espera.TabIndex = 1
         Me.ugb_Espera.Visible = False
+        '
+        'Etiqueta12
+        '
+        Appearance89.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta12.Appearance = Appearance89
+        Me.Etiqueta12.AutoSize = True
+        Me.Etiqueta12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta12.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta12.Location = New System.Drawing.Point(551, 161)
+        Me.Etiqueta12.Name = "Etiqueta12"
+        Me.Etiqueta12.Size = New System.Drawing.Size(35, 15)
+        Me.Etiqueta12.TabIndex = 31
+        Me.Etiqueta12.Text = "Glosa:"
+        '
+        'Etiqueta17
+        '
+        Appearance62.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta17.Appearance = Appearance62
+        Me.Etiqueta17.AutoSize = True
+        Me.Etiqueta17.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta17.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta17.Location = New System.Drawing.Point(548, 135)
+        Me.Etiqueta17.Name = "Etiqueta17"
+        Me.Etiqueta17.Size = New System.Drawing.Size(38, 15)
+        Me.Etiqueta17.TabIndex = 29
+        Me.Etiqueta17.Text = "Precio:"
+        '
+        'une_Precio
+        '
+        Appearance61.ForeColor = System.Drawing.Color.Navy
+        Me.une_Precio.Appearance = Appearance61
+        Me.une_Precio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.une_Precio.Location = New System.Drawing.Point(592, 131)
+        Me.une_Precio.MaskInput = "{double:7.2}"
+        Me.une_Precio.Name = "une_Precio"
+        Me.une_Precio.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.une_Precio.Size = New System.Drawing.Size(103, 22)
+        Me.une_Precio.TabIndex = 30
         '
         'frm_Material
         '
@@ -2060,6 +2092,7 @@ Partial Class frm_Material
         Me.ficMaterial.ResumeLayout(False)
         CType(Me.odMaterialFamilia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.odMaterialMedida, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.une_Precio, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2085,7 +2118,6 @@ Partial Class frm_Material
     Friend WithEvents cboTipoUnidadMedida As ISL.Controles.ComboMaestros
     Friend WithEvents cboSubFamilia As ISL.Controles.ComboMaestros
     Friend WithEvents cboFamilia As ISL.Controles.ComboMaestros
-    Friend WithEvents Etiqueta12 As ISL.Controles.Etiqueta
     Friend WithEvents verIgv As ISL.Controles.Chequear
 
     Friend WithEvents agrLista As ISL.Controles.Agrupacion
@@ -2154,5 +2186,7 @@ Partial Class frm_Material
     Friend WithEvents Filtro1 As ISL.Controles.Filtro
     Friend WithEvents verActivoFijo As ISL.Controles.Chequear
     Friend WithEvents ugb_Espera As ISL.Win.Espere
-
+    Friend WithEvents Etiqueta17 As Controles.Etiqueta
+    Friend WithEvents Etiqueta12 As Controles.Etiqueta
+    Friend WithEvents une_Precio As Infragistics.Win.UltraWinEditors.UltraNumericEditor
 End Class

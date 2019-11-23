@@ -1223,7 +1223,7 @@ Partial Class frm_OrdenCompra
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griListaRequerimientos)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(583, 251)
         '
@@ -1371,7 +1371,7 @@ Partial Class frm_OrdenCompra
         Me.UltraTabPageControl3.Controls.Add(Me.Agrupacion14)
         Me.UltraTabPageControl3.Controls.Add(Me.Agrupacion13)
         Me.UltraTabPageControl3.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(583, 251)
         '
@@ -4739,7 +4739,7 @@ Partial Class frm_OrdenCompra
         Me.MenuDetalle.Appearance = Appearance213
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
         Me.MenuDetalle.ImageListLarge = Me.imagenes
         Me.MenuDetalle.ImageListSmall = Me.imagenes
         Me.MenuDetalle.MdiMergeable = False

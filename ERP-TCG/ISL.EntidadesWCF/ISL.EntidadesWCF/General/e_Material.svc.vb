@@ -62,6 +62,9 @@ Public Class e_Material
     <DataMember()> _
     Public ListaMaterialCuentaContable As New List(Of e_MaterialCuentaContable)
 
+    '<DataMember()>
+    'Public Property PrecioMaterial() As Double
+
     <DataMember()> _
     Public ListaCodigoBarras As New List(Of e_CodigoBarraMaterial)
 
@@ -128,6 +131,7 @@ Public Class e_Material
                  ByVal ls_idunidadmedida As String,
                   ByVal ls_unidadMedida As String,
                   ByVal ls_nombresubfamilia As String,
+                   ByVal ln_Precio As Double,
                   ByVal ls_activo As String)
 
         _Seleccion = ls_seleccion
@@ -138,7 +142,7 @@ Public Class e_Material
         _unidadmedida = ls_unidadMedida
         _subfamilia = ls_nombresubfamilia
         _activo = ls_activo
-
+        _precio = ln_Precio
     End Sub
 
     Sub New(ByVal Seleccion As Boolean, _
