@@ -2080,6 +2080,29 @@ Public Class frm_OrdenVenMaterial
                         End If
                     Next
 
+                    'oeCuentaCorriente = New e_CuentaCorriente
+                    'oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = oeMovDocumento.IdClienteProveedor
+                    'oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
+                    'oeMovDocumento.IdUsuarioCrea = gUsuarioSGI.Id
+                    'If oeMovDocumento.IndAfectaAnticipo Then
+                    '    oeDocAsoc = New e_DocumentoAsociado
+                    '    oeDocAsoc.TipoOperacion = "T"
+                    '    oeDocAsoc.IdMovimientoDocumento = oeMovDocumento.Id
+                    '    oeMovDocumento.DocAsoc = olDocAsoc.Listar(oeDocAsoc)
+                    'End If
+                    'oeMovDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    'If oeCuentaCorriente.Id <> "" Then
+                    '    _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, False, String.Empty, b_anticipo)
+                    'Else
+                    '    With oeCuentaCorriente
+                    '        .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = oeMovDocumento.IdClienteProveedor
+                    '        .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
+                    '        .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
+                    '    End With
+                    '    oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    '    olCuentaCorriente.Guardar(oeCuentaCorriente)
+                    '    _banEmis = olMovDocumento.GuardarVentaAsiento(oeMovDocumento, oeAsientoModel, oeServCtaCtble, False, String.Empty, b_anticipo)
+                    'End If
 
                     ' Actualizar Cuenta para Empresas Relacionada
                     'Dim _oeEmpr As New e_Cliente
