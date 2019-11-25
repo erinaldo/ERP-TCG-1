@@ -1258,7 +1258,7 @@ Public Class frm_Vehiculo
             cboVehiculoEstado.ValueMember = "Valor1"
             cboVehiculoEstado.Value = 3
 
-            'Cargar Clasificacion ISL Vehiculo
+            'Cargar Clasificacion EMP Vehiculo
             oeConcepto = New e_Concepto
             oeConcepto.Activo = True
             oeConcepto.Prefijo = "24"
@@ -1275,6 +1275,25 @@ Public Class frm_Vehiculo
             cboTipoCarroceria.DataSource = loConcepto
             cboTipoCarroceria.DisplayMember = "Nombre"
             cboTipoCarroceria.ValueMember = "Valor1"
+            '@0001 Ini
+            'Cargar MODALIDAD Vehiculo
+            oeConcepto = New e_Concepto
+            oeConcepto.Activo = True
+            oeConcepto.Prefijo = "251"
+            loConcepto = olConcepto.Listar(oeConcepto)
+            cboModalidad.DataSource = loConcepto
+            cboModalidad.DisplayMember = "Nombre"
+            cboModalidad.ValueMember = "Valor1"
+
+            'Cargar RUTA ASIGNADA Vehiculo
+            oeConcepto = New e_Concepto
+            oeConcepto.Activo = True
+            oeConcepto.Prefijo = "252"
+            loConcepto = olConcepto.Listar(oeConcepto)
+            cboRutaAsignada.DataSource = loConcepto
+            cboRutaAsignada.DisplayMember = "Nombre"
+            cboRutaAsignada.ValueMember = "Valor1"
+            '@0001 Fin
 
             'Tipo Vehiculo, Modelo Funcional y Tipo Carroceria se llenar de acuerdo al IndMotriz
             'Llenar Combo Marca

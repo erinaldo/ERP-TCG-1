@@ -400,6 +400,9 @@ Partial Class frm_Vehiculo
         Dim UltraGridColumn62 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroPasajeros")
         Dim UltraGridColumn63 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroEquipoMovil")
         Dim UltraGridColumn64 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DescripcionDetalle")
+        Dim UltraGridColumn203 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdClasificacionISL")
+        Dim UltraGridColumn204 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdTipoCarroceria")
+        Dim UltraGridColumn205 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ClasificacionISL")
         Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance99 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance100 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -467,6 +470,9 @@ Partial Class frm_Vehiculo
         Dim UltraDataColumn165 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroPasajeros")
         Dim UltraDataColumn166 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroEquipoMovil")
         Dim UltraDataColumn167 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("DescripcionDetalle")
+        Dim UltraDataColumn168 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdClasificacionISL")
+        Dim UltraDataColumn169 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdTipoCarroceria")
+        Dim UltraDataColumn170 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ClasificacionISL")
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Vehiculo))
         Dim Appearance101 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance102 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -537,40 +543,40 @@ Partial Class frm_Vehiculo
         Dim Appearance129 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance130 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance131 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraDataColumn168 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
-        Dim UltraDataColumn169 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Unidades")
-        Dim UltraDataColumn170 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Placa")
-        Dim UltraDataColumn171 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroSerieChasis")
-        Dim UltraDataColumn172 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoCarroceriaISL")
-        Dim UltraDataColumn173 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ClasificacionISL")
-        Dim UltraDataColumn174 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ModeloSunarp")
-        Dim UltraDataColumn175 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CarroceriaSunarp")
-        Dim UltraDataColumn176 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Marca")
-        Dim UltraDataColumn177 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("AnioFabricacion")
-        Dim UltraDataColumn178 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Color")
-        Dim UltraDataColumn179 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoNeumatico")
-        Dim UltraDataColumn180 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroEjes")
-        Dim UltraDataColumn181 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("SuspensionNeumatica")
-        Dim UltraDataColumn182 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Bonificacion")
-        Dim UltraDataColumn183 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Propietario")
-        Dim UltraDataColumn184 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Modalidad")
-        Dim UltraDataColumn185 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroLeasing")
-        Dim UltraDataColumn186 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorCuota")
-        Dim UltraDataColumn187 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaVencimiento")
-        Dim UltraDataColumn188 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TarjetaCombustible")
-        Dim UltraDataColumn189 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("EmpresaGPS")
-        Dim UltraDataColumn190 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CargaUtil")
-        Dim UltraDataColumn191 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PesoNeto")
-        Dim UltraDataColumn192 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PesoBruto")
-        Dim UltraDataColumn193 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Operacion")
-        Dim UltraDataColumn194 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ruta")
-        Dim UltraDataColumn195 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Observacion")
-        Dim UltraDataColumn196 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Estado")
-        Dim UltraDataColumn197 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ResponsableUnidad")
-        Dim UltraDataColumn198 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Kilometraje")
-        Dim UltraDataColumn199 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMTC")
-        Dim UltraDataColumn200 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CapacidadTanque")
-        Dim UltraDataColumn201 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorContabilidad")
+        Dim UltraDataColumn171 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
+        Dim UltraDataColumn172 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Unidades")
+        Dim UltraDataColumn173 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Placa")
+        Dim UltraDataColumn174 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroSerieChasis")
+        Dim UltraDataColumn175 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoCarroceriaISL")
+        Dim UltraDataColumn176 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ClasificacionISL")
+        Dim UltraDataColumn177 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ModeloSunarp")
+        Dim UltraDataColumn178 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CarroceriaSunarp")
+        Dim UltraDataColumn179 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Marca")
+        Dim UltraDataColumn180 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("AnioFabricacion")
+        Dim UltraDataColumn181 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Color")
+        Dim UltraDataColumn182 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TipoNeumatico")
+        Dim UltraDataColumn183 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroEjes")
+        Dim UltraDataColumn184 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("SuspensionNeumatica")
+        Dim UltraDataColumn185 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Bonificacion")
+        Dim UltraDataColumn186 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Propietario")
+        Dim UltraDataColumn187 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Modalidad")
+        Dim UltraDataColumn188 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroLeasing")
+        Dim UltraDataColumn189 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorCuota")
+        Dim UltraDataColumn190 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("FechaVencimiento")
+        Dim UltraDataColumn191 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("TarjetaCombustible")
+        Dim UltraDataColumn192 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("EmpresaGPS")
+        Dim UltraDataColumn193 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CargaUtil")
+        Dim UltraDataColumn194 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PesoNeto")
+        Dim UltraDataColumn195 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("PesoBruto")
+        Dim UltraDataColumn196 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Operacion")
+        Dim UltraDataColumn197 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Ruta")
+        Dim UltraDataColumn198 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Observacion")
+        Dim UltraDataColumn199 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Estado")
+        Dim UltraDataColumn200 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ResponsableUnidad")
+        Dim UltraDataColumn201 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Kilometraje")
+        Dim UltraDataColumn202 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroMTC")
+        Dim UltraDataColumn203 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("CapacidadTanque")
+        Dim UltraDataColumn204 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("ValorContabilidad")
         Dim Appearance132 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance133 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance134 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -625,15 +631,6 @@ Partial Class frm_Vehiculo
         Dim UltraTab19 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab9 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab10 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem10 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem32 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem26 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem27 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem28 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem29 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance176 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance177 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance178 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -642,15 +639,6 @@ Partial Class frm_Vehiculo
         Dim Appearance181 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance182 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance183 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem20 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem21 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem22 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance185 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance186 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -2924,7 +2912,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapVehiculo.Controls.Add(Me.griLista)
         Me.tapVehiculo.Controls.Add(Me.agrBusqueda)
-        Me.tapVehiculo.Location = New System.Drawing.Point(-10000, -10000)
+        Me.tapVehiculo.Location = New System.Drawing.Point(1, 22)
         Me.tapVehiculo.Name = "tapVehiculo"
         Me.tapVehiculo.Size = New System.Drawing.Size(1183, 565)
         '
@@ -3201,7 +3189,13 @@ Partial Class frm_Vehiculo
         UltraGridColumn63.Hidden = True
         UltraGridColumn64.Header.VisiblePosition = 63
         UltraGridColumn64.Hidden = True
-        UltraGridBand11.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58, UltraGridColumn59, UltraGridColumn60, UltraGridColumn61, UltraGridColumn62, UltraGridColumn63, UltraGridColumn64})
+        UltraGridColumn203.Header.VisiblePosition = 64
+        UltraGridColumn203.Hidden = True
+        UltraGridColumn204.Header.VisiblePosition = 65
+        UltraGridColumn204.Hidden = True
+        UltraGridColumn205.Header.Caption = "ClasificacionEMP"
+        UltraGridColumn205.Header.VisiblePosition = 66
+        UltraGridBand11.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16, UltraGridColumn17, UltraGridColumn18, UltraGridColumn19, UltraGridColumn20, UltraGridColumn21, UltraGridColumn22, UltraGridColumn23, UltraGridColumn24, UltraGridColumn25, UltraGridColumn26, UltraGridColumn27, UltraGridColumn28, UltraGridColumn29, UltraGridColumn30, UltraGridColumn31, UltraGridColumn32, UltraGridColumn33, UltraGridColumn34, UltraGridColumn35, UltraGridColumn36, UltraGridColumn37, UltraGridColumn38, UltraGridColumn39, UltraGridColumn40, UltraGridColumn41, UltraGridColumn42, UltraGridColumn43, UltraGridColumn44, UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn54, UltraGridColumn55, UltraGridColumn56, UltraGridColumn57, UltraGridColumn58, UltraGridColumn59, UltraGridColumn60, UltraGridColumn61, UltraGridColumn62, UltraGridColumn63, UltraGridColumn64, UltraGridColumn203, UltraGridColumn204, UltraGridColumn205})
         Me.griLista.DisplayLayout.BandsSerializer.Add(UltraGridBand11)
         Me.griLista.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griLista.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -3283,7 +3277,7 @@ Partial Class frm_Vehiculo
         UltraDataColumn118.DataType = GetType(Boolean)
         UltraDataColumn147.DataType = GetType(Integer)
         UltraDataColumn147.DefaultValue = 0
-        Me.ogdVehiculo.Band.Columns.AddRange(New Object() {UltraDataColumn104, UltraDataColumn105, UltraDataColumn106, UltraDataColumn107, UltraDataColumn108, UltraDataColumn109, UltraDataColumn110, UltraDataColumn111, UltraDataColumn112, UltraDataColumn113, UltraDataColumn114, UltraDataColumn115, UltraDataColumn116, UltraDataColumn117, UltraDataColumn118, UltraDataColumn119, UltraDataColumn120, UltraDataColumn121, UltraDataColumn122, UltraDataColumn123, UltraDataColumn124, UltraDataColumn125, UltraDataColumn126, UltraDataColumn127, UltraDataColumn128, UltraDataColumn129, UltraDataColumn130, UltraDataColumn131, UltraDataColumn132, UltraDataColumn133, UltraDataColumn134, UltraDataColumn135, UltraDataColumn136, UltraDataColumn137, UltraDataColumn138, UltraDataColumn139, UltraDataColumn140, UltraDataColumn141, UltraDataColumn142, UltraDataColumn143, UltraDataColumn144, UltraDataColumn145, UltraDataColumn146, UltraDataColumn147, UltraDataColumn148, UltraDataColumn149, UltraDataColumn150, UltraDataColumn151, UltraDataColumn152, UltraDataColumn153, UltraDataColumn154, UltraDataColumn155, UltraDataColumn156, UltraDataColumn157, UltraDataColumn158, UltraDataColumn159, UltraDataColumn160, UltraDataColumn161, UltraDataColumn162, UltraDataColumn163, UltraDataColumn164, UltraDataColumn165, UltraDataColumn166, UltraDataColumn167})
+        Me.ogdVehiculo.Band.Columns.AddRange(New Object() {UltraDataColumn104, UltraDataColumn105, UltraDataColumn106, UltraDataColumn107, UltraDataColumn108, UltraDataColumn109, UltraDataColumn110, UltraDataColumn111, UltraDataColumn112, UltraDataColumn113, UltraDataColumn114, UltraDataColumn115, UltraDataColumn116, UltraDataColumn117, UltraDataColumn118, UltraDataColumn119, UltraDataColumn120, UltraDataColumn121, UltraDataColumn122, UltraDataColumn123, UltraDataColumn124, UltraDataColumn125, UltraDataColumn126, UltraDataColumn127, UltraDataColumn128, UltraDataColumn129, UltraDataColumn130, UltraDataColumn131, UltraDataColumn132, UltraDataColumn133, UltraDataColumn134, UltraDataColumn135, UltraDataColumn136, UltraDataColumn137, UltraDataColumn138, UltraDataColumn139, UltraDataColumn140, UltraDataColumn141, UltraDataColumn142, UltraDataColumn143, UltraDataColumn144, UltraDataColumn145, UltraDataColumn146, UltraDataColumn147, UltraDataColumn148, UltraDataColumn149, UltraDataColumn150, UltraDataColumn151, UltraDataColumn152, UltraDataColumn153, UltraDataColumn154, UltraDataColumn155, UltraDataColumn156, UltraDataColumn157, UltraDataColumn158, UltraDataColumn159, UltraDataColumn160, UltraDataColumn161, UltraDataColumn162, UltraDataColumn163, UltraDataColumn164, UltraDataColumn165, UltraDataColumn166, UltraDataColumn167, UltraDataColumn168, UltraDataColumn169, UltraDataColumn170})
         '
         'imagenes
         '
@@ -3876,7 +3870,7 @@ Partial Class frm_Vehiculo
         '
         Me.tapSituacional.Controls.Add(Me.griListaSituacional)
         Me.tapSituacional.Controls.Add(Me.UltraGroupBox2)
-        Me.tapSituacional.Location = New System.Drawing.Point(1, 22)
+        Me.tapSituacional.Location = New System.Drawing.Point(-10000, -10000)
         Me.tapSituacional.Name = "tapSituacional"
         Me.tapSituacional.Size = New System.Drawing.Size(1183, 565)
         '
@@ -4055,17 +4049,17 @@ Partial Class frm_Vehiculo
         '
         'udsSituacional
         '
-        UltraDataColumn180.DataType = GetType(Integer)
-        UltraDataColumn186.DataType = GetType(Double)
-        UltraDataColumn187.DataType = GetType(Date)
-        UltraDataColumn190.DataType = GetType(Double)
-        UltraDataColumn191.DataType = GetType(Double)
-        UltraDataColumn192.DataType = GetType(Double)
-        UltraDataColumn196.DataType = GetType(Integer)
-        UltraDataColumn198.DataType = GetType(Double)
-        UltraDataColumn200.DataType = GetType(Double)
+        UltraDataColumn183.DataType = GetType(Integer)
+        UltraDataColumn189.DataType = GetType(Double)
+        UltraDataColumn190.DataType = GetType(Date)
+        UltraDataColumn193.DataType = GetType(Double)
+        UltraDataColumn194.DataType = GetType(Double)
+        UltraDataColumn195.DataType = GetType(Double)
+        UltraDataColumn199.DataType = GetType(Integer)
         UltraDataColumn201.DataType = GetType(Double)
-        Me.udsSituacional.Band.Columns.AddRange(New Object() {UltraDataColumn168, UltraDataColumn169, UltraDataColumn170, UltraDataColumn171, UltraDataColumn172, UltraDataColumn173, UltraDataColumn174, UltraDataColumn175, UltraDataColumn176, UltraDataColumn177, UltraDataColumn178, UltraDataColumn179, UltraDataColumn180, UltraDataColumn181, UltraDataColumn182, UltraDataColumn183, UltraDataColumn184, UltraDataColumn185, UltraDataColumn186, UltraDataColumn187, UltraDataColumn188, UltraDataColumn189, UltraDataColumn190, UltraDataColumn191, UltraDataColumn192, UltraDataColumn193, UltraDataColumn194, UltraDataColumn195, UltraDataColumn196, UltraDataColumn197, UltraDataColumn198, UltraDataColumn199, UltraDataColumn200, UltraDataColumn201})
+        UltraDataColumn203.DataType = GetType(Double)
+        UltraDataColumn204.DataType = GetType(Double)
+        Me.udsSituacional.Band.Columns.AddRange(New Object() {UltraDataColumn171, UltraDataColumn172, UltraDataColumn173, UltraDataColumn174, UltraDataColumn175, UltraDataColumn176, UltraDataColumn177, UltraDataColumn178, UltraDataColumn179, UltraDataColumn180, UltraDataColumn181, UltraDataColumn182, UltraDataColumn183, UltraDataColumn184, UltraDataColumn185, UltraDataColumn186, UltraDataColumn187, UltraDataColumn188, UltraDataColumn189, UltraDataColumn190, UltraDataColumn191, UltraDataColumn192, UltraDataColumn193, UltraDataColumn194, UltraDataColumn195, UltraDataColumn196, UltraDataColumn197, UltraDataColumn198, UltraDataColumn199, UltraDataColumn200, UltraDataColumn201, UltraDataColumn202, UltraDataColumn203, UltraDataColumn204})
         '
         'UltraGroupBox2
         '
@@ -5507,17 +5501,6 @@ Partial Class frm_Vehiculo
         'cboTipoCarroceria
         '
         Me.cboTipoCarroceria.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem7.DataValue = "ValueListItem0"
-        ValueListItem7.DisplayText = "LIMA"
-        ValueListItem8.DataValue = "ValueListItem1"
-        ValueListItem8.DisplayText = "NACIONAL"
-        ValueListItem9.DataValue = "ValueListItem2"
-        ValueListItem9.DisplayText = "PACASMAYO"
-        ValueListItem10.DataValue = "ValueListItem3"
-        ValueListItem10.DisplayText = "PIURA"
-        ValueListItem32.DataValue = "ValueListItem4"
-        ValueListItem32.DisplayText = "TRUJILLO"
-        Me.cboTipoCarroceria.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem7, ValueListItem8, ValueListItem9, ValueListItem10, ValueListItem32})
         Me.cboTipoCarroceria.Location = New System.Drawing.Point(338, 194)
         Me.cboTipoCarroceria.Name = "cboTipoCarroceria"
         Me.cboTipoCarroceria.Size = New System.Drawing.Size(150, 22)
@@ -5537,15 +5520,6 @@ Partial Class frm_Vehiculo
         'cboClasificacionISL
         '
         Me.cboClasificacionISL.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem26.DataValue = "ValueListItem0"
-        ValueListItem26.DisplayText = "ACTIVO PROPIO"
-        ValueListItem27.DataValue = "ValueListItem1"
-        ValueListItem27.DisplayText = "CESION CPSA"
-        ValueListItem28.DataValue = "ValueListItem2"
-        ValueListItem28.DisplayText = "LEASING"
-        ValueListItem29.DataValue = "ValueListItem3"
-        ValueListItem29.DisplayText = "TRACUSAPE"
-        Me.cboClasificacionISL.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem26, ValueListItem27, ValueListItem28, ValueListItem29})
         Me.cboClasificacionISL.Location = New System.Drawing.Point(88, 194)
         Me.cboClasificacionISL.Name = "cboClasificacionISL"
         Me.cboClasificacionISL.Size = New System.Drawing.Size(150, 22)
@@ -5626,17 +5600,6 @@ Partial Class frm_Vehiculo
         'cboRutaAsignada
         '
         Me.cboRutaAsignada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem1.DataValue = "ValueListItem0"
-        ValueListItem1.DisplayText = "LIMA"
-        ValueListItem2.DataValue = "ValueListItem1"
-        ValueListItem2.DisplayText = "NACIONAL"
-        ValueListItem3.DataValue = "ValueListItem2"
-        ValueListItem3.DisplayText = "PACASMAYO"
-        ValueListItem4.DataValue = "ValueListItem3"
-        ValueListItem4.DisplayText = "PIURA"
-        ValueListItem5.DataValue = "ValueListItem4"
-        ValueListItem5.DisplayText = "TRUJILLO"
-        Me.cboRutaAsignada.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem1, ValueListItem2, ValueListItem3, ValueListItem4, ValueListItem5})
         Me.cboRutaAsignada.Location = New System.Drawing.Point(338, 146)
         Me.cboRutaAsignada.Name = "cboRutaAsignada"
         Me.cboRutaAsignada.Size = New System.Drawing.Size(150, 22)
@@ -5656,15 +5619,6 @@ Partial Class frm_Vehiculo
         'cboModalidad
         '
         Me.cboModalidad.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        ValueListItem6.DataValue = "ValueListItem0"
-        ValueListItem6.DisplayText = "ACTIVO PROPIO"
-        ValueListItem20.DataValue = "ValueListItem1"
-        ValueListItem20.DisplayText = "CESION CPSA"
-        ValueListItem21.DataValue = "ValueListItem2"
-        ValueListItem21.DisplayText = "LEASING"
-        ValueListItem22.DataValue = "ValueListItem3"
-        ValueListItem22.DisplayText = "TRACUSAPE"
-        Me.cboModalidad.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem6, ValueListItem20, ValueListItem21, ValueListItem22})
         Me.cboModalidad.Location = New System.Drawing.Point(88, 146)
         Me.cboModalidad.Name = "cboModalidad"
         Me.cboModalidad.Size = New System.Drawing.Size(150, 22)
@@ -6313,7 +6267,7 @@ Partial Class frm_Vehiculo
         'UltraTabPageControl7
         '
         Me.UltraTabPageControl7.Controls.Add(Me.tabLista)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1185, 588)
         '
@@ -6346,7 +6300,7 @@ Partial Class frm_Vehiculo
         'utpDetalle
         '
         Me.utpDetalle.Controls.Add(Me.tabDatosUnidades)
-        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1185, 588)
         '

@@ -534,6 +534,7 @@ Public Class frm_FondoPensionTrabajador
             leEmpresa = New List(Of e_Empresa)
             oeEmpresa.TipoOperacion = ""
             oeEmpresa.Activo = True
+            oeEmpresa.IdTipoEmpresa = "1CH000000006" '@0001 "PRESTADORA DE SALUD"
             leEmpresa = olEmpresa.Listar(oeEmpresa).Where(Function(it) it.TipoEmpresa = "ENTIDAD ASEGURADORA").ToList
 
         Catch ex As Exception
