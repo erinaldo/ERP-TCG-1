@@ -418,34 +418,36 @@ Public Class frm_DocumentoVenta
         Dim Numero As String = ""
         oeCorrelativo.TipoOperacion = "1"
         oeCorrelativo.IdTipoDocumento = cboTipoDocumento.Value
+        oeCorrelativo.PrefijoID = gs_PrefijoIdSucursal '@0001
         oeCorrelativo = olCorrelativo.Obtener(oeCorrelativo)
         Numero = oeCorrelativo.Numero + 1
 
         Do While Len(Numero) < 10
             Numero = 0 & Numero
         Loop
-
-        Select Case oeCorrelativo.Prefijo
-            Case "1CH"
-                Serie = "1"
-                oeCorrelativo.Serie = 1
-            Case "1PY"
-                Serie = "2"
-                oeCorrelativo.Serie = 2
-            Case "1LI"
-                Serie = "3"
-                oeCorrelativo.Serie = 1
-            Case "1SA"
-                Serie = "4"
-                oeCorrelativo.Serie = 1
-            Case "1LU"
-                Serie = "4"
-                oeCorrelativo.Serie = 1
-            Case Else
-                Serie = "9"
-                oeCorrelativo.Serie = 1
-        End Select
-
+        '@0001 Ini
+        'Select Case oeCorrelativo.Prefijo
+        '    Case "1CH"
+        '        Serie = "1"
+        '        oeCorrelativo.Serie = 1
+        '    Case "1PY"
+        '        Serie = "2"
+        '        oeCorrelativo.Serie = 2
+        '    Case "1LI"
+        '        Serie = "3"
+        '        oeCorrelativo.Serie = 1
+        '    Case "1SA"
+        '        Serie = "4"
+        '        oeCorrelativo.Serie = 1
+        '    Case "1LU"
+        '        Serie = "4"
+        '        oeCorrelativo.Serie = 1
+        '    Case Else
+        '        Serie = "9"
+        '        oeCorrelativo.Serie = 1
+        'End Select
+        Serie = oeCorrelativo.Serie
+        '@0001 Fin
 
         Do While Len(Serie) < 4
             Serie = 0 & Serie

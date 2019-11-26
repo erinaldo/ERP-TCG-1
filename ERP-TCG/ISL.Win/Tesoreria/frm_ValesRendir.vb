@@ -104,7 +104,7 @@ Public Class frm_ValesRendir
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 Select Case ficValesRendir.SelectedTab.Index
                     Case 1
                         If GuardarVale() Then

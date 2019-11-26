@@ -395,19 +395,19 @@ Public Class frm_ControlGuias
             If griLista.ActiveRow.Cells("Id").Value.ToString.Length > 0 Then
                 With griLista.ActiveRow
                     'If Prefijo.PrefijoID = "1LU" And .Cells("Flota").Text <> "LIMA" Then '@0001
-                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
-                        Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
-                    End If
+                    'If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    '    Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
+                    'End If
 
                     'If Prefijo.PrefijoID = "1SA" And .Cells("Flota").Text <> "LIMA" Then '@0001
-                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
-                        Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
-                    End If
+                    'If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    '    Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
+                    'End If
 
                     'If Prefijo.PrefijoID = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
-                    If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
-                        Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
-                    End If
+                    'If gs_PrefijoIdSucursal = "1PY" And .Cells("Flota").Text <> "PACASMAYO" Then '@0001
+                    '    Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
+                    'End If
                     'If Prefijo.PrefijoID = "1CH" And .Cells("Flota").Text = "LIMA" Then
                     '    Throw New Exception("No tiene permisos suficientes para editar registro no esta asignado a esta flota")
                     'End If

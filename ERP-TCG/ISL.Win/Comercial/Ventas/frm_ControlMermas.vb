@@ -822,7 +822,7 @@ Public Class frm_ControlMermas
                 oeOtrosIngresos = New e_OtrosIngresos
                 With oeOtrosIngresos
                     .TipoOperacion = "I"
-                    .IdCentro = ObtenerCentro.Id
+                    .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .IdCuentaCorriente = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
                     .IdCaja = idCajaCentro
@@ -1135,7 +1135,7 @@ Public Class frm_ControlMermas
             leCentro.AddRange(olCentro.Listar(oeCentro))
             LlenarCombo(cboCentroL, "Nombre", leCentro, 0)
             oeCentro = New e_Centro
-            oeCentro = ObtenerCentro()
+            oeCentro = ObtenerCentro(gs_PrefijoIdSucursal)
             cboCentroL.Value = oeCentro.Id
             If gUsuarioSGI.oeArea.Nombre <> gNombreAreaCoordinacionSupervisionOperacion Then
                 DatosTesoreria()
@@ -1287,7 +1287,7 @@ Public Class frm_ControlMermas
             Application.DoEvents()
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
-            oeMovimientoMermas.IdCentro = ObtenerCentro().Id
+            oeMovimientoMermas.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
             Select Case ficIngresoSalida.SelectedTab.Index
                 Case 0
                     With oeMovimientoMermas

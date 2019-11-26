@@ -909,7 +909,7 @@ Public Class frm_MaterialAlmacen
             'End With
             Dim a As String = ""
             For Each x As e_Combo In CentroPublic
-                If x.Descripcion = ObtenerCentro.Id Then
+                If x.Descripcion = ObtenerCentro(gs_PrefijoIdSucursal).Id Then
                     a = x.Nombre.Substring(0, 1)
                 End If
             Next

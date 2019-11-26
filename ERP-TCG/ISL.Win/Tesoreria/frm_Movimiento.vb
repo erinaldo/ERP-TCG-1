@@ -6491,7 +6491,7 @@ Public Class frm_Movimiento
                         With oeCierreCaja
                             .TipoOperacion = "I"
                             .Monto = Me.decSaldoCuentaAdm.Value
-                            .IdCentro = ObtenerCentro.Id
+                            .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                             .IdCaja = idCajaCentro
                             .FechaCreacion = Date.Now
                             .UsuarioCreacion = gUsuarioSGI.Id

@@ -458,7 +458,7 @@ Public Class frm_GruposAprobacion
                 .Fecha = fecCheque.Value
                 .FechaCobro = fecCheque.Value
                 .FechaCreacion = Date.Now
-                .IdCentro = ObtenerCentro.Id
+                .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .Importe = decTotal.Value
                 .Saldo = decTotal.Value

@@ -104,7 +104,7 @@ Public Class frm_Descuento
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 Select Case ficDescuentos.SelectedTab.Index
                     Case 1
                         If GuardarDescuento() Then

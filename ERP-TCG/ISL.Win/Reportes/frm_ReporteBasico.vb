@@ -74,13 +74,13 @@ Public Class frm_ReporteBasico
             Me.ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Remote
             Dim olConfiguracion As New l_Configuracion
             '@0001
-            If gs_PrefijoIdSucursal = "1PY" Then
-                ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
-            Else
-                ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
-            End If
-            'ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_HEAVEN")
-            ReportViewer1.ServerReport.ReportPath = "/Reportes/" + nombreReporte
+            'If gs_PrefijoIdSucursal = "1PY" Then
+            '    ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
+            'Else
+            ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer")
+                'End If
+                'ReportViewer1.ServerReport.ReportServerUrl = New Uri("http://" & olConfiguracion.IPServidorReportes & "/ReportServer_HEAVEN")
+                ReportViewer1.ServerReport.ReportPath = "/Reportes/" + nombreReporte
             If Not myParams Is Nothing Then
                 ReportViewer1.ServerReport.SetParameters(myParams)
             End If

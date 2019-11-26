@@ -1374,10 +1374,10 @@ Public Class frm_Demanda
                                "SalidaDestino", "Capacidad", "IndCarga", "Produccion", "Cantidad", "FleteUnitario", "IncluyeIgv", "IncidenciaOperaciones", "IncidenciaSeguimiento")
 
                 'If Prefijo.PrefijoID = "1CH" Then '@0001
-                If gs_PrefijoIdSucursal = "1CH" Then '@0001
-                    .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
+                'If gs_PrefijoIdSucursal = "1CH" Then '@0001
+                .DisplayLayout.Bands(0).Columns("TipoVehiculo").Hidden = True
                     .DisplayLayout.Bands(0).Columns("Piloto").Hidden = True
-                End If
+                'End If
 
                 .DisplayLayout.Bands(0).Columns("Fecha").SortIndicator = SortOrder.Ascending
 

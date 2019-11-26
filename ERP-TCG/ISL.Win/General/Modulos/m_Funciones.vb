@@ -1206,10 +1206,11 @@ Module m_Funciones
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ObtenerCentro() As e_Centro
+    Public Function ObtenerCentro(PrefijoId As String) As e_Centro
         Dim oecentro As New e_Centro
         Dim olCentro As New l_Centro
         oecentro.TipoOperacion = "2"
+        oecentro.PrefijoID = PrefijoId
         oecentro = olCentro.Obtener(oecentro)
         Return oecentro
     End Function
@@ -2627,7 +2628,7 @@ Module m_Funciones
     Public Function GeneraImagen(ByVal archivo As String, Optional ByVal RutaPersonalizada As Boolean = False, Optional ByVal RutaImagen As String = "", Optional ByVal archivoObligatorio As Boolean = False) As System.Drawing.Bitmap
         Try
             If RutaPersonalizada = False Then
-                Dim olDatosConfiguracion As New l_Configuracion
+                'Dim olDatosConfiguracion As New l_Configuracion '@0001
                 'RutaImagen = olDatosConfiguracion.RutaImagen() '@0001
                 RutaImagen = Path.Combine(Application.StartupPath, "Imagenes") '@0001
             End If
@@ -3811,24 +3812,32 @@ Module m_Funciones
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function Lugar() As String
-        Dim Prefijo As New l_Configuracion
+        'Dim Prefijo As New l_Configuracion
         'Select Case Prefijo.PrefijoID '@0001
-        Select Case gs_PrefijoIdSucursal '@0001
-            Case "1CH"
-                Lugar = "sede Chiclayo"
-            Case "1PY"
-                Lugar = "sede Pacasmayo"
-            Case "1LI"
-                Lugar = "sede Ransa Callao"
-            Case "1SA"
-                Lugar = "sede Santa Anita"
-            Case "1LU"
-                Lugar = "sede Lurín"
-            Case "1PI"
-                Lugar = "sede Piura"
-            Case Else
-                Lugar = "Area de Sistemas"
-        End Select
+        'Select Case gs_PrefijoIdSucursal '@0001
+        '    Case "1CH"
+        '        Lugar = "sede Chiclayo"
+        '    Case "1PY"
+        '        Lugar = "sede Pacasmayo"
+        '    Case "1LI"
+        '        Lugar = "sede Ransa Callao"
+        '    Case "1SA"
+        '        Lugar = "sede Santa Anita"
+        '    Case "1LU"
+        '        Lugar = "sede Lurín"
+        '    Case "1PI"
+        '        Lugar = "sede Piura"
+        '    Case Else
+        '        Lugar = "Area de Sistemas"
+        'End Select '@0001 Fin Ini
+        Dim oecentro = New e_Centro
+        Dim olcentro = New l_Centro
+        oecentro.TipoOperacion = "3"
+        oecentro.Abreviatura = gs_PrefijoIdSucursal
+        oecentro.PrefijoID = gs_PrefijoIdSucursal
+        oecentro = olcentro.Obtener(oecentro)
+        Lugar = oecentro.Nombre.Trim
+        '@0001 Fin
         Return Lugar
     End Function
 

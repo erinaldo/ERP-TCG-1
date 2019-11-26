@@ -1006,7 +1006,7 @@ Public Class frm_CotizacionProveedor
         oeCentro.TipoOperacion = ""
         oeCentro.Activo = True
         LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
-        cboCentro.Value = ObtenerCentro.Id
+        cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
 
         Dim oeCategoriaServicio As New e_CategoriaServicio
         Dim olCategoriaServicio As New l_CategoriaServicio
