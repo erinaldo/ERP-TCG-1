@@ -32,6 +32,9 @@ Public Class frm_EstacionServicio
 #Region "Declaracion de Variables"
 
     Private olEstacionServicio As l_EstacionServicio
+    Private sw_Documento As String
+    Private sw_TipoPago As String
+    Private sw_Combustible As String
 
 #End Region
 
@@ -54,6 +57,25 @@ Public Class frm_EstacionServicio
 
     End Sub
 
+    Private Sub UltraButton10_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
+
+    End Sub
+
+    Private Sub PaintBotones(Grupo As String)
+        Select Case Grupo
+            Case "TipoDocumento"
+                btnDocumento.Appearance.BackColor = Color.White
+                btnVale.Appearance.BackColor = Color.White
+                btnVarios.Appearance.BackColor = Color.White
+            Case "TipoPago"
+                btnContado.Appearance.BackColor = Color.White
+                btnCredito.Appearance.BackColor = Color.White
+        End Select
+    End Sub
 #End Region
 
 End Class
