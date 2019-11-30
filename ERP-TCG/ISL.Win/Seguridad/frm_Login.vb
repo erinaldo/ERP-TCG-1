@@ -234,7 +234,26 @@ Public Class frm_Login
         End With
         cmbEmpresa.Text = gs_TxtEmpresaSistema.Trim
         '@0001 Fin VG
-        LlenarComboMaestro(cboCentro, CentroPublic, -1)
+        'LlenarComboMaestro(cboCentro, CentroPublic, -1)
+    End Sub
+    Private Sub LlenaUsuarioSucursal()
+        '@0001 Ini
+        UsuarioCentroPublic = New List(Of e_Combo)
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "UsuarioCentro"
+        oeCombo.Descripcion = txtUsuarioR.Text.Trim
+        UsuarioCentroPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
+        LimpiaCombos(cboCentro)
+        LlenarComboMaestro(cboCentro, UsuarioCentroPublic, -1)
+        '@0001 Fin
+    End Sub
+
+    Private Sub txtPasswordR_KeyUp(sender As Object, e As KeyEventArgs) Handles txtPasswordR.KeyUp
+        LlenaUsuarioSucursal() '@0001
+    End Sub
+
+    Private Sub txtUsuarioR_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUsuarioR.KeyUp
+        LlenaUsuarioSucursal() '@0001
     End Sub
     '@0001 Fin
 End Class

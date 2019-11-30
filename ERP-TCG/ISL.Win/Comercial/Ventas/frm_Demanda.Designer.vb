@@ -1196,7 +1196,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.agrListaRegistro)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1344, 522)
         '
@@ -1458,7 +1458,7 @@ Partial Class frm_Demanda
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griFactura)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1344, 522)
         '
@@ -4802,7 +4802,7 @@ Partial Class frm_Demanda
         '
         Me.UltraTabPageControl7.Controls.Add(Me.tabDemandaCargas)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1346, 638)
         '
@@ -5229,7 +5229,7 @@ Partial Class frm_Demanda
         Me.utpDetalle.Controls.Add(Me.tabs)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox9)
         Me.utpDetalle.Controls.Add(Me.exgruConsultas)
-        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1346, 638)
         '

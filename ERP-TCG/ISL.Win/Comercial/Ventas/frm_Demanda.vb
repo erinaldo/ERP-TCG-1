@@ -233,7 +233,7 @@ Public Class frm_Demanda
         Try
             If (gUsuarioSGI.leARUsuario.Where(Function(item) item.IdActividadNegocio = gActividadNegocio.Demanda.ToString And
                                                  item.AccionSistema = gAccionSistema.EDITAR.ToString And item.IdProcesoNegocio = pProcesoNegocio)).ToList.Count = 0 Then
-                mensajeEmergente.Confirmacion("Usted no esta autorizado para ACTUALIZAR las demandas", True)
+                mensajeEmergente.Confirmacion("Usted no esta autorizado para ACTUALIZAR - Pedido Carga", True)
             Else
                 ugb_Espera.Visible = True
                 Application.DoEvents()
@@ -250,7 +250,7 @@ Public Class frm_Demanda
                             ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                         End If
                     Else
-                        mensajeEmergente.Confirmacion("Solo se pueden EDITAR las demandas GENERADAS", True)
+                        mensajeEmergente.Confirmacion("Solo se pueden EDITAR - Pedido Carga - GENERADAS", True)
                     End If
                 End If
 
@@ -314,10 +314,10 @@ Public Class frm_Demanda
     Public Overrides Sub Exportar()
         Try
             If tabDemandaCargas.SelectedTab.Index = 0 Then
-                If griLista.Rows.Count = 0 Then Throw New Exception("No hay ninguna Demanda Rápida para exportar al Excel")
+                If griLista.Rows.Count = 0 Then Throw New Exception("No hay ninguna - Pedido Carga - para exportar al Excel")
                 Exportar_Excel(griLista)
             Else
-                If griFactura.Rows.Count = 0 Then Throw New Exception("No hay ninguna Demanda Rápida para exportar al Excel")
+                If griFactura.Rows.Count = 0 Then Throw New Exception("No hay ninguna - Pedido Carga - para exportar al Excel")
                 Exportar_Excel(griFactura)
             End If
 
@@ -644,19 +644,19 @@ Public Class frm_Demanda
             End With
             olDemanda.ValidarDetalle(oeDemandaDetalle)
             If CalFleteUnitario.Value = 0 Then
-                If MessageBox.Show("No esta autorizado para registrar FleteUnitario 0.00" & Environment.NewLine & _
-                    "Demanda sin validaciones comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine & _
-                    "Desea seguir registrando la Demanda:  ?", _
+                If MessageBox.Show("No esta autorizado para registrar FleteUnitario 0.00" & Environment.NewLine &
+                    "Pedido Carga sin validaciones comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine &
+                    "Desea seguir registrando - Pedido Carga :  ?",
                     "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                     IncidenciasPublic = New e_IncidenciasAutentificadas
                     Dim formulario As frm_Autorizacion
                     formulario = frm_Autorizacion
                     If formulario.ObtenerJefes(gNombrePerfilJefeOperaciones, "frm_Operacion1", pIdActividadNegocio) Then formulario.ShowDialog()
                     If IncidenciasPublic.IdResponsableAutoriza.Trim = "" Then
-                        Throw New Exception("No tiene permisos para seguir resgistrando demanda")
+                        Throw New Exception("No tiene permisos para seguir resgistrando - Pedido Carga")
                     End If
                 Else
-                    Throw New Exception("No tiene permisos para seguir resgistrando demanda")
+                    Throw New Exception("No tiene permisos para seguir resgistrando - Pedido Carga")
                 End If
             End If
             If txtComision.Value > (txtFleteTotalDetalle.Value * 0.1) Then
@@ -729,7 +729,7 @@ Public Class frm_Demanda
                     oeDemanda.TipoOperacion = "6"
                     oeDemanda = olDemanda.Obtener(oeDemanda)
                     If oeDemanda Is Nothing Then
-                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede editar, ya fue generada la demanda y/o fue cancelada", True)
+                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede editar, ya fue generada - Pedido Carga - y/o fue cancelada", True)
                     Else
                         With oeDemanda
                             MostrarTabs(1, ficDemanda, 1)
@@ -924,7 +924,7 @@ Public Class frm_Demanda
                 oeDemanda = olDemanda.Obtener(oeDemanda)
 
                 If oeDemanda Is Nothing Then
-                    mensajeEmergente.Confirmacion(Me.Text & ": No se puede editar, ya fue generada la demanda y/o fue cancelada", True)
+                    mensajeEmergente.Confirmacion(Me.Text & ": No se puede editar, ya fue generada - Pedido Carga - y/o fue cancelada", True)
                 Else
                     With oeDemanda
                         If .Activo Then
@@ -1054,7 +1054,7 @@ Public Class frm_Demanda
             Cursor.Show()
             If Me.tipo = "GD" Then
                 olDemanda.ConfirmarDemanda(oeDemanda)
-                mensajeEmergente.Confirmacion("Demanda confirmada", True)
+                mensajeEmergente.Confirmacion("Pedido Carga confirmada", True)
                 MyBase.Consultar(True)
                 If frmDR IsNot Nothing Then
                     frmDR.Enabled = True
@@ -2404,7 +2404,7 @@ Public Class frm_Demanda
                 mostrarMotivoCancelacion("E")
             Else
                 e.Cancel = True
-                mensajeEmergente.Confirmacion("Solo se pueden ELIMINAR las demandas GENERADAS", True)
+                mensajeEmergente.Confirmacion("Solo se pueden ELIMINAR - Pedido Carga - GENERADAS", True)
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -2433,7 +2433,7 @@ Public Class frm_Demanda
             Else
                 If band = "A" Then
                     AccionSistema = gAccionSistema.ELIMINAR.ToString
-                    testDialog.Text = "Motivo de Asignacion de Demanda"
+                    testDialog.Text = "Motivo de Asignacion de Pedido Carga"
                     Dim listaCancelacion = New List(Of e_Combo)
                     oeCombo = New e_Combo
                     oeCombo.Nombre = "ConceptoAsignacion"
@@ -2452,7 +2452,7 @@ Public Class frm_Demanda
                 End If
             End If
             If griLista.ActiveRow.Cells("estado").Value.ToString = "CANCELADA" Or griLista.ActiveRow.Cells("estado").Value.ToString = "ASIGNADA" Then
-                Throw New Exception("La demanda ha sido CANCELADA o ASIGNADA")
+                Throw New Exception("Pedido Carga ha sido CANCELADA o ASIGNADA")
             End If
             If (gUsuarioSGI.leARUsuario.Where(Function(item) item.IdActividadNegocio = gActividadNegocio.Demanda.ToString And
                                                   item.AccionSistema = AccionSistema And item.IdProcesoNegocio = pProcesoNegocio)).ToList.Count > 0 Then
@@ -2528,7 +2528,7 @@ Public Class frm_Demanda
                     oeDemanda = olDemanda.Obtener(oeDemanda)
                     oeDemandaRapida.Indicador = oeDemanda.Indicador
                     If oeDemanda Is Nothing Then
-                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede cancelar, ya fue generada la demanda y/o fue cancelada", True)
+                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede cancelar, ya fue generada - Pedido Carga - y/o fue cancelada", True)
                     Else
                         oeDemandaRapida.oeListaBitacora = ListaBitacora
                         olDemandaRapida.Cancelar(oeDemandaRapida)
@@ -2573,7 +2573,7 @@ Public Class frm_Demanda
                     oeDemanda.TipoOperacion = "6"
                     oeDemanda = olDemanda.Obtener(oeDemanda)
                     If oeDemanda Is Nothing Then
-                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede eliminar, ya fue generada la demanda y/o fue cancelada", True)
+                        mensajeEmergente.Confirmacion(Me.Text & ": No se puede eliminar, ya fue generada - Pedido Carga - y/o fue cancelada", True)
                         Return False
                     Else
                         oeDemandaRapida.oeListaBitacora = ListaBitacora
@@ -2765,9 +2765,9 @@ Public Class frm_Demanda
                 verValidaFU.Checked = True
             Else
                 If Not PerfilAsignado(gNombrePerfilAutorizaTarifas) Then
-                    If MessageBox.Show("No esta autorizado para quitar las validaciones" & Environment.NewLine & _
-                                        "Demanda sin validaciones comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine & _
-                                        "Desea seguir registrando la Demanda:  ?", _
+                    If MessageBox.Show("No esta autorizado para quitar las validaciones" & Environment.NewLine &
+                                        "Pedido Carga sin validaciones comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine &
+                                        "Desea seguir registrando Pedido Carga:  ?",
                                         "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         IncidenciasPublic = New e_IncidenciasAutentificadas
                         Dim formulario As frm_Autorizacion
@@ -3007,7 +3007,7 @@ Public Class frm_Demanda
             If griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "GENERADA" Then
                 mostrarMotivoCancelacion("E")
             Else
-                mensajeEmergente.Confirmacion("Solo se pueden ELIMINAR las demandas GENERADAS", True)
+                mensajeEmergente.Confirmacion("Solo se pueden ELIMINAR Pedido Carga GENERADAS", True)
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -3077,7 +3077,7 @@ Public Class frm_Demanda
         If griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "GENERADA" Or griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "ASIGNADA" Then
             mostrarMotivoCancelacion("C")
         Else
-            mensajeEmergente.Confirmacion("Solo se pueden CANCELAR las demandas GENERADAS", True)
+            mensajeEmergente.Confirmacion("Solo se pueden CANCELAR - Pedido Carga - GENERADAS", True)
         End If
     End Sub
 
@@ -3125,7 +3125,7 @@ Public Class frm_Demanda
                     GuardarDemandasEnviadas()
                 End If
             Else
-                mensajeEmergente.Confirmacion("Debe Seleccionar una Demanda", True)
+                mensajeEmergente.Confirmacion("Debe Seleccionar un Pedido Carga", True)
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -3181,7 +3181,7 @@ Public Class frm_Demanda
             If griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "PARCIAL" Then
                 mostrarMotivoCancelacion("A")
             Else
-                mensajeEmergente.Confirmacion("Solo se pueden cambiar a ASIGNADA, las demandas de estado PARCIAL", True)
+                mensajeEmergente.Confirmacion("Solo se pueden cambiar a ASIGNADA, los Pedido Carga de estado PARCIAL", True)
             End If
         End If
     End Sub
@@ -3204,7 +3204,7 @@ Public Class frm_Demanda
                                          griLista.ActiveRow.Cells("FechaAtendida").Value, griLista.ActiveRow.Cells("Codigo").Value)
 
             Else
-                Throw New Exception(Me.Text & ": La demanda se encuentra ASIGNADA a una operacion")
+                Throw New Exception(Me.Text & ": Pedido Carga se encuentra ASIGNADA a una operacion")
             End If
             ugb_Espera.Visible = False
         Catch ex As Exception
@@ -3729,11 +3729,11 @@ Public Class frm_Demanda
             If griLista.ActiveRow.Cells("Estado").Value.ToString = "APROBADA" Then
                 eDemanda.Id = griLista.ActiveRow.Cells("IdDemanda").Value.ToString
                 If olDemanda.RevertirDemanda(eDemanda) Then
-                    mensajeEmergente.Confirmacion("Demanda revertida", True)
+                    mensajeEmergente.Confirmacion("Pedido Carga revertida", True)
                     listarNuevo()
                 End If
             Else
-                mensajeEmergente.Confirmacion("Esta demanda no puede revertirse", True)
+                mensajeEmergente.Confirmacion("Pedido Carga no puede revertirse", True)
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

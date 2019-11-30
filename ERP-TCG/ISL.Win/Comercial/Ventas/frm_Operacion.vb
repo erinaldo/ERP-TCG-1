@@ -1318,7 +1318,11 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub griLista_BeforeRowsDeleted(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs) Handles griLista.BeforeRowsDeleted
-        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Or gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
+        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
             Try
                 e.DisplayPromptMsg = False
                 If griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "PROGRAMADO" Then
@@ -1738,9 +1742,10 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub Menu_Opening(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Menu.Opening
-        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse _
-            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse _
-            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse _
+        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse
             gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas Then
             Menu.Items("Insert").Visible = True
             If griLista.Selected.Rows.Count > 0 Then
@@ -4657,8 +4662,10 @@ Public Class frm_Operacion
             If tabViajesLista.Tabs(3).Selected And cont > 0 Then
                 mensajeEmergente.Problema("Se encontraron " & cont & " ERRORES de TRAZABILIDAD", True)
             End If
-            If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse _
-                gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse _
+            If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse
                 gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
                 If griLista.Rows.Count > 0 Then
                     If Tipo = "0" Or Tipo = "A" Then

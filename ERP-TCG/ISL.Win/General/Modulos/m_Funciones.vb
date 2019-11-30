@@ -746,6 +746,7 @@ Module m_Funciones
     Public FlotaPublic As List(Of e_Combo)
     Public TipoVehiculoPublic As List(Of e_Combo)
     Public CentroPublic As List(Of e_Combo)
+    Public UsuarioCentroPublic As List(Of e_Combo)
     Public CentroCostoPublic As List(Of e_Combo)
     Public MotivoDocumentoPublic As List(Of e_Combo)
     Public TrabajadorPublic As List(Of e_Combo)
