@@ -1033,21 +1033,30 @@ Public Class frm_Trabajador
 
     Private Function DevolverCentroXPrefijo(ByVal prefijo As String) As String
         Try
-            Select Case prefijo
-                Case "1PY"
-                    Return "PACASMAYO"
-                Case "1CH"
-                    Return "CHICLAYO"
-                Case "1LU"
-                    Return "LIMA LURIN"
-                Case "1SA"
-                    Return "LIMA"
-                Case "1SI"
-                    Return "SISTEMAS"
-                Case "1PU"
-                    Return "PUCALLPA"
+            '@0001 Ini
+            'Select Case prefijo
+            '    Case "1PY"
+            '        Return "PACASMAYO"
+            '    Case "1CH"
+            '        Return "CHICLAYO"
+            '    Case "1LU"
+            '        Return "LIMA LURIN"
+            '    Case "1SA"
+            '        Return "LIMA"
+            '    Case "1SI"
+            '        Return "SISTEMAS"
+            '    Case "1PU"
+            '        Return "PUCALLPA"
 
-            End Select
+            'End Select
+            '@0001 Fin
+            Dim oecentro = New e_Centro
+            Dim olcentro = New l_Centro
+            oecentro.TipoOperacion = "3"
+            oecentro.Abreviatura = prefijo
+            oecentro.PrefijoID = prefijo
+            oecentro = olcentro.Obtener(oecentro)
+            Return oecentro.Nombre.Trim
         Catch ex As Exception
             Throw ex
         End Try

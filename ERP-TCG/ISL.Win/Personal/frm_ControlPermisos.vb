@@ -734,7 +734,7 @@ Public Class frm_ControlPermisos
                 .FechaConfirmaSalida = fecSalidaConfirmada.Value
                 .IndPapeleta = chkPapeleta.Checked
                 .UsuarioCreacion = gUsuarioSGI.Id
-                .IdCentro = ObtenerCentro.Id
+                .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                 .IdOcupacion = oeOcupacionTrabajador.Id
                 .Ocupacion = oeOcupacionTrabajador.Ocupacion
                 .IndVenta = chbVenta.Checked

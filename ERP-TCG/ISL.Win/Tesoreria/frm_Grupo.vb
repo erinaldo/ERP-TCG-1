@@ -235,7 +235,7 @@ Public Class frm_Grupo
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(IdCajaUsuario, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(IdCajaUsuario, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 Select Case Operacion
                     Case "Nuevo"
                         If GuardaGrupo() Then ControlBoton(1, 1, 1, 0, 0, 0, 0, 0, 1)

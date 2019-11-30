@@ -126,7 +126,7 @@ Public Class frm_ChequeEmitido
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(oeCajaUsuario.IdCaja, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 Select Case ficChequesPendientes.SelectedTab.Index
                     Case 1
                         If GuardarCheque() Then
@@ -354,7 +354,7 @@ Public Class frm_ChequeEmitido
                 oeChequeEmitido.IdCuentaCorriente = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
                 oeChequeEmitido.IdProveedor = ""
                 oeChequeEmitido.IdEstado = "1CH00031"
-                If ObtenerCentro.Id <> "1CH001" Then
+                If ObtenerCentro(gs_PrefijoIdSucursal).Id <> "1CH001" Then
                     cboConcepto.Value = "1SI000000017"
                     cboConcepto.Enabled = False
                 End If
@@ -363,7 +363,7 @@ Public Class frm_ChequeEmitido
                 cboTrabajadores.Enabled = True
                 oeChequeEmitido.IdCuentaCorriente = ""
                 oeChequeEmitido.IdEstado = ""
-                If ObtenerCentro.Id <> "1CH001" Then
+                If ObtenerCentro(gs_PrefijoIdSucursal).Id <> "1CH001" Then
                     cboConcepto.SelectedIndex = -1
                     cboConcepto.Enabled = True
                 End If
@@ -692,7 +692,7 @@ Public Class frm_ChequeEmitido
                     .FechaCobro = fecFechaCobro.Value
                     .FechaCreacion = Date.Now
                     .UsuarioCreacion = gUsuarioSGI.Id
-                    .IdCentro = ObtenerCentro.Id
+                    .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                     If .IdEstado = "" Then .IdEstado = "1CH00008"
                 ElseIf Operacion = "Editar" Then
                     .TipoOperacion = "A"

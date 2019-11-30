@@ -1530,7 +1530,7 @@ Public Class frm_OrdenCompra
             oeCentro = New e_Centro
             oeCentro.Activo = True
             LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
-            cboCentro.Value = ObtenerCentro.Id
+            cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
             cboCentro.Enabled = False
 
             Dim lstProveedor As New List(Of e_Proveedor)
@@ -2606,7 +2606,7 @@ Public Class frm_OrdenCompra
             oeMat.Id = IdMaterial
             oeMat.TipoOperacion = "5"
             oeMat.Tipo = 1
-            oeMat.IdCentro = ObtenerCentro.Abreviatura
+            oeMat.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Abreviatura
             oeMat = olMaterial.Obtener_(oeMat)
             With oeOrdenCompraMaterial
                 .TipoOperacion = "I"

@@ -1258,7 +1258,7 @@ Public Class frm_OrdenCompraServicio
             oeCentro = New e_Centro
             oeCentro.Activo = True
             LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
-            cboCentro.Value = ObtenerCentro.Id
+            cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
             cboCentro.Enabled = False
 
             lstProveedor = New List(Of e_Proveedor)

@@ -192,7 +192,7 @@ Public Class frm_Zona
         oeCentro.TipoOperacion = ""
         oeCentro.Activo = True
         LlenarCombo(cboCentro, "Nombre", olCentro.Listar(oeCentro), 0)
-        cboCentro.Value = ObtenerCentro.Id
+        cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
     End Sub
 
     Private Sub CargarAlmacen(ByVal idCentro As String)

@@ -299,16 +299,18 @@ Public Class frm_Operacion
             ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
             RutaIdDestino = ""
             verValidaciones.Checked = True
-            If PrefijoId = "1LU" Then
-                cboRutaOrigen.Text = "CD LURIN (LIMA)"
-                cboRutaDestino.Focus()
-                cboRutaDestino.Text = "CD LURIN (LIMA)"
-            End If
+            '@0001 Ini
+            'If PrefijoId = "1LU" Then
+            '    cboRutaOrigen.Text = "CD LURIN (LIMA)"
+            '    cboRutaDestino.Focus()
+            '    cboRutaDestino.Text = "CD LURIN (LIMA)"
+            'End If
+            '@0001 Fin
             cboPiloto.Enabled = True
             griViaje.DisplayLayout.Bands(0).Columns("Piloto").CellActivation = Activation.AllowEdit
-            If PrefijoId <> "1PY" Then
-                CalcularTotales(griViaje, "PorcentajeFlete", "FleteUnitario")
-            End If
+            'If PrefijoId <> "1PY" Then '@0001
+            CalcularTotales(griViaje, "PorcentajeFlete", "FleteUnitario")
+            'End If '@0001
             CalcularTotales(griViajeDetalle, "Flete", "Comision", "FleteUnitario", "Subtotal", "Consolidado")
             IncidenciasPublic = New e_IncidenciasAutentificadas
             tabAdicional.Tabs(1).Selected = True
@@ -449,9 +451,11 @@ Public Class frm_Operacion
                 Throw New Exception(Me.Text & ": El Viaje no se puede editar se encuentra FIN")
             End If
             tabAdicional.Tabs(1).Selected = True
-            If PrefijoId <> "1PY" Then
-                CalcularTotales(griViaje, "PorcentajeFlete", "FleteUnitario")
-            End If
+
+            'If PrefijoId <> "1PY" Then '@0001
+            CalcularTotales(griViaje, "PorcentajeFlete", "FleteUnitario")
+            'End If '@0001
+
             CalcularTotales(griViajeDetalle, "Flete", "Comision", "Subtotal", "Consolidado")
             IncidenciasPublic = New e_IncidenciasAutentificadas
             ugb_Espera.Visible = False
@@ -1314,7 +1318,11 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub griLista_BeforeRowsDeleted(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs) Handles griLista.BeforeRowsDeleted
-        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Or gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
+        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas Or
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
             Try
                 e.DisplayPromptMsg = False
                 If griLista.ActiveRow.Cells("Estado").Value.ToString.Trim = "PROGRAMADO" Then
@@ -1734,9 +1742,10 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub Menu_Opening(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles Menu.Opening
-        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse _
-            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse _
-            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse _
+        If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse
+            gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente OrElse
             gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas Then
             Menu.Items("Insert").Visible = True
             If griLista.Selected.Rows.Count > 0 Then
@@ -4409,14 +4418,14 @@ Public Class frm_Operacion
         NroVueltas.Value = 1
         NroTurno.Value = 0
         griDemanda.DataSource = New List(Of e_Demanda)
-        If PrefijoId = "1PY" Then
-            hOperacion.Value = Date.Now.Date
-        Else
-            hOperacion.Value = Date.Now
-            If PrefijoId = "1LI" Then
-                hViaje.Value = Date.Now
-            End If
-        End If
+        'If PrefijoId = "1PY" Then '@0001
+        '    hOperacion.Value = Date.Now.Date '@0001
+        'Else
+        hOperacion.Value = Date.Now
+        '    If PrefijoId = "1LI" Then '@0001
+        '        hViaje.Value = Date.Now '@0001
+        '    End If '@0001
+        'End If '@0001
 
         hViaje.Value = Date.Now.Date
         cboMoneda.SelectedIndex = 0
@@ -4653,8 +4662,10 @@ Public Class frm_Operacion
             If tabViajesLista.Tabs(3).Selected And cont > 0 Then
                 mensajeEmergente.Problema("Se encontraron " & cont & " ERRORES de TRAZABILIDAD", True)
             End If
-            If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse _
-                gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse _
+            If gUsuarioSGI.oeArea.Nombre = gNombreAreaCoordinacionSupervisionOperacion OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaOperaciones OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaVentas OrElse
+                gUsuarioSGI.oeArea.Nombre = gNombreAreaInformaticaSistemas OrElse
                 gUsuarioSGI.oeArea.Nombre = gNombreAreaSeguridadMedioAmbiente Then
                 If griLista.Rows.Count > 0 Then
                     If Tipo = "0" Or Tipo = "A" Then
@@ -4959,8 +4970,8 @@ Public Class frm_Operacion
                 End With
             Next
 
-            If PrefijoId <> "1PY" Then
-                For I As Integer = 0 To griViaje.Rows.Count - 1
+            'If PrefijoId <> "1PY" Then '@0001
+            For I As Integer = 0 To griViaje.Rows.Count - 1
                     With griViaje.Rows(I)
                         'If PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And Operacion = "Nuevo" Then
                         '    ''Valida Tracto Viajes sin reportar
@@ -5001,32 +5012,33 @@ Public Class frm_Operacion
                 If Porcentaje > CInt(txtFletePorcentaje.Text) And verProgramarViajeBloque.Checked = False Then
                     ficViaje.Tabs(0).Selected = True
                     Throw New Exception("La suma de porcentaje en Viajes no puede superar --> " & txtFletePorcentaje.Text)
-                Else
-                    If Porcentaje < CInt(txtFletePorcentaje.Text) Then
-                        ficViaje.Tabs(0).Selected = True
-                        Throw New Exception("La suma de porcentaje en Viajes tiene que proratearse hasta --> " & txtFletePorcentaje.Text)
-                    End If
-                End If
-
-                If Operacion = "Nuevo" Then
-                    If ClienteCarga = "SUPERMERCADOS PERUANOS S.A." Or ClienteCarga = "MAESTRO PERU S.A." Or ClienteCarga = "HIPERMERCADOS TOTTUS S.A." Then
-                        If FleteUnitarioCarga > FleteUnitarioViaje Then
-                            Throw New Exception("El FleteUnitario de la carga es mayor al FleteUnitario Ingresado en Viajes")
-                        End If
-                        If FleteUnitarioViaje > FleteUnitarioCarga Then
-                            Throw New Exception("El FleteUnitario de la carga es menor al FleteUnitario Ingresado en Viajes")
-                        End If
-                    End If
-                End If
-
-                If Operacion = "Editar" Then
-                    If ClienteCarga = "SUPERMERCADOS PERUANOS S.A." Or ClienteCarga = "MAESTRO PERU S.A." Or ClienteCarga = "HIPERMERCADOS TOTTUS S.A." Then
-                        If FleteUnitarioViaje > FleteUnitarioCarga Then
-                            Throw New Exception("El FleteUnitario de la carga es menor al FleteUnitario Ingresado en Viajes")
-                        End If
-                    End If
-                End If
+                'Else '@001
+                '    If Porcentaje < CInt(txtFletePorcentaje.Text) Then
+                '        ficViaje.Tabs(0).Selected = True
+                '        Throw New Exception("La suma de porcentaje en Viajes tiene que proratearse hasta --> " & txtFletePorcentaje.Text)
+                '    End If '@001
             End If
+            '@001 Ini
+            'If Operacion = "Nuevo" Then
+            '    If ClienteCarga = "SUPERMERCADOS PERUANOS S.A." Or ClienteCarga = "MAESTRO PERU S.A." Or ClienteCarga = "HIPERMERCADOS TOTTUS S.A." Then
+            '        If FleteUnitarioCarga > FleteUnitarioViaje Then
+            '            Throw New Exception("El FleteUnitario de la carga es mayor al FleteUnitario Ingresado en Viajes")
+            '        End If
+            '        If FleteUnitarioViaje > FleteUnitarioCarga Then
+            '            Throw New Exception("El FleteUnitario de la carga es menor al FleteUnitario Ingresado en Viajes")
+            '        End If
+            '    End If
+            'End If
+
+            'If Operacion = "Editar" Then
+            '    If ClienteCarga = "SUPERMERCADOS PERUANOS S.A." Or ClienteCarga = "MAESTRO PERU S.A." Or ClienteCarga = "HIPERMERCADOS TOTTUS S.A." Then
+            '        If FleteUnitarioViaje > FleteUnitarioCarga Then
+            '            Throw New Exception("El FleteUnitario de la carga es menor al FleteUnitario Ingresado en Viajes")
+            '        End If
+            '    End If
+            'End If
+            '@0001 Fin
+            'End If '@0001
             'validacion contrato tercero
             ValidarIngresoContrato()
             'ValidarCorrelatividadConEscala
@@ -5735,29 +5747,31 @@ Public Class frm_Operacion
             ValidarCombo(cboAyudante, "Ayudante")
             ValidarCombo(cboTracto, "Tracto")
             If Operacion = "Nuevo" OrElse Operacion = "Editar" Then
-                If PrefijoId = "1PY" And HoraNoche <= hViaje.Value.ToShortTimeString Then
-                    If verFechaViaje.Checked = True And Operacion = "Nuevo" And CDate(fecViaje.Value) < (FechaServidor.AddDays(lisDiasSupervisor(0).Valor1)).Date Then
-                        fecViaje.Focus()
-                        fecViaje.Value = FechaServidor.Date
-                        Throw New Exception("La fecha de atención no puede ser menor a la fecha actual")
-                    End If
-                    If verFechaViaje.Checked = True And Operacion = "Editar" And CDate(fecViaje.Value) < oeViaje.Fecha Then
-                        fecViaje.Focus()
-                        fecViaje.Value = oeViaje.Fecha
-                        Throw New Exception("La fecha de atención no puede ser menor a la fecha programada")
-                    End If
-                Else
-                    If verFechaViaje.Checked = True And Operacion = "Nuevo" And CDate(fecViaje.Value) < (FechaServidor.AddDays(lisDiasSupervisor(0).Valor1)).Date Then
-                        fecViaje.Focus()
-                        fecViaje.Value = FechaServidor.Date
-                        Throw New Exception("La fecha de atención no puede ser menor a la fecha actual")
-                    End If
-                    If verFechaViaje.Checked = True And Operacion = "Editar" And CDate(fecViaje.Value) < oeViaje.Fecha.Date Then
-                        fecViaje.Focus()
-                        fecViaje.Value = oeViaje.Fecha
-                        Throw New Exception("La fecha de atención no puede ser menor a la fecha programada")
-                    End If
+                '@0001 Ini
+                'If PrefijoId = "1PY" And HoraNoche <= hViaje.Value.ToShortTimeString Then
+                '    If verFechaViaje.Checked = True And Operacion = "Nuevo" And CDate(fecViaje.Value) < (FechaServidor.AddDays(lisDiasSupervisor(0).Valor1)).Date Then
+                '        fecViaje.Focus()
+                '        fecViaje.Value = FechaServidor.Date
+                '        Throw New Exception("La fecha de atención no puede ser menor a la fecha actual")
+                '    End If
+                '    If verFechaViaje.Checked = True And Operacion = "Editar" And CDate(fecViaje.Value) < oeViaje.Fecha Then
+                '        fecViaje.Focus()
+                '        fecViaje.Value = oeViaje.Fecha
+                '        Throw New Exception("La fecha de atención no puede ser menor a la fecha programada")
+                '    End If
+                'Else 
+                '@0001 Fin
+                If verFechaViaje.Checked = True And Operacion = "Nuevo" And CDate(fecViaje.Value) < (FechaServidor.AddDays(lisDiasSupervisor(0).Valor1)).Date Then
+                    fecViaje.Focus()
+                    fecViaje.Value = FechaServidor.Date
+                    Throw New Exception("La fecha de atención no puede ser menor a la fecha actual")
                 End If
+                If verFechaViaje.Checked = True And Operacion = "Editar" And CDate(fecViaje.Value) < oeViaje.Fecha.Date Then
+                    fecViaje.Focus()
+                    fecViaje.Value = oeViaje.Fecha
+                    Throw New Exception("La fecha de atención no puede ser menor a la fecha programada")
+                End If
+                'End If  '@0001
                 Try
                     'fecha no coincide con la del viaje
                     If verFechaViaje.Checked = False Then
@@ -5903,20 +5917,20 @@ Public Class frm_Operacion
             End If
             Dim IdMaterialAux As String = String.Empty
             If oeOperacion.oeOperacionDetalle.Count > 0 Then IdMaterialAux = oeOperacion.oeOperacionDetalle(0).Material
-
-            If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And FlotaTracto <> "CAMIONETA" And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000001513" And IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then
+            'If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And FlotaTracto <> "CAMIONETA" And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000001513" And IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then '@0001
+            If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And FlotaTracto <> "CAMIONETA" And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then
                 Dim listaRutasNoValidar = loConcepto.Where(Function(item) item.Valor1.Trim = RutaOperacion).ToList
                 If listaRutasNoValidar.Count = 0 Then
                     ViajesControl(cboTracto.Value, "")
                     If ListaViajeControl.GroupBy(Function(item) item.IdOperacion).Count > Integer.Parse(loNroViajesReport(0).Valor1) Then
-                        If MessageBox.Show("No se puede Programar Tracto: " & cboTracto.Text & Environment.NewLine & _
-                                         "A superado el limite de viajes no reportados: " & loNroViajesReport(0).Valor1 & Environment.NewLine & _
-                                         "Desea ver detalle de viajes ? ", _
-                                        "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                        If MessageBox.Show("No se puede Programar Tracto: " & cboTracto.Text & Environment.NewLine &
+                                         "A superado el limite de viajes no reportados: " & loNroViajesReport(0).Valor1 & Environment.NewLine &
+                                         "Desea ver detalle de viajes ? ",
+                                        "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             Dim TextoTotal As String = ""
                             For Each Viaje As e_Viaje In ListaViajeControl
-                                TextoTotal += "Viaje: " & Viaje.Codigo & ", Fecha: " & Viaje.Fecha.Date & Environment.NewLine & _
+                                TextoTotal += "Viaje: " & Viaje.Codigo & ", Fecha: " & Viaje.Fecha.Date & Environment.NewLine &
                                                 "Ruta: " & Viaje.Origen & "-" & Viaje.Destino & " Estado: " & Viaje.Estado & Environment.NewLine & Environment.NewLine
                             Next
                             MessageBox.Show(TextoTotal, "Mensaje del Sistema    Tracto: " & cboTracto.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -5954,20 +5968,21 @@ Public Class frm_Operacion
                 oeVehiculo.Id = cboCarreta.Value
                 oeVehiculo = olVehiculo.ValidarVehiculo(oeVehiculo)
                 IndPropiedadCarretaTemp = oeVehiculo.IndPropiedad
-                If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000001513" And IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then
+                'If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000001513" And IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then
+                If Not PerfilAsignado(gNombrePerfilJefeOperaciones) And oeVehiculo.IndPropiedad = 1 And (IdMaterialAux <> "1CH000000001" And IdMaterialAux <> "") Then
                     Dim listaRutasNoValidar = loConcepto.Where(Function(item) item.Valor1.Trim = RutaOperacion).ToList
                     If listaRutasNoValidar.Count = 0 Then
                         ViajesControl("", cboCarreta.Value)
                         If ListaViajeControl.GroupBy(Function(item) item.IdOperacion).Count > Integer.Parse(loNroViajesReport(0).Valor1) Then
-                            If MessageBox.Show("No se puede Programar Carreta: " & cboCarreta.Text & Environment.NewLine & _
-                                                "A superado el limite de viajes no reportados: " & loNroViajesReport(0).Valor1 & Environment.NewLine & _
-                                                "Desea ver detalle de viajes ? ", _
-                                                "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                            If MessageBox.Show("No se puede Programar Carreta: " & cboCarreta.Text & Environment.NewLine &
+                                                "A superado el limite de viajes no reportados: " & loNroViajesReport(0).Valor1 & Environment.NewLine &
+                                                "Desea ver detalle de viajes ? ",
+                                                "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
 
                                 Dim TextoTotal As String = ""
                                 For Each Viaje As e_Viaje In ListaViajeControl
-                                    TextoTotal += "Viaje: " & Viaje.Codigo & ", Fecha:" & Viaje.Fecha.Date & Environment.NewLine & _
+                                    TextoTotal += "Viaje: " & Viaje.Codigo & ", Fecha:" & Viaje.Fecha.Date & Environment.NewLine &
                                                   "Ruta: " & Viaje.Origen & "-" & Viaje.Destino & ", Estado: " & Viaje.Estado & Environment.NewLine & Environment.NewLine
                                 Next
                                 MessageBox.Show(TextoTotal, "Mensaje del Sistema    Carreta: " & cboCarreta.Text, MessageBoxButtons.OK, MessageBoxIcon.Information)

@@ -10307,7 +10307,7 @@ Partial Class frm_Operacion
         Me.verProgramarViajeBloque.Name = "verProgramarViajeBloque"
         Me.verProgramarViajeBloque.Size = New System.Drawing.Size(105, 25)
         Me.verProgramarViajeBloque.TabIndex = 11
-        Me.verProgramarViajeBloque.Text = "Programo Viajes Por Turno"
+        Me.verProgramarViajeBloque.Text = "Programo Viajes Por Bloque"
         '
         'UltraGroupBox1
         '
