@@ -572,6 +572,7 @@ Module m_Funciones
     Public Const gVSTransporte As String = "PRESTACION DE SERVICIO DE TRANSPORTE"
     Public Const gVSTracto As String = "VENTAS DE UNIDADES DE TRANSPORTES"
     Public Const gVSOtros As String = "OTROS SERVICIOS PRESTADOS"
+    Public Const gVSMercaderia As String = "VENTA DE MERCADERIA"
 
     'Variables Globales para Cuentas Contables
     Public Const gCC16531 As String = "16531"

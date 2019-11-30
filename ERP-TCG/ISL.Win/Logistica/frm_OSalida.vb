@@ -1269,7 +1269,7 @@ Public Class frm_OSalida
             Select Case griOrden.ActiveRow.Cells("EstadoOrden").Value
                 Case "GENERADA"
                     Select Case griOrden.ActiveRow.Cells("TipoReferencia").Value
-                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", ""
+                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "", "ORDEN VENTA"
                             btnEjecutar.Enabled = 1
                     End Select
                 Case "RECEPCIONADO", "TERMINADA"

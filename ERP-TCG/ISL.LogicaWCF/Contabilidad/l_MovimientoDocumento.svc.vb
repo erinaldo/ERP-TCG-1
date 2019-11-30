@@ -5107,6 +5107,7 @@ Public Class l_MovimientoDocumento
                         If olAsientoMov.Listar(oeAsientoMov_A).Count = 0 Then
                             With oeAsiento
                                 .TipoOperacion = "I" : .IdPeriodo = oeMovDocumento.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
+                                .PrefijoID = oeMovDocumento.PrefijoID
                                 .NroAsiento = String.Empty : .Fecha = oeMovDocumento.FechaEmision
                                 .Glosa = "VENTA " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
                                     " " & oeMovDocumento.Venta.Cliente.Nombre
@@ -5126,6 +5127,7 @@ Public Class l_MovimientoDocumento
                                 oeAsientoMov = New e_AsientoMovimiento
                                 With oeAsientoMov
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
+                                    .PrefijoID = oeMovDocumento.PrefijoID
                                     Select Case Left(oeAux.Cuenta.Trim, 1)
                                         Case "1"
                                             .IdCuentaContable = IIf(IdCtaCtble16321 <> "", IdCtaCtble16321, oeAux.IdCuentaContable.Trim)
@@ -5140,6 +5142,7 @@ Public Class l_MovimientoDocumento
 
                                             'Genera AsientoMoviento - Movimiento Documento
                                             oeAsientoMov.AsMov_MovDoc = New e_AsientoMov_MovDoc
+                                            oeAsientoMov.AsMov_MovDoc.PrefijoID = oeMovDocumento.PrefijoID
                                             oeAsientoMov.AsMov_MovDoc.TipoOperacion = "I"
                                             oeAsientoMov.AsMov_MovDoc.IdMovimientoDocumento = oeMovDocumento.Id
                                             oeAsientoMov.AsMov_MovDoc.IdCuentaxCyP = String.Empty
@@ -5165,6 +5168,7 @@ Public Class l_MovimientoDocumento
                                                 oe_docas.Activo = 1
                                                 oe_docas = ol_docas.Listar(oe_docas)(0)
                                                 oeAsientoMov.AsMov_MovDoc = New e_AsientoMov_MovDoc
+                                                oeAsientoMov.AsMov_MovDoc.PrefijoID = oeMovDocumento.PrefijoID
                                                 oeAsientoMov.AsMov_MovDoc.TipoOperacion = "I"
                                                 oeAsientoMov.AsMov_MovDoc.IdCuentaxCyP = String.Empty
                                                 oeAsientoMov.AsMov_MovDoc.Activo = True

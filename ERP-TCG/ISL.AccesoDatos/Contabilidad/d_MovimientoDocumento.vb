@@ -661,6 +661,13 @@ Public Class d_MovimientoDocumento
                     oeOrden_Documento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     odOrden_Documento.Guardar(oeOrden_Documento)
                 Next
+
+                For Each orden_doc In .lo_OrdenDocumento
+                    'Dim oeOrden_Documento As New e_Orden_Documento
+                    Dim odOrden_Documento As New d_Orden_Documento
+                    orden_doc.IdDocumento = stResultado(0)
+                    odOrden_Documento.Guardar(orden_doc)
+                Next
                 '-----------------------------------------------------
                 If Not .DocSinAsoc Is Nothing AndAlso Not .DocSinAsoc.Id Is Nothing Then
                     Dim oeDocSinAsoc As New e_DocumentoSinAsociacion
