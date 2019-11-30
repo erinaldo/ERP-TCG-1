@@ -1448,6 +1448,7 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Sub
+
     Private Sub mt_CombosGrillaPrincipal(Grilla As UltraGrid)
         Try
             With Grilla
@@ -1461,7 +1462,6 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Sub
-
 
     Private Sub mt_CalcularTotalOrden()
         Try

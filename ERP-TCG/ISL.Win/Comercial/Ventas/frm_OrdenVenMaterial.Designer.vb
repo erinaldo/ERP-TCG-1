@@ -537,6 +537,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraExpandableGroupBoxPanel1 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
         Me.UltraGroupBox13 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.griAlmacenMaterial = New Infragistics.Win.UltraWinGrid.UltraGrid()
+        Me.EMaterialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraGroupBox12 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.chkTipoMaterial = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.UltraLabel27 = New Infragistics.Win.Misc.UltraLabel()
@@ -594,6 +595,7 @@ Partial Class frm_OrdenVenMaterial
         Me.cboEstado = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.UltraLabel13 = New Infragistics.Win.Misc.UltraLabel()
         Me.cbgClienteB = New Infragistics.Win.UltraWinGrid.UltraCombo()
+        Me.odEmpresa = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraGroupBox5 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.ficDetalleOrdenComercial = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
@@ -656,8 +658,6 @@ Partial Class frm_OrdenVenMaterial
         Me.odAlmacenMaterial = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.ficOrdenComercial = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.odEmpresa = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EMaterialBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.UltraGroupBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox10.SuspendLayout()
@@ -669,6 +669,7 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.UltraGroupBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox13.SuspendLayout()
         CType(Me.griAlmacenMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EMaterialBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox12.SuspendLayout()
         CType(Me.chkTipoMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -711,6 +712,7 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.cmbMonedaB, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboEstado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cbgClienteB, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.odEmpresa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
         CType(Me.UltraGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox5.SuspendLayout()
@@ -746,8 +748,6 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.odAlmacenMaterial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficOrdenComercial, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficOrdenComercial.SuspendLayout()
-        CType(Me.odEmpresa, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.EMaterialBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl3
@@ -1112,6 +1112,10 @@ Partial Class frm_OrdenVenMaterial
         Me.griAlmacenMaterial.Size = New System.Drawing.Size(694, 219)
         Me.griAlmacenMaterial.TabIndex = 0
         Me.griAlmacenMaterial.Text = "Grilla2"
+        '
+        'EMaterialBindingSource
+        '
+        Me.EMaterialBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_Material)
         '
         'UltraGroupBox12
         '
@@ -1539,7 +1543,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1221, 495)
         '
@@ -2194,12 +2198,16 @@ Partial Class frm_OrdenVenMaterial
         Me.cbgClienteB.Size = New System.Drawing.Size(328, 23)
         Me.cbgClienteB.TabIndex = 333
         '
+        'odEmpresa
+        '
+        Me.odEmpresa.DataSource = GetType(ERP.EntidadesWCF.e_Empresa)
+        '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1221, 495)
         '
@@ -3190,14 +3198,6 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1221, 495)
         '
-        'odEmpresa
-        '
-        Me.odEmpresa.DataSource = GetType(ERP.EntidadesWCF.e_Empresa)
-        '
-        'EMaterialBindingSource
-        '
-        Me.EMaterialBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_Material)
-        '
         'frm_OrdenVenMaterial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3217,6 +3217,7 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.UltraGroupBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox13.ResumeLayout(False)
         CType(Me.griAlmacenMaterial, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EMaterialBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraGroupBox12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox12.ResumeLayout(False)
         Me.UltraGroupBox12.PerformLayout()
@@ -3264,6 +3265,7 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.cmbMonedaB, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboEstado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cbgClienteB, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.odEmpresa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl2.ResumeLayout(False)
         CType(Me.UltraGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox5.ResumeLayout(False)
@@ -3302,8 +3304,6 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.odAlmacenMaterial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficOrdenComercial, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficOrdenComercial.ResumeLayout(False)
-        CType(Me.odEmpresa, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.EMaterialBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
