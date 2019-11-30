@@ -35,7 +35,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Librerias", "Librerias\", "
 		SlnRelativePath = "Librerias\"
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERP TyL Internet", "ERP TyL Internet\ERP TyL Internet.vdproj", "{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERP_TyL-Internet", "ERP_TyL-Internet\ERP_TyL-Internet.vdproj", "{BC11AAA9-F7F5-4A6F-AC1C-8A36F17A350B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERP_TyL-Local", "ERP_TyL-Local\ERP_TyL-Local.vdproj", "{58C651EE-1352-41A1-B19D-F881CF4F58C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,10 +95,14 @@ Global
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.ActiveCfg = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.Build.0 = Debug|Any CPU
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Debug|Any CPU.ActiveCfg = Debug
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Debug|x86.ActiveCfg = Debug
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Release|Any CPU.ActiveCfg = Release
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Release|x86.ActiveCfg = Release
+		{BC11AAA9-F7F5-4A6F-AC1C-8A36F17A350B}.Debug|Any CPU.ActiveCfg = Debug
+		{BC11AAA9-F7F5-4A6F-AC1C-8A36F17A350B}.Debug|x86.ActiveCfg = Debug
+		{BC11AAA9-F7F5-4A6F-AC1C-8A36F17A350B}.Release|Any CPU.ActiveCfg = Release
+		{BC11AAA9-F7F5-4A6F-AC1C-8A36F17A350B}.Release|x86.ActiveCfg = Release
+		{58C651EE-1352-41A1-B19D-F881CF4F58C3}.Debug|Any CPU.ActiveCfg = Debug
+		{58C651EE-1352-41A1-B19D-F881CF4F58C3}.Debug|x86.ActiveCfg = Debug
+		{58C651EE-1352-41A1-B19D-F881CF4F58C3}.Release|Any CPU.ActiveCfg = Release
+		{58C651EE-1352-41A1-B19D-F881CF4F58C3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
