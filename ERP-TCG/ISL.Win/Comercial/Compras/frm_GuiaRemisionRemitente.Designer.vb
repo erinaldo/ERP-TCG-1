@@ -607,9 +607,9 @@ Partial Class frm_GuiaRemisionRemitente
         '
         Me.UltraTabPageControl3.Controls.Add(Me.griGuiaMaterial)
         Me.UltraTabPageControl3.Controls.Add(Me.gbeMateriales)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1216, 340)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1216, 339)
         '
         'griGuiaMaterial
         '
@@ -768,7 +768,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.griGuiaMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griGuiaMaterial.Location = New System.Drawing.Point(0, 0)
         Me.griGuiaMaterial.Name = "griGuiaMaterial"
-        Me.griGuiaMaterial.Size = New System.Drawing.Size(589, 340)
+        Me.griGuiaMaterial.Size = New System.Drawing.Size(589, 339)
         Me.griGuiaMaterial.TabIndex = 0
         Me.griGuiaMaterial.Text = "Grilla1"
         '
@@ -788,11 +788,11 @@ Partial Class frm_GuiaRemisionRemitente
         Me.gbeMateriales.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeMateriales.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.gbeMateriales.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeMateriales.ExpandedSize = New System.Drawing.Size(627, 340)
+        Me.gbeMateriales.ExpandedSize = New System.Drawing.Size(627, 339)
         Me.gbeMateriales.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeMateriales.Location = New System.Drawing.Point(589, 0)
         Me.gbeMateriales.Name = "gbeMateriales"
-        Me.gbeMateriales.Size = New System.Drawing.Size(627, 340)
+        Me.gbeMateriales.Size = New System.Drawing.Size(627, 339)
         Me.gbeMateriales.TabIndex = 1
         Me.gbeMateriales.Text = "Materiales"
         Me.gbeMateriales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -804,18 +804,18 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(604, 334)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(604, 333)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'agrMateriales
         '
         Me.agrMateriales.Controls.Add(Me.griListaMateriales)
         Me.agrMateriales.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.agrMateriales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrMateriales.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrMateriales.ForeColor = System.Drawing.Color.Black
         Me.agrMateriales.Location = New System.Drawing.Point(0, 62)
         Me.agrMateriales.Name = "agrMateriales"
-        Me.agrMateriales.Size = New System.Drawing.Size(604, 272)
+        Me.agrMateriales.Size = New System.Drawing.Size(604, 271)
         Me.agrMateriales.TabIndex = 1
         Me.agrMateriales.Text = "Materiales:"
         Me.agrMateriales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -951,9 +951,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.griListaMateriales.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy
         Me.griListaMateriales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griListaMateriales.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griListaMateriales.Location = New System.Drawing.Point(3, 16)
+        Me.griListaMateriales.Location = New System.Drawing.Point(3, 17)
         Me.griListaMateriales.Name = "griListaMateriales"
-        Me.griListaMateriales.Size = New System.Drawing.Size(598, 253)
+        Me.griListaMateriales.Size = New System.Drawing.Size(598, 251)
         Me.griListaMateriales.TabIndex = 0
         Me.griListaMateriales.Text = "Grilla2"
         '
@@ -970,7 +970,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.Agrupacion6.Controls.Add(Me.txtBuscarMateriales)
         Me.Agrupacion6.Controls.Add(Me.Etiqueta2)
         Me.Agrupacion6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Agrupacion6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Agrupacion6.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Agrupacion6.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion6.Name = "Agrupacion6"
@@ -1023,11 +1023,11 @@ Partial Class frm_GuiaRemisionRemitente
         Appearance48.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta2.Appearance = Appearance48
         Me.Etiqueta2.AutoSize = True
-        Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta2.Location = New System.Drawing.Point(19, 33)
         Me.Etiqueta2.Name = "Etiqueta2"
-        Me.Etiqueta2.Size = New System.Drawing.Size(41, 14)
+        Me.Etiqueta2.Size = New System.Drawing.Size(41, 15)
         Me.Etiqueta2.TabIndex = 0
         Me.Etiqueta2.Text = "Buscar:"
         '
@@ -1035,9 +1035,9 @@ Partial Class frm_GuiaRemisionRemitente
         '
         Me.UltraTabPageControl9.Controls.Add(Me.griListaOrdenIngreso)
         Me.UltraTabPageControl9.Controls.Add(Me.UEGB_Ordenes)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
-        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1216, 340)
+        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1216, 339)
         '
         'griListaOrdenIngreso
         '
@@ -1129,7 +1129,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.griListaOrdenIngreso.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaOrdenIngreso.Location = New System.Drawing.Point(0, 0)
         Me.griListaOrdenIngreso.Name = "griListaOrdenIngreso"
-        Me.griListaOrdenIngreso.Size = New System.Drawing.Size(620, 340)
+        Me.griListaOrdenIngreso.Size = New System.Drawing.Size(620, 339)
         Me.griListaOrdenIngreso.TabIndex = 0
         '
         'odOrden
@@ -1144,11 +1144,11 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UEGB_Ordenes.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.UEGB_Ordenes.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.UEGB_Ordenes.Dock = System.Windows.Forms.DockStyle.Right
-        Me.UEGB_Ordenes.ExpandedSize = New System.Drawing.Size(596, 340)
+        Me.UEGB_Ordenes.ExpandedSize = New System.Drawing.Size(596, 339)
         Me.UEGB_Ordenes.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UEGB_Ordenes.Location = New System.Drawing.Point(620, 0)
         Me.UEGB_Ordenes.Name = "UEGB_Ordenes"
-        Me.UEGB_Ordenes.Size = New System.Drawing.Size(596, 340)
+        Me.UEGB_Ordenes.Size = New System.Drawing.Size(596, 339)
         Me.UEGB_Ordenes.TabIndex = 1
         Me.UEGB_Ordenes.Text = " Lista Orden's Ingreso"
         Me.UEGB_Ordenes.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1161,7 +1161,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
-        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(573, 334)
+        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(573, 333)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
         '
         'Agrupacion11
@@ -1172,7 +1172,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.Agrupacion11.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion11.Location = New System.Drawing.Point(0, 55)
         Me.Agrupacion11.Name = "Agrupacion11"
-        Me.Agrupacion11.Size = New System.Drawing.Size(573, 279)
+        Me.Agrupacion11.Size = New System.Drawing.Size(573, 278)
         Me.Agrupacion11.TabIndex = 1
         Me.Agrupacion11.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -1265,7 +1265,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.griOrdenes.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOrdenes.Location = New System.Drawing.Point(2, 2)
         Me.griOrdenes.Name = "griOrdenes"
-        Me.griOrdenes.Size = New System.Drawing.Size(569, 275)
+        Me.griOrdenes.Size = New System.Drawing.Size(569, 274)
         Me.griOrdenes.TabIndex = 0
         '
         'odOrdenesIngreso
@@ -1285,7 +1285,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.Agrupacion1.Controls.Add(Me.Etiqueta6)
         Me.Agrupacion1.Controls.Add(Me.btnBuscarOrdenes)
         Me.Agrupacion1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion1.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion1.Name = "Agrupacion1"
@@ -1299,7 +1299,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.rfechasHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.rfechasHasta.Location = New System.Drawing.Point(197, 25)
         Me.rfechasHasta.Name = "rfechasHasta"
-        Me.rfechasHasta.Size = New System.Drawing.Size(98, 20)
+        Me.rfechasHasta.Size = New System.Drawing.Size(98, 21)
         Me.rfechasHasta.TabIndex = 3
         '
         'rfechasDesde
@@ -1307,7 +1307,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.rfechasDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.rfechasDesde.Location = New System.Drawing.Point(46, 25)
         Me.rfechasDesde.Name = "rfechasDesde"
-        Me.rfechasDesde.Size = New System.Drawing.Size(98, 20)
+        Me.rfechasDesde.Size = New System.Drawing.Size(98, 21)
         Me.rfechasDesde.TabIndex = 1
         '
         'Etiqueta1
@@ -1316,11 +1316,11 @@ Partial Class frm_GuiaRemisionRemitente
         Appearance50.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta1.Appearance = Appearance50
         Me.Etiqueta1.AutoSize = True
-        Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta1.Location = New System.Drawing.Point(158, 28)
         Me.Etiqueta1.Name = "Etiqueta1"
-        Me.Etiqueta1.Size = New System.Drawing.Size(33, 14)
+        Me.Etiqueta1.Size = New System.Drawing.Size(33, 15)
         Me.Etiqueta1.TabIndex = 2
         Me.Etiqueta1.Text = "Hasta"
         '
@@ -1330,11 +1330,11 @@ Partial Class frm_GuiaRemisionRemitente
         Appearance51.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta3.Appearance = Appearance51
         Me.Etiqueta3.AutoSize = True
-        Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta3.Location = New System.Drawing.Point(6, 28)
         Me.Etiqueta3.Name = "Etiqueta3"
-        Me.Etiqueta3.Size = New System.Drawing.Size(36, 14)
+        Me.Etiqueta3.Size = New System.Drawing.Size(35, 15)
         Me.Etiqueta3.TabIndex = 0
         Me.Etiqueta3.Text = "Desde"
         '
@@ -1359,11 +1359,11 @@ Partial Class frm_GuiaRemisionRemitente
         Appearance53.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta6.Appearance = Appearance53
         Me.Etiqueta6.AutoSize = True
-        Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta6.Location = New System.Drawing.Point(301, 28)
         Me.Etiqueta6.Name = "Etiqueta6"
-        Me.Etiqueta6.Size = New System.Drawing.Size(59, 14)
+        Me.Etiqueta6.Size = New System.Drawing.Size(60, 15)
         Me.Etiqueta6.TabIndex = 4
         Me.Etiqueta6.Text = "Tipo Orden"
         '
@@ -1632,11 +1632,11 @@ Partial Class frm_GuiaRemisionRemitente
         Me.ficDetalle.Controls.Add(Me.UltraTabPageControl9)
         Me.ficDetalle.Controls.Add(Me.UltraTabSharedControlsPage3)
         Me.ficDetalle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficDetalle.Location = New System.Drawing.Point(3, 42)
+        Me.ficDetalle.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficDetalle.Location = New System.Drawing.Point(3, 43)
         Me.ficDetalle.Name = "ficDetalle"
         Me.ficDetalle.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.ficDetalle.Size = New System.Drawing.Size(1218, 363)
+        Me.ficDetalle.Size = New System.Drawing.Size(1218, 362)
         Me.ficDetalle.TabIndex = 0
         UltraTab3.TabPage = Me.UltraTabPageControl3
         UltraTab3.Text = "Material"
@@ -1655,7 +1655,7 @@ Partial Class frm_GuiaRemisionRemitente
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(1216, 340)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(1216, 339)
         '
         'UltraToolbarsDockArea21
         '
@@ -1663,7 +1663,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea21.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea21.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
         Me.UltraToolbarsDockArea21.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea21.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea21.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea21.Name = "UltraToolbarsDockArea21"
         Me.UltraToolbarsDockArea21.Size = New System.Drawing.Size(1218, 26)
         Me.UltraToolbarsDockArea21.ToolbarsManager = Me.MenuDetalle
@@ -1674,7 +1674,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.MenuDetalle.Appearance = Appearance59
         Me.MenuDetalle.DesignerFlags = 1
         Me.MenuDetalle.DockWithinContainer = Me
-        Me.MenuDetalle.DockWithinContainerBaseType = GetType(frm_MenuPadre)
+        Me.MenuDetalle.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
         Me.MenuDetalle.MdiMergeable = False
         Me.MenuDetalle.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool13, ButtonTool14})
         Me.MenuDetalle.MiniToolbar.ToolRowCount = 1
@@ -1737,9 +1737,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea23.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea23.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me.UltraToolbarsDockArea23.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea23.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea23.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea23.Name = "UltraToolbarsDockArea23"
-        Me.UltraToolbarsDockArea23.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea23.Size = New System.Drawing.Size(0, 388)
         Me.UltraToolbarsDockArea23.ToolbarsManager = Me.MenuDetalle
         '
         'UltraToolbarsDockArea24
@@ -1748,9 +1748,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea24.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea24.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me.UltraToolbarsDockArea24.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea24.Location = New System.Drawing.Point(1221, 16)
+        Me.UltraToolbarsDockArea24.Location = New System.Drawing.Point(1221, 17)
         Me.UltraToolbarsDockArea24.Name = "UltraToolbarsDockArea24"
-        Me.UltraToolbarsDockArea24.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea24.Size = New System.Drawing.Size(0, 388)
         Me.UltraToolbarsDockArea24.ToolbarsManager = Me.MenuDetalle
         '
         '_frm_MenuPadre_Toolbars_Dock_Area_Top
@@ -1759,7 +1759,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me._frm_MenuPadre_Toolbars_Dock_Area_Top.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._frm_MenuPadre_Toolbars_Dock_Area_Top.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
         Me._frm_MenuPadre_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.Color.MidnightBlue
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(3, 16)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(3, 17)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Top.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Top"
         Me._frm_MenuPadre_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1218, 0)
         '
@@ -1779,9 +1779,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.Color.MidnightBlue
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(3, 16)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(3, 17)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Left"
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 389)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 388)
         '
         '_frm_MenuPadre_Toolbars_Dock_Area_Right
         '
@@ -1789,9 +1789,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.Color.MidnightBlue
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1221, 16)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1221, 17)
         Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Name = "_frm_MenuPadre_Toolbars_Dock_Area_Right"
-        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 389)
+        Me._frm_MenuPadre_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea17
         '
@@ -1799,7 +1799,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea17.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea17.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
         Me.UltraToolbarsDockArea17.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea17.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea17.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea17.Name = "UltraToolbarsDockArea17"
         Me.UltraToolbarsDockArea17.Size = New System.Drawing.Size(1218, 0)
         '
@@ -1819,9 +1819,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea19.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea19.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me.UltraToolbarsDockArea19.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea19.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea19.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea19.Name = "UltraToolbarsDockArea19"
-        Me.UltraToolbarsDockArea19.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea19.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea20
         '
@@ -1829,9 +1829,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea20.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea20.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me.UltraToolbarsDockArea20.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea20.Location = New System.Drawing.Point(1221, 16)
+        Me.UltraToolbarsDockArea20.Location = New System.Drawing.Point(1221, 17)
         Me.UltraToolbarsDockArea20.Name = "UltraToolbarsDockArea20"
-        Me.UltraToolbarsDockArea20.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea20.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea13
         '
@@ -1839,7 +1839,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea13.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea13.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
         Me.UltraToolbarsDockArea13.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea13.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea13.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea13.Name = "UltraToolbarsDockArea13"
         Me.UltraToolbarsDockArea13.Size = New System.Drawing.Size(1218, 0)
         '
@@ -1859,9 +1859,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea15.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea15.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me.UltraToolbarsDockArea15.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea15.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea15.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea15.Name = "UltraToolbarsDockArea15"
-        Me.UltraToolbarsDockArea15.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea15.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea16
         '
@@ -1869,9 +1869,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea16.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea16.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me.UltraToolbarsDockArea16.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea16.Location = New System.Drawing.Point(1221, 16)
+        Me.UltraToolbarsDockArea16.Location = New System.Drawing.Point(1221, 17)
         Me.UltraToolbarsDockArea16.Name = "UltraToolbarsDockArea16"
-        Me.UltraToolbarsDockArea16.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea16.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea5
         '
@@ -1879,7 +1879,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea5.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea5.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Top
         Me.UltraToolbarsDockArea5.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea5.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea5.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea5.Name = "UltraToolbarsDockArea5"
         Me.UltraToolbarsDockArea5.Size = New System.Drawing.Size(1218, 0)
         '
@@ -1899,9 +1899,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea7.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea7.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me.UltraToolbarsDockArea7.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea7.Location = New System.Drawing.Point(3, 16)
+        Me.UltraToolbarsDockArea7.Location = New System.Drawing.Point(3, 17)
         Me.UltraToolbarsDockArea7.Name = "UltraToolbarsDockArea7"
-        Me.UltraToolbarsDockArea7.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea7.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea8
         '
@@ -1909,9 +1909,9 @@ Partial Class frm_GuiaRemisionRemitente
         Me.UltraToolbarsDockArea8.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.UltraToolbarsDockArea8.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me.UltraToolbarsDockArea8.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.UltraToolbarsDockArea8.Location = New System.Drawing.Point(1221, 16)
+        Me.UltraToolbarsDockArea8.Location = New System.Drawing.Point(1221, 17)
         Me.UltraToolbarsDockArea8.Name = "UltraToolbarsDockArea8"
-        Me.UltraToolbarsDockArea8.Size = New System.Drawing.Size(0, 389)
+        Me.UltraToolbarsDockArea8.Size = New System.Drawing.Size(0, 388)
         '
         'UltraToolbarsDockArea1
         '
@@ -2534,7 +2534,7 @@ Partial Class frm_GuiaRemisionRemitente
         Me.ficGuiaR.Controls.Add(Me.UltraTabPageControl1)
         Me.ficGuiaR.Controls.Add(Me.UltraTabPageControl2)
         Me.ficGuiaR.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficGuiaR.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficGuiaR.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficGuiaR.Location = New System.Drawing.Point(0, 0)
         Me.ficGuiaR.Name = "ficGuiaR"
         Me.ficGuiaR.SharedControls.AddRange(New System.Windows.Forms.Control() {Me.UltraTabSharedControlsPage1_Fill_Panel, Me.UltraToolbarsDockArea11, Me.UltraToolbarsDockArea12, Me.UltraToolbarsDockArea9, Me.UltraToolbarsDockArea10})

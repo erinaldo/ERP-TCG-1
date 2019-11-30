@@ -48,6 +48,9 @@ Public Class l_OrdenVenta
                         'If oeOrdenComercial.oeDocumento.Serie.StartsWith("B") OrElse oeOrdenComercial.oeDocumento.Serie.StartsWith("F") Then
                         '    oeOrdenComercial.oeDocumento.IndElectronico = True
                         'End If
+                        For Each oe In oeOrdenComercial.oeDocumento.lo_OrdenDocumento
+                            oe.IdOrden = oeOrdenComercial.Id
+                        Next
                         olDocumento.Guardar(oeOrdenComercial.oeDocumento)
                     End If
                 End If

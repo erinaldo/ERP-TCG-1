@@ -185,12 +185,12 @@ Public Class frm_NotaCredito
 
     Public Overrides Sub Guardar()
         Try
-            'If GuardarDocumentoCompra() Then
-            '    MostrarTabs(0, ficNotaCredito, 2)
-            '    Consultar(True)
-            'Else
-            '    MostrarTabs(1, ficNotaCredito, 1)
-            'End If
+            If GuardarDocumentoCompra() Then
+                MostrarTabs(0, ficNotaCredito, 2)
+                Consultar(True)
+            Else
+                MostrarTabs(1, ficNotaCredito, 1)
+            End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

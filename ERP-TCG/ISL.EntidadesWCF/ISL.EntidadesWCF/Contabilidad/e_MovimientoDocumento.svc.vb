@@ -178,8 +178,13 @@ Public Class e_MovimientoDocumento
     <DataMember()> _
     Public GlosaViajeGrupo As String
 
-    <DataMember()> _
+    <DataMember()>
     Public PagoAutomatico As e_PagoAutomatico
+
+    <DataMember()>
+    Public lo_OrdenDocumento As New List(Of e_Orden_Documento)
+
+
     <DataMember()> _
     Public CuentaVentaxServicio As String
     <DataMember()> _
