@@ -32,12 +32,14 @@ Public Class frm_EstacionServicio
 
 #Region "Declaracion de Variables"
 
+    Private PRODUCTO As New e_Material
+
     Private olEstacionServicio As l_EstacionServicio
     Private sw_Documento As String
-    Private sw_TipoPago As String
+    Private sw_TipoPago As String 'Contado "1SI000000001", 
     Private sw_Lado As String
-    Private sw_Combustible As String
-    Private IdMonedaSoles As String
+    Private IdMaterial_Combustible As String
+    Private IdMoneda_Soles As String = "1CH01"
     Private TipoCambio As Double
     Private FechaOrden As Date
 
@@ -169,11 +171,11 @@ Public Class frm_EstacionServicio
                 btnLado4.Appearance.BackColor = Color.White
                 btnLado5.Appearance.BackColor = Color.White
                 btnLado6.Appearance.BackColor = Color.White
-            Case "Combustible"
-                btnDB5.Appearance.BackColor = Color.White
-                btnG84.Appearance.BackColor = Color.White
-                btnG90.Appearance.BackColor = Color.White
-                btnG95.Appearance.BackColor = Color.White
+            Case "Combustibles"
+                btnDB5.Appearance.ForeColor = Color.Black
+                btnG84.Appearance.ForeColor = Color.Black
+                btnG90.Appearance.ForeColor = Color.Black
+                btnG95.Appearance.ForeColor = Color.Black
 
         End Select
     End Sub
@@ -388,7 +390,7 @@ Public Class frm_EstacionServicio
 
         ' Valores Default
         FechaOrden = ObtenerFechaServidor()
-        IdMonedaSoles = ""
+        IdMoneda_Soles = ""
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
     End Sub
 
@@ -411,6 +413,84 @@ Public Class frm_EstacionServicio
         'End Select
     End Sub
 
+    Private Sub mt_AgregarDetalle()
+        Try
+            oeOrdenComercialMaterial = New e_OrdenVentaMaterial
+            With oeOrdenComercialMaterial
+                PRODUCTO.Seleccion = False
+                .TipoOperacion = "I"
+                .PrefijoID = gs_PrefijoIdSucursal
+                .IndImpuesto = True
+                .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
+                .IdSucursal = gs_PrefijoIdSucursal
+                .UsuarioCrea = gUsuarioSGI.Id
+                .IdMaterial = PRODUCTO.Id
+                .Material = PRODUCTO.Nombre
+                .Codigo = PRODUCTO.Codigo
+                .Cantidad = 1
+                .CantidadPendiente = 1
+                .CostoUnitario = PRODUCTO.Precio   'DETALLE.CostoUnitario
+                .CostoInventario = 0 'DETALLE.CostoUnitario
+                .PrecioUnitario = PRODUCTO.Precio * (mdblIGV + 1)
+                .Dscto = decDescuento
+                '.IdTipoUnidadMedida = DETALLE.idu
+                .IdAlmacen = PRODUCTO.IdAlmacen
+                .IdUnidadMedida = PRODUCTO.IdUnidadMedida
+                .IdSubAlmacen = PRODUCTO.IdSubAlmacen
+                .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
+                '.IndOperacion = IIf(chkTransporte.Checked, 1, 0)
+                '.IdOrigen = cboOrigenViaje.Value
+                '.IdDestino = cboDestinoViaje.Value
+            End With
+            If loOrdenComercialMaterial.Where(Function(i) i.IdMaterial = oeOrdenComercialMaterial.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
+                griOrdenComercialMaterial.DataBind()
+                mt_CalcularTotalOrden()
+                'mt_CombosGrilla(griOrdenComercialMaterial)
+                'griAlmacenMaterial.DataBind()
+                Throw New Exception("Material: " & oeOrdenComercialMaterial.Material & " ya Asignado a la Orden")
+            End If
+            loOrdenComercialMaterial.Add(oeOrdenComercialMaterial)
+
+            'griAlmacenMaterial.DataBind()
+            griOrdenComercialMaterial.DataBind()
+            mt_CalcularTotalOrden()
+            'mt_CombosGrilla(griOrdenComercialMaterial)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_CalcularTotalOrden()
+        Try
+            Dim bolIndicador As Boolean = False
+            Dim dblTotalOrden As Double = 0
+            For Each oe As e_OrdenVentaMaterial In loOrdenComercialMaterial.Where(Function(i) i.TipoOperacion <> "E").ToList
+                dblTotalOrden += oe.PrecioTotal '- DETALLE.Dscto
+                If oe.IndImpuesto Then
+                    bolIndicador = True
+                    oe.CostoUnitario = Math.Round(oe.PrecioUnitario / (1 + mdblIGV), 2)
+                Else
+                    oe.CostoUnitario = Math.Round(oe.PrecioUnitario, 2, MidpointRounding.AwayFromZero)
+                End If
+            Next
+            decTotal.Value = Math.Round(dblTotalOrden, 2)
+            If bolIndicador Then
+                decSubTotal.Value = Math.Round(dblTotalOrden / (1 + mdblIGV), 2)
+                decImpuesto.Value = decTotal.Value - decSubTotal.Value
+            Else
+                decImpuesto.Value = 0
+                decSubTotal.Value = decTotal.Value
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Function fc_ObtenerDescuento(IdEmpresa As String, IdProducto As String, Contado As Boolean)
+        Dim Descuento As Double = 0
+
+        Return Descuento
+    End Function
 
     Private Sub mt_GeneraDocumento()
         Try
@@ -425,7 +505,7 @@ Public Class frm_EstacionServicio
                 .IdEstadoDocumento = "1CIX025"
                 .IdPeriodo = ""
                 '.CuentaContable = ""
-                .IdMoneda = IdMonedaSoles
+                .IdMoneda = IdMoneda_Soles
                 .Tipo = 2
                 .IdTipoBien = 1
                 If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4)
@@ -477,7 +557,7 @@ Public Class frm_EstacionServicio
             oeCliente.TipoClienteProveedor = 1
             oeCliente = olCliente.Obtener(oeCliente)
 
-            oeMoneda.Id = IdMonedaSoles 'Revisar
+            oeMoneda.Id = IdMoneda_Soles 'Revisar
 
             oeTipoDoc = New e_TipoDocumento
             oeTipoDoc.TipoOperacion = ""
@@ -751,7 +831,7 @@ Public Class frm_EstacionServicio
             oe.Tipo = 0
             If TipoPagoPublic.Contains(oe) Then
                 oe = TipoPagoPublic.Item(TipoPagoPublic.IndexOf(oe))
-                'dtpFechaPago.Value = dtpFecha.Value.AddDays(CInt(oe.Descripcion))
+                'dtpFechaPago.Value = dtpFecha.Value.AddDays(CInt(DETALLE.Descripcion))
             Else
                 Throw New Exception("No se Encuentra el Tipo de Pago. Verificar")
             End If
@@ -922,19 +1002,46 @@ Public Class frm_EstacionServicio
     'End Sub
 
     Private Sub btnDB5_Click(sender As Object, e As EventArgs) Handles btnDB5.Click
-
+        PaintBotones("Combustible")
+        btnDB5.Appearance.ForeColor = Color.White
+        IdMaterial_Combustible = "1CH000007256"
+        mt_CargarObjeto_Seleccionado()
     End Sub
 
     Private Sub btnG84_Click(sender As Object, e As EventArgs) Handles btnG84.Click
-
+        PaintBotones("Combustible")
+        btnG84.Appearance.ForeColor = Color.White
+        IdMaterial_Combustible = "1CH000000147"
+        mt_CargarObjeto_Seleccionado()
     End Sub
 
     Private Sub btnG90_Click(sender As Object, e As EventArgs) Handles btnG90.Click
-
+        PaintBotones("Combustible")
+        btnG90.Appearance.ForeColor = Color.White
+        IdMaterial_Combustible = "1CH000000148"
+        mt_CargarObjeto_Seleccionado()
     End Sub
 
     Private Sub btnG95_Click(sender As Object, e As EventArgs) Handles btnG95.Click
+        PaintBotones("Combustible")
+        btnG95.Appearance.ForeColor = Color.White
+        IdMaterial_Combustible = "1CH000000149"
+        mt_CargarObjeto_Seleccionado()
+    End Sub
 
+    Private Sub mt_CargarObjeto_Seleccionado()
+        Try
+            loAlmMaterial = New List(Of e_Material)
+            loAlmMaterial = olAlmMaterial.Listar(New e_MaterialAlmacen With {.IdMaterial = IdMaterial_Combustible})
+            For Each oe As e_Material In loAlmMaterial.Where(Function(i) i.Seleccion = True).ToList
+                PRODUCTO = oe
+            Next
+            decPrecio.Value = PRODUCTO.Precio
+            decDescuento.Value = fc_ObtenerDescuento(cbgCliente.Value, IdMaterial_Combustible, sw_TipoPago)
+            'Poner el foco en el decCantidad
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
@@ -977,6 +1084,24 @@ Public Class frm_EstacionServicio
             sw_Lado = .Text
             ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
         End With
+    End Sub
+
+    Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) 
+        Try
+            '@0002 Inicio
+            'Dim oeEmp As New e_Persona
+            'oeEmp = ObtenerDesdeSunat(Me.txtRuc.Value)
+            'txtNombre.Text = oeEmp.Nombre
+            '@0002 Fin Inicio
+            Dim consultaRucSunat As New ConsultaRucSunat()
+            Dim contribuyente As New Contribuyente
+            contribuyente = Await consultaRucSunat.SunatConsultaRuc(txtRuc.Text)
+            txtNombre.Text = contribuyente.RazonSocial
+            txtDireccionFiscal.Text = contribuyente.Direccion
+            '@0002 Fin
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
     End Sub
 
     Private Sub btnContado_Click(sender As Object, e As EventArgs) Handles btnContado.Click
