@@ -113,7 +113,7 @@ Public Class frm_Login
             Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Default
             Dim Prefijo As New l_Configuracion
             'If Prefijo.PrefijoID = "1SI" Then txtPasswordR.Text = "789-+" '@0001
-            lblFecha.Text = RetornarDia(Date.Now.DayOfWeek) & " " & IIf(CStr(Date.Now.Day).Length = 2, CStr(Date.Now.Day), ("0" & CStr(Date.Now.Day))) & " de " & RetornarMes(Date.Now.Month) & " del " & Date.Now.Year
+            lblFecha.Text = RetornarDia((Date.Now.DayOfWeek) - 1) & " " & IIf(CStr(Date.Now.Day).Length = 2, CStr(Date.Now.Day), ("0" & CStr(Date.Now.Day))) & " de " & RetornarMes((Date.Now.Month) - 1) & " del " & Date.Now.Year
             Timer1.Start()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
