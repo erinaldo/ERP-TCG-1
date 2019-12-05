@@ -164,7 +164,29 @@ Public Class frm_Login
                 End If
                 My.Settings.Save()
             End If
+            '@0001 Inicio
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            Dim oeVersionSis As New e_Combo
+            Dim olVersionSis As New l_Combo
+            Dim VersionEst As Boolean = False
+            Dim VersionSis As String = ""
+            VersionSis = VersionDelSistema()
+            oeEmpresaSistema = olEmpresaSistema.Obtener(oeEmpresaSistema)
+            If oeEmpresaSistema.VersionSis.Trim = VersionSis.Trim Then
+                oeVersionSis.Id = gUsuarioSGI.Id
+                oeVersionSis.Nombre = "VersionSis"
+                oeVersionSis = olVersionSis.Obtener(oeVersionSis)
+                If oeVersionSis.Descripcion.Trim <> oeEmpresaSistema.VersionSis.Trim Then
+                    oeVersionSis.Tipo = "2"
+                    oeVersionSis.Nombre = VersionSis.Trim
+                    olVersionSis.Guardar(oeVersionSis)
+                End If
+            Else
+                mensajeEmergente.Problema("Instale ERP T&L la Version Ultima Publicada : " + oeEmpresaSistema.VersionSis.Trim, True)
+                Application.Exit()
+            End If
 
+            '@0001 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
