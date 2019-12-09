@@ -985,7 +985,9 @@ Public Class frm_Menu
         Dim oeEmpresaSistema As New e_EmpresaSistemas
         Dim VersionEst As Boolean = False
         oeEmpresaSistema = olEmpresaSistema.Obtener(oeEmpresaSistema)
-        If oeEmpresaSistema.VersionSis.Trim <> gs_VersionSis Then
+        Dim VersionSis As String = ""
+        VersionSis = VersionDelSistema()
+        If oeEmpresaSistema.VersionSis.Trim <> VersionSis.Trim Then
             VersionEst = True
         Else
             Dim oeVersionSis As New e_Combo

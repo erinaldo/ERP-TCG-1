@@ -1185,7 +1185,7 @@ Module m_Funciones
         'Dim oeEmpresaSistemas As New e_EmpresaSistemas
         'oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
         'version = oeEmpresaSistemas.VersionSis.Trim
-        gs_VersionSis = version
+        gs_VersionSis = version.Trim
         Return version
         '@0003 Fin
     End Function
@@ -5816,7 +5816,7 @@ Module m_Funciones
 #End Region
 
     Public Function RetornarDia(x As Integer) As String
-        Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
+        Dim dias() As String = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"}
         Return dias(x)
     End Function
 
