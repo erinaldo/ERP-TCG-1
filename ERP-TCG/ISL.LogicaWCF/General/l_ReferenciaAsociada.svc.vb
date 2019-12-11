@@ -1,9 +1,45 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_ReferenciaAsociada" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_ReferenciaAsociada.svc o l_ReferenciaAsociada.svc.vb en el Explorador de soluciones e inicie la depuración.
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
+Imports System.Runtime.Serialization
+
+<DataContract(), Serializable()>
 Public Class l_ReferenciaAsociada
     Implements Il_ReferenciaAsociada
 
-    Public Sub DoWork() Implements Il_ReferenciaAsociada.DoWork
-    End Sub
+    Private odReferenciaAsociada As New d_ReferenciaAsociada
+
+    Public Function Eliminar(ByVal oeReferenciaAsociada As e_ReferenciaAsociada) As Boolean Implements Il_ReferenciaAsociada.Eliminar
+        'Try
+        '    Return odReferenciaAsociada.Eliminar(oeReferenciaAsociada)
+        'Catch ex As Exception
+        '    Throw
+        'End Try
+        Return True
+    End Function
+
+    Public Function Guardar(ByVal oeReferenciaAsociada As e_ReferenciaAsociada) As Boolean Implements Il_ReferenciaAsociada.Guardar
+        Try
+            Return odReferenciaAsociada.Guardar(oeReferenciaAsociada)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
+    Public Function Listar(ByVal oeReferenciaAsociada As e_ReferenciaAsociada) As List(Of e_ReferenciaAsociada) Implements Il_ReferenciaAsociada.Listar
+        Try
+            Return odReferenciaAsociada.Listar(oeReferenciaAsociada)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
+    Public Function Obtener(ByVal oeReferenciaAsociada As e_ReferenciaAsociada) As e_ReferenciaAsociada Implements Il_ReferenciaAsociada.Obtener
+        Try
+            Return odReferenciaAsociada.Obtener(oeReferenciaAsociada)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 
 End Class

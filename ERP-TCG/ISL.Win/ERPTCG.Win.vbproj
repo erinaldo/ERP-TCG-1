@@ -5935,6 +5935,9 @@
     <EmbeddedResource Include="Comercial\Ventas\frm_ActualizarAlmacen.resx">
       <DependentUpon>frm_ActualizarAlmacen.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_GRR_Venta.resx">
+      <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_OrdenVenMaterial.resx">
       <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
     </EmbeddedResource>

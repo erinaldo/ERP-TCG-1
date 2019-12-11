@@ -1610,16 +1610,16 @@ Public Class frm_OrdenVenMaterial
         Try
             Select Case TipoDoc
                 Case "GenerarGuia"
-                    'oeOrdenSalida = New e_Orden
-                    'oeOrdenSalida.Id = griOrdenSalida.ActiveRow.Cells("Id").Value
-                    'oeOrdenSalida = olOrdenSalida.Obtener(oeOrdenSalida)
-                    'Dim frm As New frm_GuiaRemisionVenta
-                    'frm = frm.getInstancia()
-                    'With frm
-                    '    .MdiParent = frm_Menu
-                    '    .mt_TransponerOrdenDocumento(oeOrdenSalida)
-                    '    .Show()
-                    'End With
+                    oeOrdenSalida = New e_Orden
+                    oeOrdenSalida.Id = griOrdenSalida.ActiveRow.Cells("Id").Value
+                    oeOrdenSalida = olOrdenSalida.Obtener(oeOrdenSalida)
+                    Dim frm As New frm_GRR_Venta
+                    frm = frm.getInstancia()
+                    With frm
+                        .MdiParent = frm_Menu
+                        '.mt_TransponerOrdenDocumento(oeOrdenSalida)
+                        .Show()
+                    End With
 
                     'Case "FACTURA"
 

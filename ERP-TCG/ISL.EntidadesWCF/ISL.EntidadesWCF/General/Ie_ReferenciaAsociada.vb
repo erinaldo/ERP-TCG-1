@@ -5,6 +5,6 @@
 Public Interface Ie_ReferenciaAsociada
 
     <OperationContract()>
-    Sub DoWork()
+    Function Obtener(ByVal referencia As e_ReferenciaAsociada) As e_ReferenciaAsociada
 
 End Interface

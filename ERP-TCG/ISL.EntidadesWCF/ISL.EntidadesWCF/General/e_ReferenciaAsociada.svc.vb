@@ -3,7 +3,42 @@
 Public Class e_ReferenciaAsociada
     Implements Ie_ReferenciaAsociada
 
-    Public Sub DoWork() Implements Ie_ReferenciaAsociada.DoWork
+    <DataMember()>
+    Public Property Id() As String
+    <DataMember()>
+    Public Property IdEmpresaSis() As String
+    <DataMember()>
+    Public Property IdSucursal() As String
+    <DataMember()>
+    Public Property IdTablaPrincipal() As String
+    <DataMember()>
+    Public Property IdTablaAsociada() As String
+    <DataMember()>
+    Public Property TipoRelacion() As Integer
+    <DataMember()>
+    Public Property Glosa() As String
+
+
+    <DataMember()>
+    Public PrefijoID As String = ""
+    <DataMember()>
+    Public TipoOperacion As String = ""
+    <DataMember()>
+    Public UsuarioCreacion As String = ""
+
+    Sub New()
+        Id = String.Empty
+        IdEmpresaSis = String.Empty
+        IdSucursal = String.Empty
+        IdTablaPrincipal = String.Empty
+        IdTablaAsociada = String.Empty
+        TipoRelacion = 0
+        Glosa = ""
+        UsuarioCreacion = String.Empty
     End Sub
+
+    Public Function Obtener(ByVal referencia As e_ReferenciaAsociada) As e_ReferenciaAsociada Implements Ie_ReferenciaAsociada.Obtener
+        Return referencia
+    End Function
 
 End Class
