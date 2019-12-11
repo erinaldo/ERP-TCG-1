@@ -35,8 +35,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Librerias", "Librerias\", "
 		SlnRelativePath = "Librerias\"
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ERP TyL Internet", "ERP TyL Internet\ERP TyL Internet.vdproj", "{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,10 +91,6 @@ Global
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.ActiveCfg = Debug|Any CPU
 		{0224AB72-2344-4C01-91B4-B53739C25186}.Release|x86.Build.0 = Debug|Any CPU
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Debug|Any CPU.ActiveCfg = Debug
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Debug|x86.ActiveCfg = Debug
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Release|Any CPU.ActiveCfg = Release
-		{D83D0D43-9542-464F-A456-BF1CFE0F8CE8}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

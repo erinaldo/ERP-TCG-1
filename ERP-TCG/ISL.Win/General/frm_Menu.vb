@@ -983,8 +983,23 @@ Public Class frm_Menu
         '    End If
         'End If
         Dim oeEmpresaSistema As New e_EmpresaSistemas
+        Dim VersionEst As Boolean = False
         oeEmpresaSistema = olEmpresaSistema.Obtener(oeEmpresaSistema)
-        If oeEmpresaSistema.VersionSis.Trim <> gs_VersionSis Then
+        Dim VersionSis As String = ""
+        VersionSis = VersionDelSistema()
+        If oeEmpresaSistema.VersionSis.Trim <> VersionSis.Trim Then
+            VersionEst = True
+        Else
+            Dim oeVersionSis As New e_Combo
+            Dim olVersionSis As New l_Combo
+            oeVersionSis.Id = gUsuarioSGI.Id
+            oeVersionSis.Nombre = "VersionSis"
+            oeVersionSis = olVersionSis.Obtener(oeVersionSis)
+            If oeVersionSis.Descripcion.Trim <> oeEmpresaSistema.VersionSis.Trim Then
+                VersionEst = True
+            End If
+        End If
+        If VersionEst = True Then
             Try
                 Dim Contenido As String = "Esta disponible una nueva versión del sistema. " & Environment.NewLine & "Para aplicar dichos cambios es necesario reiniciar la aplicación."
                 Alerta.Appearance.BackColor = Amarillo

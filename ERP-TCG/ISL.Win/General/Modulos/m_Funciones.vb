@@ -1173,17 +1173,19 @@ Module m_Funciones
 
         Dim version As String = String.Empty
         '@0003
-        'If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
-        '    version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-        'Else
-        '    version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
-        'End If
+        If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
+            'version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
+            version = String.Format(My.Application.Deployment.CurrentVersion.ToString)
+        Else
+            'version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
+            version = String.Format(My.Application.Info.Version.ToString)
+        End If
         'Return version
         '@0003 Inicio
-        Dim oeEmpresaSistemas As New e_EmpresaSistemas
-        oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
-        version = oeEmpresaSistemas.VersionSis.Trim
-        gs_VersionSis = version
+        'Dim oeEmpresaSistemas As New e_EmpresaSistemas
+        'oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
+        'version = oeEmpresaSistemas.VersionSis.Trim
+        gs_VersionSis = version.Trim
         Return version
         '@0003 Fin
     End Function
@@ -5814,7 +5816,7 @@ Module m_Funciones
 #End Region
 
     Public Function RetornarDia(x As Integer) As String
-        Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
+        Dim dias() As String = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"}
         Return dias(x)
     End Function
 

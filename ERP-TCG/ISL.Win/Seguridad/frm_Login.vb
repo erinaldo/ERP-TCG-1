@@ -111,9 +111,9 @@ Public Class frm_Login
             LlenaCombos() '@0001
             txtUsuarioR.Text = My.Settings.Usuario
             Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Default
-            Dim Prefijo As New l_Configuracion
+            'Dim Prefijo As New l_Configuracion
             'If Prefijo.PrefijoID = "1SI" Then txtPasswordR.Text = "789-+" '@0001
-            lblFecha.Text = RetornarDia(Date.Now.DayOfWeek) & " " & IIf(CStr(Date.Now.Day).Length = 2, CStr(Date.Now.Day), ("0" & CStr(Date.Now.Day))) & " de " & RetornarMes(Date.Now.Month) & " del " & Date.Now.Year
+            lblFecha.Text = RetornarDia((Date.Now.DayOfWeek)) & " " & IIf(CStr(Date.Now.Day).Length = 2, CStr(Date.Now.Day), ("0" & CStr(Date.Now.Day))) & " de " & RetornarMes((Date.Now.Month) - 1) & " del " & Date.Now.Year
             Timer1.Start()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -164,7 +164,29 @@ Public Class frm_Login
                 End If
                 My.Settings.Save()
             End If
+            '@0001 Inicio
+            Dim oeEmpresaSistema As New e_EmpresaSistemas
+            Dim oeVersionSis As New e_Combo
+            Dim olVersionSis As New l_Combo
+            Dim VersionEst As Boolean = False
+            Dim VersionSis As String = ""
+            VersionSis = VersionDelSistema()
+            oeEmpresaSistema = olEmpresaSistema.Obtener(oeEmpresaSistema)
+            If oeEmpresaSistema.VersionSis.Trim = VersionSis.Trim Then
+                oeVersionSis.Id = gUsuarioSGI.Id
+                oeVersionSis.Nombre = "VersionSis"
+                oeVersionSis = olVersionSis.Obtener(oeVersionSis)
+                If oeVersionSis.Descripcion.Trim <> oeEmpresaSistema.VersionSis.Trim Then
+                    oeVersionSis.Tipo = "2"
+                    oeVersionSis.Nombre = VersionSis.Trim
+                    olVersionSis.Guardar(oeVersionSis)
+                End If
+            Else
+                mensajeEmergente.Problema("Instale ERP T&L la Version Ultima Publicada : " + oeEmpresaSistema.VersionSis.Trim, True)
+                Application.Exit()
+            End If
 
+            '@0001 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
