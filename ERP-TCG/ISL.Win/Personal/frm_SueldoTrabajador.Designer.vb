@@ -23,24 +23,25 @@ Partial Class frm_SueldoTrabajador
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraToolbar1 As Infragistics.Win.UltraWinToolbars.UltraToolbar = New Infragistics.Win.UltraWinToolbars.UltraToolbar("utMantSueTra")
         Dim ButtonTool1 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("GrabarSue")
         Dim ButtonTool2 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("CancelarSue")
         Dim ButtonTool3 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("GrabarSue")
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ButtonTool4 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("CancelarSue")
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ButtonTool4 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("CancelarSue")
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griSueldoTrabajador = New ISL.Controles.Grilla(Me.components)
         Me.mnuSueTra = New ISL.Controles.MenuContextual(Me.components)
@@ -96,6 +97,9 @@ Partial Class frm_SueldoTrabajador
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.chkProduccion = New ISL.Controles.Chequear(Me.components)
+        Me.Etiqueta10 = New ISL.Controles.Etiqueta(Me.components)
+        Me.cboGastonFuncion = New ISL.Controles.Combo(Me.components)
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.griSueldoTrabajador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuSueTra.SuspendLayout()
@@ -131,6 +135,8 @@ Partial Class frm_SueldoTrabajador
         CType(Me.cboTipoMas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficSueldoTrabajador, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficSueldoTrabajador.SuspendLayout()
+        CType(Me.chkProduccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboGastonFuncion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
@@ -139,7 +145,7 @@ Partial Class frm_SueldoTrabajador
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(729, 339)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(783, 382)
         '
         'griSueldoTrabajador
         '
@@ -161,7 +167,7 @@ Partial Class frm_SueldoTrabajador
         Me.griSueldoTrabajador.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griSueldoTrabajador.Location = New System.Drawing.Point(0, 45)
         Me.griSueldoTrabajador.Name = "griSueldoTrabajador"
-        Me.griSueldoTrabajador.Size = New System.Drawing.Size(729, 294)
+        Me.griSueldoTrabajador.Size = New System.Drawing.Size(783, 337)
         Me.griSueldoTrabajador.TabIndex = 1
         Me.griSueldoTrabajador.Text = "Relacion de Trabajadores con sus Sueldos"
         '
@@ -214,7 +220,7 @@ Partial Class frm_SueldoTrabajador
         Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion1.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion1.Name = "Agrupacion1"
-        Me.Agrupacion1.Size = New System.Drawing.Size(729, 45)
+        Me.Agrupacion1.Size = New System.Drawing.Size(783, 45)
         Me.Agrupacion1.TabIndex = 0
         Me.Agrupacion1.Text = "Datos de Busqueda"
         Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
@@ -229,7 +235,7 @@ Partial Class frm_SueldoTrabajador
         Me.utpMantSueTra.Controls.Add(Me._utpMantSueTra_Toolbars_Dock_Area_Top)
         Me.utpMantSueTra.Location = New System.Drawing.Point(1, 22)
         Me.utpMantSueTra.Name = "utpMantSueTra"
-        Me.utpMantSueTra.Size = New System.Drawing.Size(729, 339)
+        Me.utpMantSueTra.Size = New System.Drawing.Size(783, 382)
         '
         'griHistorial
         '
@@ -250,12 +256,15 @@ Partial Class frm_SueldoTrabajador
         Me.griHistorial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griHistorial.Location = New System.Drawing.Point(0, 147)
         Me.griHistorial.Name = "griHistorial"
-        Me.griHistorial.Size = New System.Drawing.Size(729, 192)
+        Me.griHistorial.Size = New System.Drawing.Size(783, 235)
         Me.griHistorial.TabIndex = 1
         Me.griHistorial.Text = "Historial Sueldo"
         '
         'Agrupacion2
         '
+        Me.Agrupacion2.Controls.Add(Me.cboGastonFuncion)
+        Me.Agrupacion2.Controls.Add(Me.Etiqueta10)
+        Me.Agrupacion2.Controls.Add(Me.chkProduccion)
         Me.Agrupacion2.Controls.Add(Me.ndCaja)
         Me.Agrupacion2.Controls.Add(Me.Etiqueta9)
         Me.Agrupacion2.Controls.Add(Me.chkVigente)
@@ -274,19 +283,19 @@ Partial Class frm_SueldoTrabajador
         Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion2.Location = New System.Drawing.Point(0, 28)
         Me.Agrupacion2.Name = "Agrupacion2"
-        Me.Agrupacion2.Size = New System.Drawing.Size(729, 119)
+        Me.Agrupacion2.Size = New System.Drawing.Size(783, 119)
         Me.Agrupacion2.TabIndex = 0
         Me.Agrupacion2.Text = "Datos Generales:"
         Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
         'ndCaja
         '
-        Appearance1.ForeColor = System.Drawing.Color.Black
-        Me.ndCaja.Appearance = Appearance1
+        Appearance2.ForeColor = System.Drawing.Color.Black
+        Me.ndCaja.Appearance = Appearance2
         Me.ndCaja.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndCaja.ForeColor = System.Drawing.Color.Black
-        Me.ndCaja.Location = New System.Drawing.Point(123, 93)
+        Me.ndCaja.Location = New System.Drawing.Point(92, 93)
         Me.ndCaja.Name = "ndCaja"
         Me.ndCaja.NullText = "0.00"
         Me.ndCaja.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -298,7 +307,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta9.AutoSize = True
         Me.Etiqueta9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta9.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta9.Location = New System.Drawing.Point(38, 97)
+        Me.Etiqueta9.Location = New System.Drawing.Point(7, 97)
         Me.Etiqueta9.Name = "Etiqueta9"
         Me.Etiqueta9.Size = New System.Drawing.Size(82, 14)
         Me.Etiqueta9.TabIndex = 12
@@ -309,7 +318,7 @@ Partial Class frm_SueldoTrabajador
         Me.chkVigente.AutoSize = True
         Me.chkVigente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkVigente.ForeColor = System.Drawing.Color.Black
-        Me.chkVigente.Location = New System.Drawing.Point(351, 95)
+        Me.chkVigente.Location = New System.Drawing.Point(320, 95)
         Me.chkVigente.Name = "chkVigente"
         Me.chkVigente.Size = New System.Drawing.Size(58, 17)
         Me.chkVigente.TabIndex = 11
@@ -317,13 +326,13 @@ Partial Class frm_SueldoTrabajador
         '
         'cboPeriocidad
         '
-        Appearance2.ForeColor = System.Drawing.Color.Black
-        Me.cboPeriocidad.Appearance = Appearance2
+        Appearance3.ForeColor = System.Drawing.Color.Black
+        Me.cboPeriocidad.Appearance = Appearance3
         Me.cboPeriocidad.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboPeriocidad.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboPeriocidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboPeriocidad.ForeColor = System.Drawing.Color.Black
-        Me.cboPeriocidad.Location = New System.Drawing.Point(123, 69)
+        Me.cboPeriocidad.Location = New System.Drawing.Point(92, 69)
         Me.cboPeriocidad.Name = "cboPeriocidad"
         Me.cboPeriocidad.Size = New System.Drawing.Size(125, 21)
         Me.cboPeriocidad.TabIndex = 9
@@ -334,7 +343,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta7.AutoSize = True
         Me.Etiqueta7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta7.Location = New System.Drawing.Point(61, 72)
+        Me.Etiqueta7.Location = New System.Drawing.Point(30, 72)
         Me.Etiqueta7.Name = "Etiqueta7"
         Me.Etiqueta7.Size = New System.Drawing.Size(59, 14)
         Me.Etiqueta7.TabIndex = 8
@@ -342,13 +351,13 @@ Partial Class frm_SueldoTrabajador
         '
         'cboTipoPago
         '
-        Appearance3.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoPago.Appearance = Appearance3
+        Appearance4.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoPago.Appearance = Appearance4
         Me.cboTipoPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoPago.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboTipoPago.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoPago.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoPago.Location = New System.Drawing.Point(351, 46)
+        Me.cboTipoPago.Location = New System.Drawing.Point(317, 46)
         Me.cboTipoPago.Name = "cboTipoPago"
         Me.cboTipoPago.Size = New System.Drawing.Size(175, 21)
         Me.cboTipoPago.TabIndex = 7
@@ -359,7 +368,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta6.Location = New System.Drawing.Point(291, 50)
+        Me.Etiqueta6.Location = New System.Drawing.Point(257, 50)
         Me.Etiqueta6.Name = "Etiqueta6"
         Me.Etiqueta6.Size = New System.Drawing.Size(57, 14)
         Me.Etiqueta6.TabIndex = 6
@@ -368,19 +377,19 @@ Partial Class frm_SueldoTrabajador
         'fecActividad
         '
         Me.fecActividad.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecActividad.Location = New System.Drawing.Point(351, 69)
+        Me.fecActividad.Location = New System.Drawing.Point(317, 69)
         Me.fecActividad.Name = "fecActividad"
         Me.fecActividad.Size = New System.Drawing.Size(82, 20)
         Me.fecActividad.TabIndex = 5
         '
         'ndSueldo
         '
-        Appearance4.ForeColor = System.Drawing.Color.Black
-        Me.ndSueldo.Appearance = Appearance4
+        Appearance5.ForeColor = System.Drawing.Color.Black
+        Me.ndSueldo.Appearance = Appearance5
         Me.ndSueldo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndSueldo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndSueldo.ForeColor = System.Drawing.Color.Black
-        Me.ndSueldo.Location = New System.Drawing.Point(123, 46)
+        Me.ndSueldo.Location = New System.Drawing.Point(92, 46)
         Me.ndSueldo.Name = "ndSueldo"
         Me.ndSueldo.NullText = "0.00"
         Me.ndSueldo.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -389,16 +398,16 @@ Partial Class frm_SueldoTrabajador
         '
         'cboTrabajador
         '
-        Appearance5.ForeColor = System.Drawing.Color.Black
-        Me.cboTrabajador.Appearance = Appearance5
+        Appearance6.ForeColor = System.Drawing.Color.Black
+        Me.cboTrabajador.Appearance = Appearance6
         Me.cboTrabajador.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboTrabajador.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTrabajador.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboTrabajador.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTrabajador.ForeColor = System.Drawing.Color.Black
-        Me.cboTrabajador.Location = New System.Drawing.Point(123, 22)
+        Me.cboTrabajador.Location = New System.Drawing.Point(92, 22)
         Me.cboTrabajador.Name = "cboTrabajador"
-        Me.cboTrabajador.Size = New System.Drawing.Size(403, 21)
+        Me.cboTrabajador.Size = New System.Drawing.Size(400, 21)
         Me.cboTrabajador.TabIndex = 3
         Me.cboTrabajador.ValueMember = "Id"
         '
@@ -407,7 +416,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta3.Location = New System.Drawing.Point(262, 72)
+        Me.Etiqueta3.Location = New System.Drawing.Point(228, 72)
         Me.Etiqueta3.Name = "Etiqueta3"
         Me.Etiqueta3.Size = New System.Drawing.Size(85, 14)
         Me.Etiqueta3.TabIndex = 2
@@ -418,7 +427,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta2.AutoSize = True
         Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta2.Location = New System.Drawing.Point(79, 50)
+        Me.Etiqueta2.Location = New System.Drawing.Point(48, 50)
         Me.Etiqueta2.Name = "Etiqueta2"
         Me.Etiqueta2.Size = New System.Drawing.Size(41, 14)
         Me.Etiqueta2.TabIndex = 1
@@ -429,7 +438,7 @@ Partial Class frm_SueldoTrabajador
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta1.Location = New System.Drawing.Point(60, 26)
+        Me.Etiqueta1.Location = New System.Drawing.Point(29, 26)
         Me.Etiqueta1.Name = "Etiqueta1"
         Me.Etiqueta1.Size = New System.Drawing.Size(60, 14)
         Me.Etiqueta1.TabIndex = 0
@@ -443,13 +452,13 @@ Partial Class frm_SueldoTrabajador
         Me._utpMantSueTra_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.Color.Black
         Me._utpMantSueTra_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 28)
         Me._utpMantSueTra_Toolbars_Dock_Area_Left.Name = "_utpMantSueTra_Toolbars_Dock_Area_Left"
-        Me._utpMantSueTra_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 311)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 354)
         Me._utpMantSueTra_Toolbars_Dock_Area_Left.ToolbarsManager = Me.mnuMantSueTra
         '
         'mnuMantSueTra
         '
-        Appearance6.ForeColor = System.Drawing.Color.Black
-        Me.mnuMantSueTra.Appearance = Appearance6
+        Appearance7.ForeColor = System.Drawing.Color.Black
+        Me.mnuMantSueTra.Appearance = Appearance7
         Me.mnuMantSueTra.DesignerFlags = 1
         Me.mnuMantSueTra.DockWithinContainer = Me.utpMantSueTra
         Me.mnuMantSueTra.ShowQuickCustomizeButton = False
@@ -459,12 +468,12 @@ Partial Class frm_SueldoTrabajador
         UltraToolbar1.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         UltraToolbar1.Text = "utMantSueTra"
         Me.mnuMantSueTra.Toolbars.AddRange(New Infragistics.Win.UltraWinToolbars.UltraToolbar() {UltraToolbar1})
-        Appearance7.Image = Global.ISL.Win.My.Resources.Resources.Confirmar
-        ButtonTool3.SharedPropsInternal.AppearancesSmall.Appearance = Appearance7
+        Appearance8.Image = Global.ISL.Win.My.Resources.Resources.Confirmar
+        ButtonTool3.SharedPropsInternal.AppearancesSmall.Appearance = Appearance8
         ButtonTool3.SharedPropsInternal.Caption = "Grabrar"
         ButtonTool3.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance8.Image = Global.ISL.Win.My.Resources.Resources.SymbolStop
-        ButtonTool4.SharedPropsInternal.AppearancesSmall.Appearance = Appearance8
+        Appearance9.Image = Global.ISL.Win.My.Resources.Resources.SymbolStop
+        ButtonTool4.SharedPropsInternal.AppearancesSmall.Appearance = Appearance9
         ButtonTool4.SharedPropsInternal.Caption = "Cancelar"
         ButtonTool4.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
         Me.mnuMantSueTra.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool3, ButtonTool4})
@@ -475,9 +484,9 @@ Partial Class frm_SueldoTrabajador
         Me._utpMantSueTra_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._utpMantSueTra_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me._utpMantSueTra_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.Color.Black
-        Me._utpMantSueTra_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(729, 28)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(783, 28)
         Me._utpMantSueTra_Toolbars_Dock_Area_Right.Name = "_utpMantSueTra_Toolbars_Dock_Area_Right"
-        Me._utpMantSueTra_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 311)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 354)
         Me._utpMantSueTra_Toolbars_Dock_Area_Right.ToolbarsManager = Me.mnuMantSueTra
         '
         '_utpMantSueTra_Toolbars_Dock_Area_Bottom
@@ -486,9 +495,9 @@ Partial Class frm_SueldoTrabajador
         Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Bottom
         Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.ForeColor = System.Drawing.Color.Black
-        Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 339)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.Location = New System.Drawing.Point(0, 382)
         Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.Name = "_utpMantSueTra_Toolbars_Dock_Area_Bottom"
-        Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(729, 0)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.Size = New System.Drawing.Size(783, 0)
         Me._utpMantSueTra_Toolbars_Dock_Area_Bottom.ToolbarsManager = Me.mnuMantSueTra
         '
         '_utpMantSueTra_Toolbars_Dock_Area_Top
@@ -499,7 +508,7 @@ Partial Class frm_SueldoTrabajador
         Me._utpMantSueTra_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.Color.Black
         Me._utpMantSueTra_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
         Me._utpMantSueTra_Toolbars_Dock_Area_Top.Name = "_utpMantSueTra_Toolbars_Dock_Area_Top"
-        Me._utpMantSueTra_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(729, 28)
+        Me._utpMantSueTra_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(783, 28)
         Me._utpMantSueTra_Toolbars_Dock_Area_Top.ToolbarsManager = Me.mnuMantSueTra
         '
         'UltraTabPageControl3
@@ -751,8 +760,8 @@ Partial Class frm_SueldoTrabajador
         '
         'cboTipoMas
         '
-        Appearance9.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoMas.Appearance = Appearance9
+        Appearance10.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoMas.Appearance = Appearance10
         Me.cboTipoMas.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoMas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoMas.ForeColor = System.Drawing.Color.Black
@@ -774,7 +783,7 @@ Partial Class frm_SueldoTrabajador
         Me.ficSueldoTrabajador.Location = New System.Drawing.Point(0, 0)
         Me.ficSueldoTrabajador.Name = "ficSueldoTrabajador"
         Me.ficSueldoTrabajador.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficSueldoTrabajador.Size = New System.Drawing.Size(731, 362)
+        Me.ficSueldoTrabajador.Size = New System.Drawing.Size(785, 405)
         Me.ficSueldoTrabajador.TabIndex = 0
         UltraTab1.TabPage = Me.UltraTabPageControl1
         UltraTab1.Text = "Lista"
@@ -791,7 +800,7 @@ Partial Class frm_SueldoTrabajador
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(729, 339)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(783, 382)
         '
         'Filtro1
         '
@@ -802,11 +811,49 @@ Partial Class frm_SueldoTrabajador
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'chkProduccion
+        '
+        Me.chkProduccion.AutoSize = True
+        Me.chkProduccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkProduccion.ForeColor = System.Drawing.Color.Black
+        Me.chkProduccion.Location = New System.Drawing.Point(416, 95)
+        Me.chkProduccion.Name = "chkProduccion"
+        Me.chkProduccion.Size = New System.Drawing.Size(76, 17)
+        Me.chkProduccion.TabIndex = 14
+        Me.chkProduccion.Text = "Produccion"
+        '
+        'Etiqueta10
+        '
+        Me.Etiqueta10.AutoSize = True
+        Me.Etiqueta10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta10.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta10.Location = New System.Drawing.Point(566, 47)
+        Me.Etiqueta10.Name = "Etiqueta10"
+        Me.Etiqueta10.Size = New System.Drawing.Size(132, 14)
+        Me.Etiqueta10.TabIndex = 15
+        Me.Etiqueta10.Text = "Distribucion Centro Costo:"
+        '
+        'cboGastonFuncion
+        '
+        Appearance1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboGastonFuncion.Appearance = Appearance1
+        Me.cboGastonFuncion.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboGastonFuncion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboGastonFuncion.DropDownListWidth = 400
+        Me.cboGastonFuncion.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboGastonFuncion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboGastonFuncion.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboGastonFuncion.Location = New System.Drawing.Point(498, 67)
+        Me.cboGastonFuncion.Name = "cboGastonFuncion"
+        Me.cboGastonFuncion.Size = New System.Drawing.Size(200, 22)
+        Me.cboGastonFuncion.TabIndex = 288
+        Me.cboGastonFuncion.ValueMember = "Id"
+        '
         'frm_SueldoTrabajador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 362)
+        Me.ClientSize = New System.Drawing.Size(785, 405)
         Me.Controls.Add(Me.ficSueldoTrabajador)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -851,6 +898,8 @@ Partial Class frm_SueldoTrabajador
         CType(Me.cboTipoMas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficSueldoTrabajador, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficSueldoTrabajador.ResumeLayout(False)
+        CType(Me.chkProduccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboGastonFuncion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -909,4 +958,7 @@ Partial Class frm_SueldoTrabajador
     Friend WithEvents chkVigente As ISL.Controles.Chequear
     Friend WithEvents ndCaja As Controles.NumeroDecimal
     Friend WithEvents Etiqueta9 As Controles.Etiqueta
+    Friend WithEvents Etiqueta10 As Controles.Etiqueta
+    Friend WithEvents chkProduccion As Controles.Chequear
+    Friend WithEvents cboGastonFuncion As Controles.Combo
 End Class
