@@ -238,6 +238,7 @@
     <Content Include="General\l_Peaje.svc" />
     <Content Include="General\l_PeajeTarifa.svc" />
     <Content Include="General\l_RecargaPeaje.svc" />
+    <Content Include="General\l_ReferenciaAsociada.svc" />
     <Content Include="General\l_RevisionTecnica.svc" />
     <Content Include="General\l_BonificacionVehiculo.svc" />
     <Content Include="General\l_CuotaDocumentoVehiculo.svc" />
@@ -994,6 +995,7 @@
     <Compile Include="General\Il_Peaje.vb" />
     <Compile Include="General\Il_PeajeTarifa.vb" />
     <Compile Include="General\Il_RecargaPeaje.vb" />
+    <Compile Include="General\Il_ReferenciaAsociada.vb" />
     <Compile Include="General\Il_RutaPeaje.vb" />
     <Compile Include="General\Il_TablaDinamica_Dato.vb" />
     <Compile Include="General\Il_TarjetaMovimiento.vb" />
@@ -1076,6 +1078,9 @@
     </Compile>
     <Compile Include="General\l_RecargaPeaje.svc.vb">
       <DependentUpon>l_RecargaPeaje.svc</DependentUpon>
+    </Compile>
+    <Compile Include="General\l_ReferenciaAsociada.svc.vb">
+      <DependentUpon>l_ReferenciaAsociada.svc</DependentUpon>
     </Compile>
     <Compile Include="General\l_RevisionTecnica.svc.vb">
       <DependentUpon>l_RevisionTecnica.svc</DependentUpon>
