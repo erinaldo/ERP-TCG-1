@@ -27,6 +27,8 @@ Public Class e_SueldoTrabajador
     Private _usuariocreacion As String
     Private _activo As Boolean
     Private _sueldocaja As Double '@0001
+    Private _produccion As Integer '@0001
+    Private _idCentroCosto As String '@0001
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _
@@ -165,7 +167,7 @@ Public Class e_SueldoTrabajador
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Activo() As Boolean
         Get
             Return _activo
@@ -174,6 +176,7 @@ Public Class e_SueldoTrabajador
             _activo = value
         End Set
     End Property
+    '@0001 Ini
     <DataMember()>
     Public Property SueldoCaja() As Double
         Get
@@ -183,6 +186,25 @@ Public Class e_SueldoTrabajador
             _sueldocaja = value
         End Set
     End Property
+    <DataMember()>
+    Public Property Produccion() As Integer
+        Get
+            Return _produccion
+        End Get
+        Set(ByVal value As Integer)
+            _produccion = value
+        End Set
+    End Property
+    <DataMember()>
+    Public Property IdCentroCosto() As String
+        Get
+            Return _idCentroCosto
+        End Get
+        Set(ByVal value As String)
+            _idCentroCosto = value
+        End Set
+    End Property
+    '@0001 Fin
 #End Region
 
 #Region "Contructor"
@@ -202,6 +224,8 @@ Public Class e_SueldoTrabajador
         _usuariocreacion = String.Empty
         _activo = True
         _sueldocaja = 0
+        _produccion = -1
+        _idCentroCosto = String.Empty
     End Sub
 
     Public Sub New(
@@ -218,7 +242,9 @@ Public Class e_SueldoTrabajador
               , ByVal ld_FechaCreacion As Date _
               , ByVal ls_UsuarioCreacion As String _
               , ByVal lb_Activo As Boolean _
-              , ByVal ln_SueldoCaja As Double
+              , ByVal ln_SueldoCaja As Double _
+              , ByVal ln_Produccion As Integer _
+              , ByVal ls_IdCentroCosto As String
            )
         _id = ls_Id
         _idtrabajador = ls_IdTrabajador
@@ -234,6 +260,8 @@ Public Class e_SueldoTrabajador
         _usuariocreacion = ls_UsuarioCreacion
         _activo = lb_Activo
         _sueldocaja = ln_SueldoCaja
+        _produccion = ln_Produccion
+        _idCentroCosto = ls_IdCentroCosto
     End Sub
 
 #End Region

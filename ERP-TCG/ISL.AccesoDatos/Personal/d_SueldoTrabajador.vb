@@ -29,7 +29,9 @@ Public Class d_SueldoTrabajador
                              , o_fila("FechaCreacion") _
                              , o_fila("UsuarioCreacion").ToString _
                              , o_fila("Activo") _
-                             , o_fila("SueldoCaja")
+                             , o_fila("SueldoCaja") _
+                             , o_fila("Produccion") _
+                             , o_fila("IdCentroCosto")
             )
             Return oeSueldoTrabajador
         Catch ex As Exception
@@ -101,7 +103,9 @@ Public Class d_SueldoTrabajador
                         , .FechaCreacion _
                         , .UsuarioCreacion _
                         , .Activo _
-                        , .SueldoCaja
+                        , .SueldoCaja _
+                        , .Produccion _
+                        , .IdCentroCosto
                     )
             End With
             Return True

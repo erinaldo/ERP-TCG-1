@@ -681,7 +681,7 @@ Public Class frm_SueldoTrabajador
             cboTipoMas.Items.Add("ASIGNACION")
             cboTipoMas.Items.Add("RUTA")
             cboTipoMas.SelectedIndex = -1
-
+            GastoFuncion() '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -697,6 +697,8 @@ Public Class frm_SueldoTrabajador
             oeSueldoTrabajador.Periocidad = cboPeriocidad.Value
             oeSueldoTrabajador.Vigente = IIf(chkVigente.Checked, 1, 0)
             oeSueldoTrabajador.SueldoCaja = ndCaja.Value
+            oeSueldoTrabajador.Produccion = IIf(chkProduccion.Checked, 1, 0)
+            oeSueldoTrabajador.IdCentroCosto = cboGastonFuncion.Value
         Catch ex As Exception
             Throw ex
         End Try
@@ -971,6 +973,10 @@ Public Class frm_SueldoTrabajador
         End If
     End Sub
 
+    Private Sub Agrupacion2_Click(sender As Object, e As EventArgs) Handles Agrupacion2.Click
+
+    End Sub
+
     Private Sub tsmiNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiNuevo.Click
         Try
             Nuevo()
@@ -978,6 +984,10 @@ Public Class frm_SueldoTrabajador
             mensajeEmergente.Problema(ex.Message, True)
         End Try
 
+    End Sub
+
+    Private Sub cboGastonFuncion_ValueChanged(sender As Object, e As EventArgs) Handles cboGastonFuncion.ValueChanged
+        oeSueldoTrabajador.IdCentroCosto = cboGastonFuncion.Value
     End Sub
 
     Private Sub tsmiEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiEditar.Click
@@ -1041,5 +1051,17 @@ Public Class frm_SueldoTrabajador
             mensajeEmergente.Problema(ex.Message, True)
         End Try
 
+    End Sub
+
+    Private Sub GastoFuncion()
+        Dim oeTablaContableDet As New e_TablaContableDet
+        Dim olTablaContableDet As New l_TablaContableDet
+        Dim leTabla As New List(Of e_TablaContableDet)
+        oeTablaContableDet.TipoOperacion = "N"
+        oeTablaContableDet.Nombre = "GASTO FUNCION" 'Tipo de Centro Costo
+        oeTablaContableDet.Activo = True
+        oeTablaContableDet.Logico2 = 1
+        leTabla.AddRange(olTablaContableDet.Listar(oeTablaContableDet))
+        LlenarComboMaestro(cboGastonFuncion, leTabla, 0)
     End Sub
 End Class
