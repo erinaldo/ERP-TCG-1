@@ -403,6 +403,7 @@ Partial Class frm_OSalida
         Dim Appearance51 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -466,6 +467,7 @@ Partial Class frm_OSalida
         Me.ficDetalle = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btn_Almacen = New Infragistics.Win.Misc.UltraButton()
         Me.btnImportar = New Infragistics.Win.Misc.UltraButton()
         Me.btnQuitar = New Infragistics.Win.Misc.UltraButton()
         Me.btnAgregar = New Infragistics.Win.Misc.UltraButton()
@@ -1802,6 +1804,7 @@ Partial Class frm_OSalida
         '
         'UltraGroupBox4
         '
+        Me.UltraGroupBox4.Controls.Add(Me.btn_Almacen)
         Me.UltraGroupBox4.Controls.Add(Me.btnImportar)
         Me.UltraGroupBox4.Controls.Add(Me.btnQuitar)
         Me.UltraGroupBox4.Controls.Add(Me.btnAgregar)
@@ -1813,11 +1816,24 @@ Partial Class frm_OSalida
         Me.UltraGroupBox4.Text = "Detalles"
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
-        'btnImportar
+        'btn_Almacen
         '
         Appearance42.ForeColor = System.Drawing.Color.Navy
-        Appearance42.Image = Global.ISL.Win.My.Resources.Resources.Excel
-        Me.btnImportar.Appearance = Appearance42
+        Appearance42.Image = Global.ISL.Win.My.Resources.Resources.clipboard
+        Me.btn_Almacen.Appearance = Appearance42
+        Me.btn_Almacen.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btn_Almacen.Enabled = False
+        Me.btn_Almacen.Location = New System.Drawing.Point(228, 17)
+        Me.btn_Almacen.Name = "btn_Almacen"
+        Me.btn_Almacen.Size = New System.Drawing.Size(75, 28)
+        Me.btn_Almacen.TabIndex = 3
+        Me.btn_Almacen.Text = "Almacen"
+        '
+        'btnImportar
+        '
+        Appearance43.ForeColor = System.Drawing.Color.Navy
+        Appearance43.Image = Global.ISL.Win.My.Resources.Resources.Excel
+        Me.btnImportar.Appearance = Appearance43
         Me.btnImportar.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnImportar.Enabled = False
         Me.btnImportar.Location = New System.Drawing.Point(153, 17)
@@ -1828,9 +1844,9 @@ Partial Class frm_OSalida
         '
         'btnQuitar
         '
-        Appearance43.ForeColor = System.Drawing.Color.Navy
-        Appearance43.Image = Global.ISL.Win.My.Resources.Resources.Quitar
-        Me.btnQuitar.Appearance = Appearance43
+        Appearance44.ForeColor = System.Drawing.Color.Navy
+        Appearance44.Image = Global.ISL.Win.My.Resources.Resources.Quitar
+        Me.btnQuitar.Appearance = Appearance44
         Me.btnQuitar.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnQuitar.Location = New System.Drawing.Point(78, 17)
         Me.btnQuitar.Name = "btnQuitar"
@@ -1840,9 +1856,9 @@ Partial Class frm_OSalida
         '
         'btnAgregar
         '
-        Appearance44.ForeColor = System.Drawing.Color.Navy
-        Appearance44.Image = Global.ISL.Win.My.Resources.Resources.Agregar
-        Me.btnAgregar.Appearance = Appearance44
+        Appearance45.ForeColor = System.Drawing.Color.Navy
+        Appearance45.Image = Global.ISL.Win.My.Resources.Resources.Agregar
+        Me.btnAgregar.Appearance = Appearance45
         Me.btnAgregar.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnAgregar.Location = New System.Drawing.Point(3, 17)
         Me.btnAgregar.Name = "btnAgregar"
@@ -1881,9 +1897,9 @@ Partial Class frm_OSalida
         'lbl_etiqueta
         '
         Me.lbl_etiqueta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Appearance45.BackColor = System.Drawing.Color.Transparent
-        Appearance45.ForeColor = System.Drawing.Color.Red
-        Me.lbl_etiqueta.Appearance = Appearance45
+        Appearance46.BackColor = System.Drawing.Color.Transparent
+        Appearance46.ForeColor = System.Drawing.Color.Red
+        Me.lbl_etiqueta.Appearance = Appearance46
         Me.lbl_etiqueta.AutoSize = True
         Me.lbl_etiqueta.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_etiqueta.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1896,9 +1912,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel9
         '
-        Appearance46.BackColor = System.Drawing.Color.Transparent
-        Appearance46.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel9.Appearance = Appearance46
+        Appearance47.BackColor = System.Drawing.Color.Transparent
+        Appearance47.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel9.Appearance = Appearance47
         Me.UltraLabel9.AutoSize = True
         Me.UltraLabel9.Location = New System.Drawing.Point(429, 82)
         Me.UltraLabel9.Name = "UltraLabel9"
@@ -2005,9 +2021,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel8
         '
-        Appearance47.BackColor = System.Drawing.Color.Transparent
-        Appearance47.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel8.Appearance = Appearance47
+        Appearance48.BackColor = System.Drawing.Color.Transparent
+        Appearance48.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel8.Appearance = Appearance48
         Me.UltraLabel8.AutoSize = True
         Me.UltraLabel8.Location = New System.Drawing.Point(234, 82)
         Me.UltraLabel8.Name = "UltraLabel8"
@@ -2017,9 +2033,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel6
         '
-        Appearance48.BackColor = System.Drawing.Color.Transparent
-        Appearance48.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel6.Appearance = Appearance48
+        Appearance49.BackColor = System.Drawing.Color.Transparent
+        Appearance49.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel6.Appearance = Appearance49
         Me.UltraLabel6.AutoSize = True
         Me.UltraLabel6.Location = New System.Drawing.Point(423, 24)
         Me.UltraLabel6.Name = "UltraLabel6"
@@ -2029,9 +2045,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel5
         '
-        Appearance49.BackColor = System.Drawing.Color.Transparent
-        Appearance49.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel5.Appearance = Appearance49
+        Appearance50.BackColor = System.Drawing.Color.Transparent
+        Appearance50.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel5.Appearance = Appearance50
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Location = New System.Drawing.Point(420, 52)
         Me.UltraLabel5.Name = "UltraLabel5"
@@ -2041,9 +2057,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel4
         '
-        Appearance50.BackColor = System.Drawing.Color.Transparent
-        Appearance50.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel4.Appearance = Appearance50
+        Appearance51.BackColor = System.Drawing.Color.Transparent
+        Appearance51.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel4.Appearance = Appearance51
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Location = New System.Drawing.Point(610, 24)
         Me.UltraLabel4.Name = "UltraLabel4"
@@ -2053,9 +2069,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel3
         '
-        Appearance51.BackColor = System.Drawing.Color.Transparent
-        Appearance51.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel3.Appearance = Appearance51
+        Appearance52.BackColor = System.Drawing.Color.Transparent
+        Appearance52.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel3.Appearance = Appearance52
         Me.UltraLabel3.AutoSize = True
         Me.UltraLabel3.Location = New System.Drawing.Point(19, 51)
         Me.UltraLabel3.Name = "UltraLabel3"
@@ -2065,9 +2081,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel2
         '
-        Appearance52.BackColor = System.Drawing.Color.Transparent
-        Appearance52.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel2.Appearance = Appearance52
+        Appearance53.BackColor = System.Drawing.Color.Transparent
+        Appearance53.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel2.Appearance = Appearance53
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Location = New System.Drawing.Point(30, 82)
         Me.UltraLabel2.Name = "UltraLabel2"
@@ -2077,9 +2093,9 @@ Partial Class frm_OSalida
         '
         'UltraLabel1
         '
-        Appearance53.BackColor = System.Drawing.Color.Transparent
-        Appearance53.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel1.Appearance = Appearance53
+        Appearance54.BackColor = System.Drawing.Color.Transparent
+        Appearance54.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel1.Appearance = Appearance54
         Me.UltraLabel1.AutoSize = True
         Me.UltraLabel1.Location = New System.Drawing.Point(12, 24)
         Me.UltraLabel1.Name = "UltraLabel1"
@@ -2284,4 +2300,5 @@ Partial Class frm_OSalida
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnGenerarAsiento As Infragistics.Win.Misc.UltraButton
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents btn_Almacen As Infragistics.Win.Misc.UltraButton
 End Class

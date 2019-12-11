@@ -1097,6 +1097,7 @@ Public Class frm_OrdenVenMaterial
         txtSerie.Text = String.Empty
         txtNumero.Text = String.Empty
         txtEstadoDoc.Text = String.Empty
+        dtpFechaDoc.Value = ObtenerFechaServidor()
         ficDetalleOrdenComercial.Tabs(0).Selected = True
         cbDocumento.Enabled = True
         cbDocumento.Checked = False
@@ -1462,6 +1463,7 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Sub
+
     Private Sub mt_CombosGrillaPrincipal(Grilla As UltraGrid)
         Try
             With Grilla
@@ -1475,7 +1477,6 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Sub
-
 
     Private Sub mt_CalcularTotalOrden()
         Try
@@ -2283,6 +2284,53 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Sub
 
+    Public Sub mt_AsociarCompra(oeOrdenCompra As e_OrdenCompra)
+        Try
+            Nuevo()
+            Dim oeOrdenCompraMaterial As New e_OrdenCompraMaterial
+            Dim olOrdenCompraMaterial As New l_OrdenCompraMaterial
+            Dim llOrdenCompraMaterial As List(Of e_OrdenCompraMaterial)
+            oeOrdenCompraMaterial.TipoOperacion = "1"
+            oeOrdenCompraMaterial.Activo = True
+            oeOrdenCompraMaterial.IdOrden = oeOrdenCompra.Id
+            llOrdenCompraMaterial = olOrdenCompraMaterial.Listar(oeOrdenCompraMaterial)
+            For Each detalle In llOrdenCompraMaterial
+                oeOrdenComercialMaterial = New e_OrdenVentaMaterial
+                With oeOrdenComercialMaterial
+                    ' oe.Seleccion = False
+                    .TipoOperacion = "I"
+                    .PrefijoID = gs_PrefijoIdSucursal
+                    .IndImpuesto = True
+                    .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
+                    .IdSucursal = gs_PrefijoIdSucursal
+                    .UsuarioCrea = gUsuarioSGI.Id
+                    .IdMaterial = detalle.IdMaterial
+                    .Material = detalle.Material
+                    .Codigo = detalle.CodigoMaterial
+                    .Cantidad = detalle.CantidadMaterial
+                    .CantidadPendiente = detalle.CantidadMaterial
+                    .CostoUnitario = 0  'oe.CostoUnitario
+                    .CostoInventario = 0 'oe.CostoUnitario
+                    .PrecioUnitario = 0
+                    '.IdTipoUnidadMedida = oe.idu
+                    .IdAlmacen = detalle.IdAlmacen
+                    .IdUnidadMedida = detalle.IdUnidadMedida
+                    .IdSubAlmacen = detalle.IdSubAlmacen
+                    .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
+                    .IndOperacion = IIf(chkTransporte.Checked, 1, 0)
+                    .IdOrigen = cboOrigenViaje.Value
+                    .IdDestino = cboDestinoViaje.Value
+                End With
+                loOrdenComercialMaterial.Add(oeOrdenComercialMaterial)
+            Next
+            griAlmacenMaterial.DataBind()
+            griOrdenComercialMaterial.DataBind()
+            mt_CalcularTotalOrden()
+            mt_CombosGrilla(griOrdenComercialMaterial)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
 #End Region
 

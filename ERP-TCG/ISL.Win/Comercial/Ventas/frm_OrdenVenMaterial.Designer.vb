@@ -950,7 +950,6 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn98.Width = 76
         UltraGridColumn99.Header.Caption = "Almacen"
         UltraGridColumn99.Header.VisiblePosition = 15
-        UltraGridColumn99.Hidden = True
         UltraGridColumn99.Width = 195
         UltraGridColumn100.Header.VisiblePosition = 25
         UltraGridColumn100.Hidden = True
@@ -965,6 +964,7 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn102.CellAppearance = Appearance11
         UltraGridColumn102.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn102.Header.VisiblePosition = 11
+        UltraGridColumn102.Hidden = True
         UltraGridColumn102.MaskInput = "{double:4.2}"
         UltraGridColumn102.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn102.Width = 59
@@ -1010,7 +1010,7 @@ Partial Class frm_OrdenVenMaterial
         Me.griOrdenComercialMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOrdenComercialMaterial.Location = New System.Drawing.Point(3, 3)
         Me.griOrdenComercialMaterial.Name = "griOrdenComercialMaterial"
-        Me.griOrdenComercialMaterial.Size = New System.Drawing.Size(484, 283)
+        Me.griOrdenComercialMaterial.Size = New System.Drawing.Size(1179, 283)
         Me.griOrdenComercialMaterial.TabIndex = 0
         Me.griOrdenComercialMaterial.Text = "Grilla2"
         '
@@ -1038,11 +1038,12 @@ Partial Class frm_OrdenVenMaterial
         Me.gbeMateriales.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeMateriales.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.gbeMateriales.Dock = System.Windows.Forms.DockStyle.Right
+        Me.gbeMateriales.Expanded = False
         Me.gbeMateriales.ExpandedSize = New System.Drawing.Size(723, 283)
         Me.gbeMateriales.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.gbeMateriales.Location = New System.Drawing.Point(487, 3)
+        Me.gbeMateriales.Location = New System.Drawing.Point(1182, 3)
         Me.gbeMateriales.Name = "gbeMateriales"
-        Me.gbeMateriales.Size = New System.Drawing.Size(723, 283)
+        Me.gbeMateriales.Size = New System.Drawing.Size(28, 283)
         Me.gbeMateriales.TabIndex = 1
         Me.gbeMateriales.Text = "Materiales"
         Me.gbeMateriales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1051,11 +1052,11 @@ Partial Class frm_OrdenVenMaterial
         '
         Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.UltraGroupBox13)
         Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
+        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
         Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(700, 277)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel1.Visible = False
         '
         'UltraGroupBox13
         '
@@ -1677,7 +1678,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1221, 495)
         '
@@ -2344,7 +2345,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1221, 495)
         '
@@ -2431,7 +2432,7 @@ Partial Class frm_OrdenVenMaterial
         '
         Me.ClientArea_Fill_Panel.Cursor = System.Windows.Forms.Cursors.Default
         Me.ClientArea_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ClientArea_Fill_Panel.Location = New System.Drawing.Point(0, 28)
+        Me.ClientArea_Fill_Panel.Location = New System.Drawing.Point(0, 53)
         Me.ClientArea_Fill_Panel.Name = "ClientArea_Fill_Panel"
         Me.ClientArea_Fill_Panel.Size = New System.Drawing.Size(1215, 0)
         Me.ClientArea_Fill_Panel.TabIndex = 0
@@ -2442,7 +2443,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._ClientArea_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me._ClientArea_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._ClientArea_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 28)
+        Me._ClientArea_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 53)
         Me._ClientArea_Toolbars_Dock_Area_Left.Name = "_ClientArea_Toolbars_Dock_Area_Left"
         Me._ClientArea_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Left.ToolbarsManager = Me.mnuDetalle
@@ -2481,7 +2482,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._ClientArea_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me._ClientArea_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._ClientArea_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1215, 28)
+        Me._ClientArea_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1215, 53)
         Me._ClientArea_Toolbars_Dock_Area_Right.Name = "_ClientArea_Toolbars_Dock_Area_Right"
         Me._ClientArea_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Right.ToolbarsManager = Me.mnuDetalle
@@ -2505,7 +2506,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
         Me._ClientArea_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Top.Name = "_ClientArea_Toolbars_Dock_Area_Top"
-        Me._ClientArea_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1215, 28)
+        Me._ClientArea_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1215, 53)
         Me._ClientArea_Toolbars_Dock_Area_Top.ToolbarsManager = Me.mnuDetalle
         '
         'UltraGroupBox4

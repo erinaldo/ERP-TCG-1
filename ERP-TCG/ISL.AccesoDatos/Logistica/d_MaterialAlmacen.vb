@@ -67,7 +67,8 @@ Public Class d_MaterialAlmacen
                                                           , fila("StockMaximo") _
                                                           , fila("IdAlmacen") _
                                                           , fila("Almacen") _
-                                                          , fila("Activo"))
+                                                          , fila("Activo") _
+                                                          , fila("ValorAdm"))
             Return oeMaterialAlmacen
         Catch ex As Exception
             Throw ex
