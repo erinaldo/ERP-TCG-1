@@ -234,6 +234,7 @@
     <Compile Include="General\d_Peaje.vb" />
     <Compile Include="General\d_PeajeTarifa.vb" />
     <Compile Include="General\d_RecargaPeaje.vb" />
+    <Compile Include="General\d_ReferenciaAsociada.vb" />
     <Compile Include="General\d_RevisionTecnica.vb" />
     <Compile Include="General\d_BonificacionVehiculo.vb" />
     <Compile Include="General\d_CuotaDocumentoVehiculo.vb" />

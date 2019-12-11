@@ -400,6 +400,12 @@
     <Compile Include="Comercial\Ventas\frm_ActualizarAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Ventas\frm_GRR_Venta.Designer.vb">
+      <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_GRR_Venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.Designer.vb">
       <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
     </Compile>
