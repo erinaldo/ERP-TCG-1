@@ -21,37 +21,41 @@ Public Class d_Orden
 
     Private Function Cargar(ByVal fila As DataRow) As e_Orden
         Try
-            Dim oeOrden = New e_Orden( _
-                                        fila("Id"), _
-                                        fila("NroOrden"), _
-                                        fila("IdMoneda"), _
-                                        fila("Moneda"), _
-                                        fila("IdTipoOrden"), _
-                                        fila("TipoOrden"), _
-                                        fila("FechaOrden"), _
-                                        fila("Total"), _
-                                        fila("IdAlmacenOrigen"), _
-                                        fila("AlmOrigen"), _
-                                        fila("IdAlmacenDestino"), _
-                                        fila("AlmDestino"), _
-                                        fila("IdMovimientoInventario"), _
-                                        fila("MovimientoInventario"), _
-                                        fila("TipoReferencia"), _
-                                        fila("Referencia"), _
-                                        fila("IdProveedor"), _
-                                        fila("Glosa"), _
-                                        fila("Activo"), _
-                                        fila("IdEstadoOrden"), _
-                                        fila("EstadoOrden"), _
-                                        fila("NombreUsuario"), _
-                                        fila("UsuarioCreacion"), _
-                                        fila("IdUsuarioEjecucion"), _
-                                        fila("UsuarioEjecucion"), _
-                                        fila("IdOrdenDocumento"), _
-                                        fila("IdDocumento"), _
-                                        fila("TipoDocumento"), _
-                                        fila("SerieNumero"), _
-                                        fila("NombreProveedor"))
+            Dim oeOrden = New e_Orden(
+                                        fila("Id"),
+                                        fila("NroOrden"),
+                                        fila("IdMoneda"),
+                                        fila("Moneda"),
+                                        fila("IdTipoOrden"),
+                                        fila("TipoOrden"),
+                                        fila("FechaOrden"),
+                                        fila("Total"),
+                                        fila("IdAlmacenOrigen"),
+                                        fila("AlmOrigen"),
+                                        fila("IdAlmacenDestino"),
+                                        fila("AlmDestino"),
+                                        fila("IdMovimientoInventario"),
+                                        fila("MovimientoInventario"),
+                                        fila("TipoReferencia"),
+                                        fila("Referencia"),
+                                        fila("IdProveedor"),
+                                        fila("Glosa"),
+                                        fila("Activo"),
+                                        fila("IdEstadoOrden"),
+                                        fila("EstadoOrden"),
+                                        fila("NombreUsuario"),
+                                        fila("UsuarioCreacion"),
+                                        fila("IdUsuarioEjecucion"),
+                                        fila("UsuarioEjecucion"),
+                                        fila("IdOrdenDocumento"),
+                                        fila("IdDocumento"),
+                                        fila("TipoDocumento"),
+                                        fila("SerieNumero"),
+                                        fila("NombreProveedor"),
+fila("IdTurno"),
+fila("IdCanalVenta"),
+fila("IdTrabajador"))
+
             Return oeOrden
         Catch ex As Exception
             Throw ex
@@ -133,7 +137,10 @@ Public Class d_Orden
                                                         , .IdEstadoOrden _
                                                         , .IdCentro _
                                                         , .UsuarioCreacion _
-                                                        , .IdUsuarioEjecucion).ToString.Split("_")
+                                                        , .IdUsuarioEjecucion _
+                                                        , .IdTurno _
+                                                        , .IdCanalVenta _
+                                                        , .IdTrabajador).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each Detalle As e_OrdenMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion
@@ -249,8 +256,10 @@ Public Class d_Orden
                                                         , .Activo _
                                                         , .IdEstadoOrden _
                                                         , .IdCentro _
-                                                        , .UsuarioCreacion
-                                                        ).ToString.Split("_")
+                                                        , .UsuarioCreacion _
+                                                        , .IdTurno _
+                                                        , .IdCanalVenta _
+                                                        , .IdTrabajador).ToString.Split("_")
 
                     For Each Detalle As e_OrdenMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0) : Detalle.UsuarioCreacion = .UsuarioCreacion

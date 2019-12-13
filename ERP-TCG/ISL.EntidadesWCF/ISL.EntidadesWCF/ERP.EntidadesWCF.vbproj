@@ -285,6 +285,8 @@
     <Content Include="General\e_TarjetaMovimiento.svc" />
     <Content Include="General\e_VehiculoEstado.svc" />
     <Content Include="General\e_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\e_CierreTurno.svc" />
+    <Content Include="Grifo\e_CierreTurno_Detalle.svc" />
     <Content Include="Grifo\e_Contometro_Electronico.svc" />
     <Content Include="Grifo\e_Contometro_Mecanico.svc" />
     <Content Include="Grifo\e_Distribuidor.svc" />
@@ -1333,6 +1335,12 @@
     <Compile Include="General\Ie_TarjetaMovimiento.vb" />
     <Compile Include="General\Ie_VehiculoEstado.vb" />
     <Compile Include="General\Ie_VehiculoTarjeta.vb" />
+    <Compile Include="Grifo\e_CierreTurno.svc.vb">
+      <DependentUpon>e_CierreTurno.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\e_CierreTurno_Detalle.svc.vb">
+      <DependentUpon>e_CierreTurno_Detalle.svc</DependentUpon>
+    </Compile>
     <Compile Include="Grifo\e_Contometro_Electronico.svc.vb">
       <DependentUpon>e_Contometro_Electronico.svc</DependentUpon>
     </Compile>
@@ -1354,6 +1362,8 @@
     <Compile Include="Grifo\e_TurnoCierre.svc.vb">
       <DependentUpon>e_TurnoCierre.svc</DependentUpon>
     </Compile>
+    <Compile Include="Grifo\Ie_CierreTurno.vb" />
+    <Compile Include="Grifo\Ie_CierreTurno_Detalle.vb" />
     <Compile Include="Grifo\Ie_Contometro_Electronico.vb" />
     <Compile Include="Grifo\Ie_Contometro_Mecanico.vb" />
     <Compile Include="Grifo\Ie_Distribuidor.vb" />

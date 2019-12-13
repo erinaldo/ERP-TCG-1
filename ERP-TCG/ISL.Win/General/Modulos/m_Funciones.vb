@@ -1214,6 +1214,70 @@ Module m_Funciones
         Return oecentro
     End Function
 
+    Public Function ObtenerListaMoneda(Optional AgregarTodos As Boolean = False) As List(Of e_Moneda) 'Cess
+        Dim Logica As New l_Moneda
+        Dim Lista As New List(Of e_Moneda)
+        Dim ListaAux As New List(Of e_Moneda)
+        Dim Item As New e_Moneda
+        Item.Activo = True
+        Item.TipoOperacion = "1"
+        Lista = Logica.Listar(Item)
+        If AgregarTodos Then
+            Item = New e_Moneda
+            Item.Id = ""
+            Item.Nombre = "TODOS"
+            ListaAux.Add(Item)
+            ListaAux.AddRange(Lista)
+            Return ListaAux
+        Else
+            Return Lista
+        End If
+    End Function
+
+    Public Function ObtenerListaTurno(Optional AgregarTodos As Boolean = False) As List(Of e_Turno) 'Cess
+        Dim Logica As New l_Turno
+        Dim Lista As New List(Of e_Turno)
+        Dim ListaAux As New List(Of e_Turno)
+        Dim Item As New e_Turno
+        Item.Activo = True
+        Item.TipoOperacion = "1"
+        Lista = Logica.Listar(Item)
+        If AgregarTodos Then
+            Item = New e_Turno
+            With Item
+                .Id = ""
+                .Turno = "TODOS"
+            End With
+            ListaAux.Add(Item)
+            ListaAux.AddRange(Lista)
+            Return ListaAux
+        Else
+            Return Lista
+        End If
+    End Function
+
+    Public Function ObtenerListaEstado(Optional AgregarTodos As Boolean = False) As List(Of e_Estado) 'Cess
+        Dim Logica As New l_Estado
+        Dim Lista As New List(Of e_Estado)
+        Dim ListaAux As New List(Of e_Estado)
+        Dim Item As New e_Estado
+        Item.Activo = True
+        Item.TipoOperacion = "1"
+        Lista = Logica.Listar(Item)
+        If AgregarTodos Then
+            Item = New e_Estado
+            With Item
+                .Id = ""
+                .Nombre = "TODOS"
+            End With
+            ListaAux.Add(Item)
+            ListaAux.AddRange(Lista)
+            Return ListaAux
+        Else
+            Return Lista
+        End If
+    End Function
+
     ''' <summary>
     ''' Función para generar el contenedor de datos de alerta global del sistema
     ''' </summary>

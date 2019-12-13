@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.I_CierreTurno" CodeBehind="I_CierreTurno.svc.vb" %>

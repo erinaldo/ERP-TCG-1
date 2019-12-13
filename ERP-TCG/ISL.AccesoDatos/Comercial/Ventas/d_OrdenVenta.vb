@@ -46,7 +46,10 @@ Public Class d_OrdenVenta
                              , o_fila("IdOrden_Referencia").ToString _
                               , o_fila("IndFacturadoProducto").ToString _
                               , o_fila("IdVendedorTrabajador").ToString _
-                              , o_fila("DocAsoc").ToString)
+                              , o_fila("DocAsoc").ToString _
+                              , o_fila("IdTurno").ToString _
+                              , o_fila("IdCanalVenta").ToString _
+            , o_fila("IdTipoVenta").ToString)
             Return oeOrdenComercial
         Catch ex As Exception
             Throw ex
@@ -144,7 +147,12 @@ Public Class d_OrdenVenta
                             , .UsuarioCrea _
                             , .IdOrdenReferencia _
                             , .IndFacturadoProducto _
-                            , .IdVendedorTrabajador).ToString.Split("_")
+                            , .IdVendedorTrabajador _
+                            , .IdTurno _
+                            , .IdCanalVenta _
+                            , .IdTipoVenta
+                              ).ToString.Split("_")
+
                     .Id = stResultado(0)
                     For Each oe As e_OrdenVentaMaterial In .lstOrdenComercialMaterial
                         If oe.TipoOperacion = "" Then oe.TipoOperacion = "A"
@@ -189,7 +197,7 @@ Public Class d_OrdenVenta
                             , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
                             , .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
                             , .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _
-                            , .IdVendedorTrabajador)
+                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta)
             End With
             Return True
         Catch ex As Exception

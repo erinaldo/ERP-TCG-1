@@ -36,6 +36,11 @@ Public Class e_Orden
     Private _UsuarioCreacion As String
     Private _usuario As New e_Usuario
 
+    ' Added by CeSs
+    Private _IdTurno As String
+    Private _IdTrabajador As String
+    Private _IdCanalVenta As String
+
     '-- Orden Asociada --'
     Private _IdOrdenDocumento As String
     Private _IdDocumento As String
@@ -101,36 +106,39 @@ Public Class e_Orden
         _Total = 0
     End Sub
 
-    Sub New(ByVal Id As String, _
-              ByVal NroOrden As String, _
-              ByVal IdMoneda As String, _
-              ByVal Moneda As String, _
-              ByVal IdTipoOrden As String, _
-              ByVal TipoOrden As String, _
-              ByVal FechaOrden As Date, _
-              ByVal Total As Double, _
-              ByVal IdSubAlmacenOrigen As String, _
-              ByVal SubAlmacenOrigen As String, _
-              ByVal IdSubAlmacenDestino As String, _
-              ByVal SubAlmacenDestino As String, _
-              ByVal IdMovimientoInventario As String, _
-              ByVal MovimientoInventario As String, _
-              ByVal TipoReferencia As String, _
-              ByVal Referencia As String, _
-              ByVal IdCliente As String, _
-              ByVal Glosa As String, _
-              ByVal Activo As Boolean, _
-              ByVal IdEstadoOrden As String, _
-              ByVal EstadoOrden As String, _
-              ByVal NombUsu As String, _
-              ByVal UsuCreacion As String, _
-              ByVal IdUsuEjecucion As String, _
-              ByVal UsuEjecucion As String, _
-              Optional ByVal ls_IdOrdenDocumento As String = "", _
-              Optional ByVal ls_IdDocumento As String = "", _
-              Optional ByVal ls_TipoDocumento As String = "", _
-              Optional ByVal ls_SerieNumero As String = "", _
-              Optional ByVal ls_NombreProveedor As String = ""  )
+    Sub New(ByVal Id As String,
+              ByVal NroOrden As String,
+              ByVal IdMoneda As String,
+              ByVal Moneda As String,
+              ByVal IdTipoOrden As String,
+              ByVal TipoOrden As String,
+              ByVal FechaOrden As Date,
+              ByVal Total As Double,
+              ByVal IdSubAlmacenOrigen As String,
+              ByVal SubAlmacenOrigen As String,
+              ByVal IdSubAlmacenDestino As String,
+              ByVal SubAlmacenDestino As String,
+              ByVal IdMovimientoInventario As String,
+              ByVal MovimientoInventario As String,
+              ByVal TipoReferencia As String,
+              ByVal Referencia As String,
+              ByVal IdCliente As String,
+              ByVal Glosa As String,
+              ByVal Activo As Boolean,
+              ByVal IdEstadoOrden As String,
+              ByVal EstadoOrden As String,
+              ByVal NombUsu As String,
+              ByVal UsuCreacion As String,
+              ByVal IdUsuEjecucion As String,
+              ByVal UsuEjecucion As String,
+              Optional ByVal ls_IdOrdenDocumento As String = "",
+              Optional ByVal ls_IdDocumento As String = "",
+              Optional ByVal ls_TipoDocumento As String = "",
+              Optional ByVal ls_SerieNumero As String = "",
+              Optional ByVal ls_NombreProveedor As String = "",
+              Optional ByVal ls_IdTurno As String = "",
+            Optional ByVal ls_IdTrabajador As String = "",
+            Optional ByVal ls_IdCanalVenta As String = "")
         _Id = Id
         _NroOrden = NroOrden
         _idMoneda = IdMoneda
@@ -161,6 +169,9 @@ Public Class e_Orden
         _TipoDocumento = ls_TipoDocumento
         _Serie_Numero = ls_SerieNumero
         _Proveedor = ls_NombreProveedor
+        _IdTurno = ls_IdTurno
+        _IdTrabajador = ls_IdTrabajador
+        _IdCanalVenta = ls_IdCanalVenta
     End Sub
 
 #End Region
@@ -487,6 +498,35 @@ Public Class e_Orden
         End Set
     End Property
 
+    <DataMember()>
+    Public Property IdTurno() As String
+        Get
+            Return _IdTurno
+        End Get
+        Set(ByVal value As String)
+            _IdTurno = value
+        End Set
+    End Property
+
+    <DataMember()>
+    Public Property IdTrabajador() As String
+        Get
+            Return _IdTrabajador
+        End Get
+        Set(ByVal value As String)
+            _IdTrabajador = value
+        End Set
+    End Property
+
+    <DataMember()>
+    Public Property IdCanalVenta() As String
+        Get
+            Return _IdCanalVenta
+        End Get
+        Set(ByVal value As String)
+            _IdCanalVenta = value
+        End Set
+    End Property
 #End Region
 
 #Region "Metodos"

@@ -35,6 +35,12 @@ Public Class e_OrdenVenta
     Private _IndFacturadoProducto As Boolean
     Private _IdVendedorTrabajador As String
     Private _DocAsoc As String
+
+    ' Added by Cess
+    Private _IdTurno As String
+    Private _IdCanalVenta As String
+    Private _IdTipoVenta As String
+
     Public TipoOperacion As String
     Public lstOrdenComercialMaterial As New List(Of e_OrdenVentaMaterial)
     'Public lstOrdenComercialServicio As New List(Of e_OrdenComercialServicio)
@@ -342,7 +348,30 @@ Public Class e_OrdenVenta
         End Set
     End Property
 
-
+    Public Property IdTurno() As String
+        Get
+            Return _IdTurno
+        End Get
+        Set(ByVal value As String)
+            _IdTurno = value
+        End Set
+    End Property
+    Public Property IdCanalVenta() As String
+        Get
+            Return _IdCanalVenta
+        End Get
+        Set(ByVal value As String)
+            _IdCanalVenta = value
+        End Set
+    End Property
+    Public Property IdTipoVenta() As String
+        Get
+            Return _IdTipoVenta
+        End Get
+        Set(ByVal value As String)
+            _IdTipoVenta = value
+        End Set
+    End Property
 #End Region
 
 #Region "Constructor"
@@ -392,7 +421,10 @@ Public Class e_OrdenVenta
               , ByVal ls_IdOrdenReferencia As String _
               , ByVal lb_IndFacturadoProducto As Boolean _
               , ByVal ls_IdVendedorTrabajador As String _
-              , ByVal ls_DocAsoc As String)
+              , ByVal ls_DocAsoc As String _
+              , ByVal ls_IdTurno As String _
+              , ByVal ls_IdCanalVenta As String _
+              , ByVal ls_IdTipoVenta As String)
         _id = ls_Id
         '_empresasis.Id = ls_IdEmpresaSis
         '_sucursal.Id = ls_IdSucursal
@@ -423,6 +455,9 @@ Public Class e_OrdenVenta
         _IndFacturadoProducto = lb_IndFacturadoProducto
         _IdVendedorTrabajador = ls_IdVendedorTrabajador
         _DocAsoc = ls_DocAsoc
+        _IdTurno = ls_IdTurno
+        _IdCanalVenta = ls_IdCanalVenta
+        _IdTipoVenta = ls_IdTipoVenta
     End Sub
 
 

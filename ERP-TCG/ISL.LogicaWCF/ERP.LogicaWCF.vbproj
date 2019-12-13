@@ -313,6 +313,8 @@
     <Content Include="General\l_CuotaDocVeh_Movimiento.svc" />
     <Content Include="General\l_CuotaDocVehPago.svc" />
     <Content Include="General\l_VehiculoTarjeta.svc" />
+    <Content Include="Grifo\I_CierreTurno.svc" />
+    <Content Include="Grifo\l_CierreTurno_Detalle.svc" />
     <Content Include="Grifo\l_Contometro_Electronico.svc" />
     <Content Include="Grifo\l_Contometro_Mecanico.svc" />
     <Content Include="Grifo\l_Distribuidor.svc" />
@@ -1176,12 +1178,20 @@
     <Compile Include="General\l_VehiculoTarjeta.svc.vb">
       <DependentUpon>l_VehiculoTarjeta.svc</DependentUpon>
     </Compile>
+    <Compile Include="Grifo\II_CierreTurno.vb" />
+    <Compile Include="Grifo\Il_CierreTurno_Detalle.vb" />
     <Compile Include="Grifo\Il_Contometro_Electronico.vb" />
     <Compile Include="Grifo\Il_Contometro_Mecanico.vb" />
     <Compile Include="Grifo\Il_Distribuidor.vb" />
     <Compile Include="Grifo\Il_EstacionServicio.vb" />
     <Compile Include="Grifo\Il_Isla.vb" />
     <Compile Include="Grifo\Il_Lado.vb" />
+    <Compile Include="Grifo\I_CierreTurno.svc.vb">
+      <DependentUpon>I_CierreTurno.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_CierreTurno_Detalle.svc.vb">
+      <DependentUpon>l_CierreTurno_Detalle.svc</DependentUpon>
+    </Compile>
     <Compile Include="Grifo\l_Contometro_Electronico.svc.vb">
       <DependentUpon>l_Contometro_Electronico.svc</DependentUpon>
     </Compile>
