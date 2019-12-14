@@ -33,37 +33,31 @@ Public Class frm_EstacionServicio
 #Region "Declaracion de Variables"
 
     Private PRODUCTO As New e_Material 'Combustible Seleccionado
-    Private ORDENVENTA As New e_OrdenVenta
-    Private LISTA_ORDENVENTA_MATERIAL As New List(Of e_OrdenVentaMaterial)
-    Private ORDENVENTA_MATERIAL As New e_OrdenVentaMaterial
     Private ORDENMATERIAL As New e_OrdenMaterial
     Private INVENTARIO As New e_Inventario
 
     Private olEstacionServicio As New l_EstacionServicio
-    Private sw_Documento As String
+    Private sw_Documento As String = ""
     Private sw_TipoPago As String 'Contado "1SI000000001", 
     Private sw_Lado As String
-    Private IdMaterial_Combustible As String
+    Private IdMaterial_Combustible As String, IdAlmacen_Combustible As String
     Private IdMoneda_Soles As String = "1CH01"
     Private TipoCambio As Double
     Private FechaOrden As Date
 
-    Private dORDENVENTA As New l_OrdenVenta
-    Private dORDENVENTAMATERIAL As New l_OrdenVentaMaterial
+    Private OV As New e_OrdenVenta, dORDENVENTA As New l_OrdenVenta
+    Private OV_DETALLE As New e_OrdenVentaMaterial, dORDENVENTAMATERIAL As New l_OrdenVentaMaterial, LISTA_ORDENVENTA_MATERIAL As New List(Of e_OrdenVentaMaterial)
     Private dORDENMATERIAL As New l_OrdenMaterial
     Private dMATERIALALMACEN As New l_MaterialAlmacen
     Private dMATERIAL As New l_Material
-    Private dORDEN As New l_Orden
+    Private OS As New e_Orden, LISTA_OS As New List(Of e_Orden), dORDEN As New l_Orden
 
     Private LISTA_MATERIAL As New List(Of e_Material)
-    Private ORDENSALIDA As New e_Orden
-    Private LISTA_ORDENSALIDA As New List(Of e_Orden)
     Private LISTA_ORDEN_MATERIAL As New List(Of e_OrdenMaterial)
     Private LISTA_INVENTARIO As New List(Of e_Inventario)
     Private REGISTROINVENTARIO As e_RegistroInventario
 
-    Private oeCombo As New e_Combo
-    Private olCombo As New l_Combo
+    Private oeCombo As New e_Combo, olCombo As New l_Combo
     Private loEmpresa As New List(Of e_Empresa)
     Private loEmpresaCliente As New List(Of e_Empresa)
 
@@ -76,17 +70,11 @@ Public Class frm_EstacionServicio
     Private oeVenta As e_Venta
     Private olVenta As l_Venta
 
-    Private oeDocumento As e_MovimientoDocumento
-    Private olDocumento As l_MovimientoDocumento
-    Private oeDetDocumento As e_DetalleDocumento
-    Private loDetDocumento As List(Of e_DetalleDocumento)
-    Private oeOrdDocumento As e_Orden_Documento
-    Private olOrdDocumento As l_Orden_Documento
-    Private loOrdDocumento As List(Of e_Orden_Documento)
+    Private MOVIMIENTODOCUMENTO As e_MovimientoDocumento, dMOVIMIENTODOCUMENTO As l_MovimientoDocumento
+    Private DETALLEDOCUMENTO As e_DetalleDocumento, LISTA_DETALLEDOCUMENTO As List(Of e_DetalleDocumento)
+    Private oeOrdDocumento As e_Orden_Documento, olOrdDocumento As l_Orden_Documento, loOrdDocumento As List(Of e_Orden_Documento)
 
-    Private oeCtaCtble As e_CuentaContable
-    Private olCtaCtable As l_CuentaContable
-    Private loCtaCtble As List(Of e_CuentaContable)
+    Private oeCtaCtble As e_CuentaContable, olCtaCtable As l_CuentaContable, loCtaCtble As List(Of e_CuentaContable)
 
     Private DTReferencia As Data.DataTable
     Private dtAux As Data.DataTable
@@ -97,7 +85,7 @@ Public Class frm_EstacionServicio
 
     'Private oeSaldoCtaCte As e_SaldoCuentaCorriente, olSaldoCtaCte As l_SaldoCuentaCorriente, leSaldoCtaCte As List(Of e_SaldoCuentaCorriente)
     Private oeTDDato As e_TablaDinamica_Dato, olTDDato As l_TablaDinamica_Dato, leTipoMovCtaCte As List(Of e_TablaDinamica_Dato)
-    Private oeEstado As e_EstadoOrden, olEstado As l_EstadoOrden, leEstado As List(Of e_EstadoOrden)
+    Private ESTADOORDEN As e_EstadoOrden, d_ESTADOORDEN As l_EstadoOrden, l_ESTADOORDEN As List(Of e_EstadoOrden)
 
     Private mdblCantidadPrecio As Double = 0
     Private mdblIGV As Double = gfc_ParametroValor("IGV")
@@ -107,28 +95,22 @@ Public Class frm_EstacionServicio
     Private ls_IdProv1 As String = "", ls_IdProv2 As String = "", ls_EstadoGenerado As String = ""
     Private ejecuta As Integer = 0
 
-    Private oeEmpresa As e_Empresa
-    Private olEmpresa As l_Empresa
+    Private EMPRESA As New e_Empresa, dEMPRESA As New l_Empresa
     'Private loEmpresa As List(Of e_Empresa)
 
-    Dim oeTipoPago As New e_TipoPago
-    Dim olTipoPago As New l_TipoPago
-    Dim llTipoPago As New List(Of e_TipoPago)
+    Private TIPOPAGO As New e_TipoPago, dTIPOPAGO As New l_TipoPago, LISTA_TIPOPAGO As New List(Of e_TipoPago)
 
     Private indFacturaBoleta As Integer = 0
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
 
-    Private oeCliente As e_Cliente
-    Private olCliente As l_Cliente
+    Private CLIENTE As New e_Cliente
+    Private olCliente As New l_Cliente
 
-    Private oeTipoDoc As e_TipoDocumento
-    Private olTipoDoc As l_TipoDocumento
+    Private TIPODOC As New e_TipoDocumento, dTIPODOC As New l_TipoDocumento
     Private oeMoneda As e_Moneda
 
-    Private oeAsientoModelo As e_AsientoModelo
-    Private olAsientoModelo As l_AsientoModelo
-    Private loAsientoModelo As List(Of e_AsientoModelo)
+    Private ASIENTOMODELO As New e_AsientoModelo, dASIENTOMODELO As New l_AsientoModelo, LISTA_ASIENTOMODELO As New List(Of e_AsientoModelo)
 #End Region
 
 #Region "Eventos"
@@ -137,6 +119,7 @@ Public Class frm_EstacionServicio
         Try
             olEstacionServicio = New l_EstacionServicio
             'Me.UltraGrid1.DataSource = olEstacionServicio.mt_Listar(New e_EstacionServicio With {.TipoOperacion = "N"})
+            mt_Inicializar()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -166,12 +149,27 @@ Public Class frm_EstacionServicio
                 btnLado4.Appearance.BackColor = Color.White
                 btnLado5.Appearance.BackColor = Color.White
                 btnLado6.Appearance.BackColor = Color.White
-            Case "Combustibles"
+            Case "Combustible"
                 btnDB5.Appearance.ForeColor = Color.Black
                 btnG84.Appearance.ForeColor = Color.Black
                 btnG90.Appearance.ForeColor = Color.Black
                 btnG95.Appearance.ForeColor = Color.Black
-
+            Case "Clean"
+                btnDocumento.Appearance.BackColor = Color.White
+                btnVale.Appearance.BackColor = Color.White
+                btnVarios.Appearance.BackColor = Color.White
+                btnContado.Appearance.BackColor = Color.White
+                btnCredito.Appearance.BackColor = Color.White
+                btnLado1.Appearance.ForeColor = Color.Black
+                btnLado2.Appearance.ForeColor = Color.Black
+                btnLado3.Appearance.ForeColor = Color.Black
+                btnLado4.Appearance.ForeColor = Color.Black
+                btnLado5.Appearance.ForeColor = Color.Black
+                btnLado6.Appearance.ForeColor = Color.Black
+                btnDB5.Appearance.ForeColor = Color.Black
+                btnG84.Appearance.ForeColor = Color.Black
+                btnG90.Appearance.ForeColor = Color.Black
+                btnG95.Appearance.ForeColor = Color.Black
         End Select
     End Sub
 
@@ -333,15 +331,15 @@ Public Class frm_EstacionServicio
 #Region "Metodos"
 
     Private Sub mt_Inicializar()
-        oeDocumento = New e_MovimientoDocumento
-        ORDENVENTA = New e_OrdenVenta
-        ORDENVENTA_MATERIAL = New e_OrdenVentaMaterial
+        MOVIMIENTODOCUMENTO = New e_MovimientoDocumento
+        OV = New e_OrdenVenta
+        OV_DETALLE = New e_OrdenVentaMaterial
         LISTA_ORDENVENTA_MATERIAL = New List(Of e_OrdenVentaMaterial)
         LISTA_MATERIAL = New List(Of e_Material)
         loEmpresa = New List(Of e_Empresa)
         cbgCliente.DataSource = loEmpresa
         cbgCliente.Text = String.Empty
-        LISTA_ORDENSALIDA = New List(Of e_Orden)
+        LISTA_OS = New List(Of e_Orden)
         LISTA_ORDEN_MATERIAL = New List(Of e_OrdenMaterial)
         decSubTotal.Value = 0
         decImpuesto.Value = 0
@@ -357,6 +355,7 @@ Public Class frm_EstacionServicio
         FechaOrden = ObtenerFechaServidor()
         IdMoneda_Soles = ""
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
+        PaintBotones("Clean")
     End Sub
 
     Private Sub mt_ControlBotoneria()
@@ -368,9 +367,9 @@ Public Class frm_EstacionServicio
         '            gmt_ControlBoton(1, 1)
         '        End If
         '    Case 1
-        If ORDENVENTA.Estado = "GENERADO" Or ORDENVENTA.Estado = "" Then
+        If OV.Estado = "GENERADO" Or OV.Estado = "" Then
             gmt_ControlBoton(0, 0, 0, 1, 1)
-        ElseIf ORDENVENTA.Estado = "EVALUADA" And Operacion = "Editar" Then
+        ElseIf OV.Estado = "EVALUADA" And Operacion = "Editar" Then
             gmt_ControlBoton(0, 0, 0, 1, 1)
         Else
             gmt_ControlBoton(0, 0, 0, 0, 1)
@@ -380,8 +379,8 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_AgregarDetalle()
         Try
-            ORDENVENTA_MATERIAL = New e_OrdenVentaMaterial
-            With ORDENVENTA_MATERIAL
+            OV_DETALLE = New e_OrdenVentaMaterial
+            With OV_DETALLE
                 PRODUCTO.Seleccion = False
                 .TipoOperacion = "I"
                 .PrefijoID = gs_PrefijoIdSucursal
@@ -407,14 +406,14 @@ Public Class frm_EstacionServicio
                 '.IdOrigen = cboOrigenViaje.Value
                 '.IdDestino = cboDestinoViaje.Value
             End With
-            If LISTA_ORDENVENTA_MATERIAL.Where(Function(i) i.IdMaterial = ORDENVENTA_MATERIAL.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
+            If LISTA_ORDENVENTA_MATERIAL.Where(Function(i) i.IdMaterial = OV_DETALLE.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
                 griOrdenComercialMaterial.DataBind()
                 mt_CalcularTotalOrden()
                 'mt_CombosGrilla(griOrdenComercialMaterial)
                 'griAlmacenMaterial.DataBind()
-                Throw New Exception("Material: " & ORDENVENTA_MATERIAL.Material & " ya Asignado a la Orden")
+                Throw New Exception("Material: " & OV_DETALLE.Material & " ya Asignado a la Orden")
             End If
-            LISTA_ORDENVENTA_MATERIAL.Add(ORDENVENTA_MATERIAL)
+            LISTA_ORDENVENTA_MATERIAL.Add(OV_DETALLE)
 
             'griAlmacenMaterial.DataBind()
             griOrdenComercialMaterial.DataBind()
@@ -451,7 +450,7 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
-    Private Function fc_ObtenerDescuento(IdEmpresa As String, IdProducto As String, Contado As Boolean) As Double
+    Private Function fc_ObtenerDescuento(IdEmpresa As String, IdProducto As String, TipoPago As String) As Double
         Dim Descuento As Double = 0
 
         Return Descuento
@@ -459,13 +458,13 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_GeneraDocumento()
         Try
-            oeDocumento = New e_MovimientoDocumento
-            With oeDocumento
+            MOVIMIENTODOCUMENTO = New e_MovimientoDocumento
+            With MOVIMIENTODOCUMENTO
                 .TipoOperacion = "I"
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
-                .IdClienteProveedor = ORDENVENTA.IdEmpresa
+                .IdClienteProveedor = OV.IdEmpresa
                 .IdTipoDocumento = cmbTipoDocumento.Value
                 .IdEstadoDocumento = "1CIX025"
                 .IdPeriodo = ""
@@ -518,37 +517,37 @@ Public Class frm_EstacionServicio
     Private Sub mt_EmitirDocumento(IndMensaje As Boolean)
         Try
             Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
-            oeCliente = New e_Cliente
-            oeCliente.TipoClienteProveedor = 1
-            oeCliente = olCliente.Obtener(oeCliente)
+            CLIENTE = New e_Cliente
+            CLIENTE.TipoClienteProveedor = 1
+            CLIENTE = olCliente.Obtener(CLIENTE)
 
             oeMoneda.Id = IdMoneda_Soles 'Revisar
 
-            oeTipoDoc = New e_TipoDocumento
-            oeTipoDoc.TipoOperacion = ""
-            oeTipoDoc.Id = cmbTipoDocumento.Value
-            oeTipoDoc = olTipoDoc.Obtener(oeTipoDoc)
+            TIPODOC = New e_TipoDocumento
+            TIPODOC.TipoOperacion = ""
+            TIPODOC.Id = cmbTipoDocumento.Value
+            TIPODOC = dTIPODOC.Obtener(TIPODOC)
 
             If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
 
                 mt_ListarCtaCtble(frm.Año1.Año)
 
                 Dim oeDoc As New e_MovimientoDocumento
-                oeDoc.Id = oeDocumento.Id : oeDoc.CargaCompleta = True
-                oeDoc = olDocumento.Obtener(oeDoc)
+                oeDoc.Id = MOVIMIENTODOCUMENTO.Id : oeDoc.CargaCompleta = True
+                oeDoc = dMOVIMIENTODOCUMENTO.Obtener(oeDoc)
 
                 oeDoc.IdPeriodo = frm.cboMes.Value : oeDoc.Ejercicio = frm.Año1.Año
-                oeDoc.Venta.TipoDoc = oeTipoDoc : oeDoc.Venta.Cliente = oeCliente : oeDoc.Venta.Moneda = oeMoneda
+                oeDoc.Venta.TipoDoc = TIPODOC : oeDoc.Venta.Cliente = CLIENTE : oeDoc.Venta.Moneda = oeMoneda
 
-                oeAsientoModelo = New e_AsientoModelo
-                oeAsientoModelo.Equivale = 1 : oeAsientoModelo.IdMoneda = oeMoneda.Id
+                ASIENTOMODELO = New e_AsientoModelo
+                ASIENTOMODELO.Equivale = 1 : ASIENTOMODELO.IdMoneda = oeMoneda.Id
 
-                If loAsientoModelo.Contains(oeAsientoModelo) Then
-                    oeAsientoModelo = loAsientoModelo.Item(loAsientoModelo.IndexOf(oeAsientoModelo))
-                    oeAsientoModelo.TipoOperacion = ""
-                    oeAsientoModelo.Ejercicio = oeDoc.FechaEmision.Year
-                    oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
-                    For Each _oeDet In oeAsientoModelo.leDetalle
+                If LISTA_ASIENTOMODELO.Contains(ASIENTOMODELO) Then
+                    ASIENTOMODELO = LISTA_ASIENTOMODELO.Item(LISTA_ASIENTOMODELO.IndexOf(ASIENTOMODELO))
+                    ASIENTOMODELO.TipoOperacion = ""
+                    ASIENTOMODELO.Ejercicio = oeDoc.FechaEmision.Year
+                    ASIENTOMODELO = dASIENTOMODELO.Obtener(ASIENTOMODELO)
+                    For Each _oeDet In ASIENTOMODELO.leDetalle
                         oeCtaCtble = New e_CuentaContable
                         oeCtaCtble.Cuenta = "12121" : oeCtaCtble.Equivale = 0
                         If loCtaCtble.Contains(oeCtaCtble) Then
@@ -651,18 +650,18 @@ Public Class frm_EstacionServicio
             If Not fc_LlenaObjeto() Then Return False
             'mt_ObtenerSaldoCtaCte()
             'If txtCodSaldoCtaCte.Tag.ToString.Trim = "" Then Throw New Exception("¡Ingrese Cuenta Corriente!")
-            If dORDENVENTA.Guardar(ORDENVENTA) Then
+            If dORDENVENTA.Guardar(OV) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
-                    If oeDocumento.Id.Trim <> "" Then
+                    If MOVIMIENTODOCUMENTO.Id.Trim <> "" Then
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes
                                 mt_EmitirDocumento(False)
                         End Select
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-                        oeDocumento = New e_MovimientoDocumento
-                        oeDocumento.TipoOperacion = ""
-                        oeDocumento.Id = ORDENVENTA.oeDocumento.Id
-                        oeDocumento = olDocumento.Obtener(oeDocumento)
+                        MOVIMIENTODOCUMENTO = New e_MovimientoDocumento
+                        MOVIMIENTODOCUMENTO.TipoOperacion = ""
+                        MOVIMIENTODOCUMENTO.Id = OV.oeDocumento.Id
+                        MOVIMIENTODOCUMENTO = dMOVIMIENTODOCUMENTO.Obtener(MOVIMIENTODOCUMENTO)
                         'Select Case oeDocumento.IdTipoDocumento
                         '    Case "1CIX001"
                         '        gmt_GeneraZip(oeDocumento.RutaImpresionXML)
@@ -723,7 +722,7 @@ Public Class frm_EstacionServicio
 
     Public Function fc_LlenaObjeto() As Boolean
         Try
-            With ORDENVENTA
+            With OV
                 .PrefijoID = gs_PrefijoIdSucursal
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
@@ -749,7 +748,7 @@ Public Class frm_EstacionServicio
                         .TipoOperacion = "A"
                         If cbDocumento.Checked = True Then : .IndFacturadoProducto = True : End If
                         fc_ValidarNumeroDoc()
-                        If oeDocumento.Id = "" Then
+                        If MOVIMIENTODOCUMENTO.Id = "" Then
                             If Not fc_EmitirDocumento() Then
                                 Return False
                             End If
@@ -809,7 +808,7 @@ Public Class frm_EstacionServicio
         Try
             If cbDocumento.Checked Then
                 mt_GeneraDocumento()
-                ORDENVENTA.oeDocumento = oeDocumento
+                OV.oeDocumento = MOVIMIENTODOCUMENTO
             Else
                 Select Case MessageBox.Show("¿Desea Guardar la Orden sin Documento?", "Mensaje del Sistema",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
@@ -825,18 +824,18 @@ Public Class frm_EstacionServicio
 
     Private Function fc_GenerarOrdenSalida() As e_Orden
         Try
-            ORDENSALIDA = New e_Orden
-            With ORDENSALIDA
+            OS = New e_Orden
+            With OS
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text
                 .TipoOperacion = "I"
                 .TipoReferencia = "ORDEN VENTA"
-                .Referencia = ORDENVENTA.OrdenComercial
+                .Referencia = OV.OrdenComercial
                 .TipoCambio = TipoCambioCompraVenta(ObtenerFechaServidor) ' decTipoCambio.Value
-                .IdEmpresa = ORDENVENTA.IdEmpresa
+                .IdEmpresa = OV.IdEmpresa
                 .IdMovimientoInventario = "1CIX006"
-                .IdMoneda = ORDENVENTA.IdMoneda
+                .IdMoneda = OV.IdMoneda
                 .IdEstadoOrden = "1CIX025"
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
@@ -848,7 +847,7 @@ Public Class frm_EstacionServicio
                 With ORDENMATERIAL
                     .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdSucursal = gs_PrefijoIdSucursal
-                    .UsuarioCreacion = ORDENSALIDA.UsuarioCreacion
+                    .UsuarioCreacion = OS.UsuarioCreacion
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .IdMaterial = oe.IdMaterial
                     .IdUnidadMedida = oe.IdUnidadMedida
@@ -858,42 +857,20 @@ Public Class frm_EstacionServicio
                 End With
                 LISTA_ORDEN_MATERIAL.Add(ORDENMATERIAL)
             Next
-            ORDENSALIDA.Total = LISTA_ORDEN_MATERIAL.Sum(Function(i) i.PrecioUnitario * i.CantidadMaterial)
-            ORDENSALIDA.lstOrdenMaterial.AddRange(LISTA_ORDEN_MATERIAL)
-            Return ORDENSALIDA
+            OS.Total = LISTA_ORDEN_MATERIAL.Sum(Function(i) i.PrecioUnitario * i.CantidadMaterial)
+            OS.lstOrdenMaterial.AddRange(LISTA_ORDEN_MATERIAL)
+            Return OS
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    'Private Sub cbgClienteAlterno_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgClienteAlterno.InitializeLayout
-    '    Me.cbgClienteAlterno.ValueMember = "Id"
-    '    Me.cbgClienteAlterno.DisplayMember = "Nombre"
-    '    With cbgClienteAlterno.DisplayLayout.Bands(0)
-    '        .Columns("Id").Hidden = True
-    '        .Columns("TipoEmpresa").Hidden = True
-    '        .Columns("Codigo").Hidden = True
-    '        .Columns("IdDireccionTanqueo").Hidden = True
-    '        .Columns("Morosidad").Hidden = True
-    '        .Columns("Credito").Hidden = True
-    '        .Columns("IndNivelComercial").Hidden = True
-    '        .Columns("Moneda").Hidden = True
-    '        .Columns("IndClasificacion").Hidden = True
-    '        .Columns("UsuarioCreacion").Hidden = True
-    '        .Columns("IndCategoriaEmpresaSGI").Hidden = True
-    '        '.Columns("Activo").Hidden = True
-    '        .Columns("Ruc").Header.Caption = "N° RUC"
-    '        .Columns("Ruc").Width = 80
-    '        .Columns("Nombre").Width = 250
-    '    End With
-    'End Sub
-
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)
         Try
-            loDetDocumento = New List(Of e_DetalleDocumento)
+            LISTA_DETALLEDOCUMENTO = New List(Of e_DetalleDocumento)
             For Each oe As e_OrdenVentaMaterial In LISTA_ORDENVENTA_MATERIAL
-                oeDetDocumento = New e_DetalleDocumento
-                With oeDetDocumento
+                DETALLEDOCUMENTO = New e_DetalleDocumento
+                With DETALLEDOCUMENTO
                     .TipoOperacion = "I"
                     .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                     .IdSucursal = gs_PrefijoIdSucursal
@@ -910,9 +887,9 @@ Public Class frm_EstacionServicio
                     .PrecioUnitarioSinImp = Math.Round(IIf(oe.IndImpuesto, (oe.PrecioUnitario - oe.Dscto) / (1 + mdblIGV), oe.PrecioUnitario - oe.Dscto), 4, MidpointRounding.AwayFromZero)
                     .UsuarioCreacion = gUsuarioSGI.Id
                 End With
-                loDetDocumento.Add(oeDetDocumento)
+                LISTA_DETALLEDOCUMENTO.Add(DETALLEDOCUMENTO)
             Next
-            Return loDetDocumento
+            Return LISTA_DETALLEDOCUMENTO
         Catch ex As Exception
             Throw ex
         End Try
@@ -923,7 +900,7 @@ Public Class frm_EstacionServicio
             oeOrdDocumento = New e_Orden_Documento
             loOrdDocumento = New List(Of e_Orden_Documento)
             With oeOrdDocumento
-                .IdOrden = ORDENVENTA.Id
+                .IdOrden = OV.Id
                 .TipoOrden = 2
                 .TipoOperacion = "I"
                 .TipoExistencia = 1
@@ -937,87 +914,104 @@ Public Class frm_EstacionServicio
     End Function
 
     Private Sub btnDB5_Click(sender As Object, e As EventArgs) Handles btnDB5.Click
-        PaintBotones("Combustible")
-        btnDB5.Appearance.ForeColor = Color.White
-        IdMaterial_Combustible = "1CH000007256"
-        mt_CargarObjeto_Seleccionado()
+        Procesar_BotonCombustible(btnDB5.Text)
     End Sub
 
     Private Sub btnG84_Click(sender As Object, e As EventArgs) Handles btnG84.Click
-        PaintBotones("Combustible")
-        btnG84.Appearance.ForeColor = Color.White
-        IdMaterial_Combustible = "1CH000000147"
-        mt_CargarObjeto_Seleccionado()
+        Procesar_BotonCombustible(btnG84.Text)
     End Sub
 
     Private Sub btnG90_Click(sender As Object, e As EventArgs) Handles btnG90.Click
-        PaintBotones("Combustible")
-        btnG90.Appearance.ForeColor = Color.White
-        IdMaterial_Combustible = "1CH000000148"
-        mt_CargarObjeto_Seleccionado()
+        Procesar_BotonCombustible(btnG90.Text)
     End Sub
 
     Private Sub btnG95_Click(sender As Object, e As EventArgs) Handles btnG95.Click
-        PaintBotones("Combustible")
-        btnG95.Appearance.ForeColor = Color.White
-        IdMaterial_Combustible = "1CH000000149"
-        mt_CargarObjeto_Seleccionado()
+        Procesar_BotonCombustible(btnG95.Text)
     End Sub
 
-    Private Sub mt_CargarObjeto_Seleccionado()
-        Try
-            LISTA_MATERIAL = dMATERIAL.Listar(New e_Material With {.Id = IdMaterial_Combustible})
-            For Each oe As e_Material In LISTA_MATERIAL '.Where(Function(i) i.Seleccion = True).ToList
-                PRODUCTO = oe
-            Next
-            decPrecio.Value = PRODUCTO.Precio
-            decDescuento.Value = fc_ObtenerDescuento(cbgCliente.Value, IdMaterial_Combustible, sw_TipoPago)
-            'Poner el foco en el decCantidad
-        Catch ex As Exception
-            Throw ex
-        End Try
+    Private Sub Procesar_BotonCombustible(Titulo As String)
+        PaintBotones("Combustible")
+        Select Case Titulo
+            Case "DB5" 'DB5
+                btnDB5.Appearance.ForeColor = Color.White
+                IdMaterial_Combustible = "1CH000007256"
+                IdAlmacen_Combustible = ""
+            Case "G84" 'G84
+                btnG84.Appearance.ForeColor = Color.White
+                IdMaterial_Combustible = "1CH000000147"
+                IdAlmacen_Combustible = ""
+            Case "G90" 'G90
+                btnG90.Appearance.ForeColor = Color.White
+                IdMaterial_Combustible = "1CH000000148"
+                IdAlmacen_Combustible = ""
+            Case "G95" 'G95
+                btnG95.Appearance.ForeColor = Color.White
+                IdMaterial_Combustible = "1CH000000149"
+                IdAlmacen_Combustible = ""
+        End Select
+
+        'Cargar Producto
+        PRODUCTO = dMATERIAL.Obtener(New e_Material With {.Id = IdMaterial_Combustible})
+        'LISTA_MATERIAL = dMATERIAL.Listar(New e_Material With {.Id = IdMaterial_Combustible})
+        'For Each oe As e_Material In LISTA_MATERIAL '.Where(Function(i) i.Seleccion = True).ToList
+        '    PRODUCTO = oe
+        'Next
+        decPrecio.Value = PRODUCTO.Precio
+        decDescuento.Value = fc_ObtenerDescuento(cbgCliente.Value, IdMaterial_Combustible, sw_TipoPago)
+    End Sub
+
+    Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
+        sw_Documento = "DOC"
+        PaintBotones("Documento") : btnDocumento.Appearance.BackColor = Color.Blue
+    End Sub
+
+    Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnVale.Click
+        sw_Documento = "VALE"
+        PaintBotones("Documento") : btnDocumento.Appearance.BackColor = Color.Blue
+    End Sub
+
+    Private Sub btnVarios_Click(sender As Object, e As EventArgs) Handles btnVarios.Click
+        sw_Documento = "OTROS"
+        PaintBotones("Documento") : btnDocumento.Appearance.BackColor = Color.Blue
     End Sub
 
     Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
-        With btnLado1
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado1.Text)
+        btnLado1.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub btnLado2_Click(sender As Object, e As EventArgs) Handles btnLado2.Click
-        With btnLado2
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado2.Text)
+        btnLado2.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub btnLado3_Click(sender As Object, e As EventArgs) Handles btnLado3.Click
-        With btnLado3
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado3.Text)
+        btnLado3.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub btnLado4_Click(sender As Object, e As EventArgs) Handles btnLado4.Click
-        With btnLado4
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado4.Text)
+        btnLado4.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub btnLado5_Click(sender As Object, e As EventArgs) Handles btnLado5.Click
-        With btnLado5
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado5.Text)
+        btnLado5.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
-        With btnLado6
-            sw_Lado = .Text
-            ValidarSurtidor() : PaintBotones("Lado") : .Appearance.BackColor = Color.Green
-        End With
+        Procesar_Lado(btnLado6.Text)
+        btnLado6.Appearance.BackColor = Color.DimGray
+    End Sub
+
+    Private Sub Procesar_Lado(Lado As String)
+        Try
+            sw_Lado = Lado
+            ValidarSurtidor() : PaintBotones("Lado")
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs)
@@ -1045,8 +1039,8 @@ Public Class frm_EstacionServicio
         Try
             oeOrdDocumento = New e_Orden_Documento
             With oeOrdDocumento
-                .IdDocumento = oeDocumento.Id.Trim
-                .IdTipoDocumento = oeDocumento.IdTipoDocumento
+                .IdDocumento = MOVIMIENTODOCUMENTO.Id.Trim
+                .IdTipoDocumento = MOVIMIENTODOCUMENTO.IdTipoDocumento
                 .IdOrden = String.Empty
                 .TipoOrden = 1
                 .TipoOperacion = "I"
@@ -1155,8 +1149,8 @@ Public Class frm_EstacionServicio
             .Columns("IndCategoriaEmpresaSGI").Hidden = True
             '.Columns("Activo").Hidden = True
             .Columns("Ruc").Header.Caption = "N° RUC"
-            .Columns("Ruc").Width = 80
-            .Columns("Nombre").Width = 250
+            .Columns("Ruc").Width = 100
+            .Columns("Nombre").Width = 500
         End With
     End Sub
 
@@ -1186,4 +1180,17 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
+    Private Sub cbgCliente_Leave(sender As Object, e As EventArgs) Handles cbgCliente.Leave
+        Try
+            If Not cbgCliente.Value = "" Then
+                EMPRESA.Id = cbgCliente.Value
+                loEmpresa = dEMPRESA.Listar(EMPRESA)
+                For Each Item As e_Empresa In loEmpresa
+                    txtDireccionFiscal.Text = Item.DireccionFiscal
+                Next
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class
