@@ -13,12 +13,13 @@ Public Class frm_CierreTurno
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_OrdenVenMaterial = Nothing
+    Private Shared instancia As frm_CierreTurno = Nothing
     Private Shared Operacion As String
 
     Private dTURNO As New l_CierreTurno
     Private TURNO As New e_CierreTurno
     Private TURNO_DETALLE As New e_CierreTurno_Detalle
+
 
     ' Asiento Modelo
     Private REFERENCIA As New e_AsientoModelo_Referencia
@@ -26,7 +27,7 @@ Public Class frm_CierreTurno
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_OrdenVenMaterial()
+            instancia = New frm_CierreTurno()
             Operacion = "Inicializa"
         End If
         instancia.Activate()
@@ -145,7 +146,7 @@ Public Class frm_CierreTurno
     End Sub
 
     Private Sub mt_Inicializar()
-
+        mt_CargarDetalles()
     End Sub
 
     Private Sub mt_Listar()
@@ -351,24 +352,6 @@ Public Class frm_CierreTurno
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
-
-    'Private Sub mt_CombosGrillaPrincipal(Grilla As UltraGrid)
-    '    Try
-    '        With Grilla
-    '            For j As Integer = 0 To .Rows.Count - 1
-    '                Dim strIdTrabajadorVendedor As String = .Rows(j).Cells("IdVendedorTrabajador").Value.ToString
-    '                gfc_CombroGrillaCelda("IdVendedorTrabajador", "Nombre", j, Grilla, olCombo.ComboGrilla(ListVendedores.Where(Function(i) i.Id = strIdTrabajadorVendedor).ToList))
-    '            Next
-    '            .DataBind()
-    '        End With
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-    'End Sub
-
-    Private Sub frm_CierreTurno_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
 #End Region

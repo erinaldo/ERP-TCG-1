@@ -13,12 +13,12 @@ Public Class frm_Calibraciones
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_OrdenVenMaterial = Nothing
+    Private Shared instancia As frm_Calibraciones = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_OrdenVenMaterial()
+            instancia = New frm_Calibraciones()
             Operacion = "Inicializa"
         End If
         instancia.Activate()
