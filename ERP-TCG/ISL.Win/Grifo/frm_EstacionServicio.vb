@@ -781,6 +781,7 @@ Public Class frm_EstacionServicio
                 .SubTotal = decSubTotal.Value
                 .Impuesto = decImpuesto.Value
                 .TipoCompra = 0
+                .IdTipoVenta = "VENTA_COMBUSTIBLE"
             End With
             Return True
         Catch ex As Exception
@@ -833,7 +834,7 @@ Public Class frm_EstacionServicio
                 .TipoReferencia = "ORDEN VENTA"
                 .Referencia = OV.OrdenComercial
                 .TipoCambio = TipoCambioCompraVenta(ObtenerFechaServidor) ' decTipoCambio.Value
-                .IdEmpresa = OV.IdEmpresa
+                .IdEmpresaSis = OV.IdEmpresa
                 .IdMovimientoInventario = "1CIX006"
                 .IdMoneda = OV.IdMoneda
                 .IdEstadoOrden = "1CIX025"

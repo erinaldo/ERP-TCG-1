@@ -2233,6 +2233,7 @@ Public Class frm_Calibraciones
                 .SubTotal = decSubTotal.Value
                 .Impuesto = decImpuesto.Value
                 .TipoCompra = 0
+                .IdTipoVenta = "CALIBRACION"
             End With
             Return True
         Catch ex As Exception
@@ -2285,7 +2286,7 @@ Public Class frm_Calibraciones
                 .TipoReferencia = "ORDEN VENTA"
                 .Referencia = CALIBRACION.OrdenComercial
                 .TipoCambio = decTipoCambio.Value
-                .IdEmpresa = CALIBRACION.IdEmpresa
+                .IdEmpresaSis = CALIBRACION.IdEmpresa
                 .IdMovimientoInventario = "1CIX006"
                 .IdMoneda = CALIBRACION.IdMoneda
                 .IdEstadoOrden = "1CIX025"
