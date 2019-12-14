@@ -15,6 +15,11 @@ Imports Microsoft.Office.Interop
 Public Class frm_SueldoTrabajador
     Inherits frm_MenuPadre
 
+    Private olCombo As New l_Combo
+    Private ListaCentroCosto As New List(Of e_Combo)
+    Private oeCombo As New e_Combo
+    Private DatosCC As New DataTable
+
 #Region "Instancia"
 
     Public Sub New(Accion As String, oeSueTra As e_SueldoTrabajador, oeTrabAux As e_Trabajador)
@@ -729,6 +734,8 @@ Public Class frm_SueldoTrabajador
 
                 ConfiguraGrilla(griSueldoTrabajador, 1)
 
+                CrearComboGrid("IdCentroCosto", "Nombre", griSueldoTrabajador, DatosCC, True)
+
             End With
         Catch ex As Exception
             Throw ex
@@ -762,7 +769,7 @@ Public Class frm_SueldoTrabajador
                 .DataSource = leHistSuelTrab
 
                 ConfiguraGrilla(griHistorial, 2)
-
+                CrearComboGrid("IdCentroCosto", "Nombre", griHistorial, DatosCC, True)
             End With
         Catch ex As Exception
             Throw ex
@@ -789,7 +796,7 @@ Public Class frm_SueldoTrabajador
                 End If
 
                 ConfiguraGrilla(griImporta, 3)
-
+                CrearComboGrid("IdCentroCosto", "Nombre", griImporta, DatosCC, True)
                 If .Rows.Count > 0 Then
                     For Each Fila In .Rows
                         If Fila.Cells("IdTrabajador").Value.ToString <> "" Then
@@ -863,6 +870,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.MaxRowScrollRegions = 1
 
             End With
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -1058,14 +1066,11 @@ Public Class frm_SueldoTrabajador
     End Sub
 
     Private Sub GastoFuncion()
-        Dim oeTablaContableDet As New e_TablaContableDet
-        Dim olTablaContableDet As New l_TablaContableDet
-        Dim leTabla As New List(Of e_TablaContableDet)
-        oeTablaContableDet.TipoOperacion = "N"
-        oeTablaContableDet.Nombre = "GASTO FUNCION" 'Tipo de Centro Costo
-        oeTablaContableDet.Activo = True
-        oeTablaContableDet.Logico2 = 1
-        leTabla.AddRange(olTablaContableDet.Listar(oeTablaContableDet))
-        LlenarComboMaestro(cboGastonFuncion, leTabla, 0)
+        oeCombo = New e_Combo
+        ListaCentroCosto = New List(Of e_Combo)
+        oeCombo.Nombre = "GASTO FUNCION" 'Tipo de Centro Costo
+        ListaCentroCosto.AddRange(olCombo.Listar(oeCombo))
+        LlenarComboMaestro(cboGastonFuncion, ListaCentroCosto, 0)
+        DatosCC = olCombo.ComboGrilla(ListaCentroCosto)
     End Sub
 End Class
