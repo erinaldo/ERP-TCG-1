@@ -572,6 +572,7 @@ Module m_Funciones
     Public Const gVSTransporte As String = "PRESTACION DE SERVICIO DE TRANSPORTE"
     Public Const gVSTracto As String = "VENTAS DE UNIDADES DE TRANSPORTES"
     Public Const gVSOtros As String = "OTROS SERVICIOS PRESTADOS"
+    Public Const gVSMercaderia As String = "VENTA DE MERCADERIA"
 
     'Variables Globales para Cuentas Contables
     Public Const gCC16531 As String = "16531"
@@ -746,6 +747,7 @@ Module m_Funciones
     Public FlotaPublic As List(Of e_Combo)
     Public TipoVehiculoPublic As List(Of e_Combo)
     Public CentroPublic As List(Of e_Combo)
+    Public UsuarioCentroPublic As List(Of e_Combo)
     Public CentroCostoPublic As List(Of e_Combo)
     Public MotivoDocumentoPublic As List(Of e_Combo)
     Public TrabajadorPublic As List(Of e_Combo)
@@ -1171,17 +1173,19 @@ Module m_Funciones
 
         Dim version As String = String.Empty
         '@0003
-        'If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
-        '    version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-        'Else
-        '    version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
-        'End If
+        If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
+            'version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
+            version = String.Format(My.Application.Deployment.CurrentVersion.ToString)
+        Else
+            'version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
+            version = String.Format(My.Application.Info.Version.ToString)
+        End If
         'Return version
         '@0003 Inicio
-        Dim oeEmpresaSistemas As New e_EmpresaSistemas
-        oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
-        version = oeEmpresaSistemas.VersionSis.Trim
-        gs_VersionSis = version
+        'Dim oeEmpresaSistemas As New e_EmpresaSistemas
+        'oeEmpresaSistemas = olEmpresaSistema.Obtener(oeEmpresaSistemas)
+        'version = oeEmpresaSistemas.VersionSis.Trim
+        gs_VersionSis = version.Trim
         Return version
         '@0003 Fin
     End Function
@@ -1206,10 +1210,11 @@ Module m_Funciones
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public Function ObtenerCentro() As e_Centro
+    Public Function ObtenerCentro(PrefijoId As String) As e_Centro
         Dim oecentro As New e_Centro
         Dim olCentro As New l_Centro
         oecentro.TipoOperacion = "2"
+        oecentro.PrefijoID = PrefijoId
         oecentro = olCentro.Obtener(oecentro)
         Return oecentro
     End Function
@@ -2691,7 +2696,7 @@ Module m_Funciones
     Public Function GeneraImagen(ByVal archivo As String, Optional ByVal RutaPersonalizada As Boolean = False, Optional ByVal RutaImagen As String = "", Optional ByVal archivoObligatorio As Boolean = False) As System.Drawing.Bitmap
         Try
             If RutaPersonalizada = False Then
-                Dim olDatosConfiguracion As New l_Configuracion
+                'Dim olDatosConfiguracion As New l_Configuracion '@0001
                 'RutaImagen = olDatosConfiguracion.RutaImagen() '@0001
                 RutaImagen = Path.Combine(Application.StartupPath, "Imagenes") '@0001
             End If
@@ -3875,24 +3880,32 @@ Module m_Funciones
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function Lugar() As String
-        Dim Prefijo As New l_Configuracion
+        'Dim Prefijo As New l_Configuracion
         'Select Case Prefijo.PrefijoID '@0001
-        Select Case gs_PrefijoIdSucursal '@0001
-            Case "1CH"
-                Lugar = "sede Chiclayo"
-            Case "1PY"
-                Lugar = "sede Pacasmayo"
-            Case "1LI"
-                Lugar = "sede Ransa Callao"
-            Case "1SA"
-                Lugar = "sede Santa Anita"
-            Case "1LU"
-                Lugar = "sede Lurín"
-            Case "1PI"
-                Lugar = "sede Piura"
-            Case Else
-                Lugar = "Area de Sistemas"
-        End Select
+        'Select Case gs_PrefijoIdSucursal '@0001
+        '    Case "1CH"
+        '        Lugar = "sede Chiclayo"
+        '    Case "1PY"
+        '        Lugar = "sede Pacasmayo"
+        '    Case "1LI"
+        '        Lugar = "sede Ransa Callao"
+        '    Case "1SA"
+        '        Lugar = "sede Santa Anita"
+        '    Case "1LU"
+        '        Lugar = "sede Lurín"
+        '    Case "1PI"
+        '        Lugar = "sede Piura"
+        '    Case Else
+        '        Lugar = "Area de Sistemas"
+        'End Select '@0001 Fin Ini
+        Dim oecentro = New e_Centro
+        Dim olcentro = New l_Centro
+        oecentro.TipoOperacion = "3"
+        oecentro.Abreviatura = gs_PrefijoIdSucursal
+        oecentro.PrefijoID = gs_PrefijoIdSucursal
+        oecentro = olcentro.Obtener(oecentro)
+        Lugar = oecentro.Nombre.Trim
+        '@0001 Fin
         Return Lugar
     End Function
 
@@ -5867,7 +5880,7 @@ Module m_Funciones
 #End Region
 
     Public Function RetornarDia(x As Integer) As String
-        Dim dias() As String = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
+        Dim dias() As String = {"Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"}
         Return dias(x)
     End Function
 

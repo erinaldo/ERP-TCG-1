@@ -1530,7 +1530,7 @@ Public Class frm_OrdenCompra
             oeCentro = New e_Centro
             oeCentro.Activo = True
             LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
-            cboCentro.Value = ObtenerCentro.Id
+            cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
             cboCentro.Enabled = False
 
             Dim lstProveedor As New List(Of e_Proveedor)
@@ -2606,7 +2606,7 @@ Public Class frm_OrdenCompra
             oeMat.Id = IdMaterial
             oeMat.TipoOperacion = "5"
             oeMat.Tipo = 1
-            oeMat.IdCentro = ObtenerCentro.Abreviatura
+            oeMat.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Abreviatura
             oeMat = olMaterial.Obtener_(oeMat)
             With oeOrdenCompraMaterial
                 .TipoOperacion = "I"
@@ -2737,6 +2737,29 @@ Public Class frm_OrdenCompra
                 MostrarTabs(0, ficOrdenCompra, 2)
                 ActualizaRegistroEditado(RegistroEditado, IdRegistroEditado)
             End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub GenerarVenta()
+        Try
+            If griListaOrdenCompra.Selected.Rows.Count = 0 Then Throw New Exception("Seleccione Registro")
+            oeOrdenCompra = New e_OrdenCompra
+            oeOrdenCompra.Id = griListaOrdenCompra.ActiveRow.Cells("Id").Value.ToString
+            oeOrdenCompra.TipoOperacion = "1"
+            oeOrdenCompra.IdMoneda = "CERO"
+            oeOrdenCompra.IdProveedor = "CERO"
+            oeOrdenCompra.IdEstadoOrden = "CERO"
+            oeOrdenCompra.IdTipoPago = "CERO"
+            oeOrdenCompra = olOrdenCompra.Obtener(oeOrdenCompra)
+            Dim frm As New frm_OrdenVenMaterial
+            frm = frm.getInstancia()
+            With frm
+                .MdiParent = frm_Menu
+                .mt_AsociarCompra(oeOrdenCompra)
+                .Show()
+            End With
         Catch ex As Exception
             Throw ex
         End Try
@@ -3787,6 +3810,14 @@ Public Class frm_OrdenCompra
 
     Private Sub TSM_Guia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_Guia.Click
         GenerarDocumento("GUIA")
+    End Sub
+
+    Private Sub btn_GenerarVenta_Click(sender As Object, e As EventArgs) Handles btn_GenerarVenta.Click
+        Try
+            GenerarVenta()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
     End Sub
 
     Private Sub TSM_Boleta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_Boleta.Click

@@ -131,7 +131,7 @@ Public Class frm_ReporteCajaDiario
                 With oeCierreCaja
                     .TipoOperacion = "I"
                     .Monto = Me.decSaldo.Value
-                    .IdCentro = ObtenerCentro.Id
+                    .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                     .IdCaja = IdCajaUsuario
                     .FechaCreacion = fecFechaFin.Value
                     .UsuarioCreacion = gUsuarioSGI.Id

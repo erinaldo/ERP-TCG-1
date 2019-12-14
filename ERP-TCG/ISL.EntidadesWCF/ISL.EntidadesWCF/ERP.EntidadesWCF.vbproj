@@ -279,6 +279,7 @@
     <Content Include="General\e_PeajeTarifa.svc" />
     <Content Include="General\e_RecargaPeaje.svc" />
     <Content Include="General\e_RecargaPeajeDetalle.svc" />
+    <Content Include="General\e_ReferenciaAsociada.svc" />
     <Content Include="General\e_RendimientoCombustible.svc" />
     <Content Include="General\e_RutaPeaje.svc" />
     <Content Include="General\e_TablaDinamica_Dato.svc" />
@@ -1268,6 +1269,9 @@
     <Compile Include="General\e_RecargaPeajeDetalle.svc.vb">
       <DependentUpon>e_RecargaPeajeDetalle.svc</DependentUpon>
     </Compile>
+    <Compile Include="General\e_ReferenciaAsociada.svc.vb">
+      <DependentUpon>e_ReferenciaAsociada.svc</DependentUpon>
+    </Compile>
     <Compile Include="General\e_RutaPeaje.svc.vb">
       <DependentUpon>e_RutaPeaje.svc</DependentUpon>
     </Compile>
@@ -1329,6 +1333,7 @@
     <Compile Include="General\Ie_PeajeTarifa.vb" />
     <Compile Include="General\Ie_RecargaPeaje.vb" />
     <Compile Include="General\Ie_RecargaPeajeDetalle.vb" />
+    <Compile Include="General\Ie_ReferenciaAsociada.vb" />
     <Compile Include="General\Ie_RendimientoCombustible.vb" />
     <Compile Include="General\Ie_RutaPeaje.vb" />
     <Compile Include="General\Ie_TablaDinamica_Dato.vb" />

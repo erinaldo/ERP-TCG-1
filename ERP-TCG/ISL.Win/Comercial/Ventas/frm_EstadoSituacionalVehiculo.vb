@@ -1221,7 +1221,7 @@ Public Class frm_EstadoSituacionalVehiculo
             loDespacho = New List(Of e_Despacho)
             'Llenar Combo Centro Filtro
             LlenarComboMaestro(cboCentroFiltro, CentroPublic, 0)
-            cboCentroFiltro.Value = ObtenerCentro().Id
+            cboCentroFiltro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
             'Llenar Combo Estado
             Dim olEstado As New l_Estado
             loEstados = New List(Of e_Estado)
@@ -2024,7 +2024,7 @@ Public Class frm_EstadoSituacionalVehiculo
                     With oeDespacho
                         .TipoOperacion = "I"
                         .Codigo = txtCodigo.Text.Trim()
-                        .IdCentro = ObtenerCentro().Id
+                        .IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                         .IdEstado = cboEstado.Value.ToString().Trim()
                         .Fecha = dtpFecha.Value.Date
                         .Glosa = txtGlosa.Text.Trim()

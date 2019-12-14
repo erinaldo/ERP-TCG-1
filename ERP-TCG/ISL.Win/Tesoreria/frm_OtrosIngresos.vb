@@ -117,7 +117,7 @@ Public Class frm_OtrosIngresos
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(IdCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(IdCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 If GuardarIE() Then
                     MostrarTabs(0, ficOtrosIngresos, 0)
                     Consultar(True)
@@ -536,7 +536,7 @@ Public Class frm_OtrosIngresos
                 oeOtrosIngresos.IdConceptoIngresos = cboConcepto.Value
                 oeOtrosIngresos.IdCuentaBancaria = cboCuentaBancaria.Value
                 oeOtrosIngresos.TipoCambio = DecTC.Value
-                oeOtrosIngresos.IdCentro = ObtenerCentro.Id
+                oeOtrosIngresos.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                 oeOtrosIngresos.UsuarioCreacion = gUsuarioSGI.Id
                 oeOtrosIngresos.IdCuentaCorriente = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
                 oeOtrosIngresos.IdTrabajador = cboTrabajadores.Value

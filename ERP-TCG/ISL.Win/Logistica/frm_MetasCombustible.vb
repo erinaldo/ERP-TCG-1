@@ -174,6 +174,7 @@ Public Class frm_MetasCombustible
     Private Sub frm_MetasCombustible_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         gf_AsignarEventoSeleccionarTexto(Me)
         gmt_ConfigurarEventoKeyEnter_Tab(Me)
+        tcMetas.Tabs(1).Enabled = False
         LlenaComboMarcaTracto()
         LlenaComboMarcaCarreta()
     End Sub
@@ -206,7 +207,7 @@ Public Class frm_MetasCombustible
     Public Sub LlenaComboMarcaTracto()
         Try
             oeMarca = New e_Marca
-            oeMarca.TipoMarca = 1
+            oeMarca.TipoMarca = 0 '@0001  -  1
             oeMarca.Activo = True
             LlenarComboMaestro(cmbMarcaTracto, olMarca.Listar(oeMarca), -1)
         Catch ex As Exception
@@ -217,7 +218,7 @@ Public Class frm_MetasCombustible
     Public Sub LlenaComboMarcaCarreta()
         Try
             oeMarca = New e_Marca
-            oeMarca.TipoMarca = 1
+            oeMarca.TipoMarca = 0 ' @0001  -  1
             oeMarca.Activo = True
             LlenarComboMaestro(cmbMarcaCarreta, olMarca.Listar(oeMarca), -1)
         Catch ex As Exception

@@ -394,6 +394,18 @@
     <Compile Include="Comercial\Compras\frm_Requerimiento.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Ventas\frm_ActualizarAlmacen.Designer.vb">
+      <DependentUpon>frm_ActualizarAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_ActualizarAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_GRR_Venta.Designer.vb">
+      <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_GRR_Venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.Designer.vb">
       <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>
     </Compile>
@@ -5765,6 +5777,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MaterialAlmacen.datasource" />
     <None Include="packages.config" />
     <None Include="Service References\WCF_CpeIndu\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
@@ -5930,6 +5943,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Compras\frm_Requerimiento.resx">
       <DependentUpon>frm_Requerimiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_ActualizarAlmacen.resx">
+      <DependentUpon>frm_ActualizarAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_GRR_Venta.resx">
+      <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_OrdenVenMaterial.resx">
       <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>

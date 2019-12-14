@@ -95,7 +95,7 @@ Public Class frm_PrestamosCuenta
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro.Id, gUsuarioSGI.IdTrabajador) Then
+            If ValidaUsuarioCajaCentro(idCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
                 Select Case ficPrestamosCuenta.SelectedTab.Index
                     Case 1
                         If GuardarIngreso() Then
@@ -230,7 +230,7 @@ Public Class frm_PrestamosCuenta
                 oePrestamosCuenta.FechaCreacion = ObtenerFechaServidor()
                 oePrestamosCuenta.loAsientoModelo = New List(Of e_AsientoModelo)
                 ObtenerAsientoModelo(oePrestamosCuenta.IdConceptoIngresos, oePeriodo.Ejercicio)
-                oePrestamosCuenta.IdCentro = ObtenerCentro.Id
+                oePrestamosCuenta.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
                 oePrestamosCuenta.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olPrestamosCuenta.Guardar(oePrestamosCuenta) Then
                     If oePrestamosCuenta.IndIngEgr = "I" Then
@@ -400,7 +400,7 @@ Public Class frm_PrestamosCuenta
         leCentro.Add(oe)
         leCentro.AddRange(olCentro.Listar(oeCentro))
         LlenarCombo(cboCentroL, "Nombre", leCentro, 0)
-        cboCentroL.Value = ObtenerCentro.Id
+        cboCentroL.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
     End Sub
 
     Public Sub EliminarPrestamo()

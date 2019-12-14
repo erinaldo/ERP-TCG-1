@@ -157,7 +157,7 @@ Public Class frm_ContabilidadConsumoMaterial
             oeCentro.TipoOperacion = ""
             oeCentro.Activo = True
             LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), -1)
-            cboCentro.Value = ObtenerCentro.Id
+            cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
         Catch ex As Exception
             Throw ex
         End Try

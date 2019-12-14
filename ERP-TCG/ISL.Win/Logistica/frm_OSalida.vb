@@ -235,7 +235,7 @@ Public Class frm_OSalida
                             ControlBoton(0, 0, 0, 1, 1)
                         Else
                             Select Case oeOrden.TipoReferencia
-                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", ""
+                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "ORDEN VENTA"
                                     ControlBoton(0, 0, 0, 1, 1)
                                 Case Else
                                     ControlBoton(0, 0, 0, 0, 1)
@@ -336,6 +336,7 @@ Public Class frm_OSalida
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadSalida = oe.CantidadMaterial
                     .ValorUnitario = Math.Round(oe.PrecioUnitario / (1 + oeIGVGlobal.Porcentaje), 4)
+                    .ValorAdm = oe.CostoAdm
                     .Usuario = gUsuarioSGI.Id
                     .IndValidar = True
                 End With
@@ -1269,7 +1270,7 @@ Public Class frm_OSalida
             Select Case griOrden.ActiveRow.Cells("EstadoOrden").Value
                 Case "GENERADA"
                     Select Case griOrden.ActiveRow.Cells("TipoReferencia").Value
-                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", ""
+                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "", "ORDEN VENTA"
                             btnEjecutar.Enabled = 1
                     End Select
                 Case "RECEPCIONADO", "TERMINADA"
@@ -1289,6 +1290,8 @@ Public Class frm_OSalida
                 uceMovInventario.ReadOnly = True
                 Me.lbl_etiqueta.Text = "Ejecutar OI"
                 Me.lbl_etiqueta.Visible = True
+                UltraGroupBox4.Visible = True
+                btn_Almacen.Enabled = True
             Else
                 Throw New Exception("No Tiene Permiso para Ejecutar Ordenes")
             End If
@@ -1440,6 +1443,39 @@ Public Class frm_OSalida
     Private Sub CtaCtbleSubFamilia()
         oeCtaCtbleSFam = New e_CtaCtbleSubFamiliaMat
         loCtaCtbleSFam = olCtaCtbleSFam.Listar(oeCtaCtbleSFam)
+    End Sub
+
+    Private Sub btn_Almacen_Click(sender As Object, e As EventArgs) Handles btn_Almacen.Click
+        Try
+            If griOrdenMaterial.Selected.Rows.Count = 0 Then Throw New Exception("Seleccione Producto para Actualizar Lote")
+            SeleccionarAlmacen(griOrdenMaterial.ActiveRow.ListObject)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
+    End Sub
+
+    Private Sub SeleccionarAlmacen(oe As e_OrdenMaterial)
+        Try
+            Dim frm As New frm_ActualizarAlmacen(oe.IdMaterial, oe.CodigoMaterial, oe.Material, oe.CantidadMaterial)
+            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                With griOrdenMaterial.ActiveRow
+                    .Cells("Almacen").Value = frm.oeAlmMaterial.Almacen
+                    .Cells("IdAlmacen").Value = frm.oeAlmMaterial.IdAlmacen
+                    .Cells("IdSubAlmacen").Value = frm.oeAlmMaterial.Id
+                    .Cells("Stock").Value = frm.oeAlmMaterial.StockActual
+                    .Cells("PrecioUnitario").Value = (frm.oeAlmMaterial.CostoUnitario * oeIGVGlobal.Porcentaje) + frm.oeAlmMaterial.CostoUnitario
+                    .Cells("CostoAdm").Value = frm.oeAlmMaterial.ValorAdm
+                    If .Cells("CantidadMaterial").Value > frm.oeAlmMaterial.StockActual Then
+                        .Cells("CantidadMaterial").Value = frm.oeAlmMaterial.StockActual
+                    End If
+                    .Cells("ValorVenta").Value = .Cells("CantidadMaterial").Value * .Cells("PrecioUnitario").Value
+                End With
+            End If
+            griOrdenMaterial.DataBind()
+            CalcularTotalesDetalle()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Public Sub ObtenerAsientoModelo(IdMoneda As String, Ejercicio As Integer)

@@ -22,6 +22,7 @@ Public Class d_OrdenVenta
                              , o_fila("IdSucursal").ToString _
                              , o_fila("IdEmpresa").ToString _
                              , o_fila("Empresa").ToString _
+                             , o_fila("IdEmpresaAlterna").ToString _
                              , o_fila("IdTipoPago").ToString _
                              , o_fila("IdEstado").ToString _
                              , o_fila("Estado").ToString _
@@ -128,6 +129,7 @@ Public Class d_OrdenVenta
                             , "" _
                             , "" _
                             , .IdEmpresa _
+                            , .IdEmpresaAlterna _
                             , .IdTipoPago _
                             , .IdEstado _
                             , .IdMoneda _
@@ -172,14 +174,14 @@ Public Class d_OrdenVenta
                     '    oeOrdenComercialOrden.IdOrden = .oeOrdenIngreso.Id
                     '    oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
                     '    odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
-                    'If .oeOrdenSalida.TipoOperacion <> "" Then
-                    '    odOrden.Guardar(.oeOrdenSalida)
-                    '    .TipoOperacion = "I"
-                    '    oeOrdenComercialOrden.IdOrdenComercial = .Id
-                    '    oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
-                    '    oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
-                    '    odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
-                    'End If
+                    If .oeOrdenSalida.TipoOperacion <> "" Then
+                        odOrden.Guardar(.oeOrdenSalida)
+                        .TipoOperacion = "I"
+                        'oeOrdenComercialOrden.IdOrdenComercial = .Id
+                        'oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
+                        'oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
+                        'odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
+                    End If
                 End With
                 transScope.Complete()
             End Using

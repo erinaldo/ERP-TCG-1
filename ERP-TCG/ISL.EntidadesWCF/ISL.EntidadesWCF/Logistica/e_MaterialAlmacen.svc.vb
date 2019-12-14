@@ -89,21 +89,22 @@ Public Class e_MaterialAlmacen
         _activo = activo
     End Sub
 
-    Public Sub New(ByVal Seleccion As Boolean, _
-                    ByVal Id As String, _
-                    ByVal IdMaterial As String, _
-                    ByVal CodigoMaterial As String, _
-                    ByVal Material As String, _
-                    ByVal NombreUnidadMedida As String, _
-                    ByVal IdZona As String, _
-                    ByVal Zona As String, _
-                    ByVal StockActual As Double, _
-                    ByVal CostoUnitario As Double, _
-                    ByVal StockMinimo As Double, _
-                    ByVal StockMaximo As Double, _
-                    ByVal IdAlmacen As String, _
-                    ByVal Almacen As String, _
-                    ByVal Activo As Boolean)
+    Public Sub New(ByVal Seleccion As Boolean,
+                    ByVal Id As String,
+                    ByVal IdMaterial As String,
+                    ByVal CodigoMaterial As String,
+                    ByVal Material As String,
+                    ByVal NombreUnidadMedida As String,
+                    ByVal IdZona As String,
+                    ByVal Zona As String,
+                    ByVal StockActual As Double,
+                    ByVal CostoUnitario As Double,
+                    ByVal StockMinimo As Double,
+                    ByVal StockMaximo As Double,
+                    ByVal IdAlmacen As String,
+                    ByVal Almacen As String,
+                    ByVal Activo As Boolean,
+                    ByVal ln_ValorAdm As Double)
         _seleccion = Seleccion
         _id = Id
         _idmaterial = IdMaterial
@@ -119,6 +120,7 @@ Public Class e_MaterialAlmacen
         _idalmacen = IdAlmacen
         _almacen = Almacen
         _activo = Activo
+        ValorAdm = ln_ValorAdm
     End Sub
 
 #End Region

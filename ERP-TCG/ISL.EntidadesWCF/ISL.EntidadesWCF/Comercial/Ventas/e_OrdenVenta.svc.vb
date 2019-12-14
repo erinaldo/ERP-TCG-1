@@ -56,6 +56,9 @@ Public Class e_OrdenVenta
     <DataMember()>
     Public IdSucursalSistema As String = ""
 
+    <DataMember()>
+    Public Property IdEmpresaAlterna As String = ""
+
 #End Region
 
 #Region "Propiedad"
@@ -397,6 +400,7 @@ Public Class e_OrdenVenta
               , ByVal ls_IdSucursal As String _
               , ByVal ls_IdEmpresa As String _
               , ByVal ls_Empresa As String _
+              , ByVal ls_IdEmpresaAlterna As String _
               , ByVal ls_IdTipoPago As String _
               , ByVal ls_IdEstado As String _
               , ByVal ls_Estado As String _
@@ -430,6 +434,7 @@ Public Class e_OrdenVenta
         '_sucursal.Id = ls_IdSucursal
         _empresa.Id = ls_IdEmpresa
         _empresa.Nombre = ls_Empresa
+        IdEmpresaAlterna = ls_IdEmpresaAlterna
         _tipopago.Id = ls_IdTipoPago
         _estado.Id = ls_IdEstado
         _estado.Nombre = ls_Estado

@@ -15,6 +15,11 @@ Imports Microsoft.Office.Interop
 Public Class frm_SueldoTrabajador
     Inherits frm_MenuPadre
 
+    Private olCombo As New l_Combo
+    Private ListaCentroCosto As New List(Of e_Combo)
+    Private oeCombo As New e_Combo
+    Private DatosCC As New DataTable
+
 #Region "Instancia"
 
     Public Sub New(Accion As String, oeSueTra As e_SueldoTrabajador, oeTrabAux As e_Trabajador)
@@ -681,7 +686,7 @@ Public Class frm_SueldoTrabajador
             cboTipoMas.Items.Add("ASIGNACION")
             cboTipoMas.Items.Add("RUTA")
             cboTipoMas.SelectedIndex = -1
-
+            GastoFuncion() '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -697,6 +702,8 @@ Public Class frm_SueldoTrabajador
             oeSueldoTrabajador.Periocidad = cboPeriocidad.Value
             oeSueldoTrabajador.Vigente = IIf(chkVigente.Checked, 1, 0)
             oeSueldoTrabajador.SueldoCaja = ndCaja.Value
+            oeSueldoTrabajador.Produccion = IIf(chkProduccion.Checked, 1, 0)
+            oeSueldoTrabajador.IdCentroCosto = cboGastonFuncion.Value
         Catch ex As Exception
             Throw ex
         End Try
@@ -726,6 +733,8 @@ Public Class frm_SueldoTrabajador
                 .DataSource = leSueldoTra
 
                 ConfiguraGrilla(griSueldoTrabajador, 1)
+
+                CrearComboGrid("IdCentroCosto", "Nombre", griSueldoTrabajador, DatosCC, True)
 
             End With
         Catch ex As Exception
@@ -760,7 +769,7 @@ Public Class frm_SueldoTrabajador
                 .DataSource = leHistSuelTrab
 
                 ConfiguraGrilla(griHistorial, 2)
-
+                CrearComboGrid("IdCentroCosto", "Nombre", griHistorial, DatosCC, True)
             End With
         Catch ex As Exception
             Throw ex
@@ -787,7 +796,7 @@ Public Class frm_SueldoTrabajador
                 End If
 
                 ConfiguraGrilla(griImporta, 3)
-
+                CrearComboGrid("IdCentroCosto", "Nombre", griImporta, DatosCC, True)
                 If .Rows.Count > 0 Then
                     For Each Fila In .Rows
                         If Fila.Cells("IdTrabajador").Value.ToString <> "" Then
@@ -836,6 +845,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("Vigente").Style = ColumnStyle.CheckBox
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").CellAppearance.TextHAlign = HAlign.Right '@0001
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").Format = "#,##0.00" '@0001
+                .DisplayLayout.Bands(0).Columns("Produccion").Style = ColumnStyle.CheckBox '@0001
 
                 .DisplayLayout.Bands(0).Columns("Dni").Header.VisiblePosition = 0
                 .DisplayLayout.Bands(0).Columns("Trabajador").Header.VisiblePosition = 1
@@ -847,6 +857,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("Vigente").Header.VisiblePosition = 7
                 .DisplayLayout.Bands(0).Columns("Activo").Header.VisiblePosition = 8
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").Header.VisiblePosition = 9 '@0001
+                .DisplayLayout.Bands(0).Columns("Produccion").Header.VisiblePosition = 10 '@0001
 
                 .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
                 .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
@@ -859,6 +870,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.MaxRowScrollRegions = 1
 
             End With
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -873,6 +885,8 @@ Public Class frm_SueldoTrabajador
             fecActividad.Value = .FechaActividad
             chkVigente.Checked = IIf(.Vigente = 1, True, False)
             ndCaja.Value = .SueldoCaja
+            chkProduccion.Checked = IIf(.Produccion = 1, True, False)
+            cboGastonFuncion.Value = .IdCentroCosto
             CargarHistorial(.leHistorial)
         End With
     End Sub
@@ -971,6 +985,10 @@ Public Class frm_SueldoTrabajador
         End If
     End Sub
 
+    Private Sub Agrupacion2_Click(sender As Object, e As EventArgs) Handles Agrupacion2.Click
+
+    End Sub
+
     Private Sub tsmiNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiNuevo.Click
         Try
             Nuevo()
@@ -978,6 +996,10 @@ Public Class frm_SueldoTrabajador
             mensajeEmergente.Problema(ex.Message, True)
         End Try
 
+    End Sub
+
+    Private Sub cboGastonFuncion_ValueChanged(sender As Object, e As EventArgs) Handles cboGastonFuncion.ValueChanged
+        oeSueldoTrabajador.IdCentroCosto = cboGastonFuncion.Value
     End Sub
 
     Private Sub tsmiEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsmiEditar.Click
@@ -1041,5 +1063,14 @@ Public Class frm_SueldoTrabajador
             mensajeEmergente.Problema(ex.Message, True)
         End Try
 
+    End Sub
+
+    Private Sub GastoFuncion()
+        oeCombo = New e_Combo
+        ListaCentroCosto = New List(Of e_Combo)
+        oeCombo.Nombre = "GASTO FUNCION" 'Tipo de Centro Costo
+        ListaCentroCosto.AddRange(olCombo.Listar(oeCombo))
+        LlenarComboMaestro(cboGastonFuncion, ListaCentroCosto, 0)
+        DatosCC = olCombo.ComboGrilla(ListaCentroCosto)
     End Sub
 End Class

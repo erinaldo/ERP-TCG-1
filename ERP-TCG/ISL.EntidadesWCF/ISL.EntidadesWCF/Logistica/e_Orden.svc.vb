@@ -88,7 +88,6 @@ Public Class e_Orden
     Public oeOrdenIngreso As e_Orden
     Public oeOrdenSalida As e_Orden
 
-    Public IdEmpresa As String
     Public IdOrden As String = ""
 
 #End Region

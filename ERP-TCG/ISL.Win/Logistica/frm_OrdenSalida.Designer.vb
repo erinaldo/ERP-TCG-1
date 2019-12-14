@@ -459,6 +459,8 @@ Partial Class frm_OrdenSalida
         Dim UltraGridColumn66 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SubAlmacenDestino")
         Dim UltraGridColumn67 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdUsuarioEjecucion")
         Dim UltraGridColumn68 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UsuarioEjecucion")
+        Dim UltraGridColumn38 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaSis")
+        Dim UltraGridColumn39 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdSucursal")
         Dim UltraDataColumn124 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn125 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NroOrden")
         Dim UltraDataColumn126 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdMoneda")
@@ -491,6 +493,8 @@ Partial Class frm_OrdenSalida
         Dim UltraDataColumn153 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("SubAlmacenDestino")
         Dim UltraDataColumn154 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdUsuarioEjecucion")
         Dim UltraDataColumn155 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("UsuarioEjecucion")
+        Dim UltraDataColumn156 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdEmpresaSis")
+        Dim UltraDataColumn157 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSucursal")
         Dim Appearance119 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance120 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance121 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1222,18 +1226,18 @@ Partial Class frm_OrdenSalida
         Me.UltraTabPageControl9.Controls.Add(Me.GriAsocDoc)
         Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
-        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1169, 221)
+        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1169, 223)
         '
         'gbDocAsociar
         '
         Me.gbDocAsociar.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbDocAsociar.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.gbDocAsociar.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbDocAsociar.ExpandedSize = New System.Drawing.Size(636, 221)
+        Me.gbDocAsociar.ExpandedSize = New System.Drawing.Size(636, 223)
         Me.gbDocAsociar.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbDocAsociar.Location = New System.Drawing.Point(533, 0)
         Me.gbDocAsociar.Name = "gbDocAsociar"
-        Me.gbDocAsociar.Size = New System.Drawing.Size(636, 221)
+        Me.gbDocAsociar.Size = New System.Drawing.Size(636, 223)
         Me.gbDocAsociar.TabIndex = 1
         Me.gbDocAsociar.Text = "Listado de Documentos"
         Me.gbDocAsociar.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1245,7 +1249,7 @@ Partial Class frm_OrdenSalida
         Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
-        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(613, 215)
+        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(613, 217)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
         '
         'griListaDoc
@@ -1382,7 +1386,7 @@ Partial Class frm_OrdenSalida
         Me.griListaDoc.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaDoc.Location = New System.Drawing.Point(0, 62)
         Me.griListaDoc.Name = "griListaDoc"
-        Me.griListaDoc.Size = New System.Drawing.Size(613, 153)
+        Me.griListaDoc.Size = New System.Drawing.Size(613, 155)
         Me.griListaDoc.TabIndex = 1
         Me.griListaDoc.Text = "Grilla2"
         '
@@ -1641,7 +1645,7 @@ Partial Class frm_OrdenSalida
         Me.GriAsocDoc.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GriAsocDoc.Location = New System.Drawing.Point(0, 0)
         Me.GriAsocDoc.Name = "GriAsocDoc"
-        Me.GriAsocDoc.Size = New System.Drawing.Size(1169, 221)
+        Me.GriAsocDoc.Size = New System.Drawing.Size(1169, 223)
         Me.GriAsocDoc.TabIndex = 0
         Me.GriAsocDoc.Text = "Grilla2"
         '
@@ -1650,7 +1654,7 @@ Partial Class frm_OrdenSalida
         Me.UltraTabPageControl4.Controls.Add(Me.gridOrdenMovimientos)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1169, 221)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1169, 223)
         '
         'gridOrdenMovimientos
         '
@@ -1816,7 +1820,7 @@ Partial Class frm_OrdenSalida
         Me.gridOrdenMovimientos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gridOrdenMovimientos.Location = New System.Drawing.Point(0, 0)
         Me.gridOrdenMovimientos.Name = "gridOrdenMovimientos"
-        Me.gridOrdenMovimientos.Size = New System.Drawing.Size(1169, 221)
+        Me.gridOrdenMovimientos.Size = New System.Drawing.Size(1169, 223)
         Me.gridOrdenMovimientos.TabIndex = 0
         Me.gridOrdenMovimientos.Text = "Grilla1"
         '
@@ -1828,7 +1832,7 @@ Partial Class frm_OrdenSalida
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrOrdenesdeIngreso)
         Me.UltraTabPageControl1.Controls.Add(Me.agrFiltro)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1177, 472)
         '
@@ -1926,7 +1930,11 @@ Partial Class frm_OrdenSalida
         UltraGridColumn67.Hidden = True
         UltraGridColumn68.Header.VisiblePosition = 31
         UltraGridColumn68.Width = 106
-        UltraGridBand6.Columns.AddRange(New Object() {UltraGridColumn190, UltraGridColumn191, UltraGridColumn192, UltraGridColumn193, UltraGridColumn194, UltraGridColumn195, UltraGridColumn196, UltraGridColumn197, UltraGridColumn198, UltraGridColumn199, UltraGridColumn200, UltraGridColumn201, UltraGridColumn202, UltraGridColumn203, UltraGridColumn204, UltraGridColumn205, UltraGridColumn206, UltraGridColumn207, UltraGridColumn208, UltraGridColumn209, UltraGridColumn210, UltraGridColumn211, UltraGridColumn212, UltraGridColumn213, UltraGridColumn214, UltraGridColumn215, UltraGridColumn216, UltraGridColumn217, UltraGridColumn65, UltraGridColumn66, UltraGridColumn67, UltraGridColumn68})
+        UltraGridColumn38.Header.VisiblePosition = 32
+        UltraGridColumn38.Hidden = True
+        UltraGridColumn39.Header.VisiblePosition = 33
+        UltraGridColumn39.Hidden = True
+        UltraGridBand6.Columns.AddRange(New Object() {UltraGridColumn190, UltraGridColumn191, UltraGridColumn192, UltraGridColumn193, UltraGridColumn194, UltraGridColumn195, UltraGridColumn196, UltraGridColumn197, UltraGridColumn198, UltraGridColumn199, UltraGridColumn200, UltraGridColumn201, UltraGridColumn202, UltraGridColumn203, UltraGridColumn204, UltraGridColumn205, UltraGridColumn206, UltraGridColumn207, UltraGridColumn208, UltraGridColumn209, UltraGridColumn210, UltraGridColumn211, UltraGridColumn212, UltraGridColumn213, UltraGridColumn214, UltraGridColumn215, UltraGridColumn216, UltraGridColumn217, UltraGridColumn65, UltraGridColumn66, UltraGridColumn67, UltraGridColumn68, UltraGridColumn38, UltraGridColumn39})
         Me.gridListaOrden.DisplayLayout.BandsSerializer.Add(UltraGridBand6)
         Me.gridListaOrden.DisplayLayout.Override.AllowRowFiltering = Infragistics.Win.DefaultableBoolean.[True]
         Me.gridListaOrden.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
@@ -1990,7 +1998,7 @@ Partial Class frm_OrdenSalida
         UltraDataColumn128.DataType = GetType(Date)
         UltraDataColumn129.DataType = GetType(Double)
         UltraDataColumn135.DataType = GetType(Boolean)
-        Me.odOrden.Band.Columns.AddRange(New Object() {UltraDataColumn124, UltraDataColumn125, UltraDataColumn126, UltraDataColumn127, UltraDataColumn128, UltraDataColumn129, UltraDataColumn130, UltraDataColumn131, UltraDataColumn132, UltraDataColumn133, UltraDataColumn134, UltraDataColumn135, UltraDataColumn136, UltraDataColumn137, UltraDataColumn138, UltraDataColumn139, UltraDataColumn140, UltraDataColumn141, UltraDataColumn142, UltraDataColumn143, UltraDataColumn144, UltraDataColumn145, UltraDataColumn146, UltraDataColumn147, UltraDataColumn148, UltraDataColumn149, UltraDataColumn150, UltraDataColumn151, UltraDataColumn152, UltraDataColumn153, UltraDataColumn154, UltraDataColumn155})
+        Me.odOrden.Band.Columns.AddRange(New Object() {UltraDataColumn124, UltraDataColumn125, UltraDataColumn126, UltraDataColumn127, UltraDataColumn128, UltraDataColumn129, UltraDataColumn130, UltraDataColumn131, UltraDataColumn132, UltraDataColumn133, UltraDataColumn134, UltraDataColumn135, UltraDataColumn136, UltraDataColumn137, UltraDataColumn138, UltraDataColumn139, UltraDataColumn140, UltraDataColumn141, UltraDataColumn142, UltraDataColumn143, UltraDataColumn144, UltraDataColumn145, UltraDataColumn146, UltraDataColumn147, UltraDataColumn148, UltraDataColumn149, UltraDataColumn150, UltraDataColumn151, UltraDataColumn152, UltraDataColumn153, UltraDataColumn154, UltraDataColumn155, UltraDataColumn156, UltraDataColumn157})
         '
         'agrMenuLista
         '
@@ -2297,7 +2305,7 @@ Partial Class frm_OrdenSalida
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea3)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea4)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatoGeneral)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1177, 472)
         '
@@ -2373,7 +2381,7 @@ Partial Class frm_OrdenSalida
         Me.MenuDet.Appearance = Appearance129
         Me.MenuDet.DesignerFlags = 1
         Me.MenuDet.DockWithinContainer = Me
-        Me.MenuDet.DockWithinContainerBaseType = GetType(frm_MenuPadre)
+        Me.MenuDet.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
         Me.MenuDet.MdiMergeable = False
         Me.MenuDet.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool13, ButtonTool14})
         Me.MenuDet.MiniToolbar.ToolRowCount = 1

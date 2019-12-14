@@ -814,7 +814,7 @@ Public Class frm_GastosCaja
             oeGrupo.Tipo = 2
             oeGrupo.Estado = "GENERADA"
             oeGrupo.Activo = True
-            oeGrupo.IdCentro = ObtenerCentro.Id
+            oeGrupo.IdCentro = ObtenerCentro(gs_PrefijoIdSucursal).Id
             'oeGrupo.IdCentro = "1CH001"
             LlenarCombo(cboGrupo, "Codigo", olGrupo.Listar(oeGrupo).OrderByDescending(Function(item) item.FechaCreacion).ToList, 0)
             oeGrupo = olGrupo.Obtener(oeGrupo)

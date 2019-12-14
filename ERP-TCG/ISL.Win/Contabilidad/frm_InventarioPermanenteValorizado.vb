@@ -753,7 +753,7 @@ Public Class frm_InventarioPermanenteValorizado
         oeCentro.TipoOperacion = ""
         oeCentro.Activo = True
         LlenarComboMaestro(cboCentro, olCentro.Listar(oeCentro), 0)
-        cboCentro.Value = ObtenerCentro.Id
+        cboCentro.Value = ObtenerCentro(gs_PrefijoIdSucursal).Id
     End Sub
 
     Private Sub ComboAlmacen(ByVal idCentro As String)
