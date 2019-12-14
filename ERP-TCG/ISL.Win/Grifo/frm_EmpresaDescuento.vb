@@ -11,7 +11,7 @@ Imports ERP.EntidadesWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 
-Public Class frm_Almacen
+Public Class frm_EmpresaDescuento
 
 #Region "Instancia"
 
@@ -21,12 +21,12 @@ Public Class frm_Almacen
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared Instancia As frm_Almacen = Nothing
+    Private Shared Instancia As frm_EmpresaDescuento = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If Instancia Is Nothing Then
-            Instancia = New frm_Almacen
+            Instancia = New frm_EmpresaDescuento
             Operacion = "Inicializa"
         End If
         Instancia.Activate()
@@ -54,7 +54,6 @@ Public Class frm_Almacen
     Private oeGrifo As e_Empresa, olGrifo As l_Empresa, leGrifo As List(Of e_Empresa)
     Private oeCCPP As e_CCPP, olCCPP As l_CCPP, leCCPP As List(Of e_CCPP)
     Private oeDireccion As e_Direccion, olDireccion As l_Direccion, leDireccion As List(Of e_Direccion)
-
 
 #End Region
 
@@ -270,7 +269,7 @@ Public Class frm_Almacen
     Private Sub cboLugar_ValueChanged(sender As Object, e As EventArgs) Handles cboLugar.ValueChanged
         Try
             If cboLugar.SelectedIndex > -1 Then
-                LlenarCombo(cboDireccion, "Via", leDireccion.Where(Function(it) it.IdPais.Trim = cboGrifo.Value.ToString.Trim And
+                LlenarCombo(cboDireccion, "Via", leDireccion.Where(Function(it) it.IdPais.Trim = cboGrifo.Value.ToString.Trim And _
                                                                        it.CCPP.Trim = cboLugar.Value.ToString.Trim).ToList, -1)
             Else
                 LlenarCombo(cboDireccion, "Via", New List(Of e_Direccion), -1)
@@ -413,8 +412,8 @@ Public Class frm_Almacen
                 oeAlmacen.Id = griAlmacen.ActiveRow.Cells("ID").Value
                 oeAlmacen = olAlmacen.Obtener(oeAlmacen)
                 If oeAlmacen.Activo Then
-                    If MessageBox.Show("Desea eliminar el Almacen: " &
-                             griAlmacen.ActiveRow.Cells("Nombre").Value.ToString & " ?",
+                    If MessageBox.Show("Desea eliminar el Almacen: " & _
+                             griAlmacen.ActiveRow.Cells("Nombre").Value.ToString & " ?", _
                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         oeAlmacen.TipoOperacion = "E"
                         olAlmacen.Eliminar(oeAlmacen)

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class frm_Almacen
+Partial Class frm_EmpresaDescuento
     Inherits Win.frm_MenuPadre
 
     'Form invalida a Dispose para limpiar la lista de componentes.
