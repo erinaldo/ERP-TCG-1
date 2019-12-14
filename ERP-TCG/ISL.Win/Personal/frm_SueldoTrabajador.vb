@@ -838,6 +838,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("Vigente").Style = ColumnStyle.CheckBox
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").CellAppearance.TextHAlign = HAlign.Right '@0001
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").Format = "#,##0.00" '@0001
+                .DisplayLayout.Bands(0).Columns("Produccion").Style = ColumnStyle.CheckBox '@0001
 
                 .DisplayLayout.Bands(0).Columns("Dni").Header.VisiblePosition = 0
                 .DisplayLayout.Bands(0).Columns("Trabajador").Header.VisiblePosition = 1
@@ -849,6 +850,7 @@ Public Class frm_SueldoTrabajador
                 .DisplayLayout.Bands(0).Columns("Vigente").Header.VisiblePosition = 7
                 .DisplayLayout.Bands(0).Columns("Activo").Header.VisiblePosition = 8
                 .DisplayLayout.Bands(0).Columns("SueldoCaja").Header.VisiblePosition = 9 '@0001
+                .DisplayLayout.Bands(0).Columns("Produccion").Header.VisiblePosition = 10 '@0001
 
                 .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
                 .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
@@ -875,6 +877,8 @@ Public Class frm_SueldoTrabajador
             fecActividad.Value = .FechaActividad
             chkVigente.Checked = IIf(.Vigente = 1, True, False)
             ndCaja.Value = .SueldoCaja
+            chkProduccion.Checked = IIf(.Produccion = 1, True, False)
+            cboGastonFuncion.Value = .IdCentroCosto
             CargarHistorial(.leHistorial)
         End With
     End Sub

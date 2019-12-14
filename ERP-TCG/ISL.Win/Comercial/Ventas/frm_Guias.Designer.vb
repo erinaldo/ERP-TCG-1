@@ -2995,7 +2995,7 @@ Partial Class frm_Guias
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1224, 147)
         '
@@ -3745,7 +3745,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox10)
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(1224, 147)
         '
@@ -5794,7 +5794,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1232, 419)
         '
@@ -5879,7 +5879,7 @@ Partial Class frm_Guias
         Me.verViajeVacio.AutoSize = True
         Me.verViajeVacio.Location = New System.Drawing.Point(378, 29)
         Me.verViajeVacio.Name = "verViajeVacio"
-        Me.verViajeVacio.Size = New System.Drawing.Size(76, 17)
+        Me.verViajeVacio.Size = New System.Drawing.Size(78, 17)
         Me.verViajeVacio.TabIndex = 56
         Me.verViajeVacio.Text = "Viaje Vacio"
         UltraToolTipInfo1.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
@@ -5894,7 +5894,7 @@ Partial Class frm_Guias
         Me.verViajeRetorno.AutoSize = True
         Me.verViajeRetorno.Location = New System.Drawing.Point(368, 78)
         Me.verViajeRetorno.Name = "verViajeRetorno"
-        Me.verViajeRetorno.Size = New System.Drawing.Size(88, 17)
+        Me.verViajeRetorno.Size = New System.Drawing.Size(90, 17)
         Me.verViajeRetorno.TabIndex = 55
         Me.verViajeRetorno.Text = "Viaje Retorno"
         UltraToolTipInfo2.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
@@ -6418,7 +6418,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox7)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1232, 419)
         '

@@ -300,6 +300,7 @@ Partial Class frm_SueldoTrabajador
         Appearance1.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboGastonFuncion.Appearance = Appearance1
         Me.cboGastonFuncion.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboGastonFuncion.DisplayMember = "Nombre"
         Me.cboGastonFuncion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboGastonFuncion.DropDownListWidth = 400
         Me.cboGastonFuncion.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
