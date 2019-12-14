@@ -277,5 +277,6 @@ Public Class frm_Login
     Private Sub txtUsuarioR_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUsuarioR.KeyUp
         LlenaUsuarioSucursal() '@0001
     End Sub
+    'EVENTO
     '@0001 Fin
 End Class
