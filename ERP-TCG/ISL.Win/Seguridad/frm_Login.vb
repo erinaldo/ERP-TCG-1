@@ -6,7 +6,6 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
 '=================================================================================================================
 
-
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports System.Net.Mail
