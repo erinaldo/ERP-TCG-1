@@ -2259,10 +2259,9 @@ Public Class frm_OrdenVenMaterial
                     .Cantidad = detalle.CantidadMaterial
                     .CantidadPendiente = detalle.CantidadMaterial
                     .CostoUnitario = detalle.CostoUnitario
-                    .CostoInventario = 0 'oe.CostoUnitario
+                    .CostoInventario = 0
                     .PrecioUnitario = detalle.PrecioTotal / .Cantidad
                     .PrecioTotal = detalle.PrecioTotal
-                    '.IdTipoUnidadMedida = oe.idu
                     .IdAlmacen = detalle.IdAlmacen
                     .IdUnidadMedida = detalle.IdUnidadMedida
                     .IdSubAlmacen = detalle.IdSubAlmacen
