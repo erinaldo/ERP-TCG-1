@@ -6,7 +6,6 @@
 ' @0001 |   2019-09-01  |  CT2010   |   Combios Centro y Giro
 '=================================================================================================================
 
-
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
 Imports System.Net.Mail
@@ -185,7 +184,13 @@ Public Class frm_Login
                 mensajeEmergente.Problema("Instale ERP T&L la Version Ultima Publicada : " + oeEmpresaSistema.VersionSis.Trim, True)
                 Application.Exit()
             End If
-
+            Dim oeCentro As New e_Centro
+            Dim olCentro As New l_Centro
+            oeCentro.TipoOperacion = "3"
+            oeCentro.Abreviatura = gs_PrefijoIdSucursal
+            oeCentro.PrefijoID = gs_PrefijoIdSucursal
+            oeCentro = olCentro.Obtener(oeCentro)
+            gs_IdSucursal = oeCentro.Id
             '@0001 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

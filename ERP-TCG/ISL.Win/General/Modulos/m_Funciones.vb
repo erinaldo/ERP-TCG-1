@@ -676,6 +676,7 @@ Module m_Funciones
     Public o_Botonera As New e_Boton
 
     Public _Operacion As String
+    Public gs_IdSucursal As String '@0001
     Public gs_PrefijoIdSucursal As String '@0001
     Public gs_IdClienteProveedorSistema As String '@0001
     Public gs_IdEmpresaSistema As String '@0001
