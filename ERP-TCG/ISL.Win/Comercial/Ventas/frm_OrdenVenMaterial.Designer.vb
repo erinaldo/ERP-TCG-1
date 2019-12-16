@@ -2432,7 +2432,7 @@ Partial Class frm_OrdenVenMaterial
         '
         Me.ClientArea_Fill_Panel.Cursor = System.Windows.Forms.Cursors.Default
         Me.ClientArea_Fill_Panel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ClientArea_Fill_Panel.Location = New System.Drawing.Point(0, 53)
+        Me.ClientArea_Fill_Panel.Location = New System.Drawing.Point(0, 28)
         Me.ClientArea_Fill_Panel.Name = "ClientArea_Fill_Panel"
         Me.ClientArea_Fill_Panel.Size = New System.Drawing.Size(1215, 0)
         Me.ClientArea_Fill_Panel.TabIndex = 0
@@ -2443,7 +2443,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Left.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._ClientArea_Toolbars_Dock_Area_Left.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Left
         Me._ClientArea_Toolbars_Dock_Area_Left.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._ClientArea_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 53)
+        Me._ClientArea_Toolbars_Dock_Area_Left.Location = New System.Drawing.Point(0, 28)
         Me._ClientArea_Toolbars_Dock_Area_Left.Name = "_ClientArea_Toolbars_Dock_Area_Left"
         Me._ClientArea_Toolbars_Dock_Area_Left.Size = New System.Drawing.Size(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Left.ToolbarsManager = Me.mnuDetalle
@@ -2482,7 +2482,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Right.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me._ClientArea_Toolbars_Dock_Area_Right.DockedPosition = Infragistics.Win.UltraWinToolbars.DockedPosition.Right
         Me._ClientArea_Toolbars_Dock_Area_Right.ForeColor = System.Drawing.SystemColors.ControlText
-        Me._ClientArea_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1215, 53)
+        Me._ClientArea_Toolbars_Dock_Area_Right.Location = New System.Drawing.Point(1215, 28)
         Me._ClientArea_Toolbars_Dock_Area_Right.Name = "_ClientArea_Toolbars_Dock_Area_Right"
         Me._ClientArea_Toolbars_Dock_Area_Right.Size = New System.Drawing.Size(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Right.ToolbarsManager = Me.mnuDetalle
@@ -2506,7 +2506,7 @@ Partial Class frm_OrdenVenMaterial
         Me._ClientArea_Toolbars_Dock_Area_Top.ForeColor = System.Drawing.SystemColors.ControlText
         Me._ClientArea_Toolbars_Dock_Area_Top.Location = New System.Drawing.Point(0, 0)
         Me._ClientArea_Toolbars_Dock_Area_Top.Name = "_ClientArea_Toolbars_Dock_Area_Top"
-        Me._ClientArea_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1215, 53)
+        Me._ClientArea_Toolbars_Dock_Area_Top.Size = New System.Drawing.Size(1215, 28)
         Me._ClientArea_Toolbars_Dock_Area_Top.ToolbarsManager = Me.mnuDetalle
         '
         'UltraGroupBox4
