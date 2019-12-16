@@ -319,6 +319,7 @@
     <Content Include="Grifo\l_Contometro_Electronico.svc" />
     <Content Include="Grifo\l_Contometro_Mecanico.svc" />
     <Content Include="Grifo\l_Distribuidor.svc" />
+    <Content Include="Grifo\l_EmpresaDescuento.svc" />
     <Content Include="Grifo\l_EstacionServicio.svc" />
     <Content Include="Grifo\l_Isla.svc" />
     <Content Include="Grifo\l_Lado.svc" />
@@ -1188,6 +1189,7 @@
     <Compile Include="Grifo\Il_Contometro_Electronico.vb" />
     <Compile Include="Grifo\Il_Contometro_Mecanico.vb" />
     <Compile Include="Grifo\Il_Distribuidor.vb" />
+    <Compile Include="Grifo\Il_EmpresaDescuento.vb" />
     <Compile Include="Grifo\Il_EstacionServicio.vb" />
     <Compile Include="Grifo\Il_Isla.vb" />
     <Compile Include="Grifo\Il_Lado.vb" />
@@ -1205,6 +1207,9 @@
     </Compile>
     <Compile Include="Grifo\l_Distribuidor.svc.vb">
       <DependentUpon>l_Distribuidor.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\l_EmpresaDescuento.svc.vb">
+      <DependentUpon>l_EmpresaDescuento.svc</DependentUpon>
     </Compile>
     <Compile Include="Grifo\l_EstacionServicio.svc.vb">
       <DependentUpon>l_EstacionServicio.svc</DependentUpon>

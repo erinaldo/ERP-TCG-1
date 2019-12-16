@@ -1355,6 +1355,7 @@
     <Compile Include="Grifo\e_Distribuidor.svc.vb">
       <DependentUpon>e_Distribuidor.svc</DependentUpon>
     </Compile>
+    <Compile Include="Grifo\e_EmpresaDescuento.vb" />
     <Compile Include="Grifo\e_EstacionServicio.svc.vb">
       <DependentUpon>e_EstacionServicio.svc</DependentUpon>
     </Compile>

@@ -355,6 +355,7 @@
     <Compile Include="Grifo\d_Contometro_Electronico.vb" />
     <Compile Include="Grifo\d_Contometro_Mecanico.vb" />
     <Compile Include="Grifo\d_Distribuidor.vb" />
+    <Compile Include="Grifo\d_EmpresaDescuento.vb" />
     <Compile Include="Grifo\d_EstacionServicio.vb" />
     <Compile Include="Grifo\d_gTurno.vb" />
     <Compile Include="Grifo\d_Isla.vb" />
