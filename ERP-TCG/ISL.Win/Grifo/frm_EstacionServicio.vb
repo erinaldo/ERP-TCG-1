@@ -344,11 +344,13 @@ Public Class frm_EstacionServicio
         IdMoneda_Soles = ""
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
         PaintBotones("Clean")
-
+        udg_Detalle.DataSource = New List(Of e_OrdenVentaMaterial)
+        gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
     End Sub
 
     Private Sub mt_AgregarDetalle()
         Try
+
             Dim OV_DETALLE As New e_OrdenVentaMaterial
             With OV_DETALLE
                 PRODUCTO.Seleccion = False
