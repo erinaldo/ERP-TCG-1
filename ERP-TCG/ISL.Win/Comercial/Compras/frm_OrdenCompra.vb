@@ -500,7 +500,7 @@ Public Class frm_OrdenCompra
             'r_LimpiaComprobante()
             MostrarTabs(0, FichaTop, 1)
             ficDetalleOCMateriales.Tabs(0).Selected = True
-            utcListadosMateriales.Tabs(0).Selected = 1
+            utcListadosMateriales.Tabs(1).Selected = 1
             Me.cheActivoPercepcion.Checked = False
             Me.DecDetraer.Value = 0
             Me.rdbUrgente.Checked = False
@@ -1489,7 +1489,7 @@ Public Class frm_OrdenCompra
                 .Detraccion = DecMontoDetraccion.Value
                 .DetraccionPorc = DecDetraer.Value
                 .TipoBien = TipoOC
-                .IndTipoCompra = 1
+                .IndTipoCompra = 0
                 'If rdbNormal.Checked Then .IndTipoCompra = 0
                 'If rdbUrgente.Checked Then .IndTipoCompra = 1
                 'If .IndTipoCompra = -1 Then Throw New Exception("Seleccione Tipo De Compra")

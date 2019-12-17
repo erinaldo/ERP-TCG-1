@@ -1841,7 +1841,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabPageControl12.Controls.Add(Me.gridDetalleOCMaterial)
         Me.UltraTabPageControl12.Controls.Add(Me.gbeListadoMateriales)
-        Me.UltraTabPageControl12.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl12.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
         Me.UltraTabPageControl12.Size = New System.Drawing.Size(1347, 280)
         '
@@ -2139,7 +2139,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabPageControl13.Controls.Add(Me.griDetalleOrdenIngreso)
         Me.UltraTabPageControl13.Controls.Add(Me.griListaOrdenIngreso)
-        Me.UltraTabPageControl13.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl13.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
         Me.UltraTabPageControl13.Size = New System.Drawing.Size(1347, 280)
         '
