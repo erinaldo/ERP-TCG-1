@@ -16,14 +16,12 @@ Public Class frm_CierreTurno
     Private Shared instancia As frm_CierreTurno = Nothing
     Private Shared Operacion As String
 
-    Private dTURNO As New l_CierreTurno
-    Private TURNO As New e_CierreTurno
+    Private TURNO As New e_CierreTurno, dTURNO As New l_CierreTurno
     Private TURNO_DETALLE As New e_CierreTurno_Detalle
 
 
     ' Asiento Modelo
-    Private REFERENCIA As New e_AsientoModelo_Referencia
-    Private LISTA_REFERENCIA As New List(Of e_AsientoModelo_Referencia)
+    Private REFERENCIA As New e_AsientoModelo_Referencia, LISTA_REFERENCIA As New List(Of e_AsientoModelo_Referencia)
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
@@ -264,9 +262,181 @@ Public Class frm_CierreTurno
                 udg_Calibraciones.DataSource = .Detalles.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
                 udg_Almacenes.DataSource = .Detalles.Where(Function(it) it.Rubro = "ALMACENES").ToList : udg_Almacenes.DataBind()
             End With
+            mt_OcultarColumnas()
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub mt_OcultarColumnas()
+        With udg_Trabajadores
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_ContometroDigital
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = False
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_ContometroAnalogico
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = False
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_VentasxCombustible
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_VentasAnuladas
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_Calibraciones
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_Almacenes
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
     End Sub
 
     Private Function fc_Guardar() As Boolean
@@ -285,7 +455,8 @@ Public Class frm_CierreTurno
             With TURNO
                 .Id = ""
                 .IdEmpresaSis = gs_IdEmpresaSistema
-                .IdSucursal = ""
+                .IdSucursalSistema = ""
+                .PrefijoID = gs_PrefijoIdSucursal
                 .IdTurno = cmb_Turno.Value
                 .Turno = cmb_Turno.Text
                 .IdEstado = cmb_Estado.Value
