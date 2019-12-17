@@ -1667,23 +1667,6 @@ Public Class frm_OrdenVenMaterial
         With griOrdenComercialMaterial.DisplayLayout.Bands(0)
             Select Case oeOrdenComercial.Estado
                 Case "", "GENERADO"
-                    'If Operacion = "Evaluar" Then
-                    '    Me.lblOperacion.Text = "EVALUANDO OC"
-                    '    .Columns("CantidadPendiente").Hidden = True
-                    '    .Columns("CantidadAtender").Hidden = True
-                    '    .Columns("Cantidad").CellActivation = Activation.NoEdit
-                    '    .Columns("Cantidad").CellClickAction = CellClickAction.RowSelect
-                    '    .Columns("IndImpuesto").CellActivation = Activation.NoEdit
-                    '    .Columns("IndImpuesto").CellClickAction = CellClickAction.RowSelect
-                    '    .Columns("IndImpuesto").Header.CheckBoxVisibility = HeaderCheckBoxVisibility.Always
-                    '    .Columns("CostoUnitario").CellActivation = Activation.NoEdit
-                    '    .Columns("CostoUnitario").CellClickAction = CellClickAction.RowSelect
-                    '    .Columns("PrecioUnitario").CellActivation = Activation.NoEdit
-                    '    .Columns("PrecioUnitario").CellClickAction = CellClickAction.RowSelect
-                    '    .Columns("CantidadAtender").CellActivation = Activation.NoEdit
-                    '    .Columns("CantidadAtender").CellClickAction = CellClickAction.RowSelect
-                    '    mt_MenuDetalle(0, 0, 0, 0, 0)
-                    'Else
                     Me.lblOperacion.Text = "GENERANDO OV"
                     .Columns("CantidadPendiente").Hidden = True
                     .Columns("CantidadAtender").Hidden = True

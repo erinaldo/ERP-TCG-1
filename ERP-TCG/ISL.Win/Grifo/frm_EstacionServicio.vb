@@ -1125,24 +1125,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Function fc_AnularOrdenVenta() As Boolean
-        'Try
-        '    oeOrdenComercial = New e_OrdenVenta
-        '    oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
-        '    oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-        '    oeOrdenComercial.TipoOperacion = "X"
 
-        '    'oeOrdDocumento = New e_Orden_Documento
-        '    'oeOrdDocumento.IdOrden = oeOrdenComercial.Id
-        '    'oeOrdDocumento.TipoOrden = 2
-        '    'oeOrdDocumento = olOrdDocumento.Obtener(oeOrdDocumento)
-        '    'If oeOrdDocumento.Id <> "" Then Throw New Exception("Cuenta con un documento asociado, no es posible anularla")
-        '    If olOrdenComercial.Guardar(oeOrdenComercial) Then
-        '        Return True
-        '    End If
-        'Catch ex As Exception
-        '    Throw ex
-        'End Try
-        'Return False
     End Function
 
     Private Function fc_ValidarNumeroDoc() As Boolean
