@@ -1489,10 +1489,10 @@ Public Class frm_OrdenCompra
                 .Detraccion = DecMontoDetraccion.Value
                 .DetraccionPorc = DecDetraer.Value
                 .TipoBien = TipoOC
-                .IndTipoCompra = -1
-                If rdbNormal.Checked Then .IndTipoCompra = 0
-                If rdbUrgente.Checked Then .IndTipoCompra = 1
-                If .IndTipoCompra = -1 Then Throw New Exception("Seleccione Tipo De Compra")
+                .IndTipoCompra = 1
+                'If rdbNormal.Checked Then .IndTipoCompra = 0
+                'If rdbUrgente.Checked Then .IndTipoCompra = 1
+                'If .IndTipoCompra = -1 Then Throw New Exception("Seleccione Tipo De Compra")
                 .lstOrdenMaterial = llOrdenCompraMaterial
                 .OrdenAprobacion.Id = ls_IdOrdenAprobacion
                 .OrdenAprobacion.IdOrden = ""

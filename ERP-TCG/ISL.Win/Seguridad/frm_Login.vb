@@ -282,6 +282,12 @@ Public Class frm_Login
     Private Sub txtUsuarioR_KeyUp(sender As Object, e As KeyEventArgs) Handles txtUsuarioR.KeyUp
         LlenaUsuarioSucursal() '@0001
     End Sub
+
+    Private Sub cboCentro_KeyDown(sender As Object, e As KeyEventArgs) Handles cboCentro.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Autenticar()
+        End If
+    End Sub
     'EVENTO
     '@0001 Fin
 End Class

@@ -1270,15 +1270,16 @@ Public Class frm_FacturaCompra
                             End If
                         Else
                             lb_EmisionPerAnt = False
+
                         End If
-                            ' Obtiene Fecha Fin Periodo
-                            Dim _oePerAux As New e_Periodo
-                            _oePerAux.Id = frm.cboMes.Value : _oePerAux.Ejercicio = frm.Año1.Año
-                            _oePerAux.TipoOperacion = String.Empty : _oePerAux.Activo = True
-                            _oePerAux = olPeriodo.Obtener(_oePerAux)
-                            oeMovimientoDocumento.FechaFinal = _oePerAux.FechaFin
-                            ' ----------------------------
-                            GuardarCmpAsiento(frm.cboMes.Value, frm.Año1.Año, True)
+                        ' Obtiene Fecha Fin Periodo
+                        Dim _oePerAux As New e_Periodo
+                        _oePerAux.Id = frm.cboMes.Value : _oePerAux.Ejercicio = frm.Año1.Año
+                        _oePerAux.TipoOperacion = String.Empty : _oePerAux.Activo = True
+                        _oePerAux = olPeriodo.Obtener(_oePerAux)
+                        oeMovimientoDocumento.FechaFinal = _oePerAux.FechaFin
+                        ' ----------------------------
+                        GuardarCmpAsiento(frm.cboMes.Value, frm.Año1.Año, True)
                             mensajeEmergente.Confirmacion("Se Envió Correctamente", True)
                             Listar(True)
                         End If
@@ -1498,7 +1499,7 @@ Public Class frm_FacturaCompra
         Dim ol_TablaCTble As l_TablaContableDet
         Dim lst_TablaCTble As List(Of e_TablaContableDet)
 
-        For Each l_ctactble28 In lo_SubFamCtaCtble_28.Where(Function(g) g.NroCtaCtbleExistencias.StartsWith("25")).ToList
+        For Each l_ctactble28 In lo_SubFamCtaCtble_28.Where(Function(g) g.NroCtaCtbleExistencias.StartsWith("25") OrElse g.NroCtaCtbleExistencias.StartsWith("20")).ToList
             oe_CtaCtbleAux = New e_CuentaContable
             ol_CtaCtbleAux = New l_CuentaContable
             oe_TablaCTble = New e_TablaContableDet
@@ -1528,19 +1529,21 @@ Public Class frm_FacturaCompra
         Dim lst_CtaAsoc As List(Of e_CuentaAsociada)
         For Each Asiento In oeMovimientoDocumento.loAsientoModelo
             lb_soles = IIf(Asiento.Moneda = "SOLES", True, False)
-            For Each AsientoDet In Asiento.leDetalle.Where(Function(g) g.Cuenta = "25").ToList
+            For Each AsientoDet In Asiento.leDetalle.Where(Function(g) {"20", "25"}.Contains(g.Cuenta) = True).ToList
                 oe_CtaAsoc = New e_CuentaAsociada
                 oe_CtaAsoc.IdCuentaContable = AsientoDet.IdCuentaContable
-                If AsientoDet.Debe = "25" And AsientoDet.Haber = "" Then oe_CtaAsoc.DebeHaber = "D" : lb_debe = True
-                If AsientoDet.Debe = "" And AsientoDet.Haber = "25" Then oe_CtaAsoc.DebeHaber = "H" : lb_debe = False
+                'If AsientoDet.Debe = "25" And AsientoDet.Haber = "" Then oe_CtaAsoc.DebeHaber = "D" : lb_debe = True
+                'If AsientoDet.Debe = "" And AsientoDet.Haber = "25" Then oe_CtaAsoc.DebeHaber = "H" : lb_debe = False
+                If {"20", "25"}.Contains(AsientoDet.Debe) And AsientoDet.Haber = "" Then oe_CtaAsoc.DebeHaber = "D" : lb_debe = True
+                If AsientoDet.Debe = "" And {"20", "25"}.Contains(AsientoDet.Haber) Then oe_CtaAsoc.DebeHaber = "H" : lb_debe = False
                 oe_CtaAsoc.Activo = True
                 ol_CtaAsoc = New l_CuentaAsociada
                 lst_CtaAsoc = New List(Of e_CuentaAsociada)
                 lst_CtaAsoc = ol_CtaAsoc.Listar(oe_CtaAsoc)
                 If lst_CtaAsoc.Count > 0 Then oe_CtaAsoc = lst_CtaAsoc.Item(0)
                 AsientoDet.Cuenta = "28"
-                If AsientoDet.Debe = "25" Then AsientoDet.Debe = "28"
-                If AsientoDet.Haber = "25" Then AsientoDet.Haber = "28"
+                If {"20", "25"}.Contains(AsientoDet.Debe) Then AsientoDet.Debe = "28"
+                If {"20", "25"}.Contains(AsientoDet.Haber) Then AsientoDet.Haber = "28"
                 AsientoDet.IdCuentaContable = oe_CtaAsoc.IdCuentaAsociada
             Next
         Next
