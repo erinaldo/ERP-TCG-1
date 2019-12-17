@@ -657,32 +657,37 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Sub
 
-    Private Sub griOrdenIngreso_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs)
+    Private Sub griOrdenSalida_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griOrdenSalida.BeforeRowsDeleted
         e.Cancel = True
     End Sub
 
-    Private Sub griOrdenIngreso_AfterRowActivate(sender As Object, e As EventArgs)
+    Private Sub griOrdenSalida_AfterRowActivate(sender As Object, e As EventArgs) Handles griOrdenSalida.AfterRowActivate
         If ficDetalleOrdenComercial.SelectedTab.Index = 1 Then
             mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = True
             With griOrdenSalida.ActiveRow
                 If .Index > -1 Then
-                    If .Cells("Empresa").Value = "" Then
-                        mt_MenuDetalle(0, 0, 0, 1, 0)
+                    If .Cells("Estado").Value = "GENERADO" Then
+                        mt_MenuDetalle(0, 0, 1, 0, 0)
                     Else
-                        If .Cells("Empresa").Value = "GUIA DE REMISION - REMITENTE" Then
-                            If .Cells("Estado").Value = "GENERADO" Then
-                                mt_MenuDetalle(0, 0, 1, 0, 0)
-                            Else
-                                mt_MenuDetalle(0, 0, 0, 0, 0)
-                            End If
-                        Else
-                            If .Cells("Estado").Value = "GENERADO" Then
-                                mt_MenuDetalle(0, 0, 1, 0, 0)
-                            Else
-                                mt_MenuDetalle(0, 0, 0, 0, 0)
-                            End If
-                        End If
+                        mt_MenuDetalle(0, 0, 0, 0, 0)
                     End If
+                    'If .Cells("Empresa").Value = "" Then
+                    '    mt_MenuDetalle(0, 0, 0, 1, 0)
+                    'Else
+                    '    If .Cells("Empresa").Value = "GUIA DE REMISION - REMITENTE" Then
+                    '        If .Cells("Estado").Value = "GENERADO" Then
+                    '            mt_MenuDetalle(0, 0, 1, 0, 0)
+                    '        Else
+                    '            mt_MenuDetalle(0, 0, 0, 0, 0)
+                    '        End If
+                    '    Else
+                    '        If .Cells("Estado").Value = "GENERADO" Then
+                    '            mt_MenuDetalle(0, 0, 1, 0, 0)
+                    '        Else
+                    '            mt_MenuDetalle(0, 0, 0, 0, 0)
+                    '        End If
+                    '    End If
+                    'End If
                 Else
                     mt_MenuDetalle(0, 0, 0, 0, 0)
                 End If
@@ -917,7 +922,7 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Sub
 
-    Private Sub griOrdenSalida_DoubleClick(sender As Object, e As EventArgs)
+    Private Sub griOrdenSalida_DoubleClick(sender As Object, e As EventArgs) Handles griOrdenSalida.DoubleClick
         Try
             mt_ListarDetalleOS()
         Catch ex As Exception
@@ -1840,11 +1845,11 @@ Public Class frm_OrdenVenMaterial
                 loDetalleOrdenSalida = olDetalleOrden.Listar(oeDetalleOrden)
                 griDetalleOrden.DataSource = loDetalleOrdenSalida
                 mt_CombosGrilla(griDetalleOrden)
-                If griOrdenSalida.ActiveRow.Cells("IdEstado").Value = "1CIX025" Then
-                    btn_ActualizarDetOrden.Enabled = True
-                Else
-                    btn_ActualizarDetOrden.Enabled = False
-                End If
+                'If griOrdenSalida.ActiveRow.Cells("IdEstado").Value = "1CH00019" Then
+                '    btn_ActualizarDetOrden.Enabled = True
+                'Else
+                btn_ActualizarDetOrden.Enabled = False
+                'End If
             End If
         Catch ex As Exception
             Throw ex
@@ -2239,7 +2244,7 @@ Public Class frm_OrdenVenMaterial
             Dim oeOrdenCompraMaterial As New e_OrdenCompraMaterial
             Dim olOrdenCompraMaterial As New l_OrdenCompraMaterial
             Dim llOrdenCompraMaterial As List(Of e_OrdenCompraMaterial)
-            oeOrdenCompraMaterial.TipoOperacion = "1"
+            oeOrdenCompraMaterial.TipoOperacion = "V"
             oeOrdenCompraMaterial.Activo = True
             oeOrdenCompraMaterial.IdOrden = oeOrdenCompra.Id
             llOrdenCompraMaterial = olOrdenCompraMaterial.Listar(oeOrdenCompraMaterial)
@@ -2498,7 +2503,7 @@ Public Class frm_OrdenVenMaterial
                     .IdUnidadMedida = oe.IdUnidadMedida
                     .CantidadMaterial = oe.CantidadAtender
                     .PrecioUnitario = oe.PrecioUnitario
-                    '.PrecioTotal = Math.Round(.PrecioUnitario * .CantidadMaterial, 4)
+                    .ValorVenta = Math.Round(.PrecioUnitario * .CantidadMaterial, 4)
                 End With
                 loDetalleOrdenSalida.Add(oeDetalleOrden)
             Next
