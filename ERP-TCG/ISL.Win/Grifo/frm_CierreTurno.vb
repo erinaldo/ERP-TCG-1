@@ -455,7 +455,7 @@ Public Class frm_CierreTurno
             With TURNO
                 .Id = ""
                 .IdEmpresaSis = gs_IdEmpresaSistema
-                .IdSucursalSistema = ""
+                .IdSucursalSistema = gs_IdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
                 .IdTurno = cmb_Turno.Value
                 .Turno = cmb_Turno.Text
@@ -464,15 +464,15 @@ Public Class frm_CierreTurno
                 .Fecha = dtpFecha.Value
                 .HoraInicio = dtpHoraInicio.Value
                 .HoraFin = dtpHoraFin.Value
-                .IdTrabajador_Apertura = ""
-                .Trabajador_Apertura = ""
-                .IdTrabajador_Cierre = ""
-                .Trabajador_Cierre = ""
-                .Glosa = ""
-                .UsuarioCrea = ""
-                .FechaCrea = #01/01/1901#
-                .UsuarioModifica = ""
-                .FechaModifica = #01/01/1901#
+                .IdTrabajador_Apertura = cboTrabajadorApertura.Value
+                .Trabajador_Apertura = cboTrabajadorApertura.Text
+                .IdTrabajador_Cierre = cboTrabajadorCierre.Value
+                .Trabajador_Cierre = cboTrabajadorCierre.Text
+                .Glosa = txtGlosa.Text
+                .UsuarioCrea = gUsuarioSGI.Id
+                .FechaCrea = Date.Now
+                .UsuarioModifica = gUsuarioSGI.Id
+                .FechaModifica = Date.Now
                 .Activo = True
             End With
             Return True
@@ -507,14 +507,18 @@ Public Class frm_CierreTurno
             Dim olCombo As New l_Combo : Dim oeCombo As New e_Combo
 
             ' Turno
-            gmt_ComboEspecifico(cmb_TurnoBuscado, ObtenerListaTurno(True), 0, "Nombre")
-            gmt_ComboEspecifico(cmb_Turno, ObtenerListaTurno, 0, "Nombre")
+            Dim Lista As New List(Of e_Combo)
+            Lista.Add(New e_Combo With {.Id = "D", .Nombre = "Dia"})
+            Lista.Add(New e_Combo With {.Id = "N", .Nombre = "Noche"})
+            gmt_ComboEspecifico(cmb_Turno, Lista, 0)
+            gmt_ComboEspecifico(cmb_TurnoBuscado, Lista, 0)
 
             ' Vendedores
             Dim ListVendedores As New List(Of e_Combo)
             oeCombo.TipoOperacion = "VEND"
             ListVendedores.AddRange(olCombo.Listar(oeCombo))
             gmt_ComboEspecifico(cboTrabajadorApertura, ListVendedores, 3)
+            gmt_ComboEspecifico(cboTrabajadorCierre, ListVendedores, 3)
 
             ' Cargar Estado
             gmt_ComboEspecifico(cmb_EstadoBuscado, ObtenerListaEstado(True), 3) : cmb_EstadoBuscado.SelectedIndex = 0
