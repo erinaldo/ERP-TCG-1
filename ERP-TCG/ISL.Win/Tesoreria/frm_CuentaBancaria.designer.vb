@@ -39,6 +39,7 @@ Partial Class frm_CuentaBancaria
         Dim UltraGridColumn13 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NumeroCorrelativo")
         Dim UltraGridColumn14 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim UltraGridColumn15 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion")
+        Dim UltraGridColumn16 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Usuario")
         Dim UltraDataColumn1 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn2 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdBanco")
         Dim UltraDataColumn3 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NombreBanco")
@@ -54,6 +55,7 @@ Partial Class frm_CuentaBancaria
         Dim UltraDataColumn13 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("NumeroCorrelativo")
         Dim UltraDataColumn14 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim UltraDataColumn15 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Seleccion")
+        Dim UltraDataColumn16 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Usuario")
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -184,7 +186,7 @@ Partial Class frm_CuentaBancaria
         UltraGridColumn7.Width = 90
         UltraGridColumn8.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn8.Header.VisiblePosition = 8
-        UltraGridColumn8.Hidden = True
+        UltraGridColumn8.Width = 194
         UltraGridColumn9.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn9.Header.Caption = "Contacto Telefono"
         UltraGridColumn9.Header.VisiblePosition = 9
@@ -213,7 +215,9 @@ Partial Class frm_CuentaBancaria
         UltraGridColumn15.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn15.Header.VisiblePosition = 0
         UltraGridColumn15.Hidden = True
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15})
+        UltraGridColumn16.Header.VisiblePosition = 15
+        UltraGridColumn16.Hidden = True
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn1, UltraGridColumn2, UltraGridColumn3, UltraGridColumn4, UltraGridColumn5, UltraGridColumn6, UltraGridColumn7, UltraGridColumn8, UltraGridColumn9, UltraGridColumn10, UltraGridColumn11, UltraGridColumn12, UltraGridColumn13, UltraGridColumn14, UltraGridColumn15, UltraGridColumn16})
         Me.griListaCuentaBancaria.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.griListaCuentaBancaria.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.[False]
         Me.griListaCuentaBancaria.DisplayLayout.Override.FilterOperatorDefaultValue = Infragistics.Win.UltraWinGrid.FilterOperatorDefaultValue.Contains
@@ -246,7 +250,7 @@ Partial Class frm_CuentaBancaria
         UltraDataColumn13.ReadOnly = Infragistics.Win.DefaultableBoolean.[True]
         UltraDataColumn14.DataType = GetType(Boolean)
         UltraDataColumn14.ReadOnly = Infragistics.Win.DefaultableBoolean.[True]
-        Me.ogdCuentaBancaria.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15})
+        Me.ogdCuentaBancaria.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16})
         Me.ogdCuentaBancaria.Band.ReadOnly = Infragistics.Win.DefaultableBoolean.[True]
         '
         'utpDetalle
@@ -294,10 +298,10 @@ Partial Class frm_CuentaBancaria
         Me.entNumeroCorrelativo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.entNumeroCorrelativo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.entNumeroCorrelativo.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.entNumeroCorrelativo.Location = New System.Drawing.Point(135, 262)
+        Me.entNumeroCorrelativo.Location = New System.Drawing.Point(134, 262)
         Me.entNumeroCorrelativo.Name = "entNumeroCorrelativo"
         Me.entNumeroCorrelativo.NullText = "0"
-        Me.entNumeroCorrelativo.Size = New System.Drawing.Size(201, 21)
+        Me.entNumeroCorrelativo.Size = New System.Drawing.Size(100, 21)
         Me.entNumeroCorrelativo.TabIndex = 19
         '
         'txtContactoTelefono
@@ -309,9 +313,9 @@ Partial Class frm_CuentaBancaria
         Me.txtContactoTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContactoTelefono.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtContactoTelefono.Location = New System.Drawing.Point(135, 152)
-        Me.txtContactoTelefono.MaxLength = 12
+        Me.txtContactoTelefono.MaxLength = 50
         Me.txtContactoTelefono.Name = "txtContactoTelefono"
-        Me.txtContactoTelefono.Size = New System.Drawing.Size(202, 21)
+        Me.txtContactoTelefono.Size = New System.Drawing.Size(200, 21)
         Me.txtContactoTelefono.TabIndex = 11
         '
         'txtContacto
@@ -324,7 +328,7 @@ Partial Class frm_CuentaBancaria
         Me.txtContacto.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtContacto.Location = New System.Drawing.Point(135, 125)
         Me.txtContacto.Name = "txtContacto"
-        Me.txtContacto.Size = New System.Drawing.Size(202, 21)
+        Me.txtContacto.Size = New System.Drawing.Size(250, 21)
         Me.txtContacto.TabIndex = 9
         '
         'decLineaCredito
@@ -338,7 +342,7 @@ Partial Class frm_CuentaBancaria
         Me.decLineaCredito.Name = "decLineaCredito"
         Me.decLineaCredito.NullText = "0.00"
         Me.decLineaCredito.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.decLineaCredito.Size = New System.Drawing.Size(202, 21)
+        Me.decLineaCredito.Size = New System.Drawing.Size(100, 21)
         Me.decLineaCredito.TabIndex = 17
         '
         'decTasaPasiva
@@ -352,7 +356,7 @@ Partial Class frm_CuentaBancaria
         Me.decTasaPasiva.Name = "decTasaPasiva"
         Me.decTasaPasiva.NullText = "0.00"
         Me.decTasaPasiva.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.decTasaPasiva.Size = New System.Drawing.Size(202, 21)
+        Me.decTasaPasiva.Size = New System.Drawing.Size(100, 21)
         Me.decTasaPasiva.TabIndex = 15
         '
         'decTasaActiva
@@ -366,7 +370,7 @@ Partial Class frm_CuentaBancaria
         Me.decTasaActiva.Name = "decTasaActiva"
         Me.decTasaActiva.NullText = "0.00"
         Me.decTasaActiva.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.decTasaActiva.Size = New System.Drawing.Size(202, 21)
+        Me.decTasaActiva.Size = New System.Drawing.Size(100, 21)
         Me.decTasaActiva.TabIndex = 13
         '
         'DecSaldoInicial
@@ -380,7 +384,7 @@ Partial Class frm_CuentaBancaria
         Me.DecSaldoInicial.Name = "DecSaldoInicial"
         Me.DecSaldoInicial.NullText = "0.00"
         Me.DecSaldoInicial.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.DecSaldoInicial.Size = New System.Drawing.Size(202, 21)
+        Me.DecSaldoInicial.Size = New System.Drawing.Size(100, 21)
         Me.DecSaldoInicial.TabIndex = 7
         '
         'cboMoneda
@@ -394,7 +398,7 @@ Partial Class frm_CuentaBancaria
         Me.cboMoneda.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboMoneda.Location = New System.Drawing.Point(135, 74)
         Me.cboMoneda.Name = "cboMoneda"
-        Me.cboMoneda.Size = New System.Drawing.Size(202, 21)
+        Me.cboMoneda.Size = New System.Drawing.Size(100, 21)
         Me.cboMoneda.TabIndex = 5
         Me.cboMoneda.ValueMember = "Id"
         '
@@ -409,7 +413,7 @@ Partial Class frm_CuentaBancaria
         Me.cboBanco.ForeColor = System.Drawing.Color.MidnightBlue
         Me.cboBanco.Location = New System.Drawing.Point(135, 22)
         Me.cboBanco.Name = "cboBanco"
-        Me.cboBanco.Size = New System.Drawing.Size(202, 21)
+        Me.cboBanco.Size = New System.Drawing.Size(250, 21)
         Me.cboBanco.TabIndex = 1
         Me.cboBanco.ValueMember = "Id"
         '
@@ -422,9 +426,9 @@ Partial Class frm_CuentaBancaria
         Me.txtNumeroCuenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumeroCuenta.ForeColor = System.Drawing.Color.MidnightBlue
         Me.txtNumeroCuenta.Location = New System.Drawing.Point(135, 47)
-        Me.txtNumeroCuenta.MaxLength = 16
+        Me.txtNumeroCuenta.MaxLength = 50
         Me.txtNumeroCuenta.Name = "txtNumeroCuenta"
-        Me.txtNumeroCuenta.Size = New System.Drawing.Size(202, 21)
+        Me.txtNumeroCuenta.Size = New System.Drawing.Size(200, 21)
         Me.txtNumeroCuenta.TabIndex = 3
         '
         'UltraLabel13
