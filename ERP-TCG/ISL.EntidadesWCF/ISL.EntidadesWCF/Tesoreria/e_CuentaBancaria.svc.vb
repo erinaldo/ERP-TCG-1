@@ -72,7 +72,7 @@ Public Class e_CuentaBancaria
         _TasaPasiva = TasaPasiva
         _LineaCredito = LineaCredito
         _NumeroCorrelativo = NumeroCorrelativo
-        _bancocuenta = NombreBanco & "  /  " & NumeroCuenta & " / " & NombreMoneda
+        _bancocuenta = NombreBanco & "  /  " & NumeroCuenta & " / " & NombreMoneda & " / " & Contacto
         _Activo = Activo
     End Sub
 

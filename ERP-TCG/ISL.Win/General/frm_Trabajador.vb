@@ -1742,7 +1742,7 @@ Public Class frm_Trabajador
 
     Private Sub MantSuelTrab(Accion As String, oeSueTra As e_SueldoTrabajador)
         Dim _frm As New frm_SueldoTrabajador(Accion, oeSueTra, oeTrabajador)
-        _frm.Width = 700
+        _frm.Width = 800
         _frm.Height = 500
         _frm.StartPosition = FormStartPosition.CenterScreen
         _frm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
