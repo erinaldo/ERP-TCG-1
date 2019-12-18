@@ -44,6 +44,8 @@ Public Class frm_EstacionServicio
     Private Cliente As New e_Cliente, dCliente As New l_Cliente
     Private AsientoModelo As New e_AsientoModelo, dAsientoModelo As New l_AsientoModelo, ListaAsientoModelo As New List(Of e_AsientoModelo)
     Private ServicioCuentaContable As New e_ServicioCuentaContable, dServicioCuentaContable As New l_ServicioCuentaContable, ListaServicioCuentaContable As New List(Of e_ServicioCuentaContable)
+    Private TipoPago As New e_TipoPago, dTipoPago As New l_TipoPago, ListaTipoPago As New List(Of e_TipoPago)
+
     Private ASIENTO As New e_Asiento, dASIENTO As New l_Asiento
     Private MOVIMIENTO As New e_MovimientoCajaBanco, dMCB As New l_MovimientoCajaBanco
     Private MEDIOPAGO As New e_MedioPago, dMEDIOPAGO As New l_MedioPago
@@ -95,7 +97,7 @@ Public Class frm_EstacionServicio
 
     Private oeSaldoCtaCte As e_SaldoCtaCorriente, olSaldoCtaCte As New l_SaldoCtaCorriente, leSaldoCtaCte As New List(Of e_SaldoCtaCorriente)
     Private oeTDDato As e_TablaDinamica_Dato, olTDDato As l_TablaDinamica_Dato, leTipoMovCtaCte As List(Of e_TablaDinamica_Dato)
-    Private ESTADOORDEN As e_EstadoOrden, d_ESTADOORDEN As l_EstadoOrden, l_ESTADOORDEN As List(Of e_EstadoOrden)
+    'Private EstadoOrden As e_EstadoOrden, dEstadoOrden As l_EstadoOrden, ListaEstadoOrden As List(Of e_EstadoOrden)
 
     Private mdblCantidadPrecio As Double = 0
     Private mdblIGV As Double = gfc_ParametroValor("IGV")
@@ -108,7 +110,6 @@ Public Class frm_EstacionServicio
     Private EMPRESA As New e_Empresa, dEMPRESA As New l_Empresa
     'Private loEmpresa As List(Of e_Empresa)
 
-    Private TIPOPAGO As New e_TipoPago, dTIPOPAGO As New l_TipoPago, LISTA_TIPOPAGO As New List(Of e_TipoPago)
 
     Private indFacturaBoleta As Integer = 0
     Private DNI As String = "1CIX00000000000225"
@@ -227,10 +228,10 @@ Public Class frm_EstacionServicio
 
     Public Overrides Sub Guardar()
         Try
-            If Not fc_Cargar_OrdenVenta() Then Exit Sub
-            If Not fc_Guardar_OrdenVenta() Then
-                Consultar(True)
-            End If
+            If Not fc_Cargar_OrdenVenta() Then Throw New Exception
+            If Not fc_Guardar_OrdenVenta() Then Throw New Exception
+            If Not fc_Guardar_Cobros() Then Throw New Exception
+            Consultar(True)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -308,7 +309,7 @@ Public Class frm_EstacionServicio
                     If MovimientoDocumento.Id.Trim <> "" Then
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes
-                                mt_EmitirDocumento(False)
+                                mt_Emitir_Documento(False)
                         End Select
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
                         MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = OV.oeDocumento.Id})
@@ -437,8 +438,8 @@ Public Class frm_EstacionServicio
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
         gmt_ComboEspecifico(cmbTipoDocumento, dTIPODOC.Listar(New e_TipoDocumento With {.TipoOperacion = "X"}), -1)
 
-        ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .Activo = True, .TipoOperacion = "M"}))
-        LlenarCombo(cmbVehiculo, "Placa", ListaVehiculo.OrderBy(Function(Item) Item.Placa).ToList, -1)
+        'ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .Activo = True, .TipoOperacion = "M"}))
+        LlenarCombo(cmbVehiculo, "Nombre", TractoPublic, -1)
     End Sub
 
     Private Sub mt_AgregarDetalle()
@@ -652,7 +653,7 @@ Public Class frm_EstacionServicio
         End Try
     End Function
 
-    Private Sub mt_EmitirDocumento(IndMensaje As Boolean)
+    Private Sub mt_Emitir_Documento(IndMensaje As Boolean)
         Try
 
             Dim _banEmis As Boolean = False
@@ -939,23 +940,23 @@ Public Class frm_EstacionServicio
         End Try
     End Function
 
-    Private Function fc_OrdDocumento() As List(Of e_Orden_Documento)
-        Try
-            oeOrdDocumento = New e_Orden_Documento
-            loOrdDocumento = New List(Of e_Orden_Documento)
-            With oeOrdDocumento
-                .IdOrden = OV.Id
-                .TipoOrden = 2
-                .TipoOperacion = "I"
-                .TipoExistencia = 1
-                .UsuarioCreacion = gUsuarioSGI.Id
-                loOrdDocumento.Add(oeOrdDocumento)
-            End With
-            Return loOrdDocumento
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
+    'Private Function fc_OrdDocumento() As List(Of e_Orden_Documento)
+    '    Try
+    '        oeOrdDocumento = New e_Orden_Documento
+    '        loOrdDocumento = New List(Of e_Orden_Documento)
+    '        With oeOrdDocumento
+    '            .IdOrden = OV.Id
+    '            .TipoOrden = 2
+    '            .TipoOperacion = "I"
+    '            .TipoExistencia = 1
+    '            .UsuarioCreacion = gUsuarioSGI.Id
+    '            loOrdDocumento.Add(oeOrdDocumento)
+    '        End With
+    '        Return loOrdDocumento
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Function
 
     Private Sub btnDB5_Click(sender As Object, e As EventArgs) Handles btnDB5.Click
         Procesar_BotonCombustible(btnDB5.Text)
@@ -1002,6 +1003,7 @@ Public Class frm_EstacionServicio
         Next
         decPrecio.Value = PRODUCTO.Precio
         decDescuento.Value = fc_ObtenerDescuento(cbgCliente.Value, IdMaterial_Combustible, sw_TipoPago)
+        decCantidad.SelectAll()
     End Sub
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
