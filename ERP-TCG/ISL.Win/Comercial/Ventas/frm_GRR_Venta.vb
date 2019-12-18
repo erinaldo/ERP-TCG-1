@@ -27,6 +27,10 @@ Public Class frm_GRR_Venta
         Return instancia
     End Function
 
+    Private Sub frm_GRR_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
 #End Region
 
     '#Region "Variables"
