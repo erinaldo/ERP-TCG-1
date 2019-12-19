@@ -224,7 +224,15 @@ Public Class frm_CierreTurno
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "VENTASXCOMBUSTIBLE", .Grupo = "", .Concepto = "Gasolina 95", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "VENTAS_ANULADAS", .Grupo = "", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CALIBRACIONES", .Grupo = "", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "VARILLAJE", .Grupo = "CHT000000001", .IdConcepto = "CHT000000001", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "VARILLAJE", .Grupo = "CHT000000001", .IdConcepto = "CHT000000002", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "VARILLAJE", .Grupo = "CHT000000001", .IdConcepto = "CHT000000003", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "VARILLAJE", .Grupo = "CHT000000001", .IdConcepto = "CHT000000004", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "VARILLAJE", .Grupo = "CHT000000001", .IdConcepto = "CHT000000005", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_PRODUCTO", .Grupo = "", .IdConcepto = "1CH000007256", .Concepto = "Diesel DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_PRODUCTO", .Grupo = "", .IdConcepto = "1CH000000147", .Concepto = "Gasolina 84", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_PRODUCTO", .Grupo = "", .IdConcepto = "1CH000000148", .Concepto = "Gasolina 90", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_PRODUCTO", .Grupo = "", .IdConcepto = "1CH000000149", .Concepto = "Gasolina 95", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             mt_CargarGrillas()
         Catch ex As Exception
             Throw ex
@@ -260,7 +268,8 @@ Public Class frm_CierreTurno
                 udg_VentasxCombustible.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
                 udg_VentasAnuladas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
                 udg_Calibraciones.DataSource = .Detalles.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
-                udg_Almacenes.DataSource = .Detalles.Where(Function(it) it.Rubro = "ALMACENES").ToList : udg_Almacenes.DataBind()
+                udg_Almacenes.DataSource = .Detalles.Where(Function(it) it.Rubro = "VARILLAJE").ToList : udg_Almacenes.DataBind()
+                udg_Productos.DataSource = .Detalles.Where(Function(it) it.Rubro = "PRECIO_PRODUCTO").ToList : udg_Almacenes.DataBind()
             End With
             mt_OcultarColumnas()
         Catch ex As Exception
@@ -304,7 +313,7 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
@@ -328,7 +337,7 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
@@ -424,9 +433,33 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Glosa").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
+            .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Activo").Hidden = True
+        End With
+        With udg_Productos
+            .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdSucursal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdCierreTurno").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Grupo").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Rubro").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Descripcion").Hidden = True
+            .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
+            .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorAux2").Hidden = True
@@ -504,25 +537,28 @@ Public Class frm_CierreTurno
 
     Private Sub mt_CargarCombos()
         Try
-            Dim olCombo As New l_Combo : Dim oeCombo As New e_Combo
+            Dim dCombo As New l_Combo, Item As New e_Combo, Lista As New List(Of e_Combo)
 
             ' Turno
-            Dim Lista As New List(Of e_Combo)
+            Lista = New List(Of e_Combo)
             Lista.Add(New e_Combo With {.Id = "D", .Nombre = "Dia"})
             Lista.Add(New e_Combo With {.Id = "N", .Nombre = "Noche"})
             gmt_ComboEspecifico(cmb_Turno, Lista, 0)
             gmt_ComboEspecifico(cmb_TurnoBuscado, Lista, 0)
 
             ' Vendedores
-            Dim ListVendedores As New List(Of e_Combo)
-            oeCombo.TipoOperacion = "VEND"
-            ListVendedores.AddRange(olCombo.Listar(oeCombo))
-            gmt_ComboEspecifico(cboTrabajadorApertura, ListVendedores, 3)
-            gmt_ComboEspecifico(cboTrabajadorCierre, ListVendedores, 3)
+            Lista = New List(Of e_Combo)
+            Item.TipoOperacion = "VEND"
+            Lista.AddRange(dCombo.Listar(Item))
+            gmt_ComboEspecifico(cboTrabajadorApertura, Lista, 3)
+            gmt_ComboEspecifico(cboTrabajadorCierre, Lista, 3)
 
             ' Cargar Estado
-            gmt_ComboEspecifico(cmb_EstadoBuscado, ObtenerListaEstado(True), 3) : cmb_EstadoBuscado.SelectedIndex = 0
-            gmt_ComboEspecifico(cmb_Estado, ObtenerListaEstado, 3) : cmb_EstadoBuscado.SelectedIndex = 0
+            Lista = New List(Of e_Combo)
+            Lista.Add(New e_Combo With {.Id = "A", .Nombre = "Abierto"})
+            Lista.Add(New e_Combo With {.Id = "C", .Nombre = "Cerrado"})
+            gmt_ComboEspecifico(cmb_EstadoBuscado, Lista, 3) : cmb_EstadoBuscado.SelectedIndex = 0
+            gmt_ComboEspecifico(cmb_Estado, Lista, 3) : cmb_EstadoBuscado.SelectedIndex = 0
 
         Catch ex As Exception
             Throw ex

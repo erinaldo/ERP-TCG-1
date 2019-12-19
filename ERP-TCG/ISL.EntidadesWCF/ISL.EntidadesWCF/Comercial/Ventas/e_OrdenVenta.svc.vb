@@ -40,6 +40,9 @@ Public Class e_OrdenVenta
     Private _IdTurno As String
     Private _IdCanalVenta As String
     Private _IdTipoVenta As String
+    Private _IdPlaca As String
+    Private _IdPiloto As String
+    Private _Kilometraje As Double
 
     Public TipoOperacion As String
     Public lstOrdenComercialMaterial As New List(Of e_OrdenVentaMaterial)
@@ -375,6 +378,31 @@ Public Class e_OrdenVenta
             _IdTipoVenta = value
         End Set
     End Property
+
+    Public Property IdPiloto() As String
+        Get
+            Return _IdPiloto
+        End Get
+        Set(ByVal value As String)
+            _IdPiloto = value
+        End Set
+    End Property
+    Public Property IdPlaca() As String
+        Get
+            Return _IdPlaca
+        End Get
+        Set(ByVal value As String)
+            _IdPlaca = value
+        End Set
+    End Property
+    Public Property Kilometraje() As Double
+        Get
+            Return _Kilometraje
+        End Get
+        Set(ByVal value As Double)
+            _Kilometraje = value
+        End Set
+    End Property
 #End Region
 
 #Region "Constructor"
@@ -428,7 +456,10 @@ Public Class e_OrdenVenta
               , ByVal ls_DocAsoc As String _
               , ByVal ls_IdTurno As String _
               , ByVal ls_IdCanalVenta As String _
-              , ByVal ls_IdTipoVenta As String)
+              , ByVal ls_IdTipoVenta As String _
+              , ByVal ls_IdPiloto As String _
+              , ByVal ls_IdPlaca As String _
+              , ByVal ln_Kilometraje As Double)
         _id = ls_Id
         '_empresasis.Id = ls_IdEmpresaSis
         '_sucursal.Id = ls_IdSucursal
@@ -463,6 +494,9 @@ Public Class e_OrdenVenta
         _IdTurno = ls_IdTurno
         _IdCanalVenta = ls_IdCanalVenta
         _IdTipoVenta = ls_IdTipoVenta
+        _IdPiloto = ls_IdPiloto
+        _IdPlaca = ls_IdPlaca
+        _Kilometraje = ln_Kilometraje
     End Sub
 
 

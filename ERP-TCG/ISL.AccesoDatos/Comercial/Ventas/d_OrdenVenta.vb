@@ -50,7 +50,10 @@ Public Class d_OrdenVenta
                               , o_fila("DocAsoc").ToString _
                               , o_fila("IdTurno").ToString _
                               , o_fila("IdCanalVenta").ToString _
-            , o_fila("IdTipoVenta").ToString)
+                              , o_fila("IdTipoVenta").ToString _
+                              , o_fila("IdPiloto").ToString _
+                              , o_fila("IdPlaca").ToString _
+                              , o_fila("Kilometraje").ToString)
             Return oeOrdenComercial
         Catch ex As Exception
             Throw ex
@@ -152,7 +155,10 @@ Public Class d_OrdenVenta
                             , .IdVendedorTrabajador _
                             , .IdTurno _
                             , .IdCanalVenta _
-                            , .IdTipoVenta
+                            , .IdTipoVenta _
+                            , .IdPiloto _
+                            , .IdPlaca _
+                            , .Kilometraje
                               ).ToString.Split("_")
 
                     .Id = stResultado(0)
@@ -199,7 +205,7 @@ Public Class d_OrdenVenta
                             , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
                             , .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
                             , .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _
-                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta)
+                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta, .IdPiloto, .IdPlaca, .Kilometraje)
             End With
             Return True
         Catch ex As Exception
