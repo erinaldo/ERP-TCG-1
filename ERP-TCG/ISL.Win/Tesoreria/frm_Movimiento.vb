@@ -232,7 +232,7 @@ Public Class frm_Movimiento
     Private oeConcepto As New e_Concepto
     Private olConcepto As New l_Concepto
     Private loConcepto As New List(Of e_Concepto)
-
+    Dim ContadorVale As Integer = 0 '@0001
 #End Region
 
 #Region "Botones"
@@ -4442,13 +4442,21 @@ Public Class frm_Movimiento
     End Sub
 
     Private Sub cboTipoDocumento_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDocumento.Click
+
         cboTipoDocumento.SelectAll()
     End Sub
 
     Private Sub cboTipoDocumento_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDocumento.Enter
         cboTipoDocumento.SelectAll()
     End Sub
-
+    '@0001
+    Sub CorrelativoVale()
+        If cboTipoDocumento.Text.Trim = "VALE" Then
+            ContadorVale += 1
+            txtSerie.Text = "1"
+            txtNumero.Text = ContadorVale
+        End If
+    End Sub
     Private Sub txtRUC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRUC.Click
         txtRUC.SelectAll()
     End Sub
@@ -4478,6 +4486,7 @@ Public Class frm_Movimiento
     End Sub
 
     Private Sub txtSerie_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.Enter
+        CorrelativoVale()
         txtSerie.SelectAll()
     End Sub
 

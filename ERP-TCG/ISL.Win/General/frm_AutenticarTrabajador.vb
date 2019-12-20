@@ -134,7 +134,31 @@ Public Class frm_AutenticarTrabajador
         cboTrabajador.AutoCompleteMode = AutoCompleteMode.SuggestAppend
 
     End Sub
+    '@0001
+    Private Sub cboTrabajador_ValueChanged(sender As Object, e As EventArgs) Handles cboTrabajador.ValueChanged
+        ClaveTrabajador()
+    End Sub
 
+    Private Sub cboTrabajador_KeyDown(sender As Object, e As KeyEventArgs) Handles cboTrabajador.KeyDown
+        ClaveTrabajador()
+    End Sub
+
+    Private Sub cboTrabajador_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cboTrabajador.KeyPress
+        ClaveTrabajador()
+    End Sub
+    Sub ClaveTrabajador()
+        Dim TrabClave = From trab In lstTrabajador
+                        Where trab.Activo = True And trab.Id = cboTrabajador.Value
+
+        For Each T In TrabClave
+            txtClaveSeguridad.Text = T.ClaveSeguridad.Trim
+        Next
+    End Sub
+
+    Private Sub cboTrabajador_Enter(sender As Object, e As EventArgs) Handles cboTrabajador.Enter
+        ClaveTrabajador()
+    End Sub
+    '@0001
     ''' <summary>
     ''' Función para validar la clave de trabajador ingresada por el usuario
     ''' </summary>
