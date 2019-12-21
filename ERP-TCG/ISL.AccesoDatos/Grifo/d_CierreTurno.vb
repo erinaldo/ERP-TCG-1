@@ -40,7 +40,7 @@ Public Class d_CierreTurno
     Public Function Obtener(ByVal Item As e_CierreTurno) As e_CierreTurno
         Try
             With Item
-                DS = SQL.ExecuteDataset("CMP.Isp_CierreTurno_Listar", .TipoOperacion _
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Listar", .TipoOperacion _
                                                                         , .Id)
             End With
             If ds.Tables.Count > 0 Then
@@ -56,7 +56,7 @@ Public Class d_CierreTurno
         Try
             Dim ldCierreTurno As New List(Of e_CierreTurno)
             With Item
-                DS = SQL.ExecuteDataset("CMP.Isp_CierreTurno_Listar", .TipoOperacion _
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Listar", .TipoOperacion _
                                                                         , .Id)
             End With
             Item = Nothing

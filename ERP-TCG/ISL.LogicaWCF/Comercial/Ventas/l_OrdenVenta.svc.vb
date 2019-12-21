@@ -62,6 +62,31 @@ Public Class l_OrdenVenta
         End Try
     End Function
 
+    Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta Implements Il_OrdenVenta.Guardar_VentaRapida
+        Try
+            Dim bol_guardado As Boolean = False
+            Using TransScope As New TransactionScope()
+                If Validar(OrdenVenta) Then
+                    OrdenVenta = odOrdenComercial.Guardar_VentaRapida(OrdenVenta)
+                    If OrdenVenta.oeDocumento.TipoOperacion <> "" Then
+                        'oeOrdenComercial.oeDocumento.idOrdenComercial = oeOrdenComercial.Id
+                        'If oeOrdenComercial.oeDocumento.Serie.StartsWith("B") OrElse oeOrdenComercial.oeDocumento.Serie.StartsWith("F") Then
+                        '    oeOrdenComercial.oeDocumento.IndElectronico = True
+                        'End If
+                        For Each oe In OrdenVenta.oeDocumento.lo_OrdenDocumento
+                            oe.IdOrden = OrdenVenta.Id
+                        Next
+                        olDocumento.Guardar(OrdenVenta.oeDocumento)
+                    End If
+                End If
+                TransScope.Complete()
+            End Using
+            Return OrdenVenta
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Eliminar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean Implements Il_OrdenVenta.Eliminar
         Try
             Return odOrdenComercial.Eliminar(oeOrdenComercial)
