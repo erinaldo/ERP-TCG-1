@@ -37,6 +37,7 @@ Public Class frm_EstacionServicio
 
 #Region "Declaracion de Variables"
 
+    Private TurnoActivo As New e_CierreTurno
     Private ListaVehiculo As New List(Of e_Vehiculo), dVehiculo As New l_Vehiculo
     Private MovimientoDocumento As New e_MovimientoDocumento, dMovimientoDocumento As New l_MovimientoDocumento, ListaMovimientoDocumento As New List(Of e_MovimientoDocumento)
     Private DetalleDocumento As New e_DetalleDocumento, ListaDetalleDocumento As New List(Of e_DetalleDocumento)
@@ -122,8 +123,7 @@ Public Class frm_EstacionServicio
     Private Sub frm_EstacionServicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             _Activo = True
-            olEstacionServicio = New l_EstacionServicio
-            'Me.UltraGrid1.DataSource = olEstacionServicio.mt_Listar(New e_EstacionServicio With {.TipoOperacion = "N"})
+            TurnoActivo = gfc_obtener_TurnoActivo()
             mt_Inicializar()
             Nuevo()
         Catch ex As Exception
@@ -966,12 +966,18 @@ Public Class frm_EstacionServicio
         End Select
 
         '' Cargar Producto
-
-        Dim ListaTurnoDetalle As New List(Of e_CierreTurno_Detalle), TurnoDetalle As New e_CierreTurno_Detalle, dTurnoDetalle As New l_CierreTurno_Detalle
-        ListaTurnoDetalle = dTurnoDetalle.Listar(New e_CierreTurno_Detalle With {.IdConcepto = IdMaterial_Combustible}) ' Agregar IdTurno activo en el momento
-        decPrecio.Value = 18 ' valor de prueba
+        decPrecio.Value = fc_Obtener_PrecioCombustible()
         Calcular_DescuentoCombustible()
     End Sub
+
+    Public Function fc_Obtener_PrecioCombustible() As Double
+        For Each Item In TurnoActivo.Detalles
+            If Item.IdConcepto = IdMaterial_Combustible Then
+                Return Item.ValorERP
+            End If
+        Next
+        Return 0
+    End Function
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
         IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA" : grb_Documento.Visible = True
