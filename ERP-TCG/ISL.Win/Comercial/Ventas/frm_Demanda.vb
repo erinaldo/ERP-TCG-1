@@ -338,7 +338,8 @@ Public Class frm_Demanda
         LlenarComboMaestro(cboClienteFinal, ClientesPublic, 0)
         LlenarComboMaestro(cboComisionista, ComisionistasPublic, -1)
         LlenarComboMaestro(cboTipoCarga, TipoCargaPublic, -1)
-        LlenarComboMaestro(cboMaterial, MaterialesPublic.Where(Function(item) item.Descripcion = "OPERACIONESC").ToList, -1)
+        'LlenarComboMaestro(cboMaterial, MaterialesPublic.Where(Function(item) item.Descripcion = "OPERACIONESC").ToList, -1)
+        LlenarComboMaestro(cboMaterial, MaterialesPublic.ToList, -1)
         LlenarComboMaestro(cboOrigenDetalle, LugaresPublic, -1)
         '  LlenarComboMaestro(cboDestinoDetalle, LugaresPublic, -1)
         LlenarComboMaestro(cboContacto, ComisionistasPublic, -1)
@@ -3594,7 +3595,7 @@ Public Class frm_Demanda
             oeDemanda.oeDetalleDemanda = griDetalle.DataSource
             With griDetalle.ActiveRow
                 oeDemandaDetalle = New e_DemandaDetalle
-                oeDemandaDetalle.Id = Nothing
+                oeDemandaDetalle.Id = ""
                 oeDemandaDetalle.IdDemanda = .Cells("IdDemanda").Value
                 oeDemandaDetalle.IdCliente = .Cells("IdCliente").Value
                 oeDemandaDetalle.Cliente = .Cells("Cliente").Value
