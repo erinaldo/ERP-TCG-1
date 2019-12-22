@@ -1023,6 +1023,12 @@
     <Compile Include="Grifo\frm_Calibraciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\frm_VentaCombustible.Designer.vb">
+      <DependentUpon>frm_VentaCombustible.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\frm_VentaCombustible.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ISLDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -6259,6 +6265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_Calibraciones.resx">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\frm_VentaCombustible.resx">
+      <DependentUpon>frm_VentaCombustible.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_Covisol.resx">
       <DependentUpon>frm_Covisol.vb</DependentUpon>

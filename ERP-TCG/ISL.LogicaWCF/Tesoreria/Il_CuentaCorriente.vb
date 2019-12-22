@@ -19,6 +19,9 @@ Public Interface Il_CuentaCorriente
     <OperationContract()> _
     Function Guardar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean
 
+    <OperationContract()>
+    Function Guardar_CuentaCorriente(ByVal oeCuentaCorriente As e_CuentaCorriente) As e_CuentaCorriente
+
     <OperationContract()> _
     Function Eliminar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean
 

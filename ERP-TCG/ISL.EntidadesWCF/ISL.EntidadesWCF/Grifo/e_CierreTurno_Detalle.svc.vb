@@ -6,10 +6,6 @@ Public Class e_CierreTurno_Detalle
     Implements Ie_CierreTurno_Detalle
 
     <DataMember()>
-    Public lstZona As List(Of e_Zona)
-    <DataMember()>
-    Public leSubAlmacen As List(Of e_SubAlmacen)
-    <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
     Public IdEmpresaSistema As String = ""

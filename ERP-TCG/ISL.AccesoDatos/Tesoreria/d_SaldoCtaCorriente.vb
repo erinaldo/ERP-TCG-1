@@ -112,6 +112,33 @@ Public Class d_SaldoCtaCorriente
         End Try
     End Function
 
+    Public Function Guardar_SaldoCuentaCorriente(ByVal oeSaldoCtaCorriente As e_SaldoCtaCorriente) As e_SaldoCtaCorriente
+        Try
+            With oeSaldoCtaCorriente
+                oeSaldoCtaCorriente.Id = sqlhelper.ExecuteNonQuery("TES.Isp_SaldoCtaCorriente_IAE",
+                                          .TipoOperacion,
+                                          .PrefijoID,
+                                            .Id _
+                                            , .IdCuentaCorriente _
+                                            , .TipoCuenta _
+                                            , .Monto _
+                                            , .Saldo _
+                                            , .Activo _
+                                            , .UsuarioCreacion _
+                                            , .UsuarioLiquida _
+                                            , .FechaLiquida _
+                                            , .Liquidado _
+                                            , .Cargo _
+                                            , .Abono _
+                                            , .Movimiento _
+                                            , .IdReferencia)
+            End With
+            Return oeSaldoCtaCorriente
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function PagoBono(ByVal oeSaldoCtaCorriente As e_SaldoCtaCorriente) As Boolean
         Try
             Using TransScope As New TransactionScope()

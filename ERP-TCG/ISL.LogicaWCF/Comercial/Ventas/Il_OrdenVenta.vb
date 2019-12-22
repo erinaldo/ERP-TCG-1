@@ -18,6 +18,9 @@ Public Interface Il_OrdenVenta
     Function Guardar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
 
     <OperationContract()>
+    Function Guardar_VentaRapida(ByVal oeOrdenComercial As e_OrdenVenta) As e_OrdenVenta
+
+    <OperationContract()>
     Function Eliminar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
 
     <OperationContract()>

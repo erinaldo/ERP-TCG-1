@@ -40,8 +40,7 @@ Public Class d_CierreTurno
     Public Function Obtener(ByVal Item As e_CierreTurno) As e_CierreTurno
         Try
             With Item
-                DS = SQL.ExecuteDataset("CMP.Isp_CierreTurno_Listar", .TipoOperacion _
-                                                                        , .Id)
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_LST", .TipoOperacion, .Id)
             End With
             If ds.Tables.Count > 0 Then
                 Item = Cargar(ds.Tables(0).Rows(0))
@@ -56,7 +55,7 @@ Public Class d_CierreTurno
         Try
             Dim ldCierreTurno As New List(Of e_CierreTurno)
             With Item
-                DS = SQL.ExecuteDataset("CMP.Isp_CierreTurno_Listar", .TipoOperacion _
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_LST", .TipoOperacion _
                                                                         , .Id)
             End With
             Item = Nothing
@@ -105,6 +104,9 @@ Public Class d_CierreTurno
 
                 For Each Detalle In .Detalles
                     Detalle.IdCierreTurno = .Id
+                    Detalle.TipoOperacion = .TipoOperacion
+                    Detalle.PrefijoID = .PrefijoID
+                    Detalle.IdEmpresaSis = .IdEmpresaSis
                     dCTD.Guardar(Detalle)
                 Next
             End With

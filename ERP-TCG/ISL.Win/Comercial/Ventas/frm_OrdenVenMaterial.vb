@@ -1046,7 +1046,6 @@ Public Class frm_OrdenVenMaterial
 
 #End Region
 
-
 #Region "Metodos"
 
     Private Sub mt_Inicializar()
@@ -2010,10 +2009,8 @@ Public Class frm_OrdenVenMaterial
 
                 mt_ListarCtaCtble(frm.Año1.Año)
 
-
                 oeDoc.Id = oeDocumento.Id : oeDoc.CargaCompleta = True
                 oeDoc = olDocumento.Obtener(oeDoc)
-
                 oeDoc.IdPeriodo = frm.cboMes.Value : oeDoc.Ejercicio = frm.Año1.Año
                 oeDoc.Venta.TipoDoc = oeTipoDoc : oeDoc.Venta.Cliente = oeCliente : oeDoc.Venta.Moneda = oeMoneda
 
@@ -2047,6 +2044,7 @@ Public Class frm_OrdenVenMaterial
                         Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
                                         Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                     End If
+
                     oeDoc.PrefijoID = gs_PrefijoIdSucursal
                     If oeCuentaCorriente.Id <> "" Then
                         _banEmis = olDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, True, String.Empty, False)
@@ -2515,6 +2513,10 @@ Public Class frm_OrdenVenMaterial
             .Columns("Ruc").Width = 80
             .Columns("Nombre").Width = 250
         End With
+    End Sub
+
+    Private Sub btnCrearCtaCte_Click(sender As Object, e As EventArgs) Handles btnCrearCtaCte.Click
+
     End Sub
 
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)

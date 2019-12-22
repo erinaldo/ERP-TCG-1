@@ -6,10 +6,6 @@ Public Class e_CierreTurno
     Implements IEquatable(Of e_CierreTurno)
 
     <DataMember()>
-    Public lstZona As List(Of e_Zona)
-    <DataMember()>
-    Public leSubAlmacen As List(Of e_SubAlmacen)
-    <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
     Public IdEmpresaSistema As String = ""
