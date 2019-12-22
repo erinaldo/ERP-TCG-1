@@ -95,7 +95,6 @@ Public Class frm_EmpresaDescuento
             DESCUENTO.TipoOperacion = "I"
             MostrarTabs(1, ficAlmacen, 1)
             Inicializar()
-            txtCodigo.Focus()
             Operacion = "Nuevo"
             'GrillaZonaEdit.DataSource = ListaZona
             MyBase.Nuevo()
@@ -109,7 +108,6 @@ Public Class frm_EmpresaDescuento
         Try
             Mostrar()
             DESCUENTO.TipoOperacion = ""
-            txtCodigo.Focus()
             Operacion = "Editar"
             MyBase.Editar()
             DESCUENTO.Modificado = False
@@ -237,7 +235,6 @@ Public Class frm_EmpresaDescuento
             If udgDatos.ActiveRow.Cells("Id").Value.ToString.Length > 0 Then
                 Inicializar()
                 With DESCUENTO
-                    txtCodigo.Text = DESCUENTO.Id
                     cbgCliente.Value = .IdEmpresa
                     cboProducto.Value = .IdProducto
                     cboMoneda.Value = .IdMoneda
@@ -246,6 +243,7 @@ Public Class frm_EmpresaDescuento
                     dtpFechaInicio.Value = .FechaInicio
                     dtpFechaFin.Value = .FechaFin
                     cboVendedor.Value = .IdVendedorTrabajador
+                    verActivo.Checked = .Activo
                 End With
                 MostrarTabs(1, ficAlmacen, 1)
                 MyBase.Editar()
@@ -310,11 +308,13 @@ Public Class frm_EmpresaDescuento
 
     Private Function GuardarRegistro() As Boolean
         Try
+            If cbgCliente.Value = "" Then Return False
+            If cboProducto.Value = "" Then Return False
+
             With DESCUENTO
                 .IdEmpresaSis = gs_IdEmpresaSistema
                 .IdSucursalSistema = ""
                 .PrefijoID = gs_PrefijoIdSucursal
-                .Id = txtCodigo.Text
                 .IdEmpresa = cbgCliente.Value
                 .Empresa = cbgCliente.Text
                 .IdProducto = cboProducto.Value
@@ -327,6 +327,7 @@ Public Class frm_EmpresaDescuento
                 .FechaFin = dtpFechaFin.Value
                 .IdVendedorTrabajador = cboVendedor.Value
                 .VendedorTrabajador = cboVendedor.Text
+                .Activo = verActivo.Checked
             End With
 
             If Not d_EmpresaDescuento.Guardar(DESCUENTO) Then

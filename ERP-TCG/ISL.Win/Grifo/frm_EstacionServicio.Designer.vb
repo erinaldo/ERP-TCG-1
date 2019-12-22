@@ -373,7 +373,7 @@ Partial Class frm_EstacionServicio
         Me.btnDocumento.Location = New System.Drawing.Point(17, 26)
         Me.btnDocumento.Name = "btnDocumento"
         Me.btnDocumento.Size = New System.Drawing.Size(188, 37)
-        Me.btnDocumento.TabIndex = 2
+        Me.btnDocumento.TabIndex = 0
         Me.btnDocumento.Text = "DOCUMENTO"
         Me.btnDocumento.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -386,7 +386,7 @@ Partial Class frm_EstacionServicio
         Me.btnNotaDespacho.Location = New System.Drawing.Point(17, 104)
         Me.btnNotaDespacho.Name = "btnNotaDespacho"
         Me.btnNotaDespacho.Size = New System.Drawing.Size(188, 37)
-        Me.btnNotaDespacho.TabIndex = 4
+        Me.btnNotaDespacho.TabIndex = 2
         Me.btnNotaDespacho.Text = "NOTA DESPACHO"
         Me.btnNotaDespacho.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -399,7 +399,7 @@ Partial Class frm_EstacionServicio
         Me.btnBoleta.Location = New System.Drawing.Point(17, 64)
         Me.btnBoleta.Name = "btnBoleta"
         Me.btnBoleta.Size = New System.Drawing.Size(188, 37)
-        Me.btnBoleta.TabIndex = 3
+        Me.btnBoleta.TabIndex = 1
         Me.btnBoleta.Text = "BOLETA"
         Me.btnBoleta.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -432,7 +432,7 @@ Partial Class frm_EstacionServicio
         Me.decKilometraje.Name = "decKilometraje"
         Me.decKilometraje.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decKilometraje.Size = New System.Drawing.Size(142, 35)
-        Me.decKilometraje.TabIndex = 26
+        Me.decKilometraje.TabIndex = 5
         '
         'UltraLabel15
         '
@@ -488,7 +488,7 @@ Partial Class frm_EstacionServicio
         Me.cmbPiloto.Location = New System.Drawing.Point(108, 63)
         Me.cmbPiloto.Name = "cmbPiloto"
         Me.cmbPiloto.Size = New System.Drawing.Size(496, 35)
-        Me.cmbPiloto.TabIndex = 28
+        Me.cmbPiloto.TabIndex = 3
         '
         'UltraLabel8
         '
@@ -540,7 +540,7 @@ Partial Class frm_EstacionServicio
         Me.txtNumero.MaxLength = 10
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(158, 33)
-        Me.txtNumero.TabIndex = 3
+        Me.txtNumero.TabIndex = 2
         '
         'dtpFechaDoc
         '
@@ -550,7 +550,7 @@ Partial Class frm_EstacionServicio
         Me.dtpFechaDoc.Location = New System.Drawing.Point(108, 27)
         Me.dtpFechaDoc.Name = "dtpFechaDoc"
         Me.dtpFechaDoc.Size = New System.Drawing.Size(120, 30)
-        Me.dtpFechaDoc.TabIndex = 1
+        Me.dtpFechaDoc.TabIndex = 0
         '
         'txtSerie
         '
@@ -561,7 +561,7 @@ Partial Class frm_EstacionServicio
         Me.txtSerie.MaxLength = 4
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(99, 33)
-        Me.txtSerie.TabIndex = 2
+        Me.txtSerie.TabIndex = 1
         '
         'UltraGroupBox4
         '
@@ -586,7 +586,7 @@ Partial Class frm_EstacionServicio
         Me.btnCrearCuentaCorriente.Location = New System.Drawing.Point(994, 63)
         Me.btnCrearCuentaCorriente.Name = "btnCrearCuentaCorriente"
         Me.btnCrearCuentaCorriente.Size = New System.Drawing.Size(41, 35)
-        Me.btnCrearCuentaCorriente.TabIndex = 28
+        Me.btnCrearCuentaCorriente.TabIndex = 4
         Me.btnCrearCuentaCorriente.Text = "+"
         Me.btnCrearCuentaCorriente.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -800,7 +800,7 @@ Partial Class frm_EstacionServicio
         Me.btnAgregarDetalle.Location = New System.Drawing.Point(725, 38)
         Me.btnAgregarDetalle.Name = "btnAgregarDetalle"
         Me.btnAgregarDetalle.Size = New System.Drawing.Size(48, 69)
-        Me.btnAgregarDetalle.TabIndex = 5
+        Me.btnAgregarDetalle.TabIndex = 8
         Me.btnAgregarDetalle.Text = "+"
         Me.btnAgregarDetalle.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -828,7 +828,7 @@ Partial Class frm_EstacionServicio
         Me.decDescuento.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decDescuento.ReadOnly = True
         Me.decDescuento.Size = New System.Drawing.Size(157, 35)
-        Me.decDescuento.TabIndex = 21
+        Me.decDescuento.TabIndex = 6
         '
         'decPrecio
         '
@@ -840,7 +840,7 @@ Partial Class frm_EstacionServicio
         Me.decPrecio.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decPrecio.ReadOnly = True
         Me.decPrecio.Size = New System.Drawing.Size(157, 35)
-        Me.decPrecio.TabIndex = 20
+        Me.decPrecio.TabIndex = 5
         '
         'UltraLabel3
         '
@@ -880,7 +880,7 @@ Partial Class frm_EstacionServicio
         Me.decPrecioTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decPrecioTotal.ReadOnly = True
         Me.decPrecioTotal.Size = New System.Drawing.Size(157, 35)
-        Me.decPrecioTotal.TabIndex = 24
+        Me.decPrecioTotal.TabIndex = 7
         '
         'decCantidad
         '
