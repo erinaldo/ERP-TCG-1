@@ -2518,6 +2518,10 @@ Public Class frm_OrdenVenMaterial
         End With
     End Sub
 
+    Private Sub btnCrearCtaCte_Click(sender As Object, e As EventArgs) Handles btnCrearCtaCte.Click
+
+    End Sub
+
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)
         Try
             loDetDocumento = New List(Of e_DetalleDocumento)

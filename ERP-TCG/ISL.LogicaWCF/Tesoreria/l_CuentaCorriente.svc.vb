@@ -35,6 +35,16 @@ Public Class l_CuentaCorriente
         End Try
     End Function
 
+    Public Function Guardar_CuentaCorriente(ByVal oeCuentaCorriente As e_CuentaCorriente) As e_CuentaCorriente Implements Il_CuentaCorriente.Guardar_CuentaCorriente
+        Try
+            If Validar(oeCuentaCorriente) Then
+                Return odCuentaCorriente.Guardar_CuentaCorriente(oeCuentaCorriente)
+            End If
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
     Public Function Listar(ByVal oeCuentaCorriente As e_CuentaCorriente) As System.Collections.Generic.List(Of e_CuentaCorriente) Implements Il_CuentaCorriente.Listar
         Try
             Return odCuentaCorriente.Listar(oeCuentaCorriente)

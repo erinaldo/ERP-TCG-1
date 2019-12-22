@@ -192,6 +192,7 @@ Partial Class frm_EstacionServicio
         Me.dtpFechaDoc = New System.Windows.Forms.DateTimePicker()
         Me.txtSerie = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btnCrearCuentaCorriente = New Infragistics.Win.Misc.UltraButton()
         Me.UltraLabel14 = New Infragistics.Win.Misc.UltraLabel()
         Me.btnConsultarSUNAT = New Infragistics.Win.Misc.UltraButton()
         Me.decSaldo = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
@@ -236,7 +237,6 @@ Partial Class frm_EstacionServicio
         Me.UltraLabel7 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraGridFilterUIProvider1 = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
-        Me.btnCrearCuentaCorriente = New Infragistics.Win.Misc.UltraButton()
         CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ugbHead.SuspendLayout()
         CType(Me.grbDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -422,7 +422,6 @@ Partial Class frm_EstacionServicio
         Me.grb_Documento.TabIndex = 17
         Me.grb_Documento.Text = "Emitir Documento:"
         Me.grb_Documento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        Me.grb_Documento.Visible = False
         '
         'decKilometraje
         '
@@ -579,6 +578,17 @@ Partial Class frm_EstacionServicio
         Me.UltraGroupBox4.TabIndex = 5
         Me.UltraGroupBox4.Text = "Cliente:"
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'btnCrearCuentaCorriente
+        '
+        Me.btnCrearCuentaCorriente.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnCrearCuentaCorriente.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCrearCuentaCorriente.Location = New System.Drawing.Point(994, 63)
+        Me.btnCrearCuentaCorriente.Name = "btnCrearCuentaCorriente"
+        Me.btnCrearCuentaCorriente.Size = New System.Drawing.Size(41, 35)
+        Me.btnCrearCuentaCorriente.TabIndex = 28
+        Me.btnCrearCuentaCorriente.Text = "+"
+        Me.btnCrearCuentaCorriente.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
         'UltraLabel14
         '
@@ -1405,17 +1415,6 @@ Partial Class frm_EstacionServicio
         Me.UltraLabel9.Size = New System.Drawing.Size(105, 28)
         Me.UltraLabel9.TabIndex = 2
         Me.UltraLabel9.Text = "Impuesto:"
-        '
-        'btnCrearCuentaCorriente
-        '
-        Me.btnCrearCuentaCorriente.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
-        Me.btnCrearCuentaCorriente.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCrearCuentaCorriente.Location = New System.Drawing.Point(994, 63)
-        Me.btnCrearCuentaCorriente.Name = "btnCrearCuentaCorriente"
-        Me.btnCrearCuentaCorriente.Size = New System.Drawing.Size(41, 35)
-        Me.btnCrearCuentaCorriente.TabIndex = 28
-        Me.btnCrearCuentaCorriente.Text = "+"
-        Me.btnCrearCuentaCorriente.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
         'frm_EstacionServicio
         '
