@@ -257,6 +257,7 @@ Public Class frm_EstacionServicio
             Case "TipoPago"
                 btnContado.Appearance.BackColor = Color.White
                 btnCredito.Appearance.BackColor = Color.White
+                btnCalibracion.Appearance.BackColor = Color.White
             Case "Lado"
                 btnLado1.Appearance.BackColor = Color.White
                 btnLado2.Appearance.BackColor = Color.White
@@ -783,7 +784,8 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub btnCalibracion_Click(sender As Object, e As EventArgs) Handles btnCalibracion.Click
-        IdTipoPago = "" : IdTipoVenta = "CALIBRACION"
+        IdTipoPago = "1SI000000017" : IdTipoVenta = "CALIBRACION"
+        cbgCliente.Value = "GCH000000001"
         mt_PaintBotones("TipoPago") : btnCalibracion.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = True
         mt_Calcular_DescuentoCombustible()
@@ -1000,17 +1002,20 @@ Public Class frm_EstacionServicio
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
         IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
-        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
+        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
+        txtSerie.Text = "" : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
         IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA"
-        mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
+        mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue
+        txtSerie.Text = "" : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVarios_Click(sender As Object, e As EventArgs) Handles btnNotaDespacho.Click
         IdTipoDocumento = "GCH000000001" : TipoDocumento = "NOTA DE DESPACHO"
-        mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
+        mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue
+        txtSerie.Text = "" : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
@@ -1079,7 +1084,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub btnCredito_Click(sender As Object, e As EventArgs) Handles btnCredito.Click
-        IdTipoPago = "" : IdTipoVenta = "VENTA_COMBUSTIBLE"
+        IdTipoPago = "1SI000000017" : IdTipoVenta = "VENTA_COMBUSTIBLE"
         mt_PaintBotones("TipoPago") : btnCredito.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = True
         mt_Calcular_DescuentoCombustible()
@@ -1165,13 +1170,18 @@ Public Class frm_EstacionServicio
 
     Private Sub cbgCliente_Leave(sender As Object, e As EventArgs) Handles cbgCliente.Leave
         Try
+            Dim dClienteProveedor As New l_ClienteProveedor, ListaClienteProveedor As New List(Of e_ClienteProveedor)
             If Not cbgCliente.Value = "" Then
-                loEmpresa = dEMPRESA.Listar(New e_Empresa With {.Id = cbgCliente.Value})
-                For Each Item As e_Empresa In loEmpresa
-                    txtDireccionFiscal.Text = Item.DireccionFiscal
-                    decSaldo.Value = fc_Obtener_SaldoCuentaCorriente()
+                ListaClienteProveedor = dClienteProveedor.Listar(New e_ClienteProveedor With {.TipoOperacion = "T", .Id = cbgCliente.Value})
+
+                For Each Item In ListaClienteProveedor
+                    loEmpresa = dEMPRESA.Listar(New e_Empresa With {.Id = Item.IdPersonaEmpresa})
+                    For Each It In loEmpresa
+                        txtDireccionFiscal.Text = It.DireccionFiscal
+                    Next
                 Next
             End If
+            decSaldo.Value = fc_Obtener_SaldoCuentaCorriente()
         Catch ex As Exception
             Throw ex
         End Try
@@ -1198,7 +1208,7 @@ Public Class frm_EstacionServicio
         Select Case IdTipoDocumento
             Case "1CH000000026" : Tipo = "F"
             Case "1CH000000002" : Tipo = "B"
-            Case "GCH000000001" : Tipo = "N"
+            Case "GCH000000001" : Tipo = ""
         End Select
         txtSerie.Text = FormatoSerieElectronica(txtSerie.Text, Tipo) 'FormatoDocumento(txtSerie.Text, 4)
         txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, IdTipoDocumento, 2)), 8)

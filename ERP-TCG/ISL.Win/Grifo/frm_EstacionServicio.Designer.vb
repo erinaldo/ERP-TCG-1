@@ -369,6 +369,7 @@ Partial Class frm_EstacionServicio
         Appearance5.BackColor = System.Drawing.Color.White
         Me.btnDocumento.Appearance = Appearance5
         Me.btnDocumento.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnDocumento.Enabled = False
         Me.btnDocumento.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnDocumento.Location = New System.Drawing.Point(17, 26)
         Me.btnDocumento.Name = "btnDocumento"
@@ -382,6 +383,7 @@ Partial Class frm_EstacionServicio
         Appearance6.BackColor = System.Drawing.Color.White
         Me.btnNotaDespacho.Appearance = Appearance6
         Me.btnNotaDespacho.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnNotaDespacho.Enabled = False
         Me.btnNotaDespacho.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNotaDespacho.Location = New System.Drawing.Point(17, 104)
         Me.btnNotaDespacho.Name = "btnNotaDespacho"
@@ -395,6 +397,7 @@ Partial Class frm_EstacionServicio
         Appearance7.BackColor = System.Drawing.Color.White
         Me.btnBoleta.Appearance = Appearance7
         Me.btnBoleta.ButtonStyle = Infragistics.Win.UIElementButtonStyle.WindowsVistaButton
+        Me.btnBoleta.Enabled = False
         Me.btnBoleta.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBoleta.Location = New System.Drawing.Point(17, 64)
         Me.btnBoleta.Name = "btnBoleta"
