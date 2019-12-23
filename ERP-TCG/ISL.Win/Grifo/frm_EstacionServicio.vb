@@ -166,7 +166,9 @@ Public Class frm_EstacionServicio
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
             If Not fc_EmitirDocumento() Then Throw New Exception
-            If Not fc_Guardar_Cobros() Then Throw New Exception
+            If IdTipoVenta <> "CALIBRACION" Then
+                If Not fc_Guardar_Cobros() Then Throw New Exception
+            End If
             Consultar(True)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -398,6 +400,10 @@ Public Class frm_EstacionServicio
                 .oeOrdenSalida = New e_Orden
                 .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 .oeOrdenSalida.IdOrdenDocumento = fc_OrdenDocumento().Id
+
+                '' Documento
+                .oeDocumento = fc_Cargar_MovimientoDocumento()
+
                 For Each oe As e_OrdenVentaMaterial In OrdenVenta.lstOrdenComercialMaterial
                     If oe.CantidadPendiente - oe.CantidadAtender >= 0 Then
                         oe.CantidadPendiente = oe.CantidadPendiente - oe.CantidadAtender
@@ -527,7 +533,7 @@ Public Class frm_EstacionServicio
         decCantidad.SelectAll()
     End Sub
 
-    Private Sub mt_Cargar_MovimientoDocumento()
+    Private Function fc_Cargar_MovimientoDocumento() As e_MovimientoDocumento
         Try
             MovimientoDocumento = New e_MovimientoDocumento
             With MovimientoDocumento
@@ -594,10 +600,11 @@ Public Class frm_EstacionServicio
                 .Venta.IndCliente = 2
                 .Venta.TipoOperacion = "I"
             End With
+            Return MovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+    End Function
 
     Private Sub btnCrearCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCrearCuentaCorriente.Click
         CuentaCorriente = New e_CuentaCorriente
@@ -625,7 +632,8 @@ Public Class frm_EstacionServicio
                 .PrefijoID = gs_PrefijoIdSucursal
                 .IdFlujoCaja = "1CH000000085" '1CH000000002 Venta de bienes
                 .NroBoucher = ""
-                .IdCuentaBancaria = oeCtaBancaria.Id
+                .IdCta10 = "" ' "CHG001" 'CAJA CHICLAYO GRIFO - ESTACION SERVICIO
+                .IdCuentaBancaria = "" '"CHG001" 'CAJA CHICLAYO GRIFO - ESTACION SERVICIO
                 .Fecha = ObtenerFechaServidor()
                 .IdMedioPago = "1CH03" 'Efectivo
                 .IdPeriodoConcilia = ""
@@ -637,7 +645,7 @@ Public Class frm_EstacionServicio
                 .MovDoc = Nothing
                 .Glosa = txtGlosa.Text
                 .DifAGanancia = 0
-                .IdCuentaCorriente = CuentaCorriente.Id
+                .IdCuentaCorriente = cbgCliente.Value
                 .UsuarioCreacion = gUsuarioSGI.Id
             End With
 
@@ -646,12 +654,12 @@ Public Class frm_EstacionServicio
             'If OptCobro.Checked Then indicadortipo = "COB"
             ListaMovimientoDocumento.Add(MovimientoDocumento)
             If dASIENTO.GuardarCobranza(ListaMovimientoDocumento, MOVIMIENTO, MEDIOPAGO, gUsuarioSGI.Id, MacPCLocal, CuentaContable, indicadortipo) Then
-                If indicadortipo <> "PER" Then
-                    mensajeEmergente.Confirmacion("Cobro(s) guardados satisfactoriamente", True)
-                    Dim frm2 As New frm_ImprimeCobroPagoAnticipo(MOVIMIENTO.Id, 1, "Documento")
-                    frm2.ShowDialog()
-                    frm2 = Nothing
-                End If
+                'If indicadortipo <> "PER" Then
+                '    mensajeEmergente.Confirmacion("Cobro(s) guardados satisfactoriamente", True)
+                '    Dim frm2 As New frm_ImprimeCobroPagoAnticipo(MOVIMIENTO.Id, 1, "Documento")
+                '    frm2.ShowDialog()
+                '    frm2 = Nothing
+                'End If
             End If
             Return True
         Catch ex As Exception
@@ -670,11 +678,16 @@ Public Class frm_EstacionServicio
             oeMoneda.Id = IdMoneda_Soles 'Revisar
 
             If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Ejercicio = frm.Año1.Año
                 ListaCuentaCotable = dCuentaContable.Listar(New e_CuentaContable With {.Ejercicio = frm.Año1.Año, .TipoOperacion = "N", .Movimiento = 1})
-                MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = Me.MovimientoDocumento.Id, .CargaCompleta = True})
-                MovimientoDocumento.IdPeriodo = frm.cboMes.Value : Ejercicio = frm.Año1.Año
-                MovimientoDocumento.Venta.TipoDoc = TIPODOC : MovimientoDocumento.Venta.Cliente = Cliente : MovimientoDocumento.Venta.Moneda = oeMoneda
-
+                MovimientoDocumento = OrdenVenta.oeDocumento
+                'MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = OrdenVenta.oeDocumento.Id, .CargaCompleta = True})
+                With MovimientoDocumento
+                    .IdPeriodo = frm.cboMes.Value
+                    .Venta.TipoDoc = TIPODOC
+                    .Venta.Cliente = Cliente
+                    .Venta.Moneda = oeMoneda
+                End With
                 AsientoModelo.Equivale = 1 : AsientoModelo.IdMoneda = oeMoneda.Id
 
                 If ListaAsientoModelo.Contains(AsientoModelo) Then
@@ -702,7 +715,6 @@ Public Class frm_EstacionServicio
                                         Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                     End If
 
-                    MovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     If CuentaCorriente.Id <> "" Then
                         _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                     Else
@@ -857,8 +869,8 @@ Public Class frm_EstacionServicio
     Private Function fc_EmitirDocumento() As Boolean
         Try
             fc_ValidarNumeroDoc()
-            mt_Cargar_MovimientoDocumento()
-            OrdenVenta.oeDocumento = MovimientoDocumento
+            'mt_Cargar_MovimientoDocumento()
+            'OrdenVenta.oeDocumento = MovimientoDocumento
             mt_Emitir_Documento(False)
             Return True
         Catch ex As Exception
