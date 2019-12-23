@@ -163,6 +163,7 @@ Public Class frm_EstacionServicio
 
     Public Overrides Sub Guardar()
         Try
+            If cbgCliente.Value = "" Then Throw New Exception("Seleccione la empresa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
             If Not fc_EmitirDocumento() Then Throw New Exception
@@ -425,15 +426,16 @@ Public Class frm_EstacionServicio
     End Function
 
     Private Sub mt_Inicializar()
+        OrdenVenta = New e_OrdenVenta
         loEmpresa = New List(Of e_Empresa)
         cbgCliente.DataSource = loEmpresa
         cbgCliente.Text = String.Empty
-
+        cmbVehiculo.Value = ""
+        udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
         '' Limpiar Controles
-        txtDireccionFiscal.Text = ""
+        cboPuntoPartida.Text = ""
         decCantidad.Value = 0
         decPrecio.Value = 0
-        decDescuento.Value = 0
         decPrecioTotal.Value = 0
         decSubTotal.Value = 0
         decImpuesto.Value = 0
@@ -443,7 +445,8 @@ Public Class frm_EstacionServicio
         txtNumero.Text = String.Empty
         txtGlosa.Text = String.Empty
         grbCombustible.Enabled = False
-        'mstrIdCuentaContable = ""
+        decKilometraje.Value = 0
+
 
         '' Valores Default
         FechaOrden = ObtenerFechaServidor()
@@ -458,7 +461,7 @@ Public Class frm_EstacionServicio
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
 
 
-        LlenarCombo(cmbPiloto, "Nombre", PilotoPublic, -1)
+
     End Sub
 
     Private Sub mt_AgregarDetalle()
@@ -481,7 +484,7 @@ Public Class frm_EstacionServicio
                 .CostoUnitario = decPrecio.Value
                 .CostoInventario = 0 'DETALLE.CostoUnitario
                 .PrecioUnitario = decPrecio.Value
-                .Dscto = decDescuento.Value
+                .Dscto = 0
                 '.IdTipoUnidadMedida = DETALLE.idu
                 .IdAlmacen = IdAlmacen_Combustible
                 .IdUnidadMedida = "1CH000000001"
@@ -522,10 +525,7 @@ Public Class frm_EstacionServicio
         Else
             CanDescuento = 0
         End If
-        decDescuento.Value = CanDescuento
-        If decCantidad.Value <> 0 Then
-            decDescuento.Value = decCantidad.Value * CanDescuento
-        End If
+        decPrecio.Value = decPrecio.Value - CanDescuento
         decCantidad.SelectAll()
     End Sub
 
@@ -778,6 +778,14 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
+    Private Sub decPrecioTotal_ValueChanged(sender As Object, e As EventArgs) Handles decPrecioTotal.ValueChanged
+        Dim Importe As Double, Precio As Double, Cantidad As Double
+        Importe = decPrecioTotal.Value
+        Precio = decPrecio.Value
+        Cantidad = Importe / Precio
+        'decCantidad.Value = Cantidad
+    End Sub
+
     Private Sub btnCalibracion_Click(sender As Object, e As EventArgs) Handles btnCalibracion.Click
         IdTipoPago = "1SI000000017" : IdTipoVenta = "CALIBRACION"
         cbgCliente.Value = "GCH000000001"
@@ -799,7 +807,7 @@ Public Class frm_EstacionServicio
                 Total += SubTotal
             Next
             decSubTotal.Value = SubTotal
-            decDescuentoTotal.Value = DescuentoTotal
+
             decTotal.Value = Total
             decImpuesto.Value = Total * mdblIGV
         Catch ex As Exception
@@ -807,13 +815,8 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
-    Private Sub decDescuento_ValueChanged(sender As Object, e As EventArgs) Handles decDescuento.ValueChanged
-        decPrecioTotal.Value = decPrecio.Value * decCantidad.Value - decDescuento.Value
-    End Sub
-
     Private Sub decCantidad_ValueChanged(sender As Object, e As EventArgs) Handles decCantidad.ValueChanged
-        decDescuento.Value = CanDescuento * decCantidad.Value
-        decPrecioTotal.Value = decPrecio.Value * decCantidad.Value - decDescuento.Value
+        decPrecioTotal.Value = decPrecio.Value * decCantidad.Value
     End Sub
 
     Private Sub mt_Imprimir_Documento()
@@ -981,8 +984,10 @@ Public Class frm_EstacionServicio
         End Select
 
         '' Cargar Producto
-        decPrecio.Value = fc_Obtener_PrecioCombustible()
+        Dim PrecioNormal As Double = fc_Obtener_PrecioCombustible()
+        decPrecio.Value = PrecioNormal
         mt_Calcular_DescuentoCombustible()
+        grbCombustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
         decCantidad.SelectAll()
     End Sub
 
@@ -998,19 +1003,19 @@ Public Class frm_EstacionServicio
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
         IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
         mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
-        txtSerie.Text = "" : txtSerie.SelectAll()
+        txtSerie.Text = "F013" : txtSerie.Focus() : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
         IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA"
         mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue
-        txtSerie.Text = "" : txtSerie.SelectAll()
+        txtSerie.Text = "B013" : txtSerie.Focus() : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVarios_Click(sender As Object, e As EventArgs) Handles btnNotaDespacho.Click
         IdTipoDocumento = "GCH000000001" : TipoDocumento = "NOTA DE DESPACHO"
         mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue
-        txtSerie.Text = "" : txtSerie.SelectAll()
+        txtSerie.Text = "0004" : txtSerie.Focus() : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
@@ -1065,7 +1070,7 @@ Public Class frm_EstacionServicio
                 d_Empresa.Guardar(empresa)
             End If
             cbgCliente.Text = contribuyente.RazonSocial
-            txtDireccionFiscal.Text = contribuyente.Direccion
+            cboPuntoPartida.Text = contribuyente.Direccion
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -1105,9 +1110,9 @@ Public Class frm_EstacionServicio
 
     Private Sub btnAgregarDetalle_Click(sender As Object, e As EventArgs) Handles btnAgregarDetalle.Click
         mt_AgregarDetalle()
+        grbCombustible.Text = "Seleccione Combustible:"
         decCantidad.Value = 0
         decPrecio.Value = 0
-        decDescuento.Value = 0
         decPrecioTotal.Value = 0
         decCantidad.SelectAll()
     End Sub
@@ -1172,11 +1177,12 @@ Public Class frm_EstacionServicio
                 For Each Item In ListaClienteProveedor
                     loEmpresa = dEMPRESA.Listar(New e_Empresa With {.Id = Item.IdPersonaEmpresa})
                     For Each It In loEmpresa
-                        txtDireccionFiscal.Text = It.DireccionFiscal
+                        cboPuntoPartida.Text = It.DireccionFiscal
                     Next
                 Next
                 decSaldo.Value = fc_Obtener_SaldoCuentaCorriente()
-                CargarVehiculoCliente()
+                Cargar_VehiculoCliente()
+                Cargar_Direcciones()
             End If
         Catch ex As Exception
             Throw ex
@@ -1201,13 +1207,16 @@ Public Class frm_EstacionServicio
 
     Private Sub txtSerie_Validated(sender As Object, e As EventArgs) Handles txtSerie.Validated
         Dim Tipo As String
-        Select Case IdTipoDocumento
-            Case "1CH000000026" : Tipo = "F"
-            Case "1CH000000002" : Tipo = "B"
-            Case "GCH000000001" : Tipo = ""
-        End Select
-        txtSerie.Text = FormatoSerieElectronica(txtSerie.Text, Tipo) 'FormatoDocumento(txtSerie.Text, 4)
+        If txtSerie.TextLength < 4 Then
+            Select Case IdTipoDocumento
+                Case "1CH000000026" : Tipo = "F"
+                Case "1CH000000002" : Tipo = "B"
+                Case "GCH000000001" : Tipo = "X"
+            End Select
+            txtSerie.Text = FormatoSerieElectronica(txtSerie.Text, Tipo) 'FormatoDocumento(txtSerie.Text, 4)
+        End If
         txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, IdTipoDocumento, 2)), 8)
+        cmbPiloto.Focus()
     End Sub
 
     Private Sub txtNumero_Leave(sender As Object, e As EventArgs) Handles txtNumero.Leave
@@ -1217,7 +1226,7 @@ Public Class frm_EstacionServicio
     Private Sub decKilometraje_Click(sender As Object, e As EventArgs) Handles decKilometraje.Click
         decKilometraje.SelectAll()
     End Sub
-    Sub CargarVehiculoCliente()
+    Sub Cargar_VehiculoCliente()
         ListaVehiculo = New List(Of e_Vehiculo)
         If cbgCliente.Value = gs_IdClienteProveedorSistema Then
             ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .TipoOperacion = "A"}))
@@ -1230,5 +1239,19 @@ Public Class frm_EstacionServicio
             ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
         End If
         LlenarCombo(cmbVehiculo, "Placa", ListaVehiculo, -1)
+    End Sub
+
+    Private Sub Cargar_Pilotos()
+        If cbgCliente.Value = gs_IdClienteProveedorSistema Then
+            LlenarCombo(cmbPiloto, "Nombre", PilotoPublic, -1)
+        End If
+    End Sub
+    Private Sub Cargar_Direcciones()
+        Dim ListaPuntoPartida As New List(Of e_Combo)
+        Dim oeDireccionEmpresa As New e_Combo, ddireccionempresa As New l_Combo
+        oeDireccionEmpresa.Nombre = "DireccionEmpresaFiscal"
+        oeDireccionEmpresa.Id = cbgCliente.Value
+        ListaPuntoPartida.AddRange(dDireccionEmpresa.Listar(oeDireccionEmpresa))
+        LlenarComboMaestro(cboPuntoPartida, ListaPuntoPartida, 0)
     End Sub
 End Class

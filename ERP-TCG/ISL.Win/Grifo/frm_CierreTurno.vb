@@ -622,7 +622,6 @@ Public Class frm_CierreTurno
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000147", .Concepto = "GASOHOL 84", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000148", .Concepto = "GASOHOL 90", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000149", .Concepto = "GASOHOL 95", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000001990", .Concepto = "DIESEL D2", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000007256", .Concepto = "DIESEL DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             mt_CargarGrillas()
         Catch ex As Exception

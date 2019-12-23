@@ -643,6 +643,8 @@ Partial Class frm_EmpresaDescuento
         Me.verActivo.Appearance = Appearance23
         Me.verActivo.BackColor = System.Drawing.Color.Transparent
         Me.verActivo.BackColorInternal = System.Drawing.Color.Transparent
+        Me.verActivo.Checked = True
+        Me.verActivo.CheckState = System.Windows.Forms.CheckState.Checked
         Me.verActivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.verActivo.ForeColor = System.Drawing.Color.MidnightBlue
         Me.verActivo.Location = New System.Drawing.Point(116, 251)
