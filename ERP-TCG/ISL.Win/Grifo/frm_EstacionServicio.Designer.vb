@@ -458,12 +458,14 @@ Partial Class frm_EstacionServicio
         Me.cmbVehiculo.ButtonsLeft.Add(EditorButton1)
         EditorButton2.Key = "Right"
         Me.cmbVehiculo.ButtonsRight.Add(EditorButton2)
+        Me.cmbVehiculo.DisplayMember = "Placa"
         Me.cmbVehiculo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.cmbVehiculo.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbVehiculo.Location = New System.Drawing.Point(108, 104)
         Me.cmbVehiculo.Name = "cmbVehiculo"
         Me.cmbVehiculo.Size = New System.Drawing.Size(227, 35)
         Me.cmbVehiculo.TabIndex = 13
+        Me.cmbVehiculo.ValueMember = "Id"
         '
         'UltraLabel13
         '

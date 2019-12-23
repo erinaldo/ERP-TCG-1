@@ -457,13 +457,7 @@ Public Class frm_EstacionServicio
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
 
-        If cbgCliente.Value = gs_IdEmpresaSistema Then
-            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .Activo = True, .TipoOperacion = "M"}))
-        End If
-        If cbgCliente.Value <> gs_IdEmpresaSistema Then
-            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 0, .IdEmpresaPropietaria = .Activo = True, .TipoOperacion = "M"}))
-        End If
-        LlenarCombo(cmbVehiculo, "Nombre", ListaVehiculo, -1)
+
         LlenarCombo(cmbPiloto, "Nombre", PilotoPublic, -1)
     End Sub
 
@@ -1181,8 +1175,9 @@ Public Class frm_EstacionServicio
                         txtDireccionFiscal.Text = It.DireccionFiscal
                     Next
                 Next
+                decSaldo.Value = fc_Obtener_SaldoCuentaCorriente()
+                CargarVehiculoCliente()
             End If
-            decSaldo.Value = fc_Obtener_SaldoCuentaCorriente()
         Catch ex As Exception
             Throw ex
         End Try
@@ -1222,5 +1217,18 @@ Public Class frm_EstacionServicio
     Private Sub decKilometraje_Click(sender As Object, e As EventArgs) Handles decKilometraje.Click
         decKilometraje.SelectAll()
     End Sub
-
+    Sub CargarVehiculoCliente()
+        ListaVehiculo = New List(Of e_Vehiculo)
+        If cbgCliente.Value = gs_IdClienteProveedorSistema Then
+            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .TipoOperacion = "A"}))
+        Else
+            Dim eClienteProveedor As New e_ClienteProveedor
+            Dim lCliente As New l_ClienteProveedor
+            eClienteProveedor.TipoOperacion = ""
+            eClienteProveedor.Id = cbgCliente.Value
+            eClienteProveedor = lCliente.Obtener(eClienteProveedor)
+            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
+        End If
+        LlenarCombo(cmbVehiculo, "Placa", ListaVehiculo, -1)
+    End Sub
 End Class
