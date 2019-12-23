@@ -360,7 +360,7 @@ Partial Class frm_EstacionServicio
         Me.grbDocumento.Location = New System.Drawing.Point(213, 127)
         Me.grbDocumento.Name = "grbDocumento"
         Me.grbDocumento.Size = New System.Drawing.Size(218, 151)
-        Me.grbDocumento.TabIndex = 5
+        Me.grbDocumento.TabIndex = 2
         Me.grbDocumento.Text = "Tipo de Documento:"
         Me.grbDocumento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -422,7 +422,7 @@ Partial Class frm_EstacionServicio
         Me.grb_Documento.Location = New System.Drawing.Point(437, 126)
         Me.grb_Documento.Name = "grb_Documento"
         Me.grb_Documento.Size = New System.Drawing.Size(619, 152)
-        Me.grb_Documento.TabIndex = 17
+        Me.grb_Documento.TabIndex = 3
         Me.grb_Documento.Text = "Emitir Documento:"
         Me.grb_Documento.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -578,7 +578,7 @@ Partial Class frm_EstacionServicio
         Me.UltraGroupBox4.Location = New System.Drawing.Point(6, 12)
         Me.UltraGroupBox4.Name = "UltraGroupBox4"
         Me.UltraGroupBox4.Size = New System.Drawing.Size(1050, 108)
-        Me.UltraGroupBox4.TabIndex = 5
+        Me.UltraGroupBox4.TabIndex = 0
         Me.UltraGroupBox4.Text = "Cliente:"
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -769,7 +769,7 @@ Partial Class frm_EstacionServicio
         Me.UltraGroupBox2.Location = New System.Drawing.Point(6, 284)
         Me.UltraGroupBox2.Name = "UltraGroupBox2"
         Me.UltraGroupBox2.Size = New System.Drawing.Size(1050, 162)
-        Me.UltraGroupBox2.TabIndex = 6
+        Me.UltraGroupBox2.TabIndex = 4
         Me.UltraGroupBox2.Text = "Datos de la Venta:"
         Me.UltraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -792,7 +792,7 @@ Partial Class frm_EstacionServicio
         Me.grbCombustible.Location = New System.Drawing.Point(132, 20)
         Me.grbCombustible.Name = "grbCombustible"
         Me.grbCombustible.Size = New System.Drawing.Size(903, 135)
-        Me.grbCombustible.TabIndex = 18
+        Me.grbCombustible.TabIndex = 1
         Me.grbCombustible.Text = "Combustible:"
         Me.grbCombustible.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -921,7 +921,7 @@ Partial Class frm_EstacionServicio
         Me.UltraGroupBox1.Location = New System.Drawing.Point(10, 20)
         Me.UltraGroupBox1.Name = "UltraGroupBox1"
         Me.UltraGroupBox1.Size = New System.Drawing.Size(115, 135)
-        Me.UltraGroupBox1.TabIndex = 5
+        Me.UltraGroupBox1.TabIndex = 0
         Me.UltraGroupBox1.Text = "Seleccione Lado:"
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -1012,7 +1012,7 @@ Partial Class frm_EstacionServicio
         Me.ugbTipoPago.Location = New System.Drawing.Point(6, 126)
         Me.ugbTipoPago.Name = "ugbTipoPago"
         Me.ugbTipoPago.Size = New System.Drawing.Size(201, 152)
-        Me.ugbTipoPago.TabIndex = 4
+        Me.ugbTipoPago.TabIndex = 1
         Me.ugbTipoPago.Text = "Tipo de Venta:"
         Me.ugbTipoPago.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -1073,7 +1073,7 @@ Partial Class frm_EstacionServicio
         Me.UltraGroupBox3.Location = New System.Drawing.Point(0, 451)
         Me.UltraGroupBox3.Name = "UltraGroupBox3"
         Me.UltraGroupBox3.Size = New System.Drawing.Size(1339, 277)
-        Me.UltraGroupBox3.TabIndex = 7
+        Me.UltraGroupBox3.TabIndex = 1
         Me.UltraGroupBox3.Text = "Detalle de Venta"
         Me.UltraGroupBox3.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '

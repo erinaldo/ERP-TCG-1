@@ -169,7 +169,8 @@ Public Class frm_EstacionServicio
             If IdTipoVenta <> "CALIBRACION" Then
                 If Not fc_Guardar_Cobros() Then Throw New Exception
             End If
-            Consultar(True)
+            MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            Nuevo()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
