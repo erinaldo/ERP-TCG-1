@@ -1980,9 +1980,6 @@ Public Class frm_OrdenVenMaterial
                 End If
                 If loCtaCtble.Contains(oeCtaCtble) Then
                     oe.oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                    'If oe.oeCtaCtble.IndDocumento Then
-                    '    mstrIdCuentaContable = oe.oeCtaCtble.Id
-                    'End If
                 End If
             Next
         Catch ex As Exception
