@@ -74,6 +74,8 @@ Public Class l_OrdenVenta
                         '    oeOrdenComercial.oeDocumento.IndElectronico = True
                         'End If
                         For Each oe In OrdenVenta.oeDocumento.lo_OrdenDocumento
+                            oe.IdEmpresaSistema = OrdenVenta.IdEmpresaSistema
+                            oe.PrefijoID = OrdenVenta.PrefijoID
                             oe.IdOrden = OrdenVenta.Id
                         Next
                         olDocumento.Guardar(OrdenVenta.oeDocumento)

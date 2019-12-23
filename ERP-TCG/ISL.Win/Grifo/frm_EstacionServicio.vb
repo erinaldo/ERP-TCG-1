@@ -349,7 +349,9 @@ Public Class frm_EstacionServicio
 
     Public Function fc_Cargar_OrdenVenta() As Boolean
         Try
+            If cbgCliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             With OrdenVenta
+                .TipoOperacion = "I"
                 .PrefijoID = gs_PrefijoIdSucursal
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
@@ -359,8 +361,21 @@ Public Class frm_EstacionServicio
                 .TipoCambio = TipoCambio
                 .IndFactSer = True 'Revisar
                 .IdVendedorTrabajador = "" ' Trabajador
-                If cbgCliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
                 .IdEmpresa = cbgCliente.Value
+                .Fecha = ObtenerFechaServidor()
+                .IdMoneda = IdMoneda_Soles
+                .IdTipoPago = IdTipoPago
+                .Glosa = txtGlosa.Value
+                .Total = decTotal.Value
+                .SubTotal = decSubTotal.Value
+                .Impuesto = decImpuesto.Value
+                .TipoCompra = 0
+                .IdTurno = TurnoActivo.Id
+                .IdTipoVenta = IdTipoVenta
+                .IdCanalVenta = ""
+                .IdPlaca = cmbVehiculo.Value
+                .IdPiloto = cmbPiloto.Value
+                .Kilometraje = decKilometraje.Value
                 'Select Case Operacion
                 '    Case "Nuevo"
                 '        .TipoOperacion = "I"
@@ -378,7 +393,8 @@ Public Class frm_EstacionServicio
                 '        End If
                 '    Case "Atender"
                 '        If OV.lstOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
-                .TipoOperacion = "I"
+
+                '' Orden Salida
                 .oeOrdenSalida = New e_Orden
                 .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 .oeOrdenSalida.IdOrdenDocumento = fc_OrdenDocumento().Id
@@ -393,23 +409,7 @@ Public Class frm_EstacionServicio
                 Else
                     .IdEstado = "1CIX005"
                 End If
-                'End Select
-                '.lstOrdenComercialMaterial = New List(Of e_OrdenVentaMaterial)
-                '.lstOrdenComercialMaterial.AddRange(LISTA_ORDENVENTA_MATERIAL)
-                .Fecha = ObtenerFechaServidor()
-                .IdMoneda = IdMoneda_Soles
-                .IdTipoPago = IdTipoPago
-                .Glosa = txtGlosa.Value
-                .Total = decTotal.Value
-                .SubTotal = decSubTotal.Value
-                .Impuesto = decImpuesto.Value
-                .TipoCompra = 0
-                .IdTipoVenta = IdTipoVenta
-                .IdPlaca = cmbVehiculo.Value
-                .IdPiloto = cmbPiloto.Value
-                .Kilometraje = decKilometraje.Value
             End With
-
             Return True
         Catch ex As Exception
             Throw ex
@@ -543,8 +543,8 @@ Public Class frm_EstacionServicio
                 .IdMoneda = IdMoneda_Soles
                 .Tipo = 2
                 .IdTipoBien = 1
-                If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4)
-                If txtNumero.Text <> "" Then .Numero = FormatoDocumento(txtNumero.Text, 8)
+                .Serie = txtSerie.Text
+                .Numero = txtNumero.Text
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaDoc.Value
                 .NoGravado = 0
@@ -974,6 +974,7 @@ Public Class frm_EstacionServicio
         '' Cargar Producto
         decPrecio.Value = fc_Obtener_PrecioCombustible()
         mt_Calcular_DescuentoCombustible()
+        decCantidad.SelectAll()
     End Sub
 
     Public Function fc_Obtener_PrecioCombustible() As Double
@@ -987,17 +988,17 @@ Public Class frm_EstacionServicio
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
         IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
-        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
+        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
         IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA"
-        mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue
+        mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnVarios_Click(sender As Object, e As EventArgs) Handles btnNotaDespacho.Click
         IdTipoDocumento = "GCH000000001" : TipoDocumento = "NOTA DE DESPACHO"
-        mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue
+        mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue : txtSerie.SelectAll()
     End Sub
 
     Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
@@ -1181,7 +1182,13 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub txtSerie_Validated(sender As Object, e As EventArgs) Handles txtSerie.Validated
-        txtSerie.Text = FormatoDocumento(txtSerie.Text, 4)
+        Dim Tipo As String
+        Select Case IdTipoDocumento
+            Case "1CH000000026" : Tipo = "F"
+            Case "1CH000000002" : Tipo = "B"
+            Case "GCH000000001" : Tipo = "N"
+        End Select
+        txtSerie.Text = FormatoSerieElectronica(txtSerie.Text, Tipo) 'FormatoDocumento(txtSerie.Text, 4)
         txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, IdTipoDocumento, 2)), 8)
     End Sub
 

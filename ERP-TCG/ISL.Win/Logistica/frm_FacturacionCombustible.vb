@@ -840,13 +840,12 @@ Public Class frm_FacturacionCombustible
             If ValidarPreciosCantidades() Then
                 oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeMovimientoDocumento.Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
-                If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
-                    mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                    Inicializar()
-                    ControlBoton(0, 1, 0, 0, 0, 0, 0, 0, 1)
-                    MostrarTabs(1, ficConCombustible, 1)
-                    Return True
-                End If
+                oeMovimientoDocumento = olMovimientoDocumento.Guardar(oeMovimientoDocumento)
+                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
+                Inicializar()
+                ControlBoton(0, 1, 0, 0, 0, 0, 0, 0, 1)
+                MostrarTabs(1, ficConCombustible, 1)
+                Return True
             End If
         Catch ex As Exception
             Throw ex

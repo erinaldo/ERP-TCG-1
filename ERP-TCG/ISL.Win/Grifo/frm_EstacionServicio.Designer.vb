@@ -291,7 +291,7 @@ Partial Class frm_EstacionServicio
         Me.btnG95.Location = New System.Drawing.Point(92, 77)
         Me.btnG95.Name = "btnG95"
         Me.btnG95.Size = New System.Drawing.Size(80, 50)
-        Me.btnG95.TabIndex = 3
+        Me.btnG95.TabIndex = 24
         Me.btnG95.Text = "G95"
         Me.btnG95.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -307,7 +307,7 @@ Partial Class frm_EstacionServicio
         Me.btnG90.Location = New System.Drawing.Point(8, 77)
         Me.btnG90.Name = "btnG90"
         Me.btnG90.Size = New System.Drawing.Size(80, 50)
-        Me.btnG90.TabIndex = 2
+        Me.btnG90.TabIndex = 23
         Me.btnG90.Text = "G90"
         Me.btnG90.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -321,7 +321,7 @@ Partial Class frm_EstacionServicio
         Me.btnG84.Location = New System.Drawing.Point(92, 25)
         Me.btnG84.Name = "btnG84"
         Me.btnG84.Size = New System.Drawing.Size(80, 50)
-        Me.btnG84.TabIndex = 1
+        Me.btnG84.TabIndex = 22
         Me.btnG84.Text = "G84"
         Me.btnG84.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -334,7 +334,7 @@ Partial Class frm_EstacionServicio
         Me.btnDB5.Location = New System.Drawing.Point(8, 25)
         Me.btnDB5.Name = "btnDB5"
         Me.btnDB5.Size = New System.Drawing.Size(80, 50)
-        Me.btnDB5.TabIndex = 0
+        Me.btnDB5.TabIndex = 21
         Me.btnDB5.Text = "DB5"
         Me.btnDB5.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -373,8 +373,8 @@ Partial Class frm_EstacionServicio
         Me.btnDocumento.Location = New System.Drawing.Point(17, 26)
         Me.btnDocumento.Name = "btnDocumento"
         Me.btnDocumento.Size = New System.Drawing.Size(188, 37)
-        Me.btnDocumento.TabIndex = 0
-        Me.btnDocumento.Text = "DOCUMENTO"
+        Me.btnDocumento.TabIndex = 7
+        Me.btnDocumento.Text = "FACTURA"
         Me.btnDocumento.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
         'btnNotaDespacho
@@ -386,7 +386,7 @@ Partial Class frm_EstacionServicio
         Me.btnNotaDespacho.Location = New System.Drawing.Point(17, 104)
         Me.btnNotaDespacho.Name = "btnNotaDespacho"
         Me.btnNotaDespacho.Size = New System.Drawing.Size(188, 37)
-        Me.btnNotaDespacho.TabIndex = 2
+        Me.btnNotaDespacho.TabIndex = 9
         Me.btnNotaDespacho.Text = "NOTA DESPACHO"
         Me.btnNotaDespacho.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -399,7 +399,7 @@ Partial Class frm_EstacionServicio
         Me.btnBoleta.Location = New System.Drawing.Point(17, 64)
         Me.btnBoleta.Name = "btnBoleta"
         Me.btnBoleta.Size = New System.Drawing.Size(188, 37)
-        Me.btnBoleta.TabIndex = 1
+        Me.btnBoleta.TabIndex = 8
         Me.btnBoleta.Text = "BOLETA"
         Me.btnBoleta.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -432,7 +432,7 @@ Partial Class frm_EstacionServicio
         Me.decKilometraje.Name = "decKilometraje"
         Me.decKilometraje.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decKilometraje.Size = New System.Drawing.Size(142, 35)
-        Me.decKilometraje.TabIndex = 5
+        Me.decKilometraje.TabIndex = 14
         '
         'UltraLabel15
         '
@@ -460,7 +460,7 @@ Partial Class frm_EstacionServicio
         Me.cmbVehiculo.Location = New System.Drawing.Point(108, 104)
         Me.cmbVehiculo.Name = "cmbVehiculo"
         Me.cmbVehiculo.Size = New System.Drawing.Size(227, 35)
-        Me.cmbVehiculo.TabIndex = 4
+        Me.cmbVehiculo.TabIndex = 13
         '
         'UltraLabel13
         '
@@ -488,7 +488,7 @@ Partial Class frm_EstacionServicio
         Me.cmbPiloto.Location = New System.Drawing.Point(108, 63)
         Me.cmbPiloto.Name = "cmbPiloto"
         Me.cmbPiloto.Size = New System.Drawing.Size(496, 35)
-        Me.cmbPiloto.TabIndex = 3
+        Me.cmbPiloto.TabIndex = 12
         '
         'UltraLabel8
         '
@@ -540,7 +540,7 @@ Partial Class frm_EstacionServicio
         Me.txtNumero.MaxLength = 10
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(158, 33)
-        Me.txtNumero.TabIndex = 2
+        Me.txtNumero.TabIndex = 11
         '
         'dtpFechaDoc
         '
@@ -561,7 +561,7 @@ Partial Class frm_EstacionServicio
         Me.txtSerie.MaxLength = 4
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(99, 33)
-        Me.txtSerie.TabIndex = 1
+        Me.txtSerie.TabIndex = 10
         '
         'UltraGroupBox4
         '
@@ -800,7 +800,7 @@ Partial Class frm_EstacionServicio
         Me.btnAgregarDetalle.Location = New System.Drawing.Point(725, 38)
         Me.btnAgregarDetalle.Name = "btnAgregarDetalle"
         Me.btnAgregarDetalle.Size = New System.Drawing.Size(48, 69)
-        Me.btnAgregarDetalle.TabIndex = 8
+        Me.btnAgregarDetalle.TabIndex = 26
         Me.btnAgregarDetalle.Text = "+"
         Me.btnAgregarDetalle.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -840,7 +840,7 @@ Partial Class frm_EstacionServicio
         Me.decPrecio.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decPrecio.ReadOnly = True
         Me.decPrecio.Size = New System.Drawing.Size(157, 35)
-        Me.decPrecio.TabIndex = 5
+        Me.decPrecio.TabIndex = 26
         '
         'UltraLabel3
         '
@@ -891,7 +891,7 @@ Partial Class frm_EstacionServicio
         Me.decCantidad.Name = "decCantidad"
         Me.decCantidad.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decCantidad.Size = New System.Drawing.Size(157, 35)
-        Me.decCantidad.TabIndex = 4
+        Me.decCantidad.TabIndex = 25
         '
         'UltraLabel4
         '
@@ -931,7 +931,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado6.Location = New System.Drawing.Point(57, 92)
         Me.btnLado6.Name = "btnLado6"
         Me.btnLado6.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado6.TabIndex = 5
+        Me.btnLado6.TabIndex = 20
         Me.btnLado6.Text = "6"
         Me.btnLado6.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -944,7 +944,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado5.Location = New System.Drawing.Point(8, 92)
         Me.btnLado5.Name = "btnLado5"
         Me.btnLado5.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado5.TabIndex = 4
+        Me.btnLado5.TabIndex = 19
         Me.btnLado5.Text = "5"
         Me.btnLado5.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -957,7 +957,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado4.Location = New System.Drawing.Point(57, 58)
         Me.btnLado4.Name = "btnLado4"
         Me.btnLado4.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado4.TabIndex = 3
+        Me.btnLado4.TabIndex = 18
         Me.btnLado4.Text = "4"
         Me.btnLado4.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -970,7 +970,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado3.Location = New System.Drawing.Point(8, 58)
         Me.btnLado3.Name = "btnLado3"
         Me.btnLado3.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado3.TabIndex = 2
+        Me.btnLado3.TabIndex = 17
         Me.btnLado3.Text = "3"
         Me.btnLado3.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -984,7 +984,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado1.Location = New System.Drawing.Point(8, 24)
         Me.btnLado1.Name = "btnLado1"
         Me.btnLado1.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado1.TabIndex = 0
+        Me.btnLado1.TabIndex = 15
         Me.btnLado1.Text = "1"
         Me.btnLado1.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -997,7 +997,7 @@ Partial Class frm_EstacionServicio
         Me.btnLado2.Location = New System.Drawing.Point(57, 24)
         Me.btnLado2.Name = "btnLado2"
         Me.btnLado2.Size = New System.Drawing.Size(50, 31)
-        Me.btnLado2.TabIndex = 1
+        Me.btnLado2.TabIndex = 16
         Me.btnLado2.Text = "2"
         Me.btnLado2.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -1022,7 +1022,7 @@ Partial Class frm_EstacionServicio
         Me.btnCalibracion.Location = New System.Drawing.Point(15, 104)
         Me.btnCalibracion.Name = "btnCalibracion"
         Me.btnCalibracion.Size = New System.Drawing.Size(169, 37)
-        Me.btnCalibracion.TabIndex = 2
+        Me.btnCalibracion.TabIndex = 6
         Me.btnCalibracion.Text = "CALIBRACION"
         Me.btnCalibracion.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -1035,7 +1035,7 @@ Partial Class frm_EstacionServicio
         Me.btnContado.Location = New System.Drawing.Point(15, 27)
         Me.btnContado.Name = "btnContado"
         Me.btnContado.Size = New System.Drawing.Size(169, 37)
-        Me.btnContado.TabIndex = 0
+        Me.btnContado.TabIndex = 4
         Me.btnContado.Text = "CONTADO"
         Me.btnContado.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
@@ -1048,7 +1048,7 @@ Partial Class frm_EstacionServicio
         Me.btnCredito.Location = New System.Drawing.Point(15, 65)
         Me.btnCredito.Name = "btnCredito"
         Me.btnCredito.Size = New System.Drawing.Size(169, 37)
-        Me.btnCredito.TabIndex = 1
+        Me.btnCredito.TabIndex = 5
         Me.btnCredito.Text = "CRÉDITO"
         Me.btnCredito.UseOsThemes = Infragistics.Win.DefaultableBoolean.[False]
         '
