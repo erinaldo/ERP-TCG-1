@@ -256,11 +256,18 @@ Public Class frm_CierreTurno
             If Not fc_LlenaObjeto() Then Return False
             TURNO = dTURNO.Guardar(TURNO)
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            If cmb_Estado.Value = "CERRADO" Then
+                mt_Generar_TurnoNuevo()
+            End If
             Return True
         Catch ex As Exception
             Throw ex
         End Try
     End Function
+
+    Private Sub mt_Generar_TurnoNuevo()
+
+    End Sub
 
     Public Function fc_LlenaObjeto() As Boolean
         Try
@@ -588,7 +595,6 @@ Public Class frm_CierreTurno
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = "Lado 6", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = "Lado 6", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = "Lado 6", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = "Lado 1", .Concepto = "DIESEL DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = "Lado 1", .Concepto = "DIESEL DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = "Lado 1", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = "Lado 1", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
