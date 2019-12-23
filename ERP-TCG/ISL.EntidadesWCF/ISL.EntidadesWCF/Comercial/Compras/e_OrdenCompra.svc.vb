@@ -58,8 +58,23 @@ Public Class e_OrdenCompra
     Public IdSucursalSistema As String = ""
     <DataMember()> _
     Public lstOrdenMaterial As New List(Of e_OrdenCompraMaterial)
-    <DataMember()> _
+    <DataMember()>
     Public lstOrdenServicio As New List(Of e_OrdenCompraServicio)
+
+#Region "Transporte"
+
+    <DataMember()>
+    Public Property IndFactServicio As Boolean = False
+    <DataMember()>
+    Public Property IdTransportista As String = ""
+    <DataMember()>
+    Public Property IdOrigen As String = ""
+    <DataMember()>
+    Public Property IdDestino As String = ""
+    <DataMember()>
+    Public Property CodigoDT As String = ""
+
+#End Region
 
     <DataMember()> _
     Public oeOrdCmpCot As New e_OrdenCmpCotizacion
@@ -491,43 +506,48 @@ Public Class e_OrdenCompra
 
 #Region "Constructor"
 
-    Sub New(ByVal ls_Id As String, _
-           ByVal ls_NroOrden As String, _
-           ByVal ls_IdMoneda As String, _
-           ByVal ls_Moneda As String, _
-           ByVal ls_SubTotal As Double, _
-           ByVal ls_FechaOrden As Date, _
-           ByVal ls_FechaEntrega As Date, _
-           ByVal ls_FechaPago As Date, _
-           ByVal ls_Impuesto As Double, _
-           ByVal ls_Total As Double, _
-           ByVal ls_IndicadorAprobacion As Boolean, _
-           ByVal ls_IndicadorConsignacion As Boolean, _
-           ByVal ls_IdTrabajador As String, _
-           ByVal ls_IdTipoOrdenCompra As String, _
-           ByVal ls_Glosa As String, _
-           ByVal ls_Notas As String, _
-           ByVal ls_Activo As Boolean, _
-           ByVal ls_IdEstadoOrden As String, _
-           ByVal ls_IdCentro As String, _
-           ByVal ls_NombreEstadoOrden As String, _
-           ByVal ls_IdTipoPago As String, _
-           ByVal ls_NombreProveedor As String, _
-           ByVal ls_IdProveedor As String, _
-           ByVal ls_NombreSubEstado As String, _
-           ByVal ln_Percepcion As Double, _
-           ByVal ln_PercepcionPorc As Double, _
-           ByVal ln_Detraccion As Double, _
-           ByVal ln_DetraccionPorc As Double, _
-           ByVal ls_MsgDoc As String, _
-           ByVal ls_IdAprobacion As String, _
-           ByVal ls_IdTrabajadorAprobacion As String, _
-           ByVal ln_IndBloqueo As Boolean, _
-           ByVal ld_FechaAprobacion As Date, _
-           ByVal ls_TrabajadorAprobacion As String, _
-           ByVal li_IndTipoCompra As Integer, _
-           ByVal ls_TipoCompra As String, _
-           ByVal lb_IndCotizacion As Boolean, _
+    Sub New(ByVal ls_Id As String,
+           ByVal ls_NroOrden As String,
+           ByVal ls_IdMoneda As String,
+           ByVal ls_Moneda As String,
+           ByVal ls_SubTotal As Double,
+           ByVal ls_FechaOrden As Date,
+           ByVal ls_FechaEntrega As Date,
+           ByVal ls_FechaPago As Date,
+           ByVal ls_Impuesto As Double,
+           ByVal ls_Total As Double,
+           ByVal ls_IndicadorAprobacion As Boolean,
+           ByVal ls_IndicadorConsignacion As Boolean,
+           ByVal ls_IdTrabajador As String,
+           ByVal ls_IdTipoOrdenCompra As String,
+           ByVal ls_Glosa As String,
+           ByVal ls_Notas As String,
+           ByVal ls_Activo As Boolean,
+           ByVal ls_IdEstadoOrden As String,
+           ByVal ls_IdCentro As String,
+           ByVal ls_NombreEstadoOrden As String,
+           ByVal ls_IdTipoPago As String,
+           ByVal ls_NombreProveedor As String,
+           ByVal ls_IdProveedor As String,
+           ByVal ls_NombreSubEstado As String,
+           ByVal ln_Percepcion As Double,
+           ByVal ln_PercepcionPorc As Double,
+           ByVal ln_Detraccion As Double,
+           ByVal ln_DetraccionPorc As Double,
+           ByVal ls_MsgDoc As String,
+           ByVal ls_IdAprobacion As String,
+           ByVal ls_IdTrabajadorAprobacion As String,
+           ByVal ln_IndBloqueo As Boolean,
+           ByVal ld_FechaAprobacion As Date,
+           ByVal ls_TrabajadorAprobacion As String,
+           ByVal li_IndTipoCompra As Integer,
+           ByVal ls_TipoCompra As String,
+           ByVal lb_IndCotizacion As Boolean,
+           ByVal ls_CodDT As String,
+           ByVal lb_IndFactServ As Boolean,
+           ByVal ls_IdTrans As String,
+           ByVal ls_IdOrigen As String,
+           ByVal ls_IdDestino As String,
            ByVal ls_UsuarioCracion As String) '25 parametros
         _Id = ls_Id
         _NroOrden = ls_NroOrden
@@ -568,6 +588,11 @@ Public Class e_OrdenCompra
         _tipocompra = ls_TipoCompra
         _IndCotizacion = lb_IndCotizacion
         _UsuarioCreacion = ls_UsuarioCracion
+        CodigoDT = ls_CodDT
+        IndFactServicio = lb_IndFactServ
+        IdTransportista = ls_IdTrans
+        IdOrigen = ls_IdOrigen
+        IdDestino = ls_IdDestino
     End Sub
 
 #End Region
