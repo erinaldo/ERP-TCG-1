@@ -73,7 +73,16 @@ Public Class e_OrdenCompra
     Public Property IdDestino As String = ""
     <DataMember()>
     Public Property CodigoDT As String = ""
-
+    <DataMember()>
+    Public Property IdPiloto As String = ""
+    <DataMember()>
+    Public Property IdTracto As String = ""
+    <DataMember()>
+    Public Property IdClienteFinal As String = ""
+    <DataMember()>
+    Public Property IdVentanaHoraria As String = ""
+    <DataMember()>
+    Public Property IdViaje As String = ""
 #End Region
 
     <DataMember()> _
@@ -548,7 +557,14 @@ Public Class e_OrdenCompra
            ByVal ls_IdTrans As String,
            ByVal ls_IdOrigen As String,
            ByVal ls_IdDestino As String,
-           ByVal ls_UsuarioCracion As String) '25 parametros
+           ByVal ls_UsuarioCracion As String,
+           ByVal ls_IdPiloto As String,
+           ByVal ls_IdTracto As String,
+           ByVal ls_IdClienteFinal As String,
+           ByVal ls_IdVentanaHoraria As String,
+            ByVal ls_IdViaje As String) '25 parametros
+
+
         _Id = ls_Id
         _NroOrden = ls_NroOrden
         _idmoneda = ls_IdMoneda
@@ -593,6 +609,11 @@ Public Class e_OrdenCompra
         IdTransportista = ls_IdTrans
         IdOrigen = ls_IdOrigen
         IdDestino = ls_IdDestino
+        IdPiloto = ls_IdPiloto
+        IdTracto = ls_IdTracto
+        IdClienteFinal = ls_IdClienteFinal
+        IdVentanaHoraria = ls_IdVentanaHoraria
+        IdViaje = ls_IdViaje
     End Sub
 
 #End Region

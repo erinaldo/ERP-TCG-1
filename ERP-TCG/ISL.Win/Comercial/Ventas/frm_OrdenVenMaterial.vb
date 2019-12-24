@@ -666,7 +666,7 @@ Public Class frm_OrdenVenMaterial
             mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = True
             With griOrdenSalida.ActiveRow
                 If .Index > -1 Then
-                    If .Cells("Estado").Value = "GENERADO" Then
+                    If .Cells("EstadoOrden").Value = "GENERADO" Then
                         mt_MenuDetalle(0, 0, 1, 0, 0)
                     Else
                         mt_MenuDetalle(0, 0, 0, 0, 0)
