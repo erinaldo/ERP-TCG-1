@@ -182,7 +182,7 @@ Public Class d_OrdenVenta
                     '    odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
                     If .oeOrdenSalida.TipoOperacion <> "" Then
                         odOrden.Guardar(.oeOrdenSalida)
-                        .TipoOperacion = "I"
+                        '.TipoOperacion = "I"
                         'oeOrdenComercialOrden.IdOrdenComercial = .Id
                         'oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
                         'oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea

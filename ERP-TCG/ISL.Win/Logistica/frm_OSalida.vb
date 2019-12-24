@@ -1446,37 +1446,37 @@ Public Class frm_OSalida
     End Sub
 
     Private Sub btn_Almacen_Click(sender As Object, e As EventArgs) Handles btn_Almacen.Click
-        'Try
-        '    If griOrdenMaterial.Selected.Rows.Count = 0 Then Throw New Exception("Seleccione Producto para Actualizar Lote")
-        '    SeleccionarAlmacen(griOrdenMaterial.ActiveRow.ListObject)
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        'End Try
+        Try
+            If griOrdenMaterial.Selected.Rows.Count = 0 Then Throw New Exception("Seleccione Producto para Actualizar Lote")
+            SeleccionarAlmacen(griOrdenMaterial.ActiveRow.ListObject)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End Try
     End Sub
 
-    'Private Sub SeleccionarAlmacen(oe As e_OrdenMaterial)
-    '    Try
-    '        Dim frm As New frm_ActualizarAlmacen(oe.IdMaterial, oe.CodigoMaterial, oe.Material, oe.CantidadMaterial)
-    '        If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
-    '            With griOrdenMaterial.ActiveRow
-    '                .Cells("Almacen").Value = frm.oeAlmMaterial.Almacen
-    '                .Cells("IdAlmacen").Value = frm.oeAlmMaterial.IdAlmacen
-    '                .Cells("IdSubAlmacen").Value = frm.oeAlmMaterial.Id
-    '                .Cells("Stock").Value = frm.oeAlmMaterial.StockActual
-    '                .Cells("PrecioUnitario").Value = (frm.oeAlmMaterial.CostoUnitario * oeIGVGlobal.Porcentaje) + frm.oeAlmMaterial.CostoUnitario
-    '                .Cells("CostoAdm").Value = frm.oeAlmMaterial.ValorAdm
-    '                If .Cells("CantidadMaterial").Value > frm.oeAlmMaterial.StockActual Then
-    '                    .Cells("CantidadMaterial").Value = frm.oeAlmMaterial.StockActual
-    '                End If
-    '                .Cells("ValorVenta").Value = .Cells("CantidadMaterial").Value * .Cells("PrecioUnitario").Value
-    '            End With
-    '        End If
-    '        griOrdenMaterial.DataBind()
-    '        CalcularTotalesDetalle()
-    '    Catch ex As Exception
-    '        Throw ex
-    '    End Try
-    'End Sub
+    Private Sub SeleccionarAlmacen(oe As e_OrdenMaterial)
+        Try
+            Dim frm As New frm_ActualizarAlmacen(oe.IdMaterial, oe.CodigoMaterial, oe.Material, oe.CantidadMaterial)
+            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+                With griOrdenMaterial.ActiveRow
+                    .Cells("Almacen").Value = frm.oeAlmMaterial.Almacen
+                    .Cells("IdAlmacen").Value = frm.oeAlmMaterial.IdAlmacen
+                    .Cells("IdSubAlmacen").Value = frm.oeAlmMaterial.Id
+                    .Cells("Stock").Value = frm.oeAlmMaterial.StockActual
+                    .Cells("PrecioUnitario").Value = (frm.oeAlmMaterial.CostoUnitario * oeIGVGlobal.Porcentaje) + frm.oeAlmMaterial.CostoUnitario
+                    .Cells("CostoAdm").Value = frm.oeAlmMaterial.ValorAdm
+                    If .Cells("CantidadMaterial").Value > frm.oeAlmMaterial.StockActual Then
+                        .Cells("CantidadMaterial").Value = frm.oeAlmMaterial.StockActual
+                    End If
+                    .Cells("ValorVenta").Value = .Cells("CantidadMaterial").Value * .Cells("PrecioUnitario").Value
+                End With
+            End If
+            griOrdenMaterial.DataBind()
+            CalcularTotalesDetalle()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     Public Sub ObtenerAsientoModelo(IdMoneda As String, Ejercicio As Integer)
         Try
