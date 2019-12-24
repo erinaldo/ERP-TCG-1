@@ -534,6 +534,11 @@ Public Class frm_OrdenCompra
         oeOrdenCompra.TipoOperacion = "I"
         cboProveedor.Text = String.Empty
         cboProveedor.DataSource = Nothing
+        cboCliente.Text = String.Empty '@001 Ini
+        cboPiloto.Text = String.Empty
+        cboTracto.Text = String.Empty
+        cboTurnoAtencion.Text = String.Empty
+        txtIdViaje.Text = String.Empty '@001 Fin
         uc_Transportista.Text = String.Empty
         uc_Transportista.DataSource = Nothing
         cb_FactServ.Checked = False
@@ -696,10 +701,16 @@ Public Class frm_OrdenCompra
                         txtCodDT.Text = oeOrdenCompra.CodigoDT
                         cb_FactServ.Checked = oeOrdenCompra.IndFactServicio
                         If cb_FactServ.Checked Then
-                            ListarProveedores(uc_Transportista, oeOrdenCompra.IdTransportista, 0)
-                            uc_Transportista.Value = oeOrdenCompra.IdTransportista
+                            ListarProveedores(uc_Transportista, oeOrdenCompra.IdClienteFinal, 0)
+                            uc_Transportista.Value = oeOrdenCompra.IdClienteFinal
                             uce_Origen.Value = oeOrdenCompra.IdOrigen
                             uce_Destino.Value = oeOrdenCompra.IdDestino
+                            cboCliente.Value = oeOrdenCompra.IdTransportista '@0001 Ini
+                            cboTracto.Value = oeOrdenCompra.IdTracto
+                            cboPiloto.Value = oeOrdenCompra.IdPiloto
+                            VentanaHoraria()
+                            cboTurnoAtencion.Value = oeOrdenCompra.IdVentanaHoraria
+                            txtIdViaje.Text = oeOrdenCompra.IdViaje '@001 Fin
                         End If
                         '-----
                         MostrarTabs(1, ficOrdenCompra, 1)
@@ -1494,13 +1505,18 @@ Public Class frm_OrdenCompra
                 .IndTipoCompra = 0
                 .CodigoDT = txtCodDT.Text
                 If cb_FactServ.Checked Then
-                    If uc_Transportista.SelectedRow Is Nothing Then Throw New Exception("Seleccione Transportista")
+                    If uc_Transportista.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente Final")
                     If uce_Destino.SelectedIndex = -1 Then Throw New Exception("Seleccione Destino")
                     If uce_Origen.SelectedIndex = -1 Then Throw New Exception("Seleccione Origen")
                     .IndFactServicio = cb_FactServ.Checked
-                    .IdTransportista = uc_Transportista.Value
+                    .IdTransportista = cboCliente.Value
                     .IdOrigen = uce_Origen.Value
                     .IdDestino = uce_Destino.Value
+                    .IdPiloto = cboPiloto.Value
+                    .IdTracto = cboTracto.Value
+                    .IdVentanaHoraria = cboTurnoAtencion.Value
+                    .IdClienteFinal = uc_Transportista.Value
+
                 End If
                 .lstOrdenMaterial = llOrdenCompraMaterial
                 .OrdenAprobacion.Id = ls_IdOrdenAprobacion
@@ -1583,6 +1599,10 @@ Public Class frm_OrdenCompra
             LlenarComboMaestro(cboEstadoOrden, llEstado, 3)
             _IdEstadoOrden = cboEstadoOrden.Value
             cboEstadoOrden.SelectedIndex = 0
+
+            LlenarCombo(cboCliente, "Nombre", ClienteProveedorPublic, -1) '@0001
+            LlenarCombo(cboTracto, "Nombre", TractoPublic, -1) '@0001
+            LlenarCombo(cboPiloto, "Nombre", PilotoPublic, -1) '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -3878,11 +3898,38 @@ Public Class frm_OrdenCompra
     Private Sub cb_FactServ_CheckedChanged(sender As Object, e As EventArgs) Handles cb_FactServ.CheckedChanged
         If cb_FactServ.Checked Then
             UltraGroupBox1.Enabled = True
+            '@001
+            If cboCliente.Text = "" Then
+                cboCliente.Value = cboProveedor.Value
+            End If
+            '@001
         Else
             UltraGroupBox1.Enabled = False
         End If
     End Sub
 
+    Private Sub ChIndEMP_CheckedChanged(sender As Object, e As EventArgs) Handles ChIndEMP.CheckedChanged
+        If ChIndEMP.Checked Then
+            cboCliente.Value = gs_IdClienteProveedorSistema
+        Else
+            cboCliente.Value = cboProveedor.Value
+        End If
+    End Sub
+    '@0001
+    Sub VentanaHoraria()
+        Dim oeCombo As New e_Combo
+        Dim olCombo As New l_Combo
+        oeCombo.Id = cboCliente.Value
+        oeCombo.Nombre = "VentanaHoraria"
+        oeCombo.Descripcion = uce_Origen.Value
+        LlenarCombo(cboTurnoAtencion, "Nombre", olCombo.Listar(oeCombo), -1)
+    End Sub
+
+    Private Sub uce_Origen_Leave(sender As Object, e As EventArgs) Handles uce_Origen.Leave
+        VentanaHoraria()
+    End Sub
+
+    '@001
     Private Sub TSM_Boleta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_Boleta.Click
         GenerarDocumento("BOLETA")
     End Sub

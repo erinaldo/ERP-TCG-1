@@ -61,7 +61,12 @@ Public Class d_OrdenCompra
                                          fila("IdEmpresaTransporte"),
                                          fila("IdOrigen"),
                                          fila("IdDestino"),
-                                         fila("UsuarioCreacion"))
+                                         fila("UsuarioCreacion"),
+                                         fila("IdPiloto"),
+                                         fila("IdTracto"),
+                                         fila("IdClienteFinal"),
+                                         fila("IdVentanaHoraria"),
+                                         fila("IdViaje"))
             Return oeOrden
         Catch ex As Exception
             Throw ex
@@ -176,7 +181,11 @@ Public Class d_OrdenCompra
                                                         , .IndFactServicio _
                                                         , .IdTransportista _
                                                         , .IdOrigen _
-                                                        , .IdDestino).ToString.Split("_")
+                                                        , .IdDestino _
+                                                        , .IdPiloto _
+                                                        , .IdTracto _
+                                                        , .IdClienteFinal _
+                                                        , .IdVentanaHoraria).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each Detalle As e_OrdenCompraMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0)
