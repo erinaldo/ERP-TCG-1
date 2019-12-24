@@ -342,12 +342,11 @@ Public Class frm_ReciboPorHonorario
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
             ' If oeMovimientoDocumento.FechaEmision >= Date.Parse("01/08/2014") Then ObtenerAportes()
             oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
-            If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
-                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
+            oeMovimientoDocumento = olMovimientoDocumento.Guardar(oeMovimientoDocumento)
+            mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 Consultar(True)
                 MostrarTabs(0, ficReciboH, 1)
                 Return True
-            End If
         Catch ex As Exception
             Throw ex
         End Try

@@ -64,6 +64,7 @@ Public Class l_OrdenVenta
 
     Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta Implements Il_OrdenVenta.Guardar_VentaRapida
         Try
+            Dim dORdenDocumento As New d_Orden_Documento
             Dim bol_guardado As Boolean = False
             Using TransScope As New TransactionScope()
                 If Validar(OrdenVenta) Then
@@ -74,9 +75,12 @@ Public Class l_OrdenVenta
                         '    oeOrdenComercial.oeDocumento.IndElectronico = True
                         'End If
                         For Each oe In OrdenVenta.oeDocumento.lo_OrdenDocumento
+                            oe.IdEmpresaSistema = OrdenVenta.IdEmpresaSistema
+                            oe.PrefijoID = OrdenVenta.PrefijoID
                             oe.IdOrden = OrdenVenta.Id
+                            'dORdenDocumento.Guardar(oe)
                         Next
-                        olDocumento.Guardar(OrdenVenta.oeDocumento)
+                        OrdenVenta.oeDocumento = olDocumento.Guardar(OrdenVenta.oeDocumento)
                     End If
                 End If
                 TransScope.Complete()

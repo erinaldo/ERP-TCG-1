@@ -634,7 +634,7 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean Implements Il_MovimientoDocumento.Guardar
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As e_MovimientoDocumento Implements Il_MovimientoDocumento.Guardar
         Try
             If oeMovimientoDocumento.TipoOperacion <> "EPC" Then
                 l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.IdTipoDocumento, "Seleciona Tipo Documento")
@@ -644,15 +644,10 @@ Public Class l_MovimientoDocumento
                 olFuncionesGenerales.ValidarDocumentoDuplicado(oeMovimientoDocumento)
                 If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("No Existe Tipo de Cambio")
             End If
-            'If olFuncionesGenerales.ValidarDocumentoDuplicado(oeMovimientoDocumento) Then
-            'If ValidarTipoCambio(oeMovimientoDocumento) Then
-            'oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+
             oeAnticipo = New e_MovimientoDocumento
-            If odMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo) Then
-                Return True
-            End If
-            'End If
-            'End If
+            oeMovimientoDocumento = odMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo)
+            Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
@@ -704,7 +699,8 @@ Public Class l_MovimientoDocumento
             Dim oeMovCajBanco As e_MovimientoCajaBanco
             Using TransScope As New TransactionScope()
                 oeMovDoc.TipoOperacion = "T"
-                If Not odMovimientoDocumento.Guardar(oeMovDoc) Then Return False
+                oeMovDoc = odMovimientoDocumento.Guardar(oeMovDoc)
+                If oeMovDoc.Id = "" Then Return False
 
                 Dim IdAsiento As String = odAsiento.UltimoIdInserta(oeMovDoc.PrefijoID)
                 Dim lsPrefijoAsiento As String = Left(IdAsiento, 3)
@@ -5091,7 +5087,8 @@ Public Class l_MovimientoDocumento
                         .Venta.TotalVenta = .SubTotal
                         .Venta.IdTipoVenta = oeServCtaCtble.CuentaHaber ' Cuenta Haber se Carga IdTablaContableDet
                     End With
-                    If GuardarVenta2(oeMovDocumento) Then
+                    oeMovDocumento = GuardarVenta2(oeMovDocumento)
+                    If oeMovDocumento.Id <> "" Then
                         'If b_anticipo Then
                         '    Dim olIgv As New l_Impuesto
                         '    Dim oeIgv As New e_Impuesto
@@ -5109,9 +5106,9 @@ Public Class l_MovimientoDocumento
                                 .TipoOperacion = "I" : .IdPeriodo = oeMovDocumento.IdPeriodo : .IdTipoAsiento = oeAsientoModel.IdTipoAsiento
                                 .PrefijoID = oeMovDocumento.PrefijoID
                                 .NroAsiento = String.Empty : .Fecha = oeMovDocumento.FechaEmision
-                                .Glosa = "VENTA " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                .Glosa = "VENTA " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                     " " & oeMovDocumento.Venta.Cliente.Nombre
-                                .GlosaImprime = "VENTA " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                .GlosaImprime = "VENTA " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                     " " & oeMovDocumento.Venta.Cliente.Nombre
                                 .IdMoneda = oeAsientoModel.IdMoneda : .TipoCambio = oeMovDocumento.TipoCambio
                                 .TotalDebe = oeMovDocumento.Total : .TotalHaber = oeMovDocumento.Total
@@ -5147,7 +5144,7 @@ Public Class l_MovimientoDocumento
                                             oeAsientoMov.AsMov_MovDoc.IdMovimientoDocumento = oeMovDocumento.Id
                                             oeAsientoMov.AsMov_MovDoc.IdCuentaxCyP = String.Empty
                                             oeAsientoMov.AsMov_MovDoc.Activo = True
-                                           
+
                                         Case "4"
                                             .IdCuentaContable = oeAux.IdCuentaContable.Trim
                                             If oeAux.Partida = 1 Then
@@ -5205,7 +5202,7 @@ Public Class l_MovimientoDocumento
                                             If b_anticipo Then
                                                 oeAsientoMov_Anticipo = New e_AsientoMovimiento
                                                 With oeAsientoMov_Anticipo
-                                                    .TipoOperacion = "I" : .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                                    .TipoOperacion = "I" : .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                                     " " & oeMovDocumento.Venta.Cliente.Nombre
                                                     If oeAux.Partida = 1 Then
                                                         .DebeMN = IIf(oeAsientoModel.Moneda = "SOLES", oeMovDocumento.Monto_Anticipo, (oeMovDocumento.Monto_Anticipo * oeMovDocumento.TipoCambio))
@@ -5232,9 +5229,9 @@ Public Class l_MovimientoDocumento
                                 With oeAsiento_Anticipo
                                     .TipoOperacion = "I" : .IdPeriodo = oeMovDocumento.IdPeriodo : .IdTipoAsiento = "1CH000020"
                                     .NroAsiento = String.Empty : .Fecha = oeMovDocumento.FechaEmision
-                                    .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                    .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                         " " & oeMovDocumento.Venta.Cliente.Nombre
-                                    .GlosaImprime = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                    .GlosaImprime = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                         " " & oeMovDocumento.Venta.Cliente.Nombre
                                     .IdMoneda = oeAsientoModel.IdMoneda : .TipoCambio = oeMovDocumento.TipoCambio
                                     .TotalDebe = monto_total : .TotalHaber = monto_total
@@ -5258,7 +5255,7 @@ Public Class l_MovimientoDocumento
                                     lstCtaCtble = ol_CtaCtble.Listar(oe_CtaCtble)
                                     If lstCtaCtble.Count = 0 Then Throw New Exception("No existe cuenta asignada para anticipos.")
                                     With oeAsientoMov_Anticipo
-                                        .TipoOperacion = "I" : .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero & _
+                                        .TipoOperacion = "I" : .Glosa = "APLICACIÓN DE ANTICIPO " & oeMovDocumento.Venta.TipoDoc.Abreviatura & "/" & oeMovDocumento.Serie & oeMovDocumento.Numero &
                                         " " & oeMovDocumento.Venta.Cliente.Nombre
                                         .DebeMN = IIf(oeAsientoModel.Moneda = "SOLES", docasoc.Monto_Desc, (docasoc.Monto_Desc * oeMovDocumento.TipoCambio))
                                         .DebeME = IIf(oeAsientoModel.Moneda = "SOLES", (docasoc.Monto_Desc / oeMovDocumento.TipoCambio), docasoc.Monto_Desc)
@@ -5282,7 +5279,7 @@ Public Class l_MovimientoDocumento
                                 Return True
                             End If
                         Else
-                            MsgBox("El Documento Nº " & oeMovDocumento.Serie & " - " & oeMovDocumento.Numero & " tiene un asiento registrado." & vbCrLf & _
+                            MsgBox("El Documento Nº " & oeMovDocumento.Serie & " - " & oeMovDocumento.Numero & " tiene un asiento registrado." & vbCrLf &
                                    "Comunicar a Sistemas el mensaje de alerta.", MsgBoxStyle.Information, "EMISIÓN DE VENTAS")
                             Return False
                         End If
@@ -5294,9 +5291,10 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Public Function GuardarVenta2(oeMovDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.GuardarVenta2
+    Public Function GuardarVenta2(oeMovDocumento As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.GuardarVenta2
         Try
-            Return odMovimientoDocumento.GuardarVenta2(oeMovDocumento)
+            oeMovDocumento = odMovimientoDocumento.GuardarVenta2(oeMovDocumento)
+            Return oeMovDocumento
         Catch ex As Exception
             Throw ex
         End Try

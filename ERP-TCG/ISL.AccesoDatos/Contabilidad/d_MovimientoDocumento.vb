@@ -486,18 +486,18 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As e_MovimientoDocumento
         Try
             oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
             If UsaTransaccion Then
                 Using transScope As New TransactionScope
-                    GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
+                    oeMovimientoDocumento = GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
                     transScope.Complete()
                 End Using
             Else
-                GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
+                oeMovimientoDocumento = GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
             End If
-            Return True
+            Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
@@ -540,7 +540,7 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
+    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As e_MovimientoDocumento
         Try
             Dim stResultado() As String
             Dim stResultado_Ant() As String
@@ -742,7 +742,7 @@ Public Class d_MovimientoDocumento
                 End If
             End With
 
-            Return True
+            Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
@@ -1501,12 +1501,12 @@ Public Class d_MovimientoDocumento
 
 #Region "Ventas"
 
-    Public Function GuardarVenta2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
+    Public Function GuardarVenta2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
         Try
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeMovimientoDocumento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -1542,7 +1542,7 @@ Public Class d_MovimientoDocumento
                             , .IndAnticipo _
                             , .IndAfectaAnticipo _
                             , .Monto_Anticipo).ToString.Split("_")
-                           
+
                     .Id = stResultado(0)
                     'Guardar Venta
                     If .Venta.IdTipoVenta <> "" Then
@@ -1567,7 +1567,7 @@ Public Class d_MovimientoDocumento
                     End If
                 End With
                 transScope.Complete()
-                Return True
+                Return oeMovimientoDocumento
             End Using
         Catch ex As Exception
             Throw ex
@@ -1612,7 +1612,8 @@ Public Class d_MovimientoDocumento
 
     Public Function GuardaMasivo(oeMovDoc As e_MovimientoDocumento, DTAsiento As DataTable, DTAsiMov As DataTable, DTMovCajBan As DataTable, DTAsiMovMovDoc As DataTable, DTCtaCyP As DataTable) As Boolean
         Try
-            If Not Guardar(oeMovDoc) Then Return False
+            oeMovDoc = Guardar(oeMovDoc)
+            If oeMovDoc.Id = "" Then Return False
             If DTAsiento.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.Asiento", DTAsiento, False)
             If DTAsiMov.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.AsientoMovimiento", DTAsiMov, False)
             If DTMovCajBan.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.MovimientoCajaBanco", DTMovCajBan, False)

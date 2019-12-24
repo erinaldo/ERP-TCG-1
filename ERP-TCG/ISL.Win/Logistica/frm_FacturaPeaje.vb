@@ -347,11 +347,10 @@ Public Class frm_FacturaPeaje
                 oeDocumento.lstDetalleDocumento = loDetalleDoc
                 oeDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                 oeDocumento.Compra.PrefijoID = gs_PrefijoIdSucursal '@0001
-                If Not olDocumento.Guardar(oeDocumento) Then
-                    Return False
-                End If
+                oeDocumento = olDocumento.Guardar(oeDocumento)
+
+                Return True
             End If
-            Return True
         Catch ex As Exception
             Throw ex
         End Try

@@ -629,27 +629,10 @@ Public Class frm_FacturaCompra
             CargarObjects()
             oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             If oeMovimientoDocumento.TipoOperacion = "I" Then Validar_ExistenciaComprobante()
-            If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
-                'If Me.chk_CajaChica.Checked Then
-                '    oePeriodo = New e_Periodo
-                '    oePeriodo.Ejercicio = fechaactual.Year
-                '    oePeriodo = olPeriodo.ObtenerPeriodoVigente(oePeriodo, 3)
-                '    oeMovimientoDocumento.FechaCreacion = fechaactual
-                '    If oeMovimientoDocumento.FechaEmision.Year <> Año1.Año Then Throw New Exception("Los años no son iguales, no se puede enviar la Compra")
-                '    If oeMovimientoDocumento.FechaEmision.Month > CInt(cboMes.Text) Then Throw New Exception("El mes de emision es Mayor al Periodo,No se puede Enviar la Compra")
-                '    If oePeriodo.Mes <> CInt(cboMes.Text) Then
-                '        If oeMovimientoDocumento.FechaEmision.Month = oePeriodo.Mes Then
-                '            Throw New Exception("Periodo " & oePeriodo.Codigo & " Abierto para Tesoreria.")
-                '        End If
-                '    End If
-                '    oeMovimientoDocumento.IdPeriodo = cboMes.Value
-                '    oeMovimientoDocumento.Ejercicio = Año1.Año
-                '    oeMovimientoDocumento.Compra.TipoDoc = oeTipoDocumento
-                '    GuardarCmpAsiento(oeMovimientoDocumento.IdPeriodo, oeMovimientoDocumento.Ejercicio, False)
-                'End If
-                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
-                Return True
-            End If
+            oeMovimientoDocumento = olMovimientoDocumento.Guardar(oeMovimientoDocumento)
+
+            mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
+            Return True
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

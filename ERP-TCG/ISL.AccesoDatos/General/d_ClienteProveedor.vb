@@ -66,7 +66,7 @@ Public Class d_ClienteProveedor
             Dim ldClienteProveedor As New List(Of e_ClienteProveedor)
             Dim ds As DataSet
             With oeClienteProveedor
-                ds = sqlhelper.ExecuteDataset("STD.Isp_ClienteProveedor_Listar", "" _
+                ds = sqlhelper.ExecuteDataset("STD.Isp_ClienteProveedor_Listar", .TipoOperacion _
                         , .Id _
                         , .Codigo _
                         , .Cliente _
