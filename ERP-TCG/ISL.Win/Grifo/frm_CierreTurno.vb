@@ -38,8 +38,8 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Consultar(ByVal Activo As Boolean)
         Try
-            mt_Listar()
             Operacion = "Inicializa"
+            mt_Listar()
             mt_ControlBotoneria()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -48,10 +48,12 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Nuevo()
         Try
+            Operacion = "Nuevo"
             gmt_MostrarTabs(1, ficOrdenComercial, 1)
             mt_Inicializar()
-            Operacion = "Nuevo"
-            mt_ControlBotoneria()
+            TURNO = fc_Inicializar_Turno("I")
+            mt_Agregar_Detalles()
+            mt_ControlBotoneria() : mt_HabilitarControles()
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -60,12 +62,15 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Editar()
         Try
+            Operacion = "Editar"
             If griOrdenComercial.Selected.Rows.Count > 0 Then
-                mt_Inicializar()
-                mt_Mostrar()
                 gmt_MostrarTabs(1, ficOrdenComercial, 1)
-                Operacion = "Editar"
-                mt_ControlBotoneria()
+                mt_Inicializar()
+                TURNO.TipoOperacion = "" : TURNO.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
+                TURNO = dTURNO.Obtener(TURNO)
+                TURNO.TipoOperacion = "A"
+                mt_Mostrar()
+                mt_ControlBotoneria() : mt_HabilitarControles()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -146,7 +151,6 @@ Public Class frm_CierreTurno
     Private Sub mt_Inicializar()
         TURNO = New e_CierreTurno
         Dim lista As List(Of e_Combo), olCombo As New l_Combo
-
         lista = New List(Of e_Combo)
         lista.Add(New e_Combo With {.Id = "D", .Nombre = "DIA"})
         lista.Add(New e_Combo With {.Id = "N", .Nombre = "NOCHE"})
@@ -166,8 +170,9 @@ Public Class frm_CierreTurno
         gmt_ComboEspecifico(cboTrabajadorApertura, lista, 3)
         gmt_ComboEspecifico(cboTrabajadorCierre, lista, 3)
 
-        mt_CargarDetalles()
+
         UltraTabControl1.Tabs(0).Selected = True
+
     End Sub
 
     Private Sub mt_Listar()
@@ -195,7 +200,7 @@ Public Class frm_CierreTurno
                 End Select
             Next
             With griOrdenComercial
-                .DisplayLayout.Bands(0).Columns("Id").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Id").Hidden = False
                 .DisplayLayout.Bands(0).Columns("IdEmpresaSis").Hidden = True
                 .DisplayLayout.Bands(0).Columns("idSucursal").Hidden = True
                 .DisplayLayout.Bands(0).Columns("IdTurno").Hidden = True
@@ -214,9 +219,6 @@ Public Class frm_CierreTurno
 
     Private Sub mt_Mostrar()
         Try
-            TURNO = New e_CierreTurno
-            TURNO.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
-            TURNO = dTURNO.Obtener(TURNO)
             With TURNO
                 cmb_Turno.Value = Trim(.IdTurno)
                 dtpFecha.Value = .Fecha
@@ -226,14 +228,59 @@ Public Class frm_CierreTurno
                 cboTrabajadorApertura.Value = .IdTrabajador_Apertura
                 cboTrabajadorCierre.Value = .IdTrabajador_Cierre
                 txtGlosa.Text = .Glosa
-                mt_CargarGrillas()
+                mt_Mostrar_Detalles()
             End With
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
-    Private Sub mt_CargarGrillas()
+    Private Function fc_Inicializar_Turno(TipoOperacion As String)
+        Dim Turno As New e_CierreTurno
+        With Turno
+            .Id = ""
+            .TipoOperacion = TipoOperacion
+            .IdEmpresaSis = gs_IdEmpresaSistema
+            .IdSucursal = gs_IdSucursal
+            .IdSucursalSistema = gs_IdSucursal
+            .PrefijoID = gs_PrefijoIdSucursal
+        End With
+        Return Turno
+    End Function
+
+    Private Sub mt_HabilitarControles()
+        '' Por Tipo Operacion
+        Select Case Operacion
+            Case "Nuevo"
+                cboTrabajadorApertura.Enabled = True
+                cboTrabajadorCierre.Enabled = False
+            Case "Editar"
+                cboTrabajadorApertura.Enabled = False
+                cboTrabajadorCierre.Enabled = True
+        End Select
+
+        '' Por Estado
+        If TURNO.Id <> "" And TURNO.IdEstado = "ABIERTO" Then
+            udg_ContometroAnalogico.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroAnalogico.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroDigital.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroDigital.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+            udg_Almacenes.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_Almacenes.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+        End If
+        If TURNO.IdEstado = "CERRADO" Then
+            udg_ContometroAnalogico.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroAnalogico.DisplayLayout.Bands(0).Columns("ValorFinal").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroAnalogico.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroDigital.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroDigital.DisplayLayout.Bands(0).Columns("ValorFinal").CellClickAction = CellClickAction.RowSelect
+            udg_ContometroDigital.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+            udg_Almacenes.DisplayLayout.Bands(0).Columns("ValorInicial").CellClickAction = CellClickAction.RowSelect
+            udg_Almacenes.DisplayLayout.Bands(0).Columns("ValorFinal").CellClickAction = CellClickAction.RowSelect
+            udg_Almacenes.DisplayLayout.Bands(0).Columns("ValorDiferencia").CellClickAction = CellClickAction.RowSelect
+        End If
+    End Sub
+    Private Sub mt_Mostrar_Detalles()
         Try
             With TURNO
                 udg_Trabajadores.DataSource = .Detalles.Where(Function(it) it.Rubro = "TRABAJADORES").ToList : udg_Trabajadores.DataBind()
@@ -253,6 +300,12 @@ Public Class frm_CierreTurno
 
     Private Function fc_Guardar() As Boolean
         Try
+            Dim Validacion As String = fc_ValidarFormulario()
+            'If Validacion <> "" Then
+            '    MsgBox("Validacion", MsgBoxStyle.Information, Me.Text)
+            '    Return False
+            'End If
+
             If Not fc_LlenaObjeto() Then Return False
             TURNO = dTURNO.Guardar(TURNO)
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
@@ -265,19 +318,45 @@ Public Class frm_CierreTurno
         End Try
     End Function
 
+    Private Function fc_ValidarFormulario() As String
+        Dim Validacion As String = ""
+        If Operacion = "Nuevo" Then
+            Validacion = IIf(cboTrabajadorApertura.Value = "", "Debe indicar el trabajador que apertura el turno", "")
+        End If
+        If Operacion = "Editar" Then
+            Validacion = IIf(cboTrabajadorCierre.Value = "", "Debe indicar el trabajador que apertura el turno", "")
+        End If
+        Return Validacion
+    End Function
     Private Sub mt_Generar_TurnoNuevo()
-
+        Dim TurnoNuevo As New e_CierreTurno
+        TurnoNuevo = fc_Inicializar_Turno("I")
+        With TurnoNuevo
+            .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
+            .Fecha = dtpFecha.Value : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
+            .IdTrabajador_Apertura = TURNO.IdTrabajador_Cierre : .Trabajador_Apertura = TURNO.Trabajador_Cierre
+            .IdTurno = IIf(TURNO.IdTurno = "D", "N", "D") : .IdTurno = IIf(TURNO.IdTurno = "DIA", "NOCHE", "DIA")
+            .Detalles.AddRange(TURNO.Detalles)
+            For Each Detalle In TurnoNuevo.Detalles
+                Detalle.TipoOperacion = "I"
+                Detalle.Id = ""
+                Detalle.IdCierreTurno = ""
+                Select Case Detalle.Grupo
+                    Case "CONTOMETRO_DIGITAL", "CONTOMETRO_MECANICO", "ALMACENES"
+                        Detalle.ValorInicial = Detalle.ValorFinal
+                        Detalle.ValorFinal = 0
+                        Detalle.ValorDiferencia = 0
+                    Case "VENTASXCOMBUSTIBLE", "VENTAS_ANULADAS", "CALIBRACIONES"
+                        Detalle.ValorERP = 0
+                End Select
+            Next
+        End With
+        TurnoNuevo = dTURNO.Guardar(TurnoNuevo)
     End Sub
 
     Public Function fc_LlenaObjeto() As Boolean
         Try
             With TURNO
-                .Id = ""
-                .TipoOperacion = "I"
-                .IdEmpresaSis = gs_IdEmpresaSistema
-                .IdSucursal = gs_IdSucursal
-                .IdSucursalSistema = gs_IdSucursal
-                .PrefijoID = gs_PrefijoIdSucursal
                 .IdTurno = cmb_Turno.Value
                 .Turno = cmb_Turno.Text
                 .IdEstado = cmb_Estado.Value
@@ -285,10 +364,10 @@ Public Class frm_CierreTurno
                 .Fecha = dtpFecha.Value
                 .HoraInicio = dtpHoraInicio.Value
                 .HoraFin = dtpHoraFin.Value
-                .IdTrabajador_Apertura = "" 'cboTrabajadorApertura.Value.ToString
-                .Trabajador_Apertura = "" 'cboTrabajadorApertura.Text
-                .IdTrabajador_Cierre = "" 'cboTrabajadorCierre.Value.ToString
-                .Trabajador_Cierre = "" 'cboTrabajadorCierre.Text
+                '.IdTrabajador_Apertura = cboTrabajadorApertura.Value.ToString
+                '.Trabajador_Apertura = cboTrabajadorApertura.Text
+                '.IdTrabajador_Cierre = cboTrabajadorCierre.Value.ToString
+                '.Trabajador_Cierre = cboTrabajadorCierre.Text
                 .Glosa = txtGlosa.Text
                 .UsuarioCrea = gUsuarioSGI.Id
                 .FechaCrea = Date.Now
@@ -334,12 +413,12 @@ Public Class frm_CierreTurno
         Select Case ficOrdenComercial.SelectedTab.Index
             Case 0
                 If griOrdenComercial.Rows.Count > 0 Then
-                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 0, 1)
+                    gmt_ControlBoton(1, 1, 1, 0, 0, 0, 1, 0, 1)
                 Else
                     gmt_ControlBoton(1, 1)
                 End If
             Case 1
-                If TURNO.Estado = "GENERADO" Or TURNO.Estado = "" Then
+                If TURNO.Estado = "ABIERTO" Or TURNO.Estado = "" Then
                     gmt_ControlBoton(0, 0, 0, 1, 1)
                 Else
                     gmt_ControlBoton(0, 0, 0, 0, 1)
@@ -414,8 +493,8 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
-            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
@@ -438,8 +517,8 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
-            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
@@ -534,8 +613,8 @@ Public Class frm_CierreTurno
             .DisplayLayout.Bands(0).Columns("IdConcepto").Hidden = True
             .DisplayLayout.Bands(0).Columns("Concepto").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorInicial").Hidden = False
-            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = True
-            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = True
+            .DisplayLayout.Bands(0).Columns("ValorFinal").Hidden = False
+            .DisplayLayout.Bands(0).Columns("ValorDiferencia").Hidden = False
             .DisplayLayout.Bands(0).Columns("ValorERP").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorReal").Hidden = True
             .DisplayLayout.Bands(0).Columns("ValorAux1").Hidden = True
@@ -574,7 +653,7 @@ Public Class frm_CierreTurno
     End Sub
 
 
-    Private Sub mt_CargarDetalles()
+    Private Sub mt_Agregar_Detalles()
         Try
             Dim Detalle As New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = "Trabajador1"} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = "Lado 1", .Concepto = "DIESEL DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
@@ -619,17 +698,16 @@ Public Class frm_CierreTurno
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "VENTASXCOMBUSTIBLE", .Grupo = "", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "VENTAS_ANULADAS", .Grupo = "", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "CALIBRACIONES", .Grupo = "", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000001", .Concepto = "", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000002", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000003", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000004", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000005", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000001", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000002", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000003", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000004", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "CHT000000001", .IdConcepto = "CHT000000005", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000147", .Concepto = "GASOHOL 84", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000148", .Concepto = "GASOHOL 90", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000000149", .Concepto = "GASOHOL 95", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
             Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = "1CH000007256", .Concepto = "DIESEL DB5", .ValorInicial = 0, .ValorFinal = 0} : TURNO.Detalles.Add(Detalle)
-            mt_CargarGrillas()
+            mt_Mostrar_Detalles()
         Catch ex As Exception
             Throw ex
         End Try
