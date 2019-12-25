@@ -70,17 +70,13 @@ Public Class l_OrdenVenta
                 If Validar(OrdenVenta) Then
                     OrdenVenta = odOrdenComercial.Guardar_VentaRapida(OrdenVenta)
                     If OrdenVenta.oeDocumento.TipoOperacion <> "" Then
-                        'oeOrdenComercial.oeDocumento.idOrdenComercial = oeOrdenComercial.Id
-                        'If oeOrdenComercial.oeDocumento.Serie.StartsWith("B") OrElse oeOrdenComercial.oeDocumento.Serie.StartsWith("F") Then
-                        '    oeOrdenComercial.oeDocumento.IndElectronico = True
-                        'End If
                         For Each oe In OrdenVenta.oeDocumento.lo_OrdenDocumento
                             oe.IdEmpresaSistema = OrdenVenta.IdEmpresaSistema
                             oe.PrefijoID = OrdenVenta.PrefijoID
                             oe.IdOrden = OrdenVenta.Id
                             'dORdenDocumento.Guardar(oe)
                         Next
-                        OrdenVenta.oeDocumento = olDocumento.Guardar(OrdenVenta.oeDocumento)
+
                     End If
                 End If
                 TransScope.Complete()

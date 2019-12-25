@@ -112,7 +112,7 @@ fila("IdTrabajador"))
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeOrden As e_Orden) As Boolean
+    Public Function Guardar(ByVal oeOrden As e_Orden) As e_Orden
         Try
             Dim stResultado() As String
             Using transScope As New TransactionScope()
@@ -178,7 +178,7 @@ fila("IdTrabajador"))
                         oeOrdenDoc.UsuarioCreacion = oeOrden.UsuarioCreacion
                         oeOrdenDoc.Activo = True
                         oeOrdenDoc.PrefijoID = oeOrden.PrefijoID '@0001
-                        If Not odOrdenDoc.Guardar(oeOrdenDoc) Then Return False
+                        odOrdenDoc.Guardar(oeOrdenDoc)
                     End If
                     'Insertar DetalleOrdenNeumatico
                     If .bandNeu = "N" Then
@@ -205,10 +205,10 @@ fila("IdTrabajador"))
                 End With
                 transScope.Complete()
             End Using
-            Return True
+            Return oeOrden
         Catch ex As Exception
             Throw ex
-            Return False
+
         End Try
     End Function
 

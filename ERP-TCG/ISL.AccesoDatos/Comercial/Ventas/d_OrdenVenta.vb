@@ -199,11 +199,12 @@ Public Class d_OrdenVenta
 
     Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta
         Try
+            Dim aux As New e_OrdenVenta
             Dim odOrdenComercialMaterial As New d_OrdenVentaMaterial
             Dim odOrden As New d_Orden
             Dim odDocumento As New d_MovimientoDocumento
+            Dim stResultado() As String
             Using transScope As New TransactionScope()
-                Dim stResultado() As String
                 With OrdenVenta
                     stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_OrdenVenta_IAE]" _
                             , .TipoOperacion _
@@ -241,23 +242,24 @@ Public Class d_OrdenVenta
                             , .Kilometraje
                             ).ToString.Split("_")
                     .Id = stResultado(0)
+                    aux = Obtener(New e_OrdenVenta With {.TipoOperacion = "", .Id = stResultado(0)})
+                    .OrdenComercial = aux.OrdenComercial
                 End With
                 With OrdenVenta
-                    For Each oe As e_OrdenVentaMaterial In .lstOrdenComercialMaterial
-                        If oe.TipoOperacion = "" Then oe.TipoOperacion = "A"
-                        oe.IdOrdenComercial = stResultado(0)
-                        odOrdenComercialMaterial.Guardar(oe)
+                    '' Detalles
+                    For Each Detalle In .lstOrdenComercialMaterial
+                        If Detalle.TipoOperacion = "" Then Detalle.TipoOperacion = "A"
+                        Detalle.IdOrdenComercial = OrdenVenta.Id
+                        odOrdenComercialMaterial.Guardar(Detalle)
                     Next
+                    '' OrdenSalida
                     If .oeOrdenSalida.TipoOperacion <> "" Then
-                        .oeOrdenSalida.Referencia = stResultado(0)
+                        .oeOrdenSalida.Referencia = OrdenVenta.OrdenComercial
                         .oeOrdenSalida.TipoReferencia = "ORDEN VENTA"
-                        odOrden.Guardar(.oeOrdenSalida)
-                        .TipoOperacion = "I"
-                        'oeOrdenComercialOrden.IdOrdenComercial = .Id
-                        'oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
-                        'oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
-                        'odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
+                        .oeOrdenSalida = odOrden.Guardar(.oeOrdenSalida)
                     End If
+                    '' Documento
+                    .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
                 End With
                 transScope.Complete()
             End Using
