@@ -142,10 +142,11 @@ Public Class frm_EstacionServicio
     Public Overrides Sub Guardar()
         Try
             If cbgCliente.Value = "" Then Throw New Exception("Seleccione la empresa")
+            If cmbVehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
             If IdTipoDocumento <> "GCH000000001" Then
-                If Not fc_EmitirDocumento() Then Throw New Exception
+                If Not fc_Emitir_Documento() Then Throw New Exception
                 If Not fc_Guardar_Cobros() Then Throw New Exception
             Else
                 MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
@@ -210,7 +211,7 @@ Public Class frm_EstacionServicio
                 .SubTotal = decSubTotal.Value
                 .Impuesto = decImpuesto.Value
                 .TipoCompra = 0
-                .IdEstado = "1CH00019"
+                .IdEstado = "1CH000000003"
                 .IdTurno = TurnoActivo.Id
                 .IdTipoVenta = IdTipoVenta
                 .IdCanalVenta = ""
@@ -719,10 +720,6 @@ Public Class frm_EstacionServicio
         decSaldo.Value = 0
     End Sub
 
-
-
-
-
     Private Sub decPrecioTotal_ValueChanged(sender As Object, e As EventArgs) Handles decPrecioTotal.ValueChanged
         Dim Importe As Double, Precio As Double, Cantidad As Double
         Importe = decPrecioTotal.Value
@@ -732,15 +729,11 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub btnCalibracion_Click(sender As Object, e As EventArgs) Handles btnCalibracion.Click
+        btnNosotros.PerformClick()
         IdTipoPago = "1SI000000017" : IdTipoVenta = "CALIBRACION"
-        cbgCliente.Value = "GCH000000001"
         mt_PaintBotones("TipoPago") : btnCalibracion.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = True
         mt_Calcular_DescuentoCombustible()
-    End Sub
-
-    Private Sub decKilometraje_ValueChanged(sender As Object, e As EventArgs) Handles decKilometraje.ValueChanged
-
     End Sub
 
     Private Sub mt_CalcularTotalOrden()
@@ -795,6 +788,10 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
+    Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
+        cbgCliente.Value = gs_IdClienteProveedorSistema
+    End Sub
+
     Private Sub ActualizarTipoPago()
         Try
             Dim oe As New e_Combo
@@ -811,11 +808,9 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
-    Private Function fc_EmitirDocumento() As Boolean
+    Private Function fc_Emitir_Documento() As Boolean
         Try
             fc_ValidarNumeroDoc()
-            'mt_Cargar_MovimientoDocumento()
-            'OrdenVenta.oeDocumento = MovimientoDocumento
             mt_Emitir_Documento(False)
             Return True
         Catch ex As Exception
