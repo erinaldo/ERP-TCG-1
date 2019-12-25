@@ -383,7 +383,7 @@ Public Class e_OrdenVenta
             Return _IdPiloto
         End Get
         Set(ByVal value As String)
-            _IdTipoVenta = value
+            _IdPiloto = value
         End Set
     End Property
     Public Property IdPlaca() As String
@@ -391,7 +391,7 @@ Public Class e_OrdenVenta
             Return _IdPlaca
         End Get
         Set(ByVal value As String)
-            _IdTipoVenta = value
+            _IdPlaca = value
         End Set
     End Property
     Public Property Kilometraje() As String
@@ -399,7 +399,7 @@ Public Class e_OrdenVenta
             Return _Kilometraje
         End Get
         Set(ByVal value As String)
-            _IdTipoVenta = value
+            _Kilometraje = value
         End Set
     End Property
 #End Region

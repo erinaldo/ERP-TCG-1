@@ -49,13 +49,13 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Nuevo()
         Try
-            Operacion = "Nuevo" : mt_ControlBotoneria()
+            Operacion = "Nuevo"
             gmt_MostrarTabs(1, ficOrdenComercial, 1)
             mt_Inicializar()
             TurnoActivo = fc_Inicializar_Turno("I")
             mt_Agregar_Detalles()
             mt_HabilitarControles()
-
+            mt_ControlBotoneria()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -63,7 +63,7 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Editar()
         Try
-            Operacion = "Editar" : mt_ControlBotoneria()
+            Operacion = "Editar"
             If griOrdenComercial.Selected.Rows.Count > 0 Then
                 gmt_MostrarTabs(1, ficOrdenComercial, 1)
                 mt_Inicializar()
@@ -72,6 +72,7 @@ Public Class frm_CierreTurno
                 TurnoActivo.TipoOperacion = "A"
                 mt_Mostrar()
                 mt_HabilitarControles()
+                mt_ControlBotoneria()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -303,6 +304,10 @@ Public Class frm_CierreTurno
             End With
         End If
         If TurnoActivo.IdEstado = "CERRADO" Then
+            cmb_Turno.Enabled = False
+            cmb_Estado.Enabled = False
+            cboTrabajadorApertura.Enabled = False
+            cboTrabajadorCierre.Enabled = False
             With udg_ContometroAnalogico.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
                     Columna.CellClickAction = CellClickAction.RowSelect
@@ -512,54 +517,81 @@ Public Class frm_CierreTurno
 #End Region
 
     Private Sub mt_OcultarColumnas()
+        Dim Color_ValorInicial As Color = Color.LightBlue
+        Dim Color_ValorFinal As Color = Color.LightGreen
 
         With udg_Trabajadores.DisplayLayout.Bands(0)
             For Each Columna In .Columns
                 Columna.Hidden = True
             Next
-            .Columns("Activo").Hidden = True
+            .Columns("Concepto").Hidden = False
+            .Columns("Concepto").Header.Caption = "Trabajador"
         End With
-        With udg_ContometroDigital.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Grupo").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
-        End With
-        With udg_ContometroAnalogico.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Grupo").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
-        End With
-        With udg_VentasxCombustible.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
-        End With
-        With udg_VentasAnuladas.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
-        End With
-        With udg_Calibraciones.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False
-        End With
-        With udg_Almacenes.DisplayLayout.Bands(0)
-            For Each Columna In .Columns
-                Columna.Hidden = True
-            Next
-            .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
-        End With
+
         With udg_Combustibles.DisplayLayout.Bands(0)
             For Each Columna In .Columns
                 Columna.Hidden = True
             Next
             .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
+            .Columns("Concepto").Width = 100 : .Columns("ValorERP").Width = 50
+            .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorInicial").Header.Caption = "Precio"
+        End With
+
+        With udg_Almacenes.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
+            .Columns("Concepto").Width = 100 : .Columns("ValorInicial").Width = 50 : .Columns("ValorFinal").Width = 50 : .Columns("ValorDiferencia").Width = 50
+            .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
+            .Columns("Concepto").Header.Caption = "Almacen" : .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorDiferencia").Header.Caption = "Diferencia"
+        End With
+
+        With udg_ContometroDigital.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Grupo").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
+            .Columns("Grupo").Width = 50 : .Columns("Concepto").Width = 100 : .Columns("ValorInicial").Width = 50 : .Columns("ValorFinal").Width = 50 : .Columns("ValorDiferencia").Width = 50
+            .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
+            .Columns("Grupo").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorDiferencia").Header.Caption = "Diferencia"
+        End With
+
+        With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Grupo").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorInicial").Hidden = False : .Columns("ValorFinal").Hidden = False : .Columns("ValorDiferencia").Hidden = False
+            .Columns("Grupo").Width = 50 : .Columns("Concepto").Width = 100 : .Columns("ValorInicial").Width = 50 : .Columns("ValorFinal").Width = 50 : .Columns("ValorDiferencia").Width = 50
+            .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
+            .Columns("Grupo").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorDiferencia").Header.Caption = "Diferencia"
+        End With
+
+        With udg_VentasxCombustible.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
+            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
+        End With
+
+        With udg_VentasAnuladas.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
+            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
+        End With
+
+        With udg_Calibraciones.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
+            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
         End With
     End Sub
 
@@ -626,6 +658,17 @@ Public Class frm_CierreTurno
         udg_VentasxCombustible.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
         udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
         udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
+    End Sub
+
+    Private Sub udg_ContometroDigital_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles udg_ContometroDigital.AfterCellUpdate
+        For Each Item In TurnoActivo.Detalles
+            Item.ValorDiferencia = Item.ValorFinal - Item.ValorInicial
+        Next
+        udg_Trabajadores.DataBind()
+        udg_ContometroDigital.DataBind()
+        udg_ContometroAnalogico.DataBind()
+        udg_Almacenes.DataBind()
+        udg_Combustibles.DataBind()
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated
