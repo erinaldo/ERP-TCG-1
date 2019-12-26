@@ -17,12 +17,7 @@ Public Class frm_CierreTurno
     Private Shared Operacion As String
 
     Private TurnoActivo As New e_CierreTurno, dTurno As New l_CierreTurno
-    'Private TURNO_DETALLE As New e_CierreTurno_Detalle
     Private ListaDetallesDinamicos As New List(Of e_CierreTurno_Detalle)
-
-
-    ' Asiento Modelo
-    ' Private REFERENCIA As New e_AsientoModelo_Referencia, LISTA_REFERENCIA As New List(Of e_AsientoModelo_Referencia)
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
@@ -427,10 +422,10 @@ Public Class frm_CierreTurno
                 .Fecha = dtpFecha.Value.Date
                 .HoraInicio = dtpHoraInicio.Value
                 .HoraFin = dtpHoraFin.Value
-                '.IdTrabajador_Apertura = cboTrabajadorApertura.Value.ToString
-                '.Trabajador_Apertura = cboTrabajadorApertura.Text
-                '.IdTrabajador_Cierre = cboTrabajadorCierre.Value.ToString
-                '.Trabajador_Cierre = cboTrabajadorCierre.Text
+                .IdTrabajador_Apertura = cboTrabajadorApertura.Value
+                .Trabajador_Apertura = cboTrabajadorApertura.Text
+                .IdTrabajador_Cierre = cboTrabajadorCierre.Value
+                .Trabajador_Cierre = cboTrabajadorCierre.Text
                 .Glosa = txtGlosa.Text
                 .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
                 .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date

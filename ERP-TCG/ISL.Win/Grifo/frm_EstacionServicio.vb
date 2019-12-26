@@ -95,8 +95,8 @@ Public Class frm_EstacionServicio
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
-            mt_Ejecutar_OrdenSalida()
-
+            'mt_Ejecutar_OrdenSalida()
+            mt_Generar_ConsumoCombustible()
             If IdTipoDocumento <> "GCH000000001" Then
                 If Not fc_Emitir_Documento() Then Throw New Exception
                 If Not fc_Guardar_Cobros() Then Throw New Exception
@@ -559,7 +559,6 @@ Public Class frm_EstacionServicio
     Private Sub frm_EstacionServicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             _Activo = True
-            TurnoActivo = gfc_obtener_TurnoActivo()
             mt_Inicializar()
             Nuevo()
         Catch ex As Exception
@@ -668,6 +667,13 @@ Public Class frm_EstacionServicio
         nud_Kilometraje.Value = 0
 
         '' Valores Default
+        TurnoActivo = gfc_obtener_TurnoActivo()
+        Select Case TurnoActivo.IdTurno
+            Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
+            Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
+            Case "" : btn_Turno.Text = "REGISTRAR TurNO" : btn_Turno.Appearance.BackColor = Color.Red
+        End Select
+
         FechaOrden = ObtenerFechaServidor()
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
         mt_PaintBotones("Clean")
@@ -786,7 +792,8 @@ Public Class frm_EstacionServicio
 
     Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
         cmb_Cliente.Value = gs_IdClienteProveedorSistema
-        cmb_Cliente.Text = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
+        cmb_Cliente.Text = gs_TxtEmpresaSistema
+        cmb_Direccion.Text = gs_DireccionEmpresaSistema
     End Sub
 
     Private Sub ActualizarTipoPago()
@@ -990,6 +997,11 @@ Public Class frm_EstacionServicio
         End Try
     End Sub
 
+    Private Sub btn_RUC_Click(sender As Object, e As EventArgs) Handles btn_RUC.Click
+        cbRuc.Checked = IIf(cbRuc.Checked, False, True)
+        btn_RUC.Appearance.BackColor = IIf(cbRuc.Checked, Color.LightGreen, Color.LightGray)
+    End Sub
+
     Private Sub btnContado_Click(sender As Object, e As EventArgs) Handles btn_Contado.Click
         IdTipoPago = "1SI000000001" : IdTipoVenta = "VENTA_COMBUSTIBLE"
         mt_PaintBotones("TipoPago") : btn_Contado.Appearance.BackColor = Color.Blue
@@ -1068,6 +1080,7 @@ Public Class frm_EstacionServicio
                     Next
                 Next
                 nud_Saldo.Value = fc_Obtener_SaldoCuentaCorriente()
+                Cargar_Pilotos()
                 Cargar_VehiculoCliente()
                 Cargar_Direcciones()
             End If
@@ -1143,4 +1156,182 @@ Public Class frm_EstacionServicio
         ListaPuntoPartida.AddRange(ddireccionempresa.Listar(oeDireccionEmpresa))
         LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
     End Sub
+
+    Private oeOrden As New e_Orden
+    Private oeRegConsumoCombustible As New e_RegistroConsumoCombustible, olRegConsumoCombustible As New l_RegistroConsumoCombustible
+    Private Referencia As New e_AsientoModelo_Referencia, olReferencia As New l_AsientoModelo_Referencia, loReferencia As New List(Of e_AsientoModelo_Referencia)
+    Private dtReferencia As New DataTable
+
+    Private Sub AsientoContable()
+        mt_Listar_AsientoModelo()
+        dtReferencia = GeneraDTRef(loReferencia)
+    End Sub
+
+    Private Sub mt_Listar_AsientoModelo()
+        AsientoModelo.TipoOperacion = "A" : AsientoModelo.Activo = True : AsientoModelo.Nombre = pIdActividadNegocio
+        ListaAsientoModelo = dAsientoModelo.Listar(AsientoModelo)
+
+        Referencia.TipoOperacion = "N" : Referencia.Activo = True : Referencia.IdReferencia = pIdActividadNegocio
+        loReferencia = olReferencia.Listar(Referencia)
+    End Sub
+
+    Public Sub mt_Obtener_AsientoModelo(IdMoneda As String, Ejercicio As Integer)
+        Try
+            Dim dtAux = New Data.DataTable
+            Dim _rwAux() As Data.DataRow
+            Dim cadSQL As String = String.Empty
+            cadSQL = "TipoRef1 = 4 AND IdRef1 = '" & IdMoneda & "'"
+            _rwAux = dtReferencia.Select(cadSQL, "")
+            If _rwAux.Count = 0 Then Throw New Exception("Error en el Modelo de Asiento Contable. Verificar")
+            dtAux = _rwAux.CopyToDataTable
+            AsientoModelo = New e_AsientoModelo
+            AsientoModelo.TipoOperacion = "" : AsientoModelo.Activo = True
+            AsientoModelo.Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString
+            AsientoModelo.Ejercicio = Ejercicio
+            AsientoModelo = dAsientoModelo.Obtener(AsientoModelo)
+            oeOrden.loAsientoModelo = New List(Of e_AsientoModelo)
+            oeOrden.loAsientoModelo.Add(AsientoModelo)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub AsientoConsumo(oe As e_RegistroConsumoCombustible, Tipo As Integer)
+        Try
+            oeOrden = New e_Orden
+            Dim oePeriodo As New e_Periodo
+            Dim olPeriodo As New l_Periodo
+            Dim fechaactual As Date = ObtenerFechaServidor.Date
+            oePeriodo.Ejercicio = fechaactual.Year
+            oePeriodo.Mes = fechaactual.Month
+            oePeriodo = olPeriodo.Obtener(oePeriodo)
+            If oePeriodo.Id = "" Then Throw New Exception("No Existe el Periodo Contable de Este Periodo. Comunicar a Contabilidad")
+            oeOrden.IndAsiento = True
+            oeOrden.loAsientoModelo = New List(Of e_AsientoModelo)
+            oeOrden.lstInventario = New List(Of e_Inventario)
+            mt_Obtener_AsientoModelo("1CH01", oePeriodo.Ejercicio)
+            If Tipo = 1 Then
+                oeOrden.Total = (oe.CantidadGalon * oe.PrecioUnitario)
+            End If
+            oeOrden.IdPeriodo = oePeriodo.Id
+            oeOrden.UsuarioCreacion = gUsuarioSGI.Id
+            oeOrden.FechaOrden = fechaactual
+            oeOrden.TipoCambio = TipoCambio
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Function mt_Generar_ConsumoCombustible() As Boolean
+        Try
+            For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
+                With oeRegConsumoCombustible
+                    .CantidadGalon = ItemVenta.Cantidad
+                    .Perfil = ObtenerPerfilPrincipal.Nombre
+                    .Ind_Masivo = False
+                    .Estado = IIf(.Estado = "PAR", .Estado, IIf(.Estado = "FAC", .Estado, "SIN"))
+                    .SaldoGls = 0.0
+                    .IdMaterial = ItemVenta.IdMaterial
+                    .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCreacion = gUsuarioSGI.Id
+                    If .FechaCreacion.Date = Date.Parse("01/01/1901") Then .FechaCreacion = ObtenerFechaServidor()
+                    .IndIsl = IIf(cmb_Cliente.Value = gs_IdClienteProveedorSistema, True, False)
+                    .PrecioUnitario = ItemVenta.PrecioUnitario
+                    .GlosaValeTanqueo = ItemVenta.Glosa
+                    .lstInventario = New List(Of e_Inventario)
+                    If .TipoOperacion = "I" Then
+                        If .IndIsl Then AsientoConsumo(oeRegConsumoCombustible, 1)
+                        'oeCombo = New e_Combo
+                        'oeCombo.Tipo = 4
+                        'oeCombo.Nombre = cboGrifo.Value
+                        'oeCombo.Descripcion = cboDireccion.Value
+                        'If SubAlmDiesel.Contains(oeCombo) Then
+                        '    oeCombo = SubAlmDiesel.Item(SubAlmDiesel.IndexOf(oeCombo))
+                        'Else
+                        '    Throw New Exception("No existe el SubAlmacen. Verificar")
+                        'End If
+                        'IdSubAlmacen = oeCombo.Id
+                        .lstInventario = Inventario(oeRegConsumoCombustible, False, ObtenerFechaServidor())
+                    End If
+                    '@0001
+                End With
+                oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden With {.PrefijoID = gs_PrefijoIdSucursal})
+            Next
+            Return True
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Function
+
+
+    Private Function Inventario(oe As e_RegistroConsumoCombustible, IndValidar As Boolean, FechaActual As Date) As List(Of e_Inventario)
+        Try
+            Dim loInventario As New List(Of e_Inventario)
+            Dim oeRegInventario As e_RegistroInventario
+            Dim oeInventario As New e_Inventario
+            With oeInventario
+                .IdOrden = ""
+                .IdMaterial = oe.IdMaterial
+                .FechaCreacion = FechaActual
+                .IdSubAlmacen = oe.IdSubAlmacen
+                .CantidadSalida = oe.CantidadGalon
+                .ValorUnitario = Math.Round(oe.PrecioUnitario, 4)
+                .Usuario = gUsuarioSGI.Id
+                .IndValidar = IndValidar
+            End With
+            oeRegInventario = New e_RegistroInventario
+            With oeRegInventario
+                .TipoOperacion = "I"
+                .IdMaterial = oe.IdMaterial
+                .IdSubAlmacen = oe.IdSubAlmacen
+                .IdMovimientoInventario = "1CH000000028"
+                .IdUnidadMedida = "1CH000000001"
+                .Cantidad = oe.CantidadGalon
+                .UsuarioCreacion = gUsuarioSGI.Id
+            End With
+            oeInventario.oeRegistroInventario = New e_RegistroInventario
+            oeInventario.oeRegistroInventario = oeRegInventario
+            loInventario.Add(oeInventario)
+            Return loInventario
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    ''REVISAR:
+    'Public Sub ObtenerStockUltPrecio()
+    '    Try
+    '        If Not String.IsNullOrEmpty(cboDireccion.Value) Then
+    '            oeCombo = New e_Combo
+    '            oeCombo.Tipo = 4
+    '            oeCombo.Nombre = cboGrifo.Value
+    '            oeCombo.Descripcion = cboDireccion.Value
+    '            If SubAlmDiesel.Contains(oeCombo) Then
+    '                oeCombo = SubAlmDiesel.Item(SubAlmDiesel.IndexOf(oeCombo))
+    '            Else
+    '                Throw New Exception("No existe el SubAlmacen. Verificar")
+    '            End If
+    '            IdSubAlmacen = oeCombo.Id
+    '            If Not String.IsNullOrEmpty(oeCombo.Id) Then
+    '                'oeMaterialAlmacen = New e_MaterialAlmacen
+    '                'oeMaterialAlmacen.TipoOperacion = "1"
+    '                'oeMaterialAlmacen.IdAlmacen = oeSubAlmacen.IdAlmacen
+    '                'oeMaterialAlmacen.IdMaterial = cmb_TipoCombustible.Value
+    '                'oeMaterialAlmacen = olMaterialAlmacen.Obtener(oeMaterialAlmacen)
+    '                oeInventario = New e_Inventario
+    '                oeInventario.TipoOperacion = "5"
+    '                oeInventario.IdSubAlmacen = oeCombo.Id
+    '                oeInventario.IdMaterial = cmb_TipoCombustible.Value
+    '                oeInventario = olInventario.Obtener(oeInventario)
+    '                decStock.Value = oeInventario.CantidadFinal
+    '                nd_PrecioUnitario.Value = oeInventario.ValorUnitario ''REVISAR
+    '            Else
+    '                decStock.Value = 0
+    '                nd_PrecioUnitario.Value = 0
+    '            End If
+    '        End If
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Sub
+
 End Class
