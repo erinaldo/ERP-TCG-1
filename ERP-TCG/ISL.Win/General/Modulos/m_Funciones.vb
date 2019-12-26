@@ -59,12 +59,10 @@ Module m_Funciones
         Return ln_Retorna
     End Function
 
-    Public Function gfc_obtener_TurnoActivo() As e_CierreTurno
+    Public Function gfc_obtener_TurnoActivo() As e_CierreTurno '' CESS
         Dim dTurno As New l_CierreTurno
         Return dTurno.Obtener(New e_CierreTurno With {.IdEstado = "ABIERTO"})
     End Function
-
-
 
     Public Sub gmt_ComboGrillaSubAlmacen(IdAlmacen As String, ByVal Grilla As UltraGrid)
         Try

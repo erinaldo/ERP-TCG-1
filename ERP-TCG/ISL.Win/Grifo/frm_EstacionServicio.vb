@@ -52,6 +52,7 @@ Public Class frm_EstacionServicio
     Private oeSaldoCtaCte As e_SaldoCtaCorriente, olSaldoCtaCte As New l_SaldoCtaCorriente, leSaldoCtaCte As New List(Of e_SaldoCtaCorriente)
     Private CuentaContable As New e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
     Private oeMoneda As New e_Moneda
+    Private Periodo As New e_Periodo, dPeriodo As New l_Periodo
 
     Private IdTipoDocumento As String, TipoDocumento As String
     Private IdTipoVenta As String, IdTipoPago As String 'Contado "1SI000000001", 
@@ -445,20 +446,21 @@ Public Class frm_EstacionServicio
             Dim Cliente As New e_Cliente, dCliente As New l_Cliente
             Dim TIPODOC As New e_TipoDocumento, dTIPODOC As New l_TipoDocumento
             Dim _banEmis As Boolean = False
-            Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
+            'Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
 
             Cliente = dCliente.Obtener(New e_Cliente With {.TipoOperacion = "", .TipoClienteProveedor = 1, .Id = OrdenVenta.IdEmpresa})
             TIPODOC = dTIPODOC.Obtener(New e_TipoDocumento With {.TipoOperacion = "", .Id = IdTipoDocumento})
             oeMoneda.Id = IdMoneda_Soles 'Revisar
 
-            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
-                Ejercicio = frm.Año1.Año
-                ListaCuentaCotable = dCuentaContable.Listar(New e_CuentaContable With {.Ejercicio = frm.Año1.Año, .TipoOperacion = "N", .Movimiento = 1})
-                MovimientoDocumento = OrdenVenta.oeDocumento
+            'If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            Periodo = dPeriodo.Obtener(New e_Periodo With {.Ejercicio = FechaOrden.Year, .Mes = FechaOrden.Month})
+            ListaCuentaCotable = dCuentaContable.Listar(New e_CuentaContable With {.Ejercicio = Periodo.Ejercicio, .TipoOperacion = "N", .Movimiento = 1})
+            MovimientoDocumento = OrdenVenta.oeDocumento
                 'MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = OrdenVenta.oeDocumento.Id, .CargaCompleta = True})
                 With MovimientoDocumento
-                    .IdPeriodo = frm.cboMes.Value
-                    .Venta.TipoDoc = TIPODOC
+                .IdPeriodo = Periodo.Id
+                .Venta.TipoDoc = TIPODOC
                     .Venta.Cliente = Cliente
                     .Venta.Moneda = oeMoneda
                 End With
@@ -490,8 +492,8 @@ Public Class frm_EstacionServicio
                     End If
 
                     If CuentaCorriente.Id <> "" Then
-                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
-                    Else
+                    _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
+                Else
                         btnCrearCuentaCorriente.PerformClick()
                         _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                     End If
@@ -521,7 +523,7 @@ Public Class frm_EstacionServicio
                 Else
                     Throw New Exception("No Existe Configuracion Contable")
                 End If
-            End If
+            'End If
             If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & txt_Serie.Text & " - " & txt_Numero.Text & " ha sido Emitido", True)
             '    Ejercicio = frm.cmbEjercicio.Text
             '    mt_ListarCtaCtble(Ejercicio)
@@ -1157,66 +1159,38 @@ Public Class frm_EstacionServicio
         LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
     End Sub
 
-    Private oeOrden As New e_Orden
+    Private OrdenAux As New e_Orden
     Private oeRegConsumoCombustible As New e_RegistroConsumoCombustible, olRegConsumoCombustible As New l_RegistroConsumoCombustible
     Private Referencia As New e_AsientoModelo_Referencia, olReferencia As New l_AsientoModelo_Referencia, loReferencia As New List(Of e_AsientoModelo_Referencia)
     Private dtReferencia As New DataTable
 
-    Private Sub AsientoContable()
-        mt_Listar_AsientoModelo()
-        dtReferencia = GeneraDTRef(loReferencia)
-    End Sub
-
-    Private Sub mt_Listar_AsientoModelo()
-        AsientoModelo.TipoOperacion = "A" : AsientoModelo.Activo = True : AsientoModelo.Nombre = pIdActividadNegocio
-        ListaAsientoModelo = dAsientoModelo.Listar(AsientoModelo)
-
-        Referencia.TipoOperacion = "N" : Referencia.Activo = True : Referencia.IdReferencia = pIdActividadNegocio
-        loReferencia = olReferencia.Listar(Referencia)
-    End Sub
-
-    Public Sub mt_Obtener_AsientoModelo(IdMoneda As String, Ejercicio As Integer)
+    Public Sub AsientoConsumo(oeRegConsumoCombustible As e_RegistroConsumoCombustible, Tipo As Integer)
         Try
-            Dim dtAux = New Data.DataTable
-            Dim _rwAux() As Data.DataRow
-            Dim cadSQL As String = String.Empty
-            cadSQL = "TipoRef1 = 4 AND IdRef1 = '" & IdMoneda & "'"
+            OrdenAux = New e_Orden
+
+            Periodo = dPeriodo.Obtener(New e_Periodo With {.Ejercicio = FechaOrden.Year, .Mes = FechaOrden.Month})
+            If Periodo.Id = "" Then Throw New Exception("No Existe el Periodo Contable de Este Periodo. Comunicar a Contabilidad")
+            OrdenAux.IndAsiento = True
+            OrdenAux.loAsientoModelo = New List(Of e_AsientoModelo)
+            OrdenAux.lstInventario = New List(Of e_Inventario)
+
+            '' Obtener Asiento Modelo
+            Dim dtAux = New Data.DataTable, _rwAux() As Data.DataRow, cadSQL As String = String.Empty
+            cadSQL = "TipoRef1 = 4 AND IdRef1 = '" & IdMoneda_Soles & "'"
             _rwAux = dtReferencia.Select(cadSQL, "")
             If _rwAux.Count = 0 Then Throw New Exception("Error en el Modelo de Asiento Contable. Verificar")
             dtAux = _rwAux.CopyToDataTable
-            AsientoModelo = New e_AsientoModelo
-            AsientoModelo.TipoOperacion = "" : AsientoModelo.Activo = True
-            AsientoModelo.Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString
-            AsientoModelo.Ejercicio = Ejercicio
-            AsientoModelo = dAsientoModelo.Obtener(AsientoModelo)
-            oeOrden.loAsientoModelo = New List(Of e_AsientoModelo)
-            oeOrden.loAsientoModelo.Add(AsientoModelo)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
+            AsientoModelo = dAsientoModelo.Obtener(New e_AsientoModelo With {.TipoOperacion = "", .Activo = True, .Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString, .Ejercicio = Periodo.Ejercicio})
+            OrdenAux.loAsientoModelo = New List(Of e_AsientoModelo)
+            OrdenAux.loAsientoModelo.Add(AsientoModelo)
 
-    Public Sub AsientoConsumo(oe As e_RegistroConsumoCombustible, Tipo As Integer)
-        Try
-            oeOrden = New e_Orden
-            Dim oePeriodo As New e_Periodo
-            Dim olPeriodo As New l_Periodo
-            Dim fechaactual As Date = ObtenerFechaServidor.Date
-            oePeriodo.Ejercicio = fechaactual.Year
-            oePeriodo.Mes = fechaactual.Month
-            oePeriodo = olPeriodo.Obtener(oePeriodo)
-            If oePeriodo.Id = "" Then Throw New Exception("No Existe el Periodo Contable de Este Periodo. Comunicar a Contabilidad")
-            oeOrden.IndAsiento = True
-            oeOrden.loAsientoModelo = New List(Of e_AsientoModelo)
-            oeOrden.lstInventario = New List(Of e_Inventario)
-            mt_Obtener_AsientoModelo("1CH01", oePeriodo.Ejercicio)
             If Tipo = 1 Then
-                oeOrden.Total = (oe.CantidadGalon * oe.PrecioUnitario)
+                OrdenAux.Total = (oeRegConsumoCombustible.CantidadGalon * oeRegConsumoCombustible.PrecioUnitario)
             End If
-            oeOrden.IdPeriodo = oePeriodo.Id
-            oeOrden.UsuarioCreacion = gUsuarioSGI.Id
-            oeOrden.FechaOrden = fechaactual
-            oeOrden.TipoCambio = TipoCambio
+            OrdenAux.IdPeriodo = Periodo.Id
+            OrdenAux.UsuarioCreacion = gUsuarioSGI.Id
+            OrdenAux.FechaOrden = FechaOrden
+            OrdenAux.TipoCambio = TipoCambio
         Catch ex As Exception
             Throw ex
         End Try
@@ -1224,19 +1198,31 @@ Public Class frm_EstacionServicio
 
     Private Function mt_Generar_ConsumoCombustible() As Boolean
         Try
+            '' Listar Asientos Modelo
+            pIdActividadNegocio = "1CH000000138" 'Registro Consumo Combustible
+            ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = pIdActividadNegocio})
+            loReferencia = olReferencia.Listar(New e_AsientoModelo_Referencia With {.TipoOperacion = "N", .Activo = True, .IdReferencia = pIdActividadNegocio})
+            dtReferencia = GeneraDTRef(loReferencia)
+
             For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
                 With oeRegConsumoCombustible
+                    .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCreacion = gUsuarioSGI.Id
                     .CantidadGalon = ItemVenta.Cantidad
                     .Perfil = ObtenerPerfilPrincipal.Nombre
                     .Ind_Masivo = False
                     .Estado = IIf(.Estado = "PAR", .Estado, IIf(.Estado = "FAC", .Estado, "SIN"))
                     .SaldoGls = 0.0
                     .IdMaterial = ItemVenta.IdMaterial
-                    .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCreacion = gUsuarioSGI.Id
                     If .FechaCreacion.Date = Date.Parse("01/01/1901") Then .FechaCreacion = ObtenerFechaServidor()
                     .IndIsl = IIf(cmb_Cliente.Value = gs_IdClienteProveedorSistema, True, False)
                     .PrecioUnitario = ItemVenta.PrecioUnitario
                     .GlosaValeTanqueo = ItemVenta.Glosa
+                    .KilometrosTanqueo = OrdenVenta.Kilometraje
+                    .IdVehiculo = IIf(cmb_Vehiculo.Value <> "", cmb_Vehiculo.Value, cmb_Vehiculo.Text)
+                    .NroVale = OrdenVenta.Id
+                    .IdGrifo = "1SI000004245" 'Inversiones y Servicios Alex y Lalito
+                    .IdDireccion = "CHT0000001"
+                    .IdAlmacen = ItemVenta.IdAlmacen : .IdSubAlmacen = ItemVenta.IdSubAlmacen
                     .lstInventario = New List(Of e_Inventario)
                     If .TipoOperacion = "I" Then
                         If .IndIsl Then AsientoConsumo(oeRegConsumoCombustible, 1)
@@ -1262,12 +1248,9 @@ Public Class frm_EstacionServicio
         End Try
     End Function
 
-
     Private Function Inventario(oe As e_RegistroConsumoCombustible, IndValidar As Boolean, FechaActual As Date) As List(Of e_Inventario)
         Try
-            Dim loInventario As New List(Of e_Inventario)
-            Dim oeRegInventario As e_RegistroInventario
-            Dim oeInventario As New e_Inventario
+            Dim loInventario As New List(Of e_Inventario), oeRegInventario As e_RegistroInventario, oeInventario As New e_Inventario
             With oeInventario
                 .IdOrden = ""
                 .IdMaterial = oe.IdMaterial
