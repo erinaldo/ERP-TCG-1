@@ -660,7 +660,7 @@ Public Class frm_CierreTurno
         udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
     End Sub
 
-    Private Sub udg_ContometroDigital_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles udg_ContometroDigital.AfterCellUpdate
+    Private Sub mt_Actualizar_Columnas(sender As Object, e As CellEventArgs) Handles udg_ContometroDigital.AfterCellUpdate, udg_ContometroAnalogico.AfterCellUpdate, udg_Almacenes.AfterCellUpdate
         For Each Item In TurnoActivo.Detalles
             Item.ValorDiferencia = Item.ValorFinal - Item.ValorInicial
         Next
