@@ -678,6 +678,7 @@ Public Class frm_EstacionServicio
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
+
     End Sub
 
     Private Sub mt_AgregarDetalle()
@@ -785,6 +786,7 @@ Public Class frm_EstacionServicio
 
     Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
         cmb_Cliente.Value = gs_IdClienteProveedorSistema
+        cmb_Cliente.Text = "INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L."
     End Sub
 
     Private Sub ActualizarTipoPago()
