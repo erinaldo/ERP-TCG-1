@@ -48,9 +48,9 @@ Public Class frm_CierreTurno
             gmt_MostrarTabs(1, ficOrdenComercial, 1)
             mt_Inicializar()
             TurnoActivo = fc_Inicializar_Turno("I")
+            mt_ControlBotoneria()
             mt_Agregar_Detalles()
             mt_HabilitarControles()
-            mt_ControlBotoneria()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -66,8 +66,8 @@ Public Class frm_CierreTurno
                 TurnoActivo = dTurno.Obtener(TurnoActivo)
                 TurnoActivo.TipoOperacion = "A"
                 mt_Mostrar()
-                mt_HabilitarControles()
                 mt_ControlBotoneria()
+                mt_HabilitarControles()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -184,6 +184,7 @@ Public Class frm_CierreTurno
                 .IdSucursal = gs_IdSucursal
                 .Fecha = dtpFechaInicio.Value.Date
                 .FechaCrea = dtpFechaFin.Value.Date
+                .Activo = 1
             End With
             griOrdenComercial.DataSource = dTurno.Listar(TurnoActivo)
             'mt_CombosGrillaPrincipal(griOrdenComercial)
@@ -390,7 +391,7 @@ Public Class frm_CierreTurno
         With TurnoNuevo
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
             .Fecha = dtpFecha.Value : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
-            .IdTrabajador_Apertura = TurnoActivo.IdTrabajador_Cierre : .Trabajador_Apertura = TurnoActivo.Trabajador_Cierre
+            .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
             .IdTurno = IIf(TurnoActivo.IdTurno = "D", "N", "D") : .Turno = IIf(TurnoActivo.IdTurno = "D", "NOCHE", "DIA")
             .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
             .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
@@ -424,8 +425,8 @@ Public Class frm_CierreTurno
                 .HoraFin = dtpHoraFin.Value
                 .IdTrabajador_Apertura = cboTrabajadorApertura.Value
                 .Trabajador_Apertura = cboTrabajadorApertura.Text
-                .IdTrabajador_Cierre = cboTrabajadorCierre.Value
-                .Trabajador_Cierre = cboTrabajadorCierre.Text
+                .IdTrabajador_Cierre = cboTrabajadorApertura.Value
+                .Trabajador_Cierre = cboTrabajadorApertura.Text
                 .Glosa = txtGlosa.Text
                 .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
                 .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
@@ -475,9 +476,9 @@ Public Class frm_CierreTurno
                 End If
             Case 1
                 If TurnoActivo.Estado = "ABIERTO" Or TurnoActivo.Estado = "" Then
-                    gmt_ControlBoton(0, 0, 0, 1, 1)
+                    gmt_ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 1)
                 Else
-                    gmt_ControlBoton(0, 0, 0, 0, 1)
+                    gmt_ControlBoton(0, 0, 0, 0, 1, 0, 0, 0, 1)
                 End If
         End Select
     End Sub
@@ -561,7 +562,7 @@ Public Class frm_CierreTurno
             .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
             .Columns("Grupo").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorDiferencia").Header.Caption = "Diferencia"
         End With
-
+        If ListaDetallesDinamicos.Count = 0 Then Exit Sub
         With udg_VentasxCombustible.DisplayLayout.Bands(0)
             For Each Columna In .Columns
                 Columna.Hidden = True
@@ -650,6 +651,7 @@ Public Class frm_CierreTurno
         Dim dTurnoDetalle As New l_CierreTurno_Detalle
         If TurnoActivo.Id = "" Then Exit Sub
         ListaDetallesDinamicos = dTurnoDetalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "CSM", .IdCierreTurno = TurnoActivo.Id})
+        If ListaDetallesDinamicos.Count = 0 Then Exit Sub
         udg_VentasxCombustible.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
         udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
         udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()

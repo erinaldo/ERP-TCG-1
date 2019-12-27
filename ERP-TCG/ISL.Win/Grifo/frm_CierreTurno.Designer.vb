@@ -421,7 +421,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox14)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(972, 598)
         '
@@ -881,7 +881,7 @@ Partial Class frm_CierreTurno
         '
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox8)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(972, 598)
         '
@@ -1678,11 +1678,11 @@ Partial Class frm_CierreTurno
         Me.UltraLabel7.Appearance = Appearance71
         Me.UltraLabel7.AutoSize = True
         Me.UltraLabel7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel7.Location = New System.Drawing.Point(246, 68)
+        Me.UltraLabel7.Location = New System.Drawing.Point(220, 69)
         Me.UltraLabel7.Name = "UltraLabel7"
-        Me.UltraLabel7.Size = New System.Drawing.Size(63, 15)
+        Me.UltraLabel7.Size = New System.Drawing.Size(89, 15)
         Me.UltraLabel7.TabIndex = 375
-        Me.UltraLabel7.Text = "Trabajador:"
+        Me.UltraLabel7.Text = "Trabajador (TN):"
         '
         'UltraLabel4
         '
@@ -1749,11 +1749,11 @@ Partial Class frm_CierreTurno
         Me.UltraLabel11.Appearance = Appearance74
         Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel11.Location = New System.Drawing.Point(246, 41)
+        Me.UltraLabel11.Location = New System.Drawing.Point(220, 40)
         Me.UltraLabel11.Name = "UltraLabel11"
-        Me.UltraLabel11.Size = New System.Drawing.Size(63, 15)
+        Me.UltraLabel11.Size = New System.Drawing.Size(88, 15)
         Me.UltraLabel11.TabIndex = 366
-        Me.UltraLabel11.Text = "Trabajador:"
+        Me.UltraLabel11.Text = "Trabajador (TA):"
         '
         'btnCrearCtaCte
         '

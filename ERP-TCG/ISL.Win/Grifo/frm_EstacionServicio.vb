@@ -677,7 +677,7 @@ Public Class frm_EstacionServicio
         Select Case TurnoActivo.IdTurno
             Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
             Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
-            Case "" : btn_Turno.Text = "REGISTRAR TurNO" : btn_Turno.Appearance.BackColor = Color.Red
+            Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
         End Select
 
         FechaOrden = ObtenerFechaServidor()
@@ -913,10 +913,10 @@ Public Class frm_EstacionServicio
     Public Function fc_Obtener_PrecioCombustible() As Double
         For Each Item In TurnoActivo.Detalles
             If Item.IdConcepto = IdMaterial_Combustible Then
-                Return Item.ValorERP
+                Return 15 ' Item.ValorERP
             End If
         Next
-        Return 0
+        Return 1
     End Function
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
@@ -978,6 +978,15 @@ Public Class frm_EstacionServicio
 
     Private Sub cmb_Lado_Leave(sender As Object, e As EventArgs) Handles cmb_Lado.Leave
         sw_Lado = cmb_Lado.Value
+    End Sub
+
+    Private Sub btn_Turno_Click(sender As Object, e As EventArgs) Handles btn_Turno.Click
+        TurnoActivo = gfc_obtener_TurnoActivo()
+        Select Case TurnoActivo.Turno
+            Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
+            Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
+            Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
+        End Select
     End Sub
 
     Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
