@@ -235,7 +235,7 @@ Public Class frm_OSalida
                             ControlBoton(0, 0, 0, 1, 1)
                         Else
                             Select Case oeOrden.TipoReferencia
-                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "ORDEN VENTA"
+                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "ORDEN VENTA", ""
                                     ControlBoton(0, 0, 0, 1, 1)
                                 Case Else
                                     ControlBoton(0, 0, 0, 0, 1)
