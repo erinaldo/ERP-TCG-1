@@ -10,7 +10,7 @@ Public Class l_CierreTurno
 
         Try
             oeCierreTurno = odCierreTurno.Obtener(oeCierreTurno)
-            oeCierreTurno.Detalles = odCierreTurno_Detalle.Listar(New e_CierreTurno_Detalle With {.IdCierreTurno = oeCierreTurno.Id})
+            oeCierreTurno.Detalles = odCierreTurno_Detalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "", .IdCierreTurno = oeCierreTurno.Id})
             Return oeCierreTurno
         Catch ex As Exception
             Throw ex

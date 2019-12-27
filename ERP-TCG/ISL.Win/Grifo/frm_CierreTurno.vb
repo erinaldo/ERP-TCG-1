@@ -105,6 +105,7 @@ Public Class frm_CierreTurno
             With griOrdenComercial
                 TurnoActivo = New e_CierreTurno
                 If .Selected.Rows.Count > 0 Then
+                    TurnoActivo.TipoOperacion = ""
                     TurnoActivo.Id = .ActiveRow.Cells("Id").Value
                     TurnoActivo = dTurno.Obtener(TurnoActivo)
                     If TurnoActivo.IdEstado = "1CIX043" Then 'Apertura
@@ -180,6 +181,7 @@ Public Class frm_CierreTurno
         Try
             TurnoActivo = New e_CierreTurno
             With TurnoActivo
+                .TipoOperacion = ""
                 .IdEmpresaSis = gs_IdEmpresaSistema
                 .IdSucursal = gs_IdSucursal
                 .Fecha = dtpFechaInicio.Value.Date

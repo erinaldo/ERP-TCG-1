@@ -363,6 +363,7 @@ Partial Class frm_EstacionServicio
         Me.cmb_Lado.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cmb_Lado.DisplayMember = "Nombre"
         Me.cmb_Lado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cmb_Lado.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList
         Me.cmb_Lado.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_Lado.Location = New System.Drawing.Point(1062, 148)
         Me.cmb_Lado.Name = "cmb_Lado"
@@ -650,6 +651,7 @@ Partial Class frm_EstacionServicio
         Me.cmb_Direccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cmb_Direccion.DisplayMember = "Nombre"
         Me.cmb_Direccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cmb_Direccion.DropDownStyle = Infragistics.Win.UltraWinGrid.UltraComboStyle.DropDownList
         Me.cmb_Direccion.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_Direccion.Location = New System.Drawing.Point(10, 63)
         Me.cmb_Direccion.Name = "cmb_Direccion"

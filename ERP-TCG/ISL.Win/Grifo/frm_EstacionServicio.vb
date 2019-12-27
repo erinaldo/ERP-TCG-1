@@ -913,10 +913,10 @@ Public Class frm_EstacionServicio
     Public Function fc_Obtener_PrecioCombustible() As Double
         For Each Item In TurnoActivo.Detalles
             If Item.IdConcepto = IdMaterial_Combustible Then
-                Return 15 ' Item.ValorERP
+                Return Item.ValorERP
             End If
         Next
-        Return 1
+        Return 0
     End Function
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
@@ -1043,6 +1043,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub btnAgregarDetalle_Click(sender As Object, e As EventArgs) Handles btnAgregarDetalle.Click
+        If nud_Importe.Value = 0 Then Exit Sub
         mt_AgregarDetalle()
         grb_Combustible.Text = "Seleccione Combustible:"
         nud_Cantidad.Value = 0
