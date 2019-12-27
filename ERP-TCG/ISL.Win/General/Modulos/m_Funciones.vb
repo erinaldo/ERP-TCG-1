@@ -782,6 +782,7 @@ Module m_Funciones
     Public TipoGastoPublic As List(Of e_Combo)
     Public OTEquAlmPublic As List(Of e_Combo)
     Public SubAlmDiesel As List(Of e_Combo)
+    Public SubAlmGrifo As List(Of e_Combo)
     'ILLL
     Public TipoIncidenciaPublic As List(Of e_Combo)
     Public GradoIncidenciaPublic As List(Of e_Combo)
@@ -1129,6 +1130,11 @@ Module m_Funciones
         oeCombo.Nombre = "AlmacenDiesel"
         SubAlmDiesel = New List(Of e_Combo)
         SubAlmDiesel.AddRange(olCombo.Listar(oeCombo))
+
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "AlmacenGrifo"
+        SubAlmGrifo = New List(Of e_Combo)
+        SubAlmGrifo.AddRange(olCombo.Listar(oeCombo))
 
     End Sub
 

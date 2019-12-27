@@ -579,6 +579,8 @@ Partial Class frm_RegistroConsumoCombustible
         Dim Appearance180 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance181 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance182 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance183 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand5 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn459 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion")
         Dim UltraGridColumn460 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
@@ -586,9 +588,9 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn462 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdVehiculo")
         Dim UltraGridColumn463 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaTanqueo")
         Dim UltraGridColumn464 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KilometrosTanqueo")
-        Dim Appearance183 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance185 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn465 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantidadGalon")
-        Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance186 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn466 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroVale")
         Dim UltraGridColumn467 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioUnitario")
         Dim UltraGridColumn468 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaGrifo")
@@ -601,7 +603,7 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn475 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdRegistroInventario")
         Dim UltraGridColumn476 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdMaterial")
         Dim UltraGridColumn477 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("SaldoGls")
-        Dim Appearance185 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance187 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn478 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Estado")
         Dim UltraGridColumn479 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdViaje")
         Dim UltraGridColumn480 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdPiloto")
@@ -610,7 +612,7 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn483 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEstado")
         Dim UltraGridColumn484 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdGrifo")
         Dim UltraGridColumn485 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PlacaVeh")
-        Dim Appearance186 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance188 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn486 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Piloto")
         Dim UltraGridColumn487 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CodMaterial")
         Dim UltraGridColumn488 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Material")
@@ -622,8 +624,6 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn494 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndTanqueoNoAsoc")
         Dim UltraGridColumn495 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaCreacion")
         Dim UltraGridColumn496 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndIsl")
-        Dim Appearance187 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance188 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance189 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance190 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance191 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -642,10 +642,10 @@ Partial Class frm_RegistroConsumoCombustible
         Dim Appearance204 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance205 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance206 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance207 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance208 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem3 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem4 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance209 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance210 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance211 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -672,10 +672,10 @@ Partial Class frm_RegistroConsumoCombustible
         Dim Appearance232 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance233 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance234 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
-        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance235 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance236 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem5 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem6 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance237 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance238 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance239 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -699,14 +699,16 @@ Partial Class frm_RegistroConsumoCombustible
         Dim Appearance257 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance258 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance259 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance260 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance261 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance262 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance263 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim Appearance264 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance265 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem9 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim Appearance266 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand6 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn497 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion")
         Dim UltraGridColumn498 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
@@ -714,15 +716,15 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn500 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdVehiculo")
         Dim UltraGridColumn501 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaTanqueo")
         Dim UltraGridColumn502 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("KilometrosTanqueo")
-        Dim Appearance265 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn503 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantidadGalon")
-        Dim Appearance266 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn504 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroVale")
         Dim Appearance267 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn503 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CantidadGalon")
         Dim Appearance268 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn505 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioUnitario")
+        Dim UltraGridColumn504 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NroVale")
         Dim Appearance269 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance270 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn505 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PrecioUnitario")
+        Dim Appearance271 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance272 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn506 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaGrifo")
         Dim UltraGridColumn507 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdDireccion")
         Dim UltraGridColumn508 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdLugar")
@@ -742,7 +744,7 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraGridColumn522 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdGrifo")
         Dim UltraGridColumn523 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PlacaVeh")
         Dim UltraGridColumn524 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Piloto")
-        Dim Appearance271 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance273 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn525 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CodMaterial")
         Dim UltraGridColumn526 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Material")
         Dim UltraGridColumn527 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdTracto")
@@ -792,60 +794,60 @@ Partial Class frm_RegistroConsumoCombustible
         Dim RowLayoutColumnInfo36 As Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo = New Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo(Infragistics.Win.UltraWinGrid.RowLayoutColumnInfoContext.Column, "IndTanqueoNoAsoc", -1, Infragistics.Win.DefaultableBoolean.[Default])
         Dim RowLayoutColumnInfo37 As Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo = New Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo(Infragistics.Win.UltraWinGrid.RowLayoutColumnInfoContext.Column, "FechaCreacion", -1, Infragistics.Win.DefaultableBoolean.[Default])
         Dim RowLayoutColumnInfo38 As Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo = New Infragistics.Win.UltraWinGrid.RowLayoutColumnInfo(Infragistics.Win.UltraWinGrid.RowLayoutColumnInfoContext.Column, "IndIsl", -1, Infragistics.Win.DefaultableBoolean.[Default])
-        Dim Appearance272 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance273 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance274 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance275 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance276 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance277 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance278 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance279 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance280 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance281 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand7 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn535 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim Appearance280 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn536 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
-        Dim Appearance281 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance282 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn537 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn536 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
         Dim Appearance283 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn547 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
         Dim Appearance284 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn537 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim Appearance285 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn547 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
+        Dim Appearance286 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance287 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand8 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn539 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim Appearance286 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn540 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
-        Dim Appearance287 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance288 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn541 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn540 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
         Dim Appearance289 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn548 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
         Dim Appearance290 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn541 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim Appearance291 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn548 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
+        Dim Appearance292 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance293 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand9 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn543 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim Appearance292 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn544 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
-        Dim Appearance293 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance294 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn545 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn544 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
         Dim Appearance295 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn549 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
         Dim Appearance296 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn545 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim Appearance297 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn549 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
+        Dim Appearance298 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance299 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand10 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn29 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim Appearance298 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
-        Dim Appearance299 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance300 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
+        Dim UltraGridColumn30 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Nombre")
         Dim Appearance301 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn550 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
         Dim Appearance302 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn31 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Descripcion")
         Dim Appearance303 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn550 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Seleccion", 0)
         Dim Appearance304 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance305 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance306 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance307 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -853,8 +855,6 @@ Partial Class frm_RegistroConsumoCombustible
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab9 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance306 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance307 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance308 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance309 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance310 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -873,6 +873,8 @@ Partial Class frm_RegistroConsumoCombustible
         Dim Appearance323 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance324 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance325 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance326 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance327 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab10 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab11 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab12 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
@@ -956,6 +958,8 @@ Partial Class frm_RegistroConsumoCombustible
         Me.Etiqueta5 = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta4 = New ISL.Controles.Etiqueta(Me.components)
         Me.ag_DatosGrifo = New ISL.Controles.Agrupacion(Me.components)
+        Me.Etiqueta48 = New ISL.Controles.Etiqueta(Me.components)
+        Me.cboSubAlmacen = New ISL.Controles.ComboMaestros(Me.components)
         Me.eti_Galones = New ISL.Controles.Etiqueta(Me.components)
         Me.dtp_FecViaje = New ISL.Controles.Fecha(Me.components)
         Me.etiStock = New ISL.Controles.Etiqueta(Me.components)
@@ -1175,6 +1179,7 @@ Partial Class frm_RegistroConsumoCombustible
         CType(Me.opt_IndTanqueo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ag_DatosGrifo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ag_DatosGrifo.SuspendLayout()
+        CType(Me.cboSubAlmacen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtp_FecViaje, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.decStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -2570,7 +2575,7 @@ Partial Class frm_RegistroConsumoCombustible
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea9)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraToolbarsDockArea10)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatoGeneral)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1193, 411)
         '
@@ -2881,7 +2886,7 @@ Partial Class frm_RegistroConsumoCombustible
         Me.cmb_TipoCombustible.ForeColor = System.Drawing.Color.Black
         Me.cmb_TipoCombustible.Location = New System.Drawing.Point(217, 79)
         Me.cmb_TipoCombustible.Name = "cmb_TipoCombustible"
-        Me.cmb_TipoCombustible.Size = New System.Drawing.Size(90, 22)
+        Me.cmb_TipoCombustible.Size = New System.Drawing.Size(117, 22)
         Me.cmb_TipoCombustible.TabIndex = 7
         Me.cmb_TipoCombustible.ValueMember = "Id"
         '
@@ -3050,6 +3055,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'ag_DatosGrifo
         '
+        Me.ag_DatosGrifo.Controls.Add(Me.Etiqueta48)
+        Me.ag_DatosGrifo.Controls.Add(Me.cboSubAlmacen)
         Me.ag_DatosGrifo.Controls.Add(Me.eti_Galones)
         Me.ag_DatosGrifo.Controls.Add(Me.dtp_FecViaje)
         Me.ag_DatosGrifo.Controls.Add(Me.etiStock)
@@ -3069,10 +3076,39 @@ Partial Class frm_RegistroConsumoCombustible
         Me.ag_DatosGrifo.Text = "Datos Grifo"
         Me.ag_DatosGrifo.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
-        'eti_Galones
+        'Etiqueta48
         '
         Appearance165.BackColor = System.Drawing.Color.Transparent
-        Me.eti_Galones.Appearance = Appearance165
+        Me.Etiqueta48.Appearance = Appearance165
+        Me.Etiqueta48.AutoSize = True
+        Me.Etiqueta48.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta48.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta48.Location = New System.Drawing.Point(24, 138)
+        Me.Etiqueta48.Name = "Etiqueta48"
+        Me.Etiqueta48.Size = New System.Drawing.Size(51, 15)
+        Me.Etiqueta48.TabIndex = 11
+        Me.Etiqueta48.Text = "Almacen:"
+        '
+        'cboSubAlmacen
+        '
+        Appearance166.ForeColor = System.Drawing.Color.Black
+        Me.cboSubAlmacen.Appearance = Appearance166
+        Me.cboSubAlmacen.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.cboSubAlmacen.DisplayMember = "Nombre"
+        Me.cboSubAlmacen.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboSubAlmacen.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboSubAlmacen.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubAlmacen.ForeColor = System.Drawing.Color.Black
+        Me.cboSubAlmacen.Location = New System.Drawing.Point(78, 134)
+        Me.cboSubAlmacen.Name = "cboSubAlmacen"
+        Me.cboSubAlmacen.Size = New System.Drawing.Size(279, 22)
+        Me.cboSubAlmacen.TabIndex = 10
+        Me.cboSubAlmacen.ValueMember = "Id"
+        '
+        'eti_Galones
+        '
+        Appearance167.BackColor = System.Drawing.Color.Transparent
+        Me.eti_Galones.Appearance = Appearance167
         Me.eti_Galones.AutoSize = True
         Me.eti_Galones.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.eti_Galones.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3085,8 +3121,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'dtp_FecViaje
         '
-        Appearance166.ForeColor = System.Drawing.Color.Black
-        Me.dtp_FecViaje.Appearance = Appearance166
+        Appearance168.ForeColor = System.Drawing.Color.Black
+        Me.dtp_FecViaje.Appearance = Appearance168
         Me.dtp_FecViaje.DateTime = New Date(2014, 9, 29, 0, 0, 0, 0)
         Me.dtp_FecViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.dtp_FecViaje.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3101,8 +3137,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'etiStock
         '
-        Appearance167.BackColor = System.Drawing.Color.Transparent
-        Me.etiStock.Appearance = Appearance167
+        Appearance169.BackColor = System.Drawing.Color.Transparent
+        Me.etiStock.Appearance = Appearance169
         Me.etiStock.AutoSize = True
         Me.etiStock.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiStock.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3115,8 +3151,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'decStock
         '
-        Appearance168.ForeColor = System.Drawing.Color.Black
-        Me.decStock.Appearance = Appearance168
+        Appearance170.ForeColor = System.Drawing.Color.Black
+        Me.decStock.Appearance = Appearance170
         Me.decStock.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decStock.Enabled = False
         Me.decStock.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3132,8 +3168,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta7
         '
-        Appearance169.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta7.Appearance = Appearance169
+        Appearance171.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta7.Appearance = Appearance171
         Me.Etiqueta7.AutoSize = True
         Me.Etiqueta7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3145,8 +3181,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboDireccion
         '
-        Appearance170.ForeColor = System.Drawing.Color.Black
-        Me.cboDireccion.Appearance = Appearance170
+        Appearance172.ForeColor = System.Drawing.Color.Black
+        Me.cboDireccion.Appearance = Appearance172
         Me.cboDireccion.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboDireccion.DisplayMember = "Nombre"
         Me.cboDireccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3161,8 +3197,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta6
         '
-        Appearance171.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta6.Appearance = Appearance171
+        Appearance173.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta6.Appearance = Appearance173
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3174,8 +3210,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboLugar
         '
-        Appearance172.ForeColor = System.Drawing.Color.Black
-        Me.cboLugar.Appearance = Appearance172
+        Appearance174.ForeColor = System.Drawing.Color.Black
+        Me.cboLugar.Appearance = Appearance174
         Me.cboLugar.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboLugar.DisplayMember = "Nombre"
         Me.cboLugar.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3190,8 +3226,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta3
         '
-        Appearance173.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta3.Appearance = Appearance173
+        Appearance175.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta3.Appearance = Appearance175
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3203,8 +3239,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboGrifo
         '
-        Appearance174.ForeColor = System.Drawing.Color.Black
-        Me.cboGrifo.Appearance = Appearance174
+        Appearance176.ForeColor = System.Drawing.Color.Black
+        Me.cboGrifo.Appearance = Appearance176
         Me.cboGrifo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboGrifo.DisplayMember = "Nombre"
         Me.cboGrifo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3250,8 +3286,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'txtPiloto
         '
-        Appearance175.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtPiloto.Appearance = Appearance175
+        Appearance177.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtPiloto.Appearance = Appearance177
         Me.txtPiloto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtPiloto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtPiloto.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3265,8 +3301,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta10
         '
-        Appearance176.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta10.Appearance = Appearance176
+        Appearance178.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta10.Appearance = Appearance178
         Me.Etiqueta10.AutoSize = True
         Me.Etiqueta10.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta10.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3278,8 +3314,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'decOdometro
         '
-        Appearance177.ForeColor = System.Drawing.Color.Black
-        Me.decOdometro.Appearance = Appearance177
+        Appearance179.ForeColor = System.Drawing.Color.Black
+        Me.decOdometro.Appearance = Appearance179
         Me.decOdometro.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decOdometro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decOdometro.ForeColor = System.Drawing.Color.Black
@@ -3293,8 +3329,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta1
         '
-        Appearance178.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta1.Appearance = Appearance178
+        Appearance180.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta1.Appearance = Appearance180
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3306,8 +3342,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta20
         '
-        Appearance179.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta20.Appearance = Appearance179
+        Appearance181.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta20.Appearance = Appearance181
         Me.Etiqueta20.AutoSize = True
         Me.Etiqueta20.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta20.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3319,8 +3355,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta16
         '
-        Appearance180.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta16.Appearance = Appearance180
+        Appearance182.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta16.Appearance = Appearance182
         Me.Etiqueta16.AutoSize = True
         Me.Etiqueta16.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta16.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3332,8 +3368,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'txtViaje
         '
-        Appearance181.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtViaje.Appearance = Appearance181
+        Appearance183.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtViaje.Appearance = Appearance183
         Me.txtViaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtViaje.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3347,8 +3383,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboVehiculo
         '
-        Appearance182.ForeColor = System.Drawing.Color.Black
-        Me.cboVehiculo.Appearance = Appearance182
+        Appearance184.ForeColor = System.Drawing.Color.Black
+        Me.cboVehiculo.Appearance = Appearance184
         Me.cboVehiculo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.cboVehiculo.DisplayMember = "Nombre"
         Me.cboVehiculo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3390,14 +3426,14 @@ Partial Class frm_RegistroConsumoCombustible
         UltraGridColumn463.Header.VisiblePosition = 3
         UltraGridColumn463.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.Edit
         UltraGridColumn463.Width = 165
-        Appearance183.TextHAlignAsString = "Right"
-        UltraGridColumn464.CellAppearance = Appearance183
+        Appearance185.TextHAlignAsString = "Right"
+        UltraGridColumn464.CellAppearance = Appearance185
         UltraGridColumn464.Header.Caption = "KM Tanqueo"
         UltraGridColumn464.Header.VisiblePosition = 5
         UltraGridColumn464.MaskInput = "{double:9.4}"
         UltraGridColumn464.Width = 101
-        Appearance184.TextHAlignAsString = "Right"
-        UltraGridColumn465.CellAppearance = Appearance184
+        Appearance186.TextHAlignAsString = "Right"
+        UltraGridColumn465.CellAppearance = Appearance186
         UltraGridColumn465.Header.Caption = "Can(Gls)"
         UltraGridColumn465.Header.VisiblePosition = 6
         UltraGridColumn465.MaskInput = "{double:9.4}"
@@ -3426,8 +3462,8 @@ Partial Class frm_RegistroConsumoCombustible
         UltraGridColumn475.Hidden = True
         UltraGridColumn476.Header.VisiblePosition = 17
         UltraGridColumn476.Hidden = True
-        Appearance185.TextHAlignAsString = "Right"
-        UltraGridColumn477.CellAppearance = Appearance185
+        Appearance187.TextHAlignAsString = "Right"
+        UltraGridColumn477.CellAppearance = Appearance187
         UltraGridColumn477.Header.Caption = "Saldo(Gls)"
         UltraGridColumn477.Header.VisiblePosition = 18
         UltraGridColumn477.Hidden = True
@@ -3446,8 +3482,8 @@ Partial Class frm_RegistroConsumoCombustible
         UltraGridColumn483.Hidden = True
         UltraGridColumn484.Header.VisiblePosition = 26
         UltraGridColumn484.Hidden = True
-        Appearance186.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        UltraGridColumn485.CellAppearance = Appearance186
+        Appearance188.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        UltraGridColumn485.CellAppearance = Appearance188
         UltraGridColumn485.Header.Caption = "Tracto"
         UltraGridColumn485.Header.VisiblePosition = 4
         UltraGridColumn485.Width = 87
@@ -3513,8 +3549,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta8
         '
-        Appearance187.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta8.Appearance = Appearance187
+        Appearance189.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta8.Appearance = Appearance189
         Me.Etiqueta8.AutoSize = True
         Me.Etiqueta8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3527,8 +3563,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboDireccionTNA
         '
-        Appearance188.ForeColor = System.Drawing.Color.Black
-        Me.cboDireccionTNA.Appearance = Appearance188
+        Appearance190.ForeColor = System.Drawing.Color.Black
+        Me.cboDireccionTNA.Appearance = Appearance190
         Me.cboDireccionTNA.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboDireccionTNA.DisplayMember = "Nombre"
         Me.cboDireccionTNA.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3543,8 +3579,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta11
         '
-        Appearance189.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta11.Appearance = Appearance189
+        Appearance191.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta11.Appearance = Appearance191
         Me.Etiqueta11.AutoSize = True
         Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta11.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3557,8 +3593,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboLugarTNA
         '
-        Appearance190.ForeColor = System.Drawing.Color.Black
-        Me.cboLugarTNA.Appearance = Appearance190
+        Appearance192.ForeColor = System.Drawing.Color.Black
+        Me.cboLugarTNA.Appearance = Appearance192
         Me.cboLugarTNA.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboLugarTNA.DisplayMember = "Nombre"
         Me.cboLugarTNA.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3573,8 +3609,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta12
         '
-        Appearance191.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta12.Appearance = Appearance191
+        Appearance193.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta12.Appearance = Appearance193
         Me.Etiqueta12.AutoSize = True
         Me.Etiqueta12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta12.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3587,8 +3623,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'cboGrifoTNA
         '
-        Appearance192.ForeColor = System.Drawing.Color.Black
-        Me.cboGrifoTNA.Appearance = Appearance192
+        Appearance194.ForeColor = System.Drawing.Color.Black
+        Me.cboGrifoTNA.Appearance = Appearance194
         Me.cboGrifoTNA.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboGrifoTNA.DisplayMember = "Nombre"
         Me.cboGrifoTNA.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -3603,8 +3639,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnImportar
         '
-        Appearance193.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
-        Me.btnImportar.Appearance = Appearance193
+        Appearance195.Image = Global.ISL.Win.My.Resources.Resources.formatindentmore
+        Me.btnImportar.Appearance = Appearance195
         Me.btnImportar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnImportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnImportar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3617,8 +3653,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnGuardar
         '
-        Appearance194.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        Me.btnGuardar.Appearance = Appearance194
+        Appearance196.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        Me.btnGuardar.Appearance = Appearance196
         Me.btnGuardar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3633,7 +3669,7 @@ Partial Class frm_RegistroConsumoCombustible
         '
         Me.UltraTabPageControl9.Controls.Add(Me.SplitContainer1)
         Me.UltraTabPageControl9.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1193, 411)
         '
@@ -3656,11 +3692,11 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'UltraGroupBox1
         '
-        Appearance195.BackColor = System.Drawing.Color.Transparent
-        Me.UltraGroupBox1.Appearance = Appearance195
+        Appearance197.BackColor = System.Drawing.Color.Transparent
+        Me.UltraGroupBox1.Appearance = Appearance197
         Me.UltraGroupBox1.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
-        Appearance196.BackColor = System.Drawing.Color.Transparent
-        Me.UltraGroupBox1.ContentAreaAppearance = Appearance196
+        Appearance198.BackColor = System.Drawing.Color.Transparent
+        Me.UltraGroupBox1.ContentAreaAppearance = Appearance198
         Me.UltraGroupBox1.Controls.Add(Me.Agrupacion2)
         Me.UltraGroupBox1.Controls.Add(Me.Agrupacion4)
         Me.UltraGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -3673,8 +3709,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Agrupacion2
         '
-        Appearance197.BackColor = System.Drawing.Color.LightGray
-        Me.Agrupacion2.Appearance = Appearance197
+        Appearance199.BackColor = System.Drawing.Color.LightGray
+        Me.Agrupacion2.Appearance = Appearance199
         Me.Agrupacion2.Controls.Add(Me.Etiqueta45)
         Me.Agrupacion2.Controls.Add(Me.txtGlosaTanqueo1)
         Me.Agrupacion2.Controls.Add(Me.Panel1)
@@ -3700,9 +3736,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta45
         '
-        Appearance198.BackColor = System.Drawing.Color.Transparent
-        Appearance198.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta45.Appearance = Appearance198
+        Appearance200.BackColor = System.Drawing.Color.Transparent
+        Appearance200.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta45.Appearance = Appearance200
         Me.Etiqueta45.AutoSize = True
         Me.Etiqueta45.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta45.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3714,8 +3750,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'txtGlosaTanqueo1
         '
-        Appearance199.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtGlosaTanqueo1.Appearance = Appearance199
+        Appearance201.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtGlosaTanqueo1.Appearance = Appearance201
         Me.txtGlosaTanqueo1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtGlosaTanqueo1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtGlosaTanqueo1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3742,8 +3778,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'UltraLabel1
         '
-        Appearance200.BackColor = System.Drawing.Color.Transparent
-        Me.UltraLabel1.Appearance = Appearance200
+        Appearance202.BackColor = System.Drawing.Color.Transparent
+        Me.UltraLabel1.Appearance = Appearance202
         Me.UltraLabel1.Font = New System.Drawing.Font("Tahoma", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel1.Location = New System.Drawing.Point(59, 66)
         Me.UltraLabel1.Name = "UltraLabel1"
@@ -3753,9 +3789,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_CantGalonesS1
         '
-        Appearance201.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Appearance201.ForeColor = System.Drawing.Color.Black
-        Me.nd_CantGalonesS1.Appearance = Appearance201
+        Appearance203.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Appearance203.ForeColor = System.Drawing.Color.Black
+        Me.nd_CantGalonesS1.Appearance = Appearance203
         Me.nd_CantGalonesS1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.nd_CantGalonesS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_CantGalonesS1.Enabled = False
@@ -3773,8 +3809,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtCodigoSurtidorS1
         '
-        Appearance202.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtCodigoSurtidorS1.Appearance = Appearance202
+        Appearance204.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtCodigoSurtidorS1.Appearance = Appearance204
         Me.TxtCodigoSurtidorS1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtCodigoSurtidorS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtCodigoSurtidorS1.Enabled = False
@@ -3814,9 +3850,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta23
         '
-        Appearance203.BackColor = System.Drawing.Color.Transparent
-        Appearance203.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta23.Appearance = Appearance203
+        Appearance205.BackColor = System.Drawing.Color.Transparent
+        Appearance205.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta23.Appearance = Appearance205
         Me.Etiqueta23.AutoSize = True
         Me.Etiqueta23.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta23.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3828,9 +3864,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_KmTanqueoS1
         '
-        Appearance204.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Appearance204.ForeColor = System.Drawing.Color.Black
-        Me.nd_KmTanqueoS1.Appearance = Appearance204
+        Appearance206.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Appearance206.ForeColor = System.Drawing.Color.Black
+        Me.nd_KmTanqueoS1.Appearance = Appearance206
         Me.nd_KmTanqueoS1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.nd_KmTanqueoS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_KmTanqueoS1.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -3845,9 +3881,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta24
         '
-        Appearance205.BackColor = System.Drawing.Color.Transparent
-        Appearance205.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta24.Appearance = Appearance205
+        Appearance207.BackColor = System.Drawing.Color.Transparent
+        Appearance207.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta24.Appearance = Appearance207
         Me.Etiqueta24.AutoSize = True
         Me.Etiqueta24.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3859,10 +3895,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Opt_IndTanqueoS1
         '
-        Appearance206.BackColor = System.Drawing.Color.Transparent
-        Appearance206.FontData.SizeInPoints = 13.0!
-        Appearance206.ForeColor = System.Drawing.Color.Navy
-        Me.Opt_IndTanqueoS1.Appearance = Appearance206
+        Appearance208.BackColor = System.Drawing.Color.Transparent
+        Appearance208.FontData.SizeInPoints = 13.0!
+        Appearance208.ForeColor = System.Drawing.Color.Navy
+        Me.Opt_IndTanqueoS1.Appearance = Appearance208
         Me.Opt_IndTanqueoS1.BackColor = System.Drawing.Color.Transparent
         Me.Opt_IndTanqueoS1.BackColorInternal = System.Drawing.Color.Transparent
         Me.Opt_IndTanqueoS1.BorderStyle = Infragistics.Win.UIElementBorderStyle.None
@@ -3884,9 +3920,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta25
         '
-        Appearance207.BackColor = System.Drawing.Color.Transparent
-        Appearance207.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta25.Appearance = Appearance207
+        Appearance209.BackColor = System.Drawing.Color.Transparent
+        Appearance209.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta25.Appearance = Appearance209
         Me.Etiqueta25.AutoSize = True
         Me.Etiqueta25.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta25.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3898,9 +3934,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta26
         '
-        Appearance208.BackColor = System.Drawing.Color.Transparent
-        Appearance208.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta26.Appearance = Appearance208
+        Appearance210.BackColor = System.Drawing.Color.Transparent
+        Appearance210.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta26.Appearance = Appearance210
         Me.Etiqueta26.AutoSize = True
         Me.Etiqueta26.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta26.ForeColor = System.Drawing.Color.MidnightBlue
@@ -3912,10 +3948,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Agrupacion4
         '
-        Appearance209.BackColor = System.Drawing.Color.Transparent
-        Me.Agrupacion4.Appearance = Appearance209
-        Appearance210.BackColor = System.Drawing.Color.Transparent
-        Me.Agrupacion4.ContentAreaAppearance = Appearance210
+        Appearance211.BackColor = System.Drawing.Color.Transparent
+        Me.Agrupacion4.Appearance = Appearance211
+        Appearance212.BackColor = System.Drawing.Color.Transparent
+        Me.Agrupacion4.ContentAreaAppearance = Appearance212
         Me.Agrupacion4.Controls.Add(Me.BtnLimpiaS1)
         Me.Agrupacion4.Controls.Add(Me.dtp_FechaViajeS1)
         Me.Agrupacion4.Controls.Add(Me.BtnGuardarS1)
@@ -3941,8 +3977,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'BtnLimpiaS1
         '
-        Appearance211.Image = "16 (Clear).ico"
-        Me.BtnLimpiaS1.Appearance = Appearance211
+        Appearance213.Image = "16 (Clear).ico"
+        Me.BtnLimpiaS1.Appearance = Appearance213
         Me.BtnLimpiaS1.ImageList = Me.imagenes
         Me.BtnLimpiaS1.Location = New System.Drawing.Point(339, 52)
         Me.BtnLimpiaS1.Name = "BtnLimpiaS1"
@@ -3951,8 +3987,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'dtp_FechaViajeS1
         '
-        Appearance212.ForeColor = System.Drawing.Color.Black
-        Me.dtp_FechaViajeS1.Appearance = Appearance212
+        Appearance214.ForeColor = System.Drawing.Color.Black
+        Me.dtp_FechaViajeS1.Appearance = Appearance214
         Me.dtp_FechaViajeS1.DateTime = New Date(2014, 9, 29, 0, 0, 0, 0)
         Me.dtp_FechaViajeS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.dtp_FechaViajeS1.Enabled = False
@@ -3968,10 +4004,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'BtnGuardarS1
         '
-        Appearance213.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        Appearance213.ImageHAlign = Infragistics.Win.HAlign.Center
-        Appearance213.ImageVAlign = Infragistics.Win.VAlign.Middle
-        Me.BtnGuardarS1.Appearance = Appearance213
+        Appearance215.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        Appearance215.ImageHAlign = Infragistics.Win.HAlign.Center
+        Appearance215.ImageVAlign = Infragistics.Win.VAlign.Middle
+        Me.BtnGuardarS1.Appearance = Appearance215
         Me.BtnGuardarS1.ImageList = Me.imagenes
         Me.BtnGuardarS1.ImageSize = New System.Drawing.Size(30, 30)
         Me.BtnGuardarS1.Location = New System.Drawing.Point(482, 25)
@@ -3981,8 +4017,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Txt_IdPilotoS1
         '
-        Appearance214.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Txt_IdPilotoS1.Appearance = Appearance214
+        Appearance216.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Txt_IdPilotoS1.Appearance = Appearance216
         Me.Txt_IdPilotoS1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_IdPilotoS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.Txt_IdPilotoS1.Enabled = False
@@ -3998,8 +4034,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxT_IdViajeS1
         '
-        Appearance215.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxT_IdViajeS1.Appearance = Appearance215
+        Appearance217.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxT_IdViajeS1.Appearance = Appearance217
         Me.TxT_IdViajeS1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxT_IdViajeS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxT_IdViajeS1.Enabled = False
@@ -4015,8 +4051,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtPilotoS1
         '
-        Appearance216.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtPilotoS1.Appearance = Appearance216
+        Appearance218.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtPilotoS1.Appearance = Appearance218
         Me.TxtPilotoS1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPilotoS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtPilotoS1.Enabled = False
@@ -4031,9 +4067,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta29
         '
-        Appearance217.BackColor = System.Drawing.Color.Transparent
-        Appearance217.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta29.Appearance = Appearance217
+        Appearance219.BackColor = System.Drawing.Color.Transparent
+        Appearance219.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta29.Appearance = Appearance219
         Me.Etiqueta29.AutoSize = True
         Me.Etiqueta29.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta29.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4045,8 +4081,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_OdometroS1
         '
-        Appearance218.ForeColor = System.Drawing.Color.Black
-        Me.nd_OdometroS1.Appearance = Appearance218
+        Appearance220.ForeColor = System.Drawing.Color.Black
+        Me.nd_OdometroS1.Appearance = Appearance220
         Me.nd_OdometroS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_OdometroS1.Enabled = False
         Me.nd_OdometroS1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4061,9 +4097,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta30
         '
-        Appearance219.BackColor = System.Drawing.Color.Transparent
-        Appearance219.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta30.Appearance = Appearance219
+        Appearance221.BackColor = System.Drawing.Color.Transparent
+        Appearance221.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta30.Appearance = Appearance221
         Me.Etiqueta30.AutoSize = True
         Me.Etiqueta30.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta30.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4075,9 +4111,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta31
         '
-        Appearance220.BackColor = System.Drawing.Color.Transparent
-        Appearance220.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta31.Appearance = Appearance220
+        Appearance222.BackColor = System.Drawing.Color.Transparent
+        Appearance222.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta31.Appearance = Appearance222
         Me.Etiqueta31.AutoSize = True
         Me.Etiqueta31.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta31.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4089,9 +4125,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta32
         '
-        Appearance221.BackColor = System.Drawing.Color.Transparent
-        Appearance221.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta32.Appearance = Appearance221
+        Appearance223.BackColor = System.Drawing.Color.Transparent
+        Appearance223.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta32.Appearance = Appearance223
         Me.Etiqueta32.AutoSize = True
         Me.Etiqueta32.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta32.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4103,8 +4139,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtViajeS1
         '
-        Appearance222.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtViajeS1.Appearance = Appearance222
+        Appearance224.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtViajeS1.Appearance = Appearance224
         Me.TxtViajeS1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtViajeS1.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtViajeS1.Enabled = False
@@ -4119,9 +4155,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'CboVehiculoS1
         '
-        Appearance223.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Appearance223.ForeColor = System.Drawing.Color.Black
-        Me.CboVehiculoS1.Appearance = Appearance223
+        Appearance225.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Appearance225.ForeColor = System.Drawing.Color.Black
+        Me.CboVehiculoS1.Appearance = Appearance225
         Me.CboVehiculoS1.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.CboVehiculoS1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CboVehiculoS1.DisplayMember = "Nombre"
@@ -4138,8 +4174,8 @@ Partial Class frm_RegistroConsumoCombustible
         'UltraGroupBox3
         '
         Me.UltraGroupBox3.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
-        Appearance224.BackColor = System.Drawing.Color.Transparent
-        Me.UltraGroupBox3.ContentAreaAppearance = Appearance224
+        Appearance226.BackColor = System.Drawing.Color.Transparent
+        Me.UltraGroupBox3.ContentAreaAppearance = Appearance226
         Me.UltraGroupBox3.Controls.Add(Me.Agrupacion7)
         Me.UltraGroupBox3.Controls.Add(Me.Agrupacion8)
         Me.UltraGroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -4152,8 +4188,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Agrupacion7
         '
-        Appearance225.BackColor = System.Drawing.Color.LightGray
-        Me.Agrupacion7.Appearance = Appearance225
+        Appearance227.BackColor = System.Drawing.Color.LightGray
+        Me.Agrupacion7.Appearance = Appearance227
         Me.Agrupacion7.Controls.Add(Me.Etiqueta46)
         Me.Agrupacion7.Controls.Add(Me.txtGlosaTanqueo2)
         Me.Agrupacion7.Controls.Add(Me.Panel2)
@@ -4179,9 +4215,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta46
         '
-        Appearance226.BackColor = System.Drawing.Color.Transparent
-        Appearance226.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta46.Appearance = Appearance226
+        Appearance228.BackColor = System.Drawing.Color.Transparent
+        Appearance228.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta46.Appearance = Appearance228
         Me.Etiqueta46.AutoSize = True
         Me.Etiqueta46.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta46.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4193,8 +4229,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'txtGlosaTanqueo2
         '
-        Appearance227.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtGlosaTanqueo2.Appearance = Appearance227
+        Appearance229.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtGlosaTanqueo2.Appearance = Appearance229
         Me.txtGlosaTanqueo2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtGlosaTanqueo2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtGlosaTanqueo2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4221,8 +4257,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'UltraLabel2
         '
-        Appearance228.BackColor = System.Drawing.Color.Transparent
-        Me.UltraLabel2.Appearance = Appearance228
+        Appearance230.BackColor = System.Drawing.Color.Transparent
+        Me.UltraLabel2.Appearance = Appearance230
         Me.UltraLabel2.Font = New System.Drawing.Font("Tahoma", 39.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel2.Location = New System.Drawing.Point(58, 66)
         Me.UltraLabel2.Name = "UltraLabel2"
@@ -4232,8 +4268,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtCodigoSurtidorS2
         '
-        Appearance229.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtCodigoSurtidorS2.Appearance = Appearance229
+        Appearance231.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtCodigoSurtidorS2.Appearance = Appearance231
         Me.TxtCodigoSurtidorS2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtCodigoSurtidorS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtCodigoSurtidorS2.Enabled = False
@@ -4273,9 +4309,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta34
         '
-        Appearance230.BackColor = System.Drawing.Color.Transparent
-        Appearance230.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta34.Appearance = Appearance230
+        Appearance232.BackColor = System.Drawing.Color.Transparent
+        Appearance232.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta34.Appearance = Appearance232
         Me.Etiqueta34.AutoSize = True
         Me.Etiqueta34.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta34.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4287,9 +4323,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_CantGalonesS2
         '
-        Appearance231.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Appearance231.ForeColor = System.Drawing.Color.Black
-        Me.nd_CantGalonesS2.Appearance = Appearance231
+        Appearance233.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Appearance233.ForeColor = System.Drawing.Color.Black
+        Me.nd_CantGalonesS2.Appearance = Appearance233
         Me.nd_CantGalonesS2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.nd_CantGalonesS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_CantGalonesS2.Enabled = False
@@ -4307,9 +4343,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_KmTanqueoS2
         '
-        Appearance232.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Appearance232.ForeColor = System.Drawing.Color.Black
-        Me.nd_KmTanqueoS2.Appearance = Appearance232
+        Appearance234.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Appearance234.ForeColor = System.Drawing.Color.Black
+        Me.nd_KmTanqueoS2.Appearance = Appearance234
         Me.nd_KmTanqueoS2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.nd_KmTanqueoS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_KmTanqueoS2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4324,9 +4360,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta35
         '
-        Appearance233.BackColor = System.Drawing.Color.Transparent
-        Appearance233.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta35.Appearance = Appearance233
+        Appearance235.BackColor = System.Drawing.Color.Transparent
+        Appearance235.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta35.Appearance = Appearance235
         Me.Etiqueta35.AutoSize = True
         Me.Etiqueta35.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta35.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4338,10 +4374,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Opt_IndTanqueoS2
         '
-        Appearance234.BackColor = System.Drawing.Color.Transparent
-        Appearance234.FontData.SizeInPoints = 13.0!
-        Appearance234.ForeColor = System.Drawing.Color.Navy
-        Me.Opt_IndTanqueoS2.Appearance = Appearance234
+        Appearance236.BackColor = System.Drawing.Color.Transparent
+        Appearance236.FontData.SizeInPoints = 13.0!
+        Appearance236.ForeColor = System.Drawing.Color.Navy
+        Me.Opt_IndTanqueoS2.Appearance = Appearance236
         Me.Opt_IndTanqueoS2.BackColor = System.Drawing.Color.Transparent
         Me.Opt_IndTanqueoS2.BackColorInternal = System.Drawing.Color.Transparent
         Me.Opt_IndTanqueoS2.BorderStyle = Infragistics.Win.UIElementBorderStyle.None
@@ -4363,9 +4399,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta36
         '
-        Appearance235.BackColor = System.Drawing.Color.Transparent
-        Appearance235.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta36.Appearance = Appearance235
+        Appearance237.BackColor = System.Drawing.Color.Transparent
+        Appearance237.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta36.Appearance = Appearance237
         Me.Etiqueta36.AutoSize = True
         Me.Etiqueta36.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta36.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4377,9 +4413,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta37
         '
-        Appearance236.BackColor = System.Drawing.Color.Transparent
-        Appearance236.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta37.Appearance = Appearance236
+        Appearance238.BackColor = System.Drawing.Color.Transparent
+        Appearance238.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta37.Appearance = Appearance238
         Me.Etiqueta37.AutoSize = True
         Me.Etiqueta37.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta37.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4391,10 +4427,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Agrupacion8
         '
-        Appearance237.BackColor = System.Drawing.Color.Transparent
-        Me.Agrupacion8.Appearance = Appearance237
-        Appearance238.BackColor = System.Drawing.Color.Transparent
-        Me.Agrupacion8.ContentAreaAppearance = Appearance238
+        Appearance239.BackColor = System.Drawing.Color.Transparent
+        Me.Agrupacion8.Appearance = Appearance239
+        Appearance240.BackColor = System.Drawing.Color.Transparent
+        Me.Agrupacion8.ContentAreaAppearance = Appearance240
         Me.Agrupacion8.Controls.Add(Me.BtnLimpiaS2)
         Me.Agrupacion8.Controls.Add(Me.dtp_FechaViajeS2)
         Me.Agrupacion8.Controls.Add(Me.BtnGuardarS2)
@@ -4420,8 +4456,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'BtnLimpiaS2
         '
-        Appearance239.Image = "16 (Clear).ico"
-        Me.BtnLimpiaS2.Appearance = Appearance239
+        Appearance241.Image = "16 (Clear).ico"
+        Me.BtnLimpiaS2.Appearance = Appearance241
         Me.BtnLimpiaS2.ImageList = Me.imagenes
         Me.BtnLimpiaS2.Location = New System.Drawing.Point(343, 52)
         Me.BtnLimpiaS2.Name = "BtnLimpiaS2"
@@ -4430,8 +4466,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'dtp_FechaViajeS2
         '
-        Appearance240.ForeColor = System.Drawing.Color.Black
-        Me.dtp_FechaViajeS2.Appearance = Appearance240
+        Appearance242.ForeColor = System.Drawing.Color.Black
+        Me.dtp_FechaViajeS2.Appearance = Appearance242
         Me.dtp_FechaViajeS2.DateTime = New Date(2014, 9, 29, 0, 0, 0, 0)
         Me.dtp_FechaViajeS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.dtp_FechaViajeS2.Enabled = False
@@ -4447,10 +4483,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'BtnGuardarS2
         '
-        Appearance241.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        Appearance241.ImageHAlign = Infragistics.Win.HAlign.Center
-        Appearance241.ImageVAlign = Infragistics.Win.VAlign.Middle
-        Me.BtnGuardarS2.Appearance = Appearance241
+        Appearance243.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        Appearance243.ImageHAlign = Infragistics.Win.HAlign.Center
+        Appearance243.ImageVAlign = Infragistics.Win.VAlign.Middle
+        Me.BtnGuardarS2.Appearance = Appearance243
         Me.BtnGuardarS2.ImageList = Me.imagenes
         Me.BtnGuardarS2.ImageSize = New System.Drawing.Size(30, 30)
         Me.BtnGuardarS2.Location = New System.Drawing.Point(482, 25)
@@ -4460,8 +4496,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Txt_IdPilotoS2
         '
-        Appearance242.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Txt_IdPilotoS2.Appearance = Appearance242
+        Appearance244.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Txt_IdPilotoS2.Appearance = Appearance244
         Me.Txt_IdPilotoS2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.Txt_IdPilotoS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.Txt_IdPilotoS2.Enabled = False
@@ -4477,8 +4513,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxT_IdViajeS2
         '
-        Appearance243.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxT_IdViajeS2.Appearance = Appearance243
+        Appearance245.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxT_IdViajeS2.Appearance = Appearance245
         Me.TxT_IdViajeS2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxT_IdViajeS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxT_IdViajeS2.Enabled = False
@@ -4494,8 +4530,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtPilotoS2
         '
-        Appearance244.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtPilotoS2.Appearance = Appearance244
+        Appearance246.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtPilotoS2.Appearance = Appearance246
         Me.TxtPilotoS2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtPilotoS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtPilotoS2.Enabled = False
@@ -4510,9 +4546,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta40
         '
-        Appearance245.BackColor = System.Drawing.Color.Transparent
-        Appearance245.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta40.Appearance = Appearance245
+        Appearance247.BackColor = System.Drawing.Color.Transparent
+        Appearance247.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta40.Appearance = Appearance247
         Me.Etiqueta40.AutoSize = True
         Me.Etiqueta40.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta40.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4524,8 +4560,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_OdometroS2
         '
-        Appearance246.ForeColor = System.Drawing.Color.Black
-        Me.nd_OdometroS2.Appearance = Appearance246
+        Appearance248.ForeColor = System.Drawing.Color.Black
+        Me.nd_OdometroS2.Appearance = Appearance248
         Me.nd_OdometroS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_OdometroS2.Enabled = False
         Me.nd_OdometroS2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4540,9 +4576,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta41
         '
-        Appearance247.BackColor = System.Drawing.Color.Transparent
-        Appearance247.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta41.Appearance = Appearance247
+        Appearance249.BackColor = System.Drawing.Color.Transparent
+        Appearance249.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta41.Appearance = Appearance249
         Me.Etiqueta41.AutoSize = True
         Me.Etiqueta41.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta41.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4554,9 +4590,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta42
         '
-        Appearance248.BackColor = System.Drawing.Color.Transparent
-        Appearance248.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta42.Appearance = Appearance248
+        Appearance250.BackColor = System.Drawing.Color.Transparent
+        Appearance250.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta42.Appearance = Appearance250
         Me.Etiqueta42.AutoSize = True
         Me.Etiqueta42.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta42.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4568,9 +4604,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta43
         '
-        Appearance249.BackColor = System.Drawing.Color.Transparent
-        Appearance249.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta43.Appearance = Appearance249
+        Appearance251.BackColor = System.Drawing.Color.Transparent
+        Appearance251.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta43.Appearance = Appearance251
         Me.Etiqueta43.AutoSize = True
         Me.Etiqueta43.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta43.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4582,8 +4618,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'TxtViajeS2
         '
-        Appearance250.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.TxtViajeS2.Appearance = Appearance250
+        Appearance252.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.TxtViajeS2.Appearance = Appearance252
         Me.TxtViajeS2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtViajeS2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.TxtViajeS2.Enabled = False
@@ -4598,9 +4634,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'CboVehiculoS2
         '
-        Appearance251.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Appearance251.ForeColor = System.Drawing.Color.Black
-        Me.CboVehiculoS2.Appearance = Appearance251
+        Appearance253.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Appearance253.ForeColor = System.Drawing.Color.Black
+        Me.CboVehiculoS2.Appearance = Appearance253
         Me.CboVehiculoS2.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.CboVehiculoS2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CboVehiculoS2.DisplayMember = "Nombre"
@@ -4616,11 +4652,11 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Agrupacion1
         '
-        Appearance252.BackColor = System.Drawing.Color.Transparent
-        Appearance252.ForeColor = System.Drawing.Color.Black
-        Me.Agrupacion1.Appearance = Appearance252
-        Appearance253.BackColor = System.Drawing.Color.Transparent
-        Me.Agrupacion1.ContentAreaAppearance = Appearance253
+        Appearance254.BackColor = System.Drawing.Color.Transparent
+        Appearance254.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion1.Appearance = Appearance254
+        Appearance255.BackColor = System.Drawing.Color.Transparent
+        Me.Agrupacion1.ContentAreaAppearance = Appearance255
         Me.Agrupacion1.Controls.Add(Me.Etiqueta13)
         Me.Agrupacion1.Controls.Add(Me.Etiqueta14)
         Me.Agrupacion1.Controls.Add(Me.decSotckS)
@@ -4644,9 +4680,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta13
         '
-        Appearance254.BackColor = System.Drawing.Color.Transparent
-        Appearance254.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta13.Appearance = Appearance254
+        Appearance256.BackColor = System.Drawing.Color.Transparent
+        Appearance256.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta13.Appearance = Appearance256
         Me.Etiqueta13.AutoSize = True
         Me.Etiqueta13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta13.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4658,9 +4694,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta14
         '
-        Appearance255.BackColor = System.Drawing.Color.Transparent
-        Appearance255.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta14.Appearance = Appearance255
+        Appearance257.BackColor = System.Drawing.Color.Transparent
+        Appearance257.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta14.Appearance = Appearance257
         Me.Etiqueta14.AutoSize = True
         Me.Etiqueta14.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta14.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4672,8 +4708,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'decSotckS
         '
-        Appearance256.ForeColor = System.Drawing.Color.Black
-        Me.decSotckS.Appearance = Appearance256
+        Appearance258.ForeColor = System.Drawing.Color.Black
+        Me.decSotckS.Appearance = Appearance258
         Me.decSotckS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decSotckS.Enabled = False
         Me.decSotckS.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4688,9 +4724,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta18
         '
-        Appearance257.BackColor = System.Drawing.Color.Transparent
-        Appearance257.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta18.Appearance = Appearance257
+        Appearance259.BackColor = System.Drawing.Color.Transparent
+        Appearance259.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta18.Appearance = Appearance259
         Me.Etiqueta18.AutoSize = True
         Me.Etiqueta18.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta18.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4702,8 +4738,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_PrecioUnitarioS
         '
-        Appearance258.ForeColor = System.Drawing.Color.Black
-        Me.nd_PrecioUnitarioS.Appearance = Appearance258
+        Appearance260.ForeColor = System.Drawing.Color.Black
+        Me.nd_PrecioUnitarioS.Appearance = Appearance260
         Me.nd_PrecioUnitarioS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_PrecioUnitarioS.Enabled = False
         Me.nd_PrecioUnitarioS.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4719,8 +4755,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'CboDireccionS
         '
-        Appearance259.ForeColor = System.Drawing.Color.Black
-        Me.CboDireccionS.Appearance = Appearance259
+        Appearance261.ForeColor = System.Drawing.Color.Black
+        Me.CboDireccionS.Appearance = Appearance261
         Me.CboDireccionS.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.CboDireccionS.DisplayMember = "Nombre"
         Me.CboDireccionS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -4738,9 +4774,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta19
         '
-        Appearance260.BackColor = System.Drawing.Color.Transparent
-        Appearance260.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta19.Appearance = Appearance260
+        Appearance262.BackColor = System.Drawing.Color.Transparent
+        Appearance262.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta19.Appearance = Appearance262
         Me.Etiqueta19.AutoSize = True
         Me.Etiqueta19.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta19.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4752,8 +4788,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'CboLugarS
         '
-        Appearance261.ForeColor = System.Drawing.Color.Black
-        Me.CboLugarS.Appearance = Appearance261
+        Appearance263.ForeColor = System.Drawing.Color.Black
+        Me.CboLugarS.Appearance = Appearance263
         Me.CboLugarS.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.CboLugarS.DisplayMember = "Nombre"
         Me.CboLugarS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -4771,9 +4807,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta21
         '
-        Appearance262.BackColor = System.Drawing.Color.Transparent
-        Appearance262.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta21.Appearance = Appearance262
+        Appearance264.BackColor = System.Drawing.Color.Transparent
+        Appearance264.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta21.Appearance = Appearance264
         Me.Etiqueta21.AutoSize = True
         Me.Etiqueta21.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta21.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4785,8 +4821,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'CboGrifoS
         '
-        Appearance263.ForeColor = System.Drawing.Color.Black
-        Me.CboGrifoS.Appearance = Appearance263
+        Appearance265.ForeColor = System.Drawing.Color.Black
+        Me.CboGrifoS.Appearance = Appearance265
         Me.CboGrifoS.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.CboGrifoS.DisplayMember = "Nombre"
         Me.CboGrifoS.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -4804,9 +4840,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta27
         '
-        Appearance264.BackColor = System.Drawing.Color.Transparent
-        Appearance264.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta27.Appearance = Appearance264
+        Appearance266.BackColor = System.Drawing.Color.Transparent
+        Appearance266.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta27.Appearance = Appearance266
         Me.Etiqueta27.AutoSize = True
         Me.Etiqueta27.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta27.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4859,29 +4895,29 @@ Partial Class frm_RegistroConsumoCombustible
         UltraGridColumn501.Header.VisiblePosition = 5
         UltraGridColumn501.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.DateTime
         UltraGridColumn501.Width = 124
-        Appearance265.TextHAlignAsString = "Right"
-        UltraGridColumn502.CellAppearance = Appearance265
+        Appearance267.TextHAlignAsString = "Right"
+        UltraGridColumn502.CellAppearance = Appearance267
         UltraGridColumn502.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn502.Header.Caption = "KM Tanqueo"
         UltraGridColumn502.Header.VisiblePosition = 7
         UltraGridColumn502.MaskInput = "{double:9.4}"
         UltraGridColumn503.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
-        Appearance266.TextHAlignAsString = "Right"
-        UltraGridColumn503.CellAppearance = Appearance266
+        Appearance268.TextHAlignAsString = "Right"
+        UltraGridColumn503.CellAppearance = Appearance268
         UltraGridColumn503.Header.Caption = "Can(Gls)"
         UltraGridColumn503.Header.VisiblePosition = 8
         UltraGridColumn503.MaskInput = "{double:9.4}"
         UltraGridColumn503.Width = 87
-        Appearance267.TextHAlignAsString = "Center"
-        UltraGridColumn504.CellAppearance = Appearance267
-        Appearance268.TextHAlignAsString = "Center"
-        UltraGridColumn504.Header.Appearance = Appearance268
+        Appearance269.TextHAlignAsString = "Center"
+        UltraGridColumn504.CellAppearance = Appearance269
+        Appearance270.TextHAlignAsString = "Center"
+        UltraGridColumn504.Header.Appearance = Appearance270
         UltraGridColumn504.Header.VisiblePosition = 11
         UltraGridColumn504.Width = 91
-        Appearance269.TextHAlignAsString = "Right"
-        UltraGridColumn505.CellAppearance = Appearance269
-        Appearance270.TextHAlignAsString = "Right"
-        UltraGridColumn505.Header.Appearance = Appearance270
+        Appearance271.TextHAlignAsString = "Right"
+        UltraGridColumn505.CellAppearance = Appearance271
+        Appearance272.TextHAlignAsString = "Right"
+        UltraGridColumn505.Header.Appearance = Appearance272
         UltraGridColumn505.Header.Caption = "P. Unit."
         UltraGridColumn505.Header.VisiblePosition = 13
         UltraGridColumn505.MaskInput = "{double:9.4}"
@@ -4925,9 +4961,9 @@ Partial Class frm_RegistroConsumoCombustible
         UltraGridColumn523.Header.VisiblePosition = 6
         UltraGridColumn523.Width = 72
         UltraGridColumn524.AllowGroupBy = Infragistics.Win.DefaultableBoolean.[True]
-        Appearance271.TextHAlignAsString = "Left"
-        Appearance271.TextVAlignAsString = "Middle"
-        UltraGridColumn524.CellAppearance = Appearance271
+        Appearance273.TextHAlignAsString = "Left"
+        Appearance273.TextVAlignAsString = "Middle"
+        UltraGridColumn524.CellAppearance = Appearance273
         UltraGridColumn524.Header.VisiblePosition = 12
         UltraGridColumn524.Hidden = True
         UltraGridColumn524.Width = 224
@@ -5009,9 +5045,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta39
         '
-        Appearance272.BackColor = System.Drawing.Color.Transparent
-        Appearance272.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta39.Appearance = Appearance272
+        Appearance274.BackColor = System.Drawing.Color.Transparent
+        Appearance274.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta39.Appearance = Appearance274
         Me.Etiqueta39.AutoSize = True
         Me.Etiqueta39.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta39.ForeColor = System.Drawing.Color.Black
@@ -5031,10 +5067,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnEliminar
         '
-        Appearance273.BackColor = System.Drawing.Color.Transparent
-        Appearance273.ForeColor = System.Drawing.Color.MidnightBlue
-        Appearance273.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
-        Me.btnEliminar.Appearance = Appearance273
+        Appearance275.BackColor = System.Drawing.Color.Transparent
+        Appearance275.ForeColor = System.Drawing.Color.MidnightBlue
+        Appearance275.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
+        Me.btnEliminar.Appearance = Appearance275
         Me.btnEliminar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEliminar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5048,9 +5084,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta44
         '
-        Appearance274.BackColor = System.Drawing.Color.Transparent
-        Appearance274.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta44.Appearance = Appearance274
+        Appearance276.BackColor = System.Drawing.Color.Transparent
+        Appearance276.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta44.Appearance = Appearance276
         Me.Etiqueta44.AutoSize = True
         Me.Etiqueta44.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta44.ForeColor = System.Drawing.Color.Black
@@ -5070,9 +5106,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnLimpiar
         '
-        Appearance275.ForeColor = System.Drawing.Color.MidnightBlue
-        Appearance275.Image = Global.ISL.Win.My.Resources.Resources.content_reorder
-        Me.btnLimpiar.Appearance = Appearance275
+        Appearance277.ForeColor = System.Drawing.Color.MidnightBlue
+        Appearance277.Image = Global.ISL.Win.My.Resources.Resources.content_reorder
+        Me.btnLimpiar.Appearance = Appearance277
         Me.btnLimpiar.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLimpiar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5086,9 +5122,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnGuardarPecsa
         '
-        Appearance276.ForeColor = System.Drawing.Color.MidnightBlue
-        Appearance276.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        Me.btnGuardarPecsa.Appearance = Appearance276
+        Appearance278.ForeColor = System.Drawing.Color.MidnightBlue
+        Appearance278.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        Me.btnGuardarPecsa.Appearance = Appearance278
         Me.btnGuardarPecsa.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnGuardarPecsa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnGuardarPecsa.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5102,8 +5138,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta38
         '
-        Appearance277.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta38.Appearance = Appearance277
+        Appearance279.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta38.Appearance = Appearance279
         Me.Etiqueta38.AutoSize = True
         Me.Etiqueta38.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta38.ForeColor = System.Drawing.Color.MidnightBlue
@@ -5115,8 +5151,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'Etiqueta28
         '
-        Appearance278.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta28.Appearance = Appearance278
+        Appearance280.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta28.Appearance = Appearance280
         Me.Etiqueta28.AutoSize = True
         Me.Etiqueta28.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta28.ForeColor = System.Drawing.Color.MidnightBlue
@@ -5152,9 +5188,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'etiGenerada
         '
-        Appearance279.BackColor = System.Drawing.Color.Transparent
-        Appearance279.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.etiGenerada.Appearance = Appearance279
+        Appearance281.BackColor = System.Drawing.Color.Transparent
+        Appearance281.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.etiGenerada.Appearance = Appearance281
         Me.etiGenerada.AutoSize = True
         Me.etiGenerada.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiGenerada.ForeColor = System.Drawing.Color.Black
@@ -5174,35 +5210,35 @@ Partial Class frm_RegistroConsumoCombustible
         'Grid_Vehiculos
         '
         Me.Grid_Vehiculos.DataSource = Me.odCombo
-        Appearance280.TextHAlignAsString = "Left"
-        Appearance280.TextVAlignAsString = "Middle"
-        UltraGridColumn535.CellAppearance = Appearance280
+        Appearance282.TextHAlignAsString = "Left"
+        Appearance282.TextVAlignAsString = "Middle"
+        UltraGridColumn535.CellAppearance = Appearance282
         UltraGridColumn535.Header.VisiblePosition = 0
         UltraGridColumn535.Hidden = True
-        Appearance281.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance281.TextHAlignAsString = "Left"
-        Appearance281.TextVAlignAsString = "Middle"
-        UltraGridColumn536.CellAppearance = Appearance281
-        Appearance282.TextHAlignAsString = "Center"
-        UltraGridColumn536.Header.Appearance = Appearance282
+        Appearance283.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance283.TextHAlignAsString = "Left"
+        Appearance283.TextVAlignAsString = "Middle"
+        UltraGridColumn536.CellAppearance = Appearance283
+        Appearance284.TextHAlignAsString = "Center"
+        UltraGridColumn536.Header.Appearance = Appearance284
         UltraGridColumn536.Header.Caption = "Placa"
         UltraGridColumn536.Header.VisiblePosition = 3
         UltraGridColumn536.MaxWidth = 300
         UltraGridColumn536.Width = 232
-        Appearance283.TextHAlignAsString = "Left"
-        Appearance283.TextVAlignAsString = "Middle"
-        UltraGridColumn537.CellAppearance = Appearance283
+        Appearance285.TextHAlignAsString = "Left"
+        Appearance285.TextVAlignAsString = "Middle"
+        UltraGridColumn537.CellAppearance = Appearance285
         UltraGridColumn537.Header.VisiblePosition = 2
         UltraGridColumn537.Hidden = True
         UltraGridColumn537.Width = 195
-        Appearance284.TextHAlignAsString = "Center"
-        Appearance284.TextVAlignAsString = "Middle"
-        UltraGridColumn547.CellAppearance = Appearance284
+        Appearance286.TextHAlignAsString = "Center"
+        Appearance286.TextVAlignAsString = "Middle"
+        UltraGridColumn547.CellAppearance = Appearance286
         UltraGridColumn547.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn547.DataType = GetType(Boolean)
         UltraGridColumn547.DefaultCellValue = False
-        Appearance285.TextHAlignAsString = "Center"
-        UltraGridColumn547.Header.Appearance = Appearance285
+        Appearance287.TextHAlignAsString = "Center"
+        UltraGridColumn547.Header.Appearance = Appearance287
         UltraGridColumn547.Header.Caption = "Sel."
         UltraGridColumn547.Header.CheckBoxSynchronization = Infragistics.Win.UltraWinGrid.HeaderCheckBoxSynchronization.None
         UltraGridColumn547.Header.CheckBoxVisibility = Infragistics.Win.UltraWinGrid.HeaderCheckBoxVisibility.Always
@@ -5240,35 +5276,35 @@ Partial Class frm_RegistroConsumoCombustible
         'Grid_Pilotos
         '
         Me.Grid_Pilotos.DataSource = Me.odCombo
-        Appearance286.TextHAlignAsString = "Left"
-        Appearance286.TextVAlignAsString = "Middle"
-        UltraGridColumn539.CellAppearance = Appearance286
+        Appearance288.TextHAlignAsString = "Left"
+        Appearance288.TextVAlignAsString = "Middle"
+        UltraGridColumn539.CellAppearance = Appearance288
         UltraGridColumn539.Header.VisiblePosition = 0
         UltraGridColumn539.Hidden = True
-        Appearance287.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance287.TextHAlignAsString = "Left"
-        Appearance287.TextVAlignAsString = "Middle"
-        UltraGridColumn540.CellAppearance = Appearance287
-        Appearance288.TextHAlignAsString = "Center"
-        UltraGridColumn540.Header.Appearance = Appearance288
+        Appearance289.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance289.TextHAlignAsString = "Left"
+        Appearance289.TextVAlignAsString = "Middle"
+        UltraGridColumn540.CellAppearance = Appearance289
+        Appearance290.TextHAlignAsString = "Center"
+        UltraGridColumn540.Header.Appearance = Appearance290
         UltraGridColumn540.Header.Caption = "Piloto/Copiloto"
         UltraGridColumn540.Header.VisiblePosition = 3
         UltraGridColumn540.MaxWidth = 300
         UltraGridColumn540.Width = 232
-        Appearance289.TextHAlignAsString = "Left"
-        Appearance289.TextVAlignAsString = "Middle"
-        UltraGridColumn541.CellAppearance = Appearance289
+        Appearance291.TextHAlignAsString = "Left"
+        Appearance291.TextVAlignAsString = "Middle"
+        UltraGridColumn541.CellAppearance = Appearance291
         UltraGridColumn541.Header.VisiblePosition = 2
         UltraGridColumn541.Hidden = True
         UltraGridColumn541.Width = 195
-        Appearance290.TextHAlignAsString = "Center"
-        Appearance290.TextVAlignAsString = "Middle"
-        UltraGridColumn548.CellAppearance = Appearance290
+        Appearance292.TextHAlignAsString = "Center"
+        Appearance292.TextVAlignAsString = "Middle"
+        UltraGridColumn548.CellAppearance = Appearance292
         UltraGridColumn548.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn548.DataType = GetType(Boolean)
         UltraGridColumn548.DefaultCellValue = False
-        Appearance291.TextHAlignAsString = "Center"
-        UltraGridColumn548.Header.Appearance = Appearance291
+        Appearance293.TextHAlignAsString = "Center"
+        UltraGridColumn548.Header.Appearance = Appearance293
         UltraGridColumn548.Header.Caption = "Sel."
         UltraGridColumn548.Header.CheckBoxSynchronization = Infragistics.Win.UltraWinGrid.HeaderCheckBoxSynchronization.None
         UltraGridColumn548.Header.CheckBoxVisibility = Infragistics.Win.UltraWinGrid.HeaderCheckBoxVisibility.Always
@@ -5306,35 +5342,35 @@ Partial Class frm_RegistroConsumoCombustible
         'Grid_TipoeVeh
         '
         Me.Grid_TipoeVeh.DataSource = Me.odCombo
-        Appearance292.TextHAlignAsString = "Left"
-        Appearance292.TextVAlignAsString = "Middle"
-        UltraGridColumn543.CellAppearance = Appearance292
+        Appearance294.TextHAlignAsString = "Left"
+        Appearance294.TextVAlignAsString = "Middle"
+        UltraGridColumn543.CellAppearance = Appearance294
         UltraGridColumn543.Header.VisiblePosition = 0
         UltraGridColumn543.Hidden = True
-        Appearance293.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance293.TextHAlignAsString = "Left"
-        Appearance293.TextVAlignAsString = "Middle"
-        UltraGridColumn544.CellAppearance = Appearance293
-        Appearance294.TextHAlignAsString = "Center"
-        UltraGridColumn544.Header.Appearance = Appearance294
+        Appearance295.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance295.TextHAlignAsString = "Left"
+        Appearance295.TextVAlignAsString = "Middle"
+        UltraGridColumn544.CellAppearance = Appearance295
+        Appearance296.TextHAlignAsString = "Center"
+        UltraGridColumn544.Header.Appearance = Appearance296
         UltraGridColumn544.Header.Caption = "Tipo Vehículo"
         UltraGridColumn544.Header.VisiblePosition = 3
         UltraGridColumn544.MaxWidth = 300
         UltraGridColumn544.Width = 232
-        Appearance295.TextHAlignAsString = "Left"
-        Appearance295.TextVAlignAsString = "Middle"
-        UltraGridColumn545.CellAppearance = Appearance295
+        Appearance297.TextHAlignAsString = "Left"
+        Appearance297.TextVAlignAsString = "Middle"
+        UltraGridColumn545.CellAppearance = Appearance297
         UltraGridColumn545.Header.VisiblePosition = 2
         UltraGridColumn545.Hidden = True
         UltraGridColumn545.Width = 195
-        Appearance296.TextHAlignAsString = "Center"
-        Appearance296.TextVAlignAsString = "Middle"
-        UltraGridColumn549.CellAppearance = Appearance296
+        Appearance298.TextHAlignAsString = "Center"
+        Appearance298.TextVAlignAsString = "Middle"
+        UltraGridColumn549.CellAppearance = Appearance298
         UltraGridColumn549.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn549.DataType = GetType(Boolean)
         UltraGridColumn549.DefaultCellValue = False
-        Appearance297.TextHAlignAsString = "Center"
-        UltraGridColumn549.Header.Appearance = Appearance297
+        Appearance299.TextHAlignAsString = "Center"
+        UltraGridColumn549.Header.Appearance = Appearance299
         UltraGridColumn549.Header.Caption = "Sel."
         UltraGridColumn549.Header.CheckBoxSynchronization = Infragistics.Win.UltraWinGrid.HeaderCheckBoxSynchronization.None
         UltraGridColumn549.Header.CheckBoxVisibility = Infragistics.Win.UltraWinGrid.HeaderCheckBoxVisibility.Always
@@ -5372,35 +5408,35 @@ Partial Class frm_RegistroConsumoCombustible
         'Grid_Zona
         '
         Me.Grid_Zona.DataSource = Me.odCombo
-        Appearance298.TextHAlignAsString = "Left"
-        Appearance298.TextVAlignAsString = "Middle"
-        UltraGridColumn29.CellAppearance = Appearance298
+        Appearance300.TextHAlignAsString = "Left"
+        Appearance300.TextVAlignAsString = "Middle"
+        UltraGridColumn29.CellAppearance = Appearance300
         UltraGridColumn29.Header.VisiblePosition = 0
         UltraGridColumn29.Hidden = True
-        Appearance299.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Appearance299.TextHAlignAsString = "Left"
-        Appearance299.TextVAlignAsString = "Middle"
-        UltraGridColumn30.CellAppearance = Appearance299
-        Appearance300.TextHAlignAsString = "Center"
-        UltraGridColumn30.Header.Appearance = Appearance300
+        Appearance301.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Appearance301.TextHAlignAsString = "Left"
+        Appearance301.TextVAlignAsString = "Middle"
+        UltraGridColumn30.CellAppearance = Appearance301
+        Appearance302.TextHAlignAsString = "Center"
+        UltraGridColumn30.Header.Appearance = Appearance302
         UltraGridColumn30.Header.Caption = "Flota"
         UltraGridColumn30.Header.VisiblePosition = 3
         UltraGridColumn30.MaxWidth = 300
         UltraGridColumn30.Width = 232
-        Appearance301.TextHAlignAsString = "Left"
-        Appearance301.TextVAlignAsString = "Middle"
-        UltraGridColumn31.CellAppearance = Appearance301
+        Appearance303.TextHAlignAsString = "Left"
+        Appearance303.TextVAlignAsString = "Middle"
+        UltraGridColumn31.CellAppearance = Appearance303
         UltraGridColumn31.Header.VisiblePosition = 2
         UltraGridColumn31.Hidden = True
         UltraGridColumn31.Width = 195
-        Appearance302.TextHAlignAsString = "Center"
-        Appearance302.TextVAlignAsString = "Middle"
-        UltraGridColumn550.CellAppearance = Appearance302
+        Appearance304.TextHAlignAsString = "Center"
+        Appearance304.TextVAlignAsString = "Middle"
+        UltraGridColumn550.CellAppearance = Appearance304
         UltraGridColumn550.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn550.DataType = GetType(Boolean)
         UltraGridColumn550.DefaultCellValue = False
-        Appearance303.TextHAlignAsString = "Center"
-        UltraGridColumn550.Header.Appearance = Appearance303
+        Appearance305.TextHAlignAsString = "Center"
+        UltraGridColumn550.Header.Appearance = Appearance305
         UltraGridColumn550.Header.Caption = "Sel."
         UltraGridColumn550.Header.CheckBoxSynchronization = Infragistics.Win.UltraWinGrid.HeaderCheckBoxSynchronization.None
         UltraGridColumn550.Header.CheckBoxVisibility = Infragistics.Win.UltraWinGrid.HeaderCheckBoxVisibility.Always
@@ -5497,8 +5533,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'FechaHasta
         '
-        Appearance304.ForeColor = System.Drawing.Color.SteelBlue
-        Me.FechaHasta.Appearance = Appearance304
+        Appearance306.ForeColor = System.Drawing.Color.SteelBlue
+        Me.FechaHasta.Appearance = Appearance306
         Me.FechaHasta.DateTime = New Date(2012, 2, 5, 0, 0, 0, 0)
         Me.FechaHasta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.FechaHasta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5511,8 +5547,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'FechaDesde
         '
-        Appearance305.ForeColor = System.Drawing.Color.SteelBlue
-        Me.FechaDesde.Appearance = Appearance305
+        Appearance307.ForeColor = System.Drawing.Color.SteelBlue
+        Me.FechaDesde.Appearance = Appearance307
         Me.FechaDesde.DateTime = New Date(2012, 2, 5, 0, 0, 0, 0)
         Me.FechaDesde.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.FechaDesde.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5617,9 +5653,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'grFiltro
         '
-        Appearance306.BackColor = System.Drawing.Color.White
-        Appearance306.BackColor2 = System.Drawing.Color.White
-        Me.grFiltro.ContentAreaAppearance = Appearance306
+        Appearance308.BackColor = System.Drawing.Color.White
+        Appearance308.BackColor2 = System.Drawing.Color.White
+        Me.grFiltro.ContentAreaAppearance = Appearance308
         Me.grFiltro.Controls.Add(Me.UltraGroupBox6)
         Me.grFiltro.Controls.Add(Me.ficFiltros)
         Me.grFiltro.Dock = System.Windows.Forms.DockStyle.Fill
@@ -5631,9 +5667,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'UltraGroupBox6
         '
-        Appearance307.BackColor = System.Drawing.Color.White
-        Appearance307.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption
-        Me.UltraGroupBox6.ContentAreaAppearance = Appearance307
+        Appearance309.BackColor = System.Drawing.Color.White
+        Appearance309.BackColor2 = System.Drawing.SystemColors.GradientActiveCaption
+        Me.UltraGroupBox6.ContentAreaAppearance = Appearance309
         Me.UltraGroupBox6.Controls.Add(Me.ndKmxVuelta)
         Me.UltraGroupBox6.Controls.Add(Me.Label7)
         Me.UltraGroupBox6.Controls.Add(Me.ColorKmVuelta)
@@ -5665,8 +5701,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'ndKmxVuelta
         '
-        Appearance308.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.ndKmxVuelta.Appearance = Appearance308
+        Appearance310.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.ndKmxVuelta.Appearance = Appearance310
         Me.ndKmxVuelta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.ndKmxVuelta.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ndKmxVuelta.ForeColor = System.Drawing.Color.MidnightBlue
@@ -5719,8 +5755,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_RendMenor
         '
-        Appearance309.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.nd_RendMenor.Appearance = Appearance309
+        Appearance311.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.nd_RendMenor.Appearance = Appearance311
         Me.nd_RendMenor.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_RendMenor.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nd_RendMenor.ForeColor = System.Drawing.Color.MidnightBlue
@@ -5757,8 +5793,8 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'nd_RendMayor
         '
-        Appearance310.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.nd_RendMayor.Appearance = Appearance310
+        Appearance312.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.nd_RendMayor.Appearance = Appearance312
         Me.nd_RendMayor.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nd_RendMayor.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nd_RendMayor.ForeColor = System.Drawing.Color.MidnightBlue
@@ -5813,9 +5849,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'chkColores
         '
-        Appearance311.BackColor = System.Drawing.Color.Transparent
-        Appearance311.ForeColor = System.Drawing.Color.Navy
-        Me.chkColores.Appearance = Appearance311
+        Appearance313.BackColor = System.Drawing.Color.Transparent
+        Appearance313.ForeColor = System.Drawing.Color.Navy
+        Me.chkColores.Appearance = Appearance313
         Me.chkColores.BackColor = System.Drawing.Color.Transparent
         Me.chkColores.BackColorInternal = System.Drawing.Color.Transparent
         Me.chkColores.Checked = True
@@ -5828,9 +5864,9 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'btnActualizaRend
         '
-        Appearance312.ForeColor = System.Drawing.Color.MidnightBlue
-        Appearance312.Image = "266.png"
-        Me.btnActualizaRend.Appearance = Appearance312
+        Appearance314.ForeColor = System.Drawing.Color.MidnightBlue
+        Appearance314.Image = "266.png"
+        Me.btnActualizaRend.Appearance = Appearance314
         Me.btnActualizaRend.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnActualizaRend.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnActualizaRend.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -5845,10 +5881,10 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'chk_TanqNoAsoc
         '
-        Appearance313.ForeColor = System.Drawing.Color.Navy
-        Appearance313.TextHAlignAsString = "Center"
-        Appearance313.TextVAlignAsString = "Middle"
-        Me.chk_TanqNoAsoc.Appearance = Appearance313
+        Appearance315.ForeColor = System.Drawing.Color.Navy
+        Appearance315.TextHAlignAsString = "Center"
+        Appearance315.TextVAlignAsString = "Middle"
+        Me.chk_TanqNoAsoc.Appearance = Appearance315
         Me.chk_TanqNoAsoc.BackColor = System.Drawing.Color.Transparent
         Me.chk_TanqNoAsoc.BackColorInternal = System.Drawing.Color.Transparent
         Me.chk_TanqNoAsoc.BorderStyle = Infragistics.Win.UIElementBorderStyle.Etched
@@ -5893,57 +5929,57 @@ Partial Class frm_RegistroConsumoCombustible
         '
         'UltraGrid1
         '
-        Appearance314.BackColor = System.Drawing.SystemColors.Window
-        Appearance314.BorderColor = System.Drawing.SystemColors.InactiveCaption
-        Me.UltraGrid1.DisplayLayout.Appearance = Appearance314
+        Appearance316.BackColor = System.Drawing.SystemColors.Window
+        Appearance316.BorderColor = System.Drawing.SystemColors.InactiveCaption
+        Me.UltraGrid1.DisplayLayout.Appearance = Appearance316
         Me.UltraGrid1.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.UltraGrid1.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
-        Appearance315.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Appearance315.BackColor2 = System.Drawing.SystemColors.ControlDark
-        Appearance315.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical
-        Appearance315.BorderColor = System.Drawing.SystemColors.Window
-        Me.UltraGrid1.DisplayLayout.GroupByBox.Appearance = Appearance315
-        Appearance316.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.UltraGrid1.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance316
+        Appearance317.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Appearance317.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance317.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical
+        Appearance317.BorderColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.GroupByBox.Appearance = Appearance317
+        Appearance318.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.UltraGrid1.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance318
         Me.UltraGrid1.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Appearance317.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Appearance317.BackColor2 = System.Drawing.SystemColors.Control
-        Appearance317.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
-        Appearance317.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.UltraGrid1.DisplayLayout.GroupByBox.PromptAppearance = Appearance317
+        Appearance319.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Appearance319.BackColor2 = System.Drawing.SystemColors.Control
+        Appearance319.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance319.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.UltraGrid1.DisplayLayout.GroupByBox.PromptAppearance = Appearance319
         Me.UltraGrid1.DisplayLayout.MaxColScrollRegions = 1
         Me.UltraGrid1.DisplayLayout.MaxRowScrollRegions = 1
-        Appearance318.BackColor = System.Drawing.SystemColors.Window
-        Appearance318.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.UltraGrid1.DisplayLayout.Override.ActiveCellAppearance = Appearance318
-        Appearance319.BackColor = System.Drawing.SystemColors.Highlight
-        Appearance319.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.UltraGrid1.DisplayLayout.Override.ActiveRowAppearance = Appearance319
+        Appearance320.BackColor = System.Drawing.SystemColors.Window
+        Appearance320.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.UltraGrid1.DisplayLayout.Override.ActiveCellAppearance = Appearance320
+        Appearance321.BackColor = System.Drawing.SystemColors.Highlight
+        Appearance321.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.UltraGrid1.DisplayLayout.Override.ActiveRowAppearance = Appearance321
         Me.UltraGrid1.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
         Me.UltraGrid1.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
-        Appearance320.BackColor = System.Drawing.SystemColors.Window
-        Me.UltraGrid1.DisplayLayout.Override.CardAreaAppearance = Appearance320
-        Appearance321.BorderColor = System.Drawing.Color.Silver
-        Appearance321.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter
-        Me.UltraGrid1.DisplayLayout.Override.CellAppearance = Appearance321
+        Appearance322.BackColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.Override.CardAreaAppearance = Appearance322
+        Appearance323.BorderColor = System.Drawing.Color.Silver
+        Appearance323.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter
+        Me.UltraGrid1.DisplayLayout.Override.CellAppearance = Appearance323
         Me.UltraGrid1.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         Me.UltraGrid1.DisplayLayout.Override.CellPadding = 0
-        Appearance322.BackColor = System.Drawing.SystemColors.Control
-        Appearance322.BackColor2 = System.Drawing.SystemColors.ControlDark
-        Appearance322.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element
-        Appearance322.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
-        Appearance322.BorderColor = System.Drawing.SystemColors.Window
-        Me.UltraGrid1.DisplayLayout.Override.GroupByRowAppearance = Appearance322
-        Appearance323.TextHAlignAsString = "Left"
-        Me.UltraGrid1.DisplayLayout.Override.HeaderAppearance = Appearance323
+        Appearance324.BackColor = System.Drawing.SystemColors.Control
+        Appearance324.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance324.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element
+        Appearance324.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance324.BorderColor = System.Drawing.SystemColors.Window
+        Me.UltraGrid1.DisplayLayout.Override.GroupByRowAppearance = Appearance324
+        Appearance325.TextHAlignAsString = "Left"
+        Me.UltraGrid1.DisplayLayout.Override.HeaderAppearance = Appearance325
         Me.UltraGrid1.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
         Me.UltraGrid1.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
-        Appearance324.BackColor = System.Drawing.SystemColors.Window
-        Appearance324.BorderColor = System.Drawing.Color.Silver
-        Me.UltraGrid1.DisplayLayout.Override.RowAppearance = Appearance324
+        Appearance326.BackColor = System.Drawing.SystemColors.Window
+        Appearance326.BorderColor = System.Drawing.Color.Silver
+        Me.UltraGrid1.DisplayLayout.Override.RowAppearance = Appearance326
         Me.UltraGrid1.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Appearance325.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.UltraGrid1.DisplayLayout.Override.TemplateAddRowAppearance = Appearance325
+        Appearance327.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.UltraGrid1.DisplayLayout.Override.TemplateAddRowAppearance = Appearance327
         Me.UltraGrid1.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.UltraGrid1.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.UltraGrid1.Location = New System.Drawing.Point(749, 6)
@@ -6074,6 +6110,7 @@ Partial Class frm_RegistroConsumoCombustible
         CType(Me.ag_DatosGrifo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ag_DatosGrifo.ResumeLayout(False)
         Me.ag_DatosGrifo.PerformLayout()
+        CType(Me.cboSubAlmacen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtp_FecViaje, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.decStock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboDireccion, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6461,4 +6498,6 @@ Partial Class frm_RegistroConsumoCombustible
     Friend WithEvents VerISL As System.Windows.Forms.CheckBox
     Friend WithEvents chk_Credito As System.Windows.Forms.CheckBox
     Friend WithEvents ugb_Espera As ISL.Win.Espere
+    Friend WithEvents cboSubAlmacen As Controles.ComboMaestros
+    Friend WithEvents Etiqueta48 As Controles.Etiqueta
 End Class

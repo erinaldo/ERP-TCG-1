@@ -129,7 +129,7 @@ Public Class d_Almacen
                     For Each _oeSubAlm In .leSubAlmacen
                         If _oeSubAlm.TipoOperacion.Trim Is Nothing Then Continue For
                         If _oeSubAlm.TipoOperacion.Trim = "" Then Continue For
-                        _oeSubAlm.IdAlmacen = .Id
+                        _oeSubAlm.IdAlmacen = stResultado(0) '@0001
                         _oeSubAlm.PrefijoID = oeAlmacen.PrefijoID '@0001
                         odSubAlmacen.Guardar(_oeSubAlm)
                     Next

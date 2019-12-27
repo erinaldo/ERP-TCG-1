@@ -615,6 +615,8 @@ Partial Class frm_OrdenCompra
         Dim UltraDataColumn234 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSucursal")
         Dim UltraDataColumn235 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdTurno")
         Dim UltraDataColumn236 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdCanalVenta")
+        Dim Appearance192 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Codigo de Referencia Viaje Programado", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("btnEditarCliente")
         Dim Appearance193 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("btnNuevoCliente")
@@ -936,10 +938,8 @@ Partial Class frm_OrdenCompra
         Dim Appearance237 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance192 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Codigo de Referencia Viaje Programado", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Codigo de Referencia Orden Venta", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Indicador datos Empresa SISTEMA", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Me.UltraTabPageControl5 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griListaRequerimientos = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.odRequerimientos = New ISL.Controles.OrigenDatos(Me.components)
@@ -985,6 +985,7 @@ Partial Class frm_OrdenCompra
         Me.Agrupacion3 = New ISL.Controles.Agrupacion(Me.components)
         Me.cb_FactServ = New System.Windows.Forms.CheckBox()
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.txtIdViaje = New ISL.Controles.Texto(Me.components)
         Me.cboCliente = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.UltraLabel34 = New Infragistics.Win.Misc.UltraLabel()
         Me.cboTurnoAtencion = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
@@ -1152,8 +1153,7 @@ Partial Class frm_OrdenCompra
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.ugb_Espera = New ISL.Win.Espere()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.txtIdViaje = New ISL.Controles.Texto(Me.components)
-        Me.txtIdOrdenVenta = New ISL.Controles.Texto(Me.components)
+        Me.ChIndEMP2 = New ISL.Controles.Chequear(Me.components)
         Me.UltraTabPageControl5.SuspendLayout()
         CType(Me.griListaRequerimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.odRequerimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1191,6 +1191,7 @@ Partial Class frm_OrdenCompra
         Me.Agrupacion3.SuspendLayout()
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox1.SuspendLayout()
+        CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTurnoAtencion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTracto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1291,8 +1292,7 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficOrdenCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficOrdenCompra.SuspendLayout()
-        CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtIdOrdenVenta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl5
@@ -2774,7 +2774,7 @@ Partial Class frm_OrdenCompra
         '
         'UltraGroupBox1
         '
-        Me.UltraGroupBox1.Controls.Add(Me.txtIdOrdenVenta)
+        Me.UltraGroupBox1.Controls.Add(Me.ChIndEMP2)
         Me.UltraGroupBox1.Controls.Add(Me.txtIdViaje)
         Me.UltraGroupBox1.Controls.Add(Me.cboCliente)
         Me.UltraGroupBox1.Controls.Add(Me.UltraLabel34)
@@ -2793,6 +2793,23 @@ Partial Class frm_OrdenCompra
         Me.UltraGroupBox1.Size = New System.Drawing.Size(450, 110)
         Me.UltraGroupBox1.TabIndex = 40
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'txtIdViaje
+        '
+        Appearance192.TextHAlignAsString = "Left"
+        Appearance192.TextVAlignAsString = "Middle"
+        Me.txtIdViaje.Appearance = Appearance192
+        Me.txtIdViaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtIdViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.txtIdViaje.Enabled = False
+        Me.txtIdViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtIdViaje.Location = New System.Drawing.Point(344, 11)
+        Me.txtIdViaje.Name = "txtIdViaje"
+        Me.txtIdViaje.Size = New System.Drawing.Size(100, 21)
+        Me.txtIdViaje.TabIndex = 53
+        UltraToolTipInfo2.ToolTipText = "Codigo de Referencia Viaje Programado"
+        UltraToolTipInfo2.ToolTipTitle = "Informacion del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtIdViaje, UltraToolTipInfo2)
         '
         'cboCliente
         '
@@ -4630,7 +4647,7 @@ Partial Class frm_OrdenCompra
         Me.chkRuc2.Appearance = Appearance128
         Me.chkRuc2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkRuc2.ForeColor = System.Drawing.Color.Black
-        Me.chkRuc2.Location = New System.Drawing.Point(318, 56)
+        Me.chkRuc2.Location = New System.Drawing.Point(323, 53)
         Me.chkRuc2.Name = "chkRuc2"
         Me.chkRuc2.Size = New System.Drawing.Size(44, 20)
         Me.chkRuc2.TabIndex = 10
@@ -4659,9 +4676,9 @@ Partial Class frm_OrdenCompra
         Me.cboProveedorL.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
         Me.cboProveedorL.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboProveedorL.DropDownWidth = 400
-        Me.cboProveedorL.Location = New System.Drawing.Point(76, 52)
+        Me.cboProveedorL.Location = New System.Drawing.Point(68, 52)
         Me.cboProveedorL.Name = "cboProveedorL"
-        Me.cboProveedorL.Size = New System.Drawing.Size(233, 22)
+        Me.cboProveedorL.Size = New System.Drawing.Size(250, 22)
         Me.cboProveedorL.TabIndex = 9
         '
         'cboEstadoOrden
@@ -4722,7 +4739,7 @@ Partial Class frm_OrdenCompra
         Me.UltraLabel16.Appearance = Appearance132
         Me.UltraLabel16.AutoSize = True
         Me.UltraLabel16.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel16.Location = New System.Drawing.Point(10, 56)
+        Me.UltraLabel16.Location = New System.Drawing.Point(4, 56)
         Me.UltraLabel16.Name = "UltraLabel16"
         Me.UltraLabel16.Size = New System.Drawing.Size(60, 15)
         Me.UltraLabel16.TabIndex = 8
@@ -5375,39 +5392,22 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraToolTipManager1.ContainingControl = Me
         '
-        'txtIdViaje
+        'ChIndEMP2
         '
-        Appearance192.TextHAlignAsString = "Left"
-        Appearance192.TextVAlignAsString = "Middle"
-        Me.txtIdViaje.Appearance = Appearance192
-        Me.txtIdViaje.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtIdViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtIdViaje.Enabled = False
-        Me.txtIdViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdViaje.Location = New System.Drawing.Point(344, 11)
-        Me.txtIdViaje.Name = "txtIdViaje"
-        Me.txtIdViaje.Size = New System.Drawing.Size(100, 21)
-        Me.txtIdViaje.TabIndex = 53
-        UltraToolTipInfo2.ToolTipText = "Codigo de Referencia Viaje Programado"
-        UltraToolTipInfo2.ToolTipTitle = "Informacion del Sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtIdViaje, UltraToolTipInfo2)
-        '
-        'txtIdOrdenVenta
-        '
-        Appearance108.TextHAlignAsString = "Left"
-        Appearance108.TextVAlignAsString = "Middle"
-        Me.txtIdOrdenVenta.Appearance = Appearance108
-        Me.txtIdOrdenVenta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtIdOrdenVenta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtIdOrdenVenta.Enabled = False
-        Me.txtIdOrdenVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdOrdenVenta.Location = New System.Drawing.Point(344, 83)
-        Me.txtIdOrdenVenta.Name = "txtIdOrdenVenta"
-        Me.txtIdOrdenVenta.Size = New System.Drawing.Size(100, 21)
-        Me.txtIdOrdenVenta.TabIndex = 54
-        UltraToolTipInfo1.ToolTipText = "Codigo de Referencia Orden Venta"
+        Appearance108.ForeColor = System.Drawing.Color.Navy
+        Me.ChIndEMP2.Appearance = Appearance108
+        Me.ChIndEMP2.BackColor = System.Drawing.Color.Transparent
+        Me.ChIndEMP2.BackColorInternal = System.Drawing.Color.Transparent
+        Me.ChIndEMP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChIndEMP2.ForeColor = System.Drawing.Color.Black
+        Me.ChIndEMP2.Location = New System.Drawing.Point(344, 84)
+        Me.ChIndEMP2.Name = "ChIndEMP2"
+        Me.ChIndEMP2.Size = New System.Drawing.Size(47, 20)
+        Me.ChIndEMP2.TabIndex = 54
+        Me.ChIndEMP2.Text = "EMP"
+        UltraToolTipInfo1.ToolTipText = "Indicador datos Empresa SISTEMA"
         UltraToolTipInfo1.ToolTipTitle = "Informacion del Sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtIdOrdenVenta, UltraToolTipInfo1)
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ChIndEMP2, UltraToolTipInfo1)
         '
         'frm_OrdenCompra
         '
@@ -5458,6 +5458,7 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout()
+        CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTurnoAtencion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTracto, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5567,8 +5568,7 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficOrdenCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficOrdenCompra.ResumeLayout(False)
-        CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtIdOrdenVenta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -5785,5 +5785,5 @@ Partial Class frm_OrdenCompra
     Friend WithEvents UltraLabel34 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents cboCliente As Infragistics.Win.UltraWinEditors.UltraComboEditor
     Friend WithEvents txtIdViaje As Controles.Texto
-    Friend WithEvents txtIdOrdenVenta As Controles.Texto
+    Friend WithEvents ChIndEMP2 As Controles.Chequear
 End Class

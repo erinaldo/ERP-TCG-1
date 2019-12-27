@@ -3929,6 +3929,15 @@ Public Class frm_OrdenCompra
         VentanaHoraria()
     End Sub
 
+    Private Sub ChIndEMP2_CheckedChanged(sender As Object, e As EventArgs) Handles ChIndEMP2.CheckedChanged
+        If ChIndEMP2.Checked Then
+            ListarProveedores(uc_Transportista, gs_IdClienteProveedorSistema, 0)
+            uc_Transportista.Value = gs_IdClienteProveedorSistema
+        Else
+            uc_Transportista.Value = ""
+        End If
+    End Sub
+
     '@001
     Private Sub TSM_Boleta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_Boleta.Click
         GenerarDocumento("BOLETA")

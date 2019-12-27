@@ -356,7 +356,7 @@ Public Class frm_Almacen
     Public Overrides Sub Editar()
         Try
             Mostrar()
-            oeAlmacen.TipoOperacion = ""
+            oeAlmacen.TipoOperacion = "A"
             txtCodigo.Focus()
             Operacion = "Editar"
             MyBase.Editar()
