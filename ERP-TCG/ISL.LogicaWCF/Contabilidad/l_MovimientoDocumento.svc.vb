@@ -5125,6 +5125,7 @@ Public Class l_MovimientoDocumento
                                 With oeAsientoMov
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                     .PrefijoID = oeMovDocumento.PrefijoID
+                                    .IdCuentaContable = oeAux.IdCuentaContable ' 26/12 add by Cess
                                     Select Case Left(oeAux.Cuenta.Trim, 1)
                                         Case "1"
                                             .IdCuentaContable = IIf(IdCtaCtble16321 <> "", IdCtaCtble16321, oeAux.IdCuentaContable.Trim)

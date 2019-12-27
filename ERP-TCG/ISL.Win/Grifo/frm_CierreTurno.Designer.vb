@@ -421,7 +421,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox14)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(972, 598)
         '
@@ -476,6 +476,7 @@ Partial Class frm_CierreTurno
         Appearance5.TextHAlignAsString = "Right"
         UltraGridColumn372.CellAppearance = Appearance5
         UltraGridColumn372.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        UltraGridColumn372.Format = "#,###,###,##0.00"
         UltraGridColumn372.Header.VisiblePosition = 12
         UltraGridColumn372.MaskInput = "{double:9.2}"
         Appearance6.TextHAlignAsString = "Right"
@@ -546,7 +547,7 @@ Partial Class frm_CierreTurno
         '
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox7)
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox6)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(972, 598)
         '
@@ -588,15 +589,20 @@ Partial Class frm_CierreTurno
         Appearance12.TextHAlignAsString = "Right"
         UltraGridColumn10.CellAppearance = Appearance12
         UltraGridColumn10.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        UltraGridColumn10.Format = "#,###,###,##0.00"
         UltraGridColumn10.Header.VisiblePosition = 9
         UltraGridColumn10.MaskInput = "{double:9.2}"
         Appearance13.TextHAlignAsString = "Right"
         UltraGridColumn11.CellAppearance = Appearance13
+        UltraGridColumn11.Format = "#,###,###,##0.00"
         UltraGridColumn11.Header.VisiblePosition = 10
+        UltraGridColumn11.MaskInput = "{double:9.2}"
         Appearance14.TextHAlignAsString = "Right"
         UltraGridColumn12.CellAppearance = Appearance14
         UltraGridColumn12.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
+        UltraGridColumn12.Format = "#,###,###,##0.00"
         UltraGridColumn12.Header.VisiblePosition = 11
+        UltraGridColumn12.MaskInput = "{double:9.2}"
         UltraGridColumn13.Header.VisiblePosition = 12
         UltraGridColumn13.Hidden = True
         UltraGridColumn14.Header.VisiblePosition = 13
@@ -689,16 +695,19 @@ Partial Class frm_CierreTurno
         Appearance20.TextHAlignAsString = "Right"
         UltraGridColumn55.CellAppearance = Appearance20
         UltraGridColumn55.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        UltraGridColumn55.Format = "#,###,###,##0.00"
         UltraGridColumn55.Header.Caption = "V.Inicial "
         UltraGridColumn55.Header.VisiblePosition = 9
         UltraGridColumn55.MaskInput = "{double:9.2}"
         Appearance21.TextHAlignAsString = "Right"
         UltraGridColumn271.CellAppearance = Appearance21
+        UltraGridColumn271.Format = "#,###,###,##0.00"
         UltraGridColumn271.Header.VisiblePosition = 10
         UltraGridColumn271.MaskInput = "{double:9.2}"
         Appearance22.TextHAlignAsString = "Right"
         UltraGridColumn272.CellAppearance = Appearance22
         UltraGridColumn272.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
+        UltraGridColumn272.Format = "#,###,###,##0.00"
         UltraGridColumn272.Header.VisiblePosition = 11
         UltraGridColumn272.MaskInput = "{double:9.2}"
         UltraGridColumn273.Header.VisiblePosition = 12
@@ -921,6 +930,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn340.CellAppearance = Appearance36
         UltraGridColumn340.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn340.Header.VisiblePosition = 12
+        UltraGridColumn340.MaskInput = "{double:9.2}"
         UltraGridColumn341.Header.VisiblePosition = 13
         UltraGridColumn341.Hidden = True
         UltraGridColumn342.Header.VisiblePosition = 14
@@ -1013,12 +1023,15 @@ Partial Class frm_CierreTurno
         UltraGridColumn286.MaskInput = "{double:9.2}"
         UltraGridColumn287.Header.VisiblePosition = 10
         UltraGridColumn287.Hidden = True
+        UltraGridColumn287.MaskInput = "{double:9.2}"
         UltraGridColumn288.Header.VisiblePosition = 11
         UltraGridColumn288.Hidden = True
+        UltraGridColumn288.MaskInput = "{double:9.2}"
         Appearance43.TextHAlignAsString = "Right"
         UltraGridColumn289.CellAppearance = Appearance43
         UltraGridColumn289.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn289.Header.VisiblePosition = 12
+        UltraGridColumn289.MaskInput = "{double:9.2}"
         UltraGridColumn290.Header.VisiblePosition = 13
         UltraGridColumn290.Hidden = True
         UltraGridColumn291.Header.VisiblePosition = 14
@@ -1121,6 +1134,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn356.CellAppearance = Appearance49
         UltraGridColumn356.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn356.Header.VisiblePosition = 12
+        UltraGridColumn356.MaskInput = "{double:9.2}"
         UltraGridColumn357.Header.VisiblePosition = 13
         UltraGridColumn357.Hidden = True
         UltraGridColumn358.Header.VisiblePosition = 14

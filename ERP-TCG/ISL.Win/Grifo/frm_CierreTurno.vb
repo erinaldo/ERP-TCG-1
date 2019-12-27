@@ -567,7 +567,7 @@ Public Class frm_CierreTurno
                 Columna.Hidden = True
             Next
             .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
-            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Grupo").Width = 80 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
             .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
         End With
 
@@ -576,7 +576,7 @@ Public Class frm_CierreTurno
                 Columna.Hidden = True
             Next
             .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
-            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Grupo").Width = 80 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
             .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
         End With
 
@@ -584,9 +584,9 @@ Public Class frm_CierreTurno
             For Each Columna In .Columns
                 Columna.Hidden = True
             Next
-            .Columns("Grupo").Hidden = False : .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
-            .Columns("Grupo").Width = 60 : .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
-            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
+            .Columns("Descripcion").Hidden = False : .Columns("Concepto").Hidden = False : .Columns("ValorERP").Hidden = False
+            .Columns("Descripcion").Width = 60 : .Columns("Concepto").Width = 150 : .Columns("ValorERP").Width = 50
+            .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Concepto").Header.Caption = "Combustible" : .Columns("ValorERP").Header.Caption = "Importe"
         End With
     End Sub
 

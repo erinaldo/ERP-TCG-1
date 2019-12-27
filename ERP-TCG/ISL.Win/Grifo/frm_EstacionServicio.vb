@@ -92,7 +92,7 @@ Public Class frm_EstacionServicio
 
     Public Overrides Sub Guardar()
         Try
-            If cmb_Cliente.Value = "" Then Throw New Exception("Seleccione la empresa")
+            If IdTipoVenta <> "CALIBRACION" And cmb_Cliente.Text = "" Then Throw New Exception("Seleccione la empresa")
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
@@ -144,7 +144,6 @@ Public Class frm_EstacionServicio
     Public Function fc_Cargar_OrdenVenta() As Boolean
         Try
             udg_Detalle.UpdateData()
-            If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             With OrdenVenta
                 .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login
                 .Tipo = 2
@@ -152,7 +151,7 @@ Public Class frm_EstacionServicio
                 .TipoCambio = TipoCambio
                 .IndFactSer = True 'Revisar
                 .IdVendedorTrabajador = "" ' Trabajador
-                .IdEmpresa = cmb_Cliente.Value
+                .IdEmpresa = IIf(IdTipoVenta = "CALIBRACION", gs_IdClienteProveedorSistema, cmb_Cliente.Value)
                 .Fecha = ObtenerFechaServidor()
                 .IdMoneda = IdMoneda_Soles
                 .IdTipoPago = IdTipoPago
@@ -349,7 +348,7 @@ Public Class frm_EstacionServicio
             Dim olregistroinventario As New l_RegistroInventario
             Dim OrdenIngreso As New e_Orden, dOrden As New l_Orden
 
-            If IdTipoVenta <> "CALIBRACIONES" Then
+            If IdTipoVenta <> "CALIBRACION" Then
                 olregistroinventario.Guardar(ListaRegistroInventario)
             Else
                 With OrdenIngreso
@@ -1199,9 +1198,8 @@ Public Class frm_EstacionServicio
     Private Function mt_Generar_ConsumoCombustible() As Boolean
         Try
             '' Listar Asientos Modelo
-            pIdActividadNegocio = "1CH000000138" 'Registro Consumo Combustible
-            ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = pIdActividadNegocio})
-            loReferencia = olReferencia.Listar(New e_AsientoModelo_Referencia With {.TipoOperacion = "N", .Activo = True, .IdReferencia = pIdActividadNegocio})
+            ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1CH000000138"}) 'Registro Consumo Combustible
+            loReferencia = olReferencia.Listar(New e_AsientoModelo_Referencia With {.TipoOperacion = "N", .Activo = True, .IdReferencia = "1CH000000138"})
             dtReferencia = GeneraDTRef(loReferencia)
 
             For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
