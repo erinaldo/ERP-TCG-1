@@ -421,7 +421,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox14)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(972, 598)
         '
@@ -881,7 +881,7 @@ Partial Class frm_CierreTurno
         '
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox8)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(972, 598)
         '
@@ -889,9 +889,9 @@ Partial Class frm_CierreTurno
         '
         Me.UltraGroupBox9.Controls.Add(Me.udg_VentasAnuladas)
         Me.UltraGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraGroupBox9.Location = New System.Drawing.Point(409, 0)
+        Me.UltraGroupBox9.Location = New System.Drawing.Point(449, 0)
         Me.UltraGroupBox9.Name = "UltraGroupBox9"
-        Me.UltraGroupBox9.Size = New System.Drawing.Size(563, 598)
+        Me.UltraGroupBox9.Size = New System.Drawing.Size(523, 598)
         Me.UltraGroupBox9.TabIndex = 2
         Me.UltraGroupBox9.Text = "Ventas Anuladas"
         Me.UltraGroupBox9.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -977,7 +977,7 @@ Partial Class frm_CierreTurno
         Me.udg_VentasAnuladas.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.udg_VentasAnuladas.Location = New System.Drawing.Point(3, 17)
         Me.udg_VentasAnuladas.Name = "udg_VentasAnuladas"
-        Me.udg_VentasAnuladas.Size = New System.Drawing.Size(557, 578)
+        Me.udg_VentasAnuladas.Size = New System.Drawing.Size(517, 578)
         Me.udg_VentasAnuladas.TabIndex = 2
         Me.udg_VentasAnuladas.Text = "Grilla2"
         '
@@ -987,7 +987,7 @@ Partial Class frm_CierreTurno
         Me.UltraGroupBox8.Dock = System.Windows.Forms.DockStyle.Left
         Me.UltraGroupBox8.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox8.Name = "UltraGroupBox8"
-        Me.UltraGroupBox8.Size = New System.Drawing.Size(409, 598)
+        Me.UltraGroupBox8.Size = New System.Drawing.Size(449, 598)
         Me.UltraGroupBox8.TabIndex = 1
         Me.UltraGroupBox8.Text = "Ventas x Combustible"
         Me.UltraGroupBox8.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1078,7 +1078,7 @@ Partial Class frm_CierreTurno
         Me.udg_VentasxCombustible.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.udg_VentasxCombustible.Location = New System.Drawing.Point(3, 17)
         Me.udg_VentasxCombustible.Name = "udg_VentasxCombustible"
-        Me.udg_VentasxCombustible.Size = New System.Drawing.Size(403, 578)
+        Me.udg_VentasxCombustible.Size = New System.Drawing.Size(443, 578)
         Me.udg_VentasxCombustible.TabIndex = 2
         Me.udg_VentasxCombustible.Text = "Grilla2"
         '

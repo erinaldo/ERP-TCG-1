@@ -53,7 +53,7 @@ Public Class frm_EstacionServicio
     Private CuentaContable As New e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
     Private oeMoneda As New e_Moneda
     Private Periodo As New e_Periodo, dPeriodo As New l_Periodo
-
+    Private swConsumoInterno As Boolean
     Private IdTipoDocumento As String, TipoDocumento As String
     Private IdTipoVenta As String, IdTipoPago As String 'Contado "1SI000000001", 
     Private sw_Lado As String
@@ -67,7 +67,7 @@ Public Class frm_EstacionServicio
     Private EMPRESA As New e_Empresa, dEMPRESA As New l_Empresa
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
-
+    Private IdEmpresaCliente As String
 #End Region
 
 #Region "Botones"
@@ -92,12 +92,15 @@ Public Class frm_EstacionServicio
 
     Public Overrides Sub Guardar()
         Try
-            If IdTipoVenta <> "CALIBRACION" And cmb_Cliente.Text = "" Then Throw New Exception("Seleccione la empresa")
+            If IdEmpresaCliente = "" Then Throw New Exception("Seleccione la empresa")
+            swConsumoInterno = IIf(IdEmpresaCliente = gs_IdClienteProveedorSistema, 1, 0)
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
             'mt_Ejecutar_OrdenSalida()
-            mt_Generar_ConsumoCombustible()
+            If swConsumoInterno Then
+                mt_Generar_ConsumoCombustible()
+            End If
             If IdTipoDocumento <> "GCH000000001" Then
                 If Not fc_Emitir_Documento() Then Throw New Exception
                 If Not fc_Guardar_Cobros() Then Throw New Exception
@@ -140,7 +143,7 @@ Public Class frm_EstacionServicio
             Throw ex
         End Try
     End Function
-
+    'FHA2196DTM2
     Public Function fc_Cargar_OrdenVenta() As Boolean
         Try
             udg_Detalle.UpdateData()
@@ -151,7 +154,7 @@ Public Class frm_EstacionServicio
                 .TipoCambio = TipoCambio
                 .IndFactSer = True 'Revisar
                 .IdVendedorTrabajador = "" ' Trabajador
-                .IdEmpresa = IIf(IdTipoVenta = "CALIBRACION", gs_IdClienteProveedorSistema, cmb_Cliente.Value)
+                .IdEmpresa = IdEmpresaCliente
                 .Fecha = ObtenerFechaServidor()
                 .IdMoneda = IdMoneda_Soles
                 .IdTipoPago = IdTipoPago
@@ -167,7 +170,9 @@ Public Class frm_EstacionServicio
                 .IdPlaca = cmb_Vehiculo.Value
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
-                .oeOrdenSalida = fc_Cargar_OrdenSalida()
+                If swConsumoInterno = False Then
+                    .oeOrdenSalida = fc_Cargar_OrdenSalida()
+                End If
                 .oeDocumento = fc_Cargar_MovimientoDocumento()
             End With
             Return True
@@ -419,7 +424,7 @@ Public Class frm_EstacionServicio
                 .MovDoc = Nothing
                 .Glosa = txt_Glosa.Text
                 .DifAGanancia = 0
-                .IdCuentaCorriente = cmb_Cliente.Value
+                .IdCuentaCorriente = IdEmpresaCliente
             End With
 
             'If OptPerdida.Checked Then indicadortipo = "PER"
@@ -610,21 +615,21 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_ValidarSurtidor()
         Select Case sw_Lado
-            Case "1" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "2" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "3" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
-            Case "4" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
-            Case "5" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "6" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+            Case "LADO_1" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+            Case "LADO_2" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+            Case "LADO_3" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
+            Case "LADO_4" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
+            Case "LADO_5" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+            Case "LADO_6" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
         End Select
     End Sub
 
     Private Function fc_Obtener_SaldoCuentaCorriente() As Double
         Try
-            If cmb_Cliente.Value.ToString = "" Then Return 0
+            If IdEmpresaCliente = "" Then Return 0
             Dim dCuentaCorriente As New l_CuentaCorriente, ListaCuentaCorriente As New List(Of e_CuentaCorriente)
             Dim dSaldoCuentaCorriente As New l_SaldoCtaCorriente
-            ListaCuentaCorriente = dCuentaCorriente.Listar(New e_CuentaCorriente With {.Tipooperacion = "", .IdTrabajador = cmb_Cliente.Value})
+            ListaCuentaCorriente = dCuentaCorriente.Listar(New e_CuentaCorriente With {.Tipooperacion = "", .IdTrabajador = IdEmpresaCliente})
             If ListaCuentaCorriente.Count > 0 Then
                 For Each Item In ListaCuentaCorriente
                     Dim Saldos As New List(Of e_SaldoCtaCorriente)
@@ -682,6 +687,9 @@ Public Class frm_EstacionServicio
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
 
         '' Cargar Listas y Combos
+        Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
+        ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
+        LlenarComboMaestro(cmb_Lado, ListaLado, 0)
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
@@ -707,7 +715,7 @@ Public Class frm_EstacionServicio
                 .IdAlmacen = IdAlmacen_Combustible : .IdSubAlmacen = IdSubAlmacen_Combustible
                 .IdUnidadMedida = "1CH000000001"
                 .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
-                .Glosa = "LADO_" & sw_Lado
+                .Glosa = sw_Lado
             End With
             If OrdenVenta.lstOrdenComercialMaterial.Where(Function(i) i.IdMaterial = OV_DETALLE.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
                 udg_Detalle.DataBind()
@@ -726,9 +734,9 @@ Public Class frm_EstacionServicio
     Private Sub mt_Calcular_DescuentoCombustible()
         Dim ListaDescuentos As New List(Of e_EmpresaDescuento), dEmpresaDescuento As New l_EmpresaDescuento
         If IdMaterial_Combustible = "" Then Exit Sub
-        If cmb_Cliente.Value = "" Then Exit Sub
+        If IdEmpresaCliente = "" Then Exit Sub
 
-        ListaDescuentos = dEmpresaDescuento.Listar(New e_EmpresaDescuento With {.IdEmpresa = cmb_Cliente.Value, .IdProducto = IdMaterial_Combustible})
+        ListaDescuentos = dEmpresaDescuento.Listar(New e_EmpresaDescuento With {.IdEmpresa = IdEmpresaCliente, .IdProducto = IdMaterial_Combustible})
         If ListaDescuentos.Count > 0 Then
             For Each Item In ListaDescuentos
                 CanDescuento = IIf(IdTipoPago = "", Item.DescuentoCredito, Item.DescuentoContado)
@@ -743,7 +751,7 @@ Public Class frm_EstacionServicio
     Private Sub btnCrearCuentaCorriente_Click(sender As Object, e As EventArgs) Handles btnCrearCuentaCorriente.Click
         CuentaCorriente = New e_CuentaCorriente
         With CuentaCorriente
-            .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = cmb_Cliente.Value
+            .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = IdEmpresaCliente
             .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = Ejercicio : .Usuario = gUsuarioSGI.Id
             .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA" : .PrefijoID = gs_PrefijoIdSucursal '@0001
         End With
@@ -795,6 +803,9 @@ Public Class frm_EstacionServicio
         cmb_Cliente.Value = gs_IdClienteProveedorSistema
         cmb_Cliente.Text = gs_TxtEmpresaSistema
         cmb_Direccion.Text = gs_DireccionEmpresaSistema
+        IdEmpresaCliente = gs_IdClienteProveedorSistema
+        Cargar_Pilotos()
+        Cargar_VehiculoCliente()
     End Sub
 
     Private Sub ActualizarTipoPago()
@@ -850,10 +861,10 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub cboPuntoPartida_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Direccion.InitializeLayout
-        Me.cmb_Cliente.ValueMember = "Id"
-        Me.cmb_Cliente.DisplayMember = "Nombre"
+        Me.cmb_Direccion.ValueMember = "Id"
+        Me.cmb_Direccion.DisplayMember = "Nombre"
 
-        With cmb_Cliente.DisplayLayout.Bands(0)
+        With cmb_Direccion.DisplayLayout.Bands(0)
             For Each Columna In .Columns
                 Columna.Hidden = True
             Next
@@ -875,19 +886,20 @@ Public Class frm_EstacionServicio
             Case "DB5" 'DB5
                 btnDB5.Appearance.ForeColor = Color.White
                 IdMaterial_Combustible = "1CH000007256" : Material_Combustible = "DIESEL DB5" : Codigo_Combustible = "TR0012145"
-                IdAlmacen_Combustible = "CHT000000001" : IdSubAlmacen_Combustible = IIf(sw_Lado = 3 Or sw_Lado = 4, "CHT000000001", "CHT000000002")
+                IdAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000001", "1CH000000002")
+                IdSubAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000003", "1CH000000005")
             Case "G84" 'G84
                 btnG84.Appearance.ForeColor = Color.White
                 IdMaterial_Combustible = "1CH000000147" : Material_Combustible = "GASOHOL 84" : Codigo_Combustible = "TR0000154"
-                IdAlmacen_Combustible = "CHT000000001" : IdSubAlmacen_Combustible = "CHT000000003"
+                IdAlmacen_Combustible = "1CH000000004" : IdSubAlmacen_Combustible = "1CH000000009"
             Case "G90" 'G90
                 btnG90.Appearance.ForeColor = Color.White
                 IdMaterial_Combustible = "1CH000000148" : Material_Combustible = "GASOHOL 90" : Codigo_Combustible = "TR0000155"
-                IdAlmacen_Combustible = "CHT000000001" : IdSubAlmacen_Combustible = "CHT000000004"
+                IdAlmacen_Combustible = "1CH000000006" : IdSubAlmacen_Combustible = "1CH000000012"
             Case "G95" 'G95
                 btnG95.Appearance.ForeColor = Color.White
                 IdMaterial_Combustible = "1CH000000149" : Material_Combustible = "GASOHOL 95" : Codigo_Combustible = "TR0000156"
-                IdAlmacen_Combustible = "CHT000000001" : IdSubAlmacen_Combustible = "CHT000000004"
+                IdAlmacen_Combustible = "1CH000000007" : IdSubAlmacen_Combustible = "1CH000000014"
         End Select
 
         '' Cargar Producto
@@ -964,18 +976,22 @@ Public Class frm_EstacionServicio
         btnLado5.Appearance.BackColor = Color.DimGray
     End Sub
 
+    Private Sub cmb_Lado_Leave(sender As Object, e As EventArgs) Handles cmb_Lado.Leave
+        sw_Lado = cmb_Lado.Value
+    End Sub
+
     Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
         Procesar_Lado(btnLado6.Text)
         btnLado6.Appearance.BackColor = Color.DimGray
     End Sub
 
     Private Sub Procesar_Lado(Lado As String)
-        sw_Lado = Lado : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
+        sw_Lado = "LADO_" & Lado : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
     End Sub
 
     Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) Handles btnConsultarSUNAT.Click
         Try
-            Dim empresa As New e_Empresa, lista_Empresa As New List(Of e_Empresa), d_Empresa As New l_Empresa, id As String
+            Dim empresa As New e_Empresa, lista_Empresa As New List(Of e_Empresa), d_Empresa As New l_Empresa, id As String = ""
             Dim consultaRucSunat As New ConsultaRucSunat()
             Dim contribuyente As New Contribuyente
             Dim RUC As String = cmb_Cliente.Text
@@ -1072,7 +1088,8 @@ Public Class frm_EstacionServicio
         Try
             Dim loempresa As New List(Of e_Empresa), dClienteProveedor As New l_ClienteProveedor, ListaClienteProveedor As New List(Of e_ClienteProveedor)
             If Not cmb_Cliente.Value = "" Then
-                ListaClienteProveedor = dClienteProveedor.Listar(New e_ClienteProveedor With {.TipoOperacion = "T", .Id = cmb_Cliente.Value})
+                IdEmpresaCliente = cmb_Cliente.Value
+                ListaClienteProveedor = dClienteProveedor.Listar(New e_ClienteProveedor With {.TipoOperacion = "T", .Id = IdEmpresaCliente})
 
                 For Each Item In ListaClienteProveedor
                     loempresa = dEMPRESA.Listar(New e_Empresa With {.Id = Item.IdPersonaEmpresa})
@@ -1131,13 +1148,13 @@ Public Class frm_EstacionServicio
     End Sub
     Sub Cargar_VehiculoCliente()
         ListaVehiculo = New List(Of e_Vehiculo)
-        If cmb_Cliente.Value = gs_IdClienteProveedorSistema Then
+        If IdEmpresaCliente = gs_IdClienteProveedorSistema Then
             ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .TipoOperacion = "A"}))
         Else
             Dim eClienteProveedor As New e_ClienteProveedor
             Dim lCliente As New l_ClienteProveedor
             eClienteProveedor.TipoOperacion = ""
-            eClienteProveedor.Id = cmb_Cliente.Value
+            eClienteProveedor.Id = IdEmpresaCliente
             eClienteProveedor = lCliente.Obtener(eClienteProveedor)
             ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
         End If
@@ -1145,7 +1162,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub Cargar_Pilotos()
-        If cmb_Cliente.Value = gs_IdClienteProveedorSistema Then
+        If IdEmpresaCliente = gs_IdClienteProveedorSistema Then
             LlenarCombo(cmb_Piloto, "Nombre", PilotoPublic, -1)
         End If
     End Sub
@@ -1153,7 +1170,7 @@ Public Class frm_EstacionServicio
         Dim ListaPuntoPartida As New List(Of e_Combo)
         Dim oeDireccionEmpresa As New e_Combo, ddireccionempresa As New l_Combo
         oeDireccionEmpresa.Nombre = "DireccionEmpresaFiscal"
-        oeDireccionEmpresa.Id = cmb_Cliente.Value
+        oeDireccionEmpresa.Id = IdEmpresaCliente
         ListaPuntoPartida.AddRange(ddireccionempresa.Listar(oeDireccionEmpresa))
         LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
     End Sub
@@ -1212,7 +1229,7 @@ Public Class frm_EstacionServicio
                     .SaldoGls = 0.0
                     .IdMaterial = ItemVenta.IdMaterial
                     If .FechaCreacion.Date = Date.Parse("01/01/1901") Then .FechaCreacion = ObtenerFechaServidor()
-                    .IndIsl = IIf(cmb_Cliente.Value = gs_IdClienteProveedorSistema, True, False)
+                    .IndIsl = IIf(IdEmpresaCliente = gs_IdClienteProveedorSistema, True, False)
                     .PrecioUnitario = ItemVenta.PrecioUnitario
                     .GlosaValeTanqueo = ItemVenta.Glosa
                     .KilometrosTanqueo = OrdenVenta.Kilometraje
