@@ -50,7 +50,7 @@ Public Class frm_EstacionServicio
     Private ASIENTO As New e_Asiento, dASIENTO As New l_Asiento
     Private MovimientoCajaBanco As New e_MovimientoCajaBanco, dMovimietoCajaBanco As New l_MovimientoCajaBanco
     Private oeSaldoCtaCte As e_SaldoCtaCorriente, olSaldoCtaCte As New l_SaldoCtaCorriente, leSaldoCtaCte As New List(Of e_SaldoCtaCorriente)
-    Private CuentaContable As New e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
+    Private CuentaContable As e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
     Private oeMoneda As New e_Moneda
     Private Periodo As New e_Periodo, dPeriodo As New l_Periodo
     Private swConsumoInterno As Boolean
@@ -68,6 +68,7 @@ Public Class frm_EstacionServicio
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
     Private IdEmpresaCliente As String
+
 #End Region
 
 #Region "Botones"
@@ -430,7 +431,20 @@ Public Class frm_EstacionServicio
             'If OptPerdida.Checked Then indicadortipo = "PER"
             'If OptGanancia.Checked Then indicadortipo = "GAN"
             'If OptCobro.Checked Then indicadortipo = "COB"
+            ListaMovimientoDocumento = New List(Of e_MovimientoDocumento)
+            MovimientoDocumento.MontoOperar = OrdenVenta.Total
+
+
+
+            'CuentaContable.Id = "1SI010782"
+
+            Dim _oeCajaUsuario As e_CajaUsuario
+            _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+
+            'CuentaContable = dCuentaContable.Obtener (New e_CuentaContable With { .Cuenta = _oeCajaUsuario.cu})
+
             ListaMovimientoDocumento.Add(MovimientoDocumento)
+            'MovimientoDocumento.MontoOperar 
             If dASIENTO.GuardarCobranza(ListaMovimientoDocumento, MovimientoCajaBanco, MEDIOPAGO, gUsuarioSGI.Id, MacPCLocal, CuentaContable, indicadortipo) Then
                 'If indicadortipo <> "PER" Then
                 '    mensajeEmergente.Confirmacion("Cobro(s) guardados satisfactoriamente", True)
@@ -499,8 +513,8 @@ Public Class frm_EstacionServicio
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                 Else
                         btnCrearCuentaCorriente.PerformClick()
-                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
-                    End If
+                    _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
+                End If
 
                     ' Actualizar Cuenta para Empresas Relacionada
                     'Dim _oeEmpr As New e_Cliente
@@ -687,9 +701,9 @@ Public Class frm_EstacionServicio
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
 
         '' Cargar Listas y Combos
-        Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
-        ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
-        LlenarComboMaestro(cmb_Lado, ListaLado, 0)
+        'Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
+        'ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
+        'LlenarComboMaestro(cmb_Lado, ListaLado, 0)
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
@@ -987,6 +1001,14 @@ Public Class frm_EstacionServicio
             Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
             Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
         End Select
+    End Sub
+
+    Private Sub frm_EstacionServicio_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        instancia = Nothing
+    End Sub
+
+    Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        instancia = Nothing
     End Sub
 
     Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
