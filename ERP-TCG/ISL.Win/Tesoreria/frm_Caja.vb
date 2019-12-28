@@ -60,6 +60,10 @@ Public Class frm_Caja
     Dim oeCentro As New e_Centro
     Dim olCentro As New l_Centro
 
+    Private oeCtaCtble As e_CuentaContable
+    Private olCtaCtble As l_CuentaContable
+    Private loCtaCtble As List(Of e_CuentaContable)
+
     Dim _ingresando_datos As Boolean = False
     Dim _ingresando_datos_monto As Boolean = False
     Dim VerificarMonto As Boolean = False
@@ -482,6 +486,24 @@ Public Class frm_Caja
         LlenarCombo(cboCentro, "Nombre", olCentro.Listar(oeCentro), -1)
     End Sub
 
+    Private Sub mt_ListarCtaCtble()
+        Try
+            oeCtaCtble = New e_CuentaContable
+            olCtaCtble = New l_CuentaContable
+            oeCtaCtble.Ejercicio = Date.Now.Year
+            oeCtaCtble.TipoOperacion = "N"
+            oeCtaCtble.Movimiento = 1 : oeCtaCtble.CuentaAsociada = New List(Of e_CuentaAsociada)
+            'oeCtaCtble.MonedaExtranjera = -1 : oeCtaCtble.FlujoCaja = -1 : oeCtaCtble.Conciliacion = -1
+            'oeCtaCtble.IndDocumento = -1
+            'oeCtaCtble.ob = -1
+            'oeCtaCtble.de = -1 : oeCtaCtble.IndHaber = -1
+            loCtaCtble = olCtaCtble.Listar(oeCtaCtble)
+            LlenarCombo(uce_CtaCtble, "Cuenta", loCtaCtble.Where(Function(i) Strings.Left(i.Cuenta, 2) = "10").ToList, -1)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Private Sub oeCaja_DatoCambiado() Handles oeCaja.DatoCambiado
         oeCaja.Modificado = True
     End Sub
@@ -544,6 +566,7 @@ Public Class frm_Caja
         griListaCaja.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.True
         InicializaTiempo()
         LlenaCombos()
+        mt_ListarCtaCtble()
     End Sub
 
     Private Sub griListaCaja_BeforeRowsDeleted(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs) Handles griListaCaja.BeforeRowsDeleted
@@ -870,8 +893,10 @@ Public Class frm_Caja
 
     Private Function GuardarCaja() As Boolean
         Try
+            If uce_CtaCtble.SelectedIndex = -1 Then Throw New Exception("Seleccione Cuenta Contable")
             oeCaja.IdCentro = cboCentro.Value
             oeCaja.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeCaja.CuentaContable = uce_CtaCtble.Text
             If olCaja.Guardar(oeCaja) Then
                 mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 MostrarTabs(0, tcCaja, 2)
@@ -910,9 +935,9 @@ Public Class frm_Caja
         cboCentro.SelectedIndex = -1
         oeCaja.UsuarioCreacion = gUsuarioSGI.Id
         Me.spcCuentaBancaria.Panel2Collapsed = True
-
+        uce_CtaCtble.Text = String.Empty
+        uce_CtaCtble.SelectedIndex = -1
         ListarTrabajadores()
-
     End Sub
 
     Private Sub ListarTrabajadores()
@@ -996,6 +1021,7 @@ Public Class frm_Caja
                 txtNombre.Text = oeCaja.Nombre
                 txtAbreviatura.Text = oeCaja.Abreviatura
                 cboCentro.Value = oeCaja.IdCentro
+                uce_CtaCtble.Text = oeCaja.CuentaContable
                 MostrarUsuarios()
                 MostrarTabs(1, tcCaja, 1)
                 MenuMovimiento.Visible = False
