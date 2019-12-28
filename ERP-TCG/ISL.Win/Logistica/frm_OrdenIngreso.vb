@@ -1312,24 +1312,24 @@ Public Class frm_OrdenIngreso
             If oeOrden.TipoOperacion = "T" Then
                 oeOrden.IdUsuarioEjecucion = gUsuarioSGI.Id
                 If oeOrden.IdMovimientoInventario = "1CH000000013" Or oeOrden.IdMovimientoInventario = "1CH000000018" Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Exit Function
-                    Else
-                        For Each ordmat As e_OrdenMaterial In oeOrden.lstOrdenMaterial
-                            oeControlEntregaMaterial = New e_ControlEntregaMaterial
-                            oeControlEntregaMaterial.TipoOperacion = "I"
-                            oeControlEntregaMaterial.FechaCreacion = Date.Now
-                            oeControlEntregaMaterial.CantidadEntregada = ordmat.CantidadMaterial
-                            oeControlEntregaMaterial.IdTrabajador = formulario.idTrabajador
-                            oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
-                            oeControlEntregaMaterial.IdUnidadMedida = ordmat.IdUnidadMedida
-                            ordmat.oeControlEntregaMat = oeControlEntregaMaterial
-                        Next
-                    End If
-                    formulario = Nothing
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Exit Function
+                    'Else
+                    '    For Each ordmat As e_OrdenMaterial In oeOrden.lstOrdenMaterial
+                    '        oeControlEntregaMaterial = New e_ControlEntregaMaterial
+                    '        oeControlEntregaMaterial.TipoOperacion = "I"
+                    '        oeControlEntregaMaterial.FechaCreacion = Date.Now
+                    '        oeControlEntregaMaterial.CantidadEntregada = ordmat.CantidadMaterial
+                    '        oeControlEntregaMaterial.IdTrabajador = formulario.idTrabajador
+                    '        oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
+                    '        oeControlEntregaMaterial.IdUnidadMedida = ordmat.IdUnidadMedida
+                    '        ordmat.oeControlEntregaMat = oeControlEntregaMaterial
+                    '    Next
+                    'End If
+                    'formulario = Nothing
                 End If
                 If oeOrden.IdMovimientoInventario = "1CH000000039" Then
                     For Each ordmat As e_OrdenMaterial In oeOrden.lstOrdenMaterial

@@ -150,18 +150,18 @@ Public Class frm_DocumentoAnulado
                 oeDocAnulado.Id = griDocAnulados.ActiveRow.Cells("Id").Value()
                 oeDocAnulado = olDocAnulado.ObtenerVenta(oeDocAnulado)
                 If ValidarPeridoContable(oeDocAnulado.IdPeriodo, gAreasSGI.Ventas) Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeDocAnulado.TipoOperacion = "E"
-                        olDocAnulado.EliminarDocumentoVenta(oeDocAnulado)
-                        mensajeEmergente.Confirmacion("¡El Documento se ha Eliminado correctamente!", True)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeDocAnulado.TipoOperacion = "E"
+                    olDocAnulado.EliminarDocumentoVenta(oeDocAnulado)
+                    mensajeEmergente.Confirmacion("¡El Documento se ha Eliminado correctamente!", True)
+                    Consultar(True)
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)

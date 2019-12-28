@@ -2328,12 +2328,6 @@
     <Compile Include="General\Controles\GradoInstruccion.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="General\frm_AutenticarTrabajador.Designer.vb">
-      <DependentUpon>frm_AutenticarTrabajador.vb</DependentUpon>
-    </Compile>
-    <Compile Include="General\frm_AutenticarTrabajador.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="General\frm_Centro.Designer.vb">
       <DependentUpon>frm_Centro.vb</DependentUpon>
     </Compile>
@@ -6841,10 +6835,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\Controles\GradoInstruccion.resx">
       <DependentUpon>GradoInstruccion.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="General\frm_AutenticarTrabajador.resx">
-      <DependentUpon>frm_AutenticarTrabajador.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="General\frm_Centro.resx">

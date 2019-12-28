@@ -134,27 +134,27 @@ Public Class frm_PlanillaEps
                     Consultar(True)
                     If lePlanillaEps.Count > 0 Then
                         If lePlanillaEps(0).Estado = gNombreEstadoEnviado Then Throw New Exception("Para Eliminar los Registros deben estar en estado GENERADA")
-                        If MessageBox.Show("¿Esta seguro de eliminar la PLanilla Eps Nº " & cboPlanillaBus.Text & " ?", _
-                            "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, _
+                        If MessageBox.Show("¿Esta seguro de eliminar la PLanilla Eps Nº " & cboPlanillaBus.Text & " ?",
+                            "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                                     MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                            Dim formulario As frm_AutenticarTrabajador
-                            formulario = New frm_AutenticarTrabajador
-                            formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                                Throw New Exception("Ingrese un Clave Correcta")
-                            Else
-                                For Each oePEPS In lePlanillaEps
-                                    oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                    oePEPS.TipoOperacion = "E"
-                                    oePEPS.UsuarioModifica = gUsuarioSGI.Id
-                                Next
-                                If olPlanillaEps.EliminarLista(lePlanillaEps) Then
-                                    mensajeEmergente.Confirmacion("Se Eliminaron los Registros correctamente", True)
-                                    Consultar(True)
-                                End If
-
+                            'Dim formulario As frm_AutenticarTrabajador
+                            'formulario = New frm_AutenticarTrabajador
+                            'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                            '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                            '    Throw New Exception("Ingrese un Clave Correcta")
+                            'Else
+                            For Each oePEPS In lePlanillaEps
+                                oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
+                                oePEPS.TipoOperacion = "E"
+                                oePEPS.UsuarioModifica = gUsuarioSGI.Id
+                            Next
+                            If olPlanillaEps.EliminarLista(lePlanillaEps) Then
+                                mensajeEmergente.Confirmacion("Se Eliminaron los Registros correctamente", True)
+                                Consultar(True)
                             End If
+
+                            'End If
                         End If
                     Else
                         Throw New Exception("No Hay Registros para Eliminar")
@@ -397,26 +397,26 @@ Public Class frm_PlanillaEps
             _acl = gAccionSistema.ENVIAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If lePlanillaEps.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
-                        For Each oePEPS In lePlanillaEps
-                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oePEPS.TipoOperacion = "A"
-                            oePEPS.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olPlanillaEps.GuardarLista(lePlanillaEps) Then
-                            mensajeEmergente.Confirmacion("Se la Planilla EPS se Envio correctamente", True)
-                            btnEnviar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
+                    For Each oePEPS In lePlanillaEps
+                        oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oePEPS.TipoOperacion = "A"
+                        oePEPS.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olPlanillaEps.GuardarLista(lePlanillaEps) Then
+                        mensajeEmergente.Confirmacion("Se la Planilla EPS se Envio correctamente", True)
+                        btnEnviar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)
@@ -431,26 +431,26 @@ Public Class frm_PlanillaEps
             _acl = gAccionSistema.EXTORNAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If lePlanillaEps.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
-                        For Each oePEPS In lePlanillaEps
-                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oePEPS.TipoOperacion = "A"
-                            oePEPS.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olPlanillaEps.GuardarLista(lePlanillaEps) Then
-                            mensajeEmergente.Confirmacion("Se la Planilla EPS se Extorno correctamente", True)
-                            btnExtornar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
+                    For Each oePEPS In lePlanillaEps
+                        oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oePEPS.TipoOperacion = "A"
+                        oePEPS.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olPlanillaEps.GuardarLista(lePlanillaEps) Then
+                        mensajeEmergente.Confirmacion("Se la Planilla EPS se Extorno correctamente", True)
+                        btnExtornar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)

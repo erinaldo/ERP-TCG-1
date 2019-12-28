@@ -86,84 +86,84 @@ Public Class frm_IntegrarGrupo
         Try
             If decTipoCambio.Value = 0 Then Throw New Exception("Ingrese Tipo de Cambio")
             If oeAsientoModel.Id.Trim.Length = 0 Then Throw New Exception("Este Proceso no se ha Pre-Configurado Contablemente")
-            Dim formulario As frm_AutenticarTrabajador
-            formulario = New frm_AutenticarTrabajador
-            formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+            'Dim formulario As frm_AutenticarTrabajador
+            'formulario = New frm_AutenticarTrabajador
+            'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
             Dim fechaactual As Date = ObtenerFechaServidor()
             Dim fecha As Date = CDate(CStr(loConcepto(0).Valor1) + "/" + CStr(fechaactual.Month) + "/" + CStr(fechaactual.Year))
             If fecIntegracion.Value.Date > fecha Then
                 Throw New Exception("No se Pueden Realizar Integraciones Pasado el " + CStr(loConcepto(0).Valor1) + " del Presente")
             End If
-            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                Throw New Exception("Ingrese un Clave Correcta")
-            Else
-                Dim _idestado As String = ""
-                Dim _est As String = gEstadosSGI.APROBADA.ToString
-                Dim _leAux = leEstPre.Where(Function(it) it.Nombre = _est).ToList
-                If _leAux.Count > 0 Then _idestado = _leAux(0).Id
-                lePrestamo = New List(Of e_Prestamo)
-                'agregar cuotas
-                Dim fechaServidor As Date
-                Dim olPlanilla As New l_Planilla
-                Dim ListaPlanilla As New List(Of e_Planilla)
-                Dim oePlanilla As New e_Planilla
-                Dim mescuota As Integer = 0
-                ListaPlanilla = olPlanilla.Listar(oePlanilla)
-                fechaServidor = ObtenerFechaServidor()
-                Dim listaplanillaaux = ListaPlanilla.Where(Function(x) x.Ejercicio = fechaServidor.Year And x.NroMes = fechaServidor.Month)
-                If listaplanillaaux.Count > 0 Then 'existe planilla con la fecha actual
-                    If fechaServidor > listaplanillaaux(0).FechaFin Then mescuota = 1 'si ya paso al cierre de planilla
-                End If
-                ''''
-                For Each oeSanc As e_Sancion In leSancion
-                    If oeSanc.IdTrabajador.Trim.Length = 0 Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Throw New Exception("No se ha Registrado el Trabajador al Prestamo")
-                    End If
-                    oePrestamo = New e_Prestamo
-                    oePrestamo.TipoOperacion = "I" : oePrestamo.Id = String.Empty
-                    oePrestamo.Glosa = oeSanc.Concepto & ": " & oeSanc.Glosa : oePrestamo.Monto = oeSanc.Monto
-                    oePrestamo.IdTrabajador = oeSanc.IdTrabajador
-                    oePrestamo.IdConcepto = IIf(oeSanc._Tipo = 0, IdSancion, oeSanc.IdConcepto)
-                    oePrestamo.IdEstado = _idestado : oePrestamo.Cancelado = 0
-                    oePrestamo.Fecha = oeSanc.Fecha : oePrestamo.CantidadCuotas = oeSanc.NroCuota
-                    oePrestamo.Saldo = oeSanc.Monto : oePrestamo.UsuarioCreacion = oeSanc.UsuarioCreacion
-                    oePrestamo.FechaIntegracion = Date.Now.Date : oePrestamo.UsuarioAprueba = gUsuarioSGI.Id
-                    oePrestamo.FechaAprueba = oeSanc.FechaAprobacion
-                    Select Case oePrestamo.IdConcepto
-                        Case IdPrestamo : oePrestamo.IndProv = "A"
-                        Case IdAdelanto : oePrestamo.IndProv = "B"
-                        Case IdBolsaViaje : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "C", "D")
-                        Case IdSancion : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "E", "F")
-                        Case Else : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "G", "H")
-                    End Select
-                    oePrestamo.leSancion = New List(Of e_Prestamo_Sancion)
-                    oePrestamoSancion = New e_Prestamo_Sancion
-                    oePrestamoSancion.TipoOperacion = "I" : oePrestamoSancion.Id = String.Empty
-                    oePrestamoSancion.IdSancion = oeSanc.Id : oePrestamoSancion.UsuarioCreacion = gUsuarioSGI.Id
-                    oePrestamoSancion.Tipo = oeSanc._Tipo
-                    oePrestamo.leSancion.Add(oePrestamoSancion)
-                    'agregar cuotas
-                    Dim _FecCuota As Date = #1/1/1901#
-                    _FecCuota = DateAdd(DateInterval.Month, mescuota, Date.Parse("01/" & fechaServidor.Month & "/" & fechaServidor.Year))
-                    oePrestamo.leDetalle.AddRange(GenerarCuotas(oePrestamo.Monto, _FecCuota, oePrestamo.CantidadCuotas))
-                    oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    lePrestamo.Add(oePrestamo)
-                Next
-                Dim olPeriodo As New l_Periodo, oePeriodo As New e_Periodo
-                oePeriodo.Ejercicio = Date.Now.Year : oePeriodo.Mes = Date.Now.Month
-                oePeriodo = olPeriodo.Obtener(oePeriodo)
-                l_FuncionesGenerales.ValidarPeriodo(oePeriodo.Id, gAreasSGI.Tesoreria)
-                oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id : oeAsientoModel.TipoCambio = decTipoCambio.Value : oeAsientoModel.IdMedioPago = cboMedioPago.Value
-                oePeriodo.PrefijoID = gs_PrefijoIdSucursal '@0001
-                If olPrestamo.GuardarLista(lePrestamo, CadIdGroup, CadGroupDesc, oePeriodo, oeAsientoModel, strGrupoSanc, strGrupoDesc) Then
-                    mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
-                    MostrarTabs(0, ficIntegrarGrupo, 2)
-                    Consultar(_Activo)
-                    griGrupoSancion.Focus()
-                End If
+            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+            '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+            '    Throw New Exception("Ingrese un Clave Correcta")
+            'Else
+            Dim _idestado As String = ""
+            Dim _est As String = gEstadosSGI.APROBADA.ToString
+            Dim _leAux = leEstPre.Where(Function(it) it.Nombre = _est).ToList
+            If _leAux.Count > 0 Then _idestado = _leAux(0).Id
+            lePrestamo = New List(Of e_Prestamo)
+            'agregar cuotas
+            Dim fechaServidor As Date
+            Dim olPlanilla As New l_Planilla
+            Dim ListaPlanilla As New List(Of e_Planilla)
+            Dim oePlanilla As New e_Planilla
+            Dim mescuota As Integer = 0
+            ListaPlanilla = olPlanilla.Listar(oePlanilla)
+            fechaServidor = ObtenerFechaServidor()
+            Dim listaplanillaaux = ListaPlanilla.Where(Function(x) x.Ejercicio = fechaServidor.Year And x.NroMes = fechaServidor.Month)
+            If listaplanillaaux.Count > 0 Then 'existe planilla con la fecha actual
+                If fechaServidor > listaplanillaaux(0).FechaFin Then mescuota = 1 'si ya paso al cierre de planilla
             End If
+            ''''
+            For Each oeSanc As e_Sancion In leSancion
+                If oeSanc.IdTrabajador.Trim.Length = 0 Then
+                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    Throw New Exception("No se ha Registrado el Trabajador al Prestamo")
+                End If
+                oePrestamo = New e_Prestamo
+                oePrestamo.TipoOperacion = "I" : oePrestamo.Id = String.Empty
+                oePrestamo.Glosa = oeSanc.Concepto & ": " & oeSanc.Glosa : oePrestamo.Monto = oeSanc.Monto
+                oePrestamo.IdTrabajador = oeSanc.IdTrabajador
+                oePrestamo.IdConcepto = IIf(oeSanc._Tipo = 0, IdSancion, oeSanc.IdConcepto)
+                oePrestamo.IdEstado = _idestado : oePrestamo.Cancelado = 0
+                oePrestamo.Fecha = oeSanc.Fecha : oePrestamo.CantidadCuotas = oeSanc.NroCuota
+                oePrestamo.Saldo = oeSanc.Monto : oePrestamo.UsuarioCreacion = oeSanc.UsuarioCreacion
+                oePrestamo.FechaIntegracion = Date.Now.Date : oePrestamo.UsuarioAprueba = gUsuarioSGI.Id
+                oePrestamo.FechaAprueba = oeSanc.FechaAprobacion
+                Select Case oePrestamo.IdConcepto
+                    Case IdPrestamo : oePrestamo.IndProv = "A"
+                    Case IdAdelanto : oePrestamo.IndProv = "B"
+                    Case IdBolsaViaje : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "C", "D")
+                    Case IdSancion : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "E", "F")
+                    Case Else : oePrestamo.IndProv = IIf(oePrestamo.Monto > _MontoDesc, "G", "H")
+                End Select
+                oePrestamo.leSancion = New List(Of e_Prestamo_Sancion)
+                oePrestamoSancion = New e_Prestamo_Sancion
+                oePrestamoSancion.TipoOperacion = "I" : oePrestamoSancion.Id = String.Empty
+                oePrestamoSancion.IdSancion = oeSanc.Id : oePrestamoSancion.UsuarioCreacion = gUsuarioSGI.Id
+                oePrestamoSancion.Tipo = oeSanc._Tipo
+                oePrestamo.leSancion.Add(oePrestamoSancion)
+                'agregar cuotas
+                Dim _FecCuota As Date = #1/1/1901#
+                _FecCuota = DateAdd(DateInterval.Month, mescuota, Date.Parse("01/" & fechaServidor.Month & "/" & fechaServidor.Year))
+                oePrestamo.leDetalle.AddRange(GenerarCuotas(oePrestamo.Monto, _FecCuota, oePrestamo.CantidadCuotas))
+                oePrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
+                lePrestamo.Add(oePrestamo)
+            Next
+            Dim olPeriodo As New l_Periodo, oePeriodo As New e_Periodo
+            oePeriodo.Ejercicio = Date.Now.Year : oePeriodo.Mes = Date.Now.Month
+            oePeriodo = olPeriodo.Obtener(oePeriodo)
+            l_FuncionesGenerales.ValidarPeriodo(oePeriodo.Id, gAreasSGI.Tesoreria)
+            oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id : oeAsientoModel.TipoCambio = decTipoCambio.Value : oeAsientoModel.IdMedioPago = cboMedioPago.Value
+            oePeriodo.PrefijoID = gs_PrefijoIdSucursal '@0001
+            If olPrestamo.GuardarLista(lePrestamo, CadIdGroup, CadGroupDesc, oePeriodo, oeAsientoModel, strGrupoSanc, strGrupoDesc) Then
+                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
+                MostrarTabs(0, ficIntegrarGrupo, 2)
+                Consultar(_Activo)
+                griGrupoSancion.Focus()
+            End If
+            'End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

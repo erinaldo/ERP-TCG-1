@@ -140,35 +140,35 @@ Public Class frm_ReporteDescTrabajador
                         If leDescuento.Count > 0 Then
                             Throw New Exception("No se puede Realizar la Operacion. Ya Existen Registros de Descuentos en Esta Planilla")
                         Else
-                            Dim formulario As frm_AutenticarTrabajador
-                            formulario = New frm_AutenticarTrabajador
-                            formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                                Throw New Exception("Ingrese un Clave Correcta")
-                            Else
-                                Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
-                                leDescuento = New List(Of e_Descuentos)
-                                For Each oeRDT In leRDescTrabajador
-                                    oeDescuento = New e_Descuentos
-                                    oeDescuento.TipoOperacion = "I"
-                                    oeDescuento.IdPlanilla = cboPlanilla.Value
-                                    oeDescuento.IdTrabajador = oeRDT.oeTrabajador.Id
-                                    oeDescuento.MontoAdelanto = oeRDT.Adelanto
-                                    oeDescuento.MontoSancion = oeRDT.Sancion
-                                    oeDescuento.UsuarioCreacion = gUsuarioSGI.Id
-                                    oeDescuento.IndTipo = 1
-                                    oeDescuento.IdEstado = _leEstAux(0).Id
-                                    oeDescuento.Activo = True
-                                    oeDescuento.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                    leDescuento.Add(oeDescuento)
-                                Next
-                                If olDescuento.GuardarMasivo(leDescuento, gs_PrefijoIdSucursal) Then
-                                    cboPlanilla.SelectedIndex = -1
-                                    btnEnviar.Enabled = False
-                                    mensajeEmergente.Confirmacion("El Envio de Datos se Realizo Exitosamente", True)
-                                End If
+                            'Dim formulario As frm_AutenticarTrabajador
+                            'formulario = New frm_AutenticarTrabajador
+                            'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                            '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                            '    Throw New Exception("Ingrese un Clave Correcta")
+                            'Else
+                            Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
+                            leDescuento = New List(Of e_Descuentos)
+                            For Each oeRDT In leRDescTrabajador
+                                oeDescuento = New e_Descuentos
+                                oeDescuento.TipoOperacion = "I"
+                                oeDescuento.IdPlanilla = cboPlanilla.Value
+                                oeDescuento.IdTrabajador = oeRDT.oeTrabajador.Id
+                                oeDescuento.MontoAdelanto = oeRDT.Adelanto
+                                oeDescuento.MontoSancion = oeRDT.Sancion
+                                oeDescuento.UsuarioCreacion = gUsuarioSGI.Id
+                                oeDescuento.IndTipo = 1
+                                oeDescuento.IdEstado = _leEstAux(0).Id
+                                oeDescuento.Activo = True
+                                oeDescuento.PrefijoID = gs_PrefijoIdSucursal '@0001
+                                leDescuento.Add(oeDescuento)
+                            Next
+                            If olDescuento.GuardarMasivo(leDescuento, gs_PrefijoIdSucursal) Then
+                                cboPlanilla.SelectedIndex = -1
+                                btnEnviar.Enabled = False
+                                mensajeEmergente.Confirmacion("El Envio de Datos se Realizo Exitosamente", True)
                             End If
+                            'End If
                         End If
                     Else
                         Throw New Exception("Seleccione una Planilla para Enviar")

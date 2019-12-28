@@ -453,25 +453,25 @@ Public Class frm_OtrosDescuentos
             _acl = gAccionSistema.ENVIAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If leOtrosDescuentos.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
-                        For Each oeDE In leOtrosDescuentos
-                            oeDE.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oeDE.TipoOperacion = "A" : oeDE.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oeDE.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olOtrosDescuentos.GuardarLista(leOtrosDescuentos) Then
-                            mensajeEmergente.Confirmacion("Se la Planilla Otros Descuentos se Envio correctamente", True)
-                            btnEnviar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
+                    For Each oeDE In leOtrosDescuentos
+                        oeDE.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeDE.TipoOperacion = "A" : oeDE.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oeDE.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olOtrosDescuentos.GuardarLista(leOtrosDescuentos) Then
+                        mensajeEmergente.Confirmacion("Se la Planilla Otros Descuentos se Envio correctamente", True)
+                        btnEnviar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)
@@ -486,26 +486,26 @@ Public Class frm_OtrosDescuentos
             _acl = gAccionSistema.EXTORNAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If leOtrosDescuentos.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
-                        For Each oeOD In leOtrosDescuentos
-                            oeOD.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oeOD.TipoOperacion = "A"
-                            oeOD.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oeOD.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olOtrosDescuentos.GuardarLista(leOtrosDescuentos) Then
-                            mensajeEmergente.Confirmacion("Se la Planilla Otros Descuentos se Extorno correctamente", True)
-                            btnExtornar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
+                    For Each oeOD In leOtrosDescuentos
+                        oeOD.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeOD.TipoOperacion = "A"
+                        oeOD.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oeOD.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olOtrosDescuentos.GuardarLista(leOtrosDescuentos) Then
+                        mensajeEmergente.Confirmacion("Se la Planilla Otros Descuentos se Extorno correctamente", True)
+                        btnExtornar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)

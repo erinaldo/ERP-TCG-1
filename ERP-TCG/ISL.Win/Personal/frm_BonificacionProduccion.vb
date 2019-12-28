@@ -142,58 +142,58 @@ Public Class frm_BonificacionProduccion
                         Consultar(True)
                     End If
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeProduccionPiloto.IdEstado = cboEstado.Value
-                        oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
-                        oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
-                                                      " se Envio correctamente!", True)
-                            SeleccionarTab(0)
-                            Consultar(True)
-                        End If
-                        
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeProduccionPiloto.IdEstado = cboEstado.Value
+                    oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                    oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo &
+                                                  " se Envio correctamente!", True)
+                        SeleccionarTab(0)
+                        Consultar(True)
                     End If
+
+                    'End If
                 Case "TERMINAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeProduccionPiloto.IdEstado = cboEstado.Value
-                        oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
-                        oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
-                                                      " se Termino correctamente!", True)
-                            SeleccionarTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeProduccionPiloto.IdEstado = cboEstado.Value
+                    oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                    oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olProduccionPiloto.Guardar(oeProduccionPiloto) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo &
+                                                  " se Termino correctamente!", True)
+                        SeleccionarTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "IMPORTAR"
                     Dim _leAux = leBPImportar.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            If olBonoProd.GuardarMasivo(_leAux, gs_PrefijoIdSucursal) Then
-                                mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
-                                SeleccionarTab(0)
-                                Consultar(True)
-                            End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        If olBonoProd.GuardarMasivo(_leAux, gs_PrefijoIdSucursal) Then
+                            mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
+                            SeleccionarTab(0)
+                            Consultar(True)
                         End If
+                        'End If
                     Else
                         Throw New Exception("No hay datos para guardar")
                     End If
@@ -228,26 +228,26 @@ Public Class frm_BonificacionProduccion
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoGenerada
                 If griProduccionPiloto.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeProduccionPiloto = New e_ProduccionPiloto
-                        oeProduccionPiloto.TipoOperacion = ""
-                        oeProduccionPiloto.Id = griProduccionPiloto.ActiveRow.Cells("Id").Value
-                        oeProduccionPiloto = olProduccionPiloto.Obtener(oeProduccionPiloto)
-                        oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
-                        olProduccionPiloto.Eliminar(oeProduccionPiloto)
-                        mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
-                                                             " se ha Eliminado correctamente!", True)
-                        SeleccionarTab(0)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeProduccionPiloto = New e_ProduccionPiloto
+                    oeProduccionPiloto.TipoOperacion = ""
+                    oeProduccionPiloto.Id = griProduccionPiloto.ActiveRow.Cells("Id").Value
+                    oeProduccionPiloto = olProduccionPiloto.Obtener(oeProduccionPiloto)
+                    oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                    olProduccionPiloto.Eliminar(oeProduccionPiloto)
+                    mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo &
+                                                         " se ha Eliminado correctamente!", True)
+                    SeleccionarTab(0)
+                    Consultar(True)
+                    'End If
                 Else
-                    Throw New Exception("No puede en ELIMINAR el Registro de Producción de Pilotos Nº: " & _
+                    Throw New Exception("No puede en ELIMINAR el Registro de Producción de Pilotos Nº: " &
                                         griProduccionPiloto.ActiveRow.Cells("Codigo").Value & " por no esta GENERADA.")
                 End If
             Else
@@ -1652,31 +1652,31 @@ Public Class frm_BonificacionProduccion
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoEnviado
                 If griProduccionPiloto.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeProduccionPiloto = New e_ProduccionPiloto
-                        oeProduccionPiloto.TipoOperacion = ""
-                        oeProduccionPiloto.Id = griProduccionPiloto.ActiveRow.Cells("Id").Value
-                        oeProduccionPiloto = olProduccionPiloto.Obtener(oeProduccionPiloto)
-                        oeProduccionPiloto.TipoOperacion = "A"
-                        _estado = gNombreEstadoGenerada
-                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
-                        If _leEst.Count > 0 Then
-                            oeProduccionPiloto.IdEstado = _leEst(0).Id
-                            oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
-                            oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            olProduccionPiloto.Guardar(oeProduccionPiloto)
-                            mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo & _
-                                                          " se Extornado correctamente!", True)
-                            SeleccionarTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeProduccionPiloto = New e_ProduccionPiloto
+                    oeProduccionPiloto.TipoOperacion = ""
+                    oeProduccionPiloto.Id = griProduccionPiloto.ActiveRow.Cells("Id").Value
+                    oeProduccionPiloto = olProduccionPiloto.Obtener(oeProduccionPiloto)
+                    oeProduccionPiloto.TipoOperacion = "A"
+                    _estado = gNombreEstadoGenerada
+                    Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
+                    If _leEst.Count > 0 Then
+                        oeProduccionPiloto.IdEstado = _leEst(0).Id
+                        oeProduccionPiloto.UsuarioModifica = gUsuarioSGI.Id
+                        oeProduccionPiloto.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        olProduccionPiloto.Guardar(oeProduccionPiloto)
+                        mensajeEmergente.Confirmacion("¡El Registro de Producción de Pilotos Nº: " & oeProduccionPiloto.Codigo &
+                                                      " se Extornado correctamente!", True)
+                        SeleccionarTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Else
                     Throw New Exception("No se puede EXTORNAR el Registro de Producción de Pilotos" & Environment.NewLine & _
                                         "Nº: " & griProduccionPiloto.ActiveRow.Cells("Codigo").Value & " por que no esta ENVIADO")

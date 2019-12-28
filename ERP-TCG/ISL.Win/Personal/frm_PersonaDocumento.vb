@@ -191,22 +191,22 @@ Public Class frm_PersonaDocumento
                 Case "IMPORTAR"
                     Dim _leAux = leDatosImportados.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            If olPersonaDocumento.GuardarMasivo(_leAux, gs_PrefijoIdSucursal) Then
-                                mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
-                                MostrarTabs(0, ficPersonaDocumento)
-                                ficPersonaDocumento.Tabs(0).Enabled = True
-                                ficPersonaDocumento.Tabs(1).Enabled = False
-                                ficPersonaDocumento.Tabs(2).Enabled = False
-                                Consultar(True)
-                            End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        If olPersonaDocumento.GuardarMasivo(_leAux, gs_PrefijoIdSucursal) Then
+                            mensajeEmergente.Confirmacion("Los Datos se Guardaron Correctamente", True)
+                            MostrarTabs(0, ficPersonaDocumento)
+                            ficPersonaDocumento.Tabs(0).Enabled = True
+                            ficPersonaDocumento.Tabs(1).Enabled = False
+                            ficPersonaDocumento.Tabs(2).Enabled = False
+                            Consultar(True)
                         End If
+                        'End If
                     Else
                         Throw New Exception("No hay datos para guardar")
                     End If

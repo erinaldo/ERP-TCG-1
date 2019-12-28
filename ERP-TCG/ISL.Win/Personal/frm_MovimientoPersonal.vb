@@ -1305,25 +1305,25 @@ Public Class frm_MovimientoPersonal
             _acl = gAccionSistema.ENVIAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If leResumenAsis.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
-                        For Each oeRA In leResumenAsis
-                            oeRA.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oeRA.TipoOperacion = "A" : oeRA.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oeRA.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olResumenAsis.GuardarLista(leResumenAsis) Then
-                            mensajeEmergente.Confirmacion("Se la Asistencia se Envio correctamente", True)
-                            btnEnviar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoEnviado).ToList
+                    For Each oeRA In leResumenAsis
+                        oeRA.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oeRA.TipoOperacion = "A" : oeRA.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oeRA.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olResumenAsis.GuardarLista(leResumenAsis) Then
+                        mensajeEmergente.Confirmacion("Se la Asistencia se Envio correctamente", True)
+                        btnEnviar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)
@@ -1339,25 +1339,25 @@ Public Class frm_MovimientoPersonal
             _acl = gAccionSistema.EXTORNAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If leResumenAsis.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
-                        For Each oePEPS In leResumenAsis
-                            oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            oePEPS.TipoOperacion = "A" : oePEPS.UsuarioModifica = gUsuarioSGI.Id
-                            If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olResumenAsis.GuardarLista(leResumenAsis) Then
-                            mensajeEmergente.Confirmacion("Se la Asistencia se Extorno correctamente", True)
-                            btnExtornar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = gNombreEstadoGenerada).ToList
+                    For Each oePEPS In leResumenAsis
+                        oePEPS.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        oePEPS.TipoOperacion = "A" : oePEPS.UsuarioModifica = gUsuarioSGI.Id
+                        If _leEstAux.Count > 0 Then oePEPS.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olResumenAsis.GuardarLista(leResumenAsis) Then
+                        mensajeEmergente.Confirmacion("Se la Asistencia se Extorno correctamente", True)
+                        btnExtornar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)
@@ -1373,22 +1373,22 @@ Public Class frm_MovimientoPersonal
             _acl = gAccionSistema.ELIMINAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If leResumenAsis.Count > 0 Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        For Each oePEPS In leResumenAsis
-                            oePEPS.TipoOperacion = "E" : oePEPS.UsuarioModifica = gUsuarioSGI.Id
-                        Next
-                        If olResumenAsis.EliminarLista(leResumenAsis) Then
-                            mensajeEmergente.Confirmacion("Se la Asistencia se Envio correctamente", True)
-                            btnEnviar.Enabled = False
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 0, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    For Each oePEPS In leResumenAsis
+                        oePEPS.TipoOperacion = "E" : oePEPS.UsuarioModifica = gUsuarioSGI.Id
+                    Next
+                    If olResumenAsis.EliminarLista(leResumenAsis) Then
+                        mensajeEmergente.Confirmacion("Se la Asistencia se Envio correctamente", True)
+                        btnEnviar.Enabled = False
+                        Consultar(True)
                     End If
+                    'End If
                 End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)

@@ -189,21 +189,21 @@ Public Class frm_VidaNeumatico
     Private Sub chkCancelaRee_CheckedChanged(sender As Object, e As EventArgs) Handles chkCancelaRee.CheckedChanged
         Try
             If Not chkCancelaRee.Checked Then
-                If MessageBox.Show("¿Desea No Generar Vida al Neumatico?", "Mensaje de Sistema", _
+                If MessageBox.Show("¿Desea No Generar Vida al Neumatico?", "Mensaje de Sistema",
                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        _EstadoInicial = "REENCAUCHE"
-                        Habilitar()
-                        chkCancelaRee.Checked = True
-                        ControlBoton(1, 0, 0, 0, 0, 0, 0, 0, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        _EstadoInicial = "REPARACION"
-                        Habilitar()
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    _EstadoInicial = "REENCAUCHE"
+                    '    Habilitar()
+                    '    chkCancelaRee.Checked = True
+                    '    ControlBoton(1, 0, 0, 0, 0, 0, 0, 0, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    _EstadoInicial = "REPARACION"
+                    Habilitar()
+                    'End If
                 Else
                     _EstadoInicial = "REENCAUCHE"
                     Habilitar()

@@ -742,29 +742,29 @@ Public Class frm_RequerimientoD2
                     End If
                     cantTotalAtender = 0
                     '------- CONTROLAR AUTENTICACIÓN DEL TRABAJADOR PREVIO A LA ATENCIÓN ------------
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    Dim idTrabEntr As String = ""
-                    'formulario.IdArea = oeRequerimiento.IdArea
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Exit Function
-                    Else
-                        'For Each reqmat As e_RequerimientoMaterial In lstRequerimientoMaterial
-                        '    oeControlEntregaMaterial = New e_ControlEntregaMaterial
-                        '    If reqmat.CantidadAAtender > 0 Then
-                        '        oeControlEntregaMaterial.FechaCreacion = Date.Now
-                        '        oeControlEntregaMaterial.CantidadEntregada = reqmat.CantidadAAtender
-                        '        oeControlEntregaMaterial.IdTrabajador = formulario.idTrabajador
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'Dim idTrabEntr As String = ""
+                    ''formulario.IdArea = oeRequerimiento.IdArea
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Exit Function
+                    'Else
+                    'For Each reqmat As e_RequerimientoMaterial In lstRequerimientoMaterial
+                    '    oeControlEntregaMaterial = New e_ControlEntregaMaterial
+                    '    If reqmat.CantidadAAtender > 0 Then
+                    '        oeControlEntregaMaterial.FechaCreacion = Date.Now
+                    '        oeControlEntregaMaterial.CantidadEntregada = reqmat.CantidadAAtender
+                    '        oeControlEntregaMaterial.IdTrabajador = formulario.idTrabajador
 
-                        '        oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
-                        '        oeControlEntregaMaterial.IdUnidadMedida = reqmat.IdUnidadMedida
-                        '        reqmat.loControlEntregaMaterial.Add(oeControlEntregaMaterial)
-                        '    End If
-                        'Next
-                        idTrabEntr = formulario.idTrabajador
-                    End If
-                    formulario = Nothing
+                    '        oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
+                    '        oeControlEntregaMaterial.IdUnidadMedida = reqmat.IdUnidadMedida
+                    '        reqmat.loControlEntregaMaterial.Add(oeControlEntregaMaterial)
+                    '    End If
+                    'Next
+                    'idTrabEntr = formulario.idTrabajador
+                    'End If
+                    'formulario = Nothing
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                     '-------------------------------------------------------------------------------
 
@@ -805,15 +805,15 @@ Public Class frm_RequerimientoD2
                         oeOrdenSalida.lstInventario = New List(Of e_Inventario)
                         oeOrdenSalida.lstInventario = Inventario(oeOrdenSalida.lstOrdenMaterial)
                         For Each ordsalmat As e_OrdenMaterial In oeOrdenSalida.lstOrdenMaterial
-                            oeControlEntregaMaterial = New e_ControlEntregaMaterial
-                            If ordsalmat.CantidadMaterial > 0 Then
-                                oeControlEntregaMaterial.FechaCreacion = Date.Now
-                                oeControlEntregaMaterial.CantidadEntregada = ordsalmat.CantidadMaterial
-                                oeControlEntregaMaterial.IdTrabajador = idTrabEntr
-                                oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
-                                oeControlEntregaMaterial.IdUnidadMedida = ordsalmat.IdUnidadMedida
-                                ordsalmat.loControlEntregaMaterial.Add(oeControlEntregaMaterial)
-                            End If
+                            'oeControlEntregaMaterial = New e_ControlEntregaMaterial
+                            'If ordsalmat.CantidadMaterial > 0 Then
+                            '    oeControlEntregaMaterial.FechaCreacion = Date.Now
+                            '    oeControlEntregaMaterial.CantidadEntregada = ordsalmat.CantidadMaterial
+                            '    oeControlEntregaMaterial.IdTrabajador = idTrabEntr
+                            '    oeControlEntregaMaterial.UsuarioCreacion = gUsuarioSGI.Id
+                            '    oeControlEntregaMaterial.IdUnidadMedida = ordsalmat.IdUnidadMedida
+                            '    ordsalmat.loControlEntregaMaterial.Add(oeControlEntregaMaterial)
+                            'End If
                             oeComboPropio = New e_Combo
                             oeComboPropio.Tipo = 3
                             oeComboPropio.Nombre = "0"

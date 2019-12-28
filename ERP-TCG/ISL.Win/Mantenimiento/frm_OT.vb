@@ -3597,38 +3597,38 @@ Public Class frm_OT
     Private Sub CambiarEstadoOT()
         Try
             '------- CONTROLAR AUTENTICACIÓN DEL TRABAJADOR  ------------
-            Dim formulario As frm_AutenticarTrabajador
-            formulario = New frm_AutenticarTrabajador
-            If formulario.ShowDialog = Windows.Forms.DialogResult.OK Then
-                oeTrabajadorSeguridad = New e_TrabajadorSeguridad
-                oeProcesoNegocio = New e_ProcesoNegocio
+            'Dim formulario As frm_AutenticarTrabajador
+            'formulario = New frm_AutenticarTrabajador
+            'If formulario.ShowDialog = Windows.Forms.DialogResult.OK Then
+            oeTrabajadorSeguridad = New e_TrabajadorSeguridad
+            oeProcesoNegocio = New e_ProcesoNegocio
 
-                oeProcesoNegocio.TipoOperacion = ""
-                oeProcesoNegocio.Nombre = "CAMBIAR ESTADO OT"
-                oeProcesoNegocio = olProcesoNegocio.Obtener(oeProcesoNegocio)
+            oeProcesoNegocio.TipoOperacion = ""
+            oeProcesoNegocio.Nombre = "CAMBIAR ESTADO OT"
+            oeProcesoNegocio = olProcesoNegocio.Obtener(oeProcesoNegocio)
 
-                oeTrabajadorSeguridad.TipoOperacion = ""
-                oeTrabajadorSeguridad.IdTrabajador = formulario.cboTrabajador.Value
-                oeTrabajadorSeguridad.IdProcesoNegocio = oeProcesoNegocio.Id
-                oeTrabajadorSeguridad = olTrabajadorSeguridad.Obtener(oeTrabajadorSeguridad)
+            oeTrabajadorSeguridad.TipoOperacion = ""
+            oeTrabajadorSeguridad.IdTrabajador = gUsuarioSGI.IdTrabajador
+            oeTrabajadorSeguridad.IdProcesoNegocio = oeProcesoNegocio.Id
+            oeTrabajadorSeguridad = olTrabajadorSeguridad.Obtener(oeTrabajadorSeguridad)
 
-                If String.IsNullOrEmpty(oeTrabajadorSeguridad.Id) Then
-                    mensajeEmergente.Problema("Trabajador no esta autorizado para cambiar estado de la OT.")
-                Else
-                    oeEstadoOT = New e_EstadoOT
-                    oeEstadoOT.Activo = True
-                    oeEstadoOT.Nombre = "EN PROCESO"
-                    oeEstadoOT = olEstadoOT.Obtener(oeEstadoOT)
+            If String.IsNullOrEmpty(oeTrabajadorSeguridad.Id) Then
+                mensajeEmergente.Problema("Trabajador no esta autorizado para cambiar estado de la OT.")
+            Else
+                oeEstadoOT = New e_EstadoOT
+                oeEstadoOT.Activo = True
+                oeEstadoOT.Nombre = "EN PROCESO"
+                oeEstadoOT = olEstadoOT.Obtener(oeEstadoOT)
 
-                    oeOrdenTrabajo = New e_OrdenTrabajo
-                    oeOrdenTrabajo.Id = grid_OrdenTrabajo.ActiveRow.Cells("IdOT").Value.ToString
-                    oeOrdenTrabajo.IdEstadoOT = oeEstadoOT.Id
-                    oeOrdenTrabajo.EstadoOT = oeEstadoOT.Nombre
-                    oeOrdenTrabajo.TipoOperacion = "C"
-                    olOrdenTrabajo.ActualizaEstadoOT(oeOrdenTrabajo)
-                End If
+                oeOrdenTrabajo = New e_OrdenTrabajo
+                oeOrdenTrabajo.Id = grid_OrdenTrabajo.ActiveRow.Cells("IdOT").Value.ToString
+                oeOrdenTrabajo.IdEstadoOT = oeEstadoOT.Id
+                oeOrdenTrabajo.EstadoOT = oeEstadoOT.Nombre
+                oeOrdenTrabajo.TipoOperacion = "C"
+                olOrdenTrabajo.ActualizaEstadoOT(oeOrdenTrabajo)
             End If
-            formulario = Nothing
+            'End If
+            'formulario = Nothing
         Catch ex As Exception
             Throw ex
         End Try
