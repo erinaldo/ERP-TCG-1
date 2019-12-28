@@ -1,4 +1,5 @@
 ﻿' Hola Maurixito 20191228
+' maurixito tu terror
 
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
