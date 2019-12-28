@@ -145,7 +145,6 @@ Partial Class frm_Caja
         Dim ButtonTool27 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool3")
         Dim ButtonTool28 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Consultar")
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -153,6 +152,7 @@ Partial Class frm_Caja
         Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn41 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn42 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdArea")
         Dim UltraDataColumn43 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Area")
@@ -168,6 +168,7 @@ Partial Class frm_Caja
         Dim UltraDataColumn53 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griMontoCaja = New ISL.Controles.Grilla(Me.components)
         Me.mcMovimientosCaja = New ISL.Controles.MenuContextual(Me.components)
@@ -239,6 +240,8 @@ Partial Class frm_Caja
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.frm_MenuPadre_Fill_Panel = New System.Windows.Forms.Panel()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.UltraLabel6 = New Infragistics.Win.Misc.UltraLabel()
+        Me.uce_CtaCtble = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.griMontoCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mcMovimientosCaja.SuspendLayout()
@@ -293,12 +296,13 @@ Partial Class frm_Caja
         CType(Me.tcCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcCaja.SuspendLayout()
         Me.frm_MenuPadre_Fill_Panel.SuspendLayout()
+        CType(Me.uce_CtaCtble, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.griMontoCaja)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1137, 250)
         '
@@ -392,7 +396,7 @@ Partial Class frm_Caja
         'UltraTabPageControl4
         '
         Me.UltraTabPageControl4.Controls.Add(Me.spcCuentaBancaria)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1137, 250)
         '
@@ -829,7 +833,7 @@ Partial Class frm_Caja
         Me.agrTotalCaja.Size = New System.Drawing.Size(1145, 478)
         Me.agrTotalCaja.TabIndex = 1
         Me.agrTotalCaja.Text = "Total de Cajas"
-        Me.agrTotalCaja.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        Me.agrTotalCaja.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'griListaCaja
         '
@@ -867,9 +871,9 @@ Partial Class frm_Caja
         Me.griListaCaja.DisplayLayout.Override.RowSelectorNumberStyle = Infragistics.Win.UltraWinGrid.RowSelectorNumberStyle.VisibleIndex
         Me.griListaCaja.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griListaCaja.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griListaCaja.Location = New System.Drawing.Point(2, 19)
+        Me.griListaCaja.Location = New System.Drawing.Point(3, 17)
         Me.griListaCaja.Name = "griListaCaja"
-        Me.griListaCaja.Size = New System.Drawing.Size(1141, 457)
+        Me.griListaCaja.Size = New System.Drawing.Size(1139, 458)
         Me.griListaCaja.TabIndex = 1
         Me.griListaCaja.Text = "Listado de Cajas"
         '
@@ -980,7 +984,7 @@ Partial Class frm_Caja
         Me.MenuMovimiento.Appearance = Appearance10
         Me.MenuMovimiento.DesignerFlags = 1
         Me.MenuMovimiento.DockWithinContainer = Me
-        Me.MenuMovimiento.DockWithinContainerBaseType = GetType(frm_MenuPadre)
+        Me.MenuMovimiento.DockWithinContainerBaseType = GetType(ISL.Win.frm_MenuPadre)
         Me.MenuMovimiento.MdiMergeable = False
         Me.MenuMovimiento.MiniToolbar.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool1, ButtonTool2})
         Me.MenuMovimiento.Office2007UICompatibility = False
@@ -1090,6 +1094,8 @@ Partial Class frm_Caja
         '
         'Gb_DatoGeneralDemanda
         '
+        Me.Gb_DatoGeneralDemanda.Controls.Add(Me.uce_CtaCtble)
+        Me.Gb_DatoGeneralDemanda.Controls.Add(Me.UltraLabel6)
         Me.Gb_DatoGeneralDemanda.Controls.Add(Me.cboCentro)
         Me.Gb_DatoGeneralDemanda.Controls.Add(Me.txtCodigo)
         Me.Gb_DatoGeneralDemanda.Controls.Add(Me.verActivo)
@@ -1105,12 +1111,12 @@ Partial Class frm_Caja
         Me.Gb_DatoGeneralDemanda.Size = New System.Drawing.Size(1145, 152)
         Me.Gb_DatoGeneralDemanda.TabIndex = 0
         Me.Gb_DatoGeneralDemanda.Text = "Datos"
-        Me.Gb_DatoGeneralDemanda.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        Me.Gb_DatoGeneralDemanda.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
         'cboCentro
         '
-        Appearance17.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboCentro.Appearance = Appearance17
+        Appearance18.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboCentro.Appearance = Appearance18
         Me.cboCentro.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.cboCentro.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
@@ -1124,8 +1130,8 @@ Partial Class frm_Caja
         '
         'txtCodigo
         '
-        Appearance18.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtCodigo.Appearance = Appearance18
+        Appearance19.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtCodigo.Appearance = Appearance19
         Me.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodigo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1133,7 +1139,7 @@ Partial Class frm_Caja
         Me.txtCodigo.Location = New System.Drawing.Point(96, 25)
         Me.txtCodigo.MaxLength = 5
         Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(90, 21)
+        Me.txtCodigo.Size = New System.Drawing.Size(79, 21)
         Me.txtCodigo.TabIndex = 2
         '
         'verActivo
@@ -1152,13 +1158,13 @@ Partial Class frm_Caja
         '
         'UltraLabel5
         '
-        Appearance19.BackColor = System.Drawing.Color.Transparent
-        Appearance19.ForeColor = System.Drawing.Color.Navy
-        Appearance19.TextVAlignAsString = "Middle"
-        Me.UltraLabel5.Appearance = Appearance19
+        Appearance20.BackColor = System.Drawing.Color.Transparent
+        Appearance20.ForeColor = System.Drawing.Color.Navy
+        Appearance20.TextVAlignAsString = "Middle"
+        Me.UltraLabel5.Appearance = Appearance20
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel5.Location = New System.Drawing.Point(25, 75)
+        Me.UltraLabel5.Location = New System.Drawing.Point(25, 79)
         Me.UltraLabel5.Name = "UltraLabel5"
         Me.UltraLabel5.Size = New System.Drawing.Size(66, 15)
         Me.UltraLabel5.TabIndex = 5
@@ -1166,8 +1172,8 @@ Partial Class frm_Caja
         '
         'txtAbreviatura
         '
-        Appearance20.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtAbreviatura.Appearance = Appearance20
+        Appearance21.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtAbreviatura.Appearance = Appearance21
         Me.txtAbreviatura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAbreviatura.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtAbreviatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1175,13 +1181,13 @@ Partial Class frm_Caja
         Me.txtAbreviatura.Location = New System.Drawing.Point(96, 75)
         Me.txtAbreviatura.MaxLength = 5
         Me.txtAbreviatura.Name = "txtAbreviatura"
-        Me.txtAbreviatura.Size = New System.Drawing.Size(90, 21)
+        Me.txtAbreviatura.Size = New System.Drawing.Size(79, 21)
         Me.txtAbreviatura.TabIndex = 6
         '
         'txtNombre
         '
-        Appearance21.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtNombre.Appearance = Appearance21
+        Appearance22.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtNombre.Appearance = Appearance22
         Me.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1194,13 +1200,13 @@ Partial Class frm_Caja
         '
         'UltraLabel22
         '
-        Appearance22.BackColor = System.Drawing.Color.Transparent
-        Appearance22.ForeColor = System.Drawing.Color.Navy
-        Appearance22.TextVAlignAsString = "Middle"
-        Me.UltraLabel22.Appearance = Appearance22
+        Appearance23.BackColor = System.Drawing.Color.Transparent
+        Appearance23.ForeColor = System.Drawing.Color.Navy
+        Appearance23.TextVAlignAsString = "Middle"
+        Me.UltraLabel22.Appearance = Appearance23
         Me.UltraLabel22.AutoSize = True
         Me.UltraLabel22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel22.Location = New System.Drawing.Point(42, 52)
+        Me.UltraLabel22.Location = New System.Drawing.Point(43, 54)
         Me.UltraLabel22.Name = "UltraLabel22"
         Me.UltraLabel22.Size = New System.Drawing.Size(48, 15)
         Me.UltraLabel22.TabIndex = 3
@@ -1208,13 +1214,13 @@ Partial Class frm_Caja
         '
         'UltraLabel2
         '
-        Appearance23.BackColor = System.Drawing.Color.Transparent
-        Appearance23.ForeColor = System.Drawing.Color.Navy
-        Appearance23.TextVAlignAsString = "Middle"
-        Me.UltraLabel2.Appearance = Appearance23
+        Appearance24.BackColor = System.Drawing.Color.Transparent
+        Appearance24.ForeColor = System.Drawing.Color.Navy
+        Appearance24.TextVAlignAsString = "Middle"
+        Me.UltraLabel2.Appearance = Appearance24
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel2.Location = New System.Drawing.Point(47, 99)
+        Me.UltraLabel2.Location = New System.Drawing.Point(49, 103)
         Me.UltraLabel2.Name = "UltraLabel2"
         Me.UltraLabel2.Size = New System.Drawing.Size(41, 15)
         Me.UltraLabel2.TabIndex = 1
@@ -1222,13 +1228,13 @@ Partial Class frm_Caja
         '
         'UltraLabel4
         '
-        Appearance24.BackColor = System.Drawing.Color.Transparent
-        Appearance24.ForeColor = System.Drawing.Color.Navy
-        Appearance24.TextVAlignAsString = "Middle"
-        Me.UltraLabel4.Appearance = Appearance24
+        Appearance25.BackColor = System.Drawing.Color.Transparent
+        Appearance25.ForeColor = System.Drawing.Color.Navy
+        Appearance25.TextVAlignAsString = "Middle"
+        Me.UltraLabel4.Appearance = Appearance25
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel4.Location = New System.Drawing.Point(47, 29)
+        Me.UltraLabel4.Location = New System.Drawing.Point(49, 29)
         Me.UltraLabel4.Name = "UltraLabel4"
         Me.UltraLabel4.Size = New System.Drawing.Size(42, 15)
         Me.UltraLabel4.TabIndex = 1
@@ -1283,6 +1289,28 @@ Partial Class frm_Caja
         Me.ToolTip1.IsBalloon = True
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTip1.ToolTipTitle = "Mensaje del sistema"
+        '
+        'UltraLabel6
+        '
+        Appearance17.BackColor = System.Drawing.Color.Transparent
+        Appearance17.ForeColor = System.Drawing.Color.Navy
+        Appearance17.TextVAlignAsString = "Middle"
+        Me.UltraLabel6.Appearance = Appearance17
+        Me.UltraLabel6.AutoSize = True
+        Me.UltraLabel6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel6.Location = New System.Drawing.Point(181, 79)
+        Me.UltraLabel6.Name = "UltraLabel6"
+        Me.UltraLabel6.Size = New System.Drawing.Size(50, 15)
+        Me.UltraLabel6.TabIndex = 101
+        Me.UltraLabel6.Text = "CtaCtble:"
+        '
+        'uce_CtaCtble
+        '
+        Me.uce_CtaCtble.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.uce_CtaCtble.Location = New System.Drawing.Point(237, 75)
+        Me.uce_CtaCtble.Name = "uce_CtaCtble"
+        Me.uce_CtaCtble.Size = New System.Drawing.Size(112, 22)
+        Me.uce_CtaCtble.TabIndex = 102
         '
         'frm_Caja
         '
@@ -1349,6 +1377,7 @@ Partial Class frm_Caja
         CType(Me.tcCaja, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tcCaja.ResumeLayout(False)
         Me.frm_MenuPadre_Fill_Panel.ResumeLayout(False)
+        CType(Me.uce_CtaCtble, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1423,4 +1452,6 @@ Partial Class frm_Caja
     Friend WithEvents menContextualUsuariosCaja As ISL.Controles.MenuContextual
     Friend WithEvents ToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents filtro1 As Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider
+    Friend WithEvents uce_CtaCtble As Infragistics.Win.UltraWinEditors.UltraComboEditor
+    Friend WithEvents UltraLabel6 As Infragistics.Win.Misc.UltraLabel
 End Class
