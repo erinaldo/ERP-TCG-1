@@ -1,44 +1,58 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_Lado" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_Lado.svc o l_Lado.svc.vb en el Explorador de soluciones e inicie la depuración.
-
-Imports ERP.AccesoDatos
+﻿
 Imports ERP.EntidadesWCF
+Imports ERP.AccesoDatos
 Imports ERP.LogicaWCF
 
+<DataContract(), Serializable()>
 Public Class l_Lado
     Implements Il_Lado
+    Private odLado As New d_Lado
 
-    Dim odLado As New d_Lado
-
-    Public Function mt_Obtener(oeLado As e_Lado) As e_Lado Implements Il_Lado.mt_Obtener
+    Public Function Obtener(ByVal Item As e_Lado) As e_Lado
         Try
-            Return odLado.mt_Obtener(oeLado)
+            Return odLado.Obtener(Item)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Listar(oeLado As e_Lado) As List(Of e_Lado) Implements Il_Lado.mt_Listar
+    Public Function Listar(ByVal Item As e_Lado) As List(Of e_Lado) Implements Il_Lado.Listar
         Try
-            Return odLado.mt_Listar(oeLado)
+            Return odLado.Listar(Item)
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Guardar(oeLado As e_Lado) As Boolean Implements Il_Lado.mt_Guardar
+    Public Function Guardar(ByVal Item As e_Lado) As e_Lado Implements Il_Lado.Guardar
         Try
-            Return odLado.mt_Guardar(oeLado)
+            Validar(Item)
+            Item = odLado.Guardar(Item)
+            Return Item
         Catch ex As Exception
             Throw ex
         End Try
     End Function
 
-    Public Function mt_Eliminar(oeLado As e_Lado) As Boolean Implements Il_Lado.mt_Eliminar
+    Public Function Eliminar(ByVal Item As e_Lado) As Boolean Implements Il_Lado.Eliminar
         Try
-            Return odLado.mt_Eliminar(oeLado)
+            Return odLado.Eliminar(Item)
         Catch ex As Exception
             Throw ex
         End Try
+    End Function
+    Private Function Validar(ByVal Item As e_Lado) As Boolean
+        Try
+            With Item
+                '---------VALIDARRRRRRRRRR-------------
+            End With
+            Return True
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function Il_Lado_Obtener(oeLado As e_Lado) As e_Lado Implements Il_Lado.Obtener
+        Throw New NotImplementedException()
     End Function
 End Class

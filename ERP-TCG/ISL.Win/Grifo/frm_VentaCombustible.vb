@@ -13,12 +13,12 @@ Public Class frm_VentaCombustible
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_OrdenVenMaterial = Nothing
+    Private Shared instancia As frm_VentaCombustible = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_OrdenVenMaterial()
+            instancia = New frm_VentaCombustible()
             Operacion = "Inicializa"
         End If
         instancia.Activate()
@@ -29,7 +29,7 @@ Public Class frm_VentaCombustible
 
 #Region "Variables"
 
-    Private oeOrdenComercial As e_OrdenVenta
+    Private OrdenVenta As e_OrdenVenta
     Private olOrdenComercial As l_OrdenVenta
 
     Private oeOrdenComercialMaterial As e_OrdenVentaMaterial
@@ -198,17 +198,17 @@ Public Class frm_VentaCombustible
         Try
             'Throw New Exception("No es posible eliminar Ordenes de Venta, solo se permite anular")
             With griOrdenComercial
-                oeOrdenComercial = New e_OrdenVenta
+                OrdenVenta = New e_OrdenVenta
                 If .Selected.Rows.Count > 0 Then
-                    oeOrdenComercial.Id = .ActiveRow.Cells("Id").Value
-                    oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-                    If oeOrdenComercial.IdEstado = "1CIX043" Then
+                    OrdenVenta.Id = .ActiveRow.Cells("Id").Value
+                    OrdenVenta = olOrdenComercial.Obtener(OrdenVenta)
+                    If OrdenVenta.IdEstado = "1CIX043" Then
                         If MessageBox.Show("Esta seguro de eliminar la Orden: " &
                                  .ActiveRow.Cells("OrdenComercial").Value.ToString & " ?",
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                            oeOrdenComercial.TipoOperacion = "N"
-                            oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
-                            olOrdenComercial.EliminarExtornar(oeOrdenComercial)
+                            OrdenVenta.TipoOperacion = "N"
+                            OrdenVenta.UsuarioCrea = gUsuarioSGI.Id
+                            olOrdenComercial.EliminarExtornar(OrdenVenta)
                             MsgBox("La Informacion ha Sido Eliminada Correctamente", MsgBoxStyle.Information, Me.Text)
                             Consultar(True)
                         End If
@@ -586,10 +586,10 @@ Public Class frm_VentaCombustible
 
     Private Sub btnGenerar_Click(sender As Object, e As EventArgs)
         Try
-            oeOrdenComercial = New e_OrdenVenta
-            oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
-            oeOrdenComercial.TipoOperacion = "G"
-            If olOrdenComercial.Guardar(oeOrdenComercial) Then
+            OrdenVenta = New e_OrdenVenta
+            OrdenVenta.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
+            OrdenVenta.TipoOperacion = "G"
+            If olOrdenComercial.Guardar(OrdenVenta) Then
                 MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
                 Consultar(True)
             End If
@@ -666,7 +666,7 @@ Public Class frm_VentaCombustible
             mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = True
             With griOrdenSalida.ActiveRow
                 If .Index > -1 Then
-                    If .Cells("Estado").Value = "GENERADO" Then
+                    If .Cells("EstadoOrden").Value = "GENERADO" Then
                         mt_MenuDetalle(0, 0, 1, 0, 0)
                     Else
                         mt_MenuDetalle(0, 0, 0, 0, 0)
@@ -730,7 +730,7 @@ Public Class frm_VentaCombustible
 
     Private Sub cbDocumento_CheckedChanged(sender As Object, e As EventArgs) Handles cbDocumento.CheckedChanged
         If cbDocumento.Checked Then
-            If oeOrdenComercial.Estado <> "TERMINADA" Then
+            If OrdenVenta.Estado <> "TERMINADA" Then
                 If Operacion = "Atender" Or Operacion = "Nuevo" Or Operacion = "Editar" Then
                     grbDocAsoc.Enabled = True
                     cmbTipoDocumento.Focus()
@@ -869,7 +869,7 @@ Public Class frm_VentaCombustible
                         'End If
                         oeOrdenComercialMaterial = New e_OrdenVentaMaterial
                         loOrdenComercialMaterial = New List(Of e_OrdenVentaMaterial)
-                        oeOrdenComercialMaterial.IdOrdenComercial = oeOrdenComercial.Id
+                        oeOrdenComercialMaterial.IdOrdenComercial = OrdenVenta.Id
                         loOrdenComercialMaterial.AddRange(olOrdenComercialMaterial.Listar(oeOrdenComercialMaterial))
                         griOrdenComercialMaterial.DataSource = loOrdenComercialMaterial
                         griOrdenComercialMaterial.DataBind()
@@ -981,13 +981,13 @@ Public Class frm_VentaCombustible
     Private Sub cbgCliente_EditorButtonClick(sender As Object, e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles cboVendedor.EditorButtonClick, cbgCliente.EditorButtonClick
         Try
             If txtEstado.Text = "TERMINADO" Or txtEstado.Text = "ATENDIDO PARCIALMENTE" Or txtEstado.Text = "ATENDIDO" Then
-                oeOrdenComercial.TipoOperacion = "W"
-                oeOrdenComercial.IdVendedorTrabajador = cboVendedor.Value
-                oeOrdenComercial.Id = oeOrdenComercial.Id
-                oeOrdenComercial.Fecha = oeOrdenComercial.Fecha
-                oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
-                oeOrdenComercial.lstOrdenComercialMaterial.AddRange(loOrdenComercialMaterial)
-                olOrdenComercial.Guardar(oeOrdenComercial)
+                OrdenVenta.TipoOperacion = "W"
+                OrdenVenta.IdVendedorTrabajador = cboVendedor.Value
+                OrdenVenta.Id = OrdenVenta.Id
+                OrdenVenta.Fecha = OrdenVenta.Fecha
+                OrdenVenta.UsuarioCrea = gUsuarioSGI.Id
+                OrdenVenta.lstOrdenComercialMaterial.AddRange(loOrdenComercialMaterial)
+                olOrdenComercial.Guardar(OrdenVenta)
                 MsgBox("Se actualizó la Orden para el Vendedor: " & cboVendedor.Text, MsgBoxStyle.Information, "EOS")
             End If
         Catch ex As Exception
@@ -1050,7 +1050,7 @@ Public Class frm_VentaCombustible
 
     Private Sub mt_Inicializar()
         oeDocumento = New e_MovimientoDocumento
-        oeOrdenComercial = New e_OrdenVenta
+        OrdenVenta = New e_OrdenVenta
         oeOrdenComercialMaterial = New e_OrdenVentaMaterial
         loOrdenComercialMaterial = New List(Of e_OrdenVentaMaterial)
         griOrdenComercialMaterial.DataSource = loOrdenComercialMaterial
@@ -1112,9 +1112,9 @@ Public Class frm_VentaCombustible
                     gmt_ControlBoton(1, 1)
                 End If
             Case 1
-                If oeOrdenComercial.Estado = "GENERADO" Or oeOrdenComercial.Estado = "" Then
+                If OrdenVenta.Estado = "GENERADO" Or OrdenVenta.Estado = "" Then
                     gmt_ControlBoton(0, 0, 0, 1, 1)
-                ElseIf oeOrdenComercial.Estado = "EVALUADA" And Operacion = "Editar" Then
+                ElseIf OrdenVenta.Estado = "EVALUADA" And Operacion = "Editar" Then
                     gmt_ControlBoton(0, 0, 0, 1, 1)
                 Else
                     gmt_ControlBoton(0, 0, 0, 0, 1)
@@ -1246,20 +1246,22 @@ Public Class frm_VentaCombustible
 
     Private Sub mt_Listar()
         Try
-            oeOrdenComercial = New e_OrdenVenta
-            oeOrdenComercial.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
-            oeOrdenComercial.IdSucursal = gs_PrefijoIdSucursal
-            oeOrdenComercial.Tipo = 2
-            oeOrdenComercial.TipoExistencia = 1
+            OrdenVenta = New e_OrdenVenta
+            OrdenVenta.TipoOperacion = ""
+            OrdenVenta.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
+            OrdenVenta.IdSucursal = gs_PrefijoIdSucursal
+            OrdenVenta.Tipo = 2
+            OrdenVenta.TipoExistencia = 1
+            OrdenVenta.IdTipoVenta = "VENTA_COMBUS"
             If rdbDatosBasicos.Checked Then
-                oeOrdenComercial.IdEmpresa = cbgClienteB.Value
-                oeOrdenComercial.IdEstado = cboEstado.Value
-                oeOrdenComercial.Fecha = dtpFechaInicio.Value
-                oeOrdenComercial.FechaCrea = dtpFechaFin.Value
+                OrdenVenta.IdEmpresa = cbgClienteB.Value
+                OrdenVenta.IdEstado = cboEstado.Value
+                OrdenVenta.Fecha = dtpFechaInicio.Value
+                OrdenVenta.FechaCrea = dtpFechaFin.Value
             Else
-                oeOrdenComercial.OrdenComercial = txtNroOrden.Text
+                OrdenVenta.OrdenComercial = txtNroOrden.Text
             End If
-            griOrdenComercial.DataSource = olOrdenComercial.Listar(oeOrdenComercial).Where(Function(it) it.IdTipoVenta = "VENTA_COMBUSTIBLE")
+            griOrdenComercial.DataSource = olOrdenComercial.Listar(OrdenVenta)
             mt_CombosGrillaPrincipal(griOrdenComercial)
             For Each fila As UltraGridRow In griOrdenComercial.Rows
                 Select Case fila.Cells("Estado").Value
@@ -1282,9 +1284,9 @@ Public Class frm_VentaCombustible
 
     Private Sub mt_Mostrar()
         Try
-            oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
-            oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-            With oeOrdenComercial
+            OrdenVenta.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
+            OrdenVenta = olOrdenComercial.Obtener(OrdenVenta)
+            With OrdenVenta
                 gmt_ListarEmpresa("6", cbgCliente, .IdEmpresa, False)
                 cbgCliente.Value = .IdEmpresa
                 If .IdEmpresaAlterna <> "" Then
@@ -1317,7 +1319,7 @@ Public Class frm_VentaCombustible
             'End If
 
             oeOrdenComercialMaterial = New e_OrdenVentaMaterial
-            oeOrdenComercialMaterial.IdOrdenComercial = oeOrdenComercial.Id
+            oeOrdenComercialMaterial.IdOrdenComercial = OrdenVenta.Id
             loOrdenComercialMaterial.AddRange(olOrdenComercialMaterial.Listar(oeOrdenComercialMaterial))
             griOrdenComercialMaterial.DataSource = loOrdenComercialMaterial
             griOrdenComercialMaterial.DataBind()
@@ -1331,7 +1333,7 @@ Public Class frm_VentaCombustible
             oeDocumento = New e_MovimientoDocumento
             oeOrdDocumento = New e_Orden_Documento
             oeOrdDocumento.TipoOperacion = ""
-            oeOrdDocumento.IdOrden = oeOrdenComercial.Id
+            oeOrdDocumento.IdOrden = OrdenVenta.Id
             oeOrdDocumento.IdTipoOrden = "1CH000000004"
             oeOrdDocumento = olOrdDocumento.Obtener(oeOrdDocumento)
             If oeOrdDocumento.Id <> "" Then
@@ -1494,7 +1496,7 @@ Public Class frm_VentaCombustible
             If Mid(txtOrden.Text, 1, 5) = "OVSIS" Then
                 If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
                 If fc_LlenaObjeto() Then
-                    If olOrdenComercial.Guardar(oeOrdenComercial) Then
+                    If olOrdenComercial.Guardar(OrdenVenta) Then
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
                         grbDocAsoc.Enabled = False
                         cbDocumento.Checked = False
@@ -1507,7 +1509,7 @@ Public Class frm_VentaCombustible
                 If oeDocumento.Id = "" Then Throw New Exception("Tiene Que Emitir el Documento antes de Generar la Orden de Salida")
                 If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
                 If fc_LlenaObjeto() Then
-                    If olOrdenComercial.Guardar(oeOrdenComercial) Then
+                    If olOrdenComercial.Guardar(OrdenVenta) Then
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
                         grbDocAsoc.Enabled = False
                         cbDocumento.Checked = False
@@ -1664,7 +1666,7 @@ Public Class frm_VentaCombustible
     Private Sub mt_ControlColumnas()
         gmt_OcultarColumna(griOrdenComercialMaterial, True, "IndOperacion", "IdOrigen", "IdDestino")
         With griOrdenComercialMaterial.DisplayLayout.Bands(0)
-            Select Case oeOrdenComercial.Estado
+            Select Case OrdenVenta.Estado
                 Case "", "GENERADO"
                     Me.lblOperacion.Text = "GENERANDO OV"
                     .Columns("CantidadPendiente").Hidden = True
@@ -1780,7 +1782,7 @@ Public Class frm_VentaCombustible
             loOrdenSalida = New List(Of e_Orden)
             ' If ejecuta = 0 Then : oeOrdenSalida.TipoOperacion = "C" : Else : oeOrdenSalida.TipoOperacion = "V" : End If
             oeOrdenSalida.TipoOperacion = "2"
-            oeOrdenSalida.Referencia = oeOrdenComercial.Id
+            oeOrdenSalida.Referencia = OrdenVenta.Id
             oeOrdenSalida.IdTipoOrden = "1CH000000002"
             loOrdenSalida.AddRange(olOrdenSalida.Listar(oeOrdenSalida))
             griOrdenSalida.DataSource = loOrdenSalida
@@ -1850,7 +1852,7 @@ Public Class frm_VentaCombustible
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadSalida = oe.CantidadMaterial
-                    If oeOrdenComercial.IdMoneda = "1CIX00000000000005" Then
+                    If OrdenVenta.IdMoneda = "1CIX00000000000005" Then
                         .ValorUnitario = Math.Round(oe.PrecioUnitario / (mdblIGV + 1), 4)
                     Else
                         .ValorUnitario = Math.Round(oe.PrecioUnitario * decTipoCambio.Value / (mdblIGV + 1), 4)
@@ -1887,7 +1889,7 @@ Public Class frm_VentaCombustible
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
-                .IdClienteProveedor = IIf(oeOrdenComercial.IdEmpresaAlterna = "", oeOrdenComercial.IdEmpresa, oeOrdenComercial.IdEmpresaAlterna)
+                .IdClienteProveedor = IIf(OrdenVenta.IdEmpresaAlterna = "", OrdenVenta.IdEmpresa, OrdenVenta.IdEmpresaAlterna)
                 .IdTipoDocumento = cmbTipoDocumento.Value
                 .IdEstadoDocumento = "1CH00014"
                 .IdPeriodo = ""
@@ -1971,7 +1973,7 @@ Public Class frm_VentaCombustible
                 oeEmpresa = New e_Empresa
                 Dim olEmpresa As New l_Empresa
                 oeEmpresa.TipoOperacion = "CLI"
-                oeEmpresa.Id = oeOrdenComercial.IdEmpresa
+                oeEmpresa.Id = OrdenVenta.IdEmpresa
                 oeEmpresa = olEmpresa.Obtener(oeEmpresa)
                 If Microsoft.VisualBasic.Left(oe.Cuenta.Trim, 2) = "12" Then '20-07
                     If oeEmpresa.IndRelacionada Then
@@ -1980,9 +1982,6 @@ Public Class frm_VentaCombustible
                 End If
                 If loCtaCtble.Contains(oeCtaCtble) Then
                     oe.oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                    'If oe.oeCtaCtble.IndDocumento Then
-                    '    mstrIdCuentaContable = oe.oeCtaCtble.Id
-                    'End If
                 End If
             Next
         Catch ex As Exception
@@ -1998,7 +1997,7 @@ Public Class frm_VentaCombustible
             oeCliente = New e_Cliente
             oeCliente.TipoOperacion = ""
             oeCliente.TipoClienteProveedor = 1
-            oeCliente.Id = oeOrdenComercial.IdEmpresa
+            oeCliente.Id = OrdenVenta.IdEmpresa
             oeCliente = olCliente.Obtener(oeCliente)
 
             oeMoneda = cmbMoneda.Items(cmbMoneda.SelectedIndex).ListObject
@@ -2174,12 +2173,12 @@ Public Class frm_VentaCombustible
             Dim olOrdenCom As New l_OrdenVenta
             Dim loOrdenCom As New List(Of e_OrdenVenta)
 
-            oeOrdenCom.Id = oeOrdenComercial.Id
+            oeOrdenCom.Id = OrdenVenta.Id
             oeOrdenCom = olOrdenCom.Obtener(oeOrdenCom)
             oeOrdenCom.Glosa = "PRESTACION DE SERVICIOS DE TRANSPORTE"
             oeOrdenCom.Fecha = ObtenerFechaServidor()
             oeOrdenCom.TipoExistencia = "2"
-            oeOrdenCom.IdOrdenReferencia = oeOrdenComercial.Id
+            oeOrdenCom.IdOrdenReferencia = OrdenVenta.Id
             oeOrdenCom.TipoOperacion = "I"
             ''''''
             'Dim oeComercialServ As New e_OrdenVentaServicio
@@ -2276,7 +2275,7 @@ Public Class frm_VentaCombustible
             If Not fc_LlenaObjeto() Then Return False
             'mt_ObtenerSaldoCtaCte()
             'If txtCodSaldoCtaCte.Tag.ToString.Trim = "" Then Throw New Exception("¡Ingrese Cuenta Corriente!")
-            If olOrdenComercial.Guardar(oeOrdenComercial) Then
+            If olOrdenComercial.Guardar(OrdenVenta) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
@@ -2286,7 +2285,7 @@ Public Class frm_VentaCombustible
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
                         oeDocumento = New e_MovimientoDocumento
                         oeDocumento.TipoOperacion = ""
-                        oeDocumento.Id = oeOrdenComercial.oeDocumento.Id
+                        oeDocumento.Id = OrdenVenta.oeDocumento.Id
                         oeDocumento = olDocumento.Obtener(oeDocumento)
                         'Select Case oeDocumento.IdTipoDocumento
                         '    Case "1CIX001"
@@ -2348,7 +2347,7 @@ Public Class frm_VentaCombustible
 
     Public Function fc_LlenaObjeto() As Boolean
         Try
-            With oeOrdenComercial
+            With OrdenVenta
                 .PrefijoID = gs_PrefijoIdSucursal
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
@@ -2435,7 +2434,7 @@ Public Class frm_VentaCombustible
         Try
             If cbDocumento.Checked Then
                 mt_GeneraDocumento()
-                oeOrdenComercial.oeDocumento = oeDocumento
+                OrdenVenta.oeDocumento = oeDocumento
             Else
                 Select Case MessageBox.Show("¿Desea Guardar la Orden sin Documento?", "Mensaje del Sistema",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
@@ -2460,12 +2459,12 @@ Public Class frm_VentaCombustible
                 .FechaOrden = ObtenerFechaServidor()
                 .TipoOperacion = "I"
                 .TipoReferencia = "ORDEN VENTA"
-                .Referencia = oeOrdenComercial.OrdenComercial
+                .Referencia = OrdenVenta.OrdenComercial
                 .TipoCambio = decTipoCambio.Value
                 .IdTipoOrden = "1CH000000002"
-                .IdProveedor = oeOrdenComercial.IdEmpresa
+                .IdProveedor = OrdenVenta.IdEmpresa
                 .IdMovimientoInventario = "1CH000000038"
-                .IdMoneda = oeOrdenComercial.IdMoneda
+                .IdMoneda = OrdenVenta.IdMoneda
                 .IdEstadoOrden = "1CH000000001"
                 .UsuarioCreacion = gUsuarioSGI.Id
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
@@ -2518,6 +2517,10 @@ Public Class frm_VentaCombustible
         End With
     End Sub
 
+    Private Sub btnCrearCtaCte_Click(sender As Object, e As EventArgs) Handles btnCrearCtaCte.Click
+
+    End Sub
+
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)
         Try
             loDetDocumento = New List(Of e_DetalleDocumento)
@@ -2554,7 +2557,7 @@ Public Class frm_VentaCombustible
             loOrdDocumento = New List(Of e_Orden_Documento)
             With oeOrdDocumento
                 .PrefijoID = gs_PrefijoIdSucursal
-                .IdOrden = oeOrdenComercial.Id
+                .IdOrden = OrdenVenta.Id
                 .IdTipoOrden = "1CH000000004"
                 .TipoOperacion = "I"
                 .IdTipoDocumento = cmbTipoDocumento.Value
@@ -2621,17 +2624,17 @@ Public Class frm_VentaCombustible
 
     Private Function fc_AnularOrdenVenta() As Boolean
         Try
-            oeOrdenComercial = New e_OrdenVenta
-            oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
-            oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-            oeOrdenComercial.TipoOperacion = "X"
+            OrdenVenta = New e_OrdenVenta
+            OrdenVenta.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
+            OrdenVenta = olOrdenComercial.Obtener(OrdenVenta)
+            OrdenVenta.TipoOperacion = "X"
 
             'oeOrdDocumento = New e_Orden_Documento
             'oeOrdDocumento.IdOrden = oeOrdenComercial.Id
             'oeOrdDocumento.TipoOrden = 2
             'oeOrdDocumento = olOrdDocumento.Obtener(oeOrdDocumento)
             'If oeOrdDocumento.Id <> "" Then Throw New Exception("Cuenta con un documento asociado, no es posible anularla")
-            If olOrdenComercial.Guardar(oeOrdenComercial) Then
+            If olOrdenComercial.Guardar(OrdenVenta) Then
                 Return True
             End If
         Catch ex As Exception

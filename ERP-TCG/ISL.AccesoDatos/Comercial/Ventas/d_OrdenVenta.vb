@@ -77,7 +77,8 @@ Public Class d_OrdenVenta
                         , .TipoExistencia _
                         , .Fecha _
                         , .FechaCrea _
-                        , .IndFacturadoProducto)
+                        , .IndFacturadoProducto _
+                        , .IdTipoVenta)
             End With
             Return ds
         Catch ex As Exception

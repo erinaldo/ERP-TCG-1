@@ -154,7 +154,7 @@ Public Class frm_EstacionServicio
                 .TipoExistencia = 1
                 .TipoCambio = TipoCambio
                 .IndFactSer = True 'Revisar
-                .IdVendedorTrabajador = "" ' Trabajador
+                .IdVendedorTrabajador = gUsuarioSGI.IdTrabajador
                 .IdEmpresa = IdEmpresaCliente
                 .Fecha = ObtenerFechaServidor()
                 .IdMoneda = IdMoneda_Soles
@@ -348,7 +348,6 @@ Public Class frm_EstacionServicio
         End Try
     End Function
 
-
     Sub mt_Ejecutar_OrdenSalida()
         Try
             Dim olregistroinventario As New l_RegistroInventario
@@ -411,7 +410,7 @@ Public Class frm_EstacionServicio
                 ._Operador = 1
                 .Glosa = txt_Serie.Text & "-" & txt_Numero.Text
                 .TipoOperacion = "I" : .IdEmpresaSistema = gs_IdEmpresaSistema : .IdSucursalSistema = gs_IdSucursal : .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCreacion = gUsuarioSGI.Id
-                .Fecha = OrdenVenta.Fecha
+                .Fecha = Now.Date
                 .IdFlujoCaja = "1CH000000085" '1CH000000002 Venta de bienes
                 .NroBoucher = ""
                 .IdCta10 = "" ' "CHG001" 'CAJA CHICLAYO GRIFO - ESTACION SERVICIO
@@ -599,13 +598,6 @@ Public Class frm_EstacionServicio
                 btn_Contado.Appearance.BackColor = Color.White
                 btnCredito.Appearance.BackColor = Color.White
                 btnCalibracion.Appearance.BackColor = Color.White
-            Case "Lado"
-                btnLado1.Appearance.BackColor = Color.White
-                btnLado2.Appearance.BackColor = Color.White
-                btnLado3.Appearance.BackColor = Color.White
-                btnLado4.Appearance.BackColor = Color.White
-                btnLado5.Appearance.BackColor = Color.White
-                btnLado6.Appearance.BackColor = Color.White
             Case "Combustible"
                 btnDB5.Appearance.ForeColor = Color.Black
                 btnG84.Appearance.ForeColor = Color.Black
@@ -617,12 +609,6 @@ Public Class frm_EstacionServicio
                 btnNotaDespacho.Appearance.BackColor = Color.White
                 btn_Contado.Appearance.BackColor = Color.White
                 btnCredito.Appearance.BackColor = Color.White
-                btnLado1.Appearance.ForeColor = Color.Black
-                btnLado2.Appearance.ForeColor = Color.Black
-                btnLado3.Appearance.ForeColor = Color.Black
-                btnLado4.Appearance.ForeColor = Color.Black
-                btnLado5.Appearance.ForeColor = Color.Black
-                btnLado6.Appearance.ForeColor = Color.Black
                 btnDB5.Appearance.ForeColor = Color.Black
                 btnG84.Appearance.ForeColor = Color.Black
                 btnG90.Appearance.ForeColor = Color.Black
@@ -632,6 +618,7 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_ValidarSurtidor()
         Select Case sw_Lado
+            Case "" : btnDB5.Enabled = False : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
             Case "LADO_1" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
             Case "LADO_2" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
             Case "LADO_3" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
@@ -645,25 +632,16 @@ Public Class frm_EstacionServicio
         Try
             If IdEmpresaCliente = "" Then Return 0
             Dim dCuentaCorriente As New l_CuentaCorriente, ListaCuentaCorriente As New List(Of e_CuentaCorriente)
-            Dim dSaldoCuentaCorriente As New l_SaldoCtaCorriente
             ListaCuentaCorriente = dCuentaCorriente.Listar(New e_CuentaCorriente With {.Tipooperacion = "", .IdTrabajador = IdEmpresaCliente})
             If ListaCuentaCorriente.Count > 0 Then
                 For Each Item In ListaCuentaCorriente
-                    Dim Saldos As New List(Of e_SaldoCtaCorriente)
                     CuentaCorriente = Item
-                    Saldos = dSaldoCuentaCorriente.Listar(New e_SaldoCtaCorriente With {.TipoOperacion = "1", .IdCuentaCorriente = CuentaCorriente.Id})
-                    If Saldos.Count > 0 Then
-                        For Each Saldo In Saldos.OrderBy(Function(it) it.Id).ToList
-                            Return Saldo.Saldo
-                        Next
-                    Else
-                        Return 0
-                    End If
+                    Return CuentaCorriente.Saldo
                 Next
             Else
                 btnCrearCuentaCorriente.PerformClick()
+                Return 0
             End If
-            Return 0
         Catch ex As Exception
             Throw ex
         End Try
@@ -671,6 +649,8 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Inicializar()
         OrdenVenta = New e_OrdenVenta
+        MovimientoDocumento = New e_MovimientoDocumento
+
         cmb_Cliente.Text = String.Empty
         cmb_Vehiculo.Value = ""
         udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
@@ -704,13 +684,23 @@ Public Class frm_EstacionServicio
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
 
         '' Cargar Listas y Combos
-        'Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
-        'ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
-        'LlenarComboMaestro(cmb_Lado, ListaLado, 0)
+        mt_CargarCombo_Lado()
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
 
+    End Sub
+
+    Private Sub mt_CargarCombo_Lado()
+        Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
+        ListaLado = dLado.Listar(New e_Lado With {.TipoOperacion = "ALL"})
+        LlenarComboMaestro(cmb_Lado, ListaLado, 0)
+        With cmb_Lado.DisplayLayout.Bands(0)
+            For Each Columna In .Columns
+                Columna.Hidden = True
+            Next
+            .Columns("Nombre").Hidden = False : .Columns("Nombre").Width = 150
+        End With
     End Sub
 
     Private Sub mt_AgregarDetalle()
@@ -968,31 +958,6 @@ Public Class frm_EstacionServicio
         txt_Serie.Text = "0004" : txt_Serie.Focus() : txt_Serie.SelectAll()
     End Sub
 
-    Private Sub btnLado1_Click(sender As Object, e As EventArgs) Handles btnLado1.Click
-        Procesar_Lado(btnLado1.Text)
-        btnLado1.Appearance.BackColor = Color.DimGray
-    End Sub
-
-    Private Sub btnLado2_Click(sender As Object, e As EventArgs) Handles btnLado2.Click
-        Procesar_Lado(btnLado2.Text)
-        btnLado2.Appearance.BackColor = Color.DimGray
-    End Sub
-
-    Private Sub btnLado3_Click(sender As Object, e As EventArgs) Handles btnLado3.Click
-        Procesar_Lado(btnLado3.Text)
-        btnLado3.Appearance.BackColor = Color.DimGray
-    End Sub
-
-    Private Sub btnLado4_Click(sender As Object, e As EventArgs) Handles btnLado4.Click
-        Procesar_Lado(btnLado4.Text)
-        btnLado4.Appearance.BackColor = Color.DimGray
-    End Sub
-
-    Private Sub btnLado5_Click(sender As Object, e As EventArgs) Handles btnLado5.Click
-        Procesar_Lado(btnLado5.Text)
-        btnLado5.Appearance.BackColor = Color.DimGray
-    End Sub
-
     Private Sub cmb_Lado_Leave(sender As Object, e As EventArgs) Handles cmb_Lado.Leave
         sw_Lado = cmb_Lado.Value
     End Sub
@@ -1010,17 +975,16 @@ Public Class frm_EstacionServicio
         instancia = Nothing
     End Sub
 
+    Private Sub cmb_Lado_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Lado.ValueChanged
+        Procesar_Lado(cmb_Lado.Text)
+    End Sub
+
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         instancia = Nothing
     End Sub
 
-    Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
-        Procesar_Lado(btnLado6.Text)
-        btnLado6.Appearance.BackColor = Color.DimGray
-    End Sub
-
     Private Sub Procesar_Lado(Lado As String)
-        sw_Lado = "LADO_" & Lado : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
+        sw_Lado = Lado : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
     End Sub
 
     Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) Handles btnConsultarSUNAT.Click
