@@ -148,6 +148,7 @@ Public Class frm_CierreTurno
 
     Private Sub mt_Inicializar()
         TurnoActivo = New e_CierreTurno
+        ListaDetallesDinamicos = New List(Of e_CierreTurno_Detalle)
         Dim lista As List(Of e_Combo), olCombo As New l_Combo
         lista = New List(Of e_Combo)
         lista.Add(New e_Combo With {.Id = "D", .Nombre = "DIA"})

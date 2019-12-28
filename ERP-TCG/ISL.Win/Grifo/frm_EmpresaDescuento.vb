@@ -222,6 +222,15 @@ Public Class frm_EmpresaDescuento
 
     Private Sub Inicializar()
         Try
+            cbgCliente.Value = ""
+            cboProducto.Value = ""
+            cboMoneda.Value = ""
+            nudContado.Value = 0
+            nudCredito.Value = 0
+            dtpFechaInicio.Value = Now.Date()
+            dtpFechaFin.Value = Now.Date()
+            cboVendedor.Value = ""
+            verActivo.Checked = True
             mt_CargarCombo()
         Catch ex As Exception
             Throw ex

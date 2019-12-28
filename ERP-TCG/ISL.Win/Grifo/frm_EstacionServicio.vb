@@ -59,6 +59,7 @@ Public Class frm_EstacionServicio
     Private sw_Lado As String
     Private IdMaterial_Combustible As String, Material_Combustible As String, Codigo_Combustible As String, IdAlmacen_Combustible As String, IdSubAlmacen_Combustible As String
     Private IdMoneda_Soles As String = "1CH01"
+    Private PrecioNormal As Double
     Private CanDescuento As Double
     Private TipoCambio As Double = gfc_TipoCambio(ObtenerFechaServidor(), 1)
     Private FechaOrden As Date
@@ -630,11 +631,15 @@ Public Class frm_EstacionServicio
         Try
             If IdEmpresaCliente = "" Then Return 0
             Dim dCuentaCorriente As New l_CuentaCorriente, ListaCuentaCorriente As New List(Of e_CuentaCorriente)
+            Dim Limite As Double = 0, Saldo As Double = 0
             ListaCuentaCorriente = dCuentaCorriente.Listar(New e_CuentaCorriente With {.Tipooperacion = "", .IdTrabajador = IdEmpresaCliente})
+            EMPRESA = dEMPRESA.Obtener(New e_Empresa With {.TipoOperacion = "6", .Id = IdEmpresaCliente})
+            Limite = EMPRESA.Credito
             If ListaCuentaCorriente.Count > 0 Then
                 For Each Item In ListaCuentaCorriente
                     CuentaCorriente = Item
-                    Return CuentaCorriente.Saldo
+                    Saldo = Item.Saldo
+                    Return Limite + Saldo
                 Next
             Else
                 btnCrearCuentaCorriente.PerformClick()
@@ -654,6 +659,9 @@ Public Class frm_EstacionServicio
         udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
 
         '' Limpiar Controles
+        cmb_Piloto.Text = ""
+        nud_Saldo.Value = 0
+        chk_HabilitarImporte.Checked = False
         cmb_Direccion.Text = ""
         nud_Cantidad.Value = 0
         nud_Preciounitario.Value = 0
@@ -661,6 +669,9 @@ Public Class frm_EstacionServicio
         nud_SubTotal.Value = 0
         nud_Impuesto.Value = 0
         nud_Total.Value = 0
+        nud_Cantidad.Value = 0
+        nud_Preciounitario.Value = 0
+        nud_Importe.Value = 0
         txt_Serie.Text = String.Empty
         txt_Numero.Text = String.Empty
         txt_Glosa.Text = String.Empty
@@ -668,12 +679,7 @@ Public Class frm_EstacionServicio
         nud_Kilometraje.Value = 0
 
         '' Valores Default
-        TurnoActivo = gfc_obtener_TurnoActivo()
-        Select Case TurnoActivo.IdTurno
-            Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
-            Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
-            Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
-        End Select
+        mt_Cargar_TurnoActivo()
 
         FechaOrden = ObtenerFechaServidor()
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
@@ -738,18 +744,20 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Calcular_DescuentoCombustible()
         Dim ListaDescuentos As New List(Of e_EmpresaDescuento), dEmpresaDescuento As New l_EmpresaDescuento
+        Dim swCredito As Boolean = IIf(IdTipoPago = "1SI000000001", 0, 1)
         If IdMaterial_Combustible = "" Then Exit Sub
         If IdEmpresaCliente = "" Then Exit Sub
 
         ListaDescuentos = dEmpresaDescuento.Listar(New e_EmpresaDescuento With {.IdEmpresa = IdEmpresaCliente, .IdProducto = IdMaterial_Combustible})
         If ListaDescuentos.Count > 0 Then
             For Each Item In ListaDescuentos
-                CanDescuento = IIf(IdTipoPago = "", Item.DescuentoCredito, Item.DescuentoContado)
+                CanDescuento = IIf(swCredito, Item.DescuentoCredito, Item.DescuentoContado)
             Next
         Else
             CanDescuento = 0
         End If
-        nud_Preciounitario.Value = nud_Preciounitario.Value - CanDescuento
+        grb_Combustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
+        nud_Preciounitario.Value = PrecioNormal - CanDescuento
         nud_Cantidad.SelectAll()
     End Sub
 
@@ -890,7 +898,7 @@ Public Class frm_EstacionServicio
         Select Case Titulo
             Case "DB5" 'DB5
                 btnDB5.Appearance.ForeColor = Color.White
-                IdMaterial_Combustible = "1CH000007256" : Material_Combustible = "DIESEL DB5" : Codigo_Combustible = "TR0012145"
+                IdMaterial_Combustible = "1CH000001990" : Material_Combustible = "DIESEL DB5" : Codigo_Combustible = "TR0012145"
                 IdAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000001", "1CH000000002")
                 IdSubAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000003", "1CH000000005")
             Case "G84" 'G84
@@ -908,10 +916,11 @@ Public Class frm_EstacionServicio
         End Select
 
         '' Cargar Producto
-        Dim PrecioNormal As Double = fc_Obtener_PrecioCombustible()
+        PrecioNormal = fc_Obtener_PrecioCombustible()
         nud_Preciounitario.Value = PrecioNormal
         mt_Calcular_DescuentoCombustible()
-        grb_Combustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
+
+        nud_Preciounitario.Value = PrecioNormal - CanDescuento
         nud_Cantidad.SelectAll()
     End Sub
 
@@ -941,7 +950,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub chk_HabilitarImporte_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HabilitarImporte.CheckedChanged
-        nud_Importe.Enabled = chk_HabilitarImporte.Checked
+        nud_Importe.ReadOnly = Not (chk_HabilitarImporte.Checked)
     End Sub
 
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
@@ -957,10 +966,19 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub cmb_Lado_Leave(sender As Object, e As EventArgs) Handles cmb_Lado.Leave
-        sw_Lado = cmb_Lado.Value
+        sw_Lado = cmb_Lado.Text
+        If cmb_Lado.Text = "" Then
+            grb_Combustible.Enabled = False
+        Else
+            grb_Combustible.Enabled = True
+        End If
     End Sub
 
     Private Sub btn_Turno_Click(sender As Object, e As EventArgs) Handles btn_Turno.Click
+        mt_Cargar_TurnoActivo()
+    End Sub
+
+    Private Sub mt_Cargar_TurnoActivo()
         TurnoActivo = gfc_obtener_TurnoActivo()
         Select Case TurnoActivo.Turno
             Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
@@ -968,7 +986,6 @@ Public Class frm_EstacionServicio
             Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
         End Select
     End Sub
-
     Private Sub frm_EstacionServicio_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         instancia = Nothing
     End Sub
@@ -1168,8 +1185,11 @@ Public Class frm_EstacionServicio
         Dim oeDireccionEmpresa As New e_Combo, ddireccionempresa As New l_Combo
         oeDireccionEmpresa.Nombre = "DireccionEmpresaFiscal"
         oeDireccionEmpresa.Id = IdEmpresaCliente
-        ListaPuntoPartida.AddRange(ddireccionempresa.Listar(oeDireccionEmpresa))
-        LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
+        ListaPuntoPartida = ddireccionempresa.Listar(oeDireccionEmpresa)
+        If ListaPuntoPartida.Count > 0 Then
+            LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
+            cmb_Direccion.Rows(0).Selected = True
+        End If
     End Sub
 
     Private OrdenAux As New e_Orden
