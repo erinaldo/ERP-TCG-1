@@ -1,4 +1,4 @@
-﻿' Hola Maurixito
+﻿' Hola Maurixito 20191228
 
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
