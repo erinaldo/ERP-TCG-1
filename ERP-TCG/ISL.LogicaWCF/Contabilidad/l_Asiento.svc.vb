@@ -1780,6 +1780,7 @@ Public Class l_Asiento
                     rowMovCajaBanco("Operador") = 1
                     rowMovCajaBanco("NroImpresion") = IIf(Len(Trim(oeMovCajaBanco.IdCuentaBancaria)) = 12, lsPrefijoNroImpresion + olFuncionesGenerales.CompletaConCeros(lsNroImpresion.ToString, 8), "")
                     rowMovCajaBanco("IdTipoGasto") = ""
+                    rowMovCajaBanco("IdCaja") = oeMovCajaBanco.IdCaja
                     dt_MCB.Rows.Add(rowMovCajaBanco)
                     IdMovimientoCajaBanco = lsPrefijoMovCajaBanco + olFuncionesGenerales.CompletaConCeros(lsNumeroMovCajaBanco.ToString, 13)
                 Else
