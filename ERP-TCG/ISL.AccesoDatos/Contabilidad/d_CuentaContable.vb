@@ -199,4 +199,21 @@ Public Class d_CuentaContable
         End Try
     End Function
 
+    Public Function Obtener2(ByVal oeCuentaContable As e_CuentaContable) As e_CuentaContable
+
+        Try
+            Dim ds As DataSet
+            With oeCuentaContable
+                ds = sqlhelper.ExecuteDataset("CON.ISP_CuentaContable_Listar", .TipoOperacion, Left(oeCuentaContable.PrefijoID, 1), "", .Id, .Cuenta, "", .Ejercicio)
+            End With
+
+            If ds.Tables(0).Rows.Count > 0 Then
+                oeCuentaContable = Cargar(ds.Tables(0).Rows(0))
+            End If
+            Return oeCuentaContable
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 End Class

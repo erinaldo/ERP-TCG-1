@@ -68,6 +68,7 @@ Public Class frm_EstacionServicio
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
     Private IdEmpresaCliente As String
+
 #End Region
 
 #Region "Botones"
@@ -430,7 +431,23 @@ Public Class frm_EstacionServicio
             'If OptPerdida.Checked Then indicadortipo = "PER"
             'If OptGanancia.Checked Then indicadortipo = "GAN"
             'If OptCobro.Checked Then indicadortipo = "COB"
+            ListaMovimientoDocumento = New List(Of e_MovimientoDocumento)
+            MovimientoDocumento.MontoOperar = OrdenVenta.Total
+
+
+
+            'CuentaContable.Id = "1SI010782"
+
+            Dim _oeCajaUsuario As e_CajaUsuario
+            _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+
+            Dim _oecaja As e_Caja, _olcaja As New l_Caja
+            _oecaja = _olcaja.Obtener(New e_Caja With {.Id = _oeCajaUsuario.IdCaja})
+
+            CuentaContable = dCuentaContable.Obtener2(New e_CuentaContable With {.TipoOperacion = "Q", .Cuenta = _oecaja.CuentaContable, .Ejercicio = FechaOrden.Year})
+
             ListaMovimientoDocumento.Add(MovimientoDocumento)
+            'MovimientoDocumento.MontoOperar 
             If dASIENTO.GuardarCobranza(ListaMovimientoDocumento, MovimientoCajaBanco, MEDIOPAGO, gUsuarioSGI.Id, MacPCLocal, CuentaContable, indicadortipo) Then
                 'If indicadortipo <> "PER" Then
                 '    mensajeEmergente.Confirmacion("Cobro(s) guardados satisfactoriamente", True)
@@ -499,8 +516,8 @@ Public Class frm_EstacionServicio
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                 Else
                         btnCrearCuentaCorriente.PerformClick()
-                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
-                    End If
+                    _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
+                End If
 
                     ' Actualizar Cuenta para Empresas Relacionada
                     'Dim _oeEmpr As New e_Cliente
@@ -687,9 +704,9 @@ Public Class frm_EstacionServicio
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
 
         '' Cargar Listas y Combos
-        Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
-        ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
-        LlenarComboMaestro(cmb_Lado, ListaLado, 0)
+        'Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
+        'ListaLado = dLado.mt_Listar(New e_Lado With {.Activo = 1})
+        'LlenarComboMaestro(cmb_Lado, ListaLado, 0)
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
@@ -987,6 +1004,14 @@ Public Class frm_EstacionServicio
             Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
             Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
         End Select
+    End Sub
+
+    Private Sub frm_EstacionServicio_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        instancia = Nothing
+    End Sub
+
+    Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        instancia = Nothing
     End Sub
 
     Private Sub btnLado6_Click(sender As Object, e As EventArgs) Handles btnLado6.Click
