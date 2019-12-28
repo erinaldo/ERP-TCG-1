@@ -404,6 +404,13 @@ Public Class frm_EstacionServicio
             Dim MEDIOPAGO As New e_MedioPago, dMEDIOPAGO As New l_MedioPago
             MEDIOPAGO = dMEDIOPAGO.Obtener(New e_MedioPago With {.Id = "1CH03"})
 
+            Dim _oeCajaUsuario As e_CajaUsuario
+            _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+
+            Dim _oecaja As e_Caja, _olcaja As New l_Caja
+            _oecaja = _olcaja.Obtener(New e_Caja With {.Id = _oeCajaUsuario.IdCaja})
+
+
             Dim indicadortipo As String = ""
             MovimientoCajaBanco = New e_MovimientoCajaBanco
             With MovimientoCajaBanco
@@ -425,6 +432,7 @@ Public Class frm_EstacionServicio
                 .Glosa = txt_Glosa.Text
                 .DifAGanancia = 0
                 .IdCuentaCorriente = IdEmpresaCliente
+                .IdCaja = _oecaja.Id
             End With
 
             'If OptPerdida.Checked Then indicadortipo = "PER"
@@ -432,16 +440,6 @@ Public Class frm_EstacionServicio
             'If OptCobro.Checked Then indicadortipo = "COB"
             ListaMovimientoDocumento = New List(Of e_MovimientoDocumento)
             MovimientoDocumento.MontoOperar = OrdenVenta.Total
-
-
-
-            'CuentaContable.Id = "1SI010782"
-
-            Dim _oeCajaUsuario As e_CajaUsuario
-            _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
-
-            Dim _oecaja As e_Caja, _olcaja As New l_Caja
-            _oecaja = _olcaja.Obtener(New e_Caja With {.Id = _oeCajaUsuario.IdCaja})
 
             CuentaContable = dCuentaContable.Obtener2(New e_CuentaContable With {.TipoOperacion = "Q", .Cuenta = _oecaja.CuentaContable, .Ejercicio = FechaOrden.Year})
 

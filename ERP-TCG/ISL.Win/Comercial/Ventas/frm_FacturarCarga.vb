@@ -3831,7 +3831,9 @@ Public Class frm_FacturarCarga
                     'olDocumento.GenerarXmlFacturaElectronica_Emision(dsComprobante.Tables(0), dsComprobante.Tables(1), frm_DocumentoElectronico.RutaArchivos, gUsuarioEOS.Id)
                     'olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id) <--
                     'Registro_ComprobanteElectronico_Bath(dt_cpe, "I", dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), Nothing)
-                    Imprimir()
+
+                    'Imprimir()
+
                 End If
                 If cboFactura.SelectedIndex <> 1 Then BandSave = False
                 leSelec = New List(Of e_Viaje) : verSelecion.Checked = False
