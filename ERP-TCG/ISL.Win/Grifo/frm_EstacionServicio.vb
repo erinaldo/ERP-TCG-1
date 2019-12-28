@@ -50,7 +50,7 @@ Public Class frm_EstacionServicio
     Private ASIENTO As New e_Asiento, dASIENTO As New l_Asiento
     Private MovimientoCajaBanco As New e_MovimientoCajaBanco, dMovimietoCajaBanco As New l_MovimientoCajaBanco
     Private oeSaldoCtaCte As e_SaldoCtaCorriente, olSaldoCtaCte As New l_SaldoCtaCorriente, leSaldoCtaCte As New List(Of e_SaldoCtaCorriente)
-    Private CuentaContable As e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
+    Private CuentaContable As New e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
     Private oeMoneda As New e_Moneda
     Private Periodo As New e_Periodo, dPeriodo As New l_Periodo
     Private swConsumoInterno As Boolean
@@ -441,7 +441,10 @@ Public Class frm_EstacionServicio
             Dim _oeCajaUsuario As e_CajaUsuario
             _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
 
-            'CuentaContable = dCuentaContable.Obtener (New e_CuentaContable With { .Cuenta = _oeCajaUsuario.cu})
+            Dim _oecaja As e_Caja, _olcaja As New l_Caja
+            _oecaja = _olcaja.Obtener(New e_Caja With {.Id = _oeCajaUsuario.IdCaja})
+
+            CuentaContable = dCuentaContable.Obtener2(New e_CuentaContable With {.TipoOperacion = "Q", .Cuenta = _oecaja.CuentaContable, .Ejercicio = FechaOrden.Year})
 
             ListaMovimientoDocumento.Add(MovimientoDocumento)
             'MovimientoDocumento.MontoOperar 

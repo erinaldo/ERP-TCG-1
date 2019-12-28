@@ -20,6 +20,10 @@ Public Interface Il_CuentaContable
     <OperationContract()> _
     Function Eliminar(ByVal oeCuentaContable As e_CuentaContable) As Boolean
 
-    <OperationContract()> _
+    <OperationContract()>
     Function ComboGrilla(ByVal oeMaterialAlmacen As e_CuentaContable)
+
+    <OperationContract()>
+    Function Obtener2(ByVal oeCuentaContable As e_CuentaContable) As e_CuentaContable
+
 End Interface
