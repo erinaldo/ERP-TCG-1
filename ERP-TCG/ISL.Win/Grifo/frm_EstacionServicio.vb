@@ -599,20 +599,20 @@ Public Class frm_EstacionServicio
                 btnCredito.Appearance.BackColor = Color.White
                 btnCalibracion.Appearance.BackColor = Color.White
             Case "Combustible"
-                btnDB5.Appearance.ForeColor = Color.Black
-                btnG84.Appearance.ForeColor = Color.Black
-                btnG90.Appearance.ForeColor = Color.Black
-                btnG95.Appearance.ForeColor = Color.Black
+                btnDB5.Appearance.BackColor = Color.White
+                btnG84.Appearance.BackColor = Color.White
+                btnG90.Appearance.BackColor = Color.White
+                btnG95.Appearance.BackColor = Color.White
             Case "Clean"
                 btnDocumento.Appearance.BackColor = Color.White
                 btnBoleta.Appearance.BackColor = Color.White
                 btnNotaDespacho.Appearance.BackColor = Color.White
                 btn_Contado.Appearance.BackColor = Color.White
                 btnCredito.Appearance.BackColor = Color.White
-                btnDB5.Appearance.ForeColor = Color.Black
-                btnG84.Appearance.ForeColor = Color.Black
-                btnG90.Appearance.ForeColor = Color.Black
-                btnG95.Appearance.ForeColor = Color.Black
+                btnDB5.Appearance.BackColor = Color.Black
+                btnG84.Appearance.BackColor = Color.Black
+                btnG90.Appearance.BackColor = Color.Black
+                btnG95.Appearance.BackColor = Color.Black
         End Select
     End Sub
 
@@ -654,7 +654,6 @@ Public Class frm_EstacionServicio
     Private Sub mt_Inicializar()
         OrdenVenta = New e_OrdenVenta
         MovimientoDocumento = New e_MovimientoDocumento
-
         cmb_Cliente.Text = String.Empty
         cmb_Vehiculo.Value = ""
         udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
@@ -679,9 +678,9 @@ Public Class frm_EstacionServicio
         grb_Combustible.Enabled = False
         nud_Kilometraje.Value = 0
 
+
         '' Valores Default
         mt_Cargar_TurnoActivo()
-
         FechaOrden = ObtenerFechaServidor()
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
         mt_PaintBotones("Clean")
@@ -690,10 +689,18 @@ Public Class frm_EstacionServicio
 
         '' Cargar Listas y Combos
         mt_CargarCombo_Lado()
+        mt_CargarCombo_Combustible()
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
 
+        cmb_Lado.Rows(0).Selected = True
+        cboProducto.SelectedIndex = 0 : Procesar_BotonCombustible(cboProducto.Value)
+    End Sub
+
+    Private Sub mt_CargarCombo_Combustible()
+        Dim olMaterial As New l_Material, loMaterial = olMaterial.Listar(New e_Material With {.TipoOperacion = "S", .Activo = True})
+        gmt_ComboEspecifico(cboProducto, loMaterial, 0, "Nombre")
     End Sub
 
     Private Sub mt_CargarCombo_Lado()
@@ -708,7 +715,7 @@ Public Class frm_EstacionServicio
         End With
     End Sub
 
-    Private Sub mt_AgregarDetalle()
+    Private Sub mt_Agregar_Detalle()
         Try
             Dim OV_DETALLE As New e_OrdenVentaMaterial
             With OV_DETALLE
@@ -866,13 +873,7 @@ Public Class frm_EstacionServicio
     '    End Try
     'End Function
 
-    Private Sub btnDB5_Click(sender As Object, e As EventArgs) Handles btnDB5.Click
-        Procesar_BotonCombustible(btnDB5.Text)
-    End Sub
 
-    Private Sub btnG84_Click(sender As Object, e As EventArgs) Handles btnG84.Click
-        Procesar_BotonCombustible(btnG84.Text)
-    End Sub
 
     Private Sub cboPuntoPartida_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Direccion.InitializeLayout
         Me.cmb_Direccion.ValueMember = "Id"
@@ -886,33 +887,25 @@ Public Class frm_EstacionServicio
         End With
     End Sub
 
-    Private Sub btnG90_Click(sender As Object, e As EventArgs) Handles btnG90.Click
-        Procesar_BotonCombustible(btnG90.Text)
-    End Sub
-
-    Private Sub btnG95_Click(sender As Object, e As EventArgs) Handles btnG95.Click
-        Procesar_BotonCombustible(btnG95.Text)
-    End Sub
-
     Private Sub Procesar_BotonCombustible(Titulo As String)
         mt_PaintBotones("Combustible")
         Select Case Titulo
-            Case "DB5" 'DB5
-                btnDB5.Appearance.ForeColor = Color.White
-                IdMaterial_Combustible = "1CH000001990" : Material_Combustible = "DIESEL DB5" : Codigo_Combustible = "TR0012145"
+            Case "1CH000001990" 'DB5
+                btnDB5.Appearance.BackColor = Color.Gray
+                IdMaterial_Combustible = "1CH000001990" : Material_Combustible = cboProducto.Text : Codigo_Combustible = "TR0012145"
                 IdAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000001", "1CH000000002")
                 IdSubAlmacen_Combustible = IIf(sw_Lado = "LADO_3" Or sw_Lado = "LADO_4", "1CH000000003", "1CH000000005")
-            Case "G84" 'G84
-                btnG84.Appearance.ForeColor = Color.White
-                IdMaterial_Combustible = "1CH000000147" : Material_Combustible = "GASOHOL 84" : Codigo_Combustible = "TR0000154"
+            Case "1CH000000147" 'G84
+                btnG84.Appearance.BackColor = Color.Red
+                IdMaterial_Combustible = "1CH000000147" : Material_Combustible = cboProducto.Text : Codigo_Combustible = "TR0000154"
                 IdAlmacen_Combustible = "1CH000000004" : IdSubAlmacen_Combustible = "1CH000000009"
-            Case "G90" 'G90
-                btnG90.Appearance.ForeColor = Color.White
-                IdMaterial_Combustible = "1CH000000148" : Material_Combustible = "GASOHOL 90" : Codigo_Combustible = "TR0000155"
+            Case "1CH000000148" 'G90
+                btnG90.Appearance.BackColor = Color.LightGreen
+                IdMaterial_Combustible = "1CH000000148" : Material_Combustible = cboProducto.Text : Codigo_Combustible = "TR0000155"
                 IdAlmacen_Combustible = "1CH000000006" : IdSubAlmacen_Combustible = "1CH000000012"
-            Case "G95" 'G95
-                btnG95.Appearance.ForeColor = Color.White
-                IdMaterial_Combustible = "1CH000000149" : Material_Combustible = "GASOHOL 95" : Codigo_Combustible = "TR0000156"
+            Case "1CH000000149" 'G95
+                btnG95.Appearance.BackColor = Color.Blue
+                IdMaterial_Combustible = "1CH000000149" : Material_Combustible = cboProducto.Text : Codigo_Combustible = "TR0000156"
                 IdAlmacen_Combustible = "1CH000000007" : IdSubAlmacen_Combustible = "1CH000000014"
         End Select
 
@@ -995,6 +988,10 @@ Public Class frm_EstacionServicio
         Procesar_Lado(cmb_Lado.Text)
     End Sub
 
+    Private Sub cboProducto_ValueChanged(sender As Object, e As EventArgs) Handles cboProducto.ValueChanged
+        Procesar_BotonCombustible(cboProducto.Value)
+    End Sub
+
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         instancia = Nothing
     End Sub
@@ -1049,7 +1046,7 @@ Public Class frm_EstacionServicio
 
     Private Sub btnAgregarDetalle_Click(sender As Object, e As EventArgs) Handles btnAgregarDetalle.Click
         If nud_Importe.Value = 0 Then Exit Sub
-        mt_AgregarDetalle()
+        mt_Agregar_Detalle()
         grb_Combustible.Text = "Seleccione Combustible:"
         nud_Cantidad.Value = 0
         nud_Preciounitario.Value = 0

@@ -296,7 +296,7 @@ Public Class frm_EmpresaDescuento
             gmt_ComboEspecifico(cboMoneda, loMoneda, 0, "Nombre")
             '' Material
             Dim olMaterial As New l_Material
-            Dim loMaterial = olMaterial.Listar(New e_Material With {.TipoOperacion = "C", .Activo = True})
+            Dim loMaterial = olMaterial.Listar(New e_Material With {.TipoOperacion = "S", .Activo = True})
             gmt_ComboEspecifico(cboProducto, loMaterial, 0, "Nombre")
             '' Vendedores
             Dim olVendedores As New l_Persona
