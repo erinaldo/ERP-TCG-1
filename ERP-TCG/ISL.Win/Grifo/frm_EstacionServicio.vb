@@ -70,6 +70,7 @@ Public Class frm_EstacionServicio
     Private DNI As String = "1CIX00000000000225"
     Private Ruc As String = "1CIX00000000000229"
     Private IdEmpresaCliente As String
+    Private swCredito As Boolean
 
 #End Region
 
@@ -104,10 +105,11 @@ Public Class frm_EstacionServicio
             If swConsumoInterno Then
                 mt_Generar_ConsumoCombustible()
             End If
-            If IdTipoDocumento <> "GCH000000001" Then
+            If IdTipoDocumento <> "GCH000000001" Then 'Nota de Despacho no se emite
                 If Not fc_Emitir_Documento() Then Throw New Exception
+            End If
+            If swCredito = False Then
                 If Not fc_Guardar_Cobros() Then Throw New Exception
-            Else
                 MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
             Nuevo()
@@ -696,6 +698,7 @@ Public Class frm_EstacionServicio
 
         cmb_Lado.Rows(0).Selected = True
         cboProducto.SelectedIndex = 0 : Procesar_BotonCombustible(cboProducto.Value)
+        cmb_Cliente.SelectAll()
     End Sub
 
     Private Sub mt_CargarCombo_Combustible()
@@ -752,7 +755,7 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Calcular_DescuentoCombustible()
         Dim ListaDescuentos As New List(Of e_EmpresaDescuento), dEmpresaDescuento As New l_EmpresaDescuento
-        Dim swCredito As Boolean = IIf(IdTipoPago = "1SI000000001", 0, 1)
+        swCredito = IIf(IdTipoPago = "1SI000000001", 0, 1)
         If IdMaterial_Combustible = "" Then Exit Sub
         If IdEmpresaCliente = "" Then Exit Sub
 
