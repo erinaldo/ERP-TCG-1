@@ -21,8 +21,8 @@ Public Class d_Conexion
     Public Shared Function CadenaConexionSGI() As String
         Try
             'Return ConfigurationManager.ConnectionStrings("ISL").ConnectionString '@0001
-            'Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
-            Return "Data Source=190.117.119.215;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
+            Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
+            'Return "Data Source=190.117.119.215;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
             'Return "Data Source=LADERA;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
             'Return "Data Source=192.168.0.8;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
             'Return "Data Source=127.0.0.1;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=sql2014; Connect Timeout=120"
