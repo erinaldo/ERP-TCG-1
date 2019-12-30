@@ -1,5 +1,7 @@
-﻿' Hola Maurixito 20191228
-' maurixito tu terror
+﻿' ================================================================================================== 
+' FECHA_MOD | DEV
+' 30/12/19  | CESS
+' ================================================================================================== 
 
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
@@ -923,7 +925,7 @@ Public Class frm_EstacionServicio
 
     Public Function fc_Obtener_PrecioCombustible() As Double
         For Each Item In TurnoActivo.Detalles
-            If Item.IdConcepto = IdMaterial_Combustible Then
+            If Item.IdConcepto = IdMaterial_Combustible And Item.Rubro = "PRECIO_COMBUSTIBLE" Then
                 Return Item.ValorERP
             End If
         Next
@@ -931,7 +933,7 @@ Public Class frm_EstacionServicio
     End Function
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
-        IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
+        IdTipoDocumento = "Then1CH000000026" : TipoDocumento = "FACTURA"
         mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
         txt_Serie.Text = "F013" : txt_Serie.Focus() : txt_Serie.SelectAll()
     End Sub
