@@ -1296,7 +1296,7 @@ Public Class frm_EstacionServicio
                 btn_Contado.Enabled = False : btnCredito.Enabled = True : btnCalibracion.Enabled = True
             Case "1CH000000003"
                 btn_Contado.Enabled = True : btnCredito.Enabled = False : btnCalibracion.Enabled = False
-                btn_Contado.PerformClick() : btnBoleta.PerformClick() : txt_Serie.SelectAll() : cmb_Vehiculo.Focus()
+                btn_Contado.PerformClick() : btnBoleta.PerformClick() : txt_Serie.Focus() : txt_Serie.SelectAll() : cmb_Vehiculo.Focus()
             Case ""
                 btn_Contado.Enabled = True : btnCredito.Enabled = True : btnCalibracion.Enabled = True
             Case Else
