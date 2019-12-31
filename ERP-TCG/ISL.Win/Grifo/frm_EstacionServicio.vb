@@ -103,9 +103,11 @@ Public Class frm_EstacionServicio
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
-            'mt_Ejecutar_OrdenSalida()
+
             If swConsumoInterno Then
                 mt_Generar_ConsumoCombustible()
+            Else
+                mt_Ejecutar_OrdenSalida()
             End If
             'If IdTipoDocumento <> "GCH000000001" Then 'Nota de Despacho no se emite
             If Not fc_Emitir_Documento() Then Throw New Exception
@@ -374,7 +376,7 @@ Public Class frm_EstacionServicio
                     .FechaOrden = Date.Now
                     .IdMoneda = IdMoneda_Soles
                     .IdMovimientoInventario = "1CH000000022" 'INGRESO POR TRANSFERENCIA ENTRE ALMACENES
-                    .IdEstadoOrden = ""
+                    .IdEstadoOrden = "1CH000000003"
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                     .lstOrdenMaterial = OrdenVenta.oeOrdenSalida.lstOrdenMaterial
