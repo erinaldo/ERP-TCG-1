@@ -18,6 +18,7 @@ Public Class frm_CierreTurno
 
     Private TurnoActivo As New e_CierreTurno, dTurno As New l_CierreTurno
     Private ListaDetallesDinamicos As New List(Of e_CierreTurno_Detalle)
+    Private swNuevo As Boolean
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
@@ -44,6 +45,7 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Nuevo()
         Try
+            If swNuevo = False Then Exit Sub
             Operacion = "Nuevo"
             gmt_MostrarTabs(1, ficOrdenComercial, 1)
             mt_Inicializar()
@@ -153,7 +155,7 @@ Public Class frm_CierreTurno
         lista = New List(Of e_Combo)
         'lista.Add(New e_Combo With {.Id = "1", .Nombre = "DIA"})
         'lista.Add(New e_Combo With {.Id = "2", .Nombre = "NOCHE"})
-        lista.Add(New e_Combo With {.Id = "1", .Nombre = "TuRNO 1"})
+        lista.Add(New e_Combo With {.Id = "1", .Nombre = "TURNO 1"})
         lista.Add(New e_Combo With {.Id = "2", .Nombre = "TURNO 2"})
         lista.Add(New e_Combo With {.Id = "3", .Nombre = "TURNO 3"})
         lista.Add(New e_Combo With {.Id = "4", .Nombre = "TURNO 4"})
@@ -186,6 +188,7 @@ Public Class frm_CierreTurno
 
     Private Sub mt_Listar()
         Try
+            Dim ListaTurnos As New List(Of e_CierreTurno)
             TurnoActivo = New e_CierreTurno
             With TurnoActivo
                 .TipoOperacion = ""
@@ -195,14 +198,17 @@ Public Class frm_CierreTurno
                 .FechaCrea = dtpFechaFin.Value.Date
                 .Activo = 1
             End With
-            griOrdenComercial.DataSource = dTurno.Listar(TurnoActivo)
+            ListaTurnos = dTurno.Listar(TurnoActivo)
+            griOrdenComercial.DataSource = ListaTurnos
+
+            For Each item In ListaTurnos
+                If item.Estado = "ABIERTO" Then swNuevo = False
+            Next
             'mt_CombosGrillaPrincipal(griOrdenComercial)
             For Each fila As UltraGridRow In griOrdenComercial.Rows
                 Select Case fila.Cells("Estado").Value
-                    Case "ABIERTO"
-                        fila.CellAppearance.BackColor = Me.colorEvaluado.Color
-                    Case "CERRADO"
-                        fila.CellAppearance.BackColor = Me.colorParcial.Color
+                    Case "ABIERTO" : fila.CellAppearance.BackColor = Me.colorEvaluado.Color
+                    Case "CERRADO" : fila.CellAppearance.BackColor = Me.colorParcial.Color
                 End Select
             Next
             With griOrdenComercial
@@ -218,6 +224,8 @@ Public Class frm_CierreTurno
                 .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
                 .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
             End With
+
+            mt_ControlBotoneria()
         Catch ex As Exception
             Throw ex
         End Try
@@ -227,7 +235,9 @@ Public Class frm_CierreTurno
         Try
             With TurnoActivo
                 cmb_Turno.Value = Trim(.IdTurno)
+                cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(.IdTurno)
                 dtpFecha.Value = .Fecha
+                dtp_FechaNuevo.Value = ObtenerFechaServidor.Date
                 dtpHoraInicio.Value = .HoraInicio
                 dtpHoraFin.Value = .HoraFin
                 cmb_Estado.Value = Trim(.IdEstado)
@@ -313,6 +323,7 @@ Public Class frm_CierreTurno
             cmb_Estado.Enabled = False
             cboTrabajadorApertura.Enabled = False
             cboTrabajadorCierre.Enabled = False
+            UltraGroupBox2.Enabled = False
             With udg_ContometroAnalogico.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
                     Columna.CellClickAction = CellClickAction.RowSelect
@@ -399,7 +410,7 @@ Public Class frm_CierreTurno
         TurnoNuevo = fc_Inicializar_Turno("I")
         With TurnoNuevo
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
-            .Fecha = dtpFecha.Value : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
+            .Fecha = Now.Date : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
             .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
             .IdTurno = cmb_TurnoNuevo.Value : .Turno = cmb_TurnoNuevo.Text
             .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
@@ -423,9 +434,9 @@ Public Class frm_CierreTurno
     End Sub
 
     Private Function fc_Devolver_IdTurnoSiguiente(IdTurno As String) As String
-        If IdTurno = "5" Then
-            Return 1
-        Else
+        If IdTurno <> "" Then
+            If IdTurno = "5" Then Return 1
+            If dtpFecha.Value.Date <> Now.Date Then Return 1
             Return CInt(IdTurno) + 1
         End If
     End Function
@@ -711,10 +722,11 @@ Public Class frm_CierreTurno
     End Sub
 
     Private Sub cmb_Turno_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Turno.ValueChanged
-        cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(TurnoActivo.Id)
+        cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(cmb_TurnoNuevo.Value)
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         mt_Inicializar()
+        mt_Listar()
     End Sub
 End Class

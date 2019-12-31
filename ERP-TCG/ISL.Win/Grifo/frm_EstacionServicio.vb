@@ -56,6 +56,8 @@ Public Class frm_EstacionServicio
     Private CuentaContable As New e_CuentaContable, dCuentaContable As New l_CuentaContable, ListaCuentaCotable As New List(Of e_CuentaContable)
     Private oeMoneda As New e_Moneda
     Private Periodo As New e_Periodo, dPeriodo As New l_Periodo
+    Private ListaLado As New List(Of e_Lado), dLado As New l_Lado
+
     Private swConsumoInterno As Boolean
     Private IdTipoDocumento As String, TipoDocumento As String
     Private IdTipoVenta As String, IdTipoPago As String 'Contado "1SI000000001", 
@@ -244,7 +246,7 @@ Public Class frm_EstacionServicio
                 '' Cargar Venta
                 .Venta = New e_Venta
                 .Venta.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
-                .Venta.IdSucursal = gs_PrefijoIdSucursal
+                .Venta.IdSucursal = gs_IdSucursal
                 .Venta.PrefijoID = gs_PrefijoIdSucursal
                 .Venta.Gravado = Math.Round(nud_SubTotal.Value, 2)
                 .Venta.IGV = Math.Round(nud_Impuesto.Value, 2)
@@ -629,15 +631,15 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub mt_ValidarSurtidor()
-        Select Case sw_Lado
-            Case "" : btnDB5.Enabled = False : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
-            Case "LADO_1" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "LADO_2" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "LADO_3" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
-            Case "LADO_4" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
-            Case "LADO_5" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-            Case "LADO_6" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
-        End Select
+        'Select Case sw_Lado
+        '    Case "" : btnDB5.Enabled = False : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
+        '    Case "LADO_1" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+        '    Case "LADO_2" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+        '    Case "LADO_3" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
+        '    Case "LADO_4" : btnDB5.Enabled = True : btnG84.Enabled = False : btnG90.Enabled = False : btnG95.Enabled = False
+        '    Case "LADO_5" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+        '    Case "LADO_6" : btnDB5.Enabled = True : btnG84.Enabled = True : btnG90.Enabled = True : btnG95.Enabled = True
+        'End Select
     End Sub
 
     Private Function fc_Obtener_SaldoCuentaCorriente() As Double
@@ -702,7 +704,7 @@ Public Class frm_EstacionServicio
 
         '' Cargar Listas y Combos
         mt_CargarCombo_Lado()
-        mt_CargarCombo_Combustible()
+
         ListaAsientoModelo = dAsientoModelo.Listar(New e_AsientoModelo With {.TipoOperacion = "A", .Activo = True, .Nombre = "1PY000000005"})
         leCuentaBancaria.AddRange(olCtaBancaria.Listar(New e_CuentaBancaria With {.IdCuentaContable = CuentaContable.Id, .Activo = True, .Ejercicio = Date.Parse(OrdenVenta.Fecha).Year, .TipoOperacion = "C"}))
         ListaServicioCuentaContable = dServicioCuentaContable.Listar(New e_ServicioCuentaContable With {.TipoOperacion = "V", .Activo = True, .Ejercicio = Date.Now.Year})
@@ -712,13 +714,27 @@ Public Class frm_EstacionServicio
         cmb_Cliente.SelectAll()
     End Sub
 
+
+
     Private Sub mt_CargarCombo_Combustible()
+        Dim ListaCombustible As New List(Of e_Material)
         Dim olMaterial As New l_Material, loMaterial = olMaterial.Listar(New e_Material With {.TipoOperacion = "S", .Activo = True})
-        gmt_ComboEspecifico(cboProducto, loMaterial, 0, "Nombre")
+        For Each Lado In ListaLado
+            If Lado.Id = cmb_Lado.Value Then
+                For Each Combustible In loMaterial
+                    Select Case Combustible.Id
+                        Case "1CH000001990" : If Lado.Diesel Then ListaCombustible.Add(Combustible)
+                        Case "1CH000000147" : If Lado.G84 Then ListaCombustible.Add(Combustible)
+                        Case "1CH000000148" : If Lado.G90 Then ListaCombustible.Add(Combustible)
+                        Case "1CH000000149" : If Lado.G95 Then ListaCombustible.Add(Combustible)
+                    End Select
+                Next
+            End If
+        Next
+        gmt_ComboEspecifico(cboProducto, ListaCombustible, 0, "Nombre")
     End Sub
 
     Private Sub mt_CargarCombo_Lado()
-        Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
         ListaLado = dLado.Listar(New e_Lado With {.TipoOperacion = "ALL"})
         LlenarComboMaestro(cmb_Lado, ListaLado, 0)
         With cmb_Lado.DisplayLayout.Bands(0)
@@ -1022,7 +1038,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub Procesar_Lado(Lado As String)
-        sw_Lado = Lado : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
+        sw_Lado = Lado : mt_CargarCombo_Combustible() : mt_ValidarSurtidor() : mt_PaintBotones("Lado") : grb_Combustible.Enabled = True
     End Sub
 
     Private Async Sub btnObtenerSunat_Click(sender As Object, e As EventArgs) Handles btnConsultarSUNAT.Click
