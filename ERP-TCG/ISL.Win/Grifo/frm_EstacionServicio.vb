@@ -107,12 +107,12 @@ Public Class frm_EstacionServicio
             If swConsumoInterno Then
                 mt_Generar_ConsumoCombustible()
             End If
-            If IdTipoDocumento <> "GCH000000001" Then 'Nota de Despacho no se emite
-                If Not fc_Emitir_Documento() Then Throw New Exception
-            End If
+            'If IdTipoDocumento <> "GCH000000001" Then 'Nota de Despacho no se emite
+            If Not fc_Emitir_Documento() Then Throw New Exception
+            'End If
             If swCredito = False Then
                 If Not fc_Guardar_Cobros() Then Throw New Exception
-                MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+                'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
             Nuevo()
         Catch ex As Exception
@@ -920,6 +920,7 @@ Public Class frm_EstacionServicio
         mt_Calcular_DescuentoCombustible()
 
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
+        grb_Combustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
         nud_Cantidad.SelectAll()
     End Sub
 
