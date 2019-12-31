@@ -732,6 +732,7 @@ Public Class frm_EstacionServicio
             End If
         Next
         gmt_ComboEspecifico(cboProducto, ListaCombustible, 0, "Nombre")
+        Procesar_BotonCombustible(cboProducto.Value)
     End Sub
 
     Private Sub mt_CargarCombo_Lado()
@@ -748,6 +749,7 @@ Public Class frm_EstacionServicio
     Private Sub mt_Agregar_Detalle()
         Try
             Dim OV_DETALLE As New e_OrdenVentaMaterial
+
             With OV_DETALLE
                 .TipoOperacion = "I" : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_IdSucursal : .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = FechaOrden
                 .IndImpuesto = True
@@ -1023,14 +1025,6 @@ Public Class frm_EstacionServicio
 
     Private Sub cboProducto_ValueChanged(sender As Object, e As EventArgs) Handles cboProducto.ValueChanged
         Procesar_BotonCombustible(cboProducto.Value)
-    End Sub
-
-    Private Sub nud_Cantidad_ValueChanged(sender As Object, e As EventArgs) Handles nud_Cantidad.ValueChanged
-        nud_Cantidad.SelectAll()
-    End Sub
-
-    Private Sub nud_Importe_ValueChanged(sender As Object, e As EventArgs) Handles nud_Importe.ValueChanged
-        nud_Importe.SelectAll()
     End Sub
 
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing

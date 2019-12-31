@@ -201,9 +201,14 @@ Public Class frm_CierreTurno
             ListaTurnos = dTurno.Listar(TurnoActivo)
             griOrdenComercial.DataSource = ListaTurnos
 
-            For Each item In ListaTurnos
-                If item.Estado = "ABIERTO" Then swNuevo = False
-            Next
+            If ListaTurnos.Count = 0 Then
+                swNuevo = True
+            Else
+                For Each item In ListaTurnos
+                    If item.Estado = "ABIERTO" Then swNuevo = False
+                Next
+            End If
+
             'mt_CombosGrillaPrincipal(griOrdenComercial)
             For Each fila As UltraGridRow In griOrdenComercial.Rows
                 Select Case fila.Cells("Estado").Value
