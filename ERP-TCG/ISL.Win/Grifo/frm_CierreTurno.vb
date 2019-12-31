@@ -151,9 +151,15 @@ Public Class frm_CierreTurno
         ListaDetallesDinamicos = New List(Of e_CierreTurno_Detalle)
         Dim lista As List(Of e_Combo), olCombo As New l_Combo
         lista = New List(Of e_Combo)
-        lista.Add(New e_Combo With {.Id = "D", .Nombre = "DIA"})
-        lista.Add(New e_Combo With {.Id = "N", .Nombre = "NOCHE"})
+        'lista.Add(New e_Combo With {.Id = "1", .Nombre = "DIA"})
+        'lista.Add(New e_Combo With {.Id = "2", .Nombre = "NOCHE"})
+        lista.Add(New e_Combo With {.Id = "1", .Nombre = "TuRNO 1"})
+        lista.Add(New e_Combo With {.Id = "2", .Nombre = "TURNO 2"})
+        lista.Add(New e_Combo With {.Id = "3", .Nombre = "TURNO 3"})
+        lista.Add(New e_Combo With {.Id = "4", .Nombre = "TURNO 4"})
+        lista.Add(New e_Combo With {.Id = "5", .Nombre = "TURNO 5"})
         LlenarCombo(cmb_Turno, "Nombre", lista, 0)
+        LlenarCombo(cmb_TurnoNuevo, "Nombre", lista, 0)
         LlenarCombo(cmb_TurnoBuscado, "Nombre", lista, 0)
 
         lista = New List(Of e_Combo)
@@ -395,7 +401,7 @@ Public Class frm_CierreTurno
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
             .Fecha = dtpFecha.Value : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
             .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
-            .IdTurno = IIf(TurnoActivo.IdTurno = "D", "N", "D") : .Turno = IIf(TurnoActivo.IdTurno = "D", "NOCHE", "DIA")
+            .IdTurno = cmb_TurnoNuevo.Value : .Turno = cmb_TurnoNuevo.Text
             .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
             .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .Detalles.AddRange(TurnoActivo.Detalles)
@@ -415,6 +421,14 @@ Public Class frm_CierreTurno
         End With
         TurnoNuevo = dTurno.Guardar(TurnoNuevo)
     End Sub
+
+    Private Function fc_Devolver_IdTurnoSiguiente(IdTurno As String) As String
+        If IdTurno = "5" Then
+            Return 1
+        Else
+            Return CInt(IdTurno) + 1
+        End If
+    End Function
 
     Public Function fc_Cargar_Turno() As Boolean
         Try
@@ -694,6 +708,10 @@ Public Class frm_CierreTurno
 
     Private Sub frm_CierreTurno_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         instancia = Nothing
+    End Sub
+
+    Private Sub cmb_Turno_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Turno.ValueChanged
+        cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(TurnoActivo.Id)
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated

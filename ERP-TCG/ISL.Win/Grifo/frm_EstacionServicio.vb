@@ -85,7 +85,7 @@ Public Class frm_EstacionServicio
     Public Overrides Sub Nuevo()
         Try
             mt_Inicializar()
-            Operacion = "Nuevo" : gmt_ControlBoton(0, 0, 0, 1, 0, 0, 0, 0, 1)
+            Operacion = "Nuevo" : gmt_ControlBoton(0, 1, 0, 1, 0, 0, 0, 0, 1)
             cmb_Cliente.Focus()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -98,9 +98,15 @@ Public Class frm_EstacionServicio
 
     Public Overrides Sub Guardar()
         Try
-            If IdEmpresaCliente = "" Then Throw New Exception("Seleccione la empresa")
             swConsumoInterno = IIf(IdEmpresaCliente = gs_IdClienteProveedorSistema, 1, 0)
+
+            '' Validacion
+            If IdEmpresaCliente = "" Then Throw New Exception("Seleccione la empresa")
+            If IdEmpresaCliente = "1CH000000003" And IdTipoDocumento = "1CH000000026" Then Throw New Exception("No se puede emitir FACTURA al cliente seleccionado")
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
+            If OrdenVenta.Total >= 700 And IdTipoDocumento = "1CH000000002" Then Throw New Exception("No se puede emitir BOLETA por un importe mayor a S/ 700")
+            'If swCredito = True And (OrdenVenta.Total > CuentaCorriente.Saldo + (CuentaCorriente.Saldo) * 0.1) Then Throw New Exception("El importe EXCEDE la linea de CREDITO disponible")
+
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
 
@@ -689,6 +695,7 @@ Public Class frm_EstacionServicio
         mt_Cargar_TurnoActivo()
         FechaOrden = ObtenerFechaServidor()
         TipoCambio = gfc_TipoCambio(FechaOrden, True)
+        btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = False
         mt_PaintBotones("Clean")
         udg_Detalle.DataSource = New List(Of e_OrdenVentaMaterial)
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
@@ -938,7 +945,7 @@ Public Class frm_EstacionServicio
     End Function
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
-        IdTipoDocumento = "Then1CH000000026" : TipoDocumento = "FACTURA"
+        IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
         mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
         txt_Serie.Text = "F013" : txt_Serie.Focus() : txt_Serie.SelectAll()
     End Sub
@@ -984,9 +991,9 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Cargar_TurnoActivo()
         TurnoActivo = gfc_obtener_TurnoActivo()
-        Select Case TurnoActivo.Turno
-            Case "DIA" : btn_Turno.Text = "TURNO DIA" : btn_Turno.Appearance.BackColor = Color.LightGreen
-            Case "NOCHE" : btn_Turno.Text = "TURNO NOCHE" : btn_Turno.Appearance.BackColor = Color.LightBlue
+        Select Case TurnoActivo.IdTurno
+            Case "1", "3", "5" : btn_Turno.Text = TurnoActivo.Turno : btn_Turno.Appearance.BackColor = Color.LightGreen
+            Case "2", "4" : btn_Turno.Text = TurnoActivo.Turno : btn_Turno.Appearance.BackColor = Color.LightBlue
             Case "" : btn_Turno.Text = "REGISTRAR TURNO" : btn_Turno.Appearance.BackColor = Color.Red
         End Select
     End Sub
@@ -1000,6 +1007,14 @@ Public Class frm_EstacionServicio
 
     Private Sub cboProducto_ValueChanged(sender As Object, e As EventArgs) Handles cboProducto.ValueChanged
         Procesar_BotonCombustible(cboProducto.Value)
+    End Sub
+
+    Private Sub nud_Cantidad_ValueChanged(sender As Object, e As EventArgs) Handles nud_Cantidad.ValueChanged
+        nud_Cantidad.SelectAll()
+    End Sub
+
+    Private Sub nud_Importe_ValueChanged(sender As Object, e As EventArgs) Handles nud_Importe.ValueChanged
+        nud_Importe.SelectAll()
     End Sub
 
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -1044,6 +1059,7 @@ Public Class frm_EstacionServicio
         IdTipoPago = "1SI000000001" : IdTipoVenta = "VENTA_COMBUSTIBLE"
         mt_PaintBotones("TipoPago") : btn_Contado.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = True : btnBoleta.Enabled = True : btnNotaDespacho.Enabled = False
+        btnDocumento.Enabled = IIf(IdEmpresaCliente = "1CH000000003", False, True)
         mt_Calcular_DescuentoCombustible()
     End Sub
 
@@ -1120,6 +1136,7 @@ Public Class frm_EstacionServicio
                     Next
                 Next
                 nud_Saldo.Value = fc_Obtener_SaldoCuentaCorriente()
+
                 Cargar_Pilotos()
                 Cargar_VehiculoCliente()
                 Cargar_Direcciones()
@@ -1197,6 +1214,7 @@ Public Class frm_EstacionServicio
         If ListaPuntoPartida.Count > 0 Then
             LlenarComboMaestro(cmb_Direccion, ListaPuntoPartida, 0)
             cmb_Direccion.Rows(0).Selected = True
+            btn_Contado.Select()
         End If
     End Sub
 
