@@ -367,6 +367,7 @@ Public Class frm_CierreTurno
             End If
 
             mt_Formatear_Columnas()
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -555,9 +556,8 @@ Public Class frm_CierreTurno
         With udg_Combustibles.DisplayLayout.Bands(0)
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 100
             .Columns("ValorERP").Header.Caption = "Precio"
-
-            mt_Aplicar_FormatoNumerico(udg_Combustibles, "ValorERP")
         End With
+        mt_Aplicar_FormatoNumerico(udg_Combustibles, "ValorERP")
 
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_Almacenes)
@@ -566,11 +566,10 @@ Public Class frm_CierreTurno
             .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial
             .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
             .Columns("ValorDiferencia").Header.Caption = "Diferencia"
-
-            mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorInicial")
-            mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorFinal")
-            mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorDiferencia")
         End With
+        mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorInicial")
+        mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorFinal")
+        mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorDiferencia")
 
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_ContometroDigital)
@@ -582,13 +581,13 @@ Public Class frm_CierreTurno
             .Columns("ValorDiferencia").Header.Caption = "Diferencia"
             .Columns("ValorAux1").Header.Caption = "Despacho" : .Columns("ValorAux1").CellAppearance.BackColor = Color_Galones
             .Columns("ValorAux2").Header.Caption = "Margen"
-
-            mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorInicial")
-            mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorFinal")
-            mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorDiferencia")
-            mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorAux1")
-            mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorAux2")
         End With
+        mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorInicial")
+        mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorFinal")
+        mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorDiferencia")
+        mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorAux1")
+        mt_Aplicar_FormatoNumerico(udg_ContometroDigital, "ValorAux2")
+        CalcularTotales(udg_ContometroDigital, "ValorDiferencia", "ValorAux1", "ValorAux2")
 
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_ContometroAnalogico)
@@ -600,13 +599,13 @@ Public Class frm_CierreTurno
             .Columns("ValorDiferencia").Header.Caption = "Diferencia"
             .Columns("ValorAux1").Header.Caption = "Despacho" : .Columns("ValorAux1").CellAppearance.BackColor = Color_Galones
             .Columns("ValorAux2").Header.Caption = "Margen"
-
-            mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorInicial")
-            mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorFinal")
-            mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorDiferencia")
-            mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorAux1")
-            mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorAux2")
         End With
+        mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorInicial")
+        mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorFinal")
+        mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorDiferencia")
+        mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorAux1")
+        mt_Aplicar_FormatoNumerico(udg_ContometroAnalogico, "ValorAux2")
+        CalcularTotales(udg_ContometroAnalogico, "ValorDiferencia", "ValorAux1", "ValorAux2")
 
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_VentasxCombustible)
@@ -616,9 +615,10 @@ Public Class frm_CierreTurno
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
             .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
-            mt_Aplicar_FormatoNumerico(udg_VentasxCombustible, "ValorERP")
-            mt_Aplicar_FormatoNumerico(udg_VentasxCombustible, "ValorReal")
         End With
+        mt_Aplicar_FormatoNumerico(udg_VentasxCombustible, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_VentasxCombustible, "ValorReal")
+        CalcularTotales(udg_VentasxCombustible, "ValorERP", "ValorReal")
 
         '' Resumen de Ventas
         mt_Ocultar_Columnas(udg_ResumenVentas)
@@ -627,10 +627,10 @@ Public Class frm_CierreTurno
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
             .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
-
-            mt_Aplicar_FormatoNumerico(udg_ResumenVentas, "ValorERP")
-            mt_Aplicar_FormatoNumerico(udg_ResumenVentas, "ValorReal")
         End With
+        mt_Aplicar_FormatoNumerico(udg_ResumenVentas, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_ResumenVentas, "ValorReal")
+        CalcularTotales(udg_ResumenVentas, "ValorERP", "ValorReal")
 
         ''Ventas Anuladas
         mt_Ocultar_Columnas(udg_VentasAnuladas)
@@ -640,10 +640,11 @@ Public Class frm_CierreTurno
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
             .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
-
-            mt_Aplicar_FormatoNumerico(udg_VentasAnuladas, "ValorERP")
-            mt_Aplicar_FormatoNumerico(udg_VentasAnuladas, "ValorReal")
         End With
+        mt_Aplicar_FormatoNumerico(udg_VentasAnuladas, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_VentasAnuladas, "ValorReal")
+        CalcularTotales(udg_VentasAnuladas, "ValorERP", "ValorReal")
+
         '' Calibraciones
         mt_Ocultar_Columnas(udg_Calibraciones)
         With udg_Calibraciones.DisplayLayout.Bands(0)
@@ -651,10 +652,10 @@ Public Class frm_CierreTurno
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
             .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
-
-            mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorERP")
-            mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorReal")
         End With
+        mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorReal")
+        CalcularTotales(udg_Calibraciones, "ValorERP", "ValorReal")
     End Sub
 
     Private Sub mt_Ocultar_Columnas(UDG As UltraGrid)
