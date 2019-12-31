@@ -214,15 +214,26 @@ Public Class frm_TransferenciasBancarias
                         oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeMovimientosBancariosDestino.PrefijoID = gs_PrefijoIdSucursal '@0001
                         oeAsiento.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olMovimientosBancarios.GuardarTranferencia(oeMovimientosBancariosOrigen, _
-               oeMovimientosBancariosDestino, oeAsiento, chkReposicionCajaChica.Checked) Then
-                            mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
-                            MostrarTabs(0, tcTransferenciaBancaria, 2)
-                            Dim frm As New frm_ImprimeTransferencia(oeMovimientosBancariosOrigen.Id)
-                            frm.ShowDialog() : frm = Nothing
-                            ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
-                            Consultar(True)
-                            Return True
+                        If Me.cboMedioPago.Text = "EFECTIVO" Then
+                            If olMovimientosBancarios.GuardarTranferencia(oeMovimientosBancariosOrigen, oeMovimientosBancariosDestino, oeAsiento, chkReposicionCajaChica.Checked) Then
+                                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
+                                MostrarTabs(0, tcTransferenciaBancaria, 2)
+                                Dim frm As New frm_ImprimeTransferencia(oeMovimientosBancariosOrigen.Id)
+                                frm.ShowDialog() : frm = Nothing
+                                ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+                                Consultar(True)
+                                Return True
+                            End If
+                        Else
+                            If olMovimientosBancarios.GuardarTranferencia(oeMovimientosBancariosOrigen, oeMovimientosBancariosDestino, oeAsiento, chkReposicionCajaChica.Checked) Then
+                                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
+                                MostrarTabs(0, tcTransferenciaBancaria, 2)
+                                Dim frm As New frm_ImprimeTransferencia(oeMovimientosBancariosOrigen.Id)
+                                frm.ShowDialog() : frm = Nothing
+                                ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+                                Consultar(True)
+                                Return True
+                            End If
                         End If
                     Case 1 ' Egreso de la Cuenta
                         If IndTrabjador Then
@@ -739,11 +750,11 @@ Public Class frm_TransferenciasBancarias
                 .ResetDisplayLayout()
                 .DataSource = leDI
                 .Text = "Detalle de Pago por Trabajador"
-                OcultarColumna(griDetalleAdjunto, True, "Id", "Fecha", "IdTrabajador", "Saldo", "Cancelado", "CantidadCuotas", "Concepto", _
-                               "FechaCancelado", "FechaCreacion", "FechaIntegracion", "FechaAprueba", "Estado", "GlosaCancelado", "IdConcepto", _
+                OcultarColumna(griDetalleAdjunto, True, "Id", "Fecha", "IdTrabajador", "Saldo", "Cancelado", "CantidadCuotas", "Concepto",
+                               "FechaCancelado", "FechaCreacion", "FechaIntegracion", "FechaAprueba", "Estado", "GlosaCancelado", "IdConcepto",
                                "IdCtaBancaria", "IdEstado", "UsuarioAprueba", "UsuarioCreacion")
-                ExcluirColumna(griDetalleAdjunto, "Id", "Fecha", "IdTrabajador", "Saldo", "Cancelado", "CantidadCuotas", "Concepto", _
-                               "FechaCancelado", "FechaCreacion", "FechaIntegracion", "FechaAprueba", "Estado", "GlosaCancelado", "IdConcepto", _
+                ExcluirColumna(griDetalleAdjunto, "Id", "Fecha", "IdTrabajador", "Saldo", "Cancelado", "CantidadCuotas", "Concepto",
+                               "FechaCancelado", "FechaCreacion", "FechaIntegracion", "FechaAprueba", "Estado", "GlosaCancelado", "IdConcepto",
                                "IdCtaBancaria", "IdEstado", "UsuarioAprueba", "UsuarioCreacion")
                 .DisplayLayout.Bands(0).Columns("Glosa").Header.VisiblePosition = 0
                 .DisplayLayout.Bands(0).Columns("Trabajador").Header.VisiblePosition = 1
@@ -768,6 +779,29 @@ Public Class frm_TransferenciasBancarias
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub mt_CargarCajas(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
+    ByVal IndMonedaExtrangera As Integer, ByVal lsCta As String)
+        Dim leCaja As New List(Of e_Caja)
+        Dim olCaja As New l_Caja
+        If IndMonedaExtrangera = 0 Then
+            'leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda = "1CH01" And item.IdCuentaContable = lsCta).ToList
+            leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
+        Else
+           ' leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda <> "1CH01" And item.IdCuentaContable = lsCta).ToList
+        End If
+        If leCaja.Count > 0 Then
+            Combo.Enabled = True
+            With Combo
+                .ValueMember = "Id"
+                .DisplayMember = "Nombre"
+                .DataSource = leCaja
+            End With
+        Else
+            Combo.SelectedIndex = -1
+            Combo.Enabled = False
+        End If
     End Sub
 
 #End Region
@@ -844,11 +878,11 @@ Public Class frm_TransferenciasBancarias
                     cboTipoMovimiento.Items.Add("ENTRE CUENTAS PROPIAS")
                     cboTipoMovimiento.Items.Add("EGRESO DE LA CUENTA")
                     cboTipoMovimiento.SelectedIndex = 0
-                    'Case "007"
-                    '    cboTipoMovimiento.ReadOnly = True
-                    '    cboTipoMovimiento.Items.Clear()
-                    '    cboTipoMovimiento.Items.Add("ENTRE CUENTAS PROPIAS")
-                    '    cboTipoMovimiento.SelectedIndex = 0
+                Case "008"
+                    cboTipoMovimiento.ReadOnly = True
+                    cboTipoMovimiento.Items.Clear()
+                    cboTipoMovimiento.Items.Add("ENTRE CUENTAS PROPIAS")
+                    cboTipoMovimiento.SelectedIndex = 0
                 Case Else
                     cboTipoMovimiento.ReadOnly = True
             End Select
@@ -861,17 +895,30 @@ Public Class frm_TransferenciasBancarias
         If i >= 0 Then
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleOrigen.Items(i).ListObject
-            CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Id)
+            If obj.Cuenta = "10111" Then
+                mt_CargarCajas(Me.cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Cuenta) '10111
+            Else
+                CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Id)
+            End If
         End If
     End Sub
 
     Private Sub cboCuentaBancariaOrigen_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCuentaBancariaOrigen.ValueChanged
-        oeMovimientosBancariosOrigen.IdCuentaBancaria = cboCuentaBancariaOrigen.Value
         Dim i As Integer = cboCuentaBancariaOrigen.SelectedIndex
-        If i >= 0 Then
-            Dim obj As New e_CuentaBancaria
-            obj = cboCuentaBancariaOrigen.Items(i).ListObject
-            cboMoneda.Value = obj.IdMoneda
+        If cboMedioPago.Text = "EFECTIVO" Then
+            oeMovimientosBancariosOrigen.IdCaja = cboCuentaBancariaOrigen.Value
+            If i >= 0 Then
+                Dim obj As New e_Caja
+                obj = cboCuentaBancariaOrigen.Items(i).ListObject
+                cboMoneda.Text = "SOLES"
+            End If
+        Else
+            oeMovimientosBancariosOrigen.IdCuentaBancaria = cboCuentaBancariaOrigen.Value
+            If i >= 0 Then
+                Dim obj As New e_CuentaBancaria
+                obj = cboCuentaBancariaOrigen.Items(i).ListObject
+                cboMoneda.Value = obj.IdMoneda
+            End If
         End If
     End Sub
 
@@ -881,18 +928,27 @@ Public Class frm_TransferenciasBancarias
         If i >= 0 Then
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleDestino.Items(i).ListObject
-            CuentaBancariaSegunCta(cboCuentaBancariaDestino, obj.MonedaExtranjera, obj.Id)
+            If obj.Cuenta = "10111" Then
+                mt_CargarCajas(Me.cboCuentaBancariaDestino, obj.MonedaExtranjera, obj.Cuenta)
+            Else
+                CuentaBancariaSegunCta(cboCuentaBancariaDestino, obj.MonedaExtranjera, obj.Id)
+            End If
         End If
     End Sub
 
     Private Sub cboCuentaBancariaDestino_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCuentaBancariaDestino.ValueChanged
-        oeMovimientosBancariosDestino.IdCuentaBancaria = cboCuentaBancariaDestino.Value
-        If cboCuentaBancariaDestino.SelectedIndex > -1 Then
-            Dim _oeCtaAux = cboCuentaBancariaDestino.Items(cboCuentaBancariaDestino.SelectedIndex).ListObject
-            Dim _leAux = leEmpresa.Where(Function(it) it.Id = _oeCtaAux.IdBanco).ToList
-            If _leAux.Count > 0 Then IdBanco = _leAux(0).Abreviatura
-        Else
+        If cboMedioPago.Text = "EFECTIVO" Then
+            oeMovimientosBancariosDestino.IdCaja = cboCuentaBancariaDestino.Value
             IdBanco = String.Empty
+        Else
+            oeMovimientosBancariosDestino.IdCuentaBancaria = cboCuentaBancariaDestino.Value
+            If cboCuentaBancariaDestino.SelectedIndex > -1 Then
+                Dim _oeCtaAux = cboCuentaBancariaDestino.Items(cboCuentaBancariaDestino.SelectedIndex).ListObject
+                Dim _leAux = leEmpresa.Where(Function(it) it.Id = _oeCtaAux.IdBanco).ToList
+                If _leAux.Count > 0 Then IdBanco = _leAux(0).Abreviatura
+            Else
+                IdBanco = String.Empty
+            End If
         End If
     End Sub
 
