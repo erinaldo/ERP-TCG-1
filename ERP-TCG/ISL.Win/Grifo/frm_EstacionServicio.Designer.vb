@@ -973,7 +973,7 @@ Partial Class frm_EstacionServicio
         Me.nud_Cantidad.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.nud_Cantidad.Font = New System.Drawing.Font("Tahoma", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nud_Cantidad.Location = New System.Drawing.Point(141, 22)
-        Me.nud_Cantidad.MaskInput = "{double:9.3}"
+        Me.nud_Cantidad.MaskInput = "{LOC}nnnnnnn.nnn"
         Me.nud_Cantidad.Name = "nud_Cantidad"
         Me.nud_Cantidad.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.nud_Cantidad.Size = New System.Drawing.Size(157, 35)
