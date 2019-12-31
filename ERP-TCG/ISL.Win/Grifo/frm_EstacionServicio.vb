@@ -832,8 +832,10 @@ Public Class frm_EstacionServicio
         cmb_Cliente.Text = gs_TxtEmpresaSistema
         cmb_Direccion.Text = gs_DireccionEmpresaSistema
         IdEmpresaCliente = gs_IdClienteProveedorSistema
+
         Cargar_Pilotos()
         Cargar_VehiculoCliente()
+        Cargar_Direcciones()
     End Sub
 
     Private Sub ActualizarTipoPago()
@@ -1245,6 +1247,7 @@ Public Class frm_EstacionServicio
             For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
                 With oeRegConsumoCombustible
                     .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .UsuarioCreacion = gUsuarioSGI.Id
+                    .FechaTanqueo = FechaOrden
                     .CantidadGalon = ItemVenta.Cantidad
                     .Perfil = ObtenerPerfilPrincipal.Nombre
                     .Ind_Masivo = False
@@ -1255,7 +1258,7 @@ Public Class frm_EstacionServicio
                     .IndIsl = IIf(IdEmpresaCliente = gs_IdClienteProveedorSistema, True, False)
                     .PrecioUnitario = ItemVenta.PrecioUnitario
                     .GlosaValeTanqueo = ItemVenta.Glosa
-                    .KilometrosTanqueo = OrdenVenta.Kilometraje
+                    .KilometrosTanqueo = IIf(OrdenVenta.Kilometraje = 0, 1, OrdenVenta.Kilometraje)
                     .IdVehiculo = IIf(cmb_Vehiculo.Value <> "", cmb_Vehiculo.Value, cmb_Vehiculo.Text)
                     .NroVale = OrdenVenta.Id
                     .IdGrifo = "1SI000004245" 'Inversiones y Servicios Alex y Lalito
@@ -1278,7 +1281,7 @@ Public Class frm_EstacionServicio
                     End If
                     '@0001
                 End With
-                oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden With {.PrefijoID = gs_PrefijoIdSucursal})
+                oeRegConsumoCombustible = olRegConsumoCombustible.Guardar(oeRegConsumoCombustible, New e_Orden With {.FechaOrden = FechaOrden, .PrefijoID = gs_PrefijoIdSucursal})
             Next
             Return True
         Catch ex As Exception
@@ -1301,6 +1304,7 @@ Public Class frm_EstacionServicio
             End With
             oeRegInventario = New e_RegistroInventario
             With oeRegInventario
+                .Fecha = FechaOrden
                 .TipoOperacion = "I"
                 .IdMaterial = oe.IdMaterial
                 .IdSubAlmacen = oe.IdSubAlmacen
