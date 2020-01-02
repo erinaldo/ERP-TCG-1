@@ -131,7 +131,8 @@ Public Class d_MovimientoCajaBanco
                                                             , ._Ids _
                                                             , .IdTipoGasto _
                                                             , .IdCuentaCorriente _
-                                                            , .UsuarioCreacion).ToString.Split("_")
+                                                            , .UsuarioCreacion _
+                                                            , .IdCaja).ToString.Split("_")
                     .Id = stResultado(0)
 
                 End With

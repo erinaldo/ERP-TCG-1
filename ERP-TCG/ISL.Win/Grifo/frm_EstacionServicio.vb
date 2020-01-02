@@ -1082,7 +1082,7 @@ Public Class frm_EstacionServicio
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
         IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
         mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
-        txt_Serie.Text = "F013" : txt_Serie.Focus()
+        txt_Serie.Text = "F103" : txt_Serie.Focus()
         cmb_Vehiculo.Focus()
     End Sub
 
@@ -1113,7 +1113,7 @@ Public Class frm_EstacionServicio
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
         IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA"
         mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue
-        txt_Serie.Text = "B013" : txt_Serie.Focus()
+        txt_Serie.Text = "B103" : txt_Serie.Focus()
         cmb_Vehiculo.Focus()
     End Sub
 

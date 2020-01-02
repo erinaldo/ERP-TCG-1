@@ -466,7 +466,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox14)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(972, 600)
         '
@@ -592,7 +592,7 @@ Partial Class frm_CierreTurno
         '
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox7)
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox6)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(972, 600)
         '
@@ -1841,7 +1841,7 @@ Partial Class frm_CierreTurno
         Me.UltraGroupBox2.Controls.Add(Me.cboTrabajadorCierre)
         Me.UltraGroupBox2.Controls.Add(Me.cmb_TurnoNuevo)
         Me.UltraGroupBox2.Controls.Add(Me.UltraLabel7)
-        Me.UltraGroupBox2.Location = New System.Drawing.Point(566, 10)
+        Me.UltraGroupBox2.Location = New System.Drawing.Point(608, 10)
         Me.UltraGroupBox2.Name = "UltraGroupBox2"
         Me.UltraGroupBox2.Size = New System.Drawing.Size(365, 75)
         Me.UltraGroupBox2.TabIndex = 377
@@ -1928,7 +1928,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel4.Appearance = Appearance85
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel4.Location = New System.Drawing.Point(265, 67)
+        Me.UltraLabel4.Location = New System.Drawing.Point(310, 71)
         Me.UltraLabel4.Name = "UltraLabel4"
         Me.UltraLabel4.Size = New System.Drawing.Size(42, 15)
         Me.UltraLabel4.TabIndex = 374
@@ -1937,7 +1937,7 @@ Partial Class frm_CierreTurno
         'cmb_Estado
         '
         Me.cmb_Estado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cmb_Estado.Location = New System.Drawing.Point(313, 63)
+        Me.cmb_Estado.Location = New System.Drawing.Point(354, 67)
         Me.cmb_Estado.Name = "cmb_Estado"
         Me.cmb_Estado.Size = New System.Drawing.Size(134, 22)
         Me.cmb_Estado.TabIndex = 373
@@ -1946,9 +1946,9 @@ Partial Class frm_CierreTurno
         'dtpHoraFin
         '
         Me.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpHoraFin.Location = New System.Drawing.Point(140, 61)
+        Me.dtpHoraFin.Location = New System.Drawing.Point(158, 56)
         Me.dtpHoraFin.Name = "dtpHoraFin"
-        Me.dtpHoraFin.Size = New System.Drawing.Size(63, 21)
+        Me.dtpHoraFin.Size = New System.Drawing.Size(100, 21)
         Me.dtpHoraFin.TabIndex = 372
         '
         'cboTrabajadorApertura
@@ -1957,9 +1957,9 @@ Partial Class frm_CierreTurno
         Me.cboTrabajadorApertura.ButtonsRight.Add(EditorButton3)
         Me.cboTrabajadorApertura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cboTrabajadorApertura.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboTrabajadorApertura.Location = New System.Drawing.Point(313, 8)
+        Me.cboTrabajadorApertura.Location = New System.Drawing.Point(354, 8)
         Me.cboTrabajadorApertura.Name = "cboTrabajadorApertura"
-        Me.cboTrabajadorApertura.Size = New System.Drawing.Size(247, 22)
+        Me.cboTrabajadorApertura.Size = New System.Drawing.Size(250, 22)
         Me.cboTrabajadorApertura.TabIndex = 367
         '
         'UltraLabel11
@@ -1970,7 +1970,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel11.Appearance = Appearance86
         Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel11.Location = New System.Drawing.Point(218, 12)
+        Me.UltraLabel11.Location = New System.Drawing.Point(259, 12)
         Me.UltraLabel11.Name = "UltraLabel11"
         Me.UltraLabel11.Size = New System.Drawing.Size(88, 15)
         Me.UltraLabel11.TabIndex = 366
@@ -1996,7 +1996,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel6.Appearance = Appearance88
         Me.UltraLabel6.AutoSize = True
         Me.UltraLabel6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel6.Location = New System.Drawing.Point(272, 40)
+        Me.UltraLabel6.Location = New System.Drawing.Point(314, 35)
         Me.UltraLabel6.Name = "UltraLabel6"
         Me.UltraLabel6.Size = New System.Drawing.Size(35, 15)
         Me.UltraLabel6.TabIndex = 19
@@ -2006,17 +2006,18 @@ Partial Class frm_CierreTurno
         '
         Me.txtGlosa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtGlosa.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtGlosa.Location = New System.Drawing.Point(313, 36)
+        Me.txtGlosa.Location = New System.Drawing.Point(354, 31)
+        Me.txtGlosa.Multiline = True
         Me.txtGlosa.Name = "txtGlosa"
-        Me.txtGlosa.Size = New System.Drawing.Size(247, 22)
+        Me.txtGlosa.Size = New System.Drawing.Size(250, 35)
         Me.txtGlosa.TabIndex = 20
         '
         'dtpHoraInicio
         '
         Me.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.dtpHoraInicio.Location = New System.Drawing.Point(69, 61)
+        Me.dtpHoraInicio.Location = New System.Drawing.Point(52, 56)
         Me.dtpHoraInicio.Name = "dtpHoraInicio"
-        Me.dtpHoraInicio.Size = New System.Drawing.Size(65, 21)
+        Me.dtpHoraInicio.Size = New System.Drawing.Size(100, 21)
         Me.dtpHoraInicio.TabIndex = 16
         '
         'UltraLabel5
@@ -2027,7 +2028,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel5.Appearance = Appearance89
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel5.Location = New System.Drawing.Point(28, 66)
+        Me.UltraLabel5.Location = New System.Drawing.Point(14, 59)
         Me.UltraLabel5.Name = "UltraLabel5"
         Me.UltraLabel5.Size = New System.Drawing.Size(35, 15)
         Me.UltraLabel5.TabIndex = 15
@@ -2041,7 +2042,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel3.Appearance = Appearance90
         Me.UltraLabel3.AutoSize = True
         Me.UltraLabel3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel3.Location = New System.Drawing.Point(25, 11)
+        Me.UltraLabel3.Location = New System.Drawing.Point(11, 11)
         Me.UltraLabel3.Name = "UltraLabel3"
         Me.UltraLabel3.Size = New System.Drawing.Size(38, 15)
         Me.UltraLabel3.TabIndex = 6
@@ -2055,7 +2056,7 @@ Partial Class frm_CierreTurno
         Me.UltraLabel2.Appearance = Appearance91
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel2.Location = New System.Drawing.Point(25, 36)
+        Me.UltraLabel2.Location = New System.Drawing.Point(11, 35)
         Me.UltraLabel2.Name = "UltraLabel2"
         Me.UltraLabel2.Size = New System.Drawing.Size(38, 15)
         Me.UltraLabel2.TabIndex = 2
@@ -2065,16 +2066,16 @@ Partial Class frm_CierreTurno
         '
         Me.dtpFecha.Enabled = False
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(69, 34)
+        Me.dtpFecha.Location = New System.Drawing.Point(52, 32)
         Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(134, 21)
+        Me.dtpFecha.Size = New System.Drawing.Size(100, 21)
         Me.dtpFecha.TabIndex = 3
         '
         'cmb_Turno
         '
         Me.cmb_Turno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cmb_Turno.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cmb_Turno.Location = New System.Drawing.Point(69, 8)
+        Me.cmb_Turno.Location = New System.Drawing.Point(52, 8)
         Me.cmb_Turno.Name = "cmb_Turno"
         Me.cmb_Turno.Size = New System.Drawing.Size(134, 22)
         Me.cmb_Turno.TabIndex = 7
