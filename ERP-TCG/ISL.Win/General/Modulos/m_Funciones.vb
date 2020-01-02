@@ -1262,6 +1262,27 @@ Module m_Funciones
         End If
     End Function
 
+    Public Function ObtenerListaEstado(Optional AgregarTodos As Boolean = False) As List(Of e_Estado) 'Cess
+        Dim Logica As New l_Estado
+        Dim Lista As New List(Of e_Estado)
+        Dim ListaAux As New List(Of e_Estado)
+        Dim Item As New e_Estado
+        Item.Activo = True
+        Item.TipoOperacion = "1"
+        Lista = Logica.Listar(Item)
+        If AgregarTodos Then
+            Item = New e_Estado
+            With Item
+                .Id = ""
+                .Nombre = "TODOS"
+            End With
+            ListaAux.Add(Item)
+            ListaAux.AddRange(Lista)
+            Return ListaAux
+        Else
+            Return Lista
+        End If
+    End Function
 
     ''' <summary>
     ''' Función para generar el contenedor de datos de alerta global del sistema
