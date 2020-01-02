@@ -1,4 +1,8 @@
-﻿Imports ERP.EntidadesWCF
+﻿' ===================================================================================================
+' Modified | Developer
+' 02/01/20 | Cess
+' ===================================================================================================
+Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
