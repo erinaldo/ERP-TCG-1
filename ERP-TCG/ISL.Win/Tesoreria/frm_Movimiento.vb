@@ -232,7 +232,7 @@ Public Class frm_Movimiento
     Private oeConcepto As New e_Concepto
     Private olConcepto As New l_Concepto
     Private loConcepto As New List(Of e_Concepto)
-
+    Dim ContadorVale As Integer = 0 '@0001
 #End Region
 
 #Region "Botones"
@@ -634,23 +634,23 @@ Public Class frm_Movimiento
                     oeMovimientoPrestamo.IndicadorCorrelativo = False
                     oeMovimientoPrestamo.IdCaja = idCajaCentro
                     oeMovimientoPrestamo.oeMovimientoViaje = New e_Movimiento_Viaje
-                    Dim formularioclave As frm_AutenticarTrabajador
-                    formularioclave = New frm_AutenticarTrabajador
-                    Dim idTrabEntr As String = ""
-                    If formularioclave.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Return False
-                    Else
-                        If idCajaCentro = "1CH002" Then
-                            idTrabEntr = formularioclave.idTrabajador
-                            If gUsuarioSGI.IdTrabajador = idTrabEntr Then
-                                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                                Throw New Exception("No Puede Poner Su Propia Clave al Momento de Habilitar")
-                            End If
-                        End If
+                    'Dim formularioclave As frm_AutenticarTrabajador
+                    'formularioclave = New frm_AutenticarTrabajador
+                    'Dim idTrabEntr As String = ""
+                    'If formularioclave.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Return False
+                    'Else
+                    '    If idCajaCentro = "1CH002" Then
+                    '        idTrabEntr = formularioclave.idTrabajador
+                    '        If gUsuarioSGI.IdTrabajador = idTrabEntr Then
+                    '            ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '            Throw New Exception("No Puede Poner Su Propia Clave al Momento de Habilitar")
+                    '        End If
+                    '    End If
 
-                    End If
-                    formularioclave = Nothing
+                    'End If
+                    'formularioclave = Nothing
                     Dim oeMovimientoPrestamo2 As New e_Movimiento
                     oeMovimientoPrestamo2 = oeMovimientoPrestamo.Clonar
                     oeMovimientoPrestamo2.Egreso = decImporte.Value
@@ -681,8 +681,8 @@ Public Class frm_Movimiento
                     oeMovimientoPrestamo2.oeMovimientoViaje.IdViaje = txtViaje.Tag
                     oeMovimientoPrestamo2.oeMovimientoViaje.TipoOperacion = "I"
                     oeMovimientoPrestamo2.IdCaja = ""
-                    oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorRecepciona = idTrabEntr
-                    oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorClave = idTrabEntr
+                    'oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorRecepciona = idTrabEntr
+                    'oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorClave = idTrabEntr
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                     Dim loMovimientoPrestamo As New List(Of e_Movimiento)
                     oeMovimientoPrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
@@ -4442,13 +4442,21 @@ Public Class frm_Movimiento
     End Sub
 
     Private Sub cboTipoDocumento_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDocumento.Click
+
         cboTipoDocumento.SelectAll()
     End Sub
 
     Private Sub cboTipoDocumento_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoDocumento.Enter
         cboTipoDocumento.SelectAll()
     End Sub
-
+    '@0001
+    Sub CorrelativoVale()
+        If cboTipoDocumento.Text.Trim = "VALE" Then
+            ContadorVale += 1
+            txtSerie.Text = "1"
+            txtNumero.Text = ContadorVale
+        End If
+    End Sub
     Private Sub txtRUC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRUC.Click
         txtRUC.SelectAll()
     End Sub
@@ -4478,6 +4486,7 @@ Public Class frm_Movimiento
     End Sub
 
     Private Sub txtSerie_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.Enter
+        CorrelativoVale()
         txtSerie.SelectAll()
     End Sub
 
@@ -6917,16 +6926,4 @@ Public Class frm_Movimiento
 
 #End Region
 
-    Private Sub fechaRecibidor_ValueChanged(sender As Object, e As KeyEventArgs)
-
-    End Sub
-    Private Sub fechaMovimiento_ValueChanged(sender As Object, e As KeyEventArgs)
-
-    End Sub
-    Private Sub fecFechaDescuento_ValueChanged(sender As Object, e As KeyEventArgs)
-
-    End Sub
-    Private Sub fechaPrestamo_ValueChanged(sender As Object, e As KeyEventArgs)
-
-    End Sub
 End Class

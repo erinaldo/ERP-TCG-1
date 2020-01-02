@@ -242,20 +242,20 @@ Public Class frm_Prestamo
                     If oePrestamo.Activo Then
                         _estado = gNombreEstadoPendiente
                         If oePrestamo.Estado = _estado Then
-                            If MessageBox.Show("¿Esta seguro de eliminar el prestamo: " & .ActiveRow.Cells("Trabajador").Value.ToString & " ?", _
-                                "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, _
+                            If MessageBox.Show("¿Esta seguro de eliminar el prestamo: " & .ActiveRow.Cells("Trabajador").Value.ToString & " ?",
+                                "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                                 MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                                Dim formulario As frm_AutenticarTrabajador
-                                formulario = New frm_AutenticarTrabajador
-                                formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                                If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                                    Throw New Exception("Ingrese un Clave Correcta")
-                                Else
-                                    oePrestamo.TipoOperacion = "E"
-                                    olPrestamo.Eliminar(oePrestamo)
-                                    Consultar(True)
-                                End If
+                                'Dim formulario As frm_AutenticarTrabajador
+                                'formulario = New frm_AutenticarTrabajador
+                                'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                                'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                                '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                                '    Throw New Exception("Ingrese un Clave Correcta")
+                                'Else
+                                oePrestamo.TipoOperacion = "E"
+                                olPrestamo.Eliminar(oePrestamo)
+                                Consultar(True)
+                                'End If
                             End If
                         Else
                             Throw New Exception("El Prestamo debe estar PENDIENTE para poder Eliminar")

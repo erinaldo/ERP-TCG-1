@@ -23,6 +23,8 @@ Public Class e_MovimientoCajaBanco
     Private _usuario As String
     Private _nroasiento As String
 
+    Private _idcaja As String
+
     <DataMember()> _
     Public Property TipoGasto() As String
     <DataMember()> _
@@ -241,13 +243,23 @@ Public Class e_MovimientoCajaBanco
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property NroAsiento() As String
         Get
             Return _nroasiento
         End Get
         Set(ByVal value As String)
             _nroasiento = value
+        End Set
+    End Property
+
+    <DataMember()>
+    Public Property IdCaja() As String
+        Get
+            Return _idcaja
+        End Get
+        Set(ByVal value As String)
+            _idcaja = value
         End Set
     End Property
 
@@ -266,7 +278,7 @@ Public Class e_MovimientoCajaBanco
         TipoGasto = ""
     End Sub
 
-    Public Sub New( _
+    Public Sub New(
               ByVal ls_Id As String _
               , ByVal ls_IdFlujoCaja As String _
               , ByVal ls_NroBoucher As String _
@@ -285,6 +297,7 @@ Public Class e_MovimientoCajaBanco
               , ByVal ls_UsuarioCreacion As String _
               , ByVal ls_IdTipoGasto As String _
               , ByVal ls_NroAsiento As String _
+              , ByVal ls_IdCaja As String
            )
         _id = ls_Id
         _idflujocaja = ls_IdFlujoCaja
@@ -304,6 +317,7 @@ Public Class e_MovimientoCajaBanco
         TipoGasto = ls_TipoGasto
         IdTipoGasto = ls_IdTipoGasto
         _nroasiento = ls_NroAsiento
+        _idcaja = ls_IdCaja
     End Sub
 
 #End Region

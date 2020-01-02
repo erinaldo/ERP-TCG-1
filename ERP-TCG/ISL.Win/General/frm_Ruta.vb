@@ -1372,7 +1372,7 @@ Public Class frm_Ruta
                     .ListaRutaPeaje.Clear()
                     .ListaRutaPeaje.AddRange(loRutaPeaje)
                 End With
-
+                oeRuta.PrefijoID = gs_PrefijoIdSucursal '@0001
                 If olRuta.Guardar(oeRuta) Then
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
                     Operacion = "Inicializa"

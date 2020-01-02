@@ -154,76 +154,76 @@ Public Class frm_Gratificacion
                         Consultar(True)
                     End If
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeBonoComp.IdEstado = cboEstado.Value
-                        oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
-                        oeBonoComp.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olBonoComp.Guardar(oeBonoComp) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & " se Envio correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeBonoComp.IdEstado = cboEstado.Value
+                    oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
+                    oeBonoComp.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olBonoComp.Guardar(oeBonoComp) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & " se Envio correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "PROVISIONAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePeriodo = New e_Periodo
-                        oePeriodo = cboPeriodo.SelectedItem.ListObject
-                        If fecProvision.Value.Month <> oePeriodo.Mes Then Throw New Exception("La Fecha no pertenece al periodo")
-                        If decTipoCambio.Value = 0 Then Throw New Exception("Ingrese Tipo Cambio")
-                        oeAsientoModel.FechaMov = fecProvision.Value
-                        oeAsientoModel.TipoCambio = decTipoCambio.Value
-                        oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id
-                        oeBonoComp.IdEstado = cboEstado.Value
-                        oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
-                        If olBonoComp.Provisionar(oeBonoComp, oeAsientoModel, oePeriodo) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & " se Termino correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePeriodo = New e_Periodo
+                    oePeriodo = cboPeriodo.SelectedItem.ListObject
+                    If fecProvision.Value.Month <> oePeriodo.Mes Then Throw New Exception("La Fecha no pertenece al periodo")
+                    If decTipoCambio.Value = 0 Then Throw New Exception("Ingrese Tipo Cambio")
+                    oeAsientoModel.FechaMov = fecProvision.Value
+                    oeAsientoModel.TipoCambio = decTipoCambio.Value
+                    oeAsientoModel.UsuarioCreacion = gUsuarioSGI.Id
+                    oeBonoComp.IdEstado = cboEstado.Value
+                    oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
+                    If olBonoComp.Provisionar(oeBonoComp, oeAsientoModel, oePeriodo) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & " se Termino correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "IMPORTAR"
                     Dim _leAux = leDetImportar.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            oeBonoComp = New e_Gratificacion
-                            oeBonoComp.TipoOperacion = "I"
-                            oeBonoComp.IdPeriodo = cboPeriodoDI.Value
-                            oeBonoComp.Codigo = fn_ObtenerCodigo()
-                            Dim _leEst = leEstado.Where(Function(it) it.Nombre = "PERDIDOS").ToList
-                            If _leEst.Count > 0 Then
-                                oeBonoComp.IdEstado = _leEst(0).Id
-                            End If
-                            oeBonoComp.Activo = True
-                            oeBonoComp.Monto = leDetImportar.Sum(Function(it) it.NetoTotal)
-                            oeBonoComp.leDetalle = _leAux
-                            oeBonoComp.UsuarioCreacion = gUsuarioSGI.Id
-                            oeBonoComp.PromBono = nPromBono.Value
-                            oeBonoComp.IndTipo = cboTipoDI.SelectedIndex + 1
-                            oeBonoComp.Glosa = "BONIFICACIÓN COMPESATORIA " & cboTipoDI.Text & " MES " & MonthName(oePeriodo.Mes) & " AÑO " & oePeriodo.Ejercicio
-                            If olBonoComp.ImportarDatos(oeBonoComp) Then
-                                mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
-                                SeleccionaTab(0)
-                                Consultar(True)
-                            End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        oeBonoComp = New e_Gratificacion
+                        oeBonoComp.TipoOperacion = "I"
+                        oeBonoComp.IdPeriodo = cboPeriodoDI.Value
+                        oeBonoComp.Codigo = fn_ObtenerCodigo()
+                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = "PERDIDOS").ToList
+                        If _leEst.Count > 0 Then
+                            oeBonoComp.IdEstado = _leEst(0).Id
                         End If
+                        oeBonoComp.Activo = True
+                        oeBonoComp.Monto = leDetImportar.Sum(Function(it) it.NetoTotal)
+                        oeBonoComp.leDetalle = _leAux
+                        oeBonoComp.UsuarioCreacion = gUsuarioSGI.Id
+                        oeBonoComp.PromBono = nPromBono.Value
+                        oeBonoComp.IndTipo = cboTipoDI.SelectedIndex + 1
+                        oeBonoComp.Glosa = "BONIFICACIÓN COMPESATORIA " & cboTipoDI.Text & " MES " & MonthName(oePeriodo.Mes) & " AÑO " & oePeriodo.Ejercicio
+                        If olBonoComp.ImportarDatos(oeBonoComp) Then
+                            mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
+                            SeleccionaTab(0)
+                            Consultar(True)
+                        End If
+                        'End If
                     Else
                         Throw New Exception("No hay Registros Validados para Importar")
                     End If
@@ -260,24 +260,24 @@ Public Class frm_Gratificacion
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoGenerada
                 If griGratificacion.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeBonoComp = New e_Gratificacion
-                        oeBonoComp.TipoOperacion = ""
-                        oeBonoComp.Id = griGratificacion.ActiveRow.Cells("Id").Value
-                        oeBonoComp = olBonoComp.Obtener(oeBonoComp)
-                        oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
-                        olBonoComp.Eliminar(oeBonoComp)
-                        mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo & _
-                                                             " se ha Eliminado correctamente!", True)
-                        SeleccionaTab(0)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeBonoComp = New e_Gratificacion
+                    oeBonoComp.TipoOperacion = ""
+                    oeBonoComp.Id = griGratificacion.ActiveRow.Cells("Id").Value
+                    oeBonoComp = olBonoComp.Obtener(oeBonoComp)
+                    oeBonoComp.UsuarioModifica = gUsuarioSGI.Id
+                    olBonoComp.Eliminar(oeBonoComp)
+                    mensajeEmergente.Confirmacion("¡El Registro de Gratificación Nº: " & oeBonoComp.Codigo &
+                                                         " se ha Eliminado correctamente!", True)
+                    SeleccionaTab(0)
+                    Consultar(True)
+                    'End If
                 Else
                     Throw New Exception("No puede en ELIMINAR el Registro de Gratificación Nº: " & _
                                         griGratificacion.ActiveRow.Cells("Codigo").Value & " por no esta GENERADA.")

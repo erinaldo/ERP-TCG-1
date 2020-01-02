@@ -5,11 +5,13 @@ Imports ERP.AccesoDatos
 Public Class l_CierreTurno
     Implements Il_CierreTurno
     Private odCierreTurno As New d_CierreTurno
-
+    Private odCierreTurno_Detalle As New d_CierreTurno_Detalle
     Public Function Obtener(ByVal oeCierreTurno As e_CierreTurno) As e_CierreTurno Implements Il_CierreTurno.Obtener
 
         Try
-            Return odCierreTurno.Obtener(oeCierreTurno)
+            oeCierreTurno = odCierreTurno.Obtener(oeCierreTurno)
+            oeCierreTurno.Detalles = odCierreTurno_Detalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "", .IdCierreTurno = oeCierreTurno.Id})
+            Return oeCierreTurno
         Catch ex As Exception
             Throw ex
         End Try
@@ -18,6 +20,7 @@ Public Class l_CierreTurno
     Public Function Listar(ByVal oeCierreTurno As e_CierreTurno) As List(Of e_CierreTurno) Implements Il_CierreTurno.Listar
         Try
             Return odCierreTurno.Listar(oeCierreTurno)
+
         Catch ex As Exception
             Throw ex
         End Try

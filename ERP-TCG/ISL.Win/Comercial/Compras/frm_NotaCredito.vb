@@ -574,10 +574,9 @@ Public Class frm_NotaCredito
             CargarObjects()
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")
             oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
-            If olMovimientoDocumento.Guardar(oeMovimientoDocumento) Then
-                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                Return True
-            End If
+            oeMovimientoDocumento = olMovimientoDocumento.Guardar(oeMovimientoDocumento)
+            mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
+            Return True
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

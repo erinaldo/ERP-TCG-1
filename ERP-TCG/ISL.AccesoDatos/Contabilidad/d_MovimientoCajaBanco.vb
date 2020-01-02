@@ -15,7 +15,7 @@ Public Class d_MovimientoCajaBanco
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_MovimientoCajaBanco
         Try
-            Dim oeMovimientoCajaBanco = New e_MovimientoCajaBanco( _
+            Dim oeMovimientoCajaBanco = New e_MovimientoCajaBanco(
                              o_fila("Id").ToString _
                              , o_fila("IdFlujoCaja").ToString _
                              , o_fila("NroBoucher").ToString _
@@ -33,7 +33,8 @@ Public Class d_MovimientoCajaBanco
                              , o_fila("TipoGasto").ToString _
                              , o_fila("UsuarioCreacion").ToString _
                              , o_fila("IdTipoGasto").ToString _
-                             , o_fila("NroAsiento").ToString)
+                             , o_fila("NroAsiento").ToString _
+                             , o_fila("IdCaja"))
             Return oeMovimientoCajaBanco
         Catch ex As Exception
             Throw ex
@@ -130,7 +131,8 @@ Public Class d_MovimientoCajaBanco
                                                             , ._Ids _
                                                             , .IdTipoGasto _
                                                             , .IdCuentaCorriente _
-                                                            , .UsuarioCreacion).ToString.Split("_")
+                                                            , .UsuarioCreacion _
+                                                            , .IdCaja).ToString.Split("_")
                     .Id = stResultado(0)
 
                 End With

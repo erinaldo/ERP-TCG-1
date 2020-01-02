@@ -872,8 +872,8 @@ Public Class frm_FacturarServicio
             oeMovimientoDocumento.IndAfectaAnticipo = b_anticipo
             oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
             oeAnticipo.PrefijoID = gs_PrefijoIdSucursal '@0001
-            If (olMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo)) Then
-                If cboEstadoFacturaM.Text = "GENERADA" Then
+            oeMovimientoDocumento = olMovimientoDocumento.Guardar(oeMovimientoDocumento, oeAnticipo)
+            If cboEstadoFacturaM.Text = "GENERADA" Then
                     If MessageBox.Show("La Información ha sido grabada satisfactoriamente en " & Me.Text & Environment.NewLine _
                                    & "¿Desea Continuar Modificando el Documento.?", "Mensaje del sistema", MessageBoxButtons.YesNo _
                                    , MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
@@ -894,7 +894,7 @@ Public Class frm_FacturarServicio
                 End If
                 lstDetalleDocumento = New List(Of e_DetalleDocumento)
                 Return True
-            End If
+
         Catch ex As Exception
             Throw ex
         End Try

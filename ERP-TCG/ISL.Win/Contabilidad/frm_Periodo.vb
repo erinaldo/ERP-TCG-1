@@ -137,19 +137,19 @@ Public Class frm_Periodo
                             oeEjercicio.Id = .ActiveRow.Cells("ID").Value
                             oeEjercicio = olEjercicio.Obtener(oeEjercicio)
                             If oeEjercicio.Activo Then
-                                If MessageBox.Show("Esta seguro de eliminar el Periodo: " & .ActiveRow.Cells("Codigo").Value.ToString & " ?", _
+                                If MessageBox.Show("Esta seguro de eliminar el Periodo: " & .ActiveRow.Cells("Codigo").Value.ToString & " ?",
                                             "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                                    Dim formulario As frm_AutenticarTrabajador
-                                    formulario = New frm_AutenticarTrabajador
-                                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                                        Throw New Exception("Ingrese un Clave Correcta")
-                                    Else
-                                        oeEjercicio.TipoOperacion = "E"
-                                        olEjercicio.Eliminar(oeEjercicio)
-                                        Consultar(_Activo)
-                                    End If
+                                    'Dim formulario As frm_AutenticarTrabajador
+                                    'formulario = New frm_AutenticarTrabajador
+                                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                                    '    Throw New Exception("Ingrese un Clave Correcta")
+                                    'Else
+                                    oeEjercicio.TipoOperacion = "E"
+                                    olEjercicio.Eliminar(oeEjercicio)
+                                    Consultar(_Activo)
+                                    'End If
                                 End If
                             Else
                                 Throw New Exception("La informacion  se encuentra eliminada en " & Me.Text)

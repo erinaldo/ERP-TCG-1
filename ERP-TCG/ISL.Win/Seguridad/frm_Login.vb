@@ -271,7 +271,7 @@ Public Class frm_Login
         oeCombo.Descripcion = txtUsuarioR.Text.Trim
         UsuarioCentroPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
         LimpiaCombos(cboCentro)
-        LlenarComboMaestro(cboCentro, UsuarioCentroPublic, -1)
+        LlenarComboMaestro(cboCentro, UsuarioCentroPublic, 0)
         '@0001 Fin
     End Sub
 

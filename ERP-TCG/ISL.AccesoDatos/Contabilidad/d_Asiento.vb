@@ -196,11 +196,11 @@ Public Class d_Asiento
                         If Not .MovimientoDocumento Is Nothing Then
                             If Not .MovimientoDocumento.CuentaxCyP Is Nothing Then
                                 If Not .MovimientoDocumento.CuentaxCyP.CuentaxPDocumentoRetencion Is Nothing Then
+                                    .MovimientoDocumento.CuentaxCyP.PrefijoID = oeAsiento.PrefijoID '@0001
                                     .MovimientoDocumento.CuentaxCyP.CuentaxPDocumentoRetencion.IdDocumentoRetencion = ls_IdDocumentoRetencion
                                 End If
                             End If
                             .MovimientoDocumento.PrefijoID = oeAsiento.PrefijoID '@0001
-                            .MovimientoDocumento.CuentaxCyP.PrefijoID = oeAsiento.PrefijoID '@0001
                         End If
                         If .TipoOperacion = "I" Or .TipoOperacion = "A" Or .TipoOperacion = "S" Then 'inserta, actualiza,modificacion de Saldo
                             If .BandGuardMasivo Then

@@ -35,6 +35,7 @@ Public Class l_MovimientoCajaBanco
             .Columns.Add(New Data.DataColumn("Operador", Type.GetType("System.Int16")))
             .Columns.Add(New Data.DataColumn("NroImpresion", Type.GetType("System.String")))
             .Columns.Add(New Data.DataColumn("IdTipoGasto", Type.GetType("System.String")))
+            .Columns.Add(New Data.DataColumn("IdCaja", Type.GetType("System.String")))
         End With
         Return MovCajaBanco
     End Function

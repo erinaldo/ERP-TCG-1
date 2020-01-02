@@ -256,13 +256,13 @@ Partial Class frm_Inventario
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn271 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("ValorSaldo")
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Ingresos", 7981532)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Ingresos", 568317407)
         Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance55 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Salidas", 7981533)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Salidas", 568317408)
         Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Existencias", 7981534)
+        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("Existencias", 568317409)
         Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn79 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
@@ -997,7 +997,7 @@ Partial Class frm_Inventario
         Me.cboAlmacen.ForeColor = System.Drawing.Color.Black
         Me.cboAlmacen.Location = New System.Drawing.Point(68, 42)
         Me.cboAlmacen.Name = "cboAlmacen"
-        Me.cboAlmacen.Size = New System.Drawing.Size(275, 22)
+        Me.cboAlmacen.Size = New System.Drawing.Size(300, 22)
         Me.cboAlmacen.TabIndex = 3
         Me.cboAlmacen.ValueMember = "Id"
         '
@@ -1026,7 +1026,7 @@ Partial Class frm_Inventario
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
         Me.cboCentro.Location = New System.Drawing.Point(68, 15)
         Me.cboCentro.Name = "cboCentro"
-        Me.cboCentro.Size = New System.Drawing.Size(94, 22)
+        Me.cboCentro.Size = New System.Drawing.Size(300, 22)
         Me.cboCentro.TabIndex = 1
         Me.cboCentro.ValueMember = "Id"
         '

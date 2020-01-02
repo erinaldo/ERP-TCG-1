@@ -31,6 +31,9 @@ Public Class e_Caja
     Public IdEmpresaSistema As String = ""
     <DataMember()>
     Public IdSucursalSistema As String = ""
+    <DataMember()>
+    Public Property CuentaContable() As String = ""
+
     Public Event DatoCambiado()
 
     <DataMember()> _
@@ -151,6 +154,7 @@ Public Class e_Caja
         _abreviatura = String.Empty
         _idcentro = String.Empty
         _centro = String.Empty
+        CuentaContable = String.Empty
         _activo = True
         IndPrincipal = 0
     End Sub
@@ -158,6 +162,7 @@ Public Class e_Caja
     Public Sub New(ByVal ls_Id As String _
               , ByVal ls_Codigo As String _
               , ByVal ls_Nombre As String _
+              , ByVal ls_Cuenta As String _
               , ByVal ls_Abreviatura As String _
               , ByVal ls_UsuarioCreacion As String _
               , ByVal lb_Activo As Boolean _
@@ -168,6 +173,7 @@ Public Class e_Caja
         _id = ls_Id
         _codigo = ls_Codigo
         _nombre = ls_Nombre
+        CuentaContable = ls_Cuenta
         _abreviatura = ls_Abreviatura
         _usuariocreacion = ls_UsuarioCreacion
         _activo = lb_Activo

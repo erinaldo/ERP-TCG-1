@@ -1530,7 +1530,7 @@ Partial Class frm_Guias
         'UltraTabPageControl9
         '
         Me.UltraTabPageControl9.Controls.Add(Me.UltraGroupBox6)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1224, 276)
         '
@@ -2181,7 +2181,7 @@ Partial Class frm_Guias
         'UltraTabPageControl12
         '
         Me.UltraTabPageControl12.Controls.Add(Me.griGrtConfirmarBloque)
-        Me.UltraTabPageControl12.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl12.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
         Me.UltraTabPageControl12.Size = New System.Drawing.Size(1224, 276)
         '
@@ -2995,7 +2995,7 @@ Partial Class frm_Guias
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1224, 147)
         '
@@ -3745,7 +3745,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox10)
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(1224, 147)
         '
@@ -5794,7 +5794,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1232, 419)
         '
@@ -5835,10 +5835,8 @@ Partial Class frm_Guias
         UltraTab6.Text = "GRT - Anuladas"
         UltraTab12.TabPage = Me.UltraTabPageControl12
         UltraTab12.Text = "GRT - Confirmar Bloque"
-        UltraTab12.Visible = False
         UltraTab13.TabPage = Me.UltraTabPageControl13
         UltraTab13.Text = "Viaje Confirmar Sin Doct"
-        UltraTab13.Visible = False
         Me.tabLista.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab5, UltraTab6, UltraTab12, UltraTab13})
         Me.tabLista.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
@@ -6418,7 +6416,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox7)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1232, 419)
         '

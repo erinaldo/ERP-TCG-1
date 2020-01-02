@@ -125,39 +125,39 @@ Public Class frm_PlanillaVacaciones
                     oePlanillaVacaciones.UsuarioCreacion = gUsuarioSGI.Id
                     oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
-                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo &
                                                   " se Guardo correctamente!", True)
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        'oePlanillaVacaciones.Monto = leDetallePlaVac.Sum(Function(it) it.Monto)
-                        oePlanillaVacaciones.IdEstado = cboEstado.Value
-                        oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
-                        oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
-                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
-                                                      " se Envio correctamente!", True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    'oePlanillaVacaciones.Monto = leDetallePlaVac.Sum(Function(it) it.Monto)
+                    oePlanillaVacaciones.IdEstado = cboEstado.Value
+                    oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                    oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo &
+                                                  " se Envio correctamente!", True)
+                    'End If
                 Case "TERMINAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePlanillaVacaciones.IdEstado = cboEstado.Value
-                        oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
-                        oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
-                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
-                                                      " se Termino correctamente!", True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePlanillaVacaciones.IdEstado = cboEstado.Value
+                    oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                    oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo &
+                                                  " se Termino correctamente!", True)
+                    'End If
             End Select
             MostrarTabs(0, ficPlanillaVacaciones)
             Consultar(True)
@@ -184,24 +184,24 @@ Public Class frm_PlanillaVacaciones
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoGenerada
                 If griPlanillaVacaciones.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePlanillaVacaciones = New e_PlanillaVacaciones
-                        oePlanillaVacaciones.TipoOperacion = ""
-                        oePlanillaVacaciones.Id = griPlanillaVacaciones.ActiveRow.Cells("Id").Value
-                        oePlanillaVacaciones = olPlanillaVacaciones.Obtener(oePlanillaVacaciones)
-                        oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
-                        olPlanillaVacaciones.Eliminar(oePlanillaVacaciones)
-                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
-                                                             " se ha Eliminado correctamente!", True)
-                        MostrarTabs(0, ficPlanillaVacaciones)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePlanillaVacaciones = New e_PlanillaVacaciones
+                    oePlanillaVacaciones.TipoOperacion = ""
+                    oePlanillaVacaciones.Id = griPlanillaVacaciones.ActiveRow.Cells("Id").Value
+                    oePlanillaVacaciones = olPlanillaVacaciones.Obtener(oePlanillaVacaciones)
+                    oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                    olPlanillaVacaciones.Eliminar(oePlanillaVacaciones)
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo &
+                                                         " se ha Eliminado correctamente!", True)
+                    MostrarTabs(0, ficPlanillaVacaciones)
+                    Consultar(True)
+                    'End If
                 Else
                     Throw New Exception("No puede en ELIMINAR el Registro de Planilla de Vacaciones Nº: " & _
                                         griPlanillaVacaciones.ActiveRow.Cells("Codigo").Value & " por no esta GENERADA.")
@@ -1066,31 +1066,31 @@ Public Class frm_PlanillaVacaciones
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoEnviado
                 If griPlanillaVacaciones.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePlanillaVacaciones = New e_PlanillaVacaciones
-                        oePlanillaVacaciones.TipoOperacion = ""
-                        oePlanillaVacaciones.Id = griPlanillaVacaciones.ActiveRow.Cells("Id").Value
-                        oePlanillaVacaciones = olPlanillaVacaciones.Obtener(oePlanillaVacaciones)
-                        oePlanillaVacaciones.TipoOperacion = "A"
-                        _estado = gNombreEstadoGenerada
-                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
-                        If _leEst.Count > 0 Then
-                            oePlanillaVacaciones.IdEstado = _leEst(0).Id
-                            oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
-                            oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
-                            mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo & _
-                                                          " se Extornado correctamente!", True)
-                            MostrarTabs(0, ficPlanillaVacaciones)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePlanillaVacaciones = New e_PlanillaVacaciones
+                    oePlanillaVacaciones.TipoOperacion = ""
+                    oePlanillaVacaciones.Id = griPlanillaVacaciones.ActiveRow.Cells("Id").Value
+                    oePlanillaVacaciones = olPlanillaVacaciones.Obtener(oePlanillaVacaciones)
+                    oePlanillaVacaciones.TipoOperacion = "A"
+                    _estado = gNombreEstadoGenerada
+                    Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
+                    If _leEst.Count > 0 Then
+                        oePlanillaVacaciones.IdEstado = _leEst(0).Id
+                        oePlanillaVacaciones.UsuarioModifica = gUsuarioSGI.Id
+                        oePlanillaVacaciones.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        olPlanillaVacaciones.Guardar(oePlanillaVacaciones)
+                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanillaVacaciones.Codigo &
+                                                      " se Extornado correctamente!", True)
+                        MostrarTabs(0, ficPlanillaVacaciones)
+                        Consultar(True)
                     End If
+                    'End If
                 Else
                     Throw New Exception("No se puede EXTORNAR el Registro de Planilla de Vacaciones" & Environment.NewLine & _
                                         "Nº: " & griPlanillaVacaciones.ActiveRow.Cells("Codigo").Value & " por que no esta ENVIADO")

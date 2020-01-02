@@ -719,28 +719,28 @@ Public Class frm_GrupoSancion
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoEnviado
                 If griGrupoSancion.ActiveRow.Cells("Estado").Value = _estado Then
-                    If MessageBox.Show("¿Estas Seguro que desea cambiar de estado a generado?", "Mensaje de Sistema", _
+                    If MessageBox.Show("¿Estas Seguro que desea cambiar de estado a generado?", "Mensaje de Sistema",
                                        MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = Windows.Forms.DialogResult.Yes Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            oeGrupoSancion = New e_GrupoSancion
-                            oeGrupoSancion.Id = griGrupoSancion.ActiveRow.Cells("Id").Value
-                            oeGrupoSancion = olGrupoSancion.Obtener(oeGrupoSancion)
-                            oeGrupoSancion.TipoOperacion = "A"
-                            Dim leEst As New List(Of e_Estado)
-                            leEst = leEstado.Where(Function(item) item.Nombre = "GENERADA").ToList
-                            oeGrupoSancion.IdEstado = leEst(0).Id
-                            oeGrupoSancion.Estado = "RESTAURA"
-                            _opeGS = "EXTORNAR"
-                            bandRestaura = True
-                            Guardando()
-                            bandRestaura = False
-                        End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        oeGrupoSancion = New e_GrupoSancion
+                        oeGrupoSancion.Id = griGrupoSancion.ActiveRow.Cells("Id").Value
+                        oeGrupoSancion = olGrupoSancion.Obtener(oeGrupoSancion)
+                        oeGrupoSancion.TipoOperacion = "A"
+                        Dim leEst As New List(Of e_Estado)
+                        leEst = leEstado.Where(Function(item) item.Nombre = "GENERADA").ToList
+                        oeGrupoSancion.IdEstado = leEst(0).Id
+                        oeGrupoSancion.Estado = "RESTAURA"
+                        _opeGS = "EXTORNAR"
+                        bandRestaura = True
+                        Guardando()
+                        bandRestaura = False
+                        'End If
                     End If
                 Else
                     Throw New Exception("No se puede EXTORNAR el Registro de Grupo Sanción " & Environment.NewLine & _
@@ -823,31 +823,31 @@ Public Class frm_GrupoSancion
     Private Sub tsmiAnular_Click(sender As Object, e As EventArgs) Handles tsmiAnular.Click
         Try
             If griListaSancion.Selected.Rows.Count > 0 Then
-                If MessageBox.Show("¿Desea Anular la Sanción de " & griListaSancion.ActiveRow.Cells("Trabajador").Value & "?", _
+                If MessageBox.Show("¿Desea Anular la Sanción de " & griListaSancion.ActiveRow.Cells("Trabajador").Value & "?",
                                    "Mensaje de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        _estado = gNombreEstadoAnulado.ToString
-                        Dim _leEstAux = leEstSancion.Where(Function(it) it.Nombre = _estado).ToList
-                        oeSancion = New e_Sancion
-                        oeSancion.Id = griListaSancion.ActiveRow.Cells("Id").Value
-                        If leSancion.Contains(oeSancion) Then
-                            oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
-                            oeSancion.TipoOperacion = "A"
-                            If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
-                            oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            If olSancion.Guardar(oeSancion) Then
-                                mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
-                                CargarSancAprob(oeGrupoSancion.Id)
-                                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                            End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    _estado = gNombreEstadoAnulado.ToString
+                    Dim _leEstAux = leEstSancion.Where(Function(it) it.Nombre = _estado).ToList
+                    oeSancion = New e_Sancion
+                    oeSancion.Id = griListaSancion.ActiveRow.Cells("Id").Value
+                    If leSancion.Contains(oeSancion) Then
+                        oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
+                        oeSancion.TipoOperacion = "A"
+                        If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
+                        oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        If olSancion.Guardar(oeSancion) Then
+                            mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
+                            CargarSancAprob(oeGrupoSancion.Id)
+                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                         End If
                     End If
+                    'End If
                 End If
             End If
         Catch ex As Exception
@@ -858,28 +858,28 @@ Public Class frm_GrupoSancion
     Private Sub tsmiAnularAll_Click(sender As Object, e As EventArgs) Handles tsmiAnularAll.Click
         Try
             If leSancion.Count > 0 Then
-                If MessageBox.Show("¿Desea Anular todas las Sanciones?", "Mensaje de Sistema", _
+                If MessageBox.Show("¿Desea Anular todas las Sanciones?", "Mensaje de Sistema",
                                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    _estado = gNombreEstadoAnulado.ToString
+                    Dim _leEstAux = leEstSancion.Where(Function(it) it.Nombre = _estado).ToList
+                    For Each oeSanc In leSancion
+                        oeSanc.TipoOperacion = "A"
+                        oeSanc.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        If _leEstAux.Count > 0 Then oeSanc.IdEstado = _leEstAux(0).Id
+                    Next
+                    If olSancion.GuardarLista(leSancion) Then
+                        mensajeEmergente.Confirmacion("Las Sanciones se han Anulado correctamente", True)
+                        CargarSancAprob(oeGrupoSancion.Id)
                         ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        _estado = gNombreEstadoAnulado.ToString
-                        Dim _leEstAux = leEstSancion.Where(Function(it) it.Nombre = _estado).ToList
-                        For Each oeSanc In leSancion
-                            oeSanc.TipoOperacion = "A"
-                            oeSanc.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            If _leEstAux.Count > 0 Then oeSanc.IdEstado = _leEstAux(0).Id
-                        Next
-                        If olSancion.GuardarLista(leSancion) Then
-                            mensajeEmergente.Confirmacion("Las Sanciones se han Anulado correctamente", True)
-                            CargarSancAprob(oeGrupoSancion.Id)
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        End If
                     End If
+                    'End If
                 End If
             End If
         Catch ex As Exception
@@ -890,51 +890,46 @@ Public Class frm_GrupoSancion
     Private Sub tsmiPasar_Click(sender As Object, e As EventArgs) Handles tsmiPasar.Click
         Try
             If griListaSancion.Selected.Rows.Count > 0 Then
-                If MessageBox.Show("¿Desea Pasar a Otro Grupo la Sanción de " & griListaSancion.ActiveRow.Cells("Trabajador").Value & "?", _
+                If MessageBox.Show("¿Desea Pasar a Otro Grupo la Sanción de " & griListaSancion.ActiveRow.Cells("Trabajador").Value & "?",
                                   "Mensaje de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        ls_IdGSancion = ""
-                        Dim _frm As New frm_Seleccionar("GSancion", gNombreEstadoGenerada, cboArea.Value)
-                        _frm.StartPosition = FormStartPosition.CenterScreen
-                        _frm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-                        If _frm.ShowDialog() = Windows.Forms.DialogResult.Yes Then
-                            If ls_IdGSancion.Trim <> "" Then
-                                If ls_IdGSancion = oeGrupoSancion.Id Then Throw New Exception("No puede Elegir el mismo Grupo")
-                                oeSancion = New e_Sancion
-                                oeSancion.Id = griListaSancion.ActiveRow.Cells("Id").Value
-                                If leSancion.Contains(oeSancion) Then
-                                    oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
-                                    oeSancion.TipoOperacion = "A"
-                                    oeSancion.IdGrupo = ls_IdGSancion
-                                    oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                    If olSancion.Guardar(oeSancion) Then
-                                        mensajeEmergente.Confirmacion("La Sancion se ha Pasado al Grupo Correctamente", True)
-                                        CargarSancAprob(oeGrupoSancion.Id)
-                                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    ls_IdGSancion = ""
+                    Dim _frm As New frm_Seleccionar("GSancion", gNombreEstadoGenerada, cboArea.Value)
+                    _frm.StartPosition = FormStartPosition.CenterScreen
+                    _frm.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+                    If _frm.ShowDialog() = Windows.Forms.DialogResult.Yes Then
+                        If ls_IdGSancion.Trim <> "" Then
+                            If ls_IdGSancion = oeGrupoSancion.Id Then Throw New Exception("No puede Elegir el mismo Grupo")
+                            oeSancion = New e_Sancion
+                            oeSancion.Id = griListaSancion.ActiveRow.Cells("Id").Value
+                            If leSancion.Contains(oeSancion) Then
+                                oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
+                                oeSancion.TipoOperacion = "A"
+                                oeSancion.IdGrupo = ls_IdGSancion
+                                oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
+                                If olSancion.Guardar(oeSancion) Then
+                                    mensajeEmergente.Confirmacion("La Sancion se ha Pasado al Grupo Correctamente", True)
+                                    CargarSancAprob(oeGrupoSancion.Id)
+                                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                                 End If
-                            Else
-                                Throw New Exception("No ha Seleccionado ningun grupo")
                             End If
+                        Else
+                            Throw New Exception("No ha Seleccionado ningun grupo")
                         End If
                     End If
+                    'End If
                 End If
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
-
-    Private Sub tsmiPasarAll_Click(sender As Object, e As EventArgs) Handles tsmiPasarAll.Click
-
-    End Sub
-
 
     Private Sub mnuGrupoSancion_Opening(ByVal sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles mnuGrupoSancion.Opening
         mnuGrupoSancion.Items("tsmiNuevo").Enabled = True

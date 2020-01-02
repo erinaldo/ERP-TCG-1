@@ -666,7 +666,7 @@ Public Class frm_OrdenVenMaterial
             mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = True
             With griOrdenSalida.ActiveRow
                 If .Index > -1 Then
-                    If .Cells("Estado").Value = "GENERADO" Then
+                    If .Cells("EstadoOrden").Value = "GENERADO" Then
                         mt_MenuDetalle(0, 0, 1, 0, 0)
                     Else
                         mt_MenuDetalle(0, 0, 0, 0, 0)
@@ -1980,9 +1980,6 @@ Public Class frm_OrdenVenMaterial
                 End If
                 If loCtaCtble.Contains(oeCtaCtble) Then
                     oe.oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                    'If oe.oeCtaCtble.IndDocumento Then
-                    '    mstrIdCuentaContable = oe.oeCtaCtble.Id
-                    'End If
                 End If
             Next
         Catch ex As Exception
@@ -2516,6 +2513,10 @@ Public Class frm_OrdenVenMaterial
             .Columns("Ruc").Width = 80
             .Columns("Nombre").Width = 250
         End With
+    End Sub
+
+    Private Sub btnCrearCtaCte_Click(sender As Object, e As EventArgs) Handles btnCrearCtaCte.Click
+
     End Sub
 
     Private Function fc_DetalleDoc() As List(Of e_DetalleDocumento)

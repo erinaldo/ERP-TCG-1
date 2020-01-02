@@ -173,38 +173,38 @@ Public Class frm_PlanillaCaja
                         Consultar(True)
                     End If
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePlanilla.IdEstado = cboEstado.Value
-                        oePlanilla.UsuarioModifica = gUsuarioSGI.Id
-                        oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olPlanilla.Guardar(oePlanilla) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Planilla General Nº: " & oePlanilla.Codigo & _
-                                                      " se Envio correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePlanilla.IdEstado = cboEstado.Value
+                    oePlanilla.UsuarioModifica = gUsuarioSGI.Id
+                    oePlanilla.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olPlanilla.Guardar(oePlanilla) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Planilla General Nº: " & oePlanilla.Codigo &
+                                                  " se Envio correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "IMPORTAR"
                     Dim _leAux = leDetPlaImportar.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            olDetallePla.GuardarMasivo(_leAux, gs_PrefijoIdSucursal)
-                            mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        olDetallePla.GuardarMasivo(_leAux, gs_PrefijoIdSucursal)
+                        mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
+                        'End If
                     Else
                         Throw New Exception("No hay Registros Validados para Importar")
                     End If
@@ -266,24 +266,24 @@ Public Class frm_PlanillaCaja
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoGenerada
                 If griPlanilla.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePlanilla = New e_Planilla
-                        oePlanilla.TipoOperacion = ""
-                        oePlanilla.Id = griPlanilla.ActiveRow.Cells("Id").Value
-                        oePlanilla = olPlanilla.Obtener(oePlanilla)
-                        oePlanilla.UsuarioModifica = gUsuarioSGI.Id
-                        olPlanilla.Eliminar(oePlanilla)
-                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanilla.Codigo & _
-                                                             " se ha Eliminado correctamente!", True)
-                        SeleccionaTab(0)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePlanilla = New e_Planilla
+                    oePlanilla.TipoOperacion = ""
+                    oePlanilla.Id = griPlanilla.ActiveRow.Cells("Id").Value
+                    oePlanilla = olPlanilla.Obtener(oePlanilla)
+                    oePlanilla.UsuarioModifica = gUsuarioSGI.Id
+                    olPlanilla.Eliminar(oePlanilla)
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oePlanilla.Codigo &
+                                                         " se ha Eliminado correctamente!", True)
+                    SeleccionaTab(0)
+                    Consultar(True)
+                    'End If
                 Else
                     Throw New Exception("No puede en ELIMINAR el Registro de Retención de 5ta Categoria Nº: " & _
                                         griPlanilla.ActiveRow.Cells("Codigo").Value & " por no esta GENERADA.")

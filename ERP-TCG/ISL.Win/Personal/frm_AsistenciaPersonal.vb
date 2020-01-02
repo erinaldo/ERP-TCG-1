@@ -113,15 +113,15 @@ Public Class frm_AsistenciaPersonal
 
     Public Sub Marcar()
         Try
-            Dim formulario As frm_AutenticarTrabajador
-            formulario = New frm_AutenticarTrabajador
-            Dim idTrabEntr As String = ""
-            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                Exit Sub
-            Else
-                GuardarAsistencia(formulario.idTrabajador)
-            End If
+            'Dim formulario As frm_AutenticarTrabajador
+            'formulario = New frm_AutenticarTrabajador
+            'Dim idTrabEntr As String = ""
+            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+            '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+            '    Exit Sub
+            'Else
+            GuardarAsistencia(gUsuarioSGI.IdTrabajador)
+            'End If
         Catch ex As Exception
             Throw ex
         End Try

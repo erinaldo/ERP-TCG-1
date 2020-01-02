@@ -508,8 +508,7 @@ Public Class frm_OrdenCompra
             fecNotaCD.Value = Date.Now
             txtSreNotaCD.Text = String.Empty
             txtNroNotaCD.Text = String.Empty
-            txtCodBarras.ReadOnly = False
-            txtCodBarras.Value = String.Empty
+            'txtCodBarras.ReadOnly = False
             decSubTotalNCD.Value = 0.0
             decIGVNCD.Value = 0.0
             decTotalIGVNCD.Value = 0.0
@@ -535,6 +534,17 @@ Public Class frm_OrdenCompra
         oeOrdenCompra.TipoOperacion = "I"
         cboProveedor.Text = String.Empty
         cboProveedor.DataSource = Nothing
+        cboCliente.Text = String.Empty '@001 Ini
+        cboPiloto.Text = String.Empty
+        cboTracto.Text = String.Empty
+        cboTurnoAtencion.Text = String.Empty
+        txtIdViaje.Text = String.Empty '@001 Fin
+        uc_Transportista.Text = String.Empty
+        uc_Transportista.DataSource = Nothing
+        cb_FactServ.Checked = False
+        txtCodDT.Text = String.Empty
+        uce_Destino.SelectedIndex = -1
+        uce_Origen.SelectedIndex = -1
         btnTerminarOC.Enabled = False
         chkRuc.Checked = False
         cboMoneda.SelectedIndex = 0
@@ -640,17 +650,6 @@ Public Class frm_OrdenCompra
         Try
             With griListaOrdenCompra
                 _Estado = .ActiveRow.Cells("EstadoOrden").Value
-                If _Estado = gNombreEstadoOrdenEvaluada Then
-                    Me.txtCodBarras.ReadOnly = True
-                ElseIf _Estado = gNombreEstadoOrdenPreEvaluada Then
-                    Me.txtCodBarras.ReadOnly = True
-                ElseIf _Estado = gNombreEstadoOrdenTerminada Then
-                    Me.txtCodBarras.ReadOnly = True
-                ElseIf _Estado = gNombreEstadoOrdenAtendido Then
-                    Me.txtCodBarras.ReadOnly = True
-                ElseIf _Estado = gNombreEstadoOrdenAtendidoParcialmente Then
-                    Me.txtCodBarras.ReadOnly = False
-                End If
                 _IdEstadoOrden = .ActiveRow.Cells("IdEstadoOrden").Value
                 id = .ActiveRow.Cells("Id").Value.ToString
                 If id.Length > 0 Then
@@ -699,6 +698,20 @@ Public Class frm_OrdenCompra
                         '----
                         cambioMon = TipoCambio(fecFechaActual.Value, 1)(0)
                         txtTC.Value = cambioMon
+                        txtCodDT.Text = oeOrdenCompra.CodigoDT
+                        cb_FactServ.Checked = oeOrdenCompra.IndFactServicio
+                        If cb_FactServ.Checked Then
+                            ListarProveedores(uc_Transportista, oeOrdenCompra.IdClienteFinal, 0)
+                            uc_Transportista.Value = oeOrdenCompra.IdClienteFinal
+                            uce_Origen.Value = oeOrdenCompra.IdOrigen
+                            uce_Destino.Value = oeOrdenCompra.IdDestino
+                            cboCliente.Value = oeOrdenCompra.IdTransportista '@0001 Ini
+                            cboTracto.Value = oeOrdenCompra.IdTracto
+                            cboPiloto.Value = oeOrdenCompra.IdPiloto
+                            VentanaHoraria()
+                            cboTurnoAtencion.Value = oeOrdenCompra.IdVentanaHoraria
+                            txtIdViaje.Text = oeOrdenCompra.IdViaje '@001 Fin
+                        End If
                         '-----
                         MostrarTabs(1, ficOrdenCompra, 1)
                         oeOrdenCompra.TipoOperacion = "A"
@@ -1490,9 +1503,21 @@ Public Class frm_OrdenCompra
                 .DetraccionPorc = DecDetraer.Value
                 .TipoBien = TipoOC
                 .IndTipoCompra = 0
-                'If rdbNormal.Checked Then .IndTipoCompra = 0
-                'If rdbUrgente.Checked Then .IndTipoCompra = 1
-                'If .IndTipoCompra = -1 Then Throw New Exception("Seleccione Tipo De Compra")
+                .CodigoDT = txtCodDT.Text
+                If cb_FactServ.Checked Then
+                    If uc_Transportista.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente Final")
+                    If uce_Destino.SelectedIndex = -1 Then Throw New Exception("Seleccione Destino")
+                    If uce_Origen.SelectedIndex = -1 Then Throw New Exception("Seleccione Origen")
+                    .IndFactServicio = cb_FactServ.Checked
+                    .IdTransportista = cboCliente.Value
+                    .IdOrigen = uce_Origen.Value
+                    .IdDestino = uce_Destino.Value
+                    .IdPiloto = cboPiloto.Value
+                    .IdTracto = cboTracto.Value
+                    .IdVentanaHoraria = cboTurnoAtencion.Value
+                    .IdClienteFinal = uc_Transportista.Value
+
+                End If
                 .lstOrdenMaterial = llOrdenCompraMaterial
                 .OrdenAprobacion.Id = ls_IdOrdenAprobacion
                 .OrdenAprobacion.IdOrden = ""
@@ -1514,6 +1539,8 @@ Public Class frm_OrdenCompra
             LlenarComboMaestro(cboMoneda, olMoneda.Listar(oeMoneda), 0)
             oeTipoOrdenCompra.Activo = True
             LlenarComboMaestro(cboTipoOrdenCompra, olTipoOrdenCompra.Listar(oeTipoOrdenCompra), 0)
+
+
 
             oeTipoOrdenCompra.Activo = True
 
@@ -1559,6 +1586,9 @@ Public Class frm_OrdenCompra
             llMoneda.AddRange(olMoneda.Listar(oeMoneda))
             LlenarComboMaestro(cboMonedaL, llMoneda, 0)
 
+            LlenarComboMaestro(uce_Origen, LugaresPublic, -1)
+            LlenarComboMaestro(uce_Destino, LugaresPublic, -1)
+
             oeEstado.Id = "CERO"
             oeEstado.Nombre = "TODOS"
             llEstado.Add(oeEstado)
@@ -1569,6 +1599,10 @@ Public Class frm_OrdenCompra
             LlenarComboMaestro(cboEstadoOrden, llEstado, 3)
             _IdEstadoOrden = cboEstadoOrden.Value
             cboEstadoOrden.SelectedIndex = 0
+
+            LlenarCombo(cboCliente, "Nombre", ClienteProveedorPublic, -1) '@0001
+            LlenarCombo(cboTracto, "Nombre", TractoPublic, -1) '@0001
+            LlenarCombo(cboPiloto, "Nombre", PilotoPublic, -1) '@0001
         Catch ex As Exception
             Throw ex
         End Try
@@ -1931,7 +1965,7 @@ Public Class frm_OrdenCompra
             controlaColumnasGriDetOC(0, True, True, False, 0, 3)
             oeOrdenCompra.TipoOperacion = "1"
             oeOrdenCompra.IdTrabajador = gUsuarioSGI.IdTrabajador
-            txtCodBarras.ReadOnly = True
+            'txtCodBarras.ReadOnly = True
         Catch ex As Exception
             Throw ex
         End Try
@@ -1953,7 +1987,7 @@ Public Class frm_OrdenCompra
                     GuardarRegistroEditado()
                     oeOrdenCompra.TipoOperacion = "3"
                     ControlBoton(0, 0, 0, 0, 1, 0, 1, 0, 0)
-                    Me.txtCodBarras.ReadOnly = False
+                    'Me.txtCodBarras.ReadOnly = False
                 End If
             End If
         Catch ex As Exception
@@ -3266,6 +3300,26 @@ Public Class frm_OrdenCompra
         End Try
     End Sub
 
+    Private Sub uc_Transportista_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uc_Transportista.KeyPress
+        Try
+            If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+                uc_Transportista.PerformAction(UltraComboAction.Dropdown)
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
+    Private Sub uc_Transportista_KeyDown(sender As Object, e As KeyEventArgs) Handles uc_Transportista.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                ListarProveedores(uc_Transportista, "0", False)
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
     Private Sub cbProveedor_InitializeLayout(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs) Handles cboProveedor.InitializeLayout
         Me.cboProveedor.ValueMember = "Id"
         Me.cboProveedor.DisplayMember = "Nombre"
@@ -3546,7 +3600,7 @@ Public Class frm_OrdenCompra
         e.Cancel = True
     End Sub
 
-    Private Sub griHistorialRechazo_BeforeRowsDeleted(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs) Handles griHistorialRechazo.BeforeRowsDeleted
+    Private Sub griHistorialRechazo_BeforeRowsDeleted(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeRowsDeletedEventArgs)
         e.Cancel = True
     End Sub
 
@@ -3615,30 +3669,30 @@ Public Class frm_OrdenCompra
         Eliminar()
     End Sub
 
-    Private Sub txtCodBarras_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarras.KeyDown
-        Try
-            If e.KeyCode = Keys.Enter Then
-                Dim oeCom As New e_Combo
-                oeCom.Nombre = txtCodBarras.Text.Trim
-                oeCom.Tipo = 1
-                If CodigoBarrasPublic.Contains(oeCom) Then
-                    oeCom = CodigoBarrasPublic.Item(CodigoBarrasPublic.IndexOf(oeCom))
-                Else
-                    Throw New Exception("Codigo de Barras no Asociado a Ningun Material")
-                End If
-                Select Case oeOrdenCompra.TipoOperacion
-                    Case "I", "A"
-                        AsignarMaterialCodigo(oeCom.Id.Trim)
-                    Case "3"
-                        AtenderMateriales(oeCom.Id.Trim)
-                End Select
-                txtCodBarras.Focus()
-                txtCodBarras.Value = String.Empty
-            End If
-        Catch ex As Exception
-            mensajeEmergente.Problema(ex.Message, True)
-        End Try
-    End Sub
+    'Private Sub txtCodBarras_KeyDown(sender As Object, e As KeyEventArgs) Handles txtCodBarras.KeyDown
+    '    Try
+    '        If e.KeyCode = Keys.Enter Then
+    '            Dim oeCom As New e_Combo
+    '            oeCom.Nombre = txtCodBarras.Text.Trim
+    '            oeCom.Tipo = 1
+    '            If CodigoBarrasPublic.Contains(oeCom) Then
+    '                oeCom = CodigoBarrasPublic.Item(CodigoBarrasPublic.IndexOf(oeCom))
+    '            Else
+    '                Throw New Exception("Codigo de Barras no Asociado a Ningun Material")
+    '            End If
+    '            Select Case oeOrdenCompra.TipoOperacion
+    '                Case "I", "A"
+    '                    AsignarMaterialCodigo(oeCom.Id.Trim)
+    '                Case "3"
+    '                    AtenderMateriales(oeCom.Id.Trim)
+    '            End Select
+    '            txtCodBarras.Focus()
+    '            txtCodBarras.Value = String.Empty
+    '        End If
+    '    Catch ex As Exception
+    '        mensajeEmergente.Problema(ex.Message, True)
+    '    End Try
+    'End Sub
 
     Private Sub cboTipoPago_ValueChanged(sender As Object, e As EventArgs) Handles cboTipoPago.ValueChanged
         Try
@@ -3820,6 +3874,71 @@ Public Class frm_OrdenCompra
         End Try
     End Sub
 
+    Private Sub uc_Transportista_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles uc_Transportista.InitializeLayout
+        Me.uc_Transportista.ValueMember = "Id"
+        Me.uc_Transportista.DisplayMember = "Nombre"
+        With uc_Transportista.DisplayLayout.Bands(0)
+            .Columns("Id").Hidden = True
+            .Columns("Email").Hidden = True
+            .Columns("Seleccion").Hidden = True
+            .Columns("Contacto").Hidden = True
+            .Columns("Codigo").Hidden = True
+            .Columns("TipoPersonaEmpresa").Hidden = True
+            .Columns("IdPersona").Hidden = True
+            .Columns("IdEmpresa").Hidden = True
+            .Columns("FechaActividad").Hidden = True
+            .Columns("UsuarioCreacion").Hidden = True
+            .Columns("Activo").Hidden = True
+            .Columns("NroDocumento").Header.Caption = "N° RUC"
+            .Columns("NroDocumento").Width = 50
+            .Columns("Nombre").Width = 150
+        End With
+    End Sub
+
+    Private Sub cb_FactServ_CheckedChanged(sender As Object, e As EventArgs) Handles cb_FactServ.CheckedChanged
+        If cb_FactServ.Checked Then
+            UltraGroupBox1.Enabled = True
+            '@001
+            If cboCliente.Text = "" Then
+                cboCliente.Value = cboProveedor.Value
+            End If
+            '@001
+        Else
+            UltraGroupBox1.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChIndEMP_CheckedChanged(sender As Object, e As EventArgs) Handles ChIndEMP.CheckedChanged
+        If ChIndEMP.Checked Then
+            cboCliente.Value = gs_IdClienteProveedorSistema
+        Else
+            cboCliente.Value = cboProveedor.Value
+        End If
+    End Sub
+    '@0001
+    Sub VentanaHoraria()
+        Dim oeCombo As New e_Combo
+        Dim olCombo As New l_Combo
+        oeCombo.Id = cboCliente.Value
+        oeCombo.Nombre = "VentanaHoraria"
+        oeCombo.Descripcion = uce_Origen.Value
+        LlenarCombo(cboTurnoAtencion, "Nombre", olCombo.Listar(oeCombo), -1)
+    End Sub
+
+    Private Sub uce_Origen_Leave(sender As Object, e As EventArgs) Handles uce_Origen.Leave
+        VentanaHoraria()
+    End Sub
+
+    Private Sub ChIndEMP2_CheckedChanged(sender As Object, e As EventArgs) Handles ChIndEMP2.CheckedChanged
+        If ChIndEMP2.Checked Then
+            ListarProveedores(uc_Transportista, gs_IdClienteProveedorSistema, 0)
+            uc_Transportista.Value = gs_IdClienteProveedorSistema
+        Else
+            uc_Transportista.Value = ""
+        End If
+    End Sub
+
+    '@001
     Private Sub TSM_Boleta_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TSM_Boleta.Click
         GenerarDocumento("BOLETA")
     End Sub

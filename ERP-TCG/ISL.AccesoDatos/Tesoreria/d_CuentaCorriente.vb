@@ -131,6 +131,46 @@ Public Class d_CuentaCorriente
         End Try
     End Function
 
+    Public Function Guardar_CuentaCorriente(ByVal oeCuentaCorriente As e_CuentaCorriente) As e_CuentaCorriente
+        Try
+            Dim oeSaldoCtaCte As New e_SaldoCtaCorriente
+            Dim odSaldoCtaCte As New d_SaldoCtaCorriente
+            With oeCuentaCorriente
+                oeCuentaCorriente.Id = sqlhelper.ExecuteScalar("TES.Isp_CuentaCorriente_IAE", .Tipooperacion _
+                                         , "A" _
+                                         , .Id _
+                                         , .Codigo _
+                                         , .IdTrabajador _
+                                         , .IdMoneda _
+                                         , .Glosa _
+                                         , .Saldo _
+                                         , .Usuario _
+                                         , .IdEstado _
+                                         , .Activo _
+                                         , .PrefijoID _
+                                         , .Tipo _
+                                         , .TotalCargo _
+                                         , .TotalAbono _
+                                         , .Ejercicio)
+                If .Tipo = 2 Or .Tipo = 4 Then
+                    If .Tipooperacion = "I" Then
+                        oeSaldoCtaCte.TipoOperacion = "I"
+                        oeSaldoCtaCte.IdCuentaCorriente = .Id
+                        oeSaldoCtaCte.Liquidado = 0
+                        oeSaldoCtaCte.Monto = 0
+                        oeSaldoCtaCte.TipoCuenta = .Tipo
+                        oeSaldoCtaCte.UsuarioCreacion = .Usuario
+                        oeSaldoCtaCte.PrefijoID = oeCuentaCorriente.PrefijoID '@0001
+                        oeSaldoCtaCte = odSaldoCtaCte.Guardar_SaldoCuentaCorriente(oeSaldoCtaCte)
+                    End If
+                End If
+            End With
+            Return oeCuentaCorriente
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Eliminar(ByVal oeCuentaCorriente As e_CuentaCorriente) As Boolean
         Try
             With oeCuentaCorriente

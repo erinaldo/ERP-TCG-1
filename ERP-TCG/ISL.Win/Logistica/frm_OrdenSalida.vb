@@ -1618,11 +1618,11 @@ Public Class frm_OrdenSalida
     Private Sub RectificarOS()
         Try
             '------- CONTROLAR AUTENTICACIÓN DEL TRABAJADOR------------
-            Dim formulario As frm_AutenticarTrabajador
-            formulario = New frm_AutenticarTrabajador
-            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                Exit Sub
-            End If
+            'Dim formulario As frm_AutenticarTrabajador
+            'formulario = New frm_AutenticarTrabajador
+            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+            '    Exit Sub
+            'End If
             '-------------------------------------------------------------------------------
             oeTrabajadorSeguridad = New e_TrabajadorSeguridad
             oeProcesoNegocio = New e_ProcesoNegocio
@@ -1630,7 +1630,7 @@ Public Class frm_OrdenSalida
             oeProcesoNegocio.Nombre = "RECTIFICAR OI,OS"
             oeProcesoNegocio = olProcesoNegocio.Obtener(oeProcesoNegocio)
             oeTrabajadorSeguridad.TipoOperacion = ""
-            oeTrabajadorSeguridad.IdTrabajador = formulario.cboTrabajador.Value
+            oeTrabajadorSeguridad.IdTrabajador = gUsuarioSGI.IdTrabajador
             oeTrabajadorSeguridad.IdProcesoNegocio = oeProcesoNegocio.Id
             oeTrabajadorSeguridad = olTrabajadorSeguridad.Obtener(oeTrabajadorSeguridad)
             If String.IsNullOrEmpty(oeTrabajadorSeguridad.Id) Then Throw New Exception("Trabajador No Autorizado.")
@@ -1641,7 +1641,7 @@ Public Class frm_OrdenSalida
             Inhabilitar(True)
             ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
             lbl_etiqueta.Text = "Rectifica OS" : lbl_etiqueta.Visible = 1
-            formulario = Nothing
+            'formulario = Nothing
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message)
         End Try

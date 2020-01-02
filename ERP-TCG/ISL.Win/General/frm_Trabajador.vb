@@ -2221,17 +2221,17 @@ Public Class frm_Trabajador
                         If oeTrabajador.IndEstado = 2 Then
                             If MessageBox.Show("Esta seguro en dar de baja el Trabajador: " & oeTrabajador.oePersona.NombreCompleto & " ?", "Mensaje de Sistema",
                                                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                                Dim formulario As frm_AutenticarTrabajador
-                                formulario = New frm_AutenticarTrabajador
-                                formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                                If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                                    Throw New Exception("Ingrese un Clave Correcta")
-                                Else
-                                    oeTrabajador.TipoOperacion = "A" : oeTrabajador.IndEstado = 0 : oeTrabajador.FechaCreacion = Date.Now
-                                    oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                    If olTrabajador.Guardar(oeTrabajador) Then Consultar(True)
-                                End If
+                                'Dim formulario As frm_AutenticarTrabajador
+                                'formulario = New frm_AutenticarTrabajador
+                                'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                                'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                                '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                                '    Throw New Exception("Ingrese un Clave Correcta")
+                                'Else
+                                oeTrabajador.TipoOperacion = "A" : oeTrabajador.IndEstado = 0 : oeTrabajador.FechaCreacion = Date.Now
+                                oeTrabajador.PrefijoID = gs_PrefijoIdSucursal '@0001
+                                If olTrabajador.Guardar(oeTrabajador) Then Consultar(True)
+                                'End If
                             End If
                         Else
                             Throw New Exception("Para Realizar esta Operacion el Trabajador debe tener el estado: PENDIENTE POR LIQUIDAR")

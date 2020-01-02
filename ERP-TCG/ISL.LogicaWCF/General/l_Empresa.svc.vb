@@ -39,15 +39,13 @@ Public Class l_Empresa
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeEmpresa As e_Empresa) As Boolean Implements Il_Empresa.Guardar
+    Public Function Guardar(ByVal oeEmpresa As e_Empresa) As String Implements Il_Empresa.Guardar
         Try
             Dim id As String = ""
-            Dim Retorna As Boolean = False
             If Validar(oeEmpresa) Then
                 id = odEmpresa.Guardar(oeEmpresa)
             End If
-            If id <> "" Then Retorna = True
-            Return Retorna
+            Return id
         Catch ex As Exception
             Throw
         End Try

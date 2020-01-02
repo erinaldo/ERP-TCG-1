@@ -1,8 +1,9 @@
 ﻿Imports ERP.AccesoDatos
 Imports ERP.EntidadesWCF
+Imports ERP.LogicaWCF
 Imports System.Runtime.Serialization
 
-<DataContract(), Serializable()> _
+<DataContract(), Serializable()>
 Public Class l_CuentaContable
     Implements Il_CuentaContable
 
@@ -70,4 +71,11 @@ Public Class l_CuentaContable
         End Try
     End Function
 
+    Public Function Obtener2(oeCuentaContable As e_CuentaContable) As e_CuentaContable Implements Il_CuentaContable.Obtener2
+        Try
+            Return odCuentaContable.Obtener2(oeCuentaContable)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

@@ -34,8 +34,8 @@ Public Interface Il_MovimientoDocumento
     <OperationContract()> _
     Function GuardarMasivo(ByVal oeMovimientoDoc As e_MovimientoDocumento) As Boolean
 
-    <OperationContract()> _
-    Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
+    <OperationContract()>
+    Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As e_MovimientoDocumento
 
     <OperationContract()> _
     Function VerificarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
@@ -150,8 +150,8 @@ Public Interface Il_MovimientoDocumento
                            ByVal IndOtros As Boolean, _
                            ByVal IdCtaCtble16321 As String, Optional b_anticipo As Boolean = False) As Boolean
 
-    <OperationContract()> _
-    Function GuardarVenta2(ByVal oeMovDocumento As e_MovimientoDocumento) As Boolean
+    <OperationContract()>
+    Function GuardarVenta2(ByVal oeMovDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
 
 #End Region
 

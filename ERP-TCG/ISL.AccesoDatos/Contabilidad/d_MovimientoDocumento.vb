@@ -400,18 +400,14 @@ Public Class d_MovimientoDocumento
             Dim lstMateriales As New List(Of e_Material)
             Dim ds As DataSet
             With oeMovimientoDocumento
-                ds = sqlhelper.ExecuteDataset("[CON].[Isp_DetalleDocumento_Listar]", .TipoOperacion _
-                        , "", .Id _
-                        )
+                ds = sqlhelper.ExecuteDataset("[CON].[Isp_DetalleDocumento_Listar]", .TipoOperacion, "", .Id)
                 If ds.Tables.Count > 0 Then
                     For Each o_Fila As DataRow In ds.Tables(0).Rows
-                        Dim oeMaterial As New e_Material
-                        Dim odMaterial As New d_Material
+                        Dim oeMaterial As New e_Material, odMaterial As New d_Material
                         oeMaterial = odMaterial.Cargar_Detalle(o_Fila)
                         lstMateriales.Add(oeMaterial)
                     Next
                 End If
-
             End With
             Return lstMateriales
         Catch ex As Exception
@@ -444,16 +440,14 @@ Public Class d_MovimientoDocumento
                         , .IndServicioMaterial _
                         , .FechaInicio _
                         , .FechaFinal _
-                        , .IdEstadoDocumento _
+                        , .IdEstadoDocumento
                         )
-
                 If ds.Tables.Count > 0 Then
                     For Each o_Fila As DataRow In ds.Tables(0).Rows
                         oeMovimientoDocumento = Cargar(o_Fila)
                         ldMovimientoDocumento.Add(oeMovimientoDocumento)
                     Next
                 End If
-
             End With
             Return ldMovimientoDocumento
         Catch ex As Exception
@@ -486,18 +480,20 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As Boolean
+    Public Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing, Optional ByVal UsaTransaccion As Boolean = True) As e_MovimientoDocumento
         Try
-            oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+            If oeAnticipo IsNot Nothing Then
+                oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+            End If
             If UsaTransaccion Then
                 Using transScope As New TransactionScope
-                    GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
+                    oeMovimientoDocumento = GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
                     transScope.Complete()
                 End Using
             Else
-                GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
+                oeMovimientoDocumento = GuardarDocumento(oeMovimientoDocumento, oeAnticipo)
             End If
-            Return True
+            Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
@@ -540,7 +536,7 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As Boolean
+    Private Function GuardarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As e_MovimientoDocumento
         Try
             Dim stResultado() As String
             Dim stResultado_Ant() As String
@@ -591,21 +587,19 @@ Public Class d_MovimientoDocumento
                         odCuotaMovimiento.GuardarCancelacion(obj)
                     Next
                 End If
-
+                '' =========================================================================== 
+                '' Asiento Movimiento 
                 If .IdAsientoMovimiento <> "" And .TipoOperacion = "I" Then 'CUANDO INSERTO ANTICIPOS
-                    '-----------tabla relacion detalle asiento y documento-------------
-                    Dim oeAsMovMovDoc As New e_AsientoMov_MovDoc
-                    Dim odAsMovMovDoc As New d_AsientoMov_MovDoc
+                    Dim oeAsMovMovDoc As New e_AsientoMov_MovDoc, odAsMovMovDoc As New d_AsientoMov_MovDoc
                     oeAsMovMovDoc.IdAsientoMovimiento = .IdAsientoMovimiento
                     oeAsMovMovDoc.IdMovimientoDocumento = stResultado(0)
                     oeAsMovMovDoc.Activo = True
                     oeAsMovMovDoc.TipoOperacion = "I"
                     oeAsMovMovDoc.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     odAsMovMovDoc.Guardar(oeAsMovMovDoc)
-                    '------------------------------------------------------------------
                 End If
-
-                '--------------Tabla CuentaxCyP---------------------------------------
+                '' =========================================================================== 
+                '' Cuenta por Cobrar y Pagar
                 If .Id <> "" And (.TipoOperacion = "A" Or .TipoOperacion = "S") Then
                     Dim odCuentaxCyP As New d_CuentaxCyP
                     .CuentaxCyP.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
@@ -619,21 +613,21 @@ Public Class d_MovimientoDocumento
                         End If
                     End If
                 End If
-
-                ''----------------------Facturacion por compras-----------------
+                '' =========================================================================== 
+                '' Detalle Documento
                 For Each Detalle As e_DetalleDocumento In .lstDetalleDocumento
                     Detalle.TipoOperacion = IIf(Detalle.Id <> "" And Detalle.TipoOperacion Is Nothing And .TipoOperacion = "A", "A", Detalle.TipoOperacion)
                     Detalle.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     If Detalle.TipoOperacion = "I" Or Detalle.TipoOperacion = "A" Then
                         Detalle.IdMovimientoDocumento = stResultado(0)
                         Detalle.UsuarioCreacion = .IdUsuarioCrea
-                        'Detalle.TipoOperacion = IIf(Detalle.Id <> "" And Detalle.TipoOperacion = "", "A", Detalle.TipoOperacion)
                         odDetDoc.Guardar(Detalle)
                     ElseIf Detalle.TipoOperacion = "E" Then
                         odDetDoc.Eliminar(Detalle)
                     End If
                 Next
-                ''--------------------------------------------------------------
+                '' =========================================================================== 
+                '' Compra y Venta
                 .Compra.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                 .Venta.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                 If .IndCompraVenta = 1 Then 'Si es una factura por compras
@@ -644,12 +638,10 @@ Public Class d_MovimientoDocumento
                     .Venta.IdMovimientoDocumento = stResultado(0)
                     odVenta.Guardar(.Venta)
                 End If
-                '--------------------------------------------------------------
-                '---Asociar a Orden
-                '-----------tabla relacion-------------
+                '' =========================================================================== 
+                '' Orden Documento
                 For Each oeOD As e_Orden In .LstOrden
-                    Dim oeOrden_Documento As New e_Orden_Documento
-                    Dim odOrden_Documento As New d_Orden_Documento
+                    Dim oeOrden_Documento As New e_Orden_Documento, odOrden_Documento As New d_Orden_Documento
                     oeOrden_Documento.TipoOperacion = "I"
                     oeOrden_Documento.Id = ""
                     oeOrden_Documento.IdOrden = oeOD.Id
@@ -661,26 +653,26 @@ Public Class d_MovimientoDocumento
                     oeOrden_Documento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     odOrden_Documento.Guardar(oeOrden_Documento)
                 Next
-
+                '' =========================================================================== 
+                '' Orden Documento
                 For Each orden_doc In .lo_OrdenDocumento
-                    'Dim oeOrden_Documento As New e_Orden_Documento
                     Dim odOrden_Documento As New d_Orden_Documento
                     orden_doc.IdDocumento = stResultado(0)
                     odOrden_Documento.Guardar(orden_doc)
                 Next
-                '-----------------------------------------------------
+                '' =========================================================================== 
+                '' Documento sin Asociacion
                 If Not .DocSinAsoc Is Nothing AndAlso Not .DocSinAsoc.Id Is Nothing Then
-                    Dim oeDocSinAsoc As New e_DocumentoSinAsociacion
-                    Dim odDocSinAsoc As New d_DocumentoSinAsociacion
+                    Dim oeDocSinAsoc As New e_DocumentoSinAsociacion, odDocSinAsoc As New d_DocumentoSinAsociacion
                     oeDocSinAsoc = .DocSinAsoc
                     oeDocSinAsoc.IdDocumento = stResultado(0)
                     oeDocSinAsoc.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     odDocSinAsoc.Guardar(oeDocSinAsoc)
                 End If
-                '-----------------------------------------------------
-                'Guarda Ancticipo
-                oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+                '' =========================================================================== 
+                '' MovimientoDocumento (Anticipo)
                 If Not oeAnticipo Is Nothing Then
+                    oeAnticipo.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                     If oeAnticipo.TipoOperacion = "I" Then
                         With oeAnticipo
                             stResultado_Ant = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion,
@@ -731,8 +723,8 @@ Public Class d_MovimientoDocumento
                         odDocAso.Guardar(oeDocAsoc)
                     End If
                 End If
-                '-----------------------------------------------------
-                'Guarda Documento Asociado
+                '' =========================================================================== 
+                '' DocumentoAsociado
                 If .DocAsoc.Count > 0 Then
                     For Each oeDocAso As e_DocumentoAsociado In .DocAsoc
                         oeDocAso.IdMovimientoDocumento = stResultado(0)
@@ -741,8 +733,7 @@ Public Class d_MovimientoDocumento
                     Next
                 End If
             End With
-
-            Return True
+            Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
         End Try
@@ -1501,12 +1492,12 @@ Public Class d_MovimientoDocumento
 
 #Region "Ventas"
 
-    Public Function GuardarVenta2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
+    Public Function GuardarVenta2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
         Try
             Dim stResultado() As String
             Using transScope As New TransactionScope()
                 With oeMovimientoDocumento
-                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID, _
+                    stResultado = sqlhelper.ExecuteScalar("CON.Isp_MovimientoDocumento_IAE", .TipoOperacion, .PrefijoID,
                             .Id _
                             , .IdTipoDocumento _
                             , .Serie _
@@ -1542,7 +1533,7 @@ Public Class d_MovimientoDocumento
                             , .IndAnticipo _
                             , .IndAfectaAnticipo _
                             , .Monto_Anticipo).ToString.Split("_")
-                           
+
                     .Id = stResultado(0)
                     'Guardar Venta
                     If .Venta.IdTipoVenta <> "" Then
@@ -1567,7 +1558,7 @@ Public Class d_MovimientoDocumento
                     End If
                 End With
                 transScope.Complete()
-                Return True
+                Return oeMovimientoDocumento
             End Using
         Catch ex As Exception
             Throw ex
@@ -1612,7 +1603,8 @@ Public Class d_MovimientoDocumento
 
     Public Function GuardaMasivo(oeMovDoc As e_MovimientoDocumento, DTAsiento As DataTable, DTAsiMov As DataTable, DTMovCajBan As DataTable, DTAsiMovMovDoc As DataTable, DTCtaCyP As DataTable) As Boolean
         Try
-            If Not Guardar(oeMovDoc) Then Return False
+            oeMovDoc = Guardar(oeMovDoc)
+            If oeMovDoc.Id = "" Then Return False
             If DTAsiento.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.Asiento", DTAsiento, False)
             If DTAsiMov.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.AsientoMovimiento", DTAsiMov, False)
             If DTMovCajBan.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.MovimientoCajaBanco", DTMovCajBan, False)

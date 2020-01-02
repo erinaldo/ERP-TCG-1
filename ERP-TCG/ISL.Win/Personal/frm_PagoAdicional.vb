@@ -134,85 +134,85 @@ Public Class frm_PagoAdicional
                         Consultar(True)
                     End If
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePagoAdicional.IdEstado = cboEstado.Value
-                        oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
-                        oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olPagoAdicional.Guardar(oePagoAdicional) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
-                                                      " se Envio correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePagoAdicional.IdEstado = cboEstado.Value
+                    oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                    oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olPagoAdicional.Guardar(oePagoAdicional) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo &
+                                                  " se Envio correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "TERMINAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePagoAdicional.IdEstado = cboEstado.Value
-                        oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
-                        oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olPagoAdicional.Guardar(oePagoAdicional) Then
-                            mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
-                                                      " se Termino correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePagoAdicional.IdEstado = cboEstado.Value
+                    oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                    oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    If olPagoAdicional.Guardar(oePagoAdicional) Then
+                        mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo &
+                                                  " se Termino correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Case "IMPORTAR"
                     Dim _leAux = leDetImportar.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        oePagoAdicional = New e_PagoAdicional
+                        oePagoAdicional.TipoOperacion = ""
+                        oePagoAdicional.IdPlanilla = cboPlanillaDI.Value
+                        oePagoAdicional.Activo = True
+                        oePagoAdicional = olPagoAdicional.Obtener(oePagoAdicional)
+                        If oePagoAdicional IsNot Nothing AndAlso oePagoAdicional.Id.Trim <> "" Then
+                            oePagoAdicional.TipoOperacion = "A"
+                            oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                            oePagoAdicional.leDetalle = New List(Of e_DetallePagoAdicional)
+                            oePagoAdicional.leDetalle = _leAux
                         Else
-                            oePagoAdicional = New e_PagoAdicional
-                            oePagoAdicional.TipoOperacion = ""
+                            oePagoAdicional.TipoOperacion = "I"
                             oePagoAdicional.IdPlanilla = cboPlanillaDI.Value
+                            oePagoAdicional.UsuarioCreacion = gUsuarioSGI.Id
+                            oePagoAdicional.Codigo = fn_ObtenerCodigo()
+                            oePagoAdicional.Descripcion = txtGlosa.Text
+                            Dim _leEst = leEstado.Where(Function(it) it.Nombre = "GENERADA").ToList
+                            If _leEst.Count > 0 Then
+                                oePagoAdicional.IdEstado = _leEst(0).Id
+                            End If
                             oePagoAdicional.Activo = True
-                            oePagoAdicional = olPagoAdicional.Obtener(oePagoAdicional)
-                            If oePagoAdicional IsNot Nothing AndAlso oePagoAdicional.Id.Trim <> "" Then
-                                oePagoAdicional.TipoOperacion = "A"
-                                oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
-                                oePagoAdicional.leDetalle = New List(Of e_DetallePagoAdicional)
-                                oePagoAdicional.leDetalle = _leAux
-                            Else
-                                oePagoAdicional.TipoOperacion = "I"
-                                oePagoAdicional.IdPlanilla = cboPlanillaDI.Value
-                                oePagoAdicional.UsuarioCreacion = gUsuarioSGI.Id
-                                oePagoAdicional.Codigo = fn_ObtenerCodigo()
-                                oePagoAdicional.Descripcion = txtGlosa.Text
-                                Dim _leEst = leEstado.Where(Function(it) it.Nombre = "GENERADA").ToList
-                                If _leEst.Count > 0 Then
-                                    oePagoAdicional.IdEstado = _leEst(0).Id
-                                End If
-                                oePagoAdicional.Activo = True
-                                oePagoAdicional.leDetalle = _leAux
-                            End If
-                            If olPagoAdicional.ImportarDatos(oePagoAdicional) Then
-                                mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
-                                SeleccionaTab(0)
-                                Consultar(True)
-                            End If
+                            oePagoAdicional.leDetalle = _leAux
                         End If
+                        If olPagoAdicional.ImportarDatos(oePagoAdicional) Then
+                            mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
+                            SeleccionaTab(0)
+                            Consultar(True)
+                        End If
+                        'End If
                     Else
                         Throw New Exception("No hay Registros Validados para Importar")
                     End If
             End Select
-            
+
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -1057,31 +1057,31 @@ Public Class frm_PagoAdicional
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoEnviado
                 If griPagoAdicional.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oePagoAdicional = New e_PagoAdicional
-                        oePagoAdicional.TipoOperacion = ""
-                        oePagoAdicional.Id = griPagoAdicional.ActiveRow.Cells("Id").Value
-                        oePagoAdicional = olPagoAdicional.Obtener(oePagoAdicional)
-                        oePagoAdicional.TipoOperacion = "A"
-                        _estado = gNombreEstadoGenerada
-                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
-                        If _leEst.Count > 0 Then
-                            oePagoAdicional.IdEstado = _leEst(0).Id
-                            oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
-                            oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            olPagoAdicional.Guardar(oePagoAdicional)
-                            mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo & _
-                                                          " se Extornado correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oePagoAdicional = New e_PagoAdicional
+                    oePagoAdicional.TipoOperacion = ""
+                    oePagoAdicional.Id = griPagoAdicional.ActiveRow.Cells("Id").Value
+                    oePagoAdicional = olPagoAdicional.Obtener(oePagoAdicional)
+                    oePagoAdicional.TipoOperacion = "A"
+                    _estado = gNombreEstadoGenerada
+                    Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
+                    If _leEst.Count > 0 Then
+                        oePagoAdicional.IdEstado = _leEst(0).Id
+                        oePagoAdicional.UsuarioModifica = gUsuarioSGI.Id
+                        oePagoAdicional.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        olPagoAdicional.Guardar(oePagoAdicional)
+                        mensajeEmergente.Confirmacion("¡El Registro de Pagos Adicionales Nº: " & oePagoAdicional.Codigo &
+                                                      " se Extornado correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Else
                     Throw New Exception("No se puede EXTORNAR el Registro de Pagos Adicionales" & Environment.NewLine & _
                                         "Nº: " & griPagoAdicional.ActiveRow.Cells("Codigo").Value & " por que no esta ENVIADO")

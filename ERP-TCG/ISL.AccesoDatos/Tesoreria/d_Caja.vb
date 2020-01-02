@@ -18,6 +18,7 @@ Public Class d_Caja
             Dim oeCaja = New e_Caja(o_fila("Id").ToString _
                              , o_fila("Codigo").ToString _
                              , o_fila("Nombre").ToString _
+                             , o_fila("CuentaContable").ToString _
                              , o_fila("Abreviatura").ToString _
                              , o_fila("UsuarioCreacion").ToString _
                              , o_fila("Activo").ToString _
@@ -88,6 +89,7 @@ Public Class d_Caja
                             .Id _
                             , .Codigo _
                             , .Nombre _
+                            , .CuentaContable _
                             , .Abreviatura _
                             , .UsuarioCreacion _
                             , .Activo _

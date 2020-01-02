@@ -770,7 +770,7 @@ Partial Class frm_DemandaRapida
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.agrListaRegistro)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1344, 486)
         '
@@ -1017,7 +1017,7 @@ Partial Class frm_DemandaRapida
         'UltraTabPageControl6
         '
         Me.UltraTabPageControl6.Controls.Add(Me.griFactura)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1344, 486)
         '
@@ -3222,7 +3222,7 @@ Partial Class frm_DemandaRapida
         '
         Me.UltraTabPageControl7.Controls.Add(Me.tabDemandaCargas)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1346, 602)
         '
@@ -3609,7 +3609,7 @@ Partial Class frm_DemandaRapida
         '
         Me.utpDetalle.Controls.Add(Me.tabs)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox9)
-        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
+        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1346, 602)
         '
@@ -4100,7 +4100,7 @@ Partial Class frm_DemandaRapida
         Me.ClientSize = New System.Drawing.Size(1348, 625)
         Me.Controls.Add(Me.ficDemanda)
         Me.Name = "frm_DemandaRapida"
-        Me.Text = "Pre Demanda"
+        Me.Text = "Pre Pedido Carga"
         Me.UltraTabPageControl5.ResumeLayout(False)
         CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.agrListaRegistro.ResumeLayout(False)

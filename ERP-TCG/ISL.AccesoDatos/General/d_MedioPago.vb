@@ -32,7 +32,7 @@ Public Class d_MedioPago
 
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STP.ISD_MedioPago_Listar", "", oeMedioPago.Id)
+            ds = sqlhelper.ExecuteDataset("STD.ISP_MedioPago_Listar", "", oeMedioPago.Id)
             oeMedioPago = New e_MedioPago
             If ds.Tables.Count > 0 Then
                 oeMedioPago = Cargar(ds.Tables(0).Rows(0))

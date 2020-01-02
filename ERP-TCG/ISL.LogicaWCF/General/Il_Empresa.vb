@@ -26,8 +26,8 @@ Public Interface Il_Empresa
     <OperationContract()> _
     Function Validar(ByVal oeEmpresa As e_Empresa) As Boolean
 
-    <OperationContract()> _
-    Function Guardar(ByVal oeEmpresa As e_Empresa) As Boolean
+    <OperationContract()>
+    Function Guardar(ByVal oeEmpresa As e_Empresa) As String
 
     <OperationContract()> _
     Function Eliminar(ByVal oeEmpresa As e_Empresa) As Boolean

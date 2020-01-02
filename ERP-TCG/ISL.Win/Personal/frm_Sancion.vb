@@ -181,17 +181,17 @@ Public Class frm_Sancion
                                 If MessageBox.Show("¿Esta seguro de eliminar la Sancion: " & .ActiveRow.Cells("Trabajador").Value.ToString & " ?", _
                                     "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, _
                                     MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                                    Dim formulario As frm_AutenticarTrabajador
-                                    formulario = New frm_AutenticarTrabajador
-                                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                                        Throw New Exception("Ingrese un Clave Correcta")
-                                    Else
-                                        oeSancion.TipoOperacion = "E"
-                                        olSancion.Eliminar(oeSancion)
-                                        Consultar(True)
-                                    End If
+                                    'Dim formulario As frm_AutenticarTrabajador
+                                    'formulario = New frm_AutenticarTrabajador
+                                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                                    '    Throw New Exception("Ingrese un Clave Correcta")
+                                    'Else
+                                    oeSancion.TipoOperacion = "E"
+                                    olSancion.Eliminar(oeSancion)
+                                    Consultar(True)
+                                    'End If
                                 End If
                             Else
                                 Throw New Exception("La Sanción debe estar PENDIENTE para poder Eliminar")
@@ -649,30 +649,30 @@ Public Class frm_Sancion
             _acl = gAccionSistema.ANULAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 If griSancion.Selected.Rows.Count > 0 Then
-                    If MessageBox.Show("¿Desea Anular la Sanción de " & griSancion.ActiveRow.Cells("Trabajador").Value & "?", _
+                    If MessageBox.Show("¿Desea Anular la Sanción de " & griSancion.ActiveRow.Cells("Trabajador").Value & "?",
                                        "Mensaje de Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            _estado = gNombreEstadoAnulado.ToString
-                            Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = _estado).ToList
-                            oeSancion = New e_Sancion
-                            oeSancion.Id = griSancion.ActiveRow.Cells("Id").Value
-                            If leSancion.Contains(oeSancion) Then
-                                oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
-                                oeSancion.TipoOperacion = "A"
-                                If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
-                                oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
-                                If olSancion.Guardar(oeSancion) Then
-                                    mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
-                                    Consultar()
-                                End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        _estado = gNombreEstadoAnulado.ToString
+                        Dim _leEstAux = leEstado.Where(Function(it) it.Nombre = _estado).ToList
+                        oeSancion = New e_Sancion
+                        oeSancion.Id = griSancion.ActiveRow.Cells("Id").Value
+                        If leSancion.Contains(oeSancion) Then
+                            oeSancion = leSancion.Item(leSancion.IndexOf(oeSancion))
+                            oeSancion.TipoOperacion = "A"
+                            If _leEstAux.Count > 0 Then oeSancion.IdEstado = _leEstAux(0).Id
+                            oeSancion.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            If olSancion.Guardar(oeSancion) Then
+                                mensajeEmergente.Confirmacion("La Sancion se ha Anulado Correctamente", True)
+                                Consultar()
                             End If
                         End If
+                        'End If
                     End If
                 End If
             Else

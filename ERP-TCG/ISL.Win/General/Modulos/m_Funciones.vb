@@ -59,6 +59,12 @@ Module m_Funciones
         Return ln_Retorna
     End Function
 
+    Public Function gfc_obtener_TurnoActivo() As e_CierreTurno '' CESS
+        Dim dTurno As New l_CierreTurno
+        Return dTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "TAC"})
+
+    End Function
+
     Public Sub gmt_ComboGrillaSubAlmacen(IdAlmacen As String, ByVal Grilla As UltraGrid)
         Try
             Dim loSubAlmacen As New List(Of e_Combo)
@@ -777,6 +783,7 @@ Module m_Funciones
     Public TipoGastoPublic As List(Of e_Combo)
     Public OTEquAlmPublic As List(Of e_Combo)
     Public SubAlmDiesel As List(Of e_Combo)
+    Public SubAlmGrifo As List(Of e_Combo)
     'ILLL
     Public TipoIncidenciaPublic As List(Of e_Combo)
     Public GradoIncidenciaPublic As List(Of e_Combo)
@@ -1124,6 +1131,11 @@ Module m_Funciones
         oeCombo.Nombre = "AlmacenDiesel"
         SubAlmDiesel = New List(Of e_Combo)
         SubAlmDiesel.AddRange(olCombo.Listar(oeCombo))
+
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "AlmacenGrifo"
+        SubAlmGrifo = New List(Of e_Combo)
+        SubAlmGrifo.AddRange(olCombo.Listar(oeCombo))
 
     End Sub
 

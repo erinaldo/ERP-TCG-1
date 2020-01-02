@@ -419,7 +419,12 @@ Public Class frm_RegistroConsumoCombustible
                     Else
                         Throw New Exception("No existe el SubAlmacen. Verificar")
                     End If
-                    IdSubAlmacen = oeCombo.Id
+                    If VerISL.Checked = True Then
+                        IdSubAlmacen = cboSubAlmacen.Value
+                    Else
+                        IdSubAlmacen = oeCombo.Id
+                    End If
+
                     oeRegConsumoCombustible.lstInventario = Inventario(oeRegConsumoCombustible, False, ObtenerFechaServidor())
                 End If
                 oeRegConsumoCombustible.PrefijoID = gs_PrefijoIdSucursal '@0001
@@ -486,7 +491,8 @@ Public Class frm_RegistroConsumoCombustible
                     'oeMaterialAlmacen = olMaterialAlmacen.Obtener(oeMaterialAlmacen)
                     oeInventario = New e_Inventario
                     oeInventario.TipoOperacion = "5"
-                    oeInventario.IdSubAlmacen = oeCombo.Id
+                    'oeInventario.IdSubAlmacen = oeCombo.Id
+                    oeInventario.IdSubAlmacen = cboSubAlmacen.Value
                     oeInventario.IdMaterial = cmb_TipoCombustible.Value
                     oeInventario = olInventario.Obtener(oeInventario)
                     decStock.Value = oeInventario.CantidadFinal
@@ -1429,6 +1435,7 @@ Public Class frm_RegistroConsumoCombustible
                     txt_NroVale.ReadOnly = True
                     Etiqueta47.Visible = True
                     txtGlosaTanqueo.Visible = True
+                    LlenarCombo(cboSubAlmacen, "Nombre", SubAlmGrifo, 0)
                 Else
                     chk_Credito.Checked = True
                     chk_Credito.Visible = True
@@ -1449,6 +1456,7 @@ Public Class frm_RegistroConsumoCombustible
                 If nd_KmTanqueo.Value > 0 Then
                     VerificacionKilometraje()
                 End If
+
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -3376,6 +3384,10 @@ Public Class frm_RegistroConsumoCombustible
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub cboSubAlmacen_ValueChanged(sender As Object, e As EventArgs) Handles cboSubAlmacen.ValueChanged
+        ObtenerStockUltPrecio()
     End Sub
 
 #End Region

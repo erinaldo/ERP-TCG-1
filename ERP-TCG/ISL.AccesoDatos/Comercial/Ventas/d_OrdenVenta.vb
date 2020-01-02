@@ -50,7 +50,10 @@ Public Class d_OrdenVenta
                               , o_fila("DocAsoc").ToString _
                               , o_fila("IdTurno").ToString _
                               , o_fila("IdCanalVenta").ToString _
-            , o_fila("IdTipoVenta").ToString)
+                              , o_fila("IdTipoVenta").ToString _
+                              , o_fila("IdPiloto").ToString _
+                              , o_fila("IdPlaca").ToString _
+                              , o_fila("Kilometraje").ToString)
             Return oeOrdenComercial
         Catch ex As Exception
             Throw ex
@@ -74,7 +77,8 @@ Public Class d_OrdenVenta
                         , .TipoExistencia _
                         , .Fecha _
                         , .FechaCrea _
-                        , .IndFacturadoProducto)
+                        , .IndFacturadoProducto _
+                        , .IdTipoVenta)
             End With
             Return ds
         Catch ex As Exception
@@ -152,8 +156,11 @@ Public Class d_OrdenVenta
                             , .IdVendedorTrabajador _
                             , .IdTurno _
                             , .IdCanalVenta _
-                            , .IdTipoVenta
-                              ).ToString.Split("_")
+                            , .IdTipoVenta _
+                            , .IdPiloto _
+                            , .IdPlaca _
+                            , .Kilometraje
+                            ).ToString.Split("_")
 
                     .Id = stResultado(0)
                     For Each oe As e_OrdenVentaMaterial In .lstOrdenComercialMaterial
@@ -176,7 +183,7 @@ Public Class d_OrdenVenta
                     '    odOrdenComercialOrden.Guardar(oeOrdenComercialOrden)
                     If .oeOrdenSalida.TipoOperacion <> "" Then
                         odOrden.Guardar(.oeOrdenSalida)
-                        .TipoOperacion = "I"
+                        '.TipoOperacion = "I"
                         'oeOrdenComercialOrden.IdOrdenComercial = .Id
                         'oeOrdenComercialOrden.IdOrden = .oeOrdenSalida.Id
                         'oeOrdenComercialOrden.UsuarioCrea = .UsuarioCrea
@@ -191,6 +198,77 @@ Public Class d_OrdenVenta
         End Try
     End Function
 
+    Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta
+        Try
+            Dim aux As New e_OrdenVenta
+            Dim odOrdenComercialMaterial As New d_OrdenVentaMaterial
+            Dim odOrden As New d_Orden
+            Dim odDocumento As New d_MovimientoDocumento
+            Dim stResultado() As String
+            Using transScope As New TransactionScope()
+                With OrdenVenta
+                    stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_OrdenVenta_IAE]" _
+                            , .TipoOperacion _
+                            , .PrefijoID _
+                            , .Id _
+                            , "" _
+                            , "" _
+                            , .IdEmpresa _
+                            , .IdEmpresaAlterna _
+                            , .IdTipoPago _
+                            , .IdEstado _
+                            , .IdMoneda _
+                            , .IdTrabajadorAprobacion _
+                            , .Fecha _
+                            , .Glosa _
+                            , .Tipo _
+                            , .TipoExistencia _
+                            , .TipoCompra _
+                            , .TipoCambio _
+                            , .SubTotal _
+                            , .Impuesto _
+                            , .Total _
+                            , .IndFactSer _
+                            , .IndFacturado _
+                            , .IndCantidadVariable _
+                            , .UsuarioCrea _
+                            , .IdOrdenReferencia _
+                            , .IndFacturadoProducto _
+                            , .IdVendedorTrabajador _
+                            , .IdTurno _
+                            , .IdCanalVenta _
+                            , .IdTipoVenta _
+                            , .IdPiloto _
+                            , .IdPlaca _
+                            , .Kilometraje
+                            ).ToString.Split("_")
+                    .Id = stResultado(0)
+                    aux = Obtener(New e_OrdenVenta With {.TipoOperacion = "", .Id = stResultado(0)})
+                    .OrdenComercial = aux.OrdenComercial
+                End With
+                With OrdenVenta
+                    '' Detalles
+                    For Each Detalle In .lstOrdenComercialMaterial
+                        If Detalle.TipoOperacion = "" Then Detalle.TipoOperacion = "A"
+                        Detalle.IdOrdenComercial = OrdenVenta.Id
+                        odOrdenComercialMaterial.Guardar(Detalle)
+                    Next
+                    '' OrdenSalida
+                    If .oeOrdenSalida.TipoOperacion <> "" Then
+                        .oeOrdenSalida.Referencia = OrdenVenta.OrdenComercial
+                        .oeOrdenSalida.TipoReferencia = "ORDEN VENTA"
+                        .oeOrdenSalida = odOrden.Guardar(.oeOrdenSalida)
+                    End If
+                    '' Documento
+                    .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
+                End With
+                transScope.Complete()
+            End Using
+            Return OrdenVenta
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
     Public Function Eliminar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
         Try
             sqlhelper = New SqlHelper
@@ -199,7 +277,7 @@ Public Class d_OrdenVenta
                             , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
                             , .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
                             , .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _
-                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta)
+                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta, .IdPiloto, .IdPlaca, .Kilometraje)
             End With
             Return True
         Catch ex As Exception

@@ -336,7 +336,7 @@ Public Class l_RegistroConsumoCombustible
                 End If
                 If oeRegistrarConsumoCombustible.IndIsl Then
                     'l_FuncionesGenerales.ValidarNumeroDecimal(oeRegistrarConsumoCombustible.PrecioUnitario, "Precio de Combustible igual 0. Verificar")
-                    Validar48Horas(oeRegistrarConsumoCombustible)
+                    'Validar48Horas(oeRegistrarConsumoCombustible) 'Comentado solo para pruebas internas
                     ValidarPeriodo(oeRegistrarConsumoCombustible)
                     'ValidarStockMinimo(oeRegistrarConsumoCombustible)
                 End If

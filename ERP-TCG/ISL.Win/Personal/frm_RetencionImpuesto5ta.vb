@@ -140,59 +140,60 @@ Public Class frm_RetencionImpuesto5ta
                     olRetencionQuinta.Guardar(oeRetencionQuinta)
                     mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
                 Case "ENVIAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeRetencionQuinta.IdEstado = cboEstado.Value
-                        oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
-                        oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        olRetencionQuinta.Guardar(oeRetencionQuinta)
-                        mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
-                                                      " se Envio correctamente!", True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeRetencionQuinta.IdEstado = cboEstado.Value
+
+                    oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                    oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    olRetencionQuinta.Guardar(oeRetencionQuinta)
+                    mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo &
+                                                  " se Envio correctamente!", True)
+                    'End If
                 Case "TERMINAR"
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeRetencionQuinta.IdEstado = cboEstado.Value
-                        oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
-                        oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        olRetencionQuinta.Guardar(oeRetencionQuinta)
-                        mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
-                                                      " se Termino correctamente!", True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeRetencionQuinta.IdEstado = cboEstado.Value
+                    oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                    oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    olRetencionQuinta.Guardar(oeRetencionQuinta)
+                    mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo &
+                                                  " se Termino correctamente!", True)
+                    'End If
                 Case "IMPORTAR"
                     Dim _leAux = leDetImportar.Where(Function(it) it.Activo = True).ToList
                     If _leAux.Count > 0 Then
-                        Dim formulario As frm_AutenticarTrabajador
-                        formulario = New frm_AutenticarTrabajador
-                        formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                        If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                            ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-                            Throw New Exception("Ingrese un Clave Correcta")
-                        Else
-                            oeRetencionQuinta = New e_RetencionQuinta
-                            oeRetencionQuinta.TipoOperacion = "I"
-                            oeRetencionQuinta.IdPlanilla = cboPlanillaImportar.Value
-                            oeRetencionQuinta.Codigo = fn_ObtenerCodigo()
-                            Dim _leEst = leEstado.Where(Function(it) it.Nombre = "PERDIDOS").ToList
-                            If _leEst.Count > 0 Then oeRetencionQuinta.IdEstado = _leEst(0).Id
-                            oeRetencionQuinta.Activo = True
-                            oeRetencionQuinta.Glosa = "RENTA DE 5TA CATEGORIA  MES " & MonthName(oePeriodo.Mes).ToUpper & " AÑO " & oePeriodo.Ejercicio
-                            oeRetencionQuinta.UsuarioCreacion = gUsuarioSGI.Id
-                            oeRetencionQuinta.Importe = leDetImportar.Sum(Function(it) it.Monto)
-                            oeRetencionQuinta.leDetalle = _leAux
-                            olRetencionQuinta.ImportarDatos(oeRetencionQuinta)
-                            mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
-                        End If
+                        'Dim formulario As frm_AutenticarTrabajador
+                        'formulario = New frm_AutenticarTrabajador
+                        'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                        'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                        '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+                        '    Throw New Exception("Ingrese un Clave Correcta")
+                        'Else
+                        oeRetencionQuinta = New e_RetencionQuinta
+                        oeRetencionQuinta.TipoOperacion = "I"
+                        oeRetencionQuinta.IdPlanilla = cboPlanillaImportar.Value
+                        oeRetencionQuinta.Codigo = fn_ObtenerCodigo()
+                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = "PERDIDOS").ToList
+                        If _leEst.Count > 0 Then oeRetencionQuinta.IdEstado = _leEst(0).Id
+                        oeRetencionQuinta.Activo = True
+                        oeRetencionQuinta.Glosa = "RENTA DE 5TA CATEGORIA  MES " & MonthName(oePeriodo.Mes).ToUpper & " AÑO " & oePeriodo.Ejercicio
+                        oeRetencionQuinta.UsuarioCreacion = gUsuarioSGI.Id
+                        oeRetencionQuinta.Importe = leDetImportar.Sum(Function(it) it.Monto)
+                        oeRetencionQuinta.leDetalle = _leAux
+                        olRetencionQuinta.ImportarDatos(oeRetencionQuinta)
+                        mensajeEmergente.Confirmacion("Los Datos han sido Importados Correctamente!!", True)
+                        'End If
                     Else
                         Throw New Exception("No hay Registros Validados para Importar")
                     End If
@@ -231,24 +232,24 @@ Public Class frm_RetencionImpuesto5ta
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoGenerada
                 If griRetencionImpuesto.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeRetencionQuinta = New e_RetencionQuinta
-                        oeRetencionQuinta.TipoOperacion = ""
-                        oeRetencionQuinta.Id = griRetencionImpuesto.ActiveRow.Cells("Id").Value
-                        oeRetencionQuinta = olRetencionQuinta.Obtener(oeRetencionQuinta)
-                        oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
-                        olRetencionQuinta.Eliminar(oeRetencionQuinta)
-                        mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oeRetencionQuinta.Codigo & _
-                                                             " se ha Eliminado correctamente!", True)
-                        SeleccionaTab(0)
-                        Consultar(True)
-                    End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeRetencionQuinta = New e_RetencionQuinta
+                    oeRetencionQuinta.TipoOperacion = ""
+                    oeRetencionQuinta.Id = griRetencionImpuesto.ActiveRow.Cells("Id").Value
+                    oeRetencionQuinta = olRetencionQuinta.Obtener(oeRetencionQuinta)
+                    oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                    olRetencionQuinta.Eliminar(oeRetencionQuinta)
+                    mensajeEmergente.Confirmacion("¡El Registro de Planilla de Vacaciones Nº: " & oeRetencionQuinta.Codigo &
+                                                         " se ha Eliminado correctamente!", True)
+                    SeleccionaTab(0)
+                    Consultar(True)
+                    'End If
                 Else
                     Throw New Exception("No puede en ELIMINAR el Registro de Retención de 5ta Categoria Nº: " & _
                                         griRetencionImpuesto.ActiveRow.Cells("Codigo").Value & " por no esta GENERADA.")
@@ -1580,31 +1581,31 @@ Public Class frm_RetencionImpuesto5ta
             If ValidarAcl(_acl, pIdActividadNegocio) Then
                 _estado = gNombreEstadoEnviado
                 If griRetencionImpuesto.ActiveRow.Cells("Estado").Value = _estado Then
-                    Dim formulario As frm_AutenticarTrabajador
-                    formulario = New frm_AutenticarTrabajador
-                    formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                    If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                        ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                        Throw New Exception("Ingrese un Clave Correcta")
-                    Else
-                        oeRetencionQuinta = New e_RetencionQuinta
-                        oeRetencionQuinta.TipoOperacion = ""
-                        oeRetencionQuinta.Id = griRetencionImpuesto.ActiveRow.Cells("Id").Value
-                        oeRetencionQuinta = olRetencionQuinta.Obtener(oeRetencionQuinta)
-                        oeRetencionQuinta.TipoOperacion = "A"
-                        _estado = gNombreEstadoGenerada
-                        Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
-                        If _leEst.Count > 0 Then
-                            oeRetencionQuinta.IdEstado = _leEst(0).Id
-                            oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
-                            oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
-                            olRetencionQuinta.Guardar(oeRetencionQuinta)
-                            mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo & _
-                                                          " se Extornado correctamente!", True)
-                            SeleccionaTab(0)
-                            Consultar(True)
-                        End If
+                    'Dim formulario As frm_AutenticarTrabajador
+                    'formulario = New frm_AutenticarTrabajador
+                    'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                    'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                    '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                    '    Throw New Exception("Ingrese un Clave Correcta")
+                    'Else
+                    oeRetencionQuinta = New e_RetencionQuinta
+                    oeRetencionQuinta.TipoOperacion = ""
+                    oeRetencionQuinta.Id = griRetencionImpuesto.ActiveRow.Cells("Id").Value
+                    oeRetencionQuinta = olRetencionQuinta.Obtener(oeRetencionQuinta)
+                    oeRetencionQuinta.TipoOperacion = "A"
+                    _estado = gNombreEstadoGenerada
+                    Dim _leEst = leEstado.Where(Function(it) it.Nombre = _estado).ToList
+                    If _leEst.Count > 0 Then
+                        oeRetencionQuinta.IdEstado = _leEst(0).Id
+                        oeRetencionQuinta.UsuarioModifica = gUsuarioSGI.Id
+                        oeRetencionQuinta.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        olRetencionQuinta.Guardar(oeRetencionQuinta)
+                        mensajeEmergente.Confirmacion("¡El Registro de Retención de 5ta Categoria Nº: " & oeRetencionQuinta.Codigo &
+                                                      " se Extornado correctamente!", True)
+                        SeleccionaTab(0)
+                        Consultar(True)
                     End If
+                    'End If
                 Else
                     Throw New Exception("No se puede EXTORNAR el Registro de Renta de 5ta Categoria" & Environment.NewLine & _
                                         "Nº: " & griRetencionImpuesto.ActiveRow.Cells("Codigo").Value & " por que no esta ENVIADO")

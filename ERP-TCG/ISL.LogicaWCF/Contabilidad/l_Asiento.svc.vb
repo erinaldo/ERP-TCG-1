@@ -1780,6 +1780,7 @@ Public Class l_Asiento
                     rowMovCajaBanco("Operador") = 1
                     rowMovCajaBanco("NroImpresion") = IIf(Len(Trim(oeMovCajaBanco.IdCuentaBancaria)) = 12, lsPrefijoNroImpresion + olFuncionesGenerales.CompletaConCeros(lsNroImpresion.ToString, 8), "")
                     rowMovCajaBanco("IdTipoGasto") = ""
+                    rowMovCajaBanco("IdCaja") = oeMovCajaBanco.IdCaja
                     dt_MCB.Rows.Add(rowMovCajaBanco)
                     IdMovimientoCajaBanco = lsPrefijoMovCajaBanco + olFuncionesGenerales.CompletaConCeros(lsNumeroMovCajaBanco.ToString, 13)
                 Else
@@ -1810,6 +1811,7 @@ Public Class l_Asiento
                 rowAsientoMov_Inicial("Id") = lsPrefijoAsientoMovimiento + olFuncionesGenerales.CompletaConCeros(lsNumeroAsientoMovimiento.ToString, 13)
                 rowAsientoMov_Inicial("IdAsiento") = lsPrefijoAsiento + olFuncionesGenerales.CompletaConCeros(lsNumeroAsiento.ToString, 12)
                 rowAsientoMov_Inicial("IdCuentaContable") = IIf(Opcion = "PER", leCuentasGenerales.Where(Function(i) i.Nombre = "CTA_PERDIDAS")(0).Texto2, oeCtaCble.Id)
+                'rowAsientoMov_Inicial("IdCuentaContable") = IIf(Opcion = "PER", leCuentasGenerales.Where(Function(i) i.Nombre = "CTA_PERDIDAS")(0).Texto2, "1SI010782")
                 rowAsientoMov_Inicial("Glosa") = Glosa
                 rowAsientoMov_Inicial("DebeMN") = oeMovCajaBanco.TotalMN
                 rowAsientoMov_Inicial("HaberMN") = 0

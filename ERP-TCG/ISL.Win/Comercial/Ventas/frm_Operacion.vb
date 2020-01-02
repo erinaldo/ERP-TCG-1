@@ -1842,8 +1842,8 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub cboCliente_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCliente.Validated
-
-        If Operacion = "Nuevo" Or Operacion = "Editar" Then
+        Try
+            If Operacion = "Nuevo" Or Operacion = "Editar" Then
             olLugar = New l_Lugar
             ObtenerFleteUnitario()
             If cboCliente.Text = "OTROS" Then
@@ -1937,9 +1937,13 @@ Public Class frm_Operacion
                 End If
             End If
         End If
-        If Me.cboCliente.Value <> "" Then
-            Me.txtRucCLiente.Text = ClientesPublic.Item(cboCliente.SelectedIndex).Descripcion
-        End If
+            If Me.cboCliente.Value <> "" Then
+                Me.txtRucCLiente.Text = ClientesPublic.Item(cboCliente.SelectedIndex).Descripcion
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub cboTipoCarga_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoCarga.Validated
@@ -3042,9 +3046,8 @@ Public Class frm_Operacion
         If griViajeDetalle.ActiveRow IsNot Nothing Then
             If griViajeDetalle.ActiveRow.Cells("IdOPeracion").Value <> "" Then
                 objEliminarDetalle = New e_Bitacora(griViajeDetalle.ActiveRow.Cells("IdOperacion").Value.ToString,
-                                                             griViajeDetalle.ActiveRow.Cells("Id").Value.ToString, "OPE.Operacion", "OPE.OperacionDetalle",
-                                               Me.Text, New List(Of String), gUsuarioSGI.Id, "I",
-                                               New List(Of String), New List(Of String), "E", "D", False)
+                                   griViajeDetalle.ActiveRow.Cells("Id").Value.ToString, "OPE.Operacion", "OPE.OperacionDetalle",
+                                   Me.Text, New List(Of String), gUsuarioSGI.Id, "I", New List(Of String), New List(Of String), "E", "D", False)
             End If
         End If
     End Sub
@@ -3903,10 +3906,10 @@ Public Class frm_Operacion
             oeOperacion.oeOperacionDetalle = griViajeDetalle.DataSource
             With griViajeDetalle.ActiveRow
                 oeOperacionDetalle = New e_OperacionDetalle
-                oeOperacionDetalle.Id = Nothing
+                oeOperacionDetalle.Id = ""
                 oeOperacionDetalle.IdOperacion = .Cells("IdOperacion").Value
                 oeOperacionDetalle.IdDemanda = .Cells("IdDemanda").Value
-                oeOperacionDetalle.IdDemandaDetalle = Nothing
+                oeOperacionDetalle.IdDemandaDetalle = ""
                 oeOperacionDetalle.Cliente = .Cells("Cliente").Value
                 oeOperacionDetalle.Comisionista = .Cells("Comisionista").Value
                 oeOperacionDetalle.Carga = .Cells("Carga").Value
@@ -4946,13 +4949,13 @@ Public Class frm_Operacion
                     Else
                         If Carga = "TONELADA" Then
                             If chkIndTercero.Checked Then
-                                If Cantidad > 42 Then
+                                If Cantidad > 45 Then
                                     ficViaje.Tabs(1).Selected = True
-                                    Throw New Exception("Cantidad no puede Superar el Maximo (42) con su Tipo Carga --> " & Carga)
+                                    Throw New Exception("Cantidad no puede Superar el Maximo (45) con su Tipo Carga --> " & Carga)
                                 End If
-                            ElseIf Cantidad > 40 Then
+                            ElseIf Cantidad > 50 Then
                                 ficViaje.Tabs(1).Selected = True
-                                Throw New Exception("Cantidad no puede Superar el Maximo (40) con su Tipo Carga --> " & Carga)
+                                Throw New Exception("Cantidad no puede Superar el Maximo (50) con su Tipo Carga --> " & Carga)
                             End If
                             'If Cantidad > 40 Then
                             '    ficViaje.Tabs(1).Selected = True
@@ -4960,9 +4963,9 @@ Public Class frm_Operacion
                             'End If
                         Else
                             If Carga = "METRO CUBICO" Then
-                                If Cantidad > 120 Then
+                                If Cantidad > 150 Then
                                     ficViaje.Tabs(1).Selected = True
-                                    Throw New Exception("Cantidad no puede Superar el Maximo (120) con su Tipo Carga --> " & Carga)
+                                    Throw New Exception("Cantidad no puede Superar el Maximo (150) con su Tipo Carga --> " & Carga)
                                 End If
                             End If
                         End If
@@ -5648,8 +5651,8 @@ Public Class frm_Operacion
 
         LlenarComboMaestro(cboTipoCarga, TipoCargaPublic, -1)
 
-        LlenarComboMaestro(cboMaterial, MaterialesPublic.Where(Function(item) item.Descripcion = "OPERACIONESC").ToList, -1)
-
+        'LlenarComboMaestro(cboMaterial, MaterialesPublic.Where(Function(item) item.Descripcion = "OPERACIONESC").ToList, -1)
+        LlenarComboMaestro(cboMaterial, MaterialesPublic.ToList, -1)
         LlenarCombo(cboMoneda, "Nombre", MonedaPublic, 0)
 
         LlenarComboMaestro(cboZona, ZonaPublic, 0)

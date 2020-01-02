@@ -101,21 +101,21 @@ Public Class frm_ConceptoPonderado
 
     Public Overrides Sub Guardar()
         Try
-            Dim formulario As frm_AutenticarTrabajador
-            formulario = New frm_AutenticarTrabajador
-            formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-            If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                Throw New Exception("Ingrese un Clave Correcta")
-            Else
-                RecolectaDatos()
-                oeConceptoPond.UsuarioCreacion = gUsuarioSGI.Id
-                oeConceptoPond.PrefijoID = gs_PrefijoIdSucursal '@0001
-                If olConceptoPond.Guardar(oeConceptoPond) Then
-                    mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
-                    MostrarTabs(0, ficConceptoPond)
-                    Consultar(True)
-                End If
+            'Dim formulario As frm_AutenticarTrabajador
+            'formulario = New frm_AutenticarTrabajador
+            'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+            'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+            '    Throw New Exception("Ingrese un Clave Correcta")
+            'Else
+            RecolectaDatos()
+            oeConceptoPond.UsuarioCreacion = gUsuarioSGI.Id
+            oeConceptoPond.PrefijoID = gs_PrefijoIdSucursal '@0001
+            If olConceptoPond.Guardar(oeConceptoPond) Then
+                mensajeEmergente.Confirmacion("El Registro se Guardo correctamente!!", True)
+                MostrarTabs(0, ficConceptoPond)
+                Consultar(True)
             End If
+            'End If
         Catch ex As Exception
             ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
             mensajeEmergente.Problema(ex.Message, True)

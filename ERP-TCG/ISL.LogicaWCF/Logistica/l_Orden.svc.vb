@@ -46,7 +46,7 @@ Public Class l_Orden
             Using TransScope As New TransactionScope()
                 odOrden = New d_Orden
                 If Not Validar(oeOrden) Then Return False
-                If Not odOrden.Guardar(oeOrden) Then Return False
+                oeOrden = odOrden.Guardar(oeOrden)
                 If lstRegInventario.Count > 0 Then
                     odRegistroInventario = New d_RegistroInventario
                     For Each oe As e_RegistroInventario In lstRegInventario
@@ -361,9 +361,7 @@ Public Class l_Orden
             'rectificamos orden
             oeOrden.TipoOperacion = "A"
             oeOrden.Total = oeOrden.lstOrdenMaterial.Sum(Function(item) item.ValorVenta)
-            If odOrden.Guardar(oeOrden) Then
-                Return True
-            End If
+            oeOrden = odOrden.Guardar(oeOrden)
         Catch ex As Exception
             Throw ex
         End Try

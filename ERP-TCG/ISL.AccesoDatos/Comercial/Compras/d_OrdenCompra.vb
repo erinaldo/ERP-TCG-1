@@ -19,44 +19,54 @@ Public Class d_OrdenCompra
 
     Private Function Cargar(ByVal fila As DataRow) As e_OrdenCompra
         Try
-            Dim oeOrden = New e_OrdenCompra(fila("Id"), _
-                                         fila("NroOrden"), _
-                                         fila("IdMoneda"), _
-                                         fila("Moneda"), _
-                                         fila("SubTotal"), _
-                                         fila("FechaOrden"), _
-                                         fila("FechaEntrega"), _
-                                         fila("FechaPago"), _
-                                         fila("Impuesto"), _
-                                         fila("Total"), _
-                                         fila("IndicadorAprobacion"), _
-                                         fila("IndicadorConsignacion"), _
-                                         fila("IdTrabajador"), _
-                                         fila("IdTipoOrdenCompra"), _
-                                         fila("Glosa"), _
-                                         fila("Notas"), _
-                                         fila("Activo"), _
-                                         fila("IdEstadoOrden"), _
-                                         fila("IdCentro"), _
-                                         fila("EstadoOrden"), _
-                                         fila("IdTipoPago"), _
-                                         fila("NombreProveedor"), _
-                                         fila("IdProveedor"), _
-                                         fila("NombreSubEstado"), _
-                                         fila("Percepcion"), _
-                                         fila("PercepcionPorc"), _
-                                         fila("Detraccion"), _
-                                         fila("DetraccionPorc"), _
-                                         fila("EstadoDocumento"), _
-                                         fila("IdAprobacion"), _
-                                         fila("IdTrabajadorAprobacion"), _
-                                         fila("IndBloqueo"), _
-                                         fila("FechaAprobacion"), _
-                                         fila("TrabajadorAprobacion"), _
-                                         fila("IndTipoCompra"), _
-                                         fila("TipoCompra"), _
-                                         fila("IndCotizacion"), _
-                                         fila("UsuarioCreacion"))
+            Dim oeOrden = New e_OrdenCompra(fila("Id"),
+                                         fila("NroOrden"),
+                                         fila("IdMoneda"),
+                                         fila("Moneda"),
+                                         fila("SubTotal"),
+                                         fila("FechaOrden"),
+                                         fila("FechaEntrega"),
+                                         fila("FechaPago"),
+                                         fila("Impuesto"),
+                                         fila("Total"),
+                                         fila("IndicadorAprobacion"),
+                                         fila("IndicadorConsignacion"),
+                                         fila("IdTrabajador"),
+                                         fila("IdTipoOrdenCompra"),
+                                         fila("Glosa"),
+                                         fila("Notas"),
+                                         fila("Activo"),
+                                         fila("IdEstadoOrden"),
+                                         fila("IdCentro"),
+                                         fila("EstadoOrden"),
+                                         fila("IdTipoPago"),
+                                         fila("NombreProveedor"),
+                                         fila("IdProveedor"),
+                                         fila("NombreSubEstado"),
+                                         fila("Percepcion"),
+                                         fila("PercepcionPorc"),
+                                         fila("Detraccion"),
+                                         fila("DetraccionPorc"),
+                                         fila("EstadoDocumento"),
+                                         fila("IdAprobacion"),
+                                         fila("IdTrabajadorAprobacion"),
+                                         fila("IndBloqueo"),
+                                         fila("FechaAprobacion"),
+                                         fila("TrabajadorAprobacion"),
+                                         fila("IndTipoCompra"),
+                                         fila("TipoCompra"),
+                                         fila("IndCotizacion"),
+                                         fila("CodigoDT"),
+                                         fila("IndFactServicio"),
+                                         fila("IdEmpresaTransporte"),
+                                         fila("IdOrigen"),
+                                         fila("IdDestino"),
+                                         fila("UsuarioCreacion"),
+                                         fila("IdPiloto"),
+                                         fila("IdTracto"),
+                                         fila("IdClienteFinal"),
+                                         fila("IdVentanaHoraria"),
+                                         fila("IdViaje"))
             Return oeOrden
         Catch ex As Exception
             Throw ex
@@ -166,7 +176,16 @@ Public Class d_OrdenCompra
                                                         , .Detraccion _
                                                         , .DetraccionPorc _
                                                         , .IndTipoCompra _
-                                                        , .IndCotizacion).ToString.Split("_")
+                                                        , .IndCotizacion _
+                                                        , .CodigoDT _
+                                                        , .IndFactServicio _
+                                                        , .IdTransportista _
+                                                        , .IdOrigen _
+                                                        , .IdDestino _
+                                                        , .IdPiloto _
+                                                        , .IdTracto _
+                                                        , .IdClienteFinal _
+                                                        , .IdVentanaHoraria).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each Detalle As e_OrdenCompraMaterial In .lstOrdenMaterial
                         Detalle.IdOrden = stResultado(0)

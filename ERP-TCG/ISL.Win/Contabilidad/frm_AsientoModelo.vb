@@ -142,25 +142,25 @@ Public Class frm_AsientoModelo
         Try
             _acl = gAccionSistema.ELIMINAR.ToString
             If ValidarAcl(_acl, pIdActividadNegocio) Then
-                Dim formulario As frm_AutenticarTrabajador
-                formulario = New frm_AutenticarTrabajador
-                formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
-                If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
-                    Throw New Exception("Ingrese un Clave Correcta")
-                Else
-                    oeAsientoModel = New e_AsientoModelo
-                    oeAsientoModel.TipoOperacion = "E"
-                    oeAsientoModel.Id = griAsientoModelo.ActiveRow.Cells("Id").Value
-                    ' oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
-                    oeAsientoModel.UsuarioModificacion = gUsuarioSGI.Id
-                    If olAsientoModel.Eliminar(oeAsientoModel) Then
-                        mensajeEmergente.Confirmacion("¡La Plantilla de Asiento Nº: " & oeAsientoModel.Codigo & _
-                                                         " se ha Eliminado correctamente!", True)
-                        MostrarTabs(0, ficAsientoModelo)
-                        Consultar(True)
-                    End If
+                'Dim formulario As frm_AutenticarTrabajador
+                'formulario = New frm_AutenticarTrabajador
+                'formulario._band = True : formulario._idtrab = gUsuarioSGI.IdTrabajador
+                'If formulario.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+                '    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
+                '    Throw New Exception("Ingrese un Clave Correcta")
+                'Else
+                oeAsientoModel = New e_AsientoModelo
+                oeAsientoModel.TipoOperacion = "E"
+                oeAsientoModel.Id = griAsientoModelo.ActiveRow.Cells("Id").Value
+                ' oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
+                oeAsientoModel.UsuarioModificacion = gUsuarioSGI.Id
+                If olAsientoModel.Eliminar(oeAsientoModel) Then
+                    mensajeEmergente.Confirmacion("¡La Plantilla de Asiento Nº: " & oeAsientoModel.Codigo &
+                                                     " se ha Eliminado correctamente!", True)
+                    MostrarTabs(0, ficAsientoModelo)
+                    Consultar(True)
                 End If
+                'End If
             Else
                 Throw New Exception("Usted no Tiene Permiso de: " & _acl & " en " & Me.Text)
             End If
