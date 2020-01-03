@@ -4062,14 +4062,14 @@ Public Class frm_Operacion
                 If griViaje.Rows(I).Cells("Tracto").Text.Trim = tracto.Trim Then
                     EliminarViajeSinMje = "S"
                     griViaje.Rows.Item(I).Delete()
-                    For J As Integer = 0 To griViaje.Rows.Count - 1
+                    For J As Integer = 0 To griViaje.Rows.Count - 1 '@0001 Ini
                         If griViaje.Rows(J).Cells("Tracto").Text.Trim = tracto.Trim Then
                             EliminarViajeSinMje = "S"
                             griViaje.Rows.Item(J).Delete()
                             Exit For
                         End If
                     Next
-                    Exit For
+                    Exit For '@0001 Fin
                 End If
             Next
         Catch ex As Exception
@@ -4503,6 +4503,7 @@ Public Class frm_Operacion
         mt_HabilitarSumatoria(False)
         upbFoto.Image = Nothing
         upbFotoTracto.Image = Nothing
+        cboTipoVehiculo.Value = "1CH000000014" '@0001 Tipo Vehiculo Defecto
     End Sub
 
     Public Sub Listar(Tipo As String, ByVal griLista As UltraWinGrid.UltraGrid)
