@@ -114,11 +114,11 @@ Public Class frm_ReporteCajaDiario
             Dim oeCierreCajaDet As New e_CierreCajaDet
             Dim loCierreCajaDet As New List(Of e_CierreCajaDet)
             If MessageBox.Show("¿Desea Cerrar Caja? " & Me.Text, "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) = Windows.Forms.DialogResult.Yes Then
-                For Each cajdia As e_ReporteCajaDiario In loCajaDiario
-                    If cajdia.Codigo = "PRE-ENVIADO" Or cajdia.Codigo = "GENERADA" Then
-                        Throw New Exception("No Puede Cerrar Hasta que se Aprueben sus Gastos")
-                    End If
-                Next
+                'For Each cajdia As e_ReporteCajaDiario In loCajaDiario
+                '    If cajdia.Codigo = "PRE-ENVIADO" Or cajdia.Codigo = "GENERADA" Then
+                '        Throw New Exception("No Puede Cerrar Hasta que se Aprueben sus Gastos")
+                '    End If
+                'Next
                 oeSaldo = New e_Saldo
                 oeSaldo.TipoOperacion = "I"
                 oeSaldo.Tipo = 2

@@ -270,7 +270,7 @@ Partial Class frm_OtrosIngresos
         Me.UltraTabPageControl7.Controls.Add(Me.Agrupacion2)
         Me.UltraTabPageControl7.Controls.Add(Me.agrMenuLista)
         Me.UltraTabPageControl7.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1063, 354)
         '
@@ -364,7 +364,7 @@ Partial Class frm_OtrosIngresos
         Me.griOtrosIngresos.DisplayLayout.Override.RowSelectorHeaderStyle = Infragistics.Win.UltraWinGrid.RowSelectorHeaderStyle.ColumnChooserButton
         Me.griOtrosIngresos.DisplayLayout.Override.RowSelectorNumberStyle = Infragistics.Win.UltraWinGrid.RowSelectorNumberStyle.VisibleIndex
         Me.griOtrosIngresos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griOtrosIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.griOtrosIngresos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOtrosIngresos.Location = New System.Drawing.Point(3, 3)
         Me.griOtrosIngresos.Name = "griOtrosIngresos"
         Me.griOtrosIngresos.Size = New System.Drawing.Size(1057, 242)
@@ -387,6 +387,7 @@ Partial Class frm_OtrosIngresos
         '
         'EgresosToolStripMenuItem
         '
+        Me.EgresosToolStripMenuItem.Enabled = False
         Me.EgresosToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Quitar2
         Me.EgresosToolStripMenuItem.Name = "EgresosToolStripMenuItem"
         Me.EgresosToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
@@ -427,6 +428,7 @@ Partial Class frm_OtrosIngresos
         Me.btnEgresos.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEgresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEgresos.Dock = System.Windows.Forms.DockStyle.Left
+        Me.btnEgresos.Enabled = False
         Me.btnEgresos.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEgresos.ForeColor = System.Drawing.Color.Black
         Me.btnEgresos.Location = New System.Drawing.Point(75, 3)
@@ -462,7 +464,7 @@ Partial Class frm_OtrosIngresos
         Me.Agrupacion1.Controls.Add(Me.verBuscarFecha)
         Me.Agrupacion1.Controls.Add(Me.agrBuscarFecha)
         Me.Agrupacion1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
         Me.Agrupacion1.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion1.Name = "Agrupacion1"
@@ -567,7 +569,7 @@ Partial Class frm_OtrosIngresos
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta6.Location = New System.Drawing.Point(154, 10)
+        Me.Etiqueta6.Location = New System.Drawing.Point(154, 13)
         Me.Etiqueta6.Name = "Etiqueta6"
         Me.Etiqueta6.Size = New System.Drawing.Size(36, 14)
         Me.Etiqueta6.TabIndex = 2
@@ -576,7 +578,7 @@ Partial Class frm_OtrosIngresos
         'fecHasta
         '
         Me.fecHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecHasta.Location = New System.Drawing.Point(196, 8)
+        Me.fecHasta.Location = New System.Drawing.Point(196, 11)
         Me.fecHasta.Name = "fecHasta"
         Me.fecHasta.Size = New System.Drawing.Size(97, 20)
         Me.fecHasta.TabIndex = 3
@@ -589,7 +591,7 @@ Partial Class frm_OtrosIngresos
         Me.Etiqueta50.AutoSize = True
         Me.Etiqueta50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta50.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta50.Location = New System.Drawing.Point(7, 10)
+        Me.Etiqueta50.Location = New System.Drawing.Point(7, 13)
         Me.Etiqueta50.Name = "Etiqueta50"
         Me.Etiqueta50.Size = New System.Drawing.Size(39, 14)
         Me.Etiqueta50.TabIndex = 0
@@ -598,7 +600,7 @@ Partial Class frm_OtrosIngresos
         'fecDesde
         '
         Me.fecDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecDesde.Location = New System.Drawing.Point(52, 8)
+        Me.fecDesde.Location = New System.Drawing.Point(52, 11)
         Me.fecDesde.Name = "fecDesde"
         Me.fecDesde.Size = New System.Drawing.Size(96, 20)
         Me.fecDesde.TabIndex = 1
@@ -607,7 +609,7 @@ Partial Class frm_OtrosIngresos
         '
         Me.utpDetalle.Controls.Add(Me.agrProcesoNegocio)
         Me.utpDetalle.Enabled = False
-        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
+        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1063, 354)
         '
@@ -851,11 +853,11 @@ Partial Class frm_OtrosIngresos
         Appearance15.BackColor = System.Drawing.Color.Transparent
         Me.etiDifDepositada.Appearance = Appearance15
         Me.etiDifDepositada.AutoSize = True
-        Me.etiDifDepositada.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.etiDifDepositada.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiDifDepositada.ForeColor = System.Drawing.Color.MidnightBlue
         Me.etiDifDepositada.Location = New System.Drawing.Point(196, 98)
         Me.etiDifDepositada.Name = "etiDifDepositada"
-        Me.etiDifDepositada.Size = New System.Drawing.Size(82, 14)
+        Me.etiDifDepositada.Size = New System.Drawing.Size(85, 15)
         Me.etiDifDepositada.TabIndex = 9
         Me.etiDifDepositada.Text = "Dif. Depositada:"
         '
@@ -914,11 +916,11 @@ Partial Class frm_OtrosIngresos
         Appearance19.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta7.Appearance = Appearance19
         Me.Etiqueta7.AutoSize = True
-        Me.Etiqueta7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta7.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta7.Location = New System.Drawing.Point(27, 206)
         Me.Etiqueta7.Name = "Etiqueta7"
-        Me.Etiqueta7.Size = New System.Drawing.Size(58, 14)
+        Me.Etiqueta7.Size = New System.Drawing.Size(59, 15)
         Me.Etiqueta7.TabIndex = 15
         Me.Etiqueta7.Text = "Operacion:"
         '
@@ -935,6 +937,8 @@ Partial Class frm_OtrosIngresos
         '
         Me.rdbEgresos.AutoSize = True
         Me.rdbEgresos.BackColor = System.Drawing.Color.Transparent
+        Me.rdbEgresos.Enabled = False
+        Me.rdbEgresos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdbEgresos.Location = New System.Drawing.Point(190, 10)
         Me.rdbEgresos.Name = "rdbEgresos"
         Me.rdbEgresos.Size = New System.Drawing.Size(63, 17)
@@ -946,9 +950,10 @@ Partial Class frm_OtrosIngresos
         '
         Me.rdbIngresos.AutoSize = True
         Me.rdbIngresos.BackColor = System.Drawing.Color.Transparent
+        Me.rdbIngresos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdbIngresos.Location = New System.Drawing.Point(94, 10)
         Me.rdbIngresos.Name = "rdbIngresos"
-        Me.rdbIngresos.Size = New System.Drawing.Size(65, 17)
+        Me.rdbIngresos.Size = New System.Drawing.Size(67, 17)
         Me.rdbIngresos.TabIndex = 1
         Me.rdbIngresos.Text = "Ingresos"
         Me.rdbIngresos.UseVisualStyleBackColor = False
@@ -975,11 +980,11 @@ Partial Class frm_OtrosIngresos
         Me.cboCuentaBancaria.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCuentaBancaria.DropDownListWidth = 600
         Me.cboCuentaBancaria.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboCuentaBancaria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCuentaBancaria.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCuentaBancaria.ForeColor = System.Drawing.Color.Black
         Me.cboCuentaBancaria.Location = New System.Drawing.Point(91, 38)
         Me.cboCuentaBancaria.Name = "cboCuentaBancaria"
-        Me.cboCuentaBancaria.Size = New System.Drawing.Size(352, 21)
+        Me.cboCuentaBancaria.Size = New System.Drawing.Size(352, 22)
         Me.cboCuentaBancaria.TabIndex = 4
         Me.cboCuentaBancaria.ValueMember = "Id"
         '
@@ -989,11 +994,11 @@ Partial Class frm_OtrosIngresos
         Appearance22.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta11.Appearance = Appearance22
         Me.Etiqueta11.AutoSize = True
-        Me.Etiqueta11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta11.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta11.Location = New System.Drawing.Point(31, 42)
         Me.Etiqueta11.Name = "Etiqueta11"
-        Me.Etiqueta11.Size = New System.Drawing.Size(54, 14)
+        Me.Etiqueta11.Size = New System.Drawing.Size(52, 15)
         Me.Etiqueta11.TabIndex = 3
         Me.Etiqueta11.Text = "Cta Banc:"
         '
@@ -1002,11 +1007,11 @@ Partial Class frm_OtrosIngresos
         Appearance23.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta9.Appearance = Appearance23
         Me.Etiqueta9.AutoSize = True
-        Me.Etiqueta9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta9.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta9.Location = New System.Drawing.Point(31, 180)
         Me.Etiqueta9.Name = "Etiqueta9"
-        Me.Etiqueta9.Size = New System.Drawing.Size(54, 14)
+        Me.Etiqueta9.Size = New System.Drawing.Size(55, 15)
         Me.Etiqueta9.TabIndex = 13
         Me.Etiqueta9.Text = "Concepto:"
         '
@@ -1017,11 +1022,11 @@ Partial Class frm_OtrosIngresos
         Me.cboConcepto.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.cboConcepto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboConcepto.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cboConcepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboConcepto.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboConcepto.ForeColor = System.Drawing.Color.Black
         Me.cboConcepto.Location = New System.Drawing.Point(91, 176)
         Me.cboConcepto.Name = "cboConcepto"
-        Me.cboConcepto.Size = New System.Drawing.Size(352, 21)
+        Me.cboConcepto.Size = New System.Drawing.Size(352, 22)
         Me.cboConcepto.TabIndex = 14
         Me.cboConcepto.ValueMember = "Id"
         '
@@ -1045,11 +1050,11 @@ Partial Class frm_OtrosIngresos
         Appearance26.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta3.Appearance = Appearance26
         Me.Etiqueta3.AutoSize = True
-        Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta3.Location = New System.Drawing.Point(47, 234)
         Me.Etiqueta3.Name = "Etiqueta3"
-        Me.Etiqueta3.Size = New System.Drawing.Size(38, 14)
+        Me.Etiqueta3.Size = New System.Drawing.Size(38, 15)
         Me.Etiqueta3.TabIndex = 17
         Me.Etiqueta3.Text = "Fecha:"
         '
@@ -1058,11 +1063,11 @@ Partial Class frm_OtrosIngresos
         Appearance27.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta2.Appearance = Appearance27
         Me.Etiqueta2.AutoSize = True
-        Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta2.Location = New System.Drawing.Point(49, 129)
         Me.Etiqueta2.Name = "Etiqueta2"
-        Me.Etiqueta2.Size = New System.Drawing.Size(36, 14)
+        Me.Etiqueta2.Size = New System.Drawing.Size(35, 15)
         Me.Etiqueta2.TabIndex = 11
         Me.Etiqueta2.Text = "Glosa:"
         '
@@ -1071,11 +1076,11 @@ Partial Class frm_OtrosIngresos
         Appearance28.BackColor = System.Drawing.Color.Transparent
         Me.Etiqueta1.Appearance = Appearance28
         Me.Etiqueta1.AutoSize = True
-        Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta1.Location = New System.Drawing.Point(41, 98)
         Me.Etiqueta1.Name = "Etiqueta1"
-        Me.Etiqueta1.Size = New System.Drawing.Size(44, 14)
+        Me.Etiqueta1.Size = New System.Drawing.Size(48, 15)
         Me.Etiqueta1.TabIndex = 7
         Me.Etiqueta1.Text = "Importe:"
         '
@@ -1099,11 +1104,11 @@ Partial Class frm_OtrosIngresos
         Appearance30.BorderColor = System.Drawing.Color.Transparent
         Me.etiTrabajador.Appearance = Appearance30
         Me.etiTrabajador.AutoSize = True
-        Me.etiTrabajador.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.etiTrabajador.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiTrabajador.ForeColor = System.Drawing.Color.MidnightBlue
         Me.etiTrabajador.Location = New System.Drawing.Point(25, 69)
         Me.etiTrabajador.Name = "etiTrabajador"
-        Me.etiTrabajador.Size = New System.Drawing.Size(60, 14)
+        Me.etiTrabajador.Size = New System.Drawing.Size(63, 15)
         Me.etiTrabajador.TabIndex = 5
         Me.etiTrabajador.Text = "Trabajador:"
         '
@@ -1113,11 +1118,11 @@ Partial Class frm_OtrosIngresos
         Me.cboTrabajadores.Appearance = Appearance31
         Me.cboTrabajadores.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.cboTrabajadores.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.cboTrabajadores.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTrabajadores.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTrabajadores.ForeColor = System.Drawing.Color.Black
         Me.cboTrabajadores.Location = New System.Drawing.Point(91, 65)
         Me.cboTrabajadores.Name = "cboTrabajadores"
-        Me.cboTrabajadores.Size = New System.Drawing.Size(352, 21)
+        Me.cboTrabajadores.Size = New System.Drawing.Size(352, 22)
         Me.cboTrabajadores.TabIndex = 6
         Me.cboTrabajadores.ValueMember = "Id"
         '
@@ -1127,7 +1132,7 @@ Partial Class frm_OtrosIngresos
         Me.ficOtrosIngresos.Controls.Add(Me.UltraTabPageControl7)
         Me.ficOtrosIngresos.Controls.Add(Me.utpDetalle)
         Me.ficOtrosIngresos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ficOtrosIngresos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ficOtrosIngresos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ficOtrosIngresos.Location = New System.Drawing.Point(0, 0)
         Me.ficOtrosIngresos.Name = "ficOtrosIngresos"
         Me.ficOtrosIngresos.SharedControlsPage = Me.UltraTabSharedControlsPage1
