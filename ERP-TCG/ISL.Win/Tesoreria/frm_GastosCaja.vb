@@ -328,6 +328,7 @@ Public Class frm_GastosCaja
             CargarCombos()
             mb_Load = True
             lr_ConfigurarGrillas(New List(Of e_MovimientoDocumento))
+            dtp_FechaDesde.Value = Date.Now.AddDays(-15)
             mb_Load = False
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -1383,6 +1384,8 @@ Public Class frm_GastosCaja
             oeGastoOpe = New e_GastoOperacion
             oeGastoOpe.IdCaja = cboCaja.Value
             oeGastoOpe.TipoOperacion = "5"
+            oeGastoOpe.FechaEmision = dtp_FechaDesde.Value
+            oeGastoOpe.FechaCreacion = dtp_FechaHasta.Value
             griGastosLista.DataSource = olGastoOpe.Listar(oeGastoOpe)
             CalcularTotales(griGastosLista, "Total")
         Catch ex As Exception
