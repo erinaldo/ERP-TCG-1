@@ -524,30 +524,30 @@ Public Class frm_CuadreCaja
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
             Dim i As Double = 0 : Dim e As Double = 0
-            If IndPrincipal Then
-                Dim oeCajaDiario As New e_ReporteCajaDiario
-                Dim olCajaDiario As New l_ReporteCajaDiario
-                Dim loCajaDiario As New List(Of e_ReporteCajaDiario)
-                Dim fecha As Date = ObtenerFechaServidor()
-                Dim a As String = fecha.Hour & ":" & fecha.Minute & ":" & fecha.Second
-                oeCajaDiario.IdCaja = idCajaCentro
-                oeCajaDiario.FechaInicio = FechaInicio
-                oeCajaDiario.FechaFin = Date.Parse(fecha.Date & " " & a)
-                loCajaDiario = olCajaDiario.Listar(oeCajaDiario)
-                i = loCajaDiario.Sum(Function(item) item.Ingresos)
-                e = loCajaDiario.Sum(Function(item) item.Egresos)
-                Me.numSaldoSistema.Value = Math.Round(i - e, 2)
-            Else
-                Dim oeMovAdm As New e_Movimiento_Administrativo
-                Dim olMovAdm As New l_Movimiento_Administrativo
-                Dim loMovAdm As New List(Of e_Movimiento_Administrativo)
-                oeMovAdm.TipoOperacion = "4"
-                oeMovAdm.IdCaja = idCajaCentro
-                loMovAdm = olMovAdm.Listar(oeMovAdm)
-                i = loMovAdm.Sum(Function(item) item.Ingreso)
-                e = loMovAdm.Sum(Function(item) item.Egreso)
-                Me.numSaldoSistema.Value = Math.Round(e - i, 2)
-            End If
+            'If IndPrincipal Then
+            Dim oeCajaDiario As New e_ReporteCajaDiario
+            Dim olCajaDiario As New l_ReporteCajaDiario
+            Dim loCajaDiario As New List(Of e_ReporteCajaDiario)
+            Dim fecha As Date = ObtenerFechaServidor()
+            Dim a As String = fecha.Hour & ":" & fecha.Minute & ":" & fecha.Second
+            oeCajaDiario.IdCaja = idCajaCentro
+            oeCajaDiario.FechaInicio = FechaInicio
+            oeCajaDiario.FechaFin = Date.Parse(fecha.Date & " " & a)
+            loCajaDiario = olCajaDiario.Listar(oeCajaDiario)
+            i = loCajaDiario.Sum(Function(item) item.Ingresos)
+            e = loCajaDiario.Sum(Function(item) item.Egresos)
+            Me.numSaldoSistema.Value = Math.Round(i - e, 2)
+            'Else
+            '    Dim oeMovAdm As New e_Movimiento_Administrativo
+            '    Dim olMovAdm As New l_Movimiento_Administrativo
+            '    Dim loMovAdm As New List(Of e_Movimiento_Administrativo)
+            '    oeMovAdm.TipoOperacion = "4"
+            '    oeMovAdm.IdCaja = idCajaCentro
+            '    loMovAdm = olMovAdm.Listar(oeMovAdm)
+            '    i = loMovAdm.Sum(Function(item) item.Ingreso)
+            '    e = loMovAdm.Sum(Function(item) item.Egreso)
+            '    Me.numSaldoSistema.Value = Math.Round(e - i, 2)
+            'End If
         Catch ex As Exception
             Throw ex
         Finally
