@@ -5005,7 +5005,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl4.Controls.Add(Me.griViaje)
         Me.UltraTabPageControl4.Controls.Add(Me.expViaje)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1248, 412)
         '
@@ -5970,7 +5970,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griViajeDetalle)
         Me.UltraTabPageControl5.Controls.Add(Me.expCargaOperacion)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1248, 412)
         '
