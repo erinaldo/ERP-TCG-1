@@ -717,7 +717,7 @@ Public Class frm_EstacionServicio
             _Activo = True
             mt_Inicializar()
             Nuevo()
-
+            gmt_ConfigurarEventoKeyEnter_Tab(Me, txt_Serie.Name, txt_Numero.Text, cmb_Piloto.Name, cmb_Vehiculo.Name, nud_Kilometraje.Name, cmb_Lado.Name, cboProducto.Name, nud_Cantidad.Name, nud_Preciounitario.Name, nud_Importe.Name, btnAgregarDetalle.Name)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
