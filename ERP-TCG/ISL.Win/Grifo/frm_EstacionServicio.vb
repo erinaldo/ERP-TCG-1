@@ -225,6 +225,7 @@ Public Class frm_EstacionServicio
                 .IdClienteProveedor = OrdenVenta.IdEmpresa
                 .IdTipoDocumento = IdTipoDocumento
                 .IdEstadoDocumento = "1CIX025"
+                ._Operador = 1
                 .IdPeriodo = ""
                 .IdMoneda = IdMoneda_Soles
                 .Tipo = 2
@@ -315,7 +316,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000038" : .MovimientoInventario = "SALIDA POR VENTAS" '"1CIX006"
                 .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                 .IdMoneda = OrdenVenta.IdMoneda
-                .IdEstadoOrden = "1CIX025"
+                .IdEstadoOrden = "1CH000000003"
                 .Total = OrdenVenta.Total
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
                 .lstInventario = New List(Of e_Inventario)
