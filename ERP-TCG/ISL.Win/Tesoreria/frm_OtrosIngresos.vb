@@ -117,16 +117,16 @@ Public Class frm_OtrosIngresos
 
     Public Overrides Sub Guardar()
         Try
-            If ValidaUsuarioCajaCentro(IdCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
-                If GuardarIE() Then
-                    MostrarTabs(0, ficOtrosIngresos, 0)
-                    Consultar(True)
-                Else
-                    MostrarTabs(1, ficOtrosIngresos, 0)
-                End If
+            'If ValidaUsuarioCajaCentro(IdCajaCentro, ObtenerCentro(gs_PrefijoIdSucursal).Id, gUsuarioSGI.IdTrabajador) Then
+            If GuardarIE() Then
+                MostrarTabs(0, ficOtrosIngresos, 0)
+                Consultar(True)
             Else
-                Throw New Exception("No puede Realizar Movimientos en esta Sede")
+                MostrarTabs(1, ficOtrosIngresos, 0)
             End If
+            'Else
+            '    Throw New Exception("No puede Realizar Movimientos en esta Sede")
+            'End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

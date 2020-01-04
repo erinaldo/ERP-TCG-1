@@ -1327,7 +1327,7 @@ Public Class frm_Ruta
             End If
             If Not ValidarCombo(cboOrigen, "Origen") Then Exit Function
             If Not ValidarCombo(cboFlota, "Zona") Then Exit Function
-            If oeRuta.loMontoRuta.Count = 0 Then Throw New Exception("Debe Generar un Monto de Ruta")
+            'If oeRuta.loMontoRuta.Count = 0 Then Throw New Exception("Debe Generar un Monto de Ruta") '@0001 Quitar por ingreso de informacion
             If Operacion = "Nuevo" Then
                 If Not ValidaRuta() Then Exit Function
             End If

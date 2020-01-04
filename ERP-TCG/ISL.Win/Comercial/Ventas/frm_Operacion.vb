@@ -321,6 +321,7 @@ Public Class frm_Operacion
             'listar piloto copiloto activos a la fecha
             'CrearComboGrid("Piloto", "Nombre", griViaje, olCombo.ComboGrilla(PilotoPublic.ToList.Where(Function(x) FormatDateTime(x.Extras.Item(0), DateFormat.ShortDate) = "01/01/1901" Or Date.Parse(x.Extras.Item(0)) >= Now).ToList), True)
             'CrearComboGrid("Copiloto", "Nombre", griViaje, olCombo.ComboGrilla(CopilotoPublic.ToList.Where(Function(y) FormatDateTime(y.Extras.Item(0), DateFormat.ShortDate) = "01/01/1901" Or Date.Parse(y.Extras.Item(0)) >= Now).ToList), True)
+
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         Finally
@@ -4016,7 +4017,7 @@ Public Class frm_Operacion
                         cboRutaOrigen.Value = RutaIdDestino
                         cboOrigen.Value = RutaIdDestino
                         RutaIdDestino = ""
-                        cboRutaDestino.SelectedIndex = -1
+                        'cboRutaDestino.SelectedIndex = -1 @0001
                         cboRutaDestino.Focus()
                     Else
                         griViajeDetalle.DataSource = New List(Of e_OperacionDetalle)
@@ -4050,8 +4051,8 @@ Public Class frm_Operacion
                 Next
                 If Total_Disponible = 0 Then
                     'LimpiaGrid(griViajeDetalle, ogdOperacionDetalle)
-                    Dim ViajeDetalle As New List(Of e_OperacionDetalle)
-                    griViajeDetalle.DataSource = ViajeDetalle
+                    'Dim ViajeDetalle As New List(Of e_OperacionDetalle) '@0001
+                    'griViajeDetalle.DataSource = ViajeDetalle '@0001
                 End If
             End If
 
@@ -4061,6 +4062,14 @@ Public Class frm_Operacion
                 If griViaje.Rows(I).Cells("Tracto").Text.Trim = tracto.Trim Then
                     EliminarViajeSinMje = "S"
                     griViaje.Rows.Item(I).Delete()
+                    For J As Integer = 0 To griViaje.Rows.Count - 1 '@0001 Ini
+                        If griViaje.Rows(J).Cells("Tracto").Text.Trim = tracto.Trim Then
+                            EliminarViajeSinMje = "S"
+                            griViaje.Rows.Item(J).Delete()
+                            Exit For
+                        End If
+                    Next
+                    Exit For '@0001 Fin
                 End If
             Next
         Catch ex As Exception
@@ -4494,6 +4503,7 @@ Public Class frm_Operacion
         mt_HabilitarSumatoria(False)
         upbFoto.Image = Nothing
         upbFotoTracto.Image = Nothing
+        cboTipoVehiculo.Value = "1CH000000014" '@0001 Tipo Vehiculo Defecto
     End Sub
 
     Public Sub Listar(Tipo As String, ByVal griLista As UltraWinGrid.UltraGrid)
