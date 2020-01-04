@@ -88,6 +88,7 @@ Public Class frm_EstacionServicio
             mt_Inicializar()
             Operacion = "Nuevo" : gmt_ControlBoton(0, 1, 0, 1, 0, 0, 0, 0, 1)
             cmb_Cliente.Focus()
+            cmb_Cliente.Select()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -715,6 +716,7 @@ Public Class frm_EstacionServicio
             _Activo = True
             mt_Inicializar()
             Nuevo()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -1162,10 +1164,13 @@ Public Class frm_EstacionServicio
 
     Private Sub cmb_Lado_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Lado.ValueChanged
         Procesar_Lado(cmb_Lado.Text)
+        cboProducto.Focus()
+        cboProducto.Select()
     End Sub
 
     Private Sub cboProducto_ValueChanged(sender As Object, e As EventArgs) Handles cboProducto.ValueChanged
         Procesar_BotonCombustible(cboProducto.Value)
+        nud_Cantidad.Select()
     End Sub
 
     Private Sub TipoVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles btn_Contado.KeyDown, btnCredito.KeyDown, btnCalibracion.KeyDown
@@ -1187,7 +1192,7 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub cboProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles cboProducto.KeyDown
-        nud_Cantidad.SelectAll()
+        nud_Cantidad.Select()
     End Sub
 
     Private Sub nud_Cantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles nud_Cantidad.KeyDown
@@ -1196,10 +1201,14 @@ Public Class frm_EstacionServicio
 
     Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
         mt_Cargar_EmpresaAutomatico("NOSOTROS")
+        cmb_Piloto.Focus()
+        cmb_Piloto.Select()
     End Sub
 
     Private Sub btn_Otros_Click(sender As Object, e As EventArgs) Handles btn_Otros.Click
         mt_Cargar_EmpresaAutomatico("OTROS")
+        cmb_Vehiculo.Focus()
+        cmb_Vehiculo.Select()
     End Sub
 
     Private Sub mt_Cargar_EmpresaAutomatico(ByVal Empresa As String)
