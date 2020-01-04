@@ -229,7 +229,7 @@ Public Class frm_VentaCombustible
     Public Overrides Sub Exportar()
         Try
             If griOrdenComercial.Rows.Count = 0 Then Throw New Exception("No hay ningún dato para exportar al Excel")
-            Exportar_Excel(griOrdenComercial, Me.Text)
+            Exportar_Excel(griOrdenComercial)
             MyBase.Exportar()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)

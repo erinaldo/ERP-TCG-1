@@ -58,7 +58,7 @@ Public Class frm_EstacionServicio
     Private ListaLado As New List(Of e_Lado), dLado As New l_Lado
 
     Private swConsumoInterno As Boolean
-    Private IdTipoDocumento As String, TipoDocumento As String
+    Private IdTipoDocumento As String, TipoDocumento As String, TipoDocumentoAbrev As String
     Private IdTipoVenta As String, IdTipoPago As String 'Contado "1SI000000001", 
     Private sw_Lado As String
     Private IdMaterial_Combustible As String, Material_Combustible As String, Codigo_Combustible As String, IdAlmacen_Combustible As String, IdSubAlmacen_Combustible As String
@@ -109,6 +109,15 @@ Public Class frm_EstacionServicio
             If IdEmpresaCliente = "1CH000000003" And nud_Total.Value >= 700 And IdTipoDocumento = "1CH000000002" Then Throw New Exception("No se puede emitir BOLETA por un importe mayor a S/ 700")
             'If swCredito = True And (OrdenVenta.Total > CuentaCorriente.Saldo + (CuentaCorriente.Saldo) * 0.1) Then Throw New Exception("El importe EXCEDE la linea de CREDITO disponible")
 
+            '' Confirmacion
+            If MessageBox.Show("DETALLES DE VENTA:" & vbCrLf &
+                               "> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf &
+                               "> CLIENTE: " & cmb_Cliente.Text & vbCrLf &
+                               "> PRODUCTO: " & Material_Combustible & vbCrLf &
+                               "> IMPORTE: S/ " & nud_Total.Value & vbCrLf &
+                               "> PLACA: " & cmb_Vehiculo.Text & vbCrLf, "ERP", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
+
+            '' Cargar Data
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
 
@@ -172,7 +181,7 @@ Public Class frm_EstacionServicio
         Try
             udg_Detalle.UpdateData()
             With OrdenVenta
-                .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login
+                .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login : .FechaCrea = FechaOrden
                 .Tipo = 2
                 .TipoExistencia = 1
                 .TipoCambio = TipoCambio
@@ -194,6 +203,7 @@ Public Class frm_EstacionServicio
                 .IdPlaca = cmb_Vehiculo.Value
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
+                .GlosaResumen = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & "//COMBUSTIBLE: " & Material_Combustible & "//TOTAL: S/" & nud_Total.Value & "//PLACA: " & cmb_Vehiculo.Text
                 If swConsumoInterno = False Then
                     .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 End If
@@ -210,7 +220,7 @@ Public Class frm_EstacionServicio
             MovimientoDocumento = New e_MovimientoDocumento
             Dim ItemDocumento As New e_DetalleDocumento
             With MovimientoDocumento
-                .TipoOperacion = "I" : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .PrefijoID = gs_PrefijoIdSucursal
+                .TipoOperacion = "I" : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .PrefijoID = gs_PrefijoIdSucursal : .IdUsuarioCrea = gUsuarioSGI.Id : .FechaCreacion = FechaOrden
                 .IdClienteProveedor = OrdenVenta.IdEmpresa
                 .IdTipoDocumento = IdTipoDocumento
                 .IdEstadoDocumento = "1CIX025"
@@ -229,7 +239,6 @@ Public Class frm_EstacionServicio
                 .Total = Math.Round(nud_Total.Value, 2)
                 .Saldo = .Total
                 .TipoCambio = TipoCambio
-                .IdUsuarioCrea = gUsuarioSGI.Id
                 .Mac_PC_Local = MacPCLocal()
 
                 '' Cargar Detalle de Documento
@@ -257,11 +266,13 @@ Public Class frm_EstacionServicio
                 .Venta.PrefijoID = gs_PrefijoIdSucursal
                 .Venta.Gravado = Math.Round(nud_SubTotal.Value, 2)
                 .Venta.IGV = Math.Round(nud_Impuesto.Value, 2)
+                .Venta.TotalVenta = Math.Round(nud_Total.Value, 2)
                 .Venta.IdTipoPago = IdTipoPago
                 .Venta.Glosa = txt_Glosa.Text
                 .Venta.IdTipoVenta = "1CH000036"
                 .Venta.IndCliente = 2
                 .Venta.TipoOperacion = "I"
+
             End With
             Return MovimientoDocumento
         Catch ex As Exception
@@ -810,6 +821,8 @@ Public Class frm_EstacionServicio
         udg_Detalle.DataSource = New List(Of e_OrdenVentaMaterial)
         gmt_OcultarColumna(udg_Detalle, True, "IndOperacion", "IdOrigen", "IdDestino")
         nud_Saldo.Appearance.ForeColor = Color.Gray
+        btnDB5.Text = "DB5" : btnG84.Text = "G84" : btnG90.Text = "G90" : btnG95.Text = "G95"
+        UltraGroupBox2.Enabled = False
 
         '' Cargar Listas y Combos
         mt_CargarCombo_Lado()
@@ -905,7 +918,7 @@ Public Class frm_EstacionServicio
         Else
             CanDescuento = 0
         End If
-        grb_Combustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
+        grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal: S/. " & PrecioNormal & " || Dscto x Galon: S/. " & CanDescuento & " )"
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
         nud_Cantidad.SelectAll()
     End Sub
@@ -965,19 +978,6 @@ Public Class frm_EstacionServicio
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
-    End Sub
-
-    Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
-        cmb_Cliente.Value = gs_IdClienteProveedorSistema
-        cmb_Cliente.Text = gs_TxtEmpresaSistema
-        cmb_Direccion.Text = gs_DireccionEmpresaSistema
-        IdEmpresaCliente = gs_IdClienteProveedorSistema
-
-        mt_Validar_OperacionesCliente(IdEmpresaCliente)
-
-        Cargar_Pilotos()
-        Cargar_VehiculoCliente()
-        Cargar_Direcciones()
     End Sub
 
     Private Sub ActualizarTipoPago()
@@ -1066,7 +1066,7 @@ Public Class frm_EstacionServicio
         mt_Calcular_DescuentoCombustible()
 
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
-        grb_Combustible.Text = "Combustible ( " & Material_Combustible & " -> Precio Normal: S/. " & PrecioNormal & " || Descuento por Galon: S/. " & CanDescuento & " )"
+        'grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal: S/. " & PrecioNormal & " || Dscto x Galon: S/. " & CanDescuento & " )"
         nud_Cantidad.SelectAll()
     End Sub
 
@@ -1079,16 +1079,20 @@ Public Class frm_EstacionServicio
         Return 0
     End Function
 
-    Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
-        IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA"
-        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
-        txt_Serie.Text = "F103" : txt_Serie.Focus()
-        cmb_Vehiculo.Focus()
-    End Sub
-
     Private Sub nud_Cantidad_Leave(sender As Object, e As EventArgs) Handles nud_Cantidad.Leave
         Try
             nud_Importe.Value = nud_Preciounitario.Value * nud_Cantidad.Value
+            btnDB5.Text = "DB5" : btnG84.Text = "G84" : btnG90.Text = "G90" : btnG95.Text = "G95"
+            Select Case IdMaterial_Combustible
+                Case "1CH000001990" 'DB5
+                    btnDB5.Text = "DB5" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                Case "1CH000000147" 'G84
+                    btnG84.Text = "G84" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                Case "1CH000000148" 'G90
+                    btnG90.Text = "G90" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                Case "1CH000000149" 'G95
+                    btnG95.Text = "G95" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+            End Select
             btnAgregarDetalle.Select()
         Catch ex As Exception
             Throw ex
@@ -1110,15 +1114,22 @@ Public Class frm_EstacionServicio
         nud_Importe.ReadOnly = Not (chk_HabilitarImporte.Checked)
     End Sub
 
+    Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
+        IdTipoDocumento = "1CH000000026" : TipoDocumento = "FACTURA" : TipoDocumentoAbrev = "F."
+        mt_PaintBotones("TipoDocumento") : btnDocumento.Appearance.BackColor = Color.Blue
+        txt_Serie.Text = "F103" : txt_Serie.Focus()
+        cmb_Vehiculo.Focus()
+    End Sub
+
     Private Sub btnVale_Click(sender As Object, e As EventArgs) Handles btnBoleta.Click
-        IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA"
+        IdTipoDocumento = "1CH000000002" : TipoDocumento = "BOLETA DE VENTA" : TipoDocumentoAbrev = "BV."
         mt_PaintBotones("TipoDocumento") : btnBoleta.Appearance.BackColor = Color.Blue
         txt_Serie.Text = "B103" : txt_Serie.Focus()
         cmb_Vehiculo.Focus()
     End Sub
 
     Private Sub btnVarios_Click(sender As Object, e As EventArgs) Handles btnNotaDespacho.Click
-        IdTipoDocumento = "GCH000000001" : TipoDocumento = "NOTA DE DESPACHO"
+        IdTipoDocumento = "GCH000000001" : TipoDocumento = "NOTA DE DESPACHO" : TipoDocumentoAbrev = "NTD."
         mt_PaintBotones("TipoDocumento") : btnNotaDespacho.Appearance.BackColor = Color.Blue
         txt_Serie.Text = "0004" : txt_Serie.Focus()
         cmb_Vehiculo.Focus()
@@ -1155,6 +1166,61 @@ Public Class frm_EstacionServicio
 
     Private Sub cboProducto_ValueChanged(sender As Object, e As EventArgs) Handles cboProducto.ValueChanged
         Procesar_BotonCombustible(cboProducto.Value)
+    End Sub
+
+    Private Sub TipoVenta_KeyDown(sender As Object, e As KeyEventArgs) Handles btn_Contado.KeyDown, btnCredito.KeyDown, btnCalibracion.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnDocumento.Select()
+        End If
+    End Sub
+
+    Private Sub Documento_KeyDown(sender As Object, e As KeyEventArgs) Handles btnDocumento.KeyDown, btnBoleta.KeyDown, btnNotaDespacho.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            cmb_Piloto.Select()
+        End If
+    End Sub
+
+    Private Sub cmb_Lado_KeyDown(sender As Object, e As KeyEventArgs) Handles cmb_Lado.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            cboProducto.Select()
+        End If
+    End Sub
+
+    Private Sub cboProducto_KeyDown(sender As Object, e As KeyEventArgs) Handles cboProducto.KeyDown
+        nud_Cantidad.SelectAll()
+    End Sub
+
+    Private Sub nud_Cantidad_KeyDown(sender As Object, e As KeyEventArgs) Handles nud_Cantidad.KeyDown
+        btnAgregarDetalle.PerformClick()
+    End Sub
+
+    Private Sub btnNosotros_Click(sender As Object, e As EventArgs) Handles btnNosotros.Click
+        mt_Cargar_EmpresaAutomatico("NOSOTROS")
+    End Sub
+
+    Private Sub btn_Otros_Click(sender As Object, e As EventArgs) Handles btn_Otros.Click
+        mt_Cargar_EmpresaAutomatico("OTROS")
+    End Sub
+
+    Private Sub mt_Cargar_EmpresaAutomatico(ByVal Empresa As String)
+        Select Case Empresa
+            Case "NOSOTROS"
+                cmb_Cliente.Value = gs_IdClienteProveedorSistema
+                cmb_Cliente.Text = gs_TxtEmpresaSistema
+                'cmb_Direccion.Text = gs_DireccionEmpresaSistema
+                IdEmpresaCliente = gs_IdClienteProveedorSistema
+                mt_Validar_OperacionesCliente(IdEmpresaCliente)
+                Cargar_Pilotos()
+                Cargar_VehiculoCliente()
+                Cargar_Direcciones()
+            Case "OTROS"
+                cmb_Cliente.Value = "1CH000000003"
+                cmb_Cliente.Text = "OTROS"
+                'cmb_Direccion.Text = ""
+                IdEmpresaCliente = "1CH000000003"
+                mt_Validar_OperacionesCliente(IdEmpresaCliente)
+                Cargar_Direcciones()
+        End Select
     End Sub
 
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -1283,6 +1349,7 @@ Public Class frm_EstacionServicio
 
                 '' Validacion por Empresa
             End If
+
             mt_Validar_OperacionesCliente(cmb_Cliente.Value)
         Catch ex As Exception
             Throw ex
@@ -1292,13 +1359,18 @@ Public Class frm_EstacionServicio
     Private Sub mt_Validar_OperacionesCliente(IdCliente As String)
         Select Case IdCliente
             Case gs_IdClienteProveedorSistema
+                UltraGroupBox2.Enabled = True
                 btn_Contado.Enabled = False : btnCredito.Enabled = True : btnCalibracion.Enabled = True
+                btnCredito.PerformClick() : btnNotaDespacho.PerformClick() : txt_Serie.Focus() : txt_Serie.SelectAll() : cmb_Vehiculo.Focus() : cmb_Vehiculo.SelectAll()
             Case "1CH000000003"
+                UltraGroupBox2.Enabled = True
                 btn_Contado.Enabled = True : btnCredito.Enabled = False : btnCalibracion.Enabled = False
-                btn_Contado.PerformClick() : btnBoleta.PerformClick() : txt_Serie.Focus() : txt_Serie.SelectAll() : cmb_Vehiculo.Focus()
+                btn_Contado.PerformClick() : btnBoleta.PerformClick() : txt_Serie.Focus() : txt_Serie.SelectAll() : cmb_Vehiculo.Focus() : cmb_Vehiculo.SelectAll()
             Case ""
+                UltraGroupBox2.Enabled = False
                 btn_Contado.Enabled = True : btnCredito.Enabled = True : btnCalibracion.Enabled = True
             Case Else
+                UltraGroupBox2.Enabled = True
                 btn_Contado.Enabled = True : btnCredito.Enabled = True : btnCalibracion.Enabled = True
         End Select
     End Sub
@@ -1496,6 +1568,27 @@ Public Class frm_EstacionServicio
             Throw ex
         End Try
     End Function
+
+    Private Sub mt_Quitar_Detalle()
+        Dim oeOrdenComercialMaterial As New e_OrdenVentaMaterial
+        If udg_Detalle.Selected.Rows.Count > 0 Then
+            oeOrdenComercialMaterial = New e_OrdenVentaMaterial
+            oeOrdenComercialMaterial = udg_Detalle.ActiveRow.ListObject
+            If oeOrdenComercialMaterial.TipoOperacion = "I" Then
+                OrdenVenta.lstOrdenComercialMaterial.Remove(oeOrdenComercialMaterial)
+            End If
+        End If
+        udg_Detalle.DataBind()
+        mt_CalcularTotalOrden()
+    End Sub
+
+    Private Sub udg_Detalle_KeyDown(sender As Object, e As KeyEventArgs) Handles udg_Detalle.KeyDown
+        If udg_Detalle.Selected.Rows.Count > 0 Then
+            If e.KeyCode = Keys.Delete Then
+                mt_Quitar_Detalle()
+            End If
+        End If
+    End Sub
 
     ''REVISAR:
     'Public Sub ObtenerStockUltPrecio()

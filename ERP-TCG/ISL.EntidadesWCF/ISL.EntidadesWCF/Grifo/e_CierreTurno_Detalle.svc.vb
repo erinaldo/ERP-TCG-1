@@ -41,6 +41,10 @@ Public Class e_CierreTurno_Detalle
     Private _ValorReal As Double
     Private _ValorAux1 As Double
     Private _ValorAux2 As Double
+    Private _ValorAux3 As Double
+    Private _ValorAux4 As Double
+    Private _ValorAux5 As Double
+    Private _ValorAux6 As Double
     Private _Glosa As String
     Private _UsuarioCrea As String
     Private _FechaCrea As Date
@@ -68,6 +72,10 @@ Public Class e_CierreTurno_Detalle
         _ValorReal = 0
         _ValorAux1 = 0
         _ValorAux2 = 0
+        _ValorAux3 = 0
+        _ValorAux4 = 0
+        _ValorAux5 = 0
+        _ValorAux6 = 0
         _Glosa = ""
         _UsuarioCrea = ""
         _FechaCrea = #01/01/1901#
@@ -93,6 +101,10 @@ Public Class e_CierreTurno_Detalle
           , ByVal ln_ValorReal As Double _
           , ByVal ln_ValorAux1 As Double _
           , ByVal ln_ValorAux2 As Double _
+                    , ByVal ln_ValorAux3 As Double _
+          , ByVal ln_ValorAux4 As Double _
+          , ByVal ln_ValorAux5 As Double _
+          , ByVal ln_ValorAux6 As Double _
           , ByVal ls_Glosa As String _
           , ByVal ls_UsuarioCrea As String _
           , ByVal ld_FechaCrea As Date _
@@ -116,6 +128,10 @@ Public Class e_CierreTurno_Detalle
         _ValorReal = ln_ValorReal
         _ValorAux1 = ln_ValorAux1
         _ValorAux2 = ln_ValorAux2
+        _ValorAux3 = ln_ValorAux3
+        _ValorAux4 = ln_ValorAux4
+        _ValorAux5 = ln_ValorAux5
+        _ValorAux6 = ln_ValorAux6
         _Glosa = ls_Glosa
         _UsuarioCrea = ls_UsuarioCrea
         _FechaCrea = ld_FechaCrea
@@ -274,7 +290,38 @@ Public Class e_CierreTurno_Detalle
             _ValorAux2 = value
         End Set
     End Property
-
+    Public Property ValorAux3() As Double
+        Get
+            Return _ValorAux3
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux3 = value
+        End Set
+    End Property
+    Public Property ValorAux4() As Double
+        Get
+            Return _ValorAux4
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux4 = value
+        End Set
+    End Property
+    Public Property ValorAux5() As Double
+        Get
+            Return _ValorAux5
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux5 = value
+        End Set
+    End Property
+    Public Property ValorAux6() As Double
+        Get
+            Return _ValorAux6
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux6 = value
+        End Set
+    End Property
     Public Property Glosa() As String
         Get
             Return _Glosa

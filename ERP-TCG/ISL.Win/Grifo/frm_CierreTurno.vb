@@ -52,7 +52,7 @@ Public Class frm_CierreTurno
         Try
             If swNuevo = False Then Exit Sub
             Operacion = "Nuevo"
-            gmt_MostrarTabs(1, ficOrdenComercial, 1)
+            gmt_MostrarTabs(1, tab_Principal, 1)
             mt_Inicializar()
             TurnoActivo = fc_Inicializar_Turno("I")
             mt_ControlBotoneria()
@@ -67,7 +67,7 @@ Public Class frm_CierreTurno
         Try
             Operacion = "Editar"
             If griOrdenComercial.Selected.Rows.Count > 0 Then
-                gmt_MostrarTabs(1, ficOrdenComercial, 1)
+                gmt_MostrarTabs(1, tab_Principal, 1)
                 mt_Inicializar()
                 TurnoActivo.TipoOperacion = "" : TurnoActivo.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
                 TurnoActivo = dTurno.Obtener(TurnoActivo)
@@ -85,7 +85,7 @@ Public Class frm_CierreTurno
     Public Overrides Sub Guardar()
         Try
             If fc_Guardar() Then
-                gmt_MostrarTabs(0, ficOrdenComercial, 2)
+                gmt_MostrarTabs(0, tab_Principal, 2)
                 Consultar(True)
             End If
         Catch ex As Exception
@@ -99,7 +99,7 @@ Public Class frm_CierreTurno
             '    Case Windows.Forms.DialogResult.Yes
             '        Guardar()
             '    Case Windows.Forms.DialogResult.No
-            gmt_MostrarTabs(0, ficOrdenComercial, 2)
+            gmt_MostrarTabs(0, tab_Principal, 2)
             Consultar(True)
             'End Select
         Catch ex As Exception
@@ -138,12 +138,39 @@ Public Class frm_CierreTurno
 
     Public Overrides Sub Exportar()
         Try
-            If griOrdenComercial.Rows.Count = 0 Then Throw New Exception("No hay ningún dato para exportar al Excel")
-            Exportar_Excel(griOrdenComercial, Me.Text)
-            MyBase.Exportar()
+            Select Case tab_Principal.SelectedTab.Index
+                Case 0
+                    If griOrdenComercial.Rows.Count > 0 Then Exportar_Excel(griOrdenComercial)
+                Case 1
+                    Select Case tab_Detalles.SelectedTab.Index
+                        Case 0 ' Precios de combustibles
+                            If udg_Combustibles.Rows.Count > 0 Then Exportar_Excel(udg_Combustibles)
+                        Case 1 ' Contometros
+                            If udg_ContometroAnalogico.Rows.Count > 0 Then Exportar_Excel(udg_ContometroAnalogico)
+                        Case 2 ' Contometro Digital
+                            If udg_ContometroDigital.Rows.Count > 0 Then Exportar_Excel(udg_ContometroDigital)
+                        Case 3 ' Varillajes
+                            If udg_Almacenes.Rows.Count > 0 Then Exportar_Excel(udg_Almacenes)
+                        Case 4 ' Resumen de ventas
+                            If udg_VentasxCombustible.Rows.Count > 0 Then Exportar_Excel(udg_VentasxCombustible)
+                        Case 5
+                            If udg_ResumenVentas.Rows.Count > 0 Then Exportar_Excel(udg_ResumenVentas)
+                        Case 6 ' Detalle de ventas
+                            If udg_DetalleVenta.Rows.Count > 0 Then Exportar_Excel(udg_DetalleVenta)
+                        Case 7 ' Ventas anuladas
+                            If udg_VentasAnuladas.Rows.Count > 0 Then Exportar_Excel(udg_VentasAnuladas)
+                        Case 8 'Calibraciones
+                            If udg_Calibraciones.Rows.Count > 0 Then Exportar_Excel(udg_Calibraciones)
+                        Case 9 ' Trabajadores
+                            If udg_Trabajadores.Rows.Count > 0 Then Exportar_Excel(udg_Trabajadores)
+                    End Select
+            End Select
+            'ControlBotonesOC()
         Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+            mensajeEmergente.Problema(ex.Message, True)
         End Try
+        MyBase.Exportar()
+
     End Sub
 
     Public Overrides Sub Imprimir()
@@ -188,7 +215,7 @@ Public Class frm_CierreTurno
 
         dtpFechaInicio.Value = ObtenerFechaServidor.Date.AddDays(-7)
         dtpFechaFin.Value = ObtenerFechaServidor.Date
-        UltraTabControl1.Tabs(0).Selected = True
+        tab_Detalles.Tabs(0).Selected = True
 
     End Sub
 
@@ -361,6 +388,7 @@ Public Class frm_CierreTurno
                 udg_Combustibles.DataSource = .Detalles.Where(Function(it) it.Rubro = "PRECIO_COMBUSTIBLE").ToList : udg_Combustibles.DataBind()
                 udg_VentasxCombustible.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
                 udg_ResumenVentas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList : udg_ResumenVentas.DataBind()
+                udg_DetalleVenta.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_DETALLADO").ToList : udg_DetalleVenta.DataBind()
                 udg_VentasAnuladas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
                 udg_Calibraciones.DataSource = .Detalles.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
             End With
@@ -428,7 +456,9 @@ Public Class frm_CierreTurno
                         Detalle.ValorInicial = Detalle.ValorFinal
                         Detalle.ValorFinal = 0
                         Detalle.ValorDiferencia = 0
-                    Case "VENTASXCOMBUSTIBLE", "VENTAS_ANULADAS", "CALIBRACIONES"
+                    Case "PRECIO_COMBUSTIBLE"
+                        Detalle.ValorERP = Detalle.ValorERP
+                    Case Else
                         Detalle.ValorERP = 0
                 End Select
             Next
@@ -468,6 +498,7 @@ Public Class frm_CierreTurno
             udg_ContometroAnalogico.UpdateData()
             udg_VentasxCombustible.UpdateData()
             udg_ResumenVentas.UpdateData()
+            udg_DetalleVenta.UpdateData()
             udg_VentasAnuladas.UpdateData()
             udg_Calibraciones.UpdateData()
             udg_Almacenes.UpdateData()
@@ -499,18 +530,18 @@ Public Class frm_CierreTurno
 #Region "Metodos"
 
     Private Sub mt_ControlBotoneria()
-        Select Case ficOrdenComercial.SelectedTab.Index
+        Select Case tab_Principal.SelectedTab.Index
             Case 0
                 If griOrdenComercial.Rows.Count > 0 Then
-                    gmt_ControlBoton(1, 1, 1, 0, 0, 0, 1, 0, 1)
+                    gmt_ControlBoton(1, 1, 1, 0, 0, 0, 1, 1, 1)
                 Else
                     gmt_ControlBoton(1, 1)
                 End If
             Case 1
                 If TurnoActivo.Estado = "ABIERTO" Or TurnoActivo.Estado = "" Then
-                    gmt_ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 1)
+                    gmt_ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 1)
                 Else
-                    gmt_ControlBoton(0, 0, 0, 0, 1, 0, 0, 0, 1)
+                    gmt_ControlBoton(0, 0, 0, 0, 1, 0, 0, 1, 1)
                 End If
         End Select
     End Sub
@@ -570,10 +601,15 @@ Public Class frm_CierreTurno
             .Columns("ValorInicial").Header.Caption = "V.Inicial" : .Columns("ValorInicial").CellAppearance.BackColor = Color_ValorInicial
             .Columns("ValorFinal").Header.Caption = "V.Final" : .Columns("ValorFinal").CellAppearance.BackColor = Color_ValorFinal
             .Columns("ValorDiferencia").Header.Caption = "Diferencia"
+            .Columns("ValorAux1").Header.Caption = "Despacho" : .Columns("ValorAux1").CellAppearance.BackColor = Color_Galones
+            .Columns("ValorAux2").Header.Caption = "Margen"
         End With
         mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorInicial")
         mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorFinal")
         mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorDiferencia")
+        mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorAux1")
+        mt_Aplicar_FormatoNumerico(udg_Almacenes, "ValorAux2")
+        CalcularTotales(udg_Almacenes, "ValorDiferencia", "ValorAux1", "ValorAux2")
 
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_ContometroDigital)
@@ -636,6 +672,21 @@ Public Class frm_CierreTurno
         mt_Aplicar_FormatoNumerico(udg_ResumenVentas, "ValorReal")
         CalcularTotales(udg_ResumenVentas, "ValorERP", "ValorReal")
 
+        '' Detalle de Ventas
+        mt_Ocultar_Columnas(udg_DetalleVenta)
+        With udg_DetalleVenta.DisplayLayout.Bands(0)
+            .Columns("Grupo").Header.Caption = "Venta" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 250
+            .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+            .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
+            .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+            .Columns("ValorAux1").Header.Caption = "Precio"
+            .Columns("ValorERP").Header.Caption = "Importe"
+        End With
+        mt_Aplicar_FormatoNumerico(udg_DetalleVenta, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_DetalleVenta, "ValorReal")
+        mt_Aplicar_FormatoNumerico(udg_DetalleVenta, "ValorAux1")
+        CalcularTotales(udg_DetalleVenta, "ValorERP", "ValorReal")
+
         ''Ventas Anuladas
         mt_Ocultar_Columnas(udg_VentasAnuladas)
         With udg_VentasAnuladas.DisplayLayout.Bands(0)
@@ -673,7 +724,7 @@ Public Class frm_CierreTurno
     Private Sub mt_Aplicar_FormatoNumerico(UDG As UltraGrid, Columna As String)
         With UDG.DisplayLayout.Bands(0)
             .Columns(Columna).Hidden = False
-            .Columns(Columna).Width = 50
+            .Columns(Columna).Width = 80
             .Columns(Columna).Format = "#,###,###,###0.000"
             .Columns(Columna).CellAppearance.TextHAlign = Infragistics.Win.HAlign.Right
         End With
@@ -742,6 +793,7 @@ Public Class frm_CierreTurno
         ListaDetallesDinamicos = dTurnoDetalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "CSM", .IdCierreTurno = TurnoActivo.Id})
         If ListaDetallesDinamicos.Count > 0 Then
             udg_VentasxCombustible.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
+            udg_DetalleVenta.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_DETALLADO").ToList : udg_DetalleVenta.DataBind()
             udg_ResumenVentas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList : udg_ResumenVentas.DataBind()
             udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
             udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
@@ -753,6 +805,8 @@ Public Class frm_CierreTurno
     End Sub
 
     Private Sub mt_Actualizar_Columnas()
+        '' ValorAux1 -> Cantidad de Galones (Ventas de Combustible)
+        '' ValorAux2 -> Cantidad de Galones (ValorFinal - Valor Inicial - Despachado)
         Try
             For Each Item In TurnoActivo.Detalles
                 Item.ValorDiferencia = Item.ValorFinal - Item.ValorInicial
@@ -760,11 +814,11 @@ Public Class frm_CierreTurno
 
             If ListaDetallesDinamicos.Count > 0 Then
                 '' Inicializar
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
                     Cronometro.ValorAux1 = 0
                 Next
                 '' Acumular Cantidad Vendida
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
                     For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList
                         If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
                             Cronometro.ValorAux1 += Venta.ValorReal
@@ -772,7 +826,7 @@ Public Class frm_CierreTurno
                     Next
                 Next
                 '' Calcular Margen (Contometro - Despacho)
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
                     Cronometro.ValorAux2 = Cronometro.ValorDiferencia - Cronometro.ValorAux1
                 Next
             End If

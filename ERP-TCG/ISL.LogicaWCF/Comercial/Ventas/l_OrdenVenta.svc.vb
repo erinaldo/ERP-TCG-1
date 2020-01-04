@@ -69,15 +69,6 @@ Public Class l_OrdenVenta
             Using TransScope As New TransactionScope()
                 If Validar(OrdenVenta) Then
                     OrdenVenta = odOrdenComercial.Guardar_VentaRapida(OrdenVenta)
-                    'If OrdenVenta.oeDocumento.TipoOperacion <> "" Then
-                    '    For Each oe In OrdenVenta.oeDocumento.lo_OrdenDocumento
-                    '        oe.IdEmpresaSistema = OrdenVenta.IdEmpresaSistema
-                    '        oe.PrefijoID = OrdenVenta.PrefijoID
-                    '        oe.IdOrden = OrdenVenta.Id
-                    '        'dORdenDocumento.Guardar(oe)
-                    '    Next
-
-                    'End If
                 End If
                 TransScope.Complete()
             End Using

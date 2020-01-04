@@ -43,6 +43,7 @@ Public Class e_OrdenVenta
     Private _IdPiloto As String
     Private _IdPlaca As String
     Private _Kilometraje As Double
+    Private _GlosaResumen As String
 
     Public TipoOperacion As String
     Public lstOrdenComercialMaterial As New List(Of e_OrdenVentaMaterial)
@@ -402,6 +403,15 @@ Public Class e_OrdenVenta
             _Kilometraje = value
         End Set
     End Property
+
+    Public Property GlosaResumen() As String
+        Get
+            Return _GlosaResumen
+        End Get
+        Set(ByVal value As String)
+            _GlosaResumen = value
+        End Set
+    End Property
 #End Region
 
 #Region "Constructor"
@@ -458,7 +468,8 @@ Public Class e_OrdenVenta
               , ByVal ls_IdTipoVenta As String _
               , ByVal ls_IdPiloto As String _
               , ByVal ls_IdPlaca As String _
-              , ByVal ln_Kilometraje As String)
+              , ByVal ln_Kilometraje As String _
+              , ByVal ls_GlosaResumen As String)
         _id = ls_Id
         '_empresasis.Id = ls_IdEmpresaSis
         '_sucursal.Id = ls_IdSucursal
@@ -496,6 +507,7 @@ Public Class e_OrdenVenta
         _IdPiloto = ls_IdPiloto
         _IdPlaca = ls_IdPlaca
         _Kilometraje = ln_Kilometraje
+        _GlosaResumen = ls_GlosaResumen
     End Sub
 
 

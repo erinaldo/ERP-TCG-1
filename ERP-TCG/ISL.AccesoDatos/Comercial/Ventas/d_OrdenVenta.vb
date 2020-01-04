@@ -53,7 +53,8 @@ Public Class d_OrdenVenta
                               , o_fila("IdTipoVenta").ToString _
                               , o_fila("IdPiloto").ToString _
                               , o_fila("IdPlaca").ToString _
-                              , o_fila("Kilometraje").ToString)
+                              , o_fila("Kilometraje").ToString _
+                              , o_fila("GlosaResumen").ToString)
             Return oeOrdenComercial
         Catch ex As Exception
             Throw ex
@@ -159,7 +160,8 @@ Public Class d_OrdenVenta
                             , .IdTipoVenta _
                             , .IdPiloto _
                             , .IdPlaca _
-                            , .Kilometraje
+                            , .Kilometraje _
+                            , .GlosaResumen
                             ).ToString.Split("_")
 
                     .Id = stResultado(0)
@@ -240,27 +242,45 @@ Public Class d_OrdenVenta
                             , .IdTipoVenta _
                             , .IdPiloto _
                             , .IdPlaca _
-                            , .Kilometraje
+                            , .Kilometraje _
+                            , .GlosaResumen
                             ).ToString.Split("_")
                     .Id = stResultado(0)
                     aux = Obtener(New e_OrdenVenta With {.TipoOperacion = "", .Id = stResultado(0)})
                     .OrdenComercial = aux.OrdenComercial
                 End With
                 With OrdenVenta
+                    '' =========================================================================== 
                     '' Detalles
                     For Each Detalle In .lstOrdenComercialMaterial
                         If Detalle.TipoOperacion = "" Then Detalle.TipoOperacion = "A"
                         Detalle.IdOrdenComercial = OrdenVenta.Id
                         odOrdenComercialMaterial.Guardar(Detalle)
                     Next
+                    '' =========================================================================== 
                     '' OrdenSalida
                     If .oeOrdenSalida.TipoOperacion <> "" Then
                         .oeOrdenSalida.Referencia = OrdenVenta.OrdenComercial
                         .oeOrdenSalida.TipoReferencia = "ORDEN VENTA"
                         .oeOrdenSalida = odOrden.Guardar(.oeOrdenSalida)
                     End If
+                    '' =========================================================================== 
                     '' Documento
+                    .oeDocumento.Glosa = .Id
                     .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
+                    '' =========================================================================== 
+                    '' Orden Documento
+                    Dim OrdenDocumento As New e_Orden_Documento, odOrden_Documento As New d_Orden_Documento
+                    OrdenDocumento.TipoOperacion = "I"
+                    OrdenDocumento.Id = ""
+                    OrdenDocumento.IdOrden = stResultado(0)
+                    OrdenDocumento.IdTipoOrden = "1CH000000004"
+                    OrdenDocumento.IdDocumento = .oeDocumento.Id
+                    OrdenDocumento.Activo = .oeDocumento.Activo
+                    OrdenDocumento.UsuarioCreacion = .oeDocumento.IdUsuarioCrea
+                    OrdenDocumento.IdTipoDocumento = .oeDocumento.IdTipoDocumento
+                    OrdenDocumento.PrefijoID = .oeDocumento.PrefijoID '@0001
+                    odOrden_Documento.Guardar(OrdenDocumento)
                 End With
                 transScope.Complete()
             End Using

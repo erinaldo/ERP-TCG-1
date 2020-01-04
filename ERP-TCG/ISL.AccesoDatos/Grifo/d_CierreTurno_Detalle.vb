@@ -26,6 +26,10 @@ Public Class d_CierreTurno_Detalle
                          , o_fila("ValorReal").ToString _
                          , o_fila("ValorAux1").ToString _
                          , o_fila("ValorAux2").ToString _
+                           , o_fila("ValorAux3").ToString _
+                         , o_fila("ValorAux4").ToString _
+                         , o_fila("ValorAux5").ToString _
+                         , o_fila("ValorAux6").ToString _
                          , o_fila("Glosa").ToString _
                          , o_fila("UsuarioCrea").ToString _
                          , o_fila("FechaCrea").ToString _
@@ -63,6 +67,10 @@ Public Class d_CierreTurno_Detalle
                 , .ValorReal _
                 , .ValorAux1 _
                 , .ValorAux2 _
+                                , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
+                , .ValorAux6 _
                 , .Glosa _
                 , .UsuarioCrea _
                 , .FechaCrea _
@@ -130,6 +138,10 @@ Public Class d_CierreTurno_Detalle
                 , .ValorReal _
                 , .ValorAux1 _
                 , .ValorAux2 _
+                                , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
+                , .ValorAux6 _
                 , .Glosa _
                 , .UsuarioCrea _
                 , .FechaCrea _
@@ -150,7 +162,7 @@ Public Class d_CierreTurno_Detalle
     Public Function Eliminar(ByVal oeCierreTurno_Detalle As e_CierreTurno_Detalle) As Boolean
         Try
             With oeCierreTurno_Detalle
-                Sql.ExecuteNonQuery("[CMP].[Sp_CierreTurno_Detalle_IAE]" _
+                SQL.ExecuteNonQuery("[CMP].[Sp_CierreTurno_Detalle_IAE]" _
                 , "E" _
                 , "" _
                 , .Id _
@@ -169,6 +181,10 @@ Public Class d_CierreTurno_Detalle
                 , .ValorReal _
                 , .ValorAux1 _
                 , .ValorAux2 _
+                                , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
+                , .ValorAux6 _
                 , .Glosa _
                 , .UsuarioCrea _
                 , .FechaCrea _
