@@ -4134,6 +4134,18 @@ Public Class frm_Guias
         End Try
     End Sub
 
+    Private Sub cboSubContrata_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles cboSubContrata.EditorButtonClick
+        Try
+            ClientesPublic = New List(Of e_Combo)
+            oeCombo = New e_Combo
+            oeCombo.Nombre = "Clientes"
+            ClientesPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
+            LlenarComboMaestro(cboSubContrata, ClientesPublic, 0)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub cboPilotoTercero_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles cboPilotoTercero.EditorButtonClick
         Try
             ugb_Espera.Visible = True
