@@ -290,6 +290,7 @@ Public Class frm_Guias
                 'ComboGrilla()
                 LlenarComboMaestro(cboRemitente, ClientesPublic, 0)
                 LlenarComboMaestro(cboDestinatario, ClientesPublic, 0)
+                cboSubContrata.Text = "NINGUNO  ,"
                 Operacion = "Editar"
                 tabGrt.Tabs(0).Selected = True
                 If EditarGuia() Then
