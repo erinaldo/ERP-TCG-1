@@ -78,7 +78,10 @@ Public Class frm_Cobranza
             End If
 
             l_FuncionesGenerales.ValidarNumero(DecTC.Value, "Tipo de Cambio")
-            l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+
+            If oeCtaCble.Cuenta <> "10111" Then
+                l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+            End If
 
             If Double.Parse(lblTotalesMN.Text) < 0 Then Throw New Exception("El importe debe ser mayor a 0")
 
