@@ -889,11 +889,21 @@ Public Class frm_Cobranza
                     oeCtaCble = .Items(i).ListObject
                 End If
             End With
+            'Me.cboCuentaBancaria.Enabled = True
+            Me.cboCuentaBancaria.ReadOnly = False
             If cboCuentaContable.Enabled Then
                 If oeCtaCble.Cuenta = "10111" Then
+                    Dim _oeCajaUsuario As e_CajaUsuario
+                    _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+                    Me.lblCtaBancaria.Text = "Cajas:"
                     mt_llenarcajas()
+                    If _oeCajaUsuario.IdCaja <> "" Then
+                        Me.cboCuentaBancaria.Value = _oeCajaUsuario.IdCaja
+                        Me.cboCuentaBancaria.ReadOnly = True
+                    End If
                 Else
                     LlenaCuentaBancaria()
+                    Me.lblCtaBancaria.Text = "Cuentas Bancarias:"
                 End If
             End If
         Catch ex As Exception
