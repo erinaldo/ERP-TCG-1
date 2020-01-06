@@ -42,6 +42,14 @@ Public Class l_Venta
         End Try
     End Function
 
+    Public Function ObtenerIdDocumento(ByVal oeVenta As e_Venta) As e_Venta Implements Il_Venta.ObtenerIdDocumento
+        Try
+            Return odVenta.ObtenerConIdDocumento(oeVenta)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
     Public Function Validar(ByVal oeVenta As e_Venta) As Boolean Implements Il_Venta.Validar
         Try
             With oeVenta

@@ -37,6 +37,9 @@ Public Interface Il_MovimientoDocumento
     <OperationContract()>
     Function Guardar(ByVal oeMovimientoDocumento As e_MovimientoDocumento, Optional oeAnticipo As e_MovimientoDocumento = Nothing) As e_MovimientoDocumento
 
+    <OperationContract()>
+    Function GuardarCanje(oeMovimientoDocumento As e_MovimientoDocumento, oeNotaDespacho As e_MovimientoDocumento) As e_MovimientoDocumento
+
     <OperationContract()> _
     Function VerificarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 

@@ -653,6 +653,32 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
+    Public Function GuardarCanje(oeMovimientoDocumento As e_MovimientoDocumento, oeNotaDespacho As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.GuardarCanje
+        Try
+            l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.Serie, "Agregue Serie al Documento.")
+            l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.Numero, "Agregue Número al Documento.")
+
+            oeMovimientoDocumento = odMovimientoDocumento.Guardar(oeMovimientoDocumento, New e_MovimientoDocumento)
+
+            Dim oeRefAsoc As New e_ReferenciaAsociada
+            Dim odRefAsoc As New d_ReferenciaAsociada
+            With oeRefAsoc
+                .TipoOperacion = "I"
+                .IdEmpresaSis = oeMovimientoDocumento.IdEmpresaSis
+                .PrefijoID = oeMovimientoDocumento.PrefijoID
+                .IdTablaPrincipal = oeNotaDespacho.Id
+                .IdTablaAsociada = oeMovimientoDocumento.Id
+                .TipoRelacion = 0
+                .Glosa = "CANJE ND X COMPROBANTE DE VENTA"
+                .UsuarioCreacion = oeMovimientoDocumento.IdUsuarioCrea
+            End With
+            odRefAsoc.Guardar(oeRefAsoc)
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return oeMovimientoDocumento
+    End Function
+
     Public Function ValidarTipoCambio(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarTipoCambio
         Try
             If oeMovimientoDocumento.TipoCambio = 0 Then Throw New Exception("Tipo de Cambio no puede Ser 0. Verificar")

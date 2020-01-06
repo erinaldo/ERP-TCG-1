@@ -1450,7 +1450,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function FormatoDocumento(ByVal TextoF As String, _
+    Public Function FormatoDocumento(ByVal TextoF As String,
                                     ByVal Cantidad As Integer) As String
         Dim ln As String = ""
         For i As Integer = 1 To Cantidad - Len(TextoF)
@@ -1459,7 +1459,7 @@ Module m_Funciones
         Return ln + TextoF
     End Function
 
-    Public Function FormatoSerieElectronica(ByVal TextoF As String, _
+    Public Function FormatoSerieElectronica(ByVal TextoF As String,
                                     ByVal Tipo As String) As String
         Dim ln As String = ""
         For i As Integer = 1 To 3 - Len(TextoF)
@@ -1508,11 +1508,11 @@ Module m_Funciones
         Return True
     End Function
 
-    Public Function CrearComboGridPorCelda(ByVal stNomColumnaGrilla As String, _
-                           ByVal stNomColumnaTabla As String, _
-                           ByVal inNroFila As Integer, _
-                           ByVal stGrilla As UltraWinGrid.UltraGrid, _
-                           ByVal Dt As DataTable, _
+    Public Function CrearComboGridPorCelda(ByVal stNomColumnaGrilla As String,
+                           ByVal stNomColumnaTabla As String,
+                           ByVal inNroFila As Integer,
+                           ByVal stGrilla As UltraWinGrid.UltraGrid,
+                           ByVal Dt As DataTable,
                            ByVal boDropDownList As Boolean)
         'Si el Grid ya sido creado o igualada un Datatable 
         With stGrilla.DisplayLayout
@@ -1755,7 +1755,7 @@ Module m_Funciones
         Return cboMes
     End Function
 
-    Public Function LlenarCombo(ByVal Combo As ISL.Controles.Combo, _
+    Public Function LlenarCombo(ByVal Combo As ISL.Controles.Combo,
                                         ByVal Texto As String, ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Combo.DataSource = DataSource
         Combo.DisplayMember = Texto
@@ -1763,7 +1763,7 @@ Module m_Funciones
         Return True
     End Function
 
-    Public Function LlenarCombo(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, _
+    Public Function LlenarCombo(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
                                      ByVal Texto As String, ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Combo.DataSource = DataSource
         Combo.DisplayMember = Texto
@@ -1771,7 +1771,7 @@ Module m_Funciones
         Return True
     End Function
 
-    Public Function ComboNormal(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, _
+    Public Function ComboNormal(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
                                   ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Combo.DataSource = DataSource
         Combo.DisplayMember = "NOMBRE"
@@ -1780,21 +1780,21 @@ Module m_Funciones
         Return True
     End Function
 
-    Public Function LlenarComboMaestro(ByVal Combo As Infragistics.Win.UltraWinGrid.UltraCombo, _
+    Public Function LlenarComboMaestro(ByVal Combo As Infragistics.Win.UltraWinGrid.UltraCombo,
                                    ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Combo.DataSource = Nothing
         Combo.DataSource = DataSource
         Return True
     End Function
 
-    Public Function LlenarComboMaestro(ByVal Combo As ISL.Controles.ComboMaestros, _
+    Public Function LlenarComboMaestro(ByVal Combo As ISL.Controles.ComboMaestros,
                                    ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Combo.DataSource = DataSource
         Combo.SelectedIndex = SelectedIndex
         Return True
     End Function
 
-    Public Function LlenarComboMaestro(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, _
+    Public Function LlenarComboMaestro(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
                                   ByVal DataSource As Object, ByVal SelectedIndex As Integer)
         Try
             Combo.DataSource = DataSource
@@ -1929,6 +1929,19 @@ Module m_Funciones
                 oeProveedor.Id = IdProveedor
                 combo.DataSource = olProveedor.Listar(oeProveedor)
             End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub ListarClienteProveedor(ByVal combo As Infragistics.Win.UltraWinGrid.UltraCombo, IdProveedor As String)
+        Try
+            Cursor.Current = Cursors.WaitCursor
+            Dim oeClienteProveedor As New e_ClienteProveedor
+            Dim olClienteProveedor = New l_ClienteProveedor
+            combo.DataSource = Nothing
+            oeClienteProveedor.Id = IdProveedor
+            combo.DataSource = olClienteProveedor.Listar(oeClienteProveedor)
         Catch ex As Exception
             Throw ex
         End Try

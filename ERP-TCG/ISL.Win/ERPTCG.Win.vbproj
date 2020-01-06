@@ -406,6 +406,12 @@
     <Compile Include="Comercial\Ventas\frm_GRR_Venta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Contabilidad\frm_CanjeND_F.Designer.vb">
+      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\frm_CanjeND_F.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\frm_Calibraciones.Designer.vb">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
     </Compile>
@@ -5782,8 +5788,10 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_DetalleDocumento.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MaterialAlmacen.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MovimientoDocumento.datasource" />
     <None Include="packages.config" />
     <None Include="Service References\WCF_CpeIndu\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
@@ -5955,6 +5963,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_GRR_Venta.resx">
       <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\frm_CanjeND_F.resx">
+      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_Calibraciones.resx">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
