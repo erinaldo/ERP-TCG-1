@@ -1518,6 +1518,8 @@ Public Class frm_EstacionServicio
                     .KilometrosTanqueo = IIf(OrdenVenta.Kilometraje = 0, 1, OrdenVenta.Kilometraje)
                     .IdVehiculo = IIf(cmb_Vehiculo.Value <> "", cmb_Vehiculo.Value, cmb_Vehiculo.Text)
                     .NroVale = OrdenVenta.Id
+                    .IdPiloto = OrdenVenta.IdPiloto
+                    .Glosa = OrdenVenta.GlosaResumen
                     .IdGrifo = "1SI000004245" 'Inversiones y Servicios Alex y Lalito
                     .IdDireccion = "CHT0000001"
                     .IdAlmacen = ItemVenta.IdAlmacen : .IdSubAlmacen = ItemVenta.IdSubAlmacen
