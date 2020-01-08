@@ -26,7 +26,11 @@ Public Class frm_Cobranza
                 With oeMovCajaBanco
                     .IdFlujoCaja = cboFlujoGasto.Value
                     .NroBoucher = txtVoucher.Text
-                    .IdCuentaBancaria = oeCtaBancaria.Id
+                    If oeCtaCble.Cuenta = "10111" Then
+                        .IdCaja = oeCtaBancaria.Id
+                    Else
+                        .IdCuentaBancaria = oeCtaBancaria.Id
+                    End If
                     .Fecha = Fecha.Value
                     .IdMedioPago = cboMedio.Value
                     .IdPeriodoConcilia = ""
@@ -74,7 +78,10 @@ Public Class frm_Cobranza
             End If
 
             l_FuncionesGenerales.ValidarNumero(DecTC.Value, "Tipo de Cambio")
-            l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+
+            If oeCtaCble.Cuenta <> "10111" Then
+                l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+            End If
 
             If Double.Parse(lblTotalesMN.Text) < 0 Then Throw New Exception("El importe debe ser mayor a 0")
 
@@ -648,12 +655,36 @@ Public Class frm_Cobranza
 
     Private Sub Configurar_Grilla(grilla As UltraGrid)
         With grilla
-            OcultarColumna(grilla, True, "Retencion_Saldo", "Retencion_Letra", "Retencion", "IndDetalleGlosa", "MontoCanje", "IdUsuarioCrea", _
+            OcultarColumna(grilla, True, "Retencion_Saldo", "Retencion_Letra", "Retencion", "IndDetalleGlosa", "MontoCanje", "IdUsuarioCrea",
                       "IdTipoBien", "OrdenCompra", "FechaCreacion", "IndAnexo", "CodMotivo", "IndElectronico", "EstadoSunat")
             .DisplayLayout.Bands(0).Columns("Monto_Anticipo").CellAppearance.TextHAlign = Infragistics.Win.HAlign.Right
             .DisplayLayout.Bands(0).Columns("Monto_Anticipo").Format = "#,##0.00"
         End With
     End Sub
+
+    Private Sub mt_llenarcajas()
+        Dim leCaja As New List(Of e_Caja)
+        Dim olCaja As New l_Caja
+        'If IndMonedaExtrangera = 0 Then
+        'leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda = "1CH01" And item.IdCuentaContable = lsCta).ToList
+        leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
+        'Else
+        ' leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda <> "1CH01" And item.IdCuentaContable = lsCta).ToList
+        'End If
+        If leCaja.Count > 0 Then
+            Me.cboCuentaBancaria.Enabled = True
+            With cboCuentaBancaria
+                .ValueMember = "Id"
+                .DisplayMember = "Nombre"
+                .DataSource = leCaja
+            End With
+        Else
+            cboCuentaBancaria.SelectedIndex = -1
+            cboCuentaBancaria.Enabled = False
+        End If
+    End Sub
+
+
 #End Region
 
 #Region "Eventos del Formulario"
@@ -818,13 +849,22 @@ Public Class frm_Cobranza
 
     Private Sub cboCuentaBancaria_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboCuentaBancaria.ValueChanged
         Try
+
             With cboCuentaBancaria
                 If .SelectedIndex <> -1 Then
                     oeCtaBancaria = New e_CuentaBancaria
                     Dim i As Integer = .SelectedIndex
-                    oeCtaBancaria = .Items(i).ListObject
-                    mostrar_totales()
-                    If cboCuentaContable.Enabled = False Then llenacuenta()
+                    If oeCtaCble.Cuenta = "10111" Then
+                        Dim oeCaja As New e_Caja
+                        oeCaja = .Items(i).ListObject
+                        oeCtaBancaria.Id = oeCaja.Id
+                        oeCtaBancaria.IdMoneda = "1CH01"
+                        mostrar_totales()
+                    Else
+                        oeCtaBancaria = .Items(i).ListObject
+                        mostrar_totales()
+                        If cboCuentaContable.Enabled = False Then Llenacuenta()
+                    End If
                 End If
             End With
         Catch ex As Exception
@@ -852,7 +892,23 @@ Public Class frm_Cobranza
                     oeCtaCble = .Items(i).ListObject
                 End If
             End With
-            If cboCuentaContable.Enabled Then LlenaCuentaBancaria()
+            'Me.cboCuentaBancaria.Enabled = True
+            Me.cboCuentaBancaria.ReadOnly = False
+            If cboCuentaContable.Enabled Then
+                If oeCtaCble.Cuenta = "10111" Then
+                    Dim _oeCajaUsuario As e_CajaUsuario
+                    _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+                    Me.lblCtaBancaria.Text = "Cajas:"
+                    mt_llenarcajas()
+                    If _oeCajaUsuario.IdCaja <> "" Then
+                        Me.cboCuentaBancaria.Value = _oeCajaUsuario.IdCaja
+                        Me.cboCuentaBancaria.ReadOnly = True
+                    End If
+                Else
+                    LlenaCuentaBancaria()
+                    Me.lblCtaBancaria.Text = "Cuentas Bancarias:"
+                End If
+            End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

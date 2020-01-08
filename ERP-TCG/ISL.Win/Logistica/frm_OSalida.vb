@@ -614,7 +614,7 @@ Public Class frm_OSalida
             oeOrden.Id = IdOrden
             oeOrden = olOrden.Obtener(oeOrden)
             uceMovInventario.Value = oeOrden.IdMovimientoInventario
-            ListarProveedores(cboProveedor, oeOrden.IdProveedor)
+            ListarClienteProveedor(cboProveedor, oeOrden.IdProveedor)
             cboProveedor.Value = oeOrden.IdProveedor
             uceMoneda.Value = oeOrden.IdMoneda
             dtpFechaOrden.Value = oeOrden.FechaOrden

@@ -10,13 +10,13 @@ Public Class d_ReferenciaAsociada
     Public Function Obtener(ByVal oeReferenciaAsociada As e_ReferenciaAsociada) As e_ReferenciaAsociada
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("STD.Isp_ReferenciaAsociada_Listar", "", oeReferenciaAsociada.Id)
+            ds = sqlhelper.ExecuteDataset("STD.Isp_ReferenciaAsociada_Listar", oeReferenciaAsociada.TipoOperacion, oeReferenciaAsociada.Id, oeReferenciaAsociada.IdTablaPrincipal)
             If ds.Tables.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then
                 For Each o_Fila As DataRow In ds.Tables(0).Rows
                     oeReferenciaAsociada = New e_ReferenciaAsociada With {.Id = o_Fila("Id").ToString,
                        .IdEmpresaSis = o_Fila("IdEmpresaSis").ToString, .IdSucursal = o_Fila("IdSucursal").ToString,
                        .IdTablaPrincipal = o_Fila("IdTablaPrincipal").ToString, .IdTablaAsociada = o_Fila("IdTablaAsociada").ToString,
-                       .TipoRelacion = o_Fila("Tipo")}
+                       .TipoRelacion = o_Fila("Tipo"), .Glosa = o_Fila("Glosa").ToString}
                 Next
             End If
             Return oeReferenciaAsociada
@@ -54,7 +54,7 @@ Public Class d_ReferenciaAsociada
 
             With oeReferenciaAsociada
                 stResultado = sqlhelper.ExecuteScalar("STD.Isp_ReferenciaAsociada_IAE", .TipoOperacion, .PrefijoID, .Id,
-                        .IdEmpresaSis, .IdSucursal, .IdTablaPrincipal, .IdTablaAsociada, .TipoRelacion, .UsuarioCreacion).ToString.Split("_")
+                        .IdEmpresaSis, .IdSucursal, .IdTablaPrincipal, .IdTablaAsociada, .TipoRelacion, .Glosa, .UsuarioCreacion).ToString.Split("_")
             End With
             Return True
         Catch ex As Exception

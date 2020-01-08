@@ -87,7 +87,7 @@ Partial Class frm_Login
         Appearance13.BackColor = System.Drawing.Color.Transparent
         Me.btnAceptarR.HotTrackAppearance = Appearance13
         Me.btnAceptarR.ImageSize = New System.Drawing.Size(35, 30)
-        Me.btnAceptarR.Location = New System.Drawing.Point(525, 192)
+        Me.btnAceptarR.Location = New System.Drawing.Point(535, 192)
         Me.btnAceptarR.Name = "btnAceptarR"
         Me.btnAceptarR.Size = New System.Drawing.Size(62, 42)
         Me.btnAceptarR.TabIndex = 4
@@ -109,13 +109,13 @@ Partial Class frm_Login
         Me.txtUsuarioR.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.txtUsuarioR.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuarioR.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtUsuarioR.Location = New System.Drawing.Point(387, 68)
+        Me.txtUsuarioR.Location = New System.Drawing.Point(374, 81)
         Me.txtUsuarioR.Name = "txtUsuarioR"
         Me.txtUsuarioR.NullText = "USUARIO"
         Appearance11.ForeColor = System.Drawing.Color.Silver
         Appearance11.TextHAlignAsString = "Center"
         Me.txtUsuarioR.NullTextAppearance = Appearance11
-        Me.txtUsuarioR.Size = New System.Drawing.Size(200, 25)
+        Me.txtUsuarioR.Size = New System.Drawing.Size(225, 25)
         Me.txtUsuarioR.TabIndex = 0
         UltraToolTipInfo4.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
         UltraToolTipInfo4.ToolTipText = "Digite su nombre de usuario"
@@ -134,14 +134,14 @@ Partial Class frm_Login
         Me.txtPasswordR.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtPasswordR.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPasswordR.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtPasswordR.Location = New System.Drawing.Point(387, 99)
+        Me.txtPasswordR.Location = New System.Drawing.Point(374, 108)
         Me.txtPasswordR.Name = "txtPasswordR"
         Me.txtPasswordR.NullText = "CLAVE"
         Appearance9.ForeColor = System.Drawing.Color.Silver
         Appearance9.TextHAlignAsString = "Center"
         Me.txtPasswordR.NullTextAppearance = Appearance9
         Me.txtPasswordR.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPasswordR.Size = New System.Drawing.Size(200, 25)
+        Me.txtPasswordR.Size = New System.Drawing.Size(225, 25)
         Me.txtPasswordR.TabIndex = 1
         UltraToolTipInfo3.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
         UltraToolTipInfo3.ToolTipText = "Digite su clave de acceso al sistema"
@@ -182,10 +182,10 @@ Partial Class frm_Login
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboCentro.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Location = New System.Drawing.Point(387, 161)
+        Me.cboCentro.Location = New System.Drawing.Point(374, 161)
         Me.cboCentro.Name = "cboCentro"
         Me.cboCentro.NullText = "SUCURSAL / GIRO"
-        Me.cboCentro.Size = New System.Drawing.Size(200, 25)
+        Me.cboCentro.Size = New System.Drawing.Size(225, 25)
         Me.cboCentro.TabIndex = 3
         UltraToolTipInfo1.ToolTipImage = Infragistics.Win.ToolTipImage.Warning
         UltraToolTipInfo1.ToolTipText = "Seleccione SUCURSAL / GIRO NEGOCIO"
@@ -283,10 +283,10 @@ Partial Class frm_Login
         '
         Me.cmbEmpresa.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cmbEmpresa.Enabled = False
-        Me.cmbEmpresa.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbEmpresa.Location = New System.Drawing.Point(387, 130)
+        Me.cmbEmpresa.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbEmpresa.Location = New System.Drawing.Point(374, 136)
         Me.cmbEmpresa.Name = "cmbEmpresa"
-        Me.cmbEmpresa.Size = New System.Drawing.Size(200, 25)
+        Me.cmbEmpresa.Size = New System.Drawing.Size(225, 22)
         Me.cmbEmpresa.TabIndex = 2
         '
         'UltraLabel2

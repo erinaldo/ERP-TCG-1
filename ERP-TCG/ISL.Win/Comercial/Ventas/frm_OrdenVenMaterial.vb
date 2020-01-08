@@ -1887,7 +1887,7 @@ Public Class frm_OrdenVenMaterial
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
-                .IdClienteProveedor = IIf(oeOrdenComercial.IdEmpresaAlterna = "", oeOrdenComercial.IdEmpresa, oeOrdenComercial.IdEmpresaAlterna)
+                .IdClienteProveedor = IIf(oeOrdenComercial.IdEmpresaAlterna.Trim = "", oeOrdenComercial.IdEmpresa, oeOrdenComercial.IdEmpresaAlterna)
                 .IdTipoDocumento = cmbTipoDocumento.Value
                 .IdEstadoDocumento = "1CH00014"
                 .IdPeriodo = ""
@@ -1951,41 +1951,41 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Sub
 
-    Private Sub mt_ObtenerAsiento(IdMoneda As String)
-        Try
-            dtAux = New Data.DataTable
-            Dim _rwAux() As Data.DataRow
-            Dim cadSQL As String = String.Empty
-            Dim _TipoDocAux As String = String.Empty
-            cadSQL = "TipoRef1 = 5 AND IdRef1 = '" & IdMoneda & "'"
-            _rwAux = DTReferencia.Select(cadSQL, "")
-            If _rwAux.Count = 0 Then Throw New Exception("No existe configuración contable para Ventas.")
-            dtAux = _rwAux.CopyToDataTable
-            oeAsientoModelo = New e_AsientoModelo
-            oeAsientoModelo.TipoOperacion = "" : oeAsientoModelo.Activo = True : oeAsientoModelo.CargaCompleta = True : oeAsientoModelo.Cuentas = -1
-            oeAsientoModelo.Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString
-            oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
-            For Each oe As e_DetalleAsientoModelo In oeAsientoModelo.leDetalle
-                oeCtaCtble = New e_CuentaContable
-                oeCtaCtble.Cuenta = oe.Cuenta : oeCtaCtble.TipoBusca = 2
-                oeEmpresa = New e_Empresa
-                Dim olEmpresa As New l_Empresa
-                oeEmpresa.TipoOperacion = "CLI"
-                oeEmpresa.Id = oeOrdenComercial.IdEmpresa
-                oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-                If Microsoft.VisualBasic.Left(oe.Cuenta.Trim, 2) = "12" Then '20-07
-                    If oeEmpresa.IndRelacionada Then
-                        oeCtaCtble.Cuenta = Replace(oe.Cuenta, "2", "3", 1, 1)
-                    End If
-                End If
-                If loCtaCtble.Contains(oeCtaCtble) Then
-                    oe.oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                End If
-            Next
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
+    'Private Sub mt_ObtenerAsiento(IdMoneda As String)
+    '    Try
+    '        dtAux = New Data.DataTable
+    '        Dim _rwAux() As Data.DataRow
+    '        Dim cadSQL As String = String.Empty
+    '        Dim _TipoDocAux As String = String.Empty
+    '        cadSQL = "TipoRef1 = 5 AND IdRef1 = '" & IdMoneda & "'"
+    '        _rwAux = DTReferencia.Select(cadSQL, "")
+    '        If _rwAux.Count = 0 Then Throw New Exception("No existe configuración contable para Ventas.")
+    '        dtAux = _rwAux.CopyToDataTable
+    '        oeAsientoModelo = New e_AsientoModelo
+    '        oeAsientoModelo.TipoOperacion = "" : oeAsientoModelo.Activo = True : oeAsientoModelo.CargaCompleta = True : oeAsientoModelo.Cuentas = -1
+    '        oeAsientoModelo.Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString
+    '        oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
+    '        For Each oe As e_DetalleAsientoModelo In oeAsientoModelo.leDetalle
+    '            oeCtaCtble = New e_CuentaContable
+    '            oeCtaCtble.Cuenta = oe.Cuenta : oeCtaCtble.TipoBusca = 2
+    '            oeEmpresa = New e_Empresa
+    '            Dim olEmpresa As New l_Empresa
+    '            oeEmpresa.TipoOperacion = "CLI"
+    '            oeEmpresa.Id = oeOrdenComercial.IdEmpresa
+    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
+    '            If Microsoft.VisualBasic.Left(oe.Cuenta.Trim, 2) = "12" Then '20-07
+    '                If oeEmpresa.IndRelacionada Then
+    '                    oeCtaCtble.Cuenta = Replace(oe.Cuenta, "2", "3", 1, 1)
+    '                End If
+    '            End If
+    '            If loCtaCtble.Contains(oeCtaCtble) Then
+    '                oe.oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
+    '            End If
+    '        Next
+    '    Catch ex As Exception
+    '        Throw ex
+    '    End Try
+    'End Sub
 
     Private Sub mt_EmitirDocumento(IndMensaje As Boolean)
         Try
@@ -2538,7 +2538,8 @@ Public Class frm_OrdenVenMaterial
                     .IndServicioMaterial = "M"
                     .Precio = oe.PrecioUnitario
                     .Total = oe.PrecioTotal
-                    .PrecioUnitarioSinImp = Math.Round(IIf(oe.IndImpuesto, (oe.PrecioUnitario - oe.Dscto) / (1 + mdblIGV), oe.PrecioUnitario - oe.Dscto), 4, MidpointRounding.AwayFromZero)
+                    .Subtotal = Math.Round(IIf(oe.IndImpuesto, oe.PrecioTotal / (1 + mdblIGV), oe.PrecioTotal), 4, MidpointRounding.AwayFromZero)
+                    .Igv = .Total - .Subtotal
                     .UsuarioCreacion = gUsuarioSGI.Id
                 End With
                 loDetDocumento.Add(oeDetDocumento)
@@ -2568,8 +2569,6 @@ Public Class frm_OrdenVenMaterial
             Throw ex
         End Try
     End Function
-
-
 
     Private Sub cboTipoPago_ValueChanged(sender As Object, e As EventArgs) Handles cboTipoPago.ValueChanged
         Try

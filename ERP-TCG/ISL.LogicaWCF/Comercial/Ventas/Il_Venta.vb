@@ -5,8 +5,11 @@ Imports ERP.EntidadesWCF
 <ServiceContract()> _
 Public Interface Il_Venta
 
-    <OperationContract()> _
+    <OperationContract()>
     Function Obtener(ByVal oeVenta As e_Venta) As e_Venta
+
+    <OperationContract()>
+    Function ObtenerIdDocumento(ByVal oeVenta As e_Venta) As e_Venta
 
     <OperationContract()> _
     Function Listar(ByVal oeVenta As e_Venta) As List(Of e_Venta)

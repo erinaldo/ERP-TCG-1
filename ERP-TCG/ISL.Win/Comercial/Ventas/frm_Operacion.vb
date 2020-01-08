@@ -313,7 +313,7 @@ Public Class frm_Operacion
             'End If '@0001
             CalcularTotales(griViajeDetalle, "Flete", "Comision", "FleteUnitario", "Subtotal", "Consolidado")
             IncidenciasPublic = New e_IncidenciasAutentificadas
-            tabAdicional.Tabs(1).Selected = True
+            tabAdicional.Tabs(3).Selected = True
             verValidaFU.Checked = True
             CalFleteUnitario.Enabled = False
             cboTracto.Text = ""
@@ -451,7 +451,7 @@ Public Class frm_Operacion
                 bolIndFormExterno = False
                 Throw New Exception(Me.Text & ": El Viaje no se puede editar se encuentra FIN")
             End If
-            tabAdicional.Tabs(1).Selected = True
+            tabAdicional.Tabs(3).Selected = True
 
             'If PrefijoId <> "1PY" Then '@0001
             CalcularTotales(griViaje, "PorcentajeFlete", "FleteUnitario")
@@ -2917,7 +2917,7 @@ Public Class frm_Operacion
                 txtBonificacionTracto.Value = 0
             End If
             If txtViajeCapacidadUtil.Value <= 0 Then
-                txtViajeCapacidadUtil.Value = 30000
+                txtViajeCapacidadUtil.Value = 35000
             End If
             'Modelo Funcional
             olCombo = New l_Combo
@@ -2957,6 +2957,7 @@ Public Class frm_Operacion
                 End If
                 '   cboTracto_ValueChanged(Nothing, Nothing)
             End If
+            FotoCarreta(cboCarreta.Value) '@0001
         Else
             cboCarreta.Enabled = False
             Me.verCarreta.Checked = False
@@ -4503,6 +4504,7 @@ Public Class frm_Operacion
         mt_HabilitarSumatoria(False)
         upbFoto.Image = Nothing
         upbFotoTracto.Image = Nothing
+        upbFotoCarreta.Image = Nothing
         cboTipoVehiculo.Value = "1CH000000014" '@0001 Tipo Vehiculo Defecto
     End Sub
 
@@ -6426,15 +6428,15 @@ Public Class frm_Operacion
         oeCombo.Fecha = fecViaje.Value
         VehiculoDocumentosXVencer = olCombo.Listar(oeCombo)
         If VehiculoDocumentosXVencer.Count > 0 Then
-            If MessageBox.Show("No se puede Programar " & tipo & ": " & nombre & Environment.NewLine & _
-                                "Tiene Documentos Vehiculares Vencidos ..." & Environment.NewLine & _
-                                "Desea ver detalle de Documentos ? ", _
-                                    "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+            If MessageBox.Show("No se puede Programar " & tipo & ": " & nombre & Environment.NewLine &
+                                "Tiene Documentos Vehiculares Vencidos ..." & Environment.NewLine &
+                                "Desea ver detalle de Documentos ? ",
+                                    "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                 Dim TextoTotal As String = ""
                 For Each Documento As e_Combo In VehiculoDocumentosXVencer
-                    TextoTotal += "Tipo Documento: " & Documento.Id & Environment.NewLine & _
-                                  "Fecha: " & CDate(Documento.Nombre).Date & Environment.NewLine & _
+                    TextoTotal += "Tipo Documento: " & Documento.Id & Environment.NewLine &
+                                  "Fecha: " & CDate(Documento.Nombre).Date & Environment.NewLine &
                                   "Descripcion: " & Documento.Descripcion & Environment.NewLine & Environment.NewLine
                 Next
                 MessageBox.Show(TextoTotal, "Mensaje del Sistema " & tipo & ": " & nombre, MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -6447,6 +6449,36 @@ Public Class frm_Operacion
                 olPerfil.Guardar(oePerfil)
             End If
             Return False
+        Else '@0001 Ini
+            VehiculoDocumentosXVencer = New List(Of e_Combo)
+            olCombo = New l_Combo
+            oeCombo = New e_Combo
+            oeCombo.Id = codigo ' cboTracto.Value
+            oeCombo.Nombre = "DOCUMENTOSXVENCER"
+            oeCombo.Fecha = DateAdd(DateInterval.Day, 15, fecViaje.Value)
+            VehiculoDocumentosXVencer = olCombo.Listar(oeCombo)
+            If VehiculoDocumentosXVencer.Count > 0 Then
+                If MessageBox.Show("ALERTA 15 Dias " & tipo & ": " & nombre & Environment.NewLine &
+                                    "Tiene Documentos Vehiculares x Vencidos ..." & Environment.NewLine &
+                                    "Desea ver detalle de Documentos ? ",
+                                        "Mensaje del Sistema", MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                    Dim TextoTotal As String = ""
+                    For Each Documento As e_Combo In VehiculoDocumentosXVencer
+                        TextoTotal += "Tipo Documento: " & Documento.Id & Environment.NewLine &
+                                      "Fecha: " & CDate(Documento.Nombre).Date & Environment.NewLine &
+                                      "Descripcion: " & Documento.Descripcion & Environment.NewLine & Environment.NewLine
+                    Next
+                    MessageBox.Show(TextoTotal, "Mensaje del Sistema " & tipo & ": " & nombre, MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    'gNombrePerfilDocumentosVehiculares As String = "DOCUMENTOS VEHICULARES"
+                    oePerfil = New e_Perfil
+                    oePerfil.TipoOperacion = "P"
+                    oePerfil.Id = "1CH000000023"
+                    oePerfil.Nombre = "Area: Operaciones Documentos Vencidos, " & "Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", " & tipo & ": " & nombre & " " & TextoTotal
+                    oePerfil.PrefijoID = gs_PrefijoIdSucursal '@0001
+                    olPerfil.Guardar(oePerfil)
+                End If
+            End If '@0001 Fin
         End If
         Return True
     End Function
@@ -7208,6 +7240,22 @@ Public Class frm_Operacion
             End If
             If oeVehiculoFoto.Foto.Length <> 4 Then
                 upbFotoTracto.Image = oeVehiculoFoto.Foto
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+    Private Sub FotoCarreta(ByVal IdTracto As String)
+        Try
+            upbFotoCarreta.Image = Nothing
+            Dim oeVehiculoFoto As New e_Vehiculo
+            oeVehiculoFoto.Id = IdTracto
+            oeVehiculoFoto = olVehiculo.Obtener(oeVehiculoFoto)
+            If String.IsNullOrEmpty(oeVehiculoFoto.Id) Then
+                oeVehiculoFoto.Foto = BitConverter.GetBytes(0)
+            End If
+            If oeVehiculoFoto.Foto.Length <> 4 Then
+                upbFotoCarreta.Image = oeVehiculoFoto.Foto
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
