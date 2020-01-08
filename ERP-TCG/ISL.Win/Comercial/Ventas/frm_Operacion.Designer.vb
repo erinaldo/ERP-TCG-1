@@ -23,14 +23,14 @@ Partial Class frm_Operacion
         Me.components = New System.ComponentModel.Container()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo26 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Tracto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo29 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Tracto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance369 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Operacion))
         Dim Appearance370 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand12 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn1020 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn1021 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdVehiculo")
-        Dim UltraGridColumn1022 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero")
+        Dim UltraGridColumn1022 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim Appearance371 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance372 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn1023 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Porcentaje")
@@ -39,10 +39,10 @@ Partial Class frm_Operacion
         Dim UltraGridColumn1025 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Observacion")
         Dim UltraGridColumn1026 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim ColScrollRegion1 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(1373)
-        Dim ColScrollRegion2 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-1262)
+        Dim ColScrollRegion2 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-1267)
         Dim Appearance374 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance375 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo27 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Tracto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo30 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Tracto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraDataColumn355 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn356 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdVehiculo")
         Dim UltraDataColumn357 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Numero")
@@ -63,10 +63,10 @@ Partial Class frm_Operacion
         Dim UltraGridColumn1032 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Observacion")
         Dim UltraGridColumn1033 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Activo")
         Dim ColScrollRegion3 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(1366)
-        Dim ColScrollRegion4 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-1255)
+        Dim ColScrollRegion4 As Infragistics.Win.UltraWinGrid.ColScrollRegion = New Infragistics.Win.UltraWinGrid.ColScrollRegion(-1260)
         Dim Appearance380 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance381 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo28 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Carreta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo31 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Bonificacion Carreta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraDataColumn362 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Id")
         Dim UltraDataColumn363 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdVehiculo")
         Dim UltraDataColumn364 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Numero")
@@ -76,13 +76,13 @@ Partial Class frm_Operacion
         Dim UltraDataColumn368 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Activo")
         Dim Appearance382 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance383 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo29 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Tara Carreta (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo32 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Tara Carreta (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance384 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance385 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance386 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance387 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance388 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo30 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Tara Tracto (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo33 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Tara Tracto (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance389 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance159 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance160 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -98,7 +98,7 @@ Partial Class frm_Operacion
         Dim UltraDataColumn167 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("GlosaEscala")
         Dim Appearance164 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance165 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Justificacion de Escala", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Justificacion de Escala", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance166 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance167 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand7 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
@@ -122,6 +122,8 @@ Partial Class frm_Operacion
         Dim UltraDataColumn171 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("40M3")
         Dim UltraDataColumn172 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("50M3")
         Dim UltraDataColumn173 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("65M3")
+        Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Piloto", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Tracto", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn620 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdOperacion")
         Dim UltraGridColumn621 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Operacion")
@@ -1058,27 +1060,27 @@ Partial Class frm_Operacion
         Dim UltraDataColumn163 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Comision")
         Dim UltraDataColumn164 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Comisionista")
         Dim Appearance156 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo3 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Tracto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
-        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Piloto", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance157 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Escala en Bloque", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo7 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Escala en Bloque", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance158 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab9 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance176 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo7 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Hora de Inicio del Viaje - Salida de Planta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo8 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Hora de Inicio del Viaje - Salida de Planta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance177 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo9 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Indicador Viaje Retorno", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance178 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance179 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance180 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance181 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance182 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo8 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Capacidad Util (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo10 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Capacidad Util (Kg)", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance183 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo9 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("FleteUnitario del Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo11 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("FleteUnitario del Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance185 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance186 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance187 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1093,13 +1095,14 @@ Partial Class frm_Operacion
         Dim Appearance195 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton3 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance196 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo10 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Justificacion de Escala Creada", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo12 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Ingrese Justificacion de Escala Creada", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance197 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo11 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Flete del Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo13 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Flete del Viaje", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance198 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance199 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance200 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance201 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo14 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Indicador Viaje Vacio", Infragistics.Win.ToolTipImage.[Default], "Mensaje de Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance202 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance203 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1313,7 +1316,7 @@ Partial Class frm_Operacion
         Dim Appearance237 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance238 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance239 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo12 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Modificar Flete Unitario", Infragistics.Win.ToolTipImage.[Default], "Validar Flete Unitario", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo15 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Modificar Flete Unitario", Infragistics.Win.ToolTipImage.[Default], "Validar Flete Unitario", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance240 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance241 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim CalculatorButton2 As Infragistics.Win.UltraWinEditors.UltraWinCalc.CalculatorButton = New Infragistics.Win.UltraWinEditors.UltraWinCalc.CalculatorButton(15)
@@ -1353,7 +1356,7 @@ Partial Class frm_Operacion
         Dim Appearance265 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance266 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance267 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo13 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Comentario de Consolidado", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo16 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Comentario de Consolidado", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance268 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance269 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance270 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1425,15 +1428,15 @@ Partial Class frm_Operacion
         Dim UltraDataColumn280 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Cantidad")
         Dim UltraDataColumn281 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("SubTotal")
         Dim Appearance283 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo14 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Telefono", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo17 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Telefono", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim EditorButton13 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("btnEditarCliente")
         Dim Appearance284 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton14 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("btnNuevoCliente")
         Dim Appearance285 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance286 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance287 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo15 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Refencia del Punto de Llegada ", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
-        Dim UltraToolTipInfo16 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Observaciones del Contrato de Terceros", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo18 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Refencia del Punto de Llegada ", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo19 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Observaciones del Contrato de Terceros", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance288 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance289 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance290 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1677,11 +1680,11 @@ Partial Class frm_Operacion
         Dim Appearance313 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance314 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance315 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo17 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el piloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
-        Dim Appearance316 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo18 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el piloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
-        Dim UltraToolTipInfo19 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el copiloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraToolTipInfo20 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el piloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim Appearance316 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo21 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el piloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo22 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el copiloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo23 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Color que especifica si el piloto no se encuentra disponible para el viaje", Infragistics.Win.ToolTipImage.[Default], "Mensaje del sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance317 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance318 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance319 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1702,19 +1705,19 @@ Partial Class frm_Operacion
         Dim Appearance334 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance335 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance336 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo21 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccionar Zona para", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo24 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccionar Zona para", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance337 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance338 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo22 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccionar Tracto para Filtrar su Disponibilidad", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo25 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Seleccionar Tracto para Filtrar su Disponibilidad", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance339 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance340 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance341 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance342 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance343 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo23 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Hora de Inicio del Viaje - Salida de Planta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo26 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Hora de Inicio del Viaje - Salida de Planta", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance344 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance345 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo24 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Validaciones Activas", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo27 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Validaciones Activas", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance346 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance347 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance348 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1739,7 +1742,7 @@ Partial Class frm_Operacion
         Dim Appearance364 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance365 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance366 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo25 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Descripcion de la Operacion", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
+        Dim UltraToolTipInfo28 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Descripcion de la Operacion", Infragistics.Win.ToolTipImage.[Default], Nothing, Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance367 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance368 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraDataColumn369 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Selec")
@@ -1809,6 +1812,7 @@ Partial Class frm_Operacion
         Dim Appearance433 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab14 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab15 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Carreta", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraLabel35 = New Infragistics.Win.Misc.UltraLabel()
         Me.txtBonificacionTracto = New Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit()
@@ -1841,6 +1845,9 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl6 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griTarifas = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.ogdTarifas = New ISL.Controles.OrigenDatos(Me.components)
+        Me.UltraTabPageControl11 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
+        Me.upbFotoTracto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.UltraTabPageControl9 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griLista = New ISL.Controles.Grilla(Me.components)
         Me.Menu = New ISL.Controles.MenuContextual(Me.components)
@@ -1872,8 +1879,6 @@ Partial Class frm_Operacion
         Me.ogdViaje = New ISL.Controles.OrigenDatos(Me.components)
         Me.expViaje = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel18 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
-        Me.upbFotoTracto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
-        Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.exgruEscalaBloque = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel4 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
         Me.tabAdicional = New ISL.Controles.Ficha(Me.components)
@@ -2268,6 +2273,7 @@ Partial Class frm_Operacion
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.ugb_Espera = New ISL.Win.Espere()
+        Me.upbFotoCarreta = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.UltraTabPageControl2.SuspendLayout
         CType(Me.griBonificacionTracto, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Calcular1, System.ComponentModel.ISupportInitialize).BeginInit
@@ -2290,6 +2296,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl6.SuspendLayout
         CType(Me.griTarifas, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ogdTarifas, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl11.SuspendLayout
         Me.UltraTabPageControl9.SuspendLayout
         CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit
         Me.Menu.SuspendLayout
@@ -2583,9 +2590,9 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl2.Controls.Add(Me.UltraLabel6)
         Me.UltraTabPageControl2.Controls.Add(Me.txtTaraTracto)
         Me.UltraTabPageControl2.Controls.Add(Me.cboCarretaPeso)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(115, 73)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(448, 88)
         '
         'UltraLabel35
         '
@@ -2594,7 +2601,7 @@ Partial Class frm_Operacion
         Appearance1.TextVAlignAsString = "Middle"
         Me.UltraLabel35.Appearance = Appearance1
         Me.UltraLabel35.AutoSize = True
-        Me.UltraLabel35.Location = New System.Drawing.Point(192, 2)
+        Me.UltraLabel35.Location = New System.Drawing.Point(183, 2)
         Me.UltraLabel35.Name = "UltraLabel35"
         Me.UltraLabel35.Size = New System.Drawing.Size(63, 14)
         Me.UltraLabel35.TabIndex = 2
@@ -2607,7 +2614,7 @@ Partial Class frm_Operacion
         Me.txtBonificacionTracto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtBonificacionTracto.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtBonificacionTracto.InputMask = "{double:5.2}"
-        Me.txtBonificacionTracto.Location = New System.Drawing.Point(195, 18)
+        Me.txtBonificacionTracto.Location = New System.Drawing.Point(186, 16)
         Me.txtBonificacionTracto.Name = "txtBonificacionTracto"
         Me.txtBonificacionTracto.NonAutoSizeHeight = 20
         Me.txtBonificacionTracto.ReadOnly = True
@@ -2615,8 +2622,8 @@ Partial Class frm_Operacion
         Me.txtBonificacionTracto.TabIndex = 2
         Me.txtBonificacionTracto.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtBonificacionTracto.Text = "000"
-        UltraToolTipInfo26.ToolTipText = "Bonificacion Tracto"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtBonificacionTracto, UltraToolTipInfo26)
+        UltraToolTipInfo29.ToolTipText = "Bonificacion Tracto"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtBonificacionTracto, UltraToolTipInfo29)
         '
         'btnCapacidadUtil
         '
@@ -2626,7 +2633,7 @@ Partial Class frm_Operacion
         Me.btnCapacidadUtil.Appearance = Appearance369
         Me.btnCapacidadUtil.ImageList = Me.imagenes
         Me.btnCapacidadUtil.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnCapacidadUtil.Location = New System.Drawing.Point(148, 65)
+        Me.btnCapacidadUtil.Location = New System.Drawing.Point(140, 58)
         Me.btnCapacidadUtil.Name = "btnCapacidadUtil"
         Me.btnCapacidadUtil.Size = New System.Drawing.Size(45, 30)
         Me.btnCapacidadUtil.TabIndex = 6
@@ -2712,15 +2719,15 @@ Partial Class frm_Operacion
         Me.griBonificacionTracto.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griBonificacionTracto.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griBonificacionTracto.Dock = System.Windows.Forms.DockStyle.Left
-        Me.griBonificacionTracto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griBonificacionTracto.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griBonificacionTracto.Location = New System.Drawing.Point(0, 0)
         Me.griBonificacionTracto.Name = "griBonificacionTracto"
-        Me.griBonificacionTracto.Size = New System.Drawing.Size(120, 73)
+        Me.griBonificacionTracto.Size = New System.Drawing.Size(115, 88)
         Me.griBonificacionTracto.TabIndex = 0
         Me.griBonificacionTracto.TabStop = False
         Me.griBonificacionTracto.Tag = ""
-        UltraToolTipInfo27.ToolTipText = "Bonificacion Tracto"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.griBonificacionTracto, UltraToolTipInfo27)
+        UltraToolTipInfo30.ToolTipText = "Bonificacion Tracto"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.griBonificacionTracto, UltraToolTipInfo30)
         '
         'Calcular1
         '
@@ -2791,15 +2798,15 @@ Partial Class frm_Operacion
         Me.griBonificacionCarreta.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.griBonificacionCarreta.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.griBonificacionCarreta.Dock = System.Windows.Forms.DockStyle.Right
-        Me.griBonificacionCarreta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griBonificacionCarreta.Location = New System.Drawing.Point(-5, 0)
+        Me.griBonificacionCarreta.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griBonificacionCarreta.Location = New System.Drawing.Point(333, 0)
         Me.griBonificacionCarreta.Name = "griBonificacionCarreta"
-        Me.griBonificacionCarreta.Size = New System.Drawing.Size(120, 73)
+        Me.griBonificacionCarreta.Size = New System.Drawing.Size(115, 88)
         Me.griBonificacionCarreta.TabIndex = 8
         Me.griBonificacionCarreta.TabStop = False
         Me.griBonificacionCarreta.Tag = ""
-        UltraToolTipInfo28.ToolTipText = "Bonificacion Carreta"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.griBonificacionCarreta, UltraToolTipInfo28)
+        UltraToolTipInfo31.ToolTipText = "Bonificacion Carreta"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.griBonificacionCarreta, UltraToolTipInfo31)
         '
         'ogdBonificacionCarreta
         '
@@ -2812,7 +2819,7 @@ Partial Class frm_Operacion
         Appearance382.TextVAlignAsString = "Middle"
         Me.UltraLabel18.Appearance = Appearance382
         Me.UltraLabel18.AutoSize = True
-        Me.UltraLabel18.Location = New System.Drawing.Point(277, 2)
+        Me.UltraLabel18.Location = New System.Drawing.Point(260, 2)
         Me.UltraLabel18.Name = "UltraLabel18"
         Me.UltraLabel18.Size = New System.Drawing.Size(44, 14)
         Me.UltraLabel18.TabIndex = 3
@@ -2825,7 +2832,7 @@ Partial Class frm_Operacion
         Me.txtTaraCarreta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtTaraCarreta.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtTaraCarreta.InputMask = "{double:5.2}"
-        Me.txtTaraCarreta.Location = New System.Drawing.Point(279, 40)
+        Me.txtTaraCarreta.Location = New System.Drawing.Point(262, 38)
         Me.txtTaraCarreta.Name = "txtTaraCarreta"
         Me.txtTaraCarreta.NonAutoSizeHeight = 20
         Me.txtTaraCarreta.ReadOnly = True
@@ -2833,8 +2840,8 @@ Partial Class frm_Operacion
         Me.txtTaraCarreta.TabIndex = 5
         Me.txtTaraCarreta.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtTaraCarreta.Text = "000"
-        UltraToolTipInfo29.ToolTipText = "Tara Carreta (Kg)"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTaraCarreta, UltraToolTipInfo29)
+        UltraToolTipInfo32.ToolTipText = "Tara Carreta (Kg)"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTaraCarreta, UltraToolTipInfo32)
         '
         'cboTractoPeso
         '
@@ -2846,7 +2853,7 @@ Partial Class frm_Operacion
         Me.cboTractoPeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTractoPeso.ForeColor = System.Drawing.Color.Black
         Me.cboTractoPeso.ImageList = Me.imagenes
-        Me.cboTractoPeso.Location = New System.Drawing.Point(123, 18)
+        Me.cboTractoPeso.Location = New System.Drawing.Point(115, 16)
         Me.cboTractoPeso.Name = "cboTractoPeso"
         Me.cboTractoPeso.Size = New System.Drawing.Size(70, 21)
         Me.cboTractoPeso.TabIndex = 1
@@ -2858,11 +2865,11 @@ Partial Class frm_Operacion
         Appearance385.ForeColor = System.Drawing.Color.Navy
         Appearance385.TextVAlignAsString = "Middle"
         Me.UltraLabel9.Appearance = Appearance385
-        Me.UltraLabel9.Location = New System.Drawing.Point(197, 66)
+        Me.UltraLabel9.Location = New System.Drawing.Point(184, 56)
         Me.UltraLabel9.Name = "UltraLabel9"
-        Me.UltraLabel9.Size = New System.Drawing.Size(79, 35)
+        Me.UltraLabel9.Size = New System.Drawing.Size(78, 35)
         Me.UltraLabel9.TabIndex = 11
-        Me.UltraLabel9.Text = "Capacidad Util en Kilogramos:"
+        Me.UltraLabel9.Text = "Capacidad U. en Kilogramos:"
         '
         'txtCapacidadUtil
         '
@@ -2871,7 +2878,7 @@ Partial Class frm_Operacion
         Me.txtCapacidadUtil.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCapacidadUtil.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtCapacidadUtil.InputMask = "{double:5.2}"
-        Me.txtCapacidadUtil.Location = New System.Drawing.Point(279, 73)
+        Me.txtCapacidadUtil.Location = New System.Drawing.Point(262, 64)
         Me.txtCapacidadUtil.Name = "txtCapacidadUtil"
         Me.txtCapacidadUtil.NonAutoSizeHeight = 20
         Me.txtCapacidadUtil.ReadOnly = True
@@ -2887,7 +2894,7 @@ Partial Class frm_Operacion
         Appearance387.TextVAlignAsString = "Middle"
         Me.UltraLabel6.Appearance = Appearance387
         Me.UltraLabel6.AutoSize = True
-        Me.UltraLabel6.Location = New System.Drawing.Point(122, 2)
+        Me.UltraLabel6.Location = New System.Drawing.Point(114, 2)
         Me.UltraLabel6.Name = "UltraLabel6"
         Me.UltraLabel6.Size = New System.Drawing.Size(38, 14)
         Me.UltraLabel6.TabIndex = 1
@@ -2900,7 +2907,7 @@ Partial Class frm_Operacion
         Me.txtTaraTracto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtTaraTracto.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtTaraTracto.InputMask = "{double:5.2}"
-        Me.txtTaraTracto.Location = New System.Drawing.Point(123, 40)
+        Me.txtTaraTracto.Location = New System.Drawing.Point(115, 38)
         Me.txtTaraTracto.Name = "txtTaraTracto"
         Me.txtTaraTracto.NonAutoSizeHeight = 20
         Me.txtTaraTracto.ReadOnly = True
@@ -2908,8 +2915,8 @@ Partial Class frm_Operacion
         Me.txtTaraTracto.TabIndex = 4
         Me.txtTaraTracto.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtTaraTracto.Text = "000"
-        UltraToolTipInfo30.ToolTipText = "Tara Tracto (Kg)"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTaraTracto, UltraToolTipInfo30)
+        UltraToolTipInfo33.ToolTipText = "Tara Tracto (Kg)"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTaraTracto, UltraToolTipInfo33)
         '
         'cboCarretaPeso
         '
@@ -2921,7 +2928,7 @@ Partial Class frm_Operacion
         Me.cboCarretaPeso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCarretaPeso.ForeColor = System.Drawing.Color.Black
         Me.cboCarretaPeso.ImageList = Me.imagenes
-        Me.cboCarretaPeso.Location = New System.Drawing.Point(279, 18)
+        Me.cboCarretaPeso.Location = New System.Drawing.Point(262, 16)
         Me.cboCarretaPeso.Name = "cboCarretaPeso"
         Me.cboCarretaPeso.Size = New System.Drawing.Size(70, 21)
         Me.cboCarretaPeso.TabIndex = 3
@@ -2933,7 +2940,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox11)
         Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(115, 73)
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(448, 88)
         '
         'UltraGroupBox12
         '
@@ -2944,7 +2951,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraGroupBox12.Location = New System.Drawing.Point(233, 0)
         Me.UltraGroupBox12.Name = "UltraGroupBox12"
-        Me.UltraGroupBox12.Size = New System.Drawing.Size(0, 73)
+        Me.UltraGroupBox12.Size = New System.Drawing.Size(215, 88)
         Me.UltraGroupBox12.TabIndex = 1
         Me.UltraGroupBox12.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -2998,7 +3005,7 @@ Partial Class frm_Operacion
         Me.griEscala.Font = New System.Drawing.Font("Times New Roman", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griEscala.Location = New System.Drawing.Point(3, 3)
         Me.griEscala.Name = "griEscala"
-        Me.griEscala.Size = New System.Drawing.Size(0, 67)
+        Me.griEscala.Size = New System.Drawing.Size(209, 82)
         Me.griEscala.TabIndex = 4
         Me.griEscala.Tag = ""
         '
@@ -3032,7 +3039,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox11.Dock = System.Windows.Forms.DockStyle.Left
         Me.UltraGroupBox11.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox11.Name = "UltraGroupBox11"
-        Me.UltraGroupBox11.Size = New System.Drawing.Size(233, 73)
+        Me.UltraGroupBox11.Size = New System.Drawing.Size(233, 88)
         Me.UltraGroupBox11.TabIndex = 0
         Me.UltraGroupBox11.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -3071,8 +3078,8 @@ Partial Class frm_Operacion
         Me.txtGlosaEscalaBloque.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtGlosaEscalaBloque.Size = New System.Drawing.Size(190, 43)
         Me.txtGlosaEscalaBloque.TabIndex = 2
-        UltraToolTipInfo5.ToolTipText = "Justificacion de Escala"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaEscalaBloque, UltraToolTipInfo5)
+        UltraToolTipInfo3.ToolTipText = "Justificacion de Escala"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaEscalaBloque, UltraToolTipInfo3)
         '
         'btnAgregaEscala
         '
@@ -3091,7 +3098,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl6.Controls.Add(Me.griTarifas)
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(115, 73)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(448, 88)
         '
         'griTarifas
         '
@@ -3154,7 +3161,7 @@ Partial Class frm_Operacion
         Me.griTarifas.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTarifas.Location = New System.Drawing.Point(0, 0)
         Me.griTarifas.Name = "griTarifas"
-        Me.griTarifas.Size = New System.Drawing.Size(115, 73)
+        Me.griTarifas.Size = New System.Drawing.Size(448, 88)
         Me.griTarifas.TabIndex = 5
         Me.griTarifas.Tag = ""
         '
@@ -3167,12 +3174,45 @@ Partial Class frm_Operacion
         UltraDataColumn173.DataType = GetType(Double)
         Me.ogdTarifas.Band.Columns.AddRange(New Object() {UltraDataColumn168, UltraDataColumn169, UltraDataColumn170, UltraDataColumn171, UltraDataColumn172, UltraDataColumn173})
         '
+        'UltraTabPageControl11
+        '
+        Me.UltraTabPageControl11.Controls.Add(Me.upbFotoCarreta)
+        Me.UltraTabPageControl11.Controls.Add(Me.upbFoto)
+        Me.UltraTabPageControl11.Controls.Add(Me.upbFotoTracto)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
+        Me.UltraTabPageControl11.Size = New System.Drawing.Size(448, 88)
+        '
+        'upbFoto
+        '
+        Me.upbFoto.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFoto.Dock = System.Windows.Forms.DockStyle.Left
+        Me.upbFoto.Location = New System.Drawing.Point(150, 0)
+        Me.upbFoto.Name = "upbFoto"
+        Me.upbFoto.Size = New System.Drawing.Size(150, 88)
+        Me.upbFoto.TabIndex = 29
+        UltraToolTipInfo5.ToolTipText = "Foto Piloto"
+        UltraToolTipInfo5.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFoto, UltraToolTipInfo5)
+        '
+        'upbFotoTracto
+        '
+        Me.upbFotoTracto.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFotoTracto.Dock = System.Windows.Forms.DockStyle.Left
+        Me.upbFotoTracto.Location = New System.Drawing.Point(0, 0)
+        Me.upbFotoTracto.Name = "upbFotoTracto"
+        Me.upbFotoTracto.Size = New System.Drawing.Size(150, 88)
+        Me.upbFotoTracto.TabIndex = 30
+        UltraToolTipInfo6.ToolTipText = "Foto Tracto"
+        UltraToolTipInfo6.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFotoTracto, UltraToolTipInfo6)
+        '
         'UltraTabPageControl9
         '
         Me.UltraTabPageControl9.Controls.Add(Me.griLista)
         Me.UltraTabPageControl9.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
-        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1242, 522)
+        Me.UltraTabPageControl9.Size = New System.Drawing.Size(1272, 522)
         '
         'griLista
         '
@@ -3646,7 +3686,7 @@ Partial Class frm_Operacion
         Me.griLista.ImageList = Me.imagenes
         Me.griLista.Location = New System.Drawing.Point(0, 0)
         Me.griLista.Name = "griLista"
-        Me.griLista.Size = New System.Drawing.Size(1242, 522)
+        Me.griLista.Size = New System.Drawing.Size(1272, 522)
         Me.griLista.TabIndex = 0
         Me.griLista.Tag = ""
         '
@@ -3723,7 +3763,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl10.Controls.Add(Me.griListaTerceros)
         Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
-        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1242, 522)
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1222, 522)
         '
         'griListaTerceros
         '
@@ -4199,7 +4239,7 @@ Partial Class frm_Operacion
         Me.griListaTerceros.ImageList = Me.imagenes
         Me.griListaTerceros.Location = New System.Drawing.Point(0, 0)
         Me.griListaTerceros.Name = "griListaTerceros"
-        Me.griListaTerceros.Size = New System.Drawing.Size(1242, 522)
+        Me.griListaTerceros.Size = New System.Drawing.Size(1222, 522)
         Me.griListaTerceros.TabIndex = 1
         Me.griListaTerceros.Tag = ""
         '
@@ -4209,7 +4249,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl16.Controls.Add(Me.UltraExpandableGroupBox5)
         Me.UltraTabPageControl16.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl16.Name = "UltraTabPageControl16"
-        Me.UltraTabPageControl16.Size = New System.Drawing.Size(1242, 522)
+        Me.UltraTabPageControl16.Size = New System.Drawing.Size(1222, 522)
         '
         'griViajesProceso
         '
@@ -4668,7 +4708,7 @@ Partial Class frm_Operacion
         Me.griViajesProceso.ImageList = Me.imagenes
         Me.griViajesProceso.Location = New System.Drawing.Point(0, 58)
         Me.griViajesProceso.Name = "griViajesProceso"
-        Me.griViajesProceso.Size = New System.Drawing.Size(1242, 464)
+        Me.griViajesProceso.Size = New System.Drawing.Size(1222, 464)
         Me.griViajesProceso.TabIndex = 3
         Me.griViajesProceso.Tag = ""
         '
@@ -4679,10 +4719,10 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox5.ContentAreaAppearance = Appearance84
         Me.UltraExpandableGroupBox5.Controls.Add(Me.UltraExpandableGroupBoxPanel10)
         Me.UltraExpandableGroupBox5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.UltraExpandableGroupBox5.ExpandedSize = New System.Drawing.Size(1242, 58)
+        Me.UltraExpandableGroupBox5.ExpandedSize = New System.Drawing.Size(1222, 58)
         Me.UltraExpandableGroupBox5.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox5.Name = "UltraExpandableGroupBox5"
-        Me.UltraExpandableGroupBox5.Size = New System.Drawing.Size(1242, 58)
+        Me.UltraExpandableGroupBox5.Size = New System.Drawing.Size(1222, 58)
         Me.UltraExpandableGroupBox5.TabIndex = 2
         Me.UltraExpandableGroupBox5.Text = "Filtros"
         Me.UltraExpandableGroupBox5.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -4693,7 +4733,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel10.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel10.Name = "UltraExpandableGroupBoxPanel10"
-        Me.UltraExpandableGroupBoxPanel10.Size = New System.Drawing.Size(1236, 35)
+        Me.UltraExpandableGroupBoxPanel10.Size = New System.Drawing.Size(1216, 35)
         Me.UltraExpandableGroupBoxPanel10.TabIndex = 0
         '
         'opcDesenganches
@@ -4724,7 +4764,7 @@ Partial Class frm_Operacion
         Me.utpTrazabilidad.Controls.Add(Me.UltraGroupBox8)
         Me.utpTrazabilidad.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpTrazabilidad.Name = "utpTrazabilidad"
-        Me.utpTrazabilidad.Size = New System.Drawing.Size(1242, 522)
+        Me.utpTrazabilidad.Size = New System.Drawing.Size(1222, 522)
         '
         'griTransabilida
         '
@@ -4923,7 +4963,7 @@ Partial Class frm_Operacion
         Me.griTransabilida.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTransabilida.Location = New System.Drawing.Point(0, 54)
         Me.griTransabilida.Name = "griTransabilida"
-        Me.griTransabilida.Size = New System.Drawing.Size(1242, 468)
+        Me.griTransabilida.Size = New System.Drawing.Size(1222, 468)
         Me.griTransabilida.TabIndex = 1
         '
         'UltraGroupBox8
@@ -4938,7 +4978,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox8.Dock = System.Windows.Forms.DockStyle.Top
         Me.UltraGroupBox8.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox8.Name = "UltraGroupBox8"
-        Me.UltraGroupBox8.Size = New System.Drawing.Size(1242, 54)
+        Me.UltraGroupBox8.Size = New System.Drawing.Size(1222, 54)
         Me.UltraGroupBox8.TabIndex = 0
         Me.UltraGroupBox8.Text = "Filtro"
         Me.UltraGroupBox8.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -5007,7 +5047,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl4.Controls.Add(Me.expViaje)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1248, 412)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1278, 412)
         '
         'griViaje
         '
@@ -5329,7 +5369,7 @@ Partial Class frm_Operacion
         Me.griViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griViaje.Location = New System.Drawing.Point(0, 140)
         Me.griViaje.Name = "griViaje"
-        Me.griViaje.Size = New System.Drawing.Size(1248, 272)
+        Me.griViaje.Size = New System.Drawing.Size(1278, 272)
         Me.griViaje.TabIndex = 1
         Me.griViaje.Tag = ""
         '
@@ -5362,11 +5402,11 @@ Partial Class frm_Operacion
         Me.expViaje.ContentAreaAppearance = Appearance156
         Me.expViaje.Controls.Add(Me.UltraExpandableGroupBoxPanel18)
         Me.expViaje.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expViaje.ExpandedSize = New System.Drawing.Size(1248, 140)
+        Me.expViaje.ExpandedSize = New System.Drawing.Size(1278, 140)
         Me.expViaje.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.expViaje.Location = New System.Drawing.Point(0, 0)
         Me.expViaje.Name = "expViaje"
-        Me.expViaje.Size = New System.Drawing.Size(1248, 140)
+        Me.expViaje.Size = New System.Drawing.Size(1278, 140)
         Me.expViaje.TabIndex = 0
         Me.expViaje.TabStop = False
         Me.expViaje.Text = "Ingreso de Datos para Crear / Actualizar un Viaje "
@@ -5374,37 +5414,13 @@ Partial Class frm_Operacion
         '
         'UltraExpandableGroupBoxPanel18
         '
-        Me.UltraExpandableGroupBoxPanel18.Controls.Add(Me.upbFotoTracto)
-        Me.UltraExpandableGroupBoxPanel18.Controls.Add(Me.upbFoto)
         Me.UltraExpandableGroupBoxPanel18.Controls.Add(Me.exgruEscalaBloque)
         Me.UltraExpandableGroupBoxPanel18.Controls.Add(Me.UltraGroupBox14)
         Me.UltraExpandableGroupBoxPanel18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel18.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel18.Name = "UltraExpandableGroupBoxPanel18"
-        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1242, 117)
+        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1272, 117)
         Me.UltraExpandableGroupBoxPanel18.TabIndex = 0
-        '
-        'upbFotoTracto
-        '
-        Me.upbFotoTracto.BorderShadowColor = System.Drawing.Color.Empty
-        Me.upbFotoTracto.Dock = System.Windows.Forms.DockStyle.Left
-        Me.upbFotoTracto.Location = New System.Drawing.Point(919, 0)
-        Me.upbFotoTracto.Name = "upbFotoTracto"
-        Me.upbFotoTracto.Size = New System.Drawing.Size(150, 117)
-        Me.upbFotoTracto.TabIndex = 30
-        UltraToolTipInfo3.ToolTipText = "Foto Tracto"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFotoTracto, UltraToolTipInfo3)
-        '
-        'upbFoto
-        '
-        Me.upbFoto.BorderShadowColor = System.Drawing.Color.Empty
-        Me.upbFoto.Dock = System.Windows.Forms.DockStyle.Left
-        Me.upbFoto.Location = New System.Drawing.Point(819, 0)
-        Me.upbFoto.Name = "upbFoto"
-        Me.upbFoto.Size = New System.Drawing.Size(100, 117)
-        Me.upbFoto.TabIndex = 29
-        UltraToolTipInfo4.ToolTipText = "Foto Piloto"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFoto, UltraToolTipInfo4)
         '
         'exgruEscalaBloque
         '
@@ -5414,29 +5430,27 @@ Partial Class frm_Operacion
         Me.exgruEscalaBloque.ContentAreaAppearance = Appearance157
         Me.exgruEscalaBloque.Controls.Add(Me.UltraExpandableGroupBoxPanel4)
         Me.exgruEscalaBloque.Dock = System.Windows.Forms.DockStyle.Right
-        Me.exgruEscalaBloque.Expanded = False
-        Me.exgruEscalaBloque.ExpandedSize = New System.Drawing.Size(117, 117)
+        Me.exgruEscalaBloque.ExpandedSize = New System.Drawing.Size(475, 117)
         Me.exgruEscalaBloque.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.exgruEscalaBloque.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.exgruEscalaBloque.Location = New System.Drawing.Point(1214, 0)
+        Me.exgruEscalaBloque.Location = New System.Drawing.Point(797, 0)
         Me.exgruEscalaBloque.Name = "exgruEscalaBloque"
-        Me.exgruEscalaBloque.Size = New System.Drawing.Size(28, 117)
+        Me.exgruEscalaBloque.Size = New System.Drawing.Size(475, 117)
         Me.exgruEscalaBloque.TabIndex = 1
         Me.exgruEscalaBloque.TabStop = False
         Me.exgruEscalaBloque.Text = "Adicionales"
-        UltraToolTipInfo6.ToolTipText = "Escala en Bloque"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.exgruEscalaBloque, UltraToolTipInfo6)
+        UltraToolTipInfo7.ToolTipText = "Escala en Bloque"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.exgruEscalaBloque, UltraToolTipInfo7)
         Me.exgruEscalaBloque.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        Me.exgruEscalaBloque.Visible = False
         '
         'UltraExpandableGroupBoxPanel4
         '
         Me.UltraExpandableGroupBoxPanel4.Controls.Add(Me.tabAdicional)
-        Me.UltraExpandableGroupBoxPanel4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraExpandableGroupBoxPanel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel4.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel4.Name = "UltraExpandableGroupBoxPanel4"
-        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(119, 96)
+        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(452, 111)
         Me.UltraExpandableGroupBoxPanel4.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel4.Visible = False
         '
         'tabAdicional
         '
@@ -5447,27 +5461,32 @@ Partial Class frm_Operacion
         Me.tabAdicional.Controls.Add(Me.UltraTabPageControl2)
         Me.tabAdicional.Controls.Add(Me.UltraTabPageControl3)
         Me.tabAdicional.Controls.Add(Me.UltraTabPageControl6)
+        Me.tabAdicional.Controls.Add(Me.UltraTabPageControl11)
         Me.tabAdicional.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabAdicional.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabAdicional.Location = New System.Drawing.Point(0, 0)
         Me.tabAdicional.Name = "tabAdicional"
         Me.tabAdicional.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.tabAdicional.Size = New System.Drawing.Size(119, 96)
+        Me.tabAdicional.Size = New System.Drawing.Size(452, 111)
         Me.tabAdicional.TabIndex = 0
         UltraTab6.TabPage = Me.UltraTabPageControl2
         UltraTab6.Text = "Simulador Pesos"
         UltraTab8.TabPage = Me.UltraTabPageControl3
         UltraTab8.Text = "Escalas en bloque"
+        UltraTab8.Visible = False
         UltraTab9.TabPage = Me.UltraTabPageControl6
         UltraTab9.Text = "Tarifario"
-        Me.tabAdicional.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab6, UltraTab8, UltraTab9})
+        UltraTab9.Visible = False
+        UltraTab4.TabPage = Me.UltraTabPageControl11
+        UltraTab4.Text = "Fotos"
+        Me.tabAdicional.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab6, UltraTab8, UltraTab9, UltraTab4})
         Me.tabAdicional.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
         'UltraTabSharedControlsPage3
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(115, 73)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(448, 88)
         '
         'UltraGroupBox14
         '
@@ -5508,7 +5527,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox14.Dock = System.Windows.Forms.DockStyle.Left
         Me.UltraGroupBox14.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox14.Name = "UltraGroupBox14"
-        Me.UltraGroupBox14.Size = New System.Drawing.Size(819, 117)
+        Me.UltraGroupBox14.Size = New System.Drawing.Size(765, 117)
         Me.UltraGroupBox14.TabIndex = 0
         '
         'hViaje
@@ -5516,7 +5535,7 @@ Partial Class frm_Operacion
         Me.hViaje.DateTime = New Date(2014, 12, 1, 0, 0, 0, 0)
         Me.hViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.hViaje.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never
-        Me.hViaje.Location = New System.Drawing.Point(155, 5)
+        Me.hViaje.Location = New System.Drawing.Point(148, 5)
         Me.hViaje.MaskInput = "{LOC}hh:mm"
         Me.hViaje.Name = "hViaje"
         Me.hViaje.Nullable = False
@@ -5525,14 +5544,14 @@ Partial Class frm_Operacion
         Me.hViaje.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
         Me.hViaje.TabIndex = 3
         Me.hViaje.Tag = ""
-        UltraToolTipInfo7.ToolTipText = "Hora de Inicio del Viaje - Salida de Planta"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.hViaje, UltraToolTipInfo7)
+        UltraToolTipInfo8.ToolTipText = "Hora de Inicio del Viaje - Salida de Planta"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.hViaje, UltraToolTipInfo8)
         Me.hViaje.Value = New Date(2014, 12, 1, 0, 0, 0, 0)
         '
         'fecViaje
         '
         Me.fecViaje.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecViaje.Location = New System.Drawing.Point(68, 6)
+        Me.fecViaje.Location = New System.Drawing.Point(63, 5)
         Me.fecViaje.Name = "fecViaje"
         Me.fecViaje.Size = New System.Drawing.Size(84, 20)
         Me.fecViaje.TabIndex = 2
@@ -5542,18 +5561,21 @@ Partial Class frm_Operacion
         Appearance177.ForeColor = System.Drawing.Color.Navy
         Me.verViajeRetorno.Appearance = Appearance177
         Me.verViajeRetorno.AutoSize = True
-        Me.verViajeRetorno.Location = New System.Drawing.Point(264, 8)
+        Me.verViajeRetorno.Location = New System.Drawing.Point(240, 8)
         Me.verViajeRetorno.Name = "verViajeRetorno"
-        Me.verViajeRetorno.Size = New System.Drawing.Size(61, 17)
+        Me.verViajeRetorno.Size = New System.Drawing.Size(32, 17)
         Me.verViajeRetorno.TabIndex = 5
-        Me.verViajeRetorno.Text = "Retorno"
+        Me.verViajeRetorno.Text = "R."
+        UltraToolTipInfo9.ToolTipText = "Indicador Viaje Retorno"
+        UltraToolTipInfo9.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verViajeRetorno, UltraToolTipInfo9)
         '
         'verFechaViaje
         '
         Appearance178.ForeColor = System.Drawing.Color.Navy
         Me.verFechaViaje.Appearance = Appearance178
         Me.verFechaViaje.AutoSize = True
-        Me.verFechaViaje.Location = New System.Drawing.Point(9, 6)
+        Me.verFechaViaje.Location = New System.Drawing.Point(5, 6)
         Me.verFechaViaje.Name = "verFechaViaje"
         Me.verFechaViaje.Size = New System.Drawing.Size(58, 17)
         Me.verFechaViaje.TabIndex = 1
@@ -5566,7 +5588,7 @@ Partial Class frm_Operacion
         Appearance179.TextVAlignAsString = "Middle"
         Me.UltraLabel37.Appearance = Appearance179
         Me.UltraLabel37.AutoSize = True
-        Me.UltraLabel37.Location = New System.Drawing.Point(721, 51)
+        Me.UltraLabel37.Location = New System.Drawing.Point(668, 51)
         Me.UltraLabel37.Name = "UltraLabel37"
         Me.UltraLabel37.Size = New System.Drawing.Size(23, 14)
         Me.UltraLabel37.TabIndex = 28
@@ -5586,7 +5608,7 @@ Partial Class frm_Operacion
         Me.cboCarreta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCarreta.ForeColor = System.Drawing.Color.Black
         Me.cboCarreta.ImageList = Me.imagenes
-        Me.cboCarreta.Location = New System.Drawing.Point(597, 72)
+        Me.cboCarreta.Location = New System.Drawing.Point(544, 72)
         Me.cboCarreta.Name = "cboCarreta"
         Me.cboCarreta.Size = New System.Drawing.Size(100, 21)
         Me.cboCarreta.TabIndex = 16
@@ -5599,15 +5621,15 @@ Partial Class frm_Operacion
         Me.txtViajeCapacidadUtil.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtViajeCapacidadUtil.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtViajeCapacidadUtil.InputMask = "{double:5.2}"
-        Me.txtViajeCapacidadUtil.Location = New System.Drawing.Point(746, 48)
+        Me.txtViajeCapacidadUtil.Location = New System.Drawing.Point(693, 48)
         Me.txtViajeCapacidadUtil.Name = "txtViajeCapacidadUtil"
         Me.txtViajeCapacidadUtil.NonAutoSizeHeight = 20
         Me.txtViajeCapacidadUtil.Size = New System.Drawing.Size(55, 20)
         Me.txtViajeCapacidadUtil.TabIndex = 20
         Me.txtViajeCapacidadUtil.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtViajeCapacidadUtil.Text = "000"
-        UltraToolTipInfo8.ToolTipText = "Capacidad Util (Kg)"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtViajeCapacidadUtil, UltraToolTipInfo8)
+        UltraToolTipInfo10.ToolTipText = "Capacidad Util (Kg)"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtViajeCapacidadUtil, UltraToolTipInfo10)
         '
         'UltraLabel38
         '
@@ -5616,7 +5638,7 @@ Partial Class frm_Operacion
         Appearance183.TextVAlignAsString = "Middle"
         Me.UltraLabel38.Appearance = Appearance183
         Me.UltraLabel38.AutoSize = True
-        Me.UltraLabel38.Location = New System.Drawing.Point(338, 76)
+        Me.UltraLabel38.Location = New System.Drawing.Point(285, 76)
         Me.UltraLabel38.Name = "UltraLabel38"
         Me.UltraLabel38.Size = New System.Drawing.Size(38, 14)
         Me.UltraLabel38.TabIndex = 18
@@ -5629,7 +5651,7 @@ Partial Class frm_Operacion
         Me.txtFleteUnitarioViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFleteUnitarioViaje.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtFleteUnitarioViaje.InputMask = "{double:5.4}"
-        Me.txtFleteUnitarioViaje.Location = New System.Drawing.Point(746, 4)
+        Me.txtFleteUnitarioViaje.Location = New System.Drawing.Point(693, 4)
         Me.txtFleteUnitarioViaje.Name = "txtFleteUnitarioViaje"
         Me.txtFleteUnitarioViaje.NonAutoSizeHeight = 20
         Me.txtFleteUnitarioViaje.ReadOnly = True
@@ -5637,8 +5659,8 @@ Partial Class frm_Operacion
         Me.txtFleteUnitarioViaje.TabIndex = 17
         Me.txtFleteUnitarioViaje.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtFleteUnitarioViaje.Text = "0.0000"
-        UltraToolTipInfo9.ToolTipText = "FleteUnitario del Viaje"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtFleteUnitarioViaje, UltraToolTipInfo9)
+        UltraToolTipInfo11.ToolTipText = "FleteUnitario del Viaje"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtFleteUnitarioViaje, UltraToolTipInfo11)
         '
         'UltraLabel28
         '
@@ -5647,7 +5669,7 @@ Partial Class frm_Operacion
         Appearance185.TextVAlignAsString = "Middle"
         Me.UltraLabel28.Appearance = Appearance185
         Me.UltraLabel28.AutoSize = True
-        Me.UltraLabel28.Location = New System.Drawing.Point(342, 7)
+        Me.UltraLabel28.Location = New System.Drawing.Point(289, 7)
         Me.UltraLabel28.Name = "UltraLabel28"
         Me.UltraLabel28.Size = New System.Drawing.Size(35, 14)
         Me.UltraLabel28.TabIndex = 12
@@ -5663,9 +5685,9 @@ Partial Class frm_Operacion
         Me.cboOrigen.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboOrigen.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboOrigen.ForeColor = System.Drawing.Color.Black
-        Me.cboOrigen.Location = New System.Drawing.Point(68, 28)
+        Me.cboOrigen.Location = New System.Drawing.Point(63, 28)
         Me.cboOrigen.Name = "cboOrigen"
-        Me.cboOrigen.Size = New System.Drawing.Size(250, 21)
+        Me.cboOrigen.Size = New System.Drawing.Size(205, 21)
         Me.cboOrigen.TabIndex = 6
         Me.cboOrigen.ValueMember = "Id"
         '
@@ -5676,7 +5698,7 @@ Partial Class frm_Operacion
         Appearance187.TextVAlignAsString = "Middle"
         Me.UltraLabel31.Appearance = Appearance187
         Me.UltraLabel31.AutoSize = True
-        Me.UltraLabel31.Location = New System.Drawing.Point(329, 30)
+        Me.UltraLabel31.Location = New System.Drawing.Point(276, 30)
         Me.UltraLabel31.Name = "UltraLabel31"
         Me.UltraLabel31.Size = New System.Drawing.Size(48, 14)
         Me.UltraLabel31.TabIndex = 14
@@ -5689,7 +5711,7 @@ Partial Class frm_Operacion
         Me.txtFletePorcentaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFletePorcentaje.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Integer]
         Me.txtFletePorcentaje.InputMask = "nnn"
-        Me.txtFletePorcentaje.Location = New System.Drawing.Point(746, 70)
+        Me.txtFletePorcentaje.Location = New System.Drawing.Point(693, 70)
         Me.txtFletePorcentaje.Name = "txtFletePorcentaje"
         Me.txtFletePorcentaje.NonAutoSizeHeight = 20
         Me.txtFletePorcentaje.NullText = "100"
@@ -5706,7 +5728,7 @@ Partial Class frm_Operacion
         Appearance189.TextVAlignAsString = "Middle"
         Me.UltraLabel40.Appearance = Appearance189
         Me.UltraLabel40.AutoSize = True
-        Me.UltraLabel40.Location = New System.Drawing.Point(705, 8)
+        Me.UltraLabel40.Location = New System.Drawing.Point(652, 8)
         Me.UltraLabel40.Name = "UltraLabel40"
         Me.UltraLabel40.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel40.TabIndex = 20
@@ -5722,9 +5744,9 @@ Partial Class frm_Operacion
         Me.cboDestino.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboDestino.ForeColor = System.Drawing.Color.Black
         Me.cboDestino.ImageList = Me.imagenes
-        Me.cboDestino.Location = New System.Drawing.Point(68, 51)
+        Me.cboDestino.Location = New System.Drawing.Point(63, 51)
         Me.cboDestino.Name = "cboDestino"
-        Me.cboDestino.Size = New System.Drawing.Size(250, 21)
+        Me.cboDestino.Size = New System.Drawing.Size(205, 21)
         Me.cboDestino.TabIndex = 7
         Me.cboDestino.ValueMember = "Id"
         '
@@ -5732,7 +5754,7 @@ Partial Class frm_Operacion
         '
         Me.txtIdViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtIdViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdViaje.Location = New System.Drawing.Point(5, 28)
+        Me.txtIdViaje.Location = New System.Drawing.Point(3, 28)
         Me.txtIdViaje.Name = "txtIdViaje"
         Me.txtIdViaje.ReadOnly = True
         Me.txtIdViaje.Size = New System.Drawing.Size(8, 21)
@@ -5746,7 +5768,7 @@ Partial Class frm_Operacion
         Appearance191.TextVAlignAsString = "Middle"
         Me.UltraLabel25.Appearance = Appearance191
         Me.UltraLabel25.AutoSize = True
-        Me.UltraLabel25.Location = New System.Drawing.Point(702, 73)
+        Me.UltraLabel25.Location = New System.Drawing.Point(649, 73)
         Me.UltraLabel25.Name = "UltraLabel25"
         Me.UltraLabel25.Size = New System.Drawing.Size(44, 14)
         Me.UltraLabel25.TabIndex = 26
@@ -5766,7 +5788,7 @@ Partial Class frm_Operacion
         Me.cboTracto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTracto.ForeColor = System.Drawing.Color.Black
         Me.cboTracto.ImageList = Me.imagenes
-        Me.cboTracto.Location = New System.Drawing.Point(381, 72)
+        Me.cboTracto.Location = New System.Drawing.Point(328, 72)
         Me.cboTracto.Name = "cboTracto"
         Me.cboTracto.Size = New System.Drawing.Size(100, 21)
         Me.cboTracto.TabIndex = 14
@@ -5777,7 +5799,7 @@ Partial Class frm_Operacion
         Appearance194.ForeColor = System.Drawing.Color.Navy
         Me.verEscala.Appearance = Appearance194
         Me.verEscala.AutoSize = True
-        Me.verEscala.Location = New System.Drawing.Point(7, 75)
+        Me.verEscala.Location = New System.Drawing.Point(4, 75)
         Me.verEscala.Name = "verEscala"
         Me.verEscala.Size = New System.Drawing.Size(58, 17)
         Me.verEscala.TabIndex = 8
@@ -5788,7 +5810,7 @@ Partial Class frm_Operacion
         Me.txtCodigoViaje.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigoViaje.Enabled = False
         Me.txtCodigoViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigoViaje.Location = New System.Drawing.Point(15, 28)
+        Me.txtCodigoViaje.Location = New System.Drawing.Point(12, 28)
         Me.txtCodigoViaje.Name = "txtCodigoViaje"
         Me.txtCodigoViaje.ReadOnly = True
         Me.txtCodigoViaje.Size = New System.Drawing.Size(8, 21)
@@ -5806,7 +5828,7 @@ Partial Class frm_Operacion
         Me.cboCopiloto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCopiloto.ForeColor = System.Drawing.Color.Black
         Me.cboCopiloto.ImageList = Me.imagenes
-        Me.cboCopiloto.Location = New System.Drawing.Point(381, 26)
+        Me.cboCopiloto.Location = New System.Drawing.Point(328, 26)
         Me.cboCopiloto.Name = "cboCopiloto"
         Me.cboCopiloto.Size = New System.Drawing.Size(316, 21)
         Me.cboCopiloto.TabIndex = 12
@@ -5819,7 +5841,7 @@ Partial Class frm_Operacion
         Appearance196.TextVAlignAsString = "Middle"
         Me.UltraLabel29.Appearance = Appearance196
         Me.UltraLabel29.AutoSize = True
-        Me.UltraLabel29.Location = New System.Drawing.Point(24, 32)
+        Me.UltraLabel29.Location = New System.Drawing.Point(20, 32)
         Me.UltraLabel29.Name = "UltraLabel29"
         Me.UltraLabel29.Size = New System.Drawing.Size(40, 14)
         Me.UltraLabel29.TabIndex = 4
@@ -5829,14 +5851,15 @@ Partial Class frm_Operacion
         '
         Me.txtGlosaEscala.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtGlosaEscala.Enabled = False
-        Me.txtGlosaEscala.Location = New System.Drawing.Point(7, 95)
+        Me.txtGlosaEscala.Location = New System.Drawing.Point(4, 95)
         Me.txtGlosaEscala.Multiline = True
         Me.txtGlosaEscala.Name = "txtGlosaEscala"
         Me.txtGlosaEscala.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtGlosaEscala.Size = New System.Drawing.Size(690, 21)
+        Me.txtGlosaEscala.Size = New System.Drawing.Size(640, 21)
         Me.txtGlosaEscala.TabIndex = 10
-        UltraToolTipInfo10.ToolTipText = "Ingrese Justificacion de Escala Creada"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaEscala, UltraToolTipInfo10)
+        UltraToolTipInfo12.ToolTipText = "Ingrese Justificacion de Escala Creada"
+        UltraToolTipInfo12.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtGlosaEscala, UltraToolTipInfo12)
         '
         'txtFlete
         '
@@ -5845,7 +5868,7 @@ Partial Class frm_Operacion
         Me.txtFlete.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtFlete.EditAs = Infragistics.Win.UltraWinMaskedEdit.EditAsType.[Double]
         Me.txtFlete.InputMask = "{double:5.4}"
-        Me.txtFlete.Location = New System.Drawing.Point(746, 26)
+        Me.txtFlete.Location = New System.Drawing.Point(693, 26)
         Me.txtFlete.Name = "txtFlete"
         Me.txtFlete.NonAutoSizeHeight = 20
         Me.txtFlete.ReadOnly = True
@@ -5853,8 +5876,8 @@ Partial Class frm_Operacion
         Me.txtFlete.TabIndex = 18
         Me.txtFlete.TabNavigation = Infragistics.Win.UltraWinMaskedEdit.MaskedEditTabNavigation.NextControl
         Me.txtFlete.Text = "0.0000"
-        UltraToolTipInfo11.ToolTipText = "Flete del Viaje"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtFlete, UltraToolTipInfo11)
+        UltraToolTipInfo13.ToolTipText = "Flete del Viaje"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtFlete, UltraToolTipInfo13)
         '
         'UltraLabel30
         '
@@ -5863,7 +5886,7 @@ Partial Class frm_Operacion
         Appearance198.TextVAlignAsString = "Middle"
         Me.UltraLabel30.Appearance = Appearance198
         Me.UltraLabel30.AutoSize = True
-        Me.UltraLabel30.Location = New System.Drawing.Point(20, 55)
+        Me.UltraLabel30.Location = New System.Drawing.Point(17, 55)
         Me.UltraLabel30.Name = "UltraLabel30"
         Me.UltraLabel30.Size = New System.Drawing.Size(44, 14)
         Me.UltraLabel30.TabIndex = 6
@@ -5874,7 +5897,7 @@ Partial Class frm_Operacion
         Appearance199.ForeColor = System.Drawing.Color.Navy
         Me.verCarreta.Appearance = Appearance199
         Me.verCarreta.AutoSize = True
-        Me.verCarreta.Location = New System.Drawing.Point(532, 74)
+        Me.verCarreta.Location = New System.Drawing.Point(479, 74)
         Me.verCarreta.Name = "verCarreta"
         Me.verCarreta.Size = New System.Drawing.Size(62, 17)
         Me.verCarreta.TabIndex = 15
@@ -5887,7 +5910,7 @@ Partial Class frm_Operacion
         Appearance200.TextVAlignAsString = "Middle"
         Me.UltraLabel34.Appearance = Appearance200
         Me.UltraLabel34.AutoSize = True
-        Me.UltraLabel34.Location = New System.Drawing.Point(324, 53)
+        Me.UltraLabel34.Location = New System.Drawing.Point(271, 53)
         Me.UltraLabel34.Name = "UltraLabel34"
         Me.UltraLabel34.Size = New System.Drawing.Size(54, 14)
         Me.UltraLabel34.TabIndex = 16
@@ -5898,11 +5921,14 @@ Partial Class frm_Operacion
         Appearance201.ForeColor = System.Drawing.Color.Navy
         Me.verViajeVacio.Appearance = Appearance201
         Me.verViajeVacio.AutoSize = True
-        Me.verViajeVacio.Location = New System.Drawing.Point(213, 7)
+        Me.verViajeVacio.Location = New System.Drawing.Point(206, 7)
         Me.verViajeVacio.Name = "verViajeVacio"
-        Me.verViajeVacio.Size = New System.Drawing.Size(50, 17)
+        Me.verViajeVacio.Size = New System.Drawing.Size(31, 17)
         Me.verViajeVacio.TabIndex = 4
-        Me.verViajeVacio.Text = "Vacío"
+        Me.verViajeVacio.Text = "V."
+        UltraToolTipInfo14.ToolTipText = "Indicador Viaje Vacio"
+        UltraToolTipInfo14.ToolTipTitle = "Mensaje de Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verViajeVacio, UltraToolTipInfo14)
         '
         'cboAyudante
         '
@@ -5915,7 +5941,7 @@ Partial Class frm_Operacion
         Me.cboAyudante.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboAyudante.ForeColor = System.Drawing.Color.Black
         Me.cboAyudante.ImageList = Me.imagenes
-        Me.cboAyudante.Location = New System.Drawing.Point(381, 49)
+        Me.cboAyudante.Location = New System.Drawing.Point(328, 49)
         Me.cboAyudante.Name = "cboAyudante"
         Me.cboAyudante.Size = New System.Drawing.Size(316, 21)
         Me.cboAyudante.TabIndex = 13
@@ -5927,7 +5953,7 @@ Partial Class frm_Operacion
         Me.btnAgregarViaje.Appearance = Appearance203
         Me.btnAgregarViaje.ImageList = Me.imagenes
         Me.btnAgregarViaje.ImageSize = New System.Drawing.Size(23, 23)
-        Me.btnAgregarViaje.Location = New System.Drawing.Point(782, 80)
+        Me.btnAgregarViaje.Location = New System.Drawing.Point(728, 78)
         Me.btnAgregarViaje.Name = "btnAgregarViaje"
         Me.btnAgregarViaje.Size = New System.Drawing.Size(34, 36)
         Me.btnAgregarViaje.TabIndex = 21
@@ -5943,9 +5969,9 @@ Partial Class frm_Operacion
         Me.cboEscala.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboEscala.ForeColor = System.Drawing.Color.Black
         Me.cboEscala.ImageList = Me.imagenes
-        Me.cboEscala.Location = New System.Drawing.Point(68, 74)
+        Me.cboEscala.Location = New System.Drawing.Point(63, 74)
         Me.cboEscala.Name = "cboEscala"
-        Me.cboEscala.Size = New System.Drawing.Size(250, 19)
+        Me.cboEscala.Size = New System.Drawing.Size(205, 19)
         Me.cboEscala.TabIndex = 9
         Me.cboEscala.ValueMember = "Id"
         '
@@ -5960,7 +5986,7 @@ Partial Class frm_Operacion
         Me.cboPiloto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboPiloto.ForeColor = System.Drawing.Color.Black
         Me.cboPiloto.ImageList = Me.imagenes
-        Me.cboPiloto.Location = New System.Drawing.Point(381, 3)
+        Me.cboPiloto.Location = New System.Drawing.Point(328, 3)
         Me.cboPiloto.Name = "cboPiloto"
         Me.cboPiloto.Size = New System.Drawing.Size(316, 21)
         Me.cboPiloto.TabIndex = 11
@@ -5972,7 +5998,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl5.Controls.Add(Me.expCargaOperacion)
         Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1248, 412)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1278, 412)
         '
         'griViajeDetalle
         '
@@ -6138,7 +6164,7 @@ Partial Class frm_Operacion
         Me.griViajeDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griViajeDetalle.Location = New System.Drawing.Point(0, 200)
         Me.griViajeDetalle.Name = "griViajeDetalle"
-        Me.griViajeDetalle.Size = New System.Drawing.Size(1248, 212)
+        Me.griViajeDetalle.Size = New System.Drawing.Size(1278, 212)
         Me.griViajeDetalle.TabIndex = 4
         Me.griViajeDetalle.TabStop = False
         Me.griViajeDetalle.Tag = ""
@@ -6185,10 +6211,10 @@ Partial Class frm_Operacion
         Me.expCargaOperacion.ContentAreaAppearance = Appearance222
         Me.expCargaOperacion.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
         Me.expCargaOperacion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expCargaOperacion.ExpandedSize = New System.Drawing.Size(1248, 200)
+        Me.expCargaOperacion.ExpandedSize = New System.Drawing.Size(1278, 200)
         Me.expCargaOperacion.Location = New System.Drawing.Point(0, 0)
         Me.expCargaOperacion.Name = "expCargaOperacion"
-        Me.expCargaOperacion.Size = New System.Drawing.Size(1248, 200)
+        Me.expCargaOperacion.Size = New System.Drawing.Size(1278, 200)
         Me.expCargaOperacion.TabIndex = 1
         Me.expCargaOperacion.TabStop = False
         Me.expCargaOperacion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -6200,7 +6226,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(3, 18)
         Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
-        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(1242, 179)
+        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(1272, 179)
         Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
         '
         'expListaDemandas
@@ -6211,11 +6237,11 @@ Partial Class frm_Operacion
         Me.expListaDemandas.ContentAreaAppearance = Appearance223
         Me.expListaDemandas.Controls.Add(Me.UltraExpandableGroupBoxPanel16)
         Me.expListaDemandas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.expListaDemandas.ExpandedSize = New System.Drawing.Size(288, 179)
+        Me.expListaDemandas.ExpandedSize = New System.Drawing.Size(318, 179)
         Me.expListaDemandas.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.expListaDemandas.Location = New System.Drawing.Point(954, 0)
         Me.expListaDemandas.Name = "expListaDemandas"
-        Me.expListaDemandas.Size = New System.Drawing.Size(288, 179)
+        Me.expListaDemandas.Size = New System.Drawing.Size(318, 179)
         Me.expListaDemandas.TabIndex = 1
         Me.expListaDemandas.TabStop = False
         Me.expListaDemandas.Text = "Lista Pedido Carga"
@@ -6228,7 +6254,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel16.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel16.Name = "UltraExpandableGroupBoxPanel16"
-        Me.UltraExpandableGroupBoxPanel16.Size = New System.Drawing.Size(265, 173)
+        Me.UltraExpandableGroupBoxPanel16.Size = New System.Drawing.Size(295, 173)
         Me.UltraExpandableGroupBoxPanel16.TabIndex = 0
         '
         'griDemanda
@@ -6356,7 +6382,7 @@ Partial Class frm_Operacion
         Me.griDemanda.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDemanda.Location = New System.Drawing.Point(0, 55)
         Me.griDemanda.Name = "griDemanda"
-        Me.griDemanda.Size = New System.Drawing.Size(265, 118)
+        Me.griDemanda.Size = New System.Drawing.Size(295, 118)
         Me.griDemanda.TabIndex = 2
         Me.griDemanda.TabStop = False
         Me.griDemanda.Tag = ""
@@ -6376,11 +6402,11 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox3.ContentAreaAppearance = Appearance226
         Me.UltraExpandableGroupBox3.Controls.Add(Me.UltraExpandableGroupBoxPanel9)
         Me.UltraExpandableGroupBox3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.UltraExpandableGroupBox3.ExpandedSize = New System.Drawing.Size(265, 55)
+        Me.UltraExpandableGroupBox3.ExpandedSize = New System.Drawing.Size(295, 55)
         Me.UltraExpandableGroupBox3.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.UltraExpandableGroupBox3.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox3.Name = "UltraExpandableGroupBox3"
-        Me.UltraExpandableGroupBox3.Size = New System.Drawing.Size(265, 55)
+        Me.UltraExpandableGroupBox3.Size = New System.Drawing.Size(295, 55)
         Me.UltraExpandableGroupBox3.TabIndex = 1
         Me.UltraExpandableGroupBox3.TabStop = False
         Me.UltraExpandableGroupBox3.Text = "Consultas: Pedido Carga para Consumir"
@@ -6396,7 +6422,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel9.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel9.Name = "UltraExpandableGroupBoxPanel9"
-        Me.UltraExpandableGroupBoxPanel9.Size = New System.Drawing.Size(259, 32)
+        Me.UltraExpandableGroupBoxPanel9.Size = New System.Drawing.Size(289, 32)
         Me.UltraExpandableGroupBoxPanel9.TabIndex = 0
         '
         'lblCodigoDemandaAProgramar
@@ -6640,9 +6666,9 @@ Partial Class frm_Operacion
         Me.verValidaFU.Name = "verValidaFU"
         Me.verValidaFU.Size = New System.Drawing.Size(14, 13)
         Me.verValidaFU.TabIndex = 1
-        UltraToolTipInfo12.ToolTipText = "Modificar Flete Unitario"
-        UltraToolTipInfo12.ToolTipTitle = "Validar Flete Unitario"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.verValidaFU, UltraToolTipInfo12)
+        UltraToolTipInfo15.ToolTipText = "Modificar Flete Unitario"
+        UltraToolTipInfo15.ToolTipTitle = "Validar Flete Unitario"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verValidaFU, UltraToolTipInfo15)
         '
         'verIncluyeIgv
         '
@@ -7067,8 +7093,8 @@ Partial Class frm_Operacion
         Me.txtMotivoConsolidado.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtMotivoConsolidado.Size = New System.Drawing.Size(162, 47)
         Me.txtMotivoConsolidado.TabIndex = 8
-        UltraToolTipInfo13.ToolTipText = "Comentario de Consolidado"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtMotivoConsolidado, UltraToolTipInfo13)
+        UltraToolTipInfo16.ToolTipText = "Comentario de Consolidado"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtMotivoConsolidado, UltraToolTipInfo16)
         '
         'txtCostoEstibaDescarga
         '
@@ -7190,7 +7216,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl8.Controls.Add(Me.expContratoTercero)
         Me.UltraTabPageControl8.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl8.Name = "UltraTabPageControl8"
-        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1248, 412)
+        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1278, 412)
         '
         'griDetalleTercero
         '
@@ -7330,7 +7356,7 @@ Partial Class frm_Operacion
         Me.griDetalleTercero.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDetalleTercero.Location = New System.Drawing.Point(0, 146)
         Me.griDetalleTercero.Name = "griDetalleTercero"
-        Me.griDetalleTercero.Size = New System.Drawing.Size(1248, 266)
+        Me.griDetalleTercero.Size = New System.Drawing.Size(1278, 266)
         Me.griDetalleTercero.TabIndex = 19
         Me.griDetalleTercero.Tag = ""
         '
@@ -7372,11 +7398,11 @@ Partial Class frm_Operacion
         Me.expContratoTercero.ContentAreaAppearance = Appearance283
         Me.expContratoTercero.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
         Me.expContratoTercero.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expContratoTercero.ExpandedSize = New System.Drawing.Size(1248, 146)
+        Me.expContratoTercero.ExpandedSize = New System.Drawing.Size(1278, 146)
         Me.expContratoTercero.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.expContratoTercero.Location = New System.Drawing.Point(0, 0)
         Me.expContratoTercero.Name = "expContratoTercero"
-        Me.expContratoTercero.Size = New System.Drawing.Size(1248, 146)
+        Me.expContratoTercero.Size = New System.Drawing.Size(1278, 146)
         Me.expContratoTercero.TabIndex = 3
         Me.expContratoTercero.TabStop = False
         Me.expContratoTercero.Text = "Detalle"
@@ -7414,7 +7440,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel3.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel3.Name = "UltraExpandableGroupBoxPanel3"
-        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(1242, 123)
+        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(1272, 123)
         Me.UltraExpandableGroupBoxPanel3.TabIndex = 0
         '
         'txtTelefonoContacto
@@ -7426,8 +7452,8 @@ Partial Class frm_Operacion
         Me.txtTelefonoContacto.Name = "txtTelefonoContacto"
         Me.txtTelefonoContacto.Size = New System.Drawing.Size(106, 21)
         Me.txtTelefonoContacto.TabIndex = 8
-        UltraToolTipInfo14.ToolTipText = "Telefono"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTelefonoContacto, UltraToolTipInfo14)
+        UltraToolTipInfo17.ToolTipText = "Telefono"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtTelefonoContacto, UltraToolTipInfo17)
         '
         'txtApellidoMaternoContacto
         '
@@ -7551,8 +7577,8 @@ Partial Class frm_Operacion
         Me.txtReferenciaTercero.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtReferenciaTercero.Size = New System.Drawing.Size(532, 22)
         Me.txtReferenciaTercero.TabIndex = 9
-        UltraToolTipInfo15.ToolTipText = "Refencia del Punto de Llegada "
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtReferenciaTercero, UltraToolTipInfo15)
+        UltraToolTipInfo18.ToolTipText = "Refencia del Punto de Llegada "
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtReferenciaTercero, UltraToolTipInfo18)
         '
         'txtObservacionTercero
         '
@@ -7563,8 +7589,8 @@ Partial Class frm_Operacion
         Me.txtObservacionTercero.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservacionTercero.Size = New System.Drawing.Size(150, 90)
         Me.txtObservacionTercero.TabIndex = 17
-        UltraToolTipInfo16.ToolTipText = "Observaciones del Contrato de Terceros"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtObservacionTercero, UltraToolTipInfo16)
+        UltraToolTipInfo19.ToolTipText = "Observaciones del Contrato de Terceros"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtObservacionTercero, UltraToolTipInfo19)
         '
         'numCantidadTercero
         '
@@ -7785,7 +7811,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
         Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
-        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1252, 710)
+        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1282, 710)
         '
         'agrListaRegistro
         '
@@ -7793,7 +7819,7 @@ Partial Class frm_Operacion
         Me.agrListaRegistro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.agrListaRegistro.Location = New System.Drawing.Point(0, 145)
         Me.agrListaRegistro.Name = "agrListaRegistro"
-        Me.agrListaRegistro.Size = New System.Drawing.Size(1252, 565)
+        Me.agrListaRegistro.Size = New System.Drawing.Size(1282, 565)
         Me.agrListaRegistro.TabIndex = 1
         Me.agrListaRegistro.Tag = ""
         Me.agrListaRegistro.Text = "Lista Registro"
@@ -7814,7 +7840,7 @@ Partial Class frm_Operacion
         Me.tabViajesLista.Location = New System.Drawing.Point(3, 17)
         Me.tabViajesLista.Name = "tabViajesLista"
         Me.tabViajesLista.SharedControlsPage = Me.UltraTabSharedControlsPage5
-        Me.tabViajesLista.Size = New System.Drawing.Size(1246, 545)
+        Me.tabViajesLista.Size = New System.Drawing.Size(1276, 545)
         Me.tabViajesLista.TabIndex = 285
         UltraTab2.TabPage = Me.UltraTabPageControl9
         UltraTab2.Text = "Viajes"
@@ -7832,7 +7858,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage5.Name = "UltraTabSharedControlsPage5"
-        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1242, 522)
+        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1272, 522)
         '
         'agrBusqueda
         '
@@ -7841,7 +7867,7 @@ Partial Class frm_Operacion
         Me.agrBusqueda.Dock = System.Windows.Forms.DockStyle.Top
         Me.agrBusqueda.Location = New System.Drawing.Point(0, 0)
         Me.agrBusqueda.Name = "agrBusqueda"
-        Me.agrBusqueda.Size = New System.Drawing.Size(1252, 145)
+        Me.agrBusqueda.Size = New System.Drawing.Size(1282, 145)
         Me.agrBusqueda.TabIndex = 0
         Me.agrBusqueda.Tag = ""
         Me.agrBusqueda.Text = "Busqueda"
@@ -7854,11 +7880,11 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox7.ContentAreaAppearance = Appearance96
         Me.UltraExpandableGroupBox7.Controls.Add(Me.UltraExpandableGroupBoxPanel15)
         Me.UltraExpandableGroupBox7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(866, 125)
+        Me.UltraExpandableGroupBox7.ExpandedSize = New System.Drawing.Size(896, 125)
         Me.UltraExpandableGroupBox7.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.UltraExpandableGroupBox7.Location = New System.Drawing.Point(383, 17)
         Me.UltraExpandableGroupBox7.Name = "UltraExpandableGroupBox7"
-        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(866, 125)
+        Me.UltraExpandableGroupBox7.Size = New System.Drawing.Size(896, 125)
         Me.UltraExpandableGroupBox7.TabIndex = 1
         Me.UltraExpandableGroupBox7.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
@@ -7878,7 +7904,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel15.Location = New System.Drawing.Point(18, 3)
         Me.UltraExpandableGroupBoxPanel15.Name = "UltraExpandableGroupBoxPanel15"
-        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(845, 119)
+        Me.UltraExpandableGroupBoxPanel15.Size = New System.Drawing.Size(875, 119)
         Me.UltraExpandableGroupBoxPanel15.TabIndex = 0
         '
         'decProduccionSinIGV
@@ -8942,7 +8968,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl1.Controls.Add(Me.expGeneral)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1252, 710)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1282, 710)
         '
         'ficViaje
         '
@@ -8955,7 +8981,7 @@ Partial Class frm_Operacion
         Me.ficViaje.Location = New System.Drawing.Point(0, 275)
         Me.ficViaje.Name = "ficViaje"
         Me.ficViaje.SharedControlsPage = Me.UltraTabSharedControlsPage4
-        Me.ficViaje.Size = New System.Drawing.Size(1252, 435)
+        Me.ficViaje.Size = New System.Drawing.Size(1282, 435)
         Me.ficViaje.TabIndex = 0
         UltraTab10.TabPage = Me.UltraTabPageControl4
         UltraTab10.Text = "Viaje"
@@ -8972,7 +8998,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage4.Name = "UltraTabSharedControlsPage4"
-        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1248, 412)
+        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1278, 412)
         '
         'expGeneral
         '
@@ -8982,11 +9008,11 @@ Partial Class frm_Operacion
         Me.expGeneral.ContentAreaAppearance = Appearance303
         Me.expGeneral.Controls.Add(Me.UltraExpandableGroupBoxPanel14)
         Me.expGeneral.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expGeneral.ExpandedSize = New System.Drawing.Size(1252, 275)
+        Me.expGeneral.ExpandedSize = New System.Drawing.Size(1282, 275)
         Me.expGeneral.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOnBorder
         Me.expGeneral.Location = New System.Drawing.Point(0, 0)
         Me.expGeneral.Name = "expGeneral"
-        Me.expGeneral.Size = New System.Drawing.Size(1252, 275)
+        Me.expGeneral.Size = New System.Drawing.Size(1282, 275)
         Me.expGeneral.TabIndex = 0
         Me.expGeneral.TabStop = False
         Me.expGeneral.Text = "Datos Generales"
@@ -9000,7 +9026,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel14.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel14.Name = "UltraExpandableGroupBoxPanel14"
-        Me.UltraExpandableGroupBoxPanel14.Size = New System.Drawing.Size(1246, 252)
+        Me.UltraExpandableGroupBoxPanel14.Size = New System.Drawing.Size(1276, 252)
         Me.UltraExpandableGroupBoxPanel14.TabIndex = 0
         '
         'griDisponibleVehiculo
@@ -9292,9 +9318,9 @@ Partial Class frm_Operacion
         Me.griDisponibleVehiculo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.griDisponibleVehiculo.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDisponibleVehiculo.ImageList = Me.imagenes
-        Me.griDisponibleVehiculo.Location = New System.Drawing.Point(790, 0)
+        Me.griDisponibleVehiculo.Location = New System.Drawing.Point(765, 0)
         Me.griDisponibleVehiculo.Name = "griDisponibleVehiculo"
-        Me.griDisponibleVehiculo.Size = New System.Drawing.Size(456, 252)
+        Me.griDisponibleVehiculo.Size = New System.Drawing.Size(511, 252)
         Me.griDisponibleVehiculo.TabIndex = 76
         Me.griDisponibleVehiculo.TabStop = False
         Me.griDisponibleVehiculo.Tag = ""
@@ -9313,7 +9339,7 @@ Partial Class frm_Operacion
         Me.expVehiculo.Dock = System.Windows.Forms.DockStyle.Left
         Me.expVehiculo.ExpandedSize = New System.Drawing.Size(375, 252)
         Me.expVehiculo.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.expVehiculo.Location = New System.Drawing.Point(415, 0)
+        Me.expVehiculo.Location = New System.Drawing.Point(390, 0)
         Me.expVehiculo.Name = "expVehiculo"
         Me.expVehiculo.Size = New System.Drawing.Size(375, 252)
         Me.expVehiculo.TabIndex = 2
@@ -9457,9 +9483,9 @@ Partial Class frm_Operacion
         Me.ColorPiloto.Size = New System.Drawing.Size(44, 19)
         Me.ColorPiloto.TabIndex = 7
         Me.ColorPiloto.Text = "Orange"
-        UltraToolTipInfo17.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
-        UltraToolTipInfo17.ToolTipTitle = "Mensaje del sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorPiloto, UltraToolTipInfo17)
+        UltraToolTipInfo20.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
+        UltraToolTipInfo20.ToolTipTitle = "Mensaje del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorPiloto, UltraToolTipInfo20)
         '
         'Etiqueta14
         '
@@ -9484,9 +9510,9 @@ Partial Class frm_Operacion
         Me.ColorAyudante.Size = New System.Drawing.Size(44, 19)
         Me.ColorAyudante.TabIndex = 5
         Me.ColorAyudante.Text = "Lime"
-        UltraToolTipInfo18.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
-        UltraToolTipInfo18.ToolTipTitle = "Mensaje del sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorAyudante, UltraToolTipInfo18)
+        UltraToolTipInfo21.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
+        UltraToolTipInfo21.ToolTipTitle = "Mensaje del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorAyudante, UltraToolTipInfo21)
         '
         'ColorCopiloto
         '
@@ -9497,9 +9523,9 @@ Partial Class frm_Operacion
         Me.ColorCopiloto.Size = New System.Drawing.Size(44, 19)
         Me.ColorCopiloto.TabIndex = 4
         Me.ColorCopiloto.Text = "Yellow"
-        UltraToolTipInfo19.ToolTipText = "Color que especifica si el copiloto no se encuentra disponible para el viaje"
-        UltraToolTipInfo19.ToolTipTitle = "Mensaje del sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorCopiloto, UltraToolTipInfo19)
+        UltraToolTipInfo22.ToolTipText = "Color que especifica si el copiloto no se encuentra disponible para el viaje"
+        UltraToolTipInfo22.ToolTipTitle = "Mensaje del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorCopiloto, UltraToolTipInfo22)
         '
         'ColorCarreta
         '
@@ -9520,9 +9546,9 @@ Partial Class frm_Operacion
         Me.ColorTracto.Size = New System.Drawing.Size(44, 19)
         Me.ColorTracto.TabIndex = 5
         Me.ColorTracto.Text = "DarkCyan"
-        UltraToolTipInfo20.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
-        UltraToolTipInfo20.ToolTipTitle = "Mensaje del sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorTracto, UltraToolTipInfo20)
+        UltraToolTipInfo23.ToolTipText = "Color que especifica si el piloto no se encuentra disponible para el viaje"
+        UltraToolTipInfo23.ToolTipTitle = "Mensaje del sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ColorTracto, UltraToolTipInfo23)
         '
         'UltraExpandableGroupBox9
         '
@@ -10000,8 +10026,8 @@ Partial Class frm_Operacion
         Me.cboZonaDisponibles.Name = "cboZonaDisponibles"
         Me.cboZonaDisponibles.Size = New System.Drawing.Size(150, 21)
         Me.cboZonaDisponibles.TabIndex = 2
-        UltraToolTipInfo21.ToolTipText = "Seleccionar Zona para"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboZonaDisponibles, UltraToolTipInfo21)
+        UltraToolTipInfo24.ToolTipText = "Seleccionar Zona para"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboZonaDisponibles, UltraToolTipInfo24)
         Me.cboZonaDisponibles.ValueMember = "Id"
         '
         'UltraLabel59
@@ -10030,8 +10056,8 @@ Partial Class frm_Operacion
         Me.cboVehiculoDisponible.Name = "cboVehiculoDisponible"
         Me.cboVehiculoDisponible.Size = New System.Drawing.Size(80, 21)
         Me.cboVehiculoDisponible.TabIndex = 1
-        UltraToolTipInfo22.ToolTipText = "Seleccionar Tracto para Filtrar su Disponibilidad"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboVehiculoDisponible, UltraToolTipInfo22)
+        UltraToolTipInfo25.ToolTipText = "Seleccionar Tracto para Filtrar su Disponibilidad"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.cboVehiculoDisponible, UltraToolTipInfo25)
         Me.cboVehiculoDisponible.ValueMember = "Id"
         '
         'btnConsultarDisponibles
@@ -10055,12 +10081,12 @@ Partial Class frm_Operacion
         Me.exgruOperacion.ContentAreaAppearance = Appearance340
         Me.exgruOperacion.Controls.Add(Me.UltraExpandableGroupBoxPanel5)
         Me.exgruOperacion.Dock = System.Windows.Forms.DockStyle.Left
-        Me.exgruOperacion.ExpandedSize = New System.Drawing.Size(415, 252)
+        Me.exgruOperacion.ExpandedSize = New System.Drawing.Size(390, 252)
         Me.exgruOperacion.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.exgruOperacion.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.exgruOperacion.Location = New System.Drawing.Point(0, 0)
         Me.exgruOperacion.Name = "exgruOperacion"
-        Me.exgruOperacion.Size = New System.Drawing.Size(415, 252)
+        Me.exgruOperacion.Size = New System.Drawing.Size(390, 252)
         Me.exgruOperacion.TabIndex = 1
         Me.exgruOperacion.TabStop = False
         Me.exgruOperacion.Text = "Datos Generales de la Operacion"
@@ -10089,7 +10115,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel5.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel5.Name = "UltraExpandableGroupBoxPanel5"
-        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(392, 246)
+        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(367, 246)
         Me.UltraExpandableGroupBoxPanel5.TabIndex = 0
         '
         'UltraLabel2
@@ -10100,11 +10126,11 @@ Partial Class frm_Operacion
         Me.UltraLabel2.Appearance = Appearance341
         Me.UltraLabel2.AutoSize = True
         Me.UltraLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel2.Location = New System.Drawing.Point(180, 11)
+        Me.UltraLabel2.Location = New System.Drawing.Point(189, 11)
         Me.UltraLabel2.Name = "UltraLabel2"
-        Me.UltraLabel2.Size = New System.Drawing.Size(60, 14)
+        Me.UltraLabel2.Size = New System.Drawing.Size(24, 14)
         Me.UltraLabel2.TabIndex = 3
-        Me.UltraLabel2.Text = "Operacion:"
+        Me.UltraLabel2.Text = "OP:"
         '
         'UltraGroupBox7
         '
@@ -10118,7 +10144,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox7.Location = New System.Drawing.Point(0, 125)
         Me.UltraGroupBox7.Name = "UltraGroupBox7"
-        Me.UltraGroupBox7.Size = New System.Drawing.Size(395, 33)
+        Me.UltraGroupBox7.Size = New System.Drawing.Size(370, 33)
         Me.UltraGroupBox7.TabIndex = 11
         Me.UltraGroupBox7.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -10129,10 +10155,10 @@ Partial Class frm_Operacion
         Appearance343.TextVAlignAsString = "Middle"
         Me.lblFlota.Appearance = Appearance343
         Me.lblFlota.AutoSize = True
-        Me.lblFlota.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.lblFlota.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblFlota.Location = New System.Drawing.Point(228, 8)
         Me.lblFlota.Name = "lblFlota"
-        Me.lblFlota.Size = New System.Drawing.Size(53, 17)
+        Me.lblFlota.Size = New System.Drawing.Size(52, 17)
         Me.lblFlota.TabIndex = 15
         Me.lblFlota.Text = "FLOTA:"
         '
@@ -10150,8 +10176,8 @@ Partial Class frm_Operacion
         Me.hOperacion.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
         Me.hOperacion.TabIndex = 9
         Me.hOperacion.Tag = ""
-        UltraToolTipInfo23.ToolTipText = "Hora de Inicio del Viaje - Salida de Planta"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.hOperacion, UltraToolTipInfo23)
+        UltraToolTipInfo26.ToolTipText = "Hora de Inicio del Viaje - Salida de Planta"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.hOperacion, UltraToolTipInfo26)
         Me.hOperacion.Value = New Date(2014, 12, 1, 0, 0, 0, 0)
         '
         'fecOperacion
@@ -10186,13 +10212,13 @@ Partial Class frm_Operacion
         Me.verValidaciones.BackColorInternal = System.Drawing.Color.Transparent
         Me.verValidaciones.Checked = True
         Me.verValidaciones.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.verValidaciones.Location = New System.Drawing.Point(345, 80)
+        Me.verValidaciones.Location = New System.Drawing.Point(324, 80)
         Me.verValidaciones.Name = "verValidaciones"
         Me.verValidaciones.Size = New System.Drawing.Size(43, 18)
         Me.verValidaciones.TabIndex = 7
         Me.verValidaciones.Text = "V.A."
-        UltraToolTipInfo24.ToolTipText = "Validaciones Activas"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.verValidaciones, UltraToolTipInfo24)
+        UltraToolTipInfo27.ToolTipText = "Validaciones Activas"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.verValidaciones, UltraToolTipInfo27)
         Me.verValidaciones.Visible = False
         '
         'UltraGroupBox5
@@ -10209,7 +10235,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox5.Location = New System.Drawing.Point(-1, 156)
         Me.UltraGroupBox5.Name = "UltraGroupBox5"
-        Me.UltraGroupBox5.Size = New System.Drawing.Size(395, 42)
+        Me.UltraGroupBox5.Size = New System.Drawing.Size(370, 42)
         Me.UltraGroupBox5.TabIndex = 12
         Me.UltraGroupBox5.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -10217,7 +10243,7 @@ Partial Class frm_Operacion
         '
         Me.NroTurno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.NroTurno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NroTurno.Location = New System.Drawing.Point(272, 9)
+        Me.NroTurno.Location = New System.Drawing.Point(254, 9)
         Me.NroTurno.MaskInput = "nn"
         Me.NroTurno.MaxValue = 99
         Me.NroTurno.MinValue = 0
@@ -10258,7 +10284,7 @@ Partial Class frm_Operacion
         ValueListItem6.DataValue = "ValueListItem1"
         ValueListItem6.DisplayText = "Dia (1)"
         Me.opcNocheDia.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem5, ValueListItem6})
-        Me.opcNocheDia.Location = New System.Drawing.Point(324, 6)
+        Me.opcNocheDia.Location = New System.Drawing.Point(298, 6)
         Me.opcNocheDia.Name = "opcNocheDia"
         Me.opcNocheDia.Size = New System.Drawing.Size(70, 30)
         Me.opcNocheDia.TabIndex = 13
@@ -10271,7 +10297,7 @@ Partial Class frm_Operacion
         Appearance349.TextVAlignAsString = "Middle"
         Me.UltraLabel27.Appearance = Appearance349
         Me.UltraLabel27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel27.Location = New System.Drawing.Point(229, 6)
+        Me.UltraLabel27.Location = New System.Drawing.Point(211, 6)
         Me.UltraLabel27.Name = "UltraLabel27"
         Me.UltraLabel27.Size = New System.Drawing.Size(45, 25)
         Me.UltraLabel27.TabIndex = 9
@@ -10305,9 +10331,9 @@ Partial Class frm_Operacion
         Me.verProgramarViajeBloque.BackColorInternal = System.Drawing.Color.Transparent
         Me.verProgramarViajeBloque.Location = New System.Drawing.Point(120, 6)
         Me.verProgramarViajeBloque.Name = "verProgramarViajeBloque"
-        Me.verProgramarViajeBloque.Size = New System.Drawing.Size(105, 25)
+        Me.verProgramarViajeBloque.Size = New System.Drawing.Size(96, 25)
         Me.verProgramarViajeBloque.TabIndex = 11
-        Me.verProgramarViajeBloque.Text = "Programo Viajes Por Bloque"
+        Me.verProgramarViajeBloque.Text = "Programo V. Por Bloque"
         '
         'UltraGroupBox1
         '
@@ -10329,7 +10355,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox1.Location = New System.Drawing.Point(-1, 196)
         Me.UltraGroupBox1.Name = "UltraGroupBox1"
-        Me.UltraGroupBox1.Size = New System.Drawing.Size(395, 52)
+        Me.UltraGroupBox1.Size = New System.Drawing.Size(370, 52)
         Me.UltraGroupBox1.TabIndex = 13
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -10511,7 +10537,7 @@ Partial Class frm_Operacion
         Me.chkMotriz.Appearance = Appearance360
         Me.chkMotriz.AutoSize = True
         Me.chkMotriz.Enabled = False
-        Me.chkMotriz.Location = New System.Drawing.Point(272, 79)
+        Me.chkMotriz.Location = New System.Drawing.Point(269, 79)
         Me.chkMotriz.Name = "chkMotriz"
         Me.chkMotriz.Size = New System.Drawing.Size(52, 18)
         Me.chkMotriz.TabIndex = 6
@@ -10525,7 +10551,7 @@ Partial Class frm_Operacion
         Me.UltraLabel65.Appearance = Appearance361
         Me.UltraLabel65.AutoSize = True
         Me.UltraLabel65.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel65.Location = New System.Drawing.Point(6, 80)
+        Me.UltraLabel65.Location = New System.Drawing.Point(6, 81)
         Me.UltraLabel65.Name = "UltraLabel65"
         Me.UltraLabel65.Size = New System.Drawing.Size(59, 14)
         Me.UltraLabel65.TabIndex = 15
@@ -10552,7 +10578,7 @@ Partial Class frm_Operacion
         Me.cboActividadNegocio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboActividadNegocio.ForeColor = System.Drawing.Color.Black
         Me.cboActividadNegocio.ImageList = Me.imagenes
-        Me.cboActividadNegocio.Location = New System.Drawing.Point(241, 7)
+        Me.cboActividadNegocio.Location = New System.Drawing.Point(216, 7)
         Me.cboActividadNegocio.Name = "cboActividadNegocio"
         Me.cboActividadNegocio.Size = New System.Drawing.Size(150, 21)
         Me.cboActividadNegocio.TabIndex = 2
@@ -10587,7 +10613,7 @@ Partial Class frm_Operacion
         Appearance363.TextVAlignAsString = "Middle"
         Me.UltraLabel22.Appearance = Appearance363
         Me.UltraLabel22.AutoSize = True
-        Me.UltraLabel22.Location = New System.Drawing.Point(5, 35)
+        Me.UltraLabel22.Location = New System.Drawing.Point(5, 34)
         Me.UltraLabel22.Name = "UltraLabel22"
         Me.UltraLabel22.Size = New System.Drawing.Size(57, 15)
         Me.UltraLabel22.TabIndex = 5
@@ -10605,7 +10631,7 @@ Partial Class frm_Operacion
         Me.cboRutaOrigen.ForeColor = System.Drawing.Color.Black
         Me.cboRutaOrigen.Location = New System.Drawing.Point(66, 31)
         Me.cboRutaOrigen.Name = "cboRutaOrigen"
-        Me.cboRutaOrigen.Size = New System.Drawing.Size(325, 21)
+        Me.cboRutaOrigen.Size = New System.Drawing.Size(300, 21)
         Me.cboRutaOrigen.TabIndex = 3
         Me.cboRutaOrigen.ValueMember = "Id"
         '
@@ -10632,7 +10658,7 @@ Partial Class frm_Operacion
         Appearance366.TextVAlignAsString = "Middle"
         Me.UltraLabel24.Appearance = Appearance366
         Me.UltraLabel24.AutoSize = True
-        Me.UltraLabel24.Location = New System.Drawing.Point(1, 58)
+        Me.UltraLabel24.Location = New System.Drawing.Point(1, 57)
         Me.UltraLabel24.Name = "UltraLabel24"
         Me.UltraLabel24.Size = New System.Drawing.Size(62, 15)
         Me.UltraLabel24.TabIndex = 7
@@ -10645,10 +10671,10 @@ Partial Class frm_Operacion
         Me.txtObservacionOperacion.Multiline = True
         Me.txtObservacionOperacion.Name = "txtObservacionOperacion"
         Me.txtObservacionOperacion.Scrollbars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtObservacionOperacion.Size = New System.Drawing.Size(390, 25)
+        Me.txtObservacionOperacion.Size = New System.Drawing.Size(366, 25)
         Me.txtObservacionOperacion.TabIndex = 10
-        UltraToolTipInfo25.ToolTipText = "Descripcion de la Operacion"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtObservacionOperacion, UltraToolTipInfo25)
+        UltraToolTipInfo28.ToolTipText = "Descripcion de la Operacion"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.txtObservacionOperacion, UltraToolTipInfo28)
         '
         'UltraLabel36
         '
@@ -10658,7 +10684,7 @@ Partial Class frm_Operacion
         Me.UltraLabel36.Appearance = Appearance367
         Me.UltraLabel36.AutoSize = True
         Me.UltraLabel36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel36.Location = New System.Drawing.Point(4, 11)
+        Me.UltraLabel36.Location = New System.Drawing.Point(3, 11)
         Me.UltraLabel36.Name = "UltraLabel36"
         Me.UltraLabel36.Size = New System.Drawing.Size(63, 14)
         Me.UltraLabel36.TabIndex = 0
@@ -10676,7 +10702,7 @@ Partial Class frm_Operacion
         Me.cboRutaDestino.ForeColor = System.Drawing.Color.Black
         Me.cboRutaDestino.Location = New System.Drawing.Point(66, 54)
         Me.cboRutaDestino.Name = "cboRutaDestino"
-        Me.cboRutaDestino.Size = New System.Drawing.Size(325, 21)
+        Me.cboRutaDestino.Size = New System.Drawing.Size(300, 21)
         Me.cboRutaDestino.TabIndex = 4
         Me.cboRutaDestino.ValueMember = "IdDestino"
         '
@@ -11442,7 +11468,7 @@ Partial Class frm_Operacion
         Me.ficOperacion.Location = New System.Drawing.Point(0, 0)
         Me.ficOperacion.Name = "ficOperacion"
         Me.ficOperacion.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficOperacion.Size = New System.Drawing.Size(1254, 733)
+        Me.ficOperacion.Size = New System.Drawing.Size(1284, 733)
         Me.ficOperacion.TabIndex = 0
         UltraTab14.Key = "Lista"
         UltraTab14.TabPage = Me.UltraTabPageControl7
@@ -11458,7 +11484,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1252, 710)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1282, 710)
         '
         'UltraToolTipManager1
         '
@@ -11475,11 +11501,23 @@ Partial Class frm_Operacion
         Me.ugb_Espera.TabIndex = 14
         Me.ugb_Espera.Visible = False
         '
+        'upbFotoCarreta
+        '
+        Me.upbFotoCarreta.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFotoCarreta.Dock = System.Windows.Forms.DockStyle.Left
+        Me.upbFotoCarreta.Location = New System.Drawing.Point(300, 0)
+        Me.upbFotoCarreta.Name = "upbFotoCarreta"
+        Me.upbFotoCarreta.Size = New System.Drawing.Size(150, 88)
+        Me.upbFotoCarreta.TabIndex = 31
+        UltraToolTipInfo4.ToolTipText = "Foto Carreta"
+        UltraToolTipInfo4.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFotoCarreta, UltraToolTipInfo4)
+        '
         'frm_Operacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1254, 733)
+        Me.ClientSize = New System.Drawing.Size(1284, 733)
         Me.Controls.Add(Me.ugb_Espera)
         Me.Controls.Add(Me.ficOperacion)
         Me.KeyPreview = True
@@ -11509,6 +11547,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl6.ResumeLayout(False)
         CType(Me.griTarifas, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ogdTarifas, System.ComponentModel.ISupportInitialize).EndInit
+        Me.UltraTabPageControl11.ResumeLayout(False)
         Me.UltraTabPageControl9.ResumeLayout(False)
         CType(Me.griLista, System.ComponentModel.ISupportInitialize).EndInit
         Me.Menu.ResumeLayout(False)
@@ -11760,56 +11799,56 @@ Partial Class frm_Operacion
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout
         CType(Me.cboMoneda, System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboRutaOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtCarga,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.chkMotriz,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtCodigoOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboActividadNegocio,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtIdEstadoOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtIdOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboRutaOrigen,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboTipoVehiculo,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.txtObservacionOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboRutaDestino,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ogdVehiculoEstadoSituacional,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraGroupBox6,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraGroupBox3,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraTabControl1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Colores1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Colores2,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Colores3,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Colores4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Colores5,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Agrupacion2,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Agrupacion2.ResumeLayout(false)
-        CType(Me.UltraCheckEditor4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraCheckEditor5,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraCheckEditor6,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.Agrupacion5,System.ComponentModel.ISupportInitialize).EndInit
-        Me.Agrupacion5.ResumeLayout(false)
+        CType(Me.cboRutaOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtCarga, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.chkMotriz, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtCodigoOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboActividadNegocio, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdEstadoOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtIdOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboRutaOrigen, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboTipoVehiculo, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.txtObservacionOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboRutaDestino, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ogdVehiculoEstadoSituacional, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraGroupBox6, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraGroupBox3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Colores1, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Colores2, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Colores3, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Colores4, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Colores5, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Agrupacion2, System.ComponentModel.ISupportInitialize).EndInit
+        Me.Agrupacion2.ResumeLayout(False)
+        CType(Me.UltraCheckEditor4, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraCheckEditor5, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraCheckEditor6, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.Agrupacion5, System.ComponentModel.ISupportInitialize).EndInit
+        Me.Agrupacion5.ResumeLayout(False)
         Me.Agrupacion5.PerformLayout
-        CType(Me.UltraGroupBox4,System.ComponentModel.ISupportInitialize).EndInit
-        Me.UltraGroupBox4.ResumeLayout(false)
+        CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).EndInit
+        Me.UltraGroupBox4.ResumeLayout(False)
         Me.UltraGroupBox4.PerformLayout
-        CType(Me.Combo4,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ComboMaestros5,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NumeroCalculadora1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ComboMaestros6,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ComboMaestros7,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ComboMaestros8,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraCheckEditor7,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraCheckEditor8,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.UltraExpandableGroupBox6,System.ComponentModel.ISupportInitialize).EndInit
-        Me.UltraExpandableGroupBox6.ResumeLayout(false)
-        CType(Me.cboTractoTransabilidad,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.chkTractoTransabilidad,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.cboCarretaTransabilidad,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.chkCarretaTransabilidad,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.ficOperacion,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ficOperacion.ResumeLayout(false)
-        Me.ResumeLayout(false)
+        CType(Me.Combo4, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ComboMaestros5, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NumeroCalculadora1, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ComboMaestros6, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ComboMaestros7, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ComboMaestros8, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraCheckEditor7, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraCheckEditor8, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.UltraExpandableGroupBox6, System.ComponentModel.ISupportInitialize).EndInit
+        Me.UltraExpandableGroupBox6.ResumeLayout(False)
+        CType(Me.cboTractoTransabilidad, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.chkTractoTransabilidad, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.cboCarretaTransabilidad, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.chkCarretaTransabilidad, System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.ficOperacion, System.ComponentModel.ISupportInitialize).EndInit
+        Me.ficOperacion.ResumeLayout(False)
+        Me.ResumeLayout(False)
 
-End Sub
+    End Sub
 
     Friend WithEvents MenuViajeDetalle As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents mnuDuplicar As System.Windows.Forms.ToolStripMenuItem
@@ -12272,4 +12311,6 @@ End Sub
     Friend WithEvents ugb_Espera As Espere
     Friend WithEvents upbFoto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents upbFotoTracto As Infragistics.Win.UltraWinEditors.UltraPictureBox
+    Friend WithEvents UltraTabPageControl11 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+    Friend WithEvents upbFotoCarreta As Infragistics.Win.UltraWinEditors.UltraPictureBox
 End Class
