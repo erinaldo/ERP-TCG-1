@@ -1552,7 +1552,7 @@ Public Class frm_EstacionServicio
         Try
             Dim loInventario As New List(Of e_Inventario), oeRegInventario As e_RegistroInventario, oeInventario As New e_Inventario
             With oeInventario
-                .IdOrden = ""
+                .IdOrden = oe.NroVale
                 .IdMaterial = oe.IdMaterial
                 .FechaCreacion = FechaActual
                 .IdSubAlmacen = oe.IdSubAlmacen
@@ -1560,6 +1560,7 @@ Public Class frm_EstacionServicio
                 .ValorUnitario = Math.Round(oe.PrecioUnitario, 4)
                 .Usuario = gUsuarioSGI.Id
                 .IndValidar = IndValidar
+                .
             End With
             oeRegInventario = New e_RegistroInventario
             With oeRegInventario
@@ -1570,6 +1571,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000028"
                 .IdUnidadMedida = "1CH000000001"
                 .Cantidad = oe.CantidadGalon
+                .IdOrden = oe.NroVale
                 .UsuarioCreacion = gUsuarioSGI.Id
             End With
             oeInventario.oeRegistroInventario = New e_RegistroInventario
