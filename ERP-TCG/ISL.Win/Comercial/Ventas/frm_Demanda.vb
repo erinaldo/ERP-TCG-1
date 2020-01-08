@@ -1502,7 +1502,7 @@ Public Class frm_Demanda
         '    Me.dtFechaRecepcion.Value = FechaServidor.AddDays(1)
         '    Me.dtFechaAtencion.Value = FechaServidor
         '   Me.dtSolicita.Value = FechaServidor
-        tabDemandaCargas.Tabs(1).Visible = False        
+        'tabDemandaCargas.Tabs(1).Visible = False        
         CargarActividadesRestringidas()
     End Sub
 

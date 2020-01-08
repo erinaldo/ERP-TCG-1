@@ -1589,20 +1589,20 @@ Partial Class frm_Demanda
         Me.MenuDetalle.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarDetalleToolStripMenuItem, Me.NuevoDetalleToolStripMenuItem, Me.mnuEliminar, Me.mnuDuplicar})
         Me.MenuDetalle.Name = "mnu_Transferencias"
-        Me.MenuDetalle.Size = New System.Drawing.Size(185, 130)
+        Me.MenuDetalle.Size = New System.Drawing.Size(165, 108)
         '
         'EditarDetalleToolStripMenuItem
         '
         Me.EditarDetalleToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Editar
         Me.EditarDetalleToolStripMenuItem.Name = "EditarDetalleToolStripMenuItem"
-        Me.EditarDetalleToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.EditarDetalleToolStripMenuItem.Size = New System.Drawing.Size(164, 26)
         Me.EditarDetalleToolStripMenuItem.Text = "Editar Detalle"
         '
         'NuevoDetalleToolStripMenuItem
         '
         Me.NuevoDetalleToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
         Me.NuevoDetalleToolStripMenuItem.Name = "NuevoDetalleToolStripMenuItem"
-        Me.NuevoDetalleToolStripMenuItem.Size = New System.Drawing.Size(184, 26)
+        Me.NuevoDetalleToolStripMenuItem.Size = New System.Drawing.Size(164, 26)
         Me.NuevoDetalleToolStripMenuItem.Text = "Nuevo Detalle"
         '
         'mnuEliminar
@@ -1610,7 +1610,7 @@ Partial Class frm_Demanda
         Me.mnuEliminar.Image = CType(resources.GetObject("mnuEliminar.Image"), System.Drawing.Image)
         Me.mnuEliminar.Name = "mnuEliminar"
         Me.mnuEliminar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.mnuEliminar.Size = New System.Drawing.Size(184, 26)
+        Me.mnuEliminar.Size = New System.Drawing.Size(164, 26)
         Me.mnuEliminar.Text = "Quitar"
         '
         'mnuDuplicar
@@ -1618,7 +1618,7 @@ Partial Class frm_Demanda
         Me.mnuDuplicar.Image = CType(resources.GetObject("mnuDuplicar.Image"), System.Drawing.Image)
         Me.mnuDuplicar.Name = "mnuDuplicar"
         Me.mnuDuplicar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
-        Me.mnuDuplicar.Size = New System.Drawing.Size(184, 26)
+        Me.mnuDuplicar.Size = New System.Drawing.Size(164, 26)
         Me.mnuDuplicar.Text = "Duplicar"
         '
         'ogdDemandaDetalle
@@ -4802,7 +4802,7 @@ Partial Class frm_Demanda
         '
         Me.UltraTabPageControl7.Controls.Add(Me.tabDemandaCargas)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1346, 638)
         '
@@ -5229,7 +5229,7 @@ Partial Class frm_Demanda
         Me.utpDetalle.Controls.Add(Me.tabs)
         Me.utpDetalle.Controls.Add(Me.UltraExpandableGroupBox9)
         Me.utpDetalle.Controls.Add(Me.exgruConsultas)
-        Me.utpDetalle.Location = New System.Drawing.Point(1, 22)
+        Me.utpDetalle.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDetalle.Name = "utpDetalle"
         Me.utpDetalle.Size = New System.Drawing.Size(1346, 638)
         '
