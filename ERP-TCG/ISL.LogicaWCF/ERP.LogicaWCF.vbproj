@@ -160,6 +160,8 @@
     <Content Include="Comercial\Ventas\l_Detraccion_Det.svc" />
     <Content Include="Comercial\Ventas\l_DistanciaZona.svc" />
     <Content Include="Comercial\Ventas\l_Flete.svc" />
+    <Content Include="Comercial\Ventas\l_GRR_Venta.svc" />
+    <Content Include="Comercial\Ventas\l_GuiaRemisionRemitente_Detalle.svc" />
     <Content Include="Comercial\Ventas\l_GuiaRemitente.svc" />
     <Content Include="Comercial\Ventas\l_GuiasControl.svc" />
     <Content Include="Comercial\Ventas\l_GuiaTransportista.svc" />
@@ -743,6 +745,8 @@
     <Compile Include="Comercial\Ventas\Il_Despacho.vb" />
     <Compile Include="Comercial\Ventas\Il_DespachoOperaciones.vb" />
     <Compile Include="Comercial\Ventas\Il_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\Il_GRR_Venta.vb" />
+    <Compile Include="Comercial\Ventas\Il_GuiaRemisionRemitente_Detalle.vb" />
     <Compile Include="Comercial\Ventas\Il_Liquidacion.vb" />
     <Compile Include="Comercial\Ventas\Il_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\Il_OperacionesProceso.vb" />
@@ -803,6 +807,12 @@
     </Compile>
     <Compile Include="Comercial\Ventas\l_DistanciaZona.svc.vb">
       <DependentUpon>l_DistanciaZona.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GRR_Venta.svc.vb">
+      <DependentUpon>l_GRR_Venta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\l_GuiaRemisionRemitente_Detalle.svc.vb">
+      <DependentUpon>l_GuiaRemisionRemitente_Detalle.svc</DependentUpon>
     </Compile>
     <Compile Include="Comercial\Ventas\l_Liquidacion.svc.vb">
       <DependentUpon>l_Liquidacion.svc</DependentUpon>

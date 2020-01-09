@@ -611,72 +611,72 @@ Public Class frm_EstacionServicio
             Periodo = dPeriodo.Obtener(New e_Periodo With {.Ejercicio = FechaOrden.Year, .Mes = FechaOrden.Month})
             ListaCuentaCotable = dCuentaContable.Listar(New e_CuentaContable With {.Ejercicio = Periodo.Ejercicio, .TipoOperacion = "N", .Movimiento = 1})
             MovimientoDocumento = OrdenVenta.oeDocumento
-                'MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = OrdenVenta.oeDocumento.Id, .CargaCompleta = True})
-                With MovimientoDocumento
+            'MovimientoDocumento = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = OrdenVenta.oeDocumento.Id, .CargaCompleta = True})
+            With MovimientoDocumento
                 .IdPeriodo = Periodo.Id
                 .Venta.TipoDoc = TIPODOC
-                    .Venta.Cliente = Cliente
-                    .Venta.Moneda = oeMoneda
-                End With
-                AsientoModelo.Equivale = 1 : AsientoModelo.IdMoneda = oeMoneda.Id
+                .Venta.Cliente = Cliente
+                .Venta.Moneda = oeMoneda
+            End With
+            AsientoModelo.Equivale = 1 : AsientoModelo.IdMoneda = oeMoneda.Id
 
-                If ListaAsientoModelo.Contains(AsientoModelo) Then
-                    AsientoModelo = ListaAsientoModelo.Item(ListaAsientoModelo.IndexOf(AsientoModelo))
-                    AsientoModelo.TipoOperacion = ""
-                    AsientoModelo.Ejercicio = MovimientoDocumento.FechaEmision.Year
-                    AsientoModelo = dAsientoModelo.Obtener(AsientoModelo)
-                    'For Each _oeDet In ASIENTOMODELO.leDetalle
-                    '    oeCtaCtble = New e_CuentaContable
-                    '    oeCtaCtble.Cuenta = "12121" : oeCtaCtble.Equivale = 0
-                    '    If loCtaCtble.Contains(oeCtaCtble) Then
-                    '        oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                    '        _oeDet.IdCuentaContable = oeCtaCtble.Id
-                    '    End If
-                    'Next
+            If ListaAsientoModelo.Contains(AsientoModelo) Then
+                AsientoModelo = ListaAsientoModelo.Item(ListaAsientoModelo.IndexOf(AsientoModelo))
+                AsientoModelo.TipoOperacion = ""
+                AsientoModelo.Ejercicio = MovimientoDocumento.FechaEmision.Year
+                AsientoModelo = dAsientoModelo.Obtener(AsientoModelo)
+                'For Each _oeDet In ASIENTOMODELO.leDetalle
+                '    oeCtaCtble = New e_CuentaContable
+                '    oeCtaCtble.Cuenta = "12121" : oeCtaCtble.Equivale = 0
+                '    If loCtaCtble.Contains(oeCtaCtble) Then
+                '        oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
+                '        _oeDet.IdCuentaContable = oeCtaCtble.Id
+                '    End If
+                'Next
 
-                    'CuentaCorriente = dCuentaCorriente.Obtener(New e_CuentaCorriente With {.Tipo = 3, .IdTrabajador = Me.MovimientoDocumento.IdClienteProveedor})
-                    'MovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
+                'CuentaCorriente = dCuentaCorriente.Obtener(New e_CuentaCorriente With {.Tipo = 3, .IdTrabajador = Me.MovimientoDocumento.IdClienteProveedor})
+                'MovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
 
-                    ServicioCuentaContable.IdServicio = gVSMercaderia : ServicioCuentaContable.Equivale = 1
-                    If ListaServicioCuentaContable.Contains(ServicioCuentaContable) Then
-                        ServicioCuentaContable = ListaServicioCuentaContable.Item(ListaServicioCuentaContable.IndexOf(ServicioCuentaContable))
-                    Else
-                        Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
-                                        Environment.NewLine & "Solicite el Apoyo del Area Contable.")
-                    End If
+                ServicioCuentaContable.IdServicio = gVSMercaderia : ServicioCuentaContable.Equivale = 1
+                If ListaServicioCuentaContable.Contains(ServicioCuentaContable) Then
+                    ServicioCuentaContable = ListaServicioCuentaContable.Item(ListaServicioCuentaContable.IndexOf(ServicioCuentaContable))
+                Else
+                    Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
+                                    Environment.NewLine & "Solicite el Apoyo del Area Contable.")
+                End If
 
-                    If CuentaCorriente.Id <> "" Then
+                If CuentaCorriente.Id <> "" Then
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                 Else
-                        btnCrearCuentaCorriente.PerformClick()
+                    btnCrearCuentaCorriente.PerformClick()
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(Me.MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                 End If
 
-                    ' Actualizar Cuenta para Empresas Relacionada
-                    'Dim _oeEmpr As New e_Cliente
-                    '_oeEmpr.Equivale = 1
-                    '_oeEmpr.Id = oeDoc.IdClienteProveedor.Trim
-                    'If leCliente.Contains(_oeEmpr) Then
-                    '    _oeEmpr = leCliente.Item(leCliente.IndexOf(_oeEmpr))
-                    '    If _oeEmpr.IndRelacionada = 1 Then
-                    '        For Each _oeDet In oeAsientoModelo.leDetalle
-                    '            If Microsoft.VisualBasic.Left(_oeDet.Cuenta.Trim, 2) = "12" Then
-                    '                Dim strCuenta As String = Replace(_oeDet.Cuenta, "2", "3", 1, 1)
-                    '                Dim strNuevaCuenta As String = Microsoft.VisualBasic.Left(strCuenta, 3) & "33" & Microsoft.VisualBasic.Right(strCuenta, 1)
-                    '                _oeDet.Cuenta = strNuevaCuenta
-                    '                oeCtaContable = New e_CuentaContable
-                    '                oeCtaContable.Cuenta = strNuevaCuenta : oeCtaContable.Equivale = 0
-                    '                If leCtaContable.Contains(oeCtaContable) Then
-                    '                    oeCtaContable = leCtaContable.Item(leCtaContable.IndexOf(oeCtaContable))
-                    '                    _oeDet.IdCuentaContable = oeCtaContable.Id
-                    '                End If
-                    '            End If
-                    '        Next
-                    '    End If
-                    'End If
-                Else
-                    Throw New Exception("No Existe Configuracion Contable")
-                End If
+                ' Actualizar Cuenta para Empresas Relacionada
+                'Dim _oeEmpr As New e_Cliente
+                '_oeEmpr.Equivale = 1
+                '_oeEmpr.Id = oeDoc.IdClienteProveedor.Trim
+                'If leCliente.Contains(_oeEmpr) Then
+                '    _oeEmpr = leCliente.Item(leCliente.IndexOf(_oeEmpr))
+                '    If _oeEmpr.IndRelacionada = 1 Then
+                '        For Each _oeDet In oeAsientoModelo.leDetalle
+                '            If Microsoft.VisualBasic.Left(_oeDet.Cuenta.Trim, 2) = "12" Then
+                '                Dim strCuenta As String = Replace(_oeDet.Cuenta, "2", "3", 1, 1)
+                '                Dim strNuevaCuenta As String = Microsoft.VisualBasic.Left(strCuenta, 3) & "33" & Microsoft.VisualBasic.Right(strCuenta, 1)
+                '                _oeDet.Cuenta = strNuevaCuenta
+                '                oeCtaContable = New e_CuentaContable
+                '                oeCtaContable.Cuenta = strNuevaCuenta : oeCtaContable.Equivale = 0
+                '                If leCtaContable.Contains(oeCtaContable) Then
+                '                    oeCtaContable = leCtaContable.Item(leCtaContable.IndexOf(oeCtaContable))
+                '                    _oeDet.IdCuentaContable = oeCtaContable.Id
+                '                End If
+                '            End If
+                '        Next
+                '    End If
+                'End If
+            Else
+                Throw New Exception("No Existe Configuracion Contable")
+            End If
             'End If
             If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & txt_Serie.Text & " - " & txt_Numero.Text & " ha sido Emitido", True)
             '    Ejercicio = frm.cmbEjercicio.Text

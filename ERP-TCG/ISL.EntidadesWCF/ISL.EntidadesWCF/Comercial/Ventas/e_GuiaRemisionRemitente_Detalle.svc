@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.EntidadesWCF.e_GuiaRemisionRemitente_Detalle" CodeBehind="e_GuiaRemisionRemitente_Detalle.svc.vb" %>

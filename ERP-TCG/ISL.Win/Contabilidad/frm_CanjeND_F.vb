@@ -319,19 +319,25 @@ Public Class frm_CanjeND_F
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgCliente.InitializeLayout
         Me.cbgCliente.ValueMember = "Id"
         Me.cbgCliente.DisplayMember = "Nombre"
+        For i As Integer = cbgCliente.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
+            cbgCliente.DisplayLayout.Bands(0).Columns(i).Hidden = False
+        Next
+
         With cbgCliente.DisplayLayout.Bands(0)
-            .Columns("Id").Hidden = True
-            .Columns("TipoEmpresa").Hidden = True
-            .Columns("Codigo").Hidden = True
-            .Columns("IdDireccionTanqueo").Hidden = True
-            .Columns("Morosidad").Hidden = True
-            .Columns("Credito").Hidden = True
-            .Columns("IndNivelComercial").Hidden = True
-            .Columns("Moneda").Hidden = True
-            .Columns("IndClasificacion").Hidden = True
-            .Columns("UsuarioCreacion").Hidden = True
-            .Columns("IndCategoriaEmpresaSGI").Hidden = True
+            '.Columns("Id").Hidden = True
+            '.Columns("TipoEmpresa").Hidden = True
+            '.Columns("Codigo").Hidden = True
+            '.Columns("IdDireccionTanqueo").Hidden = True
+            '.Columns("Morosidad").Hidden = True
+            '.Columns("Credito").Hidden = True
+            '.Columns("IndNivelComercial").Hidden = True
+            '.Columns("Moneda").Hidden = True
+            '.Columns("IndClasificacion").Hidden = True
+            '.Columns("UsuarioCreacion").Hidden = True
+            '.Columns("IndCategoriaEmpresaSGI").Hidden = True
             '.Columns("Activo").Hidden = True
+            .Columns("Ruc").Hidden = False
+            .Columns("Nombre").Hidden = False
             .Columns("Ruc").Header.Caption = "N° RUC"
             .Columns("Ruc").Width = 80
             .Columns("Nombre").Width = 250
