@@ -203,6 +203,7 @@
     <Content Include="Contabilidad\l_DocumentoRetencion.svc" />
     <Content Include="Contabilidad\l_DocumentoRetencionDetalle.svc" />
     <Content Include="Contabilidad\l_LiquidacionTrabajador_Asiento.svc" />
+    <Content Include="Contabilidad\l_MovimientoDocumento_Impresion.svc" />
     <Content Include="Contabilidad\l_ObligacionDocumento.svc" />
     <Content Include="Contabilidad\l_DetalleLibroElectronico.svc" />
     <Content Include="Contabilidad\l_Kardex.svc" />
@@ -879,6 +880,7 @@
     <Compile Include="Contabilidad\Il_DetraccionDetalle.vb" />
     <Compile Include="Contabilidad\Il_DocumentoRetencionDetalle.vb" />
     <Compile Include="Contabilidad\Il_LiquidacionTrabajador_Asiento.vb" />
+    <Compile Include="Contabilidad\Il_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\Il_ObligacionDocumento.vb" />
     <Compile Include="Contabilidad\Il_DetalleLibroElectronico.vb" />
     <Compile Include="Contabilidad\Il_Kardex.vb" />
@@ -948,6 +950,9 @@
     </Compile>
     <Compile Include="Contabilidad\l_LiquidacionTrabajador_Asiento.svc.vb">
       <DependentUpon>l_LiquidacionTrabajador_Asiento.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\l_MovimientoDocumento_Impresion.svc.vb">
+      <DependentUpon>l_MovimientoDocumento_Impresion.svc</DependentUpon>
     </Compile>
     <Compile Include="Contabilidad\l_ObligacionDocumento.svc.vb">
       <DependentUpon>l_ObligacionDocumento.svc</DependentUpon>

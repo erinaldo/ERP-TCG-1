@@ -653,6 +653,8 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
+    Dim ado_DatosImpresion As New l_MovimientoDocumento_Impresion
+
     Public Function GuardarCanje(oeMovimientoDocumento As e_MovimientoDocumento, oeNotaDespacho As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.GuardarCanje
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.Serie, "Agregue Serie al Documento.")
@@ -673,6 +675,7 @@ Public Class l_MovimientoDocumento
                 End With
                 odRefAsoc.Guardar(oeRefAsoc)
                 TransScope.Complete()
+
             End Using
         Catch ex As Exception
             Throw ex

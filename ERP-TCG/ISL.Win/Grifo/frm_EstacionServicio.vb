@@ -275,6 +275,29 @@ Public Class frm_EstacionServicio
                 .Venta.IndCliente = 2
                 .Venta.TipoOperacion = "I"
 
+                ' Cargar Datos Impresion
+                .DatosImpresion = New e_MovimientoDocumento_Impresion
+                .DatosImpresion.TipoOperacion = "I"
+                .DatosImpresion.UsuarioCreacion = gUsuarioSGI.Id
+                .DatosImpresion.FechaCreacion = Date.Now
+                .DatosImpresion.UsuarioModifica = gUsuarioSGI.Id
+                .DatosImpresion.FechaModificacion = Date.Now
+                .DatosImpresion.IdEmpresaSistema = gs_IdClienteProveedorSistema.Trim
+                .DatosImpresion.IdSucursalSistema = gs_IdSucursal
+                .DatosImpresion.PrefijoID = gs_PrefijoIdSucursal
+                .DatosImpresion.IdTipoDocumento = IdTipoDocumento
+                .DatosImpresion.TipoDocumento = TipoDocumento
+                .DatosImpresion.IdTurno = TurnoActivo.Id
+                .DatosImpresion.Turno = TurnoActivo.Turno
+                .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
+                .DatosImpresion.Direccion = cmb_Direccion.Text
+                .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
+                .DatosImpresion.Placa = cmb_Vehiculo.Text
+                .DatosImpresion.IdMedioPago = ""
+                .DatosImpresion.MedioPago = ""
+                .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
+                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
+
             End With
             Return MovimientoDocumento
         Catch ex As Exception

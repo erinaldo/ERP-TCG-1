@@ -152,12 +152,12 @@ Public Class d_MovimientoDocumento
     Public Function Obtener(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
         Try
             With oeMovimientoDocumento
-                Dim ds As DataSet
+                Dim ds As DataSet, ado_DatosImpresionas As New d_MovimientoDocumento_Impresion
                 ds = sqlhelper.ExecuteDataset("CON.Isp_MovimientoDocumento_Listar", "", .Id)
                 If ds.Tables(0).Rows.Count > 0 Then
                     oeMovimientoDocumento = Cargar(ds.Tables(0).Rows(0))
+                    oeMovimientoDocumento.DatosImpresion = ado_DatosImpresionas.Obtener(New e_MovimientoDocumento_Impresion With {.TipoOperacion = "SEL", .IdMovimientoDocumento = oeMovimientoDocumento.Id})
                 End If
-
                 Return oeMovimientoDocumento
             End With
         Catch ex As Exception
@@ -586,6 +586,16 @@ Public Class d_MovimientoDocumento
                         obj.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
                         odCuotaMovimiento.GuardarCancelacion(obj)
                     Next
+                End If
+                '' =========================================================================== 
+                '' Datos de Impresion
+                If .TipoOperacion = "I" Then
+                    Dim ado_DatosImpresion As New d_MovimientoDocumento_Impresion
+                    .DatosImpresion.TipoOperacion = "I"
+                    .DatosImpresion.IdMovimientoDocumento = stResultado(0)
+                    .DatosImpresion.IdEmpresaSistema = oeMovimientoDocumento.IdEmpresaSistema
+                    .DatosImpresion.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+                    ado_DatosImpresion.Guardar(.DatosImpresion)
                 End If
                 '' =========================================================================== 
                 '' Asiento Movimiento 

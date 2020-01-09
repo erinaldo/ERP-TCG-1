@@ -248,6 +248,7 @@
     <Content Include="Contabilidad\e_LibroElectronico.svc" />
     <Content Include="Contabilidad\e_LiquidacionTrabajador_Asiento.svc" />
     <Content Include="Contabilidad\e_MovimientoActivoFijo.svc" />
+    <Content Include="Contabilidad\e_MovimientoDocumento_Impresion.svc" />
     <Content Include="Contabilidad\e_ParticipacionAccion.svc" />
     <Content Include="Contabilidad\e_ProvisionBonificacion.svc" />
     <Content Include="Contabilidad\e_ProvisionPoliza.svc" />
@@ -1161,6 +1162,9 @@
     <Compile Include="Contabilidad\e_MovimientoActivoFijo.svc.vb">
       <DependentUpon>e_MovimientoActivoFijo.svc</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\e_MovimientoDocumento_Impresion.svc.vb">
+      <DependentUpon>e_MovimientoDocumento_Impresion.svc</DependentUpon>
+    </Compile>
     <Compile Include="Contabilidad\e_ParticipacionAccion.svc.vb">
       <DependentUpon>e_ParticipacionAccion.svc</DependentUpon>
     </Compile>
@@ -1225,6 +1229,7 @@
     <Compile Include="Contabilidad\Ie_LibroElectronico.vb" />
     <Compile Include="Contabilidad\Ie_LiquidacionTrabajador_Asiento.vb" />
     <Compile Include="Contabilidad\Ie_MovimientoActivoFijo.vb" />
+    <Compile Include="Contabilidad\Ie_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\Ie_ParticipacionAccion.vb" />
     <Compile Include="Contabilidad\Ie_ProvisionBonificacion.vb" />
     <Compile Include="Contabilidad\Ie_ProvisionPoliza.vb" />

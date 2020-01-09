@@ -196,6 +196,7 @@
     <Compile Include="Contabilidad\d_LibroElectronico.vb" />
     <Compile Include="Contabilidad\d_LiquidacionTrabajador_Asiento.vb" />
     <Compile Include="Contabilidad\d_MovimientoActivoFijo.vb" />
+    <Compile Include="Contabilidad\d_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\d_ParticipacionAccion.vb" />
     <Compile Include="Contabilidad\d_ReadecuacionActivoFijo.vb" />
     <Compile Include="Contabilidad\d_ReadecuacionAF_Documento.vb" />
