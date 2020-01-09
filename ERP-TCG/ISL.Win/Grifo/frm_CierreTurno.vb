@@ -387,6 +387,7 @@ Public Class frm_CierreTurno
                 udg_Almacenes.DataSource = .Detalles.Where(Function(it) it.Rubro = "ALMACENES").ToList : udg_Almacenes.DataBind()
                 udg_Combustibles.DataSource = .Detalles.Where(Function(it) it.Rubro = "PRECIO_COMBUSTIBLE").ToList : udg_Combustibles.DataBind()
                 udg_VentasxCombustible.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
+                udg_VentasxCombustibleResumen.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLERESUMEN").ToList : udg_VentasxCombustibleResumen.DataBind()
                 udg_ResumenVentas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList : udg_ResumenVentas.DataBind()
                 udg_DetalleVenta.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_DETALLADO").ToList : udg_DetalleVenta.DataBind()
                 udg_VentasAnuladas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
@@ -497,6 +498,7 @@ Public Class frm_CierreTurno
             udg_ContometroDigital.UpdateData()
             udg_ContometroAnalogico.UpdateData()
             udg_VentasxCombustible.UpdateData()
+            udg_VentasxCombustibleResumen.UpdateData()
             udg_ResumenVentas.UpdateData()
             udg_DetalleVenta.UpdateData()
             udg_VentasAnuladas.UpdateData()
@@ -660,6 +662,19 @@ Public Class frm_CierreTurno
         mt_Aplicar_FormatoNumerico(udg_VentasxCombustible, "ValorReal")
         CalcularTotales(udg_VentasxCombustible, "ValorERP", "ValorReal")
 
+        '' Ventas de Combustible Resumen
+        mt_Ocultar_Columnas(udg_VentasxCombustibleResumen)
+        With udg_VentasxCombustibleResumen.DisplayLayout.Bands(0)
+            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 80
+            .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+            .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
+            .Columns("ValorERP").Header.Caption = "Importe"
+            .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+        End With
+        mt_Aplicar_FormatoNumerico(udg_VentasxCombustibleResumen, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_VentasxCombustibleResumen, "ValorReal")
+        CalcularTotales(udg_VentasxCombustibleResumen, "ValorERP", "ValorReal")
+
         '' Resumen de Ventas
         mt_Ocultar_Columnas(udg_ResumenVentas)
         With udg_ResumenVentas.DisplayLayout.Bands(0)
@@ -793,6 +808,7 @@ Public Class frm_CierreTurno
         ListaDetallesDinamicos = dTurnoDetalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "CSM", .IdCierreTurno = TurnoActivo.Id})
         If ListaDetallesDinamicos.Count > 0 Then
             udg_VentasxCombustible.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLE").ToList : udg_VentasxCombustible.DataBind()
+            udg_VentasxCombustibleResumen.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLERESUMEN").ToList : udg_VentasxCombustibleResumen.DataBind()
             udg_DetalleVenta.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_DETALLADO").ToList : udg_DetalleVenta.DataBind()
             udg_ResumenVentas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList : udg_ResumenVentas.DataBind()
             udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()

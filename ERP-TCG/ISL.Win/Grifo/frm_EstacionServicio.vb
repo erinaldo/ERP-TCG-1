@@ -740,7 +740,7 @@ Public Class frm_EstacionServicio
             _Activo = True
             mt_Inicializar()
             Nuevo()
-            gmt_ConfigurarEventoKeyEnter_Tab(Me, btn_Contado.Name, btnCredito.Name, btnCalibracion.Name, btnDocumento.Name, btnBoleta.Name, btnNotaDespacho.Name, btnAgregarDetalle.Name)
+            'gmt_ConfigurarEventoKeyEnter_Tab(Me, btn_Contado.Name, btnCredito.Name, btnCalibracion.Name, btnDocumento.Name, btnBoleta.Name, btnNotaDespacho.Name, btnAgregarDetalle.Name)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
