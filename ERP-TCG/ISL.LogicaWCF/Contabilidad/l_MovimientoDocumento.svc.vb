@@ -653,30 +653,43 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
+    Dim ado_DatosImpresion As New l_MovimientoDocumento_Impresion
+
     Public Function GuardarCanje(oeMovimientoDocumento As e_MovimientoDocumento, oeNotaDespacho As e_MovimientoDocumento) As e_MovimientoDocumento Implements Il_MovimientoDocumento.GuardarCanje
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.Serie, "Agregue Serie al Documento.")
             l_FuncionesGenerales.ValidarCampoNoNulo(oeMovimientoDocumento.Numero, "Agregue Número al Documento.")
+            Using TransScope As New TransactionScope()
+                oeMovimientoDocumento = odMovimientoDocumento.Guardar(oeMovimientoDocumento, New e_MovimientoDocumento)
+                Dim oeRefAsoc As New e_ReferenciaAsociada
+                Dim odRefAsoc As New d_ReferenciaAsociada
+                With oeRefAsoc
+                    .TipoOperacion = "I"
+                    .IdEmpresaSis = oeMovimientoDocumento.IdEmpresaSis
+                    .PrefijoID = oeMovimientoDocumento.PrefijoID
+                    .IdTablaPrincipal = oeNotaDespacho.Id
+                    .IdTablaAsociada = oeMovimientoDocumento.Id
+                    .TipoRelacion = 0
+                    .Glosa = "CANJE ND X COMPROBANTE DE VENTA"
+                    .UsuarioCreacion = oeMovimientoDocumento.IdUsuarioCrea
+                End With
+                odRefAsoc.Guardar(oeRefAsoc)
+                TransScope.Complete()
 
-            oeMovimientoDocumento = odMovimientoDocumento.Guardar(oeMovimientoDocumento, New e_MovimientoDocumento)
-
-            Dim oeRefAsoc As New e_ReferenciaAsociada
-            Dim odRefAsoc As New d_ReferenciaAsociada
-            With oeRefAsoc
-                .TipoOperacion = "I"
-                .IdEmpresaSis = oeMovimientoDocumento.IdEmpresaSis
-                .PrefijoID = oeMovimientoDocumento.PrefijoID
-                .IdTablaPrincipal = oeNotaDespacho.Id
-                .IdTablaAsociada = oeMovimientoDocumento.Id
-                .TipoRelacion = 0
-                .Glosa = "CANJE ND X COMPROBANTE DE VENTA"
-                .UsuarioCreacion = oeMovimientoDocumento.IdUsuarioCrea
-            End With
-            odRefAsoc.Guardar(oeRefAsoc)
+            End Using
         Catch ex As Exception
             Throw ex
         End Try
         Return oeMovimientoDocumento
+    End Function
+
+    Public Function AplicarCanje(oeNotaDespacho As e_MovimientoDocumento, oeDocumentoGenera As e_MovimientoDocumento) As Boolean
+        Try
+
+        Catch ex As Exception
+
+        End Try
+        Return True
     End Function
 
     Public Function ValidarTipoCambio(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.ValidarTipoCambio
@@ -1250,6 +1263,7 @@ Public Class l_MovimientoDocumento
                     oeMD._idMovimientoCajaBanco = "" : oeMD.CuentaxCyP = New e_CuentaxCyP
                     With oeMD.CuentaxCyP
                         .TipoOperacion = "I" : .IdMovimientoCajaBanco = "" : .IdMovimientoDocumento = oeMD.Id : .Fecha = Obj(0)
+                        .PrefijoID = oeMD.PrefijoID
                         If oeMD.IdMoneda = "1CH01" Then 'SOLES
                             .MontoMN = Math.Abs(oeMD.MontoOperar) : .MontoMe = Math.Abs(oeMD.MontoOperar) / Obj(1)
                         Else
@@ -2395,9 +2409,9 @@ Public Class l_MovimientoDocumento
                         End If
                         oeAsiento = Nothing
                         If odMovimientoDocumento.GuardarCompra(oeMovimientoDocumento, oeAsiento, False) Then
-                            If oeMovimientoDocumento.IdTipoDocumento = "1CH000000030" And oeMovimientoDocumento.Compra.IdMotivoDocumento = "1SI000000003" Then
-                                olRegistroInventarioDoc.RegenerarRegistroInv(oeMovimientoDocumento)
-                            End If
+                            'If oeMovimientoDocumento.IdTipoDocumento = "1CH000000030" And oeMovimientoDocumento.Compra.IdMotivoDocumento = "1SI000000003" Then
+                            '    olRegistroInventarioDoc.RegenerarRegistroInv(oeMovimientoDocumento)
+                            'End If
                             If olAsiento.GuardarLista(loAsiento) Then
                                 TransScope.Complete()
                             End If

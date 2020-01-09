@@ -159,6 +159,8 @@
     <Content Include="Comercial\Ventas\e_Despacho.svc" />
     <Content Include="Comercial\Ventas\e_DespachoOperaciones.svc" />
     <Content Include="Comercial\Ventas\e_DistanciaZona.svc" />
+    <Content Include="Comercial\Ventas\e_GRR_Venta.svc" />
+    <Content Include="Comercial\Ventas\e_GuiaRemisionRemitente_Detalle.svc" />
     <Content Include="Comercial\Ventas\e_MovimientoMermas.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProceso.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProcesoDetalle.svc" />
@@ -246,6 +248,7 @@
     <Content Include="Contabilidad\e_LibroElectronico.svc" />
     <Content Include="Contabilidad\e_LiquidacionTrabajador_Asiento.svc" />
     <Content Include="Contabilidad\e_MovimientoActivoFijo.svc" />
+    <Content Include="Contabilidad\e_MovimientoDocumento_Impresion.svc" />
     <Content Include="Contabilidad\e_ParticipacionAccion.svc" />
     <Content Include="Contabilidad\e_ProvisionBonificacion.svc" />
     <Content Include="Contabilidad\e_ProvisionPoliza.svc" />
@@ -836,6 +839,12 @@
     <Compile Include="Comercial\Ventas\e_DistanciaZona.svc.vb">
       <DependentUpon>e_DistanciaZona.svc</DependentUpon>
     </Compile>
+    <Compile Include="Comercial\Ventas\e_GRR_Venta.svc.vb">
+      <DependentUpon>e_GRR_Venta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\e_GuiaRemisionRemitente_Detalle.svc.vb">
+      <DependentUpon>e_GuiaRemisionRemitente_Detalle.svc</DependentUpon>
+    </Compile>
     <Compile Include="Comercial\Ventas\e_MovimientoMermas.svc.vb">
       <DependentUpon>e_MovimientoMermas.svc</DependentUpon>
     </Compile>
@@ -970,6 +979,8 @@
     <Compile Include="Comercial\Ventas\Ie_DetalleDoc_OperacionDet.vb" />
     <Compile Include="Comercial\Ventas\Ie_Detraccion_Det.vb" />
     <Compile Include="Comercial\Ventas\Ie_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\Ie_GRR_Venta.vb" />
+    <Compile Include="Comercial\Ventas\Ie_GuiaRemisionRemitente_Detalle.vb" />
     <Compile Include="Comercial\Ventas\Ie_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProcesoDetalle.vb" />
@@ -1151,6 +1162,9 @@
     <Compile Include="Contabilidad\e_MovimientoActivoFijo.svc.vb">
       <DependentUpon>e_MovimientoActivoFijo.svc</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\e_MovimientoDocumento_Impresion.svc.vb">
+      <DependentUpon>e_MovimientoDocumento_Impresion.svc</DependentUpon>
+    </Compile>
     <Compile Include="Contabilidad\e_ParticipacionAccion.svc.vb">
       <DependentUpon>e_ParticipacionAccion.svc</DependentUpon>
     </Compile>
@@ -1215,6 +1229,7 @@
     <Compile Include="Contabilidad\Ie_LibroElectronico.vb" />
     <Compile Include="Contabilidad\Ie_LiquidacionTrabajador_Asiento.vb" />
     <Compile Include="Contabilidad\Ie_MovimientoActivoFijo.vb" />
+    <Compile Include="Contabilidad\Ie_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\Ie_ParticipacionAccion.vb" />
     <Compile Include="Contabilidad\Ie_ProvisionBonificacion.vb" />
     <Compile Include="Contabilidad\Ie_ProvisionPoliza.vb" />

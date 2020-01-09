@@ -6274,6 +6274,7 @@
     <EmbeddedResource Include="Grifo\frm_EstacionServicio.resx">
       <DependentUpon>frm_EstacionServicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc" />
     <EmbeddedResource Include="Logistica\frm_Covisol.resx">
       <DependentUpon>frm_Covisol.vb</DependentUpon>
     </EmbeddedResource>

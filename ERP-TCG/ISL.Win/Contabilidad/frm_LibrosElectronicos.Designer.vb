@@ -2403,144 +2403,144 @@ Partial Class frm_LibrosElectronicos
         Me.ficLibroElectronico = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.UltraTabPageControl21.SuspendLayout()
-        CType(Me.gridInventario, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdDetalleLibroElectronico, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl22.SuspendLayout()
-        CType(Me.griInv10, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl23.SuspendLayout()
-        CType(Me.griInv12, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl24.SuspendLayout()
-        CType(Me.griInv14, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl25.SuspendLayout()
-        CType(Me.griInv16, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl26.SuspendLayout()
-        CType(Me.griInv19, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl27.SuspendLayout()
-        CType(Me.griInv20, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl28.SuspendLayout()
-        CType(Me.griInv30, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl29.SuspendLayout()
-        CType(Me.griInv34, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl30.SuspendLayout()
-        CType(Me.griInv41, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl31.SuspendLayout()
-        CType(Me.griInv42, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl32.SuspendLayout()
-        CType(Me.griInv46, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl33.SuspendLayout()
-        CType(Me.griInv47, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl34.SuspendLayout()
-        CType(Me.griInv37, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl35.SuspendLayout()
-        CType(Me.griInv50, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl36.SuspendLayout()
-        CType(Me.griInvParticionaria, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl37.SuspendLayout()
-        CType(Me.griInvBC, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl38.SuspendLayout()
-        CType(Me.griInvEFEMD, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl39.SuspendLayout()
-        CType(Me.griInvECPN, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl40.SuspendLayout()
-        CType(Me.griInvER, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl41.SuspendLayout()
-        Me.pnlNavegador.ClientArea.SuspendLayout()
-        Me.pnlNavegador.SuspendLayout()
-        CType(Me.agrNotas, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrNotas.SuspendLayout()
-        CType(Me.txtNombreArchivo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl42.SuspendLayout()
-        CType(Me.griInvERI, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl43.SuspendLayout()
-        CType(Me.griInvEFEMI, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl48.SuspendLayout()
-        CType(Me.gridActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl49.SuspendLayout()
-        CType(Me.griAct73, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl50.SuspendLayout()
-        CType(Me.griAct74, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl16.SuspendLayout()
-        CType(Me.griDetalleCompras, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl17.SuspendLayout()
-        CType(Me.griCompras2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl18.SuspendLayout()
-        CType(Me.griCompras3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl44.SuspendLayout()
-        CType(Me.gridCostos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl19.SuspendLayout()
-        CType(Me.griDetalleVentas, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl20.SuspendLayout()
-        CType(Me.griVentas2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl3.SuspendLayout()
-        CType(Me.gridCajaBancos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl5.SuspendLayout()
-        CType(Me.ficInventarioBalance, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficInventarioBalance.SuspendLayout()
-        Me.UltraTabPageControl10.SuspendLayout()
-        CType(Me.gridRentenciones, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl11.SuspendLayout()
-        CType(Me.griDetalleDiario, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.griDetalleDiarioPlanContable, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl12.SuspendLayout()
-        CType(Me.gridDiarioSimplificado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl13.SuspendLayout()
-        CType(Me.griDetalleMayor, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl14.SuspendLayout()
-        CType(Me.ficActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficActivoFijo.SuspendLayout()
-        Me.UltraTabPageControl15.SuspendLayout()
-        CType(Me.utcCompras, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.utcCompras.SuspendLayout()
-        Me.UltraTabPageControl1.SuspendLayout()
-        CType(Me.gridConsignacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl2.SuspendLayout()
-        CType(Me.ficRegistrosCostos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficRegistrosCostos.SuspendLayout()
-        Me.UltraTabPageControl4.SuspendLayout()
-        CType(Me.gridPermanenteUF, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl6.SuspendLayout()
-        CType(Me.griPermanenteValorizado, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl8.SuspendLayout()
-        CType(Me.UltraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabControl2.SuspendLayout()
-        Me.UltraTabPageControl9.SuspendLayout()
-        CType(Me.gridArchivoTexto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ogdImportar, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl7.SuspendLayout()
-        CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrListaRegistro.SuspendLayout()
-        CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Menu.SuspendLayout()
-        CType(Me.ogdLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrBusqueda.SuspendLayout()
-        CType(Me.cboMesLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboLibroLista, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.utpDetalle.SuspendLayout()
-        CType(Me.tabDetalleLibros, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.tabDetalleLibros.SuspendLayout()
-        CType(Me.agrDatoGeneral, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrDatoGeneral.SuspendLayout()
-        CType(Me.cboCuentaFinal, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboCuentaInicial, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.decSubTotal4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.decSubTotal3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.decSubTotal2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.decSubTotal1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Agrupacion1.SuspendLayout()
-        CType(Me.cboMesGuarda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboLibroGuarda, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ficLibroElectronico, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficLibroElectronico.SuspendLayout()
-        Me.SuspendLayout()
+        Me.UltraTabPageControl21.SuspendLayout
+        CType(Me.gridInventario, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdDetalleLibroElectronico, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl22.SuspendLayout
+        CType(Me.griInv10, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl23.SuspendLayout
+        CType(Me.griInv12, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl24.SuspendLayout
+        CType(Me.griInv14, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl25.SuspendLayout
+        CType(Me.griInv16, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl26.SuspendLayout
+        CType(Me.griInv19, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl27.SuspendLayout
+        CType(Me.griInv20, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl28.SuspendLayout
+        CType(Me.griInv30, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl29.SuspendLayout
+        CType(Me.griInv34, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl30.SuspendLayout
+        CType(Me.griInv41, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl31.SuspendLayout
+        CType(Me.griInv42, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl32.SuspendLayout
+        CType(Me.griInv46, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl33.SuspendLayout
+        CType(Me.griInv47, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl34.SuspendLayout
+        CType(Me.griInv37, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl35.SuspendLayout
+        CType(Me.griInv50, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl36.SuspendLayout
+        CType(Me.griInvParticionaria, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl37.SuspendLayout
+        CType(Me.griInvBC, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl38.SuspendLayout
+        CType(Me.griInvEFEMD, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl39.SuspendLayout
+        CType(Me.griInvECPN, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl40.SuspendLayout
+        CType(Me.griInvER, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl41.SuspendLayout
+        Me.pnlNavegador.ClientArea.SuspendLayout
+        Me.pnlNavegador.SuspendLayout
+        CType(Me.agrNotas, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.agrNotas.SuspendLayout
+        CType(Me.txtNombreArchivo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl42.SuspendLayout
+        CType(Me.griInvERI, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl43.SuspendLayout
+        CType(Me.griInvEFEMI, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl48.SuspendLayout
+        CType(Me.gridActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl49.SuspendLayout
+        CType(Me.griAct73, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl50.SuspendLayout
+        CType(Me.griAct74, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl16.SuspendLayout
+        CType(Me.griDetalleCompras, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl17.SuspendLayout
+        CType(Me.griCompras2, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl18.SuspendLayout
+        CType(Me.griCompras3, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl44.SuspendLayout
+        CType(Me.gridCostos, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl19.SuspendLayout
+        CType(Me.griDetalleVentas, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl20.SuspendLayout
+        CType(Me.griVentas2, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl3.SuspendLayout
+        CType(Me.gridCajaBancos, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl5.SuspendLayout
+        CType(Me.ficInventarioBalance, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ficInventarioBalance.SuspendLayout
+        Me.UltraTabPageControl10.SuspendLayout
+        CType(Me.gridRentenciones, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl11.SuspendLayout
+        CType(Me.griDetalleDiario, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.griDetalleDiarioPlanContable, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl12.SuspendLayout
+        CType(Me.gridDiarioSimplificado, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl13.SuspendLayout
+        CType(Me.griDetalleMayor, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl14.SuspendLayout
+        CType(Me.ficActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ficActivoFijo.SuspendLayout
+        Me.UltraTabPageControl15.SuspendLayout
+        CType(Me.utcCompras, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.utcCompras.SuspendLayout
+        Me.UltraTabPageControl1.SuspendLayout
+        CType(Me.gridConsignacion, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl2.SuspendLayout
+        CType(Me.ficRegistrosCostos, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ficRegistrosCostos.SuspendLayout
+        Me.UltraTabPageControl4.SuspendLayout
+        CType(Me.gridPermanenteUF, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl6.SuspendLayout
+        CType(Me.griPermanenteValorizado, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl8.SuspendLayout
+        CType(Me.UltraTabControl2, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabControl2.SuspendLayout
+        Me.UltraTabPageControl9.SuspendLayout
+        CType(Me.gridArchivoTexto, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ogdImportar, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl7.SuspendLayout
+        CType(Me.agrListaRegistro, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.agrListaRegistro.SuspendLayout
+        CType(Me.griLista, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Menu.SuspendLayout
+        CType(Me.ogdLista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.agrBusqueda.SuspendLayout
+        CType(Me.cboMesLista, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboLibroLista, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.utpDetalle.SuspendLayout
+        CType(Me.tabDetalleLibros, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.tabDetalleLibros.SuspendLayout
+        CType(Me.agrDatoGeneral, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.agrDatoGeneral.SuspendLayout
+        CType(Me.cboCuentaFinal, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboCuentaInicial, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.decSubTotal4, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.decSubTotal3, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.decSubTotal2, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.decSubTotal1, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.txtObservacion, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.Agrupacion1, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Agrupacion1.SuspendLayout
+        CType(Me.cboMesGuarda, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.cboLibroGuarda, System.ComponentModel.ISupportInitialize).BeginInit
+        CType(Me.ficLibroElectronico, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.ficLibroElectronico.SuspendLayout
+        Me.SuspendLayout
         '
         'UltraTabPageControl21
         '
         Me.UltraTabPageControl21.Controls.Add(Me.gridInventario)
-        Me.UltraTabPageControl21.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl21.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl21.Name = "UltraTabPageControl21"
         Me.UltraTabPageControl21.Size = New System.Drawing.Size(1256, 251)
         '
@@ -4763,7 +4763,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl35
         '
         Me.UltraTabPageControl35.Controls.Add(Me.griInv50)
-        Me.UltraTabPageControl35.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl35.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl35.Name = "UltraTabPageControl35"
         Me.UltraTabPageControl35.Size = New System.Drawing.Size(1256, 251)
         '
@@ -6624,7 +6624,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl16
         '
         Me.UltraTabPageControl16.Controls.Add(Me.griDetalleCompras)
-        Me.UltraTabPageControl16.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl16.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl16.Name = "UltraTabPageControl16"
         Me.UltraTabPageControl16.Size = New System.Drawing.Size(1254, 249)
         '
@@ -7150,7 +7150,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl18
         '
         Me.UltraTabPageControl18.Controls.Add(Me.griCompras3)
-        Me.UltraTabPageControl18.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl18.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl18.Name = "UltraTabPageControl18"
         Me.UltraTabPageControl18.Size = New System.Drawing.Size(1254, 249)
         '
@@ -7450,7 +7450,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl19
         '
         Me.UltraTabPageControl19.Controls.Add(Me.griDetalleVentas)
-        Me.UltraTabPageControl19.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl19.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl19.Name = "UltraTabPageControl19"
         Me.UltraTabPageControl19.Size = New System.Drawing.Size(1254, 249)
         '
@@ -7688,7 +7688,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl20
         '
         Me.UltraTabPageControl20.Controls.Add(Me.griVentas2)
-        Me.UltraTabPageControl20.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl20.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl20.Name = "UltraTabPageControl20"
         Me.UltraTabPageControl20.Size = New System.Drawing.Size(1254, 249)
         '
@@ -7982,7 +7982,7 @@ Partial Class frm_LibrosElectronicos
         'UltraTabPageControl5
         '
         Me.UltraTabPageControl5.Controls.Add(Me.ficInventarioBalance)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 20)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1258, 272)
         '
@@ -8026,7 +8026,7 @@ Partial Class frm_LibrosElectronicos
         UltraTab2.ToolTipText = "Detalle del Saldo de la Cuenta 10 Efectivo y Equivalentes de Efectivo"
         UltraTab3.TabPage = Me.UltraTabPageControl23
         UltraTab3.Text = "3.3"
-        UltraTab3.ToolTipText = "Detalle del Saldo Cuenta 12 Cuentas por Cobrar Comerciales - Terceros y 13 Cuenta"& _ 
+        UltraTab3.ToolTipText = "Detalle del Saldo Cuenta 12 Cuentas por Cobrar Comerciales - Terceros y 13 Cuenta" &
     "s por Cobrar Comerciales - Relacionadas"
         UltraTab4.TabPage = Me.UltraTabPageControl24
         UltraTab4.Text = "3.4"
@@ -8093,7 +8093,7 @@ Partial Class frm_LibrosElectronicos
         Me.gridRentenciones.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns
         Me.gridRentenciones.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.gridRentenciones.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
-        Me.gridRentenciones.DisplayLayout.EmptyRowSettings.ShowEmptyRows = true
+        Me.gridRentenciones.DisplayLayout.EmptyRowSettings.ShowEmptyRows = True
         Me.gridRentenciones.DisplayLayout.EmptyRowSettings.Style = Infragistics.Win.UltraWinGrid.EmptyRowStyle.AlignWithDataRows
         Appearance143.BackColor = System.Drawing.SystemColors.ActiveBorder
         Appearance143.BackColor2 = System.Drawing.SystemColors.ControlDark
@@ -8103,7 +8103,7 @@ Partial Class frm_LibrosElectronicos
         Appearance144.ForeColor = System.Drawing.SystemColors.GrayText
         Me.gridRentenciones.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance144
         Me.gridRentenciones.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.gridRentenciones.DisplayLayout.GroupByBox.Hidden = true
+        Me.gridRentenciones.DisplayLayout.GroupByBox.Hidden = True
         Appearance145.BackColor = System.Drawing.SystemColors.ControlLightLight
         Appearance145.BackColor2 = System.Drawing.SystemColors.Control
         Appearance145.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
@@ -8129,7 +8129,7 @@ Partial Class frm_LibrosElectronicos
         '
         Me.UltraTabPageControl11.Controls.Add(Me.griDetalleDiario)
         Me.UltraTabPageControl11.Controls.Add(Me.griDetalleDiarioPlanContable)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(1, 20)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(1258, 272)
         '

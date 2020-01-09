@@ -1062,6 +1062,7 @@ Public Class frm_OrdenVenMaterial
         cbgCliente.Text = String.Empty
         cbgClienteAlterno.DataSource = Nothing
         cbgClienteAlterno.Text = String.Empty
+        cboVendedor.SelectedIndex = -1
         loOrdenSalida = New List(Of e_Orden)
         griOrdenSalida.DataSource = loOrdenSalida
         loDetalleOrdenSalida = New List(Of e_OrdenMaterial)
@@ -1196,10 +1197,10 @@ Public Class frm_OrdenVenMaterial
             gmt_ComboEspecifico(cboDestinoViaje, ListLugar, -1)
 
             ''Vendedores
-            ListVendedores = New List(Of e_Combo)
-            oeCombo.TipoOperacion = "VEND"
-            ListVendedores.AddRange(olCombo.Listar(oeCombo))
-            gmt_ComboEspecifico(cboVendedor, ListVendedores, 3)
+            'ListVendedores = New List(Of e_Combo)
+            'oeCombo.TipoOperacion = "VEND"
+            'ListVendedores.AddRange(olCombo.Listar(oeCombo))
+            gmt_ComboEspecifico(cboVendedor, VendedorPublic, -1)
             ' Cargar Estado
             leEstado = New List(Of e_EstadoOrden)
             oeEstado = New e_EstadoOrden
@@ -1454,7 +1455,7 @@ Public Class frm_OrdenVenMaterial
             With Grilla
                 For j As Integer = 0 To .Rows.Count - 1
                     Dim strIdTrabajadorVendedor As String = .Rows(j).Cells("IdVendedorTrabajador").Value.ToString
-                    gfc_CombroGrillaCelda("IdVendedorTrabajador", "Nombre", j, Grilla, olCombo.ComboGrilla(ListVendedores.Where(Function(i) i.Id = strIdTrabajadorVendedor).ToList))
+                    gfc_CombroGrillaCelda("IdVendedorTrabajador", "Nombre", j, Grilla, olCombo.ComboGrilla(VendedorPublic.Where(Function(i) i.Id = strIdTrabajadorVendedor).ToList))
                 Next
                 .DataBind()
             End With

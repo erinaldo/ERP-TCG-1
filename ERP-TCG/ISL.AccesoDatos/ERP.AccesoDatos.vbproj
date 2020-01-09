@@ -137,6 +137,8 @@
     <Compile Include="Comercial\Ventas\d_DespachoOperaciones.vb" />
     <Compile Include="Comercial\Ventas\d_Detraccion_Det.vb" />
     <Compile Include="Comercial\Ventas\d_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\d_GRR_Venta.vb" />
+    <Compile Include="Comercial\Ventas\d_GuiaRemisionRemitente_Detalle.vb" />
     <Compile Include="Comercial\Ventas\d_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProcesoDetalle.vb" />
@@ -194,6 +196,7 @@
     <Compile Include="Contabilidad\d_LibroElectronico.vb" />
     <Compile Include="Contabilidad\d_LiquidacionTrabajador_Asiento.vb" />
     <Compile Include="Contabilidad\d_MovimientoActivoFijo.vb" />
+    <Compile Include="Contabilidad\d_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\d_ParticipacionAccion.vb" />
     <Compile Include="Contabilidad\d_ReadecuacionActivoFijo.vb" />
     <Compile Include="Contabilidad\d_ReadecuacionAF_Documento.vb" />

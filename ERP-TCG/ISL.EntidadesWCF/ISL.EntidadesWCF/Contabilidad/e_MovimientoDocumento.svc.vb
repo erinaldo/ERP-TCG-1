@@ -49,7 +49,7 @@ Public Class e_MovimientoDocumento
 
     Public Property IdEmpresaSis() As String
     Public Property IdSucursal() As String
-
+    Public DatosImpresion As New e_MovimientoDocumento_Impresion
     'ANTICIPOS
     Private _IndAnticipo As Boolean
     Private _IndAfectaAnticipo As Boolean

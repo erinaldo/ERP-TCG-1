@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_MovimientoDocumento_Impresion" CodeBehind="l_MovimientoDocumento_Impresion.svc.vb" %>

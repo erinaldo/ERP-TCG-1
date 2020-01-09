@@ -109,7 +109,7 @@ Partial Class frm_Login
         Me.txtUsuarioR.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.txtUsuarioR.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuarioR.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtUsuarioR.Location = New System.Drawing.Point(374, 81)
+        Me.txtUsuarioR.Location = New System.Drawing.Point(371, 81)
         Me.txtUsuarioR.Name = "txtUsuarioR"
         Me.txtUsuarioR.NullText = "USUARIO"
         Appearance11.ForeColor = System.Drawing.Color.Silver
@@ -134,7 +134,7 @@ Partial Class frm_Login
         Me.txtPasswordR.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtPasswordR.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPasswordR.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtPasswordR.Location = New System.Drawing.Point(374, 108)
+        Me.txtPasswordR.Location = New System.Drawing.Point(371, 108)
         Me.txtPasswordR.Name = "txtPasswordR"
         Me.txtPasswordR.NullText = "CLAVE"
         Appearance9.ForeColor = System.Drawing.Color.Silver
@@ -182,7 +182,7 @@ Partial Class frm_Login
         Me.cboCentro.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboCentro.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentro.ForeColor = System.Drawing.Color.Black
-        Me.cboCentro.Location = New System.Drawing.Point(374, 161)
+        Me.cboCentro.Location = New System.Drawing.Point(371, 161)
         Me.cboCentro.Name = "cboCentro"
         Me.cboCentro.NullText = "SUCURSAL / GIRO"
         Me.cboCentro.Size = New System.Drawing.Size(225, 25)
@@ -284,7 +284,7 @@ Partial Class frm_Login
         Me.cmbEmpresa.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cmbEmpresa.Enabled = False
         Me.cmbEmpresa.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbEmpresa.Location = New System.Drawing.Point(374, 136)
+        Me.cmbEmpresa.Location = New System.Drawing.Point(371, 136)
         Me.cmbEmpresa.Name = "cmbEmpresa"
         Me.cmbEmpresa.Size = New System.Drawing.Size(225, 22)
         Me.cmbEmpresa.TabIndex = 2
