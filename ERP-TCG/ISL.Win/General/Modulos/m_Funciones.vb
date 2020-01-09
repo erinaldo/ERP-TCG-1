@@ -733,6 +733,7 @@ Module m_Funciones
 
     Public RutasPublic As List(Of e_Combo)
     Public ProveedorPublic As List(Of e_Combo)
+    Public VendedorPublic As List(Of e_Combo)
     Public ClientesPublic As List(Of e_Combo)
     Public ClienteProveedorPublic As List(Of e_Combo)
     Public ComisionistasPublic As List(Of e_Combo)
@@ -813,6 +814,11 @@ Module m_Funciones
         oeCombo = New e_Combo
         oeCombo.Nombre = "Proveedores"
         ProveedorPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
+
+        VendedorPublic = New List(Of e_Combo)
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "Vendedores"
+        VendedorPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
 
         ComisionistasPublic = New List(Of e_Combo)
         oeCombo = New e_Combo

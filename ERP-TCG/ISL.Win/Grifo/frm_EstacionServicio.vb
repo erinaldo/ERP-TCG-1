@@ -1560,7 +1560,7 @@ Public Class frm_EstacionServicio
                 .ValorUnitario = Math.Round(oe.PrecioUnitario, 4)
                 .Usuario = gUsuarioSGI.Id
                 .IndValidar = IndValidar
-                .
+                '.
             End With
             oeRegInventario = New e_RegistroInventario
             With oeRegInventario
