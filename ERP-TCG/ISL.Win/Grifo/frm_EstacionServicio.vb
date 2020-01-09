@@ -1518,6 +1518,8 @@ Public Class frm_EstacionServicio
                     .KilometrosTanqueo = IIf(OrdenVenta.Kilometraje = 0, 1, OrdenVenta.Kilometraje)
                     .IdVehiculo = IIf(cmb_Vehiculo.Value <> "", cmb_Vehiculo.Value, cmb_Vehiculo.Text)
                     .NroVale = OrdenVenta.Id
+                    .IdPiloto = OrdenVenta.IdPiloto
+                    .Glosa = OrdenVenta.GlosaResumen
                     .IdGrifo = "1SI000004245" 'Inversiones y Servicios Alex y Lalito
                     .IdDireccion = "CHT0000001"
                     .IdAlmacen = ItemVenta.IdAlmacen : .IdSubAlmacen = ItemVenta.IdSubAlmacen
@@ -1550,7 +1552,7 @@ Public Class frm_EstacionServicio
         Try
             Dim loInventario As New List(Of e_Inventario), oeRegInventario As e_RegistroInventario, oeInventario As New e_Inventario
             With oeInventario
-                .IdOrden = ""
+                .IdOrden = oe.NroVale
                 .IdMaterial = oe.IdMaterial
                 .FechaCreacion = FechaActual
                 .IdSubAlmacen = oe.IdSubAlmacen
@@ -1558,6 +1560,7 @@ Public Class frm_EstacionServicio
                 .ValorUnitario = Math.Round(oe.PrecioUnitario, 4)
                 .Usuario = gUsuarioSGI.Id
                 .IndValidar = IndValidar
+                .
             End With
             oeRegInventario = New e_RegistroInventario
             With oeRegInventario
@@ -1568,6 +1571,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000028"
                 .IdUnidadMedida = "1CH000000001"
                 .Cantidad = oe.CantidadGalon
+                .IdOrden = oe.NroVale
                 .UsuarioCreacion = gUsuarioSGI.Id
             End With
             oeInventario.oeRegistroInventario = New e_RegistroInventario
