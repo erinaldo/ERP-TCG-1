@@ -531,249 +531,90 @@ Public Class frm_Movimiento
                     End If
                 End If
             End If
-            If IndCajaPrincipal Then
-                Select Case opcSalidaEntrada.CheckedIndex
-                    Case 0
-                        oeMovimiento.Ingreso = 0
-                        TipoOperacion = "1"
-                        oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
-                        If FicDatos.SelectedTab.Index = 2 Then
-                            oeMovimiento.Egreso = decHabEfectivo.Value
-                        Else
-                            If Me.decImporte.Value = 0.0 Then
-                                Return True
-                            Else
-                                oeMovimiento.Egreso = decImporte.Value
-                            End If
-                        End If
-                    Case 1
-                        oeMovimiento.Ingreso = decImporte.Value
-                        oeMovimiento.Egreso = 0
-                        oeMovimiento.Saldo = 0
-                        oeMovimiento.Descuento = 0
-                        oeMovimiento.TipoTransa = 5
-                        TipoOperacion = "3" ' Reporte Vale Ingreso a Fondo
-                        oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
-                        If oeMovimiento.IdCuentaCorrienteOrigen = "" Then oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 0, loCuentaCorriente)
-                        oeMovimiento.IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
-                End Select
-                oeMovimiento.TipoOperacion = "I"
-                oeMovimiento.Glosa = txtGlosa.Text & " " & txtPiloto.Text & " " & txtViaje.Text
-                oeMovimiento.UsuarioCreacion = gUsuarioSGI.Id
-                oeMovimiento.IndicadorCorrelativo = True
-                oeMovimiento.oeMovimientoViaje = oeMovimiento_Viaje
-                oeMovimiento.oeMovimientoViaje.IdViaje = txtViaje.Tag
-                If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
-                    oeMovimiento.TipoTransa = 0 '1
-                    oeMovimiento.UsuarioCreacion = gUsuarioSGI.Id
-                    oeMovimiento.TipoMovimiento = 2 '0 '2
-                    oeMovimiento.Descuento = 0
-                    oeMovimiento.IdEstado = "HABILITADA"
-                    oeMovimiento.oeMovimientoViaje = New e_Movimiento_Viaje
-                    oeCajaUsuario = New e_CajaUsuario
-                    oeCajaUsuario.IdTrabajador = idTrabajador
-                    oeCajaUsuario = olCajaUsuario.Obtener(oeCajaUsuario)
-                    oeMovimiento.IdCaja = oeCajaUsuario.IdCaja
-                Else
-                    If oeMovimiento.Ingreso = 0 Then
-                        oeMovimiento.IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
-                        If txtEstado.Text = gNombreEstadoPendiente Then
-                            oeMovAux = New e_Movimiento
-                            oeMovAux.TipoTransa = 1
-                            oeMovAux.TipoOperacion = "D"
-                            oeMovAux.Id = idMovimiento
-                            oeMovAux.IdEstado = gNombreEstadoHabilitada
-                        End If
-                        oeMovimiento.TipoTransa = 2
-                        oeMovimiento.TipoOperacion = "I"
-                    End If
-                    oeMovimiento.IdCaja = idCajaCentro
-                    oeMovimiento.IdEstado = gNombreEstadoHabilitada
-                    oeMovimiento.IndPrestamoHab = 0
-                End If
-                oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
-                oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
-                If olMovimiento.Guardar(oeMovimiento, oeMovAux) Then
-                    'If opcSalidaEntrada.CheckedIndex = 0 Then
-                    Dim formulario As New frm_ReporteVoucherMovimientoCaja
-                    If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
-                        id_movimiento_imprimir = oeMovimiento.Id
-                        voucher = oeMovimiento.Voucher
-                        TipoOperacion = "4"
+            'If IndCajaPrincipal Then
+            Select Case opcSalidaEntrada.CheckedIndex
+                Case 0
+                    oeMovimiento.Ingreso = 0
+                    TipoOperacion = "1"
+                    oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
+                    If FicDatos.SelectedTab.Index = 2 Then
+                        oeMovimiento.Egreso = decHabEfectivo.Value
                     Else
-                        ActualizaRegistroEditado()
-                        formulario.CargarDatos(TipoOperacion, oeMovimiento.Id)
-                        formulario.ShowDialog()
+                        If Me.decImporte.Value = 0.0 Then
+                            Return True
+                        Else
+                            oeMovimiento.Egreso = decImporte.Value
+                        End If
                     End If
-                    If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
-                        formulario.CargarDatos(TipoOperacion, id_movimiento_imprimir)
-                        formulario.ShowDialog()
-                        mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                        'End If
-                    End If
-                Else
-                    Return False
-                End If
+                Case 1
+                    oeMovimiento.Ingreso = decImporte.Value
+                    oeMovimiento.Egreso = 0
+                    oeMovimiento.Saldo = 0
+                    oeMovimiento.Descuento = 0
+                    oeMovimiento.TipoTransa = 5
+                    TipoOperacion = "3" ' Reporte Vale Ingreso a Fondo
+                    oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
+                    If oeMovimiento.IdCuentaCorrienteOrigen = "" Then oeMovimiento.IdCuentaCorrienteOrigen = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 0, loCuentaCorriente)
+                    oeMovimiento.IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
+            End Select
+            oeMovimiento.TipoOperacion = "I"
+            oeMovimiento.Glosa = txtGlosa.Text & " " & txtPiloto.Text & " " & txtViaje.Text
+            oeMovimiento.UsuarioCreacion = gUsuarioSGI.Id
+            oeMovimiento.IndicadorCorrelativo = True
+            oeMovimiento.oeMovimientoViaje = oeMovimiento_Viaje
+            oeMovimiento.oeMovimientoViaje.IdViaje = txtViaje.Tag
+            If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
+                oeMovimiento.TipoTransa = 0 '1
+                oeMovimiento.UsuarioCreacion = gUsuarioSGI.Id
+                oeMovimiento.TipoMovimiento = 2 '0 '2
+                oeMovimiento.Descuento = 0
+                oeMovimiento.IdEstado = "HABILITADA"
+                oeMovimiento.oeMovimientoViaje = New e_Movimiento_Viaje
+                oeCajaUsuario = New e_CajaUsuario
+                oeCajaUsuario.IdTrabajador = idTrabajador
+                oeCajaUsuario = olCajaUsuario.Obtener(oeCajaUsuario)
+                oeMovimiento.IdCaja = oeCajaUsuario.IdCaja
             Else
-                If opcSalidaEntrada.CheckedIndex = 0 Then
-                    If Not olTrabajadorSeguridad.Permisos(gUsuarioSGI.IdTrabajador, "HAB BOLSA VIAJE") Then Return False
-                    If decImporte.Value = 0 Then Return False
-                    oeMovimientoPrestamo.IndPrestamoHab = 1
-                    oeMovimientoPrestamo.TipoOperacion = "I"
-                    oeMovimientoPrestamo.Descuento = "0"
-                    oeMovimientoPrestamo.Activo = True
-                    oeMovimientoPrestamo.Ingreso = decImporte.Value
-                    oeMovimientoPrestamo.Egreso = 0
-                    oeMovimientoPrestamo.Saldo = 0
-                    oeMovimientoPrestamo.Glosa = txtGlosa.Text & " " & txtPiloto.Text & " " & txtViaje.Text
-                    oeMovimientoPrestamo.UsuarioCreacion = gUsuarioSGI.Id
-                    oeMovimientoPrestamo.IdCuentaCorrienteDestino = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
-                    oeMovimientoPrestamo.IdCuentaCorrienteOrigen = ""
-                    oeMovimientoPrestamo.TipoProceso = "PRESTAMO_CUENTA"
-                    oeMovimientoPrestamo.TipoTransa = 3
-                    oeMovimientoPrestamo.IndicadorCorrelativo = False
-                    oeMovimientoPrestamo.IdCaja = idCajaCentro
-                    oeMovimientoPrestamo.oeMovimientoViaje = New e_Movimiento_Viaje
-                    'Dim formularioclave As frm_AutenticarTrabajador
-                    'formularioclave = New frm_AutenticarTrabajador
-                    'Dim idTrabEntr As String = ""
-                    'If formularioclave.ShowDialog() <> Windows.Forms.DialogResult.OK Then
-                    '    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                    '    Return False
-                    'Else
-                    '    If idCajaCentro = "1CH002" Then
-                    '        idTrabEntr = formularioclave.idTrabajador
-                    '        If gUsuarioSGI.IdTrabajador = idTrabEntr Then
-                    '            ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                    '            Throw New Exception("No Puede Poner Su Propia Clave al Momento de Habilitar")
-                    '        End If
-                    '    End If
-
-                    'End If
-                    'formularioclave = Nothing
-                    Dim oeMovimientoPrestamo2 As New e_Movimiento
-                    oeMovimientoPrestamo2 = oeMovimientoPrestamo.Clonar
-                    oeMovimientoPrestamo2.Egreso = decImporte.Value
-                    oeMovimientoPrestamo2.IndicadorCorrelativo = True
-                    oeMovimientoPrestamo2.Ingreso = 0
-                    oeMovimientoPrestamo2.Saldo = decImporte.Value
-                    oeMovimientoPrestamo2.Glosa = txtGlosa.Text & " " & txtViaje.Text & " DE: " & oeCajaUsuario.NombreCompleto
-                    oeMovimientoPrestamo2.IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
-                    oeMovimientoPrestamo2.IdCuentaCorrienteOrigen = oeMovimientoPrestamo.IdCuentaCorrienteDestino
+                If oeMovimiento.Ingreso = 0 Then
+                    oeMovimiento.IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
                     If txtEstado.Text = gNombreEstadoPendiente Then
                         oeMovAux = New e_Movimiento
-                        oeMovAux.IdEstado = gNombreEstadoHabilitada
                         oeMovAux.TipoTransa = 1
                         oeMovAux.TipoOperacion = "D"
                         oeMovAux.Id = idMovimiento
-                        'oeMovimientoPrestamo2.oeMovimientoViaje = New e_Movimiento_Viaje
-                        'oeMovimientoPrestamo2.oeMovimientoViaje.TipoTRB = ""
-                        'oeMovimientoPrestamo2.oeMovimientoViaje.IdViaje = txtViaje.Tag
-                        'oeMovimientoPrestamo2.oeMovimientoViaje.TipoOperacion = "A"
-                        'oeMovimientoPrestamo2.oeMovimientoViaje.IdMovimiento = idMovimiento
+                        oeMovAux.IdEstado = gNombreEstadoHabilitada
                     End If
-                    oeMovimientoPrestamo2.TipoTransa = 2
-                    oeMovimientoPrestamo2.IndPrestamoHab = 1
-                    oeMovimientoPrestamo2.TipoOperacion = "I"
-                    oeMovimientoPrestamo2.IdEstado = gNombreEstadoHabilitada
-                    oeMovimientoPrestamo2.oeMovimientoViaje = New e_Movimiento_Viaje
-                    oeMovimientoPrestamo2.oeMovimientoViaje.TipoTRB = ""
-                    oeMovimientoPrestamo2.oeMovimientoViaje.IdViaje = txtViaje.Tag
-                    oeMovimientoPrestamo2.oeMovimientoViaje.TipoOperacion = "I"
-                    oeMovimientoPrestamo2.IdCaja = ""
-                    'oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorRecepciona = idTrabEntr
-                    'oeMovimientoPrestamo2.oeMovimientoViaje.IdTrabajadorClave = idTrabEntr
-                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
-                    Dim loMovimientoPrestamo As New List(Of e_Movimiento)
-                    oeMovimientoPrestamo.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    loMovimientoPrestamo.Add(oeMovimientoPrestamo)
-                    oeMovimientoPrestamo2.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    loMovimientoPrestamo.Add(oeMovimientoPrestamo2)
-                    oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    If olMovimiento.GuardarDobleMovimiento(loMovimientoPrestamo, oeMovAux) Then '---------cuenta y piloto
-                        ActualizaRegistroEditado()
-                        Dim formulario As New frm_ReporteVoucherMovimientoCaja
-                        TipoOperacion = 7
-                        formulario.CargarDatos(TipoOperacion, oeMovimientoPrestamo2.Id)
-                        formulario.ShowDialog()
-                        mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                    End If
-                Else
-                    Dim loMovimientosDev As New List(Of e_Movimiento)
-                    Dim oeCom As New e_Combo
-                    Dim idCtaCteCja As String = ""
-                    oeCom.Id = idCajaCentro
-                    oeCom.Tipo = 0
-                    If AsistenteCajaPublic.Contains(oeCom) Then
-                        oeCom = AsistenteCajaPublic.Item(AsistenteCajaPublic.IndexOf(oeCom))
-                        idCtaCteCja = oeCom.Nombre.Trim
-                    Else
-                        idCtaCteCja = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 1, loCuentaCorriente)
-                        If idCtaCteCja = "" Then idCtaCteCja = BuscarIdCtaCte(gUsuarioSGI.IdTrabajador, 0, loCuentaCorriente)
-                    End If
-                    With oeMovimientoDevolucion
-                        .TipoOperacion = "I"
-                        .AsignadoGrupo = False
-                        .Descuento = 0
-                        .Activo = True
-                        .Ingreso = decImporte.Value
-                        .TipoMovimiento = 2
-                        .IndPrestamoHab = 1
-                        .Egreso = 0
-                        .Saldo = decImporte.Value
-                        .Glosa = txtGlosa.Text & " / " & Me.txtViaje.Text
-                        .Fecha = fechaMovimiento.Value
-                        .UsuarioCreacion = gUsuarioSGI.Id
-                        .TipoTransa = "3"
-                        .TipoProceso = "DEVOLUCION"
-                        .Voucher = ""
-                        .IndicadorCorrelativo = False
-                        .IdCuentaCorrienteDestino = BuscarIdCtaCte(idPiloto, 0, loCuentaCorriente)
-                        .oeMovimientoViaje = oeMovimiento_Viaje
-                        .oeMovimientoViaje.IdViaje = txtViaje.Tag
-                        .oeMovimientoViaje.RecibeBolsa = ""
-                    End With
-                    loMovimientosDev.Add(oeMovimientoDevolucion)
-                    Dim oeMovDev As New e_Movimiento
-                    With oeMovDev
-                        .TipoOperacion = "I"
-                        .AsignadoGrupo = 0
-                        .Descuento = 0
-                        .Activo = True
-                        .Fecha = fechaMovimiento.Value
-                        .UsuarioCreacion = gUsuarioSGI.Id
-                        .IdCuentaCorrienteDestino = idCtaCteCja
-                        .Glosa = oeMovimientoDevolucion.Glosa
-                        .TipoProceso = "DEVOLUCION"
-                        .Egreso = decImporte.Value
-                        .Saldo = 0
-                        .Ingreso = 0
-                        .TipoTransa = 5
-                        .IdCaja = idCajaCentro
-                        .IndicadorCorrelativo = True
-                        .oeMovimientoViaje = New e_Movimiento_Viaje
-                    End With
-                    oeMovDev.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    loMovimientosDev.Add(oeMovDev)
-                    Dim oeMovimientoDM = New e_Movimiento '@0001
-                    oeMovimientoDM.PrefijoID = gs_PrefijoIdSucursal '@0001
-                    If olMovimiento.GuardarDobleMovimiento(loMovimientosDev, oeMovimientoDM) Then
-                        TipoOperacion = "5"
-                        Dim formulario As frm_ReporteVoucherMovimientoCaja
-                        formulario = New frm_ReporteVoucherMovimientoCaja
-                        ActualizaRegistroEditado()
-                        formulario.CargarDatos(TipoOperacion, oeMovDev.Id)
-                        formulario.ShowDialog()
-                        mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                        If Me.decImporte.Value = Math.Round(Me.decSaldo.Value, 2) Then
-                            Liquidar(txtViaje.Tag)
-                            Return True
-                        End If
-                    Else
-                        Return False
-                    End If
+                    oeMovimiento.TipoTransa = 2
+                    oeMovimiento.TipoOperacion = "I"
                 End If
+                oeMovimiento.IdCaja = idCajaCentro
+                oeMovimiento.IdEstado = gNombreEstadoHabilitada
+                oeMovimiento.IndPrestamoHab = 0
             End If
+            oeMovimiento.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeMovAux.PrefijoID = gs_PrefijoIdSucursal '@0001
+            If olMovimiento.Guardar(oeMovimiento, oeMovAux) Then
+                'If opcSalidaEntrada.CheckedIndex = 0 Then
+                Dim formulario As New frm_ReporteVoucherMovimientoCaja
+                If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
+                    id_movimiento_imprimir = oeMovimiento.Id
+                    voucher = oeMovimiento.Voucher
+                    TipoOperacion = "4"
+                Else
+                    ActualizaRegistroEditado()
+                    formulario.CargarDatos(TipoOperacion, oeMovimiento.Id)
+                    formulario.ShowDialog()
+                End If
+                If oeMovimiento.TipoProceso = "HABILITACION_CUENTA" Then
+                    formulario.CargarDatos(TipoOperacion, id_movimiento_imprimir)
+                    formulario.ShowDialog()
+                    mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
+                    'End If
+                End If
+            Else
+                Return False
+            End If
+
             Select Case opcSalidaEntrada.CheckedIndex
                 Case 0
                     MostrarTabs(0, ficMovimiento)

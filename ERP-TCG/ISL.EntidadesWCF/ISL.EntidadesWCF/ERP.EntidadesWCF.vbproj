@@ -159,6 +159,8 @@
     <Content Include="Comercial\Ventas\e_Despacho.svc" />
     <Content Include="Comercial\Ventas\e_DespachoOperaciones.svc" />
     <Content Include="Comercial\Ventas\e_DistanciaZona.svc" />
+    <Content Include="Comercial\Ventas\e_GRR_Venta.svc" />
+    <Content Include="Comercial\Ventas\e_GuiaRemisionRemitente_Detalle.svc" />
     <Content Include="Comercial\Ventas\e_MovimientoMermas.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProceso.svc" />
     <Content Include="Comercial\Ventas\e_OperacionesProcesoDetalle.svc" />
@@ -836,6 +838,12 @@
     <Compile Include="Comercial\Ventas\e_DistanciaZona.svc.vb">
       <DependentUpon>e_DistanciaZona.svc</DependentUpon>
     </Compile>
+    <Compile Include="Comercial\Ventas\e_GRR_Venta.svc.vb">
+      <DependentUpon>e_GRR_Venta.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\e_GuiaRemisionRemitente_Detalle.svc.vb">
+      <DependentUpon>e_GuiaRemisionRemitente_Detalle.svc</DependentUpon>
+    </Compile>
     <Compile Include="Comercial\Ventas\e_MovimientoMermas.svc.vb">
       <DependentUpon>e_MovimientoMermas.svc</DependentUpon>
     </Compile>
@@ -970,6 +978,8 @@
     <Compile Include="Comercial\Ventas\Ie_DetalleDoc_OperacionDet.vb" />
     <Compile Include="Comercial\Ventas\Ie_Detraccion_Det.vb" />
     <Compile Include="Comercial\Ventas\Ie_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\Ie_GRR_Venta.vb" />
+    <Compile Include="Comercial\Ventas\Ie_GuiaRemisionRemitente_Detalle.vb" />
     <Compile Include="Comercial\Ventas\Ie_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\Ie_OperacionesProcesoDetalle.vb" />

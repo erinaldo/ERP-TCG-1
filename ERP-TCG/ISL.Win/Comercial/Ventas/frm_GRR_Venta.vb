@@ -33,7 +33,7 @@ Public Class frm_GRR_Venta
 
 #End Region
 
-    '#Region "Variables"
+#Region "Variables"
 
     '    Private oeDocumento As e_Documento
     '    Private olDocumento As l_Documento
@@ -42,12 +42,12 @@ Public Class frm_GRR_Venta
     '    Private olDetalleDocumento As l_DetalleDocumento
     '    Private loDetalleDocumento As List(Of e_DetalleDocumento)
 
-    '    Private oeGuiaRR As e_GuiaRR
-    '    Private olGuiaRR As l_GuiaRR
+    Private oeGuiaRR As e_GRR_Venta
+    Private olGuiaRR As l_GRR_Venta
 
-    '    Private oeGuiaRRDetalle As e_GuiaRemisionRemitente_Detalle
-    '    Private olGuiaRRDetalle As l_GuiaRemisionRemitente_Detalle
-    '    Private loGuiaRRDetalle As List(Of e_GuiaRemisionRemitente_Detalle)
+    Private oeGuiaRRDetalle As e_GuiaRemisionRemitente_Detalle
+    Private olGuiaRRDetalle As l_GuiaRemisionRemitente_Detalle
+    Private loGuiaRRDetalle As List(Of e_GuiaRemisionRemitente_Detalle)
 
     '    Private oeAlmMaterial As e_AlmacenMaterial
     '    Private olAlmMaterial As l_AlmacenMaterial
@@ -87,7 +87,7 @@ Public Class frm_GRR_Venta
 
     '    Private intExistencia As Integer = 2
 
-    '#End Region
+#End Region
 
     '#Region "Botones"
 
@@ -244,14 +244,14 @@ Public Class frm_GRR_Venta
     '        gmt_ControlBoton()
     '    End Sub
 
-    '    Private Sub frm_GuiaRemisionVenta_Load(sender As Object, e As EventArgs) Handles Me.Load
-    '        Try
-    '            mt_IniciarFormulario()
-    '            mt_InicializarLogicas()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
+    Private Sub frm_GuiaRemisionVenta_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Try
+            mt_IniciarFormulario()
+            mt_InicializarLogicas()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
 
     '    Private Sub griAlmacenMaterial_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.AfterCellUpdate
     '        Try
@@ -815,15 +815,15 @@ Public Class frm_GRR_Venta
 
     '#Region "Metodos"
 
-    '    Private Sub mt_IniciarFormulario()
-    '        Try
-    '            mt_InicializarLogicas()
-    '            mt_CargarCombos()
-    '            dtpFechaInicio.Value = Date.Now.AddDays(-20)
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
+    Private Sub mt_IniciarFormulario()
+        Try
+            mt_InicializarLogicas()
+            'mt_CargarCombos()
+            dtpFechaInicio.Value = Date.Now.AddDays(-20)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     '    Private Sub mt_Inicializar()
     '        oeDocumento = New e_Documento
@@ -902,19 +902,19 @@ Public Class frm_GRR_Venta
     '        End Select
     '    End Sub
 
-    '    Private Sub mt_InicializarLogicas()
-    '        olDocumento = New l_Documento
-    '        olDetalleDocumento = New l_DetalleDocumento
-    '        olOrdenDocumento = New l_OrdenDocumento
-    '        olDetalleOrden = New l_DetalleOrden
-    '        olAlmMaterial = New l_AlmacenMaterial
-    '        olCombo = New l_Combo
-    '        olGuiaRR = New l_GuiaRR
-    '        olPersonaDocumento = New l_PersonaDocumento
-    '        olOrdenComercial = New l_OrdenComercial
-    '        olMaterial = New l_Material
-    '        olDireccion = New l_Direccion
-    '    End Sub
+    Private Sub mt_InicializarLogicas()
+        'olDocumento = New l_Documento
+        'olDetalleDocumento = New l_DetalleDocumento
+        'olOrdenDocumento = New l_OrdenDocumento
+        'olDetalleOrden = New l_DetalleOrden
+        'olAlmMaterial = New l_AlmacenMaterial
+        'olCombo = New l_Combo
+        olGuiaRR = New l_GRR_Venta
+        'olPersonaDocumento = New l_PersonaDocumento
+        'olOrdenComercial = New l_OrdenComercial
+        'olMaterial = New l_Material
+        'olDireccion = New l_Direccion
+    End Sub
 
     '    Private Sub mt_CargarCombos()
     '        Try

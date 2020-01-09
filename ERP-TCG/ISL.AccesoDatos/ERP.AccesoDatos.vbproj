@@ -137,6 +137,8 @@
     <Compile Include="Comercial\Ventas\d_DespachoOperaciones.vb" />
     <Compile Include="Comercial\Ventas\d_Detraccion_Det.vb" />
     <Compile Include="Comercial\Ventas\d_DistanciaZona.vb" />
+    <Compile Include="Comercial\Ventas\d_GRR_Venta.vb" />
+    <Compile Include="Comercial\Ventas\d_GuiaRemisionRemitente_Detalle.vb" />
     <Compile Include="Comercial\Ventas\d_MovimientoMermas.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProceso.vb" />
     <Compile Include="Comercial\Ventas\d_OperacionesProcesoDetalle.vb" />

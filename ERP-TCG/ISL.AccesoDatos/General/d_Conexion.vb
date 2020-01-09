@@ -26,7 +26,7 @@ Public Class d_Conexion
             'Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
             'DESARROLLO
-            Return "Data Source=190.117.126.71;Initial Catalog=ERPTCGDesa; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
+            Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG0108; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
             'Return "Data Source=190.117.119.215;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
