@@ -78,7 +78,10 @@ Public Class frm_Cobranza
             End If
 
             l_FuncionesGenerales.ValidarNumero(DecTC.Value, "Tipo de Cambio")
-            l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+
+            If oeCtaCble.Cuenta <> "10111" Then
+                l_FuncionesGenerales.ValidarCampoNoNulo(txtVoucher.Text, "Ingrese el Voucher")
+            End If
 
             If Double.Parse(lblTotalesMN.Text) < 0 Then Throw New Exception("El importe debe ser mayor a 0")
 
@@ -889,11 +892,21 @@ Public Class frm_Cobranza
                     oeCtaCble = .Items(i).ListObject
                 End If
             End With
+            'Me.cboCuentaBancaria.Enabled = True
+            Me.cboCuentaBancaria.ReadOnly = False
             If cboCuentaContable.Enabled Then
                 If oeCtaCble.Cuenta = "10111" Then
+                    Dim _oeCajaUsuario As e_CajaUsuario
+                    _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+                    Me.lblCtaBancaria.Text = "Cajas:"
                     mt_llenarcajas()
+                    If _oeCajaUsuario.IdCaja <> "" Then
+                        Me.cboCuentaBancaria.Value = _oeCajaUsuario.IdCaja
+                        Me.cboCuentaBancaria.ReadOnly = True
+                    End If
                 Else
                     LlenaCuentaBancaria()
+                    Me.lblCtaBancaria.Text = "Cuentas Bancarias:"
                 End If
             End If
         Catch ex As Exception

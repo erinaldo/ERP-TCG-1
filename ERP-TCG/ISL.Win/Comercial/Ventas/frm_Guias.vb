@@ -290,6 +290,7 @@ Public Class frm_Guias
                 'ComboGrilla()
                 LlenarComboMaestro(cboRemitente, ClientesPublic, 0)
                 LlenarComboMaestro(cboDestinatario, ClientesPublic, 0)
+                cboSubContrata.Text = "NINGUNO  ,"
                 Operacion = "Editar"
                 tabGrt.Tabs(0).Selected = True
                 If EditarGuia() Then
@@ -4131,6 +4132,18 @@ Public Class frm_Guias
 
         Catch ex As Exception
             Throw ex
+        End Try
+    End Sub
+
+    Private Sub cboSubContrata_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles cboSubContrata.EditorButtonClick
+        Try
+            ClientesPublic = New List(Of e_Combo)
+            oeCombo = New e_Combo
+            oeCombo.Nombre = "Clientes"
+            ClientesPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
+            LlenarComboMaestro(cboSubContrata, ClientesPublic, 0)
+        Catch ex As Exception
+
         End Try
     End Sub
 

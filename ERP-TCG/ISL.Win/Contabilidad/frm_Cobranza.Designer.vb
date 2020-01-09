@@ -337,7 +337,7 @@ Partial Class frm_Cobranza
         Me.cboFlujoGasto = New ISL.Controles.Combo(Me.components)
         Me.Etiqueta18 = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta17 = New ISL.Controles.Etiqueta(Me.components)
-        Me.Etiqueta11 = New ISL.Controles.Etiqueta(Me.components)
+        Me.lblCtaBancaria = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta6 = New ISL.Controles.Etiqueta(Me.components)
         Me.UltraExpandableGroupBoxPanel1 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
         Me.UltraPanel2 = New Infragistics.Win.Misc.UltraPanel()
@@ -1348,19 +1348,19 @@ Partial Class frm_Cobranza
         Me.Etiqueta17.TabIndex = 14
         Me.Etiqueta17.Text = "Operacion:"
         '
-        'Etiqueta11
+        'lblCtaBancaria
         '
         Appearance37.BackColor = System.Drawing.Color.Transparent
         Appearance37.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta11.Appearance = Appearance37
-        Me.Etiqueta11.AutoSize = True
-        Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta11.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta11.Location = New System.Drawing.Point(26, 37)
-        Me.Etiqueta11.Name = "Etiqueta11"
-        Me.Etiqueta11.Size = New System.Drawing.Size(90, 15)
-        Me.Etiqueta11.TabIndex = 4
-        Me.Etiqueta11.Text = "Cuenta Bancaria:"
+        Me.lblCtaBancaria.Appearance = Appearance37
+        Me.lblCtaBancaria.AutoSize = True
+        Me.lblCtaBancaria.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCtaBancaria.ForeColor = System.Drawing.Color.Black
+        Me.lblCtaBancaria.Location = New System.Drawing.Point(26, 37)
+        Me.lblCtaBancaria.Name = "lblCtaBancaria"
+        Me.lblCtaBancaria.Size = New System.Drawing.Size(90, 15)
+        Me.lblCtaBancaria.TabIndex = 4
+        Me.lblCtaBancaria.Text = "Cuenta Bancaria:"
         '
         'Etiqueta6
         '
@@ -1424,7 +1424,7 @@ Partial Class frm_Cobranza
         Me.UltraGroupBox1.Controls.Add(Me.txtVoucher)
         Me.UltraGroupBox1.Controls.Add(Me.txtGlosa)
         Me.UltraGroupBox1.Controls.Add(Me.cboCliente)
-        Me.UltraGroupBox1.Controls.Add(Me.Etiqueta11)
+        Me.UltraGroupBox1.Controls.Add(Me.lblCtaBancaria)
         Me.UltraGroupBox1.Controls.Add(Me.txtRuc)
         Me.UltraGroupBox1.Controls.Add(Me.Agrupacion6)
         Me.UltraGroupBox1.Controls.Add(Me.Fecha)
@@ -1527,7 +1527,7 @@ Partial Class frm_Cobranza
     Friend WithEvents cboFlujoGasto As ISL.Controles.Combo
     Friend WithEvents Etiqueta18 As ISL.Controles.Etiqueta
     Friend WithEvents Etiqueta17 As ISL.Controles.Etiqueta
-    Friend WithEvents Etiqueta11 As ISL.Controles.Etiqueta
+    Friend WithEvents lblCtaBancaria As ISL.Controles.Etiqueta
     Friend WithEvents Etiqueta6 As ISL.Controles.Etiqueta
     Friend WithEvents DecTC As ISL.Controles.NumeroDecimal
     Friend WithEvents Etiqueta4 As ISL.Controles.Etiqueta
