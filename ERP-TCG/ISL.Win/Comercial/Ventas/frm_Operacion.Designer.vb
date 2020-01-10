@@ -122,6 +122,7 @@ Partial Class frm_Operacion
         Dim UltraDataColumn171 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("40M3")
         Dim UltraDataColumn172 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("50M3")
         Dim UltraDataColumn173 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("65M3")
+        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Carreta", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraToolTipInfo5 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Piloto", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraToolTipInfo6 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Tracto", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
@@ -883,6 +884,8 @@ Partial Class frm_Operacion
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ValueListItem7 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
         Dim ValueListItem8 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim PaintElement1 As Infragistics.UltraChart.Resources.Appearance.PaintElement = New Infragistics.UltraChart.Resources.Appearance.PaintElement()
+        Dim GradientEffect1 As Infragistics.UltraChart.Resources.Appearance.GradientEffect = New Infragistics.UltraChart.Resources.Appearance.GradientEffect()
         Dim Appearance145 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand5 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn940 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdOperacion")
@@ -1457,6 +1460,7 @@ Partial Class frm_Operacion
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance98 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -1812,7 +1816,6 @@ Partial Class frm_Operacion
         Dim Appearance433 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab14 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab15 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraToolTipInfo4 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Foto Carreta", Infragistics.Win.ToolTipImage.[Default], "Mensaje del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraLabel35 = New Infragistics.Win.Misc.UltraLabel()
         Me.txtBonificacionTracto = New Infragistics.Win.UltraWinMaskedEdit.UltraMaskedEdit()
@@ -1846,6 +1849,7 @@ Partial Class frm_Operacion
         Me.griTarifas = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.ogdTarifas = New ISL.Controles.OrigenDatos(Me.components)
         Me.UltraTabPageControl11 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.upbFotoCarreta = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.upbFoto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.upbFotoTracto = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.UltraTabPageControl9 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -1872,6 +1876,8 @@ Partial Class frm_Operacion
         Me.cboFlota = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.btnEnviarCorreo = New Infragistics.Win.Misc.UltraButton()
         Me.opTractoCarreta = New ISL.Controles.Opciones(Me.components)
+        Me.UltraTabPageControl12 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.UltraChart1 = New Infragistics.Win.UltraWinChart.UltraChart()
         Me.UltraTabPageControl4 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griViaje = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.MenuViaje = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -2273,7 +2279,6 @@ Partial Class frm_Operacion
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.ugb_Espera = New ISL.Win.Espere()
-        Me.upbFotoCarreta = New Infragistics.Win.UltraWinEditors.UltraPictureBox()
         Me.UltraTabPageControl2.SuspendLayout
         CType(Me.griBonificacionTracto, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.Calcular1, System.ComponentModel.ISupportInitialize).BeginInit
@@ -2315,6 +2320,8 @@ Partial Class frm_Operacion
         Me.UltraGroupBox8.SuspendLayout
         CType(Me.cboFlota, System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.opTractoCarreta, System.ComponentModel.ISupportInitialize).BeginInit
+        Me.UltraTabPageControl12.SuspendLayout
+        CType(Me.UltraChart1, System.ComponentModel.ISupportInitialize).BeginInit
         Me.UltraTabPageControl4.SuspendLayout
         CType(Me.griViaje, System.ComponentModel.ISupportInitialize).BeginInit
         Me.MenuViaje.SuspendLayout
@@ -2590,7 +2597,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl2.Controls.Add(Me.UltraLabel6)
         Me.UltraTabPageControl2.Controls.Add(Me.txtTaraTracto)
         Me.UltraTabPageControl2.Controls.Add(Me.cboCarretaPeso)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(448, 88)
         '
@@ -3179,9 +3186,21 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl11.Controls.Add(Me.upbFotoCarreta)
         Me.UltraTabPageControl11.Controls.Add(Me.upbFoto)
         Me.UltraTabPageControl11.Controls.Add(Me.upbFotoTracto)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(448, 88)
+        '
+        'upbFotoCarreta
+        '
+        Me.upbFotoCarreta.BorderShadowColor = System.Drawing.Color.Empty
+        Me.upbFotoCarreta.Dock = System.Windows.Forms.DockStyle.Left
+        Me.upbFotoCarreta.Location = New System.Drawing.Point(300, 0)
+        Me.upbFotoCarreta.Name = "upbFotoCarreta"
+        Me.upbFotoCarreta.Size = New System.Drawing.Size(150, 88)
+        Me.upbFotoCarreta.TabIndex = 31
+        UltraToolTipInfo4.ToolTipText = "Foto Carreta"
+        UltraToolTipInfo4.ToolTipTitle = "Mensaje del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFotoCarreta, UltraToolTipInfo4)
         '
         'upbFoto
         '
@@ -3210,7 +3229,7 @@ Partial Class frm_Operacion
         'UltraTabPageControl9
         '
         Me.UltraTabPageControl9.Controls.Add(Me.griLista)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1272, 522)
         '
@@ -3763,7 +3782,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl10.Controls.Add(Me.griListaTerceros)
         Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
-        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1222, 522)
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1272, 522)
         '
         'griListaTerceros
         '
@@ -4239,7 +4258,7 @@ Partial Class frm_Operacion
         Me.griListaTerceros.ImageList = Me.imagenes
         Me.griListaTerceros.Location = New System.Drawing.Point(0, 0)
         Me.griListaTerceros.Name = "griListaTerceros"
-        Me.griListaTerceros.Size = New System.Drawing.Size(1222, 522)
+        Me.griListaTerceros.Size = New System.Drawing.Size(1272, 522)
         Me.griListaTerceros.TabIndex = 1
         Me.griListaTerceros.Tag = ""
         '
@@ -4249,7 +4268,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl16.Controls.Add(Me.UltraExpandableGroupBox5)
         Me.UltraTabPageControl16.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl16.Name = "UltraTabPageControl16"
-        Me.UltraTabPageControl16.Size = New System.Drawing.Size(1222, 522)
+        Me.UltraTabPageControl16.Size = New System.Drawing.Size(1272, 522)
         '
         'griViajesProceso
         '
@@ -4708,7 +4727,7 @@ Partial Class frm_Operacion
         Me.griViajesProceso.ImageList = Me.imagenes
         Me.griViajesProceso.Location = New System.Drawing.Point(0, 58)
         Me.griViajesProceso.Name = "griViajesProceso"
-        Me.griViajesProceso.Size = New System.Drawing.Size(1222, 464)
+        Me.griViajesProceso.Size = New System.Drawing.Size(1272, 464)
         Me.griViajesProceso.TabIndex = 3
         Me.griViajesProceso.Tag = ""
         '
@@ -4719,10 +4738,10 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox5.ContentAreaAppearance = Appearance84
         Me.UltraExpandableGroupBox5.Controls.Add(Me.UltraExpandableGroupBoxPanel10)
         Me.UltraExpandableGroupBox5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.UltraExpandableGroupBox5.ExpandedSize = New System.Drawing.Size(1222, 58)
+        Me.UltraExpandableGroupBox5.ExpandedSize = New System.Drawing.Size(1272, 58)
         Me.UltraExpandableGroupBox5.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox5.Name = "UltraExpandableGroupBox5"
-        Me.UltraExpandableGroupBox5.Size = New System.Drawing.Size(1222, 58)
+        Me.UltraExpandableGroupBox5.Size = New System.Drawing.Size(1272, 58)
         Me.UltraExpandableGroupBox5.TabIndex = 2
         Me.UltraExpandableGroupBox5.Text = "Filtros"
         Me.UltraExpandableGroupBox5.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -4733,7 +4752,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel10.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel10.Name = "UltraExpandableGroupBoxPanel10"
-        Me.UltraExpandableGroupBoxPanel10.Size = New System.Drawing.Size(1216, 35)
+        Me.UltraExpandableGroupBoxPanel10.Size = New System.Drawing.Size(1266, 35)
         Me.UltraExpandableGroupBoxPanel10.TabIndex = 0
         '
         'opcDesenganches
@@ -4764,7 +4783,7 @@ Partial Class frm_Operacion
         Me.utpTrazabilidad.Controls.Add(Me.UltraGroupBox8)
         Me.utpTrazabilidad.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpTrazabilidad.Name = "utpTrazabilidad"
-        Me.utpTrazabilidad.Size = New System.Drawing.Size(1222, 522)
+        Me.utpTrazabilidad.Size = New System.Drawing.Size(1272, 522)
         '
         'griTransabilida
         '
@@ -4963,7 +4982,7 @@ Partial Class frm_Operacion
         Me.griTransabilida.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griTransabilida.Location = New System.Drawing.Point(0, 54)
         Me.griTransabilida.Name = "griTransabilida"
-        Me.griTransabilida.Size = New System.Drawing.Size(1222, 468)
+        Me.griTransabilida.Size = New System.Drawing.Size(1272, 468)
         Me.griTransabilida.TabIndex = 1
         '
         'UltraGroupBox8
@@ -4978,7 +4997,7 @@ Partial Class frm_Operacion
         Me.UltraGroupBox8.Dock = System.Windows.Forms.DockStyle.Top
         Me.UltraGroupBox8.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox8.Name = "UltraGroupBox8"
-        Me.UltraGroupBox8.Size = New System.Drawing.Size(1222, 54)
+        Me.UltraGroupBox8.Size = New System.Drawing.Size(1272, 54)
         Me.UltraGroupBox8.TabIndex = 0
         Me.UltraGroupBox8.Text = "Filtro"
         Me.UltraGroupBox8.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -5040,6 +5059,185 @@ Partial Class frm_Operacion
         Me.opTractoCarreta.Size = New System.Drawing.Size(68, 32)
         Me.opTractoCarreta.TabIndex = 0
         Me.opTractoCarreta.Text = "Tracto"
+        '
+        'UltraTabPageControl12
+        '
+        Me.UltraTabPageControl12.Controls.Add(Me.UltraChart1)
+        Me.UltraTabPageControl12.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
+        Me.UltraTabPageControl12.Size = New System.Drawing.Size(1272, 522)
+        '
+        'UltraChart1
+        '
+        Me.UltraChart1.Axis.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(220, Byte), Integer))
+        PaintElement1.ElementType = Infragistics.UltraChart.[Shared].Styles.PaintElementType.None
+        PaintElement1.Fill = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.UltraChart1.Axis.PE = PaintElement1
+        Me.UltraChart1.Axis.X.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.X.Labels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.X.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.X.Labels.ItemFormatString = "<ITEM_LABEL>"
+        Me.UltraChart1.Axis.X.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.X.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.VerticalLeftFacing
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.X.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X.LineThickness = 1
+        Me.UltraChart1.Axis.X.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.X.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.X.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.X.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.X.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.X.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.X.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.X.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.X.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.X.Visible = True
+        Me.UltraChart1.Axis.X2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.X2.Labels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.X2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far
+        Me.UltraChart1.Axis.X2.Labels.ItemFormatString = "<ITEM_LABEL>"
+        Me.UltraChart1.Axis.X2.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.X2.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.VerticalLeftFacing
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.X2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.X2.Labels.Visible = False
+        Me.UltraChart1.Axis.X2.LineThickness = 1
+        Me.UltraChart1.Axis.X2.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.X2.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.X2.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.X2.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.X2.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.X2.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.X2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.X2.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.X2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.X2.Visible = False
+        Me.UltraChart1.Axis.Y.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Y.Labels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.Y.Labels.HorizontalAlign = System.Drawing.StringAlignment.Far
+        Me.UltraChart1.Axis.Y.Labels.ItemFormatString = "<DATA_VALUE:00.##>"
+        Me.UltraChart1.Axis.Y.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Y.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.FormatString = ""
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Far
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.VerticalLeftFacing
+        Me.UltraChart1.Axis.Y.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Y.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Y.LineThickness = 1
+        Me.UltraChart1.Axis.Y.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Y.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.Y.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Y.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.Y.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Y.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.Y.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Y.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.Y.TickmarkInterval = 50.0R
+        Me.UltraChart1.Axis.Y.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.Y.Visible = True
+        Me.UltraChart1.Axis.Y2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Y2.Labels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.Y2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Y2.Labels.ItemFormatString = "<DATA_VALUE:00.##>"
+        Me.UltraChart1.Axis.Y2.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Y2.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.FormatString = ""
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.VerticalLeftFacing
+        Me.UltraChart1.Axis.Y2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Y2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Y2.Labels.Visible = False
+        Me.UltraChart1.Axis.Y2.LineThickness = 1
+        Me.UltraChart1.Axis.Y2.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Y2.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.Y2.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Y2.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.Y2.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Y2.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.Y2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Y2.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.Y2.TickmarkInterval = 50.0R
+        Me.UltraChart1.Axis.Y2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.Y2.Visible = False
+        Me.UltraChart1.Axis.Z.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Z.Labels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.Z.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Z.Labels.ItemFormatString = "<ITEM_LABEL>"
+        Me.UltraChart1.Axis.Z.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Z.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.FontColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Z.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Z.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Z.Labels.Visible = False
+        Me.UltraChart1.Axis.Z.LineThickness = 1
+        Me.UltraChart1.Axis.Z.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Z.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.Z.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Z.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.Z.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Z.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.Z.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Z.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.Z.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.Z.Visible = False
+        Me.UltraChart1.Axis.Z2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Z2.Labels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.Z2.Labels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Z2.Labels.ItemFormatString = "<ITEM_LABEL>"
+        Me.UltraChart1.Axis.Z2.Labels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Z2.Labels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.Font = New System.Drawing.Font("Verdana", 7.0!)
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.FontColor = System.Drawing.Color.Gray
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.HorizontalAlign = System.Drawing.StringAlignment.Near
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.Layout.Behavior = Infragistics.UltraChart.[Shared].Styles.AxisLabelLayoutBehaviors.[Auto]
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.Orientation = Infragistics.UltraChart.[Shared].Styles.TextOrientation.Horizontal
+        Me.UltraChart1.Axis.Z2.Labels.SeriesLabels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Z2.Labels.VerticalAlign = System.Drawing.StringAlignment.Center
+        Me.UltraChart1.Axis.Z2.Labels.Visible = False
+        Me.UltraChart1.Axis.Z2.LineThickness = 1
+        Me.UltraChart1.Axis.Z2.MajorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Z2.MajorGridLines.Color = System.Drawing.Color.Gainsboro
+        Me.UltraChart1.Axis.Z2.MajorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Z2.MajorGridLines.Visible = True
+        Me.UltraChart1.Axis.Z2.MinorGridLines.AlphaLevel = CType(255, Byte)
+        Me.UltraChart1.Axis.Z2.MinorGridLines.Color = System.Drawing.Color.LightGray
+        Me.UltraChart1.Axis.Z2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
+        Me.UltraChart1.Axis.Z2.MinorGridLines.Visible = False
+        Me.UltraChart1.Axis.Z2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
+        Me.UltraChart1.Axis.Z2.Visible = False
+        Me.UltraChart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.UltraChart1.ColorModel.AlphaLevel = CType(150, Byte)
+        Me.UltraChart1.ColorModel.ColorBegin = System.Drawing.Color.Pink
+        Me.UltraChart1.ColorModel.ColorEnd = System.Drawing.Color.DarkRed
+        Me.UltraChart1.ColorModel.ModelStyle = Infragistics.UltraChart.[Shared].Styles.ColorModels.CustomLinear
+        Me.UltraChart1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraChart1.Effects.Effects.Add(GradientEffect1)
+        Me.UltraChart1.Location = New System.Drawing.Point(0, 0)
+        Me.UltraChart1.Name = "UltraChart1"
+        Me.UltraChart1.Size = New System.Drawing.Size(1272, 522)
+        Me.UltraChart1.TabIndex = 0
+        Me.UltraChart1.Tooltips.HighlightFillColor = System.Drawing.Color.DimGray
+        Me.UltraChart1.Tooltips.HighlightOutlineColor = System.Drawing.Color.DarkGray
         '
         'UltraTabPageControl4
         '
@@ -5923,7 +6121,7 @@ Partial Class frm_Operacion
         Me.verViajeVacio.AutoSize = True
         Me.verViajeVacio.Location = New System.Drawing.Point(206, 7)
         Me.verViajeVacio.Name = "verViajeVacio"
-        Me.verViajeVacio.Size = New System.Drawing.Size(31, 17)
+        Me.verViajeVacio.Size = New System.Drawing.Size(32, 17)
         Me.verViajeVacio.TabIndex = 4
         Me.verViajeVacio.Text = "V."
         UltraToolTipInfo14.ToolTipText = "Indicador Viaje Vacio"
@@ -7809,7 +8007,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1282, 710)
         '
@@ -7835,6 +8033,7 @@ Partial Class frm_Operacion
         Me.tabViajesLista.Controls.Add(Me.UltraTabPageControl10)
         Me.tabViajesLista.Controls.Add(Me.UltraTabPageControl16)
         Me.tabViajesLista.Controls.Add(Me.utpTrazabilidad)
+        Me.tabViajesLista.Controls.Add(Me.UltraTabPageControl12)
         Me.tabViajesLista.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabViajesLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabViajesLista.Location = New System.Drawing.Point(3, 17)
@@ -7851,7 +8050,9 @@ Partial Class frm_Operacion
         UltraTab5.Text = "Desenganches"
         UltraTab1.TabPage = Me.utpTrazabilidad
         UltraTab1.Text = "Trazabilidad"
-        Me.tabViajesLista.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab2, UltraTab3, UltraTab5, UltraTab1})
+        UltraTab7.TabPage = Me.UltraTabPageControl12
+        UltraTab7.Text = "GraficoProduccion"
+        Me.tabViajesLista.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab2, UltraTab3, UltraTab5, UltraTab1, UltraTab7})
         Me.tabViajesLista.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.VisualStudio2005
         '
         'UltraTabSharedControlsPage5
@@ -8966,7 +9167,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficViaje)
         Me.UltraTabPageControl1.Controls.Add(Me.expGeneral)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1282, 710)
         '
@@ -11501,18 +11702,6 @@ Partial Class frm_Operacion
         Me.ugb_Espera.TabIndex = 14
         Me.ugb_Espera.Visible = False
         '
-        'upbFotoCarreta
-        '
-        Me.upbFotoCarreta.BorderShadowColor = System.Drawing.Color.Empty
-        Me.upbFotoCarreta.Dock = System.Windows.Forms.DockStyle.Left
-        Me.upbFotoCarreta.Location = New System.Drawing.Point(300, 0)
-        Me.upbFotoCarreta.Name = "upbFotoCarreta"
-        Me.upbFotoCarreta.Size = New System.Drawing.Size(150, 88)
-        Me.upbFotoCarreta.TabIndex = 31
-        UltraToolTipInfo4.ToolTipText = "Foto Carreta"
-        UltraToolTipInfo4.ToolTipTitle = "Mensaje del Sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.upbFotoCarreta, UltraToolTipInfo4)
-        '
         'frm_Operacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -11567,6 +11756,8 @@ Partial Class frm_Operacion
         Me.UltraGroupBox8.PerformLayout
         CType(Me.cboFlota, System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.opTractoCarreta, System.ComponentModel.ISupportInitialize).EndInit
+        Me.UltraTabPageControl12.ResumeLayout(False)
+        CType(Me.UltraChart1, System.ComponentModel.ISupportInitialize).EndInit
         Me.UltraTabPageControl4.ResumeLayout(False)
         CType(Me.griViaje, System.ComponentModel.ISupportInitialize).EndInit
         Me.MenuViaje.ResumeLayout(False)
@@ -12313,4 +12504,6 @@ Partial Class frm_Operacion
     Friend WithEvents upbFotoTracto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents UltraTabPageControl11 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents upbFotoCarreta As Infragistics.Win.UltraWinEditors.UltraPictureBox
+    Friend WithEvents UltraTabPageControl12 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+    Private WithEvents UltraChart1 As Infragistics.Win.UltraWinChart.UltraChart
 End Class

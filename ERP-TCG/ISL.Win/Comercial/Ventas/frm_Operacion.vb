@@ -250,8 +250,13 @@ Public Class frm_Operacion
                             LimpiaGrid(griViajesProceso, ogdListaOperacion)
                             Listar("A", griViajesProceso)
                         Else 'Trazabilidad
-                            LimpiaGrid(griTransabilida, ogdListaOperacion)
-                            Listar("N", griTransabilida)
+                            If tabViajesLista.Tabs(3).Selected Then
+                                LimpiaGrid(griTransabilida, ogdListaOperacion)
+                                Listar("N", griTransabilida)
+                            Else
+                                GraficoProduccion(fecDesde.Value.Date, fecHasta.Value.Date)
+                            End If
+
                         End If
                     End If
                 End If
@@ -259,6 +264,24 @@ Public Class frm_Operacion
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
+    End Sub
+
+    Sub GraficoProduccion(ByVal FechaI As Date, ByVal FechaF As Date)
+        Dim ProduccionViaje = New List(Of e_Combo)
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "ProduccionViaje"
+        oeCombo.Descripcion = FechaF
+        oeCombo.Fecha = FechaI
+        ProduccionViaje.AddRange(olCombo.Listar(oeCombo))
+        Dim dtPie As New DataTable
+        dtPie.Columns.Add("Monto", System.Type.GetType("System.Double"))
+        dtPie.Columns.Add("Nombre", System.Type.GetType("System.String"))
+
+        For Each oe As e_Combo In ProduccionViaje
+            dtPie.Rows.Add(oe.Id, oe.Nombre)
+        Next
+        UltraChart1.DataSource = dtPie
+        UltraChart1.DataBind()
     End Sub
 
     Public Overrides Sub Nuevo()
@@ -877,7 +900,7 @@ Public Class frm_Operacion
             oeCombo = New e_Combo
             oeCombo.Nombre = "Carreta"
             CarretaPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
-
+            GraficoProduccion(fecDesde.Value.Date, fecHasta.Value.Date)
         Catch ex As Exception
             mensajeEmergente.Confirmacion(ex.Message, True)
         End Try
