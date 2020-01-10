@@ -143,7 +143,7 @@ Public Class frm_EstacionServicio
             End If
 
             Dim FRM As New frm_DocumentoCtble_Imprimir(OrdenVenta.oeDocumento.Id, "TICKET")
-            FRM.Show()
+            FRM.ShowDialog()
 
             Nuevo()
         Catch ex As Exception
@@ -262,6 +262,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.Total = ItemVenta.PrecioTotal
                     ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
+                    ItemDocumento.GlosaConsolidado = cmb_Vehiculo.Text
                     .lstDetalleDocumento.Add(ItemDocumento)
                 Next
 
@@ -1579,11 +1580,13 @@ Public Class frm_EstacionServicio
         Try
             Dim loInventario As New List(Of e_Inventario), oeRegInventario As e_RegistroInventario, oeInventario As New e_Inventario
             With oeInventario
-                .IdOrden = oe.NroVale
+                .IdOrden = ""
                 .IdMaterial = oe.IdMaterial
+                .Material = oe.Material
                 .FechaCreacion = FechaActual
                 .IdSubAlmacen = oe.IdSubAlmacen
                 .CantidadSalida = oe.CantidadGalon
+                .Serial = oe.NroVale
                 .ValorUnitario = Math.Round(oe.PrecioUnitario, 4)
                 .Usuario = gUsuarioSGI.Id
                 .IndValidar = IndValidar
@@ -1593,11 +1596,14 @@ Public Class frm_EstacionServicio
                 .Fecha = FechaOrden
                 .TipoOperacion = "I"
                 .IdMaterial = oe.IdMaterial
+                .NombreMaterial = oe.Material
+                .IdAlmacen = oe.IdAlmacen
                 .IdSubAlmacen = oe.IdSubAlmacen
                 .IdMovimientoInventario = "1CH000000028"
                 .IdUnidadMedida = "1CH000000001"
                 .Cantidad = oe.CantidadGalon
                 .IdOrden = oe.NroVale
+                .IdTipoMovimiento = ""
                 .UsuarioCreacion = gUsuarioSGI.Id
             End With
             oeInventario.oeRegistroInventario = New e_RegistroInventario

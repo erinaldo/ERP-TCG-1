@@ -1,5 +1,6 @@
 ﻿Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
+Imports Microsoft.Reporting.WinForms
 'Imports MessagingToolkit.QRCode.Codec
 Imports System.IO
 
@@ -14,17 +15,15 @@ Public Class frm_DocumentoCtble_Imprimir
         InitializeComponent()
         IdDocumentoCtble = pIdDocumentoCtble
         TipoPapel = pIdDocumentoCtble
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
 
     End Sub
 
 
     Private Sub frm_DocumentoCtble_Imprimir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-
-        DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.Id = IdDocumentoCtble})
+        Dim ReportDataSource1 As New ReportDataSource("DocumentoCtble", DocumentoCtble)
+        Dim ReportDataSource2 As New ReportDataSource("DocumentoCtble_Detalle", DocumentoCtble.lstDetalleDocumento)
+        Dim ReportDataSource3 As New ReportDataSource("DocumentoCtble_Impresion", DocumentoCtble.DatosImpresion)
 
         With ReportViewer1
             .LocalReport.DataSources.Add(ReportDataSource1)
@@ -46,21 +45,7 @@ Public Class frm_DocumentoCtble_Imprimir
             'myParams(9) = New Microsoft.Reporting.WinForms.ReportParameter("TOTAL_DOC", mo_DocElectronico.Total)
             '.LocalReport.SetParameters(myParams)
 
-            ReportDataSource1.Name = "DocumentoCtble"
-            ReportDataSource1.Value = BindingSource1
-            .LocalReport.DataSources.Add(ReportDataSource1)
-            BindingSource1.DataSource = DocumentoCtble
-
-            ReportDataSource2.Name = "DocumentoCtble_Detalle"
-            ReportDataSource2.Value = BindingSource2
-            .LocalReport.DataSources.Add(ReportDataSource2)
-            BindingSource2.DataSource = DocumentoCtble.lstDetalleDocumento
-
-            ReportDataSource3.Name = "DocumentoCtble_Impresion"
-            ReportDataSource3.Value = BindingSource3
-            .LocalReport.DataSources.Add(ReportDataSource3)
-            BindingSource3.DataSource = DocumentoCtble.DatosImpresion
-
+            .LocalReport.Refresh()
             .RefreshReport()
         End With
 
@@ -69,14 +54,14 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private Sub frm_DocumentoCtble_Imprimir_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Try
-            Dim Archivo As String = "C:\TEST\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
-            Dim bytes As Byte()
-            Dim filepath As String = Archivo
-            If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
-            bytes = ReportViewer1.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
-            Dim fs As New FileStream(Archivo, FileMode.Create)
-            fs.Write(bytes, 0, bytes.Length)
-            fs.Close()
+            'Dim Archivo As String = "C:\TEST\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            'Dim bytes As Byte()
+            'Dim filepath As String = Archivo
+            'If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
+            'bytes = ReportViewer1.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+            'Dim fs As New FileStream(Archivo, FileMode.Create)
+            'fs.Write(bytes, 0, bytes.Length)
+            'fs.Close()
         Catch ex As Exception
             Throw ex
         End Try
