@@ -141,6 +141,10 @@ Public Class frm_EstacionServicio
                 If Not fc_Guardar_Cobros() Then Throw New Exception
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
+
+            Dim FRM As New frm_DocumentoCtble_Imprimir(OrdenVenta.oeDocumento.Id, "TICKET")
+            FRM.Show()
+
             Nuevo()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -293,8 +297,8 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.Direccion = cmb_Direccion.Text
                 .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
                 .DatosImpresion.Placa = cmb_Vehiculo.Text
-                .DatosImpresion.IdMedioPago = ""
-                .DatosImpresion.MedioPago = ""
+                .DatosImpresion.IdMedioPago = "1CH03"
+                .DatosImpresion.MedioPago = "CONTADO"
                 .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
                 .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
 

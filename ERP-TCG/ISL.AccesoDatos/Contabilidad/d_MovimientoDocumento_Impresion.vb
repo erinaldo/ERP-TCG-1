@@ -56,6 +56,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
+                , .MontoLetras _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -94,6 +95,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
+                , .MontoLetras _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -128,6 +130,7 @@ Public Class d_MovimientoDocumento_Impresion
                          , o_fila("MedioPago").ToString _
                          , o_fila("IdTrabajador").ToString _
                          , o_fila("Trabajador").ToString _
+                         , o_fila("MontoLetras").ToString _
                          , o_fila("Activo").ToString _
                          , o_fila("UsuarioCreacion").ToString _
                          , o_fila("FechaCreacion").ToString _
@@ -163,6 +166,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
+                , .MontoLetras _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
