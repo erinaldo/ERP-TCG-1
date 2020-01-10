@@ -203,7 +203,7 @@ Partial Class frm_Login
         Me.Imagen5.BackColor = System.Drawing.Color.White
         Me.Imagen5.BorderShadowColor = System.Drawing.Color.Empty
         Me.Imagen5.Image = CType(resources.GetObject("Imagen5.Image"), Object)
-        Me.Imagen5.Location = New System.Drawing.Point(1, 57)
+        Me.Imagen5.Location = New System.Drawing.Point(-2, 59)
         Me.Imagen5.Name = "Imagen5"
         Me.Imagen5.Size = New System.Drawing.Size(375, 185)
         Me.Imagen5.TabIndex = 12
@@ -217,7 +217,7 @@ Partial Class frm_Login
         Appearance7.TextHAlignAsString = "Left"
         Me.lblFecha.Appearance = Appearance7
         Me.lblFecha.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(30, 37)
+        Me.lblFecha.Location = New System.Drawing.Point(25, 37)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(224, 17)
         Me.lblFecha.TabIndex = 13
@@ -233,7 +233,7 @@ Partial Class frm_Login
         Appearance2.TextVAlignAsString = "Top"
         Me.lblHora.Appearance = Appearance2
         Me.lblHora.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHora.Location = New System.Drawing.Point(277, 38)
+        Me.lblHora.Location = New System.Drawing.Point(272, 38)
         Me.lblHora.Name = "lblHora"
         Me.lblHora.Size = New System.Drawing.Size(75, 15)
         Me.lblHora.TabIndex = 9
