@@ -153,6 +153,7 @@ Public Class frm_CierreTurno
                             If udg_Almacenes.Rows.Count > 0 Then Exportar_Excel(udg_Almacenes)
                         Case 4 ' Resumen de ventas
                             If udg_VentasxCombustible.Rows.Count > 0 Then Exportar_Excel(udg_VentasxCombustible)
+                            If udg_VentasxCombustibleResumen.Rows.Count > 0 Then Exportar_Excel(udg_VentasxCombustibleResumen)
                         Case 5
                             If udg_ResumenVentas.Rows.Count > 0 Then Exportar_Excel(udg_ResumenVentas)
                         Case 6 ' Detalle de ventas

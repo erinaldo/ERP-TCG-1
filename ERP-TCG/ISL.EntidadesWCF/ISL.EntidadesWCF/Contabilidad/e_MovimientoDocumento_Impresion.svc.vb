@@ -38,6 +38,7 @@
     Private _MedioPago As String
     Private _IdTrabajador As String
     Private _Trabajador As String
+    Private _MontoLetras As String
     Private _Activo As Boolean
     Private _UsuarioCreacion As String
     Private _FechaCreacion As Date
@@ -88,6 +89,7 @@
               , ByVal ls_MedioPago As String _
               , ByVal ls_IdTrabajador As String _
               , ByVal ls_Trabajador As String _
+              , ByVal ls_MontoLetras As String _
               , ByVal lb_Activo As Boolean _
               , ByVal ls_UsuarioCreacion As String _
               , ByVal ld_FechaCreacion As Date _
@@ -110,6 +112,7 @@
         _MedioPago = ls_MedioPago
         _IdTrabajador = ls_IdTrabajador
         _Trabajador = ls_Trabajador
+        _MontoLetras = ls_MontoLetras
         _Activo = lb_Activo
         _UsuarioCreacion = ls_UsuarioCreacion
         _FechaCreacion = ld_FechaCreacion
@@ -247,6 +250,14 @@
         End Get
         Set(ByVal value As String)
             _Trabajador = value
+        End Set
+    End Property
+    Public Property MontoLetras() As String
+        Get
+            Return _MontoLetras
+        End Get
+        Set(ByVal value As String)
+            _MontoLetras = value
         End Set
     End Property
     Public Property Activo() As Boolean
