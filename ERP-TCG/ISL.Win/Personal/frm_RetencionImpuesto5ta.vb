@@ -448,12 +448,12 @@ Public Class frm_RetencionImpuesto5ta
                             Dim _dsFila = _rwAux.CopyToDataTable
                             .Sueldo = EjecutaFormula(gFPIRenumBasico, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .AsignacionFamiliar = EjecutaFormula(gFPIAsigFam, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .BonoProduccion = EjecutaFormula(gFPIBonoProd, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.BonoProduccion = EjecutaFormula(gFPIBonoProd, False, _dsFila, leFormula, leParametro, leDetParametro)
                             'Dim _vuelcali = EjecutaFormula(gFPIVueltaCaliza, False, _dsFila, leFormula, leParametro, leDetParametro)
                             '.BonoProduccion = oeDetalleRentaQuinta.BonoProduccion + _vuelcali
                             .RenumeracionVacacional = EjecutaFormula(gFPIRenumVaca, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .CompensacionVacacional = EjecutaFormula(gFPICompenVac, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .BonoResponsabilidad = EjecutaFormula(gFPIBonoResp, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.CompensacionVacacional = EjecutaFormula(gFPICompenVac, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.BonoResponsabilidad = EjecutaFormula(gFPIBonoResp, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .DescansoMedico = EjecutaFormula(gFPIDescMed, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .HoraExtra25 = EjecutaFormula(gFPIHoraExt25, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .HoraExtra35 = EjecutaFormula(gFPIHoraExt35, False, _dsFila, leFormula, leParametro, leDetParametro)
@@ -462,12 +462,12 @@ Public Class frm_RetencionImpuesto5ta
                             .BonoJefeConvoy = EjecutaFormula(gFPIConvoyPiura, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .VueltaAdicionalLima = EjecutaFormula(gFPIVueltaLima, False, _dsFila, leFormula, leParametro, leDetParametro)
                             .Otros = EjecutaFormula(gFPIOtros, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .VueltaCaliza = EjecutaFormula(gFPIVueltaCaliza, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.VueltaCaliza = EjecutaFormula(gFPIVueltaCaliza, False, _dsFila, leFormula, leParametro, leDetParametro)
                             '.Subsidio = EjecutaFormula(gFPISubsidio, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .HorasNocturnas = EjecutaFormula(gFPIHoraExtNoc, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.HorasNocturnas = EjecutaFormula(gFPIHoraExtNoc, False, _dsFila, leFormula, leParametro, leDetParametro)
                             '.SubsidioMaternidad = EjecutaFormula(gFPISubMaternidad, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .Semaforo = EjecutaFormula(gFPISemaforo, False, _dsFila, leFormula, leParametro, leDetParametro)
-                            .OtroInafecto = EjecutaFormula(gFPIOtroInafecto, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.Semaforo = EjecutaFormula(gFPISemaforo, False, _dsFila, leFormula, leParametro, leDetParametro)
+                            '.OtroInafecto = EjecutaFormula(gFPIOtroInafecto, False, _dsFila, leFormula, leParametro, leDetParametro)
                             ' Cargar Monto de Utilidad
                             If oePeriodo.Mes >= 3 Then
                                 If oeUtilidad.Id.Trim <> String.Empty Then

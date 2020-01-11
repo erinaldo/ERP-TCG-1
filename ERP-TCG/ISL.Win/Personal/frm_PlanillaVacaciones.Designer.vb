@@ -98,7 +98,7 @@ Partial Class frm_PlanillaVacaciones
         Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.agrDatosIngreso = New ISL.Controles.Agrupacion(Me.components)
         Me.chkDetalle = New ISL.Controles.Chequear(Me.components)
-        Me.Etiqueta14 = New ISL.Controles.Etiqueta(Me.components)
+        Me.lblAdelanto = New ISL.Controles.Etiqueta(Me.components)
         Me.btnCargarBono = New ISL.Controles.Boton(Me.components)
         Me.btnCargarDatos = New ISL.Controles.Boton(Me.components)
         Me.Agrupacion1 = New ISL.Controles.Agrupacion(Me.components)
@@ -161,7 +161,7 @@ Partial Class frm_PlanillaVacaciones
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.griDetallePlaVac)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1142, 264)
         '
@@ -192,7 +192,7 @@ Partial Class frm_PlanillaVacaciones
         'UltraTabPageControl4
         '
         Me.UltraTabPageControl4.Controls.Add(Me.griCompraVac)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1142, 264)
         '
@@ -288,7 +288,7 @@ Partial Class frm_PlanillaVacaciones
         Me.tsmiEditar.ShortcutKeys = System.Windows.Forms.Keys.F4
         Me.tsmiEditar.Size = New System.Drawing.Size(150, 22)
         Me.tsmiEditar.Text = "Editar"
-        Me.tsmiEditar.ToolTipText = "Editar el Registro de Planilla por Vacaciones(RPV) Seleccionado." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuenta" & _
+        Me.tsmiEditar.ToolTipText = "Editar el Registro de Planilla por Vacaciones(RPV) Seleccionado." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuenta" &
     " que el RPV si esta en estado GENERADA. "
         '
         'tsmiEliminar
@@ -298,7 +298,7 @@ Partial Class frm_PlanillaVacaciones
         Me.tsmiEliminar.ShortcutKeys = System.Windows.Forms.Keys.F7
         Me.tsmiEliminar.Size = New System.Drawing.Size(150, 22)
         Me.tsmiEliminar.Text = "Eliminar"
-        Me.tsmiEliminar.ToolTipText = "Eliminar el Registro de Planilla por Vacaciones(RPV) Seleccionado." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuen" & _
+        Me.tsmiEliminar.ToolTipText = "Eliminar el Registro de Planilla por Vacaciones(RPV) Seleccionado." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuen" &
     "ta que el RPV debe estar en estado GENERADA."
         '
         'ToolStripSeparator1
@@ -313,8 +313,8 @@ Partial Class frm_PlanillaVacaciones
         Me.tsmiEnviar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
         Me.tsmiEnviar.Size = New System.Drawing.Size(150, 22)
         Me.tsmiEnviar.Text = "Enviar"
-        Me.tsmiEnviar.ToolTipText = "Enviar el Registro de Planilla por Vacaciones(RPV) al Jefe de Personal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en" & _
-    " cuenta que el RPV debe estar en estado GENERADA." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ademas debe tener como mínimo" & _
+        Me.tsmiEnviar.ToolTipText = "Enviar el Registro de Planilla por Vacaciones(RPV) al Jefe de Personal." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en" &
+    " cuenta que el RPV debe estar en estado GENERADA." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Ademas debe tener como mínimo" &
     " un detalle." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'tsmiExtornar
@@ -333,8 +333,8 @@ Partial Class frm_PlanillaVacaciones
         Me.tsmiTerminar.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
         Me.tsmiTerminar.Size = New System.Drawing.Size(150, 22)
         Me.tsmiTerminar.Text = "Terminar"
-        Me.tsmiTerminar.ToolTipText = "Terminar el Registro de Planilla por Vacaciones(RPV)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Este proceso permitira int" & _
-    "egrar los datos a la Planilla General." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuenta que el RPV debe estar en" & _
+        Me.tsmiTerminar.ToolTipText = "Terminar el Registro de Planilla por Vacaciones(RPV)." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Este proceso permitira int" &
+    "egrar los datos a la Planilla General." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tener en cuenta que el RPV debe estar en" &
     " estado GENERADA." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'ToolStripSeparator2
@@ -481,7 +481,7 @@ Partial Class frm_PlanillaVacaciones
         '
         'Año1
         '
-        Me.Año1.Año = 2014
+        Me.Año1.Año = 2020
         Me.Año1.Location = New System.Drawing.Point(39, 30)
         Me.Año1.Name = "Año1"
         Me.Año1.Size = New System.Drawing.Size(54, 23)
@@ -650,7 +650,7 @@ Partial Class frm_PlanillaVacaciones
         'agrDatosIngreso
         '
         Me.agrDatosIngreso.Controls.Add(Me.chkDetalle)
-        Me.agrDatosIngreso.Controls.Add(Me.Etiqueta14)
+        Me.agrDatosIngreso.Controls.Add(Me.lblAdelanto)
         Me.agrDatosIngreso.Controls.Add(Me.btnCargarBono)
         Me.agrDatosIngreso.Controls.Add(Me.btnCargarDatos)
         Me.agrDatosIngreso.Controls.Add(Me.Agrupacion1)
@@ -691,18 +691,18 @@ Partial Class frm_PlanillaVacaciones
         Me.chkDetalle.TabIndex = 15
         Me.chkDetalle.Text = "Bonos"
         '
-        'Etiqueta14
+        'lblAdelanto
         '
         Appearance14.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta14.Appearance = Appearance14
-        Me.Etiqueta14.AutoSize = True
-        Me.Etiqueta14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta14.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta14.Location = New System.Drawing.Point(444, 93)
-        Me.Etiqueta14.Name = "Etiqueta14"
-        Me.Etiqueta14.Size = New System.Drawing.Size(396, 14)
-        Me.Etiqueta14.TabIndex = 14
-        Me.Etiqueta14.Text = "Doble Click sobre la Celda 'Adelanto' para genear un adelanto de vacaciones."
+        Me.lblAdelanto.Appearance = Appearance14
+        Me.lblAdelanto.AutoSize = True
+        Me.lblAdelanto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAdelanto.ForeColor = System.Drawing.Color.Black
+        Me.lblAdelanto.Location = New System.Drawing.Point(444, 93)
+        Me.lblAdelanto.Name = "lblAdelanto"
+        Me.lblAdelanto.Size = New System.Drawing.Size(396, 14)
+        Me.lblAdelanto.TabIndex = 14
+        Me.lblAdelanto.Text = "Doble Click sobre la Celda 'Adelanto' para genear un adelanto de vacaciones."
         '
         'btnCargarBono
         '
@@ -1071,7 +1071,7 @@ Partial Class frm_PlanillaVacaciones
     Friend WithEvents Etiqueta12 As ISL.Controles.Etiqueta
     Friend WithEvents Etiqueta13 As ISL.Controles.Etiqueta
     Friend WithEvents btnCargarBono As ISL.Controles.Boton
-    Friend WithEvents Etiqueta14 As ISL.Controles.Etiqueta
+    Friend WithEvents lblAdelanto As ISL.Controles.Etiqueta
     Friend WithEvents mcPlanillaVacaciones As ISL.Controles.MenuContextual
     Friend WithEvents tsmiNuevo As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsmiEditar As System.Windows.Forms.ToolStripMenuItem
