@@ -2724,8 +2724,10 @@ Public Class frm_Operacion
         Try
             If expListaDemandas.Expanded Then
                 Me.expNuevaCarga.Expanded = False
+                Me.expListaOrdenes.Expanded = False
             Else
                 Me.expNuevaCarga.Expanded = True
+                Me.expListaOrdenes.Expanded = False
             End If
         Catch ex As Exception
 
@@ -2733,11 +2735,16 @@ Public Class frm_Operacion
     End Sub
 
     Private Sub expNuevaCarga_ExpandedStateChanged(sender As Object, e As EventArgs) Handles expNuevaCarga.ExpandedStateChanged
-        If Me.expNuevaCarga.Expanded Then
-            Me.expListaDemandas.Expanded = False
-        Else
-            Me.expListaDemandas.Expanded = True
-        End If
+        Try
+            If Me.expNuevaCarga.Expanded Then
+                Me.expListaDemandas.Expanded = False
+                Me.expListaOrdenes.Expanded = False
+                'Else
+                'Me.expListaDemandas.Expanded = True
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub cboCliente_ValueChanged(sender As Object, e As EventArgs) Handles cboCliente.ValueChanged
@@ -5406,6 +5413,7 @@ Public Class frm_Operacion
                     .oeViaje = griViaje.DataSource
                     For Each Viaje As e_Viaje In .oeViaje
                         Viaje.IdDespachoOperaciones = idDespachoOperaciones
+                        Viaje.IncidenciaOperaciones = txtObservacionOperacion.Text
                     Next
                     .oeOperacionDetalle = griViajeDetalle.DataSource
                     .oeIncidenciaAutentificadas = IncidenciasPublic
@@ -7283,6 +7291,24 @@ Public Class frm_Operacion
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
+    End Sub
+
+    Private Sub expListaOrdenes_ExpandedStateChanged(sender As Object, e As EventArgs) Handles expListaOrdenes.ExpandedStateChanged
+        Try
+            If expListaOrdenes.Expanded Then
+                Me.expNuevaCarga.Expanded = False
+                Me.expListaDemandas.Expanded = False
+            Else
+                Me.expNuevaCarga.Expanded = True
+                Me.expListaDemandas.Expanded = False
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub griOrdenes_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles griOrdenes.InitializeLayout
+        e.Layout.Grid.CalcManager = Nothing
     End Sub
     '@0001 Fin
     Public Function llenarTabla() As String

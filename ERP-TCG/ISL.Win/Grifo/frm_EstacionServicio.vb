@@ -142,8 +142,8 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            Dim FRM As New frm_DocumentoCtble_Imprimir(OrdenVenta.oeDocumento.Id, "TICKET")
-            FRM.ShowDialog()
+            ' Dim FRM As New frm_DocumentoCtble_Imprimir(OrdenVenta.oeDocumento.Id, "TICKET")
+            'FRM.ShowDialog()
 
             Nuevo()
         Catch ex As Exception
@@ -1280,6 +1280,8 @@ Public Class frm_EstacionServicio
             lista_Empresa = d_Empresa.Listar(New e_Empresa)
             If lista_Empresa.Where(Function(it) it.Ruc = RUC).ToList.Count = 0 Then
                 With empresa
+                    .TipoOperacion = "I" '@0001
+                    .PrefijoID = gs_PrefijoIdSucursal '@0001
                     .Ruc = contribuyente.RUC
                     .Nombre = contribuyente.RazonSocial
                     .DireccionFiscal = contribuyente.Direccion

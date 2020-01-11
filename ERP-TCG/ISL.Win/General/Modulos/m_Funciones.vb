@@ -1947,6 +1947,9 @@ Module m_Funciones
             Dim olClienteProveedor = New l_ClienteProveedor
             combo.DataSource = Nothing
             oeClienteProveedor.Id = IdProveedor
+            oeClienteProveedor.Cliente = -1
+            oeClienteProveedor.Proveedor = -1
+            oeClienteProveedor.Comisionista = -1
             combo.DataSource = olClienteProveedor.Listar(oeClienteProveedor)
         Catch ex As Exception
             Throw ex

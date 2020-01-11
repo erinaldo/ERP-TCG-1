@@ -1091,18 +1091,18 @@ Public Class frm_OSalida
         Me.cboProveedor.DisplayMember = "Nombre"
         With cboProveedor.DisplayLayout.Bands(0)
             .Columns("Id").Hidden = True
-            .Columns("Email").Hidden = True
-            .Columns("Seleccion").Hidden = True
-            .Columns("Contacto").Hidden = True
+            '.Columns("Email").Hidden = True
+            '.Columns("Seleccion").Hidden = True
+            '.Columns("Contacto").Hidden = True
             .Columns("Codigo").Hidden = True
             .Columns("TipoPersonaEmpresa").Hidden = True
-            .Columns("IdPersona").Hidden = True
-            .Columns("IdEmpresa").Hidden = True
+            '.Columns("IdPersona").Hidden = True
+            '.Columns("IdEmpresa").Hidden = True
             .Columns("FechaActividad").Hidden = True
             .Columns("UsuarioCreacion").Hidden = True
             .Columns("Activo").Hidden = True
-            .Columns("NroDocumento").Header.Caption = "N° RUC"
-            .Columns("NroDocumento").Width = 50
+            '.Columns("NroDocumento").Header.Caption = "N° RUC"
+            '.Columns("NroDocumento").Width = 50
             .Columns("Nombre").Width = 150
         End With
     End Sub
