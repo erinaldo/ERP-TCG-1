@@ -28,9 +28,6 @@ Partial Class frm_Planilla
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -48,6 +45,9 @@ Partial Class frm_Planilla
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -72,33 +72,6 @@ Partial Class frm_Planilla
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab7 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.Espere2 = New ISL.Win.Espere()
-        Me.griPlanilla = New ISL.Controles.Grilla(Me.components)
-        Me.mcPlanilla = New ISL.Controles.MenuContextual(Me.components)
-        Me.tsmiNuevo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiEditar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiEliminar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiEnviar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiProvisionar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.tsmiExportar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiImportar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PlameRem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiGenerarBoletas = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiGenerarAFPnet = New System.Windows.Forms.ToolStripMenuItem()
-        Me.agrBusqueda = New ISL.Controles.Agrupacion(Me.components)
-        Me.cboEstadoBus = New ISL.Controles.Combo(Me.components)
-        Me.Etiqueta3 = New ISL.Controles.Etiqueta(Me.components)
-        Me.cboPeriodoBus = New ISL.Controles.Combo(Me.components)
-        Me.Etiqueta2 = New ISL.Controles.Etiqueta(Me.components)
-        Me.Etiqueta1 = New ISL.Controles.Etiqueta(Me.components)
-        Me.Año1 = New ISL.Win.Año()
-        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.ficDetalle = New ISL.Controles.Ficha(Me.components)
-        Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.upDetallePlanilla = New Infragistics.Win.Misc.UltraPanel()
         Me.griDetallePlanilla = New ISL.Controles.Grilla(Me.components)
@@ -145,6 +118,33 @@ Partial Class frm_Planilla
         Me.fecProvision = New System.Windows.Forms.DateTimePicker()
         Me.Etiqueta18 = New ISL.Controles.Etiqueta(Me.components)
         Me.btnProcesarProv = New Infragistics.Win.Misc.UltraButton()
+        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.Espere2 = New ISL.Win.Espere()
+        Me.griPlanilla = New ISL.Controles.Grilla(Me.components)
+        Me.mcPlanilla = New ISL.Controles.MenuContextual(Me.components)
+        Me.tsmiNuevo = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEditar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiEliminar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiEnviar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiProvisionar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiExportar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiImportar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.PlameRem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiGenerarBoletas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiGenerarAFPnet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.agrBusqueda = New ISL.Controles.Agrupacion(Me.components)
+        Me.cboEstadoBus = New ISL.Controles.Combo(Me.components)
+        Me.Etiqueta3 = New ISL.Controles.Etiqueta(Me.components)
+        Me.cboPeriodoBus = New ISL.Controles.Combo(Me.components)
+        Me.Etiqueta2 = New ISL.Controles.Etiqueta(Me.components)
+        Me.Etiqueta1 = New ISL.Controles.Etiqueta(Me.components)
+        Me.Año1 = New ISL.Win.Año()
+        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.ficDetalle = New ISL.Controles.Ficha(Me.components)
+        Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.agrDatos = New ISL.Controles.Agrupacion(Me.components)
         Me.btnRecargar = New ISL.Controles.Boton(Me.components)
         Me.cboConfiguracion = New ISL.Controles.Combo(Me.components)
@@ -188,16 +188,7 @@ Partial Class frm_Planilla
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.ficPlanilla = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.UltraTabPageControl1.SuspendLayout()
-        CType(Me.griPlanilla, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.mcPlanilla.SuspendLayout()
-        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrBusqueda.SuspendLayout()
-        CType(Me.cboEstadoBus, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboPeriodoBus, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabPageControl2.SuspendLayout()
-        CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ficDetalle.SuspendLayout()
+        Me.chkCaja = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.UltraTabPageControl3.SuspendLayout()
         Me.upDetallePlanilla.ClientArea.SuspendLayout()
         Me.upDetallePlanilla.SuspendLayout()
@@ -235,6 +226,16 @@ Partial Class frm_Planilla
         CType(Me.agrProvisionControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrProvisionControl.SuspendLayout()
         CType(Me.ndTipoCambio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraTabPageControl1.SuspendLayout()
+        CType(Me.griPlanilla, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.mcPlanilla.SuspendLayout()
+        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.agrBusqueda.SuspendLayout()
+        CType(Me.cboEstadoBus, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboPeriodoBus, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraTabPageControl2.SuspendLayout()
+        CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ficDetalle.SuspendLayout()
         CType(Me.agrDatos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrDatos.SuspendLayout()
         CType(Me.cboConfiguracion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -259,14 +260,651 @@ Partial Class frm_Planilla
         CType(Me.gridAFP, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficPlanilla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficPlanilla.SuspendLayout()
+        CType(Me.chkCaja, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'UltraTabPageControl3
+        '
+        Me.UltraTabPageControl3.Controls.Add(Me.upDetallePlanilla)
+        Me.UltraTabPageControl3.Controls.Add(Me.UltraExpandableGroupBox1)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
+        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1128, 303)
+        '
+        'upDetallePlanilla
+        '
+        '
+        'upDetallePlanilla.ClientArea
+        '
+        Me.upDetallePlanilla.ClientArea.Controls.Add(Me.griDetallePlanilla)
+        Me.upDetallePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.upDetallePlanilla.Location = New System.Drawing.Point(0, 63)
+        Me.upDetallePlanilla.Name = "upDetallePlanilla"
+        Me.upDetallePlanilla.Size = New System.Drawing.Size(1128, 240)
+        Me.upDetallePlanilla.TabIndex = 3
+        '
+        'griDetallePlanilla
+        '
+        Me.griDetallePlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDetallePlanilla.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griDetallePlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDetallePlanilla.DisplayLayout.MaxColScrollRegions = 1
+        Me.griDetallePlanilla.DisplayLayout.MaxRowScrollRegions = 1
+        Me.griDetallePlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDetallePlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDetallePlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        Me.griDetallePlanilla.DisplayLayout.Override.CellPadding = 0
+        Me.griDetallePlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
+        Me.griDetallePlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
+        Me.griDetallePlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griDetallePlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
+        Me.griDetallePlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
+        Me.griDetallePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griDetallePlanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griDetallePlanilla.Location = New System.Drawing.Point(0, 0)
+        Me.griDetallePlanilla.Name = "griDetallePlanilla"
+        Me.griDetallePlanilla.Size = New System.Drawing.Size(1128, 240)
+        Me.griDetallePlanilla.TabIndex = 1
+        Me.griDetallePlanilla.Text = "Grilla1"
+        '
+        'UltraExpandableGroupBox1
+        '
+        Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
+        Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(1128, 63)
+        Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
+        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(1128, 63)
+        Me.UltraExpandableGroupBox1.TabIndex = 2
+        Me.UltraExpandableGroupBox1.Text = "= Leyenda ="
+        Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        '
+        'UltraExpandableGroupBoxPanel1
+        '
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btn_Imprimir)
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnVerConceptos)
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.chkDetalle)
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnBuscarTrab)
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnAgregarDetPla)
+        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.agrEstado)
+        Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(2, 22)
+        Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(1124, 39)
+        Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
+        '
+        'btn_Imprimir
+        '
+        Appearance1.ForeColor = System.Drawing.Color.Black
+        Appearance1.Image = Global.ISL.Win.My.Resources.Resources.content_reorder
+        Me.btn_Imprimir.Appearance = Appearance1
+        Me.btn_Imprimir.AutoSize = True
+        Me.btn_Imprimir.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btn_Imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_Imprimir.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Imprimir.ForeColor = System.Drawing.Color.Black
+        Me.btn_Imprimir.Location = New System.Drawing.Point(856, 6)
+        Me.btn_Imprimir.Name = "btn_Imprimir"
+        Me.btn_Imprimir.Size = New System.Drawing.Size(107, 26)
+        Me.btn_Imprimir.TabIndex = 5
+        Me.btn_Imprimir.Text = "Generar Boletas"
+        '
+        'btnVerConceptos
+        '
+        Appearance2.ForeColor = System.Drawing.Color.Black
+        Appearance2.Image = Global.ISL.Win.My.Resources.Resources._Resume
+        Me.btnVerConceptos.Appearance = Appearance2
+        Me.btnVerConceptos.AutoSize = True
+        Me.btnVerConceptos.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnVerConceptos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnVerConceptos.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVerConceptos.ForeColor = System.Drawing.Color.Black
+        Me.btnVerConceptos.Location = New System.Drawing.Point(756, 6)
+        Me.btnVerConceptos.Name = "btnVerConceptos"
+        Me.btnVerConceptos.Size = New System.Drawing.Size(100, 26)
+        Me.btnVerConceptos.TabIndex = 4
+        Me.btnVerConceptos.Text = "Ver Conceptos"
+        '
+        'chkDetalle
+        '
+        Appearance3.FontData.Name = "Tahoma"
+        Me.chkDetalle.Appearance = Appearance3
+        Me.chkDetalle.AutoSize = True
+        Me.chkDetalle.BackColor = System.Drawing.Color.Transparent
+        Me.chkDetalle.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkDetalle.ForeColor = System.Drawing.Color.Black
+        Me.chkDetalle.Location = New System.Drawing.Point(10, 11)
+        Me.chkDetalle.Name = "chkDetalle"
+        Me.chkDetalle.Size = New System.Drawing.Size(95, 18)
+        Me.chkDetalle.TabIndex = 3
+        Me.chkDetalle.Text = "Mostrar Detalle"
+        '
+        'btnBuscarTrab
+        '
+        Appearance4.ForeColor = System.Drawing.Color.Black
+        Appearance4.Image = Global.ISL.Win.My.Resources.Resources.kdvi
+        Me.btnBuscarTrab.Appearance = Appearance4
+        Me.btnBuscarTrab.AutoSize = True
+        Me.btnBuscarTrab.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnBuscarTrab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnBuscarTrab.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarTrab.ForeColor = System.Drawing.Color.Black
+        Me.btnBuscarTrab.Location = New System.Drawing.Point(498, 7)
+        Me.btnBuscarTrab.Name = "btnBuscarTrab"
+        Me.btnBuscarTrab.Size = New System.Drawing.Size(62, 26)
+        Me.btnBuscarTrab.TabIndex = 2
+        Me.btnBuscarTrab.Text = "Buscar"
+        '
+        'btnAgregarDetPla
+        '
+        Appearance5.FontData.BoldAsString = "False"
+        Appearance5.ForeColor = System.Drawing.Color.Black
+        Appearance5.Image = Global.ISL.Win.My.Resources.Resources.contact_new
+        Me.btnAgregarDetPla.Appearance = Appearance5
+        Me.btnAgregarDetPla.AutoSize = True
+        Me.btnAgregarDetPla.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnAgregarDetPla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnAgregarDetPla.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarDetPla.ForeColor = System.Drawing.Color.Black
+        Me.btnAgregarDetPla.Location = New System.Drawing.Point(570, 7)
+        Me.btnAgregarDetPla.Name = "btnAgregarDetPla"
+        Me.btnAgregarDetPla.Size = New System.Drawing.Size(26, 26)
+        Me.btnAgregarDetPla.TabIndex = 1
+        '
+        'agrEstado
+        '
+        Me.agrEstado.Controls.Add(Me.colorVacaciones)
+        Me.agrEstado.Controls.Add(Me.colorCesado)
+        Me.agrEstado.Controls.Add(Me.colorDescanso)
+        Me.agrEstado.Controls.Add(Me.Etiqueta13)
+        Me.agrEstado.Controls.Add(Me.Etiqueta12)
+        Me.agrEstado.Controls.Add(Me.Etiqueta11)
+        Me.agrEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrEstado.ForeColor = System.Drawing.Color.Black
+        Me.agrEstado.Location = New System.Drawing.Point(115, 3)
+        Me.agrEstado.Name = "agrEstado"
+        Me.agrEstado.Size = New System.Drawing.Size(377, 32)
+        Me.agrEstado.TabIndex = 0
+        Me.agrEstado.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'colorVacaciones
+        '
+        Me.colorVacaciones.Color = System.Drawing.Color.Khaki
+        Me.colorVacaciones.Location = New System.Drawing.Point(322, 6)
+        Me.colorVacaciones.Name = "colorVacaciones"
+        Me.colorVacaciones.Size = New System.Drawing.Size(45, 21)
+        Me.colorVacaciones.TabIndex = 5
+        Me.colorVacaciones.Text = "Khaki"
+        '
+        'colorCesado
+        '
+        Me.colorCesado.Color = System.Drawing.Color.Red
+        Me.colorCesado.Location = New System.Drawing.Point(204, 6)
+        Me.colorCesado.Name = "colorCesado"
+        Me.colorCesado.Size = New System.Drawing.Size(45, 21)
+        Me.colorCesado.TabIndex = 4
+        Me.colorCesado.Text = "Red"
+        '
+        'colorDescanso
+        '
+        Me.colorDescanso.Color = System.Drawing.Color.PaleTurquoise
+        Me.colorDescanso.Location = New System.Drawing.Point(105, 6)
+        Me.colorDescanso.Name = "colorDescanso"
+        Me.colorDescanso.Size = New System.Drawing.Size(45, 21)
+        Me.colorDescanso.TabIndex = 3
+        Me.colorDescanso.Text = "PaleTurquoise"
+        '
+        'Etiqueta13
+        '
+        Appearance6.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta13.Appearance = Appearance6
+        Me.Etiqueta13.AutoSize = True
+        Me.Etiqueta13.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta13.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta13.Location = New System.Drawing.Point(255, 10)
+        Me.Etiqueta13.Name = "Etiqueta13"
+        Me.Etiqueta13.Size = New System.Drawing.Size(58, 15)
+        Me.Etiqueta13.TabIndex = 2
+        Me.Etiqueta13.Text = "Vacaciones"
+        '
+        'Etiqueta12
+        '
+        Appearance7.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta12.Appearance = Appearance7
+        Me.Etiqueta12.AutoSize = True
+        Me.Etiqueta12.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta12.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta12.Location = New System.Drawing.Point(166, 9)
+        Me.Etiqueta12.Name = "Etiqueta12"
+        Me.Etiqueta12.Size = New System.Drawing.Size(32, 15)
+        Me.Etiqueta12.TabIndex = 1
+        Me.Etiqueta12.Text = "Faltas"
+        '
+        'Etiqueta11
+        '
+        Appearance8.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta11.Appearance = Appearance8
+        Me.Etiqueta11.AutoSize = True
+        Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta11.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta11.Location = New System.Drawing.Point(8, 9)
+        Me.Etiqueta11.Name = "Etiqueta11"
+        Me.Etiqueta11.Size = New System.Drawing.Size(87, 15)
+        Me.Etiqueta11.TabIndex = 0
+        Me.Etiqueta11.Text = "Descanso Médico"
+        '
+        'UltraTabPageControl4
+        '
+        Me.UltraTabPageControl4.Controls.Add(Me.upDetalleCon)
+        Me.UltraTabPageControl4.Controls.Add(Me.agrLeyendaDetCon)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1128, 303)
+        '
+        'upDetalleCon
+        '
+        '
+        'upDetalleCon.ClientArea
+        '
+        Me.upDetalleCon.ClientArea.Controls.Add(Me.ugb_Espera)
+        Me.upDetalleCon.ClientArea.Controls.Add(Me.griDetalleConcepto)
+        Me.upDetalleCon.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.upDetalleCon.Location = New System.Drawing.Point(0, 69)
+        Me.upDetalleCon.Name = "upDetalleCon"
+        Me.upDetalleCon.Size = New System.Drawing.Size(1128, 234)
+        Me.upDetalleCon.TabIndex = 2
+        '
+        'ugb_Espera
+        '
+        Me.ugb_Espera.Location = New System.Drawing.Point(319, 70)
+        Me.ugb_Espera.Name = "ugb_Espera"
+        Me.ugb_Espera.Size = New System.Drawing.Size(397, 68)
+        Me.ugb_Espera.TabIndex = 8
+        Me.ugb_Espera.Visible = False
+        '
+        'griDetalleConcepto
+        '
+        Me.griDetalleConcepto.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDetalleConcepto.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griDetalleConcepto.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDetalleConcepto.DisplayLayout.MaxColScrollRegions = 1
+        Me.griDetalleConcepto.DisplayLayout.MaxRowScrollRegions = 1
+        Me.griDetalleConcepto.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDetalleConcepto.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDetalleConcepto.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        Me.griDetalleConcepto.DisplayLayout.Override.CellPadding = 0
+        Me.griDetalleConcepto.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
+        Me.griDetalleConcepto.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
+        Me.griDetalleConcepto.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griDetalleConcepto.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
+        Me.griDetalleConcepto.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
+        Me.griDetalleConcepto.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griDetalleConcepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.griDetalleConcepto.Location = New System.Drawing.Point(0, 0)
+        Me.griDetalleConcepto.Name = "griDetalleConcepto"
+        Me.griDetalleConcepto.Size = New System.Drawing.Size(1128, 234)
+        Me.griDetalleConcepto.TabIndex = 0
+        Me.griDetalleConcepto.Text = "Grilla1"
+        '
+        'agrLeyendaDetCon
+        '
+        Me.agrLeyendaDetCon.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
+        Me.agrLeyendaDetCon.Dock = System.Windows.Forms.DockStyle.Top
+        Me.agrLeyendaDetCon.ExpandedSize = New System.Drawing.Size(1128, 69)
+        Me.agrLeyendaDetCon.Location = New System.Drawing.Point(0, 0)
+        Me.agrLeyendaDetCon.Name = "agrLeyendaDetCon"
+        Me.agrLeyendaDetCon.Size = New System.Drawing.Size(1128, 69)
+        Me.agrLeyendaDetCon.TabIndex = 1
+        Me.agrLeyendaDetCon.Text = "= Leyenda ="
+        Me.agrLeyendaDetCon.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        '
+        'UltraExpandableGroupBoxPanel2
+        '
+        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.btnReiniciar)
+        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.btnConsolidar)
+        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.Agrupacion2)
+        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.Agrupacion1)
+        Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(2, 22)
+        Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
+        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(1124, 45)
+        Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
+        '
+        'btnReiniciar
+        '
+        Me.btnReiniciar.AutoSize = True
+        Me.btnReiniciar.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnReiniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnReiniciar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnReiniciar.ForeColor = System.Drawing.Color.Black
+        Me.btnReiniciar.Location = New System.Drawing.Point(920, 10)
+        Me.btnReiniciar.Name = "btnReiniciar"
+        Me.btnReiniciar.Size = New System.Drawing.Size(121, 25)
+        Me.btnReiniciar.TabIndex = 7
+        Me.btnReiniciar.Text = "= Reiniciar Calculos ="
+        '
+        'btnConsolidar
+        '
+        Me.btnConsolidar.AutoSize = True
+        Me.btnConsolidar.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnConsolidar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnConsolidar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConsolidar.ForeColor = System.Drawing.Color.Black
+        Me.btnConsolidar.Location = New System.Drawing.Point(797, 10)
+        Me.btnConsolidar.Name = "btnConsolidar"
+        Me.btnConsolidar.Size = New System.Drawing.Size(118, 25)
+        Me.btnConsolidar.TabIndex = 6
+        Me.btnConsolidar.Text = "= Consolidar Datos ="
+        '
+        'Agrupacion2
+        '
+        Me.Agrupacion2.Controls.Add(Me.Etiqueta20)
+        Me.Agrupacion2.Controls.Add(Me.chkAporte)
+        Me.Agrupacion2.Controls.Add(Me.chkDeduccion)
+        Me.Agrupacion2.Controls.Add(Me.chkIngreso)
+        Me.Agrupacion2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion2.Location = New System.Drawing.Point(394, 4)
+        Me.Agrupacion2.Name = "Agrupacion2"
+        Me.Agrupacion2.Size = New System.Drawing.Size(400, 37)
+        Me.Agrupacion2.TabIndex = 4
+        Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'Etiqueta20
+        '
+        Appearance9.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta20.Appearance = Appearance9
+        Me.Etiqueta20.AutoSize = True
+        Me.Etiqueta20.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta20.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta20.Location = New System.Drawing.Point(18, 11)
+        Me.Etiqueta20.Name = "Etiqueta20"
+        Me.Etiqueta20.Size = New System.Drawing.Size(94, 15)
+        Me.Etiqueta20.TabIndex = 5
+        Me.Etiqueta20.Text = "Mostrar / Ocultar :"
+        '
+        'chkAporte
+        '
+        Appearance10.BackColor = System.Drawing.Color.Transparent
+        Appearance10.FontData.Name = "Tahoma"
+        Me.chkAporte.Appearance = Appearance10
+        Me.chkAporte.AutoSize = True
+        Me.chkAporte.BackColor = System.Drawing.Color.Transparent
+        Me.chkAporte.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkAporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkAporte.ForeColor = System.Drawing.Color.Black
+        Me.chkAporte.Location = New System.Drawing.Point(313, 10)
+        Me.chkAporte.Name = "chkAporte"
+        Me.chkAporte.Size = New System.Drawing.Size(58, 18)
+        Me.chkAporte.TabIndex = 2
+        Me.chkAporte.Text = "Aportes"
+        '
+        'chkDeduccion
+        '
+        Appearance11.BackColor = System.Drawing.Color.Transparent
+        Appearance11.FontData.Name = "Tahoma"
+        Me.chkDeduccion.Appearance = Appearance11
+        Me.chkDeduccion.AutoSize = True
+        Me.chkDeduccion.BackColor = System.Drawing.Color.Transparent
+        Me.chkDeduccion.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkDeduccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkDeduccion.ForeColor = System.Drawing.Color.Black
+        Me.chkDeduccion.Location = New System.Drawing.Point(212, 10)
+        Me.chkDeduccion.Name = "chkDeduccion"
+        Me.chkDeduccion.Size = New System.Drawing.Size(82, 18)
+        Me.chkDeduccion.TabIndex = 1
+        Me.chkDeduccion.Text = "Deducciones"
+        '
+        'chkIngreso
+        '
+        Appearance12.BackColor = System.Drawing.Color.Transparent
+        Appearance12.FontData.Name = "Tahoma"
+        Me.chkIngreso.Appearance = Appearance12
+        Me.chkIngreso.AutoSize = True
+        Me.chkIngreso.BackColor = System.Drawing.Color.Transparent
+        Me.chkIngreso.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkIngreso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkIngreso.ForeColor = System.Drawing.Color.Black
+        Me.chkIngreso.Location = New System.Drawing.Point(127, 9)
+        Me.chkIngreso.Name = "chkIngreso"
+        Me.chkIngreso.Size = New System.Drawing.Size(63, 18)
+        Me.chkIngreso.TabIndex = 0
+        Me.chkIngreso.Text = "Ingresos"
+        '
+        'Agrupacion1
+        '
+        Me.Agrupacion1.Controls.Add(Me.btnCalcularNeto)
+        Me.Agrupacion1.Controls.Add(Me.Etiqueta14)
+        Me.Agrupacion1.Controls.Add(Me.btnCalcularIngreso)
+        Me.Agrupacion1.Controls.Add(Me.btnCalcularAporte)
+        Me.Agrupacion1.Controls.Add(Me.btnCalcularDeduccion)
+        Me.Agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
+        Me.Agrupacion1.Location = New System.Drawing.Point(4, 4)
+        Me.Agrupacion1.Name = "Agrupacion1"
+        Me.Agrupacion1.Size = New System.Drawing.Size(384, 37)
+        Me.Agrupacion1.TabIndex = 3
+        Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'btnCalcularNeto
+        '
+        Me.btnCalcularNeto.AutoSize = True
+        Me.btnCalcularNeto.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnCalcularNeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCalcularNeto.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularNeto.ForeColor = System.Drawing.Color.Black
+        Me.btnCalcularNeto.Location = New System.Drawing.Point(305, 6)
+        Me.btnCalcularNeto.Name = "btnCalcularNeto"
+        Me.btnCalcularNeto.Size = New System.Drawing.Size(60, 25)
+        Me.btnCalcularNeto.TabIndex = 5
+        Me.btnCalcularNeto.Text = "= Neto ="
+        '
+        'Etiqueta14
+        '
+        Appearance13.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta14.Appearance = Appearance13
+        Me.Etiqueta14.AutoSize = True
+        Me.Etiqueta14.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta14.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta14.Location = New System.Drawing.Point(10, 10)
+        Me.Etiqueta14.Name = "Etiqueta14"
+        Me.Etiqueta14.Size = New System.Drawing.Size(46, 15)
+        Me.Etiqueta14.TabIndex = 4
+        Me.Etiqueta14.Text = "Calcular:"
+        '
+        'btnCalcularIngreso
+        '
+        Me.btnCalcularIngreso.AutoSize = True
+        Me.btnCalcularIngreso.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnCalcularIngreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCalcularIngreso.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularIngreso.ForeColor = System.Drawing.Color.Black
+        Me.btnCalcularIngreso.Location = New System.Drawing.Point(64, 6)
+        Me.btnCalcularIngreso.Name = "btnCalcularIngreso"
+        Me.btnCalcularIngreso.Size = New System.Drawing.Size(76, 25)
+        Me.btnCalcularIngreso.TabIndex = 0
+        Me.btnCalcularIngreso.Text = "= Importe ="
+        '
+        'btnCalcularAporte
+        '
+        Me.btnCalcularAporte.AutoSize = True
+        Me.btnCalcularAporte.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnCalcularAporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCalcularAporte.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularAporte.ForeColor = System.Drawing.Color.Black
+        Me.btnCalcularAporte.Location = New System.Drawing.Point(233, 6)
+        Me.btnCalcularAporte.Name = "btnCalcularAporte"
+        Me.btnCalcularAporte.Size = New System.Drawing.Size(69, 25)
+        Me.btnCalcularAporte.TabIndex = 2
+        Me.btnCalcularAporte.Text = "= Aporte ="
+        '
+        'btnCalcularDeduccion
+        '
+        Me.btnCalcularDeduccion.AutoSize = True
+        Me.btnCalcularDeduccion.BackColorInternal = System.Drawing.Color.Transparent
+        Me.btnCalcularDeduccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCalcularDeduccion.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCalcularDeduccion.ForeColor = System.Drawing.Color.Black
+        Me.btnCalcularDeduccion.Location = New System.Drawing.Point(143, 6)
+        Me.btnCalcularDeduccion.Name = "btnCalcularDeduccion"
+        Me.btnCalcularDeduccion.Size = New System.Drawing.Size(87, 25)
+        Me.btnCalcularDeduccion.TabIndex = 1
+        Me.btnCalcularDeduccion.Text = "= Deduccion ="
+        '
+        'UltraTabPageControl6
+        '
+        Me.UltraTabPageControl6.Controls.Add(Me.scPanelDatos)
+        Me.UltraTabPageControl6.Controls.Add(Me.agrProvisionControl)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1128, 303)
+        '
+        'scPanelDatos
+        '
+        Me.scPanelDatos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.scPanelDatos.Location = New System.Drawing.Point(0, 56)
+        Me.scPanelDatos.Name = "scPanelDatos"
+        '
+        'scPanelDatos.Panel1
+        '
+        Me.scPanelDatos.Panel1.Controls.Add(Me.griDebePlanilla)
+        '
+        'scPanelDatos.Panel2
+        '
+        Me.scPanelDatos.Panel2.Controls.Add(Me.griHaberPlanilla)
+        Me.scPanelDatos.Size = New System.Drawing.Size(1128, 247)
+        Me.scPanelDatos.SplitterDistance = 566
+        Me.scPanelDatos.TabIndex = 1
+        '
+        'griDebePlanilla
+        '
+        Me.griDebePlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDebePlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griDebePlanilla.DisplayLayout.MaxColScrollRegions = 1
+        Me.griDebePlanilla.DisplayLayout.MaxRowScrollRegions = 1
+        Me.griDebePlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDebePlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griDebePlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        Me.griDebePlanilla.DisplayLayout.Override.CellPadding = 0
+        Me.griDebePlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
+        Me.griDebePlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
+        Me.griDebePlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griDebePlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
+        Me.griDebePlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
+        Me.griDebePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griDebePlanilla.Location = New System.Drawing.Point(0, 0)
+        Me.griDebePlanilla.Name = "griDebePlanilla"
+        Me.griDebePlanilla.Size = New System.Drawing.Size(566, 247)
+        Me.griDebePlanilla.TabIndex = 0
+        Me.griDebePlanilla.Text = "UltraGrid1"
+        '
+        'griHaberPlanilla
+        '
+        Me.griHaberPlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griHaberPlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Me.griHaberPlanilla.DisplayLayout.MaxColScrollRegions = 1
+        Me.griHaberPlanilla.DisplayLayout.MaxRowScrollRegions = 1
+        Me.griHaberPlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griHaberPlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
+        Me.griHaberPlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
+        Me.griHaberPlanilla.DisplayLayout.Override.CellPadding = 0
+        Me.griHaberPlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
+        Me.griHaberPlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
+        Me.griHaberPlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
+        Me.griHaberPlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
+        Me.griHaberPlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
+        Me.griHaberPlanilla.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.griHaberPlanilla.Location = New System.Drawing.Point(0, 0)
+        Me.griHaberPlanilla.Name = "griHaberPlanilla"
+        Me.griHaberPlanilla.Size = New System.Drawing.Size(558, 247)
+        Me.griHaberPlanilla.TabIndex = 0
+        Me.griHaberPlanilla.Text = "UltraGrid1"
+        '
+        'agrProvisionControl
+        '
+        Me.agrProvisionControl.Controls.Add(Me.ndTipoCambio)
+        Me.agrProvisionControl.Controls.Add(Me.Etiqueta19)
+        Me.agrProvisionControl.Controls.Add(Me.fecProvision)
+        Me.agrProvisionControl.Controls.Add(Me.Etiqueta18)
+        Me.agrProvisionControl.Controls.Add(Me.btnProcesarProv)
+        Me.agrProvisionControl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.agrProvisionControl.Location = New System.Drawing.Point(0, 0)
+        Me.agrProvisionControl.Name = "agrProvisionControl"
+        Me.agrProvisionControl.Size = New System.Drawing.Size(1128, 56)
+        Me.agrProvisionControl.TabIndex = 0
+        Me.agrProvisionControl.Text = "Datos a Provisionar"
+        Me.agrProvisionControl.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
+        '
+        'ndTipoCambio
+        '
+        Appearance14.ForeColor = System.Drawing.Color.Black
+        Me.ndTipoCambio.Appearance = Appearance14
+        Me.ndTipoCambio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.ndTipoCambio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ndTipoCambio.ForeColor = System.Drawing.Color.Black
+        Me.ndTipoCambio.Location = New System.Drawing.Point(342, 25)
+        Me.ndTipoCambio.Name = "ndTipoCambio"
+        Me.ndTipoCambio.NullText = "0.00"
+        Me.ndTipoCambio.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.ndTipoCambio.Size = New System.Drawing.Size(89, 21)
+        Me.ndTipoCambio.TabIndex = 8
+        '
+        'Etiqueta19
+        '
+        Appearance15.BackColor = System.Drawing.Color.Transparent
+        Appearance15.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta19.Appearance = Appearance15
+        Me.Etiqueta19.AutoSize = True
+        Me.Etiqueta19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta19.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta19.Location = New System.Drawing.Point(264, 29)
+        Me.Etiqueta19.Name = "Etiqueta19"
+        Me.Etiqueta19.Size = New System.Drawing.Size(72, 14)
+        Me.Etiqueta19.TabIndex = 4
+        Me.Etiqueta19.Text = "Tipo Cambio:"
+        '
+        'fecProvision
+        '
+        Me.fecProvision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.fecProvision.Location = New System.Drawing.Point(167, 26)
+        Me.fecProvision.Name = "fecProvision"
+        Me.fecProvision.Size = New System.Drawing.Size(91, 20)
+        Me.fecProvision.TabIndex = 3
+        '
+        'Etiqueta18
+        '
+        Appearance16.BackColor = System.Drawing.Color.Transparent
+        Appearance16.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta18.Appearance = Appearance16
+        Me.Etiqueta18.AutoSize = True
+        Me.Etiqueta18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta18.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta18.Location = New System.Drawing.Point(122, 29)
+        Me.Etiqueta18.Name = "Etiqueta18"
+        Me.Etiqueta18.Size = New System.Drawing.Size(39, 14)
+        Me.Etiqueta18.TabIndex = 1
+        Me.Etiqueta18.Text = "Fecha:"
+        '
+        'btnProcesarProv
+        '
+        Appearance17.ForeColor = System.Drawing.Color.Navy
+        Appearance17.Image = Global.ISL.Win.My.Resources.Resources.content_tree
+        Me.btnProcesarProv.Appearance = Appearance17
+        Me.btnProcesarProv.AutoSize = True
+        Me.btnProcesarProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnProcesarProv.Location = New System.Drawing.Point(8, 23)
+        Me.btnProcesarProv.Name = "btnProcesarProv"
+        Me.btnProcesarProv.Size = New System.Drawing.Size(108, 26)
+        Me.btnProcesarProv.TabIndex = 0
+        Me.btnProcesarProv.Text = "Procesar Datos"
         '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.Espere2)
         Me.UltraTabPageControl1.Controls.Add(Me.griPlanilla)
         Me.UltraTabPageControl1.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1130, 400)
         '
@@ -415,8 +1053,8 @@ Partial Class frm_Planilla
         '
         'cboEstadoBus
         '
-        Appearance1.ForeColor = System.Drawing.Color.Black
-        Me.cboEstadoBus.Appearance = Appearance1
+        Appearance18.ForeColor = System.Drawing.Color.Black
+        Me.cboEstadoBus.Appearance = Appearance18
         Me.cboEstadoBus.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.cboEstadoBus.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboEstadoBus.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -429,8 +1067,8 @@ Partial Class frm_Planilla
         '
         'Etiqueta3
         '
-        Appearance2.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta3.Appearance = Appearance2
+        Appearance19.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta3.Appearance = Appearance19
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
@@ -442,8 +1080,8 @@ Partial Class frm_Planilla
         '
         'cboPeriodoBus
         '
-        Appearance3.ForeColor = System.Drawing.Color.Black
-        Me.cboPeriodoBus.Appearance = Appearance3
+        Appearance20.ForeColor = System.Drawing.Color.Black
+        Me.cboPeriodoBus.Appearance = Appearance20
         Me.cboPeriodoBus.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboPeriodoBus.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
         Me.cboPeriodoBus.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -456,8 +1094,8 @@ Partial Class frm_Planilla
         '
         'Etiqueta2
         '
-        Appearance4.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta2.Appearance = Appearance4
+        Appearance21.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta2.Appearance = Appearance21
         Me.Etiqueta2.AutoSize = True
         Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
@@ -469,8 +1107,8 @@ Partial Class frm_Planilla
         '
         'Etiqueta1
         '
-        Appearance5.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta1.Appearance = Appearance5
+        Appearance22.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta1.Appearance = Appearance22
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
@@ -482,7 +1120,7 @@ Partial Class frm_Planilla
         '
         'Año1
         '
-        Me.Año1.Año = 2018
+        Me.Año1.Año = 2020
         Me.Año1.Location = New System.Drawing.Point(44, 24)
         Me.Año1.Name = "Año1"
         Me.Año1.Size = New System.Drawing.Size(54, 23)
@@ -492,7 +1130,7 @@ Partial Class frm_Planilla
         '
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatos)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1130, 400)
         '
@@ -524,644 +1162,9 @@ Partial Class frm_Planilla
         Me.UltraTabSharedControlsPage2.Name = "UltraTabSharedControlsPage2"
         Me.UltraTabSharedControlsPage2.Size = New System.Drawing.Size(1128, 303)
         '
-        'UltraTabPageControl3
-        '
-        Me.UltraTabPageControl3.Controls.Add(Me.upDetallePlanilla)
-        Me.UltraTabPageControl3.Controls.Add(Me.UltraExpandableGroupBox1)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
-        Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
-        Me.UltraTabPageControl3.Size = New System.Drawing.Size(1128, 303)
-        '
-        'upDetallePlanilla
-        '
-        '
-        'upDetallePlanilla.ClientArea
-        '
-        Me.upDetallePlanilla.ClientArea.Controls.Add(Me.griDetallePlanilla)
-        Me.upDetallePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.upDetallePlanilla.Location = New System.Drawing.Point(0, 63)
-        Me.upDetallePlanilla.Name = "upDetallePlanilla"
-        Me.upDetallePlanilla.Size = New System.Drawing.Size(1128, 240)
-        Me.upDetallePlanilla.TabIndex = 3
-        '
-        'griDetallePlanilla
-        '
-        Me.griDetallePlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDetallePlanilla.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griDetallePlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDetallePlanilla.DisplayLayout.MaxColScrollRegions = 1
-        Me.griDetallePlanilla.DisplayLayout.MaxRowScrollRegions = 1
-        Me.griDetallePlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDetallePlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDetallePlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        Me.griDetallePlanilla.DisplayLayout.Override.CellPadding = 0
-        Me.griDetallePlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
-        Me.griDetallePlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
-        Me.griDetallePlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griDetallePlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
-        Me.griDetallePlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
-        Me.griDetallePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griDetallePlanilla.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griDetallePlanilla.Location = New System.Drawing.Point(0, 0)
-        Me.griDetallePlanilla.Name = "griDetallePlanilla"
-        Me.griDetallePlanilla.Size = New System.Drawing.Size(1128, 240)
-        Me.griDetallePlanilla.TabIndex = 1
-        Me.griDetallePlanilla.Text = "Grilla1"
-        '
-        'UltraExpandableGroupBox1
-        '
-        Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
-        Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(1128, 63)
-        Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
-        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(1128, 63)
-        Me.UltraExpandableGroupBox1.TabIndex = 2
-        Me.UltraExpandableGroupBox1.Text = "= Leyenda ="
-        Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
-        '
-        'UltraExpandableGroupBoxPanel1
-        '
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btn_Imprimir)
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnVerConceptos)
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.chkDetalle)
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnBuscarTrab)
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.btnAgregarDetPla)
-        Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.agrEstado)
-        Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(2, 22)
-        Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(1124, 39)
-        Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
-        '
-        'btn_Imprimir
-        '
-        Appearance6.ForeColor = System.Drawing.Color.Black
-        Appearance6.Image = Global.ISL.Win.My.Resources.Resources.content_reorder
-        Me.btn_Imprimir.Appearance = Appearance6
-        Me.btn_Imprimir.AutoSize = True
-        Me.btn_Imprimir.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btn_Imprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_Imprimir.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Imprimir.ForeColor = System.Drawing.Color.Black
-        Me.btn_Imprimir.Location = New System.Drawing.Point(856, 6)
-        Me.btn_Imprimir.Name = "btn_Imprimir"
-        Me.btn_Imprimir.Size = New System.Drawing.Size(107, 26)
-        Me.btn_Imprimir.TabIndex = 5
-        Me.btn_Imprimir.Text = "Generar Boletas"
-        '
-        'btnVerConceptos
-        '
-        Appearance7.ForeColor = System.Drawing.Color.Black
-        Appearance7.Image = Global.ISL.Win.My.Resources.Resources._Resume
-        Me.btnVerConceptos.Appearance = Appearance7
-        Me.btnVerConceptos.AutoSize = True
-        Me.btnVerConceptos.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnVerConceptos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnVerConceptos.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnVerConceptos.ForeColor = System.Drawing.Color.Black
-        Me.btnVerConceptos.Location = New System.Drawing.Point(756, 6)
-        Me.btnVerConceptos.Name = "btnVerConceptos"
-        Me.btnVerConceptos.Size = New System.Drawing.Size(100, 26)
-        Me.btnVerConceptos.TabIndex = 4
-        Me.btnVerConceptos.Text = "Ver Conceptos"
-        '
-        'chkDetalle
-        '
-        Appearance8.FontData.Name = "Tahoma"
-        Me.chkDetalle.Appearance = Appearance8
-        Me.chkDetalle.AutoSize = True
-        Me.chkDetalle.BackColor = System.Drawing.Color.Transparent
-        Me.chkDetalle.BackColorInternal = System.Drawing.Color.Transparent
-        Me.chkDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDetalle.ForeColor = System.Drawing.Color.Black
-        Me.chkDetalle.Location = New System.Drawing.Point(10, 11)
-        Me.chkDetalle.Name = "chkDetalle"
-        Me.chkDetalle.Size = New System.Drawing.Size(95, 18)
-        Me.chkDetalle.TabIndex = 3
-        Me.chkDetalle.Text = "Mostrar Detalle"
-        '
-        'btnBuscarTrab
-        '
-        Appearance9.ForeColor = System.Drawing.Color.Black
-        Appearance9.Image = Global.ISL.Win.My.Resources.Resources.kdvi
-        Me.btnBuscarTrab.Appearance = Appearance9
-        Me.btnBuscarTrab.AutoSize = True
-        Me.btnBuscarTrab.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnBuscarTrab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnBuscarTrab.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarTrab.ForeColor = System.Drawing.Color.Black
-        Me.btnBuscarTrab.Location = New System.Drawing.Point(498, 7)
-        Me.btnBuscarTrab.Name = "btnBuscarTrab"
-        Me.btnBuscarTrab.Size = New System.Drawing.Size(62, 26)
-        Me.btnBuscarTrab.TabIndex = 2
-        Me.btnBuscarTrab.Text = "Buscar"
-        '
-        'btnAgregarDetPla
-        '
-        Appearance10.FontData.BoldAsString = "False"
-        Appearance10.ForeColor = System.Drawing.Color.Black
-        Appearance10.Image = Global.ISL.Win.My.Resources.Resources.contact_new
-        Me.btnAgregarDetPla.Appearance = Appearance10
-        Me.btnAgregarDetPla.AutoSize = True
-        Me.btnAgregarDetPla.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnAgregarDetPla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnAgregarDetPla.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarDetPla.ForeColor = System.Drawing.Color.Black
-        Me.btnAgregarDetPla.Location = New System.Drawing.Point(570, 7)
-        Me.btnAgregarDetPla.Name = "btnAgregarDetPla"
-        Me.btnAgregarDetPla.Size = New System.Drawing.Size(26, 26)
-        Me.btnAgregarDetPla.TabIndex = 1
-        '
-        'agrEstado
-        '
-        Me.agrEstado.Controls.Add(Me.colorVacaciones)
-        Me.agrEstado.Controls.Add(Me.colorCesado)
-        Me.agrEstado.Controls.Add(Me.colorDescanso)
-        Me.agrEstado.Controls.Add(Me.Etiqueta13)
-        Me.agrEstado.Controls.Add(Me.Etiqueta12)
-        Me.agrEstado.Controls.Add(Me.Etiqueta11)
-        Me.agrEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.agrEstado.ForeColor = System.Drawing.Color.Black
-        Me.agrEstado.Location = New System.Drawing.Point(115, 3)
-        Me.agrEstado.Name = "agrEstado"
-        Me.agrEstado.Size = New System.Drawing.Size(377, 32)
-        Me.agrEstado.TabIndex = 0
-        Me.agrEstado.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'colorVacaciones
-        '
-        Me.colorVacaciones.Color = System.Drawing.Color.Khaki
-        Me.colorVacaciones.Location = New System.Drawing.Point(322, 6)
-        Me.colorVacaciones.Name = "colorVacaciones"
-        Me.colorVacaciones.Size = New System.Drawing.Size(45, 21)
-        Me.colorVacaciones.TabIndex = 5
-        Me.colorVacaciones.Text = "Khaki"
-        '
-        'colorCesado
-        '
-        Me.colorCesado.Color = System.Drawing.Color.Red
-        Me.colorCesado.Location = New System.Drawing.Point(204, 6)
-        Me.colorCesado.Name = "colorCesado"
-        Me.colorCesado.Size = New System.Drawing.Size(45, 21)
-        Me.colorCesado.TabIndex = 4
-        Me.colorCesado.Text = "Red"
-        '
-        'colorDescanso
-        '
-        Me.colorDescanso.Color = System.Drawing.Color.PaleTurquoise
-        Me.colorDescanso.Location = New System.Drawing.Point(105, 6)
-        Me.colorDescanso.Name = "colorDescanso"
-        Me.colorDescanso.Size = New System.Drawing.Size(45, 21)
-        Me.colorDescanso.TabIndex = 3
-        Me.colorDescanso.Text = "PaleTurquoise"
-        '
-        'Etiqueta13
-        '
-        Appearance11.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta13.Appearance = Appearance11
-        Me.Etiqueta13.AutoSize = True
-        Me.Etiqueta13.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta13.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta13.Location = New System.Drawing.Point(255, 10)
-        Me.Etiqueta13.Name = "Etiqueta13"
-        Me.Etiqueta13.Size = New System.Drawing.Size(58, 15)
-        Me.Etiqueta13.TabIndex = 2
-        Me.Etiqueta13.Text = "Vacaciones"
-        '
-        'Etiqueta12
-        '
-        Appearance12.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta12.Appearance = Appearance12
-        Me.Etiqueta12.AutoSize = True
-        Me.Etiqueta12.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta12.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta12.Location = New System.Drawing.Point(166, 9)
-        Me.Etiqueta12.Name = "Etiqueta12"
-        Me.Etiqueta12.Size = New System.Drawing.Size(32, 15)
-        Me.Etiqueta12.TabIndex = 1
-        Me.Etiqueta12.Text = "Faltas"
-        '
-        'Etiqueta11
-        '
-        Appearance13.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta11.Appearance = Appearance13
-        Me.Etiqueta11.AutoSize = True
-        Me.Etiqueta11.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta11.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta11.Location = New System.Drawing.Point(8, 9)
-        Me.Etiqueta11.Name = "Etiqueta11"
-        Me.Etiqueta11.Size = New System.Drawing.Size(87, 15)
-        Me.Etiqueta11.TabIndex = 0
-        Me.Etiqueta11.Text = "Descanso Médico"
-        '
-        'UltraTabPageControl4
-        '
-        Me.UltraTabPageControl4.Controls.Add(Me.upDetalleCon)
-        Me.UltraTabPageControl4.Controls.Add(Me.agrLeyendaDetCon)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1128, 303)
-        '
-        'upDetalleCon
-        '
-        '
-        'upDetalleCon.ClientArea
-        '
-        Me.upDetalleCon.ClientArea.Controls.Add(Me.ugb_Espera)
-        Me.upDetalleCon.ClientArea.Controls.Add(Me.griDetalleConcepto)
-        Me.upDetalleCon.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.upDetalleCon.Location = New System.Drawing.Point(0, 69)
-        Me.upDetalleCon.Name = "upDetalleCon"
-        Me.upDetalleCon.Size = New System.Drawing.Size(1128, 234)
-        Me.upDetalleCon.TabIndex = 2
-        '
-        'ugb_Espera
-        '
-        Me.ugb_Espera.Location = New System.Drawing.Point(319, 70)
-        Me.ugb_Espera.Name = "ugb_Espera"
-        Me.ugb_Espera.Size = New System.Drawing.Size(397, 68)
-        Me.ugb_Espera.TabIndex = 8
-        Me.ugb_Espera.Visible = False
-        '
-        'griDetalleConcepto
-        '
-        Me.griDetalleConcepto.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDetalleConcepto.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griDetalleConcepto.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDetalleConcepto.DisplayLayout.MaxColScrollRegions = 1
-        Me.griDetalleConcepto.DisplayLayout.MaxRowScrollRegions = 1
-        Me.griDetalleConcepto.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDetalleConcepto.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDetalleConcepto.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        Me.griDetalleConcepto.DisplayLayout.Override.CellPadding = 0
-        Me.griDetalleConcepto.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
-        Me.griDetalleConcepto.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
-        Me.griDetalleConcepto.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griDetalleConcepto.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
-        Me.griDetalleConcepto.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
-        Me.griDetalleConcepto.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griDetalleConcepto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.griDetalleConcepto.Location = New System.Drawing.Point(0, 0)
-        Me.griDetalleConcepto.Name = "griDetalleConcepto"
-        Me.griDetalleConcepto.Size = New System.Drawing.Size(1128, 234)
-        Me.griDetalleConcepto.TabIndex = 0
-        Me.griDetalleConcepto.Text = "Grilla1"
-        '
-        'agrLeyendaDetCon
-        '
-        Me.agrLeyendaDetCon.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
-        Me.agrLeyendaDetCon.Dock = System.Windows.Forms.DockStyle.Top
-        Me.agrLeyendaDetCon.ExpandedSize = New System.Drawing.Size(1128, 69)
-        Me.agrLeyendaDetCon.Location = New System.Drawing.Point(0, 0)
-        Me.agrLeyendaDetCon.Name = "agrLeyendaDetCon"
-        Me.agrLeyendaDetCon.Size = New System.Drawing.Size(1128, 69)
-        Me.agrLeyendaDetCon.TabIndex = 1
-        Me.agrLeyendaDetCon.Text = "= Leyenda ="
-        Me.agrLeyendaDetCon.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
-        '
-        'UltraExpandableGroupBoxPanel2
-        '
-        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.btnReiniciar)
-        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.btnConsolidar)
-        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.Agrupacion2)
-        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.Agrupacion1)
-        Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(2, 22)
-        Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
-        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(1124, 45)
-        Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
-        '
-        'btnReiniciar
-        '
-        Me.btnReiniciar.AutoSize = True
-        Me.btnReiniciar.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnReiniciar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnReiniciar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReiniciar.ForeColor = System.Drawing.Color.Black
-        Me.btnReiniciar.Location = New System.Drawing.Point(920, 10)
-        Me.btnReiniciar.Name = "btnReiniciar"
-        Me.btnReiniciar.Size = New System.Drawing.Size(121, 25)
-        Me.btnReiniciar.TabIndex = 7
-        Me.btnReiniciar.Text = "= Reiniciar Calculos ="
-        '
-        'btnConsolidar
-        '
-        Me.btnConsolidar.AutoSize = True
-        Me.btnConsolidar.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnConsolidar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnConsolidar.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConsolidar.ForeColor = System.Drawing.Color.Black
-        Me.btnConsolidar.Location = New System.Drawing.Point(797, 10)
-        Me.btnConsolidar.Name = "btnConsolidar"
-        Me.btnConsolidar.Size = New System.Drawing.Size(118, 25)
-        Me.btnConsolidar.TabIndex = 6
-        Me.btnConsolidar.Text = "= Consolidar Datos ="
-        '
-        'Agrupacion2
-        '
-        Me.Agrupacion2.Controls.Add(Me.Etiqueta20)
-        Me.Agrupacion2.Controls.Add(Me.chkAporte)
-        Me.Agrupacion2.Controls.Add(Me.chkDeduccion)
-        Me.Agrupacion2.Controls.Add(Me.chkIngreso)
-        Me.Agrupacion2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agrupacion2.ForeColor = System.Drawing.Color.Black
-        Me.Agrupacion2.Location = New System.Drawing.Point(394, 4)
-        Me.Agrupacion2.Name = "Agrupacion2"
-        Me.Agrupacion2.Size = New System.Drawing.Size(400, 37)
-        Me.Agrupacion2.TabIndex = 4
-        Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'Etiqueta20
-        '
-        Appearance14.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta20.Appearance = Appearance14
-        Me.Etiqueta20.AutoSize = True
-        Me.Etiqueta20.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta20.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta20.Location = New System.Drawing.Point(18, 11)
-        Me.Etiqueta20.Name = "Etiqueta20"
-        Me.Etiqueta20.Size = New System.Drawing.Size(94, 15)
-        Me.Etiqueta20.TabIndex = 5
-        Me.Etiqueta20.Text = "Mostrar / Ocultar :"
-        '
-        'chkAporte
-        '
-        Appearance15.BackColor = System.Drawing.Color.Transparent
-        Appearance15.FontData.Name = "Tahoma"
-        Me.chkAporte.Appearance = Appearance15
-        Me.chkAporte.AutoSize = True
-        Me.chkAporte.BackColor = System.Drawing.Color.Transparent
-        Me.chkAporte.BackColorInternal = System.Drawing.Color.Transparent
-        Me.chkAporte.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkAporte.ForeColor = System.Drawing.Color.Black
-        Me.chkAporte.Location = New System.Drawing.Point(313, 10)
-        Me.chkAporte.Name = "chkAporte"
-        Me.chkAporte.Size = New System.Drawing.Size(58, 18)
-        Me.chkAporte.TabIndex = 2
-        Me.chkAporte.Text = "Aportes"
-        '
-        'chkDeduccion
-        '
-        Appearance16.BackColor = System.Drawing.Color.Transparent
-        Appearance16.FontData.Name = "Tahoma"
-        Me.chkDeduccion.Appearance = Appearance16
-        Me.chkDeduccion.AutoSize = True
-        Me.chkDeduccion.BackColor = System.Drawing.Color.Transparent
-        Me.chkDeduccion.BackColorInternal = System.Drawing.Color.Transparent
-        Me.chkDeduccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDeduccion.ForeColor = System.Drawing.Color.Black
-        Me.chkDeduccion.Location = New System.Drawing.Point(212, 10)
-        Me.chkDeduccion.Name = "chkDeduccion"
-        Me.chkDeduccion.Size = New System.Drawing.Size(82, 18)
-        Me.chkDeduccion.TabIndex = 1
-        Me.chkDeduccion.Text = "Deducciones"
-        '
-        'chkIngreso
-        '
-        Appearance17.BackColor = System.Drawing.Color.Transparent
-        Appearance17.FontData.Name = "Tahoma"
-        Me.chkIngreso.Appearance = Appearance17
-        Me.chkIngreso.AutoSize = True
-        Me.chkIngreso.BackColor = System.Drawing.Color.Transparent
-        Me.chkIngreso.BackColorInternal = System.Drawing.Color.Transparent
-        Me.chkIngreso.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkIngreso.ForeColor = System.Drawing.Color.Black
-        Me.chkIngreso.Location = New System.Drawing.Point(127, 9)
-        Me.chkIngreso.Name = "chkIngreso"
-        Me.chkIngreso.Size = New System.Drawing.Size(63, 18)
-        Me.chkIngreso.TabIndex = 0
-        Me.chkIngreso.Text = "Ingresos"
-        '
-        'Agrupacion1
-        '
-        Me.Agrupacion1.Controls.Add(Me.btnCalcularNeto)
-        Me.Agrupacion1.Controls.Add(Me.Etiqueta14)
-        Me.Agrupacion1.Controls.Add(Me.btnCalcularIngreso)
-        Me.Agrupacion1.Controls.Add(Me.btnCalcularAporte)
-        Me.Agrupacion1.Controls.Add(Me.btnCalcularDeduccion)
-        Me.Agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agrupacion1.ForeColor = System.Drawing.Color.Black
-        Me.Agrupacion1.Location = New System.Drawing.Point(4, 4)
-        Me.Agrupacion1.Name = "Agrupacion1"
-        Me.Agrupacion1.Size = New System.Drawing.Size(384, 37)
-        Me.Agrupacion1.TabIndex = 3
-        Me.Agrupacion1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'btnCalcularNeto
-        '
-        Me.btnCalcularNeto.AutoSize = True
-        Me.btnCalcularNeto.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnCalcularNeto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCalcularNeto.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalcularNeto.ForeColor = System.Drawing.Color.Black
-        Me.btnCalcularNeto.Location = New System.Drawing.Point(305, 6)
-        Me.btnCalcularNeto.Name = "btnCalcularNeto"
-        Me.btnCalcularNeto.Size = New System.Drawing.Size(60, 25)
-        Me.btnCalcularNeto.TabIndex = 5
-        Me.btnCalcularNeto.Text = "= Neto ="
-        '
-        'Etiqueta14
-        '
-        Appearance18.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta14.Appearance = Appearance18
-        Me.Etiqueta14.AutoSize = True
-        Me.Etiqueta14.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta14.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta14.Location = New System.Drawing.Point(10, 10)
-        Me.Etiqueta14.Name = "Etiqueta14"
-        Me.Etiqueta14.Size = New System.Drawing.Size(46, 15)
-        Me.Etiqueta14.TabIndex = 4
-        Me.Etiqueta14.Text = "Calcular:"
-        '
-        'btnCalcularIngreso
-        '
-        Me.btnCalcularIngreso.AutoSize = True
-        Me.btnCalcularIngreso.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnCalcularIngreso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCalcularIngreso.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalcularIngreso.ForeColor = System.Drawing.Color.Black
-        Me.btnCalcularIngreso.Location = New System.Drawing.Point(64, 6)
-        Me.btnCalcularIngreso.Name = "btnCalcularIngreso"
-        Me.btnCalcularIngreso.Size = New System.Drawing.Size(76, 25)
-        Me.btnCalcularIngreso.TabIndex = 0
-        Me.btnCalcularIngreso.Text = "= Importe ="
-        '
-        'btnCalcularAporte
-        '
-        Me.btnCalcularAporte.AutoSize = True
-        Me.btnCalcularAporte.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnCalcularAporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCalcularAporte.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalcularAporte.ForeColor = System.Drawing.Color.Black
-        Me.btnCalcularAporte.Location = New System.Drawing.Point(233, 6)
-        Me.btnCalcularAporte.Name = "btnCalcularAporte"
-        Me.btnCalcularAporte.Size = New System.Drawing.Size(69, 25)
-        Me.btnCalcularAporte.TabIndex = 2
-        Me.btnCalcularAporte.Text = "= Aporte ="
-        '
-        'btnCalcularDeduccion
-        '
-        Me.btnCalcularDeduccion.AutoSize = True
-        Me.btnCalcularDeduccion.BackColorInternal = System.Drawing.Color.Transparent
-        Me.btnCalcularDeduccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnCalcularDeduccion.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCalcularDeduccion.ForeColor = System.Drawing.Color.Black
-        Me.btnCalcularDeduccion.Location = New System.Drawing.Point(143, 6)
-        Me.btnCalcularDeduccion.Name = "btnCalcularDeduccion"
-        Me.btnCalcularDeduccion.Size = New System.Drawing.Size(87, 25)
-        Me.btnCalcularDeduccion.TabIndex = 1
-        Me.btnCalcularDeduccion.Text = "= Deduccion ="
-        '
-        'UltraTabPageControl6
-        '
-        Me.UltraTabPageControl6.Controls.Add(Me.scPanelDatos)
-        Me.UltraTabPageControl6.Controls.Add(Me.agrProvisionControl)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1128, 303)
-        '
-        'scPanelDatos
-        '
-        Me.scPanelDatos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.scPanelDatos.Location = New System.Drawing.Point(0, 56)
-        Me.scPanelDatos.Name = "scPanelDatos"
-        '
-        'scPanelDatos.Panel1
-        '
-        Me.scPanelDatos.Panel1.Controls.Add(Me.griDebePlanilla)
-        '
-        'scPanelDatos.Panel2
-        '
-        Me.scPanelDatos.Panel2.Controls.Add(Me.griHaberPlanilla)
-        Me.scPanelDatos.Size = New System.Drawing.Size(1128, 247)
-        Me.scPanelDatos.SplitterDistance = 566
-        Me.scPanelDatos.TabIndex = 1
-        '
-        'griDebePlanilla
-        '
-        Me.griDebePlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDebePlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griDebePlanilla.DisplayLayout.MaxColScrollRegions = 1
-        Me.griDebePlanilla.DisplayLayout.MaxRowScrollRegions = 1
-        Me.griDebePlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDebePlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griDebePlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        Me.griDebePlanilla.DisplayLayout.Override.CellPadding = 0
-        Me.griDebePlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
-        Me.griDebePlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
-        Me.griDebePlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griDebePlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
-        Me.griDebePlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
-        Me.griDebePlanilla.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griDebePlanilla.Location = New System.Drawing.Point(0, 0)
-        Me.griDebePlanilla.Name = "griDebePlanilla"
-        Me.griDebePlanilla.Size = New System.Drawing.Size(566, 247)
-        Me.griDebePlanilla.TabIndex = 0
-        Me.griDebePlanilla.Text = "UltraGrid1"
-        '
-        'griHaberPlanilla
-        '
-        Me.griHaberPlanilla.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griHaberPlanilla.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Me.griHaberPlanilla.DisplayLayout.MaxColScrollRegions = 1
-        Me.griHaberPlanilla.DisplayLayout.MaxRowScrollRegions = 1
-        Me.griHaberPlanilla.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griHaberPlanilla.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Dotted
-        Me.griHaberPlanilla.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        Me.griHaberPlanilla.DisplayLayout.Override.CellPadding = 0
-        Me.griHaberPlanilla.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
-        Me.griHaberPlanilla.DisplayLayout.Override.HeaderStyle = Infragistics.Win.HeaderStyle.WindowsXPCommand
-        Me.griHaberPlanilla.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Me.griHaberPlanilla.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
-        Me.griHaberPlanilla.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
-        Me.griHaberPlanilla.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.griHaberPlanilla.Location = New System.Drawing.Point(0, 0)
-        Me.griHaberPlanilla.Name = "griHaberPlanilla"
-        Me.griHaberPlanilla.Size = New System.Drawing.Size(558, 247)
-        Me.griHaberPlanilla.TabIndex = 0
-        Me.griHaberPlanilla.Text = "UltraGrid1"
-        '
-        'agrProvisionControl
-        '
-        Me.agrProvisionControl.Controls.Add(Me.ndTipoCambio)
-        Me.agrProvisionControl.Controls.Add(Me.Etiqueta19)
-        Me.agrProvisionControl.Controls.Add(Me.fecProvision)
-        Me.agrProvisionControl.Controls.Add(Me.Etiqueta18)
-        Me.agrProvisionControl.Controls.Add(Me.btnProcesarProv)
-        Me.agrProvisionControl.Dock = System.Windows.Forms.DockStyle.Top
-        Me.agrProvisionControl.Location = New System.Drawing.Point(0, 0)
-        Me.agrProvisionControl.Name = "agrProvisionControl"
-        Me.agrProvisionControl.Size = New System.Drawing.Size(1128, 56)
-        Me.agrProvisionControl.TabIndex = 0
-        Me.agrProvisionControl.Text = "Datos a Provisionar"
-        Me.agrProvisionControl.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
-        '
-        'ndTipoCambio
-        '
-        Appearance19.ForeColor = System.Drawing.Color.Black
-        Me.ndTipoCambio.Appearance = Appearance19
-        Me.ndTipoCambio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.ndTipoCambio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ndTipoCambio.ForeColor = System.Drawing.Color.Black
-        Me.ndTipoCambio.Location = New System.Drawing.Point(342, 25)
-        Me.ndTipoCambio.Name = "ndTipoCambio"
-        Me.ndTipoCambio.NullText = "0.00"
-        Me.ndTipoCambio.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
-        Me.ndTipoCambio.Size = New System.Drawing.Size(89, 21)
-        Me.ndTipoCambio.TabIndex = 8
-        '
-        'Etiqueta19
-        '
-        Appearance20.BackColor = System.Drawing.Color.Transparent
-        Appearance20.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta19.Appearance = Appearance20
-        Me.Etiqueta19.AutoSize = True
-        Me.Etiqueta19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta19.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta19.Location = New System.Drawing.Point(264, 29)
-        Me.Etiqueta19.Name = "Etiqueta19"
-        Me.Etiqueta19.Size = New System.Drawing.Size(72, 14)
-        Me.Etiqueta19.TabIndex = 4
-        Me.Etiqueta19.Text = "Tipo Cambio:"
-        '
-        'fecProvision
-        '
-        Me.fecProvision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fecProvision.Location = New System.Drawing.Point(167, 26)
-        Me.fecProvision.Name = "fecProvision"
-        Me.fecProvision.Size = New System.Drawing.Size(91, 20)
-        Me.fecProvision.TabIndex = 3
-        '
-        'Etiqueta18
-        '
-        Appearance21.BackColor = System.Drawing.Color.Transparent
-        Appearance21.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta18.Appearance = Appearance21
-        Me.Etiqueta18.AutoSize = True
-        Me.Etiqueta18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta18.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta18.Location = New System.Drawing.Point(122, 29)
-        Me.Etiqueta18.Name = "Etiqueta18"
-        Me.Etiqueta18.Size = New System.Drawing.Size(39, 14)
-        Me.Etiqueta18.TabIndex = 1
-        Me.Etiqueta18.Text = "Fecha:"
-        '
-        'btnProcesarProv
-        '
-        Appearance22.ForeColor = System.Drawing.Color.Navy
-        Appearance22.Image = Global.ISL.Win.My.Resources.Resources.content_tree
-        Me.btnProcesarProv.Appearance = Appearance22
-        Me.btnProcesarProv.AutoSize = True
-        Me.btnProcesarProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnProcesarProv.Location = New System.Drawing.Point(8, 23)
-        Me.btnProcesarProv.Name = "btnProcesarProv"
-        Me.btnProcesarProv.Size = New System.Drawing.Size(108, 26)
-        Me.btnProcesarProv.TabIndex = 0
-        Me.btnProcesarProv.Text = "Procesar Datos"
-        '
         'agrDatos
         '
+        Me.agrDatos.Controls.Add(Me.chkCaja)
         Me.agrDatos.Controls.Add(Me.btnRecargar)
         Me.agrDatos.Controls.Add(Me.cboConfiguracion)
         Me.agrDatos.Controls.Add(Me.Etiqueta10)
@@ -1713,6 +1716,16 @@ Partial Class frm_Planilla
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1130, 400)
         '
+        'chkCaja
+        '
+        Me.chkCaja.BackColor = System.Drawing.Color.Transparent
+        Me.chkCaja.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkCaja.Location = New System.Drawing.Point(965, 40)
+        Me.chkCaja.Name = "chkCaja"
+        Me.chkCaja.Size = New System.Drawing.Size(120, 20)
+        Me.chkCaja.TabIndex = 15
+        Me.chkCaja.Text = "Planilla por Caja"
+        '
         'frm_Planilla
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1723,17 +1736,6 @@ Partial Class frm_Planilla
         Me.MinimizeBox = False
         Me.Name = "frm_Planilla"
         Me.Text = "Registro Planilla"
-        Me.UltraTabPageControl1.ResumeLayout(False)
-        CType(Me.griPlanilla, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.mcPlanilla.ResumeLayout(False)
-        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.agrBusqueda.ResumeLayout(False)
-        Me.agrBusqueda.PerformLayout()
-        CType(Me.cboEstadoBus, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboPeriodoBus, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.UltraTabPageControl2.ResumeLayout(False)
-        CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ficDetalle.ResumeLayout(False)
         Me.UltraTabPageControl3.ResumeLayout(False)
         Me.upDetallePlanilla.ClientArea.ResumeLayout(False)
         Me.upDetallePlanilla.ResumeLayout(False)
@@ -1777,6 +1779,17 @@ Partial Class frm_Planilla
         Me.agrProvisionControl.ResumeLayout(False)
         Me.agrProvisionControl.PerformLayout()
         CType(Me.ndTipoCambio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraTabPageControl1.ResumeLayout(False)
+        CType(Me.griPlanilla, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.mcPlanilla.ResumeLayout(False)
+        CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.agrBusqueda.ResumeLayout(False)
+        Me.agrBusqueda.PerformLayout()
+        CType(Me.cboEstadoBus, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboPeriodoBus, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraTabPageControl2.ResumeLayout(False)
+        CType(Me.ficDetalle, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ficDetalle.ResumeLayout(False)
         CType(Me.agrDatos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.agrDatos.ResumeLayout(False)
         Me.agrDatos.PerformLayout()
@@ -1804,6 +1817,7 @@ Partial Class frm_Planilla
         CType(Me.gridAFP, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficPlanilla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficPlanilla.ResumeLayout(False)
+        CType(Me.chkCaja, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1923,4 +1937,5 @@ Partial Class frm_Planilla
     Friend WithEvents UltraTabPageControl8 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents gridAFP As ISL.Controles.Grilla
     Friend WithEvents btn_Imprimir As ISL.Controles.Boton
+    Friend WithEvents chkCaja As Infragistics.Win.UltraWinEditors.UltraCheckEditor
 End Class
