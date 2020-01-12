@@ -142,8 +142,7 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            Dim FRM As New frm_DocumentoCtble_Imprimir(OrdenVenta.oeDocumento.Id, "TICKET")
-            FRM.ShowDialog()
+            gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO")
 
             Nuevo()
         Catch ex As Exception
@@ -255,6 +254,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IdTipoUnidadMedida = ItemVenta.IdTipoUnidadMedida
                     ItemDocumento.IdUnidadMedida = ItemVenta.IdUnidadMedida
                     ItemDocumento.CodigoMaterialServicio = ItemVenta.Codigo
+                    ItemDocumento.IdAlmacen = ItemVenta.IdAlmacen
                     ItemDocumento.Cantidad = ItemVenta.Cantidad
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
@@ -262,6 +262,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.Total = ItemVenta.PrecioTotal
                     ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
+                    ItemDocumento.IdVehiculo = cmb_Vehiculo.Text
                     ItemDocumento.GlosaConsolidado = cmb_Vehiculo.Text
                     .lstDetalleDocumento.Add(ItemDocumento)
                 Next
@@ -1263,6 +1264,10 @@ Public Class frm_EstacionServicio
 
     Private Sub frm_EstacionServicio_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         instancia = Nothing
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        gtm_Imprimir_Documento("CHG000000000662", "TICKET", "GRIFO")
     End Sub
 
     Private Sub Procesar_Lado(Lado As String)

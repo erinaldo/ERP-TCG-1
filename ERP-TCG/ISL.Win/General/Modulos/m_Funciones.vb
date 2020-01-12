@@ -344,6 +344,15 @@ Module m_Funciones
 
 #End Region
 
+    Public Sub gtm_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+        Try
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            FRM.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Public Sub gmt_ListarEmpresa(Tipo As String, Combo As UltraCombo, IdProveedor As String, IndRuc As Boolean, Optional ByVal IndFiltro As Boolean = True)
         Try
             Dim oeEmpresa As New e_Empresa
