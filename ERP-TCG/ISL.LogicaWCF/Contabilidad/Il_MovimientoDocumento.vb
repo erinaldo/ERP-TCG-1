@@ -7,8 +7,17 @@ Public Interface Il_MovimientoDocumento
 
     Function ValidarNC_ND(oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 
-    <OperationContract()> _
-    Function Obtener(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
+    <OperationContract()>
+    Function obtener(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
+
+    <OperationContract()>
+    Function dt_DocumentoCtble(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
+
+    <OperationContract()>
+    Function dt_DocumentoCtble_Detalle(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
+
+    <OperationContract()>
+    Function dt_DocumentoCtble_Impresion(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
 
     <OperationContract()> _
     Function Obtener2(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
