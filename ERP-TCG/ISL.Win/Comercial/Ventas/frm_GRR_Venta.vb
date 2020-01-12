@@ -250,7 +250,7 @@ Public Class frm_GRR_Venta
         Next
 
         With cboTransportista.DisplayLayout.Bands(0)
-            .Columns("Id").Hidden = True
+            '.Columns("Id").Hidden = True
             '.Columns("TipoEmpresa").Hidden = True
             '.Columns("Codigo").Hidden = True
             '.Columns("IdDireccionTanqueo").Hidden = True
@@ -850,6 +850,7 @@ Public Class frm_GRR_Venta
 
     Private Sub mt_IniciarFormulario()
         Try
+
             mt_InicializarLogicas()
             mt_CargarCombos()
             dtpFechaInicio.Value = Date.Now.AddDays(-20)

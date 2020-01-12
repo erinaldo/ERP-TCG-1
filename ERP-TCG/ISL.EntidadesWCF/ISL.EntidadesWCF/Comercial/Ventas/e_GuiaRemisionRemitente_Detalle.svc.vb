@@ -3,6 +3,16 @@
 Public Class e_GuiaRemisionRemitente_Detalle
     Implements Ie_GuiaRemisionRemitente_Detalle
 
+    <DataMember()>
+    Public Property Id() As String
+    <DataMember()>
+    Public Property IdEmpresaSis() As String
+    <DataMember()>
+    Public Property IdSucursal() As String
+    <DataMember()>
+    Public Property IdGRR_Venta() As String
+
+
     Public Sub DoWork() Implements Ie_GuiaRemisionRemitente_Detalle.DoWork
     End Sub
 

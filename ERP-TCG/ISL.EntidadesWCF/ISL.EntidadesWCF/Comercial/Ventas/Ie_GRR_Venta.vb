@@ -5,6 +5,6 @@
 Public Interface Ie_GRR_Venta
 
     <OperationContract()>
-    Sub DoWork()
+    Function Obtener(ByVal guiaRemitente As e_GRR_Venta) As e_GRR_Venta
 
 End Interface
