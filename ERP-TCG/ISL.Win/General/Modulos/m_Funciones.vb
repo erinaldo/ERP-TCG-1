@@ -635,19 +635,19 @@ Module m_Funciones
     Public Const gTEFinancieraNoBancaria As String = "ENTIDADES FINANCIERAS NO BANCARIZADOS"
 
     'Variables Globales para Formulas Planilla
-    Public Const gFPIRenumBasico As String = "plaRenumeracion"
-    Public Const gFPIAsigFam As String = "plaAsignacionFamiliar"
-    Public Const gFPIRenumVaca As String = "plaRenumeracionVacacional"
+    Public Const gFPIRenumBasico As String = "piRenumeracion"
+    Public Const gFPIAsigFam As String = "piAsignacionFamiliar"
+    Public Const gFPIRenumVaca As String = "piRenumeracionVacacional"
     Public Const gFPIVueltaCaliza As String = "plaVuelaCaliza"
-    Public Const gFPIVueltaPiura As String = "plaVueltaAdicionalPiura"
-    Public Const gFPIBonoPiura As String = "plaBonoCombustiblePiura"
-    Public Const gFPIConvoyPiura As String = "plaBonoJefesConvoy"
-    Public Const gFPIVueltaLima As String = "plaVueltasAdicionalesLima"
-    Public Const gFPIOtros As String = "plaOtros"
+    Public Const gFPIVueltaPiura As String = "piBonoGratificacion"
+    Public Const gFPIBonoPiura As String = "piFeriados"
+    Public Const gFPIConvoyPiura As String = "piCtsTruncas"
+    Public Const gFPIVueltaLima As String = "piVacacionesTruncas"
+    Public Const gFPIOtros As String = "piGratificacionTrunca"
     Public Const gFPIBonoProd As String = "plaBonificacionProduccion"
     Public Const gFPISubsidio As String = "plaSubsidio"
-    Public Const gFPIHoraExt25 As String = "plaHoraExtraA"
-    Public Const gFPIHoraExt35 As String = "plaHoraExtraB"
+    Public Const gFPIHoraExt25 As String = "piHoraExtraA"
+    Public Const gFPIHoraExt35 As String = "piHoraExtraB"
     Public Const gFPIHoraExtNoc As String = "plaHoraExtraC"
     Public Const gFPISubMaternidad As String = "plaSubsidioMaternidad"
     Public Const gFPICompenVac As String = "plaCompensacionVacacional"
@@ -1956,6 +1956,9 @@ Module m_Funciones
             Dim olClienteProveedor = New l_ClienteProveedor
             combo.DataSource = Nothing
             oeClienteProveedor.Id = IdProveedor
+            oeClienteProveedor.Cliente = -1
+            oeClienteProveedor.Proveedor = -1
+            oeClienteProveedor.Comisionista = -1
             combo.DataSource = olClienteProveedor.Listar(oeClienteProveedor)
         Catch ex As Exception
             Throw ex

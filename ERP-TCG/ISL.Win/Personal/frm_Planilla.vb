@@ -397,7 +397,8 @@ Public Class frm_Planilla
         Try
             If oePlanilla.FechaInicio <> #1/1/1901# AndAlso oePlanilla.FechaFin <> #1/1/1901# Then
                 Dim _oeTrabAux As New e_Trabajador
-                _oeTrabAux.TipoOperacion = "" : _oeTrabAux.Id = oePlanilla.Id
+                _oeTrabAux.TipoOperacion = IIf(Me.chkCaja.Checked, "1", "")
+                _oeTrabAux.Id = oePlanilla.Id
                 dsDatosGen = olTrabajador.CargarDatosGenerales(_oeTrabAux).Tables(0)
                 leDetallePlaAux = New List(Of e_DetallePlanilla)
                 leTrabAux = New List(Of e_Trabajador)
@@ -1308,6 +1309,7 @@ Public Class frm_Planilla
         ficDetalle.Tabs(0).Selected = True
         ndTipoCambio.Value = 0
         fecProvision.Value = Date.Now.Date
+        Me.chkCaja.Checked = False
     End Sub
 
     Private Sub Mostrar()
@@ -1366,6 +1368,7 @@ Public Class frm_Planilla
             oePlanilla.IdEstado = cboEstado.Value
             oePlanilla.IdPeriodo = cboPeriodo.Value
             oePlanilla.IdConfiguracion = cboConfiguracion.Value
+            oePlanilla.Tipo = IIf(Me.chkCaja.Checked, 1, 0)
         End If
     End Sub
 

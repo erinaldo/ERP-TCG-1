@@ -283,6 +283,9 @@ Public Class frm_PlanillaVacaciones
             colorGenerada.Color = Color.White
             colorEnviado.Color = Color.LightYellow
             colorTerminada.Color = Color.LightGreen
+            btnCargarBono.Visible = False
+            chkDetalle.Visible = False
+            lblAdelanto.Visible = False
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -412,7 +415,7 @@ Public Class frm_PlanillaVacaciones
                     ndTotal.Value = leDetallePlaVac.Where(Function(it) it.Activo = True).Sum(Function(it) it.TotalPagar)
                     ndTotal.Update()
                     btnAdicionar.Enabled = False
-                    btnCargarBono.Visible = True
+                    'btnCargarBono.Visible = True
                 End If
             End If
         Catch ex As Exception
@@ -845,7 +848,7 @@ Public Class frm_PlanillaVacaciones
         btnCargarDatos.Enabled = True
         btnCargarBono.Enabled = True
         ndTotal.ReadOnly = True
-        chkDetalle.Checked = True
+        chkDetalle.Checked = False
         leDetallePlaVac = New List(Of e_DetallePlanillaVacaciones)
         CargarDetallePlaVac(leDetallePlaVac)
         CargarDetalleCompra(leDetallePlaVac)
@@ -913,8 +916,9 @@ Public Class frm_PlanillaVacaciones
         Try
             With Grilla
                 .ResetDisplayLayout()
-                OcultarColumna(Grilla, True, "Id", "IdTrabajador", "IdPlanillaVacaciones", "FechaCreacion", "UsuarioCreacion", _
-                               "FechaModifica", "UsuarioModifica", "Activo")
+                OcultarColumna(Grilla, True, "Id", "IdTrabajador", "IdPlanillaVacaciones", "FechaCreacion", "UsuarioCreacion",
+                               "FechaModifica", "UsuarioModifica", "Activo", "IndAdelanto", "MontoAdelanto", "MontoDescuento",
+                                "Produccion1", "Produccion2", "Produccion3", "Produccion4", "Produccion5", "Produccion6", "IndPromBono", "PromedioProduccion")
                 FormatoColumna(Grilla, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Sueldo", "AsignacionFamiliar", "Renumeracion", _
                                "TotalPagar", "Produccion1", "Produccion2", "Produccion3", "Produccion4", "Produccion5", "Produccion6", _
                                "PromedioProduccion", "Monto", "MontoAdelanto", "MontoDescuento", "DiasComprados", "MontoComprado")
