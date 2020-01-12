@@ -55,7 +55,13 @@ Public Class e_GRR_Venta
     Public Property UsuarioCrea() As String
 
     <DataMember()>
+    Public lo_GRRVenta_Detalle As List(Of e_GuiaRemisionRemitente_Detalle)
+    <DataMember()>
     Public PrefijoID As String = ""
+    <DataMember()>
+    Public TipoOperacion As String = ""
+    <DataMember()>
+    Public IdViaje As String = ""
 
     Public Sub New()
         Id = String.Empty

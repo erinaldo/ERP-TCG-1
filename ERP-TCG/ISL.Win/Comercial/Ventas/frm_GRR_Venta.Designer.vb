@@ -430,7 +430,9 @@ Partial Class frm_GRR_Venta
         Dim UltraTab5 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab6 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance111 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance112 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("Right")
@@ -470,19 +472,17 @@ Partial Class frm_GRR_Venta
         Dim Appearance124 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance125 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance126 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance127 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance128 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance129 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance130 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance131 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance132 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance127 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance133 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance134 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance135 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab8 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl5 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraGroupBox14 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.griDetalleDocumento = New Infragistics.Win.UltraWinGrid.UltraGrid()
@@ -561,11 +561,15 @@ Partial Class frm_GRR_Venta
         Me.ficDetalle = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage3 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.UltraLabel12 = New Infragistics.Win.Misc.UltraLabel()
         Me.cboPuntoPartida = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.txt_Destino = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.cboPuntoLlegada = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.chkAsociar = New System.Windows.Forms.CheckBox()
         Me.UltraGroupBox6 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.UltraTextEditor2 = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
+        Me.UltraLabel13 = New Infragistics.Win.Misc.UltraLabel()
         Me.cboTransportista = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.UltraLabel25 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel17 = New Infragistics.Win.Misc.UltraLabel()
@@ -575,7 +579,9 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel14 = New Infragistics.Win.Misc.UltraLabel()
         Me.txtMTC = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraLabel10 = New Infragistics.Win.Misc.UltraLabel()
+        Me.cmbMotivoTraslado = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.cboChofer = New Infragistics.Win.UltraWinGrid.UltraCombo()
+        Me.UltraLabel1 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel11 = New Infragistics.Win.Misc.UltraLabel()
         Me.cmbVehiculo = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.cboCarreta = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
@@ -584,8 +590,6 @@ Partial Class frm_GRR_Venta
         Me.txtPartida = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraLabel5 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel4 = New Infragistics.Win.Misc.UltraLabel()
-        Me.cmbMotivoTraslado = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.UltraLabel1 = New Infragistics.Win.Misc.UltraLabel()
         Me.txtProveedor = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtNumero = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtSerie = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -595,10 +599,6 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel8 = New Infragistics.Win.Misc.UltraLabel()
         Me.ficGuiaRR = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.UltraLabel12 = New Infragistics.Win.Misc.UltraLabel()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.UltraLabel13 = New Infragistics.Win.Misc.UltraLabel()
-        Me.UltraTextEditor2 = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraTabPageControl5.SuspendLayout()
         CType(Me.UltraGroupBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox14.SuspendLayout()
@@ -670,22 +670,22 @@ Partial Class frm_GRR_Venta
         CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox6.SuspendLayout()
+        CType(Me.UltraTextEditor2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTransportista, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNroLicencia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNroMTCC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMTC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbMotivoTraslado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboChofer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbVehiculo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCarreta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtPartida, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbMotivoTraslado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficGuiaRR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficGuiaRR.SuspendLayout()
-        CType(Me.UltraTextEditor2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl5
@@ -1097,7 +1097,7 @@ Partial Class frm_GRR_Venta
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox15)
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1084, 132)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1084, 178)
         '
         'gbeOrdenes
         '
@@ -1105,11 +1105,11 @@ Partial Class frm_GRR_Venta
         Me.gbeOrdenes.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
         Me.gbeOrdenes.Dock = System.Windows.Forms.DockStyle.Right
         Me.gbeOrdenes.Expanded = False
-        Me.gbeOrdenes.ExpandedSize = New System.Drawing.Size(740, 102)
+        Me.gbeOrdenes.ExpandedSize = New System.Drawing.Size(740, 148)
         Me.gbeOrdenes.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.gbeOrdenes.Location = New System.Drawing.Point(1038, 30)
+        Me.gbeOrdenes.Location = New System.Drawing.Point(1062, 30)
         Me.gbeOrdenes.Name = "gbeOrdenes"
-        Me.gbeOrdenes.Size = New System.Drawing.Size(46, 102)
+        Me.gbeOrdenes.Size = New System.Drawing.Size(22, 148)
         Me.gbeOrdenes.TabIndex = 11
         Me.gbeOrdenes.Text = "Orden Venta / Salida"
         Me.gbeOrdenes.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1421,7 +1421,7 @@ Partial Class frm_GRR_Venta
         Me.griOrdenDocumento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOrdenDocumento.Location = New System.Drawing.Point(0, 30)
         Me.griOrdenDocumento.Name = "griOrdenDocumento"
-        Me.griOrdenDocumento.Size = New System.Drawing.Size(1084, 102)
+        Me.griOrdenDocumento.Size = New System.Drawing.Size(1084, 148)
         Me.griOrdenDocumento.TabIndex = 1
         Me.griOrdenDocumento.Text = "Grilla2"
         '
@@ -1471,7 +1471,7 @@ Partial Class frm_GRR_Venta
         Me.UltraTabPageControl7.Controls.Add(Me.UltraGroupBox16)
         Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
-        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1084, 132)
+        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1084, 178)
         '
         'UltraExpandableGroupBox2
         '
@@ -1479,11 +1479,11 @@ Partial Class frm_GRR_Venta
         Me.UltraExpandableGroupBox2.Controls.Add(Me.UltraExpandableGroupBoxPanel4)
         Me.UltraExpandableGroupBox2.Dock = System.Windows.Forms.DockStyle.Right
         Me.UltraExpandableGroupBox2.Expanded = False
-        Me.UltraExpandableGroupBox2.ExpandedSize = New System.Drawing.Size(740, 102)
+        Me.UltraExpandableGroupBox2.ExpandedSize = New System.Drawing.Size(740, 148)
         Me.UltraExpandableGroupBox2.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.UltraExpandableGroupBox2.Location = New System.Drawing.Point(1038, 30)
+        Me.UltraExpandableGroupBox2.Location = New System.Drawing.Point(1062, 30)
         Me.UltraExpandableGroupBox2.Name = "UltraExpandableGroupBox2"
-        Me.UltraExpandableGroupBox2.Size = New System.Drawing.Size(46, 102)
+        Me.UltraExpandableGroupBox2.Size = New System.Drawing.Size(22, 148)
         Me.UltraExpandableGroupBox2.TabIndex = 12
         Me.UltraExpandableGroupBox2.Text = "Orden Venta / Salida"
         Me.UltraExpandableGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1843,7 +1843,7 @@ Partial Class frm_GRR_Venta
         Me.griOrdenSalida.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOrdenSalida.Location = New System.Drawing.Point(0, 30)
         Me.griOrdenSalida.Name = "griOrdenSalida"
-        Me.griOrdenSalida.Size = New System.Drawing.Size(1084, 102)
+        Me.griOrdenSalida.Size = New System.Drawing.Size(1084, 148)
         Me.griOrdenSalida.TabIndex = 1
         Me.griOrdenSalida.Text = "Grilla2"
         '
@@ -2584,6 +2584,28 @@ Partial Class frm_GRR_Venta
         Me.UltraGroupBox4.TabIndex = 0
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'DateTimePicker3
+        '
+        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker3.Location = New System.Drawing.Point(851, 15)
+        Me.DateTimePicker3.Name = "DateTimePicker3"
+        Me.DateTimePicker3.Size = New System.Drawing.Size(100, 21)
+        Me.DateTimePicker3.TabIndex = 24
+        '
+        'UltraLabel12
+        '
+        Appearance108.BackColor = System.Drawing.Color.Transparent
+        Appearance108.ForeColor = System.Drawing.Color.Navy
+        Appearance108.TextVAlignAsString = "Middle"
+        Me.UltraLabel12.Appearance = Appearance108
+        Me.UltraLabel12.AutoSize = True
+        Me.UltraLabel12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel12.Location = New System.Drawing.Point(760, 18)
+        Me.UltraLabel12.Name = "UltraLabel12"
+        Me.UltraLabel12.Size = New System.Drawing.Size(84, 15)
+        Me.UltraLabel12.TabIndex = 23
+        Me.UltraLabel12.Text = "Fecha Traslado:"
+        '
         'cboPuntoPartida
         '
         Me.cboPuntoPartida.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
@@ -2655,6 +2677,28 @@ Partial Class frm_GRR_Venta
         Me.UltraGroupBox6.TabIndex = 9
         Me.UltraGroupBox6.Text = "Datos Transporte"
         Me.UltraGroupBox6.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'UltraTextEditor2
+        '
+        Me.UltraTextEditor2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.UltraTextEditor2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.UltraTextEditor2.Location = New System.Drawing.Point(783, 29)
+        Me.UltraTextEditor2.Name = "UltraTextEditor2"
+        Me.UltraTextEditor2.Size = New System.Drawing.Size(147, 22)
+        Me.UltraTextEditor2.TabIndex = 25
+        Me.UltraTextEditor2.TabStop = False
+        '
+        'UltraLabel13
+        '
+        Appearance110.BackColor = System.Drawing.Color.Transparent
+        Appearance110.ForeColor = System.Drawing.Color.Navy
+        Me.UltraLabel13.Appearance = Appearance110
+        Me.UltraLabel13.AutoSize = True
+        Me.UltraLabel13.Location = New System.Drawing.Point(727, 33)
+        Me.UltraLabel13.Name = "UltraLabel13"
+        Me.UltraLabel13.Size = New System.Drawing.Size(49, 15)
+        Me.UltraLabel13.TabIndex = 19
+        Me.UltraLabel13.Text = "Nro Doc:"
         '
         'cboTransportista
         '
@@ -2769,9 +2813,19 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel10.TabIndex = 2
         Me.UltraLabel10.Text = "N° MTC:"
         '
+        'cmbMotivoTraslado
+        '
+        Me.cmbMotivoTraslado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
+        Me.cmbMotivoTraslado.DropDownListWidth = 350
+        Me.cmbMotivoTraslado.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cmbMotivoTraslado.Location = New System.Drawing.Point(566, 29)
+        Me.cmbMotivoTraslado.Name = "cmbMotivoTraslado"
+        Me.cmbMotivoTraslado.Size = New System.Drawing.Size(158, 22)
+        Me.cmbMotivoTraslado.TabIndex = 8
+        '
         'cboChofer
         '
-        Me.cboChofer.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboChofer.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         EditorButton4.Key = "Left"
         Me.cboChofer.ButtonsLeft.Add(EditorButton4)
         EditorButton5.Key = "Right"
@@ -2873,6 +2927,20 @@ Partial Class frm_GRR_Venta
         Me.cboChofer.TabIndex = 7
         Me.cboChofer.ValueMember = "IdPersona"
         '
+        'UltraLabel1
+        '
+        Appearance127.BackColor = System.Drawing.Color.Transparent
+        Appearance127.ForeColor = System.Drawing.Color.Navy
+        Appearance127.TextVAlignAsString = "Middle"
+        Me.UltraLabel1.Appearance = Appearance127
+        Me.UltraLabel1.AutoSize = True
+        Me.UltraLabel1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel1.Location = New System.Drawing.Point(487, 33)
+        Me.UltraLabel1.Name = "UltraLabel1"
+        Me.UltraLabel1.Size = New System.Drawing.Size(73, 15)
+        Me.UltraLabel1.TabIndex = 7
+        Me.UltraLabel1.Text = "Mot.Traslado:"
+        '
         'UltraLabel11
         '
         Appearance128.BackColor = System.Drawing.Color.Transparent
@@ -2972,30 +3040,6 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel4.Size = New System.Drawing.Size(43, 15)
         Me.UltraLabel4.TabIndex = 10
         Me.UltraLabel4.Text = "Partida:"
-        '
-        'cmbMotivoTraslado
-        '
-        Me.cmbMotivoTraslado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
-        Me.cmbMotivoTraslado.DropDownListWidth = 350
-        Me.cmbMotivoTraslado.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
-        Me.cmbMotivoTraslado.Location = New System.Drawing.Point(566, 29)
-        Me.cmbMotivoTraslado.Name = "cmbMotivoTraslado"
-        Me.cmbMotivoTraslado.Size = New System.Drawing.Size(158, 22)
-        Me.cmbMotivoTraslado.TabIndex = 8
-        '
-        'UltraLabel1
-        '
-        Appearance127.BackColor = System.Drawing.Color.Transparent
-        Appearance127.ForeColor = System.Drawing.Color.Navy
-        Appearance127.TextVAlignAsString = "Middle"
-        Me.UltraLabel1.Appearance = Appearance127
-        Me.UltraLabel1.AutoSize = True
-        Me.UltraLabel1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel1.Location = New System.Drawing.Point(487, 33)
-        Me.UltraLabel1.Name = "UltraLabel1"
-        Me.UltraLabel1.Size = New System.Drawing.Size(73, 15)
-        Me.UltraLabel1.TabIndex = 7
-        Me.UltraLabel1.Text = "Mot.Traslado:"
         '
         'txtProveedor
         '
@@ -3100,50 +3144,6 @@ Partial Class frm_GRR_Venta
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1086, 427)
         '
-        'UltraLabel12
-        '
-        Appearance108.BackColor = System.Drawing.Color.Transparent
-        Appearance108.ForeColor = System.Drawing.Color.Navy
-        Appearance108.TextVAlignAsString = "Middle"
-        Me.UltraLabel12.Appearance = Appearance108
-        Me.UltraLabel12.AutoSize = True
-        Me.UltraLabel12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UltraLabel12.Location = New System.Drawing.Point(760, 18)
-        Me.UltraLabel12.Name = "UltraLabel12"
-        Me.UltraLabel12.Size = New System.Drawing.Size(84, 15)
-        Me.UltraLabel12.TabIndex = 23
-        Me.UltraLabel12.Text = "Fecha Traslado:"
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(851, 15)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(100, 21)
-        Me.DateTimePicker3.TabIndex = 24
-        '
-        'UltraLabel13
-        '
-        Appearance110.BackColor = System.Drawing.Color.Transparent
-        Appearance110.ForeColor = System.Drawing.Color.Navy
-        Me.UltraLabel13.Appearance = Appearance110
-        Me.UltraLabel13.AutoSize = True
-        Me.UltraLabel13.Location = New System.Drawing.Point(727, 33)
-        Me.UltraLabel13.Name = "UltraLabel13"
-        Me.UltraLabel13.Size = New System.Drawing.Size(49, 15)
-        Me.UltraLabel13.TabIndex = 19
-        Me.UltraLabel13.Text = "Nro Doc:"
-        '
-        'UltraTextEditor2
-        '
-        Me.UltraTextEditor2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.UltraTextEditor2.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.UltraTextEditor2.Location = New System.Drawing.Point(783, 29)
-        Me.UltraTextEditor2.Name = "UltraTextEditor2"
-        Me.UltraTextEditor2.Size = New System.Drawing.Size(147, 22)
-        Me.UltraTextEditor2.TabIndex = 25
-        Me.UltraTextEditor2.TabStop = False
-        '
         'frm_GRR_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3232,22 +3232,22 @@ Partial Class frm_GRR_Venta
         CType(Me.UltraGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox6.ResumeLayout(False)
         Me.UltraGroupBox6.PerformLayout()
+        CType(Me.UltraTextEditor2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTransportista, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNroLicencia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNroMTCC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtLlegada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMTC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbMotivoTraslado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboChofer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbVehiculo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCarreta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtPartida, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbMotivoTraslado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficGuiaRR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficGuiaRR.ResumeLayout(False)
-        CType(Me.UltraTextEditor2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
