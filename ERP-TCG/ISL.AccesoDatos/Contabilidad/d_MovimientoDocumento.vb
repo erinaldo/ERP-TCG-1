@@ -191,7 +191,7 @@ Public Class d_MovimientoDocumento
             End With
             Return DT
         Catch ex As Exception
-            Throw
+            Throw ex
         End Try
     End Function
 

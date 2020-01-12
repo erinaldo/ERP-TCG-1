@@ -24,17 +24,37 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private Sub frm_DocumentoCtble_Imprimir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim ReportDataSource1 As New ReportDataSource("DocumentoCtble", DT1)
-            Dim ReportDataSource2 As New ReportDataSource("DocumentoCtble_Detalle", DT2)
-            Dim ReportDataSource3 As New ReportDataSource("DocumentoCtble_Impresion", DT3)
+            Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
 
+            'Dim ReportDataSource1 As New ReportDataSource("DocumentoCtble", DT1)
+            'Dim ReportDataSource2 As New ReportDataSource("DocumentoCtble_Detalle", DT2)
+            'Dim ReportDataSource3 As New ReportDataSource("DocumentoCtble_Impresion", DT3)
+            With ReportDataSource1
+                .Name = "DocumentoCtble"
+                .Value = BindingSource1
+            End With
+            With ReportDataSource2
+                .Name = "DocumentoCtble_Detalle"
+                .Value = BindingSource2
+            End With
+
+            With ReportDataSource3
+                .Name = "DocumentoCtble_Impresion"
+                .Value = BindingSource3
+            End With
             With ReportViewer1
+                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
                 .LocalReport.ReportPath = Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento)
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(ReportDataSource1)
                 .LocalReport.DataSources.Add(ReportDataSource2)
                 .LocalReport.DataSources.Add(ReportDataSource3)
-                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+
+                BindingSource1.DataSource = DT1
+                BindingSource2.DataSource = DT2
+                BindingSource3.DataSource = DT3
 
                 'Dim myParams(9) As Microsoft.Reporting.WinForms.ReportParameter
                 'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("DOCUMENTO", mo_DocElectronico.Documento)
@@ -49,13 +69,13 @@ Public Class frm_DocumentoCtble_Imprimir
                 'myParams(9) = New Microsoft.Reporting.WinForms.ReportParameter("TOTAL_DOC", mo_DocElectronico.Total)
                 '.LocalReport.SetParameters(myParams)
 
-                .LocalReport.Refresh()
-                .RefreshReport()
+                '.LocalReport.Refresh()
+                '.RefreshReport()
             End With
 
             Me.ReportViewer1.RefreshReport()
         Catch ex As Exception
-            Throw ex
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
 
     End Sub
@@ -98,5 +118,6 @@ Public Class frm_DocumentoCtble_Imprimir
             Case Else
                 Return ""
         End Select
+        Return ""
     End Function
 End Class

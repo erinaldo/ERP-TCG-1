@@ -1267,7 +1267,11 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        gtm_Imprimir_Documento("CHG000000000662", "TICKET", "GRIFO")
+        Try
+            gtm_Imprimir_Documento("CHG000000000662", "TICKET", "GRIFO")
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
     End Sub
 
     Private Sub Procesar_Lado(Lado As String)
