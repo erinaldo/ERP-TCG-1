@@ -173,6 +173,7 @@ Partial Class frm_EstacionServicio
         Me.btnG84 = New Infragistics.Win.Misc.UltraButton()
         Me.btnDB5 = New Infragistics.Win.Misc.UltraButton()
         Me.ugbHead = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.UltraGroupBox7 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.UltraGroupBox5 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.btn_Otros = New Infragistics.Win.Misc.UltraButton()
@@ -236,7 +237,6 @@ Partial Class frm_EstacionServicio
         Me.UltraLabel7 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraGridFilterUIProvider1 = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.ugbHead, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ugbHead.SuspendLayout()
         CType(Me.UltraGroupBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -362,6 +362,15 @@ Partial Class frm_EstacionServicio
         Me.ugbHead.Size = New System.Drawing.Size(1352, 451)
         Me.ugbHead.TabIndex = 0
         Me.ugbHead.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(1062, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(10, 10)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'UltraGroupBox7
         '
@@ -1437,15 +1446,6 @@ Partial Class frm_EstacionServicio
         Me.UltraLabel9.Size = New System.Drawing.Size(105, 28)
         Me.UltraLabel9.TabIndex = 2
         Me.UltraLabel9.Text = "Impuesto:"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1063, 369)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_EstacionServicio
         '
