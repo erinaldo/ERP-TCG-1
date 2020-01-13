@@ -5,6 +5,6 @@
 Public Interface Ie_GuiaRemisionRemitente_Detalle
 
     <OperationContract()>
-    Sub DoWork()
+    Function Obtener(ByVal guiaRemitente As Ie_GuiaRemisionRemitente_Detalle) As Ie_GuiaRemisionRemitente_Detalle
 
 End Interface

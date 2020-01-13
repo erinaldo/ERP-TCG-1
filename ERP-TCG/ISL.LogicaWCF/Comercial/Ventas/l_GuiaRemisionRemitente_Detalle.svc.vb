@@ -1,9 +1,67 @@
-﻿' NOTA: puede usar el comando "Cambiar nombre" del menú contextual para cambiar el nombre de clase "l_GuiaRemisionRemitente_Detalle" en el código, en svc y en el archivo de configuración a la vez.
-' NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione l_GuiaRemisionRemitente_Detalle.svc o l_GuiaRemisionRemitente_Detalle.svc.vb en el Explorador de soluciones e inicie la depuración.
+﻿Imports ERP.AccesoDatos
+Imports ERP.EntidadesWCF
+Imports System.Runtime.Serialization
+
 Public Class l_GuiaRemisionRemitente_Detalle
     Implements Il_GuiaRemisionRemitente_Detalle
 
-    Public Sub DoWork() Implements Il_GuiaRemisionRemitente_Detalle.DoWork
-    End Sub
+    Dim odGuiaRemitente As d_GuiaRemisionRemitente_Detalle
+
+    Public Function Eliminar(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As Boolean Implements Il_GuiaRemisionRemitente_Detalle.Eliminar
+        Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
+            Return odGuiaRemitente.Eliminar(oeGuiaRemitente_Detalle)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function Guardar(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As Boolean Implements Il_GuiaRemisionRemitente_Detalle.Guardar
+        Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
+            If Validar(oeGuiaRemitente_Detalle) Then
+                Return odGuiaRemitente.Guardar(oeGuiaRemitente_Detalle)
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function Listar(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As System.Collections.Generic.List(Of e_GuiaRemisionRemitente_Detalle) Implements Il_GuiaRemisionRemitente_Detalle.Listar
+        Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
+            Return odGuiaRemitente.Listar(oeGuiaRemitente_Detalle)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    'Public Function ListarDS(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As System.Collections.Generic.List(Of e_GuiaRemisionRemitente_Detalle) Implements Il_GuiaRemisionRemitente_Detalle.ListarDS
+    '    Try
+    '        Return odGuiaRemitente.ListarDS(oeGuiaRemitente_Detalle)
+    '    Catch ex As Exception
+    '        Throw
+    '    End Try
+    'End Function
+
+    Public Function Obtener(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As e_GuiaRemisionRemitente_Detalle Implements Il_GuiaRemisionRemitente_Detalle.Obtener
+        Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
+            Return odGuiaRemitente.Obtener(oeGuiaRemitente_Detalle)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function Validar(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As Boolean
+        Try
+            With oeGuiaRemitente_Detalle
+                '---------VALIDARRRRRRRRRR-------------
+            End With
+            Return True
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
 End Class
