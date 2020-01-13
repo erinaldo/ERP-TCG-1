@@ -2985,6 +2985,8 @@
     <Compile Include="Tesoreria\Reporte\Ie_ReporteFlete.vb" />
     <Compile Include="Tesoreria\Reporte\Ie_ReporteFlujoBanco.vb" />
     <Compile Include="Tesoreria\Reporte\Ie_ReporteFondoFijo.vb" />
+    <Compile Include="_Formatos\DocumentoCtble.vb" />
+    <Compile Include="_Formatos\DocumentoCtble_Detalle.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
