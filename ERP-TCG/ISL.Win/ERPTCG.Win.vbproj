@@ -5794,6 +5794,8 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble_Detalle.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_DetalleDocumento.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MaterialAlmacen.datasource" />
@@ -6284,6 +6286,7 @@
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc" />
     <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc" />
     <EmbeddedResource Include="Logistica\frm_Covisol.resx">
       <DependentUpon>frm_Covisol.vb</DependentUpon>

@@ -80,8 +80,6 @@ Public Class frm_CanjeND_F
     Private olServCtaCtble As New l_ServicioCuentaContable
     Private leServCtaCtble As List(Of e_ServicioCuentaContable)
 
-    Private olCombo As l_Combo
-
 #End Region
 
 #Region "Botones"
@@ -260,7 +258,6 @@ Public Class frm_CanjeND_F
         olServCtaCtble = New l_ServicioCuentaContable
         ol_TipoDoc = New l_TipoDocumento
         olCtaCtable = New l_CuentaContable
-        olCombo = New l_Combo
     End Sub
 
     Private Sub mt_Inicializar()
@@ -323,7 +320,7 @@ Public Class frm_CanjeND_F
         Me.cbgCliente.ValueMember = "Id"
         Me.cbgCliente.DisplayMember = "Nombre"
         For i As Integer = cbgCliente.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
-            cbgCliente.DisplayLayout.Bands(0).Columns(i).Hidden = True
+            cbgCliente.DisplayLayout.Bands(0).Columns(i).Hidden = False
         Next
 
         With cbgCliente.DisplayLayout.Bands(0)
@@ -343,7 +340,7 @@ Public Class frm_CanjeND_F
             .Columns("Nombre").Hidden = False
             .Columns("Ruc").Header.Caption = "N° RUC"
             .Columns("Ruc").Width = 80
-            .Columns("Nombre").Width = 300
+            .Columns("Nombre").Width = 250
         End With
     End Sub
 
@@ -416,8 +413,6 @@ Public Class frm_CanjeND_F
             griListaDetalleFactura.DataSource = lo_DetDocumento
             griListaDetalleFactura.DataBind()
 
-            llenaCombosGrillaOrdenMaterial()
-
             oe_DocumentoGen = New e_MovimientoDocumento
             oe_DocumentoGen = oe_Documento.Clonar
             oe_DocumentoGen.Id = String.Empty
@@ -430,32 +425,6 @@ Public Class frm_CanjeND_F
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
-
-    Public Sub llenaCombosGrillaOrdenMaterial()
-        'Dim oeUnidadMedida As e_UnidadMedida
-        For j As Integer = 0 To griListaDetalleFactura.Rows.Count - 1
-            'oeUnidadMedida = New e_UnidadMedida()
-            'oeUnidadMedida.Activo = True
-            'oeUnidadMedida.Factor = 0
-            'Dim ol As New l_Combo
-            'ol.ComboGrilla()
-            'TipoVehiculoPublic
-            'oeUnidadMedida.IdTipoUnidadMedida = griListaDetalleFactura.Rows(j).Cells("IdTipoUnidadMedida").Value.ToString
-            CrearComboGridPorCelda("IdUnidadMedida", "Nombre", j, griListaDetalleFactura, olCombo.ComboGrilla(UnidadMedidaPublic), True)
-            'oeMaterialAlmacen = New e_MaterialAlmacen
-            'oeMaterialAlmacen.TipoOperacion = "4"
-            'oeMaterialAlmacen.Activo = True
-            'oeMaterialAlmacen.IdMaterial = gridDetalleOCMaterial.Rows(j).Cells("IdMaterial").Value.ToString
-            'oeMaterialAlmacen.IdAlmacen = IIf(oeOrdenCompra.IndicadorConsignacion, "1", "0")
-            'CrearComboGridPorCelda("IdAlmacen", "Nombre", j, gridDetalleOCMaterial, olMaterialAlmacen.ComboGrilla(oeMaterialAlmacen), True)
-            'oeSubAlmacen = New e_SubAlmacen
-            'oeSubAlmacen.TipoOperacion = "S"
-            'oeSubAlmacen.Activo = True
-            'oeSubAlmacen.IdAlmacen = gridDetalleOCMaterial.Rows(j).Cells("IdAlmacen").Value.ToString
-            'CrearComboGridPorCelda("IdSubAlmacen", "Nombre", j, gridDetalleOCMaterial, olSubAlmacen.ComboGrilla(oeSubAlmacen), True)
-        Next
-        griListaDetalleFactura.DataBind()
     End Sub
 
     Private Sub mt_LlenaObjeto()

@@ -165,43 +165,13 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
-    Public Function dt_DocumentoCtble(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
-        Try
-            Dim DT As New DataTable, DS As New DataSet
-            With oeMovimientoDocumento
-                DS = sqlhelper.ExecuteDataset("CON.Isp_MovimientoDocumento_Listar", "", .Id)
-                If DS.Tables(0).Rows.Count > 0 Then
-                    DT = DS.Tables(0)
-                End If
-            End With
-            Return DT
-        Catch ex As Exception
-            Throw
-        End Try
-    End Function
-
-    Public Function dt_DocumentoCtble_Detalle(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
-        Try
-            Dim DT As New DataTable, DS As New DataSet
-            With oeMovimientoDocumento
-                DS = sqlhelper.ExecuteDataset("CON.Isp_DetalleDocumento_Listar", "VEN", "", .Id, "M")
-                If DS.Tables(0).Rows.Count > 0 Then
-                    DT = DS.Tables(0)
-                End If
-            End With
-            Return DT
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
-
     Public Function dt_DocumentoCtble_Impresion(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
         Try
             Dim DT As New DataTable, DS As New DataSet
             With oeMovimientoDocumento
-                DS = sqlhelper.ExecuteDataset("CON.Sp_MovimientoDocumento_Impresion_LST", "SEL", "", "", "", .Id)
-                If ds.Tables(0).Rows.Count > 0 Then
-                    DT = ds.Tables(0)
+                DS = sqlhelper.ExecuteDataset("CON.ISP_DocumentoCtble_Imprimir", .TipoOperacion, .Id)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
                 End If
             End With
             Return DT

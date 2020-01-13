@@ -237,7 +237,7 @@ Module m_Funciones
 
     Public gloAlmMat As List(Of e_Combo)
     Public gloSubAlm As List(Of e_Combo)
-    'Public gloUniMed As List(Of e_Combo)
+    Public gloUniMed As List(Of e_Combo)
     Public gloLugares As List(Of e_Combo)
     Public gloEmpresa As List(Of e_Combo)
     Public gloTipoPago As List(Of e_Combo)
@@ -794,7 +794,6 @@ Module m_Funciones
     Public OTEquAlmPublic As List(Of e_Combo)
     Public SubAlmDiesel As List(Of e_Combo)
     Public SubAlmGrifo As List(Of e_Combo)
-    Public UnidadMedidaPublic As List(Of e_Combo)
     'ILLL
     Public TipoIncidenciaPublic As List(Of e_Combo)
     Public GradoIncidenciaPublic As List(Of e_Combo)
@@ -875,10 +874,10 @@ Module m_Funciones
         PersonasPublic = New List(Of e_Combo)
         PersonasPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
 
-        'oeCombo = New e_Combo
-        'oeCombo.Nombre = "Tracto"
-        'TractoPublic = New List(Of e_Combo)
-        'TractoPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "Tracto"
+        TractoPublic = New List(Of e_Combo)
+        TractoPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
 
         oeCombo = New e_Combo
         oeCombo.Nombre = "VehiculosCombustible"
@@ -894,10 +893,6 @@ Module m_Funciones
         oeCombo.Nombre = "Areas"
         AreasPublic = New List(Of e_Combo)
         AreasPublic.AddRange(olCombo.Listar(oeCombo))
-
-        oeCombo = New e_Combo
-        oeCombo.Nombre = "UMedida"
-        UnidadMedidaPublic = olCombo.Listar(oeCombo)
 
         oeCombo = New e_Combo
         oeCombo.Nombre = "Carreta"

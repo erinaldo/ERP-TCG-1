@@ -11,12 +11,6 @@ Public Interface Il_MovimientoDocumento
     Function obtener(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
 
     <OperationContract()>
-    Function dt_DocumentoCtble(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
-
-    <OperationContract()>
-    Function dt_DocumentoCtble_Detalle(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
-
-    <OperationContract()>
     Function dt_DocumentoCtble_Impresion(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable
 
     <OperationContract()> _

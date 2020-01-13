@@ -3966,22 +3966,6 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-    Function dt_DocumentoCtble(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable Implements Il_MovimientoDocumento.dt_DocumentoCtble
-        Try
-            Return odMovimientoDocumento.dt_DocumentoCtble(oeMovimientoDocumento)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
-
-    Function dt_DocumentoCtble_Detalle(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable Implements Il_MovimientoDocumento.dt_DocumentoCtble_Detalle
-        Try
-            Return odMovimientoDocumento.dt_DocumentoCtble_Detalle(oeMovimientoDocumento)
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Function
-
     Function dt_DocumentoCtble_Impresion(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As DataTable Implements Il_MovimientoDocumento.dt_DocumentoCtble_Impresion
         Try
             Return odMovimientoDocumento.dt_DocumentoCtble_Impresion(oeMovimientoDocumento)

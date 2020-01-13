@@ -6,7 +6,7 @@ Imports System.IO
 
 Public Class frm_DocumentoCtble_Imprimir
 
-    Private IdDocumentoCtble As String, TipoPapel As String, ModuloEmision As String
+    Private IdDocumentoCtble As String, TipoPapel As String, ModuloEmision As String, CodigoQR As String = "", Footer As String = ""
     Private DocumentoCtble As New e_MovimientoDocumento, wr_DocumentoCtble As New l_MovimientoDocumento
     Private DT1 As New DataTable, DT2 As New DataTable, DT3 As New DataTable
     'Dim Qr_Code As New QRCodeEncoder
@@ -16,9 +16,13 @@ Public Class frm_DocumentoCtble_Imprimir
         IdDocumentoCtble = pIdDocumentoCtble
         TipoPapel = pIdDocumentoCtble
         ModuloEmision = pModulo
-        DT1 = wr_DocumentoCtble.dt_DocumentoCtble(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
-        DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Detalle(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
-        DT3 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+        DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+        DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
+        DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
+        If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
+            CodigoQR = ""
+            Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
+        End If
     End Sub
 
 
@@ -32,42 +36,28 @@ Public Class frm_DocumentoCtble_Imprimir
             'Dim ReportDataSource2 As New ReportDataSource("DocumentoCtble_Detalle", DT2)
             'Dim ReportDataSource3 As New ReportDataSource("DocumentoCtble_Impresion", DT3)
             With ReportDataSource1
-                .Name = "DocumentoCtble"
+                .Name = "Cabecera"
                 .Value = BindingSource1
             End With
             With ReportDataSource2
-                .Name = "DocumentoCtble_Detalle"
+                .Name = "Detalle"
                 .Value = BindingSource2
             End With
 
-            With ReportDataSource3
-                .Name = "DocumentoCtble_Impresion"
-                .Value = BindingSource3
-            End With
             With ReportViewer1
                 .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
                 .LocalReport.ReportPath = Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento)
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(ReportDataSource1)
                 .LocalReport.DataSources.Add(ReportDataSource2)
-                .LocalReport.DataSources.Add(ReportDataSource3)
 
                 BindingSource1.DataSource = DT1
                 BindingSource2.DataSource = DT2
-                BindingSource3.DataSource = DT3
 
-                'Dim myParams(9) As Microsoft.Reporting.WinForms.ReportParameter
-                'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("DOCUMENTO", mo_DocElectronico.Documento)
-                'myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("DIRECCION", mo_DocElectronico.DomFiscal)
-                'myParams(2) = New Microsoft.Reporting.WinForms.ReportParameter("RAZONSOCIAL", mo_DocElectronico.RazonSocial)
-                'myParams(3) = New Microsoft.Reporting.WinForms.ReportParameter("TELEFONO", go_Empresa.Telefono)
-                'myParams(4) = New Microsoft.Reporting.WinForms.ReportParameter("MONTOLETRAS", MontoLetras)
-                'myParams(5) = New Microsoft.Reporting.WinForms.ReportParameter("HASH", mo_DocElectronico.Hash)
-                'myParams(6) = New Microsoft.Reporting.WinForms.ReportParameter("CODIGOQR", CodigoQR)
-                'myParams(7) = New Microsoft.Reporting.WinForms.ReportParameter("SEDE_PRODUCTIVA", gs_SedeProductiva)
-                'myParams(8) = New Microsoft.Reporting.WinForms.ReportParameter("MONTO_IGV", CStr(CInt(gn_IGV * 100)))
-                'myParams(9) = New Microsoft.Reporting.WinForms.ReportParameter("TOTAL_DOC", mo_DocElectronico.Total)
-                '.LocalReport.SetParameters(myParams)
+                Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
+                myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CodigoQR", CodigoQR)
+                myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Footer", Footer)
+                .LocalReport.SetParameters(myParams)
 
                 '.LocalReport.Refresh()
                 '.RefreshReport()

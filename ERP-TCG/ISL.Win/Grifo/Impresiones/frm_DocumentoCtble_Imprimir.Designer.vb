@@ -28,19 +28,20 @@ Partial Class frm_DocumentoCtble_Imprimir
         Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BindingSource3 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DocumentoCtble"
+        ReportDataSource1.Value = Nothing
         ReportDataSource2.Name = "DocumentoCtble_Detalle"
+        ReportDataSource2.Value = Nothing
         ReportDataSource3.Name = "DocumentoCtble_Impresion"
+        ReportDataSource3.Value = Nothing
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
@@ -60,12 +61,10 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.Text = "frm_DocumentoCtble_Imprimir"
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents BindingSource1 As BindingSource
     Friend WithEvents BindingSource2 As BindingSource
-    Friend WithEvents BindingSource3 As BindingSource
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
 End Class
