@@ -104,6 +104,8 @@ Public Class frm_EstacionServicio
 
             '' Validacion
             If IdTipoDocumento = "" Then Throw New Exception("Seleccione un TIPO de documento")
+            If txt_Serie.Text = "" Then Throw New Exception("Ingrese la SERIE de documento")
+            If txt_Numero.Text = "" Then Throw New Exception("Ingrese el NUMERO de documento")
             If IdEmpresaCliente = "" Then Throw New Exception("Seleccione la empresa")
             If IdEmpresaCliente = "1CH000000003" And IdTipoDocumento = "1CH000000026" Then Throw New Exception("No se puede emitir FACTURA al cliente seleccionado")
             If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")

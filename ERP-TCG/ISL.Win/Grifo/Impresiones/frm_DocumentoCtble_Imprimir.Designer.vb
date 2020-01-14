@@ -23,48 +23,36 @@ Partial Class frm_DocumentoCtble_Imprimir
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BSO1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BSO2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VISOR = New Microsoft.Reporting.WinForms.ReportViewer()
+        CType(Me.BSO1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BSO2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ReportViewer1
+        'VISOR
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "DocumentoCtble"
-        ReportDataSource1.Value = Nothing
-        ReportDataSource2.Name = "DocumentoCtble_Detalle"
-        ReportDataSource2.Value = Nothing
-        ReportDataSource3.Name = "DocumentoCtble_Impresion"
-        ReportDataSource3.Value = Nothing
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_DocumentoCtble_Termica.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(1152, 450)
-        Me.ReportViewer1.TabIndex = 2
+        Me.VISOR.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_DocumentoCtble_Termica.rdlc"
+        Me.VISOR.Location = New System.Drawing.Point(0, 0)
+        Me.VISOR.Name = "VISOR"
+        Me.VISOR.Size = New System.Drawing.Size(1152, 450)
+        Me.VISOR.TabIndex = 2
         '
         'frm_DocumentoCtble_Imprimir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1152, 450)
-        Me.Controls.Add(Me.ReportViewer1)
+        Me.Controls.Add(Me.VISOR)
         Me.Name = "frm_DocumentoCtble_Imprimir"
         Me.Text = "frm_DocumentoCtble_Imprimir"
-        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BSO1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BSO2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BindingSource1 As BindingSource
-    Friend WithEvents BindingSource2 As BindingSource
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents BSO1 As BindingSource
+    Friend WithEvents BSO2 As BindingSource
+    Friend WithEvents VISOR As Microsoft.Reporting.WinForms.ReportViewer
 End Class

@@ -8,62 +8,66 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private IdDocumentoCtble As String, TipoPapel As String, ModuloEmision As String, CodigoQR As String = "", Footer As String = ""
     Private DocumentoCtble As New e_MovimientoDocumento, wr_DocumentoCtble As New l_MovimientoDocumento
-    Private DT1 As New DataTable, DT2 As New DataTable, DT3 As New DataTable
+    Private DT1 As New DataTable, DT2 As New DataTable
+    Private RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
     'Dim Qr_Code As New QRCodeEncoder
 
     Sub New(pIdDocumentoCtble As String, pTipoPapel As String, pModulo As String)
         InitializeComponent()
         IdDocumentoCtble = pIdDocumentoCtble
-        TipoPapel = pIdDocumentoCtble
+        TipoPapel = pTipoPapel
         ModuloEmision = pModulo
-        DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
-        DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
-        DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
-        If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
-            CodigoQR = ""
-            Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
-        End If
+        Inicializar()
+    End Sub
+
+    Private Sub Inicializar()
+        Try
+            DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+            DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
+            DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
+            BSO1.DataSource = DT1
+            BSO2.DataSource = DT2
+            If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
+                CodigoQR = ""
+                Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
     End Sub
 
 
     Private Sub frm_DocumentoCtble_Imprimir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-            Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-            Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource
-
-            'Dim ReportDataSource1 As New ReportDataSource("DocumentoCtble", DT1)
-            'Dim ReportDataSource2 As New ReportDataSource("DocumentoCtble_Detalle", DT2)
-            'Dim ReportDataSource3 As New ReportDataSource("DocumentoCtble_Impresion", DT3)
-            With ReportDataSource1
+            With RDS1
                 .Name = "Cabecera"
-                .Value = BindingSource1
+                .Value = BSO1
             End With
-            With ReportDataSource2
+            With RDS2
                 .Name = "Detalle"
-                .Value = BindingSource2
+                .Value = BSO2
             End With
 
-            With ReportViewer1
+            With VISOR
                 .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
                 .LocalReport.ReportPath = Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento)
                 .LocalReport.DataSources.Clear()
-                .LocalReport.DataSources.Add(ReportDataSource1)
-                .LocalReport.DataSources.Add(ReportDataSource2)
+                .LocalReport.DataSources.Add(RDS1)
+                .LocalReport.DataSources.Add(RDS2)
 
-                BindingSource1.DataSource = DT1
-                BindingSource2.DataSource = DT2
 
-                Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-                myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CodigoQR", CodigoQR)
-                myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Footer", Footer)
-                .LocalReport.SetParameters(myParams)
 
-                '.LocalReport.Refresh()
-                '.RefreshReport()
+                '' Parametros
+                'Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
+                'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CodigoQR", CodigoQR)
+                'myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Footer", Footer)
+                '.LocalReport.SetParameters(myParams)
+
+                .LocalReport.Refresh()
+                .RefreshReport()
             End With
 
-            Me.ReportViewer1.RefreshReport()
+            Me.VISOR.RefreshReport()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -86,22 +90,23 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
 
     Private Function Obtener_RutaReporte(IdTipoDocumento As String) As String
+        'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
         Select Case ModuloEmision
             Case "GRIFO"
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
-                            Case "A4" : Return ""
+                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
                             Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel
-                            Case "A4" : Return ""
+                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
                             Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
-                            Case "A4" : Return ""
+                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
                             Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                 End Select

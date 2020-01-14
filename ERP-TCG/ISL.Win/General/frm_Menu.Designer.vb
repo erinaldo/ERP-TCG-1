@@ -198,7 +198,7 @@ Partial Class frm_Menu
         '
         Me.MenuISL.Location = New System.Drawing.Point(0, 18)
         Me.MenuISL.Name = "MenuISL"
-        Me.MenuISL.Size = New System.Drawing.Size(214, 428)
+        Me.MenuISL.Size = New System.Drawing.Size(214, 493)
         Me.MenuISL.Style = Infragistics.Win.UltraWinExplorerBar.UltraExplorerBarStyle.Listbar
         Me.MenuISL.TabIndex = 10
         Me.ToolTip1.SetToolTip(Me.MenuISL, "Opciones rápidas complementarias al sistema")
@@ -449,10 +449,10 @@ Partial Class frm_Menu
         '
         Me._frm_MenuAutoHideControl.Controls.Add(Me.DockableWindow2)
         Me._frm_MenuAutoHideControl.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me._frm_MenuAutoHideControl.Location = New System.Drawing.Point(25, 114)
+        Me._frm_MenuAutoHideControl.Location = New System.Drawing.Point(25, 51)
         Me._frm_MenuAutoHideControl.Name = "_frm_MenuAutoHideControl"
         Me._frm_MenuAutoHideControl.Owner = Me.UltraDockManager1
-        Me._frm_MenuAutoHideControl.Size = New System.Drawing.Size(19, 446)
+        Me._frm_MenuAutoHideControl.Size = New System.Drawing.Size(19, 511)
         Me._frm_MenuAutoHideControl.TabIndex = 9
         '
         'DockableWindow2
