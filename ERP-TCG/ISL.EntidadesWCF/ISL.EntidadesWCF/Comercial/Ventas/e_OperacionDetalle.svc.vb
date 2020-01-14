@@ -76,7 +76,10 @@ Public Class e_OperacionDetalle
     Public SaldoCarga As Decimal
     <DataMember()> _
     Public oeIncidenciaAutentificadas As New e_IncidenciasAutentificadas
-
+    <DataMember()>
+    Public Property NroOperacion As String = ""
+    <DataMember()>
+    Public Property IdActividadNegocio As String = ""
 
     <DataMember()> _
     Public Property Seleccion() As Boolean
@@ -524,9 +527,11 @@ Public Class e_OperacionDetalle
         Cantidad = 0
         FleteUnitario = 0
         Flete = 0
+        NroOperacion = ""
+        IdActividadNegocio = ""
     End Sub
 
-    Public Sub New( _
+    Public Sub New(
               ByVal ls_Id As String _
               , ByVal ls_IdOperacion As String _
               , ByVal ls_IdDemanda As String _
@@ -544,20 +549,23 @@ Public Class e_OperacionDetalle
               , ByVal ln_Consolidado As Double _
               , ByVal lb_Facturado As Boolean _
               , ByVal lb_PagoContraEntrega As Boolean _
-              , ByVal lb_Activo As Boolean, _
-              ByVal IdOrigen As String, _
+              , ByVal lb_Activo As Boolean,
+              ByVal IdOrigen As String,
               ByVal IdDestino As String _
               , ByVal ln_PesoToneladas As Decimal _
               , ByVal ln_Glosa As String _
               , ByVal ln_PesoToneladasCarga As Decimal _
-              , ByVal ln_PesoToneladasDescarga As Decimal, _
-            ByVal Cargar As Boolean, _
-            ByVal Descarga As Boolean, _
-            ByVal IndPesoTnDescarga As Boolean, _
-            ByVal ld_Saldo As Decimal, _
-            ByVal ls_FechaCrea As Date, _
-            ByVal ls_FechaModifica As Date, _
+              , ByVal ln_PesoToneladasDescarga As Decimal,
+            ByVal Cargar As Boolean,
+            ByVal Descarga As Boolean,
+            ByVal IndPesoTnDescarga As Boolean,
+            ByVal ld_Saldo As Decimal,
+            ByVal ls_FechaCrea As Date,
+            ByVal ls_FechaModifica As Date,
             ByVal ls_IdClienteFinal As String)
+        'ByVal ls_NroOperacion As String,
+        '  ByVal ls_IdActividadNegocio As String
+
         _id = ls_Id
         _idOperacion = ls_IdOperacion
         _iddemanda = ls_IdDemanda
@@ -589,6 +597,8 @@ Public Class e_OperacionDetalle
         _FechaCrea = ls_FechaCrea
         _FechaModifica = ls_FechaModifica
         _idclientefinal = ls_IdClienteFinal
+        'NroOperacion = ls_NroOperacion
+        'IdActividadNegocio = ls_IdActividadNegocio
     End Sub
 #End Region
 

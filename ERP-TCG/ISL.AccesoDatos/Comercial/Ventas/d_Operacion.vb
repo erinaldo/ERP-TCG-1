@@ -1307,6 +1307,8 @@ Public Class d_Operacion
             oeOperacionDetalle.PagoEfectivoDeposito = o_fila("PagoEfectivoDeposito")
             oeOperacionDetalle.MotivoConsolidado = o_fila("MotivoConsolidado")
             oeOperacionDetalle.FalsoFlete = o_fila("FalsoFlete")
+            oeOperacionDetalle.NroOperacion = o_fila("NroOperacion")
+            oeOperacionDetalle.IdActividadNegocio = o_fila("IdActividadNegocio")
             Return oeOperacionDetalle
         Catch ex As Exception
             Throw ex
