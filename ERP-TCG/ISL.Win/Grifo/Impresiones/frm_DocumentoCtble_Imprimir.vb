@@ -87,24 +87,25 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
 
     Private Function Obtener_RutaReporte(IdTipoDocumento As String) As String
+        Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
         'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
         Select Case ModuloEmision
             Case "GRIFO"
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
-                            Case "A4" : Return "ISL.Win.rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel
-                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
-                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                 End Select
             Case Else
