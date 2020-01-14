@@ -55,8 +55,6 @@ Public Class frm_DocumentoCtble_Imprimir
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
 
-
-
                 '' Parametros
                 'Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
                 'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CodigoQR", CodigoQR)
@@ -64,10 +62,9 @@ Public Class frm_DocumentoCtble_Imprimir
                 '.LocalReport.SetParameters(myParams)
 
                 .LocalReport.Refresh()
-                .RefreshReport()
             End With
 
-            Me.VISOR.RefreshReport()
+            VISOR.RefreshReport()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -96,7 +93,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
-                            Case "A4" : Return "Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc"
+                            Case "A4" : Return "ISL.Win.rpt_DocumentoCtble_A4.rdlc"
                             Case "TICKET" : Return "Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta

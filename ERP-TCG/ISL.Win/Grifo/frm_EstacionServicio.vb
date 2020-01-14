@@ -291,6 +291,7 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.UsuarioModifica = gUsuarioSGI.Id
                 .DatosImpresion.FechaModificacion = Date.Now
                 .DatosImpresion.IdEmpresaSistema = gs_IdClienteProveedorSistema.Trim
+                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2), True)
                 .DatosImpresion.IdSucursalSistema = gs_IdSucursal
                 .DatosImpresion.PrefijoID = gs_PrefijoIdSucursal
                 .DatosImpresion.IdTipoDocumento = IdTipoDocumento
