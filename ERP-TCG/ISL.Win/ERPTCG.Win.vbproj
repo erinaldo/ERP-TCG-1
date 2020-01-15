@@ -418,6 +418,12 @@
     <Compile Include="Grifo\frm_Calibraciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\frm_CanjeDocumentos.Designer.vb">
+      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\frm_CanjeDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\frm_VentaCombustible.Designer.vb">
       <DependentUpon>frm_VentaCombustible.vb</DependentUpon>
     </Compile>
@@ -5997,6 +6003,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_Calibraciones.resx">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\frm_CanjeDocumentos.resx">
+      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_VentaCombustible.resx">
       <DependentUpon>frm_VentaCombustible.vb</DependentUpon>

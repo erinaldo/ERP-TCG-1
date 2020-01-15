@@ -683,6 +683,37 @@ Public Class l_MovimientoDocumento
         Return oeMovimientoDocumento
     End Function
 
+    Public Function GuardarCanjeDocumentos(DocumentoGenerado As e_MovimientoDocumento, ListaDocumentos As List(Of e_MovimientoDocumento)) As e_MovimientoDocumento Implements Il_MovimientoDocumento.GuardarCanjeDocumentos
+        Try
+            l_FuncionesGenerales.ValidarCampoNoNulo(DocumentoGenerado.Serie, "Agregue Serie al Documento.")
+            l_FuncionesGenerales.ValidarCampoNoNulo(DocumentoGenerado.Numero, "Agregue Número al Documento.")
+            Using TransScope As New TransactionScope()
+                DocumentoGenerado = odMovimientoDocumento.Guardar(DocumentoGenerado, New e_MovimientoDocumento)
+                For Each Doc In ListaDocumentos
+                    Dim oeRefAsoc As New e_ReferenciaAsociada
+                    Dim odRefAsoc As New d_ReferenciaAsociada
+                    With oeRefAsoc
+                        .TipoOperacion = "I"
+                        .IdEmpresaSis = DocumentoGenerado.IdEmpresaSis
+                        .PrefijoID = DocumentoGenerado.PrefijoID
+                        .IdTablaPrincipal = Doc.Id
+                        .IdTablaAsociada = DocumentoGenerado.Id
+                        .TipoRelacion = 0
+                        .Glosa = "CANJE ND X COMPROBANTE DE VENTA"
+                        .UsuarioCreacion = DocumentoGenerado.IdUsuarioCrea
+                    End With
+                    odRefAsoc.Guardar(oeRefAsoc)
+                Next
+
+                TransScope.Complete()
+
+            End Using
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return DocumentoGenerado
+    End Function
+
     Public Function AplicarCanje(oeNotaDespacho As e_MovimientoDocumento, oeDocumentoGenera As e_MovimientoDocumento) As Boolean
         Try
 

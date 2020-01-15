@@ -43,7 +43,10 @@ Public Interface Il_MovimientoDocumento
     <OperationContract()>
     Function GuardarCanje(oeMovimientoDocumento As e_MovimientoDocumento, oeNotaDespacho As e_MovimientoDocumento) As e_MovimientoDocumento
 
-    <OperationContract()> _
+    <OperationContract()>
+    Function GuardarCanjeDocumentos(DocumentoGenerado As e_MovimientoDocumento, ListaDocumentos As List(Of e_MovimientoDocumento)) As e_MovimientoDocumento
+
+    <OperationContract()>
     Function VerificarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 
     <OperationContract()> _
