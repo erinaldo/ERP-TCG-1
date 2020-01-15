@@ -25,12 +25,25 @@ Public Class frm_DocumentoCtble_Imprimir
             DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
             DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
             DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
-            BSO1.DataSource = DT1
-            BSO2.DataSource = DT2
             If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
                 CodigoQR = ""
                 Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
             End If
+            '@0001 Ini
+            Dim dc As DataColumn
+            dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
+            DT1.Columns.Add(dc)
+            dc = New DataColumn("CodigoQR", Type.GetType("System.String"))
+            DT1.Columns.Add(dc)
+            dc = New DataColumn("Footer", Type.GetType("System.String"))
+            DT1.Columns.Add(dc)
+            DT1.Rows(0).Item("EmpresaSis") = gs_TxtEmpresaSistema.Trim
+            DT1.Rows(0).Item("CodigoQR") = CodigoQR.Trim
+            DT1.Rows(0).Item("Footer") = Footer.Trim
+            '@0001 Fin
+            BSO1.DataSource = DT1
+            BSO2.DataSource = DT2
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -87,25 +100,26 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
 
     Private Function Obtener_RutaReporte(IdTipoDocumento As String) As String
-        Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
+        'Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
         'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
+        Dim Raiz As String = Path.Combine(Application.StartupPath, "Grifo") & "\Impresiones\"
         Select Case ModuloEmision
             Case "GRIFO"
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
                         End Select
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Termica.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
                         End Select
                 End Select
             Case Else

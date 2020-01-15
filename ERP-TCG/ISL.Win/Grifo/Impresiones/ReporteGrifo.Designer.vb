@@ -350,6 +350,12 @@ Partial Public Class ReporteGrifo
         
         Private columnTurno As Global.System.Data.DataColumn
         
+        Private columnEmpresaSis As Global.System.Data.DataColumn
+        
+        Private columnCodigoQR As Global.System.Data.DataColumn
+        
+        Private columnFooter As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -514,6 +520,30 @@ Partial Public Class ReporteGrifo
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property EmpresaSisColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEmpresaSis
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CodigoQRColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCodigoQR
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property FooterColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFooter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -566,9 +596,12 @@ Partial Public Class ReporteGrifo
                     ByVal Tipo As String,  _
                     ByVal Total As String,  _
                     ByVal Trabajador As String,  _
-                    ByVal Turno As String) As CabeceraRow
+                    ByVal Turno As String,  _
+                    ByVal EmpresaSis As String,  _
+                    ByVal CodigoQR As String,  _
+                    ByVal Footer As String) As CabeceraRow
             Dim rowCabeceraRow As CabeceraRow = CType(Me.NewRow,CabeceraRow)
-            Dim columnValuesArray() As Object = New Object() {Cliente, CodigoCliente, Direccion, DOI, Emision, IGV, MedioPago, Moneda, MontoLetras, PLaca, SerieNumero, SubTotal, Tipo, Total, Trabajador, Turno}
+            Dim columnValuesArray() As Object = New Object() {Cliente, CodigoCliente, Direccion, DOI, Emision, IGV, MedioPago, Moneda, MontoLetras, PLaca, SerieNumero, SubTotal, Tipo, Total, Trabajador, Turno, EmpresaSis, CodigoQR, Footer}
             rowCabeceraRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCabeceraRow)
             Return rowCabeceraRow
@@ -607,6 +640,9 @@ Partial Public Class ReporteGrifo
             Me.columnTotal = MyBase.Columns("Total")
             Me.columnTrabajador = MyBase.Columns("Trabajador")
             Me.columnTurno = MyBase.Columns("Turno")
+            Me.columnEmpresaSis = MyBase.Columns("EmpresaSis")
+            Me.columnCodigoQR = MyBase.Columns("CodigoQR")
+            Me.columnFooter = MyBase.Columns("Footer")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -644,6 +680,12 @@ Partial Public Class ReporteGrifo
             MyBase.Columns.Add(Me.columnTrabajador)
             Me.columnTurno = New Global.System.Data.DataColumn("Turno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTurno)
+            Me.columnEmpresaSis = New Global.System.Data.DataColumn("EmpresaSis", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEmpresaSis)
+            Me.columnCodigoQR = New Global.System.Data.DataColumn("CodigoQR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCodigoQR)
+            Me.columnFooter = New Global.System.Data.DataColumn("Footer", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFooter)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1403,6 +1445,51 @@ Partial Public Class ReporteGrifo
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property EmpresaSis() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCabecera.EmpresaSisColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'EmpresaSis' de la tabla 'Cabecera' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCabecera.EmpresaSisColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CodigoQR() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCabecera.CodigoQRColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CodigoQR' de la tabla 'Cabecera' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCabecera.CodigoQRColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Footer() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableCabecera.FooterColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Footer' de la tabla 'Cabecera' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableCabecera.FooterColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsClienteNull() As Boolean
             Return Me.IsNull(Me.tableCabecera.ClienteColumn)
         End Function
@@ -1591,6 +1678,42 @@ Partial Public Class ReporteGrifo
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetTurnoNull()
             Me(Me.tableCabecera.TurnoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsEmpresaSisNull() As Boolean
+            Return Me.IsNull(Me.tableCabecera.EmpresaSisColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetEmpresaSisNull()
+            Me(Me.tableCabecera.EmpresaSisColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCodigoQRNull() As Boolean
+            Return Me.IsNull(Me.tableCabecera.CodigoQRColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCodigoQRNull()
+            Me(Me.tableCabecera.CodigoQRColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsFooterNull() As Boolean
+            Return Me.IsNull(Me.tableCabecera.FooterColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetFooterNull()
+            Me(Me.tableCabecera.FooterColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
