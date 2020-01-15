@@ -52,7 +52,7 @@ Public Class frm_ReporteVoucherMovimientoCaja
             'If prefijo.PrefijoID().Substring(1, 2) = "SA" Then lista(0).Mov = "SA"
             If lista.Count = 0 Then Throw New Exception("No se ha encontrado ningún dato")
             If lista(0).Egreso > 0 Then lista(0).EgresoTexto = Conversiones.NumerosALetras.Ejecutar(lista(0).Egreso, True, True, "NUEVOS SOLES")
-            CargarReporteLocal(lista, "Vale de Movimiento de Caja", "Movimientos_Caja", "Reportes\ValeCaja.rdlc")
+            CargarReporteLocal(lista, "Vale de Movimiento de Caja", "Movimientos_Caja", "Reportes\ValeCaja - Termica.rdlc")
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

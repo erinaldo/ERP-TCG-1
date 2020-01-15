@@ -28,7 +28,7 @@ Partial Class frm_ReporteVoucherMovimientoCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(781, 505)
+        Me.ClientSize = New System.Drawing.Size(303, 505)
         Me.MaximizeBox = False
         Me.Name = "frm_ReporteVoucherMovimientoCaja"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

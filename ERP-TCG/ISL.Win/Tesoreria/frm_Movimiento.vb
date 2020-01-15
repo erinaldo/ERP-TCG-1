@@ -434,7 +434,6 @@ Public Class frm_Movimiento
                     formulario.CargarDatos(TipoOperacion, id)
                     formulario.ShowDialog()
                 Else
-
                     id = griMovimiento.ActiveRow.Cells("Id").Value
                     TipoOperacion = "4"
                     formulario.CargarDatos(TipoOperacion, id)
