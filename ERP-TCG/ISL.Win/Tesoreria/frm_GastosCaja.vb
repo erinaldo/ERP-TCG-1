@@ -123,6 +123,7 @@ Public Class frm_GastosCaja
             CargarGrupo()
             cboGrupo.Focus()
             ControlBotones()
+            cboTipoGasto.Focus()
             'ListarGastos()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

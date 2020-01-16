@@ -1675,6 +1675,7 @@ Partial Class frm_GastosCaja
         '
         Me.ChkVehiculoProper.AutoSize = True
         Me.ChkVehiculoProper.BackColor = System.Drawing.Color.Transparent
+        Me.ChkVehiculoProper.Enabled = False
         Me.ChkVehiculoProper.ForeColor = System.Drawing.Color.Navy
         Me.ChkVehiculoProper.Location = New System.Drawing.Point(990, 176)
         Me.ChkVehiculoProper.Name = "ChkVehiculoProper"
