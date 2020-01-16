@@ -7468,6 +7468,9 @@
     <Content Include="Reportes\ValeCaja - Termica.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Reportes\GastoCaja.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="SegPlanControl\frm_Accidente.resx">
       <DependentUpon>frm_Accidente.vb</DependentUpon>
       <SubType>Designer</SubType>

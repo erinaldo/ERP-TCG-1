@@ -173,6 +173,7 @@ Partial Class frm_GastosCaja
         Dim UltraDataColumn45 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdPiloto")
         Dim UltraDataColumn46 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("Viaje")
         Dim UltraDataColumn47 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IndGasto")
+        Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
@@ -313,7 +314,6 @@ Partial Class frm_GastosCaja
         Dim Appearance88 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl18 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griListaDocumentoCompra = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.UltraTabPageControl19 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -329,6 +329,9 @@ Partial Class frm_GastosCaja
         Me.udsGastoOperacion = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.filtro = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.Etiqueta2 = New ISL.Controles.Etiqueta(Me.components)
+        Me.dtp_FechaHasta = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_FechaDesde = New System.Windows.Forms.DateTimePicker()
         Me.cboCaja = New ISL.Controles.Combo(Me.components)
         Me.Etiqueta1 = New ISL.Controles.Etiqueta(Me.components)
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -411,9 +414,6 @@ Partial Class frm_GastosCaja
         Me.Etiqueta36 = New ISL.Controles.Etiqueta(Me.components)
         Me.ficGastosCaja = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.dtp_FechaDesde = New System.Windows.Forms.DateTimePicker()
-        Me.dtp_FechaHasta = New System.Windows.Forms.DateTimePicker()
-        Me.Etiqueta2 = New ISL.Controles.Etiqueta(Me.components)
         Me.UltraTabPageControl18.SuspendLayout()
         CType(Me.griListaDocumentoCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl19.SuspendLayout()
@@ -666,7 +666,7 @@ Partial Class frm_GastosCaja
         '
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1089, 429)
         '
@@ -886,6 +886,36 @@ Partial Class frm_GastosCaja
         Me.UltraGroupBox1.TabIndex = 0
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'Etiqueta2
+        '
+        Appearance20.BackColor = System.Drawing.Color.Transparent
+        Appearance20.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta2.Appearance = Appearance20
+        Me.Etiqueta2.AutoSize = True
+        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta2.Location = New System.Drawing.Point(233, 10)
+        Me.Etiqueta2.Name = "Etiqueta2"
+        Me.Etiqueta2.Size = New System.Drawing.Size(43, 15)
+        Me.Etiqueta2.TabIndex = 4
+        Me.Etiqueta2.Text = "Fechas:"
+        '
+        'dtp_FechaHasta
+        '
+        Me.dtp_FechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_FechaHasta.Location = New System.Drawing.Point(381, 6)
+        Me.dtp_FechaHasta.Name = "dtp_FechaHasta"
+        Me.dtp_FechaHasta.Size = New System.Drawing.Size(93, 21)
+        Me.dtp_FechaHasta.TabIndex = 3
+        '
+        'dtp_FechaDesde
+        '
+        Me.dtp_FechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_FechaDesde.Location = New System.Drawing.Point(282, 6)
+        Me.dtp_FechaDesde.Name = "dtp_FechaDesde"
+        Me.dtp_FechaDesde.Size = New System.Drawing.Size(93, 21)
+        Me.dtp_FechaDesde.TabIndex = 2
+        '
         'cboCaja
         '
         Appearance21.ForeColor = System.Drawing.Color.Black
@@ -921,7 +951,7 @@ Partial Class frm_GastosCaja
         Me.UltraTabPageControl2.Controls.Add(Me.griGastoOperacion)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1089, 429)
         '
@@ -1912,11 +1942,12 @@ Partial Class frm_GastosCaja
         Me.cboGrupo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Me.cboGrupo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboGrupo.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboGrupo.Enabled = False
         Me.cboGrupo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboGrupo.ForeColor = System.Drawing.Color.Black
-        Me.cboGrupo.Location = New System.Drawing.Point(234, 15)
+        Me.cboGrupo.Location = New System.Drawing.Point(249, 15)
         Me.cboGrupo.Name = "cboGrupo"
-        Me.cboGrupo.Size = New System.Drawing.Size(135, 22)
+        Me.cboGrupo.Size = New System.Drawing.Size(120, 22)
         Me.cboGrupo.TabIndex = 3
         Me.cboGrupo.ValueMember = "Id"
         '
@@ -1970,7 +2001,7 @@ Partial Class frm_GastosCaja
         Me.etiNroGrupo.AutoSize = True
         Me.etiNroGrupo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiNroGrupo.ForeColor = System.Drawing.Color.Black
-        Me.etiNroGrupo.Location = New System.Drawing.Point(170, 19)
+        Me.etiNroGrupo.Location = New System.Drawing.Point(183, 19)
         Me.etiNroGrupo.Name = "etiNroGrupo"
         Me.etiNroGrupo.Size = New System.Drawing.Size(60, 15)
         Me.etiNroGrupo.TabIndex = 2
@@ -1987,7 +2018,7 @@ Partial Class frm_GastosCaja
         Me.fecPeriodo.Location = New System.Drawing.Point(98, 15)
         Me.fecPeriodo.MaskInput = "mm/yyyy"
         Me.fecPeriodo.Name = "fecPeriodo"
-        Me.fecPeriodo.Size = New System.Drawing.Size(66, 22)
+        Me.fecPeriodo.Size = New System.Drawing.Size(79, 22)
         Me.fecPeriodo.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
         Me.fecPeriodo.TabIndex = 1
         Me.fecPeriodo.TabStop = False
@@ -2282,36 +2313,6 @@ Partial Class frm_GastosCaja
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1089, 429)
-        '
-        'dtp_FechaDesde
-        '
-        Me.dtp_FechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_FechaDesde.Location = New System.Drawing.Point(282, 6)
-        Me.dtp_FechaDesde.Name = "dtp_FechaDesde"
-        Me.dtp_FechaDesde.Size = New System.Drawing.Size(93, 21)
-        Me.dtp_FechaDesde.TabIndex = 2
-        '
-        'dtp_FechaHasta
-        '
-        Me.dtp_FechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_FechaHasta.Location = New System.Drawing.Point(381, 6)
-        Me.dtp_FechaHasta.Name = "dtp_FechaHasta"
-        Me.dtp_FechaHasta.Size = New System.Drawing.Size(93, 21)
-        Me.dtp_FechaHasta.TabIndex = 3
-        '
-        'Etiqueta2
-        '
-        Appearance20.BackColor = System.Drawing.Color.Transparent
-        Appearance20.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta2.Appearance = Appearance20
-        Me.Etiqueta2.AutoSize = True
-        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta2.Location = New System.Drawing.Point(233, 10)
-        Me.Etiqueta2.Name = "Etiqueta2"
-        Me.Etiqueta2.Size = New System.Drawing.Size(43, 15)
-        Me.Etiqueta2.TabIndex = 4
-        Me.Etiqueta2.Text = "Fechas:"
         '
         'frm_GastosCaja
         '
