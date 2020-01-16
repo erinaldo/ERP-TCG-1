@@ -5413,7 +5413,7 @@ Public Class frm_Operacion
                     .oeViaje = griViaje.DataSource
                     For Each Viaje As e_Viaje In .oeViaje
                         Viaje.IdDespachoOperaciones = idDespachoOperaciones
-                        Viaje.IncidenciaOperaciones = txtObservacionOperacion.Text
+                        Viaje.IncidenciaOperaciones = txtObservacionOperacion.Text '@0001
                     Next
                     .oeOperacionDetalle = griViajeDetalle.DataSource
                     .oeIncidenciaAutentificadas = IncidenciasPublic
