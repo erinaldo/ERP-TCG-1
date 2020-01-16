@@ -351,8 +351,8 @@ Public Class d_GastoOperacion
                 If DTMovAna.Rows.Count > 0 Then sqlhelper.InsertarMasivo("CON.MovimientoAnalisis", DTMovAna, False)
                 For Each oeGastoOpe As e_GastoOperacion In loGastoOperacion
                     If oeGastoOpe.TipoOperacion = "I" Then GuardarGasto(oeGastoOpe)
-                    If oeGastoOpe.TipoOperacion = "E" Then Eliminar(oeGastoOpe)
-                    If oeGastoOpe.TipoOperacion = "A" Then ActualizarGO(oeGastoOpe)
+                    'If oeGastoOpe.TipoOperacion = "E" Then Eliminar(oeGastoOpe)
+                    'If oeGastoOpe.TipoOperacion = "A" Then ActualizarGO(oeGastoOpe)
                 Next
                 Transaction.Complete()
             End Using
