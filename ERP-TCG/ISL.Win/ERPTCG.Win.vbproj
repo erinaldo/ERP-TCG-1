@@ -6314,13 +6314,8 @@
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Termica.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoTermica.rdlc">
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A41rdlc.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Logistica\frm_Covisol.resx">

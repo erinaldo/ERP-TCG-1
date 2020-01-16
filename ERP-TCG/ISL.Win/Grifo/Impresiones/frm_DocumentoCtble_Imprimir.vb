@@ -29,18 +29,20 @@ Public Class frm_DocumentoCtble_Imprimir
                 CodigoQR = ""
                 Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
             End If
+
             '@0001 Ini
-            Dim dc As DataColumn
-            dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
-            DT1.Columns.Add(dc)
-            dc = New DataColumn("CodigoQR", Type.GetType("System.String"))
-            DT1.Columns.Add(dc)
-            dc = New DataColumn("Footer", Type.GetType("System.String"))
-            DT1.Columns.Add(dc)
-            DT1.Rows(0).Item("EmpresaSis") = gs_TxtEmpresaSistema.Trim
-            DT1.Rows(0).Item("CodigoQR") = CodigoQR.Trim
-            DT1.Rows(0).Item("Footer") = Footer.Trim
+            'Dim dc As DataColumn
+            'dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
+            'DT1.Columns.Add(dc)
+            'dc = New DataColumn("CodigoQR", Type.GetType("System.String"))
+            'DT1.Columns.Add(dc)
+            'dc = New DataColumn("Footer", Type.GetType("System.String"))
+            'DT1.Columns.Add(dc)
+            'DT1.Rows(0).Item("EmpresaSis") = gs_TxtEmpresaSistema.Trim
+            'DT1.Rows(0).Item("CodigoQR") = CodigoQR.Trim
+            'DT1.Rows(0).Item("Footer") = Footer.Trim
             '@0001 Fin
+
             BSO1.DataSource = DT1
             BSO2.DataSource = DT2
 
@@ -67,13 +69,6 @@ Public Class frm_DocumentoCtble_Imprimir
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
-
-                '' Parametros
-                'Dim myParams(1) As Microsoft.Reporting.WinForms.ReportParameter
-                'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CodigoQR", CodigoQR)
-                'myParams(1) = New Microsoft.Reporting.WinForms.ReportParameter("Footer", Footer)
-                '.LocalReport.SetParameters(myParams)
-
                 .LocalReport.Refresh()
             End With
 

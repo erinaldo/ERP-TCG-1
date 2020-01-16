@@ -1,5 +1,8 @@
 ﻿Public Class DocumentoCtble
 
+    Public Property Emisor As String
+    Public Property RUC_Emisor As Date
+    Public Property Direccion_Emisor As Date
     Public Property Emision As Date
     Public Property Vencimiento As Date
     Public Property Tipo As String
@@ -24,5 +27,7 @@
     Public Property MontoLetras As String
     Public Property MedioPago As String
     Public Property Glosa As String
-
+    Public Property Hash_Resumen As String
+    Public Property QR As String
+    Public Property Footer As String
 End Class
