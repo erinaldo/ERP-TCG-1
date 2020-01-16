@@ -46,7 +46,8 @@ Public Class e_DetalleDoc_OperacionDet
     Private _valorunit2 As Double    
     Private _IndConsolidado As String
     Private _GlosaConsolidado As String
-
+    <DataMember()>
+    Public Property NroOperacionOrden As String = ""
 
 
     <DataMember()> _

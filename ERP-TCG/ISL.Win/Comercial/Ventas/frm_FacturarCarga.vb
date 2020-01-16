@@ -2130,7 +2130,7 @@ Public Class frm_FacturarCarga
                 .DisplayLayout.Bands(0).Columns("Carreta").Header.VisiblePosition = 14
                 .DisplayLayout.Bands(0).Columns("CantGuia").Header.VisiblePosition = 15
                 .DisplayLayout.Bands(0).Columns("Consolidado").Header.VisiblePosition = 16
-
+                .DisplayLayout.Bands(0).Columns("NroOperacionOrden").Header.VisiblePosition = 17 '@0001
 
                 .DisplayLayout.Bands(0).Columns("IdOrigen").Header.Caption = "Origen"
                 .DisplayLayout.Bands(0).Columns("IdDestino").Header.Caption = "Destino"
@@ -2156,6 +2156,7 @@ Public Class frm_FacturarCarga
                 .DisplayLayout.Bands(0).Columns("NroViaje").Width = 95
                 .DisplayLayout.Bands(0).Columns("CV").Width = 25
                 .DisplayLayout.Bands(0).Columns("Consolidado").Width = 60
+                .DisplayLayout.Bands(0).Columns("NroOperacionOrden").Width = 75 '@0001
                 .DisplayLayout.Bands(0).Columns("Consolidado").CellAppearance.TextHAlign = HAlign.Right
                 .DisplayLayout.Bands(0).Columns("Consolidado").CellActivation = Activation.AllowEdit
                 .DisplayLayout.Bands(0).Columns("Consolidado").CellClickAction = CellClickAction.EditAndSelectText

@@ -1416,7 +1416,7 @@ Public Class d_Operacion
 
     Private Function CargarDetalleDocOpe(ByVal o_fila As DataRow) As e_DetalleDoc_OperacionDet
         Try
-            Dim oeDetalleDocOpeDet = New e_DetalleDoc_OperacionDet( _
+            Dim oeDetalleDocOpeDet = New e_DetalleDoc_OperacionDet(
                              o_fila("Id").ToString _
                              , o_fila("IdMaterialServicio").ToString _
                              , o_fila("MaterialServicio").ToString _
@@ -1453,6 +1453,7 @@ Public Class d_Operacion
                              , o_fila("NroOperacion").ToString _
                              , o_fila("IdVehiculo").ToString _
                              , o_fila("Consolidado").ToString)
+            oeDetalleDocOpeDet.NroOperacionOrden = o_fila("NroOperacionOrden")
             Return oeDetalleDocOpeDet
         Catch ex As Exception
             Throw ex
@@ -1551,7 +1552,9 @@ Public Class d_Operacion
                                             .IncluyeIgvConsolidado,
                                             .PagoEfectivoDeposito,
                                             .MotivoConsolidado,
-                                            .Subtotal)
+                                            .Subtotal,
+                                            .NroOperacion,
+                                            .IdActividadNegocio)
                 resultado = True
 
                 If oeOperacionDetalle.oeIncidenciaAutentificadas IsNot Nothing Then

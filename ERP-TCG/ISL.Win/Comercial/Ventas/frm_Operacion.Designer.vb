@@ -5223,7 +5223,7 @@ Partial Class frm_Operacion
         Me.UltraChart1.Axis.Y.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.UltraChart1.Axis.Y.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.UltraChart1.Axis.Y.MinorGridLines.Visible = False
-        Me.UltraChart1.Axis.Y.TickmarkInterval = 40.0R
+        Me.UltraChart1.Axis.Y.TickmarkInterval = 50.0R
         Me.UltraChart1.Axis.Y.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.UltraChart1.Axis.Y.Visible = True
         Me.UltraChart1.Axis.Y2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
@@ -5250,7 +5250,7 @@ Partial Class frm_Operacion
         Me.UltraChart1.Axis.Y2.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.UltraChart1.Axis.Y2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.UltraChart1.Axis.Y2.MinorGridLines.Visible = False
-        Me.UltraChart1.Axis.Y2.TickmarkInterval = 40.0R
+        Me.UltraChart1.Axis.Y2.TickmarkInterval = 50.0R
         Me.UltraChart1.Axis.Y2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.UltraChart1.Axis.Y2.Visible = False
         Me.UltraChart1.Axis.Z.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)

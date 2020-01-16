@@ -46,13 +46,16 @@ Public Class frm_ReporteVoucherMovimientoCaja
             oeDatos.TipoOperacion = TipoOperacion
             oeDatos.IdMovimiento = IdMovimiento
             Dim lista As List(Of e_MovimientoCaja) = olDatos.Listar(oeDatos)
-            Dim prefijo As New l_Configuracion
-            'If prefijo.PrefijoID().Substring(1, 2) = "LI" Then lista(0).Mov = "LI"
-            'If prefijo.PrefijoID().Substring(1, 2) = "PY" Then lista(0).Mov = "PY"
-            'If prefijo.PrefijoID().Substring(1, 2) = "SA" Then lista(0).Mov = "SA"
+            Dim Reporte As String
+            If TipoOperacion = "G" Then
+                Reporte = "Reportes\GastoCaja.rdlc"
+            Else
+                Reporte = "Reportes\ValeCaja - Termica.rdlc"
+            End If
+
             If lista.Count = 0 Then Throw New Exception("No se ha encontrado ningún dato")
             If lista(0).Egreso > 0 Then lista(0).EgresoTexto = Conversiones.NumerosALetras.Ejecutar(lista(0).Egreso, True, True, "NUEVOS SOLES")
-            CargarReporteLocal(lista, "Vale de Movimiento de Caja", "Movimientos_Caja", "Reportes\ValeCaja - Termica.rdlc")
+            CargarReporteLocal(lista, "Vale de Movimiento de Caja", "Movimientos_Caja", Reporte)
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

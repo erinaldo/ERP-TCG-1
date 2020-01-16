@@ -123,7 +123,8 @@ Public Class frm_GastosCaja
             CargarGrupo()
             cboGrupo.Focus()
             ControlBotones()
-            ListarGastos()
+            cboTipoGasto.Focus()
+            'ListarGastos()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -246,6 +247,19 @@ Public Class frm_GastosCaja
             'If ficChequesPendientes.Tabs(0).Selected AndAlso griListaChequesPendientes.Rows.Count = 0 Then Throw New Exception("No hay ningún dato para exportar al Excel")
             'If ficChequesPendientes.Tabs(0).Selected Then Exportar_Excel(griListaChequesPendientes)
             MyBase.Exportar()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
+    Public Overrides Sub Imprimir()
+        Try
+            'If ficChequesPendientes.Tabs(0).Selected AndAlso griListaChequesPendientes.Rows.Count = 0 Then Throw New Exception("No hay ningún dato para exportar al Excel")
+            'If ficChequesPendientes.Tabs(0).Selected Then Exportar_Excel(griListaChequesPendientes)
+            If griGastosLista.Selected.Rows.Count > 0 Then
+                Imprimir_Gasto(griGastosLista.ActiveRow.Cells("Id").Value)
+            End If
+            ControlBotones()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -993,7 +1007,7 @@ Public Class frm_GastosCaja
         Else
             Select Case ficGastosCaja.SelectedTab.Index
                 Case 0
-                    ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+                    ControlBoton(1, 1, 0, 0, 0, 0, 1, 1, 1)
                 Case 1
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 1)
             End Select
@@ -1146,6 +1160,7 @@ Public Class frm_GastosCaja
                 .Mac = MacPCLocal()
                 .TipoMovimiento = 2
                 .IdDocumento = IIf(IdDocumentoAlmacen = String.Empty, "", IdDocumentoAlmacen)
+                .IdTrabajadorAutoriza = cboAutoriza.Value
                 'FlujoCuenta
                 Dim oeFlCj As New e_FlujoCaja
                 oeFlCj.Id = .IdFlujoCaja
@@ -1386,7 +1401,7 @@ Public Class frm_GastosCaja
             oeGastoOpe.TipoOperacion = "5"
             oeGastoOpe.FechaEmision = dtp_FechaDesde.Value
             oeGastoOpe.FechaCreacion = dtp_FechaHasta.Value
-            griGastosLista.DataSource = olGastoOpe.Listar(oeGastoOpe)
+            griGastosLista.DataSource = olGastoOpe.Listar(oeGastoOpe).OrderByDescending(Function(i) i.FechaEmision).ToList
             CalcularTotales(griGastosLista, "Total")
         Catch ex As Exception
             Throw ex
@@ -1506,6 +1521,16 @@ Public Class frm_GastosCaja
         For i As Integer = 0 To Me.cboPlaca.Items.Count - 1
             itemList.SetCheckState(i, CheckState.Unchecked)
         Next
+    End Sub
+
+    Private Sub Imprimir_Gasto(IdGasto As String)
+        Try
+            Dim formulario As New frm_ReporteVoucherMovimientoCaja
+            formulario.CargarDatos("G", IdGasto)
+            formulario.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
 #End Region
