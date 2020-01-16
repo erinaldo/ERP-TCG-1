@@ -103,18 +103,18 @@ Public Class frm_DocumentoCtble_Imprimir
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
-                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A41rdlc.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel
-                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A41rdlc.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
                         End Select
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
-                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoTermica.rdlc"
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A41rdlc.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
                         End Select
                 End Select
             Case Else
