@@ -3307,7 +3307,7 @@ Partial Class frm_Operacion
         'UltraTabPageControl9
         '
         Me.UltraTabPageControl9.Controls.Add(Me.griLista)
-        Me.UltraTabPageControl9.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl9.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl9.Name = "UltraTabPageControl9"
         Me.UltraTabPageControl9.Size = New System.Drawing.Size(1272, 522)
         '
@@ -4859,7 +4859,7 @@ Partial Class frm_Operacion
         '
         Me.utpTrazabilidad.Controls.Add(Me.griTransabilida)
         Me.utpTrazabilidad.Controls.Add(Me.UltraGroupBox8)
-        Me.utpTrazabilidad.Location = New System.Drawing.Point(2, 21)
+        Me.utpTrazabilidad.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpTrazabilidad.Name = "utpTrazabilidad"
         Me.utpTrazabilidad.Size = New System.Drawing.Size(1272, 522)
         '
@@ -8352,7 +8352,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl7.Controls.Add(Me.agrListaRegistro)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1282, 710)
         '
@@ -9512,7 +9512,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficViaje)
         Me.UltraTabPageControl1.Controls.Add(Me.expGeneral)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1282, 710)
         '

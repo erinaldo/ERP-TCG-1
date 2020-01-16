@@ -217,7 +217,7 @@ Partial Class frm_Login
         Appearance7.TextHAlignAsString = "Left"
         Me.lblFecha.Appearance = Appearance7
         Me.lblFecha.Font = New System.Drawing.Font("Candara", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.Location = New System.Drawing.Point(25, 37)
+        Me.lblFecha.Location = New System.Drawing.Point(30, 37)
         Me.lblFecha.Name = "lblFecha"
         Me.lblFecha.Size = New System.Drawing.Size(224, 17)
         Me.lblFecha.TabIndex = 13
