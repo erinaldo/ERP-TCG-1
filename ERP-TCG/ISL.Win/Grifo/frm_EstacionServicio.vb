@@ -291,7 +291,6 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.UsuarioModifica = gUsuarioSGI.Id
                 .DatosImpresion.FechaModificacion = Date.Now
                 .DatosImpresion.IdEmpresaSistema = gs_IdClienteProveedorSistema.Trim
-                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2)
                 .DatosImpresion.IdSucursalSistema = gs_IdSucursal
                 .DatosImpresion.PrefijoID = gs_PrefijoIdSucursal
                 .DatosImpresion.IdTipoDocumento = IdTipoDocumento
@@ -299,13 +298,27 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.IdTurno = TurnoActivo.Id
                 .DatosImpresion.Turno = TurnoActivo.Turno
                 .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
+                .DatosImpresion.IdDireccion = cmb_Direccion.Value
                 .DatosImpresion.Direccion = cmb_Direccion.Text
+                .DatosImpresion.IdPiloto = cmb_Piloto.Value
+                .DatosImpresion.Piloto = cmb_Piloto.Value
                 .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
                 .DatosImpresion.Placa = cmb_Vehiculo.Text
                 .DatosImpresion.IdMedioPago = "1CH03"
                 .DatosImpresion.MedioPago = "CONTADO"
                 .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
                 .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
+                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2)
+                .DatosImpresion.HashResumen = ""
+                .DatosImpresion.HashSunat = ""
+                .DatosImpresion.QRCode = ""
+                .DatosImpresion.Ruta = ""
+                .DatosImpresion.ValorAux1 = 0
+                .DatosImpresion.ValorAux2 = 0
+                .DatosImpresion.ValorAux3 = 0
+                .DatosImpresion.TextoAux1 = sw_Lado
+                .DatosImpresion.TextoAux2 = ""
+                .DatosImpresion.TextoAux3 = ""
 
             End With
             Return MovimientoDocumento

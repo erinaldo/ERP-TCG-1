@@ -114,7 +114,7 @@ Public Class frm_DocumentoCtble_Imprimir
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_DocumentoCtble_A41rdlc.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_NotaDespacho_Ticket.rdlc"
                         End Select
                 End Select
             Case Else

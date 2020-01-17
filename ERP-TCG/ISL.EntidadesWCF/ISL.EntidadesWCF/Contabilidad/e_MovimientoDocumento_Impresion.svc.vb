@@ -28,17 +28,31 @@
     Private _TipoDocumento As String
     Private _IdTurno As String
     Private _Turno As String
+    Private _Lado As String
     Private _NombreClienteProveedor As String
     Private _NroDocumentoClienteProveedor As String
     Private _IdDireccion As String
     Private _Direccion As String
+    Private _IdPiloto As String
+    Private _Piloto As String
     Private _IdVechiculo As String
     Private _Placa As String
+    Private _Kilometraje As Double
     Private _IdMedioPago As String
     Private _MedioPago As String
     Private _IdTrabajador As String
     Private _Trabajador As String
     Private _MontoLetras As String
+    Private _HashResumen As String
+    Private _HashSunat As String
+    Private _QRCode As String
+    Private _Ruta As String
+    Private _ValorAux1 As Double
+    Private _ValorAux2 As Double
+    Private _ValorAux3 As Double
+    Private _TextoAux1 As String
+    Private _TextoAux2 As String
+    Private _TextoAux3 As String
     Private _Activo As Boolean
     Private _UsuarioCreacion As String
     Private _FechaCreacion As Date
@@ -55,16 +69,31 @@
         _TipoDocumento = ""
         _IdTurno = ""
         _Turno = ""
+        _Lado = ""
         _NombreClienteProveedor = ""
         _NroDocumentoClienteProveedor = ""
         _IdDireccion = ""
         _Direccion = ""
+        _IdPiloto = ""
+        _Piloto = ""
         _IdVechiculo = ""
         _Placa = ""
+        _Kilometraje = 0
         _IdMedioPago = ""
         _MedioPago = ""
         _IdTrabajador = ""
         _Trabajador = ""
+        _MontoLetras = ""
+        _HashResumen = ""
+        _HashSunat = ""
+        _QRCode = ""
+        _Ruta = ""
+        _ValorAux1 = 0
+        _ValorAux2 = 0
+        _ValorAux3 = 0
+        _TextoAux1 = ""
+        _TextoAux2 = ""
+        _TextoAux3 = ""
         _Activo = True
         _UsuarioCreacion = ""
         _FechaCreacion = #01/01/1901#
@@ -73,46 +102,74 @@
     End Sub
 
     Public Sub New(
-              ByVal ls_Id As String _
-              , ByVal ls_IdMovimientoDocumento As String _
-              , ByVal ls_IdTipoDocumento As String _
-              , ByVal ls_TipoDocumento As String _
-              , ByVal ls_IdTurno As String _
-              , ByVal ls_Turno As String _
-              , ByVal ls_NombreClienteProveedor As String _
-              , ByVal ls_NroDocumentoClienteProveedor As String _
-              , ByVal ls_IdDireccion As String _
-              , ByVal ls_Direccion As String _
-              , ByVal ls_IdVechiculo As String _
-              , ByVal ls_Placa As String _
-              , ByVal ls_IdMedioPago As String _
-              , ByVal ls_MedioPago As String _
-              , ByVal ls_IdTrabajador As String _
-              , ByVal ls_Trabajador As String _
-              , ByVal ls_MontoLetras As String _
-              , ByVal lb_Activo As Boolean _
-              , ByVal ls_UsuarioCreacion As String _
-              , ByVal ld_FechaCreacion As Date _
-              , ByVal ls_UsuarioModifica As String _
-              , ByVal ld_FechaModificacion As Date
-           )
+          ByVal ls_Id As String _
+          , ByVal ls_IdMovimientoDocumento As String _
+          , ByVal ls_IdTipoDocumento As String _
+          , ByVal ls_TipoDocumento As String _
+          , ByVal ls_IdTurno As String _
+          , ByVal ls_Turno As String _
+          , ByVal ls_Lado As String _
+          , ByVal ls_NombreClienteProveedor As String _
+          , ByVal ls_NroDocumentoClienteProveedor As String _
+          , ByVal ls_IdDireccion As String _
+          , ByVal ls_Direccion As String _
+          , ByVal ls_IdPiloto As String _
+          , ByVal ls_Piloto As String _
+          , ByVal ls_IdVechiculo As String _
+          , ByVal ls_Placa As String _
+          , ByVal ln_Kilometraje As Double _
+          , ByVal ls_IdMedioPago As String _
+          , ByVal ls_MedioPago As String _
+          , ByVal ls_IdTrabajador As String _
+          , ByVal ls_Trabajador As String _
+          , ByVal ls_MontoLetras As String _
+          , ByVal ls_HashResumen As String _
+          , ByVal ls_HashSunat As String _
+          , ByVal ls_QRCode As String _
+          , ByVal ls_Ruta As String _
+          , ByVal ln_ValorAux1 As Double _
+          , ByVal ln_ValorAux2 As Double _
+          , ByVal ln_ValorAux3 As Double _
+          , ByVal ls_TextoAux1 As String _
+          , ByVal ls_TextoAux2 As String _
+          , ByVal ls_TextoAux3 As String _
+          , ByVal lb_Activo As Boolean _
+          , ByVal ls_UsuarioCreacion As String _
+          , ByVal ld_FechaCreacion As Date _
+          , ByVal ls_UsuarioModifica As String _
+          , ByVal ld_FechaModificacion As Date
+       )
         _Id = ls_Id
         _IdMovimientoDocumento = ls_IdMovimientoDocumento
         _IdTipoDocumento = ls_IdTipoDocumento
         _TipoDocumento = ls_TipoDocumento
         _IdTurno = ls_IdTurno
         _Turno = ls_Turno
+        _Lado = ls_Lado
         _NombreClienteProveedor = ls_NombreClienteProveedor
         _NroDocumentoClienteProveedor = ls_NroDocumentoClienteProveedor
         _IdDireccion = ls_IdDireccion
         _Direccion = ls_Direccion
+        _IdPiloto = ls_IdPiloto
+        _Piloto = ls_Piloto
         _IdVechiculo = ls_IdVechiculo
         _Placa = ls_Placa
+        _Kilometraje = ln_Kilometraje
         _IdMedioPago = ls_IdMedioPago
         _MedioPago = ls_MedioPago
         _IdTrabajador = ls_IdTrabajador
         _Trabajador = ls_Trabajador
         _MontoLetras = ls_MontoLetras
+        _HashResumen = ls_HashResumen
+        _HashSunat = ls_HashSunat
+        _QRCode = ls_QRCode
+        _Ruta = ls_Ruta
+        _ValorAux1 = ln_ValorAux1
+        _ValorAux2 = ln_ValorAux2
+        _ValorAux3 = ln_ValorAux3
+        _TextoAux1 = ls_TextoAux1
+        _TextoAux2 = ls_TextoAux2
+        _TextoAux3 = ls_TextoAux3
         _Activo = lb_Activo
         _UsuarioCreacion = ls_UsuarioCreacion
         _FechaCreacion = ld_FechaCreacion
@@ -172,6 +229,14 @@
             _Turno = value
         End Set
     End Property
+    Public Property Lado() As String
+        Get
+            Return _Lado
+        End Get
+        Set(ByVal value As String)
+            _Lado = value
+        End Set
+    End Property
     Public Property NombreClienteProveedor() As String
         Get
             Return _NombreClienteProveedor
@@ -204,6 +269,22 @@
             _Direccion = value
         End Set
     End Property
+    Public Property IdPiloto() As String
+        Get
+            Return _IdPiloto
+        End Get
+        Set(ByVal value As String)
+            _IdPiloto = value
+        End Set
+    End Property
+    Public Property Piloto() As String
+        Get
+            Return _Piloto
+        End Get
+        Set(ByVal value As String)
+            _Piloto = value
+        End Set
+    End Property
     Public Property IdVechiculo() As String
         Get
             Return _IdVechiculo
@@ -218,6 +299,14 @@
         End Get
         Set(ByVal value As String)
             _Placa = value
+        End Set
+    End Property
+    Public Property Kilometraje() As Double
+        Get
+            Return _Kilometraje
+        End Get
+        Set(ByVal value As Double)
+            _Kilometraje = value
         End Set
     End Property
     Public Property IdMedioPago() As String
@@ -258,6 +347,86 @@
         End Get
         Set(ByVal value As String)
             _MontoLetras = value
+        End Set
+    End Property
+    Public Property HashResumen() As String
+        Get
+            Return _HashResumen
+        End Get
+        Set(ByVal value As String)
+            _HashResumen = value
+        End Set
+    End Property
+    Public Property HashSunat() As String
+        Get
+            Return _HashSunat
+        End Get
+        Set(ByVal value As String)
+            _HashSunat = value
+        End Set
+    End Property
+    Public Property QRCode() As String
+        Get
+            Return _QRCode
+        End Get
+        Set(ByVal value As String)
+            _QRCode = value
+        End Set
+    End Property
+    Public Property Ruta() As String
+        Get
+            Return _Ruta
+        End Get
+        Set(ByVal value As String)
+            _Ruta = value
+        End Set
+    End Property
+    Public Property ValorAux1() As Double
+        Get
+            Return _ValorAux1
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux1 = value
+        End Set
+    End Property
+    Public Property ValorAux2() As Double
+        Get
+            Return _ValorAux2
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux2 = value
+        End Set
+    End Property
+    Public Property ValorAux3() As Double
+        Get
+            Return _ValorAux3
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux3 = value
+        End Set
+    End Property
+    Public Property TextoAux1() As String
+        Get
+            Return _TextoAux1
+        End Get
+        Set(ByVal value As String)
+            _TextoAux1 = value
+        End Set
+    End Property
+    Public Property TextoAux2() As String
+        Get
+            Return _TextoAux2
+        End Get
+        Set(ByVal value As String)
+            _TextoAux2 = value
+        End Set
+    End Property
+    Public Property TextoAux3() As String
+        Get
+            Return _TextoAux3
+        End Get
+        Set(ByVal value As String)
+            _TextoAux3 = value
         End Set
     End Property
     Public Property Activo() As Boolean
