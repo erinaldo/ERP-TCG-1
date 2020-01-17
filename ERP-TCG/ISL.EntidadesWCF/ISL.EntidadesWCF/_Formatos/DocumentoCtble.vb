@@ -1,8 +1,9 @@
 ﻿Public Class DocumentoCtble
 
     Public Property Emisor As String
-    Public Property RUC_Emisor As Date
-    Public Property Direccion_Emisor As Date
+    Public Property RUC_Emisor As String
+    Public Property Direccion_Emisor As String
+    Public Property Direccion2_Emisor As String
     Public Property Emision As Date
     Public Property Vencimiento As Date
     Public Property Tipo As String
@@ -13,8 +14,11 @@
     Public Property Cliente As String
     Public Property Direccion As String
     Public Property DOI As String
+    Public Property Piloto As String
     Public Property Placa As String
     Public Property Moneda As String
+    Public Property Kilometraje As Double
+    Public Property Lado As String
     Public Property Descuentos As Double
     Public Property OpGratuitas As Double
     Public Property OpExonerada As Double

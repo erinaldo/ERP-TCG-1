@@ -3,6 +3,7 @@
 Public Class d_MovimientoDocumento_Impresion
     Private SQL As New SqlHelper
     Private DS As New DataSet
+
     Public Function Obtener(ByVal Item As e_MovimientoDocumento_Impresion) As e_MovimientoDocumento_Impresion
         Try
             Dim ds As DataSet = ExecuteLST(Item)
@@ -46,17 +47,31 @@ Public Class d_MovimientoDocumento_Impresion
                 , .TipoDocumento _
                 , .IdTurno _
                 , .Turno _
+                , .Lado _
                 , .NombreClienteProveedor _
                 , .NroDocumentoClienteProveedor _
                 , .IdDireccion _
                 , .Direccion _
+                , .IdPiloto _
+                , .Piloto _
                 , .IdVechiculo _
                 , .Placa _
+                , .Kilometraje _
                 , .IdMedioPago _
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
                 , .MontoLetras _
+                , .HashResumen _
+                , .HashSunat _
+                , .QRCode _
+                , .Ruta _
+                , .ValorAux1 _
+                , .ValorAux2 _
+                , .ValorAux3 _
+                , .TextoAux1 _
+                , .TextoAux2 _
+                , .TextoAux3 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -85,17 +100,31 @@ Public Class d_MovimientoDocumento_Impresion
                 , .TipoDocumento _
                 , .IdTurno _
                 , .Turno _
+                , .Lado _
                 , .NombreClienteProveedor _
                 , .NroDocumentoClienteProveedor _
                 , .IdDireccion _
                 , .Direccion _
+                , .IdPiloto _
+                , .Piloto _
                 , .IdVechiculo _
                 , .Placa _
+                , .Kilometraje _
                 , .IdMedioPago _
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
                 , .MontoLetras _
+                , .HashResumen _
+                , .HashSunat _
+                , .QRCode _
+                , .Ruta _
+                , .ValorAux1 _
+                , .ValorAux2 _
+                , .ValorAux3 _
+                , .TextoAux1 _
+                , .TextoAux2 _
+                , .TextoAux3 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -120,17 +149,31 @@ Public Class d_MovimientoDocumento_Impresion
                          , o_fila("TipoDocumento").ToString _
                          , o_fila("IdTurno").ToString _
                          , o_fila("Turno").ToString _
+                         , o_fila("Lado").ToString _
                          , o_fila("NombreClienteProveedor").ToString _
                          , o_fila("NroDocumentoClienteProveedor").ToString _
                          , o_fila("IdDireccion").ToString _
                          , o_fila("Direccion").ToString _
+                         , o_fila("IdPiloto").ToString _
+                         , o_fila("Piloto").ToString _
                          , o_fila("IdVechiculo").ToString _
                          , o_fila("Placa").ToString _
+                         , o_fila("Kilometraje").ToString _
                          , o_fila("IdMedioPago").ToString _
                          , o_fila("MedioPago").ToString _
                          , o_fila("IdTrabajador").ToString _
                          , o_fila("Trabajador").ToString _
                          , o_fila("MontoLetras").ToString _
+                         , o_fila("HashResumen").ToString _
+                         , o_fila("HashSunat").ToString _
+                         , o_fila("QRCode").ToString _
+                         , o_fila("Ruta").ToString _
+                         , o_fila("ValorAux1").ToString _
+                         , o_fila("ValorAux2").ToString _
+                         , o_fila("ValorAux3").ToString _
+                         , o_fila("TextoAux1").ToString _
+                         , o_fila("TextoAux2").ToString _
+                         , o_fila("TextoAux3").ToString _
                          , o_fila("Activo").ToString _
                          , o_fila("UsuarioCreacion").ToString _
                          , o_fila("FechaCreacion").ToString _
@@ -156,17 +199,31 @@ Public Class d_MovimientoDocumento_Impresion
                 , .TipoDocumento _
                 , .IdTurno _
                 , .Turno _
+                , .Lado _
                 , .NombreClienteProveedor _
                 , .NroDocumentoClienteProveedor _
                 , .IdDireccion _
                 , .Direccion _
+                , .IdPiloto _
+                , .Piloto _
                 , .IdVechiculo _
                 , .Placa _
+                , .Kilometraje _
                 , .IdMedioPago _
                 , .MedioPago _
                 , .IdTrabajador _
                 , .Trabajador _
                 , .MontoLetras _
+                , .HashResumen _
+                , .HashSunat _
+                , .QRCode _
+                , .Ruta _
+                , .ValorAux1 _
+                , .ValorAux2 _
+                , .ValorAux3 _
+                , .TextoAux1 _
+                , .TextoAux2 _
+                , .TextoAux3 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -182,4 +239,3 @@ Public Class d_MovimientoDocumento_Impresion
 #End Region
 
 End Class
-

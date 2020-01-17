@@ -1047,14 +1047,6 @@
     <Compile Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grifo\Impresiones\ReporteGrifo.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteGrifo.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Grifo\Impresiones\ReporteGrifo.vb">
-      <DependentUpon>ReporteGrifo.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ISLDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -5808,17 +5800,6 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Grifo\Impresiones\ReporteGrifo.xsc">
-      <DependentUpon>ReporteGrifo.xsd</DependentUpon>
-    </None>
-    <None Include="Grifo\Impresiones\ReporteGrifo.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ReporteGrifo.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Grifo\Impresiones\ReporteGrifo.xss">
-      <DependentUpon>ReporteGrifo.xsd</DependentUpon>
-    </None>
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble_Detalle.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_DetalleDocumento.datasource" />
@@ -6315,6 +6296,9 @@
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A41rdlc.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_Ticket.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
