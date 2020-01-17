@@ -3920,6 +3920,7 @@ Public Class frm_FacturarCarga
                         oeDetalleDocOpeDet.IndConsolidado = 1
                         oeDetalleDocOpeDet.Consolidado = 0
                         oeDetalleDocOpeDet.GlosaConsolidado = .Cells("GlosaConsolidado").Value
+                        oeDetalleDocOpeDet.NroOperacionOrden = .Cells("NroOperacionOrden").Value '@0001
                         leDetalleDocOD.Add(oeDetalleDocOpeDet)
                         griDetalleDoc.DataBind()
                         oeDetalleDocOpeDet = New e_DetalleDoc_OperacionDet

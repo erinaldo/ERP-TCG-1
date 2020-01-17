@@ -113,12 +113,13 @@ Public Class frm_EstacionServicio
             'If swCredito = True And (OrdenVenta.Total > CuentaCorriente.Saldo + (CuentaCorriente.Saldo) * 0.1) Then Throw New Exception("El importe EXCEDE la linea de CREDITO disponible")
 
             '' Confirmacion
-            If MessageBox.Show("DETALLES DE VENTA:" & vbCrLf &
-                               "> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf &
-                               "> CLIENTE: " & cmb_Cliente.Text & vbCrLf &
-                               "> PRODUCTO: " & Material_Combustible & vbCrLf &
-                               "> IMPORTE: S/ " & nud_Total.Value & vbCrLf &
-                               "> PLACA: " & cmb_Vehiculo.Text & vbCrLf, "ERP", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
+            If MessageBox.Show("------------------------------ DETALLES DE VENTA ------------------------------" & vbCrLf & Environment.NewLine &
+                               "> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
+                               "> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
+                               "> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
+                               "> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
+                               "> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
+                               "  -------------------------------------------------------------------------------  ", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
             '' Cargar Data
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
@@ -144,7 +145,7 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO")
+            'gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
 
             Nuevo()
         Catch ex As Exception
