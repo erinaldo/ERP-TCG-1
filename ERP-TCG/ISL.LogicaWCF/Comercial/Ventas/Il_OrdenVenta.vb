@@ -26,4 +26,7 @@ Public Interface Il_OrdenVenta
     <OperationContract()>
     Function EliminarExtornar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
 
+    <OperationContract()>
+    Function Anular(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean
+
 End Interface

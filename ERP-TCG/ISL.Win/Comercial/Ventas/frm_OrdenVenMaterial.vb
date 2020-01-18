@@ -1270,7 +1270,7 @@ Public Class frm_OrdenVenMaterial
                         fila.CellAppearance.BackColor = Me.colorParcial.Color
                     Case "ATENDIDO"
                         fila.CellAppearance.BackColor = Me.colorAtendido.Color
-                    Case "ANULADO"
+                    Case "ANULADA"
                         fila.CellAppearance.BackColor = Me.colorAnulado.Color
                     Case "TERMINADA"
                         fila.CellAppearance.BackColor = Me.colorTerminado.Color
@@ -2625,14 +2625,15 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial = New e_OrdenVenta
             oeOrdenComercial.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
             oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-            oeOrdenComercial.TipoOperacion = "X"
-
+            oeOrdenComercial.TipoOperacion = "N"
+            oeOrdenComercial.PrefijoID = gs_PrefijoIdSucursal
+            oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
             'oeOrdDocumento = New e_Orden_Documento
             'oeOrdDocumento.IdOrden = oeOrdenComercial.Id
             'oeOrdDocumento.TipoOrden = 2
             'oeOrdDocumento = olOrdDocumento.Obtener(oeOrdDocumento)
             'If oeOrdDocumento.Id <> "" Then Throw New Exception("Cuenta con un documento asociado, no es posible anularla")
-            If olOrdenComercial.Guardar(oeOrdenComercial) Then
+            If olOrdenComercial.Anular(oeOrdenComercial) Then
                 Return True
             End If
         Catch ex As Exception

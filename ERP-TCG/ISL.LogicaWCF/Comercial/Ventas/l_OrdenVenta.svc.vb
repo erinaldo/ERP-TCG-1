@@ -10,6 +10,12 @@ Public Class l_OrdenVenta
     Private odOrdenComercial As New d_OrdenVenta
     Private olDocumento As New l_MovimientoDocumento
 
+    Dim odOrden As d_Orden
+    Dim OrdenIngreso As e_Orden
+    Dim odDetOrden As d_OrdenMaterial
+    Dim lstDetOrden As List(Of e_OrdenMaterial)
+    Dim bol_guardado As Boolean = False
+
     Public Function Obtener(ByVal oeOrdenComercial As e_OrdenVenta) As e_OrdenVenta Implements Il_OrdenVenta.Obtener
         Try
             oeOrdenComercial = odOrdenComercial.Obtener(oeOrdenComercial)
@@ -37,9 +43,71 @@ Public Class l_OrdenVenta
         End Try
     End Function
 
+    Public Function Anular(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean Implements Il_OrdenVenta.Anular
+        Try
+            Using TransScope As New TransactionScope()
+                Dim lst_OrdenSalida As List(Of e_ReferenciaAsociada)
+
+                If odOrdenComercial.Guardar(oeOrdenComercial) Then
+                    Dim odRefAsoc As New d_ReferenciaAsociada
+                    lst_OrdenSalida = odRefAsoc.Listar(New e_ReferenciaAsociada With {.TipoOperacion = "S", .IdTablaPrincipal = oeOrdenComercial.Id})
+                    odOrden = New d_Orden
+                    odDetOrden = New d_OrdenMaterial
+                    For Each orden In lst_OrdenSalida
+                        GenerarOI(oeOrdenComercial, orden.IdTablaAsociada)
+                    Next
+                End If
+                TransScope.Complete()
+            End Using
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return True
+    End Function
+
+    Private Sub GenerarOI(OrdenComercial As e_OrdenVenta, IdOrdenSalida As String)
+        Try
+            '1CH000000040
+            OrdenIngreso = New e_Orden
+            With OrdenIngreso
+                .lstOrdenMaterial = New List(Of e_OrdenMaterial)
+                .Activo = True
+                .IdTipoOrden = "1CH000000001"
+                .IdMovimientoInventario = "1CH000000040"
+                .IdMoneda = OrdenComercial.IdMoneda
+                .IdProveedor = OrdenComercial.IdEmpresa
+                .Glosa = "EXTORNO DE VENTA " & OrdenComercial.OrdenComercial
+                .FechaOrden = Date.Now
+                .TipoOperacion = "I"
+                .IdSubAlmacenDestino = ""
+                .IdSubAlmacenOrigen = ""
+                .TipoReferencia = "ORDEN VENTA"
+                .UsuarioCreacion = OrdenComercial.UsuarioCrea
+                '.TipoReferencia = "COMPRA" 'Enviamos el Id de la Orden de compra para guardarlo a la Tabla Orden_Orden y asi asociarla a la Orden de Ingreso.
+                .Referencia = OrdenComercial.OrdenComercial
+                .PrefijoID = OrdenComercial.PrefijoID  '@0001
+            End With
+            lstDetOrden = odDetOrden.Listar(New e_OrdenMaterial With {.IdOrden = IdOrdenSalida})
+            OrdenIngreso.lstOrdenMaterial = lstDetOrden
+            For Each detalle In OrdenIngreso.lstOrdenMaterial
+                detalle.PrefijoID = OrdenComercial.PrefijoID
+                detalle.IdOrden = ""
+                detalle.TipoOperacion = "I"
+                detalle.Id = String.Empty
+
+            Next
+            odOrden.Guardar(OrdenIngreso)
+            'Dim oeOrdenSalida As e_Orden
+            'oeOrdenSalida = odOrden.Obtener(New e_Orden With {.Id = IdOrdenSalida})
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Public Function Guardar(ByVal oeOrdenComercial As e_OrdenVenta) As Boolean Implements Il_OrdenVenta.Guardar
         Try
-            Dim bol_guardado As Boolean = False
+
             Using TransScope As New TransactionScope()
                 If Validar(oeOrdenComercial) Then
                     bol_guardado = odOrdenComercial.Guardar(oeOrdenComercial)
@@ -65,7 +133,6 @@ Public Class l_OrdenVenta
     Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta Implements Il_OrdenVenta.Guardar_VentaRapida
         Try
             Dim dORdenDocumento As New d_Orden_Documento
-            Dim bol_guardado As Boolean = False
             Using TransScope As New TransactionScope()
                 If Validar(OrdenVenta) Then
                     OrdenVenta = odOrdenComercial.Guardar_VentaRapida(OrdenVenta)
@@ -135,7 +202,6 @@ Public Class l_OrdenVenta
     End Function
 
     Public Function EliminarExtornar(oeOrdenComercial As e_OrdenVenta) As Boolean Implements Il_OrdenVenta.EliminarExtornar
-        Dim bol_guardado As Boolean = False
         Try
             bol_guardado = odOrdenComercial.Eliminar(oeOrdenComercial)
         Catch ex As Exception

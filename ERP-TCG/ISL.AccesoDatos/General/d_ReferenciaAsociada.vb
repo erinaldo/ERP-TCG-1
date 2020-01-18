@@ -30,7 +30,7 @@ Public Class d_ReferenciaAsociada
             Dim ldReferenciaAsociada As New List(Of e_ReferenciaAsociada)
             Dim ds As DataSet
             With oeReferenciaAsociada
-                ds = sqlhelper.ExecuteDataset("STD.Isp_ReferenciaAsociada_Listar", .Id, .IdEmpresaSis, .IdSucursal, .IdTablaPrincipal, .IdTablaAsociada)
+                ds = sqlhelper.ExecuteDataset("STD.Isp_ReferenciaAsociada_Listar", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal, .IdTablaPrincipal, .IdTablaAsociada, .TipoRelacion)
             End With
             oeReferenciaAsociada = Nothing
             If ds.Tables.Count > 0 Then

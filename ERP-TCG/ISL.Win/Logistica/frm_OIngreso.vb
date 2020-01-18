@@ -237,7 +237,7 @@ Public Class frm_OIngreso
                             ControlBoton(0, 0, 0, 1, 1)
                         Else
                             Select Case oeOrden.TipoReferencia
-                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", ""
+                                Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "ORDEN VENTA", ""
                                     ControlBoton(0, 0, 0, 1, 1)
                                 Case Else
                                     ControlBoton(0, 0, 0, 0, 1)
@@ -1239,7 +1239,7 @@ Public Class frm_OIngreso
             Select Case griOrden.ActiveRow.Cells("EstadoOrden").Value
                 Case "GENERADA"
                     Select Case griOrden.ActiveRow.Cells("TipoReferencia").Value
-                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", ""
+                        Case "ORDEN TRABAJO", "ORDEN ASIGNACION", "ORDEN DE TRANSFERENCIA", "ORDEN VENTA", ""
                             btnEjecutar.Enabled = 1
                     End Select
                 Case "RECEPCIONADO", "TERMINADA"
