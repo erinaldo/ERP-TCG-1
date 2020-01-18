@@ -699,7 +699,7 @@ Public Class l_MovimientoDocumento
                         .IdTablaPrincipal = Doc.Id
                         .IdTablaAsociada = DocumentoGenerado.Id
                         .TipoRelacion = 0
-                        .Glosa = "CANJE ND X COMPROBANTE DE VENTA"
+                        .Glosa = "CANJE_DOCUMENTO"
                         .UsuarioCreacion = DocumentoGenerado.IdUsuarioCrea
                     End With
                     odRefAsoc.Guardar(oeRefAsoc)

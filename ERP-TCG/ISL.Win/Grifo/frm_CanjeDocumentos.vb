@@ -29,12 +29,14 @@ Public Class frm_CanjeDocumentos
 
 #Region "Variables"
 
-    Private ListaDocumentoSeleccionados As List(Of e_MovimientoDocumento)
-    Private ListaDocumentos As List(Of e_MovimientoDocumento)
-    Private Documento As e_MovimientoDocumento
-    Private DocumentoGenerado As e_MovimientoDocumento
-    Private dMovimientoDocumento As l_MovimientoDocumento
+    Private dDetalleDocumento As New l_DetalleDocumento
+    Private ListaDetalleSeleccionados As New List(Of e_DetalleDocumento)
 
+    Private dMovimientoDocumento As New l_MovimientoDocumento
+    Private ListaDocumentoSeleccionados As New List(Of e_MovimientoDocumento)
+    Private ListaDocumentos As New List(Of e_MovimientoDocumento)
+    Private Documento As New e_MovimientoDocumento
+    Private DocumentoGenerado As New e_MovimientoDocumento
 
     Private oe_Venta As e_Venta
     Private ol_Venta As l_Venta
@@ -45,11 +47,6 @@ Public Class frm_CanjeDocumentos
     Private oe_TipoDoc As e_TipoDocumento
     Private ol_TipoDoc As l_TipoDocumento
     Private oe_Moneda As e_Moneda
-
-    Private ListaDetalleSeleccionados As List(Of e_DetalleDocumento)
-    Private ListaDetalle As List(Of e_DetalleDocumento)
-    Private Detalle As e_DetalleDocumento
-    Private dDetalleDocumento As l_DetalleDocumento
 
 
     Private oe_RefAsoc As e_ReferenciaAsociada
@@ -272,10 +269,10 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_Listar()
         Try
-            If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
+            'If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
             Documento = New e_MovimientoDocumento
             Documento.IdTipoDocumento = "GCH000000001"
-            Documento.TipoOperacion = ""
+            Documento.TipoOperacion = "CXD"
             Documento.IdClienteProveedor = cmb_ClienteBuscado.Value
             Documento.FechaInicio = dtp_FechaDesde.Value
             Documento.FechaFinal = dtp_FechaHasta.Value
@@ -312,38 +309,50 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_CanjearDocumentos()
         Try
+            Dim Seleccionados As Boolean = False
+
             '' Valida
-            If udg_Documentos.Selected.Rows.Count = 0 Then Exit Sub
+            If udg_Documentos.Rows.Count = 0 Then Exit Sub
 
             '' Inicializa
             ListaDocumentoSeleccionados = New List(Of e_MovimientoDocumento)
             ListaDetalleSeleccionados = New List(Of e_DetalleDocumento)
 
             '' Agregar los documentos seleccionados
-            For Each Item In udg_Documentos.Rows
-                If Item.Cells("IndAnexo").Value = True Then
-                    If fc_ValidaCanje(Item.Cells("Id").Value) Then
-                        Documento = New e_MovimientoDocumento
-                        Documento = CType(udg_Documentos.ActiveRow.ListObject, e_MovimientoDocumento)
-                        ListaDocumentoSeleccionados.Add(Documento)
-                        'mt_MostrarDocumento(Item.Cells("Id").Value)
-                    End If
+            For Each Documento In ListaDocumentos
+                If Documento.IndAnexo = True Then
+                    Seleccionados = True
+                    ListaDocumentoSeleccionados.Add(Documento)
+                    Dim ListaDetalle As New List(Of e_DetalleDocumento)
+                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                    For Each Item In ListaDetalle
+                        Item.Id = ""
+                        Item.IdOperacionDetalle = Documento.Id 'Guarda el IDDocumento de origen
+                        Item.IdMovimientoDocumento = ""
+                        Item.Total = Item.Cantidad * Item.Precio
+                        ListaDetalleSeleccionados.Add(Item)
+                    Next
                 End If
             Next
 
             '' Agrega los detalles de cada documento seleccionado
-            If ListaDocumentoSeleccionados.Count > 0 Then
-                For Each Doc In ListaDocumentoSeleccionados
-                    ListaDetalle = New List(Of e_DetalleDocumento)
-                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Doc.Id, .IndServicioMaterial = "M"})
-                    For Each Item In ListaDetalle
-                        Item.IdOperacionDetalle = Item.IdMovimientoDocumento
-                        ListaDetalleSeleccionados.Add(Item)
-                    Next
-                Next
+            'If ListaDocumentoSeleccionados.Count > 0 Then
+            '    For Each Doc In ListaDocumentoSeleccionados
+            '        Dim ListaDetalle As New List(Of e_DetalleDocumento)
+            '        ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Doc.Id, .IndServicioMaterial = "M"})
+            '        For Each Item In ListaDetalle
+            '            Item.Id = ""
+            '            Item.IdOperacionDetalle = Doc.Id 'Guarda el IDDocumento de origen
+            '            Item.IdMovimientoDocumento = ""
+            '            Item.Total = Item.Cantidad * Item.Precio
+            '            ListaDetalleSeleccionados.Add(Item)
+            '        Next
+            '    Next
 
-                '' Muestra el documento que vamos a generar
+            '' Muestra el documento que vamos a generar
+            If Seleccionados Then
                 gmt_MostrarTabs(1, fic_Canje, 1)
+                mt_MostrarDocumento("")
                 mt_ControlBotoneria()
                 cmbTipoDocumento.Focus()
                 bso_Detalle.DataSource = ListaDetalleSeleccionados
@@ -403,23 +412,11 @@ Public Class frm_CanjeDocumentos
     Private Sub cmb_ClienteBuscado_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_ClienteBuscado.InitializeLayout
         Me.cmb_ClienteBuscado.ValueMember = "Id"
         Me.cmb_ClienteBuscado.DisplayMember = "Nombre"
-        For i As Integer = cmb_ClienteBuscado.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
-            cmb_ClienteBuscado.DisplayLayout.Bands(0).Columns(i).Hidden = False
+        For Each Columna In cmb_ClienteBuscado.DisplayLayout.Bands(0).Columns
+            Columna.Hidden = True
         Next
 
         With cmb_ClienteBuscado.DisplayLayout.Bands(0)
-            .Columns("Id").Hidden = True
-            .Columns("TipoEmpresa").Hidden = True
-            .Columns("Codigo").Hidden = True
-            .Columns("IdDireccionTanqueo").Hidden = True
-            .Columns("Morosidad").Hidden = True
-            .Columns("Credito").Hidden = True
-            .Columns("IndNivelComercial").Hidden = True
-            .Columns("Moneda").Hidden = True
-            .Columns("IndClasificacion").Hidden = True
-            .Columns("UsuarioCreacion").Hidden = True
-            .Columns("IndCategoriaEmpresaSGI").Hidden = True
-            .Columns("Activo").Hidden = True
             .Columns("Ruc").Hidden = False
             .Columns("Nombre").Hidden = False
             .Columns("Ruc").Header.Caption = "N° RUC"
@@ -480,32 +477,20 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_MostrarDocumento(IdDocumento As String)
         Try
-            'Documento = New e_MovimientoDocumento
-            'Documento.Id = IdDocumento
-            'Documento = dMovimientoDocumento.Obtener(Documento)
-
-            'oe_Venta = New e_Venta
-            'oe_Venta.IdMovimientoDocumento = IdDocumento
-            'oe_Venta = ol_Venta.ObtenerIdDocumento(oe_Venta)
-
-            'Detalle = New e_DetalleDocumento
-            'Detalle.TipoOperacion = "VEN"
-            'Detalle.IdMovimientoDocumento = IdDocumento
-            'Detalle.IndServicioMaterial = "M"
-            'ListaDetalle = dDetalleDocumento.Listar(Detalle)
-
-            'udg_Detalles.DataSource = ListaDetalle
-            'udg_Detalles.DataBind()
-
+            Dim DocumentoOrigen As New e_MovimientoDocumento
             DocumentoGenerado = New e_MovimientoDocumento
-            DocumentoGenerado = ListaDocumentoSeleccionados(0).Clonar
+
+            DocumentoOrigen = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = ListaDocumentoSeleccionados(0).Id})
+            DocumentoGenerado = DocumentoOrigen.Clonar
             DocumentoGenerado.Id = String.Empty
+
             gmt_ListarEmpresa("6", cmb_Cliente, DocumentoGenerado.IdClienteProveedor, False)
             cmb_Cliente.Value = DocumentoGenerado.IdClienteProveedor
             dtp_FechaEmision.Value = DocumentoGenerado.FechaEmision
+
             Me.decTipoCambio.Value = gfc_TipoCambio(dtp_FechaEmision.Value, True)
-            cboTipoPago.Value = DocumentoGenerado.IdTipoPago
-            cmbMoneda.Value = DocumentoGenerado.IdMoneda
+            cboTipoPago.SelectedIndex = 0
+            cmbMoneda.Value = "1CH01"
         Catch ex As Exception
             Throw ex
         End Try
@@ -513,32 +498,86 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_LlenaObjeto()
         Try
+            Dim SubTotal As Double = 0, IGV As Double = 0, Total As Double = 0
             If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             If cmbTipoDocumento.SelectedIndex = -1 Then Throw New Exception("Seleccione Tipo de Documento")
-            DocumentoGenerado.TipoOperacion = "I"
-            DocumentoGenerado.IdSucursal = gs_PrefijoIdSucursal
-            DocumentoGenerado.PrefijoID = gs_PrefijoIdSucursal
-            DocumentoGenerado.Serie = txtSerie.Text
-            DocumentoGenerado.Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
-            DocumentoGenerado.IdEstadoDocumento = "1CH00014"
-            DocumentoGenerado.IdTipoDocumento = cmbTipoDocumento.Value
-            DocumentoGenerado.IdPeriodo = ""
-            DocumentoGenerado.IdTipoPago = cboTipoPago.Value
-            DocumentoGenerado.Mac_PC_Local = MacPCLocal()
-            DocumentoGenerado.IdClienteProveedor = cmb_Cliente.Value
-            DocumentoGenerado.Saldo = DocumentoGenerado.Total
-            DocumentoGenerado.lstDetalleDocumento = New List(Of e_DetalleDocumento)
-            DocumentoGenerado.lstDetalleDocumento = ListaDetalle
-            For Each detalle In DocumentoGenerado.lstDetalleDocumento
-                With detalle
-                    .TipoOperacion = "I"
-                    .Id = String.Empty
-                    .IdMovimientoDocumento = String.Empty
-                End With
-            Next
-            DocumentoGenerado.Venta = New e_Venta
-            DocumentoGenerado.Venta = fc_LlenarVenta()
-            DocumentoGenerado.IdUsuarioCrea = gUsuarioSGI.Id
+
+            With DocumentoGenerado
+                '' Cabecera
+                .TipoOperacion = "I"
+                .IdSucursal = gs_PrefijoIdSucursal
+                .PrefijoID = gs_PrefijoIdSucursal
+                .Serie = txtSerie.Text
+                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
+                .IdEstadoDocumento = "1CH00014"
+                .IdTipoDocumento = cmbTipoDocumento.Value
+                .IdPeriodo = ""
+                .IdMoneda = "1CH01"
+                .IdTipoPago = cboTipoPago.Value
+                .Mac_PC_Local = MacPCLocal()
+                .IdClienteProveedor = cmb_Cliente.Value
+                .Saldo = DocumentoGenerado.Total
+                .lstDetalleDocumento = ListaDetalleSeleccionados
+
+                '' Detalle
+                For Each detalle In DocumentoGenerado.lstDetalleDocumento
+                    With detalle
+                        .TipoOperacion = "I"
+                        .Id = String.Empty
+                        .IdMovimientoDocumento = String.Empty
+                        SubTotal += detalle.Subtotal
+                        IGV += detalle.Igv
+                        Total += detalle.Total
+                    End With
+                Next
+                .SubTotal = SubTotal
+                .IGV = IGV
+                .Total = Total
+
+                '' Datos Impresion
+                .DatosImpresion = New e_MovimientoDocumento_Impresion
+                .DatosImpresion.TipoOperacion = "I"
+                .DatosImpresion.UsuarioCreacion = gUsuarioSGI.Id
+                .DatosImpresion.FechaCreacion = Date.Now
+                .DatosImpresion.UsuarioModifica = gUsuarioSGI.Id
+                .DatosImpresion.FechaModificacion = Date.Now
+                .DatosImpresion.IdEmpresaSistema = gs_IdClienteProveedorSistema.Trim
+                .DatosImpresion.IdSucursalSistema = gs_IdSucursal
+                .DatosImpresion.PrefijoID = gs_PrefijoIdSucursal
+                .DatosImpresion.IdTipoDocumento = cmbTipoDocumento.Value
+                .DatosImpresion.TipoDocumento = cmbTipoDocumento.Text
+                .DatosImpresion.IdTurno = gfc_obtener_TurnoActivo.IdTurno
+                .DatosImpresion.Turno = gfc_obtener_TurnoActivo.Turno
+                .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
+                '.DatosImpresion.IdDireccion = cmb_Direccion.Value
+                '.DatosImpresion.Direccion = cmb_Direccion.Text
+                '.DatosImpresion.IdPiloto = cmb_Piloto.Value
+                '.DatosImpresion.Piloto = cmb_Piloto.Value
+                '.DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
+                '.DatosImpresion.Placa = cmb_Vehiculo.Text
+                .DatosImpresion.IdMedioPago = "1CH03"
+                .DatosImpresion.MedioPago = "CONTADO"
+                .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
+                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
+                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(Total, 2)
+                '.DatosImpresion.HashResumen = ""
+                '.DatosImpresion.HashSunat = ""
+                '.DatosImpresion.QRCode = ""
+                '.DatosImpresion.Ruta = ""
+                '.DatosImpresion.ValorAux1 = 0
+                '.DatosImpresion.ValorAux2 = 0
+                '.DatosImpresion.ValorAux3 = 0
+                '.DatosImpresion.TextoAux1 = sw_Lado
+                '.DatosImpresion.TextoAux2 = ""
+                '.DatosImpresion.TextoAux3 = ""
+
+                '' Venta
+                .Venta = New e_Venta
+                .Venta = fc_LlenarVenta()
+                .IdUsuarioCrea = gUsuarioSGI.Id
+
+            End With
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -688,6 +727,16 @@ Public Class frm_CanjeDocumentos
 
     Private Sub frm_CanjeND_F_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         gmt_ControlBoton()
+    End Sub
+
+    Private Sub cmbTipoDocumento_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoDocumento.ValueChanged
+        Select Case cmbTipoDocumento.Value
+            Case "1CH000000026"
+                txtSerie.Text = "F103" : cmb_Cliente.Focus()
+            Case "1CH000000002"
+                txtSerie.Text = "B103" : cmb_Cliente.Focus()
+        End Select
+
     End Sub
 
 

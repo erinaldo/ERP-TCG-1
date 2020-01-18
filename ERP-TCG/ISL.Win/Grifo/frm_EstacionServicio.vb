@@ -113,13 +113,15 @@ Public Class frm_EstacionServicio
             'If swCredito = True And (OrdenVenta.Total > CuentaCorriente.Saldo + (CuentaCorriente.Saldo) * 0.1) Then Throw New Exception("El importe EXCEDE la linea de CREDITO disponible")
 
             '' Confirmacion
-            If MessageBox.Show("------------------------------ DETALLES DE VENTA ------------------------------" & vbCrLf & Environment.NewLine &
-                               "> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
-                               "> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
-                               "> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
-                               "> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
-                               "> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
-                               "  -------------------------------------------------------------------------------  ", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
+
+            If MessageBox.Show("=========================================" & vbCrLf &
+                               "=========== DETALLES DE VENTA ===========" & vbCrLf & Environment.NewLine &
+                               ">>> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
+                               ">>> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
+                               ">>> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
+                               ">>> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
+                               ">>> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
+                               "=========================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
             '' Cargar Data
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
@@ -145,7 +147,7 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            'gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
+            gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
 
             Nuevo()
         Catch ex As Exception
@@ -210,7 +212,7 @@ Public Class frm_EstacionServicio
                 .IdPlaca = cmb_Vehiculo.Value
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
-                .GlosaResumen = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & "//COMBUSTIBLE: " & Material_Combustible & "//TOTAL: S/" & nud_Total.Value & "//PLACA: " & cmb_Vehiculo.Text
+                .GlosaResumen = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & "//COMBUSTIBLE:      " & Material_Combustible & "//TOTAL: S/ " & nud_Total.Value & " // PLACA:  " & cmb_Vehiculo.Text
                 If swConsumoInterno = False Then
                     .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 End If
@@ -262,7 +264,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
                     ItemDocumento.Precio = ItemVenta.PrecioUnitario
-                    ItemDocumento.Total = ItemVenta.PrecioTotal
+                    ItemDocumento.Total = ItemVenta.Cantidad * ItemVenta.PrecioUnitario
                     ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
                     ItemDocumento.IdVehiculo = cmb_Vehiculo.Text
@@ -687,7 +689,7 @@ Public Class frm_EstacionServicio
                 If ListaServicioCuentaContable.Contains(ServicioCuentaContable) Then
                     ServicioCuentaContable = ListaServicioCuentaContable.Item(ListaServicioCuentaContable.IndexOf(ServicioCuentaContable))
                 Else
-                    Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
+                    Throw New Exception("No Existen Cuenta Contable para el Servicio " & gVSMercaderia & " para el Año: " & Date.Now.Year &
                                     Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                 End If
 
@@ -942,7 +944,7 @@ Public Class frm_EstacionServicio
             If OrdenVenta.lstOrdenComercialMaterial.Where(Function(i) i.IdMaterial = OV_DETALLE.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
                 udg_Detalle.DataBind()
                 mt_CalcularTotalOrden()
-                Throw New Exception("Material: " & OV_DETALLE.Material & " ya Asignado a la Orden")
+                Throw New Exception("Material " & OV_DETALLE.Material & " ya Asignado a la Orden")
             End If
             OrdenVenta.lstOrdenComercialMaterial.Add(OV_DETALLE)
             udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
@@ -967,7 +969,7 @@ Public Class frm_EstacionServicio
         Else
             CanDescuento = 0
         End If
-        grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal: S/. " & PrecioNormal & " || Dscto x Galon: S/. " & CanDescuento & " )"
+        grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal S/ . " & PrecioNormal & " || Dscto x Galon: S/ . " & CanDescuento & " )"
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
         nud_Cantidad.SelectAll()
     End Sub
@@ -1115,7 +1117,7 @@ Public Class frm_EstacionServicio
         mt_Calcular_DescuentoCombustible()
 
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
-        'grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal: S/. " & PrecioNormal & " || Dscto x Galon: S/. " & CanDescuento & " )"
+        'grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal S/ . " & PrecioNormal & " || Dscto x Galon: S/ . " & CanDescuento & " )"
         nud_Cantidad.SelectAll()
     End Sub
 
@@ -1343,7 +1345,7 @@ Public Class frm_EstacionServicio
     Private Sub btnAgregarDetalle_Click(sender As Object, e As EventArgs) Handles btnAgregarDetalle.Click
         If nud_Importe.Value = 0 Then Exit Sub
         mt_Agregar_Detalle()
-        grb_Combustible.Text = "Seleccione Combustible:"
+        grb_Combustible.Text = "Seleccione Combustible"
         nud_Cantidad.Value = 0
         nud_Preciounitario.Value = 0
         nud_Importe.Value = 0
@@ -1528,21 +1530,21 @@ Public Class frm_EstacionServicio
 
             '' Obtener Asiento Modelo
             Dim dtAux = New Data.DataTable, _rwAux() As Data.DataRow, cadSQL As String = String.Empty
-            cadSQL = "TipoRef1 = 4 AND IdRef1 = '" & IdMoneda_Soles & "'"
+            cadSQL = "TipoRef1 = 4 And IdRef1 = '" & IdMoneda_Soles & "'"
             _rwAux = dtReferencia.Select(cadSQL, "")
-            If _rwAux.Count = 0 Then Throw New Exception("Error en el Modelo de Asiento Contable. Verificar")
-            dtAux = _rwAux.CopyToDataTable
-            AsientoModelo = dAsientoModelo.Obtener(New e_AsientoModelo With {.TipoOperacion = "", .Activo = True, .Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString, .Ejercicio = Periodo.Ejercicio})
-            OrdenAux.loAsientoModelo = New List(Of e_AsientoModelo)
-            OrdenAux.loAsientoModelo.Add(AsientoModelo)
+                If _rwAux.Count = 0 Then Throw New Exception("Error en el Modelo de Asiento Contable. Verificar")
+                dtAux = _rwAux.CopyToDataTable
+                AsientoModelo = dAsientoModelo.Obtener(New e_AsientoModelo With {.TipoOperacion = "", .Activo = True, .Id = dtAux.Rows(0).Item("IdAsientoModelo").ToString, .Ejercicio = Periodo.Ejercicio})
+                OrdenAux.loAsientoModelo = New List(Of e_AsientoModelo)
+                OrdenAux.loAsientoModelo.Add(AsientoModelo)
 
-            If Tipo = 1 Then
-                OrdenAux.Total = (oeRegConsumoCombustible.CantidadGalon * oeRegConsumoCombustible.PrecioUnitario)
-            End If
-            OrdenAux.IdPeriodo = Periodo.Id
-            OrdenAux.UsuarioCreacion = gUsuarioSGI.Id
-            OrdenAux.FechaOrden = FechaOrden
-            OrdenAux.TipoCambio = TipoCambio
+                If Tipo = 1 Then
+                    OrdenAux.Total = (oeRegConsumoCombustible.CantidadGalon * oeRegConsumoCombustible.PrecioUnitario)
+                End If
+                OrdenAux.IdPeriodo = Periodo.Id
+                OrdenAux.UsuarioCreacion = gUsuarioSGI.Id
+                OrdenAux.FechaOrden = FechaOrden
+                OrdenAux.TipoCambio = TipoCambio
         Catch ex As Exception
             Throw ex
         End Try
