@@ -13,12 +13,12 @@ Public Class frm_CanjeDocumentos
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_CanjeND_F = Nothing
+    Private Shared instancia As frm_CanjeDocumentos = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_CanjeND_F()
+            instancia = New frm_CanjeDocumentos()
             Operacion = "Inicializa"
         End If
         instancia.Activate()
@@ -272,13 +272,15 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_Listar()
         Try
+            If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
             Documento = New e_MovimientoDocumento
             Documento.IdTipoDocumento = "GCH000000001"
             Documento.TipoOperacion = ""
+            Documento.IdClienteProveedor = cmb_ClienteBuscado.Value
             Documento.FechaInicio = dtp_FechaDesde.Value
             Documento.FechaFinal = dtp_FechaHasta.Value
             ListaDocumentos = dMovimientoDocumento.Listar(Documento)
-            udg_Documentos.DataSource = ListaDocumentos
+            bso_Documento.DataSource = ListaDocumentos
             udg_Documentos.DataBind()
         Catch ex As Exception
             Throw ex
@@ -352,14 +354,14 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
-    Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgCliente.InitializeLayout
-        Me.cbgCliente.ValueMember = "Id"
-        Me.cbgCliente.DisplayMember = "Nombre"
-        For i As Integer = cbgCliente.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
-            cbgCliente.DisplayLayout.Bands(0).Columns(i).Hidden = False
+    Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Cliente.InitializeLayout
+        Me.cmb_Cliente.ValueMember = "Id"
+        Me.cmb_Cliente.DisplayMember = "Nombre"
+        For i As Integer = cmb_Cliente.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
+            cmb_Cliente.DisplayLayout.Bands(0).Columns(i).Hidden = False
         Next
 
-        With cbgCliente.DisplayLayout.Bands(0)
+        With cmb_Cliente.DisplayLayout.Bands(0)
             '.Columns("Id").Hidden = True
             '.Columns("TipoEmpresa").Hidden = True
             '.Columns("Codigo").Hidden = True
@@ -380,11 +382,11 @@ Public Class frm_CanjeDocumentos
         End With
     End Sub
 
-    Private Sub cbgCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles cbgCliente.KeyDown
+    Private Sub cbgCliente_KeyDown(sender As Object, e As KeyEventArgs) Handles cmb_Cliente.KeyDown
         Try
             If e.KeyCode = Keys.Enter Then
-                If Not String.IsNullOrEmpty(cbgCliente.Text.Trim) Then
-                    gmt_ListarEmpresa("6", cbgCliente, String.Empty, False)
+                If Not String.IsNullOrEmpty(cmb_Cliente.Text.Trim) Then
+                    gmt_ListarEmpresa("6", cmb_Cliente, String.Empty, False)
                 End If
             End If
         Catch ex As Exception
@@ -392,9 +394,55 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
-    Private Sub cbgCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cbgCliente.KeyPress
+    Private Sub cbgCliente_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmb_Cliente.KeyPress
         If e.KeyChar = Convert.ToChar(Keys.Enter) Then
-            cbgCliente.PerformAction(UltraComboAction.Dropdown)
+            cmb_Cliente.PerformAction(UltraComboAction.Dropdown)
+        End If
+    End Sub
+
+    Private Sub cmb_ClienteBuscado_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_ClienteBuscado.InitializeLayout
+        Me.cmb_ClienteBuscado.ValueMember = "Id"
+        Me.cmb_ClienteBuscado.DisplayMember = "Nombre"
+        For i As Integer = cmb_ClienteBuscado.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
+            cmb_ClienteBuscado.DisplayLayout.Bands(0).Columns(i).Hidden = False
+        Next
+
+        With cmb_ClienteBuscado.DisplayLayout.Bands(0)
+            .Columns("Id").Hidden = True
+            .Columns("TipoEmpresa").Hidden = True
+            .Columns("Codigo").Hidden = True
+            .Columns("IdDireccionTanqueo").Hidden = True
+            .Columns("Morosidad").Hidden = True
+            .Columns("Credito").Hidden = True
+            .Columns("IndNivelComercial").Hidden = True
+            .Columns("Moneda").Hidden = True
+            .Columns("IndClasificacion").Hidden = True
+            .Columns("UsuarioCreacion").Hidden = True
+            .Columns("IndCategoriaEmpresaSGI").Hidden = True
+            .Columns("Activo").Hidden = True
+            .Columns("Ruc").Hidden = False
+            .Columns("Nombre").Hidden = False
+            .Columns("Ruc").Header.Caption = "N° RUC"
+            .Columns("Ruc").Width = 80
+            .Columns("Nombre").Width = 250
+        End With
+    End Sub
+
+    Private Sub cmb_ClienteBuscado_KeyDown(sender As Object, e As KeyEventArgs) Handles cmb_ClienteBuscado.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                If Not String.IsNullOrEmpty(cmb_ClienteBuscado.Text.Trim) Then
+                    gmt_ListarEmpresa("6", cmb_ClienteBuscado, String.Empty, False)
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub cmb_ClienteBuscado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles cmb_ClienteBuscado.KeyPress
+        If e.KeyChar = Convert.ToChar(Keys.Enter) Then
+            cmb_ClienteBuscado.PerformAction(UltraComboAction.Dropdown)
         End If
     End Sub
 
@@ -452,8 +500,8 @@ Public Class frm_CanjeDocumentos
             DocumentoGenerado = New e_MovimientoDocumento
             DocumentoGenerado = ListaDocumentoSeleccionados(0).Clonar
             DocumentoGenerado.Id = String.Empty
-            gmt_ListarEmpresa("6", cbgCliente, DocumentoGenerado.IdClienteProveedor, False)
-            cbgCliente.Value = DocumentoGenerado.IdClienteProveedor
+            gmt_ListarEmpresa("6", cmb_Cliente, DocumentoGenerado.IdClienteProveedor, False)
+            cmb_Cliente.Value = DocumentoGenerado.IdClienteProveedor
             dtp_FechaEmision.Value = DocumentoGenerado.FechaEmision
             Me.decTipoCambio.Value = gfc_TipoCambio(dtp_FechaEmision.Value, True)
             cboTipoPago.Value = DocumentoGenerado.IdTipoPago
@@ -465,7 +513,7 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_LlenaObjeto()
         Try
-            If cbgCliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
+            If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             If cmbTipoDocumento.SelectedIndex = -1 Then Throw New Exception("Seleccione Tipo de Documento")
             DocumentoGenerado.TipoOperacion = "I"
             DocumentoGenerado.IdSucursal = gs_PrefijoIdSucursal
@@ -477,7 +525,7 @@ Public Class frm_CanjeDocumentos
             DocumentoGenerado.IdPeriodo = ""
             DocumentoGenerado.IdTipoPago = cboTipoPago.Value
             DocumentoGenerado.Mac_PC_Local = MacPCLocal()
-            DocumentoGenerado.IdClienteProveedor = cbgCliente.Value
+            DocumentoGenerado.IdClienteProveedor = cmb_Cliente.Value
             DocumentoGenerado.Saldo = DocumentoGenerado.Total
             DocumentoGenerado.lstDetalleDocumento = New List(Of e_DetalleDocumento)
             DocumentoGenerado.lstDetalleDocumento = ListaDetalle
