@@ -6295,7 +6295,10 @@
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A41rdlc.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_Ticket.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
