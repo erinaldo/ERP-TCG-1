@@ -104,7 +104,7 @@ Public Class frm_DocumentoCtble_Imprimir
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
-                            Case "TICKET" : Return Raiz & "rpt_BoletaVenta_Ticket.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_FacturaVenta_Ticket.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel

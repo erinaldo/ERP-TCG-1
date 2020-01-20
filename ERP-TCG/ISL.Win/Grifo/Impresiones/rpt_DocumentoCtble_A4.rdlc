@@ -135,9 +135,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>4.90315cm</Top>
-        <Left>0.78431cm</Left>
+        <Left>0.8766cm</Left>
         <Height>1.39375cm</Height>
-        <Width>11.12765cm</Width>
+        <Width>11.03536cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -271,9 +271,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>8.35246cm</Top>
-        <Left>0.78431cm</Left>
+        <Left>0.8766cm</Left>
         <Height>0.60875cm</Height>
-        <Width>2.41404cm</Width>
+        <Width>2.32175cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -525,7 +525,7 @@
                 <Value>=Sum(Fields!SubTotal.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <Format>#,0.00;(#,0.00)</Format>
+                  <Format>n2</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -595,7 +595,7 @@
                 <Value>=Sum(Fields!Total.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <Format>#,0.00;(#,0.00)</Format>
+                  <Format>n2</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1167,7 +1167,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
@@ -1219,7 +1221,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox36</rd:DefaultName>
@@ -1271,7 +1275,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox38</rd:DefaultName>
@@ -1323,7 +1329,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox6</rd:DefaultName>
@@ -1375,7 +1383,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
@@ -1427,7 +1437,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -1637,6 +1649,7 @@
                               <Value>=Fields!ValorUnitario.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1670,6 +1683,7 @@
                               <Value>=Fields!Descuento.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1703,6 +1717,7 @@
                               <Value>=Fields!ValorTotal.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1736,6 +1751,7 @@
                               <Value>=Fields!IGV.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1769,6 +1785,7 @@
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1802,6 +1819,7 @@
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2955,10 +2973,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>21.66005cm</Top>
-        <Left>0.8766cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Top>19.80797cm</Top>
+        <Left>5.05702cm</Left>
+        <Height>2.45208cm</Height>
+        <Width>3.3506cm</Width>
         <ZIndex>36</ZIndex>
         <Style>
           <Border>

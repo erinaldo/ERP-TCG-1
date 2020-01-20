@@ -309,10 +309,11 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_CanjearDocumentos()
         Try
-            Dim Seleccionados As Boolean = False
+            Dim Seleccionados As Integer = 0
 
             '' Valida
             If udg_Documentos.Rows.Count = 0 Then Exit Sub
+            udg_Documentos.UpdateData()
 
             '' Inicializa
             ListaDocumentoSeleccionados = New List(Of e_MovimientoDocumento)
@@ -321,7 +322,7 @@ Public Class frm_CanjeDocumentos
             '' Agregar los documentos seleccionados
             For Each Documento In ListaDocumentos
                 If Documento.IndAnexo = True Then
-                    Seleccionados = True
+                    Seleccionados += 1
                     ListaDocumentoSeleccionados.Add(Documento)
                     Dim ListaDetalle As New List(Of e_DetalleDocumento)
                     ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
@@ -350,7 +351,7 @@ Public Class frm_CanjeDocumentos
             '    Next
 
             '' Muestra el documento que vamos a generar
-            If Seleccionados Then
+            If Seleccionados > 0 Then
                 gmt_MostrarTabs(1, fic_Canje, 1)
                 mt_MostrarDocumento("")
                 mt_ControlBotoneria()
