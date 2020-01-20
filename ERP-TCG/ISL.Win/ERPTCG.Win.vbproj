@@ -5802,7 +5802,11 @@
     </Content>
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble_Detalle.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Combo.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_DetalleDocumento.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GRR_Venta.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRemisionRemitente_Detalle.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRRemitenteMaterial.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MaterialAlmacen.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MovimientoDocumento.datasource" />

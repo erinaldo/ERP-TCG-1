@@ -27,7 +27,7 @@ Public Class d_GRR_Venta
             Dim ds As DataSet
             With oeGuiaRemitente
                 ds = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
-                                              .IdTransportista, .IdCliente, .Fecha, .FechaTraslado)
+                                              .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
                 oeGuiaRemitente = Cargar(ds.Tables(0).Rows(0))
@@ -47,7 +47,7 @@ Public Class d_GRR_Venta
             Dim ds As DataSet
             With oeGuiaRemitente
                 ds = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
-                                              .IdTransportista, .IdCliente, .Fecha, .FechaTraslado)
+                                              .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie, .Numero)
             End With
             oeGuiaRemitente = Nothing
             If ds.Tables(0).Rows.Count > 0 Then

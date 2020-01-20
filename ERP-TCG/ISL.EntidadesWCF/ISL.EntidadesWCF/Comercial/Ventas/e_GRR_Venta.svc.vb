@@ -32,9 +32,13 @@ Public Class e_GRR_Venta
     <DataMember()>
     Public Property Vehiculo() As String
     <DataMember()>
+    Public Property MTCVehiculo() As String
+    <DataMember()>
     Public Property IdCarreta() As String
     <DataMember()>
     Public Property Carreta() As String
+    '<DataMember()>
+    'Public Property MTCCarreta() As String
     <DataMember()>
     Public Property IdChofer() As String
     <DataMember()>

@@ -214,15 +214,7 @@ Module m_Funciones
 
     Public Function gfc_ObtenerNumeroDoc(Serie As String, IdTipoDocumento As String, Tipo As Integer) As Integer
         Try
-            'Dim oeDocumento As New e_MovimientoDocumento
             Dim olDocumento As New l_MovimientoDocumento
-            'oeDocumento.TipoOperacion = "N"
-            'oeDocumento.IdTipoDocumento = IdTipoDocumento
-            'oeDocumento.Serie = Serie
-            'oeDocumento.Tipo = Tipo
-            'oeDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
-            'oeDocumento = olDocumento.Obtener(oeDocumento)
-            'If oeDocumento.Numero <> "" Then Return CInt(oeDocumento.Numero) + 1
             Dim oe As New e_MovimientoDocumento
             oe.TipoOperacion = "NUM"
             oe.Serie = Serie
@@ -234,21 +226,33 @@ Module m_Funciones
         End Try
     End Function
 
+    Public Function gfc_ObtenerNumeroGRR(Serie As String) As Integer
+        Try
+            Dim olGrr As New l_GRR_Venta
+            Dim oe As New e_GRR_Venta
+            oe.TipoOperacion = "NUM"
+            oe.Serie = Serie
+            Return olGrr.Obtener(oe).Numero
+            Return 1
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
-    Public gloAlmMat As List(Of e_Combo)
+    'Public gloAlmMat As List(Of e_Combo)
     Public gloSubAlm As List(Of e_Combo)
-    Public gloUniMed As List(Of e_Combo)
-    Public gloLugares As List(Of e_Combo)
-    Public gloEmpresa As List(Of e_Combo)
-    Public gloTipoPago As List(Of e_Combo)
-    Public gloPiloto As List(Of e_Combo)
-    Public gloMatSCta As List(Of e_Combo)
-    Public gloSerCCta As List(Of e_Combo)
-    Public gloTrabajador As List(Of e_Combo)
-    Public gloTipoDoc As List(Of e_Combo)
-    Public gloCajaTrabajador As List(Of e_Combo)
-    Public gloConceptos As List(Of e_Combo)
-    Public gloEquipo As List(Of e_Combo)
+    'Public gloUniMed As List(Of e_Combo)
+    'Public gloLugares As List(Of e_Combo)
+    'Public gloEmpresa As List(Of e_Combo)
+    'Public gloTipoPago As List(Of e_Combo)
+    'Public gloPiloto As List(Of e_Combo)
+    'Public gloMatSCta As List(Of e_Combo)
+    'Public gloSerCCta As List(Of e_Combo)
+    'Public gloTrabajador As List(Of e_Combo)
+    'Public gloTipoDoc As List(Of e_Combo)
+    'Public gloCajaTrabajador As List(Of e_Combo)
+    'Public gloConceptos As List(Of e_Combo)
+    'Public gloEquipo As List(Of e_Combo)
 
 #End Region
 
@@ -802,6 +806,8 @@ Module m_Funciones
     Public OperadorPublic As List(Of e_Combo)
     Public TipoAccidentePublic As List(Of e_Combo)
 
+    Public UnidadMedidaPublic As List(Of e_Combo)
+
     Private olCombo As l_Combo
     Private oeCombo As e_Combo
 
@@ -905,6 +911,10 @@ Module m_Funciones
             TractoSinDocPublic = New List(Of e_Combo)
             TractoSinDocPublic.AddRange(olCombo.Listar(oeCombo).OrderBy(Function(Item) Item.Nombre).ToList)
         End If
+
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "UMedida"
+        UnidadMedidaPublic = olCombo.Listar(oeCombo)
 
         oeCombo = New e_Combo
         oeCombo.Nombre = "Piloto"
@@ -4832,7 +4842,7 @@ Module m_Funciones
         Dim Band As Boolean
         With Grilla
             If TipoLetra.Trim.Length = 0 Then TipoLetra = "Microsoft Sans Serif"
-            .Font = New System.Drawing.Font(TipoLetra, 8.0!)
+            .Font = New System.Drawing.Font(TipoLetra, 8.25!)
             .DisplayLayout.Override.BorderStyleCell = Estilo
             .DisplayLayout.Override.BorderStyleRow = Estilo
             .DisplayLayout.Override.HeaderClickAction = HeaderClickAction.SortSingle

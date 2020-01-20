@@ -1432,19 +1432,13 @@ Public Class frm_OrdenVenMaterial
 
     Private Sub mt_CombosGrilla(Grilla As UltraGrid)
         Try
-            'With Grilla
-            '    For j As Integer = 0 To .Rows.Count - 1
-            '        Dim strIdTipoUnidad As String = .Rows(j).Cells("IdTipoUnidadMedida").Value
-            '        gfc_CombroGrillaCelda("IdUnidadMedida", "Nombre", j, Grilla, olCombo.ComboGrilla(gloUniMed.Where(Function(i) i.Descripcion = strIdTipoUnidad).ToList))
-
-            '        Dim strIdMaterial As String = .Rows(j).Cells("IdMaterial").Value.ToString
-            '        gfc_CombroGrillaCelda("IdAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloAlmMat.Where(Function(i) i.Descripcion = strIdMaterial).ToList))
-
-            '        Dim strIdAlmacen As String = .Rows(j).Cells("IdAlmacen").Value.ToString
-            '        gfc_CombroGrillaCelda("IdSubAlmacen", "Nombre", j, Grilla, olCombo.ComboGrilla(gloSubAlm.Where(Function(i) i.Descripcion = strIdAlmacen).ToList))
-            '    Next
-            '    .DataBind()
-            'End With
+            With Grilla
+                For j As Integer = 0 To .Rows.Count - 1
+                    Dim strIdTipoUnidad As String = .Rows(j).Cells("IdUnidadMedida").Value
+                    gfc_CombroGrillaCelda("IdUnidadMedida", "Nombre", j, Grilla, olCombo.ComboGrilla(UnidadMedidaPublic.Where(Function(i) i.Id = strIdTipoUnidad).ToList))
+                Next
+                .DataBind()
+            End With
         Catch ex As Exception
             Throw ex
         End Try
@@ -1564,14 +1558,14 @@ Public Class frm_OrdenVenMaterial
         Try
             Select Case TipoDoc
                 Case "GenerarGuia"
-                    oeOrdenSalida = New e_Orden
-                    oeOrdenSalida.Id = griOrdenSalida.ActiveRow.Cells("Id").Value
-                    oeOrdenSalida = olOrdenSalida.Obtener(oeOrdenSalida)
+                    'oeOrdenSalida = New e_Orden
+                    'oeOrdenSalida.Id = griOrdenSalida.ActiveRow.Cells("Id").Value
+                    'oeOrdenSalida = olOrdenSalida.Obtener(oeOrdenSalida)
                     Dim frm As New frm_GRR_Venta
                     frm = frm.getInstancia()
                     With frm
                         .MdiParent = frm_Menu
-                        '.mt_TransponerOrdenDocumento(oeOrdenSalida)
+                        .mt_CargarOrden_OrdenVenta(oeOrdenComercial)
                         .Show()
                     End With
 

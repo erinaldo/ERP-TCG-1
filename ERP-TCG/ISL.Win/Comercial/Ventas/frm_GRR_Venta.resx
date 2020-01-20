@@ -120,8 +120,11 @@
   <metadata name="Tiempo1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="EGuiaRRemitenteMaterialBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>308, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Appearance19.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance15.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACKlJREFUWEfNlglQVFcWhtXu917Tm+CCCyqiEVxaBAUaGmiaZoeAiAiiRFFMkMU1
@@ -164,7 +167,7 @@
         dPqsuAcpvCFD/gWsUBhZvY3/iAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Appearance21.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance17.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADD5JREFUWEelVwl0VFWavpUoitAQiCx2t4BR6dBHRZ2BHkW0jYBDQMaAMtDQboyI
@@ -222,7 +225,7 @@
         okUsLi6OLV68WIRMVFVGCopPBYk9Yu//Q4z9GRzZBATMLcOfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Appearance22.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance18.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACd5JREFUWEetVwlUU2cWTkVEW63W1oWWioU5trZsWj2Orc5M7fRIxY4tetxbQdmU
@@ -270,7 +273,7 @@
         Rk5fIgwiGDMCA9h3du0Fl5nH+xca2lsVWnoPqQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Appearance30.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance26.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACKlJREFUWEfNlglQVFcWhtXu917Tm+CCCyqiEVxaBAUaGmiaZoeAiAiiRFFMkMU1
@@ -313,7 +316,7 @@
         dPqsuAcpvCFD/gWsUBhZvY3/iAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Appearance38.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance34.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADD5JREFUWEelVwl0VFWavpUoitAQiCx2t4BR6dBHRZ2BHkW0jYBDQMaAMtDQboyI
@@ -371,7 +374,7 @@
         okUsLi6OLV68WIRMVFVGCopPBYk9Yu//Q4z9GRzZBATMLcOfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Appearance39.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance35.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACd5JREFUWEetVwlUU2cWTkVEW63W1oWWioU5trZsWj2Orc5M7fRIxY4tetxbQdmU
@@ -419,7 +422,7 @@
         Rk5fIgwiGDMCA9h3du0Fl5nH+xca2lsVWnoPqQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Appearance46.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance42.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACKlJREFUWEfNlglQVFcWhtXu917Tm+CCCyqiEVxaBAUaGmiaZoeAiAiiRFFMkMU1
@@ -462,7 +465,7 @@
         dPqsuAcpvCFD/gWsUBhZvY3/iAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Appearance80.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance76.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAADD5JREFUWEelVwl0VFWavpUoitAQiCx2t4BR6dBHRZ2BHkW0jYBDQMaAMtDQboyI
@@ -520,7 +523,7 @@
         okUsLi6OLV68WIRMVFVGCopPBYk9Yu//Q4z9GRzZBATMLcOfAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Appearance81.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Appearance77.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACd5JREFUWEetVwlUU2cWTkVEW63W1oWWioU5trZsWj2Orc5M7fRIxY4tetxbQdmU
@@ -568,4 +571,13 @@
         Rk5fIgwiGDMCA9h3du0Fl5nH+xca2lsVWnoPqQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="EGRRVentaBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>116, 17</value>
+  </metadata>
+  <metadata name="EComboBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>769, 17</value>
+  </metadata>
+  <metadata name="UltraGridFilterUIProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>577, 17</value>
+  </metadata>
 </root>
