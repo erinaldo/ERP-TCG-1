@@ -36,6 +36,7 @@ Public Class frm_CanjeDocumentos
     Private ListaDocumentoSeleccionados As New List(Of e_MovimientoDocumento)
     Private ListaDocumentos As New List(Of e_MovimientoDocumento)
     Private Documento As New e_MovimientoDocumento
+    Private DocumentoOrigen As New e_MovimientoDocumento
     Private DocumentoGenerado As New e_MovimientoDocumento
 
     Private oe_Venta As e_Venta
@@ -279,6 +280,15 @@ Public Class frm_CanjeDocumentos
             ListaDocumentos = dMovimientoDocumento.Listar(Documento)
             bso_Documento.DataSource = ListaDocumentos
             udg_Documentos.DataBind()
+
+            For Each fila As UltraGridRow In udg_Documentos.Rows
+                Select Case fila.Cells("EstadoDocumento").Value
+                    Case "GENERADA" : fila.CellAppearance.BackColor = Color.LightBlue
+                    Case "EMITIDA" : fila.CellAppearance.BackColor = Color.LightGreen
+                    Case "ANULADO" : fila.CellAppearance.BackColor = Color.LightGray
+                End Select
+            Next
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -303,7 +313,7 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
-    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
+    Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles tsb_Canjear.Click
         mt_CanjearDocumentos()
     End Sub
 
@@ -358,6 +368,7 @@ Public Class frm_CanjeDocumentos
                 cmbTipoDocumento.Focus()
                 bso_Detalle.DataSource = ListaDetalleSeleccionados
                 udg_Detalles.DataBind()
+                mt_CalcularTotalOrden()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -478,7 +489,7 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_MostrarDocumento(IdDocumento As String)
         Try
-            Dim DocumentoOrigen As New e_MovimientoDocumento
+            DocumentoOrigen = New e_MovimientoDocumento
             DocumentoGenerado = New e_MovimientoDocumento
 
             DocumentoOrigen = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = ListaDocumentoSeleccionados(0).Id})
@@ -486,18 +497,25 @@ Public Class frm_CanjeDocumentos
             DocumentoGenerado.Id = String.Empty
 
             gmt_ListarEmpresa("6", cmb_Cliente, DocumentoGenerado.IdClienteProveedor, False)
-            cmb_Cliente.Value = DocumentoGenerado.IdClienteProveedor
-            dtp_FechaEmision.Value = DocumentoGenerado.FechaEmision
 
-            Me.decTipoCambio.Value = gfc_TipoCambio(dtp_FechaEmision.Value, True)
+            '' Controles
+            cmb_Cliente.Value = DocumentoGenerado.IdClienteProveedor
+            dtp_FechaEmision.Value = ObtenerFechaServidor()
+            dtpFechaPago.Value = ObtenerFechaServidor()
+            decTipoCambio.Value = gfc_TipoCambio(dtp_FechaEmision.Value, True)
             cboTipoPago.SelectedIndex = 0
             cmbMoneda.Value = "1CH01"
+
+            mt_CalcularTotalOrden()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
     Private Sub mt_LlenaObjeto()
+        '1CH00001	ANULADO
+        '1CH00014	GENERADA
+        '1CH00008	EMITIDA
         Try
             Dim SubTotal As Double = 0, IGV As Double = 0, Total As Double = 0
             If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
@@ -506,6 +524,8 @@ Public Class frm_CanjeDocumentos
             With DocumentoGenerado
                 '' Cabecera
                 .TipoOperacion = "I"
+                .FechaEmision = dtp_FechaEmision.Value
+                .FechaVencimiento = dtpFechaPago.Value
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
                 .Serie = txtSerie.Text
@@ -517,7 +537,6 @@ Public Class frm_CanjeDocumentos
                 .IdTipoPago = cboTipoPago.Value
                 .Mac_PC_Local = MacPCLocal()
                 .IdClienteProveedor = cmb_Cliente.Value
-                .Saldo = DocumentoGenerado.Total
                 .lstDetalleDocumento = ListaDetalleSeleccionados
 
                 '' Detalle
@@ -534,6 +553,7 @@ Public Class frm_CanjeDocumentos
                 .SubTotal = SubTotal
                 .IGV = IGV
                 .Total = Total
+                .Saldo = Total
 
                 '' Datos Impresion
                 .DatosImpresion = New e_MovimientoDocumento_Impresion
@@ -550,12 +570,12 @@ Public Class frm_CanjeDocumentos
                 .DatosImpresion.IdTurno = gfc_obtener_TurnoActivo.IdTurno
                 .DatosImpresion.Turno = gfc_obtener_TurnoActivo.Turno
                 .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
-                '.DatosImpresion.IdDireccion = cmb_Direccion.Value
-                '.DatosImpresion.Direccion = cmb_Direccion.Text
-                '.DatosImpresion.IdPiloto = cmb_Piloto.Value
-                '.DatosImpresion.Piloto = cmb_Piloto.Value
-                '.DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
-                '.DatosImpresion.Placa = cmb_Vehiculo.Text
+                .DatosImpresion.IdDireccion = DocumentoOrigen.DatosImpresion.IdDireccion
+                .DatosImpresion.Direccion = DocumentoOrigen.DatosImpresion.Direccion
+                .DatosImpresion.IdPiloto = DocumentoOrigen.DatosImpresion.IdPiloto
+                .DatosImpresion.Piloto = DocumentoOrigen.DatosImpresion.Piloto
+                .DatosImpresion.IdVechiculo = DocumentoOrigen.DatosImpresion.IdVechiculo
+                .DatosImpresion.Placa = DocumentoOrigen.DatosImpresion.Placa
                 .DatosImpresion.IdMedioPago = "1CH03"
                 .DatosImpresion.MedioPago = "CONTADO"
                 .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
@@ -584,31 +604,27 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
-    Private Sub mt_EmitirDocumento(IndMensaje As Boolean)
+    Private Sub mt_EmitirDocumento(IdDocumentoCtble As String)
         Try
+            ' ======================================================================================================================== >>>>>
             Dim _banEmis As Boolean = False
             Dim oeDoc As New e_MovimientoDocumento
             Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
-            oe_Cliente = New e_Cliente
-            oe_Cliente.TipoOperacion = ""
-            oe_Cliente.TipoClienteProveedor = 1
-            oe_Cliente.Id = DocumentoGenerado.IdClienteProveedor
-            oe_Cliente = ol_Cliente.Obtener(oe_Cliente)
-
-            oe_Moneda = cmbMoneda.Items(cmbMoneda.SelectedIndex).ListObject
-
-            oe_TipoDoc = New e_TipoDocumento
-            oe_TipoDoc.TipoOperacion = ""
-            oe_TipoDoc.Id = cmbTipoDocumento.Value
-            oe_TipoDoc = ol_TipoDoc.Obtener(oe_TipoDoc)
 
             If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
 
                 mt_ListarCtaCtble(frm.Año1.Año)
 
-                oeDoc.Id = DocumentoGenerado.Id : oeDoc.CargaCompleta = True
+                oeDoc = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = IdDocumentoCtble, .CargaCompleta = True})
 
-                oeDoc = dMovimientoDocumento.Obtener(oeDoc)
+                oe_Cliente = New e_Cliente
+                oe_Cliente = ol_Cliente.Obtener(New e_Cliente With {.TipoOperacion = "", .TipoClienteProveedor = 1, .Id = oeDoc.IdClienteProveedor})
+
+                oe_Moneda = cmbMoneda.Items(cmbMoneda.SelectedIndex).ListObject
+
+                oe_TipoDoc = New e_TipoDocumento
+                oe_TipoDoc = ol_TipoDoc.Obtener(New e_TipoDocumento With {.TipoOperacion = "", .Id = oeDoc.IdTipoDocumento})
+
                 oeDoc.IdPeriodo = frm.cboMes.Value : oeDoc.Ejercicio = frm.Año1.Año
                 oeDoc.Venta.TipoDoc = oe_TipoDoc : oeDoc.Venta.Cliente = oe_Cliente : oeDoc.Venta.Moneda = oe_Moneda
 
@@ -616,19 +632,13 @@ Public Class frm_CanjeDocumentos
                 oeAsientoModelo.Equivale = 1 : oeAsientoModelo.IdMoneda = oe_Moneda.Id
 
                 If loAsientoModelo.Contains(oeAsientoModelo) Then
+                    '' Asiento Modelo
                     oeAsientoModelo = loAsientoModelo.Item(loAsientoModelo.IndexOf(oeAsientoModelo))
                     oeAsientoModelo.TipoOperacion = ""
                     oeAsientoModelo.Ejercicio = oeDoc.FechaEmision.Year
                     oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
-                    'For Each _oeDet In oeAsientoModelo.leDetalle
-                    '    oeCtaCtble = New e_CuentaContable
-                    '    oeCtaCtble.Cuenta = "12121" : oeCtaCtble.Equivale = 0
-                    '    If loCtaCtble.Contains(oeCtaCtble) Then
-                    '        oeCtaCtble = loCtaCtble.Item(loCtaCtble.IndexOf(oeCtaCtble))
-                    '        _oeDet.IdCuentaContable = oeCtaCtble.Id
-                    '    End If
-                    'Next
 
+                    '' Cuenta Corriente
                     oeCuentaCorriente = New e_CuentaCorriente
                     oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = oeDoc.IdClienteProveedor
                     oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
@@ -662,7 +672,7 @@ Public Class frm_CanjeDocumentos
                 End If
             End If
             If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & oeDoc.Serie & " - " & oeDoc.Numero & " ha sido Emitido", True)
-
+            ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
         End Try
@@ -709,13 +719,11 @@ Public Class frm_CanjeDocumentos
 
     Private Function fc_Guardar() As Boolean
         Try
+            ' ======================================================================================================================== >>>>>
             mt_LlenaObjeto()
             dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaDocumentoSeleccionados)
-            Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
-                Case Windows.Forms.DialogResult.Yes
-                    mt_EmitirDocumento(False)
-            End Select
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
         End Try
@@ -731,15 +739,70 @@ Public Class frm_CanjeDocumentos
     End Sub
 
     Private Sub cmbTipoDocumento_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoDocumento.ValueChanged
-        Select Case cmbTipoDocumento.Value
-            Case "1CH000000026"
-                txtSerie.Text = "F103" : cmb_Cliente.Focus()
-            Case "1CH000000002"
-                txtSerie.Text = "B103" : cmb_Cliente.Focus()
-        End Select
+        Try
+            ' ======================================================================================================================== >>>>>
+            Select Case cmbTipoDocumento.Value
+                Case "1CH000000026" : txtSerie.Text = "F103" : cmb_Cliente.Focus()
+                Case "1CH000000002" : txtSerie.Text = "B103" : cmb_Cliente.Focus()
+            End Select
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub tsb_Emitir_Click(sender As Object, e As EventArgs) Handles tsb_Emitir.Click
+        Try
+            ' ======================================================================================================================== >>>>>
+            If MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) Then
+                For Each Documento In ListaDocumentos
+                    If Documento.IndAnexo = True Then
+                        mt_EmitirDocumento(Documento.Id)
+                    End If
+                Next
+            End If
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            Throw ex
+        End Try
 
     End Sub
 
+    Private Sub mt_CalcularTotalOrden()
+        Try
+            ' ======================================================================================================================== >>>>>
+            Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0, IGV As Double = ObtenerIGV()
+            For Each Item In ListaDetalleSeleccionados
+                Item.Total = Item.Cantidad * Item.Precio
+                Item.Igv = Item.Total * IGV
+                Item.Subtotal = Item.Total - Item.Igv
+
+                SubTotal += Item.Subtotal
+                DescuentoTotal = 0
+                Total += Item.Total
+            Next
+            nud_SubTotal.Value = SubTotal
+            nud_Total.Value = Total
+            nud_Impuesto.Value = Total * IGV
+
+            DocumentoGenerado.SubTotal = nud_SubTotal.Value
+            DocumentoGenerado.IGV = nud_Impuesto.Value
+            DocumentoGenerado.Total = nud_Total.Value
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub udg_Detalles_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles udg_Detalles.InitializeLayout
+        udg_Detalles.UpdateData()
+        mt_CalcularTotalOrden()
+    End Sub
+
+    Private Sub udg_Detalles_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles udg_Detalles.AfterCellUpdate
+        udg_Detalles.UpdateData()
+        mt_CalcularTotalOrden()
+    End Sub
 
 #End Region
 
