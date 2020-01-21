@@ -28,9 +28,13 @@ Public Class e_GRR_Venta
     <DataMember()>
     Public Property Numero() As String
     <DataMember()>
+    Public Property TotalPeso() As Double
+    <DataMember()>
     Public Property IdVehiculo() As String
     <DataMember()>
     Public Property Vehiculo() As String
+    <DataMember()>
+    Public Property Marca() As String
     <DataMember()>
     Public Property MTCVehiculo() As String
     <DataMember()>
@@ -63,6 +67,8 @@ Public Class e_GRR_Venta
     <DataMember()>
     Public lo_GRRVenta_Detalle As List(Of e_GuiaRemisionRemitente_Detalle)
     <DataMember()>
+    Public oeReferenciaAsoc As New e_ReferenciaAsociada
+    <DataMember()>
     Public PrefijoID As String = ""
     <DataMember()>
     Public TipoOperacion As String = ""
@@ -81,8 +87,11 @@ Public Class e_GRR_Venta
         FechaTraslado = Date.Parse("01/01/1901")
         Serie = String.Empty
         Numero = String.Empty
+        TotalPeso = 0
         IdVehiculo = String.Empty
         Vehiculo = String.Empty
+        Marca = String.Empty
+        MTCVehiculo = String.Empty
         IdCarreta = String.Empty
         Carreta = String.Empty
         IdChofer = String.Empty

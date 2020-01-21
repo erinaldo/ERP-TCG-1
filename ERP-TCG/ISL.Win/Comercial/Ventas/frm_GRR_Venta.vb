@@ -118,10 +118,11 @@ Public Class frm_GRR_Venta
 
     Public Overrides Sub Nuevo()
         Try
-            gmt_MostrarTabs(1, ficGuiaRR, 1)
-            mt_Inicializar()
-            Operacion = "Nuevo"
-            mt_ControlBotoneria()
+            'gmt_MostrarTabs(1, ficGuiaRR, 1)
+            'mt_Inicializar()
+            'Operacion = "Nuevo"
+            'mt_ControlBotoneria()
+            'cmb_Cliente.Focus()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -130,31 +131,12 @@ Public Class frm_GRR_Venta
     Public Overrides Sub Editar()
         Try
             If griDocumento.Selected.Rows.Count > 0 Then
-                If griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ANULADO" Then
-                    Throw New Exception("No se puede Visualizar, El documento está anulado")
-                Else
-                    If griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ATENDIDO" Then
-                        mt_Inicializar()
-                        mt_Mostrar()
-                        gmt_MostrarTabs(1, ficGuiaRR, 1)
-                        Operacion = "Editar"
-                        mt_ControlBotoneria()
-                        UltraGroupBox6.Enabled = False
-                        txtLlegada.ReadOnly = True
-                        txtPartida.ReadOnly = True
-                        txtSerie.ReadOnly = True
-                        txtNumero.ReadOnly = True
-                        cmbMotivoTraslado.ReadOnly = True
-                        gmt_ControlBoton(0, 0, 0, 0, 1, 0, 0, 0)
-                    Else
-                        mt_Inicializar()
-                        mt_Mostrar()
-                        gmt_MostrarTabs(1, ficGuiaRR, 1)
-                        Operacion = "Editar"
-                        mt_ControlBotoneria()
-                    End If
-
-                End If
+                mt_Inicializar()
+                mt_Mostrar()
+                gmt_MostrarTabs(1, ficGuiaRR, 1)
+                Operacion = "Editar"
+                mt_ControlBotoneria()
+                gmt_ControlBoton(0, 0, 0, 0, 1, 0, 0, 0)
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -322,7 +304,7 @@ Public Class frm_GRR_Venta
     'End Sub
 
     'Private Sub txtSerieD_Validated(sender As Object, e As EventArgs) Handles txtSerieD.Validated
-    '    txtSerieD.Text = gmt_FormatoDocumento(txtSerieD.Text, 4)
+    '    txtSerieD.Text = FormatoDocumento(txtSerieD.Text, 4)
     'End Sub
 
     'Private Sub txtSerieD_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerieD.KeyPress
@@ -462,7 +444,6 @@ Public Class frm_GRR_Venta
                 gmt_ComboEspecifico(cmbVehiculo, loVehiculo.Where(Function(i) i.Id <> "" And i.Motriz = 1).OrderBy(Function(y) y.Placa).ToList, -1, "Placa")
                 gmt_ComboEspecifico(cboCarreta, loCarreta.Where(Function(i) i.Id <> "" And i.Motriz = 0).OrderBy(Function(y) y.Placa).ToList, -1, "Placa")
                 cboChofer.DataSource = PilotoPublic
-
             Else
                 cmbVehiculo.DataSource = Nothing
                 cmbVehiculo.Text = String.Empty
@@ -536,6 +517,9 @@ Public Class frm_GRR_Venta
                 .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
                 .DisplayLayout.Override.FilterUIProvider = UltraGridFilterUIProvider1
                 .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
+                .DisplayLayout.Override.BorderStyleCell = UIElementBorderStyle.Dotted
+                .DisplayLayout.Override.BorderStyleRow = UIElementBorderStyle.Dotted
+
                 ConfiguraGrilla(griDocumento, "Tahoma", False, UIElementBorderStyle.Default)
                 For i As Integer = griDocumento.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
                     griDocumento.DisplayLayout.Bands(0).Columns(i).Hidden = True
@@ -577,6 +561,8 @@ Public Class frm_GRR_Venta
                 .DisplayLayout.Override.FilterUIType = FilterUIType.FilterRow
                 .DisplayLayout.Override.FilterUIProvider = UltraGridFilterUIProvider1
                 .DisplayLayout.Override.FilterOperatorDefaultValue = FilterOperatorDefaultValue.Contains
+                .DisplayLayout.Override.BorderStyleCell = UIElementBorderStyle.Dotted
+                .DisplayLayout.Override.BorderStyleRow = UIElementBorderStyle.Dotted
                 ConfiguraGrilla(griDetalleDocumento, "Tahoma", False, UIElementBorderStyle.Default)
                 For i As Integer = griDetalleDocumento.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
                     griDetalleDocumento.DisplayLayout.Bands(0).Columns(i).Hidden = True
@@ -594,6 +580,7 @@ Public Class frm_GRR_Venta
                     .Columns("IdUnidadMedida").Hidden = False
                     .Columns("IdUnidadMedida").Width = 120
                     .Columns("IdUnidadMedida").Header.VisiblePosition = 2
+                    .Columns("IdUnidadMedida").Header.Caption = "UMedida"
                     .Columns("Cantidad").Hidden = False
                     .Columns("Cantidad").Width = 130
                     .Columns("Cantidad").Header.VisiblePosition = 3
@@ -613,58 +600,47 @@ Public Class frm_GRR_Venta
     Private Sub mt_Inicializar()
         'oeDocumento = New e_Documento
         oeGuiaRR = New e_GRR_Venta
-        'oeDetalleDocumento = New e_DetalleDocumento
-        'loDetalleDocumento = New List(Of e_DetalleDocumento)
-        'griDetalleDocumento.DataSource = loDetalleDocumento
+
         oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
         loGuiaRRDetalle = New List(Of e_GuiaRemisionRemitente_Detalle)
         griDetalleDocumento.DataSource = loGuiaRRDetalle
-        'oeOrdenDocumento = New e_OrdenDocumento
-        'loOrdenDocumento = New List(Of e_OrdenDocumento)
-        'loEmpresa = New List(Of e_Empresa)
-        'txtProveedor.Text = String.Empty
-        'txtProveedor.Tag = String.Empty
+        cmb_Cliente.DataSource = Nothing
+        cmb_Cliente.Text = String.Empty
+
         txtSerie.Text = String.Empty
         txtNumero.Text = String.Empty
         cmbMotivoTraslado.SelectedIndex = -1
         dtpFechaDocumento.Value = Date.Now
-        txt_DocAsoc.Text = String.Empty
-        UltraGroupBox5.Enabled = True
-        txtLlegada.Text = String.Empty
-        txtPartida.Text = String.Empty
-        Me.txtMTC.Text = String.Empty
-        cboChofer.Text = ""
-        txtNroLicencia.Text = ""
+        dtp_FechaTraslado.Value = Date.Now
+
+        cboTransportista.DataSource = Nothing
+        cboTransportista.Text = String.Empty
         cmbVehiculo.SelectedIndex = -1
-        txtNroMTCC.Text = ""
-        cboCarreta.Text = ""
-        'txtPropietarioVehiculo.Text = ""
-        'txtPropietarioCarreta.Text = ""
-        'griDetalleDocumento.Enabled = True
-        UltraGroupBox3.Enabled = True
-        'gbeMateriales.Visible = False
-        'gbeMateriales.Expanded = True
-        UltraGroupBox6.Enabled = True
-        txtLlegada.ReadOnly = False
-        txtPartida.ReadOnly = False
-        txtSerie.ReadOnly = False
-        txtNumero.ReadOnly = False
-        btnAgregarOs.Enabled = True
-        btnQuitarOs.Enabled = True
-        'btnAgregarD.Enabled = False
-        'btnQuitarD.Enabled = False
-        btnAgregarOv.Enabled = False
-        BtnQuitarOv.Enabled = False
-        cmbMotivoTraslado.ReadOnly = False
+        cmbVehiculo.Text = String.Empty
+        txtMarcaVehiculo.Text = String.Empty
+        txtMTC.Text = String.Empty
+
+        cboCarreta.SelectedIndex = -1
+        cboCarreta.Text = String.Empty
+
+        cboChofer.DataSource = Nothing
+        cboChofer.Text = String.Empty
+
+        txtNroLicencia.Text = String.Empty
+        txt_DocAsoc.Text = String.Empty
+
+
+        une_Peso.Value = 0
+
+
+        cboPuntoLlegada.SelectedIndex = -1
+        txtLlegada.Text = String.Empty
+        cboPuntoPartida.SelectedIndex = -1
+        txtPartida.Text = String.Empty
+
+
         griDetalleDocumento.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False
-        'mt_HabilitarGrilla(True)
-        'mt_VisibilidadDetalles()
-        'loOrdenDocumento = New List(Of e_OrdenDocumento)
-        '  loDetalleDocumento = New List(Of e_DetalleDocumento)
-        'loOrdenSalida = New List(Of e_Orden)
-        'griOrdenSalida.DataSource = loOrdenSalida
-        'griDetalleDocumento.DataSource = loDetalleDocumento
-        'griOrdenDocumento.DataSource = loOrdenDocumento
+
     End Sub
 
     Private Sub mt_ControlBotoneria()
@@ -776,17 +752,7 @@ Public Class frm_GRR_Venta
                 oeGuiaRR.Numero = FormatoDocumento(txtNroDoc.Text, 8)
             End If
             griDocumento.DataSource = olGuiaRR.Listar(oeGuiaRR)
-            'fc_Grias()
-            'For Each fila As UltraGridRow In griDocumento.Rows
-            '    Select Case fila.Cells("Estado").Value
-            '        Case "GENERADO"
-            '            fila.CellAppearance.BackColor = Me.colorGenerado.Color
-            '        Case "ANULADO"
-            '            fila.CellAppearance.BackColor = Me.colorAnulado.Color
-            '        Case "ATENDIDO"
-            '            fila.CellAppearance.BackColor = Me.ColorAtendido.Color
-            '    End Select
-            'Next
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -794,48 +760,6 @@ Public Class frm_GRR_Venta
 
 
 #End Region
-
-
-
-
-    '    Private Sub griAlmacenMaterial_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.AfterCellUpdate
-    '        Try
-    '            Select Case e.Cell.Column.Key
-    '                Case "Seleccion"
-    '                    With griAlmacenMaterial.DisplayLayout.Bands(0).Layout.ActiveRow
-    '                        If .Cells("Seleccion").Value Then
-    '                            .Appearance.BackColor = Color.Yellow
-    '                            .Appearance.ForeColor = Color.Red
-    '                        Else
-    '                            .Appearance.BackColor = Color.White
-    '                            .Appearance.ForeColor = Color.Black
-    '                        End If
-    '                    End With
-    '            End Select
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
-
-    '    Private Sub griAlmacenMaterial_CellChange(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.CellChange
-    '        Try
-    '            griAlmacenMaterial.UpdateData()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub griAlmacenMaterial_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griAlmacenMaterial.BeforeRowsDeleted
-    '        e.Cancel = True
-    '    End Sub
-
-    '    Private Sub griAlmacenMaterial_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles griAlmacenMaterial.InitializeLayout
-    '        With griAlmacenMaterial
-    '            .DisplayLayout.Bands(0).SortedColumns.Add("CodigoMaterial", False, True)
-    '            .DisplayLayout.GroupByBox.Hidden = True
-    '            .DisplayLayout.GroupByBox.Style = GroupByBoxStyle.Compact
-    '        End With
-    '    End Sub
 
     '    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
     '        Try
@@ -1114,109 +1038,61 @@ Public Class frm_GRR_Venta
     '    End Sub
     '#End Region
 
-    '#Region "Metodos"
-
-
     Private Sub mt_Mostrar()
         Try
             oeGuiaRR = New e_GRR_Venta
-            'loOrdenDocumento = New List(Of e_OrdenDocumento)
+            oeGuiaRR.TipoOperacion = ""
             oeGuiaRR.Id = griDocumento.ActiveRow.Cells("Id").Value
             oeGuiaRR = olGuiaRR.Obtener(oeGuiaRR)
 
             gmt_ListarEmpresa("6", cmb_Cliente, oeGuiaRR.IdCliente, False)
-
             cmb_Cliente.Value = oeGuiaRR.IdCliente
 
-
-            'txtProveedor.Text = oeGuiaRR.Proveedor
-            'txtProveedor.Tag = oeGuiaRR.IdClienteProveedor
             txtSerie.Text = oeGuiaRR.Serie
             txtNumero.Text = oeGuiaRR.Numero
-            cmbMotivoTraslado.Value = oeGuiaRR.IdMotivoTraslado
-            'txtLlegada.Text = oeGuiaRR.Destino
-            txtPartida.Text = oeGuiaRR.Partida
-            cmbVehiculo.Value = oeGuiaRR.IdVehiculo
-            cboCarreta.Value = oeGuiaRR.IdCarreta
-            'gmt_ListarChoferes("", cboChofer, oeGuiaRR.IdChofer)
-            cboChofer.Value = oeGuiaRR.IdChofer
             dtpFechaDocumento.Value = oeGuiaRR.Fecha
+            dtp_FechaTraslado.Value = oeGuiaRR.FechaTraslado
+
+            gmt_ListarEmpresa("6", cboTransportista, oeGuiaRR.IdTransportista, False)
+            cboTransportista.Value = oeGuiaRR.IdTransportista
+
+            cmbMotivoTraslado.Value = oeGuiaRR.IdMotivoTraslado
+
+            If oeGuiaRR.IdTransportista = gs_IdClienteProveedorSistema Then
+                cboCarreta.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
+                cmbVehiculo.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
+                cboChofer.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
+                gmt_ComboEspecifico(cmbVehiculo, loVehiculo.Where(Function(i) i.Id <> "" And i.Motriz = 1).OrderBy(Function(y) y.Placa).ToList, -1, "Placa")
+                gmt_ComboEspecifico(cboCarreta, loCarreta.Where(Function(i) i.Id <> "" And i.Motriz = 0).OrderBy(Function(y) y.Placa).ToList, -1, "Placa")
+                cboChofer.DataSource = PilotoPublic
+                cmbVehiculo.Value = oeGuiaRR.IdVehiculo
+                cboCarreta.Value = oeGuiaRR.IdCarreta
+                cboChofer.Value = oeGuiaRR.IdChofer
+            Else
+                cmbVehiculo.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never
+                cboCarreta.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never
+                cboChofer.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Never
+                cmbVehiculo.Text = oeGuiaRR.Vehiculo
+                cboCarreta.Text = oeGuiaRR.Carreta
+                cboChofer.Text = oeGuiaRR.Chofer
+            End If
+
+            txtMTC.Text = oeGuiaRR.MTCVehiculo
+            txtMarcaVehiculo.Text = oeGuiaRR.Marca
+            txtNroLicencia.Text = oeGuiaRR.Brevete
+            une_Peso.Value = oeGuiaRR.TotalPeso
+
+            cboPuntoPartida.Value = oeGuiaRR.IdPartida
+            txtPartida.Text = oeGuiaRR.Partida
+            cboPuntoLlegada.Value = oeGuiaRR.IdDestino
+            txtLlegada.Text = oeGuiaRR.Destino
+
+            loGuiaRRDetalle = olGuiaRRDetalle.Listar(New e_GuiaRemisionRemitente_Detalle With {.IdGRR_Venta = oeGuiaRR.Id})
 
             griDetalleDocumento.DataSource = loGuiaRRDetalle
-            oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
-            oeGuiaRRDetalle.IdGRR_Venta = oeGuiaRR.Id
-            loGuiaRRDetalle = New List(Of e_GuiaRemisionRemitente_Detalle)
-            olGuiaRRDetalle = New l_GuiaRemisionRemitente_Detalle
-            ''Obtenemos las listas
 
-            loGuiaRRDetalle = olGuiaRRDetalle.Listar(oeGuiaRRDetalle)
-            'loGuiaRRDetalle.AddRange(olGuiaRRDetalle.Listar(oeGuiaRRDetalle))
-            griDetalleDocumento.DataSource = loGuiaRRDetalle
-            griDetalleDocumento.DataBind()
             mt_CombosGrilla()
-            'fc_Grias()
-            'mt_CargarDirecciones()
-            cboPuntoLlegada.Text = oeGuiaRR.Destino
-            chkAsociar.Visible = False
-            'oeDocumento.Id = griDocumento.ActiveRow.Cells("Id").Value
-            'oeDocumento = olDocumento.Obtener(oeDocumento)
-            'oeDocumento.oeGuiaRR = New e_GRR_Venta
-            'olGuiaRR = New l_GuiaRR
-            ' '' ''oeDocumento.oeGuiaRR.IdDocumento = oeDocumento.Id
-            'oeDocumento.oeGuiaRR = olGuiaRR.Obtener(oeDocumento.oeGuiaRR)
-            'txtProveedor.Text = oeDocumento.ClienteProveedor
-            'txtProveedor.Tag = oeDocumento.IdClienteProveedor
-            'txtSerie.Text = oeDocumento.Serie
-            'txtNumero.Text = oeDocumento.Numero
-            'cmbMotivoTraslado.Value = oeDocumento.IdMotivoTraslado
-            'txtLlegada.Text = oeDocumento.oeGuiaRR.Destino
-            'txtPartida.Text = oeDocumento.oeGuiaRR.Partida
-            'cmbVehiculo.Value = oeDocumento.oeGuiaRR.IdVehiculo
-            'cboCarreta.Value = oeDocumento.oeGuiaRR.IdCarreta
-            'gmt_ListarChoferes("", cboChofer, oeDocumento.oeGuiaRR.IdChofer)
-            'cboChofer.Value = oeDocumento.oeGuiaRR.IdChofer
-            'dtpFechaDocumento.Value = oeDocumento.FechaEmision
 
-            'Mostramos la Orden Salida
-            'oeOrdenDocumento = New e_OrdenDocumento
-            'loOrdenDocumento = New List(Of e_OrdenDocumento)
-            'oeOrdenDocumento.TipoOperacion = "4"
-            'oeOrdenDocumento.IdDocumento = oeGuiaRR.Id
-            'oeOrdenDocumento.TipoExistencia = 1
-            'oeOrdenDocumento.TipoOrden = 1
-            'oeOrdenDocumento.IdTipoDocumento = "1CIX009"
-            'loOrdenDocumento.AddRange(olOrdenDocumento.Listar(oeOrdenDocumento))
-
-            'If loOrdenDocumento.Count > 0 Then
-            '    loOrdenDocumento(0).NombreTipo = "ORDEN SALIDA"
-            '    griOrdenSalida.DataSource = loOrdenDocumento
-            '    gmt_OcultarColumna(griOrdenSalida, True, "IdDocumento", "IdTipoDocumento", "Fecha", "IdOrden", "TipoOrden", "TipoExistencia")
-            '    mt_CargarOrden_OrdenComercial()
-            'End If
-            btnAgregarD.Enabled = False
-            btnQuitarD.Enabled = False
-            btnAgregarOv.Enabled = False
-            BtnQuitarOv.Enabled = False
-            btnAgregarOs.Enabled = False
-            btnQuitarOs.Enabled = False
-
-
-            'oeDetalleDocumento = New e_DetalleDocumento
-            '' '' ''  oeDetalleDocumento.IdDocumento = oeDocumento.Id
-            ' oeDetalleDocumento.IdEmpresaSis = gstrIdEmpresaSis
-            ' oeDetalleDocumento.IdSucursal = gstrIdSucursal
-            'loDetalleDocumento.AddRange(olDetalleDocumento.Listar(oeDetalleDocumento))
-            ' griDetalleDocumento.DataSource = loDetalleDocumento
-
-
-            ' '' ''If oeDocumento.Estado = "TERMINADO" Then
-            ' '' ''    gbeMateriales.Visible = False
-            ' '' ''    UltraGroupBox5.Enabled = False
-            ' '' ''End If
-            ' '' ''If oeDocumento.TipoReferencia <> 0 Then
-            ' '' ''    gbeMateriales.Visible = False
-            ' '' ''    UltraGroupBox5.Enabled = False
-            ' '' ''End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -1224,7 +1100,9 @@ Public Class frm_GRR_Venta
 
     Public Sub mt_CargarOrden_OrdenVenta(OrdenVenta As e_OrdenVenta)
         Try
+            Dim TotalPeso As Double = 0
             olCombo = New l_Combo
+            mt_Inicializar()
             gmt_MostrarTabs(1, ficGuiaRR, 1)
             gmt_ListarEmpresa("6", cmb_Cliente, OrdenVenta.IdEmpresa, False)
             cmb_Cliente.Value = OrdenVenta.IdEmpresa
@@ -1237,6 +1115,7 @@ Public Class frm_GRR_Venta
             For Each detalle In lo_OrdenVentaMaterial
                 oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
                 With oeGuiaRRDetalle
+                    .TipoOperacion = "I"
                     .IdEmpresaSis = gs_IdEmpresaSistema
                     .IdSucursal = gs_IdSucursal
                     .PrefijoID = gs_PrefijoIdSucursal
@@ -1246,12 +1125,16 @@ Public Class frm_GRR_Venta
                     .IdUnidadMedida = detalle.IdUnidadMedida
                     .Cantidad = detalle.Cantidad
                     .Peso = detalle.CantidadReal
+                    .UsuarioCrea = gUsuarioSGI.Id
                 End With
+                TotalPeso += oeGuiaRRDetalle.Peso
                 loGuiaRRDetalle.Add(oeGuiaRRDetalle)
             Next
 
             griDetalleDocumento.DataSource = loGuiaRRDetalle
             griDetalleDocumento.DataBind()
+
+            une_Peso.Value = TotalPeso
 
             mt_CombosGrilla()
 
@@ -1259,10 +1142,15 @@ Public Class frm_GRR_Venta
             oeRefAsoc.TipoOperacion = "I"
             oeRefAsoc.PrefijoID = gs_PrefijoIdSucursal
             oeRefAsoc.IdTablaPrincipal = OrdenVenta.Id
-            oeRefAsoc.TipoRelacion = 2
+            oeRefAsoc.TipoRelacion = 1
+            oeRefAsoc.Glosa = "ORDENVENTA_GRR"
+            oeRefAsoc.UsuarioCreacion = gUsuarioSGI.Id
+
+            Operacion = "Nuevo"
+            oeGuiaRR = New e_GRR_Venta
+            mt_ControlBotoneria()
 
             cmb_Cliente.Focus()
-            Operacion = "Nuevo"
         Catch ex As Exception
             Throw ex
         End Try
@@ -1363,15 +1251,19 @@ Public Class frm_GRR_Venta
                         .Carreta = cboCarreta.Text
                         .Chofer = cboChofer.Text
                     End If
-
-
+                    .Brevete = txtNroLicencia.Text
+                    .Marca = txtMarcaVehiculo.Text
+                    .TotalPeso = loGuiaRRDetalle.Sum(Function(i) i.Peso)
+                    .MTCVehiculo = txtMTC.Text
                     .IdPartida = cboPuntoPartida.Value
                     .Partida = txtPartida.Text
                     .IdDestino = cboPuntoLlegada.Value
-                    .Destino = cboPuntoLlegada.Text
+                    .Destino = txtLlegada.Text
                     .UsuarioCrea = gUsuarioSGI.Id
                     .lo_GRRVenta_Detalle = New List(Of e_GuiaRemisionRemitente_Detalle)
                     .lo_GRRVenta_Detalle = loGuiaRRDetalle
+
+                    .oeReferenciaAsoc = oeRefAsoc
                 End With
             End If
 
@@ -1396,7 +1288,8 @@ Public Class frm_GRR_Venta
             If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             If cboTransportista.SelectedRow Is Nothing Then Throw New Exception("Seleccione Transporista")
             If txtMTC.Text.Trim = String.Empty Then Throw New Exception("Ingrese MTC del Tracto")
-            If txtNroMTCC.Text.Trim = String.Empty Then Throw New Exception("Ingrese MTC de la Carreta")
+            If txtMarcaVehiculo.Text.Trim = String.Empty Then Throw New Exception("Ingrese Marca del Vehiculo")
+            'If txtNroMTCC.Text.Trim = String.Empty Then Throw New Exception("Ingrese MTC de la Carreta")
             If cboPuntoPartida.SelectedIndex = -1 Then Throw New Exception("Seleccione Partida")
             If cboPuntoLlegada.SelectedIndex = -1 Then Throw New Exception("Seleccione Llegada")
             If txtPartida.Text.Trim = String.Empty Then Throw New Exception("Ingrese Partida")
@@ -1411,6 +1304,8 @@ Public Class frm_GRR_Venta
                 If cboCarreta.Text.Trim = String.Empty Then Throw New Exception("Ingrese Carreta")
                 If cboChofer.Text.Trim = String.Empty Then Throw New Exception("Ingrese Conductor")
             End If
+            If loGuiaRRDetalle.Sum(Function(i) i.Peso) = 0 Then Throw New Exception("El Peso No Puede Ser 0.00")
+
         Catch ex As Exception
             Throw ex
         End Try
