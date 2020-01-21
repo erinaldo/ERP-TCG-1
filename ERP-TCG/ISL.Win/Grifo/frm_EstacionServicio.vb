@@ -264,6 +264,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
                     ItemDocumento.Precio = ItemVenta.PrecioUnitario
+                    ItemDocumento.Subtotal = ItemVenta.Cantidad * ItemVenta.PrecioUnitario
                     ItemDocumento.Total = ItemVenta.Cantidad * ItemVenta.PrecioUnitario
                     ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
@@ -862,7 +863,6 @@ Public Class frm_EstacionServicio
         grb_Combustible.Enabled = False
         nud_Kilometraje.Value = 0
 
-
         '' Valores Default
         mt_Cargar_TurnoActivo()
         FechaOrden = ObtenerFechaServidor()
@@ -965,9 +965,11 @@ Public Class frm_EstacionServicio
         If ListaDescuentos.Count > 0 Then
             For Each Item In ListaDescuentos
                 CanDescuento = IIf(swCredito, Item.DescuentoCredito, Item.DescuentoContado)
+                chk_HabilitarImporte.Enabled = False
             Next
         Else
             CanDescuento = 0
+            chk_HabilitarImporte.Enabled = True
         End If
         grb_Combustible.Text = "( " & Material_Combustible & " -> P. Normal S/ . " & PrecioNormal & " || Dscto x Galon: S/ . " & CanDescuento & " )"
         nud_Preciounitario.Value = PrecioNormal - CanDescuento
