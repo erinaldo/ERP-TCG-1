@@ -25,7 +25,7 @@ Public Class d_GuiaRemitente
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_GuiaRemitente
         Try
-            Dim oeGuiaRemitente = New e_GuiaRemitente( _
+            Dim oeGuiaRemitente = New e_GuiaRemitente(
                              o_fila("Id").ToString _
                              , o_fila("Serie").ToString _
                              , o_fila("Numero").ToString _
@@ -35,6 +35,10 @@ Public Class d_GuiaRemitente
                              , o_fila("Activo").ToString _
                              , o_fila("Viaje").ToString _
                              , o_fila("Glosa").ToString)
+            oeGuiaRemitente.NroOrden = o_fila("NroOrden").ToString
+            oeGuiaRemitente.NroPedido = o_fila("NroPedido").ToString
+            oeGuiaRemitente.Cantidad = o_fila("Cantidad").ToString
+            oeGuiaRemitente.PesoTM = o_fila("PesoTM").ToString
             Return oeGuiaRemitente
         Catch ex As Exception
             Throw ex
@@ -137,7 +141,11 @@ Public Class d_GuiaRemitente
                                             , .IdGuiaTransportista _
                                             , .Fecha _
                                             , .Activo _
-                                            , .Glosa)
+                                            , .Glosa _
+                                            , .NroOrden _
+                                            , .NroPedido _
+                                            , .Cantidad _
+                                            , .PesoTM)
             End With
             Return True
         Catch ex As Exception
