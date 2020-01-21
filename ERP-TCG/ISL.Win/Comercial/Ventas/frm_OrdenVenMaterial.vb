@@ -1288,10 +1288,10 @@ Public Class frm_OrdenVenMaterial
             With oeOrdenComercial
                 gmt_ListarEmpresa("6", cbgCliente, .IdEmpresa, False)
                 cbgCliente.Value = .IdEmpresa
-                If .IdEmpresaAlterna <> "" Then
-                    gmt_ListarEmpresa("6", cbgClienteAlterno, .IdEmpresaAlterna, False)
-                    cbgClienteAlterno.Value = .IdEmpresaAlterna
-                End If
+                'If .IdEmpresaAlterna <> "" Then
+                '    gmt_ListarEmpresa("6", cbgClienteAlterno, .IdEmpresaAlterna, False)
+                '    cbgClienteAlterno.Value = .IdEmpresaAlterna
+                'End If
                 cmbMoneda.Value = .IdMoneda
                 cboTipoPago.Value = .IdTipoPago
                 txtOrden.Text = .OrdenComercial
