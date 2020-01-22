@@ -312,6 +312,7 @@ Partial Class frm_CanjeDocumentos
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.fic_Canje = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.tsb_Eliminar = New System.Windows.Forms.ToolStripButton()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox2.SuspendLayout()
@@ -351,7 +352,7 @@ Partial Class frm_CanjeDocumentos
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.ToolStrip1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1219, 427)
         '
@@ -595,7 +596,7 @@ Partial Class frm_CanjeDocumentos
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_Canjear, Me.tsb_Emitir})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_Canjear, Me.tsb_Emitir, Me.tsb_Eliminar})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 82)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(1219, 25)
@@ -803,7 +804,7 @@ Partial Class frm_CanjeDocumentos
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1219, 427)
         '
@@ -1468,6 +1469,14 @@ Partial Class frm_CanjeDocumentos
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1219, 427)
         '
+        'tsb_Eliminar
+        '
+        Me.tsb_Eliminar.Image = Global.ISL.Win.My.Resources.Resources.back
+        Me.tsb_Eliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_Eliminar.Name = "tsb_Eliminar"
+        Me.tsb_Eliminar.Size = New System.Drawing.Size(70, 22)
+        Me.tsb_Eliminar.Text = "Eliminar"
+        '
         'frm_CanjeDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1565,4 +1574,5 @@ Partial Class frm_CanjeDocumentos
     Friend WithEvents UltraGroupBox6 As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents UltraGroupBox5 As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents tsb_Emitir As ToolStripButton
+    Friend WithEvents tsb_Eliminar As ToolStripButton
 End Class
