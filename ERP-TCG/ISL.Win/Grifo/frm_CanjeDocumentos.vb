@@ -2,7 +2,7 @@
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
-'' Add by Cess 21/01
+'' Add by Cess 22/02
 Public Class frm_CanjeDocumentos
     Inherits frm_MenuPadre
 
