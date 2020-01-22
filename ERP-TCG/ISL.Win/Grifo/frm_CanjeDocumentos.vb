@@ -830,7 +830,7 @@ Public Class frm_CanjeDocumentos
                     If MessageBox.Show("Esta seguro de eliminar el Documento: " & DocumentoCtble.Serie & "-" & DocumentoCtble.Numero & " ?",
                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         DocumentoCtble.TipoOperacion = "Y"
-                        dMovimientoDocumento.EliminarDocumentoVenta(DocumentoCtble)
+                        dMovimientoDocumento.EliminarDocumento(DocumentoCtble)
                         Consultar(True)
                     End If
                 Else
