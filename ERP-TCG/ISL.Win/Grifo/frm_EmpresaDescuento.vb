@@ -108,7 +108,7 @@ Public Class frm_EmpresaDescuento
     Public Overrides Sub Editar()
         Try
             Mostrar()
-            DESCUENTO.TipoOperacion = ""
+            DESCUENTO.TipoOperacion = "A"
             Operacion = "Editar"
             MyBase.Editar()
             DESCUENTO.Modificado = False
@@ -244,6 +244,10 @@ Public Class frm_EmpresaDescuento
         Try
             If udgDatos.ActiveRow.Cells("Id").Value.ToString.Length > 0 Then
                 Inicializar()
+                DESCUENTO = New e_EmpresaDescuento
+                DESCUENTO.Id = udgDatos.ActiveRow.Cells("Id").Value.ToString
+                DESCUENTO = d_EmpresaDescuento.Obtener(DESCUENTO)
+                gmt_ListarEmpresa("6", cbgCliente, String.Empty, chkRuc.Checked)
                 With DESCUENTO
                     cbgCliente.Value = .IdEmpresa
                     cboProducto.Value = .IdProducto
