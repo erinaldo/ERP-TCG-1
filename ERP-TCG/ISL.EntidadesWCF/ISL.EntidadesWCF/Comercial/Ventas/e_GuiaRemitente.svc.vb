@@ -37,6 +37,15 @@ Public Class e_GuiaRemitente
 
     Public Event DatoCambiado()
 
+    <DataMember()>
+    Public Property NroOrden As String = ""
+    <DataMember()>
+    Public Property NroPedido As String = ""
+    <DataMember()>
+    Public Property Cantidad As Decimal = 0
+    <DataMember()>
+    Public Property PesoTM As Decimal = 0
+
     <DataMember()> _
     Public Property Id() As String
         Get

@@ -12,6 +12,7 @@ Public Class d_GRR_Venta
                 , .Transportista = o_fila("Transportista").ToString, .IdCliente = o_fila("IdCliente").ToString, .Cliente = o_fila("Cliente").ToString _
                 , .Fecha = o_fila("Fecha").ToString, .FechaTraslado = o_fila("FechaTraslado").ToString, .Serie = o_fila("Serie").ToString _
                 , .Numero = o_fila("Numero").ToString, .IdVehiculo = o_fila("IdVehiculo").ToString, .Vehiculo = o_fila("Vehiculo").ToString _
+                , .TotalPeso = o_fila("TotalPeso"), .Marca = o_fila("MarcaVehiculo").ToString, .MTCVehiculo = o_fila("MTCVehiculo").ToString _
                 , .IdCarreta = o_fila("IdCarreta").ToString, .Carreta = o_fila("Carreta").ToString, .IdChofer = o_fila("IdChofer").ToString _
                 , .Chofer = o_fila("Chofer").ToString, .Brevete = o_fila("Brevete").ToString, .IdMotivoTraslado = o_fila("IdMotivoTraslado").ToString _
                 , .MotivoTraslado = o_fila("MotivoTraslado").ToString, .IdPartida = o_fila("IdPartida").ToString, .Partida = o_fila("Partida").ToString _
@@ -67,12 +68,13 @@ Public Class d_GRR_Venta
     Public Function Guardar(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean
         Try
             Dim od_GRRVenta_Detalle As New d_GuiaRemisionRemitente_Detalle
+            Dim od_RefAsoc As New d_ReferenciaAsociada
             Using transScope As New TransactionScope()
                 With oeGuiaRemitente
                     Dim stResultado() As String
                     stResultado = sqlhelper.ExecuteScalar("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
-                                          .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie, .Numero, .IdVehiculo, .Vehiculo,
-                                          .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
+                                          .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
+                                          .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
                                           .IdDestino, .Destino, .IdViaje, .UsuarioCrea).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each detalle In .lo_GRRVenta_Detalle
@@ -80,10 +82,13 @@ Public Class d_GRR_Venta
                         detalle.IdGRR_Venta = .Id
                         od_GRRVenta_Detalle.Guardar(detalle)
                     Next
+                    If .oeReferenciaAsoc.TipoOperacion = "I" Then
+                        .oeReferenciaAsoc.IdTablaAsociada = .Id
+                        od_RefAsoc.Guardar(.oeReferenciaAsoc)
+                    End If
                 End With
                 transScope.Complete()
             End Using
-
             Return True
         Catch ex As Exception
             Throw ex
