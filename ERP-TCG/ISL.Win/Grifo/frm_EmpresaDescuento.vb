@@ -160,8 +160,8 @@ Public Class frm_EmpresaDescuento
                 DESCUENTO.Id = udgDatos.ActiveRow.Cells("ID").Value
                 DESCUENTO = d_EmpresaDescuento.Obtener(DESCUENTO)
                 If DESCUENTO.Activo Then
-                    If MessageBox.Show("Desea eliminar el Almacen: " &
-                             udgDatos.ActiveRow.Cells("Nombre").Value.ToString & " ?",
+                    If MessageBox.Show("Desea eliminar el Descuento: " &
+                             udgDatos.ActiveRow.Cells("Empresa").Value.ToString & " ?",
                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         DESCUENTO.TipoOperacion = "E"
                         d_EmpresaDescuento.Eliminar(DESCUENTO)
