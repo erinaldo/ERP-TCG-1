@@ -2,15 +2,15 @@
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
+'' Add by Cess
 Public Class frm_CanjeDocumentos
     Inherits frm_MenuPadre
 
 #Region "Inicializacion del Formulario"
 
     Public Sub New()
-        'Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()
-        'Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
     End Sub
 
     Private Shared instancia As frm_CanjeDocumentos = Nothing
