@@ -2,7 +2,7 @@
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
-'' Add by Cess
+'' Add by Cess 21/01
 Public Class frm_CanjeDocumentos
     Inherits frm_MenuPadre
 
@@ -335,7 +335,7 @@ Public Class frm_CanjeDocumentos
                     Seleccionados += 1
                     ListaDocumentoSeleccionados.Add(Documento)
                     Dim ListaDetalle As New List(Of e_DetalleDocumento)
-                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
                     For Each Item In ListaDetalle
                         Item.Id = ""
                         Item.IdOperacionDetalle = Documento.Id 'Guarda el IDDocumento de origen
