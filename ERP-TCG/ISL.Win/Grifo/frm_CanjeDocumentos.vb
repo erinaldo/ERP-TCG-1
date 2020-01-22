@@ -270,7 +270,7 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_Listar()
         Try
-            'If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
+            If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
             Documento = New e_MovimientoDocumento
             Documento.IdTipoDocumento = "GCH000000001"
             Documento.TipoOperacion = "CXD"
@@ -531,6 +531,7 @@ Public Class frm_CanjeDocumentos
                 .Serie = txtSerie.Text
                 .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
                 .IdEstadoDocumento = "1CH00014"
+                .EstadoDocumento = "GENERADA"
                 .IdTipoDocumento = cmbTipoDocumento.Value
                 .IdPeriodo = ""
                 .IdMoneda = "1CH01"
