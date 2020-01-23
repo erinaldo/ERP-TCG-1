@@ -819,6 +819,8 @@ Module m_Funciones
     Public TipoAccidentePublic As List(Of e_Combo)
 
     Public UnidadMedidaPublic As List(Of e_Combo)
+    Public DireccionClienteProveedorPublic As List(Of e_Combo)
+
 
     Private olCombo As l_Combo
     Private oeCombo As e_Combo
@@ -927,6 +929,10 @@ Module m_Funciones
         oeCombo = New e_Combo
         oeCombo.Nombre = "UMedida"
         UnidadMedidaPublic = olCombo.Listar(oeCombo)
+
+        oeCombo = New e_Combo
+        oeCombo.Nombre = "DireccionEmpresaFiscal"
+        DireccionClienteProveedorPublic = olCombo.Listar(oeCombo)
 
         oeCombo = New e_Combo
         oeCombo.Nombre = "Piloto"
