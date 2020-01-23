@@ -137,7 +137,7 @@
         <Top>5.89201cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.24211cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -156,7 +156,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>VEND</Value>
+                <Value>Vendedor:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -167,10 +167,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.35668cm</Top>
-        <Left>0.96166cm</Left>
+        <Top>16.40418cm</Top>
+        <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>0.828cm</Width>
+        <Width>1.44611cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -201,10 +201,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.48312cm</Top>
+        <Top>6.34201cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.24211cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -235,7 +235,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.10951cm</Top>
+        <Top>6.79201cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>1.21606cm</Width>
@@ -269,7 +269,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.67423cm</Top>
+        <Top>7.35673cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>1.21606cm</Width>
@@ -285,10 +285,10 @@
         </Style>
       </Textbox>
       <Line Name="Line4">
-        <Top>14.74012cm</Top>
-        <Left>0.23051cm</Left>
+        <Top>13.78762cm</Top>
+        <Left>1.86022cm</Left>
         <Height>0cm</Height>
-        <Width>7.03233cm</Width>
+        <Width>5.56776cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -314,7 +314,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.35364cm</Top>
+        <Top>11.40114cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>0.78245cm</Width>
@@ -421,10 +421,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>5.89201cm</Top>
-        <Left>1.55961cm</Left>
+        <Top>5.90062cm</Top>
+        <Left>1.58566cm</Left>
         <Height>0.45cm</Height>
-        <Width>3.10677cm</Width>
+        <Width>3.32766cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -454,10 +454,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Trabajador</rd:DefaultName>
-        <Top>17.35668cm</Top>
+        <Top>16.40418cm</Top>
         <Left>1.86022cm</Left>
         <Height>0.45cm</Height>
-        <Width>3.61462cm</Width>
+        <Width>5.56776cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -487,8 +487,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>6.5184cm</Top>
-        <Left>1.55961cm</Left>
+        <Top>6.34201cm</Top>
+        <Left>1.58566cm</Left>
         <Height>0.45cm</Height>
         <Width>5.81627cm</Width>
         <ZIndex>14</ZIndex>
@@ -520,9 +520,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>7.10951cm</Top>
+        <Top>6.79201cm</Top>
         <Left>1.55961cm</Left>
-        <Height>0.69694cm</Height>
+        <Height>0.56472cm</Height>
         <Width>5.81627cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
@@ -553,7 +553,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>7.70062cm</Top>
+        <Top>7.38312cm</Top>
         <Left>1.55961cm</Left>
         <Height>0.42361cm</Height>
         <Width>1.76027cm</Width>
@@ -586,7 +586,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
-        <Top>12.35364cm</Top>
+        <Top>11.40114cm</Top>
         <Left>1.10075cm</Left>
         <Height>0.45cm</Height>
         <Width>6.30118cm</Width>
@@ -622,10 +622,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>10.65086cm</Top>
-        <Left>4.90193cm</Left>
+        <Top>9.69836cm</Top>
+        <Left>5.68327cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.5cm</Width>
+        <Width>1.74471cm</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -658,10 +658,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV</rd:DefaultName>
-        <Top>11.17142cm</Top>
-        <Left>4.90193cm</Left>
+        <Top>10.14836cm</Top>
+        <Left>5.68327cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.5cm</Width>
+        <Width>1.74471cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -694,10 +694,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total1</rd:DefaultName>
-        <Top>11.72725cm</Top>
-        <Left>4.90193cm</Left>
+        <Top>10.59836cm</Top>
+        <Left>5.68327cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.5cm</Width>
+        <Width>1.74471cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -716,7 +716,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. GRAVADA</Value>
+                <Value>SUB TOTAL:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -730,10 +730,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>10.68614cm</Top>
-        <Left>2.45014cm</Left>
+        <Top>9.69836cm</Top>
+        <Left>3.35515cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.32812cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -752,7 +752,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IGV 18.00%</Value>
+                <Value>IGV 18 %:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -766,10 +766,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.2067cm</Top>
-        <Left>2.45014cm</Left>
+        <Top>10.14836cm</Top>
+        <Left>3.35515cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.32812cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -788,7 +788,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IMPORTE TOTAL</Value>
+                <Value> TOTAL A COBRAR:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -802,10 +802,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.72725cm</Top>
-        <Left>2.45014cm</Left>
+        <Top>10.59836cm</Top>
+        <Left>3.176cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.50727cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -918,9 +918,9 @@
       </Textbox>
       <Line Name="Line5">
         <Top>5.72423cm</Top>
-        <Left>0.39565cm</Left>
+        <Left>0.34355cm</Left>
         <Height>0cm</Height>
-        <Width>7.00628cm</Width>
+        <Width>7.08443cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -947,7 +947,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.67423cm</Top>
+        <Top>7.35673cm</Top>
         <Left>3.35515cm</Left>
         <Height>0.45cm</Height>
         <Width>0.85637cm</Width>
@@ -980,10 +980,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Placa</rd:DefaultName>
-        <Top>7.67423cm</Top>
+        <Top>7.35673cm</Top>
         <Left>4.21153cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.11897cm</Width>
+        <Width>1.47174cm</Width>
         <ZIndex>28</ZIndex>
         <Style>
           <Border>
@@ -1013,10 +1013,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Turno</rd:DefaultName>
-        <Top>5.89201cm</Top>
-        <Left>4.77221cm</Left>
+        <Top>5.90062cm</Top>
+        <Left>4.91332cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.30305cm</Width>
+        <Width>1.47944cm</Width>
         <ZIndex>29</ZIndex>
         <Style>
           <Border>
@@ -1415,7 +1415,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>9.27447cm</Top>
+        <Top>8.00447cm</Top>
         <Left>0.3696cm</Left>
         <Height>1.0148cm</Height>
         <Width>7.03233cm</Width>
@@ -1433,7 +1433,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PILOTO</Value>
+                <Value>Conductor:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1446,7 +1446,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.91651cm</Top>
+        <Top>13.96401cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>1.5331cm</Width>
@@ -1468,7 +1468,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OBSERVACION</Value>
+                <Value>Obervacion:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1481,10 +1481,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.94475cm</Top>
+        <Top>11.99225cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.85868cm</Width>
+        <Width>1.67421cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -1516,10 +1516,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>18.77168cm</Top>
-        <Left>0.39565cm</Left>
-        <Height>0.45cm</Height>
-        <Width>7.00628cm</Width>
+        <Top>17.66043cm</Top>
+        <Left>0.25656cm</Left>
+        <Height>0.43589cm</Height>
+        <Width>7.17142cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -1550,9 +1550,9 @@
         </Paragraphs>
         <rd:DefaultName>Lado</rd:DefaultName>
         <Top>5.89201cm</Top>
-        <Left>6.18785cm</Left>
+        <Left>6.42804cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.18803cm</Width>
+        <Width>0.97389cm</Width>
         <ZIndex>34</ZIndex>
         <Style>
           <Border>
@@ -1582,10 +1582,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Piloto</rd:DefaultName>
-        <Top>14.91651cm</Top>
+        <Top>13.96401cm</Top>
         <Left>1.86022cm</Left>
         <Height>0.45cm</Height>
-        <Width>5.37657cm</Width>
+        <Width>5.56776cm</Width>
         <ZIndex>35</ZIndex>
         <Style>
           <Border>
@@ -1615,10 +1615,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Kilometraje</rd:DefaultName>
-        <Top>7.66534cm</Top>
-        <Left>6.07279cm</Left>
+        <Top>7.34784cm</Top>
+        <Left>6.42804cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.32914cm</Width>
+        <Width>0.97389cm</Width>
         <ZIndex>36</ZIndex>
         <Style>
           <Border>
@@ -1649,8 +1649,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.66534cm</Top>
-        <Left>5.36577cm</Left>
+        <Top>7.34784cm</Top>
+        <Left>5.68327cm</Left>
         <Height>0.45cm</Height>
         <Width>0.68097cm</Width>
         <ZIndex>37</ZIndex>
@@ -1665,10 +1665,10 @@
         </Style>
       </Textbox>
       <Line Name="Line6">
-        <Top>17.25084cm</Top>
-        <Left>0.25656cm</Left>
+        <Top>16.29834cm</Top>
+        <Left>1.86022cm</Left>
         <Height>0cm</Height>
-        <Width>7.03233cm</Width>
+        <Width>5.56776cm</Width>
         <ZIndex>38</ZIndex>
         <Style>
           <Border>
@@ -1694,10 +1694,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>12.94475cm</Top>
-        <Left>2.45014cm</Left>
+        <Top>11.99225cm</Top>
+        <Left>1.96605cm</Left>
         <Height>0.45cm</Height>
-        <Width>4.95179cm</Width>
+        <Width>5.43588cm</Width>
         <ZIndex>39</ZIndex>
         <Style>
           <Border>
@@ -1716,7 +1716,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DNI</Value>
+                <Value>DNI:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1729,10 +1729,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>15.43706cm</Top>
-        <Left>0.25656cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.5331cm</Width>
+        <Top>14.41401cm</Top>
+        <Left>1.10075cm</Left>
+        <Height>0.37063cm</Height>
+        <Width>0.68891cm</Width>
         <ZIndex>40</ZIndex>
         <Style>
           <Border>
@@ -1751,7 +1751,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DNI</Value>
+                <Value>DNI:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1764,10 +1764,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.87723cm</Top>
-        <Left>0.23051cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.55915cm</Width>
+        <Top>16.85418cm</Top>
+        <Left>1.10075cm</Left>
+        <Height>0.37063cm</Height>
+        <Width>0.68891cm</Width>
         <ZIndex>41</ZIndex>
         <Style>
           <Border>
@@ -1779,11 +1779,89 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Line Name="Line7">
+        <Top>11.344cm</Top>
+        <Left>0.25656cm</Left>
+        <Height>0cm</Height>
+        <Width>7.17142cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="IGV2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Web: www.alexylalito.pe</Value>
+                <Style>
+                  <FontFamily>arial narrow</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>IGV1</rd:DefaultName>
+        <Top>18.09514cm</Top>
+        <Left>4.31338cm</Left>
+        <Height>0.46771cm</Height>
+        <Width>3.1146cm</Width>
+        <ZIndex>43</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="IGV1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Email: estacion@alexylalito.pe</Value>
+                <Style>
+                  <FontFamily>arial narrow</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>IGV1</rd:DefaultName>
+        <Top>18.09632cm</Top>
+        <Left>0.21982cm</Left>
+        <Height>0.46771cm</Height>
+        <Width>3.97381cm</Width>
+        <ZIndex>44</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>7.93228in</Height>
+    <Height>7.42326in</Height>
     <Style />
   </Body>
-  <Width>3.06076in</Width>
+  <Width>3.23758in</Width>
   <Page>
     <PageHeight>30cm</PageHeight>
     <PageWidth>10cm</PageWidth>
