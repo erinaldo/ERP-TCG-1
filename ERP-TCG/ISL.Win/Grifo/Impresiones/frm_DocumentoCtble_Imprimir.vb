@@ -117,9 +117,18 @@ Public Class frm_DocumentoCtble_Imprimir
                             Case "TICKET" : Return Raiz & "rpt_NotaDespacho_Ticket.rdlc"
                         End Select
                 End Select
+            Case "OV"
+                Select Case IdTipoDocumento
+                    Case "GCH000000001" 'Nota de Despacho
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
+                        End Select
+                End Select
             Case Else
                 Return ""
         End Select
+
         Return ""
     End Function
 End Class
