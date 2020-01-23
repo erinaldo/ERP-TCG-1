@@ -2356,7 +2356,7 @@ Public Class frm_OrdenVenMaterial
                 Select Case Operacion
                     Case "Nuevo"
                         .TipoOperacion = "I"
-                        .IdEstado = "1CH000000011" 'Evaluado
+                        .IdEstado = "1CH000000011"
                         If cbDocumento.Checked = True Then : .IndFacturadoProducto = True : End If
                         .IdTrabajadorAprobacion = gUsuarioSGI.oePersona.Id
                         fc_ValidarNumeroDoc()
