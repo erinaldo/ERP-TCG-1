@@ -357,6 +357,18 @@ Module m_Funciones
         End Try
     End Sub
 
+    '@0001 Ini
+    Public Sub gtm_Imprimir_DocumentoTicke(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+        Try
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            FRM.Size = New System.Drawing.Size(400, 700)
+            FRM.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+    '@0001
+
     Public Sub gmt_ListarEmpresa(Tipo As String, Combo As UltraCombo, IdProveedor As String, IndRuc As Boolean, Optional ByVal IndFiltro As Boolean = True)
         Try
             Dim oeEmpresa As New e_Empresa

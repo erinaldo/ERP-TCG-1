@@ -147,7 +147,7 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
+            gtm_Imprimir_DocumentoTicke(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
 
             Nuevo()
         Catch ex As Exception
