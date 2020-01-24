@@ -86,34 +86,21 @@ Public Class e_MovimientoDocumento
     Public LstOrden As New List(Of e_Orden)
     <DataMember()> _
     Public oeTipoDocumento As e_TipoDocumento
-    ''' <summary>
-    ''' Para el caso de Notas de credito como debito tanto en ventas y compras, se agrega para relación con Anticipo
-    ''' </summary>
-    ''' <remarks></remarks>
-    <DataMember()> _
+    <DataMember()>
     Public DocAsoc As New List(Of e_DocumentoAsociado)
-
-    ''' <summary>
-    ''' Para el ingreso de compras necesito los analisis asociado al documento
-    ''' </summary>
-    ''' <remarks></remarks>
-    <DataMember()> _
+    <DataMember()>
     Public MovimientoAnalisis As List(Of e_MovimientoAnalisis)
-
-    <DataMember()> _
+    <DataMember()>
     Public MovDocCuenta As List(Of e_MovimientoDocumentoCuenta)
-
-    <DataMember()> _
+    <DataMember()>
     Public oeAsientoModelo As New e_AsientoModelo
-    ''-----------------var de ayuda--------------------------
-    <DataMember()> _
+    <DataMember()>
     Public IdDocAsoc As String
     <DataMember()> _
     Public Ejercicio As Integer = 0
     <DataMember()> _
     Public IdLiquidacion As String
-    '--------------------------------------------------------
-    <DataMember()> _
+    <DataMember()>
     Public TipoOperacion As String
     <DataMember()> _
     Public Modificado As Boolean
@@ -126,10 +113,11 @@ Public Class e_MovimientoDocumento
     <DataMember()>
     Public IdSucursalSistema As String = ""
     Public Event DatoCambiado()
-
-    '----------------------COMBUSTIBLE/WALTER----------------------------------------
-    <DataMember()> _
+    <DataMember()>
     Public lstDetalleDocumento As New List(Of e_DetalleDocumento)
+    <DataMember()>
+    Public ListaDetalles As New List(Of e_DetalleDocumento_css)
+
     Private _lstDetalleDocumentoCombustible As New List(Of e_DetalleDocumentoCombustible)
     '--------------Parametros para el listado de facturas----------------------------
     <DataMember()> _
@@ -170,30 +158,23 @@ Public Class e_MovimientoDocumento
     Public Observacion As String = ""
     <DataMember()> _
     Public CargarCompleto As Boolean = True
-
-    <DataMember()> _
+    <DataMember()>
     Public Property IndServicioMaterial As String
     <DataMember()> _
     Public interfazContable As Boolean
     <DataMember()> _
     Public GlosaViajeGrupo As String
-
     <DataMember()>
     Public PagoAutomatico As e_PagoAutomatico
-
     <DataMember()>
     Public lo_OrdenDocumento As New List(Of e_Orden_Documento)
-
-
-    <DataMember()> _
+    <DataMember()>
     Public CuentaVentaxServicio As String
     <DataMember()> _
     Public Mes As String
-
-    <DataMember()> _
+    <DataMember()>
     Public NoGravado As Double
-
-    <DataMember()> _
+    <DataMember()>
     Public DetraccionPorc As Double = 0
     <DataMember()> _
     Public Detraccion As Double = 0
@@ -229,7 +210,6 @@ Public Class e_MovimientoDocumento
     Public loCtas As New List(Of e_Combo)
     <DataMember()>
     Public IdCtaPagarCobrar As String = String.Empty
-
     <DataMember()>
     Public Equivale As Integer = 0
 

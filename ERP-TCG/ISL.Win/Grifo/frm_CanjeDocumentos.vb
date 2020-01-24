@@ -862,6 +862,28 @@ Public Class frm_CanjeDocumentos
 
     End Sub
 
+    Private Sub mt_Ver_Detalles()
+        Try
+            ' ======================================================================================================================== >>>>>
+            With udg_Documentos
+                Documento = New e_MovimientoDocumento
+
+                If .Selected.Rows.Count > 0 Then
+                    Documento.Id = .ActiveRow.Cells("Id").Value
+                    bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                End If
+
+            End With
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub udg_Documentos_Click(sender As Object, e As EventArgs) Handles udg_Documentos.Click
+        mt_Ver_Detalles()
+    End Sub
+
 #End Region
 
 End Class

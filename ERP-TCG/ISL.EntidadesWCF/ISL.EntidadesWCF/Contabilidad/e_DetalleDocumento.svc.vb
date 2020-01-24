@@ -34,6 +34,12 @@ Public Class e_DetalleDocumento
     Private _Monto_Anticipo As Decimal
     Private _Porc_Anticipo As Decimal
 
+
+    Private _Seleccion As Boolean
+    Private _Pos As Integer
+    Public Property IdEmpresaSis() As String
+    Public Property IdSucursal() As String
+
     <DataMember()> _
     Public TipoOperacion As String
     <DataMember()> _
@@ -44,16 +50,9 @@ Public Class e_DetalleDocumento
     Public IdEmpresaSistema As String = ""
     <DataMember()>
     Public IdSucursalSistema As String = ""
-    Private _Seleccion As Boolean
-    Private _Pos As Integer
-
-
-    '' Uso esclusivo de combustible
-    <DataMember()> _
+    <DataMember()>
     Public IdRegistroConsCombustible As String = ""
-    ''
-
-    <DataMember()> _
+    <DataMember()>
     Public leDetalleGuiaTrans As New List(Of e_DetalleDoc_GuiaTrans)
     <DataMember()> _
     Public IdTipoCompra As String
@@ -77,9 +76,6 @@ Public Class e_DetalleDocumento
     Public IdGastoOperacion As String '--para Peaje Post Pago
     <DataMember()> _
     Public IdAlmacen As String  '--para compras de material como consignacion
-
-    Public Property IdEmpresaSis() As String
-    Public Property IdSucursal() As String
 
     Public Event DatoCambiado()
 

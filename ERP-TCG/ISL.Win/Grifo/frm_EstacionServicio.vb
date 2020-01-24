@@ -1021,9 +1021,9 @@ Public Class frm_EstacionServicio
                 DescuentoTotal += Item.Dscto
                 Total += SubTotal
             Next
-            nud_SubTotal.Value = SubTotal
             nud_Total.Value = Total
             nud_Impuesto.Value = Total * mdblIGV
+            nud_SubTotal.Value = Total - (Total * mdblIGV)
         Catch ex As Exception
             Throw ex
         End Try

@@ -184,6 +184,7 @@
     <Compile Include="Contabilidad\d_DetalleAsientoModelo.vb" />
     <Compile Include="Contabilidad\d_DetalleDocumento.vb" />
     <Compile Include="Contabilidad\d_DetalleDocumentoCombustible.vb" />
+    <Compile Include="Contabilidad\d_DetalleDocumento_css.vb" />
     <Compile Include="Contabilidad\d_DetalleDoc_GuiaTrans.vb" />
     <Compile Include="Contabilidad\d_DetalleLibroElectronico.vb" />
     <Compile Include="Contabilidad\d_DetalleModelo_Referencia.vb" />
@@ -196,6 +197,7 @@
     <Compile Include="Contabilidad\d_LibroElectronico.vb" />
     <Compile Include="Contabilidad\d_LiquidacionTrabajador_Asiento.vb" />
     <Compile Include="Contabilidad\d_MovimientoActivoFijo.vb" />
+    <Compile Include="Contabilidad\d_MovimientoDocumento_css.vb" />
     <Compile Include="Contabilidad\d_MovimientoDocumento_Impresion.vb" />
     <Compile Include="Contabilidad\d_ParticipacionAccion.vb" />
     <Compile Include="Contabilidad\d_ReadecuacionActivoFijo.vb" />
