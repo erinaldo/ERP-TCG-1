@@ -31,7 +31,7 @@ Public Class d_Conexion
             'DESARROLLO INTERNET
             Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG0114; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
             'DESARROLLO LOCAL
-            'Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG0114; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
+            'Return "Data Source = LADERA;Initial Catalog = ERPTCG0114; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
 
 
