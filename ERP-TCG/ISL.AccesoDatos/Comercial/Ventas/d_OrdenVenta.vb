@@ -266,7 +266,7 @@ Public Class d_OrdenVenta
                     End If
                     '' =========================================================================== 
                     '' Documento
-                    .oeDocumento.Glosa = .Id
+                    .oeDocumento.Glosa = "OV." & .Id & " //" & .oeDocumento.Glosa
                     .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
                     '' =========================================================================== 
                     '' Orden Documento

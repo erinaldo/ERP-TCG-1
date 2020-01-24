@@ -36,16 +36,19 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_DocumentoCtble_Termica.rdlc"
         Me.VISOR.Location = New System.Drawing.Point(0, 0)
         Me.VISOR.Name = "VISOR"
-        Me.VISOR.Size = New System.Drawing.Size(1152, 450)
+        Me.VISOR.Size = New System.Drawing.Size(984, 661)
         Me.VISOR.TabIndex = 2
+        Me.VISOR.ZoomPercent = 90
         '
         'frm_DocumentoCtble_Imprimir
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1152, 450)
+        Me.ClientSize = New System.Drawing.Size(984, 661)
         Me.Controls.Add(Me.VISOR)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frm_DocumentoCtble_Imprimir"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_DocumentoCtble_Imprimir"
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).EndInit()

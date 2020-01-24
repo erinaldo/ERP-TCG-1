@@ -74,6 +74,7 @@ Public Class frm_EstacionServicio
     Private Ruc As String = "1CIX00000000000229"
     Private IdEmpresaCliente As String
     Private swCredito As Boolean
+    Private Glosa_OV As String, Glosa_Documento As String
 
 #End Region
 
@@ -147,7 +148,7 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            gtm_Imprimir_Documento(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
+            gtm_Imprimir_DocumentoTicke(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
 
             Nuevo()
         Catch ex As Exception
@@ -189,6 +190,9 @@ Public Class frm_EstacionServicio
     Public Function fc_Cargar_OrdenVenta() As Boolean
         Try
             udg_Detalle.UpdateData()
+            Glosa_OV = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & " //COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
+            Glosa_Documento = "COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
+
             With OrdenVenta
                 .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login : .FechaCrea = FechaOrden
                 .Tipo = 2
@@ -212,7 +216,7 @@ Public Class frm_EstacionServicio
                 .IdPlaca = cmb_Vehiculo.Value
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
-                .GlosaResumen = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & "//COMBUSTIBLE:      " & Material_Combustible & "//TOTAL: S/ " & nud_Total.Value & " // PLACA:  " & cmb_Vehiculo.Text
+                .GlosaResumen = Glosa_OV
                 If swConsumoInterno = False Then
                     .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 End If
@@ -250,6 +254,7 @@ Public Class frm_EstacionServicio
                 .Saldo = .Total
                 .TipoCambio = TipoCambio
                 .Mac_PC_Local = MacPCLocal()
+                .Glosa = Glosa_Documento
 
                 '' Cargar Detalle de Documento
                 .lstDetalleDocumento = New List(Of e_DetalleDocumento)
@@ -321,7 +326,7 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.ValorAux2 = 0
                 .DatosImpresion.ValorAux3 = 0
                 .DatosImpresion.TextoAux1 = sw_Lado
-                .DatosImpresion.TextoAux2 = ""
+                .DatosImpresion.TextoAux2 = Glosa_Documento
                 .DatosImpresion.TextoAux3 = ""
 
             End With
@@ -1016,9 +1021,9 @@ Public Class frm_EstacionServicio
                 DescuentoTotal += Item.Dscto
                 Total += SubTotal
             Next
-            nud_SubTotal.Value = SubTotal
             nud_Total.Value = Total
             nud_Impuesto.Value = Total * mdblIGV
+            nud_SubTotal.Value = Total - (Total * mdblIGV)
         Catch ex As Exception
             Throw ex
         End Try

@@ -514,6 +514,10 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
+    'Public Function Guardar_MovimientoDocumento(Documento As e_MovimientoDocumento) As e_MovimientoDocumento
+
+    'End Function
+
     Public Function CambiaPeriodoVerifica(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
         Try
             With oeMovimientoDocumento

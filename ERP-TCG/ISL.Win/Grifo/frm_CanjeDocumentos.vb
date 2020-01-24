@@ -538,6 +538,7 @@ Public Class frm_CanjeDocumentos
                 .IdTipoPago = cboTipoPago.Value
                 .Mac_PC_Local = MacPCLocal()
                 .IdClienteProveedor = cmb_Cliente.Value
+                .Glosa = txt_Observacion.Text.Trim
                 .lstDetalleDocumento = ListaDetalleSeleccionados
 
                 '' Detalle
@@ -672,6 +673,7 @@ Public Class frm_CanjeDocumentos
                 Case "1CH000000026" : txtSerie.Text = "F103" : cmb_Cliente.Focus()
                 Case "1CH000000002" : txtSerie.Text = "B103" : cmb_Cliente.Focus()
             End Select
+            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
@@ -732,10 +734,11 @@ Public Class frm_CanjeDocumentos
     End Sub
 
     Private Sub tsb_Eliminar_Click(sender As Object, e As EventArgs) Handles tsb_Eliminar.Click
-        '' Valida
+        '' Validar
         If udg_Documentos.Rows.Count = 0 Then Exit Sub
         udg_Documentos.UpdateData()
 
+        '' Eliminar
         For Each Documento In ListaDocumentos
             If Documento.IndAnexo = True Then
                 mt_Eliminar(Documento.Id)
@@ -843,6 +846,42 @@ Public Class frm_CanjeDocumentos
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub tsb_ImprimirA4_Click(sender As Object, e As EventArgs) Handles tsb_ImprimirA4.Click
+        '' Validar
+        If udg_Documentos.Rows.Count = 0 Then Exit Sub
+        udg_Documentos.UpdateData()
+
+        '' Imprimir
+        For Each Documento In ListaDocumentos
+            If Documento.IndAnexo = True Then
+                gtm_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
+            End If
+        Next
+
+    End Sub
+
+    Private Sub mt_Ver_Detalles()
+        Try
+            ' ======================================================================================================================== >>>>>
+            With udg_Documentos
+                Documento = New e_MovimientoDocumento
+
+                If .Selected.Rows.Count > 0 Then
+                    Documento.Id = .ActiveRow.Cells("Id").Value
+                    bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                End If
+
+            End With
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub udg_Documentos_Click(sender As Object, e As EventArgs) Handles udg_Documentos.Click
+        mt_Ver_Detalles()
     End Sub
 
 #End Region
