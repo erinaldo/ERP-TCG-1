@@ -1954,7 +1954,7 @@ Public Class frm_FacturarServicio
                     'olDocumento.GenerarXmlFacturaElectronica_Emision(dsComprobante.Tables(0), dsComprobante.Tables(1), frm_DocumentoElectronico.RutaArchivos, gUsuarioEOS.Id) '@0001
                     '--olMovimientoDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id) '@0001
                     'Registro_ComprobanteElectronico_Bath(dt_cpe, "I", dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), Nothing) '@0001
-                    Imprimir()
+                    'Imprimir()
                 End If
                 If IndEmit Then
                     MostrarTabs(0, ficFacturaCompra, 0)
