@@ -233,7 +233,7 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Public Overrides Sub Imprimir()
-        MyBase.Imprimir()
+        gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
     End Sub
 
     Public Overrides Sub Salir()
@@ -1118,7 +1118,7 @@ Public Class frm_OrdenVenMaterial
                 ElseIf oeOrdenComercial.Estado = "EVALUADA" And Operacion = "Editar" Then
                     gmt_ControlBoton(0, 0, 0, 1, 1)
                 Else
-                    gmt_ControlBoton(0, 0, 0, 0, 1)
+                    gmt_ControlBoton(0, 0, 0, 0, 1, 0, 1)
                 End If
         End Select
     End Sub
@@ -1486,33 +1486,33 @@ Public Class frm_OrdenVenMaterial
 
     Private Sub mt_GenerarOS()
         Try
-            If Mid(txtOrden.Text, 1, 5) = "OVSIS" Then
-                If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
-                If fc_LlenaObjeto() Then
-                    If olOrdenComercial.Guardar(oeOrdenComercial) Then
-                        MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-                        grbDocAsoc.Enabled = False
-                        cbDocumento.Checked = False
-                        cbDocumento.Enabled = False
-                        Me.ficDetalleOrdenComercial.Tabs(1).Selected = True
-                        mt_ListarOS()
-                    End If
-                End If
-            Else
-                If oeDocumento.Id = "" Then Throw New Exception("Tiene Que Emitir el Documento antes de Generar la Orden de Salida")
-                If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
-                If fc_LlenaObjeto() Then
-                    If olOrdenComercial.Guardar(oeOrdenComercial) Then
-                        MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-                        grbDocAsoc.Enabled = False
-                        cbDocumento.Checked = False
-                        cbDocumento.Enabled = False
-                        Me.ficDetalleOrdenComercial.Tabs(1).Selected = True
-                        mt_ListarOS()
-                    End If
+            'If Mid(txtOrden.Text, 1, 5) = "OVSIS" Then
+            '    If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
+            '    If fc_LlenaObjeto() Then
+            '        If olOrdenComercial.Guardar(oeOrdenComercial) Then
+            '            MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            '            grbDocAsoc.Enabled = False
+            '            cbDocumento.Checked = False
+            '            cbDocumento.Enabled = False
+            '            Me.ficDetalleOrdenComercial.Tabs(1).Selected = True
+            '            mt_ListarOS()
+            '        End If
+            '    End If
+            'Else
+
+            'End If
+            If oeDocumento.Id = "" Then Throw New Exception("Tiene Que Emitir el Documento antes de Generar la Orden de Salida")
+            If loOrdenComercialMaterial.Sum(Function(i) i.CantidadAtender) = 0 Then Throw New Exception("Cantidad a Atender no Puede ser 0.")
+            If fc_LlenaObjeto() Then
+                If olOrdenComercial.Guardar(oeOrdenComercial) Then
+                    MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+                    grbDocAsoc.Enabled = False
+                    cbDocumento.Checked = False
+                    cbDocumento.Enabled = False
+                    Me.ficDetalleOrdenComercial.Tabs(1).Selected = True
+                    mt_ListarOS()
                 End If
             End If
-
         Catch ex As Exception
             Throw ex
         End Try
@@ -1910,6 +1910,24 @@ Public Class frm_OrdenVenMaterial
                 .lo_OrdenDocumento = fc_OrdDocumento()
                 .Venta = New e_Venta
                 .Venta = fc_LlenarVenta()
+                .DatosImpresion = New e_MovimientoDocumento_Impresion
+                With .DatosImpresion
+                    .IdTipoDocumento = oeDocumento.IdTipoDocumento
+                    .TipoDocumento = cmbTipoDocumento.Text
+                    .NombreClienteProveedor = cbgCliente.Text
+                    .NroDocumentoClienteProveedor = cbgCliente.ActiveRow.Cells("Ruc").Value
+                    oeCombo = New e_Combo
+                    'oeCombo.Descripcion = oeDocumento.IdClienteProveedor
+                    'oeCombo.Tipo = 2
+                    If DireccionClienteProveedorPublic.Where(Function(i) i.Descripcion = oeDocumento.IdClienteProveedor).ToList.Count > 0 Then
+                        oeCombo = DireccionClienteProveedorPublic.Where(Function(i) i.Descripcion = oeDocumento.IdClienteProveedor)(0)
+                        .IdDireccion = oeCombo.Id
+                        .Direccion = oeCombo.Nombre
+                    Else
+                        Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
+                    End If
+                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                End With
             End With
         Catch ex As Exception
             Throw ex
@@ -2271,6 +2289,8 @@ Public Class frm_OrdenVenMaterial
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
+                        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
+
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes
                                 mt_EmitirDocumento(False)
@@ -2356,7 +2376,7 @@ Public Class frm_OrdenVenMaterial
                 Select Case Operacion
                     Case "Nuevo"
                         .TipoOperacion = "I"
-                        .IdEstado = "1CH000000011" 'Evaluado
+                        .IdEstado = "1CH000000011"
                         If cbDocumento.Checked = True Then : .IndFacturadoProducto = True : End If
                         .IdTrabajadorAprobacion = gUsuarioSGI.oePersona.Id
                         fc_ValidarNumeroDoc()

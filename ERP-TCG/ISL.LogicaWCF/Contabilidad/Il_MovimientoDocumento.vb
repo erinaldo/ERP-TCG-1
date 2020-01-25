@@ -220,6 +220,9 @@ Public Interface Il_MovimientoDocumento
     <OperationContract()> _
     Function EliminarDocumentoVenta(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
 
+    <OperationContract()>
+    Function EliminarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
+
     <OperationContract()> _
     Function ExtornarDocEmitidoEnviado(ByVal oeMovimientoDocumento As e_MovimientoDocumento, ByVal IdUsuario As String) As Boolean
 

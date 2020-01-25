@@ -1117,6 +1117,7 @@
     <Compile Include="Contabilidad\e_DetalleDocumentoCombustible.svc.vb">
       <DependentUpon>e_DetalleDocumentoCombustible.svc</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\e_DetalleDocumento_css.vb" />
     <Compile Include="Contabilidad\e_DetalleDoc_GuiaTrans.svc.vb">
       <DependentUpon>e_DetalleDoc_GuiaTrans.svc</DependentUpon>
     </Compile>
@@ -1162,6 +1163,7 @@
     <Compile Include="Contabilidad\e_MovimientoActivoFijo.svc.vb">
       <DependentUpon>e_MovimientoActivoFijo.svc</DependentUpon>
     </Compile>
+    <Compile Include="Contabilidad\e_MovimientoDocumento_css.vb" />
     <Compile Include="Contabilidad\e_MovimientoDocumento_Impresion.svc.vb">
       <DependentUpon>e_MovimientoDocumento_Impresion.svc</DependentUpon>
     </Compile>

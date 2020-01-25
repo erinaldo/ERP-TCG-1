@@ -514,6 +514,10 @@ Public Class d_MovimientoDocumento
         End Try
     End Function
 
+    'Public Function Guardar_MovimientoDocumento(Documento As e_MovimientoDocumento) As e_MovimientoDocumento
+
+    'End Function
+
     Public Function CambiaPeriodoVerifica(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
         Try
             With oeMovimientoDocumento
@@ -1416,6 +1420,18 @@ Public Class d_MovimientoDocumento
             Return False
         End Try
     End Function
+
+    Public Function EliminarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean
+        Try
+            sqlhelper.ExecuteNonQuery("CON.Isp_MovimientoDocumento_IAE", oeMovimientoDocumento.TipoOperacion,
+                       "", oeMovimientoDocumento.Id)
+            Return True
+        Catch ex As Exception
+            Throw ex
+            Return False
+        End Try
+    End Function
+
 
     ''' <summary>
     ''' Para el caso de Gastos de caja o de viaje

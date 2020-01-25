@@ -588,6 +588,16 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
+    Public Function EliminarDocumento(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.EliminarDocumento
+        Try
+            odMovimientoDocumento.EliminarDocumento(oeMovimientoDocumento)
+            Return True
+        Catch ex As Exception
+            Throw ex
+            Return False
+        End Try
+    End Function
+
     Public Function Emitir(ByVal oeMovimientoDocumento As e_MovimientoDocumento) As Boolean Implements Il_MovimientoDocumento.Emitir
         Try
             oeMovimientoDocumento.TipoOperacion = "EMI"

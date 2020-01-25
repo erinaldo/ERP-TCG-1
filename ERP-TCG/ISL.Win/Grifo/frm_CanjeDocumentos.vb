@@ -2,15 +2,15 @@
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
+'' Add by Cess 22/02
 Public Class frm_CanjeDocumentos
     Inherits frm_MenuPadre
 
 #Region "Inicializacion del Formulario"
 
     Public Sub New()
-        'Llamada necesaria para el Diseñador de Windows Forms.
         InitializeComponent()
-        'Agregue cualquier inicialización después de la llamada a InitializeComponent().
+
     End Sub
 
     Private Shared instancia As frm_CanjeDocumentos = Nothing
@@ -270,7 +270,7 @@ Public Class frm_CanjeDocumentos
 
     Private Sub mt_Listar()
         Try
-            'If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
+            If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
             Documento = New e_MovimientoDocumento
             Documento.IdTipoDocumento = "GCH000000001"
             Documento.TipoOperacion = "CXD"
@@ -335,7 +335,7 @@ Public Class frm_CanjeDocumentos
                     Seleccionados += 1
                     ListaDocumentoSeleccionados.Add(Documento)
                     Dim ListaDetalle As New List(Of e_DetalleDocumento)
-                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "VEN", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                    ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
                     For Each Item In ListaDetalle
                         Item.Id = ""
                         Item.IdOperacionDetalle = Documento.Id 'Guarda el IDDocumento de origen
@@ -529,14 +529,17 @@ Public Class frm_CanjeDocumentos
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
                 .Serie = txtSerie.Text
-                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
+                '.Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
+                .Numero = txt_Numero.Text
                 .IdEstadoDocumento = "1CH00014"
+                .EstadoDocumento = "GENERADA"
                 .IdTipoDocumento = cmbTipoDocumento.Value
                 .IdPeriodo = ""
                 .IdMoneda = "1CH01"
                 .IdTipoPago = cboTipoPago.Value
                 .Mac_PC_Local = MacPCLocal()
                 .IdClienteProveedor = cmb_Cliente.Value
+                .Glosa = txt_Observacion.Text.Trim
                 .lstDetalleDocumento = ListaDetalleSeleccionados
 
                 '' Detalle
@@ -599,80 +602,6 @@ Public Class frm_CanjeDocumentos
 
             End With
 
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-
-    Private Sub mt_EmitirDocumento(IdDocumentoCtble As String)
-        Try
-            ' ======================================================================================================================== >>>>>
-            Dim _banEmis As Boolean = False
-            Dim oeDoc As New e_MovimientoDocumento
-            Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
-
-            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
-
-                mt_ListarCtaCtble(frm.Año1.Año)
-
-                oeDoc = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = IdDocumentoCtble, .CargaCompleta = True})
-
-                oe_Cliente = New e_Cliente
-                oe_Cliente = ol_Cliente.Obtener(New e_Cliente With {.TipoOperacion = "", .TipoClienteProveedor = 1, .Id = oeDoc.IdClienteProveedor})
-
-                oe_Moneda = cmbMoneda.Items(cmbMoneda.SelectedIndex).ListObject
-
-                oe_TipoDoc = New e_TipoDocumento
-                oe_TipoDoc = ol_TipoDoc.Obtener(New e_TipoDocumento With {.TipoOperacion = "", .Id = oeDoc.IdTipoDocumento})
-
-                oeDoc.IdPeriodo = frm.cboMes.Value : oeDoc.Ejercicio = frm.Año1.Año
-                oeDoc.Venta.TipoDoc = oe_TipoDoc : oeDoc.Venta.Cliente = oe_Cliente : oeDoc.Venta.Moneda = oe_Moneda
-
-                oeAsientoModelo = New e_AsientoModelo
-                oeAsientoModelo.Equivale = 1 : oeAsientoModelo.IdMoneda = oe_Moneda.Id
-
-                If loAsientoModelo.Contains(oeAsientoModelo) Then
-                    '' Asiento Modelo
-                    oeAsientoModelo = loAsientoModelo.Item(loAsientoModelo.IndexOf(oeAsientoModelo))
-                    oeAsientoModelo.TipoOperacion = ""
-                    oeAsientoModelo.Ejercicio = oeDoc.FechaEmision.Year
-                    oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
-
-                    '' Cuenta Corriente
-                    oeCuentaCorriente = New e_CuentaCorriente
-                    oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = oeDoc.IdClienteProveedor
-                    oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
-                    oeDoc.IdUsuarioCrea = gUsuarioSGI.Id
-
-                    oeServCtaCtble = New e_ServicioCuentaContable
-                    oeServCtaCtble.IdServicio = gVSMercaderia : oeServCtaCtble.Equivale = 1
-                    If leServCtaCtble.Contains(oeServCtaCtble) Then
-                        oeServCtaCtble = leServCtaCtble.Item(leServCtaCtble.IndexOf(oeServCtaCtble))
-                    Else
-                        Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
-                                        Environment.NewLine & "Solicite el Apoyo del Area Contable.")
-                    End If
-
-                    oeDoc.PrefijoID = gs_PrefijoIdSucursal
-                    If oeCuentaCorriente.Id <> "" Then
-                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, True, String.Empty, False)
-                    Else
-                        With oeCuentaCorriente
-                            .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = oeDoc.IdClienteProveedor
-                            .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
-                            .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
-                        End With
-                        oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        olCuentaCorriente.Guardar(oeCuentaCorriente)
-                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, False, String.Empty, False)
-                    End If
-
-                Else
-                    Throw New Exception("No Existe Configuracion Contable")
-                End If
-            End If
-            If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & oeDoc.Serie & " - " & oeDoc.Numero & " ha sido Emitido", True)
-            ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
         End Try
@@ -745,6 +674,7 @@ Public Class frm_CanjeDocumentos
                 Case "1CH000000026" : txtSerie.Text = "F103" : cmb_Cliente.Focus()
                 Case "1CH000000002" : txtSerie.Text = "B103" : cmb_Cliente.Focus()
             End Select
+            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
@@ -802,6 +732,165 @@ Public Class frm_CanjeDocumentos
     Private Sub udg_Detalles_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles udg_Detalles.AfterCellUpdate
         udg_Detalles.UpdateData()
         mt_CalcularTotalOrden()
+    End Sub
+
+    Private Sub tsb_Eliminar_Click(sender As Object, e As EventArgs) Handles tsb_Eliminar.Click
+        '' Validar
+        If udg_Documentos.Rows.Count = 0 Then Exit Sub
+        udg_Documentos.UpdateData()
+
+        '' Eliminar
+        For Each Documento In ListaDocumentos
+            If Documento.IndAnexo = True Then
+                mt_Eliminar(Documento.Id)
+            End If
+        Next
+    End Sub
+
+
+    Private Sub mt_EmitirDocumento(IdDocumentoCtble As String)
+        Try
+            ' ======================================================================================================================== >>>>>
+            Dim _banEmis As Boolean = False
+            Dim DocumentoCtble As New e_MovimientoDocumento
+            Dim frm As New Frm_PeriodoTipoAsiento(True, False, False, "VTA")
+
+            If frm.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+                mt_ListarCtaCtble(frm.Año1.Año)
+
+                DocumentoCtble = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = IdDocumentoCtble, .CargaCompleta = True})
+
+                oe_Cliente = New e_Cliente
+                oe_Cliente = ol_Cliente.Obtener(New e_Cliente With {.TipoOperacion = "", .TipoClienteProveedor = 1, .Id = DocumentoCtble.IdClienteProveedor})
+
+                oe_Moneda = cmbMoneda.Items(cmbMoneda.SelectedIndex).ListObject
+
+                oe_TipoDoc = New e_TipoDocumento
+                oe_TipoDoc = ol_TipoDoc.Obtener(New e_TipoDocumento With {.TipoOperacion = "", .Id = DocumentoCtble.IdTipoDocumento})
+
+                DocumentoCtble.IdPeriodo = frm.cboMes.Value : DocumentoCtble.Ejercicio = frm.Año1.Año
+                DocumentoCtble.Venta.TipoDoc = oe_TipoDoc : DocumentoCtble.Venta.Cliente = oe_Cliente : DocumentoCtble.Venta.Moneda = oe_Moneda
+
+                oeAsientoModelo = New e_AsientoModelo
+                oeAsientoModelo.Equivale = 1 : oeAsientoModelo.IdMoneda = oe_Moneda.Id
+
+                If loAsientoModelo.Contains(oeAsientoModelo) Then
+                    '' Asiento Modelo
+                    oeAsientoModelo = loAsientoModelo.Item(loAsientoModelo.IndexOf(oeAsientoModelo))
+                    oeAsientoModelo.TipoOperacion = ""
+                    oeAsientoModelo.Ejercicio = DocumentoCtble.FechaEmision.Year
+                    oeAsientoModelo = olAsientoModelo.Obtener(oeAsientoModelo)
+
+                    '' Cuenta Corriente
+                    oeCuentaCorriente = New e_CuentaCorriente
+                    oeCuentaCorriente.Tipo = 3 : oeCuentaCorriente.IdTrabajador = DocumentoCtble.IdClienteProveedor
+                    oeCuentaCorriente = olCuentaCorriente.Obtener(oeCuentaCorriente)
+                    DocumentoCtble.IdUsuarioCrea = gUsuarioSGI.Id
+
+                    oeServCtaCtble = New e_ServicioCuentaContable
+                    oeServCtaCtble.IdServicio = gVSMercaderia : oeServCtaCtble.Equivale = 1
+                    If leServCtaCtble.Contains(oeServCtaCtble) Then
+                        oeServCtaCtble = leServCtaCtble.Item(leServCtaCtble.IndexOf(oeServCtaCtble))
+                    Else
+                        Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
+                                        Environment.NewLine & "Solicite el Apoyo del Area Contable.")
+                    End If
+
+                    DocumentoCtble.PrefijoID = gs_PrefijoIdSucursal
+                    If oeCuentaCorriente.Id <> "" Then
+                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(DocumentoCtble, oeAsientoModelo, oeServCtaCtble, True, String.Empty, False)
+                    Else
+                        With oeCuentaCorriente
+                            .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = DocumentoCtble.IdClienteProveedor
+                            .Saldo = 0 : .TotalCargo = 0 : .TotalAbono = 0 : .Ejercicio = frm.Año1.Año : .Usuario = gUsuarioSGI.Id
+                            .IdEstado = "HABILITADA" : .IdMoneda = "1CH01" : .Glosa = "CUENTA DE EMPRESA"
+                        End With
+                        oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
+                        olCuentaCorriente.Guardar(oeCuentaCorriente)
+                        _banEmis = dMovimientoDocumento.GuardarVentaAsiento(DocumentoCtble, oeAsientoModelo, oeServCtaCtble, False, String.Empty, False)
+                    End If
+
+                Else
+                    Throw New Exception("No Existe Configuracion Contable")
+                End If
+            End If
+            If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & DocumentoCtble.Serie & " - " & DocumentoCtble.Numero & " ha sido Emitido", True)
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+
+    Private Sub mt_Eliminar(IdDocumento As String)
+        Try
+            ' ======================================================================================================================== >>>>>
+            Dim DocumentoCtble As New e_MovimientoDocumento
+            DocumentoCtble.Id = IdDocumento
+            DocumentoCtble = dMovimientoDocumento.Obtener(DocumentoCtble)
+            If DocumentoCtble.IdEstadoDocumento = "1CH00014" Then
+                If DocumentoCtble.Activo Then
+                    If MessageBox.Show("Esta seguro de eliminar el Documento: " & DocumentoCtble.Serie & "-" & DocumentoCtble.Numero & " ?",
+                             "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                        DocumentoCtble.TipoOperacion = "Y"
+                        dMovimientoDocumento.EliminarDocumento(DocumentoCtble)
+                        Consultar(True)
+                    End If
+                Else
+                    Throw New Exception("La informacion  se encuentra eliminada en " & Me.Text)
+                End If
+            Else
+                Throw New Exception("¡¡El Documento debe estar en Estado Generado para poder ser Eliminado!! " & Me.Text)
+            End If
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub tsb_ImprimirA4_Click(sender As Object, e As EventArgs) Handles tsb_ImprimirA4.Click
+        '' Validar
+        If udg_Documentos.Rows.Count = 0 Then Exit Sub
+        udg_Documentos.UpdateData()
+
+        '' Imprimir
+        For Each Documento In ListaDocumentos
+            If Documento.IndAnexo = True Then
+                gtm_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
+            End If
+        Next
+
+    End Sub
+
+    Private Sub mt_Ver_Detalles()
+        Try
+            ' ======================================================================================================================== >>>>>
+            With udg_Documentos
+                Documento = New e_MovimientoDocumento
+
+                If .Selected.Rows.Count > 0 Then
+                    Documento.Id = .ActiveRow.Cells("Id").Value
+                    bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                End If
+
+            End With
+            ' ======================================================================================================================== >>>>>
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub udg_Documentos_Click(sender As Object, e As EventArgs) Handles udg_Documentos.Click
+        mt_Ver_Detalles()
+    End Sub
+
+    Private Sub udg_Detalles_CellChange(sender As Object, e As CellEventArgs) Handles udg_Detalles.CellChange
+        udg_Detalles.UpdateData()
+        Select Case e.Cell.Column.Key
+            Case "Precio"
+                mt_CalcularTotalOrden()
+        End Select
     End Sub
 
 #End Region

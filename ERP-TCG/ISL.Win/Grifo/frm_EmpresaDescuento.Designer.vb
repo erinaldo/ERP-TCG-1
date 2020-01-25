@@ -190,7 +190,7 @@ Partial Class frm_EmpresaDescuento
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrLista)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1210, 497)
         '
@@ -337,7 +337,7 @@ Partial Class frm_EmpresaDescuento
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.agrMantenimiento)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1210, 497)
         '

@@ -6302,8 +6302,13 @@
     <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_Ticket.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_Ticket.rdlc">
@@ -6543,6 +6548,9 @@
       <DependentUpon>frm_VentaMerma.vb</DependentUpon>
     </EmbeddedResource>
     <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc" />
+    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\frm_DeudaBancaria.resx">
       <DependentUpon>frm_DeudaBancaria.vb</DependentUpon>
     </EmbeddedResource>
