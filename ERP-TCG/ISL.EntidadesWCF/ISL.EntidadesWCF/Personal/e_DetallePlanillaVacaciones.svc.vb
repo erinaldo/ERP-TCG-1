@@ -231,7 +231,7 @@ Public Property Trabajador() As String
     <DataMember()> _
     Public Property Monto() As Double
         Get
-            _monto = Renumeracion + PromedioProduccion
+            _monto = (Renumeracion + PromedioProduccion) - AsignacionFamiliar
             Return _monto
         End Get
         Set(ByVal value As Double)

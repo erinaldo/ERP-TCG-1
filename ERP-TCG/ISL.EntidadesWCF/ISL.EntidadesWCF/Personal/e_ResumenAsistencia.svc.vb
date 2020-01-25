@@ -115,6 +115,7 @@ Public Class e_ResumenAsistencia
                 Case 4 : _tipo = "HORAS EXTRAS 25%"
                 Case 5 : _tipo = "HORAS EXTRAS 35%"
                 Case 6 : _tipo = "HORAS DE NOCTURNA"
+                Case 7 : _tipo = "LICENCIA POR PATERNIDAD"
             End Select
             Return _tipo
         End Get
