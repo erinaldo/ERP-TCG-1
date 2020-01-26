@@ -1474,6 +1474,12 @@
     <Compile Include="Reportes\Administracion\frm_ReporteDocumentosVentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Comercial\Ventas\frm_GRR_Venta_Print.Designer.vb">
+      <DependentUpon>frm_GRR_Venta_Print.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Comercial\Ventas\frm_GRR_Venta_Print.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\Comercial\Ventas\frm_ImprimirResumenDiarioDespacho.Designer.vb">
       <DependentUpon>frm_ImprimirResumenDiarioDespacho.vb</DependentUpon>
     </Compile>
@@ -5807,6 +5813,7 @@
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GRR_Venta.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRemisionRemitente_Detalle.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRRemitenteMaterial.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRRVenta_Print.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MaterialAlmacen.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MovimientoDocumento.datasource" />
@@ -6548,6 +6555,7 @@
       <DependentUpon>frm_VentaMerma.vb</DependentUpon>
     </EmbeddedResource>
     <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc" />
+    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_GRR_Print.rdlc" />
     <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
