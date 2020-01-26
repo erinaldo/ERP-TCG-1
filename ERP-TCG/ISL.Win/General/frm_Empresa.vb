@@ -78,6 +78,8 @@ Public Class frm_Empresa
     Dim bndRuc As Boolean = False
     Public Shared leContactos As New List(Of e_Persona)
 
+    Private Const URLConsultaSunat As String = "https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias"
+
 #End Region
 
 #Region "Botonera"
@@ -286,6 +288,8 @@ Public Class frm_Empresa
             MostrarTabs(0, ficEmpresa)
             Tiempo1.Enabled = False
             InicializaTiempo()
+            WebBrowser1.Navigate(URLConsultaSunat)
+            WebBrowser1.ScriptErrorsSuppressed = True
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
