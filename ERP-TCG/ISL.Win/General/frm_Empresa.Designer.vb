@@ -1309,7 +1309,7 @@ Partial Class frm_Empresa
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Right)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Bottom)
         Me.utpDireccion.Controls.Add(Me._utpDireccion_Toolbars_Dock_Area_Top)
-        Me.utpDireccion.Location = New System.Drawing.Point(1, 22)
+        Me.utpDireccion.Location = New System.Drawing.Point(-10000, -10000)
         Me.utpDireccion.Name = "utpDireccion"
         Me.utpDireccion.Size = New System.Drawing.Size(1229, 378)
         '
@@ -1754,7 +1754,7 @@ Partial Class frm_Empresa
         'UltraTabPageControl10
         '
         Me.UltraTabPageControl10.Controls.Add(Me.WebBrowser1)
-        Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl10.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
         Me.UltraTabPageControl10.Size = New System.Drawing.Size(1229, 378)
         '
@@ -1766,7 +1766,7 @@ Partial Class frm_Empresa
         Me.WebBrowser1.Name = "WebBrowser1"
         Me.WebBrowser1.Size = New System.Drawing.Size(1229, 378)
         Me.WebBrowser1.TabIndex = 2
-        Me.WebBrowser1.Url = New System.Uri("https://e-consultaruc.sunat.gob.pe/cl-ti-itmrconsruc/jcrS00Alias", System.UriKind.Absolute)
+        Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         '
         'UltraTabPageControl1
         '

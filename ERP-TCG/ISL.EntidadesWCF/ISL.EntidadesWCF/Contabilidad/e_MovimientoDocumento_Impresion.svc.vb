@@ -46,13 +46,21 @@
     Private _HashResumen As String
     Private _HashSunat As String
     Private _QRCode As String
+    Private _CodigoExterno As String
     Private _Ruta As String
+    Private _RutaImpresionPDF As String
+    Private _RutaImpresionXML As String
+    Private _IdComprobantePagoElectronico_Resumen As String
     Private _ValorAux1 As Double
     Private _ValorAux2 As Double
     Private _ValorAux3 As Double
+    Private _ValorAux4 As Double
+    Private _ValorAux5 As Double
     Private _TextoAux1 As String
     Private _TextoAux2 As String
     Private _TextoAux3 As String
+    Private _TextoAux4 As String
+    Private _TextoAux5 As String
     Private _Activo As Boolean
     Private _UsuarioCreacion As String
     Private _FechaCreacion As Date
@@ -126,13 +134,21 @@
           , ByVal ls_HashResumen As String _
           , ByVal ls_HashSunat As String _
           , ByVal ls_QRCode As String _
+          , ByVal ls_CodigoExterno As String _
           , ByVal ls_Ruta As String _
+          , ByVal ls_RutaImpresionPDF As String _
+          , ByVal ls_RutaImpresionXML As String _
+          , ByVal ls_IdComprobantePagoElectronico_Resumen As String _
           , ByVal ln_ValorAux1 As Double _
           , ByVal ln_ValorAux2 As Double _
           , ByVal ln_ValorAux3 As Double _
+          , ByVal ln_ValorAux4 As Double _
+          , ByVal ln_ValorAux5 As Double _
           , ByVal ls_TextoAux1 As String _
           , ByVal ls_TextoAux2 As String _
           , ByVal ls_TextoAux3 As String _
+          , ByVal ls_TextoAux4 As String _
+          , ByVal ls_TextoAux5 As String _
           , ByVal lb_Activo As Boolean _
           , ByVal ls_UsuarioCreacion As String _
           , ByVal ld_FechaCreacion As Date _
@@ -163,13 +179,21 @@
         _HashResumen = ls_HashResumen
         _HashSunat = ls_HashSunat
         _QRCode = ls_QRCode
+        _CodigoExterno = ls_CodigoExterno
         _Ruta = ls_Ruta
+        _RutaImpresionPDF = ls_RutaImpresionPDF
+        _RutaImpresionXML = ls_RutaImpresionXML
+        _IdComprobantePagoElectronico_Resumen = ls_IdComprobantePagoElectronico_Resumen
         _ValorAux1 = ln_ValorAux1
         _ValorAux2 = ln_ValorAux2
         _ValorAux3 = ln_ValorAux3
+        _ValorAux4 = ln_ValorAux4
+        _ValorAux5 = ln_ValorAux5
         _TextoAux1 = ls_TextoAux1
         _TextoAux2 = ls_TextoAux2
         _TextoAux3 = ls_TextoAux3
+        _TextoAux4 = ls_TextoAux4
+        _TextoAux5 = ls_TextoAux5
         _Activo = lb_Activo
         _UsuarioCreacion = ls_UsuarioCreacion
         _FechaCreacion = ld_FechaCreacion
@@ -373,6 +397,14 @@
             _QRCode = value
         End Set
     End Property
+    Public Property CodigoExterno() As String
+        Get
+            Return _CodigoExterno
+        End Get
+        Set(ByVal value As String)
+            _CodigoExterno = value
+        End Set
+    End Property
     Public Property Ruta() As String
         Get
             Return _Ruta
@@ -381,6 +413,33 @@
             _Ruta = value
         End Set
     End Property
+    Public Property RutaImpresionPDF() As String
+        Get
+            Return _RutaImpresionPDF
+        End Get
+        Set(ByVal value As String)
+            _RutaImpresionPDF = value
+        End Set
+    End Property
+    Public Property RutaImpresionXML() As String
+        Get
+            Return _RutaImpresionXML
+        End Get
+        Set(ByVal value As String)
+            _RutaImpresionXML = value
+        End Set
+    End Property
+
+    Public Property IdComprobantePagoElectronico_Resumen() As String
+        Get
+            Return _IdComprobantePagoElectronico_Resumen
+        End Get
+        Set(ByVal value As String)
+            _IdComprobantePagoElectronico_Resumen = value
+        End Set
+    End Property
+
+
     Public Property ValorAux1() As Double
         Get
             Return _ValorAux1
@@ -405,6 +464,22 @@
             _ValorAux3 = value
         End Set
     End Property
+    Public Property ValorAux4() As Double
+        Get
+            Return _ValorAux4
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux4 = value
+        End Set
+    End Property
+    Public Property ValorAux5() As Double
+        Get
+            Return _ValorAux5
+        End Get
+        Set(ByVal value As Double)
+            _ValorAux5 = value
+        End Set
+    End Property
     Public Property TextoAux1() As String
         Get
             Return _TextoAux1
@@ -427,6 +502,22 @@
         End Get
         Set(ByVal value As String)
             _TextoAux3 = value
+        End Set
+    End Property
+    Public Property TextoAux4() As String
+        Get
+            Return _TextoAux4
+        End Get
+        Set(ByVal value As String)
+            _TextoAux4 = value
+        End Set
+    End Property
+    Public Property TextoAux5() As String
+        Get
+            Return _TextoAux5
+        End Get
+        Set(ByVal value As String)
+            _TextoAux5 = value
         End Set
     End Property
     Public Property Activo() As Boolean

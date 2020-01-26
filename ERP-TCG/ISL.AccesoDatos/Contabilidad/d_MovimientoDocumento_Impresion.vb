@@ -65,13 +65,21 @@ Public Class d_MovimientoDocumento_Impresion
                 , .HashResumen _
                 , .HashSunat _
                 , .QRCode _
+                , .CodigoExterno _
                 , .Ruta _
+                , .RutaImpresionPDF _
+                , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
                 , .TextoAux1 _
                 , .TextoAux2 _
                 , .TextoAux3 _
+                , .TextoAux4 _
+                , .TextoAux5 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -117,14 +125,22 @@ Public Class d_MovimientoDocumento_Impresion
                 , .MontoLetras _
                 , .HashResumen _
                 , .HashSunat _
-                , .QRCode _
+               , .QRCode _
+                , .CodigoExterno _
                 , .Ruta _
+                , .RutaImpresionPDF _
+                , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
                 , .TextoAux1 _
                 , .TextoAux2 _
                 , .TextoAux3 _
+                , .TextoAux4 _
+                , .TextoAux5 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -167,13 +183,21 @@ Public Class d_MovimientoDocumento_Impresion
                          , o_fila("HashResumen").ToString _
                          , o_fila("HashSunat").ToString _
                          , o_fila("QRCode").ToString _
+                         , o_fila("CodigoExterno").ToString _
                          , o_fila("Ruta").ToString _
+                         , o_fila("RutaImpresionPDF").ToString _
+                         , o_fila("RutaImpresionXML").ToString _
+                         , o_fila("IdComprobantePagoElectronico_Resumen").ToString _
                          , o_fila("ValorAux1").ToString _
                          , o_fila("ValorAux2").ToString _
                          , o_fila("ValorAux3").ToString _
+                         , o_fila("ValorAux4").ToString _
+                         , o_fila("ValorAux5").ToString _
                          , o_fila("TextoAux1").ToString _
                          , o_fila("TextoAux2").ToString _
                          , o_fila("TextoAux3").ToString _
+                         , o_fila("TextoAux4").ToString _
+                         , o_fila("TextoAux5").ToString _
                          , o_fila("Activo").ToString _
                          , o_fila("UsuarioCreacion").ToString _
                          , o_fila("FechaCreacion").ToString _
@@ -185,6 +209,7 @@ Public Class d_MovimientoDocumento_Impresion
             Throw ex
         End Try
     End Function
+
     Private Function ExecuteLST(ByVal Item As e_MovimientoDocumento_Impresion) As DataSet
         Try
             Dim ds As DataSet
@@ -217,13 +242,21 @@ Public Class d_MovimientoDocumento_Impresion
                 , .HashResumen _
                 , .HashSunat _
                 , .QRCode _
+                , .CodigoExterno _
                 , .Ruta _
+                , .RutaImpresionPDF _
+                , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
                 , .TextoAux1 _
                 , .TextoAux2 _
                 , .TextoAux3 _
+                , .TextoAux4 _
+                , .TextoAux5 _
                 , .Activo _
                 , .UsuarioCreacion _
                 , .FechaCreacion _
@@ -236,6 +269,7 @@ Public Class d_MovimientoDocumento_Impresion
             Throw ex
         End Try
     End Function
+
 #End Region
 
 End Class
