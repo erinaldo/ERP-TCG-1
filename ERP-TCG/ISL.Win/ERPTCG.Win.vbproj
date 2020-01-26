@@ -406,28 +406,28 @@
     <Compile Include="Comercial\Ventas\frm_GRR_Venta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contabilidad\frm_CanjeND_F.Designer.vb">
-      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Contabilidad\frm_CanjeND_F.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Grifo\frm_Calibraciones.Designer.vb">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
     </Compile>
     <Compile Include="Grifo\frm_Calibraciones.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Grifo\frm_CanjeDocumentos.Designer.vb">
-      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Grifo\frm_CanjeDocumentos.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Grifo\frm_VentaCombustible.Designer.vb">
       <DependentUpon>frm_VentaCombustible.vb</DependentUpon>
     </Compile>
     <Compile Include="Grifo\frm_VentaCombustible.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contabilidad\frm_CanjeND_F.Designer.vb">
+      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Contabilidad\frm_CanjeND_F.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grifo\frm_CanjeDocumentos.Designer.vb">
+      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\frm_CanjeDocumentos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Comercial\Ventas\frm_OrdenVenMaterial.Designer.vb">
@@ -5983,17 +5983,17 @@
     <EmbeddedResource Include="Comercial\Ventas\frm_GRR_Venta.resx">
       <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Contabilidad\frm_CanjeND_F.resx">
-      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_Calibraciones.resx">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\frm_CanjeDocumentos.resx">
-      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\frm_VentaCombustible.resx">
       <DependentUpon>frm_VentaCombustible.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contabilidad\frm_CanjeND_F.resx">
+      <DependentUpon>frm_CanjeND_F.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\frm_CanjeDocumentos.resx">
+      <DependentUpon>frm_CanjeDocumentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_OrdenVenMaterial.resx">
       <DependentUpon>frm_OrdenVenMaterial.vb</DependentUpon>

@@ -10,11 +10,13 @@
     Public Property SerieNumero As String
     Public Property Turno As String
     Public Property Trabajador As String
+    Public Property DOI_Trabajador As String
     Public Property CodigoCliente As String
     Public Property Cliente As String
     Public Property Direccion As String
     Public Property DOI As String
     Public Property Piloto As String
+    Public Property DOI_Piloto As String
     Public Property Placa As String
     Public Property Moneda As String
     Public Property Kilometraje As Double

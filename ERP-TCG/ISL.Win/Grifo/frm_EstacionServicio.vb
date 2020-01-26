@@ -191,7 +191,7 @@ Public Class frm_EstacionServicio
         Try
             udg_Detalle.UpdateData()
             Glosa_OV = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & " //COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
-            Glosa_Documento = "COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
+            Glosa_Documento = txt_Glosa.Text
 
             With OrdenVenta
                 .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login : .FechaCrea = FechaOrden
@@ -306,6 +306,7 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.TipoDocumento = TipoDocumento
                 .DatosImpresion.IdTurno = TurnoActivo.Id
                 .DatosImpresion.Turno = TurnoActivo.Turno
+                .DatosImpresion.Lado = sw_Lado
                 .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
                 .DatosImpresion.IdDireccion = cmb_Direccion.Value
                 .DatosImpresion.Direccion = cmb_Direccion.Text
@@ -370,7 +371,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000038" : .MovimientoInventario = "SALIDA POR VENTAS" '"1CIX006"
                 .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                 .IdMoneda = OrdenVenta.IdMoneda
-                .IdEstadoOrden = "1CH000000003"
+                .IdEstadoOrden = "1CH000000003" : .EstadoOrden = "TERMINADA"
                 .Total = OrdenVenta.Total
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
                 .lstInventario = New List(Of e_Inventario)
@@ -547,7 +548,7 @@ Public Class frm_EstacionServicio
                     .FechaOrden = Date.Now
                     .IdMoneda = IdMoneda_Soles
                     .IdMovimientoInventario = "1CH000000022" 'INGRESO POR TRANSFERENCIA ENTRE ALMACENES
-                    .IdEstadoOrden = "1CH000000003"
+                    .IdEstadoOrden = "1CH000000003" : .EstadoOrden = "TERMINADA"
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                     .lstOrdenMaterial.AddRange(OrdenVenta.oeOrdenSalida.lstOrdenMaterial)
@@ -698,6 +699,7 @@ Public Class frm_EstacionServicio
                     Throw New Exception("No Existen Cuenta Contable para el Servicio " & gVSMercaderia & " para el Año: " & Date.Now.Year &
                                     Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                 End If
+
 
                 If CuentaCorriente.Id <> "" Then
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)

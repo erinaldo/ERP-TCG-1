@@ -173,6 +173,8 @@
     <Compile Include="Contabilidad\d_ComprobanteElectronico.vb" />
     <Compile Include="Contabilidad\d_ComprobanteElectronicoBath.vb" />
     <Compile Include="Contabilidad\d_ComprobanteElectronicoBath_Detalle.vb" />
+    <Compile Include="CPE\d_ComprobantePagoElectronico.vb" />
+    <Compile Include="CPE\d_ComprobantePagoElectronico_Detalle.vb" />
     <Compile Include="Contabilidad\d_CtaCtbleCatServicio.vb" />
     <Compile Include="Contabilidad\d_CtaCtbleSubFamiliaMat.vb" />
     <Compile Include="Contabilidad\d_CtaCtble_Concepto.vb" />

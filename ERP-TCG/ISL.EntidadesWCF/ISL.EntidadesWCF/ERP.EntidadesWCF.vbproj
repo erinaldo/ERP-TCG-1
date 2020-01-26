@@ -1078,6 +1078,8 @@
     <Compile Include="Contabilidad\e_ComprobanteElectronicoBath_Detalle.svc.vb">
       <DependentUpon>e_ComprobanteElectronicoBath_Detalle.svc</DependentUpon>
     </Compile>
+    <Compile Include="CPE\e_ComprobantePagoElectronico.vb" />
+    <Compile Include="CPE\e_ComprobantePagoElectronico_Detalle.vb" />
     <Compile Include="Contabilidad\e_CtaCtbleCatServicio.svc.vb">
       <DependentUpon>e_CtaCtbleCatServicio.svc</DependentUpon>
     </Compile>

@@ -18,6 +18,10 @@ Imports ERP.ServicioExterno
 Public Class l_MovimientoDocumento
     Implements Il_MovimientoDocumento
 
+    '' CPE
+    Public gstrRutaDocumentosEle20 As String
+
+
     Dim odMovimientoDocumento As New d_MovimientoDocumento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
     Dim sFacturacionElectronica As New s_Facturacion
@@ -5514,9 +5518,58 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-
     'CONSULTAR DOCUMENTO
     Function ConsultarDocumento(dsComprobante As DataSet, ByVal rutaFE As String, ByVal usuario As String) As String
         Return sFacturacionElectronica.ConsultarDocumento(dsComprobante, rutaFE, usuario)
     End Function
+
+    Private Sub Documento_Electronico(oeDocumento As e_MovimientoDocumento)
+        Try
+            If oeDocumento.TipoOperacion = "I" Then
+                Dim Hash As String = ""
+                Dim ls_NombreArchivo As String
+                Dim lb_IndXml As Boolean = False
+                Dim oeDocumentoElectronico As New e_ComprobantePagoElectronico
+                Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
+                oeDocumentoElectronico = olDocumentoElectronico.Obtener("UNO", New e_ComprobantePagoElectronico With {.Id = oeDocumento.Id, .IdEmpresaSis = oeDocumento.IdEmpresaSis})
+                For Each detalle As e_ComprobantePagoElectronico_Detalle In oeDocumentoElectronico.Detalles
+                    If detalle.Producto.Trim = String.Empty Then Throw New Exception("Existe un Material sin Nombre de Impresion")
+                Next
+                Select Case oeDocumento.IdTipoDocumento
+                    Case "1CIX001"
+                        ls_NombreArchivo = olDocumentoElectronico.GenerarEDocFactura(oeDocumentoElectronico, Hash).Trim
+                        lb_IndXml = True
+                    Case "1CIX007"
+                        If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
+                            ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
+                            lb_IndXml = True
+                        End If
+                    Case "1CIX008"
+                        If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
+                            ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaDebito(oeDocumentoElectronico, Hash).Trim
+                            lb_IndXml = True
+                        End If
+                End Select
+                If lb_IndXml Then
+                    oeDocumento.DatosImpresion.RutaImpresionXML = ls_NombreArchivo.Trim
+                    oeDocumento.DatosImpresion.RutaImpresionPDF = Replace(ls_NombreArchivo, "xml", "pdf").Trim
+                    oeDocumento.DatosImpresion.CodigoExterno = Replace(Replace(ls_NombreArchivo, ".xml", ""), gstrRutaDocumentosEle20, "").Trim
+                    oeDocumento.DatosImpresion.HashResumen = Hash
+                Else
+                    ls_NombreArchivo = gstrRutaDocumentosEle20 & oeDocumentoElectronico.RUCEmisor & "-" & oeDocumentoElectronico.TipoDocumento & "-" & oeDocumentoElectronico.Documento.Trim & ".pdf"
+                    oeDocumento.DatosImpresion.RutaImpresionXML = String.Empty
+                    oeDocumento.DatosImpresion.RutaImpresionPDF = ls_NombreArchivo.Trim
+                    oeDocumento.DatosImpresion.CodigoExterno = Replace(Replace(ls_NombreArchivo, ".pdf", ""), gstrRutaDocumentosEle20, "")
+                End If
+                oeDocumento.TipoOperacion = "R"
+                oeDocumento.lstDetalleDocumento = New List(Of e_DetalleDocumento)
+                oeDocumento.lstDocAsociado = New List(Of e_DocumentoAsociado)
+                oeDocumento.lstOrdenDocumento = New List(Of e_OrdenDocumento)
+                oeDocumento.oeVenta = New e_Venta
+                odDocumento.Guardar(oeDocumento)
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

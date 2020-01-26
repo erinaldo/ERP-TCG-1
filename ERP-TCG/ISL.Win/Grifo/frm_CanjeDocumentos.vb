@@ -368,6 +368,8 @@ Public Class frm_CanjeDocumentos
                 cmbTipoDocumento.Focus()
                 bso_Detalle.DataSource = ListaDetalleSeleccionados
                 udg_Detalles.DataBind()
+                bso_DocumentosSeleccionados.DataSource = ListaDocumentoSeleccionados
+                udg_DocumentosSeleccionados.DataBind()
                 mt_CalcularTotalOrden()
             End If
         Catch ex As Exception

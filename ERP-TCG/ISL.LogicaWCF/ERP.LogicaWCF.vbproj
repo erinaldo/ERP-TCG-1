@@ -55,6 +55,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Services3">
+      <HintPath>..\Librerias\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
@@ -73,6 +76,7 @@
     <Reference Include="System.Runtime.Serialization">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel">
       <RequiredTargetFramework>3.0</RequiredTargetFramework>
     </Reference>
@@ -193,6 +197,7 @@
     <Content Include="Contabilidad\l_ComprobanteElectronico.svc" />
     <Content Include="Contabilidad\l_ComprobanteElectronicoBath.svc" />
     <Content Include="Contabilidad\l_ComprobanteElectronicoBath_Detalle.svc" />
+    <Content Include="CPE\l_ComprobantePagoElectronico.svc" />
     <Content Include="Contabilidad\l_CtaCtbleCatServicio.svc" />
     <Content Include="Contabilidad\l_CtaCtbleSubFamiliaMat.svc" />
     <Content Include="Contabilidad\l_CtaCtble_Concepto.svc" />
@@ -873,6 +878,7 @@
     <Compile Include="Contabilidad\Il_ComprobanteElectronico.vb" />
     <Compile Include="Contabilidad\Il_ComprobanteElectronicoBath.vb" />
     <Compile Include="Contabilidad\Il_ComprobanteElectronicoBath_Detalle.vb" />
+    <Compile Include="CPE\Il_ComprobantePagoElectronico.vb" />
     <Compile Include="Contabilidad\Il_CtaCtbleCatServicio.vb" />
     <Compile Include="Contabilidad\Il_CtaCtbleSubFamiliaMat.vb" />
     <Compile Include="Contabilidad\Il_CtaCtble_Concepto.vb" />
@@ -924,6 +930,9 @@
     </Compile>
     <Compile Include="Contabilidad\l_ComprobanteElectronicoBath_Detalle.svc.vb">
       <DependentUpon>l_ComprobanteElectronicoBath_Detalle.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CPE\l_ComprobantePagoElectronico.svc.vb">
+      <DependentUpon>l_ComprobantePagoElectronico.svc</DependentUpon>
     </Compile>
     <Compile Include="Contabilidad\l_CtaCtbleCatServicio.svc.vb">
       <DependentUpon>l_CtaCtbleCatServicio.svc</DependentUpon>
