@@ -22,7 +22,12 @@ Partial Class frm_GRR_Venta_Print
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.rv_Grr_Venta = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'rv_Grr_Venta
@@ -42,9 +47,13 @@ Partial Class frm_GRR_Venta_Print
         Me.Controls.Add(Me.rv_Grr_Venta)
         Me.Name = "frm_GRR_Venta_Print"
         Me.Text = "frm_GRR_Venta_Print"
+        CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents rv_Grr_Venta As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents BindingSource1 As BindingSource
+    Friend WithEvents BindingSource2 As BindingSource
 End Class

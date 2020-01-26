@@ -5819,6 +5819,12 @@
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MovimientoDocumento.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_MovimientoDocumento_Impresion.datasource" />
     <None Include="packages.config" />
+    <Content Include="PLANTILLAS_SGI\Plantilla_GRR_Venta.xlt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PLANTILLAS_SGI\Plantilla_GRR_Venta.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Service References\WCF_CpeIndu\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -6558,7 +6564,9 @@
       <DependentUpon>frm_VentaMerma.vb</DependentUpon>
     </EmbeddedResource>
     <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc" />
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_GRR_Print.rdlc" />
+    <Content Include="Reportes\Comercial\Ventas\rpt_GRR_Print.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

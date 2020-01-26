@@ -3,6 +3,8 @@ Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinEditors
+Imports Microsoft.Office.Interop
+Imports System.Runtime.InteropServices
 
 Public Class frm_GRR_Venta
     Inherits frm_MenuPadre
@@ -202,15 +204,16 @@ Public Class frm_GRR_Venta
     End Sub
 
     Public Overrides Sub Imprimir()
-        Dim id As String = ""
+        'Dim id As String = ""
         Try
-            'If griDocumento.Selected.Rows.Count > 0 Then
-            '    Dim formulario As New frm_ImprimirGRR
-            '    id = griDocumento.ActiveRow.Cells("Id").Value
-            '    formulario.mt_CargarDatos(id)
-            '    formulario.ShowDialog()
-            '    gmt_ControlBoton(1, 1, 0, 0, 0, 1, 1, 1, 1)
-            'End If
+            If griDocumento.Selected.Rows.Count > 0 Then
+                'Dim formulario As New frm_GRR_Venta_Print(griDocumento.ActiveRow.Cells("Id").Value)
+                mt_ImprimirGRR_Venta(griDocumento.ActiveRow.Cells("Id").Value)
+                'id = griDocumento.ActiveRow.Cells("Id").Value
+                'formulario.mt_CargarDatos()
+                'formulario.ShowDialog()
+                'gmt_ControlBoton(1, 1, 0, 0, 0, 1, 1, 1, 1)
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
@@ -489,9 +492,80 @@ Public Class frm_GRR_Venta
 
 #Region "Metodos"
 
-    Private Sub mt_CargarDetalleOV()
+    Private Sub mt_ImprimirGRR_Venta(Id As String)
         Try
+            Dim DT1 As DataTable, DT2 As DataTable
+            Dim objXls As Excel.Application
+            Dim objWorkbook As Excel.Workbook
+            Dim objWorkSheet As Excel.Worksheet
+            Dim NroLinea As Integer = 19
+            objXls = New Excel.Application
+            Dim FileToCopy As String
+            Dim PathFilePTRA As String
+            Dim Fecha As String
+            Dim FechaTraslado As String
+            DT1 = olGuiaRR.ListarDT(New e_GRR_Venta With {.TipoOperacion = "PRI", .Id = Id})
+            DT2 = olGuiaRRDetalle.ListarDT(New e_GuiaRemisionRemitente_Detalle With {.TipoOperacion = "PRI", .IdGRR_Venta = Id})
 
+            FileToCopy = Application.StartupPath & "\PLANTILLAS_SGI\Plantilla_GRR_Venta.xlt"
+            PathFilePTRA = Application.StartupPath & "\PLANTILLAS_SGI\Plantilla_GRR_Venta.xls"
+
+            Dim OldCultureInfo As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+            System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("es-PE")
+            objWorkbook = objXls.Workbooks.Open(PathFilePTRA)
+            objWorkSheet = objXls.Worksheets(1)
+
+            objWorkSheet.Name = "GRR " & griDocumento.ActiveRow.Cells("Serie").Value & " - " & griDocumento.ActiveRow.Cells("Numero").Value
+
+            For Each datarow As DataRow In DT1.Rows
+                Fecha = datarow("FecEmision")
+                FechaTraslado = datarow("FecTraslado")
+                objWorkSheet.Cells(5, 5) = datarow("Partida").ToString
+                objWorkSheet.Cells(6, 5) = datarow("LocPartida").ToString
+                objWorkSheet.Cells(8, 5) = datarow("Destinatario").ToString
+                objWorkSheet.Cells(9, 5) = datarow("Ruc").ToString
+                objWorkSheet.Cells(10, 5) = datarow("Llegada").ToString
+                objWorkSheet.Cells(11, 5) = datarow("LocLlegada").ToString
+                objWorkSheet.Cells(13, 5) = datarow("Transportista").ToString
+                objWorkSheet.Cells(13, 22) = Strings.Left(datarow("FecEmision").ToString, 10)
+                objWorkSheet.Cells(15, 5) = datarow("RucTrans").ToString
+                objWorkSheet.Cells(15, 9) = datarow("Marca").ToString
+                objWorkSheet.Cells(15, 14) = datarow("Placas").ToString
+                objWorkSheet.Cells(15, 23) = Strings.Left(datarow("FecTraslado").ToString, 10)
+                objWorkSheet.Cells(16, 4) = datarow("Chofer").ToString
+                objWorkSheet.Cells(16, 9) = datarow("Brevete").ToString
+                objWorkSheet.Cells(16, 14) = datarow("MTC").ToString
+                objWorkSheet.Cells(16, 22) = datarow("DocAsoc").ToString
+                objWorkSheet.Cells(35, 6) = datarow("Motivo").ToString
+                objWorkSheet.Cells(35, 11) = datarow("Peso")
+            Next
+
+            For Each datarow As DataRow In DT2.Rows
+                objWorkSheet.Cells(NroLinea, 4) = datarow("CodigoMaterial").ToString
+                objWorkSheet.Cells(NroLinea, 6) = datarow("Material").ToString
+                objWorkSheet.Cells(NroLinea, 12) = datarow("Cantidad")
+                objWorkSheet.Cells(NroLinea, 16) = datarow("IdUnidadMedida").ToString
+                objWorkSheet.Cells(NroLinea, 18) = datarow("Peso").ToString
+                NroLinea += 1
+            Next
+
+            objXls.ActiveWindow.Zoom = 100
+            objXls.ActiveWindow.DisplayGridlines = False
+            objXls.Sheets.Item(1).Select()
+            objXls.Visible = True
+            If Not (objWorkSheet Is Nothing) Then
+                Marshal.ReleaseComObject(objWorkSheet)
+            End If
+            If Not (objWorkbook Is Nothing) Then
+                Marshal.ReleaseComObject(objWorkbook)
+            End If
+            If Not (objXls Is Nothing) Then
+                Marshal.ReleaseComObject(objXls)
+            End If
+            objWorkSheet = Nothing
+            objWorkbook = Nothing
+            objXls = Nothing
+            System.Threading.Thread.CurrentThread.CurrentCulture = OldCultureInfo
         Catch ex As Exception
             Throw ex
         End Try

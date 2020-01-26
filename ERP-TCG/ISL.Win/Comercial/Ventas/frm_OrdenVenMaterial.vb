@@ -1260,7 +1260,7 @@ Public Class frm_OrdenVenMaterial
             Else
                 oeOrdenComercial.OrdenComercial = txtNroOrden.Text
             End If
-            griOrdenComercial.DataSource = olOrdenComercial.Listar(oeOrdenComercial)
+            griOrdenComercial.DataSource = olOrdenComercial.Listar(oeOrdenComercial).OrderByDescending(Function(i) i.Fecha).ToList
             mt_CombosGrillaPrincipal(griOrdenComercial)
             For Each fila As UltraGridRow In griOrdenComercial.Rows
                 Select Case fila.Cells("Estado").Value

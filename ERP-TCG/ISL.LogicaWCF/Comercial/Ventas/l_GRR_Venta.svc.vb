@@ -38,6 +38,7 @@ Public Class l_GRR_Venta
 
     Public Function ListarDT(ByVal oeGuiaRemitente As e_GRR_Venta) As DataTable Implements Il_GRR_Venta.ListarDT
         Try
+            odGuiaRemitente = New d_GRR_Venta
             Return odGuiaRemitente.ListarDT(oeGuiaRemitente)
         Catch ex As Exception
             Throw

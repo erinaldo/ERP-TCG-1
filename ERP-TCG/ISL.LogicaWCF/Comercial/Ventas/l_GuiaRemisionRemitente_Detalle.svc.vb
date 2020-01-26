@@ -38,6 +38,7 @@ Public Class l_GuiaRemisionRemitente_Detalle
 
     Public Function ListarDT(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As DataTable Implements Il_GuiaRemisionRemitente_Detalle.ListarDT
         Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
             Return odGuiaRemitente.ListarDT(oeGuiaRemitente_Detalle)
         Catch ex As Exception
             Throw
