@@ -531,7 +531,8 @@ Public Class frm_CanjeDocumentos
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
                 .Serie = txtSerie.Text
-                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
+                '.Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
+                .Numero = txt_Numero.Text
                 .IdEstadoDocumento = "1CH00014"
                 .EstadoDocumento = "GENERADA"
                 .IdTipoDocumento = cmbTipoDocumento.Value
@@ -884,6 +885,14 @@ Public Class frm_CanjeDocumentos
 
     Private Sub udg_Documentos_Click(sender As Object, e As EventArgs) Handles udg_Documentos.Click
         mt_Ver_Detalles()
+    End Sub
+
+    Private Sub udg_Detalles_CellChange(sender As Object, e As CellEventArgs) Handles udg_Detalles.CellChange
+        udg_Detalles.UpdateData()
+        Select Case e.Cell.Column.Key
+            Case "Precio"
+                mt_CalcularTotalOrden()
+        End Select
     End Sub
 
 #End Region

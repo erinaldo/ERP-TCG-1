@@ -57,6 +57,21 @@ Public Class d_GuiaRemisionRemitente_Detalle
         End Try
     End Function
 
+    Public Function ListarDT(oe As e_GuiaRemisionRemitente_Detalle) As DataTable
+        Try
+            Dim DT As New DataTable, DS As New DataSet
+            With oe
+                DS = sqlhelper.ExecuteDataset("[ADM].[GRRVenta_Detalle_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal, .IdGRR_Venta)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
+                End If
+            End With
+            Return DT
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Guardar(ByVal oeGuiaRemitente As e_GuiaRemisionRemitente_Detalle) As Boolean
         Try
             With oeGuiaRemitente

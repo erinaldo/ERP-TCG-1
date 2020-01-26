@@ -458,6 +458,7 @@
     <Content Include="Personal\e_SueldoTrabajador.svc" />
     <Content Include="Personal\e_TipoHorario.svc" />
     <Content Include="Personal\e_Utilidad.svc" />
+    <Content Include="Reportes\e_GuiaRRVenta_Print.svc" />
     <Content Include="SegPlanControl\e_AccidenteCarga.svc" />
     <Content Include="SegPlanControl\e_AccidenteFoto.svc" />
     <Content Include="SegPlanControl\e_AccidenteIncidencia.svc" />
@@ -2041,6 +2042,10 @@
     <Compile Include="Personal\Ie_SueldoTrabajador.vb" />
     <Compile Include="Personal\Ie_TipoHorario.vb" />
     <Compile Include="Personal\Ie_Utilidad.vb" />
+    <Compile Include="Reportes\e_GuiaRRVenta_Print.svc.vb">
+      <DependentUpon>e_GuiaRRVenta_Print.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Ie_GuiaRRVenta_Print.vb" />
     <Compile Include="SegPlanControl\e_AccidenteCarga.svc.vb">
       <DependentUpon>e_AccidenteCarga.svc</DependentUpon>
     </Compile>
