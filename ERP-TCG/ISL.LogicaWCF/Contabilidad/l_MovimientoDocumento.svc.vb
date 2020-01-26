@@ -5529,6 +5529,7 @@ Public Class l_MovimientoDocumento
                 Dim Hash As String = ""
                 Dim ls_NombreArchivo As String
                 Dim lb_IndXml As Boolean = False
+                Dim odDocumento As New l_MovimientoDocumento
                 Dim oeDocumentoElectronico As New e_ComprobantePagoElectronico
                 Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
                 oeDocumentoElectronico = olDocumentoElectronico.Obtener("UNO", New e_ComprobantePagoElectronico With {.Id = oeDocumento.Id, .IdEmpresaSis = oeDocumento.IdEmpresaSis})
@@ -5540,15 +5541,15 @@ Public Class l_MovimientoDocumento
                         ls_NombreArchivo = olDocumentoElectronico.GenerarEDocFactura(oeDocumentoElectronico, Hash).Trim
                         lb_IndXml = True
                     Case "1CIX007"
-                        If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
-                            ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
+                        'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
+                        ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
                             lb_IndXml = True
-                        End If
+                        'End If
                     Case "1CIX008"
-                        If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
-                            ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaDebito(oeDocumentoElectronico, Hash).Trim
+                        'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
+                        ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaDebito(oeDocumentoElectronico, Hash).Trim
                             lb_IndXml = True
-                        End If
+                        'End If
                 End Select
                 If lb_IndXml Then
                     oeDocumento.DatosImpresion.RutaImpresionXML = ls_NombreArchivo.Trim
@@ -5563,9 +5564,9 @@ Public Class l_MovimientoDocumento
                 End If
                 oeDocumento.TipoOperacion = "R"
                 oeDocumento.lstDetalleDocumento = New List(Of e_DetalleDocumento)
-                oeDocumento.lstDocAsociado = New List(Of e_DocumentoAsociado)
-                oeDocumento.lstOrdenDocumento = New List(Of e_OrdenDocumento)
-                oeDocumento.oeVenta = New e_Venta
+                'oeDocumento.lstDocAsociado = New List(Of e_DocumentoAsociado) 'CesS
+                'oeDocumento.lstOrdenDocumento = New List(Of e_OrdenDocumento) 'CesS
+                'oeDocumento.oeVenta = New e_Venta 'CesS
                 odDocumento.Guardar(oeDocumento)
             End If
         Catch ex As Exception

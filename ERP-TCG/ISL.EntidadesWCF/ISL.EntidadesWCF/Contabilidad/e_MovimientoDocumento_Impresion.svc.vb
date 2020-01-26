@@ -50,6 +50,7 @@
     Private _Ruta As String
     Private _RutaImpresionPDF As String
     Private _RutaImpresionXML As String
+    Private _IdComprobantePagoElectronico_Resumen As String
     Private _ValorAux1 As Double
     Private _ValorAux2 As Double
     Private _ValorAux3 As Double
@@ -137,6 +138,7 @@
           , ByVal ls_Ruta As String _
           , ByVal ls_RutaImpresionPDF As String _
           , ByVal ls_RutaImpresionXML As String _
+          , ByVal ls_IdComprobantePagoElectronico_Resumen As String _
           , ByVal ln_ValorAux1 As Double _
           , ByVal ln_ValorAux2 As Double _
           , ByVal ln_ValorAux3 As Double _
@@ -181,6 +183,7 @@
         _Ruta = ls_Ruta
         _RutaImpresionPDF = ls_RutaImpresionPDF
         _RutaImpresionXML = ls_RutaImpresionXML
+        _IdComprobantePagoElectronico_Resumen = ls_IdComprobantePagoElectronico_Resumen
         _ValorAux1 = ln_ValorAux1
         _ValorAux2 = ln_ValorAux2
         _ValorAux3 = ln_ValorAux3
@@ -426,6 +429,17 @@
             _RutaImpresionXML = value
         End Set
     End Property
+
+    Public Property IdComprobantePagoElectronico_Resumen() As String
+        Get
+            Return _IdComprobantePagoElectronico_Resumen
+        End Get
+        Set(ByVal value As String)
+            _IdComprobantePagoElectronico_Resumen = value
+        End Set
+    End Property
+
+
     Public Property ValorAux1() As Double
         Get
             Return _ValorAux1

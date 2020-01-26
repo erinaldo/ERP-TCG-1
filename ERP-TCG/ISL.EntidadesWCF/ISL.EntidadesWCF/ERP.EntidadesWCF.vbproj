@@ -1247,6 +1247,7 @@
     <Compile Include="Contabilidad\Ie_TipoActivoFijo_CtaCtble.vb" />
     <Compile Include="Contabilidad\Ie_TipoBien.vb" />
     <Compile Include="Contabilidad\Ie_TipoOpeCon.vb" />
+    <Compile Include="CPE\e_ComprobantePagoElectronico_Resumen.vb" />
     <Compile Include="Entidades.svc.vb">
       <DependentUpon>Entidades.svc</DependentUpon>
     </Compile>

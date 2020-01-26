@@ -36,10 +36,10 @@ Public Interface Il_ComprobantePagoElectronico
     <OperationContract()>
     Function GenerarEDocNotaDebito20(Documento As e_ComprobantePagoElectronico, ByRef Hash As String) As String
 
-    '<OperationContract()>
-    'Function GenerarResumenBoletas20(ByVal oe As List(Of e_ComprobantePagoElectronico), ByVal Empresa As e_Empresa, Resumen As e_Resumen_Doc_Electronico, ByRef Hash As String) As String
+    <OperationContract()>
+    Function GenerarResumenBoletas20(ByVal oe As List(Of e_ComprobantePagoElectronico), ByVal Empresa As e_Empresa, Resumen As e_ComprobantePagoElectronico_Resumen, ByRef Hash As String) As String
 
-    '<OperationContract()>
-    'Function GenerarDocBaja(ByVal oe As List(Of e_ComprobantePagoElectronico), ByVal Empresa As e_Empresa, Resumen As e_Resumen_Doc_Electronico, ByRef Hash As String, Motivo As String) As String
+    <OperationContract()>
+    Function GenerarDocBaja(ByVal oe As List(Of e_ComprobantePagoElectronico), ByVal Empresa As e_Empresa, Resumen As e_ComprobantePagoElectronico_Resumen, ByRef Hash As String, Motivo As String) As String
 
 End Interface

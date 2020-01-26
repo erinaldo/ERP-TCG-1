@@ -224,6 +224,7 @@
     <Content Include="Contabilidad\l_TipoActivoFijo_CtaCtble.svc" />
     <Content Include="Contabilidad\l_TipoBien.svc" />
     <Content Include="Contabilidad\l_TipoOpeCon.svc" />
+    <Content Include="CPE\l_ComprobantePagoElectronico_Resumen.svc" />
     <Content Include="Finanzas\l_ContratoFinanciero.svc" />
     <Content Include="Finanzas\l_LimiteCredito.svc" />
     <Content Include="Finanzas\l_FecLetras.svc" />
@@ -931,6 +932,7 @@
     <Compile Include="Contabilidad\l_ComprobanteElectronicoBath_Detalle.svc.vb">
       <DependentUpon>l_ComprobanteElectronicoBath_Detalle.svc</DependentUpon>
     </Compile>
+    <Compile Include="CPE\Il_ComprobantePagoElectronico_Resumen.vb" />
     <Compile Include="CPE\l_ComprobantePagoElectronico.svc.vb">
       <DependentUpon>l_ComprobantePagoElectronico.svc</DependentUpon>
     </Compile>
@@ -1008,6 +1010,9 @@
     </Compile>
     <Compile Include="Contabilidad\l_TipoOpeCon.svc.vb">
       <DependentUpon>l_TipoOpeCon.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CPE\l_ComprobantePagoElectronico_Resumen.svc.vb">
+      <DependentUpon>l_ComprobantePagoElectronico_Resumen.svc</DependentUpon>
     </Compile>
     <Compile Include="Finanzas\Il_ContratoFinanciero.vb" />
     <Compile Include="Finanzas\Il_LimiteCredito.vb" />

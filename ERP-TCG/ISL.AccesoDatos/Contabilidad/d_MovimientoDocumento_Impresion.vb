@@ -69,6 +69,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .Ruta _
                 , .RutaImpresionPDF _
                 , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _
@@ -129,6 +130,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .Ruta _
                 , .RutaImpresionPDF _
                 , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _
@@ -185,6 +187,7 @@ Public Class d_MovimientoDocumento_Impresion
                          , o_fila("Ruta").ToString _
                          , o_fila("RutaImpresionPDF").ToString _
                          , o_fila("RutaImpresionXML").ToString _
+                         , o_fila("IdComprobantePagoElectronico_Resumen").ToString _
                          , o_fila("ValorAux1").ToString _
                          , o_fila("ValorAux2").ToString _
                          , o_fila("ValorAux3").ToString _
@@ -243,6 +246,7 @@ Public Class d_MovimientoDocumento_Impresion
                 , .Ruta _
                 , .RutaImpresionPDF _
                 , .RutaImpresionXML _
+                , .IdComprobantePagoElectronico_Resumen _
                 , .ValorAux1 _
                 , .ValorAux2 _
                 , .ValorAux3 _

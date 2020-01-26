@@ -211,6 +211,7 @@
     <Compile Include="Contabilidad\d_TipoActivoFijo_CtaCtble.vb" />
     <Compile Include="Contabilidad\d_TipoBien.vb" />
     <Compile Include="Contabilidad\d_TipoOpeCon.vb" />
+    <Compile Include="CPE\d_ComprobantePagoElectronico_Resumen.vb" />
     <Compile Include="Finanzas\d_ContratoFinanciero.vb" />
     <Compile Include="Finanzas\d_FecLetras.vb" />
     <Compile Include="Finanzas\d_LimiteCredito.vb" />

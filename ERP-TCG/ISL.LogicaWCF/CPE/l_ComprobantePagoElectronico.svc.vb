@@ -1394,7 +1394,7 @@ Public Class l_ComprobantePagoElectronico
     End Function
 
     <OperationBehavior(TransactionScopeRequired:=True)>
-    Public Function GenerarResumenBoletas20(lst As List(Of e_ComprobantePagoElectronico), Empresa As e_Empresa, Resumen As e_Resumen_Doc_Electronico, ByRef Hash As String) As String Implements Il_ComprobantePagoElectronico.GenerarResumenBoletas20
+    Public Function GenerarResumenBoletas20(lst As List(Of e_ComprobantePagoElectronico), Empresa As e_Empresa, Resumen As e_ComprobantePagoElectronico_Resumen, ByRef Hash As String) As String Implements Il_ComprobantePagoElectronico.GenerarResumenBoletas20
         'Dim gstrRutaDocumentosEle20 As String = "D:\Documentos\Compatir\OneDrive\Comprobantes\" & Empresa.NroDoc & "\2-0\Documentos\"
         Dim Ruta As String = gstrRutaDocumentosEle20 & Empresa.Ruc.Trim & "-RC-" & Resumen.FechaResumen & "-" & Resumen.Correlativo & ".xml"
         Try
@@ -1568,7 +1568,7 @@ Public Class l_ComprobantePagoElectronico
     End Function
 
     <OperationBehavior(TransactionScopeRequired:=True)>
-    Public Function GenerarDocBaja(lst As List(Of e_ComprobantePagoElectronico), Empresa As e_Empresa, Resumen As e_Resumen_Doc_Electronico, ByRef Hash As String, Motivo As String) As String Implements Il_ComprobantePagoElectronico.GenerarDocBaja
+    Public Function GenerarDocBaja(lst As List(Of e_ComprobantePagoElectronico), Empresa As e_Empresa, Resumen As e_ComprobantePagoElectronico_Resumen, ByRef Hash As String, Motivo As String) As String Implements Il_ComprobantePagoElectronico.GenerarDocBaja
         'Dim gstrRutaDocumentosEle20 As String = "D:\Documentos\Compatir\OneDrive\Comprobantes\" & Empresa.NroDoc & "\2-0\Documentos\"
         Dim Ruta As String = gstrRutaDocumentosEle20 & Empresa.Ruc & "-RA-" & Resumen.FechaResumen & "-" & Resumen.Correlativo & ".xml"
         Try
