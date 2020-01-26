@@ -6539,6 +6539,9 @@
     <EmbeddedResource Include="Reportes\Administracion\frm_ReporteCuentasxPagarADM.resx">
       <DependentUpon>frm_ReporteCuentasxPagarADM.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_GRR_Venta_Print.resx">
+      <DependentUpon>frm_GRR_Venta_Print.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_ImprimirResumenDiarioDespacho.resx">
       <DependentUpon>frm_ImprimirResumenDiarioDespacho.vb</DependentUpon>
     </EmbeddedResource>

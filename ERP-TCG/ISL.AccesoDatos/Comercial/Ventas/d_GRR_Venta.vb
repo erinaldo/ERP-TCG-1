@@ -42,6 +42,21 @@ Public Class d_GRR_Venta
         End Try
     End Function
 
+    Public Function ListarDT(oe As e_GRR_Venta) As DataTable
+        Try
+            Dim DT As New DataTable, DS As New DataSet
+            With oe
+                DS = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
+                End If
+            End With
+            Return DT
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Listar(ByVal oeGuiaRemitente As e_GRR_Venta) As List(Of e_GRR_Venta)
         Try
             Dim ldGuiaRemitente As New List(Of e_GRR_Venta)

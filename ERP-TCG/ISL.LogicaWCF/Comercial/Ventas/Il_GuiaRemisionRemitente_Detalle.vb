@@ -17,4 +17,7 @@ Public Interface Il_GuiaRemisionRemitente_Detalle
     <OperationContract()>
     Function Obtener(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As e_GuiaRemisionRemitente_Detalle
 
+    <OperationContract()>
+    Function ListarDT(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As DataTable
+
 End Interface

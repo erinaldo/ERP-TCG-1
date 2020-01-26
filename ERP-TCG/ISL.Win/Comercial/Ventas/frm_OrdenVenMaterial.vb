@@ -1648,7 +1648,7 @@ Public Class frm_OrdenVenMaterial
             mnuDetalle.Tools("Agregar").SharedProps.Enabled = AgregarQuitar
             mnuDetalle.Tools("Quitar").SharedProps.Enabled = AgregarQuitar
             mnuDetalle.Tools("GenerarOS").SharedProps.Enabled = Generar
-            mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = Documento
+            mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = True 'Documento
             mnuDetalle.Tools("EjecutarOS").SharedProps.Enabled = Ejecutar
             mnuDetalle.Tools("GenerarNotaSalida").SharedProps.Enabled = Documento
         Catch ex As Exception
@@ -2449,6 +2449,7 @@ Public Class frm_OrdenVenMaterial
                 mt_GeneraDocumento()
                 oeOrdenComercial.oeDocumento = oeDocumento
             Else
+                oeOrdenComercial.oeDocumento = New e_MovimientoDocumento
                 Select Case MessageBox.Show("¿Desea Guardar la Orden sin Documento?", "Mensaje del Sistema",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
                     Case Windows.Forms.DialogResult.No
