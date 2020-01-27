@@ -227,6 +227,16 @@ Public Class frm_EstacionServicio
             Throw ex
         End Try
     End Function
+    Private Function fc_Confirmar_DocumentoElectronico(IdTipoDocumento As String) As Boolean
+        Try
+            Select Case IdTipoDocumento
+                Case "1CH000000026" : Return True
+                Case Else : Return False
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
     Private Function fc_Cargar_MovimientoDocumento() As e_MovimientoDocumento
         Try
@@ -254,6 +264,7 @@ Public Class frm_EstacionServicio
                 .Saldo = .Total
                 .TipoCambio = TipoCambio
                 .Mac_PC_Local = MacPCLocal()
+                .IndElectronico = fc_Confirmar_DocumentoElectronico(.IdTipoDocumento)
                 .Glosa = Glosa_Documento
 
                 '' Cargar Detalle de Documento
@@ -763,6 +774,10 @@ Public Class frm_EstacionServicio
             '    'End If
             '    'If cb_CobroAutomatico.Checked Then gfc_CobroAutomatico(oeDocumento.Id, frm.cmbPeriodo.Value, loCtaCtble, oeDoc.FechaCrea)
             'End If
+
+            '' =========================================================================== 
+            '' Emision de CPE
+            If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
         Catch ex As Exception
             Throw ex
         End Try
