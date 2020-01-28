@@ -65,13 +65,46 @@ fila("IdTrabajador"))
     Public Function Obtener(ByVal oeOrden As e_Orden) As e_Orden
         Try
             Dim ds As DataSet
-            ds = sqlhelper.ExecuteDataset("ALM.Isp_Orden_Listar", _
-                                          oeOrden.TipoOperacion, _
-                                          oeOrden.Id, oeOrden.NroOrden, Date.Parse("01/01/1901"), Date.Parse("01/01/1901"), _
-                                          1, "", "", oeOrden.IdTipoOrden)
+            ds = sqlhelper.ExecuteDataset("ALM.Isp_Orden_Listar",
+                                          oeOrden.TipoOperacion,
+                                          oeOrden.Id,
+                                          oeOrden.NroOrden,
+                                          Date.Parse("01/01/1901"),
+                                          Date.Parse("01/01/1901"),
+                                          1,
+                                          "",
+                                          "",
+                                          oeOrden.IdTipoOrden,
+                                          oeOrden.Referencia)
 
 
             If ds.Tables(0).Rows.Count > 0 AndAlso ds.Tables(0).Rows.Count > 0 Then
+                oeOrden = Cargar(ds.Tables(0).Rows(0))
+            End If
+            Return oeOrden
+        Catch ex As Exception
+            Throw
+        End Try
+        Return Nothing
+    End Function
+
+    Public Function ObtenerxReferencia(ByVal oeOrden As e_Orden) As e_Orden
+        Try
+            Dim ds As DataSet
+            ds = sqlhelper.ExecuteDataset("ALM.Isp_Orden_Listar",
+                                          oeOrden.TipoOperacion,
+                                          "",
+                                          "",
+                                          Date.Parse("01/01/1901"),
+                                          Date.Parse("01/01/1901"),
+                                          1,
+                                          "",
+                                          "",
+                                          "",
+                                          oeOrden.Referencia)
+
+
+            If ds.Tables(0).Rows.Count > 0 Then
                 oeOrden = Cargar(ds.Tables(0).Rows(0))
             End If
             Return oeOrden

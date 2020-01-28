@@ -2,7 +2,7 @@
 Imports ERP.LogicaWCF
 Imports Infragistics.Win.UltraWinGrid
 
-Public Class frm_ventacombustible
+Public Class frm_VentaCombustible
     Inherits frm_MenuPadre
 
 #Region "Inicializacion del Formulario"
@@ -13,12 +13,12 @@ Public Class frm_ventacombustible
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_OrdenVenMaterial = Nothing
+    Private Shared instancia As frm_VentaCombustible = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_OrdenVenMaterial()
+            instancia = New frm_VentaCombustible()
             Operacion = "Inicializa"
         End If
         instancia.Activate()

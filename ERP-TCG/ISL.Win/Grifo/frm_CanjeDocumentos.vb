@@ -377,6 +377,14 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
+    Private Function fc_Agrupar_ListaDetalles(Lista As List(Of e_OrdenVentaMaterial)) As List(Of e_OrdenVentaMaterial)
+        Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Function
+
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Cliente.InitializeLayout
         Me.cmb_Cliente.ValueMember = "Id"
         Me.cmb_Cliente.DisplayMember = "Nombre"

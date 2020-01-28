@@ -213,7 +213,7 @@ Public Class frm_EstacionServicio
                 .IdTurno = TurnoActivo.Id
                 .IdTipoVenta = IdTipoVenta
                 .IdCanalVenta = "GRIFO"
-                .IdPlaca = cmb_Vehiculo.Value
+                .IdPlaca = cmb_Vehiculo.Text
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
                 .GlosaResumen = Glosa_OV
@@ -470,7 +470,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000013" : .MovimientoInventario = "MANTENIMIENTO - DEVOLUCION" '"1CIX006"
                 .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                 .IdMoneda = OrdenVenta.IdMoneda
-                .IdEstadoOrden = "1CIX025"
+                .IdEstadoOrden = "1CH000000003"
                 .Total = OrdenVenta.Total
                 .Glosa = "INGRESO POR CALIBRACION"
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
@@ -961,6 +961,7 @@ Public Class frm_EstacionServicio
                 .IdAlmacen = IdAlmacen_Combustible : .IdSubAlmacen = IdSubAlmacen_Combustible
                 .IdUnidadMedida = "1CH000000001"
                 .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
+                .IdOrigen = cmb_Vehiculo.Text
                 .Glosa = sw_Lado
             End With
             If OrdenVenta.lstOrdenComercialMaterial.Where(Function(i) i.IdMaterial = OV_DETALLE.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
