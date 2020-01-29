@@ -24,6 +24,10 @@ Public Class e_GRR_Venta
     <DataMember()>
     Public Property FechaTraslado() As Date
     <DataMember()>
+    Public Property IdEstado() As String
+    <DataMember()>
+    Public Property Estado() As String
+    <DataMember()>
     Public Property Serie() As String
     <DataMember()>
     Public Property Numero() As String
@@ -85,6 +89,8 @@ Public Class e_GRR_Venta
         Cliente = String.Empty
         Fecha = Date.Parse("01/01/1901")
         FechaTraslado = Date.Parse("01/01/1901")
+        IdEstado = String.Empty
+        Estado = String.Empty
         Serie = String.Empty
         Numero = String.Empty
         TotalPeso = 0
