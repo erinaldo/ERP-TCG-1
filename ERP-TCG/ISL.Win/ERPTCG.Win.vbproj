@@ -406,6 +406,14 @@
     <Compile Include="Comercial\Ventas\frm_GRR_Venta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Fotos\eImpresion\DocElectronico.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocElectronico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Fotos\eImpresion\DocElectronico.vb">
+      <DependentUpon>DocElectronico.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Grifo\frm_Calibraciones.Designer.vb">
       <DependentUpon>frm_Calibraciones.vb</DependentUpon>
     </Compile>
@@ -5806,6 +5814,17 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Fotos\eImpresion\DocElectronico.xsc">
+      <DependentUpon>DocElectronico.xsd</DependentUpon>
+    </None>
+    <None Include="Fotos\eImpresion\DocElectronico.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DocElectronico.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Fotos\eImpresion\DocElectronico.xss">
+      <DependentUpon>DocElectronico.xsd</DependentUpon>
+    </None>
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble_Detalle.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Combo.datasource" />
