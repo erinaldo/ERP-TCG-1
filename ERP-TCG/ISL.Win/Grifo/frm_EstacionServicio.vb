@@ -241,7 +241,7 @@ Public Class frm_EstacionServicio
     Private Function fc_Cargar_MovimientoDocumento() As e_MovimientoDocumento
         Try
             MovimientoDocumento = New e_MovimientoDocumento
-            Dim ItemDocumento As New e_DetalleDocumento
+
             With MovimientoDocumento
                 .TipoOperacion = "I" : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .PrefijoID = gs_PrefijoIdSucursal : .IdUsuarioCrea = gUsuarioSGI.Id : .FechaCreacion = FechaOrden
                 .IdClienteProveedor = OrdenVenta.IdEmpresa
@@ -270,6 +270,7 @@ Public Class frm_EstacionServicio
                 '' Cargar Detalle de Documento
                 .lstDetalleDocumento = New List(Of e_DetalleDocumento)
                 For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
+                    Dim ItemDocumento As New e_DetalleDocumento
                     ItemDocumento.TipoOperacion = "I" : ItemDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : ItemDocumento.IdSucursal = gs_IdSucursal : ItemDocumento.PrefijoID = gs_PrefijoIdSucursal
                     ItemDocumento.IdMaterialServicio = ItemVenta.IdMaterial
                     ItemDocumento.IdTipoUnidadMedida = ItemVenta.IdTipoUnidadMedida
@@ -896,6 +897,7 @@ Public Class frm_EstacionServicio
         nud_Saldo.Appearance.ForeColor = Color.Gray
         btnDB5.Text = "DB5" : btnG84.Text = "G84" : btnG90.Text = "G90" : btnG95.Text = "G95"
         UltraGroupBox2.Enabled = False
+        grb_Combustible.Text = "Seleccionar Combustible"
 
         '' Cargar Listas y Combos
         mt_CargarCombo_Lado()
@@ -973,6 +975,17 @@ Public Class frm_EstacionServicio
             udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
             udg_Detalle.DataBind()
             mt_CalcularTotalOrden()
+            mt_Limpiar_Detalle()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_Limpiar_Detalle()
+        Try
+            IdMaterial_Combustible = "" : Material_Combustible = "" : Codigo_Combustible = ""
+            IdAlmacen_Combustible = ""
+            IdSubAlmacen_Combustible = ""
         Catch ex As Exception
             Throw ex
         End Try
@@ -1312,7 +1325,7 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHG000000000662", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002023", "A4", "GRIFO")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
