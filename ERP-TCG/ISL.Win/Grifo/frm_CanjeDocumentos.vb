@@ -377,6 +377,14 @@ Public Class frm_CanjeDocumentos
         End Try
     End Sub
 
+    Private Function fc_Agrupar_ListaDetalles(Lista As List(Of e_OrdenVentaMaterial)) As List(Of e_OrdenVentaMaterial)
+        Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Function
+
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Cliente.InitializeLayout
         Me.cmb_Cliente.ValueMember = "Id"
         Me.cmb_Cliente.DisplayMember = "Nombre"
@@ -541,6 +549,7 @@ Public Class frm_CanjeDocumentos
                 .IdTipoPago = cboTipoPago.Value
                 .Mac_PC_Local = MacPCLocal()
                 .IdClienteProveedor = cmb_Cliente.Value
+                .IndElectronico = True
                 .Glosa = txt_Observacion.Text.Trim
                 .lstDetalleDocumento = ListaDetalleSeleccionados
 
@@ -874,6 +883,7 @@ Public Class frm_CanjeDocumentos
                 If .Selected.Rows.Count > 0 Then
                     Documento.Id = .ActiveRow.Cells("Id").Value
                     bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                    udg_DetalleProductos.DataBind()
                 End If
 
             End With

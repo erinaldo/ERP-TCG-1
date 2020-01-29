@@ -293,11 +293,11 @@ Public Class d_OrdenVenta
         Try
             sqlhelper = New SqlHelper
             With oeOrdenComercial
-                sqlhelper.ExecuteNonQuery("[CMP].[Isp_OrdenVenta_IAE]", .TipoOperacion, "", .Id, "", "" _
-                            , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
-                            , .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
-                            , .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _
-                            , .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta, .IdPiloto, .IdPlaca, .Kilometraje)
+                sqlhelper.ExecuteNonQuery("[CMP].[Isp_OrdenVenta_IAE]", .TipoOperacion, "", .Id, "", "", .UsuarioCrea)
+                ', "", "" , .IdEmpresa, .IdTipoPago, .IdEstado, .IdMoneda, .IdTrabajadorAprobacion, .Fecha, .Glosa _
+                ', .Tipo, .TipoExistencia, .TipoCompra, .TipoCambio, .SubTotal, .Impuesto, .Total, .IndFactSer _
+                ', .IndFacturado, .IndCantidadVariable, .UsuarioCrea, .IdOrdenReferencia, .IndFacturadoProducto _
+                ', .IdVendedorTrabajador, .IdTurno, .IdCanalVenta, .IdTipoVenta, .IdPiloto, .IdPlaca, .Kilometraje)
             End With
             Return True
         Catch ex As Exception

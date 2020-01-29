@@ -1675,7 +1675,7 @@ Partial Class frm_Calibraciones
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1221, 495)
         '
@@ -1859,6 +1859,7 @@ Partial Class frm_Calibraciones
         Me.UltraGroupBox2.Size = New System.Drawing.Size(1221, 32)
         Me.UltraGroupBox2.TabIndex = 4
         Me.UltraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        Me.UltraGroupBox2.Visible = False
         '
         'btnEliminar
         '
@@ -2342,7 +2343,7 @@ Partial Class frm_Calibraciones
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1221, 495)
         '
@@ -3344,14 +3345,14 @@ Partial Class frm_Calibraciones
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1221, 495)
         '
-        'frm_OrdenVenMaterial
+        'frm_Calibraciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1223, 518)
         Me.Controls.Add(Me.ficOrdenComercial)
-        Me.Name = "frm_OrdenVenMaterial"
-        Me.Text = "OrdenVentaMaterial"
+        Me.Name = "frm_Calibraciones"
+        Me.Text = "Calibraciones"
         Me.UltraTabPageControl3.ResumeLayout(False)
         CType(Me.UltraGroupBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox10.ResumeLayout(False)

@@ -762,7 +762,11 @@ Public Class d_MovimientoDocumento
                         odDocAso.Guardar(oeDocAso)
                     Next
                 End If
+
+
             End With
+
+
             Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex

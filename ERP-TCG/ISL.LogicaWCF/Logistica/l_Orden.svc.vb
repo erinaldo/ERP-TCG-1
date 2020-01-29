@@ -268,6 +268,15 @@ Public Class l_Orden
         End Try
     End Function
 
+    Public Function ObtenerxReferencia(ByVal oeOrden As e_Orden) As e_Orden Implements Il_Orden.ObtenerxReferencia
+        Try
+            odOrden = New d_Orden
+            Return odOrden.ObtenerxReferencia(oeOrden)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
     Public Function Validar(ByVal oeOrden As e_Orden) As Boolean Implements Il_Orden.Validar
         Try
             With oeOrden

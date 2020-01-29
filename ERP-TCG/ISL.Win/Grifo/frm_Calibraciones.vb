@@ -13,12 +13,12 @@ Public Class frm_Calibraciones
         'Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
-    Private Shared instancia As frm_OrdenVenMaterial = Nothing
+    Private Shared instancia As frm_Calibraciones = Nothing
     Private Shared Operacion As String
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
-            instancia = New frm_OrdenVenMaterial()
+            instancia = New frm_Calibraciones()
             Operacion = "Inicializa"
         End If
         instancia.Activate()
@@ -195,31 +195,7 @@ Public Class frm_Calibraciones
     End Sub
 
     Public Overrides Sub Eliminar()
-        Try
-            'Throw New Exception("No es posible eliminar Ordenes de Venta, solo se permite anular")
-            With griOrdenComercial
-                oeOrdenComercial = New e_OrdenVenta
-                If .Selected.Rows.Count > 0 Then
-                    oeOrdenComercial.Id = .ActiveRow.Cells("Id").Value
-                    oeOrdenComercial = olOrdenComercial.Obtener(oeOrdenComercial)
-                    If oeOrdenComercial.IdEstado = "1CIX043" Then
-                        If MessageBox.Show("Esta seguro de eliminar la Orden: " &
-                                 .ActiveRow.Cells("OrdenComercial").Value.ToString & " ?",
-                                 "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                            oeOrdenComercial.TipoOperacion = "N"
-                            oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
-                            olOrdenComercial.EliminarExtornar(oeOrdenComercial)
-                            MsgBox("La Informacion ha Sido Eliminada Correctamente", MsgBoxStyle.Information, Me.Text)
-                            Consultar(True)
-                        End If
-                    Else
-                        Throw New Exception("Solo Puede Eliminar Ordenes Terminadas")
-                    End If
-                End If
-            End With
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-        End Try
+        mt_Eliminar_Calibracion()
     End Sub
 
     Public Overrides Sub Exportar()
@@ -243,6 +219,57 @@ Public Class frm_Calibraciones
 #End Region
 
 #Region "Eventos"
+
+    Private Sub mt_Eliminar_Calibracion()
+        Try
+            Dim IdCalibracion As String = ""
+            Dim OrdenVenta As New e_OrdenVenta
+            Dim OrdenIngreso As New e_Orden, olOrden As New l_Orden
+            Dim RegistroConsumoCombustible As New e_RegistroConsumoCombustible, olRegConsumoCombustible As New l_RegistroConsumoCombustible
+            With griOrdenComercial
+                If .Rows.Count > 0 Then
+                    IdCalibracion = .ActiveRow.Cells("Id").Value
+
+                    OrdenVenta = olOrdenComercial.Obtener(New e_OrdenVenta With {.Id = IdCalibracion})
+                    OrdenIngreso = olOrden.ObtenerxReferencia(New e_Orden With {.TipoOperacion = "C", .Referencia = IdCalibracion})
+                    RegistroConsumoCombustible = olRegConsumoCombustible.Obtener(New e_RegistroConsumoCombustible With {.TipoOperacion = "V", .NroVale = IdCalibracion})
+                    'If oeRegConsumoCombustible.IndIsl Then
+                    '    If ObtenerFechaServidor().Date <> oeRegConsumoCombustible.FechaTanqueo.Date Then
+                    '        Throw New Exception("Solo Puede Eliminar Tanqueos del Mismo Dia.")
+                    '    End If
+                    'End If
+                    'If oeRegConsumoCombustible.Activo And .ActiveRow.Cells("Estado").Value.ToString = "SIN" Then
+                    If MessageBox.Show("Esta seguro de eliminar el Registro de Consumo de Combustible: ?",
+                                     "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
+
+                        '' Registro Consumo Combustible (Salida)
+                        RegistroConsumoCombustible.TipoOperacion = "E"
+                        RegistroConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
+                        olRegConsumoCombustible.Eliminar(RegistroConsumoCombustible)
+
+                        '' Orden de Ingreso
+                        OrdenIngreso.TipoOperacion = "E"
+                        OrdenIngreso.UsuarioCreacion = gUsuarioSGI.Id
+                        olOrden.Eliminar(OrdenIngreso)
+
+                        '' Orden Venta
+                        OrdenVenta.TipoOperacion = "Y"
+                        OrdenVenta.UsuarioCrea = gUsuarioSGI.Id
+                        olOrdenComercial.EliminarExtornar(OrdenVenta)
+
+                        MsgBox("La Informacion ha Sido Eliminada Correctamente", MsgBoxStyle.Information, Me.Text)
+                        Consultar(True)
+                    End If
+                    'Else
+                    '    Throw New Exception("El tanqueo no se puede eliminar por su estado:" & .ActiveRow.Cells("Estado").Value.ToString)
+                    'End If
+                End If
+            End With
+
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
 
     Private Sub frm_OrdenVenMaterial_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         Try
