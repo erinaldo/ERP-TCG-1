@@ -2992,7 +2992,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Representación Impresa de la </Value>
+                <Value>Representación impresa de la Factura Electrónica.
+Autorizado mediante Resolución de Intendencia Nº 0720050000152/SUNAT
+Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -3002,7 +3004,7 @@
         <rd:DefaultName>IGV2</rd:DefaultName>
         <Top>23.17755cm</Top>
         <Left>0.8766cm</Left>
-        <Height>0.6cm</Height>
+        <Height>1.36729cm</Height>
         <Width>12.68646cm</Width>
         <ZIndex>34</ZIndex>
         <Style>
