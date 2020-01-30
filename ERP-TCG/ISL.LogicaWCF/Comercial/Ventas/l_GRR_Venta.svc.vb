@@ -10,7 +10,7 @@ Public Class l_GRR_Venta
     Public Function Eliminar(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean Implements Il_GRR_Venta.Eliminar
         Try
             odGuiaRemitente = New d_GRR_Venta
-            Return odGuiaRemitente.Eliminar(oeGuiaRemitente)
+            Return odGuiaRemitente.EliminarAnular(oeGuiaRemitente)
         Catch ex As Exception
             Throw ex
         End Try
