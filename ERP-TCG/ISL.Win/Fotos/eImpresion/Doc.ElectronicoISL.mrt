@@ -153,9 +153,9 @@
             </Text35>
             <Text38 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.4,0.4,6.4,0.6</ClientRectangle>
+              <ClientRectangle>13.2,0.4,6.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,10,Bold</Font>
+              <Font>Tahoma,12,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text38</Name>
@@ -196,9 +196,9 @@
             </Text40>
             <Text42 Ref="13" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>12.8,1,7,1</ClientRectangle>
+              <ClientRectangle>13.2,1.2,6.8,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,10,Bold</Font>
+              <Font>Tahoma,12,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text42</Name>
@@ -212,9 +212,9 @@
             </Text42>
             <Text7 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.2,2.6,6.2,0.6</ClientRectangle>
+              <ClientRectangle>13.2,2.4,6.8,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,10,Bold</Font>
+              <Font>Tahoma,12,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text7</Name>
@@ -223,6 +223,7 @@
               <Text>{Cabecera_Pie.NRO_SERIE_ELEC} - {Cabecera_Pie.NRO_DOC}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
             </Text7>
             <Text36 Ref="15" type="Text" isKey="true">
               <Border>All;[47:54:153];1;Solid;False;4;Black</Border>
@@ -290,7 +291,7 @@
             <Text59 Ref="19" type="Text" isKey="true">
               <Border>All;[47:54:153];2;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>0.2,6.6,2.4,0.4</ClientRectangle>
+              <ClientRectangle>0.2,6.6,2.6,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>cb154d804ecb40bd84efc4a14f12b08a</Guid>
@@ -316,7 +317,7 @@
               <Name>Text9</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
-              <Text>TIPO DE MONEDA</Text>
+              <Text>TIPO MONEDA</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
@@ -425,7 +426,7 @@
             <Text53 Ref="27" type="Text" isKey="true">
               <Border>All;[47:54:153];2;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.6,6.6,4.8,0.4</ClientRectangle>
+              <ClientRectangle>2.8,6.6,4.6,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>f1aa13da85014142a4d8e0eecff37a78</Guid>
@@ -713,14 +714,14 @@
               <ReferenceToGuid>22850477f4604c9ba1d45eda2255127b</ReferenceToGuid>
             </StartPointPrimitive16>
             <StartPointPrimitive10 Ref="58" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-              <ClientRectangle>2.6,6.6,0,0</ClientRectangle>
+              <ClientRectangle>2.8,6.6,0,0</ClientRectangle>
               <Name>StartPointPrimitive10</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
               <ReferenceToGuid>9d012ce5f2384b93a1a48925bcf54f28</ReferenceToGuid>
             </StartPointPrimitive10>
             <EndPointPrimitive10 Ref="59" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-              <ClientRectangle>2.6,7.4,0,0</ClientRectangle>
+              <ClientRectangle>2.8,7.4,0,0</ClientRectangle>
               <Name>EndPointPrimitive10</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
@@ -1926,7 +1927,7 @@ M/N: 279-01-00011075-77</Text>
           </StartCap>
         </VerticalLinePrimitive24>
         <VerticalLinePrimitive6 Ref="186" type="VerticalLinePrimitive" isKey="true">
-          <ClientRectangle>2.6,7,0.0254,0.8</ClientRectangle>
+          <ClientRectangle>2.8,7,0.0254,0.8</ClientRectangle>
           <Color>Blue</Color>
           <EndCap Ref="187" type="Cap" isKey="true">
             <Color>Black</Color>
@@ -2054,10 +2055,10 @@ M/N: 279-01-00011075-77</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>1/29/2020 8:02:16 PM</ReportChanged>
+  <ReportChanged>1/29/2020 9:39:02 PM</ReportChanged>
   <ReportCreated>12/16/2014 5:46:55 PM</ReportCreated>
   <ReportFile>C:\Users\usuario\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Fotos\eImpresion\Doc.ElectronicoISL.mrt</ReportFile>
-  <ReportGuid>b6cece4aec184070b902aa4151d0b7a2</ReportGuid>
+  <ReportGuid>d176071c81e5481183a8867ebdf011c7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.3.900</ReportVersion>
