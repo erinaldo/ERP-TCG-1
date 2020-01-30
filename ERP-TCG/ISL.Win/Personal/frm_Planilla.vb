@@ -2528,6 +2528,8 @@ Public Class frm_Planilla
                 ct.Go()
 
                 oDoc.NewPage()
+
+                If contador = 10 Then Exit For
             Next
 
             oDoc.Close()
@@ -2762,14 +2764,22 @@ Public Class frm_Planilla
 
             'AQUI REGIMEN
             'cell = New PdfPCell(New Phrase(listaDetallePLaAUX(0).EmpresaAFP, New Font(fuente, sizeletra)))
-            cell = New PdfPCell(New Phrase(oeTrabajadorBoleta.leFondoPension(0).Empresa, New Font(fuente, sizeletraMin)))
+            If Not IsNothing(oeTrabajador.leFondoPension) And oeTrabajador.leFondoPension.Count > 0 Then
+                cell = New PdfPCell(New Phrase(oeTrabajadorBoleta.leFondoPension(0).Empresa, New Font(fuente, sizeletraMin)))
+            Else
+                cell = New PdfPCell(New Phrase("ONP", New Font(fuente, sizeletraMin)))
+            End If
             cell.Colspan = 2
             cell.Rowspan = 1
             cell.HorizontalAlignment = 1
             table.AddCell(cell)
 
             'AQUI CUSPP
-            cell = New PdfPCell(New Phrase(oeTrabajadorBoleta.leFondoPension(0).CUSPP, New Font(fuente, sizeletra)))
+            If Not IsNothing(oeTrabajador.leFondoPension) And oeTrabajador.leFondoPension.Count > 0 Then
+                cell = New PdfPCell(New Phrase(oeTrabajadorBoleta.leFondoPension(0).CUSPP, New Font(fuente, sizeletra)))
+            Else
+                cell = New PdfPCell(New Phrase("", New Font(fuente, sizeletra)))
+            End If
             cell.Colspan = 2
             cell.Rowspan = 1
             cell.HorizontalAlignment = 1
