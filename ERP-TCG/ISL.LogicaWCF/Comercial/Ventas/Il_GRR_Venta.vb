@@ -17,4 +17,7 @@ Public Interface Il_GRR_Venta
     <OperationContract()>
     Function Obtener(ByVal oeGuiaRemitente As e_GRR_Venta) As e_GRR_Venta
 
+    <OperationContract()>
+    Function ListarDT(ByVal oeGuiaRemitente As e_GRR_Venta) As DataTable
+
 End Interface

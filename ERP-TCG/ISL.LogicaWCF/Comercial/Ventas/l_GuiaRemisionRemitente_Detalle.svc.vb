@@ -36,13 +36,14 @@ Public Class l_GuiaRemisionRemitente_Detalle
         End Try
     End Function
 
-    'Public Function ListarDS(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As System.Collections.Generic.List(Of e_GuiaRemisionRemitente_Detalle) Implements Il_GuiaRemisionRemitente_Detalle.ListarDS
-    '    Try
-    '        Return odGuiaRemitente.ListarDS(oeGuiaRemitente_Detalle)
-    '    Catch ex As Exception
-    '        Throw
-    '    End Try
-    'End Function
+    Public Function ListarDT(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As DataTable Implements Il_GuiaRemisionRemitente_Detalle.ListarDT
+        Try
+            odGuiaRemitente = New d_GuiaRemisionRemitente_Detalle
+            Return odGuiaRemitente.ListarDT(oeGuiaRemitente_Detalle)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 
     Public Function Obtener(ByVal oeGuiaRemitente_Detalle As e_GuiaRemisionRemitente_Detalle) As e_GuiaRemisionRemitente_Detalle Implements Il_GuiaRemisionRemitente_Detalle.Obtener
         Try

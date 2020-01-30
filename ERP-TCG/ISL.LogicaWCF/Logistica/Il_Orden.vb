@@ -8,6 +8,9 @@ Public Interface Il_Orden
     <OperationContract()> _
     Function Obtener(ByVal oeOrden As e_Orden) As e_Orden
 
+    <OperationContract()>
+    Function ObtenerxReferencia(ByVal oeOrden As e_Orden) As e_Orden
+
     <OperationContract()> _
     Function RectificarOrden(ByVal oeOrden As e_Orden, loDetalleDocumento As List(Of e_DetalleDocumento), IdMoneda As String, TipoCambio As Double) As Boolean
 

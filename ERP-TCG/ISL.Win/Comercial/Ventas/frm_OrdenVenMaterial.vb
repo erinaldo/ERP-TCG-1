@@ -233,7 +233,7 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Public Overrides Sub Imprimir()
-        gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
+        'gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
     End Sub
 
     Public Overrides Sub Salir()
@@ -561,7 +561,7 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Private Sub griOrdenComercial_AfterRowActivate(sender As Object, e As EventArgs) Handles griOrdenComercial.AfterRowActivate
-        btnAtender.Enabled = 0 : btnAnular.Enabled = 0 : btnEliminar.Enabled = 0
+        btnAtender.Enabled = 0 : btnAnular.Enabled = 1 : btnEliminar.Enabled = 1
         If griOrdenComercial.ActiveRow.Index > -1 Then
             Select Case griOrdenComercial.ActiveRow.Cells("Estado").Value
                 Case "EVALUADA"
@@ -570,7 +570,8 @@ Public Class frm_OrdenVenMaterial
                 Case "ATENDIDO PARCIALMENTE"
                     btnAtender.Enabled = 1
                 Case "TERMINADO"
-                    btnEliminar.Enabled = 1
+                    'btnEliminar.Enabled = 1
+                    btnAnular.Enabled = 1
             End Select
         End If
         btnAnular.Enabled = 1
@@ -600,9 +601,14 @@ Public Class frm_OrdenVenMaterial
 
     Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
         Try
-            If fc_AnularOrdenVenta() Then
-                MessageBox.Show("Orden de Venta Anulada satisfactoriamente", "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Consultar(True)
+            If griOrdenComercial.Selected.Rows.Count > 0 Then
+                If MessageBox.Show("Esta seguro de Anular la Orden: " & griOrdenComercial.ActiveRow.Cells("OrdenComercial").Value.ToString & " ?",
+                                "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                    If fc_AnularOrdenVenta() Then
+                        MessageBox.Show("Orden de Venta Anulada satisfactoriamente", "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Consultar(True)
+                    End If
+                End If
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -1260,7 +1266,7 @@ Public Class frm_OrdenVenMaterial
             Else
                 oeOrdenComercial.OrdenComercial = txtNroOrden.Text
             End If
-            griOrdenComercial.DataSource = olOrdenComercial.Listar(oeOrdenComercial)
+            griOrdenComercial.DataSource = olOrdenComercial.Listar(oeOrdenComercial).OrderByDescending(Function(i) i.Fecha).ToList
             mt_CombosGrillaPrincipal(griOrdenComercial)
             For Each fila As UltraGridRow In griOrdenComercial.Rows
                 Select Case fila.Cells("Estado").Value
@@ -1649,7 +1655,7 @@ Public Class frm_OrdenVenMaterial
             mnuDetalle.Tools("Quitar").SharedProps.Enabled = AgregarQuitar
             mnuDetalle.Tools("GenerarOS").SharedProps.Enabled = Generar
             mnuDetalle.Tools("GenerarGuia").SharedProps.Enabled = Documento
-            mnuDetalle.Tools("EjecutarOS").SharedProps.Enabled = Ejecutar
+            mnuDetalle.Tools("EjecutarOS").SharedProps.Enabled = False
             mnuDetalle.Tools("GenerarNotaSalida").SharedProps.Enabled = Documento
         Catch ex As Exception
             Throw ex
@@ -2289,8 +2295,10 @@ Public Class frm_OrdenVenMaterial
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
-                        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
-
+                        Select Case cmbTipoDocumento.Value
+                            Case "GCH000000001"
+                                gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
+                        End Select
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes
                                 mt_EmitirDocumento(False)
@@ -2449,6 +2457,7 @@ Public Class frm_OrdenVenMaterial
                 mt_GeneraDocumento()
                 oeOrdenComercial.oeDocumento = oeDocumento
             Else
+                oeOrdenComercial.oeDocumento = New e_MovimientoDocumento
                 Select Case MessageBox.Show("¿Desea Guardar la Orden sin Documento?", "Mensaje del Sistema",
                                             MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
                     Case Windows.Forms.DialogResult.No

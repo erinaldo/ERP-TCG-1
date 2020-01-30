@@ -10,7 +10,7 @@ Public Class l_GRR_Venta
     Public Function Eliminar(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean Implements Il_GRR_Venta.Eliminar
         Try
             odGuiaRemitente = New d_GRR_Venta
-            Return odGuiaRemitente.Eliminar(oeGuiaRemitente)
+            Return odGuiaRemitente.EliminarAnular(oeGuiaRemitente)
         Catch ex As Exception
             Throw ex
         End Try
@@ -36,13 +36,14 @@ Public Class l_GRR_Venta
         End Try
     End Function
 
-    'Public Function ListarDS(ByVal oeGuiaRemitente As e_GRR_Venta) As System.Collections.Generic.List(Of e_GRR_Venta) Implements Il_GRR_Venta.ListarDS
-    '    Try
-    '        Return odGuiaRemitente.ListarDS(oeGuiaRemitente)
-    '    Catch ex As Exception
-    '        Throw
-    '    End Try
-    'End Function
+    Public Function ListarDT(ByVal oeGuiaRemitente As e_GRR_Venta) As DataTable Implements Il_GRR_Venta.ListarDT
+        Try
+            odGuiaRemitente = New d_GRR_Venta
+            Return odGuiaRemitente.ListarDT(oeGuiaRemitente)
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
 
     Public Function Obtener(ByVal oeGuiaRemitente As e_GRR_Venta) As e_GRR_Venta Implements Il_GRR_Venta.Obtener
         Try

@@ -29,6 +29,7 @@ Public Class d_MovimientoDocumento
 
     Dim oeAuditoria As New e_Auditoria
     Dim odAuditoria As New d_Auditoria
+    Public connectionString As String = d_Conexion.CadenaConexionSGI()
 
     Public Function EstadoCuenta(ByVal IdClienteProveedor As String, ByVal cliente As Integer) As DataTable
         Try
@@ -761,7 +762,11 @@ Public Class d_MovimientoDocumento
                         odDocAso.Guardar(oeDocAso)
                     Next
                 End If
+
+
             End With
+
+
             Return oeMovimientoDocumento
         Catch ex As Exception
             Throw ex
@@ -1673,7 +1678,8 @@ Public Class d_MovimientoDocumento
     Function FacturacionPendiente() As DataTable
         Try
             Dim query As String = "select * from CON.MovimientoDocumento where IndElectronico = 1 and IndEnviado=0 and Activo = 1"
-            Dim connection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ISL").ConnectionString)
+            'Dim connection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ISL").ConnectionString) '@0001
+            Dim connection As SqlConnection = New SqlConnection(connectionString) '@0001
             Dim command As SqlDataAdapter = New SqlDataAdapter(query, connection)
             command.SelectCommand.CommandType = CommandType.Text
 
@@ -1688,7 +1694,8 @@ Public Class d_MovimientoDocumento
 
     Function SincronizarFacturado() As Boolean
         Try
-            Dim connection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ISL").ConnectionString)
+            'Dim connection As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("ISL").ConnectionString) '@0001
+            Dim connection As SqlConnection = New SqlConnection(connectionString) '@0001
             Dim connectionFE As SqlConnection = New SqlConnection(ConfigurationManager.ConnectionStrings("SEEFBISL").ConnectionString)
             Dim commandFE As SqlCommand
             Dim commandIAE As SqlCommand

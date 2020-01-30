@@ -70,7 +70,8 @@ Public Class d_RegistroConsumoCombustible
                                           oeRegistrarConsumoCombustible.TipoOperacion,
                                           oeRegistrarConsumoCombustible.Id,
                                           oeRegistrarConsumoCombustible.IdVehiculo,
-                                          oeRegistrarConsumoCombustible.FechaTanqueo)
+                                          oeRegistrarConsumoCombustible.FechaTanqueo,
+                                            oeRegistrarConsumoCombustible.NroVale)
             If ds.Tables(0).Rows.Count > 0 Then
                 oeRegistrarConsumoCombustible = Cargar(ds.Tables(0).Rows(0))
             End If

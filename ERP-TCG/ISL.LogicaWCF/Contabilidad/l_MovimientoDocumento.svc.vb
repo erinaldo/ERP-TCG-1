@@ -18,6 +18,10 @@ Imports ERP.ServicioExterno
 Public Class l_MovimientoDocumento
     Implements Il_MovimientoDocumento
 
+    '' CPE
+    Public gstrRutaDocumentosEle20 As String
+
+
     Dim odMovimientoDocumento As New d_MovimientoDocumento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
     Dim sFacturacionElectronica As New s_Facturacion
@@ -5514,9 +5518,10 @@ Public Class l_MovimientoDocumento
         End Try
     End Function
 
-
     'CONSULTAR DOCUMENTO
     Function ConsultarDocumento(dsComprobante As DataSet, ByVal rutaFE As String, ByVal usuario As String) As String
         Return sFacturacionElectronica.ConsultarDocumento(dsComprobante, rutaFE, usuario)
     End Function
+
+
 End Class

@@ -115,14 +115,15 @@ Public Class frm_EstacionServicio
 
             '' Confirmacion
 
-            If MessageBox.Show("=========================================" & vbCrLf &
-                               "=========== DETALLES DE VENTA ===========" & vbCrLf & Environment.NewLine &
+            If MessageBox.Show("=======================================" & vbCrLf &
+                               "========= DETALLES DE VENTA ===========" & vbCrLf &
+                               "=======================================" & vbCrLf & Environment.NewLine &
                                ">>> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
                                ">>> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
                                ">>> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
                                ">>> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
                                ">>> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
-                               "=========================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
+                               "=======================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
             '' Cargar Data
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
@@ -191,7 +192,7 @@ Public Class frm_EstacionServicio
         Try
             udg_Detalle.UpdateData()
             Glosa_OV = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & " //COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
-            Glosa_Documento = "COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
+            Glosa_Documento = txt_Glosa.Text
 
             With OrdenVenta
                 .TipoOperacion = "I" : .PrefijoID = gs_PrefijoIdSucursal : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .UsuarioCrea = gUsuarioSGI.Login : .FechaCrea = FechaOrden
@@ -213,7 +214,7 @@ Public Class frm_EstacionServicio
                 .IdTurno = TurnoActivo.Id
                 .IdTipoVenta = IdTipoVenta
                 .IdCanalVenta = "GRIFO"
-                .IdPlaca = cmb_Vehiculo.Value
+                .IdPlaca = cmb_Vehiculo.Text
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
                 .GlosaResumen = Glosa_OV
@@ -227,11 +228,21 @@ Public Class frm_EstacionServicio
             Throw ex
         End Try
     End Function
+    Private Function fc_Confirmar_DocumentoElectronico(IdTipoDocumento As String) As Boolean
+        Try
+            Select Case IdTipoDocumento
+                Case "1CH000000026" : Return True
+                Case Else : Return False
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 
     Private Function fc_Cargar_MovimientoDocumento() As e_MovimientoDocumento
         Try
             MovimientoDocumento = New e_MovimientoDocumento
-            Dim ItemDocumento As New e_DetalleDocumento
+
             With MovimientoDocumento
                 .TipoOperacion = "I" : .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : .IdSucursal = gs_PrefijoIdSucursal : .PrefijoID = gs_PrefijoIdSucursal : .IdUsuarioCrea = gUsuarioSGI.Id : .FechaCreacion = FechaOrden
                 .IdClienteProveedor = OrdenVenta.IdEmpresa
@@ -254,11 +265,13 @@ Public Class frm_EstacionServicio
                 .Saldo = .Total
                 .TipoCambio = TipoCambio
                 .Mac_PC_Local = MacPCLocal()
+                .IndElectronico = fc_Confirmar_DocumentoElectronico(.IdTipoDocumento)
                 .Glosa = Glosa_Documento
 
                 '' Cargar Detalle de Documento
                 .lstDetalleDocumento = New List(Of e_DetalleDocumento)
                 For Each ItemVenta In OrdenVenta.lstOrdenComercialMaterial
+                    Dim ItemDocumento As New e_DetalleDocumento
                     ItemDocumento.TipoOperacion = "I" : ItemDocumento.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim : ItemDocumento.IdSucursal = gs_IdSucursal : ItemDocumento.PrefijoID = gs_PrefijoIdSucursal
                     ItemDocumento.IdMaterialServicio = ItemVenta.IdMaterial
                     ItemDocumento.IdTipoUnidadMedida = ItemVenta.IdTipoUnidadMedida
@@ -306,17 +319,15 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.TipoDocumento = TipoDocumento
                 .DatosImpresion.IdTurno = TurnoActivo.Id
                 .DatosImpresion.Turno = TurnoActivo.Turno
+                .DatosImpresion.Lado = sw_Lado
                 .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
                 .DatosImpresion.IdDireccion = cmb_Direccion.Value
                 .DatosImpresion.Direccion = cmb_Direccion.Text
-                .DatosImpresion.IdPiloto = cmb_Piloto.Value
-                .DatosImpresion.Piloto = cmb_Piloto.Value
-                .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
-                .DatosImpresion.Placa = cmb_Vehiculo.Text
-                .DatosImpresion.IdMedioPago = "1CH03"
-                .DatosImpresion.MedioPago = "CONTADO"
-                .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
-                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
+                .DatosImpresion.Piloto = cmb_Piloto.Text : .DatosImpresion.IdPiloto = cmb_Piloto.Value
+                .DatosImpresion.Placa = cmb_Vehiculo.Text : .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
+                .DatosImpresion.MedioPago = "CONTADO" : .DatosImpresion.IdMedioPago = "1CH03"
+                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto : .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
+                .DatosImpresion.Kilometraje = nud_Kilometraje.Value
                 .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2)
                 .DatosImpresion.HashResumen = ""
                 .DatosImpresion.HashSunat = ""
@@ -370,7 +381,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000038" : .MovimientoInventario = "SALIDA POR VENTAS" '"1CIX006"
                 .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                 .IdMoneda = OrdenVenta.IdMoneda
-                .IdEstadoOrden = "1CH000000003"
+                .IdEstadoOrden = "1CH000000003" : .EstadoOrden = "TERMINADA"
                 .Total = OrdenVenta.Total
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
                 .lstInventario = New List(Of e_Inventario)
@@ -458,7 +469,7 @@ Public Class frm_EstacionServicio
                 .IdMovimientoInventario = "1CH000000013" : .MovimientoInventario = "MANTENIMIENTO - DEVOLUCION" '"1CIX006"
                 .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                 .IdMoneda = OrdenVenta.IdMoneda
-                .IdEstadoOrden = "1CIX025"
+                .IdEstadoOrden = "1CH000000003"
                 .Total = OrdenVenta.Total
                 .Glosa = "INGRESO POR CALIBRACION"
                 .lstOrdenMaterial = New List(Of e_OrdenMaterial)
@@ -547,7 +558,7 @@ Public Class frm_EstacionServicio
                     .FechaOrden = Date.Now
                     .IdMoneda = IdMoneda_Soles
                     .IdMovimientoInventario = "1CH000000022" 'INGRESO POR TRANSFERENCIA ENTRE ALMACENES
-                    .IdEstadoOrden = "1CH000000003"
+                    .IdEstadoOrden = "1CH000000003" : .EstadoOrden = "TERMINADA"
                     .UsuarioCreacion = gUsuarioSGI.Id
                     .IdSubAlmacenOrigen = IdSubAlmacen_Combustible : .IdSubAlmacenDestino = IdSubAlmacen_Combustible
                     .lstOrdenMaterial.AddRange(OrdenVenta.oeOrdenSalida.lstOrdenMaterial)
@@ -699,6 +710,7 @@ Public Class frm_EstacionServicio
                                     Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                 End If
 
+
                 If CuentaCorriente.Id <> "" Then
                     _banEmis = dMovimientoDocumento.GuardarVentaAsiento(MovimientoDocumento, AsientoModelo, ServicioCuentaContable, False, String.Empty)
                 Else
@@ -761,6 +773,10 @@ Public Class frm_EstacionServicio
             '    'End If
             '    'If cb_CobroAutomatico.Checked Then gfc_CobroAutomatico(oeDocumento.Id, frm.cmbPeriodo.Value, loCtaCtble, oeDoc.FechaCrea)
             'End If
+
+            '' =========================================================================== 
+            '' Emision de CPE
+            'If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
         Catch ex As Exception
             Throw ex
         End Try
@@ -879,6 +895,7 @@ Public Class frm_EstacionServicio
         nud_Saldo.Appearance.ForeColor = Color.Gray
         btnDB5.Text = "DB5" : btnG84.Text = "G84" : btnG90.Text = "G90" : btnG95.Text = "G95"
         UltraGroupBox2.Enabled = False
+        grb_Combustible.Text = "Seleccionar Combustible"
 
         '' Cargar Listas y Combos
         mt_CargarCombo_Lado()
@@ -944,6 +961,7 @@ Public Class frm_EstacionServicio
                 .IdAlmacen = IdAlmacen_Combustible : .IdSubAlmacen = IdSubAlmacen_Combustible
                 .IdUnidadMedida = "1CH000000001"
                 .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
+                .IdOrigen = cmb_Vehiculo.Text
                 .Glosa = sw_Lado
             End With
             If OrdenVenta.lstOrdenComercialMaterial.Where(Function(i) i.IdMaterial = OV_DETALLE.IdMaterial And i.TipoOperacion <> "E").ToList.Count > 0 Then
@@ -955,6 +973,17 @@ Public Class frm_EstacionServicio
             udg_Detalle.DataSource = OrdenVenta.lstOrdenComercialMaterial
             udg_Detalle.DataBind()
             mt_CalcularTotalOrden()
+            mt_Limpiar_Detalle()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_Limpiar_Detalle()
+        Try
+            IdMaterial_Combustible = "" : Material_Combustible = "" : Codigo_Combustible = ""
+            IdAlmacen_Combustible = ""
+            IdSubAlmacen_Combustible = ""
         Catch ex As Exception
             Throw ex
         End Try
@@ -1017,13 +1046,13 @@ Public Class frm_EstacionServicio
         Try
             Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0
             For Each Item In OrdenVenta.lstOrdenComercialMaterial
-                SubTotal += Item.PrecioTotal
+                Total += Item.PrecioTotal
                 DescuentoTotal += Item.Dscto
-                Total += SubTotal
             Next
+            SubTotal = Total / (1 + mdblIGV)
             nud_Total.Value = Total
-            nud_Impuesto.Value = Total * mdblIGV
-            nud_SubTotal.Value = Total - (Total * mdblIGV)
+            nud_SubTotal.Value = SubTotal
+            nud_Impuesto.Value = Total - SubTotal
         Catch ex As Exception
             Throw ex
         End Try
@@ -1294,7 +1323,8 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHG000000000662", "TICKET", "GRIFO")
+            'gtm_Imprimir_Documento("CHG000000002023", "A4", "GRIFO")
+            gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try

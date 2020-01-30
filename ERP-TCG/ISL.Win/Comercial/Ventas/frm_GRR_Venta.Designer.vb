@@ -75,9 +75,9 @@ Partial Class frm_GRR_Venta
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_GRR_Venta))
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_GRR_Venta))
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
@@ -938,7 +938,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance15.BackColor = System.Drawing.Color.Transparent
         Appearance15.ForeColor = System.Drawing.Color.Navy
-        Appearance15.Image = CType(resources.GetObject("Appearance15.Image"), Object)
         Appearance15.ImageHAlign = Infragistics.Win.HAlign.Center
         Me.UltraButton1.Appearance = Appearance15
         Me.UltraButton1.Location = New System.Drawing.Point(367, 8)
@@ -999,7 +998,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance18.BackColor = System.Drawing.Color.Transparent
         Appearance18.ForeColor = System.Drawing.Color.Navy
-        Appearance18.Image = CType(resources.GetObject("Appearance18.Image"), Object)
         Me.btnAgregarD.Appearance = Appearance18
         Me.btnAgregarD.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnAgregarD.Location = New System.Drawing.Point(3, 3)
@@ -1212,7 +1210,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance26.BackColor = System.Drawing.Color.Transparent
         Appearance26.ForeColor = System.Drawing.Color.Navy
-        Appearance26.Image = CType(resources.GetObject("Appearance26.Image"), Object)
         Me.UltraButton2.Appearance = Appearance26
         Me.UltraButton2.Location = New System.Drawing.Point(506, 6)
         Me.UltraButton2.Name = "UltraButton2"
@@ -1373,7 +1370,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance35.BackColor = System.Drawing.Color.Transparent
         Appearance35.ForeColor = System.Drawing.Color.Navy
-        Appearance35.Image = CType(resources.GetObject("Appearance35.Image"), Object)
         Me.btnAgregarOv.Appearance = Appearance35
         Me.btnAgregarOv.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnAgregarOv.Location = New System.Drawing.Point(3, 3)
@@ -1551,7 +1547,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance42.BackColor = System.Drawing.Color.Transparent
         Appearance42.ForeColor = System.Drawing.Color.Navy
-        Appearance42.Image = CType(resources.GetObject("Appearance42.Image"), Object)
         Me.btmConsultar.Appearance = Appearance42
         Me.btmConsultar.Location = New System.Drawing.Point(315, 6)
         Me.btmConsultar.Name = "btmConsultar"
@@ -1795,7 +1790,6 @@ Partial Class frm_GRR_Venta
         '
         Appearance77.BackColor = System.Drawing.Color.Transparent
         Appearance77.ForeColor = System.Drawing.Color.Navy
-        Appearance77.Image = CType(resources.GetObject("Appearance77.Image"), Object)
         Me.btnAgregarOs.Appearance = Appearance77
         Me.btnAgregarOs.Dock = System.Windows.Forms.DockStyle.Left
         Me.btnAgregarOs.Location = New System.Drawing.Point(3, 3)
@@ -1810,7 +1804,7 @@ Partial Class frm_GRR_Venta
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1086, 427)
         '
@@ -1962,7 +1956,6 @@ Partial Class frm_GRR_Venta
         Appearance84.ForeColor = System.Drawing.Color.Navy
         Me.btnEliminar.Appearance = Appearance84
         Me.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btnEliminar.Enabled = False
         Me.btnEliminar.Location = New System.Drawing.Point(90, 3)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(87, 26)
@@ -2427,7 +2420,7 @@ Partial Class frm_GRR_Venta
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1086, 427)
         '

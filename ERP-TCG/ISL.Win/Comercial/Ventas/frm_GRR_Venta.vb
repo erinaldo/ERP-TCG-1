@@ -3,6 +3,8 @@ Imports ERP.LogicaWCF
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
 Imports Infragistics.Win.UltraWinEditors
+Imports Microsoft.Office.Interop
+Imports System.Runtime.InteropServices
 
 Public Class frm_GRR_Venta
     Inherits frm_MenuPadre
@@ -163,34 +165,16 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
-    '    Public Overrides Sub Eliminar()
-    '        Try
-    '            With griDocumento
-    '                oeGuiaRR = New e_GRR_Venta
-    '                If griDocumento.Selected.Rows.Count > 0 Then
-    '                    oeGuiaRR.Id = .ActiveRow.Cells("Id").Value
-    '                    oeGuiaRR = olGuiaRR.Obtener(oeGuiaRR)
-    '                    If oeGuiaRR.IdEstado = "1CIX025" Then
-    '                        If gfc_ValidarOrdEjecutada(oeGuiaRR.Id, "1CIX009") Then
-    '                            If MessageBox.Show("Esta seguro de eliminar el Documento: " &
-    '                                 .ActiveRow.Cells("Serie").Value.ToString & " - " & .ActiveRow.Cells("Numero").Value.ToString & " ?",
-    '                                 "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-    '                                oeGuiaRR.TipoOperacion = "E"
-    '                                oeGuiaRR.UsuarioCrea = gUsuarioEOS.Nombre
-    '                                olGuiaRR.Eliminar(oeGuiaRR)
-    '                                MsgBox("La Informacion ha Sido Eliminada Correctamente", MsgBoxStyle.Information, Me.Text)
-    '                                Consultar(True)
-    '                            End If
-    '                        End If
-    '                    Else
-    '                        Throw New Exception("Solo Puede Eliminar Documentos Emitidos")
-    '                    End If
-    '                End If
-    '            End With
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
+    Public Overrides Sub Eliminar()
+        Try
+            If MessageBox.Show("Esta seguro de eliminar el Documento: " & griDocumento.ActiveRow.Cells("Serie").Value.ToString & " - " & griDocumento.ActiveRow.Cells("Numero").Value.ToString & " ?",
+                                 "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                mt_Eliminar(griDocumento.ActiveRow.Cells("Id").Value)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
 
     Public Overrides Sub Exportar()
         Try
@@ -202,15 +186,10 @@ Public Class frm_GRR_Venta
     End Sub
 
     Public Overrides Sub Imprimir()
-        Dim id As String = ""
         Try
-            'If griDocumento.Selected.Rows.Count > 0 Then
-            '    Dim formulario As New frm_ImprimirGRR
-            '    id = griDocumento.ActiveRow.Cells("Id").Value
-            '    formulario.mt_CargarDatos(id)
-            '    formulario.ShowDialog()
-            '    gmt_ControlBoton(1, 1, 0, 0, 0, 1, 1, 1, 1)
-            'End If
+            If griDocumento.Selected.Rows.Count > 0 Then
+                mt_ImprimirGRR_Venta(griDocumento.ActiveRow.Cells("Id").Value)
+            End If
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
@@ -462,7 +441,6 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
-
     Private Sub cboChofer_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cboChofer.InitializeLayout
         For i As Integer = cboChofer.DisplayLayout.Bands(0).Columns.Count - 1 To 0 Step -1
             cboChofer.DisplayLayout.Bands(0).Columns(i).Hidden = True
@@ -485,13 +463,112 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Try
+            If griDocumento.Selected.Rows.Count > 0 Then
+                Eliminar()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
+        Try
+            If griDocumento.Selected.Rows.Count > 0 Then
+                mt_Anular(griDocumento.ActiveRow.Cells("Id").Value)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub griDocumento_DoubleClickRow(sender As Object, e As EventArgs) Handles griDocumento.DoubleClickRow
+        Try
+            Editar()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
 #End Region
 
 #Region "Metodos"
 
-    Private Sub mt_CargarDetalleOV()
+    Private Sub mt_ImprimirGRR_Venta(Id As String)
         Try
+            Dim DT1 As DataTable, DT2 As DataTable
+            Dim objXls As Excel.Application
+            Dim objWorkbook As Excel.Workbook
+            Dim objWorkSheet As Excel.Worksheet
+            Dim NroLinea As Integer = 19
+            objXls = New Excel.Application
+            Dim FileToCopy As String
+            Dim PathFilePTRA As String
+            Dim Fecha As String
+            Dim FechaTraslado As String
+            DT1 = olGuiaRR.ListarDT(New e_GRR_Venta With {.TipoOperacion = "PRI", .Id = Id})
+            DT2 = olGuiaRRDetalle.ListarDT(New e_GuiaRemisionRemitente_Detalle With {.TipoOperacion = "PRI", .IdGRR_Venta = Id})
 
+            FileToCopy = Application.StartupPath & "\PLANTILLAS_SGI\Plantilla_GRR_Venta.xlt"
+            PathFilePTRA = Application.StartupPath & "\PLANTILLAS_SGI\Plantilla_GRR_Venta.xls"
+
+            Dim OldCultureInfo As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture
+            System.Threading.Thread.CurrentThread.CurrentCulture = New System.Globalization.CultureInfo("es-PE")
+            objWorkbook = objXls.Workbooks.Open(PathFilePTRA)
+            objWorkSheet = objXls.Worksheets(1)
+
+            objWorkSheet.Name = "Guia Remision Remitente" ' " & griDocumento.ActiveRow.Cells("Serie").Value & " - " & griDocumento.ActiveRow.Cells("Numero").Value
+
+            For Each datarow As DataRow In DT1.Rows
+                Fecha = datarow("FecEmision")
+                FechaTraslado = datarow("FecTraslado")
+                objWorkSheet.Cells(5, 5) = datarow("Partida").ToString
+                objWorkSheet.Cells(6, 5) = datarow("LocPartida").ToString
+                objWorkSheet.Cells(8, 5) = datarow("Destinatario").ToString
+                objWorkSheet.Cells(9, 5) = datarow("Ruc").ToString
+                objWorkSheet.Cells(10, 5) = datarow("Llegada").ToString
+                objWorkSheet.Cells(11, 5) = datarow("LocLlegada").ToString
+                objWorkSheet.Cells(13, 5) = datarow("Transportista").ToString
+                objWorkSheet.Cells(13, 22) = Strings.Left(datarow("FecEmision").ToString, 10)
+                objWorkSheet.Cells(15, 5) = datarow("RucTrans").ToString
+                objWorkSheet.Cells(15, 9) = datarow("Marca").ToString
+                objWorkSheet.Cells(15, 14) = datarow("Placas").ToString
+                objWorkSheet.Cells(15, 23) = Strings.Left(datarow("FecTraslado").ToString, 10)
+                objWorkSheet.Cells(16, 4) = datarow("Chofer").ToString
+                objWorkSheet.Cells(16, 9) = datarow("Brevete").ToString
+                objWorkSheet.Cells(16, 14) = datarow("MTC").ToString
+                objWorkSheet.Cells(16, 22) = datarow("DocAsoc").ToString
+                objWorkSheet.Cells(35, 6) = datarow("Motivo").ToString
+                objWorkSheet.Cells(35, 11) = datarow("Peso")
+            Next
+
+            For Each datarow As DataRow In DT2.Rows
+                objWorkSheet.Cells(NroLinea, 4) = datarow("CodigoMaterial").ToString
+                objWorkSheet.Cells(NroLinea, 6) = datarow("Material").ToString
+                objWorkSheet.Cells(NroLinea, 12) = datarow("Cantidad")
+                objWorkSheet.Cells(NroLinea, 16) = datarow("IdUnidadMedida").ToString
+                objWorkSheet.Cells(NroLinea, 18) = datarow("Peso").ToString
+                NroLinea += 1
+            Next
+
+            objXls.ActiveWindow.Zoom = 100
+            objXls.ActiveWindow.DisplayGridlines = False
+            objXls.Sheets.Item(1).Select()
+            objXls.Visible = True
+            If Not (objWorkSheet Is Nothing) Then
+                Marshal.ReleaseComObject(objWorkSheet)
+            End If
+            If Not (objWorkbook Is Nothing) Then
+                Marshal.ReleaseComObject(objWorkbook)
+            End If
+            If Not (objXls Is Nothing) Then
+                Marshal.ReleaseComObject(objXls)
+            End If
+            objWorkSheet = Nothing
+            objWorkbook = Nothing
+            objXls = Nothing
+            System.Threading.Thread.CurrentThread.CurrentCulture = OldCultureInfo
         Catch ex As Exception
             Throw ex
         End Try
@@ -531,24 +608,27 @@ Public Class frm_GRR_Venta
                     .Columns("Fecha").Width = 100
                     .Columns("Serie").Hidden = False
                     .Columns("Serie").Header.VisiblePosition = 1
-                    .Columns("Serie").Width = 80
+                    .Columns("Serie").Width = 60
                     .Columns("Numero").Hidden = False
                     .Columns("Numero").Header.VisiblePosition = 2
-                    .Columns("Numero").Width = 120
+                    .Columns("Numero").Width = 100
                     .Columns("FechaTraslado").Hidden = False
                     .Columns("FechaTraslado").Header.VisiblePosition = 3
                     .Columns("FechaTraslado").Width = 100
+                    .Columns("Estado").Hidden = False
+                    .Columns("Estado").Header.VisiblePosition = 4
+                    .Columns("Estado").Width = 100
                     .Columns("Cliente").Hidden = False
-                    .Columns("Cliente").Header.VisiblePosition = 4
+                    .Columns("Cliente").Header.VisiblePosition = 5
                     .Columns("Cliente").Width = 300
                     .Columns("Transportista").Hidden = False
-                    .Columns("Transportista").Header.VisiblePosition = 5
+                    .Columns("Transportista").Header.VisiblePosition = 6
                     .Columns("Transportista").Width = 300
                     .Columns("Vehiculo").Hidden = False
-                    .Columns("Vehiculo").Header.VisiblePosition = 6
+                    .Columns("Vehiculo").Header.VisiblePosition = 7
                     .Columns("Vehiculo").Width = 100
                     .Columns("Carreta").Hidden = False
-                    .Columns("Carreta").Header.VisiblePosition = 7
+                    .Columns("Carreta").Header.VisiblePosition = 8
                     .Columns("Carreta").Width = 100
                 End With
                 .DisplayLayout.Override.CellClickAction = CellClickAction.RowSelect
@@ -752,291 +832,24 @@ Public Class frm_GRR_Venta
                 oeGuiaRR.Numero = FormatoDocumento(txtNroDoc.Text, 8)
             End If
             griDocumento.DataSource = olGuiaRR.Listar(oeGuiaRR)
-
+            For Each fila As UltraGridRow In griDocumento.Rows
+                Select Case fila.Cells("Estado").Value
+                    'Case "EVALUADA"
+                    '    fila.CellAppearance.BackColor = Me.colorEvaluado.Color
+                    'Case "ATENDIDO PARCIALMENTE"
+                    '    fila.CellAppearance.BackColor = Me.colorParcial.Color
+                    Case "ATENDIDO"
+                        fila.CellAppearance.BackColor = Me.ColorAtendido.Color
+                    Case "ANULADO"
+                        fila.CellAppearance.BackColor = Me.colorAnulado.Color
+                        'Case "TERMINADA"
+                        '    fila.CellAppearance.BackColor = Me.colorTerminado.Color
+                End Select
+            Next
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
-
-
-#End Region
-
-    '    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
-    '        Try
-    '            mt_AgregarMaterial()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub btnQuitar_Click(sender As Object, e As EventArgs)
-    '        Try
-    '            mt_QuitarMaterial()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub txtMaterial_KeyDown(sender As Object, e As KeyEventArgs) Handles txtMaterial.KeyDown
-    '        Try
-    '            If e.KeyCode = Keys.Enter Then
-    '                mt_ListarMateriales()
-    '            End If
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-
-
-    Private Sub griDocumento_DoubleClickRow(sender As Object, e As EventArgs) Handles griDocumento.DoubleClickRow
-        Try
-            Editar()
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-        End Try
-    End Sub
-
-
-
-    '    Private Sub txtMTC_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtMTC.EditorButtonClick
-    '        Try
-    '            Select Case e.Button.Key
-    '                Case "Right"
-    '                    'If txtMTC.Text = "" Then
-    '                    Dim oeVehiculo As New e_Vehiculo
-    '                    Dim olVehiculo As New l_Vehiculo
-
-    '                    oeVehiculo = New e_Vehiculo
-    '                    oeVehiculo.TipoOperacion = "L"
-    '                    oeVehiculo.Id = cmbVehiculo.Value
-    '                    oeVehiculo = olVehiculo.Obtener(oeVehiculo)
-
-    '                    oeVehiculo.TipoOperacion = "A"
-    '                    oeVehiculo.NroMTC = txtMTC.Text
-    '                    '  Operacion = "Editar"
-    '                    If MessageBox.Show("¿Desea Actualizar el Nro. MTC del Vehículo?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-    '                        olVehiculo.Guardar(oeVehiculo)
-    '                    End If
-    '                    'End If
-    '            End Select
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub cboChofer_ValueChanged(sender As Object, e As EventArgs) Handles cboChofer.ValueChanged
-    '        If cboChofer.Value <> Nothing Then
-    '            Dim oeChofer As New e_PersonaDocumento
-    '            Dim olChofer As New l_PersonaDocumento
-    '            oeChofer = New e_PersonaDocumento
-    '            oeChofer.TipoOperacion = "L"
-    '            oeChofer.IdPersona = cboChofer.Value
-    '            oeChofer = olChofer.Obtener(oeChofer)
-    '            txtNroLicencia.Text = oeChofer.NumeroDocumento
-    '        End If
-    '    End Sub
-
-    '    Private Sub cboCarreta_ValueChanged(sender As Object, e As EventArgs) Handles cboCarreta.ValueChanged
-    '        If cboCarreta.Value <> Nothing Then
-    '            Dim oeVehiculo As New e_Vehiculo
-    '            Dim olVehiculo As New l_Vehiculo
-
-    '            oeVehiculo = New e_Vehiculo
-    '            oeVehiculo.TipoOperacion = "L"
-    '            oeVehiculo.Id = cboCarreta.Value
-    '            oeVehiculo = olVehiculo.Obtener(oeVehiculo)
-    '            txtNroMTCC.Text = oeVehiculo.NroMTC
-
-    '            ''''Muestra el propietario de las Carretas
-    '            Dim oeEmpresa As New e_Empresa
-    '            Dim olEmpresa As New l_Empresa
-    '            oeEmpresa.TipoOperacion = "LST"
-    '            oeEmpresa.Id = oeVehiculo.IdEmpresaPropietaria
-    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-    '            txtPropietarioCarreta.Text = oeEmpresa.Nombre
-
-    '        End If
-    '    End Sub
-
-    '    Private Sub txtNroMTCC_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtNroMTCC.EditorButtonClick
-    '        Try
-    '            Select Case e.Button.Key
-    '                Case "Right"
-    '                    'If txtMTC.Text = "" Then
-    '                    Dim oeVehiculo As New e_Vehiculo
-    '                    Dim olVehiculo As New l_Vehiculo
-
-    '                    oeVehiculo = New e_Vehiculo
-    '                    oeVehiculo.TipoOperacion = "L"
-    '                    oeVehiculo.Id = cboCarreta.Value
-    '                    oeVehiculo = olVehiculo.Obtener(oeVehiculo)
-
-    '                    oeVehiculo.TipoOperacion = "A"
-    '                    oeVehiculo.NroMTC = txtNroMTCC.Text
-    '                    ' Operacion = "Editar"
-    '                    If MessageBox.Show("¿Desea Actualizar el Nro. MTC de la Carreta?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-    '                        olVehiculo.Guardar(oeVehiculo)
-    '                    End If
-    '                    'End If
-    '            End Select
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub txtNroLicencia_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtNroLicencia.EditorButtonClick
-    '        Try
-    '            Select Case e.Button.Key
-    '                Case "Right"
-    '                    'If txtMTC.Text = "" Then
-    '                    Dim oePersonaDocumento As New e_PersonaDocumento
-    '                    Dim olPersonaDocumento As New l_PersonaDocumento
-
-    '                    oePersonaDocumento = New e_PersonaDocumento
-    '                    oePersonaDocumento.TipoOperacion = "L"
-    '                    oePersonaDocumento.IdPersona = cboChofer.Value
-    '                    oePersonaDocumento = olPersonaDocumento.Obtener(oePersonaDocumento)
-
-    '                    oePersonaDocumento.TipoOperacion = "A"
-    '                    oePersonaDocumento.NumeroDocumento = txtNroLicencia.Text
-    '                    ' Operacion = "Editar"
-    '                    If MessageBox.Show("¿Desea Actualizar la Licencia del Conductor?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-    '                        olPersonaDocumento.Guardar(oePersonaDocumento)
-    '                    End If
-    '                    'End If
-    '            End Select
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub griDetalleDocumento_BeforeRowsDeleted_1(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDetalleDocumento.BeforeRowsDeleted
-    '        e.Cancel = True
-    '    End Sub
-
-    '    Private Sub txtSerieDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerieDoc.KeyPress
-    '        If Char.IsDigit(e.KeyChar) Then
-    '            e.Handled = False
-    '        ElseIf Char.IsControl(e.KeyChar) Then
-    '            e.Handled = False
-    '        Else
-    '            e.Handled = True
-    '        End If
-    '    End Sub
-
-    '    Private Sub txtNroDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNroDoc.KeyPress
-    '        If Char.IsDigit(e.KeyChar) Then
-    '            e.Handled = False
-    '        ElseIf Char.IsControl(e.KeyChar) Then
-    '            e.Handled = False
-    '        Else
-    '            e.Handled = True
-    '        End If
-    '    End Sub
-
-    '    Private Sub txtSerieDoc_Enter(sender As Object, e As EventArgs) Handles txtSerieDoc.Enter
-    '        txtSerieDoc.Select(0, 4)
-    '        Me.txtSerieDoc.SelectAll()
-    '    End Sub
-
-    '    Private Sub txtNroDoc_Enter(sender As Object, e As EventArgs) Handles txtNroDoc.Enter
-    '        txtNroDoc.Select(0, 10)
-    '        Me.txtNroDoc.SelectAll()
-    '    End Sub
-
-    '    Private Sub txtSerieDoc_Validated(sender As Object, e As EventArgs) Handles txtSerieDoc.Validated
-    '        txtSerieDoc.Text = gmt_FormatoDocumento(txtSerieDoc.Text, 4)
-    '    End Sub
-
-    '    Private Sub txtNroDoc_Validated(sender As Object, e As EventArgs) Handles txtNroDoc.Validated
-    '        txtNroDoc.Text = gmt_FormatoDocumento(txtNroDoc.Text, 10)
-    '    End Sub
-
-    '    Private Sub griDocumento_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDocumento.BeforeRowsDeleted
-    '        e.Cancel = True
-    '    End Sub
-
-    '    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
-    '        Try
-    '            With griDocumento
-    '                If griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ANULADO" Or griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ATENDIDO" Then
-    '                    Throw New Exception("! Solo se puede anular Documentos en estado Generado..!")
-    '                Else
-    '                    oeGuiaRR = New e_GRR_Venta
-    '                    If griDocumento.Selected.Rows.Count > 0 Then
-    '                        oeGuiaRR.Id = .ActiveRow.Cells("Id").Value
-    '                        oeGuiaRR = olGuiaRR.Obtener(oeGuiaRR)
-    '                        oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
-    '                        olGuiaRRDetalle = New l_GuiaRemisionRemitente_Detalle
-    '                        oeGuiaRRDetalle.IdGuiaRemRemitente = .ActiveRow.Cells("Id").Value
-    '                        oeGuiaRR.lstDetalleGuiaRemitente = olGuiaRRDetalle.Listar(oeGuiaRRDetalle)
-    '                        '  If gfc_ValidarOrdEjecutada(oeDocumento.Id) Then
-    '                        If MessageBox.Show("Esta seguro de anular el documento : " &
-    '                             .ActiveRow.Cells("Serie").Value.ToString & "-" & .ActiveRow.Cells("Numero").Value.ToString & " ?",
-    '                             "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-    '                            oeGuiaRR.TipoOperacion = "N"
-    '                            oeGuiaRR.UsuarioCrea = gUsuarioEOS.Nombre
-    '                            olGuiaRR.Guardar(oeGuiaRR)
-    '                            MsgBox("El documento ha sido anulado exitosamente", MsgBoxStyle.Information, Me.Text)
-    '                            Consultar(True)
-    '                        End If
-    '                        'End If
-
-    '                    End If
-    '                End If
-    '            End With
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub cboPuntoLlegada_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles cboPuntoLlegada.EditorButtonClick
-    '        Try
-    '            Select Case e.Button.Key
-    '                Case "Right"
-    '                    cboPuntoLlegada.SelectedIndex = -1
-    '                    mt_CargarDirecciones()
-    '                Case "Left"
-    '                    If MessageBox.Show("¿Desea Agregar Nueva Dirección?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-
-    '                        Dim frm As New frm_EmpresaDireccion
-    '                        With frm
-    '                            .IdEmpresa.Text = txtProveedor.Tag
-    '                            .ShowDialog()
-    '                        End With
-    '                    End If
-    '            End Select
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub btmConsultar_Click(sender As Object, e As EventArgs) Handles btmConsultar.Click
-    '        Try
-    '            oeOrdenSalida = New e_Orden
-    '            olOrdenSalida = New l_Orden
-    '            oeOrdenSalida.TipoOperacion = "E"
-    '            GriOrdenesSalidas.DataSource = olOrdenSalida.Listar(oeOrdenSalida)
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-
-
-    '    End Sub
-
-    '    Private Sub btnAgregarOs_Click(sender As Object, e As EventArgs) Handles btnAgregarOs.Click
-    '        Try
-    '            mt_AgregarOrden(1)
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub btnQuitarD_Click(sender As Object, e As EventArgs) Handles btnQuitarD.Click
-    '        mt_QuitarMaterial()
-    '    End Sub
-    '#End Region
 
     Private Sub mt_Mostrar()
         Try
@@ -1156,69 +969,20 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
-
     Private Function fc_Guardar() As Boolean
         Try
             mt_LlenaObjeto()
             If olGuiaRR.Guardar(oeGuiaRR) Then
                 MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-
                 If MessageBox.Show("¿Desea Imprimir la Guía de Remisión Remitente..?" & "Con número: " & txtSerie.Text & "-" & txtNumero.Text, "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
-                    'Dim formulario As New frm_ImprimirGRR
-                    'formulario.mt_CargarDatos(oeGuiaRR.Id)
-                    'formulario.ShowDialog()
+                    mt_ImprimirGRR_Venta(oeGuiaRR.Id)
                 End If
-
             End If
             Return True
         Catch ex As Exception
             Throw ex
         End Try
     End Function
-
-    '    Public Sub mt_LlenaObjeto()
-    '        Try
-    '            With oeDocumento
-    '                .IdEmpresaSis = gstrIdEmpresaSis
-    '                .IdSucursal = gstrIdSucursal
-    '                .IdClienteProveedor = txtProveedor.Tag
-    '                .ClienteProveedor = txtProveedor.Text
-    '                .IdTipoDocumento = "1CIX009"
-    '                .IdEstado = "1CIX020"
-    '                .IdPeriodo = ""
-    '                .CuentaContable = ""
-    '                .IdMoneda = "1CIX00000000000005"
-    '                .Tipo = 2
-    '                .TipoExistencia = 1
-    '                .Serie = gmt_FormatoDocumento(txtSerie.Text, 4)
-    '                .Numero = gmt_FormatoDocumento(txtNumero.Text, 8)
-    '                .FechaEmision = dtpFechaDocumento.Value
-    '                .FechaVencimiento = Date.Parse("01/01/1901")
-    '                .UsuarioCrea = gUsuarioEOS.Nombre
-    '                With .oeGuiaRR
-    '                    .IdMotivoTraslado = cmbMotivoTraslado.Value
-    '                    .IdVehiculo = cmbVehiculo.Value
-    '                    .IdCarreta = cboCarreta.Value
-    '                    .IdChofer = cboChofer.Value
-    '                    .Partida = txtPartida.Text
-    '                    .Destino = cboPuntoLlegada.Text 'txtLlegada.Text
-    '                    .UsuarioCrea = gUsuarioEOS.Nombre
-    '                    .UsuarioModifica = gUsuarioEOS.Nombre
-    '                End With
-    '                .lstDetalleDocumento = New List(Of e_DetalleDocumento)
-    '                .lstDetalleDocumento.AddRange(loDetalleDocumento)
-    '                .lstOrdenDocumento = New List(Of e_OrdenDocumento)
-    '                .lstOrdenDocumento.AddRange(loOrdenDocumento)
-    '                If Operacion = "Nuevo" Then
-    '                    .TipoOperacion = "I"
-    '                Else
-    '                    .TipoOperacion = "A"
-    '                End If
-    '            End With
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
 
     Public Sub mt_LlenaObjeto()
         Try
@@ -1233,6 +997,7 @@ Public Class frm_GRR_Venta
                     .IdTransportista = cboTransportista.Value
                     .Fecha = dtpFechaDocumento.Value
                     .FechaTraslado = dtp_FechaTraslado.Value
+                    .IdEstado = "1CH00014"
                     .Serie = FormatoDocumento(txtSerie.Text, 4)
                     .Numero = FormatoDocumento(txtNumero.Text, 8)
                     .IdMotivoTraslado = cmbMotivoTraslado.Value
@@ -1332,7 +1097,35 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
+    Private Sub mt_Eliminar(Id As String)
+        Try
+            oeGuiaRR = New e_GRR_Venta
+            oeGuiaRR.TipoOperacion = "E"
+            oeGuiaRR.Id = Id
+            oeGuiaRR.UsuarioCrea = gUsuarioSGI.Id
+            olGuiaRR.Eliminar(oeGuiaRR)
+            mt_Listar()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
+    Private Sub mt_Anular(id As String)
+        Try
+            If MessageBox.Show("Esta seguro de anular el Documento: " & griDocumento.ActiveRow.Cells("Serie").Value.ToString & " - " & griDocumento.ActiveRow.Cells("Numero").Value.ToString & " ?",
+                                 "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                oeGuiaRR = New e_GRR_Venta
+                oeGuiaRR.TipoOperacion = "U"
+                oeGuiaRR.Id = id
+                oeGuiaRR.UsuarioCrea = gUsuarioSGI.Id
+                olGuiaRR.Eliminar(oeGuiaRR)
+                mt_Listar()
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     '    Private Sub mt_ListarMateriales()
     '        Try
@@ -1709,5 +1502,320 @@ Public Class frm_GRR_Venta
 
 
     '#End Region
+
+#End Region
+
+    '    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
+    '        Try
+    '            mt_AgregarMaterial()
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub btnQuitar_Click(sender As Object, e As EventArgs)
+    '        Try
+    '            mt_QuitarMaterial()
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub txtMaterial_KeyDown(sender As Object, e As KeyEventArgs) Handles txtMaterial.KeyDown
+    '        Try
+    '            If e.KeyCode = Keys.Enter Then
+    '                mt_ListarMateriales()
+    '            End If
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+
+
+
+    '    Private Sub txtMTC_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtMTC.EditorButtonClick
+    '        Try
+    '            Select Case e.Button.Key
+    '                Case "Right"
+    '                    'If txtMTC.Text = "" Then
+    '                    Dim oeVehiculo As New e_Vehiculo
+    '                    Dim olVehiculo As New l_Vehiculo
+
+    '                    oeVehiculo = New e_Vehiculo
+    '                    oeVehiculo.TipoOperacion = "L"
+    '                    oeVehiculo.Id = cmbVehiculo.Value
+    '                    oeVehiculo = olVehiculo.Obtener(oeVehiculo)
+
+    '                    oeVehiculo.TipoOperacion = "A"
+    '                    oeVehiculo.NroMTC = txtMTC.Text
+    '                    '  Operacion = "Editar"
+    '                    If MessageBox.Show("¿Desea Actualizar el Nro. MTC del Vehículo?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+    '                        olVehiculo.Guardar(oeVehiculo)
+    '                    End If
+    '                    'End If
+    '            End Select
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub cboChofer_ValueChanged(sender As Object, e As EventArgs) Handles cboChofer.ValueChanged
+    '        If cboChofer.Value <> Nothing Then
+    '            Dim oeChofer As New e_PersonaDocumento
+    '            Dim olChofer As New l_PersonaDocumento
+    '            oeChofer = New e_PersonaDocumento
+    '            oeChofer.TipoOperacion = "L"
+    '            oeChofer.IdPersona = cboChofer.Value
+    '            oeChofer = olChofer.Obtener(oeChofer)
+    '            txtNroLicencia.Text = oeChofer.NumeroDocumento
+    '        End If
+    '    End Sub
+
+    '    Private Sub cboCarreta_ValueChanged(sender As Object, e As EventArgs) Handles cboCarreta.ValueChanged
+    '        If cboCarreta.Value <> Nothing Then
+    '            Dim oeVehiculo As New e_Vehiculo
+    '            Dim olVehiculo As New l_Vehiculo
+
+    '            oeVehiculo = New e_Vehiculo
+    '            oeVehiculo.TipoOperacion = "L"
+    '            oeVehiculo.Id = cboCarreta.Value
+    '            oeVehiculo = olVehiculo.Obtener(oeVehiculo)
+    '            txtNroMTCC.Text = oeVehiculo.NroMTC
+
+    '            ''''Muestra el propietario de las Carretas
+    '            Dim oeEmpresa As New e_Empresa
+    '            Dim olEmpresa As New l_Empresa
+    '            oeEmpresa.TipoOperacion = "LST"
+    '            oeEmpresa.Id = oeVehiculo.IdEmpresaPropietaria
+    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
+    '            txtPropietarioCarreta.Text = oeEmpresa.Nombre
+
+    '        End If
+    '    End Sub
+
+    '    Private Sub txtNroMTCC_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtNroMTCC.EditorButtonClick
+    '        Try
+    '            Select Case e.Button.Key
+    '                Case "Right"
+    '                    'If txtMTC.Text = "" Then
+    '                    Dim oeVehiculo As New e_Vehiculo
+    '                    Dim olVehiculo As New l_Vehiculo
+
+    '                    oeVehiculo = New e_Vehiculo
+    '                    oeVehiculo.TipoOperacion = "L"
+    '                    oeVehiculo.Id = cboCarreta.Value
+    '                    oeVehiculo = olVehiculo.Obtener(oeVehiculo)
+
+    '                    oeVehiculo.TipoOperacion = "A"
+    '                    oeVehiculo.NroMTC = txtNroMTCC.Text
+    '                    ' Operacion = "Editar"
+    '                    If MessageBox.Show("¿Desea Actualizar el Nro. MTC de la Carreta?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+    '                        olVehiculo.Guardar(oeVehiculo)
+    '                    End If
+    '                    'End If
+    '            End Select
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub txtNroLicencia_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles txtNroLicencia.EditorButtonClick
+    '        Try
+    '            Select Case e.Button.Key
+    '                Case "Right"
+    '                    'If txtMTC.Text = "" Then
+    '                    Dim oePersonaDocumento As New e_PersonaDocumento
+    '                    Dim olPersonaDocumento As New l_PersonaDocumento
+
+    '                    oePersonaDocumento = New e_PersonaDocumento
+    '                    oePersonaDocumento.TipoOperacion = "L"
+    '                    oePersonaDocumento.IdPersona = cboChofer.Value
+    '                    oePersonaDocumento = olPersonaDocumento.Obtener(oePersonaDocumento)
+
+    '                    oePersonaDocumento.TipoOperacion = "A"
+    '                    oePersonaDocumento.NumeroDocumento = txtNroLicencia.Text
+    '                    ' Operacion = "Editar"
+    '                    If MessageBox.Show("¿Desea Actualizar la Licencia del Conductor?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+    '                        olPersonaDocumento.Guardar(oePersonaDocumento)
+    '                    End If
+    '                    'End If
+    '            End Select
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub griDetalleDocumento_BeforeRowsDeleted_1(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDetalleDocumento.BeforeRowsDeleted
+    '        e.Cancel = True
+    '    End Sub
+
+    '    Private Sub txtSerieDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerieDoc.KeyPress
+    '        If Char.IsDigit(e.KeyChar) Then
+    '            e.Handled = False
+    '        ElseIf Char.IsControl(e.KeyChar) Then
+    '            e.Handled = False
+    '        Else
+    '            e.Handled = True
+    '        End If
+    '    End Sub
+
+    '    Private Sub txtNroDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNroDoc.KeyPress
+    '        If Char.IsDigit(e.KeyChar) Then
+    '            e.Handled = False
+    '        ElseIf Char.IsControl(e.KeyChar) Then
+    '            e.Handled = False
+    '        Else
+    '            e.Handled = True
+    '        End If
+    '    End Sub
+
+    '    Private Sub txtSerieDoc_Enter(sender As Object, e As EventArgs) Handles txtSerieDoc.Enter
+    '        txtSerieDoc.Select(0, 4)
+    '        Me.txtSerieDoc.SelectAll()
+    '    End Sub
+
+    '    Private Sub txtNroDoc_Enter(sender As Object, e As EventArgs) Handles txtNroDoc.Enter
+    '        txtNroDoc.Select(0, 10)
+    '        Me.txtNroDoc.SelectAll()
+    '    End Sub
+
+    '    Private Sub txtSerieDoc_Validated(sender As Object, e As EventArgs) Handles txtSerieDoc.Validated
+    '        txtSerieDoc.Text = gmt_FormatoDocumento(txtSerieDoc.Text, 4)
+    '    End Sub
+
+    '    Private Sub txtNroDoc_Validated(sender As Object, e As EventArgs) Handles txtNroDoc.Validated
+    '        txtNroDoc.Text = gmt_FormatoDocumento(txtNroDoc.Text, 10)
+    '    End Sub
+
+    '    Private Sub griDocumento_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDocumento.BeforeRowsDeleted
+    '        e.Cancel = True
+    '    End Sub
+
+    '    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
+    '        Try
+    '            With griDocumento
+    '                If griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ANULADO" Or griDocumento.ActiveRow.Cells("Estado").Value.ToString = "ATENDIDO" Then
+    '                    Throw New Exception("! Solo se puede anular Documentos en estado Generado..!")
+    '                Else
+    '                    oeGuiaRR = New e_GRR_Venta
+    '                    If griDocumento.Selected.Rows.Count > 0 Then
+    '                        oeGuiaRR.Id = .ActiveRow.Cells("Id").Value
+    '                        oeGuiaRR = olGuiaRR.Obtener(oeGuiaRR)
+    '                        oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
+    '                        olGuiaRRDetalle = New l_GuiaRemisionRemitente_Detalle
+    '                        oeGuiaRRDetalle.IdGuiaRemRemitente = .ActiveRow.Cells("Id").Value
+    '                        oeGuiaRR.lstDetalleGuiaRemitente = olGuiaRRDetalle.Listar(oeGuiaRRDetalle)
+    '                        '  If gfc_ValidarOrdEjecutada(oeDocumento.Id) Then
+    '                        If MessageBox.Show("Esta seguro de anular el documento : " &
+    '                             .ActiveRow.Cells("Serie").Value.ToString & "-" & .ActiveRow.Cells("Numero").Value.ToString & " ?",
+    '                             "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+    '                            oeGuiaRR.TipoOperacion = "N"
+    '                            oeGuiaRR.UsuarioCrea = gUsuarioEOS.Nombre
+    '                            olGuiaRR.Guardar(oeGuiaRR)
+    '                            MsgBox("El documento ha sido anulado exitosamente", MsgBoxStyle.Information, Me.Text)
+    '                            Consultar(True)
+    '                        End If
+    '                        'End If
+
+    '                    End If
+    '                End If
+    '            End With
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub cboPuntoLlegada_EditorButtonClick(sender As Object, e As EditorButtonEventArgs) Handles cboPuntoLlegada.EditorButtonClick
+    '        Try
+    '            Select Case e.Button.Key
+    '                Case "Right"
+    '                    cboPuntoLlegada.SelectedIndex = -1
+    '                    mt_CargarDirecciones()
+    '                Case "Left"
+    '                    If MessageBox.Show("¿Desea Agregar Nueva Dirección?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+    '                        Dim frm As New frm_EmpresaDireccion
+    '                        With frm
+    '                            .IdEmpresa.Text = txtProveedor.Tag
+    '                            .ShowDialog()
+    '                        End With
+    '                    End If
+    '            End Select
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub btmConsultar_Click(sender As Object, e As EventArgs) Handles btmConsultar.Click
+    '        Try
+    '            oeOrdenSalida = New e_Orden
+    '            olOrdenSalida = New l_Orden
+    '            oeOrdenSalida.TipoOperacion = "E"
+    '            GriOrdenesSalidas.DataSource = olOrdenSalida.Listar(oeOrdenSalida)
+    '        Catch ex As Exception
+    '            Throw ex
+    '        End Try
+
+
+    '    End Sub
+
+    '    Private Sub btnAgregarOs_Click(sender As Object, e As EventArgs) Handles btnAgregarOs.Click
+    '        Try
+    '            mt_AgregarOrden(1)
+    '        Catch ex As Exception
+    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+    '        End Try
+    '    End Sub
+
+    '    Private Sub btnQuitarD_Click(sender As Object, e As EventArgs) Handles btnQuitarD.Click
+    '        mt_QuitarMaterial()
+    '    End Sub
+    '#End Region
+
+
+    '    Public Sub mt_LlenaObjeto()
+    '        Try
+    '            With oeDocumento
+    '                .IdEmpresaSis = gstrIdEmpresaSis
+    '                .IdSucursal = gstrIdSucursal
+    '                .IdClienteProveedor = txtProveedor.Tag
+    '                .ClienteProveedor = txtProveedor.Text
+    '                .IdTipoDocumento = "1CIX009"
+    '                .IdEstado = "1CIX020"
+    '                .IdPeriodo = ""
+    '                .CuentaContable = ""
+    '                .IdMoneda = "1CIX00000000000005"
+    '                .Tipo = 2
+    '                .TipoExistencia = 1
+    '                .Serie = gmt_FormatoDocumento(txtSerie.Text, 4)
+    '                .Numero = gmt_FormatoDocumento(txtNumero.Text, 8)
+    '                .FechaEmision = dtpFechaDocumento.Value
+    '                .FechaVencimiento = Date.Parse("01/01/1901")
+    '                .UsuarioCrea = gUsuarioEOS.Nombre
+    '                With .oeGuiaRR
+    '                    .IdMotivoTraslado = cmbMotivoTraslado.Value
+    '                    .IdVehiculo = cmbVehiculo.Value
+    '                    .IdCarreta = cboCarreta.Value
+    '                    .IdChofer = cboChofer.Value
+    '                    .Partida = txtPartida.Text
+    '                    .Destino = cboPuntoLlegada.Text 'txtLlegada.Text
+    '                    .UsuarioCrea = gUsuarioEOS.Nombre
+    '                    .UsuarioModifica = gUsuarioEOS.Nombre
+    '                End With
+    '                .lstDetalleDocumento = New List(Of e_DetalleDocumento)
+    '                .lstDetalleDocumento.AddRange(loDetalleDocumento)
+    '                .lstOrdenDocumento = New List(Of e_OrdenDocumento)
+    '                .lstOrdenDocumento.AddRange(loOrdenDocumento)
+    '                If Operacion = "Nuevo" Then
+    '                    .TipoOperacion = "I"
+    '                Else
+    '                    .TipoOperacion = "A"
+    '                End If
+    '            End With
+    '        Catch ex As Exception
+    '            Throw ex
+    '        End Try
+    '    End Sub
 
 End Class

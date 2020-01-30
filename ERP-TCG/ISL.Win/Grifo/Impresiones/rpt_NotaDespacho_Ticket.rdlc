@@ -1608,6 +1608,7 @@
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>7pt</FontSize>
+                  <Format>f0</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1731,7 +1732,7 @@
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>14.41401cm</Top>
         <Left>1.10075cm</Left>
-        <Height>0.37063cm</Height>
+        <Height>0.45cm</Height>
         <Width>0.68891cm</Width>
         <ZIndex>40</ZIndex>
         <Style>
@@ -1766,7 +1767,7 @@
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>16.85418cm</Top>
         <Left>1.10075cm</Left>
-        <Height>0.37063cm</Height>
+        <Height>0.45cm</Height>
         <Width>0.68891cm</Width>
         <ZIndex>41</ZIndex>
         <Style>
@@ -1847,6 +1848,72 @@
         <Height>0.46771cm</Height>
         <Width>3.97381cm</Width>
         <ZIndex>44</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DOI_Piloto">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DOI_Piloto.Value, "Cabecera")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DOI_Piloto</rd:DefaultName>
+        <Top>14.44929cm</Top>
+        <Left>1.78966cm</Left>
+        <Height>0.45cm</Height>
+        <Width>5.58622cm</Width>
+        <ZIndex>45</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DOI_Trabajador">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!DOI_Trabajador.Value, "Cabecera")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DOI_Trabajador</rd:DefaultName>
+        <Top>16.88404cm</Top>
+        <Left>1.93077cm</Left>
+        <Height>0.45cm</Height>
+        <Width>5.44511cm</Width>
+        <ZIndex>46</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1983,6 +2050,14 @@
         </Field>
         <Field Name="DOI">
           <DataField>DOI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOI_Piloto">
+          <DataField>DOI_Piloto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOI_Trabajador">
+          <DataField>DOI_Trabajador</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Emision">

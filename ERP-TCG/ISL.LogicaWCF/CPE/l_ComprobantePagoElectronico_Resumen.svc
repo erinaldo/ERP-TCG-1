@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="ERP.LogicaWCF.l_ComprobantePagoElectronico_Resumen" CodeBehind="l_ComprobantePagoElectronico_Resumen.svc.vb" %>

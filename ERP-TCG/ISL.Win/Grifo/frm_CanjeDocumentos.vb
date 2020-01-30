@@ -81,6 +81,8 @@ Public Class frm_CanjeDocumentos
     Private olServCtaCtble As New l_ServicioCuentaContable
     Private leServCtaCtble As List(Of e_ServicioCuentaContable)
 
+    Private mdblIGV As Double = gfc_ParametroValor("IGV")
+
 #End Region
 
 #Region "Botones"
@@ -368,12 +370,22 @@ Public Class frm_CanjeDocumentos
                 cmbTipoDocumento.Focus()
                 bso_Detalle.DataSource = ListaDetalleSeleccionados
                 udg_Detalles.DataBind()
+                bso_DocumentosSeleccionados.DataSource = ListaDocumentoSeleccionados
+                udg_DocumentosSeleccionados.DataBind()
                 mt_CalcularTotalOrden()
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
     End Sub
+
+    Private Function fc_Agrupar_ListaDetalles(Lista As List(Of e_OrdenVentaMaterial)) As List(Of e_OrdenVentaMaterial)
+        Try
+
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Function
 
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cmb_Cliente.InitializeLayout
         Me.cmb_Cliente.ValueMember = "Id"
@@ -539,6 +551,7 @@ Public Class frm_CanjeDocumentos
                 .IdTipoPago = cboTipoPago.Value
                 .Mac_PC_Local = MacPCLocal()
                 .IdClienteProveedor = cmb_Cliente.Value
+                .IndElectronico = True
                 .Glosa = txt_Observacion.Text.Trim
                 .lstDetalleDocumento = ListaDetalleSeleccionados
 
@@ -704,8 +717,8 @@ Public Class frm_CanjeDocumentos
             Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0, IGV As Double = ObtenerIGV()
             For Each Item In ListaDetalleSeleccionados
                 Item.Total = Item.Cantidad * Item.Precio
-                Item.Igv = Item.Total * IGV
-                Item.Subtotal = Item.Total - Item.Igv
+                Item.Subtotal = Item.Total / (1 + mdblIGV)
+                Item.Igv = Item.Total - Item.Subtotal
 
                 SubTotal += Item.Subtotal
                 DescuentoTotal = 0
@@ -713,7 +726,7 @@ Public Class frm_CanjeDocumentos
             Next
             nud_SubTotal.Value = SubTotal
             nud_Total.Value = Total
-            nud_Impuesto.Value = Total * IGV
+            nud_Impuesto.Value = Total - SubTotal
 
             DocumentoGenerado.SubTotal = nud_SubTotal.Value
             DocumentoGenerado.IGV = nud_Impuesto.Value
@@ -872,6 +885,7 @@ Public Class frm_CanjeDocumentos
                 If .Selected.Rows.Count > 0 Then
                     Documento.Id = .ActiveRow.Cells("Id").Value
                     bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+                    udg_DetalleProductos.DataBind()
                 End If
 
             End With

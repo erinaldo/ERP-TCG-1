@@ -16,7 +16,8 @@ Public Class d_GRR_Venta
                 , .IdCarreta = o_fila("IdCarreta").ToString, .Carreta = o_fila("Carreta").ToString, .IdChofer = o_fila("IdChofer").ToString _
                 , .Chofer = o_fila("Chofer").ToString, .Brevete = o_fila("Brevete").ToString, .IdMotivoTraslado = o_fila("IdMotivoTraslado").ToString _
                 , .MotivoTraslado = o_fila("MotivoTraslado").ToString, .IdPartida = o_fila("IdPartida").ToString, .Partida = o_fila("Partida").ToString _
-                , .IdDestino = o_fila("IdDestino").ToString, .Destino = o_fila("Destino").ToString, .UsuarioCrea = o_fila("UsuarioCrea").ToString}
+                , .IdDestino = o_fila("IdDestino").ToString, .Destino = o_fila("Destino").ToString, .UsuarioCrea = o_fila("UsuarioCrea").ToString _
+                , .IdEstado = o_fila("IdEstado").ToString, .Estado = o_fila("Estado").ToString}
             Return oeGuiaRemitente
         Catch ex As Exception
             Throw ex
@@ -37,6 +38,21 @@ Public Class d_GRR_Venta
                 oeGuiaRemitente = New e_GRR_Venta
                 Return oeGuiaRemitente
             End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ListarDT(oe As e_GRR_Venta) As DataTable
+        Try
+            Dim DT As New DataTable, DS As New DataSet
+            With oe
+                DS = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
+                End If
+            End With
+            Return DT
         Catch ex As Exception
             Throw ex
         End Try
@@ -73,7 +89,7 @@ Public Class d_GRR_Venta
                 With oeGuiaRemitente
                     Dim stResultado() As String
                     stResultado = sqlhelper.ExecuteScalar("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
-                                          .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
+                                          .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
                                           .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
                                           .IdDestino, .Destino, .IdViaje, .UsuarioCrea).ToString.Split("_")
                     .Id = stResultado(0)
@@ -95,11 +111,15 @@ Public Class d_GRR_Venta
         End Try
     End Function
 
-    Public Function Eliminar(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean
+    Public Function EliminarAnular(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean
         Try
-            sqlhelper.ExecuteNonQuery("[ADM].[GuiaRemision_Venta_IAE] ", "E",
-                                        "",
-                                        oeGuiaRemitente.Id)
+            With oeGuiaRemitente
+                sqlhelper.ExecuteNonQuery("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
+                              .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
+                              .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
+                              .IdDestino, .Destino, .IdViaje, .UsuarioCrea)
+            End With
+
             Return True
         Catch ex As Exception
             Throw ex
