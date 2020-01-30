@@ -25,7 +25,7 @@ Public Class d_ComprobantePagoElectronico_Detalle
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_Detalle_LST]" _
+                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_Detalle_LST" _
                 , "GEN" _
                 , "" _
                 , "" _

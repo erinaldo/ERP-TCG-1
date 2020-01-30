@@ -351,15 +351,16 @@ Module m_Funciones
 
     Public Sub gmt_CPE(oeDocumento As e_MovimientoDocumento)
         Try
-            If oeDocumento.TipoOperacion = "I" Then
-                Dim Hash As String = ""
+            'If oeDocumento.TipoOperacion = "I" Then
+            Dim Hash As String = ""
                 Dim ls_NombreArchivo As String = ""
                 Dim lb_IndXml As Boolean = False
                 Dim odDocumento As New l_MovimientoDocumento
                 Dim oeDocumentoElectronico As New e_ComprobantePagoElectronico
                 Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
-                oeDocumentoElectronico = olDocumentoElectronico.Obtener("UNO", New e_ComprobantePagoElectronico With {.Id = oeDocumento.Id, .IdEmpresaSis = oeDocumento.IdEmpresaSis})
-                For Each detalle As e_ComprobantePagoElectronico_Detalle In oeDocumentoElectronico.Detalles
+            oeDocumentoElectronico = olDocumentoElectronico.Obtener("GEN", New e_ComprobantePagoElectronico With {.TipoOperacion = "GEN", .Id = oeDocumento.Id})
+
+            For Each detalle As e_ComprobantePagoElectronico_Detalle In oeDocumentoElectronico.Detalles
                     If detalle.Producto.Trim = String.Empty Then Throw New Exception("Existe un Material sin Nombre de Impresion")
                 Next
                 Select Case oeDocumento.IdTipoDocumento
@@ -394,7 +395,7 @@ Module m_Funciones
                 'oeDocumento.lstOrdenDocumento = New List(Of e_OrdenDocumento) 'CesS
                 'oeDocumento.oeVenta = New e_Venta 'CesS
                 odDocumento.Guardar(oeDocumento)
-            End If
+            'End If
         Catch ex As Exception
             Throw ex
         End Try

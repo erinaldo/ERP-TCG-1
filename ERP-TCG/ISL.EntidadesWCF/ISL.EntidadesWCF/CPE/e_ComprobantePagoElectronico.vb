@@ -1,11 +1,10 @@
 ﻿Public Class e_ComprobantePagoElectronico
 
-
+    Public Property TipoOperacion() As String
     Public Property Sel() As Boolean
     Public Property Id() As String
     Public Property IdEmpresaSis() As String
     Public Property IdCentro() As String
-    Public Property TipoOperacion() As String
     Public Property TipoDocumento() As String
     Public Property Documento() As String
     Public Property FechaEmision() As Date
@@ -50,7 +49,7 @@
     Public Property IdResumen As String
     Public Property IdEstadoSunat As String
 
-    Public Property Detalles() As List(Of e_ComprobantePagoElectronico_Detalle)
+    Public Property Detalles() As New List(Of e_ComprobantePagoElectronico_Detalle)
 
     Public Sub New()
         Sel = False

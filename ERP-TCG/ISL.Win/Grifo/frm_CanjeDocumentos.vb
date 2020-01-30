@@ -81,6 +81,8 @@ Public Class frm_CanjeDocumentos
     Private olServCtaCtble As New l_ServicioCuentaContable
     Private leServCtaCtble As List(Of e_ServicioCuentaContable)
 
+    Private mdblIGV As Double = gfc_ParametroValor("IGV")
+
 #End Region
 
 #Region "Botones"
@@ -715,8 +717,8 @@ Public Class frm_CanjeDocumentos
             Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0, IGV As Double = ObtenerIGV()
             For Each Item In ListaDetalleSeleccionados
                 Item.Total = Item.Cantidad * Item.Precio
-                Item.Igv = Item.Total * IGV
-                Item.Subtotal = Item.Total - Item.Igv
+                Item.Subtotal = Item.Total / (1 + mdblIGV)
+                Item.Igv = Item.Total - Item.Subtotal
 
                 SubTotal += Item.Subtotal
                 DescuentoTotal = 0
@@ -724,7 +726,7 @@ Public Class frm_CanjeDocumentos
             Next
             nud_SubTotal.Value = SubTotal
             nud_Total.Value = Total
-            nud_Impuesto.Value = Total * IGV
+            nud_Impuesto.Value = Total - SubTotal
 
             DocumentoGenerado.SubTotal = nud_SubTotal.Value
             DocumentoGenerado.IGV = nud_Impuesto.Value

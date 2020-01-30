@@ -21,7 +21,9 @@ Public Class l_ComprobantePagoElectronico
     Public gstrDistritoEmpresa As String
     Public gstrDireccion As String
 
-    Dim ADO As d_ComprobantePagoElectronico
+    Dim ADO As New d_ComprobantePagoElectronico
+    Dim ADO_Detalles As New d_ComprobantePagoElectronico_Detalle
+
     'Dim ADO_Resumen As d_Resumen_Doc_Electronico
     Dim settings As XmlWriterSettings = New XmlWriterSettings()
     Dim prefixCac As String = ""
@@ -44,7 +46,6 @@ Public Class l_ComprobantePagoElectronico
 
     Public Function Consultar(Operacion As String, Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico) Implements Il_ComprobantePagoElectronico.Consultar
         Try
-            ADO = New d_ComprobantePagoElectronico
             Return ADO.Listar(Documento)
         Catch ex As Exception
             Throw ex
@@ -53,8 +54,10 @@ Public Class l_ComprobantePagoElectronico
 
     Public Function Obtener(Operacion As String, Documento As e_ComprobantePagoElectronico) As e_ComprobantePagoElectronico Implements Il_ComprobantePagoElectronico.Obtener
         Try
-            ADO = New d_ComprobantePagoElectronico
-            Return ADO.Obtener(Documento)
+            Dim CPE As New e_ComprobantePagoElectronico
+            CPE = ADO.Obtener(Documento)
+            CPE.Detalles = ADO_Detalles.Listar(New e_ComprobantePagoElectronico_Detalle With {.TipoOperacion = "GEN", .IdDocumento = Documento.Id})
+            Return CPE
         Catch ex As Exception
             Throw ex
         End Try
@@ -62,7 +65,6 @@ Public Class l_ComprobantePagoElectronico
 
     Public Function CambiarEstado(Operacion As String, Documento As e_ComprobantePagoElectronico) As Boolean Implements Il_ComprobantePagoElectronico.CambiarEstado
         Try
-            ADO = New d_ComprobantePagoElectronico
             'Return ADO.Guardar("3", Documento)
         Catch ex As Exception
             Throw ex

@@ -1048,13 +1048,13 @@ Public Class frm_EstacionServicio
         Try
             Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0
             For Each Item In OrdenVenta.lstOrdenComercialMaterial
-                SubTotal += Item.PrecioTotal
+                Total += Item.PrecioTotal
                 DescuentoTotal += Item.Dscto
-                Total += SubTotal
             Next
+            SubTotal = Total / (1 + mdblIGV)
             nud_Total.Value = Total
-            nud_Impuesto.Value = Total * mdblIGV
-            nud_SubTotal.Value = Total - (Total * mdblIGV)
+            nud_SubTotal.Value = SubTotal
+            nud_Impuesto.Value = Total - SubTotal
         Catch ex As Exception
             Throw ex
         End Try

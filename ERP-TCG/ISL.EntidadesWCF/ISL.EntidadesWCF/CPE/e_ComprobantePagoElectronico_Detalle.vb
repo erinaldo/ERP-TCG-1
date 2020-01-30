@@ -1,5 +1,6 @@
 ﻿Public Class e_ComprobantePagoElectronico_Detalle
 
+    Public Property TipoOperacion() As String
     Public Property IdDocumento() As String
     Public Property IdMaterial() As String
     Public Property IndMaterial_Servicio() As String
@@ -22,6 +23,7 @@
     Public Property CostoTotal() As Double
 
     Public Sub New()
+        TipoOperacion = "GEN"
         IdDocumento = ""
         IdMaterial = ""
         IndMaterial_Servicio = ""
@@ -34,7 +36,7 @@
         IndISC = False
         IndIVAP = False
         TotalIGV = 0
-    TotalInafecta = 0
+        TotalInafecta = 0
         TotalExonerada = 0
         TotalISC = 0
         TotalIVAP = 0
@@ -45,7 +47,7 @@
     End Sub
 
     Public Sub New(
-                  p_IdDocumento As String _
+                 p_IdDocumento As String _
                 , p_IdMaterial As String _
                 , p_IndMaterial_Servicio As String _
                 , p_UMedida As String _
@@ -65,7 +67,6 @@
                 , p_PrecioUnitario As Double _
                 , p_PrecioTotal As Double _
                 , p_CostoTotal As Double)
-
         IdDocumento = p_IdDocumento
         IdMaterial = p_IdMaterial
         IndMaterial_Servicio = p_IndMaterial_Servicio
