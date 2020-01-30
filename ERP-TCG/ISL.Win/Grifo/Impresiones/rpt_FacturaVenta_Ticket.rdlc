@@ -123,7 +123,7 @@
         <Top>5.75649cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.07495cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -188,10 +188,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.3476cm</Top>
+        <Top>6.31232cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.11023cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -225,7 +225,7 @@
         <Top>6.97399cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.07495cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -244,7 +244,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DNI</Value>
+                <Value>RUC</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -259,7 +259,7 @@
         <Top>7.53871cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>0.69546cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -321,7 +321,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Tipo.Value, "Cabecera")</Value>
+                <Value>FACTURA DE VENTA ELECTRONICA</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -537,10 +537,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>7.5651cm</Top>
-        <Left>1.55961cm</Left>
+        <Top>7.53871cm</Top>
+        <Left>1.03901cm</Left>
         <Height>0.42361cm</Height>
-        <Width>1.78672cm</Width>
+        <Width>1.96311cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -927,10 +927,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>0.34355cm</Left>
+        <Top>7.51232cm</Top>
+        <Left>3.00212cm</Left>
         <Height>0.42361cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.03967cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -960,10 +960,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Placa</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>1.55961cm</Left>
+        <Top>7.48593cm</Top>
+        <Left>4.04179cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.78672cm</Width>
+        <Width>1.22331cm</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
@@ -1485,6 +1485,7 @@
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
+                  <Format>f0</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1492,10 +1493,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Kilometraje</rd:DefaultName>
-        <Top>8.10343cm</Top>
-        <Left>5.17976cm</Left>
+        <Top>7.48593cm</Top>
+        <Left>6.0884cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.17007cm</Width>
+        <Width>1.42924cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -1526,10 +1527,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>3.78731cm</Left>
+        <Top>7.51232cm</Top>
+        <Left>5.266cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>0.8224cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -1844,7 +1845,7 @@
     <Height>7.60417in</Height>
     <Style />
   </Body>
-  <Width>3.0943in</Width>
+  <Width>3.8443in</Width>
   <Page>
     <PageHeight>30cm</PageHeight>
     <PageWidth>10cm</PageWidth>

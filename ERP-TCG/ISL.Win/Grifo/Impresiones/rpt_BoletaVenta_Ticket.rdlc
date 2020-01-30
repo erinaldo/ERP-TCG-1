@@ -123,7 +123,7 @@
         <Top>5.75649cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.03967cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -154,7 +154,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>11.89201cm</Top>
         <Left>2.88875cm</Left>
         <Height>0.45cm</Height>
         <Width>0.828cm</Width>
@@ -191,7 +191,7 @@
         <Top>6.3476cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.03967cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -225,7 +225,7 @@
         <Top>6.97399cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>1.03967cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -259,7 +259,7 @@
         <Top>7.53871cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>0.69546cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -289,7 +289,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.90062cm</Top>
+        <Top>11.26562cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>0.78245cm</Width>
@@ -321,7 +321,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Tipo.Value, "Cabecera")</Value>
+                <Value>BOLETA DE VENTA ELECTRONICA</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -395,6 +395,7 @@
               <TextRun>
                 <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
                 <Style>
+                  <FontFamily>calibri</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
@@ -406,9 +407,9 @@
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
         <Top>5.75649cm</Top>
-        <Left>1.55961cm</Left>
+        <Left>1.38322cm</Left>
         <Height>0.45cm</Height>
-        <Width>3.00769cm</Width>
+        <Width>3.18408cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -438,7 +439,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Trabajador</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>11.89201cm</Top>
         <Left>3.78731cm</Left>
         <Height>0.45cm</Height>
         <Width>3.61462cm</Width>
@@ -472,9 +473,9 @@
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
         <Top>6.38288cm</Top>
-        <Left>1.55961cm</Left>
+        <Left>1.38322cm</Left>
         <Height>0.45cm</Height>
-        <Width>5.81627cm</Width>
+        <Width>5.99266cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -505,9 +506,9 @@
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
         <Top>7.01815cm</Top>
-        <Left>1.55961cm</Left>
+        <Left>1.38322cm</Left>
         <Height>0.45cm</Height>
-        <Width>5.81627cm</Width>
+        <Width>5.99266cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -538,9 +539,9 @@
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
         <Top>7.5651cm</Top>
-        <Left>1.55961cm</Left>
+        <Left>1.03901cm</Left>
         <Height>0.42361cm</Height>
-        <Width>1.78672cm</Width>
+        <Width>1.95945cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -570,7 +571,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
-        <Top>11.90062cm</Top>
+        <Top>11.26562cm</Top>
         <Left>1.10075cm</Left>
         <Height>0.45cm</Height>
         <Width>6.30118cm</Width>
@@ -616,7 +617,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>10.19784cm</Top>
+        <Top>9.56284cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -652,7 +653,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV</rd:DefaultName>
-        <Top>10.7184cm</Top>
+        <Top>10.0834cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -688,7 +689,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total1</rd:DefaultName>
-        <Top>11.27423cm</Top>
+        <Top>10.63923cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -724,7 +725,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>10.23312cm</Top>
+        <Top>9.59812cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -760,7 +761,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>10.75368cm</Top>
+        <Top>10.11868cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -796,7 +797,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.27423cm</Top>
+        <Top>10.63923cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -927,10 +928,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>0.34355cm</Left>
+        <Top>7.5651cm</Top>
+        <Left>2.98947cm</Left>
         <Height>0.42361cm</Height>
-        <Width>1.21606cm</Width>
+        <Width>0.97794cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -960,10 +961,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Placa</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>1.55961cm</Left>
+        <Top>7.5651cm</Top>
+        <Left>3.96741cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.78672cm</Width>
+        <Width>1.26777cm</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
@@ -1395,7 +1396,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>8.82145cm</Top>
+        <Top>8.18645cm</Top>
         <Left>0.3696cm</Left>
         <Height>1.0148cm</Height>
         <Width>7.03233cm</Width>
@@ -1485,6 +1486,7 @@
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
+                  <Format>f0</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1492,10 +1494,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Kilometraje</rd:DefaultName>
-        <Top>8.10343cm</Top>
-        <Left>5.17976cm</Left>
+        <Top>7.57398cm</Top>
+        <Left>5.85152cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.17007cm</Width>
+        <Width>1.55041cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -1526,10 +1528,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.12982cm</Top>
-        <Left>3.78731cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.21606cm</Width>
+        <Top>7.57398cm</Top>
+        <Left>5.23518cm</Left>
+        <Height>0.44112cm</Height>
+        <Width>0.58106cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -1560,7 +1562,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Turno1</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>11.89201cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>1.30305cm</Width>
@@ -1594,7 +1596,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Lado1</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>11.89201cm</Top>
         <Left>1.70072cm</Left>
         <Height>0.45cm</Height>
         <Width>1.01164cm</Width>
@@ -1627,7 +1629,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MedioPago</rd:DefaultName>
-        <Top>13.11812cm</Top>
+        <Top>12.48312cm</Top>
         <Left>2.78292cm</Left>
         <Height>0.45cm</Height>
         <Width>4.61901cm</Width>
@@ -1661,7 +1663,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.11812cm</Top>
+        <Top>12.48312cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>2.4558cm</Width>
@@ -1844,7 +1846,7 @@
     <Height>7.60417in</Height>
     <Style />
   </Body>
-  <Width>3.0943in</Width>
+  <Width>3.46026in</Width>
   <Page>
     <PageHeight>30cm</PageHeight>
     <PageWidth>10cm</PageWidth>

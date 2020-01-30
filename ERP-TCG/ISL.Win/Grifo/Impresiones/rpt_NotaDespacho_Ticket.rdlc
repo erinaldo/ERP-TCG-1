@@ -1608,6 +1608,7 @@
                 <Style>
                   <FontFamily>calibri</FontFamily>
                   <FontSize>7pt</FontSize>
+                  <Format>f0</Format>
                 </Style>
               </TextRun>
             </TextRuns>
