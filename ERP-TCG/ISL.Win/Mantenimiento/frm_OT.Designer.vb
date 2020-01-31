@@ -880,7 +880,7 @@ Partial Class frm_OT
         Me.UltraTabPageControl3.Controls.Add(Me.grid_OT_ME)
         Me.UltraTabPageControl3.Controls.Add(Me.gbeOTsAnteriores)
         Me.UltraTabPageControl3.Controls.Add(Me.gbeEquipos)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1207, 240)
         '
@@ -1459,7 +1459,7 @@ Partial Class frm_OT
         '
         Me.UltraTabPageControl4.Controls.Add(Me.gbeMateriales)
         Me.UltraTabPageControl4.Controls.Add(Me.grid_OTMateriales)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1207, 240)
         '
@@ -1663,7 +1663,7 @@ Partial Class frm_OT
         '
         Me.cbOtrosAlmacenes.AutoSize = True
         Me.cbOtrosAlmacenes.BackColor = System.Drawing.Color.Transparent
-        Me.cbOtrosAlmacenes.Location = New System.Drawing.Point(576, 23)
+        Me.cbOtrosAlmacenes.Location = New System.Drawing.Point(616, 22)
         Me.cbOtrosAlmacenes.Name = "cbOtrosAlmacenes"
         Me.cbOtrosAlmacenes.Size = New System.Drawing.Size(96, 17)
         Me.cbOtrosAlmacenes.TabIndex = 6
@@ -1674,7 +1674,7 @@ Partial Class frm_OT
         '
         Me.cbCodigo.AutoSize = True
         Me.cbCodigo.BackColor = System.Drawing.Color.Transparent
-        Me.cbCodigo.Location = New System.Drawing.Point(6, 23)
+        Me.cbCodigo.Location = New System.Drawing.Point(4, 23)
         Me.cbCodigo.Name = "cbCodigo"
         Me.cbCodigo.Size = New System.Drawing.Size(59, 17)
         Me.cbCodigo.TabIndex = 0
@@ -1689,9 +1689,9 @@ Partial Class frm_OT
         Me.cboCentroMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCentroMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentroMaterial.ForeColor = System.Drawing.Color.Black
-        Me.cboCentroMaterial.Location = New System.Drawing.Point(487, 20)
+        Me.cboCentroMaterial.Location = New System.Drawing.Point(437, 20)
         Me.cboCentroMaterial.Name = "cboCentroMaterial"
-        Me.cboCentroMaterial.Size = New System.Drawing.Size(83, 21)
+        Me.cboCentroMaterial.Size = New System.Drawing.Size(175, 21)
         Me.cboCentroMaterial.TabIndex = 5
         Me.cboCentroMaterial.ValueMember = "Id"
         '
@@ -1703,11 +1703,11 @@ Partial Class frm_OT
         Me.Etiqueta24.AutoSize = True
         Me.Etiqueta24.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta24.Location = New System.Drawing.Point(430, 24)
+        Me.Etiqueta24.Location = New System.Drawing.Point(393, 24)
         Me.Etiqueta24.Name = "Etiqueta24"
-        Me.Etiqueta24.Size = New System.Drawing.Size(51, 15)
+        Me.Etiqueta24.Size = New System.Drawing.Size(41, 15)
         Me.Etiqueta24.TabIndex = 4
-        Me.Etiqueta24.Text = "CENTRO:"
+        Me.Etiqueta24.Text = "Centro:"
         '
         'btnListarMateriales
         '
@@ -1720,7 +1720,7 @@ Partial Class frm_OT
         Me.btnListarMateriales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarMateriales.ForeColor = System.Drawing.Color.MidnightBlue
         Me.btnListarMateriales.ImageList = Me.imagenes
-        Me.btnListarMateriales.Location = New System.Drawing.Point(398, 17)
+        Me.btnListarMateriales.Location = New System.Drawing.Point(357, 19)
         Me.btnListarMateriales.Name = "btnListarMateriales"
         Me.btnListarMateriales.Size = New System.Drawing.Size(26, 24)
         Me.btnListarMateriales.TabIndex = 3
@@ -1750,10 +1750,10 @@ Partial Class frm_OT
         Me.txtBuscarMateriales.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtBuscarMateriales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarMateriales.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtBuscarMateriales.Location = New System.Drawing.Point(118, 20)
+        Me.txtBuscarMateriales.Location = New System.Drawing.Point(104, 20)
         Me.txtBuscarMateriales.MaxLength = 200
         Me.txtBuscarMateriales.Name = "txtBuscarMateriales"
-        Me.txtBuscarMateriales.Size = New System.Drawing.Size(274, 21)
+        Me.txtBuscarMateriales.Size = New System.Drawing.Size(250, 21)
         Me.txtBuscarMateriales.TabIndex = 2
         '
         'Etiqueta19
@@ -1764,7 +1764,7 @@ Partial Class frm_OT
         Me.Etiqueta19.AutoSize = True
         Me.Etiqueta19.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta19.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta19.Location = New System.Drawing.Point(71, 24)
+        Me.Etiqueta19.Location = New System.Drawing.Point(61, 24)
         Me.Etiqueta19.Name = "Etiqueta19"
         Me.Etiqueta19.Size = New System.Drawing.Size(41, 15)
         Me.Etiqueta19.TabIndex = 1
@@ -2109,18 +2109,18 @@ Partial Class frm_OT
         Me.UltraTabPageControl5.Controls.Add(Me.grid_OTServicios)
         Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1207, 240)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1207, 241)
         '
         'gbeServicios
         '
         Me.gbeServicios.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeServicios.Controls.Add(Me.UltraExpandableGroupBoxPanel5)
         Me.gbeServicios.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeServicios.ExpandedSize = New System.Drawing.Size(602, 240)
+        Me.gbeServicios.ExpandedSize = New System.Drawing.Size(602, 241)
         Me.gbeServicios.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeServicios.Location = New System.Drawing.Point(605, 0)
         Me.gbeServicios.Name = "gbeServicios"
-        Me.gbeServicios.Size = New System.Drawing.Size(602, 240)
+        Me.gbeServicios.Size = New System.Drawing.Size(602, 241)
         Me.gbeServicios.TabIndex = 1
         Me.gbeServicios.Text = "Servicios"
         Me.gbeServicios.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2131,7 +2131,7 @@ Partial Class frm_OT
         Me.UltraExpandableGroupBoxPanel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel5.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel5.Name = "UltraExpandableGroupBoxPanel5"
-        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(579, 234)
+        Me.UltraExpandableGroupBoxPanel5.Size = New System.Drawing.Size(579, 235)
         Me.UltraExpandableGroupBoxPanel5.TabIndex = 0
         '
         'Agrupacion2
@@ -2142,7 +2142,7 @@ Partial Class frm_OT
         Me.Agrupacion2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Agrupacion2.Location = New System.Drawing.Point(0, 0)
         Me.Agrupacion2.Name = "Agrupacion2"
-        Me.Agrupacion2.Size = New System.Drawing.Size(579, 234)
+        Me.Agrupacion2.Size = New System.Drawing.Size(579, 235)
         Me.Agrupacion2.TabIndex = 0
         Me.Agrupacion2.Text = "Agregar Servicios:"
         Me.Agrupacion2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2239,7 +2239,7 @@ Partial Class frm_OT
         Me.grid_Servicios.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_Servicios.Location = New System.Drawing.Point(3, 17)
         Me.grid_Servicios.Name = "grid_Servicios"
-        Me.grid_Servicios.Size = New System.Drawing.Size(573, 214)
+        Me.grid_Servicios.Size = New System.Drawing.Size(573, 215)
         Me.grid_Servicios.TabIndex = 0
         Me.grid_Servicios.Text = "Grilla2"
         '
@@ -2341,7 +2341,7 @@ Partial Class frm_OT
         Me.grid_OTServicios.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_OTServicios.Location = New System.Drawing.Point(0, 0)
         Me.grid_OTServicios.Name = "grid_OTServicios"
-        Me.grid_OTServicios.Size = New System.Drawing.Size(1207, 240)
+        Me.grid_OTServicios.Size = New System.Drawing.Size(1207, 241)
         Me.grid_OTServicios.TabIndex = 0
         Me.grid_OTServicios.Text = "Grilla1"
         '
@@ -2351,18 +2351,18 @@ Partial Class frm_OT
         Me.UltraTabPageControl6.Controls.Add(Me.grid_OTRecursos)
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1207, 240)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1207, 241)
         '
         'gbeOperarios
         '
         Me.gbeOperarios.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeOperarios.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
         Me.gbeOperarios.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeOperarios.ExpandedSize = New System.Drawing.Size(570, 240)
+        Me.gbeOperarios.ExpandedSize = New System.Drawing.Size(570, 241)
         Me.gbeOperarios.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeOperarios.Location = New System.Drawing.Point(637, 0)
         Me.gbeOperarios.Name = "gbeOperarios"
-        Me.gbeOperarios.Size = New System.Drawing.Size(570, 240)
+        Me.gbeOperarios.Size = New System.Drawing.Size(570, 241)
         Me.gbeOperarios.TabIndex = 1
         Me.gbeOperarios.Text = "Operarios"
         Me.gbeOperarios.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2374,7 +2374,7 @@ Partial Class frm_OT
         Me.UltraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel3.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel3.Name = "UltraExpandableGroupBoxPanel3"
-        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(547, 234)
+        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(547, 235)
         Me.UltraExpandableGroupBoxPanel3.TabIndex = 0
         '
         'agrContenidoOcupacion
@@ -2385,7 +2385,7 @@ Partial Class frm_OT
         Me.agrContenidoOcupacion.ForeColor = System.Drawing.Color.Black
         Me.agrContenidoOcupacion.Location = New System.Drawing.Point(0, 43)
         Me.agrContenidoOcupacion.Name = "agrContenidoOcupacion"
-        Me.agrContenidoOcupacion.Size = New System.Drawing.Size(547, 191)
+        Me.agrContenidoOcupacion.Size = New System.Drawing.Size(547, 192)
         Me.agrContenidoOcupacion.TabIndex = 1
         Me.agrContenidoOcupacion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -2475,7 +2475,7 @@ Partial Class frm_OT
         Me.grid_Operarios.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_Operarios.Location = New System.Drawing.Point(2, 2)
         Me.grid_Operarios.Name = "grid_Operarios"
-        Me.grid_Operarios.Size = New System.Drawing.Size(543, 187)
+        Me.grid_Operarios.Size = New System.Drawing.Size(543, 188)
         Me.grid_Operarios.TabIndex = 0
         Me.grid_Operarios.Text = "Agregar Trabajadores:"
         '
@@ -2634,7 +2634,7 @@ Partial Class frm_OT
         Me.grid_OTRecursos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_OTRecursos.Location = New System.Drawing.Point(0, 0)
         Me.grid_OTRecursos.Name = "grid_OTRecursos"
-        Me.grid_OTRecursos.Size = New System.Drawing.Size(1207, 240)
+        Me.grid_OTRecursos.Size = New System.Drawing.Size(1207, 241)
         Me.grid_OTRecursos.TabIndex = 0
         Me.grid_OTRecursos.Text = "Grilla1"
         '
@@ -2644,18 +2644,18 @@ Partial Class frm_OT
         Me.UltraTabPageControl7.Controls.Add(Me.grid_OTActividades)
         Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
-        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1207, 240)
+        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1207, 241)
         '
         'gbeActividades
         '
         Me.gbeActividades.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeActividades.Controls.Add(Me.UltraExpandableGroupBoxPanel4)
         Me.gbeActividades.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeActividades.ExpandedSize = New System.Drawing.Size(544, 240)
+        Me.gbeActividades.ExpandedSize = New System.Drawing.Size(544, 241)
         Me.gbeActividades.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeActividades.Location = New System.Drawing.Point(663, 0)
         Me.gbeActividades.Name = "gbeActividades"
-        Me.gbeActividades.Size = New System.Drawing.Size(544, 240)
+        Me.gbeActividades.Size = New System.Drawing.Size(544, 241)
         Me.gbeActividades.TabIndex = 1
         Me.gbeActividades.Text = "Actividades"
         Me.gbeActividades.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -2666,7 +2666,7 @@ Partial Class frm_OT
         Me.UltraExpandableGroupBoxPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel4.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel4.Name = "UltraExpandableGroupBoxPanel4"
-        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(521, 234)
+        Me.UltraExpandableGroupBoxPanel4.Size = New System.Drawing.Size(521, 235)
         Me.UltraExpandableGroupBoxPanel4.TabIndex = 0
         '
         'grid_Actividades
@@ -2723,7 +2723,7 @@ Partial Class frm_OT
         Me.grid_Actividades.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_Actividades.Location = New System.Drawing.Point(0, 0)
         Me.grid_Actividades.Name = "grid_Actividades"
-        Me.grid_Actividades.Size = New System.Drawing.Size(521, 234)
+        Me.grid_Actividades.Size = New System.Drawing.Size(521, 235)
         Me.grid_Actividades.TabIndex = 0
         Me.grid_Actividades.Text = "Grilla2"
         '
@@ -2860,7 +2860,7 @@ Partial Class frm_OT
         Me.grid_OTActividades.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grid_OTActividades.Location = New System.Drawing.Point(0, 0)
         Me.grid_OTActividades.Name = "grid_OTActividades"
-        Me.grid_OTActividades.Size = New System.Drawing.Size(1207, 240)
+        Me.grid_OTActividades.Size = New System.Drawing.Size(1207, 241)
         Me.grid_OTActividades.TabIndex = 0
         Me.grid_OTActividades.Text = "Grilla1"
         '
