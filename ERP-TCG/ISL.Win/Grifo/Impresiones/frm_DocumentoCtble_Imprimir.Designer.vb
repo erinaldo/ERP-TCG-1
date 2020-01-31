@@ -23,8 +23,6 @@ Partial Class frm_DocumentoCtble_Imprimir
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("e_MovimientoDocumento", -1)
         Dim UltraGridColumn82 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaSis")
@@ -36,7 +34,7 @@ Partial Class frm_DocumentoCtble_Imprimir
         Dim UltraGridColumn88 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn89 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdTipoDocumento")
         Dim UltraGridColumn90 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NombreDocumento")
-        Dim UltraGridColumn91 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Glosa", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, False)
+        Dim UltraGridColumn91 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Glosa")
         Dim UltraGridColumn92 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Serie")
         Dim UltraGridColumn93 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero")
         Dim UltraGridColumn94 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("FechaEmision")
@@ -61,7 +59,7 @@ Partial Class frm_DocumentoCtble_Imprimir
         Dim UltraGridColumn109 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Retencion_Letra")
         Dim UltraGridColumn110 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Retencion_Saldo")
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraGridColumn111 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NombreProveedor")
+        Dim UltraGridColumn111 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("NombreProveedor", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
         Dim UltraGridColumn112 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Item")
         Dim UltraGridColumn113 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdClienteProveedor")
         Dim UltraGridColumn114 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdAsientoMovimiento")
@@ -121,24 +119,37 @@ Partial Class frm_DocumentoCtble_Imprimir
         Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.VISOR = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.udg_Documentos = New ISL.Controles.Grilla(Me.components)
+        Me.bso_Documento = New System.Windows.Forms.BindingSource(Me.components)
         Me.BSO1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BSO2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VISOR = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
-        Me.bso_Documento = New System.Windows.Forms.BindingSource(Me.components)
-        Me.udg_Documentos = New ISL.Controles.Grilla(Me.components)
+        Me.grb_DocumentosAsociados = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btn_Exportar = New System.Windows.Forms.Button()
+        Me.UltraTabPageControl1.SuspendLayout()
+        Me.UltraTabPageControl2.SuspendLayout()
+        CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabControl1.SuspendLayout()
-        Me.UltraTabPageControl1.SuspendLayout()
-        Me.UltraTabPageControl2.SuspendLayout()
-        CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grb_DocumentosAsociados.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'UltraTabPageControl1
+        '
+        Me.UltraTabPageControl1.Controls.Add(Me.VISOR)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(982, 638)
         '
         'VISOR
         '
@@ -150,47 +161,13 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.VISOR.TabIndex = 2
         Me.VISOR.ZoomPercent = 90
         '
-        'UltraTabControl1
-        '
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
-        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Name = "UltraTabControl1"
-        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(984, 661)
-        Me.UltraTabControl1.TabIndex = 3
-        UltraTab1.TabPage = Me.UltraTabPageControl1
-        UltraTab1.Text = "Documento"
-        UltraTab2.TabPage = Me.UltraTabPageControl2
-        UltraTab2.Text = "Complementos"
-        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
-        Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
-        '
-        'UltraTabSharedControlsPage1
-        '
-        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(982, 638)
-        '
-        'UltraTabPageControl1
-        '
-        Me.UltraTabPageControl1.Controls.Add(Me.VISOR)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(982, 638)
-        '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.udg_Documentos)
+        Me.UltraTabPageControl2.Controls.Add(Me.grb_DocumentosAsociados)
         Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(982, 638)
-        '
-        'bso_Documento
-        '
-        Me.bso_Documento.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
         '
         'udg_Documentos
         '
@@ -421,11 +398,58 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.udg_Documentos.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy
         Me.udg_Documentos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.udg_Documentos.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.udg_Documentos.Location = New System.Drawing.Point(0, 0)
+        Me.udg_Documentos.Location = New System.Drawing.Point(0, 47)
         Me.udg_Documentos.Name = "udg_Documentos"
-        Me.udg_Documentos.Size = New System.Drawing.Size(982, 638)
+        Me.udg_Documentos.Size = New System.Drawing.Size(982, 591)
         Me.udg_Documentos.TabIndex = 11
         Me.udg_Documentos.Text = "Grilla2"
+        '
+        'bso_Documento
+        '
+        Me.bso_Documento.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
+        '
+        'UltraTabControl1
+        '
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
+        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.UltraTabControl1.Name = "UltraTabControl1"
+        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
+        Me.UltraTabControl1.Size = New System.Drawing.Size(984, 661)
+        Me.UltraTabControl1.TabIndex = 3
+        UltraTab1.TabPage = Me.UltraTabPageControl1
+        UltraTab1.Text = "Documento"
+        UltraTab2.TabPage = Me.UltraTabPageControl2
+        UltraTab2.Text = "Complementos"
+        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
+        Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
+        '
+        'UltraTabSharedControlsPage1
+        '
+        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(982, 638)
+        '
+        'grb_DocumentosAsociados
+        '
+        Me.grb_DocumentosAsociados.Controls.Add(Me.btn_Exportar)
+        Me.grb_DocumentosAsociados.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grb_DocumentosAsociados.Location = New System.Drawing.Point(0, 0)
+        Me.grb_DocumentosAsociados.Name = "grb_DocumentosAsociados"
+        Me.grb_DocumentosAsociados.Size = New System.Drawing.Size(982, 47)
+        Me.grb_DocumentosAsociados.TabIndex = 12
+        Me.grb_DocumentosAsociados.Text = "UltraGroupBox1"
+        '
+        'btn_Exportar
+        '
+        Me.btn_Exportar.Location = New System.Drawing.Point(11, 18)
+        Me.btn_Exportar.Name = "btn_Exportar"
+        Me.btn_Exportar.Size = New System.Drawing.Size(248, 23)
+        Me.btn_Exportar.TabIndex = 0
+        Me.btn_Exportar.Text = "Exportar a Hoja de Calculo (.XLS)"
+        Me.btn_Exportar.UseVisualStyleBackColor = True
         '
         'frm_DocumentoCtble_Imprimir
         '
@@ -437,14 +461,16 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.Name = "frm_DocumentoCtble_Imprimir"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_DocumentoCtble_Imprimir"
+        Me.UltraTabPageControl1.ResumeLayout(False)
+        Me.UltraTabPageControl2.ResumeLayout(False)
+        CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabControl1.ResumeLayout(False)
-        Me.UltraTabPageControl1.ResumeLayout(False)
-        Me.UltraTabPageControl2.ResumeLayout(False)
-        CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grb_DocumentosAsociados.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -457,4 +483,6 @@ Partial Class frm_DocumentoCtble_Imprimir
     Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents bso_Documento As BindingSource
     Friend WithEvents udg_Documentos As Controles.Grilla
+    Friend WithEvents grb_DocumentosAsociados As Infragistics.Win.Misc.UltraGroupBox
+    Friend WithEvents btn_Exportar As Button
 End Class

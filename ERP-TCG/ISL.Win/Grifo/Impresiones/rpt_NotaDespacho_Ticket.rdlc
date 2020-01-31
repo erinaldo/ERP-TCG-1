@@ -1263,7 +1263,7 @@
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1296,7 +1296,7 @@
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1332,7 +1332,7 @@
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1368,7 +1368,7 @@
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>

@@ -145,6 +145,20 @@ fila("IdTrabajador"))
         End Try
     End Function
 
+    Public Function Actualizar_EstadoOrden(ByVal oeOrden As e_Orden) As e_Orden
+        Try
+            Dim stResultado() As String
+            With oeOrden
+                stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Orden_IAE", .TipoOperacion, .PrefijoID, .Id).ToString.Split("_")
+                .Id = stResultado(0)
+            End With
+            Return oeOrden
+        Catch ex As Exception
+            Throw ex
+
+        End Try
+    End Function
+
     Public Function Guardar(ByVal oeOrden As e_Orden) As e_Orden
         Try
             Dim stResultado() As String

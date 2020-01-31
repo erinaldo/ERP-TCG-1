@@ -395,7 +395,8 @@
               <TextRun>
                 <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
                 <Style>
-                  <FontSize>8pt</FontSize>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -430,7 +431,7 @@
                 <Value>=First(Fields!Trabajador.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -463,7 +464,7 @@
                 <Value>=First(Fields!Cliente.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -496,7 +497,7 @@
                 <Value>=First(Fields!Direccion.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -529,7 +530,7 @@
                 <Value>=First(Fields!DOI.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -952,7 +953,7 @@
                 <Value>=First(Fields!Placa.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -985,7 +986,7 @@
                 <Value>=First(Fields!Turno.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1243,7 +1244,7 @@
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1276,7 +1277,7 @@
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1312,7 +1313,7 @@
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1348,7 +1349,7 @@
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1451,7 +1452,7 @@
                 <Value>=First(Fields!Lado.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1484,7 +1485,7 @@
                 <Value>=Sum(Fields!Kilometraje.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <Format>f0</Format>
                 </Style>
               </TextRun>
@@ -1552,7 +1553,7 @@
                 <Value>=First(Fields!Turno.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1586,7 +1587,7 @@
                 <Value>=First(Fields!Lado.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1620,7 +1621,7 @@
                 <Value>=First(Fields!MedioPago.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>

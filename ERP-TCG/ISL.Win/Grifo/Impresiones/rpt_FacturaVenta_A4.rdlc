@@ -6,8 +6,8 @@
         <Source>Embedded</Source>
         <Value>InversionesAlexyLalito</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.05732cm</Top>
-        <Left>0.8766cm</Left>
+        <Top>0.87156cm</Top>
+        <Left>0.69835cm</Left>
         <Height>1.71125cm</Height>
         <Width>11.12765cm</Width>
         <Style>
@@ -74,8 +74,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.94496cm</Top>
-        <Left>0.8766cm</Left>
+        <Top>2.7592cm</Top>
+        <Left>0.69835cm</Left>
         <Height>1.81708cm</Height>
         <Width>11.12765cm</Width>
         <ZIndex>1</ZIndex>
@@ -134,8 +134,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.90315cm</Top>
-        <Left>0.8766cm</Left>
+        <Top>4.71739cm</Top>
+        <Left>0.69835cm</Left>
         <Height>1.39375cm</Height>
         <Width>11.03536cm</Width>
         <ZIndex>2</ZIndex>
@@ -167,8 +167,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.47329cm</Top>
-        <Left>0.83722cm</Left>
+        <Top>6.28753cm</Top>
+        <Left>0.65897cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.33529cm</Width>
         <ZIndex>3</ZIndex>
@@ -200,8 +200,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.09968cm</Top>
-        <Left>0.83722cm</Left>
+        <Top>6.91392cm</Top>
+        <Left>0.65897cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.36113cm</Width>
         <ZIndex>4</ZIndex>
@@ -233,8 +233,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.72607cm</Top>
-        <Left>0.83722cm</Left>
+        <Top>7.54031cm</Top>
+        <Left>0.65897cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.36113cm</Width>
         <ZIndex>5</ZIndex>
@@ -266,8 +266,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.35246cm</Top>
-        <Left>0.8766cm</Left>
+        <Top>8.1667cm</Top>
+        <Left>0.69835cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.32175cm</Width>
         <ZIndex>6</ZIndex>
@@ -299,8 +299,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.5458cm</Top>
-        <Left>0.69835cm</Left>
+        <Top>13.36004cm</Top>
+        <Left>0.5201cm</Left>
         <Height>0.67047cm</Height>
         <Width>1.34582cm</Width>
         <ZIndex>7</ZIndex>
@@ -327,14 +327,16 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>6.49968cm</Top>
-        <Left>3.26891cm</Left>
+        <Top>6.31392cm</Top>
+        <Left>3.09066cm</Left>
         <Height>0.60875cm</Height>
-        <Width>17.15784cm</Width>
+        <Width>4.98061cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -359,12 +361,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>7.12607cm</Top>
-        <Left>3.29475cm</Left>
+        <Top>6.94031cm</Top>
+        <Left>3.1165cm</Left>
         <Height>0.60875cm</Height>
         <Width>17.15784cm</Width>
         <ZIndex>9</ZIndex>
@@ -391,12 +395,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>7.75246cm</Top>
-        <Left>3.29475cm</Left>
+        <Top>7.5667cm</Top>
+        <Left>3.1165cm</Left>
         <Height>0.60875cm</Height>
         <Width>17.15784cm</Width>
         <ZIndex>10</ZIndex>
@@ -423,12 +429,14 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>8.37885cm</Top>
-        <Left>3.29475cm</Left>
+        <Top>8.19309cm</Top>
+        <Left>3.1165cm</Left>
         <Height>0.58236cm</Height>
         <Width>17.15784cm</Width>
         <ZIndex>11</ZIndex>
@@ -459,8 +467,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
-        <Top>13.5458cm</Top>
-        <Left>2.22056cm</Left>
+        <Top>13.36004cm</Top>
+        <Left>2.04231cm</Left>
         <Height>0.67047cm</Height>
         <Width>11.86612cm</Width>
         <ZIndex>12</ZIndex>
@@ -494,8 +502,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>13.5458cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>13.36004cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.45cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>13</ZIndex>
@@ -529,8 +537,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>16.2458cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>16.06004cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>14</ZIndex>
@@ -564,8 +572,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV</rd:DefaultName>
-        <Top>17.62205cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>17.43629cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>15</ZIndex>
@@ -599,8 +607,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total1</rd:DefaultName>
-        <Top>18.32781cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>18.14205cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.55583cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>16</ZIndex>
@@ -634,8 +642,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>16.95156cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>16.7658cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>17</ZIndex>
@@ -669,8 +677,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.65733cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>17.47157cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.4941cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>18</ZIndex>
@@ -704,8 +712,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>18.32781cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>18.14205cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.55583cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>19</ZIndex>
@@ -833,8 +841,8 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>1.05732cm</Top>
-        <Left>12.3828cm</Left>
+        <Top>0.87156cm</Top>
+        <Left>12.20455cm</Left>
         <Height>3.44014cm</Height>
         <Width>8.06979cm</Width>
         <ZIndex>20</ZIndex>
@@ -1600,30 +1608,8 @@
                       <rd:DefaultName>Item</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1654,30 +1640,8 @@
                       <rd:DefaultName>Codigo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1699,6 +1663,7 @@
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1710,30 +1675,8 @@
                       <rd:DefaultName>Cantidad1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1764,30 +1707,8 @@
                       <rd:DefaultName>UM</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1818,30 +1739,8 @@
                       <rd:DefaultName>Producto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1872,30 +1771,8 @@
                       <rd:DefaultName>Placa</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1929,30 +1806,8 @@
                       <rd:DefaultName>ValorUnitario</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1986,30 +1841,8 @@
                       <rd:DefaultName>Descuento</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2043,30 +1876,8 @@
                       <rd:DefaultName>ValorTotal</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2100,30 +1911,8 @@
                       <rd:DefaultName>IGV1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2157,30 +1946,8 @@
                       <rd:DefaultName>Precio</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2214,30 +1981,8 @@
                       <rd:DefaultName>Importe</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2277,34 +2022,36 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>11.24378cm</Top>
-        <Left>0.73363cm</Left>
+        <Top>11.05802cm</Top>
+        <Left>0.55538cm</Left>
         <Height>1.74612cm</Height>
         <Width>19.71793cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
+            <Color>Blue</Color>
             <Style>Solid</Style>
+            <Width>1.5pt</Width>
           </Border>
           <TopBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </TopBorder>
           <BottomBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </BottomBorder>
           <LeftBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </LeftBorder>
           <RightBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </RightBorder>
         </Style>
       </Tablix>
@@ -2800,6 +2547,7 @@
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2815,26 +2563,6 @@
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2921,8 +2649,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>9.49753cm</Top>
-        <Left>0.73363cm</Left>
+        <Top>9.31177cm</Top>
+        <Left>0.55538cm</Left>
         <Height>1.2cm</Height>
         <Width>19.71896cm</Width>
         <ZIndex>22</ZIndex>
@@ -2974,8 +2702,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.51052cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>13.32476cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.48528cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>23</ZIndex>
@@ -3009,8 +2737,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.17219cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>13.98643cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.53861cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>24</ZIndex>
@@ -3044,8 +2772,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.88719cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>14.70143cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>25</ZIndex>
@@ -3079,8 +2807,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>15.61941cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>15.43365cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.45cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>26</ZIndex>
@@ -3114,8 +2842,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>16.2458cm</Top>
-        <Left>14.47363cm</Left>
+        <Top>16.06004cm</Top>
+        <Left>14.29538cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>27</ZIndex>
@@ -3149,8 +2877,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>14.17219cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>13.98643cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.53861cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>28</ZIndex>
@@ -3184,8 +2912,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>14.88719cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>14.70143cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>29</ZIndex>
@@ -3219,8 +2947,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>15.59295cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>15.40719cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.47646cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>30</ZIndex>
@@ -3254,8 +2982,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>16.95156cm</Top>
-        <Left>17.63253cm</Left>
+        <Top>16.7658cm</Top>
+        <Left>17.45428cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>31</ZIndex>
@@ -3287,8 +3015,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.39266cm</Top>
-        <Left>0.69835cm</Left>
+        <Top>14.2069cm</Top>
+        <Left>0.5201cm</Left>
         <Height>0.67047cm</Height>
         <Width>3.49357cm</Width>
         <ZIndex>32</ZIndex>
@@ -3317,8 +3045,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>14.39266cm</Top>
-        <Left>4.36831cm</Left>
+        <Top>14.2069cm</Top>
+        <Left>4.19006cm</Left>
         <Height>0.6cm</Height>
         <Width>9.71837cm</Width>
         <ZIndex>33</ZIndex>
@@ -3381,8 +3109,8 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>16.43156cm</Top>
-        <Left>10.73608cm</Left>
+        <Top>16.2458cm</Top>
+        <Left>10.55783cm</Left>
         <Height>2.45208cm</Height>
         <Width>3.3506cm</Width>
         <ZIndex>35</ZIndex>
@@ -3436,10 +3164,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

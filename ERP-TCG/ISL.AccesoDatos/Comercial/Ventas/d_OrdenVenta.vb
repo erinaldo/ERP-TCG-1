@@ -202,13 +202,13 @@ Public Class d_OrdenVenta
 
     Public Function Guardar_VentaRapida(ByVal OrdenVenta As e_OrdenVenta) As e_OrdenVenta
         Try
-            Dim aux As New e_OrdenVenta
+            Dim aux As New e_OrdenVenta, aux_os As New e_Orden
             Dim odOrdenComercialMaterial As New d_OrdenVentaMaterial
             Dim odOrden As New d_Orden
             Dim odDocumento As New d_MovimientoDocumento
             Dim stResultado() As String
-            Using transScope As New TransactionScope()
-                With OrdenVenta
+            'Using transScope As New TransactionScope()
+            With OrdenVenta
                     stResultado = sqlhelper.ExecuteScalar("[CMP].[Isp_OrdenVenta_IAE]" _
                             , .TipoOperacion _
                             , .PrefijoID _
@@ -246,7 +246,8 @@ Public Class d_OrdenVenta
                             , .GlosaResumen
                             ).ToString.Split("_")
                     .Id = stResultado(0)
-                    aux = Obtener(New e_OrdenVenta With {.TipoOperacion = "", .Id = stResultado(0)})
+                    aux.Id = OrdenVenta.Id
+                    aux = Obtener(aux)
                     .OrdenComercial = aux.OrdenComercial
                 End With
                 With OrdenVenta
@@ -263,7 +264,12 @@ Public Class d_OrdenVenta
                         .oeOrdenSalida.Referencia = OrdenVenta.OrdenComercial
                         .oeOrdenSalida.TipoReferencia = "ORDEN VENTA"
                         .oeOrdenSalida = odOrden.Guardar(.oeOrdenSalida)
-                    End If
+                    '' Actualizar
+                    aux_os.TipoOperacion = "F"
+                    aux_os.IdEstadoOrden = "1CH000000003"
+                    aux_os.Id = .oeOrdenSalida.Id
+                    aux_os = odOrden.Actualizar_EstadoOrden(aux_os)
+                End If
                     '' =========================================================================== 
                     '' Documento
                     .oeDocumento.Glosa = "OV." & .Id & " //" & .oeDocumento.Glosa
@@ -282,8 +288,8 @@ Public Class d_OrdenVenta
                     OrdenDocumento.PrefijoID = .oeDocumento.PrefijoID '@0001
                     odOrden_Documento.Guardar(OrdenDocumento)
                 End With
-                transScope.Complete()
-            End Using
+            '    transScope.Complete()
+            'End Using
             Return OrdenVenta
         Catch ex As Exception
             Throw ex

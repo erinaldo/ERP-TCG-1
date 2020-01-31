@@ -327,14 +327,16 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
         <Top>6.11096cm</Top>
         <Left>3.12594cm</Left>
         <Height>0.60875cm</Height>
-        <Width>17.18368cm</Width>
+        <Width>4.8633cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -359,7 +361,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
@@ -391,7 +395,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
@@ -423,7 +429,9 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
@@ -849,10 +857,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.09005cm</Width>
+              <Width>0.85461cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.47307cm</Width>
+              <Width>1.70851cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.16589cm</Width>
@@ -1600,30 +1608,8 @@
                       <rd:DefaultName>Item</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1654,30 +1640,8 @@
                       <rd:DefaultName>Codigo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1688,7 +1652,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Cantidad1">
+                    <Textbox Name="Cantidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -1699,6 +1663,7 @@
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1707,39 +1672,18 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Cantidad1</rd:DefaultName>
+                      <rd:DefaultName>Cantidad</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1764,30 +1708,8 @@
                       <rd:DefaultName>UM</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1818,30 +1740,8 @@
                       <rd:DefaultName>Producto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1872,30 +1772,8 @@
                       <rd:DefaultName>Placa</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1929,30 +1807,8 @@
                       <rd:DefaultName>ValorUnitario</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -1986,30 +1842,8 @@
                       <rd:DefaultName>Descuento</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2043,30 +1877,8 @@
                       <rd:DefaultName>ValorTotal</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2100,30 +1912,8 @@
                       <rd:DefaultName>IGV1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2157,30 +1947,8 @@
                       <rd:DefaultName>Precio</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2214,30 +1982,8 @@
                       <rd:DefaultName>Importe</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
+                          <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2804,6 +2550,7 @@
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>8pt</FontSize>
+                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2819,26 +2566,6 @@
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -3314,7 +3041,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!Glosa.Value, "Cabecera")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -3440,10 +3169,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>1cm</LeftMargin>
-    <RightMargin>1cm</RightMargin>
-    <TopMargin>1cm</TopMargin>
-    <BottomMargin>1cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

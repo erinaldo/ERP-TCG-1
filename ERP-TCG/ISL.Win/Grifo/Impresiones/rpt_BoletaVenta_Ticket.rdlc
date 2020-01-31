@@ -123,7 +123,7 @@
         <Top>5.75649cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.03967cm</Width>
+        <Width>1.21606cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -191,7 +191,7 @@
         <Top>6.3476cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.03967cm</Width>
+        <Width>1.21606cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -225,7 +225,7 @@
         <Top>6.97399cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.03967cm</Width>
+        <Width>1.21606cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -396,7 +396,7 @@
                 <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -407,9 +407,9 @@
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
         <Top>5.75649cm</Top>
-        <Left>1.38322cm</Left>
+        <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
-        <Width>3.18408cm</Width>
+        <Width>3.00769cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -431,7 +431,7 @@
                 <Value>=First(Fields!Trabajador.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -464,7 +464,7 @@
                 <Value>=First(Fields!Cliente.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -472,10 +472,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>6.38288cm</Top>
-        <Left>1.38322cm</Left>
+        <Top>6.3476cm</Top>
+        <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
-        <Width>5.99266cm</Width>
+        <Width>5.81627cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -497,7 +497,7 @@
                 <Value>=First(Fields!Direccion.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -506,9 +506,9 @@
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
         <Top>7.01815cm</Top>
-        <Left>1.38322cm</Left>
+        <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
-        <Width>5.99266cm</Width>
+        <Width>5.81627cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -530,7 +530,7 @@
                 <Value>=First(Fields!DOI.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -953,7 +953,7 @@
                 <Value>=First(Fields!Placa.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -986,7 +986,7 @@
                 <Value>=First(Fields!Turno.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1244,7 +1244,7 @@
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1277,7 +1277,7 @@
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1313,7 +1313,7 @@
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1349,7 +1349,7 @@
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1452,7 +1452,7 @@
                 <Value>=First(Fields!Lado.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1485,7 +1485,7 @@
                 <Value>=Sum(Fields!Kilometraje.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <Format>f0</Format>
                 </Style>
               </TextRun>
@@ -1553,7 +1553,7 @@
                 <Value>=First(Fields!Turno.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1587,7 +1587,7 @@
                 <Value>=First(Fields!Lado.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1621,7 +1621,7 @@
                 <Value>=First(Fields!MedioPago.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>7pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -1751,20 +1751,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Footer.Value, "Cabecera")</Value>
+                <Value>Autorizado mediante Resolución de Intendencia Nº 0720050000152/SUNAT
+Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                 <Style>
-                  <FontFamily>Arial Narrow</FontFamily>
+                  <FontFamily>CAlibri</FontFamily>
                   <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Footer</rd:DefaultName>
-        <Top>16.80822cm</Top>
-        <Left>0.28261cm</Left>
-        <Height>0.6cm</Height>
+        <Top>15.80336cm</Top>
+        <Left>0.23741cm</Left>
+        <Height>1.50583cm</Height>
         <Width>6.98023cm</Width>
         <ZIndex>40</ZIndex>
         <Style>
@@ -1791,13 +1794,15 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Hash_Resumen</rd:DefaultName>
-        <Top>16.10239cm</Top>
-        <Left>0.30176cm</Left>
-        <Height>0.6cm</Height>
+        <Top>15.09753cm</Top>
+        <Left>0.25656cm</Left>
+        <Height>0.63527cm</Height>
         <Width>6.96108cm</Width>
         <ZIndex>41</ZIndex>
         <Style>
@@ -1827,8 +1832,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>QR</rd:DefaultName>
-        <Top>14.3476cm</Top>
-        <Left>2.36315cm</Left>
+        <Top>13.50093cm</Top>
+        <Left>2.73518cm</Left>
         <Height>1.42021cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>42</ZIndex>

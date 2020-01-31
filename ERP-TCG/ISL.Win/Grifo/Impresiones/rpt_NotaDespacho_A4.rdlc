@@ -6,8 +6,8 @@
         <Source>Embedded</Source>
         <Value>InversionesAlexyLalito</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>1.05827cm</Top>
-        <Left>0.97875cm</Left>
+        <Top>0.74122cm</Top>
+        <Left>0.4858cm</Left>
         <Height>1.71125cm</Height>
         <Width>11.12765cm</Width>
         <Style>
@@ -74,8 +74,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>2.94591cm</Top>
-        <Left>0.97875cm</Left>
+        <Top>2.62886cm</Top>
+        <Left>0.4858cm</Left>
         <Height>1.81708cm</Height>
         <Width>11.12765cm</Width>
         <ZIndex>1</ZIndex>
@@ -134,8 +134,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.9041cm</Top>
-        <Left>0.97875cm</Left>
+        <Top>4.58705cm</Top>
+        <Left>0.4858cm</Left>
         <Height>1.39375cm</Height>
         <Width>11.03536cm</Width>
         <ZIndex>2</ZIndex>
@@ -168,8 +168,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.47424cm</Top>
-        <Left>0.93937cm</Left>
+        <Top>6.15719cm</Top>
+        <Left>0.44642cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.33529cm</Width>
         <ZIndex>3</ZIndex>
@@ -202,8 +202,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.10063cm</Top>
-        <Left>0.93937cm</Left>
+        <Top>6.78358cm</Top>
+        <Left>0.44642cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.36113cm</Width>
         <ZIndex>4</ZIndex>
@@ -236,8 +236,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.72702cm</Top>
-        <Left>0.93937cm</Left>
+        <Top>7.40997cm</Top>
+        <Left>0.44642cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.36113cm</Width>
         <ZIndex>5</ZIndex>
@@ -270,8 +270,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>8.35341cm</Top>
-        <Left>0.97875cm</Left>
+        <Top>8.03636cm</Top>
+        <Left>0.4858cm</Left>
         <Height>0.60875cm</Height>
         <Width>2.32175cm</Width>
         <ZIndex>6</ZIndex>
@@ -295,7 +295,7 @@
                 <Value>SON:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -303,8 +303,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.77036cm</Top>
-        <Left>0.83578cm</Left>
+        <Top>13.02722cm</Top>
+        <Left>0.34283cm</Left>
         <Height>0.67047cm</Height>
         <Width>1.34582cm</Width>
         <ZIndex>7</ZIndex>
@@ -326,17 +326,19 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>6.50063cm</Top>
-        <Left>3.37106cm</Left>
+        <Top>6.18358cm</Top>
+        <Left>2.87811cm</Left>
         <Height>0.60875cm</Height>
-        <Width>17.68043cm</Width>
+        <Width>7.03729cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -358,7 +360,6 @@
                 <Value>=First(Fields!Cliente.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -366,10 +367,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>7.12702cm</Top>
-        <Left>3.3969cm</Left>
+        <Top>6.80997cm</Top>
+        <Left>2.90395cm</Left>
         <Height>0.60875cm</Height>
-        <Width>17.68043cm</Width>
+        <Width>17.62471cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -391,7 +392,6 @@
                 <Value>=First(Fields!Direccion.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -399,10 +399,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>7.75341cm</Top>
-        <Left>3.3969cm</Left>
+        <Top>7.43636cm</Top>
+        <Left>2.90395cm</Left>
         <Height>0.60875cm</Height>
-        <Width>17.68043cm</Width>
+        <Width>17.62471cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -424,7 +424,6 @@
                 <Value>=First(Fields!DOI.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -432,10 +431,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>8.3798cm</Top>
-        <Left>3.3969cm</Left>
+        <Top>8.06275cm</Top>
+        <Left>2.90395cm</Left>
         <Height>0.58236cm</Height>
-        <Width>17.68043cm</Width>
+        <Width>17.62471cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -457,7 +456,6 @@
                 <Value>=First(Fields!MontoLetras.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -465,10 +463,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
-        <Top>12.77036cm</Top>
-        <Left>2.35799cm</Left>
+        <Top>13.02722cm</Top>
+        <Left>1.86504cm</Left>
         <Height>0.67047cm</Height>
-        <Width>24.95111cm</Width>
+        <Width>12.40808cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -500,8 +498,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>12.99083cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>13.0625cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.45cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>13</ZIndex>
@@ -535,8 +533,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>15.69083cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>15.7625cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>14</ZIndex>
@@ -570,8 +568,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV</rd:DefaultName>
-        <Top>17.06708cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>17.13875cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>15</ZIndex>
@@ -605,8 +603,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total1</rd:DefaultName>
-        <Top>17.77284cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>17.84451cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.55583cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>16</ZIndex>
@@ -640,8 +638,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>16.39659cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>16.46826cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>17</ZIndex>
@@ -675,8 +673,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.10236cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>17.17403cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.4941cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>18</ZIndex>
@@ -710,8 +708,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.77284cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>17.84451cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.55583cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>19</ZIndex>
@@ -770,7 +768,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=First(Fields!Tipo.Value, "Cabecera")</Value>
+                    <Value>NOTA DE DESPACHO</Value>
                     <Style>
                       <FontFamily>Calibri</FontFamily>
                       <FontSize>12pt</FontSize>
@@ -839,14 +837,15 @@
           </Textbox>
         </ReportItems>
         <KeepTogether>true</KeepTogether>
-        <Top>1.05827cm</Top>
-        <Left>12.48495cm</Left>
+        <Top>0.74122cm</Top>
+        <Left>11.992cm</Left>
         <Height>3.44014cm</Height>
         <Width>8.06979cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
+            <Width>1.5pt</Width>
           </Border>
         </Style>
       </Rectangle>
@@ -854,42 +853,42 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.48693cm</Width>
+              <Width>1.06318cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.40352cm</Width>
+              <Width>1.8779cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.54712cm</Width>
+              <Width>1.4548cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.30187cm</Width>
+              <Width>1.36743cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.47952cm</Width>
+              <Width>3.4688cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.10783cm</Width>
+              <Width>1.94622cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.02917cm</Width>
+              <Width>1.81209cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.08208cm</Width>
+              <Width>1.97083cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.52104cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.92333cm</Width>
+              <Width>1.83854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.05563cm</Width>
+              <Width>1.86501cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.66139cm</Height>
+              <Height>1.00535cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -903,37 +902,42 @@
                               <Value>ITEM</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -955,37 +959,42 @@
                               <Value>COD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox30</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1004,40 +1013,45 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CANTIDAD</Value>
+                              <Value>CANT</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox26</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1059,37 +1073,42 @@
                               <Value>UNIDAD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1111,37 +1130,42 @@
                               <Value>DESCRIPCION</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1163,39 +1187,42 @@
                               <Value>VAL. VTA. UNITARIO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1217,39 +1244,42 @@
                               <Value>DSCTO TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox36</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1271,39 +1301,42 @@
                               <Value>VAL. VTA. TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox38</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1325,39 +1358,42 @@
                               <Value>IGV</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1379,39 +1415,42 @@
                               <Value>PRECIO UNITARIO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1433,39 +1472,42 @@
                               <Value>IMPORTE TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1492,6 +1534,7 @@
                               <Value>=Fields!Item.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1523,6 +1566,7 @@
                               <Value>=Fields!Codigo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1554,6 +1598,8 @@
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>n2</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1587,6 +1633,7 @@
                               <Value>=Fields!UM.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1618,6 +1665,7 @@
                               <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1649,6 +1697,7 @@
                               <Value>=Fields!ValorUnitario.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1683,6 +1732,7 @@
                               <Value>=Fields!Descuento.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1717,6 +1767,7 @@
                               <Value>=Fields!ValorTotal.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1751,6 +1802,7 @@
                               <Value>=Fields!IGV.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1785,6 +1837,7 @@
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1819,6 +1872,7 @@
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1871,34 +1925,36 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>11.24473cm</Top>
-        <Left>0.83578cm</Left>
-        <Height>1.34924cm</Height>
-        <Width>34.917cm</Width>
+        <Top>10.92768cm</Top>
+        <Left>0.34283cm</Left>
+        <Height>1.6932cm</Height>
+        <Width>20.18583cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
+            <Color>Blue</Color>
             <Style>Solid</Style>
+            <Width>1.5pt</Width>
           </Border>
           <TopBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </TopBorder>
           <BottomBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </BottomBorder>
           <LeftBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </LeftBorder>
           <RightBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </RightBorder>
         </Style>
       </Tablix>
@@ -1906,19 +1962,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.49357cm</Width>
+              <Width>2.88574cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.079cm</Width>
+              <Width>4.78825cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.69589cm</Width>
+              <Width>3.02901cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.05833cm</Width>
+              <Width>3.22729cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>14.59021cm</Width>
+              <Width>6.25554cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1937,6 +1993,7 @@
                               <Value>CODIGO CLIENTE</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1949,27 +2006,29 @@
                       <rd:DefaultName>Textbox46</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -1991,6 +2050,7 @@
                               <Value>CONDICION Y FORMA DE PAGO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2003,27 +2063,29 @@
                       <rd:DefaultName>Textbox48</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2045,6 +2107,7 @@
                               <Value>TIPO DE MONEDA</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2057,27 +2120,29 @@
                       <rd:DefaultName>Textbox50</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2099,6 +2164,7 @@
                               <Value>VENCIMIENTO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2111,27 +2177,29 @@
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2153,6 +2221,7 @@
                               <Value>REPRESENTANTE DE VENTAS</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2165,27 +2234,29 @@
                       <rd:DefaultName>Textbox42</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2212,6 +2283,7 @@
                               <Value>=Fields!CodigoCliente.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2223,27 +2295,29 @@
                       <rd:DefaultName>CodigoCliente</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2265,6 +2339,7 @@
                               <Value>=Fields!MedioPago.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2276,27 +2351,29 @@
                       <rd:DefaultName>MedioPago1</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2318,6 +2395,7 @@
                               <Value>=Fields!Moneda.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2329,27 +2407,29 @@
                       <rd:DefaultName>Moneda</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2371,6 +2451,8 @@
                               <Value>=Fields!Vencimiento.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>d</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2382,28 +2464,10 @@
                       <rd:DefaultName>Vencimiento</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>Solid</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2424,6 +2488,7 @@
                               <Value>=Fields!Trabajador.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
+                                <FontSize>8pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -2435,27 +2500,29 @@
                       <rd:DefaultName>Trabajador</rd:DefaultName>
                       <Style>
                         <Border>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </Border>
                         <TopBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </TopBorder>
                         <BottomBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </LeftBorder>
                         <RightBorder>
-                          <Color>Black</Color>
+                          <Color>Blue</Color>
                           <Style>Solid</Style>
-                          <Width>1pt</Width>
+                          <Width>1.5pt</Width>
                         </RightBorder>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -2489,34 +2556,36 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>9.49848cm</Top>
-        <Left>0.83578cm</Left>
+        <Top>9.18143cm</Top>
+        <Left>0.34283cm</Left>
         <Height>1.2cm</Height>
-        <Width>34.917cm</Width>
+        <Width>20.18583cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
+            <Color>Blue</Color>
             <Style>Solid</Style>
+            <Width>1.5pt</Width>
           </Border>
           <TopBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </TopBorder>
           <BottomBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </BottomBorder>
           <LeftBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </LeftBorder>
           <RightBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
-            <Width>1pt</Width>
+            <Width>1.5pt</Width>
           </RightBorder>
         </Style>
       </Tablix>
@@ -2540,8 +2609,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.95555cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>13.02722cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.48528cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>23</ZIndex>
@@ -2575,8 +2644,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.61722cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>13.68889cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.53861cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>24</ZIndex>
@@ -2610,8 +2679,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.33222cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>14.40389cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>25</ZIndex>
@@ -2645,8 +2714,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>15.06444cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>15.13611cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.45cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>26</ZIndex>
@@ -2680,8 +2749,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>15.69083cm</Top>
-        <Left>29.77382cm</Left>
+        <Top>15.7625cm</Top>
+        <Left>14.5497cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.92333cm</Width>
         <ZIndex>27</ZIndex>
@@ -2715,8 +2784,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>13.61722cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>13.68889cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.53861cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>28</ZIndex>
@@ -2750,8 +2819,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>14.33222cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>14.40389cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>29</ZIndex>
@@ -2785,8 +2854,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>15.03798cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>15.10965cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.47646cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>30</ZIndex>
@@ -2820,8 +2889,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total</rd:DefaultName>
-        <Top>16.39659cm</Top>
-        <Left>32.93272cm</Left>
+        <Top>16.46826cm</Top>
+        <Left>17.7086cm</Left>
         <Height>0.52938cm</Height>
         <Width>2.82006cm</Width>
         <ZIndex>31</ZIndex>
@@ -2845,7 +2914,7 @@
                 <Value>OBSERVACIONES:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -2853,10 +2922,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.61722cm</Top>
-        <Left>0.83578cm</Left>
+        <Top>13.87408cm</Top>
+        <Left>0.34283cm</Left>
         <Height>0.67047cm</Height>
-        <Width>3.49357cm</Width>
+        <Width>2.88574cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -2876,78 +2945,20 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!Glosa.Value, "Cabecera")</Value>
-                <Style />
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>13.61722cm</Top>
-        <Left>4.50574cm</Left>
+        <Top>13.87408cm</Top>
+        <Left>3.40496cm</Left>
         <Height>0.6cm</Height>
-        <Width>22.80336cm</Width>
+        <Width>10.86816cm</Width>
         <ZIndex>33</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="RUC_Emisor2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>19.80892cm</Top>
-        <Left>5.15917cm</Left>
-        <Height>2.45208cm</Height>
-        <Width>3.3506cm</Width>
-        <ZIndex>34</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="IGV3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Hash_Resumen.Value, "Cabecera")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>IGV2</rd:DefaultName>
-        <Top>22.43739cm</Top>
-        <Left>0.97875cm</Left>
-        <Height>0.6cm</Height>
-        <Width>12.68646cm</Width>
-        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2962,14 +2973,14 @@
     <Height>11.70833in</Height>
     <Style />
   </Body>
-  <Width>14.55507in</Width>
+  <Width>21cm</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

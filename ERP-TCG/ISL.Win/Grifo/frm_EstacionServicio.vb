@@ -1321,10 +1321,22 @@ Public Class frm_EstacionServicio
         instancia = Nothing
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Try
+            gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            'gtm_Imprimir_Documento("CHG000000002023", "A4", "GRIFO")
-            gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
+            gtm_Imprimir_Documento("CHG000000002075", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002076", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002071", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002075", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002076", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002071", "TICKET", "GRIFO")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
