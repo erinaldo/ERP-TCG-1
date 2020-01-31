@@ -52,7 +52,14 @@ Public Class d_Planilla
             Dim ds As DataSet
             Dim bandCargar As Boolean = oePlanilla.IndCargaCompleto
             With oePlanilla
-                ds = sqlhelper.ExecuteDataset("PER.Isp_Planilla_Listar", .TipoOperacion, .Id, .IdPeriodo)
+                ds = sqlhelper.ExecuteDataset("PER.Isp_Planilla_Listar", .TipoOperacion _
+                    , .Id _
+                    , .IdPeriodo _
+                    , .IdConfiguracion _
+                    , .Codigo _
+                    , .FechaInicio _
+                    , .FechaFin _
+                    , .Tipo)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
                 oePlanilla = Cargar(ds.Tables(0).Rows(0))
