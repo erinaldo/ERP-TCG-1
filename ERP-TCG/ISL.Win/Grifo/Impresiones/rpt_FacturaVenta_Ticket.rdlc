@@ -84,11 +84,25 @@
               <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cel: 964004055 Cel: 952930898</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>3.38709cm</Top>
+        <Top>3.85487cm</Top>
         <Left>0.34355cm</Left>
-        <Height>0.75875cm</Height>
+        <Height>1.22653cm</Height>
         <Width>7.00628cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -108,7 +122,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>FECHA</Value>
+                <Value>Fecha:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -120,7 +134,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>5.75649cm</Top>
+        <Top>6.69205cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>1.07495cm</Width>
@@ -154,7 +168,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>13.46257cm</Top>
         <Left>2.88875cm</Left>
         <Height>0.45cm</Height>
         <Width>0.828cm</Width>
@@ -176,7 +190,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>CLIENTE</Value>
+                <Value>Cliente:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -188,10 +202,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.31232cm</Top>
+        <Top>7.24788cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.11023cm</Width>
+        <Width>1.21606cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -210,7 +224,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DIRECC</Value>
+                <Value>Direcc.</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -222,7 +236,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.97399cm</Top>
+        <Top>7.90955cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>1.07495cm</Width>
@@ -256,7 +270,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.53871cm</Top>
+        <Top>8.47427cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>0.69546cm</Width>
@@ -289,7 +303,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.90062cm</Top>
+        <Top>12.83618cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>0.78245cm</Width>
@@ -335,7 +349,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Tipo</rd:DefaultName>
-        <Top>4.32223cm</Top>
+        <Top>5.25779cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>7.00628cm</Width>
@@ -371,7 +385,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SerieNumero</rd:DefaultName>
-        <Top>4.91334cm</Top>
+        <Top>5.8489cm</Top>
         <Left>0.34355cm</Left>
         <Height>0.45cm</Height>
         <Width>7.00628cm</Width>
@@ -397,6 +411,7 @@
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>7pt</FontSize>
+                  <Format>d/MM/yyyy</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -406,10 +421,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>5.75649cm</Top>
+        <Top>6.69205cm</Top>
         <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
-        <Width>3.00769cm</Width>
+        <Width>2.15714cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -439,7 +454,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Trabajador</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>13.46257cm</Top>
         <Left>3.78731cm</Left>
         <Height>0.45cm</Height>
         <Width>3.61462cm</Width>
@@ -472,7 +487,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>6.38288cm</Top>
+        <Top>7.31844cm</Top>
         <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
         <Width>5.81627cm</Width>
@@ -505,7 +520,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>7.01815cm</Top>
+        <Top>7.95371cm</Top>
         <Left>1.55961cm</Left>
         <Height>0.45cm</Height>
         <Width>5.81627cm</Width>
@@ -538,7 +553,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>7.53871cm</Top>
+        <Top>8.47427cm</Top>
         <Left>1.03901cm</Left>
         <Height>0.42361cm</Height>
         <Width>1.96311cm</Width>
@@ -571,10 +586,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
-        <Top>11.90062cm</Top>
-        <Left>1.10075cm</Left>
+        <Top>12.83618cm</Top>
+        <Left>1.03901cm</Left>
         <Height>0.45cm</Height>
-        <Width>6.30118cm</Width>
+        <Width>6.36292cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -617,7 +632,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>SubTotal</rd:DefaultName>
-        <Top>10.19784cm</Top>
+        <Top>11.1334cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -653,7 +668,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV</rd:DefaultName>
-        <Top>10.7184cm</Top>
+        <Top>11.65396cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -689,7 +704,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Total1</rd:DefaultName>
-        <Top>11.27423cm</Top>
+        <Top>12.20979cm</Top>
         <Left>4.90193cm</Left>
         <Height>0.45cm</Height>
         <Width>2.5cm</Width>
@@ -725,7 +740,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>10.23312cm</Top>
+        <Top>11.16868cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -761,7 +776,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>10.75368cm</Top>
+        <Top>11.68924cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -797,7 +812,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>11.27423cm</Top>
+        <Top>12.20979cm</Top>
         <Left>2.45014cm</Left>
         <Height>0.45cm</Height>
         <Width>2.21623cm</Width>
@@ -855,7 +870,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DOM. FISCAL: CA LORA Y LORA Nº2450 INT A PJ SANTA</Value>
+                <Value>DOM. FISCAL: CA LORA Y LORA Nº2450 INT A PJ SANTA ANA</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(GRIFO REPSOL - OFICINA SEGUNDO PISO)</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -884,8 +913,8 @@
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.53132cm</Top>
         <Left>0.34355cm</Left>
-        <Height>0.78521cm</Height>
-        <Width>7.03233cm</Width>
+        <Height>1.14716cm</Height>
+        <Width>7.05838cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -898,7 +927,7 @@
         </Style>
       </Textbox>
       <Line Name="Line5">
-        <Top>5.54482cm</Top>
+        <Top>6.48038cm</Top>
         <Left>0.39565cm</Left>
         <Height>0cm</Height>
         <Width>7.00628cm</Width>
@@ -916,7 +945,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PLACA</Value>
+                <Value>Placa:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -928,7 +957,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.51232cm</Top>
+        <Top>8.44788cm</Top>
         <Left>3.00212cm</Left>
         <Height>0.42361cm</Height>
         <Width>1.03967cm</Width>
@@ -961,44 +990,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Placa</rd:DefaultName>
-        <Top>7.48593cm</Top>
+        <Top>8.42149cm</Top>
         <Left>4.04179cm</Left>
         <Height>0.45cm</Height>
         <Width>1.22331cm</Width>
         <ZIndex>27</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Turno">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Turno.Value, "Cabecera")</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Turno</rd:DefaultName>
-        <Top>5.75649cm</Top>
-        <Left>4.74369cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.30305cm</Width>
-        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1038,7 +1034,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PRODUCTO</Value>
+                              <Value>Producto</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1061,7 +1057,8 @@
                         </TopBorder>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
                           <Style>None</Style>
@@ -1086,7 +1083,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CANT</Value>
+                              <Value>Cant.</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1111,7 +1108,8 @@
                         </TopBorder>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
                           <Style>None</Style>
@@ -1136,7 +1134,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>PRECIO</Value>
+                              <Value>Precio</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1161,7 +1159,8 @@
                         </TopBorder>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
                           <Style>None</Style>
@@ -1186,7 +1185,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>IMPORTE</Value>
+                              <Value>Importe</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1211,7 +1210,8 @@
                         </TopBorder>
                         <BottomBorder>
                           <Color>Black</Color>
-                          <Width>1pt</Width>
+                          <Style>Solid</Style>
+                          <Width>1.5pt</Width>
                         </BottomBorder>
                         <LeftBorder>
                           <Style>None</Style>
@@ -1396,11 +1396,11 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>8.82145cm</Top>
+        <Top>9.75701cm</Top>
         <Left>0.3696cm</Left>
         <Height>1.0148cm</Height>
         <Width>7.03233cm</Width>
-        <ZIndex>29</ZIndex>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1427,44 +1427,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>17.48558cm</Top>
+        <Top>18.42114cm</Top>
         <Left>0.28261cm</Left>
         <Height>0.50292cm</Height>
         <Width>7.00628cm</Width>
-        <ZIndex>30</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Lado">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!Lado.Value, "Cabecera")</Value>
-                <Style>
-                  <FontFamily>calibri</FontFamily>
-                  <FontSize>7pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Lado</rd:DefaultName>
-        <Top>5.75649cm</Top>
-        <Left>6.04674cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.32914cm</Width>
-        <ZIndex>31</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1494,11 +1461,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Kilometraje</rd:DefaultName>
-        <Top>7.48593cm</Top>
+        <Top>8.42149cm</Top>
         <Left>6.0884cm</Left>
         <Height>0.45cm</Height>
         <Width>1.42924cm</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>30</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1528,11 +1495,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.51232cm</Top>
+        <Top>8.44788cm</Top>
         <Left>5.266cm</Left>
         <Height>0.45cm</Height>
         <Width>0.8224cm</Width>
-        <ZIndex>33</ZIndex>
+        <ZIndex>31</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1562,11 +1529,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Turno1</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>13.46257cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>1.30305cm</Width>
-        <ZIndex>34</ZIndex>
+        <ZIndex>32</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1596,11 +1563,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Lado1</rd:DefaultName>
-        <Top>12.52701cm</Top>
+        <Top>13.46257cm</Top>
         <Left>1.70072cm</Left>
         <Height>0.45cm</Height>
         <Width>1.01164cm</Width>
-        <ZIndex>35</ZIndex>
+        <ZIndex>33</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1629,11 +1596,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MedioPago</rd:DefaultName>
-        <Top>13.11812cm</Top>
+        <Top>14.05368cm</Top>
         <Left>2.78292cm</Left>
         <Height>0.45cm</Height>
         <Width>4.61901cm</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>34</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1651,7 +1618,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>MEDIO DE PAGO</Value>
+                <Value>Medio de Pago:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1663,11 +1630,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.11812cm</Top>
+        <Top>14.05368cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.45cm</Height>
         <Width>2.4558cm</Width>
-        <ZIndex>37</ZIndex>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1696,11 +1663,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV1</rd:DefaultName>
-        <Top>18.37672cm</Top>
+        <Top>19.31228cm</Top>
         <Left>0.25656cm</Left>
         <Height>0.46771cm</Height>
         <Width>3.97381cm</Width>
-        <ZIndex>38</ZIndex>
+        <ZIndex>36</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1729,11 +1696,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV1</rd:DefaultName>
-        <Top>18.37672cm</Top>
+        <Top>19.31228cm</Top>
         <Left>4.35736cm</Left>
         <Height>0.46771cm</Height>
         <Width>2.95758cm</Width>
-        <ZIndex>39</ZIndex>
+        <ZIndex>37</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1762,11 +1729,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Footer</rd:DefaultName>
-        <Top>16.80822cm</Top>
+        <Top>17.74378cm</Top>
         <Left>0.28261cm</Left>
         <Height>0.6cm</Height>
         <Width>6.98023cm</Width>
-        <ZIndex>40</ZIndex>
+        <ZIndex>38</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1795,11 +1762,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Hash_Resumen</rd:DefaultName>
-        <Top>16.10239cm</Top>
+        <Top>17.03795cm</Top>
         <Left>0.30176cm</Left>
         <Height>0.6cm</Height>
         <Width>6.96108cm</Width>
-        <ZIndex>41</ZIndex>
+        <ZIndex>39</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1827,10 +1794,80 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>QR</rd:DefaultName>
-        <Top>14.3476cm</Top>
+        <Top>15.28316cm</Top>
         <Left>2.36315cm</Left>
         <Height>1.42021cm</Height>
         <Width>2.5cm</Width>
+        <ZIndex>40</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Emision3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>7pt</FontSize>
+                  <Format>T</Format>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Emision</rd:DefaultName>
+        <Top>6.66559cm</Top>
+        <Left>5.26641cm</Left>
+        <Height>0.45cm</Height>
+        <Width>2.13593cm</Width>
+        <ZIndex>41</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Hora:</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>6.66559cm</Top>
+        <Left>4.01507cm</Left>
+        <Height>0.41472cm</Height>
+        <Width>1.07495cm</Width>
         <ZIndex>42</ZIndex>
         <Style>
           <Border>
@@ -1843,7 +1880,7 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>7.60417in</Height>
+    <Height>8.3125in</Height>
     <Style />
   </Body>
   <Width>3.8443in</Width>
