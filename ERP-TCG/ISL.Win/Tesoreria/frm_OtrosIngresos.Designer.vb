@@ -428,7 +428,6 @@ Partial Class frm_OtrosIngresos
         Me.btnEgresos.BackColorInternal = System.Drawing.Color.Transparent
         Me.btnEgresos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnEgresos.Dock = System.Windows.Forms.DockStyle.Left
-        Me.btnEgresos.Enabled = False
         Me.btnEgresos.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEgresos.ForeColor = System.Drawing.Color.Black
         Me.btnEgresos.Location = New System.Drawing.Point(75, 3)
@@ -937,7 +936,6 @@ Partial Class frm_OtrosIngresos
         '
         Me.rdbEgresos.AutoSize = True
         Me.rdbEgresos.BackColor = System.Drawing.Color.Transparent
-        Me.rdbEgresos.Enabled = False
         Me.rdbEgresos.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rdbEgresos.Location = New System.Drawing.Point(190, 10)
         Me.rdbEgresos.Name = "rdbEgresos"

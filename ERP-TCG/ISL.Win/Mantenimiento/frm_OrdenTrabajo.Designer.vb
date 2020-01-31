@@ -1224,7 +1224,7 @@ Partial Class frm_OrdenTrabajo
         Me.UltraTabPageControl3.Controls.Add(Me.grid_OT_ME)
         Me.UltraTabPageControl3.Controls.Add(Me.gbeOTsAnteriores)
         Me.UltraTabPageControl3.Controls.Add(Me.gbeEquipos)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1200, 256)
         '
@@ -1396,13 +1396,13 @@ Partial Class frm_OrdenTrabajo
         UltraDataColumn6.DataType = GetType(Boolean)
         UltraDataColumn6.DefaultValue = False
         UltraDataColumn11.DataType = GetType(Double)
-        UltraDataColumn11.DefaultValue = 0.0R
+        UltraDataColumn11.DefaultValue = 0R
         UltraDataColumn12.DataType = GetType(Double)
-        UltraDataColumn12.DefaultValue = 0.0R
+        UltraDataColumn12.DefaultValue = 0R
         UltraDataColumn15.DataType = GetType(Double)
-        UltraDataColumn15.DefaultValue = 0.0R
+        UltraDataColumn15.DefaultValue = 0R
         UltraDataColumn16.DataType = GetType(Double)
-        UltraDataColumn16.DefaultValue = 0.0R
+        UltraDataColumn16.DefaultValue = 0R
         Me.odOT_ME.Band.Columns.AddRange(New Object() {UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17})
         '
         'gbeOTsAnteriores
@@ -1850,7 +1850,7 @@ Partial Class frm_OrdenTrabajo
         '
         Me.UltraTabPageControl6.Controls.Add(Me.gbOTMateriales)
         Me.UltraTabPageControl6.Controls.Add(Me.gbeMateriales)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1200, 256)
         '
@@ -2216,19 +2216,19 @@ Partial Class frm_OrdenTrabajo
         UltraDataColumn67.DataType = GetType(Boolean)
         UltraDataColumn67.DefaultValue = False
         UltraDataColumn75.DataType = GetType(Double)
-        UltraDataColumn75.DefaultValue = 0.0R
+        UltraDataColumn75.DefaultValue = 0R
         UltraDataColumn76.DataType = GetType(Double)
-        UltraDataColumn76.DefaultValue = 0.0R
+        UltraDataColumn76.DefaultValue = 0R
         UltraDataColumn77.DataType = GetType(Double)
-        UltraDataColumn77.DefaultValue = 0.0R
+        UltraDataColumn77.DefaultValue = 0R
         UltraDataColumn78.DataType = GetType(Double)
-        UltraDataColumn78.DefaultValue = 0.0R
+        UltraDataColumn78.DefaultValue = 0R
         UltraDataColumn79.DataType = GetType(Double)
-        UltraDataColumn79.DefaultValue = 0.0R
+        UltraDataColumn79.DefaultValue = 0R
         UltraDataColumn80.DataType = GetType(Double)
-        UltraDataColumn80.DefaultValue = 0.0R
+        UltraDataColumn80.DefaultValue = 0R
         UltraDataColumn81.DataType = GetType(Double)
-        UltraDataColumn81.DefaultValue = 0.0R
+        UltraDataColumn81.DefaultValue = 0R
         UltraDataBand6.Columns.AddRange(New Object() {UltraDataColumn67, UltraDataColumn68, UltraDataColumn69, UltraDataColumn70, UltraDataColumn71, UltraDataColumn72, UltraDataColumn73, UltraDataColumn74, UltraDataColumn75, UltraDataColumn76, UltraDataColumn77, UltraDataColumn78, UltraDataColumn79, UltraDataColumn80, UltraDataColumn81, UltraDataColumn82, UltraDataColumn83})
         UltraDataBand5.ChildBands.AddRange(New Object() {UltraDataBand6})
         UltraDataColumn84.DataType = GetType(Boolean)
@@ -2473,7 +2473,7 @@ Partial Class frm_OrdenTrabajo
         '
         Me.cbOtrosAlmacenes.AutoSize = True
         Me.cbOtrosAlmacenes.BackColor = System.Drawing.Color.Transparent
-        Me.cbOtrosAlmacenes.Location = New System.Drawing.Point(600, 32)
+        Me.cbOtrosAlmacenes.Location = New System.Drawing.Point(644, 32)
         Me.cbOtrosAlmacenes.Name = "cbOtrosAlmacenes"
         Me.cbOtrosAlmacenes.Size = New System.Drawing.Size(97, 17)
         Me.cbOtrosAlmacenes.TabIndex = 7
@@ -2488,9 +2488,9 @@ Partial Class frm_OrdenTrabajo
         Me.cboCentroMaterial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCentroMaterial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCentroMaterial.ForeColor = System.Drawing.Color.Black
-        Me.cboCentroMaterial.Location = New System.Drawing.Point(506, 29)
+        Me.cboCentroMaterial.Location = New System.Drawing.Point(435, 29)
         Me.cboCentroMaterial.Name = "cboCentroMaterial"
-        Me.cboCentroMaterial.Size = New System.Drawing.Size(83, 21)
+        Me.cboCentroMaterial.Size = New System.Drawing.Size(200, 21)
         Me.cboCentroMaterial.TabIndex = 5
         Me.cboCentroMaterial.ValueMember = "Id"
         '
@@ -2502,11 +2502,11 @@ Partial Class frm_OrdenTrabajo
         Me.Etiqueta24.AutoSize = True
         Me.Etiqueta24.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta24.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta24.Location = New System.Drawing.Point(449, 31)
+        Me.Etiqueta24.Location = New System.Drawing.Point(391, 31)
         Me.Etiqueta24.Name = "Etiqueta24"
-        Me.Etiqueta24.Size = New System.Drawing.Size(51, 15)
+        Me.Etiqueta24.Size = New System.Drawing.Size(41, 15)
         Me.Etiqueta24.TabIndex = 4
-        Me.Etiqueta24.Text = "CENTRO:"
+        Me.Etiqueta24.Text = "Centro:"
         '
         'btnListarMateriales
         '
@@ -2517,7 +2517,7 @@ Partial Class frm_OrdenTrabajo
         Me.btnListarMateriales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnListarMateriales.ForeColor = System.Drawing.Color.MidnightBlue
         Me.btnListarMateriales.ImageList = Me.imagenes
-        Me.btnListarMateriales.Location = New System.Drawing.Point(413, 24)
+        Me.btnListarMateriales.Location = New System.Drawing.Point(357, 24)
         Me.btnListarMateriales.Name = "btnListarMateriales"
         Me.btnListarMateriales.Size = New System.Drawing.Size(30, 32)
         Me.btnListarMateriales.TabIndex = 3
@@ -2547,10 +2547,10 @@ Partial Class frm_OrdenTrabajo
         Me.txtBuscarMateriales.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtBuscarMateriales.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBuscarMateriales.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtBuscarMateriales.Location = New System.Drawing.Point(118, 27)
+        Me.txtBuscarMateriales.Location = New System.Drawing.Point(105, 27)
         Me.txtBuscarMateriales.MaxLength = 200
         Me.txtBuscarMateriales.Name = "txtBuscarMateriales"
-        Me.txtBuscarMateriales.Size = New System.Drawing.Size(291, 21)
+        Me.txtBuscarMateriales.Size = New System.Drawing.Size(250, 21)
         Me.txtBuscarMateriales.TabIndex = 2
         '
         'Etiqueta19
@@ -2561,7 +2561,7 @@ Partial Class frm_OrdenTrabajo
         Me.Etiqueta19.AutoSize = True
         Me.Etiqueta19.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta19.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta19.Location = New System.Drawing.Point(71, 31)
+        Me.Etiqueta19.Location = New System.Drawing.Point(62, 31)
         Me.Etiqueta19.Name = "Etiqueta19"
         Me.Etiqueta19.Size = New System.Drawing.Size(41, 15)
         Me.Etiqueta19.TabIndex = 1
@@ -2691,9 +2691,9 @@ Partial Class frm_OrdenTrabajo
         UltraDataColumn144.DataType = GetType(Boolean)
         UltraDataColumn144.DefaultValue = False
         UltraDataColumn150.DataType = GetType(Double)
-        UltraDataColumn150.DefaultValue = 0.0R
+        UltraDataColumn150.DefaultValue = 0R
         UltraDataColumn151.DataType = GetType(Double)
-        UltraDataColumn151.DefaultValue = 0.0R
+        UltraDataColumn151.DefaultValue = 0R
         UltraDataColumn152.DataType = GetType(Double)
         UltraDataBand8.Columns.AddRange(New Object() {UltraDataColumn144, UltraDataColumn145, UltraDataColumn146, UltraDataColumn147, UltraDataColumn148, UltraDataColumn149, UltraDataColumn150, UltraDataColumn151, UltraDataColumn152})
         UltraDataBand7.ChildBands.AddRange(New Object() {UltraDataBand8})
@@ -5080,7 +5080,7 @@ Partial Class frm_OrdenTrabajo
         Me.tcOrdenTrabajo.ResumeLayout(False)
         Me.ResumeLayout(False)
 
-End Sub
+    End Sub
     Friend WithEvents tcOrdenTrabajo As ISL.Controles.Ficha
     Friend WithEvents UltraTabSharedControlsPage1 As Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage
     Friend WithEvents UltraTabPageControl1 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl

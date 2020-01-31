@@ -135,7 +135,7 @@ Public Class e_Planilla
         Get
             Select Case _tipo
                 Case 0 : _nombretipo = "MENSUAL"
-                Case 1 : _nombretipo = "QUINCENAL"
+                Case 1 : _nombretipo = "MENSUAL (CAJA)"
                 Case 2 : _nombretipo = "OTROS"
             End Select
             Return _nombretipo
