@@ -120,11 +120,11 @@ Public Class frm_GRR_Venta
 
     Public Overrides Sub Nuevo()
         Try
-            'gmt_MostrarTabs(1, ficGuiaRR, 1)
-            'mt_Inicializar()
-            'Operacion = "Nuevo"
-            'mt_ControlBotoneria()
-            'cmb_Cliente.Focus()
+            gmt_MostrarTabs(1, ficGuiaRR, 1)
+            mt_Inicializar()
+            Operacion = "Nuevo"
+            mt_ControlBotoneria()
+            cmb_Cliente.Focus()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -538,7 +538,7 @@ Public Class frm_GRR_Venta
                 objWorkSheet.Cells(16, 4) = datarow("Chofer").ToString
                 objWorkSheet.Cells(16, 9) = datarow("Brevete").ToString
                 objWorkSheet.Cells(16, 14) = datarow("MTC").ToString
-                objWorkSheet.Cells(16, 22) = datarow("DocAsoc").ToString
+                objWorkSheet.Cells(16, 23) = datarow("DocAsoc").ToString
                 objWorkSheet.Cells(35, 6) = datarow("Motivo").ToString
                 objWorkSheet.Cells(35, 11) = datarow("Peso")
             Next
@@ -683,6 +683,9 @@ Public Class frm_GRR_Venta
 
         oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
         loGuiaRRDetalle = New List(Of e_GuiaRemisionRemitente_Detalle)
+
+        oeRefAsoc = New e_ReferenciaAsociada
+
         griDetalleDocumento.DataSource = loGuiaRRDetalle
         cmb_Cliente.DataSource = Nothing
         cmb_Cliente.Text = String.Empty
@@ -871,6 +874,8 @@ Public Class frm_GRR_Venta
 
             cmbMotivoTraslado.Value = oeGuiaRR.IdMotivoTraslado
 
+            txt_DocAsoc.Text = oeGuiaRR.DocAsoc
+
             If oeGuiaRR.IdTransportista = gs_IdClienteProveedorSistema Then
                 cboCarreta.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
                 cmbVehiculo.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
@@ -1001,6 +1006,7 @@ Public Class frm_GRR_Venta
                     .Serie = FormatoDocumento(txtSerie.Text, 4)
                     .Numero = FormatoDocumento(txtNumero.Text, 8)
                     .IdMotivoTraslado = cmbMotivoTraslado.Value
+                    .DocAsoc = txt_DocAsoc.Text
                     If .IdTransportista = gs_IdClienteProveedorSistema Then
                         .IdVehiculo = cmbVehiculo.Value
                         .IdCarreta = cboCarreta.Value

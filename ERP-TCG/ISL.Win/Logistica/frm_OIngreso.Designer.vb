@@ -565,13 +565,12 @@ Partial Class frm_OIngreso
         Me.uegMateriales.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.uegMateriales.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.uegMateriales.Dock = System.Windows.Forms.DockStyle.Right
-        Me.uegMateriales.Expanded = False
         Me.uegMateriales.ExpandedSize = New System.Drawing.Size(582, 284)
         Me.uegMateriales.ForeColor = System.Drawing.Color.Navy
         Me.uegMateriales.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
-        Me.uegMateriales.Location = New System.Drawing.Point(1104, 0)
+        Me.uegMateriales.Location = New System.Drawing.Point(544, 0)
         Me.uegMateriales.Name = "uegMateriales"
-        Me.uegMateriales.Size = New System.Drawing.Size(22, 284)
+        Me.uegMateriales.Size = New System.Drawing.Size(582, 284)
         Me.uegMateriales.TabIndex = 1
         Me.uegMateriales.Text = "Materiales"
         Me.uegMateriales.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -580,11 +579,11 @@ Partial Class frm_OIngreso
         '
         Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.griListaMateriales)
         Me.UltraExpandableGroupBoxPanel1.Controls.Add(Me.UltraGroupBox6)
-        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
         Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(559, 278)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
-        Me.UltraExpandableGroupBoxPanel1.Visible = False
         '
         'griListaMateriales
         '

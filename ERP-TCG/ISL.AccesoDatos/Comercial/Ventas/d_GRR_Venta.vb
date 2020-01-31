@@ -17,7 +17,7 @@ Public Class d_GRR_Venta
                 , .Chofer = o_fila("Chofer").ToString, .Brevete = o_fila("Brevete").ToString, .IdMotivoTraslado = o_fila("IdMotivoTraslado").ToString _
                 , .MotivoTraslado = o_fila("MotivoTraslado").ToString, .IdPartida = o_fila("IdPartida").ToString, .Partida = o_fila("Partida").ToString _
                 , .IdDestino = o_fila("IdDestino").ToString, .Destino = o_fila("Destino").ToString, .UsuarioCrea = o_fila("UsuarioCrea").ToString _
-                , .IdEstado = o_fila("IdEstado").ToString, .Estado = o_fila("Estado").ToString}
+                , .IdEstado = o_fila("IdEstado").ToString, .Estado = o_fila("Estado").ToString, .DocAsoc = o_fila("DocAsoc").ToString}
             Return oeGuiaRemitente
         Catch ex As Exception
             Throw ex
@@ -91,7 +91,7 @@ Public Class d_GRR_Venta
                     stResultado = sqlhelper.ExecuteScalar("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
                                           .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
                                           .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
-                                          .IdDestino, .Destino, .IdViaje, .UsuarioCrea).ToString.Split("_")
+                                          .IdDestino, .Destino, .IdViaje, .DocAsoc, .UsuarioCrea).ToString.Split("_")
                     .Id = stResultado(0)
                     For Each detalle In .lo_GRRVenta_Detalle
                         If detalle.TipoOperacion = "" Then detalle.TipoOperacion = "A"

@@ -236,36 +236,59 @@ Public Class frm_TransferenciasBancarias
                             End If
                         End If
                     Case 1 ' Egreso de la Cuenta
-                        If IndTrabjador Then
-                            lePresAnalisis = New List(Of e_Prestamo)
-                            If cboTrabajadorDestino.Enabled Then
-                                If cboTrabajadorDestino.Value.ToString.Trim.Length = 0 Then Throw New Exception("Seleccion de Trabajador Destino")
-                                CargarPrestamo()
-                            Else
-                                Dim _leValAux = leImportaDatos.Where(Function(it) it.Activo = False).ToList
-                                If _leValAux.Count > 0 Then Throw New Exception(etiValidaDatos.Text)
-                                lePresAnalisis = leImportaDatos
+                        If Me.cboMedioPago.Text = "EFECTIVO" Then
+                            If oeAsientoModel.Id.Trim.Length = 0 Then Throw New Exception("No se ha Seleccionado un Flujo de Caja Pre-Configurado Contablemente")
+                            oeAsientoModel.TipoOperacion = "" : oeAsientoModel.Ejercicio = fecTransf.Value.Year
+                            oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
+                            oeMovimientosBancariosOrigen = New e_MovimientoCajaBanco
+                            With oeMovimientosBancariosOrigen
+                                .TipoOperacion = "I" : .IdMedioPago = cboMedioPago.Value : ._Operador = -1 : .Fecha = fecTransf.Value
+                                .IdCuentaBancaria = cboCuentaBancariaOrigen.Value : ._IdCuentaContable = cboCuentaCtbleOrigen.Value
+                                .NroBoucher = txtCheque.Text : .IdFlujoCaja = cboFlujoCaja.Value : .TipoCambio = DecTC.Value
+                                .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
+                                .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
+                            End With
+                            oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            If olMovimientosBancarios.GuardarTransBancaria(oeMovimientosBancariosOrigen, oeAsientoModel, lePresAnalisis, chkDsctoPlanilla.Checked) Then
+                                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
+                                MostrarTabs(0, tcTransferenciaBancaria, 2)
+                                ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+                                Consultar(True)
+                                Return True
                             End If
-                        End If
-                        If oeAsientoModel.Id.Trim.Length = 0 Then Throw New Exception("No se ha Seleccionado un Flujo de Caja Pre-Configurado Contablemente")
-                        oeAsientoModel.TipoOperacion = "" : oeAsientoModel.Ejercicio = fecTransf.Value.Year
-                        oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
-                        oeMovimientosBancariosOrigen = New e_MovimientoCajaBanco
-                        With oeMovimientosBancariosOrigen
-                            .TipoOperacion = "I" : .IdMedioPago = cboMedioPago.Value : ._Operador = -1 : .Fecha = fecTransf.Value
-                            .IdCuentaBancaria = cboCuentaBancariaOrigen.Value : ._IdCuentaContable = cboCuentaCtbleOrigen.Value
-                            .NroBoucher = txtCheque.Text : .IdFlujoCaja = cboFlujoCaja.Value : .TipoCambio = DecTC.Value
-                            .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
-                            .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
-                        End With
-                        oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
-                        If olMovimientosBancarios.GuardarTransBancaria(oeMovimientosBancariosOrigen, oeAsientoModel, lePresAnalisis, chkDsctoPlanilla.Checked) Then
-                            mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
-                            MostrarTabs(0, tcTransferenciaBancaria, 2)
-                            ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
-                            Consultar(True)
-                            Return True
+                        Else
+                            If IndTrabjador Then
+                                lePresAnalisis = New List(Of e_Prestamo)
+                                If cboTrabajadorDestino.Enabled Then
+                                    If cboTrabajadorDestino.Value.ToString.Trim.Length = 0 Then Throw New Exception("Seleccion de Trabajador Destino")
+                                    CargarPrestamo()
+                                Else
+                                    Dim _leValAux = leImportaDatos.Where(Function(it) it.Activo = False).ToList
+                                    If _leValAux.Count > 0 Then Throw New Exception(etiValidaDatos.Text)
+                                    lePresAnalisis = leImportaDatos
+                                End If
+                            End If
+                            If oeAsientoModel.Id.Trim.Length = 0 Then Throw New Exception("No se ha Seleccionado un Flujo de Caja Pre-Configurado Contablemente")
+                            oeAsientoModel.TipoOperacion = "" : oeAsientoModel.Ejercicio = fecTransf.Value.Year
+                            oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
+                            oeMovimientosBancariosOrigen = New e_MovimientoCajaBanco
+                            With oeMovimientosBancariosOrigen
+                                .TipoOperacion = "I" : .IdMedioPago = cboMedioPago.Value : ._Operador = -1 : .Fecha = fecTransf.Value
+                                .IdCuentaBancaria = cboCuentaBancariaOrigen.Value : ._IdCuentaContable = cboCuentaCtbleOrigen.Value
+                                .NroBoucher = txtCheque.Text : .IdFlujoCaja = cboFlujoCaja.Value : .TipoCambio = DecTC.Value
+                                .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
+                                .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
+                            End With
+                            oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
+                            If olMovimientosBancarios.GuardarTransBancaria(oeMovimientosBancariosOrigen, oeAsientoModel, lePresAnalisis, chkDsctoPlanilla.Checked) Then
+                                mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente", True)
+                                MostrarTabs(0, tcTransferenciaBancaria, 2)
+                                ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+                                Consultar(True)
+                                Return True
+                            End If
                         End If
                     Case 2 ' Ingreso a la Cuenta
                         leDsctoGrab = leDscto.Where(Function(it) it.TipoOperacion <> "").ToList
@@ -879,9 +902,10 @@ Public Class frm_TransferenciasBancarias
                     cboTipoMovimiento.Items.Add("EGRESO DE LA CUENTA")
                     cboTipoMovimiento.SelectedIndex = 0
                 Case "008"
-                    cboTipoMovimiento.ReadOnly = True
+                    cboTipoMovimiento.ReadOnly = False
                     cboTipoMovimiento.Items.Clear()
                     cboTipoMovimiento.Items.Add("ENTRE CUENTAS PROPIAS")
+                    cboTipoMovimiento.Items.Add("EGRESO DE LA CUENTA")
                     cboTipoMovimiento.SelectedIndex = 0
                 Case Else
                     cboTipoMovimiento.ReadOnly = True
@@ -1121,6 +1145,12 @@ Public Class frm_TransferenciasBancarias
                                 If cboFlujoCaja.Text = gFCVACACIONES Then
                                     chkCargaMasiva.Checked = True : chkCargaMasiva.Visible = True : chkCargaMasiva.Enabled = True
                                     btnImportar.Enabled = True : cboTrabajadorDestino.Enabled = False : cboTrabajadorDestino.SelectedIndex = 0
+                                End If
+                                If cboFlujoCaja.Text = gFCPH Then
+                                    Dim _oeplanilla As New e_Planilla With {.IdPeriodo = oePeriodo.Id, .Tipo = 1}
+                                    Dim _olplanilla As New l_Planilla
+                                    _oeplanilla = _olplanilla.Obtener(_oeplanilla)
+                                    DecImporte.Value = _oeplanilla.Importe
                                 End If
                             Case 2
                                 If cboFlujoCaja.Text = gFCADEPAGDSCTO Then

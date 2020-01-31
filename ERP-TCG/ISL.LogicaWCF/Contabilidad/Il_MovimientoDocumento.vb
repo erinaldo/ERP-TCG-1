@@ -160,6 +160,10 @@ Public Interface Il_MovimientoDocumento
                            ByVal IdCtaCtble16321 As String, Optional b_anticipo As Boolean = False) As Boolean
 
     <OperationContract()>
+    Function GuardarNDVentaAsiento(MovimientoDocumento As e_MovimientoDocumento,
+                                  AsientoModelo As e_AsientoModelo) As Boolean
+
+    <OperationContract()>
     Function GuardarVenta2(ByVal oeMovDocumento As e_MovimientoDocumento) As e_MovimientoDocumento
 
 #End Region
