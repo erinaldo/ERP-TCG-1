@@ -1331,12 +1331,12 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHG000000002075", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002076", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002071", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002075", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002076", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002071", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHC000000000012", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002072", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002077", "A4", "GRIFO")
+            gtm_Imprimir_Documento("CHC000000000012", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002072", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002077", "TICKET", "GRIFO")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
