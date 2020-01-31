@@ -920,6 +920,8 @@ Public Class e_MovimientoDocumento
         Dim oeMovDoc As New e_MovimientoDocumento
         With oeMovDoc
             .Id = Me.Id
+            .IdEmpresaSis = Me.IdEmpresaSis
+            .IdSucursal = Me.IdSucursal
             .IdTipoDocumento = Me.IdTipoDocumento
             .Serie = Me.Serie
             .Numero = Me.Numero

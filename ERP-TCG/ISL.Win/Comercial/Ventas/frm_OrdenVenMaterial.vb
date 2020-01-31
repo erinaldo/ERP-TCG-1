@@ -581,7 +581,7 @@ Public Class frm_OrdenVenMaterial
         Editar()
         Operacion = "Atender"
         mt_ControlColumnas()
-        mt_MenuDetalle(0, 1, 0, 0, 0)
+        mt_MenuDetalle(0, 1, 0, 1, 0)
         mt_ControlBotoneria()
     End Sub
 
@@ -1223,7 +1223,7 @@ Public Class frm_OrdenVenMaterial
 
             'Cargar Asiento Modelo
             oeAsientoModelo = New e_AsientoModelo
-            oeAsientoModelo.TipoOperacion = "A" : oeAsientoModelo.Activo = True : oeAsientoModelo.Nombre = "1PY000000005"
+            oeAsientoModelo.TipoOperacion = "A" : oeAsientoModelo.Activo = True : oeAsientoModelo.Nombre = pIdActividadNegocio
             loAsientoModelo = olAsientoModelo.Listar(oeAsientoModelo)
 
             Dim _leEstAux3 = leEstado.Where(Function(it) it.Nombre = "GENERADO").ToList
@@ -2034,7 +2034,13 @@ Public Class frm_OrdenVenMaterial
                 oeDoc.Venta.TipoDoc = oeTipoDoc : oeDoc.Venta.Cliente = oeCliente : oeDoc.Venta.Moneda = oeMoneda
 
                 oeAsientoModelo = New e_AsientoModelo
-                oeAsientoModelo.Equivale = 1 : oeAsientoModelo.IdMoneda = oeMoneda.Id
+                oeAsientoModelo.Equivale = 3
+                If oeDoc.IdTipoDocumento = "GCH000000001" Then
+                    oeAsientoModelo.Nombre = "VENTA NOTA DE DESPACHO"
+                Else
+                    oeAsientoModelo.Nombre = "FAC/BOL VENTA MERCADERIAS SOLES"
+                End If
+
 
                 If loAsientoModelo.Contains(oeAsientoModelo) Then
                     oeAsientoModelo = loAsientoModelo.Item(loAsientoModelo.IndexOf(oeAsientoModelo))
@@ -2066,7 +2072,11 @@ Public Class frm_OrdenVenMaterial
 
                     oeDoc.PrefijoID = gs_PrefijoIdSucursal
                     If oeCuentaCorriente.Id <> "" Then
-                        _banEmis = olDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, True, String.Empty, False)
+                        If oeDoc.IdTipoDocumento = "GCH000000001" Then
+                            _banEmis = olDocumento.GuardarNDVentaAsiento(oeDoc, oeAsientoModelo)
+                        Else
+                            _banEmis = olDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, True, String.Empty, False)
+                        End If
                     Else
                         With oeCuentaCorriente
                             .Tipooperacion = "I" : .Tipo = 3 : .IdTrabajador = oeDoc.IdClienteProveedor
@@ -2075,7 +2085,11 @@ Public Class frm_OrdenVenMaterial
                         End With
                         oeCuentaCorriente.PrefijoID = gs_PrefijoIdSucursal '@0001
                         olCuentaCorriente.Guardar(oeCuentaCorriente)
-                        _banEmis = olDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, False, String.Empty, False)
+                        If oeDoc.IdTipoDocumento = "GCH000000001" Then
+                            _banEmis = olDocumento.GuardarNDVentaAsiento(oeDoc, oeAsientoModelo)
+                        Else
+                            _banEmis = olDocumento.GuardarVentaAsiento(oeDoc, oeAsientoModelo, oeServCtaCtble, False, String.Empty, False)
+                        End If
                     End If
 
                     ' Actualizar Cuenta para Empresas Relacionada

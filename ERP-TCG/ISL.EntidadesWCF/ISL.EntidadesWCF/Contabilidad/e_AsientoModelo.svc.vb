@@ -294,6 +294,7 @@ Public Class e_AsientoModelo
             Case 0 : If Me.Id = oeAM.Id Then Return True
             Case 1 : If Me.IdMoneda = oeAM.IdMoneda Then Return True
             Case 2 : If Me.Id = oeAM.Id And Me.IdMoneda = oeAM.IdMoneda Then Return True
+            Case 3 : If Me.Nombre = oeAM.Nombre Then Return True
         End Select
         Return False
     End Function

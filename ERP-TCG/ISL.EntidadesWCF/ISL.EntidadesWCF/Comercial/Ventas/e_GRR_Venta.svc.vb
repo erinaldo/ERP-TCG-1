@@ -66,6 +66,8 @@ Public Class e_GRR_Venta
     <DataMember()>
     Public Property Destino() As String
     <DataMember()>
+    Public Property DocAsoc() As String
+    <DataMember()>
     Public Property UsuarioCrea() As String
 
     <DataMember()>
@@ -109,6 +111,7 @@ Public Class e_GRR_Venta
         Partida = String.Empty
         IdDestino = String.Empty
         Destino = String.Empty
+        DocAsoc = String.Empty
         UsuarioCrea = String.Empty
     End Sub
 

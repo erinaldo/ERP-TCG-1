@@ -131,13 +131,13 @@ Public Class frm_CompensacionSaldo
     Private Function GuardarCancelacion() As Boolean
         Try
             If ValidarCancelacion() Then
-                Dim lobj(4) As Object
+                Dim lobj(5) As Object
                 lobj(0) = FecFecha.Value
                 lobj(1) = decTC.Value
                 lobj(2) = cboMoneda.Value
                 lobj(3) = gUsuarioSGI.Id
                 lobj(4) = MacPCLocal()
-
+                lobj(5) = gs_PrefijoIdSucursal
                 If chkPersonalCtas.Checked Then
                     For Each obj As e_MovimientoDocumento In leMovDocAgregado
                         Dim oeMdoc As New e_TipoDocumento
@@ -494,6 +494,14 @@ Public Class frm_CompensacionSaldo
         End Try
     End Sub
 
+    Private Sub ConfigurarGrillas()
+        Try
+            gmt_OcultarColumna(gridCobranzaAgregado, True, "")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Private Sub LlenarComboCP()
         Try
             gridCobranza.DisplayLayout.ValueLists.Add("IdClienteProveedor")
@@ -814,6 +822,7 @@ Public Class frm_CompensacionSaldo
             LlenaMoneda()
             LlenaTipoDocumentoOperacion()
             LlenarComboCP()
+            ConfigurarGrillas()
             gridCobranzaAgregado.DataSource = leMovDocAgregado
             gridCobranza.DataSource = leMovDoc
             LlenaTipoCompraVenta()
