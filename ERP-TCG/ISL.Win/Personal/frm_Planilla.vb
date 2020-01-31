@@ -398,7 +398,7 @@ Public Class frm_Planilla
             If oePlanilla.FechaInicio <> #1/1/1901# AndAlso oePlanilla.FechaFin <> #1/1/1901# Then
                 Dim _oeTrabAux As New e_Trabajador
                 _oeTrabAux.TipoOperacion = IIf(Me.chkCaja.Checked, "1", "")
-                _oeTrabAux.Id = oePlanilla.Id
+                _oeTrabAux.Id = IIf(Me.chkCaja.Checked, Me.cboPeriodo.Value, oePlanilla.Id)
                 dsDatosGen = olTrabajador.CargarDatosGenerales(_oeTrabAux).Tables(0)
                 leDetallePlaAux = New List(Of e_DetallePlanilla)
                 leTrabAux = New List(Of e_Trabajador)
@@ -1156,7 +1156,8 @@ Public Class frm_Planilla
             oeConfiguracion = New e_ConfiguracionPlanilla
             oeConfiguracion.TipoOperacion = ""
             oeConfiguracion.Activo = True
-            leConfiguracion = olConfiguracion.Listar(oeConfiguracion).Where(Function(x) x.Id = "1SI00001").ToList
+            'leConfiguracion = olConfiguracion.Listar(oeConfiguracion).Where(Function(x) x.Id = "1SI00001").ToList
+            leConfiguracion = olConfiguracion.Listar(oeConfiguracion)
             LlenarCombo(cboConfiguracion, "Nombre", leConfiguracion, -1)
 
             oePlanilla = New e_Planilla
@@ -1242,7 +1243,8 @@ Public Class frm_Planilla
             oePlanilla.Activo = True
             oePlanilla.IdPeriodo = IIf(cboPeriodoBus.Text = "[TODOS]", Año1.Año, cboPeriodoBus.Value)
             oePlanilla.IdEstado = cboEstadoBus.Value
-            lePlanilla = olPlanilla.Listar(oePlanilla).Where(Function(x) x.IdConfiguracion = "1SI00001").OrderByDescending(Function(it) it.Codigo).ToList
+            'lePlanilla = olPlanilla.Listar(oePlanilla).Where(Function(x) x.IdConfiguracion = "1SI00001").OrderByDescending(Function(it) it.Codigo).ToList
+            lePlanilla = olPlanilla.Listar(oePlanilla).OrderByDescending(Function(it) it.Codigo).ToList
             CargarPlanilla(lePlanilla)
         Catch ex As Exception
             Throw ex
@@ -1338,6 +1340,7 @@ Public Class frm_Planilla
                 btnBuscarTrab.Enabled = IIf(.leDetalle.Count > 0, False, True)
                 btnVerConceptos.Enabled = IIf(.leDetalleConcepto.Count > 0, True, False)
                 ficDetalle.Tabs(1).Enabled = IIf(.leDetalleConcepto.Count > 0, False, True)
+                chkCaja.Checked = IIf(.Tipo = 1, True, False)
             End With
         Catch ex As Exception
             Throw ex
