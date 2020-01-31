@@ -149,7 +149,27 @@ fila("IdTrabajador"))
         Try
             Dim stResultado() As String
             With oeOrden
-                stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Orden_IAE", .TipoOperacion, .PrefijoID, .Id).ToString.Split("_")
+                stResultado = sqlhelper.ExecuteScalar("ALM.Isp_Orden_IAE", .TipoOperacion, .PrefijoID, .Id _
+                                                      , .NroOrden _
+                                                        , .IdMoneda _
+                                                        , .IdTipoOrden _
+                                                        , .FechaOrden _
+                                                        , .Total _
+                                                        , .IdSubAlmacenOrigen _
+                                                        , .IdSubAlmacenDestino _
+                                                        , .IdMovimientoInventario _
+                                                        , .TipoReferencia _
+                                                        , .Referencia _
+                                                        , .IdProveedor _
+                                                        , .Glosa _
+                                                        , .Activo _
+                                                        , .IdEstadoOrden _
+                                                        , .IdCentro _
+                                                        , .UsuarioCreacion _
+                                                        , .IdUsuarioEjecucion _
+                                                        , .IdTurno _
+                                                        , .IdCanalVenta _
+                                                        , .IdTrabajador).ToString.Split("_")
                 .Id = stResultado(0)
             End With
             Return oeOrden
