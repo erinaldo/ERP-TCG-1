@@ -230,9 +230,6 @@ Public Class frm_Calibraciones
                 If .Rows.Count > 0 Then
                     IdCalibracion = .ActiveRow.Cells("Id").Value
 
-                    OrdenVenta = olOrdenComercial.Obtener(New e_OrdenVenta With {.Id = IdCalibracion})
-                    OrdenIngreso = olOrden.ObtenerxReferencia(New e_Orden With {.TipoOperacion = "C", .Referencia = IdCalibracion})
-                    RegistroConsumoCombustible = olRegConsumoCombustible.Obtener(New e_RegistroConsumoCombustible With {.TipoOperacion = "V", .NroVale = IdCalibracion})
                     'If oeRegConsumoCombustible.IndIsl Then
                     '    If ObtenerFechaServidor().Date <> oeRegConsumoCombustible.FechaTanqueo.Date Then
                     '        Throw New Exception("Solo Puede Eliminar Tanqueos del Mismo Dia.")
@@ -243,16 +240,19 @@ Public Class frm_Calibraciones
                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.Yes Then
 
                         '' Registro Consumo Combustible (Salida)
+                        RegistroConsumoCombustible = olRegConsumoCombustible.Obtener(New e_RegistroConsumoCombustible With {.TipoOperacion = "V", .NroVale = IdCalibracion})
                         RegistroConsumoCombustible.TipoOperacion = "E"
                         RegistroConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
                         olRegConsumoCombustible.Eliminar(RegistroConsumoCombustible)
 
                         '' Orden de Ingreso
+                        OrdenIngreso = olOrden.ObtenerxReferencia(New e_Orden With {.TipoOperacion = "C", .Referencia = IdCalibracion})
                         OrdenIngreso.TipoOperacion = "E"
                         OrdenIngreso.UsuarioCreacion = gUsuarioSGI.Id
                         olOrden.Eliminar(OrdenIngreso)
 
                         '' Orden Venta
+                        OrdenVenta = olOrdenComercial.Obtener(New e_OrdenVenta With {.Id = IdCalibracion})
                         OrdenVenta.TipoOperacion = "Y"
                         OrdenVenta.UsuarioCrea = gUsuarioSGI.Id
                         olOrdenComercial.EliminarExtornar(OrdenVenta)
@@ -2675,6 +2675,14 @@ Public Class frm_Calibraciones
             'oeOrdDocumento.TipoOrden = 2
             'oeOrdDocumento = olOrdDocumento.Obtener(oeOrdDocumento)
             'If oeOrdDocumento.Id <> "" Then Throw New Exception("Cuenta con un documento asociado, no es posible anularla")
+
+            '' Registro Consumo Combustible (Salida)
+            Dim RegistroConsumoCombustible As New e_RegistroConsumoCombustible, olRegConsumoCombustible As New l_RegistroConsumoCombustible
+            RegistroConsumoCombustible = olRegConsumoCombustible.Obtener(New e_RegistroConsumoCombustible With {.TipoOperacion = "V", .NroVale = oeOrdenComercial.Id})
+            RegistroConsumoCombustible.TipoOperacion = "E"
+            RegistroConsumoCombustible.UsuarioCreacion = gUsuarioSGI.Id
+            olRegConsumoCombustible.Eliminar(RegistroConsumoCombustible)
+
             If olOrdenComercial.Anular(oeOrdenComercial) Then
                 Return True
             End If

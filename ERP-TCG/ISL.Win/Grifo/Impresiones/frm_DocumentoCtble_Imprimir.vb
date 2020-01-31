@@ -8,6 +8,7 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private IdDocumentoCtble As String, TipoPapel As String, ModuloEmision As String, CodigoQR As String = "", Footer As String = ""
     Private DocumentoCtble As New e_MovimientoDocumento, wr_DocumentoCtble As New l_MovimientoDocumento
+    Private ListaDocumentos As New List(Of e_MovimientoDocumento)
     Private DT1 As New DataTable, DT2 As New DataTable
     Private RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
     'Dim Qr_Code As New QRCodeEncoder
@@ -46,6 +47,10 @@ Public Class frm_DocumentoCtble_Imprimir
             BSO1.DataSource = DT1
             BSO2.DataSource = DT2
 
+            '' Complementos
+            ListaDocumentos = wr_DocumentoCtble.Listar(New e_MovimientoDocumento With {.TipoOperacion = "ASO", .Id = IdDocumentoCtble})
+            bso_Documento.DataSource = ListaDocumentos
+            udg_Documentos.DataBind()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -103,18 +108,23 @@ Public Class frm_DocumentoCtble_Imprimir
                 Select Case IdTipoDocumento
                     Case "1CH000000026" 'Factura
                         Select Case TipoPapel
-                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "A4" : Return Raiz & "rpt_FacturaVenta_A4.rdlc"
                             Case "TICKET" : Return Raiz & "rpt_FacturaVenta_Ticket.rdlc"
                         End Select
                     Case "1CH000000002" 'Boleta de Venta
                         Select Case TipoPapel
-                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "A4" : Return Raiz & "rpt_BoletaVenta_A4.rdlc"
                             Case "TICKET" : Return Raiz & "rpt_BoletaVenta_Ticket.rdlc"
                         End Select
                     Case "GCH000000001" 'Nota de Despacho
                         Select Case TipoPapel
                             Case "A4" : Return Raiz & "rpt_NotaDespacho_A4.rdlc"
                             Case "TICKET" : Return Raiz & "rpt_NotaDespacho_Ticket.rdlc"
+                        End Select
+                    Case Else
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
                         End Select
                 End Select
             Case "OV"

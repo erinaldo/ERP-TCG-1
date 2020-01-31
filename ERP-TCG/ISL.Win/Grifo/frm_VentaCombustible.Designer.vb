@@ -1859,7 +1859,6 @@ Partial Class frm_VentaCombustible
         Me.UltraGroupBox2.Size = New System.Drawing.Size(1221, 32)
         Me.UltraGroupBox2.TabIndex = 4
         Me.UltraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        Me.UltraGroupBox2.Visible = False
         '
         'btnEliminar
         '

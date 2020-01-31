@@ -25,7 +25,7 @@ Public Class d_ComprobantePagoElectronico
         Try
             Dim Lista As New List(Of e_ComprobantePagoElectronico)
             Dim ds As DataSet = ExecuteLST(item)
-            item = Nothing
+            item = New e_ComprobantePagoElectronico
             If ds.Tables.Count > 0 Then
                 For Each o_Fila As DataRow In ds.Tables(0).Rows
                     item = Cargar(o_Fila)
@@ -41,7 +41,7 @@ Public Class d_ComprobantePagoElectronico
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_LST]" _
+                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_LST" _
                 , .TipoOperacion _
                 , "" _
                 , "" _

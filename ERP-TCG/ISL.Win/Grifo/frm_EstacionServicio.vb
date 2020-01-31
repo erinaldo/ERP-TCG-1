@@ -115,14 +115,15 @@ Public Class frm_EstacionServicio
 
             '' Confirmacion
 
-            If MessageBox.Show("=========================================" & vbCrLf &
-                               "=========== DETALLES DE VENTA ===========" & vbCrLf & Environment.NewLine &
+            If MessageBox.Show("=======================================" & vbCrLf &
+                               "========= DETALLES DE VENTA ===========" & vbCrLf &
+                               "=======================================" & vbCrLf & Environment.NewLine &
                                ">>> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
                                ">>> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
                                ">>> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
                                ">>> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
                                ">>> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
-                               "=========================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
+                               "=======================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
             '' Cargar Data
             If Not fc_Cargar_OrdenVenta() Then Throw New Exception
@@ -322,14 +323,11 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.NombreClienteProveedor = cmb_Cliente.Text
                 .DatosImpresion.IdDireccion = cmb_Direccion.Value
                 .DatosImpresion.Direccion = cmb_Direccion.Text
-                .DatosImpresion.IdPiloto = cmb_Piloto.Value
-                .DatosImpresion.Piloto = cmb_Piloto.Value
-                .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
-                .DatosImpresion.Placa = cmb_Vehiculo.Text
-                .DatosImpresion.IdMedioPago = "1CH03"
-                .DatosImpresion.MedioPago = "CONTADO"
-                .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
-                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
+                .DatosImpresion.Piloto = cmb_Piloto.Text : .DatosImpresion.IdPiloto = cmb_Piloto.Value
+                .DatosImpresion.Placa = cmb_Vehiculo.Text : .DatosImpresion.IdVechiculo = cmb_Vehiculo.Value
+                .DatosImpresion.MedioPago = "CONTADO" : .DatosImpresion.IdMedioPago = "1CH03"
+                .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto : .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
+                .DatosImpresion.Kilometraje = nud_Kilometraje.Value
                 .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2)
                 .DatosImpresion.HashResumen = ""
                 .DatosImpresion.HashSunat = ""
@@ -778,7 +776,7 @@ Public Class frm_EstacionServicio
 
             '' =========================================================================== 
             '' Emision de CPE
-            If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
+            'If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
         Catch ex As Exception
             Throw ex
         End Try
@@ -1048,13 +1046,13 @@ Public Class frm_EstacionServicio
         Try
             Dim SubTotal As Double = 0, DescuentoTotal As Double = 0, Total As Double = 0
             For Each Item In OrdenVenta.lstOrdenComercialMaterial
-                SubTotal += Item.PrecioTotal
+                Total += Item.PrecioTotal
                 DescuentoTotal += Item.Dscto
-                Total += SubTotal
             Next
+            SubTotal = Total / (1 + mdblIGV)
             nud_Total.Value = Total
-            nud_Impuesto.Value = Total * mdblIGV
-            nud_SubTotal.Value = Total - (Total * mdblIGV)
+            nud_SubTotal.Value = SubTotal
+            nud_Impuesto.Value = Total - SubTotal
         Catch ex As Exception
             Throw ex
         End Try
@@ -1325,7 +1323,8 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHG000000002023", "A4", "GRIFO")
+            'gtm_Imprimir_Documento("CHG000000002023", "A4", "GRIFO")
+            gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
