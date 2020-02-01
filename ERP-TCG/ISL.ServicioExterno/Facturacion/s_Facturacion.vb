@@ -107,17 +107,17 @@ Public Class s_Facturacion
         Dim dCatalago As New d_CatalagoCodigoSunat
         Dim oeCatalago As e_CatalagoCodigoSunat
         Try
-            If dtCab.Rows(0).Item("codmon").ToString.Trim <> "SOL" Then
+            If dtCab.Rows(0).Item("cod_moneda").ToString.Trim <> "SOL" Then
                 flagME = True
             End If
             oeCatalago = New e_CatalagoCodigoSunat
-            oeCatalago.CodigoTabla = "002" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("codmon").ToString().Trim()
+            oeCatalago.CodigoTabla = "002" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("cod_moneda").ToString().Trim()
             moneda = dCatalago.Obtener(oeCatalago).CodigoSunat
             oeCatalago = New e_CatalagoCodigoSunat
-            oeCatalago.CodigoTabla = "001" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("tipcomp").ToString().Trim()
+            oeCatalago.CodigoTabla = "001" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("cod_comprob_cat_1").ToString().Trim()
             TipDoc = dCatalago.Obtener(oeCatalago).CodigoAlterno
-            flagNC = IIf(dtCab.Rows(0).Item("tipcomp").ToString().Trim = "07", True, False)
-            flagND = IIf(dtCab.Rows(0).Item("tipcomp").ToString().Trim = "08", True, False)
+            flagNC = IIf(dtCab.Rows(0).Item("cod_comprob_cat_1").ToString().Trim = "07", True, False)
+            flagND = IIf(dtCab.Rows(0).Item("cod_comprob_cat_1").ToString().Trim = "08", True, False)
             'If flagNC Then
             '    For Each drFila As DataRow In dtCab.Rows
             '        Me.CambiarSignoCabecera(drFila)
@@ -126,28 +126,28 @@ Public Class s_Facturacion
             '        Me.CambiarSignoDetalle(drFila)
             '    Next
             'End If
-            If dtCab.Rows(0).Item("nroid").ToString.Trim = "" Then
+            If dtCab.Rows(0).Item("doc_receptor").ToString.Trim = "" Then
                 Throw New Exception("No existe documento del cliente")
             End If
             oeCatalago = New e_CatalagoCodigoSunat
-            oeCatalago.CodigoTabla = "006" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("tipoid").ToString().Trim()
+            oeCatalago.CodigoTabla = "006" : oeCatalago.CodigoElemento = dtCab.Rows(0).Item("tipodoc_receptor").ToString().Trim()
             tipoid = dCatalago.Obtener(oeCatalago).CodigoSunat
             'tipoid = facturacionADObj.ObtenerCodigoSunatPorCodigoSistema("006", dtCab.Rows(0).Item("tipoid"))
             If tipoid.Trim = "" Then
-                Throw New Exception("No existe tipo del documento " & dtCab.Rows(0).Item("tipoid").ToString().Trim & " del cliente")
+                Throw New Exception("No existe tipo del documento " & dtCab.Rows(0).Item("tipodoc_receptor").ToString().Trim & " del cliente")
             End If
             If TipDoc = "07" Or TipDoc = "08" Then
                 Dim oeDocumento As New e_MovimientoDocumento
                 Dim dDocumento As New d_MovimientoDocumento
-                oeDocumento.Id = dtCab.Rows(0).Item("idcomp").ToString().Trim : oeDocumento.TipoOperacion = 3
+                oeDocumento.Id = dtCab.Rows(0).Item("id").ToString().Trim : oeDocumento.TipoOperacion = 3
                 dtDocOri = dDocumento.ListarFacturacionElectronica(oeDocumento).Tables(0)
                 If dtDocOri.Rows.Count = 0 Then
-                    Throw New Exception("No existe comprobante origen para el documento :" & CType(dtCab.Rows(0).Item("seriecomp"), String) & "-" & CType(dtCab.Rows(0).Item("corrcomp"), String))
+                    Throw New Exception("No existe comprobante origen para el documento :" & CType(dtCab.Rows(0).Item("serie_doc2"), String) & "-" & CType(dtCab.Rows(0).Item("nro_doc2"), String))
                 End If
             End If
             oeCatalago = New e_CatalagoCodigoSunat
             oeCatalago.CodigoTabla = "017" : oeCatalago.CodigoElemento = "001"
-            nombre = dCatalago.Obtener(oeCatalago).Descripcion & "-" & TipDoc.Trim() & "-" & dtCab.Rows(0).Item("seriecomp").ToString().Trim() & "-" & dtCab.Rows(0).Item("corrcomp").ToString().Trim()
+            nombre = dCatalago.Obtener(oeCatalago).Descripcion & "-" & TipDoc.Trim() & "-" & dtCab.Rows(0).Item("serie_doc2").ToString().Trim() & "-" & dtCab.Rows(0).Item("nro_doc2").ToString().Trim()
             'nombre = facturacionADObj.ObtenerDescripcionPorCodigoSistema("017", "001") & "-" & TipDoc.Trim() & "-" & dtCab.Rows(0).Item("seriecomp").ToString().Trim() & "-" & dtCab.Rows(0).Item("corrcomp").ToString().Trim()
             settings.Indent = True
             ' Create XmlWriter.
@@ -188,7 +188,7 @@ Public Class s_Facturacion
                 writer.WriteEndDocument()
             End Using
             Me.AgregarFirma(rutaFE, nombre, valorResumen, firma, False, TipDoc)
-            Me.ValidarXML(rutaFE, nombre, dtCab.Rows(0).Item("tipcomp"))
+            'Me.ValidarXML(rutaFE, nombre, dtCab.Rows(0).Item("cod_comprob_cat_1"))
             If esLote Then
                 Dim xmlDoc As XmlDocument = New XmlDocument()
                 xmlDoc.PreserveWhitespace = True
@@ -242,17 +242,17 @@ Public Class s_Facturacion
             '    MontoExonerado = CType(dtCab.Rows(0).Item("valoperexoneradas"), Double)
             '    MontoBonificacion = CType(dtCab.Rows(0).Item("valopergratuitas"), Double)
             'End If
-            MontoGravado = CType(dtCab.Rows(0).Item("valopergravadas"), Double)
-            MontoInafecto = CType(dtCab.Rows(0).Item("valoperinafectas"), Double)
-            MontoExonerado = CType(dtCab.Rows(0).Item("valoperexoneradas"), Double)
-            MontoBonificacion = CType(dtCab.Rows(0).Item("valopergratuitas"), Double)
-            MontoDetraccion = CType(dtCab.Rows(0).Item("Detraccion"), Double)
+            MontoGravado = CType(dtCab.Rows(0).Item("valor_venta"), Double)
+            MontoInafecto = CType(dtCab.Rows(0).Item("montaf_inafecto"), Double)
+            MontoExonerado = CType(dtCab.Rows(0).Item("montaf_exonerado"), Double)
+            MontoBonificacion = CType(dtCab.Rows(0).Item("montbas_gratuito"), Double)
+            MontoDetraccion = CType(dtCab.Rows(0).Item("monto_detrac"), Double)
 
-            If MontoGravado > 0 Or CType(dtCab.Rows(0).Item("Monto_Anticipo"), Double) > 0 Then
+            If MontoGravado > 0 Or CType(dtCab.Rows(0).Item("monto_anticipo"), Double) > 0 Then
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "014" : oeCatalago.CodigoElemento = "001"
                 'writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, facturacionObjAD.ObtenerCodigoSunatPorCodigoSistema("014", "001"), moneda, MontoGravado)
-                writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, (MontoGravado + CType(dtCab.Rows(0).Item("Monto_Anticipo"), Double)))
+                writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, (MontoGravado + CType(dtCab.Rows(0).Item("monto_anticipo"), Double)))
             End If
 
             If MontoInafecto > 0 Then
@@ -272,10 +272,10 @@ Public Class s_Facturacion
             If MontoDetraccion > 0 Then
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "014" : oeCatalago.CodigoElemento = "006"
-                writer = Me.ObtenerConceptoTributario2(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, MontoDetraccion, CType(dtCab.Rows(0).Item("PorcDetraccion"), Double))
+                writer = Me.ObtenerConceptoTributario2(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, MontoDetraccion, CType(dtCab.Rows(0).Item("porc_detrac"), Double))
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "015" : oeCatalago.CodigoElemento = "007"
-                writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, dtCab.Rows(0).Item("TipoBien").ToString)
+                writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, dtCab.Rows(0).Item("cod_detrac").ToString)
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "017" : oeCatalago.CodigoElemento = "014"
                 CuentaDetraccion = dCatalago.Obtener(oeCatalago).Descripcion
@@ -284,9 +284,9 @@ Public Class s_Facturacion
                 writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, CuentaDetraccion)
             End If
 
-            
 
-            If CType(dtCab.Rows(0).Item("descom"), Double) > 0 Then
+
+            If CType(dtCab.Rows(0).Item("monto_d"), Double) > 0 Then
                 'If flagME Then
                 '    oeCatalago = New e_CatalagoCodigoSunat
                 '    oeCatalago.CodigoTabla = "014" : oeCatalago.CodigoElemento = "008"
@@ -301,7 +301,7 @@ Public Class s_Facturacion
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "014" : oeCatalago.CodigoElemento = "008"
                 'writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, facturacionObjAD.ObtenerCodigoSunatPorCodigoSistema("014", "008"), moneda, CType(dtCab.Rows(0).Item("descom"), Double))
-                writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, CType(dtCab.Rows(0).Item("descom"), Double))
+                writer = Me.ObtenerConceptoTributario(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, moneda, CType(dtCab.Rows(0).Item("monto_d"), Double))
             End If
 
             If CType(dtCab.Rows(0).Item("estransgratuita"), Boolean) Then
@@ -318,7 +318,7 @@ Public Class s_Facturacion
                 'writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, facturacionObjAD.ObtenerCodigoSunatPorCodigoSistema("015", "002"), "TRANSFERENCIA GRATUITA")
                 writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, dCatalago.Obtener(oeCatalago).CodigoSunat, "TRANSFERENCIA GRATUITA")
             Else
-                MontoLetras = numeroALetras.gfc_Convertir(CType(dtCab.Rows(0).Item("importeventa"), Double))
+                MontoLetras = numeroALetras.gfc_Convertir(CType(dtCab.Rows(0).Item("precio_venta"), Double))
                 oeCatalago = New e_CatalagoCodigoSunat
                 oeCatalago.CodigoTabla = "015" : oeCatalago.CodigoElemento = "001"
                 'writer = Me.ObtenerElementosAdicionales(writer, prefixSac, cadSac, cadCbc, prefixCbc, facturacionObjAD.ObtenerCodigoSunatPorCodigoSistema("015", "001"), MontoLetras)
@@ -420,7 +420,7 @@ Public Class s_Facturacion
             '<cbc:IssueDate>2012-03-14</cbc:IssueDate>
             writer.WriteElementString("IssueDate", cadCbc, CType(fechaGeneracion, Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(fechaGeneracion, Date).Month.ToString().PadLeft(2, "0").Trim() & "-" & CType(fechaGeneracion, Date).Day.ToString().PadLeft(2, "0").Trim())
         Else
-            writer.WriteElementString("ID", cadCbc, dtCab.Rows(0).Item("seriecomp").ToString().Trim() & "-" & dtCab.Rows(0).Item("corrcomp").ToString().Trim())
+            writer.WriteElementString("ID", cadCbc, dtCab.Rows(0).Item("serie_doc2").ToString().Trim() & "-" & dtCab.Rows(0).Item("nro_doc2").ToString().Trim())
             '<cbc:IssueDate>2012-03-14</cbc:IssueDate>
             writer.WriteElementString("IssueDate", cadCbc, CType(dtCab.Rows(0).Item("feccomp"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Day.ToString().PadLeft(2, "0").Trim())
             If flagNC Or flagND Then
@@ -476,7 +476,7 @@ Public Class s_Facturacion
                 '<cac:OrderReference>
                 writer.WriteStartElement(prefixCac, "OrderReference", cadCac)
                 '<cbc:ID>456785969</cbc:ID>
-                writer.WriteElementString("ID", cadCbc, dtCab.Rows(0).Item("nro_oc").ToString)
+                writer.WriteElementString("ID", cadCbc, dtCab.Rows(0).Item("orden_compra").ToString)
                 '</cac:OrderReference>
                 writer.WriteEndElement()
             End If
@@ -604,15 +604,15 @@ Public Class s_Facturacion
             '<cac:AccountingCustomerParty> Datos Cliente
             writer.WriteStartElement(prefixCac, "AccountingCustomerParty", cadCac)
             '<cbc:CustomerAssignedAccountID>20587896411</cbc:CustomerAssignedAccountID>
-            writer.WriteElementString("CustomerAssignedAccountID", cadCbc, dtCab.Rows(0).Item("nroid").ToString().Trim())
+            writer.WriteElementString("CustomerAssignedAccountID", cadCbc, dtCab.Rows(0).Item("doc_receptor").ToString().Trim())
             '<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
-            writer.WriteElementString("AdditionalAccountID", cadCbc, dtCab.Rows(0).Item("tipoid").ToString().Trim())
+            writer.WriteElementString("AdditionalAccountID", cadCbc, dtCab.Rows(0).Item("tipodoc_receptor").ToString().Trim())
             '<cac:Party>
             writer.WriteStartElement(prefixCac, "Party", cadCac)
             '<cac:PartyLegalEntity>
             writer.WriteStartElement(prefixCac, "PartyLegalEntity", cadCac)
             '<cbc:RegistrationName>SERVICABINAS S.A.</cbc:RegistrationName>
-            writer.WriteElementString("RegistrationName", cadCbc, dtCab.Rows(0).Item("razonsocial").ToString().Trim())
+            writer.WriteElementString("RegistrationName", cadCbc, dtCab.Rows(0).Item("empresa_receptor").ToString().Trim())
             '</cac:PartyLegalEntity>
             writer.WriteEndElement()
             '</cac:Party>
@@ -620,7 +620,7 @@ Public Class s_Facturacion
             '</cac:AccountingSupplierParty>
             writer.WriteEndElement()
             '
-            If CType(dtCab.Rows(0).Item("Monto_Anticipo"), Double) > 0 And Not dtAnt Is Nothing Then
+            If CType(dtCab.Rows(0).Item("monto_anticipo"), Double) > 0 And Not dtAnt Is Nothing Then
                 For Each anticipo In dtAnt.Rows
                     '<cac:PrepaidPayment> Datos de Anticipo
                     writer.WriteStartElement(prefixCac, "PrepaidPayment", cadCac)
@@ -643,7 +643,7 @@ Public Class s_Facturacion
                     writer.WriteEndElement()
                 Next
             End If
-            If CType(dtCab.Rows(0).Item("igv"), Double) > 0 Then
+            If CType(dtCab.Rows(0).Item("total_impuestos"), Double) > 0 Then
                 '<cac:TaxTotal>
                 writer.WriteStartElement(prefixCac, "TaxTotal", cadCac)
                 '<cbc:TaxAmount currencyID="PEN">62675.85</cbc:TaxAmount>
@@ -654,7 +654,7 @@ Public Class s_Facturacion
                 'Else
                 '    writer.WriteValue(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2"))
                 'End If
-                writer.WriteValue(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2"))
+                writer.WriteValue(CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2"))
                 writer.WriteEndElement()
                 '<cac:TaxSubtotal>
                 writer.WriteStartElement(prefixCac, "TaxSubtotal", cadCac)
@@ -666,7 +666,7 @@ Public Class s_Facturacion
                 'Else
                 '    writer.WriteValue(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2"))
                 'End If
-                writer.WriteValue(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2"))
+                writer.WriteValue(CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2"))
                 writer.WriteEndElement()
                 '<cac:TaxCategory>
                 writer.WriteStartElement(prefixCac, "TaxCategory", cadCac)
@@ -701,7 +701,7 @@ Public Class s_Facturacion
                 '<cac:LegalMonetaryTotal>
                 writer.WriteStartElement(prefixCac, "LegalMonetaryTotal", cadCac)
             End If
-            If CType(dtCab.Rows(0).Item("descom"), Double) > 0 Then
+            If CType(dtCab.Rows(0).Item("monto_d"), Double) > 0 Then
                 '<cbc:AllowanceTotalAmount currencyID="PEN">7000.00</cbc:AllowanceTotalAmount> 
                 writer.WriteStartElement(prefixCbc, "AllowanceTotalAmount", cadCbc)
                 writer.WriteAttributeString("currencyID", CodMon)
@@ -710,7 +710,7 @@ Public Class s_Facturacion
                 'Else
                 '    writer.WriteValue(CType(dtCab.Rows(0).Item("descom"), Double).ToString("F2"))
                 'End If
-                writer.WriteValue(CType(dtCab.Rows(0).Item("descom"), Double).ToString("F2"))
+                writer.WriteValue(CType(dtCab.Rows(0).Item("monto_d"), Double).ToString("F2"))
                 writer.WriteEndElement()
                 ''<cbc:ChargeTotalAmount currencyID="PEN">80680.13</cbc:AllowanceTotalAmount>
                 'writer.WriteStartElement(prefixCbc, "ChargeTotalAmount", cadCbc)
@@ -722,17 +722,17 @@ Public Class s_Facturacion
                 'End If
                 'writer.WriteEndElement()
             End If
-            If CType(dtCab.Rows(0).Item("Monto_Anticipo"), Double) > 0 And Not dtAnt Is Nothing Then
+            If CType(dtCab.Rows(0).Item("monto_anticipo"), Double) > 0 And Not dtAnt Is Nothing Then
                 '<cbc:PayableAmount currencyID="PEN">423225.00</cbc:PayableAmount>
                 writer.WriteStartElement(prefixCbc, "PrepaidAmount", cadCbc)
                 writer.WriteAttributeString("currencyID", CodMon)
-                writer.WriteValue(CType(dtCab.Rows(0).Item("Monto_Anticipo"), Double).ToString("F2"))
+                writer.WriteValue(CType(dtCab.Rows(0).Item("monto_anticipo"), Double).ToString("F2"))
                 writer.WriteEndElement()
             End If
             '<cbc:PayableAmount currencyID="PEN">423225.00</cbc:PayableAmount>
             writer.WriteStartElement(prefixCbc, "PayableAmount", cadCbc)
             writer.WriteAttributeString("currencyID", CodMon)
-            writer.WriteValue(CType(dtCab.Rows(0).Item("importeventa"), Double).ToString("F2"))
+            writer.WriteValue(CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2"))
             writer.WriteEndElement()
             '</cac:LegalMonetaryTotal>
             writer.WriteEndElement()
@@ -766,14 +766,14 @@ Public Class s_Facturacion
             writer.WriteStartElement(prefixCbc, "InvoicedQuantity", cadCbc)
         End If
         oeCatalago = New e_CatalagoCodigoSunat
-        oeCatalago.CodigoTabla = "003" : oeCatalago.CodigoElemento = CType(drFila.Item("um").ToString().Trim(), String)
+        oeCatalago.CodigoTabla = "003" : oeCatalago.CodigoElemento = CType(drFila.Item("unidad").ToString().Trim(), String)
         'um = facturacionADObj.ObtenerCodigoSunatPorCodigoSistema("003", CType(drFila.Item("um").ToString().Trim(), String)).Trim()
         um = dCatalago.Obtener(oeCatalago).CodigoSunat
         If um.Trim = "" Then
             um = "NIU"
         End If
         writer.WriteAttributeString("unitCode", um)
-        writer.WriteValue(drFila.Item("cantped"))
+        writer.WriteValue(drFila.Item("cantidad"))
         writer.WriteEndElement()
         '<cbc:LineExtensionAmount currencyID="PEN">149491.53</cbc:LineExtensionAmount>
         writer.WriteStartElement(prefixCbc, "LineExtensionAmount", cadCbc)
@@ -783,7 +783,7 @@ Public Class s_Facturacion
         'Else
         '    writer.WriteValue(CType(drFila.Item("valorventa"), Double).ToString("F2"))
         'End If
-        writer.WriteValue(CType(drFila.Item("valorventa"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("valor_venta"), Double).ToString("F2"))
         writer.WriteEndElement()
         '<cac:PricingReference>
         writer.WriteStartElement(prefixCac, "PricingReference", cadCac)
@@ -797,7 +797,7 @@ Public Class s_Facturacion
         'Else
         '    writer.WriteValue(CType(drFila.Item("preuni"), Double).ToString("F2"))
         'End If
-        writer.WriteValue(CType(drFila.Item("preuni"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("precio_venta"), Double).ToString("F2"))
         writer.WriteEndElement()
         '<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
         oeCatalago = New e_CatalagoCodigoSunat
@@ -817,7 +817,7 @@ Public Class s_Facturacion
             'Else
             '    writer.WriteValue(CType(drFila.Item("valorunitario"), Double).ToString("F2"))
             'End If
-            writer.WriteValue(CType(drFila.Item("valorunitario"), Double).ToString("F2"))
+            writer.WriteValue(CType(drFila.Item("precio_unit"), Double).ToString("F2"))
             writer.WriteEndElement()
             '<cbc:PriceTypeCode>02</cbc:PriceTypeCode>
             oeCatalago = New e_CatalagoCodigoSunat
@@ -840,7 +840,7 @@ Public Class s_Facturacion
         'Else
         '    writer.WriteValue(CType(drFila.Item("igv"), Double).ToString("F2"))
         'End If
-        writer.WriteValue(CType(drFila.Item("igv"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("monto_igv"), Double).ToString("F2"))
         writer.WriteEndElement()
         '<cac:TaxSubtotal>
         writer.WriteStartElement(prefixCac, "TaxSubtotal", cadCac)
@@ -852,12 +852,12 @@ Public Class s_Facturacion
         'Else
         '    writer.WriteValue(CType(drFila.Item("igv"), Double).ToString("F2"))
         'End If
-        writer.WriteValue(CType(drFila.Item("igv"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("monto_igv"), Double).ToString("F2"))
         writer.WriteEndElement()
         '<cac:TaxCategory>
         writer.WriteStartElement(prefixCac, "TaxCategory", cadCac)
         '<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
-        writer.WriteElementString("TaxExemptionReasonCode", cadCbc, drFila.Item("afectacionigv").ToString().Trim())
+        writer.WriteElementString("TaxExemptionReasonCode", cadCbc, drFila.Item("codigo_imp").ToString().Trim())
         '<cac:TaxScheme>
         writer.WriteStartElement(prefixCac, "TaxScheme", cadCac)
         '<cbc:ID>1000</cbc:ID>
@@ -887,12 +887,12 @@ Public Class s_Facturacion
         '<cac:Item>
         writer.WriteStartElement(prefixCac, "Item", cadCac)
         '<cbc:Description>Grabadora LG Externo Modelo: GE20LU10</cbc:Description>
-        writer.WriteElementString("Description", cadCbc, drFila.Item("desart").ToString().Trim())
-        If drFila.Item("codart").ToString().Trim() <> "" Then
+        writer.WriteElementString("Description", cadCbc, drFila.Item("descripcion_prodserv").ToString().Trim())
+        If drFila.Item("codigo_prodserv").ToString().Trim() <> "" Then
             '<cac:SellersItemIdentification>
             writer.WriteStartElement(prefixCac, "SellersItemIdentification", cadCac)
             '<cbc:ID>GLG199</cbc:ID>
-            writer.WriteElementString("ID", cadCbc, drFila.Item("codart").ToString().Trim())
+            writer.WriteElementString("ID", cadCbc, drFila.Item("codigo_prodserv").ToString().Trim())
             '</cac:SellersItemIdentification>
             writer.WriteEndElement()
         End If
@@ -911,7 +911,7 @@ Public Class s_Facturacion
             'Else
             '    writer.WriteValue(CType(drFila.Item("valorunitario"), Double).ToString("F2"))
             'End If
-            writer.WriteValue(CType(drFila.Item("valorunitario"), Double).ToString("F2"))
+            writer.WriteValue(CType(drFila.Item("precio_unit"), Double).ToString("F2"))
         End If
         writer.WriteEndElement()
         '</cac:Price>
@@ -932,7 +932,7 @@ Public Class s_Facturacion
 
             local_typoDocumento = TipoDoc
 
-            Dim MiCertificado As X509Certificate2 = New X509Certificate2(RutaCer & "llave_privada_isl_2016.pfx", "Induameric@", X509KeyStorageFlags.MachineKeySet)
+            Dim MiCertificado As X509Certificate2 = New X509Certificate2(RutaCer & "LLAMA-PE-CERTIFICADO-DEMO-20480099720.pfx", "123456", X509KeyStorageFlags.MachineKeySet)
             Dim xmlDoc As XmlDocument = New XmlDocument()
             xmlDoc.PreserveWhitespace = True
             xmlDoc.Load(local_xmlArchivo)
