@@ -798,7 +798,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TOTAL A COBRAR</Value>
+                <Value>TOTAL A COBRAR S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -813,9 +813,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>11.60482cm</Top>
-        <Left>2.47619cm</Left>
+        <Left>1.72677cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.96565cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>

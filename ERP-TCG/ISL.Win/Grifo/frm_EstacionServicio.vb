@@ -104,6 +104,7 @@ Public Class frm_EstacionServicio
             swConsumoInterno = IIf(IdEmpresaCliente = gs_IdClienteProveedorSistema, 1, 0)
 
             '' Validacion
+            If OrdenVenta.lstOrdenComercialMaterial.Count = 0 Then Throw New Exception("Debe agregar el detalle")
             If IdTipoDocumento = "" Then Throw New Exception("Seleccione un TIPO de documento")
             If txt_Serie.Text = "" Then Throw New Exception("Ingrese la SERIE de documento")
             If txt_Numero.Text = "" Then Throw New Exception("Ingrese el NUMERO de documento")
@@ -113,33 +114,39 @@ Public Class frm_EstacionServicio
             If IdEmpresaCliente = "1CH000000003" And nud_Total.Value >= 700 And IdTipoDocumento = "1CH000000002" Then Throw New Exception("No se puede emitir BOLETA por un importe mayor a S/ 700")
             'If swCredito = True And (OrdenVenta.Total > CuentaCorriente.Saldo + (CuentaCorriente.Saldo) * 0.1) Then Throw New Exception("El importe EXCEDE la linea de CREDITO disponible")
 
-            '' Confirmacion
+            '' Cargar Data
+            If Not fc_Cargar_OrdenVenta() Then Throw New Exception
 
+            '' Confirmacion
             If MessageBox.Show("=======================================" & vbCrLf &
                                "========= DETALLES DE VENTA ===========" & vbCrLf &
                                "=======================================" & vbCrLf & Environment.NewLine &
                                ">>> DOCUMENTO: " & TipoDocumento & " " & txt_Serie.Text & "-" & txt_Numero.Text & vbCrLf & Environment.NewLine &
                                ">>> CLIENTE: " & cmb_Cliente.Text & vbCrLf & Environment.NewLine &
-                               ">>> PRODUCTO: " & Material_Combustible & vbCrLf & Environment.NewLine &
-                               ">>> IMPORTE: S/ " & nud_Total.Value & vbCrLf & Environment.NewLine &
+                               ">>> LADO: " & sw_Lado & vbCrLf & Environment.NewLine &
+                               ">>> PRODUCTO: " & OrdenVenta.lstOrdenComercialMaterial(0).Material & vbCrLf & Environment.NewLine &
+                               ">>> CANTIDAD: " & Math.Round(OrdenVenta.lstOrdenComercialMaterial(0).Cantidad, 3) & " GLN" & vbCrLf & Environment.NewLine &
+                               ">>> IMPORTE: S/ " & Math.Round(nud_Total.Value, 2) & vbCrLf & Environment.NewLine &
                                ">>> PLACA: " & cmb_Vehiculo.Text & vbCrLf & Environment.NewLine &
                                "=======================================", "Mensaje del Sistema", MessageBoxButtons.YesNo) = DialogResult.No Then Exit Sub
 
-            '' Cargar Data
-            If Not fc_Cargar_OrdenVenta() Then Throw New Exception
+
+            '' Guardar Venta Rapida
             If Not fc_Guardar_OrdenVenta() Then Throw New Exception
 
             '' Generar la Salida
-            If swConsumoInterno Then
-                mt_Generar_ConsumoCombustible()
-            Else
-                mt_Ejecutar_OrdenSalida()
+            If IdTipoVenta <> "CALIBRACION" Then
+                If swConsumoInterno Then
+                    mt_Generar_ConsumoCombustible()
+                Else
+                    mt_Ejecutar_OrdenSalida()
+                End If
             End If
 
             '' Generar el Ingreso (Solo para Calibraciones)
-            If IdTipoVenta = "CALIBRACION" Then
-                mt_Ejecutar_OrdenIngreso()
-            End If
+            'If IdTipoVenta = "CALIBRACION" Then
+            '    mt_Ejecutar_OrdenIngreso()
+            'End If
 
             'If IdTipoDocumento <> "GCH000000001" Then 'Nota de Despacho no se emite
             If Not fc_Emitir_Documento() Then Throw New Exception
@@ -191,7 +198,7 @@ Public Class frm_EstacionServicio
     Public Function fc_Cargar_OrdenVenta() As Boolean
         Try
             udg_Detalle.UpdateData()
-            Glosa_OV = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & " //COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
+            Glosa_OV = TipoDocumentoAbrev & txt_Serie.Text & "-" & txt_Numero.Text & " //CLIENTE: " & cmb_Cliente.Text & " //COMBUSTIBLE: " & Material_Combustible & " //TOTAL: S/. " & nud_Total.Value & " //PLACA: " & cmb_Vehiculo.Text
             Glosa_Documento = txt_Glosa.Text
 
             With OrdenVenta
@@ -218,9 +225,11 @@ Public Class frm_EstacionServicio
                 .IdPiloto = cmb_Piloto.Value
                 .Kilometraje = nud_Kilometraje.Value
                 .GlosaResumen = Glosa_OV
+
                 If swConsumoInterno = False Then
                     .oeOrdenSalida = fc_Cargar_OrdenSalida()
                 End If
+
                 .oeDocumento = fc_Cargar_MovimientoDocumento()
             End With
             Return True
@@ -328,7 +337,7 @@ Public Class frm_EstacionServicio
                 .DatosImpresion.MedioPago = "CONTADO" : .DatosImpresion.IdMedioPago = "1CH03"
                 .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto : .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
                 .DatosImpresion.Kilometraje = nud_Kilometraje.Value
-                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2)
+                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(OrdenVenta.Total, 2) & " SOLES"
                 .DatosImpresion.HashResumen = ""
                 .DatosImpresion.HashSunat = ""
                 .DatosImpresion.QRCode = ""
@@ -981,7 +990,9 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Limpiar_Detalle()
         Try
-            IdMaterial_Combustible = "" : Material_Combustible = "" : Codigo_Combustible = ""
+            IdMaterial_Combustible = ""
+            Material_Combustible = ""
+            Codigo_Combustible = ""
             IdAlmacen_Combustible = ""
             IdSubAlmacen_Combustible = ""
         Catch ex As Exception
@@ -1038,7 +1049,9 @@ Public Class frm_EstacionServicio
         IdTipoPago = "1SI000000017" : IdTipoVenta = "CALIBRACION"
         mt_PaintBotones("TipoPago") : btnCalibracion.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = True
-        btnNotaDespacho.PerformClick() : txt_Serie.SelectAll() : cmb_Vehiculo.Text = "SERAFIN" : cmb_Lado.Focus()
+        btnNotaDespacho.PerformClick() : txt_Serie.SelectAll() : cmb_Lado.Focus()
+        cmb_Vehiculo.DropDownStyle = DropDownStyle.DropDown
+        cmb_Vehiculo.Text = "SERAFIN"
         mt_Calcular_DescuentoCombustible()
     End Sub
 
@@ -1172,13 +1185,13 @@ Public Class frm_EstacionServicio
             btnDB5.Text = "DB5" : btnG84.Text = "G84" : btnG90.Text = "G90" : btnG95.Text = "G95"
             Select Case IdMaterial_Combustible
                 Case "1CH000001990" 'DB5
-                    btnDB5.Text = "DB5" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                    btnDB5.Text = "DB5" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & Math.Round(nud_Importe.Value, 2)
                 Case "1CH000000147" 'G84
-                    btnG84.Text = "G84" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                    btnG84.Text = "G84" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & Math.Round(nud_Importe.Value, 2)
                 Case "1CH000000148" 'G90
-                    btnG90.Text = "G90" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                    btnG90.Text = "G90" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & Math.Round(nud_Importe.Value, 2)
                 Case "1CH000000149" 'G95
-                    btnG95.Text = "G95" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & nud_Importe.Value
+                    btnG95.Text = "G95" & vbCrLf & nud_Cantidad.Value & " Gl" & vbCrLf & "S/" & Math.Round(nud_Importe.Value, 2)
             End Select
             btnAgregarDetalle.Select()
         Catch ex As Exception
@@ -1198,7 +1211,9 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub chk_HabilitarImporte_CheckedChanged(sender As Object, e As EventArgs) Handles chk_HabilitarImporte.CheckedChanged
-        nud_Importe.ReadOnly = Not (chk_HabilitarImporte.Checked)
+        If nud_Preciounitario.Value > 0 Then
+            nud_Importe.ReadOnly = Not (chk_HabilitarImporte.Checked)
+        End If
     End Sub
 
     Private Sub btnDocumento_Click(sender As Object, e As EventArgs) Handles btnDocumento.Click
@@ -1381,6 +1396,7 @@ Public Class frm_EstacionServicio
         mt_PaintBotones("TipoPago") : btn_Contado.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = True : btnBoleta.Enabled = True : btnNotaDespacho.Enabled = False
         btnDocumento.Enabled = IIf(IdEmpresaCliente = "1CH000000003", False, True)
+        cmb_Vehiculo.DropDownStyle = DropDownStyle.DropDown
         mt_Calcular_DescuentoCombustible()
     End Sub
 
@@ -1388,6 +1404,7 @@ Public Class frm_EstacionServicio
         IdTipoPago = "1SI000000017" : IdTipoVenta = "VENTA_COMBUSTIBLE"
         mt_PaintBotones("TipoPago") : btnCredito.Appearance.BackColor = Color.Blue
         btnDocumento.Enabled = False : btnBoleta.Enabled = False : btnNotaDespacho.Enabled = True
+        cmb_Vehiculo.DropDownStyle = DropDownStyle.DropDownList
         mt_Calcular_DescuentoCombustible()
     End Sub
 
@@ -1531,16 +1548,16 @@ Public Class frm_EstacionServicio
     End Sub
     Sub Cargar_VehiculoCliente()
         ListaVehiculo = New List(Of e_Vehiculo)
-        If IdEmpresaCliente = gs_IdClienteProveedorSistema Then
-            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .TipoOperacion = "A"}))
-        Else
-            Dim eClienteProveedor As New e_ClienteProveedor
+        'If IdEmpresaCliente = gs_IdClienteProveedorSistema Then
+        '    ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IndPropiedad = 1, .TipoOperacion = "A"}))
+        'Else
+        Dim eClienteProveedor As New e_ClienteProveedor
             Dim lCliente As New l_ClienteProveedor
             eClienteProveedor.TipoOperacion = ""
             eClienteProveedor.Id = IdEmpresaCliente
             eClienteProveedor = lCliente.Obtener(eClienteProveedor)
             ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
-        End If
+        'End If
         LlenarCombo(cmb_Vehiculo, "Placa", ListaVehiculo, -1)
     End Sub
 
