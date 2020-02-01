@@ -5814,10 +5814,18 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="ComprobanteElectronico\Facturacion\C1811162057.pfx" />
-    <None Include="ComprobanteElectronico\Facturacion\MPS20161101380689.pfx" />
-    <None Include="Fotos\ComprobanteElectronico\Facturacion\C1811162057.pfx" />
-    <None Include="Fotos\ComprobanteElectronico\Facturacion\MPS20161101380689.pfx" />
+    <Content Include="ComprobanteElectronico\Facturacion\C1811162057.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ComprobanteElectronico\Facturacion\MPS20161101380689.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\ComprobanteElectronico\Facturacion\C1811162057.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fotos\ComprobanteElectronico\Facturacion\MPS20161101380689.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Fotos\eImpresion\DocElectronico.xsc">
       <DependentUpon>DocElectronico.xsd</DependentUpon>
     </None>
