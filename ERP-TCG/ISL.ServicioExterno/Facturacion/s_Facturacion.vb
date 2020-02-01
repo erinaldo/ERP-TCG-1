@@ -33,7 +33,7 @@ Public Class s_Facturacion
                 zip.AddFile(rutaFE.Trim() & nombre.Trim() & ".XML", "")
                 zip.Save(rutaFE.Trim() & nombre.Trim() & ".zip")
             End Using
-            definicion = Me.EnviarXML(rutaFE, nombre, cdrXML)
+            'definicion = Me.EnviarXML(rutaFE, nombre, cdrXML) <--
         Catch ex As Exception
             flagError = True
             Throw ex
