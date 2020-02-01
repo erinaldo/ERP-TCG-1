@@ -223,7 +223,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Direcci.:</Value>
+                <Value>Direcc:</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -425,7 +425,7 @@
         <Top>6.19626cm</Top>
         <Left>1.58566cm</Left>
         <Height>0.45cm</Height>
-        <Width>1.30309cm</Width>
+        <Width>1.8129cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -789,7 +789,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value> TOTAL A COBRAR:</Value>
+                <Value>TOTAL A COBRAR S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -804,9 +804,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>10.894cm</Top>
-        <Left>3.176cm</Left>
+        <Left>2.88875cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.50727cm</Width>
+        <Width>2.79452cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -1965,7 +1965,7 @@
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
         <Top>6.19626cm</Top>
-        <Left>3.35515cm</Left>
+        <Left>3.57495cm</Left>
         <Height>0.45cm</Height>
         <Width>1.30309cm</Width>
         <ZIndex>48</ZIndex>

@@ -23,7 +23,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PRINCIPAL: CA LORA Y LORA Nº2450 INT A PJ SANTA</Value>
+                <Value>PRINCIPAL: CA LORA Y LORA Nº2450 INT A PJ SANTA ANA</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                 </Style>
@@ -470,7 +470,7 @@
         <Top>13.36004cm</Top>
         <Left>2.04231cm</Left>
         <Height>0.67047cm</Height>
-        <Width>11.86612cm</Width>
+        <Width>11.3105cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -629,7 +629,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OTROS CARGOS</Value>
+                <Value>OTROS CARGOS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -643,9 +643,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>16.7658cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -664,7 +664,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IGV 18.00%</Value>
+                <Value>IGV 18.00% S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -678,9 +678,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>17.47157cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.4941cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -699,7 +699,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IMPORTE TOTAL</Value>
+                <Value>IMPORTE TOTAL S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -713,9 +713,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>18.14205cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.55583cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -2689,7 +2689,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TOTAL DCTOS</Value>
+                <Value>TOTAL DCTOS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2703,9 +2703,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.32476cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.48528cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -2724,7 +2724,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. GRATUITAS</Value>
+                <Value>OP. GRATUITAS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2738,9 +2738,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.98643cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.53861cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -2759,7 +2759,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. EXONERADA</Value>
+                <Value>OP. EXONERADA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2773,9 +2773,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>14.70143cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
@@ -2794,7 +2794,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. INAFECTA</Value>
+                <Value>OP. INAFECTA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2808,9 +2808,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>15.43365cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -2829,7 +2829,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. GRAVADA</Value>
+                <Value>OP. GRAVADA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2843,9 +2843,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>16.06004cm</Top>
-        <Left>14.29538cm</Left>
+        <Left>13.97788cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.24083cm</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
@@ -3048,7 +3048,7 @@
         <Top>14.2069cm</Top>
         <Left>4.19006cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.71837cm</Width>
+        <Width>9.16275cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -3109,8 +3109,8 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>16.2458cm</Top>
-        <Left>10.55783cm</Left>
+        <Top>16.7658cm</Top>
+        <Left>5.34554cm</Left>
         <Height>2.45208cm</Height>
         <Width>3.3506cm</Width>
         <ZIndex>35</ZIndex>

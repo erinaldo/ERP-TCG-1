@@ -33,8 +33,9 @@ Public Class frm_CanjeDocumentos
     Private ListaDetalleSeleccionados As New List(Of e_DetalleDocumento)
 
     Private dMovimientoDocumento As New l_MovimientoDocumento
-    Private ListaDocumentoSeleccionados As New List(Of e_MovimientoDocumento)
-    Private ListaDocumentos As New List(Of e_MovimientoDocumento)
+    Private ListaNotasDespachoSelecionadas As New List(Of e_MovimientoDocumento)
+    Private ListaNotasDespacho As New List(Of e_MovimientoDocumento)
+    Private ListaOtrosDocumentos As New List(Of e_MovimientoDocumento)
     Private Documento As New e_MovimientoDocumento
     Private DocumentoOrigen As New e_MovimientoDocumento
     Private DocumentoGenerado As New e_MovimientoDocumento
@@ -89,6 +90,7 @@ Public Class frm_CanjeDocumentos
 
     Public Overrides Sub Consultar(ByVal Activo As Boolean)
         Try
+            mt_Inicializar()
             mt_Listar()
             Operacion = "Inicializa"
             mt_ControlBotoneria()
@@ -124,8 +126,12 @@ Public Class frm_CanjeDocumentos
 
     Public Overrides Sub Exportar()
         Try
-            If udg_Documentos.Rows.Count = 0 Then Throw New Exception("No hay ningún dato para exportar al Excel")
-            Exportar_Excel(udg_Documentos, Me.Text)
+            If udg_Documentos.Rows.Count = 0 Then
+                Exportar_Excel(udg_Documentos, cmb_ClienteBuscado.Text & " . Notas de Despacho")
+            End If
+            If udg_DocumentosCanjeados.Rows.Count = 0 Then
+                Exportar_Excel(udg_DocumentosCanjeados, cmb_ClienteBuscado.Text & " . Otros Documentos")
+            End If
             MyBase.Exportar()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -267,23 +273,40 @@ Public Class frm_CanjeDocumentos
         dtp_FechaEmision.Value = Date.Now
         txtSerie.Text = String.Empty
         cmbTipoDocumento.SelectedIndex = -1
-
+        tsb_Emitir.Enabled = False
+        tsb_Eliminar.Enabled = False
+        tsb_Imprimir.Enabled = False
     End Sub
 
     Private Sub mt_Listar()
         Try
             If cmb_ClienteBuscado.Value = "" Then Throw New Exception("Debe seleccionar un CLIENTE")
             Documento = New e_MovimientoDocumento
-            Documento.IdTipoDocumento = "GCH000000001"
-            Documento.TipoOperacion = "CXD"
             Documento.IdClienteProveedor = cmb_ClienteBuscado.Value
             Documento.FechaInicio = dtp_FechaDesde.Value
             Documento.FechaFinal = dtp_FechaHasta.Value
-            ListaDocumentos = dMovimientoDocumento.Listar(Documento)
-            bso_Documento.DataSource = ListaDocumentos
+
+            '' Lista de Documentos
+            Documento.TipoOperacion = "CXD"
+            ListaNotasDespacho = dMovimientoDocumento.Listar(Documento)
+            bso_Documento.DataSource = ListaNotasDespacho
             udg_Documentos.DataBind()
 
+            '' Lista de Documentos
+            Documento.TipoOperacion = "DCX"
+            ListaOtrosDocumentos = dMovimientoDocumento.Listar(Documento)
+            bso_DocumentosCanjeados.DataSource = ListaOtrosDocumentos
+            udg_DocumentosCanjeados.DataBind()
+
             For Each fila As UltraGridRow In udg_Documentos.Rows
+                Select Case fila.Cells("EstadoDocumento").Value
+                    Case "GENERADA" : fila.CellAppearance.BackColor = Color.LightBlue
+                    Case "EMITIDA" : fila.CellAppearance.BackColor = Color.LightGreen
+                    Case "ANULADO" : fila.CellAppearance.BackColor = Color.LightGray
+                End Select
+            Next
+
+            For Each fila As UltraGridRow In udg_DocumentosCanjeados.Rows
                 Select Case fila.Cells("EstadoDocumento").Value
                     Case "GENERADA" : fila.CellAppearance.BackColor = Color.LightBlue
                     Case "EMITIDA" : fila.CellAppearance.BackColor = Color.LightGreen
@@ -299,6 +322,10 @@ Public Class frm_CanjeDocumentos
 #End Region
 
 #Region "Eventos"
+
+    Private Sub txtNumero_Leave(sender As Object, e As EventArgs) Handles txt_Numero.Leave
+        If txt_Numero.Text <> "" Then txt_Numero.Text = FormatoDocumento(txt_Numero.Text, 8)
+    End Sub
 
     Private Sub frm_CanjeND_F_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         mt_ControlBotoneria()
@@ -328,14 +355,14 @@ Public Class frm_CanjeDocumentos
             udg_Documentos.UpdateData()
 
             '' Inicializa
-            ListaDocumentoSeleccionados = New List(Of e_MovimientoDocumento)
+            ListaNotasDespachoSelecionadas = New List(Of e_MovimientoDocumento)
             ListaDetalleSeleccionados = New List(Of e_DetalleDocumento)
 
             '' Agregar los documentos seleccionados
-            For Each Documento In ListaDocumentos
+            For Each Documento In ListaNotasDespacho
                 If Documento.IndAnexo = True Then
                     Seleccionados += 1
-                    ListaDocumentoSeleccionados.Add(Documento)
+                    ListaNotasDespachoSelecionadas.Add(Documento)
                     Dim ListaDetalle As New List(Of e_DetalleDocumento)
                     ListaDetalle = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
                     For Each Item In ListaDetalle
@@ -370,7 +397,7 @@ Public Class frm_CanjeDocumentos
                 cmbTipoDocumento.Focus()
                 bso_Detalle.DataSource = ListaDetalleSeleccionados
                 udg_Detalles.DataBind()
-                bso_DocumentosSeleccionados.DataSource = ListaDocumentoSeleccionados
+                bso_DocumentosSeleccionados.DataSource = ListaNotasDespachoSelecionadas
                 udg_DocumentosSeleccionados.DataBind()
                 mt_CalcularTotalOrden()
             End If
@@ -504,7 +531,7 @@ Public Class frm_CanjeDocumentos
             DocumentoOrigen = New e_MovimientoDocumento
             DocumentoGenerado = New e_MovimientoDocumento
 
-            DocumentoOrigen = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = ListaDocumentoSeleccionados(0).Id})
+            DocumentoOrigen = dMovimientoDocumento.Obtener(New e_MovimientoDocumento With {.Id = ListaNotasDespachoSelecionadas(0).Id})
             DocumentoGenerado = DocumentoOrigen.Clonar
             DocumentoGenerado.Id = String.Empty
 
@@ -592,11 +619,11 @@ Public Class frm_CanjeDocumentos
                 .DatosImpresion.Piloto = DocumentoOrigen.DatosImpresion.Piloto
                 .DatosImpresion.IdVechiculo = DocumentoOrigen.DatosImpresion.IdVechiculo
                 .DatosImpresion.Placa = DocumentoOrigen.DatosImpresion.Placa
-                .DatosImpresion.IdMedioPago = "1CH03"
-                .DatosImpresion.MedioPago = "CONTADO"
+                .DatosImpresion.IdMedioPago = cboTipoPago.Value
+                .DatosImpresion.MedioPago = cboTipoPago.Text
                 .DatosImpresion.IdTrabajador = gUsuarioSGI.IdTrabajador
                 .DatosImpresion.Trabajador = gUsuarioSGI.oePersona.NombreCompleto
-                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(Total, 2)
+                .DatosImpresion.MontoLetras = Conversiones.NumerosALetras.Ejecutar(Total, 2) & " SOLES"
                 '.DatosImpresion.HashResumen = ""
                 '.DatosImpresion.HashSunat = ""
                 '.DatosImpresion.QRCode = ""
@@ -663,7 +690,8 @@ Public Class frm_CanjeDocumentos
         Try
             ' ======================================================================================================================== >>>>>
             mt_LlenaObjeto()
-            dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaDocumentoSeleccionados)
+            DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
+            gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
@@ -698,7 +726,7 @@ Public Class frm_CanjeDocumentos
         Try
             ' ======================================================================================================================== >>>>>
             If MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3) Then
-                For Each Documento In ListaDocumentos
+                For Each Documento In ListaOtrosDocumentos
                     If Documento.IndAnexo = True Then
                         mt_EmitirDocumento(Documento.Id)
                     End If
@@ -749,11 +777,11 @@ Public Class frm_CanjeDocumentos
 
     Private Sub tsb_Eliminar_Click(sender As Object, e As EventArgs) Handles tsb_Eliminar.Click
         '' Validar
-        If udg_Documentos.Rows.Count = 0 Then Exit Sub
-        udg_Documentos.UpdateData()
+        If udg_DocumentosCanjeados.Rows.Count = 0 Then Exit Sub
+        udg_DocumentosCanjeados.UpdateData()
 
         '' Eliminar
-        For Each Documento In ListaDocumentos
+        For Each Documento In ListaOtrosDocumentos
             If Documento.IndAnexo = True Then
                 mt_Eliminar(Documento.Id)
             End If
@@ -864,11 +892,11 @@ Public Class frm_CanjeDocumentos
 
     Private Sub tsb_ImprimirA4_Click(sender As Object, e As EventArgs) Handles tsb_ImprimirA4.Click
         '' Validar
-        If udg_Documentos.Rows.Count = 0 Then Exit Sub
-        udg_Documentos.UpdateData()
+        If udg_DocumentosCanjeados.Rows.Count = 0 Then Exit Sub
+        udg_DocumentosCanjeados.UpdateData()
 
         '' Imprimir
-        For Each Documento In ListaDocumentos
+        For Each Documento In ListaOtrosDocumentos
             If Documento.IndAnexo = True Then
                 gtm_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
             End If
@@ -876,19 +904,13 @@ Public Class frm_CanjeDocumentos
 
     End Sub
 
-    Private Sub mt_Ver_Detalles()
+    Private Sub mt_Ver_Detalles(IdDocumento As String)
         Try
             ' ======================================================================================================================== >>>>>
-            With udg_Documentos
-                Documento = New e_MovimientoDocumento
-
-                If .Selected.Rows.Count > 0 Then
-                    Documento.Id = .ActiveRow.Cells("Id").Value
-                    bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
-                    udg_DetalleProductos.DataBind()
-                End If
-
-            End With
+            Documento = New e_MovimientoDocumento
+            Documento.Id = IdDocumento
+            bso_DetalleProductos.DataSource = dDetalleDocumento.Listar(New e_DetalleDocumento With {.TipoOperacion = "CSS", .IdMovimientoDocumento = Documento.Id, .IndServicioMaterial = "M"})
+            udg_DetalleProductos.DataBind()
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -896,7 +918,9 @@ Public Class frm_CanjeDocumentos
     End Sub
 
     Private Sub udg_Documentos_Click(sender As Object, e As EventArgs) Handles udg_Documentos.Click
-        mt_Ver_Detalles()
+        If udg_Documentos.Selected.Rows.Count > 0 Then
+            mt_Ver_Detalles(udg_Documentos.ActiveRow.Cells("Id").Value)
+        End If
     End Sub
 
     Private Sub udg_Detalles_CellChange(sender As Object, e As CellEventArgs) Handles udg_Detalles.CellChange
@@ -905,6 +929,26 @@ Public Class frm_CanjeDocumentos
             Case "Precio"
                 mt_CalcularTotalOrden()
         End Select
+    End Sub
+
+    Private Sub udg_DocumentosCanjeados_Click(sender As Object, e As EventArgs) Handles udg_DocumentosCanjeados.Click
+        If udg_DocumentosCanjeados.Selected.Rows.Count > 0 Then
+            mt_Ver_Detalles(udg_DocumentosCanjeados.ActiveRow.Cells("Id").Value)
+        End If
+    End Sub
+
+    Private Sub tab_Bandeja_Click(sender As Object, e As EventArgs) Handles tab_Bandeja.Click
+        If tab_Bandeja.Tabs(0).Selected Then
+            tsb_Canjear.Enabled = True
+            tsb_Emitir.Enabled = False
+            tsb_Eliminar.Enabled = False
+            tsb_Imprimir.Enabled = False
+        Else
+            tsb_Canjear.Enabled = False
+            tsb_Emitir.Enabled = True
+            tsb_Eliminar.Enabled = True
+            tsb_Imprimir.Enabled = True
+        End If
     End Sub
 
 #End Region

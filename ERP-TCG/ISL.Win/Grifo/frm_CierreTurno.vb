@@ -719,14 +719,28 @@ Public Class frm_CierreTurno
         '' Calibraciones
         mt_Ocultar_Columnas(udg_Calibraciones)
         With udg_Calibraciones.DisplayLayout.Bands(0)
+            .Columns("Grupo").Header.Caption = "Venta" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 250
             .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
-            .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+            .Columns("ValorAux1").Header.Caption = "Precio"
+            .Columns("ValorERP").Header.Caption = "Importe"
         End With
         mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorERP")
         mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorReal")
+        mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorAux1")
         CalcularTotales(udg_Calibraciones, "ValorERP", "ValorReal")
+
+        'mt_Ocultar_Columnas(udg_Calibraciones)
+        'With udg_Calibraciones.DisplayLayout.Bands(0)
+        '    .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+        '    .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
+        '    .Columns("ValorERP").Header.Caption = "Importe"
+        '    .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+        'End With
+        'mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorERP")
+        'mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorReal")
+        'CalcularTotales(udg_Calibraciones, "ValorERP", "ValorReal")
     End Sub
 
     Private Sub mt_Ocultar_Columnas(UDG As UltraGrid)

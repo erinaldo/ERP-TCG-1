@@ -23,7 +23,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PRINCIPAL: CA LORA Y LORA Nº2450 INT A PJ SANTA</Value>
+                <Value>PRINCIPAL: CA LORA Y LORA Nº2450 INT A PJ SANTA ANA</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                 </Style>
@@ -628,7 +628,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OTROS CARGOS</Value>
+                <Value>OTROS CARGOS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -642,9 +642,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>16.59917cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -663,7 +663,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IGV 18.00%</Value>
+                <Value>IGV 18.00% S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -677,9 +677,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>17.30494cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.4941cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>18</ZIndex>
         <Style>
           <Border>
@@ -698,7 +698,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IMPORTE TOTAL</Value>
+                <Value>IMPORTE TOTAL S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -712,9 +712,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>17.97542cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.55583cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -2691,7 +2691,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TOTAL DCTOS</Value>
+                <Value>TOTAL DCTOS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2705,9 +2705,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.15813cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.48528cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -2726,7 +2726,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. GRATUITAS</Value>
+                <Value>OP. GRATUITAS S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2740,9 +2740,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.8198cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.53861cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -2761,7 +2761,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. EXONERADA</Value>
+                <Value>OP. EXONERADA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2775,9 +2775,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>14.5348cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
@@ -2796,7 +2796,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. INAFECTA</Value>
+                <Value>OP. INAFECTA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2810,9 +2810,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>15.26702cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -2831,7 +2831,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>OP. GRAVADA</Value>
+                <Value>OP. GRAVADA S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontWeight>Bold</FontWeight>
@@ -2845,9 +2845,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>15.89341cm</Top>
-        <Left>14.5065cm</Left>
+        <Left>14.32129cm</Left>
         <Height>0.52938cm</Height>
-        <Width>2.92333cm</Width>
+        <Width>3.10854cm</Width>
         <ZIndex>27</ZIndex>
         <Style>
           <Border>
