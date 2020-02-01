@@ -5814,6 +5814,74 @@
     <Content Include="Fotos\tessdata\eng.word-dawg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="ComprobanteElectronico\Certificado\C1811162057.pfx" />
+    <None Include="ComprobanteElectronico\Certificado\CERTIFICADO CLAVE PUBLICA SUNAT.cer" />
+    <None Include="ComprobanteElectronico\Certificado\LLAMA-PE-CERTIFICADO-DEMO-20480099720.pfx" />
+    <None Include="ComprobanteElectronico\Certificado\MPS20161101380689.pfx" />
+    <None Include="ComprobanteElectronico\Facturacion\C1811162057.pfx" />
+    <None Include="ComprobanteElectronico\Facturacion\MPS20161101380689.pfx" />
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\CCTS_CCT_SchemaModule-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\CodeList_CurrencyCode_ISO_7_04.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\CodeList_LanguageCode_ISO_7_04.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\CodeList_MIMEMediaTypeCode_IANA_7_04.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\CodeList_UnitCode_UNECE_7_04.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-CommonAggregateComponents-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-CommonBasicComponents-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-CommonExtensionComponents-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-CoreComponentParameters-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-ExtensionContentDatatype-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBL-QualifiedDatatypes-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UBLPE-SunatAggregateComponents-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\UnqualifiedDataTypeSchemaModule-2.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\common\xmldsig-core-schema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-ApplicationResponse-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-CreditNote-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-DebitNote-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-Invoice-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-SummaryDocuments-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComprobanteElectronico\Facturacion\XSD\maindoc\UBLPE-VoidedDocuments-1.0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Fotos\ComprobanteElectronico\Facturacion\C1811162057.pfx" />
+    <None Include="Fotos\ComprobanteElectronico\Facturacion\MPS20161101380689.pfx" />
     <None Include="Fotos\eImpresion\DocElectronico.xsc">
       <DependentUpon>DocElectronico.xsd</DependentUpon>
     </None>
@@ -8344,8 +8412,7 @@
     <Folder Include="bin\Debug\PLANTILLAS_SGI\" />
     <Folder Include="bin\Debug\Reportes\" />
     <Folder Include="bin\Release\" />
-    <Folder Include="ComprobanteElectronico\" />
-    <Folder Include="Fotos\ComprobanteElectronico\" />
+    <Folder Include="ComprobanteElectronico\Facturacion\dummy\" />
     <Folder Include="Libreria\" />
   </ItemGroup>
   <ItemGroup>
