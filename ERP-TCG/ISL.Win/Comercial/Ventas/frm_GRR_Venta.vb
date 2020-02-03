@@ -875,7 +875,6 @@ Public Class frm_GRR_Venta
     End Sub
 
     Private Sub mt_Inicializar()
-        'oeDocumento = New e_Documento
         oeGuiaRR = New e_GRR_Venta
 
         UltraExpandableGroupBox1.Expanded = False
