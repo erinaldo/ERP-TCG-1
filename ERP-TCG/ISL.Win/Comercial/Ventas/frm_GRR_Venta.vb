@@ -55,6 +55,10 @@ Public Class frm_GRR_Venta
     Private olGuiaRRDetalle As l_GuiaRemisionRemitente_Detalle
     Private loGuiaRRDetalle As List(Of e_GuiaRemisionRemitente_Detalle)
 
+    Private oeAlmMaterial As e_Material
+    Private olAlmMaterial As l_MaterialAlmacen
+    Private loAlmMaterial As List(Of e_Material)
+
     Private oeVehiculo As e_Vehiculo
     Private olVehiculo As l_Vehiculo
     Private loVehiculo As List(Of e_Vehiculo)
@@ -317,7 +321,6 @@ Public Class frm_GRR_Venta
     '        End If
     '    End Sub
 
-
     Private Sub txtNumero_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNumero.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
@@ -491,9 +494,201 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
+    Private Sub griAlmacenMaterial_CellChange(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.CellChange
+        Try
+            griAlmacenMaterial.UpdateData()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub griAlmacenMaterial_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles griAlmacenMaterial.AfterCellUpdate
+        Try
+            Select Case e.Cell.Column.Key
+                Case "Seleccion"
+                    With griAlmacenMaterial.DisplayLayout.Bands(0).Layout.ActiveRow
+                        If .Cells("Seleccion").Value Then
+                            .Appearance.BackColor = Color.Yellow
+                            .Appearance.ForeColor = Color.Red
+                        Else
+                            .Appearance.BackColor = Color.White
+                            .Appearance.ForeColor = Color.Black
+                        End If
+                    End With
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub griAlmacenMaterial_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs)
+        e.Cancel = True
+    End Sub
+
+    Private Sub griDetalleDocumento_BeforeRowsDeleted_1(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDetalleDocumento.BeforeRowsDeleted
+        e.Cancel = True
+    End Sub
+
+    Private Sub txtSerieDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerieDoc.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtNroDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNroDoc.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtSerieDoc_Enter(sender As Object, e As EventArgs) Handles txtSerieDoc.Enter
+        txtSerieDoc.Select(0, 4)
+        Me.txtSerieDoc.SelectAll()
+    End Sub
+
+    Private Sub txtNroDoc_Enter(sender As Object, e As EventArgs) Handles txtNroDoc.Enter
+        txtNroDoc.Select(0, 10)
+        Me.txtNroDoc.SelectAll()
+    End Sub
+
+    Private Sub txtSerieDoc_Validated(sender As Object, e As EventArgs) Handles txtSerieDoc.Validated
+        txtSerieDoc.Text = FormatoDocumento(txtSerieDoc.Text, 4)
+    End Sub
+
+    Private Sub txtNroDoc_Validated(sender As Object, e As EventArgs) Handles txtNroDoc.Validated
+        txtNroDoc.Text = FormatoDocumento(txtNroDoc.Text, 10)
+    End Sub
+
+    Private Sub griDocumento_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDocumento.BeforeRowsDeleted
+        e.Cancel = True
+    End Sub
+
+    Private Sub btnAgregarD_Click(sender As Object, e As EventArgs) Handles btnAgregarD.Click
+        Try
+            mt_AgregarMaterial()
+            mt_CalcularTotalPeso()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub btnQuitar_Click(sender As Object, e As EventArgs) Handles btnQuitarD.Click
+        Try
+            mt_QuitarMaterial()
+            mt_CalcularTotalPeso()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub txt_Material_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_Material.KeyDown
+        Try
+            If e.KeyCode = Keys.Enter Then
+                mt_ListarMateriales()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub UltraButton1_Click(sender As Object, e As EventArgs) Handles UltraButton1.Click
+        Try
+            mt_ListarMateriales()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
+    Private Sub griDetalleDocumento_CellChange(sender As Object, e As CellEventArgs) Handles griDetalleDocumento.CellChange
+        griDetalleDocumento.UpdateData()
+    End Sub
+
+    Private Sub griDetalleDocumento_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles griDetalleDocumento.AfterCellUpdate
+        Try
+            'If griDetalleDocumento.Rows.Count > 0 Then
+            '    Select Case e.Cell.Column.Key
+            'End If
+            mt_CalcularTotalPeso()
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+    End Sub
+
 #End Region
 
 #Region "Metodos"
+
+    Private Sub mt_CalcularTotalPeso()
+        Try
+            Dim mn_TotalPeso As Double = 0
+            For Each detalle In loGuiaRRDetalle.Where(Function(i) i.TipoOperacion <> "E").ToList
+                mn_TotalPeso += detalle.Peso * detalle.Cantidad
+            Next
+            une_Peso.Value = mn_TotalPeso
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_AgregarMaterial()
+        Try
+            For Each detalle In loGuiaRRDetalle.Where(Function(i) i.TipoOperacion <> "E").ToList
+                For Each oe As e_Material In loAlmMaterial.Where(Function(i) i.Seleccion = True).ToList
+                    If detalle.IdMaterial = oe.Id Then
+                        Throw New Exception("Material: " & oe.Nombre & ". Ya Agregado a la Guia")
+                    End If
+                Next
+            Next
+            For Each oe As e_Material In loAlmMaterial.Where(Function(i) i.Seleccion = True).ToList
+                oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
+                With oeGuiaRRDetalle
+                    .TipoOperacion = "I"
+                    .IdEmpresaSis = gs_IdEmpresaSistema
+                    .IdSucursal = gs_IdSucursal
+                    .PrefijoID = gs_PrefijoIdSucursal
+                    .IdMaterial = oe.Id
+                    .CodigoMaterial = oe.Codigo
+                    .Material = oe.Nombre
+                    .IdUnidadMedida = oe.IdUnidadMedida
+                    .Cantidad = 1
+                    .Peso = oe.Peso
+                    .UsuarioCrea = gUsuarioSGI.Id
+                End With
+                loGuiaRRDetalle.Add(oeGuiaRRDetalle)
+            Next
+            griDetalleDocumento.DataSource = loGuiaRRDetalle
+            griDetalleDocumento.DataBind()
+            mt_CombosGrilla()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_QuitarMaterial()
+        Try
+            If griDetalleDocumento.Selected.Rows.Count > 0 Then
+                oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
+                oeGuiaRRDetalle = griDetalleDocumento.ActiveRow.ListObject
+                If oeGuiaRRDetalle.TipoOperacion = "I" Then
+                    loGuiaRRDetalle.Remove(oeGuiaRRDetalle)
+                Else
+                    oeGuiaRRDetalle.TipoOperacion = "E"
+                    griDetalleDocumento.ActiveRow.Hidden = True
+                End If
+            End If
+            griDetalleDocumento.DataBind()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
     Private Sub mt_ImprimirGRR_Venta(Id As String)
         Try
@@ -669,8 +864,10 @@ Public Class frm_GRR_Venta
                     .Columns("Peso").Header.VisiblePosition = 4
                 End With
                 FormatoColumna(griDetalleDocumento, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Cantidad", "Peso")
-
+                .DisplayLayout.Override.AllowUpdate = DefaultableBoolean.True
                 .DisplayLayout.Override.CellClickAction = CellClickAction.RowSelect
+                .DisplayLayout.Bands(0).Columns("Cantidad").CellActivation = Activation.AllowEdit
+                .DisplayLayout.Bands(0).Columns("Cantidad").CellClickAction = CellClickAction.EditAndSelectText
             End With
         Catch ex As Exception
             Throw ex
@@ -680,6 +877,11 @@ Public Class frm_GRR_Venta
     Private Sub mt_Inicializar()
         'oeDocumento = New e_Documento
         oeGuiaRR = New e_GRR_Venta
+
+        UltraExpandableGroupBox1.Expanded = False
+
+        loAlmMaterial = New List(Of e_Material)
+        griAlmacenMaterial.DataSource = loAlmMaterial
 
         oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
         loGuiaRRDetalle = New List(Of e_GuiaRemisionRemitente_Detalle)
@@ -698,6 +900,10 @@ Public Class frm_GRR_Venta
 
         cboTransportista.DataSource = Nothing
         cboTransportista.Text = String.Empty
+
+        gmt_ListarEmpresa("6", cboTransportista, gs_IdClienteProveedorSistema, False)
+        cboTransportista.Value = gs_IdClienteProveedorSistema
+
         cmbVehiculo.SelectedIndex = -1
         cmbVehiculo.Text = String.Empty
         txtMarcaVehiculo.Text = String.Empty
@@ -744,7 +950,7 @@ Public Class frm_GRR_Venta
         'olDetalleDocumento = New l_DetalleDocumento
         'olOrdenDocumento = New l_OrdenDocumento
         'olDetalleOrden = New l_DetalleOrden
-        'olAlmMaterial = New l_AlmacenMaterial
+        olAlmMaterial = New l_MaterialAlmacen
         'olCombo = New l_Combo
         olGuiaRR = New l_GRR_Venta
         olVehiculo = New l_Vehiculo
@@ -918,7 +1124,7 @@ Public Class frm_GRR_Venta
 
     Public Sub mt_CargarOrden_OrdenVenta(OrdenVenta As e_OrdenVenta)
         Try
-            Dim TotalPeso As Double = 0
+            'Dim TotalPeso As Double = 0
             olCombo = New l_Combo
             mt_Inicializar()
             gmt_MostrarTabs(1, ficGuiaRR, 1)
@@ -945,14 +1151,14 @@ Public Class frm_GRR_Venta
                     .Peso = detalle.CantidadReal
                     .UsuarioCrea = gUsuarioSGI.Id
                 End With
-                TotalPeso += oeGuiaRRDetalle.Peso
+
                 loGuiaRRDetalle.Add(oeGuiaRRDetalle)
             Next
 
             griDetalleDocumento.DataSource = loGuiaRRDetalle
             griDetalleDocumento.DataBind()
 
-            une_Peso.Value = TotalPeso
+            mt_CalcularTotalPeso()
 
             mt_CombosGrilla()
 
@@ -1068,11 +1274,11 @@ Public Class frm_GRR_Venta
             If txtNroLicencia.Text.Trim = String.Empty Then Throw New Exception("Ingrese Brevete del Conductor")
             If cboTransportista.Value = gs_IdClienteProveedorSistema Then
                 If cmbVehiculo.SelectedIndex = -1 Then Throw New Exception("Seleccione Traco")
-                If cboCarreta.SelectedIndex = -1 Then Throw New Exception("Seleccione Carreta")
+                'If cboCarreta.SelectedIndex = -1 Then Throw New Exception("Seleccione Carreta")
                 If cboChofer.SelectedRow Is Nothing Then Throw New Exception("Seleccione Conductor")
             Else
                 If cmbVehiculo.Text.Trim = String.Empty Then Throw New Exception("Ingrese Tracto")
-                If cboCarreta.Text.Trim = String.Empty Then Throw New Exception("Ingrese Carreta")
+                'If cboCarreta.Text.Trim = String.Empty Then Throw New Exception("Ingrese Carreta")
                 If cboChofer.Text.Trim = String.Empty Then Throw New Exception("Ingrese Conductor")
             End If
             If loGuiaRRDetalle.Sum(Function(i) i.Peso) = 0 Then Throw New Exception("El Peso No Puede Ser 0.00")
@@ -1133,198 +1339,16 @@ Public Class frm_GRR_Venta
         End Try
     End Sub
 
-    '    Private Sub mt_ListarMateriales()
-    '        Try
-    '            If txtMaterial.Text = String.Empty Then Throw New Exception("Escriba Nombre del Material")
-    '            oeAlmMaterial = New e_AlmacenMaterial
-    '            loAlmMaterial = New List(Of e_AlmacenMaterial)
-    '            With oeAlmMaterial
-    '                .TipoOperacion = "1"
-    '                .IdEmpresaSis = gstrIdEmpresaSis
-    '                .IdSucursal = gstrIdSucursal
-    '                If chbBuscarCod.Checked Then
-    '                    .CodigoMaterial = txtMaterial.Text
-    '                Else
-    '                    .Material = txtMaterial.Text
-    '                End If
-    '                loAlmMaterial.AddRange(olAlmMaterial.Listar(oeAlmMaterial))
-    '                griAlmacenMaterial.DataSource = loAlmMaterial
-    '            End With
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
-
-    '    Public Sub mt_QuitarMaterial()
-    '        Try
-    '            If griDetalleDocumento.Selected.Rows.Count > 0 Then
-    '                oeDetalleDocumento = New e_DetalleDocumento
-    '                oeDetalleDocumento = griDetalleDocumento.ActiveRow.ListObject
-    '                If oeDetalleDocumento.TipoOperacion = "I" Then
-    '                    loDetalleDocumento.Remove(oeDetalleDocumento)
-    '                    griDetalleDocumento.DataSource = loDetalleDocumento
-    '                Else
-    '                    oeDetalleDocumento.TipoOperacion = "E"
-    '                    griDetalleDocumento.ActiveRow.Hidden = True
-    '                End If
-    '            End If
-    '            griDetalleDocumento.DataBind()
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
-
-    '    Public Sub mt_TransponerOrdenDocumento(oeOrden As e_Orden)
-    '        Try
-    '            Dim oeEmpresa As New e_Empresa
-    '            Dim olEmpresa As New l_Empresa
-    '            mt_IniciarFormulario()
-    '            Nuevo()
-    '            oeOrdenSalida = New e_Orden
-    '            oeOrdenSalida = oeOrden
-    '            mt_AgregarOrden()
-    '            Me.txtSerie.Focus()
-    '            Me.cmbMotivoTraslado.SelectedIndex = 0
-    '            oeEmpresa.TipoOperacion = "CLI"
-    '            oeEmpresa.Id = oeOrdenSalida.IdEmpresa
-    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-    '            ' txtLlegada.Text = oeEmpresa.DireccionFiscal
-    '            'cboPuntoLlegada.Text=
-    '            ' txtNroBrevete.Text = oeEmpresa.NroBrevete
-    '            oeEmpresa = New e_Empresa
-    '            oeEmpresa.TipoOperacion = "LST"
-    '            oeEmpresa.Id = gstrIdEmpresa
-    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-    '            txtPartida.Text = oeEmpresa.DireccionFiscal
-    '            fc_Grias()
-
-    '            'Cargamos la Orden de Salida
-    '            loOrdenDocumento(0).NombreTipo = "ORDEN SALIDA"
-    '            griOrdenSalida.DataSource = loOrdenDocumento
-    '            gmt_OcultarColumna(griOrdenSalida, True, "IdDocumento", "IdTipoDocumento", "Fecha", "IdOrden", "TipoOrden", "TipoExistencia")
-
-
-    '            mt_CargarOrden_OrdenComercial()
-
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
-
-    '    Public Sub mt_TransponerDocumentoCtable(oeDocumento As e_Documento)
-    '        Try
-    '            Dim oeEmpresa As New e_Empresa
-    '            Dim olEmpresa As New l_Empresa
-    '            mt_IniciarFormulario()
-    '            Nuevo()
-    '            Dim oeDocumentos As e_Documento
-    '            oeDocumentos = New e_Documento
-    '            oeDocumentos = oeDocumento
-    '            ' mt_AgregarOrden()
-    '            Me.txtSerie.Focus()
-    '            Me.cmbMotivoTraslado.SelectedIndex = 0
-    '            oeEmpresa.TipoOperacion = "CLI"
-    '            oeEmpresa.Id = oeDocumentos.IdClienteProveedor
-    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-    '            '  txtLlegada.Text = oeEmpresa.DireccionFiscal
-    '            ' txtNroBrevete.Text = oeEmpresa.NroBrevete
-    '            oeEmpresa = New e_Empresa
-    '            oeEmpresa.TipoOperacion = "LST"
-    '            oeEmpresa.Id = gstrIdEmpresa
-    '            oeEmpresa = olEmpresa.Obtener(oeEmpresa)
-    '            txtPartida.Text = oeEmpresa.DireccionFiscal
-    '            txtProveedor.Text = oeDocumento.ClienteProveedor
-    '            txtProveedor.Tag = oeDocumento.IdClienteProveedor
-    '            griDetalleDocumento.DataSource = oeDocumento.lstDetalleDocumento
-    '            loDetalleDocumento = oeDocumento.lstDetalleDocumento
-
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
-
-    '    Private Sub mt_AgregarOrden()
-    '        oeOrdenDocumento = New e_OrdenDocumento
-    '        With oeOrdenDocumento
-    '            .IdOrden = oeOrdenSalida.Id
-    '            .Orden = oeOrdenSalida.Orden
-    '            .TipoOrden = 1
-    '            .TipoOperacion = "I"
-    '            .FechaOrden = oeOrdenSalida.FechaCrea
-    '            .NombreTipo = "ORDEN INGRESO"
-    '            .Proveedor = oeOrdenSalida.Empresa
-    '            .TipoExistencia = 1
-    '            .UsuarioCrea = gUsuarioEOS.Nombre
-    '        End With
-    '        Me.txtProveedor.Text = oeOrdenSalida.Empresa
-    '        Me.txtProveedor.Tag = oeOrdenSalida.IdEmpresa
-    '        Me.dtpFechaDocumento.Value = oeOrdenSalida.FechaCrea
-    '        loOrdenDocumento.Add(oeOrdenDocumento)
-    '        mt_AsociarDetallesOCM(oeOrdenDocumento.IdOrden)
-    '        griDetalleDocumento.DataBind()
-    '    End Sub
-
-    '    Private Sub mt_AsociarDetallesOCM(IdOrden As String)
-    '        Try
-    '            oeDetalleOrden = New e_DetalleOrden
-    '            loDetalleOrden = New List(Of e_DetalleOrden)
-    '            oeDetalleOrden.IdOrden = IdOrden
-    '            loDetalleOrden.AddRange(olDetalleOrden.Listar(oeDetalleOrden))
-
-    '            loGuiaRRDetalle = New List(Of e_GuiaRemisionRemitente_Detalle)
-    '            griDetalleDocumento.DataSource = loGuiaRRDetalle
-    '            Dim PesoMat As Double = 0
-    '            For Each oe As e_DetalleOrden In loDetalleOrden
-    '                oeMaterial = New e_Material
-    '                olMaterial = New l_Material
-    '                loMaterial = New List(Of e_Material)
-    '                oeMaterial.TipoOperacion = ""
-    '                oeMaterial.Id = oe.IdMaterial
-    '                loMaterial = olMaterial.Listar(oeMaterial)
-    '                PesoMat = oeMaterial.Peso
-    '                oeGuiaRRDetalle = New e_GuiaRemisionRemitente_Detalle
-    '                PesoMat = loMaterial(0).Peso
-    '                oeGuiaRRDetalle.TipoOperacion = "I"
-    '                oeGuiaRRDetalle.Peso = oe.Cantidad * PesoMat
-    '                oeGuiaRRDetalle.IdEmpresaSis = gstrIdEmpresaSis
-    '                oeGuiaRRDetalle.IdSucursal = gstrIdSucursal
-    '                oeGuiaRRDetalle.IdUnidadMedida = oe.IdUnidadMedida
-    '                oeGuiaRRDetalle.IdMaterialServicio = oe.IdMaterial
-    '                oeGuiaRRDetalle.Codigo = oe.Codigo
-    '                oeGuiaRRDetalle.MaterialServicio = oe.Material
-    '                oeGuiaRRDetalle.Cantidad = oe.Cantidad
-    '                oeGuiaRRDetalle.Tipo = 1
-    '                oeGuiaRRDetalle.UsuarioCrea = gUsuarioEOS.Nombre
-    '                loGuiaRRDetalle.Add(oeGuiaRRDetalle)
-    '            Next
-    '            griDetalleDocumento.DataSource = loGuiaRRDetalle
-    '            griDetalleDocumento.DataBind()
-    '            gmt_OcultarColumna(griDetalleDocumento, True, "IdGuiaRemRemitente")
-
-    '            'For Each oe As e_DetalleOrden In loDetalleOrden
-    '            '    loDetalleDocumento = New List(Of e_DetalleDocumento)
-    '            '    oeDetalleDocumento = New e_DetalleDocumento
-    '            '    oeDetalleDocumento.TipoOperacion = "I"
-    '            '    oeDetalleDocumento.IdEmpresaSis = gstrIdEmpresaSis
-    '            '    oeDetalleDocumento.IdSucursal = gstrIdSucursal
-    '            '    oeDetalleDocumento.IdTipoUnidadMedida = oe.IdTipoUnidadMedida
-    '            '    oeDetalleDocumento.IdAlmacen = oe.IdAlmacen
-    '            '    oeDetalleDocumento.IdUnidadMedida = oe.IdUnidadMedida
-    '            '    oeDetalleDocumento.IdSubAlmacen = oe.IdSubAlmacen
-    '            '    oeDetalleDocumento.IdMaterialServicio = oe.IdMaterial
-    '            '    oeDetalleDocumento.Codigo = oe.Codigo
-    '            '    oeDetalleDocumento.MaterialServicio = oe.Material
-    '            '    oeDetalleDocumento.Cantidad = oe.Cantidad
-    '            '    oeDetalleDocumento.IndImpuesto = False
-    '            '    oeDetalleDocumento.Tipo = 1
-    '            '    oeDetalleDocumento.UsuarioCrea = gUsuarioEOS.Nombre
-    '            '    loDetalleDocumento.Add(oeDetalleDocumento)
-    '            'Next
-    '            mt_CombosGrilla()
-    '        Catch ex As Exception
-    '            Throw ex
-    '        End Try
-    '    End Sub
+    Private Sub mt_ListarMateriales()
+        Try
+            If txt_Material.Text = String.Empty Then Throw New Exception("Escriba Nombre del Material")
+            loAlmMaterial = New List(Of e_Material)
+            loAlmMaterial = olAlmMaterial.Listar(New e_MaterialAlmacen With {.IdMaterial = txt_Material.Text})
+            griAlmacenMaterial.DataSource = loAlmMaterial
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
 
     '    Public Sub gmt_ListarChoferes(Tipo As String, Combo As UltraCombo, IdPersona As String)
@@ -1511,31 +1535,6 @@ Public Class frm_GRR_Venta
 
 #End Region
 
-    '    Private Sub btnAgregar_Click(sender As Object, e As EventArgs)
-    '        Try
-    '            mt_AgregarMaterial()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub btnQuitar_Click(sender As Object, e As EventArgs)
-    '        Try
-    '            mt_QuitarMaterial()
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
-
-    '    Private Sub txtMaterial_KeyDown(sender As Object, e As KeyEventArgs) Handles txtMaterial.KeyDown
-    '        Try
-    '            If e.KeyCode = Keys.Enter Then
-    '                mt_ListarMateriales()
-    '            End If
-    '        Catch ex As Exception
-    '            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-    '        End Try
-    '    End Sub
 
 
 
@@ -1652,51 +1651,7 @@ Public Class frm_GRR_Venta
     '        End Try
     '    End Sub
 
-    '    Private Sub griDetalleDocumento_BeforeRowsDeleted_1(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDetalleDocumento.BeforeRowsDeleted
-    '        e.Cancel = True
-    '    End Sub
 
-    '    Private Sub txtSerieDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerieDoc.KeyPress
-    '        If Char.IsDigit(e.KeyChar) Then
-    '            e.Handled = False
-    '        ElseIf Char.IsControl(e.KeyChar) Then
-    '            e.Handled = False
-    '        Else
-    '            e.Handled = True
-    '        End If
-    '    End Sub
-
-    '    Private Sub txtNroDoc_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNroDoc.KeyPress
-    '        If Char.IsDigit(e.KeyChar) Then
-    '            e.Handled = False
-    '        ElseIf Char.IsControl(e.KeyChar) Then
-    '            e.Handled = False
-    '        Else
-    '            e.Handled = True
-    '        End If
-    '    End Sub
-
-    '    Private Sub txtSerieDoc_Enter(sender As Object, e As EventArgs) Handles txtSerieDoc.Enter
-    '        txtSerieDoc.Select(0, 4)
-    '        Me.txtSerieDoc.SelectAll()
-    '    End Sub
-
-    '    Private Sub txtNroDoc_Enter(sender As Object, e As EventArgs) Handles txtNroDoc.Enter
-    '        txtNroDoc.Select(0, 10)
-    '        Me.txtNroDoc.SelectAll()
-    '    End Sub
-
-    '    Private Sub txtSerieDoc_Validated(sender As Object, e As EventArgs) Handles txtSerieDoc.Validated
-    '        txtSerieDoc.Text = gmt_FormatoDocumento(txtSerieDoc.Text, 4)
-    '    End Sub
-
-    '    Private Sub txtNroDoc_Validated(sender As Object, e As EventArgs) Handles txtNroDoc.Validated
-    '        txtNroDoc.Text = gmt_FormatoDocumento(txtNroDoc.Text, 10)
-    '    End Sub
-
-    '    Private Sub griDocumento_BeforeRowsDeleted(sender As Object, e As BeforeRowsDeletedEventArgs) Handles griDocumento.BeforeRowsDeleted
-    '        e.Cancel = True
-    '    End Sub
 
     '    Private Sub btnAnular_Click(sender As Object, e As EventArgs) Handles btnAnular.Click
     '        Try
