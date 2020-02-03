@@ -1929,9 +1929,11 @@ Public Class frm_OrdenVenMaterial
                         .IdDireccion = oeCombo.Id
                         .Direccion = oeCombo.Nombre
                     Else
-                        Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
+                        If oeDocumento.IdTipoDocumento = "1CH000000026" Then
+                            Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
+                        End If
                     End If
-                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                        .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
                 End With
             End With
         Catch ex As Exception
