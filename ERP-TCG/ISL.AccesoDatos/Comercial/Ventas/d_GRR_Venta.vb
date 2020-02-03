@@ -117,7 +117,7 @@ Public Class d_GRR_Venta
                 sqlhelper.ExecuteNonQuery("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
                               .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
                               .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
-                              .IdDestino, .Destino, .IdViaje, .UsuarioCrea)
+                              .IdDestino, .Destino, .IdViaje, .DocAsoc, .UsuarioCrea)
             End With
 
             Return True

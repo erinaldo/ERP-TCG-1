@@ -26,7 +26,7 @@ Public Class e_Material
     Private _idtipounidadmedida As String
     Private _tipounidadmedida As String
     Private _medida As String
-    Private _peso As New Decimal
+    Private _peso As Double
     Private _serial As String
     Private _afectoigv As Boolean
     Private _glosa As String
@@ -132,6 +132,7 @@ Public Class e_Material
                   ByVal ls_unidadMedida As String,
                   ByVal ls_nombresubfamilia As String,
                    ByVal ln_Precio As Double,
+                   ByVal ln_Peso As Double,
                   ByVal ls_activo As String)
 
         _Seleccion = ls_seleccion
@@ -141,6 +142,7 @@ Public Class e_Material
         _idunidadmedida = ls_idunidadmedida
         _unidadmedida = ls_unidadMedida
         _subfamilia = ls_nombresubfamilia
+        _peso = ln_Peso
         _activo = ls_activo
         _precio = ln_Precio
     End Sub
@@ -436,12 +438,12 @@ Public Class e_Material
         End Set
     End Property
 
-    <DataMember()> _
-    Public Property Peso() As Decimal
+    <DataMember()>
+    Public Property Peso() As Double
         Get
             Return _peso
         End Get
-        Set(ByVal value As Decimal)
+        Set(ByVal value As Double)
             _peso = value
         End Set
     End Property
