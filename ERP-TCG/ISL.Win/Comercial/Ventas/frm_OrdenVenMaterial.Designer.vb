@@ -714,10 +714,10 @@ Partial Class frm_OrdenVenMaterial
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.cmbMoneda = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.grbDocAsoc = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.cboSerieDocumento = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.txtEstadoDoc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtNumero = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraLabel1 = New Infragistics.Win.Misc.UltraLabel()
-        Me.txtSerie = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.cmbTipoDocumento = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.dtpFechaDoc = New System.Windows.Forms.DateTimePicker()
         Me.txtEstado = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -810,9 +810,9 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.cmbMoneda, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grbDocAsoc, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grbDocAsoc.SuspendLayout()
+        CType(Me.cboSerieDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtEstadoDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbTipoDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtEstado, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtOrden, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1675,7 +1675,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1221, 495)
         '
@@ -2342,7 +2342,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1221, 495)
         '
@@ -3166,10 +3166,10 @@ Partial Class frm_OrdenVenMaterial
         '
         'grbDocAsoc
         '
+        Me.grbDocAsoc.Controls.Add(Me.cboSerieDocumento)
         Me.grbDocAsoc.Controls.Add(Me.txtEstadoDoc)
         Me.grbDocAsoc.Controls.Add(Me.txtNumero)
         Me.grbDocAsoc.Controls.Add(Me.UltraLabel1)
-        Me.grbDocAsoc.Controls.Add(Me.txtSerie)
         Me.grbDocAsoc.Controls.Add(Me.cmbTipoDocumento)
         Me.grbDocAsoc.Controls.Add(Me.dtpFechaDoc)
         Me.grbDocAsoc.Enabled = False
@@ -3178,6 +3178,17 @@ Partial Class frm_OrdenVenMaterial
         Me.grbDocAsoc.Size = New System.Drawing.Size(446, 60)
         Me.grbDocAsoc.TabIndex = 12
         Me.grbDocAsoc.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'cboSerieDocumento
+        '
+        Me.cboSerieDocumento.DisplayMember = "Nombre"
+        Me.cboSerieDocumento.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboSerieDocumento.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        Me.cboSerieDocumento.Location = New System.Drawing.Point(241, 6)
+        Me.cboSerieDocumento.Name = "cboSerieDocumento"
+        Me.cboSerieDocumento.Size = New System.Drawing.Size(75, 22)
+        Me.cboSerieDocumento.TabIndex = 369
+        Me.cboSerieDocumento.ValueMember = "Id"
         '
         'txtEstadoDoc
         '
@@ -3210,16 +3221,6 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraLabel1.Size = New System.Drawing.Size(57, 15)
         Me.UltraLabel1.TabIndex = 1
         Me.UltraLabel1.Text = "FechaDoc:"
-        '
-        'txtSerie
-        '
-        Me.txtSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtSerie.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtSerie.Location = New System.Drawing.Point(241, 6)
-        Me.txtSerie.MaxLength = 4
-        Me.txtSerie.Name = "txtSerie"
-        Me.txtSerie.Size = New System.Drawing.Size(73, 22)
-        Me.txtSerie.TabIndex = 3
         '
         'cmbTipoDocumento
         '
@@ -3440,9 +3441,9 @@ Partial Class frm_OrdenVenMaterial
         CType(Me.grbDocAsoc, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grbDocAsoc.ResumeLayout(False)
         Me.grbDocAsoc.PerformLayout()
+        CType(Me.cboSerieDocumento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtEstadoDoc, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbTipoDocumento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtEstado, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtOrden, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3477,7 +3478,6 @@ Partial Class frm_OrdenVenMaterial
     Friend WithEvents txtEstadoDoc As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents txtNumero As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents UltraLabel1 As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents txtSerie As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents cmbTipoDocumento As Infragistics.Win.UltraWinEditors.UltraComboEditor
     Friend WithEvents dtpFechaDoc As System.Windows.Forms.DateTimePicker
     Friend WithEvents txtEstado As Infragistics.Win.UltraWinEditors.UltraTextEditor
@@ -3587,4 +3587,5 @@ Partial Class frm_OrdenVenMaterial
     Friend WithEvents EMaterialBindingSource As BindingSource
     Friend WithEvents odOrdenIngreso As Controles.OrigenDatos
     Friend WithEvents griOrdenSalida As Controles.Grilla
+    Friend WithEvents cboSerieDocumento As Infragistics.Win.UltraWinEditors.UltraComboEditor
 End Class
