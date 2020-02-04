@@ -990,8 +990,12 @@ Public Class frm_OrdenVenMaterial
                 oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
                 oeOrdenComercial.lstOrdenComercialMaterial.AddRange(loOrdenComercialMaterial)
                 olOrdenComercial.Guardar(oeOrdenComercial)
-                MsgBox("Se actualizó la Orden para el Vendedor: " & cboVendedor.Text, MsgBoxStyle.Information, "EOS")
+                MsgBox("Se actualizó la Orden para el Vendedor: " & cboVendedor.Text, MsgBoxStyle.Information, "ERP")
             End If
+            oeCombo = New e_Combo
+            DireccionClienteProveedorPublic = New List(Of e_Combo)
+            oeCombo.Nombre = "DireccionEmpresaFiscal"
+            DireccionClienteProveedorPublic = olCombo.Listar(oeCombo)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
@@ -2592,6 +2596,11 @@ Public Class frm_OrdenVenMaterial
 
     Private Sub cmbTipoDocumento_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoDocumento.ValueChanged
         SerieDocumento(cmbTipoDocumento.Value) '@0001 Ini
+        If cmbTipoDocumento.Text <> "" Then
+            txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+        End If
+
+
     End Sub
 
     Private Sub cboSerieDocumento_Validated(sender As Object, e As EventArgs) Handles cboSerieDocumento.Validated
