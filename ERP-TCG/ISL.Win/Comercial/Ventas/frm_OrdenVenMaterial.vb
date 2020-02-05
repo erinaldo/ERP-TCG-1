@@ -2123,7 +2123,7 @@ Public Class frm_OrdenVenMaterial
                     Throw New Exception("No Existe Configuracion Contable")
                 End If
             End If
-            If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & oeDoc.Serie & " - " & oeDoc.Numero & " ha sido Emitido", True)
+            'If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & oeDoc.Serie & " - " & oeDoc.Numero & " ha sido Emitido", True)
             '    Ejercicio = frm.cmbEjercicio.Text
             '    mt_ListarCtaCtble(Ejercicio)
             '    Dim oeDoc As New e_MovimientoDocumento
@@ -2318,15 +2318,16 @@ Public Class frm_OrdenVenMaterial
                         'Case "GCH000000001" '@0001
                         gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
                         'End Select '@0001
-                        Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
-                            Case Windows.Forms.DialogResult.Yes
-                                mt_EmitirDocumento(False)
-                        End Select
+                        'Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
+                        '    Case Windows.Forms.DialogResult.Yes
+
+                        'End Select
+                        mt_EmitirDocumento(False)
                         MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-                        oeDocumento = New e_MovimientoDocumento
-                        oeDocumento.TipoOperacion = ""
-                        oeDocumento.Id = oeOrdenComercial.oeDocumento.Id
-                        oeDocumento = olDocumento.Obtener(oeDocumento)
+                        'oeDocumento = New e_MovimientoDocumento
+                        'oeDocumento.TipoOperacion = ""
+                        'oeDocumento.Id = oeOrdenComercial.oeDocumento.Id
+                        'oeDocumento = olDocumento.Obtener(oeDocumento)
                         'Select Case oeDocumento.IdTipoDocumento
                         '    Case "1CIX001"
                         '        gmt_GeneraZip(oeDocumento.RutaImpresionXML)
