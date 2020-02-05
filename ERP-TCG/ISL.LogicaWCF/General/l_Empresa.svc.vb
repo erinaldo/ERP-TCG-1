@@ -143,7 +143,8 @@ Public Class l_Empresa
             'El RUC no puede ser vacío
             l_FuncionesGenerales.ValidarCampoNoNulo(Ruc, Mensaje & "Ruc")
             'El RUC debe tener 11 dígitos
-            If Ruc.Trim.Length < 11 Then Throw New Exception("Por favor, verifique el número de RUC")
+            'If Ruc.Trim.Length < 11 Then Throw New Exception("Por favor, verifique el número de RUC") '@0001
+            If Ruc.Trim.Length < 8 Then Throw New Exception("Por favor, verifique el número de RUC") '@0001
             Return True
         Catch ex As Exception
             Throw ex

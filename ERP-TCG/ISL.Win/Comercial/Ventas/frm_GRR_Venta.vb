@@ -128,6 +128,8 @@ Public Class frm_GRR_Venta
             mt_Inicializar()
             Operacion = "Nuevo"
             mt_ControlBotoneria()
+            cboTransportista.Focus() '@0001
+            cboTransportista.Select() '@0001
             cmb_Cliente.Focus()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -902,7 +904,8 @@ Public Class frm_GRR_Venta
 
         gmt_ListarEmpresa("6", cboTransportista, gs_IdClienteProveedorSistema, False)
         cboTransportista.Value = gs_IdClienteProveedorSistema
-
+        cboTransportista.Focus() '@0001
+        cboTransportista.Select() '@0001
         cmbVehiculo.SelectedIndex = -1
         cmbVehiculo.Text = String.Empty
         txtMarcaVehiculo.Text = String.Empty
@@ -975,6 +978,8 @@ Public Class frm_GRR_Venta
             mt_MotivoTraslado()
 
             cboChofer.DataSource = PilotoPublic
+            cboTransportista.Focus()
+            cboTransportista.Select()
         Catch ex As Exception
             Throw ex
         End Try
@@ -1171,9 +1176,12 @@ Public Class frm_GRR_Venta
 
             Operacion = "Nuevo"
             oeGuiaRR = New e_GRR_Venta
+            cboTransportista.Focus() '@0001
+            cboTransportista.Select() '@0001
             mt_ControlBotoneria()
 
             cmb_Cliente.Focus()
+
         Catch ex As Exception
             Throw ex
         End Try

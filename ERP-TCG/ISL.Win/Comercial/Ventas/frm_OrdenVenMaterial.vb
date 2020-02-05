@@ -741,6 +741,9 @@ Public Class frm_OrdenVenMaterial
                 If Operacion = "Atender" Or Operacion = "Nuevo" Or Operacion = "Editar" Then
                     grbDocAsoc.Enabled = True
                     cmbTipoDocumento.Focus()
+
+                    SerieDocumento(cmbTipoDocumento.Value) '@0001 Ini
+
                 End If
             Else
                 grbDocAsoc.Enabled = False
@@ -751,12 +754,9 @@ Public Class frm_OrdenVenMaterial
         End If
     End Sub
 
-    Private Sub txtSerie_Enter(sender As Object, e As EventArgs) Handles txtSerie.Enter
-        txtSerie.Select(0, 4)
-        Me.txtSerie.SelectAll()
-    End Sub
 
-    Private Sub txtSerie_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSerie.KeyPress
+
+    Private Sub txtSerie_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -766,11 +766,6 @@ Public Class frm_OrdenVenMaterial
         Else
             e.Handled = True
         End If
-    End Sub
-
-    Private Sub txtSerie_Validated(sender As Object, e As EventArgs) Handles txtSerie.Validated
-        txtSerie.Text = FormatoDocumento(txtSerie.Text, 4)
-        txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
     End Sub
 
     Private Sub txtNumero_Enter(sender As Object, e As EventArgs) Handles txtNumero.Enter
@@ -995,8 +990,12 @@ Public Class frm_OrdenVenMaterial
                 oeOrdenComercial.UsuarioCrea = gUsuarioSGI.Id
                 oeOrdenComercial.lstOrdenComercialMaterial.AddRange(loOrdenComercialMaterial)
                 olOrdenComercial.Guardar(oeOrdenComercial)
-                MsgBox("Se actualizó la Orden para el Vendedor: " & cboVendedor.Text, MsgBoxStyle.Information, "EOS")
+                MsgBox("Se actualizó la Orden para el Vendedor: " & cboVendedor.Text, MsgBoxStyle.Information, "ERP")
             End If
+            oeCombo = New e_Combo
+            DireccionClienteProveedorPublic = New List(Of e_Combo)
+            oeCombo.Nombre = "DireccionEmpresaFiscal"
+            DireccionClienteProveedorPublic = olCombo.Listar(oeCombo)
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
@@ -1087,7 +1086,7 @@ Public Class frm_OrdenVenMaterial
         gbeMateriales.Visible = True
         cboTipoPago.SelectedIndex = 0
         cmbTipoDocumento.Value = 0
-        txtSerie.Text = String.Empty
+        'txtSerie.Text = String.Empty '@0001
         txtNumero.Text = String.Empty
         txtEstadoDoc.Text = String.Empty
         dtpFechaDoc.Value = ObtenerFechaServidor()
@@ -1348,7 +1347,9 @@ Public Class frm_OrdenVenMaterial
                 oeDocumento.Id = oeOrdDocumento.IdDocumento
                 oeDocumento = olDocumento.Obtener(oeDocumento)
                 cmbTipoDocumento.Value = oeDocumento.IdTipoDocumento
-                txtSerie.Text = oeDocumento.Serie
+                'txtSerie.Text = oeDocumento.Serie '@0001
+                SerieDocumento(oeDocumento.IdTipoDocumento)
+                cboSerieDocumento.Text = oeDocumento.Serie '@0001
                 txtNumero.Text = oeDocumento.Numero
                 txtEstadoDoc.Text = oeDocumento.EstadoDocumento
                 dtpFechaDoc.Value = oeDocumento.FechaEmision
@@ -1898,7 +1899,8 @@ Public Class frm_OrdenVenMaterial
                 .IdMoneda = cmbMoneda.Value
                 .Tipo = 2
                 .IdTipoBien = 1
-                If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4)
+                'If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4) '@0001
+                .Serie = cboSerieDocumento.Text '@0001
                 If txtNumero.Text <> "" Then .Numero = FormatoDocumento(txtNumero.Text, 8)
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaPago.Value
@@ -1931,9 +1933,11 @@ Public Class frm_OrdenVenMaterial
                         .IdDireccion = oeCombo.Id
                         .Direccion = oeCombo.Nombre
                     Else
-                        Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
+                        If oeDocumento.IdTipoDocumento = "1CH000000026" Then
+                            Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
+                        End If
                     End If
-                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                        .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
                 End With
             End With
         Catch ex As Exception
@@ -2493,7 +2497,8 @@ Public Class frm_OrdenVenMaterial
                 .IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
-                .Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text
+                '.Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text '@0001
+                .Glosa = cmbTipoDocumento.Text & " " & cboSerieDocumento.Text & " - " & txtNumero.Text '@0001
                 .FechaOrden = ObtenerFechaServidor()
                 .TipoOperacion = "I"
                 .TipoReferencia = "ORDEN VENTA"
@@ -2590,6 +2595,20 @@ Public Class frm_OrdenVenMaterial
         End Try
     End Function
 
+    Private Sub cmbTipoDocumento_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoDocumento.ValueChanged
+        SerieDocumento(cmbTipoDocumento.Value) '@0001 Ini
+        If cmbTipoDocumento.Text <> "" Then
+            txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+        End If
+
+
+    End Sub
+
+    Private Sub cboSerieDocumento_Validated(sender As Object, e As EventArgs) Handles cboSerieDocumento.Validated
+        gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)
+        txtNumero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+    End Sub
+
     Private Function fc_OrdDocumento() As List(Of e_Orden_Documento)
         Try
             oeOrdDocumento = New e_Orden_Documento
@@ -2684,7 +2703,8 @@ Public Class frm_OrdenVenMaterial
     Private Function fc_ValidarNumeroDoc() As Boolean
         Try
             If cbDocumento.Checked = True Then
-                If txtNumero.Text = "" Or txtSerie.Text = "" Or txtNumero.Text = "0000000000" Or txtSerie.Text = "0000" Then
+                'If txtNumero.Text = "" Or txtSerie.Text = "" Or txtNumero.Text = "0000000000" Or txtSerie.Text = "0000" Then '@0001
+                If txtNumero.Text = "" Or cboSerieDocumento.Text = "" Or txtNumero.Text = "0000000000" Or cboSerieDocumento.Text = "0000" Then
                     Throw New Exception("!..El Numero de Documento es Incorrecto..!")
                 End If
             End If
@@ -2712,6 +2732,20 @@ Public Class frm_OrdenVenMaterial
         End If
     End Sub
 
+    Private Function SerieDocumento(IdTipoDocumento) As Boolean
+        Try
+            Dim oeserie = New e_Combo
+            Dim ListaSerie = New List(Of e_Combo)
+            oeserie.Id = IdTipoDocumento
+            oeserie.Nombre = "SerieDocumento"
+            oeserie.Descripcion = gUsuarioSGI.Id
+            ListaSerie.AddRange(olCombo.Listar(oeserie))
+            LlenarComboMaestro(cboSerieDocumento, ListaSerie, 0)
+            Return True
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 #End Region
 
 End Class

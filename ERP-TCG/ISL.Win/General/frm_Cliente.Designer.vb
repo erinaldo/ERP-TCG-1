@@ -22,7 +22,7 @@ Partial Class frm_Cliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn2 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Codigo")
@@ -48,36 +48,36 @@ Partial Class frm_Cliente
         Dim UltraDataColumn10 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("UsuarioCreacion")
         Dim UltraDataColumn11 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("oePersona")
         Dim UltraDataColumn12 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("oeEmpresa")
-        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo
-        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab
-        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab
+        Dim E_Sexo1 As ERP.EntidadesWCF.e_Sexo = New ERP.EntidadesWCF.e_Sexo()
+        Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Cliente))
-        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+        Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrBusqueda = New ISL.Controles.Agrupacion(Me.components)
         Me.etiComisionista = New ISL.Controles.Etiqueta(Me.components)
         Me.colorComisionista = New ISL.Controles.Colores(Me.components)
         Me.agrGrillaCliente = New ISL.Controles.Agrupacion(Me.components)
         Me.griCliente = New ISL.Controles.Grilla(Me.components)
         Me.MenuContextual1 = New ISL.Controles.MenuContextual(Me.components)
-        Me.InsertarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.InsertarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ordCliente = New ISL.Controles.OrigenDatos(Me.components)
-        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+        Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrCliente = New ISL.Controles.Agrupacion(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.Sexo1 = New ISL.Win.Sexo
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Sexo1 = New ISL.Win.Sexo()
         Me.txtCodigo = New ISL.Controles.Texto(Me.components)
         Me.etiCodigo = New ISL.Controles.Etiqueta(Me.components)
         Me.verComisionista = New ISL.Controles.Chequear(Me.components)
@@ -92,7 +92,7 @@ Partial Class frm_Cliente
         Me.etiApellidoMaterno = New ISL.Controles.Etiqueta(Me.components)
         Me.etiApellidoPaterno = New ISL.Controles.Etiqueta(Me.components)
         Me.etiDni = New ISL.Controles.Etiqueta(Me.components)
-        Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl
+        Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrClienteEmpresa = New ISL.Controles.Agrupacion(Me.components)
         Me.txtCodigoCE = New ISL.Controles.Texto(Me.components)
         Me.etiCodigoCE = New ISL.Controles.Etiqueta(Me.components)
@@ -104,7 +104,7 @@ Partial Class frm_Cliente
         Me.etiRazonSocial = New ISL.Controles.Etiqueta(Me.components)
         Me.etiRuc = New ISL.Controles.Etiqueta(Me.components)
         Me.ficCliente = New ISL.Controles.Ficha(Me.components)
-        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage
+        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrBusqueda.SuspendLayout()
@@ -143,14 +143,14 @@ Partial Class frm_Cliente
         Me.UltraTabPageControl1.AutoScroll = True
         Me.UltraTabPageControl1.Controls.Add(Me.agrBusqueda)
         Me.UltraTabPageControl1.Controls.Add(Me.agrGrillaCliente)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(804, 460)
         '
         'agrBusqueda
         '
         Me.agrBusqueda.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.agrBusqueda.Controls.Add(Me.etiComisionista)
         Me.agrBusqueda.Controls.Add(Me.colorComisionista)
         Me.agrBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -175,18 +175,17 @@ Partial Class frm_Cliente
         '
         'colorComisionista
         '
-        Me.colorComisionista.Color = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.colorComisionista.Location = New System.Drawing.Point(96, 22)
         Me.colorComisionista.Name = "colorComisionista"
         Me.colorComisionista.Size = New System.Drawing.Size(46, 21)
         Me.colorComisionista.TabIndex = 0
-        Me.colorComisionista.Text = "192, 255, 192"
+        Me.colorComisionista.Text = "Control"
         '
         'agrGrillaCliente
         '
         Me.agrGrillaCliente.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.agrGrillaCliente.Controls.Add(Me.griCliente)
         Me.agrGrillaCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrGrillaCliente.ForeColor = System.Drawing.Color.MidnightBlue
@@ -338,6 +337,7 @@ Partial Class frm_Cliente
         '
         'Sexo1
         '
+        Me.Sexo1.BackColor = System.Drawing.Color.White
         Me.Sexo1.Location = New System.Drawing.Point(87, 143)
         Me.Sexo1.Name = "Sexo1"
         E_Sexo1.Abreviatura = "M"
@@ -349,8 +349,8 @@ Partial Class frm_Cliente
         '
         'txtCodigo
         '
-        Appearance5.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtCodigo.Appearance = Appearance5
+        Appearance1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtCodigo.Appearance = Appearance1
         Me.txtCodigo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodigo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -409,8 +409,8 @@ Partial Class frm_Cliente
         '
         'txtNombre
         '
-        Appearance1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtNombre.Appearance = Appearance1
+        Appearance3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtNombre.Appearance = Appearance3
         Me.txtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNombre.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -423,8 +423,8 @@ Partial Class frm_Cliente
         '
         'txtApellidoMaterno
         '
-        Appearance3.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtApellidoMaterno.Appearance = Appearance3
+        Appearance4.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtApellidoMaterno.Appearance = Appearance4
         Me.txtApellidoMaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoMaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoMaterno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -437,8 +437,8 @@ Partial Class frm_Cliente
         '
         'txtApellidoPaterno
         '
-        Appearance4.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtApellidoPaterno.Appearance = Appearance4
+        Appearance5.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtApellidoPaterno.Appearance = Appearance5
         Me.txtApellidoPaterno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtApellidoPaterno.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtApellidoPaterno.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -522,7 +522,7 @@ Partial Class frm_Cliente
         '
         Me.UltraTabPageControl3.AutoScroll = True
         Me.UltraTabPageControl3.Controls.Add(Me.agrClienteEmpresa)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(804, 460)
         '
@@ -574,8 +574,8 @@ Partial Class frm_Cliente
         '
         'txtAbreviatura
         '
-        Appearance12.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtAbreviatura.Appearance = Appearance12
+        Appearance8.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtAbreviatura.Appearance = Appearance8
         Me.txtAbreviatura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAbreviatura.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtAbreviatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -588,8 +588,8 @@ Partial Class frm_Cliente
         '
         'txtRazonSocial
         '
-        Appearance10.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtRazonSocial.Appearance = Appearance10
+        Appearance9.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtRazonSocial.Appearance = Appearance9
         Me.txtRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRazonSocial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtRazonSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -602,8 +602,8 @@ Partial Class frm_Cliente
         '
         'txtRuc
         '
-        Appearance11.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtRuc.Appearance = Appearance11
+        Appearance10.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtRuc.Appearance = Appearance10
         Me.txtRuc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRuc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtRuc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -642,7 +642,7 @@ Partial Class frm_Cliente
         Me.etiRazonSocial.AutoSize = True
         Me.etiRazonSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiRazonSocial.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.etiRazonSocial.Location = New System.Drawing.Point(32, 67)
+        Me.etiRazonSocial.Location = New System.Drawing.Point(35, 67)
         Me.etiRazonSocial.Name = "etiRazonSocial"
         Me.etiRazonSocial.Size = New System.Drawing.Size(72, 14)
         Me.etiRazonSocial.TabIndex = 1
@@ -653,11 +653,11 @@ Partial Class frm_Cliente
         Me.etiRuc.AutoSize = True
         Me.etiRuc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.etiRuc.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.etiRuc.Location = New System.Drawing.Point(73, 40)
+        Me.etiRuc.Location = New System.Drawing.Point(50, 40)
         Me.etiRuc.Name = "etiRuc"
-        Me.etiRuc.Size = New System.Drawing.Size(31, 14)
+        Me.etiRuc.Size = New System.Drawing.Size(59, 14)
         Me.etiRuc.TabIndex = 0
-        Me.etiRuc.Text = "RUC:"
+        Me.etiRuc.Text = "RUC / DNI:"
         '
         'ficCliente
         '
