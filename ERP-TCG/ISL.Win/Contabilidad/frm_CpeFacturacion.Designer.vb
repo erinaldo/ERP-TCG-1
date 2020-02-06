@@ -187,27 +187,27 @@ Partial Class frm_CpeFacturacion
         Me.MenuDetalle.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mDescargarXML, Me.mImprimirPDF, Me.mDescargarCDR})
         Me.MenuDetalle.Name = "mnu_Transferencias"
-        Me.MenuDetalle.Size = New System.Drawing.Size(185, 82)
+        Me.MenuDetalle.Size = New System.Drawing.Size(202, 82)
         '
         'mDescargarXML
         '
         Me.mDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.if_application_xml_28904
         Me.mDescargarXML.Name = "mDescargarXML"
-        Me.mDescargarXML.Size = New System.Drawing.Size(184, 26)
+        Me.mDescargarXML.Size = New System.Drawing.Size(201, 26)
         Me.mDescargarXML.Text = "Descargar XML"
         '
         'mImprimirPDF
         '
         Me.mImprimirPDF.Image = Global.ISL.Win.My.Resources.Resources.if_pdf_272699
         Me.mImprimirPDF.Name = "mImprimirPDF"
-        Me.mImprimirPDF.Size = New System.Drawing.Size(184, 26)
+        Me.mImprimirPDF.Size = New System.Drawing.Size(201, 26)
         Me.mImprimirPDF.Text = "Imprimir Comprobante"
         '
         'mDescargarCDR
         '
         Me.mDescargarCDR.Image = Global.ISL.Win.My.Resources.Resources.if_30_1933170
         Me.mDescargarCDR.Name = "mDescargarCDR"
-        Me.mDescargarCDR.Size = New System.Drawing.Size(184, 26)
+        Me.mDescargarCDR.Size = New System.Drawing.Size(201, 26)
         Me.mDescargarCDR.Text = "Descargar CDR"
         '
         'UltraTabPageControl8
@@ -438,7 +438,7 @@ Partial Class frm_CpeFacturacion
         Me.Tsb_Env_Filtro.Image = CType(resources.GetObject("Tsb_Env_Filtro.Image"), System.Drawing.Image)
         Me.Tsb_Env_Filtro.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Tsb_Env_Filtro.Name = "Tsb_Env_Filtro"
-        Me.Tsb_Env_Filtro.Size = New System.Drawing.Size(57, 28)
+        Me.Tsb_Env_Filtro.Size = New System.Drawing.Size(59, 28)
         Me.Tsb_Env_Filtro.Text = "Enviar"
         '
         'ToolStripSeparator2
@@ -451,7 +451,7 @@ Partial Class frm_CpeFacturacion
         Me.tsb_Consultar_Filtro.Image = CType(resources.GetObject("tsb_Consultar_Filtro.Image"), System.Drawing.Image)
         Me.tsb_Consultar_Filtro.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsb_Consultar_Filtro.Name = "tsb_Consultar_Filtro"
-        Me.tsb_Consultar_Filtro.Size = New System.Drawing.Size(73, 28)
+        Me.tsb_Consultar_Filtro.Size = New System.Drawing.Size(78, 28)
         Me.tsb_Consultar_Filtro.Text = "Consultar"
         '
         'ToolStripSeparator4
@@ -465,42 +465,42 @@ Partial Class frm_CpeFacturacion
         Me.Tsd_FactElectronico.Image = CType(resources.GetObject("Tsd_FactElectronico.Image"), System.Drawing.Image)
         Me.Tsd_FactElectronico.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Tsd_FactElectronico.Name = "Tsd_FactElectronico"
-        Me.Tsd_FactElectronico.Size = New System.Drawing.Size(88, 28)
+        Me.Tsd_FactElectronico.Size = New System.Drawing.Size(95, 28)
         Me.Tsd_FactElectronico.Text = "Electrónico"
         '
         'XMLToolStripMenuItem
         '
         Me.XMLToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.if_document_text_settings_103330
         Me.XMLToolStripMenuItem.Name = "XMLToolStripMenuItem"
-        Me.XMLToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.XMLToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.XMLToolStripMenuItem.Text = "Generar XML"
         '
         'PDFToolStripMenuItem
         '
         Me.PDFToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.if_pdf_272699
         Me.PDFToolStripMenuItem.Name = "PDFToolStripMenuItem"
-        Me.PDFToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PDFToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.PDFToolStripMenuItem.Text = "Imprimir Comprobante"
         '
         'DescargaZIPToolStripMenuItem
         '
         Me.DescargaZIPToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.if_application_xml_28904
         Me.DescargaZIPToolStripMenuItem.Name = "DescargaZIPToolStripMenuItem"
-        Me.DescargaZIPToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DescargaZIPToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DescargaZIPToolStripMenuItem.Text = "Descarga XML"
         '
         'DescargarCDRToolStripMenuItem
         '
         Me.DescargarCDRToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.if_30_1933170
         Me.DescargarCDRToolStripMenuItem.Name = "DescargarCDRToolStripMenuItem"
-        Me.DescargarCDRToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.DescargarCDRToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.DescargarCDRToolStripMenuItem.Text = "Descargar CDR"
         '
         'EnvioACorreoToolStripMenuItem
         '
         Me.EnvioACorreoToolStripMenuItem.Image = Global.ISL.Win.My.Resources.Resources.if_mail_reply_all_118782
         Me.EnvioACorreoToolStripMenuItem.Name = "EnvioACorreoToolStripMenuItem"
-        Me.EnvioACorreoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.EnvioACorreoToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
         Me.EnvioACorreoToolStripMenuItem.Text = "Envio a Correo"
         Me.EnvioACorreoToolStripMenuItem.Visible = False
         '
@@ -509,7 +509,7 @@ Partial Class frm_CpeFacturacion
         Me.tsb_Exportar_Filtro.Image = CType(resources.GetObject("tsb_Exportar_Filtro.Image"), System.Drawing.Image)
         Me.tsb_Exportar_Filtro.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsb_Exportar_Filtro.Name = "tsb_Exportar_Filtro"
-        Me.tsb_Exportar_Filtro.Size = New System.Drawing.Size(69, 28)
+        Me.tsb_Exportar_Filtro.Size = New System.Drawing.Size(71, 28)
         Me.tsb_Exportar_Filtro.Text = "Exportar"
         '
         'ugbAgrupacion

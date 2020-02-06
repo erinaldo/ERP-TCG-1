@@ -197,6 +197,7 @@
     <Content Include="Contabilidad\l_ComprobanteElectronico.svc" />
     <Content Include="Contabilidad\l_ComprobanteElectronicoBath.svc" />
     <Content Include="Contabilidad\l_ComprobanteElectronicoBath_Detalle.svc" />
+    <Content Include="CPE\l_ClaveSunat.svc" />
     <Content Include="CPE\l_ComprobantePagoElectronico.svc" />
     <Content Include="Contabilidad\l_CtaCtbleCatServicio.svc" />
     <Content Include="Contabilidad\l_CtaCtbleSubFamiliaMat.svc" />
@@ -225,6 +226,7 @@
     <Content Include="Contabilidad\l_TipoBien.svc" />
     <Content Include="Contabilidad\l_TipoOpeCon.svc" />
     <Content Include="CPE\l_ComprobantePagoElectronico_Resumen.svc" />
+    <Content Include="CPE\l_CredencialFacturacion.svc" />
     <Content Include="Finanzas\l_ContratoFinanciero.svc" />
     <Content Include="Finanzas\l_LimiteCredito.svc" />
     <Content Include="Finanzas\l_FecLetras.svc" />
@@ -933,6 +935,9 @@
       <DependentUpon>l_ComprobanteElectronicoBath_Detalle.svc</DependentUpon>
     </Compile>
     <Compile Include="CPE\Il_ComprobantePagoElectronico_Resumen.vb" />
+    <Compile Include="CPE\l_ClaveSunat.svc.vb">
+      <DependentUpon>l_ClaveSunat.svc</DependentUpon>
+    </Compile>
     <Compile Include="CPE\l_ComprobantePagoElectronico.svc.vb">
       <DependentUpon>l_ComprobantePagoElectronico.svc</DependentUpon>
     </Compile>
@@ -1013,6 +1018,9 @@
     </Compile>
     <Compile Include="CPE\l_ComprobantePagoElectronico_Resumen.svc.vb">
       <DependentUpon>l_ComprobantePagoElectronico_Resumen.svc</DependentUpon>
+    </Compile>
+    <Compile Include="CPE\l_CredencialFacturacion.svc.vb">
+      <DependentUpon>l_CredencialFacturacion.svc</DependentUpon>
     </Compile>
     <Compile Include="Finanzas\Il_ContratoFinanciero.vb" />
     <Compile Include="Finanzas\Il_LimiteCredito.vb" />
