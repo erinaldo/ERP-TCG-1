@@ -242,7 +242,8 @@ Public Class frm_FacturarServicio
             oecli = cboCliente.Items(cboCliente.SelectedIndex).ListObject
             'oeMovimientoDocumento.Serie = FormatoDocumento(txtSerieM.Text.Trim, 4)
             oeMovimientoDocumento.Serie = txtSerieM.Text.Trim
-            oeMovimientoDocumento.Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10)
+            'oeMovimientoDocumento.Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10) '@0001
+            oeMovimientoDocumento.Numero = FormatoDocumento(txtNumeroM.Text.Trim, 8)
             oeMovimientoDocumento.Direccion = cboDireccion.Text
             oeMovimientoDocumento.NombreProveedor = cboCliente.Text
             oeMovimientoDocumento.Ruc = oecli.Dni
@@ -504,7 +505,8 @@ Public Class frm_FacturarServicio
     End Sub
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
-        txtNumero.Text = FormatoDocumento(txtNumero.Text, 10)
+        'txtNumero.Text = FormatoDocumento(txtNumero.Text, 10) '@0001
+        txtNumero.Text = FormatoDocumento(txtNumero.Text, 8)
     End Sub
 
     Private Sub chkElectronico_CheckedChanged(sender As Object, e As EventArgs) Handles chkElectronico.CheckedChanged
@@ -546,7 +548,8 @@ Public Class frm_FacturarServicio
     End Sub
 
     Private Sub txtNumeroM_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumeroM.Validated
-        txtNumeroM.Text = FormatoDocumento(txtNumeroM.Text, 10)
+        'txtNumeroM.Text = FormatoDocumento(txtNumeroM.Text, 10)
+        txtNumeroM.Text = FormatoDocumento(txtNumeroM.Text, 8)
     End Sub
 
     Private Sub fecFechaActual_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fecFechaActual.ValueChanged
@@ -642,7 +645,8 @@ Public Class frm_FacturarServicio
     End Sub
 
     Private Sub txtNumeroDoc_Validated(sender As Object, e As EventArgs) Handles txtNumeroDoc.Validated
-        txtNumeroDoc.Text = FormatoDocumento(txtNumeroDoc.Text, 10)
+        'txtNumeroDoc.Text = FormatoDocumento(txtNumeroDoc.Text, 10)
+        txtNumeroDoc.Text = FormatoDocumento(txtNumeroDoc.Text, 8)
     End Sub
 
     Private Sub txtNumeroDoc_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNumeroDoc.KeyDown
@@ -839,7 +843,8 @@ Public Class frm_FacturarServicio
                     .Serie = txtSerieD.Value
                 Else
                     .Serie = FormatoDocumento(txtSerie.Value, 4)
-                    .Numero = FormatoDocumento(txtNumero.Value, 10)
+                    '.Numero = FormatoDocumento(txtNumero.Value, 10) '@0001
+                    .Numero = FormatoDocumento(txtNumero.Value, 8)
                     .IndServicioMaterial = "S"
                     If .Serie Is Nothing OrElse .Serie.Trim = "" Then Throw New Exception("Agregue el número de serie de la factura para listar.")
                     If .Numero Is Nothing OrElse .Numero.Trim = "" Then Throw New Exception("Agregue el número de factura para listar.")
@@ -915,7 +920,8 @@ Public Class frm_FacturarServicio
                 .OrdenCompra = txtOrdenCompra.Text
                 '.Serie = FormatoDocumento(txtSerieM.Text.Trim, 4)
                 .Serie = txtSerieM.Text.Trim
-                .Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10)
+                '.Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10) '@0001
+                .Numero = FormatoDocumento(txtNumeroM.Text.Trim, 8)
                 .IdUsuarioCrea = gUsuarioSGI.Id
                 .FechaEmision = fecFechaActual.Value
                 .FechaVencimiento = fecFechaActual.DateTime.AddDays(oeTipoPago.Dias)
@@ -1055,7 +1061,8 @@ Public Class frm_FacturarServicio
                         .IdTipoBien = cboTipoBien.Value
                         .OrdenCompra = ""
                         .Serie = txtSerieM.Text.Trim
-                        .Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10)
+                        '.Numero = FormatoDocumento(txtNumeroM.Text.Trim, 10) '@0001
+                        .Numero = FormatoDocumento(txtNumeroM.Text.Trim, 8)
                         .IdUsuarioCrea = gUsuarioSGI.Id
                         .FechaEmision = fecFechaActual.Value
                         .FechaVencimiento = fecFechaActual.DateTime.AddDays(oeTipoPago.Dias)
@@ -1986,7 +1993,8 @@ Public Class frm_FacturarServicio
                 .IndCompraVenta = 2
                 .IndServicioMaterial = "M"
                 .Serie = FormatoDocumento(txtSerieDoc.Text, 4)
-                .Numero = FormatoDocumento(txtNumeroDoc.Text, 10)
+                '.Numero = FormatoDocumento(txtNumeroDoc.Text, 10) '@0001
+                .Numero = FormatoDocumento(txtNumeroDoc.Text, 8)
             End With
             griListaDocumentoVenta.DataSource = olMovimientoDocumento.Listar(oeMovDoc)
             griListaDocumentoVenta.DataBind()
