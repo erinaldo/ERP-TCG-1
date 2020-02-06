@@ -23,20 +23,32 @@ Namespace sFacturacion
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function getStatus(ByVal request As sFacturacion.getStatusRequest) As <System.ServiceModel.MessageParameterAttribute(Name:="status")> sFacturacion.getStatusResponse
         
+        <System.ServiceModel.OperationContractAttribute(Action:="urn:getStatus", ReplyAction:="*")>  _
+        Function getStatusAsync(ByVal request As sFacturacion.getStatusRequest) As System.Threading.Tasks.Task(Of sFacturacion.getStatusResponse)
+        
         'CODEGEN: El parámetro 'applicationResponse' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         <System.ServiceModel.OperationContractAttribute(Action:="urn:sendBill", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function sendBill(ByVal request As sFacturacion.sendBillRequest) As <System.ServiceModel.MessageParameterAttribute(Name:="applicationResponse")> sFacturacion.sendBillResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="urn:sendBill", ReplyAction:="*")>  _
+        Function sendBillAsync(ByVal request As sFacturacion.sendBillRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendBillResponse)
         
         'CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         <System.ServiceModel.OperationContractAttribute(Action:="urn:sendPack", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function sendPack(ByVal request As sFacturacion.sendPackRequest) As <System.ServiceModel.MessageParameterAttribute(Name:="ticket")> sFacturacion.sendPackResponse
         
+        <System.ServiceModel.OperationContractAttribute(Action:="urn:sendPack", ReplyAction:="*")>  _
+        Function sendPackAsync(ByVal request As sFacturacion.sendPackRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendPackResponse)
+        
         'CODEGEN: El parámetro 'ticket' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         <System.ServiceModel.OperationContractAttribute(Action:="urn:sendSummary", ReplyAction:="*"),  _
          System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults:=true)>  _
         Function sendSummary(ByVal request As sFacturacion.sendSummaryRequest) As <System.ServiceModel.MessageParameterAttribute(Name:="ticket")> sFacturacion.sendSummaryResponse
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="urn:sendSummary", ReplyAction:="*")>  _
+        Function sendSummaryAsync(ByVal request As sFacturacion.sendSummaryRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendSummaryResponse)
     End Interface
     
     '''<remarks/>
@@ -321,6 +333,17 @@ Namespace sFacturacion
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function sFacturacion_billService_getStatusAsync(ByVal request As sFacturacion.getStatusRequest) As System.Threading.Tasks.Task(Of sFacturacion.getStatusResponse) Implements sFacturacion.billService.getStatusAsync
+            Return MyBase.Channel.getStatusAsync(request)
+        End Function
+        
+        Public Function getStatusAsync(ByVal ticket As String) As System.Threading.Tasks.Task(Of sFacturacion.getStatusResponse)
+            Dim inValue As sFacturacion.getStatusRequest = New sFacturacion.getStatusRequest()
+            inValue.ticket = ticket
+            Return CType(Me,sFacturacion.billService).getStatusAsync(inValue)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Function sFacturacion_billService_sendBill(ByVal request As sFacturacion.sendBillRequest) As sFacturacion.sendBillResponse Implements sFacturacion.billService.sendBill
             Return MyBase.Channel.sendBill(request)
         End Function
@@ -332,6 +355,19 @@ Namespace sFacturacion
             inValue.partyType = partyType
             Dim retVal As sFacturacion.sendBillResponse = CType(Me,sFacturacion.billService).sendBill(inValue)
             Return retVal.applicationResponse
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function sFacturacion_billService_sendBillAsync(ByVal request As sFacturacion.sendBillRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendBillResponse) Implements sFacturacion.billService.sendBillAsync
+            Return MyBase.Channel.sendBillAsync(request)
+        End Function
+        
+        Public Function sendBillAsync(ByVal fileName As String, ByVal contentFile() As Byte, ByVal partyType As String) As System.Threading.Tasks.Task(Of sFacturacion.sendBillResponse)
+            Dim inValue As sFacturacion.sendBillRequest = New sFacturacion.sendBillRequest()
+            inValue.fileName = fileName
+            inValue.contentFile = contentFile
+            inValue.partyType = partyType
+            Return CType(Me,sFacturacion.billService).sendBillAsync(inValue)
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
@@ -349,6 +385,19 @@ Namespace sFacturacion
         End Function
         
         <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function sFacturacion_billService_sendPackAsync(ByVal request As sFacturacion.sendPackRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendPackResponse) Implements sFacturacion.billService.sendPackAsync
+            Return MyBase.Channel.sendPackAsync(request)
+        End Function
+        
+        Public Function sendPackAsync(ByVal fileName As String, ByVal contentFile() As Byte, ByVal partyType As String) As System.Threading.Tasks.Task(Of sFacturacion.sendPackResponse)
+            Dim inValue As sFacturacion.sendPackRequest = New sFacturacion.sendPackRequest()
+            inValue.fileName = fileName
+            inValue.contentFile = contentFile
+            inValue.partyType = partyType
+            Return CType(Me,sFacturacion.billService).sendPackAsync(inValue)
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
         Function sFacturacion_billService_sendSummary(ByVal request As sFacturacion.sendSummaryRequest) As sFacturacion.sendSummaryResponse Implements sFacturacion.billService.sendSummary
             Return MyBase.Channel.sendSummary(request)
         End Function
@@ -360,6 +409,19 @@ Namespace sFacturacion
             inValue.partyType = partyType
             Dim retVal As sFacturacion.sendSummaryResponse = CType(Me,sFacturacion.billService).sendSummary(inValue)
             Return retVal.ticket
+        End Function
+        
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Function sFacturacion_billService_sendSummaryAsync(ByVal request As sFacturacion.sendSummaryRequest) As System.Threading.Tasks.Task(Of sFacturacion.sendSummaryResponse) Implements sFacturacion.billService.sendSummaryAsync
+            Return MyBase.Channel.sendSummaryAsync(request)
+        End Function
+        
+        Public Function sendSummaryAsync(ByVal fileName As String, ByVal contentFile() As Byte, ByVal partyType As String) As System.Threading.Tasks.Task(Of sFacturacion.sendSummaryResponse)
+            Dim inValue As sFacturacion.sendSummaryRequest = New sFacturacion.sendSummaryRequest()
+            inValue.fileName = fileName
+            inValue.contentFile = contentFile
+            inValue.partyType = partyType
+            Return CType(Me,sFacturacion.billService).sendSummaryAsync(inValue)
         End Function
     End Class
 End Namespace

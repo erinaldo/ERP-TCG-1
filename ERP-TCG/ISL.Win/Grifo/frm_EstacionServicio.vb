@@ -292,8 +292,9 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
                     ItemDocumento.Precio = ItemVenta.PrecioUnitario
-                    ItemDocumento.Subtotal = ItemVenta.Cantidad * ItemVenta.PrecioUnitario
-                    ItemDocumento.Total = ItemVenta.Cantidad * ItemVenta.PrecioUnitario
+                    ItemDocumento.Subtotal = Math.Round(IIf(ItemVenta.IndImpuesto, ItemVenta.PrecioTotal / (1 + mdblIGV), ItemVenta.PrecioTotal), 4, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Total = ItemVenta.PrecioTotal
+                    ItemDocumento.Igv = ItemDocumento.Total - ItemDocumento.Subtotal
                     ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
                     ItemDocumento.IdVehiculo = cmb_Vehiculo.Text
@@ -1343,6 +1344,18 @@ Public Class frm_EstacionServicio
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
+    End Sub
+
+    Private Sub nud_Cantidad_Enter(sender As Object, e As EventArgs) Handles nud_Cantidad.Enter
+        nud_Cantidad.SelectAll()
+    End Sub
+
+    Private Sub nud_Cantidad_Click(sender As Object, e As EventArgs) Handles nud_Cantidad.Click
+        nud_Cantidad.SelectAll()
+    End Sub
+
+    Private Sub nud_Cantidad_GotFocus(sender As Object, e As EventArgs) Handles nud_Cantidad.GotFocus
+        nud_Cantidad.SelectAll()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

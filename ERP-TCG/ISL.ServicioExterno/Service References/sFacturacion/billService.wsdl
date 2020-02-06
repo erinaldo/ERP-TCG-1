@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://service.gem.factura.comppago.registro.servicio.sunat.gob.pe/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://service.gem.factura.comppago.registro.servicio.sunat.gob.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://service.gem.factura.comppago.registro.servicio.sunat.gob.pe/" xmlns:ns1="http://service.sunat.gob.pe" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://service.gem.factura.comppago.registro.servicio.sunat.gob.pe/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:import namespace="http://service.sunat.gob.pe" location="billService?ns1.wsdl" />
+  <wsdl:import namespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/" location="billService?ns2.wsdl" />
   <wsdl:types />
   <wsdl:binding name="BillServicePortBinding" type="ns1:billService">
     <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -43,7 +44,13 @@
   </wsdl:binding>
   <wsdl:service name="billService">
     <wsdl:port name="BillServicePort" binding="ns0:BillServicePortBinding">
-      <soap11:address location="https://e-beta.sunat.gob.pe:443/ol-ti-itcpfegem-beta/billService" />
+      <soap11:address location="https://e-factura.sunat.gob.pe:443/ol-ti-itcpfegem/billService" />
+    </wsdl:port>
+    <wsdl:port name="BillServicePort.0" binding="ns2:BillServicePortBinding">
+      <soap12:address location="https://e-factura.sunat.gob.pe:443/ol-ti-itcpfegem/billService" />
+    </wsdl:port>
+    <wsdl:port name="BillServicePort.3" binding="ns0:BillServicePortBinding">
+      <soap11:address location="https://e-factura.sunat.gob.pe:443/ol-ti-itcpfegem/billService" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
