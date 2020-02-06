@@ -2419,7 +2419,7 @@ Partial Class frm_FacturarCarga
         Me.UltraTabPageControl3.AutoScroll = True
         Me.UltraTabPageControl3.Controls.Add(Me.agrContenedor)
         Me.UltraTabPageControl3.Controls.Add(Me.agrListaCargas)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1344, 227)
         '
@@ -2581,7 +2581,7 @@ Partial Class frm_FacturarCarga
         'UltraTabPageControl12
         '
         Me.UltraTabPageControl12.Controls.Add(Me.griAnticipos)
-        Me.UltraTabPageControl12.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl12.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
         Me.UltraTabPageControl12.Size = New System.Drawing.Size(1344, 227)
         '
@@ -2721,7 +2721,7 @@ Partial Class frm_FacturarCarga
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficMaterial)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1346, 488)
         '
@@ -2755,7 +2755,7 @@ Partial Class frm_FacturarCarga
         Me.UltraTabPageControl2.AutoScroll = True
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatos)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1346, 488)
         '

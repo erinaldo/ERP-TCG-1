@@ -524,7 +524,8 @@ Public Class frm_FacturarCarga
     End Sub
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
-        If txtNumero.Text.Trim <> "" AndAlso CInt(txtNumero.Text) > 0 Then txtNumero.Text = FormatoDocumento(txtNumero.Text, 10)
+        'If txtNumero.Text.Trim <> "" AndAlso CInt(txtNumero.Text) > 0 Then txtNumero.Text = FormatoDocumento(txtNumero.Text, 10) '@0001
+        If txtNumero.Text.Trim <> "" AndAlso CInt(txtNumero.Text) > 0 Then txtNumero.Text = FormatoDocumento(txtNumero.Text, 8)
     End Sub
 
     Private Sub txtNumero_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.ValueChanged
@@ -842,7 +843,8 @@ Public Class frm_FacturarCarga
     End Sub
 
     Private Sub txNumeroB_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumeroB.Validated
-        If txtNumeroB.Text.Trim <> "" AndAlso CInt(txtNumeroB.Text) > 0 Then txtNumeroB.Text = FormatoDocumento(txtNumeroB.Text, 10)
+        'If txtNumeroB.Text.Trim <> "" AndAlso CInt(txtNumeroB.Text) > 0 Then txtNumeroB.Text = FormatoDocumento(txtNumeroB.Text, 10) '@0001
+        If txtNumeroB.Text.Trim <> "" AndAlso CInt(txtNumeroB.Text) > 0 Then txtNumeroB.Text = FormatoDocumento(txtNumeroB.Text, 8)
     End Sub
 
     Private Sub griDetalleDoc_BeforeCellUpdate(ByVal sender As System.Object, ByVal e As Infragistics.Win.UltraWinGrid.BeforeCellUpdateEventArgs) Handles griDetalleDoc.BeforeCellUpdate
@@ -2432,7 +2434,8 @@ Public Class frm_FacturarCarga
                 If decAnticipo.Value > leDetalleDocOD.Sum(Function(x) x.SubTotal) Then Throw New Exception("No puede aplicar un anticipo con monto mayor al subtotal.")
             End If
             If cboEstado.Text = "GENERADA" Then
-                oeMovDocumento.Numero = FormatoDocumento(txtNumero.Text, 10)
+                'oeMovDocumento.Numero = FormatoDocumento(txtNumero.Text, 10)
+                oeMovDocumento.Numero = FormatoDocumento(txtNumero.Text, 8)
                 oeMovDocumento.IndElectronico = chkElectronico.Checked
             End If
 

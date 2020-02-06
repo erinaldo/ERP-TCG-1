@@ -265,7 +265,8 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub txtNumeroBus_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumeroBus.Validated
-        FormateaTexto(txtNumeroBus, 10)
+        'FormateaTexto(txtNumeroBus, 10) '@0001
+        FormateaTexto(txtNumeroBus, 8)
     End Sub
 
     Private Sub txtSerieAso_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerieAso.Validated
@@ -273,7 +274,8 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub txtNumeroAso_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumeroAso.Validated
-        FormateaTexto(txtNumeroAso, 10)
+        'FormateaTexto(txtNumeroAso, 10) '@0001
+        FormateaTexto(txtNumeroAso, 8)
     End Sub
 
     Private Sub txtSerie_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.Validated
@@ -311,7 +313,8 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
-        FormateaTexto(txtNumero, 10)
+        'FormateaTexto(txtNumero, 10) ' @0001
+        FormateaTexto(txtNumero, 8)
     End Sub
 
     Private Sub decSubTotal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles decSubTotal.ValueChanged
@@ -335,7 +338,8 @@ Public Class frm_NotaCreditoDebito
     Private Sub txtNumeroAso_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtNumeroAso.KeyDown
         Try
             If e.KeyCode = Keys.Enter Then
-                FormateaTexto(txtNumeroAso, 10)
+                'FormateaTexto(txtNumeroAso, 10) '@0001
+                FormateaTexto(txtNumeroAso, 8)
                 CargaDocAsociado()
             End If
         Catch ex As Exception
@@ -578,8 +582,8 @@ Public Class frm_NotaCreditoDebito
                     oeMovDocumento.Id = id_doc
                     dsComprobante = olMovDocumento.ListaFacturacionElectronica(oeMovDocumento)
                     'olDocumento.GenerarXmlFacturaElectronica_Emision(dsComprobante.Tables(0), dsComprobante.Tables(1), frm_DocumentoElectronico.RutaArchivos, gUsuarioEOS.Id)
-                    dt_cpe = Deserializar_XmlStr(WCF_Cpe.GenerarXML_CPE(dsComprobante, Date.Now, dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), RutaArchivos, Abrev_Empresa, Nothing, Nothing))
-                    Registro_ComprobanteElectronico_Bath(dt_cpe, "I", dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), Nothing)
+                    'dt_cpe = Deserializar_XmlStr(WCF_Cpe.GenerarXML_CPE(dsComprobante, Date.Now, dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), RutaArchivos, Abrev_Empresa, Nothing, Nothing))
+                    'Registro_ComprobanteElectronico_Bath(dt_cpe, "I", dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), Nothing)
                 End If
                 'End If
             End If
@@ -1043,7 +1047,8 @@ Public Class frm_NotaCreditoDebito
                 .Text = "Detalle de Documentos"
                 OcultarColumna(griDetalleDoc, True, "Id", "IdMovimientoDocumento", "IndServicioMaterial", "IdMaterialServicio", "CodigoMaterialServicio",
                                "PrecioUnitarioSinImp", "IndGravado", "IdOperacionDetalle", "IdVehiculo", "Activo", "UsuarioCreacion", "FechaCreacion",
-                               "Seleccion", "IdUnidadMedida", "IdTipoUnidadMedida", "Pos", "FactorRefUni", "IdCuentaContableCompra", "IdViaje")
+                               "Seleccion", "IdUnidadMedida", "IdTipoUnidadMedida", "Pos", "FactorRefUni", "IdCuentaContableCompra", "IdViaje",
+                                "IdEmpresaSis", "IdSucursal", "IndConsolidado", "GlosaConsolidado", "Consolidado")
                 FormatoColumna(griDetalleDoc, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Cantidad", "Precio", "Igv", "Subtotal", "Total")
                 .DisplayLayout.Bands(0).Columns("NombreMaterialServicio").Header.VisiblePosition = 0
                 .DisplayLayout.Bands(0).Columns("UnidadMedida").Header.VisiblePosition = 1

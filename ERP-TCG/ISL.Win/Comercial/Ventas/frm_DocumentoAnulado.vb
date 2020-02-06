@@ -256,7 +256,8 @@ Public Class frm_DocumentoAnulado
     End Sub
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
-        FormateaTexto(txtNumero, 10)
+        'FormateaTexto(txtNumero, 10) '@0001
+        FormateaTexto(txtNumero, 8)
     End Sub
 
     Private Sub griDocAnulados_DoubleClick(sender As Object, e As EventArgs) Handles griDocAnulados.DoubleClick
