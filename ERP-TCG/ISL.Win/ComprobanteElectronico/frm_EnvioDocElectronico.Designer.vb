@@ -71,6 +71,7 @@ Partial Class frm_EnvioDocElectronico
         Me.udg_Facturas = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.tsb_EnviarFactura = New System.Windows.Forms.ToolStripButton()
+        Me.tsb_GenerarXML = New System.Windows.Forms.ToolStripButton()
         Me.tsb_CambiarEstado = New System.Windows.Forms.ToolStripButton()
         Me.UltraGroupBox3 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.UltraLabel1 = New Infragistics.Win.Misc.UltraLabel()
@@ -236,7 +237,7 @@ Partial Class frm_EnvioDocElectronico
         '
         'ToolStrip2
         '
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_EnviarFactura, Me.tsb_CambiarEstado})
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_EnviarFactura, Me.tsb_GenerarXML, Me.tsb_CambiarEstado})
         Me.ToolStrip2.Location = New System.Drawing.Point(3, 17)
         Me.ToolStrip2.Name = "ToolStrip2"
         Me.ToolStrip2.Size = New System.Drawing.Size(792, 25)
@@ -252,12 +253,22 @@ Partial Class frm_EnvioDocElectronico
         Me.tsb_EnviarFactura.Size = New System.Drawing.Size(122, 22)
         Me.tsb_EnviarFactura.Text = "EnviarDocumento"
         '
+        'tsb_GenerarXML
+        '
+        Me.tsb_GenerarXML.ForeColor = System.Drawing.Color.Navy
+        Me.tsb_GenerarXML.Image = Global.ISL.Win.My.Resources.Resources.clipboard
+        Me.tsb_GenerarXML.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsb_GenerarXML.Name = "tsb_GenerarXML"
+        Me.tsb_GenerarXML.Size = New System.Drawing.Size(97, 22)
+        Me.tsb_GenerarXML.Text = "Generar_XML"
+        '
         'tsb_CambiarEstado
         '
         Me.tsb_CambiarEstado.ForeColor = System.Drawing.Color.Navy
+        Me.tsb_CambiarEstado.Image = Global.ISL.Win.My.Resources.Resources.Actualiza
         Me.tsb_CambiarEstado.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsb_CambiarEstado.Name = "tsb_CambiarEstado"
-        Me.tsb_CambiarEstado.Size = New System.Drawing.Size(91, 22)
+        Me.tsb_CambiarEstado.Size = New System.Drawing.Size(107, 22)
         Me.tsb_CambiarEstado.Text = "CambiarEstado"
         '
         'UltraGroupBox3
@@ -971,7 +982,6 @@ Partial Class frm_EnvioDocElectronico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.fic_DocumentoElectronico)
-        Me.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frm_EnvioDocElectronico"
         Me.Text = "frm_EnvioDocElectronico"
         Me.UltraTabPageControl2.ResumeLayout(False)
@@ -1094,4 +1104,5 @@ Partial Class frm_EnvioDocElectronico
     Friend WithEvents uce_TipoDocumento As Infragistics.Win.UltraWinEditors.UltraComboEditor
     Friend WithEvents DateTimePicker5 As DateTimePicker
     Friend WithEvents DateTimePicker4 As DateTimePicker
+    Friend WithEvents tsb_GenerarXML As ToolStripButton
 End Class

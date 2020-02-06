@@ -23,7 +23,7 @@ Imports System.Net
 'Imports System.Windows.Forms
 Imports System.ServiceModel
 Imports Infragistics.Win.Misc
-'Imports System.Xml
+Imports Ionic.Zip
 'Imports System.Configuration
 'Imports System.Collections.Specialized
 Imports MSScriptControl
@@ -348,56 +348,66 @@ Module m_Funciones
 
 #End Region
 
-
-    Public Sub gmt_CPE(oeDocumento As e_MovimientoDocumento)
+    Public Function gmt_CPE(oeDocumento As e_MovimientoDocumento) As String
+        Dim RutaXML As String = ""
         Try
-            'If oeDocumento.TipoOperacion = "I" Then
             Dim Hash As String = ""
-                Dim ls_NombreArchivo As String = ""
-                Dim lb_IndXml As Boolean = False
+            Dim ls_NombreArchivo As String = ""
+            Dim lb_IndXml As Boolean = False
             Dim odDocumento As New l_MovimientoDocumento, odDatosImpresion As New l_MovimientoDocumento_Impresion
             Dim oeDocumentoElectronico As New e_ComprobantePagoElectronico
-                Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
-            oeDocumentoElectronico = olDocumentoElectronico.Obtener("GEN", New e_ComprobantePagoElectronico With {.TipoOperacion = "GEN", .Id = oeDocumento.Id})
+            Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
+            oeDocumentoElectronico = olDocumentoElectronico.Obtener(New e_ComprobantePagoElectronico With {.TipoOperacion = "LIS", .Id = oeDocumento.Id})
 
             For Each detalle As e_ComprobantePagoElectronico_Detalle In oeDocumentoElectronico.Detalles
-                    If detalle.Producto.Trim = String.Empty Then Throw New Exception("Existe un Material sin Nombre de Impresion")
-                Next
-                Select Case oeDocumento.IdTipoDocumento
-                Case "1CH000000026" ' Factura
+                If detalle.Producto.Trim = String.Empty Then Throw New Exception("Existe un Material sin Nombre de Impresion")
+            Next
+            Select Case oeDocumentoElectronico.TipoDocumento
+                Case "01" ' Factura
                     ls_NombreArchivo = olDocumentoElectronico.GenerarEDocFactura(oeDocumentoElectronico, Hash).Trim
-                        lb_IndXml = True
+                    lb_IndXml = True
                 Case "1CH000000030" ' Nota de Credito
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
                     ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
-                        lb_IndXml = True
+                    lb_IndXml = True
                         'End If
                 Case "1CH000000033" ' Nota de Debito
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
                     ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaDebito(oeDocumentoElectronico, Hash).Trim
-                        lb_IndXml = True
-                        'End If
-                End Select
+                    lb_IndXml = True
+                    'End If
+            End Select
+            oeDocumento.DatosImpresion.IdMovimientoDocumento = oeDocumentoElectronico.Id
             If lb_IndXml Then
-                oeDocumento.DatosImpresion.TipoOperacion = "A"
                 oeDocumento.DatosImpresion.RutaImpresionXML = ls_NombreArchivo.Trim
                 oeDocumento.DatosImpresion.RutaImpresionPDF = Replace(ls_NombreArchivo, "xml", "pdf").Trim
                 oeDocumento.DatosImpresion.CodigoExterno = Replace(Replace(ls_NombreArchivo, ".xml", ""), gstrRutaDocumentosEle20, "").Trim
                 oeDocumento.DatosImpresion.HashResumen = Hash
             Else
                 ls_NombreArchivo = gstrRutaDocumentosEle20 & oeDocumentoElectronico.RUCEmisor & "-" & oeDocumentoElectronico.TipoDocumento & "-" & oeDocumentoElectronico.Documento.Trim & ".pdf"
-                oeDocumento.DatosImpresion.TipoOperacion = "A"
+                'oeDocumento.DatosImpresion.TipoOperacion = "A"
                 oeDocumento.DatosImpresion.RutaImpresionXML = String.Empty
-                    oeDocumento.DatosImpresion.RutaImpresionPDF = ls_NombreArchivo.Trim
-                    oeDocumento.DatosImpresion.CodigoExterno = Replace(Replace(ls_NombreArchivo, ".pdf", ""), gstrRutaDocumentosEle20, "")
-                End If
+                oeDocumento.DatosImpresion.RutaImpresionPDF = ls_NombreArchivo.Trim
+                oeDocumento.DatosImpresion.CodigoExterno = Replace(Replace(ls_NombreArchivo, ".pdf", ""), gstrRutaDocumentosEle20, "")
+            End If
+            oeDocumento.DatosImpresion.TipoOperacion = "U"
             'oeDocumento.TipoOperacion = "R"
             oeDocumento.lstDetalleDocumento = New List(Of e_DetalleDocumento)
-            'oeDocumento.lstDocAsociado = New List(Of e_DocumentoAsociado) 'CesS
-            'oeDocumento.lstOrdenDocumento = New List(Of e_OrdenDocumento) 'CesS
-            'oeDocumento.oeVenta = New e_Venta 'CesS
+            RutaXML = oeDocumento.DatosImpresion.RutaImpresionXML
             odDatosImpresion.Guardar(oeDocumento.DatosImpresion)
             'End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return RutaXML
+    End Function
+
+    Public Sub gmt_GeneraZip(Ruta As String)
+        Try
+            Using zip As ZipFile = New ZipFile(System.Text.UTF8Encoding.UTF8)
+                zip.AddFile(Ruta.Trim, "")
+                zip.Save(Replace(Ruta, ".xml", ".zip"))
+            End Using
         Catch ex As Exception
             Throw ex
         End Try

@@ -5,7 +5,6 @@ Imports Ionic.Zip
 Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
 Imports ERP.ServicioExterno
-'Imports EOS.Configuracion
 Imports System.Xml
 
 Public Class frm_EnvioDocElectronico
@@ -156,6 +155,10 @@ Public Class frm_EnvioDocElectronico
                         lr_ConsultarDocs()
                     Else
                         Throw New Exception("Debe Seleccionar Un Registro para Enviar") '976881787
+                    End If
+                Case tsb_GenerarXML.Name
+                    If lst_DocElectronico.Where(Function(i) i.Sel).Count = 1 Then
+                        gmt_GeneraZip(gmt_CPE(New e_MovimientoDocumento With {.Id = lst_DocElectronico.Where(Function(i) i.Sel)(0).Id}))
                     End If
                 Case tsb_CambiarEstado.Name
                     If lst_DocElectronico.Where(Function(i) i.Sel).Count = 1 Then
@@ -605,7 +608,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarDocs()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("LIS", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("LIS", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "LIS"}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Facturas)
         Catch ex As Exception
             Throw ex
@@ -749,7 +752,7 @@ Public Class frm_EnvioDocElectronico
             Dim e As ZipEntry
             For Each e In zip1
                 If {Replace(ls_Archivo, ".zip", ".xml")}.Contains(e.FileName) Then
-                    '  e.Extract(gstrRutaDocumentosCDR, ExtractExistingFileAction.OverwriteSilently)
+                    'e.Extract(gstrRutaDocumentosCDR, ExtractExistingFileAction.OverwriteSilently)
                 End If
             Next
         End Using
