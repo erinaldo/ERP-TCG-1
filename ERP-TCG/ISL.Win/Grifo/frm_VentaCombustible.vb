@@ -236,7 +236,16 @@ Public Class frm_VentaCombustible
         Try
             With griOrdenComercial
                 If .Selected.Rows.Count > 0 Then
-                    gtm_Imprimir_Documento(.ActiveRow.Cells("Id").Value, "TICKET", "OV")
+                    Dim Documento As New e_MovimientoDocumento, ListaOrdenDocumento As New List(Of e_Orden_Documento), OrdenDocumento As New e_Orden_Documento, dOrdenDocumento As New l_Orden_Documento
+                    OrdenDocumento.TipoOperacion = "D"
+                    OrdenDocumento.IdOrden = .ActiveRow.Cells("Id").Value
+                    Documento = dOrdenDocumento.ObtenerDocumento(OrdenDocumento)
+                    If Documento.Id <> "" Then
+                        gtm_Imprimir_Documento(Documento.Id, "TICKET", "GRIFO")
+                    Else
+                        MsgBox("No se encontro el documento asociado", MsgBoxStyle.Information, Me.Text)
+                    End If
+
                 End If
             End With
         Catch ex As Exception
@@ -1115,7 +1124,7 @@ Public Class frm_VentaCombustible
         Select Case ficOrdenComercial.SelectedTab.Index
             Case 0
                 If griOrdenComercial.Rows.Count > 0 Then
-                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 0, 1)
+                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 1, 1)
                 Else
                     gmt_ControlBoton(1, 1)
                 End If

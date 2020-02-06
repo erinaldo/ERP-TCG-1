@@ -4791,11 +4791,36 @@ Module m_Funciones
                         If Colum.Key = aColumnas(i).ToString Then
                             Dim nomcol As String = aColumnas(i).ToString
                             .Summaries.Add("Sum" & nomcol, SummaryType.Sum, .Columns(nomcol))
-                            .Summaries.Item("Sum" & nomcol).DisplayFormat = "{0:#,###,##0.00}"
+                            If nomcol = "ValorReal" Then
+                                .Summaries.Item("Sum" & nomcol).DisplayFormat = "{0:#,###,##0.000}"
+                            Else
+                                .Summaries.Item("Sum" & nomcol).DisplayFormat = "{0:#,###,##0.00}"
+                            End If
                             .Summaries.Item("Sum" & nomcol).Appearance.TextHAlign = HAlign.Right
                             .Summaries.Item("Sum" & nomcol).Appearance.BackColor = Azul
                             .Summaries.Item("Sum" & nomcol).Appearance.ForeColor = Blanco
                             '.Summaries.Item("Sum" & nomcol).ToolTipText = "Super Mensaje"
+                        End If
+                    End If
+                Next
+            Next
+        End With
+        Grilla.DisplayLayout.Override.SummaryDisplayArea = SummaryDisplayAreas.BottomFixed
+    End Sub
+
+    Public Sub CalcularTotales_CierreTurno(ByVal Grilla As UltraGrid, ByVal ParamArray aColumnas As String())
+        With Grilla.DisplayLayout.Bands(0)
+            .Summaries.Clear()
+            .SummaryFooterCaption = "Totales:"
+            For i As Integer = 0 To aColumnas.Length - 1
+                For Each Colum As UltraGridColumn In .Columns
+                    If aColumnas(i).Trim <> "" Then
+                        If Colum.Key = aColumnas(i).ToString Then
+                            Dim nomcol As String = aColumnas(i).ToString
+                            .Summaries.Add("Sum" & nomcol, SummaryType.Sum, .Columns(nomcol))
+                            .Summaries.Item("Sum" & nomcol).Appearance.TextHAlign = HAlign.Right
+                            .Summaries.Item("Sum" & nomcol).Appearance.BackColor = Azul
+                            .Summaries.Item("Sum" & nomcol).Appearance.ForeColor = Blanco
                         End If
                     End If
                 Next
