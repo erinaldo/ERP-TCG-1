@@ -32,7 +32,6 @@ Public Class frm_EnvioDocElectronico
 
 #End Region
 
-
 #Region "Variables"
 
     Private mb_Load As Boolean = False
@@ -52,8 +51,9 @@ Public Class frm_EnvioDocElectronico
     Private mo_Documento As e_MovimientoDocumento
     Private mo_Empresa As e_Empresa
     Private wr_Documento As l_MovimientoDocumento
-    Private ms_Usuario As String = "20603652810MEGAFACT"
-    Private ms_ClaveSol As String = "Sistemas7"
+    Private wr_DocImpresion As l_MovimientoDocumento_Impresion
+    Private ms_Usuario As String = "20480099720CPESUNAT"
+    Private ms_ClaveSol As String = "materiaGRIF01X"
 
     Dim fs_Rpta As FileStream
     Dim ls_ArchivoZip As String = ""
@@ -121,6 +121,7 @@ Public Class frm_EnvioDocElectronico
             wr_DatosStatus = New sFacturacion.getStatusResponse
             wr_Documento = New l_MovimientoDocumento
             wr_Empresa = New l_Empresa
+            wr_DocImpresion = New l_MovimientoDocumento_Impresion
             DateTimePicker3.Value = Date.Now.AddDays(-7)
             DateTimePicker4.Value = Date.Now.AddDays(-7)
             lr_CargarCombos()
@@ -608,7 +609,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarDocs()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("LIS", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "LIS"}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("FAC", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "FAC"}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Facturas)
         Catch ex As Exception
             Throw ex
@@ -723,7 +724,7 @@ Public Class frm_EnvioDocElectronico
         Try
             ls_ArchivoZip = Documento.RutaZip
             ls_ArchivoRpta = Replace(ls_ArchivoZip, Replace(ls_ArchivoZip, gstrRutaDocumentosEle20, ""), "R-" & Replace(ls_ArchivoZip, gstrRutaDocumentosEle20, ""))
-            ls_ArchivoRpta = Replace(ls_ArchivoRpta, gstrRutaDocumentosEle20, "") ' gstrRutaDocumentosCDR)
+            ls_ArchivoRpta = Replace(ls_ArchivoRpta, gstrRutaDocumentosEle20, gstrRutaDocumentosCDR)
             fs_Rpta = New FileStream(ls_ArchivoRpta, FileMode.Create)
             mt_AsignarCredenciales()
             wr_Envio.contentFile = My.Computer.FileSystem.ReadAllBytes(ls_ArchivoZip)
@@ -747,12 +748,12 @@ Public Class frm_EnvioDocElectronico
     End Sub
 
     Public Sub lr_Extraer(Ruta As String)
-        Dim ls_Archivo As String = Replace(Ruta, "", "") ' gstrRutaDocumentosCDR, "")
+        Dim ls_Archivo As String = Replace(Ruta, gstrRutaDocumentosCDR, "")
         Using zip1 As ZipFile = ZipFile.Read(Ruta)
             Dim e As ZipEntry
             For Each e In zip1
                 If {Replace(ls_Archivo, ".zip", ".xml")}.Contains(e.FileName) Then
-                    'e.Extract(gstrRutaDocumentosCDR, ExtractExistingFileAction.OverwriteSilently)
+                    e.Extract(gstrRutaDocumentosCDR, ExtractExistingFileAction.OverwriteSilently)
                 End If
             Next
         End Using
@@ -770,26 +771,28 @@ Public Class frm_EnvioDocElectronico
 
     Private Sub lr_LeerRespuestaSunat(xml_doc As XmlDocument, IdDocumento As String)
         Try
-            'Dim XmlNode As XmlNodeList
-            'mo_Documento = New e_Documento
-            'Dim ls_Mensaje As String = ""
-            'mo_Documento.Id = IdDocumento
-            'XmlNode = xml_doc.GetElementsByTagName("DigestValue")
+            Dim XmlNode As XmlNodeList
+            Dim mo_DocumentoImp = New e_MovimientoDocumento_Impresion
+            Dim ls_Mensaje As String = ""
+            mo_DocumentoImp.IdMovimientoDocumento = IdDocumento
+            XmlNode = xml_doc.GetElementsByTagName("DigestValue")
+            For i = 0 To XmlNode.Count - 1
+                mo_DocumentoImp.HashSunat = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
+            Next
+            XmlNode = xml_doc.GetElementsByTagName("cbc:ResponseCode")
             'For i = 0 To XmlNode.Count - 1
-            '    mo_Documento.RptaSunat = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
+            '    mo_DocumentoImp.IdEstadoSunat = lf_ObtenerEstadoSunat(XmlNode(i).ChildNodes.Item(0).InnerText.Trim())
             'Next
-            'XmlNode = xml_doc.GetElementsByTagName("cbc:ResponseCode")
-            'For i = 0 To XmlNode.Count - 1
-            '    mo_Documento.IdEstadoSunat = lf_ObtenerEstadoSunat(XmlNode(i).ChildNodes.Item(0).InnerText.Trim())
-            'Next
-            'XmlNode = xml_doc.GetElementsByTagName("cbc:Description")
-            'For i = 0 To XmlNode.Count - 1
-            '    ls_Mensaje = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
-            'Next
-            'mo_Documento.UsuarioCrea = gUsuarioEOS.Id
-            'mo_Documento.TipoOperacion = "Y"
-            'mo_Documento.IndElectronico = False
-            'If wr_Documento.Guardar(mo_Documento) Then MessageBox.Show(ls_Mensaje, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            XmlNode = xml_doc.GetElementsByTagName("cbc:Description")
+            For i = 0 To XmlNode.Count - 1
+                ls_Mensaje = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
+            Next
+            mo_DocumentoImp.UsuarioCreacion = gUsuarioSGI.Id
+            mo_DocumentoImp.TipoOperacion = "Y"
+            'mo_DocumentoImp.IndElectronico = False
+            wr_DocImpresion.Guardar(mo_DocumentoImp)
+            MessageBox.Show(ls_Mensaje, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         Catch ex As Exception
             Throw ex
         End Try

@@ -48,6 +48,8 @@ Module m_Funciones
     'Public gstrNombreEmpresaSis As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
     'Public gstrRucEmpresaSis As String = "20603652810"
 
+    Public gstrRutaDocumentosCDR As String = "D:\Sistema\cdr\"
+
     Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
         Dim ln_Retorna As Double = 0.18
         'oeParametro = New e_Parametro
@@ -357,7 +359,7 @@ Module m_Funciones
             Dim odDocumento As New l_MovimientoDocumento, odDatosImpresion As New l_MovimientoDocumento_Impresion
             Dim oeDocumentoElectronico As New e_ComprobantePagoElectronico
             Dim olDocumentoElectronico As New l_ComprobantePagoElectronico
-            oeDocumentoElectronico = olDocumentoElectronico.Obtener(New e_ComprobantePagoElectronico With {.TipoOperacion = "LIS", .Id = oeDocumento.Id})
+            oeDocumentoElectronico = olDocumentoElectronico.Obtener(New e_ComprobantePagoElectronico With {.TipoOperacion = "UNO", .Id = oeDocumento.Id})
 
             For Each detalle As e_ComprobantePagoElectronico_Detalle In oeDocumentoElectronico.Detalles
                 If detalle.Producto.Trim = String.Empty Then Throw New Exception("Existe un Material sin Nombre de Impresion")
@@ -764,7 +766,7 @@ Module m_Funciones
 #End Region
 
     '' Variables para CPE
-    Public gstrRutaDocumentosEle20 As String = ""
+    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\"
 
 
     Public TipoOC As String

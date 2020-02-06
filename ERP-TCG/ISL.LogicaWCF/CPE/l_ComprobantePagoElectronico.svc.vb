@@ -12,11 +12,11 @@ Public Class l_ComprobantePagoElectronico
     '' CPE
     Public gs_RutaDocumentosEle As String = "\\10.10.1.2\DocumentosElectronicos\"
     'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
-    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
     'Public gstrRutaDocumentosEle20 As String = "\\10.10.1.8\Comprobantes\2-0\Documentos MTN\"
     Public gs_RutaDocumentosCDR20 As String = "\\10.10.1.8\Comprobantes\2-0\CDR - MTN\"
-    Public gdecIGV As Double = 18
-    Public gstrRutaFirma As String = "D:\Sistema\xml\ComprobanteElectronico\Certificado\LLAMA-PE-CERTIFICADO-DEMO-20480099720.pfx"
+    Public gdecIGV As Double = 0.18
+    Public gstrRutaFirma As String = "D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
     Public gstrDepartamentoEmpresa As String = "LAMBAYEQUE"
 
     Public gstrUbigeoEmpresa As String = "130101"
@@ -1046,7 +1046,7 @@ Public Class l_ComprobantePagoElectronico
 
     <OperationBehavior(TransactionScopeRequired:=True)>
     Public Function GenerarEDocFactura(Documento As e_ComprobantePagoElectronico, ByRef Hash As String) As String Implements Il_ComprobantePagoElectronico.GenerarEDocFactura
-        Dim RutaArchivo As String = gstrRutaDocumentosEle20 & "\" & Documento.RUCEmisor.Trim.Trim & "-" & Documento.TipoDocumento & "-" & Documento.Documento & ".xml"
+        Dim RutaArchivo As String = gstrRutaDocumentosEle20 & Documento.RUCEmisor.Trim.Trim & "-" & Documento.TipoDocumento & "-" & Documento.Documento & ".xml"
         Try
             settings.Indent = True
             settings.Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
@@ -1632,7 +1632,7 @@ Public Class l_ComprobantePagoElectronico
             'Dim PassCertificado As String = System.Configuration.ConfigurationManager.AppSettings("estelasuarez").ToString
             Dim local_xmlArchivo As String = RutaXML
             Dim local_nombreXML As String = System.IO.Path.GetFileName(local_xmlArchivo)
-            Dim MiCertificado As X509Certificate2 = New X509Certificate2(gstrRutaFirma, "123456", X509KeyStorageFlags.MachineKeySet)
+            Dim MiCertificado As X509Certificate2 = New X509Certificate2(gstrRutaFirma, "materiaGRIF01X", X509KeyStorageFlags.MachineKeySet)
             'Dim MiCertificado As X509Certificate2 = New X509Certificate2(RutaCertificado, PassCertificado)
             Dim xmlDoc As XmlDocument = New XmlDocument()
             xmlDoc.PreserveWhitespace = True
