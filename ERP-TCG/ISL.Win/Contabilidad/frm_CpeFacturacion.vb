@@ -1506,6 +1506,10 @@ Public Class frm_CpeFacturacion
         End Select
     End Sub
 
+    Private Sub tsp_Principal_Filtro_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles tsp_Principal_Filtro.ItemClicked
+
+    End Sub
+
     Private Sub MostrarItems_Menu(ByVal enviar As Boolean, ByVal consultar As Boolean, ByVal fecha As Boolean,
                             ByVal TipoDoc As Boolean, ByVal xml As Boolean, ByVal zip As Boolean, ByVal pdf As Boolean,
                              email As Boolean, excel As Boolean, cdr As Boolean, validar_corr As Boolean, serie As Boolean)

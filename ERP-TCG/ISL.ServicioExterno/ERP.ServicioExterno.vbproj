@@ -145,11 +145,24 @@
     <None Include="Service References\sConsultarFactura\ERP.ServicioExterno.sConsultarFactura.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\sFacturacion\billService1.xsd">
+    <None Include="Service References\sFacturacion\billService.wsdl" />
+    <None Include="Service References\sFacturacion\billService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\sFacturacion\billService3.wsdl" />
-    <None Include="Service References\sFacturacion\billService31.wsdl" />
+    <None Include="Service References\sFacturacion\billService1.wsdl" />
+    <None Include="Service References\sFacturacion\billService2.wsdl" />
+    <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\sFacturacion\ERP.ServicioExterno.sFacturacion.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -169,18 +182,6 @@
     <WCFMetadataStorage Include="Service References\sConsultarFactura\" />
     <WCFMetadataStorage Include="Service References\sFacturacion\" />
     <WCFMetadataStorage Include="Service References\sRetencion\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\sFacturacion\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\sFacturacion\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\sFacturacion\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.vb</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\sRetencion\configuration91.svcinfo" />
@@ -215,6 +216,18 @@
       <Project>{d6821e32-caaa-4da7-88a5-22a551256e17}</Project>
       <Name>ERP.EntidadesWCF</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacion\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacion\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

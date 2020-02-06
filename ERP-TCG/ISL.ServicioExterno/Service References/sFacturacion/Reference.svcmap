@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4606113d-2000-4104-b38b-f536e5b4297b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c976c2f6-c76c-4519-8204-f88c600311de" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -18,12 +19,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="billService3.wsdl" MetadataType="Wsdl" ID="16c69c5f-4ba7-4d50-9ac9-955ae4b31701" SourceId="1" SourceUrl="https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService?ns1.wsdl" />
-    <MetadataFile FileName="billService31.wsdl" MetadataType="Wsdl" ID="ccc4a83a-a9c1-43bf-a60d-54e0a84e8099" SourceId="1" SourceUrl="https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService?wsdl" />
-    <MetadataFile FileName="billService1.xsd" MetadataType="Schema" ID="29eaeb14-447d-4cc2-b44a-5513550cf08d" SourceId="1" SourceUrl="https://e-beta.sunat.gob.pe/ol-ti-itcpfegem-beta/billService.xsd2.xsd" />
+    <MetadataFile FileName="billService.wsdl" MetadataType="Wsdl" ID="8adb76b8-dd27-4763-b14f-265687ca59db" SourceId="1" SourceUrl="https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService?wsdl" />
+    <MetadataFile FileName="billService1.wsdl" MetadataType="Wsdl" ID="6bd5c32a-4a19-495d-a78f-9a5dbc7e3274" SourceId="1" SourceUrl="https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService?ns1.wsdl" />
+    <MetadataFile FileName="billService2.wsdl" MetadataType="Wsdl" ID="a5bab4fd-7a89-4c0b-a5f5-2e5d52d7d11f" SourceId="1" SourceUrl="https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService?ns2.wsdl" />
+    <MetadataFile FileName="billService.xsd" MetadataType="Schema" ID="9744f519-258e-46b1-9448-fccedb650942" SourceId="1" SourceUrl="https://e-factura.sunat.gob.pe/ol-ti-itcpfegem/billService.xsd2.xsd" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
