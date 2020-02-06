@@ -7,7 +7,7 @@ Imports System.ServiceModel
 Public Interface Il_ComprobantePagoElectronico
 
     <OperationContract()>
-    Function Obtener(Operacion As String, Documento As e_ComprobantePagoElectronico) As e_ComprobantePagoElectronico
+    Function Obtener(Documento As e_ComprobantePagoElectronico) As e_ComprobantePagoElectronico
 
     <OperationContract()>
     Function Consultar(Operacion As String, Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico)
