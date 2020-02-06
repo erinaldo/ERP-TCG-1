@@ -233,7 +233,16 @@ Public Class frm_VentaCombustible
     End Sub
 
     Public Overrides Sub Imprimir()
-        gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
+        Try
+            With griOrdenComercial
+                If .Selected.Rows.Count > 0 Then
+                    gtm_Imprimir_Documento(.ActiveRow.Cells("Id").Value, "TICKET", "OV")
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+
     End Sub
 
     Public Overrides Sub Salir()
@@ -626,8 +635,6 @@ Public Class frm_VentaCombustible
             Consultar(True)
         End If
     End Sub
-
-
 
     Private Sub ficDetalleOrdenComercial_SelectedTabChanged(sender As Object, e As Infragistics.Win.UltraWinTabControl.SelectedTabChangedEventArgs) Handles ficDetalleOrdenComercial.SelectedTabChanged
         Try
