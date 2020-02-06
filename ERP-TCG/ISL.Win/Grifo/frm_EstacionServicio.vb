@@ -260,7 +260,7 @@ Public Class frm_EstacionServicio
                 ._Operador = 1
                 .IdPeriodo = ""
                 .IdMoneda = IdMoneda_Soles
-                .Tipo = 2
+                .Tipo = 1 '1 Venta 2 Compra
                 .IdTipoBien = 1
                 .Serie = txt_Serie.Text
                 .Numero = txt_Numero.Text
@@ -785,7 +785,7 @@ Public Class frm_EstacionServicio
 
             '' =========================================================================== 
             '' Emision de CPE
-            'If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
+            If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
         Catch ex As Exception
             Throw ex
         End Try

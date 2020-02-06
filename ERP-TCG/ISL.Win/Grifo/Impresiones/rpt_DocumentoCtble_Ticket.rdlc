@@ -1110,9 +1110,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>11.66896cm</Top>
-        <Left>2.53672cm</Left>
+        <Left>1.87526cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.87769cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -1145,9 +1145,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>12.22479cm</Top>
-        <Left>2.53672cm</Left>
+        <Left>1.87526cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.87769cm</Width>
         <ZIndex>34</ZIndex>
         <Style>
           <Border>
@@ -1180,9 +1180,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>12.74535cm</Top>
-        <Left>2.53672cm</Left>
+        <Left>1.87526cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.87769cm</Width>
         <ZIndex>35</ZIndex>
         <Style>
           <Border>
@@ -1201,7 +1201,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>IMPORTE TOTAL</Value>
+                <Value>IMPORTE TOTAL S/</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -1215,9 +1215,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.2659cm</Top>
-        <Left>2.53672cm</Left>
+        <Left>1.87526cm</Left>
         <Height>0.45cm</Height>
-        <Width>2.21623cm</Width>
+        <Width>2.87769cm</Width>
         <ZIndex>36</ZIndex>
         <Style>
           <Border>
