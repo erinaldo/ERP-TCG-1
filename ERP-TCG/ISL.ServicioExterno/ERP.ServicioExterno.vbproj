@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\sFacturacionOSE\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\sFacturacion\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +150,28 @@
     <None Include="Service References\sConsultarFactura\ERP.ServicioExterno.sConsultarFactura.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\sFacturacionOSE\billService.wsdl" />
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.getStatusCdrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.statusCdr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.statusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\sFacturacion\billService.wsdl" />
     <None Include="Service References\sFacturacion\billService.xsd">
       <SubType>Designer</SubType>
@@ -180,6 +207,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\sConsultarFactura\" />
+    <WCFMetadataStorage Include="Service References\sFacturacionOSE\" />
     <WCFMetadataStorage Include="Service References\sFacturacion\" />
     <WCFMetadataStorage Include="Service References\sRetencion\" />
   </ItemGroup>
@@ -225,6 +253,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\sFacturacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>

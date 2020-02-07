@@ -36,10 +36,10 @@ Public Class frm_EnvioDocElectronico
 
     Private mb_Load As Boolean = False
     Private ol_DocElectronico As l_ComprobantePagoElectronico
-    Private wr_SunatEnvio As sFacturacion.billServiceClient
-    Private wr_Datos As sFacturacion.sendBillResponse
-    Private wr_Envio As sFacturacion.sendBillRequest
-    Private wr_DatosStatus As New sFacturacion.getStatusResponse
+    Private wr_SunatEnvio As sFacturacionOSE.billServiceClient
+    Private wr_Datos As sFacturacionOSE.sendBillResponse
+    Private wr_Envio As sFacturacionOSE.sendBillRequest
+    Private wr_DatosStatus As New sFacturacionOSE.getStatusResponse
     Private wr_Resumen As l_ComprobantePagoElectronico_Resumen
     Private wr_Empresa As l_Empresa
     Private lst_DocElectronico, lst_DocBajas As List(Of e_ComprobantePagoElectronico)
@@ -52,8 +52,8 @@ Public Class frm_EnvioDocElectronico
     Private mo_Empresa As e_Empresa
     Private wr_Documento As l_MovimientoDocumento
     Private wr_DocImpresion As l_MovimientoDocumento_Impresion
-    Private ms_Usuario As String = "20480099720CPESUNAT"
-    Private ms_ClaveSol As String = "materiaGRIF01X"
+    Private ms_Usuario As String = "20480099720ERPTCGSO"
+    Private ms_ClaveSol As String = "Oksimcha44"
 
     Dim fs_Rpta As FileStream
     Dim ls_ArchivoZip As String = ""
@@ -114,11 +114,11 @@ Public Class frm_EnvioDocElectronico
             mb_Load = False
             ol_DocElectronico = New l_ComprobantePagoElectronico
             wr_Categoria = New l_Estado
-            wr_SunatEnvio = New sFacturacion.billServiceClient
-            wr_Datos = New sFacturacion.sendBillResponse
-            wr_Envio = New sFacturacion.sendBillRequest
+            wr_SunatEnvio = New sFacturacionOSE.billServiceClient
+            wr_Datos = New sFacturacionOSE.sendBillResponse
+            wr_Envio = New sFacturacionOSE.sendBillRequest
             wr_Resumen = New l_ComprobantePagoElectronico_Resumen
-            wr_DatosStatus = New sFacturacion.getStatusResponse
+            wr_DatosStatus = New sFacturacionOSE.getStatusResponse
             wr_Documento = New l_MovimientoDocumento
             wr_Empresa = New l_Empresa
             wr_DocImpresion = New l_MovimientoDocumento_Impresion
@@ -957,7 +957,7 @@ Public Class frm_EnvioDocElectronico
     End Function
 
     Private Sub mt_AsignarCredenciales()
-        wr_SunatEnvio = New sFacturacion.billServiceClient
+        wr_SunatEnvio = New sFacturacionOSE.billServiceClient
         mt_Credenciales()
         Dim Credenciales As New l_ClaveSunat(ms_Usuario, ms_ClaveSol)
         wr_SunatEnvio.Endpoint.EndpointBehaviors.Add(Credenciales)

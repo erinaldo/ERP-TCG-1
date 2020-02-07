@@ -1901,7 +1901,7 @@ Public Class frm_OrdenVenMaterial
                 .IdTipoBien = 1
                 'If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4) '@0001
                 .Serie = cboSerieDocumento.Text '@0001
-                If txtNumero.Text <> "" Then .Numero = FormatoDocumento(txtNumero.Text, 8)
+                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaPago.Value
                 .NoGravado = 0

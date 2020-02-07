@@ -640,6 +640,10 @@ Public Class l_ComprobantePagoElectronico
                             .WriteAttributeString("currencyID", Documento.Moneda)
                             .WriteString(Documento.SubTotal.ToString("F2"))
                             .WriteEndElement() 'LineExtensionAmount
+                            .WriteStartElement(prefixCbc, "TaxInclusiveAmount", cadCbc) ' subtotal
+                            .WriteAttributeString("currencyID", Documento.Moneda)
+                            .WriteString((Documento.Total + Documento.DctoGlobal).ToString("F2"))
+                            .WriteEndElement() 'LineExtensionAmount
                             .WriteStartElement(prefixCbc, "AllowanceTotalAmount", cadCbc) ' descuentos
                             .WriteAttributeString("currencyID", Documento.Moneda)
                             .WriteString(Documento.DctoGlobal.ToString("F2"))
@@ -699,7 +703,7 @@ Public Class l_ComprobantePagoElectronico
                     'LineExtensionAmount  total valor unitario
                     .WriteStartElement(prefixCbc, "LineExtensionAmount", cadCbc)
                     .WriteAttributeString("currencyID", Documento.Moneda)
-                    .WriteString((detalle.Cantidad * detalle.PrecioUnitario).ToString("F2"))
+                    .WriteString((detalle.CostoTotal).ToString("F2"))
                     .WriteEndElement() 'LineExtensionAmount
 
                     'precio unitario
@@ -917,7 +921,7 @@ Public Class l_ComprobantePagoElectronico
                     .WriteStartElement(prefixCac, "Price", cadCac)
                     .WriteStartElement(prefixCbc, "PriceAmount", cadCbc)
                     .WriteAttributeString("currencyID", Documento.Moneda)
-                    .WriteString(detalle.PrecioUnitario.ToString("F2"))
+                    .WriteString(detalle.CostoUnitario.ToString("F2"))
                     .WriteEndElement() 'PriceAmount
                     .WriteEndElement() 'Price
 
@@ -1046,6 +1050,7 @@ Public Class l_ComprobantePagoElectronico
 
     <OperationBehavior(TransactionScopeRequired:=True)>
     Public Function GenerarEDocFactura(Documento As e_ComprobantePagoElectronico, ByRef Hash As String) As String Implements Il_ComprobantePagoElectronico.GenerarEDocFactura
+        'Dim SerieNumero As String = Documento.Documento
         Dim RutaArchivo As String = gstrRutaDocumentosEle20 & Documento.RUCEmisor.Trim.Trim & "-" & Documento.TipoDocumento & "-" & Documento.Documento & ".xml"
         Try
             settings.Indent = True
