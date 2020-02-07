@@ -272,7 +272,6 @@ Public Class frm_CanjeDocumentos
     Private Sub mt_Inicializar()
         dtp_FechaEmision.Value = Date.Now
         txtSerie.Text = String.Empty
-        cmbTipoDocumento.SelectedIndex = -1
         tsb_Emitir.Enabled = False
         tsb_Eliminar.Enabled = False
         tsb_Imprimir.Enabled = False

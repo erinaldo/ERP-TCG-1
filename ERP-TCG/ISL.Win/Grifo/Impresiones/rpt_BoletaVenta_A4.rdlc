@@ -1663,7 +1663,7 @@
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>8pt</FontSize>
-                                <Format>n2</Format>
+                                <Format>n3</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1683,6 +1683,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>

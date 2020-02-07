@@ -377,6 +377,7 @@ Partial Class frm_CierreTurno
         Me.UltraGroupBox14 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.udg_Combustibles = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.odCierreTurnoDetalle = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
+        Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.UltraTabPageControl11 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.UltraGroupBox7 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.udg_ContometroAnalogico = New Infragistics.Win.UltraWinGrid.UltraGrid()
@@ -454,7 +455,6 @@ Partial Class frm_CierreTurno
         Me.cmb_Turno = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.tab_Principal = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.UltraGroupBox14, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -658,6 +658,11 @@ Partial Class frm_CierreTurno
         UltraDataColumn15.DataType = GetType(Decimal)
         UltraDataColumn16.DataType = GetType(Decimal)
         Me.odCierreTurnoDetalle.Band.Columns.AddRange(New Object() {UltraDataColumn1, UltraDataColumn2, UltraDataColumn3, UltraDataColumn4, UltraDataColumn5, UltraDataColumn6, UltraDataColumn7, UltraDataColumn8, UltraDataColumn9, UltraDataColumn10, UltraDataColumn11, UltraDataColumn12, UltraDataColumn13, UltraDataColumn14, UltraDataColumn15, UltraDataColumn16, UltraDataColumn17})
+        '
+        'Filtro1
+        '
+        Me.Filtro1.MenuSettings.RightAlignedMenus = True
+        Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
         'UltraTabPageControl11
         '
@@ -1087,6 +1092,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn79.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn79.Header.VisiblePosition = 12
         UltraGridColumn79.MaskInput = "{double:9.2}"
+        UltraGridColumn80.Format = "#,###,###,##0.00"
         UltraGridColumn80.Header.VisiblePosition = 13
         UltraGridColumn80.Hidden = True
         UltraGridColumn81.Header.VisiblePosition = 14
@@ -1180,6 +1186,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn132.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn132.Header.VisiblePosition = 12
         UltraGridColumn132.MaskInput = "{double:9.2}"
+        UltraGridColumn133.Format = "#,###,###,##0.000"
         UltraGridColumn133.Header.VisiblePosition = 13
         UltraGridColumn133.Hidden = True
         UltraGridColumn134.Header.VisiblePosition = 14
@@ -1291,6 +1298,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn289.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn289.Header.VisiblePosition = 12
         UltraGridColumn289.MaskInput = "{double:9.2}"
+        UltraGridColumn290.Format = "#,###,###,##0.00"
         UltraGridColumn290.Header.VisiblePosition = 13
         UltraGridColumn290.Hidden = True
         UltraGridColumn291.Header.VisiblePosition = 14
@@ -1402,6 +1410,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn114.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn114.Header.VisiblePosition = 12
         UltraGridColumn114.MaskInput = "{double:9.2}"
+        UltraGridColumn115.Format = "#,###,###,##0.00"
         UltraGridColumn115.Header.VisiblePosition = 13
         UltraGridColumn115.Hidden = True
         UltraGridColumn116.Header.VisiblePosition = 14
@@ -1508,6 +1517,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn97.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn97.Header.VisiblePosition = 12
         UltraGridColumn97.MaskInput = "{double:9.2}"
+        UltraGridColumn98.Format = "#,###,###,##0.00"
         UltraGridColumn98.Header.VisiblePosition = 13
         UltraGridColumn98.Hidden = True
         UltraGridColumn99.Header.VisiblePosition = 14
@@ -1614,6 +1624,7 @@ Partial Class frm_CierreTurno
         UltraGridColumn356.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn356.Header.VisiblePosition = 12
         UltraGridColumn356.MaskInput = "{double:9.2}"
+        UltraGridColumn357.Format = "#,###,###,##0.00"
         UltraGridColumn357.Header.VisiblePosition = 13
         UltraGridColumn357.Hidden = True
         UltraGridColumn358.Header.VisiblePosition = 14
@@ -2428,11 +2439,6 @@ Partial Class frm_CierreTurno
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1202, 726)
-        '
-        'Filtro1
-        '
-        Me.Filtro1.MenuSettings.RightAlignedMenus = True
-        Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
         '
         'UltraToolTipManager1
         '

@@ -1,6 +1,7 @@
 ﻿' ===================================================================================================
 ' Modified | Developer
 ' 02/01/20 | Cess
+' 06/02/20 | Cess
 ' ===================================================================================================
 Imports ERP.LogicaWCF
 Imports ERP.EntidadesWCF
@@ -260,7 +261,7 @@ Public Class frm_EstacionServicio
                 ._Operador = 1
                 .IdPeriodo = ""
                 .IdMoneda = IdMoneda_Soles
-                .Tipo = 2
+                .Tipo = 1 '1 Venta 2 Compra
                 .IdTipoBien = 1
                 .Serie = txt_Serie.Text
                 .Numero = txt_Numero.Text
@@ -405,9 +406,9 @@ Public Class frm_EstacionServicio
                     .IdMaterial = ItemVenta.IdMaterial
                     .IdUnidadMedida = ItemVenta.IdUnidadMedida
                     .CantidadMaterial = ItemVenta.CantidadAtender
-                    .PrecioUnitario = ItemVenta.PrecioUnitario
-                    .ValorVenta = ItemVenta.PrecioTotal
-                    .Importe = ItemVenta.PrecioTotal
+                    .PrecioUnitario = ItemVenta.CostoUnitario
+                    .ValorVenta = .CantidadMaterial * .PrecioUnitario
+                    .Importe = .CantidadMaterial * .PrecioUnitario
                     .Glosa = ItemVenta.Glosa
                 End With
                 OrdenSalida.lstOrdenMaterial.Add(ItemSalida)
@@ -786,7 +787,7 @@ Public Class frm_EstacionServicio
 
             '' =========================================================================== 
             '' Emision de CPE
-            'If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
+            If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
         Catch ex As Exception
             Throw ex
         End Try
@@ -968,6 +969,8 @@ Public Class frm_EstacionServicio
                 .CostoInventario = 0 'DETALLE.CostoUnitario
                 .PrecioUnitario = nud_Preciounitario.Value
                 .Dscto = 0
+                .CostoInventario = fc_Obtener_CostoCombustible(IdMaterial_Combustible, IdSubAlmacen_Combustible)
+                .CostoUnitario = fc_Obtener_CostoCombustible(IdMaterial_Combustible, IdSubAlmacen_Combustible)
                 .IdAlmacen = IdAlmacen_Combustible : .IdSubAlmacen = IdSubAlmacen_Combustible
                 .IdUnidadMedida = "1CH000000001"
                 .PrecioTotal = Math.Round(.PrecioUnitario * .Cantidad, 4)
@@ -1171,6 +1174,26 @@ Public Class frm_EstacionServicio
         nud_Cantidad.SelectAll()
     End Sub
 
+    Public Function fc_Obtener_CostoCombustible(IdMaterial As String, IdSubAlmacen As String) As Double
+        Try
+            Dim oeRegistroInv As New e_RegistroInventario, olRegistroInv As New l_RegistroInventario
+            Dim dsRegistroInv As New DataSet
+            oeRegistroInv.TipoOperacion = "S"
+            oeRegistroInv.Fecha = FechaOrden
+            oeRegistroInv.IdMaterial = IdMaterial
+            oeRegistroInv.IdSubAlmacen = IdSubAlmacen
+            oeRegistroInv.FechaInicio = Date.Parse("01/01/2020")
+            dsRegistroInv = olRegistroInv.ListarStock(oeRegistroInv)
+
+            If dsRegistroInv.Tables.Count > 0 AndAlso dsRegistroInv.Tables(0).Rows.Count > 0 Then
+                Return dsRegistroInv.Tables(0).Rows(0).Item("CostoUnitario")
+            End If
+
+            Return 0
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
     Public Function fc_Obtener_PrecioCombustible() As Double
         For Each Item In TurnoActivo.Detalles
             If Item.IdConcepto = IdMaterial_Combustible And Item.Rubro = "PRECIO_COMBUSTIBLE" Then

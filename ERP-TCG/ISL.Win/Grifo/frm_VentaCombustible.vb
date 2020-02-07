@@ -233,7 +233,25 @@ Public Class frm_VentaCombustible
     End Sub
 
     Public Overrides Sub Imprimir()
-        gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
+        Try
+            With griOrdenComercial
+                If .Selected.Rows.Count > 0 Then
+                    Dim Documento As New e_MovimientoDocumento, ListaOrdenDocumento As New List(Of e_Orden_Documento), OrdenDocumento As New e_Orden_Documento, dOrdenDocumento As New l_Orden_Documento
+                    OrdenDocumento.TipoOperacion = "D"
+                    OrdenDocumento.IdOrden = .ActiveRow.Cells("Id").Value
+                    Documento = dOrdenDocumento.ObtenerDocumento(OrdenDocumento)
+                    If Documento.Id <> "" Then
+                        gtm_Imprimir_Documento(Documento.Id, "TICKET", "GRIFO")
+                    Else
+                        MsgBox("No se encontro el documento asociado", MsgBoxStyle.Information, Me.Text)
+                    End If
+
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
+
     End Sub
 
     Public Overrides Sub Salir()
@@ -626,8 +644,6 @@ Public Class frm_VentaCombustible
             Consultar(True)
         End If
     End Sub
-
-
 
     Private Sub ficDetalleOrdenComercial_SelectedTabChanged(sender As Object, e As Infragistics.Win.UltraWinTabControl.SelectedTabChangedEventArgs) Handles ficDetalleOrdenComercial.SelectedTabChanged
         Try
@@ -1108,7 +1124,7 @@ Public Class frm_VentaCombustible
         Select Case ficOrdenComercial.SelectedTab.Index
             Case 0
                 If griOrdenComercial.Rows.Count > 0 Then
-                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 0, 1)
+                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 1, 1)
                 Else
                     gmt_ControlBoton(1, 1)
                 End If

@@ -3833,7 +3833,7 @@ Public Class frm_FacturarCarga
                     dsComprobante = olMovDocumento.ListaFacturacionElectronica(oeMovDocumento)
                     'dt_cpe = Deserializar_XmlStr(WCF_Cpe.GenerarXML_CPE(dsComprobante, Date.Now, dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), RutaArchivos, Abrev_Empresa, Nothing, Nothing))
                     'olDocumento.GenerarXmlFacturaElectronica_Emision(dsComprobante.Tables(0), dsComprobante.Tables(1), frm_DocumentoElectronico.RutaArchivos, gUsuarioEOS.Id)
-                    'olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id) '<--
+                    olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id) '<--
                     'Registro_ComprobanteElectronico_Bath(dt_cpe, "I", dsComprobante.Tables(0).Rows(0).Item("cod_comprob_cat_1").ToString().Trim(), Nothing)
 
                     'Imprimir()

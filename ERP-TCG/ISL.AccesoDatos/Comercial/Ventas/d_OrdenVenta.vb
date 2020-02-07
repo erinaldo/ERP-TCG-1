@@ -270,13 +270,15 @@ Public Class d_OrdenVenta
                     aux_os.Id = .oeOrdenSalida.Id
                     aux_os = odOrden.Actualizar_EstadoOrden(aux_os)
                 End If
-                    '' =========================================================================== 
-                    '' Documento
-                    .oeDocumento.Glosa = "OV." & .Id & " //" & .oeDocumento.Glosa
-                    .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
-                    '' =========================================================================== 
-                    '' Orden Documento
-                    Dim OrdenDocumento As New e_Orden_Documento, odOrden_Documento As New d_Orden_Documento
+                '' =========================================================================== 
+                '' Documento
+                Dim Glosa As String = .oeDocumento.Glosa
+                .oeDocumento.Glosa = IIf(Glosa.Trim = "", "OV." & .Id, "OV." & .Id & " //" & .oeDocumento.Glosa)
+                .oeDocumento.OrdenCompra = .Id
+                .oeDocumento = odDocumento.Guardar(OrdenVenta.oeDocumento)
+                '' =========================================================================== 
+                '' Orden Documento
+                Dim OrdenDocumento As New e_Orden_Documento, odOrden_Documento As New d_Orden_Documento
                     OrdenDocumento.TipoOperacion = "I"
                     OrdenDocumento.Id = ""
                     OrdenDocumento.IdOrden = stResultado(0)

@@ -33,7 +33,7 @@ Public Class s_Facturacion
                 zip.AddFile(rutaFE.Trim() & nombre.Trim() & ".XML", "")
                 zip.Save(rutaFE.Trim() & nombre.Trim() & ".zip")
             End Using
-            'definicion = Me.EnviarXML(rutaFE, nombre, cdrXML) <--
+            definicion = Me.EnviarXML(rutaFE, nombre, cdrXML)
         Catch ex As Exception
             flagError = True
             Throw ex
@@ -932,7 +932,7 @@ Public Class s_Facturacion
 
             local_typoDocumento = TipoDoc
 
-            Dim MiCertificado As X509Certificate2 = New X509Certificate2(RutaCer & "LLAMA-PE-CERTIFICADO-DEMO-20480099720.pfx", "123456", X509KeyStorageFlags.MachineKeySet)
+            Dim MiCertificado As X509Certificate2 = New X509Certificate2(RutaCer & "C1811162057.pfx", "materiaGRIF01X", X509KeyStorageFlags.MachineKeySet)
             Dim xmlDoc As XmlDocument = New XmlDocument()
             xmlDoc.PreserveWhitespace = True
             xmlDoc.Load(local_xmlArchivo)
@@ -1149,7 +1149,13 @@ Public Class s_Facturacion
 
     Private Function EnviarXML(ByVal rutaFE As String, ByVal Nombre As String, ByRef cdrXML As String) As String
         Dim fsRpta As New FileStream(rutaFE & "R-" & Nombre & ".zip", FileMode.Create)
+        System.Net.ServicePointManager.UseNagleAlgorithm = True
+        System.Net.ServicePointManager.Expect100Continue = False
+        System.Net.ServicePointManager.CheckCertificateRevocationList = True
         Dim clienteRemotoObj As New sFacturacion.billServiceClient
+        'Dim _behavior = New clsPasswordDigestBehavior("20480099720" + "CPESUNAT", "materiaGRIF01X")
+        Dim _behavior = New clsPasswordDigestBehavior("20480099720" + "ERPTCGSO", "Oksimcha44")
+        clienteRemotoObj.Endpoint.EndpointBehaviors.Add(_behavior)
         Dim datos As New sFacturacion.sendBillResponse
         Dim envio As New sFacturacion.sendBillRequest
         'Dim TablaFEADObj As New FacturacionElectronicaAD(mCadenaConexion)
