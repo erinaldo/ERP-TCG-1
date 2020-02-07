@@ -60,6 +60,10 @@
     <Reference Include="itextsharp">
       <HintPath>..\Librerias\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Services3, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Librerias\Microsoft.Web.Services3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -82,9 +86,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\clsPasswordDigestBehavior.vb" />
+    <Compile Include="Facturacion\clsPasswordDigestMessageInspector.vb" />
     <Compile Include="Facturacion\s_Facturacion.vb" />
     <Compile Include="Retencion\s_Retencion.vb" />
     <Compile Include="Service References\sConsultarFactura\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\sFacturacionOSE\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -145,6 +156,28 @@
     <None Include="Service References\sConsultarFactura\ERP.ServicioExterno.sConsultarFactura.statusResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\sFacturacionOSE\billService.wsdl" />
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.getStatusCdrResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.getStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendBillResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendPackResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.sendSummaryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.statusCdr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\sFacturacionOSE\ERP.ServicioExterno.sFacturacionOSE.statusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\sFacturacion\billService.wsdl" />
     <None Include="Service References\sFacturacion\billService.xsd">
       <SubType>Designer</SubType>
@@ -180,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\sConsultarFactura\" />
+    <WCFMetadataStorage Include="Service References\sFacturacionOSE\" />
     <WCFMetadataStorage Include="Service References\sFacturacion\" />
     <WCFMetadataStorage Include="Service References\sRetencion\" />
   </ItemGroup>
@@ -225,6 +259,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\sFacturacion\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\sFacturacionOSE\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </None>

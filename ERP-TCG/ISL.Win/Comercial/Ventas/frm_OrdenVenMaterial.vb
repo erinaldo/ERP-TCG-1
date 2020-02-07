@@ -1901,7 +1901,7 @@ Public Class frm_OrdenVenMaterial
                 .IdTipoBien = 1
                 'If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4) '@0001
                 .Serie = cboSerieDocumento.Text '@0001
-                If txtNumero.Text <> "" Then .Numero = FormatoDocumento(txtNumero.Text, 8)
+                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaPago.Value
                 .NoGravado = 0
@@ -2703,6 +2703,7 @@ Public Class frm_OrdenVenMaterial
     Private Function fc_ValidarNumeroDoc() As Boolean
         Try
             If cbDocumento.Checked = True Then
+                If cboSerieDocumento.SelectedIndex = -1 Then Throw New Exception("El Usuario No Tiene Serie Asignada")
                 'If txtNumero.Text = "" Or txtSerie.Text = "" Or txtNumero.Text = "0000000000" Or txtSerie.Text = "0000" Then '@0001
                 If txtNumero.Text = "" Or cboSerieDocumento.Text = "" Or txtNumero.Text = "0000000000" Or cboSerieDocumento.Text = "0000" Then
                     Throw New Exception("!..El Numero de Documento es Incorrecto..!")
