@@ -19,7 +19,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.77725cm</Width>
+              <Width>3.13583cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.85758cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.93695cm</Width>
@@ -28,7 +31,7 @@
               <Width>1.04275cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.37659cm</Width>
+              <Width>1.16043cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -47,7 +50,7 @@
                               <Value>PRODUCTO</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -56,6 +59,54 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>None</Style>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Style>None</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>UM</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -95,7 +146,7 @@
                               <Value>CANT</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -145,7 +196,7 @@
                               <Value>PRECIO</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -195,7 +246,7 @@
                               <Value>IMPORTE</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -258,6 +309,40 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Producto</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="UM">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!UM.Value</Value>
+                              <Style>
+                                <FontFamily>calibri</FontFamily>
+                                <FontSize>7pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>UM</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -392,6 +477,7 @@
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -1099,7 +1185,7 @@
         <Top>5.55308cm</Top>
         <Left>0.00578cm</Left>
         <Height>2.4cm</Height>
-        <Width>7.74786cm</Width>
+        <Width>7.74787cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -1547,9 +1633,9 @@
         </Paragraphs>
         <rd:DefaultName>MedioPago</rd:DefaultName>
         <Top>12.34433cm</Top>
-        <Left>2.75364cm</Left>
+        <Left>2.30385cm</Left>
         <Height>0.43243cm</Height>
-        <Width>4.70318cm</Width>
+        <Width>5.44979cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -1568,7 +1654,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Medio de Pago:</Value>
+                <Value>Medio Pago:</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -1582,7 +1668,7 @@
         <Top>12.34433cm</Top>
         <Left>0.34078cm</Left>
         <Height>0.43243cm</Height>
-        <Width>2.41286cm</Width>
+        <Width>1.96307cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -1632,7 +1718,7 @@
     <Height>5.50509in</Height>
     <Style />
   </Body>
-  <Width>3.0725in</Width>
+  <Width>3.92001in</Width>
   <Page>
     <PageHeight>30cm</PageHeight>
     <PageWidth>10cm</PageWidth>
