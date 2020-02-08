@@ -189,6 +189,7 @@ Public Class frm_EstacionServicio
 
     Private Function fc_Guardar_OrdenVenta() As Boolean
         Try
+            OrdenVenta.oeDocumento.IndServicioMaterial = "M" '@0001
             OrdenVenta = dOrdenVenta.Guardar_VentaRapida(OrdenVenta)
             Return True
         Catch ex As Exception

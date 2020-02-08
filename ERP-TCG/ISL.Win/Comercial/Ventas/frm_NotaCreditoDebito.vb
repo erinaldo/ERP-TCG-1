@@ -61,7 +61,7 @@ Public Class frm_NotaCreditoDebito
     Private AnioServ As Integer = 0
     Private IdCtaCtableAux As String = String.Empty
     Private DTReferencia As Data.DataTable, dtAux As Data.DataTable
-
+    Private oeCombo As New e_Combo '@0001
     Dim loConcepto As New l_Concepto
     Dim oeConcepto As New e_Concepto
     Dim ListaMotivoNC As New List(Of e_Concepto)
@@ -181,7 +181,7 @@ Public Class frm_NotaCreditoDebito
                 End With
             End If
 
-            
+            gtm_Imprimir_Documento(Id, "TICKET", "OV")
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -897,7 +897,19 @@ Public Class frm_NotaCreditoDebito
             oeNotaCreditoDebito.Venta.Inafecto = IIf(decIgv.Value = 0, IIf(cboTipoMoneda.Text.Trim <> "SOLES", Math.Round(decSubTotal.Value * decTipoCambio.Value, 4), decSubTotal.Value), 0)
             oeNotaCreditoDebito.Venta.IdDireccion = oeDocAso.Venta.IdDireccion
             olNotaCreditoDebito.ValidarNC_ND(oeNotaCreditoDebito)
-            oeNotaCreditoDebito.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeNotaCreditoDebito.PrefijoID = gs_PrefijoIdSucursal '@0001 Ini
+            oeNotaCreditoDebito.DatosImpresion = New e_MovimientoDocumento_Impresion
+            With oeNotaCreditoDebito.DatosImpresion
+                .IdTipoDocumento = cboTipoDoc.Value
+                .TipoDocumento = cboTipoDoc.Text
+                .NombreClienteProveedor = txtClienteAso.Text
+                .NroDocumentoClienteProveedor = txtRuc.Text
+                oeCombo = New e_Combo
+                oeCombo = DireccionClienteProveedorPublic.Where(Function(i) i.Descripcion = oeNotaCreditoDebito.IdClienteProveedor)(0)
+                .IdDireccion = oeCombo.Id
+                .Direccion = oeCombo.Nombre
+                .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeNotaCreditoDebito.Total, True, True, "SOLES")
+            End With
             If olNotaCreditoDebito.GuardarMasivo(oeNotaCreditoDebito) Then
                 'mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
                 If MessageBox.Show("La informacion ha sido grabada satisfactoriamente en " & Me.Text & _

@@ -298,13 +298,13 @@ Public Class frm_CanjeNTD
             Documento.FechaFinal = dtp_FechaHasta.Value
 
             '' Lista de Documentos
-            Documento.TipoOperacion = "CXD"
+            Documento.TipoOperacion = "CND"
             ListaNotasDespacho = dMovimientoDocumento.Listar(Documento)
             bso_Documento.DataSource = ListaNotasDespacho
             udg_Documentos.DataBind()
 
             '' Lista de Documentos
-            Documento.TipoOperacion = "DCX"
+            Documento.TipoOperacion = "CNF"
             ListaOtrosDocumentos = dMovimientoDocumento.Listar(Documento)
             bso_DocumentosCanjeados.DataSource = ListaOtrosDocumentos
             udg_DocumentosCanjeados.DataBind()
@@ -705,8 +705,10 @@ Public Class frm_CanjeNTD
         Try
             ' ======================================================================================================================== >>>>>
             mt_LlenaObjeto()
+            DocumentoGenerado.IndServicioMaterial = "M"
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
-            gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
+            'gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
+            gtm_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
@@ -727,8 +729,8 @@ Public Class frm_CanjeNTD
         Try
             ' ======================================================================================================================== >>>>>
             Select Case cmbTipoDocumento.Value
-                Case "1CH000000026" : txtSerie.Text = "F103" : cmb_Cliente.Focus()
-                Case "1CH000000002" : txtSerie.Text = "B103" : cmb_Cliente.Focus()
+                Case "1CH000000026" : txtSerie.Text = "F101" : cmb_Cliente.Focus()
+                Case "1CH000000002" : txtSerie.Text = "B101" : cmb_Cliente.Focus()
             End Select
             txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
             ' ======================================================================================================================== >>>>>
@@ -746,6 +748,7 @@ Public Class frm_CanjeNTD
                         mt_EmitirDocumento(Documento.Id)
                     End If
                 Next
+                mt_Listar()
             End If
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
@@ -801,6 +804,7 @@ Public Class frm_CanjeNTD
                 mt_Eliminar(Documento.Id)
             End If
         Next
+        mt_Listar()
     End Sub
 
 
@@ -975,6 +979,19 @@ Public Class frm_CanjeNTD
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
+    End Sub
+
+    Private Sub TickeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TickeToolStripMenuItem.Click
+        '' Validar
+        If udg_DocumentosCanjeados.Rows.Count = 0 Then Exit Sub
+        udg_DocumentosCanjeados.UpdateData()
+
+        '' Imprimir
+        For Each Documento In ListaOtrosDocumentos
+            If Documento.IndAnexo = True Then
+                gtm_Imprimir_Documento(Documento.Id, "TICKET", "OV")
+            End If
+        Next
     End Sub
 
 #End Region

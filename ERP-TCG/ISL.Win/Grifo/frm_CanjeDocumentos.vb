@@ -689,6 +689,7 @@ Public Class frm_CanjeDocumentos
         Try
             ' ======================================================================================================================== >>>>>
             mt_LlenaObjeto()
+            DocumentoGenerado.IndServicioMaterial = "M" '@0001
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
             gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
