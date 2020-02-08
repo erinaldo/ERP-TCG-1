@@ -50,12 +50,7 @@ Public Class d_ComprobantePagoElectronico_Resumen
                         , .Rpta_Sunat _
                         , .Ruta_XML _
                         , .IdEstado _
-                        , .UsuarioCrea _
-                        , .FechaCrea _
-                        , .UsuarioModifica _
-                        , .FechaModifica _
-                        , .Activo
-                    ).ToString.Split("_")
+                        , .UsuarioCrea).ToString.Split("_")
                 .Id = stResultado(0)
             End With
             'transScope.Complete()

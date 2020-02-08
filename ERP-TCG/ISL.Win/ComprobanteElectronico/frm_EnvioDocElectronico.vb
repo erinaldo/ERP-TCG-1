@@ -629,6 +629,7 @@ Public Class frm_EnvioDocElectronico
             mo_Resumen.TipoOperacion = "OBT"
             mo_Resumen = wr_Resumen.Obtener(mo_Resumen)
             If mo_Resumen.Id.Trim = String.Empty Then
+                mo_Resumen.TipoOperacion = "I"
                 mo_Resumen.Correlativo = FormatoDocumento(1, 5)
             Else
                 mo_Resumen.Id = String.Empty
@@ -652,7 +653,7 @@ Public Class frm_EnvioDocElectronico
                 zip.AddFile(ls_Archivo, "")
                 zip.Save(ls_ArchivoZip)
             End Using
-
+            mt_AsignarCredenciales()
             wr_Envio.contentFile = My.Computer.FileSystem.ReadAllBytes(ls_ArchivoZip)
             wr_Envio.fileName = Replace(ls_ArchivoZip, gstrRutaDocumentosEle20, "")
             mo_Resumen.Ruta_XML = ls_Archivo
