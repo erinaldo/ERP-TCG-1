@@ -2310,6 +2310,7 @@ Public Class frm_OrdenVenMaterial
             'If txtCodSaldoCtaCte.Tag.ToString.Trim = "" Then Throw New Exception("¡Ingrese Cuenta Corriente!")
             oeOrdenComercial.oeDocumento.DatosImpresion.IdMedioPago = cboTipoPago.Value '@0001
             oeOrdenComercial.oeDocumento.DatosImpresion.MedioPago = cboTipoPago.Text  '@0001
+            oeOrdenComercial.oeDocumento.IndServicioMaterial = "M" '@0001
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
