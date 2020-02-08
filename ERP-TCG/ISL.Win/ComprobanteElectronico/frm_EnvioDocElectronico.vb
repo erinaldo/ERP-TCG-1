@@ -160,6 +160,8 @@ Public Class frm_EnvioDocElectronico
                 Case tsb_GenerarXML.Name
                     If lst_DocElectronico.Where(Function(i) i.Sel).Count = 1 Then
                         gmt_GeneraZip(gmt_CPE(New e_MovimientoDocumento With {.Id = lst_DocElectronico.Where(Function(i) i.Sel)(0).Id}))
+                        MessageBox.Show("Archivo XML. Generado Correctamente", "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        lr_ConsultarDocs()
                     End If
                 Case tsb_CambiarEstado.Name
                     If lst_DocElectronico.Where(Function(i) i.Sel).Count = 1 Then
@@ -780,15 +782,16 @@ Public Class frm_EnvioDocElectronico
                 mo_DocumentoImp.HashSunat = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
             Next
             XmlNode = xml_doc.GetElementsByTagName("cbc:ResponseCode")
-            'For i = 0 To XmlNode.Count - 1
-            '    mo_DocumentoImp.IdEstadoSunat = lf_ObtenerEstadoSunat(XmlNode(i).ChildNodes.Item(0).InnerText.Trim())
-            'Next
+            For i = 0 To XmlNode.Count - 1
+                mo_DocumentoImp.IdTurno = lf_ObtenerEstadoSunat(XmlNode(i).ChildNodes.Item(0).InnerText.Trim())
+            Next
             XmlNode = xml_doc.GetElementsByTagName("cbc:Description")
             For i = 0 To XmlNode.Count - 1
                 ls_Mensaje = XmlNode(i).ChildNodes.Item(0).InnerText.Trim()
             Next
             mo_DocumentoImp.UsuarioCreacion = gUsuarioSGI.Id
             mo_DocumentoImp.TipoOperacion = "Y"
+            'mo_DocumentoImp.IdTurno
             'mo_DocumentoImp.IndElectronico = False
             wr_DocImpresion.Guardar(mo_DocumentoImp)
             MessageBox.Show(ls_Mensaje, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -925,11 +928,18 @@ Public Class frm_EnvioDocElectronico
     End Sub
 
     Private Function lf_ObtenerEstadoSunat(ls_CodSunat As String) As String
-        Dim oeEstado As New e_Estado
+        'Dim oeEstado As New e_Estado
+
         Try
-            oeEstado.TipoOperacion = ""
-            oeEstado.Codigo = ls_CodSunat
+            'oeEstado.TipoOperacion = ""
+            'oeEstado.Codigo = ls_CodSunat
             'oeEstado = wr_Categoria.Obtener(oeEstado)
+            Select Case ls_CodSunat
+                Case "0"
+                    Return "A"
+                Case Else
+                    Return "E"
+            End Select
 
             'lst_EstadoSunat = New List(Of e_Estado)
             'lst_EstadoSunat.AddRange(wr_Categoria.Listar(New e_Estado With {.TipoOperacion = "", .Codigo = ls_CodSunat}))
@@ -939,7 +949,7 @@ Public Class frm_EnvioDocElectronico
         Catch ex As Exception
             Throw ex
         End Try
-        Return oeEstado.Id
+        'Return oeEstado.Id
     End Function
 
     Private Sub mt_Credenciales()
