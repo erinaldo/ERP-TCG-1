@@ -580,6 +580,7 @@ Partial Class frm_CanjeNTD
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.fic_Canje = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.TickeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -633,7 +634,7 @@ Partial Class frm_CanjeNTD
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.udg_Documentos)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1348, 390)
         '
@@ -665,6 +666,7 @@ Partial Class frm_CanjeNTD
         UltraGridColumn172.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn172.Header.Caption = "Producto"
         UltraGridColumn172.Header.VisiblePosition = 11
+        UltraGridColumn172.Hidden = True
         UltraGridColumn172.Width = 150
         UltraGridColumn173.Header.VisiblePosition = 19
         UltraGridColumn173.Hidden = True
@@ -730,6 +732,7 @@ Partial Class frm_CanjeNTD
         UltraGridColumn191.Format = "#,###,###,##0.00"
         UltraGridColumn191.Header.Caption = "Importe"
         UltraGridColumn191.Header.VisiblePosition = 15
+        UltraGridColumn191.Hidden = True
         UltraGridColumn192.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn192.Header.Caption = "Empresa"
         UltraGridColumn192.Header.VisiblePosition = 2
@@ -765,6 +768,7 @@ Partial Class frm_CanjeNTD
         UltraGridColumn204.Format = "#,###,###,##0.00"
         UltraGridColumn204.Header.Caption = "Precio Unit."
         UltraGridColumn204.Header.VisiblePosition = 14
+        UltraGridColumn204.Hidden = True
         UltraGridColumn205.Header.VisiblePosition = 31
         UltraGridColumn205.Hidden = True
         UltraGridColumn206.Header.VisiblePosition = 32
@@ -786,12 +790,14 @@ Partial Class frm_CanjeNTD
         UltraGridColumn211.Format = "#,###,###,##0.00"
         UltraGridColumn211.Header.Caption = "Cantidad"
         UltraGridColumn211.Header.VisiblePosition = 13
+        UltraGridColumn211.Hidden = True
         UltraGridColumn212.Header.VisiblePosition = 47
         UltraGridColumn212.Hidden = True
         UltraGridColumn213.Header.VisiblePosition = 50
         UltraGridColumn213.Hidden = True
         UltraGridColumn214.Header.Caption = "Placa"
         UltraGridColumn214.Header.VisiblePosition = 12
+        UltraGridColumn214.Hidden = True
         UltraGridColumn215.Header.VisiblePosition = 51
         UltraGridColumn215.Hidden = True
         UltraGridColumn216.Header.VisiblePosition = 52
@@ -879,7 +885,7 @@ Partial Class frm_CanjeNTD
         'UltraTabPageControl4
         '
         Me.UltraTabPageControl4.Controls.Add(Me.udg_DocumentosCanjeados)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1348, 390)
         '
@@ -1041,6 +1047,7 @@ Partial Class frm_CanjeNTD
         UltraGridColumn132.Hidden = True
         UltraGridColumn133.Header.Caption = "Placa"
         UltraGridColumn133.Header.VisiblePosition = 11
+        UltraGridColumn133.Hidden = True
         UltraGridColumn134.Header.VisiblePosition = 51
         UltraGridColumn134.Hidden = True
         UltraGridColumn135.Header.VisiblePosition = 52
@@ -1130,7 +1137,7 @@ Partial Class frm_CanjeNTD
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.ToolStrip1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1356, 676)
         '
@@ -1251,6 +1258,7 @@ Partial Class frm_CanjeNTD
         UltraGridColumn391.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn391.Header.Caption = "Vehiculo"
         UltraGridColumn391.Header.VisiblePosition = 18
+        UltraGridColumn391.Hidden = True
         UltraGridColumn391.Width = 113
         UltraGridColumn392.Header.VisiblePosition = 19
         UltraGridColumn392.Hidden = True
@@ -1399,7 +1407,7 @@ Partial Class frm_CanjeNTD
         '
         'tsb_Imprimir
         '
-        Me.tsb_Imprimir.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_ImprimirA4})
+        Me.tsb_Imprimir.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsb_ImprimirA4, Me.TickeToolStripMenuItem})
         Me.tsb_Imprimir.Image = Global.ISL.Win.My.Resources.Resources.invoice
         Me.tsb_Imprimir.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.tsb_Imprimir.Name = "tsb_Imprimir"
@@ -1409,7 +1417,7 @@ Partial Class frm_CanjeNTD
         'tsb_ImprimirA4
         '
         Me.tsb_ImprimirA4.Name = "tsb_ImprimirA4"
-        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(120, 22)
+        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(180, 22)
         Me.tsb_ImprimirA4.Text = "Papel A4"
         '
         'UltraGroupBox1
@@ -1598,7 +1606,7 @@ Partial Class frm_CanjeNTD
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1356, 676)
         '
@@ -2568,6 +2576,12 @@ Partial Class frm_CanjeNTD
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1356, 676)
         '
+        'TickeToolStripMenuItem
+        '
+        Me.TickeToolStripMenuItem.Name = "TickeToolStripMenuItem"
+        Me.TickeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TickeToolStripMenuItem.Text = "Ticket"
+        '
         'frm_CanjeNTD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2700,4 +2714,5 @@ Partial Class frm_CanjeNTD
     Friend WithEvents UltraTabPageControl4 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents udg_DocumentosCanjeados As Controles.Grilla
     Friend WithEvents bso_DocumentosCanjeados As BindingSource
+    Friend WithEvents TickeToolStripMenuItem As ToolStripMenuItem
 End Class

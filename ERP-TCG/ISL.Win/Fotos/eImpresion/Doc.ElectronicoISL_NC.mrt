@@ -79,11 +79,11 @@
     <Page1 Ref="4" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="16">
+      <Components isList="true" count="14">
         <PageHeaderBand1 Ref="5" type="PageHeaderBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,0.4,20,9.74</ClientRectangle>
-          <Components isList="true" count="37">
+          <Components isList="true" count="36">
             <Text3 Ref="6" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>2.46,6,17.5,0.4</ClientRectangle>
@@ -188,7 +188,6 @@
               <VertAlignment>Center</VertAlignment>
             </Text7>
             <Text11 Ref="13" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>2.4,5.6,3.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -287,7 +286,7 @@
             <Text48 Ref="20" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>17.6,4.6,4,0.6</ClientRectangle>
+              <ClientRectangle>0.2,8,1.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8</Font>
               <HorAlignment>Center</HorAlignment>
@@ -317,7 +316,6 @@
               <VertAlignment>Center</VertAlignment>
             </Text5>
             <Text59 Ref="22" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,5.6,2.2,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -335,7 +333,7 @@
             <Text50 Ref="23" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.4,4.8,4,0.4</ClientRectangle>
+              <ClientRectangle>0.2,7.6,1.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>46803ff90a424df6bb164fae1570d715</Guid>
@@ -350,9 +348,8 @@
               <VertAlignment>Center</VertAlignment>
             </Text50>
             <Text6 Ref="24" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>8.4,6.8,3,0.4</ClientRectangle>
+              <ClientRectangle>2,7.6,3.6,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>b6bab511c4e74174b0f793e0bfb9192a</Guid>
@@ -360,7 +357,7 @@
               <Name>Text6</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
-              <Text>DOC. REFERENCIA:</Text>
+              <Text>DOC. REFERENCIA</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
@@ -368,7 +365,7 @@
             <Text8 Ref="25" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.8,7.6,4.6,0.4</ClientRectangle>
+              <ClientRectangle>5.6,7.6,3.2,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>0c0a7ef2dbc84d86a9fe7ba97ce99c4c</Guid>
@@ -385,7 +382,7 @@
             <Text10 Ref="26" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>9.4,7.6,4.6,0.4</ClientRectangle>
+              <ClientRectangle>8.8,7.6,3,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>9d2400df2c08471ba13acea16e41c89b</Guid>
@@ -402,7 +399,7 @@
             <Text12 Ref="27" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,7.6,5.8,0.4</ClientRectangle>
+              <ClientRectangle>11.8,7.6,8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8,Bold</Font>
               <Guid>119f4e7d3b614330ba1b28d928c46036</Guid>
@@ -419,7 +416,7 @@
             <Text14 Ref="28" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>9.4,8,4.6,0.6</ClientRectangle>
+              <ClientRectangle>8.8,8,3,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8</Font>
               <HorAlignment>Center</HorAlignment>
@@ -435,7 +432,7 @@
             <Text16 Ref="30" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.8,8,4.6,0.6</ClientRectangle>
+              <ClientRectangle>5.6,8,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8</Font>
               <HorAlignment>Center</HorAlignment>
@@ -450,7 +447,7 @@
             <Text18 Ref="31" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,8,5.8,0.6</ClientRectangle>
+              <ClientRectangle>11.8,8,8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8</Font>
               <HorAlignment>Center</HorAlignment>
@@ -465,7 +462,7 @@
             <Text20 Ref="32" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>11.4,6.8,4.6,0.4</ClientRectangle>
+              <ClientRectangle>2,8,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Tahoma,8</Font>
               <HorAlignment>Center</HorAlignment>
@@ -547,42 +544,35 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Parent isRef="5" />
               <ReferenceToGuid>09af56159544483fb32ef69c47eb74b2</ReferenceToGuid>
             </StartPointPrimitive7>
-            <StartPointPrimitive8 Ref="39" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-              <ClientRectangle>13,3.6,0,0</ClientRectangle>
-              <Name>StartPointPrimitive8</Name>
-              <Page isRef="4" />
-              <Parent isRef="5" />
-              <ReferenceToGuid>25ec4fcceb8d4182bcca9052bfc0f2f8</ReferenceToGuid>
-            </StartPointPrimitive8>
-            <StartPointPrimitive1 Ref="40" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <StartPointPrimitive1 Ref="39" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>12.8,0.2,0,0</ClientRectangle>
               <Name>StartPointPrimitive1</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
               <ReferenceToGuid>eaf8b259f9f94bababfdf7668d8d6359</ReferenceToGuid>
             </StartPointPrimitive1>
-            <EndPointPrimitive1 Ref="41" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive1 Ref="40" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>19.8,3.6,0,0</ClientRectangle>
               <Name>EndPointPrimitive1</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
               <ReferenceToGuid>eaf8b259f9f94bababfdf7668d8d6359</ReferenceToGuid>
             </EndPointPrimitive1>
-            <StartPointPrimitive4 Ref="42" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <StartPointPrimitive4 Ref="41" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>1.6,9.2,0,0</ClientRectangle>
               <Name>StartPointPrimitive4</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
               <ReferenceToGuid>00a612616fda423a8824a1f262949a51</ReferenceToGuid>
             </StartPointPrimitive4>
-            <StartPointPrimitive28 Ref="43" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <StartPointPrimitive28 Ref="42" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>0.2,7.6,0,0</ClientRectangle>
               <Name>StartPointPrimitive28</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
               <ReferenceToGuid>b4cbeb4d1c684a4babf3581bf72d9fdd</ReferenceToGuid>
             </StartPointPrimitive28>
-            <EndPointPrimitive28 Ref="44" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive28 Ref="43" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>19.8,8.6,0,0</ClientRectangle>
               <Name>EndPointPrimitive28</Name>
               <Page isRef="4" />
@@ -595,11 +585,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </PageHeaderBand1>
-        <PageFooterBand1 Ref="45" type="PageFooterBand" isKey="true">
+        <PageFooterBand1 Ref="44" type="PageFooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,21.97,20,6.73</ClientRectangle>
           <Components isList="true" count="20">
-            <Text23 Ref="46" type="Text" isKey="true">
+            <Text23 Ref="45" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>17.01,1.83,2.6,0.6</ClientRectangle>
@@ -609,10 +599,10 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>{Cabecera_Pie.CAN_SUB_TOTAL}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="47" type="NumberFormat" isKey="true">
+              <TextFormat Ref="46" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseLocalSetting>False</UseLocalSetting>
@@ -620,7 +610,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text23>
-            <Text25 Ref="48" type="Text" isKey="true">
+            <Text25 Ref="47" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>17.02,2.43,2.6,0.6</ClientRectangle>
@@ -630,10 +620,10 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text25</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>{Cabecera_Pie.CAN_IMPUESTO_VTA}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="49" type="NumberFormat" isKey="true">
+              <TextFormat Ref="48" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseLocalSetting>False</UseLocalSetting>
@@ -641,7 +631,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Type>DataColumn</Type>
               <VertAlignment>Center</VertAlignment>
             </Text25>
-            <Text27 Ref="50" type="Text" isKey="true">
+            <Text27 Ref="49" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>17.02,3.03,2.6,0.6</ClientRectangle>
@@ -651,10 +641,10 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text27</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>{Cabecera_Pie.CAN_TOTAL}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="51" type="NumberFormat" isKey="true">
+              <TextFormat Ref="50" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseLocalSetting>False</UseLocalSetting>
@@ -662,38 +652,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Type>DataColumn</Type>
               <VertAlignment>Center</VertAlignment>
             </Text27>
-            <Text45 Ref="52" type="Text" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>0.2,5.89,19.62,0.7</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Tahoma,8</Font>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text45</Name>
-              <Page isRef="4" />
-              <Parent isRef="45" />
-              <Text>Representacion impresa de la {ToLowerCase(Cabecera_Pie.TXT_CATEGORIA_TIPO_DOC)} electrónica, puede consultar en https://www.grupoinduamerica.com/isl/facturacion_electronica</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
-              <Type>Expression</Type>
-              <VertAlignment>Bottom</VertAlignment>
-            </Text45>
-            <Text61 Ref="53" type="Text" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>0.2,5.75,11.62,0.34</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Tahoma,8</Font>
-              <Guid>2377d542b0a14948b3c28f349d536881</Guid>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text61</Name>
-              <Page isRef="4" />
-              <Parent isRef="45" />
-              <Text>Autorizado mediante resolución de Superintendencia N°203-2015/SUNAT.</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text61>
-            <Text67 Ref="54" type="Text" isKey="true">
+            <Text67 Ref="51" type="Text" isKey="true">
               <Brush>EmptyBrush</Brush>
               <ClientRectangle>4.82,0.05,10.13,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -702,37 +661,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text67</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>{Cabecera_Pie.TXT_SELLO_IMPRESION}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <Type>Expression</Type>
             </Text67>
-            <BarCode1 Ref="55" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
-              <AutoScale>True</AutoScale>
-              <BackColor>Transparent</BackColor>
-              <BarCodeType Ref="56" type="Stimulsoft.Report.BarCodes.StiPdf417BarCodeType" isKey="true">
-                <AspectRatio>4</AspectRatio>
-                <DataColumns>1</DataColumns>
-                <DataRows>3</DataRows>
-                <ErrorsCorrectionLevel>Level5</ErrorsCorrectionLevel>
-                <Module>2</Module>
-                <RatioY>2</RatioY>
-              </BarCodeType>
-              <ClientRectangle>0.2,2.63,12,2</ClientRectangle>
-              <Code>{HASH}</Code>
-              <Conditions isList="true" count="1">
-                <value>_x007B_HASH_x0020__x003D__x003D__x0020__x0022__x0022__x007D_,Red,Transparent,Arial_x002C_8,False,False,</value>
-              </Conditions>
-              <Font>Arial,8,Bold,Pixel</Font>
-              <ForeColor>Black</ForeColor>
-              <HorAlignment>Center</HorAlignment>
-              <Name>BarCode1</Name>
-              <Page isRef="4" />
-              <Parent isRef="45" />
-              <VertAlignment>Center</VertAlignment>
-            </BarCode1>
-            <Text56 Ref="57" type="Text" isKey="true">
+            <Text56 Ref="52" type="Text" isKey="true">
               <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,3.03,2.4,0.6</ClientRectangle>
@@ -743,13 +678,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text56</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>TOTAL:</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text56>
-            <Text57 Ref="58" type="Text" isKey="true">
+            <Text57 Ref="53" type="Text" isKey="true">
               <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,2.43,2.4,0.6</ClientRectangle>
@@ -760,13 +695,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text57</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>I.G.V({Cabecera_Pie.PORC_IGV}%):</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text57>
-            <Text60 Ref="59" type="Text" isKey="true">
+            <Text60 Ref="54" type="Text" isKey="true">
               <Border>Top, Left, Right;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,1.83,2.4,0.6</ClientRectangle>
@@ -777,29 +712,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text60</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>SUBTOTAL:</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text60>
-            <Text4 Ref="60" type="Text" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>5.4,1.43,5.8,0.8</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Tahoma,8</Font>
-              <Guid>158b8f9fe628478bb319337288a2028c</Guid>
-              <HorAlignment>Center</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text4</Name>
-              <Page isRef="4" />
-              <Parent isRef="45" />
-              <Text>"SOMOS AGENTES DE RETENCIÓN"</Text>
-              <TextBrush>Black</TextBrush>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
-            </Text4>
-            <Text51 Ref="61" type="Text" isKey="true">
+            <Text51 Ref="55" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,0.43,1.38,0.46</ClientRectangle>
@@ -810,14 +729,14 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text51</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>SON: </Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text51>
-            <Text29 Ref="62" type="Text" isKey="true">
+            <Text29 Ref="56" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>1.6,0.43,18.14,0.4</ClientRectangle>
@@ -827,66 +746,133 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text29</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <Text>{CAN_LETRAS}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text29>
-            <EndPointPrimitive3 Ref="63" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <Text61 Ref="57" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,5.63,9.82,0.94</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,8</Font>
+              <Guid>cf30a691c7b2419cb679953209760a8e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="4" />
+              <Parent isRef="44" />
+              <Text>Representación impresa de la Factura Electrónica.
+Consulte su documento electrónico en cpe.sunat.gob.pe
+Autorizado mediante Resolución de Intendencia Nº 0720050000152/SUNAT
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text61>
+            <Text46 Ref="58" type="Text" isKey="true">
+              <Border>Left, Right;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,5.83,7,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,8,Bold</Font>
+              <Guid>62d88a53b2784ee9bfb579e1b018cb15</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="4" />
+              <Parent isRef="44" />
+              <Text>CUENTA DE DETRACCIONES:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text46>
+            <Text62 Ref="59" type="Text" isKey="true">
+              <Border>Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,6.23,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,8</Font>
+              <Guid>1788e1a3f6d1464594dd12b97784f465</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="4" />
+              <Parent isRef="44" />
+              <Text>BANCO DE LA NACION</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text62>
+            <Text64 Ref="60" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.8,6.23,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Tahoma,8</Font>
+              <Guid>207848f398744fc68285fcbf432adffc</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="4" />
+              <Parent isRef="44" />
+              <Text>M/N: 230004463</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text64>
+            <EndPointPrimitive3 Ref="61" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>19.8,0.87,0,0</ClientRectangle>
               <Name>EndPointPrimitive3</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>c61fb2441af3451e948fe3961ad2bb10</ReferenceToGuid>
             </EndPointPrimitive3>
-            <EndPointPrimitive7 Ref="64" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive7 Ref="62" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>17,0.85,0,0</ClientRectangle>
               <Name>EndPointPrimitive7</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>09af56159544483fb32ef69c47eb74b2</ReferenceToGuid>
             </EndPointPrimitive7>
-            <EndPointPrimitive4 Ref="65" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive4 Ref="63" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>1.6,0.85,0,0</ClientRectangle>
               <Name>EndPointPrimitive4</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>00a612616fda423a8824a1f262949a51</ReferenceToGuid>
             </EndPointPrimitive4>
-            <StartPointPrimitive22 Ref="66" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <StartPointPrimitive22 Ref="64" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>13.3,2.63,0,0</ClientRectangle>
               <Name>StartPointPrimitive22</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>4ed68ca5e8d243f49e865bea487ae393</ReferenceToGuid>
             </StartPointPrimitive22>
-            <EndPointPrimitive22 Ref="67" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive22 Ref="65" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>13.3,3.03,0,0</ClientRectangle>
               <Name>EndPointPrimitive22</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>4ed68ca5e8d243f49e865bea487ae393</ReferenceToGuid>
             </EndPointPrimitive22>
-            <HorizontalLinePrimitive2 Ref="68" type="HorizontalLinePrimitive" isKey="true">
+            <HorizontalLinePrimitive2 Ref="66" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0.2,0.83,19.6,0.0254</ClientRectangle>
               <Color>Black</Color>
-              <EndCap Ref="69" type="Cap" isKey="true">
+              <EndCap Ref="67" type="Cap" isKey="true">
                 <Color>Black</Color>
               </EndCap>
               <Name>HorizontalLinePrimitive2</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
-              <StartCap Ref="70" type="Cap" isKey="true">
+              <Parent isRef="44" />
+              <StartCap Ref="68" type="Cap" isKey="true">
                 <Color>Black</Color>
               </StartCap>
             </HorizontalLinePrimitive2>
-            <EndPointPrimitive6 Ref="71" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive6 Ref="69" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>14.2,0.85,0,0</ClientRectangle>
               <Name>EndPointPrimitive6</Name>
               <Page isRef="4" />
-              <Parent isRef="45" />
+              <Parent isRef="44" />
               <ReferenceToGuid>e3ef12353b76441699bd00eff1e833fd</ReferenceToGuid>
             </EndPointPrimitive6>
           </Components>
@@ -895,7 +881,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </PageFooterBand1>
-        <Text30 Ref="72" type="Text" isKey="true">
+        <Text30 Ref="70" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>21.4,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -908,7 +894,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text30>
-        <Text32 Ref="73" type="Text" isKey="true">
+        <Text32 Ref="71" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>21.4,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -921,7 +907,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text32>
-        <Text33 Ref="74" type="Text" isKey="true">
+        <Text33 Ref="72" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>24,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -934,7 +920,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text33>
-        <Text37 Ref="75" type="Text" isKey="true">
+        <Text37 Ref="73" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>22.07,7.94,2.6,0.6</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -947,12 +933,12 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text37>
-        <DataBand1 Ref="76" type="DataBand" isKey="true">
+        <DataBand1 Ref="74" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,10.94,20,0.91</ClientRectangle>
           <Components isList="true" count="4">
-            <Text19 Ref="77" type="Text" isKey="true">
+            <Text19 Ref="75" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>14.12,0.06,2.63,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -961,17 +947,17 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text19</Name>
               <Page isRef="4" />
-              <Parent isRef="76" />
+              <Parent isRef="74" />
               <Text>{Detalle.CAN_PRECIO_UNIT_IGV}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="78" type="NumberFormat" isKey="true">
+              <TextFormat Ref="76" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseLocalSetting>False</UseLocalSetting>
               </TextFormat>
               <Type>Expression</Type>
             </Text19>
-            <Text21 Ref="79" type="Text" isKey="true">
+            <Text21 Ref="77" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>16.94,0.06,2.63,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -980,17 +966,17 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
               <Page isRef="4" />
-              <Parent isRef="76" />
+              <Parent isRef="74" />
               <Text>{Detalle.CAN_VALOR_VENTA_IGV}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="80" type="NumberFormat" isKey="true">
+              <TextFormat Ref="78" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseLocalSetting>False</UseLocalSetting>
               </TextFormat>
               <Type>Expression</Type>
             </Text21>
-            <Text15 Ref="81" type="Text" isKey="true">
+            <Text15 Ref="79" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <CanGrow>True</CanGrow>
               <ClientRectangle>1.83,0.06,12.2,0.8</ClientRectangle>
@@ -999,11 +985,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
               <Page isRef="4" />
-              <Parent isRef="76" />
+              <Parent isRef="74" />
               <Text>{Detalle.TXT_NOMBRE_PRODUCTO}
 {Detalle.TXT_DETALLE_PRODUCTO}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="82" type="NumberFormat" isKey="true">
+              <TextFormat Ref="80" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseGroupSeparator>False</UseGroupSeparator>
@@ -1012,7 +998,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <Type>Expression</Type>
             </Text15>
-            <Text13 Ref="83" type="Text" isKey="true">
+            <Text13 Ref="81" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,0.06,1.2,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1022,7 +1008,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text13</Name>
               <Page isRef="4" />
-              <Parent isRef="76" />
+              <Parent isRef="74" />
               <Text>{Detalle.CAN_PRODUCTO}</Text>
               <TextBrush>Black</TextBrush>
               <Type>DataColumn</Type>
@@ -1040,7 +1026,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Parent isRef="4" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <RectanglePrimitive3 Ref="84" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive3 Ref="82" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0.2,9.6,19.6,13.24</ClientRectangle>
           <Color>Black</Color>
           <Guid>c61fb2441af3451e948fe3961ad2bb10</Guid>
@@ -1049,71 +1035,63 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Parent isRef="4" />
           <ShiftMode>OnlyInWidthOfComponent</ShiftMode>
         </RectanglePrimitive3>
-        <VerticalLinePrimitive3 Ref="85" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive3 Ref="83" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>17,9.6,0.0254,13.22</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="86" type="Cap" isKey="true">
+          <EndCap Ref="84" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>09af56159544483fb32ef69c47eb74b2</Guid>
           <Name>VerticalLinePrimitive3</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="87" type="Cap" isKey="true">
+          <StartCap Ref="85" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive3>
-        <VerticalLinePrimitive4 Ref="88" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive4 Ref="86" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>1.6,9.6,0.0254,13.22</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="89" type="Cap" isKey="true">
+          <EndCap Ref="87" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>00a612616fda423a8824a1f262949a51</Guid>
           <Name>VerticalLinePrimitive4</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="90" type="Cap" isKey="true">
+          <StartCap Ref="88" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive4>
-        <RectanglePrimitive4 Ref="91" type="RectanglePrimitive" isKey="true">
-          <ClientRectangle>13,4,7.8,1</ClientRectangle>
-          <Color>Black</Color>
-          <Guid>25ec4fcceb8d4182bcca9052bfc0f2f8</Guid>
-          <Name>RectanglePrimitive4</Name>
-          <Page isRef="4" />
-          <Parent isRef="4" />
-        </RectanglePrimitive4>
-        <VerticalLinePrimitive2 Ref="92" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="89" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>14.2,9.6,0.0254,13.22</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="93" type="Cap" isKey="true">
+          <EndCap Ref="90" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>e3ef12353b76441699bd00eff1e833fd</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="94" type="Cap" isKey="true">
+          <StartCap Ref="91" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <VerticalLinePrimitive16 Ref="95" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive16 Ref="92" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>13.3,24.6,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="96" type="Cap" isKey="true">
+          <EndCap Ref="93" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>4ed68ca5e8d243f49e865bea487ae393</Guid>
           <Name>VerticalLinePrimitive16</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="97" type="Cap" isKey="true">
+          <StartCap Ref="94" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive16>
-        <RectanglePrimitive1 Ref="98" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive1 Ref="95" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>12.8,0.6,7,3.4</ClientRectangle>
           <Color>Black</Color>
           <Guid>eaf8b259f9f94bababfdf7668d8d6359</Guid>
@@ -1121,7 +1099,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </RectanglePrimitive1>
-        <RectanglePrimitive5 Ref="99" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive5 Ref="96" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0.2,8,19.6,1</ClientRectangle>
           <Color>Black</Color>
           <Guid>b4cbeb4d1c684a4babf3581bf72d9fdd</Guid>
@@ -1129,13 +1107,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </RectanglePrimitive5>
-        <EndPointPrimitive8 Ref="100" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-          <ClientRectangle>20.8,5,0,0</ClientRectangle>
-          <Name>EndPointPrimitive8</Name>
-          <Page isRef="4" />
-          <Parent isRef="4" />
-          <ReferenceToGuid>25ec4fcceb8d4182bcca9052bfc0f2f8</ReferenceToGuid>
-        </EndPointPrimitive8>
       </Components>
       <Conditions isList="true" count="0" />
       <Guid>67cd750115a248df891225f94dfc8572</Guid>
@@ -1145,13 +1116,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
       <PageWidth>21</PageWidth>
       <PaperSize>A4</PaperSize>
       <Report isRef="0" />
-      <Watermark Ref="101" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="97" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="102" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="98" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -1163,7 +1134,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>2/7/2020 12:58:19 AM</ReportChanged>
+  <ReportChanged>2/8/2020 2:41:29 AM</ReportChanged>
   <ReportCreated>12/16/2014 5:46:55 PM</ReportCreated>
   <ReportFile>C:\Users\usuario\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Fotos\eImpresion\Doc.ElectronicoISL_NC.mrt</ReportFile>
   <ReportGuid>a68a9c93491e4337be9563942298394a</ReportGuid>
@@ -2183,7 +2154,7 @@ namespace Reports
 </Script>
   <ScriptLanguage>CSharp</ScriptLanguage>
   <Styles isList="true" count="1">
-    <Estilo1 Ref="103" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Estilo1 Ref="99" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Brush>Transparent</Brush>
       <Font>Arial,8</Font>
       <Name>Estilo1</Name>
