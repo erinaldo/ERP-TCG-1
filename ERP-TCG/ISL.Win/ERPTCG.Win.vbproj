@@ -404,6 +404,12 @@
     <Compile Include="Comercial\Ventas\frm_ActualizarAlmacen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercial\Ventas\frm_CanjeNTD.Designer.vb">
+      <DependentUpon>frm_CanjeNTD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\Ventas\frm_CanjeNTD.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercial\Ventas\frm_GRR_Venta.Designer.vb">
       <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
     </Compile>
@@ -6089,6 +6095,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_ActualizarAlmacen.resx">
       <DependentUpon>frm_ActualizarAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercial\Ventas\frm_CanjeNTD.resx">
+      <DependentUpon>frm_CanjeNTD.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercial\Ventas\frm_GRR_Venta.resx">
       <DependentUpon>frm_GRR_Venta.vb</DependentUpon>
