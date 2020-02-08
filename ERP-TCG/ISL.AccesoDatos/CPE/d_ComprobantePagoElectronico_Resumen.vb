@@ -36,7 +36,7 @@ Public Class d_ComprobantePagoElectronico_Resumen
             'Using transScope As New TransactionScope()
             Dim stResultado() As String
             With Item
-                stResultado = SQL.ExecuteScalar("[CON].[ComprobantePagoElectronico_Resumen_IAE]" _
+                stResultado = SQL.ExecuteScalar("[CON].[Isp_ComprobantePagoElectronico_Resumen_IAE]" _
                         , .TipoOperacion _
                         , .PrefijoID _
                         , .Id _
@@ -123,31 +123,16 @@ Public Class d_ComprobantePagoElectronico_Resumen
             Throw ex
         End Try
     End Function
+
     Private Function ExecuteLST(ByVal Item As e_ComprobantePagoElectronico_Resumen) As DataSet
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("[CON].[ComprobantePagoElectronico_Resumen_LST]" _
+                ds = SQL.ExecuteDataset("[CON].[Isp_ComprobantePagoElectronico_Resumen_Listar]" _
                         , .TipoOperacion _
-                        , "" _
-                        , "" _
-                        , .Id _
                         , .IdEmpresaSis _
                         , .TipoResumen _
-                        , .FechaResumen _
-                        , .FechaDocumentos _
-                        , .Correlativo _
-                        , .Ticket _
-                        , .Hash_RSA _
-                        , .Rpta_Sunat _
-                        , .Ruta_XML _
-                        , .IdEstado _
-                        , .UsuarioCrea _
-                        , .FechaCrea _
-                        , .UsuarioModifica _
-                        , .FechaModifica _
-                        , .Activo
-                        )
+                        , .FechaResumen)
             End With
             Return ds
         Catch ex As Exception

@@ -403,7 +403,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub mt_ObtenerEmpresa()
         Try
             mo_Empresa = New e_Empresa
-            mo_Empresa.TipoOperacion = "LST"
+            mo_Empresa.TipoOperacion = "1"
             mo_Empresa.Id = gs_IdEmpresaSistema
             mo_Empresa = wr_Empresa.Obtener(mo_Empresa)
         Catch ex As Exception
@@ -601,7 +601,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarBoletas()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("RES", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .FechaEmision = DateTimePicker2.Value}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.TipoOperacion = "BOL", .IdEmpresaSis = gs_IdEmpresaSistema, .FechaEmision = DateTimePicker2.Value}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Documentos)
         Catch ex As Exception
             Throw ex
@@ -611,7 +611,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarDocs()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("FAC", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "FAC"}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "FAC"}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Facturas)
         Catch ex As Exception
             Throw ex
@@ -623,7 +623,6 @@ Public Class frm_EnvioDocElectronico
             Dim ls_Archivo As String = ""
             ls_Hash = String.Empty
             mo_Resumen = New e_ComprobantePagoElectronico_Resumen
-            mo_Resumen.PrefijoID = gs_PrefijoIdSucursal
             mo_Resumen.TipoResumen = 1
             mo_Resumen.FechaResumen = ObtenerFechaServidor.Date.ToString("yyyyMMdd")
             mo_Resumen.IdEmpresaSis = gs_IdEmpresaSistema
@@ -635,13 +634,14 @@ Public Class frm_EnvioDocElectronico
                 mo_Resumen.Id = String.Empty
                 mo_Resumen.Correlativo = FormatoDocumento(CStr(CInt(mo_Resumen.Correlativo) + 1), 5)
             End If
+            mo_Resumen.PrefijoID = gs_PrefijoIdSucursal
             mo_Resumen.IdEmpresaSis = gs_IdEmpresaSistema
             mo_Resumen.FechaResumen = ObtenerFechaServidor.Date.ToString("yyyyMMdd")
             mo_Resumen.FechaDocumentos = DateTimePicker2.Value.Date.ToString("yyyyMMdd")
             mo_Resumen.TipoResumen = 1
             mo_Resumen.IdSucursalSistema = gs_IdSucursal
             mo_Resumen.UsuarioCrea = gUsuarioSGI.Id
-            mo_Resumen.IdEstado = "1CIX049"
+            mo_Resumen.IdEstado = "C"
             ls_ArchivoZip = String.Empty
             'Dim fs_Rpta As FileStream
             If udg_Documentos.Rows.Count = 0 Then Throw New Exception("No Existen Datos")
@@ -658,10 +658,10 @@ Public Class frm_EnvioDocElectronico
             mo_Resumen.Ruta_XML = ls_Archivo
             mo_Resumen.Hash_RSA = ls_Hash
             mo_Resumen.Ticket = wr_SunatEnvio.sendSummary(wr_Envio.fileName, wr_Envio.contentFile, "")
-            'If wr_Resumen.Guardar(mo_Resumen, lst_DocElectronico.Where(Function(i) i.Sel).ToList) Then
-            '    MessageBox.Show("Resumen Enviado Correctamente. Se Genero el Ticket: " & mo_Resumen.Ticket, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            '    lr_ConsultarBoletas()
-            'End If
+            If wr_Resumen.Guardar(mo_Resumen, lst_DocElectronico.Where(Function(i) i.Sel).ToList) Then
+                MessageBox.Show("Resumen Enviado Correctamente. Se Genero el Ticket: " & mo_Resumen.Ticket, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lr_ConsultarBoletas()
+            End If
         Catch ex As Exception
             Throw ex
         End Try
@@ -764,7 +764,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ListarDocs()
         Try
             lst_DocBajas = New List(Of e_ComprobantePagoElectronico)
-            lst_DocBajas.AddRange(ol_DocElectronico.Consultar("VOI", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .FechaEmision = DateTimePicker3.Value}))
+            'lst_DocBajas.AddRange(ol_DocElectronico.Consultar("VOI", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .FechaEmision = DateTimePicker3.Value}))
             lr_ConfigurarGrillaDoc(lst_DocBajas, udg_Baja)
         Catch ex As Exception
             Throw ex
@@ -907,8 +907,8 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ListarEstados()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("ENV", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .Id = uce_TipoDocumento.Value,
-                                        .FechaEmision = DateTimePicker4.Value, .FechaVencimiento = DateTimePicker5.Value, .IdEstadoSunat = uce_Estado.Value}))
+            'lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("ENV", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .Id = uce_TipoDocumento.Value,
+            '                            .FechaEmision = DateTimePicker4.Value, .FechaVencimiento = DateTimePicker5.Value, .IdEstadoSunat = uce_Estado.Value}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico.OrderByDescending(Function(i) i.FechaEmision).ToList)
             For Each fila As UltraGridRow In udg_ListaDocs.Rows
                 Select Case fila.Cells("IdCentro").Value

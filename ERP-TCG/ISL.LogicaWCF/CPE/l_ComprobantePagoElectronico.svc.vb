@@ -47,7 +47,7 @@ Public Class l_ComprobantePagoElectronico
     Dim cadP As String = "urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1"
     Dim ln_Cont As Integer = 1
 
-    Public Function Consultar(Operacion As String, Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico) Implements Il_ComprobantePagoElectronico.Consultar
+    Public Function Consultar(Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico) Implements Il_ComprobantePagoElectronico.Consultar
         Try
             Return ADO.Listar(Documento)
         Catch ex As Exception
@@ -177,7 +177,13 @@ Public Class l_ComprobantePagoElectronico
             xml_writer.WriteElementString("ID", cadCbc, Documento.RUCEmisor.Trim)
             xml_writer.WriteEndElement() 'PartyIdentification
             xml_writer.WriteStartElement(prefixCac, "PartyName", cadCac)
-            xml_writer.WriteElementString("Name", cadCbc, Documento.RazonSocial)
+
+            xml_writer.WriteStartElement(prefixCbc, "Name", cadCbc)
+            xml_writer.WriteCData(Documento.RazonSocial)
+            xml_writer.WriteEndElement() 'name
+
+            'xml_writer.WriteElementString("Name", cadCbc, Documento.RazonSocial)
+
             xml_writer.WriteEndElement() 'PartyName
             xml_writer.WriteEndElement() 'SignatoryParty
             xml_writer.WriteStartElement(prefixCac, "DigitalSignatureAttachment", cadCac)
@@ -971,7 +977,10 @@ Public Class l_ComprobantePagoElectronico
                 .WriteElementString("AdditionalAccountID", cadCbc, "6")
                 .WriteStartElement(prefixCac, "Party", cadCac)
                 .WriteStartElement(prefixCac, "PartyLegalEntity", cadCac)
-                .WriteElementString("RegistrationName", cadCbc, Emisor.Nombre)
+                .WriteStartElement(prefixCbc, "RegistrationName", cadCbc)
+                .WriteCData(Emisor.Nombre)
+                .WriteEndElement() 'RegistrationName
+                '.WriteElementString("RegistrationName", cadCbc, Emisor.Nombre)
                 .WriteEndElement() 'PartyLegalEntity
                 .WriteEndElement() 'Party
                 .WriteEndElement() 'AccountingSupplierParty
@@ -1415,6 +1424,7 @@ Public Class l_ComprobantePagoElectronico
             Dim ln_Linea As Integer = 1
             settings.Indent = True
             settings.Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
+
             Using writer As XmlWriter = XmlWriter.Create(Ruta, settings)
                 prefixCac = writer.LookupPrefix(cadCac)
                 prefixExt = writer.LookupPrefix(cadExt)

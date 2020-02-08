@@ -10,7 +10,7 @@ Public Interface Il_ComprobantePagoElectronico
     Function Obtener(Documento As e_ComprobantePagoElectronico) As e_ComprobantePagoElectronico
 
     <OperationContract()>
-    Function Consultar(Operacion As String, Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico)
+    Function Consultar(Documento As e_ComprobantePagoElectronico) As List(Of e_ComprobantePagoElectronico)
 
     <OperationContract()>
     Function CambiarEstado(Operacion As String, Documento As e_ComprobantePagoElectronico) As Boolean

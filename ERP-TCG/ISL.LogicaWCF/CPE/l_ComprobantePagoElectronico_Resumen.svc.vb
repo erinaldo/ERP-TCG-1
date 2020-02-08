@@ -1,10 +1,12 @@
 ﻿Imports ERP.EntidadesWCF
 Imports ERP.AccesoDatos
+Imports System.Transactions
 
 <DataContract(), Serializable()>
 Public Class l_ComprobantePagoElectronico_Resumen
     Implements Il_ComprobantePagoElectronico_Resumen
     Private odComprobantePagoElectronico_Resumen As New d_ComprobantePagoElectronico_Resumen
+    Private odMovDoc_Imp As d_MovimientoDocumento_Impresion
 
     Public Function Obtener(ByVal Item As e_ComprobantePagoElectronico_Resumen) As e_ComprobantePagoElectronico_Resumen Implements Il_ComprobantePagoElectronico_Resumen.Obtener
         Try
@@ -22,14 +24,29 @@ Public Class l_ComprobantePagoElectronico_Resumen
         End Try
     End Function
 
-    Public Function Guardar(ByVal Item As e_ComprobantePagoElectronico_Resumen) As e_ComprobantePagoElectronico_Resumen Implements Il_ComprobantePagoElectronico_Resumen.Guardar
+    Public Function Guardar(ByVal Item As e_ComprobantePagoElectronico_Resumen, lo As List(Of e_ComprobantePagoElectronico)) As Boolean Implements Il_ComprobantePagoElectronico_Resumen.Guardar
         Try
             Validar(Item)
-            Item = odComprobantePagoElectronico_Resumen.Guardar(Item)
-            Return Item
+            Dim oeMovDoc_Imp As e_MovimientoDocumento_Impresion
+            Using TransScope As New TransactionScope()
+                Item = odComprobantePagoElectronico_Resumen.Guardar(Item)
+                odMovDoc_Imp = New d_MovimientoDocumento_Impresion
+                For Each detalle In lo
+                    oeMovDoc_Imp = New e_MovimientoDocumento_Impresion
+                    With oeMovDoc_Imp
+                        .TipoOperacion = "R"
+                        .UsuarioCreacion = Item.UsuarioCrea
+                        .IdComprobantePagoElectronico_Resumen = Item.Id
+                    End With
+                    odMovDoc_Imp.Guardar(oeMovDoc_Imp)
+                Next
+                TransScope.Complete()
+            End Using
+            'Return Item
         Catch ex As Exception
             Throw ex
         End Try
+        Return True
     End Function
 
     Public Function Eliminar(ByVal Item As e_ComprobantePagoElectronico_Resumen) As Boolean Implements Il_ComprobantePagoElectronico_Resumen.Eliminar
@@ -39,6 +56,7 @@ Public Class l_ComprobantePagoElectronico_Resumen
             Throw ex
         End Try
     End Function
+
     Private Function Validar(ByVal Item As e_ComprobantePagoElectronico_Resumen) As Boolean
         Try
             With Item
