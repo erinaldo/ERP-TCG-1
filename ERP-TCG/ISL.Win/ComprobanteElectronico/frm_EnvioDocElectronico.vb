@@ -652,7 +652,7 @@ Public Class frm_EnvioDocElectronico
                 zip.AddFile(ls_Archivo, "")
                 zip.Save(ls_ArchivoZip)
             End Using
-            'fs_Rpta = New FileStream(ls_ArchivoZip, FileMode.Create)
+
             wr_Envio.contentFile = My.Computer.FileSystem.ReadAllBytes(ls_ArchivoZip)
             wr_Envio.fileName = Replace(ls_ArchivoZip, gstrRutaDocumentosEle20, "")
             mo_Resumen.Ruta_XML = ls_Archivo

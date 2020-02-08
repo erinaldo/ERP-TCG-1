@@ -23,13 +23,13 @@ Public Class d_Conexion
             'Return ConfigurationManager.ConnectionStrings("ISL").ConnectionString '@0001
 
             'PRODUCCION INTERNET
-            'Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=ERP; Password=Sistem@s789; Connect Timeout=120"
+            Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=ERP; Password=Sistem@s789; Connect Timeout=120"
 
             'PRODUCCION LOCAL
             'Return "Data Source=LADERA;Initial Catalog=ERPTCG; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
             'DESARROLLO INTERNET
-            Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG0201; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
+            'Return "Data Source=190.117.126.71;Initial Catalog=ERPTCG0201; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
 
             'DESARROLLO LOCAL
             'Return "Data Source=LADERA;Initial Catalog = ERPTCG0201; Persist Security Info=True; User ID=sa; Password=2450L0rayL0ra; Connect Timeout=120"
