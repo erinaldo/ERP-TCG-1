@@ -741,9 +741,7 @@ Public Class frm_OrdenVenMaterial
                 If Operacion = "Atender" Or Operacion = "Nuevo" Or Operacion = "Editar" Then
                     grbDocAsoc.Enabled = True
                     cmbTipoDocumento.Focus()
-
                     SerieDocumento(cmbTipoDocumento.Value) '@0001 Ini
-
                 End If
             Else
                 grbDocAsoc.Enabled = False
@@ -753,8 +751,6 @@ Public Class frm_OrdenVenMaterial
             grbDocAsoc.Enabled = False
         End If
     End Sub
-
-
 
     Private Sub txtSerie_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
@@ -1354,7 +1350,7 @@ Public Class frm_OrdenVenMaterial
                 txtEstadoDoc.Text = oeDocumento.EstadoDocumento
                 dtpFechaDoc.Value = oeDocumento.FechaEmision
                 dtpFechaPago.Value = oeDocumento.FechaVencimiento
-                If oeDocumento.EstadoDocumento = "GENERADO" Then btnEmitirDoc.Enabled = True
+                If oeDocumento.EstadoDocumento = "GENERADA" Then btnEmitirDoc.Enabled = True
             End If
         Catch ex As Exception
             Throw ex
@@ -2123,6 +2119,11 @@ Public Class frm_OrdenVenMaterial
                     Throw New Exception("No Existe Configuracion Contable")
                 End If
             End If
+            If IndMensaje Then
+                MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+                gmt_MostrarTabs(0, ficOrdenComercial, 2)
+                Consultar(True)
+            End If
             'If _banEmis = True Then mensajeEmergente.Confirmacion("El Documento Nº " & oeDoc.Serie & " - " & oeDoc.Numero & " ha sido Emitido", True)
             '    Ejercicio = frm.cmbEjercicio.Text
             '    mt_ListarCtaCtble(Ejercicio)
@@ -2144,11 +2145,7 @@ Public Class frm_OrdenVenMaterial
             '    'If Not olAsientoModelo.GuardarVentaMaterial(oeAsientoModelo, oeDoc) Then
             '    '    Throw New Exception("Error Enviando el Documento")
             '    'Else
-            '    '    If IndMensaje Then
-            '    '        MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
-            '    '        gmt_MostrarTabs(0, ficOrdenComercial, 2)
-            '    '        Consultar(True)
-            '    '    End If
+            '    '   
             '    'End If
             '    'If cb_CobroAutomatico.Checked Then gfc_CobroAutomatico(oeDocumento.Id, frm.cmbPeriodo.Value, loCtaCtble, oeDoc.FechaCrea)
             'End If
