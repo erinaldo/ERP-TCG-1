@@ -1593,7 +1593,7 @@ Public Class frm_EstacionServicio
             eClienteProveedor.TipoOperacion = ""
             eClienteProveedor.Id = IdEmpresaCliente
             eClienteProveedor = lCliente.Obtener(eClienteProveedor)
-            ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.Motriz = 1, .IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
+        ListaVehiculo.AddRange(dVehiculo.Listar(New e_Vehiculo With {.IdEmpresaPropietaria = eClienteProveedor.IdPersonaEmpresa, .TipoOperacion = "A"}))
         'End If
         LlenarCombo(cmb_Vehiculo, "Placa", ListaVehiculo, -1)
     End Sub

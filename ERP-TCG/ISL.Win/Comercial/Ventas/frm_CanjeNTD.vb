@@ -40,53 +40,53 @@ Public Class frm_CanjeNTD
     Private DocumentoOrigen As New e_MovimientoDocumento
     Private DocumentoGenerado As New e_MovimientoDocumento
 
-    Private oe_Venta As e_Venta
-    Private ol_Venta As l_Venta
+    Private oe_Venta As New e_Venta
+    Private ol_Venta As New l_Venta
 
-    Private oe_Cliente As e_Cliente
-    Private ol_Cliente As l_Cliente
+    Private oe_Cliente As New e_Cliente
+    Private ol_Cliente As New l_Cliente
 
-    Private oe_TipoDoc As e_TipoDocumento
-    Private ol_TipoDoc As l_TipoDocumento
-    Private oe_Moneda As e_Moneda
+    Private oe_TipoDoc As New e_TipoDocumento
+    Private ol_TipoDoc As New l_TipoDocumento
+    Private oe_Moneda As New e_Moneda
 
 
-    Private oe_RefAsoc As e_ReferenciaAsociada
-    Private ol_RefAsoc As l_ReferenciaAsociada
+    Private oe_RefAsoc As New e_ReferenciaAsociada
+    Private ol_RefAsoc As New l_ReferenciaAsociada
 
-    Dim oeTipoPago As e_TipoPago
-    Dim olTipoPago As l_TipoPago
-    Dim llTipoPago As List(Of e_TipoPago)
+    Dim oeTipoPago As New e_TipoPago
+    Dim olTipoPago As New l_TipoPago
+    Dim llTipoPago As New List(Of e_TipoPago)
 
-    Private oeCtaCtble As e_CuentaContable
-    Private olCtaCtable As l_CuentaContable
-    Private loCtaCtble As List(Of e_CuentaContable)
+    Private oeCtaCtble As New e_CuentaContable
+    Private olCtaCtable As New l_CuentaContable
+    Private loCtaCtble As New List(Of e_CuentaContable)
 
     Private DTReferencia As Data.DataTable
     Private dtAux As Data.DataTable
 
-    Private oeReferencia As e_AsientoModelo_Referencia
-    Private olReferencia As l_AsientoModelo_Referencia
-    Private loReferencia As List(Of e_AsientoModelo_Referencia)
+    Private oeReferencia As New e_AsientoModelo_Referencia
+    Private olReferencia As New l_AsientoModelo_Referencia
+    Private loReferencia As New List(Of e_AsientoModelo_Referencia)
 
-    Private oeCombo As e_Combo
-    Private olCombo As l_Combo
+    Private oeCombo As New e_Combo
+    Private olCombo As New l_Combo
 
-    Private oeEmpresa As e_Empresa
-    Private olEmpresa As l_Empresa
-    Private loEmpresa As List(Of e_Empresa)
-    Private loEmpresaCliente As List(Of e_Empresa)
+    Private oeEmpresa As New e_Empresa
+    Private olEmpresa As New l_Empresa
+    Private loEmpresa As New List(Of e_Empresa)
+    Private loEmpresaCliente As New List(Of e_Empresa)
 
-    Private oeAsientoModelo As e_AsientoModelo
-    Private olAsientoModelo As l_AsientoModelo
-    Private loAsientoModelo As List(Of e_AsientoModelo)
+    Private oeAsientoModelo As New e_AsientoModelo
+    Private olAsientoModelo As New l_AsientoModelo
+    Private loAsientoModelo As New List(Of e_AsientoModelo)
 
     Private oeCuentaCorriente As New e_CuentaCorriente
     Private olCuentaCorriente As New l_CuentaCorriente
 
-    Private oeServCtaCtble As e_ServicioCuentaContable
+    Private oeServCtaCtble As New e_ServicioCuentaContable
     Private olServCtaCtble As New l_ServicioCuentaContable
-    Private leServCtaCtble As List(Of e_ServicioCuentaContable)
+    Private leServCtaCtble As New List(Of e_ServicioCuentaContable)
 
     Private mdblIGV As Double = gfc_ParametroValor("IGV")
 
@@ -565,7 +565,8 @@ Public Class frm_CanjeNTD
             Dim SubTotal As Double = 0, IGV As Double = 0, Total As Double = 0
             If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             If cmbTipoDocumento.SelectedIndex = -1 Then Throw New Exception("Seleccione Tipo de Documento")
-
+            gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2) '@0001
+            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
             With DocumentoGenerado
                 '' Cabecera
                 .TipoOperacion = "I"
