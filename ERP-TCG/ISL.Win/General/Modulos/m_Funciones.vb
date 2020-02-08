@@ -368,10 +368,13 @@ Module m_Funciones
                 Case "01" ' Factura
                     ls_NombreArchivo = olDocumentoElectronico.GenerarEDocFactura(oeDocumentoElectronico, Hash).Trim
                     lb_IndXml = True
-                Case "1CH000000030" ' Nota de Credito
+                Case "07" ' Nota de Credito
+                    If oeDocumentoElectronico.TipoDocAsoc = "01" Then
+                        ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
+                        lb_IndXml = True
+                    End If
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
-                    ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaCredito(oeDocumentoElectronico, Hash).Trim
-                    lb_IndXml = True
+
                         'End If
                 Case "1CH000000033" ' Nota de Debito
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
