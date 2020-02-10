@@ -834,8 +834,17 @@ Public Class d_MovimientoDocumento
                             Next
                             odDetDoc.GuardarMasivo(.dtDetalleDoc)
                         End If
-
-                        
+                        '' =========================================================================== @0001
+                        '' Datos de Impresion
+                        If .TipoOperacion = "I" Then
+                            Dim ado_DatosImpresion As New d_MovimientoDocumento_Impresion
+                            .DatosImpresion.TipoOperacion = "I"
+                            .DatosImpresion.IdMovimientoDocumento = id(0)
+                            .DatosImpresion.IdEmpresaSistema = oeMovimientoDocumento.IdEmpresaSistema
+                            .DatosImpresion.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001
+                            ado_DatosImpresion.Guardar(.DatosImpresion)
+                        End If
+                        '' =========================================================================== @0001
 
                         'Guarda Detalle Documento Guia Transportista
                         If .dtDetalleDocGT.Rows.Count > 0 Then
