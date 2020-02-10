@@ -24,6 +24,15 @@ Public Class l_ComprobantePagoElectronico_Resumen
         End Try
     End Function
 
+    Public Function ListarDataSet(oe As e_ComprobantePagoElectronico_Resumen) As Data.DataSet Implements Il_ComprobantePagoElectronico_Resumen.ListarDataSet
+        Try
+            'ADO = New d_Resumen_Doc_Electronico
+            Return odComprobantePagoElectronico_Resumen.ListarDS(oe)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
     Public Function Guardar(ByVal Item As e_ComprobantePagoElectronico_Resumen, lo As List(Of e_ComprobantePagoElectronico)) As Boolean Implements Il_ComprobantePagoElectronico_Resumen.Guardar
         Try
             Validar(Item)
@@ -35,6 +44,7 @@ Public Class l_ComprobantePagoElectronico_Resumen
                     oeMovDoc_Imp = New e_MovimientoDocumento_Impresion
                     With oeMovDoc_Imp
                         .TipoOperacion = "R"
+                        .IdMovimientoDocumento = detalle.Id
                         .UsuarioCreacion = Item.UsuarioCrea
                         .IdComprobantePagoElectronico_Resumen = Item.Id
                     End With

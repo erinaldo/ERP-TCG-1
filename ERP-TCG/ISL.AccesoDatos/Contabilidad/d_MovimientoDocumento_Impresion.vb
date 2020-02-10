@@ -38,7 +38,7 @@ Public Class d_MovimientoDocumento_Impresion
             'Using transScope As New TransactionScope()
             Dim stResultado() As String
             With Item
-                stResultado = SQL.ExecuteScalar("[CON].[Sp_MovimientoDocumento_Impresion_IAE]" _
+                stResultado = SQL.ExecuteScalar("[CON].[Isp_MovimientoDocumento_Impresion_IAE]" _
                 , .TipoOperacion _
                 , .PrefijoID _
                 , .Id _
@@ -99,7 +99,7 @@ Public Class d_MovimientoDocumento_Impresion
     Public Function Eliminar(ByVal Item As e_MovimientoDocumento_Impresion) As Boolean
         Try
             With Item
-                SQL.ExecuteNonQuery("[CON].[Sp_MovimientoDocumento_Impresion_IAE]" _
+                SQL.ExecuteNonQuery("[CON].[Isp_MovimientoDocumento_Impresion_IAE]" _
                 , "E" _
                 , "" _
                 , .Id _
@@ -214,9 +214,9 @@ Public Class d_MovimientoDocumento_Impresion
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("[CON].[Sp_MovimientoDocumento_Impresion_LST]" _
+                ds = SQL.ExecuteDataset("[CON].[Isp_MovimientoDocumento_Impresion_Listar]" _
                 , .TipoOperacion _
-                , "" _
+                , .IdEmpresaSistema _
                 , "" _
                 , .Id _
                 , .IdMovimientoDocumento _
