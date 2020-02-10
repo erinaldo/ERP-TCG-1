@@ -181,7 +181,7 @@ Public Class frm_NotaCreditoDebito
                 End With
             End If
 
-            gtm_Imprimir_Documento(Id, "TICKET", "OV")
+            gtm_Imprimir_Documento(Id, "NCTICKET", "OV")
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -443,7 +443,7 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub txtGlosa_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtGlosa.ValueChanged
-        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value
+        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value + " REFERENCIA: " + cboTipoDocAso.Text + " " + txtSerieAso.Text + "-" + txtNumeroAso.Text + " " + dtpFecEmisionAso.Value
     End Sub
 
     Private Sub fecVencimiento_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fecVencimiento.ValueChanged
@@ -902,6 +902,8 @@ Public Class frm_NotaCreditoDebito
             With oeNotaCreditoDebito.DatosImpresion
                 .IdTipoDocumento = cboTipoDoc.Value
                 .TipoDocumento = cboTipoDoc.Text
+                .IdMedioPago = cmbMotivoMod.Value
+                .MedioPago = cmbMotivoMod.Text
                 .NombreClienteProveedor = txtClienteAso.Text
                 .NroDocumentoClienteProveedor = txtRuc.Text
                 oeCombo = New e_Combo

@@ -145,6 +145,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 Select Case TipoPapel
                     Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
                     Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
+                    Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
                 End Select
                 'End Select '@0001
                 'Case Else '@0001

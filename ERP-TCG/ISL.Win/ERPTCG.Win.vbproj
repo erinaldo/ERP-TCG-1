@@ -6682,6 +6682,9 @@
     <Content Include="Reportes\Comercial\Ventas\rpt_GRR_Print.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
