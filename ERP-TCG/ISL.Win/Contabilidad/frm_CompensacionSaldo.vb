@@ -662,9 +662,9 @@ Public Class frm_CompensacionSaldo
             If Not gridCobranza.ActiveRow Is Nothing AndAlso gridCobranza.ActiveRow.Cells("Id").Value.ToString = "" Then Throw New Exception("Seleccione una fila")
             If chkEmpresas.Checked = False Then
                 If gridCobranzaAgregado.Rows.Count > 0 Then 'Verificar que solo pueda ingresar Pagos de un solo cliente
-                    If gridCobranzaAgregado.Rows.Item(0).Cells("IdClienteProveedor").Value <> oeMovimientoDocumento.IdClienteProveedor Then
-                        Throw New Exception("Solo puede agregar Documentos de un Solo Cliente/Proveedor")
-                    End If
+                    'If gridCobranzaAgregado.Rows.Item(0).Cells("IdClienteProveedor").Value <> oeMovimientoDocumento.IdClienteProveedor Then
+                    '    Throw New Exception("Solo puede agregar Documentos de un Solo Cliente/Proveedor")
+                    'End If
                 End If
             End If
             l_FuncionesGenerales.ValidarNumero(decTC.Value, "Tipo de Cambio")
