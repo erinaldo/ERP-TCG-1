@@ -24,7 +24,8 @@ Public Class l_MovimientoDocumento
 
     Dim odMovimientoDocumento As New d_MovimientoDocumento
     Dim l_FuncionesGenerales As New l_FuncionesGenerales
-    Dim sFacturacionElectronica As New s_Facturacion
+    'Dim sFacturacionElectronica As New s_Facturacion
+    Dim sFacturacionElectronica As New s_FacturacionV2
 
 
     Dim oeCuentaGenerales As New e_TablaContableDet

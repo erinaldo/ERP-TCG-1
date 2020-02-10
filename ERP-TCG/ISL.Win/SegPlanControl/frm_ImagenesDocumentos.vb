@@ -49,7 +49,8 @@ Public Class frm_ImagenesDocumentos
     Private envio_boleta As Boolean = False
     Private imagen As String = ""
     Public IpServidor As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor")
-    Public RutaArchivos As String = "\\" & DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor") & "\ComprobanteElectronico\Facturacion\"
+    'Public RutaArchivos As String = "\\" & DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor") & "\ComprobanteElectronico\Facturacion\"
+    Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
     '   "D:\CPE\Facturacion\"
 
     Private listaImagenesDoc As New List(Of e_ImagenesDocumentos)
@@ -776,21 +777,23 @@ Public Class frm_ImagenesDocumentos
             For Each drFila In gridPorEnviar.Rows.Where(Function(g) g.Cells("select").Value = True).ToList
 
                 oeMovDocumento = New e_MovimientoDocumento
-                oeMovDocumento.TipoOperacion = "2"
+                'oeMovDocumento.TipoOperacion = "2"
+                oeMovDocumento.TipoOperacion = "DT"
+                oeMovDocumento._Operador = 1
                 oeMovDocumento.Id = drFila.Cells("Id").Value
                 dsComprobante = olMovDocumento.ListaFacturacionElectronica(oeMovDocumento)
                 If dsComprobante.Tables.Count > 1 Then
                     If dsComprobante.Tables(0).Rows(0).Item("estado").ToString.Trim = "C" Then
                         Try
                             'boolRetorno = olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(2), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id)
-                            boolRetorno = olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(2), RutaArchivos, gUsuarioSGI.Id)
+                            boolRetorno = olMovDocumento.GenerarXmlFacturaElectronica(dsComprobante.Tables(0), dsComprobante.Tables(1), RutaArchivos, gUsuarioSGI.Id)
                             contAceptados += 1
                             ids &= "'" & drFila.Cells(0).Text & "',"
                             oeMovDocumento.Serie = drFila.Cells("Serie").Value
                             oeMovDocumento.Numero = drFila.Cells("Numero").Value
                             enviados_portal.Add(oeMovDocumento)
                         Catch ex As Exception
-                            sbMensajeError.AppendLine("Documento " & dsComprobante.Tables(0).Rows(0).Item("idcomp") & ": " & ex.Message)
+                            sbMensajeError.AppendLine("Documento " & dsComprobante.Tables(0).Rows(0).Item("id") & ": " & ex.Message)
                             If boolRetorno Then
                                 contRechazos += 1
                             Else
@@ -818,7 +821,7 @@ Public Class frm_ImagenesDocumentos
                 mensajeEmergente.Problema(sbMensaje.ToString, True)
             End If
 
-            PortalConsultas_EnvioSunat(enviados_portal)
+            'PortalConsultas_EnvioSunat(enviados_portal)
             ugb_Espera.Visible = False
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

@@ -89,6 +89,7 @@
     <Compile Include="Facturacion\clsPasswordDigestBehavior.vb" />
     <Compile Include="Facturacion\clsPasswordDigestMessageInspector.vb" />
     <Compile Include="Facturacion\s_Facturacion.vb" />
+    <Compile Include="Facturacion\s_FacturacionV2.vb" />
     <Compile Include="Retencion\s_Retencion.vb" />
     <Compile Include="Service References\sConsultarFactura\Reference.vb">
       <AutoGen>True</AutoGen>
