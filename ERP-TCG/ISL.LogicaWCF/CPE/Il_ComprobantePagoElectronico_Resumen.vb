@@ -16,4 +16,7 @@ Public Interface Il_ComprobantePagoElectronico_Resumen
     <OperationContract()>
     Function Eliminar(ByVal Item As e_ComprobantePagoElectronico_Resumen) As Boolean
 
+    <OperationContract()>
+    Function ListarDataSet(oe As e_ComprobantePagoElectronico_Resumen) As Data.DataSet
+
 End Interface

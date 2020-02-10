@@ -601,7 +601,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarBoletas()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.TipoOperacion = "BOL", .IdEmpresaSis = gs_IdEmpresaSistema, .FechaEmision = DateTimePicker2.Value}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.TipoOperacion = "BOL", .IdEmpresaSis = gs_PrefijoIdSucursal, .FechaEmision = DateTimePicker2.Value}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Documentos)
         Catch ex As Exception
             Throw ex
@@ -611,7 +611,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ConsultarDocs()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoOperacion = "FAC"}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_PrefijoIdSucursal, .TipoOperacion = "FAC"}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico, udg_Facturas)
         Catch ex As Exception
             Throw ex
@@ -629,7 +629,6 @@ Public Class frm_EnvioDocElectronico
             mo_Resumen.TipoOperacion = "OBT"
             mo_Resumen = wr_Resumen.Obtener(mo_Resumen)
             If mo_Resumen.Id.Trim = String.Empty Then
-                mo_Resumen.TipoOperacion = "I"
                 mo_Resumen.Correlativo = FormatoDocumento(1, 5)
             Else
                 mo_Resumen.Id = String.Empty
@@ -637,6 +636,7 @@ Public Class frm_EnvioDocElectronico
             End If
             mo_Resumen.PrefijoID = gs_PrefijoIdSucursal
             mo_Resumen.IdEmpresaSis = gs_IdEmpresaSistema
+            mo_Resumen.TipoOperacion = "I"
             mo_Resumen.FechaResumen = ObtenerFechaServidor.Date.ToString("yyyyMMdd")
             mo_Resumen.FechaDocumentos = DateTimePicker2.Value.Date.ToString("yyyyMMdd")
             mo_Resumen.TipoResumen = 1
@@ -805,9 +805,7 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ListarTickets()
         Try
             Dim DS As Data.DataSet
-            ' DS = wr_Resumen.ListarDataSet(New e_ComprobantePagoElectronico_Resumen With {.IdEmpresaSis = gs_IdEmpresaSistema, .TipoResumen = uce_TipoResumen.Value})
-            '
-
+            DS = wr_Resumen.ListarDataSet(New e_ComprobantePagoElectronico_Resumen With {.IdEmpresaSis = gs_PrefijoIdSucursal, .TipoResumen = uce_TipoResumen.Value})
             lr_ConfigurarGrillaTickets(DS)
             For x As Integer = 0 To udg_Resumen.Rows.Count - 1
                 udg_Resumen.Rows(x).ExpandAll()
@@ -834,8 +832,9 @@ Public Class frm_EnvioDocElectronico
             Next
             If ln_Cont <> 1 Then Throw New Exception("Debe Seleccionar Un Registro")
 
-            'ls_ArchivoRpta = gstrRutaDocumentosCDR & "R-" & Replace(Replace(mo_Resumen.Ruta, ".xml", ".zip"), gstrRutaDocumentosEle20, "")
+            ls_ArchivoRpta = gstrRutaDocumentosCDR & "R-" & Replace(Replace(mo_Resumen.Ruta_XML, ".xml", ".zip"), gstrRutaDocumentosEle20, "")
             fs_Rpta = New FileStream(ls_ArchivoRpta, FileMode.Create)
+            mt_AsignarCredenciales()
             wr_DatosStatus.status = wr_SunatEnvio.getStatus(mo_Resumen.Ticket)
             If wr_DatosStatus.status.statusCode.Trim <> "0098" Then
                 fs_Rpta.Write(wr_DatosStatus.status.content, 0, wr_DatosStatus.status.content.Length)
@@ -873,10 +872,10 @@ Public Class frm_EnvioDocElectronico
             Next
             mo_Resumen.UsuarioCrea = gUsuarioSGI.Id
             mo_Resumen.TipoOperacion = "B"
-            'If wr_Resumen.Guardar(mo_Resumen, New List(Of e_ComprobantePagoElectronico)) Then
-            '    MessageBox.Show(ls_Mensaje, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            '    lr_ListarTickets()
-            'End If
+            If wr_Resumen.Guardar(mo_Resumen, New List(Of e_ComprobantePagoElectronico)) Then
+                MessageBox.Show(ls_Mensaje, "ERP-TCG", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                lr_ListarTickets()
+            End If
         Catch ex As Exception
             Throw ex
         End Try

@@ -43,7 +43,7 @@ Public Class d_ComprobantePagoElectronico
             With Item
                 ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_LST" _
                 , .TipoOperacion _
-                , "" _
+                , .IdEmpresaSis  _
                 , "" _
                 , .Id _
                 , .FechaEmision)

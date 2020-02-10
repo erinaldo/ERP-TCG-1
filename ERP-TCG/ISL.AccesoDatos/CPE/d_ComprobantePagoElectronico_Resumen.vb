@@ -2,6 +2,7 @@
 Public Class d_ComprobantePagoElectronico_Resumen
     Private SQL As New SqlHelper
     Private DS As New DataSet
+
     Public Function Obtener(ByVal Item As e_ComprobantePagoElectronico_Resumen) As e_ComprobantePagoElectronico_Resumen
         Try
             Dim ds As DataSet = ExecuteLST(Item)
@@ -26,6 +27,16 @@ Public Class d_ComprobantePagoElectronico_Resumen
                 Next
             End If
             Return ldComprobantePagoElectronico_Resumen
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ListarDS(lo_Item As e_ComprobantePagoElectronico_Resumen) As Data.DataSet
+        Try
+            Dim ds As Data.DataSet
+            ds = SQL.ExecuteDataset("[CON].[Isp_ComprobantePagoElectronico_Resumen_Listar]", "ALL", lo_Item.IdEmpresaSis, lo_Item.TipoResumen, lo_Item.FechaResumen)
+            Return ds
         Catch ex As Exception
             Throw ex
         End Try
