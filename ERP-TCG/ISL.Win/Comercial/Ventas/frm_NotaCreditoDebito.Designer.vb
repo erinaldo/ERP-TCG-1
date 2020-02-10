@@ -73,6 +73,8 @@ Partial Class frm_NotaCreditoDebito
         Me.tsmiEliminar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEmitir = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAnular = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiDescargarPDF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.agrBusqueda = New ISL.Controles.Agrupacion(Me.components)
         Me.txtNumeroBus = New ISL.Controles.Texto(Me.components)
         Me.Etiqueta18 = New ISL.Controles.Etiqueta(Me.components)
@@ -141,8 +143,6 @@ Partial Class frm_NotaCreditoDebito
         Me.ficNotaCreditoDebito = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.Filtro1 = New ISL.Controles.Filtro(Me.components)
-        Me.tsmiDescargarPDF = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsmiDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.griNotaCreditoDebito, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -191,7 +191,7 @@ Partial Class frm_NotaCreditoDebito
         '
         Me.UltraTabPageControl1.Controls.Add(Me.griNotaCreditoDebito)
         Me.UltraTabPageControl1.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(906, 511)
         '
@@ -233,6 +233,20 @@ Partial Class frm_NotaCreditoDebito
         Me.tsmiAnular.Name = "tsmiAnular"
         Me.tsmiAnular.Size = New System.Drawing.Size(148, 22)
         Me.tsmiAnular.Text = "Anular"
+        '
+        'tsmiDescargarPDF
+        '
+        Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
+        Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
+        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiDescargarPDF.Text = "Ver PDF"
+        '
+        'tsmiDescargarXML
+        '
+        Me.tsmiDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.Rename
+        Me.tsmiDescargarXML.Name = "tsmiDescargarXML"
+        Me.tsmiDescargarXML.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiDescargarXML.Text = "Descargar XML"
         '
         'agrBusqueda
         '
@@ -382,7 +396,7 @@ Partial Class frm_NotaCreditoDebito
         '
         Me.UltraTabPageControl2.Controls.Add(Me.agrDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatos)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(906, 511)
         '
@@ -617,7 +631,7 @@ Partial Class frm_NotaCreditoDebito
         Me.Etiqueta16.AutoSize = True
         Me.Etiqueta16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta16.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta16.Location = New System.Drawing.Point(315, 99)
+        Me.Etiqueta16.Location = New System.Drawing.Point(322, 99)
         Me.Etiqueta16.Name = "Etiqueta16"
         Me.Etiqueta16.Size = New System.Drawing.Size(32, 14)
         Me.Etiqueta16.TabIndex = 18
@@ -630,13 +644,13 @@ Partial Class frm_NotaCreditoDebito
         Me.decTotal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decTotal.ForeColor = System.Drawing.Color.Black
-        Me.decTotal.Location = New System.Drawing.Point(353, 94)
+        Me.decTotal.Location = New System.Drawing.Point(357, 95)
         Me.decTotal.MaskInput = "{double:9.4}"
         Me.decTotal.Name = "decTotal"
         Me.decTotal.NullText = "0.00"
         Me.decTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decTotal.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.decTotal.Size = New System.Drawing.Size(85, 21)
+        Me.decTotal.Size = New System.Drawing.Size(100, 21)
         Me.decTotal.TabIndex = 19
         '
         'Etiqueta15
@@ -647,7 +661,7 @@ Partial Class frm_NotaCreditoDebito
         Me.Etiqueta15.AutoSize = True
         Me.Etiqueta15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta15.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta15.Location = New System.Drawing.Point(192, 99)
+        Me.Etiqueta15.Location = New System.Drawing.Point(197, 98)
         Me.Etiqueta15.Name = "Etiqueta15"
         Me.Etiqueta15.Size = New System.Drawing.Size(26, 14)
         Me.Etiqueta15.TabIndex = 16
@@ -671,7 +685,7 @@ Partial Class frm_NotaCreditoDebito
         Me.decIgv.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decIgv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decIgv.ForeColor = System.Drawing.Color.Black
-        Me.decIgv.Location = New System.Drawing.Point(224, 95)
+        Me.decIgv.Location = New System.Drawing.Point(227, 94)
         Me.decIgv.MaskInput = "{double:9.4}"
         Me.decIgv.Name = "decIgv"
         Me.decIgv.NullText = "0.00"
@@ -704,7 +718,7 @@ Partial Class frm_NotaCreditoDebito
         Me.decSubTotal.NullText = "0.00"
         Me.decSubTotal.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
         Me.decSubTotal.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
-        Me.decSubTotal.Size = New System.Drawing.Size(85, 21)
+        Me.decSubTotal.Size = New System.Drawing.Size(90, 21)
         Me.decSubTotal.TabIndex = 15
         '
         'Etiqueta9
@@ -1189,20 +1203,6 @@ Partial Class frm_NotaCreditoDebito
         '
         Me.Filtro1.MenuSettings.RightAlignedMenus = True
         Me.Filtro1.ViewStyle = Infragistics.Win.SupportDialogs.FilterUIProvider.FilterUIProviderViewStyle.Office2003
-        '
-        'tsmiDescargarPDF
-        '
-        Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
-        Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
-        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
-        Me.tsmiDescargarPDF.Text = "Ver PDF"
-        '
-        'tsmiDescargarXML
-        '
-        Me.tsmiDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.Rename
-        Me.tsmiDescargarXML.Name = "tsmiDescargarXML"
-        Me.tsmiDescargarXML.Size = New System.Drawing.Size(148, 22)
-        Me.tsmiDescargarXML.Text = "Descargar XML"
         '
         'frm_NotaCreditoDebito
         '

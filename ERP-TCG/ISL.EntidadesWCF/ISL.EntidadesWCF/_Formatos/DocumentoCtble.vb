@@ -36,4 +36,5 @@
     Public Property Hash_Resumen As String
     Public Property QR As String
     Public Property Footer As String
+    Public Property Referencia As String
 End Class

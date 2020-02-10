@@ -788,7 +788,7 @@ Public Class frm_EstacionServicio
 
             '' =========================================================================== 
             '' Emision de CPE
-            If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento)
+            ''If MovimientoDocumento.IndElectronico Then gmt_CPE(MovimientoDocumento) '@0001 No Emitir Utilizar la Bandeja Envio DOC
         Catch ex As Exception
             Throw ex
         End Try
