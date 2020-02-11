@@ -17,6 +17,10 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
 
     Private TituloExcel As String = "Documentos Anexos de "
+
+    Private Sub btn_Cerrar_Click(sender As Object, e As EventArgs) Handles btn_Cerrar.Click
+        mt_Cerrar()
+    End Sub
     'Dim Qr_Code As New QRCodeEncoder
 
     Sub New(pIdDocumentoCtble As String, pTipoPapel As String, pModulo As String)
@@ -91,15 +95,19 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
 
     Private Sub frm_DocumentoCtble_Imprimir_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        mt_Cerrar()
+    End Sub
+
+    Private Sub mt_Cerrar()
         Try
-            'Dim Archivo As String = "C:\TEST\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
-            'Dim bytes As Byte()
-            'Dim filepath As String = Archivo
-            'If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
-            'bytes = ReportViewer1.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
-            'Dim fs As New FileStream(Archivo, FileMode.Create)
-            'fs.Write(bytes, 0, bytes.Length)
-            'fs.Close()
+            Dim Archivo As String = "D:\TEST\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            Dim PDF As Byte()
+            Dim filepath As String = Archivo
+            If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
+            PDF = VISOR.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+            Dim fs As New FileStream(Archivo, FileMode.Create)
+            fs.Write(PDF, 0, PDF.Length)
+            fs.Close()
         Catch ex As Exception
             Throw ex
         End Try

@@ -1384,12 +1384,12 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHC000000000012", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002072", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002077", "A4", "GRIFO")
-            gtm_Imprimir_Documento("CHC000000000012", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002072", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002077", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002998", "A4", "GRIFO") 'Factura
+            gtm_Imprimir_Documento("CHG000000002997", "A4", "GRIFO") 'Nota de Credito
+            gtm_Imprimir_Documento("CHG000000002991", "A4", "GRIFO") 'Boleta
+            gtm_Imprimir_Documento("CHG000000002998", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002997", "TICKET", "GRIFO")
+            gtm_Imprimir_Documento("CHG000000002991", "TICKET", "GRIFO")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
