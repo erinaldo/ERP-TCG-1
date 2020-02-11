@@ -712,8 +712,8 @@ Public Class frm_CanjeDocumentos
         Try
             ' ======================================================================================================================== >>>>>
             Select Case cmbTipoDocumento.Value
-                Case "1CH000000026" : txtSerie.Text = "F103" : cmb_Cliente.Focus()
-                Case "1CH000000002" : txtSerie.Text = "B103" : cmb_Cliente.Focus()
+                Case "1CH000000026" : txtSerie.Text = "F106" : cmb_Cliente.Focus()
+                Case "1CH000000002" : txtSerie.Text = "B106" : cmb_Cliente.Focus()
             End Select
             txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
             ' ======================================================================================================================== >>>>>
@@ -949,6 +949,10 @@ Public Class frm_CanjeDocumentos
             tsb_Eliminar.Enabled = True
             tsb_Imprimir.Enabled = True
         End If
+    End Sub
+
+    Private Sub txtSerie_ValueChanged(sender As Object, e As EventArgs) Handles txtSerie.ValueChanged
+        txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
     End Sub
 
 #End Region

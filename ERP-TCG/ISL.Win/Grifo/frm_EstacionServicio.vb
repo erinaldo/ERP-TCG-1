@@ -243,6 +243,7 @@ Public Class frm_EstacionServicio
         Try
             Select Case IdTipoDocumento
                 Case "1CH000000026" : Return True
+                Case "1CH000000002" : Return True
                 Case Else : Return False
             End Select
         Catch ex As Exception

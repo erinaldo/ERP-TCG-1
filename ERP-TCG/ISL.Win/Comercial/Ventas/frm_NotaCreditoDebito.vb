@@ -438,12 +438,21 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub decTotal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles decTotal.ValueChanged
+        If decTotal.Value > 0 Then
+            CalcularSubTotal()
+        End If
         oeNotaCreditoDebito.Total = decTotal.Value
         oeNotaCreditoDebito.Saldo = decTotal.Value
     End Sub
 
     Private Sub txtGlosa_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtGlosa.ValueChanged
-        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value + " REFERENCIA: " + cboTipoDocAso.Text + " " + txtSerieAso.Text + "-" + txtNumeroAso.Text + " " + dtpFecEmisionAso.Value
+        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value + " - Documento: " + cboTipoDocAso.Text + "  Numero:" + txtSerieAso.Text + "-" + txtNumeroAso.Text + "  Fecha:" + dtpFecEmisionAso.Value.Date
+    End Sub
+
+    Private Sub decTotal_Leave(sender As Object, e As EventArgs) Handles decTotal.Leave
+        If decTotal.Value > 0 Then
+            CalcularIgv()
+        End If
     End Sub
 
     Private Sub fecVencimiento_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fecVencimiento.ValueChanged
@@ -943,6 +952,15 @@ Public Class frm_NotaCreditoDebito
 
     Private Sub CalcularTotal()
         decTotal.Value = decSubTotal.Value + decIgv.Value
+    End Sub
+
+    Private Sub CalcularSubTotal()
+        decSubTotal.Value = Math.Round(decTotal.Value / (oeIGV.Porcentaje + 1), 2)
+        decIgv.Value = decTotal.Value - decSubTotal.Value
+    End Sub
+
+    Private Sub CalcularIgv()
+        decIgv.Value = decTotal.Value - decSubTotal.Value
     End Sub
 
     Private Sub CargaDocAsociado()

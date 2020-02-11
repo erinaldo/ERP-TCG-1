@@ -10,13 +10,13 @@ Public Class l_ComprobantePagoElectronico
     Implements Il_ComprobantePagoElectronico
 
     '' CPE
-    Public gs_RutaDocumentosEle As String = "\\10.10.1.2\DocumentosElectronicos\"
+    Public gs_RutaDocumentosEle As String = "\\LADERA\ComprobanteElectronico\DocumentosElectronicos\"
     'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
-    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
     'Public gstrRutaDocumentosEle20 As String = "\\10.10.1.8\Comprobantes\2-0\Documentos MTN\"
-    Public gs_RutaDocumentosCDR20 As String = "\\10.10.1.8\Comprobantes\2-0\CDR - MTN\"
+    Public gs_RutaDocumentosCDR20 As String = "\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
     Public gdecIGV As Double = 0.18
-    Public gstrRutaFirma As String = "D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
+    Public gstrRutaFirma As String = "\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
     Public gstrDepartamentoEmpresa As String = "LAMBAYEQUE"
 
     Public gstrUbigeoEmpresa As String = "130101"

@@ -1714,27 +1714,40 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Glosa">
+      <Textbox Name="Textbox4">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!Glosa.Value, "Cabecera")</Value>
+                <Value>Referenci</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Documet:</Value>
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>12.77676cm</Top>
-        <Left>1.9013cm</Left>
-        <Height>0.89104cm</Height>
-        <Width>5.85234cm</Width>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>12.81204cm</Top>
+        <Left>0.32328cm</Left>
+        <Height>0.85576cm</Height>
+        <Width>1.57802cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -1746,28 +1759,27 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox4">
+      <Textbox Name="Referencia">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Referenc:</Value>
+                <Value>=First(Fields!Referencia.Value, "Cabecera")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.91787cm</Top>
-        <Left>0.32328cm</Left>
-        <Height>0.74993cm</Height>
-        <Width>1.57802cm</Width>
+        <rd:DefaultName>Referencia</rd:DefaultName>
+        <Top>12.77676cm</Top>
+        <Left>1.9013cm</Left>
+        <Height>0.89104cm</Height>
+        <Width>5.85234cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1989,6 +2001,10 @@
         </Field>
         <Field Name="QR">
           <DataField>QR</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Referencia">
+          <DataField>Referencia</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="RUC_Emisor">
