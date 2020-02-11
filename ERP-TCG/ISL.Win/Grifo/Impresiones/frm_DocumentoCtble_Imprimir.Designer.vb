@@ -126,22 +126,23 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.udg_Documentos = New ISL.Controles.Grilla(Me.components)
         Me.bso_Documento = New System.Windows.Forms.BindingSource(Me.components)
+        Me.grb_DocumentosAsociados = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.btn_Exportar = New System.Windows.Forms.Button()
         Me.BSO1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BSO2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.grb_DocumentosAsociados = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.btn_Exportar = New System.Windows.Forms.Button()
+        Me.btn_Cerrar = New System.Windows.Forms.Button()
         Me.UltraTabPageControl1.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grb_DocumentosAsociados.SuspendLayout()
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabControl1.SuspendLayout()
-        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grb_DocumentosAsociados.SuspendLayout()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
@@ -408,6 +409,26 @@ Partial Class frm_DocumentoCtble_Imprimir
         '
         Me.bso_Documento.DataSource = GetType(ERP.EntidadesWCF.e_MovimientoDocumento)
         '
+        'grb_DocumentosAsociados
+        '
+        Me.grb_DocumentosAsociados.Controls.Add(Me.btn_Cerrar)
+        Me.grb_DocumentosAsociados.Controls.Add(Me.btn_Exportar)
+        Me.grb_DocumentosAsociados.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grb_DocumentosAsociados.Location = New System.Drawing.Point(0, 0)
+        Me.grb_DocumentosAsociados.Name = "grb_DocumentosAsociados"
+        Me.grb_DocumentosAsociados.Size = New System.Drawing.Size(982, 47)
+        Me.grb_DocumentosAsociados.TabIndex = 12
+        Me.grb_DocumentosAsociados.Text = "UltraGroupBox1"
+        '
+        'btn_Exportar
+        '
+        Me.btn_Exportar.Location = New System.Drawing.Point(11, 18)
+        Me.btn_Exportar.Name = "btn_Exportar"
+        Me.btn_Exportar.Size = New System.Drawing.Size(248, 23)
+        Me.btn_Exportar.TabIndex = 0
+        Me.btn_Exportar.Text = "Exportar a Hoja de Calculo (.XLS)"
+        Me.btn_Exportar.UseVisualStyleBackColor = True
+        '
         'UltraTabControl1
         '
         Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
@@ -432,24 +453,13 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(982, 638)
         '
-        'grb_DocumentosAsociados
+        'btn_Cerrar
         '
-        Me.grb_DocumentosAsociados.Controls.Add(Me.btn_Exportar)
-        Me.grb_DocumentosAsociados.Dock = System.Windows.Forms.DockStyle.Top
-        Me.grb_DocumentosAsociados.Location = New System.Drawing.Point(0, 0)
-        Me.grb_DocumentosAsociados.Name = "grb_DocumentosAsociados"
-        Me.grb_DocumentosAsociados.Size = New System.Drawing.Size(982, 47)
-        Me.grb_DocumentosAsociados.TabIndex = 12
-        Me.grb_DocumentosAsociados.Text = "UltraGroupBox1"
-        '
-        'btn_Exportar
-        '
-        Me.btn_Exportar.Location = New System.Drawing.Point(11, 18)
-        Me.btn_Exportar.Name = "btn_Exportar"
-        Me.btn_Exportar.Size = New System.Drawing.Size(248, 23)
-        Me.btn_Exportar.TabIndex = 0
-        Me.btn_Exportar.Text = "Exportar a Hoja de Calculo (.XLS)"
-        Me.btn_Exportar.UseVisualStyleBackColor = True
+        Me.btn_Cerrar.Location = New System.Drawing.Point(963, 17)
+        Me.btn_Cerrar.Name = "btn_Cerrar"
+        Me.btn_Cerrar.Size = New System.Drawing.Size(10, 10)
+        Me.btn_Cerrar.TabIndex = 1
+        Me.btn_Cerrar.UseVisualStyleBackColor = True
         '
         'frm_DocumentoCtble_Imprimir
         '
@@ -465,12 +475,12 @@ Partial Class frm_DocumentoCtble_Imprimir
         Me.UltraTabPageControl2.ResumeLayout(False)
         CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grb_DocumentosAsociados.ResumeLayout(False)
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabControl1.ResumeLayout(False)
-        CType(Me.grb_DocumentosAsociados, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grb_DocumentosAsociados.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -485,4 +495,5 @@ Partial Class frm_DocumentoCtble_Imprimir
     Friend WithEvents udg_Documentos As Controles.Grilla
     Friend WithEvents grb_DocumentosAsociados As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents btn_Exportar As Button
+    Friend WithEvents btn_Cerrar As Button
 End Class
