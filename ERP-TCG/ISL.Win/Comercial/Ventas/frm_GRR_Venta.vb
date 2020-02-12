@@ -615,9 +615,17 @@ Public Class frm_GRR_Venta
 
     Private Sub griDetalleDocumento_AfterCellUpdate(sender As Object, e As CellEventArgs) Handles griDetalleDocumento.AfterCellUpdate
         Try
-            'If griDetalleDocumento.Rows.Count > 0 Then
-            '    Select Case e.Cell.Column.Key
-            'End If
+            If griDetalleDocumento.Rows.Count > 0 Then
+                Select Case e.Cell.Column.Key
+                    Case "Cantidad"
+                        With griDetalleDocumento.ActiveRow
+                            If .Cells("Cantidad").Value < 0 Then
+                                .Cells("Cantidad").Value = 1
+                            End If
+                            .Cells("PesoTotal").Value = .Cells("Cantidad").Value * .Cells("Peso").Value
+                        End With
+                End Select
+            End If
             mt_CalcularTotalPeso()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -632,7 +640,7 @@ Public Class frm_GRR_Venta
         Try
             Dim mn_TotalPeso As Double = 0
             For Each detalle In loGuiaRRDetalle.Where(Function(i) i.TipoOperacion <> "E").ToList
-                mn_TotalPeso += detalle.Peso * detalle.Cantidad
+                mn_TotalPeso += detalle.PesoTotal
             Next
             une_Peso.Value = mn_TotalPeso
         Catch ex As Exception
@@ -662,6 +670,7 @@ Public Class frm_GRR_Venta
                     .IdUnidadMedida = oe.IdUnidadMedida
                     .Cantidad = 1
                     .Peso = oe.Peso
+                    .PesoTotal = .Peso
                     .UsuarioCrea = gUsuarioSGI.Id
                 End With
                 loGuiaRRDetalle.Add(oeGuiaRRDetalle)
@@ -864,8 +873,11 @@ Public Class frm_GRR_Venta
                     .Columns("Peso").Hidden = False 'IdUnidadMedida
                     .Columns("Peso").Width = 130
                     .Columns("Peso").Header.VisiblePosition = 4
+                    .Columns("PesoTotal").Hidden = False 'IdUnidadMedida
+                    .Columns("PesoTotal").Width = 130
+                    .Columns("PesoTotal").Header.VisiblePosition = 5
                 End With
-                FormatoColumna(griDetalleDocumento, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Cantidad", "Peso")
+                FormatoColumna(griDetalleDocumento, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Cantidad", "Peso", "PesoTotal")
                 .DisplayLayout.Override.AllowUpdate = DefaultableBoolean.True
                 .DisplayLayout.Override.CellClickAction = CellClickAction.RowSelect
                 .DisplayLayout.Bands(0).Columns("Cantidad").CellActivation = Activation.AllowEdit
@@ -930,7 +942,7 @@ Public Class frm_GRR_Venta
         txtPartida.Text = String.Empty
 
 
-        griDetalleDocumento.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False
+        ' griDetalleDocumento.DisplayLayout.Override.AllowUpdate = Infragistics.Win.DefaultableBoolean.False
 
     End Sub
 
@@ -1153,6 +1165,7 @@ Public Class frm_GRR_Venta
                     .IdUnidadMedida = detalle.IdUnidadMedida
                     .Cantidad = detalle.Cantidad
                     .Peso = detalle.CantidadReal
+                    .PesoTotal = detalle.CostoUnitario
                     .UsuarioCrea = gUsuarioSGI.Id
                 End With
 

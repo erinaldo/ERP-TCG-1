@@ -24,6 +24,8 @@ Public Class e_GuiaRemisionRemitente_Detalle
     <DataMember()>
     Public Property Peso() As Decimal
     <DataMember()>
+    Public Property PesoTotal() As Decimal
+    <DataMember()>
     Public Property UsuarioCrea() As String
 
     <DataMember()>
@@ -42,6 +44,7 @@ Public Class e_GuiaRemisionRemitente_Detalle
         Material = String.Empty
         Cantidad = 0
         Peso = 0
+        PesoTotal = 0
         UsuarioCrea = String.Empty
     End Sub
 
