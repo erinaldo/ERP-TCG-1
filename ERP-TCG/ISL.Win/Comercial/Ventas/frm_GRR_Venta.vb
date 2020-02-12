@@ -128,8 +128,8 @@ Public Class frm_GRR_Venta
             mt_Inicializar()
             Operacion = "Nuevo"
             mt_ControlBotoneria()
-            cboTransportista.Focus() '@0001
-            cboTransportista.Select() '@0001
+            'cboTransportista.Focus() '@0001
+            'cboTransportista.Select() '@0001
             cmb_Cliente.Focus()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -754,7 +754,7 @@ Public Class frm_GRR_Venta
                 objWorkSheet.Cells(NroLinea, 6) = datarow("Material").ToString
                 objWorkSheet.Cells(NroLinea, 12) = datarow("Cantidad")
                 objWorkSheet.Cells(NroLinea, 16) = datarow("IdUnidadMedida").ToString
-                objWorkSheet.Cells(NroLinea, 18) = datarow("Peso").ToString
+                objWorkSheet.Cells(NroLinea, 18) = datarow("PesoTotal").ToString
                 NroLinea += 1
             Next
 
@@ -786,6 +786,7 @@ Public Class frm_GRR_Venta
             mt_CargarCombos()
             mt_ConfigurarGrillas()
             dtpFechaInicio.Value = Date.Now.AddDays(-20)
+            txtSerie.Focus()
         Catch ex As Exception
             Throw ex
         End Try
@@ -1193,7 +1194,7 @@ Public Class frm_GRR_Venta
             cboTransportista.Select() '@0001
             mt_ControlBotoneria()
 
-            cmb_Cliente.Focus()
+            txtSerie.Focus()
 
         Catch ex As Exception
             Throw ex
@@ -1250,7 +1251,7 @@ Public Class frm_GRR_Venta
                     End If
                     .Brevete = txtNroLicencia.Text
                     .Marca = txtMarcaVehiculo.Text
-                    .TotalPeso = loGuiaRRDetalle.Sum(Function(i) i.Peso)
+                    .TotalPeso = une_Peso.Value
                     .MTCVehiculo = txtMTC.Text
                     .IdPartida = cboPuntoPartida.Value
                     .Partida = txtPartida.Text
