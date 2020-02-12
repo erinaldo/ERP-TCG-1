@@ -133,6 +133,7 @@ Public Class e_Material
                   ByVal ls_nombresubfamilia As String,
                    ByVal ln_Precio As Double,
                    ByVal ln_Peso As Double,
+                   ByVal ln_Stock As Double,
                   ByVal ls_activo As String)
 
         _Seleccion = ls_seleccion
@@ -143,6 +144,7 @@ Public Class e_Material
         _unidadmedida = ls_unidadMedida
         _subfamilia = ls_nombresubfamilia
         _peso = ln_Peso
+        _stock = ln_Stock
         _activo = ls_activo
         _precio = ln_Precio
     End Sub
