@@ -173,7 +173,7 @@ Public Class frm_NotaCreditoDebito
                     IndElectronico = .ActiveRow.Cells("IndElectronico").Value
                     If IndElectronico Then
                         Dim frmImpresion As New frm_FacturaBoletaElectronico
-                        frmImpresion.mt_CargarDatos(Id, True)
+                        frmImpresion.mt_CargarDatos(Id, True, "")
                         frmImpresion.StartPosition = FormStartPosition.CenterScreen
                         frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                         frmImpresion.ShowDialog()
@@ -1192,7 +1192,7 @@ Public Class frm_NotaCreditoDebito
             'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
             Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griNotaCreditoDebito.ActiveRow.Cells("Id").Value, True)
+            frmImpresion.mt_CargarDatos(griNotaCreditoDebito.ActiveRow.Cells("Id").Value, True, "")
             frmImpresion.StartPosition = FormStartPosition.CenterScreen
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.ShowDialog()

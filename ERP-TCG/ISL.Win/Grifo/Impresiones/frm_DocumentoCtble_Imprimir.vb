@@ -84,6 +84,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
+                .LocalReport.DisplayName = DT1.Rows(0).Item("DOI").ToString + "-" + DT1.Rows(0).Item("SerieNumero").ToString
                 .LocalReport.Refresh()
             End With
 
@@ -151,7 +152,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 'Select Case IdTipoDocumento '@0001
                 'Case "GCH000000001" 'Nota de Despacho '@0001
                 Select Case TipoPapel
-                    Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                    Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4_Comercial.rdlc"
                     Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
                     Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
                 End Select

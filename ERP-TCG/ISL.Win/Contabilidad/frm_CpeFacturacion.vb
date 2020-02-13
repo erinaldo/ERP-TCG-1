@@ -80,13 +80,17 @@ Public Class frm_CpeFacturacion
                 Case 5 : grilla = ugBaja
             End Select
             If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
-            TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
-            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc)
-            frmImpresion.StartPosition = FormStartPosition.CenterScreen
-            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-            frmImpresion.MaximizeBox = True
-            frmImpresion.ShowDialog()
+            '@0001 Ini
+            'TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
+            'frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "COMERCIAL")
+            'frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            'frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            'frmImpresion.MaximizeBox = True
+            'frmImpresion.ShowDialog()
+
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV") '@0001
             gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO") '@0001
+            '@0001 Final
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message.ToString)
         End Try
@@ -1544,10 +1548,6 @@ Public Class frm_CpeFacturacion
             Case Else
                 Call Me.MostrarItems_Menu(0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1)
         End Select
-    End Sub
-
-    Private Sub tsp_Principal_Filtro_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles tsp_Principal_Filtro.ItemClicked
-
     End Sub
 
     Private Sub MostrarItems_Menu(ByVal enviar As Boolean, ByVal consultar As Boolean, ByVal fecha As Boolean,

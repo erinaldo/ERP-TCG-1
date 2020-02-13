@@ -46,6 +46,7 @@ Partial Class frm_CpeFacturacion
         Me.mDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.mImprimirPDF = New System.Windows.Forms.ToolStripMenuItem()
         Me.mDescargarCDR = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl8 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.ugResumen = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -99,7 +100,6 @@ Partial Class frm_CpeFacturacion
         Me.rbResumen = New System.Windows.Forms.RadioButton()
         Me.bwCpe = New System.ComponentModel.BackgroundWorker()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.EnvioCorreoXMLYPDFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.ugPendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
@@ -140,7 +140,7 @@ Partial Class frm_CpeFacturacion
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ugPendientes)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1352, 338)
         '
@@ -212,6 +212,12 @@ Partial Class frm_CpeFacturacion
         Me.mDescargarCDR.Size = New System.Drawing.Size(206, 26)
         Me.mDescargarCDR.Text = "Descargar CDR"
         '
+        'EnvioCorreoXMLYPDFToolStripMenuItem
+        '
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Name = "EnvioCorreoXMLYPDFToolStripMenuItem"
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Text = "Envio Correo XML y PDF"
+        '
         'UltraTabPageControl8
         '
         Me.UltraTabPageControl8.Controls.Add(Me.ugResumen)
@@ -239,7 +245,7 @@ Partial Class frm_CpeFacturacion
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.ugEnviados)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1352, 338)
         '
@@ -761,12 +767,6 @@ Partial Class frm_CpeFacturacion
         'bwCpe
         '
         Me.bwCpe.WorkerSupportsCancellation = True
-        '
-        'EnvioCorreoXMLYPDFToolStripMenuItem
-        '
-        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Name = "EnvioCorreoXMLYPDFToolStripMenuItem"
-        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
-        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Text = "Envio Correo XML y PDF"
         '
         'frm_CpeFacturacion
         '

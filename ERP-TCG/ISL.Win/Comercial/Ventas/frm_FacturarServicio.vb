@@ -257,7 +257,7 @@ Public Class frm_FacturarServicio
 
             If chkElectronico.Checked Then
                 Dim frmImpresion As New frm_FacturaBoletaElectronico
-                frmImpresion.mt_CargarDatos(oeMovimientoDocumento.Id, False)
+                frmImpresion.mt_CargarDatos(oeMovimientoDocumento.Id, False, "")
                 frmImpresion.StartPosition = FormStartPosition.CenterScreen
                 frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                 frmImpresion.ShowDialog()
@@ -2103,7 +2103,7 @@ Public Class frm_FacturarServicio
             'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
             Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griListaFacturaCompra.ActiveRow.Cells("Id").Value, False)
+            frmImpresion.mt_CargarDatos(griListaFacturaCompra.ActiveRow.Cells("Id").Value, False, "")
             frmImpresion.StartPosition = FormStartPosition.CenterScreen
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.ShowDialog()

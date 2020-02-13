@@ -200,7 +200,7 @@ Public Class frm_ImagenesDocumentos
             If ficImgDocVeh.SelectedTab.Index = 0 Then 'Documentos pendientes
                 If gridPendientes.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
                 TipoDoc = IIf(gridPendientes.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000030" Or gridPendientes.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000033", True, False)
-                frmImpresion.mt_CargarDatos(gridPendientes.ActiveRow.Cells("Id").Value, TipoDoc)
+                frmImpresion.mt_CargarDatos(gridPendientes.ActiveRow.Cells("Id").Value, TipoDoc, "")
                 frmImpresion.StartPosition = FormStartPosition.CenterScreen
                 frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                 frmImpresion.ShowDialog()
@@ -208,7 +208,7 @@ Public Class frm_ImagenesDocumentos
             If ficImgDocVeh.SelectedTab.Index = 1 Then 'Documentos a enviar
                 If gridPorEnviar.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
                 TipoDoc = IIf(gridPorEnviar.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000030" Or gridPorEnviar.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000033", True, False)
-                frmImpresion.mt_CargarDatos(gridPorEnviar.ActiveRow.Cells("Id").Value, TipoDoc)
+                frmImpresion.mt_CargarDatos(gridPorEnviar.ActiveRow.Cells("Id").Value, TipoDoc, "")
                 frmImpresion.StartPosition = FormStartPosition.CenterScreen
                 frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                 frmImpresion.ShowDialog()
@@ -216,7 +216,7 @@ Public Class frm_ImagenesDocumentos
             If ficImgDocVeh.SelectedTab.Index = 2 Then 'Documentos a enviados
                 If gridEnviados.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
                 TipoDoc = IIf(gridEnviados.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000030" Or gridEnviados.ActiveRow.Cells("IdTipoDocumento").Value = "1CH000000033", True, False)
-                frmImpresion.mt_CargarDatos(gridEnviados.ActiveRow.Cells("Id").Value, TipoDoc)
+                frmImpresion.mt_CargarDatos(gridEnviados.ActiveRow.Cells("Id").Value, TipoDoc, "")
                 frmImpresion.StartPosition = FormStartPosition.CenterScreen
                 frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                 frmImpresion.ShowDialog()
