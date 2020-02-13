@@ -98,6 +98,8 @@ Partial Class frm_CpeFacturacion
         Me.lblDesde = New System.Windows.Forms.Label()
         Me.rbResumen = New System.Windows.Forms.RadioButton()
         Me.bwCpe = New System.ComponentModel.BackgroundWorker()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.ugPendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
@@ -138,7 +140,7 @@ Partial Class frm_CpeFacturacion
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ugPendientes)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1352, 338)
         '
@@ -185,29 +187,29 @@ Partial Class frm_CpeFacturacion
         'MenuDetalle
         '
         Me.MenuDetalle.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mDescargarXML, Me.mImprimirPDF, Me.mDescargarCDR})
+        Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mDescargarXML, Me.mImprimirPDF, Me.mDescargarCDR, Me.EnvioCorreoXMLYPDFToolStripMenuItem})
         Me.MenuDetalle.Name = "mnu_Transferencias"
-        Me.MenuDetalle.Size = New System.Drawing.Size(202, 82)
+        Me.MenuDetalle.Size = New System.Drawing.Size(207, 108)
         '
         'mDescargarXML
         '
         Me.mDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.if_application_xml_28904
         Me.mDescargarXML.Name = "mDescargarXML"
-        Me.mDescargarXML.Size = New System.Drawing.Size(201, 26)
+        Me.mDescargarXML.Size = New System.Drawing.Size(206, 26)
         Me.mDescargarXML.Text = "Descargar XML"
         '
         'mImprimirPDF
         '
         Me.mImprimirPDF.Image = Global.ISL.Win.My.Resources.Resources.if_pdf_272699
         Me.mImprimirPDF.Name = "mImprimirPDF"
-        Me.mImprimirPDF.Size = New System.Drawing.Size(201, 26)
+        Me.mImprimirPDF.Size = New System.Drawing.Size(206, 26)
         Me.mImprimirPDF.Text = "Imprimir Comprobante"
         '
         'mDescargarCDR
         '
         Me.mDescargarCDR.Image = Global.ISL.Win.My.Resources.Resources.if_30_1933170
         Me.mDescargarCDR.Name = "mDescargarCDR"
-        Me.mDescargarCDR.Size = New System.Drawing.Size(201, 26)
+        Me.mDescargarCDR.Size = New System.Drawing.Size(206, 26)
         Me.mDescargarCDR.Text = "Descargar CDR"
         '
         'UltraTabPageControl8
@@ -237,7 +239,7 @@ Partial Class frm_CpeFacturacion
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.ugEnviados)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1352, 338)
         '
@@ -760,6 +762,12 @@ Partial Class frm_CpeFacturacion
         '
         Me.bwCpe.WorkerSupportsCancellation = True
         '
+        'EnvioCorreoXMLYPDFToolStripMenuItem
+        '
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Name = "EnvioCorreoXMLYPDFToolStripMenuItem"
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Text = "Envio Correo XML y PDF"
+        '
         'frm_CpeFacturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -873,4 +881,6 @@ Partial Class frm_CpeFacturacion
     Friend WithEvents bwCpe As System.ComponentModel.BackgroundWorker
     Friend WithEvents UltraTabPageControl8 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents ugResumen As Infragistics.Win.UltraWinGrid.UltraGrid
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents EnvioCorreoXMLYPDFToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -60,8 +60,8 @@ Public Class l_Configuracion
         Return odDatosConfiguracion.Sedes
     End Function
 
-    'Public Function DocElectronico() As String Implements Il_Configuracion.DocElectronico
-    '    Return odDatosConfiguracion.DocElectronico
-    'End Function
+    Public Function DocElectronico() As String Implements Il_Configuracion.DocElectronico
+        Return odDatosConfiguracion.DocElectronico
+    End Function
 
 End Class

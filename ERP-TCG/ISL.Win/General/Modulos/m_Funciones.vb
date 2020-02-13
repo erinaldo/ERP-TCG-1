@@ -527,8 +527,8 @@ Module m_Funciones
     'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     'Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public ISL_RutaImpresion As String = Path.Combine(Application.StartupPath, "Fotos") & "\eImpresion\"
-    'Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
-    Public RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public RutaArchivos As String = "\\LADERA\ComprobanteElectronico\Facturacion\"
+    'Public RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
 
     Public Abrev_Empresa As String = "ERP"
 

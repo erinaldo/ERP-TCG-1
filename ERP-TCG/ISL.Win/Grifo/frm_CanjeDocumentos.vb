@@ -955,6 +955,7 @@ Public Class frm_CanjeDocumentos
         txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
     End Sub
 
+
 #End Region
 
 End Class

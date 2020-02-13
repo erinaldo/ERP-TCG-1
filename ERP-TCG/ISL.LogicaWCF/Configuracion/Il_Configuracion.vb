@@ -28,7 +28,7 @@ Public Interface Il_Configuracion
     '<OperationContract()> _
     'Function PrefijoID() As String
 
-    '<OperationContract()> _
-    'Function DocElectronico() As String
+    <OperationContract()>
+    Function DocElectronico() As String
 
 End Interface

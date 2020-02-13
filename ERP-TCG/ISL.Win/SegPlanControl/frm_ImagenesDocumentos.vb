@@ -49,8 +49,8 @@ Public Class frm_ImagenesDocumentos
     Private envio_boleta As Boolean = False
     Private imagen As String = ""
     Public IpServidor As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor")
-    'Public RutaArchivos As String = "\\" & DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor") & "\ComprobanteElectronico\Facturacion\"
-    Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public RutaArchivos As String = "\\" & DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("IPServidor") & "\ComprobanteElectronico\Facturacion\"
+    'Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\" '@0001
     '   "D:\CPE\Facturacion\"
 
     Private listaImagenesDoc As New List(Of e_ImagenesDocumentos)
@@ -1299,8 +1299,8 @@ Public Class frm_ImagenesDocumentos
             If contAceptados > 0 Then
                 sbMensaje.AppendLine(contAceptados.ToString().Trim & " comprobantes fueron consultados a SUNAT.")
                 Dim strNombre As String = ol_ComprobElect.Obtener(New e_ComprobanteElectronico With {.TipoReferencia = 1, .IdReferencia = oeMovDocumento.Id}).nombrexml
-                'Dim strRuta As String = olConfiguracion.DocElectronico
-                Dim strRuta As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico")
+                Dim strRuta As String = olConfiguracion.DocElectronico
+                'Dim strRuta As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") '@0001
                 If File.Exists(strRuta.Trim() & "\Facturacion\R-" & strNombre.Trim() & ".zip") Then
                     My.Computer.FileSystem.CopyFile(strRuta.Trim() & "\Facturacion\R-" & strNombre.Trim() & ".zip", "D:\R-" & strNombre.Trim() & ".zip")
 
@@ -1350,8 +1350,8 @@ Public Class frm_ImagenesDocumentos
                 oeMovDocumento.Id = gridEnviados.Rows(gridEnviados.ActiveRow.Index).Cells("Id").Value
                 Dim ol_ComprobElect As New l_ComprobanteElectronico
                 Dim olConfiguracion As New l_Configuracion
-                'strRuta = olConfiguracion.DocElectronico
-                strRuta = Path.Combine(Application.StartupPath, "ComprobanteElectronico")
+                strRuta = olConfiguracion.DocElectronico
+                'strRuta = Path.Combine(Application.StartupPath, "ComprobanteElectronico") '@0001
                 strNombre = ol_ComprobElect.Obtener(New e_ComprobanteElectronico With {.TipoReferencia = 1, .IdReferencia = oeMovDocumento.Id}).nombrexml
                 If File.Exists(strRuta.Trim() & "\Facturacion\" & strNombre.Trim() & ".zip") Then
                     My.Computer.FileSystem.CopyFile(strRuta.Trim() & "\Facturacion\" & strNombre.Trim() & ".zip", "D:\" & strNombre.Trim() & ".zip")

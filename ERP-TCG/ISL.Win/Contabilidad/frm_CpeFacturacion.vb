@@ -86,6 +86,7 @@ Public Class frm_CpeFacturacion
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.MaximizeBox = True
             frmImpresion.ShowDialog()
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO") '@0001
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message.ToString)
         End Try
@@ -1165,6 +1166,7 @@ Public Class frm_CpeFacturacion
     Private Sub PDFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDFToolStripMenuItem.Click, mImprimirPDF.Click
         Try
             Me.Imprimir()
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -1208,14 +1210,52 @@ Public Class frm_CpeFacturacion
     End Sub
 
     Private Sub DescargaZIPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescargaZIPToolStripMenuItem.Click, mDescargarXML.Click
+        'Try
+        '    Select Case utcFichaDocumentos.SelectedTab.Index
+        '        Case 1 : DescargarXml_Comprobantes(ugEnviar)
+        '        Case 2 : DescargarXml_Comprobantes(ugResumen)
+        '        Case 3 : DescargarXml_Comprobantes(ugEnviados)
+        '    End Select
+        'Catch ex As Exception
+        '    mensajeEmergente.Problema(ex.Message)
+        'End Try
+
         Try
-            Select Case utcFichaDocumentos.SelectedTab.Index
-                Case 1 : DescargarXml_Comprobantes(ugEnviar)
-                Case 2 : DescargarXml_Comprobantes(ugResumen)
-                Case 3 : DescargarXml_Comprobantes(ugEnviados)
-            End Select
+            Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\xml\"
+            'Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\" '@0001
+            Dim sNombreArchivo As String = ""
+            Dim TipoDocumento As String = ""
+            Dim SerieDes As String = ""
+            Dim NumeroDes As String = ""
+            'If ugEnviados.ActiveRow.Cells("EstadoSunat").Value <> "ACEPTADA" Then Throw New Exception("Para Descargar XML, Documento debe ser Aceptada por Sunat.")
+
+            FolderBrowserDialog1.Description = "Seleccionar Carpeta..."
+            If FolderBrowserDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                sNombreArchivo = FolderBrowserDialog1.SelectedPath
+            Else
+                FolderBrowserDialog1.Dispose()
+                Return
+            End If
+
+            If sNombreArchivo <> "" Then
+                TipoDocumento = ugEnviados.ActiveRow.Cells("IdTipoDocumento").Value
+                If TipoDocumento = "1CH000000026" Then TipoDocumento = "01"
+                If TipoDocumento = "1CH000000002" Then TipoDocumento = "03"
+                If TipoDocumento = "1CH000000033" Then TipoDocumento = "08"
+                If TipoDocumento = "1CH000000030" Then TipoDocumento = "07"
+
+                SerieDes = ugEnviados.ActiveRow.Cells("Serie").Value
+                NumeroDes = ugEnviados.ActiveRow.Cells("Numero").Value
+
+                RutaArchivos = RutaArchivos + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                sNombreArchivo = sNombreArchivo + "\" + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                My.Computer.FileSystem.CopyFile(RutaArchivos, sNombreArchivo, True)
+                mensajeEmergente.Confirmacion("Se copio archivo correctamente", True)
+            End If
+
+
         Catch ex As Exception
-            mensajeEmergente.Problema(ex.Message)
+            mensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
 

@@ -1130,7 +1130,7 @@ Partial Class frm_CanjeDocumentos
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.ToolStrip1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1356, 676)
         '
@@ -1409,7 +1409,7 @@ Partial Class frm_CanjeDocumentos
         'tsb_ImprimirA4
         '
         Me.tsb_ImprimirA4.Name = "tsb_ImprimirA4"
-        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(120, 22)
+        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(180, 22)
         Me.tsb_ImprimirA4.Text = "Papel A4"
         '
         'UltraGroupBox1
@@ -1598,7 +1598,7 @@ Partial Class frm_CanjeDocumentos
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1356, 676)
         '
