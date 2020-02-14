@@ -1,12 +1,13 @@
 ﻿Imports ERP.EntidadesWCF
 Imports ERP.LogicaWCF
 Imports Microsoft.Reporting.WinForms
-'Imports MessagingToolkit.QRCode.Codec
+Imports MessagingToolkit.QRCode.Codec
 Imports System.IO
 
 Public Class frm_DocumentoCtble_Imprimir
 
     Private IdDocumentoCtble As String, TipoPapel As String, ModuloEmision As String, CodigoQR As String = "", Footer As String = ""
+    Dim Qr_Code As New QRCodeEncoder
     Private DocumentoCtble As New e_MovimientoDocumento, wr_DocumentoCtble As New l_MovimientoDocumento
     Private ListaDocumentos As New List(Of e_MovimientoDocumento)
     Private DT1 As New DataTable, DT2 As New DataTable
@@ -31,8 +32,32 @@ Public Class frm_DocumentoCtble_Imprimir
         Inicializar()
     End Sub
 
+    Private Function lf_ObtenerTipoDoc(IdTipoDoc) As String
+        Dim TipoDoc As String = ""
+        Try
+            Select Case IdTipoDoc
+                Case "BOLETA DE VENTA"
+                    TipoDoc = "03"
+                Case "FACTURA"
+                    TipoDoc = "01"
+                Case "NOTA DE CRÉDITO"
+                    TipoDoc = "07"
+                Case "NOTA DE DÉBITO"
+                    TipoDoc = "08"
+                Case Else
+                    TipoDoc = ""
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return TipoDoc
+    End Function
+
     Private Sub Inicializar()
         Try
+            Dim IGV As Double = 0
+            Dim Total As Double = 0
+            Dim Emision As Date
             DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
             DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
             DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
@@ -40,10 +65,25 @@ Public Class frm_DocumentoCtble_Imprimir
                 CodigoQR = ""
                 Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
             End If
+            Dim Resumen As String = ""
+            For Each row As DataRow In DT1.Rows
+                IGV = CDbl(row("IGV"))
+                Total = CDbl(row("Total"))
+                Emision = CDate(row("Emision"))
+                Resumen = "20480099720" & "|" & lf_ObtenerTipoDoc(row("Tipo")) & "|" & Strings.Left(row("SerieNumero"), 4) & "|" &
+                    Strings.Right(row("SerieNumero"), 8) & "|" & IGV.ToString("F2") & "|" & Total.ToString("F2") & "|" &
+                    Emision.ToString("yyyy-MM-dd") & "|" & IIf(CStr(row("DOI")).Length = "8", "1", "6") & "|" & row("DOI") & "|"
+                Dim ImagenQR As Image = Qr_Code.Encode(Resumen)
+                row("QR") = ImageToBase64(ImagenQR, System.Drawing.Imaging.ImageFormat.Jpeg)
+            Next
+            'oe_DocElectronico.RUCEmisor & "|" & oe_DocElectronico.TipoDocumento & "|" & Strings.Left(oe_DocElectronico.Documento, 4) & "|" &
+            '     Strings.Right(oe_DocElectronico.Documento, 8) & "|" & oe_DocElectronico.TotalIGV.ToString("F2") & "|" & oe_DocElectronico.Total.ToString("F2") & "|" &
+            '     oe_DocElectronico.FechaEmision.ToString("yyyy-MM-dd") & "|" & IIf(oe_DocElectronico.DocumentoReceptor.Length = 8, "1", "6") & "|" &
+            '     oe_DocElectronico.DocumentoReceptor & "|"
 
             '@0001 Ini
             'Dim dc As DataColumn
-            'dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
+            ''dc = New DataColumn("EmpresaSis", Type.GetType("System.String"))
             'DT1.Columns.Add(dc)
             'dc = New DataColumn("CodigoQR", Type.GetType("System.String"))
             'DT1.Columns.Add(dc)
@@ -66,6 +106,16 @@ Public Class frm_DocumentoCtble_Imprimir
         End Try
     End Sub
 
+    Private Function ImageToBase64(ByVal mImage As Image, ByVal format As System.Drawing.Imaging.ImageFormat) As String
+        Using ms As New System.IO.MemoryStream()
+            ' Convert Image to byte[]
+            mImage.Save(ms, format)
+            Dim imageBytes As Byte() = ms.ToArray()
+            ' Convert byte[] to Base64 String
+            Dim base64String As String = Convert.ToBase64String(imageBytes)
+            Return base64String
+        End Using
+    End Function
 
     Private Sub frm_DocumentoCtble_Imprimir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -101,6 +151,7 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private Sub mt_Cerrar()
         Try
+            '\\LADERA\ComprobanteElectronico\pdf\
             Dim Archivo As String = "\\LADERA\ComprobanteElectronico\pdf\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
             Dim PDF As Byte()
             Dim filepath As String = Archivo

@@ -66,6 +66,7 @@ Public Class frm_CpeFacturacion
 #End Region
 
 #Region "Botones Principales"
+
     Public Overrides Sub Imprimir()
         Try
             Dim frmImpresion As New frm_FacturaBoletaElectronico
