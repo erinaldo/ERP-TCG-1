@@ -1671,6 +1671,22 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>12.32382cm</Top>
+        <Left>1.90531cm</Left>
+        <Height>3.2702cm</Height>
+        <Width>3.7609cm</Width>
+        <ZIndex>38</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>8.54167in</Height>
     <Style />

@@ -70,7 +70,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 IGV = CDbl(row("IGV"))
                 Total = CDbl(row("Total"))
                 Emision = CDate(row("Emision"))
-                Resumen = "20480099720" & "|" & lf_ObtenerTipoDoc(row("Tipo")) & "|" & Strings.Left(row("SerieNumero"), 4) & "|" &
+                Resumen = gs_RucEmpresaSistema & "|" & lf_ObtenerTipoDoc(row("Tipo")) & "|" & Strings.Left(row("SerieNumero"), 4) & "|" &
                     Strings.Right(row("SerieNumero"), 8) & "|" & IGV.ToString("F2") & "|" & Total.ToString("F2") & "|" &
                     Emision.ToString("yyyy-MM-dd") & "|" & IIf(CStr(row("DOI")).Length = "8", "1", "6") & "|" & row("DOI") & "|"
                 Dim ImagenQR As Image = Qr_Code.Encode(Resumen)

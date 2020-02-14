@@ -2386,65 +2386,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="IGV2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value />
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>IGV2</rd:DefaultName>
-          <Top>5.30979cm</Top>
-          <Left>0.0538cm</Left>
-          <Height>0.6cm</Height>
-          <Width>12.68646cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="RUC_Emisor2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-          <Top>1.94021cm</Top>
-          <Left>4.23422cm</Left>
-          <Height>2.45208cm</Height>
-          <Width>3.3506cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="IGV3">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -2460,11 +2401,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>IGV2</rd:DefaultName>
-          <Top>4.56868cm</Top>
-          <Left>0.0538cm</Left>
+          <Top>4.25118cm</Top>
+          <Left>0.6888cm</Left>
           <Height>0.6cm</Height>
           <Width>12.68646cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2499,7 +2439,7 @@
           <Left>17.6654cm</Left>
           <Height>0.45cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2534,7 +2474,7 @@
           <Left>17.6654cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2569,7 +2509,7 @@
           <Left>17.6654cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2604,7 +2544,7 @@
           <Left>17.6654cm</Left>
           <Height>0.55583cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2639,7 +2579,7 @@
           <Left>14.32129cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2674,7 +2614,7 @@
           <Left>14.32129cm</Left>
           <Height>0.4941cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2709,7 +2649,7 @@
           <Left>14.32129cm</Left>
           <Height>0.55583cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2744,7 +2684,7 @@
           <Left>14.32129cm</Left>
           <Height>0.48528cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2779,7 +2719,7 @@
           <Left>14.32129cm</Left>
           <Height>0.53861cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2814,7 +2754,7 @@
           <Left>14.32129cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>12</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2849,7 +2789,7 @@
           <Left>14.32129cm</Left>
           <Height>0.45cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2884,7 +2824,7 @@
           <Left>14.32129cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>14</ZIndex>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2919,7 +2859,7 @@
           <Left>17.6654cm</Left>
           <Height>0.53861cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>15</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2954,7 +2894,7 @@
           <Left>17.6654cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>16</ZIndex>
+          <ZIndex>14</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2989,7 +2929,7 @@
           <Left>17.6654cm</Left>
           <Height>0.47646cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>17</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3024,7 +2964,7 @@
           <Left>17.6654cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3045,6 +2985,7 @@
                   <Value>SON:</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -3053,10 +2994,10 @@
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>0.17585cm</Top>
-          <Left>0.29661cm</Left>
-          <Height>0.67047cm</Height>
-          <Width>1.34582cm</Width>
-          <ZIndex>19</ZIndex>
+          <Left>0.57131cm</Left>
+          <Height>0.52936cm</Height>
+          <Width>1.07112cm</Width>
+          <ZIndex>17</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3085,10 +3026,10 @@
           </Paragraphs>
           <rd:DefaultName>MontoLetras</rd:DefaultName>
           <Top>0.17585cm</Top>
-          <Left>1.81882cm</Left>
-          <Height>0.67047cm</Height>
-          <Width>11.81518cm</Width>
-          <ZIndex>20</ZIndex>
+          <Left>1.64243cm</Left>
+          <Height>0.49408cm</Height>
+          <Width>11.99157cm</Width>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3109,6 +3050,7 @@
                   <Value>OBSERVACIONES:</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -3116,11 +3058,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.02271cm</Top>
-          <Left>0.29661cm</Left>
+          <Top>0.70521cm</Top>
+          <Left>0.57131cm</Left>
           <Height>0.67047cm</Height>
-          <Width>3.49357cm</Width>
-          <ZIndex>21</ZIndex>
+          <Width>3.21887cm</Width>
+          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3148,11 +3090,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Glosa</rd:DefaultName>
-          <Top>1.02271cm</Top>
-          <Left>3.96657cm</Left>
-          <Height>0.6cm</Height>
-          <Width>9.66743cm</Width>
-          <ZIndex>22</ZIndex>
+          <Top>1.41096cm</Top>
+          <Left>0.57131cm</Left>
+          <Height>2.33543cm</Height>
+          <Width>3.21887cm</Width>
+          <ZIndex>20</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3163,6 +3105,22 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image2">
+          <Source>Database</Source>
+          <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+          <MIMEType>image/bmp</MIMEType>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.66993cm</Top>
+          <Left>4.81224cm</Left>
+          <Height>3.07645cm</Height>
+          <Width>5.38876cm</Width>
+          <ZIndex>21</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>

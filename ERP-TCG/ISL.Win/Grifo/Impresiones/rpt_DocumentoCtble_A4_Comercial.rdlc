@@ -1286,7 +1286,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2297,36 +2296,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Textbox Name="RUC_Emisor2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-          <Top>0.91696cm</Top>
-          <Left>8.59007cm</Left>
-          <Height>1.96797cm</Height>
-          <Width>5.04393cm</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="IGV3">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -2350,7 +2319,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>0.3713cm</Left>
           <Height>1.24493cm</Height>
           <Width>13.21139cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2385,7 +2354,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.48528cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2421,7 +2390,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2457,7 +2426,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.4941cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2493,7 +2462,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.55583cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2529,7 +2498,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2565,7 +2534,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.4941cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2601,7 +2570,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.55583cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2637,7 +2606,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.48528cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2673,7 +2642,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.53861cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2709,7 +2678,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>12</ZIndex>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2745,7 +2714,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.47624cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2781,7 +2750,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>14</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2817,7 +2786,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.53861cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>15</ZIndex>
+          <ZIndex>14</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2853,7 +2822,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>16</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2889,7 +2858,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.47646cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>17</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2925,7 +2894,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>17</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2960,7 +2929,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>0.57131cm</Left>
           <Height>0.56418cm</Height>
           <Width>0.83877cm</Width>
-          <ZIndex>19</ZIndex>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2992,7 +2961,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>1.44536cm</Left>
           <Height>0.56472cm</Height>
           <Width>12.22392cm</Width>
-          <ZIndex>20</ZIndex>
+          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3026,7 +2995,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>0.57131cm</Left>
           <Height>0.52936cm</Height>
           <Width>2.4036cm</Width>
-          <ZIndex>21</ZIndex>
+          <ZIndex>20</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3058,7 +3027,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>2.97491cm</Left>
           <Height>2.10908cm</Height>
           <Width>4.86269cm</Width>
-          <ZIndex>22</ZIndex>
+          <ZIndex>21</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3069,6 +3038,22 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image2">
+          <Source>Database</Source>
+          <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+          <MIMEType>image/bmp</MIMEType>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.74057cm</Top>
+          <Left>7.8376cm</Left>
+          <Height>2.20533cm</Height>
+          <Width>5.74509cm</Width>
+          <ZIndex>22</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
