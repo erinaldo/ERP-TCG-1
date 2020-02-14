@@ -580,7 +580,7 @@ Public Class frm_CanjeDocumentos
                 .IndElectronico = True
                 .Glosa = txt_Observacion.Text.Trim
                 .lstDetalleDocumento = ListaDetalleSeleccionados
-
+                ._Operador = 1 '@0001
                 '' Detalle
                 For Each detalle In DocumentoGenerado.lstDetalleDocumento
                     With detalle
