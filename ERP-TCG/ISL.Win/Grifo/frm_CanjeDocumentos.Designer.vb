@@ -633,7 +633,7 @@ Partial Class frm_CanjeDocumentos
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.udg_Documentos)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1348, 390)
         '
@@ -879,7 +879,7 @@ Partial Class frm_CanjeDocumentos
         'UltraTabPageControl4
         '
         Me.UltraTabPageControl4.Controls.Add(Me.udg_DocumentosCanjeados)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1348, 390)
         '

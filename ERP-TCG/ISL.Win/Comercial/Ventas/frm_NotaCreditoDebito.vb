@@ -173,7 +173,7 @@ Public Class frm_NotaCreditoDebito
                     IndElectronico = .ActiveRow.Cells("IndElectronico").Value
                     If IndElectronico Then
                         Dim frmImpresion As New frm_FacturaBoletaElectronico
-                        frmImpresion.mt_CargarDatos(Id, True)
+                        frmImpresion.mt_CargarDatos(Id, True, "")
                         frmImpresion.StartPosition = FormStartPosition.CenterScreen
                         frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                         frmImpresion.ShowDialog()
@@ -438,12 +438,21 @@ Public Class frm_NotaCreditoDebito
     End Sub
 
     Private Sub decTotal_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles decTotal.ValueChanged
+        If decTotal.Value > 0 Then
+            CalcularSubTotal()
+        End If
         oeNotaCreditoDebito.Total = decTotal.Value
         oeNotaCreditoDebito.Saldo = decTotal.Value
     End Sub
 
     Private Sub txtGlosa_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtGlosa.ValueChanged
-        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value + " REFERENCIA: " + cboTipoDocAso.Text + " " + txtSerieAso.Text + "-" + txtNumeroAso.Text + " " + dtpFecEmisionAso.Value
+        oeNotaCreditoDebito.Venta.Glosa = txtGlosa.Value + " - Documento: " + cboTipoDocAso.Text + "  Numero:" + txtSerieAso.Text + "-" + txtNumeroAso.Text + "  Fecha:" + dtpFecEmisionAso.Value.Date
+    End Sub
+
+    Private Sub decTotal_Leave(sender As Object, e As EventArgs) Handles decTotal.Leave
+        If decTotal.Value > 0 Then
+            CalcularIgv()
+        End If
     End Sub
 
     Private Sub fecVencimiento_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles fecVencimiento.ValueChanged
@@ -945,6 +954,15 @@ Public Class frm_NotaCreditoDebito
         decTotal.Value = decSubTotal.Value + decIgv.Value
     End Sub
 
+    Private Sub CalcularSubTotal()
+        decSubTotal.Value = Math.Round(decTotal.Value / (oeIGV.Porcentaje + 1), 2)
+        decIgv.Value = decTotal.Value - decSubTotal.Value
+    End Sub
+
+    Private Sub CalcularIgv()
+        decIgv.Value = decTotal.Value - decSubTotal.Value
+    End Sub
+
     Private Sub CargaDocAsociado()
         Try
             oeDocAso = New e_MovimientoDocumento
@@ -1174,7 +1192,7 @@ Public Class frm_NotaCreditoDebito
             'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
             Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griNotaCreditoDebito.ActiveRow.Cells("Id").Value, True)
+            frmImpresion.mt_CargarDatos(griNotaCreditoDebito.ActiveRow.Cells("Id").Value, True, "")
             frmImpresion.StartPosition = FormStartPosition.CenterScreen
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.ShowDialog()
@@ -1186,8 +1204,8 @@ Public Class frm_NotaCreditoDebito
 
     Private Sub tsmiDescargarXML_Click(sender As Object, e As EventArgs) Handles tsmiDescargarXML.Click
         Try
-            'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
-            Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+            Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
+            'Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
             Dim sNombreArchivo As String = ""
             Dim TipoDocumento As String = ""
             Dim SerieDes As String = ""

@@ -48,7 +48,7 @@ Module m_Funciones
     'Public gstrNombreEmpresaSis As String = "MEGACERAMICOS DEL NORTE E.I.R.L."
     'Public gstrRucEmpresaSis As String = "20603652810"
 
-    Public gstrRutaDocumentosCDR As String = "D:\Sistema\cdr\"
+    Public gstrRutaDocumentosCDR As String = "\\LADERA\ComprobanteElectronico\cdr\"
 
     Public Function gfc_ParametroValor(ByVal ls_Abreviatura As String) As Double
         Dim ln_Retorna As Double = 0.18
@@ -527,8 +527,8 @@ Module m_Funciones
     'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     'Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public ISL_RutaImpresion As String = Path.Combine(Application.StartupPath, "Fotos") & "\eImpresion\"
-    'Public RutaArchivos As String = "\\localhost\ComprobanteElectronico\Facturacion\"
-    Public RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public RutaArchivos As String = "\\LADERA\ComprobanteElectronico\Facturacion\"
+    'Public RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
 
     Public Abrev_Empresa As String = "ERP"
 
@@ -769,7 +769,7 @@ Module m_Funciones
 #End Region
 
     '' Variables para CPE
-    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\"
+    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\"
 
 
     Public TipoOC As String

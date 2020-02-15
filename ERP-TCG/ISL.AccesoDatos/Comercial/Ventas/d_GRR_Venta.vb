@@ -28,7 +28,7 @@ Public Class d_GRR_Venta
         Try
             Dim ds As DataSet
             With oeGuiaRemitente
-                ds = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
+                ds = sqlhelper.ExecuteDataset("[ADM].[Isp_GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
                                               .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
@@ -47,7 +47,7 @@ Public Class d_GRR_Venta
         Try
             Dim DT As New DataTable, DS As New DataSet
             With oe
-                DS = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id)
+                DS = sqlhelper.ExecuteDataset("[ADM].[Isp_GuiaRemision_Venta_Listar]", .TipoOperacion, .Id)
                 If DS.Tables(0).Rows.Count > 0 Then
                     DT = DS.Tables(0)
                 End If
@@ -63,7 +63,7 @@ Public Class d_GRR_Venta
             Dim ldGuiaRemitente As New List(Of e_GRR_Venta)
             Dim ds As DataSet
             With oeGuiaRemitente
-                ds = sqlhelper.ExecuteDataset("[ADM].[GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
+                ds = sqlhelper.ExecuteDataset("[ADM].[Isp_GuiaRemision_Venta_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal,
                                               .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .Serie, .Numero)
             End With
             oeGuiaRemitente = Nothing
@@ -88,7 +88,7 @@ Public Class d_GRR_Venta
             Using transScope As New TransactionScope()
                 With oeGuiaRemitente
                     Dim stResultado() As String
-                    stResultado = sqlhelper.ExecuteScalar("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
+                    stResultado = sqlhelper.ExecuteScalar("[ADM].[Isp_GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
                                           .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
                                           .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
                                           .IdDestino, .Destino, .IdViaje, .DocAsoc, .UsuarioCrea).ToString.Split("_")
@@ -114,7 +114,7 @@ Public Class d_GRR_Venta
     Public Function EliminarAnular(ByVal oeGuiaRemitente As e_GRR_Venta) As Boolean
         Try
             With oeGuiaRemitente
-                sqlhelper.ExecuteNonQuery("[ADM].[GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
+                sqlhelper.ExecuteNonQuery("[ADM].[Isp_GuiaRemision_Venta_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
                               .IdTransportista, .IdCliente, .Fecha, .FechaTraslado, .IdEstado, .Serie, .Numero, .TotalPeso, .IdVehiculo, .Vehiculo,
                               .Marca, .MTCVehiculo, .IdCarreta, .Carreta, .IdChofer, .Chofer, .Brevete, .IdMotivoTraslado, .IdPartida, .Partida,
                               .IdDestino, .Destino, .IdViaje, .DocAsoc, .UsuarioCrea)

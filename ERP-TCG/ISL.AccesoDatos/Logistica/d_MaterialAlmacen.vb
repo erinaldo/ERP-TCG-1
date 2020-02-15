@@ -43,6 +43,7 @@ Public Class d_MaterialAlmacen
                                             fila("NombreSubFamilia"),
                                             fila("Precio"),
                                             fila("Peso"),
+                                            fila("Stock"),
                                             fila("Activo"))
 
             Return oeMaterial

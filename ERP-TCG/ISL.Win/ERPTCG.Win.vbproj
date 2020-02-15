@@ -242,6 +242,9 @@
     <Reference Include="itextsharp">
       <HintPath>..\Librerias\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode">
+      <HintPath>..\Librerias\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -5898,6 +5901,9 @@
     </None>
     <None Include="Fotos\ComprobanteElectronico\Facturacion\C1811162057.pfx" />
     <None Include="Fotos\ComprobanteElectronico\Facturacion\MPS20161101380689.pfx" />
+    <Content Include="Fotos\eImpresion\Doc.ElectronicoCOMERCIAL.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Fotos\eImpresion\DocElectronico.xsc">
       <DependentUpon>DocElectronico.xsd</DependentUpon>
     </None>
@@ -6422,6 +6428,9 @@
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_A4.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_A4.rdlc">

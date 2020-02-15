@@ -10,7 +10,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
             Dim oeGuiaRemitente = New e_GuiaRemisionRemitente_Detalle With {.Id = o_fila("Id").ToString, .IdGRR_Venta = o_fila("IdGRR_Venta").ToString _
                 , .IdUnidadMedida = o_fila("IdUnidadMedida").ToString, .IdMaterial = o_fila("IdMaterial").ToString, .Cantidad = o_fila("Cantidad") _
                 , .CodigoMaterial = o_fila("CodigoMaterial").ToString, .Material = o_fila("Material").ToString, .Peso = o_fila("Peso") _
-                , .UsuarioCrea = o_fila("UsuarioCrea").ToString}
+                , .PesoTotal = o_fila("PesoTotal"), .UsuarioCrea = o_fila("UsuarioCrea").ToString}
             Return oeGuiaRemitente
         Catch ex As Exception
             Throw ex
@@ -21,7 +21,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
         Try
             Dim ds As DataSet
             With oeGuiaRemitente
-                ds = sqlhelper.ExecuteDataset("[ADM].[GRRVenta_Detalle_Listar]", "", .Id)
+                ds = sqlhelper.ExecuteDataset("[ADM].[Isp_GRRVenta_Detalle_Listar]", "", .Id)
             End With
             If ds.Tables(0).Rows.Count > 0 Then
                 oeGuiaRemitente = Cargar(ds.Tables(0).Rows(0))
@@ -40,7 +40,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
             Dim ldGuiaRemitente As New List(Of e_GuiaRemisionRemitente_Detalle)
             Dim ds As DataSet
             With oeGuiaRemitente
-                ds = sqlhelper.ExecuteDataset("[ADM].[GRRVenta_Detalle_Listar]", .TipoOperacion, .IdEmpresaSis, .IdSucursal, .Id, .IdGRR_Venta)
+                ds = sqlhelper.ExecuteDataset("[ADM].[Isp_GRRVenta_Detalle_Listar]", .TipoOperacion, .IdEmpresaSis, .IdSucursal, .Id, .IdGRR_Venta)
             End With
             oeGuiaRemitente = Nothing
             If ds.Tables(0).Rows.Count > 0 Then
@@ -61,7 +61,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
         Try
             Dim DT As New DataTable, DS As New DataSet
             With oe
-                DS = sqlhelper.ExecuteDataset("[ADM].[GRRVenta_Detalle_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal, .IdGRR_Venta)
+                DS = sqlhelper.ExecuteDataset("[ADM].[Isp_GRRVenta_Detalle_Listar]", .TipoOperacion, .Id, .IdEmpresaSis, .IdSucursal, .IdGRR_Venta)
                 If DS.Tables(0).Rows.Count > 0 Then
                     DT = DS.Tables(0)
                 End If
@@ -75,7 +75,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
     Public Function Guardar(ByVal oeGuiaRemitente As e_GuiaRemisionRemitente_Detalle) As Boolean
         Try
             With oeGuiaRemitente
-                sqlhelper.ExecuteNonQuery("[ADM].[GRRVenta_Detalle_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
+                sqlhelper.ExecuteNonQuery("[ADM].[Isp_GRRVenta_Detalle_IAE]", .TipoOperacion, .PrefijoID, .Id, .IdEmpresaSis, .IdSucursal,
                                           .IdGRR_Venta, .IdUnidadMedida, .IdMaterial, .Cantidad, .Peso, .UsuarioCrea)
             End With
             Return True
@@ -86,7 +86,7 @@ Public Class d_GuiaRemisionRemitente_Detalle
 
     Public Function Eliminar(ByVal oeGuiaRemitente As e_GuiaRemisionRemitente_Detalle) As Boolean
         Try
-            sqlhelper.ExecuteNonQuery("[ADM].[GRRVenta_Detalle_IAE]", "E",
+            sqlhelper.ExecuteNonQuery("[ADM].[Isp_GRRVenta_Detalle_IAE]", "E",
                                         "",
                                         oeGuiaRemitente.Id)
             Return True

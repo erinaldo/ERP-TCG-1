@@ -305,7 +305,7 @@
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>13.02722cm</Top>
         <Left>0.34283cm</Left>
-        <Height>0.67047cm</Height>
+        <Height>0.48528cm</Height>
         <Width>1.34582cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
@@ -464,9 +464,9 @@
         </Paragraphs>
         <rd:DefaultName>MontoLetras</rd:DefaultName>
         <Top>13.02722cm</Top>
-        <Left>1.86504cm</Left>
-        <Height>0.67047cm</Height>
-        <Width>11.77308cm</Width>
+        <Left>1.68865cm</Left>
+        <Height>0.48528cm</Height>
+        <Width>11.94947cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1619,7 +1619,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -2923,7 +2922,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.87408cm</Top>
+        <Top>13.55658cm</Top>
         <Left>0.34283cm</Left>
         <Height>0.67047cm</Height>
         <Width>2.88574cm</Width>
@@ -2955,10 +2954,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>13.87408cm</Top>
-        <Left>3.40496cm</Left>
-        <Height>0.6cm</Height>
-        <Width>10.23316cm</Width>
+        <Top>13.58306cm</Top>
+        <Left>3.22857cm</Left>
+        <Height>0.64399cm</Height>
+        <Width>10.40955cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -2970,6 +2969,22 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>14.40344cm</Top>
+        <Left>4.73871cm</Left>
+        <Height>2.81956cm</Height>
+        <Width>5.73333cm</Width>
+        <ZIndex>34</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>11.70833in</Height>
     <Style />

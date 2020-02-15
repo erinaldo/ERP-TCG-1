@@ -269,7 +269,7 @@ Public Class frm_FacturarCarga
 
             If chkElectronico.Checked Then
                 Dim frmImpresion As New frm_FacturaBoletaElectronico
-                frmImpresion.mt_CargarDatos(oeMovDocumento.Id, False)
+                frmImpresion.mt_CargarDatos(oeMovDocumento.Id, False, "")
                 frmImpresion.StartPosition = FormStartPosition.CenterScreen
                 frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
                 frmImpresion.ShowDialog()
@@ -4212,7 +4212,7 @@ Public Class frm_FacturarCarga
             'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
             Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griDocumentoVenta.ActiveRow.Cells("Id").Value, False)
+            frmImpresion.mt_CargarDatos(griDocumentoVenta.ActiveRow.Cells("Id").Value, False, "")
             frmImpresion.StartPosition = FormStartPosition.CenterScreen
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.ShowDialog()
@@ -4224,8 +4224,8 @@ Public Class frm_FacturarCarga
 
     Private Sub tsmiDescargarXML_Click(sender As Object, e As EventArgs) Handles tsmiDescargarXML.Click
         Try
-            'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
-            Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+            Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
+            'Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\" '@0001
             Dim sNombreArchivo As String = ""
             Dim TipoDocumento As String = ""
             Dim SerieDes As String = ""

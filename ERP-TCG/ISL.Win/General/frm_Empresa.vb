@@ -703,6 +703,8 @@ Public Class frm_Empresa
             contribuyente = Await consultaRucSunat.SunatConsultaRuc(txtRuc.Text)
             txtNombre.Text = contribuyente.RazonSocial
             txtDireccionFiscal.Text = contribuyente.Direccion
+            WebBrowser1.Navigate(URLConsultaSunat)
+            WebBrowser1.ScriptErrorsSuppressed = True
             '@0002 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)

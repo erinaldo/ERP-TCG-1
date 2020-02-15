@@ -45,7 +45,11 @@ Partial Class frm_CpeFacturacion
         Me.MenuDetalle = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.mDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.mImprimirPDF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComercialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GrifoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mDescargarCDR = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl8 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.ugResumen = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -98,6 +102,7 @@ Partial Class frm_CpeFacturacion
         Me.lblDesde = New System.Windows.Forms.Label()
         Me.rbResumen = New System.Windows.Forms.RadioButton()
         Me.bwCpe = New System.ComponentModel.BackgroundWorker()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.ugPendientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
@@ -185,30 +190,55 @@ Partial Class frm_CpeFacturacion
         'MenuDetalle
         '
         Me.MenuDetalle.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mDescargarXML, Me.mImprimirPDF, Me.mDescargarCDR})
+        Me.MenuDetalle.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mDescargarXML, Me.mImprimirPDF, Me.mDescargarCDR, Me.EnvioCorreoXMLYPDFToolStripMenuItem})
         Me.MenuDetalle.Name = "mnu_Transferencias"
-        Me.MenuDetalle.Size = New System.Drawing.Size(202, 82)
+        Me.MenuDetalle.Size = New System.Drawing.Size(207, 130)
         '
         'mDescargarXML
         '
         Me.mDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.if_application_xml_28904
         Me.mDescargarXML.Name = "mDescargarXML"
-        Me.mDescargarXML.Size = New System.Drawing.Size(201, 26)
+        Me.mDescargarXML.Size = New System.Drawing.Size(206, 26)
         Me.mDescargarXML.Text = "Descargar XML"
         '
         'mImprimirPDF
         '
+        Me.mImprimirPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransporteToolStripMenuItem, Me.ComercialToolStripMenuItem, Me.GrifoToolStripMenuItem})
         Me.mImprimirPDF.Image = Global.ISL.Win.My.Resources.Resources.if_pdf_272699
         Me.mImprimirPDF.Name = "mImprimirPDF"
-        Me.mImprimirPDF.Size = New System.Drawing.Size(201, 26)
+        Me.mImprimirPDF.Size = New System.Drawing.Size(206, 26)
         Me.mImprimirPDF.Text = "Imprimir Comprobante"
+        '
+        'TransporteToolStripMenuItem
+        '
+        Me.TransporteToolStripMenuItem.Name = "TransporteToolStripMenuItem"
+        Me.TransporteToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TransporteToolStripMenuItem.Text = "Transporte"
+        '
+        'ComercialToolStripMenuItem
+        '
+        Me.ComercialToolStripMenuItem.Name = "ComercialToolStripMenuItem"
+        Me.ComercialToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ComercialToolStripMenuItem.Text = "Comercial"
+        '
+        'GrifoToolStripMenuItem
+        '
+        Me.GrifoToolStripMenuItem.Name = "GrifoToolStripMenuItem"
+        Me.GrifoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GrifoToolStripMenuItem.Text = "Grifo"
         '
         'mDescargarCDR
         '
         Me.mDescargarCDR.Image = Global.ISL.Win.My.Resources.Resources.if_30_1933170
         Me.mDescargarCDR.Name = "mDescargarCDR"
-        Me.mDescargarCDR.Size = New System.Drawing.Size(201, 26)
+        Me.mDescargarCDR.Size = New System.Drawing.Size(206, 26)
         Me.mDescargarCDR.Text = "Descargar CDR"
+        '
+        'EnvioCorreoXMLYPDFToolStripMenuItem
+        '
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Name = "EnvioCorreoXMLYPDFToolStripMenuItem"
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Size = New System.Drawing.Size(206, 26)
+        Me.EnvioCorreoXMLYPDFToolStripMenuItem.Text = "Envio Correo XML y PDF"
         '
         'UltraTabPageControl8
         '
@@ -873,4 +903,9 @@ Partial Class frm_CpeFacturacion
     Friend WithEvents bwCpe As System.ComponentModel.BackgroundWorker
     Friend WithEvents UltraTabPageControl8 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents ugResumen As Infragistics.Win.UltraWinGrid.UltraGrid
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Friend WithEvents EnvioCorreoXMLYPDFToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TransporteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComercialToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GrifoToolStripMenuItem As ToolStripMenuItem
 End Class

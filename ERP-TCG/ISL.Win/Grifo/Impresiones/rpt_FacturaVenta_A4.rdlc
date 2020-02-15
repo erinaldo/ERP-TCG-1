@@ -3094,36 +3094,6 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="RUC_Emisor2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>16.90657cm</Top>
-        <Left>5.16975cm</Left>
-        <Height>2.45208cm</Height>
-        <Width>3.3506cm</Width>
-        <ZIndex>35</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="IGV3">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -3145,7 +3115,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
         <Left>0.55784cm</Left>
         <Height>0.6cm</Height>
         <Width>19.54071cm</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3156,6 +3126,22 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=convert.FromBase64String(First(Fields!QR.Value, "Cabecera"))</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>15.44156cm</Top>
+        <Left>6.9089cm</Left>
+        <Height>4.03152cm</Height>
+        <Width>4.7473cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>8.67357in</Height>
     <Style />

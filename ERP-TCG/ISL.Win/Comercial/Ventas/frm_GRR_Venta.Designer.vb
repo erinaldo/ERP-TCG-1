@@ -771,7 +771,7 @@ Partial Class frm_GRR_Venta
         Me.griDetalleDocumento.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDetalleDocumento.Location = New System.Drawing.Point(3, 3)
         Me.griDetalleDocumento.Name = "griDetalleDocumento"
-        Me.griDetalleDocumento.Size = New System.Drawing.Size(415, 233)
+        Me.griDetalleDocumento.Size = New System.Drawing.Size(1050, 233)
         Me.griDetalleDocumento.TabIndex = 0
         '
         'EGuiaRRemitenteMaterialBindingSource
@@ -783,11 +783,12 @@ Partial Class frm_GRR_Venta
         Me.UltraExpandableGroupBox1.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.UltraExpandableGroupBox1.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.UltraExpandableGroupBox1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.UltraExpandableGroupBox1.Expanded = False
         Me.UltraExpandableGroupBox1.ExpandedSize = New System.Drawing.Size(663, 233)
         Me.UltraExpandableGroupBox1.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(418, 3)
+        Me.UltraExpandableGroupBox1.Location = New System.Drawing.Point(1053, 3)
         Me.UltraExpandableGroupBox1.Name = "UltraExpandableGroupBox1"
-        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(663, 233)
+        Me.UltraExpandableGroupBox1.Size = New System.Drawing.Size(28, 233)
         Me.UltraExpandableGroupBox1.TabIndex = 13
         Me.UltraExpandableGroupBox1.Text = "Materiales"
         Me.UltraExpandableGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -796,11 +797,11 @@ Partial Class frm_GRR_Venta
         '
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.UltraGroupBox13)
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.UltraGroupBox5)
-        Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(20, 3)
+        Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
         Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(640, 227)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
+        Me.UltraExpandableGroupBoxPanel2.Visible = False
         '
         'UltraGroupBox13
         '

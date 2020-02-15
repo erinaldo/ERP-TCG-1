@@ -1777,38 +1777,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="QR">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                <Style>
-                  <FontSize>8pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>QR</rd:DefaultName>
-        <Top>15.28316cm</Top>
-        <Left>2.36315cm</Left>
-        <Height>1.42021cm</Height>
-        <Width>2.5cm</Width>
-        <ZIndex>40</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Textbox Name="Emision3">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -1834,7 +1802,7 @@
         <Left>5.26641cm</Left>
         <Height>0.45cm</Height>
         <Width>2.13593cm</Width>
-        <ZIndex>41</ZIndex>
+        <ZIndex>40</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1868,7 +1836,7 @@
         <Left>4.01507cm</Left>
         <Height>0.41472cm</Height>
         <Width>1.07495cm</Width>
-        <ZIndex>42</ZIndex>
+        <ZIndex>41</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1879,6 +1847,22 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>14.19479cm</Top>
+        <Left>1.61373cm</Left>
+        <Height>2.70205cm</Height>
+        <Width>3.65137cm</Width>
+        <ZIndex>42</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>8.3125in</Height>
     <Style />

@@ -15,7 +15,7 @@
         <ModelElement Id="f676fe7d1ab540a6971659d723e1ff62" Type="Microsoft.VisualStudio.EnterpriseTools.ArtifactModel.Project.VSProject">
           <Property Name="Name" Value="ISL.Win" />
           <Property Name="Guid" Value="69c63614-4a81-4272-b61f-2b2b961de058" />
-          <Property Name="Location" Value="D:\Sistemas\SGI\ISL.Win\" />
+          <Property Name="Location" Value="\\LADERA\ComprobanteElectronico\SGI\ISL.Win\" />
           <Property Name="IsImplemented" Value="true" />
           <Property Name="BuildOutputPath" Value="bin\Debug\" />
           <Property Name="ProjectType" Value="Executable" />

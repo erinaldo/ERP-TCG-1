@@ -41,7 +41,7 @@ Public Class frm_FacturaBoletaElectronico
 
 #Region "Metodos"
 
-    Public Sub mt_CargarDatos(ls_IdDocumento As String, lb_NotaCredito As Boolean)
+    Public Sub mt_CargarDatos(ls_IdDocumento As String, lb_NotaCredito As Boolean, ls_TpReport As String)
         Try
             Dim tipoDocumento As String = ""
             oeDocumento = New e_MovimientoDocumento
@@ -56,14 +56,26 @@ Public Class frm_FacturaBoletaElectronico
                 tipoDocumento = dsDatos.Tables(0).Rows(0)("tipcomp")
 
             End If
-            If tipoDocumento.Trim = "01" Then
-                mt_CargarReporte("Doc.ElectronicoISL.mrt")
-            ElseIf tipoDocumento.Trim = "03" Then
-                mt_CargarReporte("Doc.ElectronicoISL.mrt")
-            ElseIf tipoDocumento.Trim = "07" Then
-                mt_CargarReporte("Doc.ElectronicoISL_NC.mrt")
-            ElseIf tipoDocumento.Trim = "08" Then
-                mt_CargarReporte("Doc.ElectronicoISL_NC2.mrt")
+            If ls_TpReport = "" Then
+                If tipoDocumento.Trim = "01" Then
+                    mt_CargarReporte("Doc.ElectronicoISL.mrt")
+                ElseIf tipoDocumento.Trim = "03" Then
+                    mt_CargarReporte("Doc.ElectronicoISL.mrt")
+                ElseIf tipoDocumento.Trim = "07" Then
+                    mt_CargarReporte("Doc.ElectronicoISL_NC.mrt")
+                ElseIf tipoDocumento.Trim = "08" Then
+                    mt_CargarReporte("Doc.ElectronicoISL_NC2.mrt")
+                End If
+            Else
+                If tipoDocumento.Trim = "01" Then
+                    mt_CargarReporte("Doc.ElectronicoCOMERCIAL.mrt")
+                ElseIf tipoDocumento.Trim = "03" Then
+                    mt_CargarReporte("Doc.ElectronicoISL.mrt")
+                ElseIf tipoDocumento.Trim = "07" Then
+                    mt_CargarReporte("Doc.ElectronicoISL_NC.mrt")
+                ElseIf tipoDocumento.Trim = "08" Then
+                    mt_CargarReporte("Doc.ElectronicoISL_NC2.mrt")
+                End If
             End If
             'mt_CargarReporte(IIf(lb_NotaCredito, "Doc.ElectronicoISL_NC.mrt", "Doc.ElectronicoISL.mrt"))
             svcReporteF.Report.Render()

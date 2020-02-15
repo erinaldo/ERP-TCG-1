@@ -66,6 +66,7 @@ Public Class frm_CpeFacturacion
 #End Region
 
 #Region "Botones Principales"
+
     Public Overrides Sub Imprimir()
         Try
             Dim frmImpresion As New frm_FacturaBoletaElectronico
@@ -81,7 +82,7 @@ Public Class frm_CpeFacturacion
             End Select
             If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
             TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
-            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc)
+            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "")
             frmImpresion.StartPosition = FormStartPosition.CenterScreen
             frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
             frmImpresion.MaximizeBox = True
@@ -1165,6 +1166,7 @@ Public Class frm_CpeFacturacion
     Private Sub PDFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PDFToolStripMenuItem.Click, mImprimirPDF.Click
         Try
             Me.Imprimir()
+
         Catch ex As Exception
             Throw ex
         End Try
@@ -1208,14 +1210,52 @@ Public Class frm_CpeFacturacion
     End Sub
 
     Private Sub DescargaZIPToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DescargaZIPToolStripMenuItem.Click, mDescargarXML.Click
+        'Try
+        '    Select Case utcFichaDocumentos.SelectedTab.Index
+        '        Case 1 : DescargarXml_Comprobantes(ugEnviar)
+        '        Case 2 : DescargarXml_Comprobantes(ugResumen)
+        '        Case 3 : DescargarXml_Comprobantes(ugEnviados)
+        '    End Select
+        'Catch ex As Exception
+        '    mensajeEmergente.Problema(ex.Message)
+        'End Try
+
         Try
-            Select Case utcFichaDocumentos.SelectedTab.Index
-                Case 1 : DescargarXml_Comprobantes(ugEnviar)
-                Case 2 : DescargarXml_Comprobantes(ugResumen)
-                Case 3 : DescargarXml_Comprobantes(ugEnviados)
-            End Select
+            Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\xml\"
+            'Dim RutaArchivos As String = Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\" '@0001
+            Dim sNombreArchivo As String = ""
+            Dim TipoDocumento As String = ""
+            Dim SerieDes As String = ""
+            Dim NumeroDes As String = ""
+            'If ugEnviados.ActiveRow.Cells("EstadoSunat").Value <> "ACEPTADA" Then Throw New Exception("Para Descargar XML, Documento debe ser Aceptada por Sunat.")
+
+            FolderBrowserDialog1.Description = "Seleccionar Carpeta..."
+            If FolderBrowserDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+                sNombreArchivo = FolderBrowserDialog1.SelectedPath
+            Else
+                FolderBrowserDialog1.Dispose()
+                Return
+            End If
+
+            If sNombreArchivo <> "" Then
+                TipoDocumento = ugEnviados.ActiveRow.Cells("IdTipoDocumento").Value
+                If TipoDocumento = "1CH000000026" Then TipoDocumento = "01"
+                If TipoDocumento = "1CH000000002" Then TipoDocumento = "03"
+                If TipoDocumento = "1CH000000033" Then TipoDocumento = "08"
+                If TipoDocumento = "1CH000000030" Then TipoDocumento = "07"
+
+                SerieDes = ugEnviados.ActiveRow.Cells("Serie").Value
+                NumeroDes = ugEnviados.ActiveRow.Cells("Numero").Value
+
+                RutaArchivos = RutaArchivos + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                sNombreArchivo = sNombreArchivo + "\" + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
+                My.Computer.FileSystem.CopyFile(RutaArchivos, sNombreArchivo, True)
+                mensajeEmergente.Confirmacion("Se copio archivo correctamente", True)
+            End If
+
+
         Catch ex As Exception
-            mensajeEmergente.Problema(ex.Message)
+            mensajeEmergente.Problema(ex.Message, True)
         End Try
     End Sub
 
@@ -1506,8 +1546,69 @@ Public Class frm_CpeFacturacion
         End Select
     End Sub
 
-    Private Sub tsp_Principal_Filtro_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles tsp_Principal_Filtro.ItemClicked
+    Private Sub TransporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransporteToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
+            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "")
+            frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            frmImpresion.MaximizeBox = True
+            frmImpresion.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 
+    Private Sub ComercialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComercialToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub GrifoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GrifoToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO")
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Private Sub MostrarItems_Menu(ByVal enviar As Boolean, ByVal consultar As Boolean, ByVal fecha As Boolean,
