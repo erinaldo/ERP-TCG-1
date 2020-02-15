@@ -1793,7 +1793,7 @@
       </Textbox>
       <Image Name="Image2">
         <Source>Database</Source>
-        <Value>=</Value>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
         <MIMEType>image/bmp</MIMEType>
         <Sizing>FitProportional</Sizing>
         <Top>13.3503cm</Top>

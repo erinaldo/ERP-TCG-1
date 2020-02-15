@@ -35,7 +35,7 @@ Public Class s_FacturacionV2
                 zip.AddFile(rutaFE.Trim() & nombre.Trim() & ".XML", "")
                 zip.Save(rutaFE.Trim() & nombre.Trim() & ".zip")
             End Using
-            'definicion = Me.EnviarXML(rutaFE, nombre, cdrXML)
+            definicion = Me.EnviarXML(rutaFE, nombre, cdrXML)
         Catch ex As Exception
             flagError = True
             Throw ex
@@ -146,7 +146,8 @@ Public Class s_FacturacionV2
             LineCountNumeric = dtDet.Rows.Count
             settings.Indent = True
             ' Create XmlWriter.
-            settings.Encoding = System.Text.UTF8Encoding.UTF8
+            'settings.Encoding = System.Text.UTF8Encoding.UTF8
+            settings.Encoding = System.Text.Encoding.GetEncoding("ISO-8859-1")
             Using writer As XmlWriter = XmlWriter.Create(rutaFE.Trim() & nombre.Trim() & ".XML", settings)
                 prefixCac = writer.LookupPrefix(cadCac)
                 prefixExt = writer.LookupPrefix(cadExt)
@@ -154,7 +155,8 @@ Public Class s_FacturacionV2
                 prefixCbc = writer.LookupPrefix(cadCbc)
                 prefixDs = writer.LookupPrefix(cadDs)
                 ' Begin writing.
-                writer.WriteStartDocument()
+                'writer.WriteStartDocument()
+                writer.WriteStartDocument(False)
                 '<Invoice xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
                 If flagNC Then
                     writer.WriteStartElement("CreditNote", "urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2")
@@ -203,12 +205,12 @@ Public Class s_FacturacionV2
         System.Net.ServicePointManager.UseNagleAlgorithm = True
         System.Net.ServicePointManager.Expect100Continue = False
         System.Net.ServicePointManager.CheckCertificateRevocationList = True
-        Dim clienteRemotoObj As New sFacturacion.billServiceClient
+        Dim clienteRemotoObj As New sFacturacionOSE.billServiceClient
         'Dim _behavior = New clsPasswordDigestBehavior("20480099720" + "CPESUNAT", "materiaGRIF01X")
         Dim _behavior = New clsPasswordDigestBehavior("20480099720" + "ERPTCGSO", "Oksimcha44")
         clienteRemotoObj.Endpoint.EndpointBehaviors.Add(_behavior)
-        Dim datos As New sFacturacion.sendBillResponse
-        Dim envio As New sFacturacion.sendBillRequest
+        Dim datos As New sFacturacionOSE.sendBillResponse
+        Dim envio As New sFacturacionOSE.sendBillRequest
         'Dim TablaFEADObj As New FacturacionElectronicaAD(mCadenaConexion)
         Dim dCatalago As New d_CatalagoCodigoSunat
         Dim oeCatalago As e_CatalagoCodigoSunat
@@ -345,10 +347,10 @@ Public Class s_FacturacionV2
 
             If flagNC Or flagND Then
 
-                writer.WriteStartElement(prefixCbc, "Note", cadCbc)
-                writer.WriteAttributeString("languageLocaleID", "3000")
-                writer.WriteValue("0501002017051400452")
-                writer.WriteEndElement()
+                'writer.WriteStartElement(prefixCbc, "Note", cadCbc)
+                'writer.WriteAttributeString("languageLocaleID", "3000")
+                'writer.WriteValue("0501002017051400452")
+                'writer.WriteEndElement()
 
                 '<cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
                 writer.WriteElementString("DocumentCurrencyCode", cadCbc, CodMon)
@@ -399,8 +401,9 @@ Public Class s_FacturacionV2
 
                 '<cbc:InvoiceTypeCode>01</cbc:InvoiceTypeCode>
                 writer.WriteStartElement(prefixCbc, "InvoiceTypeCode", cadCbc)
+                writer.WriteAttributeString("listID", "0101")
                 writer.WriteAttributeString("listAgencyName", "PE:SUNAT")
-                writer.WriteAttributeString("listName", "SUNAT:Identificador de Tipo de Documento")
+                writer.WriteAttributeString("listName", "Tipo de Documento")
                 writer.WriteAttributeString("listURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01")
                 writer.WriteValue(TipDoc.Trim())
                 writer.WriteEndElement()
@@ -413,10 +416,10 @@ Public Class s_FacturacionV2
                 writer.WriteValue(MontoLetras)
                 writer.WriteEndElement()
 
-                writer.WriteStartElement(prefixCbc, "Note", cadCbc)
-                writer.WriteAttributeString("languageLocaleID", "3000")
-                writer.WriteValue("0501002017051400452")
-                writer.WriteEndElement()
+                'writer.WriteStartElement(prefixCbc, "Note", cadCbc)
+                'writer.WriteAttributeString("languageLocaleID", "3000")
+                'writer.WriteValue("0501002017051400452")
+                'writer.WriteEndElement()
 
                 '<cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
                 writer.WriteStartElement(prefixCbc, "DocumentCurrencyCode", cadCbc)
@@ -495,42 +498,81 @@ Public Class s_FacturacionV2
 
         '<cac:Party>
         writer.WriteStartElement(prefixCac, "Party", cadCac)
+
+        ''<cac:PartyName> 
+        'writer.WriteStartElement(prefixCac, "PartyName", cadCac)
+        ''<cbc:Name><![CDATA[K&G Laboratorios]]></cbc:Name> 
+        'oeCatalago = New e_CatalagoCodigoSunat
+        'oeCatalago.CodigoTabla = "017" : oeCatalago.CodigoElemento = "010"
+        ''writer.WriteElementString("Name", cadCbc, facturacionADObj.ObtenerDescripcionPorCodigoSistema("017", "010"))
+        'writer.WriteElementString("Name", cadCbc, dCatalago.Obtener(oeCatalago).Descripcion)
+        ''</cac:PartyName>
+        'writer.WriteEndElement()
+
         '<cac:PartyName> 
-        writer.WriteStartElement(prefixCac, "PartyName", cadCac)
-        '<cbc:Name><![CDATA[K&G Laboratorios]]></cbc:Name> 
-        oeCatalago = New e_CatalagoCodigoSunat
-        oeCatalago.CodigoTabla = "017" : oeCatalago.CodigoElemento = "010"
-        'writer.WriteElementString("Name", cadCbc, facturacionADObj.ObtenerDescripcionPorCodigoSistema("017", "010"))
-        writer.WriteElementString("Name", cadCbc, dCatalago.Obtener(oeCatalago).Descripcion)
-        '</cac:PartyName>
-        writer.WriteEndElement()
+        writer.WriteStartElement(prefixCac, "PartyIdentification", cadCac)
 
-        writer.WriteStartElement(prefixCac, "PartyTaxScheme", cadCac)
+        ''<cbc:Name><![CDATA[K&G Laboratorios]]></cbc:Name> 
+        'oeCatalago = New e_CatalagoCodigoSunat
+        'oeCatalago.CodigoTabla = "017" : oeCatalago.CodigoElemento = "010"
+        ''writer.WriteElementString("Name", cadCbc, facturacionADObj.ObtenerDescripcionPorCodigoSistema("017", "010"))
+        'writer.WriteElementString("Name", cadCbc, dCatalago.Obtener(oeCatalago).Descripcion)
 
-        oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "013"}
-        writer.WriteStartElement(prefixCbc, "RegistrationName", cadCbc)
-        writer.WriteCData(dCatalago.Obtener(oeCatalago).Descripcion)
-        writer.WriteEndElement()
-
-        writer.WriteStartElement(prefixCbc, "CompanyID", cadCbc)
+        writer.WriteStartElement(prefixCbc, "ID", cadCbc)
         oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "002"}
         writer.WriteAttributeString("schemeID", dCatalago.Obtener(oeCatalago).Descripcion)
-        writer.WriteAttributeString("schemeName", "SUNAT:Identificador de Documento de Identidad")
+        writer.WriteAttributeString("schemeName", "Documento de Identidad")
         writer.WriteAttributeString("schemeAgencyName", "PE:SUNAT")
         writer.WriteAttributeString("schemeURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06")
         oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "001"}
         writer.WriteValue(dCatalago.Obtener(oeCatalago).Descripcion)
         writer.WriteEndElement()
 
+        '</cac:PartyName>
+        writer.WriteEndElement()
+
+        'writer.WriteStartElement(prefixCac, "PartyTaxScheme", cadCac)
+
+        'oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "013"}
+        'writer.WriteStartElement(prefixCbc, "RegistrationName", cadCbc)
+        'writer.WriteCData(dCatalago.Obtener(oeCatalago).Descripcion)
+        'writer.WriteEndElement()
+
+        'writer.WriteStartElement(prefixCbc, "CompanyID", cadCbc)
+        'oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "002"}
+        'writer.WriteAttributeString("schemeID", dCatalago.Obtener(oeCatalago).Descripcion)
+        'writer.WriteAttributeString("schemeName", "SUNAT:Identificador de Documento de Identidad")
+        'writer.WriteAttributeString("schemeAgencyName", "PE:SUNAT")
+        'writer.WriteAttributeString("schemeURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06")
+        'oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "001"}
+        'writer.WriteValue(dCatalago.Obtener(oeCatalago).Descripcion)
+        'writer.WriteEndElement()
+
+        'writer.WriteStartElement(prefixCac, "RegistrationAddress", cadCac)
+        'writer.WriteElementString("AddressTypeCode", cadCbc, "0000")
+        'writer.WriteEndElement()
+
+        'writer.WriteStartElement(prefixCac, "TaxScheme", cadCac)
+        'writer.WriteElementString("ID", cadCbc, "-")
+        'writer.WriteEndElement()
+
+        'writer.WriteEndElement()
+
+
+        writer.WriteStartElement(prefixCac, "PartyLegalEntity", cadCac)
+
+        oeCatalago = New e_CatalagoCodigoSunat With {.CodigoTabla = "017", .CodigoElemento = "013"}
+        writer.WriteStartElement(prefixCbc, "RegistrationName", cadCbc)
+        writer.WriteCData(dCatalago.Obtener(oeCatalago).Descripcion)
+        writer.WriteEndElement()
+
         writer.WriteStartElement(prefixCac, "RegistrationAddress", cadCac)
         writer.WriteElementString("AddressTypeCode", cadCbc, "0000")
         writer.WriteEndElement()
 
-        writer.WriteStartElement(prefixCac, "TaxScheme", cadCac)
-        writer.WriteElementString("ID", cadCbc, "-")
-        writer.WriteEndElement()
 
         writer.WriteEndElement()
+
 
         'If flagBaja = False Then
         '    '<cac:PostalAddress>
@@ -604,25 +646,50 @@ Public Class s_FacturacionV2
 
             '<cac:Party>
             writer.WriteStartElement(prefixCac, "Party", cadCac)
-            '<cac:PartyTaxScheme>
-            writer.WriteStartElement(prefixCac, "PartyTaxScheme", cadCac)
-            '<cbc:RegistrationName>SERVICABINAS S.A.</cbc:RegistrationName>
-            writer.WriteElementString("RegistrationName", cadCbc, dtCab.Rows(0).Item("empresa_receptor").ToString().Trim())
 
-            writer.WriteStartElement(prefixCbc, "CompanyID", cadCbc)
+            ''<cac:PartyTaxScheme>
+            'writer.WriteStartElement(prefixCac, "PartyTaxScheme", cadCac)
+            ''<cbc:RegistrationName>SERVICABINAS S.A.</cbc:RegistrationName>
+            'writer.WriteElementString("RegistrationName", cadCbc, dtCab.Rows(0).Item("empresa_receptor").ToString().Trim())
+
+            'writer.WriteStartElement(prefixCbc, "CompanyID", cadCbc)
+            'writer.WriteAttributeString("schemeID", dtCab.Rows(0).Item("tipodoc_receptor").ToString().Trim())
+            'writer.WriteAttributeString("schemeName", "SUNAT:Identificador de Documento de Identidad")
+            'writer.WriteAttributeString("schemeAgencyName", "PE:SUNAT")
+            'writer.WriteAttributeString("schemeURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06")
+            'writer.WriteValue(dtCab.Rows(0).Item("doc_receptor").ToString().Trim())
+            'writer.WriteEndElement()
+
+            'writer.WriteStartElement(prefixCac, "TaxScheme", cadCac)
+            'writer.WriteElementString("ID", cadCbc, "-")
+            'writer.WriteEndElement()
+
+            ''</cac:PartyTaxScheme>
+            'writer.WriteEndElement()
+
+            '<cac:PartyIdentification>
+            writer.WriteStartElement(prefixCac, "PartyIdentification", cadCac)
+
+
+            writer.WriteStartElement(prefixCbc, "ID", cadCbc)
             writer.WriteAttributeString("schemeID", dtCab.Rows(0).Item("tipodoc_receptor").ToString().Trim())
-            writer.WriteAttributeString("schemeName", "SUNAT:Identificador de Documento de Identidad")
+            writer.WriteAttributeString("schemeName", "Documento de Identidad")
             writer.WriteAttributeString("schemeAgencyName", "PE:SUNAT")
             writer.WriteAttributeString("schemeURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06")
             writer.WriteValue(dtCab.Rows(0).Item("doc_receptor").ToString().Trim())
             writer.WriteEndElement()
 
-            writer.WriteStartElement(prefixCac, "TaxScheme", cadCac)
-            writer.WriteElementString("ID", cadCbc, "-")
+            '</cac:PartyIdentification>
             writer.WriteEndElement()
 
-            '</cac:PartyTaxScheme>
+            writer.WriteStartElement(prefixCac, "PartyLegalEntity", cadCac)
+            'writer.WriteElementString("ID", cadCbc, "-")
+
+            '<cbc:RegistrationName>SERVICABINAS S.A.</cbc:RegistrationName>
+            writer.WriteElementString("RegistrationName", cadCbc, dtCab.Rows(0).Item("empresa_receptor").ToString().Trim())
+
             writer.WriteEndElement()
+
             '</cac:Party>
             writer.WriteEndElement()
             '</cac:AccountingSupplierParty>
@@ -954,7 +1021,8 @@ Public Class s_FacturacionV2
 
     Private Sub AgregarFirma(ByVal rutaFE As String, ByVal Nombre As String, ByRef valorResumen As String, ByRef firma As String, ByVal flagBaja As Boolean, ByVal TipoDoc As String)
         Try
-            Dim RutaCer As String = Replace(rutaFE, "Facturacion", "Certificado")
+            'Dim RutaCer As String = Replace(rutaFE, "Facturacion", "Certificado")
+            Dim RutaCer As String = Replace(rutaFE, "Facturacion", "xml\Certificado")
             Dim local_xmlArchivo As String = rutaFE & Nombre & ".XML"
 
             Dim local_nombreXML As String = System.IO.Path.GetFileName(local_xmlArchivo)
@@ -1302,9 +1370,9 @@ Public Class s_FacturacionV2
     End Function
 
     Private Function EnviarBajaXML(ByVal rutaFE As String, ByVal Nombre As String, ByRef definicion As String) As String
-        Dim clienteRemotoObj As New sFacturacion.billServiceClient
-        Dim datos As New sFacturacion.sendSummaryResponse
-        Dim envio As New sFacturacion.sendSummaryRequest
+        Dim clienteRemotoObj As New sFacturacionOSE.billServiceClient
+        Dim datos As New sFacturacionOSE.sendSummaryResponse
+        Dim envio As New sFacturacionOSE.sendSummaryRequest
 
         Dim dCatalago As New d_CatalagoCodigoSunat
         Dim oeCatalago As e_CatalagoCodigoSunat
@@ -1334,9 +1402,9 @@ Public Class s_FacturacionV2
     End Function
 
     Public Function EnviarXMLGetStatus(ByVal rutaFE As String, ByVal ticket As String, ByVal PrefijoID As String) As Boolean
-        Dim clienteRemotoObj As New sFacturacion.billServiceClient
-        Dim datos As New sFacturacion.getStatusResponse
-        Dim envio As New sFacturacion.getStatusRequest
+        Dim clienteRemotoObj As New sFacturacionOSE.billServiceClient
+        Dim datos As New sFacturacionOSE.getStatusResponse
+        Dim envio As New sFacturacionOSE.getStatusRequest
         ''Dim TablaFEADObj As New LogicaNegocio.FacturacionElectronicaAD(mCadenaConexion)
         ''Dim TablaFE2ADObj As New LogicaNegocio.FacturacionElectronica(mCadenaConexion)
         Dim xmlDoc As New XmlDocument()

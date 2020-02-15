@@ -6430,9 +6430,9 @@
     <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
+    <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
