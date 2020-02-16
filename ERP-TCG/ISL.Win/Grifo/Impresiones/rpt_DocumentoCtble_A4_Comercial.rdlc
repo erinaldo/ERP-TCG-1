@@ -139,18 +139,14 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>5.6531cm</Top>
-        <Left>0.6749cm</Left>
-        <Height>0.43236cm</Height>
+        <Left>0.57317cm</Left>
+        <Height>0.39709cm</Height>
         <Width>1.88488cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox11">
@@ -171,19 +167,15 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.15602cm</Top>
-        <Left>0.679cm</Left>
-        <Height>0.45cm</Height>
-        <Width>1.88488cm</Width>
+        <Top>6.05019cm</Top>
+        <Left>0.57317cm</Left>
+        <Height>0.37944cm</Height>
+        <Width>1.88078cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox12">
@@ -204,19 +196,15 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.60602cm</Top>
-        <Left>0.6749cm</Left>
-        <Height>0.46764cm</Height>
+        <Top>6.42963cm</Top>
+        <Left>0.57131cm</Left>
+        <Height>0.36181cm</Height>
         <Width>1.88488cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox13">
@@ -237,19 +225,15 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>7.07366cm</Top>
-        <Left>0.679cm</Left>
-        <Height>0.40597cm</Height>
+        <Top>6.82672cm</Top>
+        <Left>0.57317cm</Left>
+        <Height>0.36896cm</Height>
         <Width>1.8455cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Emision">
@@ -262,28 +246,23 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 <Value>=First(Fields!Emision.Value, "Cabecera")</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
+                  <Format>d</Format>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>5.72366cm</Top>
-        <Left>2.59506cm</Left>
-        <Height>0.39708cm</Height>
-        <Width>4.48261cm</Width>
+        <Top>5.6531cm</Top>
+        <Left>2.45805cm</Left>
+        <Height>0.39709cm</Height>
+        <Width>1.58099cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Cliente">
@@ -299,25 +278,19 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>6.19129cm</Top>
-        <Left>2.59916cm</Left>
+        <Top>6.05019cm</Top>
+        <Left>2.45619cm</Left>
         <Height>0.37945cm</Height>
-        <Width>17.8863cm</Width>
+        <Width>18.02927cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Direccion">
@@ -334,25 +307,19 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>6.6413cm</Top>
-        <Left>2.59506cm</Left>
-        <Height>0.43236cm</Height>
-        <Width>17.8904cm</Width>
+        <Top>6.46491cm</Top>
+        <Left>2.45805cm</Left>
+        <Height>0.32653cm</Height>
+        <Width>18.02741cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="DOI">
@@ -368,25 +335,19 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style>
-              <TextAlign>Left</TextAlign>
-            </Style>
+            <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>7.07366cm</Top>
-        <Left>2.60605cm</Left>
-        <Height>0.40597cm</Height>
-        <Width>4.47161cm</Width>
+        <Top>6.82672cm</Top>
+        <Left>2.45805cm</Left>
+        <Height>0.36896cm</Height>
+        <Width>3.11015cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Rectangle Name="Rectangle1">
@@ -1232,7 +1193,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!Codigo.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <Format>n2</Format>
                               </Style>
                             </TextRun>
@@ -1265,7 +1226,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <Format>f2</Format>
                               </Style>
                             </TextRun>
@@ -1286,7 +1247,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1301,7 +1261,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!UM.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1365,7 +1325,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!ValorUnitario.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1400,7 +1360,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!Descuento.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1435,7 +1395,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!ValorTotal.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1470,7 +1430,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!IGV.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1505,7 +1465,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!Precio.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1540,7 +1500,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!Importe.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -1593,7 +1553,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>9.15359cm</Top>
+        <Top>8.83609cm</Top>
         <Left>0.57131cm</Left>
         <Height>1.24341cm</Height>
         <Width>19.99608cm</Width>
@@ -1636,7 +1596,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
               <Width>4.70317cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.16131cm</Width>
+              <Width>3.24324cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.90979cm</Width>
@@ -2223,39 +2183,40 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>7.72484cm</Top>
+        <Top>7.40734cm</Top>
         <Left>0.57131cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.91415cm</Width>
+        <Width>19.99608cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
+            <Color>Blue</Color>
             <Style>Solid</Style>
           </Border>
           <TopBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </TopBorder>
           <BottomBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </BottomBorder>
           <LeftBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </LeftBorder>
           <RightBorder>
-            <Color>Black</Color>
+            <Color>Blue</Color>
             <Style>Solid</Style>
             <Width>1pt</Width>
           </RightBorder>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.15581in</Height>
+    <Height>4.05164in</Height>
     <Style />
   </Body>
   <Width>8.19523in</Width>
@@ -2286,37 +2247,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           <Top>4.19083cm</Top>
           <Left>0.3713cm</Left>
           <Height>0.55583cm</Height>
-          <Width>13.21139cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="RUC_Emisor2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-          <Top>0.91696cm</Top>
-          <Left>8.59007cm</Left>
-          <Height>1.96797cm</Height>
-          <Width>5.04393cm</Width>
-          <ZIndex>1</ZIndex>
+          <Width>13.3007cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2349,8 +2280,8 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Top>2.9459cm</Top>
           <Left>0.3713cm</Left>
           <Height>1.24493cm</Height>
-          <Width>13.21139cm</Width>
-          <ZIndex>2</ZIndex>
+          <Width>13.3007cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2385,7 +2316,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.48528cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2421,7 +2352,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>4</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2457,7 +2388,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.4941cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2493,7 +2424,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.55583cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2529,7 +2460,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2565,7 +2496,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.4941cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2601,7 +2532,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.55583cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2637,7 +2568,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.48528cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2673,7 +2604,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.53861cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2709,7 +2640,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>12</ZIndex>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2745,7 +2676,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.47624cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2781,7 +2712,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>14.63879cm</Left>
           <Height>0.52938cm</Height>
           <Width>3.10854cm</Width>
-          <ZIndex>14</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2817,7 +2748,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.53861cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>15</ZIndex>
+          <ZIndex>14</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2853,7 +2784,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>16</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2889,7 +2820,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.47646cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>17</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2925,7 +2856,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>17.74733cm</Left>
           <Height>0.52938cm</Height>
           <Width>2.82006cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>17</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -2958,17 +2889,13 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <rd:DefaultName>Textbox9</rd:DefaultName>
           <Top>0.17639cm</Top>
           <Left>0.57131cm</Left>
-          <Height>0.56418cm</Height>
+          <Height>0.38779cm</Height>
           <Width>0.83877cm</Width>
-          <ZIndex>19</ZIndex>
+          <ZIndex>18</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="MontoLetras">
@@ -2990,17 +2917,13 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <rd:DefaultName>MontoLetras</rd:DefaultName>
           <Top>0.17585cm</Top>
           <Left>1.44536cm</Left>
-          <Height>0.56472cm</Height>
-          <Width>12.22392cm</Width>
-          <ZIndex>20</ZIndex>
+          <Height>0.38833cm</Height>
+          <Width>12.22664cm</Width>
+          <ZIndex>19</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox17">
@@ -3022,19 +2945,15 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.74057cm</Top>
+          <Top>0.59946cm</Top>
           <Left>0.57131cm</Left>
-          <Height>0.52936cm</Height>
+          <Height>0.33533cm</Height>
           <Width>2.4036cm</Width>
-          <ZIndex>21</ZIndex>
+          <ZIndex>20</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Glosa">
@@ -3054,11 +2973,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Glosa</rd:DefaultName>
-          <Top>0.77585cm</Top>
-          <Left>2.97491cm</Left>
-          <Height>2.10908cm</Height>
-          <Width>4.86269cm</Width>
-          <ZIndex>22</ZIndex>
+          <Top>0.93479cm</Top>
+          <Left>0.57317cm</Left>
+          <Height>1.95014cm</Height>
+          <Width>4.99503cm</Width>
+          <ZIndex>21</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3069,6 +2988,36 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image2">
+          <Source>Database</Source>
+          <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+          <MIMEType>image/bmp</MIMEType>
+          <Sizing>FitProportional</Sizing>
+          <Top>0.59946cm</Top>
+          <Left>7.8376cm</Left>
+          <Height>2.24061cm</Height>
+          <Width>5.8344cm</Width>
+          <ZIndex>22</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Line Name="Line1">
+          <Top>0.09108cm</Top>
+          <Left>0.57131cm</Left>
+          <Height>0cm</Height>
+          <Width>19.99608cm</Width>
+          <ZIndex>23</ZIndex>
+          <Style>
+            <Border>
+              <Color>Blue</Color>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -3497,6 +3446,7 @@ yL3L0aCoTMgyoxiQC9jFa24j423LtByAYXjPLXTzFF2esMfESgLpA/oS2MNeAdiVul0pbZSImoSqFpW2
 L5idW5iemZ2cngEEMzY+OTI2PjwyNjg8MjA00j84DNCmt3+wjzDs9A7c5L7Bob7B4f6h4YHhkcGR0aGRMbgXYoB4IGaIE2IHQCSgwZAUsJBCoVSpcYLnf3ykZpTsFqJhEk1M0O3E6OgO3aE7dIf+YcQ0N7c3OEzQ/+1WiFHBf9CMsTW/pd3GcIZ/iIwX3qG/JlozSKhZ9OaoWRy0+5vqom/Az/jgi5dkmATvIIwRMZfdTv/FuUo3o2bEhQRweIkOYC77HydM0UgkGYaZEGAUgCbM8W2MSiR6wUMiLeASwmRqGH0B0Ta5n7nrJjEyGOl7A7+X/lrO24hOhE4dBfgPdItARokIRmKIPkETk94d+l9Dd8rlDv0bE23et9KtgfQ1/zeJUcHtSoAjwkCk3aYDb+EfInLL3zj/f5KIynBDa5XxjYQICmAu+14i58kd+Lo78bDAdFS4z1x2O/2XRpWYSG8yCQMBkVGQfxBhWgwxIYSWgxhmjpYJRGIYwmmt0ETABuiKntNNwIrBiJyQ6IuXVfk/TyQVBG1Gvi0VcvYmGiLy33YBk7879L+V7hTTHfq/QLSdAzHHd+j7CLQDGlp2JuQAmDl7h/5zROyNEK3I25zjrVplQm4nCDFejffiunLGAvqhEvmfhEpkGYz/hVCJDmag0q2EMITRMLN3O1Siz8P2+0EMc/DfIBLNX0f+Q3QHKv3L0Z1iukP/F4i2cyDm+A59H4F2QEOMpnCPXuSWOXuH/nOErpAeX7hNqzTdqlUm5HaCEDICAv+4T/6ZAvr+Erlx4/8Do6Fvp19wrS4AAAAASUVORK5CYII=</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <Language>es-PE</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>9bb73022-ddac-49fd-b5e0-b825a8cc93fd</rd:ReportID>
 </Report>

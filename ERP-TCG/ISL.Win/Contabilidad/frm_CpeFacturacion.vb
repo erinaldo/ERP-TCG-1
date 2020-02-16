@@ -81,17 +81,12 @@ Public Class frm_CpeFacturacion
                 Case 5 : grilla = ugBaja
             End Select
             If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
-            '@0001 Ini
-            'TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
-            'frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "COMERCIAL")
-            'frmImpresion.StartPosition = FormStartPosition.CenterScreen
-            'frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-            'frmImpresion.MaximizeBox = True
-            'frmImpresion.ShowDialog()
-
-            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV") '@0001
-            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO") '@0001
-            '@0001 Final
+            TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
+            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "")
+            frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            frmImpresion.MaximizeBox = True
+            frmImpresion.ShowDialog()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message.ToString)
         End Try
@@ -1549,6 +1544,71 @@ Public Class frm_CpeFacturacion
             Case Else
                 Call Me.MostrarItems_Menu(0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1)
         End Select
+    End Sub
+
+    Private Sub TransporteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransporteToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            TipoDoc = IIf(grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX007" Or grilla.ActiveRow.Cells("IdTipoDocumento").Value = "1CIX008", True, False)
+            frmImpresion.mt_CargarDatos(grilla.ActiveRow.Cells("Id").Value, TipoDoc, "")
+            frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            frmImpresion.MaximizeBox = True
+            frmImpresion.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub ComercialToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComercialToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV")
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub GrifoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GrifoToolStripMenuItem.Click
+        Try
+            Dim frmImpresion As New frm_FacturaBoletaElectronico
+            Dim TipoDoc As Boolean = False
+            Dim grilla As UltraGrid = Nothing
+            Select Case utcFichaDocumentos.SelectedTab.Index
+                Case 0 : grilla = ugPendientes
+                Case 1 : grilla = ugEnviar
+                Case 2 : grilla = ugResumen
+                Case 3 : grilla = ugEnviados
+                Case 4 : grilla = ugEnviarBaja
+                Case 5 : grilla = ugBaja
+            End Select
+            If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
+            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO")
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
 
     Private Sub MostrarItems_Menu(ByVal enviar As Boolean, ByVal consultar As Boolean, ByVal fecha As Boolean,

@@ -526,7 +526,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>14.43251cm</Top>
+        <Top>15.70251cm</Top>
         <Left>0.00578cm</Left>
         <Height>0.55583cm</Height>
         <Width>7.74786cm</Width>
@@ -1572,7 +1572,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>11.74433cm</Top>
+        <Top>11.42683cm</Top>
         <Height>0.6cm</Height>
         <Width>7.75364cm</Width>
         <ZIndex>6</ZIndex>
@@ -1600,7 +1600,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV1</rd:DefaultName>
-        <Top>14.98834cm</Top>
+        <Top>16.25834cm</Top>
         <Left>2.35921cm</Left>
         <Height>0.46771cm</Height>
         <Width>3.1146cm</Width>
@@ -1632,7 +1632,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>MedioPago</rd:DefaultName>
-        <Top>12.34433cm</Top>
+        <Top>12.02683cm</Top>
         <Left>1.9013cm</Left>
         <Height>0.43243cm</Height>
         <Width>5.85234cm</Width>
@@ -1665,7 +1665,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.34433cm</Top>
+        <Top>12.02683cm</Top>
         <Left>0.32328cm</Left>
         <Height>0.43243cm</Height>
         <Width>1.57802cm</Width>
@@ -1744,7 +1744,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>12.81204cm</Top>
+        <Top>12.49454cm</Top>
         <Left>0.32328cm</Left>
         <Height>0.85576cm</Height>
         <Width>1.57802cm</Width>
@@ -1776,7 +1776,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Referencia</rd:DefaultName>
-        <Top>12.77676cm</Top>
+        <Top>12.45926cm</Top>
         <Left>1.9013cm</Left>
         <Height>0.89104cm</Height>
         <Width>5.85234cm</Width>
@@ -1791,8 +1791,24 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>13.3503cm</Top>
+        <Left>1.9013cm</Left>
+        <Height>2.27528cm</Height>
+        <Width>4.39509cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
-    <Height>6.18217in</Height>
+    <Height>6.6405in</Height>
     <Style />
   </Body>
   <Width>3.92001in</Width>

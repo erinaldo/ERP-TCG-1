@@ -301,7 +301,7 @@
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>12.9546cm</Top>
         <Left>0.59066cm</Left>
-        <Height>0.67047cm</Height>
+        <Height>0.52936cm</Height>
         <Width>1.34582cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
@@ -469,7 +469,7 @@
         <rd:DefaultName>MontoLetras</rd:DefaultName>
         <Top>12.9546cm</Top>
         <Left>2.11287cm</Left>
-        <Height>0.67047cm</Height>
+        <Height>0.49408cm</Height>
         <Width>11.51807cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -1683,7 +1683,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -3018,10 +3017,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>13.80146cm</Top>
+        <Top>13.48396cm</Top>
         <Left>0.59066cm</Left>
         <Height>0.67047cm</Height>
-        <Width>3.49357cm</Width>
+        <Width>3.72901cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -3050,10 +3049,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Glosa</rd:DefaultName>
-        <Top>13.80146cm</Top>
-        <Left>4.26062cm</Left>
-        <Height>0.6cm</Height>
-        <Width>9.30244cm</Width>
+        <Top>14.29599cm</Top>
+        <Left>0.59066cm</Left>
+        <Height>3.26424cm</Height>
+        <Width>3.72901cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -3084,41 +3083,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV2</rd:DefaultName>
-        <Top>19.66741cm</Top>
+        <Top>19.34991cm</Top>
         <Left>0.59066cm</Left>
         <Height>1.36729cm</Height>
         <Width>19.71895cm</Width>
         <ZIndex>34</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="RUC_Emisor2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=First(Fields!QR.Value, "Cabecera")</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>RUC_Emisor</rd:DefaultName>
-        <Top>15.87564cm</Top>
-        <Left>10.21246cm</Left>
-        <Height>2.45208cm</Height>
-        <Width>3.3506cm</Width>
-        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3146,11 +3115,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>IGV2</rd:DefaultName>
-        <Top>18.89102cm</Top>
+        <Top>18.57352cm</Top>
         <Left>0.59066cm</Left>
         <Height>0.6cm</Height>
         <Width>19.71896cm</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -3161,6 +3130,22 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Image Name="Image2">
+        <Source>Database</Source>
+        <Value>=First(Fields!QR.Value, "Cabecera")</Value>
+        <MIMEType>image/bmp</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>13.62507cm</Top>
+        <Left>5.69209cm</Left>
+        <Height>3.74675cm</Height>
+        <Width>6.16919cm</Width>
+        <ZIndex>36</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>10.0658in</Height>
     <Style />

@@ -967,8 +967,6 @@ Public Class frm_EstacionServicio
                 .Cantidad = nud_Cantidad.Value
                 .CantidadAtender = nud_Cantidad.Value
                 .CantidadPendiente = nud_Cantidad.Value
-                .CostoUnitario = nud_Preciounitario.Value
-                .CostoInventario = 0 'DETALLE.CostoUnitario
                 .PrecioUnitario = nud_Preciounitario.Value
                 .Dscto = 0
                 .CostoInventario = fc_Obtener_CostoCombustible(IdMaterial_Combustible, IdSubAlmacen_Combustible)
