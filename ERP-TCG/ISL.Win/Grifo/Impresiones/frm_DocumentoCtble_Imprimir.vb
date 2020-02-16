@@ -152,7 +152,8 @@ Public Class frm_DocumentoCtble_Imprimir
     Private Sub mt_Cerrar()
         Try
             '\\LADERA\ComprobanteElectronico\pdf\
-            Dim Archivo As String = "\\LADERA\ComprobanteElectronico\pdf\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            'D:\Sistema\xml\
+            Dim Archivo As String = "D:\Sistema\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
             Dim PDF As Byte()
             Dim filepath As String = Archivo
             If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)

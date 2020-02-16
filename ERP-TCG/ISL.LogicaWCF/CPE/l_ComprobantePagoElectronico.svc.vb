@@ -12,6 +12,11 @@ Public Class l_ComprobantePagoElectronico
     '' CPE
     Public gs_RutaDocumentosEle As String = "\\LADERA\ComprobanteElectronico\DocumentosElectronicos\"
     'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
+    '\\LADERA\ComprobanteElectronico\xml\
+    'D:\Sistema\xml
+    '\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx
+    'D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx
+    'D:\Sistema\xml\ComprobanteElectronico\Certificado\
     Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
     'Public gstrRutaDocumentosEle20 As String = "\\10.10.1.8\Comprobantes\2-0\Documentos MTN\"
     Public gs_RutaDocumentosCDR20 As String = "\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
@@ -920,6 +925,21 @@ Public Class l_ComprobantePagoElectronico
                         .WriteStartElement(prefixCac, "SellersItemIdentification", cadCac)
                         .WriteElementString("ID", cadCbc, detalle.IdMaterial)
                         .WriteEndElement() 'SellersItemIdentification
+                    End If
+
+                    If detalle.Placa.Trim <> String.Empty Then 'SOLO GRIFO
+                        .WriteStartElement(prefixCac, "AdditionalItemProperty", cadCac)
+                        .WriteElementString("Name", cadCbc, "Gastos Art. 37 Renta: Número de Placa")
+
+                        .WriteStartElement(prefixCbc, "NameCode", cadCbc)
+                        .WriteAttributeString("listAgencyName", "PE:SUNAT")
+                        .WriteAttributeString("listName", "Propiedad del item")
+                        .WriteString("7000")
+                        .WriteEndElement() 'NameCode
+
+                        .WriteElementString("Value", cadCbc, detalle.Placa.Trim)
+
+                        .WriteEndElement() 'AdditionalItemProperty
                     End If
 
                     .WriteEndElement() 'Item
