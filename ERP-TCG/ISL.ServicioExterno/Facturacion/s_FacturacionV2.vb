@@ -269,11 +269,11 @@ Public Class s_FacturacionV2
         '& CType(dtCab.Rows(0).Item("feccomp"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
         '& dtCab.Rows(0).Item("tipoid").ToString.Trim & "|" & dtCab.Rows(0).Item("nroid").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
 
-        codBarras = dCatalago.Obtener(oeCatalago).Descripcion & "|" & dtCab.Rows(0).Item("seriecomp") & "|" & dtCab.Rows(0).Item("corrcomp") & "|" _
-        & IIf(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2")) & "|" _
-        & IIf(CType(dtCab.Rows(0).Item("importeventa"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("importeventa"), Double).ToString("F2")) & "|" _
-        & CType(dtCab.Rows(0).Item("feccomp"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
-        & dtCab.Rows(0).Item("tipoid").ToString.Trim & "|" & dtCab.Rows(0).Item("nroid").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
+        codBarras = dCatalago.Obtener(oeCatalago).Descripcion & "|" & dtCab.Rows(0).Item("serie_doc2") & "|" & dtCab.Rows(0).Item("nro_doc2") & "|" _
+        & IIf(CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2")) & "|" _
+        & IIf(CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2")) & "|" _
+        & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
+        & dtCab.Rows(0).Item("tipodoc_receptor").ToString.Trim & "|" & dtCab.Rows(0).Item("doc_receptor").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
 
         Return codBarras
     End Function
