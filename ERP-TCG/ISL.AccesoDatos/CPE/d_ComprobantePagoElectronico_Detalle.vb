@@ -25,7 +25,7 @@ Public Class d_ComprobantePagoElectronico_Detalle
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_Detalle_LST" _
+                ds = SQL.ExecuteDataset("CON.Isp_ComprobantePagoElectronico_Detalle_LST" _
                 , "GEN" _
                 , "" _
                 , "" _
@@ -47,6 +47,7 @@ Public Class d_ComprobantePagoElectronico_Detalle
     , o_fila("UMedida").ToString _
     , o_fila("Cantidad").ToString _
     , o_fila("Producto").ToString _
+    , o_fila("Placa").ToString _
     , o_fila("IndIGV").ToString _
     , o_fila("IndInafecta").ToString _
     , o_fila("IndExonerada").ToString _
