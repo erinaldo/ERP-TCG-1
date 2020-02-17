@@ -1158,7 +1158,7 @@ Partial Class frm_CanjeDocumentos
         Me.tab_Bandeja.Size = New System.Drawing.Size(1350, 413)
         Me.tab_Bandeja.TabIndex = 13
         UltraTab1.TabPage = Me.UltraTabPageControl3
-        UltraTab1.Text = "Notas de Despacho"
+        UltraTab1.Text = "Notas de Despacho (Pendientes de Canje)"
         UltraTab5.TabPage = Me.UltraTabPageControl4
         UltraTab5.Text = "Otros Documentos"
         Me.tab_Bandeja.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab5})
@@ -1409,7 +1409,7 @@ Partial Class frm_CanjeDocumentos
         'tsb_ImprimirA4
         '
         Me.tsb_ImprimirA4.Name = "tsb_ImprimirA4"
-        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(180, 22)
+        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(120, 22)
         Me.tsb_ImprimirA4.Text = "Papel A4"
         '
         'UltraGroupBox1

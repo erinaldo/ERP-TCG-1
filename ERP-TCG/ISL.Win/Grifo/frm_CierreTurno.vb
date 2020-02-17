@@ -442,16 +442,17 @@ Public Class frm_CierreTurno
         Dim TurnoNuevo As New e_CierreTurno
         TurnoNuevo = fc_Inicializar_Turno("I")
         With TurnoNuevo
+            .IdEmpresaSis = gs_IdEmpresaSistema : .PrefijoID = gs_PrefijoIdSucursal : .IdSucursal = gs_IdSucursal
+            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date : .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
             .Fecha = Now.Date : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
             .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
             .IdTurno = cmb_TurnoNuevo.Value : .Turno = cmb_TurnoNuevo.Text
-            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
-            .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .Detalles.AddRange(TurnoActivo.Detalles)
             For Each Detalle In TurnoNuevo.Detalles
-                Detalle.TipoOperacion = "I"
-                Detalle.Id = ""
+                Detalle.TipoOperacion = "I" : Detalle.Id = ""
+                Detalle.IdEmpresaSis = gs_IdEmpresaSistema : Detalle.PrefijoID = gs_PrefijoIdSucursal : Detalle.IdSucursal = gs_IdSucursal
+                Detalle.UsuarioCrea = gUsuarioSGI.Id : Detalle.FechaCrea = Now.Date : Detalle.UsuarioModifica = gUsuarioSGI.Id : Detalle.FechaModifica = Now.Date
                 Detalle.IdCierreTurno = ""
                 Select Case Detalle.Rubro
                     Case "CONTOMETRO_DIGITAL", "CONTOMETRO_MECANICO", "ALMACENES"
