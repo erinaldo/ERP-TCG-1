@@ -442,16 +442,17 @@ Public Class frm_CierreTurno
         Dim TurnoNuevo As New e_CierreTurno
         TurnoNuevo = fc_Inicializar_Turno("I")
         With TurnoNuevo
+            .IdEmpresaSis = gs_IdEmpresaSistema : .PrefijoID = gs_PrefijoIdSucursal : .IdSucursal = gs_IdSucursal
+            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date : .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
             .Fecha = Now.Date : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
             .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
             .IdTurno = cmb_TurnoNuevo.Value : .Turno = cmb_TurnoNuevo.Text
-            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
-            .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .Detalles.AddRange(TurnoActivo.Detalles)
             For Each Detalle In TurnoNuevo.Detalles
-                Detalle.TipoOperacion = "I"
-                Detalle.Id = ""
+                Detalle.TipoOperacion = "I" : Detalle.Id = ""
+                Detalle.IdEmpresaSis = gs_IdEmpresaSistema : Detalle.PrefijoID = gs_PrefijoIdSucursal : Detalle.IdSucursal = gs_IdSucursal
+                Detalle.UsuarioCrea = gUsuarioSGI.Id : Detalle.FechaCrea = Now.Date : Detalle.UsuarioModifica = gUsuarioSGI.Id : Detalle.FechaModifica = Now.Date
                 Detalle.IdCierreTurno = ""
                 Select Case Detalle.Rubro
                     Case "CONTOMETRO_DIGITAL", "CONTOMETRO_MECANICO", "ALMACENES"
@@ -849,7 +850,14 @@ Public Class frm_CierreTurno
                     Cronometro.ValorAux1 = 0
                 Next
                 '' Acumular Cantidad Vendida
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                    For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO" Or it.Rubro = "CALIBRACIONES").ToList
+                        If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
+                            Cronometro.ValorAux1 += Venta.ValorReal
+                        End If
+                    Next
+                Next
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "VARILLAJE").ToList
                     For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList
                         If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
                             Cronometro.ValorAux1 += Venta.ValorReal

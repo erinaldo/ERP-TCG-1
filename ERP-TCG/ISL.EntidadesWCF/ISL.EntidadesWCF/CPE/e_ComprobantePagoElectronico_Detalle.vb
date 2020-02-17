@@ -7,6 +7,7 @@
     Public Property UMedida() As String
     Public Property Cantidad() As Double
     Public Property Producto() As String
+    Public Property Placa() As String
     Public Property IndIGV() As Boolean
     Public Property IndInafecta() As Boolean
     Public Property IndExonerada() As Boolean
@@ -30,6 +31,7 @@
         UMedida = ""
         Cantidad = 0
         Producto = ""
+        Placa = ""
         IndIGV = False
         IndInafecta = False
         IndExonerada = False
@@ -53,6 +55,7 @@
                 , p_UMedida As String _
                 , p_Cantidad As Double _
                 , p_Producto As String _
+                , p_Placa As String _
                 , p_IndIGV As Boolean _
                 , p_IndInafecta As Boolean _
                 , p_IndExonerada As Boolean _
@@ -73,6 +76,7 @@
         UMedida = p_UMedida
         Cantidad = p_Cantidad
         Producto = p_Producto
+        Placa = p_Placa
         IndIGV = p_IndIGV
         IndInafecta = p_IndInafecta
         IndExonerada = p_IndExonerada
