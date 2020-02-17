@@ -270,6 +270,7 @@ Public Class frm_Persona
                         griPersona.Focus()
                     End If
                 End If
+                oeDerHab.oePersona = oePersona
                 Return True
             Else
                 Return False
@@ -879,7 +880,8 @@ Public Class frm_Persona
                         ficDetalle.Dock = DockStyle.Fill
                     Case 1
                         agrTipoPersona.Visible = False
-                        btnGuardarProveedor.Visible = False
+                        'btnGuardarProveedor.Visible = False '@0001
+                        btnGuardarProveedor.Visible = True '@0001
                 End Select
             End If
         Catch ex As Exception
@@ -1071,6 +1073,7 @@ Public Class frm_Persona
     End Sub
 
     Private Sub btnGuardarProveedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardarProveedor.Click
+        BandCbo = False
         Guardar()
     End Sub
 
