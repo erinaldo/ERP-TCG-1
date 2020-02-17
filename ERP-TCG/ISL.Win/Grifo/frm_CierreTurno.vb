@@ -849,7 +849,14 @@ Public Class frm_CierreTurno
                     Cronometro.ValorAux1 = 0
                 Next
                 '' Acumular Cantidad Vendida
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                    For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO" Or it.Rubro = "CALIBRACIONES").ToList
+                        If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
+                            Cronometro.ValorAux1 += Venta.ValorReal
+                        End If
+                    Next
+                Next
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "VARILLAJE").ToList
                     For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList
                         If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
                             Cronometro.ValorAux1 += Venta.ValorReal
