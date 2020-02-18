@@ -107,7 +107,7 @@ Public Class d_CierreTurno
             Dim stResultado() As String
             With Item
                 stResultado = SQL.ExecuteScalar("[CMP].[Sp_CierreTurno_IAE]" _
-                        , .TipoOperacion _
+                        , IIf(.Id = "", "I", "A") _
                         , .PrefijoID _
                         , .Id _
                         , .IdEmpresaSis _
@@ -133,7 +133,7 @@ Public Class d_CierreTurno
                 .Id = stResultado(0)
                 For Each Detalle In .Detalles
                     Detalle.IdCierreTurno = .Id
-                    Detalle.TipoOperacion = .TipoOperacion
+                    Detalle.TipoOperacion = IIf(Detalle.Id = "", "I", "A")
                     Detalle.PrefijoID = .PrefijoID
                     Detalle.IdEmpresaSis = .IdEmpresaSis
                     dCTD.Guardar(Detalle)
