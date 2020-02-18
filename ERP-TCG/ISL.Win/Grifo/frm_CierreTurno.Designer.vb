@@ -456,6 +456,7 @@ Partial Class frm_CierreTurno
         Me.tab_Principal = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
+        Me.btn_AgregarDetalles = New System.Windows.Forms.Button()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.UltraGroupBox14, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox14.SuspendLayout()
@@ -534,7 +535,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox14)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 23)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1192, 600)
         '
@@ -1681,7 +1682,7 @@ Partial Class frm_CierreTurno
         'UltraTabPageControl8
         '
         Me.UltraTabPageControl8.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraTabPageControl8.Location = New System.Drawing.Point(1, 23)
+        Me.UltraTabPageControl8.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl8.Name = "UltraTabPageControl8"
         Me.UltraTabPageControl8.Size = New System.Drawing.Size(1192, 600)
         '
@@ -2145,6 +2146,7 @@ Partial Class frm_CierreTurno
         '
         'UltraGroupBox4
         '
+        Me.UltraGroupBox4.Controls.Add(Me.btn_AgregarDetalles)
         Me.UltraGroupBox4.Controls.Add(Me.UltraGroupBox2)
         Me.UltraGroupBox4.Controls.Add(Me.UltraLabel4)
         Me.UltraGroupBox4.Controls.Add(Me.cmb_Estado)
@@ -2447,6 +2449,14 @@ Partial Class frm_CierreTurno
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
+        'btn_AgregarDetalles
+        '
+        Me.btn_AgregarDetalles.Location = New System.Drawing.Point(1181, 10)
+        Me.btn_AgregarDetalles.Name = "btn_AgregarDetalles"
+        Me.btn_AgregarDetalles.Size = New System.Drawing.Size(10, 10)
+        Me.btn_AgregarDetalles.TabIndex = 378
+        Me.btn_AgregarDetalles.UseVisualStyleBackColor = True
+        '
         'frm_CierreTurno
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2619,4 +2629,5 @@ Partial Class frm_CierreTurno
     Friend WithEvents udg_VentasxCombustibleResumen As Infragistics.Win.UltraWinGrid.UltraGrid
     Friend WithEvents Filtro1 As Controles.Filtro
     Friend WithEvents UltraToolTipManager1 As Infragistics.Win.UltraWinToolTip.UltraToolTipManager
+    Friend WithEvents btn_AgregarDetalles As Button
 End Class

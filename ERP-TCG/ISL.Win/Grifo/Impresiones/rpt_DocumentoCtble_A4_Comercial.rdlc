@@ -480,37 +480,37 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.83877cm</Width>
+              <Width>0.85695cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.60011cm</Width>
+              <Width>1.61829cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.02885cm</Width>
+              <Width>1.13795cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52916cm</Width>
+              <Width>1.54734cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.54934cm</Width>
+              <Width>6.56752cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.55446cm</Width>
+              <Width>1.57264cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.12773cm</Width>
+              <Width>1.14591cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.42656cm</Width>
+              <Width>1.44474cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.18744cm</Width>
+              <Width>1.20562cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.62943cm</Width>
+              <Width>1.64761cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.52423cm</Width>
+              <Width>1.54241cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1554,9 +1554,9 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
         <Top>8.83609cm</Top>
-        <Left>0.57131cm</Left>
+        <Left>0.3713cm</Left>
         <Height>1.24341cm</Height>
-        <Width>19.99608cm</Width>
+        <Width>20.287cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1590,19 +1590,19 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.56312cm</Width>
+              <Width>2.6213cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.70317cm</Width>
+              <Width>4.76135cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.24324cm</Width>
+              <Width>3.30142cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.90979cm</Width>
+              <Width>2.96797cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.57676cm</Width>
+              <Width>6.63494cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -2184,9 +2184,9 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
         <Top>7.40734cm</Top>
-        <Left>0.57131cm</Left>
+        <Left>0.3713cm</Left>
         <Height>1.2cm</Height>
-        <Width>19.99608cm</Width>
+        <Width>20.287cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>

@@ -771,7 +771,7 @@ Public Class frm_CierreTurno
             ListaLado = dLado.Listar(New e_Lado With {.TipoOperacion = "ALL"})
 
             '' Trabajadores
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = "Trabajador1"} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = cboTrabajadorApertura.Text} : TurnoActivo.Detalles.Add(Detalle)
 
             '' Contometros
             For Each Lado In ListaLado
@@ -885,6 +885,10 @@ Public Class frm_CierreTurno
 
     Private Sub cmb_Turno_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Turno.ValueChanged
         cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(cmb_TurnoNuevo.Value)
+    End Sub
+
+    Private Sub btn_AgregarDetalles_Click(sender As Object, e As EventArgs) Handles btn_AgregarDetalles.Click
+        mt_Agregar_Detalles()
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated
