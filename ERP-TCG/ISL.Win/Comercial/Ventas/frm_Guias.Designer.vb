@@ -2010,7 +2010,7 @@ Partial Class frm_Guias
         Me.UltraTabPageControl10.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
-        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1224, 276)
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1224, 362)
         '
         'UltraGroupBox9
         '
@@ -2018,7 +2018,7 @@ Partial Class frm_Guias
         Me.UltraGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraGroupBox9.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox9.Name = "UltraGroupBox9"
-        Me.UltraGroupBox9.Size = New System.Drawing.Size(1224, 276)
+        Me.UltraGroupBox9.Size = New System.Drawing.Size(1224, 362)
         Me.UltraGroupBox9.TabIndex = 5
         Me.UltraGroupBox9.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2003
         '
@@ -2154,7 +2154,7 @@ Partial Class frm_Guias
         Me.griListaAnuladas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaAnuladas.Location = New System.Drawing.Point(2, 2)
         Me.griListaAnuladas.Name = "griListaAnuladas"
-        Me.griListaAnuladas.Size = New System.Drawing.Size(1220, 272)
+        Me.griListaAnuladas.Size = New System.Drawing.Size(1220, 358)
         Me.griListaAnuladas.TabIndex = 3
         Me.griListaAnuladas.Tag = ""
         Me.griListaAnuladas.Text = "GUIAS TRANSPORTISTA"
@@ -2205,7 +2205,7 @@ Partial Class frm_Guias
         Me.UltraTabPageControl12.Controls.Add(Me.griGrtConfirmarBloque)
         Me.UltraTabPageControl12.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
-        Me.UltraTabPageControl12.Size = New System.Drawing.Size(1224, 276)
+        Me.UltraTabPageControl12.Size = New System.Drawing.Size(1224, 362)
         '
         'griGrtConfirmarBloque
         '
@@ -2583,7 +2583,7 @@ Partial Class frm_Guias
         Me.griGrtConfirmarBloque.ImageList = Me.imagenes
         Me.griGrtConfirmarBloque.Location = New System.Drawing.Point(0, 0)
         Me.griGrtConfirmarBloque.Name = "griGrtConfirmarBloque"
-        Me.griGrtConfirmarBloque.Size = New System.Drawing.Size(1224, 276)
+        Me.griGrtConfirmarBloque.Size = New System.Drawing.Size(1224, 362)
         Me.griGrtConfirmarBloque.TabIndex = 2
         Me.griGrtConfirmarBloque.Tag = ""
         '
@@ -2628,7 +2628,7 @@ Partial Class frm_Guias
         Me.UltraTabPageControl13.Controls.Add(Me.griViajeConfirmarBloque)
         Me.UltraTabPageControl13.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl13.Name = "UltraTabPageControl13"
-        Me.UltraTabPageControl13.Size = New System.Drawing.Size(1224, 276)
+        Me.UltraTabPageControl13.Size = New System.Drawing.Size(1224, 362)
         '
         'griViajeConfirmarBloque
         '
@@ -3010,14 +3010,14 @@ Partial Class frm_Guias
         Me.griViajeConfirmarBloque.ImageList = Me.imagenes
         Me.griViajeConfirmarBloque.Location = New System.Drawing.Point(0, 0)
         Me.griViajeConfirmarBloque.Name = "griViajeConfirmarBloque"
-        Me.griViajeConfirmarBloque.Size = New System.Drawing.Size(1224, 276)
+        Me.griViajeConfirmarBloque.Size = New System.Drawing.Size(1224, 362)
         Me.griViajeConfirmarBloque.TabIndex = 3
         Me.griViajeConfirmarBloque.Tag = ""
         '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1224, 233)
         '
@@ -3084,7 +3084,7 @@ Partial Class frm_Guias
         Appearance67.TextHAlignAsString = "Right"
         UltraGridColumn277.CellAppearance = Appearance67
         UltraGridColumn277.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        UltraGridColumn277.Format = "#,###,##0.000"
+        UltraGridColumn277.Format = "#,###,##0.0000"
         UltraGridColumn277.Header.Enabled = False
         UltraGridColumn277.Header.VisiblePosition = 10
         UltraGridColumn277.MaskInput = "{LOC}nnn,nnn.nnnn"
@@ -3360,7 +3360,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl3.Controls.Add(Me.griGuiaRemitente)
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox5)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1224, 233)
         '

@@ -2206,27 +2206,27 @@ Partial Class frm_Trabajador
         '
         Me.mnuDerechoHabiente.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiAgregarDH, Me.tsmiEditarDH, Me.tsmiQuitarDH})
         Me.mnuDerechoHabiente.Name = "mnuDerechoHabiente"
-        Me.mnuDerechoHabiente.Size = New System.Drawing.Size(117, 70)
+        Me.mnuDerechoHabiente.Size = New System.Drawing.Size(181, 92)
         '
         'tsmiAgregarDH
         '
         Me.tsmiAgregarDH.Image = Global.ISL.Win.My.Resources.Resources.Agregar
         Me.tsmiAgregarDH.Name = "tsmiAgregarDH"
-        Me.tsmiAgregarDH.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiAgregarDH.Size = New System.Drawing.Size(180, 22)
         Me.tsmiAgregarDH.Text = "Agregar"
         '
         'tsmiEditarDH
         '
         Me.tsmiEditarDH.Image = Global.ISL.Win.My.Resources.Resources.Information
         Me.tsmiEditarDH.Name = "tsmiEditarDH"
-        Me.tsmiEditarDH.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiEditarDH.Size = New System.Drawing.Size(180, 22)
         Me.tsmiEditarDH.Text = "Editar"
         '
         'tsmiQuitarDH
         '
         Me.tsmiQuitarDH.Image = Global.ISL.Win.My.Resources.Resources.SymbolRestricted
         Me.tsmiQuitarDH.Name = "tsmiQuitarDH"
-        Me.tsmiQuitarDH.Size = New System.Drawing.Size(116, 22)
+        Me.tsmiQuitarDH.Size = New System.Drawing.Size(180, 22)
         Me.tsmiQuitarDH.Text = "Quitar"
         '
         'UltraTabPageControl6
@@ -2568,7 +2568,7 @@ Partial Class frm_Trabajador
         E_Sexo1.Id = "1"
         E_Sexo1.Nombre = "Masculino"
         Me.Sexo2.Sexo = E_Sexo1
-        Me.Sexo2.Size = New System.Drawing.Size(297, 24)
+        Me.Sexo2.Size = New System.Drawing.Size(340, 24)
         Me.Sexo2.TabIndex = 6
         '
         'object_f37db69f_510c_45cc_acbf_5242ddf3f978
@@ -2576,7 +2576,7 @@ Partial Class frm_Trabajador
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.AutoSize = True
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.ForeColor = System.Drawing.Color.Black
-        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(260, 4)
+        Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Location = New System.Drawing.Point(303, 4)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Name = "object_f37db69f_510c_45cc_acbf_5242ddf3f978"
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.Size = New System.Drawing.Size(29, 14)
         Me.object_f37db69f_510c_45cc_acbf_5242ddf3f978.TabIndex = 1
@@ -2927,7 +2927,7 @@ Partial Class frm_Trabajador
         '
         Me.utcDatosPersonales.AutoScroll = True
         Me.utcDatosPersonales.Controls.Add(Me.upMantenumiento)
-        Me.utcDatosPersonales.Location = New System.Drawing.Point(1, 22)
+        Me.utcDatosPersonales.Location = New System.Drawing.Point(-10000, -10000)
         Me.utcDatosPersonales.Name = "utcDatosPersonales"
         Me.utcDatosPersonales.Size = New System.Drawing.Size(1080, 615)
         '
@@ -3453,7 +3453,7 @@ Partial Class frm_Trabajador
         '
         Me.UltraTabPageControl4.AutoScroll = True
         Me.UltraTabPageControl4.Controls.Add(Me.upComplemento)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1080, 615)
         '
