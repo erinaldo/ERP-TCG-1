@@ -484,7 +484,7 @@ Public Class frm_CierreTurno
     Private Function fc_Guardar() As Boolean
         Try
             If Operacion = "Nuevo" And cboTrabajadorApertura.Value = "" Then Throw New Exception("Debe indicar el TRABAJADOR que apertura el TURNO")
-            If swGenerarTurno And cmb_Estado.Value = "CERRADO" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
+            If swGenerarTurno And cmb_Estado.Value = "CERRADO" And cboTrabajadorCierre.Text = "" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
 
             If Not fc_Cargar_Turno() Then Return False
             TurnoActivo = dTurno.Guardar(TurnoActivo)
