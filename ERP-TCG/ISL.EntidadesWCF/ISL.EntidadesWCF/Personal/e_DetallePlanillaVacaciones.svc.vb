@@ -216,11 +216,11 @@ Public Property Trabajador() As String
     <DataMember()> _
     Public Property PromedioProduccion() As Double
         Get
-            If IndPromBono = 1 Then
-                _promedioproduccion = (Produccion1 + Produccion2 + Produccion3 + Produccion4 + Produccion5 + Produccion6) / 6
-            Else
-                _promedioproduccion = 0
-            End If
+            'If IndPromBono = 1 Then
+            '    _promedioproduccion = (Produccion1 + Produccion2 + Produccion3 + Produccion4 + Produccion5 + Produccion6) / 6
+            'Else
+            '    _promedioproduccion = 0
+            'End If
             Return _promedioproduccion
         End Get
         Set(ByVal value As Double)

@@ -373,7 +373,7 @@ Public Class e_DetalleRentaQuinta
     <DataMember()> _
     Public Property BonoExtG1() As Double
         Get
-            If Calcular And NroMes < 7 Then _bonoextg1 = BasicoG1 * PorcSeg / 100
+            'If Calcular And NroMes < 7 Then _bonoextg1 = BasicoG1 * PorcSeg / 100
             Return _bonoextg1
         End Get
         Set(ByVal value As Double)
@@ -641,7 +641,7 @@ Public Class e_DetalleRentaQuinta
     <DataMember()> _
     Public Property BonoExtG2() As Double
         Get
-            If Calcular And NroMes < 12 Then _bonoextg2 = BasicoG2 * PorcSeg / 100
+            'If Calcular And NroMes < 12 Then _bonoextg2 = BasicoG2 * PorcSeg / 100
             Return _bonoextg2
         End Get
         Set(ByVal value As Double)

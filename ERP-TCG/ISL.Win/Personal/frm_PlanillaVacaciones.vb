@@ -344,8 +344,9 @@ Public Class frm_PlanillaVacaciones
 
     Private Sub btnAdicionar_Click(sender As Object, e As EventArgs) Handles btnAdicionar.Click
         Try
+            Dim _he25 As Double = 0, _he35 As Double = 0
             If leResumenAsistencia.Count > 0 Then
-                If MessageBox.Show("¿Desar Agregar los Registros?", "Mensaje de Sistema", _
+                If MessageBox.Show("¿Desar Agregar los Registros?", "Mensaje de Sistema",
                                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     Dim _af = EjecutaFormula("AsignacionFamiliar", False, Nothing, leFormula, leParametro, leDetParametro)
                     Dim _IdTrab As String = ""
@@ -366,6 +367,14 @@ Public Class frm_PlanillaVacaciones
                                 If leSueldo.Contains(oeSueldo) Then
                                     oeSueldo = leSueldo.Item(leSueldo.IndexOf(oeSueldo))
                                     oeDetallePlaVac.Sueldo = oeSueldo.Sueldo
+                                    Dim _rwAux = dsDatosGen.Select("IDTRAB = '" & oeTrabajador.Id & "'", "")
+                                    If _rwAux.Count > 0 Then
+                                        Dim _dsFila = _rwAux.CopyToDataTable
+                                        _he25 = EjecutaFormula(gFPIHoraExt25, False, _dsFila, leFormula, leParametro, leDetParametro)
+                                        _he35 = EjecutaFormula(gFPIHoraExt35, False, _dsFila, leFormula, leParametro, leDetParametro)
+                                        oeDetallePlaVac.PromedioProduccion = _he25 + _he35
+                                    End If
+                                    'oeDetallePlaVac.PromedioProduccion = 100
                                     oeDetallePlaVac.DiasVacaciones = leResumenAsistencia.Where(Function(it) it.IdTrabajador = _IdTrab And it.IndTipoAux = 0).Sum(Function(it) it.Cantidad)
                                     oeDetallePlaVac.TipoOperacion = "I"
                                     oeDetallePlaVac.Activo = IIf(oeTrabajador.IndEstado = 0, False, True)
@@ -918,7 +927,7 @@ Public Class frm_PlanillaVacaciones
                 .ResetDisplayLayout()
                 OcultarColumna(Grilla, True, "Id", "IdTrabajador", "IdPlanillaVacaciones", "FechaCreacion", "UsuarioCreacion",
                                "FechaModifica", "UsuarioModifica", "Activo", "IndAdelanto", "MontoAdelanto", "MontoDescuento",
-                                "Produccion1", "Produccion2", "Produccion3", "Produccion4", "Produccion5", "Produccion6", "IndPromBono", "PromedioProduccion")
+                                "Produccion1", "Produccion2", "Produccion3", "Produccion4", "Produccion5", "Produccion6", "IndPromBono")
                 FormatoColumna(Grilla, "#,##0.00", ColumnStyle.Double, HAlign.Right, "Sueldo", "AsignacionFamiliar", "Renumeracion", _
                                "TotalPagar", "Produccion1", "Produccion2", "Produccion3", "Produccion4", "Produccion5", "Produccion6", _
                                "PromedioProduccion", "Monto", "MontoAdelanto", "MontoDescuento", "DiasComprados", "MontoComprado")
@@ -940,7 +949,7 @@ Public Class frm_PlanillaVacaciones
                 .DisplayLayout.Bands(0).Columns("Produccion4").Header.Caption = "Prod 4"
                 .DisplayLayout.Bands(0).Columns("Produccion5").Header.Caption = "Prod 5"
                 .DisplayLayout.Bands(0).Columns("Produccion6").Header.Caption = "Prod 6"
-                .DisplayLayout.Bands(0).Columns("PromedioProduccion").Header.Caption = "Prom. Prod."
+                .DisplayLayout.Bands(0).Columns("PromedioProduccion").Header.Caption = "Horas Extras"
                 .DisplayLayout.Bands(0).Columns("TotalPagar").Header.Caption = "Total a Pagar"
                 .DisplayLayout.Bands(0).Columns("IndAdelanto").Header.Caption = "Adelanto"
                 .DisplayLayout.Bands(0).Columns("MontoAdelanto").Header.Caption = "Monto Adel."

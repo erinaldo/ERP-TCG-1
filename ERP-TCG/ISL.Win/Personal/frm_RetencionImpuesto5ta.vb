@@ -1687,7 +1687,7 @@ Public Class frm_RetencionImpuesto5ta
         Try
             Dim nroreg As Integer = 0, _div As Integer = 0
             Dim _grati As Double = 0, _proc As Double = 0
-            '_pext = ObtieneValorParametro("PORC_ESR")
+            Dim _pext = ObtieneValorParametro("PORC_ESR")
             etiEjecuta2.Text = String.Empty : etiEjecuta2.Refresh()
             upbLoad2.Value = 0 : upbLoad2.Refresh()
             For Each fil In griDetalleRenta5.Rows
@@ -1711,7 +1711,7 @@ Public Class frm_RetencionImpuesto5ta
                     End If
                 End If
                 fil.Cells("BasicoG" & _ind).Value = _grati
-                'fil.Cells("BonoExtG" & _ind).Value = _grati * (_pext / 100)
+                fil.Cells("BonoExtG" & _ind).Value = _grati * (_pext / 100)
             Next
             griDetalleRenta5.DataBind() : griDetalleRenta5.UpdateData()
         Catch ex As Exception
