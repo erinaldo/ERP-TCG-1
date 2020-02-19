@@ -1288,7 +1288,7 @@ Public Class frm_OrdenCompra
                 oeOrdenIngreso.IdMoneda = oeMoneda.Id 'idMoneda 'Definir: Soles                 
                 oeOrdenIngreso.IdProveedor = oeOrdenCompra.IdProveedor 'idProveedor   
                 oeOrdenIngreso.Glosa = oeOrdenCompra.Glosa
-                oeOrdenIngreso.FechaOrden = Date.Now
+                oeOrdenIngreso.FechaOrden = oeOrdenCompra.FechaOrden 'cambiar con date.now
                 oeOrdenIngreso.TipoOperacion = "I"
                 oeOrdenIngreso.IdSubAlmacenDestino = ""
                 oeOrdenIngreso.IdSubAlmacenOrigen = ""
