@@ -41,9 +41,9 @@ Public Class d_ComprobantePagoElectronico
         Try
             Dim ds As DataSet
             With Item
-                ds = SQL.ExecuteDataset("CON.ComprobantePagoElectronico_LST" _
+                ds = SQL.ExecuteDataset("CON.Isp_ComprobantePagoElectronico_LST" _
                 , .TipoOperacion _
-                , .IdEmpresaSis  _
+                , .IdEmpresaSis _
                 , "" _
                 , .Id _
                 , .FechaEmision)

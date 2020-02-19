@@ -615,6 +615,8 @@ Partial Class frm_OrdenCompra
         Dim UltraDataColumn234 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdSucursal")
         Dim UltraDataColumn235 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdTurno")
         Dim UltraDataColumn236 As Infragistics.Win.UltraWinDataSource.UltraDataColumn = New Infragistics.Win.UltraWinDataSource.UltraDataColumn("IdCanalVenta")
+        Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Indicador datos Empresa SISTEMA", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim Appearance192 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraToolTipInfo2 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Codigo de Referencia Viaje Programado", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("btnEditarCliente")
@@ -938,8 +940,6 @@ Partial Class frm_OrdenCompra
         Dim Appearance237 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraToolTipInfo1 As Infragistics.Win.UltraWinToolTip.UltraToolTipInfo = New Infragistics.Win.UltraWinToolTip.UltraToolTipInfo("Indicador datos Empresa SISTEMA", Infragistics.Win.ToolTipImage.[Default], "Informacion del Sistema", Infragistics.Win.DefaultableBoolean.[Default])
         Me.UltraTabPageControl5 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griListaRequerimientos = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.odRequerimientos = New ISL.Controles.OrigenDatos(Me.components)
@@ -985,6 +985,7 @@ Partial Class frm_OrdenCompra
         Me.Agrupacion3 = New ISL.Controles.Agrupacion(Me.components)
         Me.cb_FactServ = New System.Windows.Forms.CheckBox()
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.ChIndEMP2 = New ISL.Controles.Chequear(Me.components)
         Me.txtIdViaje = New ISL.Controles.Texto(Me.components)
         Me.cboCliente = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.UltraLabel34 = New Infragistics.Win.Misc.UltraLabel()
@@ -1153,7 +1154,6 @@ Partial Class frm_OrdenCompra
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.ugb_Espera = New ISL.Win.Espere()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.ChIndEMP2 = New ISL.Controles.Chequear(Me.components)
         Me.UltraTabPageControl5.SuspendLayout()
         CType(Me.griListaRequerimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.odRequerimientos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1191,6 +1191,7 @@ Partial Class frm_OrdenCompra
         Me.Agrupacion3.SuspendLayout()
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox1.SuspendLayout()
+        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboTurnoAtencion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1292,7 +1293,6 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficOrdenCompra, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficOrdenCompra.SuspendLayout()
-        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl5
@@ -1300,7 +1300,7 @@ Partial Class frm_OrdenCompra
         Me.UltraTabPageControl5.Controls.Add(Me.griListaRequerimientos)
         Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(583, 251)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(583, 226)
         '
         'griListaRequerimientos
         '
@@ -1422,7 +1422,7 @@ Partial Class frm_OrdenCompra
         Me.griListaRequerimientos.Font = New System.Drawing.Font("Tahoma", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaRequerimientos.Location = New System.Drawing.Point(0, 0)
         Me.griListaRequerimientos.Name = "griListaRequerimientos"
-        Me.griListaRequerimientos.Size = New System.Drawing.Size(583, 251)
+        Me.griListaRequerimientos.Size = New System.Drawing.Size(583, 226)
         Me.griListaRequerimientos.TabIndex = 0
         Me.griListaRequerimientos.TabStop = False
         Me.griListaRequerimientos.Tag = ""
@@ -1912,7 +1912,7 @@ Partial Class frm_OrdenCompra
         Me.UltraTabPageControl12.Controls.Add(Me.gbeListadoMateriales)
         Me.UltraTabPageControl12.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl12.Name = "UltraTabPageControl12"
-        Me.UltraTabPageControl12.Size = New System.Drawing.Size(1347, 280)
+        Me.UltraTabPageControl12.Size = New System.Drawing.Size(1347, 255)
         '
         'gridDetalleOCMaterial
         '
@@ -2129,7 +2129,7 @@ Partial Class frm_OrdenCompra
         Me.gridDetalleOCMaterial.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gridDetalleOCMaterial.Location = New System.Drawing.Point(0, 0)
         Me.gridDetalleOCMaterial.Name = "gridDetalleOCMaterial"
-        Me.gridDetalleOCMaterial.Size = New System.Drawing.Size(739, 280)
+        Me.gridDetalleOCMaterial.Size = New System.Drawing.Size(739, 255)
         Me.gridDetalleOCMaterial.TabIndex = 0
         Me.gridDetalleOCMaterial.TabStop = False
         Me.gridDetalleOCMaterial.Text = "Grilla2"
@@ -2151,11 +2151,11 @@ Partial Class frm_OrdenCompra
         Me.gbeListadoMateriales.CaptionAlignment = Infragistics.Win.Misc.GroupBoxCaptionAlignment.Center
         Me.gbeListadoMateriales.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.gbeListadoMateriales.Dock = System.Windows.Forms.DockStyle.Right
-        Me.gbeListadoMateriales.ExpandedSize = New System.Drawing.Size(608, 280)
+        Me.gbeListadoMateriales.ExpandedSize = New System.Drawing.Size(608, 255)
         Me.gbeListadoMateriales.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.gbeListadoMateriales.Location = New System.Drawing.Point(739, 0)
         Me.gbeListadoMateriales.Name = "gbeListadoMateriales"
-        Me.gbeListadoMateriales.Size = New System.Drawing.Size(608, 280)
+        Me.gbeListadoMateriales.Size = New System.Drawing.Size(608, 255)
         Me.gbeListadoMateriales.TabIndex = 1
         Me.gbeListadoMateriales.TabStop = False
         Me.gbeListadoMateriales.Text = " Materiales"
@@ -2167,7 +2167,7 @@ Partial Class frm_OrdenCompra
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(585, 274)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(585, 249)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'utcListadosMateriales
@@ -2180,7 +2180,7 @@ Partial Class frm_OrdenCompra
         Me.utcListadosMateriales.Location = New System.Drawing.Point(0, 0)
         Me.utcListadosMateriales.Name = "utcListadosMateriales"
         Me.utcListadosMateriales.SharedControlsPage = Me.UltraTabSharedControlsPage3
-        Me.utcListadosMateriales.Size = New System.Drawing.Size(585, 274)
+        Me.utcListadosMateriales.Size = New System.Drawing.Size(585, 249)
         Me.utcListadosMateriales.Style = Infragistics.Win.UltraWinTabControl.UltraTabControlStyle.Office2007Ribbon
         Me.utcListadosMateriales.TabIndex = 244
         UltraTab6.Key = "0"
@@ -2202,7 +2202,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabSharedControlsPage3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage3.Name = "UltraTabSharedControlsPage3"
-        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(583, 251)
+        Me.UltraTabSharedControlsPage3.Size = New System.Drawing.Size(583, 226)
         '
         'UltraTabPageControl13
         '
@@ -2793,6 +2793,23 @@ Partial Class frm_OrdenCompra
         Me.UltraGroupBox1.Size = New System.Drawing.Size(450, 110)
         Me.UltraGroupBox1.TabIndex = 40
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'ChIndEMP2
+        '
+        Appearance108.ForeColor = System.Drawing.Color.Navy
+        Me.ChIndEMP2.Appearance = Appearance108
+        Me.ChIndEMP2.BackColor = System.Drawing.Color.Transparent
+        Me.ChIndEMP2.BackColorInternal = System.Drawing.Color.Transparent
+        Me.ChIndEMP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChIndEMP2.ForeColor = System.Drawing.Color.Black
+        Me.ChIndEMP2.Location = New System.Drawing.Point(344, 84)
+        Me.ChIndEMP2.Name = "ChIndEMP2"
+        Me.ChIndEMP2.Size = New System.Drawing.Size(47, 20)
+        Me.ChIndEMP2.TabIndex = 54
+        Me.ChIndEMP2.Text = "EMP"
+        UltraToolTipInfo1.ToolTipText = "Indicador datos Empresa SISTEMA"
+        UltraToolTipInfo1.ToolTipTitle = "Informacion del Sistema"
+        Me.UltraToolTipManager1.SetUltraToolTip(Me.ChIndEMP2, UltraToolTipInfo1)
         '
         'txtIdViaje
         '
@@ -5031,10 +5048,10 @@ Partial Class frm_OrdenCompra
         Me.ficDetalleOCMateriales.Controls.Add(Me.UltraTabPageControl13)
         Me.ficDetalleOCMateriales.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ficDetalleOCMateriales.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficDetalleOCMateriales.Location = New System.Drawing.Point(0, 237)
+        Me.ficDetalleOCMateriales.Location = New System.Drawing.Point(0, 262)
         Me.ficDetalleOCMateriales.Name = "ficDetalleOCMateriales"
         Me.ficDetalleOCMateriales.SharedControlsPage = Me.UltraTabSharedControlsPage5
-        Me.ficDetalleOCMateriales.Size = New System.Drawing.Size(1349, 303)
+        Me.ficDetalleOCMateriales.Size = New System.Drawing.Size(1349, 278)
         Me.ficDetalleOCMateriales.TabIndex = 1
         UltraTab12.TabPage = Me.UltraTabPageControl12
         UltraTab12.Text = "Detalle - OC"
@@ -5048,7 +5065,7 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraTabSharedControlsPage5.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage5.Name = "UltraTabSharedControlsPage5"
-        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1347, 280)
+        Me.UltraTabSharedControlsPage5.Size = New System.Drawing.Size(1347, 255)
         '
         'UltraToolbarsDockArea1
         '
@@ -5058,7 +5075,7 @@ Partial Class frm_OrdenCompra
         Me.UltraToolbarsDockArea1.ForeColor = System.Drawing.Color.Navy
         Me.UltraToolbarsDockArea1.Location = New System.Drawing.Point(0, 211)
         Me.UltraToolbarsDockArea1.Name = "UltraToolbarsDockArea1"
-        Me.UltraToolbarsDockArea1.Size = New System.Drawing.Size(1349, 26)
+        Me.UltraToolbarsDockArea1.Size = New System.Drawing.Size(1349, 51)
         Me.UltraToolbarsDockArea1.ToolbarsManager = Me.MenuDetalle
         '
         'MenuDetalle
@@ -5392,23 +5409,6 @@ Partial Class frm_OrdenCompra
         '
         Me.UltraToolTipManager1.ContainingControl = Me
         '
-        'ChIndEMP2
-        '
-        Appearance108.ForeColor = System.Drawing.Color.Navy
-        Me.ChIndEMP2.Appearance = Appearance108
-        Me.ChIndEMP2.BackColor = System.Drawing.Color.Transparent
-        Me.ChIndEMP2.BackColorInternal = System.Drawing.Color.Transparent
-        Me.ChIndEMP2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChIndEMP2.ForeColor = System.Drawing.Color.Black
-        Me.ChIndEMP2.Location = New System.Drawing.Point(344, 84)
-        Me.ChIndEMP2.Name = "ChIndEMP2"
-        Me.ChIndEMP2.Size = New System.Drawing.Size(47, 20)
-        Me.ChIndEMP2.TabIndex = 54
-        Me.ChIndEMP2.Text = "EMP"
-        UltraToolTipInfo1.ToolTipText = "Indicador datos Empresa SISTEMA"
-        UltraToolTipInfo1.ToolTipTitle = "Informacion del Sistema"
-        Me.UltraToolTipManager1.SetUltraToolTip(Me.ChIndEMP2, UltraToolTipInfo1)
-        '
         'frm_OrdenCompra
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5458,6 +5458,7 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout()
+        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIdViaje, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboTurnoAtencion, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5568,7 +5569,6 @@ Partial Class frm_OrdenCompra
         CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficOrdenCompra, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficOrdenCompra.ResumeLayout(False)
-        CType(Me.ChIndEMP2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

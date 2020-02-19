@@ -75,7 +75,7 @@ Public Class d_ComprobantePagoElectronico_Resumen
     Public Function Eliminar(ByVal Item As e_ComprobantePagoElectronico_Resumen) As Boolean
         Try
             With Item
-                SQL.ExecuteNonQuery("[CON].[ComprobantePagoElectronico_Resumen_IAE]" _
+                SQL.ExecuteNonQuery("[CON].[Isp_ComprobantePagoElectronico_Resumen_IAE]" _
                        , "E" _
                        , "" _
                        , .Id _
@@ -145,6 +145,7 @@ Public Class d_ComprobantePagoElectronico_Resumen
             Throw ex
         End Try
     End Function
+
 #End Region
 
 End Class
