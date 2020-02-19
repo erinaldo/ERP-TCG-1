@@ -209,7 +209,7 @@ Public Class frm_Calibraciones
     End Sub
 
     Public Overrides Sub Imprimir()
-        gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
+        gmt_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
     End Sub
 
     Public Overrides Sub Salir()
@@ -2317,7 +2317,7 @@ Public Class frm_Calibraciones
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
-                        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
+                        gmt_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
 
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes

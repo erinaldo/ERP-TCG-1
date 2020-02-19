@@ -691,7 +691,7 @@ Public Class frm_CanjeDocumentos
             mt_LlenaObjeto()
             DocumentoGenerado.IndServicioMaterial = "M" '@0001
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
-            gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
+            gmt_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
@@ -898,7 +898,7 @@ Public Class frm_CanjeDocumentos
         '' Imprimir
         For Each Documento In ListaOtrosDocumentos
             If Documento.IndAnexo = True Then
-                gtm_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
+                gmt_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
             End If
         Next
 

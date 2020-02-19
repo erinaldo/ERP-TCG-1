@@ -241,7 +241,7 @@ Public Class frm_VentaCombustible
                     OrdenDocumento.IdOrden = .ActiveRow.Cells("Id").Value
                     Documento = dOrdenDocumento.ObtenerDocumento(OrdenDocumento)
                     If Documento.Id <> "" Then
-                        gtm_Imprimir_Documento(Documento.Id, "TICKET", "GRIFO")
+                        gmt_Imprimir_Documento(Documento.Id, "TICKET", "GRIFO")
                     Else
                         MsgBox("No se encontro el documento asociado", MsgBoxStyle.Information, Me.Text)
                     End If
@@ -2306,7 +2306,7 @@ Public Class frm_VentaCombustible
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
-                        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
+                        gmt_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
 
                         Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                             Case Windows.Forms.DialogResult.Yes

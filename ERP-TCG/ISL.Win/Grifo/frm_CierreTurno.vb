@@ -24,6 +24,7 @@ Public Class frm_CierreTurno
     Private dTurnoDetalle As New l_CierreTurno_Detalle
     Private ListaDetallesDinamicos As New List(Of e_CierreTurno_Detalle)
     Private swNuevo As Boolean
+    Private swGenerarTurno As Boolean = False
 
     Public Overrides Function getInstancia() As frm_MenuPadre
         If instancia Is Nothing Then
@@ -57,7 +58,11 @@ Public Class frm_CierreTurno
             TurnoActivo = fc_Inicializar_Turno("I")
             mt_ControlBotoneria()
             mt_Agregar_Detalles()
-            mt_HabilitarControles()
+            If gUsuarioSGI.Login = "ADMINERP" Then
+                mt_Habilitar_ModoAdmin()
+            Else
+                mt_Habilitar_Controles()
+            End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -72,9 +77,24 @@ Public Class frm_CierreTurno
                 TurnoActivo.TipoOperacion = "" : TurnoActivo.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
                 TurnoActivo = dTurno.Obtener(TurnoActivo)
                 TurnoActivo.TipoOperacion = "A"
+                If TurnoActivo.IdEstado = "ABIERTO" Then
+                    swGenerarTurno = True
+                End If
                 mt_Mostrar_Turno()
                 mt_ControlBotoneria()
-                mt_HabilitarControles()
+
+                '' El TURNO aun esta ABIERTO
+                If TurnoActivo.IdEstado = "ABIERTO" Then
+                    swGenerarTurno = True
+                End If
+                UltraGroupBox2.Visible = swGenerarTurno
+
+                '' Habilitar Controles para EDICION
+                If gUsuarioSGI.Login = "ADMINERP" Or gUsuarioSGI.Login = "DCAYOTOB" Or gUsuarioSGI.Login = "CCAMPOSN" Then
+                    mt_Habilitar_ModoAdmin()
+                Else
+                    mt_Habilitar_Controles()
+                End If
                 mt_Actualizar_Columnas()
             End If
         Catch ex As Exception
@@ -228,6 +248,7 @@ Public Class frm_CierreTurno
                 .TipoOperacion = ""
                 .IdEmpresaSis = gs_IdEmpresaSistema
                 .IdSucursal = gs_IdSucursal
+                .PrefijoID = gs_PrefijoIdSucursal
                 .Fecha = dtpFechaInicio.Value.Date
                 .FechaCrea = dtpFechaFin.Value.Date
                 .Activo = 1
@@ -302,82 +323,135 @@ Public Class frm_CierreTurno
         Return Turno
     End Function
 
-    Private Sub mt_HabilitarControles()
-        '' Por Tipo Operacion
-        Select Case Operacion
-            Case "Nuevo"
-                cmb_Turno.Enabled = True
-                cboTrabajadorApertura.Enabled = True
-                cboTrabajadorCierre.Enabled = False
-            Case "Editar"
-                cmb_Turno.Enabled = False
-                cboTrabajadorApertura.Enabled = False
-                cboTrabajadorCierre.Enabled = True
-        End Select
+    Private Sub mt_Habilitar_Controles()
+        Try
+            '' Por Tipo Operacion
+            Select Case Operacion
+                Case "Nuevo"
+                    cmb_Turno.Enabled = True
+                    cboTrabajadorApertura.Enabled = True
+                    cboTrabajadorCierre.Enabled = False
+                Case "Editar"
+                    cmb_Turno.Enabled = False
+                    cboTrabajadorApertura.Enabled = False
+                    cboTrabajadorCierre.Enabled = True
+            End Select
 
-        '' Por Estado
-        If TurnoActivo.Id <> "" Then
-            With udg_ContometroAnalogico.DisplayLayout.Bands(0)
-                For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
-                Next
-                .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
-            End With
+            '' Por Estado
+            If TurnoActivo.Id <> "" Then
+                With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+                With udg_ContometroDigital.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+                With udg_Almacenes.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+            End If
+            If TurnoActivo.IdEstado = "ABIERTO" Then
+                With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+                With udg_ContometroDigital.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+                With udg_Almacenes.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                    .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
+                End With
+            End If
+            If TurnoActivo.IdEstado = "CERRADO" Then
+                cmb_Turno.Enabled = False
+                cmb_Estado.Enabled = False
+                cboTrabajadorApertura.Enabled = False
+                cboTrabajadorCierre.Enabled = False
+                UltraGroupBox2.Enabled = False
+                With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                End With
+                With udg_ContometroDigital.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                End With
+                With udg_Almacenes.DisplayLayout.Bands(0)
+                    For Each Columna In .Columns
+                        Columna.CellClickAction = CellClickAction.RowSelect
+                    Next
+                End With
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Sub
+
+    Private Sub mt_Habilitar_ModoAdmin()
+        Try
+            gmt_ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 1)
             With udg_ContometroDigital.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
-                .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
+            End With
+            With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+                For Each Columna In .Columns
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
+                Next
             End With
             With udg_Almacenes.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
-                .Columns("ValorInicial").CellClickAction = CellClickAction.EditAndSelectText
             End With
-        End If
-        If TurnoActivo.IdEstado = "ABIERTO" Then
-            With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+            With udg_Combustibles.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
-                .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
             End With
-            With udg_ContometroDigital.DisplayLayout.Bands(0)
+            With udg_VentasxCombustible.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
-                .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
             End With
-            With udg_Almacenes.DisplayLayout.Bands(0)
+            With udg_VentasxCombustibleResumen.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
-                .Columns("ValorFinal").CellClickAction = CellClickAction.EditAndSelectText
             End With
-        End If
-        If TurnoActivo.IdEstado = "CERRADO" Then
-            cmb_Turno.Enabled = False
-            cmb_Estado.Enabled = False
-            cboTrabajadorApertura.Enabled = False
-            cboTrabajadorCierre.Enabled = False
-            UltraGroupBox2.Enabled = False
-            With udg_ContometroAnalogico.DisplayLayout.Bands(0)
+            With udg_ResumenVentas.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
             End With
-            With udg_ContometroDigital.DisplayLayout.Bands(0)
+            With udg_DetalleVenta.DisplayLayout.Bands(0)
                 For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
+                    Columna.CellClickAction = CellClickAction.EditAndSelectText
                 Next
             End With
-            With udg_Almacenes.DisplayLayout.Bands(0)
-                For Each Columna In .Columns
-                    Columna.CellClickAction = CellClickAction.RowSelect
-                Next
-            End With
-        End If
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Sub
     Private Sub mt_Mostrar_TurnoDetalles()
         Try
@@ -410,12 +484,12 @@ Public Class frm_CierreTurno
     Private Function fc_Guardar() As Boolean
         Try
             If Operacion = "Nuevo" And cboTrabajadorApertura.Value = "" Then Throw New Exception("Debe indicar el TRABAJADOR que apertura el TURNO")
-            If cmb_Estado.Value = "CERRADO" And cboTrabajadorCierre.Value = "" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
+            If swGenerarTurno And cmb_Estado.Value = "CERRADO" And cboTrabajadorCierre.Text = "" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
 
             If Not fc_Cargar_Turno() Then Return False
             TurnoActivo = dTurno.Guardar(TurnoActivo)
 
-            If cmb_Estado.Value = "CERRADO" Then
+            If swGenerarTurno And cmb_Estado.Value = "CERRADO" Then
                 mt_Generar_TurnoNuevo()
                 mt_Guardar_DetallesDinamicos()
             End If
@@ -442,16 +516,17 @@ Public Class frm_CierreTurno
         Dim TurnoNuevo As New e_CierreTurno
         TurnoNuevo = fc_Inicializar_Turno("I")
         With TurnoNuevo
+            .IdEmpresaSis = gs_IdEmpresaSistema : .PrefijoID = gs_PrefijoIdSucursal : .IdSucursal = gs_IdSucursal
+            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date : .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .IdEstado = "ABIERTO" : .Estado = "ABIERTO"
             .Fecha = Now.Date : .HoraInicio = dtpHoraInicio.Value : .HoraFin = dtpHoraFin.Value
             .IdTrabajador_Apertura = cboTrabajadorCierre.Value : .Trabajador_Apertura = cboTrabajadorCierre.Text
             .IdTurno = cmb_TurnoNuevo.Value : .Turno = cmb_TurnoNuevo.Text
-            .UsuarioCrea = gUsuarioSGI.Id : .FechaCrea = Now.Date
-            .UsuarioModifica = gUsuarioSGI.Id : .FechaModifica = Now.Date
             .Detalles.AddRange(TurnoActivo.Detalles)
             For Each Detalle In TurnoNuevo.Detalles
-                Detalle.TipoOperacion = "I"
-                Detalle.Id = ""
+                Detalle.TipoOperacion = "I" : Detalle.Id = ""
+                Detalle.IdEmpresaSis = gs_IdEmpresaSistema : Detalle.PrefijoID = gs_PrefijoIdSucursal : Detalle.IdSucursal = gs_IdSucursal
+                Detalle.UsuarioCrea = gUsuarioSGI.Id : Detalle.FechaCrea = Now.Date : Detalle.UsuarioModifica = gUsuarioSGI.Id : Detalle.FechaModifica = Now.Date
                 Detalle.IdCierreTurno = ""
                 Select Case Detalle.Rubro
                     Case "CONTOMETRO_DIGITAL", "CONTOMETRO_MECANICO", "ALMACENES"
@@ -770,7 +845,7 @@ Public Class frm_CierreTurno
             ListaLado = dLado.Listar(New e_Lado With {.TipoOperacion = "ALL"})
 
             '' Trabajadores
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = "Trabajador1"} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = cboTrabajadorApertura.Text, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
 
             '' Contometros
             For Each Lado In ListaLado
@@ -778,23 +853,23 @@ Public Class frm_CierreTurno
                     Select Case Combustible.Id
                         Case "1CH000001990"
                             If Lado.Diesel Then
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
                             End If
                         Case "1CH000000147"
                             If Lado.G84 Then
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
                             End If
                         Case "1CH000000148"
                             If Lado.G90 Then
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
                             End If
                         Case "1CH000000149"
                             If Lado.G95 Then
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
                             End If
                     End Select
                 Next
@@ -802,16 +877,70 @@ Public Class frm_CierreTurno
 
             '' Precios de Combustibles
             For Each Combustible In ListaCombustibles
-                Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+                Detalle = New e_CierreTurno_Detalle With {.Rubro = "PRECIO_COMBUSTIBLE", .Grupo = "", .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
             Next
 
             '' Almacenes
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000001", .IdConcepto = "1CH000000003", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000002", .IdConcepto = "1CH000000005", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000004", .IdConcepto = "1CH000000009", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000006", .IdConcepto = "1CH000000012", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000007", .IdConcepto = "1CH000000014", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000001", .IdConcepto = "1CH000000003", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000002", .IdConcepto = "1CH000000005", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000004", .IdConcepto = "1CH000000009", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000006", .IdConcepto = "1CH000000012", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000007", .IdConcepto = "1CH000000014", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
 
+
+            mt_Mostrar_TurnoDetalles()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_Agregar_DetalleEdicion()
+        Try
+            Dim ListaCombustibles As New List(Of e_Material), dMaterial As New l_Material
+            Dim ListaLado As New List(Of e_Lado), dLado As New l_Lado
+            Dim Detalle As New e_CierreTurno_Detalle
+
+            ListaCombustibles = dMaterial.Listar(New e_Material With {.TipoOperacion = "S"})
+            ListaLado = dLado.Listar(New e_Lado With {.TipoOperacion = "ALL"})
+
+            '' Trabajadores
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "TRABAJADORES", .Descripcion = cboTrabajadorApertura.Text, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+
+            '' Contometros
+            For Each Lado In ListaLado
+                For Each Combustible In ListaCombustibles
+                    Select Case Combustible.Id
+                        Case "1CH000001990"
+                            If Lado.Diesel Then
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                            End If
+                        Case "1CH000000147"
+                            If Lado.G84 Then
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                            End If
+                        Case "1CH000000148"
+                            If Lado.G90 Then
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                            End If
+                        Case "1CH000000149"
+                            If Lado.G95 Then
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_DIGITAL", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                                Detalle = New e_CierreTurno_Detalle With {.Rubro = "CONTOMETRO_MECANICO", .Grupo = Lado.Nombre, .IdConcepto = Combustible.Id, .Concepto = Combustible.Nombre, .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+                            End If
+                    End Select
+                Next
+            Next
+
+
+            '' Almacenes
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000001", .IdConcepto = "1CH000000003", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000002", .IdConcepto = "1CH000000005", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000004", .IdConcepto = "1CH000000009", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000006", .IdConcepto = "1CH000000012", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000007", .IdConcepto = "1CH000000014", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
 
             mt_Mostrar_TurnoDetalles()
         Catch ex As Exception
@@ -849,7 +978,14 @@ Public Class frm_CierreTurno
                     Cronometro.ValorAux1 = 0
                 Next
                 '' Acumular Cantidad Vendida
-                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO" Or it.Rubro = "VARILLAJE").ToList
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "CONTOMETRO_DIGITAL" Or it.Rubro = "CONTOMETRO_MECANICO").ToList
+                    For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO" Or it.Rubro = "CALIBRACIONES").ToList
+                        If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
+                            Cronometro.ValorAux1 += Venta.ValorReal
+                        End If
+                    Next
+                Next
+                For Each Cronometro In TurnoActivo.Detalles.Where(Function(it) it.Rubro = "VARILLAJE").ToList
                     For Each Venta In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList
                         If Cronometro.Grupo = Venta.Descripcion And Cronometro.IdConcepto = Venta.IdConcepto Then
                             Cronometro.ValorAux1 += Venta.ValorReal
@@ -877,6 +1013,10 @@ Public Class frm_CierreTurno
 
     Private Sub cmb_Turno_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Turno.ValueChanged
         cmb_TurnoNuevo.Value = fc_Devolver_IdTurnoSiguiente(cmb_TurnoNuevo.Value)
+    End Sub
+
+    Private Sub btn_AgregarDetalles_Click(sender As Object, e As EventArgs) Handles btn_AgregarDetalles.Click
+        mt_Agregar_DetalleEdicion()
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated

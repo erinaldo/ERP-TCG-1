@@ -527,6 +527,7 @@ Public Class frm_OtrosDescuentos
             cboTipo.Items.Add("JUDICIAL")
             cboTipo.Items.Add("SEGURO")
             cboTipo.Items.Add("OTROS INAFECTO")
+            cboTipo.Items.Add("TARDANZAS")
             cboTipo.SelectedIndex = -1
 
             cboTipoI.Items.Clear()
@@ -534,6 +535,7 @@ Public Class frm_OtrosDescuentos
             cboTipoI.Items.Add("JUDICIAL")
             cboTipoI.Items.Add("SEGURO")
             cboTipoI.Items.Add("OTROS INAFECTO")
+            cboTipoI.Items.Add("TARDANZAS")
             cboTipoI.SelectedIndex = -1
 
             cboTipoBus.Items.Clear()
@@ -542,6 +544,7 @@ Public Class frm_OtrosDescuentos
             cboTipoBus.Items.Add("JUDICIAL")
             cboTipoBus.Items.Add("SEGURO")
             cboTipoBus.Items.Add("OTROS INAFECTO")
+            cboTipoBus.Items.Add("TARDANZAS")
             cboTipoBus.SelectedIndex = 0
 
             cboIndRef.Items.Clear()

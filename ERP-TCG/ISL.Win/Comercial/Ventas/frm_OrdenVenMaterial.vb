@@ -234,7 +234,7 @@ Public Class frm_OrdenVenMaterial
 
     Public Overrides Sub Imprimir()
         'gtm_Imprimir_Documento("CHC000000000008", "TICKET", "OV")
-        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV") '@0001
+        gmt_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV") '@0001
     End Sub
 
     Public Overrides Sub Salir()
@@ -999,10 +999,14 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgCliente.InitializeLayout
+        'Dim oe As e_Empresa
+        'oe.CorreoEnvioXml2
         Me.cbgCliente.ValueMember = "Id"
         Me.cbgCliente.DisplayMember = "Nombre"
         With cbgCliente.DisplayLayout.Bands(0)
+            .Columns("CorreoEnvioXml").Hidden = True
             .Columns("Id").Hidden = True
+            '.Columns("Id").Hidden = True
             .Columns("TipoEmpresa").Hidden = True
             .Columns("Codigo").Hidden = True
             .Columns("IdDireccionTanqueo").Hidden = True
@@ -1254,6 +1258,7 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial.IdSucursal = gs_PrefijoIdSucursal
             oeOrdenComercial.Tipo = 2
             oeOrdenComercial.TipoExistencia = 1
+            oeOrdenComercial.TipoOperacion = "V"
             If rdbDatosBasicos.Checked Then
                 oeOrdenComercial.IdEmpresa = cbgClienteB.Value
                 oeOrdenComercial.IdEstado = cboEstado.Value
@@ -2311,12 +2316,13 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial.oeDocumento.DatosImpresion.IdMedioPago = cboTipoPago.Value '@0001
             oeOrdenComercial.oeDocumento.DatosImpresion.MedioPago = cboTipoPago.Text  '@0001
             oeOrdenComercial.oeDocumento.IndServicioMaterial = "M" '@0001
+            oeOrdenComercial.oeDocumento.IndElectronico = True '@0001
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
                         'Select Case cmbTipoDocumento.Value '@0001
                         'Case "GCH000000001" '@0001
-                        gtm_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
+                        gmt_Imprimir_Documento(oeDocumento.Id, "TICKET", "OV")
                         'End Select '@0001
                         'Select Case MessageBox.Show("¿Desea Emitir el Documento?", "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
                         '    Case Windows.Forms.DialogResult.Yes

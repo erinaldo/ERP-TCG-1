@@ -418,7 +418,7 @@ Module m_Funciones
         End Try
     End Sub
 
-    Public Sub gtm_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
         Try
             Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
             FRM.ShowDialog()
@@ -428,7 +428,7 @@ Module m_Funciones
     End Sub
 
     '@0001 Ini
-    Public Sub gtm_Imprimir_DocumentoTicke(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_DocumentoTicket(IdMovimientoDocumento As String, Papel As String, Modulo As String)
         Try
             Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
             FRM.Size = New System.Drawing.Size(400, 700)
@@ -438,6 +438,143 @@ Module m_Funciones
         End Try
     End Sub
     '@0001
+
+    Public Sub gmt_ImprimirDirecto(IdDocumentoCtble As String, TipoPapel As String, GenerarPDF As Boolean)
+        Try
+            Dim VISOR As New Microsoft.Reporting.WinForms.ReportViewer
+            Dim DATASOURCE As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim DT1 As New DataTable, DT2 As New DataTable
+            Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim wr_DocumentoCtble As New l_MovimientoDocumento, DocumentoCtble As New e_MovimientoDocumento
+
+            '' Cargar Reporte en VISOR 
+            DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+
+            DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = DocumentoCtble.Id})
+            RDS1.Name = "Cabecera"
+            RDS1.Value = DT1
+
+            DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = DocumentoCtble.Id})
+            RDS2.Name = "Detalle"
+            RDS2.Value = DT2
+
+            With VISOR
+                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                .LocalReport.ReportPath = fs_Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento, "GRIFO", TipoPapel)
+                .LocalReport.DataSources.Clear()
+                .LocalReport.DataSources.Add(RDS1)
+                .LocalReport.DataSources.Add(RDS2)
+                .LocalReport.DisplayName = DT1.Rows(0).Item("DOI").ToString + "-" + DT1.Rows(0).Item("SerieNumero").ToString
+                .LocalReport.Refresh()
+            End With
+
+            VISOR.RefreshReport()
+            VISOR.PrintDialog()
+
+            '' Generar archivo PDF
+            If GenerarPDF Then
+                Dim Archivo As String = "D:\Sistema\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+                Dim PDF As Byte()
+                Dim filepath As String = Archivo
+                If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
+                PDF = VISOR.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                Dim fs As New FileStream(Archivo, FileMode.Create)
+                fs.Write(PDF, 0, PDF.Length)
+                fs.Close()
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub gmt_Generar_PDF(IdDocumentoCtble As String)
+        Try
+            Dim VISOR As New Microsoft.Reporting.WinForms.ReportViewer
+            Dim DATASOURCE As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim DT1 As New DataTable, DT2 As New DataTable
+            Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim wr_DocumentoCtble As New l_MovimientoDocumento, DocumentoCtble As New e_MovimientoDocumento
+
+            '' Cargar Reporte en VISOR
+            DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+
+            DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = DocumentoCtble.Id})
+            RDS1.Name = "Cabecera"
+            RDS1.Value = DT1
+
+            DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = DocumentoCtble.Id})
+            RDS2.Name = "Detalle"
+            RDS2.Value = DT2
+
+            With VISOR
+                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                .LocalReport.ReportPath = fs_Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento, "GRIFO", "A4")
+                .LocalReport.DataSources.Clear()
+                .LocalReport.DataSources.Add(RDS1)
+                .LocalReport.DataSources.Add(RDS2)
+                .LocalReport.DisplayName = DT1.Rows(0).Item("DOI").ToString + "-" + DT1.Rows(0).Item("SerieNumero").ToString
+                .LocalReport.Refresh()
+            End With
+
+            VISOR.RefreshReport()
+
+            '' Generar archivo PDF
+            Dim Archivo As String = "D:\Sistema\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            Dim PDF As Byte()
+            Dim filepath As String = Archivo
+            If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
+            PDF = VISOR.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+            Dim fs As New FileStream(Archivo, FileMode.Create)
+            fs.Write(PDF, 0, PDF.Length)
+            fs.Close()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Function fs_Obtener_RutaReporte(IdTipoDocumento As String, ModuloEmision As String, TipoPapel As String) As String
+        'Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
+        'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
+        Dim Raiz As String = Path.Combine(Application.StartupPath, "Grifo") & "\Impresiones\"
+        Select Case ModuloEmision
+            Case "GRIFO"
+                Select Case IdTipoDocumento
+                    Case "1CH000000026" 'Factura
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_FacturaVenta_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_FacturaVenta_Ticket.rdlc"
+                        End Select
+                    Case "1CH000000002" 'Boleta de Venta
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_BoletaVenta_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_BoletaVenta_Ticket.rdlc"
+                        End Select
+                    Case "GCH000000001" 'Nota de Despacho
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_NotaDespacho_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_NotaDespacho_Ticket.rdlc"
+                        End Select
+                    Case Else
+                        Select Case TipoPapel
+                            Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4.rdlc"
+                            Case "TICKET" : Return Raiz & "rpt_DocumentoCtble_Ticket.rdlc"
+                        End Select
+                End Select
+            Case "OV"
+                'Select Case IdTipoDocumento '@0001
+                'Case "GCH000000001" 'Nota de Despacho '@0001
+                Select Case TipoPapel
+                    Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4_Comercial.rdlc"
+                    Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
+                    Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
+                End Select
+                'End Select '@0001
+                'Case Else '@0001
+                Return ""
+        End Select
+
+        Return ""
+    End Function
 
     Public Sub gmt_ListarEmpresa(Tipo As String, Combo As UltraCombo, IdProveedor As String, IndRuc As Boolean, Optional ByVal IndFiltro As Boolean = True)
         Try

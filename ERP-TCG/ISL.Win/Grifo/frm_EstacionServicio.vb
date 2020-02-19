@@ -157,8 +157,9 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            gtm_Imprimir_DocumentoTicke(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
-
+            'gmt_Imprimir_DocumentoTicket(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
+            gmt_ImprimirDirecto(OrdenVenta.oeDocumento.Id, "TICKET", False)
+            gmt_Generar_PDF(OrdenVenta.oeDocumento.Id)
             Nuevo()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
@@ -1067,20 +1068,11 @@ Public Class frm_EstacionServicio
                 DescuentoTotal += Item.Dscto
             Next
             SubTotal = Total / (1 + mdblIGV)
-            nud_Total.Value = Total
-            nud_SubTotal.Value = SubTotal
-            nud_Impuesto.Value = Total - SubTotal
+            nud_Total.Value = Math.Round(Total, 2)
+            nud_SubTotal.Value = Math.Round(SubTotal, 2)
+            nud_Impuesto.Value = Math.Round(Total - SubTotal, 2)
         Catch ex As Exception
             Throw ex
-        End Try
-    End Sub
-
-    Private Sub mt_Imprimir_Documento()
-        Dim id As String = ""
-        Try
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
 
@@ -1362,7 +1354,8 @@ Public Class frm_EstacionServicio
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
+            'gmt_CPE(New e_MovimientoDocumento With {.Id = "CHG000000002062"})
+            gmt_ImprimirDirecto("CHG000000002998", "TICKET", False)
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
@@ -1382,12 +1375,13 @@ Public Class frm_EstacionServicio
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            gtm_Imprimir_Documento("CHG000000002998", "A4", "GRIFO") 'Factura
-            gtm_Imprimir_Documento("CHG000000002997", "A4", "GRIFO") 'Nota de Credito
-            gtm_Imprimir_Documento("CHG000000002991", "A4", "GRIFO") 'Boleta
-            gtm_Imprimir_Documento("CHG000000002998", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002997", "TICKET", "GRIFO")
-            gtm_Imprimir_Documento("CHG000000002991", "TICKET", "GRIFO")
+            gmt_Generar_PDF("CHG000000002998")
+            'gmt_Imprimir_Documento("CHG000000002998", "A4", "GRIFO") 'Factura
+            'gmt_Imprimir_Documento("CHG000000002997", "A4", "GRIFO") 'Nota de Credito
+            'gmt_Imprimir_Documento("CHG000000002991", "A4", "GRIFO") 'Boleta
+            'gmt_Imprimir_Documento("CHG000000002998", "TICKET", "GRIFO")
+            'gmt_Imprimir_Documento("CHG000000002997", "TICKET", "GRIFO")
+            'gmt_Imprimir_Documento("CHG000000002991", "TICKET", "GRIFO")
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try

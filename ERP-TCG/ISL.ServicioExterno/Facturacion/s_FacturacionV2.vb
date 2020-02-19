@@ -45,7 +45,7 @@ Public Class s_FacturacionV2
                 valorCodBarras = PreparaCodigoBarras(dtCab, flagME, valorResumen, firma, dtCab.Rows(0).Item("factorc"))
                 oeComprobanteElectronico = New e_ComprobanteElectronico
                 oeComprobanteElectronico.TipoOperacion = ""
-                oeComprobanteElectronico.IdReferencia = dtCab.Rows(0).Item("idcomp")
+                oeComprobanteElectronico.IdReferencia = dtCab.Rows(0).Item("id")
                 oeComprobanteElectronico.TipoReferencia = 1
                 oeComprobanteElectronico.xmlbase64 = definicion
                 oeComprobanteElectronico.valorcodbarras = valorCodBarras
@@ -55,7 +55,7 @@ Public Class s_FacturacionV2
                 oeComprobanteElectronico.ValorResumen = valorResumen
                 oeDocumento = New e_MovimientoDocumento
                 oeDocumento.TipoOperacion = "AFE"
-                oeDocumento.Id = dtCab.Rows(0).Item("idcomp")
+                oeDocumento.Id = dtCab.Rows(0).Item("id")
                 oeDocumento.IdUsuarioCrea = usuario
                 If flagError Then
                     oeDocumento.IndServicioMaterial = "R"
@@ -269,11 +269,11 @@ Public Class s_FacturacionV2
         '& CType(dtCab.Rows(0).Item("feccomp"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
         '& dtCab.Rows(0).Item("tipoid").ToString.Trim & "|" & dtCab.Rows(0).Item("nroid").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
 
-        codBarras = dCatalago.Obtener(oeCatalago).Descripcion & "|" & dtCab.Rows(0).Item("seriecomp") & "|" & dtCab.Rows(0).Item("corrcomp") & "|" _
-        & IIf(CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("igv"), Double).ToString("F2")) & "|" _
-        & IIf(CType(dtCab.Rows(0).Item("importeventa"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("importeventa"), Double).ToString("F2")) & "|" _
-        & CType(dtCab.Rows(0).Item("feccomp"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("feccomp"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
-        & dtCab.Rows(0).Item("tipoid").ToString.Trim & "|" & dtCab.Rows(0).Item("nroid").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
+        codBarras = dCatalago.Obtener(oeCatalago).Descripcion & "|" & dtCab.Rows(0).Item("serie_doc2") & "|" & dtCab.Rows(0).Item("nro_doc2") & "|" _
+        & IIf(CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("total_impuestos"), Double).ToString("F2")) & "|" _
+        & IIf(CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2") = 0, "", CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2")) & "|" _
+        & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Year.ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Month.ToString().ToString().PadLeft(2, "0").Trim() & "-" & CType(dtCab.Rows(0).Item("fecha_emision"), Date).Day.ToString().PadLeft(2, "0").Trim() & "|" _
+        & dtCab.Rows(0).Item("tipodoc_receptor").ToString.Trim & "|" & dtCab.Rows(0).Item("doc_receptor").ToString.Trim & "|" & valorResumen & "|" & firma & "|"
 
         Return codBarras
     End Function
@@ -814,7 +814,7 @@ Public Class s_FacturacionV2
             '<cbc:PayableAmount currencyID="PEN">423225.00</cbc:PayableAmount>
             writer.WriteStartElement(prefixCbc, "PayableAmount", cadCbc)
             writer.WriteAttributeString("currencyID", CodMon)
-            writer.WriteValue(CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2"))
+            writer.WriteValue(CType(dtCab.Rows(0).Item("precio_venta"), Double).ToString("F2")) '<--
             writer.WriteEndElement()
             '</cac:LegalMonetaryTotal>
             writer.WriteEndElement()
@@ -855,14 +855,15 @@ Public Class s_FacturacionV2
         End If
         writer.WriteAttributeString("unitCode", um)
         writer.WriteAttributeString("unitCodeListID", "UN/ECE rec 20")
-        writer.WriteAttributeString("unitCodeListAgencyName", "Europe")
-        writer.WriteValue(drFila.Item("cantidad"))
+        writer.WriteAttributeString("unitCodeListAgencyName", "United Nations Economic Commission for Europe")
+        'writer.WriteValue(drFila.Item("cantidad"))
+        writer.WriteValue("1.00")
         writer.WriteEndElement()
 
         '<cbc:LineExtensionAmount currencyID="PEN">149491.53</cbc:LineExtensionAmount>
         writer.WriteStartElement(prefixCbc, "LineExtensionAmount", cadCbc)
         writer.WriteAttributeString("currencyID", moneda)
-        writer.WriteValue(CType(drFila.Item("valor_venta"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("valor_venta"), Double).ToString("F2")) '<--
         writer.WriteEndElement()
 
         '<cac:PricingReference>
@@ -873,14 +874,14 @@ Public Class s_FacturacionV2
         '<cbc:PriceAmount currencyID="PEN">98.00</cbc:PriceAmount>
         writer.WriteStartElement(prefixCbc, "PriceAmount", cadCbc)
         writer.WriteAttributeString("currencyID", moneda)
-        writer.WriteValue(CType(drFila.Item("precio_venta"), Double).ToString("F2"))
+        writer.WriteValue(CType(drFila.Item("precio_venta"), Double).ToString("F2")) '<--
         writer.WriteEndElement()
 
         '<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
         oeCatalago = New e_CatalagoCodigoSunat
         oeCatalago.CodigoTabla = "016" : oeCatalago.CodigoElemento = "001"
         writer.WriteStartElement(prefixCbc, "PriceTypeCode", cadCbc)
-        writer.WriteAttributeString("listName", "SUNAT:Indicador de Tipo de Precio")
+        writer.WriteAttributeString("listName", "Tipo de Precio")
         writer.WriteAttributeString("listAgencyName", "PE:SUNAT")
         writer.WriteAttributeString("listURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16")
         writer.WriteValue(dCatalago.Obtener(oeCatalago).CodigoSunat)
@@ -951,7 +952,7 @@ Public Class s_FacturacionV2
         '<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
         writer.WriteStartElement(prefixCbc, "TaxExemptionReasonCode", cadCbc)
         writer.WriteAttributeString("listAgencyName", "PE:SUNAT")
-        writer.WriteAttributeString("listName", "SUNAT:Codigo de Tipo de Afectación del IGV")
+        writer.WriteAttributeString("listName", "Afectación del IGV")
         writer.WriteAttributeString("listURI", "urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07")
         writer.WriteValue(drFila.Item("codigo_imp").ToString().Trim())
         writer.WriteEndElement()
