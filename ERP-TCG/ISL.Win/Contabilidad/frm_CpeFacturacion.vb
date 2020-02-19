@@ -1585,7 +1585,7 @@ Public Class frm_CpeFacturacion
                 Case 5 : grilla = ugBaja
             End Select
             If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
-            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV")
+            gmt_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "OV")
         Catch ex As Exception
             Throw ex
         End Try
@@ -1605,7 +1605,7 @@ Public Class frm_CpeFacturacion
                 Case 5 : grilla = ugBaja
             End Select
             If grilla.Selected.Rows.Count <> 1 Then Throw New Exception("Debe seleccionar solo 1 registro a imprimir.")
-            gtm_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO")
+            gmt_Imprimir_Documento(grilla.ActiveRow.Cells("Id").Value, "A4", "GRIFO")
         Catch ex As Exception
             Throw ex
         End Try

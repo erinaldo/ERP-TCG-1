@@ -709,7 +709,7 @@ Public Class frm_CanjeNTD
             DocumentoGenerado.IndServicioMaterial = "M"
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
             'gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
-            gtm_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
+            gmt_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
             MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
@@ -918,7 +918,7 @@ Public Class frm_CanjeNTD
         '' Imprimir
         For Each Documento In ListaOtrosDocumentos
             If Documento.IndAnexo = True Then
-                gtm_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
+                gmt_Imprimir_Documento(Documento.Id, "A4", "GRIFO") '@0001
             End If
         Next
 
@@ -990,7 +990,7 @@ Public Class frm_CanjeNTD
         '' Imprimir
         For Each Documento In ListaOtrosDocumentos
             If Documento.IndAnexo = True Then
-                gtm_Imprimir_Documento(Documento.Id, "TICKET", "OV")
+                gmt_Imprimir_Documento(Documento.Id, "TICKET", "OV")
             End If
         Next
     End Sub
