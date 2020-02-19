@@ -439,15 +439,65 @@ Module m_Funciones
     End Sub
     '@0001
 
-    Public Sub gmt_Generar_PDF(DocumentoCtble As e_MovimientoDocumento)
+    Public Sub gmt_ImprimirDirecto(IdDocumentoCtble As String, TipoPapel As String, GenerarPDF As Boolean)
         Try
             Dim VISOR As New Microsoft.Reporting.WinForms.ReportViewer
             Dim DATASOURCE As New Microsoft.Reporting.WinForms.ReportDataSource
             Dim DT1 As New DataTable, DT2 As New DataTable
             Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
-            Dim wr_DocumentoCtble As New l_MovimientoDocumento
+            Dim wr_DocumentoCtble As New l_MovimientoDocumento, DocumentoCtble As New e_MovimientoDocumento
+
+            '' Cargar Reporte en VISOR 
+            DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+
+            DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = DocumentoCtble.Id})
+            RDS1.Name = "Cabecera"
+            RDS1.Value = DT1
+
+            DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = DocumentoCtble.Id})
+            RDS2.Name = "Detalle"
+            RDS2.Value = DT2
+
+            With VISOR
+                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                .LocalReport.ReportPath = fs_Obtener_RutaReporte(DocumentoCtble.IdTipoDocumento, "GRIFO", TipoPapel)
+                .LocalReport.DataSources.Clear()
+                .LocalReport.DataSources.Add(RDS1)
+                .LocalReport.DataSources.Add(RDS2)
+                .LocalReport.DisplayName = DT1.Rows(0).Item("DOI").ToString + "-" + DT1.Rows(0).Item("SerieNumero").ToString
+                .LocalReport.Refresh()
+            End With
+
+            VISOR.RefreshReport()
+            VISOR.PrintDialog()
+
+            '' Generar archivo PDF
+            If GenerarPDF Then
+                Dim Archivo As String = "D:\Sistema\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+                Dim PDF As Byte()
+                Dim filepath As String = Archivo
+                If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
+                PDF = VISOR.LocalReport.Render("PDF", Nothing, Nothing, Nothing, Nothing, Nothing, Nothing)
+                Dim fs As New FileStream(Archivo, FileMode.Create)
+                fs.Write(PDF, 0, PDF.Length)
+                fs.Close()
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub gmt_Generar_PDF(IdDocumentoCtble As String)
+        Try
+            Dim VISOR As New Microsoft.Reporting.WinForms.ReportViewer
+            Dim DATASOURCE As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim DT1 As New DataTable, DT2 As New DataTable
+            Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
+            Dim wr_DocumentoCtble As New l_MovimientoDocumento, DocumentoCtble As New e_MovimientoDocumento
 
             '' Cargar Reporte en VISOR
+            DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
+
             DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = DocumentoCtble.Id})
             RDS1.Name = "Cabecera"
             RDS1.Value = DT1
