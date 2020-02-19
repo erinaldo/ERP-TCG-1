@@ -331,7 +331,7 @@ Public Class frm_OSalida
             For Each oe As e_OrdenMaterial In lo
                 oeInventario = New e_Inventario
                 With oeInventario
-                    .FechaCreacion = FechaActual
+                    .FechaCreacion = oeOrden.FechaOrden  'FechaActual
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadSalida = oe.CantidadMaterial

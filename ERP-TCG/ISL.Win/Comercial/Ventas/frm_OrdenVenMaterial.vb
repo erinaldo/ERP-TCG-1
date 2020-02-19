@@ -1078,6 +1078,7 @@ Public Class frm_OrdenVenMaterial
         decSubTotal.Value = 0
         decImpuesto.Value = 0
         decTotal.Value = 0
+        cb_Reg.Checked = False
         txtOrden.Text = String.Empty
         txtEstado.Text = "POR GENERAR"
         txtGlosa.Text = String.Empty
@@ -1902,7 +1903,12 @@ Public Class frm_OrdenVenMaterial
                 .IdTipoBien = 1
                 'If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4) '@0001
                 .Serie = cboSerieDocumento.Text '@0001
-                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+                If cb_Reg.Checked Then
+                    .Numero = txtNumero.Text
+                Else
+                    .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+                End If
+
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaPago.Value
                 .NoGravado = 0
@@ -1938,7 +1944,7 @@ Public Class frm_OrdenVenMaterial
                             Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
                         End If
                     End If
-                        .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
                 End With
             End With
         Catch ex As Exception
@@ -2505,7 +2511,7 @@ Public Class frm_OrdenVenMaterial
                 .PrefijoID = gs_PrefijoIdSucursal
                 '.Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text '@0001
                 .Glosa = cmbTipoDocumento.Text & " " & cboSerieDocumento.Text & " - " & txtNumero.Text '@0001
-                .FechaOrden = ObtenerFechaServidor()
+                .FechaOrden = oeOrdenComercial.Fecha  'ObtenerFechaServidor()
                 .TipoOperacion = "I"
                 .TipoReferencia = "ORDEN VENTA"
                 .Referencia = oeOrdenComercial.OrdenComercial

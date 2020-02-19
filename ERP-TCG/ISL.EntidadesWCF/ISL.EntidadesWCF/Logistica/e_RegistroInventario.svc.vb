@@ -93,7 +93,7 @@ Public Class e_RegistroInventario
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Fecha() As Date
         Get
             Return _fecha
