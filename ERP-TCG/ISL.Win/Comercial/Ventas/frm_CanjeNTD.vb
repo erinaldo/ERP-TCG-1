@@ -709,7 +709,7 @@ Public Class frm_CanjeNTD
             DocumentoGenerado.IndServicioMaterial = "M"
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
             'gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
-            'gmt_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
+            gmt_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
             mt_EmitirDocumento(DocumentoGenerado.Id)
             'MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
