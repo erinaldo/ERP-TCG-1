@@ -157,9 +157,9 @@ Public Class frm_EstacionServicio
                 'MsgBox("La Informacion ha Sido guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             End If
 
-            'gmt_Imprimir_DocumentoTicket(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO") '@0001
-            gmt_ImprimirDirecto(OrdenVenta.oeDocumento.Id, "TICKET", False)
-            gmt_Generar_PDF(OrdenVenta.oeDocumento.Id)
+            gmt_Imprimir_DocumentoTicket(OrdenVenta.oeDocumento.Id, "TICKET", "GRIFO", "") '@0001
+            'gmt_ImprimirDirecto(OrdenVenta.oeDocumento.Id, "TICKET", False)
+            'gmt_Generar_PDF(OrdenVenta.oeDocumento.Id)
             Nuevo()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
