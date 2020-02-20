@@ -1068,6 +1068,12 @@
     <Compile Include="Grifo\frm_EstacionServicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\Impresiones\frm_CierreTurno_Imprimir.Designer.vb">
+      <DependentUpon>frm_CierreTurno_Imprimir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Impresiones\frm_CierreTurno_Imprimir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.Designer.vb">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </Compile>
@@ -5917,6 +5923,8 @@
     </None>
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.DocumentoCtble_Detalle.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_CierreTurno.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_CierreTurno_Detalle.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Combo.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_DetalleDocumento.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GRR_Venta.datasource" />
@@ -6424,6 +6432,9 @@
     <EmbeddedResource Include="Grifo\frm_EstacionServicio.resx">
       <DependentUpon>frm_EstacionServicio.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\frm_CierreTurno_Imprimir.resx">
+      <DependentUpon>frm_CierreTurno_Imprimir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
@@ -6433,6 +6444,7 @@
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_CierreParcial.rdlc" />
     <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

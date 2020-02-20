@@ -195,7 +195,17 @@ Public Class frm_CierreTurno
     End Sub
 
     Public Overrides Sub Imprimir()
-        'MyBase.Imprimir()
+        Try
+            Dim CierreTurno As New e_CierreTurno
+            With griOrdenComercial
+                If .Selected.Rows.Count > 0 Then
+                    CierreTurno.Id = .ActiveRow.Cells("Id").Value
+                    gmt_Imprimir_CierreTurno(CierreTurno.Id, "1")
+                End If
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
+        End Try
     End Sub
 
     Public Overrides Sub Salir()
