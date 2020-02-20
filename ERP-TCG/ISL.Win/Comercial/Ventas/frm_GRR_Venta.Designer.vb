@@ -36,6 +36,7 @@ Partial Class frm_GRR_Venta
         Dim UltraGridColumn53 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Cantidad")
         Dim UltraGridColumn84 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Peso")
         Dim Appearance2 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraGridColumn1 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("PesoTotal")
         Dim UltraGridColumn85 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("UsuarioCrea")
         Dim Appearance3 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -552,11 +553,12 @@ Partial Class frm_GRR_Venta
         Me.ficDetalle = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage3 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraGroupBox4 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.uce_Llegada = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.uce_Partida = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.cmb_Cliente = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.dtp_FechaTraslado = New System.Windows.Forms.DateTimePicker()
         Me.UltraLabel12 = New Infragistics.Win.Misc.UltraLabel()
         Me.cboPuntoPartida = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.txtLlegada = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.cboPuntoLlegada = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.txtNroMTCC = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.chkAsociar = New System.Windows.Forms.CheckBox()
@@ -583,7 +585,6 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel3 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel14 = New Infragistics.Win.Misc.UltraLabel()
-        Me.txtPartida = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraLabel5 = New Infragistics.Win.Misc.UltraLabel()
         Me.UltraLabel4 = New Infragistics.Win.Misc.UltraLabel()
         Me.txtNumero = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -664,9 +665,10 @@ Partial Class frm_GRR_Venta
         Me.ficDetalle.SuspendLayout()
         CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox4.SuspendLayout()
+        CType(Me.uce_Llegada, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uce_Partida, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmb_Cliente, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNroMTCC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -682,7 +684,6 @@ Partial Class frm_GRR_Venta
         CType(Me.EComboBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbVehiculo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCarreta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtPartida, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficGuiaRR, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -731,8 +732,9 @@ Partial Class frm_GRR_Venta
         UltraGridColumn84.Header.VisiblePosition = 10
         UltraGridColumn84.MaskInput = "{double:9.2}"
         UltraGridColumn84.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
+        UltraGridColumn1.Header.VisiblePosition = 11
         UltraGridColumn85.Header.VisiblePosition = 7
-        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn84, UltraGridColumn85})
+        UltraGridBand1.Columns.AddRange(New Object() {UltraGridColumn45, UltraGridColumn46, UltraGridColumn47, UltraGridColumn48, UltraGridColumn49, UltraGridColumn50, UltraGridColumn51, UltraGridColumn52, UltraGridColumn53, UltraGridColumn84, UltraGridColumn1, UltraGridColumn85})
         Me.griDetalleDocumento.DisplayLayout.BandsSerializer.Add(UltraGridBand1)
         Me.griDetalleDocumento.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.griDetalleDocumento.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
@@ -2490,17 +2492,17 @@ Partial Class frm_GRR_Venta
         '
         'UltraGroupBox4
         '
+        Me.UltraGroupBox4.Controls.Add(Me.uce_Llegada)
+        Me.UltraGroupBox4.Controls.Add(Me.uce_Partida)
         Me.UltraGroupBox4.Controls.Add(Me.cmb_Cliente)
         Me.UltraGroupBox4.Controls.Add(Me.dtp_FechaTraslado)
         Me.UltraGroupBox4.Controls.Add(Me.UltraLabel12)
         Me.UltraGroupBox4.Controls.Add(Me.cboPuntoPartida)
-        Me.UltraGroupBox4.Controls.Add(Me.txtLlegada)
         Me.UltraGroupBox4.Controls.Add(Me.cboPuntoLlegada)
         Me.UltraGroupBox4.Controls.Add(Me.txtNroMTCC)
         Me.UltraGroupBox4.Controls.Add(Me.chkAsociar)
         Me.UltraGroupBox4.Controls.Add(Me.UltraGroupBox6)
         Me.UltraGroupBox4.Controls.Add(Me.UltraLabel14)
-        Me.UltraGroupBox4.Controls.Add(Me.txtPartida)
         Me.UltraGroupBox4.Controls.Add(Me.UltraLabel5)
         Me.UltraGroupBox4.Controls.Add(Me.UltraLabel4)
         Me.UltraGroupBox4.Controls.Add(Me.txtNumero)
@@ -2515,6 +2517,25 @@ Partial Class frm_GRR_Venta
         Me.UltraGroupBox4.Size = New System.Drawing.Size(1086, 226)
         Me.UltraGroupBox4.TabIndex = 0
         Me.UltraGroupBox4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'uce_Llegada
+        '
+        Me.uce_Llegada.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.uce_Llegada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
+        Me.uce_Llegada.Location = New System.Drawing.Point(309, 194)
+        Me.uce_Llegada.Name = "uce_Llegada"
+        Me.uce_Llegada.Size = New System.Drawing.Size(627, 22)
+        Me.uce_Llegada.TabIndex = 15
+        '
+        'uce_Partida
+        '
+        Me.uce_Partida.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.uce_Partida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.uce_Partida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
+        Me.uce_Partida.Location = New System.Drawing.Point(309, 166)
+        Me.uce_Partida.Name = "uce_Partida"
+        Me.uce_Partida.Size = New System.Drawing.Size(627, 22)
+        Me.uce_Partida.TabIndex = 12
         '
         'cmb_Cliente
         '
@@ -2563,15 +2584,6 @@ Partial Class frm_GRR_Venta
         Me.cboPuntoPartida.Size = New System.Drawing.Size(206, 22)
         Me.cboPuntoPartida.TabIndex = 11
         Me.cboPuntoPartida.ValueMember = "Id"
-        '
-        'txtLlegada
-        '
-        Me.txtLlegada.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtLlegada.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtLlegada.Location = New System.Drawing.Point(309, 194)
-        Me.txtLlegada.Name = "txtLlegada"
-        Me.txtLlegada.Size = New System.Drawing.Size(627, 22)
-        Me.txtLlegada.TabIndex = 15
         '
         'cboPuntoLlegada
         '
@@ -2925,7 +2937,7 @@ Partial Class frm_GRR_Venta
         '
         'cmbVehiculo
         '
-        Me.cmbVehiculo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cmbVehiculo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cmbVehiculo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cmbVehiculo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.cmbVehiculo.Location = New System.Drawing.Point(91, 57)
@@ -2936,7 +2948,7 @@ Partial Class frm_GRR_Venta
         '
         'cboCarreta
         '
-        Me.cboCarreta.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
+        Me.cboCarreta.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboCarreta.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.cboCarreta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
         Me.cboCarreta.Location = New System.Drawing.Point(783, 57)
@@ -2985,15 +2997,6 @@ Partial Class frm_GRR_Venta
         Me.UltraLabel14.TabIndex = 12
         Me.UltraLabel14.Text = "N° MTC:"
         Me.UltraLabel14.Visible = False
-        '
-        'txtPartida
-        '
-        Me.txtPartida.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtPartida.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txtPartida.Location = New System.Drawing.Point(309, 166)
-        Me.txtPartida.Name = "txtPartida"
-        Me.txtPartida.Size = New System.Drawing.Size(627, 22)
-        Me.txtPartida.TabIndex = 12
         '
         'UltraLabel5
         '
@@ -3202,9 +3205,10 @@ Partial Class frm_GRR_Venta
         CType(Me.UltraGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox4.ResumeLayout(False)
         Me.UltraGroupBox4.PerformLayout()
+        CType(Me.uce_Llegada, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uce_Partida, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmb_Cliente, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPuntoPartida, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtLlegada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboPuntoLlegada, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNroMTCC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3221,7 +3225,6 @@ Partial Class frm_GRR_Venta
         CType(Me.EComboBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbVehiculo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCarreta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtPartida, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtNumero, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSerie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficGuiaRR, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3324,7 +3327,6 @@ Partial Class frm_GRR_Venta
     Friend WithEvents cboCarreta As Infragistics.Win.UltraWinEditors.UltraComboEditor
     Friend WithEvents UltraLabel3 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents UltraLabel9 As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents txtPartida As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents UltraLabel5 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents UltraLabel4 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents cmbMotivoTraslado As Infragistics.Win.UltraWinEditors.UltraComboEditor
@@ -3336,7 +3338,6 @@ Partial Class frm_GRR_Venta
     Friend WithEvents dtpFechaDocumento As DateTimePicker
     Friend WithEvents UltraLabel8 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents cboPuntoPartida As Infragistics.Win.UltraWinEditors.UltraComboEditor
-    Friend WithEvents txtLlegada As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents UltraLabel25 As Infragistics.Win.Misc.UltraLabel
     Private WithEvents cboTransportista As Infragistics.Win.UltraWinGrid.UltraCombo
     Friend WithEvents dtp_FechaTraslado As DateTimePicker
@@ -3354,4 +3355,6 @@ Partial Class frm_GRR_Venta
     Friend WithEvents UltraLabel20 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents griAlmacenMaterial As Infragistics.Win.UltraWinGrid.UltraGrid
     Friend WithEvents EMaterialBindingSource As BindingSource
+    Friend WithEvents uce_Llegada As Infragistics.Win.UltraWinEditors.UltraComboEditor
+    Friend WithEvents uce_Partida As Infragistics.Win.UltraWinEditors.UltraComboEditor
 End Class

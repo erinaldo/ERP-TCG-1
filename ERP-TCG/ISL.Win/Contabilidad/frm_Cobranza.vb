@@ -636,6 +636,7 @@ Public Class frm_Cobranza
 
     Private Sub Inicializar()
         Try
+            uce_Decimales.SelectedIndex = 0
             Me.Text = "Cobranza"
             ControlBoton(1, 1, 1, 1, 0, 0, 0, 0, 1)
             Fecha.Value = FechaServidor.Date
@@ -1064,6 +1065,26 @@ Public Class frm_Cobranza
                 obj.MontoOperar = obj.SaldoDetraccion
             Next
             mostrar_totales()
+            gridCobranzaAgregado.DataBind()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
+    Private Sub uce_Decimales_EditorButtonClick(sender As Object, e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles uce_Decimales.EditorButtonClick
+        Try
+            Dim ms_Decimales As String
+            Dim ms_Mask As String
+            If uce_Decimales.Text = 2 Then
+                ms_Decimales = "#,##0.00"
+                ms_Mask = "{double:9.2}"
+            Else
+                ms_Decimales = "#,##0.0000"
+                ms_Mask = "{double:9.4}"
+            End If
+            gridCobranzaAgregado.DisplayLayout.Bands(0).Columns("MontoOperar").MaskInput = ms_Mask
+            FormatoColumna(gridCobranzaAgregado, ms_Decimales, ColumnStyle.Double, Infragistics.Win.HAlign.Right, "MontoOperar")
+
             gridCobranzaAgregado.DataBind()
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
