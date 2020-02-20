@@ -11,11 +11,12 @@ Imports ERP.LogicaWCF
 Imports Stimulsoft.Report
 Imports Infragistics.Win
 Imports Infragistics.Win.UltraWinGrid
+Imports MessagingToolkit.QRCode.Codec
 
 Public Class frm_FacturaBoletaElectronico
 
 #Region "Declaracion de Variables"
-
+    Dim Qr_Code As New QRCodeEncoder
     Private oeDocumento As e_MovimientoDocumento, olDocumento As l_MovimientoDocumento
     Private srReporte As StiReport
     Private dsDatos As DataSet
@@ -43,6 +44,10 @@ Public Class frm_FacturaBoletaElectronico
 
     Public Sub mt_CargarDatos(ls_IdDocumento As String, lb_NotaCredito As Boolean, ls_TpReport As String)
         Try
+            Dim IGV As Double = 0
+            Dim Total As Double = 0
+            Dim Emision As Date
+            Dim Resumen As String = ""
             Dim tipoDocumento As String = ""
             oeDocumento = New e_MovimientoDocumento
             olDocumento = New l_MovimientoDocumento
@@ -54,6 +59,17 @@ Public Class frm_FacturaBoletaElectronico
                 dsDatos.Tables(1).TableName = "Detalle"
 
                 tipoDocumento = dsDatos.Tables(0).Rows(0)("tipcomp")
+
+                IGV = CDbl(dsDatos.Tables(0).Rows(0).Item("CAN_IMPUESTO_VTA"))
+                Total = CDbl(dsDatos.Tables(0).Rows(0).Item("CAN_TOTAL"))
+                Emision = CDate(dsDatos.Tables(0).Rows(0).Item("FEC_EMISION"))
+                Resumen = gs_RucEmpresaSistema & "|" & lf_ObtenerTipoDoc(dsDatos.Tables(0).Rows(0).Item("TXT_CATEGORIA_TIPO_DOC")) & "|" & dsDatos.Tables(0).Rows(0).Item("NRO_SERIE") & "|" &
+                    dsDatos.Tables(0).Rows(0).Item("NRO_DOC") & "|" & IGV & "|" & Total & "|" & Emision & "|"
+                Dim ImagenQR As Image = Qr_Code.Encode(Resumen)
+                Dim dc As DataColumn
+                dc = New DataColumn("QR", Type.GetType("System.String"))
+                dsDatos.Tables(0).Columns.Add(dc)
+                dsDatos.Tables(0).Rows(0).Item("QR") = ImageToBase64(ImagenQR, System.Drawing.Imaging.ImageFormat.Jpeg)
 
             End If
             If ls_TpReport = "" Then
@@ -86,7 +102,36 @@ Public Class frm_FacturaBoletaElectronico
             MessageBox.Show(ex.Message, "Mensaje de Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End Try
     End Sub
-
+    Private Function lf_ObtenerTipoDoc(IdTipoDoc) As String
+        Dim TipoDoc As String = ""
+        Try
+            Select Case IdTipoDoc
+                Case "BOLETA DE VENTA"
+                    TipoDoc = "03"
+                Case "FACTURA"
+                    TipoDoc = "01"
+                Case "NOTA DE CRÉDITO"
+                    TipoDoc = "07"
+                Case "NOTA DE DÉBITO"
+                    TipoDoc = "08"
+                Case Else
+                    TipoDoc = ""
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
+        Return TipoDoc
+    End Function
+    Private Function ImageToBase64(ByVal mImage As Image, ByVal format As System.Drawing.Imaging.ImageFormat) As String
+        Using ms As New System.IO.MemoryStream()
+            ' Convert Image to byte[]
+            mImage.Save(ms, format)
+            Dim imageBytes As Byte() = ms.ToArray()
+            ' Convert byte[] to Base64 String
+            Dim base64String As String = Convert.ToBase64String(imageBytes)
+            Return base64String
+        End Using
+    End Function
     Private Sub mt_CargarReporte(ls_NombreReporte As String)
         Try
             Dim ls_Moneda As String = "", ls_MontoLetra As String = ""

@@ -884,6 +884,11 @@ Public Class frm_NotaCreditoDebito
 
     Private Function Guardando() As Boolean
         Try
+            '@0001 Ini
+            If oeNotaCreditoDebito.Venta.Glosa = "" Then
+                oeNotaCreditoDebito.Venta.Glosa = cmbMotivoMod.Text
+            End If
+            '@0001 Fin
             oeNotaCreditoDebito.IdUsuarioCrea = gUsuarioSGI.Id
             oeNotaCreditoDebito.Mac_PC_Local = MacPCLocal()
             If oeTipoDoc.Codigo = "07" Then
@@ -923,7 +928,7 @@ Public Class frm_NotaCreditoDebito
             End With
             If olNotaCreditoDebito.GuardarMasivo(oeNotaCreditoDebito) Then
                 'mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text)
-                If MessageBox.Show("La informacion ha sido grabada satisfactoriamente en " & Me.Text & _
+                If MessageBox.Show("La informacion ha sido grabada satisfactoriamente en " & Me.Text &
                                    Environment.NewLine & "¿Desea Emitir el Documento?", "Mensaje del sistema", MessageBoxButtons.YesNo _
                                   , MessageBoxIcon.Information) = Windows.Forms.DialogResult.Yes Then
                     Emitir(cboTipoDoc.Value, txtSerie.Value, txtNumero.Text)
@@ -1016,10 +1021,12 @@ Public Class frm_NotaCreditoDebito
                     Dim oeDetDoc As New e_DetalleDocumento
                     oeDetDoc.Cantidad = 1
                     oeDetDoc.Precio = Math.Round(((oeDet.Precio * oeDet.Cantidad) / totAso) * totDoc, 2)
-                    oeDetDoc.Total = Math.Round(((oeDet.Precio * oeDet.Cantidad) / totAso) * totDoc, 2)
+                    'oeDetDoc.Total = Math.Round(((oeDet.Precio * oeDet.Cantidad) / totAso) * totDoc, 2) '@0001
+                    oeDetDoc.Total = Math.Round((((oeDet.Precio * oeDet.Cantidad) / totAso) * totDoc) / (1 + oeIGV.Porcentaje), 2) '@0001
                     oeDetDoc.FactorRefUni = oeDet.FactorRefUni
                     oeDetDoc.IndGravado = oeDet.IndGravado
-                    oeDetDoc.Igv = oeDetDoc.Total * oeIGV.Porcentaje
+                    'oeDetDoc.Igv = oeDetDoc.Total * oeIGV.Porcentaje '@0001
+                    oeDetDoc.Igv = oeDetDoc.Precio - oeDetDoc.Total '@0001
                     oeDetDoc.IdMaterialServicio = oeDet.IdMaterialServicio
                     oeDetDoc.IdOperacionDetalle = oeDet.IdOperacionDetalle
                     oeDetDoc.IdVehiculo = oeDet.IdVehiculo

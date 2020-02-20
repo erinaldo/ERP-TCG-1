@@ -2410,7 +2410,7 @@ Public Class frm_Planilla
             Const MARGEN_SUPERIOR As Single = 20
             Const MARGEN_INFERIOR As Single = 20
 
-            Dim RucISL As String = "20479729141"
+            Dim RucISL As String = gs_RucEmpresaSistema
             'Dim IdPlanilla As String = griPlanilla.ActiveRow.Cells("Id").Value
             'Dim periodo As String = griPlanilla.ActiveRow.Cells("IdPeriodo").Value
             'Dim AnioMes As String = griPlanilla.ActiveRow.Cells("Periodo").Value

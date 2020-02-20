@@ -67,8 +67,8 @@ Public Class e_Empresa
     Public leContactos As New List(Of e_Persona)
     <DataMember()>
     Public Property CorreoEnvioXml() As String = ""
-    <DataMember()>
-    Public Property CorreoEnvioXml2() As String = ""
+    '<DataMember()>
+    'Public Property CorreoEnvioXml2() As String = ""
 #End Region
 
 #Region "Constructor"
@@ -96,7 +96,7 @@ Public Class e_Empresa
         _IndRelacionada = 0
         _DireccionFiscal = String.Empty
         CorreoEnvioXml = ""
-        CorreoEnvioXml2 = ""
+        'CorreoEnvioXml2 = ""
     End Sub
 
     Public Sub New(ByVal Id As String, ByVal Codigo As String, _

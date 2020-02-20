@@ -710,7 +710,8 @@ Public Class frm_CanjeNTD
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
             'gtm_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO")
             gmt_Imprimir_Documento(DocumentoGenerado.Id, "TICKET", "OV")
-            MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            mt_EmitirDocumento(DocumentoGenerado.Id)
+            'MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex
@@ -854,7 +855,7 @@ Public Class frm_CanjeNTD
                     If leServCtaCtble.Contains(oeServCtaCtble) Then
                         oeServCtaCtble = leServCtaCtble.Item(leServCtaCtble.IndexOf(oeServCtaCtble))
                     Else
-                        Throw New Exception("No Existen Cuenta Contable para el Servicio: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
+                        Throw New Exception("No Existen Cuenta Contable para la Venta: " & gVSMercaderia & " para el Año: " & Date.Now.Year &
                                         Environment.NewLine & "Solicite el Apoyo del Area Contable.")
                     End If
 
@@ -993,6 +994,10 @@ Public Class frm_CanjeNTD
                 gmt_Imprimir_Documento(Documento.Id, "TICKET", "OV")
             End If
         Next
+    End Sub
+
+    Private Sub txtSerie_ValueChanged(sender As Object, e As EventArgs) Handles txtSerie.ValueChanged
+        txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
     End Sub
 
 #End Region

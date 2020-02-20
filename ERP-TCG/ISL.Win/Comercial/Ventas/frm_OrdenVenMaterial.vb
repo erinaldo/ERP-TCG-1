@@ -999,10 +999,14 @@ Public Class frm_OrdenVenMaterial
     End Sub
 
     Private Sub cbgCliente_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles cbgCliente.InitializeLayout
+        'Dim oe As e_Empresa
+        'oe.CorreoEnvioXml2
         Me.cbgCliente.ValueMember = "Id"
         Me.cbgCliente.DisplayMember = "Nombre"
         With cbgCliente.DisplayLayout.Bands(0)
+            .Columns("CorreoEnvioXml").Hidden = True
             .Columns("Id").Hidden = True
+            '.Columns("Id").Hidden = True
             .Columns("TipoEmpresa").Hidden = True
             .Columns("Codigo").Hidden = True
             .Columns("IdDireccionTanqueo").Hidden = True
@@ -1074,6 +1078,7 @@ Public Class frm_OrdenVenMaterial
         decSubTotal.Value = 0
         decImpuesto.Value = 0
         decTotal.Value = 0
+        cb_Reg.Checked = False
         txtOrden.Text = String.Empty
         txtEstado.Text = "POR GENERAR"
         txtGlosa.Text = String.Empty
@@ -1254,6 +1259,7 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial.IdSucursal = gs_PrefijoIdSucursal
             oeOrdenComercial.Tipo = 2
             oeOrdenComercial.TipoExistencia = 1
+            oeOrdenComercial.TipoOperacion = "V"
             If rdbDatosBasicos.Checked Then
                 oeOrdenComercial.IdEmpresa = cbgClienteB.Value
                 oeOrdenComercial.IdEstado = cboEstado.Value
@@ -1897,7 +1903,12 @@ Public Class frm_OrdenVenMaterial
                 .IdTipoBien = 1
                 'If txtSerie.Text <> "" Then .Serie = FormatoDocumento(txtSerie.Text, 4) '@0001
                 .Serie = cboSerieDocumento.Text '@0001
-                .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+                If cb_Reg.Checked Then
+                    .Numero = txtNumero.Text
+                Else
+                    .Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+                End If
+
                 .FechaEmision = dtpFechaDoc.Value
                 .FechaVencimiento = dtpFechaPago.Value
                 .NoGravado = 0
@@ -1933,7 +1944,7 @@ Public Class frm_OrdenVenMaterial
                             Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
                         End If
                     End If
-                        .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
                 End With
             End With
         Catch ex As Exception
@@ -2311,6 +2322,7 @@ Public Class frm_OrdenVenMaterial
             oeOrdenComercial.oeDocumento.DatosImpresion.IdMedioPago = cboTipoPago.Value '@0001
             oeOrdenComercial.oeDocumento.DatosImpresion.MedioPago = cboTipoPago.Text  '@0001
             oeOrdenComercial.oeDocumento.IndServicioMaterial = "M" '@0001
+            oeOrdenComercial.oeDocumento.IndElectronico = True '@0001
             If olOrdenComercial.Guardar(oeOrdenComercial) Then
                 If cbDocumento.Checked = True AndAlso cmbTipoDocumento.Text <> "" Then
                     If oeDocumento.Id.Trim <> "" Then
@@ -2499,7 +2511,7 @@ Public Class frm_OrdenVenMaterial
                 .PrefijoID = gs_PrefijoIdSucursal
                 '.Glosa = cmbTipoDocumento.Text & " " & txtSerie.Text & " - " & txtNumero.Text '@0001
                 .Glosa = cmbTipoDocumento.Text & " " & cboSerieDocumento.Text & " - " & txtNumero.Text '@0001
-                .FechaOrden = ObtenerFechaServidor()
+                .FechaOrden = oeOrdenComercial.Fecha  'ObtenerFechaServidor()
                 .TipoOperacion = "I"
                 .TipoReferencia = "ORDEN VENTA"
                 .Referencia = oeOrdenComercial.OrdenComercial

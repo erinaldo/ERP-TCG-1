@@ -157,6 +157,7 @@ Public Class d_Inventario
                                 .oeRegInvOrden.IdOrden = oeInventario.IdOrden
                                 .oeRegInvOrden.UsuarioCreacion = .UsuarioCreacion
                             End If
+                            .Fecha = oeInventario.FechaCreacion
                             .ValorUnitario = oeInventario.ValorUnitario
                             .CantidadReal = oeInventario.CantidadIngreso
                             .ValorUnitarioReal = oeInventario.ValorUnitario
@@ -187,7 +188,7 @@ Public Class d_Inventario
                             .CantidadReal = oeInventario.CantidadSalida
                             .ValorUnitarioReal = oe.ValorUnitario
                             .ValorTotal = .CantidadReal * .ValorUnitarioReal
-
+                            .Fecha = oeInventario.FechaCreacion
                         End With
                         .oeRegistroInventario.PrefijoID = oeInventario.PrefijoID '@0001
                         odRegInv.GuardarRegistroInventario(.oeRegistroInventario)

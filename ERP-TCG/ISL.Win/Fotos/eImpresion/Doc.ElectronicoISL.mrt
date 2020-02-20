@@ -25,7 +25,7 @@
       </Detalle>
       <Cabecera_Pie Ref="3" type="DataTableSource" isKey="true">
         <Alias>Cabecera_Pie</Alias>
-        <Columns isList="true" count="39">
+        <Columns isList="true" count="40">
           <value>NRO_SERIE_ELEC,System.String</value>
           <value>NRO_SERIE,System.String</value>
           <value>NRO_DOC,System.String</value>
@@ -65,6 +65,7 @@
           <value>IMPORTE_DETRAER,System.Decimal</value>
           <value>NETO_PAGAR,System.Decimal</value>
           <value>IndTransfGratuita,System.Int32</value>
+          <value>QR,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
         <Name>Cabecera_Pie</Name>
@@ -816,7 +817,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Text>
         <PageFooterBand1 Ref="67" type="PageFooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,20.57,20,8.13</ClientRectangle>
-          <Components isList="true" count="44">
+          <Components isList="true" count="45">
             <Text23 Ref="68" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
@@ -1363,105 +1364,116 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
             </Text76>
-            <EndPointPrimitive3 Ref="106" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <Image2 Ref="106" type="Image" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.6,2.43,4.8,4.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn>Cabecera_Pie.QR</DataColumn>
+              <File>image/bmp</File>
+              <Name>Image2</Name>
+              <Page isRef="4" />
+              <Parent isRef="67" />
+            </Image2>
+            <EndPointPrimitive3 Ref="107" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>19.8,1.67,0,0</ClientRectangle>
               <Name>EndPointPrimitive3</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>c61fb2441af3451e948fe3961ad2bb10</ReferenceToGuid>
             </EndPointPrimitive3>
-            <EndPointPrimitive7 Ref="107" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive7 Ref="108" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>18.2,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive7</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>09af56159544483fb32ef69c47eb74b2</ReferenceToGuid>
             </EndPointPrimitive7>
-            <EndPointPrimitive4 Ref="108" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive4 Ref="109" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>1,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive4</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>00a612616fda423a8824a1f262949a51</ReferenceToGuid>
             </EndPointPrimitive4>
-            <StartPointPrimitive22 Ref="109" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+            <StartPointPrimitive22 Ref="110" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>13.3,2.63,0,0</ClientRectangle>
               <Name>StartPointPrimitive22</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>4ed68ca5e8d243f49e865bea487ae393</ReferenceToGuid>
             </StartPointPrimitive22>
-            <EndPointPrimitive22 Ref="110" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive22 Ref="111" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>13.3,3.03,0,0</ClientRectangle>
               <Name>EndPointPrimitive22</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>4ed68ca5e8d243f49e865bea487ae393</ReferenceToGuid>
             </EndPointPrimitive22>
-            <HorizontalLinePrimitive2 Ref="111" type="HorizontalLinePrimitive" isKey="true">
+            <HorizontalLinePrimitive2 Ref="112" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0.2,1.23,19.6,0.0254</ClientRectangle>
               <Color>Blue</Color>
-              <EndCap Ref="112" type="Cap" isKey="true">
+              <EndCap Ref="113" type="Cap" isKey="true">
                 <Color>Black</Color>
               </EndCap>
               <Name>HorizontalLinePrimitive2</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <Size>2</Size>
-              <StartCap Ref="113" type="Cap" isKey="true">
+              <StartCap Ref="114" type="Cap" isKey="true">
                 <Color>Black</Color>
               </StartCap>
             </HorizontalLinePrimitive2>
-            <EndPointPrimitive6 Ref="114" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive6 Ref="115" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>16.8,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive6</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>e3ef12353b76441699bd00eff1e833fd</ReferenceToGuid>
             </EndPointPrimitive6>
-            <EndPointPrimitive26 Ref="115" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive26 Ref="116" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>3.6,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive26</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>6140714119004db99c7afe4409f474ca</ReferenceToGuid>
             </EndPointPrimitive26>
-            <EndPointPrimitive9 Ref="116" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive9 Ref="117" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>14,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive9</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>6c2029a84175446988541e533b71085e</ReferenceToGuid>
             </EndPointPrimitive9>
-            <EndPointPrimitive13 Ref="117" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive13 Ref="118" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>12.6,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive13</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>e0b707a76fdd41d28aadbd9d8ce049c0</ReferenceToGuid>
             </EndPointPrimitive13>
-            <EndPointPrimitive16 Ref="118" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive16 Ref="119" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>15.4,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive16</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>22850477f4604c9ba1d45eda2255127b</ReferenceToGuid>
             </EndPointPrimitive16>
-            <EndPointPrimitive2 Ref="119" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive2 Ref="120" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>11.2,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive2</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>8af561855e8d4436ab4243dea4c7eafe</ReferenceToGuid>
             </EndPointPrimitive2>
-            <EndPointPrimitive5 Ref="120" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive5 Ref="121" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>2,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive5</Name>
               <Page isRef="4" />
               <Parent isRef="67" />
               <ReferenceToGuid>a318ac836a234f0a8b6a2b7b6d252739</ReferenceToGuid>
             </EndPointPrimitive5>
-            <EndPointPrimitive15 Ref="121" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive15 Ref="122" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>5,1.25,0,0</ClientRectangle>
               <Name>EndPointPrimitive15</Name>
               <Page isRef="4" />
@@ -1474,7 +1486,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </PageFooterBand1>
-        <Text30 Ref="122" type="Text" isKey="true">
+        <Text30 Ref="123" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>21.4,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -1487,7 +1499,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text30>
-        <Text32 Ref="123" type="Text" isKey="true">
+        <Text32 Ref="124" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>21.4,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -1500,7 +1512,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text32>
-        <Text33 Ref="124" type="Text" isKey="true">
+        <Text33 Ref="125" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>24,4.2,2.6,3</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -1513,7 +1525,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text33>
-        <Text37 Ref="125" type="Text" isKey="true">
+        <Text37 Ref="126" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>22.07,7.94,2.6,0.6</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -1526,7 +1538,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text37>
-        <Text74 Ref="126" type="Text" isKey="true">
+        <Text74 Ref="127" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>22.37,9.34,2.6,0.71</ClientRectangle>
           <Conditions isList="true" count="0" />
@@ -1540,7 +1552,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextBrush>Black</TextBrush>
           <Type>DataColumn</Type>
         </Text74>
-        <Text67 Ref="127" type="Text" isKey="true">
+        <Text67 Ref="128" type="Text" isKey="true">
           <AutoWidth>True</AutoWidth>
           <Border>None;Black;2;Solid;False;4;Black</Border>
           <Brush>EmptyBrush</Brush>
@@ -1562,12 +1574,12 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <TextQuality>Typographic</TextQuality>
           <Type>Expression</Type>
         </Text67>
-        <DataBand1 Ref="128" type="DataBand" isKey="true">
+        <DataBand1 Ref="129" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,9.34,20,0.71</ClientRectangle>
           <Components isList="true" count="7">
-            <Text15 Ref="129" type="Text" isKey="true">
+            <Text15 Ref="130" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>2.03,0.06,1.6,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1576,10 +1588,10 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.CAN_PRODUCTO}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="130" type="NumberFormat" isKey="true">
+              <TextFormat Ref="131" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
                 <UseGroupSeparator>False</UseGroupSeparator>
@@ -1587,7 +1599,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               </TextFormat>
               <Type>Expression</Type>
             </Text15>
-            <Text17 Ref="131" type="Text" isKey="true">
+            <Text17 Ref="132" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <CanGrow>True</CanGrow>
               <ClientRectangle>5,0.06,6.2,0.6</ClientRectangle>
@@ -1597,7 +1609,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.TXT_NOMBRE_PRODUCTO}
 </Text>
               <TextBrush>Black</TextBrush>
@@ -1605,7 +1617,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <TextQuality>Wysiwyg</TextQuality>
               <Type>Expression</Type>
             </Text17>
-            <Text2 Ref="132" type="Text" isKey="true">
+            <Text2 Ref="133" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>3.6,0.06,1.4,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1614,12 +1626,12 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text2</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.UNID_MED}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text2>
-            <Text19 Ref="133" type="Text" isKey="true">
+            <Text19 Ref="134" type="Text" isKey="true">
               <Border>Left;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>18.2,0.06,1.4,0.4</ClientRectangle>
@@ -1629,15 +1641,15 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text19</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.CAN_VALOR_VTA}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="134" type="NumberFormat" isKey="true">
+              <TextFormat Ref="135" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
               </TextFormat>
             </Text19>
-            <Text21 Ref="135" type="Text" isKey="true">
+            <Text21 Ref="136" type="Text" isKey="true">
               <Border>Left;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>11.2,0.06,1.2,0.4</ClientRectangle>
@@ -1647,15 +1659,15 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.CAN_PRECIO_UNIT_IGV}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="136" type="NumberFormat" isKey="true">
+              <TextFormat Ref="137" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
               </TextFormat>
             </Text21>
-            <Text65 Ref="137" type="Text" isKey="true">
+            <Text65 Ref="138" type="Text" isKey="true">
               <Border>Left;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14,0.06,1.2,0.4</ClientRectangle>
@@ -1665,15 +1677,15 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text65</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Detalle.CAN_VALOR_VENTA_IGV}</Text>
               <TextBrush>Black</TextBrush>
-              <TextFormat Ref="138" type="NumberFormat" isKey="true">
+              <TextFormat Ref="139" type="NumberFormat" isKey="true">
                 <GroupSeparator>,</GroupSeparator>
                 <NegativePattern>1</NegativePattern>
               </TextFormat>
             </Text65>
-            <Text66 Ref="139" type="Text" isKey="true">
+            <Text66 Ref="140" type="Text" isKey="true">
               <Border>Left;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,0.06,0.8,0.4</ClientRectangle>
@@ -1683,7 +1695,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text66</Name>
               <Page isRef="4" />
-              <Parent isRef="128" />
+              <Parent isRef="129" />
               <Text>{Line}</Text>
               <TextBrush>Black</TextBrush>
             </Text66>
@@ -1699,11 +1711,11 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Parent isRef="4" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="140" type="FooterBand" isKey="true">
+        <FooterBand1 Ref="141" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,10.85,20,0.8</ClientRectangle>
           <Components isList="true" count="1">
-            <Text75 Ref="141" type="Text" isKey="true">
+            <Text75 Ref="142" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <CanGrow>True</CanGrow>
               <ClientRectangle>5,0.15,6.2,0.6</ClientRectangle>
@@ -1714,7 +1726,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text75</Name>
               <Page isRef="4" />
-              <Parent isRef="140" />
+              <Parent isRef="141" />
               <Text>{Cabecera_Pie.TXT_INFO_ADICIONAL}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
@@ -1727,7 +1739,7 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </FooterBand1>
-        <RectanglePrimitive3 Ref="142" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive3 Ref="143" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0.2,8,19.6,14.24</ClientRectangle>
           <Color>Blue</Color>
           <Guid>c61fb2441af3451e948fe3961ad2bb10</Guid>
@@ -1736,35 +1748,35 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Parent isRef="4" />
           <ShiftMode>OnlyInWidthOfComponent</ShiftMode>
         </RectanglePrimitive3>
-        <VerticalLinePrimitive3 Ref="143" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive3 Ref="144" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>18.2,8.6,0.0254,13.22</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="144" type="Cap" isKey="true">
+          <EndCap Ref="145" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>09af56159544483fb32ef69c47eb74b2</Guid>
           <Name>VerticalLinePrimitive3</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="145" type="Cap" isKey="true">
+          <StartCap Ref="146" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive3>
-        <VerticalLinePrimitive4 Ref="146" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive4 Ref="147" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>1,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="147" type="Cap" isKey="true">
+          <EndCap Ref="148" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>00a612616fda423a8824a1f262949a51</Guid>
           <Name>VerticalLinePrimitive4</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="148" type="Cap" isKey="true">
+          <StartCap Ref="149" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive4>
-        <RectanglePrimitive4 Ref="149" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive4 Ref="150" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0.2,7,19.6,0.8</ClientRectangle>
           <Color>Blue</Color>
           <Guid>25ec4fcceb8d4182bcca9052bfc0f2f8</Guid>
@@ -1773,63 +1785,63 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Parent isRef="4" />
           <Size>2</Size>
         </RectanglePrimitive4>
-        <VerticalLinePrimitive2 Ref="150" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="151" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>16.8,8.6,0.0254,13.22</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="151" type="Cap" isKey="true">
+          <EndCap Ref="152" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>e3ef12353b76441699bd00eff1e833fd</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="152" type="Cap" isKey="true">
+          <StartCap Ref="153" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <VerticalLinePrimitive10 Ref="153" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive10 Ref="154" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>4,6.6,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="154" type="Cap" isKey="true">
+          <EndCap Ref="155" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>854cc7f87ff442bb95896a3cb240f465</Guid>
           <Name>VerticalLinePrimitive10</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="155" type="Cap" isKey="true">
+          <StartCap Ref="156" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive10>
-        <VerticalLinePrimitive8 Ref="156" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive8 Ref="157" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>8,7,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="157" type="Cap" isKey="true">
+          <EndCap Ref="158" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>0c53cacffaa64a779410988fbe6e96ac</Guid>
           <Name>VerticalLinePrimitive8</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="158" type="Cap" isKey="true">
+          <StartCap Ref="159" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive8>
-        <VerticalLinePrimitive16 Ref="159" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive16 Ref="160" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>13.3,23.2,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="160" type="Cap" isKey="true">
+          <EndCap Ref="161" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>4ed68ca5e8d243f49e865bea487ae393</Guid>
           <Name>VerticalLinePrimitive16</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="161" type="Cap" isKey="true">
+          <StartCap Ref="162" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive16>
-        <RectanglePrimitive1 Ref="162" type="RectanglePrimitive" isKey="true">
+        <RectanglePrimitive1 Ref="163" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>13,0.6,6.8,3.2</ClientRectangle>
           <Color>Black</Color>
           <Guid>eaf8b259f9f94bababfdf7668d8d6359</Guid>
@@ -1837,94 +1849,94 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
         </RectanglePrimitive1>
-        <VerticalLinePrimitive17 Ref="163" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive17 Ref="164" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>11.8,6.6,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="164" type="Cap" isKey="true">
+          <EndCap Ref="165" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>10514d4dd4dc442fb141908d7c15879f</Guid>
           <Name>VerticalLinePrimitive17</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="165" type="Cap" isKey="true">
+          <StartCap Ref="166" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive17>
-        <VerticalLinePrimitive18 Ref="166" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive18 Ref="167" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>15.8,6.6,0.0254,0.4</ClientRectangle>
           <Color>White</Color>
-          <EndCap Ref="167" type="Cap" isKey="true">
+          <EndCap Ref="168" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>b89cb863570f49309587fb6c8578d086</Guid>
           <Name>VerticalLinePrimitive18</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="168" type="Cap" isKey="true">
+          <StartCap Ref="169" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive18>
-        <VerticalLinePrimitive22 Ref="169" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive22 Ref="170" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>3.6,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="170" type="Cap" isKey="true">
+          <EndCap Ref="171" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>6140714119004db99c7afe4409f474ca</Guid>
           <Name>VerticalLinePrimitive22</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="171" type="Cap" isKey="true">
+          <StartCap Ref="172" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive22>
-        <VerticalLinePrimitive9 Ref="172" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive9 Ref="173" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>14,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="173" type="Cap" isKey="true">
+          <EndCap Ref="174" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>6c2029a84175446988541e533b71085e</Guid>
           <Name>VerticalLinePrimitive9</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="174" type="Cap" isKey="true">
+          <StartCap Ref="175" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive9>
-        <VerticalLinePrimitive12 Ref="175" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive12 Ref="176" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>12.6,8.6,0.0254,13.22</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="176" type="Cap" isKey="true">
+          <EndCap Ref="177" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>e0b707a76fdd41d28aadbd9d8ce049c0</Guid>
           <Name>VerticalLinePrimitive12</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="177" type="Cap" isKey="true">
+          <StartCap Ref="178" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive12>
-        <VerticalLinePrimitive24 Ref="178" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive24 Ref="179" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>15.4,8.6,0.0254,13.22</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="179" type="Cap" isKey="true">
+          <EndCap Ref="180" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>22850477f4604c9ba1d45eda2255127b</Guid>
           <Name>VerticalLinePrimitive24</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="180" type="Cap" isKey="true">
+          <StartCap Ref="181" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive24>
-        <VerticalLinePrimitive6 Ref="181" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive6 Ref="182" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>2.8,7,0.0254,0.8</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="182" type="Cap" isKey="true">
+          <EndCap Ref="183" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>9d012ce5f2384b93a1a48925bcf54f28</Guid>
@@ -1932,14 +1944,14 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
           <Size>2</Size>
-          <StartCap Ref="183" type="Cap" isKey="true">
+          <StartCap Ref="184" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive6>
-        <VerticalLinePrimitive20 Ref="184" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive20 Ref="185" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>12.4,7,0.0254,0.8</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="185" type="Cap" isKey="true">
+          <EndCap Ref="186" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>1045dce2f0c94ad185f46409b33b6ed8</Guid>
@@ -1947,14 +1959,14 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
           <Size>2</Size>
-          <StartCap Ref="186" type="Cap" isKey="true">
+          <StartCap Ref="187" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive20>
-        <VerticalLinePrimitive7 Ref="187" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive7 Ref="188" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>10,7,0.0254,0.8</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="188" type="Cap" isKey="true">
+          <EndCap Ref="189" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>4f54ef25471540dd8ecc742478dafe4b</Guid>
@@ -1962,14 +1974,14 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
           <Size>2</Size>
-          <StartCap Ref="189" type="Cap" isKey="true">
+          <StartCap Ref="190" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive7>
-        <VerticalLinePrimitive19 Ref="190" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive19 Ref="191" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>7.4,7,0.0254,0.8</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="191" type="Cap" isKey="true">
+          <EndCap Ref="192" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>faae39ee6c7a4b219e19200bbdd17b20</Guid>
@@ -1977,74 +1989,74 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
           <Page isRef="4" />
           <Parent isRef="4" />
           <Size>2</Size>
-          <StartCap Ref="192" type="Cap" isKey="true">
+          <StartCap Ref="193" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive19>
-        <VerticalLinePrimitive1 Ref="193" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive1 Ref="194" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>11.2,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="194" type="Cap" isKey="true">
+          <EndCap Ref="195" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>8af561855e8d4436ab4243dea4c7eafe</Guid>
           <Name>VerticalLinePrimitive1</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="195" type="Cap" isKey="true">
+          <StartCap Ref="196" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive1>
-        <VerticalLinePrimitive5 Ref="196" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive5 Ref="197" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>2,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="197" type="Cap" isKey="true">
+          <EndCap Ref="198" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>a318ac836a234f0a8b6a2b7b6d252739</Guid>
           <Name>VerticalLinePrimitive5</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="198" type="Cap" isKey="true">
+          <StartCap Ref="199" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive5>
-        <VerticalLinePrimitive11 Ref="199" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive11 Ref="200" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>5,8.4,0.0254,13.42</ClientRectangle>
           <Color>Blue</Color>
-          <EndCap Ref="200" type="Cap" isKey="true">
+          <EndCap Ref="201" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>9785141dae2244cd99ffaa5dda2b2af2</Guid>
           <Name>VerticalLinePrimitive11</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
-          <StartCap Ref="201" type="Cap" isKey="true">
+          <StartCap Ref="202" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive11>
-        <StartPointPrimitive13 Ref="202" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive13 Ref="203" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>12.6,8.6,0,0</ClientRectangle>
           <Name>StartPointPrimitive13</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
           <ReferenceToGuid>e0b707a76fdd41d28aadbd9d8ce049c0</ReferenceToGuid>
         </StartPointPrimitive13>
-        <StartPointPrimitive16 Ref="203" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive16 Ref="204" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>15.4,8.6,0,0</ClientRectangle>
           <Name>StartPointPrimitive16</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
           <ReferenceToGuid>22850477f4604c9ba1d45eda2255127b</ReferenceToGuid>
         </StartPointPrimitive16>
-        <StartPointPrimitive6 Ref="204" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive6 Ref="205" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>16.8,8.6,0,0</ClientRectangle>
           <Name>StartPointPrimitive6</Name>
           <Page isRef="4" />
           <Parent isRef="4" />
           <ReferenceToGuid>e3ef12353b76441699bd00eff1e833fd</ReferenceToGuid>
         </StartPointPrimitive6>
-        <StartPointPrimitive7 Ref="205" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive7 Ref="206" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>18.2,8.6,0,0</ClientRectangle>
           <Name>StartPointPrimitive7</Name>
           <Page isRef="4" />
@@ -2060,13 +2072,13 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
       <PageWidth>21</PageWidth>
       <PaperSize>A4</PaperSize>
       <Report isRef="0" />
-      <Watermark Ref="206" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="207" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>Black</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="207" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="208" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -2078,10 +2090,10 @@ TRIBUTARIAS CON EL GOBIERNO CENTRAL</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>1/30/2020 2:30:18 AM</ReportChanged>
+  <ReportChanged>2/19/2020 3:08:38 PM</ReportChanged>
   <ReportCreated>12/16/2014 5:46:55 PM</ReportCreated>
   <ReportFile>C:\Users\usuario\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Fotos\eImpresion\Doc.ElectronicoISL.mrt</ReportFile>
-  <ReportGuid>2140cc7489d14ab98f9bd23e7c429e01</ReportGuid>
+  <ReportGuid>b66cd70cf72743a9b6015fbcfdf8424e</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.3.900</ReportVersion>
@@ -3098,7 +3110,7 @@ namespace Reports
 </Script>
   <ScriptLanguage>CSharp</ScriptLanguage>
   <Styles isList="true" count="1">
-    <Estilo1 Ref="208" type="Stimulsoft.Report.StiStyle" isKey="true">
+    <Estilo1 Ref="209" type="Stimulsoft.Report.StiStyle" isKey="true">
       <Brush>Transparent</Brush>
       <Font>Arial,8</Font>
       <Name>Estilo1</Name>

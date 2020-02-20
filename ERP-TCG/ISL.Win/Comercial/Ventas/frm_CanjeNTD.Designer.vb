@@ -462,9 +462,10 @@ Partial Class frm_CanjeNTD
         Dim Appearance90 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance91 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance92 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance93 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim EditorButton3 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("Left")
         Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton("Right")
-        Dim Appearance93 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand10 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("e_Empresa", -1)
         Dim UltraGridColumn467 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn468 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdTipoEmpresa")
@@ -491,7 +492,6 @@ Partial Class frm_CanjeNTD
         Dim UltraGridColumn489 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndCategoriaEmpresaSGI")
         Dim UltraGridColumn490 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IndRelacionada")
         Dim UltraGridColumn491 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("DireccionFiscal")
-        Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance97 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -504,14 +504,16 @@ Partial Class frm_CanjeNTD
         Dim Appearance104 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance105 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance106 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance107 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance110 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance111 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance112 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance113 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance114 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance115 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
@@ -534,6 +536,7 @@ Partial Class frm_CanjeNTD
         Me.tsb_Eliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsb_Imprimir = New System.Windows.Forms.ToolStripDropDownButton()
         Me.tsb_ImprimirA4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TickeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.cmb_ClienteBuscado = New Infragistics.Win.UltraWinGrid.UltraCombo()
         Me.UltraLabel10 = New Infragistics.Win.Misc.UltraLabel()
@@ -580,7 +583,6 @@ Partial Class frm_CanjeNTD
         Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
         Me.fic_Canje = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.TickeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bso_Documento, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1137,7 +1139,7 @@ Partial Class frm_CanjeNTD
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.ToolStrip1)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1356, 676)
         '
@@ -1417,8 +1419,14 @@ Partial Class frm_CanjeNTD
         'tsb_ImprimirA4
         '
         Me.tsb_ImprimirA4.Name = "tsb_ImprimirA4"
-        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(180, 22)
+        Me.tsb_ImprimirA4.Size = New System.Drawing.Size(120, 22)
         Me.tsb_ImprimirA4.Text = "Papel A4"
+        '
+        'TickeToolStripMenuItem
+        '
+        Me.TickeToolStripMenuItem.Name = "TickeToolStripMenuItem"
+        Me.TickeToolStripMenuItem.Size = New System.Drawing.Size(120, 22)
+        Me.TickeToolStripMenuItem.Text = "Ticket"
         '
         'UltraGroupBox1
         '
@@ -1606,7 +1614,7 @@ Partial Class frm_CanjeNTD
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox9)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1356, 676)
         '
@@ -2071,6 +2079,9 @@ Partial Class frm_CanjeNTD
         '
         'UltraGroupBox6
         '
+        Appearance87.BackColor = System.Drawing.Color.White
+        Appearance87.BackColor2 = System.Drawing.Color.White
+        Me.UltraGroupBox6.ContentAreaAppearance = Appearance87
         Me.UltraGroupBox6.Controls.Add(Me.UltraLabel16)
         Me.UltraGroupBox6.Controls.Add(Me.txt_Numero)
         Me.UltraGroupBox6.Controls.Add(Me.txt_Observacion)
@@ -2096,10 +2107,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel16
         '
-        Appearance87.BackColor = System.Drawing.Color.Transparent
-        Appearance87.ForeColor = System.Drawing.Color.Navy
-        Appearance87.TextVAlignAsString = "Middle"
-        Me.UltraLabel16.Appearance = Appearance87
+        Appearance88.BackColor = System.Drawing.Color.Transparent
+        Appearance88.ForeColor = System.Drawing.Color.Navy
+        Appearance88.TextVAlignAsString = "Middle"
+        Me.UltraLabel16.Appearance = Appearance88
         Me.UltraLabel16.AutoSize = True
         Me.UltraLabel16.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel16.Location = New System.Drawing.Point(196, 85)
@@ -2131,10 +2142,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel15
         '
-        Appearance88.BackColor = System.Drawing.Color.Transparent
-        Appearance88.ForeColor = System.Drawing.Color.Navy
-        Appearance88.TextVAlignAsString = "Middle"
-        Me.UltraLabel15.Appearance = Appearance88
+        Appearance89.BackColor = System.Drawing.Color.Transparent
+        Appearance89.ForeColor = System.Drawing.Color.Navy
+        Appearance89.TextVAlignAsString = "Middle"
+        Me.UltraLabel15.Appearance = Appearance89
         Me.UltraLabel15.AutoSize = True
         Me.UltraLabel15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel15.Location = New System.Drawing.Point(31, 167)
@@ -2153,10 +2164,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel8
         '
-        Appearance89.BackColor = System.Drawing.Color.Transparent
-        Appearance89.ForeColor = System.Drawing.Color.Navy
-        Appearance89.TextVAlignAsString = "Middle"
-        Me.UltraLabel8.Appearance = Appearance89
+        Appearance90.BackColor = System.Drawing.Color.Transparent
+        Appearance90.ForeColor = System.Drawing.Color.Navy
+        Appearance90.TextVAlignAsString = "Middle"
+        Me.UltraLabel8.Appearance = Appearance90
         Me.UltraLabel8.AutoSize = True
         Me.UltraLabel8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel8.Location = New System.Drawing.Point(58, 113)
@@ -2167,10 +2178,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel4
         '
-        Appearance90.BackColor = System.Drawing.Color.Transparent
-        Appearance90.ForeColor = System.Drawing.Color.Navy
-        Appearance90.TextVAlignAsString = "Middle"
-        Me.UltraLabel4.Appearance = Appearance90
+        Appearance91.BackColor = System.Drawing.Color.Transparent
+        Appearance91.ForeColor = System.Drawing.Color.Navy
+        Appearance91.TextVAlignAsString = "Middle"
+        Me.UltraLabel4.Appearance = Appearance91
         Me.UltraLabel4.AutoSize = True
         Me.UltraLabel4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel4.Location = New System.Drawing.Point(41, 142)
@@ -2181,10 +2192,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel7
         '
-        Appearance91.BackColor = System.Drawing.Color.Transparent
-        Appearance91.ForeColor = System.Drawing.Color.Navy
-        Appearance91.TextVAlignAsString = "Middle"
-        Me.UltraLabel7.Appearance = Appearance91
+        Appearance92.BackColor = System.Drawing.Color.Transparent
+        Appearance92.ForeColor = System.Drawing.Color.Navy
+        Appearance92.TextVAlignAsString = "Middle"
+        Me.UltraLabel7.Appearance = Appearance92
         Me.UltraLabel7.AutoSize = True
         Me.UltraLabel7.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel7.Location = New System.Drawing.Point(12, 56)
@@ -2195,10 +2206,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel5
         '
-        Appearance92.BackColor = System.Drawing.Color.Transparent
-        Appearance92.ForeColor = System.Drawing.Color.Navy
-        Appearance92.TextVAlignAsString = "Middle"
-        Me.UltraLabel5.Appearance = Appearance92
+        Appearance93.BackColor = System.Drawing.Color.Transparent
+        Appearance93.ForeColor = System.Drawing.Color.Navy
+        Appearance93.TextVAlignAsString = "Middle"
+        Me.UltraLabel5.Appearance = Appearance93
         Me.UltraLabel5.AutoSize = True
         Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel5.Location = New System.Drawing.Point(237, 28)
@@ -2242,9 +2253,9 @@ Partial Class frm_CanjeNTD
         EditorButton4.Key = "Right"
         Me.cmb_Cliente.ButtonsRight.Add(EditorButton4)
         Me.cmb_Cliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Appearance93.BackColor = System.Drawing.SystemColors.Window
-        Appearance93.BorderColor = System.Drawing.SystemColors.InactiveCaption
-        Me.cmb_Cliente.DisplayLayout.Appearance = Appearance93
+        Appearance94.BackColor = System.Drawing.SystemColors.Window
+        Appearance94.BorderColor = System.Drawing.SystemColors.InactiveCaption
+        Me.cmb_Cliente.DisplayLayout.Appearance = Appearance94
         UltraGridColumn467.Header.VisiblePosition = 0
         UltraGridColumn467.Hidden = True
         UltraGridColumn468.Header.VisiblePosition = 5
@@ -2288,51 +2299,51 @@ Partial Class frm_CanjeNTD
         Me.cmb_Cliente.DisplayLayout.BandsSerializer.Add(UltraGridBand10)
         Me.cmb_Cliente.DisplayLayout.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cmb_Cliente.DisplayLayout.CaptionVisible = Infragistics.Win.DefaultableBoolean.[False]
-        Appearance94.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Appearance94.BackColor2 = System.Drawing.SystemColors.ControlDark
-        Appearance94.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical
-        Appearance94.BorderColor = System.Drawing.SystemColors.Window
-        Me.cmb_Cliente.DisplayLayout.GroupByBox.Appearance = Appearance94
-        Appearance95.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.cmb_Cliente.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance95
-        Me.cmb_Cliente.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
-        Appearance96.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Appearance96.BackColor2 = System.Drawing.SystemColors.Control
-        Appearance96.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance95.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Appearance95.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance95.BackGradientStyle = Infragistics.Win.GradientStyle.Vertical
+        Appearance95.BorderColor = System.Drawing.SystemColors.Window
+        Me.cmb_Cliente.DisplayLayout.GroupByBox.Appearance = Appearance95
         Appearance96.ForeColor = System.Drawing.SystemColors.GrayText
-        Me.cmb_Cliente.DisplayLayout.GroupByBox.PromptAppearance = Appearance96
+        Me.cmb_Cliente.DisplayLayout.GroupByBox.BandLabelAppearance = Appearance96
+        Me.cmb_Cliente.DisplayLayout.GroupByBox.BorderStyle = Infragistics.Win.UIElementBorderStyle.Solid
+        Appearance97.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Appearance97.BackColor2 = System.Drawing.SystemColors.Control
+        Appearance97.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance97.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.cmb_Cliente.DisplayLayout.GroupByBox.PromptAppearance = Appearance97
         Me.cmb_Cliente.DisplayLayout.MaxColScrollRegions = 1
         Me.cmb_Cliente.DisplayLayout.MaxRowScrollRegions = 1
-        Appearance97.BackColor = System.Drawing.SystemColors.Window
-        Appearance97.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmb_Cliente.DisplayLayout.Override.ActiveCellAppearance = Appearance97
-        Appearance98.BackColor = System.Drawing.SystemColors.Highlight
-        Appearance98.ForeColor = System.Drawing.SystemColors.HighlightText
-        Me.cmb_Cliente.DisplayLayout.Override.ActiveRowAppearance = Appearance98
+        Appearance98.BackColor = System.Drawing.SystemColors.Window
+        Appearance98.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.cmb_Cliente.DisplayLayout.Override.ActiveCellAppearance = Appearance98
+        Appearance99.BackColor = System.Drawing.SystemColors.Highlight
+        Appearance99.ForeColor = System.Drawing.SystemColors.HighlightText
+        Me.cmb_Cliente.DisplayLayout.Override.ActiveRowAppearance = Appearance99
         Me.cmb_Cliente.DisplayLayout.Override.BorderStyleCell = Infragistics.Win.UIElementBorderStyle.Solid
         Me.cmb_Cliente.DisplayLayout.Override.BorderStyleRow = Infragistics.Win.UIElementBorderStyle.Solid
-        Appearance99.BackColor = System.Drawing.SystemColors.Window
-        Me.cmb_Cliente.DisplayLayout.Override.CardAreaAppearance = Appearance99
-        Appearance100.BorderColor = System.Drawing.Color.Silver
-        Appearance100.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter
-        Me.cmb_Cliente.DisplayLayout.Override.CellAppearance = Appearance100
+        Appearance100.BackColor = System.Drawing.SystemColors.Window
+        Me.cmb_Cliente.DisplayLayout.Override.CardAreaAppearance = Appearance100
+        Appearance101.BorderColor = System.Drawing.Color.Silver
+        Appearance101.TextTrimming = Infragistics.Win.TextTrimming.EllipsisCharacter
+        Me.cmb_Cliente.DisplayLayout.Override.CellAppearance = Appearance101
         Me.cmb_Cliente.DisplayLayout.Override.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         Me.cmb_Cliente.DisplayLayout.Override.CellPadding = 0
-        Appearance101.BackColor = System.Drawing.SystemColors.Control
-        Appearance101.BackColor2 = System.Drawing.SystemColors.ControlDark
-        Appearance101.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element
-        Appearance101.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
-        Appearance101.BorderColor = System.Drawing.SystemColors.Window
-        Me.cmb_Cliente.DisplayLayout.Override.GroupByRowAppearance = Appearance101
-        Appearance102.TextHAlignAsString = "Left"
-        Me.cmb_Cliente.DisplayLayout.Override.HeaderAppearance = Appearance102
+        Appearance102.BackColor = System.Drawing.SystemColors.Control
+        Appearance102.BackColor2 = System.Drawing.SystemColors.ControlDark
+        Appearance102.BackGradientAlignment = Infragistics.Win.GradientAlignment.Element
+        Appearance102.BackGradientStyle = Infragistics.Win.GradientStyle.Horizontal
+        Appearance102.BorderColor = System.Drawing.SystemColors.Window
+        Me.cmb_Cliente.DisplayLayout.Override.GroupByRowAppearance = Appearance102
+        Appearance103.TextHAlignAsString = "Left"
+        Me.cmb_Cliente.DisplayLayout.Override.HeaderAppearance = Appearance103
         Me.cmb_Cliente.DisplayLayout.Override.HeaderClickAction = Infragistics.Win.UltraWinGrid.HeaderClickAction.SortMulti
-        Appearance103.BackColor = System.Drawing.SystemColors.Window
-        Appearance103.BorderColor = System.Drawing.Color.Silver
-        Me.cmb_Cliente.DisplayLayout.Override.RowAppearance = Appearance103
+        Appearance104.BackColor = System.Drawing.SystemColors.Window
+        Appearance104.BorderColor = System.Drawing.Color.Silver
+        Me.cmb_Cliente.DisplayLayout.Override.RowAppearance = Appearance104
         Me.cmb_Cliente.DisplayLayout.Override.RowSelectors = Infragistics.Win.DefaultableBoolean.[False]
-        Appearance104.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.cmb_Cliente.DisplayLayout.Override.TemplateAddRowAppearance = Appearance104
+        Appearance105.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.cmb_Cliente.DisplayLayout.Override.TemplateAddRowAppearance = Appearance105
         Me.cmb_Cliente.DisplayLayout.ScrollBounds = Infragistics.Win.UltraWinGrid.ScrollBounds.ScrollToFill
         Me.cmb_Cliente.DisplayLayout.ScrollStyle = Infragistics.Win.UltraWinGrid.ScrollStyle.Immediate
         Me.cmb_Cliente.DisplayLayout.ViewStyleBand = Infragistics.Win.UltraWinGrid.ViewStyleBand.OutlookGroupBy
@@ -2347,10 +2358,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel6
         '
-        Appearance105.BackColor = System.Drawing.Color.Transparent
-        Appearance105.ForeColor = System.Drawing.Color.Navy
-        Appearance105.TextVAlignAsString = "Middle"
-        Me.UltraLabel6.Appearance = Appearance105
+        Appearance106.BackColor = System.Drawing.Color.Transparent
+        Appearance106.ForeColor = System.Drawing.Color.Navy
+        Appearance106.TextVAlignAsString = "Middle"
+        Me.UltraLabel6.Appearance = Appearance106
         Me.UltraLabel6.AutoSize = True
         Me.UltraLabel6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel6.Location = New System.Drawing.Point(34, 85)
@@ -2361,11 +2372,11 @@ Partial Class frm_CanjeNTD
         '
         'cboTipoPago
         '
-        Appearance106.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoPago.Appearance = Appearance106
+        Appearance107.ForeColor = System.Drawing.Color.Black
+        Me.cboTipoPago.Appearance = Appearance107
         Me.cboTipoPago.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
-        Appearance107.Image = 7
-        EditorButton5.Appearance = Appearance107
+        Appearance108.Image = 7
+        EditorButton5.Appearance = Appearance108
         Me.cboTipoPago.ButtonsRight.Add(EditorButton5)
         Me.cboTipoPago.DisplayMember = "Nombre"
         Me.cboTipoPago.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
@@ -2380,10 +2391,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel3
         '
-        Appearance108.BackColor = System.Drawing.Color.Transparent
-        Appearance108.ForeColor = System.Drawing.Color.Navy
-        Appearance108.TextVAlignAsString = "Middle"
-        Me.UltraLabel3.Appearance = Appearance108
+        Appearance109.BackColor = System.Drawing.Color.Transparent
+        Appearance109.ForeColor = System.Drawing.Color.Navy
+        Appearance109.TextVAlignAsString = "Middle"
+        Me.UltraLabel3.Appearance = Appearance109
         Me.UltraLabel3.AutoSize = True
         Me.UltraLabel3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel3.Location = New System.Drawing.Point(61, 28)
@@ -2394,6 +2405,9 @@ Partial Class frm_CanjeNTD
         '
         'UltraGroupBox5
         '
+        Appearance110.BackColor = System.Drawing.Color.White
+        Appearance110.BackColor2 = System.Drawing.Color.White
+        Me.UltraGroupBox5.ContentAreaAppearance = Appearance110
         Me.UltraGroupBox5.Controls.Add(Me.decTipoCambio)
         Me.UltraGroupBox5.Controls.Add(Me.UltraLabel12)
         Me.UltraGroupBox5.Controls.Add(Me.nud_Total)
@@ -2425,10 +2439,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel12
         '
-        Appearance109.BackColor = System.Drawing.Color.Transparent
-        Appearance109.ForeColor = System.Drawing.Color.Navy
-        Appearance109.TextVAlignAsString = "Middle"
-        Me.UltraLabel12.Appearance = Appearance109
+        Appearance111.BackColor = System.Drawing.Color.Transparent
+        Appearance111.ForeColor = System.Drawing.Color.Navy
+        Appearance111.TextVAlignAsString = "Middle"
+        Me.UltraLabel12.Appearance = Appearance111
         Me.UltraLabel12.AutoSize = True
         Me.UltraLabel12.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel12.Location = New System.Drawing.Point(46, 30)
@@ -2451,10 +2465,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel14
         '
-        Appearance110.BackColor = System.Drawing.Color.Transparent
-        Appearance110.ForeColor = System.Drawing.Color.Navy
-        Appearance110.TextVAlignAsString = "Middle"
-        Me.UltraLabel14.Appearance = Appearance110
+        Appearance112.BackColor = System.Drawing.Color.Transparent
+        Appearance112.ForeColor = System.Drawing.Color.Navy
+        Appearance112.TextVAlignAsString = "Middle"
+        Me.UltraLabel14.Appearance = Appearance112
         Me.UltraLabel14.AutoSize = True
         Me.UltraLabel14.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel14.Location = New System.Drawing.Point(19, 86)
@@ -2477,10 +2491,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel13
         '
-        Appearance111.BackColor = System.Drawing.Color.Transparent
-        Appearance111.ForeColor = System.Drawing.Color.Navy
-        Appearance111.TextVAlignAsString = "Middle"
-        Me.UltraLabel13.Appearance = Appearance111
+        Appearance113.BackColor = System.Drawing.Color.Transparent
+        Appearance113.ForeColor = System.Drawing.Color.Navy
+        Appearance113.TextVAlignAsString = "Middle"
+        Me.UltraLabel13.Appearance = Appearance113
         Me.UltraLabel13.AutoSize = True
         Me.UltraLabel13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel13.Location = New System.Drawing.Point(22, 58)
@@ -2503,10 +2517,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel11
         '
-        Appearance112.BackColor = System.Drawing.Color.Transparent
-        Appearance112.ForeColor = System.Drawing.Color.Navy
-        Appearance112.TextVAlignAsString = "Middle"
-        Me.UltraLabel11.Appearance = Appearance112
+        Appearance114.BackColor = System.Drawing.Color.Transparent
+        Appearance114.ForeColor = System.Drawing.Color.Navy
+        Appearance114.TextVAlignAsString = "Middle"
+        Me.UltraLabel11.Appearance = Appearance114
         Me.UltraLabel11.AutoSize = True
         Me.UltraLabel11.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel11.Location = New System.Drawing.Point(41, 114)
@@ -2539,10 +2553,10 @@ Partial Class frm_CanjeNTD
         '
         'UltraLabel9
         '
-        Appearance113.BackColor = System.Drawing.Color.Transparent
-        Appearance113.ForeColor = System.Drawing.Color.Navy
-        Appearance113.TextVAlignAsString = "Middle"
-        Me.UltraLabel9.Appearance = Appearance113
+        Appearance115.BackColor = System.Drawing.Color.Transparent
+        Appearance115.ForeColor = System.Drawing.Color.Navy
+        Appearance115.TextVAlignAsString = "Middle"
+        Me.UltraLabel9.Appearance = Appearance115
         Me.UltraLabel9.AutoSize = True
         Me.UltraLabel9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel9.Location = New System.Drawing.Point(20, 15)
@@ -2575,12 +2589,6 @@ Partial Class frm_CanjeNTD
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1356, 676)
-        '
-        'TickeToolStripMenuItem
-        '
-        Me.TickeToolStripMenuItem.Name = "TickeToolStripMenuItem"
-        Me.TickeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.TickeToolStripMenuItem.Text = "Ticket"
         '
         'frm_CanjeNTD
         '

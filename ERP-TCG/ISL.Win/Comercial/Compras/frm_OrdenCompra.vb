@@ -1288,7 +1288,7 @@ Public Class frm_OrdenCompra
                 oeOrdenIngreso.IdMoneda = oeMoneda.Id 'idMoneda 'Definir: Soles                 
                 oeOrdenIngreso.IdProveedor = oeOrdenCompra.IdProveedor 'idProveedor   
                 oeOrdenIngreso.Glosa = oeOrdenCompra.Glosa
-                oeOrdenIngreso.FechaOrden = Date.Now
+                oeOrdenIngreso.FechaOrden = oeOrdenCompra.FechaOrden 'cambiar con date.now
                 oeOrdenIngreso.TipoOperacion = "I"
                 oeOrdenIngreso.IdSubAlmacenDestino = ""
                 oeOrdenIngreso.IdSubAlmacenOrigen = ""
@@ -2383,7 +2383,7 @@ Public Class frm_OrdenCompra
             For Each oe As e_OrdenMaterial In lo
                 oeInventario = New e_Inventario
                 With oeInventario
-                    .FechaCreacion = FechaActual
+                    .FechaCreacion = oeOrdenCompra.FechaOrden ' FechaActual
                     .IdMaterial = oe.IdMaterial
                     .IdSubAlmacen = oe.IdSubAlmacen
                     .CantidadIngreso = oe.CantidadMaterial
