@@ -120,7 +120,7 @@ Public Class d_CierreTurno
         Try
             Dim DT As New DataTable, DS As New DataSet
             With Item
-                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Detalle_LST", .TipoOperacion, "", "", .Id)
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Detalle_LST", .TipoOperacion, "", "", "", "", "", .IdCierreTurno)
                 If DS.Tables(0).Rows.Count > 0 Then
                     DT = DS.Tables(0)
                 End If

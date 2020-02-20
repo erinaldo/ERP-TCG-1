@@ -23,6 +23,8 @@ Partial Class frm_CierreTurno_Imprimir
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand1 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("e_MovimientoDocumento", -1)
         Dim UltraGridColumn82 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdEmpresaSis")
@@ -132,6 +134,8 @@ Partial Class frm_CierreTurno_Imprimir
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.BSO1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.BSO2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.e_CierreTurnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.e_CierreTurno_DetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraTabPageControl1.SuspendLayout()
         Me.UltraTabPageControl2.SuspendLayout()
         CType(Me.udg_Documentos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +145,8 @@ Partial Class frm_CierreTurno_Imprimir
         Me.UltraTabControl1.SuspendLayout()
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
@@ -153,7 +159,13 @@ Partial Class frm_CierreTurno_Imprimir
         'VISOR
         '
         Me.VISOR.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_DocumentoCtble_Termica.rdlc"
+        ReportDataSource1.Name = "Cabecera"
+        ReportDataSource1.Value = Me.e_CierreTurnoBindingSource
+        ReportDataSource2.Name = "Detalle"
+        ReportDataSource2.Value = Me.e_CierreTurno_DetalleBindingSource
+        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource2)
+        Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_CierreParcial.rdlc"
         Me.VISOR.Location = New System.Drawing.Point(0, 0)
         Me.VISOR.Name = "VISOR"
         Me.VISOR.Size = New System.Drawing.Size(798, 427)
@@ -454,6 +466,22 @@ Partial Class frm_CierreTurno_Imprimir
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(798, 427)
         '
+        'BSO1
+        '
+        Me.BSO1.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno)
+        '
+        'BSO2
+        '
+        Me.BSO2.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno_Detalle)
+        '
+        'e_CierreTurnoBindingSource
+        '
+        Me.e_CierreTurnoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno)
+        '
+        'e_CierreTurno_DetalleBindingSource
+        '
+        Me.e_CierreTurno_DetalleBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno_Detalle)
+        '
         'frm_CierreTurno_Imprimir
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -471,6 +499,8 @@ Partial Class frm_CierreTurno_Imprimir
         Me.UltraTabControl1.ResumeLayout(False)
         CType(Me.BSO1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BSO2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -486,4 +516,6 @@ Partial Class frm_CierreTurno_Imprimir
     Friend WithEvents btn_Exportar As Button
     Friend WithEvents BSO1 As BindingSource
     Friend WithEvents BSO2 As BindingSource
+    Friend WithEvents e_CierreTurnoBindingSource As BindingSource
+    Friend WithEvents e_CierreTurno_DetalleBindingSource As BindingSource
 End Class
