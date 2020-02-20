@@ -1664,7 +1664,11 @@ Public Class frm_FacturarCarga
     End Sub
 
     Private Sub Formato1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato1ToolStripMenuItem.Click
-        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A4", "TRANSPORTE", "T1")
+        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A41", "TRANSPORTE", "T1")
+    End Sub
+
+    Private Sub Formato2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato2ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A42", "TRANSPORTE", "T2")
     End Sub
 
     Private Sub mnuAplicarValorU_Click(sender As Object, e As EventArgs) Handles mnuAplicarValorU.Click

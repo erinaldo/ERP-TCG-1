@@ -422,6 +422,8 @@ Partial Class frm_FacturarCarga
         Me.tsmiEmitir = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiAnular = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDescargarPDF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.agrBusquedaDoc = New ISL.Controles.Agrupacion(Me.components)
         Me.fecHastaDoc = New System.Windows.Forms.DateTimePicker()
@@ -541,8 +543,6 @@ Partial Class frm_FacturarCarga
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.UltraToolTipManager2 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Formato1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Formato2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl10.SuspendLayout()
         CType(Me.griFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuCargas.SuspendLayout()
@@ -2152,6 +2152,18 @@ Partial Class frm_FacturarCarga
         Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
         Me.tsmiDescargarPDF.Size = New System.Drawing.Size(180, 22)
         Me.tsmiDescargarPDF.Text = "Ver PDF"
+        '
+        'Formato1ToolStripMenuItem
+        '
+        Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
+        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato1ToolStripMenuItem.Text = "Formato 1"
+        '
+        'Formato2ToolStripMenuItem
+        '
+        Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
+        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato2ToolStripMenuItem.Text = "Formato 2"
         '
         'tsmiDescargarXML
         '
@@ -3940,18 +3952,6 @@ Partial Class frm_FacturarCarga
         'UltraToolTipManager2
         '
         Me.UltraToolTipManager2.ContainingControl = Me
-        '
-        'Formato1ToolStripMenuItem
-        '
-        Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
-        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Formato1ToolStripMenuItem.Text = "Formato 1"
-        '
-        'Formato2ToolStripMenuItem
-        '
-        Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
-        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Formato2ToolStripMenuItem.Text = "Formato 2"
         '
         'frm_FacturarCarga
         '
