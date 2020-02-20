@@ -101,6 +101,36 @@ Public Class d_CierreTurno
         End Try
     End Function
 
+    Public Function dt_CierreTurno_Impresion(ByVal Item As e_CierreTurno) As DataTable
+        Try
+            Dim DT As New DataTable, DS As New DataSet
+            With Item
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_LST", .TipoOperacion, "", "", .Id)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
+                End If
+            End With
+            Return DT
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
+    Public Function dt_CierreTurnoDetalle_Impresion(ByVal Item As e_CierreTurno_Detalle) As DataTable
+        Try
+            Dim DT As New DataTable, DS As New DataSet
+            With Item
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Detalle_LST", .TipoOperacion, "", "", .Id)
+                If DS.Tables(0).Rows.Count > 0 Then
+                    DT = DS.Tables(0)
+                End If
+            End With
+            Return DT
+        Catch ex As Exception
+            Throw
+        End Try
+    End Function
+
     Public Function Guardar(ByVal Item As e_CierreTurno) As e_CierreTurno
         Try
             'Using transScope As New TransactionScope()

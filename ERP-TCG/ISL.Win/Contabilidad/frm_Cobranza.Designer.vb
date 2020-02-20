@@ -290,6 +290,11 @@ Partial Class frm_Cobranza
         Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance39 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
+        Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim ValueListItem1 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim ValueListItem2 As Infragistics.Win.ValueListItem = New Infragistics.Win.ValueListItem()
+        Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.gridCobranzaAgregado = New ISL.Controles.Grilla(Me.components)
         Me.MenuDocumentos = New ISL.Controles.MenuContextual(Me.components)
         Me.QuitarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -344,6 +349,8 @@ Partial Class frm_Cobranza
         Me.UltraCalculatorDropDown2 = New Infragistics.Win.UltraWinEditors.UltraWinCalc.UltraCalculatorDropDown()
         Me.Chequear2 = New ISL.Controles.Chequear(Me.components)
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.uce_Decimales = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.Etiqueta1 = New ISL.Controles.Etiqueta(Me.components)
         Me.UltraGroupBox2 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.UltraGroupBox3 = New Infragistics.Win.Misc.UltraGroupBox()
         CType(Me.gridCobranzaAgregado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -379,6 +386,7 @@ Partial Class frm_Cobranza
         CType(Me.Chequear2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox1.SuspendLayout()
+        CType(Me.uce_Decimales, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox2.SuspendLayout()
         CType(Me.UltraGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -389,7 +397,6 @@ Partial Class frm_Cobranza
         '
         Me.gridCobranzaAgregado.ContextMenuStrip = Me.MenuDocumentos
         Me.gridCobranzaAgregado.DataSource = Me.UltraDataSource1
-        Me.gridCobranzaAgregado.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns
         UltraGridColumn3.Header.VisiblePosition = 0
         UltraGridColumn3.Hidden = True
         UltraGridColumn4.Header.VisiblePosition = 1
@@ -402,21 +409,21 @@ Partial Class frm_Cobranza
         UltraGridColumn6.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         UltraGridColumn6.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn6.Header.VisiblePosition = 4
-        UltraGridColumn6.Width = 77
+        UltraGridColumn6.Width = 57
         UltraGridColumn7.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         UltraGridColumn7.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn7.Header.VisiblePosition = 5
-        UltraGridColumn7.Width = 88
+        UltraGridColumn7.Width = 89
         UltraGridColumn8.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         UltraGridColumn8.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn8.Header.Caption = "Fec.Emision"
         UltraGridColumn8.Header.VisiblePosition = 6
-        UltraGridColumn8.Width = 109
+        UltraGridColumn8.Width = 89
         UltraGridColumn9.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         UltraGridColumn9.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn9.Header.Caption = "Fec.Venc."
         UltraGridColumn9.Header.VisiblePosition = 7
-        UltraGridColumn9.Width = 99
+        UltraGridColumn9.Width = 75
         UltraGridColumn10.Header.VisiblePosition = 8
         UltraGridColumn10.Hidden = True
         UltraGridColumn11.Header.VisiblePosition = 9
@@ -428,7 +435,7 @@ Partial Class frm_Cobranza
         UltraGridColumn12.Format = "#,##0.00"
         UltraGridColumn12.Header.VisiblePosition = 12
         UltraGridColumn12.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
-        UltraGridColumn12.Width = 106
+        UltraGridColumn12.Width = 107
         UltraGridColumn13.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
         Appearance2.TextHAlignAsString = "Right"
         UltraGridColumn13.CellAppearance = Appearance2
@@ -441,7 +448,7 @@ Partial Class frm_Cobranza
         UltraGridColumn14.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
         UltraGridColumn14.Header.Caption = "Cliente"
         UltraGridColumn14.Header.VisiblePosition = 2
-        UltraGridColumn14.Width = 312
+        UltraGridColumn14.Width = 307
         UltraGridColumn15.Header.VisiblePosition = 13
         UltraGridColumn15.Hidden = True
         UltraGridColumn16.Header.VisiblePosition = 14
@@ -469,6 +476,7 @@ Partial Class frm_Cobranza
         UltraGridColumn37.Format = "#,##0.00"
         UltraGridColumn37.Header.Caption = "Detraccion"
         UltraGridColumn37.Header.VisiblePosition = 17
+        UltraGridColumn37.Hidden = True
         UltraGridColumn37.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn37.Width = 71
         UltraGridColumn38.CellActivation = Infragistics.Win.UltraWinGrid.Activation.NoEdit
@@ -487,12 +495,12 @@ Partial Class frm_Cobranza
         Appearance6.TextHAlignAsString = "Right"
         UltraGridColumn41.CellAppearance = Appearance6
         UltraGridColumn41.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
-        UltraGridColumn41.Format = "#,##0.0000"
+        UltraGridColumn41.Format = "#,##0.00"
         UltraGridColumn41.Header.Caption = "Monto a Cobrar"
         UltraGridColumn41.Header.VisiblePosition = 22
-        UltraGridColumn41.MaskInput = "{double:9.4}"
+        UltraGridColumn41.MaskInput = "{double:9.2}"
         UltraGridColumn41.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
-        UltraGridColumn41.Width = 90
+        UltraGridColumn41.Width = 91
         UltraGridColumn42.Header.VisiblePosition = 23
         UltraGridColumn42.Hidden = True
         UltraGridColumn43.Header.VisiblePosition = 24
@@ -618,24 +626,23 @@ Partial Class frm_Cobranza
         'gridCobranza
         '
         Me.gridCobranza.DataSource = Me.UltraDataSource2
-        Me.gridCobranza.DisplayLayout.AutoFitStyle = Infragistics.Win.UltraWinGrid.AutoFitStyle.ResizeAllColumns
         UltraGridColumn57.Header.VisiblePosition = 0
         UltraGridColumn57.Hidden = True
         UltraGridColumn58.Header.VisiblePosition = 1
         UltraGridColumn58.Hidden = True
         UltraGridColumn59.Header.Caption = "TipoDoc"
         UltraGridColumn59.Header.VisiblePosition = 3
-        UltraGridColumn59.Width = 156
+        UltraGridColumn59.Width = 133
         UltraGridColumn60.Header.VisiblePosition = 4
         UltraGridColumn60.Width = 68
         UltraGridColumn61.Header.VisiblePosition = 5
         UltraGridColumn61.Width = 112
         UltraGridColumn62.Header.Caption = "Fec.Emision"
         UltraGridColumn62.Header.VisiblePosition = 6
-        UltraGridColumn62.Width = 101
+        UltraGridColumn62.Width = 82
         UltraGridColumn63.Header.Caption = "Fec.Venc."
         UltraGridColumn63.Header.VisiblePosition = 7
-        UltraGridColumn63.Width = 98
+        UltraGridColumn63.Width = 82
         UltraGridColumn64.Header.VisiblePosition = 8
         UltraGridColumn64.Hidden = True
         UltraGridColumn65.Header.VisiblePosition = 9
@@ -645,16 +652,16 @@ Partial Class frm_Cobranza
         UltraGridColumn66.Format = "#,##0.00"
         UltraGridColumn66.Header.VisiblePosition = 12
         UltraGridColumn66.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
-        UltraGridColumn66.Width = 116
+        UltraGridColumn66.Width = 117
         Appearance8.TextHAlignAsString = "Right"
         UltraGridColumn67.CellAppearance = Appearance8
         UltraGridColumn67.Format = "#,##0.00"
         UltraGridColumn67.Header.VisiblePosition = 13
         UltraGridColumn67.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
-        UltraGridColumn67.Width = 101
+        UltraGridColumn67.Width = 102
         UltraGridColumn68.Header.Caption = "Cliente"
         UltraGridColumn68.Header.VisiblePosition = 2
-        UltraGridColumn68.Width = 280
+        UltraGridColumn68.Width = 238
         UltraGridColumn69.Header.VisiblePosition = 14
         UltraGridColumn69.Hidden = True
         UltraGridColumn70.Header.VisiblePosition = 15
@@ -677,8 +684,9 @@ Partial Class frm_Cobranza
         UltraGridColumn75.CellAppearance = Appearance10
         UltraGridColumn75.Format = "#,##0.00"
         UltraGridColumn75.Header.VisiblePosition = 18
+        UltraGridColumn75.Hidden = True
         UltraGridColumn75.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
-        UltraGridColumn75.Width = 85
+        UltraGridColumn75.Width = 86
         Appearance11.TextHAlignAsString = "Right"
         UltraGridColumn76.CellAppearance = Appearance11
         UltraGridColumn76.Format = "#,##0.00"
@@ -1419,6 +1427,8 @@ Partial Class frm_Cobranza
         '
         'UltraGroupBox1
         '
+        Me.UltraGroupBox1.Controls.Add(Me.uce_Decimales)
+        Me.UltraGroupBox1.Controls.Add(Me.Etiqueta1)
         Me.UltraGroupBox1.Controls.Add(Me.UltraExpandableGroupBox1)
         Me.UltraGroupBox1.Controls.Add(Me.Etiqueta18)
         Me.UltraGroupBox1.Controls.Add(Me.txtVoucher)
@@ -1442,6 +1452,37 @@ Partial Class frm_Cobranza
         Me.UltraGroupBox1.Size = New System.Drawing.Size(1320, 123)
         Me.UltraGroupBox1.TabIndex = 0
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'uce_Decimales
+        '
+        Appearance40.Image = Global.ISL.Win.My.Resources.Resources.Consultar
+        EditorButton1.Appearance = Appearance40
+        Me.uce_Decimales.ButtonsRight.Add(EditorButton1)
+        Me.uce_Decimales.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.uce_Decimales.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
+        ValueListItem1.DataValue = "ValueListItem0"
+        ValueListItem1.DisplayText = "2"
+        ValueListItem2.DataValue = "ValueListItem1"
+        ValueListItem2.DisplayText = "4"
+        Me.uce_Decimales.Items.AddRange(New Infragistics.Win.ValueListItem() {ValueListItem1, ValueListItem2})
+        Me.uce_Decimales.Location = New System.Drawing.Point(699, 85)
+        Me.uce_Decimales.Name = "uce_Decimales"
+        Me.uce_Decimales.Size = New System.Drawing.Size(87, 22)
+        Me.uce_Decimales.TabIndex = 18
+        '
+        'Etiqueta1
+        '
+        Appearance41.BackColor = System.Drawing.Color.Transparent
+        Appearance41.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta1.Appearance = Appearance41
+        Me.Etiqueta1.AutoSize = True
+        Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
+        Me.Etiqueta1.Location = New System.Drawing.Point(634, 89)
+        Me.Etiqueta1.Name = "Etiqueta1"
+        Me.Etiqueta1.Size = New System.Drawing.Size(59, 15)
+        Me.Etiqueta1.TabIndex = 17
+        Me.Etiqueta1.Text = "Decimales:"
         '
         'UltraGroupBox2
         '
@@ -1512,6 +1553,7 @@ Partial Class frm_Cobranza
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout()
+        CType(Me.uce_Decimales, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox2.ResumeLayout(False)
         CType(Me.UltraGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1575,4 +1617,6 @@ Partial Class frm_Cobranza
     Friend WithEvents UltraGroupBox4 As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents UltraGroupBox2 As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents UltraGroupBox3 As Infragistics.Win.Misc.UltraGroupBox
+    Friend WithEvents uce_Decimales As Infragistics.Win.UltraWinEditors.UltraComboEditor
+    Friend WithEvents Etiqueta1 As Controles.Etiqueta
 End Class

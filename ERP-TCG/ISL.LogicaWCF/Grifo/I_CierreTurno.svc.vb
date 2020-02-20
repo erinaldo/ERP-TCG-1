@@ -6,12 +6,29 @@ Public Class l_CierreTurno
     Implements Il_CierreTurno
     Private odCierreTurno As New d_CierreTurno
     Private odCierreTurno_Detalle As New d_CierreTurno_Detalle
+
     Public Function Obtener(ByVal oeCierreTurno As e_CierreTurno) As e_CierreTurno Implements Il_CierreTurno.Obtener
 
         Try
             oeCierreTurno = odCierreTurno.Obtener(oeCierreTurno)
             oeCierreTurno.Detalles = odCierreTurno_Detalle.Listar(New e_CierreTurno_Detalle With {.TipoOperacion = "", .IdCierreTurno = oeCierreTurno.Id})
             Return oeCierreTurno
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function dt_CierreTurno_Impresion(ByVal Item As e_CierreTurno) As DataTable
+        Try
+            Return odCierreTurno.dt_CierreTurno_Impresion(Item)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function dt_CierreTurnoDetalle_Impresion(ByVal Item As e_CierreTurno_Detalle) As DataTable
+        Try
+            Return odCierreTurno.dt_CierreTurnoDetalle_Impresion(Item)
         Catch ex As Exception
             Throw ex
         End Try

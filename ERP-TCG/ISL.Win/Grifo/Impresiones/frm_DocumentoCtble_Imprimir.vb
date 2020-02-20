@@ -125,7 +125,7 @@ Public Class frm_DocumentoCtble_Imprimir
         End Using
     End Function
 
-    Private Sub frm_DocumentoCtble_Imprimir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             With RDS1
                 .Name = "Cabecera"
@@ -150,7 +150,6 @@ Public Class frm_DocumentoCtble_Imprimir
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
-
     End Sub
 
     Private Sub frm_DocumentoCtble_Imprimir_Closed(sender As Object, e As EventArgs) Handles Me.Closed
