@@ -418,7 +418,7 @@ Module m_Funciones
         End Try
     End Sub
 
-    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
             Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
             FRM.ShowDialog()

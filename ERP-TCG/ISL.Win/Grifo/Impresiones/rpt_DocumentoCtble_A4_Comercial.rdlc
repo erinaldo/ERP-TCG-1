@@ -250,14 +250,16 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
         <Top>5.6531cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.39709cm</Height>
-        <Width>1.58099cm</Width>
+        <Width>3.07378cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -1556,7 +1558,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <Top>8.83609cm</Top>
         <Left>0.3713cm</Left>
         <Height>1.24341cm</Height>
-        <Width>20.287cm</Width>
+        <Width>20.28698cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -2186,7 +2188,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <Top>7.40734cm</Top>
         <Left>0.3713cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.287cm</Width>
+        <Width>20.28698cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>

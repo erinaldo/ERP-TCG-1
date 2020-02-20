@@ -66,7 +66,8 @@ Public Class frm_DocumentoCtble_Imprimir
                 DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = (pTipoOp + "" + "C"), .Id = IdDocumentoCtble})
                 DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = (pTipoOp + "" + "D"), .Id = IdDocumentoCtble})
 
-                DT1.Rows(0).Item("MontoLetras") = ConvertirNumeroALetras(Math.Round(DT1.Rows(0).Item("Total"), 2).ToString) + " " + DT1.Rows(0).Item("Moneda")
+                'DT1.Rows(0).Item("MontoLetras") = ConvertirNumeroALetras(Math.Round(DT1.Rows(0).Item("Total"), 2).ToString) + " " + DT1.Rows(0).Item("Moneda")
+                DT1.Rows(0).Item("MontoLetras") = Conversiones.NumerosALetras.Ejecutar(DT1.Rows(0).Item("Total"), 2) + " " + DT1.Rows(0).Item("Moneda")
             End If
 
             If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
