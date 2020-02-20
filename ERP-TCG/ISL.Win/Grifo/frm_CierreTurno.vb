@@ -200,7 +200,7 @@ Public Class frm_CierreTurno
             With griOrdenComercial
                 If .Selected.Rows.Count > 0 Then
                     CierreTurno.Id = .ActiveRow.Cells("Id").Value
-                    gmt_Imprimir_CierreTurno(CierreTurno.Id, "1")
+                    'gmt_Imprimir_CierreTurno(CierreTurno.Id, "1")
                 End If
             End With
         Catch ex As Exception

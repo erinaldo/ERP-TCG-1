@@ -181,7 +181,7 @@ Public Class frm_NotaCreditoDebito
                 End With
             End If
 
-            gmt_Imprimir_Documento(Id, "NCTICKET", "OV")
+            gmt_Imprimir_Documento(Id, "NCTICKET", "OV", "")
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

@@ -1663,6 +1663,14 @@ Public Class frm_FacturarCarga
         Calcular_Montos()
     End Sub
 
+    Private Sub Formato1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato1ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A41", "TRANSPORTE", "T1")
+    End Sub
+
+    Private Sub Formato2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato2ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A42", "TRANSPORTE", "T2")
+    End Sub
+
     Private Sub mnuAplicarValorU_Click(sender As Object, e As EventArgs) Handles mnuAplicarValorU.Click
         If griDetalleDoc.ActiveRow IsNot Nothing Then
             If griDetalleDoc.ActiveRow.Cells("IndConsolidado").Value Is Nothing Then

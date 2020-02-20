@@ -418,18 +418,9 @@ Module m_Funciones
         End Try
     End Sub
 
-    Public Sub gmt_Imprimir_CierreTurno(IdCierreTurno As String, IdReporte As String)
+    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
-            Dim FRM As New frm_CierreTurno_Imprimir(IdCierreTurno, IdReporte)
-            FRM.ShowDialog()
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
-
-    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
-        Try
-            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
             FRM.ShowDialog()
         Catch ex As Exception
             Throw ex
@@ -437,9 +428,9 @@ Module m_Funciones
     End Sub
 
     '@0001 Ini
-    Public Sub gmt_Imprimir_DocumentoTicket(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_DocumentoTicket(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
-            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
             FRM.Size = New System.Drawing.Size(400, 700)
             FRM.ShowDialog()
         Catch ex As Exception
@@ -2246,7 +2237,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarFechaInicioFin(ByVal FechaInicio As Infragistics.Win.UltraWinEditors.UltraDateTimeEditor, _
+    Public Function ValidarFechaInicioFin(ByVal FechaInicio As Infragistics.Win.UltraWinEditors.UltraDateTimeEditor,
                                 ByVal FechaFin As Infragistics.Win.UltraWinEditors.UltraDateTimeEditor) As Boolean
         Try
             If FechaFin.Value < FechaInicio.Value Then
@@ -2259,7 +2250,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarFechaInicioFin(ByVal FechaInicio As System.Windows.Forms.DateTimePicker, _
+    Public Function ValidarFechaInicioFin(ByVal FechaInicio As System.Windows.Forms.DateTimePicker,
                                 ByVal FechaFin As System.Windows.Forms.DateTimePicker) As Boolean
         Try
             If FechaFin.Value < FechaInicio.Value Then
@@ -2308,7 +2299,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarCombo(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, _
+    Public Function ValidarCombo(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
                                         ByVal Etiqueta As String) As Boolean
         Try
             If Combo.Text = "" Then
@@ -2352,7 +2343,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarComboValue(ByVal Combo As Infragistics.Win.UltraWinGrid.UltraCombo, _
+    Public Function ValidarComboValue(ByVal Combo As Infragistics.Win.UltraWinGrid.UltraCombo,
                                     ByVal Etiqueta As String) As Boolean
         Try
             If Combo.Value = "" Then Throw New Exception("Seleccione " + Etiqueta)
@@ -2362,7 +2353,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarGrilla(ByVal Grilla As Infragistics.Win.UltraWinGrid.UltraGrid, _
+    Public Function ValidarGrilla(ByVal Grilla As Infragistics.Win.UltraWinGrid.UltraGrid,
                                     ByVal Etiqueta As String) As Boolean
         Try
             If Grilla.Rows.Count < 1 Then Throw New Exception("Ingrese " + Etiqueta)
@@ -2372,7 +2363,7 @@ Module m_Funciones
         End Try
     End Function
 
-    Public Function ValidarOpciones(ByVal opciones As ISL.Controles.Opciones, _
+    Public Function ValidarOpciones(ByVal opciones As ISL.Controles.Opciones,
                                    ByVal Etiqueta As String) As Boolean
         Try
             l_FuncionesGenerales.ValidarCampoNoNulo(opciones.Value, "Ingrese " + Etiqueta)
@@ -3160,7 +3151,7 @@ Module m_Funciones
         End Try
     End Sub
 
-    Public Sub ListaCuentasContable(ByVal Grid As Infragistics.Win.UltraWinGrid.UltraGrid, ByVal IdColumna As String, _
+    Public Sub ListaCuentasContable(ByVal Grid As Infragistics.Win.UltraWinGrid.UltraGrid, ByVal IdColumna As String,
                                     ByVal lnPeriodo As Integer, ByVal lsTipo As String)
         Try
             Dim olCuentaContable As New l_CuentaContable
@@ -3438,8 +3429,8 @@ Module m_Funciones
 
                 '***********Asigna la palabra mil***************
                 If y = 4 Then
-                    If Mid(entero, 6, 1) <> "0" Or Mid(entero, 5, 1) <> "0" Or Mid(entero, 4, 1) <> "0" Or _
-                    (Mid(entero, 6, 1) = "0" And Mid(entero, 5, 1) = "0" And Mid(entero, 4, 1) = "0" And _
+                    If Mid(entero, 6, 1) <> "0" Or Mid(entero, 5, 1) <> "0" Or Mid(entero, 4, 1) <> "0" Or
+                    (Mid(entero, 6, 1) = "0" And Mid(entero, 5, 1) = "0" And Mid(entero, 4, 1) = "0" And
                     Len(entero) <= 6) Then palabras = palabras & "mil "
                 End If
 
@@ -3480,13 +3471,13 @@ Module m_Funciones
         d_Num = System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator
 
         If (m_Num = "." Or d_Num = ",") Or (m_Mon = "." Or d_Mon = ",") Then
-            MessageBox.Show("Advertencia : La configuración regional de su equipo respecto al formato numérico no es compatible con el sistema. " & _
+            MessageBox.Show("Advertencia : La configuración regional de su equipo respecto al formato numérico no es compatible con el sistema. " &
                             Environment.NewLine & Environment.NewLine _
-                    & "CONFIGURACIÓN ACTUAL :" & Environment.NewLine & _
-                    "Separador de Miles -> " & m_Num & Environment.NewLine & _
+                    & "CONFIGURACIÓN ACTUAL :" & Environment.NewLine &
+                    "Separador de Miles -> " & m_Num & Environment.NewLine &
                     "Separador de Decimales-> " & d_Num & Environment.NewLine & Environment.NewLine _
-                    & "CONFIGURACIÓN IDEAL:" & Environment.NewLine & _
-                    "Separador de Miles -> , " & Environment.NewLine & _
+                    & "CONFIGURACIÓN IDEAL:" & Environment.NewLine &
+                    "Separador de Miles -> , " & Environment.NewLine &
                     "Separador de Decimales-> . " & Environment.NewLine _
                     & Environment.NewLine _
                     & "Por favor configure su equipo con la CONFIGURACION IDEAL o consulte con el administrador del sistema " & Environment.NewLine _
@@ -3941,8 +3932,8 @@ Module m_Funciones
     '    End Try
     'End Function
 
-    Public Function EjecutaFormula(_Nombre As String, _indPlanilla As Boolean, _dsDatos As Data.DataTable, _
-                                   _leFormula As List(Of e_Formula), _leParametros As List(Of e_AporteDescuento), _
+    Public Function EjecutaFormula(_Nombre As String, _indPlanilla As Boolean, _dsDatos As Data.DataTable,
+                                   _leFormula As List(Of e_Formula), _leParametros As List(Of e_AporteDescuento),
                                    _leDetParametro As List(Of e_DetalleAporteDescuento), ByVal ParamArray _variables() As String) As Double
         Try
             Dim _oeformula As New e_Formula
@@ -3966,7 +3957,7 @@ Module m_Funciones
                 If _oeformula.Variables.Trim <> "" Then
                     sDeclara = sDeclara & RecuperaVariables(_oeformula.Variables, _variables, "", True) & Environment.NewLine
                 End If
-                sCodigo = sDeclara & " " & Environment.NewLine & _
+                sCodigo = sDeclara & " " & Environment.NewLine &
                             "Function " & _oeformula.Nombre & Environment.NewLine _
                                 & _oeformula.Nombre & " = " & _oeformula.Instrucciones & Environment.NewLine _
                              & "End Function"
@@ -4002,7 +3993,7 @@ Module m_Funciones
                     _oeDetParametro.Equivale = 2
                     If _leDetParametros.Contains(_oeDetParametro) Then
                         _oeDetParametro = _leDetParametros.Item(_leDetParametros.IndexOf(_oeDetParametro))
-                        aDatos = aDatos & "Dim " & sPar(x) & Environment.NewLine & _
+                        aDatos = aDatos & "Dim " & sPar(x) & Environment.NewLine &
                             sPar(x) & " = " & _oeDetParametro.MontoCalculo & Environment.NewLine
                     End If
                     _oeDetParametro.Dispose()
@@ -4022,13 +4013,13 @@ Module m_Funciones
             If Not _indplanilla Then
                 sVar = _constantes.Split(",")
                 For i = 0 To sVar.Length - 1
-                    aDatos = aDatos & "Dim " & sVar(i) & Environment.NewLine & _
+                    aDatos = aDatos & "Dim " & sVar(i) & Environment.NewLine &
                         sVar(i) & " = " & _var(i) & Environment.NewLine
                 Next
             Else
                 sVar = _variables.Split(",")
                 For i = 0 To sVar.Length - 1
-                    aDatos = aDatos & "Dim " & sVar(i) & Environment.NewLine & _
+                    aDatos = aDatos & "Dim " & sVar(i) & Environment.NewLine &
                         sVar(i) & " = " & _var(i) & Environment.NewLine
                 Next
             End If
@@ -4044,7 +4035,7 @@ Module m_Funciones
             Dim sDT As String() = Nothing
             sDT = _DatosTrabajador.Split(",")
             For i = 0 To sDT.Length - 1
-                aDatos = aDatos & "Dim " & sDT(i) & Environment.NewLine & _
+                aDatos = aDatos & "Dim " & sDT(i) & Environment.NewLine &
                     sDT(i) & " = " & _dsDatosGen.Rows(0).Item(sDT(i)) & Environment.NewLine
             Next
             Return aDatos
@@ -4680,9 +4671,9 @@ Module m_Funciones
                 ld_Fecha = DateSerial(ln_Anio, ln_Mes + 1, 0)
             End If
         Catch ex As Exception
-            MessageBox.Show("Interrupcion en el Método:" & ex.TargetSite.Name & Environment.NewLine & _
-                 "Descripción:" & ex.Message & Environment.NewLine & _
-                 "Seguimiento:" & Environment.NewLine & ex.StackTrace, _
+            MessageBox.Show("Interrupcion en el Método:" & ex.TargetSite.Name & Environment.NewLine &
+                 "Descripción:" & ex.Message & Environment.NewLine &
+                 "Seguimiento:" & Environment.NewLine & ex.StackTrace,
                  "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
         Return ld_Fecha
@@ -6045,77 +6036,77 @@ Module m_Funciones
         Select Case ls_CodigoTipo
             Case "01"
                 If IsNumeric(ls_PrimerCaracter) Then
-                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Númérico, si es físico, comenzando por 0000 y terminado con 9999." & _
+                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Númérico, si es físico, comenzando por 0000 y terminado con 9999." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 Else
-                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "F" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o FXXX (donde X es alfanumérico)." & _
+                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "F" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o FXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     If ls_PrimerCaracter = "E" Then
-                        If ls_CadenaSobrante <> "001" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o FXXX (donde X es alfanumérico)." & _
+                        If ls_CadenaSobrante <> "001" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o FXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     End If
                 End If
             Case "02"
                 If IsNumeric(ls_PrimerCaracter) Then
-                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                       Environment.NewLine & "Numérico, comenzando por 0000 y terminado con 9999." & _
+                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                       Environment.NewLine & "Numérico, comenzando por 0000 y terminado con 9999." &
                        Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 Else
-                    If ls_PrimerCaracter & ls_CadenaSobrante <> "E001" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                       Environment.NewLine & "Alfanumérico si el Comprobante de Pago (CdP) es electrónico, debe ser E001." & _
+                    If ls_PrimerCaracter & ls_CadenaSobrante <> "E001" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                       Environment.NewLine & "Alfanumérico si el Comprobante de Pago (CdP) es electrónico, debe ser E001." &
                        Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 End If
             Case "03"
                 If IsNumeric(ls_PrimerCaracter) Then
-                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                       Environment.NewLine & "Numérico, comenzando por 0000 y terminado con 9999." & _
+                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                       Environment.NewLine & "Numérico, comenzando por 0000 y terminado con 9999." &
                        Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 Else
-                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "B" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser EB01 o BXXX (donde X es alfanumérico)." & _
+                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "B" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser EB01 o BXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     If ls_PrimerCaracter = "E" Then
-                        If ls_CadenaSobrante <> "B01" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser EB01 o BXXX (donde X es alfanumérico)." & _
+                        If ls_CadenaSobrante <> "B01" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser EB01 o BXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     End If
                 End If
             Case "05"
                 If IsNumeric(ls_PrimerCaracter) Then
-                    If CInt(ls_PrimerCaracter) < 1 Or CInt(ls_PrimerCaracter) > 5 Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Consignar Tipo de Boleto:" & _
-                        Environment.NewLine & "1= Boleto Manual" & _
-                        Environment.NewLine & "2= Boleto Automático" & _
-                        Environment.NewLine & "3= Boleto Electrónico" & _
-                        Environment.NewLine & "4= Otros" & _
-                        Environment.NewLine & "5= Anulado" & _
+                    If CInt(ls_PrimerCaracter) < 1 Or CInt(ls_PrimerCaracter) > 5 Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Consignar Tipo de Boleto:" &
+                        Environment.NewLine & "1= Boleto Manual" &
+                        Environment.NewLine & "2= Boleto Automático" &
+                        Environment.NewLine & "3= Boleto Electrónico" &
+                        Environment.NewLine & "4= Otros" &
+                        Environment.NewLine & "5= Anulado" &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 Else
-                    Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                                        Environment.NewLine & "Numérico, comenzando por 1 y terminado con 5." & _
+                    Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                                        Environment.NewLine & "Numérico, comenzando por 1 y terminado con 5." &
                                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 End If
             Case "07"
                 If IsNumeric(ls_PrimerCaracter) Then
-                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Númérico, si es físico, comenzando por 0000 y terminado con 9999." & _
+                    If Not Regex.IsMatch(ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Númérico, si es físico, comenzando por 0000 y terminado con 9999." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                 Else
-                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "F" And ls_PrimerCaracter <> "B" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o EB01 o FXXX o BXXX (donde X es alfanumérico)." & _
+                    If ls_PrimerCaracter <> "E" And ls_PrimerCaracter <> "F" And ls_PrimerCaracter <> "B" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o EB01 o FXXX o BXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     If ls_PrimerCaracter = "E" Then
-                        If ls_CadenaSobrante <> "001" And ls_CadenaSobrante <> "B01" Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o EB01 o FXXX o BXXX (donde X es alfanumérico)." & _
+                        If ls_CadenaSobrante <> "001" And ls_CadenaSobrante <> "B01" Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Alfanumérico, si es electrónico, la seríe debe ser E001 o EB01 o FXXX o BXXX (donde X es alfanumérico)." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
                     End If
                 End If
             Case "53"
-                If Not Regex.IsMatch(ls_PrimerCaracter & ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" & _
-                        Environment.NewLine & "Númérico, Validar con parámetros de la tabla 11. Codigo de la Aduana." & _
+                If Not Regex.IsMatch(ls_PrimerCaracter & ls_CadenaSobrante, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para la Serie!" &
+                        Environment.NewLine & "Númérico, Validar con parámetros de la tabla 11. Codigo de la Aduana." &
                         Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
             Case Else
                 ' Sin Restricciones
@@ -6134,8 +6125,8 @@ Module m_Funciones
         End Select
         Select Case ls_CodigoTipo
             Case "01", "02", "03", "05", "07", "12", "16", "28", "37", "53"
-                If Not Regex.IsMatch(ls_Numero, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para el Número!" & _
-                    Environment.NewLine & "Numérico mayor a cero (0)." & _
+                If Not Regex.IsMatch(ls_Numero, "^\d*$") Then Throw New Exception("¡Formato Incorrecto para el Número!" &
+                    Environment.NewLine & "Numérico mayor a cero (0)." &
                     Environment.NewLine & "Revisar las Reglas Generales de la información de Comprobante de Pago y/o Documentos")
             Case "13", "14"
 

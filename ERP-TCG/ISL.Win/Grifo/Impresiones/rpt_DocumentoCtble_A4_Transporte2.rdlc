@@ -23,38 +23,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>PRINCIPAL: CA. LORA Y LORA Nº 2450 INT. A P.J. SANTA ANA - J. LEONARDO ORTIZ - CHICLAYO</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>SUC.: CALLE VENEZUELA Nº 2565 - CPM BARSALLO II ETAPA - J.L.ORTIZ - CHICLAYO - LAMBAYEQUE
-AV. AMERICA Nº 1046 - URRUNAGA - JOSE LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>8pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>TELF.: 074-472766 - E-mail: comercial1@alexylalito.pe</Value>
+                <Value>PRINCIPAL: CA. LORA Y LORA Nº 2450 INT. A P.J. SANTA ANA - J. LEONARDO ORTIZ - CHICLAYO -
+SUC.: CALLE VENEZUELA Nº 2565 - CPM BARSALLO II ETAPA - J.L.ORTIZ - CHICLAYO - LAMBAYEQUE
+AV. AMERICA Nº 1046 - URRUNAGA - JOSE LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE
+TELF.: 074-472766 - Nº REG. M.T.C. 1403957 CNG</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>8pt</FontSize>
@@ -90,8 +62,8 @@ AV. AMERICA Nº 1046 - URRUNAGA - JOSE LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</V
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>SUCURSAL VENEZUELA
-CAL.VENEZUELA NRO. 2565 CPM BARSALLO II ETAPA
+                <Value>TIENDA LORA Y LORA
+CAL.LORA Y LORA NRO. 2450 INT. A P.J. SANTA ANA
 JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 <Style>
                   <FontFamily>Calibri</FontFamily>
@@ -106,7 +78,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>4.17116cm</Top>
-        <Left>0.3713cm</Left>
+        <Left>0.38894cm</Left>
         <Height>1.30555cm</Height>
         <Width>12.16668cm</Width>
         <ZIndex>2</ZIndex>
@@ -259,7 +231,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <Top>5.6531cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.39709cm</Height>
-        <Width>3.07378cm</Width>
+        <Width>3.11015cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -378,7 +350,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <Top>0.45988cm</Top>
             <Left>0.00618cm</Left>
             <Height>0.81167cm</Height>
-            <Width>7.37057cm</Width>
+            <Width>7.69319cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -414,7 +386,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <Top>1.44794cm</Top>
             <Left>0.03264cm</Left>
             <Height>0.68813cm</Height>
-            <Width>7.34411cm</Width>
+            <Width>7.66673cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -451,7 +423,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <Top>2.31245cm</Top>
             <Left>0.00618cm</Left>
             <Height>0.68813cm</Height>
-            <Width>7.34411cm</Width>
+            <Width>7.69319cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -482,42 +454,33 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.85695cm</Width>
+              <Width>2.08675cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.61829cm</Width>
+              <Width>1.73894cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.13795cm</Width>
+              <Width>2.6722cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.54734cm</Width>
+              <Width>2.92317cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.56752cm</Width>
+              <Width>2.76326cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.57264cm</Width>
+              <Width>2.75378cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.14591cm</Width>
+              <Width>2.43793cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.44474cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.20562cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.64761cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.54241cm</Width>
+              <Width>2.82006cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.8466cm</Height>
+              <Height>0.47618cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -528,7 +491,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>ITEM</Value>
+                              <Value>GUIA TRANSP.</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -585,7 +548,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>COD</Value>
+                              <Value>FECHA</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -642,7 +605,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CANT</Value>
+                              <Value>GUIA REMITENTE</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -699,7 +662,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>UNIDAD</Value>
+                              <Value>OTROS</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -756,7 +719,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DESCRIPCION</Value>
+                              <Value>UNIDAD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -813,7 +776,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>VAL. VTA. UNITARIO</Value>
+                              <Value>CANTIDAD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -870,7 +833,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>DSCTO TOTAL</Value>
+                              <Value>FLETE</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -927,7 +890,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>VAL. VTA. TOTAL</Value>
+                              <Value>IMPORTE</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -941,177 +904,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox38</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox6">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>IGV</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox8">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>PRECIO UNITARIO</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox14">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>IMPORTE TOTAL</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Blue</Color>
@@ -1218,14 +1010,14 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Cantidad1">
+                    <Textbox Name="Producto1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Cantidad.Value</Value>
+                              <Value>=Fields!Producto.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>6pt</FontSize>
@@ -1238,7 +1030,39 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Cantidad1</rd:DefaultName>
+                      <rd:DefaultName>Producto1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Placa3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Placa.Value</Value>
+                              <Style>
+                                <FontFamily>Calibri</FontFamily>
+                                <FontSize>6pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Placa3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1263,7 +1087,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>=Fields!UM.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
-                                <FontSize>6pt</FontSize>
+                                <FontSize>7pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -1285,24 +1109,27 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Producto">
+                    <Textbox Name="Cantidad">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Producto.Value</Value>
+                              <Value>=Fields!Cantidad.Value</Value>
                               <Style>
                                 <FontFamily>Calibri</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Producto</rd:DefaultName>
+                      <rd:DefaultName>Cantidad</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1338,146 +1165,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>ValorUnitario</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Descuento">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Descuento.Value</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
-                                <Format>#,0.00;(#,0.00)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Descuento</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="ValorTotal">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!ValorTotal.Value</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
-                                <Format>#,0.00;(#,0.00)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>ValorTotal</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="IGV1">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!IGV.Value</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
-                                <Format>#,0.00;(#,0.00)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>IGV1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Style>None</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Precio">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Precio.Value</Value>
-                              <Style>
-                                <FontFamily>Calibri</FontFamily>
-                                <FontSize>7pt</FontSize>
-                                <Format>#,0.00;(#,0.00)</Format>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Right</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Precio</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -1539,9 +1226,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1555,10 +1239,10 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>8.83609cm</Top>
+        <Top>8.60734cm</Top>
         <Left>0.3713cm</Left>
-        <Height>1.24341cm</Height>
-        <Width>20.28698cm</Width>
+        <Height>0.87299cm</Height>
+        <Width>20.19609cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1592,19 +1276,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.6213cm</Width>
+              <Width>9.42106cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.76135cm</Width>
+              <Width>5.51704cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.30142cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.96797cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>6.63494cm</Width>
+              <Width>5.25799cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1620,7 +1298,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CODIGO CLIENTE</Value>
+                              <Value>CONCEPTO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1670,120 +1348,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox48">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>CONDICION Y FORMA DE PAGO</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox48</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox50">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>TIPO DE MONEDA</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox50</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
                     <Textbox Name="Textbox1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -1791,7 +1355,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>VENCIMIENTO</Value>
+                              <Value>ORIGEN</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1848,7 +1412,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>REPRESENTANTE DE VENTAS</Value>
+                              <Value>DESTINO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>9pt</FontSize>
@@ -1903,14 +1467,14 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CodigoCliente">
+                    <Textbox Name="Glosa1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CodigoCliente.Value</Value>
+                              <Value>=Fields!Glosa.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -1922,7 +1486,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CodigoCliente</rd:DefaultName>
+                      <rd:DefaultName>Glosa1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Blue</Color>
@@ -1959,125 +1523,14 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="MedioPago1">
+                    <Textbox Name="Turno">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!MedioPago.Value</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>MedioPago1</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Moneda">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Moneda.Value</Value>
-                              <Style>
-                                <FontFamily>CAlibri</FontFamily>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style>
-                            <TextAlign>Center</TextAlign>
-                          </Style>
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Moneda</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Vencimiento">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Vencimiento.Value</Value>
+                              <Value>=Fields!Turno.Value</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
                                 <FontSize>8pt</FontSize>
@@ -2090,7 +1543,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Vencimiento</rd:DefaultName>
+                      <rd:DefaultName>Turno</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>Blue</Color>
@@ -2170,8 +1623,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -2188,7 +1639,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <Top>7.40734cm</Top>
         <Left>0.3713cm</Left>
         <Height>1.2cm</Height>
-        <Width>20.28698cm</Width>
+        <Width>20.19609cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -2218,13 +1669,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.05164in</Height>
+    <Height>3.77039in</Height>
     <Style />
   </Body>
-  <Width>8.19523in</Width>
+  <Width>9.61722in</Width>
   <Page>
     <PageFooter>
-      <Height>5.29167cm</Height>
+      <Height>6.05896cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -2235,21 +1686,23 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>IMPORTANTE: REVISAR LA MERCADERIA. DADA LA CONFORMIDAD NO HAY POSIBILIDAD A RECLAMO</Value>
+                  <Value>CUENTA DE DETRACCION 00230004463</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                     <FontSize>8pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>IGV2</rd:DefaultName>
-          <Top>4.19083cm</Top>
-          <Left>0.3713cm</Left>
+          <Top>4.7189cm</Top>
+          <Left>13.84839cm</Left>
           <Height>0.55583cm</Height>
-          <Width>13.3007cm</Width>
+          <Width>6.72086cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2279,7 +1732,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>IGV2</rd:DefaultName>
-          <Top>2.9459cm</Top>
+          <Top>4.36633cm</Top>
           <Left>0.3713cm</Left>
           <Height>1.24493cm</Height>
           <Width>13.3007cm</Width>
@@ -2287,42 +1740,6 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Style>
             <Border>
               <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Total">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>0.00</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <Format>#,0.00;(#,0.00)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Total</rd:DefaultName>
-          <Top>0.32604cm</Top>
-          <Left>17.74733cm</Left>
-          <Height>0.48528cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
             </Border>
             <PaddingLeft>2pt</PaddingLeft>
             <PaddingRight>2pt</PaddingRight>
@@ -2340,6 +1757,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                   <Value>=Sum(Fields!SubTotal.Value, "Cabecera")</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <Format>#,0.00;(#,0.00)</Format>
                   </Style>
                 </TextRun>
@@ -2350,20 +1768,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>SubTotal</rd:DefaultName>
-          <Top>2.35555cm</Top>
-          <Left>17.74733cm</Left>
+          <Top>2.2059cm</Top>
+          <Left>17.57094cm</Left>
           <Height>0.52938cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>3</ZIndex>
+          <Width>2.99645cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="IGV">
@@ -2376,6 +1790,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                   <Value>=Sum(Fields!IGV.Value, "Cabecera")</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <Format>#,0.00;(#,0.00)</Format>
                   </Style>
                 </TextRun>
@@ -2386,20 +1801,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>IGV</rd:DefaultName>
-          <Top>3.41431cm</Top>
-          <Left>17.74733cm</Left>
+          <Top>2.94716cm</Top>
+          <Left>17.57094cm</Left>
           <Height>0.4941cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>4</ZIndex>
+          <Width>2.99645cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Total1">
@@ -2412,6 +1823,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                   <Value>=Sum(Fields!Total.Value, "Cabecera")</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <Format>#,0.00;(#,0.00)</Format>
                   </Style>
                 </TextRun>
@@ -2422,56 +1834,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Total1</rd:DefaultName>
-          <Top>3.97897cm</Top>
-          <Left>17.74733cm</Left>
+          <Top>3.82932cm</Top>
+          <Left>17.57094cm</Left>
           <Height>0.55583cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>5</ZIndex>
+          <Width>2.99645cm</Width>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox16">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>OTROS CARGOS :</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>2.88493cm</Top>
-          <Left>14.63879cm</Left>
-          <Height>0.52938cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>6</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox18">
@@ -2481,9 +1853,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>IGV 18.00% :</Value>
+                  <Value>IGV (18.00%) :</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -2494,20 +1867,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>3.41431cm</Top>
-          <Left>14.63879cm</Left>
+          <Top>2.94716cm</Top>
+          <Left>14.08316cm</Left>
           <Height>0.4941cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>7</ZIndex>
+          <Width>3.48778cm</Width>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox19">
@@ -2520,6 +1889,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
                   <Value>IMPORTE TOTAL :</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -2530,164 +1900,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>3.97897cm</Top>
-          <Left>14.63879cm</Left>
+          <Top>3.82932cm</Top>
+          <Left>14.08316cm</Left>
           <Height>0.55583cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>8</ZIndex>
+          <Width>3.48778cm</Width>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox20">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>TOTAL DCTOS :</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.32604cm</Top>
-          <Left>14.63879cm</Left>
-          <Height>0.48528cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>9</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox21">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>OP. GRATUITAS :</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.81132cm</Top>
-          <Left>14.63879cm</Left>
-          <Height>0.53861cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>10</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox23">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>OP. EXONERADA :</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.34993cm</Top>
-          <Left>14.63879cm</Left>
-          <Height>0.52938cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>11</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox25">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>OP. INAFECTA :</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>1.87931cm</Top>
-          <Left>14.63879cm</Left>
-          <Height>0.47624cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>12</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox27">
@@ -2697,9 +1919,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>OP. GRAVADA :</Value>
+                  <Value>VALOR VENTA :</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
+                    <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                   </Style>
                 </TextRun>
@@ -2710,164 +1933,16 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>2.35555cm</Top>
-          <Left>14.63879cm</Left>
+          <Top>2.2059cm</Top>
+          <Left>14.08316cm</Left>
           <Height>0.52938cm</Height>
-          <Width>3.10854cm</Width>
-          <ZIndex>13</ZIndex>
+          <Width>3.48778cm</Width>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
               <Style>Solid</Style>
             </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Total2">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>0.00</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <Format>#,0.00;(#,0.00)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Total</rd:DefaultName>
-          <Top>0.81132cm</Top>
-          <Left>17.74733cm</Left>
-          <Height>0.53861cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>14</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Total3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>0.00</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <Format>#,0.00;(#,0.00)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Total</rd:DefaultName>
-          <Top>1.34993cm</Top>
-          <Left>17.74733cm</Left>
-          <Height>0.52938cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>15</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Total4">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>0.00</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <Format>#,0.00;(#,0.00)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Total</rd:DefaultName>
-          <Top>1.87931cm</Top>
-          <Left>17.74733cm</Left>
-          <Height>0.47646cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>16</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Total5">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>0.00</Value>
-                  <Style>
-                    <FontFamily>Calibri</FontFamily>
-                    <Format>#,0.00;(#,0.00)</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Right</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Total</rd:DefaultName>
-          <Top>2.88493cm</Top>
-          <Left>17.74733cm</Left>
-          <Height>0.52938cm</Height>
-          <Width>2.82006cm</Width>
-          <ZIndex>17</ZIndex>
-          <Style>
-            <Border>
-              <Color>Blue</Color>
-              <Style>Solid</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
         <Textbox Name="Textbox15">
@@ -2893,7 +1968,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>0.57131cm</Left>
           <Height>0.38779cm</Height>
           <Width>0.83877cm</Width>
-          <ZIndex>18</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2921,7 +1996,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>1.44536cm</Left>
           <Height>0.38833cm</Height>
           <Width>12.22664cm</Width>
-          <ZIndex>19</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2947,11 +2022,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox9</rd:DefaultName>
-          <Top>0.59946cm</Top>
+          <Top>1.86946cm</Top>
           <Left>0.57131cm</Left>
           <Height>0.33533cm</Height>
           <Width>2.4036cm</Width>
-          <ZIndex>20</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2975,11 +2050,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Glosa</rd:DefaultName>
-          <Top>0.93479cm</Top>
+          <Top>2.20479cm</Top>
           <Left>0.57317cm</Left>
-          <Height>1.95014cm</Height>
-          <Width>4.99503cm</Width>
-          <ZIndex>21</ZIndex>
+          <Height>1.78209cm</Height>
+          <Width>7.18078cm</Width>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2995,11 +2070,11 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Value>=First(Fields!QR.Value, "Cabecera")</Value>
           <MIMEType>image/bmp</MIMEType>
           <Sizing>FitProportional</Sizing>
-          <Top>0.59946cm</Top>
-          <Left>7.8376cm</Left>
-          <Height>2.24061cm</Height>
-          <Width>5.8344cm</Width>
-          <ZIndex>22</ZIndex>
+          <Top>1.34003cm</Top>
+          <Left>8.4726cm</Left>
+          <Height>3.0263cm</Height>
+          <Width>5.1994cm</Width>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -3011,7 +2086,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <Left>0.57131cm</Left>
           <Height>0cm</Height>
           <Width>19.99608cm</Width>
-          <ZIndex>23</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Color>Blue</Color>
@@ -3020,6 +2095,154 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             </Border>
           </Style>
         </Line>
+        <Line Name="Line2">
+          <Top>0.63474cm</Top>
+          <Left>0.57317cm</Left>
+          <Height>0cm</Height>
+          <Width>19.99608cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Color>Blue</Color>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox31">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>VALOR REFERENCIAL:</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.77585cm</Top>
+          <Left>0.57131cm</Left>
+          <Height>0.38779cm</Height>
+          <Width>2.92898cm</Width>
+          <ZIndex>15</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Textbox>
+        <Line Name="Line3">
+          <Top>1.26947cm</Top>
+          <Left>0.57317cm</Left>
+          <Height>0cm</Height>
+          <Width>19.99608cm</Width>
+          <ZIndex>16</ZIndex>
+          <Style>
+            <Border>
+              <Color>Blue</Color>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox32">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>MONEDA:</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>9pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox9</rd:DefaultName>
+          <Top>0.77585cm</Top>
+          <Left>16.12363cm</Left>
+          <Height>0.38779cm</Height>
+          <Width>1.44731cm</Width>
+          <ZIndex>17</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Textbox>
+        <Textbox Name="Moneda">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!Moneda.Value, "Cabecera")</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Moneda</rd:DefaultName>
+          <Top>0.74057cm</Top>
+          <Left>17.57094cm</Left>
+          <Height>0.45835cm</Height>
+          <Width>2.91452cm</Width>
+          <ZIndex>18</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Textbox>
+        <Textbox Name="OtrosCargos">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Sum(Fields!OtrosCargos.Value, "Cabecera")</Value>
+                  <Style>
+                    <FontFamily>Calibri</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>OtrosCargos</rd:DefaultName>
+          <Top>0.70529cm</Top>
+          <Left>3.50029cm</Left>
+          <Height>0.45835cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>19</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
