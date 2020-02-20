@@ -418,9 +418,9 @@ Module m_Funciones
         End Try
     End Sub
 
-    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
-            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
             FRM.ShowDialog()
         Catch ex As Exception
             Throw ex
@@ -428,9 +428,9 @@ Module m_Funciones
     End Sub
 
     '@0001 Ini
-    Public Sub gmt_Imprimir_DocumentoTicket(IdMovimientoDocumento As String, Papel As String, Modulo As String)
+    Public Sub gmt_Imprimir_DocumentoTicket(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
-            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo)
+            Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
             FRM.Size = New System.Drawing.Size(400, 700)
             FRM.ShowDialog()
         Catch ex As Exception

@@ -24,12 +24,12 @@ Public Class frm_DocumentoCtble_Imprimir
     End Sub
     'Dim Qr_Code As New QRCodeEncoder
 
-    Sub New(pIdDocumentoCtble As String, pTipoPapel As String, pModulo As String)
+    Sub New(pIdDocumentoCtble As String, pTipoPapel As String, pModulo As String, pTipoOp As String)
         InitializeComponent()
         IdDocumentoCtble = pIdDocumentoCtble
         TipoPapel = pTipoPapel
         ModuloEmision = pModulo
-        Inicializar()
+        Inicializar(pTipoOp)
     End Sub
 
     Private Function lf_ObtenerTipoDoc(IdTipoDoc) As String
@@ -53,14 +53,22 @@ Public Class frm_DocumentoCtble_Imprimir
         Return TipoDoc
     End Function
 
-    Private Sub Inicializar()
+    Private Sub Inicializar(pTipoOp As String)
         Try
             Dim IGV As Double = 0
             Dim Total As Double = 0
             Dim Emision As Date
             DocumentoCtble = wr_DocumentoCtble.Obtener(New e_MovimientoDocumento With {.TipoOperacion = "", .Id = IdDocumentoCtble})
-            DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
-            DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
+            If pTipoOp = "" Then
+                DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "CAB", .Id = IdDocumentoCtble})
+                DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = "DET", .Id = IdDocumentoCtble})
+            Else
+                DT1 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = (pTipoOp + "" + "C"), .Id = IdDocumentoCtble})
+                DT2 = wr_DocumentoCtble.dt_DocumentoCtble_Impresion(New e_MovimientoDocumento With {.TipoOperacion = (pTipoOp + "" + "D"), .Id = IdDocumentoCtble})
+
+                DT1.Rows(0).Item("MontoLetras") = ConvertirNumeroALetras(Math.Round(DT1.Rows(0).Item("Total"), 2).ToString) + " " + DT1.Rows(0).Item("Moneda")
+            End If
+
             If DocumentoCtble.IdTipoDocumento <> "GCH000000001" Then
                 CodigoQR = ""
                 Footer = "Autorizado mediante Resolucion de Intendencia Nª 0720050000152/SUNAT" & vbCrLf & "Representacion impresa del comprobante de venta electronico. Consulte su documento en cpe.sunat.gob.pe"
@@ -153,7 +161,7 @@ Public Class frm_DocumentoCtble_Imprimir
         Try
             '\\LADERA\ComprobanteElectronico\pdf\
             'D:\Sistema\xml\
-            Dim Archivo As String = "\\LADERA\ComprobanteElectronico\pdf\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            Dim Archivo As String = "D:\Sistema\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
             Dim PDF As Byte()
             Dim filepath As String = Archivo
             If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)
@@ -205,6 +213,16 @@ Public Class frm_DocumentoCtble_Imprimir
                 'Case "GCH000000001" 'Nota de Despacho '@0001
                 Select Case TipoPapel
                     Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4_Comercial.rdlc"
+                    Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
+                    Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
+                End Select
+                'End Select '@0001
+                'Case Else '@0001
+            Case "TRANSPORTE"
+                'Select Case IdTipoDocumento '@0001
+                'Case "GCH000000001" 'Nota de Despacho '@0001
+                Select Case TipoPapel
+                    Case "A4" : Return Raiz & "rpt_DocumentoCtble_A4_Transporte1.rdlc"
                     Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
                     Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
                 End Select
