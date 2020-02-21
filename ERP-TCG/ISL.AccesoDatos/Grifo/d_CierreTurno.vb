@@ -105,7 +105,31 @@ Public Class d_CierreTurno
         Try
             Dim DT As New DataTable, DS As New DataSet
             With Item
-                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_LST", .TipoOperacion, "", "", .Id)
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_LST" _
+                        , .TipoOperacion _
+                        , "" _
+                        , "" _
+                        , .Id _
+                        , .IdEmpresaSis _
+                        , .IdSucursal _
+                        , .IdTurno _
+                        , .Turno _
+                        , .IdEstado _
+                        , .Estado _
+                        , .Fecha _
+                        , .HoraInicio _
+                        , .HoraFin _
+                        , .IdTrabajador_Apertura _
+                        , .Trabajador_Apertura _
+                        , .IdTrabajador_Cierre _
+                        , .Trabajador_Cierre _
+                        , .Glosa _
+                        , .UsuarioCrea _
+                        , .FechaCrea _
+                        , .UsuarioModifica _
+                        , .FechaModifica _
+                        , .Activo
+                        )
                 If DS.Tables(0).Rows.Count > 0 Then
                     DT = DS.Tables(0)
                 End If
@@ -120,7 +144,37 @@ Public Class d_CierreTurno
         Try
             Dim DT As New DataTable, DS As New DataSet
             With Item
-                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Detalle_LST", .TipoOperacion, "", "", "", "", "", .IdCierreTurno)
+                DS = SQL.ExecuteDataset("CMP.Sp_CierreTurno_Detalle_LST" _
+                , .TipoOperacion _
+                , "" _
+                , "" _
+                , .Id _
+                , .IdEmpresaSis _
+                , .IdSucursal _
+                , .IdCierreTurno _
+                , .Grupo _
+                , .Rubro _
+                , .Descripcion _
+                , .IdConcepto _
+                , .Concepto _
+                , .ValorInicial _
+                , .ValorFinal _
+                , .ValorDiferencia _
+                , .ValorERP _
+                , .ValorReal _
+                , .ValorAux1 _
+                , .ValorAux2 _
+                , .ValorAux3 _
+                , .ValorAux4 _
+                , .ValorAux5 _
+                , .ValorAux6 _
+                , .Glosa _
+                , .UsuarioCrea _
+                , .FechaCrea _
+                , .UsuarioModifica _
+                , .FechaModifica _
+                , .Activo
+                )
                 If DS.Tables(0).Rows.Count > 0 Then
                     DT = DS.Tables(0)
                 End If

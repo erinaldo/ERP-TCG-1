@@ -200,7 +200,7 @@ Public Class frm_CierreTurno
             With griOrdenComercial
                 If .Selected.Rows.Count > 0 Then
                     CierreTurno.Id = .ActiveRow.Cells("Id").Value
-                    'gmt_Imprimir_CierreTurno(CierreTurno.Id, "1")
+                    gmt_Imprimir_CierreTurno(CierreTurno.Id, "1")
                 End If
             End With
         Catch ex As Exception
@@ -1027,6 +1027,15 @@ Public Class frm_CierreTurno
 
     Private Sub btn_AgregarDetalles_Click(sender As Object, e As EventArgs) Handles btn_AgregarDetalles.Click
         mt_Agregar_DetalleEdicion()
+    End Sub
+
+    Private Sub UltraButton1_Click(sender As Object, e As EventArgs) Handles UltraButton1.Click
+        Try
+            gmt_Imprimir_CierreTurno(dtp_FechaCierre_Imprimir.Value.Date, "2")
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated
