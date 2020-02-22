@@ -208,7 +208,7 @@ Partial Class frm_DocumentoAnulado
         Me.fecEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.fecEmision.Location = New System.Drawing.Point(120, 87)
         Me.fecEmision.Name = "fecEmision"
-        Me.fecEmision.Size = New System.Drawing.Size(79, 20)
+        Me.fecEmision.Size = New System.Drawing.Size(80, 20)
         Me.fecEmision.TabIndex = 7
         '
         'Etiqueta9
@@ -230,7 +230,7 @@ Partial Class frm_DocumentoAnulado
         Me.txtNumero.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNumero.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNumero.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero.Location = New System.Drawing.Point(217, 60)
+        Me.txtNumero.Location = New System.Drawing.Point(235, 60)
         Me.txtNumero.MaxLength = 10
         Me.txtNumero.Name = "txtNumero"
         Me.txtNumero.Size = New System.Drawing.Size(83, 21)
@@ -244,7 +244,7 @@ Partial Class frm_DocumentoAnulado
         Me.Etiqueta8.AutoSize = True
         Me.Etiqueta8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta8.Location = New System.Drawing.Point(163, 64)
+        Me.Etiqueta8.Location = New System.Drawing.Point(185, 64)
         Me.Etiqueta8.Name = "Etiqueta8"
         Me.Etiqueta8.Size = New System.Drawing.Size(48, 14)
         Me.Etiqueta8.TabIndex = 4
@@ -255,10 +255,10 @@ Partial Class frm_DocumentoAnulado
         Me.txtSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtSerie.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtSerie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSerie.Location = New System.Drawing.Point(120, 60)
+        Me.txtSerie.Location = New System.Drawing.Point(118, 60)
         Me.txtSerie.MaxLength = 4
         Me.txtSerie.Name = "txtSerie"
-        Me.txtSerie.Size = New System.Drawing.Size(37, 21)
+        Me.txtSerie.Size = New System.Drawing.Size(45, 21)
         Me.txtSerie.TabIndex = 3
         '
         'Etiqueta7
@@ -282,9 +282,9 @@ Partial Class frm_DocumentoAnulado
         Me.cboTipoDoc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTipoDoc.ForeColor = System.Drawing.Color.Black
-        Me.cboTipoDoc.Location = New System.Drawing.Point(120, 33)
+        Me.cboTipoDoc.Location = New System.Drawing.Point(118, 33)
         Me.cboTipoDoc.Name = "cboTipoDoc"
-        Me.cboTipoDoc.Size = New System.Drawing.Size(178, 21)
+        Me.cboTipoDoc.Size = New System.Drawing.Size(200, 21)
         Me.cboTipoDoc.TabIndex = 1
         Me.cboTipoDoc.ValueMember = "Id"
         '

@@ -23,8 +23,13 @@ Public Class frm_ImprimeTransferencia
             Dim dt As New DataTable
             Dim olAsiento As New l_Asiento
             dt = olAsiento.ImprimeTranferencia(Id)
+            '@0001 Ini
+            Dim dc As DataColumn
+            dc = New DataColumn("CantidadLetras", Type.GetType("System.String"))
+            dt.Columns.Add(dc)
+            dt.Rows(0).Item("CantidadLetras") = Conversiones.NumerosALetras.Ejecutar(Math.Round(dt.Rows(0).Item("Importe"), 2), True)
+            '@0001 Fin
             ReportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-
             Dim oReport As New ReportDataSource("dsTransferenciaBancaria_Transferencia", dt)
 
             'Dim myParams(0) As Microsoft.Reporting.WinForms.ReportParameter
