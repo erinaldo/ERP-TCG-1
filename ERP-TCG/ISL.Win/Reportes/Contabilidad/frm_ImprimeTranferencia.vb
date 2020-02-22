@@ -27,12 +27,12 @@ Public Class frm_ImprimeTransferencia
 
             Dim oReport As New ReportDataSource("dsTransferenciaBancaria_Transferencia", dt)
 
-            Dim myParams(0) As Microsoft.Reporting.WinForms.ReportParameter
-            myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
-            Conversiones.NumerosALetras.Ejecutar(dt.Rows(0).Item("Importe"), True))
+            'Dim myParams(0) As Microsoft.Reporting.WinForms.ReportParameter
+            'myParams(0) = New Microsoft.Reporting.WinForms.ReportParameter("CantidadLetras", _
+            'Conversiones.NumerosALetras.Ejecutar(dt.Rows(0).Item("Importe"), True))
 
             ReportViewer1.LocalReport.DataSources.Clear()
-            ReportViewer1.LocalReport.SetParameters(myParams)
+            'ReportViewer1.LocalReport.SetParameters(myParams)
             ReportViewer1.LocalReport.DataSources.Add(oReport)
 
             ReportViewer1.LocalReport.Refresh()
