@@ -1671,6 +1671,18 @@ Public Class frm_FacturarCarga
         gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A42", "TRANSPORTE", "T2")
     End Sub
 
+    Private Sub GenerarNTDToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerarNTDToolStripMenuItem.Click
+        Try
+            Operacion = "Nuevo"
+            Oper = "Generar"
+            TD = "N"
+            BandCaso = True
+            GenerarDoc()
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+    End Sub
+
     Private Sub mnuAplicarValorU_Click(sender As Object, e As EventArgs) Handles mnuAplicarValorU.Click
         If griDetalleDoc.ActiveRow IsNot Nothing Then
             If griDetalleDoc.ActiveRow.Cells("IndConsolidado").Value Is Nothing Then
@@ -2016,6 +2028,7 @@ Public Class frm_FacturarCarga
                 Select Case TD
                     Case "F" : cboTipoDocumento.Text = "FACTURA"
                     Case "B" : cboTipoDocumento.Text = "BOLETA DE VENTA"
+                    Case "N" : cboTipoDocumento.Text = "NOTA DE DESPACHO"
                 End Select
                 CalcularPeriodo(fecPeriodo.DateTime.Month, fecPeriodo.DateTime.Year)
 
