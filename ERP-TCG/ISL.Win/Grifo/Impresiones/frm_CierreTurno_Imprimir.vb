@@ -4,8 +4,8 @@ Imports System.IO
 
 Public Class frm_CierreTurno_Imprimir
 
-    Private IdCierreTurno As String, IdReporte As String, IdConsulta As String
-    Private CierreTurno As New e_CierreTurno, wr_CierreTurno As New l_CierreTurno
+    Private IdCierreTurno As String, IdReporte As String, IdConsulta As String, FechaCierre As Date
+    Private CierreTurno As New e_CierreTurno, CierreTurnoDetalle As New e_CierreTurno_Detalle, wr_CierreTurno As New l_CierreTurno
     Private DT1 As New DataTable, DT2 As New DataTable
     Private RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource
 
@@ -14,7 +14,7 @@ Public Class frm_CierreTurno_Imprimir
         IdCierreTurno = pId
         'TipoPapel = pTipoPapel
         'ModuloEmision = pModulo
-        Inicializar()
+        'Inicializar()
     End Sub
 
     Sub New(pId As String, pIdReporte As String)
@@ -30,9 +30,24 @@ Public Class frm_CierreTurno_Imprimir
         Inicializar()
     End Sub
 
+    Sub New(pFechaCierre As Date, pIdReporte As String)
+        InitializeComponent()
+        FechaCierre = pFechaCierre
+        IdReporte = pIdReporte
+        Select Case IdReporte
+            Case "1" 'Cierre de Turno Parcial
+                CierreTurno.TipoOperacion = "DTP" : CierreTurno.Id = IdCierreTurno
+                CierreTurnoDetalle.TipoOperacion = "DTP" : CierreTurnoDetalle.IdCierreTurno = IdCierreTurno
+            Case "2"
+                CierreTurno.TipoOperacion = "DTC" : CierreTurno.Fecha = FechaCierre
+                CierreTurnoDetalle.TipoOperacion = "DTC" : CierreTurnoDetalle.FechaCrea = FechaCierre
+        End Select
+        Inicializar()
+    End Sub
+
     Private Sub Inicializar()
         Try
-            CierreTurno = wr_CierreTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "", .Id = IdCierreTurno})
+            'CierreTurno = wr_CierreTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "", .Id = IdCierreTurno})
             'DT1 = wr_CierreTurno.dt_CierreTurno_Impresion(New e_CierreTurno With {.TipoOperacion = "", .Id = IdCierreTurno})
             'DT2 = wr_CierreTurno.dt_CierreTurnoDetalle_Impresion(New e_CierreTurno_Detalle With {.TipoOperacion = "", .IdCierreTurno = IdCierreTurno})
 
@@ -48,11 +63,11 @@ Public Class frm_CierreTurno_Imprimir
         Try
             With RDS1
                 .Name = "Cabecera"
-                .Value = wr_CierreTurno.dt_CierreTurno_Impresion(New e_CierreTurno With {.TipoOperacion = IdConsulta, .Id = IdCierreTurno})
+                .Value = wr_CierreTurno.dt_CierreTurno_Impresion(CierreTurno)
             End With
             With RDS2
                 .Name = "Detalle"
-                .Value = wr_CierreTurno.dt_CierreTurnoDetalle_Impresion(New e_CierreTurno_Detalle With {.TipoOperacion = IdConsulta, .IdCierreTurno = IdCierreTurno})
+                .Value = wr_CierreTurno.dt_CierreTurnoDetalle_Impresion(CierreTurnoDetalle)
             End With
 
             With VISOR
@@ -78,6 +93,8 @@ Public Class frm_CierreTurno_Imprimir
         Select Case IdReporte
             Case "1" 'Factura
                 Return Raiz & "rpt_CierreParcial.rdlc"
+            Case "2" 'Factura
+                Return Raiz & "rpt_CierreCompleto.rdlc"
             Case Else
                 Return ""
         End Select

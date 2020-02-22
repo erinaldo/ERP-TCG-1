@@ -48,6 +48,14 @@ Public Class e_CierreTurno
     Private _Activo As Boolean
     Public Detalles As New List(Of e_CierreTurno_Detalle)
 
+    '' Para Reporte
+    Public Property NroTransacciones As Double
+    Public Property SubTotal As Double
+    Public Property Impuesto As Double
+    Public Property Total As Double
+    Public Property NroAnuladas As Double
+    Public Property TotalAnuladas As Double
+
 #End Region
 #Region "Constructor"
     Public Sub New()

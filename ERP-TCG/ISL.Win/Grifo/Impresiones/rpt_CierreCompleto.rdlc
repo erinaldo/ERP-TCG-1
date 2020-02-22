@@ -238,7 +238,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>CIERRE PARCIAL DE TURNO</Value>
+                <Value>CIERRE TOTAL</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1546,7 +1546,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DETALLE DE VENTAS (POR LADO)</Value>
+                <Value>VENTAS (POR USUARIO)</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
                   <FontWeight>Bold</FontWeight>

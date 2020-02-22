@@ -418,6 +418,24 @@ Module m_Funciones
         End Try
     End Sub
 
+    Public Sub gmt_Imprimir_CierreTurno(IdCierreTurno As String, IdReporte As String)
+        Try
+            Dim FRM As New frm_CierreTurno_Imprimir(IdCierreTurno, IdReporte)
+            FRM.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Sub gmt_Imprimir_CierreTurno(FechaCierre As Date, IdReporte As String)
+        Try
+            Dim FRM As New frm_CierreTurno_Imprimir(FechaCierre, IdReporte)
+            FRM.ShowDialog()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Public Sub gmt_Imprimir_Documento(IdMovimientoDocumento As String, Papel As String, Modulo As String, TipoOp As String)
         Try
             Dim FRM As New frm_DocumentoCtble_Imprimir(IdMovimientoDocumento, Papel, Modulo, TipoOp)
