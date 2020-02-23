@@ -307,6 +307,8 @@ Partial Public Class dsTransferenciaBancaria
         
         Private columnNroImpresion As Global.System.Data.DataColumn
         
+        Private columnCantidadLetras As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -439,6 +441,14 @@ Partial Public Class dsTransferenciaBancaria
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property CantidadLetrasColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCantidadLetras
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -475,9 +485,9 @@ Partial Public Class dsTransferenciaBancaria
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddTransferenciaRow(ByVal FecMov As String, ByVal CtaOrigen As String, ByVal NroCtaOrigen As String, ByVal FlujoCaja As String, ByVal Glosa As String, ByVal Moneda As String, ByVal Importe As String, ByVal FecConsulta As String, ByVal Usuario As String, ByVal CtaDestino As String, ByVal NroCtaDestino As String, ByVal NroImpresion As String) As TransferenciaRow
+        Public Overloads Function AddTransferenciaRow(ByVal FecMov As String, ByVal CtaOrigen As String, ByVal NroCtaOrigen As String, ByVal FlujoCaja As String, ByVal Glosa As String, ByVal Moneda As String, ByVal Importe As String, ByVal FecConsulta As String, ByVal Usuario As String, ByVal CtaDestino As String, ByVal NroCtaDestino As String, ByVal NroImpresion As String, ByVal CantidadLetras As String) As TransferenciaRow
             Dim rowTransferenciaRow As TransferenciaRow = CType(Me.NewRow,TransferenciaRow)
-            Dim columnValuesArray() As Object = New Object() {FecMov, CtaOrigen, NroCtaOrigen, FlujoCaja, Glosa, Moneda, Importe, FecConsulta, Usuario, CtaDestino, NroCtaDestino, NroImpresion}
+            Dim columnValuesArray() As Object = New Object() {FecMov, CtaOrigen, NroCtaOrigen, FlujoCaja, Glosa, Moneda, Importe, FecConsulta, Usuario, CtaDestino, NroCtaDestino, NroImpresion, CantidadLetras}
             rowTransferenciaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTransferenciaRow)
             Return rowTransferenciaRow
@@ -512,6 +522,7 @@ Partial Public Class dsTransferenciaBancaria
             Me.columnCtaDestino = MyBase.Columns("CtaDestino")
             Me.columnNroCtaDestino = MyBase.Columns("NroCtaDestino")
             Me.columnNroImpresion = MyBase.Columns("NroImpresion")
+            Me.columnCantidadLetras = MyBase.Columns("CantidadLetras")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -541,6 +552,8 @@ Partial Public Class dsTransferenciaBancaria
             MyBase.Columns.Add(Me.columnNroCtaDestino)
             Me.columnNroImpresion = New Global.System.Data.DataColumn("NroImpresion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNroImpresion)
+            Me.columnCantidadLetras = New Global.System.Data.DataColumn("CantidadLetras", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCantidadLetras)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -867,6 +880,21 @@ Partial Public Class dsTransferenciaBancaria
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property CantidadLetras() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTransferencia.CantidadLetrasColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'CantidadLetras' de la tabla 'Transferencia' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTransferencia.CantidadLetrasColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsFecMovNull() As Boolean
             Return Me.IsNull(Me.tableTransferencia.FecMovColumn)
         End Function
@@ -1007,6 +1035,18 @@ Partial Public Class dsTransferenciaBancaria
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetNroImpresionNull()
             Me(Me.tableTransferencia.NroImpresionColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsCantidadLetrasNull() As Boolean
+            Return Me.IsNull(Me.tableTransferencia.CantidadLetrasColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetCantidadLetrasNull()
+            Me(Me.tableTransferencia.CantidadLetrasColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

@@ -716,7 +716,8 @@ Public Class frm_Empresa
             If cboPais.Value = IdPaisPeru Then ' Perú
                 Ccpp1.Enabled = True
             Else
-                Ccpp1.Enabled = False
+                'Ccpp1.Enabled = False '@0001
+                Ccpp1.Enabled = True
             End If
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
@@ -1041,11 +1042,11 @@ Public Class frm_Empresa
         txtAbreviatura.Text = String.Empty
         verActivo.Checked = True
         cboTipoEmpresa.SelectedIndex = 0
-        opcCliente.CheckedIndex = 0
+        opcCliente.CheckedIndex = 1
         opcCategoria.Enabled = True
         'verCliente.Checked = False
         'verCliente.Enabled = True
-        opcProveedor.CheckedIndex = 0
+        opcProveedor.CheckedIndex = 1
         'verProveedor.Checked = False
         opcComisionista.CheckedIndex = 0
         'verComisionista.Checked = False

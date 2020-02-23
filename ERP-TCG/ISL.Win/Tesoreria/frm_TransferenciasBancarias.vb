@@ -85,6 +85,7 @@ Public Class frm_TransferenciasBancarias
         Inicializar()
         Operacion = "Nuevo"
         ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
+        mt_Cargar_TurnoActivo()
     End Sub
 
     Public Overrides Sub Guardar()
@@ -1346,6 +1347,36 @@ Public Class frm_TransferenciasBancarias
         Espere1.Location = New System.Drawing.Point((Me.Width / 2) - (Espere1.Width / 2), (Me.Height / 2) - Espere1.Height)
     End Sub
 
+
+    Private Sub mt_Cargar_TurnoActivo()
+        Dim TurnoActivo As New e_CierreTurno
+        TurnoActivo = gfc_obtener_TurnoActivo()
+        Select Case RTrim(TurnoActivo.IdTurno)
+            Case "1", "3", "5" : txtGlosa.Text = TurnoActivo.Turno
+            Case "2", "4" : txtGlosa.Text = TurnoActivo.Turno
+            Case "" : txtGlosa.Text = ""
+        End Select
+        If txtGlosa.Text <> "" Then
+            cboMedioPago.Value = "1CH03"
+            cboMoneda.Value = "1CH01"
+            cboCuentaCtbleOrigen.Value = "1SI013496"
+            cboCuentaBancariaOrigen.Value = "CHG001"
+            cboCuentaCtbleDestino.Value = "1SI013496"
+            cboCuentaBancariaDestino.Value = "CHG002"
+            txtCheque.Text = ObtenerFechaServidor()
+            DecImporte.Select()
+            DecImporte.SelectAll()
+
+            cboMedioPago.Enabled = False
+            cboMoneda.Enabled = False
+            cboCuentaCtbleOrigen.Enabled = False
+            cboCuentaBancariaOrigen.Enabled = False
+            cboCuentaCtbleDestino.Enabled = False
+            cboCuentaBancariaDestino.Enabled = False
+            txtCheque.Enabled = False
+            cboTipoMovimiento.Enabled = False
+        End If
+    End Sub
 #End Region
 
 End Class

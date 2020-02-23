@@ -237,7 +237,7 @@ Public Class frm_DocumentoAnulado
     End Sub
 
     Private Sub txtSerie_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtSerie.KeyPress
-        TextoNumero(e)
+        'TextoNumero(e)
     End Sub
 
     Private Sub txtNumero_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNumero.KeyPress
@@ -245,7 +245,7 @@ Public Class frm_DocumentoAnulado
     End Sub
 
     Private Sub txtSerie_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSerie.Validated
-        FormateaTexto(txtSerie, 4)
+        'FormateaTexto(txtSerie, 4)
         If txtSerie.Text.Trim <> "" Then
             Dim oe As New e_MovimientoDocumento
             oe.TipoOperacion = "NUM"

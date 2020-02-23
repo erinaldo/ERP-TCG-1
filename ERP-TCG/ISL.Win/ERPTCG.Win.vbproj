@@ -6761,6 +6761,7 @@
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_CobroPagoAnticipo.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_RegistroVentas.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_ValesConsumoCombustible.rdlc" />
+    <EmbeddedResource Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc" />
     <EmbeddedResource Include="Reportes\frm_FacturaBoletaElectronico.resx">
       <DependentUpon>frm_FacturaBoletaElectronico.vb</DependentUpon>
     </EmbeddedResource>
@@ -7006,7 +7007,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Contabilidad\ImprimirRetencion.rdlc" />
-    <EmbeddedResource Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc" />
+    <EmbeddedResource Include="Reportes\Contabilidad\TransferenciaBancaria1.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ReporteUtilidadBrutaVehicular.resx">
       <DependentUpon>frm_ReporteUtilidadBrutaVehicular.vb</DependentUpon>
       <SubType>Designer</SubType>

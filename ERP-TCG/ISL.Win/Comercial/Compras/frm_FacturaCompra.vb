@@ -1437,10 +1437,10 @@ Public Class frm_FacturaCompra
                             lo_SubFamCtaCtble_28 = LlenaCuenta(oeMovimientoDocumento, loCtaCtbleSFam, Periodo)
                         End If
                         ObtenerAsientoModelo(oeMovimientoDocumento.IdMoneda, oeMovimientoDocumento.IdTipoDocumento, Periodo, "")
-                        If lb_EmisionPerAnt = True Then
-                            Cuentas25x28(Periodo)
-                            oeMovimientoDocumento.loCtaCtbleSFam = lo_SubFamCtaCtble_28
-                        End If
+                        'If lb_EmisionPerAnt = True Then
+                        '    Cuentas25x28(Periodo)
+                        '    oeMovimientoDocumento.loCtaCtbleSFam = lo_SubFamCtaCtble_28
+                        'End If
                         oeMovimientoDocumento.IdUsuarioCrea = gUsuarioSGI.Id
                     Case 4
                         oeMovimientoDocumento.IndTipoFactura = "1"
@@ -1459,7 +1459,7 @@ Public Class frm_FacturaCompra
                     oeMovimientoDocumento.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olMovimientoDocumento.GuardarCompraMaterial(oeMovimientoDocumento)
                     If lb_EmisionPerAnt = True Then
-                        Guardar_AsientoxExistencia()
+                        ' Guardar_AsientoxExistencia()
                     End If
                 End If
             Else

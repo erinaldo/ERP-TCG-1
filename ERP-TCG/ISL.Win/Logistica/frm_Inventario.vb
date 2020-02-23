@@ -443,7 +443,8 @@ Public Class frm_Inventario
                 Cursor.Current = Cursors.WaitCursor
                 Cursor.Show()
                 Dim reginv As New e_RegistroInventario
-                reginv.TipoOperacion = "X"
+                reginv.TipoOperacion = "T"
+                reginv.PrefijoID = gs_PrefijoIdSucursal
                 reginv.IdSubAlmacen = gridInventario.ActiveRow.Cells("IdSubAlmacen").Value
                 reginv.IdMaterial = gridInventario.ActiveRow.Cells("IdMaterial").Value
                 reginv.Fecha = Date.Parse("01/01/1901")
