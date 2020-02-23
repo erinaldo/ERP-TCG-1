@@ -186,6 +186,8 @@ Public Class frm_CierreTurno
                             If udg_Trabajadores.Rows.Count > 0 Then Exportar_Excel(udg_Trabajadores)
                         Case 10 'Compras de Combustibles
                             If udg_ComprasCombustibles.Rows.Count > 0 Then Exportar_Excel(udg_ComprasCombustibles)
+                        Case 11 'Depositos a Boveda
+                            If udg_DepositosBoveda.Rows.Count > 0 Then Exportar_Excel(udg_DepositosBoveda)
                     End Select
             End Select
             'ControlBotonesOC()
@@ -487,6 +489,7 @@ Public Class frm_CierreTurno
                 udg_VentasAnuladas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
                 udg_Calibraciones.DataSource = .Detalles.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
                 udg_ComprasCombustibles.DataSource = .Detalles.Where(Function(it) it.Rubro = "COMPRASXCOMBUSTIBLES").ToList : udg_ComprasCombustibles.DataBind()
+                udg_DepositosBoveda.DataSource = .Detalles.Where(Function(it) it.Rubro = "DEPOSITOSBOVEDA").ToList : udg_DepositosBoveda.DataBind()
             End With
 
             '' Consulta de informacion Dinamica, registrada al momento justo antes del cierre, ni mas ni menos
@@ -602,6 +605,7 @@ Public Class frm_CierreTurno
             udg_Almacenes.UpdateData()
             udg_Combustibles.UpdateData()
             udg_ComprasCombustibles.UpdateData()
+            udg_DepositosBoveda.UpdateData()
             Return True
         Catch ex As Exception
             Throw ex
@@ -830,8 +834,8 @@ Public Class frm_CierreTurno
         '' Ventas de Combustible
         mt_Ocultar_Columnas(udg_ComprasCombustibles)
         With udg_ComprasCombustibles.DisplayLayout.Bands(0)
-            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 80
-            .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+            '.Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 80
+            '.Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
             .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
             .Columns("ValorERP").Header.Caption = "Importe"
             .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
@@ -839,6 +843,18 @@ Public Class frm_CierreTurno
         mt_Aplicar_FormatoNumerico(udg_ComprasCombustibles, "ValorERP")
         mt_Aplicar_FormatoNumerico(udg_ComprasCombustibles, "ValorReal")
         CalcularTotales(udg_ComprasCombustibles, "ValorERP", "ValorReal")
+
+        '' Ventas de Combustible
+        mt_Ocultar_Columnas(udg_DepositosBoveda)
+        With udg_DepositosBoveda.DisplayLayout.Bands(0)
+            '.Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 80
+            '.Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+            .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
+            .Columns("ValorERP").Header.Caption = "Importe"
+            '.Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+        End With
+        mt_Aplicar_FormatoNumerico(udg_DepositosBoveda, "ValorERP")
+        CalcularTotales(udg_DepositosBoveda, "ValorERP")
 
         'mt_Ocultar_Columnas(udg_Calibraciones)
         'With udg_Calibraciones.DisplayLayout.Bands(0)
@@ -992,6 +1008,7 @@ Public Class frm_CierreTurno
             udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
             udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
             udg_ComprasCombustibles.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "COMPRASXCOMBUSTIBLES").ToList : udg_ComprasCombustibles.DataBind()
+            udg_DepositosBoveda.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "DEPOSITOSBOVEDA").ToList : udg_DepositosBoveda.DataBind()
         End If
     End Sub
 

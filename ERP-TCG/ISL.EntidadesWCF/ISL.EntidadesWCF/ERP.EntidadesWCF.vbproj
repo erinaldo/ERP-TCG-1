@@ -2046,6 +2046,7 @@
     <Compile Include="Reportes\e_GuiaRRVenta_Print.svc.vb">
       <DependentUpon>e_GuiaRRVenta_Print.svc</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\e_ReporteFiltro.vb" />
     <Compile Include="Reportes\Ie_GuiaRRVenta_Print.vb" />
     <Compile Include="SegPlanControl\e_AccidenteCarga.svc.vb">
       <DependentUpon>e_AccidenteCarga.svc</DependentUpon>

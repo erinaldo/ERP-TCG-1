@@ -457,6 +457,7 @@
     <Compile Include="Personal\d_SueldoTrabajador.vb" />
     <Compile Include="Personal\d_TipoHorario.vb" />
     <Compile Include="Personal\d_Utilidad.vb" />
+    <Compile Include="Reportes\d_Reporte.vb" />
     <Compile Include="SegPlanControl\d_AccidenteFoto.vb" />
     <Compile Include="SegPlanControl\d_AccidenteIncidencia.vb" />
     <Compile Include="SegPlanControl\d_Alarma.vb" />

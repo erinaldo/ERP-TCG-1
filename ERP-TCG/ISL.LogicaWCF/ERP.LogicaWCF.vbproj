@@ -402,6 +402,7 @@
     <Content Include="Personal\l_SueldoTrabajador.svc" />
     <Content Include="Personal\l_TipoHorario.svc" />
     <Content Include="Personal\l_Utilidad.svc" />
+    <Content Include="Reportes\l_Reporte.svc" />
     <Content Include="SegPlanControl\l_AccidenteFoto.svc" />
     <Content Include="SegPlanControl\l_AccidenteIncidencia.svc" />
     <Content Include="SegPlanControl\l_Alarma.svc" />
@@ -1529,6 +1530,10 @@
     </Compile>
     <Compile Include="Personal\l_Utilidad.svc.vb">
       <DependentUpon>l_Utilidad.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Il_Reporte.vb" />
+    <Compile Include="Reportes\l_Reporte.svc.vb">
+      <DependentUpon>l_Reporte.svc</DependentUpon>
     </Compile>
     <Compile Include="SegPlanControl\Il_AccidenteFoto.vb" />
     <Compile Include="SegPlanControl\Il_AccidenteIncidencia.vb" />

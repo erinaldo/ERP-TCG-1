@@ -25,9 +25,13 @@ Public Class frm_CierreTurno_Imprimir
             Case "1" 'Cierre de Turno Parcial
                 CierreTurno.TipoOperacion = "DTP" : CierreTurno.Id = IdCierreTurno
                 CierreTurnoDetalle.TipoOperacion = "DTP" : CierreTurnoDetalle.IdCierreTurno = IdCierreTurno
+                tab_Reportes.Tabs(0).Selected = True
+                tab_Reportes.Tabs(1).Enabled = False
             Case "2"
                 CierreTurno.TipoOperacion = "DTC" : CierreTurno.Fecha = FechaCierre
                 CierreTurnoDetalle.TipoOperacion = "DTC" : CierreTurnoDetalle.FechaCrea = FechaCierre
+                tab_Reportes.Tabs(1).Selected = True
+                tab_Reportes.Tabs(0).Enabled = False
         End Select
     End Sub
 
@@ -39,9 +43,13 @@ Public Class frm_CierreTurno_Imprimir
             Case "1" 'Cierre de Turno Parcial
                 CierreTurno.TipoOperacion = "DTP" : CierreTurno.Id = IdCierreTurno
                 CierreTurnoDetalle.TipoOperacion = "DTP" : CierreTurnoDetalle.IdCierreTurno = IdCierreTurno
+                tab_Reportes.Tabs(0).Selected = True
+                tab_Reportes.Tabs(1).Enabled = False
             Case "2"
                 CierreTurno.TipoOperacion = "DTC" : CierreTurno.Fecha = FechaCierre
                 CierreTurnoDetalle.TipoOperacion = "DTC" : CierreTurnoDetalle.FechaCrea = FechaCierre
+                tab_Reportes.Tabs(1).Selected = True
+                tab_Reportes.Tabs(0).Enabled = False
         End Select
     End Sub
 
@@ -56,17 +64,29 @@ Public Class frm_CierreTurno_Imprimir
                 .Value = wr_CierreTurno.dt_CierreTurnoDetalle_Impresion(CierreTurnoDetalle)
             End With
 
-            With VISOR
-                .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-                .LocalReport.ReportPath = Obtener_RutaReporte(IdReporte)
-                .LocalReport.DataSources.Clear()
-                .LocalReport.DataSources.Add(RDS1)
-                .LocalReport.DataSources.Add(RDS2)
-                ' .LocalReport.DisplayName = DT1.Rows(0).Item("DOI").ToString + "-" + DT1.Rows(0).Item("SerieNumero").ToString
-                .LocalReport.Refresh()
-            End With
+            Select Case tab_Reportes.SelectedTab.Index
+                Case 0
+                    With VISOR_CierreParcial
+                        .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                        .LocalReport.DataSources.Clear()
+                        .LocalReport.DataSources.Add(RDS1)
+                        .LocalReport.DataSources.Add(RDS2)
+                        .LocalReport.Refresh()
+                        .RefreshReport()
+                    End With
+                Case 1
+                    With VISOR_CierreCompleto
+                        .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
+                        .LocalReport.DataSources.Clear()
+                        .LocalReport.DataSources.Add(RDS1)
+                        .LocalReport.DataSources.Add(RDS2)
+                        .LocalReport.Refresh()
+                        .RefreshReport()
+                    End With
+            End Select
 
-            VISOR.RefreshReport()
+
+
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
         End Try
