@@ -111,6 +111,9 @@ Public Class frm_Empresa
             txtRuc.ReadOnly = False
             mt_ControlBonotoneria()
             txtRuc.Focus()
+
+            verCliente_CheckedChanged(Nothing, Nothing)
+            verProveedor_CheckedChanged(Nothing, Nothing)
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
@@ -983,7 +986,7 @@ Public Class frm_Empresa
         txtCodigo.Focus()
         'agrDatoDireccion.Expanded = False
         Operacion = "Nuevo"
-        opcCliente.CheckedIndex = 1
+        opcCliente.CheckedIndex = 0
         opcCliente.Enabled = False
         'verCliente.Checked = True
         'verCliente.Enabled = False

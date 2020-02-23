@@ -504,6 +504,8 @@ Public Class frm_Cliente
                 oeCliente.oePersona.oeSexo.Id = Sexo1.Sexo.Id
                 oeCliente.oePersona.UsuarioCreacion = gUsuarioSGI.Id
             Else
+                oeCliente.oeEmpresa.DireccionFiscal = txtDireccionFiscal.Text '@0001
+                'oeCliente.oeEmpresa.oeClienteProveedor.Proveedor = 1 '@0001
                 oeCliente.oeEmpresa.UsuarioCreacion = gUsuarioSGI.Id
             End If
             oeCliente.TipoPersonaEmpresa = TipoCliente

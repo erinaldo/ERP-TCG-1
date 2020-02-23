@@ -3,6 +3,8 @@ Imports ERP.LogicaWCF
 Imports Microsoft.Reporting.WinForms
 Imports MessagingToolkit.QRCode.Codec
 Imports System.IO
+Imports System.Configuration
+Imports System.Collections.Specialized
 
 Public Class frm_DocumentoCtble_Imprimir
 
@@ -159,9 +161,9 @@ Public Class frm_DocumentoCtble_Imprimir
 
     Private Sub mt_Cerrar()
         Try
-            '\\LADERA\ComprobanteElectronico\pdf\
+            '\\LADERA\ComprobanteElectronico\xml\
             'D:\Sistema\xml\
-            Dim Archivo As String = "\\LADERA\ComprobanteElectronico\xml\" & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            Dim Archivo As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocImpresionGuarda") & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
             Dim PDF As Byte()
             Dim filepath As String = Archivo
             If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)

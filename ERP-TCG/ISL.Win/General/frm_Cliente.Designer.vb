@@ -55,13 +55,14 @@ Partial Class frm_Cliente
         Dim Appearance4 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Cliente))
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.agrBusqueda = New ISL.Controles.Agrupacion(Me.components)
@@ -105,6 +106,8 @@ Partial Class frm_Cliente
         Me.etiRuc = New ISL.Controles.Etiqueta(Me.components)
         Me.ficCliente = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.Etiqueta13 = New ISL.Controles.Etiqueta(Me.components)
+        Me.txtDireccionFiscal = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.agrBusqueda, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.agrBusqueda.SuspendLayout()
@@ -136,6 +139,7 @@ Partial Class frm_Cliente
         CType(Me.verActivoCE, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficCliente.SuspendLayout()
+        CType(Me.txtDireccionFiscal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl1
@@ -528,6 +532,8 @@ Partial Class frm_Cliente
         '
         'agrClienteEmpresa
         '
+        Me.agrClienteEmpresa.Controls.Add(Me.Etiqueta13)
+        Me.agrClienteEmpresa.Controls.Add(Me.txtDireccionFiscal)
         Me.agrClienteEmpresa.Controls.Add(Me.txtCodigoCE)
         Me.agrClienteEmpresa.Controls.Add(Me.etiCodigoCE)
         Me.agrClienteEmpresa.Controls.Add(Me.txtAbreviatura)
@@ -549,8 +555,8 @@ Partial Class frm_Cliente
         '
         'txtCodigoCE
         '
-        Appearance7.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtCodigoCE.Appearance = Appearance7
+        Appearance8.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtCodigoCE.Appearance = Appearance8
         Me.txtCodigoCE.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtCodigoCE.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtCodigoCE.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -574,8 +580,8 @@ Partial Class frm_Cliente
         '
         'txtAbreviatura
         '
-        Appearance8.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtAbreviatura.Appearance = Appearance8
+        Appearance9.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtAbreviatura.Appearance = Appearance9
         Me.txtAbreviatura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtAbreviatura.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtAbreviatura.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -588,8 +594,8 @@ Partial Class frm_Cliente
         '
         'txtRazonSocial
         '
-        Appearance9.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtRazonSocial.Appearance = Appearance9
+        Appearance10.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtRazonSocial.Appearance = Appearance10
         Me.txtRazonSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRazonSocial.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtRazonSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -602,8 +608,8 @@ Partial Class frm_Cliente
         '
         'txtRuc
         '
-        Appearance10.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtRuc.Appearance = Appearance10
+        Appearance11.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtRuc.Appearance = Appearance11
         Me.txtRuc.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtRuc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtRuc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -619,7 +625,7 @@ Partial Class frm_Cliente
         Me.verActivoCE.AutoSize = True
         Me.verActivoCE.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.verActivoCE.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.verActivoCE.Location = New System.Drawing.Point(110, 144)
+        Me.verActivoCE.Location = New System.Drawing.Point(110, 178)
         Me.verActivoCE.Name = "verActivoCE"
         Me.verActivoCE.Size = New System.Drawing.Size(51, 17)
         Me.verActivoCE.TabIndex = 3
@@ -687,6 +693,28 @@ Partial Class frm_Cliente
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(804, 460)
         '
+        'Etiqueta13
+        '
+        Appearance7.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta13.Appearance = Appearance7
+        Me.Etiqueta13.AutoSize = True
+        Me.Etiqueta13.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta13.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Etiqueta13.Location = New System.Drawing.Point(23, 149)
+        Me.Etiqueta13.Name = "Etiqueta13"
+        Me.Etiqueta13.Size = New System.Drawing.Size(85, 15)
+        Me.Etiqueta13.TabIndex = 25
+        Me.Etiqueta13.Text = "Direccion Fiscal:"
+        '
+        'txtDireccionFiscal
+        '
+        Me.txtDireccionFiscal.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.txtDireccionFiscal.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccionFiscal.Location = New System.Drawing.Point(110, 144)
+        Me.txtDireccionFiscal.Name = "txtDireccionFiscal"
+        Me.txtDireccionFiscal.Size = New System.Drawing.Size(656, 22)
+        Me.txtDireccionFiscal.TabIndex = 24
+        '
         'frm_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -732,6 +760,7 @@ Partial Class frm_Cliente
         CType(Me.verActivoCE, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficCliente.ResumeLayout(False)
+        CType(Me.txtDireccionFiscal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -778,5 +807,6 @@ Partial Class frm_Cliente
     Friend WithEvents etiComisionista As ISL.Controles.Etiqueta
     Friend WithEvents colorComisionista As ISL.Controles.Colores
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-
+    Friend WithEvents Etiqueta13 As Controles.Etiqueta
+    Friend WithEvents txtDireccionFiscal As Infragistics.Win.UltraWinEditors.UltraTextEditor
 End Class
