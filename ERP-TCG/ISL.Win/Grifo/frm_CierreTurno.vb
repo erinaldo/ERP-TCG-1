@@ -295,6 +295,12 @@ Public Class frm_CierreTurno
                 .DisplayLayout.Bands(0).Columns("FechaCrea").Hidden = True
                 .DisplayLayout.Bands(0).Columns("UsuarioModifica").Hidden = True
                 .DisplayLayout.Bands(0).Columns("FechaModifica").Hidden = True
+                .DisplayLayout.Bands(0).Columns("NroTransacciones").Hidden = True
+                .DisplayLayout.Bands(0).Columns("SubTotal").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Impuesto").Hidden = True
+                .DisplayLayout.Bands(0).Columns("Total").Hidden = True
+                .DisplayLayout.Bands(0).Columns("NroAnuladas").Hidden = True
+                .DisplayLayout.Bands(0).Columns("TotalAnuladas").Hidden = True
             End With
 
             mt_ControlBotoneria()
@@ -465,6 +471,7 @@ Public Class frm_CierreTurno
             Throw ex
         End Try
     End Sub
+
     Private Sub mt_Mostrar_TurnoDetalles()
         Try
             With TurnoActivo
@@ -963,11 +970,11 @@ Public Class frm_CierreTurno
 
 
             '' Almacenes
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000001", .IdConcepto = "1CH000000003", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000002", .IdConcepto = "1CH000000005", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000004", .IdConcepto = "1CH000000009", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000006", .IdConcepto = "1CH000000012", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
-            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000007", .IdConcepto = "1CH000000014", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000001", .IdConcepto = "1CH000000003", .Descripcion = "1CH000001990", .Concepto = "DB5 S-50 UV (5000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000002", .IdConcepto = "1CH000000005", .Descripcion = "1CH000001990", .Concepto = "DB5 S-50 UV (4000)", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000004", .IdConcepto = "1CH000000009", .Descripcion = "1CH000000147", .Concepto = "GASOHOL 84 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000006", .IdConcepto = "1CH000000012", .Descripcion = "1CH000000148", .Concepto = "GASOHOL 90 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
+            Detalle = New e_CierreTurno_Detalle With {.Rubro = "ALMACENES", .Grupo = "1CH000000007", .IdConcepto = "1CH000000014", .Descripcion = "1CH000000149", .Concepto = "GASOHOL 95 PLUS", .ValorInicial = 0, .ValorFinal = 0, .IdEmpresaSis = gs_IdEmpresaSistema, .PrefijoID = gs_PrefijoIdSucursal, .IdSucursal = gs_IdSucursal} : TurnoActivo.Detalles.Add(Detalle)
 
             mt_Mostrar_TurnoDetalles()
         Catch ex As Exception
