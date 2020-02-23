@@ -184,6 +184,8 @@ Public Class frm_CierreTurno
                             If udg_Calibraciones.Rows.Count > 0 Then Exportar_Excel(udg_Calibraciones)
                         Case 9 ' Trabajadores
                             If udg_Trabajadores.Rows.Count > 0 Then Exportar_Excel(udg_Trabajadores)
+                        Case 10 'Compras de Combustibles
+                            If udg_ComprasCombustibles.Rows.Count > 0 Then Exportar_Excel(udg_ComprasCombustibles)
                     End Select
             End Select
             'ControlBotonesOC()
@@ -477,6 +479,7 @@ Public Class frm_CierreTurno
                 udg_DetalleVenta.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_DETALLADO").ToList : udg_DetalleVenta.DataBind()
                 udg_VentasAnuladas.DataSource = .Detalles.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
                 udg_Calibraciones.DataSource = .Detalles.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
+                udg_ComprasCombustibles.DataSource = .Detalles.Where(Function(it) it.Rubro = "COMPRASXCOMBUSTIBLES").ToList : udg_ComprasCombustibles.DataBind()
             End With
 
             '' Consulta de informacion Dinamica, registrada al momento justo antes del cierre, ni mas ni menos
@@ -591,6 +594,7 @@ Public Class frm_CierreTurno
             udg_Calibraciones.UpdateData()
             udg_Almacenes.UpdateData()
             udg_Combustibles.UpdateData()
+            udg_ComprasCombustibles.UpdateData()
             Return True
         Catch ex As Exception
             Throw ex
@@ -816,6 +820,19 @@ Public Class frm_CierreTurno
         mt_Aplicar_FormatoNumerico(udg_Calibraciones, "ValorAux1")
         CalcularTotales(udg_Calibraciones, "ValorERP", "ValorReal")
 
+        '' Ventas de Combustible
+        mt_Ocultar_Columnas(udg_ComprasCombustibles)
+        With udg_ComprasCombustibles.DisplayLayout.Bands(0)
+            .Columns("Grupo").Header.Caption = "T.Pago" : .Columns("Grupo").Hidden = False : .Columns("Grupo").Width = 80
+            .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
+            .Columns("Concepto").Header.Caption = "Combustible" : .Columns("Concepto").Hidden = False : .Columns("Concepto").Width = 120
+            .Columns("ValorERP").Header.Caption = "Importe"
+            .Columns("ValorReal").Header.Caption = "Galones" : .Columns("ValorReal").CellAppearance.BackColor = Color_Galones
+        End With
+        mt_Aplicar_FormatoNumerico(udg_ComprasCombustibles, "ValorERP")
+        mt_Aplicar_FormatoNumerico(udg_ComprasCombustibles, "ValorReal")
+        CalcularTotales(udg_ComprasCombustibles, "ValorERP", "ValorReal")
+
         'mt_Ocultar_Columnas(udg_Calibraciones)
         'With udg_Calibraciones.DisplayLayout.Bands(0)
         '    .Columns("Descripcion").Header.Caption = "Lado" : .Columns("Descripcion").Hidden = False : .Columns("Descripcion").Width = 60
@@ -967,6 +984,7 @@ Public Class frm_CierreTurno
             udg_ResumenVentas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_CONSOLIDADO").ToList : udg_ResumenVentas.DataBind()
             udg_VentasAnuladas.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTAS_ANULADAS").ToList : udg_VentasAnuladas.DataBind()
             udg_Calibraciones.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "CALIBRACIONES").ToList : udg_Calibraciones.DataBind()
+            udg_ComprasCombustibles.DataSource = ListaDetallesDinamicos.Where(Function(it) it.Rubro = "COMPRASXCOMBUSTIBLES").ToList : udg_ComprasCombustibles.DataBind()
         End If
     End Sub
 

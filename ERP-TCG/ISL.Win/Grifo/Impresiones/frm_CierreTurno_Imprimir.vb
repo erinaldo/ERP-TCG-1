@@ -23,11 +23,12 @@ Public Class frm_CierreTurno_Imprimir
         IdReporte = pIdReporte
         Select Case IdReporte
             Case "1" 'Cierre de Turno Parcial
-                IdConsulta = "DTP"
+                CierreTurno.TipoOperacion = "DTP" : CierreTurno.Id = IdCierreTurno
+                CierreTurnoDetalle.TipoOperacion = "DTP" : CierreTurnoDetalle.IdCierreTurno = IdCierreTurno
             Case "2"
-                IdConsulta = "DTC"
+                CierreTurno.TipoOperacion = "DTC" : CierreTurno.Fecha = FechaCierre
+                CierreTurnoDetalle.TipoOperacion = "DTC" : CierreTurnoDetalle.FechaCrea = FechaCierre
         End Select
-        Inicializar()
     End Sub
 
     Sub New(pFechaCierre As Date, pIdReporte As String)
@@ -42,21 +43,6 @@ Public Class frm_CierreTurno_Imprimir
                 CierreTurno.TipoOperacion = "DTC" : CierreTurno.Fecha = FechaCierre
                 CierreTurnoDetalle.TipoOperacion = "DTC" : CierreTurnoDetalle.FechaCrea = FechaCierre
         End Select
-        Inicializar()
-    End Sub
-
-    Private Sub Inicializar()
-        Try
-            'CierreTurno = wr_CierreTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "", .Id = IdCierreTurno})
-            'DT1 = wr_CierreTurno.dt_CierreTurno_Impresion(New e_CierreTurno With {.TipoOperacion = "", .Id = IdCierreTurno})
-            'DT2 = wr_CierreTurno.dt_CierreTurnoDetalle_Impresion(New e_CierreTurno_Detalle With {.TipoOperacion = "", .IdCierreTurno = IdCierreTurno})
-
-            'BSO1.DataSource = DT1
-            'BSO2.DataSource = DT2
-
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)
-        End Try
     End Sub
 
     Private Sub frm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -72,7 +58,7 @@ Public Class frm_CierreTurno_Imprimir
 
             With VISOR
                 .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
-                '.LocalReport.ReportPath = Obtener_RutaReporte(IdReporte)
+                .LocalReport.ReportPath = Obtener_RutaReporte(IdReporte)
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
@@ -87,16 +73,18 @@ Public Class frm_CierreTurno_Imprimir
     End Sub
 
     Private Function Obtener_RutaReporte() As String
+        Dim Ruta As String = ""
         'Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
         'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
         Dim Raiz As String = Path.Combine(Application.StartupPath, "Grifo") & "\Impresiones\"
         Select Case IdReporte
             Case "1" 'Factura
-                Return Raiz & "rpt_CierreParcial.rdlc"
+                Ruta = Raiz & "rpt_CierreParcial.rdlc"
             Case "2" 'Factura
-                Return Raiz & "rpt_CierreCompleto.rdlc"
+                Ruta = Raiz & "rpt_CierreCompleto.rdlc"
             Case Else
-                Return ""
+                Ruta = ""
         End Select
+        Return Ruta
     End Function
 End Class

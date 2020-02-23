@@ -47,6 +47,7 @@ Public Class frm_OrdenCompra
 
 #Region "Declaración de variables"
 
+    Dim TurnoActivo As New e_CierreTurno
     Dim oeFecha As New e_Fechas
 
     Dim lfuncionas As New l_MovimientoDocumento
@@ -466,6 +467,7 @@ Public Class frm_OrdenCompra
 
     Private Sub Inicializar()
         Try
+            mt_Cargar_TurnoActivo()
             ficDetalleOCMateriales.Tabs(1).Enabled = 1
             llRequerimientoMaterial.Clear()
             llOrdenCompraMaterial.Clear()
@@ -520,6 +522,10 @@ Public Class frm_OrdenCompra
         Catch ex As Exception
             Throw ex
         End Try
+    End Sub
+
+    Private Sub mt_Cargar_TurnoActivo()
+        TurnoActivo = gfc_obtener_TurnoActivo()
     End Sub
 
     Private Sub LimpiarControles()
@@ -1300,6 +1306,7 @@ Public Class frm_OrdenCompra
                 cantTotalAtender = 0
                 TotalAtender = 0
                 oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
+                oeOrdenIngreso.IdTurno = TurnoActivo.Id
                 If Not olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario)) Then
                     Return False
                 End If
@@ -2294,6 +2301,7 @@ Public Class frm_OrdenCompra
             oeOrdenIngreso.lstInventario = New List(Of e_Inventario)
             oeOrdenIngreso.lstInventario.AddRange(Inventario(oeOrdenIngreso.lstOrdenMaterial))
             oeOrdenIngreso.PrefijoID = gs_PrefijoIdSucursal '@0001
+            oeOrdenIngreso.IdTurno = TurnoActivo.Id
             olOrdenIngreso.Guardar(oeOrdenIngreso, New List(Of e_RegistroInventario)) 'Cambiamos el estado de la orden de ingreso de GENERADA a TERMINADA
             Dim IdOrdIngreso As String = oeOrdenIngreso.Id
             'listaRegistroInventario = New List(Of e_RegistroInventario)
