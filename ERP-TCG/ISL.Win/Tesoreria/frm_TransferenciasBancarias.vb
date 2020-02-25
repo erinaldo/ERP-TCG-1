@@ -73,7 +73,7 @@ Public Class frm_TransferenciasBancarias
             Me.Cursor = Cursors.WaitCursor
             Operacion = "Inicializa"
             Listar(Activo)
-            ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
+            ControlBoton(1, 1, 0, 0, 0, 0, 1, 1, 1)
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         Finally
@@ -112,7 +112,15 @@ Public Class frm_TransferenciasBancarias
     End Sub
 
     Public Overrides Sub Imprimir()
-        MyBase.Imprimir()
+        Try
+            If gridMovimientoBancarios.Rows.Count > 0 Then
+                Dim frm As New frm_ImprimeTransferencia(gridMovimientoBancarios.ActiveRow.Cells("Id").Value)
+                frm.ShowDialog() : frm = Nothing
+            End If
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+
     End Sub
 
     Public Overrides Sub Salir()
@@ -1352,8 +1360,8 @@ Public Class frm_TransferenciasBancarias
         Dim TurnoActivo As New e_CierreTurno
         TurnoActivo = gfc_obtener_TurnoActivo()
         Select Case RTrim(TurnoActivo.IdTurno)
-            Case "1", "3", "5" : txtGlosa.Text = TurnoActivo.Turno
-            Case "2", "4" : txtGlosa.Text = TurnoActivo.Turno
+            Case "1", "3", "5" : txtGlosa.Text = "DEPOSITO " + TurnoActivo.Turno + " : " + TurnoActivo.Trabajador_Apertura
+            Case "2", "4" : txtGlosa.Text = "DEPOSITO " + TurnoActivo.Turno + " : " + TurnoActivo.Trabajador_Apertura
             Case "" : txtGlosa.Text = ""
         End Select
         If txtGlosa.Text <> "" Then
@@ -1363,7 +1371,7 @@ Public Class frm_TransferenciasBancarias
             cboCuentaBancariaOrigen.Value = "CHG001"
             cboCuentaCtbleDestino.Value = "1SI013496"
             cboCuentaBancariaDestino.Value = "CHG002"
-            txtCheque.Text = ObtenerFechaServidor()
+            txtCheque.Text = TurnoActivo.Id
             DecImporte.Select()
             DecImporte.SelectAll()
 
@@ -1375,6 +1383,7 @@ Public Class frm_TransferenciasBancarias
             cboCuentaBancariaDestino.Enabled = False
             txtCheque.Enabled = False
             cboTipoMovimiento.Enabled = False
+            txtGlosa.Enabled = False
         End If
     End Sub
 #End Region
