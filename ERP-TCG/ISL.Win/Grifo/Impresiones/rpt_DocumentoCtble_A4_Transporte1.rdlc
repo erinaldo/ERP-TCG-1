@@ -42,17 +42,13 @@ TELF.: 074-472766 - Nº REG. M.T.C. 1403957 CNG</Value>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>2.58338cm</Top>
         <Left>0.3713cm</Left>
-        <Height>1.58778cm</Height>
+        <Height>1.41139cm</Height>
         <Width>12.16668cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox3">
@@ -77,19 +73,15 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>4.17116cm</Top>
+        <Top>3.99477cm</Top>
         <Left>0.38894cm</Left>
-        <Height>1.30555cm</Height>
+        <Height>1.29673cm</Height>
         <Width>12.16668cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
       <Textbox Name="Textbox9">
@@ -110,7 +102,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>5.6531cm</Top>
+        <Top>5.3356cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.39709cm</Height>
         <Width>1.88488cm</Width>
@@ -139,7 +131,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.05019cm</Top>
+        <Top>5.73269cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.37944cm</Height>
         <Width>1.88078cm</Width>
@@ -168,7 +160,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.42963cm</Top>
+        <Top>6.11213cm</Top>
         <Left>0.57131cm</Left>
         <Height>0.36181cm</Height>
         <Width>1.88488cm</Width>
@@ -197,7 +189,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.82672cm</Top>
+        <Top>6.50922cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.36896cm</Height>
         <Width>1.8455cm</Width>
@@ -228,7 +220,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>5.6531cm</Top>
+        <Top>5.3356cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.39709cm</Height>
         <Width>3.11015cm</Width>
@@ -256,7 +248,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>6.05019cm</Top>
+        <Top>5.73269cm</Top>
         <Left>2.45619cm</Left>
         <Height>0.37945cm</Height>
         <Width>18.02927cm</Width>
@@ -285,7 +277,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>6.46491cm</Top>
+        <Top>6.14741cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.32653cm</Height>
         <Width>18.02741cm</Width>
@@ -313,7 +305,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>6.82672cm</Top>
+        <Top>6.50922cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.36896cm</Height>
         <Width>3.11015cm</Width>
@@ -489,7 +481,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.8466cm</Height>
+              <Height>0.68785cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -503,7 +495,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>ITEM</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -520,30 +512,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -560,7 +528,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>COD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -577,30 +545,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -617,7 +561,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>CANT</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -634,30 +578,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -674,7 +594,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>UNIDAD</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -691,30 +611,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -731,7 +627,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>DESCRIPCION</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -788,7 +684,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>VAL. VTA. UNITARIO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -805,30 +701,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -845,7 +717,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>DSCTO TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -862,30 +734,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -902,7 +750,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>VAL. VTA. TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -919,30 +767,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -959,7 +783,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>IGV</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -976,30 +800,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1016,7 +816,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>PRECIO UNITARIO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1033,30 +833,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1073,7 +849,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>IMPORTE TOTAL</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1090,30 +866,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1279,10 +1031,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1527,9 +1275,9 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>8.83609cm</Top>
+        <Top>7.88359cm</Top>
         <Left>0.3713cm</Left>
-        <Height>1.24341cm</Height>
+        <Height>1.08466cm</Height>
         <Width>20.28698cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -1581,7 +1329,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.36188cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1595,7 +1343,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>CODIGO CLIENTE</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1612,30 +1360,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1652,7 +1376,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>CONDICION Y FORMA DE PAGO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1669,30 +1393,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1709,7 +1409,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>TIPO DE MONEDA</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1726,30 +1426,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1766,7 +1442,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>VENCIMIENTO</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1783,30 +1459,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1823,7 +1475,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                               <Value>REPRESENTANTE DE VENTAS</Value>
                               <Style>
                                 <FontFamily>CAlibri</FontFamily>
-                                <FontSize>9pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1840,30 +1492,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1871,7 +1499,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.46771cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1901,30 +1529,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -1957,30 +1561,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2012,30 +1592,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2069,10 +1625,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2105,30 +1657,6 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
                           <Style>Solid</Style>
                           <Width>1.5pt</Width>
                         </Border>
-                        <TopBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Blue</Color>
-                          <Style>Solid</Style>
-                          <Width>1.5pt</Width>
-                        </RightBorder>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
                   </CellContents>
@@ -2157,9 +1685,9 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>7.40734cm</Top>
+        <Top>7.08984cm</Top>
         <Left>0.3713cm</Left>
-        <Height>1.2cm</Height>
+        <Height>0.82958cm</Height>
         <Width>20.28698cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
@@ -2190,13 +1718,13 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>4.05164in</Height>
+    <Height>3.53081in</Height>
     <Style />
   </Body>
   <Width>8.19523in</Width>
   <Page>
     <PageFooter>
-      <Height>5.60917cm</Height>
+      <Height>5.87375cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
