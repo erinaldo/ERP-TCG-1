@@ -1992,7 +1992,7 @@ Public Class frm_FacturarCarga
         CargarGuiaTrans(leGuiaTrans)
         leGuiaRemitente = New List(Of e_GuiaRemitente)
         CargarGuiaRemi(leGuiaRemitente)
-        txtGlosa.Text = "POR SERVICIO DE TRANSPORTE"
+        txtGlosa.Text = "TRANSPORTE DE "
         leDir = New List(Of e_Direccion_EmpresaPersona)
         cboDirec.Text = String.Empty
         cboDirec.DataSource = leDir
@@ -2371,7 +2371,12 @@ Public Class frm_FacturarCarga
                     Else : Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * 0
                     End If
                 Else
-                    Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("Cantidad").Value
+                    If Fila.Cells("UnidadMedida").Value = "TONELADA" Then
+                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("Cantidad").Value
+                    End If
+                    If Fila.Cells("UnidadMedida").Value = "BOLSA" Then
+                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("PesoToneladas").Value
+                    End If
                 End If
                 If BandPrecio Then
                     If verCambiaVU.Checked Then
@@ -2873,7 +2878,7 @@ Public Class frm_FacturarCarga
                     .DisplayLayout.Bands(0).Columns("IdEstadoDocumento").Header.VisiblePosition = 17
                     .DisplayLayout.Bands(0).Columns("Monto_Anticipo").Header.VisiblePosition = 15
 
-                    .DisplayLayout.Bands(0).Columns("Serie").Width = 30
+                    .DisplayLayout.Bands(0).Columns("Serie").Width = 35
                     .DisplayLayout.Bands(0).Columns("Numero").Width = 65
                     .DisplayLayout.Bands(0).Columns("FechaEmision").Width = 70
                     .DisplayLayout.Bands(0).Columns("FechaVencimiento").Width = 70

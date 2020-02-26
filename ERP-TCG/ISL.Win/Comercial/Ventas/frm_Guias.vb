@@ -2597,6 +2597,7 @@ Public Class frm_Guias
 
             If griLista.ActiveRow.Cells("Id").Value.ToString.Length > 0 Then
                 'Viaje
+                fecEmision.Value = griLista.ActiveRow.Cells("Fecha").Value
                 oeViaje = New e_Viaje
                 txtIdViaje.Text = griLista.ActiveRow.Cells("IdOperacion").Value.ToString
                 oeViaje.Id = griLista.ActiveRow.Cells("IdOperacion").Value.ToString
@@ -2642,7 +2643,7 @@ Public Class frm_Guias
                         txtNumero.Text = .Numero
                         txtGuiaTransportista.Text = .Serie & "-" & .Numero
                         'fecEmision.Value = oeGuiaTransportista.Fecha
-                        fecEmision.Value = griLista.ActiveRow.Cells("LlegadaOrigen").Value
+                        fecEmision.Value = griLista.ActiveRow.Cells("Fecha").Value
                         verConfirmado.Checked = .IndGrtConfirmada
                         IdRemitente = .IdRemitente
                         IdDestinatario = .IdDestinatario

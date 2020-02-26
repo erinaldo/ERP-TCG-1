@@ -51,39 +51,6 @@ TELF.: 074-472766 - Nº REG. M.T.C. 1403957 CNG</Value>
           </Border>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>TIENDA LORA Y LORA
-CAL.LORA Y LORA NRO. 2450 INT. A P.J. SANTA ANA
-JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>3.99477cm</Top>
-        <Left>0.38894cm</Left>
-        <Height>1.29673cm</Height>
-        <Width>12.16668cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Textbox>
       <Textbox Name="Textbox9">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -102,11 +69,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>5.3356cm</Top>
+        <Top>4.3831cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.39709cm</Height>
         <Width>1.88488cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -131,11 +98,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>5.73269cm</Top>
+        <Top>4.78019cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.37944cm</Height>
         <Width>1.88078cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -160,11 +127,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.11213cm</Top>
+        <Top>5.15963cm</Top>
         <Left>0.57131cm</Left>
         <Height>0.36181cm</Height>
         <Width>1.88488cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -189,11 +156,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>6.50922cm</Top>
+        <Top>5.55672cm</Top>
         <Left>0.57317cm</Left>
         <Height>0.36896cm</Height>
         <Width>1.8455cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>5</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -220,11 +187,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Emision</rd:DefaultName>
-        <Top>5.3356cm</Top>
+        <Top>4.3831cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.39709cm</Height>
         <Width>3.11015cm</Width>
-        <ZIndex>7</ZIndex>
+        <ZIndex>6</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -248,11 +215,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Cliente</rd:DefaultName>
-        <Top>5.73269cm</Top>
+        <Top>4.78019cm</Top>
         <Left>2.45619cm</Left>
         <Height>0.37945cm</Height>
         <Width>18.02927cm</Width>
-        <ZIndex>8</ZIndex>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -277,11 +244,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>6.14741cm</Top>
+        <Top>5.19491cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.32653cm</Height>
         <Width>18.02741cm</Width>
-        <ZIndex>9</ZIndex>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -305,11 +272,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DOI</rd:DefaultName>
-        <Top>6.50922cm</Top>
+        <Top>5.55672cm</Top>
         <Left>2.45805cm</Left>
         <Height>0.36896cm</Height>
         <Width>3.11015cm</Width>
-        <ZIndex>10</ZIndex>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -434,7 +401,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         <Left>12.5909cm</Left>
         <Height>3.44014cm</Height>
         <Width>7.69937cm</Width>
-        <ZIndex>11</ZIndex>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -1275,11 +1242,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
-        <Top>7.88359cm</Top>
+        <Top>6.93109cm</Top>
         <Left>0.3713cm</Left>
         <Height>1.08466cm</Height>
         <Width>20.28698cm</Width>
-        <ZIndex>12</ZIndex>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Color>Blue</Color>
@@ -1685,11 +1652,11 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Cabecera</DataSetName>
-        <Top>7.08984cm</Top>
+        <Top>6.13734cm</Top>
         <Left>0.3713cm</Left>
-        <Height>0.82958cm</Height>
+        <Height>0.82959cm</Height>
         <Width>20.28698cm</Width>
-        <ZIndex>13</ZIndex>
+        <ZIndex>12</ZIndex>
         <Style>
           <Border>
             <Color>Blue</Color>
@@ -1718,7 +1685,7 @@ JOSÉ LEONARDO ORTIZ - CHICLAYO - LAMBAYEQUE</Value>
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.53081in</Height>
+    <Height>3.15581in</Height>
     <Style />
   </Body>
   <Width>8.19523in</Width>
@@ -2467,7 +2434,7 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Glosa.Value, "Cabecera")</Value>
+                  <Value>=First(Fields!Referencia.Value, "Cabecera")</Value>
                   <Style>
                     <FontFamily>Calibri</FontFamily>
                   </Style>
@@ -2652,10 +2619,22 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
         </Field>
         <Field Name="Direccion_Emisor">
           <DataField>Direccion_Emisor</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Direccion2_Emisor">
+          <DataField>Direccion2_Emisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DOI">
           <DataField>DOI</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOI_Piloto">
+          <DataField>DOI_Piloto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DOI_Trabajador">
+          <DataField>DOI_Trabajador</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Emision">
@@ -2664,6 +2643,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
         </Field>
         <Field Name="Emisor">
           <DataField>Emisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Footer">
+          <DataField>Footer</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Glosa">
@@ -2677,6 +2660,14 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
         <Field Name="IGV">
           <DataField>IGV</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Kilometraje">
+          <DataField>Kilometraje</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="Lado">
+          <DataField>Lado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="MedioPago">
           <DataField>MedioPago</DataField>
@@ -2710,6 +2701,10 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <DataField>OtrosCargos</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="Piloto">
+          <DataField>Piloto</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Placa">
           <DataField>Placa</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -2718,9 +2713,13 @@ Consulte su documento electrónico en cpe.sunat.gob.pe</Value>
           <DataField>QR</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Referencia">
+          <DataField>Referencia</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="RUC_Emisor">
           <DataField>RUC_Emisor</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="SerieNumero">
           <DataField>SerieNumero</DataField>
