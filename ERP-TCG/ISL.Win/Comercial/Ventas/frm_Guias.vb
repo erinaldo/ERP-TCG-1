@@ -1000,7 +1000,7 @@ Public Class frm_Guias
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
         If txtNumero.Text <> "" Then
-            txtNumero.Text = FormatoDocumento(txtNumero.Text, 10)
+            txtNumero.Text = FormatoDocumento(txtNumero.Text, 8)
         End If
     End Sub
 
@@ -1131,7 +1131,7 @@ Public Class frm_Guias
 
     Private Sub txtSubNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSubNumero.Validated
         If txtSubNumero.Text <> "" Then
-            txtSubNumero.Text = FormatoDocumento(txtSubNumero.Text, 10)
+            txtSubNumero.Text = FormatoDocumento(txtSubNumero.Text, 8)
         End If
         GrtActualiza()
     End Sub
@@ -1200,7 +1200,7 @@ Public Class frm_Guias
             'Ingreso = 0            
             'griGuiaTransportistaViaje
             For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griGuiaTransportistaViaje.Rows
-                If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 10) = txtSerie.Text + "-" + txtNumero.Text Then
+                If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 8) = txtSerie.Text + "-" + txtNumero.Text Then
                     'Ingreso = 1
                     txtIdGrt.Text = fila.Cells("Id").Value
                     Exit For
@@ -1217,7 +1217,7 @@ Public Class frm_Guias
                             ValidarGuiaRemitente(txtGrrViaje, txtGrrRangoViaje)
                         End If
                         For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griGuiaTransportistaViaje.Rows
-                            If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 10) = txtSerie.Text + "-" + txtNumero.Text And
+                            If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 8) = txtSerie.Text + "-" + txtNumero.Text And
                             fila.Cells("IndGuiaTercero").Value = Me.chkGuiaTercero.Checked Then
                                 Ingreso = 1
                                 Exit For
@@ -1558,7 +1558,7 @@ Public Class frm_Guias
                         With griGrtConfirmarBloque.ActiveRow
                             oeGuiaTransportista.Id = RTrim(.Cells("Id").Value)
                             oeGuiaTransportista.Serie = FormatoDocumento(RTrim(.Cells("Codigo").Value), 4)
-                            oeGuiaTransportista.Numero = FormatoDocumento(RTrim(.Cells("IdCopiloto").Value), 10)
+                            oeGuiaTransportista.Numero = FormatoDocumento(RTrim(.Cells("IdCopiloto").Value), 8)
                             oeGuiaTransportista.IdSeguimiento = RTrim(.Cells("IdAyudante").Value)
                             oeGuiaTransportista.IdRemitente = RTrim(.Cells("IdEscala").Value)
                             oeGuiaTransportista.IdDireccionLugarPartida = RTrim(.Cells("IdEstado").Value)
@@ -1600,9 +1600,9 @@ Public Class frm_Guias
                             oeGuiaRemitente = New e_GuiaRemitente
                             oeGuiaRemitente.Id = RTrim(.Cells("UsuarioCreacion").Value)
                             oeGuiaRemitente.Serie = FormatoDocumento(RTrim(.Cells("IdTipoVehiculo").Value), 4)
-                            oeGuiaRemitente.Numero = FormatoDocumento(RTrim(.Cells("TipoVehiculo").Value), 10)
+                            oeGuiaRemitente.Numero = FormatoDocumento(RTrim(.Cells("TipoVehiculo").Value), 8)
                             oeGuiaRemitente.IdGuiaTransportista = RTrim(.Cells("Id").Value)
-                            oeGuiaRemitente.GuiaTransportista = FormatoDocumento(RTrim(.Cells("Codigo").Value), 4) + "-" + FormatoDocumento(RTrim(griGrtConfirmarBloque.ActiveRow.Cells("IdCopiloto").Value), 10)
+                            oeGuiaRemitente.GuiaTransportista = FormatoDocumento(RTrim(.Cells("Codigo").Value), 4) + "-" + FormatoDocumento(RTrim(griGrtConfirmarBloque.ActiveRow.Cells("IdCopiloto").Value), 8)
                             oeGuiaRemitente.Fecha = .Cells("LlegadaOrigen").Value
                             oeGuiaRemitente.Activo = True
                             oeGuiaRemitente.Viaje = RTrim(.Cells("Operacion").Value)
@@ -1784,7 +1784,7 @@ Public Class frm_Guias
 
     Private Sub txtRangoFinalNumeroAnulado_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRangoFinalNumeroAnulado.Validated
         If txtRangoFinalNumeroAnulado.Text <> "" Then
-            txtRangoFinalNumeroAnulado.Text = FormatoDocumento(txtRangoFinalNumeroAnulado.Text, 10)
+            txtRangoFinalNumeroAnulado.Text = FormatoDocumento(txtRangoFinalNumeroAnulado.Text, 8)
         End If
     End Sub
 
@@ -2216,7 +2216,7 @@ Public Class frm_Guias
         If griGuiaTransportistaViaje.Rows.Count > 0 Then
             For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griGuiaTransportistaViaje.Rows
                 With fila
-                    If FormatoDocumento(.Cells("Serie").Value, 4) = txtSerie.Text And FormatoDocumento(.Cells("Numero").Value, 10) = txtNumero.Text Then
+                    If FormatoDocumento(.Cells("Serie").Value, 4) = txtSerie.Text And FormatoDocumento(.Cells("Numero").Value, 8) = txtNumero.Text Then
                         .Cells("PesoToneladas").Value = txtGrtPT.Text
                         .Cells("IdRemitente").Value = cboRemitente.Value
                         .Cells("IdDireccionLugarPartida").Value = cboPuntoPartida.Value
@@ -3158,7 +3158,7 @@ Public Class frm_Guias
             End If
             If Grid.Rows.Count > 0 Then
                 For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In Grid.Rows
-                    If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 10) = Serie + "-" + Numero Then
+                    If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 8) = Serie + "-" + Numero Then
                         Throw New Exception(Serie & "-" & Numero & " GRR fue Ingresado en Viaje: " & txtCodigoViaje.Text)
                     End If
                 Next
@@ -3356,7 +3356,7 @@ Public Class frm_Guias
                 ls_NroDocumento = (CDbl(ls_NroDocInicial) + i).ToString
                 If griGuiaRemitente.Rows.Count > 0 Then
                     For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griGuiaRemitente.Rows
-                        If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 10) = ls_NroSerie + "-" + FormatoDocumento(ls_NroDocumento, 10) Then
+                        If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 8) = ls_NroSerie + "-" + FormatoDocumento(ls_NroDocumento, 8) Then
                             Guia = 1
                             Exit For
                         End If
@@ -3367,7 +3367,7 @@ Public Class frm_Guias
                     With oeGuiaRemitente
                         .Id = ""
                         .Serie = ls_NroSerie
-                        .Numero = FormatoDocumento(ls_NroDocumento, 10)
+                        .Numero = FormatoDocumento(ls_NroDocumento, 8)
                         .IdGuiaTransportista = txtIdGrt.Text
                         .GuiaTransportista = txtSerie.Text + "-" + txtNumero.Text
                         .Fecha = fecEmisionGrr.Value
@@ -3414,7 +3414,7 @@ Public Class frm_Guias
                 ls_NroDocumento = (CDbl(ls_NroDocInicial) + i).ToString
                 If griGuiaRemitenteViaje.Rows.Count > 0 Then
                     For Each fila As Infragistics.Win.UltraWinGrid.UltraGridRow In griGuiaRemitenteViaje.Rows
-                        If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 10) = ls_NroSerie + "-" + FormatoDocumento(ls_NroDocumento, 10) Then
+                        If FormatoDocumento(fila.Cells("Serie").Value, 4) + "-" + FormatoDocumento(fila.Cells("Numero").Value, 8) = ls_NroSerie + "-" + FormatoDocumento(ls_NroDocumento, 8) Then
                             GuiaViaje = 1
                             Exit For
                         End If
@@ -3425,7 +3425,7 @@ Public Class frm_Guias
                     With oeGuiaRemitente
                         .Id = ""
                         .Serie = ls_NroSerie
-                        .Numero = FormatoDocumento(ls_NroDocumento, 10)
+                        .Numero = FormatoDocumento(ls_NroDocumento, 8)
                         .IdGuiaTransportista = txtIdGrt.Text
                         .GuiaTransportista = txtSerie.Text + "-" + txtNumero.Text
                         .Fecha = fecEmisionGrrViaje.Value
@@ -3699,7 +3699,7 @@ Public Class frm_Guias
             End If
 
             ls_Serie = FormatoDocumento(ls_Serie, 4)
-            ls_Numero = FormatoDocumento(ls_Numero, 10)
+            ls_Numero = FormatoDocumento(ls_Numero, 8)
             Select Case txt_controlInicial.Name
                 Case "txtGrr"
                     txtGrr.Text = ls_Serie & "-" & ls_Numero
@@ -3797,7 +3797,7 @@ Public Class frm_Guias
                                 .TipoOperacion = "I"
                                 .Id = txtIdGrt.Text
                                 .Serie = txtSerie.Text
-                                .Numero = FormatoDocumento(ls_NroDocumento, 10)
+                                .Numero = FormatoDocumento(ls_NroDocumento, 8)
                                 .IdSeguimiento = ""
                                 .IdRemitente = cboRemitente.Value
                                 .Remitente = cboRemitente.Text
@@ -3962,11 +3962,11 @@ Public Class frm_Guias
                 If RTrim(.Cells("Id").Value) = "" Then
                     ValidaGuiaTransportista(RTrim(.Cells("Id").Value),
                                             FormatoDocumento(RTrim(.Cells("Codigo").Value), 4),
-                                            FormatoDocumento(RTrim(.Cells("IdCopiloto").Value), 10),
+                                            FormatoDocumento(RTrim(.Cells("IdCopiloto").Value), 8),
                                             IIf(.Cells("IdTercero").Value = gs_IdClienteProveedorSistema.Trim, False, True))
-                    ValidaGuiaRemitente(RTrim(.Cells("IdEscala").Value), _
-                                        FormatoDocumento(RTrim(.Cells("IdTipoVehiculo").Value), 4), _
-                                        FormatoDocumento(RTrim(.Cells("TipoVehiculo").Value), 10), griGuiaRemitente)
+                    ValidaGuiaRemitente(RTrim(.Cells("IdEscala").Value),
+                                        FormatoDocumento(RTrim(.Cells("IdTipoVehiculo").Value), 4),
+                                        FormatoDocumento(RTrim(.Cells("TipoVehiculo").Value), 8), griGuiaRemitente)
                 End If
             End With
             Return True

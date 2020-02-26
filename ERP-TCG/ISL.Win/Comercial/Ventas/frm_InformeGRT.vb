@@ -411,13 +411,13 @@ Public Class frm_InformeGRT
 
     Private Sub txtNumero_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtNumero.Validated
         If txtNumero.Text <> "" Then
-            txtNumero.Text = FormatoDocumento(txtNumero.Text, 10)
+            txtNumero.Text = FormatoDocumento(txtNumero.Text, 8)
         End If
     End Sub
 
     Private Sub txtRangoFinalNumeroAnulado_Validated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtRangoFinalNumeroAnulado.Validated
         If txtRangoFinalNumeroAnulado.Text <> "" Then
-            txtRangoFinalNumeroAnulado.Text = FormatoDocumento(txtRangoFinalNumeroAnulado.Text, 10)
+            txtRangoFinalNumeroAnulado.Text = FormatoDocumento(txtRangoFinalNumeroAnulado.Text, 8)
         End If
     End Sub
 

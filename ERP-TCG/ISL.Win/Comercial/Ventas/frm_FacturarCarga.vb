@@ -4228,15 +4228,17 @@ Public Class frm_FacturarCarga
 
     Private Sub tsmiDescargarPDF_Click(sender As Object, e As EventArgs) Handles tsmiDescargarPDF.Click
         Try
-            If griDocumentoVenta.ActiveRow.Cells("IndElectronico").Value = 0 Then Throw New Exception("Documento debe ser Electrónico.")
+            '@0001 Ini
+            'If griDocumentoVenta.ActiveRow.Cells("IndElectronico").Value = 0 Then Throw New Exception("Documento debe ser Electrónico.")
 
-            'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
+            ''If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
-            Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griDocumentoVenta.ActiveRow.Cells("Id").Value, False, "")
-            frmImpresion.StartPosition = FormStartPosition.CenterScreen
-            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-            frmImpresion.ShowDialog()
+            'Dim frmImpresion As New frm_FacturaBoletaElectronico
+            'frmImpresion.mt_CargarDatos(griDocumentoVenta.ActiveRow.Cells("Id").Value, False, "")
+            'frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            'frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            'frmImpresion.ShowDialog()
+            '@0001 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

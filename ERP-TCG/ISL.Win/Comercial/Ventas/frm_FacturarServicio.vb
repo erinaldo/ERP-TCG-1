@@ -773,6 +773,15 @@ Public Class frm_FacturarServicio
         'RecalcularMontosOrig_Anticipos()
         griAnticipos.Update()
     End Sub
+
+    Private Sub Formato1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato1ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griListaFacturaCompra.ActiveRow.Cells("Id").Value, "A41", "TRANSPORTE", "T1")
+    End Sub
+
+    Private Sub Formato2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato2ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griListaFacturaCompra.ActiveRow.Cells("Id").Value, "A42", "TRANSPORTE", "T2")
+    End Sub
+
     Public Sub ConsultarDetalleDocumento()
         Try
             listarDetalleDocumento(True)
@@ -2098,15 +2107,17 @@ Public Class frm_FacturarServicio
 
     Private Sub tsmiDescargarPDF_Click(sender As Object, e As EventArgs) Handles tsmiDescargarPDF.Click
         Try
-            If griListaFacturaCompra.ActiveRow.Cells("IndElectronico").Value = 0 Then Throw New Exception("Documento debe ser Electrónico.")
+            '@0001 Ini
+            'If griListaFacturaCompra.ActiveRow.Cells("IndElectronico").Value = 0 Then Throw New Exception("Documento debe ser Electrónico.")
 
-            'If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
+            ''If griDocumentoVenta.ActiveRow.Cells("Estado").Value = "Anulado" Then Throw New Exception("Documento esta Anulado.")
 
-            Dim frmImpresion As New frm_FacturaBoletaElectronico
-            frmImpresion.mt_CargarDatos(griListaFacturaCompra.ActiveRow.Cells("Id").Value, False, "")
-            frmImpresion.StartPosition = FormStartPosition.CenterScreen
-            frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
-            frmImpresion.ShowDialog()
+            'Dim frmImpresion As New frm_FacturaBoletaElectronico
+            'frmImpresion.mt_CargarDatos(griListaFacturaCompra.ActiveRow.Cells("Id").Value, False, "")
+            'frmImpresion.StartPosition = FormStartPosition.CenterScreen
+            'frmImpresion.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedDialog
+            'frmImpresion.ShowDialog()
+            '@0001 Fin
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try
