@@ -119,6 +119,7 @@ Partial Class frm_TransferenciasBancarias
         Me.Etiqueta4 = New ISL.Controles.Etiqueta(Me.components)
         Me.Etiqueta3 = New ISL.Controles.Etiqueta(Me.components)
         Me.Agrupacion4 = New ISL.Controles.Agrupacion(Me.components)
+        Me.Espere1 = New ISL.Win.Espere()
         Me.btnCobroDeuda = New ISL.Controles.Boton(Me.components)
         Me.chkCargaMasiva = New ISL.Controles.Chequear(Me.components)
         Me.chkDsctoPlanilla = New ISL.Controles.Chequear(Me.components)
@@ -158,7 +159,6 @@ Partial Class frm_TransferenciasBancarias
         Me.tcTransferenciaBancaria = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Espere1 = New ISL.Win.Espere()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.gridMovimientoBancarios, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrigenDatos1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -634,6 +634,14 @@ Partial Class frm_TransferenciasBancarias
         Me.Agrupacion4.TabIndex = 0
         Me.Agrupacion4.Text = "Datos de Transferencia:"
         Me.Agrupacion4.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'Espere1
+        '
+        Me.Espere1.Location = New System.Drawing.Point(280, 184)
+        Me.Espere1.Name = "Espere1"
+        Me.Espere1.Size = New System.Drawing.Size(458, 67)
+        Me.Espere1.TabIndex = 1
+        Me.Espere1.Visible = False
         '
         'btnCobroDeuda
         '
@@ -1180,14 +1188,6 @@ Partial Class frm_TransferenciasBancarias
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'Espere1
-        '
-        Me.Espere1.Location = New System.Drawing.Point(280, 184)
-        Me.Espere1.Name = "Espere1"
-        Me.Espere1.Size = New System.Drawing.Size(458, 67)
-        Me.Espere1.TabIndex = 1
-        Me.Espere1.Visible = False
         '
         'frm_TransferenciasBancarias
         '
