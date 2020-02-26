@@ -921,6 +921,14 @@ Public Class frm_EstacionServicio
         cmb_Lado.Rows(0).Selected = True
         cboProducto.SelectedIndex = 0 : Procesar_BotonCombustible(cboProducto.Value)
         cmb_Cliente.SelectAll()
+        '@001 Ini
+        UltraGroupBox4.Enabled = True
+        ugbTipoPago.Enabled = True
+        grbDocumento.Enabled = True
+        grb_Documento.Enabled = True
+        UltraGroupBox2.Enabled = True
+        UltraGroupBox5.Enabled = True
+        '@001 Fin
     End Sub
 
 
@@ -957,6 +965,7 @@ Public Class frm_EstacionServicio
 
     Private Sub mt_Agregar_Detalle()
         Try
+
             Dim OV_DETALLE As New e_OrdenVentaMaterial
 
             With OV_DETALLE
@@ -1439,13 +1448,34 @@ Public Class frm_EstacionServicio
     End Sub
 
     Private Sub btnAgregarDetalle_Click(sender As Object, e As EventArgs) Handles btnAgregarDetalle.Click
-        If nud_Importe.Value = 0 Then Exit Sub
-        mt_Agregar_Detalle()
-        grb_Combustible.Text = "Seleccione Combustible"
-        nud_Cantidad.Value = 0
-        nud_Preciounitario.Value = 0
-        nud_Importe.Value = 0
-        nud_Cantidad.SelectAll()
+        Try
+            '@001 Ini
+            If IdTipoDocumento = "" Then Throw New Exception("Seleccione un TIPO de documento")
+            If txt_Serie.Text = "" Then Throw New Exception("Ingrese la SERIE de documento")
+            If txt_Numero.Text = "" Then Throw New Exception("Ingrese el NUMERO de documento")
+            If IdEmpresaCliente = "" Then Throw New Exception("Seleccione la empresa")
+            If IdEmpresaCliente = "1CH000000003" And IdTipoDocumento = "1CH000000026" Then Throw New Exception("No se puede emitir FACTURA al cliente seleccionado")
+            If cmb_Vehiculo.Text = "" Then Throw New Exception("Ingrese una placa")
+            '@001 Fin
+            If nud_Importe.Value = 0 Then Exit Sub
+            mt_Agregar_Detalle()
+            grb_Combustible.Text = "Seleccione Combustible"
+            nud_Cantidad.Value = 0
+            nud_Preciounitario.Value = 0
+            nud_Importe.Value = 0
+            nud_Cantidad.SelectAll()
+            '@001 Ini
+            UltraGroupBox4.Enabled = False
+            ugbTipoPago.Enabled = False
+            grbDocumento.Enabled = False
+            grb_Documento.Enabled = False
+            UltraGroupBox2.Enabled = False
+            UltraGroupBox5.Enabled = False
+            '@001 Fin
+        Catch ex As Exception
+            mensajeEmergente.Problema(ex.Message, True)
+        End Try
+
     End Sub
 
     Private Function fc_ValidarNumeroDoc() As Boolean
@@ -1510,6 +1540,7 @@ Public Class frm_EstacionServicio
                 Cargar_Direcciones()
 
                 '' Validacion por Empresa
+                mt_Calcular_DescuentoCombustible()
             End If
 
             mt_Validar_OperacionesCliente(cmb_Cliente.Value)

@@ -85,7 +85,7 @@ Public Class frm_TransferenciasBancarias
         Inicializar()
         Operacion = "Nuevo"
         ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-        'mt_Cargar_TurnoActivo()
+        mt_Cargar_TurnoActivo()
     End Sub
 
     Public Overrides Sub Guardar()
@@ -848,6 +848,7 @@ Public Class frm_TransferenciasBancarias
                 leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
             End If
             'leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda = "1CH01" And item.IdCuentaContable = lsCta).ToList
+            leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True}) '@0001
         Else
             ' leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda <> "1CH01" And item.IdCuentaContable = lsCta).ToList
         End If
@@ -957,7 +958,7 @@ Public Class frm_TransferenciasBancarias
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleOrigen.Items(i).ListObject
             If obj.Cuenta = "10111" Then
-                mt_CargarCajas(Me.cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Cuenta, True) '10111
+                mt_CargarCajas(Me.cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Cuenta) '10111
             Else
                 CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Id)
             End If

@@ -3685,18 +3685,18 @@ Public Class frm_Guias
             ls_Serie = o_DocumentoGrrInicial(0).ToString.Trim
             If ls_Serie.Length > 4 Then
                 txt_controlInicial.Focus()
-                Throw New Exception("Nº Serie debe ser Menor o Igual a 4 Digitos, Separando Serie y Numero por un Guión (-): (0000-0000000000)")
+                Throw New Exception("Nº Serie debe ser Menor o Igual a 4 Digitos, Separando Serie y Numero por un Guión (-): (0000-00000000)")
             End If
 
             If txt_controlInicial.Text.Trim.Length = 0 Or Not txt_controlInicial.Text.Contains("-") Then
                 txt_controlInicial.Focus()
-                Throw New Exception("Ingrese Correctamente Guía Remisión Remitente, Separando Serie y Numero por un Guión (-): (0000-0000000000)")
+                Throw New Exception("Ingrese Correctamente Guía Remisión Remitente, Separando Serie y Numero por un Guión (-): (0000-00000000)")
             End If
 
             ls_Numero = o_DocumentoGrrInicial(1).ToString.Trim
             If ls_Numero.Length < 1 Then
                 txt_controlInicial.Focus()
-                Throw New Exception("Numero Seguido de Serie debe ser Mayor a 1 Digitos, Separando Serie y Numero por un Guión (-): (0000-0000000000)")
+                Throw New Exception("Numero Seguido de Serie debe ser Mayor a 1 Digitos, Separando Serie y Numero por un Guión (-): (0000-00000000)")
             End If
 
             ls_Serie = FormatoDocumento(ls_Serie, 4)
