@@ -2006,7 +2006,7 @@ Public Class frm_FacturaCompra
 
     Private Sub DecPorcentajePercepcion_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecPorcentajePercepcion.ValueChanged
         If DecPorcentajePercepcion.Value > 0 Then
-            Me.DecPercepcion.Value = txtTotal.Value * (Me.DecPorcentajePercepcion.Value / 100)
+            Me.DecPercepcion.Value = Math.Round(txtTotal.Value * (Me.DecPorcentajePercepcion.Value / 100), 2)
         Else
             Me.DecPercepcion.Value = 0
         End If
@@ -2014,7 +2014,7 @@ Public Class frm_FacturaCompra
 
     Private Sub DecPercepcion_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecPercepcion.ValueChanged
         If DecPercepcion.Value > 0 Then
-            Me.DecTPagar.Value = txtTotal.Value + Me.DecPercepcion.Value
+            Me.DecTPagar.Value = Math.Round(txtTotal.Value + Me.DecPercepcion.Value, 2)
         Else
             Me.DecTPagar.Value = 0
         End If
@@ -2023,7 +2023,7 @@ Public Class frm_FacturaCompra
     Private Sub DecDetraer_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecDetraer.ValueChanged
 
         If DecDetraer.Value > 0 Then
-            DecMontoDetraccion.Value = Me.txtTotal.Value * (DecDetraer.Value / 100)
+            DecMontoDetraccion.Value = Math.Round(Me.txtTotal.Value * (DecDetraer.Value / 100), 2)
         Else
             DecMontoDetraccion.Value = 0
         End If
@@ -2031,7 +2031,7 @@ Public Class frm_FacturaCompra
 
     Private Sub DecMontoDetraccion_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DecMontoDetraccion.ValueChanged
         If DecMontoDetraccion.Value > 0 Then
-            Me.txtNetoPagar.Value = txtTotal.Value - Me.DecMontoDetraccion.Value
+            Me.txtNetoPagar.Value = Math.Round(txtTotal.Value - Me.DecMontoDetraccion.Value, 2)
         Else
             txtNetoPagar.Value = 0
         End If

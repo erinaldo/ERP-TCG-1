@@ -64,7 +64,7 @@ Module m_Funciones
 
     Public Function gfc_obtener_TurnoActivo() As e_CierreTurno '' CESS
         Dim dTurno As New l_CierreTurno
-        Return dTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "TAC"})
+        Return dTurno.Obtener(New e_CierreTurno With {.TipoOperacion = "TAC", .IdSucursal = gs_IdSucursal})
 
     End Function
 
