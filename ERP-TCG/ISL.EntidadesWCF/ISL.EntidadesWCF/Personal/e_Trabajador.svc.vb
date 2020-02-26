@@ -82,6 +82,7 @@ Public Class e_Trabajador
     Public IdSucursalSistema As String = ""
     <DataMember()>
     Public Property Foto() As Byte()
+
 #End Region
 
 #Region "Constructor"

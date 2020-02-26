@@ -85,7 +85,7 @@ Public Class frm_TransferenciasBancarias
         Inicializar()
         Operacion = "Nuevo"
         ControlBoton(0, 0, 0, 1, 1, 0, 0, 1, 0)
-        mt_Cargar_TurnoActivo()
+        'mt_Cargar_TurnoActivo()
     End Sub
 
     Public Overrides Sub Guardar()
@@ -246,16 +246,24 @@ Public Class frm_TransferenciasBancarias
                         End If
                     Case 1 ' Egreso de la Cuenta
                         If Me.cboMedioPago.Text = "EFECTIVO" Then
+                            If IndTrabjador Then
+                                lePresAnalisis = New List(Of e_Prestamo)
+                                If cboTrabajadorDestino.Enabled Then If cboTrabajadorDestino.Value.ToString.Trim.Length = 0 Then Throw New Exception("Seleccion de Trabajador Destino")
+                                Dim _oeAux = cboTrabajadorDestino.Items(cboTrabajadorDestino.SelectedIndex).ListObject
+                                lePresAnalisis.Add(New e_Prestamo With {.Id = _oeAux.IdEstadoCivil, .IdTrabajador = _oeAux.Id, ._MontoAux = _oeAux.CantidadRef, .Trabajador = _oeAux.NombreCompleto})
+                            End If
                             If oeAsientoModel.Id.Trim.Length = 0 Then Throw New Exception("No se ha Seleccionado un Flujo de Caja Pre-Configurado Contablemente")
                             oeAsientoModel.TipoOperacion = "" : oeAsientoModel.Ejercicio = fecTransf.Value.Year
                             oeAsientoModel = olAsientoModel.Obtener(oeAsientoModel)
                             oeMovimientosBancariosOrigen = New e_MovimientoCajaBanco
                             With oeMovimientosBancariosOrigen
                                 .TipoOperacion = "I" : .IdMedioPago = cboMedioPago.Value : ._Operador = -1 : .Fecha = fecTransf.Value
-                                .IdCuentaBancaria = cboCuentaBancariaOrigen.Value : ._IdCuentaContable = cboCuentaCtbleOrigen.Value
+                                '.IdCuentaBancaria = cboCuentaBancariaOrigen.Value
+                                ._IdCuentaContable = cboCuentaCtbleOrigen.Value
                                 .NroBoucher = txtCheque.Text : .IdFlujoCaja = cboFlujoCaja.Value : .TipoCambio = DecTC.Value
                                 .TotalMN = ndSoles.Value : .TotalME = ndDolares.Value : .UsuarioCreacion = gUsuarioSGI.Id
                                 .IdPeriodoCtble = CalculaPeriodo(.Fecha) : .Activo = True
+                                .IdCaja = cboCuentaBancariaOrigen.Value
                             End With
                             oeMovimientosBancariosOrigen.PrefijoID = gs_PrefijoIdSucursal '@0001
                             oeAsientoModel.PrefijoID = gs_PrefijoIdSucursal '@0001
@@ -686,6 +694,15 @@ Public Class frm_TransferenciasBancarias
         End Try
     End Function
 
+    Private Sub cboTrabajadorDestino_ValueChanged(sender As Object, e As EventArgs) Handles cboTrabajadorDestino.ValueChanged
+        If cboTrabajadorDestino.Enabled Then
+            If cboFlujoCaja.Text = gFCPH Then
+                Dim _oeAux = cboTrabajadorDestino.Items(cboTrabajadorDestino.SelectedIndex).ListObject
+                DecImporte.Value = _oeAux.CantidadRef
+            End If
+        End If
+    End Sub
+
     Private Sub CargarCuentaContable()
         Dim obj As New e_Moneda
         obj = cboMoneda.Items(cboMoneda.SelectedIndex).ListObject
@@ -813,15 +830,26 @@ Public Class frm_TransferenciasBancarias
         End Try
     End Sub
 
-    Private Sub mt_CargarCajas(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor,
-    ByVal IndMonedaExtrangera As Integer, ByVal lsCta As String)
+    Private Sub mt_CargarCajas(ByVal Combo As Infragistics.Win.UltraWinEditors.UltraComboEditor, ByVal IndMonedaExtrangera As Integer, ByVal lsCta As String, Optional _flag As Boolean = False)
         Dim leCaja As New List(Of e_Caja)
         Dim olCaja As New l_Caja
         If IndMonedaExtrangera = 0 Then
+            If _flag Then
+                Dim _oeCajaUsuario As e_CajaUsuario
+                _oeCajaUsuario = BuscarCajaUsuario(gUsuarioSGI.IdTrabajador)
+                Dim _oecaja As e_Caja, _olcaja As New l_Caja
+                _oecaja = _olcaja.Obtener(New e_Caja With {.Id = _oeCajaUsuario.IdCaja})
+                If _oecaja.Id.Trim <> "" Then
+                    leCaja.Add(_oecaja)
+                Else
+                    leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
+                End If
+            Else
+                leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
+            End If
             'leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda = "1CH01" And item.IdCuentaContable = lsCta).ToList
-            leCaja = olCaja.Listar(New e_Caja With {.Tipooperacion = "", .Activo = True})
         Else
-           ' leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda <> "1CH01" And item.IdCuentaContable = lsCta).ToList
+            ' leCtaBanc = leCtaBancaria.Where(Function(item) item.IdMoneda <> "1CH01" And item.IdCuentaContable = lsCta).ToList
         End If
         If leCaja.Count > 0 Then
             Combo.Enabled = True
@@ -929,7 +957,7 @@ Public Class frm_TransferenciasBancarias
             Dim obj As New e_CuentaContable
             obj = cboCuentaCtbleOrigen.Items(i).ListObject
             If obj.Cuenta = "10111" Then
-                mt_CargarCajas(Me.cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Cuenta) '10111
+                mt_CargarCajas(Me.cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Cuenta, True) '10111
             Else
                 CuentaBancariaSegunCta(cboCuentaBancariaOrigen, obj.MonedaExtranjera, obj.Id)
             End If
@@ -1158,8 +1186,16 @@ Public Class frm_TransferenciasBancarias
                                 If cboFlujoCaja.Text = gFCPH Then
                                     Dim _oeplanilla As New e_Planilla With {.IdPeriodo = oePeriodo.Id, .Tipo = 1}
                                     Dim _olplanilla As New l_Planilla
+                                    Dim _leListaPago As New List(Of e_Trabajador)
+                                    _oeplanilla.IndCargaCompleto = True
                                     _oeplanilla = _olplanilla.Obtener(_oeplanilla)
-                                    DecImporte.Value = _oeplanilla.Importe
+                                    For Each _det In _oeplanilla.leDetalle.Where(Function(it) it.IsPagado = False).ToList
+                                        _leListaPago.Add(New e_Trabajador With {.Id = _det.IdTrabajador, .oePersona = (New e_Persona With {.ApellidoPaterno = _det.Trabajador}), .CantidadRef = _det.ImportePagar, .IdEstadoCivil = _det.Id})
+                                    Next
+                                    'DecImporte.Value = _oeplanilla.Importe
+                                    Dim _leTDAux = From le In _leListaPago Select le.Id, le.oePersona.NombreCompleto, le.CantidadRef, le.IdEstadoCivil
+                                    LlenarCombo(cboTrabajadorDestino, "NombreCompleto", _leTDAux.ToList, -1)
+                                    cboTrabajadorDestino.Enabled = True
                                 End If
                             Case 2
                                 If cboFlujoCaja.Text = gFCADEPAGDSCTO Then

@@ -181,7 +181,11 @@ Public Class e_Persona
 
     Public Property NombreCompleto() As String
         Get
-            _NombreCompleto = ApellidoPaterno.Trim + " " + ApellidoMaterno.Trim + ", " + Nombre.Trim
+            If Nombre.Trim <> "" Then
+                _NombreCompleto = ApellidoPaterno.Trim + " " + ApellidoMaterno.Trim + ", " + Nombre.Trim
+            Else
+                _NombreCompleto = ApellidoPaterno.Trim
+            End If
             Return _NombreCompleto
         End Get
         Set(value As String)
