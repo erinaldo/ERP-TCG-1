@@ -2366,7 +2366,7 @@ Public Class frm_FacturarCarga
                         Fila.Cells("FactorRefUni").Value = oe.FactorReferencial
                     End If
                 End If
-                If Fila.Cells("UnidadMedida").Value <> "TONELADA" Then
+                If Fila.Cells("UnidadMedida").Value <> "TONELADA" And Fila.Cells("UnidadMedida").Value <> "BOLSA" Then
                     If verCantidadTn.Checked Then : Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * decCantTn.Value
                     Else : Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * 0
                     End If
