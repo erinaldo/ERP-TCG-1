@@ -468,8 +468,8 @@ Public Class frm_GRR_Venta
     Private Sub cboChofer_Validated(sender As Object, e As EventArgs) Handles cboChofer.Validated
         Try
             If cboChofer.DropDownButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always Then
-                Dim oeCombo As e_Combo = olCombo.Obtener(New e_Combo With {.Nombre = "", .Id = cboChofer.Value})
-                txtNroLicencia.Text = oeCombo.Descripcion
+                Dim oeCombo As e_Combo = olCombo.Obtener(New e_Combo With {.Nombre = "Brevete", .Id = cboChofer.Value})
+                txtNroLicencia.Text = oeCombo.Nombre
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)

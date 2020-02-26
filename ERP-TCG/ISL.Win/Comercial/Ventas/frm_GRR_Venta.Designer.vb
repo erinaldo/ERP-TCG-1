@@ -2775,7 +2775,7 @@ Partial Class frm_GRR_Venta
         Me.txtNroLicencia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNroLicencia.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNroLicencia.Location = New System.Drawing.Point(566, 86)
-        Me.txtNroLicencia.MaxLength = 9
+        Me.txtNroLicencia.MaxLength = 15
         Me.txtNroLicencia.Name = "txtNroLicencia"
         Me.txtNroLicencia.Size = New System.Drawing.Size(158, 22)
         Me.txtNroLicencia.TabIndex = 17
