@@ -4780,6 +4780,32 @@ Public Class frm_Operacion
         End Try
     End Sub
 
+    Public Sub ListarOrdenes()
+        Try
+            ugb_Espera.Visible = True
+            Application.DoEvents()
+            Cursor.Current = Cursors.WaitCursor
+            Cursor.Show()
+            'cambio
+            ' LimpiaGrid(griDemanda, ogdDemanda)
+            olDemanda = New l_Demanda
+            oeDemanda = New e_Demanda
+
+            oeDemanda.TipoOperacion = "5"
+            oeDemanda.Zona = cboZonaDemanda.Value
+            If codigoDemanda <> "" Then
+                oeDemanda.Id = codigoDemanda
+            End If
+            griOrdenes.DataSource = olDemanda.Listar(oeDemanda)
+            ugb_Espera.Visible = False
+        Catch ex As Exception
+            Throw ex
+        Finally
+            Windows.Forms.Cursor.Current = Cursors.Default
+            Cursor.Show()
+            ugb_Espera.Visible = False
+        End Try
+    End Sub
     Public Sub ListarDisponibilidad(ByVal IdTracto As String)
         Try
             ugb_Espera.Visible = True
@@ -5017,46 +5043,46 @@ Public Class frm_Operacion
 
             'If PrefijoId <> "1PY" Then '@0001
             For I As Integer = 0 To griViaje.Rows.Count - 1
-                    With griViaje.Rows(I)
-                        'If PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And Operacion = "Nuevo" Then
-                        '    ''Valida Tracto Viajes sin reportar
-                        '    ViajesControl(.Cells("Tracto").Value, "")
-                        '    If ListaViajeControl.Count > 4 Then
-                        '        TextoMensaje = "Reportar Viajes a la Brevedad"
-                        '        oePerfil = New e_Perfil
-                        '        oePerfil.TipoOperacion = "M"
-                        '        oePerfil.Id = ObtenerPerfilPrincipal.Id
-                        '        oePerfil.Codigo = ""
-                        '        oePerfil.Nombre = "Area: Operaciones Informa, " & "Tracto: " & .Cells("Tracto").Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
-                        '        oePerfil.Activo = True
-                        '        olPerfil.Guardar(oePerfil)
-                        '        Throw New Exception("No se puede Programar Tracto: " & .Cells("Tracto").Text & Environment.NewLine & _
-                        '                        "A superado el limite de viajes no reportados: 3")
-                        '    End If
-                        '    ''Valida Carreta Viajes sin reportar
-                        '    If .Cells("Carreta").Text.Trim <> "" Then
-                        '        ViajesControl("", .Cells("Carreta").Value)
-                        '        If ListaViajeControl.Count > 4 Then
-                        '            TextoMensaje = "Reportar Viajes a la Brevedad"
-                        '            oePerfil = New e_Perfil
-                        '            oePerfil.TipoOperacion = "M"
-                        '            oePerfil.Id = ObtenerPerfilPrincipal.Id
-                        '            oePerfil.Codigo = ""
-                        '            oePerfil.Nombre = "Area: Operaciones Informa, " & "Carreta: " & .Cells("Carreta").Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
-                        '            oePerfil.Activo = True
-                        '            olPerfil.Guardar(oePerfil)
-                        '            Throw New Exception("No se puede Programar Carreta: " & .Cells("Carreta").Text & Environment.NewLine & _
-                        '                            "A superado el limite de viajes no reportados: 3")
-                        '        End If
-                        '    End If
-                        'End If
-                        Porcentaje += .Cells("PorcentajeFlete").Value
-                        FleteUnitarioViaje += .Cells("FleteUnitario").Value
-                    End With
-                Next
-                If Porcentaje > CInt(txtFletePorcentaje.Text) And verProgramarViajeBloque.Checked = False Then
-                    ficViaje.Tabs(0).Selected = True
-                    Throw New Exception("La suma de porcentaje en Viajes no puede superar --> " & txtFletePorcentaje.Text)
+                With griViaje.Rows(I)
+                    'If PerfilAsignado(gNombrePerfilJefeOperaciones) And PrefijoId = "1CH" And Operacion = "Nuevo" Then
+                    '    ''Valida Tracto Viajes sin reportar
+                    '    ViajesControl(.Cells("Tracto").Value, "")
+                    '    If ListaViajeControl.Count > 4 Then
+                    '        TextoMensaje = "Reportar Viajes a la Brevedad"
+                    '        oePerfil = New e_Perfil
+                    '        oePerfil.TipoOperacion = "M"
+                    '        oePerfil.Id = ObtenerPerfilPrincipal.Id
+                    '        oePerfil.Codigo = ""
+                    '        oePerfil.Nombre = "Area: Operaciones Informa, " & "Tracto: " & .Cells("Tracto").Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
+                    '        oePerfil.Activo = True
+                    '        olPerfil.Guardar(oePerfil)
+                    '        Throw New Exception("No se puede Programar Tracto: " & .Cells("Tracto").Text & Environment.NewLine & _
+                    '                        "A superado el limite de viajes no reportados: 3")
+                    '    End If
+                    '    ''Valida Carreta Viajes sin reportar
+                    '    If .Cells("Carreta").Text.Trim <> "" Then
+                    '        ViajesControl("", .Cells("Carreta").Value)
+                    '        If ListaViajeControl.Count > 4 Then
+                    '            TextoMensaje = "Reportar Viajes a la Brevedad"
+                    '            oePerfil = New e_Perfil
+                    '            oePerfil.TipoOperacion = "M"
+                    '            oePerfil.Id = ObtenerPerfilPrincipal.Id
+                    '            oePerfil.Codigo = ""
+                    '            oePerfil.Nombre = "Area: Operaciones Informa, " & "Carreta: " & .Cells("Carreta").Text & ", Usuario: " & gUsuarioSGI.oePersona.NombreCompleto & ", Dice: " & TextoMensaje
+                    '            oePerfil.Activo = True
+                    '            olPerfil.Guardar(oePerfil)
+                    '            Throw New Exception("No se puede Programar Carreta: " & .Cells("Carreta").Text & Environment.NewLine & _
+                    '                            "A superado el limite de viajes no reportados: 3")
+                    '        End If
+                    '    End If
+                    'End If
+                    Porcentaje += .Cells("PorcentajeFlete").Value
+                    FleteUnitarioViaje += .Cells("FleteUnitario").Value
+                End With
+            Next
+            If Porcentaje > CInt(txtFletePorcentaje.Text) And verProgramarViajeBloque.Checked = False Then
+                ficViaje.Tabs(0).Selected = True
+                Throw New Exception("La suma de porcentaje en Viajes no puede superar --> " & txtFletePorcentaje.Text)
                 'Else '@001
                 '    If Porcentaje < CInt(txtFletePorcentaje.Text) Then
                 '        ficViaje.Tabs(0).Selected = True
@@ -5181,10 +5207,10 @@ Public Class frm_Operacion
                     'oeViaje.TipoOperacion = "P"
                     'ListaViajesOperacion.AddRange(olOperacion.ListarViaje(oeViaje))
                     If ListaViajesOperacion.Count > 1 Then
-                        If MessageBox.Show("No se puede eliminar Viaje seleccionado." & Environment.NewLine & _
-                                    "La Operaciones tiene " & ListaViajesOperacion.Count & " Viajes asociados." & Environment.NewLine & _
-                                    "Desea ver detalle de viajes ? ", _
-                                   "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                        If MessageBox.Show("No se puede eliminar Viaje seleccionado." & Environment.NewLine &
+                                    "La Operaciones tiene " & ListaViajesOperacion.Count & " Viajes asociados." & Environment.NewLine &
+                                    "Desea ver detalle de viajes ? ",
+                                   "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                    MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             EliminaViajes = False
                             Dim formulario As frm_ViajesOperacion
@@ -5244,8 +5270,8 @@ Public Class frm_Operacion
                                                 ids = ids.Substring(0, ids.Length - 1)
                                             End If
                                             If cadenaDemandas <> "" Then
-                                                If MessageBox.Show("El estado de las DEMANDA(S) " & codigos & " fueron afectadas al ELIMINAR el Viaje: " & _
-                                                                     oeViaje.Codigo & " ¿Desea enviar las DEMANDAS a SU CORREO?", _
+                                                If MessageBox.Show("El estado de las DEMANDA(S) " & codigos & " fueron afectadas al ELIMINAR el Viaje: " &
+                                                                     oeViaje.Codigo & " ¿Desea enviar las DEMANDAS a SU CORREO?",
                                                                      "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                                                     For i As Integer = 0 To ids.Trim.Split("-").Length - 1
                                                         EnviarCorreo(ids.Trim.Split("-")(i))
@@ -5303,8 +5329,8 @@ Public Class frm_Operacion
                                                     End If
 
                                                     If cadenaDemandas <> "" Then
-                                                        If MessageBox.Show("El estado de las DEMANDA(S) " & codigos & " fueron afectadas al ELIMINAR el Viaje: " & _
-                                                                             oeViaje.Codigo & " ¿Desea enviar las DEMANDAS a SU CORREO?", _
+                                                        If MessageBox.Show("El estado de las DEMANDA(S) " & codigos & " fueron afectadas al ELIMINAR el Viaje: " &
+                                                                             oeViaje.Codigo & " ¿Desea enviar las DEMANDAS a SU CORREO?",
                                                                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                                                             For i As Integer = 0 To ids.Trim.Split("-").Length - 1
                                                                 EnviarCorreo(ids.Trim.Split("-")(i))
@@ -5339,9 +5365,9 @@ Public Class frm_Operacion
                             Throw New Exception(oeViaje.Codigo & " Se encuentra en Seguimiento")
                         End If
                     Else
-                        Throw New Exception("El Viaje no se puede Eliminar/Cancelar pues esta siendo ediatado por" & Environment.NewLine & Environment.NewLine & _
-                                    "el Usuario: " & oeViaje.UsuarioModifica & Environment.NewLine & _
-                                    "desde: " & oeViaje.LlegadaOrigen & Environment.NewLine & _
+                        Throw New Exception("El Viaje no se puede Eliminar/Cancelar pues esta siendo ediatado por" & Environment.NewLine & Environment.NewLine &
+                                    "el Usuario: " & oeViaje.UsuarioModifica & Environment.NewLine &
+                                    "desde: " & oeViaje.LlegadaOrigen & Environment.NewLine &
                                     "en la Sucursal: " & oeViaje.Piloto)
                     End If
 
@@ -5430,7 +5456,7 @@ Public Class frm_Operacion
                     EstadoViaje = "1CH00017"
                     ActualizaRegistroEditado(RegistroEditado, IdRegistroEditado)
                     mensajeEmergente.Confirmacion("La informacion ha sido grabada satisfactoriamente en " & Me.Text, True)
-                    If MessageBox.Show("Desea Seguir Programando Viajes:  ?", _
+                    If MessageBox.Show("Desea Seguir Programando Viajes:  ?",
                                                          "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         Nuevo()
                         Return False
@@ -5822,9 +5848,9 @@ Public Class frm_Operacion
                     'fecha no coincide con la del viaje
                     If verFechaViaje.Checked = False Then
                         If CDate(fecViaje.Value) < (FechaServidor.AddDays(lisDiasSupervisor(0).Valor1)).Date Then
-                            If MessageBox.Show("No esta autorizado para ingresar/modificar" & Environment.NewLine & _
-                                                                            "viajes en fechas anteriores comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine & _
-                                                                            "Desea Seguir Programando Viajes:  ?", _
+                            If MessageBox.Show("No esta autorizado para ingresar/modificar" & Environment.NewLine &
+                                                                            "viajes en fechas anteriores comuniquese con el " & gNombrePerfilJefeOperaciones & Environment.NewLine &
+                                                                            "Desea Seguir Programando Viajes:  ?",
                                                                          "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                                 IncidenciasPublic = New e_IncidenciasAutentificadas
                                 Dim formulario As frm_Autorizacion
@@ -6079,13 +6105,13 @@ Public Class frm_Operacion
                 End If
                 If (oeViaje IsNot Nothing And OrigenViaje <> oeViaje.IdDestino And oeViaje.Flota <> "CAMIONETAS" And oeViaje.Id <> "" And
                     IndPropiedadTractoTemp = 1 And oeViaje.Fecha <= fechaC) Then
-                    If MessageBox.Show("No se puede Programar Tracto, Con Origen: " & cboOrigen.Text & Environment.NewLine & _
-                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine & _
-                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine & _
-                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine & _
-                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine & _
-                                        "Desea programar viaje con ultimo DESTINO: " & oeViaje.Destino, _
-                                        "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                    If MessageBox.Show("No se puede Programar Tracto, Con Origen: " & cboOrigen.Text & Environment.NewLine &
+                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine &
+                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine &
+                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine &
+                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine &
+                                        "Desea programar viaje con ultimo DESTINO: " & oeViaje.Destino,
+                                        "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         cboRutaOrigen.Value = oeViaje.IdDestino
                         cboRutaOrigen.Focus()
@@ -6145,13 +6171,13 @@ Public Class frm_Operacion
                     fechaC = Date.Parse(fecViaje.Value.ToShortDateString & " " & hViaje.Value.ToShortTimeString)
                     'verifica traz del ultimo viaje
                     If oeViaje IsNot Nothing And OrigenViaje <> oeViaje.IdDestino And oeViaje.Id.Trim <> "" And IndPropiedadCarretaTemp = 1 And oeViaje.Fecha <= fechaC Then
-                        If MessageBox.Show("No se puede Programar Carreta, Con Origen: " & cboOrigen.Text & Environment.NewLine & _
-                                  "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine & _
-                                  "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine & _
-                                  "Estado Viaje: " & oeViaje.Estado & Environment.NewLine & _
-                                  "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine & _
-                                  "Desea programar viaje con ultimo DESTINO: " & oeViaje.Destino, _
-                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                        If MessageBox.Show("No se puede Programar Carreta, Con Origen: " & cboOrigen.Text & Environment.NewLine &
+                                  "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine &
+                                  "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine &
+                                  "Estado Viaje: " & oeViaje.Estado & Environment.NewLine &
+                                  "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine &
+                                  "Desea programar viaje con ultimo DESTINO: " & oeViaje.Destino,
+                                  "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                   MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             cboRutaOrigen.Value = oeViaje.IdDestino
                             cboRutaOrigen.Focus()
@@ -6208,28 +6234,28 @@ Public Class frm_Operacion
                 oeViaje = olOperacion.ObtenerViaje(oeViaje)
                 'Transabilidad Destino Ultimo
                 If OrigenViaje <> oeViaje.IdDestino And oeViaje.Flota <> "CAMIONETAS" And oeViaje.Id <> "" Then
-                    If MessageBox.Show("No se puede Programar Piloto, Con Origen: " & cboOrigen.Text & Environment.NewLine & _
-                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine & _
-                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine & _
-                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine & _
-                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine & _
-                                        "Desea seguir programando a Piloto con diferente Ubicacion ? ", _
-                                        "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                    If MessageBox.Show("No se puede Programar Piloto, Con Origen: " & cboOrigen.Text & Environment.NewLine &
+                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine &
+                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine &
+                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine &
+                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine &
+                                        "Desea seguir programando a Piloto con diferente Ubicacion ? ",
+                                        "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) <> Windows.Forms.DialogResult.Yes Then
                         Return False
                     End If
                 End If
                 'Transabilidad Misma Fecha diferentes Unidades
                 If fecViaje.Value.Date.ToString = oeViaje.Fecha.Date.ToString And cboTracto.Value <> oeViaje.IdTracto And oeViaje.Flota <> "CAMIONETAS" And oeViaje.Id <> "" Then
-                    If MessageBox.Show("No se puede Programar Piloto, Con la UNIDAD: " & cboTracto.Text & Environment.NewLine & _
-                                       "Con Fecha: " & fecViaje.Value.Date.ToString & " Tiene Programacion sus Datos:" & Environment.NewLine & _
-                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine & _
-                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine & _
-                                        "Tracto: " & oeViaje.Tracto & " , Carreta: " & oeViaje.Carreta.Trim & Environment.NewLine & _
-                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine & _
-                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine & _
-                                        "Desea seguir programando a Piloto con UNIDAD en la misma FECHA ?", _
-                                        "Mensaje del Sistema", MessageBoxButtons.YesNo, _
+                    If MessageBox.Show("No se puede Programar Piloto, Con la UNIDAD: " & cboTracto.Text & Environment.NewLine &
+                                       "Con Fecha: " & fecViaje.Value.Date.ToString & " Tiene Programacion sus Datos:" & Environment.NewLine &
+                                        "Ultimo Viaje: " & oeViaje.Codigo & Environment.NewLine &
+                                        "Fecha Viaje: " & oeViaje.Fecha.ToString & Environment.NewLine &
+                                        "Tracto: " & oeViaje.Tracto & " , Carreta: " & oeViaje.Carreta.Trim & Environment.NewLine &
+                                        "Estado Viaje: " & oeViaje.Estado & Environment.NewLine &
+                                        "Ruta Viaje: " & oeViaje.Origen & " - " & oeViaje.Destino & Environment.NewLine &
+                                        "Desea seguir programando a Piloto con UNIDAD en la misma FECHA ?",
+                                        "Mensaje del Sistema", MessageBoxButtons.YesNo,
                                         MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) <> Windows.Forms.DialogResult.Yes Then
                         Return False
                     End If
@@ -6611,8 +6637,8 @@ Public Class frm_Operacion
                         griDetalleTercero.DataBind()
                     End If
                 Else
-                    If MessageBox.Show("La Demanda Seleccionada Tiene Otra Ruta Desea Seguir Agregando al Viaje: " & _
-                             griDemanda.ActiveRow.Cells("Ruta").Value & " ?", _
+                    If MessageBox.Show("La Demanda Seleccionada Tiene Otra Ruta Desea Seguir Agregando al Viaje: " &
+                             griDemanda.ActiveRow.Cells("Ruta").Value & " ?",
                              "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                         If griDemanda.ActiveRow.Cells("Seleccion").Value Then
                             oeAgregaLista1 = griViajeDetalle.DataSource
@@ -7309,6 +7335,11 @@ Public Class frm_Operacion
 
     Private Sub griOrdenes_InitializeLayout(sender As Object, e As InitializeLayoutEventArgs) Handles griOrdenes.InitializeLayout
         e.Layout.Grid.CalcManager = Nothing
+    End Sub
+
+    Private Sub btnConsultarOrdenes_Click(sender As Object, e As EventArgs) Handles btnConsultarOrdenes.Click
+        codigoDemanda = ""
+        ListarOrdenes()
     End Sub
     '@0001 Fin
     Public Function llenarTabla() As String

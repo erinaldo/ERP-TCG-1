@@ -3927,7 +3927,7 @@ Public Class frm_OrdenCompra
     Sub VentanaHoraria()
         Dim oeCombo As New e_Combo
         Dim olCombo As New l_Combo
-        oeCombo.Id = cboCliente.Value
+        oeCombo.Id = cboProveedor.Value
         oeCombo.Nombre = "VentanaHoraria"
         oeCombo.Descripcion = uce_Origen.Value
         LlenarCombo(cboTurnoAtencion, "Nombre", olCombo.Listar(oeCombo), -1)
