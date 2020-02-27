@@ -122,6 +122,7 @@ Public Class e_OtrosDescuentos
                 Case 1 : _tipo = "JUDICIAL"
                 Case 2 : _tipo = "OTROS"
                 Case 4 : _tipo = "TARDANZAS"
+                Case 5 : _tipo = "PERMISO PERSONAL"
             End Select
             Return _tipo
         End Get

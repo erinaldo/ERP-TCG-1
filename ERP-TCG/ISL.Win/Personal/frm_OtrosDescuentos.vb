@@ -132,6 +132,7 @@ Public Class frm_OtrosDescuentos
             Select Case ficOtrosDescuentos.SelectedTab.Index
                 Case 1
                     If cboEstado.Value <> "1CH00014" Then Throw New Exception("Solo se puede editar registros en estado GENERADA.")
+                    If cboTipo.SelectedIndex = -1 Then Throw New Exception("Seleccione Tipo Descuento")
                     RecolectaDatos()
                     oeOtrosDescuentos.PrefijoID = gs_PrefijoIdSucursal '@0001
                     olOtrosDescuentos.Guardar(oeOtrosDescuentos)
@@ -528,6 +529,7 @@ Public Class frm_OtrosDescuentos
             cboTipo.Items.Add("SEGURO")
             cboTipo.Items.Add("OTROS INAFECTO")
             cboTipo.Items.Add("TARDANZAS")
+            cboTipo.Items.Add("PERMISO PERSONAL")
             cboTipo.SelectedIndex = -1
 
             cboTipoI.Items.Clear()
@@ -536,6 +538,7 @@ Public Class frm_OtrosDescuentos
             cboTipoI.Items.Add("SEGURO")
             cboTipoI.Items.Add("OTROS INAFECTO")
             cboTipoI.Items.Add("TARDANZAS")
+            cboTipoI.Items.Add("PERMISO PERSONAL")
             cboTipoI.SelectedIndex = -1
 
             cboTipoBus.Items.Clear()
@@ -545,6 +548,7 @@ Public Class frm_OtrosDescuentos
             cboTipoBus.Items.Add("SEGURO")
             cboTipoBus.Items.Add("OTROS INAFECTO")
             cboTipoBus.Items.Add("TARDANZAS")
+            cboTipoBus.Items.Add("PERMISO PERSONAL")
             cboTipoBus.SelectedIndex = 0
 
             cboIndRef.Items.Clear()
