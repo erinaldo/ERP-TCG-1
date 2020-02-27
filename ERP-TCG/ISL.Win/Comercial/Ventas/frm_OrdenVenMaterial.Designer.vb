@@ -737,6 +737,7 @@ Partial Class frm_OrdenVenMaterial
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.cmbMoneda = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.grbDocAsoc = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.cb_Reg = New System.Windows.Forms.CheckBox()
         Me.cboSerieDocumento = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.txtEstadoDoc = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txtNumero = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
@@ -753,7 +754,6 @@ Partial Class frm_OrdenVenMaterial
         Me.odAlmacenMaterial = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
         Me.ficOrdenComercial = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
-        Me.cb_Reg = New System.Windows.Forms.CheckBox()
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.UltraGroupBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox10.SuspendLayout()
@@ -849,7 +849,7 @@ Partial Class frm_OrdenVenMaterial
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox10)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1213, 289)
         '
@@ -1359,7 +1359,7 @@ Partial Class frm_OrdenVenMaterial
         '
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox7)
         Me.UltraTabPageControl4.Controls.Add(Me.UltraGroupBox6)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1213, 289)
         '
@@ -3234,6 +3234,18 @@ Partial Class frm_OrdenVenMaterial
         Me.grbDocAsoc.TabIndex = 12
         Me.grbDocAsoc.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'cb_Reg
+        '
+        Me.cb_Reg.AutoSize = True
+        Me.cb_Reg.BackColor = System.Drawing.Color.Transparent
+        Me.cb_Reg.ForeColor = System.Drawing.Color.Navy
+        Me.cb_Reg.Location = New System.Drawing.Point(180, 35)
+        Me.cb_Reg.Name = "cb_Reg"
+        Me.cb_Reg.Size = New System.Drawing.Size(49, 17)
+        Me.cb_Reg.TabIndex = 3
+        Me.cb_Reg.Text = "Reg."
+        Me.cb_Reg.UseVisualStyleBackColor = False
+        '
         'cboSerieDocumento
         '
         Me.cboSerieDocumento.DisplayMember = "Nombre"
@@ -3399,18 +3411,6 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1221, 495)
-        '
-        'cb_Reg
-        '
-        Me.cb_Reg.AutoSize = True
-        Me.cb_Reg.BackColor = System.Drawing.Color.Transparent
-        Me.cb_Reg.ForeColor = System.Drawing.Color.Navy
-        Me.cb_Reg.Location = New System.Drawing.Point(180, 35)
-        Me.cb_Reg.Name = "cb_Reg"
-        Me.cb_Reg.Size = New System.Drawing.Size(49, 17)
-        Me.cb_Reg.TabIndex = 3
-        Me.cb_Reg.Text = "Reg."
-        Me.cb_Reg.UseVisualStyleBackColor = False
         '
         'frm_OrdenVenMaterial
         '

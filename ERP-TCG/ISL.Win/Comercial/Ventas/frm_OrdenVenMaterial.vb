@@ -1944,7 +1944,7 @@ Public Class frm_OrdenVenMaterial
                             Throw New Exception("El Cliente Seleccionado no Tiene Direccion Principal")
                         End If
                     End If
-                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, "SOLES")
+                    .MontoLetras = Conversiones.NumerosALetras.Ejecutar(oeDocumento.Total, True, True, cmbMoneda.Text)
                 End With
             End With
         Catch ex As Exception
@@ -2050,7 +2050,11 @@ Public Class frm_OrdenVenMaterial
                 If oeDoc.IdTipoDocumento = "GCH000000001" Then
                     oeAsientoModelo.Nombre = "VENTA NOTA DE DESPACHO"
                 Else
-                    oeAsientoModelo.Nombre = "FAC/BOL VENTA MERCADERIAS SOLES"
+                    If oeMoneda.Id = "1CH01" Then
+                        oeAsientoModelo.Nombre = "FAC/BOL VENTA MERCADERIAS SOLES"
+                    Else
+                        oeAsientoModelo.Nombre = "FAC/BOL VENTA MERCADERIA DOLARES"
+                    End If
                 End If
 
 

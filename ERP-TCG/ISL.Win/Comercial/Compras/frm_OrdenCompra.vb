@@ -1808,13 +1808,13 @@ Public Class frm_OrdenCompra
                 End If
                 If oeDetalleOC.IndicadorIgv Then
                     flag = True
-                    oeDetalleOC.PrecioTotal = Math.Round(oeDetalleOC.CantidadMaterial * Math.Round(oeDetalleOC.PrecioUnitario, 5), 4)
+                    oeDetalleOC.PrecioTotal = Math.Round(oeDetalleOC.CantidadMaterial * Math.Round(oeDetalleOC.CostoUnitario * (oeIGV.Porcentaje + 1), 6), 4)
                 Else
-                    oeDetalleOC.PrecioTotal = Math.Round(oeDetalleOC.CantidadMaterial * oeDetalleOC.PrecioUnitario, 4)
+                    oeDetalleOC.PrecioTotal = Math.Round(oeDetalleOC.CantidadMaterial * Math.Round(oeDetalleOC.CostoUnitario * (oeIGV.Porcentaje + 1), 6), 4)
                 End If
                 totalConIgv += oeDetalleOC.PrecioTotal
             Next
-            txtTotal.Value = Math.Round(totalConIgv, 4)
+            txtTotal.Value = Math.Round(totalConIgv, 2)
             If flag Then
                 txtSubTotal.Value = Math.Round(totalConIgv / (oeIGV.Porcentaje + 1), 4)
                 txtIGV.Value = Math.Round(txtTotal.Value - txtSubTotal.Value, 4)
@@ -3927,7 +3927,7 @@ Public Class frm_OrdenCompra
     Sub VentanaHoraria()
         Dim oeCombo As New e_Combo
         Dim olCombo As New l_Combo
-        oeCombo.Id = cboCliente.Value
+        oeCombo.Id = cboProveedor.Value
         oeCombo.Nombre = "VentanaHoraria"
         oeCombo.Descripcion = uce_Origen.Value
         LlenarCombo(cboTurnoAtencion, "Nombre", olCombo.Listar(oeCombo), -1)

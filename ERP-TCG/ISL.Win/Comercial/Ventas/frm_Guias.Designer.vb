@@ -643,7 +643,7 @@ Partial Class frm_Guias
         Dim Appearance107 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand7 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn333 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
-        Dim UltraGridColumn334 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Serie", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Ascending, False)
+        Dim UltraGridColumn334 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Serie", -1, Nothing, 0, Infragistics.Win.UltraWinGrid.SortIndicator.Descending, False)
         Dim Appearance108 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance109 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridColumn335 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Numero")
@@ -3017,7 +3017,7 @@ Partial Class frm_Guias
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1224, 233)
         '
@@ -3789,7 +3789,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox10)
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(1224, 233)
         '
@@ -3819,7 +3819,7 @@ Partial Class frm_Guias
         Appearance109.TextHAlignAsString = "Right"
         UltraGridColumn334.Header.Appearance = Appearance109
         UltraGridColumn334.Header.VisiblePosition = 4
-        UltraGridColumn334.MaskInput = "{LOC}nnnn"
+        UltraGridColumn334.MaskInput = ""
         UltraGridColumn334.Width = 40
         UltraGridColumn335.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
         Appearance110.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -4893,7 +4893,6 @@ Partial Class frm_Guias
         '
         Appearance172.ForeColor = System.Drawing.Color.MidnightBlue
         Me.fecEmision.Appearance = Appearance172
-        Me.fecEmision.DateTime = New Date(2014, 11, 14, 0, 0, 0, 0)
         Me.fecEmision.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.fecEmision.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.fecEmision.ForeColor = System.Drawing.Color.MidnightBlue
@@ -4903,7 +4902,6 @@ Partial Class frm_Guias
         Me.fecEmision.TabIndex = 6
         UltraToolTipInfo15.ToolTipText = "Fecha Emision de la Guia Remision Transportista"
         Me.UltraToolTipManager1.SetUltraToolTip(Me.fecEmision, UltraToolTipInfo15)
-        Me.fecEmision.Value = New Date(2014, 11, 14, 0, 0, 0, 0)
         '
         'UltraLabel8
         '

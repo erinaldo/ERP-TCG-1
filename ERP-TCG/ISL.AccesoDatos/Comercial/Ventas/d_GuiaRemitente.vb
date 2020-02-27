@@ -137,7 +137,7 @@ Public Class d_GuiaRemitente
                                           .PrefijoID,
                                             .Id _
                                             , FormatoDocumento(.Serie, 4) _
-                                            , FormatoDocumento(.Numero, 10) _
+                                            , FormatoDocumento(.Numero, 8) _
                                             , .IdGuiaTransportista _
                                             , .Fecha _
                                             , .Activo _

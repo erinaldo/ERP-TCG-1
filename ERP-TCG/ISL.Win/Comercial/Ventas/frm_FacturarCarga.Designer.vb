@@ -326,6 +326,7 @@ Partial Class frm_FacturarCarga
         Me.tsmiGeneraFac = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiGeneraBol = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfirmaCargaGRT = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarNTDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl11 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griViajesProceso = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.ogdViajesProceso = New ISL.Controles.OrigenDatos(Me.components)
@@ -543,7 +544,6 @@ Partial Class frm_FacturarCarga
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.UltraToolTipManager2 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.GenerarNTDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl10.SuspendLayout()
         CType(Me.griFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuCargas.SuspendLayout()
@@ -723,7 +723,7 @@ Partial Class frm_FacturarCarga
         Me.mnuCargas.ForeColor = System.Drawing.Color.Black
         Me.mnuCargas.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiGeneraFac, Me.tsmiGeneraBol, Me.ConfirmaCargaGRT, Me.GenerarNTDToolStripMenuItem})
         Me.mnuCargas.Name = "mnuCargas"
-        Me.mnuCargas.Size = New System.Drawing.Size(186, 114)
+        Me.mnuCargas.Size = New System.Drawing.Size(186, 92)
         '
         'tsmiGeneraFac
         '
@@ -747,6 +747,12 @@ Partial Class frm_FacturarCarga
         Me.ConfirmaCargaGRT.Name = "ConfirmaCargaGRT"
         Me.ConfirmaCargaGRT.Size = New System.Drawing.Size(185, 22)
         Me.ConfirmaCargaGRT.Text = "Confirma Carga / GRT"
+        '
+        'GenerarNTDToolStripMenuItem
+        '
+        Me.GenerarNTDToolStripMenuItem.Name = "GenerarNTDToolStripMenuItem"
+        Me.GenerarNTDToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.GenerarNTDToolStripMenuItem.Text = "Generar NTD"
         '
         'UltraTabPageControl11
         '
@@ -1427,7 +1433,7 @@ Partial Class frm_FacturarCarga
         '
         Me.UltraTabPageControl6.Controls.Add(Me.agrContCarga)
         Me.UltraTabPageControl6.Controls.Add(Me.agrBusqueda)
-        Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl6.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
         Me.UltraTabPageControl6.Size = New System.Drawing.Size(1344, 465)
         '
@@ -2085,7 +2091,7 @@ Partial Class frm_FacturarCarga
         '
         Me.UltraTabPageControl7.Controls.Add(Me.griDocumentoVenta)
         Me.UltraTabPageControl7.Controls.Add(Me.agrBusquedaDoc)
-        Me.UltraTabPageControl7.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
         Me.UltraTabPageControl7.Size = New System.Drawing.Size(1344, 465)
         '
@@ -2737,7 +2743,7 @@ Partial Class frm_FacturarCarga
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficMaterial)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1346, 488)
         '
@@ -2771,7 +2777,7 @@ Partial Class frm_FacturarCarga
         Me.UltraTabPageControl2.AutoScroll = True
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatos)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1346, 488)
         '
@@ -3953,12 +3959,6 @@ Partial Class frm_FacturarCarga
         'UltraToolTipManager2
         '
         Me.UltraToolTipManager2.ContainingControl = Me
-        '
-        'GenerarNTDToolStripMenuItem
-        '
-        Me.GenerarNTDToolStripMenuItem.Name = "GenerarNTDToolStripMenuItem"
-        Me.GenerarNTDToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
-        Me.GenerarNTDToolStripMenuItem.Text = "Generar NTD"
         '
         'frm_FacturarCarga
         '

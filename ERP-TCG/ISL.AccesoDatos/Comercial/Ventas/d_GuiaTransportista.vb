@@ -241,7 +241,7 @@ Public Class d_GuiaTransportista
                     newRow("Id") = ""
                     newRow("Viaje") = "N.E"
                     newRow("Serie") = Serie
-                    newRow("Numero") = FormatoDocumento(Inicial, 10)
+                    newRow("Numero") = FormatoDocumento(Inicial, 8)
                     newRow("FechaEmision") = Date.Now
                     newRow("Remitente") = ""
                     newRow("Destinatario") = ""
@@ -295,7 +295,7 @@ Public Class d_GuiaTransportista
                 newRow("Id") = ""
                 newRow("Viaje") = "N.E"
                 newRow("Serie") = Serie
-                newRow("Numero") = FormatoDocumento(Inicial, 10)
+                newRow("Numero") = FormatoDocumento(Inicial, 8)
                 newRow("FechaEmision") = Date.Now
                 newRow("Remitente") = ""
                 newRow("Destinatario") = ""
@@ -338,7 +338,7 @@ Public Class d_GuiaTransportista
                                                               .PrefijoID,
                                                                 .Id _
                                                                 , FormatoDocumento(.Serie, 4) _
-                                                                , FormatoDocumento(.Numero, 10) _
+                                                                , FormatoDocumento(.Numero, 8) _
                                                                 , .IdSeguimiento _
                                                                 , .IdRemitente _
                                                                 , .IdDireccionLugarPartida _
@@ -366,7 +366,7 @@ Public Class d_GuiaTransportista
                     End With
                     If oeGuiaTransportista.GuiaRemitente.Count > 0 Then
                         Dim GrtSerieNumero As String
-                        GrtSerieNumero = FormatoDocumento(GuiaTransportista.Serie, 4) & "-" & FormatoDocumento(GuiaTransportista.Numero, 10)
+                        GrtSerieNumero = FormatoDocumento(GuiaTransportista.Serie, 4) & "-" & FormatoDocumento(GuiaTransportista.Numero, 8)
                         For Each GuiaRemitente As e_GuiaRemitente In oeGuiaTransportista.GuiaRemitente.Where(Function(item) item.GuiaTransportista = GrtSerieNumero)
                             'If GrtSerieNumero = GuiaRemitente.GuiaTransportista Then
                             GuiaRemitente.IdGuiaTransportista = stResultado(0)
@@ -398,7 +398,7 @@ Public Class d_GuiaTransportista
                                                               .PrefijoID,
                                                                 .Id _
                                                                 , FormatoDocumento(.Serie, 4) _
-                                                                , FormatoDocumento(.Numero, 10) _
+                                                                , FormatoDocumento(.Numero, 8) _
                                                                 , .IdSeguimiento _
                                                                 , .IdRemitente _
                                                                 , .IdDireccionLugarPartida _
@@ -463,7 +463,7 @@ Public Class d_GuiaTransportista
                                                                  .PrefijoID,
                                                                    .Id _
                                                                    , FormatoDocumento(.Serie, 4) _
-                                                                   , FormatoDocumento(.Numero, 10) _
+                                                                   , FormatoDocumento(.Numero, 8) _
                                                                    , .IdSeguimiento _
                                                                    , .IdRemitente _
                                                                    , .IdDireccionLugarPartida _
@@ -492,12 +492,12 @@ Public Class d_GuiaTransportista
                                 Next
                             End If
                         Else
-                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]", _
-                                                         .TipoOperacion, _
-                                                         .PrefijoID, _
+                            stResultado = sqlhelper.ExecuteScalar("[OPE].[Isp_GuiaTransportista_IAE]",
+                                                         .TipoOperacion,
+                                                         .PrefijoID,
                                                            .Id _
                                                            , FormatoDocumento(.Serie, 4) _
-                                                           , FormatoDocumento(.Numero, 10) _
+                                                           , FormatoDocumento(.Numero, 8) _
                                                            , .IdSeguimiento _
                                                            , .IdRemitente _
                                                            , .IdDireccionLugarPartida _
@@ -545,12 +545,12 @@ Public Class d_GuiaTransportista
         Try
             Dim resultado As Boolean = False
             With oeGuiaTransportista
-                If sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaTransportista_IAE]", _
-                                            .TipoOperacion, _
-                                            "", _
+                If sqlhelper.ExecuteNonQuery("[OPE].[Isp_GuiaTransportista_IAE]",
+                                            .TipoOperacion,
+                                            "",
                                             .Id _
                                             , FormatoDocumento(.Serie, 4) _
-                                            , FormatoDocumento(.Numero, 10) _
+                                            , FormatoDocumento(.Numero, 8) _
                                             , .IdSeguimiento _
                                             , .IdRemitente _
                                             , .IdDireccionLugarPartida _

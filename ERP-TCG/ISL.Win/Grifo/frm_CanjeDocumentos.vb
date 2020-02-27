@@ -692,7 +692,8 @@ Public Class frm_CanjeDocumentos
             DocumentoGenerado.IndServicioMaterial = "M" '@0001
             DocumentoGenerado = dMovimientoDocumento.GuardarCanjeDocumentos(DocumentoGenerado, ListaNotasDespachoSelecionadas)
             gmt_Imprimir_Documento(DocumentoGenerado.Id, "A4", "GRIFO", "")
-            MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text)
+            mt_EmitirDocumento(DocumentoGenerado.Id) '@0001
+            'MsgBox("La Informacion ha Sido Guardada Correctamente", MsgBoxStyle.Information, Me.Text) '@0001
             ' ======================================================================================================================== >>>>>
         Catch ex As Exception
             Throw ex

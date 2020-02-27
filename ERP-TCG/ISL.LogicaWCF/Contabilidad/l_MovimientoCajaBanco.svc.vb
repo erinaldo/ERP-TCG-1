@@ -243,7 +243,12 @@ Public Class l_MovimientoCajaBanco
                     End With
                 Next
                 If olAsiento.GuardarAsientoDscto(oeAsiento) Then
-                    If IndDscto And lePrestInserta.Count > 0 Then odPrestamo.GuardarLista2(lePrestInserta)
+                    If IndDscto Then
+                        If lePrestInserta.Count > 0 Then odPrestamo.GuardarLista2(lePrestInserta)
+                    Else
+                        Dim odDetPlanilla As New d_DetallePlanilla
+                        If lePrestamo.Count > 0 Then odDetPlanilla.Guardar(New e_DetallePlanilla With {.TipoOperacion = "P", .Id = lePrestamo(0).Id, .IsPagado = True})
+                    End If
                     TransScope.Complete()
                     Return True
                 End If
