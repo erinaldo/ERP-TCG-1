@@ -77,17 +77,15 @@ Public Class frm_CierreTurno
                 TurnoActivo.TipoOperacion = "" : TurnoActivo.Id = griOrdenComercial.ActiveRow.Cells("Id").Value
                 TurnoActivo = dTurno.Obtener(TurnoActivo)
                 TurnoActivo.TipoOperacion = "A"
-                If TurnoActivo.IdEstado = "ABIERTO" Then
-                    swGenerarTurno = True
-                End If
                 mt_Mostrar_Turno()
-                mt_ControlBotoneria()
-
-                '' El TURNO aun esta ABIERTO
-                If TurnoActivo.IdEstado = "ABIERTO" Then
-                    swGenerarTurno = True
+                If TurnoActivo.IdEstado = "CERRADO" Then
+                    cmb_Estado.Enabled = False
+                    swGenerarTurno = False
+                    UltraGroupBox2.Enabled = False
+                Else
+                    cmb_Estado.Enabled = True
                 End If
-                UltraGroupBox2.Visible = swGenerarTurno
+                mt_ControlBotoneria()
 
                 '' Habilitar Controles para EDICION
                 If gUsuarioSGI.Login = "ADMINERP" Or gUsuarioSGI.Login = "DCAYOTOB" Or gUsuarioSGI.Login = "CCAMPOSN" Then
@@ -136,12 +134,11 @@ Public Class frm_CierreTurno
                     TurnoActivo.TipoOperacion = ""
                     TurnoActivo.Id = .ActiveRow.Cells("Id").Value
                     TurnoActivo = dTurno.Obtener(TurnoActivo)
-                    If TurnoActivo.IdEstado = "1CIX043" Then 'Apertura
-                        If MessageBox.Show("Esta seguro de eliminar la Orden: " &
-                                 .ActiveRow.Cells("OrdenComercial").Value.ToString & " ?",
+                    If TurnoActivo.IdEstado = "ABIERTO" Then 'Apertura
+                        If MessageBox.Show("Esta seguro de eliminar el turno: " & .ActiveRow.Cells("Id").Value.ToString & " ?",
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-                            TurnoActivo.TipoOperacion = "N"
-                            TurnoActivo.UsuarioCrea = gUsuarioSGI.Id
+                            TurnoActivo.FechaModifica = ObtenerFechaServidor()
+                            TurnoActivo.UsuarioModifica = gUsuarioSGI.Id
                             dTurno.Eliminar(TurnoActivo)
                             MsgBox("La Informacion ha Sido Eliminada Correctamente", MsgBoxStyle.Information, Me.Text)
                             Consultar(True)
@@ -507,7 +504,8 @@ Public Class frm_CierreTurno
     Private Function fc_Guardar() As Boolean
         Try
             If Operacion = "Nuevo" And cboTrabajadorApertura.Value = "" Then Throw New Exception("Debe indicar el TRABAJADOR que apertura el TURNO")
-            If swGenerarTurno And cmb_Estado.Value = "CERRADO" And cboTrabajadorCierre.Text = "" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
+            If swGenerarTurno And cmb_Estado.Value = "ABIERTO" Then Throw New Exception("Debe indicar el TURNO como CERRADO")
+            If swGenerarTurno And cboTrabajadorCierre.Text = "" Then Throw New Exception("Indique quien APERTURA el NUEVO TURNO")
 
             If Not fc_Cargar_Turno() Then Return False
             TurnoActivo = dTurno.Guardar(TurnoActivo)
@@ -636,7 +634,7 @@ Public Class frm_CierreTurno
         Select Case tab_Principal.SelectedTab.Index
             Case 0
                 If griOrdenComercial.Rows.Count > 0 Then
-                    gmt_ControlBoton(1, 1, 1, 0, 0, 0, 1, 1, 1)
+                    gmt_ControlBoton(1, 1, 1, 0, 0, 1, 1, 1, 1)
                 Else
                     gmt_ControlBoton(1, 1)
                 End If
@@ -1078,6 +1076,16 @@ Public Class frm_CierreTurno
             Throw ex
         End Try
 
+    End Sub
+
+    Private Sub cmb_Estado_ValueChanged(sender As Object, e As EventArgs) Handles cmb_Estado.ValueChanged
+        If cmb_Estado.Text = "ABIERTO" Then
+            swGenerarTurno = False
+            UltraGroupBox2.Enabled = False
+        Else
+            swGenerarTurno = True
+            UltraGroupBox2.Enabled = True
+        End If
     End Sub
 
     Private Sub frm_CierreTurno_Activated(sender As Object, e As EventArgs) Handles Me.Activated
