@@ -360,6 +360,7 @@ Public Class frm_FacturaCompra
             llProveedores.Add(oeProveedor)
             oeProveedor = New e_Proveedor
             oeProveedor.Activo = True
+            oeProveedor.Id = gs_IdClienteProveedorSistema
             llProveedores.AddRange(olProveedor.Listar(oeProveedor))
             LlenarComboMaestro(cboProveedor, llProveedores, 0)
             LlenarComboMaestro(cboProveedor2, llProveedores, 0)
@@ -1681,15 +1682,15 @@ Public Class frm_FacturaCompra
     End Sub
 
     Private Sub frm_FacturaCompra_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        Select Case Operacion
-            Case "Nuevo"
-                Me.Activate()
-                Me.Cancelar()
-            Case "Editar"
-                Me.Activate()
-                Me.Cancelar()
+        'Select Case Operacion
+        '    Case "Nuevo"
+        '        Me.Activate()
+        '        Me.Cancelar()
+        '    Case "Editar"
+        '        Me.Activate()
+        '        Me.Cancelar()
 
-        End Select
+        'End Select
         e.Cancel = _ingresando_datos
         If Not e.Cancel Then
             ControlBoton(0, 0, 0, 0, 0, 0, 0, 0, 1)

@@ -176,7 +176,7 @@ Partial Class frm_EnvioDocElectronico
         '
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox3)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(798, 427)
         '
@@ -702,7 +702,7 @@ Partial Class frm_EnvioDocElectronico
         '
         Me.UltraTabPageControl5.Controls.Add(Me.UltraGroupBox10)
         Me.UltraTabPageControl5.Controls.Add(Me.UltraGroupBox9)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(798, 427)
         '
@@ -785,11 +785,12 @@ Partial Class frm_EnvioDocElectronico
         '
         'colorBaja
         '
+        Me.colorBaja.Color = System.Drawing.Color.Gold
         Me.colorBaja.Location = New System.Drawing.Point(644, 46)
         Me.colorBaja.Name = "colorBaja"
         Me.colorBaja.Size = New System.Drawing.Size(46, 22)
         Me.colorBaja.TabIndex = 15
-        Me.colorBaja.Text = "Control"
+        Me.colorBaja.Text = "Gold"
         '
         'UltraLabel13
         '
@@ -841,19 +842,21 @@ Partial Class frm_EnvioDocElectronico
         '
         'colorError
         '
+        Me.colorError.Color = System.Drawing.Color.Pink
         Me.colorError.Location = New System.Drawing.Point(644, 20)
         Me.colorError.Name = "colorError"
         Me.colorError.Size = New System.Drawing.Size(46, 22)
         Me.colorError.TabIndex = 10
-        Me.colorError.Text = "Control"
+        Me.colorError.Text = "Pink"
         '
         'colorProceso
         '
+        Me.colorProceso.Color = System.Drawing.SystemColors.ControlLight
         Me.colorProceso.Location = New System.Drawing.Point(520, 46)
         Me.colorProceso.Name = "colorProceso"
         Me.colorProceso.Size = New System.Drawing.Size(46, 22)
         Me.colorProceso.TabIndex = 9
-        Me.colorProceso.Text = "Control"
+        Me.colorProceso.Text = "ControlLight"
         '
         'colorAceptado
         '

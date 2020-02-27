@@ -46,7 +46,8 @@ Public Class d_ComprobantePagoElectronico
                 , .IdEmpresaSis _
                 , "" _
                 , .Id _
-                , .FechaEmision)
+                , .FechaEmision _
+                , .FechaVencimiento)
             End With
             Return ds
         Catch ex As Exception

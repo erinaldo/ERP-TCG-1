@@ -48,6 +48,7 @@ Public Class frm_EnvioDocElectronico
     Private xml_DocRpta As System.Xml.XmlDocument
     Private lst_EstadoSunat As List(Of e_Estado)
     Private wr_Categoria As l_Estado
+    Private lo_TipoDocumento As l_TipoDocumento
     Private mo_Documento As e_MovimientoDocumento
     Private mo_Empresa As e_Empresa
     Private wr_Documento As l_MovimientoDocumento
@@ -114,6 +115,7 @@ Public Class frm_EnvioDocElectronico
             mb_Load = False
             ol_DocElectronico = New l_ComprobantePagoElectronico
             wr_Categoria = New l_Estado
+            lo_TipoDocumento = New l_TipoDocumento
             wr_SunatEnvio = New sFacturacionOSE.billServiceClient
             wr_Datos = New sFacturacionOSE.sendBillResponse
             wr_Envio = New sFacturacionOSE.sendBillRequest
@@ -492,7 +494,7 @@ Public Class frm_EnvioDocElectronico
                 If mb_Load Then
                     .ResetDisplayLayout()
                     gmt_ConfiguraGrilla(udg_ListaDocs, "Tahoma", True, UIElementBorderStyle.Default)
-                    gmt_OcultarColumna(udg_ListaDocs, False, "TipoDocumento", "FechaEmision", "Documento", "Receptor", "SubTotal", "TotalIGV", "Total", "IdCentro")
+                    gmt_OcultarColumna(udg_ListaDocs, False, "TipoDocumento", "FechaEmision", "Documento", "Receptor", "SubTotal", "TotalIGV", "Total", "UbigeoReceptor")
                     .DisplayLayout.Bands(0).Columns("Sel").Width = 50
                     .DisplayLayout.Bands(0).Columns("TipoDocumento").Width = 150
                     .DisplayLayout.Bands(0).Columns("Documento").Width = 120
@@ -505,7 +507,7 @@ Public Class frm_EnvioDocElectronico
                     .DisplayLayout.Bands(0).Columns("Sel").Header.CheckBoxVisibility = HeaderCheckBoxVisibility.Always
                     .DisplayLayout.Bands(0).Columns("Sel").Header.Caption = ""
                     '.DisplayLayout.Bands(0).Columns("TipoDocumento").Header.Caption = "TD"
-                    .DisplayLayout.Bands(0).Columns("IdCentro").Header.Caption = "Estado SUNAT"
+                    .DisplayLayout.Bands(0).Columns("UbigeoReceptor").Header.Caption = "Estado SUNAT"
                     .DisplayLayout.ViewStyle = ViewStyle.SingleBand
                     .DisplayLayout.Override.AllowColSizing = AllowColSizing.Free
                     .DisplayLayout.Override.CellClickAction = CellClickAction.RowSelect
@@ -883,22 +885,22 @@ Public Class frm_EnvioDocElectronico
 
     Private Sub lr_CargarCombos()
         Try
-            Dim ListaCategoria As New List(Of e_Estado)
-            ListaCategoria.Add(New e_Estado With {.Id = "", .Nombre = "<<NINGUNO>>"})
-            ListaCategoria.AddRange(wr_Categoria.Listar(New e_Estado))
-            ListaCategoria.Remove(New e_Estado With {.Id = "TDO0000000000004"})
-            uce_TipoDocumento.DataSource = ListaCategoria
-            uce_TipoDocumento.DisplayMember = "Categoria"
+            Dim lst_TipoDocumento As New List(Of e_TipoDocumento)
+            lst_TipoDocumento.Add(New e_TipoDocumento With {.Id = "", .Nombre = "<<TODOS>>"})
+            lst_TipoDocumento.AddRange(lo_TipoDocumento.Listar(New e_TipoDocumento With {.TipoOperacion = "X"}))
+            'ListaCategoria.Remove(New e_Estado With {.Id = "TDO0000000000004"})
+            uce_TipoDocumento.DataSource = lst_TipoDocumento
+            uce_TipoDocumento.DisplayMember = "Nombre"
             uce_TipoDocumento.ValueMember = "Id"
             uce_TipoDocumento.SelectedIndex = 0
 
-            ListaCategoria = New List(Of e_Estado)
-            'ListaCategoria.Add(New e_Estado With {.Id = "", .Categoria = "<<TODOS>>"})
-            'ListaCategoria.AddRange(wr_Categoria.Listar("GEN", New e_Estado With {.Grupo = "ESTADO_DOC_SUNAT", .CodCtble = "1"}))
-            uce_Estado.DataSource = ListaCategoria
-            uce_Estado.DisplayMember = "Categoria"
-            uce_Estado.ValueMember = "Id"
-            uce_Estado.SelectedIndex = 0
+            'ListaCategoria = New List(Of e_Estado)
+            ''ListaCategoria.Add(New e_Estado With {.Id = "", .Categoria = "<<TODOS>>"})
+            ''ListaCategoria.AddRange(wr_Categoria.Listar("GEN", New e_Estado With {.Grupo = "ESTADO_DOC_SUNAT", .CodCtble = "1"}))
+            'uce_Estado.DataSource = ListaCategoria
+            'uce_Estado.DisplayMember = "Categoria"
+            'uce_Estado.ValueMember = "Id"
+            'uce_Estado.SelectedIndex = 0
         Catch ex As Exception
             Throw ex
         End Try
@@ -907,11 +909,11 @@ Public Class frm_EnvioDocElectronico
     Private Sub lr_ListarEstados()
         Try
             lst_DocElectronico = New List(Of e_ComprobantePagoElectronico)
-            'lst_DocElectronico.AddRange(ol_DocElectronico.Consultar("ENV", New e_ComprobantePagoElectronico With {.IdEmpresaSis = gs_IdEmpresaSistema, .Id = uce_TipoDocumento.Value,
-            '                            .FechaEmision = DateTimePicker4.Value, .FechaVencimiento = DateTimePicker5.Value, .IdEstadoSunat = uce_Estado.Value}))
+            lst_DocElectronico.AddRange(ol_DocElectronico.Consultar(New e_ComprobantePagoElectronico With {.TipoOperacion = "LIS", .IdEmpresaSis = gs_IdEmpresaSistema, .Id = uce_TipoDocumento.Value,
+                                        .FechaEmision = DateTimePicker4.Value, .FechaVencimiento = DateTimePicker5.Value}))
             lr_ConfigurarGrillaDoc(lst_DocElectronico.OrderByDescending(Function(i) i.FechaEmision).ToList)
             For Each fila As UltraGridRow In udg_ListaDocs.Rows
-                Select Case fila.Cells("IdCentro").Value
+                Select Case fila.Cells("UbigeoReceptor").Value
                     Case "ACEPTADO"
                         fila.CellAppearance.BackColor = colorAceptado.Color
                     Case "EN PROCESO"
