@@ -2000,7 +2000,7 @@ Partial Class frm_Operacion
         Me.UltraLabel70 = New Infragistics.Win.Misc.UltraLabel()
         Me.ComboMaestros1 = New ISL.Controles.ComboMaestros(Me.components)
         Me.UltraLabel71 = New Infragistics.Win.Misc.UltraLabel()
-        Me.UltraButton1 = New Infragistics.Win.Misc.UltraButton()
+        Me.btnConsultarOrdenes = New Infragistics.Win.Misc.UltraButton()
         Me.expListaDemandas = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.UltraExpandableGroupBoxPanel16 = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
         Me.griDemanda = New ISL.Controles.Grilla(Me.components)
@@ -5223,7 +5223,7 @@ Partial Class frm_Operacion
         Me.UltraChart1.Axis.Y.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.UltraChart1.Axis.Y.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.UltraChart1.Axis.Y.MinorGridLines.Visible = False
-        Me.UltraChart1.Axis.Y.TickmarkInterval = 50.0R
+        Me.UltraChart1.Axis.Y.TickmarkInterval = 40.0R
         Me.UltraChart1.Axis.Y.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.UltraChart1.Axis.Y.Visible = True
         Me.UltraChart1.Axis.Y2.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
@@ -5250,7 +5250,7 @@ Partial Class frm_Operacion
         Me.UltraChart1.Axis.Y2.MinorGridLines.Color = System.Drawing.Color.LightGray
         Me.UltraChart1.Axis.Y2.MinorGridLines.DrawStyle = Infragistics.UltraChart.[Shared].Styles.LineDrawStyle.Dot
         Me.UltraChart1.Axis.Y2.MinorGridLines.Visible = False
-        Me.UltraChart1.Axis.Y2.TickmarkInterval = 50.0R
+        Me.UltraChart1.Axis.Y2.TickmarkInterval = 40.0R
         Me.UltraChart1.Axis.Y2.TickmarkStyle = Infragistics.UltraChart.[Shared].Styles.AxisTickStyle.Smart
         Me.UltraChart1.Axis.Y2.Visible = False
         Me.UltraChart1.Axis.Z.Labels.Font = New System.Drawing.Font("Verdana", 7.0!)
@@ -5321,7 +5321,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl4.Controls.Add(Me.griViaje)
         Me.UltraTabPageControl4.Controls.Add(Me.expViaje)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1278, 412)
         '
@@ -6272,7 +6272,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabPageControl5.Controls.Add(Me.griViajeDetalle)
         Me.UltraTabPageControl5.Controls.Add(Me.expCargaOperacion)
-        Me.UltraTabPageControl5.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl5.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
         Me.UltraTabPageControl5.Size = New System.Drawing.Size(1278, 412)
         '
@@ -6699,7 +6699,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.UltraLabel70)
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.ComboMaestros1)
         Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.UltraLabel71)
-        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.UltraButton1)
+        Me.UltraExpandableGroupBoxPanel2.Controls.Add(Me.btnConsultarOrdenes)
         Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
@@ -6765,19 +6765,19 @@ Partial Class frm_Operacion
         Me.UltraLabel71.TabIndex = 0
         Me.UltraLabel71.Text = "Zona:"
         '
-        'UltraButton1
+        'btnConsultarOrdenes
         '
         Appearance231.Image = "Consultar.ico"
         Appearance231.ImageHAlign = Infragistics.Win.HAlign.Center
         Appearance231.ImageVAlign = Infragistics.Win.VAlign.Bottom
-        Me.UltraButton1.Appearance = Appearance231
-        Me.UltraButton1.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Button
-        Me.UltraButton1.ImageList = Me.imagenes
-        Me.UltraButton1.ImageSize = New System.Drawing.Size(28, 23)
-        Me.UltraButton1.Location = New System.Drawing.Point(197, 1)
-        Me.UltraButton1.Name = "UltraButton1"
-        Me.UltraButton1.Size = New System.Drawing.Size(45, 30)
-        Me.UltraButton1.TabIndex = 2
+        Me.btnConsultarOrdenes.Appearance = Appearance231
+        Me.btnConsultarOrdenes.ButtonStyle = Infragistics.Win.UIElementButtonStyle.Button
+        Me.btnConsultarOrdenes.ImageList = Me.imagenes
+        Me.btnConsultarOrdenes.ImageSize = New System.Drawing.Size(28, 23)
+        Me.btnConsultarOrdenes.Location = New System.Drawing.Point(197, 1)
+        Me.btnConsultarOrdenes.Name = "btnConsultarOrdenes"
+        Me.btnConsultarOrdenes.Size = New System.Drawing.Size(45, 30)
+        Me.btnConsultarOrdenes.TabIndex = 2
         '
         'expListaDemandas
         '
@@ -12868,6 +12868,6 @@ Partial Class frm_Operacion
     Friend WithEvents UltraLabel70 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents ComboMaestros1 As Controles.ComboMaestros
     Friend WithEvents UltraLabel71 As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents UltraButton1 As Infragistics.Win.Misc.UltraButton
+    Friend WithEvents btnConsultarOrdenes As Infragistics.Win.Misc.UltraButton
     Friend WithEvents griOrdenes As Controles.Grilla
 End Class
