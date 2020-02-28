@@ -633,7 +633,7 @@ Partial Class frm_CanjeDocumentos
         'UltraTabPageControl3
         '
         Me.UltraTabPageControl3.Controls.Add(Me.udg_Documentos)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1348, 390)
         '
@@ -879,7 +879,7 @@ Partial Class frm_CanjeDocumentos
         'UltraTabPageControl4
         '
         Me.UltraTabPageControl4.Controls.Add(Me.udg_DocumentosCanjeados)
-        Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl4.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
         Me.UltraTabPageControl4.Size = New System.Drawing.Size(1348, 390)
         '
@@ -909,7 +909,7 @@ Partial Class frm_CanjeDocumentos
         UltraGridColumn90.Header.VisiblePosition = 4
         UltraGridColumn90.Width = 143
         UltraGridColumn91.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.RowSelect
-        UltraGridColumn91.Header.Caption = "Observacion"
+        UltraGridColumn91.Header.Caption = "Producto"
         UltraGridColumn91.Header.VisiblePosition = 12
         UltraGridColumn91.Width = 150
         UltraGridColumn92.Header.VisiblePosition = 19
@@ -1012,7 +1012,6 @@ Partial Class frm_CanjeDocumentos
         UltraGridColumn123.Format = "#,###,###,##0.00"
         UltraGridColumn123.Header.Caption = "Precio Unit."
         UltraGridColumn123.Header.VisiblePosition = 14
-        UltraGridColumn123.Hidden = True
         UltraGridColumn124.Header.VisiblePosition = 31
         UltraGridColumn124.Hidden = True
         UltraGridColumn125.Header.VisiblePosition = 32
@@ -1034,7 +1033,6 @@ Partial Class frm_CanjeDocumentos
         UltraGridColumn130.Format = "#,###,###,##0.00"
         UltraGridColumn130.Header.Caption = "Cantidad"
         UltraGridColumn130.Header.VisiblePosition = 13
-        UltraGridColumn130.Hidden = True
         UltraGridColumn131.Header.VisiblePosition = 47
         UltraGridColumn131.Hidden = True
         UltraGridColumn132.Header.VisiblePosition = 50
@@ -1160,7 +1158,7 @@ Partial Class frm_CanjeDocumentos
         UltraTab1.TabPage = Me.UltraTabPageControl3
         UltraTab1.Text = "Notas de Despacho (Pendientes de Canje)"
         UltraTab5.TabPage = Me.UltraTabPageControl4
-        UltraTab5.Text = "Otros Documentos"
+        UltraTab5.Text = "Todos los Documentos"
         Me.tab_Bandeja.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab5})
         Me.tab_Bandeja.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '

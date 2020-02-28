@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_Reporte_RIC
     Inherits frm_MenuPadre
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frm_Reporte_RIC
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim Appearance1 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -69,47 +69,61 @@ Partial Class frm_Reporte_RIC
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance10 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim Appearance11 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Me.e_CierreTurnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.e_CierreTurno_DetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UltraTabPageControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.udg_CuadroRIC = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.UltraLabel2 = New Infragistics.Win.Misc.UltraLabel()
+        Me.dtp_FechaFin_RIC = New System.Windows.Forms.DateTimePicker()
+        Me.cboProducto = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
         Me.btn_Consultar_RIC = New Infragistics.Win.Misc.UltraButton()
         Me.UltraLabel15 = New Infragistics.Win.Misc.UltraLabel()
-        Me.dtpFechaCorte = New System.Windows.Forms.DateTimePicker()
-        Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
-        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.dtp_FechaInicial_RIC = New System.Windows.Forms.DateTimePicker()
         Me.UltraTabPageControl2 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
+        Me.VISOR = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.UltraGroupBox2 = New Infragistics.Win.Misc.UltraGroupBox()
         Me.btn_Cargar_CierreCompleto = New Infragistics.Win.Misc.UltraButton()
         Me.UltraLabel1 = New Infragistics.Win.Misc.UltraLabel()
         Me.dtp_FechaCierre = New System.Windows.Forms.DateTimePicker()
-        Me.VISOR = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.e_CierreTurnoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.e_CierreTurno_DetalleBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UltraTabControl1 = New Infragistics.Win.UltraWinTabControl.UltraTabControl()
+        Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl1.SuspendLayout()
         CType(Me.udg_CuadroRIC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox1.SuspendLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.UltraTabControl1.SuspendLayout()
+        CType(Me.cboProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl2.SuspendLayout()
         CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox2.SuspendLayout()
-        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.UltraTabControl1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'e_CierreTurnoBindingSource
+        '
+        Me.e_CierreTurnoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno)
+        '
+        'e_CierreTurno_DetalleBindingSource
+        '
+        Me.e_CierreTurno_DetalleBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno_Detalle)
         '
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.udg_CuadroRIC)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(798, 427)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1134, 427)
         '
         'udg_CuadroRIC
         '
@@ -255,26 +269,63 @@ Partial Class frm_Reporte_RIC
         Me.udg_CuadroRIC.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.udg_CuadroRIC.Location = New System.Drawing.Point(0, 66)
         Me.udg_CuadroRIC.Name = "udg_CuadroRIC"
-        Me.udg_CuadroRIC.Size = New System.Drawing.Size(798, 361)
+        Me.udg_CuadroRIC.Size = New System.Drawing.Size(1134, 361)
         Me.udg_CuadroRIC.TabIndex = 2
         Me.udg_CuadroRIC.Text = "Grilla2"
         '
         'UltraGroupBox1
         '
+        Me.UltraGroupBox1.Controls.Add(Me.UltraLabel2)
+        Me.UltraGroupBox1.Controls.Add(Me.dtp_FechaFin_RIC)
+        Me.UltraGroupBox1.Controls.Add(Me.cboProducto)
         Me.UltraGroupBox1.Controls.Add(Me.btn_Consultar_RIC)
         Me.UltraGroupBox1.Controls.Add(Me.UltraLabel15)
-        Me.UltraGroupBox1.Controls.Add(Me.dtpFechaCorte)
+        Me.UltraGroupBox1.Controls.Add(Me.dtp_FechaInicial_RIC)
         Me.UltraGroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.UltraGroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox1.Name = "UltraGroupBox1"
-        Me.UltraGroupBox1.Size = New System.Drawing.Size(798, 66)
+        Me.UltraGroupBox1.Size = New System.Drawing.Size(1134, 66)
         Me.UltraGroupBox1.TabIndex = 0
         Me.UltraGroupBox1.Text = "Filtros para Reporte"
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'UltraLabel2
+        '
+        Appearance9.BackColor = System.Drawing.Color.Transparent
+        Appearance9.ForeColor = System.Drawing.Color.Navy
+        Appearance9.TextVAlignAsString = "Middle"
+        Me.UltraLabel2.Appearance = Appearance9
+        Me.UltraLabel2.AutoSize = True
+        Me.UltraLabel2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel2.Location = New System.Drawing.Point(298, 30)
+        Me.UltraLabel2.Name = "UltraLabel2"
+        Me.UltraLabel2.Size = New System.Drawing.Size(69, 15)
+        Me.UltraLabel2.TabIndex = 343
+        Me.UltraLabel2.Text = "Combustible:"
+        '
+        'dtp_FechaFin_RIC
+        '
+        Me.dtp_FechaFin_RIC.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_FechaFin_RIC.Location = New System.Drawing.Point(196, 26)
+        Me.dtp_FechaFin_RIC.Name = "dtp_FechaFin_RIC"
+        Me.dtp_FechaFin_RIC.Size = New System.Drawing.Size(88, 21)
+        Me.dtp_FechaFin_RIC.TabIndex = 342
+        '
+        'cboProducto
+        '
+        Me.cboProducto.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
+        Me.cboProducto.ButtonsRight.Add(EditorButton1)
+        Me.cboProducto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.cboProducto.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboProducto.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboProducto.Location = New System.Drawing.Point(373, 26)
+        Me.cboProducto.Name = "cboProducto"
+        Me.cboProducto.Size = New System.Drawing.Size(232, 22)
+        Me.cboProducto.TabIndex = 341
+        '
         'btn_Consultar_RIC
         '
-        Me.btn_Consultar_RIC.Location = New System.Drawing.Point(205, 27)
+        Me.btn_Consultar_RIC.Location = New System.Drawing.Point(634, 27)
         Me.btn_Consultar_RIC.Name = "btn_Consultar_RIC"
         Me.btn_Consultar_RIC.Size = New System.Drawing.Size(153, 23)
         Me.btn_Consultar_RIC.TabIndex = 340
@@ -282,10 +333,10 @@ Partial Class frm_Reporte_RIC
         '
         'UltraLabel15
         '
-        Appearance9.BackColor = System.Drawing.Color.Transparent
-        Appearance9.ForeColor = System.Drawing.Color.Navy
-        Appearance9.TextVAlignAsString = "Middle"
-        Me.UltraLabel15.Appearance = Appearance9
+        Appearance10.BackColor = System.Drawing.Color.Transparent
+        Appearance10.ForeColor = System.Drawing.Color.Navy
+        Appearance10.TextVAlignAsString = "Middle"
+        Me.UltraLabel15.Appearance = Appearance10
         Me.UltraLabel15.AutoSize = True
         Me.UltraLabel15.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel15.Location = New System.Drawing.Point(12, 30)
@@ -294,45 +345,37 @@ Partial Class frm_Reporte_RIC
         Me.UltraLabel15.TabIndex = 339
         Me.UltraLabel15.Text = "Fecha de Corte:"
         '
-        'dtpFechaCorte
+        'dtp_FechaInicial_RIC
         '
-        Me.dtpFechaCorte.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaCorte.Location = New System.Drawing.Point(102, 30)
-        Me.dtpFechaCorte.Name = "dtpFechaCorte"
-        Me.dtpFechaCorte.Size = New System.Drawing.Size(88, 20)
-        Me.dtpFechaCorte.TabIndex = 338
-        '
-        'UltraTabControl1
-        '
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
-        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
-        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.UltraTabControl1.Name = "UltraTabControl1"
-        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.UltraTabControl1.Size = New System.Drawing.Size(800, 450)
-        Me.UltraTabControl1.TabIndex = 1
-        UltraTab1.TabPage = Me.UltraTabPageControl1
-        UltraTab1.Text = "Cuadro RIC"
-        UltraTab2.TabPage = Me.UltraTabPageControl2
-        UltraTab2.Text = "Cierre Completo"
-        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
-        Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
-        '
-        'UltraTabSharedControlsPage1
-        '
-        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
-        Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(798, 427)
+        Me.dtp_FechaInicial_RIC.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_FechaInicial_RIC.Location = New System.Drawing.Point(102, 26)
+        Me.dtp_FechaInicial_RIC.Name = "dtp_FechaInicial_RIC"
+        Me.dtp_FechaInicial_RIC.Size = New System.Drawing.Size(88, 21)
+        Me.dtp_FechaInicial_RIC.TabIndex = 338
         '
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.VISOR)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox2)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
-        Me.UltraTabPageControl2.Size = New System.Drawing.Size(798, 427)
+        Me.UltraTabPageControl2.Size = New System.Drawing.Size(1134, 427)
+        '
+        'VISOR
+        '
+        Me.VISOR.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "Cabecera"
+        ReportDataSource1.Value = Me.e_CierreTurnoBindingSource
+        ReportDataSource2.Name = "Detalle"
+        ReportDataSource2.Value = Me.e_CierreTurno_DetalleBindingSource
+        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource2)
+        Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_CierreCompleto.rdlc"
+        Me.VISOR.Location = New System.Drawing.Point(0, 66)
+        Me.VISOR.Name = "VISOR"
+        Me.VISOR.Size = New System.Drawing.Size(1134, 361)
+        Me.VISOR.TabIndex = 3
+        Me.VISOR.ZoomPercent = 90
         '
         'UltraGroupBox2
         '
@@ -342,7 +385,7 @@ Partial Class frm_Reporte_RIC
         Me.UltraGroupBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.UltraGroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox2.Name = "UltraGroupBox2"
-        Me.UltraGroupBox2.Size = New System.Drawing.Size(798, 66)
+        Me.UltraGroupBox2.Size = New System.Drawing.Size(1134, 66)
         Me.UltraGroupBox2.TabIndex = 1
         Me.UltraGroupBox2.Text = "Filtros para Reporte"
         Me.UltraGroupBox2.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -357,10 +400,10 @@ Partial Class frm_Reporte_RIC
         '
         'UltraLabel1
         '
-        Appearance10.BackColor = System.Drawing.Color.Transparent
-        Appearance10.ForeColor = System.Drawing.Color.Navy
-        Appearance10.TextVAlignAsString = "Middle"
-        Me.UltraLabel1.Appearance = Appearance10
+        Appearance11.BackColor = System.Drawing.Color.Transparent
+        Appearance11.ForeColor = System.Drawing.Color.Navy
+        Appearance11.TextVAlignAsString = "Middle"
+        Me.UltraLabel1.Appearance = Appearance11
         Me.UltraLabel1.AutoSize = True
         Me.UltraLabel1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraLabel1.Location = New System.Drawing.Point(12, 30)
@@ -374,54 +417,55 @@ Partial Class frm_Reporte_RIC
         Me.dtp_FechaCierre.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_FechaCierre.Location = New System.Drawing.Point(102, 30)
         Me.dtp_FechaCierre.Name = "dtp_FechaCierre"
-        Me.dtp_FechaCierre.Size = New System.Drawing.Size(88, 20)
+        Me.dtp_FechaCierre.Size = New System.Drawing.Size(88, 21)
         Me.dtp_FechaCierre.TabIndex = 338
         '
-        'VISOR
+        'UltraTabControl1
         '
-        Me.VISOR.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "Cabecera"
-        ReportDataSource1.Value = Me.e_CierreTurnoBindingSource
-        ReportDataSource2.Name = "Detalle"
-        ReportDataSource2.Value = Me.e_CierreTurno_DetalleBindingSource
-        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.VISOR.LocalReport.DataSources.Add(ReportDataSource2)
-        Me.VISOR.LocalReport.ReportEmbeddedResource = "ISL.Win.rpt_CierreCompleto.rdlc"
-        Me.VISOR.Location = New System.Drawing.Point(0, 66)
-        Me.VISOR.Name = "VISOR"
-        Me.VISOR.Size = New System.Drawing.Size(798, 361)
-        Me.VISOR.TabIndex = 3
-        Me.VISOR.ZoomPercent = 90
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabSharedControlsPage1)
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl1)
+        Me.UltraTabControl1.Controls.Add(Me.UltraTabPageControl2)
+        Me.UltraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.UltraTabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.UltraTabControl1.Name = "UltraTabControl1"
+        Me.UltraTabControl1.SharedControlsPage = Me.UltraTabSharedControlsPage1
+        Me.UltraTabControl1.Size = New System.Drawing.Size(1136, 450)
+        Me.UltraTabControl1.TabIndex = 1
+        UltraTab1.TabPage = Me.UltraTabPageControl1
+        UltraTab1.Text = "Cuadro RIC"
+        UltraTab2.TabPage = Me.UltraTabPageControl2
+        UltraTab2.Text = "Cierre Completo"
+        Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
+        Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
         '
-        'e_CierreTurnoBindingSource
+        'UltraTabSharedControlsPage1
         '
-        Me.e_CierreTurnoBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno)
-        '
-        'e_CierreTurno_DetalleBindingSource
-        '
-        Me.e_CierreTurno_DetalleBindingSource.DataSource = GetType(ERP.EntidadesWCF.e_CierreTurno_Detalle)
+        Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1134, 427)
         '
         'frm_Reporte_RIC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(1136, 450)
         Me.Controls.Add(Me.UltraTabControl1)
         Me.Name = "frm_Reporte_RIC"
         Me.Text = "Reportes"
+        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl1.ResumeLayout(False)
         CType(Me.udg_CuadroRIC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout()
-        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.UltraTabControl1.ResumeLayout(False)
+        CType(Me.cboProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraTabPageControl2.ResumeLayout(False)
         CType(Me.UltraGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox2.ResumeLayout(False)
         Me.UltraGroupBox2.PerformLayout()
-        CType(Me.e_CierreTurnoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.e_CierreTurno_DetalleBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UltraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.UltraTabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -433,7 +477,7 @@ Partial Class frm_Reporte_RIC
     Friend WithEvents udg_CuadroRIC As Infragistics.Win.UltraWinGrid.UltraGrid
     Friend WithEvents btn_Consultar_RIC As Infragistics.Win.Misc.UltraButton
     Friend WithEvents UltraLabel15 As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents dtpFechaCorte As DateTimePicker
+    Friend WithEvents dtp_FechaInicial_RIC As DateTimePicker
     Friend WithEvents UltraTabPageControl2 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
     Friend WithEvents UltraGroupBox2 As Infragistics.Win.Misc.UltraGroupBox
     Friend WithEvents btn_Cargar_CierreCompleto As Infragistics.Win.Misc.UltraButton
@@ -442,4 +486,7 @@ Partial Class frm_Reporte_RIC
     Friend WithEvents VISOR As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents e_CierreTurnoBindingSource As BindingSource
     Friend WithEvents e_CierreTurno_DetalleBindingSource As BindingSource
+    Friend WithEvents dtp_FechaFin_RIC As DateTimePicker
+    Friend WithEvents cboProducto As Infragistics.Win.UltraWinEditors.UltraComboEditor
+    Friend WithEvents UltraLabel2 As Infragistics.Win.Misc.UltraLabel
 End Class

@@ -190,7 +190,7 @@ Partial Class frm_EmpresaDescuento
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrLista)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1210, 497)
         '
@@ -337,7 +337,7 @@ Partial Class frm_EmpresaDescuento
         'UltraTabPageControl2
         '
         Me.UltraTabPageControl2.Controls.Add(Me.agrMantenimiento)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1210, 497)
         '
@@ -599,6 +599,7 @@ Partial Class frm_EmpresaDescuento
         Me.nudCredito.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudCredito.ForeColor = System.Drawing.Color.MidnightBlue
         Me.nudCredito.Location = New System.Drawing.Point(116, 177)
+        Me.nudCredito.MaskInput = "{double:-9.4}"
         Me.nudCredito.Name = "nudCredito"
         Me.nudCredito.NullText = "0.00"
         Me.nudCredito.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
@@ -672,6 +673,7 @@ Partial Class frm_EmpresaDescuento
         Me.nudContado.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nudContado.ForeColor = System.Drawing.Color.MidnightBlue
         Me.nudContado.Location = New System.Drawing.Point(116, 149)
+        Me.nudContado.MaskInput = "{double:-9.4}"
         Me.nudContado.Name = "nudContado"
         Me.nudContado.NullText = "0.00"
         Me.nudContado.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
