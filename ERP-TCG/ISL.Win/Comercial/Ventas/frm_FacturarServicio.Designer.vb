@@ -566,11 +566,12 @@ Partial Class frm_FacturarServicio
         Me.tsmiAnular = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiEmitir = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDescargarPDF = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Formato3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsmiDescargarXML = New System.Windows.Forms.ToolStripMenuItem()
         Me.odDetalleDocumento = New ISL.Controles.OrigenDatos(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.Formato1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Formato2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl4.SuspendLayout()
         CType(Me.griListaServicios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraTabPageControl3.SuspendLayout()
@@ -916,7 +917,7 @@ Partial Class frm_FacturarServicio
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrOrdenCompra)
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1220, 710)
         '
@@ -1377,7 +1378,7 @@ Partial Class frm_FacturarServicio
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right)
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Top)
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1220, 710)
         '
@@ -2936,11 +2937,29 @@ Partial Class frm_FacturarServicio
         '
         'tsmiDescargarPDF
         '
-        Me.tsmiDescargarPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem})
+        Me.tsmiDescargarPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem, Me.Formato3ToolStripMenuItem})
         Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
         Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
         Me.tsmiDescargarPDF.Text = "Ver PDF"
+        '
+        'Formato1ToolStripMenuItem
+        '
+        Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
+        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato1ToolStripMenuItem.Text = "Formato 1"
+        '
+        'Formato2ToolStripMenuItem
+        '
+        Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
+        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato2ToolStripMenuItem.Text = "Formato 2"
+        '
+        'Formato3ToolStripMenuItem
+        '
+        Me.Formato3ToolStripMenuItem.Name = "Formato3ToolStripMenuItem"
+        Me.Formato3ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato3ToolStripMenuItem.Text = "Formato 3"
         '
         'tsmiDescargarXML
         '
@@ -2956,18 +2975,6 @@ Partial Class frm_FacturarServicio
         UltraDataColumn132.DataType = GetType(Boolean)
         UltraDataColumn132.DefaultValue = False
         Me.odDetalleDocumento.Band.Columns.AddRange(New Object() {UltraDataColumn115, UltraDataColumn116, UltraDataColumn117, UltraDataColumn118, UltraDataColumn119, UltraDataColumn120, UltraDataColumn121, UltraDataColumn122, UltraDataColumn123, UltraDataColumn124, UltraDataColumn125, UltraDataColumn126, UltraDataColumn127, UltraDataColumn128, UltraDataColumn129, UltraDataColumn130, UltraDataColumn131, UltraDataColumn132, UltraDataColumn133, UltraDataColumn134, UltraDataColumn135, UltraDataColumn136, UltraDataColumn137})
-        '
-        'Formato1ToolStripMenuItem
-        '
-        Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
-        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Formato1ToolStripMenuItem.Text = "Formato 1"
-        '
-        'Formato2ToolStripMenuItem
-        '
-        Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
-        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.Formato2ToolStripMenuItem.Text = "Formato 2"
         '
         'frm_FacturarServicio
         '
@@ -3211,4 +3218,5 @@ Partial Class frm_FacturarServicio
     Friend WithEvents decAnticipo As ISL.Controles.NumeroDecimal
     Friend WithEvents Formato1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Formato2ToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Formato3ToolStripMenuItem As ToolStripMenuItem
 End Class

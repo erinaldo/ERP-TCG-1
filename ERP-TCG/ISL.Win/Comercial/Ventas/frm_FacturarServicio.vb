@@ -782,6 +782,10 @@ Public Class frm_FacturarServicio
         gmt_Imprimir_Documento(griListaFacturaCompra.ActiveRow.Cells("Id").Value, "A42", "TRANSPORTE", "T2")
     End Sub
 
+    Private Sub Formato3ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato3ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griListaFacturaCompra.ActiveRow.Cells("Id").Value, "A43", "TRANSPORTE", "T3")
+    End Sub
+
     Public Sub ConsultarDetalleDocumento()
         Try
             listarDetalleDocumento(True)

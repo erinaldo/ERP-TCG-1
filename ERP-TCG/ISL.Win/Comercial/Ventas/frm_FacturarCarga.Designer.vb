@@ -544,6 +544,7 @@ Partial Class frm_FacturarCarga
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.UltraToolTipManager2 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.Formato3ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UltraTabPageControl10.SuspendLayout()
         CType(Me.griFactura, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.mnuCargas.SuspendLayout()
@@ -2113,27 +2114,27 @@ Partial Class frm_FacturarCarga
         Me.mnuFacturar.ForeColor = System.Drawing.Color.Black
         Me.mnuFacturar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiNuevo, Me.tsmiEditar, Me.tsmiEliminar, Me.tsmiEmitir, Me.tsmiAnular, Me.tsmiDescargarPDF, Me.tsmiDescargarXML})
         Me.mnuFacturar.Name = "mnuFacturar"
-        Me.mnuFacturar.Size = New System.Drawing.Size(149, 158)
+        Me.mnuFacturar.Size = New System.Drawing.Size(181, 180)
         '
         'tsmiNuevo
         '
         Me.tsmiNuevo.Image = CType(resources.GetObject("tsmiNuevo.Image"), System.Drawing.Image)
         Me.tsmiNuevo.Name = "tsmiNuevo"
-        Me.tsmiNuevo.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiNuevo.Size = New System.Drawing.Size(180, 22)
         Me.tsmiNuevo.Text = "Nuevo"
         '
         'tsmiEditar
         '
         Me.tsmiEditar.Image = CType(resources.GetObject("tsmiEditar.Image"), System.Drawing.Image)
         Me.tsmiEditar.Name = "tsmiEditar"
-        Me.tsmiEditar.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiEditar.Size = New System.Drawing.Size(180, 22)
         Me.tsmiEditar.Text = "Editar"
         '
         'tsmiEliminar
         '
         Me.tsmiEliminar.Image = CType(resources.GetObject("tsmiEliminar.Image"), System.Drawing.Image)
         Me.tsmiEliminar.Name = "tsmiEliminar"
-        Me.tsmiEliminar.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiEliminar.Size = New System.Drawing.Size(180, 22)
         Me.tsmiEliminar.Text = "Eliminar"
         '
         'tsmiEmitir
@@ -2141,7 +2142,7 @@ Partial Class frm_FacturarCarga
         Me.tsmiEmitir.Image = CType(resources.GetObject("tsmiEmitir.Image"), System.Drawing.Image)
         Me.tsmiEmitir.Name = "tsmiEmitir"
         Me.tsmiEmitir.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.tsmiEmitir.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiEmitir.Size = New System.Drawing.Size(180, 22)
         Me.tsmiEmitir.Text = "Emitir"
         '
         'tsmiAnular
@@ -2149,34 +2150,34 @@ Partial Class frm_FacturarCarga
         Me.tsmiAnular.Image = CType(resources.GetObject("tsmiAnular.Image"), System.Drawing.Image)
         Me.tsmiAnular.Name = "tsmiAnular"
         Me.tsmiAnular.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.tsmiAnular.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiAnular.Size = New System.Drawing.Size(180, 22)
         Me.tsmiAnular.Text = "Anular"
         '
         'tsmiDescargarPDF
         '
-        Me.tsmiDescargarPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem})
+        Me.tsmiDescargarPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem, Me.Formato3ToolStripMenuItem})
         Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
-        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(180, 22)
         Me.tsmiDescargarPDF.Text = "Ver PDF"
         '
         'Formato1ToolStripMenuItem
         '
         Me.Formato1ToolStripMenuItem.Name = "Formato1ToolStripMenuItem"
-        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.Formato1ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.Formato1ToolStripMenuItem.Text = "Formato 1"
         '
         'Formato2ToolStripMenuItem
         '
         Me.Formato2ToolStripMenuItem.Name = "Formato2ToolStripMenuItem"
-        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(121, 22)
+        Me.Formato2ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.Formato2ToolStripMenuItem.Text = "Formato 2"
         '
         'tsmiDescargarXML
         '
         Me.tsmiDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarXML.Name = "tsmiDescargarXML"
-        Me.tsmiDescargarXML.Size = New System.Drawing.Size(148, 22)
+        Me.tsmiDescargarXML.Size = New System.Drawing.Size(180, 22)
         Me.tsmiDescargarXML.Text = "Descargar XML"
         '
         'agrBusquedaDoc
@@ -2743,7 +2744,7 @@ Partial Class frm_FacturarCarga
         'UltraTabPageControl1
         '
         Me.UltraTabPageControl1.Controls.Add(Me.ficMaterial)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1346, 488)
         '
@@ -2777,7 +2778,7 @@ Partial Class frm_FacturarCarga
         Me.UltraTabPageControl2.AutoScroll = True
         Me.UltraTabPageControl2.Controls.Add(Me.ficDetalle)
         Me.UltraTabPageControl2.Controls.Add(Me.agrDatos)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1346, 488)
         '
@@ -3960,6 +3961,12 @@ Partial Class frm_FacturarCarga
         '
         Me.UltraToolTipManager2.ContainingControl = Me
         '
+        'Formato3ToolStripMenuItem
+        '
+        Me.Formato3ToolStripMenuItem.Name = "Formato3ToolStripMenuItem"
+        Me.Formato3ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.Formato3ToolStripMenuItem.Text = "Formato 3"
+        '
         'frm_FacturarCarga
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4364,4 +4371,5 @@ Partial Class frm_FacturarCarga
     Friend WithEvents Formato1ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Formato2ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GenerarNTDToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Formato3ToolStripMenuItem As ToolStripMenuItem
 End Class

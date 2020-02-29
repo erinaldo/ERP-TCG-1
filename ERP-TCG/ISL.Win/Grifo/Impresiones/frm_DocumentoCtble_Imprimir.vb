@@ -226,6 +226,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 Select Case TipoPapel
                     Case "A41" : Return Raiz & "rpt_DocumentoCtble_A4_Transporte1.rdlc"
                     Case "A42" : Return Raiz & "rpt_DocumentoCtble_A4_Transporte2.rdlc"
+                    Case "A43" : Return Raiz & "rpt_DocumentoCtble_A4_Transporte3.rdlc"
                     Case "TICKET" : Return "Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc"
                     Case "NCTICKET" : Return "Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc"
                 End Select

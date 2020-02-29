@@ -1683,6 +1683,10 @@ Public Class frm_FacturarCarga
         End Try
     End Sub
 
+    Private Sub Formato3ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Formato3ToolStripMenuItem.Click
+        gmt_Imprimir_Documento(griDocumentoVenta.ActiveRow.Cells("Id").Value, "A43", "TRANSPORTE", "T3")
+    End Sub
+
     Private Sub mnuAplicarValorU_Click(sender As Object, e As EventArgs) Handles mnuAplicarValorU.Click
         If griDetalleDoc.ActiveRow IsNot Nothing Then
             If griDetalleDoc.ActiveRow.Cells("IndConsolidado").Value Is Nothing Then
@@ -2366,18 +2370,21 @@ Public Class frm_FacturarCarga
                         Fila.Cells("FactorRefUni").Value = oe.FactorReferencial
                     End If
                 End If
-                If Fila.Cells("UnidadMedida").Value <> "TONELADA" And Fila.Cells("UnidadMedida").Value <> "BOLSA" Then
-                    If verCantidadTn.Checked Then : Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * decCantTn.Value
-                    Else : Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * 0
+                If Fila.Cells("UnidadMedida").Value <> "TONELADA" Then
+                    If verCantidadTn.Checked Then
+                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * decCantTn.Value
+                    Else
+                        'Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * 0 '@0001
+                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("PesoToneladas").Value '@0001
                     End If
                 Else
-                    If Fila.Cells("UnidadMedida").Value = "TONELADA" Then
-                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("Cantidad").Value
+                    'If Fila.Cells("UnidadMedida").Value = "TONELADA" Then
+                    Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("Cantidad").Value
+                        'End If
+                        'If Fila.Cells("UnidadMedida").Value = "BOLSA" Then
+                        '    Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("PesoToneladas").Value
+                        'End If
                     End If
-                    If Fila.Cells("UnidadMedida").Value = "BOLSA" Then
-                        Fila.Cells("FactorRefTotal").Value = Fila.Cells("FactorRefUni").Value * Fila.Cells("PesoToneladas").Value
-                    End If
-                End If
                 If BandPrecio Then
                     If verCambiaVU.Checked Then
                         Fila.Cells("PrecioUnitario").Value = decValorUni.Value
