@@ -135,7 +135,7 @@ Public Class frm_CierreTurno
                     TurnoActivo.TipoOperacion = ""
                     TurnoActivo.Id = .ActiveRow.Cells("Id").Value
                     TurnoActivo = dTurno.Obtener(TurnoActivo)
-                    If TurnoActivo.IdEstado = "ABIERTO" Then 'Apertura
+                    If TurnoActivo.IdEstado = "ABIERTO" And gUsuarioSGI.Login = "ADMINERP" Then 'Apertura
                         If MessageBox.Show("Esta seguro de eliminar el turno: " & .ActiveRow.Cells("Id").Value.ToString & " ?",
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             TurnoActivo.FechaModifica = ObtenerFechaServidor()
