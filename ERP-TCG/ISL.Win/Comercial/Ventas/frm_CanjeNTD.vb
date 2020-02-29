@@ -283,7 +283,7 @@ Public Class frm_CanjeNTD
 
     Private Sub mt_Inicializar()
         dtp_FechaEmision.Value = Date.Now
-        txtSerie.Text = String.Empty
+        cboSerieDocumento.Text = String.Empty
         tsb_Emitir.Enabled = False
         tsb_Eliminar.Enabled = False
         tsb_Imprimir.Enabled = False
@@ -452,7 +452,7 @@ Public Class frm_CanjeNTD
         Try
             If e.KeyCode = Keys.Enter Then
                 If Not String.IsNullOrEmpty(cmb_Cliente.Text.Trim) Then
-                    gmt_ListarEmpresa("6", cmb_Cliente, String.Empty, False)
+                    gmt_ListarEmpresa("6", cmb_Cliente, String.Empty, cbRuc.Checked)
                 End If
             End If
         Catch ex As Exception
@@ -565,8 +565,8 @@ Public Class frm_CanjeNTD
             Dim SubTotal As Double = 0, IGV As Double = 0, Total As Double = 0
             If cmb_Cliente.SelectedRow Is Nothing Then Throw New Exception("Seleccione Cliente")
             If cmbTipoDocumento.SelectedIndex = -1 Then Throw New Exception("Seleccione Tipo de Documento")
-            gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2) '@0001
-            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
+            gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2) '@0001
+            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
             With DocumentoGenerado
                 '' Cabecera
                 .TipoOperacion = "I"
@@ -574,7 +574,7 @@ Public Class frm_CanjeNTD
                 .FechaVencimiento = dtpFechaPago.Value
                 .IdSucursal = gs_PrefijoIdSucursal
                 .PrefijoID = gs_PrefijoIdSucursal
-                .Serie = txtSerie.Text
+                .Serie = cboSerieDocumento.Text
                 '.Numero = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
                 .Numero = txt_Numero.Text
                 .IdEstadoDocumento = "1CH00014"
@@ -728,17 +728,10 @@ Public Class frm_CanjeNTD
     End Sub
 
     Private Sub cmbTipoDocumento_ValueChanged(sender As Object, e As EventArgs) Handles cmbTipoDocumento.ValueChanged
-        Try
-            ' ======================================================================================================================== >>>>>
-            Select Case cmbTipoDocumento.Value
-                Case "1CH000000026" : txtSerie.Text = "F101" : cmb_Cliente.Focus()
-                Case "1CH000000002" : txtSerie.Text = "B101" : cmb_Cliente.Focus()
-            End Select
-            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8)
-            ' ======================================================================================================================== >>>>>
-        Catch ex As Exception
-            Throw ex
-        End Try
+        LlenarComboMaestro(cboSerieDocumento, SerieDocumento(cmbTipoDocumento.Value), 0)
+        If cmbTipoDocumento.Text <> "" Then
+            txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
+        End If
     End Sub
 
     Private Sub tsb_Emitir_Click(sender As Object, e As EventArgs) Handles tsb_Emitir.Click
@@ -996,8 +989,9 @@ Public Class frm_CanjeNTD
         Next
     End Sub
 
-    Private Sub txtSerie_ValueChanged(sender As Object, e As EventArgs) Handles txtSerie.ValueChanged
-        txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(txtSerie.Text, cmbTipoDocumento.Value, 2)), 8) '@0001
+    Private Sub cboSerieDocumento_Validated(sender As Object, e As EventArgs) Handles cboSerieDocumento.Validated
+        gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)
+        txt_Numero.Text = FormatoDocumento(CStr(gfc_ObtenerNumeroDoc(cboSerieDocumento.Text, cmbTipoDocumento.Value, 2)), 8)
     End Sub
 
 #End Region

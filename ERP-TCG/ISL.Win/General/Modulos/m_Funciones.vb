@@ -6337,5 +6337,20 @@ Module m_Funciones
         End Try
     End Sub
 #End Region
+
+    Public Function SerieDocumento(IdTipoDocumento) As List(Of e_Combo)
+        Try
+            Dim oeserie = New e_Combo
+            Dim ListaSerie = New List(Of e_Combo)
+            oeserie.Id = IdTipoDocumento
+            oeserie.Nombre = "SerieDocumento"
+            oeserie.Descripcion = gUsuarioSGI.Id
+            ListaSerie.AddRange(olCombo.Listar(oeserie))
+            Return ListaSerie
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 End Module
 
