@@ -2532,7 +2532,7 @@ Public Class frm_Planilla
 
                 oDoc.NewPage()
 
-                If contador = 10 Then Exit For
+                'If contador = 100 Then Exit For '@0001
             Next
 
             oDoc.Close()
