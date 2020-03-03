@@ -7406,7 +7406,9 @@
       <DependentUpon>frm_ReporteFacturaVenta.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\Comercial\Ventas\rptFacturaVenta.rdlc" />
+    <Content Include="Reportes\Comercial\Ventas\rptFacturaVenta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Reportes\Contabilidad\EstadosFinancieros.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

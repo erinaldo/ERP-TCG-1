@@ -1464,7 +1464,7 @@ Module m_Funciones
         '@0003
         If Deployment.Application.ApplicationDeployment.IsNetworkDeployed = True Then
             'version = String.Format("Versión {0}", My.Application.Deployment.CurrentVersion.ToString)
-            'version = String.Format(My.Application.Deployment.CurrentVersion.ToString) ' @0001
+            'version = String.Format(My.Application.Deployment.CurrentVersion.ToString) '@0001
             version = String.Format(My.Application.Info.Version.ToString) '@0001
         Else
             'version = String.Format("Versión {0}", My.Application.Info.Version.ToString)
