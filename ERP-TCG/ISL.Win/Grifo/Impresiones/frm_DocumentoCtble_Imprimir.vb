@@ -145,7 +145,7 @@ Public Class frm_DocumentoCtble_Imprimir
                 .LocalReport.DataSources.Clear()
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
-                .LocalReport.DisplayName = gs_RucEmpresaSistema + "-" + DT1.Rows(0).Item("SerieNumero").ToString
+                .LocalReport.DisplayName = gs_RucEmpresaSistema + "-" + lf_ObtenerTipoDoc(DT1.Rows(0).Item("Tipo").ToString) + "-" + DT1.Rows(0).Item("SerieNumero").ToString
                 .LocalReport.Refresh()
             End With
 

@@ -2154,7 +2154,7 @@ Public Class frm_FacturarServicio
                 If TipoDocumento = "1CH000000030" Then TipoDocumento = "07"
 
                 SerieDes = griListaFacturaCompra.ActiveRow.Cells("Serie").Value
-                NumeroDes = griListaFacturaCompra.ActiveRow.Cells("Numero").Value.ToString.Substring(2, 8)
+                NumeroDes = griListaFacturaCompra.ActiveRow.Cells("Numero").Value
 
                 RutaArchivos = RutaArchivos + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
                 sNombreArchivo = sNombreArchivo + "\" + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"

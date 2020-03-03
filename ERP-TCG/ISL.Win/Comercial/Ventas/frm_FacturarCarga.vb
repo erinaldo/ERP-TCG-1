@@ -4283,7 +4283,7 @@ Public Class frm_FacturarCarga
                 If TipoDocumento = "1CH000000030" Then TipoDocumento = "07"
 
                 SerieDes = griDocumentoVenta.ActiveRow.Cells("Serie").Value
-                NumeroDes = griDocumentoVenta.ActiveRow.Cells("Numero").Value.ToString.Substring(2, 8)
+                NumeroDes = griDocumentoVenta.ActiveRow.Cells("Numero").Value
 
                 RutaArchivos = RutaArchivos + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"
                 sNombreArchivo = sNombreArchivo + "\" + gs_RucEmpresaSistema.Trim + "-" + TipoDocumento + "-" + SerieDes + "-" + NumeroDes + ".zip"

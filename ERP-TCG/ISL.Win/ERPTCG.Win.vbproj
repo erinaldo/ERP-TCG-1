@@ -6444,18 +6444,18 @@
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_A4.rdlc">
+    <Content Include="Grifo\Impresiones\rpt_BoletaVenta_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_CierreCompleto.rdlc">
+    <Content Include="Grifo\Impresiones\rpt_CierreCompleto.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_CierreParcial.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_CierreParcial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Transporte1.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -6465,27 +6465,27 @@
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Transporte3.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_A4.rdlc">
+    <Content Include="Grifo\Impresiones\rpt_FacturaVenta_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_FacturaVenta_Ticket.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_FacturaVenta_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_BoletaVenta_Ticket.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_BoletaVenta_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_A4.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_NotaDespacho_A4.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_NotaDespacho_Ticket.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_NotaDespacho_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Grifo\Impresiones\rpt_DocumentoCtble_Ticket.rdlc">
+    </Content>
+    <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <EmbeddedResource Include="Grifo\Reportes\frm_Reporte_RIC.resx">
       <DependentUpon>frm_Reporte_RIC.vb</DependentUpon>
     </EmbeddedResource>
@@ -6722,16 +6722,18 @@
     <EmbeddedResource Include="Reportes\Comercial\Ventas\frm_VentaMerma.resx">
       <DependentUpon>frm_VentaMerma.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc" />
+    <Content Include="Reportes\Comercial\Ventas\SalidaMerma.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Reportes\Comercial\Ventas\rpt_GRR_Print.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc">
+    <Content Include="Reportes\Comercial\Ventas\rpt_NC_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
+    </Content>
+    <Content Include="Reportes\Comercial\Ventas\rpt_ND_Ticket.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </Content>
     <EmbeddedResource Include="Reportes\Contabilidad\frm_DeudaBancaria.resx">
       <DependentUpon>frm_DeudaBancaria.vb</DependentUpon>
     </EmbeddedResource>
@@ -6773,7 +6775,9 @@
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_CobroPagoAnticipo.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_RegistroVentas.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_ValesConsumoCombustible.rdlc" />
-    <EmbeddedResource Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc" />
+    <Content Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\frm_FacturaBoletaElectronico.resx">
       <DependentUpon>frm_FacturaBoletaElectronico.vb</DependentUpon>
     </EmbeddedResource>
@@ -6884,7 +6888,9 @@
     <EmbeddedResource Include="Reportes\Administracion\frm_ReporteDiaCobro.resx">
       <DependentUpon>frm_ReporteDiaCobro.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\ChequesPendientes.rdlc" />
+    <Content Include="Reportes\ChequesPendientes.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Administracion\frm_ReporteOperacionPendienteFac.resx">
       <DependentUpon>frm_ReporteOperacionPendienteFac.vb</DependentUpon>
     </EmbeddedResource>
@@ -6908,9 +6914,15 @@
       <DependentUpon>frm_ReporteInformeDetrac.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rptInformeDetrac.rdlc" />
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rptNotaCredito.rdlc" />
-    <EmbeddedResource Include="Reportes\Contabilidad\CobroPagoAnticipo.rdlc" />
+    <Content Include="Reportes\Comercial\Ventas\rptInformeDetrac.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\Comercial\Ventas\rptNotaCredito.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reportes\Contabilidad\CobroPagoAnticipo.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ImprimeRegInventarioPermVal.resx">
       <DependentUpon>frm_ImprimeRegInventarioPermVal.vb</DependentUpon>
     </EmbeddedResource>
@@ -6971,7 +6983,9 @@
     <EmbeddedResource Include="Reportes\Contabilidad\ReporteVentas.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Contabilidad\EstadoCuenta.rdlc" />
+    <Content Include="Reportes\Contabilidad\EstadoCuenta.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Contabilidad\frm_EstadoCuenta.resx">
       <DependentUpon>frm_EstadoCuenta.vb</DependentUpon>
     </EmbeddedResource>
@@ -7392,8 +7406,10 @@
       <DependentUpon>frm_ReporteFacturaVenta.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Comercial\Ventas\rptFacturaVenta.rdlc" />
-    <EmbeddedResource Include="Reportes\Contabilidad\EstadosFinancieros.rdlc" />
+    <Content Include="Reportes\Comercial\Ventas\rptFacturaVenta.rdlc" />
+    <Content Include="Reportes\Contabilidad\EstadosFinancieros.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Contabilidad\frm_ReporteControlCompra.resx">
       <DependentUpon>frm_ReporteControlCompra.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -7426,7 +7442,9 @@
     <EmbeddedResource Include="Reportes\Finanzas\frm_ReporteResumenLetras.resx">
       <DependentUpon>frm_ReporteResumenLetras.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\LiquidacionTrabajador.rdlc" />
+    <Content Include="Reportes\LiquidacionTrabajador.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Logistica\Combustibles\frm_ReporteCompraD2.resx">
       <DependentUpon>frm_ReporteCompraD2.vb</DependentUpon>
     </EmbeddedResource>
@@ -7572,14 +7590,18 @@
     <EmbeddedResource Include="Reportes\Personal\frm_ReportePapeletaPermisos.resx">
       <DependentUpon>frm_ReportePapeletaPermisos.vb</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Reportes\ImprimirOrden.rdlc" />
+    <Content Include="Reportes\ImprimirOrden.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Personal\frm_ReporteSaldoTrabajador.resx">
       <DependentUpon>frm_ReporteSaldoTrabajador.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Personal\frm_TrabajadorAsistencia.resx">
       <DependentUpon>frm_TrabajadorAsistencia.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReciboIngresos.rdlc" />
+    <Content Include="Reportes\ReciboIngresos.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Seguridad\frm_ReporteLiquidacionMonitor.resx">
       <DependentUpon>frm_ReporteLiquidacionMonitor.vb</DependentUpon>
     </EmbeddedResource>
@@ -7640,7 +7662,9 @@
       <DependentUpon>frm_ReportePrestamo.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Content Include="Reportes\GrupoAprobacion.rdlc" />
+    <Content Include="Reportes\GrupoAprobacion.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Reportes\Tesoreria\MovimientoPrestamo.rdlc" />
     <EmbeddedResource Include="Reportes\Tesoreria\PagoMerma.rdlc" />
     <EmbeddedResource Include="Reportes\Tesoreria\rptGrupoSancionDetalle.rdlc" />
