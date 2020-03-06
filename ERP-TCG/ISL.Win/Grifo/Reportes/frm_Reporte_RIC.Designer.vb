@@ -437,6 +437,7 @@ Partial Class frm_Reporte_RIC
         UltraTab2.Text = "Cierre Completo"
         Me.UltraTabControl1.Tabs.AddRange(New Infragistics.Win.UltraWinTabControl.UltraTab() {UltraTab1, UltraTab2})
         Me.UltraTabControl1.ViewStyle = Infragistics.Win.UltraWinTabControl.ViewStyle.Office2007
+        Me.UltraTabControl1.Visible = False
         '
         'UltraTabSharedControlsPage1
         '

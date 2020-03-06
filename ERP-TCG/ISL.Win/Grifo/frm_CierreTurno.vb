@@ -325,14 +325,49 @@ Public Class frm_CierreTurno
                 txtGlosa.Text = .Glosa
                 mt_Mostrar_TurnoDetalles()
 
-                mt_CalcularTotales()
+                If TurnoActivo.IdEstado = "ABIERTO" Then
+                    mt_CalcularTotales_CierreAbierto()
+                Else
+                    mt_CalcularTotales_CierreCerrado()
+                End If
+
             End With
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
 
-    Private Sub mt_CalcularTotales()
+    Private Sub mt_CalcularTotales_CierreAbierto()
+        Try
+            Dim TotalContado As Double = 0, GalonesContado As Double = 0, TotalCredito As Double = 0, GalonesCredito As Double = 0
+            Dim TotalDepositos As Double = 0
+
+            '' Total de Ventas Contado y Credito
+            For Each Item In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "VENTASXCOMBUSTIBLERESUMEN").ToList
+                If Item.Grupo = "CONTADO" Then
+                    TotalContado += Item.ValorERP
+                    GalonesContado += Item.ValorReal
+                Else
+                    TotalCredito += Item.ValorERP
+                    GalonesCredito += Item.ValorReal
+                End If
+            Next
+            nud_VentasContado_Importe.Value = TotalContado
+            nud_VentasCredito_Importe.Value = TotalCredito
+            nud_VentasContado_Galones.Value = GalonesContado
+            nud_VentasCredito_Galones.Value = GalonesCredito
+
+            '' Depositos a Boveda
+            For Each Item In ListaDetallesDinamicos.Where(Function(it) it.Rubro = "DEPOSITOSBOVEDA").ToList
+                TotalDepositos += Item.ValorERP
+            Next
+            nud_DepositosBoveda.Value = TotalDepositos
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Private Sub mt_CalcularTotales_CierreCerrado()
         Try
             Dim TotalContado As Double = 0, GalonesContado As Double = 0, TotalCredito As Double = 0, GalonesCredito As Double = 0
             Dim TotalDepositos As Double = 0
