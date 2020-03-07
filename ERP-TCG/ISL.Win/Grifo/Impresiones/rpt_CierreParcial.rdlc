@@ -24,7 +24,7 @@
         <Top>1.47849cm</Top>
         <Left>2.24709cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.27682cm</Width>
+        <Width>4.8169cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -45,6 +45,7 @@
                 <Value>=First(Fields!FechaCrea.Value, "Cabecera")</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>d</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -57,7 +58,7 @@
         <Top>2.14905cm</Top>
         <Left>2.21181cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.3121cm</Width>
+        <Width>4.85218cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -76,9 +77,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!HoraInicio.Value, "Cabecera")</Value>
+                <Value>=Now()</Value>
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>HH:mm:ss</Format>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -91,7 +93,7 @@
         <Top>2.78432cm</Top>
         <Left>2.21181cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.3121cm</Width>
+        <Width>4.85218cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -253,7 +255,7 @@
         <Top>0.53453cm</Top>
         <Left>0.41606cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.64793cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -293,7 +295,7 @@
         <Top>7.94243cm</Top>
         <Left>0.37947cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.68452cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -333,7 +335,7 @@
         <Top>10.80258cm</Top>
         <Left>0.37947cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.68452cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -541,7 +543,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.54301cm</Size>
+                <Size>4.11968cm</Size>
                 <CellContents>
                   <Textbox Name="Concepto">
                     <CanGrow>true</CanGrow>
@@ -576,7 +578,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>4.54301cm</Size>
+                <Size>4.11968cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox36">
                     <CanGrow>true</CanGrow>
@@ -614,10 +616,19 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Rubro.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>VENTAS</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>8.64826cm</Top>
         <Left>0.37946cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.10786cm</Width>
+        <Width>6.68453cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -816,7 +827,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.543cm</Size>
+                <Size>4.11967cm</Size>
                 <CellContents>
                   <Textbox Name="Concepto2">
                     <CanGrow>true</CanGrow>
@@ -851,7 +862,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>4.543cm</Size>
+                <Size>4.11967cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox38">
                     <CanGrow>true</CanGrow>
@@ -889,10 +900,19 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Rubro.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>VENTAS</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>11.50841cm</Top>
         <Left>0.37947cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.68452cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -923,7 +943,7 @@
         <Top>13.4848cm</Top>
         <Left>0.41602cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.64797cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -1131,7 +1151,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.50644cm</Size>
+                <Size>4.08311cm</Size>
                 <CellContents>
                   <Textbox Name="Concepto3">
                     <CanGrow>true</CanGrow>
@@ -1166,7 +1186,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>4.50644cm</Size>
+                <Size>4.08311cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox42">
                     <CanGrow>true</CanGrow>
@@ -1204,10 +1224,19 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Rubro.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>VENTAS</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>14.19063cm</Top>
         <Left>0.41603cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.07129cm</Width>
+        <Width>6.64796cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -1238,7 +1267,7 @@
         <Top>16.16702cm</Top>
         <Left>0.41603cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.64796cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -1446,7 +1475,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.50643cm</Size>
+                <Size>4.0831cm</Size>
                 <CellContents>
                   <Textbox Name="Concepto4">
                     <CanGrow>true</CanGrow>
@@ -1481,7 +1510,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>4.50643cm</Size>
+                <Size>4.0831cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox46">
                     <CanGrow>true</CanGrow>
@@ -1531,7 +1560,7 @@
         <Top>16.87286cm</Top>
         <Left>0.41604cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.07128cm</Width>
+        <Width>6.64795cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -1562,7 +1591,7 @@
         <Top>18.84925cm</Top>
         <Left>0.41604cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10785cm</Width>
+        <Width>6.64795cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -1848,7 +1877,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>2.74725cm</Size>
+                    <Size>2.32392cm</Size>
                     <CellContents>
                       <Textbox Name="Concepto5">
                         <CanGrow>true</CanGrow>
@@ -1921,7 +1950,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>2.74725cm</Size>
+                    <Size>2.32392cm</Size>
                     <CellContents>
                       <Textbox Name="Textbox22">
                         <CanGrow>true</CanGrow>
@@ -1961,10 +1990,19 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Detalle</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Rubro.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>VENTAS</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>19.55508cm</Top>
         <Left>0.41605cm</Left>
         <Height>1.8cm</Height>
-        <Width>7.07127cm</Width>
+        <Width>6.64794cm</Width>
         <ZIndex>17</ZIndex>
         <Style>
           <Border>
@@ -2122,7 +2160,7 @@
         <Top>3.4196cm</Top>
         <Left>2.24709cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.27682cm</Width>
+        <Width>4.8169cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -2157,7 +2195,7 @@
         <Top>4.09016cm</Top>
         <Left>2.24709cm</Left>
         <Height>0.56472cm</Height>
-        <Width>5.27682cm</Width>
+        <Width>4.8169cm</Width>
         <ZIndex>23</ZIndex>
         <Style>
           <Border>
@@ -2192,7 +2230,7 @@
         <Top>4.69016cm</Top>
         <Left>2.24709cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.27682cm</Width>
+        <Width>4.8169cm</Width>
         <ZIndex>24</ZIndex>
         <Style>
           <Border>
@@ -2227,7 +2265,7 @@
         <Top>5.32543cm</Top>
         <Left>2.27355cm</Left>
         <Height>0.52944cm</Height>
-        <Width>5.25036cm</Width>
+        <Width>4.79044cm</Width>
         <ZIndex>25</ZIndex>
         <Style>
           <Border>
@@ -2262,7 +2300,7 @@
         <Top>5.89549cm</Top>
         <Left>2.24709cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.27682cm</Width>
+        <Width>4.8169cm</Width>
         <ZIndex>26</ZIndex>
         <Style>
           <Border>
@@ -2361,7 +2399,7 @@
         <Top>6.49549cm</Top>
         <Left>2.22256cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.30135cm</Width>
+        <Width>4.84143cm</Width>
         <ZIndex>29</ZIndex>
         <Style>
           <Border>
@@ -2396,7 +2434,7 @@
         <Top>7.13077cm</Top>
         <Left>2.22256cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.30135cm</Width>
+        <Width>4.84143cm</Width>
         <ZIndex>30</ZIndex>
         <Style>
           <Border>
@@ -2430,7 +2468,7 @@
         <Top>25.14162cm</Top>
         <Left>0.41608cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.10783cm</Width>
+        <Width>6.6845cm</Width>
         <ZIndex>31</ZIndex>
         <Style>
           <Border>
@@ -2469,7 +2507,7 @@
         <Top>25.74162cm</Top>
         <Left>0.41608cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.07124cm</Width>
+        <Width>6.64791cm</Width>
         <ZIndex>32</ZIndex>
         <Style>
           <Border>
@@ -2503,7 +2541,7 @@
         <Top>26.34162cm</Top>
         <Left>0.41608cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.07124cm</Width>
+        <Width>6.64791cm</Width>
         <ZIndex>33</ZIndex>
         <Style>
           <Border>
@@ -2519,14 +2557,14 @@
     <Height>10.83914in</Height>
     <Style />
   </Body>
-  <Width>3.1379in</Width>
+  <Width>2.97123in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>0.5cm</LeftMargin>
-    <RightMargin>0.5cm</RightMargin>
-    <TopMargin>0.5cm</TopMargin>
-    <BottomMargin>0.5cm</BottomMargin>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

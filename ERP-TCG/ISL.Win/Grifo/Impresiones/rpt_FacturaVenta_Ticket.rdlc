@@ -1453,7 +1453,7 @@
                 <Style>
                   <FontFamily>Calibri</FontFamily>
                   <FontSize>7pt</FontSize>
-                  <Format>f0</Format>
+                  <Format>f1</Format>
                 </Style>
               </TextRun>
             </TextRuns>

@@ -89,7 +89,7 @@ Public Class d_MovimientoDocumento
 
     Public Function Cargar(ByVal o_fila As DataRow) As e_MovimientoDocumento
         Try
-            Dim oeMovimientoDocumento = New e_MovimientoDocumento( _
+            Dim oeMovimientoDocumento = New e_MovimientoDocumento(
                          o_fila("Id").ToString, o_fila("IdTipoDocumento").ToString _
                         , o_fila("NombreDocumento").ToString, o_fila("Serie").ToString _
                         , o_fila("Numero").ToString, o_fila("FechaEmision").ToString _
@@ -108,8 +108,8 @@ Public Class d_MovimientoDocumento
                         , o_fila("AbrevTipoDoc").ToString, o_fila("IndServicioMaterial").ToString _
                         , o_fila("PercepcionPorc"), o_fila("Percepcion") _
                         , o_fila("DetraccionPorc"), o_fila("Detraccion") _
-                        , o_fila("Glosa").ToString, o_fila("ImpRenta"), _
-                        o_fila("Operador"), o_fila("Mes"), o_fila("CobraCajaChica"), o_fila("IdMotivoDocumento"), _
+                        , o_fila("Glosa").ToString, o_fila("ImpRenta"),
+                        o_fila("Operador"), o_fila("Mes"), o_fila("CobraCajaChica"), o_fila("IdMotivoDocumento"),
                         o_fila("IndDetraccion"))
 
             oeMovimientoDocumento.IndElectronico = o_fila("IndElectronico").ToString

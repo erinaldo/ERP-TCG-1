@@ -92,19 +92,19 @@ Public Class frm_CierreTurno_Imprimir
         End Try
     End Sub
 
-    Private Function Obtener_RutaReporte() As String
-        Dim Ruta As String = ""
-        'Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
-        'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
-        Dim Raiz As String = Path.Combine(Application.StartupPath, "Grifo") & "\Impresiones\"
-        Select Case IdReporte
-            Case "1" 'Factura
-                Ruta = Raiz & "rpt_CierreParcial.rdlc"
-            Case "2" 'Factura
-                Ruta = Raiz & "rpt_CierreCompleto.rdlc"
-            Case Else
-                Ruta = ""
-        End Select
-        Return Ruta
-    End Function
+    'Private Function Obtener_RutaReporte() As String
+    '    Dim Ruta As String = ""
+    '    'Dim Raiz As String = "...\Debug\Grifo\Impresiones\"
+    '    'C:\Users\CESS\Source\Repos\ERP-TCG\ERP-TCG\ISL.Win\Grifo\Impresiones\rpt_DocumentoCtble_A4.rdlc
+    '    Dim Raiz As String = Path.Combine(Application.StartupPath, "Grifo") & "\Impresiones\"
+    '    Select Case IdReporte
+    '        Case "1" 'Factura
+    '            Ruta = Raiz & "rpt_CierreParcial.rdlc"
+    '        Case "2" 'Factura
+    '            Ruta = Raiz & "rpt_CierreCompleto.rdlc"
+    '        Case Else
+    '            Ruta = ""
+    '    End Select
+    '    Return Ruta
+    'End Function
 End Class
