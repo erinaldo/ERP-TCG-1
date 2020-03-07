@@ -107,13 +107,13 @@ Public Class frm_AnticipoClienteProveedor
             Listar(Activo)
             If gridAnticipos.Rows.Count > 0 Then
                 If TipoAnticipo = "Cliente" Then
-                    ControlBoton(1, 0, 1, 0, 0, 0, 0, 1, 1)
+                    ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1) '@0001
                 Else
                     ControlBoton(1, 1, 1, 0, 0, 1, 0, 1, 1)
                 End If
             Else
                 If TipoAnticipo = "Cliente" Then
-                    ControlBoton(1, 0, 0, 0, 0, 0, 0, 0, 1)
+                    ControlBoton(1, 1, 0, 0, 0, 0, 0, 0, 1) '@0001
                 Else
                     ControlBoton(1, 1, 0, 0, 0, 0, 0, 0, 1)
                 End If
@@ -191,7 +191,7 @@ Public Class frm_AnticipoClienteProveedor
                     End If
                 End If
                 If TipoAnticipo = "Cliente" Then
-                    ControlBoton(0, 0, 0, 0, 1, 0, 0, 0, 0)
+                    ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0) '@0001
                 Else
                     ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
                 End If
@@ -902,13 +902,13 @@ Public Class frm_AnticipoClienteProveedor
         getInstancia()
         If tcAnticipos.Tabs(0).Selected = True Then
             If TipoAnticipo = "Cliente" Then
-                ControlBoton(1, 0, 0, 0, 0, 0, 0, 1, 1)
+                ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1) '@0001
             Else
                 ControlBoton(1, 1, 0, 0, 0, 0, 0, 1, 1)
             End If
         ElseIf tcAnticipos.Tabs(1).Selected = True Then
             If TipoAnticipo = "Cliente" Then
-                ControlBoton(0, 0, 0, 0, 1, 0, 0, 0, 0)
+                ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0) '@0001
             Else
                 ControlBoton(0, 0, 0, 1, 1, 0, 0, 0, 0)
             End If
