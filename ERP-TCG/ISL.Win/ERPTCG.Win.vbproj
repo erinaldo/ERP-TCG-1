@@ -6456,12 +6456,8 @@
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Comercial.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Grifo\Impresiones\rpt_CierreCompleto.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Grifo\Impresiones\rpt_CierreParcial.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_CierreCompleto.rdlc" />
+    <EmbeddedResource Include="Grifo\Impresiones\rpt_CierreParcial.rdlc" />
     <Content Include="Grifo\Impresiones\rpt_DocumentoCtble_A4_Transporte1.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -6785,9 +6781,7 @@
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_CobroPagoAnticipo.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_RegistroVentas.rdlc" />
     <EmbeddedResource Include="Reportes\Contabilidad\rpt_ValesConsumoCombustible.rdlc" />
-    <Content Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Reportes\Contabilidad\TransferenciaBancaria.rdlc" />
     <EmbeddedResource Include="Reportes\frm_FacturaBoletaElectronico.resx">
       <DependentUpon>frm_FacturaBoletaElectronico.vb</DependentUpon>
     </EmbeddedResource>
