@@ -242,11 +242,14 @@ Public Class d_AsientoMovimiento
                         oeMovDoc = .MovimientoDocumento
                         oeMovDoc.IdAsientoMovimiento = stResultado(0)
                         oeMovDoc.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
-                        oeMovDoc.CuentaxCyP.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
+                        If Not oeMovDoc.CuentaxCyP Is Nothing Then '@0001
+                            oeMovDoc.CuentaxCyP.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
+                        End If '@0001
                         If .MovimientoDocumento.TipoOperacion = "E" Then
                             odMovDoc.Eliminar(oeMovDoc)
                         Else
                             If Not oeMovDoc.CuentaxCyP Is Nothing Then
+                                oeMovDoc.CuentaxCyP.PrefijoID = oeAsientoMovimiento.PrefijoID '@0001
                                 oeMovDoc.CuentaxCyP._IdAsientoMovimiento = stResultado(0) 'PARA CASO DE COBROS Y PAGOS
                             End If
                             odMovDoc.Guardar(oeMovDoc, Nothing, False)
