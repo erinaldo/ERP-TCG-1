@@ -126,8 +126,22 @@ Public Class frm_CierreTurno
         End Try
     End Sub
 
+    Public Function Validar_Eliminacion(Estado As String) As Boolean
+        Dim ProcedeEliminacion As Boolean = False
+        If Estado = "ABIERTO" Then
+            ProcedeEliminacion = True
+        Else
+            ProcedeEliminacion = False
+            If gUsuarioSGI.Login = "ADMINERP" Then
+                ProcedeEliminacion = True
+            End If
+        End If
+        Return ProcedeEliminacion
+    End Function
+
     Public Overrides Sub Eliminar()
         Try
+
             'Throw New Exception("No es posible eliminar Ordenes de Venta, solo se permite anular")
             With griOrdenComercial
                 TurnoActivo = New e_CierreTurno
@@ -135,7 +149,7 @@ Public Class frm_CierreTurno
                     TurnoActivo.TipoOperacion = ""
                     TurnoActivo.Id = .ActiveRow.Cells("Id").Value
                     TurnoActivo = dTurno.Obtener(TurnoActivo)
-                    If TurnoActivo.IdEstado = "ABIERTO" And gUsuarioSGI.Login = "ADMINERP" Then 'Apertura
+                    If Validar_Eliminacion(TurnoActivo.IdEstado) Then
                         If MessageBox.Show("Esta seguro de eliminar el turno: " & .ActiveRow.Cells("Id").Value.ToString & " ?",
                                  "Mensaje del Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             TurnoActivo.FechaModifica = ObtenerFechaServidor()
@@ -145,7 +159,7 @@ Public Class frm_CierreTurno
                             Consultar(True)
                         End If
                     Else
-                        Throw New Exception("Solo Puede Eliminar Ordenes Terminadas")
+                        Throw New Exception("Solo se puede eliminar CIERRES ABIERTOS")
                     End If
                 End If
             End With
