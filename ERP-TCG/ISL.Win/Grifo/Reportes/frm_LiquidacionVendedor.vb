@@ -44,8 +44,33 @@ Public Class frm_LiquidacionVendedor
         instancia = Nothing
     End Sub
 
+    Private Sub btn_Cargar_LiquidacionVendedor_Click(sender As Object, e As EventArgs) Handles btn_Cargar_LiquidacionVendedor.Click
+        Try
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
 #End Region
 
+    Private Sub lr_Cargar_Combos()
+        Try
+            Dim lTurno As New l_CierreTurno, Lista As New List(Of e_CierreTurno)
+            Lista = lTurno.Listar(New e_CierreTurno With {.TipoOperacion = "CMB", .Fecha = dtp_FechaInicio.Value.Date})
+            LlenarComboMaestro(cmb_Turno, Lista, 0)
+            cmb_Turno.DisplayMember = "Turno"
+            cmb_Turno.ValueMember = "Id"
+            With cmb_Turno.DisplayLayout.Bands(0)
+                For Each Columna In .Columns
+                    Columna.Hidden = True
+                Next
+                .Columns("Nombre").Hidden = False : .Columns("Nombre").Width = 150
+            End With
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
     Private Sub btn_Consultar_Click(sender As Object, e As EventArgs)
         Try
             Cargar_Ventas()
@@ -62,7 +87,7 @@ Public Class frm_LiquidacionVendedor
             Reporte.ProcedimientoAlmacenado = "STD.RPT_LiquidacionVendedor"
             Reporte.TipoConsulta = "VEN"
             Reporte.FechaInicial = dtp_FechaInicio.Value.Date
-            Reporte.FechaFinal = dtp_FechaFin.Value.Date
+            Reporte.FechaFinal = dtp_FechaFinal.Value.Date
             Reporte.Id = IdTurno
             Reporte.Filtro1 = ""
             Reporte.Filtro2 = ""
@@ -79,7 +104,7 @@ Public Class frm_LiquidacionVendedor
             Reporte.ProcedimientoAlmacenado = "STD.RPT_LiquidacionVendedor"
             Reporte.TipoConsulta = "RES"
             Reporte.FechaInicial = dtp_FechaInicio.Value.Date
-            Reporte.FechaFinal = dtp_FechaFin.Value.Date
+            Reporte.FechaFinal = dtp_FechaFinal.Value.Date
             Reporte.Id = IdTurno
             Reporte.Filtro1 = ""
             Reporte.Filtro2 = ""
@@ -96,7 +121,7 @@ Public Class frm_LiquidacionVendedor
             Reporte.ProcedimientoAlmacenado = "STD.RPT_LiquidacionVendedor"
             Reporte.TipoConsulta = "DEP"
             Reporte.FechaInicial = dtp_FechaInicio.Value.Date
-            Reporte.FechaFinal = dtp_FechaFin.Value.Date
+            Reporte.FechaFinal = dtp_FechaFinal.Value.Date
             Reporte.Id = IdTurno
             Reporte.Filtro1 = ""
             Reporte.Filtro2 = ""
