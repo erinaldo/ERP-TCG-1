@@ -1478,7 +1478,7 @@ Public Class frm_Operacion
 
         If Not String.IsNullOrEmpty(CalFleteUnitario.Value) AndAlso IsNumeric(CalFleteUnitario.Value) AndAlso CalFleteUnitario.Value >= 0.0 Then
             If Not CalFleteUnitarioIGV.Focused Then
-                CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.000")
+                CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.0000")
                 FleteDetalle()
                 txtAdelantoFlete.Value = 0
             End If
@@ -1492,7 +1492,7 @@ Public Class frm_Operacion
     End Sub
     Private Sub CalFleteUnitario_KeyDown(sender As Object, e As KeyEventArgs) Handles CalFleteUnitario.KeyDown
         If Not String.IsNullOrEmpty(CalFleteUnitario.Value) AndAlso IsNumeric(CalFleteUnitario.Value) AndAlso CalFleteUnitario.Value >= 0.0 Then
-            CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.000")
+            CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.0000")
             FleteDetalle()
         Else
             CalFleteUnitario.Text = 0.0
@@ -1501,7 +1501,7 @@ Public Class frm_Operacion
 
     Private Sub CalFleteUnitario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CalFleteUnitario.KeyPress
         If Not String.IsNullOrEmpty(CalFleteUnitario.Value) AndAlso IsNumeric(CalFleteUnitario.Value) AndAlso CalFleteUnitario.Value >= 0.0 Then
-            CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.000")
+            CalFleteUnitarioIGV.Value = (CDbl(CalFleteUnitario.Value) + CDbl(CalFleteUnitario.Value) * ValorIgv).ToString("###,##0.0000")
             FleteDetalle()
         Else
             CalFleteUnitario.Text = 0.0
@@ -2794,7 +2794,7 @@ Public Class frm_Operacion
 
     Private Sub CalFleteUnitarioIGV_Enter_1(sender As Object, e As EventArgs) Handles CalFleteUnitarioIGV.Enter
         If Not String.IsNullOrEmpty(CalFleteUnitarioIGV.Value) AndAlso IsNumeric(CalFleteUnitarioIGV.Value) AndAlso CalFleteUnitarioIGV.Value >= 0.0 Then
-            CalFleteUnitario.Value = (CDbl(CalFleteUnitarioIGV.Value.Trim) / (1 + ValorIgv)).ToString("###,##0.000")
+            CalFleteUnitario.Value = (CDbl(CalFleteUnitarioIGV.Value.Trim) / (1 + ValorIgv)).ToString("###,##0.0000")
             FleteDetalle()
         Else
             CalFleteUnitarioIGV.Text = 0.0
@@ -2804,7 +2804,7 @@ Public Class frm_Operacion
     Private Sub CalFleteUnitarioIGV_ValueChanged(sender As Object, e As EventArgs) Handles CalFleteUnitarioIGV.ValueChanged
         If Not String.IsNullOrEmpty(CalFleteUnitarioIGV.Value) AndAlso IsNumeric(CalFleteUnitarioIGV.Value) AndAlso CalFleteUnitarioIGV.Value >= 0.0 Then
             If CalFleteUnitarioIGV.Focused Then
-                CalFleteUnitario.Value = (CDbl(CalFleteUnitarioIGV.Value.Trim) / (1 + ValorIgv)).ToString("###,##0.000")
+                CalFleteUnitario.Value = (CDbl(CalFleteUnitarioIGV.Value.Trim) / (1 + ValorIgv)).ToString("###,##0.0000")
                 FleteDetalle()
             End If
         Else
@@ -7370,7 +7370,7 @@ Public Class frm_Operacion
                 cadena += "<tr style='width: auto;' align='left' valign='top'>"
                 cadena += estiloLetraDetalleSCCenter & CStr(obj.IndFecha) & "</font></td>" & estiloLetraDetalleSC & CStr(obj.Fecha) & "</font></td>" & estiloLetraDetalleSC & CStr(obj.Codigo) & "</font></td>" & estiloLetraDetalleSC & obj.Origen & "</font></td>" &
                     estiloLetraDetalleSC & obj.Destino & "</font></td>" & estiloLetraDetalleSC & obj.Tracto & "</font></td>" & estiloLetraDetalleSC & obj.Carreta & "</font></td>" & estiloLetraDetalleSC & obj.Cliente & "</font></td>" &
-              estiloLetraDetalleSC & obj.Piloto & "</font></td>" & estiloLetraDetalleSC & obj.Copiloto & "</font></td>" & estiloLetraDetalleSCRight & obj.FleteUnitario.ToString("###,##0.000") & "</font></td>" & estiloLetraDetalleSCRight & obj.Cantidad.ToString("###,##0.000") & "</font></td>" & estiloLetraDetalleSCRight & obj.Subtotal.ToString("###,##0.000") & "</font></td>" &
+              estiloLetraDetalleSC & obj.Piloto & "</font></td>" & estiloLetraDetalleSC & obj.Copiloto & "</font></td>" & estiloLetraDetalleSCRight & obj.FleteUnitario.ToString("###,##0.0000") & "</font></td>" & estiloLetraDetalleSCRight & obj.Cantidad.ToString("###,##0.0000") & "</font></td>" & estiloLetraDetalleSCRight & obj.Subtotal.ToString("###,##0.0000") & "</font></td>" &
               estiloLetraDetalleSC & obj.Flota & estiloLetraDetalleSC & obj.TipoVehiculo
                 cadena += "</tr>"
             Next

@@ -3360,7 +3360,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl3.Controls.Add(Me.griGuiaRemitente)
         Me.UltraTabPageControl3.Controls.Add(Me.UltraGroupBox5)
-        Me.UltraTabPageControl3.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl3.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl3.Name = "UltraTabPageControl3"
         Me.UltraTabPageControl3.Size = New System.Drawing.Size(1224, 233)
         '
@@ -3415,13 +3415,13 @@ Partial Class frm_Guias
         UltraGridColumn550.CellAppearance = Appearance87
         UltraGridColumn550.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn550.Header.VisiblePosition = 10
-        UltraGridColumn550.MaskInput = "{LOC}nnnnnnn.nn"
+        UltraGridColumn550.MaskInput = "{LOC}nnnnnnn.nnn"
         UltraGridColumn550.Width = 50
         Appearance88.TextHAlignAsString = "Right"
         UltraGridColumn551.CellAppearance = Appearance88
         UltraGridColumn551.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn551.Header.VisiblePosition = 11
-        UltraGridColumn551.MaskInput = "{LOC}nnnnnnn.nn"
+        UltraGridColumn551.MaskInput = "{LOC}nnnnnnn.nnn"
         UltraGridColumn551.Width = 50
         UltraGridBand5.Columns.AddRange(New Object() {UltraGridColumn315, UltraGridColumn316, UltraGridColumn317, UltraGridColumn318, UltraGridColumn319, UltraGridColumn320, UltraGridColumn321, UltraGridColumn322, UltraGridColumn323, UltraGridColumn547, UltraGridColumn549, UltraGridColumn550, UltraGridColumn551})
         Me.griGuiaRemitente.DisplayLayout.BandsSerializer.Add(UltraGridBand5)
@@ -3789,7 +3789,7 @@ Partial Class frm_Guias
         '
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox10)
         Me.UltraTabPageControl11.Controls.Add(Me.UltraGroupBox12)
-        Me.UltraTabPageControl11.Location = New System.Drawing.Point(2, 21)
+        Me.UltraTabPageControl11.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl11.Name = "UltraTabPageControl11"
         Me.UltraTabPageControl11.Size = New System.Drawing.Size(1224, 233)
         '
@@ -3855,13 +3855,13 @@ Partial Class frm_Guias
         UltraGridColumn553.CellAppearance = Appearance112
         UltraGridColumn553.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn553.Header.VisiblePosition = 10
-        UltraGridColumn553.MaskInput = "{LOC}nnnnnnn.nn"
+        UltraGridColumn553.MaskInput = "{LOC}nnnnnnn.nnn"
         UltraGridColumn553.Width = 50
         Appearance113.TextHAlignAsString = "Right"
         UltraGridColumn554.CellAppearance = Appearance113
         UltraGridColumn554.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn554.Header.VisiblePosition = 11
-        UltraGridColumn554.MaskInput = "{LOC}nnnnnnn.nn"
+        UltraGridColumn554.MaskInput = "{LOC}nnnnnnn.nnn"
         UltraGridColumn554.Width = 50
         UltraGridBand7.Columns.AddRange(New Object() {UltraGridColumn333, UltraGridColumn334, UltraGridColumn335, UltraGridColumn336, UltraGridColumn337, UltraGridColumn338, UltraGridColumn339, UltraGridColumn340, UltraGridColumn341, UltraGridColumn548, UltraGridColumn552, UltraGridColumn553, UltraGridColumn554})
         Me.griGuiaRemitenteViaje.DisplayLayout.BandsSerializer.Add(UltraGridBand7)
@@ -4015,7 +4015,7 @@ Partial Class frm_Guias
         UltraGridColumn370.CellAppearance = Appearance124
         UltraGridColumn370.CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.EditAndSelectText
         UltraGridColumn370.Header.VisiblePosition = 28
-        UltraGridColumn370.MaskInput = "{LOC}nnnn.nn"
+        UltraGridColumn370.MaskInput = "{LOC}nnnn.nnn"
         UltraGridColumn370.Style = Infragistics.Win.UltraWinGrid.ColumnStyle.[Double]
         UltraGridColumn370.Width = 68
         UltraGridColumn371.Header.Caption = "Tercero"
