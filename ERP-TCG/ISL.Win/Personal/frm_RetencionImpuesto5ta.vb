@@ -1798,7 +1798,7 @@ Public Class frm_RetencionImpuesto5ta
             Const MARGEN_INFERIOR As Single = 40
 
             Dim imagepath As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("RutaImagen") + "\"
-            Dim RucISL As String = "20479729141"
+            Dim RucISL As String = "20480099720"
             Dim IdPlanilla As String = griRetencionImpuesto.ActiveRow.Cells("IdPlanilla").Value
             'obtener periodo
             'verificar que este en el mes 12
@@ -1897,7 +1897,7 @@ Public Class frm_RetencionImpuesto5ta
                 ct.AddElement(parrafo)
                 ct.AddElement(New Paragraph(" "))
 
-                parrafo = New Paragraph("INDUAMERICA SERVICIOS LOGISTICOS SAC. con RUC N° 20479729141, domiciliado en Carretera Panamericana Norte KM 775 Lambayeque, debidamente representado por Sixto Perales Huancaruna DNI N° 16722570.")
+                parrafo = New Paragraph("INVERSIONES Y SERVICIOS ALEX & LALITO E.I.R.L. con RUC N° 20480099720, CAL.LORA Y LORA NRO. 2450 P.J. SANTA ANA (GRIFO REPSOL - OFICINA SEGUNDO PISO) LAMBAYEQUE - CHICLAYO - JOSE LEONARDO ORTIZ.")
                 parrafo.Alignment = Element.ALIGN_JUSTIFIED
                 parrafo.Font = Font
                 ct.AddElement(parrafo)

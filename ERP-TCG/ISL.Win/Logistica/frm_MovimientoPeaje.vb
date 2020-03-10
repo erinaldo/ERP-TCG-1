@@ -22,8 +22,8 @@ Public Class frm_MovimientoPeaje
 
 #Region "Declaración de variables"
 
-    Private mstrUsuCovisol As String = "induamericasl"
-    Private mstrPassCovisol As String = "20479729141"
+    Private mstrUsuCovisol As String = "slalito"
+    Private mstrPassCovisol As String = "20480099720"
 
     Private oeMovimientoDocumento As New e_MovimientoDocumento
     Private ListaDocumentos As New List(Of e_MovimientoDocumento)

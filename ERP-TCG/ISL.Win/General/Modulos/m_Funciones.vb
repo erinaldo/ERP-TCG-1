@@ -678,7 +678,7 @@ Module m_Funciones
     'Public Const ISL_IdEmpresa As String = "" '@00001 "1CH000006026"
     'Public Const ERP_Nombre As String = "ERP"
     'Public Const ISL_Nombre As String = "MI EMPRESA S.A.C." '@00001
-    'Public Const ISL_RUC As String = "20479729141" '@00001
+    'Public Const ISL_RUC As String = "20480099720" '@00001
     'Public Const ISL_DireccionEmpresa1 As String = "DIRECCION DE EMPRESA"
     'Public ISL_RutaImpresion As String = "\\localhost\Fotos/eImpresion\"
     Public ISL_RutaImpresion As String = Path.Combine(Application.StartupPath, "Fotos") & "\eImpresion\"

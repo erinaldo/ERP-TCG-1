@@ -2243,7 +2243,7 @@ Public Class frm_Gratificacion
             Const MARGEN_SUPERIOR As Single = 20
             Const MARGEN_INFERIOR As Single = 20
 
-            ''Dim RucISL As String = "20479729141"
+            ''Dim RucISL As String = "20480099720"
             ''Dim IdPlanilla As String = griPlanilla.ActiveRow.Cells("Id").Value
             ''Dim periodo As String = oeBonoCompG.ActiveRow.Cells("IdPeriodo").Value
             ''Dim AnioMes As String = griPlanilla.ActiveRow.Cells("Periodo").Value
@@ -2271,7 +2271,7 @@ Public Class frm_Gratificacion
             'oDoc.Open()
             'oDoc.NewPage()
 
-            
+
 
 
             'cb = pdfw.DirectContent
@@ -2291,7 +2291,7 @@ Public Class frm_Gratificacion
             ''arrColumnas(1).MargenIzquierdo = (PageSize.A4.Height / 2) + 30
             ''arrColumnas(1).MargenDerecho = PageSize.A4.Height - 60
 
-            
+
             For Each item In oeBonoCompG.leDetalle
                 ct = New ColumnText(cb)
                 GenerarElementoPdfCTS(ct, arrColumnas, oeBonoCompG, item, oePeriodoAux, oeMoneda)
