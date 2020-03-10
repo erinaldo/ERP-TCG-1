@@ -567,7 +567,8 @@ Public Class frm_FacturarCarga
         If decSubTotal.Value > 0 Then
             oeMovDocumento.SubTotal = decSubTotal.Value
             If Operacion = "Nuevo" Then
-                decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 4)
+                'decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 4)'
+                decImpuesto.Value = Math.Round(Math.Round(decSubTotal.Value, 2) * oeIGV.Porcentaje, 2)
                 decTotal.Value = Math.Round(decSubTotal.Value, 2) + Math.Round(decImpuesto.Value, 2)
                 Calcular_Montos()
             End If
@@ -1559,8 +1560,8 @@ Public Class frm_FacturarCarga
                 VolverAEstadoAnterior(griDetalleDoc.ActiveRow.Cells("IdOperacionDetalle").Value)
                 e.Cancel = False
                 If ficMaterial.SelectedTab.Index = 0 Then
-                    decSubTotal.Value = leDetalleDocOD.Sum(Function(item) item.Valor)
-                    decImpuesto.Value = decSubTotal.Value * oeIGV.Porcentaje
+                    decSubTotal.Value = Math.Round(leDetalleDocOD.Sum(Function(item) item.Valor), 2)
+                    decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 2)
                     decTotal.Value = decSubTotal.Value + decImpuesto.Value
                 End If
                 If Not verDetraccionCero.Checked Then Calcular_Montos()
@@ -1700,8 +1701,8 @@ Public Class frm_FacturarCarga
                     griDetalleDoc.DataBind()
                     '  griDetalleDoc.UpdateData()
                     If ficMaterial.SelectedTab.Index = 0 Then
-                        decSubTotal.Value = leDetalleDocOD.Sum(Function(item) item.Valor)
-                        decImpuesto.Value = decSubTotal.Value * oeIGV.Porcentaje
+                        decSubTotal.Value = Math.Round(leDetalleDocOD.Sum(Function(item) item.Valor), 2)
+                        decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 2)
                         'decTotal.Value = Math.Round(decSubTotal.Value, 2) + Math.Round(decImpuesto.Value, 2)
                         decTotal.Value = decSubTotal.Value + decImpuesto.Value
                     End If
@@ -2398,8 +2399,8 @@ Public Class frm_FacturarCarga
             If Cargar Then griDetalleDoc.DataBind()
 
             If ficMaterial.SelectedTab.Index = 0 Then
-                decSubTotal.Value = leDetalleDocOD.Sum(Function(item) item.Valor)
-                decImpuesto.Value = CDbl(decSubTotal.Value) * oeIGV.Porcentaje
+                decSubTotal.Value = Math.Round(leDetalleDocOD.Sum(Function(item) item.Valor), 2)
+                decImpuesto.Value = Math.Round(CDbl(decSubTotal.Value) * oeIGV.Porcentaje, 2)
                 'decTotal.Value = Math.Round(decSubTotal.Value, 2) + Math.Round(decImpuesto.Value, 2)
                 decTotal.Value = decSubTotal.Value + decImpuesto.Value
             End If
@@ -3574,7 +3575,7 @@ Public Class frm_FacturarCarga
                 decImporteDetraer.Value = decTotal.Value
             End If
             'no value decdetarer
-            decDetraccion.Value = CDbl(decImporteDetraer.Value) * CDbl(DecDetraer.Value) / 100
+            decDetraccion.Value = Math.Round(CDbl(decImporteDetraer.Value) * CDbl(DecDetraer.Value) / 100, 2)
             Dim _ximp As Double = Math.Round(decTotal.Value, 2)
             decNetoPagar.Value = Math.Round(_ximp - decDetraccion.Value, 2)
         Catch ex As Exception
@@ -3962,8 +3963,8 @@ Public Class frm_FacturarCarga
                         oeDetalleDocOpeDet = New e_DetalleDoc_OperacionDet
                     End With
                     If ficMaterial.SelectedTab.Index = 0 Then
-                        decSubTotal.Value = leDetalleDocOD.Sum(Function(item) item.Valor)
-                        decImpuesto.Value = decSubTotal.Value * oeIGV.Porcentaje
+                        decSubTotal.Value = Math.Round(leDetalleDocOD.Sum(Function(item) item.Valor), 2)
+                        decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 2)
                         'decTotal.Value = Math.Round(decSubTotal.Value, 2) + Math.Round(decImpuesto.Value, 2)
                         decTotal.Value = decSubTotal.Value + decImpuesto.Value
                     End If
@@ -4530,8 +4531,8 @@ Public Class frm_FacturarCarga
     End Sub
 
     Private Sub CalcularSubtotalesTotalesMaterial()
-        decSubTotal.Value = leDetalleDocOD.Sum(Function(item) item.Valor) - decAnticipo.Value
-        decImpuesto.Value = decSubTotal.Value * oeIGV.Porcentaje
+        decSubTotal.Value = Math.Round(leDetalleDocOD.Sum(Function(item) item.Valor) - decAnticipo.Value, 2)
+        decImpuesto.Value = Math.Round(decSubTotal.Value * oeIGV.Porcentaje, 2)
         'decTotal.Value = Math.Round(decSubTotal.Value, 2) + Math.Round(decImpuesto.Value, 2)
         decTotal.Value = decSubTotal.Value + decImpuesto.Value
         If decTotal.Value <= 0.0 Then
