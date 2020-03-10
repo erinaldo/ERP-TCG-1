@@ -11,19 +11,12 @@ Public Class l_ComprobantePagoElectronico
 
     '' CPE
     Public gs_RutaDocumentosEle As String = "\\LADERA\ComprobanteElectronico\DocumentosElectronicos\"
-    'Dim RutaArchivos As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocElectronico") & "\Facturacion\"
-    '\\LADERA\ComprobanteElectronico\xml\
-    'D:\Sistema\xml
-    '\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx
-    'D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx
-    'D:\Sistema\xml\ComprobanteElectronico\Certificado\
     Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
-    'Public gstrRutaDocumentosEle20 As String = "\\10.10.1.8\Comprobantes\2-0\Documentos MTN\"
     Public gs_RutaDocumentosCDR20 As String = "\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
-    Public gdecIGV As Double = 0.18
     Public gstrRutaFirma As String = "\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
-    Public gstrDepartamentoEmpresa As String = "LAMBAYEQUE"
 
+    Public gdecIGV As Double = 0.18
+    Public gstrDepartamentoEmpresa As String = "LAMBAYEQUE"
     Public gstrUbigeoEmpresa As String = "130101"
     Public gstrProvinciaEmpresa As String = "CHICLAYO"
     Public gstrDistritoEmpresa As String = "CHICLAYO"
