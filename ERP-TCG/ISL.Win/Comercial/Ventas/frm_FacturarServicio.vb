@@ -1480,9 +1480,9 @@ Public Class frm_FacturarServicio
                 totalIgv += oeDetalleDoc.Igv
             Next
             totalConIng = totalSinIgv + totalIgv
-            txtSubTotal.Value = Math.Round(totalSinIgv - decAnticipo.Value, 4)
-            txtIGV.Value = Math.Round((txtSubTotal.Value) * oeIGV.Porcentaje, 2)
-            txtTotal.Value = Math.Round((txtSubTotal.Value) + txtIGV.Value, 2)
+            txtSubTotal.Value = Math.Round(totalSinIgv - decAnticipo.Value, 2)
+            txtIGV.Value = Math.Round(txtSubTotal.Value * oeIGV.Porcentaje, 2)
+            txtTotal.Value = txtSubTotal.Value + txtIGV.Value
             Calcular_Detraccion()
             If txtTotal.Value <= 0.0 Then
                 DecMontoDetraccion.Value = 0.0

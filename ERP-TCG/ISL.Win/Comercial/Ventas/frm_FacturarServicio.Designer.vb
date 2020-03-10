@@ -917,9 +917,9 @@ Partial Class frm_FacturarServicio
         '
         Me.UltraTabPageControl1.Controls.Add(Me.agrOrdenCompra)
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1220, 686)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1220, 710)
         '
         'agrOrdenCompra
         '
@@ -930,7 +930,7 @@ Partial Class frm_FacturarServicio
         Me.agrOrdenCompra.ForeColor = System.Drawing.Color.MidnightBlue
         Me.agrOrdenCompra.Location = New System.Drawing.Point(0, 123)
         Me.agrOrdenCompra.Name = "agrOrdenCompra"
-        Me.agrOrdenCompra.Size = New System.Drawing.Size(1220, 563)
+        Me.agrOrdenCompra.Size = New System.Drawing.Size(1220, 587)
         Me.agrOrdenCompra.TabIndex = 1
         Me.agrOrdenCompra.Text = "Listado de Documentos por Servicio"
         Me.agrOrdenCompra.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -1057,7 +1057,7 @@ Partial Class frm_FacturarServicio
         Me.griListaFacturaCompra.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griListaFacturaCompra.Location = New System.Drawing.Point(3, 17)
         Me.griListaFacturaCompra.Name = "griListaFacturaCompra"
-        Me.griListaFacturaCompra.Size = New System.Drawing.Size(1214, 543)
+        Me.griListaFacturaCompra.Size = New System.Drawing.Size(1214, 567)
         Me.griListaFacturaCompra.TabIndex = 0
         '
         'Filtro1
@@ -1378,7 +1378,7 @@ Partial Class frm_FacturarServicio
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Right)
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Top)
         Me.UltraTabPageControl2.Controls.Add(Me._UltraTabPageControl2_Toolbars_Dock_Area_1_Bottom)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1220, 710)
         '
@@ -2853,10 +2853,10 @@ Partial Class frm_FacturarServicio
         Me.ficFacturaCompra.Controls.Add(Me.UltraTabPageControl2)
         Me.ficFacturaCompra.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ficFacturaCompra.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ficFacturaCompra.Location = New System.Drawing.Point(0, 24)
+        Me.ficFacturaCompra.Location = New System.Drawing.Point(0, 0)
         Me.ficFacturaCompra.Name = "ficFacturaCompra"
         Me.ficFacturaCompra.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficFacturaCompra.Size = New System.Drawing.Size(1222, 709)
+        Me.ficFacturaCompra.Size = New System.Drawing.Size(1222, 733)
         Me.ficFacturaCompra.TabIndex = 0
         UltraTab1.Key = "Lista"
         UltraTab1.TabPage = Me.UltraTabPageControl1
@@ -2871,7 +2871,7 @@ Partial Class frm_FacturarServicio
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1220, 686)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1220, 710)
         '
         'odListadoDocumentos
         '
@@ -2897,13 +2897,13 @@ Partial Class frm_FacturarServicio
         Me.MenuContextual2.ForeColor = System.Drawing.Color.Black
         Me.MenuContextual2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiNuevo, Me.tsmiActualizar, Me.tsmiEliminar, Me.tsmiAnular, Me.tsmiEmitir, Me.tsmiDescargarPDF, Me.tsmiDescargarXML})
         Me.MenuContextual2.Name = "MenuContextual1"
-        Me.MenuContextual2.Size = New System.Drawing.Size(181, 180)
+        Me.MenuContextual2.Size = New System.Drawing.Size(149, 158)
         '
         'tsmiNuevo
         '
         Me.tsmiNuevo.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
         Me.tsmiNuevo.Name = "tsmiNuevo"
-        Me.tsmiNuevo.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiNuevo.Size = New System.Drawing.Size(148, 22)
         Me.tsmiNuevo.Text = "Nuevo"
         Me.tsmiNuevo.ToolTipText = "Insertar un nuevo Requerimiento"
         '
@@ -2911,7 +2911,7 @@ Partial Class frm_FacturarServicio
         '
         Me.tsmiActualizar.Image = Global.ISL.Win.My.Resources.Resources.Editar
         Me.tsmiActualizar.Name = "tsmiActualizar"
-        Me.tsmiActualizar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiActualizar.Size = New System.Drawing.Size(148, 22)
         Me.tsmiActualizar.Text = "Actualizar"
         Me.tsmiActualizar.ToolTipText = "Actualizar o modificar el Requerimiento seleccionado"
         '
@@ -2919,20 +2919,20 @@ Partial Class frm_FacturarServicio
         '
         Me.tsmiEliminar.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
         Me.tsmiEliminar.Name = "tsmiEliminar"
-        Me.tsmiEliminar.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiEliminar.Size = New System.Drawing.Size(148, 22)
         Me.tsmiEliminar.Text = "Eliminar"
         Me.tsmiEliminar.ToolTipText = "Eliminar el Requerimiento seleccionado"
         '
         'tsmiAnular
         '
         Me.tsmiAnular.Name = "tsmiAnular"
-        Me.tsmiAnular.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiAnular.Size = New System.Drawing.Size(148, 22)
         Me.tsmiAnular.Text = "Anular"
         '
         'tsmiEmitir
         '
         Me.tsmiEmitir.Name = "tsmiEmitir"
-        Me.tsmiEmitir.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiEmitir.Size = New System.Drawing.Size(148, 22)
         Me.tsmiEmitir.Text = "Emitir"
         '
         'tsmiDescargarPDF
@@ -2940,7 +2940,7 @@ Partial Class frm_FacturarServicio
         Me.tsmiDescargarPDF.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Formato1ToolStripMenuItem, Me.Formato2ToolStripMenuItem, Me.Formato3ToolStripMenuItem})
         Me.tsmiDescargarPDF.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarPDF.Name = "tsmiDescargarPDF"
-        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDescargarPDF.Size = New System.Drawing.Size(148, 22)
         Me.tsmiDescargarPDF.Text = "Ver PDF"
         '
         'Formato1ToolStripMenuItem
@@ -2965,7 +2965,7 @@ Partial Class frm_FacturarServicio
         '
         Me.tsmiDescargarXML.Image = Global.ISL.Win.My.Resources.Resources.Rename
         Me.tsmiDescargarXML.Name = "tsmiDescargarXML"
-        Me.tsmiDescargarXML.Size = New System.Drawing.Size(180, 22)
+        Me.tsmiDescargarXML.Size = New System.Drawing.Size(148, 22)
         Me.tsmiDescargarXML.Text = "Descargar XML"
         '
         'odDetalleDocumento
