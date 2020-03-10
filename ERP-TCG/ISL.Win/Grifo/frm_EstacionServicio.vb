@@ -254,6 +254,7 @@ Public Class frm_EstacionServicio
 
     Private Function fc_Cargar_MovimientoDocumento() As e_MovimientoDocumento
         Try
+            Dim DEC As Integer = 2
             MovimientoDocumento = New e_MovimientoDocumento
 
             With MovimientoDocumento
@@ -272,10 +273,10 @@ Public Class frm_EstacionServicio
                 .FechaVencimiento = dtp_FechaDocumento.Value
                 .NoGravado = 0
                 .IndCompraVenta = 2
-                .SubTotal = Math.Round(nud_SubTotal.Value, 2)
-                .IGV = Math.Round(nud_Impuesto.Value, 2)
-                .Total = Math.Round(nud_Total.Value, 2)
-                .Saldo = .Total
+                .SubTotal = Math.Round(nud_SubTotal.Value, DEC, MidpointRounding.AwayFromZero)
+                .IGV = Math.Round(nud_Impuesto.Value, DEC, MidpointRounding.AwayFromZero)
+                .Total = Math.Round(nud_Total.Value, DEC, MidpointRounding.AwayFromZero)
+                .Saldo = Math.Round(.Total, DEC, MidpointRounding.AwayFromZero)
                 .TipoCambio = TipoCambio
                 .Mac_PC_Local = MacPCLocal()
                 .IndElectronico = fc_Confirmar_DocumentoElectronico(.IdTipoDocumento)
@@ -291,14 +292,14 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IdUnidadMedida = ItemVenta.IdUnidadMedida
                     ItemDocumento.CodigoMaterialServicio = ItemVenta.Codigo
                     ItemDocumento.IdAlmacen = ItemVenta.IdAlmacen
-                    ItemDocumento.Cantidad = ItemVenta.Cantidad
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
-                    ItemDocumento.Precio = ItemVenta.PrecioUnitario
-                    ItemDocumento.Subtotal = Math.Round(IIf(ItemVenta.IndImpuesto, ItemVenta.PrecioTotal / (1 + mdblIGV), ItemVenta.PrecioTotal), 4, MidpointRounding.AwayFromZero)
-                    ItemDocumento.Total = ItemVenta.PrecioTotal
-                    ItemDocumento.Igv = ItemDocumento.Total - ItemDocumento.Subtotal
-                    ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), 4, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Cantidad = Math.Round(ItemVenta.Cantidad, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Precio = Math.Round(ItemVenta.PrecioUnitario, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Subtotal = Math.Round(IIf(ItemVenta.IndImpuesto, ItemVenta.PrecioTotal / (1 + mdblIGV), ItemVenta.PrecioTotal), DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Total = Math.Round(ItemVenta.PrecioTotal, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Igv = Math.Round(ItemDocumento.Total - ItemDocumento.Subtotal, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.PrecioUnitarioSinImp = Math.Round(IIf(ItemVenta.IndImpuesto, (ItemVenta.PrecioUnitario - ItemVenta.Dscto) / (1 + mdblIGV), ItemVenta.PrecioUnitario - ItemVenta.Dscto), DEC, MidpointRounding.AwayFromZero)
                     ItemDocumento.UsuarioCreacion = gUsuarioSGI.Id
                     ItemDocumento.IdVehiculo = cmb_Vehiculo.Text
                     ItemDocumento.GlosaConsolidado = cmb_Vehiculo.Text
@@ -310,9 +311,9 @@ Public Class frm_EstacionServicio
                 .Venta.IdEmpresaSis = gs_IdClienteProveedorSistema.Trim
                 .Venta.IdSucursal = gs_IdSucursal
                 .Venta.PrefijoID = gs_PrefijoIdSucursal
-                .Venta.Gravado = Math.Round(nud_SubTotal.Value, 2)
-                .Venta.IGV = Math.Round(nud_Impuesto.Value, 2)
-                .Venta.TotalVenta = Math.Round(nud_Total.Value, 2)
+                .Venta.Gravado = Math.Round(nud_SubTotal.Value, DEC, MidpointRounding.AwayFromZero)
+                .Venta.IGV = Math.Round(nud_Impuesto.Value, DEC, MidpointRounding.AwayFromZero)
+                .Venta.TotalVenta = Math.Round(nud_Total.Value, DEC, MidpointRounding.AwayFromZero)
                 .Venta.IdTipoPago = IdTipoPago
                 .Venta.Glosa = txt_Glosa.Text
                 .Venta.IdTipoVenta = "1CH000036"
