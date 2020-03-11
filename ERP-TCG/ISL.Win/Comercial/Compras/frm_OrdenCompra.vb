@@ -848,7 +848,7 @@ Public Class frm_OrdenCompra
             'Else
             'objWorkSheet.Cells(2, 7) = "ORDEN DE SERVICIOS"
             'End If
-            'objWorkSheet.Cells(7, 2) = "20479729141"
+            'objWorkSheet.Cells(7, 2) = "20480099720"
             objWorkSheet.Cells(4, 9) = oeOrdenCompra.NroOrden
             objWorkSheet.Cells(10, 15) = Date.Parse(oeOrdenCompra.FechaOrden).Date.Day & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Month & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Year
             'DATOS DE EMPRESA GENERADORA            

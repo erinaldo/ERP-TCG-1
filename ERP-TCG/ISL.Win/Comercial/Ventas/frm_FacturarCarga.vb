@@ -3198,7 +3198,7 @@ Public Class frm_FacturarCarga
         If optCliente.CheckedIndex > -1 Then
             oeDireccion.IdPersonaEmpresa = IIf(oeCliente.TipoPersonaEmpresa = 1, oeCliente.IdPersona, oeCliente.IdEmpresa)
             oeDireccion.TipoPersonaEmpresa = oeCliente.TipoPersonaEmpresa
-            leDir = olDireccion.Listar(oeDireccion).OrderBy(Function(item) item.Nombre).ToList
+            leDir = olDireccion.Listar(oeDireccion).ToList
             Dim _leDirAux = From le In leDir _
                             Select IdDireccion = le.oeDireccion.Id, le.Nombre
             cboDirec.Text = String.Empty

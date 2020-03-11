@@ -3448,7 +3448,7 @@ Public Class frm_RegistroConsumoCombustible
     Private Sub CargarTanqueos()
         Try
             Dim olPecsa As New listarPecsa.ServiciosExternosSoapClient
-            UltraGrid1.DataSource = olPecsa.ListarConsumos("20479729141", "20479729141", "", "", "", fecInicioTanqueo.Value.Date, fecFinTanqueo.Value.Date, "Error")
+            UltraGrid1.DataSource = olPecsa.ListarConsumos("20480099720", "20480099720", "", "", "", fecInicioTanqueo.Value.Date, fecFinTanqueo.Value.Date, "Error")
             CrearListaNoAsociados()
         Catch ex As Exception
             Throw ex

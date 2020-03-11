@@ -718,7 +718,7 @@ Public Class frm_OrdenCompraServicio
             End If
             '----------------------Enviando datos al excel-----------------------------------
             objWorkSheet.Cells(2, 7) = "ORDEN DE SERVICIOS"
-            'objWorkSheet.Cells(7, 2) = "20479729141"
+            'objWorkSheet.Cells(7, 2) = "20480099720"
             objWorkSheet.Cells(4, 9) = oeOrdenCompra.NroOrden
             objWorkSheet.Cells(10, 15) = Date.Parse(oeOrdenCompra.FechaOrden).Date.Day & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Month & "/" & Date.Parse(oeOrdenCompra.FechaOrden).Date.Year
 

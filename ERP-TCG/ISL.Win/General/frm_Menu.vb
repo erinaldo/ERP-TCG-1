@@ -46,8 +46,8 @@ Public Class frm_Menu
 
 #Region "Variables"
 
-    Private Const mstrUsuCovisol As String = "EMP ERP T&L"
-    Private Const mstrPassCovisol As String = "20479729141"
+    Private Const mstrUsuCovisol As String = "slalito"
+    Private Const mstrPassCovisol As String = "20480099720"
     Private mintTarjetasPocoSaldo As Integer = 0
     Private mbolProcesoCancelado As Boolean = False
     Dim HiloIsl As Thread

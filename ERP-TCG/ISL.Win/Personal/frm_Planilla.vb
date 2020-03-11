@@ -1937,7 +1937,7 @@ Public Class frm_Planilla
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
 
-            Dim RucISL As String = "20479729141"
+            Dim RucISL As String = "20480099720"
             Dim IdPlanilla As String = griPlanilla.ActiveRow.Cells("Id").Value
             Dim periodo As String = griPlanilla.ActiveRow.Cells("IdPeriodo").Value
             Dim AnioMes As String = griPlanilla.ActiveRow.Cells("Periodo").Value
@@ -3393,7 +3393,7 @@ Public Class frm_Planilla
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
 
-            Dim RucISL As String = "20479729141"
+            Dim RucISL As String = "20480099720"
             Dim IdPlanilla As String = griPlanilla.ActiveRow.Cells("Id").Value
             Dim periodo As String = griPlanilla.ActiveRow.Cells("IdPeriodo").Value
             Dim AnioMes As String = griPlanilla.ActiveRow.Cells("Periodo").Value

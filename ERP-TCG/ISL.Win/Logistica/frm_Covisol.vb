@@ -34,8 +34,8 @@ Public Class frm_Covisol
 
 #Region "Variables"
 
-    Private mstrUsuCovisol As String = "induamericasl"
-    Private mstrPassCovisol As String = "20479729141"
+    Private mstrUsuCovisol As String = "slalito"
+    Private mstrPassCovisol As String = "20480099720"
 
     Private olCovisol As CovisolR.GetDatosService
 

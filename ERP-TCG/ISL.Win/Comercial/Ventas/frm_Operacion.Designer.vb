@@ -5323,7 +5323,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl4.Controls.Add(Me.expViaje)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1278, 412)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1364, 428)
         '
         'griViaje
         '
@@ -5645,7 +5645,7 @@ Partial Class frm_Operacion
         Me.griViaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griViaje.Location = New System.Drawing.Point(0, 140)
         Me.griViaje.Name = "griViaje"
-        Me.griViaje.Size = New System.Drawing.Size(1278, 272)
+        Me.griViaje.Size = New System.Drawing.Size(1364, 288)
         Me.griViaje.TabIndex = 1
         Me.griViaje.Tag = ""
         '
@@ -5678,11 +5678,11 @@ Partial Class frm_Operacion
         Me.expViaje.ContentAreaAppearance = Appearance156
         Me.expViaje.Controls.Add(Me.UltraExpandableGroupBoxPanel18)
         Me.expViaje.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expViaje.ExpandedSize = New System.Drawing.Size(1278, 140)
+        Me.expViaje.ExpandedSize = New System.Drawing.Size(1364, 140)
         Me.expViaje.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.expViaje.Location = New System.Drawing.Point(0, 0)
         Me.expViaje.Name = "expViaje"
-        Me.expViaje.Size = New System.Drawing.Size(1278, 140)
+        Me.expViaje.Size = New System.Drawing.Size(1364, 140)
         Me.expViaje.TabIndex = 0
         Me.expViaje.TabStop = False
         Me.expViaje.Text = "Ingreso de Datos para Crear / Actualizar un Viaje "
@@ -5695,7 +5695,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel18.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel18.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel18.Name = "UltraExpandableGroupBoxPanel18"
-        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1272, 117)
+        Me.UltraExpandableGroupBoxPanel18.Size = New System.Drawing.Size(1358, 117)
         Me.UltraExpandableGroupBoxPanel18.TabIndex = 0
         '
         'exgruEscalaBloque
@@ -5709,7 +5709,7 @@ Partial Class frm_Operacion
         Me.exgruEscalaBloque.ExpandedSize = New System.Drawing.Size(475, 117)
         Me.exgruEscalaBloque.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.exgruEscalaBloque.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
-        Me.exgruEscalaBloque.Location = New System.Drawing.Point(797, 0)
+        Me.exgruEscalaBloque.Location = New System.Drawing.Point(883, 0)
         Me.exgruEscalaBloque.Name = "exgruEscalaBloque"
         Me.exgruEscalaBloque.Size = New System.Drawing.Size(475, 117)
         Me.exgruEscalaBloque.TabIndex = 1
@@ -6274,7 +6274,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl5.Controls.Add(Me.expCargaOperacion)
         Me.UltraTabPageControl5.Location = New System.Drawing.Point(2, 21)
         Me.UltraTabPageControl5.Name = "UltraTabPageControl5"
-        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1278, 412)
+        Me.UltraTabPageControl5.Size = New System.Drawing.Size(1364, 428)
         '
         'griViajeDetalle
         '
@@ -6444,7 +6444,7 @@ Partial Class frm_Operacion
         Me.griViajeDetalle.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griViajeDetalle.Location = New System.Drawing.Point(0, 200)
         Me.griViajeDetalle.Name = "griViajeDetalle"
-        Me.griViajeDetalle.Size = New System.Drawing.Size(1278, 212)
+        Me.griViajeDetalle.Size = New System.Drawing.Size(1364, 228)
         Me.griViajeDetalle.TabIndex = 4
         Me.griViajeDetalle.TabStop = False
         Me.griViajeDetalle.Tag = ""
@@ -6491,10 +6491,10 @@ Partial Class frm_Operacion
         Me.expCargaOperacion.ContentAreaAppearance = Appearance222
         Me.expCargaOperacion.Controls.Add(Me.UltraExpandableGroupBoxPanel6)
         Me.expCargaOperacion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expCargaOperacion.ExpandedSize = New System.Drawing.Size(1278, 200)
+        Me.expCargaOperacion.ExpandedSize = New System.Drawing.Size(1364, 200)
         Me.expCargaOperacion.Location = New System.Drawing.Point(0, 0)
         Me.expCargaOperacion.Name = "expCargaOperacion"
-        Me.expCargaOperacion.Size = New System.Drawing.Size(1278, 200)
+        Me.expCargaOperacion.Size = New System.Drawing.Size(1364, 200)
         Me.expCargaOperacion.TabIndex = 1
         Me.expCargaOperacion.TabStop = False
         Me.expCargaOperacion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -6507,7 +6507,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel6.Location = New System.Drawing.Point(3, 18)
         Me.UltraExpandableGroupBoxPanel6.Name = "UltraExpandableGroupBoxPanel6"
-        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(1272, 179)
+        Me.UltraExpandableGroupBoxPanel6.Size = New System.Drawing.Size(1358, 179)
         Me.UltraExpandableGroupBoxPanel6.TabIndex = 0
         '
         'expListaOrdenes
@@ -6518,11 +6518,11 @@ Partial Class frm_Operacion
         Me.expListaOrdenes.ContentAreaAppearance = Appearance223
         Me.expListaOrdenes.Controls.Add(Me.UltraExpandableGroupBoxPanel1)
         Me.expListaOrdenes.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.expListaOrdenes.ExpandedSize = New System.Drawing.Size(290, 179)
+        Me.expListaOrdenes.ExpandedSize = New System.Drawing.Size(376, 179)
         Me.expListaOrdenes.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftInsideBorder
         Me.expListaOrdenes.Location = New System.Drawing.Point(982, 0)
         Me.expListaOrdenes.Name = "expListaOrdenes"
-        Me.expListaOrdenes.Size = New System.Drawing.Size(290, 179)
+        Me.expListaOrdenes.Size = New System.Drawing.Size(376, 179)
         Me.expListaOrdenes.TabIndex = 2
         Me.expListaOrdenes.TabStop = False
         Me.expListaOrdenes.Text = "Lista OC y OV"
@@ -6535,7 +6535,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel1.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel1.Name = "UltraExpandableGroupBoxPanel1"
-        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(267, 173)
+        Me.UltraExpandableGroupBoxPanel1.Size = New System.Drawing.Size(353, 173)
         Me.UltraExpandableGroupBoxPanel1.TabIndex = 0
         '
         'griOrdenes
@@ -6663,7 +6663,7 @@ Partial Class frm_Operacion
         Me.griOrdenes.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griOrdenes.Location = New System.Drawing.Point(0, 55)
         Me.griOrdenes.Name = "griOrdenes"
-        Me.griOrdenes.Size = New System.Drawing.Size(267, 118)
+        Me.griOrdenes.Size = New System.Drawing.Size(353, 118)
         Me.griOrdenes.TabIndex = 2
         Me.griOrdenes.TabStop = False
         Me.griOrdenes.Tag = ""
@@ -6683,11 +6683,11 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBox2.ContentAreaAppearance = Appearance226
         Me.UltraExpandableGroupBox2.Controls.Add(Me.UltraExpandableGroupBoxPanel2)
         Me.UltraExpandableGroupBox2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.UltraExpandableGroupBox2.ExpandedSize = New System.Drawing.Size(267, 55)
+        Me.UltraExpandableGroupBox2.ExpandedSize = New System.Drawing.Size(353, 55)
         Me.UltraExpandableGroupBox2.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.UltraExpandableGroupBox2.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox2.Name = "UltraExpandableGroupBox2"
-        Me.UltraExpandableGroupBox2.Size = New System.Drawing.Size(267, 55)
+        Me.UltraExpandableGroupBox2.Size = New System.Drawing.Size(353, 55)
         Me.UltraExpandableGroupBox2.TabIndex = 1
         Me.UltraExpandableGroupBox2.TabStop = False
         Me.UltraExpandableGroupBox2.Text = "Consultas: Pedido Carga para Consumir"
@@ -6703,7 +6703,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel2.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel2.Name = "UltraExpandableGroupBoxPanel2"
-        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(261, 32)
+        Me.UltraExpandableGroupBoxPanel2.Size = New System.Drawing.Size(347, 32)
         Me.UltraExpandableGroupBoxPanel2.TabIndex = 0
         '
         'UltraLabel1
@@ -7609,6 +7609,7 @@ Partial Class frm_Operacion
         Appearance276.BackColor = System.Drawing.Color.White
         Appearance276.BackColor2 = System.Drawing.Color.White
         Me.UltraGroupBox10.ContentAreaAppearance = Appearance276
+        Me.UltraGroupBox10.Controls.Add(Me.ugb_Espera)
         Me.UltraGroupBox10.Controls.Add(Me.txtMotivoConsolidado)
         Me.UltraGroupBox10.Controls.Add(Me.txtCostoEstibaDescarga)
         Me.UltraGroupBox10.Controls.Add(Me.chkConsolidado)
@@ -7759,7 +7760,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl8.Controls.Add(Me.expContratoTercero)
         Me.UltraTabPageControl8.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl8.Name = "UltraTabPageControl8"
-        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1278, 412)
+        Me.UltraTabPageControl8.Size = New System.Drawing.Size(1364, 428)
         '
         'griDetalleTercero
         '
@@ -7899,7 +7900,7 @@ Partial Class frm_Operacion
         Me.griDetalleTercero.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDetalleTercero.Location = New System.Drawing.Point(0, 146)
         Me.griDetalleTercero.Name = "griDetalleTercero"
-        Me.griDetalleTercero.Size = New System.Drawing.Size(1278, 266)
+        Me.griDetalleTercero.Size = New System.Drawing.Size(1364, 282)
         Me.griDetalleTercero.TabIndex = 19
         Me.griDetalleTercero.Tag = ""
         '
@@ -7941,11 +7942,11 @@ Partial Class frm_Operacion
         Me.expContratoTercero.ContentAreaAppearance = Appearance292
         Me.expContratoTercero.Controls.Add(Me.UltraExpandableGroupBoxPanel3)
         Me.expContratoTercero.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expContratoTercero.ExpandedSize = New System.Drawing.Size(1278, 146)
+        Me.expContratoTercero.ExpandedSize = New System.Drawing.Size(1364, 146)
         Me.expContratoTercero.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopInsideBorder
         Me.expContratoTercero.Location = New System.Drawing.Point(0, 0)
         Me.expContratoTercero.Name = "expContratoTercero"
-        Me.expContratoTercero.Size = New System.Drawing.Size(1278, 146)
+        Me.expContratoTercero.Size = New System.Drawing.Size(1364, 146)
         Me.expContratoTercero.TabIndex = 3
         Me.expContratoTercero.TabStop = False
         Me.expContratoTercero.Text = "Detalle"
@@ -7983,7 +7984,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel3.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel3.Name = "UltraExpandableGroupBoxPanel3"
-        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(1272, 123)
+        Me.UltraExpandableGroupBoxPanel3.Size = New System.Drawing.Size(1358, 123)
         Me.UltraExpandableGroupBoxPanel3.TabIndex = 0
         '
         'txtTelefonoContacto
@@ -9514,7 +9515,7 @@ Partial Class frm_Operacion
         Me.UltraTabPageControl1.Controls.Add(Me.expGeneral)
         Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
-        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1282, 710)
+        Me.UltraTabPageControl1.Size = New System.Drawing.Size(1368, 726)
         '
         'ficViaje
         '
@@ -9527,7 +9528,7 @@ Partial Class frm_Operacion
         Me.ficViaje.Location = New System.Drawing.Point(0, 275)
         Me.ficViaje.Name = "ficViaje"
         Me.ficViaje.SharedControlsPage = Me.UltraTabSharedControlsPage4
-        Me.ficViaje.Size = New System.Drawing.Size(1282, 435)
+        Me.ficViaje.Size = New System.Drawing.Size(1368, 451)
         Me.ficViaje.TabIndex = 0
         UltraTab10.TabPage = Me.UltraTabPageControl4
         UltraTab10.Text = "Viaje"
@@ -9544,7 +9545,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage4.Name = "UltraTabSharedControlsPage4"
-        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1278, 412)
+        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1364, 428)
         '
         'expGeneral
         '
@@ -9554,11 +9555,11 @@ Partial Class frm_Operacion
         Me.expGeneral.ContentAreaAppearance = Appearance312
         Me.expGeneral.Controls.Add(Me.UltraExpandableGroupBoxPanel14)
         Me.expGeneral.Dock = System.Windows.Forms.DockStyle.Top
-        Me.expGeneral.ExpandedSize = New System.Drawing.Size(1282, 275)
+        Me.expGeneral.ExpandedSize = New System.Drawing.Size(1368, 275)
         Me.expGeneral.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOnBorder
         Me.expGeneral.Location = New System.Drawing.Point(0, 0)
         Me.expGeneral.Name = "expGeneral"
-        Me.expGeneral.Size = New System.Drawing.Size(1282, 275)
+        Me.expGeneral.Size = New System.Drawing.Size(1368, 275)
         Me.expGeneral.TabIndex = 0
         Me.expGeneral.TabStop = False
         Me.expGeneral.Text = "Datos Generales"
@@ -9572,7 +9573,7 @@ Partial Class frm_Operacion
         Me.UltraExpandableGroupBoxPanel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel14.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel14.Name = "UltraExpandableGroupBoxPanel14"
-        Me.UltraExpandableGroupBoxPanel14.Size = New System.Drawing.Size(1276, 252)
+        Me.UltraExpandableGroupBoxPanel14.Size = New System.Drawing.Size(1362, 252)
         Me.UltraExpandableGroupBoxPanel14.TabIndex = 0
         '
         'griDisponibleVehiculo
@@ -9866,7 +9867,7 @@ Partial Class frm_Operacion
         Me.griDisponibleVehiculo.ImageList = Me.imagenes
         Me.griDisponibleVehiculo.Location = New System.Drawing.Point(765, 0)
         Me.griDisponibleVehiculo.Name = "griDisponibleVehiculo"
-        Me.griDisponibleVehiculo.Size = New System.Drawing.Size(511, 252)
+        Me.griDisponibleVehiculo.Size = New System.Drawing.Size(597, 252)
         Me.griDisponibleVehiculo.TabIndex = 76
         Me.griDisponibleVehiculo.TabStop = False
         Me.griDisponibleVehiculo.Tag = ""
@@ -12014,7 +12015,7 @@ Partial Class frm_Operacion
         Me.ficOperacion.Location = New System.Drawing.Point(0, 0)
         Me.ficOperacion.Name = "ficOperacion"
         Me.ficOperacion.SharedControlsPage = Me.UltraTabSharedControlsPage1
-        Me.ficOperacion.Size = New System.Drawing.Size(1284, 733)
+        Me.ficOperacion.Size = New System.Drawing.Size(1370, 749)
         Me.ficOperacion.TabIndex = 0
         UltraTab14.Key = "Lista"
         UltraTab14.TabPage = Me.UltraTabPageControl7
@@ -12030,7 +12031,7 @@ Partial Class frm_Operacion
         '
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
-        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1282, 710)
+        Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1368, 726)
         '
         'UltraToolTipManager1
         '
@@ -12041,18 +12042,17 @@ Partial Class frm_Operacion
         '
         'ugb_Espera
         '
-        Me.ugb_Espera.Location = New System.Drawing.Point(430, 334)
+        Me.ugb_Espera.Location = New System.Drawing.Point(38, 5)
         Me.ugb_Espera.Name = "ugb_Espera"
         Me.ugb_Espera.Size = New System.Drawing.Size(395, 65)
-        Me.ugb_Espera.TabIndex = 14
+        Me.ugb_Espera.TabIndex = 15
         Me.ugb_Espera.Visible = False
         '
         'frm_Operacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1284, 733)
-        Me.Controls.Add(Me.ugb_Espera)
+        Me.ClientSize = New System.Drawing.Size(1370, 749)
         Me.Controls.Add(Me.ficOperacion)
         Me.KeyPreview = True
         Me.Name = "frm_Operacion"
@@ -12853,7 +12853,6 @@ Partial Class frm_Operacion
     Friend WithEvents decProduccionIGV As Infragistics.Win.UltraWinEditors.UltraNumericEditor
     Friend WithEvents lblProduccionSinIGV As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents lblProduccionIGV As Infragistics.Win.Misc.UltraLabel
-    Friend WithEvents ugb_Espera As Espere
     Friend WithEvents upbFoto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents upbFotoTracto As Infragistics.Win.UltraWinEditors.UltraPictureBox
     Friend WithEvents UltraTabPageControl11 As Infragistics.Win.UltraWinTabControl.UltraTabPageControl
@@ -12870,4 +12869,5 @@ Partial Class frm_Operacion
     Friend WithEvents UltraLabel71 As Infragistics.Win.Misc.UltraLabel
     Friend WithEvents btnConsultarOrdenes As Infragistics.Win.Misc.UltraButton
     Friend WithEvents griOrdenes As Controles.Grilla
+    Friend WithEvents ugb_Espera As Espere
 End Class
