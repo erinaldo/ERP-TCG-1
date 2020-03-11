@@ -790,6 +790,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_1</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>2.85047cm</Top>
         <Left>0.59308cm</Left>
         <Height>2.4cm</Height>
@@ -1588,6 +1597,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_2</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>6.54843cm</Top>
         <Left>0.59308cm</Left>
         <Height>2.4cm</Height>
@@ -2387,6 +2405,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_3</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>9.71021cm</Top>
         <Left>0.59308cm</Left>
         <Height>2.4cm</Height>
@@ -3186,6 +3213,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_4</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>2.83254cm</Top>
         <Left>13.6213cm</Left>
         <Height>2.4cm</Height>
@@ -3985,6 +4021,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_5</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>6.50289cm</Top>
         <Left>13.6213cm</Left>
         <Height>2.4cm</Height>
@@ -4784,6 +4829,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DTS1</DataSetName>
+        <Filters>
+          <Filter>
+            <FilterExpression>=Fields!Lado.Value</FilterExpression>
+            <Operator>Equal</Operator>
+            <FilterValues>
+              <FilterValue>LADO_6</FilterValue>
+            </FilterValues>
+          </Filter>
+        </Filters>
         <Top>9.65143cm</Top>
         <Left>13.6213cm</Left>
         <Height>2.4cm</Height>
@@ -4799,10 +4853,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>5.00001cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -5209,7 +5263,7 @@
         <Top>12.75828cm</Top>
         <Left>0.59307cm</Left>
         <Height>2.4cm</Height>
-        <Width>7.5cm</Width>
+        <Width>12.50001cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -5730,7 +5784,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>18.38537cm</Top>
+        <Top>15.73954cm</Top>
         <Left>18.0915cm</Left>
         <Height>0.94396cm</Height>
         <Width>8.02979cm</Width>

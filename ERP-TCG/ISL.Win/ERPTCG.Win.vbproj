@@ -1074,6 +1074,12 @@
     <Compile Include="Grifo\Impresiones\frm_CierreTurno_Imprimir.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\Impresiones\frm_LiquidacionVendedor_Imprimir.Designer.vb">
+      <DependentUpon>frm_LiquidacionVendedor_Imprimir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Impresiones\frm_LiquidacionVendedor_Imprimir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.Designer.vb">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
     </Compile>
@@ -6449,6 +6455,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\frm_CierreTurno_Imprimir.resx">
       <DependentUpon>frm_CierreTurno_Imprimir.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Impresiones\frm_LiquidacionVendedor_Imprimir.resx">
+      <DependentUpon>frm_LiquidacionVendedor_Imprimir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Impresiones\frm_DocumentoCtble_Imprimir.resx">
       <DependentUpon>frm_DocumentoCtble_Imprimir.vb</DependentUpon>
