@@ -294,7 +294,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IdAlmacen = ItemVenta.IdAlmacen
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
-                    ItemDocumento.Cantidad = Math.Round(ItemVenta.Cantidad, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Cantidad = ItemVenta.Cantidad '@0001
                     ItemDocumento.Precio = Math.Round(ItemVenta.PrecioUnitario, DEC, MidpointRounding.AwayFromZero)
                     ItemDocumento.Subtotal = Math.Round(IIf(ItemVenta.IndImpuesto, ItemVenta.PrecioTotal / (1 + mdblIGV), ItemVenta.PrecioTotal), DEC, MidpointRounding.AwayFromZero)
                     ItemDocumento.Total = Math.Round(ItemVenta.PrecioTotal, DEC, MidpointRounding.AwayFromZero)
