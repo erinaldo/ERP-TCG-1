@@ -1077,10 +1077,11 @@ Public Class frm_EstacionServicio
                 Total += Item.PrecioTotal
                 DescuentoTotal += Item.Dscto
             Next
-            SubTotal = Total / (1 + mdblIGV)
-            nud_Total.Value = Math.Round(Total, 2)
-            nud_SubTotal.Value = Math.Round(SubTotal, 2)
-            nud_Impuesto.Value = Math.Round(Total - SubTotal, 2)
+            Total = Math.Round(Total, 2) '@0001
+            SubTotal = Math.Round(Total / (1 + mdblIGV), 2) '@0001
+            nud_Total.Value = Total '@0001
+            nud_SubTotal.Value = SubTotal '@0001
+            nud_Impuesto.Value = Total - SubTotal '@0001
         Catch ex As Exception
             Throw ex
         End Try
