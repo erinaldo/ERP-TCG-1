@@ -2860,15 +2860,15 @@ Public Class frm_Guias
                         FleteUnitarioCarga += .Cells("FleteUnitario").Value
                     Else
                         If Carga = "TONELADA" Then
-                            If Cantidad > 50 Then
+                            If Cantidad > 55 Then
                                 tabDetalleGrt.Tabs(0).Selected = True
-                                Throw New Exception("Cantidad no puede Superar el Maximo (50) con su Tipo Carga --> " & Carga)
+                                Throw New Exception("Cantidad no puede Superar el Maximo (55) con su Tipo Carga --> " & Carga)
                             End If
                         Else
                             If Carga = "METRO CUBICO" Then
-                                If Cantidad > 150 Then
+                                If Cantidad > 250 Then
                                     tabDetalleGrt.Tabs(0).Selected = True
-                                    Throw New Exception("Cantidad no puede Superar el Maximo (150) con su Tipo Carga --> " & Carga)
+                                    Throw New Exception("Cantidad no puede Superar el Maximo (250) con su Tipo Carga --> " & Carga)
                                 End If
                             End If
                         End If

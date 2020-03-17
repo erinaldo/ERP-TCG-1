@@ -294,7 +294,7 @@ Public Class frm_EstacionServicio
                     ItemDocumento.IdAlmacen = ItemVenta.IdAlmacen
                     ItemDocumento.IndGravado = ItemVenta.IndImpuesto
                     ItemDocumento.IndServicioMaterial = "M"
-                    ItemDocumento.Cantidad = Math.Round(ItemVenta.Cantidad, DEC, MidpointRounding.AwayFromZero)
+                    ItemDocumento.Cantidad = ItemVenta.Cantidad '@0001
                     ItemDocumento.Precio = Math.Round(ItemVenta.PrecioUnitario, DEC, MidpointRounding.AwayFromZero)
                     ItemDocumento.Subtotal = Math.Round(IIf(ItemVenta.IndImpuesto, ItemVenta.PrecioTotal / (1 + mdblIGV), ItemVenta.PrecioTotal), DEC, MidpointRounding.AwayFromZero)
                     ItemDocumento.Total = Math.Round(ItemVenta.PrecioTotal, DEC, MidpointRounding.AwayFromZero)
@@ -1077,10 +1077,11 @@ Public Class frm_EstacionServicio
                 Total += Item.PrecioTotal
                 DescuentoTotal += Item.Dscto
             Next
-            SubTotal = Total / (1 + mdblIGV)
-            nud_Total.Value = Math.Round(Total, 2)
-            nud_SubTotal.Value = Math.Round(SubTotal, 2)
-            nud_Impuesto.Value = Math.Round(Total - SubTotal, 2)
+            Total = Math.Round(Total, 2) '@0001
+            SubTotal = Math.Round(Total / (1 + mdblIGV), 2) '@0001
+            nud_Total.Value = Total '@0001
+            nud_SubTotal.Value = SubTotal '@0001
+            nud_Impuesto.Value = Total - SubTotal '@0001
         Catch ex As Exception
             Throw ex
         End Try

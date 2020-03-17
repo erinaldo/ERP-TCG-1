@@ -592,8 +592,10 @@ Public Class frm_CanjeDocumentos
                         Total += detalle.Total
                     End With
                 Next
+                Total = Math.Round(Total, 2) '@0001
+                SubTotal = Math.Round(Total / (1 + mdblIGV), 2) '@0001
                 .SubTotal = SubTotal
-                .IGV = IGV
+                .IGV = Total - SubTotal '@0001
                 .Total = Total
                 .Saldo = Total
 
@@ -753,6 +755,8 @@ Public Class frm_CanjeDocumentos
                 DescuentoTotal = 0
                 Total += Item.Total
             Next
+            Total = Math.Round(Total, 2) '@0001
+            SubTotal = Math.Round(Total / (1 + mdblIGV), 2) '@0001
             nud_SubTotal.Value = SubTotal
             nud_Total.Value = Total
             nud_Impuesto.Value = Total - SubTotal
