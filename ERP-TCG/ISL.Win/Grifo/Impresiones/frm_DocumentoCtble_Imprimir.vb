@@ -163,7 +163,7 @@ Public Class frm_DocumentoCtble_Imprimir
         Try
             '\\LADERA\ComprobanteElectronico\xml\
             'D:\Sistema\xml\
-            Dim Archivo As String = DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocImpresionGuarda") & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
+            Dim Archivo As String = "D:\Sistema\xml\" ' DirectCast(ConfigurationManager.GetSection("VariablesDeConfiguracion"), NameValueCollection).Item("DocImpresionGuarda") & DocumentoCtble.DatosImpresion.TipoDocumento & "_" & DocumentoCtble.Serie & DocumentoCtble.Numero & ".pdf"
             Dim PDF As Byte()
             Dim filepath As String = Archivo
             If File.Exists(filepath) Then My.Computer.FileSystem.DeleteFile(filepath)

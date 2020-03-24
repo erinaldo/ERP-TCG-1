@@ -10,8 +10,11 @@ Public Class l_ComprobantePagoElectronico
     Implements Il_ComprobantePagoElectronico
 
     '' CPE
+    '' D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx // \\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx
+    '' D:\Sistema\xml\ // \\LADERA\ComprobanteElectronico\xml\
+    '' \\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\
     Public gs_RutaDocumentosEle As String = "\\LADERA\ComprobanteElectronico\DocumentosElectronicos\"
-    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\" 'Path.Combine(Application.StartupPath, "ComprobanteElectronico") & "\Facturacion\"
+    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\"
     Public gs_RutaDocumentosCDR20 As String = "\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
     Public gstrRutaFirma As String = "\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
 
@@ -1315,7 +1318,7 @@ Public Class l_ComprobantePagoElectronico
 
     <OperationBehavior(TransactionScopeRequired:=True)>
     Public Function GenerarEDocNotaDebito(Documento As e_ComprobantePagoElectronico, ByRef Hash As String) As String Implements Il_ComprobantePagoElectronico.GenerarEDocNotaDebito
-        Dim RutaArchivo As String = "" ' gs_RutaDocumentosEle & Documento.RUCEmisor.Trim & "-" & Documento.TipoDocumento & "-" & Documento.Documento & ".xml"
+        Dim RutaArchivo As String = gstrRutaDocumentosEle20 & Documento.RUCEmisor.Trim & "-" & Documento.TipoDocumento & "-" & Documento.Documento & ".xml"
         Try
             settings.Indent = True
             settings.Encoding = System.Text.UTF8Encoding.UTF8

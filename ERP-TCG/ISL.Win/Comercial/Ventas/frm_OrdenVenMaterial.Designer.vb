@@ -1714,7 +1714,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox3)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox2)
         Me.UltraTabPageControl1.Controls.Add(Me.UltraGroupBox1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1221, 495)
         '
@@ -1743,7 +1743,7 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn147.Header.VisiblePosition = 3
         UltraGridColumn147.Hidden = True
         UltraGridColumn148.Header.VisiblePosition = 6
-        UltraGridColumn148.Width = 211
+        UltraGridColumn148.Width = 192
         UltraGridColumn149.Header.VisiblePosition = 7
         UltraGridColumn149.Hidden = True
         UltraGridColumn150.Header.VisiblePosition = 8
@@ -1758,7 +1758,7 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn154.Hidden = True
         UltraGridColumn155.Header.Caption = "DocCanjeado"
         UltraGridColumn155.Header.VisiblePosition = 18
-        UltraGridColumn155.Width = 149
+        UltraGridColumn155.Width = 190
         UltraGridColumn156.Header.VisiblePosition = 5
         UltraGridColumn157.Header.VisiblePosition = 4
         UltraGridColumn157.Width = 114
@@ -1806,7 +1806,7 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn171.Header.VisiblePosition = 27
         UltraGridColumn171.Hidden = True
         UltraGridColumn172.Header.VisiblePosition = 17
-        UltraGridColumn172.Width = 162
+        UltraGridColumn172.Width = 209
         UltraGridColumn173.Header.VisiblePosition = 30
         UltraGridColumn173.Hidden = True
         UltraGridColumn174.Header.VisiblePosition = 31
@@ -1839,6 +1839,7 @@ Partial Class frm_OrdenVenMaterial
         UltraGridColumn185.CellAppearance = Appearance46
         UltraGridColumn185.Header.Caption = "Saldo OV"
         UltraGridColumn185.Header.VisiblePosition = 16
+        UltraGridColumn185.Hidden = True
         UltraGridColumn185.MaskInput = "{LOC}nnnnnnn.nn"
         UltraGridColumn185.Width = 66
         UltraGridColumn186.Header.VisiblePosition = 42
@@ -2401,7 +2402,7 @@ Partial Class frm_OrdenVenMaterial
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl2.Controls.Add(Me.UltraGroupBox4)
         Me.UltraTabPageControl2.Enabled = False
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1221, 495)
         '

@@ -376,7 +376,7 @@ Module m_Funciones
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
 
                         'End If
-                Case "1CH000000033" ' Nota de Debito
+                Case "08" ' Nota de Debito
                     'If oeDocumento.lstDocAsociado.Where(Function(i) i.IdTipoDocumento = "1CIX001").Count > 0 Then
                     ls_NombreArchivo = olDocumentoElectronico.GenerarEDocNotaDebito(oeDocumentoElectronico, Hash).Trim
                     lb_IndXml = True

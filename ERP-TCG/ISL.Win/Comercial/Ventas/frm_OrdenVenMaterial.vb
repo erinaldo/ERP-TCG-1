@@ -1916,6 +1916,12 @@ Public Class frm_OrdenVenMaterial
                 .SubTotal = Math.Round(decSubTotal.Value, 2)
                 .IGV = Math.Round(decImpuesto.Value, 2)
                 .Total = Math.Round(decTotal.Value, 2)
+                If .IdTipoDocumento = "1CH000000002" AndAlso .IdClienteProveedor = "1CH000000003" AndAlso .Total > 700 Then
+                    Throw New Exception("Para Boletas Mayores a 700 Soles tiene que Seleccionar Cliente diferente de OTROS")
+                End If
+                If .IdTipoDocumento = "1CH000000026" AndAlso .IdClienteProveedor = "1CH000000003" Then
+                    Throw New Exception("No Puede Utilizar el Cliente OTROS para facturas")
+                End If
                 .Saldo = .Total
                 .TipoCambio = decTipoCambio.Value
                 .IdUsuarioCrea = gUsuarioSGI.Id
