@@ -12,8 +12,8 @@ Public Class frm_LiquidacionVendedor_Imprimir
     Private Shared Operacion As String
 
     Dim wr_Reporte As New l_Reporte, Reporte As New e_ReporteFiltro
-    Dim DT1 As New DataTable, DT2 As New DataTable, DT3 As New DataTable
-    Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS3 As New Microsoft.Reporting.WinForms.ReportDataSource
+    Dim DT1 As New DataTable, DT2 As New DataTable, DT3 As New DataTable, DT4 As New DataTable
+    Dim RDS1 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS2 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS3 As New Microsoft.Reporting.WinForms.ReportDataSource, RDS4 As New Microsoft.Reporting.WinForms.ReportDataSource
 
 #Region "Funciones Basicas"
 
@@ -123,6 +123,23 @@ Public Class frm_LiquidacionVendedor_Imprimir
         End Try
     End Sub
 
+    Public Sub Cargar_DetalleVentas()
+        Try
+            Reporte = New e_ReporteFiltro
+            Reporte.ProcedimientoAlmacenado = "STD.RPT_LiquidacionVendedor"
+            Reporte.TipoConsulta = "DET"
+            Reporte.FechaInicial = dtp_FechaInicio.Value.Date
+            Reporte.FechaFinal = dtp_FechaFinal.Value.Date
+            Reporte.Id = cmb_Turno.Value
+            Reporte.Filtro1 = ""
+            Reporte.Filtro2 = ""
+            Reporte.Filtro3 = ""
+            DT4 = wr_Reporte.Consultar(Reporte)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
     Public Sub Cargar_Reporte()
         Try
             If cmb_Turno.Value = "" Then cmb_Turno.Focus() : Throw New Exception("Debe seleccionar un TURNO")
@@ -136,6 +153,9 @@ Public Class frm_LiquidacionVendedor_Imprimir
             '' Report DataSource 3
             Cargar_Depositos()
             RDS3.Name = "DTS3" : RDS3.Value = DT3
+            '' Report DataSource 4
+            Cargar_DetalleVentas()
+            RDS4.Name = "DTS4" : RDS4.Value = DT4
 
             With VISOR
                 .ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local
@@ -143,6 +163,7 @@ Public Class frm_LiquidacionVendedor_Imprimir
                 .LocalReport.DataSources.Add(RDS1)
                 .LocalReport.DataSources.Add(RDS2)
                 .LocalReport.DataSources.Add(RDS3)
+                .LocalReport.DataSources.Add(RDS4)
                 .LocalReport.Refresh()
                 .RefreshReport()
             End With
