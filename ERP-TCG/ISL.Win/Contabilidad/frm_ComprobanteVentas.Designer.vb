@@ -151,24 +151,24 @@ Partial Class frm_ComprobanteVentas
         Dim ButtonTool3 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Agregar")
         Dim ButtonTool4 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cancelar")
         Dim ButtonTool6 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Agregar")
-        Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance64 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool7 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Editar")
-        Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance65 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool8 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Eliminar")
-        Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance66 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool9 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Cancelar")
-        Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance67 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool10 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Nuevo")
-        Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance68 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool11 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool1")
         Dim ButtonTool12 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool2")
         Dim ButtonTool13 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("ButtonTool3")
         Dim ButtonTool14 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Consultar")
-        Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance69 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool15 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Exportar")
-        Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance70 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim ButtonTool17 As Infragistics.Win.UltraWinToolbars.ButtonTool = New Infragistics.Win.UltraWinToolbars.ButtonTool("Modificar")
-        Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance71 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraGridBand3 As Infragistics.Win.UltraWinGrid.UltraGridBand = New Infragistics.Win.UltraWinGrid.UltraGridBand("Band 0", -1)
         Dim UltraGridColumn187 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("Id")
         Dim UltraGridColumn188 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("IdPeriodo")
@@ -272,22 +272,16 @@ Partial Class frm_ComprobanteVentas
         Dim UltraTab3 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab4 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance12 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance13 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton1 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance14 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance15 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton2 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance16 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton2 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance17 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance18 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance19 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance20 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance27 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance28 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance29 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -298,19 +292,19 @@ Partial Class frm_ComprobanteVentas
         Dim Appearance34 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance35 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance36 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton3 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance37 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance38 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance39 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance40 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance41 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance42 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance43 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance44 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton3 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance45 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance46 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance47 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton4 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance48 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance49 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance50 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -318,10 +312,24 @@ Partial Class frm_ComprobanteVentas
         Dim Appearance52 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance53 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance54 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
-        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
         Dim Appearance55 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance56 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance57 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance58 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance59 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance60 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance61 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance62 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim EditorButton5 As Infragistics.Win.UltraWinEditors.EditorButton = New Infragistics.Win.UltraWinEditors.EditorButton()
+        Dim Appearance63 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab1 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab2 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
+        Dim Appearance21 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance22 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance23 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance24 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance25 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance26 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraTabPageControl3 = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.GriComprobanteAsociado = New ISL.Controles.Grilla(Me.components)
         Me.MenuDetalle = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -406,6 +414,13 @@ Partial Class frm_ComprobanteVentas
         Me.cboTipoDocumento = New ISL.Controles.Combo(Me.components)
         Me.tcComprobanteVenta = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
+        Me.agrDetraccion = New ISL.Controles.Agrupacion(Me.components)
+        Me.UltraLabel5 = New Infragistics.Win.Misc.UltraLabel()
+        Me.DecDetraer = New Infragistics.Win.UltraWinEditors.UltraNumericEditor()
+        Me.UltraLabel9 = New Infragistics.Win.Misc.UltraLabel()
+        Me.DecMontoDetraccion = New ISL.Controles.NumeroDecimal(Me.components)
+        Me.UltraLabel8 = New Infragistics.Win.Misc.UltraLabel()
+        Me.txtNetoPagar = New ISL.Controles.NumeroDecimal(Me.components)
         Me.UltraTabPageControl3.SuspendLayout()
         CType(Me.GriComprobanteAsociado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuDetalle.SuspendLayout()
@@ -459,6 +474,11 @@ Partial Class frm_ComprobanteVentas
         CType(Me.cboTipoDocumento, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tcComprobanteVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tcComprobanteVenta.SuspendLayout()
+        CType(Me.agrDetraccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.agrDetraccion.SuspendLayout()
+        CType(Me.DecDetraer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DecMontoDetraccion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtNetoPagar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UltraTabPageControl3
@@ -759,39 +779,39 @@ Partial Class frm_ComprobanteVentas
         UltraToolbar1.NonInheritedTools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool3, ButtonTool4})
         UltraToolbar1.Text = "utMenuDetalle"
         Me.mnuDetalleAsiento.Toolbars.AddRange(New Infragistics.Win.UltraWinToolbars.UltraToolbar() {UltraToolbar1})
-        Appearance56.Image = Global.ISL.Win.My.Resources.Resources.Agregar
-        ButtonTool6.SharedPropsInternal.AppearancesSmall.Appearance = Appearance56
+        Appearance64.Image = Global.ISL.Win.My.Resources.Resources.Agregar
+        ButtonTool6.SharedPropsInternal.AppearancesSmall.Appearance = Appearance64
         ButtonTool6.SharedPropsInternal.Caption = "Agregar"
         ButtonTool6.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance57.Image = Global.ISL.Win.My.Resources.Resources.Editar
-        ButtonTool7.SharedPropsInternal.AppearancesSmall.Appearance = Appearance57
+        Appearance65.Image = Global.ISL.Win.My.Resources.Resources.Editar
+        ButtonTool7.SharedPropsInternal.AppearancesSmall.Appearance = Appearance65
         ButtonTool7.SharedPropsInternal.Caption = "Editar"
         ButtonTool7.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance58.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
-        ButtonTool8.SharedPropsInternal.AppearancesSmall.Appearance = Appearance58
+        Appearance66.Image = Global.ISL.Win.My.Resources.Resources.Eliminar
+        ButtonTool8.SharedPropsInternal.AppearancesSmall.Appearance = Appearance66
         ButtonTool8.SharedPropsInternal.Caption = "Eliminar"
         ButtonTool8.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance59.Image = Global.ISL.Win.My.Resources.Resources.Quitar
-        ButtonTool9.SharedPropsInternal.AppearancesSmall.Appearance = Appearance59
+        Appearance67.Image = Global.ISL.Win.My.Resources.Resources.Quitar
+        ButtonTool9.SharedPropsInternal.AppearancesSmall.Appearance = Appearance67
         ButtonTool9.SharedPropsInternal.Caption = "Cancelar"
         ButtonTool9.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance60.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
-        ButtonTool10.SharedPropsInternal.AppearancesSmall.Appearance = Appearance60
+        Appearance68.Image = Global.ISL.Win.My.Resources.Resources.Nuevo
+        ButtonTool10.SharedPropsInternal.AppearancesSmall.Appearance = Appearance68
         ButtonTool10.SharedPropsInternal.Caption = "Nuevo"
         ButtonTool10.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
         ButtonTool11.SharedPropsInternal.Caption = "ButtonTool1"
         ButtonTool12.SharedPropsInternal.Caption = "ButtonTool2"
         ButtonTool13.SharedPropsInternal.Caption = "ButtonTool3"
-        Appearance61.Image = Global.ISL.Win.My.Resources.Resources.Consultar
-        ButtonTool14.SharedPropsInternal.AppearancesSmall.Appearance = Appearance61
+        Appearance69.Image = Global.ISL.Win.My.Resources.Resources.Consultar
+        ButtonTool14.SharedPropsInternal.AppearancesSmall.Appearance = Appearance69
         ButtonTool14.SharedPropsInternal.Caption = "Consultar"
         ButtonTool14.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance62.Image = CType(resources.GetObject("Appearance62.Image"), Object)
-        ButtonTool15.SharedPropsInternal.AppearancesSmall.Appearance = Appearance62
+        Appearance70.Image = CType(resources.GetObject("Appearance70.Image"), Object)
+        ButtonTool15.SharedPropsInternal.AppearancesSmall.Appearance = Appearance70
         ButtonTool15.SharedPropsInternal.Caption = "Exportar"
         ButtonTool15.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
-        Appearance63.Image = Global.ISL.Win.My.Resources.Resources.Grabar
-        ButtonTool17.SharedPropsInternal.AppearancesSmall.Appearance = Appearance63
+        Appearance71.Image = Global.ISL.Win.My.Resources.Resources.Grabar
+        ButtonTool17.SharedPropsInternal.AppearancesSmall.Appearance = Appearance71
         ButtonTool17.SharedPropsInternal.Caption = "Modificar"
         ButtonTool17.SharedPropsInternal.DisplayStyle = Infragistics.Win.UltraWinToolbars.ToolDisplayStyle.ImageAndText
         Me.mnuDetalleAsiento.Tools.AddRange(New Infragistics.Win.UltraWinToolbars.ToolBase() {ButtonTool6, ButtonTool7, ButtonTool8, ButtonTool9, ButtonTool10, ButtonTool11, ButtonTool12, ButtonTool13, ButtonTool14, ButtonTool15, ButtonTool17})
@@ -873,7 +893,7 @@ Partial Class frm_ComprobanteVentas
         '
         Me.UltraTabPageControl1.Controls.Add(Me.gridComprobanteVenta)
         Me.UltraTabPageControl1.Controls.Add(Me.Agrupacion1)
-        Me.UltraTabPageControl1.Location = New System.Drawing.Point(1, 22)
+        Me.UltraTabPageControl1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl1.Name = "UltraTabPageControl1"
         Me.UltraTabPageControl1.Size = New System.Drawing.Size(1228, 429)
         '
@@ -1184,7 +1204,7 @@ Partial Class frm_ComprobanteVentas
         '
         Me.UltraTabPageControl2.Controls.Add(Me.Agrupacion3)
         Me.UltraTabPageControl2.Controls.Add(Me.agrCabeceraAsiento)
-        Me.UltraTabPageControl2.Location = New System.Drawing.Point(-10000, -10000)
+        Me.UltraTabPageControl2.Location = New System.Drawing.Point(1, 22)
         Me.UltraTabPageControl2.Name = "UltraTabPageControl2"
         Me.UltraTabPageControl2.Size = New System.Drawing.Size(1228, 429)
         '
@@ -1229,6 +1249,9 @@ Partial Class frm_ComprobanteVentas
         '
         'agrCabeceraAsiento
         '
+        Appearance12.BackColor = System.Drawing.Color.White
+        Appearance12.BackColor2 = System.Drawing.Color.White
+        Me.agrCabeceraAsiento.ContentAreaAppearance = Appearance12
         Me.agrCabeceraAsiento.Controls.Add(Me.cboTipo)
         Me.agrCabeceraAsiento.Controls.Add(Me.Etiqueta11)
         Me.agrCabeceraAsiento.Controls.Add(Me.cboServicio)
@@ -1265,11 +1288,11 @@ Partial Class frm_ComprobanteVentas
         '
         'cboTipo
         '
-        Appearance12.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboTipo.Appearance = Appearance12
+        Appearance13.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboTipo.Appearance = Appearance13
         Me.cboTipo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Appearance13.Image = 7
-        EditorButton1.Appearance = Appearance13
+        Appearance14.Image = 7
+        EditorButton1.Appearance = Appearance14
         Me.cboTipo.ButtonsRight.Add(EditorButton1)
         Me.cboTipo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipo.DropDownListWidth = 400
@@ -1285,14 +1308,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta11
         '
-        Appearance14.BackColor = System.Drawing.Color.Transparent
-        Appearance14.FontData.BoldAsString = "True"
-        Appearance14.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta11.Appearance = Appearance14
+        Appearance15.BackColor = System.Drawing.Color.Transparent
+        Appearance15.FontData.BoldAsString = "True"
+        Appearance15.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta11.Appearance = Appearance15
         Me.Etiqueta11.AutoSize = True
         Me.Etiqueta11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta11.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta11.Location = New System.Drawing.Point(380, 75)
+        Me.Etiqueta11.Location = New System.Drawing.Point(381, 75)
         Me.Etiqueta11.Name = "Etiqueta11"
         Me.Etiqueta11.Size = New System.Drawing.Size(30, 14)
         Me.Etiqueta11.TabIndex = 16
@@ -1300,11 +1323,11 @@ Partial Class frm_ComprobanteVentas
         '
         'cboServicio
         '
-        Appearance15.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboServicio.Appearance = Appearance15
+        Appearance16.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboServicio.Appearance = Appearance16
         Me.cboServicio.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Appearance16.Image = 7
-        EditorButton2.Appearance = Appearance16
+        Appearance17.Image = 7
+        EditorButton2.Appearance = Appearance17
         Me.cboServicio.ButtonsRight.Add(EditorButton2)
         Me.cboServicio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboServicio.DropDownListWidth = 400
@@ -1320,10 +1343,10 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta6
         '
-        Appearance17.BackColor = System.Drawing.Color.Transparent
-        Appearance17.FontData.BoldAsString = "True"
-        Appearance17.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta6.Appearance = Appearance17
+        Appearance18.BackColor = System.Drawing.Color.Transparent
+        Appearance18.FontData.BoldAsString = "True"
+        Appearance18.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta6.Appearance = Appearance18
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1335,8 +1358,8 @@ Partial Class frm_ComprobanteVentas
         '
         'EtiPeriodo
         '
-        Appearance18.BackColor = System.Drawing.Color.Transparent
-        Me.EtiPeriodo.Appearance = Appearance18
+        Appearance19.BackColor = System.Drawing.Color.Transparent
+        Me.EtiPeriodo.Appearance = Appearance19
         Me.EtiPeriodo.AutoSize = True
         Me.EtiPeriodo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.EtiPeriodo.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1348,6 +1371,10 @@ Partial Class frm_ComprobanteVentas
         '
         'Agrupacion2
         '
+        Appearance20.BackColor = System.Drawing.Color.White
+        Appearance20.BackColor2 = System.Drawing.Color.White
+        Me.Agrupacion2.ContentAreaAppearance = Appearance20
+        Me.Agrupacion2.Controls.Add(Me.agrDetraccion)
         Me.Agrupacion2.Controls.Add(Me.DecGravado)
         Me.Agrupacion2.Controls.Add(Me.DecExonerado)
         Me.Agrupacion2.Controls.Add(Me.Etiqueta13)
@@ -1376,8 +1403,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecGravado
         '
-        Appearance19.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecGravado.Appearance = Appearance19
+        Appearance27.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecGravado.Appearance = Appearance27
         Me.DecGravado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecGravado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecGravado.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1390,8 +1417,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecExonerado
         '
-        Appearance20.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecExonerado.Appearance = Appearance20
+        Appearance28.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecExonerado.Appearance = Appearance28
         Me.DecExonerado.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecExonerado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecExonerado.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1404,8 +1431,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta13
         '
-        Appearance21.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta13.Appearance = Appearance21
+        Appearance29.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta13.Appearance = Appearance29
         Me.Etiqueta13.AutoSize = True
         Me.Etiqueta13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta13.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1417,8 +1444,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta14
         '
-        Appearance22.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta14.Appearance = Appearance22
+        Appearance30.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta14.Appearance = Appearance30
         Me.Etiqueta14.AutoSize = True
         Me.Etiqueta14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta14.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1430,8 +1457,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta12
         '
-        Appearance23.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta12.Appearance = Appearance23
+        Appearance31.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta12.Appearance = Appearance31
         Me.Etiqueta12.AutoSize = True
         Me.Etiqueta12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta12.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1443,8 +1470,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecTotalVenta
         '
-        Appearance24.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecTotalVenta.Appearance = Appearance24
+        Appearance32.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecTotalVenta.Appearance = Appearance32
         Me.DecTotalVenta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecTotalVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecTotalVenta.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1457,8 +1484,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecInafecta
         '
-        Appearance25.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecInafecta.Appearance = Appearance25
+        Appearance33.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecInafecta.Appearance = Appearance33
         Me.DecInafecta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecInafecta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecInafecta.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1471,12 +1498,12 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta15
         '
-        Appearance26.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta15.Appearance = Appearance26
+        Appearance34.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta15.Appearance = Appearance34
         Me.Etiqueta15.AutoSize = True
         Me.Etiqueta15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta15.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta15.Location = New System.Drawing.Point(497, 26)
+        Me.Etiqueta15.Location = New System.Drawing.Point(496, 26)
         Me.Etiqueta15.Name = "Etiqueta15"
         Me.Etiqueta15.Size = New System.Drawing.Size(63, 14)
         Me.Etiqueta15.TabIndex = 12
@@ -1484,8 +1511,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta5
         '
-        Appearance27.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta5.Appearance = Appearance27
+        Appearance35.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta5.Appearance = Appearance35
         Me.Etiqueta5.AutoSize = True
         Me.Etiqueta5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1497,8 +1524,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecTotalDoc
         '
-        Appearance28.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecTotalDoc.Appearance = Appearance28
+        Appearance36.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecTotalDoc.Appearance = Appearance36
         Me.DecTotalDoc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecTotalDoc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecTotalDoc.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1511,8 +1538,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecIsc
         '
-        Appearance29.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecIsc.Appearance = Appearance29
+        Appearance37.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecIsc.Appearance = Appearance37
         Me.DecIsc.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecIsc.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecIsc.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1525,8 +1552,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta8
         '
-        Appearance30.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta8.Appearance = Appearance30
+        Appearance38.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta8.Appearance = Appearance38
         Me.Etiqueta8.AutoSize = True
         Me.Etiqueta8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta8.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1538,8 +1565,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta10
         '
-        Appearance31.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta10.Appearance = Appearance31
+        Appearance39.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta10.Appearance = Appearance39
         Me.Etiqueta10.AutoSize = True
         Me.Etiqueta10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta10.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1551,8 +1578,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecOtrosTributos
         '
-        Appearance32.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecOtrosTributos.Appearance = Appearance32
+        Appearance40.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecOtrosTributos.Appearance = Appearance40
         Me.DecOtrosTributos.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecOtrosTributos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecOtrosTributos.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1565,8 +1592,8 @@ Partial Class frm_ComprobanteVentas
         '
         'DecIgv
         '
-        Appearance33.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.DecIgv.Appearance = Appearance33
+        Appearance41.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.DecIgv.Appearance = Appearance41
         Me.DecIgv.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.DecIgv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DecIgv.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1579,8 +1606,8 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta9
         '
-        Appearance34.BackColor = System.Drawing.Color.Transparent
-        Me.Etiqueta9.Appearance = Appearance34
+        Appearance42.BackColor = System.Drawing.Color.Transparent
+        Me.Etiqueta9.Appearance = Appearance42
         Me.Etiqueta9.AutoSize = True
         Me.Etiqueta9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta9.ForeColor = System.Drawing.Color.MidnightBlue
@@ -1592,14 +1619,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta1
         '
-        Appearance35.BackColor = System.Drawing.Color.Transparent
-        Appearance35.FontData.BoldAsString = "True"
-        Appearance35.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta1.Appearance = Appearance35
+        Appearance43.BackColor = System.Drawing.Color.Transparent
+        Appearance43.FontData.BoldAsString = "True"
+        Appearance43.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta1.Appearance = Appearance43
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta1.Location = New System.Drawing.Point(672, 74)
+        Me.Etiqueta1.Location = New System.Drawing.Point(672, 77)
         Me.Etiqueta1.Name = "Etiqueta1"
         Me.Etiqueta1.Size = New System.Drawing.Size(62, 14)
         Me.Etiqueta1.TabIndex = 21
@@ -1607,11 +1634,11 @@ Partial Class frm_ComprobanteVentas
         '
         'cboTipoVenta
         '
-        Appearance36.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboTipoVenta.Appearance = Appearance36
+        Appearance44.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboTipoVenta.Appearance = Appearance44
         Me.cboTipoVenta.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Appearance37.Image = 7
-        EditorButton3.Appearance = Appearance37
+        Appearance45.Image = 7
+        EditorButton3.Appearance = Appearance45
         Me.cboTipoVenta.ButtonsRight.Add(EditorButton3)
         Me.cboTipoVenta.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoVenta.DropDownListWidth = 400
@@ -1627,14 +1654,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta31
         '
-        Appearance38.BackColor = System.Drawing.Color.Transparent
-        Appearance38.FontData.BoldAsString = "True"
-        Appearance38.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta31.Appearance = Appearance38
+        Appearance46.BackColor = System.Drawing.Color.Transparent
+        Appearance46.FontData.BoldAsString = "True"
+        Appearance46.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta31.Appearance = Appearance46
         Me.Etiqueta31.AutoSize = True
         Me.Etiqueta31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta31.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta31.Location = New System.Drawing.Point(368, 51)
+        Me.Etiqueta31.Location = New System.Drawing.Point(365, 52)
         Me.Etiqueta31.Name = "Etiqueta31"
         Me.Etiqueta31.Size = New System.Drawing.Size(46, 14)
         Me.Etiqueta31.TabIndex = 14
@@ -1642,11 +1669,11 @@ Partial Class frm_ComprobanteVentas
         '
         'cboCtaCte
         '
-        Appearance39.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboCtaCte.Appearance = Appearance39
+        Appearance47.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboCtaCte.Appearance = Appearance47
         Me.cboCtaCte.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Appearance40.Image = 7
-        EditorButton4.Appearance = Appearance40
+        Appearance48.Image = 7
+        EditorButton4.Appearance = Appearance48
         Me.cboCtaCte.ButtonsRight.Add(EditorButton4)
         Me.cboCtaCte.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboCtaCte.DropDownListWidth = 400
@@ -1661,14 +1688,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta30
         '
-        Appearance41.BackColor = System.Drawing.Color.Transparent
-        Appearance41.FontData.BoldAsString = "True"
-        Appearance41.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta30.Appearance = Appearance41
+        Appearance49.BackColor = System.Drawing.Color.Transparent
+        Appearance49.FontData.BoldAsString = "True"
+        Appearance49.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta30.Appearance = Appearance49
         Me.Etiqueta30.AutoSize = True
         Me.Etiqueta30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta30.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta30.Location = New System.Drawing.Point(175, 50)
+        Me.Etiqueta30.Location = New System.Drawing.Point(172, 51)
         Me.Etiqueta30.Name = "Etiqueta30"
         Me.Etiqueta30.Size = New System.Drawing.Size(70, 14)
         Me.Etiqueta30.TabIndex = 6
@@ -1676,8 +1703,8 @@ Partial Class frm_ComprobanteVentas
         '
         'FecVencimiento
         '
-        Appearance42.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.FecVencimiento.Appearance = Appearance42
+        Appearance50.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.FecVencimiento.Appearance = Appearance50
         Me.FecVencimiento.DateTime = New Date(2011, 11, 29, 0, 0, 0, 0)
         Me.FecVencimiento.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.FecVencimiento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1690,14 +1717,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta29
         '
-        Appearance43.BackColor = System.Drawing.Color.Transparent
-        Appearance43.FontData.BoldAsString = "True"
-        Appearance43.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta29.Appearance = Appearance43
+        Appearance51.BackColor = System.Drawing.Color.Transparent
+        Appearance51.FontData.BoldAsString = "True"
+        Appearance51.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta29.Appearance = Appearance51
         Me.Etiqueta29.AutoSize = True
         Me.Etiqueta29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta29.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta29.Location = New System.Drawing.Point(12, 50)
+        Me.Etiqueta29.Location = New System.Drawing.Point(9, 51)
         Me.Etiqueta29.Name = "Etiqueta29"
         Me.Etiqueta29.Size = New System.Drawing.Size(48, 14)
         Me.Etiqueta29.TabIndex = 2
@@ -1705,8 +1732,8 @@ Partial Class frm_ComprobanteVentas
         '
         'FecEmision
         '
-        Appearance44.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.FecEmision.Appearance = Appearance44
+        Appearance52.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.FecEmision.Appearance = Appearance52
         Me.FecEmision.DateTime = New Date(2011, 11, 29, 0, 0, 0, 0)
         Me.FecEmision.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.FecEmision.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1719,14 +1746,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta28
         '
-        Appearance45.BackColor = System.Drawing.Color.Transparent
-        Appearance45.FontData.BoldAsString = "True"
-        Appearance45.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta28.Appearance = Appearance45
+        Appearance53.BackColor = System.Drawing.Color.Transparent
+        Appearance53.FontData.BoldAsString = "True"
+        Appearance53.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta28.Appearance = Appearance53
         Me.Etiqueta28.AutoSize = True
         Me.Etiqueta28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta28.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta28.Location = New System.Drawing.Point(501, 27)
+        Me.Etiqueta28.Location = New System.Drawing.Point(498, 29)
         Me.Etiqueta28.Name = "Etiqueta28"
         Me.Etiqueta28.Size = New System.Drawing.Size(48, 14)
         Me.Etiqueta28.TabIndex = 12
@@ -1734,14 +1761,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta4
         '
-        Appearance46.BackColor = System.Drawing.Color.Transparent
-        Appearance46.FontData.BoldAsString = "True"
-        Appearance46.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta4.Appearance = Appearance46
+        Appearance54.BackColor = System.Drawing.Color.Transparent
+        Appearance54.FontData.BoldAsString = "True"
+        Appearance54.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta4.Appearance = Appearance54
         Me.Etiqueta4.AutoSize = True
         Me.Etiqueta4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta4.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta4.Location = New System.Drawing.Point(174, 73)
+        Me.Etiqueta4.Location = New System.Drawing.Point(170, 74)
         Me.Etiqueta4.Name = "Etiqueta4"
         Me.Etiqueta4.Size = New System.Drawing.Size(72, 14)
         Me.Etiqueta4.TabIndex = 8
@@ -1749,8 +1776,8 @@ Partial Class frm_ComprobanteVentas
         '
         'txtNroDocumento
         '
-        Appearance47.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtNroDocumento.Appearance = Appearance47
+        Appearance55.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtNroDocumento.Appearance = Appearance55
         Me.txtNroDocumento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNroDocumento.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNroDocumento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1763,8 +1790,8 @@ Partial Class frm_ComprobanteVentas
         '
         'decTC
         '
-        Appearance48.ForeColor = System.Drawing.Color.Black
-        Me.decTC.Appearance = Appearance48
+        Appearance56.ForeColor = System.Drawing.Color.Black
+        Me.decTC.Appearance = Appearance56
         Me.decTC.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decTC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decTC.ForeColor = System.Drawing.Color.Black
@@ -1779,14 +1806,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta27
         '
-        Appearance49.BackColor = System.Drawing.Color.Transparent
-        Appearance49.FontData.BoldAsString = "True"
-        Appearance49.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta27.Appearance = Appearance49
+        Appearance57.BackColor = System.Drawing.Color.Transparent
+        Appearance57.FontData.BoldAsString = "True"
+        Appearance57.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta27.Appearance = Appearance57
         Me.Etiqueta27.AutoSize = True
         Me.Etiqueta27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta27.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta27.Location = New System.Drawing.Point(379, 27)
+        Me.Etiqueta27.Location = New System.Drawing.Point(377, 28)
         Me.Etiqueta27.Name = "Etiqueta27"
         Me.Etiqueta27.Size = New System.Drawing.Size(34, 14)
         Me.Etiqueta27.TabIndex = 10
@@ -1794,14 +1821,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta3
         '
-        Appearance50.BackColor = System.Drawing.Color.Transparent
-        Appearance50.FontData.BoldAsString = "True"
-        Appearance50.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta3.Appearance = Appearance50
+        Appearance58.BackColor = System.Drawing.Color.Transparent
+        Appearance58.FontData.BoldAsString = "True"
+        Appearance58.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta3.Appearance = Appearance58
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta3.Location = New System.Drawing.Point(13, 73)
+        Me.Etiqueta3.Location = New System.Drawing.Point(9, 74)
         Me.Etiqueta3.Name = "Etiqueta3"
         Me.Etiqueta3.Size = New System.Drawing.Size(48, 14)
         Me.Etiqueta3.TabIndex = 4
@@ -1809,8 +1836,8 @@ Partial Class frm_ComprobanteVentas
         '
         'txtNroSerie
         '
-        Appearance51.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtNroSerie.Appearance = Appearance51
+        Appearance59.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtNroSerie.Appearance = Appearance59
         Me.txtNroSerie.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txtNroSerie.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.txtNroSerie.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1823,8 +1850,8 @@ Partial Class frm_ComprobanteVentas
         '
         'cboMoneda
         '
-        Appearance52.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboMoneda.Appearance = Appearance52
+        Appearance60.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboMoneda.Appearance = Appearance60
         Me.cboMoneda.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.SuggestAppend
         Me.cboMoneda.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboMoneda.DropDownStyle = Infragistics.Win.DropDownStyle.DropDownList
@@ -1838,14 +1865,14 @@ Partial Class frm_ComprobanteVentas
         '
         'Etiqueta26
         '
-        Appearance53.BackColor = System.Drawing.Color.Transparent
-        Appearance53.FontData.BoldAsString = "True"
-        Appearance53.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta26.Appearance = Appearance53
+        Appearance61.BackColor = System.Drawing.Color.Transparent
+        Appearance61.FontData.BoldAsString = "True"
+        Appearance61.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta26.Appearance = Appearance61
         Me.Etiqueta26.AutoSize = True
         Me.Etiqueta26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
         Me.Etiqueta26.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta26.Location = New System.Drawing.Point(7, 27)
+        Me.Etiqueta26.Location = New System.Drawing.Point(4, 28)
         Me.Etiqueta26.Name = "Etiqueta26"
         Me.Etiqueta26.Size = New System.Drawing.Size(53, 14)
         Me.Etiqueta26.TabIndex = 0
@@ -1853,11 +1880,11 @@ Partial Class frm_ComprobanteVentas
         '
         'cboTipoDocumento
         '
-        Appearance54.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.cboTipoDocumento.Appearance = Appearance54
+        Appearance62.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.cboTipoDocumento.Appearance = Appearance62
         Me.cboTipoDocumento.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Append
-        Appearance55.Image = 7
-        EditorButton5.Appearance = Appearance55
+        Appearance63.Image = 7
+        EditorButton5.Appearance = Appearance63
         Me.cboTipoDocumento.ButtonsRight.Add(EditorButton5)
         Me.cboTipoDocumento.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.cboTipoDocumento.DropDownListWidth = 400
@@ -1897,6 +1924,114 @@ Partial Class frm_ComprobanteVentas
         Me.UltraTabSharedControlsPage1.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage1.Name = "UltraTabSharedControlsPage1"
         Me.UltraTabSharedControlsPage1.Size = New System.Drawing.Size(1228, 429)
+        '
+        'agrDetraccion
+        '
+        Appearance21.BackColor = System.Drawing.Color.White
+        Appearance21.BackColor2 = System.Drawing.Color.White
+        Me.agrDetraccion.ContentAreaAppearance = Appearance21
+        Me.agrDetraccion.Controls.Add(Me.UltraLabel5)
+        Me.agrDetraccion.Controls.Add(Me.DecDetraer)
+        Me.agrDetraccion.Controls.Add(Me.UltraLabel9)
+        Me.agrDetraccion.Controls.Add(Me.DecMontoDetraccion)
+        Me.agrDetraccion.Controls.Add(Me.UltraLabel8)
+        Me.agrDetraccion.Controls.Add(Me.txtNetoPagar)
+        Me.agrDetraccion.Dock = System.Windows.Forms.DockStyle.Right
+        Me.agrDetraccion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrDetraccion.ForeColor = System.Drawing.Color.Black
+        Me.agrDetraccion.Location = New System.Drawing.Point(944, 17)
+        Me.agrDetraccion.Name = "agrDetraccion"
+        Me.agrDetraccion.Size = New System.Drawing.Size(275, 55)
+        Me.agrDetraccion.TabIndex = 16
+        Me.agrDetraccion.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'UltraLabel5
+        '
+        Appearance22.BackColor = System.Drawing.Color.Transparent
+        Appearance22.ForeColor = System.Drawing.Color.Navy
+        Appearance22.TextVAlignAsString = "Middle"
+        Me.UltraLabel5.Appearance = Appearance22
+        Me.UltraLabel5.AutoSize = True
+        Me.UltraLabel5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel5.Location = New System.Drawing.Point(4, 8)
+        Me.UltraLabel5.Name = "UltraLabel5"
+        Me.UltraLabel5.Size = New System.Drawing.Size(76, 15)
+        Me.UltraLabel5.TabIndex = 0
+        Me.UltraLabel5.Text = "Detracción %:"
+        '
+        'DecDetraer
+        '
+        Me.DecDetraer.Location = New System.Drawing.Point(83, 4)
+        Me.DecDetraer.MaskInput = "nnn.nn"
+        Me.DecDetraer.MaxValue = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.DecDetraer.MinValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.DecDetraer.Name = "DecDetraer"
+        Me.DecDetraer.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Decimal]
+        Me.DecDetraer.Size = New System.Drawing.Size(63, 22)
+        Me.DecDetraer.SpinButtonDisplayStyle = Infragistics.Win.ButtonDisplayStyle.Always
+        Me.DecDetraer.TabIndex = 1
+        '
+        'UltraLabel9
+        '
+        Appearance23.BackColor = System.Drawing.Color.Transparent
+        Appearance23.ForeColor = System.Drawing.Color.Navy
+        Appearance23.TextVAlignAsString = "Middle"
+        Me.UltraLabel9.Appearance = Appearance23
+        Me.UltraLabel9.AutoSize = True
+        Me.UltraLabel9.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel9.Location = New System.Drawing.Point(9, 32)
+        Me.UltraLabel9.Name = "UltraLabel9"
+        Me.UltraLabel9.Size = New System.Drawing.Size(39, 15)
+        Me.UltraLabel9.TabIndex = 2
+        Me.UltraLabel9.Text = "Monto:"
+        '
+        'DecMontoDetraccion
+        '
+        Appearance24.ForeColor = System.Drawing.Color.Black
+        Me.DecMontoDetraccion.Appearance = Appearance24
+        Me.DecMontoDetraccion.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.DecMontoDetraccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DecMontoDetraccion.ForeColor = System.Drawing.Color.Black
+        Me.DecMontoDetraccion.Location = New System.Drawing.Point(51, 29)
+        Me.DecMontoDetraccion.MaskInput = "nnnnnnnnn.nn"
+        Me.DecMontoDetraccion.Name = "DecMontoDetraccion"
+        Me.DecMontoDetraccion.NullText = "0.00"
+        Me.DecMontoDetraccion.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.DecMontoDetraccion.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.DecMontoDetraccion.ReadOnly = True
+        Me.DecMontoDetraccion.Size = New System.Drawing.Size(95, 21)
+        Me.DecMontoDetraccion.TabIndex = 4
+        '
+        'UltraLabel8
+        '
+        Appearance25.BackColor = System.Drawing.Color.Transparent
+        Appearance25.ForeColor = System.Drawing.Color.Navy
+        Appearance25.TextVAlignAsString = "Middle"
+        Me.UltraLabel8.Appearance = Appearance25
+        Me.UltraLabel8.AutoSize = True
+        Me.UltraLabel8.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UltraLabel8.Location = New System.Drawing.Point(196, 9)
+        Me.UltraLabel8.Name = "UltraLabel8"
+        Me.UltraLabel8.Size = New System.Drawing.Size(73, 15)
+        Me.UltraLabel8.TabIndex = 5
+        Me.UltraLabel8.Text = "Neto a Pagar:"
+        '
+        'txtNetoPagar
+        '
+        Appearance26.ForeColor = System.Drawing.Color.Black
+        Me.txtNetoPagar.Appearance = Appearance26
+        Me.txtNetoPagar.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.txtNetoPagar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNetoPagar.ForeColor = System.Drawing.Color.Black
+        Me.txtNetoPagar.Location = New System.Drawing.Point(174, 29)
+        Me.txtNetoPagar.MaskInput = "nnnnnnnnn.nn"
+        Me.txtNetoPagar.Name = "txtNetoPagar"
+        Me.txtNetoPagar.NullText = "0.00"
+        Me.txtNetoPagar.NumericType = Infragistics.Win.UltraWinEditors.NumericType.[Double]
+        Me.txtNetoPagar.PromptChar = Global.Microsoft.VisualBasic.ChrW(32)
+        Me.txtNetoPagar.ReadOnly = True
+        Me.txtNetoPagar.Size = New System.Drawing.Size(95, 21)
+        Me.txtNetoPagar.TabIndex = 6
         '
         'frm_ComprobanteVentas
         '
@@ -1964,6 +2099,12 @@ Partial Class frm_ComprobanteVentas
         CType(Me.cboTipoDocumento, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tcComprobanteVenta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tcComprobanteVenta.ResumeLayout(False)
+        CType(Me.agrDetraccion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.agrDetraccion.ResumeLayout(False)
+        Me.agrDetraccion.PerformLayout()
+        CType(Me.DecDetraer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DecMontoDetraccion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtNetoPagar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2051,5 +2192,11 @@ Partial Class frm_ComprobanteVentas
     Friend WithEvents Etiqueta11 As ISL.Controles.Etiqueta
     Friend WithEvents cboServicio As ISL.Controles.Combo
     Friend WithEvents Etiqueta6 As ISL.Controles.Etiqueta
-
+    Friend WithEvents agrDetraccion As Controles.Agrupacion
+    Friend WithEvents UltraLabel5 As Infragistics.Win.Misc.UltraLabel
+    Friend WithEvents DecDetraer As Infragistics.Win.UltraWinEditors.UltraNumericEditor
+    Friend WithEvents UltraLabel9 As Infragistics.Win.Misc.UltraLabel
+    Friend WithEvents DecMontoDetraccion As Controles.NumeroDecimal
+    Friend WithEvents UltraLabel8 As Infragistics.Win.Misc.UltraLabel
+    Friend WithEvents txtNetoPagar As Controles.NumeroDecimal
 End Class

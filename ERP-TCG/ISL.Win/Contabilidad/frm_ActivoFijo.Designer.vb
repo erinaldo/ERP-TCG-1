@@ -410,10 +410,10 @@ Partial Class frm_ActivoFijo
         Dim UltraGridColumn83 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CtaCtbleReadeacuacionH")
         Dim UltraGridColumn40 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("CtaCtbleDesactivacionD")
         Dim UltraGridColumn41 As Infragistics.Win.UltraWinGrid.UltraGridColumn = New Infragistics.Win.UltraWinGrid.UltraGridColumn("GastoFuncion")
-        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 1808434516)
-        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 1808434517)
-        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 1808434518)
-        Dim UltraGridGroup4 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 1808434519)
+        Dim UltraGridGroup1 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup0", 164867782)
+        Dim UltraGridGroup2 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup1", 164867783)
+        Dim UltraGridGroup3 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup2", 164867784)
+        Dim UltraGridGroup4 As Infragistics.Win.UltraWinGrid.UltraGridGroup = New Infragistics.Win.UltraWinGrid.UltraGridGroup("NewGroup3", 164867785)
         Dim Appearance94 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance95 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance96 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -584,6 +584,7 @@ Partial Class frm_ActivoFijo
         Dim UltraTab19 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab20 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim Appearance172 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance173 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance174 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance175 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance176 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
@@ -597,7 +598,6 @@ Partial Class frm_ActivoFijo
         Dim Appearance184 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim UltraTab21 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
         Dim UltraTab22 As Infragistics.Win.UltraWinTabControl.UltraTab = New Infragistics.Win.UltraWinTabControl.UltraTab()
-        Dim Appearance173 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.tapListaReadecuaciones = New Infragistics.Win.UltraWinTabControl.UltraTabPageControl()
         Me.griReadecuacion = New Infragistics.Win.UltraWinGrid.UltraGrid()
         Me.ogdReadecuacion = New Infragistics.Win.UltraWinDataSource.UltraDataSource(Me.components)
@@ -881,6 +881,10 @@ Partial Class frm_ActivoFijo
         Me.UltraTabSharedControlsPage2 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraExpandableGroupBox12 = New Infragistics.Win.Misc.UltraExpandableGroupBox()
         Me.expandablecabecera = New Infragistics.Win.Misc.UltraExpandableGroupBoxPanel()
+        Me.agrDepende = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.txtActivoFijo = New ISL.Controles.Texto(Me.components)
+        Me.cboActivoFijo = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
+        Me.chkDepende = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
         Me.txtIdentificador = New ISL.Controles.Texto(Me.components)
         Me.Etiqueta35 = New ISL.Controles.Etiqueta(Me.components)
         Me.cboEstadoAF = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
@@ -899,10 +903,6 @@ Partial Class frm_ActivoFijo
         Me.ficActivoFijo = New ISL.Controles.Ficha(Me.components)
         Me.UltraTabSharedControlsPage1 = New Infragistics.Win.UltraWinTabControl.UltraTabSharedControlsPage()
         Me.UltraToolTipManager1 = New Infragistics.Win.UltraWinToolTip.UltraToolTipManager(Me.components)
-        Me.agrDepende = New Infragistics.Win.Misc.UltraGroupBox()
-        Me.chkDepende = New Infragistics.Win.UltraWinEditors.UltraCheckEditor()
-        Me.cboActivoFijo = New Infragistics.Win.UltraWinEditors.UltraComboEditor()
-        Me.txtActivoFijo = New ISL.Controles.Texto(Me.components)
         Me.tapListaReadecuaciones.SuspendLayout()
         CType(Me.griReadecuacion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ogdReadecuacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1096,6 +1096,11 @@ Partial Class frm_ActivoFijo
         CType(Me.UltraExpandableGroupBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraExpandableGroupBox12.SuspendLayout()
         Me.expandablecabecera.SuspendLayout()
+        CType(Me.agrDepende, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.agrDepende.SuspendLayout()
+        CType(Me.txtActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkDepende, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIdentificador, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboEstadoAF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1105,11 +1110,6 @@ Partial Class frm_ActivoFijo
         CType(Me.txtDescripcionResumida, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ficActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ficActivoFijo.SuspendLayout()
-        CType(Me.agrDepende, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.agrDepende.SuspendLayout()
-        CType(Me.chkDepende, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cboActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtActivoFijo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tapListaReadecuaciones
@@ -1118,7 +1118,7 @@ Partial Class frm_ActivoFijo
         Me.tapListaReadecuaciones.Controls.Add(Me.tspListaReadecuaciones)
         Me.tapListaReadecuaciones.Location = New System.Drawing.Point(2, 24)
         Me.tapListaReadecuaciones.Name = "tapListaReadecuaciones"
-        Me.tapListaReadecuaciones.Size = New System.Drawing.Size(1149, 347)
+        Me.tapListaReadecuaciones.Size = New System.Drawing.Size(1149, 337)
         '
         'griReadecuacion
         '
@@ -1225,7 +1225,7 @@ Partial Class frm_ActivoFijo
         Me.griReadecuacion.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griReadecuacion.Location = New System.Drawing.Point(0, 25)
         Me.griReadecuacion.Name = "griReadecuacion"
-        Me.griReadecuacion.Size = New System.Drawing.Size(1149, 322)
+        Me.griReadecuacion.Size = New System.Drawing.Size(1149, 312)
         Me.griReadecuacion.TabIndex = 1
         '
         'ogdReadecuacion
@@ -1720,7 +1720,7 @@ Partial Class frm_ActivoFijo
         '
         'AñoR
         '
-        Me.AñoR.Año = 2016
+        Me.AñoR.Año = 2020
         Me.AñoR.AutoSize = True
         Me.AñoR.Controls.Add(Me.object_a3320913_f3cf_4a9f_9d48_683a67c44781)
         Me.AñoR.Controls.Add(Me.NumeroEntero1)
@@ -2189,7 +2189,7 @@ Partial Class frm_ActivoFijo
         '
         'AñoDepActivos
         '
-        Me.AñoDepActivos.Año = 2016
+        Me.AñoDepActivos.Año = 2020
         Me.AñoDepActivos.AutoSize = True
         Me.AñoDepActivos.Controls.Add(Me.object_e0e25adf_3744_46ec_8a08_c3c6505cf0cd)
         Me.AñoDepActivos.Controls.Add(Me.NumeroEntero12)
@@ -2594,7 +2594,7 @@ Partial Class frm_ActivoFijo
         '
         'AñoListaDAF
         '
-        Me.AñoListaDAF.Año = 2016
+        Me.AñoListaDAF.Año = 2020
         Me.AñoListaDAF.AutoSize = True
         Me.AñoListaDAF.Location = New System.Drawing.Point(57, 10)
         Me.AñoListaDAF.Name = "AñoListaDAF"
@@ -2719,9 +2719,9 @@ Partial Class frm_ActivoFijo
         Me.Etiqueta34.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Etiqueta34.Location = New System.Drawing.Point(69, 66)
         Me.Etiqueta34.Name = "Etiqueta34"
-        Me.Etiqueta34.Size = New System.Drawing.Size(76, 15)
+        Me.Etiqueta34.Size = New System.Drawing.Size(79, 15)
         Me.Etiqueta34.TabIndex = 323
-        Me.Etiqueta34.Text = "Costo al 2012:"
+        Me.Etiqueta34.Text = "Costo al Inicio:"
         '
         'uneDep2015
         '
@@ -2743,11 +2743,11 @@ Partial Class frm_ActivoFijo
         Me.Etiqueta22.AutoSize = True
         Me.Etiqueta22.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta22.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta22.Location = New System.Drawing.Point(70, 40)
+        Me.Etiqueta22.Location = New System.Drawing.Point(67, 40)
         Me.Etiqueta22.Name = "Etiqueta22"
-        Me.Etiqueta22.Size = New System.Drawing.Size(75, 15)
+        Me.Etiqueta22.Size = New System.Drawing.Size(83, 15)
         Me.Etiqueta22.TabIndex = 321
-        Me.Etiqueta22.Text = "Deprec. 2015:"
+        Me.Etiqueta22.Text = "Deprec. Añor 2:"
         '
         'uneDep2014
         '
@@ -2769,11 +2769,11 @@ Partial Class frm_ActivoFijo
         Me.Etiqueta19.AutoSize = True
         Me.Etiqueta19.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta19.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.Etiqueta19.Location = New System.Drawing.Point(70, 14)
+        Me.Etiqueta19.Location = New System.Drawing.Point(69, 14)
         Me.Etiqueta19.Name = "Etiqueta19"
-        Me.Etiqueta19.Size = New System.Drawing.Size(75, 15)
+        Me.Etiqueta19.Size = New System.Drawing.Size(79, 15)
         Me.Etiqueta19.TabIndex = 319
-        Me.Etiqueta19.Text = "Deprec. 2014:"
+        Me.Etiqueta19.Text = "Deprec. Año 1:"
         '
         'fecSituacionCtble
         '
@@ -3784,7 +3784,7 @@ Partial Class frm_ActivoFijo
         Me.UltraTabPageControl6.Controls.Add(Me.UltraGroupBox5)
         Me.UltraTabPageControl6.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl6.Name = "UltraTabPageControl6"
-        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1159, 379)
+        Me.UltraTabPageControl6.Size = New System.Drawing.Size(1159, 369)
         '
         'griAFCuentaContable
         '
@@ -4025,7 +4025,7 @@ Partial Class frm_ActivoFijo
         Me.griAFCuentaContable.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griAFCuentaContable.Location = New System.Drawing.Point(0, 188)
         Me.griAFCuentaContable.Name = "griAFCuentaContable"
-        Me.griAFCuentaContable.Size = New System.Drawing.Size(1159, 191)
+        Me.griAFCuentaContable.Size = New System.Drawing.Size(1159, 181)
         Me.griAFCuentaContable.TabIndex = 5
         '
         'udsAFCuentaContable
@@ -4602,7 +4602,7 @@ Partial Class frm_ActivoFijo
         '
         'AñoIC
         '
-        Me.AñoIC.Año = 2016
+        Me.AñoIC.Año = 2020
         Me.AñoIC.AutoSize = True
         Me.AñoIC.Controls.Add(Me.numAño)
         Me.AñoIC.Controls.Add(Me.object_affad419_86ca_48bd_b401_1f51c77e4ae9)
@@ -4694,7 +4694,7 @@ Partial Class frm_ActivoFijo
         Me.UltraTabPageControl10.Controls.Add(Me.UltraGroupBox6)
         Me.UltraTabPageControl10.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl10.Name = "UltraTabPageControl10"
-        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1159, 379)
+        Me.UltraTabPageControl10.Size = New System.Drawing.Size(1159, 369)
         '
         'UltraGroupBox6
         '
@@ -4703,7 +4703,7 @@ Partial Class frm_ActivoFijo
         Me.UltraGroupBox6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UltraGroupBox6.Location = New System.Drawing.Point(0, 0)
         Me.UltraGroupBox6.Name = "UltraGroupBox6"
-        Me.UltraGroupBox6.Size = New System.Drawing.Size(1159, 379)
+        Me.UltraGroupBox6.Size = New System.Drawing.Size(1159, 369)
         Me.UltraGroupBox6.TabIndex = 0
         '
         'utcReadecuaciones
@@ -4715,7 +4715,7 @@ Partial Class frm_ActivoFijo
         Me.utcReadecuaciones.Location = New System.Drawing.Point(3, 3)
         Me.utcReadecuaciones.Name = "utcReadecuaciones"
         Me.utcReadecuaciones.SharedControlsPage = Me.UltraTabSharedControlsPage4
-        Me.utcReadecuaciones.Size = New System.Drawing.Size(1153, 373)
+        Me.utcReadecuaciones.Size = New System.Drawing.Size(1153, 363)
         Me.utcReadecuaciones.TabIndex = 342
         UltraTab2.TabPage = Me.tapListaReadecuaciones
         UltraTab2.Text = "Listado"
@@ -4728,7 +4728,7 @@ Partial Class frm_ActivoFijo
         '
         Me.UltraTabSharedControlsPage4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabSharedControlsPage4.Name = "UltraTabSharedControlsPage4"
-        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1149, 347)
+        Me.UltraTabSharedControlsPage4.Size = New System.Drawing.Size(1149, 337)
         '
         'UltraTabPageControl7
         '
@@ -4736,7 +4736,7 @@ Partial Class frm_ActivoFijo
         Me.UltraTabPageControl7.Controls.Add(Me.UltraExpandableGroupBox16)
         Me.UltraTabPageControl7.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl7.Name = "UltraTabPageControl7"
-        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1159, 379)
+        Me.UltraTabPageControl7.Size = New System.Drawing.Size(1159, 369)
         '
         'griDepreciacion
         '
@@ -4839,7 +4839,7 @@ Partial Class frm_ActivoFijo
         Me.griDepreciacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.griDepreciacion.Location = New System.Drawing.Point(425, 0)
         Me.griDepreciacion.Name = "griDepreciacion"
-        Me.griDepreciacion.Size = New System.Drawing.Size(734, 379)
+        Me.griDepreciacion.Size = New System.Drawing.Size(734, 369)
         Me.griDepreciacion.TabIndex = 302
         '
         'ogdDepreciacion
@@ -4854,12 +4854,12 @@ Partial Class frm_ActivoFijo
         Me.UltraExpandableGroupBox16.ContentAreaAppearance = Appearance131
         Me.UltraExpandableGroupBox16.Controls.Add(Me.UltraExpandableGroupBoxPanel19)
         Me.UltraExpandableGroupBox16.Dock = System.Windows.Forms.DockStyle.Left
-        Me.UltraExpandableGroupBox16.ExpandedSize = New System.Drawing.Size(425, 379)
+        Me.UltraExpandableGroupBox16.ExpandedSize = New System.Drawing.Size(425, 369)
         Me.UltraExpandableGroupBox16.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.UltraExpandableGroupBox16.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.LeftOnBorder
         Me.UltraExpandableGroupBox16.Location = New System.Drawing.Point(0, 0)
         Me.UltraExpandableGroupBox16.Name = "UltraExpandableGroupBox16"
-        Me.UltraExpandableGroupBox16.Size = New System.Drawing.Size(425, 379)
+        Me.UltraExpandableGroupBox16.Size = New System.Drawing.Size(425, 369)
         Me.UltraExpandableGroupBox16.TabIndex = 301
         Me.UltraExpandableGroupBox16.Text = "Depreciacion de Activo Datos Historicos"
         Me.UltraExpandableGroupBox16.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -4888,7 +4888,7 @@ Partial Class frm_ActivoFijo
         Me.UltraExpandableGroupBoxPanel19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel19.Location = New System.Drawing.Point(20, 3)
         Me.UltraExpandableGroupBoxPanel19.Name = "UltraExpandableGroupBoxPanel19"
-        Me.UltraExpandableGroupBoxPanel19.Size = New System.Drawing.Size(402, 373)
+        Me.UltraExpandableGroupBoxPanel19.Size = New System.Drawing.Size(402, 363)
         Me.UltraExpandableGroupBoxPanel19.TabIndex = 0
         '
         'cboAFCuentaContableD
@@ -5225,7 +5225,7 @@ Partial Class frm_ActivoFijo
         '
         'AñoD
         '
-        Me.AñoD.Año = 2016
+        Me.AñoD.Año = 2020
         Me.AñoD.AutoSize = True
         Me.AñoD.Controls.Add(Me.object_b3276692_4c30_4c88_ab83_8b127fe270b5)
         Me.AñoD.Controls.Add(Me.NumeroEntero7)
@@ -5372,7 +5372,7 @@ Partial Class frm_ActivoFijo
         Me.UltraTabPageControl4.Controls.Add(Me.UltraExpandableGroupBox8)
         Me.UltraTabPageControl4.Location = New System.Drawing.Point(-10000, -10000)
         Me.UltraTabPageControl4.Name = "UltraTabPageControl4"
-        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1159, 379)
+        Me.UltraTabPageControl4.Size = New System.Drawing.Size(1159, 369)
         '
         'UltraExpandableGroupBox9
         '
@@ -5381,12 +5381,12 @@ Partial Class frm_ActivoFijo
         Me.UltraExpandableGroupBox9.ContentAreaAppearance = Appearance114
         Me.UltraExpandableGroupBox9.Controls.Add(Me.UltraExpandableGroupBoxPanel12)
         Me.UltraExpandableGroupBox9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.UltraExpandableGroupBox9.ExpandedSize = New System.Drawing.Size(1159, 254)
+        Me.UltraExpandableGroupBox9.ExpandedSize = New System.Drawing.Size(1159, 244)
         Me.UltraExpandableGroupBox9.ExpansionIndicator = Infragistics.Win.Misc.GroupBoxExpansionIndicator.Near
         Me.UltraExpandableGroupBox9.HeaderPosition = Infragistics.Win.Misc.GroupBoxHeaderPosition.TopOnBorder
         Me.UltraExpandableGroupBox9.Location = New System.Drawing.Point(0, 125)
         Me.UltraExpandableGroupBox9.Name = "UltraExpandableGroupBox9"
-        Me.UltraExpandableGroupBox9.Size = New System.Drawing.Size(1159, 254)
+        Me.UltraExpandableGroupBox9.Size = New System.Drawing.Size(1159, 244)
         Me.UltraExpandableGroupBox9.TabIndex = 308
         Me.UltraExpandableGroupBox9.Text = "Valores a la Fecha de la Consulta:"
         Me.UltraExpandableGroupBox9.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
@@ -5406,7 +5406,7 @@ Partial Class frm_ActivoFijo
         Me.UltraExpandableGroupBoxPanel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UltraExpandableGroupBoxPanel12.Location = New System.Drawing.Point(3, 20)
         Me.UltraExpandableGroupBoxPanel12.Name = "UltraExpandableGroupBoxPanel12"
-        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(1153, 231)
+        Me.UltraExpandableGroupBoxPanel12.Size = New System.Drawing.Size(1153, 221)
         Me.UltraExpandableGroupBoxPanel12.TabIndex = 0
         '
         'Etiqueta51
@@ -5784,6 +5784,58 @@ Partial Class frm_ActivoFijo
         Me.expandablecabecera.Size = New System.Drawing.Size(1155, 123)
         Me.expandablecabecera.TabIndex = 0
         '
+        'agrDepende
+        '
+        Me.agrDepende.Controls.Add(Me.txtActivoFijo)
+        Me.agrDepende.Controls.Add(Me.cboActivoFijo)
+        Me.agrDepende.Controls.Add(Me.chkDepende)
+        Me.agrDepende.Location = New System.Drawing.Point(702, 3)
+        Me.agrDepende.Name = "agrDepende"
+        Me.agrDepende.Size = New System.Drawing.Size(298, 117)
+        Me.agrDepende.TabIndex = 334
+        Me.agrDepende.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
+        '
+        'txtActivoFijo
+        '
+        Appearance173.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtActivoFijo.Appearance = Appearance173
+        Me.txtActivoFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtActivoFijo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
+        Me.txtActivoFijo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtActivoFijo.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.txtActivoFijo.Location = New System.Drawing.Point(9, 58)
+        Me.txtActivoFijo.MaxLength = 200
+        Me.txtActivoFijo.Multiline = True
+        Me.txtActivoFijo.Name = "txtActivoFijo"
+        Me.txtActivoFijo.Size = New System.Drawing.Size(282, 51)
+        Me.txtActivoFijo.TabIndex = 336
+        '
+        'cboActivoFijo
+        '
+        Me.cboActivoFijo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Suggest
+        Me.cboActivoFijo.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains
+        Me.cboActivoFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.cboActivoFijo.DisplayMember = "Nombre"
+        Me.cboActivoFijo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
+        Me.cboActivoFijo.DropDownListWidth = -1
+        Me.cboActivoFijo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboActivoFijo.Location = New System.Drawing.Point(9, 31)
+        Me.cboActivoFijo.Name = "cboActivoFijo"
+        Me.cboActivoFijo.Size = New System.Drawing.Size(282, 22)
+        Me.cboActivoFijo.TabIndex = 335
+        Me.cboActivoFijo.ValueMember = "Id"
+        '
+        'chkDepende
+        '
+        Me.chkDepende.AutoSize = True
+        Me.chkDepende.BackColor = System.Drawing.Color.Transparent
+        Me.chkDepende.BackColorInternal = System.Drawing.Color.Transparent
+        Me.chkDepende.Location = New System.Drawing.Point(9, 8)
+        Me.chkDepende.Name = "chkDepende"
+        Me.chkDepende.Size = New System.Drawing.Size(75, 18)
+        Me.chkDepende.TabIndex = 335
+        Me.chkDepende.Text = "Mejora de:"
+        '
         'txtIdentificador
         '
         Appearance174.ForeColor = System.Drawing.Color.MidnightBlue
@@ -6024,58 +6076,6 @@ Partial Class frm_ActivoFijo
         Me.UltraToolTipManager1.ToolTipImage = Infragistics.Win.ToolTipImage.Info
         Me.UltraToolTipManager1.ToolTipTitle = "Mensaje del Sistema"
         '
-        'agrDepende
-        '
-        Me.agrDepende.Controls.Add(Me.txtActivoFijo)
-        Me.agrDepende.Controls.Add(Me.cboActivoFijo)
-        Me.agrDepende.Controls.Add(Me.chkDepende)
-        Me.agrDepende.Location = New System.Drawing.Point(702, 3)
-        Me.agrDepende.Name = "agrDepende"
-        Me.agrDepende.Size = New System.Drawing.Size(298, 117)
-        Me.agrDepende.TabIndex = 334
-        Me.agrDepende.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
-        '
-        'chkDepende
-        '
-        Me.chkDepende.AutoSize = True
-        Me.chkDepende.BackColor = System.Drawing.Color.Transparent
-        Me.chkDepende.BackColorInternal = System.Drawing.Color.Transparent
-        Me.chkDepende.Location = New System.Drawing.Point(9, 8)
-        Me.chkDepende.Name = "chkDepende"
-        Me.chkDepende.Size = New System.Drawing.Size(73, 18)
-        Me.chkDepende.TabIndex = 335
-        Me.chkDepende.Text = "Mejora de:"
-        '
-        'cboActivoFijo
-        '
-        Me.cboActivoFijo.AutoCompleteMode = Infragistics.Win.AutoCompleteMode.Suggest
-        Me.cboActivoFijo.AutoSuggestFilterMode = Infragistics.Win.AutoSuggestFilterMode.Contains
-        Me.cboActivoFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.cboActivoFijo.DisplayMember = "Nombre"
-        Me.cboActivoFijo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
-        Me.cboActivoFijo.DropDownListWidth = -1
-        Me.cboActivoFijo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboActivoFijo.Location = New System.Drawing.Point(9, 31)
-        Me.cboActivoFijo.Name = "cboActivoFijo"
-        Me.cboActivoFijo.Size = New System.Drawing.Size(282, 22)
-        Me.cboActivoFijo.TabIndex = 335
-        Me.cboActivoFijo.ValueMember = "Id"
-        '
-        'txtActivoFijo
-        '
-        Appearance173.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtActivoFijo.Appearance = Appearance173
-        Me.txtActivoFijo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txtActivoFijo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2010
-        Me.txtActivoFijo.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtActivoFijo.ForeColor = System.Drawing.Color.MidnightBlue
-        Me.txtActivoFijo.Location = New System.Drawing.Point(9, 58)
-        Me.txtActivoFijo.MaxLength = 200
-        Me.txtActivoFijo.Multiline = True
-        Me.txtActivoFijo.Name = "txtActivoFijo"
-        Me.txtActivoFijo.Size = New System.Drawing.Size(282, 51)
-        Me.txtActivoFijo.TabIndex = 336
-        '
         'frm_ActivoFijo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -6307,6 +6307,12 @@ Partial Class frm_ActivoFijo
         Me.UltraExpandableGroupBox12.ResumeLayout(False)
         Me.expandablecabecera.ResumeLayout(False)
         Me.expandablecabecera.PerformLayout()
+        CType(Me.agrDepende, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.agrDepende.ResumeLayout(False)
+        Me.agrDepende.PerformLayout()
+        CType(Me.txtActivoFijo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboActivoFijo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkDepende, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIdentificador, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboEstadoAF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cboCentro, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6316,12 +6322,6 @@ Partial Class frm_ActivoFijo
         CType(Me.txtDescripcionResumida, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ficActivoFijo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ficActivoFijo.ResumeLayout(False)
-        CType(Me.agrDepende, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.agrDepende.ResumeLayout(False)
-        Me.agrDepende.PerformLayout()
-        CType(Me.chkDepende, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cboActivoFijo, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtActivoFijo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

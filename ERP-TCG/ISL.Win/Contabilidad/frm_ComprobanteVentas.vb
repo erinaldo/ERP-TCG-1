@@ -247,6 +247,8 @@ Public Class frm_ComprobanteVentas
         cboTipo.SelectedIndex = -1
         cboServicio.ReadOnly = True : cboServicio.SelectedIndex = -1
         cboTipoVenta.ReadOnly = True : cboTipoVenta.SelectedIndex = -1
+        '#0001 Ini
+        Me.DecDetraer.Value = 0
     End Sub
 
     Private Sub Listar(ByVal Activo As Boolean)
@@ -283,7 +285,7 @@ Public Class frm_ComprobanteVentas
             Me.Cursor = Cursors.WaitCursor
             Dim oeMovimientoDocumentoAsoc As New e_MovimientoDocumento
             oeMovimientoDocumentoAsoc.Activo = True
-            oeMovimientoDocumentoAsoc.Ejercicio = Ejercicio
+            'oeMovimientoDocumentoAsoc.Ejercicio = Ejercicio
             oeMovimientoDocumentoAsoc.FechaEmision = oeMovimientoDocumento.FechaEmision
             oeMovimientoDocumentoAsoc.IndCompraVenta = 2 'Indica Venta
             oeMovimientoDocumentoAsoc.IdClienteProveedor = oeMovimientoDocumento.IdClienteProveedor
@@ -350,6 +352,7 @@ Public Class frm_ComprobanteVentas
                         leDocAsoc.AddRange(olDocAsoc.ListarDocAsoc(oeDocAsoc))
                         CargaComprobanteDetalles(leDocAsoc)
                     End If
+                    DecDetraer.Value = .Venta.PorcenDetra '#@0001
                 End With
 
             End If
@@ -398,6 +401,20 @@ Public Class frm_ComprobanteVentas
                     .Venta.OtrosTributos = IIf(.IdMoneda = "1CH02", (DecOtrosTributos.Value * decTC.Value), DecOtrosTributos.Value)
                     .Venta.Inafecto = IIf(.IdMoneda = "1CH02", (DecInafecta.Value * decTC.Value), DecInafecta.Value)
                     .Venta.TipoOperacion = oeMovimientoDocumento.TipoOperacion
+                    '#0001 Ini Detraccion
+                    If DecDetraer.Value > 0 Then
+                        .Venta.PorcenDetra = DecDetraer.Value
+                    Else
+                        .Venta.PorcenDetra = 0
+                    End If
+                    If DecMontoDetraccion.Value > 0 Then
+                        .Venta.Detraccion = DecMontoDetraccion.Value
+                        .Venta.SaldoDetraccion = DecMontoDetraccion.Value
+                    Else
+                        .Venta.Detraccion = 0
+                        .Venta.SaldoDetraccion = 0
+                    End If
+                    '#0001 Fin Detraccion
                 End With
                 oeMovimientoDocumento.Mac_PC_Local = MacPCLocal()
                 oeMovimientoDocumento.EstadoDocumento = "EMITIDA"
@@ -1194,6 +1211,40 @@ Public Class frm_ComprobanteVentas
 
     Private Sub decTC_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles decTC.ValueChanged
         oeMovimientoDocumento.TipoCambio = decTC.Value
+    End Sub
+
+    Private Sub agrCabeceraAsiento_Click(sender As Object, e As EventArgs) Handles agrCabeceraAsiento.Click
+
+    End Sub
+
+    Private Sub agrDetraccion_Click(sender As Object, e As EventArgs) Handles agrDetraccion.Click
+
+    End Sub
+    '#0001 Ini Detraccion
+    Private Sub DecDetraer_ValueChanged(sender As Object, e As EventArgs) Handles DecDetraer.ValueChanged
+        Calcular_Detraccion()
+    End Sub
+    Private Sub Calcular_Detraccion()
+        If DecDetraer.Value > 0 Then
+            DecMontoDetraccion.Value = DecTotalDoc.Value * (DecDetraer.Value / 100)
+            oeMovimientoDocumento.Venta.PorcenDetra = DecDetraer.Value
+        Else
+            oeMovimientoDocumento.Venta.PorcenDetra = 0
+            DecMontoDetraccion.Value = 0
+        End If
+        If DecMontoDetraccion.Value > 0 Then
+            Me.txtNetoPagar.Value = DecTotalDoc.Value - Me.DecMontoDetraccion.Value
+            oeMovimientoDocumento.Venta.Detraccion = DecMontoDetraccion.Value
+            oeMovimientoDocumento.Venta.SaldoDetraccion = DecMontoDetraccion.Value
+        Else
+            oeMovimientoDocumento.Venta.Detraccion = 0
+            oeMovimientoDocumento.Venta.SaldoDetraccion = 0
+            txtNetoPagar.Value = 0
+        End If
+    End Sub
+    '#0001 Fin Detraccion
+    Private Sub DecMontoDetraccion_ValueChanged(sender As Object, e As EventArgs) Handles DecMontoDetraccion.ValueChanged
+        Calcular_Detraccion()
     End Sub
 
     Private Sub cboTipoVenta_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboTipoVenta.ValueChanged
