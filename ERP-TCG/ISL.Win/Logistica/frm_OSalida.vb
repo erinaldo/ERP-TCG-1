@@ -1204,18 +1204,18 @@ Public Class frm_OSalida
             ListarProveedores(cboProveedor, gs_IdClienteProveedorSistema.Trim)
             cboProveedor.Value = gs_IdClienteProveedorSistema.Trim
             ControlGrillaDetalle(0)
-             Select uceMovInventario.Value
-                Case "1SI000000001"
-                    uebDocumento.Expanded = False
-                    ficDetalle.Tabs(0).Selected = True
-                    uegMateriales.Enabled = True
-                    uegMateriales.Expanded = True
-                Case Else
-                    uebDocumento.Expanded = True
-                    ficDetalle.Tabs(1).Selected = True
-                    uegMateriales.Enabled = False
-                    uegMateriales.Expanded = False
-            End Select
+            ' Select uceMovInventario.Value
+            '    Case "1SI000000001"
+            '        uebDocumento.Expanded = False
+            '        ficDetalle.Tabs(0).Selected = True
+            '        uegMateriales.Enabled = True
+            '        uegMateriales.Expanded = True
+            '    Case Else
+            '        uebDocumento.Expanded = True
+            '        ficDetalle.Tabs(1).Selected = True
+            '        uegMateriales.Enabled = False
+            '        uegMateriales.Expanded = False
+            'End Select
         Catch ex As Exception
             mensajeEmergente.Problema(ex.Message, True)
         End Try

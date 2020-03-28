@@ -1092,6 +1092,12 @@
     <Compile Include="Grifo\Reportes\frm_LiquidacionVendedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Grifo\Reportes\frm_CuadroRIC.Designer.vb">
+      <DependentUpon>frm_CuadroRIC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Grifo\Reportes\frm_CuadroRIC.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Grifo\Reportes\frm_Reporte_RIC.Designer.vb">
       <DependentUpon>frm_Reporte_RIC.vb</DependentUpon>
     </Compile>
@@ -5950,6 +5956,7 @@
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRRemitenteMaterial.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_GuiaRRVenta_Print.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_LiqVen_Depositos.datasource" />
+    <None Include="My Project\DataSources\ERP.EntidadesWCF.e_LiqVen_DetalleVentas.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_LiqVen_Resumen.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_LiqVen_Ventas.datasource" />
     <None Include="My Project\DataSources\ERP.EntidadesWCF.e_Material.datasource" />
@@ -6503,6 +6510,9 @@
     <EmbeddedResource Include="Grifo\Impresiones\rpt_LiquidacionVendedor.rdlc" />
     <EmbeddedResource Include="Grifo\Reportes\frm_LiquidacionVendedor.resx">
       <DependentUpon>frm_LiquidacionVendedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grifo\Reportes\frm_CuadroRIC.resx">
+      <DependentUpon>frm_CuadroRIC.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Grifo\Reportes\frm_Reporte_RIC.resx">
       <DependentUpon>frm_Reporte_RIC.vb</DependentUpon>

@@ -126,12 +126,12 @@ Public Class frm_CanjeDocumentos
 
     Public Overrides Sub Exportar()
         Try
-            If udg_Documentos.Rows.Count = 0 Then
-                Exportar_Excel(udg_Documentos, cmb_ClienteBuscado.Text & " . Notas de Despacho")
-            End If
-            If udg_DocumentosCanjeados.Rows.Count = 0 Then
-                Exportar_Excel(udg_DocumentosCanjeados, cmb_ClienteBuscado.Text & " . Otros Documentos")
-            End If
+            Select Case tab_Bandeja.SelectedTab.Index
+                Case 0 ' Precios de combustibles
+                    If udg_Documentos.Rows.Count > 0 Then Exportar_Excel(udg_Documentos, cmb_ClienteBuscado.Text & " . Notas de Despacho")
+                Case 1
+                    If udg_DocumentosCanjeados.Rows.Count > 0 Then Exportar_Excel(udg_DocumentosCanjeados, cmb_ClienteBuscado.Text & " . Otros Documentos")
+            End Select
             MyBase.Exportar()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, Me.Text)

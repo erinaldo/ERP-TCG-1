@@ -1156,7 +1156,7 @@ Public Class frm_OIngreso
                     uegMateriales.Expanded = False
                     If uceMovInventario.Value = "1CH000000037" Then uceMoneda.Value = "1CH02"
                     ControlGrillaDetalle(1)
-                Case "1SI000000002", "1CH000000021"
+                Case "1SI000000002", "1CH000000021", "CHC000000001"
                     uebDocumento.Expanded = False
                     ficDetalle.Tabs(0).Selected = True
                     uegMateriales.Enabled = True
