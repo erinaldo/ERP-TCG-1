@@ -132,7 +132,7 @@ Partial Class frm_ReporteCajaDiario
         Me.agrupacion1.Controls.Add(Me.Etiqueta4)
         Me.agrupacion1.Controls.Add(Me.decSaldoInicio)
         Me.agrupacion1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.agrupacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.agrupacion1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.agrupacion1.ForeColor = System.Drawing.Color.Black
         Me.agrupacion1.Location = New System.Drawing.Point(0, 0)
         Me.agrupacion1.Name = "agrupacion1"
@@ -165,11 +165,11 @@ Partial Class frm_ReporteCajaDiario
         Appearance2.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta1.Appearance = Appearance2
         Me.Etiqueta1.AutoSize = True
-        Me.Etiqueta1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta1.Location = New System.Drawing.Point(14, 26)
         Me.Etiqueta1.Name = "Etiqueta1"
-        Me.Etiqueta1.Size = New System.Drawing.Size(81, 14)
+        Me.Etiqueta1.Size = New System.Drawing.Size(84, 15)
         Me.Etiqueta1.TabIndex = 0
         Me.Etiqueta1.Text = "Fecha de Inicio:"
         '
@@ -247,11 +247,11 @@ Partial Class frm_ReporteCajaDiario
         Appearance8.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta2.Appearance = Appearance8
         Me.Etiqueta2.AutoSize = True
-        Me.Etiqueta2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta2.Location = New System.Drawing.Point(289, 26)
         Me.Etiqueta2.Name = "Etiqueta2"
-        Me.Etiqueta2.Size = New System.Drawing.Size(71, 14)
+        Me.Etiqueta2.Size = New System.Drawing.Size(72, 15)
         Me.Etiqueta2.TabIndex = 3
         Me.Etiqueta2.Text = "Fecha de Fin:"
         '
@@ -261,11 +261,11 @@ Partial Class frm_ReporteCajaDiario
         Appearance9.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta5.Appearance = Appearance9
         Me.Etiqueta5.AutoSize = True
-        Me.Etiqueta5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta5.Location = New System.Drawing.Point(664, 54)
         Me.Etiqueta5.Name = "Etiqueta5"
-        Me.Etiqueta5.Size = New System.Drawing.Size(35, 14)
+        Me.Etiqueta5.Size = New System.Drawing.Size(35, 15)
         Me.Etiqueta5.TabIndex = 10
         Me.Etiqueta5.Text = "Saldo:"
         '
@@ -275,11 +275,11 @@ Partial Class frm_ReporteCajaDiario
         Appearance10.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta3.Appearance = Appearance10
         Me.Etiqueta3.AutoSize = True
-        Me.Etiqueta3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta3.Location = New System.Drawing.Point(17, 55)
         Me.Etiqueta3.Name = "Etiqueta3"
-        Me.Etiqueta3.Size = New System.Drawing.Size(77, 14)
+        Me.Etiqueta3.Size = New System.Drawing.Size(79, 15)
         Me.Etiqueta3.TabIndex = 6
         Me.Etiqueta3.Text = "Saldo Anterior:"
         '
@@ -289,11 +289,11 @@ Partial Class frm_ReporteCajaDiario
         Appearance11.ForeColor = System.Drawing.Color.Navy
         Me.Etiqueta4.Appearance = Appearance11
         Me.Etiqueta4.AutoSize = True
-        Me.Etiqueta4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Etiqueta4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta4.ForeColor = System.Drawing.Color.Black
         Me.Etiqueta4.Location = New System.Drawing.Point(283, 52)
         Me.Etiqueta4.Name = "Etiqueta4"
-        Me.Etiqueta4.Size = New System.Drawing.Size(77, 14)
+        Me.Etiqueta4.Size = New System.Drawing.Size(79, 15)
         Me.Etiqueta4.TabIndex = 8
         Me.Etiqueta4.Text = "Saldo Anterior:"
         '

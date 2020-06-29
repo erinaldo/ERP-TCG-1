@@ -14,9 +14,9 @@ Public Class l_ComprobantePagoElectronico
     '' D:\Sistema\xml\ // \\LADERA\ComprobanteElectronico\xml\
     '' \\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\
     Public gs_RutaDocumentosEle As String = "\\LADERA\ComprobanteElectronico\DocumentosElectronicos\"
-    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\"
-    Public gs_RutaDocumentosCDR20 As String = "\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
-    Public gstrRutaFirma As String = "\\LADERA\ComprobanteElectronico\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
+    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\" '\\LADERA\ComprobanteElectronico\xml\"
+    Public gs_RutaDocumentosCDR20 As String = "D:\Sistema\xml\ " '"\\LADERA\ComprobanteElectronico\Comprobantes\2-0\CDR - MTN\"
+    Public gstrRutaFirma As String = "D:\Sistema\xml\ComprobanteElectronico\Certificado\C1811162057.pfx"
 
     Public gdecIGV As Double = 0.18
     Public gstrDepartamentoEmpresa As String = "LAMBAYEQUE"

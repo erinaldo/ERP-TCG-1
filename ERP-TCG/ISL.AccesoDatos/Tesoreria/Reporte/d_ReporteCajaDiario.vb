@@ -15,15 +15,15 @@ Public Class d_ReporteCajaDiario
 
     Private Function Cargar(ByVal o_fila As DataRow) As e_ReporteCajaDiario
         Try
-            Dim oeReporteCajaDiario = New e_ReporteCajaDiario( _
-             o_fila("ID").ToString, _
-             o_fila("Piloto").ToString, _
-             o_fila("FechaCreacion"), _
-             o_fila("Voucher"), _
-             o_fila("FechaCreacion"), _
-             o_fila("Glosa"), _
-             o_fila("Ingreso"), _
-             o_fila("Egreso"))
+            Dim oeReporteCajaDiario = New e_ReporteCajaDiario(
+             o_fila("ID").ToString,
+             o_fila("Piloto").ToString,
+             o_fila("FechaCreacion"),
+             o_fila("Voucher"),
+             o_fila("FechaCreacion"),
+             o_fila("Glosa"),
+             o_fila("Ingreso"),
+             o_fila("Egreso"), o_fila("Usuario").ToString)
             Return oeReporteCajaDiario
         Catch ex As Exception
             Throw ex

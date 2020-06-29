@@ -13,6 +13,8 @@ Public Class e_ReporteCajaDiario
     Private _ingresos As Double
     Private _egresos As Double
 
+    Private _usuario As String
+
     Public FechaInicio As Date
     Public FechaFin As Date
     Public IdCaja As String = ""
@@ -91,13 +93,23 @@ Public Class e_ReporteCajaDiario
         End Set
     End Property
 
-    <DataMember()> _
+    <DataMember()>
     Public Property Egresos() As Double
         Get
             Return _egresos
         End Get
         Set(ByVal value As Double)
             _egresos = value
+        End Set
+    End Property
+
+    <DataMember()>
+    Public Property Usuario() As String
+        Get
+            Return _usuario
+        End Get
+        Set(ByVal value As String)
+            _usuario = value
         End Set
     End Property
 
@@ -115,17 +127,18 @@ Public Class e_ReporteCajaDiario
         _glosa = ""
         _ingresos = 0
         _egresos = 0
-
+        _usuario = ""
     End Sub
 
-    Public Sub New(ByVal ls_Codigo As String, _
-                   ByVal ls_Trabajador As String, _
-                   ByVal ld_FechaMov As Date, _
-                   ByVal ls_Voucher As String, _
-                   ByVal ld_Fecha As Date, _
-                   ByVal ls_Glosa As String, _
-                   ByVal ln_Ingresos As Double, _
-                   ByVal ln_Egresos As Double)
+    Public Sub New(ByVal ls_Codigo As String,
+                   ByVal ls_Trabajador As String,
+                   ByVal ld_FechaMov As Date,
+                   ByVal ls_Voucher As String,
+                   ByVal ld_Fecha As Date,
+                   ByVal ls_Glosa As String,
+                   ByVal ln_Ingresos As Double,
+                   ByVal ln_Egresos As Double,
+                   ByVal ls_Usuario As String)
 
         _codigo = ls_Codigo
         _trabajador = ls_Trabajador
@@ -135,7 +148,7 @@ Public Class e_ReporteCajaDiario
         _glosa = ls_Glosa
         _ingresos = ln_Ingresos
         _egresos = ln_Egresos
-
+        _usuario = ls_Usuario
     End Sub
 
 #End Region

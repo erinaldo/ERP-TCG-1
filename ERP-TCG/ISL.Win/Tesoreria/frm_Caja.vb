@@ -1039,7 +1039,7 @@ Public Class frm_Caja
             oeCaja = New e_Caja
             oeCaja.Activo = True
             With griListaCaja
-                oeCaja.Activo = Activo
+                ' oeCaja.Activo = Activo
                 .DataSource = olCaja.Listar(oeCaja)
                 .DisplayLayout.Bands(0).Columns("Id").Hidden = True
                 '.DisplayLayout.Bands(0).Columns("Modificado").Hidden = True

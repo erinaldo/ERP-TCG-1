@@ -926,10 +926,10 @@ Module m_Funciones
     '' Variables para CPE
     '\\LADERA\ComprobanteElectronico\xml\
     'D:\Sistema\xml\
-    Public gstrRutaDocumentosEle20 As String = "\\LADERA\ComprobanteElectronico\xml\"
+    Public gstrRutaDocumentosEle20 As String = "D:\Sistema\xml\" '"\\LADERA\ComprobanteElectronico\xml\"
     '\\LADERA\ComprobanteElectronico\cdr\
     'D:\Sistema\cdr\
-    Public gstrRutaDocumentosCDR As String = "\\LADERA\ComprobanteElectronico\cdr\"
+    Public gstrRutaDocumentosCDR As String = "D:\Sistema\cdr\" '"\\LADERA\ComprobanteElectronico\cdr\"
 
     Public TipoOC As String
     Public TipoMarca As String

@@ -3425,6 +3425,12 @@
     <Compile Include="Reportes\Tesoreria\frm_ReporteFletesxCobrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\Tesoreria\frm_ReporteMovimientosCaja.Designer.vb">
+      <DependentUpon>frm_ReporteMovimientosCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Tesoreria\frm_ReporteMovimientosCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\Tesoreria\frm_ReportesProduccionLiquidador.Designer.vb">
       <DependentUpon>frm_ReportesProduccionLiquidador.vb</DependentUpon>
     </Compile>
@@ -7677,6 +7683,9 @@
     <EmbeddedResource Include="Reportes\Tesoreria\frm_ReporteGrupoSancion.resx">
       <DependentUpon>frm_ReporteGrupoSancion.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Tesoreria\frm_ReporteMovimientosCaja.resx">
+      <DependentUpon>frm_ReporteMovimientosCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Tesoreria\frm_ReporteViajesLiquidados.resx">
       <DependentUpon>frm_ReporteViajesLiquidados.vb</DependentUpon>

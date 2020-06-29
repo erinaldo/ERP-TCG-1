@@ -90,8 +90,9 @@ Public Class frm_ReporteCajaDiario
         Try
             griCajaDiario.DataSource = New List(Of e_ReporteCajaDiario)
             decSaldo.Value = 0
-            fecFechaFin.Value = Date.Now.Date
-            cboHoraFin.Items.Add(Now.Hour & ":" & Now.Minute & ":" & Now.Second)
+            Dim FechaServidor As Date = ObtenerFechaServidor()
+            fecFechaFin.Value = FechaServidor.Date
+            cboHoraFin.Items.Add(FechaServidor.Hour & ":" & (FechaServidor.Minute + 3) & ":" & FechaServidor.Second)
             cboHoraFin.SelectedIndex = 0
             BuscarUsuarioCaja()
             LlenarSaldoAnterior()
@@ -218,6 +219,7 @@ Public Class frm_ReporteCajaDiario
                 .DisplayLayout.Bands(0).Columns("Glosa").Width = 450
                 .DisplayLayout.Bands(0).Columns("Ingresos").Width = 70
                 .DisplayLayout.Bands(0).Columns("Egresos").Width = 70
+                .DisplayLayout.Bands(0).Columns("Usuario").Hidden = True
                 .DisplayLayout.Bands(0).Columns("Ingresos").CellAppearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
                 .DisplayLayout.Bands(0).Columns("Egresos").CellAppearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
 
