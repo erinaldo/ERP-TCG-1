@@ -2528,6 +2528,7 @@ Public Class l_MovimientoDocumento
                     End With
                     For Each asimod As e_AsientoModelo In oeMovimientoDocumento.loAsientoModelo
                         oeAsiento = New e_Asiento
+                        oeAsiento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                         loAsientoMovimiento = New List(Of e_AsientoMovimiento)
                         With oeAsiento
                             .TipoOperacion = "I" : .IdPeriodo = oeMovimientoDocumento.IdPeriodo : .IdTipoAsiento = asimod.IdTipoAsiento
@@ -2540,16 +2541,19 @@ Public Class l_MovimientoDocumento
                             .IdEstado = "CUADRADO" : .IdUsuarioCrea = oeMovimientoDocumento.IdUsuarioCrea : oeAsiento.Activo = True
                             .IndOrigen = oeMovimientoDocumento.IndOrigenContable
                             .Asiento_MovDoc = New e_Asiento_MovDoc
+                            .Asiento_MovDoc.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                             .Asiento_MovDoc.TipoOperacion = "I"
                             .Asiento_MovDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
                             .Asiento_MovDoc.Activo = True
                             .AsientoReferencia = New e_AsientoReferencia
+                            .AsientoReferencia.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                             .AsientoReferencia.TipoOperacion = "I"
                             .AsientoReferencia.IdReferencia = oeMovimientoDocumento.Id
                             .AsientoReferencia.TipoReferencia = 4
                         End With
                         For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle
                             oeAsientoMovimiento = New e_AsientoMovimiento
+                            oeAsientoMovimiento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                             If asidet.Repetir = 0 Then
                                 With oeAsientoMovimiento
                                     .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
@@ -2557,6 +2561,7 @@ Public Class l_MovimientoDocumento
                                     .IdCuentaContable = asidet.IdCuentaContable
                                     If asidet.IndDocumento Then
                                         .AsMov_MovDoc = New e_AsientoMov_MovDoc
+                                        .AsMov_MovDoc.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                                         .AsMov_MovDoc.TipoOperacion = "I"
                                         .AsMov_MovDoc.IdMovimientoDocumento = oeMovimientoDocumento.Id
                                         .AsMov_MovDoc.IdCuentaxCyP = String.Empty
@@ -2634,6 +2639,7 @@ Public Class l_MovimientoDocumento
                             For Each asidet As e_DetalleAsientoModelo In asimod.leDetalle.OrderBy(Function(item) item.Fila).ToList
                                 If asidet.Repetir = 1 Then
                                     oeAsientoMovimiento = New e_AsientoMovimiento
+                                    oeAsientoMovimiento.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                                     With oeAsientoMovimiento
                                         .TipoOperacion = "I" : .Glosa = oeAsiento.Glosa
                                         .IdUsuarioCrea = oeMovimientoDocumento.IdUsuarioCrea : .Activo = True : .Fila = asidet.Fila
@@ -2649,6 +2655,7 @@ Public Class l_MovimientoDocumento
                                                 End If
                                                 If oeMovimientoDocumento.lstDetalleDocumento.Count = 0 Then
                                                     oeAsientoAnalisis = New e_MovimientoAnalisis
+                                                    oeAsientoAnalisis.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                                                     oeAsientoAnalisis.TipoOperacion = ""
                                                     oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                                     oeAsientoAnalisis.IdUsuarioCrea = oeMovimientoDocumento.IdUsuarioCrea
@@ -2667,6 +2674,7 @@ Public Class l_MovimientoDocumento
                                                     For Each oe As e_DetalleDocumento In oeMovimientoDocumento.lstDetalleDocumento
                                                         If oe.IdCategoriaServicio = ctactblecs.IdCategoriaServicio Then
                                                             oeAsientoAnalisis = New e_MovimientoAnalisis
+                                                            oeAsientoAnalisis.PrefijoID = oeMovimientoDocumento.PrefijoID '@0001 01/07/20
                                                             oeAsientoAnalisis.TipoOperacion = ""
                                                             oeAsientoAnalisis.IdMoneda = asimod.IdMoneda
                                                             oeAsientoAnalisis.IdUsuarioCrea = oeMovimientoDocumento.IdUsuarioCrea
