@@ -4771,9 +4771,10 @@
     <Content Include="Imagenes\folder2.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Imagenes\Fondo azul con logo ERP.jpg">
+    <Content Include="Imagenes\Fondo azul con logo ERP 1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Imagenes\Fondo azul con logo ERP.jpg" />
     <Content Include="Imagenes\fork1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
