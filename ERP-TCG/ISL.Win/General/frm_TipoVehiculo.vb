@@ -4,6 +4,7 @@
 ' Nro   |   Fecha       |   User    |   Descripcion
 '-----------------------------------------------------------------------------------------------------------------
 ' @0001 |   2019-09-01  |  CT2010   |   Combios generales Prefijo
+''@0001 |   2020-07-01  |  CT2010   |   Agregar Tipo Vehiculo
 '=================================================================================================================
 
 Imports ERP.LogicaWCF
@@ -197,10 +198,13 @@ Public Class frm_TipoVehiculo
             Application.DoEvents()
             Cursor.Current = Cursors.WaitCursor
             Cursor.Show()
-            If cboTipoVehiculoOrigen.SelectedIndex < 0 Then
-                cboTipoVehiculoOrigen.Focus()
-                Throw New Exception("Seleccione Tipo Veh. Origen válido")
-            End If
+            If verIndFuncional.Checked = True Then '@0002
+                If cboTipoVehiculoOrigen.SelectedIndex < 0 Then
+                    cboTipoVehiculoOrigen.Focus()
+                    Throw New Exception("Seleccione Tipo Veh. Origen válido")
+                End If
+            End If '@0002
+
             With oeTipoVehiculo
                 .Codigo = txtCodigo.Text.Trim
                 .Nombre = txtNombre.Text
@@ -301,6 +305,8 @@ Public Class frm_TipoVehiculo
                 With oeTipoVehiculo
                     txtId.Text = .Id
                     txtCodigo.Text = .Codigo
+                    verIndTipoVehiculo.Checked = .IndTipoVehiculo '@0002
+                    verIndSunarp.Checked = .IndSunarp '@0002
                     txtNombre.Text = .Nombre
                     txtAbreviatura.Text = .Abreviatura
                     txtDescripcion.Text = .Descripcion

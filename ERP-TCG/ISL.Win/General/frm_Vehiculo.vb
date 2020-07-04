@@ -1059,9 +1059,9 @@ Public Class frm_Vehiculo
                     oeVehiculo.Id = .ActiveRow.Cells("Id").Value.ToString().Trim()
                     oeVehiculo = olVehiculo.Obtener(oeVehiculo)
                     If Not String.IsNullOrWhiteSpace(oeVehiculo.Id) AndAlso oeVehiculo.Activo Then
-                        If MessageBox.Show("Esta seguro de eliminar el Vehiculo: " & _
-                                 .ActiveRow.Cells("Placa").Value.ToString() & " ?", _
-                                 "SGI-ISL", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
+                        If MessageBox.Show("Esta seguro de eliminar el Vehiculo: " &
+                                 .ActiveRow.Cells("Placa").Value.ToString() & " ?",
+                                 "ERP-TyL", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
                             oeVehiculo.TipoOperacion = "E"
                             olVehiculo.Eliminar(oeVehiculo)
                             'Consultar(True)
@@ -1957,7 +1957,7 @@ Public Class frm_Vehiculo
             boton = e.Element.GetContext()
             If e.Element.GetType() = GetType(EditorButtonUIElement) AndAlso e.Element.Parent.ControlElement.Equals(cboModeloFuncionalMasivo.UIElement.ControlElement) AndAlso boton.Equals(cboModeloFuncionalMasivo.ButtonsRight("b1")) Then
                 t1.ToolTipText = "Cambiar Modelo Funcional en todos los registros de la grilla activa"
-                t1.ToolTipTitle = "SGI-ISL"
+                t1.ToolTipTitle = "ERP-TyL"
                 UltraToolTipManager1.SetUltraToolTip(cboModeloFuncionalMasivo, t1)
                 UltraToolTipManager1.ShowToolTip(cboModeloFuncionalMasivo)
             End If
@@ -1974,7 +1974,7 @@ Public Class frm_Vehiculo
             boton = e.Element.GetContext()
             If e.Element.GetType() = GetType(EditorButtonUIElement) AndAlso e.Element.Parent.ControlElement.Equals(cboFlotaMasiva.UIElement.ControlElement) AndAlso boton.Equals(cboFlotaMasiva.ButtonsRight("b1")) Then
                 t1.ToolTipText = "Cambiar Flota en todos los registros de la grilla activa"
-                t1.ToolTipTitle = "SGI-ISL"
+                t1.ToolTipTitle = "ERP-TyL"
                 UltraToolTipManager1.SetUltraToolTip(cboFlotaMasiva, t1)
                 UltraToolTipManager1.ShowToolTip(cboFlotaMasiva)
             End If
