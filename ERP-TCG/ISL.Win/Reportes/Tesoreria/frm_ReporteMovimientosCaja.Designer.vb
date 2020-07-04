@@ -30,7 +30,11 @@ Partial Class frm_ReporteMovimientosCaja
         Dim Appearance5 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance6 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Dim Appearance7 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance8 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
+        Dim Appearance9 As Infragistics.Win.Appearance = New Infragistics.Win.Appearance()
         Me.UltraGroupBox1 = New Infragistics.Win.Misc.UltraGroupBox()
+        Me.cboHoraFin = New ISL.Controles.Combo(Me.components)
+        Me.cboHoraInicio = New ISL.Controles.Combo(Me.components)
         Me.txt_HoraFin = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.txt_HoraInicio = New Infragistics.Win.UltraWinEditors.UltraTextEditor()
         Me.fec_FechaFin = New System.Windows.Forms.DateTimePicker()
@@ -49,6 +53,8 @@ Partial Class frm_ReporteMovimientosCaja
         Me.UltraGridFilterUIProvider1 = New Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider(Me.components)
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UltraGroupBox1.SuspendLayout()
+        CType(Me.cboHoraFin, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cboHoraInicio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_HoraFin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_HoraInicio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.decSaldo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,6 +67,8 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'UltraGroupBox1
         '
+        Me.UltraGroupBox1.Controls.Add(Me.cboHoraFin)
+        Me.UltraGroupBox1.Controls.Add(Me.cboHoraInicio)
         Me.UltraGroupBox1.Controls.Add(Me.txt_HoraFin)
         Me.UltraGroupBox1.Controls.Add(Me.txt_HoraInicio)
         Me.UltraGroupBox1.Controls.Add(Me.fec_FechaFin)
@@ -81,37 +89,65 @@ Partial Class frm_ReporteMovimientosCaja
         Me.UltraGroupBox1.Text = "Datos"
         Me.UltraGroupBox1.ViewStyle = Infragistics.Win.Misc.GroupBoxViewStyle.Office2007
         '
+        'cboHoraFin
+        '
+        Appearance1.ForeColor = System.Drawing.Color.Black
+        Me.cboHoraFin.Appearance = Appearance1
+        Me.cboHoraFin.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboHoraFin.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboHoraFin.ForeColor = System.Drawing.Color.Black
+        Me.cboHoraFin.Location = New System.Drawing.Point(717, 27)
+        Me.cboHoraFin.Name = "cboHoraFin"
+        Me.cboHoraFin.Size = New System.Drawing.Size(90, 21)
+        Me.cboHoraFin.TabIndex = 15
+        Me.cboHoraFin.ValueMember = "Id"
+        '
+        'cboHoraInicio
+        '
+        Appearance2.ForeColor = System.Drawing.Color.Black
+        Me.cboHoraInicio.Appearance = Appearance2
+        Me.cboHoraInicio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
+        Me.cboHoraInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboHoraInicio.ForeColor = System.Drawing.Color.Black
+        Me.cboHoraInicio.Location = New System.Drawing.Point(450, 27)
+        Me.cboHoraInicio.Name = "cboHoraInicio"
+        Me.cboHoraInicio.Size = New System.Drawing.Size(90, 21)
+        Me.cboHoraInicio.TabIndex = 14
+        Me.cboHoraInicio.ValueMember = "Id"
+        '
         'txt_HoraFin
         '
         Me.txt_HoraFin.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txt_HoraFin.Location = New System.Drawing.Point(715, 26)
+        Me.txt_HoraFin.Location = New System.Drawing.Point(717, 51)
         Me.txt_HoraFin.Name = "txt_HoraFin"
         Me.txt_HoraFin.ReadOnly = True
         Me.txt_HoraFin.Size = New System.Drawing.Size(76, 22)
         Me.txt_HoraFin.TabIndex = 13
+        Me.txt_HoraFin.Visible = False
         '
         'txt_HoraInicio
         '
         Me.txt_HoraInicio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
-        Me.txt_HoraInicio.Location = New System.Drawing.Point(454, 26)
+        Me.txt_HoraInicio.Location = New System.Drawing.Point(450, 54)
         Me.txt_HoraInicio.Name = "txt_HoraInicio"
         Me.txt_HoraInicio.ReadOnly = True
         Me.txt_HoraInicio.Size = New System.Drawing.Size(76, 22)
         Me.txt_HoraInicio.TabIndex = 12
+        Me.txt_HoraInicio.Visible = False
         '
         'fec_FechaFin
         '
         Me.fec_FechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.fec_FechaFin.Location = New System.Drawing.Point(614, 27)
+        Me.fec_FechaFin.Location = New System.Drawing.Point(620, 27)
         Me.fec_FechaFin.Name = "fec_FechaFin"
         Me.fec_FechaFin.Size = New System.Drawing.Size(95, 21)
         Me.fec_FechaFin.TabIndex = 6
         '
         'Etiqueta6
         '
-        Appearance1.BackColor = System.Drawing.Color.Transparent
-        Appearance1.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta6.Appearance = Appearance1
+        Appearance3.BackColor = System.Drawing.Color.Transparent
+        Appearance3.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta6.Appearance = Appearance3
         Me.Etiqueta6.AutoSize = True
         Me.Etiqueta6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta6.ForeColor = System.Drawing.Color.Black
@@ -131,8 +167,8 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'decSaldo
         '
-        Appearance2.ForeColor = System.Drawing.Color.Black
-        Me.decSaldo.Appearance = Appearance2
+        Appearance4.ForeColor = System.Drawing.Color.Black
+        Me.decSaldo.Appearance = Appearance4
         Me.decSaldo.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decSaldo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decSaldo.ForeColor = System.Drawing.Color.Black
@@ -149,13 +185,13 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'Etiqueta1
         '
-        Appearance3.BackColor = System.Drawing.Color.Transparent
-        Appearance3.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta1.Appearance = Appearance3
+        Appearance5.BackColor = System.Drawing.Color.Transparent
+        Appearance5.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta1.Appearance = Appearance5
         Me.Etiqueta1.AutoSize = True
         Me.Etiqueta1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta1.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta1.Location = New System.Drawing.Point(260, 30)
+        Me.Etiqueta1.Location = New System.Drawing.Point(262, 30)
         Me.Etiqueta1.Name = "Etiqueta1"
         Me.Etiqueta1.Size = New System.Drawing.Size(84, 15)
         Me.Etiqueta1.TabIndex = 2
@@ -163,13 +199,13 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'Etiqueta2
         '
-        Appearance4.BackColor = System.Drawing.Color.Transparent
-        Appearance4.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta2.Appearance = Appearance4
+        Appearance6.BackColor = System.Drawing.Color.Transparent
+        Appearance6.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta2.Appearance = Appearance6
         Me.Etiqueta2.AutoSize = True
         Me.Etiqueta2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta2.ForeColor = System.Drawing.Color.Black
-        Me.Etiqueta2.Location = New System.Drawing.Point(536, 30)
+        Me.Etiqueta2.Location = New System.Drawing.Point(546, 30)
         Me.Etiqueta2.Name = "Etiqueta2"
         Me.Etiqueta2.Size = New System.Drawing.Size(72, 15)
         Me.Etiqueta2.TabIndex = 5
@@ -177,9 +213,9 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'Etiqueta5
         '
-        Appearance5.BackColor = System.Drawing.Color.Transparent
-        Appearance5.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta5.Appearance = Appearance5
+        Appearance7.BackColor = System.Drawing.Color.Transparent
+        Appearance7.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta5.Appearance = Appearance7
         Me.Etiqueta5.AutoSize = True
         Me.Etiqueta5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta5.ForeColor = System.Drawing.Color.Black
@@ -191,9 +227,9 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'Etiqueta3
         '
-        Appearance6.BackColor = System.Drawing.Color.Transparent
-        Appearance6.ForeColor = System.Drawing.Color.Navy
-        Me.Etiqueta3.Appearance = Appearance6
+        Appearance8.BackColor = System.Drawing.Color.Transparent
+        Appearance8.ForeColor = System.Drawing.Color.Navy
+        Me.Etiqueta3.Appearance = Appearance8
         Me.Etiqueta3.AutoSize = True
         Me.Etiqueta3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Etiqueta3.ForeColor = System.Drawing.Color.Black
@@ -205,8 +241,8 @@ Partial Class frm_ReporteMovimientosCaja
         '
         'decSaldoInicio
         '
-        Appearance7.ForeColor = System.Drawing.Color.Black
-        Me.decSaldoInicio.Appearance = Appearance7
+        Appearance9.ForeColor = System.Drawing.Color.Black
+        Me.decSaldoInicio.Appearance = Appearance9
         Me.decSaldoInicio.DisplayStyle = Infragistics.Win.EmbeddableElementDisplayStyle.Office2007
         Me.decSaldoInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.decSaldoInicio.ForeColor = System.Drawing.Color.Black
@@ -273,6 +309,8 @@ Partial Class frm_ReporteMovimientosCaja
         CType(Me.UltraGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UltraGroupBox1.ResumeLayout(False)
         Me.UltraGroupBox1.PerformLayout()
+        CType(Me.cboHoraFin, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cboHoraInicio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_HoraFin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_HoraInicio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.decSaldo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -302,4 +340,6 @@ Partial Class frm_ReporteMovimientosCaja
     Friend WithEvents UltraGridFilterUIProvider1 As Infragistics.Win.SupportDialogs.FilterUIProvider.UltraGridFilterUIProvider
     Friend WithEvents txt_HoraInicio As Infragistics.Win.UltraWinEditors.UltraTextEditor
     Friend WithEvents txt_HoraFin As Infragistics.Win.UltraWinEditors.UltraTextEditor
+    Friend WithEvents cboHoraInicio As Controles.Combo
+    Friend WithEvents cboHoraFin As Controles.Combo
 End Class

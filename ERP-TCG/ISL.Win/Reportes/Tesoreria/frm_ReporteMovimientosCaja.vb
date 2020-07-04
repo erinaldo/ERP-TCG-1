@@ -80,8 +80,8 @@ Public Class frm_ReporteMovimientosCaja
             Cursor.Show()
             oeCajaDiario = New e_ReporteCajaDiario
             oeCajaDiario.IdCaja = uce_Caja.Value
-            oeCajaDiario.FechaInicio = Date.Parse(fec_FechaInicio.Value.ToShortDateString & " " & txt_HoraInicio.Text)
-            oeCajaDiario.FechaFin = Date.Parse(fec_FechaFin.Value.ToShortDateString & " " & txt_HoraFin.Text)
+            oeCajaDiario.FechaInicio = Date.Parse(fec_FechaInicio.Value.ToShortDateString & " " & cboHoraInicio.Text)
+            oeCajaDiario.FechaFin = Date.Parse(fec_FechaFin.Value.ToShortDateString & " " & cboHoraFin.Text)
             With griCajaDiario
                 loCajaDiario.Clear()
                 .ResetDisplayLayout()
@@ -153,10 +153,10 @@ Public Class frm_ReporteMovimientosCaja
             oeSaldo.TipoOperacion = "2"
             oeSaldo.IdCaja = uce_Caja.Value
             oeSaldo = olSaldo.Obtener(oeSaldo)
-            txt_HoraInicio.Text = String.Empty
+            cboHoraInicio.Text = String.Empty
             With oeSaldo
                 fec_FechaInicio.Value = .FechaHora.Date
-                txt_HoraInicio.Text = CStr(.FechaHora.Hour & ":" & .FechaHora.Minute & ":" & .FechaHora.Second)
+                cboHoraInicio.Text = CStr(.FechaHora.Hour & ":" & .FechaHora.Minute & ":" & .FechaHora.Second)
                 'cboHoraInicio.SelectedIndex = 0
                 decSaldoInicio.Value = .Saldo
             End With
@@ -169,8 +169,8 @@ Public Class frm_ReporteMovimientosCaja
     Private Sub lr_FechaFin()
         Dim fec_Servidor As Date = ObtenerFechaServidor()
         fec_FechaFin.Value = fec_Servidor.Date
-        txt_HoraFin.Text = String.Empty
-        txt_HoraFin.Text = CStr(fec_Servidor.Hour & ":" & (fec_Servidor.Minute + 5) & ":" & fec_Servidor.Second)
+        cboHoraFin.Text = String.Empty
+        cboHoraFin.Text = CStr(fec_Servidor.Hour & ":" & (fec_Servidor.Minute + 5) & ":" & fec_Servidor.Second)
     End Sub
 
 #End Region
@@ -200,7 +200,7 @@ Public Class frm_ReporteMovimientosCaja
     End Sub
 
     Private Sub frm_ReporteMovimientosCaja_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        gmt_ControlBoton(1)
+        ControlBoton(1, 0, 0, 0, 0, 0, 1, 1, 1)
     End Sub
 
     Private Sub frm_ReporteMovimientosCaja_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
