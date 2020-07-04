@@ -199,6 +199,20 @@ Public Class frm_ReporteMovimientosCaja
         ugb_Espera.Location = New System.Drawing.Point((Me.Width / 2) - (ugb_Espera.Width / 2), (Me.Height / 2) - ugb_Espera.Height)
     End Sub
 
+    Private Sub frm_ReporteMovimientosCaja_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        gmt_ControlBoton(1)
+    End Sub
+
+    Private Sub frm_ReporteMovimientosCaja_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        instancia = Nothing
+    End Sub
+
+    Private Sub frm_ReporteMovimientosCaja_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        If Not e.Cancel Then
+            ControlBoton(0, 0, 0, 0, 0, 0, 0, 0, 1)
+        End If
+    End Sub
+
 #End Region
 
 End Class

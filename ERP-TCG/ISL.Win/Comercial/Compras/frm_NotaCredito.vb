@@ -1076,18 +1076,16 @@ Public Class frm_NotaCredito
 
     Private Sub fecFechaActual_Validated(ByVal sender As Object, ByVal e As System.EventArgs) Handles fecFechaActual.Validated
         Try
-            If Operacion <> "Inicializa" And ficNotaCredito.SelectedTab.Index = 1 Then
-                If oeMovimientoDocumento.TipoOperacion = "I" Then
+            If oeMovimientoDocumento.TipoOperacion = "I" Then
+                decTc.Value = TipoCambio(fecFechaActual.Value)(0)
+            ElseIf oeMovimientoDocumento.TipoOperacion = "A" Then
+                If decTc.Value = 0 Then
                     decTc.Value = TipoCambio(fecFechaActual.Value)(0)
-                ElseIf oeMovimientoDocumento.TipoOperacion = "A" Then
-                    If decTc.Value = 0 Then
-                        decTc.Value = TipoCambio(fecFechaActual.Value)(0)
-                    Else
-                        If MessageBox.Show("Desea Cambiar al Tipo de Cambio del dia?", "Mensaje del sistema", _
+                Else
+                    If MessageBox.Show("Desea Cambiar al Tipo de Cambio del dia?", "Mensaje del sistema",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) _
                         = Windows.Forms.DialogResult.Yes Then
-                            decTc.Value = TipoCambio(fecFechaActual.Value)(0)
-                        End If
+                        decTc.Value = TipoCambio(fecFechaActual.Value)(0)
                     End If
                 End If
             End If
